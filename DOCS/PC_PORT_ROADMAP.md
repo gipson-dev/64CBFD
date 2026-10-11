@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Third Resource Loader Lifetime And Guard Reduction - 2026-10-11
+
+[Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
+
+- [x] Qualify ignored-argument reuse as request result/shared status, preserving cached destination, failure two and ordered live publications.
+- [x] Recover native +0x24 cached-slot and branch/pointer lifetimes; raw 37/15 -> 37/7, six normalizations -> three with one drop retained.
+- [x] Pass thirteen pre-install and 137 installed/regression tests, effective controls, all focused words and actual seventeen-body parent chain.
+- [x] Preserve both padded owners/all 14 neighbors, exact historical views and a separate literal installed audit; entire ELF/data/seven other inputs unchanged.
+- [x] Bank tools 5eb0c4a before source/guards/docs/pin; preserve older HEAD/39 fingerprints, copy only two absent paths, no push or README/count churn.
+- [ ] Eliminate the remaining three status/exit normalizations and one drop; this is guarded-exact, not direct C or another matching credit.
+- [ ] Eliminate parent/pair guards and qualify deeper SDK/allocator/heap/hardware/renderer/gameplay separately; wider Game goal active, Release frozen.
+
 ## Third Resource Loader Guard Audit And Actual Chain - 2026-10-11
 
 [Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
@@ -9,7 +21,8 @@
 - [x] Replace the third-loader hook in the actual seventeen-body parent chain; assert both real success requests and NULL/status-two failures fire.
 - [x] Resolve both complete padded owner routes against current ELF bytes and preserve all 14 neighbors, extents and existing D804 selector.
 - [x] Preserve all nine production inputs/data, no matching credit or README churn; bank tools b6877d5 before the consumer docs/pin, preserve older HEAD/37 fingerprints, no push.
-- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop; no diagnostic shape is qualified direct C yet.
+- [x] Recover the incoming result/cached-slot/branch lifetime and reduce six normalizations to three in Note 1274.
+- [ ] Eliminate func_1503D774's remaining three normalizations and one drop; raw 37/7 is not direct C.
 - [ ] Eliminate parent/pair guards and qualify deeper SDK/allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Record Resource Cleanup Direct Match - 2026-10-11
@@ -24,7 +37,7 @@
 - [x] Audit exactly 149 changed ELF bytes, protected data/all other inputs exact, +1 matching only; update concise indexes/README aggregate rows and correct the prior hash transcription.
 - [x] Preserve older HEAD/35 fingerprints, copy only two absent files, pass shared checks/native py_compile and bank tools 663f63b before the consumer checkpoint, no push.
 - [x] Qualify func_1503D774's actual parent-chain body in Note 1273; already linked-exact, no new matching credit.
-- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop; raw direct matching remains open after Note 1273's audit.
+- [ ] Eliminate func_1503D774's remaining three normalizations and one drop after Note 1274's qualified reduction; raw direct matching stays open.
 - [ ] Eliminate parent/pair guards and qualify deeper allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Group Publication Propagation Direct Match - 2026-10-11

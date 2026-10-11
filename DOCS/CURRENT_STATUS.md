@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b6877d5; tools are committed before the consumer pin.
+  checkpoint pins tools 5eb0c4a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed third-loader lifetime and guard reduction:
+[Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
+func_1503D774 reuses the ignored argument as request result/shared status.
+Raw 37/15 becomes 37/7; six normalizations become three, one drop remains.
+All 36 linked words exact, 33 direct; not a direct C match. Thirteen pre-install
+and 137 installed/regression tests pass, including actual seventeen-body chain.
+Entire ELF/protected data/seven other inputs unchanged; zero matching credit.
+Fresh Game 2,796/4,822, total 3,469/5,495, zero drift / 2,026 different.
+Tools 5eb0c4a first, older HEAD/39 fingerprints preserved/two absent copies,
+no push. Root README unchanged. Next remaining shared-status exit guards.
 
 Latest third-loader audit and actual-chain qualification:
 [Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):

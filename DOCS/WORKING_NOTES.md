@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
+third-loader incoming-result/shared-status lifetime installed: raw37/15 ->
+37/7, normalizations six -> three plus one drop. Linked36 exact, not direct C.
+Thirteen pre-install/137 final installed and regression tests pass; actual
+seventeen-body chain. Entire ELF/data/seven other inputs and counts unchanged,
+zero matching credit. Tools 5eb0c4a first, older HEAD/39 fingerprints preserved,
+two absent copies/no push, root README unchanged. Next remaining status exit.
+
+2026-10-11:
 [Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
 third loader guarded36 remains exact, raw37/15 and direct guard removal open.
 Twelve new/fifteen SDK tests pass; actual seventeen-body parent chain / 3,840

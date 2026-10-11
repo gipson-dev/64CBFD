@@ -280,24 +280,27 @@ s32 func_1503D660(s32 identity, s32 loaded) {
     return 0;
 }
 
-s32 func_1503D774(s32 arg0, s32 arg1) {
+s32 func_1503D774(s32 identity, s32 loaded) {
+    /* Ignore the incoming second word; reuse it as the result and status. */
     s32 output;
-    struct124 **slot = &D_800D1C90[arg0];
-    void *loaded;
+    struct124 **slot = &D_800D1C90[identity];
 
     if (*slot != NULL) {
         return 0;
     }
 
-    loaded = func_1502B6BC(&output, 2, 0, 2, 0x11, arg0);
+    loaded = (s32)func_1502B6BC(&output, 2, 0, 2, 0x11, identity);
     if (loaded == 0) {
         *slot = NULL;
-        return 2;
+        loaded = 2;
+        goto done;
     }
 
     *slot = (struct124 *)loaded;
     *slot = *(struct124 **)loaded;
-    return 0;
+    loaded = 0;
+done:
+    return loaded;
 }
 
 s32 func_1503D804(s32 identity) {

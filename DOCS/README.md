@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Third-loader lifetime and guard reduction](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
+  raw 37/15 -> 37/7, six normalizations -> three plus one drop; linked 36
+  exact, not direct C. Thirteen pre-install/137 installed and regression tests
+  pass, actual seventeen-body chain. Entire ELF/data/seven other inputs exact,
+  counts/root README unchanged. Tools 5eb0c4a first, older work preserved,
+  no push. Remaining shared-status exit guards and deeper runtime stay open.
+
 - [Third-loader guard audit and actual chain](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
   existing guarded 36 words exact; raw 37/15, guard elimination still open.
   Twelve new/fifteen SDK tests pass, actual seventeen-body chain and real

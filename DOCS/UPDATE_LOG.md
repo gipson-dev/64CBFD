@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Third Resource Loader Lifetime And Guard Reduction
+
+[Note 1274](WORKING_NOTES/1274-game-third-resource-loader-incoming-result-lifetime-and-guard-reduction-20261011.md):
+func_1503D774 incoming-result/shared-status reuse reduces raw differences
+15 -> 7 and normalizations six -> three; one instruction drop remains.
+All 36 linked words exact, not direct C. Thirteen pre-install and 137 final
+installed/regression tests pass, actual seventeen-body parent chain.
+Entire ELF/data/seven other inputs unchanged; zero matching credit, fresh
+Game 2,796/4,822, total 3,469/5,495, zero drift / 2,026 different.
+Tools 5eb0c4a first, older HEAD/39 fingerprints preserved/two absent copies,
+no push or root README churn. Remaining status/exit guards stay open.
+
 ## 2026-10-11 Third Resource Loader Guard Audit And Actual Chain
 
 [Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
