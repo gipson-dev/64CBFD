@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 23570e9; tools are committed before the consumer pin.
+  checkpoint pins tools 1310ff7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed vertex-coordinate copy guarded match:
+[Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
+complete func_1503D804 matches all 96 linked words: 92 direct plus four closed
+frame/count-spill guards, not a direct C match. Only this function selects the
+unrolled profile; all 14 owner neighbors remain exact. Twelve pre-install and
+61 final installed/regression tests pass, including the actual eight-body
+loader chain. Only 298 ELF bytes change (296 target, two extent); other bytes/
+data/conversion inputs exact, old guard prefix plus four rows. Fresh Game
+2,793/4,822, total 3,466/5,495, zero drift / 2,029 different. +1 matching only;
+README aggregate rows only. Tools 1310ff7 first, older HEAD/29 fingerprints
+preserved/two absent copies, no push. Next complete 69-word func_1503D660.
+Raw guard elimination and deeper heap/hardware/renderer/gameplay stay open.
 
 Latest installed first-stream command weight counter direct match:
 [Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):

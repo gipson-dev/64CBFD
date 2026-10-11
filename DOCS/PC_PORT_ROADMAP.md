@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Vertex Coordinate Copy Guarded Match - 2026-10-11
+
+[Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
+
+- [x] Recover the complete identity-0x24/count-94 gate, allocation/publication/failure status and SDK Vtx signed-coordinate copy with original access order.
+- [x] Qualify 96 words, 92 direct plus four closed frame/count-spill guards; finish 132 source/profile diagnostics without claiming a direct C match.
+- [x] Select only this complete function from the unrolled object; preserve all 14 no-unroll neighbors, pools, relocations and typed-parent instructions through both real padders.
+- [x] Pass twelve pre-install and 61 final installed/regression tests, all 96 focused words, 798 private/public fault pairs, 16 stale-guard rejections and 66,896 native32 cases per profile.
+- [x] Replace the secondary helper model with the actual guarded 96-word body in the eight-body loader chain; qualify real allocation NULL/status one and 1,536 chain cases.
+- [x] Preserve all frozen audits through exact source/slot/extent/four-row projections; correct the older status-join guard input and rerun all selected tests.
+- [x] Audit exactly 298 changed ELF bytes (296 target, two extent), other bytes/data/conversion inputs exact and original guard prefix intact; add one matching credit only.
+- [x] Preserve older HEAD/all 29 existing fingerprints, copy only two absent paths and pass consumer/mounted/older tools checks and native py_compile.
+- [x] Bank tools 1310ff7 before the consumer source/guards/recipe/docs/pin checkpoint, no push or older-sibling history changes; README aggregate rows only.
+- [ ] Recover and qualify complete 69-word func_1503D660 descriptor loader, including its actual helper contracts and original private/saved-register lifetimes.
+- [ ] Eliminate raw child/parent guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Command Weight Counter Direct Match - 2026-10-11
 
 [Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
@@ -13,7 +29,7 @@
 - [x] Audit exactly 126 changed ELF bytes (125 target, one extent), every other byte/data/guard/CSV exact. Add one matching credit only; README aggregate rows only.
 - [x] Preserve older HEAD/all 27 protected fingerprints, copy only two absent paths and pass consumer/mounted/older tools checks/native py_compile.
 - [x] Bank tools 23570e9 before the consumer source/docs/pin checkpoint, no push or older-sibling history changes.
-- [ ] Recover and qualify complete 96-word func_1503D804 allocation/signed-half pair copy helper before replacing that loader-chain model.
+- [x] Recover and qualify complete 96-word func_1503D804 allocation/signed-half pair copy helper and replace that loader-chain model in Note 1269.
 - [ ] Eliminate the parent loader's 22 raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Command-Stream Relocator Direct Match - 2026-10-11

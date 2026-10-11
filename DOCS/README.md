@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Vertex-coordinate copy guarded match](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
+  full 96 linked words exact, 92 direct plus four frame/count-spill guards.
+  Per-function unrolled selection preserves all 14 neighbors. Twelve
+  pre-install/61 final installed and regression tests pass; actual child
+  replaces its model in the eight-body loader chain. Only 298 ELF bytes
+  change; other bytes/data/conversion inputs exact, old guard prefix intact.
+  +1 matching, tools 1310ff7 first/no push. Next full 69-word func_1503D660;
+  raw guard elimination and deeper runtime stay separate.
+
 - [Command weight counter direct match](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
   all 46 words directly exact, no frame or new guards. Eleven pre-install/49
   installed and regression tests pass, every counter word reached in the

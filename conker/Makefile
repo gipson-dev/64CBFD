@@ -107,7 +107,8 @@ GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.
 ifeq ($(VERSION),us)
 GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
-	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES))
 STANDARD_GENERATED_SLICE_O_FILES := \
 	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
@@ -427,6 +428,17 @@ $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<)) $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# Preserve this slice's no-unroll neighbors; select only the complete
+# vertex-coordinate copy from its retail unrolled object.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: \
+		$(SRC_DIR)/game/generated_6A3D0.c $$(call generated_slice_asm,6A3D0) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) -O2 -g3 $(MIPSBIT) -o $@.unrolled.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,6A3D0) $@.padded.s \
+		--function-object func_1503D804=$@.unrolled.compact --word-patches retail_word_patches.us.csv --filename generated_6A3D0
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.unrolled.compact $@.padded.s
 
 # This generated slice crosses an original object-profile boundary:
 # func_151733D8 is the non-debug identity helper immediately before a -g3

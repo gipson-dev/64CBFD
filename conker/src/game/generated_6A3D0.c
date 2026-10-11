@@ -29,6 +29,7 @@ extern u16 D_800C4778[];
 extern u16 D_800C5628[];
 extern u16 D_800C4ED0[];
 extern u8 *D_800C6360[];
+s32 allocate_memory(s32, s32, s32, s32);
 extern u8 *D_800C5C08[];
 extern u8 *D_800C6070[];
 void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
@@ -37,7 +38,7 @@ void func_1503D368(Gfx *, u32);
 s32 func_1503DC3C(s32);
 void func_1510CE60(u32, s32, s32, s32, s32);
 void func_1503D984(s32);
-s32 func_1503D804();
+s32 func_1503D804(s32);
 s32 func_150028BC(s32);
 s32 func_1503D774(s32, s32);
 s32 func_1503D660();
@@ -255,7 +256,40 @@ s32 func_1503D774(s32 arg0, s32 arg1) {
     return 0;
 }
 
-s32 func_1503D804() {
+s32 func_1503D804(s32 identity) {
+    typedef struct { s16 s, t; } TextureCoordinatePair;
+    s32 index;
+    s32 count;
+    s32 kind = -1;
+    u8 **slot;
+    Vtx *base;
+    TextureCoordinatePair *output;
+
+    if (identity == 0x24) {
+        count = 94;
+        kind = 0;
+    } else {
+        count = 0;
+    }
+    if (count == 0) {
+        return 0;
+    }
+    slot = &D_800C6360[identity];
+    if (*slot != NULL) {
+        return 0;
+    }
+    base = (Vtx *)D_800D19A0[identity];
+    if (kind != -1) {
+        base += ((u32 *)D_800C4020[identity])[kind];
+    }
+    if ((*slot = (u8 *)allocate_memory(count * 4, 1, 0, 2)) == NULL) {
+        return 1;
+    }
+    output = (TextureCoordinatePair *)*slot;
+    for (index = 0; index < count; index++) {
+        output[index].s = base[index].v.tc[0];
+        output[index].t = base[index].v.tc[1];
+    }
     return 0;
 }
 

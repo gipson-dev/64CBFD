@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Vertex Coordinate Copy Guarded Match
+
+[Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
+complete func_1503D804 matches all 96 linked words: 92 direct plus four closed
+frame/count-spill guards, not a direct C match. Only this function uses the
+unrolled object; all 14 neighbors stay exact. Twelve pre-install/61 final
+installed and regression tests pass, including 798 complete fault pairs,
+66,896 native32 cases per profile and the actual eight-body loader chain.
+Only 298 ELF bytes change (296 target, two extent); other bytes/data/conversion
+inputs exact and old guard prefix intact. Fresh Game 2,793/4,822, total
+3,466/5,495, zero drift / 2,029 different. +1 matching only; README aggregate
+rows only. Tools 1310ff7 first, older HEAD/29 fingerprints preserved/two absent
+copies, no push. Next full 69-word func_1503D660; raw guards/runtime stay open.
+
 ## 2026-10-11 Command Weight Counter Direct Match
 
 [Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):

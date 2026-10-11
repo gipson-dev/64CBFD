@@ -14514,3 +14514,7 @@ generated_6A3D0,func_1503CF20,0x3EC,0x8FAE0050,0x8FAE0058,-,-,Normalize closed m
 generated_6A3D0,func_1503CF20,0x3F4,0x00000000,0x00402025,-,-,Normalize closed main loader cleanup value transfer,,,false
 generated_6A3D0,func_1503CF20,0x3FC,0x8FAE0050,0x8FAE0058,-,-,Normalize closed main loader private spill pair,,,false
 generated_6A3D0,func_1503CF20,0x414,0x8FAF0050,0x8FAF0058,-,-,Normalize closed main loader private spill pair,,,false
+generated_6A3D0,func_1503D804,0x0,0x27BDFFC0,0x27BDFFC8,-,-,Normalize closed vertex-coordinate copy frame and spill pairs,,,false
+generated_6A3D0,func_1503D804,0x94,0xAFA80038,0xAFA80034,-,-,Normalize closed vertex-coordinate copy frame and spill pairs,,,false
+generated_6A3D0,func_1503D804,0xA8,0x8FA80038,0x8FA80034,-,-,Normalize closed vertex-coordinate copy frame and spill pairs,,,false
+generated_6A3D0,func_1503D804,0x174,0x27BD0040,0x27BD0038,-,-,Normalize closed vertex-coordinate copy frame and spill pairs,,,false

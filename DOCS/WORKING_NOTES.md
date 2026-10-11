@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1269](WORKING_NOTES/1269-game-vertex-coordinate-copy-guarded-match-20261011.md):
+full 96-word vertex-coordinate copy guarded match, 92 direct plus four
+frame/count-spill guards, selected unrolled object only for this function.
+Twelve pre-install/61 final installed and regression tests pass; all 14
+neighbors preserved and actual child replaces the eight-body chain model.
+Only 298 ELF bytes change, other bytes/data/conversion inputs exact, old guard
+prefix intact. +1 matching only, tools 1310ff7 first, older history preserved/
+no push. Next full 69-word func_1503D660; raw guards and runtime stay separate.
+
+2026-10-11:
 [Note 1268](WORKING_NOTES/1268-game-command-weight-counter-direct-match-20261011.md):
 full 46-word weighted command counter directly exact, no frame/new guards.
 Eleven pre-install/49 installed and regression tests pass; actual counter
