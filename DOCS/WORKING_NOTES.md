@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
+func_1503EB78: 74 linked words exact, 69 direct plus five coefficient-register
+guards. Twelve pre-install/twelve installed tests, native32 and actual caller/
+64-bit RNG chains pass. Only 257 ELF bytes change including one explicit
+four-entry metadata rotation; other bytes/data/six inputs and 21 neighbors
+exact. Game 2,803/4,822, total 3,476/5,495, zero drift / 2,019 different.
+Tools f6b3f22 first, older HEAD/55 hashes preserved/two absent copies, no push;
+README aggregates only. Next func_1503ECA0, 134/128 differences. Guard
+removal and full Game goal remain open.
+
+2026-10-11:
 [Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
 func_1503EA54: 71 reachable words direct C, one checked dead-return insertion,
 all 73 linked exact, not full direct C. Twelve pre-install/twelve installed
@@ -9,7 +20,7 @@ boundaries. Only 226 target/extent ELF bytes change; 21 neighbors/data/six
 inputs exact, original guard byte prefix plus one row. Game 2,802/4,822,
 total 3,475/5,495, zero drift / 2,020 different; +1 matching only. Tools
 6f16f59 first, older HEAD/53 fingerprints preserved/two absent copies, no push;
-README aggregates only. Next func_1503EB78, 74/72 differences. Direct tail
+README aggregates only. Former next func_1503EB78 is guarded-exact in Note 1282. Direct tail
 recovery, earlier guard removal and full Game goal remain open.
 
 2026-10-11:

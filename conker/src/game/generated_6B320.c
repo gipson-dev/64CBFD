@@ -1,6 +1,9 @@
 #include <ultra64.h>
 #include "variables.h"
-s32 func_1503EB78(s32, f32, f32, s32);
+void func_1503EB78(struct04 *, f32, f32, s32);
+extern f32 D_80098920;
+extern f32 D_80098924;
+s32 func_150ADA20(void);
 extern u8 D_800CC364[];
 extern s32 *D_8008446C[];
 void func_1503DF0C(s32, s32, s32, s32);
@@ -254,8 +257,31 @@ void func_1503EA54(s32 slot) {
     }
 }
 
-s32 func_1503EB78(s32 arg0, f32 arg1, f32 arg2, s32 arg3) {
-    return 0;
+void func_1503EB78(struct04 *record, f32 horizontal, f32 vertical, s32 mode) {
+    s32 mask;
+    f32 scales[3];
+    s32 bias;
+    s32 index;
+
+    if (mode != 0) {
+        mask = 0x80;
+        bias = 0x7F;
+    } else {
+        mask = 0xFF;
+        bias = 0;
+    }
+    horizontal *= D_80098920;
+    vertical *= D_80098920;
+    scales[0] = horizontal;
+    scales[2] = horizontal;
+    scales[1] = vertical;
+    for (index = 0; index < 3; index++) {
+        ((f32 *)record)[18 + index] *= ((func_150ADA20() & mask) + bias) * scales[index] + 2.0f;
+    }
+    for (index = 0; index < 3; index++) {
+        ((f32 *)record)[21 + index] = ((func_150ADA20() & 0xFF) - 0x80) * 0.03125f;
+    }
+    ((f32 *)record)[24] = D_80098924;
 }
 
 s32 func_1503ECA0() {
@@ -308,15 +334,15 @@ s32 func_1503EFC4() {
     return 0;
 }
 
-void func_1503F078(s32 arg0, u8 arg1) {
+void func_1503F078(struct04 *arg0, s32 arg1) {
     func_1503EB78(arg0, 2.0f, 2.0f, 0);
 }
 
-void func_1503F0AC(s32 arg0, u8 arg1) {
+void func_1503F0AC(struct04 *arg0, s32 arg1) {
     func_1503EB78(arg0, 1.0f, 2.0f, 1);
 }
 
-void func_1503F0D8(s32 arg0, u8 arg1) {
+void func_1503F0D8(struct04 *arg0, s32 arg1) {
     func_1503EB78(arg0, 2.06f, 3.0f, 1);
 }
 

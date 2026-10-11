@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Record Impulse Guarded Match
+
+[Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
+func_1503EB78 matches all 74 linked words, 69 direct plus five coefficient-
+register guards, not full direct C. Twelve pre-install/twelve installed tests,
+native32 and actual three-caller/64-bit RNG chains pass. Only 257 ELF bytes
+change, including an exact four-entry metadata rotation; other bytes/data/six
+inputs and 21 neighbors remain unchanged. Game 2,803/4,822, total 3,476/5,495,
+zero drift / 2,019 different. Tools f6b3f22 first, older HEAD/55 hashes preserved/
+two absent copies, no push; README aggregates only. Next func_1503ECA0,
+134/128 differences; guard removal and full Game goal remain open.
+
 ## 2026-10-11 Record Motion Guarded Tail Match
 
 [Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
@@ -10,7 +22,7 @@ Only 226 target/extent ELF bytes change; 21 neighbors/data/six other inputs
 exact, original guard prefix plus one row. Fresh Game 2,802/4,822, total
 3,475/5,495, zero drift / 2,020 different; +1 matching only. Tools 6f16f59
 first, older HEAD/53 fingerprints preserved/two absent copies, no push;
-README aggregates only. Next func_1503EB78, 74/72 differences. Tail/earlier
+README aggregates only. Former next func_1503EB78 is guarded-exact in Note 1282. Tail/earlier
 guard removal and deeper hardware/gameplay stay open, full Game goal active.
 
 ## 2026-10-11 Record Matrix Update Direct Match

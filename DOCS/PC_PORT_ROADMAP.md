@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Impulse Guarded Match - 2026-10-11
+
+[Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
+
+- [x] Recover the record-pointer/float/float/full-mode interface, six RNG draws, cached coefficients/first pointer, live velocity/home reloads and final acceleration.
+- [x] Match all 74 linked words with the existing O2/g3/0x60 frame: 69 direct words plus five checked coefficient-register guards, not full direct C.
+- [x] Pass twelve pre-install/twelve installed tests, native32 O2/O0, aliases/rebases/faults/controls and actual three-caller/retained 64-bit RNG chains.
+- [x] Preserve all 21 neighbors, typed 13/11/12-word callbacks, pools/both padders and six other inputs; only 257 ELF bytes change, including an explicitly reconstructed four-entry metadata rotation.
+- [x] Measure +1 matching only: Game 2,803/4,822, total 3,476/5,495, zero drift / 2,019 different; README aggregates only.
+- [x] Bank tools f6b3f22 first, consumer source/guards/docs/pin second; shared checks pass, older HEAD/55 hashes preserved/two absent copies, no push.
+- [ ] Recover next func_1503ECA0, 134 words / 128 differences, after inspecting its full body and caller contract.
+- [ ] Remove coefficient/earlier guards and qualify independent hardware/FCSR/gameplay behavior; full Game goal remains active.
+
 ## Record Motion Guarded Tail Match - 2026-10-11
 
 [Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/data/six inputs; only 226 target/extent bytes change, old guard prefix plus one row.
 - [x] Measure +1 matching only: Game 2,802/4,822, total 3,475/5,495, zero drift / 2,020 different; root README aggregates only.
 - [x] Bank tools 6f16f59 before consumer source/guard/docs/pin; shared checks green, older HEAD/53 fingerprints preserved/two absent copies, no push.
-- [ ] Recover and qualify next func_1503EB78, 74 words / 72 differences, including its full four-argument body and direct callers.
+- [x] Recover and qualify complete func_1503EB78 in Note 1282, all 74 linked words exact with five checked coefficient-register guards and unchanged typed caller bodies.
 - [ ] Remove the dead-tail insertion and existing guards; remaining callees and independent hardware/FCSR/gameplay acceptance stay open, full Game goal active.
 
 ## Record Matrix Update Direct Match - 2026-10-11

@@ -54,14 +54,22 @@ confirmed.
 
 ## Planning and history
 
+- [Record impulse guarded match](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
+  all 74 linked words exact, 69 direct plus five coefficient-register guards;
+  twelve pre-install/twelve installed tests, native32 and actual caller/RNG
+  chains pass. Only 257 ELF bytes change, including the measured four-entry
+  metadata rotation; 21 neighbors/data/six inputs remain exact. Tools f6b3f22
+  first, older work preserved/no push. Next func_1503ECA0, 134/128 differences;
+  guard removal and the full Game goal remain open.
+
 - [Record motion guarded tail match](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
   all 71 reachable words direct C, one checked dead-return insertion, all 73
   linked exact but not full direct C. Twelve pre-install/twelve installed
   tests, native32 and actual five-body caller chain pass within documented
   boundaries. Only 226 target/extent ELF bytes change; 21 neighbors/data/six
   inputs exact, old guard prefix plus one row. Tools 6f16f59 first, older work
-  preserved/no push, README aggregates only. Next func_1503EB78, 74/72
-  differences; guard removal and full Game goal remain open.
+  preserved/no push, README aggregates only. Former next func_1503EB78 is
+  guarded-exact in Note 1282; guard removal and full Game goal remain open.
 
 - [Record matrix update direct match](WORKING_NOTES/1280-game-record-matrix-update-direct-match-20261011.md):
   complete138 direct C, no guards/profile/header/caller-body changes; thirteen

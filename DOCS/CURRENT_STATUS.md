@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6f16f59; tools are committed before the consumer pin.
+  checkpoint pins tools f6b3f22; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest record-motion guarded tail match:
+Latest record-impulse guarded match:
+[Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
+func_1503EB78 is complete and linked-exact across 74 words; 69 direct words
+plus five closed coefficient-register guards, not full direct C. Twelve
+pre-install/twelve installed tests, native32 and actual three-caller/64-bit
+RNG chains pass. Only 257 ELF bytes change: 233 target/two extent/22 exact
+four-entry metadata rotation; every other byte/data/six inputs and 21 neighbors
+remain unchanged. Game 2,803/4,822 (58.13%), total 3,476/5,495 (63.26%),
+zero drift / 2,019 different. Tools f6b3f22 first, older HEAD/55 fingerprints
+preserved/two absent copies, no push; README aggregates only. Next
+func_1503ECA0, 134 words / 128 differences. Guard removal, deeper hardware/
+FCSR/gameplay acceptance and the full Game goal remain open.
+
+Previous record-motion guarded tail match:
 [Note 1281](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):
 func_1503EA54 replaces its placeholder with all 71 reachable words directly;
 one checked insertion retains an unreachable return, all 73 linked words
@@ -37,8 +50,8 @@ Only 226 target/extent ELF bytes change; other bytes/data/six inputs and 21
 neighbors exact, original guard byte prefix plus one row. Fresh Game
 2,802/4,822 (58.11%), total 3,475/5,495 (63.24%), zero drift / 2,020 different;
 +1 matching only. Tools 6f16f59 first, older HEAD/53 fingerprints preserved,
-two absent copies/no push; README aggregates only. Next func_1503EB78,
-74 words/72 differences. Tail/earlier guard removal and independent hardware/
+two absent copies/no push; README aggregates only. Its former next target
+func_1503EB78 is guarded-exact in Note 1282. Tail/earlier guard removal and independent hardware/
 FCSR/gameplay acceptance remain separate; full Game goal active.
 
 Previous direct record-matrix rebuild:
