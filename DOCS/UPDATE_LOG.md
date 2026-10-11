@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Complete Alternate Resource Loader Byte Match
+
+[Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
+restore full func_1503F62C, all 99 words / 396 bytes, original 0x40 frame
+and 24 closed S0/S1 guards, no inserts/omissions. Ten final target tests,
+17 scoped regressions and both tools checks pass; ignored status, inverted
+NULL-free gates, live outputs, native32 and real initializer/default/action
+chain qualify. Unwritten nested-failure count remains a guest-only boundary.
+Only target slot/extent changes; three neighbors/all other ELF/data/CSV exact,
+old guard prefix retained. Game 2,777/4,821, total 3,450/5,494, zero drift /
+2,044 different; +1 matching credit only. Tools 030412c first, no push,
+older dirty mirror preserved. Next: full 66-word func_1503F4B0; actual
+resource/allocator and hardware/live gameplay stay open.
+
 ## 2026-10-11 Complete Default Resource Loader Direct Byte Match
 
 [Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):

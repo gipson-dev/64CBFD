@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
+recover full func_1503F62C, 99 words / original 0x40 frame with 24 closed
+S0/S1 guards. Ten final target tests, 17 scoped regressions and both tools
+checks pass; inverted NULL-free gates, live count/attachment, native32 and
+real initializer/default/action chain qualify. Three neighbors/all other ELF/
+data/CSV exact; old guard prefix retained. Game 2,777/4,821, total 3,450/5,494,
+zero drift; +1 matching credit only. Tools 030412c first, no push, older dirty
+mirror preserved. Next: full 66-word func_1503F4B0; unwritten count is a guest
+boundary and complete runtime acceptance remains open.
+
+2026-10-11:
 [Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
 recover full func_1502FE10, 114 words / original 0x50 frame directly from C,
 no guards. Ten final tests/both tools checks pass; cache rollover, live record/

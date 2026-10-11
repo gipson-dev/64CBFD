@@ -14068,3 +14068,27 @@ generated_5D2C0,func_15030158,0xB8,0x8E040044,0x8E020044,-,-,Normalize checked n
 generated_5D2C0,func_15030158,0xC4,0x8E040044,0x8E020044,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
 generated_5D2C0,func_15030158,0xC8,0x50800004,0x50400004,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
 generated_5D2C0,func_15030158,0xD4,0x00000000,0x00402025,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
+generated_6C960,func_1503F62C,0x4,0xAFB10028,0xAFB00024,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x8,0x00808825,0x00808025,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x10,0xAFB00024,0xAFB10028,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x34,0x8FB00058,0x8FB10058,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x40,0xAE020000,0xAE220000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x50,0x8E040000,0x8E240000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x54,0x8E0E0000,0x8E2E0000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x64,0x8E0F0000,0x8E2F0000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x68,0x02202025,0x02002025,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x80,0x8E190000,0x8E390000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x9C,0x8E0B0000,0x8E2B0000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0xAC,0x8E0D0000,0x8E2D0000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0xBC,0x8E0E0000,0x8E2E0000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0xD4,0x8E180000,0x8E380000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0xF8,0x8E080000,0x8E280000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x100,0x8E110000,0x8E300000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x104,0x8E2403E8,0x8E0403E8,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x110,0x8E2903EC,0x8E0903EC,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x128,0x8E2403EC,0x8E0403EC,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x134,0x8E110000,0x8E300000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x138,0x8E2403EC,0x8E0403EC,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x14C,0x8E110000,0x8E300000,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x154,0x02202025,0x02002025,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false
+generated_6C960,func_1503F62C,0x164,0x02202025,0x02002025,-,-,Normalize checked alternate loader closed S0/S1 register transfer,,,false

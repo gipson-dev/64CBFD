@@ -54,12 +54,19 @@ confirmed.
 
 ## Planning and history
 
+- [Complete alternate resource loader byte match](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
+  full 99-word C/original frame and 24 closed S0/S1 guards; ten final target
+  tests, 17 scoped regressions and both tools checks pass. Live outputs,
+  NULL-free gates, guest unwritten-count boundary and real initializer/default/
+  action chain qualify. Three neighbors/all other ELF/data/CSV exact; +1
+  matching credit only. Next: full 66-word func_1503F4B0; runtime stays open.
+
 - [Complete default resource loader direct byte match](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
   full 114-word C/original frame without guards; ten final tests/both tools
   checks pass. Live record/count loop, cache rollover, native32 and actual
   initializer consuming real outputs qualify; all 39 neighbors/other ELF/data/
-  guards/CSV exact. +1 matching credit. Next: full 99-word func_1503F62C;
-  alternate-loader and complete resource/allocator/gameplay work stay open.
+  guards/CSV exact. +1 matching credit. Alternate-loader follow-up completed
+  in Note 1242; complete resource/allocator/gameplay work stays open.
 
 - [Complete node release byte match](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
   full 102-word C with five closed register-transfer guards and retail memory

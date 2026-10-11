@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools daabcf7; tools are committed before the consumer pin.
+  checkpoint pins tools 030412c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete default node resource loader emits directly from C:
+Latest complete alternate node resource loader restored and byte-exact:
+[Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
+func_1503F62C replaces its zero placeholder with all 99 words/original 0x40
+frame; 24 checked closed S0/S1 guards, no inserts/omissions. Ten final target
+tests, 17 scoped regressions and both tools checks pass. Real initializer/
+default/action chain, live attachment/count reloads and inverted NULL-free
+gates qualify; unwritten count on nested failure is a guest-only boundary.
+Three neighbors/all other ELF/data/CSV exact; old guard prefix retained.
+Game 2,777/4,821 (57.60%), total 3,450/5,494 (62.80%), zero drift /
+2,044 different; +1 matching credit only. Tools 030412c first, no push;
+older dirty mirror preserved. Next: full 66-word func_1503F4B0 in this owner.
+Full 182-word func_15083AC8 and actual resource/allocator/gameplay stay open.
+
+Previous complete default node resource loader emits directly from C:
 [Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
 func_1502FE10 replaces its zero placeholder with all 114 words/original 0x50
 frame, no guards. Ten final tests/both tools checks pass; live record/count
