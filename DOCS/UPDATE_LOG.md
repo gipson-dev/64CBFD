@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Complete Node Release Byte Match
+
+[Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
+restore full func_15030158, all 102 words / 408 bytes and original 0x20 frame.
+Five closed register-transfer guards preserve full memory/call order. Ten
+final tests/both tools checks pass; native32, actual dispatcher and factory/
+initializer failure chain qualify. Only target slot/extent changes; all 39
+neighbors/other ELF/data/CSV exact. Game 2,775/4,821, total 3,448/5,494,
+zero drift / 2,046 different; +1 matching credit only. Tools 088efd4 first,
+no push, older dirty mirror preserved. Next: full 114-word func_1502FE10;
+deeper loader outputs, actual resource/allocator work and gameplay stay open.
+
 ## 2026-10-11 Complete Node Resource Initializer Byte Match
 
 [Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):

@@ -14063,3 +14063,8 @@ generated_5D2C0,func_1502FFD8,0xB0,0x15A00027,0x016C2023,-,-,Normalize checked n
 generated_5D2C0,func_1502FFD8,0xB4,0x91620066,0x15C00026,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
 generated_5D2C0,func_1502FFD8,0xB8,0x304E000C,0x304A000C,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
 generated_5D2C0,func_1502FFD8,0xC0,0x55C10024,0x55410024,-,-,Normalize checked node resource post-loader read schedule and delay-slot flag mask,,,false
+generated_5D2C0,func_15030158,0xA0,0x8E040044,0x8E020044,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
+generated_5D2C0,func_15030158,0xB8,0x8E040044,0x8E020044,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
+generated_5D2C0,func_15030158,0xC4,0x8E040044,0x8E020044,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
+generated_5D2C0,func_15030158,0xC8,0x50800004,0x50400004,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false
+generated_5D2C0,func_15030158,0xD4,0x00000000,0x00402025,-,-,Normalize checked node release auxiliary-pointer register transfer,,,false

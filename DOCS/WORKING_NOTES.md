@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
+recover full func_15030158, 102 words / original 0x20 frame and five checked
+register-transfer guards, memory order exact. Ten final tests/both tools checks
+pass; native32, actual dispatcher and factory/initializer rollback qualify.
+All 39 neighbors/other ELF/data/CSV exact. Game 2,775/4,821, total 3,448/5,494,
+zero drift; +1 matching credit only. Tools 088efd4 first, no push, older dirty
+mirror preserved. Next: full 114-word func_1502FE10; real loader outputs and
+complete resource/allocator/gameplay acceptance remain open.
+
+2026-10-11:
 [Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
 recover full func_1502FFD8, 96 words / original 0x40 frame and 12 checked
 read-schedule/register/delay-mask guards. Ten final tests/both tools checks

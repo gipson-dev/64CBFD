@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Node Release Byte Match - 2026-10-11
+
+[Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
+
+- [x] Recover full-word release mode, actual cleanup dispatch, ownership gates, live auxiliaries and list unlink/final free.
+- [x] Emit all 102 semantic words/original 0x20 frame; qualify five closed register-transfer guards with memory order unchanged.
+- [x] Pass 35,328 ordered guest runs, 401 fired alias/fault triples and nine independent callback/head rebased links.
+- [x] Pass ten effective IDO/three native negatives and 97,280 optimized/unoptimized native32 runs.
+- [x] Execute actual 134-word dispatcher/retail table and factory/initializer/release failure chain; 649 connected fault triples.
+- [x] Preserve all 39 neighbors/protected inputs; audit only target slot/extent changed, conversion CSV exact.
+- [x] Pass ten final tests/both tools checks; +1 matching credit only, Game 2,775/4,821 and total 3,448/5,494, zero drift.
+- [x] Bank tools 088efd4 first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Restore complete 114-word func_1502FE10 and qualify required success outputs through the real initializer.
+- [ ] Restore alternate func_1503F62C and full 182-word func_15083AC8; actual resource/allocator and gameplay acceptance stay separate.
+
 ## Complete Node Resource Initializer Byte Match - 2026-10-11
 
 [Note 1239](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
@@ -13,7 +28,7 @@
 - [x] Preserve 39 neighbors and protected inputs; audit only target slot/extent changed, conversion CSV exact.
 - [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
 - [x] Bank tools 8ec8484 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Restore full 102-word func_15030158 and qualify actual factory rollback/unlink/free behavior.
+- [x] Restore full 102-word func_15030158 and qualify actual factory rollback/unlink/free behavior in Note 1240.
 - [ ] Restore deeper func_1502FE10/func_1503F62C loaders and full 182-word func_15083AC8; gameplay acceptance stays separate.
 
 ## Complete Animation Node Constructor Byte Match - 2026-10-10
@@ -30,7 +45,8 @@
 - [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
 - [x] Bank tools d2ad015 first; preserve older dirty mirror, no push, root README aggregate rows only.
 - [x] Recover full 96-word func_1502FFD8 and qualify the actual factory connection with bounded loaders in Note 1239.
-- [ ] Restore full 102-word func_15030158 cleanup and 182-word func_15083AC8; runtime remains separate acceptance.
+- [x] Restore full 102-word func_15030158 cleanup and qualify actual factory rollback in Note 1240.
+- [ ] Restore full 182-word func_15083AC8; runtime remains separate acceptance.
 
 ## Complete Actor Animation Constructor Byte Match - 2026-10-10
 

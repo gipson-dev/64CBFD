@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Complete node release byte match](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
+  full 102-word C with five closed register-transfer guards and retail memory
+  order; ten final tests/both tools checks pass. Native32, actual dispatcher
+  and factory/initializer rollback qualify; all 39 neighbors/other ELF/data/CSV
+  exact. +1 matching credit. Next: full 114-word func_1502FE10; complete
+  resource/allocator and hardware/live gameplay work remain open.
+
 - [Complete node resource initializer byte match](WORKING_NOTES/1239-game-complete-node-resource-initializer-byte-match-20261011.md):
   full 96-word C with 12 checked guards; ten final tests and both tools checks
   pass. Both loader packets, allocation rollback, native32 and actual caller/
