@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Identity Lookup Direct Match - 2026-10-11
+
+[Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
+
+- [x] Recover full func_15083E90; all 72 words directly from C, no frame/guards.
+- [x] Correct the handoff bound to 26 slots, 0..25; preserve byte selector/home, presence-word gates, 812-byte stride and first-match pointer/NULL return.
+- [x] Pass ten final tests: 31,604 reference guest runs, 402 fired full fault pairs, ten effective IDO negatives, rebases and 43,008 native32 cases.
+- [x] Execute two complete current byte-exact callers in 160 cases/320 runs; qualify index sentinel, two pointer stores and three float-zero stores without callbacks.
+- [x] Connect full 47-word retail caller with banked record query in 864 cases/1,728 runs; only initializer remains modeled, caller C still unrecovered.
+- [x] Preserve 30 neighbors/data/guards/CSV through both padding routes and whole linked ELF audit; only target slot/size changes, both WSL tools checks pass.
+- [x] Bank tools 69e37a6 first, preserve older dirty mirror, update README matching rows only; no push.
+- [x] Measure Game 2,785/4,822, total 3,458/5,495, zero drift; +1 matching only, no converted credit.
+- [ ] Recover complete 27-word func_15083DA0 record-table identity selector, including retail restart/index-zero quirk and 0xFF cap.
+- [ ] Finish timeline matching and real initializer/child/allocator/hardware/renderer/gameplay acceptance.
+
 ## Record Index Query Direct Match And Census - 2026-10-11
 
 [Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
@@ -12,7 +27,7 @@
 - [x] Preserve all 30 neighbors/data/guards; whole rebuilt ELF changes only target slot/size/section, 102 bytes. Both WSL tools checks pass.
 - [x] Bank tools 630eaf9 first, preserve older dirty mirror and update README aggregate tables only; no push.
 - [x] Measure Game 2,784/4,822, total 3,457/5,495, zero drift; +1 exact and one omitted C census row, unchanged converted bytes/2,038 differences.
-- [ ] Recover complete 72-word func_15083E90 actor-identity lookup and its presence-gated pool traversal.
+- [x] Recover complete 72-word func_15083E90 actor-identity lookup in Note 1253; corrected 26-slot presence-gated pool traversal.
 - [ ] Finish timeline matching and real child/allocator/hardware/renderer/gameplay acceptance.
 
 ## Animation Child Cleanup Direct Match - 2026-10-11

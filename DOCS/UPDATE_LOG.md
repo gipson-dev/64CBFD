@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Actor Identity Lookup Direct Match
+
+[Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
+recover func_15083E90, all 72 words directly from C, no frame/guards.
+Correct previous handoff to 26 slots, 0..25, with word-presence-gated byte
+identities and first-match pointer/NULL result. Ten final tests/both WSL
+tools checks pass, 402 full fault pairs, 43,008 native32 cases, both padding
+routes, two current exact callers and retail caller with actual record query.
+Current retail-caller C and deep initializer remain unrecovered/bounded.
+All 30 neighbors/data/guards/CSV exact; only target slot/size changes, 226
+ELF bytes. Game 2,785/4,822 (57.76%), total 3,458/5,495 (62.93%), zero
+drift / 2,037 different; +1 matching, no converted credit. Tools 69e37a6
+first, no push, older dirty mirror preserved. Next: full 27-word
+func_15083DA0; retail restart quirk, broader timeline/runtime remain open.
+
 ## 2026-10-11 Record Index Query Direct Match And Census
 
 [Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
+recover complete func_15083E90, all 72 words directly from C, no frame/guards.
+Correct handoff to 26 slots, 0..25. Ten final tests/both WSL tools checks
+pass: 402 full fault pairs/native32/rebases, two complete current linked
+callers and retail caller executing the banked record query. All 30 neighbors/
+data/guards/CSV exact, only target slot/size changes. Game 2,785/4,822,
+total 3,458/5,495, zero drift; +1 matching only. Tools 69e37a6 first, older
+dirty mirror preserved, no push. Next: full 27-word func_15083DA0 record
+identity selector; actual initializer/hardware/gameplay remains separate.
+
+2026-10-11:
 [Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
 recover full func_15083E0C, all 33 words directly from C, no frame/guards.
 Ten final tests/both WSL tools checks pass, 584 full fault pairs, native32,

@@ -402,8 +402,20 @@ s32 func_15083E0C(u8 selector) {
     return -1;
 }
 
-u8 *func_15083E90(u8 arg0) {
-    return 0;
+u8 *func_15083E90(u8 selector) {
+    u8 *actor;
+    s32 i;
+
+    if (selector == 0) {
+        return NULL;
+    }
+    actor = D_800CC2D0;
+    for (i = 0; i < 26; i++, actor += 0x32C) {
+        if ((*(s32 *)actor != 0) && (actor[0x3B] == selector)) {
+            return actor;
+        }
+    }
+    return NULL;
 }
 
 s32 func_15083FB0(u8 arg0) {

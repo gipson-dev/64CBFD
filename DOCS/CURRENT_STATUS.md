@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 630eaf9; tools are committed before the consumer pin.
+  checkpoint pins tools 69e37a6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete record-index query direct match and corrected census:
+Latest complete actor-identity lookup direct match:
+[Note 1253](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
+func_15083E90 emits all 72 words directly from C, no frame/guards.
+Retail scans 26 slots (0..25), correcting the preceding handoff's 25-slot
+assumption. Preserve byte selector/full argument home, word presence gates,
+812-byte stride and first active identity match/NULL return. Ten final tests/
+both WSL tools checks pass: 31,604 independent-reference guest runs, 402 full
+fault pairs, 43,008 native32 cases, actual index/two-call linked callers and
+retail caller with the banked record query. All 30 neighbors/data/guards/CSV
+exact; only target ELF slot/16 -> 288 size changes, 226 bytes. Game
+2,785/4,822 (57.76%), total 3,458/5,495 (62.93%), zero drift / 2,037
+different; +1 matching only. Tools 69e37a6 first, no push, older mirror
+preserved. Next: full 27-word func_15083DA0 record-table identity selector;
+actual initializer/hardware/gameplay acceptance remains open.
+
+Previous complete record-index query and corrected census; lookup finished in Note 1253:
 [Note 1252](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
 func_15083E0C emits all 33 words directly from C, no frame or guards.
 Recover byte selector, zero/-1 sentinels, cached 48-byte record traversal,

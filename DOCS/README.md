@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Actor-identity lookup direct match](WORKING_NOTES/1253-game-actor-identity-lookup-direct-match-20261011.md):
+  all 72 words directly from C, no frame/guards; original scans 26 slots,
+  correcting the previous handoff bound. Ten final tests/both WSL tools
+  checks pass, full access faults/native32/rebases and two actual linked
+  callers plus retail record-query connection. All 30 neighbors/data/guards/
+  CSV exact, +1 matching only. Next: complete 27-word record identity selector;
+  actual initializer/hardware/gameplay remains open.
+
 - [Record-index query direct match and census](WORKING_NOTES/1252-game-record-index-query-direct-match-and-census-20261011.md):
   all 33 words directly from C, no frame/guards. Ten final tests/both WSL
   tools checks pass; full access faults/native32/rebases and complete retail

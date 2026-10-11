@@ -169,9 +169,11 @@ reporting clean. No OGL/Release, saves, editor or private inputs changed.
 
 Recover complete 72-word func_15083E90 in the same owner,
 VA 0x15083E90..0x15083FB0, ROM 0xB1340..0xB1460.
-Current body returns NULL. Inspect caller contract and original full argument
+Completed in [Note 1253](1253-game-actor-identity-lookup-direct-match-20261011.md),
+which corrects the original handoff bound to 26 slots, 0..25.
+At this checkpoint the body returned NULL. Inspect caller contract and original full argument
 home/byte selector, slot-zero special presence gate, D_800CC2D0 actor pool,
-812-byte stride, identity +0x3B, slots 1..24 in a four-record unrolled scan,
+812-byte stride, identity +0x3B, slots 1..25 with peeled slot one and four-record unrolling,
 presence-gated identity reads and first-active-match pointer/NULL result.
 Preserve branch-likely prefetch/access order and completed neighbors/guards.
 Broader timeline matching and real child/allocator/hardware/renderer/gameplay
