@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor resource fields direct match](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
+  all 68 words/original 0x18 frame directly from C, no new guards. Nine final
+  tests/both tools checks pass, 1,265 full fault pairs, native32 and actual
+  complete constructor connection. All 30 neighbors/data/guards/CSV exact;
+  only target slot/extent changes, +1 matching. Next: full 51-word animation
+  helper; actual deeper resource/hardware/gameplay acceptance remains open.
+
 - [Child actor constructor byte match](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
   all 182 words/original 0x38 frame using unchanged C and checked closed
   normalization; thirteen final tests/both tools checks pass. Public/native32/

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
+recover full void func_150839B8, all 68 words/original 0x18 frame directly
+from C, no new guards. Nine final tests/both tools checks pass, 1,265 full
+fault pairs, native32 and actual complete constructor calls. All 30 neighbors/
+guard fingerprints/data/CSV exact; only target slot/extent changes. Game
+2,781/4,821, total 3,454/5,494, zero drift; +1 matching only. Tools 83ade71
+first, older dirty mirror preserved, no push. Next: full 51-word func_150838EC;
+actual deeper resource/allocator/hardware/gameplay remains separate.
+
+2026-10-11:
 [Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
 match complete func_15083AC8, all 182 words/original 0x38 frame using unchanged
 semantic C and checked closed normalization. Thirteen final tests/both tools

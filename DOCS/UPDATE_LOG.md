@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Actor Resource Fields Direct Match
+
+[Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
+replace func_150839B8's zero stub with complete three-argument void resource
+initializer. All 68 words/original 0x18 frame emit directly from C, no guards.
+Nine final tests/both tools checks pass, including 1,265 full fault pairs,
+16,384 native32 cases and actual complete constructor calls. All 30 neighbors/
+existing guard fingerprints/data/CSV exact; only target ELF slot and extent
+change. Game 2,781/4,821 (57.69%), total 3,454/5,494 (62.87%), zero drift /
+2,040 different; +1 matching only. Tools 83ade71 first, no push, older dirty
+mirror preserved. Next: full 51-word func_150838EC and its raw float ABI;
+actual deeper resource/allocator/hardware/gameplay remains open.
+
 ## 2026-10-11 Child Actor Constructor Byte Match
 
 [Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):

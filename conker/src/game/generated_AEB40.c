@@ -179,8 +179,46 @@ s32 func_150838EC() {
     return 0;
 }
 
-s32 func_150839B8() {
-    return 0;
+extern u32 D_80086CAC[];
+void func_15036C70(u8 *);
+
+void func_150839B8(u8 *actor, s32 identity, u8 *configuration) {
+    u8 *resource;
+    u16 value;
+
+    if (identity != 255) {
+        resource = D_800D1C90[identity];
+        if (configuration != NULL) {
+            value = *(u16 *)(configuration + 0x2C);
+            if (value == 0) {
+                *(u16 *)(actor + 0x10) = *(u16 *)(resource + 0x2A);
+            } else if (value == 1) {
+                *(u16 *)(actor + 0x10) = 0;
+            } else {
+                *(u16 *)(actor + 0x10) = value;
+            }
+            if (D_800BE9F0 == 0x1D) {
+                *(u16 *)(actor + 0x10) = 1000;
+            }
+        } else {
+            *(u16 *)(actor + 0x10) = 0;
+        }
+        actor[0x13B] = resource[0x39];
+        actor[0x2CB] = *(s8 *)(resource + 0x33);
+        *(u32 *)(actor + 0x2CC) = *(u32 *)(resource + 0x34);
+        actor[5] = resource[0x12];
+        actor[0x68] = resource[0x3B];
+        actor[0x69] = resource[0x3C];
+        *(s16 *)(actor + 0x160) = *(s16 *)(resource + 2);
+        if (resource[4] != 0) {
+            *(u32 *)(actor + 0x2C4) = D_80086CAC[resource[5]];
+            actor[0x2C8] = resource[4];
+        }
+        actor[0x2C9] = resource[0x38] + actor[0x2C8];
+        if (resource[0x29] != 0) {
+            func_15036C70(actor);
+        }
+    }
 }
 
 extern u8 D_800CC2D0[];
@@ -193,7 +231,6 @@ u8 *func_1505ED34(void);
 void func_150615DC(u8 *);
 u32 func_1515D480(s32);
 u32 func_1515D440(void);
-s32 func_150839B8();
 void func_150837D4(s32, s32, s32);
 s32 func_150838EC();
 

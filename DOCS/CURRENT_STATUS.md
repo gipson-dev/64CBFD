@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a9694bd; tools are committed before the consumer pin.
+  checkpoint pins tools 83ade71; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete child actor constructor byte match:
+Latest complete actor resource-field initializer direct match:
+[Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
+func_150839B8 emits all 68 words/original 0x18 frame directly from C,
+no new guards. Recover three-argument void ABI, full-word identity gate,
+optional configuration/world override, ordered field copies and live count
+reloads. Nine final tests/both tools checks pass, including 1,265 full fault
+pairs, 16,384 native32 cases and actual complete constructor calls. All 30
+neighbors/guard fingerprints/data/CSV exact; only target ELF slot and extent
+change. Game 2,781/4,821 (57.69%), total 3,454/5,494 (62.87%), zero drift /
+2,040 different; +1 matching only. Tools 83ade71 first, no push, older dirty
+mirror preserved. Next: full 51-word func_150838EC; actual runtime open.
+
+Previous complete child actor constructor byte match; next initializer finished in Note 1249:
 [Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
 func_15083AC8 matches all 182 words/original 0x38 frame with unchanged
 semantic C and checked closed frame/base/register/scheduling normalization.

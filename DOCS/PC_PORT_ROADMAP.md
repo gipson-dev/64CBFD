@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Resource Fields Direct Match - 2026-10-11
+
+[Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
+
+- [x] Recover full three-argument void func_150839B8 and match all 68 words/original 0x18 frame directly from C, no new guards.
+- [x] Preserve full-word identity/configuration/world gates, ordered field copies, cached resource pointer and live count reloads.
+- [x] Pass nine final tests: independent guest references, 1,265 full-access fault pairs, rebases, effective IDO/native negatives and 16,384 native32 cases.
+- [x] Execute actual complete matched constructor with the recovered initializer in 32 cases/64 runs.
+- [x] Preserve 30 neighbors/all existing guard fingerprints/data/CSV; only target ELF slot and 12-to-272 symbol extent change, both tools checks pass.
+- [x] Bank tools 83ade71 first, preserve older dirty mirror and update README aggregate rows only, no push.
+- [x] Measure Game 2,781/4,821, total 3,454/5,494, zero drift; +1 matching credit, no converted credit.
+- [ ] Recover full 51-word func_150838EC with actual argument-home/raw float ABI and preserve both completed routines.
+- [ ] Finish timeline matching and actual resource/allocator/hardware/renderer/gameplay acceptance.
+
 ## Child Actor Constructor Byte Match - 2026-10-11
 
 [Note 1248](WORKING_NOTES/1248-game-child-actor-constructor-byte-match-20261011.md):
@@ -11,7 +25,8 @@
 - [x] Preserve 30 neighbors/all other ELF/metadata/data/CSV and old guard prefix; both tools checks pass.
 - [x] Bank tools a9694bd first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,780/4,821, total 3,453/5,494, zero drift; +1 matching credit, no new converted credit.
-- [ ] Recover full 68-word func_150839B8 and adjacent 51-word func_150838EC without weakening the matched constructor fingerprint.
+- [x] Recover and directly match full 68-word func_150839B8 in Note 1249, without weakening the matched constructor fingerprint.
+- [ ] Recover adjacent full 51-word func_150838EC with actual argument-home/raw float ABI.
 - [ ] Finish timeline matching and actual resource/allocator/hardware/renderer/gameplay acceptance; raw C frame remains different.
 
 ## Child Actor Constructor Reconstruction - 2026-10-11
