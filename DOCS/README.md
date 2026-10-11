@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor animation request direct conversion](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
+  all 30 words emit directly from C without guards; nine final tests pass.
+  Signed scale/typed float packet and actual record caller/lookup/list/classifier
+  chain qualify. Whole ELF/guards/data/symbols/14 neighbors exact; +120 C bytes.
+  Next: full func_15083568 constructor, still a zero-return placeholder;
+  its actual body and FCSR/hardware/live gameplay acceptance remain open.
+
 - [Actor definition count direct conversion](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
   all 32 words emit directly from C without guards; ten final tests pass.
   Actual channel/count/lookup/classifier/list chain and original animation

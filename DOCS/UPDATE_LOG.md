@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-10 Actor Animation Request Direct Conversion
+
+[Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
+convert full func_1507EA44, all 30 words / 120 bytes and original 0x18 frame,
+directly from C without guards. Nine final tests/both tools checks pass;
+exact mixed O32 signed-integer/float packet, aliases/faults, native32 and
+actual record caller/lookup/list/classifier chain qualify. Whole ELF/guards/
+data/symbols/14 neighbors unchanged; only one asm-to-c row changes.
+Game 2,771/4,821, total 3,444/5,494, zero drift / 2,050 different.
++1 conversion / 120 C bytes / +1 matching credit; conversion totals
+5,494/6,043 and Game 4,821/5,322. Tools da7086a first, no push.
+Next: full 89-word func_15083568, still a zero-return C placeholder;
+actual constructor, FCSR/hardware and live runtime remain separate open gates.
+
 ## 2026-10-10 Actor Definition Count Direct Conversion
 
 [Note 1235](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):

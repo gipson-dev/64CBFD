@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Animation Request Direct Conversion - 2026-10-10
+
+[Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
+
+- [x] Recover zero-index skip, nullable actual list, full-word one-based index and signed scale conversion.
+- [x] Emit all 30 words directly from C/original 0x18 frame; no guards, pools or profile changes.
+- [x] Pass 38,402 ordered guest runs, actual list/classifier/default bytes, aliases and 248 fired fault pairs.
+- [x] Pass eight independent links, seven effective IDO negatives and 1,638,656 native32 runs with typed float callbacks.
+- [x] Execute actual 60-word record caller/request/lookup/list/classifier chain; qualify 474 connected fault pairs.
+- [x] Preserve all 14 neighbors; rebuild/audit whole ELF/guards/data/symbols exact, only one asm-to-c row changes.
+- [x] Pass nine final tests/both tools checks; +1 converted function / 120 C bytes and +1 matching credit.
+- [x] Bank tools da7086a first; preserve older dirty mirror, no push, root README aggregate rows only.
+- [ ] Recover full 89-word func_15083568 from its false zero-return C placeholder and qualify the actual constructor.
+- [ ] Qualify nonnull list-output paths, real resources, FCSR/nonfinite/hardware behavior and live gameplay separately.
+
 ## Actor Definition Count Direct Conversion - 2026-10-10
 
 [Note 1235](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
@@ -12,7 +27,7 @@
 - [x] Preserve all 14 neighbors; rebuild/audit entire ELF/guards/data/symbols exact, only one asm-to-c row changes.
 - [x] Pass ten final tests/both tools checks; +1 converted function / 128 C bytes and matching credit.
 - [x] Bank tools 2c8eae2 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Convert full 30-word func_1507EA44 with mixed O32 integer/float callback and actual list connection.
+- [x] Convert full 30-word func_1507EA44 with mixed O32 integer/float callback and actual list connection in Note 1236.
 - [ ] Qualify other complete callers, nonnull list-output paths, animation/finish bodies and live gameplay separately.
 
 ## Actor Definition Lookup Direct Conversion - 2026-10-10

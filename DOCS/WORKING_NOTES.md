@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-10:
+[Note 1236](WORKING_NOTES/1236-game-actor-animation-request-direct-conversion-20261010.md):
+convert full func_1507EA44, all 30 words / original 0x18 frame, directly from C
+without guards. Nine final tests/both tools checks pass; signed integer/single
+float O32 bridge and actual record caller/lookup/list/classifier chain qualify.
+Whole ELF/guards/data/symbols/14 neighbors exact; only one asm-to-c row changes.
+Game 2,771/4,821, total 3,444/5,494, zero drift; +1 conversion / 120 C bytes
+and matching credit. Tools da7086a first, no push.
+Next: full 89-word func_15083568, still a zero-return C placeholder;
+its actual constructor body and FCSR/hardware/live gameplay remain open.
+
+2026-10-10:
 [Note 1235](WORKING_NOTES/1235-game-actor-definition-count-direct-conversion-20261010.md):
 convert full func_1507E968, all 32 words / original 0x18 frame, directly from C
 without guards. Ten final tests/both tools checks pass; unsigned size, special/

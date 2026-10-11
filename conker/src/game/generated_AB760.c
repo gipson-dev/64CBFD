@@ -100,7 +100,19 @@ u8 *func_1507E9F8(u8 *arg0, s32 *arg1) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_AB760/func_1507EA44.s")
+extern f32 D_8009B8A0;
+u8 *func_15083568(u8 *, s32, f32, s32);
+
+void func_1507EA44(u8 *actor, s32 index, s32 amount) {
+    u8 *animations;
+
+    if (index != 0) {
+        animations = func_1507E9F8(actor, 0);
+        if (animations != 0) {
+            func_15083568(actor, animations[(u32)index - 1], (f32)amount * D_8009B8A0, 0);
+        }
+    }
+}
 
 void func_1507E7E4(u8 *, u8, u8, u16, s32);
 
