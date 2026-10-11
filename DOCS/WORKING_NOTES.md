@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
+controlled complete status return join selects S6; 31 candidates/five new
+tests pass after isolating oversized bodies from real helper addresses.
+Wrong frame/remaining schedule prevent installation. Eleven installed tests
+pass freshly; source/whole ELF/data/guards/CSV/README unchanged, no credit.
+Tools 9aa880b first, older preserved, no push. Continue this full routine's
+redundant count-pointer copy, original frame/private layout and byte matching.
+
+2026-10-11:
 [Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
 full func_1503CF20 emits all 274 words, frame 0x88 -> 0x80, raw differences
 273 -> 271, no guards/profile changes; still not matching. Eleven final

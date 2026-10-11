@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Status-Join Experiment
+
+[Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
+request-failure status join selects S6 without new profile flags/guards.
+Five new tests qualify 31 complete uninstalled candidates; fix only the
+experimental link-address collision, not shared oracles or production C.
+Eleven installed-loader tests pass freshly. Original frame remains open;
+keep source/whole ELF/data/guards/CSV/README unchanged and claim no credit.
+Tools 9aa880b first, older preserved, no push; same full function remains next.
+
 ## 2026-10-11 Main Resource Loader Retail-Length Improvement
 
 [Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):

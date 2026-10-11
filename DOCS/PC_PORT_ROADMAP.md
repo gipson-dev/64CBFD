@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Status-Join Experiment - 2026-10-11
+
+[Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
+
+- [x] Measure natural request-failure status return join selecting S6 with the existing compiler profile, no guards or synthetic uses.
+- [x] Qualify 31 complete candidates with five tests, isolated entries, live callback mutations, 96 links/ignored-word cases and an effective request-error control.
+- [x] Requalify installed complete loader with eleven fresh tests; preserve source/whole ELF/data/guards/CSV/README exactly, no credit.
+- [x] Pass WSL tools checks/new-file native py_compile; bank tools 9aa880b first and copy only absent paths to the older sibling, no push.
+- [ ] Remove the redundant count-pointer stack copy/reload while preserving S5, recover original 0x78 frame/private slots and all delay/control joins for this same full function; do not install the larger-frame experiment.
+- [ ] Finish byte matching and deeper runtime acceptance separately; the wider Game goal remains active.
+
 ## Main Resource Loader Retail-Length Improvement - 2026-10-11
 
 [Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):

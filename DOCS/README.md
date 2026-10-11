@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader status-join experiment](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
+  controlled return join selects S6; five tests/31 complete isolated candidates
+  pass. Frame still wrong, no installation or matching credit. Eleven fresh
+  installed tests pass; whole linked baseline and README unchanged. Continue
+  this same full function's extra count-pointer copy, frame and byte matching.
+
 - [Main resource-loader retail-length improvement](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
   full func_1503CF20 emits all 274 words, smaller 0x80 frame/271 raw
   differences, no guards; not yet byte-exact. Eleven final tests plus ten

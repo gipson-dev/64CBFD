@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e06635c; tools are committed before the consumer pin.
+  checkpoint pins tools 9aa880b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete main resource-loader retail-length improvement:
+Latest uninstalled main resource-loader status-join experiment:
+[Note 1262](WORKING_NOTES/1262-game-main-resource-loader-status-join-experiment-20261011.md):
+request-failure return join selects S6 under the unchanged retail profile;
+31 complete candidates pass five new tests at isolated entries. No candidate
+restores the original frame; keep the installed 274-word/0x80/271-difference
+baseline. Eleven installed-loader tests pass freshly; the whole ELF/data/
+guards/CSV and README are unchanged, no matching credit. Tools 9aa880b first,
+older dirty work preserved, no push. Next: redundant count-pointer stack copy/reload,
+original 0x78 frame/private layout and matching for this same full routine.
+
+Installed complete main resource-loader retail-length improvement:
 [Note 1261](WORKING_NOTES/1261-game-main-resource-loader-retail-length-improvement-20261011.md):
 func_1503CF20 now emits all 274 slot words, frame 0x88 -> 0x80, raw
 differences 273 -> 271, no guards/profile changes; still not byte-exact.
