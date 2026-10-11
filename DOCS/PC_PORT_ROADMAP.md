@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Animation Scratch Preparation Byte Match - 2026-10-11
+
+[Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
+
+- [x] Match complete 191-word func_1502D824/original 0x68 frame using unchanged semantic C and checked closed normalization.
+- [x] Guard all 187 raw words/five relocations; qualify 46 changed words/four inserts and reject stale production-pad inputs.
+- [x] Pass thirteen final tests, three-way public reference/faults, native32, rebased calls and actual refresh/caller connections.
+- [x] Qualify fitted/retail private frame/save/home/restore order, 912 fired full-access fault pairs, private aliases and live callback home.
+- [x] Preserve 37 neighbors/all other ELF/data/CSV, unchanged C/caller and old manifest prefix; both tools checks pass.
+- [x] Bank tools 672c03d first, preserve older dirty mirror and update README aggregate rows only, no push.
+- [x] Measure Game 2,779/4,821, total 3,452/5,494, zero drift; +1 matching credit, no new converted credit.
+- [ ] Recover complete 182-word func_15083AC8 and continue timeline matching.
+- [ ] Validate actual resource/PI/hardware, full renderer and gameplay; raw-frame aliases and invalid-conversion/FCSR remain separate.
+
 ## Animation Scratch Loop Shape Improvement - 2026-10-11
 
 [Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
@@ -8,8 +22,8 @@
 - [x] Qualify ten final tests, ordered public aliases/faults, rebased calls, native32 and actual refresh/caller connections.
 - [x] Preserve 37 neighbors, all other ELF/data/guards/CSV and exact caller; both tools checks pass.
 - [x] Bank tools 995fcc3 first, preserve older dirty mirror, verify unchanged README totals, no push or extra matching credit.
-- [ ] Finish original 191-word / 0x68 match; current full C emits 187 / 0x50. Recover frame/home, separate constant and register scheduling.
-- [ ] Qualify private frame/fault order; actual PI/hardware, complete renderer and gameplay remain separate acceptance work.
+- [x] Finish original 191-word / 0x68 match with checked frame/home, constant and register normalization in Note 1246; raw C stays 187 / 0x50.
+- [x] Qualify fitted/retail private frame/fault order in Note 1246; actual PI/hardware, complete renderer and gameplay remain separate.
 
 ## Animation Scratch Preparation Reconstruction - 2026-10-11
 
@@ -23,8 +37,9 @@
 - [x] Correct typed void caller declaration; keep all four caller-owner routines exact and reduce submit guards from five to two.
 - [x] Pass nine scoped submit regressions/both tools checks; bank tools ee484d7 first and preserve older dirty mirror, no push.
 - [x] Verify unchanged matching totals: Game 2,778/4,821, total 3,451/5,494, zero drift; no extra conversion credit.
-- [ ] Match original 191 words / 0x68 frame; Note 1245 improves current unguarded full C to 187 / 0x50 with 102 linked word differences.
-- [ ] Qualify private frame/fault order and invalid-conversion/FCSR cases; actual PI/hardware, full renderer and gameplay remain separate.
+- [x] Match original 191 words / 0x68 frame in Note 1246 after Note 1245's raw 187 / 0x50 improvement.
+- [x] Qualify fitted/retail private frame/fault order in Note 1246; raw different-frame equivalence is not inferred.
+- [ ] Model invalid-conversion/FCSR cases; actual PI/hardware, full renderer and gameplay remain separate.
 
 ## Complete Node Transform Submission Byte Match - 2026-10-11
 

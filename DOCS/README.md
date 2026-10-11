@@ -54,12 +54,19 @@ confirmed.
 
 ## Planning and history
 
+- [Animation scratch preparation byte match](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
+  all 191 words/original 0x68 frame with checked closed normalization;
+  thirteen final tests/both tools checks pass. Public/native32/actual caller
+  and fitted private frame/fault qualification; all 37 neighbors/other ELF/
+  data/CSV exact and old guard prefix retained. +1 matching credit only.
+  Next: full 182-word constructor; actual PI/hardware/renderer/gameplay open.
+
 - [Animation scratch loop shape improvement](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
   guarded do-loop drops raw/linked differences 162 -> 102 without guards;
   ten final tests/both tools checks pass, public faults/native32 and actual
   refresh/caller requalified. All 37 neighbors/other ELF/data/guards/CSV exact;
-  no matching credit. Next: same routine's original 191-word/0x68 frame,
-  constant/register schedule; private fault order and runtime stay open.
+  no matching credit then. Original 191-word/0x68 match and fitted private
+  fault order completed in Note 1246; actual runtime stays open.
 
 - [Animation scratch preparation reconstruction](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
   complete one/two-bank C, aligned PI packets and wrap/live reloads; ten final
@@ -67,8 +74,8 @@ confirmed.
   refresh/caller connections, native32 and public fault/alias qualification;
   37 neighbors/all other ELF/data/CSV unchanged. Typed void declaration retires
   three submit guards, preserving its exact body with two. No matching credit:
-  preparation had 162 differences, improved to 102 in Note 1245. Original match,
-  private frame, actual PI/hardware and full renderer/gameplay remain open.
+  preparation had 162 differences, then 102 in Note 1245, now byte-exact in
+  Note 1246. Actual PI/hardware and full renderer/gameplay remain open.
 
 - [Complete node transform submission byte match](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
   full 66-word C/original frame with five checked guards; ten final target

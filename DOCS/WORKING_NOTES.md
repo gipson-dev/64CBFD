@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
+match complete func_1502D824, all 191 words/original 0x68 frame using unchanged
+semantic C and closed normalization, 46 changed words/four inserts protected
+by full expectations. Thirteen final tests/both tools checks pass, private
+frame/faults and public/native32/actual helper/caller qualification. All 37
+neighbors/other ELF/data/CSV exact, old guard prefix retained; +1 matching only.
+Game 2,779/4,821, total 3,452/5,494, zero drift. Tools 672c03d first, no push,
+older dirty mirror preserved. Next: full 182-word constructor; timeline and
+actual resource/PI/hardware/renderer/gameplay remain open.
+
+2026-10-11:
 [Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
 recover guarded do-loop shape in full func_1502D824; raw/linked differences
 162 -> 102 without guards. Ten final tests/both tools checks pass, public

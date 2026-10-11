@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Animation Scratch Preparation Byte Match
+
+[Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
+match all 191 words/original 0x68 frame of func_1502D824. Full semantic C stays
+unchanged; checked closed normalization changes 46 words and inserts four,
+with complete 187-word/five-relocation expectations. Thirteen final tests and
+both tools checks pass, including private frame contract/912 full fault pairs,
+public/native32/rebased/actual refresh and caller qualification. All 37 neighbors/
+other ELF/data/CSV exact; old guard prefix retained. Game 2,779/4,821 (57.64%),
+total 3,452/5,494 (62.83%), zero drift / 2,042 different; +1 matching only.
+Tools 672c03d first, no push, older dirty mirror preserved. Next: complete
+182-word func_15083AC8; timeline and actual resource/PI/hardware/runtime open.
+
 ## 2026-10-11 Animation Scratch Loop Shape Improvement
 
 [Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):

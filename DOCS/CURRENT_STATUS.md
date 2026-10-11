@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 995fcc3; tools are committed before the consumer pin.
+  checkpoint pins tools 672c03d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest animation scratch loop matching improvement:
+Latest complete animation scratch preparation byte match:
+[Note 1246](WORKING_NOTES/1246-game-animation-scratch-preparation-byte-match-20261011.md):
+func_1502D824 matches all 191 words/original 0x68 frame. Existing full semantic
+C is unchanged; 187 expectation rows protect the complete compiler fingerprint,
+46 changed words/four inserts normalize closed frame/constants/registers and
+branch schedules. Thirteen final tests and both tools checks pass; 912 fitted/
+retail full-access fault pairs, independent private-frame contract, native32,
+rebased helpers and actual refresh/caller qualify. All 37 neighbors/other ELF/
+data/CSV exact; old guard prefix retained. Game 2,779/4,821 (57.64%), total
+3,452/5,494 (62.83%), zero drift / 2,042 different; +1 matching credit only.
+Tools 672c03d first, no push, older dirty mirror preserved. Next: full 182-word
+func_15083AC8 constructor; timeline matching and actual resource/PI/hardware/
+renderer/gameplay acceptance remain open. Raw C still 187/0x50, not direct exact.
+
+Previous animation scratch loop matching improvement:
 [Note 1245](WORKING_NOTES/1245-game-animation-scratch-loop-shape-improvement-20261011.md):
 func_1502D824 now uses retail's guarded do-loop shape. Full unguarded C emits
 187 words / 0x50 frame, reducing raw/linked differences 162 -> 102 against
@@ -35,9 +49,9 @@ retail 191 / 0x68. Ten final tests and both tools checks pass; ordered public
 aliases/faults, 24,576 native32 runs and actual refresh/caller connections
 requalified. Only target slot/extent changes, all 37 neighbors/other ELF/data/
 guards/CSV exact; caller stays exact. Matching totals unchanged, no credit.
-Tools 995fcc3 first, no push, older dirty mirror preserved. Next: same
-routine's original frame/home, constant materialization and register schedule;
-private fault order, actual PI/hardware and full renderer/gameplay stay open.
+Tools 995fcc3 first, no push, older dirty mirror preserved. Original matching
+and fitted private fault order are completed in Note 1246; actual PI/hardware
+and full renderer/gameplay stay open.
 
 Previous complete animation scratch preparation restored; matching remains open:
 [Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
@@ -54,7 +68,7 @@ CSV exact. Correct typed void caller declaration retires three superseded
 base guards; the submit stays byte-exact with two placement guards, all four
 owner routines exact. Game 2,778/4,821, total 3,451/5,494, zero drift /
 2,043 different unchanged. Tools ee484d7 first, no push, older dirty mirror
-preserved. Next: finish this routine's original frame/word/scheduling match.
+preserved. Original frame/word match is completed in Note 1246.
 
 Previous complete node transform submission restored and byte-exact:
 [Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
