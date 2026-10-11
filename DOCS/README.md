@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Animation state allocation direct match](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
+  all 51 words/original 0x28 frame directly from C, no new guards. Typed
+  constructor scale call preserves its full fingerprint. Ten final tests/
+  both tools checks pass, modeled faults/native32 and actual three-helper
+  connection; all 30 neighbors/data/guards/CSV exact, +1 matching only.
+  Next: full 66-word descriptor-child cleanup; actual SDK/runtime remains open.
+
 - [Actor resource fields direct match](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
   all 68 words/original 0x18 frame directly from C, no new guards. Nine final
   tests/both tools checks pass, 1,265 full fault pairs, native32 and actual

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Animation State Allocation Direct Match
+
+[Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
+recover full typed func_150838EC, all 51 words/original 0x28 frame directly
+from C, no new guards. Preserve table gates, NULL failure, 64-byte clear and
+argument homes; typed constructor scale call keeps its full fingerprint.
+Ten final tests/both tools checks pass, 2,894 modeled fault pairs, native32
+and actual constructor/initializer/resource-helper chain. All 30 neighbors/
+data/guards/CSV exact; only target slot/extent changes. Game 2,782/4,821
+(57.71%), total 3,455/5,494 (62.89%), zero drift / 2,039 different; +1
+matching only. Tools ed89891 first, no push, older dirty mirror preserved.
+Next: full 66-word func_150836CC; actual allocator/SDK/hardware/gameplay open.
+
 ## 2026-10-11 Actor Resource Fields Direct Match
 
 [Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):

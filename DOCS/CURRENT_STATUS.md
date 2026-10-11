@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 83ade71; tools are committed before the consumer pin.
+  checkpoint pins tools ed89891; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete actor resource-field initializer direct match:
+Latest complete animation-state allocation direct match:
+[Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
+func_150838EC emits all 51 words/original 0x28 frame directly from C,
+no new guards. Recover table gates, NULL result store/failure return, 64-byte
+clear and typed float delegation. The cleaner typed constructor call preserves
+its complete 182-word fingerprint. Ten final tests/both tools checks pass,
+2,894 modeled full fault pairs, 32,768 native32 cases and actual constructor/
+initializer/resource-helper connections. All 30 neighbors/guard fingerprints/
+data/CSV exact; only target ELF slot/extent changes. Game 2,782/4,821 (57.71%),
+total 3,455/5,494 (62.89%), zero drift / 2,039 different; +1 matching only.
+Tools ed89891 first, no push, older dirty mirror preserved. Next: full
+66-word func_150836CC descriptor-child cleanup; actual runtime open.
+
+Previous complete actor resource-field initializer direct match; next helper finished in Note 1250:
 [Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
 func_150839B8 emits all 68 words/original 0x18 frame directly from C,
 no new guards. Recover three-argument void ABI, full-word identity gate,

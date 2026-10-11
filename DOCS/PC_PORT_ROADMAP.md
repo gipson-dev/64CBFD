@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Animation State Allocation Direct Match - 2026-10-11
+
+[Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
+
+- [x] Recover full typed func_150838EC and match all 51 words/original 0x28 frame directly from C, no new guards.
+- [x] Preserve table gates, allocation-result store before NULL check, failure return, 64-byte clear and late argument-home reloads.
+- [x] Clean up the constructor's typed scale call without changing its complete compiler fingerprint or existing guards; reject numeric conversion through both padding routes.
+- [x] Pass ten final tests: independent references, 2,894 modeled fault pairs, four corrupted-return pairs, rebases, effective negatives and 32,768 native32 cases.
+- [x] Execute actual constructor/initializer/resource-helper connections in 120 cases/240 runs, with 30 animation delegations per form.
+- [x] Preserve 30 neighbors/data/guards/CSV; only target ELF slot and 12-to-204 symbol extent change, both tools checks pass.
+- [x] Bank tools ed89891 first, preserve older dirty mirror and update README aggregate rows only, no push.
+- [x] Measure Game 2,782/4,821, total 3,455/5,494, zero drift; +1 matching credit, no converted credit.
+- [ ] Recover full 66-word func_150836CC with actual callback/descriptor/child-parent cleanup semantics.
+- [ ] Finish timeline matching and actual allocator/SDK/resource/hardware/renderer/gameplay acceptance.
+
 ## Actor Resource Fields Direct Match - 2026-10-11
 
 [Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
@@ -11,7 +26,7 @@
 - [x] Preserve 30 neighbors/all existing guard fingerprints/data/CSV; only target ELF slot and 12-to-272 symbol extent change, both tools checks pass.
 - [x] Bank tools 83ade71 first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,781/4,821, total 3,454/5,494, zero drift; +1 matching credit, no converted credit.
-- [ ] Recover full 51-word func_150838EC with actual argument-home/raw float ABI and preserve both completed routines.
+- [x] Recover and directly match full 51-word func_150838EC in Note 1250 with actual argument-home/typed float ABI; both completed routines preserved.
 - [ ] Finish timeline matching and actual resource/allocator/hardware/renderer/gameplay acceptance.
 
 ## Child Actor Constructor Byte Match - 2026-10-11
@@ -26,7 +41,7 @@
 - [x] Bank tools a9694bd first, preserve older dirty mirror and update README aggregate rows only, no push.
 - [x] Measure Game 2,780/4,821, total 3,453/5,494, zero drift; +1 matching credit, no new converted credit.
 - [x] Recover and directly match full 68-word func_150839B8 in Note 1249, without weakening the matched constructor fingerprint.
-- [ ] Recover adjacent full 51-word func_150838EC with actual argument-home/raw float ABI.
+- [x] Recover adjacent full 51-word func_150838EC in Note 1250 with actual argument-home/typed float ABI.
 - [ ] Finish timeline matching and actual resource/allocator/hardware/renderer/gameplay acceptance; raw C frame remains different.
 
 ## Child Actor Constructor Reconstruction - 2026-10-11

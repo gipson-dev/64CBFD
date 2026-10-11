@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1250](WORKING_NOTES/1250-game-animation-state-allocation-direct-match-20261011.md):
+recover typed func_150838EC, all 51 words/original 0x28 frame directly from
+C, no guards. Clean typed constructor scale call without changing its full
+fingerprint. Ten final tests/both tools checks pass, modeled faults/native32
+and actual constructor/initializer/resource-helper chain. All 30 neighbors/
+data/guards/CSV exact; only target slot/extent changes. Game 2,782/4,821,
+total 3,455/5,494, zero drift; +1 matching only. Tools ed89891 first, older
+dirty mirror preserved, no push. Next: full 66-word func_150836CC; actual
+allocator/SDK/hardware/gameplay acceptance stays separate.
+
+2026-10-11:
 [Note 1249](WORKING_NOTES/1249-game-actor-resource-fields-direct-match-20261011.md):
 recover full void func_150839B8, all 68 words/original 0x18 frame directly
 from C, no new guards. Nine final tests/both tools checks pass, 1,265 full

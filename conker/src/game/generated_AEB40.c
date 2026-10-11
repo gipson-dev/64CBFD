@@ -175,7 +175,30 @@ void func_150837D4(s32 slot, s32 identity, s32 unused) {
     }
 }
 
-s32 func_150838EC() {
+extern u32 D_800D1588[];
+void *allocate_memory(s32, s32, s32, s32);
+void func_1505E650(u8 *, u16, f32, f32, f32, f32, s32);
+
+s32 func_150838EC(u8 *actor, s32 state, s32 mode, f32 scale) {
+    s32 identity;
+    u8 *allocated;
+    u8 *destination;
+
+    identity = actor[4];
+    if (D_800D1588[identity] == 0) {
+        return 0;
+    }
+    if (D_800C5A90[identity] == 0) {
+        return 0;
+    }
+    allocated = allocate_memory(0x3E0, 1, 2, 0);
+    destination = actor;
+    *(u8 **)(destination + 0x2D0) = allocated;
+    if (allocated == NULL) {
+        return 1;
+    }
+    bzero(*(u8 **)(destination + 0x2D0), 0x40);
+    func_1505E650(actor, (u16)state, scale, 0.0f, 0.0f, 0.0f, mode);
     return 0;
 }
 
@@ -232,7 +255,6 @@ void func_150615DC(u8 *);
 u32 func_1515D480(s32);
 u32 func_1515D440(void);
 void func_150837D4(s32, s32, s32);
-s32 func_150838EC();
 
 u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
     s32 value, s32 flags, s32 inheritScale, s32 state, f32 scale) {
@@ -319,8 +341,7 @@ u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
     }
     func_150839B8(created, identity, 0);
     func_150837D4((s32)((u32)created - (u32)D_800CC2D0) / 0x32C, identity, 1);
-    /* The unrecovered helper takes the float's raw fourth O32 argument word. */
-    func_150838EC(created, state, mode, *(u32 *)&scale);
+    func_150838EC(created, state, mode, scale);
     if (active) {
         D_800C3638 = 1;
     }
