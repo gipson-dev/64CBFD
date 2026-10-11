@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Third Resource Loader Guard Audit And Actual Chain
+
+[Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
+func_1503D774 still uses six normalizations and one drop for 36 exact linked
+words; raw C 37/15, no direct candidate installed. Twelve focused/fifteen SDK
+tests pass; actual seventeen-body parent chain / 3,840 executions with real
+NULL/status-two failures. All production inputs/data exact; counts and root
+README unchanged, zero matching credit. Tools b6877d5 first, older HEAD/37
+fingerprints preserved/two absent copies, no push. Actual chain done; guard
+elimination and deeper SDK/heap/hardware/gameplay remain open.
+
 ## 2026-10-11 Record Resource Cleanup Direct Match
 
 [Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):

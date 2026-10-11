@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 663f63b; tools are committed before the consumer pin.
+  checkpoint pins tools b6877d5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest third-loader audit and actual-chain qualification:
+[Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
+func_1503D774 remains exact over 36 linked words with its six existing
+normalizations and one instruction drop; raw C is 37 words / 15 differences.
+No production input or matching-credit changes. Twelve new and fifteen SDK
+tests pass; actual seventeen-body parent chain / 3,840 executions, including
+real status-two NULL failures. All nine inputs/protected data exact. Fresh
+Game 2,796/4,822, total 3,469/5,495, zero drift / 2,026 different. Tools b6877d5
+first, older HEAD/37 fingerprints preserved/two absent copies, no push.
+README unchanged. Actual chain done; direct guard elimination remains next.
 
 Latest installed record-resource cleanup direct match:
 [Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):

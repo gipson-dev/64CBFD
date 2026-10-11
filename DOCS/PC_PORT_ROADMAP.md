@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Third Resource Loader Guard Audit And Actual Chain - 2026-10-11
+
+[Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
+
+- [x] Audit the complete 36-word loader, cached destination, six-argument request, status two and ordered block/first-word publications.
+- [x] Pass twelve focused and fifteen SDK tests, all 36 focused words, aliases/rebases, 80 fault pairs and fourteen stale-guard rejections.
+- [x] Replace the third-loader hook in the actual seventeen-body parent chain; assert both real success requests and NULL/status-two failures fire.
+- [x] Resolve both complete padded owner routes against current ELF bytes and preserve all 14 neighbors, extents and existing D804 selector.
+- [x] Preserve all nine production inputs/data, no matching credit or README churn; bank tools b6877d5 before the consumer docs/pin, preserve older HEAD/37 fingerprints, no push.
+- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop; no diagnostic shape is qualified direct C yet.
+- [ ] Eliminate parent/pair guards and qualify deeper SDK/allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Record Resource Cleanup Direct Match - 2026-10-11
 
 [Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
@@ -11,7 +23,8 @@
 - [x] Preserve all 14 owner neighbors through both padders, frozen audits and effective corruption controls; admit only the measured two-absolute-symbol metadata permutation.
 - [x] Audit exactly 149 changed ELF bytes, protected data/all other inputs exact, +1 matching only; update concise indexes/README aggregate rows and correct the prior hash transcription.
 - [x] Preserve older HEAD/35 fingerprints, copy only two absent files, pass shared checks/native py_compile and bank tools 663f63b before the consumer checkpoint, no push.
-- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop, and qualify its actual parent-chain body; already linked-exact, no new matching credit.
+- [x] Qualify func_1503D774's actual parent-chain body in Note 1273; already linked-exact, no new matching credit.
+- [ ] Eliminate func_1503D774's six normalization guards and one instruction drop; raw direct matching remains open after Note 1273's audit.
 - [ ] Eliminate parent/pair guards and qualify deeper allocator/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 
 ## Group Publication Propagation Direct Match - 2026-10-11

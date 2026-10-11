@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Third-loader guard audit and actual chain](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
+  existing guarded 36 words exact; raw 37/15, guard elimination still open.
+  Twelve new/fifteen SDK tests pass, actual seventeen-body chain and real
+  status-two failures. Production inputs/data/counts and root README unchanged.
+  Tools b6877d5 first, older history/fingerprints preserved, no push.
+
 - [Record resource-cleanup direct match](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
   all 43 body words directly exact, original frame/lifetimes and live callback
   loop, 172-byte extent / 180-byte slot. Twelve pre-install/97 installed and

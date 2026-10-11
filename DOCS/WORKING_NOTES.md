@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-11:
+[Note 1273](WORKING_NOTES/1273-game-third-resource-loader-guard-audit-and-actual-chain-20261011.md):
+third loader guarded36 remains exact, raw37/15 and direct guard removal open.
+Twelve new/fifteen SDK tests pass; actual seventeen-body parent chain / 3,840
+executions and real status-two failures. Nine inputs/data/README/counts
+unchanged, zero matching credit. Tools b6877d5 first, older HEAD/37 fingerprints
+preserved/two absent copies, no push. Next cached-slot/V0 lifetime probes.
+
+2026-10-11:
 [Note 1272](WORKING_NOTES/1272-game-record-resource-cleanup-direct-match-20261011.md):
 complete 43-word record-resource cleanup directly exact, original frame and
 callback-aware live count/table loop, 172-byte extent / 180-byte slot. Twelve
