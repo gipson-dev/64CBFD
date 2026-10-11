@@ -1,13 +1,42 @@
 #include <ultra64.h>
+#include "structs.h"
 
-/* Non-matching placeholders for the text-only asm slice asm/6C960.s. */
+/* Recovered routines for the text-only asm slice asm/6C960.s. */
 
 s32 func_1505E0C4(s32 arg0, s32 arg1, u8 *arg2, s32 arg3, s32 arg4,
                   s32 arg5, s32 arg6, f32 arg7, f32 arg8, f32 arg9,
                   f32 arg10, s32 arg11);
 
-s32 func_1503F4B0() {
-    return 0;
+extern u8 D_800BE9C0;
+extern f32 D_800BE9A4;
+void *allocate_memory(s32, s32, s32, s32);
+void func_10004074(void *);
+s32 func_1502D824();
+void func_150A81D0(u8 **, void *, u8 *, u8 *, s32, s16 *, s32, s32);
+void func_150A9984(u8 *, s32);
+void func_1507BDB0(struct197 *, f32, struct127 *, s32);
+
+void func_1503F4B0(u8 *node) {
+    void *temporary = NULL;
+    void *matrix;
+    s16 scale;
+    u8 *buffer;
+
+    if (((void **)(node + 0x3E0))[D_800BE9C0] != NULL) {
+        temporary = allocate_memory(0x320, 1, 2, 2);
+        func_1502D824(node, 0, temporary);
+        scale = 0x1000;
+        matrix = ((void **)(node + 0x3E0))[D_800BE9C0];
+        buffer = ((u8 **)(node + 0x3E8))[D_800BE9C0];
+        func_150A81D0(&buffer, matrix,
+            node, *(u8 **)(node + 0x3F0), node[0x3F4], &scale, 0, 0);
+        func_150A9984(((u8 **)(node + 0x3E8))[D_800BE9C0], node[0x3F4]);
+        node[0x3F6] = 1;
+    }
+    func_1507BDB0((struct197 *)node, D_800BE9A4, NULL, 0);
+    if (temporary != NULL) {
+        func_10004074(temporary);
+    }
 }
 
 s32 func_1503F5B8(u8 *arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4,

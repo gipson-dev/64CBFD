@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Node Transform Submission Byte Match - 2026-10-11
+
+[Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
+
+- [x] Recover the void caller contract, live selector/count reloads and gated temporary allocation with NULL preparation retained.
+- [x] Recover eight-word transform packet, empty halfword adjustment-stream terminator, independent submission cursor and typed timeline call.
+- [x] Emit all 66 C words/original 0x48 frame; qualify five checked placement/base guards, no inserts/omissions or profile changes.
+- [x] Pass 6,768 ordered guest runs, 699 fired fault pairs and nine independently rebased links covering all 14 relocation sites.
+- [x] Pass eight effective IDO/two native negatives and 15,360 optimized/unoptimized native32 runs.
+- [x] Execute actual retail/current timeline helpers in 64 finite/null-actor cases; retain current helper's 237 differences.
+- [x] Qualify three authentic JAL/delay windows in synthetic wrappers; do not claim complete callers executed.
+- [x] Preserve three neighbors/all other ELF/data/CSV and old guard prefix; all four owner routines are now byte-exact.
+- [x] Pass ten final target tests, nine scoped alternate behavior regressions and both tools checks; Game 2,778/4,821, total 3,451/5,494, zero drift.
+- [x] Bank tools e999db1 first, preserve older dirty mirror, root README aggregate rows only, no push.
+- [ ] Restore full 191-word func_1502D824, whose preparation callback remains a zero placeholder.
+- [ ] Restore full 182-word func_15083AC8 and match the timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
+
 ## Complete Alternate Resource Loader Byte Match - 2026-10-11
 
 [Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
@@ -13,7 +30,7 @@
 - [x] Preserve three neighbors/all other ELF/data/CSV; only target slot/extent plus 24 appended guards change.
 - [x] Pass ten final target tests, 17 scoped regressions and both tools checks; Game 2,777/4,821, total 3,450/5,494, zero drift.
 - [x] Bank tools 030412c first, preserve older dirty mirror, root README aggregate rows only, no push.
-- [ ] Recover full 66-word func_1503F4B0, the remaining zero placeholder in this owner.
+- [x] Recover full 66-word func_1503F4B0 in Note 1243; all four owner routines now match retail.
 - [ ] Restore full 182-word func_15083AC8; actual resource/allocator/hardware/gameplay acceptance remains separate.
 
 ## Complete Default Resource Loader Direct Byte Match - 2026-10-11

@@ -54,12 +54,20 @@ confirmed.
 
 ## Planning and history
 
+- [Complete node transform submission byte match](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
+  full 66-word C/original frame with five checked guards; ten final target
+  tests, nine scoped behavior regressions and both tools checks pass. Live
+  selector, NULL preparation, transform packet, native32, actual bounded
+  timeline helpers and three synthetic caller windows qualify. All four owner
+  routines exact; all other ELF/data/CSV retained. +1 matching credit only.
+  Next: full 191-word func_1502D824; complete caller/runtime acceptance stays open.
+
 - [Complete alternate resource loader byte match](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
   full 99-word C/original frame and 24 closed S0/S1 guards; ten final target
   tests, 17 scoped regressions and both tools checks pass. Live outputs,
   NULL-free gates, guest unwritten-count boundary and real initializer/default/
   action chain qualify. Three neighbors/all other ELF/data/CSV exact; +1
-  matching credit only. Next: full 66-word func_1503F4B0; runtime stays open.
+  matching credit only. Full 66-word follow-up completed in Note 1243; runtime stays open.
 
 - [Complete default resource loader direct byte match](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
   full 114-word C/original frame without guards; ten final tests/both tools

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 030412c; tools are committed before the consumer pin.
+  checkpoint pins tools e999db1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete alternate node resource loader restored and byte-exact:
+Latest complete node transform submission restored and byte-exact:
+[Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
+func_1503F4B0 replaces the last zero placeholder in this owner with all 66
+words/original 0x48 frame. Five checked terminator-placement/closed-base
+guards; no inserts/omissions. Ten final target tests, nine scoped alternate
+behavior regressions and both tools checks pass. Live selector/count reloads,
+NULL temporary preparation, eight-word transform packet and unconditional
+typed timeline call qualify. Actual retail/current timeline helpers execute
+in bounded finite/null-actor cases; current helper still has 237 differences.
+Three authentic call windows use synthetic wrappers, not complete callers.
+All four owner routines now exact; only target slot/extent changes, all other
+ELF/data/CSV and old guard prefix retained. Game 2,778/4,821 (57.62%), total
+3,451/5,494 (62.81%), zero drift / 2,043 different; +1 matching credit only.
+Tools e999db1 first, no push; older dirty mirror preserved. Next: full
+191-word func_1502D824, the still-stubbed preparation callback. Full 182-word
+func_15083AC8, timeline matching and resource/allocator/hardware/gameplay stay open.
+
+Previous complete alternate node resource loader restored and byte-exact:
 [Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
 func_1503F62C replaces its zero placeholder with all 99 words/original 0x40
 frame; 24 checked closed S0/S1 guards, no inserts/omissions. Ten final target
@@ -37,7 +54,7 @@ gates qualify; unwritten count on nested failure is a guest-only boundary.
 Three neighbors/all other ELF/data/CSV exact; old guard prefix retained.
 Game 2,777/4,821 (57.60%), total 3,450/5,494 (62.80%), zero drift /
 2,044 different; +1 matching credit only. Tools 030412c first, no push;
-older dirty mirror preserved. Next: full 66-word func_1503F4B0 in this owner.
+older dirty mirror preserved. Full 66-word follow-up completed in Note 1243.
 Full 182-word func_15083AC8 and actual resource/allocator/gameplay stay open.
 
 Previous complete default node resource loader emits directly from C:

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
+recover full func_1503F4B0, 66 words/original 0x48 frame with five checked
+placement/base guards. Ten final target tests, nine scoped behavior regressions
+and both tools checks pass; live selector, NULL preparation, eight-word packet,
+native32, actual bounded timeline helpers and synthetic caller windows qualify.
+All four owner routines exact; other ELF/data/CSV and old guard prefix retained.
+Game 2,778/4,821, total 3,451/5,494, zero drift; +1 matching credit only.
+Tools e999db1 first, no push, older dirty mirror preserved. Next: full
+191-word func_1502D824; timeline matching and complete runtime stay open.
+
+2026-10-11:
 [Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
 recover full func_1503F62C, 99 words / original 0x40 frame with 24 closed
 S0/S1 guards. Ten final target tests, 17 scoped regressions and both tools

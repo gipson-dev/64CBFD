@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Complete Node Transform Submission Byte Match
+
+[Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
+restore full func_1503F4B0, 66 words / 264 bytes, original 0x48 frame and five
+checked placement/base guards. Ten final target tests, nine scoped alternate
+behavior regressions and both tools checks pass. Live selector/count, NULL
+preparation, eight-word packet, native32 and bounded actual timeline helpers
+qualify; three authentic call windows use synthetic wrappers, not complete
+callers. All four owner routines exact; only target slot/extent changes,
+all other ELF/data/CSV and old guard prefix retained. Game 2,778/4,821,
+total 3,451/5,494, zero drift / 2,043 different; +1 matching credit only.
+Tools e999db1 first, no push, older dirty mirror preserved. Next: full
+191-word func_1502D824; current timeline's 237 differences and complete
+resource/allocator/hardware/gameplay acceptance stay open.
+
 ## 2026-10-11 Complete Alternate Resource Loader Byte Match
 
 [Note 1242](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
