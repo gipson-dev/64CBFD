@@ -11,7 +11,7 @@ extern u8 D_800BE9C0;
 extern f32 D_800BE9A4;
 void *allocate_memory(s32, s32, s32, s32);
 void func_10004074(void *);
-s32 func_1502D824();
+void func_1502D824(u8 *, u8 *, u8 *);
 void func_150A81D0(u8 **, void *, u8 *, u8 *, s32, s16 *, s32, s32);
 void func_150A9984(u8 *, s32);
 void func_1507BDB0(struct197 *, f32, struct127 *, s32);

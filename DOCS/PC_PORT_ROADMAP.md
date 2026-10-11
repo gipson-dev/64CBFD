@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Animation Scratch Preparation Reconstruction - 2026-10-11
+
+[Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
+
+- [x] Recover complete void preparation body, actor/sentinel/node gates and cached signed one/two-bank selection.
+- [x] Recover finite frame/stride selection, aligned scratch/output pointers, small-copy/DMA threshold and wrap copies with live reloads.
+- [x] Pass ten final tests, 2,688 ordered guest runs, 652 fired public fault pairs, seven IDO/one native negatives and 24,576 native32 runs.
+- [x] Execute actual 33-word refresh and complete 66-word transform caller with both full retail/current preparation bodies.
+- [x] Qualify all five JAL sites at three rebases; preserve 37 neighbors, all other ELF/data/CSV and all but three explicitly superseded guard rows.
+- [x] Correct typed void caller declaration; keep all four caller-owner routines exact and reduce submit guards from five to two.
+- [x] Pass nine scoped submit regressions/both tools checks; bank tools ee484d7 first and preserve older dirty mirror, no push.
+- [x] Verify unchanged matching totals: Game 2,778/4,821, total 3,451/5,494, zero drift; no extra conversion credit.
+- [ ] Match original 191 words / 0x68 frame; current unguarded full C emits 188 / 0x50 with 162 linked word differences.
+- [ ] Qualify private frame/fault order and invalid-conversion/FCSR cases; actual PI/hardware, full renderer and gameplay remain separate.
+
 ## Complete Node Transform Submission Byte Match - 2026-10-11
 
 [Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
@@ -14,7 +29,7 @@
 - [x] Preserve three neighbors/all other ELF/data/CSV and old guard prefix; all four owner routines are now byte-exact.
 - [x] Pass ten final target tests, nine scoped alternate behavior regressions and both tools checks; Game 2,778/4,821, total 3,451/5,494, zero drift.
 - [x] Bank tools e999db1 first, preserve older dirty mirror, root README aggregate rows only, no push.
-- [ ] Restore full 191-word func_1502D824, whose preparation callback remains a zero placeholder.
+- [x] Restore complete func_1502D824 preparation semantics in Note 1244; its 191-word retail byte match remains open.
 - [ ] Restore full 182-word func_15083AC8 and match the timeline helper; resource/allocator/hardware/gameplay acceptance stays separate.
 
 ## Complete Alternate Resource Loader Byte Match - 2026-10-11

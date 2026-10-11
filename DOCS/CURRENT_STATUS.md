@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e999db1; tools are committed before the consumer pin.
+  checkpoint pins tools ee484d7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete node transform submission restored and byte-exact:
+Latest complete animation scratch preparation restored; matching remains open:
+[Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
+func_1502D824's zero placeholder is replaced with full semantic C for one/two
+banks, frame/stride selection, aligned PI packets and wrap copies. C emits
+188 words / 0x50 frame against retail's 191 / 0x68; 162 linked word
+differences remain, no new guards or matching/converted credit. Ten final
+tests, nine scoped submit regressions and both tools checks pass, including
+24,576 native32 runs, ordered public aliases/faults, actual 33-word refresh
+and complete 66-word caller connections. Private frame/fault order, invalid
+float conversions, actual PI/hardware and full renderer/gameplay stay open.
+Only preparation slot/extent changes in ELF; 37 neighbors, all other ELF/data/
+CSV exact. Correct typed void caller declaration retires three superseded
+base guards; the submit stays byte-exact with two placement guards, all four
+owner routines exact. Game 2,778/4,821, total 3,451/5,494, zero drift /
+2,043 different unchanged. Tools ee484d7 first, no push, older dirty mirror
+preserved. Next: finish this routine's original frame/word/scheduling match.
+
+Previous complete node transform submission restored and byte-exact:
 [Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
 func_1503F4B0 replaces the last zero placeholder in this owner with all 66
 words/original 0x48 frame. Five checked terminator-placement/closed-base
@@ -40,8 +57,8 @@ Three authentic call windows use synthetic wrappers, not complete callers.
 All four owner routines now exact; only target slot/extent changes, all other
 ELF/data/CSV and old guard prefix retained. Game 2,778/4,821 (57.62%), total
 3,451/5,494 (62.81%), zero drift / 2,043 different; +1 matching credit only.
-Tools e999db1 first, no push; older dirty mirror preserved. Next: full
-191-word func_1502D824, the still-stubbed preparation callback. Full 182-word
+Tools e999db1 first, no push; older dirty mirror preserved. The full
+preparation body is restored in Note 1244; its byte matching remains open. Full 182-word
 func_15083AC8, timeline matching and resource/allocator/hardware/gameplay stay open.
 
 Previous complete alternate node resource loader restored and byte-exact:

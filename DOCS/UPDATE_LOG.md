@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-11 Animation Scratch Preparation Reconstruction
+
+[Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
+replace func_1502D824's zero placeholder with complete one/two-bank C,
+frame/stride selection, aligned PI packets and wrap copies. Ten final tests,
+nine scoped submit regressions and both tools checks pass; actual refresh/
+caller connections, 24,576 native32 runs and public fault/alias qualification.
+Only preparation slot/extent changes; 37 neighbors/all other ELF/data/CSV exact.
+Typed void caller declaration retires three superseded base guards; submit
+stays exact with two placement guards. No matching/converted credit: new C
+188 words/0x50 frame still differs at 162 words from retail 191/0x68.
+Game 2,778/4,821, total 3,451/5,494, zero drift / 2,043 different unchanged.
+Tools ee484d7 first, no push, older dirty mirror preserved. Next: finish this
+routine's frame/scheduling match; private frame/fault order, actual PI/hardware
+and complete renderer/gameplay stay open.
+
 ## 2026-10-11 Complete Node Transform Submission Byte Match
 
 [Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):

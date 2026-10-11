@@ -709,8 +709,93 @@ void func_1502D630(u8 *actor, s32 *parameters, s32 view) {
     parameters[3] = (s32)((1.0f - factor) * 255.0f);
 }
 
-s32 func_1502D824() {
-    return 0;
+void func_1505DFDC(u8 *);
+void func_1000480C(s32, void *, u32);
+s32 func_10004514(s32, void *, u32, s32);
+
+void func_1502D824(u8 *node, u8 *actor, u8 *scratch) {
+    s32 banks = 1;
+    s32 bank;
+    u8 *state;
+    u8 *fields;
+    s32 length;
+    s32 wrap;
+    s32 index;
+    s32 stride;
+    u32 address;
+    u32 amount;
+    u8 offset;
+    f32 frame;
+    f32 end;
+
+    if (actor != NULL) {
+        if (*(u16 *)(actor + 0x84) == 0xFFFF) {
+            func_1505DFDC(actor);
+        }
+        node = *(u8 **)(actor + 0x2D0);
+    }
+    if (node != NULL) {
+        if (*(s16 *)(node + 0x3C) > 0) {
+            banks = 2;
+        }
+        state = node;
+        for (bank = 0; bank != banks; bank++, state += 0x1D0) {
+            length = state[0x45];
+            fields = node + bank * 4;
+            wrap = 0;
+            if (length == 0) {
+                node[0x38 + bank] = 0;
+            } else if (*(u8 **)(fields + 0x28) != NULL) {
+                frame = *(f32 *)(fields + 8);
+                end = *(f32 *)(fields + 0x18);
+                scratch = (u8 *)(((u32)scratch + 15) >> 4 << 4);
+                amount = length * 2;
+                index = (s32)frame;
+                if (end <= (f32)index) {
+                    index = (s32)(end - 1.0f);
+                }
+                stride = state[0x48] + 1;
+                if (stride >= 2) {
+                    if (end - 1.0f <= (f32)index) {
+                        index = (s32)((end - 1.0f + (f32)(stride - 1)) / (f32)stride);
+                    } else {
+                        index /= stride;
+                    }
+                }
+                address = (u32)*(u8 **)(fields + 0x28) + length * index;
+                offset = address & 3;
+                address -= offset;
+                if (end <= frame + 1.0f) {
+                    wrap = 1;
+                    amount = length;
+                } else {
+                    node[0x38 + bank] = length;
+                }
+                amount += offset;
+                *(u8 **)(fields + 0x30) = scratch + offset;
+                if (amount < 0xC8U) {
+                    func_1000480C(address, scratch, amount);
+                } else {
+                    func_10004514(address, scratch, (amount + 15) & ~15, 1);
+                }
+                scratch += amount;
+                if (wrap != 0) {
+                    address = (u32)*(u8 **)(fields + 0x28);
+                    scratch = (u8 *)(((u32)scratch + 15) >> 4 << 4);
+                    offset = address & 1;
+                    amount = offset + length;
+                    address -= offset;
+                    if (amount < 0xC8U) {
+                        func_1000480C(address, scratch, amount);
+                    } else {
+                        func_10004514(address, scratch, (amount + 15) & ~15, 1);
+                    }
+                    node[0x38 + bank] = (u32)(scratch + offset) - (u32)*(u8 **)(fields + 0x30);
+                    scratch += amount;
+                }
+            }
+        }
+    }
 }
 
 s32 func_1502DB20(s32 arg0) {

@@ -54,13 +54,22 @@ confirmed.
 
 ## Planning and history
 
+- [Animation scratch preparation reconstruction](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
+  complete one/two-bank C, aligned PI packets and wrap/live reloads; ten final
+  tests, nine scoped submit regressions and both tools checks pass. Actual
+  refresh/caller connections, native32 and public fault/alias qualification;
+  37 neighbors/all other ELF/data/CSV unchanged. Typed void declaration retires
+  three submit guards, preserving its exact body with two. No matching credit:
+  preparation still has 162 differences. Next: original 191-word/0x68 match;
+  private frame, actual PI/hardware and full renderer/gameplay remain open.
+
 - [Complete node transform submission byte match](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
   full 66-word C/original frame with five checked guards; ten final target
   tests, nine scoped behavior regressions and both tools checks pass. Live
   selector, NULL preparation, transform packet, native32, actual bounded
   timeline helpers and three synthetic caller windows qualify. All four owner
   routines exact; all other ELF/data/CSV retained. +1 matching credit only.
-  Next: full 191-word func_1502D824; complete caller/runtime acceptance stays open.
+  Preparation semantics restored in Note 1244; its byte match and runtime stay open.
 
 - [Complete alternate resource loader byte match](WORKING_NOTES/1242-game-complete-node-alternate-loader-byte-match-20261011.md):
   full 99-word C/original frame and 24 closed S0/S1 guards; ten final target

@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-11:
+[Note 1244](WORKING_NOTES/1244-game-animation-scratch-preparation-reconstruction-20261011.md):
+recover complete func_1502D824 preparation C, one/two banks, aligned PI packets,
+frame/stride selection and wrap/live reloads. Ten final tests, nine scoped
+submit regressions and both tools checks pass; actual refresh/caller, native32
+and public alias/fault qualification. 37 neighbors/all other ELF/data/CSV exact;
+typed void caller declaration retires three guards, submit exact with two.
+No matching/converted credit: 188-word/0x50 C versus 191/0x68 retail,
+162 linked differences. Totals unchanged, zero drift. Tools ee484d7 first,
+no push, older dirty mirror preserved. Next: finish this frame/scheduling match;
+private frame, actual PI/hardware and complete renderer/gameplay remain open.
+
+2026-10-11:
 [Note 1243](WORKING_NOTES/1243-game-node-transform-submission-byte-match-20261011.md):
 recover full func_1503F4B0, 66 words/original 0x48 frame with five checked
 placement/base guards. Ten final target tests, nine scoped behavior regressions
