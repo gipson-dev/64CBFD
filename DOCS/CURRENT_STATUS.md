@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 563924a; tools are committed before the consumer pin.
+  checkpoint pins tools b503474; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest complete resource-extras loader direct match:
+Latest complete main resource-loader semantic recovery, not yet matching:
+[Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
+func_1503CF20 replaces its zero-return stub with complete publication,
+both relocation loops, extras/event/helper gates and every failure rollback.
+Qualified C emits 272 of 274 slot words, frame 0x88 versus retail 0x78,
+273 raw word differences, no guards. Ten final tests pass: all 273 reachable
+retail words (one unreachable duplicate compare), 1,800 fired public-access
+fault pairs, ten effective controls and 12,096 native32 cases. A 768-case
+actual parent/main/extras/relocator/buffer chain passes within documented
+deeper-helper bounds. All 14 neighbors/data/guards/CSV exact; 828 ELF bytes
+change only in target/extent/verified metadata ordering. WSL checks pass.
+Matching totals unchanged: Game 2,789/4,822, total 3,462/5,495, zero drift,
+2,033 different; no matching/conversion credit. Root README remains correct
+and unchanged. Tools b503474 first, older dirty work preserved, no push.
+Next: match this same full function's original 0x78 frame, saved S6 error
+lifetime, stack layout and instruction schedule without dropping any path.
+Deeper helper/heap/hardware/renderer/gameplay acceptance stays separate.
+
+Previous complete resource-extras loader direct match:
 [Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
 func_1503DC3C emits all 56 words/original 0x38 frame directly from complete
 C, no guards. Preserve unsigned live count, 12-byte descriptors, publication
@@ -39,9 +57,8 @@ Only 170 ELF bytes change: 169 target and one extent; every other byte,
 all 14 neighbors/data/guards/CSV exact. WSL checks pass. Game 2,789/4,822
 (57.84%), total 3,462/5,495 (63.00%), zero drift / 2,033 different; +1 matching
 only. Tools 563924a first, no push, older dirty work preserved.
-Next: complete 274-word func_1503CF20 main loader, original 0x78 frame,
-including descriptor publication/relocation and every error-cleanup path.
-Deeper helpers/heap/hardware/renderer/gameplay remain separately open.
+The then-open full main loader is semantically recovered in Note 1260;
+its original frame/byte matching and deeper runtime remain separately open.
 
 Previous complete resource-preparation caller direct match:
 [Note 1258](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):

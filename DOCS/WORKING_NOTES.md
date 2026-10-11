@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
+complete func_1503CF20 semantic recovery, all publication/loop/error cleanup
+paths; 272 words in 274-word slot, frame 0x88, 273 raw differences, no guards.
+Ten final tests/full reachable retail coverage/native32/public faults/
+actual five-routine chain pass. All 14 neighbors/data/guards/CSV exact;
+828 ELF bytes only in target/extent/verified metadata order. No matching
+credit; tools b503474 first, older preserved, no push. Continue this same
+routine's original 0x78 frame and byte matching; deeper runtime stays open.
+
+2026-10-11:
 [Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
 complete 56-word func_1503DC3C direct match, original 0x38 frame, no guards.
 Ten final tests/all-word coverage/native32/faults/live publication aliases/

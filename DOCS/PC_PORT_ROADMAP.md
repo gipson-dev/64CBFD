@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader Recovery - 2026-10-11
+
+[Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
+
+- [x] Recover complete func_1503CF20 identity/presence/allocation gates, header/data publication and all pointer/count tables.
+- [x] Preserve live unsigned-halfword primary count versus cached word secondary count, base reloads, extras/event dispatch and helper failure propagation.
+- [x] Recover all optional/free/cleanup/NULL paths, config bit/fifth-word flags and typed five-word caller contract.
+- [x] Fit full semantic C into 274-word slot: 272 emitted words, 0x88 frame, no guards; explicitly not yet a byte match.
+- [x] Pass ten final tests, all 273 reachable retail words, one statically unreachable duplicate comparison, 1,800 fired public-access faults, ten effective controls and 12,096 native32 cases.
+- [x] Execute 768 cases through actual parent/main/extras/relocator/buffer code; document reached-word counts and bounded deeper helpers rather than claiming complete runtime acceptance.
+- [x] Preserve all 14 neighbors/pools through both padders; audit 828 ELF bytes only in target/extent/verified metadata ordering, all protected data/guards/CSV exact.
+- [x] Pass consumer/mounted/older WSL tools checks and native new-file py_compile; bank tools b503474 first, preserve older dirty work, no push.
+- [x] Remeasure unchanged Game 2,789/4,822 and total 3,462/5,495, zero drift; no matching/conversion credit and no README narrative.
+- [ ] Match this same complete function's retail 274 words/original 0x78 frame, saved S6 error lifetime, private layout and scheduling.
+- [ ] Recover deeper helper implementations and qualify real heap/hardware/renderer/gameplay separately; full Game matching goal remains active.
+
 ## Resource Extras Loader Direct Match - 2026-10-11
 
 [Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
@@ -13,7 +29,7 @@
 - [x] Verify every other ELF byte, 189,088 protected data bytes/720 owners, guard history, conversion CSV, tracked symbols/layout and auto assignments exact.
 - [x] Pass consumer/mounted/older WSL tools checks and new-file native py_compile; bank tools 563924a first, preserve older dirty work, no push.
 - [x] Measure Game 2,789/4,822 (57.84%), total 3,462/5,495 (63.00%), zero drift / 2,033 different; +1 matching only.
-- [ ] Recover and qualify complete 274-word func_1503CF20 main loader, original 0x78 frame, including all descriptor loops, helper failures and cleanup/free paths.
+- [x] Recover and qualify complete func_1503CF20 semantics in Note 1260, including all descriptor loops, helper failures and cleanup/free paths; original 0x78 frame and byte matching remain open.
 - [ ] Complete deeper callbacks/heap/hardware/renderer/gameplay acceptance separately; full Game matching goal remains active.
 
 ## Resource Preparation Caller Direct Match - 2026-10-11

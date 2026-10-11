@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader Recovery
+
+[Note 1260](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
+func_1503CF20 replaces its zero-return stub with complete header/table
+publication, distinct live/cached relocation loops, extras/event/helper gates
+and all failure cleanup. Emit 272 words in 274-word slot, frame 0x88 versus
+retail 0x78, 273 raw differences, no guards. Ten final tests pass: all 273
+reachable retail words, 1,800 public-access fault pairs, ten effective
+controls, 12,096 native32 cases and actual parent/main/extras/relocator/buffer
+chain. All 14 neighbors/data/guards/CSV exact; 828 ELF bytes change only in
+target/extent/verified metadata order. Matching totals unchanged, no credit.
+Tools b503474 first, older dirty work preserved, no push. Next: original
+frame/stack/register lifetime and byte matching for this same full routine.
+
 ## 2026-10-11 Resource Extras Loader Direct Match
 
 [Note 1259](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):

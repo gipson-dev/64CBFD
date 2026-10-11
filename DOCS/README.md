@@ -54,12 +54,20 @@ confirmed.
 
 ## Planning and history
 
+- [Main resource-loader recovery](WORKING_NOTES/1260-game-main-resource-loader-recovery-20261011.md):
+  complete func_1503CF20 replaces its zero-return stub; 272 emitted words
+  in the 274-word slot, larger frame/273 raw differences, no guards.
+  Ten final tests, full reachable retail coverage, native32, aliases/faults
+  and actual five-routine chain pass within bounded deeper helpers.
+  All other code/data/guards/CSV exact. No matching credit; continue this
+  same function's original frame and byte matching.
+
 - [Resource extras loader direct match](WORKING_NOTES/1259-game-resource-extras-loader-direct-match-20261011.md):
   all 56 func_1503DC3C words/original frame directly from complete C, no
   guards. Ten final tests, live count/base publication aliases and actual
   caller/extras/buffer chain pass. Only 170 target/extent ELF bytes change;
-  all other bytes/guards/CSV exact, +1 matching. Next: full 274-word main
-  loader including every failure cleanup; deeper runtime remains open.
+  all other bytes/guards/CSV exact, +1 matching. Full main-loader semantics
+  are recovered in Note 1260; its byte matching/deeper runtime stay open.
 
 - [Resource preparation caller direct match](WORKING_NOTES/1258-game-resource-preparation-caller-direct-match-20261011.md):
   all 104 func_1503DA9C words/original frame directly from complete C, no
