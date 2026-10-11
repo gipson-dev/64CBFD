@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-11:
+[Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
+recover full func_1502FE10, 114 words / original 0x50 frame directly from C,
+no guards. Ten final tests/both tools checks pass; cache rollover, live record/
+count loop, native32 and actual initializer output consumption qualify.
+All 39 neighbors/other ELF/data/guards/CSV exact. Game 2,776/4,821,
+total 3,449/5,494, zero drift; +1 matching credit only. Tools daabcf7 first,
+no push, older dirty mirror preserved. Next: full 99-word func_1503F62C;
+alternate-loader failure/output boundary and complete runtime work stay open.
+
+2026-10-11:
 [Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
 recover full func_15030158, 102 words / original 0x20 frame and five checked
 register-transfer guards, memory order exact. Ten final tests/both tools checks

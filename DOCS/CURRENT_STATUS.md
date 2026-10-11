@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 088efd4; tools are committed before the consumer pin.
+  checkpoint pins tools daabcf7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest complete default node resource loader emits directly from C:
+[Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
+func_1502FE10 replaces its zero placeholder with all 114 words/original 0x50
+frame, no guards. Ten final tests/both tools checks pass; live record/count
+loop, retained-cache rollover, native32 and actual initializer consuming real
+source outputs qualify. All 39 neighbors/other ELF/data/guards/CSV exact;
++1 matching credit only. Game 2,776/4,821 (57.58%), total 3,449/5,494
+(62.78%), zero drift / 2,045 different. Tools daabcf7 first, no push; older
+dirty mirror preserved. Next: full 99-word func_1503F62C alternate loader;
+its ignored nested status/unwritten output and NULL-free branches need explicit
+qualification. Complete resource/allocator and hardware/live gameplay stay open.
 
 Latest complete node release restored and byte-exact:
 [Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):

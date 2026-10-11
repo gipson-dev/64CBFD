@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Complete default resource loader direct byte match](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
+  full 114-word C/original frame without guards; ten final tests/both tools
+  checks pass. Live record/count loop, cache rollover, native32 and actual
+  initializer consuming real outputs qualify; all 39 neighbors/other ELF/data/
+  guards/CSV exact. +1 matching credit. Next: full 99-word func_1503F62C;
+  alternate-loader and complete resource/allocator/gameplay work stay open.
+
 - [Complete node release byte match](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
   full 102-word C with five closed register-transfer guards and retail memory
   order; ten final tests/both tools checks pass. Native32, actual dispatcher

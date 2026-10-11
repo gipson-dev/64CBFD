@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Complete Default Resource Loader Direct Byte Match - 2026-10-11
+
+[Note 1241](WORKING_NOTES/1241-game-complete-node-resource-loader-direct-byte-match-20261011.md):
+
+- [x] Recover seven arguments, cache/miss/NULL gate, live record relocation/count loop, reference rollover and required/optional outputs.
+- [x] Emit all 114 words/original 0x50 frame directly from C, no guards or profile changes.
+- [x] Pass 9,216 ordered guest runs, 402 fired alias/fault triples and nine independently rebased links.
+- [x] Pass ten effective IDO/two native negatives and 13,824 optimized/unoptimized native32 runs.
+- [x] Execute actual 96-word initializer consuming real source outputs in 576 cases; confirm 181 injected access faults fire.
+- [x] Prove repeated hits do not rebase records twice and rollover triggers a fresh-header miss.
+- [x] Preserve all 39 neighbors and all other ELF/data/guards/CSV bytes; +1 matching credit only, zero drift.
+- [x] Pass ten final tests/both tools checks; bank tools daabcf7 first, preserve older dirty mirror, no push.
+- [ ] Recover full 99-word func_1503F62C, including actual default-loader connection and retail failure/output boundary.
+- [ ] Restore full 182-word func_15083AC8; actual resource/allocator/hardware/gameplay acceptance stays separate.
+
 ## Complete Node Release Byte Match - 2026-10-11
 
 [Note 1240](WORKING_NOTES/1240-game-complete-node-release-byte-match-20261011.md):
@@ -12,7 +27,7 @@
 - [x] Preserve all 39 neighbors/protected inputs; audit only target slot/extent changed, conversion CSV exact.
 - [x] Pass ten final tests/both tools checks; +1 matching credit only, Game 2,775/4,821 and total 3,448/5,494, zero drift.
 - [x] Bank tools 088efd4 first; preserve older dirty mirror, no push, root README aggregate rows only.
-- [ ] Restore complete 114-word func_1502FE10 and qualify required success outputs through the real initializer.
+- [x] Restore complete 114-word func_1502FE10 and qualify required success outputs through the real initializer in Note 1241.
 - [ ] Restore alternate func_1503F62C and full 182-word func_15083AC8; actual resource/allocator and gameplay acceptance stay separate.
 
 ## Complete Node Resource Initializer Byte Match - 2026-10-11
@@ -29,7 +44,8 @@
 - [x] Pass ten final tests/both tools checks; +1 matching credit, no extra conversion credit.
 - [x] Bank tools 8ec8484 first; preserve older dirty mirror, no push, root README aggregate rows only.
 - [x] Restore full 102-word func_15030158 and qualify actual factory rollback/unlink/free behavior in Note 1240.
-- [ ] Restore deeper func_1502FE10/func_1503F62C loaders and full 182-word func_15083AC8; gameplay acceptance stays separate.
+- [x] Restore complete default func_1502FE10 loader and real initializer outputs in Note 1241.
+- [ ] Restore alternate func_1503F62C and full 182-word func_15083AC8; gameplay acceptance stays separate.
 
 ## Complete Animation Node Constructor Byte Match - 2026-10-10
 
