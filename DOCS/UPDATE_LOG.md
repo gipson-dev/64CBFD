@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-11 Command-Stream Relocator Direct Match
+
+[Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
+complete func_1503D368 now emits all 52 retail words directly from its typed
+SDK Gfx scan, original 0x38 frame/S0..S6 and unchanged profile, no new guards.
+Eleven pre-install and 38 installed/parent/focused historical tests pass,
+214 complete fault triples, 65,754 native32 cases per profile and the actual
+child connected to the bounded six-body loader chain. Only 159 ELF bytes
+change (158 target, one extent); every other byte/data/guard/CSV exact.
+Fresh Game 2,791/4,822, total 3,464/5,495, zero drift / 2,031 different.
+One matching credit only, README aggregate rows only. Tools 349aa21 first,
+older HEAD/25 fingerprints preserved/two absent copies, no push. Next full
+46-word func_1503D984; parent guard elimination and runtime remain open.
+
 ## 2026-10-11 Main Resource Loader Full Guarded Match
 
 [Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):

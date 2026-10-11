@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f54c9fb; tools are committed before the consumer pin.
+  checkpoint pins tools 349aa21; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed command-stream relocator direct match:
+[Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
+complete func_1503D368 emits all 52 retail words directly with original 0x38
+frame/S0..S6, typed SDK Gfx/void/u32 interface and no new guards/profile changes.
+Eleven pre-install and 38 installed/parent/focused historical tests pass;
+actual 52-word child replaces its bounded loader-chain hook. Only 159 ELF
+bytes change (158 target, one extent); every other byte/data/guard/CSV exact.
+Fresh Game 2,791/4,822, total 3,464/5,495, zero drift / 2,031 different.
+One matching credit, no conversion; README aggregate rows only. Tools 349aa21
+banked first, older HEAD/25 fingerprints preserved/two absent copies, no push.
+Next: full 46-word func_1503D984 command counter, still a placeholder.
+Parent's 22 raw guards and deeper heap/hardware/renderer/gameplay stay open.
 
 Latest installed main resource-loader full guarded match:
 [Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):

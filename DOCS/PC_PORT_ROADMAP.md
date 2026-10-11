@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Command-Stream Relocator Direct Match - 2026-10-11
+
+[Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
+
+- [x] Recover the full 52-word signed-opcode/eight-byte Gfx scan, NULL/DF gates and vertex/memory-subtype relocation contract.
+- [x] Type the void/Gfx/u32 interface and two real callers without changing parent instructions; use the original compiler profile.
+- [x] Emit all 52 retail words directly with original 0x38 frame/S0..S6, no new guards, diagnostics or pools; finish 34 diagnostic forms.
+- [x] Pass eleven pre-install and 38 fresh post-install/parent/focused historical tests, including all 51 reachable words, 214 full fault triples and 65,754 native32 cases per profile.
+- [x] Preserve both actual padded owners/all 14 neighbors and connect the actual child to the six-body loader chain; retain deeper helper/runtime boundaries.
+- [x] Extend historical audits only for exact independently verified child source/words/extent; preserve immutable baselines and effective rejection controls.
+- [x] Audit exactly 159 changed ELF bytes (158 target, one extent); all other bytes/data/guards/CSV exact. Add one matching credit only; README aggregate rows only.
+- [x] Preserve older HEAD/all 25 protected fingerprints; copy only two absent paths, pass consumer/mounted/older tools checks and native py_compile.
+- [x] Bank tools 349aa21 before the consumer source/docs/pin checkpoint, no push or older history changes.
+- [ ] Recover and qualify complete 46-word func_1503D984 command counter and replace its bounded loader helper model.
+- [ ] Eliminate the parent loader's 22 raw guards and qualify deeper heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
+
 ## Main Resource Loader Full Guarded Match - 2026-10-11
 
 [Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
@@ -13,7 +29,7 @@
 - [x] Audit exactly 26 changed target ELF bytes, all other bytes/metadata/extents/data/CSV exact; add one matching credit only and update README aggregate rows.
 - [x] Preserve older sibling HEAD/all 22 existing fingerprints, copy only three absent paths, and pass consumer/mounted/older tools checks plus native py_compile.
 - [x] Bank mounted tools f54c9fb first, then the consumer guards/docs/aggregate-row/pin checkpoint; no push or older-sibling history changes.
-- [ ] Recover complete 52-word func_1503D368 command-stream relocator and replace that bounded chain helper with its actual qualified body.
+- [x] Recover complete 52-word func_1503D368 command-stream relocator and replace that bounded chain helper with its actual qualified body in Note 1267.
 - [ ] Eliminate this loader's 22 guards through real source fitting; raw C still differs.
 - [ ] Qualify deeper helper/heap/hardware/renderer/gameplay separately; Game goal active, Release frozen.
 

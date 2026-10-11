@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Command-stream relocator direct match](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
+  full 52-word SDK Gfx scan emits directly, original frame, no new guards.
+  Eleven pre-install/38 installed and regression checks pass, including the
+  actual child in the loader chain. Only 159 ELF bytes change, all other
+  bytes/data/guards/CSV exact. One matching credit, tools 349aa21 first/no push.
+  Next full 46-word func_1503D984; parent guard elimination/runtime separate.
+
 - [Main resource-loader full guarded match](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
   all 274 linked words exact, unchanged semantic C/original frame; 252 direct
   words plus 22 closed guards. All 76 installed/older tests pass, complete

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1267](WORKING_NOTES/1267-game-command-stream-relocator-direct-match-20261011.md):
+full 52-word command-stream relocator directly exact, SDK Gfx/void/u32,
+original frame/S0..S6, no new guards. Eleven pre-install/38 installed and
+regression checks pass; actual child connected to the bounded loader chain.
+Only 159 ELF bytes change; other bytes/data/guards/CSV exact. +1 matching,
+no conversion, tools 349aa21 first, older history preserved/no push.
+Next full 46-word func_1503D984; parent guards and runtime stay separate.
+
+2026-10-11:
 [Note 1266](WORKING_NOTES/1266-game-main-resource-loader-guarded-match-20261011.md):
 full 274-word loader guarded match, unchanged semantic C/original frame;
 252 direct words plus 22 closed guards. All 76 installed/older tests pass,

@@ -32,7 +32,7 @@ extern u8 *D_800C5C08[];
 extern u8 *D_800C6070[];
 void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 void func_1503D438(u32 *, u32);
-s32 func_1503D368();
+void func_1503D368(Gfx *, u32);
 s32 func_1503DC3C(s32);
 void func_1510CE60(u32, s32, s32, s32, s32);
 s32 func_1503D984();
@@ -88,7 +88,7 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
         offset = 0;
         do {
             func_1503D438(&((*(u32 **)((u8 *)D_800C4488 + wordIndex)))[index], (u32)block);
-            func_1503D368(*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C4488 + wordIndex)) + offset), (u32)block);
+            func_1503D368((Gfx *)*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C4488 + wordIndex)) + offset), (u32)block);
             index++;
             offset += 4;
         } while (index < D_800C4778[identity]);
@@ -99,7 +99,7 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     if (boundary != 0) {
         do {
             func_1503D438(&((*(u32 **)((u8 *)D_800C48F0 + wordIndex)))[index], (u32)block);
-            func_1503D368(*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C48F0 + wordIndex)) + offset), (u32)block);
+            func_1503D368((Gfx *)*(u32 *)((u8 *)(*(u32 **)((u8 *)D_800C48F0 + wordIndex)) + offset), (u32)block);
             index++;
             offset += 4;
         } while ((u32)index < boundary);
@@ -162,8 +162,25 @@ done:
     return failed;
 }
 
-s32 func_1503D368() {
-    return 0;
+void func_1503D368(Gfx *commands, u32 base) {
+    s32 index;
+
+    if (commands != NULL) {
+        index = 0;
+        while (((s8 *)&commands[index])[0] != -0x21) {
+            switch (((s8 *)&commands[index])[0]) {
+            case 1:
+                func_1503D438((u32 *)&commands[index].words.w1, base);
+                break;
+            case -0x24:
+                if (((u8 *)&commands[index])[3] == 0x0E) {
+                    func_1503D438((u32 *)&commands[index].words.w1, base);
+                }
+                break;
+            }
+            index++;
+        }
+    }
 }
 
 void func_1503D438(u32 *arg0, u32 arg1) {
