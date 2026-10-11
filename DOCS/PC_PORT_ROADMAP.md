@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Main Resource Loader First-Loop Initialization - 2026-10-11
+
+[Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
+
+- [x] Preserve the complete 274-word/original-frame loader, saved S0..S6 and continuous S5, without guards/profile/ABI changes.
+- [x] Recover the original half-index store and index-zero branch-delay schedule directly from C; raw differences 24 -> 22.
+- [x] Pass twelve pre-install and twelve installed tests, complete reachable original/current words, public faults/aliases/native32/owner/padders and actual bounded chain.
+- [x] Audit only eight changed target ELF bytes; every other byte/extent/metadata/data/guard/CSV exact. No matching/conversion credit or root README change.
+- [x] Complete 45 diagnostic forms without compiler diagnostics or data pools; do not generalize full acceptance beyond the selected body.
+- [x] Pass all 44 older loader regressions freshly, preserving immutable inputs/candidates/controls; preserve older sibling HEAD/20 existing fingerprints and copy only two absent new paths.
+- [x] Pass all five historical status-join regressions, all WSL tools checks and native py_compile; keep the known duplicate generated_12D630 recipe warning explicit.
+- [x] Verify unchanged matching totals and bank mounted tools b9eae47 before the consumer source/docs/pin checkpoint, without pushing or altering older history.
+- [ ] Recover this same full routine's main/word spill slots, request-error return and cleanup register transfers; finish all 22 raw differences.
+- [ ] Qualify private-frame fault order and deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal stays active.
+
 ## Main Resource Loader Private Layout And Count Schedule - 2026-10-11
 
 [Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
@@ -12,7 +27,8 @@
 - [x] Audit only 92 changed target ELF bytes; every other byte/extent/metadata/data/guard/CSV exact, no matching or conversion credit, README aggregates unchanged.
 - [x] Complete the 60-form diagnostic sweep, all WSL tools checks/native py_compile and verify the older sibling's 18 old fingerprints/HEAD unchanged, copying only two absent new paths.
 - [x] Verify fresh unchanged matching totals and bank mounted tools 5a5e17e before the consumer source/docs/pin checkpoint; no push.
-- [ ] Recover the two remaining spill slots, first-count delay initialization, request-error return and cleanup register transfers in this same full routine; finish all 24 raw differences.
+- [x] Recover first-count half-index store and branch-delay initialization directly in Note 1265; 24 -> 22 raw differences.
+- [ ] Recover the two remaining spill slots, request-error return and cleanup register transfers in this same full routine; finish all 22 raw differences.
 - [ ] Qualify original private-frame faults and deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal remains active.
 
 ## Main Resource Loader Original-Frame Improvement - 2026-10-11
@@ -28,7 +44,8 @@
 - [x] Pass five fresh prior-experiment regressions, the 46-form complete diagnostic sweep, consumer/mounted/older WSL tools checks and native py_compile; preserve the older sibling's 16 existing fingerprints/history.
 - [x] Bank mounted tools f8fac55 before the consumer source/docs/pin commit; no push or older-sibling history changes.
 - [x] Recover original request-output/boundary/half-index slots, initial unmasked store/separate masked branch operand and event initialization in Note 1264.
-- [ ] Recover remaining main/word spill slots, first-count delay initialization, request-error control and cleanup register transfers; 24 raw differences remain in this same full function.
+- [x] Recover the first-count half-index store and index-zero branch-delay initialization in Note 1265.
+- [ ] Recover remaining main/word spill slots, request-error control and cleanup register transfers; 22 raw differences remain in this same full function.
 - [ ] Recover deeper helper/heap/hardware/renderer/gameplay behavior separately; the wider Game goal remains active.
 
 ## Main Resource Loader Status-Join Experiment - 2026-10-11

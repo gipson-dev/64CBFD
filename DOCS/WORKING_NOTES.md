@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-11:
+[Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
+full 274-word/original-frame loader recovers two independent first-loop
+initialization words, raw differences 24 -> 22, no guards/profile/ABI changes.
+Twelve installed tests pass; only eight target ELF bytes change, all other
+bytes/extents/metadata/data/guards/CSV exact. No credit or README change.
+Same complete routine's spill slots, request-error return and cleanup next;
+tools first/no push, private faults and deeper runtime separate.
+
+2026-10-11:
 [Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
 full 274-word/original-frame loader recovers three private slots, count
 store/register cycle and event opening. Raw differences 98 -> 24, no guards;

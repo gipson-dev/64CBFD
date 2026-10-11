@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-11 Main Resource Loader First-Loop Delay Initialization
+
+[Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
+same complete func_1503CF20 recovers half-index store/S1 branch-delay zero.
+All 274 words/original frame/register lifetimes retained, raw differences
+24 -> 22, no guards/profile/ABI changes. Twelve installed tests pass;
+only eight target ELF bytes change and all other bytes/extents/metadata/
+data/guards/CSV exact. No matching/conversion credit or root README change.
+Continue this same full loader's spills/request return/cleanup transfers;
+private faults and deeper runtime remain separate. Tools first, no push.
+
 ## 2026-10-11 Main Resource Loader Private Layout And Count Schedule
 
 [Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):

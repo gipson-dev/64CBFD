@@ -84,8 +84,7 @@ s32 func_1503CF20(s32 identity, s32 failed, u8 *config, s32 extras, s32 flags) {
     }
     D_800C57A0[identity] = (boundary - (u32)block - 0x38) >> 4;
     D_800C4778[identity] = block[3] >> 2;
-    index = 0;
-    if (D_800C4778[identity] > 0) {
+    if ((index = 0, D_800C4778[identity] > 0)) {
         offset = 0;
         do {
             func_1503D438(&((*(u32 **)((u8 *)D_800C4488 + wordIndex)))[index], (u32)block);

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5a5e17e; tools are committed before the consumer pin.
+  checkpoint pins tools b9eae47; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest installed main resource-loader first-loop initialization improvement:
+[Note 1265](WORKING_NOTES/1265-game-main-resource-loader-first-loop-delay-initialization-match-20261011.md):
+same complete func_1503CF20 preserves 274 words/original 0x78 frame/S0..S6
+and recovers the half-index store plus S1 zero in the first-loop branch delay.
+Raw differences 24 -> 22, no guards/profile/ABI changes; not yet byte-exact.
+Twelve installed/44 older/five historical tests pass, all reachable words/
+public faults/native32/owner/padders/actual bounded chain. Only eight target ELF bytes change;
+all other bytes/metadata/extents/data/guards/CSV exact. No credit, README
+unchanged. Fresh Game 2,789/4,822, total 3,462/5,495, zero drift / 2,033
+different; mounted tools b9eae47 banked first, no push.
+Continue this same full routine's two spill slots, request-error
+return and six cleanup register transfers; private faults/runtime separate.
 
 Latest installed main resource-loader private-layout/count-schedule improvement:
 [Note 1264](WORKING_NOTES/1264-game-main-resource-loader-private-layout-and-count-schedule-improvement-20261011.md):
