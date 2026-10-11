@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Record-state dispatcher direct match](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
+  complete171 direct C/no guards, actual caller/predicate chain; thirteen
+  pre-install/22 installed and caller tests green. Only 562 target/extent/
+  verified metadata bytes change, other bytes/inputs and 21/38 owner neighbors
+  exact, +1 matching only. Tools 72fe857 first, older work preserved/no push,
+  README aggregates only. Next unmatched func_1503E260, 89/89 differences.
+
 - [Actor group mask command direct match](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
   complete39 direct C/no guards, actual helper/three callers, ten pre-install /
   eleven installed tests plus focused controls green. Exactly 127 ELF bytes

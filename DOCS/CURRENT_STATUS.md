@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3b4d8ec; tools are committed before the consumer pin.
+  checkpoint pins tools 72fe857; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest direct record-state dispatcher:
+[Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
+func_1503DF48 replaces its placeholder with all 171 words directly from C,
+no guards/profile changes. Thirteen pre-install and 22 installed/caller tests
+pass, actual 88-word caller/27-word predicate connected. Only 562 ELF bytes
+change: 554 target, two extent, six verified symbol-permutation bytes; all
+other bytes/data/guards/inputs exact, 21 target/38 caller-owner neighbors.
+Fresh Game 2,798/4,822 (58.03%), total 3,471/5,495 (63.17%), zero drift /
+2,024 different; +1 matching only. Tools 72fe857 first, older HEAD/45
+fingerprints preserved/two absent copies, no push; README aggregates only.
+Next unmatched func_1503E260, 89 words/89 differences. Setup/callback/tail
+implementations and third-loader guard elimination remain separate open work.
 
 Latest direct actor/group mask command:
 [Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):

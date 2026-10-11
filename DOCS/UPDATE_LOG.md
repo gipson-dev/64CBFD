@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Record State Dispatcher Direct Match
+
+[Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
+func_1503DF48 complete171 emits directly, no guards/profile changes. Correct
+the caller's void declaration only; all 88 linked caller words remain exact.
+Thirteen pre-install/22 installed and caller tests pass, actual caller/predicate
+chain and callback/count/alias/table qualification. Only 562 target/extent/
+verified two-symbol metadata bytes change; other bytes/data/guards/seven inputs
+and 21/38 owner neighbors exact. Fresh Game 2,798/4,822, total 3,471/5,495,
+zero drift / 2,024 different; +1 matching only. Tools 72fe857 first, older HEAD/
+45 fingerprints preserved/two absent copies, no push; README aggregates only.
+Next unmatched func_1503E260, 89 words/89 differences; deeper callbacks open.
+
 ## 2026-10-11 Actor Group Mask Command Direct Match
 
 [Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):

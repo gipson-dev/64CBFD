@@ -6,6 +6,16 @@ extern s32 *D_8008446C[];
 void func_1503DF0C(s32, s32, s32, s32);
 extern u8 D_800C6664[];
 extern u8 D_800C6668[];
+extern u8 D_80098914[];
+extern s8 *D_80084454[];
+extern void (*D_80084430[])(struct04 *, s32);
+extern void (*D_8008443C[])(s32);
+extern void (*D_80084448[])(s32);
+s32 allocate_memory(s32, s32, s32, s32);
+s32 func_1503E1F4(s32, s32);
+s32 func_1503E3C4();
+s32 func_1503EA54();
+s32 func_1503E82C();
 
 /* Non-matching placeholders for the text-only asm slice asm/6B320.s. */
 
@@ -28,8 +38,60 @@ void func_1503DF0C(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     ptr->unkF = 2;
 }
 
-s32 func_1503DF48() {
-    return 0;
+void func_1503DF48(s32 slot) {
+    struct106 *record = &D_800C6660[slot];
+    struct04 *element;
+    struct04 *buffer;
+    s8 *types;
+    s32 state = record->unkF;
+    s32 count;
+    s32 index;
+
+    if (state == 2) {
+        D_800CC2D0[slot].unk74 |= 0x80;
+        state = 3;
+        if (D_800CC2D0[slot].unk1D4 == NULL) {
+            return;
+        }
+    }
+    if (state == 3) {
+        count = D_80098914[((u8 *)record)[0xE]];
+        if (record->unk0 == 0) {
+            buffer = (struct04 *)allocate_memory(count * sizeof(struct04), 1, 0, 0);
+            if (buffer == NULL) {
+                return;
+            }
+            record->unk0 = (s32)buffer;
+            for (index = 0; index < count; index++) {
+                buffer[index].unk64 = 0;
+            }
+        }
+        types = D_80084454[((u8 *)record)[0xE]];
+        for (index = 0; index < count; index++) {
+            switch (types[index]) {
+            case -2:
+                break;
+            default:
+                element = (struct04 *)record->unk0 + index;
+                if (func_1503E1F4(index, slot) != 0 && element->unk64 == 0) {
+                    func_1503E3C4(slot, index, 0, element, 0);
+                    D_80084430[((u8 *)record)[0xE]](element, slot);
+                    element->unk64 = 1;
+                }
+                break;
+            }
+        }
+        D_8008443C[((u8 *)record)[0xE]](slot);
+        state = 1;
+        record->unkF = 1;
+    }
+    if (state == 1) {
+        D_80084448[((u8 *)record)[0xE]](slot);
+        if (record->unkF != 0) {
+            func_1503EA54(slot);
+            func_1503E82C(slot);
+        }
+    }
 }
 
 s32 func_1503E1F4(s32 bit, s32 index) {

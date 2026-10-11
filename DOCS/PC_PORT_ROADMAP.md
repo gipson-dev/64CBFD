@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record State Dispatcher Direct Match - 2026-10-11
+
+[Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
+
+- [x] Recover the complete 171-word state dispatcher, unsigned count, signed -2 sentinel, allocation publication and callback-aware lifetimes.
+- [x] Emit all words directly under existing O2/g3; no guards/drops/profile changes; correct only the caller's void declaration, preserve its 88 linked words.
+- [x] Pass thirteen pre-install and 22 installed/caller tests, native32, fired controls, actual caller/predicate chain and real three-group tables/guest aliases.
+- [x] Preserve 21 target-owner and 38 caller-owner functions/pools through production post-processing/both padders; exact 562-byte target/extent/verified metadata delta only.
+- [x] Measure +1 matching only: Game 2,798/4,822, total 3,471/5,495, zero drift / 2,024 different; root README aggregates only.
+- [x] Bank tools 72fe857 before consumer source/docs/pin; preserve older HEAD/45 fingerprints, two absent copies only, shared checks green, no push.
+- [ ] Recover and qualify the next complete func_1503E260 body, 89 words / 89 differences, still a placeholder.
+- [ ] Recover actual setup/callback/tail implementations and remove remaining third-loader/parent/pair guards; deeper hardware/gameplay and full Game goal stay open.
+
 ## Actor Group Mask Command Direct Match - 2026-10-11
 
 [Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve all 21 owner neighbors/GLOBAL_ASM body/pools through production post-processing and both padders; audit only 127 target/extent ELF bytes, data/guards/other inputs exact.
 - [x] Measure +1 matching only: Game 2,797/4,822, total 3,470/5,495, zero drift / 2,025 different; README aggregate rows only.
 - [x] Bank tools 3b4d8ec before consumer source/docs/pin; preserve older HEAD/43 fingerprints, two absent copies only, shared checks green, no push.
-- [ ] Recover and qualify the next complete func_1503DF48 record-state dispatcher: 171 words / 168 linked differences, still a placeholder.
+- [x] Recover and qualify the complete 171-word func_1503DF48 record-state dispatcher directly in Note 1277.
 - [ ] Remove the third-loader's two final scheduling guards and parent/pair guards; qualify deeper hardware/gameplay separately, full Game goal active.
 
 ## Third Resource Loader Exit Scheduling And Drop Removal - 2026-10-11

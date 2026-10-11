@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1277](WORKING_NOTES/1277-game-record-state-dispatcher-direct-match-20261011.md):
+func_1503DF48 complete171 direct C/no guards, caller void contract corrected
+without linked caller change. Thirteen pre-install/22 installed and caller
+tests pass, actual caller/predicate chain, callbacks/counts/aliases qualified.
+Only 562 target/extent/verified two-symbol metadata bytes change, all other
+bytes/data/seven inputs and 21/38 owner neighbors exact; +1 matching only.
+Game 2,798/4,822, total 3,471/5,495, zero drift / 2,024 different.
+Tools 72fe857 first, older HEAD/45 fingerprints preserved/two absent copies,
+no push, README aggregates only. Next unmatched func_1503E260, 89/89 differences.
+
+2026-10-11:
 [Note 1276](WORKING_NOTES/1276-game-actor-group-mask-command-direct-match-20261011.md):
 actor/group mask command func_1503DE70: complete39 direct C/no guards;
 ten pre-install / eleven installed tests plus focused controls pass, actual
