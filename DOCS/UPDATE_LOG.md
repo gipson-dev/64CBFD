@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Address Work And Retail Save Roles
+
+[Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
+forward ternary work recovers seven retail opening roles, frame0x80, common
+T0 zero and named SP+0x68 together; 216 words / 171 differences still reject
+it. Five bodies pass 3,775 guest and 7,330 native32 comparisons; all twelve
+new/regression tests pass, tools 4cf5203 first. Production/totals/main README
+unchanged, same target/full Game active; no installation, matching credit or push.
+
 ## 2026-10-12 Text Measurer Shared Zero And Source-Home Call-Save
 
 [Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
+forward ternary work recovers seven retail opening roles, frame0x80, common
+T0 zero and named SP+0x68 together. Five bodies / 3,775 guest / 7,330 native32
+comparisons and all twelve new/regression tests pass; tools 4cf5203 first.
+The 216-word / 171-difference foothold remains rejected; production/totals/
+main README unchanged, same target/full Game active, no matching credit or push.
+
+2026-10-12:
 [Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
 common early T0 zero and named M-24 / SP+0x68 save recovered in split source.
 The 218/frame0x80 body still has an eighth font-address save; seven bodies

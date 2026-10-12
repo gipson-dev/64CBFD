@@ -167,6 +167,14 @@ SP+0x68 lifetime, but still fails seven saved roles and full 219-word layout.
 Keep the static first-access proof separate from full instruction-fault parity;
 do not pad or install the 218-word source on these partial results.
 
+Disjoint address/height work and recovered opening roles are qualified in
+[Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_work_lifetime` under WSL.
+The forward ternary form preserves all seven opening roles, common zero and
+named SP+0x68 in frame0x80; 216/171 still fails full matching. Native pointer/
+integer reuse is qualified only for the existing 32-bit ABI. Do not promote
+the identity-assignment shape control or bypass remaining matching gates.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

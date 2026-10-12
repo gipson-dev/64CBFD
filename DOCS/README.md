@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer address work and retail save roles](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
+  seven opening roles, frame0x80, common zero and SP+0x68 recovered together;
+  216/171 still fails full matching. Five bodies / 3,775 guest / 7,330 native32
+  comparisons and all twelve tests pass; tools 4cf5203 first, no match.
+
 - [Text measurer shared zero and source-home call-save](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
   split source recovers early T0 zero and SP+0x68 lifetime; extra font-address
   save still rejects the 218/frame0x80 body. Seven bodies / 5,285 public

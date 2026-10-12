@@ -1,12 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Address Work And Retail Save Roles - 2026-10-12
+
+[Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
+
+- [x] Remove the extra saved font address and recover all seven retail opening roles together with frame0x80, common T0 zero and named M-24 / SP+0x68 in the forward ternary work form.
+- [x] Qualify five bodies / 3,775 guest and 7,330 native32 comparisons, three completed captures and effective controls; all twelve new/regression tests pass, tools 4cf5203 first.
+- [ ] Recover full forward dispatch, independent font-address rematerialization and exact 219-word layout, then all final gates. The 216/171 lifetime foothold is not installed; same target/full Game active.
+
 ## Text Measurer Shared Zero And Source-Home Call-Save - 2026-10-12
 
 [Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
 
 - [x] Recover the common post-normalizer T0 reset and real named M-24 / SP+0x68 call-save in a 218/frame0x80 split source; verify static delay-slot dominance and fired first-read controls.
 - [x] Qualify seven bodies / 5,285 public comparisons and three complete captures; all twelve distinct tests plus focused capture rerun pass, tools 54c4808 first.
-- [ ] Remove the extra font-address save/local slot and recover complete seven-role / 219-word retail layout, then all final gates. Same target/full Game active; no installation or matching credit.
+- [x] Remove the extra font-address save and recover seven retail opening roles with the named call home; see Note 1312 above.
+- [ ] Recover the complete 219-word retail layout, then all final gates. Same target/full Game active; no installation or matching credit.
 
 ## Text Measurer Switch And Register-Hint Provenance - 2026-10-12
 
