@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer UOPT allocation trace](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
+  completed mode4/6/7 output preserves the normal candidate object. Six tests
+  qualify the fingerprint-locked owned-process helper; tools 17bd18b banked.
+  Numeric timing output is suppressed/unusable, and seed222 remains oversized
+  and unmatched. Production/data/totals unchanged; same target/full Game active.
+
 - [Text measurer instruction fault boundary and review](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
   768 fired cuts isolate the missing post-normalizer T0 reset, with RAM/events/
   RA equal at the first divergence. Twenty tests pass; one tool-free review

@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer UOPT Allocation Trace - 2026-10-12
+
+[Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
+
+- [x] Diagnose the debug-output crashes, correct the simulated-SP/FILE probe error and obtain complete mode4/6/7 traces without changing prepared compiler binaries.
+- [x] Qualify an opt-in fingerprint-locked owned-process helper with six tests and identical text/functions/relocations/pools; preserve production/data and bank tools 17bd18b before the consumer pin.
+- [ ] Use the actual allocation/live-range evidence to fit shared T0/full219 and complete final installation gates. Seed222/0x80/146 remains oversized and unmatched; full Game stays active.
+
 ## Text Measurer Instruction Fault Boundary - 2026-10-12
 
 [Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):

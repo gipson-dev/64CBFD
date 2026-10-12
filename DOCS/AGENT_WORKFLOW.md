@@ -88,6 +88,14 @@ The normal profile is existing O2/g3. Preserve original assembly in
 Standalone tools checks and required consumer inputs are described in its
 [README](https://github.com/gipson-dev/64CBFD-Tools/blob/master/README.md).
 
+Optional text-measurer UOPT diagnostics: [Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md)
+qualifies `python3 -m tools.experiments.game_text_measurer_uopt_trace --mode 6`.
+It requires the exact prepared cc/uopt hashes and existing GDB, and operates
+only on a newly owned compiler process. Never change/install a compiler to
+bypass its fingerprint gate. Debug real-number output is suppressed, so
+numeric timings are not valid. Complete driver exit and identical emitted
+text/functions/relocations/pools are required before trusting the trace.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools faec3b7; tools are committed before the consumer pin.
+  checkpoint pins tools 17bd18b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current instruction-fault boundary checkpoint; matching remains active:
+Current UOPT allocation-diagnostic checkpoint; matching remains active:
+[Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
+func_150428D4 now has completed mode4/6/7 traces with text/functions/relocations/
+pools identical to the normal seed222/0x80/146 compile. A fingerprint-locked,
+owned-process helper works around debug-output-only runtime failures; numeric
+timings are not valid. Six new tests pass. Tools 17bd18b first; production,
+protected data and totals unchanged. Use the actual allocation trace to fit
+the shared T0 reset/full219 and final gates; no matching credit.
+
+Previous instruction-fault boundary checkpoint:
 [Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
 func_150428D4: 768 fired access cuts compare independently linked original219
 and seed222 at the same diagnostic entry. First divergence occurs after

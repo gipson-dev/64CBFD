@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer UOPT Allocation Trace
+
+[Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
+completed mode4/6/7 diagnostics preserve text/functions/relocations/pools and
+expose allocation/live-range decisions. Six new tests qualify a fingerprint-
+locked owned-process helper; no prepared compiler changes or trusted numeric
+timings. Tools 17bd18b first, consumer pin next; production/data/totals/older
+history preserved, no push or matching credit. Fit shared T0/full219 next.
+
 ## 2026-10-12 Text Measurer Instruction Fault Boundary And Review
 
 [Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):

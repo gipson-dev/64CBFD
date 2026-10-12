@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
+same target/full Game active. Completed mode4/6/7 traces preserve the normal
+seed222 object's text/functions/relocations/pools. Six diagnostic tests pass;
+bank tools 17bd18b and exact consumer pin, preserve prepared compilers and
+production/data/totals/older history. No matching credit or push. Use actual
+allocation evidence to fit shared T0/full219; numeric timings are unusable.
+
+2026-10-12:
 [Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
 same target/full Game active. All 768 instruction access cuts for four named
 calls/two phases isolate the T0 reset missing after normalization; RAM/events/
