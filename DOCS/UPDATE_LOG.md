@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Native32 Qualification
+
+[Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
+func_150428D4: clear216/closer217 full C bodies with both recovered helpers
+pass 733 native32 cases each at O2/O0, 2,932 executions. Portable output,
+font-record, factor/scale and text aliases use host-endian reference writes;
+synthetic low guest pointer aliases remain explicitly excluded. Nine focused
+tests pass; seven semantic mutations and four buffer/table canary corruptions
+are effective. Isolated no_r23 emits 219/frame0x80/206 differences, not a
+match; compiler profile remains unchanged. All nine production inputs/data
+and aggregate totals stay exact, no README churn or matching credit.
+Tools b5e4600 first; older HEAD/77 other hashes preserved, two verified mirror
+updates/one identical new file, final 80 hashes, no push. Continue the same
+target's original lifetime/layout fit and remaining owner/padder/rebase/fault/
+linked qualification; full Game and hardware/renderer/gameplay stay open.
+
 ## 2026-10-12 Text Measurer Full-Chain Qualification
 
 [Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):

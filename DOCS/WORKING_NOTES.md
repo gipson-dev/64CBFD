@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-12:
+[Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
+func_150428D4: complete clear216/closer217 C and both recovered helpers pass
+733 native32 cases each at O2/O0, 2,932 executions; portable aliases, host-
+endian reference writes and buffer/table canaries qualify. Nine focused tests,
+seven native semantic controls/four canary controls pass. Isolated no_r23 is
+219/frame0x80/206 differences, not matched or installed. All nine production
+inputs/data/totals remain exact; tools b5e4600 first, older HEAD/77 other
+hashes preserved/two checked updates/one identical new file, no push.
+Continue original lifetime/layout and owner/padder/rebase/fired-fault/linked
+qualification for this same target; the full Game goal remains open.
+
+2026-10-12:
 [Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
 func_150428D4: full original219/candidate chains with actual normalizer65/
 metrics115, no hooks; seven tests and eight compiled controls pass.

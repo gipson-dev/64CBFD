@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer native32 qualification](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
+  both complete C candidates and recovered helpers pass 733 native cases each
+  at O2/O0, including portable aliases, guarded buffers/table and eleven
+  effective semantic/canary controls. Nine focused tests pass. An isolated
+  219-word/frame-0x80 form still has 206 differences; no profile, source or
+  ELF installation. Production inputs/data/totals stay unchanged. Tools
+  b5e4600 first, older history/unrelated hashes preserved/no push. Continue
+  the same target's original layout and owner/padder/rebase/fault/linked
+  qualification; full Game and hardware/renderer/gameplay stay open.
+
 - [Text measurer full-chain qualification](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
   complete original219/candidate chains use actual normalizer65/metrics115,
   no hooks. Seven tests, live pointer/truncation and eight compiled controls

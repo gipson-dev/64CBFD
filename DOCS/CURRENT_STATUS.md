@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 688ae3b; tools are committed before the consumer pin.
+  checkpoint pins tools b5e4600; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current text-measurer qualification, not yet installed:
+Current text-measurer native32 qualification, not yet installed:
+[Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
+func_150428D4's clear216 and closer217 complete C bodies pass 733 cases each
+at O2/O0 with both complete recovered C helpers: 2,932 executions, portable
+output/font/factor/scale/text aliases and guarded buffers/table. Nine focused
+tests pass, including seven effective native semantic negatives and four
+effective canary negatives. A byte-order-aware independent reference keeps
+guest big-endian and native little-endian alias writes distinct. The isolated
+no_r23 form reaches 219 words/frame 0x80 but still has 206 differences; its
+register/home layout is wrong, and no compiler profile is installed.
+All nine production inputs/data and matching/conversion totals remain
+unchanged. Tools b5e4600 first; older HEAD/77 other hashes preserved, two
+verified mirror updates/one new identical file, final 80 hashes, no push.
+Continue this same target's original lifetime/layout fit and copied-owner/
+padder/rebase/fired-fault/linked qualification. Native C is now qualified
+for the two named bodies, not a byte match or portable low-pointer claim.
+Full Game matching and hardware/FCSR/renderer/gameplay remain open.
+
+Previous text-measurer full-chain qualification, not yet installed:
 [Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
 func_150428D4's complete 219-word/frame-0x80 routine and nine direct callers
 establish a void text/three-output interface. Full original/candidate chains
@@ -40,7 +58,8 @@ and all nine recorded inputs remain unchanged. No matching or conversion
 credit; README totals remain correct. Tools 688ae3b first, older HEAD/77
 hashes preserved/two absent identical copies, no push. Continue this same
 function: fit its original body and register/stack lifetimes, then qualify
-native C, owners/padders, rebases/faults and literal installation. Full Game
+owners/padders, rebases/faults and literal installation. Native C follows in
+Note 1294 above. Full Game
 matching and independent hardware/renderer/gameplay acceptance stay open.
 
 Latest character-normalizer guarded match:

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Native32 Qualification - 2026-10-12
+
+[Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
+
+- [x] Run both complete qualified C bodies and recovered helpers in native32 at O2/O0: 733 cases each, 2,932 executions, pointer/int/float widths four bytes.
+- [x] Qualify portable output/font-record/factor/scale/text aliases using host-endian byte-addressed reference writes, without reclassifying synthetic low guest pointers as native pointers.
+- [x] Catch seven fresh native semantic mutations and four compiled buffer/table canary corruptions; all nine focused tests pass.
+- [x] Record isolated no_r23 as 219 words/frame 0x80/206 differences, not a match; preserve the existing compiler profile and all nine production inputs/data/totals.
+- [x] Bank tools b5e4600 first; preserve older HEAD/77 other hashes, update two checked mirror files and add one identical new file, no push.
+- [ ] Fit this same func_150428D4's original 219-word body, seven saved-register lifetimes, flag spill and initial/font-address schedule; no broad retail-copy guards or dummy state.
+- [ ] Qualify the final candidate's full copied owner/seven neighbors/pools/both padders, independent rebases, fired access faults and literal linked installation.
+- [ ] Install only the qualified completed match, then recover func_150417AC; full Game and independent hardware/FCSR/renderer/gameplay remain open.
+
 ## Text Measurer Full-Chain Qualification - 2026-10-12
 
 [Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
@@ -11,7 +24,8 @@
 - [x] Preserve all nine recorded production inputs and protected data; matching/conversion totals remain unchanged, README aggregates remain correct.
 - [x] Bank tools 688ae3b first; shared checks pass, older HEAD/77 hashes preserved/two identical new files, no push.
 - [ ] Finish this same func_150428D4's 219-word body and original register/stack lifetime fit; do not replace 185 differences with a broad retail-copy guard batch.
-- [ ] Complete native C, copied-owner/padder, independent rebase/fault and literal linked-installation qualification before claiming a match.
+- [x] Complete native C qualification of the two named semantic bodies in Note 1294; not a byte-match or installation claim.
+- [ ] Complete copied-owner/padder, independent rebase/fault and literal linked-installation qualification of the final candidate before claiming a match.
 - [ ] Install and measure the completed match, then recover the remaining formatter; full Game and hardware/FCSR/renderer/gameplay goals remain open.
 
 ## Character Normalizer Guarded Match - 2026-10-12
