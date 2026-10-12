@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Matrix Forward Direct Match
+
+[Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
+func_1503F404 matches all 40 executing words directly plus its three original
+zero tail words. Two local declarations, unchanged profiles/guards/callers.
+Ten pre-install/ten installed tests, actual SDK, native32 and original
+caller152 pass. Only 119 target/size ELF bytes change; other bytes/eight
+inputs/21 neighbors exact. Game 2,808/4,822, total 3,481/5,495, zero drift /
+2,014 different. Tools dbc0f0d first, older HEAD/65 hashes preserved/two
+absent copies, no push; README aggregates only. All 21 C rows here match
+with existing guards. Next full 141-word func_1503E5F8 ASM-to-C recovery.
+Existing guard removal and wider Game goal remain open.
+
 ## 2026-10-11 Group-2 Active Timer Direct Match
 
 [Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):

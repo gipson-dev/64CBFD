@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Forward Direct Match - 2026-10-11
+
+[Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
+
+- [x] Recover fixed/float gate, local 64-byte matrix, all ten O32 pointer arguments and post-preparation incoming-home reloads.
+- [x] Emit all 40 executing words directly under existing O2/g3/frame 0x70; preserve three original zero tail words, two required local declarations, no new guards/profiles/callers.
+- [x] Pass ten pre-install/ten installed tests, actual SDK copy/conversion, full caller152, native32, rebases/faults and effective controls.
+- [x] Preserve all 21 neighbors/pools/both padders and every other ELF byte/eight inputs; only 119 target/size bytes change.
+- [x] Measure Game 2,808/4,822, total 3,481/5,495, zero drift / 2,014 different; README aggregate rows only.
+- [x] Bank tools dbc0f0d first, source/docs/pin second; shared checks pass, older HEAD/65 hashes preserved/two absent copies, no push.
+- [x] Verify all 21 converted rows in this owner match with existing guards; only matrix decomposer ASM remains.
+- [ ] Recover full func_1503E5F8, 141 words / 564 bytes, replacing GLOBAL_ASM with qualified semantic C and preserving its full caller/math/alias contract.
+- [ ] Remove existing guards and continue wider Game recovery; independent SDK/hardware/FCSR/gameplay acceptance remains open.
+
 ## Group-2 Active Timer Direct Match - 2026-10-11
 
 [Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
@@ -10,7 +24,7 @@
 - [x] Preserve 21 neighbors, pools, both padders and all other ELF bytes/seven inputs; only 285 target/extent bytes change.
 - [x] Measure +1 matching only: Game 2,807/4,822, total 3,480/5,495, zero drift / 2,015 different; README aggregate rows only.
 - [x] Bank tools a96b414 first, consumer source/docs/pin second; shared checks pass, older HEAD/63 hashes preserved/two absent copies, no push.
-- [ ] Recover next func_1503F404, 43 slot words / 38 differences, after inspecting its matrix conversion/copy gate and full ten-argument caller ABI.
+- [x] Recover and qualify complete func_1503F404 in Note 1287, all 40 executing words direct and all three original tail words preserved.
 - [ ] Remove existing guards and recover remaining bodies; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Group-2 Mask Finish Direct Match - 2026-10-11

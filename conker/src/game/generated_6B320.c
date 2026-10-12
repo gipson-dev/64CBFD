@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "variables.h"
+extern u8 D_800C3E90;
+void *memcpy(void *, const void *, unsigned int);
 extern u8 D_800C666C[];
 extern f32 D_80098928;
 extern f32 D_8009892C;
@@ -447,6 +449,14 @@ void func_1503F2B0(s32 slot) {
     }
 }
 
-s32 func_1503F404() {
-    return 0;
+void func_1503F404(void *input, f32 *x, f32 *y, f32 *z,
+    f32 *rx, f32 *ry, f32 *rz, f32 *sx, f32 *sy, f32 *sz) {
+    f32 matrix[4][4];
+
+    if (D_800C3E90 != 0) {
+        guMtxL2F(matrix, (Mtx *)input);
+    } else {
+        memcpy(matrix, input, sizeof(matrix));
+    }
+    func_1503E5F8(matrix, x, y, z, rx, ry, rz, sx, sy, sz);
 }

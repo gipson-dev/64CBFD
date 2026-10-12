@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix forward direct match](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
+  all 40 executing words direct plus three original zero tail words; existing
+  O2/g3 profile, two required local declarations, no new guards/callers.
+  Ten pre-install/ten installed tests, actual SDK, native32 and original
+  caller152 pass. Only 119 target/size ELF bytes change; every other byte/
+  eight inputs/21 neighbors exact. Tools dbc0f0d first, older work preserved,
+  no push. All 21 C rows here match with existing guards; next full 141-word
+  matrix decomposer func_1503E5F8 ASM-to-C recovery. Full Game goal open.
+
 - [Group-2 active timer direct match](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
   all 85 words direct C, no guards/pools/declaration/header/caller/profile
   changes. Eleven pre-install/eleven installed tests, native32 and original
