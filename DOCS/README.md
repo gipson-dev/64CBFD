@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer switch and register-hint provenance](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
+  six forms / three bodies / 2,265 public comparisons. Literal user-register
+  VREGs differ from anonymous records; unscoped UOPT output is byte-identical
+  and has no call-save. All twelve tests pass; tools 615bdc9 first, no match.
+
 - [Text measurer explicit assignment and predicate boundaries](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
   six bodies / 4,530 public comparisons; assignment spelling does not fix
   post-call flag loads, and separated effects fail the ordinary text-read

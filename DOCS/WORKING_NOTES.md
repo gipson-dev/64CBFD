@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
+six five-field forms / three bodies / 2,265 public comparisons; extra S4 flag
+and stale T0 still fail retail lifetime. Actual register-keyword VREGs have raw
+level 0; unscoped whole UOPT stream is byte-identical with no call-save. All
+twelve tests pass, tools 615bdc9 first; production/totals/main README unchanged,
+same target/full Game active, no matching credit or push.
+
+2026-10-12:
 [Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
 six forms / 4,530 public comparisons; explicit named flag loads remain post-call,
 and an equal-count inline-address form differs in 36 words. Real R8 M-48 save

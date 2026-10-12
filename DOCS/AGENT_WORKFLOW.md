@@ -151,6 +151,14 @@ does not prove the shared early reset: check the first ordinary text-byte read
 as well. Equal counts still require complete word/relocation/pool comparisons;
 all six forms remain rejected and no production declarations are changed.
 
+Five-field switches and register-hint provenance are qualified in
+[Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_switch_flags` under WSL.
+Literal source-register VREG raw level 0 and anonymous temporary raw level 1
+are distinct measured records, not proven equivalents or lexical-depth labels.
+Require complete stream comparisons and fired register observations; these
+statement forms still keep a saved S4 flag and fail retail's T0 lifetime.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

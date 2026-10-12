@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Switch And Register-Hint Provenance - 2026-10-12
+
+[Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
+
+- [x] Qualify six five-field forms / three bodies / 2,265 public comparisons and fourteen real single-switch word differences; all retain an extra saved flag and stale T0.
+- [x] Capture literal user-register CFE VREGs with raw level 0 and prove the unscoped whole UOPT stream is byte-identical with no call-save. All twelve tests pass, tools 615bdc9 first.
+- [ ] Recover the anonymous/default-zero merge, seven roles and full 219/frame0x80/SP+0x68 lifetime, then all final gates. Same target/full Game active; no matching credit or installation.
+
 ## Text Measurer Assignment And Predicate Boundaries - 2026-10-12
 
 [Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):

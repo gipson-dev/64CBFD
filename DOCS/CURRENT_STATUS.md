@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 54ded39; tools are committed before the consumer pin.
+  checkpoint pins tools 615bdc9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current assignment/predicate-boundary checkpoint; matching remains active:
+Current switch/register-hint checkpoint; matching remains active:
+[Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
+func_150428D4: six five-field forms / three bodies pass 2,265 public comparisons
+but keep an extra S4 flag and stale T0 at both first-read boundaries. Register
+adds a literal CFE VREG with raw level 0; the unscoped UOPT stream stays byte-
+identical with no call-save. All twelve tests pass, tools 615bdc9 first;
+production/totals/main README unchanged, same target/full Game active.
+
+Previous assignment/predicate-boundary checkpoint:
 [Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
 func_150428D4: six forms pass 4,530 public comparisons but remain rejected.
 Explicit assignment keeps the source flag load post-call; separated effects

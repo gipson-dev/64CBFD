@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Switch And Register-Hint Provenance
+
+[Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
+six five-field forms / three bodies pass 2,265 public comparisons but keep an
+extra saved flag and stale T0. Register adds literal CFE VREG raw level 0;
+unscoped UOPT output is byte-identical to plain and still lacks a call-save.
+All twelve tests pass, tools 615bdc9 first; production/totals/main README
+unchanged, same target/full Game active, no push.
+
 ## 2026-10-12 Text Measurer Assignment And Predicate Boundaries
 
 [Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
