@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer font controls and initializer call-save](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
+  six new tests / 2,265 public comparisons and a complete M-24/R8 capture;
+  four controls produce three bodies, all rejected for saves/early zero.
+  Nine regression tests pass; tools 01a4cd8 first, same target/full Game active.
+
 - [Text measurer wire operands and source-marker provenance](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
   descriptor-defined decoding qualifies actual named-flag streams and
   distinguishes CFE records from UOPT markers. All 22 tests pass; five new

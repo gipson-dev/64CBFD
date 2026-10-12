@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Font Controls And Initializer Call-Save - 2026-10-12
+
+[Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
+
+- [x] Qualify four controls / three bodies, 2,265 public comparisons and eleven real scheduling differences between equal-count pointer forms.
+- [x] Capture actual R8 M-24 save/reload mapping to SP+0x68; prove late space zero and persistent eight-save/font-address hoist. All fifteen tests pass, tools 01a4cd8 first.
+- [ ] Recover shared early zero and seven saved roles, then all final matching gates. Volatile declarations remain diagnostic controls; same target/full Game active, no matching credit.
+
 ## Text Measurer Wire Operands And Source Markers - 2026-10-12
 
 [Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):

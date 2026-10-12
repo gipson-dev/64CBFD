@@ -135,6 +135,14 @@ Raw metadata bytes remain evidence; interpret only descriptor-defined fields.
 Do not equate the UOPT variable-table marker with a CFE VREG opcode or infer
 a pre-call snapshot from a compound assignment without checking load order.
 
+Font qualifier controls and actual initializer call-save are qualified in
+[Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_font_controls` under WSL.
+These are not recovered volatile declarations: even 219/frame0x80/SP+0x68
+still fails seven saved roles and the shared early zero. Equal counts do not
+establish instruction identity. Run the repository helper checks under WSL;
+native Windows py_compile is a separate syntax check.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

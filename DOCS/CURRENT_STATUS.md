@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b3d042d; tools are committed before the consumer pin.
+  checkpoint pins tools 01a4cd8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current wire-operand/source-marker checkpoint; matching remains active:
+Current font-control/initializer checkpoint; matching remains active:
+[Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
+func_150428D4: four qualifier controls / three bodies pass 2,265 public
+comparisons. Real R8 M-24 call-save maps to SP+0x68, but the 219/frame0x80
+initializer still has eight saves and late zero. Six new and nine regression
+tests pass; tools 01a4cd8 first. No recovered volatile declaration or match;
+production/totals/root README unchanged, same target/full Game active.
+
+Previous wire-operand/source-marker checkpoint:
 [Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
 func_150428D4: descriptor-aware decoding qualifies the actual named-flag
 streams without interpreting undefined LOC fields. Literal CFE VREG records

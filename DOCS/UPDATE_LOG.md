@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Font Controls And Initializer Call-Save
+
+[Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
+four qualifier controls / three bodies pass 2,265 public comparisons;
+actual UOPT R8 M-24 save/reload maps to SP+0x68. Eight saved registers and
+nonzero T0 at the first space-width read still reject the initializer.
+All fifteen tests pass, tools 01a4cd8 first; declarations remain diagnostic,
+production/totals/root README unchanged, same target/full Game active, no push.
+
 ## 2026-10-12 Text Measurer Wire Operands And Source Markers
 
 [Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
+four controls / three bodies / 2,265 public comparisons; complete initializer
+capture proves R8 M-24 maps to SP+0x68. Eight saves and late space zero still
+fail retail lifetime. All fifteen tests pass, tools 01a4cd8 first; no recovered
+volatile declaration, production/totals/root README change or matching credit.
+Same target/full Game active, no push.
+
+2026-10-12:
 [Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
 descriptor-defined operands fix LOC decoding without raw-byte normalization.
 Named-flag streams have no literal CFE VREG; compound source loads are
