@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Effectful Predicates - 2026-10-12
+
+[Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
+
+- [x] Screen16 effectful predicate forms and qualify nine instruction bodies across6,795 public comparisons with real helpers and effective source controls.
+- [x] Qualify the upstream register8 call-save observation and scoped nonoverlap/XOR fixture fixes; seven tests pass, tools d515411 banked first, production/older84 fingerprints preserved.
+- [ ] Recover shared T0 zero, correct SP+0x68 call-save/full219 and all final matching gates. All current forms remain rejected; same target/full Game active.
+
 ## Text Measurer UGEN Register Nodes - 2026-10-12
 
 [Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):

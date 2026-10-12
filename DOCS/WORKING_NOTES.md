@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
+same target/full Game active. Seven tests qualify16 source forms/nine bodies,
+6,795 public comparisons and upstream register8 call-save evidence. Reset,
+frame/home/saved roles still reject all forms, including219/0x80. Tools
+d515411 first, exact consumer pin next; production/data/totals/root README/
+older84 fingerprints/history preserved. Continue source construction of the
+shared zero/full-word call-save; no new matching credit or push.
+
+2026-10-12:
 [Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
 same target/full Game active. Six tests qualify read-only UGEN load-node
 observations,90 per body, and child cleanup before AS1 without code changes.

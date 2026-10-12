@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Effectful Predicates
+
+[Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
+seven tests qualify16 source screens/nine bodies and6,795 public comparisons.
+Bitwise forms have an upstream T0 call-save, but wrong frame/home/reset;
+the219/0x80 form also fails saved-role gates. No match/installation/totals
+change. Tools d515411 first, exact consumer pin next; production/root README/
+older84 fingerprints/history preserved, no push. Same target/full Game active.
+
 ## 2026-10-12 Text Measurer UGEN Register Nodes
 
 [Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):

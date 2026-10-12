@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer effectful predicates and upstream call-save](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
+  seven tests qualify16 source forms/nine bodies and6,795 public comparisons.
+  Bitwise forms expose an upstream T0 call-save at wrong homes; all forms,
+  including219/0x80, remain rejected. Tools d515411 banked, production/totals
+  unchanged; continue the same target/full Game.
+
 - [Text measurer UGEN register-node observation](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
   read-only probes fire90 load events per early/late body; six tests qualify
   object identity and cleanup before AS1. Zero-event spill probes remain

@@ -106,6 +106,12 @@ The cc/uopt/ugen fingerprints, fired probe, child/driver exit0, cleanup and
 normal-object identity gates are mandatory. Zero-event routes without an
 effective positive control do not establish absence or matching progress.
 
+Effectful source screens and their limits are banked in
+[Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_logic_candidates --filter or-effects`.
+These are non-installable experiments: public equivalence and219-word/frame
+agreement do not replace saved-role/private/fault/owner matching gates.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

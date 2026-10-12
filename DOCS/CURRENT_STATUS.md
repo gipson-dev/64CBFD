@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7da0ac2; tools are committed before the consumer pin.
+  checkpoint pins tools d515411; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current UGEN register-node checkpoint; matching remains active:
+Current effectful-predicate checkpoint; matching remains active:
+[Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
+func_150428D4:16 source forms/nine instruction bodies pass6,795 public
+comparisons but remain non-matching. Bitwise forms expose an upstream T0
+call-save at wrong SP+0x50/0x4C homes; the219/0x80 form has wrong saved roles.
+Seven focused tests pass after scoped fixture fixes. Tools d515411 first;
+production/data/totals/root README/older84 fingerprints unchanged. Recover
+the shared zero, correct call-save and full219 before final matching gates.
+
+Previous UGEN register-node checkpoint:
 [Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
 func_150428D4: read-only probes fire90 load-node events per early/late body,
 observing already assigned register-class nodes while preserving normal code.
