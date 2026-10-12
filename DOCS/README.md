@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer seven-save lifetime qualification](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
+  two late-flag bodies have original first13 words and 28 equal early fault
+  pairs each; three bodies pass public/native and six bounded flag-home cases. Actual
+  padding rejects a match/produces an overflow trampoline. Eighteen tests
+  pass, tools fb5162b banked; same target/full Game active, no new match.
+
 - [Text measurer UGEN diagnostic checkpoint](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
   pending experiments and a code-identical diagnostic trace are banked in
   tools 5e14815; 16 tests pass with four effective trace-rejection controls.

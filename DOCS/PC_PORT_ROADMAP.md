@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Seven-Save Lifetimes - 2026-10-12
+
+[Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
+
+- [x] Resume the same target and qualify two late-flag bodies with original first13 words/S0..S6/RA homes and 28 equal fired early fault pairs each.
+- [x] Qualify three complete bodies with 755 public/six flag-home cases and native733 per O2/O0; retain the wrong-first-store rejection despite its seven-save count.
+- [x] Execute strict slot-overflow rejection and legacy trampoline discriminators; pass 18 tests and bank tools fb5162b first, preserving production/older history, no push.
+- [ ] Fit nested flag-branches-captured222/0x80/146 to original T0/control flow/full219; then requalify the final full owner/private/fault/rebase/linked installation. No new match yet; full Game stays active.
+
 ## Text Measurer Diagnostic Bank - 2026-10-12
 
 [Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5e14815; tools are committed before the consumer pin.
+  checkpoint pins tools fb5162b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current committed diagnostic checkpoint; matching remains paused:
+Current resumed seven-save lifetime checkpoint; matching is active:
+[Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
+func_150428D4: qualify nested late flags222/0x80/146 and flat222/0x80/178,
+including exact first13 words, original S0..S6/RA homes, 755 public/six flag-
+home cases and 733 native cases per O2/O0 body. Each has 28 equal fired early
+fault-prefix pairs. A third seven-save form still fails the first store.
+Strict padding rejects all three oversized bodies; legacy padding produces
+an overflow trampoline, not a match. Eighteen tests pass; tools fb5162b first.
+Next fitting seed is nested flag-branches-captured222; recover original T0,
+full219 and final qualification, without broad word-copy/overflow substitutes.
+Production/data/totals/root README stay unchanged; no new matching credit.
+
+Previous committed diagnostic checkpoint while matching was paused:
 [Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
 bank the pending text-measurer experiments and verified 166,944-byte UGEN
 trace. Sixteen tests pass, including four effective trace-rejection controls.

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Seven-Save Lifetime Qualification
+
+[Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
+same target resumed; late-flag nested222/146 and flat222/178 recover original
+first13 words and 28 equal early fault pairs each. Three complete bodies pass
+public/six flag-home/native tests, but strict padding rejects their 12-byte
+overflow and legacy padding is a trampoline. Eighteen tests pass; tools
+fb5162b first, exact consumer pin next, older history preserved, no push.
+No production/matching credit; continue original T0/full219 and final gates.
+
 ## 2026-10-12 Text Measurer Diagnostic Bank
 
 [Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):

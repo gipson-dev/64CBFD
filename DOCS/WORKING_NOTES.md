@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
+same target/full Game active. Qualify nested222/146 and flat222/178 with
+original first13 words/save homes and 28 early fault pairs each, plus three
+bodies' public/six flag-home/native tests. Strict slot rejection and legacy
+trampoline controls are effective; no installed match. Eighteen tests pass,
+tools fb5162b first, production/data/totals/root README and older history
+preserved, no push. Continue original T0/control-flow/full219 fitting.
+
+2026-10-12:
 [Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
 bank pending tools work and a code-identical 166,944-byte UGEN diagnostic,
 with 16 passing tests/four effective trace-rejection controls. Tools 5e14815
