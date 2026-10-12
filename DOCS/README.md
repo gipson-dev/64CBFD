@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer wire operands and source-marker provenance](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
+  descriptor-defined decoding qualifies actual named-flag streams and
+  distinguishes CFE records from UOPT markers. All 22 tests pass; five new
+  shapes remain rejected. Tools b3d042d first, same target/full Game active.
+
 - [Text measurer carrier layout and register roles](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
   six tests qualify ten distinct bodies / 7,550 public comparisons and paired
   CFE homes. T0 spill traffic can belong to maximum width, not the flag.

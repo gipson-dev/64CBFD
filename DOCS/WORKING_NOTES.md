@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
+descriptor-defined operands fix LOC decoding without raw-byte normalization.
+Named-flag streams have no literal CFE VREG; compound source loads are
+post-call, unlike the anonymous carrier. All 22 tests pass, tools b3d042d
+first; new 219/134 shape still fails frame/roles/reset. Production/totals/
+root README unchanged; same target/full Game active, no push.
+
+2026-10-12:
 [Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
 six tests / ten distinct bodies / 7,550 public comparisons; paired CFE
 captures move the record but preserve M-56 call-save. A T0-spilling form

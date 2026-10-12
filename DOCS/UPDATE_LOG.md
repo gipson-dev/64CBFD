@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Wire Operands And Source Markers
+
+[Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
+descriptor-aware decoding preserves raw LOC metadata while rejecting invalid
+used fields. Named-flag captures separate UOPT markers from literal CFE
+VREGs; compound flag reads occur after the metrics call. All 22 tests pass,
+tools b3d042d first. Five source screens remain rejected, including 219/134;
+production/totals/root README unchanged, same target/full Game active, no push.
+
 ## 2026-10-12 Text Measurer Carrier Layout And Register Roles
 
 [Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):

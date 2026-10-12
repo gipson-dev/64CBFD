@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Wire Operands And Source Markers - 2026-10-12
+
+[Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
+
+- [x] Qualify descriptor-defined fields, raw LOC preservation and effective typed/unsupported-record controls; capture three actual named-flag streams and the compound input/output.
+- [x] Distinguish literal CFE VREGs from UOPT variable markers and post-call compound loads; all 22 tests pass, tools b3d042d banked first.
+- [ ] Recover shared early T0 zero and the complete 219/0x80/SP+0x68 lifetime, then all final gates. The 219/134 screen still fails; same target/full Game active.
+
 ## Text Measurer Carrier Layout And Register Roles - 2026-10-12
 
 [Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):

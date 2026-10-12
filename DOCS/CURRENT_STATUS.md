@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e7ebb38; tools are committed before the consumer pin.
+  checkpoint pins tools b3d042d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current carrier-layout/register-role checkpoint; matching remains active:
+Current wire-operand/source-marker checkpoint; matching remains active:
+[Note 1307](WORKING_NOTES/1307-game-text-measurer-wire-operands-and-source-marker-provenance-20261012.md):
+func_150428D4: descriptor-aware decoding qualifies the actual named-flag
+streams without interpreting undefined LOC fields. Literal CFE VREG records
+are not the UOPT source-variable marker; compound flag loads occur post-call.
+All 22 focused tests pass. New 219/134 shape still fails frame/roles/reset.
+Tools b3d042d first; production/totals/root README unchanged, full Game active.
+
+Previous carrier-layout/register-role checkpoint:
 [Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
 func_150428D4: ten distinct layouts pass 7,550 public comparisons but fail
 the retail frame. Paired captures move the record, not the M-56 call-save;
