@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-11 Matrix Decomposer Guarded C Conversion
+
+[Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
+func_1503E5F8 replaces the final GLOBAL_ASM in generated_6B320. Complete
+141-word/frame 0xC0 semantic C matches with 63 relocation-aware allocation/
+scheduling guards, not direct C. Nine pre-install/nine final installed tests,
+actual vector helpers, native32 and wrapper/SDK/decomposer chain pass.
+Entire ELF unchanged; append only 63 guard rows, one generated progress
+asm-to-c cell. Game 2,809/4,823, total 3,482/5,496, zero drift / 2,014
+different; converted +1/564 bytes. Tools 6bee275 first, older HEAD/67 hashes
+preserved/two absent copies, no push. All 22 owner functions C and exact
+with existing guards; no ASM/placeholders. Next func_150412C0, 79 words /
+78 differences, display-list setup leaf. README aggregates only; guard
+removal, actual copy/trig and the full Game goal remain open.
+
 ## 2026-10-11 Matrix Forward Direct Match
 
 [Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):

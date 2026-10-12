@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-11:
+[Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
+func_1503E5F8: complete 141-word/frame 0xC0 guarded C conversion, 63
+allocation/scheduling guards, not direct C. Nine pre-install/nine final
+installed tests, actual vector helpers, native32 and wrapper/SDK/decomposer
+chain pass. Entire ELF identical; old guard byte prefix plus 63 rows, one
+generated progress asm-to-c cell. Game 2,809/4,823, total 3,482/5,496,
+zero drift / 2,014 different, converted +1/564 bytes. Tools 6bee275 first,
+older HEAD/67 hashes preserved/two absent copies, no push. All 22 owner
+functions C/exact with existing guards, no ASM/placeholders. Next genuine
+display-list setup placeholder func_150412C0, 79 words / 78 differences.
+Guard removal, actual copy/trig and full Game goal remain open.
+
+2026-10-11:
 [Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
 func_1503F404: all 40 executing words direct plus three original zero tail
 words; existing profile, two local declarations, no new guards/callers.

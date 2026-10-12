@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools dbc0f0d; tools are committed before the consumer pin.
+  checkpoint pins tools 6bee275; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest matrix-forward direct match:
+Latest matrix-decomposer guarded C conversion:
+[Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
+func_1503E5F8 replaces the last GLOBAL_ASM reference in generated_6B320.
+All 141 words/frame 0xC0 match with 63 allocation/scheduling guards, not
+direct C. Nine pre-install/nine final installed tests, actual vector helpers,
+native32 and wrapper/SDK/decomposer chain pass. Entire ELF is identical;
+old guard prefix plus 63 rows, only one generated progress asm-to-c cell.
+Game 2,809/4,823 (58.24%), total 3,482/5,496 (63.36%), zero drift /
+2,014 different. Converted +1/564 bytes. Tools 6bee275 first; older HEAD/
+67 hashes preserved, two absent copies, no push. All 22 owner C rows now
+match with existing guards, no ASM/placeholders. Next genuine placeholder:
+func_150412C0, 79 words / 78 differences, display-list setup leaf.
+Guard removal, actual copy/trig, independent SDK/hardware/gameplay and full
+Game goal remain open; README aggregates only.
+
+Previous matrix-forward direct match:
 [Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
 func_1503F404 emits all 40 executing words directly with its original three
 zero tail words (43-word slot), existing O2/g3/frame 0x70 and two required

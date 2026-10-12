@@ -1,5 +1,14 @@
 #include <ultra64.h>
 #include "variables.h"
+extern f32 D_80098918;
+extern f32 D_8009891C;
+f32 func_150AD930(f32 *);
+void func_15049148(struct17 *, f32, struct17 *);
+void func_150AD8B0(f32 *, f32 *, f32 *);
+f32 func_150AD900(f32 *, f32 *);
+f32 func_150487E0(f32);
+f32 func_150AD780(f32);
+f32 func_150484A0(f32, f32);
 extern u8 D_800C3E90;
 void *memcpy(void *, const void *, unsigned int);
 extern u8 D_800C666C[];
@@ -199,7 +208,63 @@ void func_1503E3C4(s32 slot, s32 index, s32 offset, struct04 *record, s32 absolu
     ((f32 *)record)[20] = z * length;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_6B320/func_1503E5F8.s")
+void func_1503E5F8(f32 input[4][4], f32 *x, f32 *y, f32 *z,
+    f32 *rx, f32 *ry, f32 *rz, f32 *sx, f32 *sy, f32 *sz) {
+    f32 matrix[4][4];
+    f32 cross[4];
+    f32 (*row)[4];
+    f32 (*middle)[4];
+    f32 length;
+    f32 factor;
+    f32 fallback;
+    f32 angleX;
+    f32 angleY;
+    f32 angleZ;
+
+    bcopy(input, matrix, sizeof(matrix));
+    *x = matrix[3][0];
+    *y = matrix[3][1];
+    *z = matrix[3][2];
+    fallback = D_80098918;
+    middle = matrix + 1;
+    for (row = matrix; row < matrix + 3; row++) {
+        length = func_150AD930(*row);
+        if (length == 0.0f) {
+            length = fallback;
+        }
+        if (row == matrix) {
+            *sx = length;
+        } else if (row == middle) {
+            *sy = length;
+        } else {
+            *sz = length;
+        }
+        func_15049148((struct17 *)row, 1.0f / length, (struct17 *)row);
+    }
+    func_150AD8B0(matrix[1], matrix[2], cross);
+    if (func_150AD900(matrix[0], cross) < 0.0f) {
+        *sx = -*sx;
+        *sy = -*sy;
+        *sz = -*sz;
+        for (row = matrix; row != matrix + 3; row++) {
+            (*row)[0] = -(*row)[0];
+            (*row)[1] = -(*row)[1];
+            (*row)[2] = -(*row)[2];
+        }
+    }
+    angleY = func_150487E0(-matrix[0][2]);
+    if (func_150AD780(angleY) != 0.0f) {
+        angleX = func_150484A0(matrix[1][2], matrix[2][2]);
+        angleZ = func_150484A0(matrix[0][1], matrix[0][0]);
+    } else {
+        angleX = func_150484A0(matrix[1][0], matrix[1][1]);
+        angleZ = 0.0f;
+    }
+    factor = D_8009891C;
+    *rx = angleX * factor;
+    *ry = angleY * factor;
+    *rz = angleZ * factor;
+}
 
 void func_1503E82C(s32 slot) {
     s32 count;

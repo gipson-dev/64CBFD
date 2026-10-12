@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Decomposer Guarded C Conversion - 2026-10-11
+
+[Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
+
+- [x] Recover complete ten-pointer matrix copy/position/normalization/handedness/angle/scale contract with cached globals and original pointer lifetimes.
+- [x] Replace final owner GLOBAL_ASM with semantic C, 141 words/frame 0xC0; 78 direct words and 63 relocation-aware allocation/scheduling guards, not direct C.
+- [x] Pass nine pre-install/nine final installed tests, actual vector helpers, wrapper/SDK chain, native32, rebases/fired faults and effective controls.
+- [x] Preserve entire ELF/metadata/data, all 21 neighbors/pools/both padders, six other inputs and old guard byte prefix; append only 63 rows.
+- [x] Measure Game 2,809/4,823, total 3,482/5,496, zero drift / 2,014 different; converted +1/564 bytes, README aggregates only.
+- [x] Bank tools 6bee275 first; shared checks pass, older HEAD/67 hashes preserved/two absent copies, no push.
+- [x] Verify all 22 owner functions C-converted and complete slots exact with guards; no ASM/zero-return placeholders remain here.
+- [ ] Recover func_150412C0 in generated_6E770, 79 words / 78 differences: twelve-command display-list setup leaf and advanced Gfx return pointer.
+- [ ] Remove existing guards and qualify actual copy/trig/hardware/FCSR/gameplay; full Game goal stays active.
+
 ## Matrix Forward Direct Match - 2026-10-11
 
 [Note 1287](WORKING_NOTES/1287-game-matrix-forward-direct-match-20261011.md):
@@ -11,7 +25,7 @@
 - [x] Measure Game 2,808/4,822, total 3,481/5,495, zero drift / 2,014 different; README aggregate rows only.
 - [x] Bank tools dbc0f0d first, source/docs/pin second; shared checks pass, older HEAD/65 hashes preserved/two absent copies, no push.
 - [x] Verify all 21 converted rows in this owner match with existing guards; only matrix decomposer ASM remains.
-- [ ] Recover full func_1503E5F8, 141 words / 564 bytes, replacing GLOBAL_ASM with qualified semantic C and preserving its full caller/math/alias contract.
+- [x] Recover full func_1503E5F8 in Note 1288, 141 words / 564 bytes, replacing GLOBAL_ASM with qualified semantic C plus 63 expected-word guards.
 - [ ] Remove existing guards and continue wider Game recovery; independent SDK/hardware/FCSR/gameplay acceptance remains open.
 
 ## Group-2 Active Timer Direct Match - 2026-10-11
