@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer forbidden-register constraints](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
+  real mode5 traces expose different early/late flag constraints; eight tests
+  qualify parsing and source-shape rejections. Tools e1abcff banked, production/
+  data/totals unchanged. No accepted fit; continue the same target/full Game.
+
 - [Text measurer UOPT allocation trace](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
   completed mode4/6/7 output preserves the normal candidate object. Six tests
   qualify the fingerprint-locked owned-process helper; tools 17bd18b banked.

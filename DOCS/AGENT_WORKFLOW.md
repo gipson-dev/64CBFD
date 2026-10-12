@@ -95,6 +95,9 @@ only on a newly owned compiler process. Never change/install a compiler to
 bypass its fingerprint gate. Debug real-number output is suppressed, so
 numeric timings are not valid. Complete driver exit and identical emitted
 text/functions/relocations/pools are required before trusting the trace.
+Mode5 and its integer forbidden/interference parser are also qualified in
+[Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md).
+Use `--mode 5` for those sets, not for suppressed real-number cost/timing fields.
 
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native

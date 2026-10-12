@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Forbidden Registers
+
+[Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
+mode5 now exposes qualified early/late flag constraints and glyph interference.
+Eight tests pass after correcting fixture assumptions; six source forms and a
+counterfactual219/0x88 control yield no installable match. Tools e1abcff first,
+consumer pin next; production/data/totals/older history preserved, no push.
+Same target/full Game active; resolve coloring, shared T0 and full219 next.
+
 ## 2026-10-12 Text Measurer UOPT Allocation Trace
 
 [Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):

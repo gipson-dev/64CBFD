@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 17bd18b; tools are committed before the consumer pin.
+  checkpoint pins tools e1abcff; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current UOPT allocation-diagnostic checkpoint; matching remains active:
+Current forbidden-register checkpoint; matching remains active:
+[Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
+func_150428D4: qualified mode5 traces expose distinct early/late flag forbidden
+sets and glyph interference while preserving both normal candidate objects.
+Eight diagnostic tests pass. Six source forms find no accepted fit; a
+counterfactual219-word reset still has the wrong0x88 frame/eight saves.
+Tools e1abcff first; production/data/totals/root README unchanged. Investigate
+the actual coloring/live-range boundary, then shared T0/full219/final gates.
+
+Previous UOPT allocation-diagnostic checkpoint:
 [Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
 func_150428D4 now has completed mode4/6/7 traces with text/functions/relocations/
 pools identical to the normal seed222/0x80/146 compile. A fingerprint-locked,

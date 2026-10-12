@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Forbidden Registers - 2026-10-12
+
+[Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
+
+- [x] Qualify real early/late mode5 traces and parse integer forbidden/interference sets without changing normal candidate objects or prepared compilers.
+- [x] Pass eight diagnostic tests and reject six source forms plus the non-installable219/0x88 control; bank tools e1abcff first and preserve production/older history.
+- [ ] Resolve the coloring/classification/glyph boundary, shared T0/full219 and final installation gates. Same target/full Game remains active, with no new match.
+
 ## Text Measurer UOPT Allocation Trace - 2026-10-12
 
 [Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
+same target/full Game active. Qualified mode5 exposes early/late forbidden-
+register sets and glyph interference; eight diagnostic tests pass. Six source
+forms and the non-installable219/0x88 control do not fit. Tools e1abcff first,
+production/data/totals/root README/older history preserved, no push. Use actual
+coloring evidence for shared T0/full219 before all final installation gates.
+
+2026-10-12:
 [Note 1300](WORKING_NOTES/1300-game-text-measurer-uopt-allocation-trace-20261012.md):
 same target/full Game active. Completed mode4/6/7 traces preserve the normal
 seed222 object's text/functions/relocations/pools. Six diagnostic tests pass;
