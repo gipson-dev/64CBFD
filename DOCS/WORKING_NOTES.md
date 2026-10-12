@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-12:
+[Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
+func_150415E0: full 115-word/frame-zero six-argument metrics switch, direct C,
+unchanged no-unroll/no guards. Bind only this owner to the original 19-entry
+table and preserve five live floats. Nine installed tests, native32, ordered
+aliases/rebases/faults and actual callsite windows pass, not full formatter
+acceptance. Only 521 ELF bytes change: 312 target/two size/207 exact metadata
+reorderings; other bytes/nine inputs/seven neighbors exact. Game 2,812/4,823,
+total 3,485/5,496, zero drift / 2,011 different; +1 matching only. Tools
+5d3c18b first, older HEAD/73 hashes preserved/two identical new copies,
+no push. Next func_15042C40, 68-word slot/62 differences, byte normalizer/
+glyph lookup. Full Game goal remains active.
+
+2026-10-12:
 [Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
 func_15041508: full 54-word/frame-zero SDK glyph rectangle, eleven closed
 allocation guards, not direct C. Correct scalar-coordinate/Gfx caller types;

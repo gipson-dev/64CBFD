@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Extended-Character Metrics Direct Match - 2026-10-12
+
+[Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
+
+- [x] Recover the six-argument signed-code gate and ordered width/height/scale/mode/factor switch, including live float/output aliases and invalid untouched outputs.
+- [x] Emit all 115 words/frame zero directly under the existing no-unroll profile; no guards or helper calls.
+- [x] Bind only this owner to the original 19-entry switch table; discard four compiler alignment bytes and preserve the following five float constants.
+- [x] Pass nine installed tests, native32 O2/O0, original callsite windows, rebases/fired faults and effective semantic/integrity controls; no full formatter/gameplay claim.
+- [x] Audit all 521 changed ELF bytes: 312 target, two size and 207 exact symbol/string reorderings; every other byte/nine inputs/seven neighbors remains exact.
+- [x] Measure Game 2,812/4,823, total 3,485/5,496, zero drift / 2,011 different; +1 matching only, README aggregates only.
+- [x] Bank tools 5d3c18b first; WSL shared checks/native py_compile pass, older HEAD/73 hashes preserved/two identical new copies, no push.
+- [ ] Recover func_15042C40, 68-word slot / 62 differences: byte narrowing, lowercase normalization, space mapping and first match across the original 95-byte table.
+- [ ] Recover the remaining width measurer/formatter, remove existing guards and qualify independent hardware/renderer/gameplay; full Game goal remains active.
+
 ## Glyph Rectangle And Typed Caller Guarded Match - 2026-10-12
 
 [Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
@@ -11,7 +25,7 @@
 - [x] Preserve all seven neighbors/pools/both padders and every other ELF byte/ten inputs/old guard prefix; only 165 target/size bytes change, eleven rows appended.
 - [x] Measure Game 2,811/4,823, total 3,484/5,496, zero drift / 2,012 different; +1 matching only, README aggregates only.
 - [x] Bank tools 69d7a80 first; shared checks pass, older HEAD/71 hashes preserved/two new identical copies, no push.
-- [ ] Recover func_150415E0, 115 words / 112 differences, six-argument extended-character metrics resolver with original 19-entry switch and float pool.
+- [x] Recover func_150415E0 directly in Note 1291, all 115 words, six-argument extended-character metrics resolver with original 19-entry switch and float pool.
 - [ ] Remove existing guards and qualify independent hardware/RSP/RDP/renderer/gameplay; full Game goal remains active.
 
 ## Intensity Texture Setup Direct Match - 2026-10-12

@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Extended-character metrics direct match](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
+  all 115 words/frame zero direct C, unchanged no-unroll profile/no guards;
+  six-argument switch bound to the original 19-entry table and live floats.
+  Nine installed tests, native32, aliases/rebases/faults and actual callsite
+  windows pass, not full formatter acceptance. Only 521 ELF bytes change:
+  312 target/two size/207 exact metadata reorderings; other bytes/nine inputs/
+  seven neighbors exact. Tools 5d3c18b first, older work preserved, no push.
+  Next func_15042C40, 68-word slot/62 differences, byte normalizer/glyph lookup;
+  full Game goal stays open.
+
 - [Glyph rectangle and typed caller guarded match](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
   full 54-word/frame-zero SDK draw, eleven closed allocation guards, not
   direct C. Correct caller/prototype scalar-coordinate/Gfx types without

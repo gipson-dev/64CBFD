@@ -1,4 +1,9 @@
 #include <ultra64.h>
+extern f32 D_80098AFC;
+extern f32 D_80098B00;
+extern f32 D_80098B04;
+extern f32 D_80098B08;
+extern f32 D_80098B0C;
 
 /* Non-matching placeholders for the text-only asm slice asm/6E770.s. */
 
@@ -66,8 +71,74 @@ Gfx *func_15041508(Gfx *displayList, s32 x, s32 y, s32 glyph) {
     return displayList;
 }
 
-s32 func_150415E0() {
-    return 0;
+void func_150415E0(s32 code, s32 *width, s32 *height, f32 *scale,
+    s32 *mode, f32 *factor) {
+    if (code >= 0xA8 && code < 0x100) {
+        *factor = 1.0f;
+        switch (code) {
+            case 0xA8:
+            case 0xA9:
+                *width = 32;
+                *height = 18;
+                *scale = D_80098AFC;
+                *mode = 1;
+                return;
+            case 0xAA:
+            case 0xAB:
+            case 0xAC:
+            case 0xAD:
+                *width = 32;
+                *height = 27;
+                *scale = 2.0f;
+                *mode = 1;
+                *factor = D_80098B00;
+                return;
+            case 0xAE:
+                *width = 16;
+                *height = 17;
+                *scale = D_80098B04;
+                *mode = 1;
+                return;
+            case 0xAF:
+            case 0xB0:
+                *width = 46;
+                *height = 16;
+                *scale = 2.0f;
+                *mode = 1;
+                return;
+            case 0xB6:
+            case 0xB7:
+            case 0xB8:
+            case 0xB9:
+                *width = 16;
+                *height = 12;
+                *scale = 2.0f;
+                *mode = 0;
+                return;
+            case 0xBA:
+                *mode = 0;
+                *scale = D_80098B08;
+                *width = 55;
+                *height = 12;
+                return;
+            case 0xB1:
+                *width = 38;
+                *height = 24;
+                *scale = 2.0f;
+                *mode = 1;
+                *factor = D_80098B0C;
+                return;
+            default:
+                *width = 12;
+                *height = 16;
+                *scale = 2.0f;
+                *mode = 0;
+                return;
+        }
+    }
+    *scale = 0.0f;
+    *width = 0;
+    *height = 0;
 }
 
 s32 func_150417AC() {

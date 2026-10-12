@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 69d7a80; tools are committed before the consumer pin.
+  checkpoint pins tools 5d3c18b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest glyph-rectangle and typed-caller guarded match:
+Latest extended-character metrics direct match:
+[Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
+func_150415E0 replaces its zero-return placeholder with the six-argument
+width/height/scale/mode/factor switch. All 115 words/frame zero emit directly
+under the unchanged no-unroll profile, no guards. Bind the generated switch
+to the original 19-entry table; its five live float constants stay untouched.
+Nine installed tests pass, including native32, aliases/rebases/fired faults
+and actual callsite windows, not full formatter/gameplay acceptance.
+Only 521 ELF bytes change: 312 target, two size, 207 exact symbol/string
+reorderings; all other bytes, nine inputs and seven neighbors remain exact.
+Game 2,812/4,823 (58.30%), total 3,485/5,496 (63.41%), zero drift /
+2,011 different; +1 matching only. Tools 5d3c18b first, older HEAD/73 hashes
+preserved/two new identical copies, no push. Next func_15042C40: 68-word
+slot / 62 differences, byte normalizer/first-match glyph lookup, a dependency
+of the remaining width measurer and formatter. Full Game goal remains open;
+README aggregates only.
+
+Previous glyph-rectangle and typed-caller guarded match:
 [Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
 func_15041508 replaces its zero-return placeholder with a full signed-index
 8-by-12 SDK rectangle and Gfx return. All 54 words/frame zero are exact with

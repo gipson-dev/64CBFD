@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-12 Extended-Character Metrics Direct Match
+
+[Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
+func_150415E0 restores its six-argument metrics switch. All 115 words/frame
+zero emit directly under the unchanged no-unroll profile, without guards.
+Bind the owner to the existing 19-entry table; preserve its live float pool.
+Nine installed tests, native32, aliases/rebases/fired faults and original
+callsite windows pass; no full formatter/gameplay claim. Only 521 ELF bytes
+change: 312 target/two size/207 exact metadata reorderings; all other bytes,
+nine inputs/seven neighbors exact. Game 2,812/4,823, total 3,485/5,496,
+zero drift / 2,011 different; +1 matching only. Tools 5d3c18b first, older
+HEAD/73 hashes preserved/two new identical copies, no push. README aggregates
+only. Next func_15042C40, 68-word slot/62 differences, byte normalizer and
+first-match glyph lookup; remaining formatter and full Game goal stay open.
+
 ## 2026-10-12 Glyph Rectangle And Typed Caller Guarded Match
 
 [Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
