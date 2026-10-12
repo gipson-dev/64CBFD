@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-12:
+[Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
+func_15042C40: byte normalizer/first-match glyph lookup, complete 68-word
+slot exact with twelve guards/three original zeros, not direct C. The body
+is 65 words/frame zero, 61 reachable/four unreachable originals preserved.
+Nine pre-install/nine final installed tests, native32, all 95 forced matches,
+aliases/rebases/faults and caller windows pass. Only 198 target/size ELF bytes
+change; other bytes/ten inputs/seven neighbors/old guard prefix exact.
+Game 2,813/4,823, total 3,486/5,496, zero drift / 2,010 different; +1 matching
+only. Tools 05875fe first, older HEAD/75 hashes preserved/two identical new
+copies, no push. Next func_150428D4, 219 words/199 differences/frame 0x80,
+full text measurer. Full Game goal remains active.
+
+2026-10-12:
 [Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
 func_150415E0: full 115-word/frame-zero six-argument metrics switch, direct C,
 unchanged no-unroll/no guards. Bind only this owner to the original 19-entry

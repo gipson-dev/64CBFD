@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5d3c18b; tools are committed before the consumer pin.
+  checkpoint pins tools 05875fe; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest extended-character metrics direct match:
+Latest character-normalizer guarded match:
+[Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
+func_15042C40 restores byte narrowing, lowercase normalization, early space
+mapping and first match across the original 95-entry table. The complete
+68-word slot matches: 65-word/frame-zero C body with twelve cached-byte/
+scratch-register guards, plus three original zeros, not direct C. All 61
+reachable words are exercised; four unreachable retail words are retained.
+Nine pre-install/nine final installed tests, native32, all 95 forced indices,
+aliases/rebases/fired faults and actual caller windows pass. Only 198 target/
+size ELF bytes change; every other byte/ten inputs/seven neighbors remain
+exact, with twelve rows appended to the unchanged old guard prefix.
+Game 2,813/4,823 (58.32%), total 3,486/5,496 (63.43%), zero drift /
+2,010 different; +1 matching only. Tools 05875fe first, older HEAD/75 hashes
+preserved/two identical new copies, no push. Next func_150428D4: 219 words /
+199 differences, frame 0x80, full text measurer and its three-output contract.
+Hardware/renderer/gameplay and the full Game goal remain open; README
+aggregates only.
+
+Previous extended-character metrics direct match:
 [Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
 func_150415E0 replaces its zero-return placeholder with the six-argument
 width/height/scale/mode/factor switch. All 115 words/frame zero emit directly

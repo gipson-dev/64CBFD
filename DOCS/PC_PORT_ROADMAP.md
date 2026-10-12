@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Character Normalizer Guarded Match - 2026-10-12
+
+[Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
+
+- [x] Recover byte narrowing, lowercase search normalization, early space return, first duplicate match and original-byte fallback across the untouched 95-entry table.
+- [x] Match the complete 68-word slot: 65-word/frame-zero C body with twelve cached-byte/scratch-register guards and three original zeros; not direct C.
+- [x] Exercise all 61 reachable words and preserve four unreachable original words, branch-likely behavior and incoming full-word argument store.
+- [x] Pass nine pre-install/nine final installed tests, native32 O2/O0, all 95 forced first matches, private-home aliases/rebases/fired faults and actual caller windows.
+- [x] Preserve seven neighbors/pools/both padders and every other ELF byte/ten inputs/old guard prefix; only 198 target/size bytes change and twelve guard rows append.
+- [x] Measure Game 2,813/4,823, total 3,486/5,496, zero drift / 2,010 different; +1 matching only, README aggregates only.
+- [x] Bank tools 05875fe first; shared checks pass, older HEAD/75 hashes preserved/two new identical copies, no push.
+- [ ] Recover func_150428D4, 219 words / 199 differences, frame 0x80: complete text measurer, three output meanings, null/empty/control/newline and alias behavior.
+- [ ] Remove existing guards and recover the remaining formatter; hardware/FCSR/renderer/gameplay acceptance and full Game goal remain open.
+
 ## Extended-Character Metrics Direct Match - 2026-10-12
 
 [Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
@@ -11,7 +25,7 @@
 - [x] Audit all 521 changed ELF bytes: 312 target, two size and 207 exact symbol/string reorderings; every other byte/nine inputs/seven neighbors remains exact.
 - [x] Measure Game 2,812/4,823, total 3,485/5,496, zero drift / 2,011 different; +1 matching only, README aggregates only.
 - [x] Bank tools 5d3c18b first; WSL shared checks/native py_compile pass, older HEAD/73 hashes preserved/two identical new copies, no push.
-- [ ] Recover func_15042C40, 68-word slot / 62 differences: byte narrowing, lowercase normalization, space mapping and first match across the original 95-byte table.
+- [x] Recover func_15042C40 in Note 1292, complete 68-word slot with twelve guards: byte narrowing, lowercase normalization, space mapping and first match across the original 95-byte table.
 - [ ] Recover the remaining width measurer/formatter, remove existing guards and qualify independent hardware/renderer/gameplay; full Game goal remains active.
 
 ## Glyph Rectangle And Typed Caller Guarded Match - 2026-10-12

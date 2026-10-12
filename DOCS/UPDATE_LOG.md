@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-12 Character Normalizer Guarded Match
+
+[Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
+func_15042C40 restores the byte normalizer and original 95-entry glyph lookup.
+All 68 slot words match: 65-word/frame-zero C body, twelve cached-byte/scratch
+register guards and three original zeros, not direct C. Exercise 61 reachable
+words; preserve four unreachable retail words. Nine pre-install/nine final
+installed tests, native32, aliases/rebases/fired faults and actual call windows
+pass, not full formatter/measurer acceptance. Only 198 target/size ELF bytes
+change; every other byte/ten inputs/seven neighbors and old guard prefix exact.
+Game 2,813/4,823, total 3,486/5,496, zero drift / 2,010 different; +1 matching
+only. Tools 05875fe first, older HEAD/75 hashes preserved/two new identical
+copies, no push. README aggregates only. Next func_150428D4, 219 words /
+199 differences, frame 0x80, full text measurer; full Game goal stays open.
+
 ## 2026-10-12 Extended-Character Metrics Direct Match
 
 [Note 1291](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):

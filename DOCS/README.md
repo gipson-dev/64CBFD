@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Character normalizer guarded match](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
+  complete 68-word slot, 65-word/frame-zero C body/twelve guards/three zeros,
+  not direct C. Restore byte normalization and first match in the original
+  95-entry table; exercise 61 reachable words and preserve four unreachable
+  words. Nine pre-install/nine final installed tests, native32, aliases/rebases/
+  faults and caller windows pass. Only 198 target/size ELF bytes change;
+  other bytes/ten inputs/seven neighbors exact. Tools 05875fe first, older
+  work preserved/no push. Next full text measurer func_150428D4, 219 words /
+  199 differences, frame 0x80; wider Game goal remains open.
+
 - [Extended-character metrics direct match](WORKING_NOTES/1291-game-extended-character-metrics-direct-match-20261012.md):
   all 115 words/frame zero direct C, unchanged no-unroll profile/no guards;
   six-argument switch bound to the original 19-entry table and live floats.

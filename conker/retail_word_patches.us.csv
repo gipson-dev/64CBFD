@@ -14610,3 +14610,15 @@ generated_6E770,func_15041508,0x070,0x2529FFF8,0x2463FFF8,-,-,Normalize glyph re
 generated_6E770,func_15041508,0x074,0x00E95823,0x00E35823,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
 generated_6E770,func_15041508,0x078,0x0009C0C0,0x0003C0C0,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
 generated_6E770,func_15041508,0x0AC,0xAD0D0004,0xAD2D0004,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15042C40,0x018,0x2861007B,0x2881007B,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x020,0x2462FFE0,0x2482FFE0,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x030,0x308200FF,0x306200FF,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x08C,0x24060003,0x24040003,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x098,0x2407005F,0x2406005F,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0AC,0x00C01025,0x00801025,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0C0,0x24C20001,0x24820001,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0D4,0x24C20002,0x24820002,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0E0,0x24C60004,0x24840004,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0E8,0x24C20003,0x24820003,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0EC,0x24C60004,0x24840004,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_6E770,func_15042C40,0x0F0,0x14C7FFEA,0x1486FFEA,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false

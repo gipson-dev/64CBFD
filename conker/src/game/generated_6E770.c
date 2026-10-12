@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern u8 D_80085930;
+extern u8 D_80085931;
+extern u8 D_80085932;
+extern u8 D_80085933[];
 extern f32 D_80098AFC;
 extern f32 D_80098B00;
 extern f32 D_80098B04;
@@ -149,6 +153,46 @@ s32 func_150428D4() {
     return 0;
 }
 
-s32 func_15042C40() {
-    return 0;
+s32 func_15042C40(u8 character) {
+    u8 original = character;
+    u8 normalized;
+    s32 index;
+    u8 *cursor;
+
+    if (character >= 0x61 && character < 0x7B) {
+        normalized = character - 0x20;
+    } else {
+        normalized = character;
+    }
+    if (character == 0x20) {
+        return 0x60;
+    }
+    if (D_80085930 == normalized) {
+        return 0;
+    }
+    if (D_80085931 == normalized) {
+        return 1;
+    }
+    if (D_80085932 == normalized) {
+        return 2;
+    }
+    cursor = D_80085933;
+    index = 3;
+    do {
+        if (normalized == cursor[0]) {
+            return index;
+        }
+        if (normalized == cursor[1]) {
+            return index + 1;
+        }
+        if (normalized == cursor[2]) {
+            return index + 2;
+        }
+        if (normalized == cursor[3]) {
+            return index + 3;
+        }
+        index += 4;
+        cursor += 4;
+    } while (index != 0x5F);
+    return original;
 }
