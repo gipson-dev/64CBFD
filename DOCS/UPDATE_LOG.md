@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Game Mode Callback Dispatcher Direct Match
+
+[Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
+func_15008930 replaces its zero-return placeholder with mode-selected live
+callbacks and final latch clear; all160 slot bytes match directly, frame0x30,
+no guards. All fourteen dispatcher/text tests and literal image/data gates pass.
+Tools d3426e6 first; Game2,814/4,823, total3,487/5,496, zero drift, converted
+totals fixed. Text and translator remain open; next inspect func_15015104.
+
 ## 2026-10-12 Text Measurer Repeated Predicate And Font-Load Boundary
 
 [Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):

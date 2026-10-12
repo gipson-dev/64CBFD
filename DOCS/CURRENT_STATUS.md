@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4dbdcbe; tools are committed before the consumer pin.
+  checkpoint pins tools d3426e6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current repeated-predicate/font-load-boundary checkpoint; matching remains active:
+Current mode-callback direct-match checkpoint; full Game matching remains active:
+[Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
+func_15008930 now emits all 38 retail instructions plus its two original
+alignment words directly, frame0x30/no guards. Literal whole-ELF audit allows
+only its slot and size field, 12->152; data/guards/layout/converted totals stay
+fixed. All fourteen dispatcher/text tests pass; tools d3426e6 first. Game now
+2,814/4,823 (58.35%), total3,487/5,496 (63.45%), drift0/different2,009.
+Next inspect func_15015104; text218/114/cut27 and matrix translator remain open.
+
+Retained repeated-predicate/font-load-boundary checkpoint:
 [Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
 func_150428D4: 218/frame0x80/114 preserves the seven opening roles/common zero/
 SP+0x68 and matches a literal 53-word metrics region. Space/newline/A8 match

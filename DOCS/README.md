@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Mode callback dispatcher direct match](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
+  func_15008930 matches all160 slot bytes directly, frame0x30/no guards; all
+  fourteen tests and whole-image/data gates pass. Tools d3426e6 first; Game
+  matching2,814/4,823. Text/matrix boundaries remain open; next func_15015104.
+
 - [Text measurer repeated predicate and font-load boundary](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
   218/114 retains the recovered lifetimes and matches 53 literal metrics words;
   710/768 named access-cut states match, with first A failure at font-pointer

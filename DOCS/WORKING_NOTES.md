@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
+func_15008930 is restored to semantic mode-selected callbacks and final latch
+clear, all160 slot bytes exact directly/frame0x30/no guards. All fourteen tests
+and literal image/data gates pass; tools d3426e6 first. Game2,814/4,823,
+total3,487/5,496, zero drift/converted totals fixed. Text/matrix remain open;
+next inspect func_15015104, full Game active, no push.
+
+2026-10-12:
 [Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
 218/frame0x80/114 preserves seven roles/common zero/SP+0x68 and matches a
 literal 53-word metrics region. All named space/newline/A8 access cuts pass;

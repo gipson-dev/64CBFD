@@ -183,6 +183,15 @@ access-cut states, but the ordinary font-pointer load still rejects it. Cached
 predicates must be defined before the space jump too. Keep named-cut evidence
 separate from all-input/private/PC/FCSR matching; do not pad or install.
 
+Mode-selected callback dispatch is directly qualified in
+[Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_mode_callback_dispatch_candidates` under WSL.
+Preserve the guarded do/while: invalid modes must not evaluate an uninitialized
+selected pointer. Distinguish 152-byte function from its existing eight-byte
+alignment tail; audit both literal slot and the expected symbol-size update.
+Whole-ELF frozen fixtures advance only after an independent declared-change
+image gate, with prior snapshots archived and semantic/corruption checks intact.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Game Mode Callback Dispatcher Direct Match - 2026-10-12
+
+[Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
+
+- [x] Recover func_15008930's mode1/mode2 live callback selection and final -1 latch store; match the complete 160-byte retail slot directly, frame0x30/no guards.
+- [x] Qualify guest/native/provider mutations, 306 own access-cut pairs, copied owner/neighbor/pools, both padders, independent rebases and literal whole-ELF/data gates; all fourteen dispatcher/text tests pass, tools d3426e6 first.
+- [x] Update aggregate matching to Game2,814/4,823 and total3,487/5,496, retaining zero drift and unchanged converted totals.
+- [ ] Continue ordinary Game matching with func_15015104; keep text218/114/cut27 and matrix translator open. Exact guest C does not add host/gameplay acceptance.
+
 ## Text Measurer Repeated Predicate And Font-Load Boundary - 2026-10-12
 
 [Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
