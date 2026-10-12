@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-11 Group-2 Mask Finish Direct Match
+
+[Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
+func_1503F16C matches all 81 words directly, no guards/profile/header/caller
+changes, one required local timer alias. Twelve pre-install/twelve installed
+tests, native32 and actual dispatcher171/predicate27/finish81/query30 chain
+pass. Only 274 target/extent ELF bytes change; other metadata/data/guards/
+seven inputs and 21 neighbors exact. Game 2,806/4,822, total 3,479/5,495,
+zero drift / 2,016 different. Tools c7869ae first, older HEAD/61 hashes
+preserved/two absent copies, no push; README aggregates only. Next
+func_1503F2B0, 85/84 differences; use prior caller/query evidence in Note 1278.
+Existing guard removal and full Game goal stay open.
+
 ## 2026-10-11 Random Vertical Rate Direct Match
 
 [Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):

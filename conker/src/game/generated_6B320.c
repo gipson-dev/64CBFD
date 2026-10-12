@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "variables.h"
+extern u8 D_800C666C[];
 extern f32 D_80098928;
 extern f32 D_8009892C;
 void func_1510F800(s32);
@@ -411,8 +412,19 @@ void func_1503F108(s32 arg0) {
     *(f32 *) (entry->unk0 + 0x1EC) = 10.0f;
 }
 
-s32 func_1503F16C() {
-    return 0;
+void func_1503F16C(s32 slot) {
+    *(s16 *)(D_800C666C + slot * 0x10) = 300;
+    if (func_1503EF4C(2, 0, slot) != 0) {
+        D_800CC2D0[slot].unk94 |= 0x40;
+        D_800CC2D0[slot].unk94 &= ~0x200;
+    }
+    if (func_1503EF4C(2, 1, slot) != 0) {
+        D_800CC2D0[slot].unk94 |= 0x80;
+        D_800CC2D0[slot].unk94 &= ~0x100;
+    }
+    if (func_1503EF4C(2, 2, slot) != 0) {
+        D_800CC2D0[slot].unk94 &= ~0x400;
+    }
 }
 
 s32 func_1503F2B0() {

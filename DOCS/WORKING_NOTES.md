@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
+func_1503F16C: all81 direct, no guards/pools/header/caller/profile changes,
+one required local timer alias. Twelve pre-install/twelve installed tests,
+native32 and actual dispatcher/predicate/finish/query chain pass. Only 274
+target/extent ELF bytes change; other bytes/metadata/data/guards/seven inputs
+and 21 neighbors exact. Game 2,806/4,822, total 3,479/5,495, zero drift /
+2,016 different. Tools c7869ae first, older HEAD/61 hashes preserved/two
+absent copies, no push; README aggregates only. Next func_1503F2B0, 85/84
+differences, prior Note 1278 caller/query evidence available. Full Game goal open.
+
+2026-10-11:
 [Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
 func_1503EFC4: complete45 direct, no guards/profile/header/declaration/caller
 changes. Twelve pre-install/twelve installed tests, native32 and actual

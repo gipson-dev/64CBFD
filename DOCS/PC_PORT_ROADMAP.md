@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Group-2 Mask Finish Direct Match - 2026-10-11
+
+[Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
+
+- [x] Recover timer 300, three ordered selector-2 mask queries, full nonzero results and live actor flags with five original stores.
+- [x] Emit all 81 words directly with existing O2/g3/0x20 frame; no guards/pools/header/caller/profile changes, one required local timer-alias declaration.
+- [x] Pass twelve pre-install/twelve installed tests, native32, actual query30, aliases/rebases/faults/controls and dispatcher171/predicate27/finish81/query30 chain.
+- [x] Preserve 21 neighbors/pools/both padders and all other ELF bytes/metadata/data/guards/seven inputs; only 274 target/extent bytes change.
+- [x] Measure +1 matching only: Game 2,806/4,822, total 3,479/5,495, zero drift / 2,016 different; README aggregates only.
+- [x] Bank tools c7869ae first, consumer source/docs/pin second; shared checks pass, older HEAD/61 hashes preserved/two absent copies, no push.
+- [ ] Recover next func_1503F2B0, 85 words / 84 differences, using its full active-callback contract and prior retail caller/query evidence in Note 1278.
+- [ ] Remove existing guards and recover remaining callbacks; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Random Vertical Rate Direct Match - 2026-10-11
 
 [Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/metadata/data/guards/seven inputs; only 135 target/extent bytes change.
 - [x] Measure +1 matching only: Game 2,805/4,822, total 3,478/5,495, zero drift / 2,017 different; README aggregates only.
 - [x] Bank tools 4cc2121 first, consumer source/docs/pin second; shared checks pass, older HEAD/59 hashes preserved/two absent copies, no push.
-- [ ] Recover next func_1503F16C, 81 words / 80 differences, after inspecting its full group-2 finish callback and caller contract.
+- [x] Recover and qualify complete func_1503F16C in Note 1285, all 81 words direct and original dispatcher/query/callback table unchanged.
 - [ ] Remove existing guards and recover remaining callbacks; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Record Ground Collision Guarded Match - 2026-10-11

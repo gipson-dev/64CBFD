@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4cc2121; tools are committed before the consumer pin.
+  checkpoint pins tools c7869ae; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest random vertical-rate direct match:
+Latest group-2 mask-finish direct match:
+[Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
+func_1503F16C emits all 81 words directly under existing O2/g3/frame 0x20;
+no guards/pools/header/caller/profile changes, one required local timer alias
+declaration. Twelve pre-install/twelve installed tests, native32 and actual
+dispatcher171/predicate27/finish81/query30 chain pass. Only 274 target/extent
+ELF bytes change; other bytes/metadata/data/guards/seven inputs and 21 neighbors
+remain exact. Game 2,806/4,822 (58.19%), total 3,479/5,495 (63.31%), zero
+drift / 2,016 different. Tools c7869ae first, older HEAD/61 hashes preserved/
+two absent copies, no push; README aggregates only. Next func_1503F2B0,
+85 words / 84 differences; use Note 1278's existing retail caller/query
+qualification. Guard removal, deeper SDK/hardware/gameplay and full Game
+goal stay open.
+
+Previous random vertical-rate direct match:
 [Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
 func_1503EFC4 emits all 45 words directly under existing O2/g3/frame 0x30;
 no guards, pools, header/declaration/caller/profile changes. Twelve pre-install/

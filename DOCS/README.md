@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Group-2 mask finish direct match](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
+  all81 direct C, no guards/pools/header/caller/profile changes; twelve
+  pre-install/twelve installed tests, native32 and actual dispatcher/predicate/
+  finish/query chain pass. Only 274 target/extent ELF bytes change; other
+  metadata/data/guards/seven inputs and 21 neighbors unchanged. Tools c7869ae
+  first, older work preserved/no push. Next func_1503F2B0, 85/84 differences;
+  prior Note 1278's caller/query evidence is available, full Game goal open.
+
 - [Random vertical rate direct match](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
   complete45 direct C, no guards/profile/header/declaration/caller changes;
   twelve pre-install/twelve installed tests, native32 and actual dispatcher/
