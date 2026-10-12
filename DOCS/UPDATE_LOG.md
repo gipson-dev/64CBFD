@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-12 Game Event Record Constructor Direct Match
+
+[Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
+func_15015104 now matches all52 words directly, frame0x58/no guards, using the
+raw flag word's two independent tests. Seven pre-/post-install tests pass,
+covering packet/helper mutations, 15,552 guest cases, 49,152 native32
+comparisons, 240 access-cut pairs and 31 neighbors. Literal whole-ELF audit
+permits only its 208-byte slot and size200->208; all protected inputs and
+189,088 Game-data bytes stay fixed. Game2,815/4,823, total3,488/5,496, drift0,
+converted totals unchanged. Next func_1501AE94; text/matrix remain open.
+All16 combined target/text tests and six retained callback regressions pass;
+tools ec4865d is committed first. Older HEAD and unrelated dirty work preserved.
+
 ## 2026-10-12 Game Mode Callback Dispatcher Direct Match
 
 [Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):

@@ -192,6 +192,17 @@ alignment tail; audit both literal slot and the expected symbol-size update.
 Whole-ELF frozen fixtures advance only after an independent declared-change
 image gate, with prior snapshots archived and semantic/corruption checks intact.
 
+The event packet constructor is directly qualified in
+[Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_event_record_constructor_candidates` and
+`python3 -m unittest tools.tests.test_game_event_record_constructor_match -v`
+under WSL. Retain the raw flag word and its two independent tests. Compare
+all20 seeded packet bytes in the guest ABI, but do not fix portable C padding
+contents; incoming-home redirects are guest-only probes. The production owner
+padder preserves a preexisting overflowing neighbor while the strict full-owner
+padder rejects it; both isolated target padders match. Do not weaken or repair
+an unrelated neighbor to manufacture a full-owner strict-padder pass.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

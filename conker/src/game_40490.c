@@ -293,8 +293,8 @@ s32 func_15015104(u8 *arg0) {
     func_1510F800(0);
     data.unk8 = func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
 
-    flags = *(s32 *)(arg0 + 0x20) != 0;
-    data.unkC = flags | (flags ? 2 : 0);
+    flags = *(s32 *)(arg0 + 0x20);
+    data.unkC = (flags ? 1 : 0) | (flags ? 2 : 0);
     data.unk10 = 0;
 
     temp_v0 = (u8 *)func_15149130(0x12C, -1, -1, -1, 0, 0x2C, (struct37 *)0x14, 0xFF, 0);

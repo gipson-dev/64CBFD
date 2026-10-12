@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-12:
+[Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
+func_15015104's two raw flag tests recover all52 words/frame0x58 directly,
+no guards. Seven pre- and seven post-install tests pass, including 15,552 guest,
+49,152 native32 and 240 access-cut comparisons, 31 neighbors and literal ELF/
+data gates. Game2,815/4,823, total3,488/5,496, zero drift, converted totals fixed.
+Next func_1501AE94; text218/114/cut27 and translator remain open, full Game
+goal active. Detailed recovery updates stay here, not in the root README.
+All16 combined target/text tests and six callback regressions pass; tools
+ec4865d first, older HEAD/unrelated dirty work preserved, no push.
+
+2026-10-12:
 [Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
 func_15008930 is restored to semantic mode-selected callbacks and final latch
 clear, all160 slot bytes exact directly/frame0x30/no guards. All fourteen tests

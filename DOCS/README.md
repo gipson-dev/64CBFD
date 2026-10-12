@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Event record constructor direct match](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
+  func_15015104 matches all52 words directly, frame0x58/no guards; seven pre-
+  and seven post-install tests pass. Full image/data and 31-neighbor gates
+  retain protected bytes. All22 current/regression tests pass; tools ec4865d
+  first. Game matching2,815/4,823; next func_1501AE94.
+  Text/matrix boundaries and host/gameplay qualification remain open.
+
 - [Mode callback dispatcher direct match](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
   func_15008930 matches all160 slot bytes directly, frame0x30/no guards; all
   fourteen tests and whole-image/data gates pass. Tools d3426e6 first; Game

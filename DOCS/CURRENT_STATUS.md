@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d3426e6; tools are committed before the consumer pin.
+  checkpoint pins tools ec4865d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current mode-callback direct-match checkpoint; full Game matching remains active:
+Current event-record direct-match checkpoint; full Game matching remains active:
+[Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
+func_15015104 now emits all 52 retail words directly, frame0x58/no guards,
+after retaining the raw flag word and spelling its two tests independently.
+Seven pre-install and seven post-install tests pass: 15,552 guest cases,
+49,152 native32 comparisons, 240 fired access-cut pairs and literal ELF/data
+gates. Only 105 target bytes and one size-field byte change, 200->208; all 31
+owner neighbors and protected inputs stay fixed. Game2,815/4,823 (58.37%),
+total3,488/5,496 (63.46%), drift0/different2,008; converted totals unchanged.
+All16 combined target/text tests and six retained callback regressions pass;
+tools ec4865d is banked first. The older tools mirror retains HEAD/dirty work.
+Next func_1501AE94, a 44-word rectangle-bounds predicate still represented by
+a zero-return placeholder. Text218/114/cut27 and matrix translator remain open.
+
+Previous mode-callback direct-match checkpoint:
 [Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
 func_15008930 now emits all 38 retail instructions plus its two original
 alignment words directly, frame0x30/no guards. Literal whole-ELF audit allows

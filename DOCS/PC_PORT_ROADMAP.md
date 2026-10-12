@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Event Record Constructor Direct Match - 2026-10-12
+
+[Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
+
+- [x] Match func_15015104's complete 52-word/208-byte body directly with its original frame0x58 and incoming-pointer lifetime; only two semantic flag lines change, no guards/profile changes.
+- [x] Qualify the 20-byte packet, helper mutations and alias allocation with 15,552 guest cases, 49,152 native32 comparisons, 240 fired own-access cut pairs, 31 copied-owner neighbors and independent rebases.
+- [x] Pass installed literal whole-ELF/data gates: only 105 slot bytes and one size byte change; all 189,088 data bytes / 720 owners and protected inputs remain exact.
+- [x] Update matching aggregates to Game2,815/4,823 and total3,488/5,496; preserve zero drift and unchanged converted totals.
+- [x] Pass all16 combined target/text tests and six retained callback regressions; commit tools ec4865d first and preserve the older tools HEAD and unrelated dirty work.
+- [ ] Continue with func_1501AE94's 44-word rectangle-bounds predicate and complete its matching gates. Keep text218/114/cut27 and matrix translator open; no host/gameplay acceptance is inferred.
+
 ## Game Mode Callback Dispatcher Direct Match - 2026-10-12
 
 [Note 1314](WORKING_NOTES/1314-game-mode-callback-dispatcher-direct-match-20261012.md):
@@ -7,7 +18,7 @@
 - [x] Recover func_15008930's mode1/mode2 live callback selection and final -1 latch store; match the complete 160-byte retail slot directly, frame0x30/no guards.
 - [x] Qualify guest/native/provider mutations, 306 own access-cut pairs, copied owner/neighbor/pools, both padders, independent rebases and literal whole-ELF/data gates; all fourteen dispatcher/text tests pass, tools d3426e6 first.
 - [x] Update aggregate matching to Game2,814/4,823 and total3,487/5,496, retaining zero drift and unchanged converted totals.
-- [ ] Continue ordinary Game matching with func_15015104; keep text218/114/cut27 and matrix translator open. Exact guest C does not add host/gameplay acceptance.
+- [x] Inspect and finish ordinary Game matching for func_15015104; see Note 1315. The text and matrix work remains explicitly open in the current checklist.
 
 ## Text Measurer Repeated Predicate And Font-Load Boundary - 2026-10-12
 
