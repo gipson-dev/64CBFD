@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer UGEN register-node observation](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+  read-only probes fire90 load events per early/late body; six tests qualify
+  object identity and cleanup before AS1. Zero-event spill probes remain
+  inconclusive. Tools7da0ac2 banked, production/totals unchanged; continue
+  UOPT flag lifetime for the same target/full Game.
+
 - [Text measurer vreg marker and memory residence](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
   removing the marker/color still emits an extra stack write, not a T0-only
   temporary. Ten tests pass; source/interface screens yield no fit. Tools

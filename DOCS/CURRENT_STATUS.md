@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c28e130; tools are committed before the consumer pin.
+  checkpoint pins tools 7da0ac2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current vreg/memory-residence checkpoint; matching remains active:
+Current UGEN register-node checkpoint; matching remains active:
+[Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+func_150428D4: read-only probes fire90 load-node events per early/late body,
+observing already assigned register-class nodes while preserving normal code.
+Six tests qualify driver/object/probe/lifetime gates; the zero-event spill
+probe remains inconclusive. Tools7da0ac2 first, production/data/totals/root
+README unchanged. Return to UOPT flag live ranges/shared T0/full219; seed222
+remains oversized and unmatched. Older82 fingerprints/history preserved.
+
+Previous vreg/memory-residence checkpoint:
 [Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
 func_150428D4: removing the flag's UOPT vreg suffix/global color produces an
 uncolored memory variable and extra SP+0x50 write, not retail's T0 temporary.

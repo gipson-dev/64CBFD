@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+same target/full Game active. Six tests qualify read-only UGEN load-node
+observations,90 per body, and child cleanup before AS1 without code changes.
+Zero-event spill probes do not establish absence. Tools7da0ac2 first, exact
+consumer pin next; production/data/totals/root README and older82 fingerprints/
+history preserved, no push. Return to UOPT flag lifetime/shared T0/full219.
+
+2026-10-12:
 [Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
 same target/full Game active. Ten tests separate UOPT marker/global coloring
 from actual memory residence: extra SP+0x50 store, still no T0 reset. Fifteen

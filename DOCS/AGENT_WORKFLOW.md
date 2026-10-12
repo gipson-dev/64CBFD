@@ -99,6 +99,13 @@ Mode5 and its integer forbidden/interference parser are also qualified in
 [Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md).
 Use `--mode 5` for those sets, not for suppressed real-number cost/timing fields.
 
+Read-only UGEN load-node diagnostics are qualified in
+[Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+`python3 -m tools.experiments.game_text_measurer_ugen_nodes --candidate late`.
+The cc/uopt/ugen fingerprints, fired probe, child/driver exit0, cleanup and
+normal-object identity gates are mandatory. Zero-event routes without an
+effective positive control do not establish absence or matching progress.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

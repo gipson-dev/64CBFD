@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer UGEN Register Nodes - 2026-10-12
+
+[Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+
+- [x] Qualify90 fired read-only load-node observations per early/late body, complete driver/object identity and probe cleanup before AS1.
+- [x] Pass six focused tests and bank tools7da0ac2 first; preserve production/totals/root README and all82 older fingerprints/history. Treat zero-event spill probes as inconclusive.
+- [ ] Resolve UOPT flag lifetime, shared T0/full219 and all final installation gates. Same target/full Game stays active; no new match.
+
 ## Text Measurer Vreg And Memory Residence - 2026-10-12
 
 [Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):

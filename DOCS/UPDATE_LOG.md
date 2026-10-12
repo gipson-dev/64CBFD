@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-12 Text Measurer UGEN Register Nodes
+
+[Note 1303](WORKING_NOTES/1303-game-text-measurer-ugen-register-node-observation-20261012.md):
+six tests qualify90 fired load-node observations per early/late body and
+read-only child cleanup before AS1; normal objects and compilers stay exact.
+Zero-event spill/assignment probes remain inconclusive. Tools7da0ac2 first,
+exact consumer pin next; production/totals/root README and older82 saved
+fingerprints/history preserved, no push. Same target/full Game active;
+continue UOPT flag live ranges, shared T0/full219 and final matching gates.
+
 ## 2026-10-12 Text Measurer Vreg And Memory Residence
 
 [Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
