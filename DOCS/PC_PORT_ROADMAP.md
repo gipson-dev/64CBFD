@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Instruction Fault Boundary - 2026-10-12
+
+[Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
+
+- [x] Independently link original219/seed222 at the same diagnostic base and exercise all 768 access cuts of A/space/newline/A8 at phases 0/8.
+- [x] Verify RAM/events/RA agree at the first divergence while T0 does not; prove non-gated argument observation and an effective contaminated-observer control.
+- [x] Pass 20 tests, bank tools faec3b7 first and record one verified tool-free review without treating its exhaustion claim as proof; preserve production/older history, no push.
+- [ ] Recover shared T0 reset before the post-normalizer access, full219 and final private/fault/owner/rebase/linked qualification. Same target/full Game stays active; no match yet.
+
 ## Text Measurer Seven-Save Lifetimes - 2026-10-12
 
 [Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):

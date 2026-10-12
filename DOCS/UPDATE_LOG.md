@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Instruction Fault Boundary And Review
+
+[Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
+768 fired access cuts of four named calls/two phases isolate the missing T0
+reset after normalization, not a return-address rebase artifact. Twenty tests
+pass after correcting the observer-control assumption. One tool-free review
+offers no new edit; its exhaustion claim is rejected as unproven. Tools
+faec3b7 first, exact consumer pin next, production/older history preserved,
+no push. Same target/full Game active; seed222/0x80/146 remains unmatched.
+
 ## 2026-10-12 Text Measurer Seven-Save Lifetime Qualification
 
 [Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):

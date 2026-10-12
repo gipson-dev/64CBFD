@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fb5162b; tools are committed before the consumer pin.
+  checkpoint pins tools faec3b7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current resumed seven-save lifetime checkpoint; matching is active:
+Current instruction-fault boundary checkpoint; matching remains active:
+[Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
+func_150428D4: 768 fired access cuts compare independently linked original219
+and seed222 at the same diagnostic entry. First divergence occurs after
+normalization: RAM/events/RA agree, but retail resets T0 to zero and the seed
+does not. Twenty tests pass, including a corrected non-gated observer control.
+One verified tool-free packet review gives no new edit; its exhaustion claim
+is not accepted. Source screens find no final fit. Tools faec3b7 first; keep
+seed222/0x80/146 and recover shared T0/full219, then complete final gates.
+No production/data/totals/root README changes or new matching credit.
+
+Previous resumed seven-save lifetime checkpoint:
 [Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
 func_150428D4: qualify nested late flags222/0x80/146 and flat222/0x80/178,
 including exact first13 words, original S0..S6/RA homes, 755 public/six flag-

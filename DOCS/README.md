@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer instruction fault boundary and review](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
+  768 fired cuts isolate the missing post-normalizer T0 reset, with RAM/events/
+  RA equal at the first divergence. Twenty tests pass; one tool-free review
+  provides no new edit or exhaustion proof. Tools faec3b7 banked; same target/
+  full Game active, no production installation or matching credit.
+
 - [Text measurer seven-save lifetime qualification](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
   two late-flag bodies have original first13 words and 28 equal early fault
   pairs each; three bodies pass public/native and six bounded flag-home cases. Actual

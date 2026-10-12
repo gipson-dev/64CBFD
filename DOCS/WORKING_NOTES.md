@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md):
+same target/full Game active. All 768 instruction access cuts for four named
+calls/two phases isolate the T0 reset missing after normalization; RAM/events/
+RA agree at first divergence. Twenty tests pass, observer-control assumption
+corrected, one verified tool-free review/no accepted new edit. Tools faec3b7
+first, production/root README/older history preserved, no push. Recover shared
+T0/full219 from seed222/0x80/146; no matching credit or exhaustion claim.
+
+2026-10-12:
 [Note 1298](WORKING_NOTES/1298-game-text-measurer-seven-save-lifetime-qualification-20261012.md):
 same target/full Game active. Qualify nested222/146 and flat222/178 with
 original first13 words/save homes and 28 early fault pairs each, plus three

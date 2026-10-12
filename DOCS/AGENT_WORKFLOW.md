@@ -126,10 +126,20 @@ their `--version` and `--help` were inspected without a model invocation.
 Claude help documents `--print`, `--tools ""`, `--safe-mode`,
 `--no-session-persistence`, `--strict-mcp-config` and `--output-format`.
 `--bare` explicitly uses API-key/helper auth and is not a subscription
-shortcut. No automated helper is installed: authentication/billing route,
-packet-only enforcement, output capture and timeout behavior have **not**
-been live-tested. Do not claim an enforced integration or invoke it until
-those boundaries are verified. No permission-bypass switches or MCP bridge.
+shortcut. No persistent automated helper is installed. Before invocation,
+verify the current auth/provider route and effective packet-only capabilities;
+do not infer them from a prior version/help receipt. No permission-bypass
+switches or MCP bridge.
+
+One bounded live qualification, 2026-10-12: [Note 1299](WORKING_NOTES/1299-game-text-measurer-instruction-fault-boundary-and-review-20261012.md)
+records one attempted/completed review through existing claude.ai/firstParty
+Pro auth, without API/provider overrides or account/model switches. Safe mode,
+disabled built-in tools, strict MCP selection and no persistence produce
+effective init tools=[]/mcp_servers=[]; the output records no tool use.
+Packet, response and receipt are ignored diagnostics. This proves that one
+tool-free call/output capture, not a persistent filesystem sandbox, general
+integration or timeout/fallback handling. Reverify routing/capabilities for
+future invocations and preserve the per-task call budget.
 
 ## Review Record
 
@@ -148,5 +158,6 @@ Unvalidated behavior / next target:
 ```
 
 Call counts are not token usage. Report tokens/cost only when provided by
-the invocation. Current setup uses **zero Claude calls**. Keep commits and
+the invocation. Routine work still defaults to **zero Claude calls**; the
+dated difficult-lifetime exception above used one. Keep commits and
 tools-pin publication as a separate, explicitly requested action.
