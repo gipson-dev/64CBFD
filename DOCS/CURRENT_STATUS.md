@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 01a4cd8; tools are committed before the consumer pin.
+  checkpoint pins tools 54ded39; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current font-control/initializer checkpoint; matching remains active:
+Current assignment/predicate-boundary checkpoint; matching remains active:
+[Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
+func_150428D4: six forms pass 4,530 public comparisons but remain rejected.
+Explicit assignment keeps the source flag load post-call; separated effects
+spill real R8 at SP+0x58 but have T0=1 at the first ordinary text reread.
+All twelve new/regression tests pass. Tools 54ded39 first; production/totals/
+main README unchanged, same target/full Game active.
+
+Previous font-control/initializer checkpoint:
 [Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
 func_150428D4: four qualifier controls / three bodies pass 2,265 public
 comparisons. Real R8 M-24 call-save maps to SP+0x68, but the 219/frame0x80

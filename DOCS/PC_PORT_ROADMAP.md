@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Assignment And Predicate Boundaries - 2026-10-12
+
+[Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
+
+- [x] Qualify six bodies / 4,530 public comparisons; explicit named assignment retains post-call flag loads, while the inline-address form differs in 36 real words despite equal counts.
+- [x] Capture real R8 M-48 / SP+0x58 save and prove that passing the space value still fails the first ordinary text-read boundary. All twelve tests pass, tools 54ded39 first.
+- [ ] Recover shared early zero, seven roles and full 219/frame0x80/SP+0x68 lifetime, then all final gates. Same target/full Game active; no installation or matching credit.
+
 ## Text Measurer Font Controls And Initializer Call-Save - 2026-10-12
 
 [Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):

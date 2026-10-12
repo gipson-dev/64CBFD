@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
+six forms / 4,530 public comparisons; explicit named flag loads remain post-call,
+and an equal-count inline-address form differs in 36 words. Real R8 M-48 save
+maps to SP+0x58, but the first ordinary text read sees T0=1 instead of zero.
+All twelve tests pass, tools 54ded39 first; production/totals/main README
+unchanged, same target/full Game active, no push.
+
+2026-10-12:
 [Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
 four controls / three bodies / 2,265 public comparisons; complete initializer
 capture proves R8 M-24 maps to SP+0x68. Eight saves and late space zero still

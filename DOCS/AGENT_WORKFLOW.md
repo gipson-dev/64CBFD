@@ -143,6 +143,14 @@ still fails seven saved roles and the shared early zero. Equal counts do not
 establish instruction identity. Run the repository helper checks under WSL;
 native Windows py_compile is a separate syntax check.
 
+Explicit assignment and separated predicate/effect controls are qualified in
+[Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_predicate_snapshot --defaults`
+or `--assignments` under WSL. A passing space value or zero at the metrics call
+does not prove the shared early reset: check the first ordinary text-byte read
+as well. Equal counts still require complete word/relocation/pool comparisons;
+all six forms remain rejected and no production declarations are changed.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

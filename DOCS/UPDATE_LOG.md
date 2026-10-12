@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Assignment And Predicate Boundaries
+
+[Note 1309](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
+six source forms pass 4,530 public comparisons but fail retail lifetime.
+Explicit assignment leaves the named flag load post-call; the inline-address
+form has 36 changed words despite equal counts. Separated effects save R8
+at SP+0x58 but expose T0=1 at the first ordinary text reread. All twelve tests
+pass, tools 54ded39 first; production/totals/main README unchanged, no push.
+
 ## 2026-10-12 Text Measurer Font Controls And Initializer Call-Save
 
 [Note 1308](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):

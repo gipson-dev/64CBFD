@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer explicit assignment and predicate boundaries](WORKING_NOTES/1309-game-text-measurer-explicit-assignment-and-predicate-boundaries-20261012.md):
+  six bodies / 4,530 public comparisons; assignment spelling does not fix
+  post-call flag loads, and separated effects fail the ordinary text-read
+  boundary despite a real R8 save. All twelve tests pass; tools 54ded39 first.
+
 - [Text measurer font controls and initializer call-save](WORKING_NOTES/1308-game-text-measurer-font-controls-and-initializer-call-save-20261012.md):
   six new tests / 2,265 public comparisons and a complete M-24/R8 capture;
   four controls produce three bodies, all rejected for saves/early zero.
