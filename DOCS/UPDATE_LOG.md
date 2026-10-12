@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Diagnostic Bank
+
+[Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
+bank tools 5e14815 and the exact consumer pin. The 166,944-byte UGEN trace
+preserves code/relocations/pools; 16 tests and four effective rejection
+controls pass. No production changes or matching credit. Older tools history
+and 78 other fingerprints are preserved; no push. Matching remains paused.
+
 ## 2026-10-12 Text Measurer Independent Links And Frame Fault Rejection
 
 [Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):

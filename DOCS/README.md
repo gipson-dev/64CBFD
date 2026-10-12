@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer UGEN diagnostic checkpoint](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
+  pending experiments and a code-identical diagnostic trace are banked in
+  tools 5e14815; 16 tests pass with four effective trace-rejection controls.
+  Production and matching totals are unchanged; matching remains paused.
+
 - [Text measurer independent links and frame fault rejection](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
   original219/candidate and actual helpers/tables link independently at retail
   and two rebases; 1,554 cases and HI/LO carries pass. Fifteen focused tests

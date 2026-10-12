@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 44bec83; tools are committed before the consumer pin.
+  checkpoint pins tools 5e14815; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current text-measurer independent-link/fault rejection checkpoint:
+Current committed diagnostic checkpoint; matching remains paused:
+[Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
+bank the pending text-measurer experiments and verified 166,944-byte UGEN
+trace. Sixteen tests pass, including four effective trace-rejection controls.
+Tools 5e14815 is committed first; production inputs/data/totals and root
+README stay unchanged. No function installation or matching credit. The
+next target remains func_150428D4, capture218/0x80/174 differences, awaiting
+original S3/T0 lifetimes and full219 qualification on an explicit resume.
+
+Previous text-measurer independent-link/fault rejection checkpoint:
 [Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
 func_150428D4: independently assemble/link original219 and padded candidate
 with actual helpers/full slots, original lookup/table/float payloads and

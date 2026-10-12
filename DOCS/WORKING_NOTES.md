@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
+bank pending tools work and a code-identical 166,944-byte UGEN diagnostic,
+with 16 passing tests/four effective trace-rejection controls. Tools 5e14815
+first, exact consumer pin next; production/data/totals and root README
+unchanged. Preserve older HEAD/78 other hashes, no push. Matching is paused;
+func_150428D4 still needs original S3/T0 lifetimes and full219 qualification.
+
+2026-10-12:
 [Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
 func_150428D4: original/candidate independent links with actual helpers/full
 slots/tables/floats pass 1,554 cases at retail/two rebases, including HI/LO

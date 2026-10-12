@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Diagnostic Bank - 2026-10-12
+
+[Note 1297](WORKING_NOTES/1297-game-text-measurer-ugen-diagnostic-checkpoint-20261012.md):
+
+- [x] Bank the pending experiments and code-identical UGEN trace in tools 5e14815, with 16 passing tests and four effective trace-rejection controls.
+- [x] Preserve production inputs/data/totals, root README and independently dirty older tools history; commit tools before the exact consumer pin, no push.
+- [ ] Matching remains paused. On explicit resume, recover func_150428D4's original S3/T0 lifetime and full219 fit before installation; no new match is claimed here.
+
 ## Text Measurer Independent Links And Frame Fault Rejection - 2026-10-12
 
 [Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
