@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Flag Lifetime And Owner Qualification - 2026-10-12
+
+[Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
+
+- [x] Reproduce the opening indexed reads, exact retail save layout and five metric-output homes in a 218-word/frame-0x80/168-difference shape, with the production profile unchanged.
+- [x] Reject that shape for full private equivalence using four actual-instruction SP+0x68 width-alias witnesses; do not choose the smaller score over correct behavior.
+- [x] Recover call-only flag capture and reload before width writes: six bounded private cases pass, and a fresh late-reload negative fails.
+- [x] Qualify the 218-word/frame-0x80/174-difference capture candidate in 755 public guest cases and native733 O2/O0; retain both actual/recovered helpers and canonical metric homes.
+- [x] Qualify both named candidates in full copied owners: seven neighbors/pools stay exact, both real padders agree and change only the 876-byte target slot, with existing binding/guards intact.
+- [x] Pass thirteen focused tests and preserve all nine production inputs/data/totals; bank tools ce4cc1a first and two checked mirror updates, no push.
+- [ ] Finish the same target's original S0..S6/RA lifetimes, S3 text/glyph reuse, caller-saved T0 flag and complete 219-word body; the capture candidate still uses S0..S7 and differs in 174 words.
+- [ ] Requalify the final fit, including full private/fired-fault/independent-rebase and literal linked-installation checks; no broad copy guards or dummy state.
+- [ ] Install and measure only the completed match, then recover func_150417AC; full Game and independent hardware/FCSR/renderer/gameplay remain open.
+
 ## Text Measurer Native32 Qualification - 2026-10-12
 
 [Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):

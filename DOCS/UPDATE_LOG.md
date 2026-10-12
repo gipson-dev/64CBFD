@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Flag Lifetime And Owner Qualification
+
+[Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
+func_150428D4: original indexed reads, save layout and five metric homes fit
+in a 218/0x80/168-difference shape under the unchanged profile. Reject that
+shape for private SP+0x68 alias behavior. Call-only capture and early reload
+restore six bounded private cases; the 218/0x80/174-difference variant passes
+755 public guest cases and native733 O2/O0 but retains an extra saved
+register. Thirteen tests pass, including a fresh private late-reload negative
+and both full copied owners/seven neighbors/pools/padders. All nine production
+inputs/data/totals stay exact; no target guards or source/ELF installation.
+Tools ce4cc1a first; older HEAD/78 other hashes preserved/two verified updates,
+80 hashes/dirty357 retained, no push. Continue original T0/S3 lifetimes and
+219-word matching, then full private/fault/rebase/linked audit. Full Game open.
+
 ## 2026-10-12 Text Measurer Native32 Qualification
 
 [Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):

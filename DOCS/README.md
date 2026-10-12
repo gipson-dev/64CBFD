@@ -54,6 +54,17 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer flag lifetime and owner qualification](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
+  recover indexed reads/font-address rematerialization under the unchanged
+  profile. Reject the 168-difference shape for private alias behavior; the
+  call-only capture fixes six bounded SP+0x68 cases, but remains 218 words /
+  174 differences with one extra saved register. Thirteen tests, public/
+  native qualification and both copied owners/seven neighbors/pools/padders
+  pass; a late-read control is effective. Production/data/totals are unchanged,
+  tools ce4cc1a first, older unrelated work preserved/no push. Continue the
+  same target's original T0/S3 lifetime fit and full private/fault/rebase/
+  linked qualification; no installation or matching credit, full Game open.
+
 - [Text measurer native32 qualification](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
   both complete C candidates and recovered helpers pass 733 native cases each
   at O2/O0, including portable aliases, guarded buffers/table and eleven

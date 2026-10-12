@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b5e4600; tools are committed before the consumer pin.
+  checkpoint pins tools ce4cc1a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current text-measurer native32 qualification, not yet installed:
+Current text-measurer lifetime/owner qualification, not yet installed:
+[Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
+func_150428D4: source-local font-address rematerialization and indexed input
+recover a 218-word/frame-0x80/168-difference shape with exact original saves
+and five metrics homes, under the unchanged profile. That shape is rejected
+for private equivalence: width aliasing SP+0x68 exposes its always-stored flag.
+A call-only capture/reload fixes six bounded private flag-home cases and
+passes 755 public guest cases plus native733 O2/O0. It is 218/0x80/174
+differences, still S0..S7 rather than original S0..S6. Thirteen focused tests
+pass; both candidates preserve all seven neighbors/pools and both padders.
+A freshly compiled late-reload negative fails the private gate. All nine
+production inputs/data/totals stay exact; no source/ELF installation or new
+target guards. Tools ce4cc1a first, older HEAD/78 other hashes preserved/two
+verified updates, no push. Continue the call-only capture's original T0 flag,
+S3 text/glyph reuse and 219-word fit, then full private/fault/rebase/linked
+qualification. No broad 168/174 retail-copy guards. Full Game stays open.
+
+Previous text-measurer native32 qualification, not yet installed:
 [Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
 func_150428D4's clear216 and closer217 complete C bodies pass 733 cases each
 at O2/O0 with both complete recovered C helpers: 2,932 executions, portable

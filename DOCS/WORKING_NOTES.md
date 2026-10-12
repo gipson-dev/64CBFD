@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-12:
+[Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
+func_150428D4: indexed/font-address rematerialized shape218/0x80/168 fits
+original saves/homes but fails private flag aliasing. Prefer call-only
+capture218/0x80/174: 755 public/733 native per O2/O0 and six bounded private
+SP+0x68 cases pass; fresh late-read negative is effective. Thirteen tests and
+both copied owners/seven neighbors/pools/padders pass. Still one extra saved
+register and one body word short, not a match or installation. All nine
+production inputs/data/totals stay exact; tools ce4cc1a first, older HEAD/78
+other hashes preserved/two checked updates, no push. Continue original T0/S3
+lifetime fit and full private/fault/rebase/linked audit; full Game open.
+
+2026-10-12:
 [Note 1294](WORKING_NOTES/1294-game-text-measurer-native32-qualification-20261012.md):
 func_150428D4: complete clear216/closer217 C and both recovered helpers pass
 733 native32 cases each at O2/O0, 2,932 executions; portable aliases, host-
