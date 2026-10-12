@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-12 Intensity Texture Setup Direct Match
+
+[Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
+func_150412C0 replaces its zero-return placeholder with a twelve-command
+SDK-macro setup leaf and advanced Gfx return. All 79 words direct under
+existing O2/g3/no-unroll; no frame/pool/guards/header/caller/profile changes,
+one local declaration. Eight pre-install/eight installed tests, actual full
+SDK native32, ordered writes, rebases/fired faults and effective controls pass.
+Only 241 target/size ELF bytes change; every other byte/eleven inputs/seven
+neighbors exact. Game 2,810/4,823, total 3,483/5,496, zero drift / 2,013
+different; +1 matching only, converted counts/bytes unchanged. Tools 3fb9a26 first,
+older HEAD/69 hashes preserved/two identical new copies, no push. README
+aggregates/date only. Next func_15041508, 54 words / 52 differences, glyph
+rectangle and typed caller ABI; existing guards and wider Game goal open.
+
 ## 2026-10-11 Matrix Decomposer Guarded C Conversion
 
 [Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):

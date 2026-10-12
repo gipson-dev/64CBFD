@@ -54,6 +54,16 @@ confirmed.
 
 ## Planning and history
 
+- [Intensity texture setup direct match](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
+  all 79 words direct SDK-macro C under the existing no-unroll owner profile;
+  no frame/pool/guards/header/caller changes, one local declaration.
+  Eight pre-install/eight installed tests, full SDK native32, ordered writes,
+  rebases/fired faults and effective controls pass. Only 241 target/size ELF
+  bytes change; every other byte/eleven inputs/seven neighbors remain exact.
+  +1 matching only; tools 3fb9a26 first, older work preserved/no push.
+  Next func_15041508, 54 words / 52 differences, glyph rectangle and typed
+  scalar-coordinate/Gfx caller ABI. Full Game goal remains open.
+
 - [Matrix decomposer guarded C conversion](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
   all 141 words/frame 0xC0 exact with 63 allocation/scheduling guards, not
   direct C. Nine pre-install/nine final installed tests, actual vector helpers,

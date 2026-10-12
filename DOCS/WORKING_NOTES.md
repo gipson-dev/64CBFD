@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-12:
+[Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
+func_150412C0: all 79 words direct SDK-macro C, twelve commands and advanced
+Gfx pointer; existing no-unroll owner profile, no frame/pool/guards/header/
+caller changes. Eight pre-install/eight installed tests, full SDK native32,
+ordered writes, rebases/fired faults and controls pass. Only 241 target/size
+ELF bytes change; every other byte/eleven inputs/seven neighbors exact.
+Game 2,810/4,823, total 3,483/5,496, zero drift / 2,013 different;
++1 matching only. Tools 3fb9a26 first, older HEAD/69 hashes preserved/two identical
+new copies, no push. Next func_15041508, 54 words / 52 differences, glyph
+rectangle and scalar-coordinate/Gfx caller ABI. Full Game goal stays open.
+
 2026-10-11:
 [Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
 func_1503E5F8: complete 141-word/frame 0xC0 guarded C conversion, 63

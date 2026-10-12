@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Intensity Texture Setup Direct Match - 2026-10-12
+
+[Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
+
+- [x] Recover all twelve texture/combine/other-mode/load commands and the returned Gfx pointer advanced by 96 bytes; preserve both texture-image commands.
+- [x] Emit all 79 words directly under existing O2/g3/no-unroll with no frame/pool/guards/header/caller/profile changes, one local declaration.
+- [x] Pass eight pre-install/eight installed tests, actual full SDK native32, all ordered stores, independent rebases, fired faults and effective controls.
+- [x] Preserve all seven neighbors/pools/both padders and every other ELF byte/eleven inputs; only 241 target/size bytes change.
+- [x] Measure Game 2,810/4,823, total 3,483/5,496, zero drift / 2,013 different; +1 matching only, README aggregates/date only.
+- [x] Bank tools 3fb9a26 first; shared checks pass, older HEAD/69 hashes preserved/two identical new copies, no push.
+- [ ] Recover func_15041508, 54 words / 52 differences: three-command 8-by-12 glyph rectangle, scalar X/Y and signed glyph index, Gfx return.
+- [ ] Correct and qualify the typed caller/lookup/draw chain, preserving the exact caller's existing guards and the no-unroll lookup neighbor.
+- [ ] Remove existing guards and continue wider Game matching; hardware/RSP/RDP/renderer/gameplay acceptance remains separate.
+
 ## Matrix Decomposer Guarded C Conversion - 2026-10-11
 
 [Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
@@ -11,7 +25,7 @@
 - [x] Measure Game 2,809/4,823, total 3,482/5,496, zero drift / 2,014 different; converted +1/564 bytes, README aggregates only.
 - [x] Bank tools 6bee275 first; shared checks pass, older HEAD/67 hashes preserved/two absent copies, no push.
 - [x] Verify all 22 owner functions C-converted and complete slots exact with guards; no ASM/zero-return placeholders remain here.
-- [ ] Recover func_150412C0 in generated_6E770, 79 words / 78 differences: twelve-command display-list setup leaf and advanced Gfx return pointer.
+- [x] Recover func_150412C0 directly in Note 1289, all 79 words, twelve-command display-list setup leaf and advanced Gfx return pointer.
 - [ ] Remove existing guards and qualify actual copy/trig/hardware/FCSR/gameplay; full Game goal stays active.
 
 ## Matrix Forward Direct Match - 2026-10-11

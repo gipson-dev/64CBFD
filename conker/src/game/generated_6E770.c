@@ -3,12 +3,20 @@
 /* Non-matching placeholders for the text-only asm slice asm/6E770.s. */
 
 extern u8 D_800848D0[];
+extern u8 D_80084930[];
 
 s32 func_15041480(u8 arg0);
 s32 func_15041508(s32 arg0, u8 *arg1, s32 arg2, s32 arg3);
 
-s32 func_150412C0() {
-    return 0;
+Gfx *func_150412C0(Gfx *displayList) {
+    gSPTexture(displayList++, 0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON);
+    gDPPipeSync(displayList++);
+    gDPSetCombineMode(displayList++, G_CC_DECALRGBA, G_CC_DECALRGBA);
+    gDPSetOtherMode(displayList++, G_TF_BILERP | G_TC_FILT | 0xF, 0x55204C);
+    gDPSetTextureImage(displayList++, G_IM_FMT_I, G_IM_SIZ_16b, 64, D_80084930);
+    gDPLoadTextureBlock_4b(displayList++, D_80084930, G_IM_FMT_I, 64, 128,
+        0, G_TX_WRAP, G_TX_WRAP, 0, 0, G_TX_NOLOD, G_TX_NOLOD);
+    return displayList;
 }
 
 s32 func_150413FC(s32 arg0, u8 *arg1, s32 arg2, u8 *arg3) {

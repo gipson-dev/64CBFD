@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-11
+Last verified: 2026-10-12
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6bee275; tools are committed before the consumer pin.
+  checkpoint pins tools 3fb9a26; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest matrix-decomposer guarded C conversion:
+Latest intensity-texture setup direct match:
+[Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
+func_150412C0 replaces its zero-return placeholder with twelve SDK commands
+and the advanced Gfx pointer. All 79 words emit directly under the existing
+O2/g3/no-unroll profile, with no frame/pool/guards/header/caller changes.
+Eight pre-install/eight installed tests, full SDK native32, ordered writes,
+rebases/fired faults and effective controls pass. Only 241 target/size ELF
+bytes change; every other byte, eleven inputs and seven neighbors are exact.
+Game 2,810/4,823 (58.26%), total 3,483/5,496 (63.37%), zero drift /
+2,013 different; +1 matching only, converted counts/bytes unchanged.
+Tools 3fb9a26 first, older HEAD/69 hashes preserved/two identical new
+copies, no push. Three exact C rows and five remaining placeholders in
+this owner. Next func_15041508: 54 words / 52 differences, glyph rectangle;
+recover its scalar-coordinate/Gfx ABI with the already exact caller.
+Existing guard removal, hardware/renderer/gameplay and full Game goal remain
+open; README aggregates only.
+
+Previous matrix-decomposer guarded C conversion:
 [Note 1288](WORKING_NOTES/1288-game-matrix-decomposer-guarded-c-conversion-20261011.md):
 func_1503E5F8 replaces the last GLOBAL_ASM reference in generated_6B320.
 All 141 words/frame 0xC0 match with 63 allocation/scheduling guards, not
