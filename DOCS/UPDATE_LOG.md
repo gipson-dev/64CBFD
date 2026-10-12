@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Independent Links And Frame Fault Rejection
+
+[Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
+func_150428D4: assemble/link original219 and candidate independently with
+actual helpers/full slots, real lookup/table/floats and controlled globals.
+Run 1,554 cases at retail/two rebases through HI/LO boundary carries; fifteen
+focused tests pass. Four fired fault pairs prove the remaining S6/S7 frame-
+store mismatch, not complete fault equivalence. New source screens find no
+accepted fit; capture218/0x80/174 remains preferred but unmatched/uninstalled.
+All nine production inputs/data/totals are unchanged, no target guards.
+Tools 44bec83 first; older HEAD/78 other hashes preserved/two checked updates,
+80 hashes/dirty357 retained, no push. Continue original S3/T0 lifetimes,
+full219 matching and final private/fault/rebase/linked audit; full Game open.
+
 ## 2026-10-12 Text Measurer Flag Lifetime And Owner Qualification
 
 [Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):

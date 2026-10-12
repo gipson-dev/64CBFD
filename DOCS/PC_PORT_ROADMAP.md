@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Independent Links And Frame Fault Rejection - 2026-10-12
+
+[Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
+
+- [x] Independently assemble original219/helpers115+68 and actual lookup95+alignment/table19/floats5, then link the original and candidate separately at retail and two rebases.
+- [x] Preserve exact original/full-helper code at retail; validate all table relocations and run 1,554 original/candidate cases through lookup-label and scale-pair HI/LO carries.
+- [x] Exercise four fired frame-fault pairs and reject current full partial-state equivalence: original first completed store saves S6 at SP+0x38, candidate saves S7.
+- [x] Pass fifteen focused tests and preserve all nine production inputs/data/totals; bank tools 44bec83 first, two checked mirror updates, no push.
+- [ ] Recover the same target's original seven saved-register lifetimes, S3 text/glyph reuse and caller-saved T0 flag; current candidate remains 218 words/frame 0x80/174 differences.
+- [ ] Requalify the final219-word fit with complete private/fired-fault, independent-link/rebase and literal linked-installation checks; current fault test is rejection, not a complete sweep.
+- [ ] Install and measure only the completed match, then recover func_150417AC; full Game and independent hardware/FCSR/renderer/gameplay remain open.
+
 ## Text Measurer Flag Lifetime And Owner Qualification - 2026-10-12
 
 [Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ce4cc1a; tools are committed before the consumer pin.
+  checkpoint pins tools 44bec83; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current text-measurer lifetime/owner qualification, not yet installed:
+Current text-measurer independent-link/fault rejection checkpoint:
+[Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
+func_150428D4: independently assemble/link original219 and padded candidate
+with actual helpers/full slots, original lookup/table/float payloads and
+controlled font/scales. Fifteen tests pass, including 1,554 cases at retail
+and two rebases crossing HI/LO boundaries. No helper hooks or code patching.
+Four fired fault pairs expose the saved-register mismatch: after the first
+frame store, original SP+0x38 contains incoming S6, candidate S7. This is a
+rejection gate, not complete fault qualification or a match. New scope/type/
+predicate/callback screens do not supersede capture218/0x80/174 differences;
+it still has an extra saved register and no production installation.
+All nine production inputs/data/totals stay exact; no new target guards.
+Tools 44bec83 first, older HEAD/78 other hashes preserved/two checked updates,
+no push. Continue original S3 text/glyph and T0 flag lifetimes, full219 fit,
+then complete private/fault/rebase/linked qualification. Full Game stays open.
+
+Previous text-measurer lifetime/owner qualification, not yet installed:
 [Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
 func_150428D4: source-local font-address rematerialization and indexed input
 recover a 218-word/frame-0x80/168-difference shape with exact original saves

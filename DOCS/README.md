@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer independent links and frame fault rejection](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
+  original219/candidate and actual helpers/tables link independently at retail
+  and two rebases; 1,554 cases and HI/LO carries pass. Fifteen focused tests
+  pass. Four fired fault pairs expose original S6 versus candidate S7 at the
+  first saved frame word; do not treat that rejection gate as full fault or
+  word equivalence. Candidate218/0x80/174 remains unchanged and uninstalled,
+  as do all production inputs/data/totals. Tools 44bec83 first, older unrelated
+  work preserved/no push. Continue original S3/T0 lifetimes and full219 fit.
+
 - [Text measurer flag lifetime and owner qualification](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
   recover indexed reads/font-address rematerialization under the unchanged
   profile. Reject the 168-difference shape for private alias behavior; the

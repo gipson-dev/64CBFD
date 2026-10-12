@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-12:
+[Note 1296](WORKING_NOTES/1296-game-text-measurer-independent-links-and-frame-fault-rejection-20261012.md):
+func_150428D4: original/candidate independent links with actual helpers/full
+slots/tables/floats pass 1,554 cases at retail/two rebases, including HI/LO
+carries. Fifteen focused tests pass. Four fired fault pairs expose original
+S6 versus candidate S7 at SP+0x38, rejecting full partial-state equivalence.
+Current218/0x80/174 still needs original S3/T0 lifetime and full219 fit; no
+installation, target guards or matching credit. All nine production inputs/
+data/totals stay exact; tools 44bec83 first, older HEAD/78 other hashes
+preserved/two checked updates, no push. Full Game remains open.
+
+2026-10-12:
 [Note 1295](WORKING_NOTES/1295-game-text-measurer-flag-lifetime-and-owner-qualification-20261012.md):
 func_150428D4: indexed/font-address rematerialized shape218/0x80/168 fits
 original saves/homes but fails private flag aliasing. Prefer call-only
