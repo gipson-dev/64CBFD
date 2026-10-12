@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 05875fe; tools are committed before the consumer pin.
+  checkpoint pins tools 688ae3b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current text-measurer qualification, not yet installed:
+[Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
+func_150428D4's complete 219-word/frame-0x80 routine and nine direct callers
+establish a void text/three-output interface. Full original/candidate chains
+execute the actual normalizer65 and metrics115, with no helper hooks.
+Seven tests pass: 535 core cases, 240 alias cases, 378 closer-layout cases,
+live font-pointer reload, nested truncation and eight effective compiled
+controls. The closer candidate is 217 words/frame 0x80/185 differences;
+it is not byte-exact. Production source/entire ELF/guards/progress/Makefile
+and all nine recorded inputs remain unchanged. No matching or conversion
+credit; README totals remain correct. Tools 688ae3b first, older HEAD/77
+hashes preserved/two absent identical copies, no push. Continue this same
+function: fit its original body and register/stack lifetimes, then qualify
+native C, owners/padders, rebases/faults and literal installation. Full Game
+matching and independent hardware/renderer/gameplay acceptance stay open.
 
 Latest character-normalizer guarded match:
 [Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):

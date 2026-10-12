@@ -54,6 +54,15 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer full-chain qualification](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
+  complete original219/candidate chains use actual normalizer65/metrics115,
+  no hooks. Seven tests, live pointer/truncation and eight compiled controls
+  pass. The closer 217-word/frame-0x80 candidate has 185 differences, not a
+  match or installation. All nine production inputs/data and aggregate totals
+  are unchanged. Tools 688ae3b first, older work preserved/no push. Continue
+  this function's original layout, native/owner/padder/rebase/fault and linked
+  qualification; the full Game goal remains open.
+
 - [Character normalizer guarded match](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
   complete 68-word slot, 65-word/frame-zero C body/twelve guards/three zeros,
   not direct C. Restore byte normalization and first match in the original

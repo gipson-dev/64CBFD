@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Full-Chain Qualification
+
+[Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
+func_150428D4: recover the full 219-word/frame-0x80 contract and qualify
+original/candidate execution with both actual helpers, no hooks. Seven tests
+pass, covering 535 core, 240 alias and 378 closer-layout cases, live font-
+pointer reload, nested truncation and eight effective compiled controls.
+The closer candidate is 217 words/frame 0x80/185 differences, not installed
+or byte-exact. Production source/ELF/guards/progress/Makefile and all nine
+inputs/data are unchanged; no matching/conversion credit or README churn.
+Tools 688ae3b first, older HEAD/77 hashes preserved/two new identical copies,
+no push. Continue this same target's layout and remaining qualification;
+full Game matching and hardware/renderer/gameplay acceptance remain open.
+
 ## 2026-10-12 Character Normalizer Guarded Match
 
 [Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):

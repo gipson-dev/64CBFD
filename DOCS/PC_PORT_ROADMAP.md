@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Full-Chain Qualification - 2026-10-12
+
+[Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
+
+- [x] Inspect all 219 original words, frame 0x80, nine direct callers and the void text/three-output contract, including NULL versus empty behavior.
+- [x] Qualify complete original/candidate bodies with actual normalizer65/metrics115, 535 core and 240 alias cases; no helper hooks or caller-window substitution.
+- [x] Prove live font-pointer reload, write ordering and nested float truncation with eight fresh compiled semantic controls and effective integrity controls.
+- [x] Qualify the closer 217-word/frame-0x80/185-difference layout candidate in 378 cases; record that it is not installed or byte-exact.
+- [x] Preserve all nine recorded production inputs and protected data; matching/conversion totals remain unchanged, README aggregates remain correct.
+- [x] Bank tools 688ae3b first; shared checks pass, older HEAD/77 hashes preserved/two identical new files, no push.
+- [ ] Finish this same func_150428D4's 219-word body and original register/stack lifetime fit; do not replace 185 differences with a broad retail-copy guard batch.
+- [ ] Complete native C, copied-owner/padder, independent rebase/fault and literal linked-installation qualification before claiming a match.
+- [ ] Install and measure the completed match, then recover the remaining formatter; full Game and hardware/FCSR/renderer/gameplay goals remain open.
+
 ## Character Normalizer Guarded Match - 2026-10-12
 
 [Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
@@ -11,7 +25,7 @@
 - [x] Preserve seven neighbors/pools/both padders and every other ELF byte/ten inputs/old guard prefix; only 198 target/size bytes change and twelve guard rows append.
 - [x] Measure Game 2,813/4,823, total 3,486/5,496, zero drift / 2,010 different; +1 matching only, README aggregates only.
 - [x] Bank tools 05875fe first; shared checks pass, older HEAD/75 hashes preserved/two new identical copies, no push.
-- [ ] Recover func_150428D4, 219 words / 199 differences, frame 0x80: complete text measurer, three output meanings, null/empty/control/newline and alias behavior.
+- [ ] Finish func_150428D4, 219 words / 199 production differences, frame 0x80; full-chain candidate qualification started in Note 1293, not yet installed or matched.
 - [ ] Remove existing guards and recover the remaining formatter; hardware/FCSR/renderer/gameplay acceptance and full Game goal remain open.
 
 ## Extended-Character Metrics Direct Match - 2026-10-12

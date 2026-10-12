@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-12:
+[Note 1293](WORKING_NOTES/1293-game-text-measurer-full-chain-qualification-20261012.md):
+func_150428D4: full original219/candidate chains with actual normalizer65/
+metrics115, no hooks; seven tests and eight compiled controls pass.
+535 core/240 alias/378 closer-layout cases, live pointer reload and nested
+truncation are qualified. Closer body217/frame0x80/185 differences is not
+installed or byte-exact; all nine production inputs/data and totals remain
+unchanged. Tools 688ae3b first, older HEAD/77 hashes preserved/two identical
+new copies, no push. Continue the same function's original lifetime/layout
+fit and native/owner/padder/rebase/fault/linked qualification. Full Game open.
+
+2026-10-12:
 [Note 1292](WORKING_NOTES/1292-game-character-normalizer-guarded-match-20261012.md):
 func_15042C40: byte normalizer/first-match glyph lookup, complete 68-word
 slot exact with twelve guards/three original zeros, not direct C. The body
