@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Vreg And Memory Residence - 2026-10-12
+
+[Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
+
+- [x] Qualify the UOPT variable-marker parser and distinguish global coloring from the uncolored SP+0x50 memory flag; preserve normal objects/prepared compilers.
+- [x] Pass ten diagnostic tests and reject fifteen source forms/six isolated return declarations; bank tools c28e130 first while preserving production/data/older history.
+- [ ] Recover a non-memory T0 temporary, call-only SP+0x68 spill/full219 and all final installation gates. Same target/full Game stays active, no new match.
+
 ## Text Measurer Forbidden Registers - 2026-10-12
 
 [Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):

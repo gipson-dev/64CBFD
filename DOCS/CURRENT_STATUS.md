@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e1abcff; tools are committed before the consumer pin.
+  checkpoint pins tools c28e130; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current forbidden-register checkpoint; matching remains active:
+Current vreg/memory-residence checkpoint; matching remains active:
+[Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
+func_150428D4: removing the flag's UOPT vreg suffix/global color produces an
+uncolored memory variable and extra SP+0x50 write, not retail's T0 temporary.
+Ten tests pass; fifteen source forms and six isolated return declarations
+yield no fit. Tools c28e130 first, production/data/totals/root README unchanged.
+Next inspect UGEN temporary/cached-register handling read-only; recover shared
+T0/full219 before final gates. Seed222/0x80/146 remains oversized/unmatched.
+
+Previous forbidden-register checkpoint:
 [Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
 func_150428D4: qualified mode5 traces expose distinct early/late flag forbidden
 sets and glyph interference while preserving both normal candidate objects.

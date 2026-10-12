@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Vreg And Memory Residence
+
+[Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
+ten tests qualify the marker/color distinction and reject fifteen source
+forms; the uncolored flag still writes SP+0x50 instead of resetting T0.
+Six isolated return declarations add no fit. Tools c28e130 first, consumer
+pin next; production/data/totals/older history preserved, no push. Investigate
+UGEN temporary handling next; same target/full Game active, no matching credit.
+
 ## 2026-10-12 Text Measurer Forbidden Registers
 
 [Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):

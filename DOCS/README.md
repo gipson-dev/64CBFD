@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer vreg marker and memory residence](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
+  removing the marker/color still emits an extra stack write, not a T0-only
+  temporary. Ten tests pass; source/interface screens yield no fit. Tools
+  c28e130 banked, production/data/totals unchanged; same target/full Game active.
+
 - [Text measurer forbidden-register constraints](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
   real mode5 traces expose different early/late flag constraints; eight tests
   qualify parsing and source-shape rejections. Tools e1abcff banked, production/

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1302](WORKING_NOTES/1302-game-text-measurer-vreg-marker-and-memory-residence-20261012.md):
+same target/full Game active. Ten tests separate UOPT marker/global coloring
+from actual memory residence: extra SP+0x50 store, still no T0 reset. Fifteen
+source forms/six return declarations add no fit. Tools c28e130 first, exact
+consumer pin next; production/data/totals/root README/older history preserved,
+no push. Inspect UGEN temporary handling before shared T0/full219/final gates.
+
+2026-10-12:
 [Note 1301](WORKING_NOTES/1301-game-text-measurer-forbidden-register-constraints-20261012.md):
 same target/full Game active. Qualified mode5 exposes early/late forbidden-
 register sets and glyph interference; eight diagnostic tests pass. Six source
