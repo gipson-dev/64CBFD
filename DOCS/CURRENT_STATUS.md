@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d515411; tools are committed before the consumer pin.
+  checkpoint pins tools da8a377; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current effectful-predicate checkpoint; matching remains active:
+Current frontend/UOPT provenance checkpoint; matching remains active:
+[Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
+func_150428D4: complete CFE/UOPT streams prove UOPT introduces register-8
+call-save from a CFE temporary. Six tests / 3,020 public comparisons pass;
+the original seven-test predicate regression also passes. A shape-only
+219/0x80/SP+0x68 form still has an extra saved register and late zero.
+Tools da8a377 first; production/totals/root README unchanged. Recover source
+temporary placement and the shared early zero, then all final matching gates.
+
+Previous effectful-predicate checkpoint:
 [Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
 func_150428D4:16 source forms/nine instruction bodies pass6,795 public
 comparisons but remain non-matching. Bitwise forms expose an upstream T0

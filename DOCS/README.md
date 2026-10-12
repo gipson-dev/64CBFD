@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer frontend vreg and UOPT call-save provenance](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
+  six tests qualify complete wire captures and 3,020 public comparisons;
+  UOPT introduces register-8 call-save from a CFE temporary. All new source
+  forms remain rejected. Tools da8a377 banked first; same target/full Game
+  active, production/totals unchanged.
+
 - [Text measurer effectful predicates and upstream call-save](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
   seven tests qualify16 source forms/nine bodies and6,795 public comparisons.
   Bitwise forms expose an upstream T0 call-save at wrong homes; all forms,

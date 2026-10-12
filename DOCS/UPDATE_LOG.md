@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Frontend And UOPT Provenance
+
+[Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
+complete CFE/UOPT streams resolve register-8 call-save provenance to UOPT
+promotion. Six tests / 3,020 public comparisons and the original seven-test
+regression pass. The shape-only 219/0x80/SP+0x68 form still fails saved roles
+and early zero. Tools da8a377 first; production/totals/root README/older
+history preserved, no push. Same target/full Game remains active.
+
 ## 2026-10-12 Text Measurer Effectful Predicates
 
 [Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):

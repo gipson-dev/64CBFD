@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
+complete CFE/UOPT captures prove register-8 call-save promotion in UOPT.
+Six tests / 3,020 public comparisons plus the fresh original seven-test
+regression pass. All new forms remain rejected, including the shape-only
+219/0x80/SP+0x68 form with extra saved register and late reset. Tools da8a377
+first; production/totals/root README unchanged. Recover source temporary
+placement/shared early zero; same target/full Game active, no push.
+
+2026-10-12:
 [Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
 same target/full Game active. Seven tests qualify16 source forms/nine bodies,
 6,795 public comparisons and upstream register8 call-save evidence. Reset,

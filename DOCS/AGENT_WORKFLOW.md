@@ -112,6 +112,15 @@ Use `python3 -m tools.experiments.game_text_measurer_logic_candidates --filter o
 These are non-installable experiments: public equivalence and219-word/frame
 agreement do not replace saved-role/private/fault/owner matching gates.
 
+Completed CFE/UOPT wire captures are qualified in
+[Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_frontend_trace` and
+`python3 -m tools.experiments.game_text_measurer_logic_candidates --carriers`.
+Captures use normal compiler flags and newly owned children; require producer/
+consumer completion, actual input paths, fired table probe, hash/marker-order
+checks and complete normal-object identity. They remain non-installable.
+Do not use failed `-K` or verbose intermediates as qualified receipts.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

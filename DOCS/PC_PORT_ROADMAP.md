@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Frontend And UOPT Provenance - 2026-10-12
+
+[Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
+
+- [x] Qualify completed CFE/UOPT wire captures and prove register-8 call-save promotion from a CFE temporary, with normal-object and fingerprint gates.
+- [x] Pass six frontend tests / 3,020 public comparisons and the fresh seven-test original-predicate regression; bank tools da8a377 first and preserve the older checkout.
+- [ ] Recover the seven saved roles, shared early zero and exact 219/0x80/SP+0x68 body, then all final matching gates. Same target/full Game active; no matching credit.
+
 ## Text Measurer Effectful Predicates - 2026-10-12
 
 [Note 1304](WORKING_NOTES/1304-game-text-measurer-effectful-predicates-and-upstream-call-save-20261012.md):
