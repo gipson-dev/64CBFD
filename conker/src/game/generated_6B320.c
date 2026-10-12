@@ -1,5 +1,9 @@
 #include <ultra64.h>
 #include "variables.h"
+extern f32 D_80098928;
+extern f32 D_8009892C;
+void func_1510F800(s32);
+s32 func_1510F8D8(s32, s32, s32, s32);
 void func_1503EB78(struct04 *, f32, f32, s32);
 extern f32 D_80098920;
 extern f32 D_80098924;
@@ -284,8 +288,53 @@ void func_1503EB78(struct04 *record, f32 horizontal, f32 vertical, s32 mode) {
     ((f32 *)record)[24] = D_80098924;
 }
 
-s32 func_1503ECA0() {
-    return 0;
+void func_1503ECA0(s32 slot) {
+    struct106 *control;
+    struct04 *element;
+    s32 count;
+    s32 index;
+    f32 height;
+    f32 angularDamping;
+    f32 linearDamping;
+
+    func_1510F800(0);
+    control = &D_800C6660[slot];
+    count = D_80098914[((u8 *)control)[0xE]];
+    index = 0;
+    if (count > 0) {
+        angularDamping = D_80098928;
+        linearDamping = D_8009892C;
+        do {
+            if (((struct04 *)control->unk0)[index].unk64 != 0) {
+                element = (struct04 *)control->unk0 + index;
+                if (D_80084454[((u8 *)control)[0xE]][index] == -1 &&
+                        ((f32 *)element)[24] != 0.0f) {
+                    height = func_1510F8D8((s32)((f32 *)element)[9],
+                        (s32)((f32 *)element)[10], (s32)((f32 *)element)[11], 0) + 5;
+                    if (((f32 *)element)[10] < height) {
+                        ((f32 *)element)[10] = height;
+                        if (((f32 *)element)[19] < -4.0f) {
+                            ((f32 *)element)[18] *= linearDamping;
+                            ((f32 *)element)[19] *= -0.5f;
+                            ((f32 *)element)[20] *= linearDamping;
+                            ((f32 *)element)[21] *= -1.0f;
+                            ((f32 *)element)[22] *= angularDamping;
+                            ((f32 *)element)[23] *= -1.0f;
+                        } else {
+                            ((f32 *)element)[23] = 0.0f;
+                            ((f32 *)element)[22] = 0.0f;
+                            ((f32 *)element)[21] = 0.0f;
+                            ((f32 *)element)[24] = 0.0f;
+                            ((f32 *)element)[20] = 0.0f;
+                            ((f32 *)element)[19] = 0.0f;
+                            ((f32 *)element)[18] = 0.0f;
+                        }
+                    }
+                }
+            }
+            index++;
+        } while (index != count);
+    }
 }
 
 void func_1503EEB8() {

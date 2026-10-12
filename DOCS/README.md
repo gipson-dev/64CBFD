@@ -54,12 +54,20 @@ confirmed.
 
 ## Planning and history
 
+- [Record ground collision guarded match](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
+  complete134 linked exact, 119 direct plus 15 closed initialization/register
+  guards; twelve pre-install/twelve installed tests, native32 and actual timer/
+  context chains pass. Only 443 ELF bytes change including one exact metadata
+  swap; 21 neighbors/data/six inputs unchanged. Tools 7730335 first, older
+  work preserved/no push. Next func_1503EFC4, 45/43 differences; remaining
+  bodies, guard removal and the full Game goal stay open.
+
 - [Record impulse guarded match](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
   all 74 linked words exact, 69 direct plus five coefficient-register guards;
   twelve pre-install/twelve installed tests, native32 and actual caller/RNG
   chains pass. Only 257 ELF bytes change, including the measured four-entry
   metadata rotation; 21 neighbors/data/six inputs remain exact. Tools f6b3f22
-  first, older work preserved/no push. Next func_1503ECA0, 134/128 differences;
+  first, older work preserved/no push. Former next func_1503ECA0 is guarded-exact in Note 1283;
   guard removal and the full Game goal remain open.
 
 - [Record motion guarded tail match](WORKING_NOTES/1281-game-record-motion-guarded-tail-match-20261011.md):

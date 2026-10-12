@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1283](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
+func_1503ECA0: 134 linked words exact, 119 direct plus 15 initialization/
+register guards. Twelve pre-install/twelve installed tests, native32 and
+actual timer35/context8 chains pass. Only 443 ELF bytes change including
+one exact metadata swap; other bytes/data/six inputs and 21 neighbors exact.
+Game 2,804/4,822, total 3,477/5,495, zero drift / 2,018 different. Tools
+7730335 first, older HEAD/57 hashes preserved/two absent copies, no push;
+README aggregates only. Next func_1503EFC4, 45/43 differences; remaining
+SDK bodies, guard removal and full Game goal remain open.
+
+2026-10-11:
 [Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
 func_1503EB78: 74 linked words exact, 69 direct plus five coefficient-register
 guards. Twelve pre-install/twelve installed tests, native32 and actual caller/
@@ -8,7 +19,7 @@ guards. Twelve pre-install/twelve installed tests, native32 and actual caller/
 four-entry metadata rotation; other bytes/data/six inputs and 21 neighbors
 exact. Game 2,803/4,822, total 3,476/5,495, zero drift / 2,019 different.
 Tools f6b3f22 first, older HEAD/55 hashes preserved/two absent copies, no push;
-README aggregates only. Next func_1503ECA0, 134/128 differences. Guard
+README aggregates only. Former next func_1503ECA0 is guarded-exact in Note 1283. Guard
 removal and full Game goal remain open.
 
 2026-10-11:

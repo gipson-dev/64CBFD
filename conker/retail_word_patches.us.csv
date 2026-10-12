@@ -14521,3 +14521,18 @@ generated_6B320,func_1503EB78,0x54,0x46006302,0x46026002,-,-,Normalize closed im
 generated_6B320,func_1503EB78,0x60,0x46007382,0x46027382,-,-,Normalize closed impulse coefficient FPR allocation cycle,,,false
 generated_6B320,func_1503EB78,0x68,0xE7AC0050,0xE7A00050,-,-,Normalize closed impulse coefficient FPR allocation cycle,,,false
 generated_6B320,func_1503EB78,0x6C,0xE7AC0058,0xE7A00058,-,-,Normalize closed impulse coefficient FPR allocation cycle,,,false
+generated_6B320,func_1503ECA0,0x6C,0x3C010000,0x00009025,R_MIPS_HI16:D_80098928,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x70,0x00009025,0x3C010000,-,R_MIPS_HI16:D_80098928,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x80,0x3C010000,0x3C01BF00,R_MIPS_HI16:D_8009892C,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x84,0xC4380000,0x4481E000,R_MIPS_LO16:D_8009892C,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x88,0x3C01BF00,0x3C01C080,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x8C,0x4481E000,0x4481D000,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x90,0x3C01C080,0x3C01BF80,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x94,0x4481D000,0x4481C000,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x98,0x3C01BF80,0x3C010000,-,R_MIPS_HI16:D_8009892C,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x9C,0x4481B000,0x4480A000,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0xA0,0x4480A000,0xC4360000,-,R_MIPS_LO16:D_8009892C,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x16C,0x46185402,0x46165402,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x17C,0x46182182,0x46162182,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x188,0x46164282,0x46184282,-,-,Normalize closed collision constant initialization and FPR allocation,,,false
+generated_6B320,func_1503ECA0,0x19C,0x46162182,0x46182182,-,-,Normalize closed collision constant initialization and FPR allocation,,,false

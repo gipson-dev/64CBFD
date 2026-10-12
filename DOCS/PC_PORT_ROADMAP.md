@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Record Ground Collision Guarded Match - 2026-10-11
+
+[Note 1283](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
+
+- [x] Recover full slot/context/count/damping lifetimes, active signed-type/acceleration gates, query arguments, live Y/rate, bounce and settling.
+- [x] Match all 134 linked words with existing O2/g3/0x68 frame: 119 direct plus 15 closed initialization/register guards; the unreachable duplicate store emits directly.
+- [x] Pass twelve pre-install/twelve installed tests, native32 full count domain, callbacks/aliases/rebases/faults/controls and actual timer35/context8 chains.
+- [x] Preserve all 21 neighbors, pools/both padders and six inputs; only 443 ELF bytes change, including one explicitly reconstructed two-entry metadata swap.
+- [x] Measure +1 matching only: Game 2,804/4,822, total 3,477/5,495, zero drift / 2,018 different; README aggregates only.
+- [x] Bank tools 7730335 first, consumer source/guards/docs/pin second; shared checks pass, older HEAD/57 hashes preserved/two absent copies, no push.
+- [ ] Recover next func_1503EFC4, 45 words / 43 differences, after inspecting its full body and callback/caller contract.
+- [ ] Remove initialization/earlier guards and recover remaining height/context/retirement bodies; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Record Impulse Guarded Match - 2026-10-11
 
 [Note 1282](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve all 21 neighbors, typed 13/11/12-word callbacks, pools/both padders and six other inputs; only 257 ELF bytes change, including an explicitly reconstructed four-entry metadata rotation.
 - [x] Measure +1 matching only: Game 2,803/4,822, total 3,476/5,495, zero drift / 2,019 different; README aggregates only.
 - [x] Bank tools f6b3f22 first, consumer source/guards/docs/pin second; shared checks pass, older HEAD/55 hashes preserved/two absent copies, no push.
-- [ ] Recover next func_1503ECA0, 134 words / 128 differences, after inspecting its full body and caller contract.
+- [x] Recover and qualify complete func_1503ECA0 in Note 1283, all 134 linked words exact with 15 closed initialization/register guards and unchanged timer caller.
 - [ ] Remove coefficient/earlier guards and qualify independent hardware/FCSR/gameplay behavior; full Game goal remains active.
 
 ## Record Motion Guarded Tail Match - 2026-10-11
