@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-12:
+[Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
+func_15041508: full 54-word/frame-zero SDK glyph rectangle, eleven closed
+allocation guards, not direct C. Correct scalar-coordinate/Gfx caller types;
+raw caller object/nine guards unchanged. Eight pre-install/eight installed
+tests, actual caller/lookup/draw chain, full SDK native32 and controls pass.
+Only 165 target/size ELF bytes change; other bytes/ten inputs/seven neighbors/
+old guard prefix exact. Game 2,811/4,823, total 3,484/5,496, zero drift /
+2,012 different; +1 matching only. Tools 69d7a80 first, older HEAD/71 hashes
+preserved/two new identical copies, no push. Next func_150415E0, 115 words /
+112 differences, metrics resolver. Full Game goal remains active.
+
+2026-10-12:
 [Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
 func_150412C0: all 79 words direct SDK-macro C, twelve commands and advanced
 Gfx pointer; existing no-unroll owner profile, no frame/pool/guards/header/

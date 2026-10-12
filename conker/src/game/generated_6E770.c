@@ -6,7 +6,7 @@ extern u8 D_800848D0[];
 extern u8 D_80084930[];
 
 s32 func_15041480(u8 arg0);
-s32 func_15041508(s32 arg0, u8 *arg1, s32 arg2, s32 arg3);
+Gfx *func_15041508(Gfx *, s32, s32, s32);
 
 Gfx *func_150412C0(Gfx *displayList) {
     gSPTexture(displayList++, 0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON);
@@ -19,21 +19,21 @@ Gfx *func_150412C0(Gfx *displayList) {
     return displayList;
 }
 
-s32 func_150413FC(s32 arg0, u8 *arg1, s32 arg2, u8 *arg3) {
-    s32 result;
+Gfx *func_150413FC(Gfx *displayList, s32 x, s32 y, u8 *text) {
+    Gfx *result;
     s32 value;
     u8 *commands;
-    u8 *row;
+    u32 xCursor;
 
-    result = arg0;
-    value = arg2;
-    commands = arg3;
-    row = arg1;
+    result = displayList;
+    value = y;
+    commands = text;
+    xCursor = x;
 
     while (*commands != 0) {
-        result = func_15041508(result, row, value, func_15041480(*commands));
+        result = func_15041508(result, xCursor, value, func_15041480(*commands));
         commands++;
-        row += 8;
+        xCursor += 8;
     }
     return result;
 }
@@ -58,8 +58,12 @@ s32 func_15041480(u8 arg0) {
     return i;
 }
 
-s32 func_15041508(s32 arg0, u8 *arg1, s32 arg2, s32 arg3) {
-    return 0;
+Gfx *func_15041508(Gfx *displayList, s32 x, s32 y, s32 glyph) {
+    gSPTextureRectangle(displayList++,
+        (u32)x << 2, (u32)y << 2, ((u32)x + 8) << 2, ((u32)y + 12) << 2,
+        G_TX_RENDERTILE, ((u32)(glyph % 8) * 8) << 5,
+        ((u32)((glyph - (glyph % 8)) / 8) * 12) << 5, 0x400, 0x400);
+    return displayList;
 }
 
 s32 func_150415E0() {

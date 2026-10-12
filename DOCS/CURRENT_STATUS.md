@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3fb9a26; tools are committed before the consumer pin.
+  checkpoint pins tools 69d7a80; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest intensity-texture setup direct match:
+Latest glyph-rectangle and typed-caller guarded match:
+[Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
+func_15041508 replaces its zero-return placeholder with a full signed-index
+8-by-12 SDK rectangle and Gfx return. All 54 words/frame zero are exact with
+eleven closed V1/T0/T1 allocation guards, not direct C. Correct the caller/
+prototype scalar-coordinate/Gfx types; its complete 33-word raw object and
+existing nine guards are unchanged. Eight pre-install/eight installed tests,
+actual caller/lookup/draw chain, full SDK native32, rebases/faults/controls pass.
+Only 165 target/size ELF bytes change; every other byte/ten inputs/seven
+neighbors and old guard prefix remain exact. Game 2,811/4,823 (58.28%),
+total 3,484/5,496 (63.39%), zero drift / 2,012 different; +1 matching only.
+Tools 69d7a80 first, older HEAD/71 hashes preserved/two new identical copies,
+no push. Next func_150415E0: 115 words / 112 differences, extended-character
+metrics resolver; inspect its six-argument ABI and original 19-entry pool.
+Guard removal, independent hardware/renderer/gameplay and full Game goal stay
+open; README aggregates only.
+
+Previous intensity-texture setup direct match:
 [Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
 func_150412C0 replaces its zero-return placeholder with twelve SDK commands
 and the advanced Gfx pointer. All 79 words emit directly under the existing

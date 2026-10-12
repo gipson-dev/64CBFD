@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Glyph Rectangle And Typed Caller Guarded Match - 2026-10-12
+
+[Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
+
+- [x] Recover three-command 8-by-12 rectangle, full-width signed glyph remainder/division, masked coordinates and output+24 Gfx return using the SDK.
+- [x] Match all 54 words/frame zero with eleven closed V1/T0/T1 allocation guards; no frame/pool/profile/header changes, not direct C.
+- [x] Correct scalar-coordinate/Gfx caller/prototype types while preserving the complete 33-word raw object, both JAL relocations and existing nine caller guards.
+- [x] Pass eight pre-install/eight installed tests, actual caller33/lookup34/draw54 chain, full SDK native32, aliases/rebases/fired faults and effective controls.
+- [x] Preserve all seven neighbors/pools/both padders and every other ELF byte/ten inputs/old guard prefix; only 165 target/size bytes change, eleven rows appended.
+- [x] Measure Game 2,811/4,823, total 3,484/5,496, zero drift / 2,012 different; +1 matching only, README aggregates only.
+- [x] Bank tools 69d7a80 first; shared checks pass, older HEAD/71 hashes preserved/two new identical copies, no push.
+- [ ] Recover func_150415E0, 115 words / 112 differences, six-argument extended-character metrics resolver with original 19-entry switch and float pool.
+- [ ] Remove existing guards and qualify independent hardware/RSP/RDP/renderer/gameplay; full Game goal remains active.
+
 ## Intensity Texture Setup Direct Match - 2026-10-12
 
 [Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):
@@ -10,8 +24,8 @@
 - [x] Preserve all seven neighbors/pools/both padders and every other ELF byte/eleven inputs; only 241 target/size bytes change.
 - [x] Measure Game 2,810/4,823, total 3,483/5,496, zero drift / 2,013 different; +1 matching only, README aggregates/date only.
 - [x] Bank tools 3fb9a26 first; shared checks pass, older HEAD/69 hashes preserved/two identical new copies, no push.
-- [ ] Recover func_15041508, 54 words / 52 differences: three-command 8-by-12 glyph rectangle, scalar X/Y and signed glyph index, Gfx return.
-- [ ] Correct and qualify the typed caller/lookup/draw chain, preserving the exact caller's existing guards and the no-unroll lookup neighbor.
+- [x] Recover func_15041508 in Note 1290, all 54 words with eleven register guards: three-command 8-by-12 glyph rectangle and Gfx return.
+- [x] Correct and qualify the typed caller/lookup/draw chain in Note 1290, preserving the caller's raw object/nine guards and exact no-unroll lookup.
 - [ ] Remove existing guards and continue wider Game matching; hardware/RSP/RDP/renderer/gameplay acceptance remains separate.
 
 ## Matrix Decomposer Guarded C Conversion - 2026-10-11

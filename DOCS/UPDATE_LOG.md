@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-12 Glyph Rectangle And Typed Caller Guarded Match
+
+[Note 1290](WORKING_NOTES/1290-game-glyph-rectangle-and-typed-caller-guarded-match-20261012.md):
+func_15041508 restores full signed-index 8-by-12 SDK drawing and output+24
+Gfx return. All 54 words/frame zero exact with eleven closed V1/T0/T1 guards,
+not direct C. Retype caller/prototype to scalar coordinates/Gfx pointers;
+its raw 33-word object and nine existing guards remain unchanged. Eight
+pre-install/eight installed tests, actual caller/lookup/draw chain, full SDK
+native32, rebases/faults/controls pass. Only 165 target/size ELF bytes change;
+other bytes/ten inputs/seven neighbors and old guard prefix are exact.
+Game 2,811/4,823, total 3,484/5,496, zero drift / 2,012 different; +1 matching
+only. Tools 69d7a80 first, older HEAD/71 hashes preserved/two new identical
+copies, no push. README aggregates only. Next func_150415E0, 115 words /
+112 differences, metrics resolver; guard removal and full Game goal open.
+
 ## 2026-10-12 Intensity Texture Setup Direct Match
 
 [Note 1289](WORKING_NOTES/1289-game-intensity-texture-setup-direct-match-20261012.md):

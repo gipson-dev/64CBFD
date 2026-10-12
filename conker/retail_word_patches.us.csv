@@ -14599,3 +14599,14 @@ generated_6B320,func_1503E5F8,0x1EC,0x8FB800D4,0x8FAF00D4,-,-,Normalize complete
 generated_6B320,func_1503E5F8,0x1F4,0xE7120000,0xE5F20000,-,-,Normalize complete matrix decomposer compiler allocation and scheduling,,,false
 generated_6B320,func_1503E5F8,0x1F8,0x8FB900D8,0x8FB800D8,-,-,Normalize complete matrix decomposer compiler allocation and scheduling,,,false
 generated_6B320,func_1503E5F8,0x1FC,0xE7240000,0xE7040000,-,-,Normalize complete matrix decomposer compiler allocation and scheduling,,,false
+generated_6E770,func_15041508,0x034,0x00801825,0x00804025,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x044,0xAC6E0004,0xAD0E0004,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x048,0xAC6F0000,0xAD0F0000,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x050,0x00804025,0x00804825,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x058,0xAD0F0000,0xAD2F0000,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x064,0x30E90007,0x30E30007,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x068,0x11200002,0x10600002,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x070,0x2529FFF8,0x2463FFF8,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x074,0x00E95823,0x00E35823,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x078,0x0009C0C0,0x0003C0C0,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
+generated_6E770,func_15041508,0x0AC,0xAD0D0004,0xAD2D0004,-,-,Normalize glyph rectangle three-register allocation cycle,,,false
