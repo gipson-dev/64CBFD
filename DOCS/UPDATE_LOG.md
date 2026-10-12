@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Group-2 Active Timer Direct Match
+
+[Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
+func_1503F2B0 matches all 85 words directly with unchanged owner profile,
+guards/declarations/callers. Eleven pre-install/eleven installed tests,
+native32 and original dispatcher/finish/active/teardown/query chain pass.
+Only 285 target/extent ELF bytes change; other bytes/seven inputs/21 neighbors
+remain exact. Game 2,807/4,822, total 3,480/5,495, zero drift / 2,015
+different. Tools a96b414 first, older HEAD/63 hashes preserved/two absent
+copies, no push. README aggregates only. Next func_1503F404, 43/38
+differences; inspect its matrix conversion/copy forwarding ABI. Full Game goal open.
+
 ## 2026-10-11 Group-2 Mask Finish Direct Match
 
 [Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):

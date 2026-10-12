@@ -427,8 +427,24 @@ void func_1503F16C(s32 slot) {
     }
 }
 
-s32 func_1503F2B0() {
-    return 0;
+void func_1503F2B0(s32 slot) {
+    struct106 *control;
+
+    func_1503ECA0(slot);
+    control = &D_800C6660[slot];
+    *(s16 *)((u8 *)control + 0xC) -= D_800BE9E4;
+    if (*(s16 *)((u8 *)control + 0xC) <= 0) {
+        func_1503E260(slot);
+        if (func_1503EF4C(2, 0, slot) != 0) {
+            D_800CC2D0[slot].unk94 |= 8;
+        }
+        if (func_1503EF4C(2, 1, slot) != 0) {
+            D_800CC2D0[slot].unk94 |= 4;
+        }
+        if (func_1503EF4C(2, 2, slot) != 0) {
+            D_800CC2D0[slot].unk94 |= 2;
+        }
+    }
 }
 
 s32 func_1503F404() {

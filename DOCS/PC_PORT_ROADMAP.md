@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Group-2 Active Timer Direct Match - 2026-10-11
+
+[Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
+
+- [x] Recover preparation-first signed halfword timer subtraction/store/reload, zero expiry, ordered teardown/query calls and live OR-8/4/2 flags.
+- [x] Emit all 85 words directly with existing O2/g3/frame 0x20; no guards/pools/declaration/header/caller/profile changes.
+- [x] Pass eleven pre-install/eleven installed tests, native32, actual teardown/query, aliases/rebases/faults/controls and original dispatcher/finish/active chain.
+- [x] Preserve 21 neighbors, pools, both padders and all other ELF bytes/seven inputs; only 285 target/extent bytes change.
+- [x] Measure +1 matching only: Game 2,807/4,822, total 3,480/5,495, zero drift / 2,015 different; README aggregate rows only.
+- [x] Bank tools a96b414 first, consumer source/docs/pin second; shared checks pass, older HEAD/63 hashes preserved/two absent copies, no push.
+- [ ] Recover next func_1503F404, 43 slot words / 38 differences, after inspecting its matrix conversion/copy gate and full ten-argument caller ABI.
+- [ ] Remove existing guards and recover remaining bodies; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Group-2 Mask Finish Direct Match - 2026-10-11
 
 [Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve 21 neighbors/pools/both padders and all other ELF bytes/metadata/data/guards/seven inputs; only 274 target/extent bytes change.
 - [x] Measure +1 matching only: Game 2,806/4,822, total 3,479/5,495, zero drift / 2,016 different; README aggregates only.
 - [x] Bank tools c7869ae first, consumer source/docs/pin second; shared checks pass, older HEAD/61 hashes preserved/two absent copies, no push.
-- [ ] Recover next func_1503F2B0, 85 words / 84 differences, using its full active-callback contract and prior retail caller/query evidence in Note 1278.
+- [x] Recover and qualify complete func_1503F2B0 in Note 1286, all 85 words direct and original dispatcher/finish/active callback tables unchanged.
 - [ ] Remove existing guards and recover remaining callbacks; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Random Vertical Rate Direct Match - 2026-10-11

@@ -54,6 +54,14 @@ confirmed.
 
 ## Planning and history
 
+- [Group-2 active timer direct match](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
+  all 85 words direct C, no guards/pools/declaration/header/caller/profile
+  changes. Eleven pre-install/eleven installed tests, native32 and original
+  dispatcher/finish/active/teardown/query chain pass. Only 285 target/extent
+  ELF bytes change; all other bytes/seven inputs/21 neighbors are exact.
+  Tools a96b414 first, older work preserved/no push. Next func_1503F404,
+  43 slot words / 38 differences, matrix forwarding wrapper; full Game goal open.
+
 - [Group-2 mask finish direct match](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
   all81 direct C, no guards/pools/header/caller/profile changes; twelve
   pre-install/twelve installed tests, native32 and actual dispatcher/predicate/

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-11:
+[Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
+func_1503F2B0: all 85 words direct, no guards/pools/declaration/header/caller/
+profile changes. Eleven pre-install/eleven installed tests, native32 and
+original dispatcher/finish/active/teardown/query chain pass. Only 285 target/
+extent ELF bytes change; every other byte/seven inputs/21 neighbors are exact.
+Game 2,807/4,822, total 3,480/5,495, zero drift / 2,015 different.
+Tools a96b414 first, older HEAD/63 hashes preserved/two absent copies, no push.
+Next func_1503F404: 43 slot words / 38 differences, matrix forwarding wrapper.
+Full Game goal remains open.
+
+2026-10-11:
 [Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
 func_1503F16C: all81 direct, no guards/pools/header/caller/profile changes,
 one required local timer alias. Twelve pre-install/twelve installed tests,

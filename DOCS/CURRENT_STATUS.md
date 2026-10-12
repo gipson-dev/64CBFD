@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c7869ae; tools are committed before the consumer pin.
+  checkpoint pins tools a96b414; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Latest group-2 mask-finish direct match:
+Latest group-2 active timer direct match:
+[Note 1286](WORKING_NOTES/1286-game-record-mask-active-direct-match-20261011.md):
+func_1503F2B0 emits all 85 words directly under existing O2/g3/frame 0x20.
+No guards/pools/declaration/header/caller/profile changes. Eleven pre-install/
+eleven installed tests, native32 and original dispatcher/finish/active/
+teardown/predicate/query chain pass. Only 285 target/extent ELF bytes change;
+every other byte, seven inputs and 21 neighbors remain exact.
+Game 2,807/4,822 (58.21%), total 3,480/5,495 (63.33%), zero drift /
+2,015 different. Tools a96b414 first; older HEAD/63 hashes preserved, two
+absent copies, no push. Next func_1503F404: 43 slot words / 38 differences,
+matrix conversion/copy forwarding wrapper, not a group-one active row.
+Guard removal, independent SDK/hardware/gameplay and full Game goal stay open.
+
+Previous group-2 mask-finish direct match:
 [Note 1285](WORKING_NOTES/1285-game-record-mask-finish-direct-match-20261011.md):
 func_1503F16C emits all 81 words directly under existing O2/g3/frame 0x20;
 no guards/pools/header/caller/profile changes, one required local timer alias
