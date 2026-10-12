@@ -379,8 +379,16 @@ s32 func_1503EF4C(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_1503EFC4() {
-    return 0;
+void func_1503EFC4(s32 slot) {
+    struct106 *control = &D_800C6660[slot];
+    s32 count;
+    s32 index;
+
+    *(s16 *)((u8 *)control + 0xC) = 120;
+    count = D_80098914[((u8 *)control)[0xE]];
+    for (index = 0; index < count; index++) {
+        ((f32 *)((struct04 *)control->unk0 + index))[19] = (s32)((u32)func_150ADA20() % 20) - 5;
+    }
 }
 
 void func_1503F078(struct04 *arg0, s32 arg1) {

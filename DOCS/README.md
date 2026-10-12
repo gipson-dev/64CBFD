@@ -54,12 +54,20 @@ confirmed.
 
 ## Planning and history
 
+- [Random vertical rate direct match](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
+  complete45 direct C, no guards/profile/header/declaration/caller changes;
+  twelve pre-install/twelve installed tests, native32 and actual dispatcher/
+  predicate/finish/RNG chain pass. Only 135 target/extent ELF bytes change;
+  all other metadata/data/guards/seven inputs and 21 neighbors unchanged.
+  Tools 4cc2121 first, older work preserved/no push. Next func_1503F16C,
+  81/80 differences; remaining callbacks and full Game goal stay open.
+
 - [Record ground collision guarded match](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
   complete134 linked exact, 119 direct plus 15 closed initialization/register
   guards; twelve pre-install/twelve installed tests, native32 and actual timer/
   context chains pass. Only 443 ELF bytes change including one exact metadata
   swap; 21 neighbors/data/six inputs unchanged. Tools 7730335 first, older
-  work preserved/no push. Next func_1503EFC4, 45/43 differences; remaining
+  work preserved/no push. Former next func_1503EFC4 is directly matched in Note 1284; remaining
   bodies, guard removal and the full Game goal stay open.
 
 - [Record impulse guarded match](WORKING_NOTES/1282-game-record-impulse-guarded-match-20261011.md):

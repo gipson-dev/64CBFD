@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-11 Random Vertical Rate Direct Match
+
+[Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
+func_1503EFC4 matches all 45 words directly, no guards/profile/header/
+declaration/caller changes. Twelve pre-install/twelve installed tests,
+native32 and actual dispatcher171/predicate27/finish45/RNG18 chain pass.
+Only 135 target/extent ELF bytes change; other metadata/data/guards/seven
+inputs and 21 neighbors exact. Game 2,805/4,822, total 3,478/5,495, zero
+drift / 2,017 different. Tools 4cc2121 first, older HEAD/59 hashes preserved/
+two absent copies, no push; README aggregates only. Next func_1503F16C,
+81/80 differences; existing guard removal and full Game goal stay open.
+
 ## 2026-10-11 Record Ground Collision Guarded Match
 
 [Note 1283](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
@@ -9,8 +21,8 @@ installed tests, native32 and actual timer35/context8 chains pass. Only 443
 ELF bytes change including one exact metadata swap; other bytes/data/six
 inputs and 21 neighbors unchanged. Game 2,804/4,822, total 3,477/5,495,
 zero drift / 2,018 different. Tools 7730335 first, older HEAD/57 hashes
-preserved/two absent copies, no push; README aggregates only. Next
-func_1503EFC4, 45/43 differences; guard removal, remaining SDK bodies and
+preserved/two absent copies, no push; README aggregates only. Former next
+func_1503EFC4 is directly matched in Note 1284; guard removal, remaining SDK bodies and
 the full Game goal stay open.
 
 ## 2026-10-11 Record Impulse Guarded Match

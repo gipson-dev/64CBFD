@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Random Vertical Rate Direct Match - 2026-10-11
+
+[Note 1284](WORKING_NOTES/1284-game-record-random-vertical-rate-direct-match-20261011.md):
+
+- [x] Recover group-0 finish callback, timer 120 before count, unsigned RNG remainder/signed subtraction and post-RNG live buffer stores.
+- [x] Emit all 45 words directly with existing O2/g3/0x30 frame, including the dead divide check; no guards/pools/declarations/header/caller/profile changes.
+- [x] Pass twelve pre-install/twelve installed tests, native32 full counts/unsigned values, aliases/rebases/faults/controls and actual dispatcher171/predicate27/finish45/RNG18 chain.
+- [x] Preserve 21 neighbors/pools/both padders and every other ELF byte/metadata/data/guards/seven inputs; only 135 target/extent bytes change.
+- [x] Measure +1 matching only: Game 2,805/4,822, total 3,478/5,495, zero drift / 2,017 different; README aggregates only.
+- [x] Bank tools 4cc2121 first, consumer source/docs/pin second; shared checks pass, older HEAD/59 hashes preserved/two absent copies, no push.
+- [ ] Recover next func_1503F16C, 81 words / 80 differences, after inspecting its full group-2 finish callback and caller contract.
+- [ ] Remove existing guards and recover remaining callbacks; independent SDK/hardware/FCSR/gameplay acceptance and full Game goal remain open.
+
 ## Record Ground Collision Guarded Match - 2026-10-11
 
 [Note 1283](WORKING_NOTES/1283-game-record-ground-collision-guarded-match-20261011.md):
@@ -10,7 +23,7 @@
 - [x] Preserve all 21 neighbors, pools/both padders and six inputs; only 443 ELF bytes change, including one explicitly reconstructed two-entry metadata swap.
 - [x] Measure +1 matching only: Game 2,804/4,822, total 3,477/5,495, zero drift / 2,018 different; README aggregates only.
 - [x] Bank tools 7730335 first, consumer source/guards/docs/pin second; shared checks pass, older HEAD/57 hashes preserved/two absent copies, no push.
-- [ ] Recover next func_1503EFC4, 45 words / 43 differences, after inspecting its full body and callback/caller contract.
+- [x] Recover and qualify complete func_1503EFC4 in Note 1284, all 45 words direct with no guards and unchanged dispatcher/callback tables.
 - [ ] Remove initialization/earlier guards and recover remaining height/context/retirement bodies; independent hardware/FCSR/gameplay acceptance and full Game goal remain open.
 
 ## Record Impulse Guarded Match - 2026-10-11
