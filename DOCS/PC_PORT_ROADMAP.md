@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Repeated Predicate And Font-Load Boundary - 2026-10-12
+
+[Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
+
+- [x] Recover a literal 53-word metrics region in a 218/frame0x80/114 body while preserving seven opening roles, common T0 zero and SP+0x68.
+- [x] Qualify four valid bodies, initialized cache controls and 768 fired access-cut pairs; 710 states are exact, with complete named space/newline/A8 cuts passing. All thirteen new/regression tests pass, tools 4dbdcbe first.
+- [ ] Resolve ordinary AT/font-pointer state at cut27 and complete the 219-word dispatch/font/footer plus all final gates. No installation or matching credit; same target/full Game active.
+
 ## Text Measurer Address Work And Retail Save Roles - 2026-10-12
 
 [Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):

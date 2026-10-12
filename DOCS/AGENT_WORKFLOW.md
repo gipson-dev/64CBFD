@@ -175,6 +175,14 @@ named SP+0x68 in frame0x80; 216/171 still fails full matching. Native pointer/
 integer reuse is qualified only for the existing 32-bit ABI. Do not promote
 the identity-assignment shape control or bypass remaining matching gates.
 
+Repeated real predicates and the renewed instruction boundary are qualified in
+[Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_repeated_predicate` under WSL.
+The 218/114 form has a literal 53-word metrics match and 710/768 exact named
+access-cut states, but the ordinary font-pointer load still rejects it. Cached
+predicates must be defined before the space jump too. Keep named-cut evidence
+separate from all-input/private/PC/FCSR matching; do not pad or install.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

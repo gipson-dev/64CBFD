@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer repeated predicate and font-load boundary](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
+  218/114 retains the recovered lifetimes and matches 53 literal metrics words;
+  710/768 named access-cut states match, with first A failure at font-pointer
+  cut27. All thirteen tests pass, tools 4dbdcbe first; no installation or match.
+
 - [Text measurer address work and retail save roles](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
   seven opening roles, frame0x80, common zero and SP+0x68 recovered together;
   216/171 still fails full matching. Five bodies / 3,775 guest / 7,330 native32

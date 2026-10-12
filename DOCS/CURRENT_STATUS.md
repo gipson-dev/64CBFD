@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4cf5203; tools are committed before the consumer pin.
+  checkpoint pins tools 4dbdcbe; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current address-work/retail-save-role checkpoint; matching remains active:
+Current repeated-predicate/font-load-boundary checkpoint; matching remains active:
+[Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
+func_150428D4: 218/frame0x80/114 preserves the seven opening roles/common zero/
+SP+0x68 and matches a literal 53-word metrics region. Space/newline/A8 match
+all named access cuts; A first rejects at font-pointer cut27, with RAM/events
+and RA still equal. All thirteen tests pass, tools 4dbdcbe first; no installation,
+production/totals/main README unchanged, same target/full Game active.
+
+Previous address-work/retail-save-role checkpoint:
 [Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
 func_150428D4: forward ternary work recovers all seven retail opening roles,
 frame0x80, common early T0 zero and named M-24 / SP+0x68 together. Its

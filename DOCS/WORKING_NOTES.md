@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
+218/frame0x80/114 preserves seven roles/common zero/SP+0x68 and matches a
+literal 53-word metrics region. All named space/newline/A8 access cuts pass;
+A first rejects at font-pointer cut27. All thirteen tests pass, tools 4dbdcbe
+first; production/totals/main README unchanged, same target/full Game active,
+no installation, matching credit or push.
+
+2026-10-12:
 [Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
 forward ternary work recovers seven retail opening roles, frame0x80, common
 T0 zero and named SP+0x68 together. Five bodies / 3,775 guest / 7,330 native32

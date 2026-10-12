@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Repeated Predicate And Font-Load Boundary
+
+[Note 1313](WORKING_NOTES/1313-game-text-measurer-repeated-predicate-and-font-load-fault-boundary-20261012.md):
+218/frame0x80/114 preserves retail opening roles and SP+0x68, with a literal
+53-word metrics match. All named space/newline/A8 access cuts pass; A rejects
+at first font-pointer cut27 with RAM/events/RA equal. All thirteen tests pass,
+tools 4dbdcbe first; production/totals/main README unchanged, full Game active,
+no installation, matching credit or push.
+
 ## 2026-10-12 Text Measurer Address Work And Retail Save Roles
 
 [Note 1312](WORKING_NOTES/1312-game-text-measurer-address-work-lifetime-and-retail-save-roles-20261012.md):
