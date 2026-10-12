@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer shared zero and source-home call-save](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
+  split source recovers early T0 zero and SP+0x68 lifetime; extra font-address
+  save still rejects the 218/frame0x80 body. Seven bodies / 5,285 public
+  comparisons and all twelve tests pass; tools 54c4808 first, no match.
+
 - [Text measurer switch and register-hint provenance](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
   six forms / three bodies / 2,265 public comparisons. Literal user-register
   VREGs differ from anonymous records; unscoped UOPT output is byte-identical

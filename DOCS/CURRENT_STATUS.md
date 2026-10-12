@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 615bdc9; tools are committed before the consumer pin.
+  checkpoint pins tools 54c4808; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current switch/register-hint checkpoint; matching remains active:
+Current shared-zero/source-home checkpoint; matching remains active:
+[Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
+func_150428D4: split updates recover common early T0 zero and named M-24 /
+SP+0x68 save in a 218/frame0x80 body, but an extra font-address save still
+rejects it. Seven bodies pass 5,285 public comparisons; all twelve distinct
+new/regression tests plus focused capture rerun pass. Tools 54c4808 first;
+production/totals/main README unchanged, same target/full Game active.
+
+Previous switch/register-hint checkpoint:
 [Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
 func_150428D4: six five-field forms / three bodies pass 2,265 public comparisons
 but keep an extra S4 flag and stale T0 at both first-read boundaries. Register

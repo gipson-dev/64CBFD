@@ -159,6 +159,14 @@ are distinct measured records, not proven equivalents or lexical-depth labels.
 Require complete stream comparisons and fired register observations; these
 statement forms still keep a saved S4 flag and fail retail's T0 lifetime.
 
+Split default carriers and source-home call-save are qualified in
+[Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_default_carrier` under WSL.
+The split form recovers a common non-likely delay-slot zero and named M-24 /
+SP+0x68 lifetime, but still fails seven saved roles and full 219-word layout.
+Keep the static first-access proof separate from full instruction-fault parity;
+do not pad or install the 218-word source on these partial results.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

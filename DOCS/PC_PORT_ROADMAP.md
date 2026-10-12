@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Shared Zero And Source-Home Call-Save - 2026-10-12
+
+[Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
+
+- [x] Recover the common post-normalizer T0 reset and real named M-24 / SP+0x68 call-save in a 218/frame0x80 split source; verify static delay-slot dominance and fired first-read controls.
+- [x] Qualify seven bodies / 5,285 public comparisons and three complete captures; all twelve distinct tests plus focused capture rerun pass, tools 54c4808 first.
+- [ ] Remove the extra font-address save/local slot and recover complete seven-role / 219-word retail layout, then all final gates. Same target/full Game active; no installation or matching credit.
+
 ## Text Measurer Switch And Register-Hint Provenance - 2026-10-12
 
 [Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):

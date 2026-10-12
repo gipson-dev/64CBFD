@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Shared Zero And Source-Home Call-Save
+
+[Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
+split updates recover common early T0 zero and named M-24 / SP+0x68 save;
+the 218/frame0x80 body still has an extra saved font address. Seven bodies
+pass 5,285 public comparisons; all twelve distinct tests plus focused capture
+rerun pass, tools 54c4808 first. Production/totals/main README unchanged,
+same target/full Game active, no matching credit or push.
+
 ## 2026-10-12 Text Measurer Switch And Register-Hint Provenance
 
 [Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1311](WORKING_NOTES/1311-game-text-measurer-shared-zero-and-source-home-call-save-20261012.md):
+common early T0 zero and named M-24 / SP+0x68 save recovered in split source.
+The 218/frame0x80 body still has an eighth font-address save; seven bodies
+pass 5,285 public comparisons. All twelve tests plus focused capture rerun
+pass, tools 54c4808 first; production/totals/main README unchanged, same
+target/full Game active, no installation, matching credit or push.
+
+2026-10-12:
 [Note 1310](WORKING_NOTES/1310-game-text-measurer-switch-and-register-hint-provenance-20261012.md):
 six five-field forms / three bodies / 2,265 public comparisons; extra S4 flag
 and stale T0 still fail retail lifetime. Actual register-keyword VREGs have raw
