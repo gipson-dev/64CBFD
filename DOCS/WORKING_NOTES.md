@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
+six tests / ten distinct bodies / 7,550 public comparisons; paired CFE
+captures move the record but preserve M-56 call-save. A T0-spilling form
+actually carries maximum width. Both isolated regressions pass, tools
+e7ebb38 first; production/totals/root README unchanged. Recover the shared
+default-zero merge for the same target/full Game; no match or push.
+
+2026-10-12:
 [Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
 complete CFE/UOPT captures prove register-8 call-save promotion in UOPT.
 Six tests / 3,020 public comparisons plus the fresh original seven-test

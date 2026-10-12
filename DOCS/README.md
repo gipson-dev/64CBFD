@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Text measurer carrier layout and register roles](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
+  six tests qualify ten distinct bodies / 7,550 public comparisons and paired
+  CFE homes. T0 spill traffic can belong to maximum width, not the flag.
+  All forms rejected; tools e7ebb38 banked first, same target/full Game active.
+
 - [Text measurer frontend vreg and UOPT call-save provenance](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
   six tests qualify complete wire captures and 3,020 public comparisons;
   UOPT introduces register-8 call-save from a CFE temporary. All new source

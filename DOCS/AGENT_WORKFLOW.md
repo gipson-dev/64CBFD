@@ -121,6 +121,13 @@ consumer completion, actual input paths, fired table probe, hash/marker-order
 checks and complete normal-object identity. They remain non-installable.
 Do not use failed `-K` or verbose intermediates as qualified receipts.
 
+Carrier layout screens and register-role checks are qualified in
+[Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md).
+Use `python3 -m tools.experiments.game_text_measurer_logic_candidates --layouts`.
+Equal shape/difference counts are not word identity; a T0 spill is not proof
+of the font flag's lifetime. Verify complete words, actual call-boundary
+state and captured homes before treating either as matching evidence.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

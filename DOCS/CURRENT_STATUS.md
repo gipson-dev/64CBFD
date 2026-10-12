@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools da8a377; tools are committed before the consumer pin.
+  checkpoint pins tools e7ebb38; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current frontend/UOPT provenance checkpoint; matching remains active:
+Current carrier-layout/register-role checkpoint; matching remains active:
+[Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
+func_150428D4: ten distinct layouts pass 7,550 public comparisons but fail
+the retail frame. Paired captures move the record, not the M-56 call-save;
+one T0-spilling form actually carries maximum width. Six new tests and both
+isolated regressions pass. Tools e7ebb38 first; production/totals/root README
+unchanged. Recover shared default-zero merge and all final matching gates.
+
+Previous frontend/UOPT provenance checkpoint:
 [Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
 func_150428D4: complete CFE/UOPT streams prove UOPT introduces register-8
 call-save from a CFE temporary. Six tests / 3,020 public comparisons pass;

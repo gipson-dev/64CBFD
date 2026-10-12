@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Text Measurer Carrier Layout And Register Roles - 2026-10-12
+
+[Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
+
+- [x] Qualify ten distinct layout bodies / 7,550 public comparisons and paired CFE homes; declaration changes do not move the anonymous M-56 call-save.
+- [x] Prove the T0-spilling direct-font form carries maximum width, not the flag; pass six new tests and both isolated regressions, tools e7ebb38 first.
+- [ ] Recover shared early zero, seven saved roles and complete 219/0x80/SP+0x68 lifetime, then all final gates. Same target/full Game active; no match credited.
+
 ## Text Measurer Frontend And UOPT Provenance - 2026-10-12
 
 [Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):

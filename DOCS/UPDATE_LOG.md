@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-12 Text Measurer Carrier Layout And Register Roles
+
+[Note 1306](WORKING_NOTES/1306-game-text-measurer-carrier-layout-and-register-role-qualification-20261012.md):
+six tests qualify ten distinct bodies / 7,550 public comparisons. Equal
+shape counts hid real stack-home changes; paired CFE captures leave the
+anonymous call-save at M-56. The direct-font T0 spill carries maximum width,
+not the flag. Both isolated regressions pass, tools e7ebb38 first; all forms
+remain rejected, production/totals/root README unchanged, no push.
+
 ## 2026-10-12 Text Measurer Frontend And UOPT Provenance
 
 [Note 1305](WORKING_NOTES/1305-game-text-measurer-frontend-vreg-and-uopt-call-save-provenance-20261012.md):
