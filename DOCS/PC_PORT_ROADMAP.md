@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Stream Guarded Match - 2026-10-13
+
+[Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
+
+- [x] Recover func_150341BC's complete output-cursor/slot ABI, ordered signed commands and live selected-actor reloads; replace its placeholder and match all97 linked words/frame0.
+- [x] Derive52 guarded closed register/cursor/branch corrections from raw96-word C, not a copied body. Qualify all52 stale-word controls,8,832 guest plus32 aliases,131,072 native32,166 faults and12 actual caller windows.
+- [x] Preserve all nine neighbors/pools, both full-owner padders and three exact rebases; pass literal360-byte image accounting, exact52-row append, unchanged data and fresh text integrity gates.
+- [x] Update README aggregates to Game2,822/4,823 and total3,495/5,496, zero drift/converted fixed; bank tools c30d7a0 first and preserve older HEAD/unrelated hashes.
+- [ ] Recover and qualify the119-word parent func_15033FE0, currently115 differences; keep direct guard elimination, full Game/text/translator and runtime gates open.
+
 ## Game Actor Callback Direct Match - 2026-10-12
 
 [Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
@@ -8,7 +18,7 @@
 - [x] Qualify fired read-only CFE/UOPT/UGEN captures: local reservation16->8, outgoing16/saved8 fixed, traced object/pools unchanged; reject missing gates, child failure and input corruption.
 - [x] Pass nine installed tests,65,536 guest plus24 home/36 flag cases,65,536 native32 and130 literal fault pairs; preserve nine neighbors/all38 caller functions, both padders and three exact rebases.
 - [x] Pass eight-byte literal image/data/text gates; update README aggregates to Game2,821/4,823 and total3,494/5,496. Bank tools80e6fed first and preserve older HEAD/unrelated hashes.
-- [ ] Recover and qualify func_150341BC's97-word command-stream writer, currently94 differences. Keep text218/114/cut27, translator and full Game/runtime gates open.
+- [x] Recover and qualify func_150341BC's97-word command-stream writer as a guarded match in Note1323. Direct C fitting, text/translator and full Game/runtime remain open separately.
 
 ## Game Actor Callback Semantic Recovery - 2026-10-12
 

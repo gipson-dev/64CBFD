@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-12
+Last verified: 2026-10-13
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 80e6fed; tools are committed before the consumer pin.
+  checkpoint pins tools c30d7a0; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor callback direct-match checkpoint; full Game remains active:
+Current actor command-stream guarded-match checkpoint; full Game remains active:
+[Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
+func_150341BC's full typed body replaces its zero-return placeholder. All97 linked
+words/frame0 match using52 derived register/cursor/branch guards; raw C96/62
+is not a direct match. Eight installed tests plus final focused native rerun
+qualify signed values, aliases,166 faults, both owner padders and three rebases.
+Whole ELF changes only292 target/two size/66 closed metadata bytes; all data and
+old guard history stay fixed. Text integrity passes; tools c30d7a0 first, older
+HEAD/unrelated hashes preserved. Game2,822/4,823 (58.51%), total3,495/5,496
+(63.59%), drift0/different2,001, converted fixed. Next func_15033FE0,
+119 words/frame0x28/115 differences. Direct guard elimination, text/translator
+and hardware/gameplay gates remain open; no push.
+
+Previous actor callback direct-match checkpoint:
 [Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
 func_150345E4 now matches all81 words directly, original frame0x20/no guards.
 Read-only compiler captures trace local reservation16->8; preserve outgoing16

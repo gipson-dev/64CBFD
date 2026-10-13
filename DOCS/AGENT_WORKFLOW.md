@@ -281,6 +281,20 @@ affine comparison for this match; historical tests retain their original image
 snapshot. Advance immutable text ELF receipts only after the independent literal
 eight-byte whole-image gate, with all other protected inputs unchanged.
 
+The actor command-stream writer is guarded-exact in
+[Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_stream_candidates --screens`
+and `python3 -m unittest tools.tests.test_game_actor_command_stream_match -v`.
+Distinguish raw96/62 from fitted97/frame0. Derive the register cycle, cursor-step
+split and crossing-branch relocation from source; require exact expected words,
+all guard corruption controls, both full-owner padders and independent rebases.
+Preserve signed-byte and selected-record reads after aliased tag stores. Keep
+finite signed-conversion/native32 backing and the real five-word caller window
+separate from arbitrary FP inputs and full-caller/hardware acceptance. Unexpected
+ELF serialization must be diagnosed with exact records, named-definition equality
+and closed byte accounting; never exclude whole metadata sections. Advance text
+ELF/guard pins only after the literal image and exact guard-prefix append gates.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

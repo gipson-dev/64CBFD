@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Stream Guarded Match
+
+[Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
+func_150341BC's full typed command writer replaces its placeholder; all97 linked
+words/frame0 match with52 derived closed register/cursor/branch guards, not direct
+C. Eight installed tests/final native rerun and whole owner/padder/rebase gates
+pass. All360 ELF changed bytes are target292/size2/closed metadata66, other bytes/
+data fixed, guard history only52 appended rows. Text integrity passes. README
+aggregate rows/date only; Game2,822/4,823, total3,495/5,496, zero drift/converted
+fixed. Tools c30d7a0 first, older work preserved/no push. Next119-word parent
+func_15033FE0; direct guard elimination and wider Game/text/translator remain open.
+
 ## 2026-10-12 Game Actor Callback Direct Match And Frame Provenance
 
 [Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):

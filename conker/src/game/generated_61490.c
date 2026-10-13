@@ -14,6 +14,8 @@ extern u8 D_800CC2D4[];
 void func_1503B9BC(s32 index);
 
 extern u8 D_800CC2D0[];
+extern u8 D_800C3E78[];
+extern f32 D_80097D14;
 extern u8 D_800BEAC0;
 extern s32 D_800D121C;
 
@@ -21,8 +23,44 @@ s32 func_15033FE0() {
     return 0;
 }
 
-s32 func_150341BC() {
-    return 0;
+u8 *func_150341BC(u8 *cursor, s32 slot) {
+    u8 *actor = D_800CC2D0 + ((u32)slot * 203U << 2);
+    u8 *attached = *(u8 **)(actor + 0x31C);
+    s16 amount;
+    s32 extra;
+
+    if (attached != NULL && (*(u16 *)(actor + 0x2F8) & 0x80) == 0) {
+        amount = (s32)(*(f32 *)(actor + 0x54) * D_80097D14);
+        if (*(u16 *)(actor + 0x84) != 0x42 && *(u16 *)(actor + 0x84) != 0x14 && *(u16 *)(actor + 0x84) != 0x76) {
+            if (attached[0x78] == 10) {
+                extra = 0;
+            } else {
+                extra = 4;
+            }
+            *(s16 *)cursor = 6 + extra;
+            *(s16 *)(cursor + 2) = amount;
+            cursor += 4;
+        } else {
+            *(s16 *)cursor = 10;
+            *(s16 *)(cursor + 2) = amount;
+            cursor += 4;
+            *(s16 *)cursor = 4;
+            *(s16 *)(cursor + 2) = -amount;
+            cursor += 4;
+        }
+    }
+    if (*(s8 *)(actor + 0x1D1) != 0) {
+        *(s16 *)cursor = 6;
+        cursor += 4;
+        *(s16 *)(cursor - 2) = *(s8 *)(actor + 0x1D1) * 200;
+    }
+    if (*(u8 **)(D_800CC2D0 + D_800C3E78[0] * 0x32C + 0x31C) != NULL &&
+        *(s16 *)(*(u8 **)(D_800CC2D0 + D_800C3E78[0] * 0x32C + 0x31C) + 0x12) != 0) {
+        *(s16 *)cursor = 8;
+        cursor += 4;
+        *(s16 *)(cursor - 2) = -*(s16 *)(*(u8 **)(D_800CC2D0 + D_800C3E78[0] * 0x32C + 0x31C) + 0x12);
+    }
+    return cursor;
 }
 
 u8 *func_15034340(u8 *arg0, s32 arg1) {

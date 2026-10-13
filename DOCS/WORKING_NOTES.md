@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-13:
+[Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
+func_150341BC's complete command-stream body matches all97 linked words/frame0
+with52 derived guards; raw C96/62 is not direct. Eight installed tests and final
+native rerun, all owner/padder/rebase and literal image/data/text gates pass.
+Game2,822/4,823, total3,495/5,496, zero drift/converted fixed; tools c30d7a0 first.
+Next119-word func_15033FE0; wider Game/text/translator/direct fitting remain open,
+older work preserved, no push or full-goal completion.
+
 2026-10-12:
 [Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
 func_150345E4 matches all81 words/frame0x20 directly, no guards. Read-only compiler

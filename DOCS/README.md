@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-stream guarded match](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
+  func_150341BC matches all97 linked words/frame0 using52 derived register/
+  cursor/branch guards, not direct C. Eight installed tests/final native rerun,
+  both owner padders/rebases and literal image/data/text gates pass. Tools
+  c30d7a0 first; Game2,822/4,823. Next119-word func_15033FE0; wider gates remain open.
+
 - [Actor callback direct match and frame provenance](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
   func_150345E4 matches all81 words/frame0x20 directly, no guards. Fired compiler
   captures explain local16->8; nine installed tests and eight-byte literal image/
