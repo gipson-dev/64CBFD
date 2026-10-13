@@ -114,3 +114,11 @@ repeat these55 bodies unchanged or assign physical scheduling causality to
 the raw records. Other register/operand differences, primary lower=40 cut10,
 disabled-primary selector cut7 and all76 words remain open. Full Game,
 retained text/translator and hardware goals remain active.
+
+Post-bank consumer `ab8b8cea` / tools `ce3980b`: three whole-image/protected-
+text integrity checks pass **7.610s**, no skips. Seven documents /4,664 relative
+links have zero broken targets. The checkpoint's graph hook finishes with
+40,469 nodes /80,963 edges and zero live workers; known retained-node/HTML-size
+warnings remain. Both active checkouts are clean. All425 older hashes/HEAD
+stay fixed, with two absent additions only. This note-only verification does
+not change production, pin baselines or matching totals.
