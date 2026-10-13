@@ -9,7 +9,7 @@
 - [x] Raise represented exact states1086->1322 across2938 fired pairs, retaining every previously exact sampled cut.
 - [x] Screen19 complete bodies; reject404-word sign defaults and opening regressions, distinguish identical scores from word identity.
 - [x] Prove only55 target ELF bytes change, all other bytes/metadata/data/guards/progress fixed; archive and advance only the protected text ELF pin.
-- [ ] Complete installed target/text checks, both tools/syntax checks, authorized tools-first bank and post-bank verification.
+- [x] Complete16 installed target/text checks and both tools/syntax checks; bank tools6217aa4 then consumer40ce9526 and pass five post-bank checks.
 - [ ] Recover primary clamp/allocation and missing secondary-block alignment while preserving all1322 exact sampled states.
 - [ ] Finish primary cut10, disabled-primary cut7 and266 differences under full matching gates; wider Game/text/translator/hardware goals remain open.
 

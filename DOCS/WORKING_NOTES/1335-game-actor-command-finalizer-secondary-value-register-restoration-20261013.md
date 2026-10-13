@@ -123,3 +123,10 @@ six homes and complete owner/image gates. Do not repeat the rejected default
 sign forms, pad a shorter candidate into acceptance, or normalize unresolved
 states with guards. Full Game, retained text/translator and hardware goals
 remain active.
+
+Post-bank consumer `40ce9526` / tools `6217aa4`: five focused extent/image/
+fault/text-integrity checks pass **9.335s**, no skips. Seven documents /
+4,655 relative links have zero broken targets. The source commit's graph hook
+finishes with 40,451 nodes / 80,947 edges and zero live workers; known retained-
+node and HTML-size warnings remain. Both active checkouts are clean. This
+verification record does not change source/ELF/guards or matching totals.
