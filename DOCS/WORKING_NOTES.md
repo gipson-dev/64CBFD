@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
+func_15034860 restores its two primary jitter load words,269->267 differences,
+preserving405/frame0x48/six slots/160 homes. Exact sampled states720->1086/2938
+without losing earlier agreements; cuts10/7 remain open. All15 installed checks
+and six-byte target-only image/data proof pass. Tools2b16f4f first; older413
+unrelated hashes preserved/no push. Next owned scheduling evidence/full gates.
+
+2026-10-13:
 [Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
 func_15034860 restores its numeric T7/tag T4 input roles and closes primary
 cut9 on44 paths, retaining405/frame0x48/six slots/160 homes. Differences298->269;

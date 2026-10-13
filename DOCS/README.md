@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer primary jitter load-order restoration](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
+  func_15034860 retains405/frame0x48,269->267 differences, no guards/credit.
+  Two retail load words are restored; exact states720->1086/2938 with no earlier
+  agreement lost. All15 installed checks/six-byte image proof pass. Tools2b16f4f
+  first; next owned lower/tag evidence and the still-open primary10/secondary7.
+
 - [Actor command-finalizer direct byte input and primary cut9 restoration](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
   func_15034860 stays405/frame0x48/six live slots, differences298->269, no guards
   or credit. Primary cut9 closes on44 paths; exact fault states452->720/2938.

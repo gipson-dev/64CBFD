@@ -66,7 +66,7 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         }
         D_800C3EF0 = value;
         primaryIndex = first;
-        value = (s32)((f32)(*(s8 *)(actor + 0x202) * actor[0x1FE] / limit)
+        value = (s32)((f32)(actor[0x1FE] * *(s8 *)(actor + 0x202) / limit)
             * D_80097D4C * D_80097D50);
         if (!suppressed) {
             *(s16 *)output = (u32)primaryIndex * 6 + secondaryBias;

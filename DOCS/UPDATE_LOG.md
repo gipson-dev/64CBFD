@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Primary Jitter Load Order
+
+[Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
+Restore func_15034860's unsigned numeric/signed jitter load order with one
+integer operand-order edit.269->267 differences;405/frame0x48/six slots fixed,
+no guards/credit.52 source screens reject earlier-state losses and overflow.
+Exact sampled states720->1086/2938, no prior agreement lost; cuts10/7 still open.
+All15 installed checks pass46.959s; only six target ELF bytes change, all other
+bytes/720 data owners fixed. Tools2b16f4f first; older413 unrelated hashes
+preserved/no push. README totals fixed; continue owned scheduling/full matching.
+
 ## 2026-10-13 Game Actor Command Finalizer Direct Byte Input And Primary Cut9
 
 [Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):

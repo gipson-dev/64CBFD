@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9cd126b; tools are committed before the consumer pin.
+  checkpoint pins tools 2b16f4f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer direct-byte/cut9 checkpoint; matching remains open:
+Current actor command-finalizer primary jitter-load checkpoint; matching remains open:
+[Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
+func_15034860 restores LBU T3 / LB T9 order,269->267 real differences. Only
+two words/six target ELF bytes change;405/frame0x48/six slots/160 homes fixed.
+Exact represented fault states720->1086/2938, no previously exact sampled state
+lost. Primary cut10 and disabled-primary cut7 remain open. All15 installed
+target/text checks pass46.959s; all other ELF bytes and720 data owners fixed.
+Tools2b16f4f first; older HEAD/413 unrelated hashes preserved/no push. README
+aggregates fixed. Next owned lower/tag/conversion evidence and remaining267
+differences under complete private/fault/owner/rebase/image gates.
+
+Previous actor command-finalizer direct-byte/cut9 checkpoint:
 [Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
 func_15034860 retains405/frame0x48 and all six slots/160 homes; differences
 298->269, no guards or credit. Direct numeric-byte conversion restores T7/T4

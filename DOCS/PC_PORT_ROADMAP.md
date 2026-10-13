@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Primary Jitter Load Order - 2026-10-13
+
+[Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
+
+- [x] Restore the original LBU T3 / LB T9 order without changing integer math or FP grouping;405/frame0x48,269->267 differences, no guards/profile/ABI change.
+- [x] Screen52 source forms and reject overflow/earlier-state regressions; preserve first14 words, six live slots and160 home aliases.
+- [x] Qualify all13 pre-install and15 installed target/text checks;1086/2938 sampled exact states with all previous720 agreements retained.
+- [x] Retain owned frame/object and bounded guest/native/owner/rebase/parent contracts with fresh effective signed-jitter controls.
+- [x] Prove only six target ELF bytes change, all other bytes/size/metadata fixed and720 Game-data owners exact; advance only the protected text ELF pin.
+- [x] Bank tools2b16f4f first, preserve older HEAD/413 unrelated hashes, and retain correct README aggregates.
+- [ ] Recover primary cut10 lower-bound scheduling and disabled-primary cut7 second-selector allocation using owned compiler evidence.
+- [ ] Finish267 differences and full private/fault/owner/rebase/image gates; wider Game/text/translator/hardware goals remain open.
+
 ## Game Actor Command Finalizer Direct Byte Input And Primary Cut9 - 2026-10-13
 
 [Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
@@ -11,7 +24,7 @@
 - [x] Prove181 target-only ELF changes, all other code/data/metadata/extent fixed and720 owners exact; advance only the protected text ELF pin.
 - [x] Bank tools9cd126b first and preserve older HEAD/411 unrelated hashes; keep correct README aggregates.
 - [ ] Recover primary cut10 lower-bound scheduling and disabled-primary cut7 second-selector allocation on the same function.
-- [ ] Finish269 differences and all private/fault/owner/rebase/image gates; wider Game/text/translator/hardware goals remain open.
+- [ ] Continue267 differences under Note1332 with all private/fault/owner/rebase/image gates; wider goals remain open.
 
 ## Game Actor Command Finalizer Scalar Predicates And Cut5 - 2026-10-13
 
