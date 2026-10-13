@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-12:
+[Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
+func_1501AE94 matches all44 words/frame0 directly, no guards. Seven target
+tests pass before/after installation, including 10,692 guest, 65,536 native32,
+58 fault pairs, 18 caller-window cases and ten neighbor/full-owner padder gates.
+Literal ELF/data audit changes only the slot/size field; fresh text integrity
+controls pass, prior unchanged broader receipts reused. Game2,816/4,823,
+total3,489/5,496, zero drift/converted fixed. Next func_1501BB20; text218/114/
+cut27 and translator remain open, full Game goal active.
+Tools 0a939ff first; older HEAD/unrelated dirty work preserved, no push.
+
+2026-10-12:
 [Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
 func_15015104's two raw flag tests recover all52 words/frame0x58 directly,
 no guards. Seven pre- and seven post-install tests pass, including 15,552 guest,

@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Rectangle bounds predicate direct match](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
+  func_1501AE94 matches all44 words directly, frame0/no guards. Seven pre-
+  and post-install tests qualify rounding/NaNs, caller window, ten neighbors,
+  both padders and literal image/data gates. Game matching2,816/4,823; next
+  func_1501BB20. Tools 0a939ff first; prior unchanged broader receipts are not
+  called fresh.
+
 - [Event record constructor direct match](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
   func_15015104 matches all52 words directly, frame0x58/no guards; seven pre-
   and seven post-install tests pass. Full image/data and 31-neighbor gates

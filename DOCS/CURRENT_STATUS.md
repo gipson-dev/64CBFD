@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ec4865d; tools are committed before the consumer pin.
+  checkpoint pins tools 0a939ff; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current event-record direct-match checkpoint; full Game matching remains active:
+Current rectangle-bounds direct-match checkpoint; full Game matching remains active:
+[Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
+func_1501AE94 now replaces its zero-return placeholder with the original ordered
+float rejection predicate. All44 words/176 bytes match directly, frame0/no
+guards or profile change. Seven target tests pass before/after installation:
+10,692 guest cases, 65,536 native32 comparisons, 58 access-cut pairs and 18
+authentic caller-window cases; all ten neighbors and both full-owner padders
+agree. Literal ELF audit changes only124 target bytes and size12->176; all
+Game data/protected inputs stay fixed. Two text immutable/corruption controls
+pass against the independently qualified new image; prior unchanged broader
+regressions are reused, not called fresh. Game2,816/4,823 (58.39%),
+total3,489/5,496 (63.48%), drift0/different2,007, converted totals unchanged.
+Next func_1501BB20, the 38-word gated one-shot timer setup; text218/114/cut27
+and matrix translator remain open.
+Tools 0a939ff is banked first; older HEAD and unrelated dirty work preserved.
+
+Previous event-record direct-match checkpoint:
 [Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
 func_15015104 now emits all 52 retail words directly, frame0x58/no guards,
 after retaining the raw flag word and spelling its two tests independently.

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-12 Game Rectangle Bounds Predicate Direct Match
+
+[Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
+func_1501AE94's original ordered float rejection now emits all44 words directly,
+frame0/no guards. Seven pre-/post-install tests pass: 10,692 guest cases,
+65,536 native32 comparisons, 58 access-cut pairs and 18 authentic caller-window
+cases. Ten neighbors/both padders and literal ELF/data gates remain exact;
+only124 target bytes and size12->176 change. Fresh text immutable/corruption
+controls pass after archival fixture advancement; broader unchanged receipts
+are reused explicitly. Game2,816/4,823, total3,489/5,496, drift0/converted fixed.
+Next func_1501BB20; text and translator remain open.
+Tools 0a939ff is committed first; older HEAD and unrelated dirty work preserved.
+
 ## 2026-10-12 Game Event Record Constructor Direct Match
 
 [Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):

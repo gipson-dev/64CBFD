@@ -8,7 +8,7 @@ s32 func_1501A220();
 s32 func_1501A39C();
 s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-s32 func_1501AE94();
+s32 func_1501AE94(s32 arg0);
 s32 func_1501AF44();
 s32 func_1501B0A0();
 s32 func_1501B22C();
@@ -137,9 +137,18 @@ s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501AE94.s. */
-s32 func_1501AE94() {
-    return 0;
+s32 func_1501AE94(s32 arg0) {
+    f32 maxX = D_800BE620 - 2.0f;
+    f32 maxY = D_800BE624;
+    f32 *record = (f32 *)((u8 *)D_800BE628 + (u32)arg0 * 0x180);
+
+    if ((record[11] < 2.0f) || (maxX < record[12])) {
+        return 0;
+    }
+    if ((record[9] < 0.0f) || (maxY < record[10])) {
+        return 0;
+    }
+    return 1;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501AF44.s. */

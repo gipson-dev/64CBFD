@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Rectangle Bounds Predicate Direct Match - 2026-10-12
+
+[Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
+
+- [x] Recover func_1501AE94's signed dimension conversion, unsigned 0x180-byte index calculation and ordered rejection comparisons; match all44 words/176 bytes directly, frame0/no guards.
+- [x] Pass seven target tests before/after installation: 10,692 guest cases, 65,536 native32 comparisons, 58 fired access-cut pairs, 18 caller-window cases, ten owner neighbors, both padders and three independent rebases.
+- [x] Pass literal whole-ELF/data gates: only124 target bytes and size12->176 change; retain all189,088 data bytes/720 owners and protected inputs. Archive/advance the text fixture and pass its immutable/corruption controls.
+- [x] Update matching to Game2,816/4,823 and total3,489/5,496, with zero drift and unchanged converted totals.
+- [x] Bank tools 0a939ff first, preserve older tools HEAD/unrelated dirty work, and pass syntax/tools/link checks.
+- [ ] Continue func_1501BB20's gated 38-word timer setup, including its 64-bit clock arithmetic and SDK ABI. Keep text218/114/cut27 and matrix translator open; no host/gameplay acceptance is added.
+
 ## Game Event Record Constructor Direct Match - 2026-10-12
 
 [Note 1315](WORKING_NOTES/1315-game-event-record-constructor-direct-match-20261012.md):
@@ -9,7 +20,7 @@
 - [x] Pass installed literal whole-ELF/data gates: only 105 slot bytes and one size byte change; all 189,088 data bytes / 720 owners and protected inputs remain exact.
 - [x] Update matching aggregates to Game2,815/4,823 and total3,488/5,496; preserve zero drift and unchanged converted totals.
 - [x] Pass all16 combined target/text tests and six retained callback regressions; commit tools ec4865d first and preserve the older tools HEAD and unrelated dirty work.
-- [ ] Continue with func_1501AE94's 44-word rectangle-bounds predicate and complete its matching gates. Keep text218/114/cut27 and matrix translator open; no host/gameplay acceptance is inferred.
+- [x] Finish func_1501AE94's rectangle-bounds predicate and matching gates; see Note 1316. Text/matrix work stays explicitly open in the current checklist.
 
 ## Game Mode Callback Dispatcher Direct Match - 2026-10-12
 

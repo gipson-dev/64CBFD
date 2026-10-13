@@ -203,6 +203,16 @@ padder preserves a preexisting overflowing neighbor while the strict full-owner
 padder rejects it; both isolated target padders match. Do not weaken or repair
 an unrelated neighbor to manufacture a full-owner strict-padder pass.
 
+The record rectangle predicate is directly qualified in
+[Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_rectangle_bounds_candidates` and
+`python3 -m unittest tools.tests.test_game_rectangle_bounds_match -v` under WSL.
+Preserve ordered rejection rather than an inside conjunction; NaNs differ.
+Round both signed dimensions to float32 in references, including INT_MAX.
+Separate sparse full-word guest indices from valid native array indices, and
+the authentic five-word caller store window from the unrecovered full caller.
+All44 words match even though public paths visit43; retain the unreachable load.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local
