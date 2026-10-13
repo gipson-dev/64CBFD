@@ -14622,3 +14622,21 @@ generated_6E770,func_15042C40,0x0E0,0x24C60004,0x24840004,-,-,Normalize glyph lo
 generated_6E770,func_15042C40,0x0E8,0x24C20003,0x24820003,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
 generated_6E770,func_15042C40,0x0EC,0x24C60004,0x24840004,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
 generated_6E770,func_15042C40,0x0F0,0x14C7FFEA,0x1486FFEA,-,-,Normalize glyph lookup cached byte and closed scratch allocation,,,false
+generated_61490,func_15034728,0x38,0x8E0901D4,0x8E0A01D4,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x40,0x2408001F,0x2409001F,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x44,0x00604025,0x00604825,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x48,0x05000018,0x05200018,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x4C,0x24070003,0x24080003,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x60,0x01195004,0x01395804,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x64,0x030A5824,0x030B6024,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x68,0x1160000D,0x1180000D,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x70,0x00086180,0x00096980,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x74,0x01893021,0x01AA3821,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x78,0x00056900,0x00057100,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x7C,0x01A61821,0x00EE1821,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x84,0x00627021,0x00627821,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x90,0xE5C00000,0xE5E00000,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x98,0x54A7FFF8,0x54A8FFF8,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0x9C,0x00056900,0x00057100,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0xA0,0x2508FFFF,0x2529FFFF,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false
+generated_61490,func_15034728,0xA4,0x0503FFED,0x0523FFED,-,-,Normalize matrix clear closed post-helper GPR cycle and commutative row-base addition,,,false

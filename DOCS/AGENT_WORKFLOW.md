@@ -245,6 +245,18 @@ only the exact ELF/two-line Makefile text receipts after literal image proof;
 preserve all other text fixtures. The connected original caller does not qualify
 its opaque large provider or restore that caller's production placeholder.
 
+The live-mask matrix clear is qualified in
+[Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md).
+Use `python3 -m tools.experiments.game_actor_matrix_clear_candidates` and
+`python3 -m unittest tools.tests.test_game_actor_matrix_clear_match -v`.
+Keep raw18 differences separate from48-word normalized matching. Guard replacements
+derive only a closed post-helper GPR cycle and integer addu operand order; preserve
+all opcodes/immediates/relocations. Use actual end-symbol arithmetic for actor scans
+(25 records here), and map all alias backing explicitly. The historical whole-CSV
+count helper is stale for this manifest; do not weaken it or claim its legacy suites
+pass. Pin the exact previous guard bytes and verify only the18 derived appended rows.
+Archive/advance text ELF/guard receipts only after literal image/guard proof.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

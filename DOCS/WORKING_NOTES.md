@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
+func_15034728 matches all48 linked words/frame0x20 using18 derived allocation/
+operand guards; raw C remains non-matching. Eight pre-/post-install tests,
+nine owner neighbors, both padders/three rebases and literal image/data/text
+integrity gates pass. Game2,820/4,823, total3,493/5,496, drift0/converted fixed;
+tools9691502 first. Next func_150345E4; text/translator stay open, older HEAD/
+unrelated work preserved, no push/full-goal completion.
+
+2026-10-12:
 [Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
 func_1503453C matches all42 words/frame0x18 and five table entries directly,
 no guards/profile change. Seven pre-/post-install tests, nine owner neighbors,

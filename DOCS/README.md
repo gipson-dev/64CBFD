@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor matrix clear byte match](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
+  func_15034728 matches all48 linked words/frame0x20 with18 mathematically derived
+  register/operand guards; raw C still differs. Eight pre-/post-install tests
+  qualify the live-mask aliases, actual25-record caller/helper chain, whole owner
+  and literal image/data/text gates. Game2,820/4,823; tools9691502 first,
+  next func_150345E4. Text/translator remain open.
+
 - [Actor type dispatch direct match](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
   func_1503453C matches all42 words/frame0x18 and its five table entries directly,
   no guards/profile change. Seven pre-/post-install tests qualify the complete

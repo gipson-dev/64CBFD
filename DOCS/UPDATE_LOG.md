@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-12 Game Actor Matrix Clear Byte Match
+
+[Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
+func_15034728's complete48-word/frame0x20 body matches with18 derived closed
+GPR/commutative-operand guards, not direct C. Eight pre-/post-install tests
+qualify4,320 guest plus24 aliases, 32,792 native32, 36 actual caller/helper chains
+and361 fault triples; nine neighbors/both padders/pools/rebases agree. Whole ELF
+changes only147 target bytes and one size byte; all data and old guards stay fixed.
+Fresh text integrity passes. Game2,820/4,823, total3,493/5,496, drift0/converted
+fixed. Tools9691502 first, older HEAD/unrelated work preserved; next func_150345E4.
+Text/translator remain open, no push/full-gameplay claim.
+
 ## 2026-10-12 Game Actor Type Dispatch Direct Match
 
 [Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):

@@ -2,6 +2,8 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/61490.s. */
 
+s32 func_1502DB20(s32 type);
+
 extern u8 D_800CC2D4[];
 void func_1503B9BC(s32 index);
 
@@ -54,8 +56,33 @@ s32 func_150345E4() {
     return 0;
 }
 
-s32 func_15034728() {
-    return 0;
+void func_15034728(u8 *actor) {
+    s32 last;
+    s32 bone;
+    s32 row;
+    s32 offset;
+    u32 buffer;
+
+    if (*(u32 *)(actor + 0x1D4) == 0 || *(u32 *)(actor + 0x9C) == 0) {
+        return;
+    }
+    last = (s32)((u32)func_1502DB20(actor[4]) - 1);
+    buffer = *(u32 *)(actor + 0x1D4);
+    bone = 31;
+    if (last < 31) {
+        bone = last;
+    }
+    for (; bone >= 0; bone--) {
+        if (*(u32 *)(actor + 0x9C) & (1U << bone)) {
+            u32 matrix = buffer + bone * 64;
+            for (row = 0; row < 3; row++) {
+                u32 vector = matrix + (row << 4);
+                for (offset = 0; offset < 12; offset += 4) {
+                    *(f32 *)(vector + offset) = 0.0f;
+                }
+            }
+        }
+    }
 }
 
 void func_150347E8(void) {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 84cfb3a; tools are committed before the consumer pin.
+  checkpoint pins tools 9691502; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor-type dispatch direct-match checkpoint; full Game matching remains active:
+Current actor matrix-clear byte-match checkpoint; full Game matching remains active:
+[Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
+func_15034728 now emits the complete48-word/192-byte/frame0x20 matrix clear.
+Raw C has18 allocation/operand-order differences;18 expected-word guards derive
+one closed post-helper GPR cycle and commutative addition, not a copied body.
+Eight pre-/post-install tests pass: 4,320 guest plus24 alias cases, 32,792 native32,
+36 real caller/helper/table chains and361 fired fault triples. All nine neighbors,
+both padders/pools and three rebases agree. Caller scan is25 records, not26.
+Whole ELF changes only147 target bytes and one size byte; data stays exact,
+old guards stay byte-identical with only18 appended rows, all other inputs fixed.
+Archived text ELF/guard receipts advance after proof; fresh integrity controls
+pass. Game2,820/4,823 (58.47%), total3,493/5,496 (63.56%), drift0/different2,003,
+converted fixed. Next func_150345E4's81-word actor callback dispatch;
+text218/114/cut27 and translator remain open. Tools9691502 first, no push;
+older HEAD/all unrelated fingerprints preserved. No direct-C/hardware/gameplay claim.
+
+Previous actor-type dispatch direct-match checkpoint:
 [Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
 func_1503453C replaces its placeholder with the complete actor-type switch,
 all42 words/168 bytes/frame0x18 directly, no guards/profile change. Its five

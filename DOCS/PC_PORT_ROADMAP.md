@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Matrix Clear Byte Match - 2026-10-12
+
+[Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
+
+- [x] Recover func_15034728's ordered buffer/mask gates, wrapped signed clamp, post-helper buffer load, live-mask backwards scan and3x3 float clear; all48 linked words/frame0x20 match using18 derived allocation/operand guards, not direct C.
+- [x] Qualify4,320 guest plus24 alias cases, 32,792 native32 comparisons, 36 actual caller/helper/table chains and361 fired own-access fault triples; confirm the caller's25-record scan.
+- [x] Retain nine neighbors/relative relocations/pools, both full-owner padders and three rebases; pass literal image/data, exact18-row guard append and fresh text integrity controls.
+- [x] Update Game2,820/4,823 and total3,493/5,496, zero drift/converted totals fixed; bank tools9691502 first and preserve older HEAD/unrelated fingerprints.
+- [ ] Continue func_150345E4's81-word actor callback dispatch and final matching gates. Keep text218/114/cut27 and translator open; no full hardware/gameplay acceptance is added.
+
 ## Game Actor Type Dispatch Direct Match - 2026-10-12
 
 [Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
@@ -8,7 +18,7 @@
 - [x] Qualify6,144 guest, 26,624 native32, 360 actual connected-caller cases, 23 fired access-cut pairs and four effective native negatives.
 - [x] Preserve nine neighbors/relative relocations, original table/data owner, both full-owner padders and three rebases; pass literal whole-image/data and fresh text integrity controls.
 - [x] Update Game2,819/4,823 and total3,492/5,496, zero drift/converted totals unchanged; bank tools84cfb3a first and preserve older HEAD/unrelated fingerprints.
-- [ ] Continue func_15034728's48-word masked matrix clear and final matching gates. Keep text218/114/cut27 and translator open; no downstream-helper/gameplay/hardware acceptance is added.
+- [x] Finish func_15034728's48-word masked matrix clear and matching gates; see Note1320. Text/translator remain open in the current checklist.
 
 ## Game Grouped Actor Dispatch Direct Match - 2026-10-12
 
