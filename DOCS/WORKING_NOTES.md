@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
+func_15034860 closes sampled cut5 and matches its first14 words, preserving
+405/frame0x48/six slots/160 homes. Differences299->298, still unmatched.
+All13 installed tests; exact fault states260->452/2,938, next cuts9/7 remain open.
+Only50 target ELF bytes change; all other code/data/metadata protected.
+Tools79fe8a8 first, older work preserved/no push; next same function/full gates.
+
+2026-10-13:
 [Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
 func_15034860 restores the real word9 selector delay-slot load and reduces
 307->299 differences while retaining405/frame0x48 and all six live slots.

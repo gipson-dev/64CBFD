@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer scalar predicates and cut5 restoration](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
+  func_15034860 stays405/frame0x48, differences299->298. First14 words exact;
+  cut5 closes on52 paths, equal fault states260->452/2,938. All13 installed
+  tests and50-byte target-only image/data/text gates pass, no guards or credit.
+  Tools79fe8a8 first; next same function's primary cut9 and second-selector cut7.
+
 - [Actor command-finalizer selector delay slot and nested noise fit](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
   func_15034860 retains405/frame0x48, differences307->299, no guards or credit.
   Retail word9's selector delay-slot load is restored; twelve installed tests,

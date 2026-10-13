@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e37e4b3; tools are committed before the consumer pin.
+  checkpoint pins tools 79fe8a8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer selector/noise-fit checkpoint; matching remains open:
+Current actor command-finalizer scalar/cut5 checkpoint; matching remains open:
+[Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
+func_15034860 retains405/frame0x48, differences299->298, no guards or credit.
+Unsigned category views/inverted noise restore the first14 words and close cut5
+on all52 sampled paths. Exact complete fault states260->452 of2,938 pairs;
+first divergence now cut9 on44 paths and cut7 on eight. Full parity remains open.
+All13 installed guest/native/slot/home/frame/owner/rebase/parent tests pass.
+Only50 target ELF bytes change; all other bytes/720 data owners fixed.
+Fresh protected text integrity passes. Tools79fe8a8 first, older HEAD/132
+unrelated hashes preserved/no push. Correct README aggregates stay fixed.
+Next same function's primary byte/tag/lower schedule at cut9 and second-selector
+register allocation at cut7, then remaining298 differences under full gates.
+
+Previous actor command-finalizer selector/noise-fit checkpoint:
 [Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
 func_15034860 stays405 words/frame0x48, differences307->299, no guards or credit.
 The combined ordinary-parameter/nested-noise/late-bound/delta-input source

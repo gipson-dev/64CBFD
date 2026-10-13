@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Scalar Predicates And Cut5 - 2026-10-13
+
+[Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
+
+- [x] Recover unsigned category views/inverted noise without changing signed numeric locals, ABI/profile/selector widths;405/frame0x48, differences299->298, no guards.
+- [x] Match the first14 words and close cut5 on all52 sampled paths; preserve the word9 delay-slot load, six live slots and160 home aliases.
+- [x] Qualify all13 installed tests and2,938 fired fault pairs; equal complete states260->452, first divergences now cut9 on44 paths/cut7 on eight, not full parity.
+- [x] Observe the real constant124 register/type change and unchanged M48/frame layout with normal/traced object identity; pass full bounded guest/native/owner/rebase/parent gates.
+- [x] Prove50 target-only ELF changes, all other size/metadata/code/data fixed and720 owners exact; advance only the protected text ELF pin.
+- [x] Bank tools79fe8a8 first, preserve older HEAD/132 unrelated hashes, and retain correct README aggregates.
+- [ ] Recover primary cut9 byte-capture/tag/lower scheduling and disabled-primary cut7 second-selector allocation on the same function.
+- [ ] Finish298 differences and all private/fault/owner/rebase/image gates; wider Game/text/translator/hardware goals remain open.
+
 ## Game Actor Command Finalizer Selector Delay Slot And Noise Fit - 2026-10-13
 
 [Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
@@ -10,7 +23,8 @@
 - [x] Separate actual dispatch positions from literal selector positions and qualify an effective non-selector observation control; discard unsupported advisory claims and non-fitting shapes.
 - [x] Prove254 target-only ELF changes with every other byte/size/metadata fixed and720 data owners exact; advance only the protected text ELF pin.
 - [x] Bank tools e37e4b3 first, preserve older HEAD/130 unrelated hashes, and leave the already-correct README aggregates alone.
-- [ ] Finish this same function's GPR3/7 constant-holder/cached-value roles at cut5 and all299 remaining differences, with complete private/fault/owner/rebase/image proof.
+- [x] Restore the GPR3/7 opening roles and close sampled cut5 in Note1330; first14 words exact, differences299->298.
+- [ ] Finish new cut9/cut7 boundaries and all298 remaining differences under Note1330 with complete private/fault/owner/rebase/image proof.
 - [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime goals separately.
 
 ## Game Actor Command Finalizer Opening Fault Boundary - 2026-10-13

@@ -389,6 +389,20 @@ An advisory cast is redundant and reordering regresses/overflows; local evidence
 selects the fit, not advisory causal claims. Continue the same function's roles
 under immutable image/data/ABI/private/fault gates before matching credit.
 
+The scalar predicate and sampled cut5 restoration is
+[Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_finalizer_scalar` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_scalar -v`.
+Captured category is a byte0..255, so unsigned predicate views preserve results;
+leave later signed numeric locals and full-word selectors intact. Inverted/
+merged noise retains405/frame0x48/six slots and improves299->298 differences.
+First14 words now agree and sampled cut5 closes;452/2,938 states agree, but
+primary cut9 and disabled-primary cut7 still differ. No full fault/hardware credit.
+Observe actual rldc operands/code, not a guessed register binding. Source
+substitution must exclude declarations: a broad cached-variable rename creates
+duplicate/undefined locals. Re-run corrected screens before reusing evidence.
+Keep the same function and immutable image/data/ABI/private/fault gates.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

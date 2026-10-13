@@ -37,21 +37,17 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
     } else {
         suppressed = 0;
     }
-    if (value == 0x7C) {
+    if ((u32)value == 0x7CU) {
         primaryBias = 4;
         secondaryBias = 0;
     } else {
         primaryBias = 0;
         secondaryBias = 2;
     }
-    if ((delta = value) == 0x69 || delta == 0x7C) {
-        noise = 0;
+    if ((u32)(delta = value) != 0x69U && (u32)delta != 0x7CU && (u32)delta != 0x87U) {
+        noise = 10;
     } else {
-        if (delta == 0x87) {
-            noise = 0;
-        } else {
-            noise = 10;
-        }
+        noise = 0;
     }
     limit = 0xFF;
     if (first != limit) {

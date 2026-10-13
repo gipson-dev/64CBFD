@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Scalar Predicates And Cut5
+
+[Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
+Unsigned category views/inverted noise recover func_15034860's first14 words
+and close sampled cut5 while preserving405/frame0x48, six live slots/160 homes
+and the ABI/profile. Real differences299->298, no guards or credit. All13
+installed tests pass; exact fault states260->452/2,938, with cut9/cut7 still
+different. Owned constant/register and frame observations, guest/native/owner/
+rebase/parent and50-byte target-only ELF/data gates pass. Fresh text integrity
+passes. Tools79fe8a8 first, older HEAD/132 unrelated hashes preserved/no push.
+README totals fixed. Continue this same function's new boundaries/full matching.
+
 ## 2026-10-13 Game Actor Command Finalizer Selector Delay Slot And Noise Fit
 
 [Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
