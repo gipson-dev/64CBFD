@@ -40,8 +40,10 @@ Installed audit changes 145 target bytes only; the entire remaining ELF and
 Conversion counts unchanged. All 20 installed target/text checks pass in
 117.798s; tools c0ca061 is banked first. Older HEAD/426 unrelated fingerprints
 stay fixed; only its verified text-pin edit and three absent additions change.
-Next func_15034F30, 486 words / frame 0x190. Graph refresh fails closed and
-preserves the existing graph; no forced shrink or push.
+Consumer 29770eeb banks the exact tools pin/guards/docs. Three post-bank image/
+text checks pass4.869s. Next func_15034F30, 486 words / frame 0x190.
+Direct graph update fails closed; the incremental commit hook then completes
+at40,478 nodes/80,971 edges with retained history. No forced shrink or push.
 
 Current actor command-finalizer category-cache diagnostic checkpoint:
 [Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):

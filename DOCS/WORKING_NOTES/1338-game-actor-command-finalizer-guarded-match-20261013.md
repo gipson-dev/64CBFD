@@ -146,6 +146,23 @@ existing graph is preserved; the separate retained-corpus diagnostic reports
 overwrite or claim a successful graph refresh. The skill/package mismatch
 (0.9.20/0.9.26) remains a tooling warning, not a compiler failure.
 
+## Post-Bank Verification
+
+Consumer **29770eeb** commits the 76 guard rows, aggregate-only README update,
+working documentation and exact tools pin **c0ca061**. Both active checkouts
+are clean immediately after that commit. No push is requested or performed.
+
+Fresh target whole-image and protected text-image/corruption checks pass:
+**three tests in 4.869 seconds**. Source, ELF, guards, conversion data and all
+other protected inputs retain the installed fingerprints above. Full Game
+matching remains unfinished; this checkpoint earns one guarded-exact function.
+
+Unlike the direct update's shrink rejection, the **incremental post-commit
+hook completes** without forcing a purge. Its actual graph readback contains
+**40,478 nodes / 80,971 edges**; its process has exited. The retained-corpus
+warning remains, and HTML is skipped because the graph exceeds the 5,000-node
+visualization limit. This is graph maintenance, not runtime qualification.
+
 ## Next Function
 
 Continue the full Game goal with `func_15034F30`, the next unmatched routine in
