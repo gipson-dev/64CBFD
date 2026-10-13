@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-13 Matrix Reflection Economical Index And Conditional Homes
+
+[Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
+Reuse non-overlapping temporaries to retain486/frame0x190 with332 literal
+differences. Restore actor-tail and guarded output-home reads in a separate407
+diagnostic; reject329 count regressions. All22 target/text checks pass98.059s,
+with10,196 fired cuts/192 prior agreements intact. Extra address work survives
+CFE/UOPT. Keep production/totals/README unchanged and both branches uninstalled.
+
 ## 2026-10-13 Matrix Reflection Pointer Roles And Cache Provenance
 
 [Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):

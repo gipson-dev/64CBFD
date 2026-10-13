@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
+Best literal func_15034F30 branch332; separate407 diagnostic restores guarded/
+tail home ordering at486/frame0x190. Reject lower329 counts, preserve literal
+array distinctions across85 forms. All22 checks98.059s;192/192 old states retained
+over10,196 fired cuts. CFE/UOPT retain lda P+16/ilod address work. No install,
+credit, production or README change; finish direct lowering and saved roles.
+
+2026-10-13:
 [Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
 func_15034F30 uninstalled486/frame0x190,347 ->333 differences/21 changed words.
 100 full forms,19 eligible arrays; cache already in UOPT, saved roles still open.

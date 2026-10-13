@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix reflection economical index and conditional homes](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
+  Best literal332 and separate407 access-order diagnostic, both uninstalled.
+  All22 checks pass; preserve192 modeled agreements/10,196 fired cuts. Recover
+  direct home lowering and saved roles before any matching credit.
+
 - [Matrix reflection pointer roles and cache provenance](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
   Uninstalled486/frame0x190 candidate improves347 ->333 differences. All prior
   sampled contracts and128 fault agreements survive; reflection cache is already

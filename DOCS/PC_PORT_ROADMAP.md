@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Economical Index And Conditional Homes - 2026-10-13
+
+[Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
+
+- [x] Retain486/frame0x190 using non-overlapping temporaries; qualify the332 literal branch without padding or register bindings.
+- [x] Restore nonnull zero-word actor-tail reads and guarded primary home reads in a separate407 diagnostic; reject lower329 regressions.
+- [x] Compare literal arrays across85 named forms; distinguish equal scores hiding11/15 changed words.
+- [x] Pass22 target/text checks in98.059s; fire10,196 common cuts over192 domains and retain every prior full modeled agreement.
+- [x] Preserve320 null/full32 gate cases and all ABI/RAM/alias/native/owner/rebase contracts; qualify fired CFE/UOPT address-work evidence.
+- [ ] Recover direct P+16 loading without the diagnostic's extra address instruction; keep best literal and access-order branches distinct.
+- [ ] Finish opening saved roles, cross-call index and all private/fault/linked-image gates before installing or claiming a byte-exact routine.
+
 ## Matrix Reflection Pointer Roles And Cache Provenance - 2026-10-13
 
 [Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):

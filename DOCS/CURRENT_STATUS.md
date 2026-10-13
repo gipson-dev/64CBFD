@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fb42981; tools are committed before the consumer pin.
+  checkpoint pins tools 6bd2222; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current economical-index and conditional-home checkpoint:
+[Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
+func_15034F30 best literal branch improves333 ->332,26 changed words, uninstalled.
+A separate486/frame0x190/407 diagnostic restores guarded/tail output-home reads;
+lower329 forms fail count gates.85 named forms expose equal-score/nonidentical
+arrays. All22 diagnostic/text checks pass98.059s;10,196 fired cuts retain192
+prior full modeled agreements, no new ones. Return witness9/12 remains different.
+Address work is already lda P+16/ilod in CFE and UOPT. Production/totals/README
+stay fixed; next direct home lowering without address work, then saved roles.
 
 Current matrix-reflection pointer-role and cache checkpoint:
 [Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
