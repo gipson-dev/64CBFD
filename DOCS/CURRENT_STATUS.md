@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools cf06d70; tools are committed before the consumer pin.
+  checkpoint pins tools b04caa1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer live-temporary checkpoint; matching remains open:
+Current actor command-finalizer opening-fault checkpoint; matching remains open:
+[Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
+46 unchanged-profile source screens find no better fit; production remains
+405 words / frame0x48 / 307 differences, no guards or credit. Six new tests pass.
+All 52 sampled paths first differ at access cut5 before the first-selector load:
+retail word9 versus source word27. Memory/events/FPRs/RA agree there; GPRs differ.
+All 2,938 actual fault pairs fire, with 260 equal complete represented states.
+Do not claim full private/fault or hardware exception parity. An invalid Claude
+packet loses its code excerpts; its advisory is discarded, not accepted evidence.
+Tools b04caa1 first; all eight production inputs/ELF/data stay fixed, older
+HEAD/129 existing hashes preserved/no push. README aggregates stay correct.
+Next same function's opening suppression/type/selector schedule and cut5,
+retaining its six live slots and full extent before broader matching gates.
+
+Previous actor command-finalizer live-temporary checkpoint:
 [Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
 func_15034860 retains405 words/original0x48 frame, real differences342->307.
 Reordered existing locals restore six actual live stack slots; the promoted

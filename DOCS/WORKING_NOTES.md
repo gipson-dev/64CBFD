@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-13:
+[Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
+No better fit in46 source screens; func_15034860 remains405/frame0x48/307,
+production unchanged. Six tests/2,938 fired fault pairs across52 paths locate
+first GPR divergence at cut5 before the selector load (retail word9/source27);
+memory/events/FPRs/RA agree there, broader private/fault parity remains open.
+Discard the advisory with missing excerpts. Tools b04caa1 first, older work
+preserved/no push; next recover this same opening schedule under immutable gates.
+
+2026-10-13:
 [Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
 func_15034860 restores six live slots, retains405 words/frame0x48 and reduces
 342->307 real differences, still unmatched/no guards. Eleven installed tests,

@@ -360,6 +360,20 @@ whole private RAM or fault parity. No guards or credit.269 changed ELF bytes
 are target-only, with no size/metadata allowance; update the protected text ELF
 pin only after literal proof. Continue the same307-difference function.
 
+The finalizer's first literal fault-state boundary is measured in
+[Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_finalizer_flow` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_flow -v`.
+46 screens offer no accepted fit; preserve production405/frame0x48/307.
+At cut5, memory/events/FPRs/RA agree but GPRs already differ; the same selector
+load is word9 in retail's branch delay slot and word27 in the source.
+Use fired gates and dispatched words, never observer-generated faults or
+public-only checks as full private-state proof. Recover the opening schedule
+before treating later matching stack slots as whole-state agreement.
+Flatten excerpt arrays explicitly in advisory packets: PowerShell can stringify
+nested arrays as `System.Object[]`. Verify the actual packet before calling;
+discard suggestions when source/assembly was absent. No new guards or credit.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

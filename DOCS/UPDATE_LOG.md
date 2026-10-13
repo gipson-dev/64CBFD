@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Opening Fault Boundary
+
+[Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
+46 source screens produce no accepted improvement; func_15034860 stays405 words,
+frame0x48 and307 differences. Six tests locate the first represented GPR mismatch
+at cut5 across52 paths: retail word9/source word27, before the first-selector load.
+All2,938 access-cut pairs fire; memory/events/FPRs/RA agree at the first boundary.
+Effective fault controls prevent observation from masquerading as instruction
+dispatch. An advisory packet loses its excerpts; discard its unsupported advice.
+Tools b04caa1 first, older HEAD/all129 existing hashes preserved, no push.
+Entire production ELF/eight inputs/data and README aggregates stay fixed.
+Next same function's opening allocation/schedule and cut5; no private/fault credit.
+
 ## 2026-10-13 Game Actor Command Finalizer Live Temporary Slots
 
 [Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):

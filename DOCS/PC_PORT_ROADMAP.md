@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Opening Fault Boundary - 2026-10-13
+
+[Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
+
+- [x] Screen 46 source shapes without changing profile/ABI/widths; reject regressions and shorter 401..404-word controls, retaining the banked 405-word/0x48/307-difference body.
+- [x] Sweep all 2,938 fired access-cut pairs across 52 bounded paths; identify first GPR divergence at cut5 before the first-selector load, retail word9/source word27.
+- [x] Verify memory/events/FPRs/RA agree at that boundary, effective bad-home/contaminated-observer controls, six passing tests and unchanged complete production ELF/data.
+- [x] Discard an advisory made without its actual source excerpts; correct the packet locally, with no additional call or accepted unsupported suggestion.
+- [x] Bank tools b04caa1 first and copy only two new files to the older mirror, preserving HEAD/all 129 existing hashes. Matching totals/README rows stay unchanged.
+- [ ] Recover the same function's opening suppression/type/selector allocation and schedule, converging cut5 while retaining six live slots/full extent and without guards.
+- [ ] Finish remaining 307 differences and complete private/fault/owner/rebase/image gates; broader Game/text/translator/hardware goals remain open.
+
 ## Game Actor Command Finalizer Live Temporary Slots - 2026-10-13
 
 [Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
