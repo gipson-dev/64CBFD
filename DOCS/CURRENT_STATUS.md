@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f3e8f92; tools are committed before the consumer pin.
+  checkpoint pins tools fb42981; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current matrix-reflection pointer-role and cache checkpoint:
+[Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
+func_15034F30 remains uninstalled:486 words/frame0x190,347 ->333 differences,
+21 changed words. Screen100 complete forms/19 eligible literal arrays; reject
+a score344 lost-home-read form. Reflection's fp cache is already in UOPT.
+6,912 fired common fault cuts preserve128/128 prior agreements, no new ones;
+opening cut1 and returnGPR9/13 remain different. The ordinary flag initializer
+is not an early snapshot; a compiled volatile control is an effective negative.
+All19 target/text checks pass107.605s. Production/totals/root README stay fixed.
+Next restore saved roles/index lifetime
+and remaining333 words before installation. Full qualification/banking in note.
 
 Current matrix-reflection candidate and private-buffer fit:
 [Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):

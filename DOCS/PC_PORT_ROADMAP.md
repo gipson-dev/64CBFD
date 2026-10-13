@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Pointer Roles And Cache Provenance - 2026-10-13
+
+[Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
+
+- [x] Screen100 complete bodies; qualify pointer reuse at486/frame0x190/333 versus347 differences, with21 changed words.
+- [x] Preserve the complete ABI, sampled RAM, aliases/homes, native32 controls, caller windows, full owners and rebases without production edits.
+- [x] Fire6,912 common fault cuts over128 domains; retain128 prior equal states with no lost agreement.
+- [x] Prove reflection-address caching already exists in the optimized stream; keep normal/traced objects identical.
+- [x] Measure ordinary flag-initializer sinking and an effective forced volatile snapshot; reject a separate score344 removed-home-read form.
+- [x] Pass all19 target/text checks in107.605s plus both tools-copy wrapper/syntax checks; preserve production and all432 older dirty fingerprints.
+- [ ] Restore the opening saved roles and shifted-index lifetime, then finish333 literal differences under private/fault/linked-image gates.
+- [ ] Install only a fully qualified recovery; claim no matching credit from this uninstalled candidate or host/runtime parity from guest tests.
+
 ## Matrix Reflection Candidate And Private Buffer Fit - 2026-10-13
 
 [Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):

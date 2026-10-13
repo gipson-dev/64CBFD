@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-13:
+[Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
+func_15034F30 uninstalled486/frame0x190,347 ->333 differences/21 changed words.
+100 full forms,19 eligible arrays; cache already in UOPT, saved roles still open.
+6,912 fired fault triplets retain128 prior agreements with no losses or gains.
+Flag initializer sinking is measured; forced volatile snapshot is the negative.
+All19 target/text checks pass107.605s. Production/totals/README unchanged;
+finish the same routine before matching credit.
+
+2026-10-13:
 [Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
 func_15034F30 candidate486/frame0x190/347, uninstalled. Recover full19 slots,
 three modes and original callbacks; retain live homes.56 real-local placements

@@ -54,6 +54,11 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix reflection pointer roles and cache provenance](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
+  Uninstalled486/frame0x190 candidate improves347 ->333 differences. All prior
+  sampled contracts and128 fault agreements survive; reflection cache is already
+  in UOPT. Saved roles/index lifetime and full matching remain open, no credit.
+
 - [Matrix reflection candidate and private-buffer layout](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
   Complete19-slot candidate486/frame0x190/347, uninstalled. Restore scratch
   SP+0x84 using existing locals;4,800 complete-RAM cases and all17 checks pass.
