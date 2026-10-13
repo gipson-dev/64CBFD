@@ -37,6 +37,8 @@ All26 checks pass75.233s. Across10,260 fired cuts, full modeled agreements grow
 live homes, four shifts and all old controls survive. Frontend/UOPT M284/292
 retain physical400. Tools579be6c first; all440 older hashes fixed/two additions.
 Production/totals/root README unchanged. Next s4/s5 roles and later240 words.
+Consumer5be301e1 banks the exact pin/docs; eight post-bank checks pass10.018s.
+Incremental graph hook completes40,555 nodes/81,041 edges with no live workers.
 
 Current SDK-typed matrix-reflection saved-index checkpoint:
 [Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
