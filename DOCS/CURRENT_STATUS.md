@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3fb2ea0; tools are committed before the consumer pin.
+  checkpoint pins tools a71abb7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer owned backend-boundary checkpoint:
+Current actor command-finalizer tag-dependency checkpoint:
+[Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
+Production stays405/frame0x48/267; source/ELF/guards/profile/progress fixed.
+20 real tag/factor and advised placement forms emit exactly the same two word
+arrays (267 current/261 rejected). One bounded advisory is independently
+rejected: its raw AS1 lower positions166/165 have the same instruction ordinal38
+and all312 instruction records identical. Eight focused/image/text checks
+pass14.780s; no matching credit or pin rebase. Toolsa71abb7 first; older HEAD/
+all419 existing hashes preserved/no push. Next actual source/UOPT/UGEN lifetime
+and ordering proof, preserving cut9 and still-open cuts10/7/full gates.
+
+Previous actor command-finalizer owned backend-boundary checkpoint:
 [Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
 Production source/ELF stay405/frame0x48/267 differences. Owned UGEN probes fire
 200 load/68 immediate-memory events per body, with normal/traced object identity.

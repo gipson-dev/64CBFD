@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Tag Dependencies
+
+[Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
+20 genuine factor/tag/placement forms canonicalize to the two exact existing
+word arrays. Independently reject one bounded advisory: AS1 offsets166/165
+share identical312-instruction streams/lower ordinal38 and still fail cut9.
+Eight focused/image/text checks pass14.780s;405/frame0x48/267 production hashes
+fixed, no matching credit or pin rebase. Toolsa71abb7 first; older419 existing
+hashes preserved/no push. Next actual source/optimizer ordering and full gates.
+
 ## 2026-10-13 Game Actor Command Finalizer Owned UGEN/AS1 Boundary
 
 [Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):

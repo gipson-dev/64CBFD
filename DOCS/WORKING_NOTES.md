@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
+func_15034860 stays405/frame0x48/267, production fixed.20 complete forms emit
+the same current/rejected arrays; one packet-only advisory independently fails.
+Its lower AS1 offsets166/165 have identical312-instruction streams/ordinal38,
+not a new schedule. Eight checks pass, toolsa71abb7 first/older419 hashes fixed.
+Next actual ordering/lifetime evidence and open cuts10/7/full matching.
+
+2026-10-13:
 [Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
 func_15034860 stays405/frame0x48/267; production unchanged. Owned200-load/
 68-emitter observations and actual AS1 files locate lower40 at record184

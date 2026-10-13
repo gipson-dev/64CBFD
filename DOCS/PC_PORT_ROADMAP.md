@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Tag Dependencies - 2026-10-13
+
+[Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
+
+- [x] Screen20 genuine full-width tag/factor/placement bodies and prove complete word-array equality to the267 current/261 rejected families.
+- [x] Retain both rows' selector snapshots, exact405/frame0x48, and effective cut9 GPR7/FPR16 rejection controls.
+- [x] Run one bounded Pro advisory with no tools; independently reject its exact proposals rather than adopting its unmeasured scheduler explanation.
+- [x] Separate raw AS1 positions166/165 from the identical312-instruction streams and lower instruction ordinal38.
+- [x] Pass eight focused/image/text checks and both tool/syntax checks; keep all production hashes/pins/totals fixed.
+- [x] Bank toolsa71abb7 first and preserve older HEAD/all419 existing hashes; retain correct README aggregates.
+- [ ] Recover actual source/UOPT/UGEN lifetime/ordering evidence around byte/tag/lower/conversion with all earlier exact states preserved.
+- [ ] Finish primary cut10, disabled-primary cut7 and267 differences under full private/fault/owner/rebase/image gates; wider goals remain open.
+
 ## Game Actor Command Finalizer Owned UGEN/AS1 Boundary - 2026-10-13
 
 [Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):

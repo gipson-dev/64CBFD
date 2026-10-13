@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer tag-dependency canonicalization](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
+  20 complete forms emit two existing arrays; one bounded advisory is measured
+  and rejected. Raw AS1 offsets166/165 do not change the instruction stream.
+  Production405/frame0x48/267 stays fixed; eight checks pass, toolsa71abb7 first.
+  Next actual source/optimizer ordering with cut9 preserved and cuts10/7 open.
+
 - [Actor command-finalizer owned UGEN/AS1 boundary](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
   Production remains405/frame0x48/267, no guards/credit. Actual AS1 input and
   fired200-load/68-emitter probes qualify an upstream lower-placement difference;
