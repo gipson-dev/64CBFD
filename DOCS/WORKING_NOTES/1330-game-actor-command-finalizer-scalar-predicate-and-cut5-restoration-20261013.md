@@ -120,6 +120,13 @@ Older HEADddbdd16b and132 unrelated hashes remain fixed, dirty410->412 /
 saved hashes133->135. No older commit/reset/stash or push. Verify links,
 terminal hook graph and fresh post-bank integrity before reporting.
 
+Post-bank: all13 target tests plus both protected-text checks pass,15 total in
+47.426 seconds, no skips. Eight docs/4,665 relative links have zero broken
+targets. The source commit hook completes its graph rebuild with zero workers;
+known retained-node/HTML-size warnings remain. Both active checkouts are clean;
+older HEAD/all135 saved hashes match the scoped copy. This verification update
+is documentation-only and leaves source/ELF fingerprints unchanged.
+
 Continue **this same func_15034860**: recover primary cut9 byte-capture/tag/
 lower schedule and disabled-primary cut7 second-selector allocation, then
 all298 remaining literal differences and full private/fault/owner/rebase/image

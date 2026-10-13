@@ -33,7 +33,8 @@ func_15034860 retains405/frame0x48, differences299->298, no guards or credit.
 Unsigned category views/inverted noise restore the first14 words and close cut5
 on all52 sampled paths. Exact complete fault states260->452 of2,938 pairs;
 first divergence now cut9 on44 paths and cut7 on eight. Full parity remains open.
-All13 installed guest/native/slot/home/frame/owner/rebase/parent tests pass.
+All13 target tests plus two protected-text checks pass post-bank (47.426s),
+including guest/native/slot/home/frame/owner/rebase/parent qualification.
 Only50 target ELF bytes change; all other bytes/720 data owners fixed.
 Fresh protected text integrity passes. Tools79fe8a8 first, older HEAD/132
 unrelated hashes preserved/no push. Correct README aggregates stay fixed.
