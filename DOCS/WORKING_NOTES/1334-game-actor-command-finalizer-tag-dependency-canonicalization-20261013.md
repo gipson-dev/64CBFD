@@ -85,3 +85,10 @@ and fired fault validation. Preserve first14 words/cut9 and all six live slots.
 Primary cut10, disabled-primary cut7 and all267 differences remain open. Do not
 repeat the20 canonical forms or treat an unobserved ready list as evidence.
 Full Game, retained text/translator, prior guards and hardware goals stay open.
+
+Post-bank consumer `4a7148bb` / tools `a71abb7`: all eight dependency/image/text
+checks pass18.173s, no skips. Eight documents /4653 relative links have no broken
+targets. The commit hook finishes with40442 nodes /80939 edges and zero live
+workers; known retained-node/HTML-size warnings remain. Both active trees are
+clean. This note-only verification leaves source/ELF/guards and matching totals
+unchanged; neither advised placement is promoted.
