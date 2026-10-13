@@ -37,6 +37,8 @@ All13 pre-install/installed tests pass (42.357s/44.410s); exactly181 target ELF
 bytes change, all other bytes and720 Game-data owners fixed. Protected-text
 integrity/corruption checks pass1.670s. Tools9cd126b first; older HEAD and411
 unrelated hashes preserved/no push. README totals already agree and stay fixed.
+Post-bank all15 target/text checks pass58.606s, no skips; source commit
+b22b87a0's graph hook completes and all4639 checked relative links are valid.
 Next same function's primary lower-bound schedule at cut10 and second-selector
 allocation at cut7, then269 remaining differences under the complete gates.
 

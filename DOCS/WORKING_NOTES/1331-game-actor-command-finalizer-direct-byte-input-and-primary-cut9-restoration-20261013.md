@@ -108,3 +108,11 @@ schedule and disabled-primary cut7 second-selector allocation, then all269
 remaining literal differences under full private/fault/owner/rebase/image gates.
 Full Game, previous guard elimination, retained text218/114/cut27, translator
 49/34 and hardware/runtime goals remain open.
+
+Post-bank source checkpoint `b22b87a0` / tools `9cd126b`: all13 target tests and
+both protected-text checks pass together,15 tests in58.606s, no skips. Eight
+documents /4639 checked relative links have no broken targets. The source
+commit hook finishes with40419 nodes /80919 edges and zero live workers; known
+retained-node and HTML-size warnings remain, with no purge or dependency update.
+Both active checkouts are clean. This verification-only documentation update
+does not change the source/ELF hashes, image proof or matching totals.
