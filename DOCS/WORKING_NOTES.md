@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-13:
+[Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
+func_15034F30 candidate486/frame0x190/347, uninstalled. Recover full19 slots,
+three modes and original callbacks; retain live homes.56 real-local placements
+restore the twelve-byte scratch mismatch with two changed words/equal scores.
+4,800 complete-RAM cases, actual caller windows, native32 negatives, full-owner
+padders, rebases and owned frame capture pass. All17 checks89.139s. First fired
+memory difference is cut1; returnGPR9/13 remain different. Toolsf3e8f92 first,
+all430 older hashes fixed/two additions. Production/totals/README unchanged;
+same routine's saved-role schedule and remaining347 words next, no credit.
+
+2026-10-13:
 [Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
 func_15034860 is guarded-exact across 405 words / frame 0x48; raw C remains
 76 differences. All 18 pre-install tests pass, with 2,938 exact modeled fault

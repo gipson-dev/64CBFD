@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix reflection candidate and private-buffer layout](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
+  Complete19-slot candidate486/frame0x190/347, uninstalled. Restore scratch
+  SP+0x84 using existing locals;4,800 complete-RAM cases and all17 checks pass.
+  Saved-role fault cut1/register allocation remain open. Production, matching
+  totals and root README unchanged; continue the same function.
+
 - [Actor command-finalizer guarded match](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
   All 405 words / frame 0x48 match through 76 source-derived guards; raw C stays
   unchanged. Full private/fault, owner, rebase and guard-control gates pass.

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Candidate And Private Buffer Fit - 2026-10-13
+
+[Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
+
+- [x] Recover func_15034F30's complete19-slot ABI and three-mode candidate, including the unused float slot and actual actor-only callback.
+- [x] Restore486 words/frame0x190 and the original SP+0x84 matrix address using existing locals; retain volatile count/output homes.
+- [x] Qualify4,800 full sampled-RAM cases, overlap/home mutations, caller windows, native32 controls, owner padders, rebases and owned compiler capture.
+- [x] Measure actual saved-role fault cut1 and the mixed-format provider boundary; keep production/totals/README unchanged and earn no matching credit.
+- [ ] Recover the opening saved-register schedule and remaining347 differences while retaining all ABI/matrix/home contracts.
+- [ ] Complete private/fault and linked-image gates before installing a production recovery or claiming a byte-exact function.
+
 ## Game Actor Command Finalizer Guarded Match - 2026-10-13
 
 [Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):

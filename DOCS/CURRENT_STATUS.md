@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c0ca061; tools are committed before the consumer pin.
+  checkpoint pins tools f3e8f92; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current matrix-reflection candidate and private-buffer fit:
+[Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
+func_15034F30 has a complete uninstalled 19-slot candidate:486 words/frame0x190,
+347 differences. Twenty initial forms restore the extent/homes;56 local
+placements restore SP+0x84 without padding. Equal scores hide two changed words.
+4,800 cases match complete sampled RAM/helper packets; caller windows, native32
+controls, both owners/padders, three rebases and owned frame capture pass.
+All17 target/text checks pass89.139s. Return GPR9/13 and fired fault cut1 remain
+different; mixed-format provider result and full fault/hardware scope stay open.
+Production source/ELF/guards/profile/progress and root README remain unchanged;
+no credit. Toolsf3e8f92 first; older HEAD/all430 hashes fixed with two additions.
+Continue this same routine's opening saved-role schedule and remaining347 words.
 
 Current actor command-finalizer guarded match:
 [Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):

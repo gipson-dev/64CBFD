@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-13 Matrix Reflection Candidate And Private Buffer Fit
+
+[Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):
+Recover the complete three-mode function and19-slot ABI, including an unused
+float absent from the decompiler's prototype. Match the486-word extent/frame0x190
+with347 differences. Moving three existing locals restores SP+0x84;56 forms
+emit one improved array despite unchanged scores. All17 qualification checks
+pass89.139s, including4,800 complete-RAM cases and effective native/ABI controls.
+First saved-role fault boundary remains cut1. Candidate stays uninstalled,
+production and totals unchanged. Toolsf3e8f92 first, older430 fingerprints fixed;
+continue source scheduling/allocation on the same function before credit.
+
 ## 2026-10-13 Game Actor Command Finalizer Guarded Match
 
 [Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
