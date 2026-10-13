@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b04caa1; tools are committed before the consumer pin.
+  checkpoint pins tools e37e4b3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer opening-fault checkpoint; matching remains open:
+Current actor command-finalizer selector/noise-fit checkpoint; matching remains open:
+[Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
+func_15034860 stays405 words/frame0x48, differences307->299, no guards or credit.
+The combined ordinary-parameter/nested-noise/late-bound/delta-input source
+restores the selector load at retail word9 in the suppression delay slot.
+All twelve installed tests pass; six live slots and160 input-home aliases remain
+qualified. Cut5 still differs, now only GPR3/7; all2,938 sampled fault pairs fire,
+260 equal states unchanged. Full private/fault parity is not achieved.
+Owned frame/object, guest/native/owner/rebase/parent and254-byte target-only
+ELF/data gates pass; observation labels and protected text integrity are checked.
+Tools e37e4b3 first, older HEAD/130 unrelated hashes preserved/no push.
+Matching aggregates and correct README rows stay fixed. Next same function's
+GPR3/7 opening roles and299 remaining differences under all full matching gates.
+
+Previous actor command-finalizer opening-fault checkpoint:
 [Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
 46 unchanged-profile source screens find no better fit; production remains
 405 words / frame0x48 / 307 differences, no guards or credit. Six new tests pass.

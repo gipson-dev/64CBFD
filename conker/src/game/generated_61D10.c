@@ -14,7 +14,7 @@ extern u8 D_800C3F00;
 extern s16 D_800C3EF0;
 extern f32 D_80097D60;
 
-s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
+s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
     s32 primaryIndex;
     s32 suppressed;
     s32 secondaryBias;
@@ -44,22 +44,26 @@ s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
         primaryBias = 0;
         secondaryBias = 2;
     }
-    if ((delta = value) == 0x69 || delta == 0x7C || delta == 0x87) {
+    if ((delta = value) == 0x69 || delta == 0x7C) {
         noise = 0;
     } else {
-        noise = 10;
+        if (delta == 0x87) {
+            noise = 0;
+        } else {
+            noise = 10;
+        }
     }
     limit = 0xFF;
-    lower = 40;
     if (first != limit) {
         if (actor[0x201] == 0) {
             scale = D_80097D40;
         } else {
             scale = (f32)(u32)actor[0x201] * D_80097D44;
         }
-        current = actor[0x1FE];
+        lower = 40;
+        delta = actor[0x1FE];
         primaryIndex = first;
-        value = (s32)((f32)(u32)current * scale * D_80097D48);
+        value = (s32)((f32)(u32)delta * scale * D_80097D48);
         if (!suppressed) {
             *(s16 *)output = (u32)primaryIndex * 6 + primaryBias;
             *(s16 *)(output + 2) = value;
@@ -74,11 +78,10 @@ s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
             *(s16 *)(output + 2) = value;
             output += 4;
         }
+        upper = 60;
         if (actor[4] == 0x42) {
             lower = 80;
             upper = 120;
-        } else {
-            upper = 60;
         }
         if (actor[0x1FF] == 0) {
             *(s8 *)(actor + 0x203) = -upper;

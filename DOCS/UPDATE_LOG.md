@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Selector Delay Slot And Noise Fit
+
+[Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
+The combined ordinary first parameter, nested noise paths, late bounds and delta
+numeric input restore func_15034860's word9 selector delay-slot load.405 words/
+frame0x48 remain fixed, real differences307->299, no guards/profile/ABI change.
+Twelve installed tests preserve six live slots,160 homes, guest/native/owner/
+rebase/parent and frame/object identity. All2,938 fault pairs fire;260 equal
+states unchanged and cut5 still differs in GPR3/7. No full private/fault credit.
+Whole-ELF proof changes only254 target bytes; data/size/metadata fixed.
+Observation labels/text integrity checked. Tools e37e4b3 first, older work
+preserved/no push; README totals fixed. Next same299-difference function.
+
 ## 2026-10-13 Game Actor Command Finalizer Opening Fault Boundary
 
 [Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):

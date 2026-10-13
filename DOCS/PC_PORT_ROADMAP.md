@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Selector Delay Slot And Noise Fit - 2026-10-13
+
+[Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
+
+- [x] Combine an ordinary first parameter, real nested noise paths, late lower initialization and existing delta numeric capture;405 words/frame0x48, differences307->299, no guards/profile/ABI change.
+- [x] Restore the first-selector load at retail word9 in the real suppression branch delay slot; retain all six caller-live slots and160 incoming-home aliases.
+- [x] Pass twelve installed guest/native/owner/rebase/parent/frame tests; retain2,938 fired fault pairs and explicitly reject full private/fault equivalence at cut5, now GPR3/7.
+- [x] Separate actual dispatch positions from literal selector positions and qualify an effective non-selector observation control; discard unsupported advisory claims and non-fitting shapes.
+- [x] Prove254 target-only ELF changes with every other byte/size/metadata fixed and720 data owners exact; advance only the protected text ELF pin.
+- [x] Bank tools e37e4b3 first, preserve older HEAD/130 unrelated hashes, and leave the already-correct README aggregates alone.
+- [ ] Finish this same function's GPR3/7 constant-holder/cached-value roles at cut5 and all299 remaining differences, with complete private/fault/owner/rebase/image proof.
+- [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime goals separately.
+
 ## Game Actor Command Finalizer Opening Fault Boundary - 2026-10-13
 
 [Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
@@ -9,8 +22,8 @@
 - [x] Verify memory/events/FPRs/RA agree at that boundary, effective bad-home/contaminated-observer controls, six passing tests and unchanged complete production ELF/data.
 - [x] Discard an advisory made without its actual source excerpts; correct the packet locally, with no additional call or accepted unsupported suggestion.
 - [x] Bank tools b04caa1 first and copy only two new files to the older mirror, preserving HEAD/all 129 existing hashes. Matching totals/README rows stay unchanged.
-- [ ] Recover the same function's opening suppression/type/selector allocation and schedule, converging cut5 while retaining six live slots/full extent and without guards.
-- [ ] Finish remaining 307 differences and complete private/fault/owner/rebase/image gates; broader Game/text/translator/hardware goals remain open.
+- [x] Restore the real word9 selector delay-slot load while retaining six live slots/full extent in Note1329; reduce307->299 differences without guards.
+- [ ] Converge cut5's remaining GPR3/7 roles and finish299 differences under Note1329. Complete private/fault/owner/rebase/image and broader goals remain open.
 
 ## Game Actor Command Finalizer Live Temporary Slots - 2026-10-13
 

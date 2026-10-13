@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
+func_15034860 restores the real word9 selector delay-slot load and reduces
+307->299 differences while retaining405/frame0x48 and all six live slots.
+Twelve installed tests/160 homes, owned frame/object observations and full
+bounded guest/native/owner/rebase/parent gates pass.254 changed ELF bytes are
+target-only; all other bytes/data protected. Cut5 GPR3/7 remains open despite
+2,938 fired fault pairs. Tools e37e4b3 first, older work preserved/no push.
+Next same function's remaining roles and full private/fault match.
+
+2026-10-13:
 [Note 1328](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
 No better fit in46 source screens; func_15034860 remains405/frame0x48/307,
 production unchanged. Six tests/2,938 fired fault pairs across52 paths locate

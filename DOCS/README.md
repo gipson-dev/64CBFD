@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer selector delay slot and nested noise fit](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md):
+  func_15034860 retains405/frame0x48, differences307->299, no guards or credit.
+  Retail word9's selector delay-slot load is restored; twelve installed tests,
+  six live slots/160 home aliases and254-byte target-only image/data gates pass.
+  Cut5 remains different in GPR3/7. Tools e37e4b3 first; next finish these roles
+  and full private/fault matching on the same function.
+
 - [Actor command-finalizer opening fault boundary](WORKING_NOTES/1328-game-actor-command-finalizer-opening-fault-boundary-and-fit-rejections-20261013.md):
   No improved source fit among 46 screens; production stays405/frame0x48/307.
   Six tests and 2,938 fired fault pairs locate the first GPR divergence at cut5,

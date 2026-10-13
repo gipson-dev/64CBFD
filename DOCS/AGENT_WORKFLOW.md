@@ -374,6 +374,21 @@ Flatten excerpt arrays explicitly in advisory packets: PowerShell can stringify
 nested arrays as `System.Object[]`. Verify the actual packet before calling;
 discard suggestions when source/assembly was absent. No new guards or credit.
 
+The same finalizer's selector delay-slot and nested-noise fit is
+[Note 1329](WORKING_NOTES/1329-game-actor-command-finalizer-selector-delay-slot-and-nested-noise-fit-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_finalizer_opening` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_opening -v`.
+The combined source retains405/frame0x48/six slots and restores word9 while
+reducing307->299 differences. Ordinary first alone is403 words; qualify the
+combined incoming-home contract, not the qualifier in isolation. A406-word/
+279-difference shape is not an installable match. Cut5 still differs in GPR3/7
+and the full-fault equal-state count remains260/2,938; do not infer full parity.
+Record a fault's actual dispatch word separately from positions of the literal
+retail selector load; rejected controls can fault at a different load entirely.
+An advisory cast is redundant and reordering regresses/overflows; local evidence
+selects the fit, not advisory causal claims. Continue the same function's roles
+under immutable image/data/ABI/private/fault gates before matching credit.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local
