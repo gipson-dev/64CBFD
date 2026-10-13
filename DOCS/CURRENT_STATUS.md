@@ -38,6 +38,8 @@ All17 target/text checks pass89.139s. Return GPR9/13 and fired fault cut1 remain
 different; mixed-format provider result and full fault/hardware scope stay open.
 Production source/ELF/guards/profile/progress and root README remain unchanged;
 no credit. Toolsf3e8f92 first; older HEAD/all430 hashes fixed with two additions.
+Consumer5a910345 records the exact pin/docs; three post-bank production/private/
+fault checks pass2.325s. Incremental graph hook completes40,489 nodes/80,981 edges.
 Continue this same routine's opening saved-role schedule and remaining347 words.
 
 Current actor command-finalizer guarded match:

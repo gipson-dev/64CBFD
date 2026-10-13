@@ -145,5 +145,20 @@ conversion CSV are unchanged, and the root README is untouched.
 ROM-free wrapper checks pass in both copies; Windows byte-compilation and
 scoped diff checks pass. Direct graph update fails closed at18,699 proposed
 versus40,479 existing nodes; preserve its retained-corpus and version warnings
-and do not force a purge. Incremental commit-hook completion is checked after
-banking.
+and do not force a purge.
+
+## Post-Bank Verification
+
+Consumer **5a910345** records the exact tools **f3e8f92** pin and working docs.
+Both active checkouts are clean after banking, and all nine newly added
+relative documentation links resolve. No push is performed.
+
+Fresh production-input, private-layout/control and fired-fault tests pass:
+**three checks in 2.325 seconds**. This rechecks the unchanged production image
+and both the restored matrix address and still-open register/fault boundaries.
+No broader matching credit is inferred from the green qualification suite.
+
+The incremental post-commit hook completes with **40,489 nodes / 80,981 edges**;
+its workers have exited. It retains the excluded-file history and skips HTML
+above the5,000-node visualization limit. This successful incremental refresh
+is distinct from the direct command's protective shrink rejection.
