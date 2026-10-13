@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Owned UGEN/AS1 Boundary - 2026-10-13
+
+[Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
+
+- [x] Qualify fingerprint-locked owned load/immediate/memory observations with fired200/68 events per body and complete normal/traced object identity.
+- [x] Capture actual AS1 instruction/symbol inputs with exact producer/consumer/profile/digest/ownership gates; correlate all68 emitter events.
+- [x] Locate lower40 at record184 current/165 early and tag home189 both, separating creation sequence from actual instruction-stream order.
+- [x] Reject the unfired64-bit branch probe and14 ineligible tag forms; retain405/frame0x48/267 and all production hashes.
+- [x] Pass11 diagnostic/whole-image/protected-text checks, both tools/syntax checks and no matching credit or pin rebase.
+- [x] Bank tools3fb2ea0 first and preserve older HEAD/all416 existing hashes; leave correct README aggregates unchanged.
+- [ ] Recover source/UOPT/UGEN placement between numeric byte, tag home, lower40 and unsigned conversion while retaining the closed opening/cut9.
+- [ ] Finish primary cut10, disabled-primary cut7 and267 differences under full private/fault/owner/rebase/image gates; wider goals stay open.
+
 ## Game Actor Command Finalizer Primary Jitter Load Order - 2026-10-13
 
 [Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):

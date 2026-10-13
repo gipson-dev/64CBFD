@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
+func_15034860 stays405/frame0x48/267; production unchanged. Owned200-load/
+68-emitter observations and actual AS1 files locate lower40 at record184
+current/165 early, tag home189 both; normal/observed objects identical.14 new
+tag forms do not fit.11 focused checks pass; tools3fb2ea0 first, older416 hashes
+fixed/no push. Next source/UOPT/UGEN ordering and still-open cuts10/7/full match.
+
+2026-10-13:
 [Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
 func_15034860 restores its two primary jitter load words,269->267 differences,
 preserving405/frame0x48/six slots/160 homes. Exact sampled states720->1086/2938

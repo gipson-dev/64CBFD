@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Owned UGEN/AS1 Boundary
+
+[Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
+Qualify owned200-load/68-immediate-memory UGEN observations and actual AS1
+input capture with complete object identity. Lower40 lies at record184 current /
+165 early, tag home189 both; upstream order already differs.14 tag-capture
+forms fail eligibility.11 diagnostic/image/text checks pass10.548s. Production
+405/frame0x48/267 and all hashes/totals fixed; no guards/pin rebase/credit.
+Tools3fb2ea0 first; older416 existing hashes preserved/no push. Next same
+function's source/optimizer ordering, cuts10/7 and full remaining matching.
+
 ## 2026-10-13 Game Actor Command Finalizer Primary Jitter Load Order
 
 [Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):

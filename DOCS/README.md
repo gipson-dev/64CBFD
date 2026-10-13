@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer owned UGEN/AS1 boundary](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
+  Production remains405/frame0x48/267, no guards/credit. Actual AS1 input and
+  fired200-load/68-emitter probes qualify an upstream lower-placement difference;
+  14 tag forms do not fit.11 checks pass, tools3fb2ea0 first, existing older hashes
+  fixed. Next source/optimizer ordering and still-open cuts10/7/full matching.
+
 - [Actor command-finalizer primary jitter load-order restoration](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
   func_15034860 retains405/frame0x48,269->267 differences, no guards/credit.
   Two retail load words are restored; exact states720->1086/2938 with no earlier

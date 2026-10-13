@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2b16f4f; tools are committed before the consumer pin.
+  checkpoint pins tools 3fb2ea0; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer primary jitter-load checkpoint; matching remains open:
+Current actor command-finalizer owned backend-boundary checkpoint:
+[Note 1333](WORKING_NOTES/1333-game-actor-command-finalizer-owned-ugen-as1-boundary-20261013.md):
+Production source/ELF stay405/frame0x48/267 differences. Owned UGEN probes fire
+200 load/68 immediate-memory events per body, with normal/traced object identity.
+Actual AS1 input correlates all68 events: lower immediate records184 current /
+165 early, tag home189 both. This locates an upstream ordering difference,
+not complete AS1 causality.14 tag forms produce no eligible fit. All11 focused
+diagnostic/integrity checks pass10.548s; no guards/pin rebase/credit. Tools3fb2ea0
+first; older HEAD/all416 existing hashes preserved/no push. Next source/UOPT/
+UGEN ordering around byte/tag/lower/conversion, plus still-open cuts10/7/full gates.
+
+Previous actor command-finalizer primary jitter-load checkpoint:
 [Note 1332](WORKING_NOTES/1332-game-actor-command-finalizer-primary-jitter-load-order-restoration-20261013.md):
 func_15034860 restores LBU T3 / LB T9 order,269->267 real differences. Only
 two words/six target ELF bytes change;405/frame0x48/six slots/160 homes fixed.
