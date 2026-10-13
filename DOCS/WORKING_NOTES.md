@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-12:
+[Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
+func_1501BB20 matches all38 words/frame0x28 directly, no guards. Seven target
+tests pass before/after installation: 36,864 guest, 233,472 native32, 92 fault
+pairs, seven owner neighbors and full-owner padder/rebase gates. Literal image
+audit preserves all named definitions except target size, with only the closed
+ABS value/string serialization accounted separately. Data/text integrity pass;
+Game2,817/4,823, total3,490/5,496, zero drift/converted fixed. Next func_150226BC,
+full Game active; text218/114/cut27 and translator remain open.
+Tools 6a9eb2d first; older HEAD/unrelated dirty work preserved, no push.
+
+2026-10-12:
 [Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
 func_1501AE94 matches all44 words/frame0 directly, no guards. Seven target
 tests pass before/after installation, including 10,692 guest, 65,536 native32,

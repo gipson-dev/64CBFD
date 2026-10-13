@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-12 Game One-Shot Timer Direct Match
+
+[Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
+func_1501BB20 now emits all38 words directly, frame0x28/no guards, using its
+mutable unsigned64 clock expression and actual SDK types. Seven pre-/post-
+install tests pass: 36,864 guest, 233,472 native32 and 92 own-access-cut
+comparisons, seven neighbors/both padders/three rebases. The full image gate
+accounts only for the slot/size plus an eight-byte ABS serialization permutation
+with named definitions unchanged. Data/protected inputs stay exact; fresh text
+integrity controls pass. Game2,817/4,823, total3,490/5,496, drift0/converted fixed.
+Next func_150226BC; text/translator remain open.
+Tools 6a9eb2d is committed first; older HEAD/unrelated dirty work preserved.
+
 ## 2026-10-12 Game Rectangle Bounds Predicate Direct Match
 
 [Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game One-Shot Timer Direct Match - 2026-10-12
+
+[Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
+
+- [x] Recover func_1501BB20's full-byte gate, mutable unsigned64 clock expression, O32 argument hole, zero interval/message6 and post-SDK latch clear; match all38 words directly, frame0x28/no guards.
+- [x] Pass seven target tests before/after installation: 36,864 guest cases, 233,472 native32 comparisons, 92 access-cut pairs, seven neighbors, both full-owner padders and three aligned-clock rebases.
+- [x] Pass the literal whole-ELF/data audit, including the closed eight-byte ABS symbol serialization permutation with unchanged named definitions; archive/advance the text fixture and pass immutable/corruption controls.
+- [x] Update matching to Game2,817/4,823 and total3,490/5,496, with zero drift and unchanged converted totals.
+- [x] Bank tools 6a9eb2d first; pass syntax/tools/link checks and preserve the older tools HEAD and all unrelated saved fingerprints.
+- [ ] Continue func_150226BC's two-index record/actor dispatch and complete its matching gates. Keep text218/114/cut27 and translator open; no hardware queue/interrupt or live-gameplay acceptance is inferred.
+
 ## Game Rectangle Bounds Predicate Direct Match - 2026-10-12
 
 [Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
@@ -9,7 +20,7 @@
 - [x] Pass literal whole-ELF/data gates: only124 target bytes and size12->176 change; retain all189,088 data bytes/720 owners and protected inputs. Archive/advance the text fixture and pass its immutable/corruption controls.
 - [x] Update matching to Game2,816/4,823 and total3,489/5,496, with zero drift and unchanged converted totals.
 - [x] Bank tools 0a939ff first, preserve older tools HEAD/unrelated dirty work, and pass syntax/tools/link checks.
-- [ ] Continue func_1501BB20's gated 38-word timer setup, including its 64-bit clock arithmetic and SDK ABI. Keep text218/114/cut27 and matrix translator open; no host/gameplay acceptance is added.
+- [x] Finish func_1501BB20's timer setup, unsigned64 arithmetic and SDK ABI; see Note 1317. Text/matrix work stays explicitly open in the current checklist.
 
 ## Game Event Record Constructor Direct Match - 2026-10-12
 

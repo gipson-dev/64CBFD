@@ -1,11 +1,19 @@
 #include <ultra64.h>
+extern u8 D_80084064;
+extern u64 D_8002BD10;
+extern OSTimer D_800BE6E0;
+extern OSMesgQueue D_8003B218;
 extern u8 D_800BE93C[];
 extern u8 D_80084060[];
 
 /* Non-matching placeholders for the text-only asm slice asm/48FD0.s. */
 
-s32 func_1501BB20() {
-    return 0;
+void func_1501BB20(void) {
+    if (D_80084064 != 0) {
+        osSetTimer(&D_800BE6E0, (25 * D_8002BD10) / 1000000, 0,
+            &D_8003B218, (OSMesg)6);
+        D_80084064 = 0;
+    }
 }
 
 s32 func_1501BBB8() {

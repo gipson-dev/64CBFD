@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [One-shot timer direct match](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
+  func_1501BB20 matches all38 words directly, frame0x28/no guards. Seven pre-
+  and post-install tests qualify unsigned64/O32 behavior, seven neighbors,
+  both padders and a closed whole-image audit. Game matching2,817/4,823;
+  next func_150226BC. Tools 6a9eb2d first; hardware queue/interrupt behavior
+  is not claimed.
+
 - [Rectangle bounds predicate direct match](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
   func_1501AE94 matches all44 words directly, frame0/no guards. Seven pre-
   and post-install tests qualify rounding/NaNs, caller window, ten neighbors,

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0a939ff; tools are committed before the consumer pin.
+  checkpoint pins tools 6a9eb2d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current rectangle-bounds direct-match checkpoint; full Game matching remains active:
+Current one-shot timer direct-match checkpoint; full Game matching remains active:
+[Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
+func_1501BB20 replaces its zero-return placeholder with the gated void timer
+routine. All38 words/152 bytes match directly, frame0x28/no guards/profile
+change. Seven tests pass before/after installation: 36,864 guest cases,
+233,472 native32 comparisons, 92 fired access-cut pairs, seven owner neighbors,
+both padders and three independent rebases. Whole-image audit permits only
+121 target bytes, one size byte12->152 and eight bytes of a closed two-ABS-
+symbol value/string serialization permutation; all named definitions remain
+unchanged except target size. All Game data/protected inputs remain exact.
+Fresh text integrity controls pass; unchanged broader receipts are reused,
+not called fresh. Game2,817/4,823 (58.41%), total3,490/5,496 (63.50%),
+drift0/different2,006, converted totals unchanged. Next func_150226BC's grouped
+record/actor dispatch; text218/114/cut27 and matrix translator remain open.
+Tools 6a9eb2d is banked first; older HEAD/unrelated dirty work preserved.
+
+Previous rectangle-bounds direct-match checkpoint:
 [Note 1316](WORKING_NOTES/1316-game-rectangle-bounds-predicate-direct-match-20261012.md):
 func_1501AE94 now replaces its zero-return placeholder with the original ordered
 float rejection predicate. All44 words/176 bytes match directly, frame0/no

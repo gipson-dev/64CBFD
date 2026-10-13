@@ -213,6 +213,17 @@ Separate sparse full-word guest indices from valid native array indices, and
 the authentic five-word caller store window from the unrecovered full caller.
 All44 words match even though public paths visit43; retain the unreachable load.
 
+The one-shot timer and SDK/native32 runtime boundary are qualified in
+[Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_one_shot_timer_candidates --controls`
+and `python3 -m unittest tools.tests.test_game_one_shot_timer_match -v` under WSL.
+Use the mutable clock expression, not the fixed-clock conversion macro; retain
+unsigned64 overflow-before-division and the O32 alignment hole. The prepared
+32-bit shared libgcc runtime supplies native division; do not install/rebuild
+a compiler/runtime to bypass a missing precondition. Metadata permutations
+require exact named-definition equality and closed byte accounting, never a
+blanket symbol/string-table exclusion. Opaque providers do not prove interrupts.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local
