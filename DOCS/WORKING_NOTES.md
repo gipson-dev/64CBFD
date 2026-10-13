@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-13:
+[Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
+func_15034F30 direct identity call recovers the original22-word opening and
+early s6 save/move at486/frame0x190/240 versus259 differences. All26 checks
+75.233s;192 ->3,648 full modeled agreements over10,260 fired cuts, no loss.
+Input formal stays unchanged; logical M284/292 retain physical400 and all four
+matrix addresses/shifts/homes. Tools579be6c first; all440 older hashes fixed.
+Production/totals/README unchanged; remaining240 schedules/roles stay active.
+
+2026-10-13:
 [Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
 func_15034F30 SDK indexing and real callback-local reuse recover four original
 s2 shifts at486/frame0x190/259 versus331 differences,125 changed words.

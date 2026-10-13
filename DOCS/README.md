@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix reflection original prologue recovery](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
+  Recover all22 opening words at486/frame0x190/240 differences, uninstalled.
+  All26 checks pass; modeled agreements192 ->3,648 without loss. Production
+  stays fixed; cache/offset roles and later schedules remain open.
+
 - [SDK-typed matrix reflection saved index](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
   Recover four original s2 shifts and callback pointer roles at486/frame0x190,
   improving331 ->259 differences. All25 checks pass; production remains fixed.

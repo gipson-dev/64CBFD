@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Original Prologue Recovery - 2026-10-13
+
+[Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
+
+- [x] Recover all22 retail opening words using a direct identity call and an unchanged input formal, without source guards.
+- [x] Retain486 words/frame0x190 and all later words from259; improve to240 differences with19 changed opening words.
+- [x] Prove the physical frame/matrix addresses stay fixed while frontend/UOPT local definitions shrink to284/292; preserve five output and three mode-home reads.
+- [x] Pass26 target/text checks in75.233s; retain all prior agreements and raise full modeled agreements192 ->3,648 over10,260 fired cuts.
+- [x] Move the first fired mismatch cut1 ->19 in both phases; retain old259 and bare-O2 opening negatives, four shifts and all historical count controls.
+- [x] Preserve production/README and all440 older hashes; bank tools579be6c before the exact consumer pin, with no push or host work.
+- [ ] Recover s4/s5 conversion-cache/byte-offset roles and remaining mode/floating/temporary-register schedules.
+- [ ] Finish240 differences and all private/fault/linked-image gates before installation or whole-function matching credit.
+
 ## SDK-Typed Matrix Reflection Saved Index - 2026-10-13
 
 [Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
@@ -10,7 +23,8 @@
 - [x] Pass25 target/text checks in99.151s; retain192 prior modeled agreements over10,260 fired cuts against the331 baseline.
 - [x] Preserve all eight historical329 rejections within48 current rejection domains; retain all192 count-distance gates and an effective64-byte wrong-index negative.
 - [x] Preserve production/README and all438 older fingerprints; bank tools4efe06f before the exact consumer pin, no push or host work.
-- [ ] Recover the early s6 save/argument move, s4/s5 conversion-cache/offset roles and remaining floating/temporary schedules.
+- [x] Recover the early s6 save/argument move; the complete22-word opening is exact in Note1344.
+- [ ] Recover s4/s5 conversion-cache/offset roles and remaining floating/temporary schedules.
 - [ ] Finish259 differences and all private/fault/linked-image gates before installation or matching credit.
 
 ## Matrix Reflection Direct Homes And Cache Removal - 2026-10-13
@@ -24,7 +38,7 @@
 - [x] Bank toolsaf0ed5c first; preserve production/README and all436 older fingerprints with only two absent additions, no push.
 - [x] Verify restarted REA connection and document the Windows adapter's MIPS ELF rejection without installing dependencies.
 - [x] Recover the original shifted-index lifetime instead of the strength-reduced s2 input cursor; all four shifts are exact in Note1343.
-- [ ] Recover original saved-store order; Note1343 still starts with the RA save rather than retail's s6 save.
+- [x] Recover original saved-store order; the direct identity body in Note1344 matches the entire22-word opening.
 - [ ] Finish331 differences and private/fault/linked-image gates before installation, matching credit or host/runtime claims.
 
 ## Matrix Reflection Economical Index And Conditional Homes - 2026-10-13

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4efe06f; tools are committed before the consumer pin.
+  checkpoint pins tools 579be6c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current matrix-reflection original-prologue checkpoint:
+[Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
+Direct identity call leaves the input formal unchanged and recovers all22
+opening words, including the early s6 save/move. Candidate486/frame0x190,
+259 ->240 differences,19 changed words; all later words stay fixed, uninstalled.
+All26 checks pass75.233s. Across10,260 fired cuts, full modeled agreements grow
+192 ->3,648 without loss; first mismatch moves cut1 ->19. Matrix addresses,
+live homes, four shifts and all old controls survive. Frontend/UOPT M284/292
+retain physical400. Tools579be6c first; all440 older hashes fixed/two additions.
+Production/totals/root README unchanged. Next s4/s5 roles and later240 words.
 
 Current SDK-typed matrix-reflection saved-index checkpoint:
 [Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):

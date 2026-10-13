@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Matrix Reflection Original Prologue Recovery
+
+[Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
+Remove the temporary input-formal assignment and call identity directly.
+Recover all22 opening words, including the original early s6 save/argument
+move. Uninstalled486/frame0x190 candidate improves259 ->240 differences.
+All26 checks pass75.233s; full modeled agreements192 ->3,648 over10,260 fired
+cuts with no loss. Preserve all homes, matrix addresses, shifts and effective
+historical/profile negatives. Tools579be6c first; no production/README change.
+Finish s4/s5 conversion-cache/offset roles and later schedules before credit.
+
 ## 2026-10-13 SDK-Typed Matrix Reflection Saved Index
 
 [Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
