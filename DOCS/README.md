@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer bounds, clamp and secondary-tail alignment](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
+  Recover three source shapes;405/frame0x48,266->76 differences, no guards/credit.
+  Secondary block aligned/four clamp words exact; exact states1322->1598/2938,
+  no prior loss.15 pre-install tests and792-byte target-only image/data proof
+  pass. All17 installed checks pass63.247s; tools56a0cee first. Next remaining
+  category/noise/lower and register-allocation words.
+
 - [Actor command-finalizer secondary value register restoration](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
   Recover a2/a0/a3/v0 secondary roles with the signed value local;405/frame0x48,
   267->266 differences, no guards/credit. Exact sampled states1086->1322/2938;

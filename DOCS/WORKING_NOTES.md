@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
+func_15034860 restores bounds/clamp/tail source shapes:405/frame0x48,266->76
+differences, aligned secondary block and four exact primary clamp words.
+Exact sampled states1322->1598/2938 with no prior loss; six slots/homes fixed.
+15 pre-install tests and792-byte target-only image/data audit pass.25 forms
+reject overflow and a70-score cut9 regression. All17 installed checks pass
+63.247s; tools56a0cee first, older HEAD/unrelated hashes preserved. Next76 allocation/
+category-noise/lower differences and still-open cuts10/7/full matching.
+
+2026-10-13:
 [Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
 func_15034860 restores secondary a2/a0/a3/v0 roles using the signed value local;
 405/frame0x48,267->266 differences, no guards/credit. Exact sampled states

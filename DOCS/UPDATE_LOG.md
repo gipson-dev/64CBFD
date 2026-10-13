@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Bounds, Clamp And Tail
+
+[Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
+Recover explicit bounds arms, retail-oriented primary clamp and direct signed
+tail velocity.405/frame0x48,266->76 differences; secondary block aligned,
+clamp words210..213 exact, six slots/secondary roles fixed. Exact sampled
+states1322->1598/2938 with no lost agreements.15 pre-install tests and792-byte
+target-only ELF/data audit pass.25 forms reject overflow and a70-score cut9
+regression. All17 installed checks pass63.247s; tools56a0cee first, older HEAD/
+unrelated hashes retained. No guards/credit or README change; remaining76 next.
+
 ## 2026-10-13 Game Actor Command Finalizer Secondary Value Roles
 
 [Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):

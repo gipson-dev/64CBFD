@@ -73,10 +73,11 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
             *(s16 *)(output + 2) = value;
             output += 4;
         }
-        upper = 60;
         if (actor[4] == 0x42) {
             lower = 80;
             upper = 120;
+        } else {
+            upper = 60;
         }
         if (actor[0x1FF] == 0) {
             *(s8 *)(actor + 0x203) = -upper;
@@ -100,7 +101,7 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         if (value < 0) {
             value = 0;
         } else {
-            current = value < 256 ? value : limit;
+            current = value >= 256 ? limit : value;
             value = current;
         }
         actor[0x1FE] = value;
@@ -169,18 +170,17 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         if (reverse) {
             *(s8 *)(actor + 0x209) = -*(s8 *)(actor + 0x209);
         }
-        delta = *(s8 *)(actor + 0x209);
-        *(s16 *)(actor + 0x204) += delta;
+        *(s16 *)(actor + 0x204) += *(s8 *)(actor + 0x209);
         if (sign > 0) {
             value = *(s16 *)(actor + 0x204);
-            if (value < 0 && delta < 0) {
+            if (value < 0 && *(s8 *)(actor + 0x209) < 0) {
                 *(s16 *)(actor + 0x204) = 0;
             } else if (value >= 256) {
                 *(s16 *)(actor + 0x204) = limit;
             }
         } else {
             value = *(s16 *)(actor + 0x204);
-            if (value > 0 && delta > 0) {
+            if (value > 0 && *(s8 *)(actor + 0x209) > 0) {
                 *(s16 *)(actor + 0x204) = 0;
             } else if (value < -255) {
                 *(s16 *)(actor + 0x204) = -255;

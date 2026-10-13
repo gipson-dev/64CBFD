@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6217aa4; tools are committed before the consumer pin.
+  checkpoint pins tools 56a0cee; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer secondary-value checkpoint:
+Current actor command-finalizer bounds/clamp/tail checkpoint:
+[Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
+func_15034860 restores explicit bounds arms, primary clamp orientation and
+direct signed tail velocity:405/frame0x48,266->76 differences. Clamp words
+210..213 exact; secondary block aligned, a2/a0/a3/v0 roles/six slots retained.
+Exact sampled states1322->1598/2938 with no prior loss. All15 pre-install tests
+and installed792-byte target-only image/data proof pass.25 bodies reject
+overflow and a70-score cut9 regression. All17 installed checks pass63.247s;
+tools56a0cee first, older HEAD/unrelated423 hashes preserved apart from the
+verified ELF-pin edit. Next category/noise/lower scheduling
+and remaining register/operand allocation; cuts10/7/full matching stay open.
+
+Previous actor command-finalizer secondary-value checkpoint:
 [Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
 func_15034860 restores secondary sign/choose/reverse/value roles a2/a0/a3/v0
 by reusing the existing signed value local.405/frame0x48,267->266 differences;
