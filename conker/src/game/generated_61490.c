@@ -59,20 +59,17 @@ void func_1503453C(s32 index) {
 }
 
 void func_150345E4(s32 index) {
-    s32 type;
-    u8 *actor = D_800CC2D0 + (u32)index * 0x32C;
 
-    if (*(u32 *)(actor + 0x1D4) == 0) {
+    if (*(u32 *)((D_800CC2D0 + (u32)index * 0x32C) + 0x1D4) == 0) {
         return;
     }
-    if (*(s32 *)actor == 1 || actor[5] == 7) {
+    if (*(s32 *)(D_800CC2D0 + (u32)index * 0x32C) == 1 || (D_800CC2D0 + (u32)index * 0x32C)[5] == 7) {
         func_1503453C(index);
     }
-    if (*(s32 *)actor == 0x22) {
+    if (*(s32 *)(D_800CC2D0 + (u32)index * 0x32C) == 0x22) {
         func_1503453C(index);
     }
-    type = actor[4];
-    switch (type) {
+    switch ((s32)(D_800CC2D0 + (u32)index * 0x32C)[4]) {
         case 4:
             if (D_800BE616 == 0) {
                 func_15036310(0, index, 9, 0);
@@ -80,13 +77,13 @@ void func_150345E4(s32 index) {
             }
             break;
         case 0x70:
-            func_15034EB4(actor, 10, 11);
+            func_15034EB4((D_800CC2D0 + (u32)index * 0x32C), 10, 11);
             break;
         case 0x7B:
-            func_150F1A00(actor);
+            func_150F1A00((D_800CC2D0 + (u32)index * 0x32C));
             break;
         case 0x60:
-            func_150DFDA4(actor);
+            func_150DFDA4((D_800CC2D0 + (u32)index * 0x32C));
             break;
     }
 }

@@ -268,6 +268,19 @@ change. The one permitted advisory's controls are independently rejected; its
 switch-scratch inference is unproven. Inspect actual frame allocation next, then
 all exact-match gates; no matching credit or README figure churn while totals agree.
 
+That frame task is now directly matched in
+[Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md).
+Use `python3 -m tools.experiments.game_actor_callback_frame_trace --screens` and
+`python3 -m unittest tools.tests.test_game_actor_callback_dispatch_match -v`.
+The indexed-address source removes upstream named-local reservation while
+retaining all81 original words/frame0x20. Compiler observation needs exact
+cc/cfe/uopt/ugen hashes, fired frame watch, completed consumers/driver and normal
+object/pool identity. Interpret captured descriptor-defined M records before
+naming frame summands. Literal private-address/RAM/fault tests replace the old
+affine comparison for this match; historical tests retain their original image
+snapshot. Advance immutable text ELF receipts only after the independent literal
+eight-byte whole-image gate, with all other protected inputs unchanged.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

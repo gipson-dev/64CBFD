@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor callback direct match and frame provenance](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
+  func_150345E4 matches all81 words/frame0x20 directly, no guards. Fired compiler
+  captures explain local16->8; nine installed tests and eight-byte literal image/
+  data/text gates pass. Tools80e6fed first; Game2,821/4,823. Next97-word
+  func_150341BC, text/translator and wider Game/runtime remain open.
+
 - [Actor callback semantic recovery and frame boundary](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
   func_150345E4 now has the complete81-word body, differences78->8; source frame
  0x28 remains original0x20's unresolved boundary. Seven target tests/image/data/

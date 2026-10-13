@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Callback Direct Match - 2026-10-12
+
+[Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
+
+- [x] Finish all eight func_150345E4 frame/home words directly from C; all81 words/original frame0x20 match, no guards, padding or profile change.
+- [x] Qualify fired read-only CFE/UOPT/UGEN captures: local reservation16->8, outgoing16/saved8 fixed, traced object/pools unchanged; reject missing gates, child failure and input corruption.
+- [x] Pass nine installed tests,65,536 guest plus24 home/36 flag cases,65,536 native32 and130 literal fault pairs; preserve nine neighbors/all38 caller functions, both padders and three exact rebases.
+- [x] Pass eight-byte literal image/data/text gates; update README aggregates to Game2,821/4,823 and total3,494/5,496. Bank tools80e6fed first and preserve older HEAD/unrelated hashes.
+- [ ] Recover and qualify func_150341BC's97-word command-stream writer, currently94 differences. Keep text218/114/cut27, translator and full Game/runtime gates open.
+
 ## Game Actor Callback Semantic Recovery - 2026-10-12
 
 [Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
@@ -9,7 +19,7 @@
 - [x] Pass seven pre-/post-install tests,65,536 guest plus24 home/36 flag cases,65,536 native32 and65 logical fault pairs; preserve nine target neighbors/all38 caller functions/pools/padders and rebases.
 - [x] Pass literal image/data/text gates, keep aggregate matching rows unchanged, bank tools e5c3868 first and preserve older HEAD/unrelated fingerprints.
 - [x] Complete one bounded tool-free advisory and independently reject its unchanged/worse controls; no compiler-cause certainty or extra call.
-- [ ] Finish the same function's eight frame/home words without guards/padding/profile changes, then exact matching and final gates. Keep text218/114/cut27 and translator open.
+- [x] Finish the same function's eight frame/home words without guards/padding/profile changes and pass final exact-match gates; see Note1322. Text/translator remain open separately.
 
 ## Game Actor Matrix Clear Byte Match - 2026-10-12
 
@@ -20,7 +30,7 @@
 - [x] Retain nine neighbors/relative relocations/pools, both full-owner padders and three rebases; pass literal image/data, exact18-row guard append and fresh text integrity controls.
 - [x] Update Game2,820/4,823 and total3,493/5,496, zero drift/converted totals fixed; bank tools9691502 first and preserve older HEAD/unrelated fingerprints.
 - [x] Recover and qualify func_150345E4's81-word actor callback body; see Note1321. No matching credit: eight frame words remain.
-- [ ] Finish func_150345E4's frame/home boundary and exact-match gates; see the current checklist. Text/translator stay open.
+- [x] Finish func_150345E4's frame/home boundary and exact-match gates in Note1322. Text/translator stay open separately.
 
 ## Game Actor Type Dispatch Direct Match - 2026-10-12
 

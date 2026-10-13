@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-12 Game Actor Callback Direct Match And Frame Provenance
+
+[Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
+func_150345E4's remaining eight frame words now emit directly from C, all81 words
+exact/frame0x20/no guards. Fired read-only compiler captures show local16->8,
+outgoing16/saved8 unchanged. Nine installed tests qualify literal stack/faults,
+both owners/padders/rebases and an eight-byte whole-image delta; all other bytes/
+data/guards stay fixed. Text integrity passes. Game2,821/4,823, total3,494/5,496,
+drift0/converted fixed; README aggregates only, old frame tasks checked off.
+Tools80e6fed first, older HEAD/unrelated work preserved/no push. Next97-word
+func_150341BC; full Game/text/translator and hardware/gameplay gates remain open.
+
 ## 2026-10-12 Game Actor Callback Recovery And Frame Boundary
 
 [Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):

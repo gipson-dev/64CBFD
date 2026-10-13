@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e5c3868; tools are committed before the consumer pin.
+  checkpoint pins tools 80e6fed; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor callback semantic-recovery checkpoint; same function/full Game remain active:
+Current actor callback direct-match checkpoint; full Game remains active:
+[Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
+func_150345E4 now matches all81 words directly, original frame0x20/no guards.
+Read-only compiler captures trace local reservation16->8; preserve outgoing16
+and saved8. Nine installed tests pass, literal stack/fault/owner/rebase gates;
+whole ELF changes only eight frame-word bytes, all other bytes/data fixed.
+Fresh text integrity passes; tools80e6fed first, older HEAD/unrelated hashes
+preserved. Game2,821/4,823 (58.49%), total3,494/5,496 (63.57%), drift0/different
+2,002, converted fixed. Next func_150341BC,97 words/frame0/94 differences;
+text/translator and hardware/gameplay gates remain open, no push.
+
+Previous actor callback semantic-recovery checkpoint:
 [Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
 func_150345E4's zero-return placeholder is replaced by the complete81-word
 dispatcher and a typed void caller prototype. Differences78->8: all73 other

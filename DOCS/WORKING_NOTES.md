@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-12:
+[Note 1322](WORKING_NOTES/1322-game-actor-callback-dispatch-direct-match-and-frame-provenance-20261012.md):
+func_150345E4 matches all81 words/frame0x20 directly, no guards. Read-only compiler
+captures recover local16->8; nine installed tests and eight-byte literal image/
+data/text gates pass. Game2,821/4,823, total3,494/5,496, zero drift/converted fixed.
+Tools80e6fed first, older work preserved/no push. Next func_150341BC,97 words /
+94 differences; wider Game/text/translator and hardware/gameplay gates stay open.
+
+2026-10-12:
 [Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
 func_150345E4 recovers all81 semantic words and its void(s32) caller contract;
 differences78->8 with73 exact non-frame words. Source frame0x28 remains original
