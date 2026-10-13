@@ -128,3 +128,11 @@ Recover scalar promotion/lifetime and independent scheduling while preserving
 all 1,598 exact states, first14/jitter words, six slots and the now-aligned
 clamp/secondary blocks. Primary cut10 and disabled-primary cut7 remain open.
 Full Game, retained text/translator and hardware goals remain active.
+
+Post-bank consumer `11742aef` / tools `56a0cee`: five extent/image/fault/
+protected-text integrity checks pass **9.292s**, no skips. Seven documents /
+4,660 relative links have zero broken targets. The source commit's graph hook
+finishes with 40,460 nodes / 80,955 edges and zero live workers; known retained-
+node/HTML-size warnings remain. Both active checkouts are clean. This note-only
+verification leaves source/ELF/guards/totals unchanged; the 70-score control is
+not promoted.

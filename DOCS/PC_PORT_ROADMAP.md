@@ -9,7 +9,7 @@
 - [x] Qualify15 pre-install guest/native/alias/owner/frame/rebase/parent/home checks, including three fresh velocity/bounds/clamp negatives.
 - [x] Raise represented exact states1322->1598/2938 without losing any earlier cut or changing access counts; reject the70-score early-lower regression.
 - [x] Screen25 complete bodies and reject404/406 extent failures; prove792 target-only ELF bytes change with all other bytes/data/guards/progress fixed.
-- [ ] Complete installed target/text checks, both tools/syntax checks, authorized tools-first bank and post-bank verification.
+- [x] Pass17 installed target/text checks and both tools/syntax checks; bank tools56a0cee then consumer11742aef and pass five post-bank checks.
 - [ ] Recover category/noise/lower scheduling and remaining register/operand allocation while preserving all1598 exact sampled states.
 - [ ] Finish primary cut10, disabled-primary cut7 and76 differences under full matching gates; wider Game/text/translator/hardware goals stay open.
 
