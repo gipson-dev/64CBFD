@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor callback semantic recovery and frame boundary](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
+  func_150345E4 now has the complete81-word body, differences78->8; source frame
+ 0x28 remains original0x20's unresolved boundary. Seven target tests/image/data/
+  text gates pass, no new guards/matching credit. One advisory has no accepted
+  fix. Tools e5c3868 first; continue the same function, text/translator still open.
+
 - [Actor matrix clear byte match](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
   func_15034728 matches all48 linked words/frame0x20 with18 mathematically derived
   register/operand guards; raw C still differs. Eight pre-/post-install tests

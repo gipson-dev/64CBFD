@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9691502; tools are committed before the consumer pin.
+  checkpoint pins tools e5c3868; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor matrix-clear byte-match checkpoint; full Game matching remains active:
+Current actor callback semantic-recovery checkpoint; same function/full Game remain active:
+[Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
+func_150345E4's zero-return placeholder is replaced by the complete81-word
+dispatcher and a typed void caller prototype. Differences78->8: all73 other
+words match, but source frame0x28 remains original0x20's unresolved boundary.
+No frame guards or matching credit. Seven pre-/post-install tests pass:65,536
+guest plus24 home/36 flag cases,65,536 native32 and65 logical fault pairs.
+Nine target-owner neighbors/all38 caller-owner functions, both padders/pools
+and three rebases agree. Whole ELF changes only242 target bytes/two size bytes;
+all data/guards/other inputs stay fixed. Text integrity passes. One tool-free
+Claude review completes; its two proposed controls fail, no accepted fix or
+proven compiler cause. Tools e5c3868 first; older HEAD/unrelated work preserved.
+Matching stays Game2,820/4,823 (58.47%), total3,493/5,496 (63.56%), drift0,
+different2,003, converted fixed. Next same func_150345E4's eight frame words;
+text/translator remain open, no hardware/gameplay parity or push.
+
+Previous actor matrix-clear byte-match checkpoint:
 [Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
 func_15034728 now emits the complete48-word/192-byte/frame0x20 matrix clear.
 Raw C has18 allocation/operand-order differences;18 expected-word guards derive

@@ -4,6 +4,12 @@
 
 s32 func_1502DB20(s32 type);
 
+extern u8 D_800BE616;
+s32 func_15036310(s32, s32, s32, s32);
+void func_15034EB4(u8 *, s32, s32);
+s32 func_150F1A00(u8 *);
+void func_150DFDA4(u8 *);
+
 extern u8 D_800CC2D4[];
 void func_1503B9BC(s32 index);
 
@@ -52,8 +58,37 @@ void func_1503453C(s32 index) {
     }
 }
 
-s32 func_150345E4() {
-    return 0;
+void func_150345E4(s32 index) {
+    s32 type;
+    u8 *actor = D_800CC2D0 + (u32)index * 0x32C;
+
+    if (*(u32 *)(actor + 0x1D4) == 0) {
+        return;
+    }
+    if (*(s32 *)actor == 1 || actor[5] == 7) {
+        func_1503453C(index);
+    }
+    if (*(s32 *)actor == 0x22) {
+        func_1503453C(index);
+    }
+    type = actor[4];
+    switch (type) {
+        case 4:
+            if (D_800BE616 == 0) {
+                func_15036310(0, index, 9, 0);
+                func_15036310(0, index, 4, 0);
+            }
+            break;
+        case 0x70:
+            func_15034EB4(actor, 10, 11);
+            break;
+        case 0x7B:
+            func_150F1A00(actor);
+            break;
+        case 0x60:
+            func_150DFDA4(actor);
+            break;
+    }
 }
 
 void func_15034728(u8 *actor) {

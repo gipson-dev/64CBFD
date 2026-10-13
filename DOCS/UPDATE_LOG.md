@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-12 Game Actor Callback Recovery And Frame Boundary
+
+[Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
+func_150345E4's semantic81-word callback body replaces its zero-return placeholder;
+correct the caller to void(s32). Real differences78->8, all73 non-frame words
+exact, but source frame0x28 is not original0x20. Seven pre-/post-install tests,
+both owners/padders/rebases and literal image/data/text gates pass. No new guards
+or matching credit; aggregate README rows stay unchanged. One bounded tool-free
+review yields no accepted fix. Tools e5c3868 first, older work preserved;
+continue the same eight frame words, full Game/text/translator remain open.
+
 ## 2026-10-12 Game Actor Matrix Clear Byte Match
 
 [Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):

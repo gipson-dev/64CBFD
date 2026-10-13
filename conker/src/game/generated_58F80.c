@@ -145,7 +145,7 @@ void func_1502C608(s32 slot);
 void func_1502FBE8(u8 *);
 s32 func_1502E4C4();
 s32 func_1503A08C();
-s32 func_150345E4();
+void func_150345E4(s32 slot);
 s32 func_1503A830();
 void func_1503DF48(s32);
 void func_1502EEF4(s32 slot);

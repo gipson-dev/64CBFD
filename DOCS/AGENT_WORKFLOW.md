@@ -257,6 +257,17 @@ count helper is stale for this manifest; do not weaken it or claim its legacy su
 pass. Pin the exact previous guard bytes and verify only the18 derived appended rows.
 Archive/advance text ELF/guard receipts only after literal image/guard proof.
 
+The actor callback's semantic recovery and unresolved frame are qualified in
+[Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md).
+Use `python3 -m tools.experiments.game_actor_callback_dispatch_candidates` and
+`python3 -m unittest tools.tests.test_game_actor_callback_dispatch_recovery -v`.
+Keep81/0x28/eight frame differences separate from exact matching. Logical private-
+frame rebasing in diagnostics is not binary normalization or hardware parity.
+No frame guards are installed. Validate both owners for a typed caller prototype
+change. The one permitted advisory's controls are independently rejected; its
+switch-scratch inference is unproven. Inspect actual frame allocation next, then
+all exact-match gates; no matching credit or README figure churn while totals agree.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

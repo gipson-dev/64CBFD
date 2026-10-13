@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
+func_150345E4 recovers all81 semantic words and its void(s32) caller contract;
+differences78->8 with73 exact non-frame words. Source frame0x28 remains original
+0x20's open boundary, no guards/matching credit. Seven pre-/post-install tests,
+both owners/padders/rebases and literal image/data/text gates pass. One tool-free
+advisory has no accepted fix; tools e5c3868 first, older work preserved.
+Continue the same frame task; full Game/text/translator remain active/open.
+
+2026-10-12:
 [Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
 func_15034728 matches all48 linked words/frame0x20 using18 derived allocation/
 operand guards; raw C remains non-matching. Eight pre-/post-install tests,

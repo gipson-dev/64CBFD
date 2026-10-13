@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Callback Semantic Recovery - 2026-10-12
+
+[Note 1321](WORKING_NOTES/1321-game-actor-callback-dispatch-semantic-recovery-and-frame-boundary-20261012.md):
+
+- [x] Recover func_150345E4's live word/byte gates, independent dispatch calls, post-helper type selection and ordered callbacks; replace the zero-return placeholder and correct its caller prototype.
+- [x] Reduce real differences78->8 across the complete81 words; all73 non-frame words match. Keep source frame0x28 versus original0x20 explicit, no frame guards or matching credit.
+- [x] Pass seven pre-/post-install tests,65,536 guest plus24 home/36 flag cases,65,536 native32 and65 logical fault pairs; preserve nine target neighbors/all38 caller functions/pools/padders and rebases.
+- [x] Pass literal image/data/text gates, keep aggregate matching rows unchanged, bank tools e5c3868 first and preserve older HEAD/unrelated fingerprints.
+- [x] Complete one bounded tool-free advisory and independently reject its unchanged/worse controls; no compiler-cause certainty or extra call.
+- [ ] Finish the same function's eight frame/home words without guards/padding/profile changes, then exact matching and final gates. Keep text218/114/cut27 and translator open.
+
 ## Game Actor Matrix Clear Byte Match - 2026-10-12
 
 [Note 1320](WORKING_NOTES/1320-game-actor-matrix-clear-byte-match-20261012.md):
@@ -8,7 +19,8 @@
 - [x] Qualify4,320 guest plus24 alias cases, 32,792 native32 comparisons, 36 actual caller/helper/table chains and361 fired own-access fault triples; confirm the caller's25-record scan.
 - [x] Retain nine neighbors/relative relocations/pools, both full-owner padders and three rebases; pass literal image/data, exact18-row guard append and fresh text integrity controls.
 - [x] Update Game2,820/4,823 and total3,493/5,496, zero drift/converted totals fixed; bank tools9691502 first and preserve older HEAD/unrelated fingerprints.
-- [ ] Continue func_150345E4's81-word actor callback dispatch and final matching gates. Keep text218/114/cut27 and translator open; no full hardware/gameplay acceptance is added.
+- [x] Recover and qualify func_150345E4's81-word actor callback body; see Note1321. No matching credit: eight frame words remain.
+- [ ] Finish func_150345E4's frame/home boundary and exact-match gates; see the current checklist. Text/translator stay open.
 
 ## Game Actor Type Dispatch Direct Match - 2026-10-12
 
