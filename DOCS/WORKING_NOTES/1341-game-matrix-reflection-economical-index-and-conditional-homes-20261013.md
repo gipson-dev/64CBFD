@@ -188,3 +188,20 @@ Use fired CFE/UOPT records to discriminate lowering and alias assumptions,
 not only qualifiers or aggregate scores. Then recover the input-bank/reflection
 saved roles and saved cross-call index. Both branches still require full
 private/fault/linked-image matching gates before installation or credit.
+
+## Post-Bank Verification
+
+Consumer **2cab99bf932c8db371e03be7db2cd18f2d7b9272** records the exact tools
+**6bd22228863993d46e0ad1cdce6b3edeed24069e** pin and these docs. Both active
+checkouts are clean after banking; all nine new relative links resolve.
+The root README fingerprint remains unchanged and no push is performed.
+
+Five fresh post-bank checks pass **in24.736 seconds**: frozen production inputs,
+sampled private RAM/return-register boundary, owned frontend/optimizer capture,
+literal opening fault boundary and the final expanded home/array controls.
+This explicitly rechecks the additive assertions after the retained full run;
+it does not eliminate cut1 or establish a matched function.
+
+The scoped incremental hook completes at **40,515 nodes / 81,005 edges**, with
+zero live workers. Retained/excluded history and oversized-HTML behavior remain
+unchanged. This is distinct from the direct command's protective shrink refusal.

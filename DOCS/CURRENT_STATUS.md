@@ -36,6 +36,9 @@ arrays. All22 diagnostic/text checks pass98.059s;10,196 fired cuts retain192
 prior full modeled agreements, no new ones. Return witness9/12 remains different.
 Address work is already lda P+16/ilod in CFE and UOPT. Production/totals/README
 stay fixed; next direct home lowering without address work, then saved roles.
+Tools6bd2222 first; consumer2cab99bf records the exact pin/docs. Five post-bank
+checks pass24.736s; hook completes40,515 nodes/81,005 edges with no workers.
+All434 older fingerprints remain fixed with only two newly added files.
 
 Current matrix-reflection pointer-role and cache checkpoint:
 [Note 1340](WORKING_NOTES/1340-game-matrix-reflection-pointer-roles-and-cache-provenance-20261013.md):
