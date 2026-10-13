@@ -94,3 +94,10 @@ around unsigned conversion/tag-home lowering, not another unchanged hint screen.
 Keep the primary cut10 and disabled-primary cut7 requirements together with
 full private/fault/owner/rebase/image gates. Wider Game, prior guard elimination,
 retained text218/114/cut27, translator49/34 and hardware/runtime goals stay open.
+
+Post-bank source checkpoint `231817f4` / tools `2b16f4f`: the target whole-image
+audit and both protected-text checks pass, three tests in4.958s. Eight documents
+/4644 checked relative links have no broken targets. The source commit hook
+finishes with40426 nodes /80925 edges and zero live workers; known retained-node
+and HTML-size warnings remain. Both active checkouts are clean. This note-only
+verification update leaves the source/ELF hashes and all matching totals fixed.
