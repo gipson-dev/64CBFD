@@ -167,3 +167,24 @@ s4/s5 conversion-cache/offset roles, and remaining floating/temporary-register
 schedules while retaining the recovered four shifts and all strict gates.
 Finish all259 differences and private/fault/linked-image qualification before
 installing or claiming a byte-exact function.
+
+## Post-Bank Verification
+
+Consumer **481d38c3eab703e818818353f08c5f79f50a2801** records the exact tools
+**4efe06f102df0369df332e166dc790afc88b40b3** pin and linked documentation.
+Both active checkouts are clean. Older tools retains HEAD ddbdd16 and all438
+initial fingerprints, with only the two absent additions (440 dirty paths).
+
+Eight fresh post-bank checks pass **in6.292 seconds**: all seven frozen target
+inputs, private RAM/return-register boundary, owned compiler capture, opening
+fault boundary, four exact shifted-index words, effective wrong-index control
+and both protected text/data checks. The original input/home/ABI contracts stay
+qualified; opening cut1 and returnGPR9/14 remain different, not silently waived.
+
+The incremental hook completes at **40,544 nodes / 81,031 edges**, with zero
+live graph workers. Retained history and existing oversized-HTML limitations
+are intact. This is separate from the direct command's protective shrink refusal.
+The new working-note link resolves; root README SHA256 remains
+`640d27f289d843d625eabd94f747b399fc31105726db2a78ab245962ac885e8c`.
+No push, production rebuild, dependency install or host Release work occurs.
+The wider Game goal stays active on this routine's remaining259 differences.

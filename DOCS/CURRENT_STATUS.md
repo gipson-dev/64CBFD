@@ -37,6 +37,8 @@ agreements; the old eight lower329 rejection domains remain within48 current
 rejections. Saved-store order, s4/s5 cache/offset roles and returnGPR9/14 stay
 different. Production/totals/README fixed. Tools4efe06f first; all438 older hashes
 preserved/two additions. Next remaining259 words and full private/linked fit.
+Consumer481d38c3 banks the exact pin/docs; eight post-bank checks pass6.292s.
+Incremental graph hook completes40,544 nodes/81,031 edges with no live workers.
 
 Current matrix-reflection direct-home and cache-removal checkpoint:
 [Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
