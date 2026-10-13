@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-dispatch direct match and table layout](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
+  func_15033FE0 matches all119 words/frame0x28 directly, no target guards.
+  Compiler captures explain first-result home/local shrink; one derived neighbor
+  table-address adapter preserves retail code/data. Eight installed tests and
+  literal image/data/text gates pass. Tools1943c4d first; Game2,823/4,823.
+  Next405-word func_15034860; wider Game/text/translator/runtime gates remain open.
+
 - [Actor command-stream guarded match](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
   func_150341BC matches all97 linked words/frame0 using52 derived register/
   cursor/branch guards, not direct C. Eight installed tests/final native rerun,

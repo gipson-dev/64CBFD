@@ -14,13 +14,72 @@ extern u8 D_800CC2D4[];
 void func_1503B9BC(s32 index);
 
 extern u8 D_800CC2D0[];
+u8 *func_150341BC(u8 *, s32);
+u8 *func_150D8590(u16 *, s32);
+u8 *func_150344A0(u8 *, s32);
+u8 *func_150B58F0(u8 *, s32);
+s32 func_150F1B48(u8 *, s32);
+u8 *func_15034420(u8 *, s32);
+u8 *func_150BE438(u8 *, s32);
+u8 *func_15034340(u8 *, s32);
+u8 *func_150343B0(u8 *, s32);
+s32 func_1503DA3C(s32, u32);
+s32 func_15034860(u8 *, u8 *, s32, s32);
 extern u8 D_800C3E78[];
 extern f32 D_80097D14;
 extern u8 D_800BEAC0;
 extern s32 D_800D121C;
 
-s32 func_15033FE0() {
-    return 0;
+void func_15033FE0(u8 *output, s32 slot) {
+    u8 *actor = D_800CC2D0 + (u32)slot * 0x32C;
+    s32 first;
+    u8 *cursor = output;
+    s32 type;
+    s32 second;
+
+    if (*(u32 *)(actor + 0x1D4) == 0) {
+        *(s16 *)output = 0x1000;
+        return;
+    }
+    if (*(s32 *)actor == 1) {
+        cursor = func_150341BC(output, slot);
+    } else {
+        type = actor[4];
+        switch (type) {
+            case 0x2B:
+                cursor = func_150D8590((u16 *)output, slot);
+                break;
+            case 0x28:
+            case 0x77:
+                cursor = func_150344A0(output, slot);
+                break;
+            case 0x4B:
+                cursor = func_150B58F0(output, slot);
+                break;
+            case 0x7B:
+                cursor = (u8 *)func_150F1B48(output, slot);
+                break;
+            case 0x8A:
+                cursor = func_15034420(output, slot);
+                break;
+            case 0x21:
+                cursor = func_150BE438(output, slot);
+                break;
+            case 0x98:
+                cursor = func_15034340(output, slot);
+                break;
+            case 0x5A:
+            case 0x74:
+            case 0x7A:
+            case 0x8D:
+                cursor = func_150343B0(output, slot);
+                break;
+        }
+    }
+    first = func_1503DA3C(actor[4], 0);
+    second = func_1503DA3C(actor[4], 1);
+    cursor = (u8 *)func_15034860(cursor, actor, first, second);
+    *(s16 *)cursor = 0x1000;
 }
 
 u8 *func_150341BC(u8 *cursor, s32 slot) {

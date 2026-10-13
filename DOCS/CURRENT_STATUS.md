@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c30d7a0; tools are committed before the consumer pin.
+  checkpoint pins tools 1943c4d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-stream guarded-match checkpoint; full Game remains active:
+Current actor command-dispatch direct-match checkpoint; full Game remains active:
+[Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
+func_15033FE0 replaces its placeholder with the complete119-word dispatcher,
+directly exact/frame0x28/no target guards. Declaration order recovers first-result
+home M-8 rather than M-16; fired read-only compiler captures preserve object
+identity. The37-entry table is exact. One derived neighbor LO16 layout adapter
+translates148->160 over retail floats/alignment, preserving all neighbor code.
+Eight installed tests pass; connected119/97-word parent/child, owner/padder/rebase,
+356-byte literal image and unchanged189,088-byte data gates pass. Fresh text
+integrity passes. Game2,823/4,823 (58.53%), total3,496/5,496 (63.61%),
+drift0/different2,000, converted fixed. Tools1943c4d first; older unrelated work
+preserved/no push. Next func_15034860,405 words/frame0x48/372 differences.
+Direct guard elimination for earlier matches, text/translator and full
+Game/runtime/hardware gates remain open.
+
+Previous actor command-stream guarded-match checkpoint:
 [Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
 func_150341BC's full typed body replaces its zero-return placeholder. All97 linked
 words/frame0 match using52 derived register/cursor/branch guards; raw C96/62

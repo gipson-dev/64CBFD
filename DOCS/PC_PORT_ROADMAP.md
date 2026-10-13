@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Dispatch Direct Match - 2026-10-13
+
+[Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
+
+- [x] Recover func_15033FE0's buffer/state gates, grouped type writers, live byte reloads, two lookup results, final cursor and terminator; match all119 words/frame0x28 directly with no target guards.
+- [x] Measure12 source forms and trace first-result home M-16->M-8/local16->8 with fired compiler observations and unchanged object identity; no padding, frame guards or profile change.
+- [x] Preserve the37-entry parent table, retail floats/alignment and existing five-entry table; derive one neighbor LO16 translation148->160 and verify all nine linked neighbors, both padders and carry-sensitive rebases.
+- [x] Pass eight installed tests,16,384 guest/32,768 native32 cases,384 own-access fault pairs and36 actual119/97-word parent/child cases; pass literal356-byte image, unchanged data and fresh text integrity gates.
+- [x] Update README aggregate rows to Game2,823/4,823 and total3,496/5,496, zero drift/converted fixed; bank tools1943c4d first and preserve older HEAD/unrelated fingerprints.
+- [ ] Recover and qualify the405-word finalizer func_15034860, frame0x48/current372 differences. Keep earlier direct guard elimination, full Game/text/translator and runtime gates open.
+
 ## Game Actor Command Stream Guarded Match - 2026-10-13
 
 [Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
@@ -8,7 +19,7 @@
 - [x] Derive52 guarded closed register/cursor/branch corrections from raw96-word C, not a copied body. Qualify all52 stale-word controls,8,832 guest plus32 aliases,131,072 native32,166 faults and12 actual caller windows.
 - [x] Preserve all nine neighbors/pools, both full-owner padders and three exact rebases; pass literal360-byte image accounting, exact52-row append, unchanged data and fresh text integrity gates.
 - [x] Update README aggregates to Game2,822/4,823 and total3,495/5,496, zero drift/converted fixed; bank tools c30d7a0 first and preserve older HEAD/unrelated hashes.
-- [ ] Recover and qualify the119-word parent func_15033FE0, currently115 differences; keep direct guard elimination, full Game/text/translator and runtime gates open.
+- [x] Recover and qualify the119-word parent func_15033FE0 directly in Note1324; earlier direct guard elimination and full Game/text/translator/runtime remain open separately.
 
 ## Game Actor Callback Direct Match - 2026-10-12
 

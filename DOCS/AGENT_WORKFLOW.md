@@ -295,6 +295,23 @@ ELF serialization must be diagnosed with exact records, named-definition equalit
 and closed byte accounting; never exclude whole metadata sections. Advance text
 ELF/guard pins only after the literal image and exact guard-prefix append gates.
 
+The complete parent dispatcher is directly exact in
+[Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_dispatch_candidates --screens`
+and `python3 -m unittest tools.tests.test_game_actor_command_dispatch_match -v`.
+Distinguish original119/frame0x28 from the prior frame0x30 screen. First-result
+declaration order resolves M-16->M-8/local16->8; require fired compiler captures,
+unchanged executable hashes and traced/normal object identity. No frame guards.
+Whole-owner pool packing is not isolated-section padding: the neighbor table
+starts at148, whereas retail keeps a12-byte float/alignment gap and starts at160.
+Translate exactly that neighbor LO16 addend, move the owner's rodata base to the
+new parent table, and test original code/table rebases plus GNU HI/LO carries.
+Require the entire ELF to equal the prior image with only parent instructions
+and its symbol size updated. Advance text ELF/guard/Makefile fingerprints only
+after those independent gates; archive the old fixture and preserve other inputs.
+Public reachability covers117 words; two original duplicate loads are unreachable,
+not omitted. Actual97-word child tests do not qualify opaque remaining providers.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

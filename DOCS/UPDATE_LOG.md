@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Dispatch Direct Match And Table Layout
+
+[Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
+func_15033FE0's119-word dispatcher replaces its placeholder and emits directly
+exact/frame0x28. First-result declaration order resolves local16->8; compiler
+observations preserve object identity. The37-entry parent table and all retail
+data stay exact; one derived neighbor LO16 translation148->160 retains its
+linked instructions. Eight installed tests qualify guest/native/fault/connected
+behavior, both owner padders and independent carry-sensitive links. All356
+changed ELF bytes are target/size only; fresh text integrity passes. Game2,823/
+4,823, total3,496/5,496, zero drift/converted fixed; README aggregates only.
+Tools1943c4d first, older work preserved/no push. Next405-word func_15034860,
+frame0x48/372 differences; full Game and earlier direct/text/translator remain open.
+
 ## 2026-10-13 Game Actor Command Stream Guarded Match
 
 [Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):

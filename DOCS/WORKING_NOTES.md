@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-13:
+[Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
+func_15033FE0 matches all119 words/frame0x28 directly, no target guards.
+Fired compiler captures explain first-result home M-16->M-8/local16->8.
+The37-entry table is exact; one neighbor LO16 layout adapter148->160 preserves
+all neighbor instructions and retail floats/alignment. Eight installed tests,
+literal356-byte image/data and fresh text checks pass. Game2,823/4,823,
+total3,496/5,496, zero drift/converted fixed. Tools1943c4d first, older work
+preserved/no push. Next405-word func_15034860; full Game/text/translator and
+earlier direct fitting stay open.
+
+2026-10-13:
 [Note 1323](WORKING_NOTES/1323-game-actor-command-stream-guarded-match-20261013.md):
 func_150341BC's complete command-stream body matches all97 linked words/frame0
 with52 derived guards; raw C96/62 is not direct. Eight installed tests and final

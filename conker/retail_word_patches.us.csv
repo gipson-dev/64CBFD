@@ -14692,3 +14692,4 @@ generated_61490,func_150341BC,0x164,0x8F28031C,0x8F19031C,-,-,Restore command cu
 generated_61490,func_150341BC,0x168,0x85090012,0x87280012,-,-,Restore command cursor split and closed scratch GPR cycle with branch relocation,,,false
 generated_61490,func_150341BC,0x16C,0x00095023,0x00084823,-,-,Restore command cursor split and closed scratch GPR cycle with branch relocation,,,false
 generated_61490,func_150341BC,0x170,0xA4CAFFFE,0xA4C9FFFE,-,-,Restore command cursor split and closed scratch GPR cycle with branch relocation,,,false
+generated_61490,func_1503453C,0x84,0x8C2F0094,0x8C2F00A0,R_MIPS_LO16:.rodata,R_MIPS_LO16:.rodata,Translate existing actor type table over original float and alignment gap,,,false
