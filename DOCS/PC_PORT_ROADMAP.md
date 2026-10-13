@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Grouped Actor Dispatch Direct Match - 2026-10-12
+
+[Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
+
+- [x] Recover func_150226BC's halfword/type gates, actor lookup, live state/tag reads, incoming group home and post-callback actor clear; match all38 words directly, frame0x20/no guards.
+- [x] Use the owner's existing no-unroll profile; qualify17,280 guest cases, 288 connected cases with actual caller/helpers, 16,816 native32 comparisons and266 own-access fault pairs.
+- [x] Retain all56 neighbors/relative relocations/pools, both full-owner padders and three symbol rebases; pass literal image/data and fresh text integrity gates, including the closed16-byte ABS serialization permutation.
+- [x] Update matching to Game2,818/4,823 and total3,491/5,496, zero drift/converted totals fixed.
+- [x] Bank tools a7b5b37 first; pass syntax/tools/link checks and preserve older HEAD/unrelated saved fingerprints.
+- [ ] Continue func_1503453C's42-word actor-type/jump-table dispatch and its matching gates. Keep text218/114/cut27 and translator open; no live gameplay/hardware acceptance is added.
+
 ## Game One-Shot Timer Direct Match - 2026-10-12
 
 [Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
@@ -9,7 +20,7 @@
 - [x] Pass the literal whole-ELF/data audit, including the closed eight-byte ABS symbol serialization permutation with unchanged named definitions; archive/advance the text fixture and pass immutable/corruption controls.
 - [x] Update matching to Game2,817/4,823 and total3,490/5,496, with zero drift and unchanged converted totals.
 - [x] Bank tools 6a9eb2d first; pass syntax/tools/link checks and preserve the older tools HEAD and all unrelated saved fingerprints.
-- [ ] Continue func_150226BC's two-index record/actor dispatch and complete its matching gates. Keep text218/114/cut27 and translator open; no hardware queue/interrupt or live-gameplay acceptance is inferred.
+- [x] Finish func_150226BC's record/actor dispatch and matching gates; see Note1318. Text/translator remain explicitly open in the current checklist.
 
 ## Game Rectangle Bounds Predicate Direct Match - 2026-10-12
 

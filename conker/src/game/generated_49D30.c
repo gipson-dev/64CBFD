@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern u16 *D_800C35C8[];
+extern u8 *D_800C35F0[];
 
 extern void (*D_80086014[])();
 extern f32 D_800C3594;
@@ -277,8 +279,24 @@ void func_15022640(s32 value, s32 group) {
     *count = count_value + 1;
 }
 
-s32 func_150226BC() {
-    return 0;
+void func_150226BC(s32 index, s32 group) {
+    u8 *actor;
+    u8 *record;
+
+    if (D_800C35C8[group][index] == 0) {
+        return;
+    }
+    record = D_800C35F0[group] + (u32)index * 8;
+    if (*(u16 *)record != 3) {
+        return;
+    }
+    actor = func_151149AC(record[2]);
+    if (actor != NULL) {
+        if (actor[0x6E] == 1) {
+            func_15022640(actor[0x72], group);
+            actor[0x6E] = 0;
+        }
+    }
 }
 
 void func_15022754(s32 index) {

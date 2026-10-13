@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Grouped actor dispatch direct match](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
+  func_150226BC matches all38 words directly at the unchanged owner profile,
+  frame0x20/no guards. Seven pre-/post-install tests qualify real connected
+  caller/helpers, 56 neighbors/both padders and the closed image/data audit.
+  Game matching2,818/4,823; tools a7b5b37 first, next func_1503453C.
+  Text/translator stay open.
+
 - [One-shot timer direct match](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
   func_1501BB20 matches all38 words directly, frame0x28/no guards. Seven pre-
   and post-install tests qualify unsigned64/O32 behavior, seven neighbors,

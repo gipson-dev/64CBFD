@@ -224,6 +224,16 @@ a compiler/runtime to bypass a missing precondition. Metadata permutations
 require exact named-definition equality and closed byte accounting, never a
 blanket symbol/string-table exclusion. Opaque providers do not prove interrupts.
 
+The grouped descriptor/actor dispatcher is qualified in
+[Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_grouped_actor_dispatch_candidates --controls`
+and `python3 -m unittest tools.tests.test_game_grouped_actor_dispatch_match -v`.
+Read per-owner flags before copied-owner tests: generated_49D30 already disables
+unrolling. Actor-first local declaration preserves the real SP+0x1C home.
+Separate deliberate guest home overwrites from portable native helper mutations.
+The actual caller/lookup/append instructions are connected evidence, not opaque
+provider behavior; neither is a claim of full gameplay or hardware acceptance.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

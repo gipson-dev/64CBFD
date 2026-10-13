@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6a9eb2d; tools are committed before the consumer pin.
+  checkpoint pins tools a7b5b37; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current one-shot timer direct-match checkpoint; full Game matching remains active:
+Current grouped-actor dispatch direct-match checkpoint; full Game matching remains active:
+[Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
+func_150226BC replaces its zero-return placeholder with the recovered two-index
+descriptor/actor dispatcher. All38 words/152 bytes match directly, frame0x20,
+using the unchanged owner no-unroll profile and no guards. Seven pre-/post-
+install tests pass: 17,280 isolated guest, 288 actual connected caller/helper
+cases, 16,816 native32 comparisons and 266 fired cuts. All56 neighbors/pools,
+both full-owner padders and three rebases agree. Whole ELF changes only120
+target bytes, size12->152 and a closed16-byte ABS value/string permutation;
+named definitions/data/guards/layout remain exact. Text integrity controls pass,
+broader unchanged receipts reused. Game2,818/4,823 (58.43%),
+total3,491/5,496 (63.52%), drift0/different2,005, converted totals unchanged.
+Next func_1503453C, the42-word actor-type/jump-table dispatcher; keep the text
+218/114/cut27 and matrix translator open.
+Tools a7b5b37 is banked first; older HEAD/unrelated dirty work preserved.
+
+Previous one-shot timer direct-match checkpoint:
 [Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
 func_1501BB20 replaces its zero-return placeholder with the gated void timer
 routine. All38 words/152 bytes match directly, frame0x28/no guards/profile

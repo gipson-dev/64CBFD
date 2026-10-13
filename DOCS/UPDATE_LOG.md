@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-12 Game Grouped Actor Dispatch Direct Match
+
+[Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
+func_150226BC now emits all38 words/frame0x20 directly at the original owner
+no-unroll profile, no guards. Seven pre-/post-install tests pass: 17,280 guest,
+288 actual connected caller/helper cases, 16,816 native32 and266 access-cut
+comparisons. All56 neighbors/pools and both full-owner padders agree; the strict
+image audit allows only slot/size and the closed16-byte ABS serialization.
+Data and fresh text integrity remain exact. Game2,818/4,823, total3,491/5,496,
+drift0/converted fixed. Next func_1503453C; text/translator remain open.
+Tools a7b5b37 is committed first; older HEAD/unrelated dirty work preserved.
+
 ## 2026-10-12 Game One-Shot Timer Direct Match
 
 [Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):

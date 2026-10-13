@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-12:
+[Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
+func_150226BC matches all38 words/frame0x20 directly with the original owner
+profile/no guards. Seven pre-/post-install tests include17,280 guest, 288 real
+connected caller/helper cases, 16,816 native32 and266 fault pairs. All56
+neighbors, both padders/rebases and strict image/data/text integrity gates pass.
+Game2,818/4,823, total3,491/5,496, drift0/converted fixed; next func_1503453C.
+Keep text218/114/cut27 and translator open; full Game goal remains active.
+Tools a7b5b37 first; older HEAD/unrelated dirty work preserved, no push.
+
+2026-10-12:
 [Note 1317](WORKING_NOTES/1317-game-one-shot-timer-direct-match-20261012.md):
 func_1501BB20 matches all38 words/frame0x28 directly, no guards. Seven target
 tests pass before/after installation: 36,864 guest, 233,472 native32, 92 fault
