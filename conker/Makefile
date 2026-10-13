@@ -180,6 +180,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_siacs2.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C540.c.o: OPT_FLAGS := -O1
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_58F80.c.o: RETAIL_RODATA_SYMBOL := jtbl_80096DF8_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_5D2C0.c.o: RETAIL_RODATA_SYMBOL := jtbl_80096F40_game
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_61490.c.o: RETAIL_RODATA_SYMBOL := jtbl_80097D20_game
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_61490.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_AEB40.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009CC40_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1BFCB0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8160_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1C1150.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8258_game

@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Type Dispatch Direct Match - 2026-10-12
+
+[Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
+
+- [x] Recover func_1503453C's unsigned type byte, full index forwarding, hybrid switch and five-entry table; match all42 words/frame0x18 directly, no guards/profile change.
+- [x] Qualify6,144 guest, 26,624 native32, 360 actual connected-caller cases, 23 fired access-cut pairs and four effective native negatives.
+- [x] Preserve nine neighbors/relative relocations, original table/data owner, both full-owner padders and three rebases; pass literal whole-image/data and fresh text integrity controls.
+- [x] Update Game2,819/4,823 and total3,492/5,496, zero drift/converted totals unchanged; bank tools84cfb3a first and preserve older HEAD/unrelated fingerprints.
+- [ ] Continue func_15034728's48-word masked matrix clear and final matching gates. Keep text218/114/cut27 and translator open; no downstream-helper/gameplay/hardware acceptance is added.
+
 ## Game Grouped Actor Dispatch Direct Match - 2026-10-12
 
 [Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
@@ -9,7 +19,7 @@
 - [x] Retain all56 neighbors/relative relocations/pools, both full-owner padders and three symbol rebases; pass literal image/data and fresh text integrity gates, including the closed16-byte ABS serialization permutation.
 - [x] Update matching to Game2,818/4,823 and total3,491/5,496, zero drift/converted totals fixed.
 - [x] Bank tools a7b5b37 first; pass syntax/tools/link checks and preserve older HEAD/unrelated saved fingerprints.
-- [ ] Continue func_1503453C's42-word actor-type/jump-table dispatch and its matching gates. Keep text218/114/cut27 and translator open; no live gameplay/hardware acceptance is added.
+- [x] Finish func_1503453C's42-word actor-type/jump-table dispatch and matching gates; see Note1319. Text/translator remain open in the current checklist.
 
 ## Game One-Shot Timer Direct Match - 2026-10-12
 

@@ -234,6 +234,17 @@ Separate deliberate guest home overwrites from portable native helper mutations.
 The actual caller/lookup/append instructions are connected evidence, not opaque
 provider behavior; neither is a claim of full gameplay or hardware acceptance.
 
+The indexed actor-type switch/table is qualified in
+[Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md).
+Use `python3 -m tools.experiments.game_actor_type_dispatch_candidates` and
+`python3 -m unittest tools.tests.test_game_actor_type_dispatch_match -v`.
+Retain the five-entry compiler table and original data owner via the scoped
+RETAIL_RODATA_SYMBOL binding; a merged predicate is not direct-match credit.
+Complete GLOBAL_ASM postprocessing in copied-owner tests. Archive and advance
+only the exact ELF/two-line Makefile text receipts after literal image proof;
+preserve all other text fixtures. The connected original caller does not qualify
+its opaque large provider or restore that caller's production placeholder.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

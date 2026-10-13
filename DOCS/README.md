@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor type dispatch direct match](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
+  func_1503453C matches all42 words/frame0x18 and its five table entries directly,
+  no guards/profile change. Seven pre-/post-install tests qualify the complete
+  owner and connected caller; literal image/data/text gates pass. Game2,819/4,823;
+  tools84cfb3a first, next func_15034728. Text/translator/helper remain open.
+
 - [Grouped actor dispatch direct match](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
   func_150226BC matches all38 words directly at the unchanged owner profile,
   frame0x20/no guards. Seven pre-/post-install tests qualify real connected

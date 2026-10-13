@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-12:
+[Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
+func_1503453C matches all42 words/frame0x18 and five table entries directly,
+no guards/profile change. Seven pre-/post-install tests, nine owner neighbors,
+both padders/three rebases and literal image/data/text integrity gates pass.
+Game2,819/4,823, total3,492/5,496, drift0/converted fixed; tools84cfb3a first.
+Next func_15034728. Keep text218/114/cut27, translator and downstream helper
+open; older HEAD/unrelated work preserved, no push/full-goal completion.
+
+2026-10-12:
 [Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
 func_150226BC matches all38 words/frame0x20 directly with the original owner
 profile/no guards. Seven pre-/post-install tests include17,280 guest, 288 real

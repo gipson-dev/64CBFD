@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a7b5b37; tools are committed before the consumer pin.
+  checkpoint pins tools 84cfb3a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current grouped-actor dispatch direct-match checkpoint; full Game matching remains active:
+Current actor-type dispatch direct-match checkpoint; full Game matching remains active:
+[Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
+func_1503453C replaces its placeholder with the complete actor-type switch,
+all42 words/168 bytes/frame0x18 directly, no guards/profile change. Its five
+table entries match retail; a scoped Makefile binding keeps the original owner.
+Seven pre-/post-install tests pass: 6,144 guest, 26,624 native32, 360 actual
+connected-caller cases and23 fired fault pairs. All nine neighbors, both full-
+owner padders and three rebases agree. Literal whole ELF permits only119 target
+bytes and one size byte; all data/guards/progress/layout remain fixed. Archived
+text ELF/Makefile receipts advance only after that gate; fresh integrity controls
+pass. Game2,819/4,823 (58.45%), total3,492/5,496 (63.54%), drift0/different2,004,
+converted totals fixed. Next func_15034728's48-word masked matrix clear;
+text218/114/cut27 and translator stay open. Tools84cfb3a first, no push;
+older HEAD/all unrelated fingerprints preserved. Downstream helper remains opaque.
+
+Previous grouped-actor dispatch direct-match checkpoint:
 [Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):
 func_150226BC replaces its zero-return placeholder with the recovered two-index
 descriptor/actor dispatcher. All38 words/152 bytes match directly, frame0x20,

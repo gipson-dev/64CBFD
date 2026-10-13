@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-12 Game Actor Type Dispatch Direct Match
+
+[Note 1319](WORKING_NOTES/1319-game-actor-type-dispatch-direct-match-20261012.md):
+func_1503453C emits all42 words/frame0x18 and the original five-entry table
+directly, no guards/profile change. Seven pre-/post-install tests qualify6,144
+guest, 26,624 native32, 360 connected-caller cases and23 own-access cuts.
+All nine neighbors/both padders/rebases agree; whole ELF changes only119 target
+bytes and one size byte, all data fixed. Fresh text integrity controls pass.
+Game2,819/4,823, total3,492/5,496, drift0/converted fixed. Tools84cfb3a first;
+older HEAD/unrelated dirty work preserved. Next func_15034728; text/translator
+and downstream helper remain open, no push/full-gameplay claim.
+
 ## 2026-10-12 Game Grouped Actor Dispatch Direct Match
 
 [Note 1318](WORKING_NOTES/1318-game-grouped-actor-dispatch-direct-match-20261012.md):

@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/61490.s. */
 
+extern u8 D_800CC2D4[];
+void func_1503B9BC(s32 index);
+
 extern u8 D_800CC2D0[];
 extern u8 D_800BEAC0;
 extern s32 D_800D121C;
@@ -33,8 +36,18 @@ u8 *func_15034340(u8 *arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_61490/func_150344A0.s")
 
-s32 func_1503453C() {
-    return 0;
+void func_1503453C(s32 index) {
+    switch (D_800CC2D4[(u32)index * 0x32C]) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 0x80:
+        case 0xB0:
+            func_1503B9BC(index);
+            break;
+    }
 }
 
 s32 func_150345E4() {
