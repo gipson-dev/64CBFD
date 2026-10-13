@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1943c4d; tools are committed before the consumer pin.
+  checkpoint pins tools b6ba284; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-dispatch direct-match checkpoint; full Game remains active:
+Current actor command-finalizer semantic-recovery checkpoint; matching remains open:
+[Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
+func_15034860's placeholder is replaced by the complete two-channel contract.
+Raw C395/frame0x40 versus retail405/frame0x48 leaves398 word differences,
+not a match or improvement in exact-word score. No guards/profile/ABI change.
+Ten installed tests pass:15,288 guest,385 selector/alias,8,192 native32,
+480 independently rebased and200 real119-word parent cases; nine neighbors/
+pools/both padders stay fixed. Literal image accounts1,161 target/two size/
+79 closed metadata bytes; all other code/data/guards remain unchanged. Fresh
+text integrity passes. Toolsb6ba284 first; older work preserved/no push.
+Game2,823/4,823 (58.53%), total3,496/5,496 (63.61%), drift0/different2,000,
+converted fixed. README aggregate rows already agree and stay unchanged.
+Next same func_15034860's length, first-parameter home, frame and scheduling;
+physical/private/fault matching, full Game/text/translator/runtime remain open.
+
+Previous actor command-dispatch direct-match checkpoint:
 [Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
 func_15033FE0 replaces its placeholder with the complete119-word dispatcher,
 directly exact/frame0x28/no target guards. Declaration order recovers first-result

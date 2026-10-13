@@ -312,6 +312,22 @@ after those independent gates; archive the old fixture and preserve other inputs
 Public reachability covers117 words; two original duplicate loads are unreachable,
 not omitted. Actual97-word child tests do not qualify opaque remaining providers.
 
+The complete actor command finalizer is semantically recovered, not matched, in
+[Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_finalizer_candidates` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_recovery -v`.
+Keep raw395/frame0x40/398 differences separate from retail405/frame0x48.
+Full-word selectors, signed versus unsigned byte conversions, unsigned PRNG
+modulo and pre-header value reads need effective negatives. Native vectors are
+derived from the independently guest-checked reference, with numeric host-endian
+halfwords; actor/output overlap is qualified in the guest, not claimed portable.
+Provider mutation tests do not emulate the PRNG or hardware. Empty-channel
+private witnesses reject literal frame equivalence; do not infer own-access
+fault-prefix or saved-role parity from public output agreement. Metadata must
+have exact named definitions and closed ordering accounting, never whole-section
+exclusions. Advance only the protected text ELF pin after independent image proof.
+Finish the same routine's length/homes/frame/scheduling next, with no new guards.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

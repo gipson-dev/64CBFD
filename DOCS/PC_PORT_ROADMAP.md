@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Semantic Recovery - 2026-10-13
+
+[Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
+
+- [x] Recover both func_15034860 channels: full-word0xFF gates, wrapped command tags, ordered signed/unsigned float conversions, live field reloads, PRNG ranges, clamps and timer updates; replace its zero-return placeholder.
+- [x] Qualify15,288 guest/385 selector-alias/8,192 native32 cases, five native negatives and a compiled pre-header-read negative; keep native-endian, opaque-provider and physical-frame boundaries explicit.
+- [x] Preserve nine neighbors/pools and both owner padders; pass480 independently rebased and200 actual119-word parent cases, closed1,242-byte image/data accounting and fresh text integrity.
+- [x] Bank toolsb6ba284 first and preserve older HEAD/122 unrelated fingerprints. Re-measure unchanged Game2,823/4,823 and total3,496/5,496; do not churn the correct README aggregate rows.
+- [ ] Finish the same func_15034860's raw395/frame0x40/398-difference source fit against retail405/frame0x48. No guards or matching credit yet; qualify exact parameter homes, saved lifetimes, scheduling and own-access fault prefixes.
+- [ ] Continue wider Game, earlier guard elimination, retained text/translator and hardware/runtime gates separately.
+
 ## Game Actor Command Dispatch Direct Match - 2026-10-13
 
 [Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
@@ -9,7 +20,7 @@
 - [x] Preserve the37-entry parent table, retail floats/alignment and existing five-entry table; derive one neighbor LO16 translation148->160 and verify all nine linked neighbors, both padders and carry-sensitive rebases.
 - [x] Pass eight installed tests,16,384 guest/32,768 native32 cases,384 own-access fault pairs and36 actual119/97-word parent/child cases; pass literal356-byte image, unchanged data and fresh text integrity gates.
 - [x] Update README aggregate rows to Game2,823/4,823 and total3,496/5,496, zero drift/converted fixed; bank tools1943c4d first and preserve older HEAD/unrelated fingerprints.
-- [ ] Recover and qualify the405-word finalizer func_15034860, frame0x48/current372 differences. Keep earlier direct guard elimination, full Game/text/translator and runtime gates open.
+- [x] Recover and qualify func_15034860's complete semantics in Note1325. Raw395/frame0x40/398 differences remains unmatched; exact fitting and wider gates stay open separately.
 
 ## Game Actor Command Stream Guarded Match - 2026-10-13
 

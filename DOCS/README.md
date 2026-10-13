@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer semantic recovery and matching boundary](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
+  The full two-channel body replaces func_15034860's placeholder. Raw395/
+  frame0x40/398 differences is not exact against retail405/frame0x48.
+  Ten installed tests, real parent/rebases/owner and closed image/data/text gates
+  pass. Toolsb6ba284 first; matching totals stay fixed. Next the same function's
+  exact length, parameter-home, frame and scheduling work; broader gates stay open.
+
 - [Actor command-dispatch direct match and table layout](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
   func_15033FE0 matches all119 words/frame0x28 directly, no target guards.
   Compiler captures explain first-result home/local shrink; one derived neighbor

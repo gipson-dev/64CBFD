@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Semantic Recovery
+
+[Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
+func_15034860's full two-channel body replaces its zero-return placeholder;
+retain the existing four-argument/s32 pointer-result ABI. Raw395/frame0x40/398
+differences versus retail405/frame0x48 is not byte-exact; no new guards/profile
+change or credit. Ten installed tests cover guest/native aliases and negatives,
+480 independent rebase cases and200 actual parent cases. Nine owner neighbors/
+pools/both padders remain fixed. Whole ELF changes exactly1,161 target/two size/
+79 closed symbol-string ordering bytes; other code/data/guards unchanged.
+Fresh text integrity passes. Toolsb6ba284 first, older work preserved/no push.
+Game2,823/4,823 and total3,496/5,496 unchanged, README rows already correct.
+Next same function's exact source fit; full Game/text/translator/runtime stay open.
+
 ## 2026-10-13 Game Actor Command Dispatch Direct Match And Table Layout
 
 [Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):

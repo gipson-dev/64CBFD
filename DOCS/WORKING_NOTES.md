@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
+func_15034860 now has the complete two-channel semantic body, not a match:
+raw395/frame0x40/398 differences against retail405/frame0x48, no guards/credit.
+Ten installed tests,385 aliases/selectors,480 rebases/200 real parent cases,
+nine owner neighbors/both padders and exact1,242-byte image/data/text gates pass.
+Matching/converted totals and correct README rows stay fixed. Toolsb6ba284 first,
+older work preserved/no push. Next same function's homes/frame/length/scheduling;
+full Game/text/translator and physical/runtime gates remain open.
+
+2026-10-13:
 [Note 1324](WORKING_NOTES/1324-game-actor-command-dispatch-direct-match-and-table-layout-20261013.md):
 func_15033FE0 matches all119 words/frame0x28 directly, no target guards.
 Fired compiler captures explain first-result home M-16->M-8/local16->8.
