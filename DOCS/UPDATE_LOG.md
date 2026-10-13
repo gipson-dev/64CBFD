@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 SDK-Typed Matrix Reflection Saved Index
+
+[Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
+Recover the original four cross-call s2 shift instructions using SDK matrix
+indexing, then restore s0 cursor/s1 matrix roles and the actor pointer lifetime.
+Candidate331 ->259 differences,125 changed words,486/frame0x190, uninstalled.
+All25 checks pass99.151s; all192 prior modeled agreements survive10,260 fired
+cuts. Retain the old negative controls with explicit333/331 references and a
+new effective64-byte wrong-index control. Tools4efe06f first; no production,
+README aggregates or host edits. Opening stores and cache/offset roles remain open.
+
 ## 2026-10-13 Matrix Reflection Direct Homes And Restart Verification
 
 [Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):

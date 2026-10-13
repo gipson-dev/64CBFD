@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [SDK-typed matrix reflection saved index](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
+  Recover four original s2 shifts and callback pointer roles at486/frame0x190,
+  improving331 ->259 differences. All25 checks pass; production remains fixed.
+  Saved-store order, cache/offset roles and full matching remain open.
+
 - [Matrix reflection direct homes and cache removal](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
   Uninstalled486/frame0x190/331 with recovered direct homes, s6 and flag roles.
   All24 checks pass; saved schedule/index/full matching remain open. Restarted

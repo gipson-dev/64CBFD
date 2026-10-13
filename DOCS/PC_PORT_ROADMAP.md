@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## SDK-Typed Matrix Reflection Saved Index - 2026-10-13
+
+[Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
+
+- [x] Recover all four original s2 shifts with SDK matrix indexing; remove the extra input cursor without padding or fixed-register bindings.
+- [x] Restore s0 cursor/s1 matrix roles and the actor's s0 pointer restoration; retain486 words/frame0x190 at259 differences.
+- [x] Measure75 complete forms/23 eligible arrays, rejecting incorrect extents/frames and verifying literal equivalences.
+- [x] Pass25 target/text checks in99.151s; retain192 prior modeled agreements over10,260 fired cuts against the331 baseline.
+- [x] Preserve all eight historical329 rejections within48 current rejection domains; retain all192 count-distance gates and an effective64-byte wrong-index negative.
+- [x] Preserve production/README and all438 older fingerprints; bank tools4efe06f before the exact consumer pin, no push or host work.
+- [ ] Recover the early s6 save/argument move, s4/s5 conversion-cache/offset roles and remaining floating/temporary schedules.
+- [ ] Finish259 differences and all private/fault/linked-image gates before installation or matching credit.
+
 ## Matrix Reflection Direct Homes And Cache Removal - 2026-10-13
 
 [Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
@@ -10,7 +23,8 @@
 - [x] Pass24 target/text checks in76.603s, preserving192 prior modeled agreements over10,196 fired cuts and eight older329 rejection domains.
 - [x] Bank toolsaf0ed5c first; preserve production/README and all436 older fingerprints with only two absent additions, no push.
 - [x] Verify restarted REA connection and document the Windows adapter's MIPS ELF rejection without installing dependencies.
-- [ ] Recover original saved-store order and shifted-index lifetime instead of the strength-reduced s2 input cursor.
+- [x] Recover the original shifted-index lifetime instead of the strength-reduced s2 input cursor; all four shifts are exact in Note1343.
+- [ ] Recover original saved-store order; Note1343 still starts with the RA save rather than retail's s6 save.
 - [ ] Finish331 differences and private/fault/linked-image gates before installation, matching credit or host/runtime claims.
 
 ## Matrix Reflection Economical Index And Conditional Homes - 2026-10-13

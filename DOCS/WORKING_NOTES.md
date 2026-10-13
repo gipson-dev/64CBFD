@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-13:
+[Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
+func_15034F30 SDK indexing and real callback-local reuse recover four original
+s2 shifts at486/frame0x190/259 versus331 differences,125 changed words.
+All25 checks99.151s;192 prior agreements/10,260 fired cuts retained. Explicit333
+and331 controls preserve eight old rejections within48 current domains. Tools
+4efe06f first; older438 hashes fixed/two additions. Production/totals/README
+unchanged. Finish saved-store order, s4/s5 roles and259 words before installation.
+
+2026-10-13:
 [Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
 func_15034F30 direct homes and live dispatch restore486/frame0x190/331,
 uninstalled. Remove reflection cache; recover s6 and flag roles, not saved

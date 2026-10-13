@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools af0ed5c; tools are committed before the consumer pin.
+  checkpoint pins tools 4efe06f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current SDK-typed matrix-reflection saved-index checkpoint:
+[Note 1343](WORKING_NOTES/1343-game-matrix-reflection-sdk-typed-saved-index-recovery-20261013.md):
+func_15034F30 remains uninstalled at486 words/frame0x190,331 ->259 differences,
+125 changed words. Recover all four retail s2 shifts, s0 cursor/s1 matrix roles
+and the actor's s0 pointer restoration; remove the extra advancing input cursor.
+All25 checks pass99.151s. Against331,10,260 fired cuts retain192 prior modeled
+agreements; the old eight lower329 rejection domains remain within48 current
+rejections. Saved-store order, s4/s5 cache/offset roles and returnGPR9/14 stay
+different. Production/totals/README fixed. Tools4efe06f first; all438 older hashes
+preserved/two additions. Next remaining259 words and full private/linked fit.
 
 Current matrix-reflection direct-home and cache-removal checkpoint:
 [Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
