@@ -56,10 +56,9 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         } else {
             scale = (f32)(u32)actor[0x201] * D_80097D44;
         }
-        lower = 40;
-        delta = actor[0x1FE];
         primaryIndex = first;
-        value = (s32)((f32)(u32)delta * scale * D_80097D48);
+        value = (s32)((f32)(u32)actor[0x1FE] * scale * D_80097D48);
+        lower = 40;
         if (!suppressed) {
             *(s16 *)output = (u32)primaryIndex * 6 + primaryBias;
             *(s16 *)(output + 2) = value;

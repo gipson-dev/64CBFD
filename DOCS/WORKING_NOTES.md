@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-13:
+[Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
+func_15034860 restores its numeric T7/tag T4 input roles and closes primary
+cut9 on44 paths, retaining405/frame0x48/six slots/160 homes. Differences298->269;
+exact represented fault states452->720/2938, next cuts10/7 still open.
+All13 installed tests and181-byte target-only image/data/text gates pass.
+Tools9cd126b first, older411 unrelated hashes preserved/no push; README totals
+fixed. Continue this same function's remaining scheduling and full matching.
+
+2026-10-13:
 [Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
 func_15034860 closes sampled cut5 and matches its first14 words, preserving
 405/frame0x48/six slots/160 homes. Differences299->298, still unmatched.

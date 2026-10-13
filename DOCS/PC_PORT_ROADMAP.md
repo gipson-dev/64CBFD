@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Direct Byte Input And Primary Cut9 - 2026-10-13
+
+[Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
+
+- [x] Recover direct unsigned numeric-byte conversion and later lower initialization;405/frame0x48, differences298->269, no guards/profile/ABI change.
+- [x] Restore T7 numeric/T4 tag roles and close primary cut9 on44 sampled paths; retain first14 words, six slots and160 incoming-home aliases.
+- [x] Pass all13 pre-install/installed tests and2938 fired fault pairs; represented exact states452->720, first cuts10/7 still different.
+- [x] Retain M48/frame/save observations and full bounded guest/native/owner/rebase/parent contracts with effective controls.
+- [x] Prove181 target-only ELF changes, all other code/data/metadata/extent fixed and720 owners exact; advance only the protected text ELF pin.
+- [x] Bank tools9cd126b first and preserve older HEAD/411 unrelated hashes; keep correct README aggregates.
+- [ ] Recover primary cut10 lower-bound scheduling and disabled-primary cut7 second-selector allocation on the same function.
+- [ ] Finish269 differences and all private/fault/owner/rebase/image gates; wider Game/text/translator/hardware goals remain open.
+
 ## Game Actor Command Finalizer Scalar Predicates And Cut5 - 2026-10-13
 
 [Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
@@ -10,8 +23,8 @@
 - [x] Observe the real constant124 register/type change and unchanged M48/frame layout with normal/traced object identity; pass full bounded guest/native/owner/rebase/parent gates.
 - [x] Prove50 target-only ELF changes, all other size/metadata/code/data fixed and720 owners exact; advance only the protected text ELF pin.
 - [x] Bank tools79fe8a8 first, preserve older HEAD/132 unrelated hashes, and retain correct README aggregates.
-- [ ] Recover primary cut9 byte-capture/tag/lower scheduling and disabled-primary cut7 second-selector allocation on the same function.
-- [ ] Finish298 differences and all private/fault/owner/rebase/image gates; wider Game/text/translator/hardware goals remain open.
+- [x] Close primary cut9 byte/tag state in Note1331 while preserving the full ABI/profile and six slots.
+- [ ] Continue primary cut10 lower scheduling, disabled-primary cut7 allocation and269 remaining differences under Note1331/full gates.
 
 ## Game Actor Command Finalizer Selector Delay Slot And Noise Fit - 2026-10-13
 
@@ -24,7 +37,7 @@
 - [x] Prove254 target-only ELF changes with every other byte/size/metadata fixed and720 data owners exact; advance only the protected text ELF pin.
 - [x] Bank tools e37e4b3 first, preserve older HEAD/130 unrelated hashes, and leave the already-correct README aggregates alone.
 - [x] Restore the GPR3/7 opening roles and close sampled cut5 in Note1330; first14 words exact, differences299->298.
-- [ ] Finish new cut9/cut7 boundaries and all298 remaining differences under Note1330 with complete private/fault/owner/rebase/image proof.
+- [ ] Continue new cut10/cut7 boundaries and269 remaining differences under Note1331 with complete private/fault/owner/rebase/image proof.
 - [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime goals separately.
 
 ## Game Actor Command Finalizer Opening Fault Boundary - 2026-10-13

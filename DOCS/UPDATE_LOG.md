@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Direct Byte Input And Primary Cut9
+
+[Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
+Direct byte conversion and later lower initialization restore func_15034860's
+T7 numeric input/T4 tag read.405/frame0x48 and six live slots/160 homes remain;
+differences298->269, no guards/credit. Primary cut9 closes on44 sampled paths;
+exact represented states452->720/2938, cut10/cut7 remain open. All13 installed
+tests,181-byte target-only image/data and fresh protected-text gates pass.
+Tools9cd126b first; older HEAD/411 unrelated hashes preserved/no push. README
+aggregates fixed; continue this same function's remaining schedules/full gates.
+
 ## 2026-10-13 Game Actor Command Finalizer Scalar Predicates And Cut5
 
 [Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):

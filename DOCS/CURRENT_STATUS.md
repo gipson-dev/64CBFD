@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 79fe8a8; tools are committed before the consumer pin.
+  checkpoint pins tools 9cd126b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer scalar/cut5 checkpoint; matching remains open:
+Current actor command-finalizer direct-byte/cut9 checkpoint; matching remains open:
+[Note 1331](WORKING_NOTES/1331-game-actor-command-finalizer-direct-byte-input-and-primary-cut9-restoration-20261013.md):
+func_15034860 retains405/frame0x48 and all six slots/160 homes; differences
+298->269, no guards or credit. Direct numeric-byte conversion restores T7/T4
+and closes primary cut9 on44 paths. Exact represented fault states452->720
+of2938 pairs; first divergence cut10 on44 paths and cut7 on eight, not full parity.
+All13 pre-install/installed tests pass (42.357s/44.410s); exactly181 target ELF
+bytes change, all other bytes and720 Game-data owners fixed. Protected-text
+integrity/corruption checks pass1.670s. Tools9cd126b first; older HEAD and411
+unrelated hashes preserved/no push. README totals already agree and stay fixed.
+Next same function's primary lower-bound schedule at cut10 and second-selector
+allocation at cut7, then269 remaining differences under the complete gates.
+
+Previous actor command-finalizer scalar/cut5 checkpoint:
 [Note 1330](WORKING_NOTES/1330-game-actor-command-finalizer-scalar-predicate-and-cut5-restoration-20261013.md):
 func_15034860 retains405/frame0x48, differences299->298, no guards or credit.
 Unsigned category views/inverted noise restore the first14 words and close cut5
