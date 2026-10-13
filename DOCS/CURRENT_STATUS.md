@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ce3980b; tools are committed before the consumer pin.
+  checkpoint pins tools c0ca061; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current actor command-finalizer guarded match:
+[Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
+func_15034860 matches all 405 words with its original frame 0x48. Semantic C
+stays unchanged at 76 raw differences; 76 source-derived expected-word guards
+normalize bounded schedules, scratch lifetimes and two commutative operands.
+This is not a direct C match. All 18 pre-install tests pass, including 2,938
+full modeled fault-state pairs and three independently linked carry layouts.
+Installed audit changes 145 target bytes only; the entire remaining ELF and
+189,088 bytes / 720 Game data owners are exact. Fresh matching: Game
+2,824/4,823 (58.55%), total 3,497/5,496 (63.63%), drift 0, different 1,999.
+Conversion counts unchanged. All 20 installed target/text checks pass in
+117.798s; tools c0ca061 is banked first. Older HEAD/426 unrelated fingerprints
+stay fixed; only its verified text-pin edit and three absent additions change.
+Next func_15034F30, 486 words / frame 0x190. Graph refresh fails closed and
+preserves the existing graph; no forced shrink or push.
 
 Current actor command-finalizer category-cache diagnostic checkpoint:
 [Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):

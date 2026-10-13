@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Guarded Match
+
+[Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
+Complete the pending qualification and install 76 source-derived expected-word
+guards. All 405 linked words match; raw C remains unchanged at 76 differences.
+Schedules, bounded scratch lifetimes and two commutative operands are normalized,
+not copied from retail. All 18 pre-install tests and the installed whole-image
+gate pass: 145 target bytes change, every other ELF byte and all Game data fixed.
+Game 2,824/4,823 (58.55%), total 3,497/5,496 (63.63%), drift 0, different 1,999.
+README changes aggregate rows only. Next func_15034F30, 486 words/frame 0x190.
+All 20 installed target/text checks pass117.798s; tools c0ca061 committed first,
+older HEAD/426 unrelated hashes retained. No push or forced graph overwrite.
+
 ## 2026-10-13 Game Actor Command Finalizer Category Cache Provenance
 
 [Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):

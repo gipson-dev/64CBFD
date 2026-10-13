@@ -54,6 +54,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer guarded match](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
+  All 405 words / frame 0x48 match through 76 source-derived guards; raw C stays
+  unchanged. Full private/fault, owner, rebase and guard-control gates pass.
+  Installed audit changes 145 target bytes only; Game 2,824 / total 3,497,
+  1,999 different and zero drift. Not a direct C match. Next func_15034F30.
+
 - [Actor command-finalizer category promotion cache provenance](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
   Production405/frame0x48/76 remains fixed.55 source forms/nine viable literal
   families give no improvement; owned input captures locate the typed cache

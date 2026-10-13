@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-13:
+[Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
+func_15034860 is guarded-exact across 405 words / frame 0x48; raw C remains
+76 differences. All 18 pre-install tests pass, with 2,938 exact modeled fault
+states, full-owner padders, three carry layouts and effective guard controls.
+Installed whole-image proof changes 145 target bytes only; data and other
+protected inputs stay fixed. Game 2,824 / total 3,497, 1,999 different, drift 0.
+All 20 installed target/text checks pass117.798s; tools c0ca061 first, older
+HEAD/426 unrelated hashes fixed with only the verified pin edit/three additions.
+No conversion increase, direct-C claim or push. Next func_15034F30, 486 words.
+
+2026-10-13:
 [Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
 func_15034860 stays405/frame0x48/76, production fixed.55 complete bodies give
 24 extent/opening-valid forms/nine arrays, all1598/2938 with no improvement.

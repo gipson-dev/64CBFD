@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Guarded Match - 2026-10-13
+
+[Note 1338](WORKING_NOTES/1338-game-actor-command-finalizer-guarded-match-20261013.md):
+
+- [x] Qualify the pending 405-word / frame-0x48 finalizer derivation without changing semantic C or its compiler profile.
+- [x] Preserve full32 selectors, alias-sensitive reads, six live slots and actual parent execution; match all 2,938 modeled fault states.
+- [x] Validate both complete owner padders, three independent carry layouts and all expected-word/omitted-guard controls.
+- [x] Install only 76 source-derived guard rows; prove 145 changed target bytes with every other ELF byte and all Game data fixed.
+- [x] Verify matching totals: Game 2,824 / 4,823, total 3,497 / 5,496, zero drift, 1,999 different. Keep root README to aggregate rows.
+- [ ] Eliminate this function's guards through a future direct C source fit; guarded exactness is not a direct C match.
+- [ ] Recover and qualify the next unmatched function, func_15034F30 (486 words, frame 0x190).
+
 ## Game Actor Command Finalizer Category Cache Provenance - 2026-10-13
 
 [Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
