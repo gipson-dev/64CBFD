@@ -38,6 +38,8 @@ its eight lower329 rejection domains remain effective. Production/totals/root
 README unchanged. Toolsaf0ed5c first; all436 older hashes preserved/two additions.
 Restarted REA is connected; its Windows Ghidra adapter rejects MIPS ELF. See
 [verified setup](REVERSE_ENGINEERING_SETUP.md). Next saved schedule/index/full fit.
+Consumer85439397 banks the exact pin/docs; seven post-bank checks pass6.224s.
+Incremental graph hook finishes40,533 nodes/81,029 edges with no live workers.
 
 Current economical-index and conditional-home checkpoint:
 [Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):

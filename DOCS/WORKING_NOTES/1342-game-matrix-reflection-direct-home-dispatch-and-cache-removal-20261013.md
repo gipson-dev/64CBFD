@@ -184,3 +184,25 @@ and the saved shifted-index lifetime rather than the strength-reduced input
 cursor. Then finish the remaining331 words and all private/fault/linked-image
 gates. Do not install or normalize the routine solely from sampled RAM agreement,
 the correct extent/frame, recovered register roles or a lower aggregate score.
+
+## Post-Bank Verification
+
+Consumer **85439397e0cf93f5aa230a64a54f0868b89f0c3d** banks the exact tools
+**af0ed5c607622da8157ce21d9cb04e0d821f1797** pin and linked docs. Both active
+checkouts are clean. The older mirror still has438 dirty paths: all436 initial
+fingerprints and its HEAD are unchanged, with only the two absent additions.
+No push, production build, dependency installation or host Release work occurs.
+
+Seven fresh post-bank checks pass **in6.224 seconds**: all seven frozen target
+inputs, sampled private RAM/return boundary, fired owned compiler capture,
+opening fault boundary, live mode-home negative and both protected text/data
+checks. This retains, rather than eliminates, opening cut1 and returnGPR9/14.
+
+All four relative links in the two new documents resolve. The documented TOML
+example parses and matches the live scoped REA registration. No new configuration
+write is required for the restarted Codex connection.
+
+The incremental commit hook completes at **40,533 nodes / 81,029 edges**, with
+zero live graph workers and retained history intact. The direct command's
+protective shrink refusal and skipped oversized HTML remain separate facts.
+The full Game goal stays active on the same unmatched routine.
