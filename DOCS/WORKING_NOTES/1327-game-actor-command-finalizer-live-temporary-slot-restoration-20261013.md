@@ -123,4 +123,3 @@ allocation, other private storage, control/delay scheduling and fault-prefix
 work. Require complete source/ABI/public/private/fault/owner/rebase/image proof
 before byte-exact credit. Full Game, previous guard elimination, retained
 text218/114/cut27, translator49/34 and hardware/runtime goals stay open.
-
