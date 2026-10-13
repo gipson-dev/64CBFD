@@ -38,6 +38,9 @@ is not an early snapshot; a compiled volatile control is an effective negative.
 All19 target/text checks pass107.605s. Production/totals/root README stay fixed.
 Next restore saved roles/index lifetime
 and remaining333 words before installation. Full qualification/banking in note.
+Toolsfb42981 is banked first; consumerf84a413b records the exact pin/docs.
+Four post-bank checks pass3.938s. Incremental hook completes40,502 nodes/
+80,993 edges with no workers; all432 older hashes stay fixed/two additions.
 
 Current matrix-reflection candidate and private-buffer fit:
 [Note 1339](WORKING_NOTES/1339-game-matrix-reflection-candidate-and-private-buffer-layout-20261013.md):

@@ -191,3 +191,21 @@ source-derived candidates and fired compiler records. Preserve the19-slot ABI,
 four real matrices, all sampled RAM/home/caller contracts and every prior
 fault-state agreement. Finish the remaining333 words and private/fault/linked
 image gates before installation or credit; do not normalize the body wholesale.
+
+## Post-Bank Verification
+
+Consumer **f84a413be938391fdd246b6cf35fa7e3f7af4797** records the exact tools
+**fb429816306affcc47fa764661342bf7315b50ee** pin and these working docs.
+Both active checkouts are clean after banking. All nine newly added relative
+documentation links resolve; root README SHA256 remains
+`640d27f289d843d625eabd94f747b399fc31105726db2a78ab245962ac885e8c`.
+
+Four fresh post-bank checks pass **in3.938 seconds**: all seven frozen production
+inputs, complete sampled private RAM/return-register boundary, literal opening
+fault boundary and the corrected flag lifetime/control. They do not remove
+the measured GPR9/13/cut1 differences or establish matching credit.
+
+The incremental hook completes at **40,502 nodes / 80,993 edges**, with no live
+workers. It preserves the retained/excluded corpus and skips oversized HTML.
+This successful scoped refresh does not turn the direct shrink refusal into
+a successful full rebuild. No push or host/Release operation is performed.
