@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
+func_15034860 restores secondary a2/a0/a3/v0 roles using the signed value local;
+405/frame0x48,267->266 differences, no guards/credit. Exact sampled states
+1086->1322/2938 with all earlier agreements retained. Six slots/homes/owner/
+rebases/parent pass; installed literal audit changes55 target bytes only.
+All16 installed target/text checks pass77.702s; tools6217aa4 first, older
+HEAD/unrelated hashes retained with only the verified ELF-pin edit/two additions.
+Next primary clamp/allocation, alignment and cuts10/7/full matching.
+
+2026-10-13:
 [Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
 func_15034860 stays405/frame0x48/267, production fixed.20 complete forms emit
 the same current/rejected arrays; one packet-only advisory independently fails.

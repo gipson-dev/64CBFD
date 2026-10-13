@@ -140,22 +140,22 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
             if (delta == 0) {
                 choose = 1;
             } else {
-                current = *(s16 *)(actor + 0x204);
+                value = *(s16 *)(actor + 0x204);
                 if (sign > 0) {
-                    if (current < 0 && delta < 0) {
+                    if (value < 0 && delta < 0) {
                         reverse = 1;
-                    } else if (current == 0 && delta < 0) {
+                    } else if (value == 0 && delta < 0) {
                         choose = 1;
-                    } else if (current == limit) {
+                    } else if (value == limit) {
                         reverse = 1;
                         choose = 1;
                     }
                 } else {
-                    if (current > 0 && delta > 0) {
+                    if (value > 0 && delta > 0) {
                         reverse = 1;
-                    } else if (current == 0 && delta > 0) {
+                    } else if (value == 0 && delta > 0) {
                         choose = 1;
-                    } else if (current == -255) {
+                    } else if (value == -255) {
                         reverse = 1;
                         choose = 1;
                     }

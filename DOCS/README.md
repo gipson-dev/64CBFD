@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer secondary value register restoration](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
+  Recover a2/a0/a3/v0 secondary roles with the signed value local;405/frame0x48,
+  267->266 differences, no guards/credit. Exact sampled states1086->1322/2938;
+  all prior agreements/six slots/homes retained. Full qualification and55-byte
+  target-only image/data proof pass. All16 installed checks pass77.702s,
+  tools6217aa4 first. Next clamp/allocation, alignment/cuts10/7.
+
 - [Actor command-finalizer tag-dependency canonicalization](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
   20 complete forms emit two existing arrays; one bounded advisory is measured
   and rejected. Raw AS1 offsets166/165 do not change the instruction stream.

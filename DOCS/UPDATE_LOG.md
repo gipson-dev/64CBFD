@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Secondary Value Roles
+
+[Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
+Recover secondary sign/choose/reverse/value registers a2/a0/a3/v0 with the
+existing signed value local.405/frame0x48,267->266 differences; sampled exact
+states1086->1322/2938, no previous agreement lost.19 complete source screens
+reject shortened/default and opening-regression forms. Full target contracts
+and installed55-byte target-only ELF/data proof pass; aggregate totals and
+README unchanged, no guards/credit. All16 installed checks pass77.702s;
+tools6217aa4 first, older HEAD/unrelated hashes retained. Next primary
+clamp/allocation and cuts10/7.
+
 ## 2026-10-13 Game Actor Command Finalizer Tag Dependencies
 
 [Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):

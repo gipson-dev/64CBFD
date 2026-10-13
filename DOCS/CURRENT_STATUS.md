@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a71abb7; tools are committed before the consumer pin.
+  checkpoint pins tools 6217aa4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer tag-dependency checkpoint:
+Current actor command-finalizer secondary-value checkpoint:
+[Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
+func_15034860 restores secondary sign/choose/reverse/value roles a2/a0/a3/v0
+by reusing the existing signed value local.405/frame0x48,267->266 differences;
+exact sampled states1086->1322/2938, no earlier agreements lost. Six slots,
+homes, full owner/rebase/parent contracts stay fixed. The installed literal
+audit changes55 target bytes only; all720 data owners exact, no guards/credit.
+All16 installed target/text checks pass77.702s; tools6217aa4 first and older
+421 unrelated inputs retained apart from the verified protected ELF-pin edit.
+19 source forms distinguish word identity from equal scores. Next primary
+clamp/allocation, block alignment and still-open cuts10/7/full matching.
+
+Previous actor command-finalizer tag-dependency checkpoint:
 [Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
 Production stays405/frame0x48/267; source/ELF/guards/profile/progress fixed.
 20 real tag/factor and advised placement forms emit exactly the same two word

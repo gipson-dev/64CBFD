@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Secondary Value Roles - 2026-10-13
+
+[Note 1335](WORKING_NOTES/1335-game-actor-command-finalizer-secondary-value-register-restoration-20261013.md):
+
+- [x] Recover secondary sign/choose/reverse/value a2/a0/a3/v0 using the existing signed value local;405/frame0x48 and267->266 literal differences.
+- [x] Preserve first14/jitter words, six live slots and160 incoming homes; qualify guest/native/alias/owner/rebase/actual-parent contracts.
+- [x] Raise represented exact states1086->1322 across2938 fired pairs, retaining every previously exact sampled cut.
+- [x] Screen19 complete bodies; reject404-word sign defaults and opening regressions, distinguish identical scores from word identity.
+- [x] Prove only55 target ELF bytes change, all other bytes/metadata/data/guards/progress fixed; archive and advance only the protected text ELF pin.
+- [ ] Complete installed target/text checks, both tools/syntax checks, authorized tools-first bank and post-bank verification.
+- [ ] Recover primary clamp/allocation and missing secondary-block alignment while preserving all1322 exact sampled states.
+- [ ] Finish primary cut10, disabled-primary cut7 and266 differences under full matching gates; wider Game/text/translator/hardware goals remain open.
+
 ## Game Actor Command Finalizer Tag Dependencies - 2026-10-13
 
 [Note 1334](WORKING_NOTES/1334-game-actor-command-finalizer-tag-dependency-canonicalization-20261013.md):
