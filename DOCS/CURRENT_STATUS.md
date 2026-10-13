@@ -32,8 +32,9 @@ Current actor command-finalizer selector/noise-fit checkpoint; matching remains 
 func_15034860 stays405 words/frame0x48, differences307->299, no guards or credit.
 The combined ordinary-parameter/nested-noise/late-bound/delta-input source
 restores the selector load at retail word9 in the suppression delay slot.
-All twelve installed tests pass; six live slots and160 input-home aliases remain
-qualified. Cut5 still differs, now only GPR3/7; all2,938 sampled fault pairs fire,
+All13 target tests plus two protected-text checks pass post-bank (47.244s).
+Six live slots and160 input-home aliases remain qualified. Cut5 still differs,
+now only GPR3/7; all2,938 sampled fault pairs fire,
 260 equal states unchanged. Full private/fault parity is not achieved.
 Owned frame/object, guest/native/owner/rebase/parent and254-byte target-only
 ELF/data gates pass; observation labels and protected text integrity are checked.

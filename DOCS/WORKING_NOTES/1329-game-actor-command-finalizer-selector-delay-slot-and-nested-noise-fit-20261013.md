@@ -128,6 +128,13 @@ Older HEADddbdd16b and130 unrelated hashes stay fixed, dirty408->410 /
 saved hashes131->133. No older commit/reset/stash or push. Verify links,
 terminal hook Graphify, fresh post-bank integrity and clean active checkouts.
 
+Post-bank: all13 target tests plus both protected-text integrity tests pass,
+15 total in47.244 seconds, no skips. Eight docs/4,659 relative links have zero
+broken targets. The commit hook rebuilds40,403 nodes/80,909 edges, preserving
+its known excluded-node and HTML-size warnings; workers terminate. Both active
+checkouts are clean; older HEAD/all133 saved hashes agree with the scoped copy.
+This final verification is documentation-only; source/ELF fingerprints stay fixed.
+
 Continue **this same func_15034860**. Resolve the constant-holder/cached-value
 roles in GPR3/7 at cut5, retain word9's real delay-slot load and six physical
 slots, then finish the remaining299 literal allocation/control/scheduling and
