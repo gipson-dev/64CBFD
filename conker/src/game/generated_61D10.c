@@ -14,7 +14,8 @@ extern u8 D_800C3F00;
 extern s16 D_800C3EF0;
 extern f32 D_80097D60;
 
-s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
+s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
+    s32 primaryIndex;
     s32 suppressed;
     s32 primaryBias;
     s32 secondaryBias;
@@ -27,24 +28,23 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
     s32 reverse;
     s32 current;
     s32 delta;
-    s16 value;
+    s16 value = actor[4];
     f32 scale;
     f32 magnitude;
-    s32 type = actor[4];
 
-    if (type == 0x70) {
+    if (value == 0x70) {
         suppressed = 1;
     } else {
         suppressed = 0;
     }
-    if (type == 0x7C) {
+    if (value == 0x7C) {
         primaryBias = 4;
         secondaryBias = 0;
     } else {
         primaryBias = 0;
         secondaryBias = 2;
     }
-    if (type == 0x69 || type == 0x7C || type == 0x87) {
+    if (value == 0x69 || value == 0x7C || value == 0x87) {
         noise = 0;
     } else {
         noise = 10;
@@ -57,24 +57,28 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         } else {
             scale = (f32)(u32)actor[0x201] * D_80097D44;
         }
-        value = (s32)((f32)(u32)actor[0x1FE] * scale * D_80097D48);
+        current = actor[0x1FE];
+        primaryIndex = first;
+        value = (s32)((f32)(u32)current * scale * D_80097D48);
         if (!suppressed) {
-            *(s16 *)output = (u32)first * 6 + primaryBias;
+            *(s16 *)output = (u32)primaryIndex * 6 + primaryBias;
             *(s16 *)(output + 2) = value;
             output += 4;
         }
         D_800C3EF0 = value;
+        primaryIndex = first;
         value = (s32)((f32)(*(s8 *)(actor + 0x202) * actor[0x1FE] / limit)
             * D_80097D4C * D_80097D50);
         if (!suppressed) {
-            *(s16 *)output = (u32)first * 6 + secondaryBias;
+            *(s16 *)output = (u32)primaryIndex * 6 + secondaryBias;
             *(s16 *)(output + 2) = value;
             output += 4;
         }
-        upper = 60;
         if (actor[4] == 0x42) {
             lower = 80;
             upper = 120;
+        } else {
+            upper = 60;
         }
         if (actor[0x1FF] == 0) {
             *(s8 *)(actor + 0x203) = -upper;
@@ -98,7 +102,8 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         if (value < 0) {
             value = 0;
         } else {
-            value = value < 256 ? value : limit;
+            current = value < 256 ? value : limit;
+            value = current;
         }
         actor[0x1FE] = value;
         if (actor[0x1FF] == 3) {
@@ -116,9 +121,10 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         } else {
             scale = (f32)*(s8 *)(actor + 0x208) * D_80097D58;
         }
-        sign = 1;
         if (scale < 0.0f) {
             sign = -1;
+        } else {
+            sign = 1;
         }
         magnitude = fabsf(scale);
         delta = (s32)((f32)*(s16 *)(actor + 0x204) * magnitude * D_80097D5C);
@@ -167,17 +173,18 @@ s32 func_15034860(u8 *output, u8 *actor, s32 first, s32 second) {
         }
         delta = *(s8 *)(actor + 0x209);
         *(s16 *)(actor + 0x204) += delta;
-        current = *(s16 *)(actor + 0x204);
         if (sign > 0) {
-            if (current < 0 && delta < 0) {
+            value = *(s16 *)(actor + 0x204);
+            if (value < 0 && delta < 0) {
                 *(s16 *)(actor + 0x204) = 0;
-            } else if (current >= 256) {
+            } else if (value >= 256) {
                 *(s16 *)(actor + 0x204) = limit;
             }
         } else {
-            if (current > 0 && delta > 0) {
+            value = *(s16 *)(actor + 0x204);
+            if (value > 0 && delta > 0) {
                 *(s16 *)(actor + 0x204) = 0;
-            } else if (current < -255) {
+            } else if (value < -255) {
                 *(s16 *)(actor + 0x204) = -255;
             }
         }

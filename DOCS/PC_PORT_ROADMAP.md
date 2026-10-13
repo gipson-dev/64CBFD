@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Extent Frame And Homes - 2026-10-13
+
+[Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
+
+- [x] Restore func_15034860's full405-word extent/original0x48 frame from genuine tag-index snapshots, bounded clamp and sign/bounds control flow; differences398->342, no inserted padding, guards or profile change.
+- [x] Qualify160 incoming-word/output aliases,50 effective old-body failures, full-word selectors and corrected15,288-case field sweep; retain qualifier/control and physical-state boundaries.
+- [x] Fire owned compiler observations: locals40->48, saved8/outgoing16 fixed, normal/traced objects equal; reject missing gates, driver failure and input corruption.
+- [x] Pass ten installed tests,8,192 native32 cases/five negatives,480 independent rebase and200 actual parent cases; preserve nine neighbors/pools/both padders and exact1,318-byte image/data/text gates.
+- [x] Bank tools966c8fd plus formatting follow-upda7ddac before the consumer and preserve older HEAD/124 unrelated hashes. Re-measure unchanged Game2,823/4,823 and total3,496/5,496; leave the already-correct README rows alone.
+- [ ] Finish this same func_15034860's342 real differences and exact scratch/saved roles, temporary addresses, scheduling, access/fault prefixes and whole-image gates. The extent/frame/home milestone is not a byte-exact match.
+- [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime work separately.
+
 ## Game Actor Command Finalizer Semantic Recovery - 2026-10-13
 
 [Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
@@ -8,7 +20,7 @@
 - [x] Qualify15,288 guest/385 selector-alias/8,192 native32 cases, five native negatives and a compiled pre-header-read negative; keep native-endian, opaque-provider and physical-frame boundaries explicit.
 - [x] Preserve nine neighbors/pools and both owner padders; pass480 independently rebased and200 actual119-word parent cases, closed1,242-byte image/data accounting and fresh text integrity.
 - [x] Bank toolsb6ba284 first and preserve older HEAD/122 unrelated fingerprints. Re-measure unchanged Game2,823/4,823 and total3,496/5,496; do not churn the correct README aggregate rows.
-- [ ] Finish the same func_15034860's raw395/frame0x40/398-difference source fit against retail405/frame0x48. No guards or matching credit yet; qualify exact parameter homes, saved lifetimes, scheduling and own-access fault prefixes.
+- [x] Restore the same function's405-word extent/0x48 frame and bounded live parameter-home behavior in Note1326. No guards or matching credit;342 differences and full private/scheduling/fault gates remain open separately.
 - [ ] Continue wider Game, earlier guard elimination, retained text/translator and hardware/runtime gates separately.
 
 ## Game Actor Command Dispatch Direct Match - 2026-10-13

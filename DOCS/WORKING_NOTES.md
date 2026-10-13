@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
+func_15034860 now emits405 words/frame0x48, real differences398->342, still
+unmatched/no guards. Ten installed tests,160 input-home aliases/50 old failures,
+fired unchanged-object compiler traces and owner/rebase/parent gates pass.
+All1,318 ELF changed bytes are target/size only; data/guards/text remain protected.
+Toolsda7ddac before consumer, older work preserved/no push; README rows already agree.
+Next same function's remaining allocation/scheduling/private/fault match;
+full Game/text/translator and earlier guard elimination remain open.
+
+2026-10-13:
 [Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
 func_15034860 now has the complete two-channel semantic body, not a match:
 raw395/frame0x40/398 differences against retail405/frame0x48, no guards/credit.

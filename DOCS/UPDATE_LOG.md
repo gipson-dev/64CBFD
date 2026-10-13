@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Extent Frame And Homes
+
+[Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
+func_15034860's captured full-word indices and sign/bounds/tail source shape now
+emit the full405 words/original0x48 frame, real differences398->342. No guards,
+profile/ABI change or credit. Ten installed tests pass;160 private-output aliases
+expose50 old-body failures, compiler traces retain object identity with locals
+40->48, and guest/native/owner/rebase/real-parent gates agree. Corrected screens
+retain the earlier bounce condition. Literal image changes only1,317 target
+bytes/one size byte; all other code/data/guards fixed, fresh text integrity passes.
+Toolsda7ddac before consumer, older work preserved/no push. Matching totals and correct
+README rows stay fixed. Next same function's342 allocation/scheduling/stack
+differences and exact private/fault gates; wider Game remains active.
+
 ## 2026-10-13 Game Actor Command Finalizer Semantic Recovery
 
 [Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):

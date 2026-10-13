@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b6ba284; tools are committed before the consumer pin.
+  checkpoint pins tools da7ddac; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer semantic-recovery checkpoint; matching remains open:
+Current actor command-finalizer extent/frame/home checkpoint; matching remains open:
+[Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
+func_15034860 now emits the full405 words/original0x48 frame; real differences
+398->342, no guards/profile/ABI change or matching credit. Captured full-word tag
+indices restore observable input-home behavior:160 private-output cases pass
+and the old body fails50. The qualifier alone is not proven necessary for homes.
+Ten installed tests pass; fired compiler captures show locals40->48, saved8/
+outgoing16 fixed, traced objects identical. Guest/native/owner/rebase/real-parent
+and literal1,318-byte image/data gates pass; no new metadata exception.
+Fresh text integrity passes. Toolsda7ddac before consumer, older work preserved/no push.
+Game2,823/4,823 (58.53%), total3,496/5,496 (63.61%), drift0/different2,000,
+converted fixed. Correct README rows stay unchanged. Next same function's342
+allocation/scheduling/stack-layout differences, exact private/fault gates;
+full Game/earlier guard elimination/text/translator/runtime remain open.
+
+Previous actor command-finalizer semantic-recovery checkpoint:
 [Note 1325](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
 func_15034860's placeholder is replaced by the complete two-channel contract.
 Raw C395/frame0x40 versus retail405/frame0x48 leaves398 word differences,

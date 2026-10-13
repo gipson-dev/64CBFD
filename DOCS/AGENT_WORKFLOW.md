@@ -328,6 +328,24 @@ have exact named definitions and closed ordering accounting, never whole-section
 exclusions. Advance only the protected text ELF pin after independent image proof.
 Finish the same routine's length/homes/frame/scheduling next, with no new guards.
 
+The same finalizer's original extent/frame and bounded live homes are restored in
+[Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md).
+Use `python3 -m tools.experiments.game_actor_command_finalizer_fitting` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_fitting -v`.
+The accepted sign-0 source is405/frame0x48/342 differences, not exact. Captured
+tag indices and explicit tail/sign/bounds shapes are real data/control flow,
+not padding or physical-register bindings. A tail-source replacement must be
+restricted after its unique store marker; broad text replacement can silently
+change the earlier bounce test. Preserve the exhaustive byte sweep.
+The unqualified403-word control has the same sampled output and three home reads;
+it is a shape control, not an effective functional negative or proof that the
+qualifier is necessary.160 incoming-home aliases/50 old-body failures establish
+the bounded storage improvement. Compiler observation still needs fired gates,
+exact executables, completed owned children and normal-object/pool identity.
+Shape comparison ignores register fields and branch displacement for diagnosis
+only; never install its output as a binary normalizer. Continue literal allocation/
+scheduling/private/fault fitting before credit, with immutable image/data gates.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

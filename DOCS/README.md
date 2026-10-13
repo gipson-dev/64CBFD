@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer extent, frame and home restoration](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
+  func_15034860 now emits405 words/frame0x48, differences398->342, still unmatched.
+  Ten installed tests,160 input-home aliases/fired compiler observations and
+  exact image/data/text gates pass; no guards or new metadata exception.
+  Toolsda7ddac before consumer; aggregate matching remains fixed. Next this same function's
+  allocation/scheduling/private/fault fit, not an easier neighbor.
+
 - [Actor command-finalizer semantic recovery and matching boundary](WORKING_NOTES/1325-game-actor-command-finalizer-semantic-recovery-and-matching-boundary-20261013.md):
   The full two-channel body replaces func_15034860's placeholder. Raw395/
   frame0x40/398 differences is not exact against retail405/frame0x48.
