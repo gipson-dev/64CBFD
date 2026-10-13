@@ -103,3 +103,10 @@ keeping retail's first14 words and closed cut9. Then repair disabled-primary
 cut7 and all267 remaining differences under complete private/fault/owner/
 rebase/image gates. Do not retry the unchanged14 forms or52 prior hints as new
 evidence; keep wider Game/text/translator/hardware goals open.
+
+Post-bank consumer `b86404fa` / tools `3fb2ea0`: all11 diagnostic/image/text
+checks pass9.536s, no skips. Eight documents /4649 relative links have no broken
+targets. The commit hook completes with40434 nodes /80932 edges and zero live
+workers; known retained-node and HTML-size warnings remain. Both active trees
+are clean. This verification-only update leaves production hashes, the267-word
+boundary and all matching/conversion totals unchanged.
