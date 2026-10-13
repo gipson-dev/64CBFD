@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Category Cache Provenance - 2026-10-13
+
+[Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
+
+- [x] Screen55 full source bodies without changing production; classify24 extent/opening-valid forms into nine literal families rather than comparing only scores.
+- [x] Fire all2938 fault pairs per family; retain1598 exact states with no lost cut and reject bodies failing extent/opening/access-count gates.
+- [x] Qualify three fingerprint-locked owned input captures and full normal/traced object identity; observe dtype-L/R3 store656 before bias equ-L704 already in UOPT.
+- [x] Distinguish typed cache from signed counter R3 stores and use the earliest real255 boundary; pass nine effective gate/exit/digest controls.
+- [x] Pass nine diagnostic/image/text checks with all production hashes fixed, no guard/ELF-pin rebase/credit and no README changes.
+- [ ] Complete both tool/syntax checks, tools-first authorized bank and post-bank verification while preserving all425 older hashes/two absent additions.
+- [ ] Recover bias conversion/cache formation and liveness while retaining shared124, first14/jitter/clamp words, six slots/homes and all1598 exact states.
+- [ ] Finish primary cut10, disabled-primary cut7 and76 differences under full matching gates; wider goals remain open.
+
 ## Game Actor Command Finalizer Bounds, Clamp And Tail - 2026-10-13
 
 [Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):

@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer category promotion cache provenance](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
+  Production405/frame0x48/76 remains fixed.55 source forms/nine viable literal
+  families give no improvement; owned input captures locate the typed cache
+  before bias already in UOPT (656/704). Nine checks pass85.576s, no rebase/
+  credit. Toolsce3980b first/older425 hashes fixed; next bias conversion/cache
+  formation and still-open cuts10/7.
+
 - [Actor command-finalizer bounds, clamp and secondary-tail alignment](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
   Recover three source shapes;405/frame0x48,266->76 differences, no guards/credit.
   Secondary block aligned/four clamp words exact; exact states1322->1598/2938,

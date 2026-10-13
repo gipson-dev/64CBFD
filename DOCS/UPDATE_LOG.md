@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Category Cache Provenance
+
+[Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
+Screen55 complete source bodies and classify24 valid extent/opening forms into
+nine literal arrays, no score/state improvement. Three owned object-identical
+captures prove the baseline/mixed2 typed cache store precedes bias comparison
+already in UOPT (656/704), not solely an assembler scheduling assumption.
+Real52->48 access-count and typed-prefix corruption controls are effective.
+Nine checks pass85.576s; production405/frame0x48/76 and all hashes stay fixed,
+no guard/pin rebase/credit or README change. Toolsce3980b first; older HEAD/
+all425 hashes fixed, two absent additions only. Next bias formation/liveness.
+
 ## 2026-10-13 Game Actor Command Finalizer Bounds, Clamp And Tail
 
 [Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
+func_15034860 stays405/frame0x48/76, production fixed.55 complete bodies give
+24 extent/opening-valid forms/nine arrays, all1598/2938 with no improvement.
+Owned baseline/mixed2 dtype-L/R3 store656 precedes bias equ-L704 already in
+UOPT; signed counter lacks that cached124 and changes roles/access counts.
+Nine checks pass85.576s, no rebase/credit; toolsce3980b first, all425 older
+hashes/HEAD preserved with two absent additions. Next bias-cache formation/liveness
+with first14/homes/slots retained and cuts10/7/full matching still open.
+
+2026-10-13:
 [Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
 func_15034860 restores bounds/clamp/tail source shapes:405/frame0x48,266->76
 differences, aligned secondary block and four exact primary clamp words.

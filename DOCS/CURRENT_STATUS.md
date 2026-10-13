@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 56a0cee; tools are committed before the consumer pin.
+  checkpoint pins tools ce3980b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer bounds/clamp/tail checkpoint:
+Current actor command-finalizer category-cache diagnostic checkpoint:
+[Note 1337](WORKING_NOTES/1337-game-actor-command-finalizer-category-promotion-cache-provenance-20261013.md):
+Production stays405/frame0x48/76, all source/ELF/guard/profile/progress hashes
+fixed.55 complete forms yield24 extent/opening-valid bodies in nine literal
+families, no improvement; all retain1598/2938 sampled agreements. Three owned
+captures preserve objects: baseline/mixed2 store dtype-L/R3 at656 before bias
+equ-L704, already in UOPT. Signed counter changes cached constants/R3 roles;
+real52->48 access-count rejection remains effective. Nine checks pass85.576s,
+no pin rebase/credit. Toolsce3980b first; older HEAD/all425 hashes preserved
+with only two absent additions. Next bias conversion/cache formation/liveness
+and cuts10/7.
+
+Previous actor command-finalizer bounds/clamp/tail checkpoint:
 [Note 1336](WORKING_NOTES/1336-game-actor-command-finalizer-bounds-clamp-and-secondary-tail-alignment-20261013.md):
 func_15034860 restores explicit bounds arms, primary clamp orientation and
 direct signed tail velocity:405/frame0x48,266->76 differences. Clamp words
