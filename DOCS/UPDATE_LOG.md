@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-13 Matrix Reflection Direct Homes And Restart Verification
+
+[Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
+Recover real mode snapshots and direct output-home loads; remove reflection's
+fp cache, recover input bank s6/flag roles. Candidate486/frame0x190/331 stays
+uninstalled. All24 checks pass76.603s, preserving192 prior modeled agreements
+over10,196 fired cuts and the old lower329 rejection controls. Toolsaf0ed5c
+first; no production or README aggregate change. Saved schedule/index remain
+open. The restarted REA connection is verified with its MIPS/Windows limitation
+recorded in [setup notes](REVERSE_ENGINEERING_SETUP.md); no dependency installs.
+
 ## 2026-10-13 Matrix Reflection Economical Index And Conditional Homes
 
 [Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):

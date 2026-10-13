@@ -38,6 +38,8 @@ and progress explanations.
   overrides, active Conker asset utilities, and reference-only generators.
 - [Tools repository setup](TOOLS_REPOSITORY.md) - separate tools ownership,
   recursive checkout, migration, and pinned dependency updates.
+- [Reverse engineering setup](REVERSE_ENGINEERING_SETUP.md) - verified REA
+  connection, scoped CLI environment and current Windows/MIPS adapter limits.
 - [IDO 5.3 recomp toolchain](IDO_RECOMP.md) — reproducing the compiler used by
   byte-matching builds.
 
@@ -53,6 +55,11 @@ hypotheses and one-session diagnostics belong in working notes until they are
 confirmed.
 
 ## Planning and history
+
+- [Matrix reflection direct homes and cache removal](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
+  Uninstalled486/frame0x190/331 with recovered direct homes, s6 and flag roles.
+  All24 checks pass; saved schedule/index/full matching remain open. Restarted
+  REA is connected but its Windows Ghidra adapter rejects MIPS ELF.
 
 - [Matrix reflection economical index and conditional homes](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
   Best literal332 and separate407 access-order diagnostic, both uninstalled.

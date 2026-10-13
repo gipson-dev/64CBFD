@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
+func_15034F30 direct homes and live dispatch restore486/frame0x190/331,
+uninstalled. Remove reflection cache; recover s6 and flag roles, not saved
+schedule/index. All24 checks pass76.603s;192 prior agreements/10,196 fired cuts
+and old effective negatives survive. Toolsaf0ed5c first, older436 hashes fixed.
+Production/totals/README unchanged; same function's full fit remains next.
+
+2026-10-13:
 [Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
 Best literal func_15034F30 branch332; separate407 diagnostic restores guarded/
 tail home ordering at486/frame0x190. Reject lower329 counts, preserve literal

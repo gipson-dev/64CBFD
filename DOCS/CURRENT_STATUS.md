@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6bd2222; tools are committed before the consumer pin.
+  checkpoint pins tools af0ed5c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current matrix-reflection direct-home and cache-removal checkpoint:
+[Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
+func_15034F30 remains uninstalled at486 words/frame0x190/331 differences.
+Recover direct output-home loads, the missing live mode read, input bank s6
+and flag roles; remove reflection's fp cache. Saved-store order and shifted
+index are still wrong. All24 checks pass76.603s, retaining192 prior modeled
+agreements over10,196 fired cuts. The inherited407 diagnostic stays distinct;
+its eight lower329 rejection domains remain effective. Production/totals/root
+README unchanged. Toolsaf0ed5c first; all436 older hashes preserved/two additions.
+Restarted REA is connected; its Windows Ghidra adapter rejects MIPS ELF. See
+[verified setup](REVERSE_ENGINEERING_SETUP.md). Next saved schedule/index/full fit.
 
 Current economical-index and conditional-home checkpoint:
 [Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):

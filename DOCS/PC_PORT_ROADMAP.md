@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Direct Homes And Cache Removal - 2026-10-13
+
+[Note 1342](WORKING_NOTES/1342-game-matrix-reflection-direct-home-dispatch-and-cache-removal-20261013.md):
+
+- [x] Restore the missing mode-home read and direct P+16 loads without output-address materialization in CFE/UOPT.
+- [x] Retain486 words/frame0x190 at331 differences; remove reflection cache and recover input bank s6 plus input/output flag roles.
+- [x] Screen30 complete forms/eight eligible arrays; reject485-word and frame0x198 forms without production installation.
+- [x] Pass24 target/text checks in76.603s, preserving192 prior modeled agreements over10,196 fired cuts and eight older329 rejection domains.
+- [x] Bank toolsaf0ed5c first; preserve production/README and all436 older fingerprints with only two absent additions, no push.
+- [x] Verify restarted REA connection and document the Windows adapter's MIPS ELF rejection without installing dependencies.
+- [ ] Recover original saved-store order and shifted-index lifetime instead of the strength-reduced s2 input cursor.
+- [ ] Finish331 differences and private/fault/linked-image gates before installation, matching credit or host/runtime claims.
+
 ## Matrix Reflection Economical Index And Conditional Homes - 2026-10-13
 
 [Note 1341](WORKING_NOTES/1341-game-matrix-reflection-economical-index-and-conditional-homes-20261013.md):
@@ -9,7 +22,7 @@
 - [x] Compare literal arrays across85 named forms; distinguish equal scores hiding11/15 changed words.
 - [x] Pass22 target/text checks in98.059s; fire10,196 common cuts over192 domains and retain every prior full modeled agreement.
 - [x] Preserve320 null/full32 gate cases and all ABI/RAM/alias/native/owner/rebase contracts; qualify fired CFE/UOPT address-work evidence.
-- [ ] Recover direct P+16 loading without the diagnostic's extra address instruction; keep best literal and access-order branches distinct.
+- [x] Recover direct P+16 loading without the diagnostic's extra address instruction; the qualified331 body and older407 diagnostic are distinct in Note1342.
 - [ ] Finish opening saved roles, cross-call index and all private/fault/linked-image gates before installing or claiming a byte-exact routine.
 
 ## Matrix Reflection Pointer Roles And Cache Provenance - 2026-10-13

@@ -67,6 +67,11 @@ semantics. Keep complete caller/hardware/gameplay acceptance separate.
 
 ## Local Validation Paths
 
+The [2026-10-13 REA setup verification](REVERSE_ENGINEERING_SETUP.md) records
+the connected Codex server and the current Windows Ghidra adapter's MIPS ELF
+rejection. Provider readiness is not successful MIPS analysis; use the existing
+matching tools below and do not repeat setup or install dependencies by default.
+
 Windows PowerShell hosts WSL builds. Run these from the prepared `64CBFD`
 root using `wsl --exec` (or directly inside WSL at the same root):
 
