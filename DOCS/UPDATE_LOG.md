@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-13 Game Actor Command Finalizer Live Temporary Slots
+
+[Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+func_15034860 restores six caller-live slots with reordered existing locals and
+a promoted cached actor-type predicate.405 words/frame0x48 unchanged, differences
+342->307, no guards/profile/ABI change or credit. Eleven installed tests pass:
+80 slot probes/16 old-body failures,160 retained home aliases and full bounded
+guest/native/owner/rebase/parent gates. Owned compiler M definition44->48 while
+the frame and normal/traced objects stay fixed. Literal269-byte target-only ELF
+proof preserves all other bytes/size/metadata and720 data owners; fresh text
+integrity passes. Toolscf06d70 first; older HEAD/126 unrelated hashes preserved,
+no push. Correct README aggregates stay unchanged. Next same function's307
+differences and exact private/scratch/fault qualification; wider Game stays open.
+
 ## 2026-10-13 Game Actor Command Finalizer Extent Frame And Homes
 
 [Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):

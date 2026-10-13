@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-13:
+[Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+func_15034860 restores six live slots, retains405 words/frame0x48 and reduces
+342->307 real differences, still unmatched/no guards. Eleven installed tests,
+80 slot probes/16 old failures,160 home aliases, owned compiler observations
+and guest/native/owner/rebase/parent gates pass. All269 changed ELF bytes are
+target-only; size/metadata/data/guards/text inputs protected. Toolscf06d70 first,
+older work preserved/no push; README aggregates fixed. Next same function's
+remaining private/scratch/scheduling/fault match, not an easier neighbor.
+
+2026-10-13:
 [Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
 func_15034860 now emits405 words/frame0x48, real differences398->342, still
 unmatched/no guards. Ten installed tests,160 input-home aliases/50 old failures,

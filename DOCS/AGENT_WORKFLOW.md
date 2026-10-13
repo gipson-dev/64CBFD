@@ -346,6 +346,20 @@ Shape comparison ignores register fields and branch displacement for diagnosis
 only; never install its output as a binary normalizer. Continue literal allocation/
 scheduling/private/fault fitting before credit, with immutable image/data gates.
 
+The next finalizer role milestone is
+[Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+`python3 -m tools.experiments.game_actor_command_finalizer_roles` and
+`python3 -m unittest tools.tests.test_game_actor_command_finalizer_roles -v`.
+Existing declaration ordering restores six caller-live slots and cached-type
+promotion reduces342->307 differences,405 words/frame0x48 unchanged. Derive
+physical addresses from actual M records plus frame and verify live emitted
+saves/loads; declaration predictions alone are insufficient. Old/new locals
+both round to48, despite M definitions44/48. Keep80 private slot probes distinct
+from actual retail PRNG behavior and160 retained home aliases distinct from
+whole private RAM or fault parity. No guards or credit.269 changed ELF bytes
+are target-only, with no size/metadata allowance; update the protected text ELF
+pin only after literal proof. Continue the same307-difference function.
+
 Known build warning: duplicate generated_12D630 recipe definitions. Preserve
 and report it; do not claim a warning-free full build. Use native
 `graphify update .` from `64CBFD` after code edits; its existing local

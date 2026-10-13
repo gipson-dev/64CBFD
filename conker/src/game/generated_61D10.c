@@ -17,16 +17,16 @@ extern f32 D_80097D60;
 s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
     s32 primaryIndex;
     s32 suppressed;
-    s32 primaryBias;
     s32 secondaryBias;
-    s32 noise;
     s32 limit;
     s32 lower;
     s32 upper;
+    s32 primaryBias;
+    s32 current;
+    s32 noise;
     s32 sign;
     s32 choose;
     s32 reverse;
-    s32 current;
     s32 delta;
     s16 value = actor[4];
     f32 scale;
@@ -44,7 +44,7 @@ s32 func_15034860(u8 *output, u8 *actor, volatile s32 first, s32 second) {
         primaryBias = 0;
         secondaryBias = 2;
     }
-    if (value == 0x69 || value == 0x7C || value == 0x87) {
+    if ((delta = value) == 0x69 || delta == 0x7C || delta == 0x87) {
         noise = 0;
     } else {
         noise = 10;

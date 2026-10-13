@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools da7ddac; tools are committed before the consumer pin.
+  checkpoint pins tools cf06d70; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current actor command-finalizer extent/frame/home checkpoint; matching remains open:
+Current actor command-finalizer live-temporary checkpoint; matching remains open:
+[Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+func_15034860 retains405 words/original0x48 frame, real differences342->307.
+Reordered existing locals restore six actual live stack slots; the promoted
+actor-type predicate improves code fit. No guards/profile/ABI change or credit.
+Eleven installed tests pass, including80 slot probes/16 old-body failures and
+160 retained incoming-home aliases. Compiler M definition44->48, frame unchanged;
+normal/traced objects agree. Guest/native/owner/rebase/parent gates and literal
+269-byte target-only ELF/data proof pass. Fresh text integrity passes.
+Toolscf06d70 before consumer; older HEAD/126 unrelated hashes preserved/no push.
+Game2,823/4,823, total3,496/5,496, zero drift/different2,000 remain fixed.
+Correct README rows stay unchanged. Next same function's307 differences and
+full private/scratch/fault match; full Game/text/translator/runtime remain open.
+
+Previous actor command-finalizer extent/frame/home checkpoint:
 [Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
 func_15034860 now emits the full405 words/original0x48 frame; real differences
 398->342, no guards/profile/ABI change or matching credit. Captured full-word tag

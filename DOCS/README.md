@@ -54,6 +54,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor command-finalizer live temporary slots](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+  func_15034860 retains405 words/frame0x48, differences342->307, still unmatched.
+  Six live slots restored; eleven installed tests/80 slot probes/160 home aliases,
+  compiler observations and269-byte target-only image/data/text gates pass.
+  Toolscf06d70 before consumer, older work preserved; aggregate matching fixed.
+  Next this same function's307 differences and full private/scratch/fault match.
+
 - [Actor command-finalizer extent, frame and home restoration](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
   func_15034860 now emits405 words/frame0x48, differences398->342, still unmatched.
   Ten installed tests,160 input-home aliases/fired compiler observations and

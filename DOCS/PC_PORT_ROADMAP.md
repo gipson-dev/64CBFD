@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Game Actor Command Finalizer Live Temporary Slots - 2026-10-13
+
+[Note 1327](WORKING_NOTES/1327-game-actor-command-finalizer-live-temporary-slot-restoration-20261013.md):
+
+- [x] Restore six caller-live stack slots through existing declaration order and promote the cached actor type;405 words/frame0x48, differences342->307, no guards or credit.
+- [x] Qualify80 slot probes/16 effective old-body failures and retain160 incoming-home aliases; keep broader private RAM/scratch/fault parity explicitly open.
+- [x] Observe M definition44->48 with locals48/saved8/outgoing16/frame72 unchanged and identical normal/traced objects; pass eleven installed guest/native/owner/rebase/parent tests.
+- [x] Prove all269 changed ELF bytes are inside the target, with size/metadata/every other byte fixed and all720 data owners exact; advance only the independently protected text ELF pin.
+- [x] Bank toolscf06d70 first, mirror only two new task files/shared pin and preserve older HEAD/126 unrelated hashes. Matching totals and correct README rows stay fixed.
+- [ ] Finish this same func_15034860's307 remaining real differences: scratch allocation, other private storage, control/delay scheduling and own-access fault prefixes. This milestone is not a byte-exact match.
+- [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime goals separately.
+
 ## Game Actor Command Finalizer Extent Frame And Homes - 2026-10-13
 
 [Note 1326](WORKING_NOTES/1326-game-actor-command-finalizer-extent-frame-and-home-restoration-20261013.md):
@@ -9,7 +21,8 @@
 - [x] Fire owned compiler observations: locals40->48, saved8/outgoing16 fixed, normal/traced objects equal; reject missing gates, driver failure and input corruption.
 - [x] Pass ten installed tests,8,192 native32 cases/five negatives,480 independent rebase and200 actual parent cases; preserve nine neighbors/pools/both padders and exact1,318-byte image/data/text gates.
 - [x] Bank tools966c8fd plus formatting follow-upda7ddac before the consumer and preserve older HEAD/124 unrelated hashes. Re-measure unchanged Game2,823/4,823 and total3,496/5,496; leave the already-correct README rows alone.
-- [ ] Finish this same func_15034860's342 real differences and exact scratch/saved roles, temporary addresses, scheduling, access/fault prefixes and whole-image gates. The extent/frame/home milestone is not a byte-exact match.
+- [x] Restore six live temporary addresses and reduce342->307 real differences in Note1327; preserve the extent/frame/home milestone.
+- [ ] Finish the remaining307 differences and exact scratch/private roles, scheduling and access/fault prefixes under Note1327. This is not a byte-exact match.
 - [ ] Continue broader Game, prior guard elimination, retained text/translator and hardware/runtime work separately.
 
 ## Game Actor Command Finalizer Semantic Recovery - 2026-10-13
