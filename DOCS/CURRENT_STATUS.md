@@ -41,6 +41,9 @@ Executable-only total3,404/5,363; conversions remain5,503/6,044. Archive801
 and492 unrelated mirror fingerprints stay fixed; no host or Release work.
 Next: qualify func_151F86B0's112-word slot (retained109-word/six-difference
 draft), and continue the failed-interface/binding and original Game backlog.
+Consumerf9dcbae0 banks the group;16 post-bank checks pass68.142s. The incremental
+build retains the pinned image/progress, and the source graph worker completes
+at40,801 nodes/80,987 edges without forcing the partial scan.
 
 Commented-source audit and guarded object-notification recovery:
 [Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md).

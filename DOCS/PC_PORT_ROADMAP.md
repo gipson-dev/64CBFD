@@ -12,6 +12,7 @@
 - [x] Pass101 final checks161.042s, three standalone mirror checks and project tools checks; retain intermediate/final source fixtures separately.
 - [x] Refresh Game2,871/4,830, total3,544/5,503, different1,959, zero drift; preserve801 archive files and492 unrelated mirror fingerprints.
 - [x] Bank toolsa1cd670 before the consumer pin; audit the existing host implementation read-only, with no transfer/push/Release operation.
+- [x] Bank consumerf9dcbae0, pass16 post-bank checks68.142s, retain the image/progress on incremental build and await the40,801-node graph refresh.
 - [ ] Qualify func_151F86B0's112-word frame-decode/metadata slot; its retained-g draft emits109 words with six real differences.
 - [ ] Continue actual failed-body/interface recovery, pool bindings, func_151F4F38 and the remaining original Game matching work.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.

@@ -158,3 +158,16 @@ The full graph refresh again refuses to replace the40,791-node curated graph
 with a19,010-node partial scan, retaining19,398 nodes from2,972 excluded but
 still-present files. Do not force it. Await the incremental consumer commit
 worker separately before recording its completion.
+
+## Post-Bank Verification
+
+Consumerf9dcbae0 banks the source/profile/guard recovery, tools pin and docs.
+All16 post-bank target/capture/history checks pass68.142s. The incremental
+build reports ELF/progress up to date and retains the a89a9418 image and
+unchanged b7d6d464 progress. Main and active tools are clean before this
+verification-note commit; the independently dirty mirror is preserved.
+No push, host build, source transfer or Release operation is performed.
+
+The source commit's incremental graph worker completes at40,801 nodes /
+80,987 edges. It retains the curated/excluded-file boundary and skips only
+the oversized HTML visualization. No smaller forced refresh is accepted.
