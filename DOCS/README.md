@@ -56,9 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor burst consumer float and scheduling recovery](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
+  Recover saved-float roles and modeled return states;15 fresh checks pass.
+  A diagnostic closes all315 words after two schedule inverses. Still uninstalled.
+
 - [Actor burst consumer partial recovery](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
   Complete semantic candidate and four exact private homes;10 fresh checks pass.
-  Still311 versus315 words, uninstalled, with no matching credit. Resume here.
+  Initial311-versus315-word checkpoint; continued in Note1354 above.
 
 - [Actor burst packet direct match](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
   Recover all67 words/frame0x78 directly from C, zero guards. All18 checks pass,

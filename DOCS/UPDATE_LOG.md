@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-14 Actor Burst Consumer Float And Scheduling Recovery
+
+[Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
+Recover saved-float roles, implicit angle conversions and initialization order.
+The candidate improves to313/168/143;15 checks pass47.269s, including960 modeled
+return states and288 saved-float domains. A diagnostic inverse of only two
+filled delay slots/rebased branches equals all315 retail words. It remains
+uninstalled, with production and matching totals fixed. Tools0e244d6 first.
+
 ## 2026-10-14 Actor Burst Consumer Partial Recovery
 
 [Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):

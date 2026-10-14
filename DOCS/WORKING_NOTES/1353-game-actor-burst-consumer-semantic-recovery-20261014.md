@@ -4,6 +4,11 @@ Verified locally: 2026-10-14, including a fresh session-restart check. This is
 an uninstalled research checkpoint, not an exact match or host-gameplay claim.
 Keep the wider Game goal active and continue with the same function.
 
+Continued in [Note 1354](1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
+the new313-word candidate recovers saved-float and modeled return states; its
+remaining instruction differences are two branch-delay scheduling sites.
+This page preserves the earlier311-word checkpoint and its original receipts.
+
 ## Target And Baseline
 
 - `func_151A6F00`, owner `conker/src/game/generated_1D43B0.c:7`.

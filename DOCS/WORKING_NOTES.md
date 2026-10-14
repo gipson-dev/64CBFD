@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-14:
+[Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
+func_151A6F00 improves to313 words/frame0x168/143 raw differences. Complete
+modeled return states and saved-float lifetimes agree;15 checks pass47.269s.
+Only two filled delay sites remain: an analysis-only inverse/rebase matches
+all315 words. Uninstalled, no matching credit; tools0e244d6 first.
+
+2026-10-14:
 [Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
 func_151A6F00 complete semantic candidate and four exact private homes. Ten
 fresh checks pass37.065s, including960 guest/32 raw direction cases and native32

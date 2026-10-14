@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Burst Consumer Scheduling Boundary - 2026-10-14
+
+[Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
+
+- [x] Recover branch-specific float lifetimes, F30/F28 cached constants, implicit byte-angle narrowing and retail initialization/read order.
+- [x] Improve the complete candidate to313 words/frame0x168/143 raw differences without guards, padding or production profile changes.
+- [x] Pass15 checks47.269s, including960 complete modeled return-state domains and288 saved-float call domains.
+- [x] Prove an analysis-only inverse of two filled delay slots plus internal branch rebases equals every315 retail word; keep effective corruption controls.
+- [x] Bank tools0e244d6 first; preserve production inputs, progress, older mirror work and frozen host Release.
+- [ ] Recover actual315-word emission or qualify a narrow build scheduling transform, including relocation offsets.
+- [ ] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image.
+- [ ] Finish the wider Game backlog; the next target remains func_151A6F00.
+
 ## Actor Burst Consumer Research - 2026-10-14
 
 [Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ce205ae; tools are committed before the consumer pin.
+  checkpoint pins tools 0e244d6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,15 +28,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 ## Measured progress
 
 Uninstalled actor burst consumer research:
-[Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md).
-func_151A6F00 now has a complete semantic candidate covering all kind paths,
-the old-value signed count loop and callback feedback. Ten fresh checks pass
-37.065s:960 seeded guest cases,18 signed prefixes,32 raw direction cases and
-native32 O2/O0. All four private homes and guest packet/copy bytes agree, but
-311 words/frame0x168/274 raw differences still fail full instruction/state
-matching. Production remains unchanged and the consumer still returns zero.
-Totals stay Game2,832/4,823, total3,505/5,496, different1,991, drift0.
-Toolsce205ae banks the partial research; continue the same315-word consumer.
+[Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md).
+func_151A6F00 now emits313 words/frame0x168/143 raw differences after recovering
+saved-float lifetimes, implicit angle narrowing and initialization order.
+Fifteen fresh checks pass47.269s:960 complete modeled return-state domains,
+288 saved-float call domains, prior boundary/native checks and protected inputs.
+An analysis-only inverse of two filled branch-delay sites reproduces all315
+retail words exactly; it is not a build transform or matching credit.
+Production remains unchanged and the consumer still returns zero. Totals stay
+Game2,832/4,823, total3,505/5,496, different1,991, drift0. Tools0e244d6 first;
+finish those two scheduling sites and the applicable promotion gates next.
 
 Installed actor burst packet checkpoint:
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md).
