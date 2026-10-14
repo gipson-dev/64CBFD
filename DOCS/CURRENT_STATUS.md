@@ -37,6 +37,8 @@ The whole ELF changes only its target slot and named size field12 ->1944;
 Fresh Game2,825/4,823 (58.57%), total3,498/5,496 (63.65%), different1,998, drift0.
 Tools5c4c157 first; older441 initial hashes fixed, two verified text pins and
 three absent additions. Next func_15142314; the wider Game goal stays active.
+Consumer23fa40a6 banks the exact pin/source/docs; six post-bank checks pass4.209s.
+The first incremental graph hook finishes40,565 nodes/81,053 edges with no worker.
 
 Current matrix-reflection original-prologue checkpoint:
 [Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):

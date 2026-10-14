@@ -149,3 +149,29 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer **23fa40a6425e15b6fd9afaf974f599d93abdb6a3** banks the installed
+source/guards, aggregate-only README changes, documentation and exact tools
+**5c4c157b3534695444588e479d67f0d5ed80fb1c** pin. Both active checkouts are clean.
+Six fresh post-bank checks pass **in4.209s**: complete shape/word identity,
+literal whole-image accounting, full private return state, effective whole-image
+corruptions and both protected text/data tests. The full21-check receipt stays
+separate. Guard history, conversion CSV and all protected Game data remain fixed.
+
+The first incremental hook completes **40,565 nodes /81,053 edges** with no
+remaining worker at observation. It preserves the excluded-but-existing history,
+direct shrink refusal and oversized-HTML limitation rather than bypassing them.
+All five new index links resolve. No push or frozen host Release work.
+
+The next routine is the fixed/float translation accessor at
+`conker/src/game_16EE20.c:452`; original assembly is
+`conker/asm/nonmatchings/game_16EE20/func_15142314.s`, not a generated whole-slice
+assembly file. Before any next-function edits, current source SHA-256 is
+`7acc24c75dc922e9aa72027a030b4c8e43b0d2a2d9bc5f8c2a17fccb3dba7810`;
+assembly SHA-256 is
+`8f81a8658a1d949078601a100688508a5c52b329afdded05c59821b77bba3f53`.
+Inspect signed halfword conversion order, output aliases and its real callers
+before changing the body. No next-function source modification is banked here.
+The full Game goal remains active with1,998 still-different converted functions.
