@@ -155,6 +155,10 @@ Reproduce with `python3 -m tools.experiments.game_remaining_donor_candidates`,
 ## Bank And Preservation
 
 Tools are banked first in `249f8c3e06442be6d3cc3338e7615ae25578c97b`.
+Consumer `9eb367cfbea5284228f1fca8f9ec8a34a6ca4279` banks all source,
+build selection, tools pin and documentation changes. The nine post-bank
+donor/audit checks pass **39.383 seconds**; `make tools-check` also passes.
+All ten owned files in the older mirror pass a fresh WSL syntax check.
 The older tools mirror keeps HEAD `ddbdd16b53ce60b054fb6e11bf0649a41f48375a`.
 Synchronize only ten owned paths: seven existing audit adapters and three new
 qualification files. All **465 unrelated dirty fingerprints remain unchanged**;
@@ -164,3 +168,7 @@ Do not commit or reset that independently dirty mirror.
 The final normal rebuild and incremental recheck pass with the pinned ELF
 above. Root README changes only its aggregate matching rows; detailed recovery
 updates stay in this note and the status/roadmap/index/update documents.
+The source-bank graph hook completes at 40,742 nodes / 80,972 edges, preserving
+19,398 nodes from 2,972 still-present files excluded by the current scan rules.
+Do not force a smaller full refresh or treat the skipped large HTML graph
+visualization as a failed source build. No push is performed.

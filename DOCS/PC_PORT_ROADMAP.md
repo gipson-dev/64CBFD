@@ -9,6 +9,7 @@
 - [x] Keep all 742 owner neighbors, all old guards/progress rows and 720 data owners fixed; select only seven codec bodies from retail -g.
 - [x] Close the linked slots, three removed overflow bodies, 13 retained bodies and declared symbol changes; retain immutable old fixtures and effective controls.
 - [x] Re-run the canonical source audit: zero remaining applicable exact C donors; Game 2,858/4,826, total 3,531/5,499, no drift.
+- [x] Bank tools249f8c3 before consumer9eb367cf; pass nine post-bank checks and project tool checks, preserving unrelated mirror work without a push.
 - [ ] Correct the separate legacy Debugger data-label counters.
 - [ ] Continue original Game matching; func_151F4F38 still needs independent qualification.
 - [ ] Qualify any host transfers separately; do not build or modify frozen Release without a fresh request.

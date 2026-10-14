@@ -45,6 +45,8 @@ unmatched candidate, not a qualified donor. No host or frozen Release work.
 Final five donor checks pass 27.386s after the pointer-return declaration;
 normal rebuild and incremental recheck retain the pinned ELF. Tools249f8c3
 are committed first; preserve all465 unrelated older-mirror fingerprints.
+Consumer9eb367cf banks the recoveries; nine post-bank donor/audit checks pass
+39.383s, project tool checks and older-mirror syntax checks also pass.
 
 First authorized byte-exact donor group:
 [Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md).
