@@ -159,3 +159,37 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer **02787267d4e4f9fc498d50fca8ce65e37f316a44** banks the recovered C,
+aggregate-only README rows, documentation and exact tools
+**3c7f8cab499603f71a4c95d1079653df6e770fc1** pin. Both active checkouts are clean
+at that checkpoint. Six fresh post-bank checks pass **in4.884s**: complete
+direct word/profile identity, literal whole-image/source accounting, all1,728
+fired access cuts, effective source/image/guard corruptions and both protected
+text/data checks. The earlier full16-check receipt remains a separate run.
+
+Fresh post-bank match-progress confirms Game2,827/4,823 (58.61%),
+total3,500/5,496 (63.68%), different1,996 and drift0. Init492/492 and
+Debugger181/181 remain exact. Source/ELF/guard/conversion hashes above still
+agree; no guard or compiler-profile changes are added during banking.
+
+The first incremental hook completes **40,586 nodes /81,065 edges**, with no
+remaining worker at observation. Retained history, the earlier direct shrink
+refusal and the oversized-HTML limit remain intact. All five new index links
+resolve. The older tools mirror's HEAD and all449 saved fingerprints are
+rechecked unchanged after the consumer commit; it is not committed or reset.
+
+The restarted session also answers the live REA binary_session call:6.4.0,
+170 tools, Ghidra and Java readiness checks pass, no target open. Preserve the
+separately recorded Windows adapter MIPS ELF limitation in
+[the setup note](../REVERSE_ENGINEERING_SETUP.md); readiness does not establish
+MIPS analysis. No configuration edit, dependency install, push, real-save or
+frozen host Release work is performed during this continuation.
+
+The next39-word func_1506AAE0 body remains unmodified. Its retail SRA and
+nonzero branch keep negative masks nonterminating, unlike an unsigned finite
+scan. Retain the saved global mask, actor stride0x32C, six-slot call arguments
+and original incoming homes when reconstructing it. The wider Game goal stays
+active.

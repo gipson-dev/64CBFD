@@ -37,6 +37,8 @@ creator/memcpy execution. Only112 code bytes and one size byte change; all other
 ELF bytes/data/guards/profile/layout/conversion rows stay fixed. Fresh Game2,827/
 4,823 (58.61%), total3,500/5,496 (63.68%), different1,996, drift0. Tools3c7f8ca
 first; next func_1506AAE0 and its signed mask/actor scan.
+Consumer02787267 banks that checkpoint; six fresh post-bank checks pass4.884s,
+with matching totals reconfirmed and the older tools mirror unchanged.
 
 Installed matrix-translation checkpoint:
 [Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md).
