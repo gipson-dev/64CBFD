@@ -31,7 +31,7 @@ typing its known arguments must not be represented as recovering its body.
 4. [ ] Qualify state reloads, callback mutation, clip precedence, aliases, special floats, native32 and effective controls.
 5. [ ] Exercise actual recovered trig and the actual typed wrapper/parent call protocols while retaining matrix-child/gameplay boundaries.
 6. [ ] Install only qualified source, close the entire image, refresh measured progress and preserve immutable history gates.
-7. [ ] Update aggregate-only README, concise indexes, graph and bank tools before consumer; preserve archive/mirror fingerprints.
+7. [x] Keep unchanged README aggregates, update concise indexes/graph and bank tools before consumer; preserve archive/mirror fingerprints.
 8. [ ] Continue the actual matrix child and the failed-donor/binding/codec/original-Game/rectangle queues; keep the wider goal active.
 
 ## Completed Source Screens
@@ -148,4 +148,15 @@ child protocol, native32, rebases, padders and closed linked image before credit
 The full additional-source/Game goal remains active, with all failed donor/
 binding/codec/original-Game and separately stale rectangle queues still open.
 
-Consumer banking and post-bank verification follow after the commit.
+## Post-Bank Verification
+
+Consumer51602818 banks the tools pin and six documentation paths, with no
+production code/guard/header/layout/progress or README change. All four
+post-bank source/capture/pure/preceding-image gates pass2.568s. The incremental
+build reports ELF/progress up to date and retains f36703ce/005fd768 hashes.
+Inherited duplicate generated_12D630 recipe warnings remain; no warning-free
+full-build claim. The consumer graph worker finishes at40,883 nodes/81,058
+edges, preserving curated/excluded nodes and skipping only oversized HTML
+visualization. Both active repositories are clean before this receipt-only edit.
+The older mirror retains its independent HEAD, all523 unrelated fingerprints
+and exactly three new owned paths. The goal stays active on the same function.

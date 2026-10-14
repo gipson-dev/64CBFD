@@ -45,6 +45,9 @@ files and 523 unrelated mirror fingerprints preserved. Next continue the SAME
 func_1510B128: recover the early coefficient-HI schedule, shared cosine home,
 FP allocation/products and clip branch before integrated child/guard changes.
 Full graph scan fails closed at19,098 vs40,873; never force it.
+Consumer51602818 banks the private checkpoint. All four post-bank checks pass
+2.568s, incremental build retains the pinned image/progress and the graph
+worker completes at40,883 nodes/81,058 edges. No production match credit.
 
 View FOV transfer guarded match:
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md).

@@ -10,6 +10,7 @@
 - [x] Identify the first actual private/fault divergence at cut11, PCs1510B184/188, GPR1 only; 42/56 fired prefixes differ despite sampled public agreement.
 - [x] Prove the typed wrapper emits all33 words directly and existing eight guards reject it; identify the typed child's12->28-byte stub growth and preserve11 other owner neighbors.
 - [x] Keep production source, headers, guards, layout, progress and every ELF byte fixed; commit tools07e0dd5 first, preserving the archive and523 unrelated mirror fingerprints.
+- [x] Bank consumer51602818, pass four post-bank checks2.568s, preserve pinned ELF/progress and await the40,883-node graph worker without a forced scan.
 - [ ] Continue the SAME func_1510B128's literal scheduling, cosine homes, FP allocation/products and branch matching before installation or match credit.
 - [ ] Finish native32/broader aliases, actual child/caller qualification, both padder/rebase and closed-image/history gates for an integrated installable family.
 - [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle history; keep host Release frozen.
