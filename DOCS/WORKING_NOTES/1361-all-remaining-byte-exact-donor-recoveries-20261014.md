@@ -172,3 +172,23 @@ The source-bank graph hook completes at 40,742 nodes / 80,972 edges, preserving
 19,398 nodes from 2,972 still-present files excluded by the current scan rules.
 Do not force a smaller full refresh or treat the skipped large HTML graph
 visualization as a failed source build. No push is performed.
+
+## Read-Only Host Boundary
+
+Audit the sibling's actual CMake-selected `recomp_out/.c`, without editing it
+or its independently dirty `CMakeLists.txt`. Seventeen of these nineteen
+functions already have generated implementation bodies there, including all
+seven codec targets. The two stream-driver names are deliberately retired as
+`*_zero_stub` in that file; their active definitions are in CMake-selected
+`recomp_scene/combined_audiocmd2.c` (lines 835 and 2595).
+
+The sibling's five `recomp.tests.test_audio_command_builder_restore` checks
+pass as a read-only static wiring check. This does not prove host byte parity,
+audible playback, gameplay or an up-to-date executable. There is no automatic
+host regeneration or transplantation of these decomp C bodies. Keep the
+existing host paths and dirty work; any deeper parity/runtime qualification
+is a separate task. No host build or frozen Release operation is performed.
+
+The explicit full `graphify update .` refuses replacing the 40,742-node
+curated graph with an 18,961-node partial scan. Preserve that fail-closed
+boundary; do not force it. The incremental commit hooks finish successfully.
