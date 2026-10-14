@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5c4c157; tools are committed before the consumer pin.
+  checkpoint pins tools 4e3cd4c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed matrix-translation checkpoint:
+[Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md).
+func_15142314 matches all49 words/frame0 through34 source-derived scheduling
+guards; the recovered C stays unchanged and raw34 differences remain explicit.
+All17 installed checks pass91.981s, covering halfwords/aliases/native O2/O0,
+the original parent,864 fired cuts, both owner padders and signed-low rebases.
+Only104 target ELF bytes change; all symbol fields/data/source/profile/layout/
+conversion rows stay fixed. Fresh Game2,826/4,823 (58.59%), total3,499/5,496
+(63.66%), different1,997, drift0. Tools4e3cd4c first; next func_1506AA48.
 
 Installed matrix-reflection checkpoint:
 [Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md).

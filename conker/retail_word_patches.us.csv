@@ -15007,3 +15007,37 @@ generated_61D10,func_15034F30,0x738,0x50400007,0x53200007,-,-,Normalize certifie
 generated_61D10,func_15034F30,0x748,0xAC9101D4,0xAC8801D4,-,-,Normalize certified reflection register lifetimes and commutative operands,,,false
 generated_61D10,func_15034F30,0x74C,0x8FAD0190,0x8FA90190,-,-,Normalize certified reflection register lifetimes and commutative operands,,,false
 generated_61D10,func_15034F30,0x750,0xADB001D4,0xAD3001D4,-,-,Normalize certified reflection register lifetimes and commutative operands,,,false
+game_16EE20,func_15142314,0xC,0x008F1021,0x3C013780,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x10,0x51C00025,0x11C00024,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x14,0xC4440030,0x008F1021,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x18,0x00057980,0x44810000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x1C,0x008F1021,0x00057980,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x20,0x84590018,0x008F1021,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x24,0x84580038,0x84590018,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x28,0x3C013780,0x84580038,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x38,0x44810000,0x468042A0,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x3C,0x468042A0,0x468021A0,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x40,0x468021A0,0x460A3400,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x44,0x460A3400,0x46008482,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x48,0x46008482,0xE4D20000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x4C,0xE4D20000,0x844A001A,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x50,0x844A001A,0x8449003A,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x54,0x8449003A,0x000A5C00,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x58,0x000A5C00,0x448B3000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x5C,0x448B3000,0x44892000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x60,0x44892000,0x468032A0,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x64,0x468032A0,0x46802220,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x68,0x46802220,0x460A4400,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x6C,0x460A4400,0x46008482,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x70,0x46008482,0xE4D20004,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x74,0xE4D20004,0x844D001C,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x78,0x844D001C,0x844C003C,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x7C,0x844C003C,0x000D7400,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x80,0x000D7400,0x448E4000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x84,0x448E4000,0x448C2000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x88,0x448C2000,0x468042A0,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x8C,0x468042A0,0x468021A0,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x90,0x468021A0,0x460A3400,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x94,0x460A3400,0x46008482,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0x98,0x46008482,0xE4D20008,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+game_16EE20,func_15142314,0xA0,0xE4D20008,0x00000000,-,-,Normalize certified translation constant branch and return delay schedules,,,false

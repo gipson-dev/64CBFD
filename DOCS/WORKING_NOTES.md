@@ -1,6 +1,12 @@
 # Working Notes
 
 2026-10-13:
+[Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
+func_15142314 completes its49-word/frame0 guarded byte match with34 derived
+scheduling words, unchanged C and104 target-only ELF bytes. All17 checks pass
+91.981s; raw C stays34 words different. Tools4e3cd4c first; next func_1506AA48.
+
+2026-10-13:
 [Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
 func_15034F30 installed at486 words/frame0x190 with238 derived operand guards.
 All21 checks64.167s; all10,260 fired cuts equal. Exact image accounting changes

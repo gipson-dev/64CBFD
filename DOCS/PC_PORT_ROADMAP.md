@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Translation Guarded Byte Match - 2026-10-13
+
+[Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
+
+- [x] Retain the recovered signed arithmetic, wrapped index calculation, sequential stores and unchanged O2/g3/MIPS2 C body.
+- [x] Recover all49 words/frame0 through34 source-derived constant/ordinary-branch/return-delay guards, retaining the raw-C distinction.
+- [x] Pass17 installed checks91.981s, including exhaustive per-field halfword coverage, edge/alias/native O2/O0 cases,864 fired cuts, both owner padders and three carry/rebased links.
+- [x] Account for the entire ELF:only104 target bytes change; every symbol field, protected data/pool/neighbor/profile/layout/conversion row stays fixed.
+- [x] Preserve guard history and all other text inputs, archiving old fixtures before advancing only verified ELF/guard pins.
+- [x] Bank tools4e3cd4c before the consumer pin, preserving older history/unrelated changes and frozen host Release, without push.
+- [ ] Finish the wider Game backlog; next recover func_1506AA48 and its real packet/creator/copy contract.
+
 ## Matrix Reflection Guarded Byte Match - 2026-10-13
 
 [Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
@@ -10,7 +22,8 @@
 - [x] Account for the entire ELF:1,463 target code bytes plus two bytes for the declared12 ->1944 symbol-size update, all other bytes fixed.
 - [x] Preserve all protected Game data/profile/layout/conversion rows and guard history; advance only the independently verified text ELF/guard pins.
 - [x] Bank tools5c4c157 before the consumer pin; preserve older mirror history and unrelated changes, no push or host Release work.
-- [ ] Finish the wider Game matching backlog; next inspect func_15142314 and its real caller/owner.
+- [x] Inspect and finish func_15142314 and its caller/owner gates in Note1346.
+- [ ] Finish the wider Game matching backlog; continue with func_1506AA48.
 
 ## Matrix Reflection Original Prologue Recovery - 2026-10-13
 

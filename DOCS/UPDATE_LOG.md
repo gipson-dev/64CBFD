@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-13 Matrix Translation Guarded Byte Match
+
+[Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
+Finish func_15142314 through34 source-derived constant/branch/return scheduling
+guards, leaving its recovered C unchanged. All49 words/frame0 match. All17
+installed checks pass91.981s; the literal image audit changes only104 target
+bytes and no metadata. Fresh Game2,826/4,823, total3,499/5,496, zero drift.
+Tools4e3cd4c first; preserve unrelated older work and advance only verified pins.
+
 ## 2026-10-13 Matrix Reflection Guarded Byte Match
 
 [Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):

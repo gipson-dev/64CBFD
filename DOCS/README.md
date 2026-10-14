@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix translation guarded byte match](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
+  Finish49 words/frame0 using34 source-derived scheduling guards with unchanged
+  C. All17 checks pass; only104 target ELF bytes change, no metadata exceptions.
+
 - [Matrix reflection guarded byte match](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
   Install the complete486-word routine with238 source-derived operand guards;
   all21 checks pass and fresh Game matching reaches2,825/4,823. Raw C is not
