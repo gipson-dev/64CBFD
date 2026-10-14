@@ -88,8 +88,17 @@ void func_1506A864(u8 *actor, s32 arg1) {
     }
 }
 
-s32 func_1506A968() {
-    return 0;
+void func_1506A968(u8 *actor, s32 arg1) {
+    f32 position[3];
+    f32 difference[3];
+
+    position[0] = *(f32 *)(actor + 0x14);
+    position[1] = *(f32 *)(actor + 0x18);
+    position[2] = *(f32 *)(actor + 0x1C);
+    difference[0] = *(f32 *)(D_800D1570 + 0) - *(f32 *)(D_800D1560 + 0);
+    difference[1] = *(f32 *)(D_800D1570 + 4) - *(f32 *)(D_800D1560 + 4);
+    difference[2] = *(f32 *)(D_800D1570 + 8) - *(f32 *)(D_800D1560 + 8);
+    func_151D3480(position, difference, NULL, 1, 0xFF, 1);
 }
 
 void func_1506AA08(s32 arg0, s32 arg1) {

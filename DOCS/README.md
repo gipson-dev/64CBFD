@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor vector mode-1 direct match](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
+  Recover all40 words/frame0x38 directly from C, zero guards. All17 checks pass,
+  including shared mode0 regression, real table7 and exact whole-image gates.
+
 - [Actor descriptor spawn direct match](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):
   Recover all65 words/frame0x60 directly from C, zero guards. All16 checks pass,
   including SDK layouts, true factory failure/copy paths and closed image gates.

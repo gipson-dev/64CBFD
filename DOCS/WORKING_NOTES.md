@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-13:
+[Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
+func_1506A968 direct40-word/frame0x38 C match, zero guards. Reuse qualified
+private vectors with kind1 and real table7; all17 installed checks pass37.209s.
+Only123 instruction bytes and one named size byte change, with all other
+image/data/history fixed and shared mode0 regression retained. Tools7f557cd
+first; next func_1506A5F0's mixed packet/global-coefficient callback.
+
+2026-10-13:
 [Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):
 func_1506A864 direct65-word/frame0x60 C match, zero guards. Reuse SDK types,
 preserve truncation/untouched pad5 and true allocation/copy paths; all16 checks

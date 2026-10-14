@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-13 Actor Vector Mode-1 Direct Match
+
+[Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
+Replace func_1506A968's placeholder with its complete kind1 actor/global-vector
+snapshot callback. All40 words/frame0x38 match directly, zero guards. All17
+checks pass37.209s, including native32 O2/O0, original dispatcher/table7 and
+792 fired cuts; shared mode0 regression remains green. Only124 declared ELF
+bytes change. Fresh Game2,831/4,823, total3,504/5,496; tools7f557cd first.
+Next func_1506A5F0's mixed packet and global coefficients.
+
 ## 2026-10-13 Actor Descriptor Spawn Direct Match
 
 [Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6d54751; tools are committed before the consumer pin.
+  checkpoint pins tools 7f557cd; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed mode1 actor/vector snapshot checkpoint:
+[Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md).
+func_1506A968 matches all40 words/frame0x38 directly from C, zero guards. Keep
+raw coordinates, private arrays, global differences and the kind1 JAL delay.
+All17 installed checks pass37.209s:11,904 guest/60 alias cases,792 fired cuts,
+native32 O2/O0 and original dispatcher/table7. Shared mode0 regression passes
+with restored source binding. Only123 code bytes and one size byte change;
+all other ELF/data/guards/profiles/layouts/conversion rows stay fixed. Fresh
+Game2,831/4,823 (58.70%), total3,504/5,496 (63.76%), different1,992, drift0.
+Tools7f557cd first; next func_1506A5F0's mixed packet and global coefficients.
 
 Installed actor descriptor/coordinate spawn checkpoint:
 [Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md).
