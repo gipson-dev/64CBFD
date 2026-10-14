@@ -56,9 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Actor burst consumer guarded match](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
+  Install all315 words/frame0x168 through semantic C and ten guarded rows.
+  All40 checks pass; complete image and producer regressions stay qualified.
+
 - [Actor burst consumer float and scheduling recovery](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
   Recover saved-float roles and modeled return states;15 fresh checks pass.
-  A diagnostic closes all315 words after two schedule inverses. Still uninstalled.
+  Initial diagnostic-only checkpoint; installation completes in Note1355 above.
 
 - [Actor burst consumer partial recovery](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
   Complete semantic candidate and four exact private homes;10 fresh checks pass.

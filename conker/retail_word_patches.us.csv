@@ -15041,3 +15041,13 @@ game_16EE20,func_15142314,0x90,0x468021A0,0x460A3400,-,-,Normalize certified tra
 game_16EE20,func_15142314,0x94,0x460A3400,0x46008482,-,-,Normalize certified translation constant branch and return delay schedules,,,false
 game_16EE20,func_15142314,0x98,0x46008482,0xE4D20008,-,-,Normalize certified translation constant branch and return delay schedules,,,false
 game_16EE20,func_15142314,0xA0,0xE4D20008,0x00000000,-,-,Normalize certified translation constant branch and return delay schedules,,,false
+generated_1D43B0,func_151A6F00,0x144,0x104000D5,0x104000D7,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x25C,0x1277001A,0x1277001B,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x264,0x127E0029,0x127E002B,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x26C,0x1261002F,0x12610031,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x274,0x1000003C,0x1000003E,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x2C0,0x10000029,0xE7A60124,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x2C4,0xE7A60124,0x1000002A,-,-,Restore two velocity-store delay schedules and internal branch distances,0x00000000,-,false
+generated_1D43B0,func_151A6F00,0x304,0x10000018,0xE7A80124,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false
+generated_1D43B0,func_151A6F00,0x308,0xE7A80124,0x10000018,-,-,Restore two velocity-store delay schedules and internal branch distances,0x00000000,-,false
+generated_1D43B0,func_151A6F00,0x494,0x1440FF34,0x1440FF32,-,-,Restore two velocity-store delay schedules and internal branch distances,,,false

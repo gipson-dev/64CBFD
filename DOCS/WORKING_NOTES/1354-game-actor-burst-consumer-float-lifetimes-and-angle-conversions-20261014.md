@@ -4,6 +4,10 @@ Verified locally: 2026-10-14. Continue the same consumer from
 [Note 1353](1353-game-actor-burst-consumer-semantic-recovery-20261014.md).
 This remains uninstalled research, not production matching or host acceptance.
 
+Completed in [Note 1355](1355-game-actor-burst-consumer-guarded-match-20261014.md):
+the315-word result is installed with ten guarded rows and closed image/fault/
+alias/owner/link/producer gates. This page preserves the earlier research receipt.
+
 ## Target And Baseline
 
 - `func_151A6F00`, owner `conker/src/game/generated_1D43B0.c:7`.

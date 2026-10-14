@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0e244d6; tools are committed before the consumer pin.
+  checkpoint pins tools eb93e2e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,17 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Uninstalled actor burst consumer research:
-[Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md).
-func_151A6F00 now emits313 words/frame0x168/143 raw differences after recovering
-saved-float lifetimes, implicit angle narrowing and initialization order.
-Fifteen fresh checks pass47.269s:960 complete modeled return-state domains,
-288 saved-float call domains, prior boundary/native checks and protected inputs.
-An analysis-only inverse of two filled branch-delay sites reproduces all315
-retail words exactly; it is not a build transform or matching credit.
-Production remains unchanged and the consumer still returns zero. Totals stay
-Game2,832/4,823, total3,505/5,496, different1,991, drift0. Tools0e244d6 first;
-finish those two scheduling sites and the applicable promotion gates next.
+Installed actor burst consumer checkpoint:
+[Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md).
+func_151A6F00 matches all315 words/frame0x168 through semantic C and ten exact
+guards: two restored idle slots, their store/branch swaps and branch distances.
+All40 installed checks pass124.436s, including4,080 root cuts,168 alias prefixes,
+both real padders/carry links and full producer/native regressions. Exactly1,048
+ELF bytes are accounted:988 instructions, two size bytes and58 asserted symbol/
+string bytes. All other image/data/history/converted rows remain fixed.
+Fresh Game2,833/4,823 (58.74%), total3,506/5,496 (63.79%), different1,990, drift0.
+Toolseb93e2e first; next recover the117-word func_151A743C in this same owner.
 
 Installed actor burst packet checkpoint:
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md).

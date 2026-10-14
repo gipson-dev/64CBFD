@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-14:
+[Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
+func_151A6F00 installed315-word/frame0x168 C match with ten scheduling guards.
+All40 checks pass124.436s:4,080 root cuts,168 aliases, real padders/links and
+producer/native regression. Close1,048 ELF bytes including58 exact serialization
+bytes; Game2,833/4,823, total3,506/5,496. Toolseb93e2e first; next func_151A743C.
+
+2026-10-14:
 [Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
 func_151A6F00 improves to313 words/frame0x168/143 raw differences. Complete
 modeled return states and saved-float lifetimes agree;15 checks pass47.269s.

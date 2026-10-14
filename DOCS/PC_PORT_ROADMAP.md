@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Burst Consumer Guarded Match - 2026-10-14
+
+[Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
+
+- [x] Install the complete semantic consumer across all kind paths, keeping signed count, byte arguments, live callback feedback and all four private homes.
+- [x] Match all315 words/frame0x168 using ten existing-format guards, including only two inserted idle words; no new core normalizer or profile change.
+- [x] Pass40 installed checks124.436s, including4,080 fired root cuts,168 alias prefixes, both real padders, three carry links and full producer/native regression.
+- [x] Close every ELF byte:988 instruction bytes, two size bytes and58 exact symbol/string serialization bytes; preserve720 data owners and all prior guard bytes.
+- [x] Archive protected fixtures before advancing only verified ELF/guard pins; bank toolseb93e2e before the consumer pin, without push or frozen host Release work.
+- [ ] Recover the117-word func_151A743C in the same owner, preserving the completed consumer and six neighbors.
+- [ ] Finish the wider Game backlog.
+
 ## Actor Burst Consumer Scheduling Boundary - 2026-10-14
 
 [Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
@@ -9,9 +21,9 @@
 - [x] Pass15 checks47.269s, including960 complete modeled return-state domains and288 saved-float call domains.
 - [x] Prove an analysis-only inverse of two filled delay slots plus internal branch rebases equals every315 retail word; keep effective corruption controls.
 - [x] Bank tools0e244d6 first; preserve production inputs, progress, older mirror work and frozen host Release.
-- [ ] Recover actual315-word emission or qualify a narrow build scheduling transform, including relocation offsets.
-- [ ] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image.
-- [ ] Finish the wider Game backlog; the next target remains func_151A6F00.
+- [x] Qualify actual315-word emission through existing guarded scheduling and moved relocation offsets in Note1355.
+- [x] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image in Note1355.
+- [ ] Finish the wider Game backlog; next func_151A743C.
 
 ## Actor Burst Consumer Research - 2026-10-14
 
@@ -22,9 +34,9 @@
 - [x] Pass10 fresh recovery checks37.065s:960 seeded guest cases,18 signed prefixes,32 raw mode2 direction cases and native32 O2/O0.
 - [x] Retain effective bad-count, private-layout and double-instruction controls; preserve production ELF/source/guards/progress exactly.
 - [x] Bank toolsce205ae first and document this as uninstalled partial research, without matching credit, push or host Release work.
-- [ ] Resolve311 versus315 words and complete machine-state differences; qualify applicable alias/fault/owner/independent-link gates.
-- [ ] Install func_151A6F00 only after those gates pass, then close linked-image and fresh matching-progress audits.
-- [ ] Finish the wider Game backlog; the next target remains func_151A6F00.
+- [x] Resolve the315-word guarded result and qualify applicable modeled state/alias/fault/owner/independent-link gates in Note1355.
+- [x] Install func_151A6F00 after those gates pass, then close linked-image and fresh matching-progress audits in Note1355.
+- [ ] Finish the wider Game backlog; next func_151A743C.
 
 ## Actor Burst Packet Direct Match - 2026-10-14
 
@@ -36,7 +48,8 @@
 - [x] Qualify original315-word consumer/dispatcher/table0/memcpy, all three allocation outcomes and unreadable holes; preserve both padders and15 neighbors.
 - [x] Close whole-image accounting:214 instruction bytes, one size byte,35 record bytes and42 string bytes in three asserted permutations; no metadata exemptions.
 - [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools23e45f5 before the consumer pin, no push or frozen host Release work.
-- [ ] Recover the complete315-word func_151A6F00 consumer across all kind branches and finish the wider Game backlog.
+- [x] Recover the complete315-word func_151A6F00 consumer across all kind branches in Note1355.
+- [ ] Finish the wider Game backlog; next func_151A743C.
 
 ## Actor Vector Mode-1 Direct Match - 2026-10-13
 

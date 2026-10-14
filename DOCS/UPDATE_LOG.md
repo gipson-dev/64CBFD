@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-14 Actor Burst Consumer Guarded Match
+
+[Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
+Replace func_151A6F00's placeholder with the complete consumer. All315 words/
+frame0x168 match through semantic C and ten exact scheduling guards. All40
+installed checks pass124.436s; close1,048 ELF bytes with no metadata exemptions.
+Fresh Game2,833/4,823, total3,506/5,496; toolseb93e2e first. Next func_151A743C.
+
 ## 2026-10-14 Actor Burst Consumer Float And Scheduling Recovery
 
 [Note 1354](WORKING_NOTES/1354-game-actor-burst-consumer-float-lifetimes-and-angle-conversions-20261014.md):
