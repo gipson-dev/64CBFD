@@ -37,6 +37,9 @@ ELF bytes are accounted:988 instructions, two size bytes and58 asserted symbol/
 string bytes. All other image/data/history/converted rows remain fixed.
 Fresh Game2,833/4,823 (58.74%), total3,506/5,496 (63.79%), different1,990, drift0.
 Toolseb93e2e first; next recover the117-word func_151A743C in this same owner.
+Consumere4b8e39a banks the checkpoint; seven fresh post-bank checks pass28.068s
+with all installed hashes fixed. The incremental graph hook completes40,669
+nodes/81,150 edges without a remaining worker; no push or host Release work.
 
 Installed actor burst packet checkpoint:
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md).

@@ -154,3 +154,16 @@ python3 -m unittest tools.tests.test_game_actor_burst_consumer_match -v
 python3 -m unittest tools.tests.test_game_actor_burst_consumer_recovery -v
 python3 -m unittest tools.tests.test_game_actor_burst_packet_match -v
 ```
+
+## Post-Bank Verification
+
+Consumer `e4b8e39a` banks the installation. Seven fresh post-bank checks pass
+in28.068s: actual padders, carry links, complete image/serialization, prior
+producer audit and both protected-text gates. All installed source/ELF/guard/
+conversion hashes remain fixed, including the unchanged67-word caller.
+
+The commit's incremental graph hook finishes40,669 nodes/81,150 edges with no
+worker remaining. The full update safely refuses an18,891-node replacement;
+preserve the existing corpus and its19,398 nodes from2,972 excluded but present
+files. All462 post-copy older-mirror fingerprints and its ddbdd16 HEAD remain
+unchanged. No push or frozen host Release work occurs.
