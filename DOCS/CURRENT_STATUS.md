@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools5733a7d; tools are committed before the consumer pin.
+  checkpoint pins toolsa1cd670; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Codec input refill guarded match:
+[Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md).
+Replace func_151F7F60's zero-return placeholder with74 words/frame0x20,
+using the existing32-bit reader interface, retail-g selection and one
+commutative-add guard. Preserve12 neighbors under both profiles, all data/
+overflow/progress, and every ELF byte except239 slot bytes and one extent.
+Pass1,680 MIPS cases,177 fired fault prefixes and1,680 native32 cases per
+O2/O0 profile. All101 final checks pass161.042s; retain the intermediate
+source fixture and independently pin the final typed owner. Fresh Game2,871/
+4,830 (59.44%), total3,544/5,503 (64.40%), different1,959, zero drift.
+Executable-only total3,404/5,363; conversions remain5,503/6,044. Archive801
+and492 unrelated mirror fingerprints stay fixed; no host or Release work.
+Next: qualify func_151F86B0's112-word slot (retained109-word/six-difference
+draft), and continue the failed-interface/binding and original Game backlog.
 
 Commented-source audit and guarded object-notification recovery:
 [Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md).

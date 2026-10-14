@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Codec Input Refill Guarded Match
+
+[Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
+Restore func_151F7F60's74-word/frame0x20 body from the commented draft,
+using the existing32-bit reader ABI and one checked commutative-add guard.
+Preserve12 owner neighbors and all data/overflow/progress; only239 slot bytes
+and one extent change. All101 checks pass161.042s, including1,680 MIPS cases,
+177 fired prefixes and two native32 profiles. Fresh Game2,871/4,830, total3,544/
+5,503, different1,959, no drift. Toolsa1cd670 first; no source-archive/host/
+Release operation. Next: qualify func_151F86B0's112-word slot.
+
 ## 2026-10-14 Commented Source And Object Notification Match
 
 [Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):

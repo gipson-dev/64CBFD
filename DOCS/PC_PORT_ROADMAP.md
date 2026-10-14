@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Codec Input Refill Match - 2026-10-14
+
+[Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
+
+- [x] Restore func_151F7F60's74-word/frame0x20 semantic body, proper32-bit reader interface and typed declaration outside the placeholder group.
+- [x] Screen seven address forms, retain the complete retail-g emission and qualify one commutative-add guard.
+- [x] Preserve12 neighbors under both profiles; verify both padders, the eight-function mixed profile and independent original/rebased links.
+- [x] Pass1,680 MIPS cases,177 actual fired root-fault prefixes and1,680 native32 cases per O2/O0 profile, including callback updates and effective controls.
+- [x] Close239 changed slot bytes and one symbol extent; keep every other ELF byte and all progress/data/overflow fixed.
+- [x] Pass101 final checks161.042s, three standalone mirror checks and project tools checks; retain intermediate/final source fixtures separately.
+- [x] Refresh Game2,871/4,830, total3,544/5,503, different1,959, zero drift; preserve801 archive files and492 unrelated mirror fingerprints.
+- [x] Bank toolsa1cd670 before the consumer pin; audit the existing host implementation read-only, with no transfer/push/Release operation.
+- [ ] Qualify func_151F86B0's112-word frame-decode/metadata slot; its retained-g draft emits109 words with six real differences.
+- [ ] Continue actual failed-body/interface recovery, pool bindings, func_151F4F38 and the remaining original Game matching work.
+- [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
+
 ## Commented Source And Notification Match - 2026-10-14
 
 [Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):

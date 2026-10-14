@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Codec input refill guarded match](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
+  Restore74 words with the established reader ABI and one commutative guard,
+  preserve12 neighbors and close the full image change to its slot/extent.
+  Pass101 checks; keep all failed/binding queues and runtime boundaries open.
+
 - [Commented-source audit and object notification match](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
   Screen440 objects from353 commented records; recover one59-word routine
   with two checked scheduling guards,88 fixed neighbors and unchanged ELF.

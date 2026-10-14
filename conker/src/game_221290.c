@@ -3,6 +3,7 @@
 void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2);
 
 s32 func_151F8088(void *arg0, s32 arg1);
+s32 func_151F7F60(void *decoder);
 
 #include "functions.h"
 #include "variables.h"
@@ -67,7 +68,6 @@ f32 func_1504A400(f32, f32);
 /* Generated placeholder declarations. */
 s32 func_151F63C4();
 s32 func_151F78B4();
-s32 func_151F7F60();
 s32 func_151F86B0();
 /* End generated placeholder declarations. */
 
@@ -798,9 +798,31 @@ s32 func_151F6FD0(void *arg0) {
 s32 func_151F78B4() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F7F60.s. */
-s32 func_151F7F60() {
-    return 0;
+/* Refill the codec input window, compacting bytes and padding a short read. */
+s32 func_151F7F60(void *decoder) {
+    s32 shiftBytes = 0x1000;
+    s32 bytesRead;
+
+    if (*(s32 *)((char *)decoder + 0x3F88) + *(s32 *)((char *)decoder + 0x201C) >= 0x1FFC) {
+        bcopy((char *)decoder + shiftBytes + 0x1C, (char *)decoder + 0x1C, shiftBytes);
+        *(s32 *)((char *)decoder + 0x201C) -= shiftBytes;
+        *(s32 *)((char *)decoder + 0x2020) -= shiftBytes << 3;
+    }
+
+    bytesRead = ((func_151F6FD0_ReadFunc)(*(s32 *)((char *)decoder + 4)))(
+        *(s32 *)decoder,
+        (char *)decoder + *(s32 *)((char *)decoder + 0x201C) + 0x1C,
+        *(s32 *)((char *)decoder + 0x3F88),
+        -1);
+
+    if (bytesRead < *(s32 *)((char *)decoder + 0x3F88)) {
+        bzero((char *)decoder + bytesRead + 0x1C, *(s32 *)((char *)decoder + 0x3F88) - bytesRead);
+    }
+
+    *(s32 *)((char *)decoder + 0x18) += *(s32 *)((char *)decoder + 0x3F88);
+    *(s32 *)((char *)decoder + 0x201C) += *(s32 *)((char *)decoder + 0x3F88);
+
+    return *(s32 *)((char *)decoder + 0x201C) - *(s32 *)((char *)decoder + 0x3F88);
 }
 /* Synchronize and validate a frame header, then dispatch its side-info parser. */
 s32 func_151F8088(void *arg0, s32 arg1) {

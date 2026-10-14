@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
+Restore func_151F7F60 (74 words/frame0x20) with the existing reader ABI,
+retail-g selection and one commutative-add guard. Preserve12 neighbors and
+all data/overflow/progress; close239 slot bytes and one extent. All101 checks
+161.042s pass, with1,680 MIPS cases/177 prefixes/native32 controls. Fresh
+Game2,871/4,830, total3,544/5,503, drift0. Toolsa1cd670 first; next112-word
+func_151F86B0, followed by continued failed-body/interface and Game matching.
+
+2026-10-14:
 [Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
 Inventory353 commented records in95 files, screen440 objects under five
 profiles, and keep59 failures/three real binding gaps explicit. Recover

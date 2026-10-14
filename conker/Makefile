@@ -499,9 +499,9 @@ $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o: \
 	rm -f $@.compact $@.bootstrap.compact $@.padded.s
 
 # The codec's recovered retail bodies use -g, unlike the established O2
-# neighbors in this splat owner. Select only these seven functions from -g.
+# neighbors in this splat owner. Select only these eight functions from -g.
 CODEC_RETAIL_G_FUNCTIONS := func_151F3DE0 func_151F42E8 func_151F578C \
-	func_151F6970 func_151F6B28 func_151F8088 func_151F85C4
+	func_151F6970 func_151F6B28 func_151F7F60 func_151F8088 func_151F85C4
 $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o: \
 		$(SRC_DIR)/game_221290.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
