@@ -1286,16 +1286,25 @@ void func_150791F0(void) {
     }
 }
 
+/* Face the pointed-to path entry and consume one movement step. */
 void func_15079228(void) {
-    struct178 *temp_v0 = &D_800D3098[D_800D154C->unk251];
-    u16 temp_a2;
+    s16 *entry;
+    f32 x;
+    f32 z;
+    u16 v0;
+    s32 a2;
 
-    temp_a2 = func_1505A630(D_800D154C->x_position - temp_v0->unk0, temp_v0->unk4 - D_800D154C->z_position, 0);
-    if (temp_a2 == 0) {
-        temp_a2 = 1;
+    // D_800D3098 is read here as a pointer to the 52-byte entries.
+    entry = (s16 *) (*(char **) &D_800D3098 + D_800D154C->unk251 * 52);
+    x = entry[0];
+    z = entry[2];
+    v0 = func_1505A630(D_800D154C->x_position - x, z - D_800D154C->z_position, 0);
+    a2 = v0 & 0xFFFF;
+    if (v0 == 0) {
+        a2 = 1;
     }
-    func_1505D024(D_800D154C, D_800D1890, temp_a2, -1);
-    D_800D154C->unk218 -= 5;
+    func_1505D024(D_800D154C, D_800D1890, a2, -1);
+    D_800D154C->unk218 -= 1;
     D_800D154C->unk21C = 1;
 }
 

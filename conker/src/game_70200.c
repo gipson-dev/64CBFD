@@ -22,34 +22,21 @@ void func_15042D78(u8 arg0) {
 
 void func_15042ECC(s32 arg0, s32 *arg1);
 
-void func_15042D94(s16 arg0, s16 arg1, u8 arg2, s32 arg3,
-                   s32 arg4, s32 arg5, s32 arg6, s32 arg7,
-                   s32 arg8, s32 arg9, s32 argA, s32 argB,
-                   s32 argC, s32 argD, s32 argE, s32 argF,
-                   s32 arg10, s32 arg11, s32 arg12, s32 arg13) {
-    s32 sp24[16];
+/* Copy sixteen o32 variadic payload words and submit the text command. */
+void func_15042D94(s32 arg0, s32 arg1, u8 arg2, s32 arg3, ...) {
+    char *va;
+    s32 buf[16];
+    s32 i;
 
     D_800CBD74 = arg2;
     D_800CBD70 = arg0;
     D_800CBD72 = arg1;
-
-    sp24[0] = arg4;
-    sp24[1] = arg5;
-    sp24[2] = arg6;
-    sp24[3] = arg7;
-    sp24[4] = arg8;
-    sp24[5] = arg9;
-    sp24[6] = argA;
-    sp24[7] = argB;
-    sp24[8] = argC;
-    sp24[9] = argD;
-    sp24[10] = argE;
-    sp24[11] = argF;
-    sp24[12] = arg10;
-    sp24[13] = arg11;
-    sp24[14] = arg12;
-    sp24[15] = arg13;
-    func_15042ECC(arg3, sp24);
+    va = (char *) &arg3 + sizeof(arg3);
+    for (i = 0; i < 16; i++) {
+        va = (char *) (((int) va + 3) & ~3) + 4;
+        buf[i] = *(s32 *) (va - 4);
+    }
+    func_15042ECC(arg3, buf);
 }
 
 void func_15042E3C(s32 arg0, ...) {

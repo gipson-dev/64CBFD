@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsfb5470e; tools are committed before the consumer pin.
+  checkpoint pins tools249f8c3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+All remaining qualified donor recoveries:
+[Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md).
+Install all 19 remaining applicable exact C donors: ten smaller Game routines
+and nine streaming-audio routines, 4,117 words, zero new guards. All 742 owner
+neighbors retain raw code/relocations/pools; protected data stays exact across
+189,088 bytes and 720 owners. Select seven codec functions from retail -g
+without changing the six O2 neighbors. Preserve retail names and add accurate
+comments/local types; no shared-header merge. All 22 authorized donors are now
+installed; fresh applicable donor queue is zero. The first 30 installed/history
+checks pass 111.864s, followed by three effective compiled source controls.
+Fresh Game 2,858/4,826 (59.22%), total 3,531/5,499 (64.21%), different 1,968,
+drift zero; conversion counts remain fixed. Function-only total 3,391/5,359;
+retain the separate legacy Debugger data-label counter caveat.
+Resume original Game matching; adjacent func_151F4F38 is an independently
+unmatched candidate, not a qualified donor. No host or frozen Release work.
+Final five donor checks pass 27.386s after the pointer-return declaration;
+normal rebuild and incremental recheck retain the pinned ELF. Tools249f8c3
+are committed first; preserve all465 unrelated older-mirror fingerprints.
+
 First authorized byte-exact donor group:
 [Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md).
 func_15125628/func_1507D158/func_151411E4 now emit26/32/27 retail words directly
@@ -37,14 +56,15 @@ prefixes and65,536 native timer pairs per O2/O0 profile. All25 installed audit/
 history checks pass47.390s; final nine donor checks12.526s include carry links.
 The entire ELF and guard CSV stay byte-identical; only three rows become C.
 Fresh Game2,839/4,826 (58.83%), total3,512/5,499 (63.87%), different1,987, drift0.
-Nineteen candidates remain; next func_15008870. Toolsfb5470e are banked first.
+At that checkpoint nineteen candidates remained; all are completed in Note1361.
+Toolsfb5470e were banked first.
 Consumere68c9494 banks the group; seven post-bank checks pass10.249s.
 No broad header merge, supplied-archive edit, host build or frozen Release work.
 
 Alternative source audit, performed after the function bank:
 [Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md).
-Another Source/CBFD-Recompiled/conker remains unused and all801 original files
-are unchanged. Its disposable US reconstruction has1,478/1,478 executable C
+Another Source/CBFD-Recompiled/conker remains preserved and all801 original files
+are unchanged; only individually qualified C is adopted. Its disposable US reconstruction has1,478/1,478 executable C
 slots byte-exact (Init241, Game1,217, Debugger20), with no guards or padding
 exception. Whole text2,256,728 bytes also matches, including original assembly.
 Ordinary linking fails on generated rodata labels; the diagnostic ELF is not a

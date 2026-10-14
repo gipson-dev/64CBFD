@@ -1,23 +1,80 @@
 #include <ultra64.h>
 
+void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2);
+
+s32 func_151F8088(void *arg0, s32 arg1);
+
 #include "functions.h"
 #include "variables.h"
 
+extern f32 D_800B0C2C;
+extern f32 D_800B0C30;
+extern f32 D_800B0C34;
+extern f32 D_800B0C38;
+extern f32 D_800B0C3C;
+extern f32 D_800B0C40;
+extern f32 D_800B0C44;
+extern f32 D_800B0C48;
+
+extern s32 *D_800E0E20;
+extern f32 *D_800E1078;
+extern f32 D_800E0E38[];
+extern f32 D_800E0EC8[];
+extern f32 D_800E0FE8[];
+extern s32 D_800E0E28;
+extern s32 D_800E0E30;
+extern f32 D_800E1080[];
+extern f32 D_800E1480[];
+extern f32 D_800B067C[];
+extern f32 D_800B069C[];
+extern s32 D_800E0E00;
+extern u8 D_800E1880[];
+
+// Scalefactor band boundary table: 23 long-block edges followed by 14
+// short-block edges, one row per (sample rate, MPEG version) pair.
+// splat named several interior elements as their own symbols -
+// D_800AE99A is .l[1], D_800AE9A8 is .l[8], D_800AE9C6 is .s[0],
+// D_800AE9C8 is .s[1] and D_800AE9CE is .s[4] - so those all
+// disassemble back out of this one declaration.
+typedef struct {
+    s16 l[23];
+    s16 s[14];
+} SfBand;
+
+// The 22-entry pre-emphasis table, copied wholesale onto the stack by
+// func_151F42E8 (IDO expands the struct assignment into an inline
+// 12-bytes-per-iteration copy loop).
+typedef struct {
+    s32 v[22];
+} PreTab;
+
+extern SfBand D_800AE998[];
+extern PreTab D_800B0AB4;
+
+// The MPEG-2 LSF scalefactor-length table: [preflag][region][window][4].
+// func_151F578C copies the whole 288-byte table onto its stack (IDO
+// expands the struct assignment into an inline copy loop) and then
+// bcopy()s one 4-entry row out of the copy.
+typedef struct {
+    s32 v[2][3][3][4];
+} SlenTab;
+
+#define CODEC_SLEN_TABLE (*(SlenTab *)D_800B0B0C)
+f32 func_1504A400(f32, f32);
+
+
+
 /* Generated placeholder declarations. */
-s32 func_151F3DE0();
-s32 func_151F42E8();
 s32 func_151F63C4();
-s32 func_151F6B28();
 s32 func_151F78B4();
 s32 func_151F7F60();
-s32 func_151F8088(s32 arg0, s32 arg1);
-s32 func_151F85C4();
 s32 func_151F86B0();
 /* End generated placeholder declarations. */
 
 typedef s32 (*func_151F6FD0_ReadFunc)(s32, void *, s32, s32);
 
 s32 func_151F8960(void *arg0, void *arg1, s32 arg2);
+s32 func_151F6FD0();
 
 extern s32 D_800B06BC[];
 extern s32 D_800B0734[];
@@ -29,13 +86,240 @@ extern s16 D_800AEB7C[];
 
 #define S32_AT(base, offset) (*(s32 *)((u8 *)(base) + (offset)))
 
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F3DE0.s. */
-s32 func_151F3DE0() {
-    return 0;
+/* Initialize codec windows, the x^(4/3) lookup, and geometric gain tables. */
+s32 func_151F3DE0(void) {
+    s32 i;
+    f32 x;
+    f32 xx;
+    f32 delta;
+    f32 t;
+    f32 eps;
+    f32 c;
+    f32 d;
+
+    i = 0;
+    do {
+        D_800E0E38[i] = sinf(((f32) i + 0.5f) * D_800B0C2C);
+    } while (++i < 0x24);
+
+    i = 0;
+    do {
+        D_800E0EC8[i] = sinf(((f32) i + 0.5f) * D_800B0C30);
+    } while (++i < 0x12);
+
+    i = 0x12;
+    do {
+        D_800E0EC8[i] = 1.0f;
+    } while (++i < 0x18);
+
+    i = 0x18;
+    do {
+        D_800E0EC8[i] = sinf((((f32) i + 0.5f) - 18.0f) * D_800B0C34);
+    } while (++i < 0x1E);
+
+    i = 0x1E;
+    do {
+        D_800E0EC8[i] = 0.0f;
+    } while (++i < 0x24);
+
+    i = 0;
+    do {
+        D_800E0FE8[i] = 0.0f;
+    } while (++i < 6);
+
+    i = 6;
+    do {
+        D_800E0FE8[i] = sinf((((f32) i + 0.5f) - 6.0f) * D_800B0C38);
+    } while (++i < 0xC);
+
+    i = 0xC;
+    do {
+        D_800E0FE8[i] = 1.0f;
+    } while (++i < 0x12);
+
+    i = 0x12;
+    do {
+        D_800E0FE8[i] = sinf(((f32) i + 0.5f) * D_800B0C3C);
+    } while (++i < 0x24);
+
+    i = 1;
+    do {
+        D_800E0E20[i] += D_800E0E28;
+    } while (++i < 0x22);
+
+    D_800E1078 = (f32 *) D_800E0E30;
+    if (D_800E1078 == 0) {
+        return 0;
+    }
+
+    x = 1.0f;
+    D_800E1078[0] = 0.0f;
+
+    i = 1;
+    do {
+        t = (f32) i;
+        t = t * t;
+        eps = t * D_800B0C40;
+        t = t * t;
+        do {
+            xx = x * x;
+            delta = (xx * x - t) / (2.0f * xx);
+            x = x - delta;
+        } while (delta > eps || delta < -eps);
+        D_800E1078[i] = x;
+    } while (++i < 0x2000);
+
+    c = D_800B0C44;
+    d = 0.25f;
+    D_800E1080[0] = 1.0f;
+    D_800E1480[0] = 1.0f;
+
+    i = 1;
+    do {
+        D_800E1080[i] = c;
+        D_800E1480[i] = d;
+        d = d * 0.25f;
+        c = c * D_800B0C48;
+    } while (++i < 0x100);
+
+    return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F42E8.s. */
-s32 func_151F42E8() {
-    return 0;
+/* Requantize one granule/channel spectrum using its gain and scalefactors. */
+s32 func_151F42E8(void *arg0, s32 arg1, s32 arg2) {
+    s32 idx;
+    s32 next;
+    s32 bandStart;
+    s32 bandWidth;
+    PreTab tbl;
+    f32 lval[22];
+    f32 sval[3][13];
+    f32 gain;
+    s32 sb;
+    s32 win;
+    s32 pre;
+    s32 sfs;
+    s32 sfi;
+    s32 i;
+    s32 cnt;
+    f32 *out;
+    s16 *isp;
+    u8 *sgn;
+    s32 flagA;
+    s32 flagB;
+    s32 mixed;
+    s32 nextEdge;
+    f32 *srow;
+
+    tbl = D_800B0AB4;
+    idx = *(s32 *) ((char *) arg0 + 0x3BA4) * 3 + *(s32 *) ((char *) arg0 + 0x3BB4);
+
+    if (*(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3C98) != 0 &&
+        *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA0) == 2) {
+        if (*(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA8) != 0) {
+            next = D_800AE998[idx].l[1];
+        } else {
+            next = D_800AE998[idx].s[1] * 3;
+            bandWidth = D_800AE998[idx].s[1];
+            bandStart = 0;
+        }
+    } else {
+        next = D_800AE998[idx].l[1];
+    }
+
+    gain = func_1504A400(2.0f,
+        ((f32) *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3C88) - 210.0f) * 0.25f);
+    pre = *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CF8);
+
+    for (sb = 0; sb < 0x16; sb++) {
+        sfi = (((s32 *) ((char *) arg0 + arg1 * 248 + arg2 * 248 + 0x3D08))[sb]
+               + *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CF0) * tbl.v[sb])
+              * (pre + 1);
+        lval[sb] = D_800E1080[sfi] * gain;
+    }
+
+    for (win = 0; win < 3; win++) {
+        for (sb = 0; sb < 0xD; sb++) {
+            sfs = *(s32 *) ((char *) arg0 + arg1 * 12 + arg2 * 12 + win * 4 + 0x3CC8);
+            sfi = *(s32 *) ((char *) arg0 + arg1 * 248 + arg2 * 248 + win * 52 + sb * 4 + 0x3D64)
+                  * (pre + 1);
+            sval[win][sb] = (gain * D_800E1480[sfs]) * D_800E1080[sfi];
+        }
+    }
+
+    sb = 0;
+    i = 0;
+    cnt = *(s32 *) ((char *) arg0 + arg2 * 4 + 0x465C);
+    out = (f32 *) ((char *) arg0 + arg2 * 2304 + 0x4664);
+    isp = (s16 *) ((char *) arg0 + arg2 * 1156 + 0x3F94);
+    sgn = (u8 *) ((char *) arg0 + arg2 * 578 + 0x4418);
+
+    flagA = *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA0) == 2 &&
+            *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA8) == 0;
+    flagB = *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA0) == 2 &&
+            *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA8) != 0;
+    mixed = *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3C98);
+
+    while (i < cnt) {
+        if (next > cnt) {
+            next = cnt;
+        }
+        if (mixed != 0 && (flagA != 0 || (flagB != 0 && i >= 0x24))) {
+            win = (i - bandStart) / bandWidth;
+            nextEdge = bandStart + bandWidth;
+        }
+        while (i < next) {
+            if (mixed != 0 && (flagA != 0 || (flagB != 0 && i >= 0x24))) {
+                if (i >= nextEdge) {
+                    nextEdge += bandWidth;
+                    win++;
+                }
+                srow = sval[win];
+                if (*sgn++) {
+                    *out++ = -(D_800E1078[*isp++] * srow[sb]);
+                } else {
+                    *out++ = D_800E1078[*isp++] * srow[sb];
+                }
+            } else {
+                if (*sgn++) {
+                    *out++ = -(D_800E1078[*isp++] * lval[sb]);
+                } else {
+                    *out++ = D_800E1078[*isp++] * lval[sb];
+                }
+            }
+            i++;
+        }
+        if (*(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3C98) != 0 &&
+            *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA0) == 2) {
+            if (*(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA8) != 0) {
+                if (D_800AE998[idx].l[8] == i) {
+                    next = D_800AE998[idx].s[4] * 3;
+                    sb = 3;
+                    bandWidth = D_800AE998[idx].s[sb + 1] - D_800AE998[idx].s[sb];
+                    bandStart = D_800AE998[idx].s[sb] * 3;
+                } else {
+                    if (i < D_800AE998[idx].l[8]) {
+                        next = D_800AE998[idx].l[++sb + 1];
+                    } else {
+                        next = D_800AE998[idx].s[++sb + 1] * 3;
+                        bandWidth = D_800AE998[idx].s[sb + 1] - D_800AE998[idx].s[sb];
+                        bandStart = D_800AE998[idx].s[sb] * 3;
+                    }
+                }
+            } else {
+                next = D_800AE998[idx].s[++sb + 1] * 3;
+                bandWidth = D_800AE998[idx].s[sb + 1] - D_800AE998[idx].s[sb];
+                bandStart = D_800AE998[idx].s[sb] * 3;
+            }
+        } else {
+            next = D_800AE998[idx].l[++sb + 1];
+        }
+    }
+
+    if (i < 0x240) {
+        bzero(out, *(s32 *) ((char *) arg0 + arg2 * 4 + 0x4660) * 4);
+        return 1;
+    }
+    return 1;
 }
 // NON-MATCHING: bitstream table fill lifted with raw decoder offsets
 s32 func_151F4F38(void *arg0, s32 arg1, s32 arg2) {
@@ -131,217 +415,255 @@ s32 func_151F4F38(void *arg0, s32 arg1, s32 arg2) {
 
     return 1;
 }
-// NON-MATCHING: table decoder lifted from asm with raw offsets
+/* Decode MPEG-2 low-sampling-frequency scalefactors and intensity-stereo masks. */
 s32 func_151F578C(void *arg0, s32 arg1, s32 arg2) {
-    u8 *base;
-    s32 template_data[0x48];
-    s32 decode[4];
-    s32 row[4];
-    s32 code;
-    s32 table_class;
-    s32 special_mode;
-    s32 channel_kind;
-    s32 has_extra;
-    s32 field_a;
-    s32 packed;
-    s32 emitted;
+    SlenTab tbl;
+    s32 slen[4];
+    s32 sfc;
+    s32 *pre;
+    s32 mixedFlag;
+    s32 blockType;
+    s32 winSwitch;
+    s32 a;
+    s32 b;
     s32 i;
     s32 j;
-    s32 bit_count;
+    s32 half;
+    s32 nr[4];
+    s32 k;
+    s32 sl;
     s32 mask;
 
-    (void)arg1;
+    tbl = CODEC_SLEN_TABLE;
+    sfc = *(s32 *) ((char *) arg0 + arg2 * 4 + 0x3C90);
+    pre = (s32 *) ((char *) arg0 + arg2 * 4 + 0x3CF0);
+    mixedFlag = *(s32 *) ((char *) arg0 + arg2 * 4 + 0x3CA8);
+    blockType = *(s32 *) ((char *) arg0 + arg2 * 4 + 0x3CA0);
+    winSwitch = *(s32 *) ((char *) arg0 + arg2 * 4 + 0x3C98);
 
-    base = arg0;
-    bcopy(D_800B0B0C, template_data, 0x120);
-
-    code = S32_AT(base, 0x3C90 + (arg2 * 4));
-    field_a = S32_AT(base, 0x3CA8 + (arg2 * 4));
-    channel_kind = S32_AT(base, 0x3CA0 + (arg2 * 4));
-    has_extra = S32_AT(base, 0x3C98 + (arg2 * 4));
-    table_class = 0;
-    special_mode = 0;
-
-    if (((S32_AT(base, 0x3BC4) != 1) && (S32_AT(base, 0x3BC4) != 3)) || (arg2 != 1)) {
-        if (code < 0x190) {
-            decode[0] = (code >> 4) / 5;
-            decode[1] = (code >> 4) % 5;
-            decode[2] = (code % 0x10) >> 2;
-            decode[3] = code % 4;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 0;
-            table_class = 0;
-        } else if ((code >= 0x190) && (code < 0x1F4)) {
-            decode[0] = ((code - 0x190) >> 2) / 5;
-            decode[1] = ((code - 0x190) >> 2) % 5;
-            decode[2] = (code - 0x190) % 4;
-            decode[3] = 0;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 0;
-            table_class = 1;
-        } else if ((code >= 0x1F4) && (code < 0x200)) {
-            decode[0] = (code - 0x1F4) / 3;
-            decode[1] = (code - 0x1F4) % 3;
-            decode[2] = 0;
-            decode[3] = 0;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 1;
-            table_class = 2;
+    if ((*(s32 *) ((char *) arg0 + 0x3BC4) != 1 && *(s32 *) ((char *) arg0 + 0x3BC4) != 3) ||
+        arg2 != 1) {
+        a = 0;
+        if (sfc < 0x190) {
+            slen[0] = (sfc >> 4) / 5;
+            slen[1] = (sfc >> 4) % 5;
+            slen[2] = (sfc % 16) >> 2;
+            slen[3] = sfc % 4;
+            *pre = 0;
+            b = 0;
+        } else if (sfc >= 0x190 && sfc < 0x1F4) {
+            slen[0] = ((sfc - 0x190) >> 2) / 5;
+            slen[1] = ((sfc - 0x190) >> 2) % 5;
+            slen[2] = (sfc - 0x190) % 4;
+            slen[3] = 0;
+            *pre = 0;
+            b = 1;
+        } else if (sfc >= 0x1F4 && sfc < 0x200) {
+            slen[0] = (sfc - 0x1F4) / 3;
+            slen[1] = (sfc - 0x1F4) % 3;
+            slen[2] = 0;
+            slen[3] = 0;
+            *pre = 1;
+            b = 2;
         }
     }
 
-    if (((S32_AT(base, 0x3BC4) == 1) || (S32_AT(base, 0x3BC4) == 3)) && (arg2 == 1)) {
-        S32_AT(base, 0x3EF8) = code % 2;
-        packed = code >> 1;
-        special_mode = 1;
-        if (packed < 0xB4) {
-            decode[0] = packed / 0x24;
-            decode[1] = (packed % 0x24) / 6;
-            decode[2] = (packed % 0x24) % 6;
-            decode[3] = 0;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 0;
-            table_class = 0;
-        } else if ((packed >= 0xB4) && (packed < 0xF4)) {
-            decode[0] = ((packed - 0xB4) % 0x40) >> 4;
-            decode[1] = ((packed - 0xB4) % 0x10) >> 2;
-            decode[2] = (packed - 0xB4) % 4;
-            decode[3] = 0;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 0;
-            table_class = 1;
-        } else if ((packed >= 0xF4) && (packed < 0xFF)) {
-            decode[0] = (packed - 0xF4) / 3;
-            decode[1] = (packed - 0xF4) % 3;
-            decode[2] = 0;
-            decode[3] = 0;
-            S32_AT(base, 0x3CF0 + (arg2 * 4)) = 0;
-            table_class = 2;
+    if ((*(s32 *) ((char *) arg0 + 0x3BC4) == 1 || *(s32 *) ((char *) arg0 + 0x3BC4) == 3) &&
+        arg2 == 1) {
+        *(s32 *) ((char *) arg0 + 0x3EF8) = sfc % 2;
+        half = sfc >> 1;
+        a = 1;
+        if (half < 0xB4) {
+            slen[0] = half / 0x24;
+            slen[1] = (half % 0x24) / 6;
+            slen[2] = (half % 0x24) % 6;
+            slen[3] = 0;
+            *pre = 0;
+            b = 0;
+        } else if (half >= 0xB4 && half < 0xF4) {
+            slen[0] = ((half - 0xB4) % 0x40) >> 4;
+            slen[1] = ((half - 0xB4) % 16) >> 2;
+            slen[2] = (half - 0xB4) % 4;
+            slen[3] = 0;
+            *pre = 0;
+            b = 1;
+        } else if (half >= 0xF4 && half < 0xFF) {
+            slen[0] = (half - 0xF4) / 3;
+            slen[1] = (half - 0xF4) % 3;
+            slen[2] = 0;
+            slen[3] = 0;
+            *pre = 0;
+            b = 2;
         }
     }
 
-    if ((has_extra != 0) && (channel_kind == 2)) {
-        bcopy((u8 *)template_data + (special_mode * 0x90) + (table_class * 0x30) + (field_a * 0x10) + 0x10, row, 0x10);
+    if (winSwitch != 0 && blockType == 2) {
+        bcopy(tbl.v[a][b][mixedFlag + 1], nr, 0x10);
     } else {
-        bcopy((u8 *)template_data + (special_mode * 0x90) + (table_class * 0x30), row, 0x10);
+        bcopy(tbl.v[a][b][0], nr, 0x10);
     }
 
-    emitted = 0;
-    if ((has_extra == 0) || ((has_extra != 0) && (channel_kind != 2))) {
+    k = 0;
+    if (winSwitch == 0 || (winSwitch != 0 && blockType != 2)) {
         for (i = 0; i < 4; i++) {
-            bit_count = decode[i];
-            mask = (1 << bit_count) - 1;
-            for (j = 0; j < row[i]; j++) {
-                if (bit_count != 0) {
-                    S32_AT(base, 0x3D08 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                } else {
-                    S32_AT(base, 0x3D08 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                }
+            sl = slen[i];
+            mask = (1 << sl) - 1;
+            for (j = 0; j < nr[i]; j++) {
+                *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D08) =
+                    sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
                 if (arg2 != 0) {
-                    S32_AT(base, 0x3EFC + (emitted * 4)) = mask;
+                    *(s32 *) ((char *) arg0 + k * 4 + 0x3EFC) = mask;
                 }
-                emitted++;
+                k++;
             }
         }
-    } else if (channel_kind == 2) {
-        if (field_a == 0) {
-            for (i = 0; i < 4; i++) {
-                bit_count = decode[i];
-                mask = (1 << bit_count) - 1;
-                for (j = 0; j < row[i]; j += 3) {
-                    if (bit_count != 0) {
-                        S32_AT(base, 0x3D64 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                        S32_AT(base, 0x3D98 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                        S32_AT(base, 0x3DCC + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                    } else {
-                        S32_AT(base, 0x3D64 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                        S32_AT(base, 0x3D98 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                        S32_AT(base, 0x3DCC + (arg2 * 0xF8) + (emitted * 4)) = 0;
+    } else {
+        if (blockType == 2) {
+            if (mixedFlag == 0) {
+                for (i = 0; i < 4; i++) {
+                    sl = slen[i];
+                    mask = (1 << sl) - 1;
+                    for (j = 0; j < nr[i]; j += 3) {
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D64) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D98) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3DCC) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        if (arg2 != 0) {
+                            *(s32 *) ((char *) arg0 + k * 4 + 0x3F14) = mask;
+                        }
+                        k++;
                     }
+                }
+            } else {
+                sl = slen[0];
+                mask = (1 << sl) - 1;
+                for (j = 0; j < 6; j++) {
+                    *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D08) =
+                        sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
                     if (arg2 != 0) {
-                        S32_AT(base, 0x3F14 + (emitted * 4)) = mask;
+                        *(s32 *) ((char *) arg0 + k * 4 + 0x3EFC) = mask;
                     }
-                    emitted++;
+                    k++;
                 }
-            }
-        } else {
-            bit_count = decode[0];
-            mask = (1 << bit_count) - 1;
-            for (j = 0; j < 6; j++) {
-                if (bit_count != 0) {
-                    S32_AT(base, 0x3D08 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                } else {
-                    S32_AT(base, 0x3D08 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                }
-                if (arg2 != 0) {
-                    S32_AT(base, 0x3EFC + (emitted * 4)) = mask;
-                }
-                emitted++;
-            }
-
-            row[0] -= 6;
-            emitted = 3;
-            for (i = 0; i < 4; i++) {
-                bit_count = decode[i];
-                mask = (1 << bit_count) - 1;
-                for (j = 0; j < row[i]; j += 3) {
-                    if (bit_count != 0) {
-                        S32_AT(base, 0x3D64 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                        S32_AT(base, 0x3D98 + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                        S32_AT(base, 0x3DCC + (arg2 * 0xF8) + (emitted * 4)) = func_151F8960(base + 0x1C, base + 0x2020, bit_count);
-                    } else {
-                        S32_AT(base, 0x3D64 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                        S32_AT(base, 0x3D98 + (arg2 * 0xF8) + (emitted * 4)) = 0;
-                        S32_AT(base, 0x3DCC + (arg2 * 0xF8) + (emitted * 4)) = 0;
+                nr[0] -= 6;
+                k = 3;
+                for (i = 0; i < 4; i++) {
+                    sl = slen[i];
+                    mask = (1 << sl) - 1;
+                    for (j = 0; j < nr[i]; j += 3) {
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D64) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3D98) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        *(s32 *) ((char *) arg0 + arg2 * 248 + k * 4 + 0x3DCC) =
+                            sl ? func_151F8960((char *) arg0 + 0x1C, (char *) arg0 + 0x2020, sl) : 0;
+                        if (arg2 != 0) {
+                            *(s32 *) ((char *) arg0 + k * 4 + 0x3F14) = mask;
+                        }
+                        k++;
                     }
-                    if (arg2 != 0) {
-                        S32_AT(base, 0x3F14 + (emitted * 4)) = mask;
-                    }
-                    emitted++;
                 }
             }
         }
     }
-
     return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F63C4.s. */
 s32 func_151F63C4() {
     return 0;
 }
-// NON-MATCHING: coefficient copy/remap over raw decoder buffers
+/* Reorder short-block spectral samples, or copy the long-block spectrum. */
 s32 func_151F6970(void *arg0, s32 arg1) {
-    u8 *base;
-    f32 *src;
+    s16 *tbl;
     f32 *dst;
-    f32 *map_dst;
-    s16 *map;
-    s32 map_offset;
+    f32 *src;
     s32 i;
 
-    base = arg0;
-    src = (f32 *)(base + 0x4664);
-    dst = (f32 *)(base + 0x4F64);
-    map_offset = (S32_AT(base, 0x3BA4) * 0xD80) + (S32_AT(base, 0x3BB4) * 0x480);
-    map = (s16 *)((u8 *)D_800AEB7C + map_offset);
-
+    tbl = (s16 *) ((char *) D_800AEB7C
+                   + *(s32 *) ((char *) arg0 + 0x3BA4) * 3456
+                   + *(s32 *) ((char *) arg0 + 0x3BB4) * 1152);
+    dst = (f32 *) ((char *) arg0 + 0x4F64);
+    src = (f32 *) ((char *) arg0 + 0x4664);
     i = 0;
-    if ((S32_AT(base, 0x3C98 + (arg1 * 4)) != 0) && (S32_AT(base, 0x3CA0 + (arg1 * 4)) == 2)) {
-        if (S32_AT(base, 0x3CA8 + (arg1 * 4)) != 0) {
-            for (; i < 0x24; i++) {
-                dst[i] = src[i];
+
+    if (*(s32 *) ((char *) arg0 + arg1 * 4 + 0x3C98) != 0 &&
+        *(s32 *) ((char *) arg0 + arg1 * 4 + 0x3CA0) == 2) {
+        if (*(s32 *) ((char *) arg0 + arg1 * 4 + 0x3CA8) != 0) {
+            while (i++ < 0x24) {
+                *dst++ = *src++;
             }
         }
-        map_dst = dst + i;
-        for (; i < 0x240; i++) {
-            map_dst[map[i]] = src[i];
+        while (i < 0x240) {
+            dst[tbl[i++]] = *src++;
         }
     } else {
-        for (; i < 0x240; i++) {
-            dst[i] = src[i];
+        while (i++ < 0x240) {
+            *dst++ = *src++;
         }
     }
 
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F6B28.s. */
-s32 func_151F6B28() {
-    return 0;
+/* Apply the eight butterfly rotations between adjacent long-block subbands. */
+s32 func_151F6B28(void *arg0, s32 arg1, s32 arg2) {
+    s32 k;
+    f32 *p;
+    f32 a;
+    f32 b;
+
+    if (*(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3C98) != 0 &&
+        *(s32 *) ((char *) arg0 + arg1 * 4 + arg2 * 4 + 0x3CA0) == 2) {
+        return 1;
+    }
+
+    k = 1;
+    do {
+        p = (f32 *) ((char *) arg0 + arg2 * 2304 + k * 72 + 0x4F64);
+
+        a = p[0];
+        b = p[-1];
+        p[-1] = b * D_800B069C[0] - D_800B067C[0] * a;
+        p[0] = a * D_800B069C[0] + D_800B067C[0] * b;
+
+        a = p[1];
+        b = p[-2];
+        p[-2] = b * D_800B069C[1] - D_800B067C[1] * a;
+        p[1] = a * D_800B069C[1] + D_800B067C[1] * b;
+
+        a = p[2];
+        b = p[-3];
+        p[-3] = b * D_800B069C[2] - D_800B067C[2] * a;
+        p[2] = a * D_800B069C[2] + D_800B067C[2] * b;
+
+        a = p[3];
+        b = p[-4];
+        p[-4] = b * D_800B069C[3] - D_800B067C[3] * a;
+        p[3] = a * D_800B069C[3] + D_800B067C[3] * b;
+
+        a = p[4];
+        b = p[-5];
+        p[-5] = b * D_800B069C[4] - D_800B067C[4] * a;
+        p[4] = a * D_800B069C[4] + D_800B067C[4] * b;
+
+        a = p[5];
+        b = p[-6];
+        p[-6] = b * D_800B069C[5] - D_800B067C[5] * a;
+        p[5] = a * D_800B069C[5] + D_800B067C[5] * b;
+
+        a = p[6];
+        b = p[-7];
+        p[-7] = b * D_800B069C[6] - D_800B067C[6] * a;
+        p[6] = a * D_800B069C[6] + D_800B067C[6] * b;
+
+        a = p[7];
+        b = p[-8];
+        p[-8] = b * D_800B069C[7] - D_800B067C[7] * a;
+        p[7] = a * D_800B069C[7] + D_800B067C[7] * b;
+    } while (++k < 0x20);
+
+    return 1;
 }
 
 // NON-MATCHING: opaque asset-loader struct, offset overlay for first C pass
@@ -480,13 +802,145 @@ s32 func_151F78B4() {
 s32 func_151F7F60() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F8088.s. */
-s32 func_151F8088(s32 arg0, s32 arg1) {
-    return 0;
+/* Synchronize and validate a frame header, then dispatch its side-info parser. */
+s32 func_151F8088(void *arg0, s32 arg1) {
+    s32 sync;
+    s32 n;
+    s32 r;
+    u8 mask;
+
+    if (arg1 != -1) {
+        *(s32 *) ((char *) arg0 + 0x18) = arg1;
+    }
+
+    sync = arg1;
+    n = 0;
+    mask = 0xFF;
+
+    for (;;) {
+        r = ((s32 (*)(void *, void *, s32, s32)) *(void **) ((char *) arg0 + 4))(
+                *(void **) arg0, (char *) arg0 + n + 0x2024, 1, sync);
+        if (r <= 0) {
+            return 0;
+        }
+        sync = -1;
+        *(s32 *) ((char *) arg0 + 0x18) += 1;
+
+        if (*(u8 *) ((char *) arg0 + n + 0x2024) != 0xFF &&
+            *(u8 *) ((char *) arg0 + n + 0x2024) != 0xF3) {
+            return 0;
+        }
+
+        if ((*(u8 *) ((char *) arg0 + n + 0x2024) & mask) != mask) {
+            mask = 0xFF;
+            n = 0;
+            continue;
+        }
+        n++;
+        if (mask == 0xF0) {
+            break;
+        }
+        mask = 0xF0;
+    }
+
+    r = ((s32 (*)(void *, void *, s32, s32)) *(void **) ((char *) arg0 + 4))(
+            *(void **) arg0, (char *) arg0 + 0x2026, 2, -1);
+    if (r <= 0) {
+        return 0;
+    }
+    *(s32 *) ((char *) arg0 + 0x18) += 2;
+    *(s32 *) ((char *) arg0 + 0x2064) = 0xC;
+
+    *(s32 *) ((char *) arg0 + 0x3BA4) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BA8) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 2);
+    *(s32 *) ((char *) arg0 + 0x3BAC) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BB0) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 4);
+    *(s32 *) ((char *) arg0 + 0x3BB4) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 2);
+    *(s32 *) ((char *) arg0 + 0x3BB8) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BBC) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BC0) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 2);
+    *(s32 *) ((char *) arg0 + 0x3BC4) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 2);
+    *(s32 *) ((char *) arg0 + 0x3BC8) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BCC) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 1);
+    *(s32 *) ((char *) arg0 + 0x3BD0) = func_151F8960((char *) arg0 + 0x2024, (char *) arg0 + 0x2064, 2);
+
+    if (*(s32 *) ((char *) arg0 + 0x3BB0) == 0xF ||
+        *(s32 *) ((char *) arg0 + 0x3BB4) == 3) {
+        return func_151F8088(arg0, -1);
+    }
+
+    if (*(s32 *) ((char *) arg0 + 0x3BD4) == 0) {
+        *(s32 *) ((char *) arg0 + 0x3BD4) = 1;
+        *(s32 *) ((char *) arg0 + 0x3BD8) = *(s32 *) ((char *) arg0 + 0x3BA4);
+        *(s32 *) ((char *) arg0 + 0x3BDC) = *(s32 *) ((char *) arg0 + 0x3BA8);
+        *(s32 *) ((char *) arg0 + 0x3BE0) = *(s32 *) ((char *) arg0 + 0x3BAC);
+        *(s32 *) ((char *) arg0 + 0x3BE4) = *(s32 *) ((char *) arg0 + 0x3BB4);
+        *(s32 *) ((char *) arg0 + 0x3BE8) = *(s32 *) ((char *) arg0 + 0x3BC0);
+        *(s32 *) ((char *) arg0 + 0x3BEC) = *(s32 *) ((char *) arg0 + 0x3BC8);
+        *(s32 *) ((char *) arg0 + 0x3BF0) = *(s32 *) ((char *) arg0 + 0x3BCC);
+    } else if (*(s32 *) ((char *) arg0 + 0x3BD8) != *(s32 *) ((char *) arg0 + 0x3BA4) ||
+               *(s32 *) ((char *) arg0 + 0x3BDC) != *(s32 *) ((char *) arg0 + 0x3BA8) ||
+               *(s32 *) ((char *) arg0 + 0x3BE0) != *(s32 *) ((char *) arg0 + 0x3BAC) ||
+               *(s32 *) ((char *) arg0 + 0x3BE4) != *(s32 *) ((char *) arg0 + 0x3BB4) ||
+               *(s32 *) ((char *) arg0 + 0x3BE8) != *(s32 *) ((char *) arg0 + 0x3BC0) ||
+               *(s32 *) ((char *) arg0 + 0x3BF0) != *(s32 *) ((char *) arg0 + 0x3BCC)) {
+        return func_151F8088(arg0, -1);
+    }
+
+    *(s32 *) ((char *) arg0 + 0x2068) = 4;
+
+    if (*(s32 *) ((char *) arg0 + 0x3BAC) == 0) {
+        r = ((s32 (*)(void *, void *, s32, s32)) *(void **) ((char *) arg0 + 4))(
+                *(void **) arg0, (char *) arg0 + 0x2028, 2, -1);
+        if (r <= 0) {
+            return 0;
+        }
+        *(s32 *) ((char *) arg0 + 0x18) += 2;
+        *(s32 *) ((char *) arg0 + 0x2064) += 0x10;
+        *(s32 *) ((char *) arg0 + 0x2068) = 6;
+    }
+
+    if (*(s32 *) ((char *) arg0 + 0x3BA8) == 1) {
+        *(s32 *) ((char *) arg0 + 0x8478) = (s32) func_151F78B4;
+        *(s32 *) ((char *) arg0 + 0x847C) = (s32) func_151F6FD0;
+    } else if (*(s32 *) ((char *) arg0 + 0x3BA8) == 2) {
+        return 0;
+    } else if (*(s32 *) ((char *) arg0 + 0x3BA8) == 3) {
+        return 0;
+    }
+
+    if (((s32 (*)(void *)) *(void **) ((char *) arg0 + 0x847C))(arg0) == 0) {
+        return 0;
+    }
+
+    return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F85C4.s. */
-s32 func_151F85C4() {
-    return 0;
+/* Initialize the fixed codec buffer and reject an invalid opening frame. */
+void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2) {
+    void *obj = D_800E1880;
+
+    if (obj == 0) {
+        return 0;
+    }
+
+    *(s32 *) ((char *) obj + 0xC) = -1;
+    *(s32 *) ((char *) obj + 0x10) = -1;
+    *(s32 *) ((char *) obj + 0x14) = -1;
+    *(s32 *) ((char *) obj + 0x0) = arg0;
+    *(s32 *) ((char *) obj + 0x4) = arg1;
+    *(s32 *) ((char *) obj + 0x8) = arg2;
+    *(s32 *) ((char *) obj + 0x201C) = 0;
+    *(s32 *) ((char *) obj + 0x2020) = 0;
+    *(s32 *) ((char *) obj + 0x3BA0) = 0;
+
+    if (func_151F8088(obj, 0) == 0) {
+        return 0;
+    }
+
+    *(s32 *) ((char *) obj + 0x8474) = 0;
+    bzero((char *) obj + 0x6A64, 0x900);
+
+    return obj;
 }
 // void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2) {
 //     void *sp1C;

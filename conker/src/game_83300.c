@@ -12,7 +12,7 @@ s32 func_150597FC();
 s32 func_15059C84(s32 arg0);
 s32 func_1505A770(s32 arg0);
 s32 func_1505A9AC();
-s32 func_1505C7D8(s32 arg0, s32 arg1);
+s32 func_1505C7D8(void *arg0, s32 arg1);
 s32 func_1505D408();
 s32 func_1505D5D0();
 s32 func_1505D6F0(s32 arg0, s32 arg1);
@@ -23,7 +23,7 @@ s32 func_1505E0C4();
 s32 func_1505ED34();
 s32 func_1505EEF4();
 s32 func_1505EFD0();
-s32 func_1505F188(s32 arg0);
+s32 func_1505F188(void *arg0);
 s32 func_1505F298();
 s32 func_1506045C();
 s32 func_15060BE0();
@@ -853,6 +853,7 @@ s32 func_1505D024(struct127 *arg0, s32 arg1, u16 arg2, s32 arg3) {
     return ret;
 }
 
+/* Initialize object slot 25 and restore the previous current-object index. */
 void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4, u16 arg5, s32 arg6, s32 arg7) {
     s32 pad;
     s32 tmp;
@@ -1027,7 +1028,7 @@ struct127 * func_1505F0AC(s32 arg0) {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505F188.s. */
-s32 func_1505F188(s32 arg0) {
+s32 func_1505F188(void *arg0) {
     return 0;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505F298.s. */

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## All Remaining Byte-Exact Donors - 2026-10-14
+
+[Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
+
+- [x] Install all 19 remaining qualified donor C routines, including the nine streaming-audio routines; all 22 authorized donors are now adopted.
+- [x] Match all 4,117 raw/linked words with zero new guards and proper names/comments/private layouts.
+- [x] Keep all 742 owner neighbors, all old guards/progress rows and 720 data owners fixed; select only seven codec bodies from retail -g.
+- [x] Close the linked slots, three removed overflow bodies, 13 retained bodies and declared symbol changes; retain immutable old fixtures and effective controls.
+- [x] Re-run the canonical source audit: zero remaining applicable exact C donors; Game 2,858/4,826, total 3,531/5,499, no drift.
+- [ ] Correct the separate legacy Debugger data-label counters.
+- [ ] Continue original Game matching; func_151F4F38 still needs independent qualification.
+- [ ] Qualify any host transfers separately; do not build or modify frozen Release without a fresh request.
+
 ## First Byte-Exact Donor Group - 2026-10-14
 
 [Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
@@ -8,7 +21,7 @@
 - [x] Preserve retail exports and all74 owner neighbors; use no new guards, broad header changes, fake padding or profile overrides.
 - [x] Pass25 installed checks47.390s plus final9 checks12.526s with independent carry links, guest prefixes and native O2/O0 timer evidence.
 - [x] Keep the complete ELF/guard bytes fixed and alter only three progress language fields; bank toolsfb5470e before the consumer pin.
-- [ ] Qualify the19 remaining donor candidates; next func_15008870, then small event/actor routines before larger streaming audio.
+- [x] Qualify all19 remaining donor candidates, including the larger streaming audio, in Note1361.
 - [ ] Resolve the separate legacy counter/data-label issue without silently changing historical metrics.
 - [ ] Finish the wider Game backlog; no automatic host transfer or Release work.
 
@@ -23,7 +36,7 @@
 - [x] Bank tools86b3df6 audit/controls first and record22 potential individual C donors without adopting any source.
 - [x] User authorizes function-by-function use of verified byte-exact C with proper names/comments; do not import unlinked drafts or merge broad headers.
 - [x] Transfer the first three of22 candidates in Note1360, preserving the entire guest image.
-- [ ] Transfer the19 remaining candidates in separately qualified groups.
+- [x] Transfer all19 remaining candidates after active-owner and linked-image qualification in Note1361.
 - [ ] Correct the separate legacy main progress counters that call140 Debugger data labels functions.
 - [ ] Finish the wider Game backlog; no source-adoption decision is implied by this audit.
 

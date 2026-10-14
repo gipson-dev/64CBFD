@@ -56,9 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [All remaining byte-exact donor recoveries](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
+  Install all 19 remaining exact C donors, preserve 742 neighbors and all data,
+  and exhaust the authorized donor queue without a broad source import.
+
 - [First byte-exact donor conversions](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
   Install three complete routines directly from C with proper names/comments,
-  active ABI qualification and an entirely unchanged ELF;19 candidates remain.
+  active ABI qualification and an entirely unchanged ELF; the remaining19 are completed in Note1361.
 
 - [Alternative source byte-match audit](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
   Read-only comparison after the function commit:1,478 exact executable C

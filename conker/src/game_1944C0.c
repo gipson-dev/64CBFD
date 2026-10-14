@@ -16,7 +16,6 @@ s32 func_1516865C();
 s32 func_15168870();
 s32 func_15168C4C();
 void func_15168E54(void *, void *);
-s32 func_15168F84();
 /* End generated placeholder declarations. */
 
 void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
@@ -307,9 +306,30 @@ void func_15168F08(s8 *arg0, s32 arg1) {
         } while (opcode != -0x21);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168F84.s. */
-s32 func_15168F84() {
-    return 0;
+/* Return the inclusive index range for the selected group. */
+void func_15168F84(s32 group, s32 *first, s32 *last) {
+    if (group == 0) {
+        *first = 1;
+        *last = 0x41;
+    } else if (group == 1) {
+        *first = 0x42;
+        *last = 0x4F;
+    } else if (group == 2) {
+        *first = 0x50;
+        *last = 0x58;
+    } else if (group == 3) {
+        *first = 0x59;
+        *last = 0x5C;
+    } else if (group == 5) {
+        *first = 0x61;
+        *last = 0x63;
+    } else if (group == 6) {
+        *first = 0x64;
+        *last = 0x65;
+    } else {
+        *first = 0x5D;
+        *last = 0x60;
+    }
 }
 // NON-MATCHING: only differs from us by the jal target address of the still-non-matching
 // func_15169070 - this function's own code is verified byte-identical otherwise.

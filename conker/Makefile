@@ -133,7 +133,7 @@ RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.
 RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
 RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
 	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
-	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o, \
+	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o, \
 	$(RETAIL_PAD_O_FILES))
 UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
 else
@@ -483,6 +483,19 @@ $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o: \
 		--function-object func_10008F90=$@.bootstrap.compact --word-patches retail_word_patches.us.csv
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.bootstrap.compact $@.padded.s
+
+# The codec's recovered retail bodies use -g, unlike the established O2
+# neighbors in this splat owner. Select only these seven functions from -g.
+CODEC_RETAIL_G_FUNCTIONS := func_151F3DE0 func_151F42E8 func_151F578C \
+	func_151F6970 func_151F6B28 func_151F8088 func_151F85C4
+$(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o: \
+		$(SRC_DIR)/game_221290.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) -g $(MIPSBIT) -o $@.codec.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_221290 $@.padded.s \
+		$(foreach function,$(CODEC_RETAIL_G_FUNCTIONS),--function-object $(function)=$@.codec.compact) --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.codec.compact $@.padded.s
 
 # This Init slice contains one retail loop compiled without unrolling. Keep the
 # established profile for neighboring functions and select only its compact

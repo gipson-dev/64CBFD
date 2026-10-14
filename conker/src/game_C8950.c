@@ -4,9 +4,22 @@
 
 void *func_1502B5C8(s32 *size, u32 depth, ...);
 
+typedef struct ScriptNodeC8950 {
+    u16 kind;
+    u8 padding[0x16];
+    struct ScriptNodeC8950 *next;
+    struct ScriptNodeC8950 *prev;
+} ScriptNodeC8950;
+typedef struct {
+    u16 length;
+    u16 padding;
+    ScriptNodeC8950 *unk4;
+    ScriptNodeC8950 *unk8;
+} ScriptListC8950;
+#define SCRIPT_LIST_C8950 (*(ScriptListC8950 *)&D_800D2F48)
+
 /* Generated placeholder declarations. */
 s32 func_1509B5AC(s32 arg0, s32 arg1);
-s32 func_1509B764();
 s32 func_1509B810();
 s32 func_1509B950(s32 arg0);
 s32 func_1509BA04();
@@ -71,9 +84,27 @@ struct249 *func_1509B704(s16 arg0) {
 }
 
 
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B764.s. */
-s32 func_1509B764() {
-    return 0;
+/* Unlink and free a script node, maintaining both ends of the list. */
+void func_1509B764(ScriptNodeC8950 *node) {
+    if (SCRIPT_LIST_C8950.length == 1) {
+        SCRIPT_LIST_C8950.unk4 = NULL;
+        SCRIPT_LIST_C8950.unk8 = NULL;
+    } else {
+        if (node == SCRIPT_LIST_C8950.unk4) {
+            SCRIPT_LIST_C8950.unk4 = node->next;
+            node->next->prev = NULL;
+        } else {
+            node->prev->next = node->next;
+        }
+        if (node == SCRIPT_LIST_C8950.unk8) {
+            SCRIPT_LIST_C8950.unk8 = node->prev;
+            node->prev->next = NULL;
+        } else {
+            node->next->prev = node->prev;
+        }
+    }
+    func_10004074(node);
+    SCRIPT_LIST_C8950.length--;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B810.s. */

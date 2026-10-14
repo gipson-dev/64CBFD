@@ -9,7 +9,6 @@ s32 func_1501A39C();
 s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
-s32 func_1501AF44();
 s32 func_1501B0A0();
 s32 func_1501B22C();
 /* End generated placeholder declarations. */
@@ -151,9 +150,69 @@ s32 func_1501AE94(s32 arg0) {
     return 1;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501AF44.s. */
-s32 func_1501AF44() {
-    return 0;
+/* Clamp rectangle edges to the current framebuffer bounds. */
+void func_1501AF44(f32 *ulx, f32 *uly, f32 *lrx, f32 *lry) {
+    f32 ulxValue;
+    f32 lrxValue;
+    f32 ulyValue;
+    f32 lryValue;
+    f32 ulxMax;
+    f32 lrxMax;
+    f32 ulyMax;
+    f32 lryMax;
+    f32 ulxClamped;
+    f32 lrxClamped;
+    f32 ulyClamped;
+    f32 lryClamped;
+
+    ulxValue = *ulx;
+    if (ulxValue < 2.0f) {
+        *ulx = 2.0f;
+    } else {
+        ulxMax = (f32) D_800BE620 - 2.0f;
+        if (ulxMax < ulxValue) {
+            ulxClamped = ulxMax;
+        } else {
+            ulxClamped = ulxValue;
+        }
+        *ulx = ulxClamped;
+    }
+    lrxValue = *lrx;
+    if (lrxValue < 2.0f) {
+        *lrx = 2.0f;
+    } else {
+        lrxMax = (f32) D_800BE620 - 2.0f;
+        if (lrxMax < lrxValue) {
+            lrxClamped = lrxMax;
+        } else {
+            lrxClamped = lrxValue;
+        }
+        *lrx = lrxClamped;
+    }
+    ulyValue = *uly;
+    if (ulyValue < 0.0f) {
+        *uly = 0.0f;
+    } else {
+        ulyMax = (f32) D_800BE624;
+        if (ulyMax < ulyValue) {
+            ulyClamped = ulyMax;
+        } else {
+            ulyClamped = ulyValue;
+        }
+        *uly = ulyClamped;
+    }
+    lryValue = *lry;
+    if (lryValue < 0.0f) {
+        *lry = 0.0f;
+        return;
+    }
+    lryMax = (f32) D_800BE624;
+    if (lryMax < lryValue) {
+        lryClamped = lryMax;
+    } else {
+        lryClamped = lryValue;
+    }
+    *lry = lryClamped;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501B0A0.s. */

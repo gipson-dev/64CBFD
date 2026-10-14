@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-14 All Remaining Byte-Exact Donor Recoveries
+
+[Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
+Complete all 19 remaining qualified donors, ten smaller Game routines and nine
+streaming-audio routines. All 4,117 raw/linked words match with zero new guards;
+742 neighbors and all 720 data owners stay fixed. Reuse per-function object
+selection for the codec -g bodies, without changing its O2 neighbors. Thirty
+installed/history checks pass 111.864s and three compiled controls fail the
+byte gate as intended. Fresh Game 2,858/4,826, total 3,531/5,499, different 1,968,
+zero drift. The full 22-function donor queue is exhausted; broader Game work,
+counter correction and host qualification remain separate.
+
 ## 2026-10-14 First Byte-Exact Donor Conversions
 
 [Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):

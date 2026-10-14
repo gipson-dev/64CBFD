@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
+Complete all 19 remaining exact C donor recoveries, including streaming audio.
+All 4,117 words match directly, with no new guards; preserve 742 neighbors,
+old progress/guards and 720 data owners. Close overflow compaction and symbols,
+retain historical fixtures and effective controls. Game 2,858/4,826, total
+3,531/5,499; fresh applicable donor queue zero, all22 authorized donors adopted.
+Resume original Game matching, keeping counter and host work separate.
+
+2026-10-14:
 [Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
 First authorized donor group: func_15125628/func_1507D158/func_151411E4 emit
 26/32/27 words directly from C, no new guards. Use descriptive locals/callback

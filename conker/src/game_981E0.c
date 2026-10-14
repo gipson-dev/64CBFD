@@ -13,7 +13,6 @@ void func_1506C32C(void);
 s32 func_1506CE6C();
 s32 func_1506D2E8();
 s32 func_1506D584();
-s32 func_1506D74C();
 s32 func_1506D958();
 s32 func_1506DE84();
 s32 func_1506E0EC();
@@ -39,7 +38,6 @@ s32 func_15073A50();
 s32 func_15073B38();
 s32 func_15073FA0();
 s32 func_150746F0();
-s32 func_15074980();
 s32 func_15074C80();
 s32 func_1507515C();
 /* End generated placeholder declarations. */
@@ -571,9 +569,28 @@ void func_1506D6B4(void) {
     D_800D1580 = (value << 24) | (D_800D1580 & 0xFFFF);
     func_1506D584();
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D74C.s. */
-s32 func_1506D74C() {
-    return 0;
+/* Raise and reposition the current actor, then initialize its movement state. */
+void func_1506D74C(void) {
+    f32 dx;
+    f32 dz;
+    f32 dy;
+
+    if (D_800D154C->in_water == 0) {
+        D_800D154C->gravity = 5.0f;
+        D_800D154C->y_velocity = 0.0f;
+    }
+    D_800D154C->y_position += 70.0f;
+    (*(s8 *)((char *)(D_800D154C) + 0x137)) = 0;
+    D_800D154C->disable_run = 0;
+    func_1505A184((s32) D_800D154C->unk76, (f32) D_800D1580, 0.0f, &dx, &dz, &dy);
+    func_1505E650(D_800D154C, 0xFU, 1.0f, 0.0f, 0.0f, 0.0f, 0);
+    D_800D154C->x_position += dx;
+    D_800D154C->z_position += dz;
+    D_800D154C->unk100 |= 2;
+    D_800D154C->unk28 = 0.0f;
+    D_800D154C->unk83 = 0x14;
+    D_800D154C->unk31C->unk44 = 0xC;
+    D_800D154C->unk31C->unk54 = 0xA;
 }
 void func_1506D898(void) {
     D_800D154C->y_position -= 80.0f;
@@ -1953,9 +1970,25 @@ void func_1507490C(void) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15074980.s. */
-s32 func_15074980() {
-    return 0;
+/* Set nearby actors' chase timers using the scaled distance threshold. */
+void func_15074980(void) {
+    s32 i;
+    f32 threshold;
+    struct126 *sub;
+
+    threshold = (f32) (D_800D1580 * 8);
+    if (D_8008FD8C > 0) {
+        i = 0;
+        do {
+            if (func_1505A72C(D_800D154C, &D_800CC2D0[i]) < threshold) {
+                sub = D_800CC2D0[i].unk31C;
+                if (sub != 0) {
+                    sub->chasing = 0x14;
+                }
+            }
+            i++;
+        } while (i < D_8008FD8C);
+    }
 }
 void func_15074A44(void) {
     if (D_800D154C->unk31C != 0) {

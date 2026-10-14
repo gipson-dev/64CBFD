@@ -30,7 +30,6 @@ void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C2898();
 s32 func_150C29F0();
 s32 func_150C2C00();
-s32 func_150C2FCC();
 s32 func_150C308C();
 Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
@@ -197,9 +196,16 @@ s32 func_150C29F0() {
 s32 func_150C2C00() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2FCC.s. */
-s32 func_150C2FCC() {
-    return 0;
+/* Apply damping and vertical acceleration; report whether both extents remain valid. */
+s32 func_150C2FCC(void *effect) {
+    *(f32 *) ((char *) effect + 0x2C) -= *(f32 *) ((char *) effect + 0x2C) * *(f32 *) ((char *) effect + 0x150);
+    *(f32 *) ((char *) effect + 0x30) -= *(f32 *) ((char *) effect + 0x30) * *(f32 *) ((char *) effect + 0x150);
+    *(f32 *) ((char *) effect + 0x38) += *(f32 *) ((char *) effect + 0x50) * D_800BE9A4 + 0.5f * *(f32 *) ((char *) effect + 0x4C) * D_800BE9A4 * D_800BE9A4;
+    *(f32 *) ((char *) effect + 0x50) += *(f32 *) ((char *) effect + 0x4C) * D_800BE9A4;
+    if (*(f32 *) ((char *) effect + 0x2C) < 10.0f || *(f32 *) ((char *) effect + 0x30) < 10.0f) {
+        return 0;
+    }
+    return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C308C.s. */
 s32 func_150C308C() {
