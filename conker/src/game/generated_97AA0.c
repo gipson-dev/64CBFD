@@ -19,6 +19,10 @@ void *memcpy(void *, const void *, unsigned int);
 
 /* Non-matching placeholders for the text-only asm slice asm/97AA0.s. */
 
+extern s32 D_800CC260;
+extern u8 D_800CC2D0[];
+s32 func_15137610(u8 *, u8 *, u8 *, s32, u8, s32);
+
 extern u8 D_800D1560[];
 extern u8 D_800D1570[];
 
@@ -72,8 +76,17 @@ void func_1506AA48(u8 *actor, const PayloadPair97AA0 *data) {
     }
 }
 
-s32 func_1506AAE0() {
-    return 0;
+void func_1506AAE0(s32 arg0, s32 arg1) {
+    s32 mask = D_800CC260;
+    u8 *actor = D_800CC2D0;
+
+    while (mask != 0) {
+        if (mask & 1) {
+            func_15137610(actor, D_800D1560, D_800D1570, 0, 0xFF, 1);
+        }
+        mask >>= 1;
+        actor += 0x32C;
+    }
 }
 
 void func_1506AB7C(s32 arg0, u8 *arg1) {

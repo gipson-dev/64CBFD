@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-13 Signed Actor Mask Scan Direct Match
+
+[Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
+Replace func_1506AAE0's placeholder with its complete signed mask snapshot and
+actor/vector callback scan. All 39 words/frame 0x30 match directly from C, zero
+guards. All 15 installed checks pass in 67.757s, including signed-negative
+prefixes, native32 O2/O0, original dispatcher and 1,200 fired cuts. Only 132
+declared ELF bytes change. Fresh Game 2,828/4,823, total 3,501/5,496; tools3d88555
+first. The wider Game backlog remains active on func_1506A79C.
+
 ## 2026-10-13 Actor Payload Creator Direct Match
 
 [Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):

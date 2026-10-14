@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Signed Actor Mask Scan Direct Match - 2026-10-13
+
+[Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
+
+- [x] Recover the signed global snapshot, every-bit actor stride, six-slot vector dispatch and unused incoming homes.
+- [x] Match all 39 words/frame 0x30 directly from plain O2/g3 C, with no guards or profile changes.
+- [x] Pass 15 installed checks in 67.757s, including 33,688 positive cases, 64 signed-negative prefixes, 1,200 fired cuts and native32 O2/O0.
+- [x] Qualify the original dispatcher, vector setup and table index 10, both owner padders, 15 neighbors and independent HI/LO carry links.
+- [x] Prove only 131 target code bytes and one named size byte change; preserve all data, guard history, layouts and conversion rows.
+- [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools3d88555 before the consumer pin, no push or host Release work.
+- [ ] Finish the wider Game backlog; next recover func_1506A79C's actor/vector snapshots and floating differences.
+
 ## Actor Payload Creator Direct Match - 2026-10-13
 
 [Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
@@ -10,7 +22,8 @@
 - [x] Preserve untouched padding, failure input reads, all15 neighbors and five effective semantic/native negatives; reject the wrong four-byte private layout.
 - [x] Prove only112 target code bytes and one declared size byte change; all data/guard history/layout/profile/conversion rows remain fixed.
 - [x] Archive prior text fixtures and advance only the verified ELF pin; bank tools3c7f8ca before consumer pin without push or host Release work.
-- [ ] Finish the wider Game backlog; next preserve the signed mask and actor-stride behavior in func_1506AAE0.
+- [x] Recover func_1506AAE0's complete signed mask and actor-stride behavior in Note1348.
+- [ ] Finish the wider Game backlog; continue with func_1506A79C.
 
 ## Matrix Translation Guarded Byte Match - 2026-10-13
 
@@ -23,7 +36,7 @@
 - [x] Preserve guard history and all other text inputs, archiving old fixtures before advancing only verified ELF/guard pins.
 - [x] Bank tools4e3cd4c before the consumer pin, preserving older history/unrelated changes and frozen host Release, without push.
 - [x] Recover func_1506AA48 and qualify its complete packet/creator/copy contract in Note1347.
-- [ ] Finish the wider Game backlog; continue with func_1506AAE0.
+- [ ] Finish the wider Game backlog; continue with func_1506A79C.
 
 ## Matrix Reflection Guarded Byte Match - 2026-10-13
 
@@ -37,7 +50,7 @@
 - [x] Bank tools5c4c157 before the consumer pin; preserve older mirror history and unrelated changes, no push or host Release work.
 - [x] Inspect and finish func_15142314 and its caller/owner gates in Note1346.
 - [x] Finish the direct creator match in Note1347.
-- [ ] Finish the wider Game matching backlog; continue with func_1506AAE0.
+- [ ] Finish the wider Game matching backlog; continue with func_1506A79C.
 
 ## Matrix Reflection Original Prologue Recovery - 2026-10-13
 

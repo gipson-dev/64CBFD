@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Signed actor mask scan direct match](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
+  Recover all 39 words/frame 0x30 directly from C, zero guards. All 15 installed
+  checks pass, preserving the signed snapshot, callback ABI and original dispatch.
+
 - [Actor payload creator direct match](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
   Recover all38 words/frame0x48 directly from C, with zero guards. All16 checks
   pass, including actual dispatcher/creator/memcpy and private padding/alias cuts.

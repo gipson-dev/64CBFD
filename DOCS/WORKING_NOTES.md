@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-13:
+[Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
+func_1506AAE0 direct 39-word/frame 0x30 C match, zero guards. Preserve the signed
+snapshot, every-bit actor stride and six-slot callback; all 15 installed checks
+pass in 67.757s. Only 131 code bytes plus one named size byte change, all other
+image/data/history fixed. Tools3d88555 first; next func_1506A79C.
+
+2026-10-13:
 [Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
 func_1506AA48 direct38-word/frame0x48 C match, zero guards. Proper local order
 recovers SP+0x34 packet and untouched padding; all16 checks pass38.245s. Literal
