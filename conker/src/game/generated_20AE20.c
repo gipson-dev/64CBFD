@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern u8 D_800C35EA;
+s32 func_151F2CDC(void);
+void func_151F2D6C(s32, s32);
 #include "structs.h"
 extern s8 D_8008FD90;
 extern s8 D_8008FD8C;
@@ -247,8 +250,21 @@ s32 func_151E3344() {
     return 0;
 }
 
-s32 func_151E4264() {
-    return 0;
+/* Consume the one-shot flag or advance the callback/audio transition state. */
+void func_151E4264(void) {
+    if (D_8008FD80 != 0) {
+        D_8008FD80 = 0;
+        return;
+    }
+    func_151E530C();
+    if (((s16) D_800E0B9A != 0) || (D_800C35EA != 1)) {
+        if ((D_800C35EA == 1) && (func_151F2CDC() == 1)) {
+            func_151F2D6C(0, 0x2DE0);
+        }
+        D_800E0B94 = 7;
+        D_800E0A88 = (s32)func_151E2834;
+        D_8008FD74 = 8;
+    }
 }
 
 s32 func_151E4314() {

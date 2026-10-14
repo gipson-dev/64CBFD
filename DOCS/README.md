@@ -56,9 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Whole-source draft audit and nine exact recoveries](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
+  Inventory558 C files, compile291 previously unlinked drafts, and install
+  nine more exact routines with preserved neighbors and isolated wrapper ABI.
+  Failed files/binding gaps remain explicit; no automatic host transfer.
+
 - [All remaining byte-exact donor recoveries](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
   Install all 19 remaining exact C donors, preserve 742 neighbors and all data,
-  and exhaust the authorized donor queue without a broad source import.
+  and exhaust the linked-C donor queue without a broad source import.
 
 - [First byte-exact donor conversions](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
   Install three complete routines directly from C with proper names/comments,

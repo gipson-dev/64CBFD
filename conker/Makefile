@@ -109,9 +109,10 @@ GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR
 MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o
+ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES))
 STANDARD_GENERATED_SLICE_O_FILES := \
-	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
+	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
 RETAIL_LAYOUT := retail_layout.$(VERSION).txt
 # These objects either own allocatable non-text sections or do not have a
 # one-to-one function map in progress.csv. Keep their original object layout.
@@ -442,6 +443,19 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: \
 		--function-object func_1503D804=$@.unrolled.compact --word-patches retail_word_patches.us.csv --filename generated_6A3D0
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.unrolled.compact $@.padded.s
+
+# Keep the unrecovered factory's output unchanged. Its two restored callers
+# need a complete ABI prototype, isolated from the old zero-return definition.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o: \
+		$(SRC_DIR)/game/generated_10EF60.c $(SRC_DIR)/game/translation_units/10EF60_wrappers.c \
+		$(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.wrappers.compact $(SRC_DIR)/game/translation_units/10EF60_wrappers.c
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) generated_10EF60 $@.padded.s \
+		--function-object func_150E2DB4=$@.wrappers.compact --function-object func_150E2EA4=$@.wrappers.compact \
+		--word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.wrappers.compact $@.padded.s
 
 # This generated slice crosses an original object-profile boundary:
 # func_151733D8 is the non-debug identity helper immediately before a -g3

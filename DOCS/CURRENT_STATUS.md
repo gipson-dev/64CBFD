@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools249f8c3; tools are committed before the consumer pin.
+  checkpoint pins tools1a87cc3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,30 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Whole-source draft scan and nine more exact recoveries:
+[Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md).
+Inventory all558 C files, including291 previously uncompiled Game drafts.
+Compile233 of291; qualify/install allnine newly found candidates across444
+retail words, no new guards,97 unchanged owner neighbors. Keep the two factory
+forwarders in an isolated translation unit so the unrecovered factory stays
+unchanged. Full linked changes are confined to nine slots (1,204 changed bytes);
+overflow and all189,088 protected data bytes remain fixed. Only two language
+rows become C. Fresh Game2,867/4,828 (59.38%), total3,540/5,501 (64.35%),
+different1,961, drift0; conversion5,501/6,044 (91.02%). Executable-only matching
+is3,400/5,361; legacy Debugger still includes140 data labels.
+The earlier22-function queue covered linked C only; these nine come from the
+wider draft scan. The58 file-level compile failures and24 binding gaps remain
+unqualified, not rejected wholesale. Continue per-function isolation/pool
+binding and original Game matching. func_151F4F38's best draft has533 words,
+frame0x38 and101 differences; ten fresh screens do not yield an exact match.
+Six new targets are still selected zero stubs in the separate host; no host
+transfer/build or frozen Release operation is authorized by this decomp work.
+All50 final focused regression checks pass101.919s; both standalone mirror
+padder modules pass. All801 source-archive files and471 unrelated mirror
+fingerprints remain unchanged. Tools1a87cc3 is banked before the consumer pin.
+The post-install draft screen has606 already exact C definitions, zero new
+immediately usable word candidates; failed files/bindings remain open.
+
 All remaining qualified donor recoveries:
 [Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md).
 Install all 19 remaining applicable exact C donors: ten smaller Game routines
@@ -35,7 +59,7 @@ neighbors retain raw code/relocations/pools; protected data stays exact across
 189,088 bytes and 720 owners. Select seven codec functions from retail -g
 without changing the six O2 neighbors. Preserve retail names and add accurate
 comments/local types; no shared-header merge. All 22 authorized donors are now
-installed; fresh applicable donor queue is zero. The first 30 installed/history
+installed; fresh applicable linked-C donor queue is zero. The first 30 installed/history
 checks pass 111.864s, followed by three effective compiled source controls.
 Fresh Game 2,858/4,826 (59.22%), total 3,531/5,499 (64.21%), different 1,968,
 drift zero; conversion counts remain fixed. Function-only total 3,391/5,359;

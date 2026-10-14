@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern s32 D_800A2130;
+extern u8 D_80088BB0;
+void func_15145EA4(void *, void *, s32, s32);
 void func_15145740(s32, s32, s32, s32, f32);
 s32 func_15081E0C(u8 *, u16, u8);
 void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
@@ -57,7 +60,15 @@ void func_150FFB6C(f32 *arg0, s32 arg1, u8 *arg2, s32 arg3) {
 }
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_12C1E0/func_150FFBDC.s")
+/* Submit the descriptor and index using the actor offset and global row. */
+void func_150FFBDC(void *arg0, void * arg1, s32 arg2) {
+    void * *sp1C;
+    s32 sp18;
+
+    sp1C = (void **)&D_800A2130;
+    sp18 = arg2;
+    func_15145EA4(&sp1C, &sp18, (*(s32 *)((char *)(arg0) + 0x1D4)) + (D_80088BB0 << 6), 1);
+}
 
 
 void func_150FFC3C(u8 *arg0) {

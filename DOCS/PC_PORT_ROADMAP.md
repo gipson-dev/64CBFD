@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Whole-Source Draft Audit And Nine Recoveries - 2026-10-14
+
+[Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
+
+- [x] Inventory all558 additional C files, including291 uncompiled Game drafts, with conditional/trivial/commented definitions distinguished from matching credit.
+- [x] Compile all291 disposable draft copies:233 objects,58 file-level failures. Use relative IDO output paths; retain the rejected first receipt separately.
+- [x] Screen all233 objects with real relocations and canonical retail spans; qualify/install allnine new exact candidates,444 words, zero new guards.
+- [x] Preserve97 owner neighbors and the unrecovered factory; isolate its two restored callers' ABI in a separately selected translation unit.
+- [x] Verify both production padders,36 independent original/rebased comparisons, closed linked changes, all guards, two C-row updates and720 data owners.
+- [x] Refresh progress: Game2,867/4,828 (59.38%), total3,540/5,501 (64.35%), different1,961, drift0. Keep the root README aggregate-only.
+- [x] Audit the CMake-selected host source read-only: six zero stubs, three implementation bodies; preserve host work and frozen Release.
+- [x] Pass50 final regression checks101.919s and project tool checks; bank tools1a87cc3 before the consumer pin and preserve471 unrelated mirror fingerprints without push.
+- [ ] Isolate individual functions from the58 failed files; a file-level error does not reject every body in that file.
+- [ ] Resolve24 symbol/pool-binding gaps without guessed addresses, then requalify against the active headers/owners.
+- [ ] Continue original Game matching, including func_151F4F38 (533 words/frame0x38/101 differences); no matching credit for its uninstalled screens.
+- [ ] Correct the separate legacy Debugger data-label counter and qualify any host transfer independently.
+
 ## All Remaining Byte-Exact Donors - 2026-10-14
 
 [Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
@@ -8,7 +25,7 @@
 - [x] Match all 4,117 raw/linked words with zero new guards and proper names/comments/private layouts.
 - [x] Keep all 742 owner neighbors, all old guards/progress rows and 720 data owners fixed; select only seven codec bodies from retail -g.
 - [x] Close the linked slots, three removed overflow bodies, 13 retained bodies and declared symbol changes; retain immutable old fixtures and effective controls.
-- [x] Re-run the canonical source audit: zero remaining applicable exact C donors; Game 2,858/4,826, total 3,531/5,499, no drift.
+- [x] Re-run the canonical linked-C audit: zero remaining applicable exact linked donors; Game 2,858/4,826, total 3,531/5,499, no drift. The wider draft scan follows in Note1362.
 - [x] Bank tools249f8c3 before consumer9eb367cf; pass nine post-bank checks and project tool checks, preserving unrelated mirror work without a push.
 - [ ] Correct the separate legacy Debugger data-label counters.
 - [ ] Continue original Game matching; func_151F4F38 still needs independent qualification.

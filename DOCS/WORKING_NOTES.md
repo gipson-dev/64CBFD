@@ -1,12 +1,22 @@
 # Working Notes
 
 2026-10-14:
+[Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
+Inventory all558 C files and compile291 unlinked drafts (233 objects/58 failed
+files). Qualify/install nine more exact Game routines across444 words, no new
+guards; preserve97 neighbors and the factory placeholder through isolated
+caller ABI. Only nine slots change, all overflow/data/guard history fixed.
+Fresh Game2,867/4,828, total3,540/5,501, drift0. Keep58 file-isolation cases,
+24 binding gaps and func_151F4F38's101 differences open. Host six selected zero
+stubs/three implementation bodies are read-only observations, not transfers.
+
+2026-10-14:
 [Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
 Complete all 19 remaining exact C donor recoveries, including streaming audio.
 All 4,117 words match directly, with no new guards; preserve 742 neighbors,
 old progress/guards and 720 data owners. Close overflow compaction and symbols,
 retain historical fixtures and effective controls. Game 2,858/4,826, total
-3,531/5,499; fresh applicable donor queue zero, all22 authorized donors adopted.
+3,531/5,499; fresh linked-C donor queue zero, all22 linked donors adopted.
 Resume original Game matching, keeping counter and host work separate.
 
 2026-10-14:

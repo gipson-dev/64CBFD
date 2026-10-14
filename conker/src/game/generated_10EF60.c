@@ -18,13 +18,7 @@ s32 func_150E2DA4(register s32 arg0, s32 arg1) {
     return arg0;
 }
 
-s32 func_150E2DB4() {
-    return 0;
-}
-
-s32 func_150E2EA4() {
-    return 0;
-}
+/* Factory forwarders are compiled in translation_units/10EF60_wrappers.c. */
 
 void func_150E2F90(arg0, arg1, arg2)
 s32 arg0;

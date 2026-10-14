@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-14 Whole-Source Draft Audit And Nine Exact Recoveries
+
+[Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
+Extend the audit beyond linked C to all558 C files. Compile291 previously
+unlinked drafts;233 produce objects,58 need individual isolation. Install all
+nine newly qualified candidates (444 words/no new guards), preserving97 owner
+neighbors through an isolated factory-caller ABI. Close1,204 changed Game
+bytes to nine slots, all overflow/data/guard bytes unchanged, two ASM-to-C
+rows. Fresh Game2,867/4,828 (59.38%), total3,540/5,501 (64.35%), different1,961,
+drift0. All original801 archive files remain unchanged. Keep binding gaps and
+the533-word/101-difference scalefactor decoder open; no automatic host transfer.
+
 ## 2026-10-14 All Remaining Byte-Exact Donor Recoveries
 
 [Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md):
@@ -9,7 +21,7 @@ streaming-audio routines. All 4,117 raw/linked words match with zero new guards;
 selection for the codec -g bodies, without changing its O2 neighbors. Thirty
 installed/history checks pass 111.864s and three compiled controls fail the
 byte gate as intended. Fresh Game 2,858/4,826, total 3,531/5,499, different 1,968,
-zero drift. The full 22-function donor queue is exhausted; broader Game work,
+zero drift. The linked-C 22-function donor queue is exhausted; broader Game work,
 counter correction and host qualification remain separate.
 
 ## 2026-10-14 First Byte-Exact Donor Conversions
