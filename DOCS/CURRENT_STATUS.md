@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsa337e52; tools are committed before the consumer pin.
+  checkpoint pins tools4e667db; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Record payload constructor direct match:
+[Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md).
+Convert func_1513C350 from assembly/commented draft to 103 directly emitted
+words, frame 0x38, zero guards or profile changes. A three-word structure
+assignment removes four register differences; preserve its public prototype,
+all 58 neighbors, shared headers, guards, Makefile and complete ELF bytes.
+Only one progress language field changes. Pass 12 target/capture checks
+19.764s and 20 affected historical/control checks21.583s+5.177s, including
+4,320 MIPS cases,208 fired fault prefixes and1,944 native32 cases per O2/O0.
+Fresh Game2,873/4,831 (59.47%), total3,546/5,504 (64.43%), different1,958,
+drift0. Converted5,504/6,044 (91.07%),86.09% bytes; Game4,831/5,323
+(90.76%),85.46% bytes. Executable-only total3,406/5,364 (63.50%).
+All801 archive files and499 unrelated mirror fingerprints stay fixed;
+tools4e667db first, with no push or host/Release work. Keep the owner family's
+43 inherited compiler warnings unchanged, not a warning-free build claim.
+Next: qualify func_1501B22C's61-word slot (prior59-word/four-difference
+draft) and continue failed-body/interface/binding queues and original Game
+matching. Layer decoder func_151F78B4 and func_151F63C4 remain unrecovered.
 
 Codec frame dispatcher guarded match:
 [Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md).

@@ -30,53 +30,56 @@ void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513C060.s. */
 s32 func_1513C060() {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513C350.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513C350.s")
-// NON-MATCHING: JUSTREG: final 3 lines :(
-// struct210 *func_1513C350(struct210 *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, s32 arg5, s32 arg6, struct167 *arg7, s32 arg8, u8 arg9, s32 argA) {
-//     struct210 *temp_v0;
-//     u8 phi_v0;
-//     s32 i;
-//
-//     if (arg1 == 0) {
-//         arg1 = &D_800A4AA0;
-//     }
-//     if (arg0->unk0 & 0x40000) {
-//         phi_v0 = 0x4A;
-//     } else {
-//         phi_v0 = 0x1B;
-//     }
-//     temp_v0 = func_15167A68(phi_v0, argA, arg8 + 0xB0, 1, arg9, 1);
-//     if (temp_v0 == 0) {
-//         return NULL;
-//     }
-//     memcpy(&temp_v0->unk18.i.unk0, arg0, 0x28); // memcpy
-//     func_1513FFF4(&temp_v0->unk40, temp_v0->unk1E, arg4);
-//     func_151400D0(&temp_v0->unk40, arg1);
-//     temp_v0->unk80 = arg2;
-//     temp_v0->unk81 = arg3;
-//     temp_v0->unk84 = arg5;
-//     temp_v0->unk10 = 1;
-//     temp_v0->unk14 = 0;
-//     temp_v0->unkA0 = arg6;
-//     for (i = 0; i < 4; i++) {
-//         temp_v0->unk8C[i] = 0;
-//     }
-//
-//     temp_v0->unk9C = 0;
-//     if (arg5) {
-//         for (i = 0; i <= D_80082FA0; i++) {
-//             temp_v0->unk8C[i] = func_1515D480(arg5);
-//         }
-//         temp_v0->unk9C = func_1515D440();
-//     }
-//     if (arg7) {
-//         temp_v0->unkA4[0] = arg7->unk0;
-//         temp_v0->unkA4[1] = arg7->unk4;
-//         temp_v0->unkA4[2] = arg7->unk8;
-//     }
-//     return temp_v0;
-// }
+}
+
+/* Allocate a record, initialize its resources, and copy an optional three-word payload. */
+struct210 *func_1513C350(struct210 *descriptor, s32 table, u8 tag80, u8 tag81,
+                       u8 variant, s32 resourceCount, s32 userValue,
+                       struct167 *payload, s32 extraBytes, u8 channel, s32 context) {
+    extern void *func_15167A68(s32, s32, s32, s32, u8, u8);
+    extern u8 *func_1515D480(s32);
+    extern u8 *func_1515D440(void);
+    struct210 *record;
+    u8 category;
+    s32 i;
+
+    if (table == 0) {
+        table = (s32)&D_800A4AA0;
+    }
+    if (descriptor->unk0 & 0x40000) {
+        category = 0x4A;
+    } else {
+        category = 0x1B;
+    }
+    record = func_15167A68(category, context, extraBytes + 0xB0, 1, channel, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(&record->unk18.i.unk0, descriptor, 0x28);
+    func_1513FFF4((u8 *)&record->unk40, record->unk1E, variant);
+    func_151400D0((u8 *)&record->unk40, (u8 *)table);
+    record->unk80 = tag80;
+    record->unk81 = tag81;
+    record->unk84 = resourceCount;
+    record->unk10 = 1;
+    record->unk14 = 0;
+    record->unkA0 = userValue;
+    for (i = 0; i < 4; i++) {
+        record->unk8C[i] = 0;
+    }
+
+    record->unk9C = 0;
+    if (resourceCount) {
+        for (i = 0; i <= D_80082FA0; i++) {
+            record->unk8C[i] = (s32)func_1515D480(resourceCount);
+        }
+        record->unk9C = (s32)func_1515D440();
+    }
+    if (payload) {
+        *(struct167 *)record->unkA4 = *payload;
+    }
+    return record;
+}
 
 struct210 *func_1513C4EC(s32 arg0, s32 arg1, u8 arg2, u8 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, u8 arg9, u8 argA, s32 argB, s32 argC, s32 argD, u8 argE, s32 argF) {
     s32 temp_v0;

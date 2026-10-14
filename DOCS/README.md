@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Record payload constructor direct match](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
+  Convert103 words directly with a three-word structure assignment,58 fixed
+  neighbors, unchanged shared ABI and a byte-identical complete ELF.
+  Pass32 fresh checks; keep all failed/binding/runtime boundaries separate.
+
 - [Codec frame dispatcher guarded match](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
   Match 109 code words plus three alignment NOPs with six checked guards,
   proper buffer/count outputs, 12 fixed neighbors and a closed image change.

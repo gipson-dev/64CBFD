@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Record Payload Constructor Direct Match
+
+[Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
+Replace func_1513C350's assembly selection/commented draft with its full
+103-word/frame0x38 C constructor. A structure assignment matches its three
+payload words directly, without guards, profile changes or shared ABI edits.
+Preserve58 neighbors and the entire ELF; one assembly-to-C language field
+changes. All32 fresh target/history checks pass, including4,320 MIPS cases,
+208 prefixes and native32 controls. Fresh Game2,873/4,831, total3,546/5,504,
+different1,958, no drift. Tools4e667db first; no archive/host/Release work.
+
 ## 2026-10-14 Codec Frame Dispatcher Guarded Match
 
 [Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):

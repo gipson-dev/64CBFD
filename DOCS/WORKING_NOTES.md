@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
+Convert func_1513C350 from assembly/draft to103 directly matching words,
+frame0x38, no guards or profile changes. Preserve58 neighbors and the whole
+ELF byte-for-byte; only one progress language field changes. Pass12 target
+checks19.764s and20 history checks21.583s+5.177s, with4,320 MIPS cases,
+208 prefixes and native32 controls. Fresh Game2,873/4,831, total3,546/5,504,
+drift0; tools4e667db first. Next: qualify the61-word func_1501B22C draft.
+
+2026-10-14:
 [Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
 Restore func_151F86B0 (109 code words plus three alignment NOPs, frame 0x130),
 with typed output buffer/count pointers and six checked allocation/addition

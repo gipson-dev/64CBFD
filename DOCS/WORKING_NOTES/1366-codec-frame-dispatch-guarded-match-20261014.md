@@ -34,8 +34,9 @@ does not restore either dependency or establish working audio playback.
 9. [x] Pass all113 regression checks in193.589s and project tools checks; preserve historical baseline pins through a strictly hash-gated inverse.
 10. [x] Sync only six compatible task files to the older tools mirror; preserve all497 unrelated dirty fingerprints and its independent HEAD.
 11. [x] Bank tools a337e52245af39564cf7197ef8f8ec501a4d17a4 before the consumer pin/source/docs, without a push or host/Release operation.
-12. [ ] Qualify func_1513C350 next, then the layer decoder func_151F78B4 and its helper func_151F63C4; continue the remaining actual source/interface/binding queues.
-13. [ ] Continue the original Game matching backlog, including func_151F4F38; correct the independent legacy Debugger label counter separately.
+12. [x] Qualify func_1513C350: all103 words now emit directly with no guards. See [Note1367](1367-record-payload-constructor-direct-match-20261014.md).
+13. [ ] Qualify the layer decoder func_151F78B4 and its helper func_151F63C4; continue the remaining actual source/interface/binding queues.
+14. [ ] Continue the original Game matching backlog, including func_151F4F38; correct the independent legacy Debugger label counter separately.
 
 ## Interface And Scheduling Evidence
 

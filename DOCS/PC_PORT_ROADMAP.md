@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Record Payload Constructor Match - 2026-10-14
+
+[Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
+
+- [x] Recover func_1513C350 from its complete draft and retail103-word/frame0x38 routine, with descriptive locals and its existing public prototype.
+- [x] Use the original three-word structure assignment and local typed helper declarations; match directly with zero guards/profile/header changes.
+- [x] Preserve58 owner neighbors, sizes, relative relocations, pools, actual caller instructions and the same43 inherited warning count.
+- [x] Verify both actual padders and four independent original/rebased comparisons, including external HI/LO carry addresses.
+- [x] Pass4,320 MIPS cases,208 fired root-fault prefixes and1,944 native32 cases per O2/O0 profile, with effective semantic/allocation controls.
+- [x] Preserve the entire c9ff4e7e ELF, every serialized symbol/data/overflow byte, guards and Makefile; change only the selected progress language field.
+- [x] Pass12 target/capture checks19.764s and20 affected history/control checks21.583s+5.177s, project tools checks and standalone mirror checks.
+- [x] Refresh Game2,873/4,831, total3,546/5,504, converted5,504/6,044, different1,958, zero drift; keep the README aggregate-only.
+- [x] Preserve801 archive files and499 unrelated mirror fingerprints; bank tools4e667db before the consumer pin, without push or host/Release work.
+- [ ] Qualify func_1501B22C's61-word slot: the prior O2/g3 draft emits59 words with four reported differences; verify actual padding, interfaces and complete-owner emission.
+- [ ] Continue failed bodies/used interfaces, real pool bindings, the layer-decoder dependencies and the original Game matching backlog.
+- [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
+
 ## Codec Frame Dispatcher Match - 2026-10-14
 
 [Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
@@ -12,7 +29,7 @@
 - [x] Pass all 113 regression checks in 193.589s, three mirror candidate tests and project tools checks; preserve 801 archive files and 497 unrelated mirror fingerprints.
 - [x] Refresh Game 2,872/4,830, total 3,545/5,503, different 1,958, zero drift; bank tools a337e52 first, without push or host/Release work.
 - [x] Bank consumer5e41123d, pass16 corrected post-bank checks33.113s, retain the pinned image/progress on incremental build and await the40,812-node source graph worker.
-- [ ] Qualify func_1513C350's103-word/frame0x38 draft: four differences in the prior O2/g3 screen; inspect the whole active owner, interfaces and neighboring assembly before adoption.
+- [x] Qualify func_1513C350's103-word/frame0x38 draft; all words now emit directly with no guards. See Note1367 above.
 - [ ] Qualify the layer decoder func_151F78B4 and its dependency func_151F63C4; matching the dispatcher is not working audio playback.
 - [ ] Continue failed bodies/used interfaces, real pool bindings, func_151F4F38 and the original Game matching backlog.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
