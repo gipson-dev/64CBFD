@@ -42,8 +42,12 @@ zero drift. Executable-only total 3,405/5,363 (63.49%); conversion stays
 5,503/6,044. Preserve all 801 archive files and 497 unrelated mirror paths.
 Tools a337e52 first; no push or host/Release operation. The called layer
 decoder func_151F78B4 and its dependency func_151F63C4 remain zero stubs.
-Next: qualify their actual drafts and the near-match func_1513C350, then
-continue the failed-interface/binding queues and original Game backlog.
+Consumer5e41123d banks the group; all16 corrected post-bank selectors pass
+33.113s. The incremental build retains the c9ff4e7e image and unchanged
+progress, and the source graph worker completes at40,812 nodes/81,004 edges.
+Next: qualify func_1513C350's103-word/frame0x38 draft (four prior screen
+differences), then the larger layer-decoder dependencies and remaining
+failed-interface/binding queues. No matching credit for these uninstalled drafts.
 
 Codec input refill guarded match:
 [Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md).

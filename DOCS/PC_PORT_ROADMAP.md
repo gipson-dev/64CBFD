@@ -11,8 +11,10 @@
 - [x] Pass 1,800 MIPS cases, 199 fired root-fault prefixes and 1,500 native32 cases per O2/O0 profile; retain effective corruption controls and qualification boundaries.
 - [x] Pass all 113 regression checks in 193.589s, three mirror candidate tests and project tools checks; preserve 801 archive files and 497 unrelated mirror fingerprints.
 - [x] Refresh Game 2,872/4,830, total 3,545/5,503, different 1,958, zero drift; bank tools a337e52 first, without push or host/Release work.
+- [x] Bank consumer5e41123d, pass16 corrected post-bank checks33.113s, retain the pinned image/progress on incremental build and await the40,812-node source graph worker.
+- [ ] Qualify func_1513C350's103-word/frame0x38 draft: four differences in the prior O2/g3 screen; inspect the whole active owner, interfaces and neighboring assembly before adoption.
 - [ ] Qualify the layer decoder func_151F78B4 and its dependency func_151F63C4; matching the dispatcher is not working audio playback.
-- [ ] Continue func_1513C350, failed bodies/used interfaces, real pool bindings, func_151F4F38 and the original Game matching backlog.
+- [ ] Continue failed bodies/used interfaces, real pool bindings, func_151F4F38 and the original Game matching backlog.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
 
 ## Codec Input Refill Match - 2026-10-14

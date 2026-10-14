@@ -34,7 +34,7 @@ does not restore either dependency or establish working audio playback.
 9. [x] Pass all113 regression checks in193.589s and project tools checks; preserve historical baseline pins through a strictly hash-gated inverse.
 10. [x] Sync only six compatible task files to the older tools mirror; preserve all497 unrelated dirty fingerprints and its independent HEAD.
 11. [x] Bank tools a337e52245af39564cf7197ef8f8ec501a4d17a4 before the consumer pin/source/docs, without a push or host/Release operation.
-12. [ ] Qualify the layer decoder func_151F78B4 and its helper func_151F63C4, then continue func_1513C350 and the remaining actual source/interface/binding queues.
+12. [ ] Qualify func_1513C350 next, then the layer decoder func_151F78B4 and its helper func_151F63C4; continue the remaining actual source/interface/binding queues.
 13. [ ] Continue the original Game matching backlog, including func_151F4F38; correct the independent legacy Debugger label counter separately.
 
 ## Interface And Scheduling Evidence
@@ -169,3 +169,35 @@ handling, source archive, user saves/configuration and unrelated work.
 Full graph refresh again refuses the19,021-node partial scan in place of the
 40,802-node curated graph, retaining19,398 nodes from2,972 excluded but still
 present files. Do not force it; await the incremental source commit worker.
+
+## Post-Bank Verification
+
+Consumer5e41123d banks the source/profile/guard recovery, tools pin and docs.
+All16 correctly selected post-bank target/capture/history checks pass33.113s.
+The first invocation had two nonexistent notification test-class selectors;
+its14 substantive checks passed but the command failed. Correct the selectors
+and rerun the complete16-check group, without changing tests or production.
+The incremental build reports ELF/progress up to date and retains the c9ff4e7e
+image and b7d6d464 progress. Main and active tools are clean before this
+receipt commit; the independently dirty mirror remains preserved.
+
+The source commit's incremental graph worker completes at40,812 nodes /
+81,004 edges. It preserves the curated/excluded-file boundary and skips only
+the oversized HTML visualization. No smaller forced refresh is accepted.
+
+## Next Function Handoff
+
+Use func_1513C350 at VA0x1513C350 / ROM0x169800 next. The prior commented-source
+screen emits103 words under O2/g3 with four real differences; retail frame0x38.
+Its active owner conker/src/game_169510.c still uses GLOBAL_ASM and carries
+the full commented body. The stable public struct210-return interface is in
+conker/include/functions.h:1123; the default D_800A4AA0 declaration remains
+ambiguous and must be checked against retail access and helper interfaces.
+Review its full owner/callers before changing any private type or declaration.
+
+Keep the larger codec layer follow-up separate: the prior g screen of
+func_151F78B4 emits427 words/frame0x958 with79 differences. Its helper
+func_151F63C4 also remains unrecovered. Original survey objects are diagnostic
+evidence, not qualified active-owner replacements. Neither draft is installed,
+and neither receives matching credit in this checkpoint. A graph query finds
+no func_1513C350 node; direct source/assembly evidence governs this handoff.
