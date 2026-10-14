@@ -138,3 +138,12 @@ python3 -m unittest tools.tests.test_game_byte_exact_donors -v
 make -C conker build/conker.us.elf NON_MATCHING=1 -j4
 make -C conker match-progress NON_MATCHING=1
 ```
+
+## Post-Bank Verification
+
+Consumer `e68c9494` banks the three direct conversions and toolsfb5470e pin.
+Seven fresh post-bank image/history/audit checks pass10.249s. Both active
+trees are clean. A fresh source-archive check again preserves all801 files.
+The incremental graph hook completes40,725 nodes /81,177 edges, preserving
+the19,398 excluded-but-present nodes. No graph worker remains; the root graph
+does not independently cover the tools submodule. Direct tests are the proof.

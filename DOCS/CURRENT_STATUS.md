@@ -38,6 +38,7 @@ history checks pass47.390s; final nine donor checks12.526s include carry links.
 The entire ELF and guard CSV stay byte-identical; only three rows become C.
 Fresh Game2,839/4,826 (58.83%), total3,512/5,499 (63.87%), different1,987, drift0.
 Nineteen candidates remain; next func_15008870. Toolsfb5470e are banked first.
+Consumere68c9494 banks the group; seven post-bank checks pass10.249s.
 No broad header merge, supplied-archive edit, host build or frozen Release work.
 
 Alternative source audit, performed after the function bank:
