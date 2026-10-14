@@ -185,3 +185,17 @@ unrecovered. The99 individual compile failures,59 commented compile failures
 and real symbol/pool/pseudo-operation cases remain explicit queues. Continue
 actual reconstruction and original Game matching rather than crediting
 survey discovery, empty donor queues or component hooks as goal completion.
+
+## Post-Bank Verification
+
+Consumere1f955a6 banks the source, tools pin and aggregate/detailed docs.
+All16 post-bank target/capture/historical-control checks pass27.177s. The
+incremental build reports ELF/progress up to date and retains the c9ff4e7e
+complete image and005fd768 progress. The CSV is an ignored generated artifact,
+not a tracked source file; do not force-add it. Main and active tools are clean
+before this receipt commit; the independently dirty mirror stays preserved.
+
+The source commit's incremental graph worker completes at40,826 nodes /
+81,005 edges. It preserves the curated/excluded-file boundary and skips only
+the oversized HTML visualization. No smaller forced refresh, push, host
+transfer/build or frozen-Release operation is performed.

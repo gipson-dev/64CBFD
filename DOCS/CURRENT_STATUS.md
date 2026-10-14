@@ -42,6 +42,9 @@ drift0. Converted5,504/6,044 (91.07%),86.09% bytes; Game4,831/5,323
 All801 archive files and499 unrelated mirror fingerprints stay fixed;
 tools4e667db first, with no push or host/Release work. Keep the owner family's
 43 inherited compiler warnings unchanged, not a warning-free build claim.
+Consumere1f955a6 banks the group; all16 post-bank checks pass27.177s. The
+incremental build retains the identical ELF and pinned005fd768 progress;
+the source graph worker completes at40,826 nodes/81,005 edges, without force.
 Next: qualify func_1501B22C's61-word slot (prior59-word/four-difference
 draft) and continue failed-body/interface/binding queues and original Game
 matching. Layer decoder func_151F78B4 and func_151F63C4 remain unrecovered.

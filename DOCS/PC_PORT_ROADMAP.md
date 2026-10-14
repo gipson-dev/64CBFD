@@ -13,6 +13,7 @@
 - [x] Pass12 target/capture checks19.764s and20 affected history/control checks21.583s+5.177s, project tools checks and standalone mirror checks.
 - [x] Refresh Game2,873/4,831, total3,546/5,504, converted5,504/6,044, different1,958, zero drift; keep the README aggregate-only.
 - [x] Preserve801 archive files and499 unrelated mirror fingerprints; bank tools4e667db before the consumer pin, without push or host/Release work.
+- [x] Bank consumere1f955a6, pass16 post-bank checks27.177s, keep ELF/progress up to date and await the40,826-node source graph worker; preserve ignored generated CSV policy.
 - [ ] Qualify func_1501B22C's61-word slot: the prior O2/g3 draft emits59 words with four reported differences; verify actual padding, interfaces and complete-owner emission.
 - [ ] Continue failed bodies/used interfaces, real pool bindings, the layer-decoder dependencies and the original Game matching backlog.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
