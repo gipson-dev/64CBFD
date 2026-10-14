@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Failed-source function isolation and two exact recoveries](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
+  Compile1,044 individually isolated bodies from58 failed files, recover two
+  more exact routines, and keep99 real compilation failures explicit. Correct
+  the pointer-return inventory and preserve all old image/guard checkpoints.
+
 - [Whole-source draft audit and nine exact recoveries](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
   Inventory558 C files, compile291 previously unlinked drafts, and install
   nine more exact routines with preserved neighbors and isolated wrapper ABI.

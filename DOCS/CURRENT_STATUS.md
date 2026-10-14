@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools1a87cc3; tools are committed before the consumer pin.
+  checkpoint pins tools4d2e619; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Failed-file isolation and two more exact C recoveries:
+[Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md).
+Attempt all1,143 actual definitions in the58 failed files:719 compile with
+every unrelated interface retained; a used-interface-preserving retry rescues
+325 more. Screen all1,044 objects, qualify/install func_150F0938 (59 words) and
+func_150B003C (22), with no new guards and60 unchanged owner neighbors. Only
+185 Game bytes and the preset wrapper's extent change; the category routine
+preserves its original assembly bytes and becomes C. All data/overflow/guard/
+Makefile bytes remain fixed, with one language row updated. All69 final checks
+pass135.858s; mirror18 discovery checks and project tools checks also pass.
+Fresh Game2,869/4,829 (59.41%), total3,542/5,502 (64.38%), different1,960,
+drift0; conversion5,502/6,044 (91.03%). Executable-only total3,402/5,362;
+Debugger remains41 real functions plus140 labels in the legacy aggregate.
+Correct spaced multiple-pointer returns: the inventory now finds4,104 lexical
+definitions, without changing source or adding credit for discovery. All33
+individually qualified donors are installed. Current successful-object queues
+are zero;99 individual compile failures and39 cumulative unresolved symbol/
+pool/pseudo-operation cases remain open. Continue actual body/used-interface
+reconstruction and original Game matching, including func_151F4F38's101 word differences.
+Keep the preset helper func_15160A58's unrecovered placeholder separate: its
+caller is matched, not the helper. Host func_150F0938 still selects a zero stub;
+func_150B003C has a generated implementation. No host transfer/build/Release work.
 
 Whole-source draft scan and nine more exact recoveries:
 [Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md).

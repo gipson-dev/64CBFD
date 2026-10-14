@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Failed-File Isolation And Two Recoveries - 2026-10-14
+
+[Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
+
+- [x] Attempt all1,143 definitions in the58 failed files, with source/header fingerprints and per-definition emission checks.
+- [x] Retain every used interface in disposable retries; compile719 strict objects plus325 more, without loosening used prototypes or editing the source archive.
+- [x] Correct spaced multiple-pointer returns and reject extra emitted definitions; inventory all558 files/4,104 lexical definitions without granting matching credit.
+- [x] Screen all1,044 objects, qualify/install func_150F0938 and func_150B003C across81 words, no new guards,60 unchanged neighbors and eight independent rebase comparisons.
+- [x] Close185 changed Game bytes to the preset wrapper; preserve category assembly bytes, all data/overflow/guards/Makefile and all but one progress field.
+- [x] Pass69 final regression checks135.858s and mirror18 discovery checks; bank tools4d2e619 before the consumer pin, without a push.
+- [x] Refresh progress: Game2,869/4,829, total3,542/5,502, different1,960, drift0; audit both selected host bodies read-only.
+- [ ] Reconstruct the99 still-failing individual bodies/used interfaces from their original retail instructions.
+- [ ] Resolve39 cumulative symbol/pool/pseudo-operation cases; do not assign made-up addresses to decompiler placeholders.
+- [ ] Continue original Game matching, including the533-word/frame0x38/101-difference func_151F4F38, and investigate fully commented drafts separately.
+- [ ] Correct the legacy Debugger label counter and qualify any host transfer independently; keep Release frozen.
+
 ## Whole-Source Draft Audit And Nine Recoveries - 2026-10-14
 
 [Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-14:
+[Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
+Attempt1,143 individual definitions from58 failed files. Compile719 with full
+interfaces plus325 with only unused local interfaces omitted; screen all1,044
+objects. Install func_150F0938/func_150B003C (59/22 words), preserve60 neighbors
+and all data/guards/overflow, no new guards. Only185 preset-wrapper bytes and
+one C language field change. All69 final checks135.858s pass. Fresh Game2,869/
+4,829, total3,542/5,502, drift0. Tools4d2e619 first;99 body/interface failures,
+39 binding/pseudo-operation cases and the101-difference decoder remain open.
+
+2026-10-14:
 [Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):
 Inventory all558 C files and compile291 unlinked drafts (233 objects/58 failed
 files). Qualify/install nine more exact Game routines across444 words, no new

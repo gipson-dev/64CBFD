@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-14 Failed-File Isolation And Two Exact Recoveries
+
+[Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
+Compile/screen1,044 individual bodies from the58 failed source files, after
+attempting all1,143 definitions and preserving every used interface. Install
+two more exact routines: func_150F0938 and func_150B003C,81 words/no new guards,
+60 unchanged neighbors. Only185 preset-wrapper bytes change; the category
+routine preserves assembly bytes and adds one C row. All69 final checks pass
+135.858s. Fresh Game2,869/4,829, total3,542/5,502, different1,960, zero drift.
+All33 qualified imports are adopted, but99 compilation failures and39 symbol/
+pool/pseudo-operation cases still need real reconstruction. Archive/Release
+remain untouched; the root README receives aggregate rows only.
 ## 2026-10-14 Whole-Source Draft Audit And Nine Exact Recoveries
 
 [Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md):

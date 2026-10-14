@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern s32 D_800BE9F0;
+s32 func_150AF200(s32, u8);
+s32 func_15179008(s32);
 void func_151CF898(s32, f32, f32);
 extern f32 D_800BE9A4;
 f32 func_15144B68(f32);
@@ -102,7 +105,15 @@ s32 func_150AFE64() {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_DC6B0/func_150B003C.s")
+/* Select the command pair, with the extra setup call in category 6. */
+void func_150B003C(s32 unused) {
+    if (D_800BE9F0 == 6) {
+        func_15179008(0);
+        func_150AF200(0xE2, 0xE1U);
+        return;
+    }
+    func_150AF200(0xDF, 0xDEU);
+}
 
 s32 func_150B0094() {
     return 0;
