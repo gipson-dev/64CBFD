@@ -38,6 +38,10 @@ permutations; all other data/history/layouts stay fixed. Fresh Game2,832/4,823
 (58.72%), total3,505/5,496 (63.77%), different1,991, drift0. Tools23e45f5 first.
 No zero-return placeholders remain in this owner; next recover the still-stubbed
 func_151A6F00 beyond the bounded mode1 test domain.
+Consumerb3df40d1 banks this checkpoint; seven fresh post-bank checks pass14.316s.
+All installed hashes and all459 post-update older-mirror fingerprints remain
+fixed. The incremental graph hook finishes40,637 nodes/81,116 edges with no
+worker; no push or frozen host Release work.
 
 Installed mode1 actor/vector snapshot checkpoint:
 [Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md).
