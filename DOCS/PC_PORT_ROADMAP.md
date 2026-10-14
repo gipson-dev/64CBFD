@@ -11,7 +11,7 @@
 - [x] Close the entire ELF to 329 target bytes, one 12-to396-byte extent and one checked symbol/string group; preserve all protected data and non-target definitions.
 - [x] Pass 65 selected target/history checks in 115.601s, shared tools checks and standalone mirror checks; commit tools 7b6f51a first, preserving 801 archive files and 516 unrelated mirror fingerprints.
 - [x] Refresh Game 2,877/4,831 and total 3,550/5,504, different 1,954, zero drift; keep root README aggregate-only.
-- [ ] Bank the consumer group, await its incremental graph worker and record post-bank checks without forcing the smaller full scan.
+- [x] Bank consumer db0141f6, pass 26 post-bank checks in 56.618s, retain pinned ELF/progress and await the 40,872-node graph worker without forcing the smaller full scan.
 - [ ] Recover func_1510B128's 129-word/frame0x50 command and qualify its actual argument/return/caller interface; do not infer functioning production camera behavior from bounded helper models.
 - [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle image reconciliation; keep host Release frozen.
 

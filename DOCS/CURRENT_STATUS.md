@@ -42,7 +42,10 @@ checked symbol/string permutation. All other bytes and protected data stay fixed
 Fresh Game 2,877/4,831 (59.55%), total 3,550/5,504 (64.50%), different 1,954,
 drift 0; executable-only 3,410/5,364 (63.57%). Conversions remain 5,504/6,044.
 Tools 7b6f51a first. Preserve 801 archive files and 516 unrelated mirror
-fingerprints; do not force the smaller full graph scan. The separate stale
+fingerprints. Consumer db0141f6 banks the group; all 26 post-bank checks pass
+in 56.618s. Incremental build retains f36703ce/005fd768 image/progress and the
+source graph worker completes at 40,872 nodes/81,053 edges; no forced scan.
+The separate stale
 rectangle image gate remains open. Next: qualify func_1510B128's 129-word/
 frame0x50 command, actual argument/return interface and callers before broad
 interface changes. Continue all failed donor/binding/codec/original Game work.

@@ -39,7 +39,7 @@ interface remains unfinished, and no C-stub/gameplay acceptance is claimed.
 5. [x] Check cached half-angles, live dimensions/scales/bases, helper ABI, aliases, faults, native32 behavior and effective controls.
 6. [x] Run connected recovered trig cases; keep angle-helper/command models and gameplay acceptance explicit.
 7. [x] Install only a qualified body, close the whole image and extend exact-hash history gates without recapturing old snapshots.
-8. [ ] Refresh aggregates/indexes/graph and bank tools before the consumer group.
+8. [x] Refresh aggregates/indexes/graph and bank tools before the consumer group.
 9. [ ] Continue the actual command/helper/donor/binding/codec/Game queues and separate rectangle history reconciliation; no whole-goal completion.
 
 ## Initial Measurements
@@ -162,4 +162,14 @@ the failed donor/binding/codec/original Game queues and rectangle reconciliation
 The wider goal remains active; no full caller, command, hardware or gameplay
 acceptance follows from this one matched parent routine.
 
-Consumer commit, incremental graph and post-bank results follow after banking.
+## Post-Bank Verification
+
+Consumer db0141f6 banks the source, guards, tools pin, aggregates and docs.
+All 26 post-bank target/history checks pass in 56.618s. The incremental build
+reports ELF/progress up to date and retains the four exact after hashes above.
+The source commit's graph worker completes at 40,872 nodes/81,053 edges,
+preserving curated/excluded nodes and skipping only oversized HTML visualization.
+No forced full scan. Both active repositories are clean before this receipt-only
+documentation edit; the older mirror remains independently dirty as recorded.
+No push, host/Release operation or original-archive change. The wider goal is
+still active with func_1510B128 and the recorded remaining queues next.
