@@ -38,6 +38,7 @@ Only353 ELF bytes change, plus1,090 exact append-only guard bytes; all720 data
 owners, six neighbors, layouts and converted rows remain fixed.
 Fresh Game2,835/4,823 (58.78%), total3,508/5,496 (63.83%), different1,988, drift0.
 Toolsfc195e3 first; next recover47-word leaf func_151A77C0 in this owner.
+Consumer1b0135da banks the restoration; eight post-bank checks pass14.301s.
 The sibling PC-port copy remains a placeholder in independently dirty source;
 track a separate transfer/host task. No push or frozen Release work.
 

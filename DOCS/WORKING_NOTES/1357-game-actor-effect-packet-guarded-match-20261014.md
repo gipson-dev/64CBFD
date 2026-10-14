@@ -156,3 +156,16 @@ python3 -m unittest tools.tests.test_game_actor_effect_packet_match -v
 python3 -m unittest tools.tests.test_game_actor_burst_contact_match -v
 python3 -m unittest tools.tests.test_game_actor_burst_consumer_match -v
 ```
+
+## Post-Bank Verification
+
+Consumer `1b0135da` banks the restoration and tools pin. Eight fresh post-bank
+checks pass **14.301s**: actual emitter padders/carry links, emitter image and
+corruptions, contact image, consumer image/serialization, producer image and
+protected-text corruptions. Both active trees are clean after that commit.
+
+The full graph update refuses an18,914-node replacement of the40,681-node
+corpus. Keep the existing graph; do not force it. The restoration commit's
+incremental hook finishes **40,691 nodes /81,169 edges**, preserving19,398 nodes
+from2,972 excluded but present files. No worker remains. The root graph does
+not prove coverage of the submodule's new tools; their direct tests do.
