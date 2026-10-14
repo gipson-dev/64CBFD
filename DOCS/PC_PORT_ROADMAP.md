@@ -9,6 +9,7 @@
 - [x] Pass67 installed checks234.138s, including7,680 guest cases,680 fired root cuts,64 aliases, actual table4 callback window and native32 O2/O0.
 - [x] Close every ELF byte:356 instruction bytes and two size bytes; preserve all720 data owners, prior guards, six neighbors and conversion rows.
 - [x] Bank toolsbb793d8 first, preserving the older mirror's459 unrelated fingerprints without push or frozen host Release work.
+- [ ] Separately transfer/qualify func_151A743C in the PC port; its selected generated copy remains a zero-return placeholder and independently dirty. This decomp checkpoint is not a PC gameplay fix.
 - [ ] Recover the108-word/frame0x98 func_151A7610 in the same owner.
 - [ ] Finish the wider Game backlog.
 

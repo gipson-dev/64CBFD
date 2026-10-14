@@ -137,3 +137,23 @@ python3 -m unittest tools.tests.test_game_actor_burst_contact_match -v
 python3 -m unittest tools.tests.test_game_actor_burst_consumer_match -v
 python3 -m unittest tools.tests.test_game_actor_burst_packet_match -v
 ```
+
+## Post-Bank And Cross-Project Verification
+
+Consumer `a39ab592` banks the installation and tools pin. Seven fresh post-bank
+checks pass **10.729s**: both actual padders/rebased links, contact image and
+corruptions, consumer image/serialization, producer image and protected-text
+corruptions. The active consumer and tools trees are clean after that commit.
+
+The full graph update refuses an 18,903-node replacement of the 40,670-node
+corpus; do not force it. The incremental commit hook finishes **40,680 nodes /
+81,158 edges**, preserving 19,398 nodes from 2,972 excluded but present files.
+No graph worker remains. Tools are a submodule and this root graph does not
+establish coverage of the new tools modules; their direct tests are the proof.
+
+Read-only sibling audit: `64CBFDOGL/recomp_out/.c:1240341` still defines
+`func_151A743C` as a zero-return placeholder. Its CMakeLists selects that
+generated translation unit. Both files are independently dirty; leave them
+unchanged. Transfer/regenerate the callback only in a separate PC-port task
+after reviewing that local work, then qualify applicable host behavior. No
+automatic cross-project synchronization or PC gameplay repair is claimed here.

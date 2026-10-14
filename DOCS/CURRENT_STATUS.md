@@ -37,6 +37,9 @@ No serialization, guard, data, conversion, layout or neighbor changes.
 Fresh Game2,834/4,823 (58.76%), total3,507/5,496 (63.81%), different1,989, drift0.
 Toolsbb793d8 first; next recover108-word/frame0x98 func_151A7610 in this owner.
 The wider Game goal remains active. No push or frozen host Release work.
+Consumera39ab592 is banked; seven post-bank checks pass10.729s. The PC port's
+generated callback still returns zero; keep its independently dirty source
+unchanged and track a separate transfer/host-qualification task in Note1356.
 
 Installed actor burst consumer checkpoint:
 [Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md).
