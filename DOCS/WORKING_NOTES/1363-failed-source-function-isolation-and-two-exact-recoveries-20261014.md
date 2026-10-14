@@ -197,3 +197,23 @@ Next: recover used interfaces/expressions in the99 failures from original
 retail instructions, resolve real pools versus pseudo-operations, inspect
 commented drafts, and continue func_151F4F38's533-word/frame0x38/101-difference
 allocation work. None of those unfinished routines gains matching credit here.
+
+## Post-Bank Verification
+
+Consumer7183fa58 banks the two source recoveries, tools pin and documentation.
+All12 post-bank target/history checks pass15.816s. The incremental build
+reports ELF/progress up to date and retains the pinned bbc20157 image. Main
+and active tools checkouts are clean; the older tools mirror's unrelated work
+and independent history remain preserved. No push is performed.
+
+The source commit's incremental graph worker completes at40,778 nodes /
+80,966 edges. It retains the curated/excluded-file boundary; only the oversized
+HTML visualization is skipped. No forced smaller full refresh is accepted.
+
+The existing survey recognizes296 commented draft header names across87 source
+files. This is a bounded discovery observation, not296 compiled/eligible
+functions: many names are already recovered and the older commented-header
+regex does not cover every pointer spelling. Next, inventory actual balanced
+commented definitions with the real lexer, exclude already exact active C,
+and qualify remaining complete bodies under their original profiles. Do not
+confuse an incomplete pseudo-C/commented header with usable source.

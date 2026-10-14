@@ -49,6 +49,11 @@ reconstruction and original Game matching, including func_151F4F38's101 word dif
 Keep the preset helper func_15160A58's unrecovered placeholder separate: its
 caller is matched, not the helper. Host func_150F0938 still selects a zero stub;
 func_150B003C has a generated implementation. No host transfer/build/Release work.
+Consumer7183fa58 banks the group;12 post-bank checks pass15.816s, the incremental
+build retains the bbc20157 image and its graph worker completes at40,778 nodes/
+80,966 edges. The survey recognizes296 commented draft headers across87 files,
+not296 compilable routines; investigate balanced definitions and current exact
+coverage next, alongside the99 real compile failures and original Game matching.
 
 Whole-source draft scan and nine more exact recoveries:
 [Note 1362](WORKING_NOTES/1362-whole-source-draft-audit-and-nine-exact-recoveries-20261014.md).

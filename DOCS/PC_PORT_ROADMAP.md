@@ -11,6 +11,7 @@
 - [x] Close185 changed Game bytes to the preset wrapper; preserve category assembly bytes, all data/overflow/guards/Makefile and all but one progress field.
 - [x] Pass69 final regression checks135.858s and mirror18 discovery checks; bank tools4d2e619 before the consumer pin, without a push.
 - [x] Refresh progress: Game2,869/4,829, total3,542/5,502, different1,960, drift0; audit both selected host bodies read-only.
+- [x] Bank consumer7183fa58 and pass12 post-bank checks15.816s; retain the pinned image and await the40,778-node incremental graph refresh.
 - [ ] Reconstruct the99 still-failing individual bodies/used interfaces from their original retail instructions.
 - [ ] Resolve39 cumulative symbol/pool/pseudo-operation cases; do not assign made-up addresses to decompiler placeholders.
 - [ ] Continue original Game matching, including the533-word/frame0x38/101-difference func_151F4F38, and investigate fully commented drafts separately.
