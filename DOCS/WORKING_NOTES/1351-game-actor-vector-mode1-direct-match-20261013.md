@@ -181,3 +181,26 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer `7d6700c9825878aa29249f3e33a50e446180d289` banks the recovery,
+aggregate rows, documentation and exact tools pin7f557cd. Both active trees
+are clean before this receipt-only update. Seven fresh post-bank checks pass
+**6.066s**: shape, complete image/protected history, fired own-access cuts,
+effective image/source/guard corruptions, mode0/prior-descriptor/symbol
+controls and both protected text gates. The strengthened accounting remains
+123 instruction bytes plus one size byte; all four installed hashes above
+remain unchanged. Reuse the fresh matching totals measured from these exact
+ELF/progress hashes, not an inferred isolated-candidate increment.
+
+The recovery commit's incremental hook finishes **40,626 nodes /81,105 edges**
+and3,725 communities, with no worker remaining. Its fail-closed preservation
+of19,398 nodes from2,972 excluded-but-existing files remains explicit. No graph
+shrink, package replacement, host work, ROM modification or push is performed.
+
+Post-bank older-mirror inventory reconfirms HEAD ddbdd16, all452 untouched
+initial fingerprints, exactly the three qualified existing-file changes and
+two additions,457 dirty paths total. The five Note1351 index links resolve.
+The remaining zero-return func_1506A5F0 is unchanged at source line35; continue
+its packet recovery next while keeping the wider Game matching goal active.

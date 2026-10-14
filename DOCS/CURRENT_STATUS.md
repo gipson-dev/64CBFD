@@ -37,6 +37,10 @@ with restored source binding. Only123 code bytes and one size byte change;
 all other ELF/data/guards/profiles/layouts/conversion rows stay fixed. Fresh
 Game2,831/4,823 (58.70%), total3,504/5,496 (63.76%), different1,992, drift0.
 Tools7f557cd first; next func_1506A5F0's mixed packet and global coefficients.
+Consumer7d6700c9 banks this checkpoint; seven fresh post-bank checks pass6.066s.
+All installed hashes and the older mirror's452 untouched initial fingerprints
+remain fixed. The incremental graph hook finishes40,626 nodes/81,105 edges
+with no worker; no push or frozen host Release work.
 
 Installed actor descriptor/coordinate spawn checkpoint:
 [Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md).
