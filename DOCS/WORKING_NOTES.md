@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
+Direct85-word/three-NOP Game cosine, SDK absolute/reduction copy and typed
+zero comparison schedule. Pass53 focused/history checks85.827s,13,392 MIPS
+cases and48 connected cases with both recovered trig bodies. Close258 target
+bytes plus exact extent/symbol ordering, no definition/data/header drift.
+Fresh Game2,876/4,831,total3,549/5,504,different1,955; tools2a1c847/98db41f
+first. Nextfunc_1501B0A0; keep old rectangle/runtime/whole-goal gates open.
+
+2026-10-14:
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
 Recover Game sinf's104 words directly, frame0, no guards/profile change.
 Pass42 focused/history checks66.813s, including real connected sine with

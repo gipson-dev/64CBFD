@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Game single-precision cosine direct match](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
+  Recover85 code words/three NOPs directly with SDK copy/literal-type shape,
+  53 focused/history checks and exact image/symbol accounting. Both trig
+  helpers are restored; complete camera/culling and the wider Game goal remain open.
+
 - [Game single-precision sine and cosine recovery](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
   Direct104-word sine match,42 focused/history checks and a closed code/
   metadata transition. Cosine remains unmatched; connected retail-cosine

@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Cosine Direct Match - 2026-10-14
+
+[Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
+
+- [x] Recover85 code words/three alignment NOPs directly under existing O2/g3/padder policy, preserving SDK name, float ABI, frame0 and one argument-home store.
+- [x] Qualify the separate absolute/reduction copy and integer-zero/float-zero comparison shape with18 complete screens/two exact forms; use no guards, header/profile changes or volatile accesses.
+- [x] Pass13,392 paired MIPS cases,280 fired prefixes,6,696 native32 cases per O2/O0 profile and five effective controls; preserve the proven i386 NaN-return boundary separately from exact MIPS words.
+- [x] Execute48 connected frustum cases with both recovered trig bodies and all12 expected stores; keep gameplay/FCSR/camera acceptance separate.
+- [x] Close the whole image to258 changed target bytes,20-to340-byte extent and two exact symbol/string permutations, with no symbol-definition or protected-data change.
+- [x] Pass53 focused/history checks85.827s and tools/mirror checks; bank tools2a1c847 then98db41f provenance clarification before the consumer group.
+- [x] Refresh Game2,876/4,831 and total3,549/5,504, different1,955, zero drift; keep the root README aggregate-only and all801 archive hashes unchanged.
+- [ ] Recover func_1501B0A0's99-word/frame0x50 two-index view body; inspect its two additional float-helper calls and final view command before claiming coupled behavior.
+- [ ] Continue all donor/binding/codec/original-Game matching and reconcile the separate stale rectangle image gate; keep host Release frozen.
+
 ## Game Sine Direct Match - 2026-10-14
 
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
@@ -12,7 +26,7 @@
 - [x] Pass42 focused/history checks66.813s, tools checks and standalone mirror source checks; bank tools c293b24 first and preserve801 archive files.
 - [x] Refresh Game2,875/4,831 and total3,548/5,504, different1,956, zero drift; keep the main README aggregate-only.
 - [x] Bank consumer d1a326eb, pass19 post-bank checks38.973s, retain pinned image/progress on incremental build and await the40,850-node source graph worker.
-- [ ] Finish cosine's85-word body/three alignment NOPs; split/copy/early/parameter/local-declaration screens remain non-matching and private.
+- [x] Finish cosine's85-word body/three alignment NOPs in Note1370; retain all earlier non-matching private screens as evidence.
 - [ ] Reconcile the separately stale rectangle literal-image snapshot, continue donor/binding/codec/Game matching and keep host Release frozen.
 
 ## View Frustum Side-Plane Match - 2026-10-14

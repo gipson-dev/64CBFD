@@ -37,7 +37,7 @@ recapture them to accommodate a production or test mismatch.
 5. [x] Install only a fully qualified match and prove the complete image/extent/metadata boundary.
 6. [x] Extend exact-hash history projections and run affected regression/negative controls.
 7. [x] Refresh measured aggregates, indexes and graph; bank tools before the consumer group.
-8. [ ] Continue cosine's actual85-word shape and register schedule; no claim that production trig dependencies are finished.
+8. [x] Finish cosine's actual85-word shape and register schedule in [Note1370](1370-game-single-precision-cosine-direct-match-20261014.md); keep complete camera/gameplay acceptance separate.
 9. [ ] Continue the remaining failed donors, binding recovery, codec dependencies and original Game matching.
 
 ## Initial Measurements

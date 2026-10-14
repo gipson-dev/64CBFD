@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Game Cosine Direct Match
+
+[Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
+Restore cosf's complete88-word slot directly, frame0, no guards/profile or
+header changes. All53 focused/history checks pass;13,392 MIPS cases and
+connected recovered sine/cosine exercise the frustum. Close258 target bytes,
+one extent and two exact symbol/string groups, with no definition/data drift.
+Fresh Game2,876/4,831,total3,549/5,504,different1,955,zero address drift.
+Tools2a1c847/98db41f first; preserve archive/mirror/Release. Next99-word
+func_1501B0A0; no full camera/culling or gameplay acceptance is inferred.
+
 ## 2026-10-14 Game Sine Direct Match And Cosine Screens
 
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):

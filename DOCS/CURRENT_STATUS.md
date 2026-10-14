@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsc293b24; tools are committed before the consumer pin.
+  checkpoint pins tools98db41f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Game single-precision sine direct match:
+Game single-precision cosine direct match:
+[Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md).
+Restore all85 code words/three NOPs directly from typed float C, frame0,
+no guards/profile/header changes. A separate absolute/reduction copy and
+distinct comparison zero-literal types retain the exact retail schedule.
+All53 focused/history checks pass85.827s, including13,392 MIPS cases,280
+fired prefixes,6,696 native32 cases per O2/O0 profile, five effective controls
+and48 connected frustum cases with both recovered trig bodies. Closed-image
+proof accounts for258 target bytes,20-to340-byte extent and two checked
+symbol/string groups; every other byte and all symbol definitions/data fixed.
+Fresh Game2,876/4,831 (59.53%), total3,549/5,504 (64.48%), different1,955,
+drift0; executable-only3,409/5,364 (63.55%). Conversions remain5,504/6,044.
+Tools2a1c847 qualifies recovery;98db41f clarifies the retained sine fixture's
+retail-cosine provenance (one fresh check1.881s), without changing its gates.
+Preserve801 archive files and513 unrelated mirror fingerprints. Never force
+the smaller full graph scan. The old rectangle literal-image gate stays open.
+Next: func_1501B0A0, a99-word/two-index view updater with frame0x50 and four
+trig calls, still a zero-return C placeholder. No gameplay/FCSR/camera claim.
+
+Previous Game single-precision sine direct match:
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md).
 Replace sinf's zero-return placeholder with104 directly matching words,
 frame0, no guards/profile changes. Close the image to316 target bytes, its
@@ -45,8 +64,8 @@ fingerprints. Full graph scan fails closed; never force the smaller graph.
 Consumer d1a326eb banks the group. All19 post-bank checks pass38.973s;
 incremental build retains e7966de8/005fd768 image/progress hashes. The source
 graph worker completes at40,850 nodes/81,030 edges, without a forced scan.
-Next: cosine's85 code words/three NOPs; all private screens remain unmatched
-and production cosf remains a stub. Keep the old rectangle image gate open.
+Cosine subsequently completed in Note1370. Its earlier unmatched screens are
+retained; the old rectangle image gate remains open.
 
 Previous view frustum side-plane guarded match:
 [Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md).
