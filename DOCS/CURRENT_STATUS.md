@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7222bfa; tools are committed before the consumer pin.
+  checkpoint pins tools 6d54751; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor descriptor/coordinate spawn checkpoint:
+[Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md).
+func_1506A864 matches all65 words/frame0x60 directly from C, zero guards. Reuse
+the SDK Header/Header2, retain signed truncation, untouched pad5 and eleven-slot
+factory/copy flow. All16 installed checks pass61.688s:20,736 guest/216 alias
+cases,1,944 fired cuts, native O2/O0 and real factory/wrapper/memcpy/parent paths.
+The whole image accounts for195 code bytes, two size bytes and39 exact symbol/
+string serialization bytes, with unchanged named definitions otherwise. All
+data/guards/profiles/layouts/conversion rows stay fixed. Fresh Game2,830/4,823
+(58.68%), total3,503/5,496 (63.74%), different1,993, drift0. Tools6d54751 first;
+next func_1506A968's mode1 actor/vector snapshot callback.
 
 Installed actor/vector snapshot checkpoint:
 [Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md).

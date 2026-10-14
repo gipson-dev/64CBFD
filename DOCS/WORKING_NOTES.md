@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-13:
+[Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):
+func_1506A864 direct65-word/frame0x60 C match, zero guards. Reuse SDK types,
+preserve truncation/untouched pad5 and true allocation/copy paths; all16 checks
+pass61.688s. Whole-image accounting includes the exact adjacent symbol/string
+permutation, no broad exemptions. Tools6d54751 first; next func_1506A968.
+
+2026-10-13:
 [Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
 func_1506A79C direct40-word/frame0x38 C match, zero guards. Real array order
 recovers both private offsets and raw coordinate copies; all16 installed checks

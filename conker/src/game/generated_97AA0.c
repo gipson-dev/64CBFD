@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 typedef struct {
     u8 *object;
@@ -24,6 +25,9 @@ extern u8 D_800CC2D0[];
 s32 func_15137610(u8 *, u8 *, u8 *, s32, u8, s32);
 
 void func_151D3480(f32 *, f32 *, void *, u8, u8, s32);
+
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+extern f32 D_80099A28;
 
 extern u8 D_800D1560[];
 extern u8 D_800D1570[];
@@ -61,8 +65,27 @@ s32 func_1506A83C(s32 arg0, s32 arg1) {
     func_151BC104(arg0, 0xFF, 1);
 }
 
-s32 func_1506A864() {
-    return 0;
+void func_1506A864(u8 *actor, s32 arg1) {
+    struct225 *created;
+    Header header;
+    f32 payload[4];
+    Header2 position;
+
+    position.unk0 = (s32)*(f32 *)(actor + 0x14);
+    position.unk4 = (s32)(*(f32 *)(actor + 0x18) + 50.0f);
+    position.unk8 = (s32)*(f32 *)(actor + 0x1C);
+    payload[0] = 0.0f;
+    payload[2] = 0.0f;
+    header.unk0 = 2;
+    header.unk1 = 15;
+    header.unk2 = 300;
+    header.unk4 = 5;
+    payload[1] = 80.0f;
+    payload[3] = D_80099A28;
+    created = func_151602C0(&header, &position, 0, 0xFF, 0xFF, 90, 0xFF, 0, sizeof(payload), 0xFF, 1);
+    if (created != NULL) {
+        memcpy((u8 *)created + 0x18, payload, sizeof(payload));
+    }
 }
 
 s32 func_1506A968() {

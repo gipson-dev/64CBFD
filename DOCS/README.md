@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor descriptor spawn direct match](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):
+  Recover all65 words/frame0x60 directly from C, zero guards. All16 checks pass,
+  including SDK layouts, true factory failure/copy paths and closed image gates.
+
 - [Actor vector snapshot direct match](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
   Recover all40 words/frame0x38 directly from C, zero guards. All16 installed
   checks pass, preserving raw coordinates, private arrays and subtraction order.

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-13 Actor Descriptor Spawn Direct Match
+
+[Note 1350](WORKING_NOTES/1350-game-actor-descriptor-spawn-direct-match-20261013.md):
+Replace func_1506A864's placeholder with its complete coordinate/descriptor
+factory and conditional float copy. All65 words/frame0x60 match directly, zero
+guards. All16 checks pass61.688s, including original factory failure stages,
+untouched pad5, native O2/O0 and1,944 fired cuts. Exactly236 ELF bytes are
+accounted, including one asserted symbol/string pair reorder. Fresh Game2,830/
+4,823, total3,503/5,496; tools6d54751 first. Next func_1506A968.
+
 ## 2026-10-13 Actor Vector Snapshot Direct Match
 
 [Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
