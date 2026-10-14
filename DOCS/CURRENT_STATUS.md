@@ -30,7 +30,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 Game single-precision sine direct match:
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md).
 Replace sinf's zero-return placeholder with104 directly matching words,
-frame0, no guards/profile changes. Preserve316 changed target bytes, its
+frame0, no guards/profile changes. Close the image to316 target bytes, its
 20-to416-byte extent, six newly typed symbols and two exact adjacent symbol
 permutations; every other ELF byte/data/header/progress/Makefile is fixed.
 All42 focused/history checks pass66.813s:6,696 MIPS cases,96 fired prefixes,
@@ -42,6 +42,9 @@ Fresh Game2,875/4,831 (59.51%), total3,548/5,504 (64.46%), different1,956,
 drift0; executable-only3,408/5,364 (63.53%). Conversions remain5,504/6,044.
 Tools c293b24 first. Preserve801 archive files and509 unrelated mirror
 fingerprints. Full graph scan fails closed; never force the smaller graph.
+Consumer d1a326eb banks the group. All19 post-bank checks pass38.973s;
+incremental build retains e7966de8/005fd768 image/progress hashes. The source
+graph worker completes at40,850 nodes/81,030 edges, without a forced scan.
 Next: cosine's85 code words/three NOPs; all private screens remain unmatched
 and production cosf remains a stub. Keep the old rectangle image gate open.
 

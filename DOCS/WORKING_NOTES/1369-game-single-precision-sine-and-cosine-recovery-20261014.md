@@ -36,7 +36,7 @@ recapture them to accommodate a production or test mismatch.
 4. [x] Run connected frustum tests with real sine and separately identified retail cosine, not trig-return mocks.
 5. [x] Install only a fully qualified match and prove the complete image/extent/metadata boundary.
 6. [x] Extend exact-hash history projections and run affected regression/negative controls.
-7. [ ] Refresh measured aggregates, indexes and graph; bank tools before the consumer group.
+7. [x] Refresh measured aggregates, indexes and graph; bank tools before the consumer group.
 8. [ ] Continue cosine's actual85-word shape and register schedule; no claim that production trig dependencies are finished.
 9. [ ] Continue the remaining failed donors, binding recovery, codec dependencies and original Game matching.
 
@@ -165,3 +165,18 @@ value and rounded-period lifetimes. Do not install the parameter-writing
 Retain all private failed-screen receipts; they are evidence, not completion.
 Then continue the full failed-donor/binding/codec/original-Game queues and
 the separate rectangle historical gate. The active goal remains unfinished.
+
+## Post-Bank Verification
+
+Consumer d1a326eb banks the source, tools pin, aggregates and documentation.
+All19 post-bank checks pass38.973s. Incremental build reports ELF/progress
+up to date and retains e7966de8/005fd768. Main and active tools are clean
+before this receipt commit. Older mirror HEAD stays ddbdd16, with exactly
+six task changes/four additions and509 unrelated fingerprints preserved;
+all515 final dirty-path hashes are retained. No mirror history duplication.
+
+The source commit's incremental graph worker finishes at40,850 nodes /
+81,030 edges, preserving the curated/excluded-file boundary and skipping
+only oversized HTML visualization. The prior full scan's fail-closed result
+was not overridden. No push, archive edits, host build or Release operation.
+Cosine and the separately stale rectangle historical image gate remain open.
