@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Commented Source And Object Notification Match
+
+[Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
+Discover353 commented records, compile88 drafts under five profiles and
+screen440 objects with zero new raw exact imports. Recover func_15063168's
+59-word semantic C body with two independent scheduling guards, preserving
+88 neighbors and the complete ELF byte-for-byte. All89 checks pass134.522s.
+Fresh Game2,870/4,830, total3,543/5,503, different1,960, no drift. Preserve
+all801 archive files and478 unrelated mirror fingerprints; keep59 commented
+compile failures and three binding gaps open. Next: the74-word buffer refill.
+
 ## 2026-10-14 Failed-File Isolation And Two Exact Recoveries
 
 [Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):

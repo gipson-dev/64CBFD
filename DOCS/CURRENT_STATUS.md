@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools4d2e619; tools are committed before the consumer pin.
+  checkpoint pins tools5733a7d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Commented-source audit and guarded object-notification recovery:
+[Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md).
+Inventory353 commented records in95 files; attempt147 remaining drafts,
+compile88 bodies under five IDO profiles and screen440 objects. Zero new raw
+exact donors;59 compile failures and three symbol/pool gaps remain explicit.
+Recover func_15063168:59 words, two independent schedule guards,88 unchanged
+owner neighbors. The complete rebuilt ELF remains bbc20157 byte-for-byte;
+only two guard rows and one generated C-language field change. All89 final
+checks pass134.522s,31 mirror discovery checks and project tools checks pass.
+Fresh Game2,870/4,830 (59.42%), total3,543/5,503 (64.38%), different1,960,
+drift0; conversion5,503/6,044 (91.05%). Executable-only total3,403/5,363.
+All33 earlier raw donor imports remain banked; this guarded recovery is separate.
+All801 archive files and478 unrelated mirror fingerprints remain unchanged.
+Next: qualify the74-word func_151F7F60 buffer refill (one commutative-add word),
+then continue actual failed-body/interface recovery and func_151F4F38 matching.
+Host has a generated notification implementation; no transfer/build/Release work.
 
 Failed-file isolation and two more exact C recoveries:
 [Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md).

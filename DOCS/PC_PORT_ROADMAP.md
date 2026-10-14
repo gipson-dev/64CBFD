@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Commented Source And Notification Match - 2026-10-14
+
+[Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
+
+- [x] Inventory353 balanced commented records/341 names in95 files; exclude206 already-exact C records and attempt147 remaining drafts.
+- [x] Fix K&R calling-interface/literal/prose handling and the C-only O1/g3 preprocessor gate; compile88 successful bodies under five profiles.
+- [x] Screen440 real objects:425 different,15 unresolved trials across three functions, zero raw exact imports. Keep59 compile failures explicit.
+- [x] Qualify/install func_15063168 (59 words/frame0x30), with two relocation-aware independent schedule guards and88 unchanged owner neighbors.
+- [x] Verify both padders, original/rebased retail links, native32 callback controls and the unchanged complete bbc20157 ELF/data/overflow/symbols.
+- [x] Pass89 final checks134.522s,31 mirror discovery checks and project tools checks; bank tools5733a7d before the consumer pin, no push.
+- [x] Refresh progress: Game2,870/4,830, total3,543/5,503, different1,960, zero drift; preserve801 archive files and478 unrelated mirror fingerprints.
+- [x] Audit the existing generated host implementation read-only, with no transfer or frozen-Release operation.
+- [ ] Qualify the74-word func_151F7F60 buffer-refill draft and its one commutative-add operand-order word under retail-g.
+- [ ] Reconstruct remaining commented/individual compile failures and real pool/interface gaps; continue func_151F4F38 and original Game matching.
+- [ ] Correct the separate legacy Debugger label counter and qualify any future host transfer independently.
+
 ## Failed-File Isolation And Two Recoveries - 2026-10-14
 
 [Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1364](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
+Inventory353 commented records in95 files, screen440 objects under five
+profiles, and keep59 failures/three real binding gaps explicit. Recover
+func_15063168 (59 words/two schedule guards), preserving88 owner neighbors
+and the entire ELF byte-for-byte. All89 final checks134.522s pass. Fresh
+Game2,870/4,830, total3,543/5,503, drift0; tools5733a7d first. Next: qualify
+func_151F7F60's74-word buffer refill, then resume original Game matching.
+
+2026-10-14:
 [Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
 Attempt1,143 individual definitions from58 failed files. Compile719 with full
 interfaces plus325 with only unused local interfaces omitted; screen all1,044

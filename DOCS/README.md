@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Commented-source audit and object notification match](WORKING_NOTES/1364-commented-source-audit-and-object-notification-match-20261014.md):
+  Screen440 objects from353 commented records; recover one59-word routine
+  with two checked scheduling guards,88 fixed neighbors and unchanged ELF.
+  Keep raw-donor, failed-interface and pool-binding results distinct.
+
 - [Failed-source function isolation and two exact recoveries](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md):
   Compile1,044 individually isolated bodies from58 failed files, recover two
   more exact routines, and keep99 real compilation failures explicit. Correct

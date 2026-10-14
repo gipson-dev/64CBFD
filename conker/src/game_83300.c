@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+s32 func_15194FF4(struct127 *, struct127 *, s32);
+
 /* Generated placeholder declarations. */
 s32 func_15055E50(s32 arg0, s32 arg1);
 s32 func_150562FC();
@@ -38,7 +40,6 @@ s32 func_15062800();
 s32 func_15062D10();
 s32 func_15062E24();
 s32 func_15062FC0();
-s32 func_15063168();
 s32 func_15063254();
 /* End generated placeholder declarations. */
 
@@ -1244,8 +1245,36 @@ s32 func_15062E24() {
 s32 func_15062FC0() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15063168.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_15063168.s")
+/* Notify other live object slots whose attached reaction byte is still clear. */
+void func_15063168(struct127 *object) {
+    s32 index;
+    s32 selfIndex;
+    struct126 *attached;
+
+    if (D_8008FD8C > 0) {
+        selfIndex = ((char *)object - (char *)D_800CC2D0) / 0x32C;
+
+        index = 0;
+        do {
+            if (index == selfIndex) {
+                goto next;
+            }
+            if (!((1 << index) & D_800CC268)) {
+                goto next;
+            }
+            attached = D_800CC2D0[index].unk31C;
+            if (attached == 0) {
+                goto next;
+            }
+            if (*(u8 *)((char *)attached + 0x1AC) != 0) {
+                goto next;
+            }
+            func_15194FF4(object, &D_800CC2D0[index], 1);
+        next:
+            index++;
+        } while (index < D_8008FD8C);
+    }
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15063254.s. */
 s32 func_15063254() {
     return 0;
