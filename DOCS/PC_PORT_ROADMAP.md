@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Effect Packet Guarded Match - 2026-10-14
+
+[Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
+
+- [x] Recover the complete three-vector packet, retained actor scalar, five RNG samples and all17 factory arguments.
+- [x] Match all108 words/frame0x98 through eight closed F2/F12 allocation guards, preserving the LO16 symbol and every other relocation.
+- [x] Pass77 installed checks232.619s, plus final10 checks11.706s after completing signed-DIV HI modeling; retain actual factory/copy and native O2/O0 evidence.
+- [x] Close every ELF byte:351 instruction bytes and two size bytes; append exactly1,090 guard bytes while preserving all prior bytes and720 data owners.
+- [x] Bank toolsfc195e3 first, preserving460 unrelated older-mirror fingerprints without push or frozen host Release work.
+- [ ] Separately transfer/qualify the PC-port func_151A7610; its selected generated copy is still a placeholder and independently dirty.
+- [ ] Recover the47-word leaf func_151A77C0 in the same owner.
+- [ ] Finish the wider Game backlog.
+
 ## Actor Burst Contact Direct Match - 2026-10-14
 
 [Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
@@ -10,7 +23,7 @@
 - [x] Close every ELF byte:356 instruction bytes and two size bytes; preserve all720 data owners, prior guards, six neighbors and conversion rows.
 - [x] Bank toolsbb793d8 first, preserving the older mirror's459 unrelated fingerprints without push or frozen host Release work.
 - [ ] Separately transfer/qualify func_151A743C in the PC port; its selected generated copy remains a zero-return placeholder and independently dirty. This decomp checkpoint is not a PC gameplay fix.
-- [ ] Recover the108-word/frame0x98 func_151A7610 in the same owner.
+- [x] Recover the108-word/frame0x98 func_151A7610 in Note1357, preserving all completed owner routines.
 - [ ] Finish the wider Game backlog.
 
 ## Actor Burst Consumer Guarded Match - 2026-10-14
@@ -36,7 +49,7 @@
 - [x] Bank tools0e244d6 first; preserve production inputs, progress, older mirror work and frozen host Release.
 - [x] Qualify actual315-word emission through existing guarded scheduling and moved relocation offsets in Note1355.
 - [x] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A7610.
+- [ ] Finish the wider Game backlog; next func_151A77C0.
 
 ## Actor Burst Consumer Research - 2026-10-14
 
@@ -49,7 +62,7 @@
 - [x] Bank toolsce205ae first and document this as uninstalled partial research, without matching credit, push or host Release work.
 - [x] Resolve the315-word guarded result and qualify applicable modeled state/alias/fault/owner/independent-link gates in Note1355.
 - [x] Install func_151A6F00 after those gates pass, then close linked-image and fresh matching-progress audits in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A7610.
+- [ ] Finish the wider Game backlog; next func_151A77C0.
 
 ## Actor Burst Packet Direct Match - 2026-10-14
 

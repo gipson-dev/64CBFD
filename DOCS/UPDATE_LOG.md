@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-14 Actor Effect Packet Guarded Match
+
+[Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
+Replace func_151A7610's placeholder with the complete three-vector packet and
+17-argument effect submission. All108 words/frame0x98 match through eight
+closed F2/F12 allocation guards; preserve the LO16 symbol. All77 checks pass
+232.619s, plus final10 effect checks11.706s after a local oracle refinement.
+Exactly353 ELF bytes and1,090 append-only guard bytes change. Fresh
+Game2,835/4,823, total3,508/5,496; toolsfc195e3 first. Next func_151A77C0.
+
 ## 2026-10-14 Actor Burst Contact Direct Match
 
 [Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):

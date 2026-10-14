@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bb793d8; tools are committed before the consumer pin.
+  checkpoint pins tools fc195e3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor effect packet checkpoint:
+[Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md).
+func_151A7610 matches all108 words/frame0x98 through semantic C and eight
+closed F2/F12 guards, including a preserved world-coefficient LO16 relocation.
+All77 checks pass232.619s; final10 effect checks pass11.706s after completing
+the local signed-DIV HI model. Retain128 guest domains,376 root cuts,32 aliases,
+96 native cases per O2/O0 and the actual157-word factory/11-word memcpy.
+Only353 ELF bytes change, plus1,090 exact append-only guard bytes; all720 data
+owners, six neighbors, layouts and converted rows remain fixed.
+Fresh Game2,835/4,823 (58.78%), total3,508/5,496 (63.83%), different1,988, drift0.
+Toolsfc195e3 first; next recover47-word leaf func_151A77C0 in this owner.
+The sibling PC-port copy remains a placeholder in independently dirty source;
+track a separate transfer/host task. No push or frozen Release work.
 
 Installed actor burst contact checkpoint:
 [Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md).

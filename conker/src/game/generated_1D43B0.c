@@ -66,6 +66,11 @@ extern f32 D_800A8DC4;
 void func_1516972C(u32);
 void func_1514AB5C(f32, f32, s32, f32, s32, f32, f32, f32, f32, s16, s16, u8);
 
+extern f32 D_800BE9A8;
+extern f32 D_800A8DC8, D_800A8DCC, D_800A8DD0;
+void func_151A26EC(BurstVector1D43B0 *, BurstVector1D43B0 *, BurstVector1D43B0 *,
+    f32, f32, f32, s32, s32, s32, s32, s32, s32, s32, s32, s32, u8, s32);
+
 extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/1D43B0.s. */
@@ -236,8 +241,40 @@ s32 func_151A743C(u8 *actor, f32 arg1, s32 unused, s32 context, f32 arg4) {
     return 1;
 }
 
-s32 func_151A7610() {
-    return 0;
+void func_151A7610(f32 x, f32 y, f32 z, f32 dx, f32 dy, f32 dz, u8 *actor) {
+    BurstVector1D43B0 position;
+    BurstVector1D43B0 velocity;
+    BurstVector1D43B0 zero;
+    f32 multiplier;
+    f32 retained = *(f32 *)(actor + 0x40);
+    f32 speed;
+    f32 initial;
+    u32 integer0;
+    f32 second;
+    f32 first;
+    u32 integer1;
+
+    position.x = x;
+    position.y = y;
+    position.z = z;
+    initial = func_150ADA68();
+    multiplier = D_800BE9A8;
+    speed = (initial * 166.0f + 160.0f) * D_800A8DC8;
+    zero.x = 0.0f;
+    zero.y = 0.0f;
+    zero.z = 0.0f;
+    velocity.x = -dx * multiplier * speed;
+    velocity.y = -dy * multiplier * speed;
+    velocity.z = -dz * multiplier * speed;
+    first = func_150ADA68();
+    second = func_150ADA68();
+    integer0 = (u32)func_150ADA20();
+    integer1 = (u32)func_150ADA20();
+    func_151A26EC(&position, &zero, &velocity, 1.0f,
+        (first * D_800A8DCC + -600.0f) * D_800A8DD0,
+        (second * 500.0f + 400.0f) * retained,
+        integer0 % 21 + 15, integer1 % 101 + 100,
+        15, 20, 0, -1, 0x56, 0x27, 0, actor[0xC], actor[1]);
 }
 
 s32 func_151A77C0() {

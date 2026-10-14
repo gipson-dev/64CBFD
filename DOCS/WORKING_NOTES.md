@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-14:
+[Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
+func_151A7610 installed108-word/frame0x98 semantic C match with eight closed
+F2/F12 guards. All77 checks pass232.619s; final10 effect checks pass11.706s
+after completing the local signed-DIV HI model. Close353 ELF bytes and append
+1,090 exact guard bytes. Game2,835/4,823, total3,508/5,496; toolsfc195e3 first.
+Next func_151A77C0; the sibling PC-port placeholder remains a separate task.
+
+2026-10-14:
 [Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
 func_151A743C installed 117-word/frame0x48 direct C match, zero guards.
 All 67 checks pass234.138s: 7,680 guest domains, 680 fired root cuts, 64 aliases,

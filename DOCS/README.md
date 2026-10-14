@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor effect packet guarded match](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
+  Install all108 words/frame0x98 through semantic C and eight closed FPU
+  allocation guards. Full image, actual factory/copies and prior regressions pass.
+
 - [Actor burst contact direct match](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
   Install all 117 words/frame0x48 directly from C, zero guards. All 67 checks
   pass; mixed callback ABI, prior consumer and every linked-image byte qualify.
