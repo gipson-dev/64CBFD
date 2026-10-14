@@ -168,3 +168,30 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer **003a7a80b7f1d242060b44671a36de2e3a404550** banks the direct C body,
+aggregate-only README rows, documentation and exact tools
+**3d885558514938441c293596a4163b8dc1a15d7a** pin. Both active repositories are
+clean at that checkpoint. Six fresh post-bank checks pass **in 5.329s**:
+complete direct word/profile identity, literal whole-image/source accounting,
+all 1,200 fired access cuts, effective image/source/history corruptions and
+both protected text/data gates. The full fifteen-test receipt is separate.
+
+Fresh post-bank match-progress confirms Game 2,828/4,823 (58.64%),
+total 3,501/5,496 (63.70%), different 1,995 and drift 0. Init 492/492 and
+Debugger 181/181 remain exact. All four installed fingerprints above are
+rechecked unchanged after the commit.
+
+The first incremental hook completes **40,596 nodes / 81,074 edges**, with
+no remaining worker at observation. Retained history, direct shrink refusal
+and oversized-HTML limits are preserved. All five new index links resolve.
+The older tools mirror's HEAD and all 451 saved fingerprints are rechecked
+unchanged after banking. No push, mirror commit/reset, dependency install,
+real-save/configuration or frozen host Release work.
+
+Next func_1506A79C remains the unmodified zero-return placeholder at source
+line 45. Recover its position at private SP+0x2C and difference vector at
+SP+0x20 in the original 0x38 frame, including live floating read/subtract
+ordering and helper arguments. The wider Game goal remains active.

@@ -37,6 +37,8 @@ Only 131 target code bytes and one size byte change; all other ELF bytes/data,
 guards/profile/layout/conversion rows stay fixed. Fresh Game 2,828/4,823 (58.64%),
 total 3,501/5,496 (63.70%), different 1,995, drift 0. Tools 3d88555 first;
 next func_1506A79C and its actor/vector snapshots and floating differences.
+Consumer003a7a80 banks this checkpoint; six fresh post-bank checks pass 5.329s,
+with matching totals reconfirmed and all older-mirror fingerprints preserved.
 
 Installed actor/payload creator checkpoint:
 [Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md).
