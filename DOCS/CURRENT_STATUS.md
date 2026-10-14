@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3d88555; tools are committed before the consumer pin.
+  checkpoint pins tools 7222bfa; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor/vector snapshot checkpoint:
+[Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md).
+func_1506A79C matches all 40 words/frame0x38 directly from plain C, zero guards.
+Preserve the raw actor copies, two private arrays and global-vector subtraction
+order. All 16 installed checks pass in49.161s:11,904 guest/60 alias cases,792
+fired cuts, native32 O2/O0 and original dispatcher/table4. Only122 target code
+bytes and one size byte change; all other ELF/data/guards/profile/layout and
+conversion rows stay fixed. Fresh Game2,829/4,823 (58.66%), total3,502/5,496
+(63.72%), different1,994, drift0. Tools7222bfa first; next func_1506A864's
+coordinate truncation, descriptor and conditional payload copy.
 
 Installed signed actor-mask scan checkpoint:
 [Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md).

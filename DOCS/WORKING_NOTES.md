@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-13:
+[Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
+func_1506A79C direct40-word/frame0x38 C match, zero guards. Real array order
+recovers both private offsets and raw coordinate copies; all16 installed checks
+pass in49.161s. Only122 code bytes plus one named size byte change, all other
+image/data/history fixed. Tools7222bfa first; next func_1506A864.
+
+2026-10-13:
 [Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
 func_1506AAE0 direct 39-word/frame 0x30 C match, zero guards. Preserve the signed
 snapshot, every-bit actor stride and six-slot callback; all 15 installed checks

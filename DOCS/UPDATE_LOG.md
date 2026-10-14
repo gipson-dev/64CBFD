@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-13 Actor Vector Snapshot Direct Match
+
+[Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
+Replace func_1506A79C's placeholder with complete actor-coordinate snapshots
+and global-vector differences. All40 words/frame0x38 match directly, zero guards.
+All16 installed checks pass in49.161s, including native32 O2/O0, original
+dispatcher/table4 and792 fired cuts. Only123 declared ELF bytes change. Fresh
+Game2,829/4,823, total3,502/5,496; tools7222bfa first. Wider Game work continues
+with func_1506A864.
+
 ## 2026-10-13 Signed Actor Mask Scan Direct Match
 
 [Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):

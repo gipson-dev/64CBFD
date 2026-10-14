@@ -23,6 +23,8 @@ extern s32 D_800CC260;
 extern u8 D_800CC2D0[];
 s32 func_15137610(u8 *, u8 *, u8 *, s32, u8, s32);
 
+void func_151D3480(f32 *, f32 *, void *, u8, u8, s32);
+
 extern u8 D_800D1560[];
 extern u8 D_800D1570[];
 
@@ -42,8 +44,17 @@ void func_1506A760(s32 arg0, s32 arg1) {
     func_151BBA9C(arg0, D_800D1560, D_800D1570, 0xFF, 1);
 }
 
-s32 func_1506A79C() {
-    return 0;
+void func_1506A79C(u8 *actor, s32 arg1) {
+    f32 position[3];
+    f32 difference[3];
+
+    position[0] = *(f32 *)(actor + 0x14);
+    position[1] = *(f32 *)(actor + 0x18);
+    position[2] = *(f32 *)(actor + 0x1C);
+    difference[0] = *(f32 *)(D_800D1570 + 0) - *(f32 *)(D_800D1560 + 0);
+    difference[1] = *(f32 *)(D_800D1570 + 4) - *(f32 *)(D_800D1560 + 4);
+    difference[2] = *(f32 *)(D_800D1570 + 8) - *(f32 *)(D_800D1560 + 8);
+    func_151D3480(position, difference, NULL, 0, 0xFF, 1);
 }
 
 s32 func_1506A83C(s32 arg0, s32 arg1) {

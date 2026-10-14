@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor vector snapshot direct match](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md):
+  Recover all40 words/frame0x38 directly from C, zero guards. All16 installed
+  checks pass, preserving raw coordinates, private arrays and subtraction order.
+
 - [Signed actor mask scan direct match](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md):
   Recover all 39 words/frame 0x30 directly from C, zero guards. All 15 installed
   checks pass, preserving the signed snapshot, callback ABI and original dispatch.
