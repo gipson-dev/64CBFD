@@ -12,6 +12,7 @@
 - [x] Close the rebuilt ELF to190 changed target bytes and one public extent; keep all data/overflow/headers/progress/Makefile and every other ELF byte fixed.
 - [x] Pass11 target/capture checks18.866s and28 affected history/behavior checks45.466s, project tools checks and standalone mirror checks.
 - [x] Refresh Game2,874/4,831, total3,547/5,504, different1,957, zero drift; bank tools46da39b first and preserve801 archive files/502 unrelated mirror fingerprints.
+- [x] Bank consumer5a74421f, pass16 post-bank checks33.090s, retain the pinned image/progress on incremental build and await the40,838-node source graph worker.
 - [ ] Reconcile the old rectangle test_07 literal-image snapshot; it already fails before this restoration. Keep its c58a81de baseline and effective current image gates intact.
 - [ ] Reconstruct Game cosf/sinf's88/104-word polynomial routines; do not substitute the distinct Init double-precision implementation or claim working camera/culling yet.
 - [ ] Continue actual failed-body/interface/pool recovery, layer-decoder dependencies and original Game matching; keep Release frozen.

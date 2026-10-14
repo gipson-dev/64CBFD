@@ -198,3 +198,18 @@ math/runtime behavior are not accepted while these dependencies remain stubs.
 Continue the99 individual/59 commented compile failures, real binding cases,
 layer decoder dependencies and original Game matching alongside the separate
 historical rectangle-image reconciliation. No goal completion is claimed.
+
+## Post-Bank Verification
+
+Consumer5a74421f banks the source/interface/guard group, tools pin and docs.
+All16 post-bank target/capture/historical-control checks pass33.090s. The
+incremental build reports ELF/progress up to date and retains the79eb4f32
+image and005fd768 progress. Main and active tools are clean before this
+receipt commit; the independently dirty older mirror remains preserved.
+The old rectangle test_07 snapshot issue remains separately open; these
+post-bank passes do not recapture it or claim a fully green legacy suite.
+
+The source commit's incremental graph worker completes at40,838 nodes /
+81,017 edges. It preserves the curated/excluded-file boundary and skips only
+the oversized HTML visualization. No smaller forced graph refresh, push,
+host transfer/build or frozen-Release operation is performed.

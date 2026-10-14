@@ -41,6 +41,9 @@ remain5,504/6,044. Preserve801 archive files and502 unrelated mirror paths.
 Tools46da39b first, no push or host/Release work. One old rectangle whole-image
 gate is confirmed stale on the pre-frustum baseline too; preserve its old
 snapshot and reconcile history separately, not a claim that all old tests pass.
+Consumer5a74421f banks the group; all16 post-bank checks pass33.090s. The
+incremental build retains the79eb4f32 image and005fd768 progress; the source
+graph worker completes at40,838 nodes/81,017 edges, without forcing the scan.
 Next: reconstruct Game cosf/sinf (88/104-word slots), still zero-return C
 stubs. Init's __sinf is a distinct double-precision implementation. No retail
 trig accuracy, FCSR, complete camera/culling or gameplay acceptance is claimed.
