@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
+Read-only audit after consumer41dfe733: alternative1,478/1,478 executable C
+slots match, including241 Init/1,217 Game/20 Debugger. Whole text2,256,728 bytes
+matches with original assembly, but the reconstructed rodata link still fails;
+diagnostic ELF is not runnable. Preserve all801 source files. Exclude metadata
+and data-label inflation; track22 potential individual C donors, adopting none.
+Tools86b3df6 first; four audit checks4.314s. Main source/build hashes unchanged.
+
+2026-10-14:
 [Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
 func_151A77C0 installed complete 47-word/frame0 semantic C plus 26 guarded
 allocation/schedule words. Retain strict signed gates, wrapping axes, conditional

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools166a171; tools are committed before the consumer pin.
+  checkpoint pins tools86b3df6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Alternative source audit, performed after the function bank:
+[Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md).
+Another Source/CBFD-Recompiled/conker remains unused and all801 original files
+are unchanged. Its disposable US reconstruction has1,478/1,478 executable C
+slots byte-exact (Init241, Game1,217, Debugger20), with no guards or padding
+exception. Whole text2,256,728 bytes also matches, including original assembly.
+Ordinary linking fails on generated rodata labels; the diagnostic ELF is not a
+working/runnable build. Track22 exact individual C candidates, not a wholesale
+import. The user now authorizes function-by-function use of verified exact C;
+implementation begins after banking this audit. No active source changes yet.
+Counting caveat: legacy Debugger181/181 includes140 data labels. Function-only
+main counts are41/41 Debugger and3,369/5,356 total; legacy counters are retained
+pending a separate correction. The detailed audit separates these definitions.
 
 Installed actor threshold flags checkpoint:
 [Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md).

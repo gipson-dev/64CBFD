@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-14 Alternative Source Byte-Match Audit
+
+[Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
+After banking func_151A77C0 in41dfe733, audit the requested alternative source
+without modifying its801 files. All1,478 linked executable C slots match retail
+at original addresses; whole text matches including assembly. Its reconstruction
+still fails ordinary rodata linking, so retain only a marked diagnostic ELF.
+Track22 potential function donors; none imported. Separate data/metadata counter
+inflation from genuine function matching. Tools86b3df6 first, four checks4.314s.
+
 ## 2026-10-14 Actor Threshold Flags Guarded Match
 
 [Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):

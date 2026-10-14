@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Alternative Source Audit - 2026-10-14
+
+[Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
+
+- [x] Bank func_151A77C0 in41dfe733 before investigating the alternative source.
+- [x] Preserve all801 archive files and reconstruct only a disposable US copy using the verified reference and existing tools.
+- [x] Measure1,478/1,478 executable C slots and all2,256,728 text bytes; keep assembly coverage and diagnostic rodata-link failure explicit.
+- [x] Exclude991 false C bookkeeping rows and140 data labels; compare genuine code against the same retail catalogue.
+- [x] Bank tools86b3df6 audit/controls first and record22 potential individual C donors without adopting any source.
+- [x] User authorizes function-by-function use of verified byte-exact C with proper names/comments; do not import unlinked drafts or merge broad headers.
+- [ ] Transfer the22 applicable exact C candidates in qualified, coherent groups after the audit bank.
+- [ ] Correct the separate legacy main progress counters that call140 Debugger data labels functions.
+- [ ] Finish the wider Game backlog; no source-adoption decision is implied by this audit.
+
 ## Actor Threshold Flags Guarded Match - 2026-10-14
 
 [Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
@@ -10,7 +24,7 @@
 - [x] Close every ELF byte:131 instruction bytes and one size byte; append3,926 guard bytes while preserving720 data owners and all old raw guard bytes.
 - [x] Pass86 installed regression checks259.248s and bank tools166a171 first; preserve461 unrelated older-mirror fingerprints without push or host Release work.
 - [ ] Separately transfer/qualify the PC-port func_151A77C0; its selected generated copy remains a placeholder and independently dirty.
-- [ ] After banking this function, measure Another Source/CBFD-Recompiled/conker read-only; do not import or adopt anything during the audit.
+- [x] After banking, measure Another Source/CBFD-Recompiled/conker read-only in Note1359; nothing imported or adopted.
 - [ ] Finish the wider Game backlog.
 
 ## Actor Effect Packet Guarded Match - 2026-10-14

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Alternative source byte-match audit](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
+  Read-only comparison after the function commit:1,478 exact executable C
+  slots,22 potential individual donors, preserved archive and diagnostic-link caveats.
+
 - [Actor threshold flags guarded match](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
   Install the complete 47-word leaf through semantic C and 26 scheduling/
   allocation guards. Close the entire image and preserve all prior routines.

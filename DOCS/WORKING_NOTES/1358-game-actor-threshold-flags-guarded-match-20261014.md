@@ -148,3 +148,12 @@ python3 -m unittest tools.tests.test_game_actor_threshold_flags_match -v
 make -C conker build/conker.us.elf NON_MATCHING=1 -j4
 make -C conker match-progress NON_MATCHING=1
 ```
+
+## Post-Bank Verification
+
+Consumer `41dfe733` banks the complete function and tools166a171 pin. Eight
+fresh post-bank image/padder/corruption checks pass32.538s. Both active trees
+are clean at that bank. The incremental hook completes40,702 nodes /81,179
+edges while preserving the excluded-but-present corpus; no worker remains.
+The next requested audit is completed separately in
+[Note 1359](1359-alternative-source-byte-match-audit-20261014.md), adopting no source.
