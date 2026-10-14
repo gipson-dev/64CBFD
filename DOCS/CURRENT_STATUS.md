@@ -36,6 +36,8 @@ the original parent,864 fired cuts, both owner padders and signed-low rebases.
 Only104 target ELF bytes change; all symbol fields/data/source/profile/layout/
 conversion rows stay fixed. Fresh Game2,826/4,823 (58.59%), total3,499/5,496
 (63.66%), different1,997, drift0. Tools4e3cd4c first; next func_1506AA48.
+Consumerff5a1244 banks the exact pin/guards/docs; six post-bank checks pass4.434s.
+The first incremental hook completes40,575 nodes/81,062 edges with no worker.
 
 Installed matrix-reflection checkpoint:
 [Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md).

@@ -154,3 +154,26 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer **ff5a124407474ca5cb359d69e1b0747a11f40f00** banks the34 guards,
+aggregate-only README rows, documentation and exact tools
+**4e3cd4c544ad79d2991faf30be37e3cad03c5912** pin. Both active checkouts are clean.
+Six fresh post-bank checks pass **in4.434s**: complete shape/word identity,
+literal whole-image/source accounting, all864 fired cuts, effective image
+corruptions and both protected text/data checks. The full17-check receipt is
+separate; source, all symbol fields and conversion rows stay unchanged.
+
+The first incremental hook completes **40,575 nodes /81,062 edges** with no
+remaining worker at observation. Retained history, direct shrink refusal and
+oversized-HTML limits are preserved. All five new index links resolve.
+No push, dependency install, real-save or frozen host Release work.
+
+Next-function baseline fingerprints: `conker/src/game/generated_97AA0.c`
+SHA-256 `23b0c8294804b32d6cafef604dc9fe48d366b19c5effbe831be2b53c8a0f6541`;
+`conker/asm/97AA0.s`
+SHA-256 `875b01a1301468f097ce947456ebee3e669675903aa2bd324ba1675883820109`.
+Keep the next38-word creator/copy routine unmodified until its complete actor/
+selector/payload/padding contract is qualified. The wider Game goal remains
+active with1,997 still-different converted functions.
