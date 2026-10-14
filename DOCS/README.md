@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View FOV transfer reconstruction](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
+  Restore the 99-word/two-index body with thirteen closed prologue guards,
+  ten preserved neighbors and exact whole-image accounting. Pass 65 selected
+  target/history checks; the final view command remains a production stub.
+
 - [Game single-precision cosine direct match](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
   Recover85 code words/three NOPs directly with SDK copy/literal-type shape,
   53 focused/history checks and exact image/symbol accounting. Both trig

@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## View FOV Transfer Match - 2026-10-14
+
+[Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
+
+- [x] Restore func_1501B0A0's complete 99-word/frame0x50 two-index body with descriptive fields/locals and seven semantic calls; keep shared struct259 unchanged.
+- [x] Qualify thirteen relocation-aware guards as one closed prologue permutation, with no new/omitted operations; preserve ten neighbors, both padders and independent rebases.
+- [x] Pass 2,160 paired MIPS cases, 528 fired prefixes, 648 native32 cases per O2/O0 profile and four effective semantic controls.
+- [x] Execute 36 connected cases with both recovered trig bodies; keep the angle-helper/command models and unfinished production command explicit.
+- [x] Close the entire ELF to 329 target bytes, one 12-to396-byte extent and one checked symbol/string group; preserve all protected data and non-target definitions.
+- [x] Pass 65 selected target/history checks in 115.601s, shared tools checks and standalone mirror checks; commit tools 7b6f51a first, preserving 801 archive files and 516 unrelated mirror fingerprints.
+- [x] Refresh Game 2,877/4,831 and total 3,550/5,504, different 1,954, zero drift; keep root README aggregate-only.
+- [ ] Bank the consumer group, await its incremental graph worker and record post-bank checks without forcing the smaller full scan.
+- [ ] Recover func_1510B128's 129-word/frame0x50 command and qualify its actual argument/return/caller interface; do not infer functioning production camera behavior from bounded helper models.
+- [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle image reconciliation; keep host Release frozen.
+
 ## Game Cosine Direct Match - 2026-10-14
 
 [Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
@@ -12,7 +27,7 @@
 - [x] Pass53 focused/history checks85.827s and tools/mirror checks; bank tools2a1c847 then98db41f provenance clarification before the consumer group.
 - [x] Refresh Game2,876/4,831 and total3,549/5,504, different1,955, zero drift; keep the root README aggregate-only and all801 archive hashes unchanged.
 - [x] Bank consumer f71d2c96, pass30 post-bank checks41.855s, retain pinned image/progress and await the40,861-node source graph worker; pin receipt-only clarification820566f after its fresh2.114s image check.
-- [ ] Recover func_1501B0A0's99-word/frame0x50 two-index view body; inspect its two additional float-helper calls and final view command before claiming coupled behavior.
+- [x] Recover func_1501B0A0's99-word/frame0x50 two-index view body in Note1371; inspect both float-helper and final-command interfaces, keeping production command/gameplay acceptance open.
 - [ ] Continue all donor/binding/codec/original-Game matching and reconcile the separate stale rectangle image gate; keep host Release frozen.
 
 ## Game Sine Direct Match - 2026-10-14

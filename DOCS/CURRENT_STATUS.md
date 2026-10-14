@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools820566f; tools are committed before the consumer pin.
+  checkpoint pins tools7b6f51a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Game single-precision cosine direct match:
+View FOV transfer guarded match:
+[Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md).
+Restore func_1501B0A0's 99-word/frame0x50 two-index body. All seven calls and
+86 words emit directly; thirteen relocation-aware guards move one independent
+coefficient load through the opening setup, preserving every instruction and
+relocation atom. Ten neighbors, both padders and independent rebases agree.
+All 65 selected target/history checks pass in 115.601s: 2,160 paired MIPS
+cases, 528 fired root prefixes, 648 native32 cases per O2/O0 and 36 connected
+cases using both recovered trig bodies. The angle helper and final command
+remain bounded in these tests; func_1510B128's production body is still a stub.
+Close the whole image to 329 target bytes, one 12-to396-byte extent and one
+checked symbol/string permutation. All other bytes and protected data stay fixed.
+Fresh Game 2,877/4,831 (59.55%), total 3,550/5,504 (64.50%), different 1,954,
+drift 0; executable-only 3,410/5,364 (63.57%). Conversions remain 5,504/6,044.
+Tools 7b6f51a first. Preserve 801 archive files and 516 unrelated mirror
+fingerprints; do not force the smaller full graph scan. The separate stale
+rectangle image gate remains open. Next: qualify func_1510B128's 129-word/
+frame0x50 command, actual argument/return interface and callers before broad
+interface changes. Continue all failed donor/binding/codec/original Game work.
+No full caller, production-command, FCSR, gameplay or camera acceptance.
+
+Previous Game single-precision cosine direct match:
 [Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md).
 Restore all85 code words/three NOPs directly from typed float C, frame0,
 no guards/profile/header changes. A separate absolute/reduction copy and
@@ -46,8 +67,8 @@ graph worker completes at40,861 nodes/81,042 edges. Receipt-only820566f makes
 non-target definition preservation explicit; its fresh image gate passes2.114s.
 Preserve801 archive files and513 unrelated mirror fingerprints. Never force
 the smaller full graph scan. The old rectangle literal-image gate stays open.
-Next: func_1501B0A0, a99-word/two-index view updater with frame0x50 and four
-trig calls, still a zero-return C placeholder. No gameplay/FCSR/camera claim.
+func_1501B0A0 subsequently completed in Note1371 with thirteen closed prologue
+guards; the final view command remains unfinished. No gameplay/FCSR/camera claim.
 
 Previous Game single-precision sine direct match:
 [Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md).

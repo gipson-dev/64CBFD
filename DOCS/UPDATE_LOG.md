@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 View FOV Transfer Guarded Match
+
+[Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
+Restore func_1501B0A0's complete 99-word slot with thirteen closed scheduling
+guards, no profile/shared-header changes and ten fixed owner neighbors.
+All 65 selected target/history checks pass. Whole-image proof accounts for
+329 target bytes, one extent and one exact symbol/string permutation; all
+other bytes/data fixed. Game 2,877/4,831, total 3,550/5,504, different 1,954,
+zero drift. Tools 7b6f51a first; archive/mirror/Release preserved. Next recover
+func_1510B128's command; bounded helper tests do not establish full camera behavior.
+
 ## 2026-10-14 Game Cosine Direct Match
 
 [Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):

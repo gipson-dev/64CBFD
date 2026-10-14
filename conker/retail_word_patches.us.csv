@@ -15098,3 +15098,16 @@ game_476D0,func_1501B22C,0x54,0xE7AC0020,0xE7AC0024,-,-,Coalesce disjoint horizo
 game_476D0,func_1501B22C,0x58,0xC7AC0020,0xC7AC0024,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
 game_476D0,func_1501B22C,0x60,0xE7A00030,0xE7A00034,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
 game_476D0,func_1501B22C,0x64,0xC7A20030,0xC7A20034,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
+game_476D0,func_1501B0A0,0x4,0xAFBF001C,0x3C010000,-,R_MIPS_HI16:D_800968F4,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x8,0xAFA40050,0xC4200000,-,R_MIPS_LO16:D_800968F4,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0xC,0xAFA50054,0xAFBF001C,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x10,0x8FA30050,0xAFA40050,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x14,0x3C0F0000,0xAFA50054,R_MIPS_HI16:D_800BE628,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x18,0x8DEF0000,0x8FA30050,R_MIPS_LO16:D_800BE628,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x1C,0x00037080,0x3C0F0000,-,R_MIPS_HI16:D_800BE628,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x20,0x01C37023,0x8DEF0000,-,R_MIPS_LO16:D_800BE628,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x24,0x000E71C0,0x00037080,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x28,0x3C010000,0x01C37023,R_MIPS_HI16:D_800968F4,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x2C,0x01EE1021,0x000E71C0,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x30,0xC444006C,0x01EE1021,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+game_476D0,func_1501B0A0,0x34,0xC4200000,0xC444006C,R_MIPS_LO16:D_800968F4,-,Move independent half-angle coefficient load before indexed view prologue,,,false

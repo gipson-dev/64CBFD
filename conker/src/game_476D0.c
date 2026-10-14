@@ -3,6 +3,18 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct {
+    u8 padding0[0xC];
+    f32 extentX, extentY;
+    u8 padding14[0x58];
+    f32 baseFovX, baseFovY;
+    u8 padding74[0x10C];
+} ViewProjection476D0;
+extern f32 D_800968F4, D_800968F8, D_800968FC;
+s32 func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 fallback);
+#define VIEW_PROJECTIONS_476D0 ((ViewProjection476D0 *)D_800BE628)
+
+void func_1501B0A0(s32 index, s32 reference);
 void func_1501B22C(s32 index);
 
 /* Generated placeholder declarations. */
@@ -11,7 +23,6 @@ s32 func_1501A39C();
 s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
-s32 func_1501B0A0();
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A220.s. */
@@ -216,9 +227,21 @@ void func_1501AF44(f32 *ulx, f32 *uly, f32 *lrx, f32 *lry) {
     *lry = lryClamped;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501B0A0.s. */
-s32 func_1501B0A0() {
-    return 0;
+/* Transfer the reference viewport's projection into this view's FOV offsets. */
+void func_1501B0A0(s32 index, s32 reference) {
+    f32 halfX, halfY, tangentX, tangentY, extentX, extentY, offsetX, offsetY;
+
+    halfX = VIEW_PROJECTIONS_476D0[index].baseFovX * D_800968F4;
+    halfY = VIEW_PROJECTIONS_476D0[index].baseFovY * D_800968F4;
+    tangentX = sinf(halfX) / cosf(halfX);
+    tangentY = sinf(halfY) / cosf(halfY);
+    extentX = ((s32 *)&D_800BE638)[reference] / (tangentX + tangentX);
+    extentY = ((s32 *)&D_800BE650)[reference] / (tangentY + tangentY);
+    offsetX = func_150484A0(VIEW_PROJECTIONS_476D0[index].extentX, extentX) *
+              D_800968F8 - VIEW_PROJECTIONS_476D0[reference].baseFovX;
+    offsetY = func_150484A0(VIEW_PROJECTIONS_476D0[index].extentY, extentY) *
+              D_800968FC - VIEW_PROJECTIONS_476D0[reference].baseFovY;
+    func_1510B128(index, offsetX, offsetY, 1.0f, 0.0f);
 }
 
 /* Build the selected view's four half-FOV side-plane normals. */

@@ -154,6 +154,11 @@ cached/reloaded view state and linked owner before installation. Then continue
 all failed donor/binding/codec/original-Game matching and the separate rectangle
 history reconciliation. No whole-goal completion or gameplay claim.
 
+Subsequently completed the 99-word func_1501B0A0 body with thirteen checked
+prologue scheduling guards in [Note 1371](1371-view-fov-transfer-reconstruction-20261014.md).
+Its final func_1510B128 command remains a production stub and is the next
+target; earlier cosine qualification does not establish that command's behavior.
+
 ## Post-Bank Verification
 
 Consumer f71d2c96 banks source, tools pin, aggregates and documentation.

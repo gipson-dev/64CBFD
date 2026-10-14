@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
+Restore func_1501B0A0's 99-word/frame0x50 body with thirteen closed prologue
+guards. Pass 65 target/history checks in 115.601s, including real recovered
+trig execution, and close the complete ELF to declared slot/metadata changes.
+Fresh Game 2,877/4,831, total 3,550/5,504, different 1,954, zero drift.
+Tools 7b6f51a first. Next func_1510B128; its production stub and all broader
+caller/runtime/failed-donor/codec/rectangle boundaries remain open.
+
+2026-10-14:
 [Note 1370](WORKING_NOTES/1370-game-single-precision-cosine-direct-match-20261014.md):
 Direct85-word/three-NOP Game cosine, SDK absolute/reduction copy and typed
 zero comparison schedule. Pass53 focused/history checks85.827s,13,392 MIPS
