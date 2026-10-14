@@ -192,3 +192,45 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 make tools-check
 ```
+
+## Post-Bank Verification
+
+Consumer `4d0bfbb9b001782126040b87112f8a83081b3387` banks the installed
+recovery and pins tools `6d547514347e72cc93e6e5e9b9eccb6eb2fb799d`.
+Both active repositories are clean before this verification-only update.
+The earlier six post-bank checks pass in7.633s; after the session restart,
+the same six checks pass freshly in13.824s:
+
+- Complete direct slot, both source screens and actual local ordering.
+- Literal linked image, installed source and protected history.
+- Fired own-access cuts and effective old-store-order negative.
+- Effective image, source, guard and symbol/string corruption controls.
+- Protected text production/data equality and immutable-input controls.
+
+Fresh `make -C conker match-progress NON_MATCHING=1` reconfirms
+Game2,830/4,823 (58.68%), total3,503/5,496 (63.74%), different1,993,
+drift0. The existing duplicate generated_12D630 recipe warning remains.
+Source, ELF, guards and conversion CSV retain every SHA-256 recorded above;
+the closed236-byte accounting remains unchanged. No rebuild, host launch or
+ROM modification is needed for this restart verification.
+
+The recovery commit's incremental Graphify hook completes with40,616 nodes,
+81,095 edges and3,752 communities. No Graphify worker remains. Its fail-closed
+preservation of19,398 nodes from2,972 excluded-but-existing files stays
+explicit; no forced shrink or dependency installation is performed.
+
+The independently dirty older tools mirror retains HEAD
+`ddbdd16b53ce60b054fb6e11bf0649a41f48375a` and all455 recorded dirty-path
+fingerprints. All five Note1350 index links resolve. No push is performed;
+unrelated work, real saves and the frozen host Release are preserved.
+
+A single read-only REA `binary_session` check after restart confirms the
+connected6.4.0 server,170 tools, skill37 and available Ghidra provider with
+passing Java/installation checks. No target is open. This is connection
+readiness, not successful MIPS analysis; retain the Windows adapter limitation
+and existing IDO/MIPS workflow documented in
+[the setup note](../REVERSE_ENGINEERING_SETUP.md).
+
+`func_1506A968` remains an unmodified zero-return placeholder at source line91.
+Resume its mode1 callback recovery next; the wider Game matching goal remains
+active.

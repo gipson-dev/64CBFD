@@ -38,6 +38,11 @@ string serialization bytes, with unchanged named definitions otherwise. All
 data/guards/profiles/layouts/conversion rows stay fixed. Fresh Game2,830/4,823
 (58.68%), total3,503/5,496 (63.74%), different1,993, drift0. Tools6d54751 first;
 next func_1506A968's mode1 actor/vector snapshot callback.
+Consumer4d0bfbb9 banks this checkpoint; six fresh restart/post-bank checks
+pass13.824s, and matching totals are reconfirmed. The incremental graph hook
+finishes40,616 nodes/81,095 edges with no worker; all455 older-mirror
+fingerprints remain unchanged. REA6.4.0 reconnects with Ghidra/Java readiness
+confirmed; its documented Windows MIPS ELF limitation is not matching credit.
 
 Installed actor/vector snapshot checkpoint:
 [Note 1349](WORKING_NOTES/1349-game-actor-vector-snapshot-direct-match-20261013.md).
