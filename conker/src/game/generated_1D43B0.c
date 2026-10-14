@@ -63,6 +63,9 @@ void *memcpy(void *, const void *, unsigned int);
 extern f32 D_800A8DC0;
 extern f32 D_800A8DC4;
 
+void func_1516972C(u32);
+void func_1514AB5C(f32, f32, s32, f32, s32, f32, f32, f32, f32, s16, s16, u8);
+
 extern s32 D_800BE9E4;
 
 /* Non-matching placeholders for the text-only asm slice asm/1D43B0.s. */
@@ -192,8 +195,45 @@ s32 func_151A73EC(u8 *arg0) {
     return 1;
 }
 
-s32 func_151A743C() {
-    return 0;
+s32 func_151A743C(u8 *actor, f32 arg1, s32 unused, s32 context, f32 arg4) {
+    BurstExtra1D43B0 *extra = (BurstExtra1D43B0 *)(actor + 0x170);
+    u8 variant;
+    u32 count;
+
+    *(f32 *)(actor + 0x3C) = *(f32 *)(actor + 0x10) + arg4;
+    if (*(u32 *)(actor + 0x174) != 0) {
+        func_1516972C((u32)extra->animation);
+        extra->animation = NULL;
+    }
+    if (extra->field00 < *(f32 *)(actor + 0x48)) {
+        *(u32 *)(actor + 0x60) &= ~7;
+        *(u32 *)(actor + 0x60) &= ~8;
+        *(u32 *)(actor + 0x60) &= ~0x40;
+        *(u32 *)(actor + 0x60) &= ~0x20;
+        *(f32 *)(actor + 0x44) = 0.0f;
+        *(f32 *)(actor + 0x48) = 0.0f;
+        *(f32 *)(actor + 0x4C) = 0.0f;
+        if (*(s16 *)(actor + 0x64) > 32) {
+            *(s16 *)(actor + 0x64) = 32;
+        }
+        if (extra->field08 != 0) {
+            variant = 0;
+            if (extra->field09 != 0) {
+                variant = 1;
+            }
+            count = (u32)func_150ADA20() % 3 + 2;
+            func_1514AB5C(arg1, arg4, context, *(f32 *)(actor + 0x18) * 35.0f, count,
+                *(f32 *)(actor + 0x18), *(f32 *)(actor + 0x18) * 0.5f, *(f32 *)(actor + 0x18), *(f32 *)(actor + 0x18) * 0.5f, extra->field0A, extra->field0C, variant);
+        }
+    } else {
+        *(f32 *)(actor + 0x44) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x48) = *(f32 *)(actor + 0x14) * -*(f32 *)(actor + 0x48);
+        *(f32 *)(actor + 0x4C) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x50) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x54) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x58) *= *(f32 *)(actor + 0x14);
+    }
+    return 1;
 }
 
 s32 func_151A7610() {

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Burst Contact Direct Match - 2026-10-14
+
+[Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
+
+- [x] Recover animation release/clear, ordered threshold, four flag stores, signed clamp, six-field damping and all 12 mixed effect arguments.
+- [x] Match all117 words/frame0x48 directly from semantic O2/g3 C, zero guards; preserve the unused arguments and existing payload type.
+- [x] Pass67 installed checks234.138s, including7,680 guest cases,680 fired root cuts,64 aliases, actual table4 callback window and native32 O2/O0.
+- [x] Close every ELF byte:356 instruction bytes and two size bytes; preserve all720 data owners, prior guards, six neighbors and conversion rows.
+- [x] Bank toolsbb793d8 first, preserving the older mirror's459 unrelated fingerprints without push or frozen host Release work.
+- [ ] Recover the108-word/frame0x98 func_151A7610 in the same owner.
+- [ ] Finish the wider Game backlog.
+
 ## Actor Burst Consumer Guarded Match - 2026-10-14
 
 [Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
@@ -9,7 +21,7 @@
 - [x] Pass40 installed checks124.436s, including4,080 fired root cuts,168 alias prefixes, both real padders, three carry links and full producer/native regression.
 - [x] Close every ELF byte:988 instruction bytes, two size bytes and58 exact symbol/string serialization bytes; preserve720 data owners and all prior guard bytes.
 - [x] Archive protected fixtures before advancing only verified ELF/guard pins; bank toolseb93e2e before the consumer pin, without push or frozen host Release work.
-- [ ] Recover the117-word func_151A743C in the same owner, preserving the completed consumer and six neighbors.
+- [x] Recover the117-word func_151A743C in Note1356, preserving the completed consumer and six neighbors.
 - [ ] Finish the wider Game backlog.
 
 ## Actor Burst Consumer Scheduling Boundary - 2026-10-14
@@ -23,7 +35,7 @@
 - [x] Bank tools0e244d6 first; preserve production inputs, progress, older mirror work and frozen host Release.
 - [x] Qualify actual315-word emission through existing guarded scheduling and moved relocation offsets in Note1355.
 - [x] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A743C.
+- [ ] Finish the wider Game backlog; next func_151A7610.
 
 ## Actor Burst Consumer Research - 2026-10-14
 
@@ -36,7 +48,7 @@
 - [x] Bank toolsce205ae first and document this as uninstalled partial research, without matching credit, push or host Release work.
 - [x] Resolve the315-word guarded result and qualify applicable modeled state/alias/fault/owner/independent-link gates in Note1355.
 - [x] Install func_151A6F00 after those gates pass, then close linked-image and fresh matching-progress audits in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A743C.
+- [ ] Finish the wider Game backlog; next func_151A7610.
 
 ## Actor Burst Packet Direct Match - 2026-10-14
 

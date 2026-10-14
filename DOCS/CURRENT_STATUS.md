@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools eb93e2e; tools are committed before the consumer pin.
+  checkpoint pins tools bb793d8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor burst contact checkpoint:
+[Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md).
+func_151A743C matches all117 words/frame0x48 directly from C, zero guards.
+All67 checks pass234.138s, including7,680 guest domains,680 fired root cuts,
+64 aliases,1,920 native32 cases per O2/O0 profile and full prior regressions.
+Exactly358 ELF bytes change:356 instructions and two function-size bytes.
+No serialization, guard, data, conversion, layout or neighbor changes.
+Fresh Game2,834/4,823 (58.76%), total3,507/5,496 (63.81%), different1,989, drift0.
+Toolsbb793d8 first; next recover108-word/frame0x98 func_151A7610 in this owner.
+The wider Game goal remains active. No push or frozen host Release work.
 
 Installed actor burst consumer checkpoint:
 [Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md).

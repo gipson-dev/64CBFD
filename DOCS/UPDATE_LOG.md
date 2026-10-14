@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-14 Actor Burst Contact Direct Match
+
+[Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
+Replace func_151A743C's zero-return placeholder with its complete animation
+release, threshold response, damping and optional effect callback. All 117
+words/frame0x48 match directly, zero guards. All 67 checks pass234.138s;
+close358 ELF bytes with no metadata exemption and unchanged guard history.
+Fresh Game2,834/4,823, total3,507/5,496; toolsbb793d8 first. Next func_151A7610.
+
 ## 2026-10-14 Actor Burst Consumer Guarded Match
 
 [Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):

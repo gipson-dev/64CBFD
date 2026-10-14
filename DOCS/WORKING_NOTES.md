@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-14:
+[Note 1356](WORKING_NOTES/1356-game-actor-burst-contact-direct-match-20261014.md):
+func_151A743C installed 117-word/frame0x48 direct C match, zero guards.
+All 67 checks pass234.138s: 7,680 guest domains, 680 fired root cuts, 64 aliases,
+native32 O2/O0 and prior consumer/producer/protected-text regressions. Exactly
+358 ELF bytes change; Game2,834/4,823, total3,507/5,496. Toolsbb793d8 first;
+next func_151A7610, preserving all completed routines.
+
+2026-10-14:
 [Note 1355](WORKING_NOTES/1355-game-actor-burst-consumer-guarded-match-20261014.md):
 func_151A6F00 installed315-word/frame0x168 C match with ten scheduling guards.
 All40 checks pass124.436s:4,080 root cuts,168 aliases, real padders/links and
