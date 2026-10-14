@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
+func_151A77C0 installed complete 47-word/frame0 semantic C plus 26 guarded
+allocation/schedule words. Retain strict signed gates, wrapping axes, conditional
+flags/word/RGB and the post-store state reload. Close132 ELF bytes and append
+3,926 exact guard bytes. All86 checks pass259.248s; tools166a171 first.
+Game2,836/4,823, total3,509/5,496. After banking,
+audit Another Source/CBFD-Recompiled/conker read-only; nothing adopted yet.
+
+2026-10-14:
 [Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
 func_151A7610 installed108-word/frame0x98 semantic C match with eight closed
 F2/F12 guards. All77 checks pass232.619s; final10 effect checks pass11.706s

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fc195e3; tools are committed before the consumer pin.
+  checkpoint pins tools166a171; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor threshold flags checkpoint:
+[Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md).
+func_151A77C0 matches all47 words with no frame through complete semantic C
+and26 guarded allocation/scheduling words. Both clock relocations stay fixed.
+All86 installed regression checks pass259.248s; tools166a171 are banked first.
+Retain640 guest cases,819 fired access-prefix pairs,40 public clock aliases,
+six effective semantic controls and524,288 native cases per O2/O0 profile.
+Only132 ELF bytes change:131 instructions and one size byte. Append exactly
+3,926 guard bytes; all720 data owners, six neighbors and converted rows stay fixed.
+Fresh Game2,836/4,823 (58.80%), total3,509/5,496 (63.85%), different1,987, drift0.
+After the function commit, audit Another Source/CBFD-Recompiled/conker read-only.
+It is another source only; no import/adoption decision has been made.
+The independently dirty PC-port copy remains a placeholder; no host Release work.
 
 Installed actor effect packet checkpoint:
 [Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md).

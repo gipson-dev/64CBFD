@@ -277,8 +277,30 @@ void func_151A7610(f32 x, f32 y, f32 z, f32 dx, f32 dy, f32 dz, u8 *actor) {
         15, 20, 0, -1, 0x56, 0x27, 0, actor[0xC], actor[1]);
 }
 
-s32 func_151A77C0() {
-    return 0;
+void func_151A77C0(u8 *arg0) {
+    u8 *params = arg0 + 0x50;
+    s32 value = *(s16 *)(arg0 + 0x38);
+    u32 delta;
+    u32 intensity;
+
+    if (value < *(s16 *)(params + 4)) {
+        arg0[0x3F] = value * (u32)*(s16 *)(params + 6);
+    }
+    if (value < *(s16 *)(params + 8)) {
+        delta = *(s16 *)(params + 0xA) * (u32)D_800BE9E4;
+        *(s16 *)(arg0 + 0x34) += delta;
+        *(s16 *)(arg0 + 0x36) += delta;
+        value = *(s16 *)(arg0 + 0x38);
+    }
+    if (value < *(s16 *)params) {
+        arg0[0x2F] = 0x15;
+        *(u16 *)(arg0 + 0x44) |= 0x201;
+        intensity = value * (u32)*(s16 *)(params + 2);
+        *(u32 *)(arg0 + 0x14) = 0xC000F;
+        arg0[0x42] = intensity;
+        arg0[0x41] = intensity;
+        arg0[0x40] = intensity;
+    }
 }
 
 void func_151A787C(u8 *arg0) {

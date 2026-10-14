@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Threshold Flags Guarded Match - 2026-10-14
+
+[Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
+
+- [x] Recover all47 leaf words: signed strict thresholds, modulo axis additions, post-store reload and conditional flags/word/colors.
+- [x] Qualify26 existing-format scheduling/allocation guards in both actual padders and independent HI/LO carry links; preserve both relocations.
+- [x] Retain640 guest cases,819 fired root prefixes,40 public aliases, six compiled semantic controls and524,288 native cases per O2/O0 profile.
+- [x] Close every ELF byte:131 instruction bytes and one size byte; append3,926 guard bytes while preserving720 data owners and all old raw guard bytes.
+- [x] Pass86 installed regression checks259.248s and bank tools166a171 first; preserve461 unrelated older-mirror fingerprints without push or host Release work.
+- [ ] Separately transfer/qualify the PC-port func_151A77C0; its selected generated copy remains a placeholder and independently dirty.
+- [ ] After banking this function, measure Another Source/CBFD-Recompiled/conker read-only; do not import or adopt anything during the audit.
+- [ ] Finish the wider Game backlog.
+
 ## Actor Effect Packet Guarded Match - 2026-10-14
 
 [Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
@@ -10,7 +23,7 @@
 - [x] Close every ELF byte:351 instruction bytes and two size bytes; append exactly1,090 guard bytes while preserving all prior bytes and720 data owners.
 - [x] Bank toolsfc195e3 first, preserving460 unrelated older-mirror fingerprints without push or frozen host Release work.
 - [ ] Separately transfer/qualify the PC-port func_151A7610; its selected generated copy is still a placeholder and independently dirty.
-- [ ] Recover the47-word leaf func_151A77C0 in the same owner.
+- [x] Recover the47-word leaf func_151A77C0 in Note1358, preserving all completed owner routines.
 - [ ] Finish the wider Game backlog.
 
 ## Actor Burst Contact Direct Match - 2026-10-14
@@ -49,7 +62,7 @@
 - [x] Bank tools0e244d6 first; preserve production inputs, progress, older mirror work and frozen host Release.
 - [x] Qualify actual315-word emission through existing guarded scheduling and moved relocation offsets in Note1355.
 - [x] Close aliases/faults/owner/padders/independent links and producer ABI, then install and audit the complete linked image in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A77C0.
+- [ ] Finish the wider Game backlog; func_151A77C0 is completed in Note1358.
 
 ## Actor Burst Consumer Research - 2026-10-14
 
@@ -62,7 +75,7 @@
 - [x] Bank toolsce205ae first and document this as uninstalled partial research, without matching credit, push or host Release work.
 - [x] Resolve the315-word guarded result and qualify applicable modeled state/alias/fault/owner/independent-link gates in Note1355.
 - [x] Install func_151A6F00 after those gates pass, then close linked-image and fresh matching-progress audits in Note1355.
-- [ ] Finish the wider Game backlog; next func_151A77C0.
+- [ ] Finish the wider Game backlog; func_151A77C0 is completed in Note1358.
 
 ## Actor Burst Packet Direct Match - 2026-10-14
 

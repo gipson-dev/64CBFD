@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Actor Threshold Flags Guarded Match
+
+[Note 1358](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
+Replace func_151A77C0's zero-return placeholder with its complete signed
+threshold/axis/flags/color updater. All47 words match through26 existing-format
+guards; raw C is explicitly non-matching. Retain both relocations, six neighbors,
+all prior guard bytes and720 data owners. Close132 ELF bytes and append3,926
+guard bytes. All86 checks pass259.248s; tools166a171 first.
+Fresh Game2,836/4,823, total3,509/5,496. Bank before auditing the
+user's alternative source; do not import or adopt it during the comparison.
+
 ## 2026-10-14 Actor Effect Packet Guarded Match
 
 [Note 1357](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):

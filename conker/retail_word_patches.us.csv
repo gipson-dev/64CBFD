@@ -15059,3 +15059,29 @@ generated_1D43B0,func_151A7610,0x088,0x46022182,0x460C2182,-,-,Normalize closed 
 generated_1D43B0,func_151A7610,0x094,0x460C3202,0x46023202,-,-,Normalize closed effect velocity F2/F12 register allocation,,,false
 generated_1D43B0,func_151A7610,0x09C,0x46028482,0x460C8482,-,-,Normalize closed effect velocity F2/F12 register allocation,,,false
 generated_1D43B0,func_151A7610,0x0A4,0x460C9102,0x46029102,-,-,Normalize closed effect velocity F2/F12 register allocation,,,false
+generated_1D43B0,func_151A77C0,0x020,0x01E30019,0x006F0019,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x03C,0x844E0000,0x84580000,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x048,0x848A0034,0x848C0034,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x04C,0x848C0036,0x848E0036,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x054,0x84830038,0x00005812,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x058,0x00002812,0x018B6821,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x05C,0x01455821,0x01CB7821,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x060,0x01856821,0xA48D0034,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x064,0xA48B0034,0xA48F0036,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x068,0xA48D0036,0x84830038,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x06C,0x844E0000,0x84580000,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x070,0x006E082A,0x0078082A,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x07C,0x94980044,0x94880044,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x080,0x240F0015,0x24190015,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x084,0xA08F002F,0xA099002F,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x088,0x37190201,0x35090201,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x08C,0xA4990044,0xA4890044,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x090,0x84480002,0x844A0002,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x094,0x3C09000C,0x3C0C000C,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x098,0x3529000F,0x358C000F,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x09C,0x01030019,0x006A0019,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x0A0,0xAC890014,0xAC8C0014,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x0A4,0x00002812,0x00005812,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x0A8,0xA0850042,0xA08B0042,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x0AC,0xA0850041,0xA08B0041,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false
+generated_1D43B0,func_151A77C0,0x0B0,0xA0850040,0xA08B0040,-,-,Normalize threshold flags updater register allocation and value reload schedule,,,false

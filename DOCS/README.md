@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor threshold flags guarded match](WORKING_NOTES/1358-game-actor-threshold-flags-guarded-match-20261014.md):
+  Install the complete 47-word leaf through semantic C and 26 scheduling/
+  allocation guards. Close the entire image and preserve all prior routines.
+
 - [Actor effect packet guarded match](WORKING_NOTES/1357-game-actor-effect-packet-guarded-match-20261014.md):
   Install all108 words/frame0x98 through semantic C and eight closed FPU
   allocation guards. Full image, actual factory/copies and prior regressions pass.
