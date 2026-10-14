@@ -5,6 +5,18 @@ typedef struct {
     u8 selector;
 } ObjectSelector97AA0;
 
+typedef struct {
+    u32 first, second;
+} PayloadPair97AA0;
+typedef struct {
+    ObjectSelector97AA0 target;
+    PayloadPair97AA0 payload;
+} ActorPayload97AA0;
+typedef char ActorPayloadSize97AA0[(sizeof(ActorPayload97AA0) == 16) ? 1 : -1];
+
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, unsigned int);
+
 /* Non-matching placeholders for the text-only asm slice asm/97AA0.s. */
 
 extern u8 D_800D1560[];
@@ -47,8 +59,17 @@ void func_1506AA08(s32 arg0, s32 arg1) {
     func_151B6320(arg0, 0xFF, 1);
 }
 
-s32 func_1506AA48() {
-    return 0;
+void func_1506AA48(u8 *actor, const PayloadPair97AA0 *data) {
+    u8 *created;
+    ActorPayload97AA0 packet;
+
+    packet.target.object = actor;
+    packet.target.selector = actor[0x3B];
+    packet.payload = *data;
+    created = func_15149130(10, 7, 0x23, -1, 1, 0x21, sizeof(packet), 0xFF, 1);
+    if (created != NULL) {
+        memcpy(created + 0x28, &packet, sizeof(packet));
+    }
 }
 
 s32 func_1506AAE0() {

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-13:
+[Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
+func_1506AA48 direct38-word/frame0x48 C match, zero guards. Proper local order
+recovers SP+0x34 packet and untouched padding; all16 checks pass38.245s. Literal
+image accounting changes112 code bytes plus one size byte, all history/data
+fixed. Tools3c7f8ca first; next func_1506AAE0's signed mask scan.
+
+2026-10-13:
 [Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
 func_15142314 completes its49-word/frame0 guarded byte match with34 derived
 scheduling words, unchanged C and104 target-only ELF bytes. All17 checks pass

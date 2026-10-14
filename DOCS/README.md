@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor payload creator direct match](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
+  Recover all38 words/frame0x48 directly from C, with zero guards. All16 checks
+  pass, including actual dispatcher/creator/memcpy and private padding/alias cuts.
+
 - [Matrix translation guarded byte match](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):
   Finish49 words/frame0 using34 source-derived scheduling guards with unchanged
   C. All17 checks pass; only104 target ELF bytes change, no metadata exceptions.

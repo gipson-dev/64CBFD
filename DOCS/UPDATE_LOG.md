@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-13 Actor Payload Creator Direct Match
+
+[Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md):
+Replace func_1506AA48's placeholder with its complete actor/selector/eight-byte
+payload creator. All38 words/frame0x48 match directly, no guards; proper local
+order recovers packet SP+0x34. All16 checks pass38.245s, including real original
+dispatcher/creator/memcpy and padding/alias/fault controls. Only113 declared ELF
+bytes change. Fresh Game2,827/4,823, total3,500/5,496; tools3c7f8ca first.
+
 ## 2026-10-13 Matrix Translation Guarded Byte Match
 
 [Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md):

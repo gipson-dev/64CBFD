@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4e3cd4c; tools are committed before the consumer pin.
+  checkpoint pins tools 3c7f8ca; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor/payload creator checkpoint:
+[Note 1347](WORKING_NOTES/1347-game-actor-payload-creator-direct-match-20261013.md).
+func_1506AA48 matches all38 words/frame0x48 directly from C, with zero guards.
+Real local order recovers packet SP+0x34; retain nine-slot creation and all16
+copied bytes, including untouched padding. All16 installed checks pass38.245s,
+with6,400 guest/400 alias cases,1,728 fired cuts, native O2/O0 and real dispatch/
+creator/memcpy execution. Only112 code bytes and one size byte change; all other
+ELF bytes/data/guards/profile/layout/conversion rows stay fixed. Fresh Game2,827/
+4,823 (58.61%), total3,500/5,496 (63.68%), different1,996, drift0. Tools3c7f8ca
+first; next func_1506AAE0 and its signed mask/actor scan.
 
 Installed matrix-translation checkpoint:
 [Note 1346](WORKING_NOTES/1346-game-matrix-translation-guarded-byte-match-20261013.md).
