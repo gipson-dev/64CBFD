@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools46da39b; tools are committed before the consumer pin.
+  checkpoint pins toolsc293b24; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View frustum side-plane guarded match:
+Game single-precision sine direct match:
+[Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md).
+Replace sinf's zero-return placeholder with104 directly matching words,
+frame0, no guards/profile changes. Preserve316 changed target bytes, its
+20-to416-byte extent, six newly typed symbols and two exact adjacent symbol
+permutations; every other ELF byte/data/header/progress/Makefile is fixed.
+All42 focused/history checks pass66.813s:6,696 MIPS cases,96 fired prefixes,
+3,348 native32 cases per O2/O0 profile, effective controls and48 connected
+frustum cases using actual sine plus separately identified retail cosine.
+The native return-only probe proves i386 x87 quiets7F810000 to7FC10000;
+MIPS still requires the exact retail NaN word. No FCSR/runtime acceptance.
+Fresh Game2,875/4,831 (59.51%), total3,548/5,504 (64.46%), different1,956,
+drift0; executable-only3,408/5,364 (63.53%). Conversions remain5,504/6,044.
+Tools c293b24 first. Preserve801 archive files and509 unrelated mirror
+fingerprints. Full graph scan fails closed; never force the smaller graph.
+Next: cosine's85 code words/three NOPs; all private screens remain unmatched
+and production cosf remains a stub. Keep the old rectangle image gate open.
+
+Previous view frustum side-plane guarded match:
 [Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md).
 Restore func_1501B22C's typed void/signed-index body:59 code words plus two
 alignment NOPs, frame0x40, four checked disjoint phase-home coalescing guards.
@@ -44,8 +62,8 @@ snapshot and reconcile history separately, not a claim that all old tests pass.
 Consumer5a74421f banks the group; all16 post-bank checks pass33.090s. The
 incremental build retains the79eb4f32 image and005fd768 progress; the source
 graph worker completes at40,838 nodes/81,017 edges, without forcing the scan.
-Next: reconstruct Game cosf/sinf (88/104-word slots), still zero-return C
-stubs. Init's __sinf is a distinct double-precision implementation. No retail
+Sine subsequently completed in Note1369; Game cosine remains open.
+Init's __sinf is a distinct double-precision implementation. No retail
 trig accuracy, FCSR, complete camera/culling or gameplay acceptance is claimed.
 
 Record payload constructor direct match:

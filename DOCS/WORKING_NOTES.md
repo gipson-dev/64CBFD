@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
+Recover Game sinf's104 words directly, frame0, no guards/profile change.
+Pass42 focused/history checks66.813s, including real connected sine with
+explicitly retail cosine. Close316 target bytes plus known symbol metadata;
+all data/progress/headers fixed. Fresh Game2,875/4,831,total3,548/5,504,
+different1,956, drift0; tools c293b24 first. Cosine and the old rectangle
+image gate stay open. Archive and independently dirty mirror preserved.
+
+2026-10-14:
 [Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
 Restore func_1501B22C's59-word/frame0x40 side-plane body with four disjoint
 home-coalescing guards and two alignment NOPs. Preserve10 neighbors and all

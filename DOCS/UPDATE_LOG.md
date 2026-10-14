@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 Game Sine Direct Match And Cosine Screens
+
+[Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
+Restore Game sinf's104 words directly from float C, with no guards/profile
+change. All42 focused/history checks pass; exact closed-image accounting
+includes316 target bytes, one extent, six type annotations and two adjacent
+symbol permutations. Fresh Game2,875/4,831, total3,548/5,504, different1,956,
+no drift. Tools c293b24 first. Cosine remains an unmodified stub; preserve
+its private unsuccessful screens and separate connected retail-cosine proof
+from production camera/culling acceptance. No archive/host/Release edits.
+
 ## 2026-10-14 View Frustum Side-Plane Guarded Match
 
 [Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):

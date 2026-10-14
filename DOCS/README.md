@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Game single-precision sine and cosine recovery](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
+  Direct104-word sine match,42 focused/history checks and a closed code/
+  metadata transition. Cosine remains unmatched; connected retail-cosine
+  evidence does not establish functioning production camera/culling.
+
 - [View frustum side-plane guarded match](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
   Restore59 code words and two NOPs with four disjoint local-home guards,
   ten fixed neighbors and a closed image change. Pass39 fresh checks; keep

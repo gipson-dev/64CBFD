@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Game Sine Direct Match - 2026-10-14
+
+[Note 1369](WORKING_NOTES/1369-game-single-precision-sine-and-cosine-recovery-20261014.md):
+
+- [x] Recover Game sinf's complete104-word/frame0 float polynomial, bit thresholds, split-period reduction and exceptional-value paths with descriptive locals.
+- [x] Emit directly under the unchanged O2/g3/unpadded owner profile, with zero guards, pools or owner warnings; qualify both private padders and independent rebases.
+- [x] Pass6,696 MIPS cases,96 fired fault prefixes,3,348 native32 cases per O2/O0 profile and four effective algorithm controls; keep raw MIPS NaN identity separate from the proven i386 x87 return conversion.
+- [x] Run48 connected frustum cases using real sine and explicitly retail cosine assembly; do not infer functioning production camera/culling while cosf is a stub.
+- [x] Close the entire image to316 target bytes,20-to416-byte extent, six symbol type annotations and two checked adjacent permutations; retain all other bytes and protected data.
+- [x] Pass42 focused/history checks66.813s, tools checks and standalone mirror source checks; bank tools c293b24 first and preserve801 archive files.
+- [x] Refresh Game2,875/4,831 and total3,548/5,504, different1,956, zero drift; keep the main README aggregate-only.
+- [ ] Finish cosine's85-word body/three alignment NOPs; split/copy/early/parameter/local-declaration screens remain non-matching and private.
+- [ ] Reconcile the separately stale rectangle literal-image snapshot, continue donor/binding/codec/Game matching and keep host Release frozen.
+
 ## View Frustum Side-Plane Match - 2026-10-14
 
 [Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
@@ -14,7 +28,8 @@
 - [x] Refresh Game2,874/4,831, total3,547/5,504, different1,957, zero drift; bank tools46da39b first and preserve801 archive files/502 unrelated mirror fingerprints.
 - [x] Bank consumer5a74421f, pass16 post-bank checks33.090s, retain the pinned image/progress on incremental build and await the40,838-node source graph worker.
 - [ ] Reconcile the old rectangle test_07 literal-image snapshot; it already fails before this restoration. Keep its c58a81de baseline and effective current image gates intact.
-- [ ] Reconstruct Game cosf/sinf's88/104-word polynomial routines; do not substitute the distinct Init double-precision implementation or claim working camera/culling yet.
+- [x] Recover Game sinf's104-word float body in Note1369; do not substitute the distinct Init double-precision implementation.
+- [ ] Reconstruct Game cosf's88-word slot; do not claim working camera/culling yet.
 - [ ] Continue actual failed-body/interface/pool recovery, layer-decoder dependencies and original Game matching; keep Release frozen.
 
 ## Record Payload Constructor Match - 2026-10-14

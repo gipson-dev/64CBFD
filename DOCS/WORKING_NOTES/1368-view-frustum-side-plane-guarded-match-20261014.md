@@ -39,7 +39,7 @@ progress CSV bytes stay unchanged. The wider goal remains active.
 10. [x] Pass11 target/capture checks18.866s and28 affected history/behavior checks45.466s; preserve immutable old checkpoints and corruption controls.
 11. [x] Prove the old rectangle image gate already fails on the pre-frustum baseline; fix only its frozen-owner padder's guard-snapshot mismatch.
 12. [x] Preserve801 source-archive files and502 unrelated mirror fingerprints; sync nine compatible task files and bank tools46da39b first.
-13. [ ] Reconstruct Game cosf/sinf's88/104-word polynomial routines from the actual retail/SDK evidence.
+13. [x] Recover Game sinf's104-word float body in [Note1369](1369-game-single-precision-sine-and-cosine-recovery-20261014.md); Game cosf's88-word slot remains open.
 14. [ ] Reconcile the older rectangle literal-image history without recapturing its baseline or masking unverified changes.
 15. [ ] Continue actual failed-source/interface/pool recovery, layer-decoder dependencies and original Game matching.
 
