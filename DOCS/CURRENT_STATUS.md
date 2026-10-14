@@ -43,6 +43,9 @@ All801 archive files and478 unrelated mirror fingerprints remain unchanged.
 Next: qualify the74-word func_151F7F60 buffer refill (one commutative-add word),
 then continue actual failed-body/interface recovery and func_151F4F38 matching.
 Host has a generated notification implementation; no transfer/build/Release work.
+Consumer7b1d1051 banks the group;12 post-bank checks pass36.349s. The incremental
+build remains up to date with the same ELF/progress, and the source commit's
+graph worker completes at40,790 nodes/80,977 edges without forcing the partial scan.
 
 Failed-file isolation and two more exact C recoveries:
 [Note 1363](WORKING_NOTES/1363-failed-source-function-isolation-and-two-exact-recoveries-20261014.md).

@@ -173,3 +173,16 @@ saves, configuration, executables and frozen Release remain untouched.
 18,999-node partial scan and retains19,398 nodes from2,972 excluded but still
 present files. Preserve that fail-closed boundary; do not force it. Await the
 incremental consumer commit worker before recording its final graph receipt.
+
+## Post-Bank Verification
+
+Consumer7b1d1051 banks the source recovery, two guards, tools pin and docs.
+All12 post-bank target/history checks pass36.349s. The incremental build
+reports the ELF and progress up to date, retaining the bbc20157 image and
+b7d6d464 generated progress. Main and active tools are clean before this
+verification-note commit; the independently dirty mirror remains preserved.
+No push or host operation is performed.
+
+The source commit's incremental graph worker completes at40,790 nodes /
+80,977 edges, retaining the curated/excluded-file boundary. Only the oversized
+HTML visualization is skipped. No forced smaller full refresh is accepted.
