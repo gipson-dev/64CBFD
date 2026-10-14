@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools7b6f51a; tools are committed before the consumer pin.
+  checkpoint pins tools07e0dd5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+View projection command private recovery, not installed:
+[Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md).
+The archive has no C donor for func_1510B128. Screen 130 complete source forms;
+retain homes-1-0-2 at 129 words/frame0x50/41 differences, all real locals.
+Pass 13 focused checks in 15.678s: 1,080 paired public-state cases, six
+connected recovered-trig cases, 18 actual-wrapper connections and three
+effective compiled negatives. Full private/fault parity is explicitly false:
+42/56 fired prefixes differ, first cut11 at PCs1510B184/188, GPR1 only,
+memory/FPRs equal. Keep native32, broader aliases and matching gates open.
+The typed wrapper emits all33 retail words directly, making its old eight
+guards obsolete; production guards reject it as expected. Typing the still-
+unrecovered matrix child also grows that stub12->28 bytes with four home stores.
+Do not install this family yet or count a new match. All production inputs,
+ELF f36703ce and progress005fd768 remain fixed. Tools07e0dd5 first, 801 archive
+files and 523 unrelated mirror fingerprints preserved. Next continue the SAME
+func_1510B128: recover the early coefficient-HI schedule, shared cosine home,
+FP allocation/products and clip branch before integrated child/guard changes.
+Full graph scan fails closed at19,098 vs40,873; never force it.
 
 View FOV transfer guarded match:
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md).

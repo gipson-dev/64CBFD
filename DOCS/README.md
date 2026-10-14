@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View projection command private recovery](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
+  Screen130 complete forms and qualify public behavior of a129-word/frame0x50
+  draft with41 remaining differences. Preserve the first private-fault witness,
+  typed-wrapper/child boundaries and unchanged production; no new match credit.
+
 - [View FOV transfer reconstruction](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
   Restore the 99-word/two-index body with thirteen closed prologue guards,
   ten preserved neighbors and exact whole-image accounting. Pass 65 selected

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 View Projection Command Private Recovery
+
+[Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
+No C donor exists for func_1510B128. Screen130 complete forms and qualify a
+129-word/frame0x50 draft with41 differences through13 focused checks. Cover
+1,080 public-state MIPS cases, six real-trig cases and18 actual-wrapper
+connections; measure a real private/fault mismatch rather than claiming parity.
+The typed wrapper obsoletes eight existing guards, while typing the child adds
+four stub home stores. Keep all production bytes/guards/headers and match totals
+fixed. Tools07e0dd5 first; continue the SAME function before installation.
+
 ## 2026-10-14 View FOV Transfer Guarded Match
 
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):

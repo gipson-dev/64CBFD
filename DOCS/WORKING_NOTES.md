@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
+Private func_1510B128 recovery:130 complete screens,129 words/frame0x50,
+41 differences,13 selected checks pass15.678s. Public-state evidence covers
+1,080 MIPS cases, real trig and actual typed-wrapper connections. The first
+private/fault divergence and obsolete-wrapper/typed-child boundaries reject
+installation. Production and all aggregates unchanged; tools07e0dd5 first.
+Continue the same function's matching, not the next function or whole-goal completion.
+
+2026-10-14:
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
 Restore func_1501B0A0's 99-word/frame0x50 body with thirteen closed prologue
 guards. Pass 65 target/history checks in 115.601s, including real recovered

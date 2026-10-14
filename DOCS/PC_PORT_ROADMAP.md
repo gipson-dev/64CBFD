@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## View Projection Command Recovery - 2026-10-14
+
+[Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
+
+- [x] Audit the complete retail command, archive, actual direct callers and seven-word child protocol; distinguish the void-return inference from absence of indirect callers.
+- [x] Screen 130 complete bodies; retain a real-local 129-word/frame0x50 draft with 41 differences, not a byte match or installable recovery.
+- [x] Pass 1,080 public-state MIPS cases, six connected trig cases, 18 actual wrapper connections, three effective compiled controls and immutable-input checks; all13 selected checks pass15.678s.
+- [x] Identify the first actual private/fault divergence at cut11, PCs1510B184/188, GPR1 only; 42/56 fired prefixes differ despite sampled public agreement.
+- [x] Prove the typed wrapper emits all33 words directly and existing eight guards reject it; identify the typed child's12->28-byte stub growth and preserve11 other owner neighbors.
+- [x] Keep production source, headers, guards, layout, progress and every ELF byte fixed; commit tools07e0dd5 first, preserving the archive and523 unrelated mirror fingerprints.
+- [ ] Continue the SAME func_1510B128's literal scheduling, cosine homes, FP allocation/products and branch matching before installation or match credit.
+- [ ] Finish native32/broader aliases, actual child/caller qualification, both padder/rebase and closed-image/history gates for an integrated installable family.
+- [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle history; keep host Release frozen.
+
 ## View FOV Transfer Match - 2026-10-14
 
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md):
