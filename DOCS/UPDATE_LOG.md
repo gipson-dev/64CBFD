@@ -6,7 +6,7 @@
 Restore cosf's complete88-word slot directly, frame0, no guards/profile or
 header changes. All53 focused/history checks pass;13,392 MIPS cases and
 connected recovered sine/cosine exercise the frustum. Close258 target bytes,
-one extent and two exact symbol/string groups, with no definition/data drift.
+one extent and two exact symbol/string groups, with no non-target definition/data drift.
 Fresh Game2,876/4,831,total3,549/5,504,different1,955,zero address drift.
 Tools2a1c847/98db41f first; preserve archive/mirror/Release. Next99-word
 func_1501B0A0; no full camera/culling or gameplay acceptance is inferred.

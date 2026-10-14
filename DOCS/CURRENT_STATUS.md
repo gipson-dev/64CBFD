@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools98db41f; tools are committed before the consumer pin.
+  checkpoint pins tools820566f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -36,11 +36,14 @@ All53 focused/history checks pass85.827s, including13,392 MIPS cases,280
 fired prefixes,6,696 native32 cases per O2/O0 profile, five effective controls
 and48 connected frustum cases with both recovered trig bodies. Closed-image
 proof accounts for258 target bytes,20-to340-byte extent and two checked
-symbol/string groups; every other byte and all symbol definitions/data fixed.
+symbol/string groups; every other byte and non-target definitions/data fixed.
 Fresh Game2,876/4,831 (59.53%), total3,549/5,504 (64.48%), different1,955,
 drift0; executable-only3,409/5,364 (63.55%). Conversions remain5,504/6,044.
-Tools2a1c847 qualifies recovery;98db41f clarifies the retained sine fixture's
-retail-cosine provenance (one fresh check1.881s), without changing its gates.
+Tools2a1c847 qualifies recovery;98db41f clarifies retained sine provenance.
+Consumer f71d2c96 banks the source; all30 post-bank checks pass41.855s and
+incremental build retains b87dd5bc/005fd768 image/progress hashes. The source
+graph worker completes at40,861 nodes/81,042 edges. Receipt-only820566f makes
+non-target definition preservation explicit; its fresh image gate passes2.114s.
 Preserve801 archive files and513 unrelated mirror fingerprints. Never force
 the smaller full graph scan. The old rectangle literal-image gate stays open.
 Next: func_1501B0A0, a99-word/two-index view updater with frame0x50 and four

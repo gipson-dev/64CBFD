@@ -8,9 +8,10 @@
 - [x] Qualify the separate absolute/reduction copy and integer-zero/float-zero comparison shape with18 complete screens/two exact forms; use no guards, header/profile changes or volatile accesses.
 - [x] Pass13,392 paired MIPS cases,280 fired prefixes,6,696 native32 cases per O2/O0 profile and five effective controls; preserve the proven i386 NaN-return boundary separately from exact MIPS words.
 - [x] Execute48 connected frustum cases with both recovered trig bodies and all12 expected stores; keep gameplay/FCSR/camera acceptance separate.
-- [x] Close the whole image to258 changed target bytes,20-to340-byte extent and two exact symbol/string permutations, with no symbol-definition or protected-data change.
+- [x] Close the whole image to258 changed target bytes,20-to340-byte extent and two exact symbol/string permutations, with no non-target definition or protected-data change.
 - [x] Pass53 focused/history checks85.827s and tools/mirror checks; bank tools2a1c847 then98db41f provenance clarification before the consumer group.
 - [x] Refresh Game2,876/4,831 and total3,549/5,504, different1,955, zero drift; keep the root README aggregate-only and all801 archive hashes unchanged.
+- [x] Bank consumer f71d2c96, pass30 post-bank checks41.855s, retain pinned image/progress and await the40,861-node source graph worker; pin receipt-only clarification820566f after its fresh2.114s image check.
 - [ ] Recover func_1501B0A0's99-word/frame0x50 two-index view body; inspect its two additional float-helper calls and final view command before claiming coupled behavior.
 - [ ] Continue all donor/binding/codec/original-Game matching and reconcile the separate stale rectangle image gate; keep host Release frozen.
 

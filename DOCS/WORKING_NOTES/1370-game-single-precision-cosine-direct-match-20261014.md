@@ -34,7 +34,7 @@ image/guard/progress/Makefile hash is pinned; do not recapture failed inputs.
 4. [x] Check MIPS/native boundaries, negative coefficient paths, fired faults, rebases and effective controls.
 5. [x] Execute the frustum with both recovered trig bodies; keep model proof distinct from gameplay acceptance.
 6. [x] Install the qualified body and close every image/code/data/metadata change independently.
-7. [ ] Extend pinned history projections, run affected regressions, update aggregates and bank tools before the consumer group.
+7. [x] Extend pinned history projections, run affected regressions, update aggregates and bank tools before the consumer group.
 8. [ ] Continue the next actual Game body, failed donor/binding/codec queues and separately stale rectangle image gate; the broader goal remains active.
 
 ## Initial Evidence
@@ -94,7 +94,7 @@ public code extent. Two checked adjacent symbol/string groups reorder:
 (D_80098D70,D_80090B50,D_800A6BF0) becomes(1,2,0), and
 (D_80085EA8,D_8008ADA8) becomes(1,0). Prior complete symbol tuples, section
 bindings and string adjacency are asserted before applying this serialization.
-No symbol definition, type annotation or address changes. Unlike sine's
+No non-target symbol definition, type annotation or address changes. Unlike sine's
 unpadded owner, the existing cosine padder retains relocation words without
 introducing raw-object data-type annotations. Do not assume five new types.
 
@@ -126,7 +126,7 @@ controls intact. Project tools checks pass. Tools2a1c847 banks qualification.
 One label-only historical sine receipt correction follows in98db41f: say
 its fixture uses retained retail cosine assembly rather than claiming the
 current production cosine is still a stub. Its connected test freshly passes
-1.881s; no code/acceptance gate changes. Consumer pins98db41f after both commits.
+1.881s; no code/acceptance gate changes. The source commit pins98db41f after both commits.
 
 Standalone mirror compilation of all six task files and two namespace-bound
 pure cosine checks pass. Its two existing task baselines match active HEAD
@@ -153,3 +153,20 @@ respectively. Recover its full body/interface and qualify helper contracts,
 cached/reloaded view state and linked owner before installation. Then continue
 all failed donor/binding/codec/original-Game matching and the separate rectangle
 history reconciliation. No whole-goal completion or gameplay claim.
+
+## Post-Bank Verification
+
+Consumer f71d2c96 banks source, tools pin, aggregates and documentation.
+All30 post-bank checks pass41.855s; incremental build reports ELF/progress
+up to date and preserves b87dd5bc/005fd768. SDK reference hashes and the
+prior ae271497 sine owner remain unchanged. The source commit's incremental
+graph worker completes at40,861 nodes/81,042 edges, preserving excluded/
+curated nodes and skipping only oversized HTML visualization. No forced scan.
+
+Receipt-only tools820566f makes the existing boundary explicit: non-target
+symbol definitions are unchanged, while cosine's20-to340-byte extent is
+already accounted for. The exact same image gate freshly passes2.114s; its
+assertions and all production bytes are unchanged. The final receipt commit
+pins820566f. Only the owned cosine test file is recopied after matching the
+mirror to the preceding tools HEAD. Older mirror history and513 unrelated
+fingerprints remain preserved. No archive edits, push, host or Release work.

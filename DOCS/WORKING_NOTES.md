@@ -5,7 +5,7 @@
 Direct85-word/three-NOP Game cosine, SDK absolute/reduction copy and typed
 zero comparison schedule. Pass53 focused/history checks85.827s,13,392 MIPS
 cases and48 connected cases with both recovered trig bodies. Close258 target
-bytes plus exact extent/symbol ordering, no definition/data/header drift.
+bytes plus exact extent/symbol ordering, no non-target definition/data/header drift.
 Fresh Game2,876/4,831,total3,549/5,504,different1,955; tools2a1c847/98db41f
 first. Nextfunc_1501B0A0; keep old rectangle/runtime/whole-goal gates open.
 
