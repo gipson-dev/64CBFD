@@ -59,7 +59,17 @@ void func_151411C4(struct210 *arg0) {
     func_1513CAA0(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_16DC80/func_151411E4.s")
+typedef void (*ActorReleaseCallback16DC80)(struct210 *);
+/* Release the attachment, decrement the live count, then dispatch the actor subtype. */
+void func_151411E4(struct210 *actor) {
+    struct210 *object;
+    object = actor;
+    if (*(vertex *volatile *)((u8 *)object + 0x154) != NULL) {
+        func_1517E134(*(vertex *volatile *)((u8 *)object + 0x154), object);
+    }
+    *(u32 *)&D_800DC9F0 -= 1;
+    ((ActorReleaseCallback16DC80)D_80089F9C[*(u8 *)((u8 *)object + 0x168)])(object);
+}
 
 void func_15141250(struct210 *arg0) {
     if (*(vertex *volatile *)((u8 *)arg0 + 0x154) != NULL) {

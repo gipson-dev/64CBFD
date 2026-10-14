@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
+First authorized donor group: func_15125628/func_1507D158/func_151411E4 emit
+26/32/27 words directly from C, no new guards. Use descriptive locals/callback
+type, preserve retail exports and correct the old handwritten-timer claim.
+All25 installed checks47.390s; final9 donor checks12.526s include carry links.
+ELF/guards remain wholly identical; only three rows become C. Game2,839/4,826,
+total3,512/5,499. Toolsfb5470e first;19 candidates remain, next func_15008870.
+
+2026-10-14:
 [Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
 Read-only audit after consumer41dfe733: alternative1,478/1,478 executable C
 slots match, including241 Init/1,217 Game/20 Debugger. Whole text2,256,728 bytes

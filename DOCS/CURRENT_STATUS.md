@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools86b3df6; tools are committed before the consumer pin.
+  checkpoint pins toolsfb5470e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+First authorized byte-exact donor group:
+[Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md).
+func_15125628/func_1507D158/func_151411E4 now emit26/32/27 retail words directly
+from C, zero new guards. Preserve address-keyed exports, descriptive locals/
+callback type and concise comments. Correct the old unsupported handwritten
+timer claim. Qualify active ABI,74 owner neighbors,1,200 guest domains,30 fired
+prefixes and65,536 native timer pairs per O2/O0 profile. All25 installed audit/
+history checks pass47.390s; final nine donor checks12.526s include carry links.
+The entire ELF and guard CSV stay byte-identical; only three rows become C.
+Fresh Game2,839/4,826 (58.83%), total3,512/5,499 (63.87%), different1,987, drift0.
+Nineteen candidates remain; next func_15008870. Toolsfb5470e are banked first.
+No broad header merge, supplied-archive edit, host build or frozen Release work.
+
 Alternative source audit, performed after the function bank:
 [Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md).
 Another Source/CBFD-Recompiled/conker remains unused and all801 original files
@@ -35,10 +48,10 @@ slots byte-exact (Init241, Game1,217, Debugger20), with no guards or padding
 exception. Whole text2,256,728 bytes also matches, including original assembly.
 Ordinary linking fails on generated rodata labels; the diagnostic ELF is not a
 working/runnable build. Track22 exact individual C candidates, not a wholesale
-import. The user now authorizes function-by-function use of verified exact C;
-implementation begins after banking this audit. No active source changes yet.
+import. The user authorizes function-by-function use of verified exact C;
+the first three conversions are installed in Note1360 after the audit bank.
 Counting caveat: legacy Debugger181/181 includes140 data labels. Function-only
-main counts are41/41 Debugger and3,369/5,356 total; legacy counters are retained
+main counts at the audit bank were41/41 Debugger and3,369/5,356 total; legacy counters are retained
 pending a separate correction. The detailed audit separates these definitions.
 
 Installed actor threshold flags checkpoint:

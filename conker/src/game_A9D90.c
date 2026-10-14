@@ -42,7 +42,11 @@ extern u8 D_800CC40F[];
 /* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507CD64.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A9D90/func_1507CD64.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_A9D90/func_1507D158.s")
+/* Submit command 3 using the selected actor's byte selector and four payload words. */
+void func_1507D158(s32 actorIndex, s32 value0, s32 value1, s32 value2, s32 value3) {
+    u8 selector = D_800CC40F[actorIndex * 812];
+    func_1509BFB0(3, selector | 0x2000, value0, value1, value2, value3);
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507D1D8.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_A9D90/func_1507D1D8.s")
 

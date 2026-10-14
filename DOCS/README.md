@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [First byte-exact donor conversions](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
+  Install three complete routines directly from C with proper names/comments,
+  active ABI qualification and an entirely unchanged ELF;19 candidates remain.
+
 - [Alternative source byte-match audit](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
   Read-only comparison after the function commit:1,478 exact executable C
   slots,22 potential individual donors, preserved archive and diagnostic-link caveats.

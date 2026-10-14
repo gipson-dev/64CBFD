@@ -565,33 +565,15 @@ void func_15125608(struct108 *arg0) {
     arg0->unk250 = 2.5f;
 }
 
-// Decrements the four timer bytes at 0x800DBFF4-0x800DBFF7. Almost
-// certainly hand-written assembly in the original game (same signature as
-// the func_150ADA20/func_150ADACC PRNG pair): every access is the
-// assembler's own macro expansion - self-base `lbu $v0, sym` loads and
-// `lui $at`-based `sb` stores, with two independent %hi(sym) per block
-// that IDO-compiled C always CSEs into one lui+addiu address register.
-// Verified by experiment: the retail shape only compiles from C when each
-// of the 8 accesses references a *distinct* symbol (single-use), which no
-// plausible source has. The .s below reproduces retail byte-exactly.
-// Equivalent C, logic-verified:
-#if 0
+/* Tick the four nonzero timer bytes without wrapping zero to 255. */
 void func_15125628(void) {
-    if (D_800DBFF4[0] != 0) {
-        D_800DBFF4[0]--;
-    }
-    if (D_800DBFF5 != 0) {
-        D_800DBFF5--;
-    }
-    if (D_800DBFF6 != 0) {
-        D_800DBFF6--;
-    }
-    if (D_800DBFF7 != 0) {
-        D_800DBFF7--;
+    s32 slot;
+    for (slot = 0; slot < 4; slot++) {
+        if (D_800DBFF4[slot] != 0) {
+            D_800DBFF4[slot]--;
+        }
     }
 }
-#endif
-#pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_15125628.s")
 
 void func_15125690(struct108 *arg0, s32 arg1) {
     u8 *temp_v0 = &D_800DBFF4[arg0->unk23D];

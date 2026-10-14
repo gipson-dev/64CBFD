@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## First Byte-Exact Donor Group - 2026-10-14
+
+[Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
+
+- [x] Convert func_15125628/func_1507D158/func_151411E4 to direct26/32/27-word C with active ABI, descriptive names and concise comments.
+- [x] Preserve retail exports and all74 owner neighbors; use no new guards, broad header changes, fake padding or profile overrides.
+- [x] Pass25 installed checks47.390s plus final9 checks12.526s with independent carry links, guest prefixes and native O2/O0 timer evidence.
+- [x] Keep the complete ELF/guard bytes fixed and alter only three progress language fields; bank toolsfb5470e before the consumer pin.
+- [ ] Qualify the19 remaining donor candidates; next func_15008870, then small event/actor routines before larger streaming audio.
+- [ ] Resolve the separate legacy counter/data-label issue without silently changing historical metrics.
+- [ ] Finish the wider Game backlog; no automatic host transfer or Release work.
+
 ## Alternative Source Audit - 2026-10-14
 
 [Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
@@ -10,7 +22,8 @@
 - [x] Exclude991 false C bookkeeping rows and140 data labels; compare genuine code against the same retail catalogue.
 - [x] Bank tools86b3df6 audit/controls first and record22 potential individual C donors without adopting any source.
 - [x] User authorizes function-by-function use of verified byte-exact C with proper names/comments; do not import unlinked drafts or merge broad headers.
-- [ ] Transfer the22 applicable exact C candidates in qualified, coherent groups after the audit bank.
+- [x] Transfer the first three of22 candidates in Note1360, preserving the entire guest image.
+- [ ] Transfer the19 remaining candidates in separately qualified groups.
 - [ ] Correct the separate legacy main progress counters that call140 Debugger data labels functions.
 - [ ] Finish the wider Game backlog; no source-adoption decision is implied by this audit.
 

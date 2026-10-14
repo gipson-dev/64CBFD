@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-14 First Byte-Exact Donor Conversions
+
+[Note 1360](WORKING_NOTES/1360-first-byte-exact-donor-conversions-20261014.md):
+After authorization, adapt three verified C bodies using active types/ABI and
+proper comments/local names. Preserve all26/32/27 retail words, all74 owner
+neighbors and the complete ELF/guard image. All25 installed checks47.390s;
+final9 donor checks12.526s include independent carry links. Three assembly rows
+become C; Game2,839/4,826, total3,512/5,499. Toolsfb5470e first;19 remain queued.
+
 ## 2026-10-14 Alternative Source Byte-Match Audit
 
 [Note 1359](WORKING_NOTES/1359-alternative-source-byte-match-audit-20261014.md):
