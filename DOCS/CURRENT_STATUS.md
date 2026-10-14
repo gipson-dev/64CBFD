@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-13
+Last verified: 2026-10-14
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7f557cd; tools are committed before the consumer pin.
+  checkpoint pins tools 23e45f5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed actor burst packet checkpoint:
+[Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md).
+func_1506A5F0 matches all67 words/frame0x78 directly from C, zero guards. Keep
+the0x5C packet,14 untouched holes, six raw coefficients and typed integer-zero
+assignment. All18 installed checks pass100.732s:10,800 guest/108 alias cases,
+1,404 fired cuts, native32 O2/O0 and original315-word consumer/table0/memcpy.
+Exactly292 ELF bytes are accounted, including three asserted symbol/string
+permutations; all other data/history/layouts stay fixed. Fresh Game2,832/4,823
+(58.72%), total3,505/5,496 (63.77%), different1,991, drift0. Tools23e45f5 first.
+No zero-return placeholders remain in this owner; next recover the still-stubbed
+func_151A6F00 beyond the bounded mode1 test domain.
 
 Installed mode1 actor/vector snapshot checkpoint:
 [Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md).

@@ -20,6 +20,33 @@ void *memcpy(void *, const void *, unsigned int);
 
 /* Non-matching placeholders for the text-only asm slice asm/97AA0.s. */
 
+typedef struct {
+    s16 count;
+    u8 pad2[2];
+    f32 position[3];
+    s16 duration;
+    u8 pad12[2];
+    f32 radius;
+    s16 angle0, range0, angle1, range1;
+    f32 speed, speedRange;
+    f32 unk28, unk2C;
+    f32 direction[3];
+    f32 scale, scaleRange;
+    f32 unk44, unk48, unk4C, unk50;
+    u8 unk54, unk55;
+    s16 unk56, unk58;
+    u8 pad5A[2];
+} ActorBurstPacket97AA0;
+typedef char ActorBurstPacketSize97AA0[(sizeof(ActorBurstPacket97AA0) == 0x5C) ? 1 : -1];
+
+void func_151A6F00(ActorBurstPacket97AA0 *, u8, u8, s32);
+extern f32 D_80099A10;
+extern f32 D_80099A14;
+extern f32 D_80099A18;
+extern f32 D_80099A1C;
+extern f32 D_80099A20;
+extern f32 D_80099A24;
+
 extern s32 D_800CC260;
 extern u8 D_800CC2D0[];
 s32 func_15137610(u8 *, u8 *, u8 *, s32, u8, s32);
@@ -32,8 +59,35 @@ extern f32 D_80099A28;
 extern u8 D_800D1560[];
 extern u8 D_800D1570[];
 
-s32 func_1506A5F0() {
-    return 0;
+void func_1506A5F0(u8 *actor, s32 arg1) {
+    ActorBurstPacket97AA0 packet;
+
+    packet.count = 3;
+    packet.position[0] = *(f32 *)(actor + 0x14);
+    packet.position[1] = *(f32 *)(actor + 0x18);
+    packet.position[2] = *(f32 *)(actor + 0x1C);
+    packet.duration = 90;
+    packet.radius = D_80099A10;
+    packet.angle0 = 0;
+    packet.range0 = 255;
+    packet.angle1 = -64;
+    packet.range1 = 40;
+    packet.speed = D_80099A14;
+    packet.speedRange = D_80099A18;
+    packet.direction[0] = 0.0f;
+    packet.direction[1] = 0.0f;
+    packet.direction[2] = 0.0f;
+    packet.scale = D_80099A1C;
+    packet.scaleRange = D_80099A20;
+    packet.unk44 = D_80099A24;
+    packet.unk48 = 0;
+    packet.unk4C = -4.0f;
+    packet.unk50 = 8.0f;
+    packet.unk54 = 0;
+    packet.unk55 = 0;
+    packet.unk56 = 50;
+    packet.unk58 = 25;
+    func_151A6F00(&packet, 1, 0xFF, 1);
 }
 
 s32 func_1506A6FC(s32 arg0, s32 arg1) {

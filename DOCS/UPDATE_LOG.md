@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-14 Actor Burst Packet Direct Match
+
+[Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
+Replace func_1506A5F0's placeholder with its complete partially initialized
+burst packet. All67 words/frame0x78 match directly, zero guards. All18 checks
+pass100.732s, including native O2/O0, original consumer/table0 and1,404 fired
+cuts. Exactly292 ELF bytes are accounted, including three asserted symbol/
+string permutations. Fresh Game2,832/4,823, total3,505/5,496; tools23e45f5 first.
+Next recover the still-placeholder315-word func_151A6F00 across all kind branches.
+
 ## 2026-10-13 Actor Vector Mode-1 Direct Match
 
 [Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):

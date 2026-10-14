@@ -1,5 +1,12 @@
 # Working Notes
 
+2026-10-14:
+[Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
+func_1506A5F0 direct67-word/frame0x78 C match, zero guards. Preserve14 holes and
+six raw coefficients; all18 checks pass100.732s. Whole-image accounting covers
+214 instructions, one size byte and77 exact serialization bytes, with no broad
+exclusions. Tools23e45f5 first; next func_151A6F00's complete315-word consumer.
+
 2026-10-13:
 [Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
 func_1506A968 direct40-word/frame0x38 C match, zero guards. Reuse qualified

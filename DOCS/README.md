@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor burst packet direct match](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
+  Recover all67 words/frame0x78 directly from C, zero guards. All18 checks pass,
+  including untouched holes, the original mode1 consumer and closed image gates.
+
 - [Actor vector mode-1 direct match](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
   Recover all40 words/frame0x38 directly from C, zero guards. All17 checks pass,
   including shared mode0 regression, real table7 and exact whole-image gates.

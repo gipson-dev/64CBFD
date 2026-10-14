@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Burst Packet Direct Match - 2026-10-14
+
+[Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
+
+- [x] Recover the0x5C mixed packet, signed fields, six raw coefficients,14 untouched holes and four-slot mode1 contract.
+- [x] Match all67 words/frame0x78 directly from plain O2/g3 C, zero guards; recover the independent zero materialization through integer0 assignment.
+- [x] Pass18 installed checks100.732s, including10,800 guest/108 alias cases,1,404 fired cuts and native32 O2/O0.
+- [x] Qualify original315-word consumer/dispatcher/table0/memcpy, all three allocation outcomes and unreadable holes; preserve both padders and15 neighbors.
+- [x] Close whole-image accounting:214 instruction bytes, one size byte,35 record bytes and42 string bytes in three asserted permutations; no metadata exemptions.
+- [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools23e45f5 before the consumer pin, no push or frozen host Release work.
+- [ ] Recover the complete315-word func_151A6F00 consumer across all kind branches and finish the wider Game backlog.
+
 ## Actor Vector Mode-1 Direct Match - 2026-10-13
 
 [Note 1351](WORKING_NOTES/1351-game-actor-vector-mode1-direct-match-20261013.md):
@@ -10,7 +22,8 @@
 - [x] Reuse target-aware qualification with same-process mode0 regression, real dispatcher/table7, both padders,15 neighbors and three independent carry links.
 - [x] Prove only123 instruction bytes and one named size byte change; preserve every other ELF/data/history/profile/layout/conversion byte.
 - [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools7f557cd before the consumer pin without push or host Release work.
-- [ ] Finish the wider Game backlog; next recover func_1506A5F0's mixed packet/global-coefficient callback.
+- [x] Recover func_1506A5F0's mixed packet/global-coefficient callback in Note1352.
+- [ ] Finish the wider Game backlog; next recover func_151A6F00.
 
 ## Actor Descriptor Spawn Direct Match - 2026-10-13
 
@@ -23,7 +36,7 @@
 - [x] Close whole-image accounting:195 code bytes, two size bytes and39 asserted adjacent symbol/string serialization bytes; preserve all other data/history/layouts.
 - [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools6d54751 before the consumer pin, no push or frozen host Release work.
 - [x] Recover func_1506A968's complete mode1 actor/vector snapshot callback in Note1351.
-- [ ] Finish the wider Game backlog; next recover func_1506A5F0.
+- [ ] Finish the wider Game backlog; next recover func_151A6F00.
 
 ## Actor Vector Snapshot Direct Match - 2026-10-13
 
@@ -36,7 +49,7 @@
 - [x] Prove only122 target code bytes and one named size byte change; preserve all data, guard history, layouts and conversion rows.
 - [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools7222bfa before the consumer pin, no push or frozen host Release work.
 - [x] Recover func_1506A864's complete truncated coordinates, descriptor and conditional payload copy in Note1350.
-- [ ] Finish the wider Game backlog; continue with func_1506A5F0.
+- [ ] Finish the wider Game backlog; continue with func_151A6F00.
 
 ## Signed Actor Mask Scan Direct Match - 2026-10-13
 
@@ -49,7 +62,7 @@
 - [x] Prove only 131 target code bytes and one named size byte change; preserve all data, guard history, layouts and conversion rows.
 - [x] Archive protected fixtures before advancing only the verified ELF pin; bank tools3d88555 before the consumer pin, no push or host Release work.
 - [x] Recover func_1506A79C's complete actor/vector snapshots and floating differences in Note1349.
-- [ ] Finish the wider Game backlog; continue with func_1506A5F0.
+- [ ] Finish the wider Game backlog; continue with func_151A6F00.
 
 ## Actor Payload Creator Direct Match - 2026-10-13
 
@@ -62,7 +75,7 @@
 - [x] Prove only112 target code bytes and one declared size byte change; all data/guard history/layout/profile/conversion rows remain fixed.
 - [x] Archive prior text fixtures and advance only the verified ELF pin; bank tools3c7f8ca before consumer pin without push or host Release work.
 - [x] Recover func_1506AAE0's complete signed mask and actor-stride behavior in Note1348.
-- [ ] Finish the wider Game backlog; continue with func_1506A5F0.
+- [ ] Finish the wider Game backlog; continue with func_151A6F00.
 
 ## Matrix Translation Guarded Byte Match - 2026-10-13
 
@@ -75,7 +88,7 @@
 - [x] Preserve guard history and all other text inputs, archiving old fixtures before advancing only verified ELF/guard pins.
 - [x] Bank tools4e3cd4c before the consumer pin, preserving older history/unrelated changes and frozen host Release, without push.
 - [x] Recover func_1506AA48 and qualify its complete packet/creator/copy contract in Note1347.
-- [ ] Finish the wider Game backlog; continue with func_1506A5F0.
+- [ ] Finish the wider Game backlog; continue with func_151A6F00.
 
 ## Matrix Reflection Guarded Byte Match - 2026-10-13
 
@@ -89,7 +102,7 @@
 - [x] Bank tools5c4c157 before the consumer pin; preserve older mirror history and unrelated changes, no push or host Release work.
 - [x] Inspect and finish func_15142314 and its caller/owner gates in Note1346.
 - [x] Finish the direct creator match in Note1347.
-- [ ] Finish the wider Game matching backlog; continue with func_1506A5F0.
+- [ ] Finish the wider Game matching backlog; continue with func_151A6F00.
 
 ## Matrix Reflection Original Prologue Recovery - 2026-10-13
 
