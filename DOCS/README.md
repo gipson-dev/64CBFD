@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Codec frame dispatcher guarded match](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
+  Match 109 code words plus three alignment NOPs with six checked guards,
+  proper buffer/count outputs, 12 fixed neighbors and a closed image change.
+  Pass 113 checks; keep layer decoder stubs and runtime acceptance separate.
+
 - [Codec input refill guarded match](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
   Restore74 words with the established reader ABI and one commutative guard,
   preserve12 neighbors and close the full image change to its slot/extent.

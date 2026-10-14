@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-14:
+[Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
+Restore func_151F86B0 (109 code words plus three alignment NOPs, frame 0x130),
+with typed output buffer/count pointers and six checked allocation/addition
+guards. Preserve 12 neighbors and all data/overflow/progress; close 332 target
+bytes and one extent. All 113 checks pass in 193.589s, including 1,800 MIPS
+cases, 199 fired prefixes and native32 controls. Fresh Game 2,872/4,830,
+total 3,545/5,503, drift 0. Tools a337e52 first; layer decoder remains a stub.
+
+2026-10-14:
 [Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
 Restore func_151F7F60 (74 words/frame0x20) with the existing reader ABI,
 retail-g selection and one commutative-add guard. Preserve12 neighbors and

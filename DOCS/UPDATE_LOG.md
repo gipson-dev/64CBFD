@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-14 Codec Frame Dispatcher Guarded Match
+
+[Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
+Restore func_151F86B0's frame/metadata dispatcher, with proper buffer/count
+output types and six checked addition/allocation guards. All 112 slot words
+match, including three alignment NOPs. Preserve 12 neighbors and all data/
+overflow/progress; only 332 slot bytes and one extent change. All 113 checks
+pass in 193.589s, with 1,800 MIPS cases, 199 prefixes and two native32 profiles.
+Fresh Game 2,872/4,830, total 3,545/5,503, different 1,958, no drift. Tools
+a337e52 first; original archive and frozen Release stay untouched. The layer
+decoder and its dependency are still stubs, not restored audio playback.
+
 ## 2026-10-14 Codec Input Refill Guarded Match
 
 [Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):

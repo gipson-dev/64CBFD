@@ -32,7 +32,7 @@ The wider source-adoption and Game matching goal remains active.
 9. [x] Close the production ELF change to239 slot bytes and the target's symbol extent; preserve every other ELF byte and all generated progress.
 10. [x] Pass101 final regression checks, standalone mirror checks and project tool checks; preserve archive and independent mirror work.
 11. [x] Bank tools before the consumer pin/source/docs, without a push or frozen-Release operation.
-12. [ ] Qualify the commented func_151F86B0 frame-decode/metadata routine: retained-g screen109 emitted/112 retail words, six real differences.
+12. [x] Qualify the commented func_151F86B0 frame-decode/metadata routine: all112 slot words match with six guards. See [Note 1366](1366-codec-frame-dispatch-guarded-match-20261014.md).
 13. [ ] Reconstruct remaining failed bodies/used interfaces and real pool bindings, alongside func_151F4F38 and the original Game backlog.
 
 ## Source And Matching Evidence

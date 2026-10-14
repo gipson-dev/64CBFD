@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Codec Frame Dispatcher Match - 2026-10-14
+
+[Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md):
+
+- [x] Restore func_151F86B0 with typed output buffer/count pointers, the existing reader ABI and descriptive locals; retain its public address-keyed name.
+- [x] Screen ten variants and qualify six guards: one commutative addition and a closed five-word register allocation exchange.
+- [x] Match the full 112-word slot, including three alignment NOPs; verify both padders, nine-function mixed profile and original/rebased independent links.
+- [x] Preserve 12 neighbors under both profiles, all data/overflow/progress and every ELF byte except 332 target bytes and one symbol extent.
+- [x] Pass 1,800 MIPS cases, 199 fired root-fault prefixes and 1,500 native32 cases per O2/O0 profile; retain effective corruption controls and qualification boundaries.
+- [x] Pass all 113 regression checks in 193.589s, three mirror candidate tests and project tools checks; preserve 801 archive files and 497 unrelated mirror fingerprints.
+- [x] Refresh Game 2,872/4,830, total 3,545/5,503, different 1,958, zero drift; bank tools a337e52 first, without push or host/Release work.
+- [ ] Qualify the layer decoder func_151F78B4 and its dependency func_151F63C4; matching the dispatcher is not working audio playback.
+- [ ] Continue func_1513C350, failed bodies/used interfaces, real pool bindings, func_151F4F38 and the original Game matching backlog.
+- [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
+
 ## Codec Input Refill Match - 2026-10-14
 
 [Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md):
@@ -13,7 +28,7 @@
 - [x] Refresh Game2,871/4,830, total3,544/5,503, different1,959, zero drift; preserve801 archive files and492 unrelated mirror fingerprints.
 - [x] Bank toolsa1cd670 before the consumer pin; audit the existing host implementation read-only, with no transfer/push/Release operation.
 - [x] Bank consumerf9dcbae0, pass16 post-bank checks68.142s, retain the image/progress on incremental build and await the40,801-node graph refresh.
-- [ ] Qualify func_151F86B0's112-word frame-decode/metadata slot; its retained-g draft emits109 words with six real differences.
+- [x] Qualify func_151F86B0's112-word frame-decode/metadata slot; all words now match with six guards. See Note 1366 above.
 - [ ] Continue actual failed-body/interface recovery, pool bindings, func_151F4F38 and the remaining original Game matching work.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
 

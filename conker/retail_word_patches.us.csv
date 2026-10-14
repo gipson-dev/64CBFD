@@ -15088,3 +15088,9 @@ generated_1D43B0,func_151A77C0,0x0B0,0xA0850040,0xA08B0040,-,-,Normalize thresho
 game_83300,func_15063168,0x30,0x00008025,0x25CE0000,-,R_MIPS_LO16:D_800CC2D0,Normalize independent object notification base-address and index initialization schedule,,,false
 game_83300,func_15063168,0x38,0x25CE0000,0x00008025,R_MIPS_LO16:D_800CC2D0,-,Normalize independent object notification base-address and index initialization schedule,,,false
 game_221290,func_151F7F60,0x8C,0x018A2821,0x014C2821,-,-,Normalize commutative codec input refill callback buffer address addition,,,false
+game_221290,func_151F86B0,0xDC,0x01485821,0x010A5821,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_221290,func_151F86B0,0x10C,0x8FAA012C,0x8FA8012C,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_221290,func_151F86B0,0x110,0x8FA80024,0x8FAA0024,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_221290,func_151F86B0,0x118,0x8D590004,0x8D190004,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_221290,func_151F86B0,0x124,0x8D440000,0x8D040000,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_221290,func_151F86B0,0x12C,0x010B2821,0x014B2821,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false

@@ -4,6 +4,7 @@ void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2);
 
 s32 func_151F8088(void *arg0, s32 arg1);
 s32 func_151F7F60(void *decoder);
+s32 func_151F86B0(void *decoder, void **outputBuffer, s32 *bufferCount);
 
 #include "functions.h"
 #include "variables.h"
@@ -68,7 +69,6 @@ f32 func_1504A400(f32, f32);
 /* Generated placeholder declarations. */
 s32 func_151F63C4();
 s32 func_151F78B4();
-s32 func_151F86B0();
 /* End generated placeholder declarations. */
 
 typedef s32 (*func_151F6FD0_ReadFunc)(s32, void *, s32, s32);
@@ -988,9 +988,49 @@ void *func_151F85C4(s32 arg0, s32 arg1, s32 arg2) {
 //     return sp1C;
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_221290/func_151F86B0.s. */
-s32 func_151F86B0() {
-    return 0;
+/* Advance frame decoding, publish its buffers, and dispatch optional metadata. */
+s32 func_151F86B0(void *decoder, void **outputBuffer, s32 *bufferCount) {
+    void *context;
+    s32 decoded;
+    u8 metadata[0x100];
+    s32 index;
+
+    context = decoder;
+    *(s32 *)((char *)context + 0x3BA0) += 1;
+    if (*(s32 *)((char *)context + 0x3BA0) >= 6) {
+        *(s32 *)((char *)context + 0x3BA0) = 0;
+    }
+
+    if (func_151F8088(context, *(s32 *)((char *)context + 0x8474)) == 0) {
+        D_800E0E04 = 3;
+        return 0;
+    }
+
+    *(s32 *)((char *)context + 0x8474) = -1;
+    decoded = ((s32 (*)(void *))(*(s32 *)((char *)context + 0x8478)))(context);
+    if (decoded == 0) {
+        goto end;
+    }
+
+    *outputBuffer = (char *)context + *(s32 *)((char *)context + 0x3BA0) * 1160 + 0x2070;
+    *bufferCount = *(s32 *)((char *)context + 0x3F8C);
+
+    if (*(s32 *)((char *)context + 0x3BC8) != 0) {
+        index = 0;
+        do {
+            if (((func_151F6FD0_ReadFunc)(*(s32 *)((char *)context + 4)))(
+                    *(s32 *)context, &metadata[index], 1, -1) == 0) {
+                break;
+            }
+        } while (metadata[index++]);
+
+        if (D_800E0E00 != 0) {
+            ((void (*)(s32, char *, s32))D_800E0E00)(0, (char *)metadata, strlen((char *)metadata) + 1);
+        }
+    }
+
+end:
+    return decoded;
 }
 
 #undef S32_AT

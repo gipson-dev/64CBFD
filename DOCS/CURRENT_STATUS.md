@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsa1cd670; tools are committed before the consumer pin.
+  checkpoint pins toolsa337e52; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Codec frame dispatcher guarded match:
+[Note 1366](WORKING_NOTES/1366-codec-frame-dispatch-guarded-match-20261014.md).
+Restore func_151F86B0's full 112-word slot: 109 code words plus three retail
+alignment NOPs, frame 0x130. Use typed buffer/count outputs, the existing
+32-bit reader interface and one additional retail-g selection. Six checked
+guards cover one commutative addition and a closed t0/t2 allocation exchange.
+Preserve 12 neighbors under both profiles and every ELF byte except 332 slot
+bytes and one symbol extent. All progress/data/overflow remains fixed.
+All 113 regression checks pass in 193.589s, including 1,800 MIPS cases,
+199 fired root-fault prefixes and 1,500 native32 cases per O2/O0 profile.
+Fresh Game 2,872/4,830 (59.46%), total 3,545/5,503 (64.42%), different 1,958,
+zero drift. Executable-only total 3,405/5,363 (63.49%); conversion stays
+5,503/6,044. Preserve all 801 archive files and 497 unrelated mirror paths.
+Tools a337e52 first; no push or host/Release operation. The called layer
+decoder func_151F78B4 and its dependency func_151F63C4 remain zero stubs.
+Next: qualify their actual drafts and the near-match func_1513C350, then
+continue the failed-interface/binding queues and original Game backlog.
 
 Codec input refill guarded match:
 [Note 1365](WORKING_NOTES/1365-codec-input-refill-guarded-match-20261014.md).
