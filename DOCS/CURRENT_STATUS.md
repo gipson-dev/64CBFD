@@ -37,6 +37,8 @@ bytes and one size byte change; all other ELF/data/guards/profile/layout and
 conversion rows stay fixed. Fresh Game2,829/4,823 (58.66%), total3,502/5,496
 (63.72%), different1,994, drift0. Tools7222bfa first; next func_1506A864's
 coordinate truncation, descriptor and conditional payload copy.
+Consumer228f4e71 banks this checkpoint; six fresh post-bank checks pass5.469s,
+with matching totals reconfirmed and all older-mirror fingerprints preserved.
 
 Installed signed actor-mask scan checkpoint:
 [Note 1348](WORKING_NOTES/1348-game-signed-actor-mask-scan-direct-match-20261013.md).
