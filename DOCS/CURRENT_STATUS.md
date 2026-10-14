@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 579be6c; tools are committed before the consumer pin.
+  checkpoint pins tools 5c4c157; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Installed matrix-reflection checkpoint:
+[Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md).
+func_15034F30 now has its complete486-word C body/frame0x190 and238 source-derived
+operand guards; raw C differs238 words, guarded body is retail-exact. All21
+installed checks pass64.167s, including4,800 guest cases/10,260 fired cuts.
+The whole ELF changes only its target slot and named size field12 ->1944;
+1,465 bytes total, all protected data/profile/layout/conversion rows fixed.
+Fresh Game2,825/4,823 (58.57%), total3,498/5,496 (63.65%), different1,998, drift0.
+Tools5c4c157 first; older441 initial hashes fixed, two verified text pins and
+three absent additions. Next func_15142314; the wider Game goal stays active.
 
 Current matrix-reflection original-prologue checkpoint:
 [Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-13:
+[Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
+func_15034F30 installed at486 words/frame0x190 with238 derived operand guards.
+All21 checks64.167s; all10,260 fired cuts equal. Exact image accounting changes
+only1,463 target code bytes and two size-field bytes. Game2,825/4,823; next
+func_15142314, with handwritten func_150A76F0 kept out of normal C-ABI matching.
+
+2026-10-13:
 [Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
 func_15034F30 direct identity call recovers the original22-word opening and
 early s6 save/move at486/frame0x190/240 versus259 differences. All26 checks

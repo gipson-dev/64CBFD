@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-13 Matrix Reflection Guarded Byte Match
+
+[Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
+Install the complete reflection/opacity/callback C body and238 source-derived
+operand guards. All486 words match; raw C remains238 words different. All21
+installed checks pass64.167s, including10,260 fired cuts. The whole-image audit
+allows only target code plus its exact12 ->1944 symbol-size change. Game2,825/
+4,823, total3,498/5,496; no drift or protected-data changes. Tools5c4c157 first.
+
 ## 2026-10-13 Matrix Reflection Original Prologue Recovery
 
 [Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):

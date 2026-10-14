@@ -1,5 +1,11 @@
 #include <ultra64.h>
 
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+void func_150A8050(f32 [4][4], f32, f32, f32);
+s32 func_150AD960(s32, s32, s32, s32);
+void func_15034728(u8 *);
+void guMtxF2L2(f32 [4][4], Mtx *);
+
 s32 func_150ADA20(void);
 f32 fabsf(f32);
 #pragma intrinsic (fabsf)
@@ -216,8 +222,147 @@ void func_15034F20(void) {
     D_800C3F00 = 0;
 }
 
-s32 func_15034F30() {
-    return 0;
+void func_15034F30(u8 *actor, u8 *record, volatile s32 mode, Mtx *input,
+    u8 *volatile output, volatile s32 count, f32 pivotX, f32 pivotY, f32 pivotZ, f32 unused,
+    f32 angle, f32 pointX, f32 pointY, f32 pointZ, f32 nearDistance,
+    f32 farDistance, f32 opacity, s32 inputFixed, s32 outputFixed) {
+    f32 reflection[4][4];
+    f32 rotationMinus[4][4];
+    f32 rotationPlus[4][4];
+    f32 (*matrix)[4];
+    u32 actorFlags;
+    u8 *cursor;
+    f32 converted[4][4];
+    s32 i;
+    s32 offset;
+    s32 firstMode;
+    f32 distance;
+
+    guMtxIdentF(reflection);
+    firstMode = mode;
+    if (firstMode == 1) goto primary;
+    offset = mode;
+    if (firstMode != 0) goto secondary_check;
+primary:
+    {
+        reflection[1][1] = -1.0f;
+        i = 0;
+        if (count > 0) {
+        offset = 0;
+        cursor = output;
+        do {
+            if (inputFixed != 0) {
+                guMtxL2F(converted, (Mtx *)(&input[i]));
+                matrix = converted;
+            } else {
+                matrix = (f32 (*)[4])((u8 *)input + offset);
+                matrix[0][3] = 0.0f;
+                matrix[1][3] = 0.0f;
+                matrix[2][3] = 0.0f;
+                matrix[3][3] = 1.0f;
+                matrix = (f32 (*)[4])(&input[i]);
+            }
+            func_150A7A48(matrix, reflection, ((f32 (*)[4])cursor));
+            distance = matrix[3][1];
+            ((f32 (*)[4])cursor)[3][1] = distance - ((distance - pivotY) + (distance - pivotY));
+            if (outputFixed != 0) {
+                matrix = (f32 (*)[4])((u8 *)&((Mtx *)output)[i]);
+                bcopy(matrix, converted, 64);
+                guMtxF2L2(converted, (Mtx *)matrix);
+            }
+            offset += 64;
+            cursor += 64;
+            i++;
+        } while (i != count);
+        }
+        distance = pointY - pivotY;
+        if (farDistance < distance) {
+            record[4] = 0;
+        } else {
+            firstMode = mode;
+            if (distance < nearDistance) {
+            if (firstMode == 0) {
+                nearDistance = 10.0f;
+                if (distance < nearDistance) {
+                    record[4] = (u32)((opacity / nearDistance) * distance);
+                } else {
+                    record[4] = (u32)opacity;
+                }
+            } else {
+                record[4] = (u32)opacity;
+            }
+        } else {
+            record[4] = (u32)(opacity - ((opacity * (distance - nearDistance)) /
+                (farDistance - nearDistance)));
+        }
+        }
+    }
+    goto finish;
+secondary_check:
+    if (offset != 2) return;
+    {
+        reflection[0][0] = -1.0f;
+        func_150A8050(rotationMinus, 0.0f, -angle, 0.0f);
+        func_150A8050(rotationPlus, 0.0f, angle, 0.0f);
+        firstMode = count;
+        i = 0;
+        offset = 0;
+        cursor = output;
+        if (firstMode > 0) {
+        do {
+            if (inputFixed != 0) {
+                guMtxL2F(converted, (Mtx *)(&input[i]));
+                matrix = converted;
+            } else {
+                matrix = (f32 (*)[4])((u8 *)input + offset);
+                matrix[0][3] = 0.0f;
+                matrix[1][3] = 0.0f;
+                matrix[2][3] = 0.0f;
+                matrix[3][3] = 1.0f;
+                matrix = (f32 (*)[4])(&input[i]);
+            }
+            bcopy(matrix, ((f32 (*)[4])cursor), 64);
+            ((f32 (*)[4])cursor)[3][0] -= pivotX;
+            ((f32 (*)[4])cursor)[3][1] -= pivotY;
+            ((f32 (*)[4])cursor)[3][2] -= pivotZ;
+            func_150A7A48(((f32 (*)[4])cursor), rotationMinus, ((f32 (*)[4])cursor));
+            func_150A7A48(((f32 (*)[4])cursor), reflection, ((f32 (*)[4])cursor));
+            func_150A7A48(((f32 (*)[4])cursor), rotationPlus, ((f32 (*)[4])cursor));
+            ((f32 (*)[4])cursor)[3][0] += pivotX;
+            ((f32 (*)[4])cursor)[3][1] += pivotY;
+            ((f32 (*)[4])cursor)[3][2] += pivotZ;
+            if (outputFixed != 0) {
+                matrix = (f32 (*)[4])((u8 *)&((Mtx *)output)[i]);
+                bcopy(matrix, converted, 64);
+                guMtxF2L2(converted, (Mtx *)matrix);
+            }
+            offset += 64;
+            cursor += 64;
+            i++;
+        } while (i != count);
+        }
+        distance = (f32)func_150AD960((s32)pivotX, (s32)pivotZ,
+            (s32)pointX, (s32)pointZ);
+        if (farDistance < distance) {
+            record[4] = 0;
+        } else if (distance < nearDistance) {
+            record[4] = (u32)opacity;
+        } else {
+            record[4] = (u32)(opacity - ((opacity * (distance - nearDistance)) /
+                (farDistance - nearDistance)));
+        }
+    }
+finish:
+    if (actor != 0) {
+        actorFlags = *(u32 *)(actor + 0x9C);
+        matrix = (f32 (*)[4])output;
+        if (actorFlags != 0) {
+            cursor = *(u8 **)(actor + 0x1D4);
+            *(f32 (**)[4])(actor + 0x1D4) = matrix;
+            func_15034728(actor);
+            *(u8 **)(actor + 0x1D4) = cursor;
+        }
+    }
 }
 
 u8 *func_150356C8(void) {

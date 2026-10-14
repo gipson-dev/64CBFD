@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix reflection guarded byte match](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
+  Install the complete486-word routine with238 source-derived operand guards;
+  all21 checks pass and fresh Game matching reaches2,825/4,823. Raw C is not
+  direct-matching; the exact image audit accounts for code and its size field.
+
 - [Matrix reflection original prologue recovery](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
   Recover all22 opening words at486/frame0x190/240 differences, uninstalled.
   All26 checks pass; modeled agreements192 ->3,648 without loss. Production

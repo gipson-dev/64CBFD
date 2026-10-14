@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Matrix Reflection Guarded Byte Match - 2026-10-13
+
+[Note 1345](WORKING_NOTES/1345-game-matrix-reflection-guarded-byte-match-20261013.md):
+
+- [x] Restore the complete486-word reflection/opacity/callback C body and original0x190 frame.
+- [x] Derive238 checked operand guards without retail-word replacement, changed opcodes/immediates/relocations, insertions or omissions; qualify all486 normalized words.
+- [x] Pass21 installed checks64.167s, including4,800 guest cases,10,260 fired cuts, native32 O2/O0, three rebased links and both owner padders.
+- [x] Account for the entire ELF:1,463 target code bytes plus two bytes for the declared12 ->1944 symbol-size update, all other bytes fixed.
+- [x] Preserve all protected Game data/profile/layout/conversion rows and guard history; advance only the independently verified text ELF/guard pins.
+- [x] Bank tools5c4c157 before the consumer pin; preserve older mirror history and unrelated changes, no push or host Release work.
+- [ ] Finish the wider Game matching backlog; next inspect func_15142314 and its real caller/owner.
+
 ## Matrix Reflection Original Prologue Recovery - 2026-10-13
 
 [Note 1344](WORKING_NOTES/1344-game-matrix-reflection-original-prologue-recovery-20261013.md):
@@ -10,8 +22,8 @@
 - [x] Pass26 target/text checks in75.233s; retain all prior agreements and raise full modeled agreements192 ->3,648 over10,260 fired cuts.
 - [x] Move the first fired mismatch cut1 ->19 in both phases; retain old259 and bare-O2 opening negatives, four shifts and all historical count controls.
 - [x] Preserve production/README and all440 older hashes; bank tools579be6c before the exact consumer pin, with no push or host work.
-- [ ] Recover s4/s5 conversion-cache/byte-offset roles and remaining mode/floating/temporary-register schedules.
-- [ ] Finish240 differences and all private/fault/linked-image gates before installation or whole-function matching credit.
+- [x] Normalize s4/s5 cache/offset roles and remaining scratch schedules with source-derived guards in Note1345; this is not direct C recovery of those assignments.
+- [x] Finish all486 normalized words and private/fault/linked-image gates, then install the complete routine in Note1345.
 
 ## SDK-Typed Matrix Reflection Saved Index - 2026-10-13
 
@@ -24,8 +36,8 @@
 - [x] Preserve all eight historical329 rejections within48 current rejection domains; retain all192 count-distance gates and an effective64-byte wrong-index negative.
 - [x] Preserve production/README and all438 older fingerprints; bank tools4efe06f before the exact consumer pin, no push or host work.
 - [x] Recover the early s6 save/argument move; the complete22-word opening is exact in Note1344.
-- [ ] Recover s4/s5 conversion-cache/offset roles and remaining floating/temporary schedules.
-- [ ] Finish259 differences and all private/fault/linked-image gates before installation or matching credit.
+- [x] Normalize remaining cache/offset/floating/temporary roles through the guarded match in Note1345, retaining the raw-C distinction.
+- [x] Finish the complete routine's normalized byte match and installation gates in Note1345.
 
 ## Matrix Reflection Direct Homes And Cache Removal - 2026-10-13
 
@@ -39,7 +51,7 @@
 - [x] Verify restarted REA connection and document the Windows adapter's MIPS ELF rejection without installing dependencies.
 - [x] Recover the original shifted-index lifetime instead of the strength-reduced s2 input cursor; all four shifts are exact in Note1343.
 - [x] Recover original saved-store order; the direct identity body in Note1344 matches the entire22-word opening.
-- [ ] Finish331 differences and private/fault/linked-image gates before installation, matching credit or host/runtime claims.
+- [x] Finish this routine's guest byte-match and installation gates in Note1345; no host/runtime claim is added.
 
 ## Matrix Reflection Economical Index And Conditional Homes - 2026-10-13
 
