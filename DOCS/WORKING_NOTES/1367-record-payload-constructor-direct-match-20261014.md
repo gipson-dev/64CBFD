@@ -35,7 +35,7 @@ The wider source-adoption and Game matching goal remains active.
 10. [x] Pass12 target/capture tests19.764s and20 affected historical/control tests21.583s+5.177s, plus project tools checks.
 11. [x] Sync only eight compatible task files to the older mirror; preserve499 unrelated dirty fingerprints and independent HEAD.
 12. [x] Bank tools4e667db567cfd04e9f10ae3a5d69baa99a5389da before the consumer pin/source/docs, without push or host/Release work.
-13. [ ] Qualify func_1501B22C's61-word slot from its prior59-word/four-difference draft; determine actual padding, interfaces and source scheduling before credit.
+13. [x] Qualify func_1501B22C's61-word slot:59 code words plus two NOPs match with four guards. See [Note1368](1368-view-frustum-side-plane-guarded-match-20261014.md).
 14. [ ] Continue actual failed-body/used-interface and pool-binding recovery, the unrecovered layer decoder/dependency and original Game matching.
 
 ## Source And Interface Evidence

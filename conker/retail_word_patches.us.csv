@@ -15094,3 +15094,7 @@ game_221290,func_151F86B0,0x110,0x8FA80024,0x8FAA0024,-,-,Normalize codec frame 
 game_221290,func_151F86B0,0x118,0x8D590004,0x8D190004,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
 game_221290,func_151F86B0,0x124,0x8D440000,0x8D040000,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
 game_221290,func_151F86B0,0x12C,0x010B2821,0x014B2821,-,-,Normalize codec frame dispatch commutative addition and closed metadata-call register allocation,,,false
+game_476D0,func_1501B22C,0x54,0xE7AC0020,0xE7AC0024,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
+game_476D0,func_1501B22C,0x58,0xC7AC0020,0xC7AC0024,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
+game_476D0,func_1501B22C,0x60,0xE7A00030,0xE7A00034,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false
+game_476D0,func_1501B22C,0x64,0xC7A20030,0xC7A20034,-,-,Coalesce disjoint horizontal and vertical frustum angle and cosine stack homes,,,false

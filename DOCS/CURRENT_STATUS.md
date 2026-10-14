@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools4e667db; tools are committed before the consumer pin.
+  checkpoint pins tools46da39b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+View frustum side-plane guarded match:
+[Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md).
+Restore func_1501B22C's typed void/signed-index body:59 code words plus two
+alignment NOPs, frame0x40, four checked disjoint phase-home coalescing guards.
+Preserve10 neighbors, zero owner warnings, every ELF byte except190 target
+bytes and one12-to236-byte extent; all progress/headers/Makefile/data fixed.
+Pass11 target/capture checks18.866s and28 affected history/behavior checks
+45.466s, with7,680 MIPS cases,1,116 fired prefixes and896 native32 cases per
+O2/O0 profile. Fresh Game2,874/4,831 (59.49%), total3,547/5,504 (64.44%),
+different1,957, drift0; executable-only total3,407/5,364 (63.52%). Conversions
+remain5,504/6,044. Preserve801 archive files and502 unrelated mirror paths.
+Tools46da39b first, no push or host/Release work. One old rectangle whole-image
+gate is confirmed stale on the pre-frustum baseline too; preserve its old
+snapshot and reconcile history separately, not a claim that all old tests pass.
+Next: reconstruct Game cosf/sinf (88/104-word slots), still zero-return C
+stubs. Init's __sinf is a distinct double-precision implementation. No retail
+trig accuracy, FCSR, complete camera/culling or gameplay acceptance is claimed.
 
 Record payload constructor direct match:
 [Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md).

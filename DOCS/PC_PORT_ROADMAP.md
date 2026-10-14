@@ -1,5 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## View Frustum Side-Plane Match - 2026-10-14
+
+[Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
+
+- [x] Restore func_1501B22C's void/signed-index interface, descriptive locals and complete59-word/frame0x40 semantic body.
+- [x] Preserve four helper calls, cached view/pending half-angle, live second coefficient, sign operations and all12 plane stores.
+- [x] Qualify four relocation-free guards that coalesce disjoint first/second-phase angle/cosine homes; match both alignment NOPs and actual padders.
+- [x] Preserve10 complete-owner neighbors, sizes, relative relocations, pools and zero owner warnings; verify independent original/rebased links.
+- [x] Pass7,680 MIPS cases,1,116 actually fired root prefixes and896 native32 cases per O2/O0 profile with effective controls and the proven stack-realignment setup.
+- [x] Close the rebuilt ELF to190 changed target bytes and one public extent; keep all data/overflow/headers/progress/Makefile and every other ELF byte fixed.
+- [x] Pass11 target/capture checks18.866s and28 affected history/behavior checks45.466s, project tools checks and standalone mirror checks.
+- [x] Refresh Game2,874/4,831, total3,547/5,504, different1,957, zero drift; bank tools46da39b first and preserve801 archive files/502 unrelated mirror fingerprints.
+- [ ] Reconcile the old rectangle test_07 literal-image snapshot; it already fails before this restoration. Keep its c58a81de baseline and effective current image gates intact.
+- [ ] Reconstruct Game cosf/sinf's88/104-word polynomial routines; do not substitute the distinct Init double-precision implementation or claim working camera/culling yet.
+- [ ] Continue actual failed-body/interface/pool recovery, layer-decoder dependencies and original Game matching; keep Release frozen.
+
 ## Record Payload Constructor Match - 2026-10-14
 
 [Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
@@ -14,7 +30,7 @@
 - [x] Refresh Game2,873/4,831, total3,546/5,504, converted5,504/6,044, different1,958, zero drift; keep the README aggregate-only.
 - [x] Preserve801 archive files and499 unrelated mirror fingerprints; bank tools4e667db before the consumer pin, without push or host/Release work.
 - [x] Bank consumere1f955a6, pass16 post-bank checks27.177s, keep ELF/progress up to date and await the40,826-node source graph worker; preserve ignored generated CSV policy.
-- [ ] Qualify func_1501B22C's61-word slot: the prior O2/g3 draft emits59 words with four reported differences; verify actual padding, interfaces and complete-owner emission.
+- [x] Qualify func_1501B22C's61-word slot:59 code words plus two alignment NOPs now match with four guards. See Note1368 above.
 - [ ] Continue failed bodies/used interfaces, real pool bindings, the layer-decoder dependencies and the original Game matching backlog.
 - [ ] Correct the separate legacy Debugger label counter and independently qualify any future host transfer.
 

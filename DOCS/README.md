@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View frustum side-plane guarded match](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
+  Restore59 code words and two NOPs with four disjoint local-home guards,
+  ten fixed neighbors and a closed image change. Pass39 fresh checks; keep
+  one stale historical image gate and the two math-helper stubs explicit.
+
 - [Record payload constructor direct match](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
   Convert103 words directly with a three-word structure assignment,58 fixed
   neighbors, unchanged shared ABI and a byte-identical complete ELF.

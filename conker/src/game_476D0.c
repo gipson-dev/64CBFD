@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+void func_1501B22C(s32 index);
+
 /* Generated placeholder declarations. */
 s32 func_1501A220();
 s32 func_1501A39C();
@@ -10,7 +12,6 @@ s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
 s32 func_1501B0A0();
-s32 func_1501B22C();
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A220.s. */
@@ -220,46 +221,34 @@ s32 func_1501B0A0() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501B22C.s. */
-s32 func_1501B22C() {
-    return 0;
+/* Build the selected view's four half-FOV side-plane normals. */
+void func_1501B22C(s32 index) {
+    struct259 *view = (struct259 *)(index * 0x180 + (char *)D_800BE628);
+    f32 value, verticalCosine, horizontalCosine, negativeVerticalCosine;
+    f32 halfVertical, verticalAngle, horizontalValue;
+
+    value = view->unk74 * 0.5f;
+    horizontalValue = -value;
+    halfVertical = view->unk78 * 0.5f;
+    horizontalValue *= D_80096900;
+    horizontalCosine = cosf(horizontalValue);
+    horizontalValue = sinf(horizontalValue);
+    view->unk9C = horizontalValue;
+    view->unk90 = horizontalValue;
+    horizontalCosine = -horizontalCosine;
+    view->unk88 = -horizontalCosine;
+    view->unk94 = horizontalCosine;
+    view->unk98 = 0.0f;
+    view->unk8C = 0.0f;
+    verticalAngle = halfVertical * D_80096904;
+    verticalCosine = cosf(verticalAngle);
+    value = sinf(verticalAngle);
+    negativeVerticalCosine = -verticalCosine;
+    value = -value;
+    view->unkA0 = 0.0f;
+    view->unkB0 = -negativeVerticalCosine;
+    view->unkA8 = value;
+    view->unkB4 = value;
+    view->unkAC = 0.0f;
+    view->unkA4 = negativeVerticalCosine;
 }
-// JUSTREG: I think?
-// void func_1501B22C(s32 arg0) {
-//     f32 tmp0;
-//     f32 tmp1;
-//     f32 tmp2;
-//     f32 tmp3;
-//     f32 tmp4;
-//     f32 tmp5;
-//     f32 tmp6;
-//     f32 tmp7;
-//
-//     struct259 *temp_s0;
-//
-//     temp_s0 = D_800BE628 + (arg0 * 0x180);
-//     tmp0 = temp_s0->unk74 * 0.5f;
-//     tmp7 = -tmp0;
-//     tmp5 = temp_s0->unk78 * 0.5f;
-//     tmp7 *= D_80096900;
-//     tmp3 = cosf(tmp7);
-//     tmp7 = sinf(tmp7);
-//     temp_s0->unk9C = tmp7;
-//     temp_s0->unk90 = tmp7;
-//     tmp3 = -tmp3;
-//     temp_s0->unk88 = -tmp3;
-//     temp_s0->unk94 = tmp3;
-//     temp_s0->unk98 = 0.0f;
-//     temp_s0->unk8C = 0.0f;
-//     tmp6 = tmp5 * D_80096904;
-//     tmp2 = cosf(tmp6);
-//     tmp0 = sinf(tmp6);
-//     tmp4 = -tmp2;
-//     tmp0 = -tmp0;
-//     temp_s0->unkA0 = 0.0f;
-//     temp_s0->unkB0 = -tmp4;
-//     temp_s0->unkA8 = tmp0;
-//     temp_s0->unkB4 = tmp0;
-//     temp_s0->unkAC = 0.0f;
-//     temp_s0->unkA4 = tmp4;
-// }

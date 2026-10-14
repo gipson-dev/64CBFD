@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-14:
+[Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
+Restore func_1501B22C's59-word/frame0x40 side-plane body with four disjoint
+home-coalescing guards and two alignment NOPs. Preserve10 neighbors and all
+progress/data/headers/profile; only190 slot bytes and one extent change.
+Pass11 target checks18.866s and28 history checks45.466s, with7,680 MIPS cases,
+1,116 prefixes and native32 controls. Fresh Game2,874/4,831, total3,547/5,504,
+drift0; tools46da39b first. Keep one confirmed old rectangle snapshot failure
+explicit. Next: recover the still-stubbed88/104-word Game cosine/sine routines.
+
+2026-10-14:
 [Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
 Convert func_1513C350 from assembly/draft to103 directly matching words,
 frame0x38, no guards or profile changes. Preserve58 neighbors and the whole

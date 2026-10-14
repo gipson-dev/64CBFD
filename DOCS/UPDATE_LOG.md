@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-14 View Frustum Side-Plane Guarded Match
+
+[Note 1368](WORKING_NOTES/1368-view-frustum-side-plane-guarded-match-20261014.md):
+Recover func_1501B22C's full61-word slot, typed void/signed-index interface
+and four side-plane vectors with four checked local-home guards. Preserve10
+neighbors and every ELF byte except190 target bytes and one extent. All39
+fresh target/history checks pass; one older rectangle literal gate remains
+confirmed stale before this work. Fresh Game2,874/4,831, total3,547/5,504,
+different1,957, no drift. Tools46da39b first; no archive/host/Release work.
+Game cosf/sinf remain zero stubs, so complete camera/culling is not accepted.
+
 ## 2026-10-14 Record Payload Constructor Direct Match
 
 [Note 1367](WORKING_NOTES/1367-record-payload-constructor-direct-match-20261014.md):
