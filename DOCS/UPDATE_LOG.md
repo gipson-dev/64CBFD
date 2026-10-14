@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-14 Actor Burst Consumer Partial Recovery
+
+[Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
+Bank the complete semantic candidate and all four recovered private homes for
+func_151A6F00. Ten fresh checks pass37.065s, including960 seeded guest cases,
+32 raw direction cases and native32 O2/O0. The311-word candidate still fails
+315-word retail/full-state matching, so production and matching totals remain
+unchanged. Toolsce205ae first; continue the same consumer, not a new function.
+
 ## 2026-10-14 Actor Burst Packet Direct Match
 
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):

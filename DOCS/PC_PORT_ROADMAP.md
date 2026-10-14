@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Burst Consumer Research - 2026-10-14
+
+[Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
+
+- [x] Recover the complete semantic body across kinds0/1/2/3/default, byte arguments, signed old-value count loop and allocation/animation feedback.
+- [x] Recover descriptor SP+0xE8, payload SP+0xD4, scale SP+0xD0 and animation SP+0x8C through declaration order of real used variables.
+- [x] Pass10 fresh recovery checks37.065s:960 seeded guest cases,18 signed prefixes,32 raw mode2 direction cases and native32 O2/O0.
+- [x] Retain effective bad-count, private-layout and double-instruction controls; preserve production ELF/source/guards/progress exactly.
+- [x] Bank toolsce205ae first and document this as uninstalled partial research, without matching credit, push or host Release work.
+- [ ] Resolve311 versus315 words and complete machine-state differences; qualify applicable alias/fault/owner/independent-link gates.
+- [ ] Install func_151A6F00 only after those gates pass, then close linked-image and fresh matching-progress audits.
+- [ ] Finish the wider Game backlog; the next target remains func_151A6F00.
+
 ## Actor Burst Packet Direct Match - 2026-10-14
 
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):

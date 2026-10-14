@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 23e45f5; tools are committed before the consumer pin.
+  checkpoint pins tools ce205ae; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Uninstalled actor burst consumer research:
+[Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md).
+func_151A6F00 now has a complete semantic candidate covering all kind paths,
+the old-value signed count loop and callback feedback. Ten fresh checks pass
+37.065s:960 seeded guest cases,18 signed prefixes,32 raw direction cases and
+native32 O2/O0. All four private homes and guest packet/copy bytes agree, but
+311 words/frame0x168/274 raw differences still fail full instruction/state
+matching. Production remains unchanged and the consumer still returns zero.
+Totals stay Game2,832/4,823, total3,505/5,496, different1,991, drift0.
+Toolsce205ae banks the partial research; continue the same315-word consumer.
 
 Installed actor burst packet checkpoint:
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md).

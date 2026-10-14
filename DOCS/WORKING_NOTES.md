@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-14:
+[Note 1353](WORKING_NOTES/1353-game-actor-burst-consumer-semantic-recovery-20261014.md):
+func_151A6F00 complete semantic candidate and four exact private homes. Ten
+fresh checks pass37.065s, including960 guest/32 raw direction cases and native32
+O2/O0. Still311 words/frame0x168/274 raw differences; uninstalled, no matching
+credit. Production unchanged; toolsce205ae first, continue this same consumer.
+
+2026-10-14:
 [Note 1352](WORKING_NOTES/1352-game-actor-burst-packet-direct-match-20261014.md):
 func_1506A5F0 direct67-word/frame0x78 C match, zero guards. Preserve14 holes and
 six raw coefficients; all18 checks pass100.732s. Whole-image accounting covers

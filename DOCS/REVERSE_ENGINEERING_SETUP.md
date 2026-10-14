@@ -1,5 +1,13 @@
 # Reverse Engineering Setup
 
+## 2026-10-14 Restart Check
+
+A fresh `binary_session` call confirms the existing REA6.4.0 registration is
+live, with170 tools and passing Ghidra12.1/Java21.0.11 provider checks. No target
+is open and no configuration edit or dependency installation is needed. This
+rechecks connection/readiness only; the rejected MIPS ELF probe below is the
+prior2026-10-13 observation, not newly successful target analysis.
+
 Verified locally after the session restart: 2026-10-13. These are observations
 of this workstation, not prerequisites promised for every contributor.
 
