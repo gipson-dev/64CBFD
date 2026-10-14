@@ -12,6 +12,7 @@
 - [x] Refresh progress: Game2,867/4,828 (59.38%), total3,540/5,501 (64.35%), different1,961, drift0. Keep the root README aggregate-only.
 - [x] Audit the CMake-selected host source read-only: six zero stubs, three implementation bodies; preserve host work and frozen Release.
 - [x] Pass50 final regression checks101.919s and project tool checks; bank tools1a87cc3 before the consumer pin and preserve471 unrelated mirror fingerprints without push.
+- [x] Bank consumercf293d90, pass10 post-bank checks141.653s, retain the pinned ELF on incremental build and await the40,765-node graph refresh.
 - [ ] Isolate individual functions from the58 failed files; a file-level error does not reject every body in that file.
 - [ ] Resolve24 symbol/pool-binding gaps without guessed addresses, then requalify against the active headers/owners.
 - [ ] Continue original Game matching, including func_151F4F38 (533 words/frame0x38/101 differences); no matching credit for its uninstalled screens.

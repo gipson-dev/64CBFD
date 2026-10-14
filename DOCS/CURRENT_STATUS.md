@@ -50,6 +50,11 @@ padder modules pass. All801 source-archive files and471 unrelated mirror
 fingerprints remain unchanged. Tools1a87cc3 is banked before the consumer pin.
 The post-install draft screen has606 already exact C definitions, zero new
 immediately usable word candidates; failed files/bindings remain open.
+Consumercf293d90 banks this group; ten post-bank checks pass141.653s and the
+incremental build retains the pinned image. Its graph worker completes at
+40,765 nodes/80,973 edges without forcing a smaller full scan. A477-word
+func_151C4B0C draft is not a donor: its three copy placeholders must become
+actual retail inline copies, not guessed memcpy call bindings.
 
 All remaining qualified donor recoveries:
 [Note 1361](WORKING_NOTES/1361-all-remaining-byte-exact-donor-recoveries-20261014.md).

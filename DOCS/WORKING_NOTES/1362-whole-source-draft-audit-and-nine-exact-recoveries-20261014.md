@@ -201,3 +201,25 @@ The required full `graphify update .` refuses replacing the40,743-node curated
 graph with an18,970-node partial scan. Preserve its fail-closed retention of
 19,398 nodes from2,972 still-present excluded files; do not force it. Await the
 incremental commit hook separately before reporting graph refresh completion.
+
+## Post-Bank Verification
+
+Consumer cf293d90 banks the nine source recoveries, isolated wrapper recipe,
+tools pin and aggregate/status documentation. Ten post-bank target/history
+checks pass141.653s. The normal incremental build reports both ELF/progress up
+to date, retaining every final input digest above. The tools checkout is clean;
+the intentionally dirty older mirror is not reset or given a duplicate commit.
+No push is performed.
+
+The source commit's incremental graph worker completes at40,765 nodes /
+80,973 edges, retaining the curated graph and excluded-file boundary. The
+oversized HTML visualization is skipped; source graph files update successfully.
+
+A read-only follow-on check of func_151C4B0C illustrates why the24 binding gaps
+cannot be credited by symbol substitution. Its draft has477 words, matching
+the retail count, but contains three M2C_MEMCPY_ALIGNED pseudo-calls. The
+original asm/1EF500.s function has no memcpy calls in that span: the copies
+are inline. Do not assign these placeholders a memcpy address, infer matching
+from length alone, or install this draft. Recover the actual copy expressions
+and recompile/qualify it independently. The58 failed files likewise need real
+individual-body isolation rather than a blanket source rejection.
