@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Table Fade Callback Recovery
+
+[Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
+Recover func_1516F024's typed local tables, full-word intensity and actual
+movement/scale helper interfaces. Pass ten focused checks, including 8,352
+guest cases and 270,336 native cases per O2/O0. The complete 103-word candidate
+still differs at 19 words with frame 0x60 instead of 0x68; all 116 fired fault
+pairs retain private failures. No source adoption, guards/profile changes or
+match credit. Preserve 52 production inputs / 801 archive files and README
+aggregates. Bank tools e086765 first, preserve the older mirror and continue
+this callback's frame/home and scheduling work within the full source/Game goal.
+
 ## 2026-10-15 Counter Preset Guarded Match
 
 [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a4ac643; tools are committed before the consumer pin.
+  checkpoint pins tools e086765; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Table-fade callback semantically recovered, not installed:
+[Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md).
+func_1516F024 has 103 raw/padded words / 19 differences, frame 0x60 versus
+retail 0x68. Typed 11-byte table snapshots, full-word clamps, packed fields and
+actual helpers pass ten checks in 37.649s: 8,352 guest cases, 270,336 native32
+cases per O2/O0, eight effective controls, 1,024 partial-word cases and 264 real
+helper-chain pairs. All 116 fired fault pairs still fail literal private state;
+retain that rejection and strict installation gate. Preserve all 52 production
+inputs, 29 neighbors, protected data and 801 archive hashes. Fresh Game remains
+2,898/4,828, total 3,571/5,501, different 1,930, zero drift; README unchanged.
+Bank tools e086765 first; preserve all 669 initial dirty older-mirror files /
+671 final paths. Next resolve this same callback's six frame/home words and
+two scheduling/register groups via actual compiler frame provenance. No
+guards/profile/source adoption, host operation or whole-goal completion.
 
 Counter preset installed and guarded-exact:
 [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md).

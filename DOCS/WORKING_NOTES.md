@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
+Recover func_1516F024's four 11-byte snapshots, full-word fade/clamp/completion
+and real helper chain. Ten checks pass, but 103 raw/padded words still have 19
+differences and frame 0x60 versus 0x68. Keep all 116 literal private fault failures
+and strict installation rejection visible. All 52 inputs / 801 archive hashes
+stay fixed; no README or matching credit. Bank tools e086765 first, preserve
+the older mirror/Release and finish the same frame/home/scheduling gap next.
+
+2026-10-15:
 [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
 Finish func_1516EED4 with semantic C and 38 explicit guards, all 84 linked words
 exact; raw 85/76 remains explicit. Pass 14 installed private/fault/rebase/native/

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Table-fade callback recovery and frame gap](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
+  Typed table snapshots and full-word semantics pass ten checks; 103 raw/padded
+  words still have 19 differences and the wrong frame. No installation or credit.
 - [Counter preset guarded match](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
   Install all 84 linked words with a closed index/register normalization,
   literal private/fault/rebase qualification and complete linked-image closure.

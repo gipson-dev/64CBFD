@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Table Fade Callback Recovery And Frame Gap - 2026-10-15
+
+[Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
+
+- [x] Recover func_1516F024's four actual 11-byte table snapshots, packed record widths, full-word clamps/completion and real one-/two-input helper interfaces. Keep the archive's malformed locals, uninitialized sp and premature truncation out of C.
+- [x] Screen 22 source/layout forms. Bank complete 103-word/19-difference recovery with frame 0x60 versus retail 0x68; no new guards/profile changes or installed source. Keep relative table/index homes distinct from literal private addresses.
+- [x] Pass ten checks in 37.649s: 8,352 guest cases, 270,336 native32 cases per O2/O0, eight controls, 1,024 partial-word cases, 264 actual helper pairs and 801 archive fingerprints. All 116 fired fault pairs still reject literal private equality.
+- [x] Preserve all 52 production inputs, all 29 neighbors and protected data. Fresh Game stays 2,898/4,828, total 3,571/5,501, different 1,930, zero drift; root README unchanged. Bank tools e086765 first; preserve 669 initial older-mirror fingerprints / 671 final paths. No host/Release action.
+- [ ] Resolve six frame/incoming-home words and two remaining scheduling/register groups using actual CFE/UOPT reservation/frame evidence, without fake padding locals or frame guards.
+- [ ] Qualify literal private/fault behavior, independent rebases and complete owner/padder/linked-image adoption before replacing the stub. Keep the full additional-source / Game queues and inherited-stack renderer deferral open.
+
 ## Counter Preset Guarded Match - 2026-10-15
 
 [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
@@ -9,7 +20,7 @@
 - [x] Pass all 14 installed checks in 138.988s, including 3,240 full-private guest cases, 138 fired prefixes, native32 O2/O0, ten controls, three independent rebases, 24 full-private aliases, 128 current real factory/allocator pairs and 801 archive hashes.
 - [x] Close all 252 ELF changes to target slot/extent only. Preserve every other byte, 49 of 52 inputs, protected data, all 29 neighbors, old guard history and progress rows. Measure Game 2,898/4,828, total 3,571/5,501, different 1,930, zero drift; conversions unchanged.
 - [x] Bank tools a4ac643 first, preserve all 665 initial older-mirror fingerprints and copy only four absent owned paths for 669. Pass native Windows syntax/ROM-free checks and update README aggregates only. No host/Release operation.
-- [ ] Recover func_1516F024's 103-word callback, actual local table storage, packed widths, full-word clamps and real helper interfaces before any C adoption. Keep the full additional-source / Game queues open.
+- [x] Recover func_1516F024's 103-word callback, actual local table storage, packed widths, full-word clamps and real helper interfaces in [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md). This is semantic recovery only; matching/adoption remains open above, as do the full additional-source / Game queues.
 
 ## Counter Preset Recovery And Private Schedule Gap - 2026-10-15
 
