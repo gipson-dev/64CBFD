@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Packed Fade/Scale Callback And Renderer Audit
+
+[Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
+Recover func_1516ECAC's real byte fields, full live accumulator and extent
+updates, all 47 linked words exact with three relocation-aware guards. Raw C
+still differs at three operand-load words. Pass 14 installed checks plus the
+new checkpoint-integrity check; close all 135 ELF changes to target slot/extent
+and preserve other code/data/guard history. Fresh Game 2,894/4,828, total
+3,567/5,501, different 1,934, zero drift; conversions unchanged. Positive
+original-code cases defer func_1516D738's C recovery because its mode-cache
+hit reads inherited sp+0x5C. Bank tools 94c4245 first, preserve archive/mirror/
+Release, and continue at the 85-word preset wrapper func_1516E778.
+
 ## 2026-10-15 Packed Record Callback Update
 
 [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6ee5fbe; tools are committed before the consumer pin.
+  checkpoint pins tools 94c4245; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Callback-driven packed-record update recovered with three register guards:
+Packed fade/scale callback recovered, renderer C recovery explicitly deferred:
+[Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md).
+func_1516ECAC matches all 47 linked words with three relocation-aware guards;
+raw C remains three operand-load words different. Recover the actual byte
+fields, live signed-word clamps, wrapping product, two halfword extents and
+completion return. All 14 installed checks pass in 123.060s; the added exact
+checkpoint/capture check passes separately in 0.765s. Exercise 6,144 guest
+cases, 130 fired prefixes, native32 O2/O0, six effective negatives, three
+independent rebases and 256 real updater/callback/cleanup cases.
+Close all 135 ELF changes to target slot/extent; retain 29 neighbors, protected
+data, shared headers, progress rows and every old guard byte. Fresh Game
+2,894/4,828 (59.94%), total 3,567/5,501 (64.84%), different 1,934, zero drift;
+conversion counts/bytes unchanged. Bank tools 94c4245 first and preserve the
+archive, older mirror and frozen Release. Root README remains aggregate-only.
+func_1516D738's mode-cache hit reads inherited sp+0x5C: 24 bounded original
+cases through actual texture helpers reproduce it. The packet writer writes
+sp+0x94, not that word. Do not initialize or adopt an undefined C local for
+matching credit; the renderer is unchanged/unrecovered. Next recover the
+85-word preset wrapper func_1516E778 and its true five-input/call-packet ABI.
+Full additional-C / Game, renderer and gameplay/provider qualification remain
+open; no automatic host transfer or whole-goal completion claim.
+
+Prior callback-driven packed-record update recovered with three register guards:
 [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md).
 func_1516D678 matches all 48 linked words. Raw C remains three words different
 in one closed final-temporary allocation and commutative addition; no profile

@@ -196,7 +196,36 @@ s32 func_1516E8CC() {
     return 0;
 }
 
-s32 func_1516ECAC() {
+/* Fade intensity and scale both extents; report completion.
+ * Three relocation-aware guards retain the retail operand-load schedule. */
+s32 func_1516ECAC(u8 *record) {
+    s32 value = record[0x1F];
+    s32 scale;
+    s32 base;
+
+    if (record[0x24] != 0) {
+        if (value != 0xFF) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 7));
+            if (value >= 0x100) {
+                value = 0xFF;
+            }
+            record[0x1F] = value;
+        }
+    } else if (value != 0) {
+        value = (s32)((u32)value - (u32)D_800BE9E4 * record[0x26]);
+        if (value < 0) {
+            value = 0;
+        }
+        record[0x1F] = value;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    base = record[0x2D] | (record[0x2C] << 8);
+    scale = (s32)((u32)base * (u32)value);
+    scale >>= 7;
+    *(s16 *)(record + 0x16) = scale;
+    *(s16 *)(record + 0x14) = scale;
     return 0;
 }
 

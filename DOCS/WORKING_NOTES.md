@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
+Recover packed fade/scale callback func_1516ECAC, all 47 linked words with
+three relocation-aware load guards, raw three-word mismatch explicit. Qualify
+word clamps, byte fields, real updater/cleanup and the entire 135-byte image
+delta. Game 2,894/4,828, total 3,567/5,501, zero drift. Defer func_1516D738's
+C recovery after positive inherited-stack evidence; continue the whole queue
+at func_1516E778. Bank tools 94c4245 first and preserve archive/mirror/Release.
+
+2026-10-15:
 [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
 Recover the callback-driven packed-record update, all 48 linked words exact
 with three final-register/operand guards. Preserve the raw mismatch and prove

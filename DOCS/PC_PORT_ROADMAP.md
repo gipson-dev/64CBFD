@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Fade/Scale Callback And Renderer Deferral - 2026-10-15
+
+[Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
+
+- [x] Audit all 153 words of func_1516D738 and the actual helper packet footprint. Reproduce its inherited sp+0x5C read in 24 original-code cases; defer C adoption without inserting a non-retail initialization or accepting undefined C.
+- [x] Recover func_1516ECAC's byte fields, live word clamps, wrapping product, two halfword stores and exact completion return. Preserve its address-based name and add measured semantic comments.
+- [x] Match all 47 linked words with three relocation-aware guards for a closed T8/T9 load exchange and LO16 move. Keep raw C's three differences and different raw guest-fault order explicit; no profile changes.
+- [x] Pass 14 installed checks in 123.060s plus the new checkpoint-integrity check in 0.765s: 6,144 guest cases, 130 fired prefixes, native32 O2/O0, six effective negatives, three independent rebases and 256 actual updater/callback/cleanup cases.
+- [x] Close all 135 ELF changes to the target slot/extent. Preserve 29 neighbors, data, shared headers, progress rows and all prior guard bytes. Measure Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift; conversions unchanged.
+- [x] Bank tools 94c4245 first. Preserve all 801 archive files, independent ddbdd16 mirror HEAD and all 638 initial dirty fingerprints; copy only five absent owned files, giving 643. Keep README aggregate-only and Release frozen.
+- [ ] Recover func_1516E778's 85-word preset wrapper, retaining its actual five-input ABI, packed coordinates and full factory packet. Continue the wider additional-C / Game queue.
+- [ ] Resolve func_1516D738's inherited private-word contract or bank a separately qualified original-assembly adapter; neither is achieved by this C callback match.
+
 ## Packed Record Callback Update - 2026-10-15
 
 [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
@@ -10,7 +23,7 @@
 - [x] Close all 140 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, shared header contents, progress rows and every prior guard byte; append only three rows. Measure Game 2,893/4,828, total 3,566/5,501, different 1,935, zero drift.
 - [x] Bank tools 6ee5fbe first; preserve all 801 archive files and all 633 initial older-mirror fingerprints, copying only five absent owned files. Keep README changes aggregate-only and frozen Release untouched.
 - [x] Bank consumer 26623707 and pass all 14 post-bank checks in 31.496s. Retain all 46 installed input states / 638 final mirror fingerprints; normal ELF/progress build is up to date and the 41,114-node / 81,211-edge incremental graph worker has completed without forcing the smaller scan. Raw C still differs at three words.
-- [ ] Recover func_1516D738's full 153-word body and active ABI, continuing the whole additional-C / Game queue. The old 150-word draft is not a match; provider/gameplay acceptance remains separate.
+- [ ] Recover func_1516D738's full 153-word C body and active ABI. [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md) now documents the positive inherited-stack deferral; no C match or original-assembly restoration is claimed. Provider/gameplay acceptance remains separate.
 
 ## Small Record Factory Direct Match - 2026-10-15
 

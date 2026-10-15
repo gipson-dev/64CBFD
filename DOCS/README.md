@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Packed fade/scale callback and renderer deferral](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
+  Recover all 47 callback words with three relocation-aware guards, including
+  live word clamps and actual updater/cleanup. Document positive inherited
+  stack evidence for deferring the renderer's C recovery; audit the full image.
+
 - [Packed record callback update and guarded match](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
   Recover the actual callback/removal contract and wrapping 24.8 update, all
   48 linked words with three register guards. Qualify live state, aliases,
