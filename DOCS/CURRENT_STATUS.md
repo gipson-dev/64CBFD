@@ -38,6 +38,10 @@ controls and preceding installed-image gates. Bank tools a01819f first; all18
 production hashes,801 archive fingerprints and573 older mirror fingerprints
 remain fixed. README/metrics are unchanged. Continue THIS scanner's optimizer
 lifetime/value-use shape; no new C match, host operation or Release change.
+Consumer afd9582b banks the pin/docs after tools a01819f; all11 post-bank
+checks pass64.655s. The incremental ELF/progress build is up to date, all18
+production hashes remain fixed, and the incremental graph worker completes
+at40,992 nodes/81,153 edges without forcing the smaller full scan.
 
 Texture vertex-span real homes recovered privately; still NOT installed/exact:
 [Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md).

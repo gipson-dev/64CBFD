@@ -8,7 +8,7 @@
 - [x] Capture two fresh CFE/UOPT/UGEN pipelines and mode5 integer allocation constraints; prove the maximum/count/end-tag differences already exist before final UGEN scheduling.
 - [x] Pass11 selected checks50.484s, including3,872 guest cases,1,936 native cases/profile, an effective pre-decrement control,15 capture-corruption controls and preceding image gates.
 - [x] Bank tools a01819f first, preserve all18 production inputs/801 archive hashes/573 older mirror fingerprints; shared and standalone checks pass. Keep README/metrics and Release fixed.
-- [ ] Bank consumer pin/docs, post-bank checks and the incremental graph receipt without forcing the smaller full scan.
+- [x] Bank consumer afd9582b after tools a01819f, pass11 post-bank checks64.655s, retain all18 production hashes in an up-to-date build and await the40,992-node/81,153-edge incremental graph worker without forcing the smaller scan.
 - [ ] Continue THIS scanner's UOPT lifetime/value-use shape, then full private/connection/rebase/image gates before installation. Keep the full source/Game/rectangle goal active.
 
 ## Texture Vertex Span Real Home Recovery - 2026-10-15
