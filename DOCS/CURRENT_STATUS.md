@@ -46,6 +46,11 @@ total 3,567/5,501, different 1,934, zero drift. Bank tools 8ec9137 first and
 preserve archive, 643 initial older-mirror fingerprints and frozen Release.
 Next finish compiler-role/owner/private/fault/rebase gates before installing
 the preset; keep failed-comment/binding repairs and the full goal open.
+Consumer 83fb85fa banks docs, the durable queue and tools 8ec9137 pin. All 46
+post-bank checks pass in 9.357s; all 49 production inputs, 801 archive files,
+173 exported source locations and 647 final mirror fingerprints remain fixed.
+The source commit's incremental graph completes at 41,136 nodes / 81,232
+edges without forcing the refused smaller full scan. No C match is added.
 
 Prior packed fade/scale callback recovered, renderer C recovery explicitly deferred:
 [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md).

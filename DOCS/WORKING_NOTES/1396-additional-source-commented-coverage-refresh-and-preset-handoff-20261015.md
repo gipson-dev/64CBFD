@@ -177,3 +177,20 @@ The full Graphify update refuses 19,347 nodes against 41,126 existing nodes,
 retaining 19,398 nodes from 2,972 excluded-but-present files. Preserve that
 fail-closed result and await the incremental commit worker; do not force a
 smaller graph. Normal preset-tool output confirms installable=false.
+
+## Post-Bank Verification
+
+Consumer **83fb85fa** banks the working docs, durable review CSV and tools
+8ec9137 pin. All **46 post-bank checks pass in 9.357 seconds**. Recheck every
+one of the 49 production input hashes and all 801 original files; validate
+all 173 exported source locations and exact CSV bytes against the generated
+report. The global CSV ignore is overridden only for this owned review report,
+never for progress.csv. README and production C/guards/ELF remain unchanged.
+
+Both active checkouts are clean before this receipt. Preserve all **647 final
+older-mirror fingerprints** and its independent ddbdd16 HEAD. Seven documents
+and **4,971 relative Markdown links** validate with zero broken. The source
+commit's incremental graph worker completes at **41,136 nodes / 81,232 edges /
+3,837 communities**. No forced smaller graph, push or host/Release operation.
+Continue real source-repair queues and func_1516E778's 85-word/46-difference
+compiler fit; no full-goal completion or new exact-function claim is made.

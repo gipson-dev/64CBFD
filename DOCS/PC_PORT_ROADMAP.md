@@ -11,6 +11,7 @@
 - [x] Resume func_1516E778's full five-input/49-word packet: best 85 words / 46 real differences, 14 source shapes, 1,560 guest cases, native32 O2/O0 and two effective controls. Reject installation while words still differ.
 - [x] Pass 46 checks in 10.018s, shared tools checks and standalone mirror syntax/nine pure checks. Bank tools 8ec9137 first; preserve all 643 initial older-mirror fingerprints, copying only four absent owned files for 647.
 - [x] Keep every production input, source body, guard byte and progress row fixed; normal build is up to date. Fresh Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift. README aggregates need no change.
+- [x] Bank consumer 83fb85fa; pass all 46 post-bank checks in 9.357s and verify all 49 production inputs / 801 archive files / 173 exported locations / 647 final mirror fingerprints. Await the completed 41,136-node / 81,232-edge incremental graph refresh without forcing the smaller scan. No new matching credit.
 - [ ] Finish the preset's allocation/schedule and all owner/private/fault/rebase/image gates before installation; continue real failed-comment and binding/translation repairs without narrowing the full objective.
 
 ## Packed Fade/Scale Callback And Renderer Deferral - 2026-10-15
