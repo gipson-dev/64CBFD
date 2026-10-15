@@ -15239,3 +15239,30 @@ generated_19A8B0,func_1516EED4,0x134,0xAFAB00BC,0xAFAA00BC,-,-,Normalize closed 
 generated_19A8B0,func_1516EED4,0x138,0xAFAC00C0,0xAFAB00C0,-,-,Normalize closed counter-preset temporary-register allocation,,,false
 generated_19A8B0,func_1516EED4,0x13C,0x0C000000,0x0C000000,R_MIPS_26:func_1516D99C,R_MIPS_26:func_1516D99C,Normalize closed counter-preset temporary-register allocation,,,false
 generated_19A8B0,func_1516EED4,0x140,0xAFAF0088,0xAFAE0088,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516F024,0x10,0x3C0F0000,0x3C0F0000,R_MIPS_HI16:D_8008CBC4,R_MIPS_HI16:D_8008CBC4,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x14,0x25EF0000,0x25EF0000,R_MIPS_LO16:D_8008CBC4,R_MIPS_LO16:D_8008CBC4,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x2C,0x3C0A0000,0x3C0A0000,R_MIPS_HI16:D_8008CBD0,R_MIPS_HI16:D_8008CBD0,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x34,0x254A0000,0x254A0000,R_MIPS_LO16:D_8008CBD0,R_MIPS_LO16:D_8008CBD0,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x50,0x3C190000,0x3C190000,R_MIPS_HI16:D_8008CBDC,R_MIPS_HI16:D_8008CBDC,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x58,0x27390000,0x27390000,R_MIPS_LO16:D_8008CBDC,R_MIPS_LO16:D_8008CBDC,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x64,0x3C080000,0x3C080000,R_MIPS_HI16:D_8008CBE8,R_MIPS_HI16:D_8008CBE8,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x68,0x25080000,0x25080000,R_MIPS_LO16:D_8008CBE8,R_MIPS_LO16:D_8008CBE8,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0xB0,0x3C0D0000,0x3C0D0000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0xBC,0x8DAD0000,0x8DAD0000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0xE8,0x0066C021,0x3C180000,-,R_MIPS_HI16:D_800BE9E4,Normalize table-fade independent load schedule and closed temporary cycle,,,false
+generated_19A8B0,func_1516F024,0xEC,0x3C0F0000,0x0066C821,R_MIPS_HI16:D_800BE9E4,-,Normalize table-fade independent load schedule and closed temporary cycle,,,false
+generated_19A8B0,func_1516F024,0xF0,0x8DEF0000,0x932F0000,R_MIPS_LO16:D_800BE9E4,-,Normalize table-fade independent load schedule and closed temporary cycle,,,false
+generated_19A8B0,func_1516F024,0xF4,0x93190000,0x8F180000,-,R_MIPS_LO16:D_800BE9E4,Normalize table-fade independent load schedule and closed temporary cycle,,,false
+generated_19A8B0,func_1516F024,0xF8,0x032F0019,0x030F0019,-,-,Normalize table-fade independent load schedule and closed temporary cycle,,,false
+generated_19A8B0,func_1516F024,0x134,0x0C000000,0x0C000000,R_MIPS_26:func_1516F864,R_MIPS_26:func_1516F864,Preserve table-fade table and helper relocation bindings,,,false
+generated_19A8B0,func_1516F024,0x140,0x3C030000,0x3C0C0000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x144,0x8C630000,0x8D8C0000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x148,0x03A62821,0x03A64021,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x14C,0x90A5003C,0x9108003C,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x158,0x00650019,0x01880019,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x15C,0x848C0014,0x84820014,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x160,0x24090064,0x240A0064,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x168,0x00004012,0x00004812,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x16C,0x01881021,0x00491021,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x17C,0xA4890018,0xA48A0018,-,-,Normalize table-fade tail temporary lifetimes,,,false
+generated_19A8B0,func_1516F024,0x180,0x0C000000,0x0C000000,R_MIPS_26:func_1516F94C,R_MIPS_26:func_1516F94C,Preserve table-fade table and helper relocation bindings,,,false

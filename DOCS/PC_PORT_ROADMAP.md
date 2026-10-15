@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Table Fade Callback Frame Restoration And Match - 2026-10-15
+
+[Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
+
+- [x] Recover the real CFE/UOPT/local frame reservations with fired, hash-gated compiler captures. Genuine live tail operands restore frame 0x68 and literal table/index/incoming homes, without padding locals or frame guards.
+- [x] Replace func_1516F024's stub with complete semantic C, all 103 linked words exact. Keep raw 103/15 explicit; 27 guards cover five fade-schedule words, ten tail lifetime words and 12 identity bindings. No FP/profile changes.
+- [x] Pass 16 installed checks in 72.903s: 8,352 private guest cases, 232 fired prefixes, native32 O2/O0, eight controls, three rebases, 264 actual helper pairs, 26 completed aliases plus two identical fault prefixes and 801 archive hashes.
+- [x] Close all 413 ELF changes to target slot/extent and four exact 106-byte symbol/name swaps. Preserve canonical bindings, every other byte, 49 of 52 inputs, all prior guard bytes and protected data. Fresh Game 2,899/4,828, total 3,572/5,501, different 1,929, zero drift; conversions unchanged.
+- [x] Bank tools 908f406 first. Preserve 671 initial older-mirror fingerprints / 676 final paths, pass Windows syntax/standalone checks and keep README aggregate-only. No push or host/Release action.
+- [ ] Recover func_1516F2F8's six-input, two-factory packet contract from all 148 words, preserving the low-byte first input across the first call and full-word forwards that the archived draft narrows. Keep the broader source/Game queues and inherited-stack deferral open.
+
 ## Table Fade Callback Recovery And Frame Gap - 2026-10-15
 
 [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
@@ -8,8 +19,8 @@
 - [x] Screen 22 source/layout forms. Bank complete 103-word/19-difference recovery with frame 0x60 versus retail 0x68; no new guards/profile changes or installed source. Keep relative table/index homes distinct from literal private addresses.
 - [x] Pass ten checks in 37.649s: 8,352 guest cases, 270,336 native32 cases per O2/O0, eight controls, 1,024 partial-word cases, 264 actual helper pairs and 801 archive fingerprints. All 116 fired fault pairs still reject literal private equality.
 - [x] Preserve all 52 production inputs, all 29 neighbors and protected data. Fresh Game stays 2,898/4,828, total 3,571/5,501, different 1,930, zero drift; root README unchanged. Bank tools e086765 first; preserve 669 initial older-mirror fingerprints / 671 final paths. No host/Release action.
-- [ ] Resolve six frame/incoming-home words and two remaining scheduling/register groups using actual CFE/UOPT reservation/frame evidence, without fake padding locals or frame guards.
-- [ ] Qualify literal private/fault behavior, independent rebases and complete owner/padder/linked-image adoption before replacing the stub. Keep the full additional-source / Game queues and inherited-stack renderer deferral open.
+- [x] Resolve six frame/incoming-home words from actual CFE/UOPT reservation evidence in [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md). Genuine tail operands restore the frame; bounded guards normalize the remaining two temporary/scheduling groups. No fake padding locals or frame guards.
+- [x] Qualify literal private/fault behavior, independent rebases and complete owner/padder/linked-image adoption, then replace the stub in Note 1404. The full additional-source / Game queues and inherited-stack renderer deferral remain open above.
 
 ## Counter Preset Guarded Match - 2026-10-15
 

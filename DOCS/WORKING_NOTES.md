@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
+Finish func_1516F024 with its recovered frame and semantic C, all 103 linked
+words exact through 27 bounded guards; raw C remains 103/15. Pass 16 installed
+checks, including literal private/fault, native, rebase, helper and complete
+image gates. Close 413 changed bytes to target slot/extent and four exact
+symbol/name swaps. Game 2,899/4,828, total 3,572/5,501, different 1,929, zero
+drift. Bank tools 908f406 first, preserve archive/mirror/Release and continue
+func_1516F2F8 and the complete additional-source / Game queues.
+
+2026-10-15:
 [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
 Recover func_1516F024's four 11-byte snapshots, full-word fade/clamp/completion
 and real helper chain. Ten checks pass, but 103 raw/padded words still have 19

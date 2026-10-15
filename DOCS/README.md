@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Table-fade callback frame restoration and match](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
+  Genuine live operands recover the frame; 27 bounded guards make all 103
+  linked words exact. Sixteen checks and the complete ELF audit pass.
 - [Table-fade callback recovery and frame gap](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):
   Typed table snapshots and full-word semantics pass ten checks; 103 raw/padded
   words still have 19 differences and the wrong frame. No installation or credit.

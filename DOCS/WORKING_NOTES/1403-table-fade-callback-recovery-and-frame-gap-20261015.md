@@ -152,6 +152,10 @@ make -C conker match-progress NON_MATCHING=1
 
 ## Next Work
 
+Completed subsequently in [Note 1404](1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
+the original frame is recovered from genuine live operands and all 103 linked
+words are guarded-exact. The measurements below remain the historical handoff.
+
 Stay on **func_1516F024**. Inspect the exact CFE/UOPT local-reservation and
 frame formation with the existing hash-gated compiler tools, then resolve
 the six frame/home words and the two remaining scheduling/register groups.

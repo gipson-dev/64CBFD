@@ -4,6 +4,17 @@
 extern s32 (*D_8008CBA0[])(u8 *record);
 void func_1516972C(struct102 *record);
 
+typedef struct ByteTable11_19A8B0 {
+    u8 values[11];
+} ByteTable11_19A8B0;
+
+extern ByteTable11_19A8B0 D_8008CBC4;
+extern ByteTable11_19A8B0 D_8008CBD0;
+extern ByteTable11_19A8B0 D_8008CBDC;
+extern ByteTable11_19A8B0 D_8008CBE8;
+void func_1516F864(u8 *record);
+void func_1516F94C(u8 *record, u32 scale);
+
 extern s32 D_800BE9E4;
 extern u8 D_800DD2A0;
 extern u8 D_800CC2D4[];
@@ -326,7 +337,52 @@ void func_1516EED4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s32 func_1516F024() {
+/* Snapshot the preset tables, fade a full word, then update motion and size.
+ * Live tail operands retain the frame; guards normalize temporary scheduling. */
+s32 func_1516F024(u8 *record) {
+    s32 step;
+    s32 coefficient;
+    s32 value;
+    s32 extent;
+    s32 index;
+    ByteTable11_19A8B0 scales = D_8008CBC4;
+    ByteTable11_19A8B0 growth = D_8008CBD0;
+    ByteTable11_19A8B0 limits = D_8008CBDC;
+    ByteTable11_19A8B0 fades = D_8008CBE8;
+    s32 limit;
+
+    index = record[0x2C];
+    value = record[0x1F];
+
+    if (record[0x24] != 0) {
+        limit = limits.values[index];
+        if (value != limit) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 4));
+            if (value > limit) {
+                value = limit;
+            }
+            record[0x1F] = value;
+        }
+    } else if (value != 0) {
+        value = (s32)((u32)value - (u32)D_800BE9E4 * fades.values[index]);
+        if (value < 0) {
+            value = 0;
+        }
+        record[0x1F] = value;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    func_1516F864(record);
+    step = D_800BE9E4;
+    coefficient = growth.values[index];
+    extent = (s32)((u32)*(s16 *)(record + 0x14) + (u32)step * coefficient);
+    *(s16 *)(record + 0x16) = extent;
+    *(s16 *)(record + 0x14) = extent;
+    if (index == 3) {
+        *(s16 *)(record + 0x18) = 0x64;
+    }
+    func_1516F94C(record, scales.values[index]);
     return 0;
 }
 

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Table Fade Callback Guarded Match
+
+[Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
+Install func_1516F024's complete semantic C, all 103 linked words / frame 0x68
+exact. Live tail operands restore the real reservation; 27 guards normalize
+15 scheduling/register words and check 12 remaining bindings. Raw C stays
+103/15, with no frame/FP/profile guards. Pass 16 installed checks and close all
+413 ELF changes to target slot/extent plus four exact 106-byte symbol/name
+swaps; every other byte and 49 of 52 inputs stay fixed. Fresh Game 2,899/4,828,
+total 3,572/5,501, different 1,929, zero drift; conversions unchanged. Bank tools
+908f406 first and continue at func_1516F2F8 within the full source/Game goal.
+
 ## 2026-10-15 Table Fade Callback Recovery
 
 [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md):

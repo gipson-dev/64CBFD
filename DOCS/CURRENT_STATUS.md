@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e086765; tools are committed before the consumer pin.
+  checkpoint pins tools 908f406; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Table-fade callback installed and guarded-exact:
+[Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md).
+func_1516F024 matches all 103 linked words and frame 0x68. Genuine live tail
+operands recover CFE/UOPT/local reservations 72/76/80; raw C remains 103/15.
+Twenty-seven guards normalize 15 scheduling/register words and check 12
+remaining bindings, with no frame/FP/profile guards. All 16 installed checks
+pass in 72.903s: 8,352 literal private cases, 232 fired prefixes, native32
+O2/O0, eight controls, three rebases and 264 actual helper-chain pairs. Of
+28 aliases, 26 complete and two retain identical unmapped-read prefixes.
+Close all 413 ELF changes to 307 target slot/extent bytes and 106 bytes of
+four exact symbol/name swaps; every other byte, 49 of 52 inputs and protected
+data stay fixed. Fresh Game 2,899/4,828 (60.05%), total 3,572/5,501 (64.93%),
+different 1,929, zero drift; conversions fixed. Bank tools 908f406 first and
+preserve 671 initial older-mirror fingerprints / 676 final paths. Next
+func_1516F2F8, 148 words / two full factory packets; keep the full objective open.
 
 Table-fade callback semantically recovered, not installed:
 [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md).
