@@ -46,6 +46,15 @@ prediction: 144 changed bytes, target slot/extent only. Every other ELF byte,
 paths. Next func_1516FE1C, 134 words / frame 0x100: inspect its inherited
 SP+0xFC word and full two-packet/caller ABI before adopting the archival C.
 Keep the full additional-source/Game objective and all broader queues open.
+Consumer 6d7ddb42 banks the function, aggregate-only README rows, working
+docs and tools 76e1e02 pin. All 14 post-bank checks pass in 49.127s, exit 0;
+the whole predicted ELF, all inputs/captures, archive hashes, private/fault/
+native/rebase checks and actual installed chain remain qualified. Normal
+ELF/progress targets are up to date; all 705 final older-mirror fingerprints
+stay fixed. Eight docs resolve 5,074 relative inline links, zero broken.
+The source-commit graph update completes at 41,317 nodes / 81,428 edges,
+retaining excluded-but-present inputs without forcing a smaller scan.
+Continue func_1516FE1C's full contract and the broader queues above.
 
 Record color fade installed with proven MIPS normalization:
 [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md).

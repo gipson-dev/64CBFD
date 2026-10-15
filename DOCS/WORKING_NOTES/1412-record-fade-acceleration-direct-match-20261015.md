@@ -164,3 +164,22 @@ compilable-but-different matching work. Keep the full
 remaining callbacks/callers and inherited-stack renderer deferral open.
 This completed direct match does not complete the persistent whole-source/
 Game objective.
+
+## Post-Bank Verification
+
+Consumer **6d7ddb42** banks the function, aggregate-only README rows, working
+docs and tools **76e1e02** pin. All **14 post-bank checks pass in 49.127
+seconds**, exit 0. The body remains 51/51 raw/padded exact with zero target
+guards/profile edits. The complete predicted ELF, 57 live input states and
+before/after captures, 801 archive hashes, private/fault/native/rebase checks
+and actual installed slot-5 chain remain qualified. Normal ELF/progress
+targets are up to date; no post-bank artifact changes.
+
+Both active trees are clean before this receipt edit. All **705 final older-
+mirror fingerprints** stay fixed, preserving **701 initial dirty paths** and
+four owned copies; HEAD remains ddbdd16. Eight docs resolve **5,074 relative
+inline links, zero broken**. The source-commit graph update finishes at
+**41,317 nodes / 81,428 edges / 4,038 communities**, retaining excluded-but-
+present inputs without forcing a smaller scan. Continue func_1516FE1C's
+complete inherited-stack/caller contract and the full additional-source/
+Game queues; this is not a completion claim for the persistent objective.
