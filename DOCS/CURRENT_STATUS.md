@@ -47,6 +47,9 @@ the separate rectangle history boundary and frozen host Release.
 All78 selected target/history checks pass146.606s; four strengthened native/
 in-file corruption checks pass19.139s. Toolsefe2ace is banked first,801 archive
 hashes are fixed, and the exact mirror sync preserves528 unrelated dirty files.
+Consumer e1b67fe8 banks the source/pin. All26 selected post-bank checks pass
+69.408s, the incremental build retains the pinned ELF/progress, and the graph
+worker completes at40,907 nodes/81,082 edges without a forced smaller scan.
 
 Previous view projection command private guarded word fit, not installed then:
 [Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md).

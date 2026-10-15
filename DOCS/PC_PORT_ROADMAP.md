@@ -12,7 +12,7 @@
 - [x] Close all594 changed ELF bytes to two function slots/extents and four exact symbol/string groups, preserving189,088 protected bytes/720 owners.
 - [x] Measure Game2,879/4,831 (59.59%), total3,552/5,504 (64.53%), different1,952, zero drift; keep README aggregate-only.
 - [x] Pass78 selected target/history checks146.606s, four strengthened controls19.139s and shared/standalone tools checks; bank tools efe2ace first, preserving801 archive files and528 unrelated mirror fingerprints.
-- [ ] Finish the consumer commit and post-bank graph/build checks.
+- [x] Bank consumer e1b67fe8, pass26 selected post-bank checks69.408s, retain pinned ELF/progress in an up-to-date incremental build, and await the40,907-node/81,082-edge graph worker without forcing a smaller scan.
 - [ ] Match guMtxF2L's114 differing words and qualify actual SDK matrix/runtime behavior separately; continue full donor/binding/codec/Game and rectangle queues with Release frozen.
 
 ## View Projection Command Private Word Fit - 2026-10-14

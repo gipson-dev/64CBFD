@@ -21,7 +21,7 @@ hardware or gameplay acceptance; measure the current dependency slots.
 2. [x] Recover/qualify the actual child and integrate the typed parent/wrapper without changing unrelated owner behavior.
 3. [x] Qualify native32 parent/child behavior, effective controls and broader guest aliases; retain explicit SDK/FCSR/runtime boundaries.
 4. [x] Complete both-padder/rebase/guard/ABI/whole-image/history gates, then install only the qualified family and measure progress.
-5. [ ] Refresh aggregate-only README, working indexes, graph and coherent tools-before-consumer commits.
+5. [x] Refresh aggregate-only README, working indexes, graph and coherent tools-before-consumer commits.
 6. [ ] Continue the full donor/binding/codec/original Game and separate rectangle queues; keep the wider goal active.
 
 Completed measurements and acceptance results follow.
@@ -134,6 +134,18 @@ Full graph update fails closed at19,126 versus40,896, preserving19,398 nodes
 from2,972 excluded-but-present files. Do not force it; await the consumer
 commit's incremental worker. Zero Claude calls, external fetches, pushes,
 compiler/configuration changes or host/Release operations.
+
+## Post-Bank Verification
+
+Consumer e1b67fe8 banks the source, manifest, tools efe2ace pin and working
+documentation. All26 selected post-bank family/pure/FOV/trig/frustum/donor
+image, negative and inverse checks pass69.408s. The incremental build reports
+ELF/progress up to date, retaining the exact four installed checkpoint hashes
+and progress005fd768. Existing duplicate generated_12D630 recipe warnings
+remain unchanged. The commit's incremental graph worker completes at40,907
+nodes/81,082 edges, preserving the curated corpus and skipping only oversized
+HTML visualization. No forced scan. Both active repositories are clean before
+this receipt-only edit. No push, mirror commit or host/Release operation.
 
 ## Next Target
 
