@@ -200,3 +200,18 @@ The driver without `--screen` intentionally fails qualification: the initial
 Do not start another broad conversion batch, silently accept private-state
 differences, or treat any of the 33 source variants as another recovered
 function. Continue the full additional-source/Game objective afterward.
+
+## Post-Bank Verification
+
+Consumer **7602b95b** banks the docs and tools **07a68c3** pin. All **ten
+post-bank checks pass in 21.354 seconds**, exit 0. All 57 production inputs,
+the complete ELF, the uninstalled stub, original guards/profiles and matching
+counts remain unchanged. The normal ELF/progress targets are up to date.
+Both active checkouts are clean before this receipt edit, and the root README
+has no change relative to the preceding checkpoint.
+
+Recheck older mirror **ddbdd16**: all **682 final fingerprints** remain fixed,
+including every **680 initial dirty file** and both hash-equal owned copies.
+The source commit's actual captured graph workers finish at **41,240 nodes /
+81,337 edges / 3,964 communities**, without forcing the refused smaller scan.
+Keep the compiler-home investigation and production-adoption gates above open.
