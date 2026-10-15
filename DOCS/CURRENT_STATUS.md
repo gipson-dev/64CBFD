@@ -42,6 +42,10 @@ Next: func_1516D678, the still-stubbed 48-word record updater. Its older archive
 screen emits 50 words / 38 real differences, only a lead. Lower heap,
 registration and record-builder providers remain opaque in the connected
 model; no full gameplay or host-transfer acceptance is claimed.
+Consumer f3a2ee59 banks the source/pin/docs. All 14 post-bank checks pass in
+47.216s; all 45 input states / 801 archive files / 633 final mirror fingerprints
+remain pinned. Normal ELF/progress build is up to date. The incremental graph
+worker finishes at 41,104 nodes / 81,201 edges; this C match needs no new guards.
 
 Prior packed 0x4C-byte record factory recovered with six scheduling guards:
 [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md).

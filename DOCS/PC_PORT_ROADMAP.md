@@ -9,6 +9,7 @@
 - [x] Pass 14 focused checks in 47.525s: 3,072 guest cases, 1,536 stack aliases, 630 fired fault prefixes, two native32 profiles, six effective controls, three original-assembly rebases and 128 actual helper-chain cases.
 - [x] Close all 299 ELF changes to target slot/extent; preserve every other ELF byte, protected data, guard history and progress rows. Measure Game 2,892/4,828, total 3,565/5,501, different 1,936, zero drift.
 - [x] Bank tools b545f58 first, preserve all 801 archive files and all 628 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only; no host/Release action.
+- [x] Bank consumer f3a2ee59, pass all 14 post-bank checks in 47.216s, and retain all 45 installed input states / 633 final mirror fingerprints. Normal ELF/progress build is up to date; the 41,104-node / 81,201-edge incremental graph worker has completed without forcing the smaller full scan.
 - [ ] Recover the still-stubbed 48-word func_1516D678 record updater and continue the whole additional-C / Game queue. Lower providers and full gameplay remain separate qualification work.
 
 ## Packed Record Factory Guarded Match - 2026-10-15

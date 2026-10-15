@@ -129,3 +129,19 @@ differences. Re-establish the complete live field/argument/callee contract and
 active compiler shape before adoption; that old result is only a lead. Keep
 the full additional-source/binding queue, handwritten Init hardware routines
 and func_1510BF60 open. No automatic host transfer or completion claim.
+
+## Post-Bank Verification
+
+Consumer **f3a2ee59** banks the source, tools b545f58 pin, aggregate README
+rows and working documentation. All **14 post-bank checks pass in 47.216
+seconds**, including the independent complete current image, all 45 input
+states and fresh hashes for all 801 archive files. The normal ELF/progress
+build is up to date. This function remains a direct 100-word C match with no
+new guards; the existing larger-factory guards remain unchanged.
+
+Both active checkouts are clean before this receipt. All 633 final older-mirror
+fingerprints, including the 628 initial fingerprints and independent ddbdd16
+HEAD, remain fixed. The source commit's incremental graph worker completes at
+**41,104 nodes / 81,201 edges / 3,844 communities**, without forcing the refused
+smaller full scan. No push, host/Release action or full-game completion claim.
+Continue the whole additional-C / Game goal at func_1516D678.
