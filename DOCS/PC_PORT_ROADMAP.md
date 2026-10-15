@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Original Fixed-Matrix Converter Restoration - 2026-10-14
+
+[Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
+
+- [x] Prove the old256-byte C equals all64 retail guMtxF2L2 words; distinguish its truncation from this slot's cvt.w.s rounding behavior without inferring historical authorship from GLOBAL_ASM alone.
+- [x] Restore115 original instructions plus alignment NOP, preserving all116 words with zero guards, calls, frame or relocations; qualify both padders and independent rebases.
+- [x] Pass384 rounding cases,128 overlap cases,576 fired prefixes and192 native32 old-C/SSE witness cases per O2/O0 profile; retain explicit finite-domain/hardware limits.
+- [x] Execute432 actual parent/wrapper/child/converter connections, retaining only the float-projection provider as a bounded model.
+- [x] Close382 changed ELF bytes to381 target-slot bytes and one256->464 extent byte; preserve every other ELF byte and all189,088 protected bytes/720 owners.
+- [x] Correct only guMtxF2L's progress classification c->asm. Exact C counts stay3,552/2,879; denominators become5,503/4,830, different1,951, zero drift. Keep README aggregate-only.
+- [x] Pass93 selected target/history/caller checks166.231s, retain effective CSV corruption/capture controls and shared/standalone tools checks; bank tools0bc11d9 first, preserving801 archive files and531 unrelated mirror fingerprints.
+- [ ] Finish the consumer commit and post-bank graph/build checks with Release frozen.
+- [ ] Continue ordinary46-word func_1510B070 clipping/orthographic setup and full donor/binding/codec/Game work; keep actual FCSR/hardware/runtime and separate rectangle history open.
+
 ## View Projection Family Matches - 2026-10-14
 
 [Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
@@ -13,7 +27,8 @@
 - [x] Measure Game2,879/4,831 (59.59%), total3,552/5,504 (64.53%), different1,952, zero drift; keep README aggregate-only.
 - [x] Pass78 selected target/history checks146.606s, four strengthened controls19.139s and shared/standalone tools checks; bank tools efe2ace first, preserving801 archive files and528 unrelated mirror fingerprints.
 - [x] Bank consumer e1b67fe8, pass26 selected post-bank checks69.408s, retain pinned ELF/progress in an up-to-date incremental build, and await the40,907-node/81,082-edge graph worker without forcing a smaller scan.
-- [ ] Match guMtxF2L's114 differing words and qualify actual SDK matrix/runtime behavior separately; continue full donor/binding/codec/Game and rectangle queues with Release frozen.
+- [x] Resolve guMtxF2L's114 differing words by restoring its distinct original assembly/rounding contract; see Note1375. This is not new C-match credit.
+- [ ] Qualify actual SDK matrix/runtime behavior separately; continue full donor/binding/codec/Game and rectangle queues with Release frozen.
 
 ## View Projection Command Private Word Fit - 2026-10-14
 

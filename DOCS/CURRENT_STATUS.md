@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsefe2ace; tools are committed before the consumer pin.
+  checkpoint pins tools0bc11d9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View projection family installed and independently image-qualified:
+Original fixed-matrix converter restored; C ownership corrected:
+[Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md).
+guMtxF2L's old C equals the separate guMtxF2L2's64 retail words and truncates
+where this slot follows current rounding. Restore the original115-instruction/
+116-word assembly slot without guards. All382 changed ELF bytes are confined
+to381 slot bytes and one256->464-byte extent byte; all other instructions,
+definitions, protected data, callers, headers, profiles and guards stay fixed.
+Pass16 installed/chain checks29.267s, with384 rounding cases,128 overlaps,
+576 fired prefixes and432 actual projection-family/converter connections.
+Native32 independently witnesses the old C mismatch across192 cases/profile
+at O2/O0; it does not execute MIPS or prove N64 FCSR flags/traps. Current
+ELF7328baa3/progress e3ea336d. C exact counts remain3,552 total/2,879 Game:
+the corrected denominators are5,503/4,830, different1,951, zero drift. This is
+not new C-match credit. Converted totals are5,503/6,044 (91.05%),86.07% bytes;
+Game4,830/5,323 (90.74%),85.44% bytes. Next ordinary C target is46-word
+func_1510B070's clipping/orthographic setup, with full source/Game and separate
+rectangle queues still active. Keep host Release frozen.
+All93 selected target/history/caller checks pass166.231s, including the
+corrected historical CSV comparisons and their corruption/capture controls.
+Tools0bc11d9 is banked first; all801 archive hashes and531 unrelated mirror
+fingerprints are preserved. Actual hardware/FCSR/rendering remains separate.
+
+Previous view projection family installation and independent image qualification:
 [Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md).
 Recover func_1510B128's129-word command and func_1510B5F8's38-word matrix
 child, retaining their original frames and typed void interfaces. Explicit

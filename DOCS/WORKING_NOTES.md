@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-14:
+[Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
+Restore guMtxF2L's116-word original assembly slot and rounding behavior. The
+incorrect C was exactly guMtxF2L2's64-word implementation. Pass16 installed/
+chain checks, including432 actual family/converter connections. Close every
+382 changed ELF bytes to the slot/extent, with no guards or other changes.
+C exact numerators stay3,552/2,879; denominators correct to5,503/4,830,
+different1,951, zero drift. No new C-match credit or hardware/runtime claim.
+All93 selected target/history/caller checks pass166.231s; tools0bc11d9 first,
+with801 archive hashes and531 unrelated mirror fingerprints preserved.
+
+2026-10-14:
 [Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
 Install the129-word projection command and38-word matrix child with typed
 void interfaces,25 guards total and a directly exact33-word wrapper. Explicit

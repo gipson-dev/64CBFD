@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-14 Original Fixed-Matrix Converter Ownership Correction
+
+[Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
+Replace the incorrect guMtxF2L C variant with its original116-word unrolled
+assembly, retaining rounding-mode-dependent conversion and halfword order.
+The old C exactly matched the separate guMtxF2L2. Pass16 installed/chain
+checks and an independent whole-image gate for382 changed bytes. Exact C
+numerators do not increase: total3,552/5,503, Game2,879/4,830, different1,951,
+zero drift. Keep actual FCSR/hardware/runtime and the full C workstream open.
+All93 selected target/history/caller checks pass166.231s. Tools0bc11d9 is
+committed first; preserve801 archive files,531 unrelated mirror fingerprints
+and host Release. Continue compiler-generated func_1510B070 next.
+
 ## 2026-10-14 View Projection Family Guarded Matches
 
 [Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):

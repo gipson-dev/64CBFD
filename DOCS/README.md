@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Original fixed-matrix converter ownership and rounding restoration](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
+  Restore the116-word unrolled guMtxF2L slot and current-rounding semantics;
+  distinguish it from the64-word C guMtxF2L2 implementation. Qualify all382
+  changed ELF bytes, bounded rounding/aliases and actual family connections.
+  Correct C ownership without claiming a new C match or hardware acceptance.
+
 - [View projection family matrix child and native qualification](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
   Install complete129/38-word parent/child guarded matches and a directly exact
   typed33-word wrapper. Native32 callback ordering and the entire594-byte ELF

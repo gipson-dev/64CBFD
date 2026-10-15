@@ -1,5 +1,10 @@
 # View Projection Family Matrix Child And Native Qualification
 
+Follow-up: [Note1375](1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md)
+restores the distinct original guMtxF2L assembly and current-rounding behavior,
+qualifies actual converter connections and corrects C ownership. The measured
+114 differences below belong to this prior dated checkpoint, not the new slot.
+
 ## Scope
 
 Continue the full additional-source/Game goal from clean consumer85bfd7e5,
