@@ -41,6 +41,12 @@ zero drift; conversions unchanged. Bank tools 50205ee first and preserve all
 659 initial older-mirror fingerprints / 663 final paths. Next func_1516EED4,
 84 words, with the original signed slot gate and pre-call byte clear. Keep
 the complete additional-source / Game objective open.
+Consumer b1b985f3 banks source/pin/docs. All 13 post-bank checks pass in
+104.578s; all 52 input states / 801 archive files / 663 final mirror paths
+remain pinned, with all 659 initial dirty mirror fingerprints preserved.
+Normal ELF/progress build is up to date; 4,997 relative links in seven docs
+resolve without errors. The source commit's incremental graph completes at
+41,176 nodes / 81,272 edges without forcing the refused smaller full scan.
 
 Packed RGB callback installed and byte-exact with explicit guards:
 [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md).

@@ -130,6 +130,21 @@ Windows syntax and the standalone ROM-free check. Do not commit/reset that
 independently dirty mirror or copy history into it. No push, software install,
 account change or host source/build/launch; keep Release frozen.
 
+Consumer **b1b985f3** banks source, tools pin and documentation. The full
+**13-check post-bank run passes in 104.578 seconds**, including all 52 input
+states and 801 archive fingerprints. The normal ELF/progress build is up to
+date. Recheck the older mirror at ddbdd16: all 663 final paths match their
+captured fingerprints and all 659 initial dirty files remain untouched.
+Seven updated documents resolve **4,997 relative links with zero broken**.
+Both active consumer/tools checkouts are clean before this receipt edit.
+
+The source commit's incremental graph worker finishes at **41,176 nodes /
+81,272 edges / 3,892 communities**. No worker remains running. The separate
+full update refused a smaller 19,397-node scan against the existing 41,167
+nodes; do not force replacement or discard excluded-but-present source nodes.
+The incremental worker retains 19,398 nodes from 2,972 such files. These are
+graph-maintenance receipts, not additional match or runtime acceptance credit.
+
 Evidence is ignored under `conker/build/game-actor-type-preset/`. Reproduce:
 
 ```sh
