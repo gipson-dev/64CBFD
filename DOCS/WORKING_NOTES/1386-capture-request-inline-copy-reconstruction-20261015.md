@@ -1,5 +1,9 @@
 # Capture Request Inline Copy Reconstruction
 
+Succeeded next: [Note 1387](1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md)
+installs a guarded40-word match with22 allocation/scheduling guards. The raw C
+differences and evidence below remain valid; this is the prior unguarded checkpoint.
+
 ## Scope And Steps
 
 Continue the full additional-source/Game goal from consumer `3765311a` and

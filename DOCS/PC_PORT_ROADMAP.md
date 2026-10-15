@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Capture Request Guarded Byte Match - 2026-10-15
+
+[Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
+
+- [x] Capture actual compiler phases with unchanged codegen/full-owner agreement;18 new role/endpoint controls do not improve the22-difference raw C seed.
+- [x] Derive22 relocation-aware guards from one closed cursor/end register swap and a bijective schedule; retain all instructions, returns, copy logic and alignment.
+- [x] Match all40 linked words,14,336 full modeled guest states,322 fired prefixes and three independent original-assembly rebases/768 executions. Preserve raw C's mismatch distinction.
+- [x] Complete the normal rebuild and independently close121 ELF changes to target code and12->156 extent only, preserving every other ELF byte and all189,088 protected data bytes.
+- [x] Pass21 final top-level checks101.665s including historical gates; bank toolsd59c316/fdae1b3 first. Preserve801 archive hashes,595 older mirror fingerprints and frozen Release.
+- [x] Measure Game2,887/4,829, total3,560/5,502, different1,942 and zero drift; conversions unchanged. Root README aggregate rows only.
+- [ ] Bank consumer source/guards/pin/docs, verify the bank and await its incremental graph worker without forcing a smaller scan.
+- [ ] Continue func_1511F31C's prototype/matrix-layout gap and the wider source/Game queue. Host func_151745F0 is still a stub; qualify any transfer separately.
+
 ## Capture Request Inline Copy Recovery - 2026-10-15
 
 [Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):

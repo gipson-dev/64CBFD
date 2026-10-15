@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Capture Request Compiler Roles And Guarded Byte Match
+
+[Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
+Install complete func_151745F0 C with22 guarded allocation/scheduling words,
+matching all40 linked words without claiming raw compiler identity. Fresh phase
+probes and18 controls isolate the actual role boundary; closed transformation,
+private/prefix/rebase/native gates pass. All21 final checks pass101.665s. Only
+121 ELF bytes change, target code/extent only. Game2,887/4,829, total3,560/5,502,
+different1,942, zero drift; conversions unchanged. Bank toolsd59c316/fdae1b3
+first; preserve archive/mirror/Release. Host remains a stub; no automatic repair.
+
 ## 2026-10-15 Capture Request Inline Copy Reconstruction
 
 [Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):

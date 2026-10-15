@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools10ccd75; tools are committed before the consumer pin.
+  checkpoint pins toolsfdae1b3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Capture-request inline-copy body recovered; NOT installed/byte-exact:
+Capture-request slot installed and guarded byte-exact:
+[Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md).
+func_151745F0 matches all40 linked words with its complete typed C body and22
+relocation-aware allocation/scheduling guards. Raw C still differs22 words;
+this is not an unguarded/direct compiler match. Fresh phase probes identify the
+cursor/end roles in UOPT;18 new controls give no direct improvement. Prove the
+closed instruction permutation,14,336 full guest states,322 fired prefixes,
+three original-assembly rebases/768 executions and native/negative controls.
+All21 final top-level checks pass101.665s, including historical image gates.
+The normal rebuild equals the independently pinned3257636-byte ELF with only
+121 changed bytes, target code and12->156 extent only. Every other ELF byte
+and189,088 protected data bytes stay fixed. ELFd8f985cd; progress3ad7466c.
+Fresh Game2,887/4,829 (59.78%), total3,560/5,502 (64.70%), different1,942,
+zero drift; conversions unchanged. README aggregate rows only. Bank tools
+d59c316/fdae1b3 first; preserve801 archive hashes,595 older mirror fingerprints
+and Release. Host output remains a stub; no transfer. Next: func_1511F31C's
+prototype/64-byte matrix reconstruction, not an assumed jump-table binding.
+
+Prior unguarded capture-request reconstruction checkpoint:
 [Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md).
 Reopen func_151745F0's pseudo-copy gap. Recover the real three-record layout,
 byte fields, FP/O32 ABI and inline36-byte struct assignment. All54 controls have

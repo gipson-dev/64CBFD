@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
+Finish the capture-request slot as a guarded40-word match, deriving22 allocation/
+schedule guards and preserving the22-word raw C distinction. All21 final checks
+pass101.665s with full private/prefix/rebase/native/image gates. Close121 ELF
+changes to target code/extent; Game2,887/4,829, total3,560/5,502, zero drift.
+Bank toolsd59c316/fdae1b3 first; preserve archive/mirror/Release and continue
+the full source/Game queue at func_1511F31C's prototype/matrix gap.
+
+2026-10-15:
 [Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
 Recover the capture-request slot's real inline copy, three-record byte layout
 and mixed ABI. Screen54 complete/profile controls; keep the39-word/22-difference

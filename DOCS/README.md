@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Capture-request compiler roles and guarded byte match](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
+  Match all40 linked words through22 proven allocation/scheduling guards, keeping
+  raw compiler identity distinct. Qualify full private states, prefixes, rebases
+  and the complete121-byte ELF delta; preserve host and source-audit boundaries.
+
 - [Capture-request inline copy reconstruction](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
   Recover the complete typed C body and real36-byte copy. Qualify public behavior
   while preserving22 word differences and private-prefix failures; keep this

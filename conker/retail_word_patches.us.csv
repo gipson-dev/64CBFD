@@ -15158,3 +15158,25 @@ generated_138520,func_1510B690,0xE0,0x0010CC00,0x00107C00,-,-,Preserve closed pe
 generated_138520,func_1510B690,0xE4,0x00198403,0x000F8403,-,-,Preserve closed per-view matrix-pass temporary allocation,,,false
 generated_138520,func_1510B690,0xE8,0x0150082A,0x0110082A,-,-,Preserve closed per-view matrix-pass temporary allocation,,,false
 generated_138520,func_1510B690,0xF0,0x8EA80000,0x8EAF0000,-,-,Preserve closed per-view matrix-pass temporary allocation,,,false
+generated_1A11B0,func_151745F0,0x4,0x3C020000,0x3C030000,R_MIPS_HI16:D_800DD348,R_MIPS_HI16:D_800DD348,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x8,0x3C030000,0x3C020000,R_MIPS_HI16:D_800DD3FC,R_MIPS_HI16:D_800DD3FC,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0xC,0x24420000,0x24420000,R_MIPS_LO16:D_800DD348,R_MIPS_LO16:D_800DD3FC,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x10,0x24630000,0x24630000,R_MIPS_LO16:D_800DD3FC,R_MIPS_LO16:D_800DD348,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x14,0x904E000C,0x906E000C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x1C,0x2442003C,0x2463003C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x20,0xE44C0000,0xC7A40008,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x24,0xE44E0004,0x83B80013,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x28,0xC7A40008,0x8FB90014,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x30,0xA04F000C,0xE46C0000,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x34,0xE4440008,0xE46E0004,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x38,0x83B80013,0xA06F000C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x3C,0x00E05025,0xE4640008,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x40,0x00405825,0xA0780034,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x44,0xA0580034,0x10E0000D,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x48,0x8FB90014,0xAC790038,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x4C,0x24E90024,0x00E05025,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x50,0x10E0000A,0x00605825,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x54,0xAC590038,0x24E90024,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x84,0x2442003C,0x2463003C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x88,0x5443FFE3,0x5462FFE3,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_1A11B0,func_151745F0,0x8C,0x904E000C,0x906E000C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
