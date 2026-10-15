@@ -14,7 +14,7 @@ another broad conversion batch.
 4. [x] Derive a closed register-lifetime/schedule transformation and qualify its 22 relocation-aware guards, full private states, fired prefixes and independent rebases.
 5. [x] Bank tools `d59c316` before installing C/guards; complete the normal N64 rebuild and independently close every ELF byte.
 6. [x] Pass 21 final top-level checks in 101.665 seconds and bank installed-image/history support as tools `fdae1b3` before the consumer pin.
-7. [ ] Bank consumer source/guards/pin/docs, verify the bank and await the incremental graph worker without forcing a smaller scan.
+7. [x] Bank consumer `b8c40270` after both tools commits; pass 21 post-bank checks in 67.669 seconds and await the 41,045-node incremental graph worker without forcing a smaller scan.
 8. [ ] Continue the full source/Game queue; inspect the prototype/matrix-layout gap in `func_1511F31C` next, keeping hardware and scanner boundaries separate.
 
 ## Compiler Evidence, Not Cost Guesses
@@ -171,6 +171,26 @@ The full graph update refuses 19,265 nodes against the 41,035-node curated graph
 and retains 19,398 nodes from 2,972 excluded-but-present files. Keep that
 fail-closed result and await the incremental consumer commit worker; never
 force the smaller scan over the curated graph.
+
+## Post-Bank Verification
+
+Consumer `b8c40270` banks the typed C body, exact 22-row guard append, tools
+`fdae1b3` pin, two README aggregate rows and working documentation after tools
+`d59c316`/`fdae1b3`. All 21 post-bank top-level checks pass in 67.669 seconds,
+including five embedded previous-view gates and their eight earlier gates.
+Fresh compiler-capture revalidation, native/negative controls, full normalized
+private states/prefixes, independent rebases, closed current image, corruption,
+inverse and 801-file archive checks pass. Raw C's 22-word difference remains
+explicit; this is not a direct unguarded compiler match.
+
+The normal ELF/progress build is up to date. All 26 installed inputs equal
+their pinned expected state: three deliberate changes, 23 unchanged. ELF
+`d8f985cd`, guards `3a3d12fb` and progress `3ad7466c` stay fixed after the bank.
+Both active checkouts are clean before this receipt. All 601 mirror dirty
+fingerprints and `ddbdd16` HEAD remain fixed, including all 595 initial hashes.
+The source commit's graph workers exit at 41,045 nodes / 81,162 edges / 3,769
+communities without forcing the smaller scan. No push, mirror-history mutation
+or host/Release operation. Keep the full additional-source/Game goal active.
 
 ## Next Action
 

@@ -10,7 +10,7 @@
 - [x] Complete the normal rebuild and independently close121 ELF changes to target code and12->156 extent only, preserving every other ELF byte and all189,088 protected data bytes.
 - [x] Pass21 final top-level checks101.665s including historical gates; bank toolsd59c316/fdae1b3 first. Preserve801 archive hashes,595 older mirror fingerprints and frozen Release.
 - [x] Measure Game2,887/4,829, total3,560/5,502, different1,942 and zero drift; conversions unchanged. Root README aggregate rows only.
-- [ ] Bank consumer source/guards/pin/docs, verify the bank and await its incremental graph worker without forcing a smaller scan.
+- [x] Bank consumerb8c40270 after toolsd59c316/fdae1b3; pass21 post-bank checks67.669s, retain all26 expected hashes in an up-to-date build and await the41,045-node/81,162-edge incremental graph worker without forcing a smaller scan.
 - [ ] Continue func_1511F31C's prototype/matrix-layout gap and the wider source/Game queue. Host func_151745F0 is still a stub; qualify any transfer separately.
 
 ## Capture Request Inline Copy Recovery - 2026-10-15

@@ -44,6 +44,10 @@ zero drift; conversions unchanged. README aggregate rows only. Bank tools
 d59c316/fdae1b3 first; preserve801 archive hashes,595 older mirror fingerprints
 and Release. Host output remains a stub; no transfer. Next: func_1511F31C's
 prototype/64-byte matrix reconstruction, not an assumed jump-table binding.
+Consumerb8c40270 banks source/guards/pin/docs after toolsd59c316/fdae1b3. All21
+post-bank checks pass67.669s, all26 expected installed hashes stay fixed and
+the build is up to date. The graph worker completes41,045 nodes/81,162 edges
+without forcing a smaller scan. Keep the guarded/raw distinction explicit.
 
 Prior unguarded capture-request reconstruction checkpoint:
 [Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md).
