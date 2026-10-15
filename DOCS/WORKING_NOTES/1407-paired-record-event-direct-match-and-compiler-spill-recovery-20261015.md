@@ -219,3 +219,21 @@ queue or declare the entire additional source handled. Continue the
 [full source-repair/binding/unanchored queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md),
 inherited-stack renderer deferral and caller restorations after this bank.
 The persistent whole-source/Game objective remains active and incomplete.
+
+## Post-Bank Verification
+
+Consumer **5a4baee1** banks the function, aggregate-only README rows, working
+docs and tools **2018515** pin. All **17 post-bank checks pass in 89.417
+seconds**, exit 0. The complete independent ELF, all 57 live input states,
+801 archive hashes, four compiler observations, full private/fault/native/
+rebase/factory/caller checks and corruption controls remain qualified.
+Raw/padded C stays 199/199 exact, zero target guards and no profile changes.
+Normal ELF/progress targets remain up to date; no artifact changes on rerun.
+
+Both active checkouts are clean before this receipt edit. Recheck independent
+older mirror **ddbdd16**: all **687 final fingerprints** remain fixed,
+preserving every **682 initial dirty file** and all five hash-equal owned
+copies. Eight docs resolve **5,046 relative links, zero broken**. The actual
+captured source-commit graph workers finish at **41,253 nodes / 81,356 edges /
+3,794 communities**, without forcing the refused smaller full scan.
+Continue func_1516F9C4 and the complete additional-source/Game queues above.

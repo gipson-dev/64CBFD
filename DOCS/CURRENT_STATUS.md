@@ -45,6 +45,13 @@ slot/extent only; every other byte, 55 of 57 inputs, guards/progress and all
 unchanged. Bank tools 2018515 first; preserve 682 initial older-mirror
 fingerprints / 687 final paths. Next func_1516F9C4, 49 words / frame 0x18;
 keep the full additional-source/Game objective and caller restorations open.
+Consumer 5a4baee1 banks the C/docs/aggregate rows and tools 2018515 pin. All
+17 post-bank checks pass in 89.417s, exit 0; every input/capture/image and
+compiler/private/native/chain gate remains qualified. The normal ELF/progress
+targets are up to date. All 687 final older-mirror fingerprints stay fixed,
+preserving every 682 initial dirty file. Eight docs resolve 5,046 relative
+links, zero broken. Actual source-commit graph workers finish at 41,253 nodes /
+81,356 edges without forcing the refused smaller scan. Continue F9C4 above.
 
 Earlier paired record/event ABI checkpoint (resolved above):
 [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md).
