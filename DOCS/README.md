@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Selected-view render pass dispatch match](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
+  Recover all79 words directly with a typed cursor and unsigned viewport stride.
+  Qualify live gates, native/private behavior, rebases and the actual viewport
+  helper; close151 ELF byte changes to one existing code slot with no guards.
+
 - [Actor mode flags donor and original table binding](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
   Recover the complete53-word C dispatcher with zero guards and its real retail
   jump table. Qualify actual caller/native/private behavior and a closed168-byte

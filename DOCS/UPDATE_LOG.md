@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Selected View Render Pass Dispatch Match
+
+[Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
+Match all79 func_15019464 words directly from C under the existing profile,
+without guards. Recover its typed cursor/frame0x28 and unsigned viewport stride.
+Preserve15 neighbors; qualify guest/native/prefix/rebase behavior and the actual
+30-word viewport helper. All151 changed ELF bytes stay inside its316-byte slot,
+with every other ELF and protected data byte fixed. Fresh Game2,886/4,829,
+total3,559/5,502, different1,943, zero drift; conversions unchanged. Bank tools
+first, keep detailed recovery here instead of README, and preserve archive,
+independently dirty mirror and frozen Release. No automatic host transfer.
+
 ## 2026-10-15 Actor Mode Flags Donor And Original Table Binding
 
 [Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):

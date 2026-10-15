@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools9d0e2a1; tools are committed before the consumer pin.
+  checkpoint pins toolsd98b8d8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Selected-view render pass recovered and byte-exact:
+[Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md).
+func_15019464 now matches all79 words directly under unchanged -O2 -g3, zero
+guards. Reuse its Gfx cursor and unsigned viewport stride; preserve15 neighbors.
+Qualify1,920 guest cases,948 native cases/profile,1,524 fired prefixes, three
+original-assembly rebases and320 connections to the actual30-word viewport
+helper. Close all151 ELF byte changes to the existing316-byte code slot with
+every other ELF byte and189,088 protected data bytes fixed. ELFf3a09d0a,
+progress3ad7466c. Fresh Game2,886/4,829 (59.76%), total3,559/5,502 (64.69%),
+different1,943, zero drift; conversions unchanged. README aggregate rows only.
+Tools49961e5/d98b8d8 are banked first. All15 final top-level checks pass118.890s,
+including five embedded actor gates and their three embedded matrix gates.
+Current/captured corruption controls and exact-input inverses pass; all801
+archive fingerprints remain fixed. The consumer bank and post-bank check follow.
+Preserve586 older mirror fingerprints
+and Release. The selected host translation already has this retail-shaped
+function plus witness hooks; no host transfer or rebuild is implied.
 
 Actor mode flags donor recovered and byte-exact:
 [Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md).

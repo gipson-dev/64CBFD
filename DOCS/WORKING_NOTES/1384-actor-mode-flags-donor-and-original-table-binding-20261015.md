@@ -154,6 +154,10 @@ advisory call or host/Release operation. Keep the full objective active.
 
 ## Next Action
 
+Completed next: [Note 1385](1385-selected-view-render-pass-dispatch-match-20261015.md)
+recovers func_15019464's79-word direct C match, keeping the original profile and
+zero guards. The following paragraph preserves this checkpoint's handoff.
+
 Continue the actual binding queue, including func_15019464's commented draft:
 its former unresolved func_1510B958 now has a real active definition. Recompile
 under the appropriate original profile, prove all79 retail words and complete

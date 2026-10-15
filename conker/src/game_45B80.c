@@ -147,28 +147,24 @@ void func_15019414(void) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019464.s. */
-s32 func_15019464(Gfx *arg0, s16 arg1) {
-    s32 temp_s0;
-
-    func_1510B958(arg1);
-    gSPViewport(arg0++, (D_800BE628 + (arg1 * 0x180) + (D_800BE9C0 * 0x10) + 0x40));
-    temp_s0 = func_1501A490(arg0, arg1, 0, 0, 0, 0);
+/* Set up the selected view and append its enabled render passes. */
+Gfx *func_15019464(Gfx *commands, s16 view) {
+    func_1510B958(view);
+    gSPViewport(commands++, (D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x10) + 0x40));
+    commands = (Gfx *)func_1501A490((s32)commands, view, 0, 0, 0, 0);
     if (D_800BEAC0 != 0) {
-        return temp_s0;
+        return commands;
     }
     if (D_80084480 != 0) {
-        return temp_s0;
+        return commands;
     }
-
-    temp_s0 = func_1510FEA0(temp_s0, D_800BE9F0);
-    if ((func_1517EFAC(arg1) != 0) || ((D_800D18A0 & (1 << arg1)) != 0)) {
-        return temp_s0;
+    commands = (Gfx *)func_1510FEA0((s32)commands, D_800BE9F0);
+    if (func_1517EFAC(view) != 0 || (D_800D18A0 & (1U << view)) != 0) {
+        return commands;
     }
-
-    temp_s0 = func_1515D6D0(temp_s0, arg1);
-    temp_s0 = (s32) func_1510B9D0((Gfx *) temp_s0, arg1);
-    return temp_s0;
+    commands = (Gfx *)func_1515D6D0((s32)commands, view);
+    commands = func_1510B9D0(commands, view);
+    return commands;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150195A0.s. */

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Selected View Render Pass Match - 2026-10-15
+
+[Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
+
+- [x] Reopen the formerly unresolved draft and match all79 func_15019464 words with a typed cursor and unsigned viewport stride; retain -O2 -g3 and zero new guards.
+- [x] Preserve15 raw neighbors and all pools; qualify1,920 guest cases,948 native cases/profile,1,524 fired prefixes, three original-assembly rebases and320 actual viewport-helper connections.
+- [x] Bank qualification tools49961e5 first; install only the selected function and close all151 ELF changes to its existing316-byte code slot.
+- [x] Measure Game2,886/4,829, total3,559/5,502, different1,943 and zero drift; retain conversion counts and189,088 protected data bytes unchanged.
+- [x] Pass15 final top-level checks118.890s, including five embedded actor gates and three further matrix gates; preserve all801 archive hashes and bank tools49961e5/d98b8d8 before the consumer pin.
+- [ ] Bank consumer source/pin/docs, verify the bank and await its incremental graph worker without forcing a smaller scan.
+- [ ] Continue the remaining additional-source/Game queue and unmatched scanner. Keep host translation/witness hooks, hardware assembly and frozen Release boundaries separate.
+
 ## Actor Mode Flags Donor Match - 2026-10-15
 
 [Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):

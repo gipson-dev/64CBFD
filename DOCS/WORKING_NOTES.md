@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
+Recover all79 selected-view render-pass words directly, zero guards and no
+profile change. Qualify live gates/cursor/native/private prefixes, three
+rebases and the actual viewport helper. Close151 ELF byte changes to the
+existing316-byte slot; Game2,886/4,829, total3,559/5,502, zero drift. Bank
+tools first and continue the full source/Game queue, preserving archive/mirror
+and Release. Root README changes only aggregate matching rows.
+
+2026-10-15:
 [Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
 Recover53-word actor-mode flags C directly, proving its real retail table and
 zero guards. All16 final top-level checks pass36.209s, including caller/native/
