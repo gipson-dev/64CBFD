@@ -124,6 +124,25 @@ scan; await the consumer's incremental commit worker. No push or host source,
 build, launch or frozen Release operation. This is further matching evidence,
 not completion of the full requested source audit/Game work.
 
+## Post-Bank Verification
+
+Tools518e1ab precedes consumer9d844d84, which banks only the tools pin and
+working documentation. All14 selected post-bank checks pass72.663s, freshly
+repeating selected/default phase captures, mode5, two guest/native candidates,
+the effective reuse control, private prefixes, archive audit and prior matrix
+image/inverse gates. Shared checks, standalone compile/two pure tests and
+7-document/4,876-relative-link validation pass. The incremental ELF/progress
+build is up to date, with only the existing duplicate recipe warning. All18
+current/frozen production hashes remain fixed, including ELF2131709f and
+progress3ad7466c. Git confirms no README/conker change since bf652c1e.
+
+Both active checkouts are clean before this receipt. All580 mirror dirty
+fingerprints and ddbdd16 HEAD remain unchanged after the exact owned sync;
+all576 unrelated initial fingerprints are preserved. The incremental graph
+worker completes at41,002 nodes/81,163 edges/3,780 communities without forcing
+the smaller scan. No required producer remains live. No push, mirror commit,
+new advisory or host/Release operation. The full source/Game goal stays active.
+
 ## Next Action
 
 Keep HOMES as the best seed; do not replace it with the274-difference partial
@@ -134,3 +153,9 @@ merge binds too much scanner state toA3. Keep end-tag allocation, stage1 branch-
 likely shape and early vertexBase/max+1 return preparation unresolved. Require
 complete private/prefix, actual connections, rebases and closed image evidence
 before any production change or C-match credit. The full goal stays active.
+
+A separate bounded source question is scalar return-operand typing, not another
+pure commutation. The current source casts the combined unsigned address sum;
+check individual address-operand casts while retaining unsigned base comparison,
+wrapping/native-input boundaries and the actual retail arithmetic shift. This
+has NOT been compiled in this checkpoint and is not a proposed matching fix.

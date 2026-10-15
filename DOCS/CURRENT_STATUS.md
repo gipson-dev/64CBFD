@@ -38,6 +38,9 @@ private prefixes still differ. All14 final checks pass56.686s after the explicit
 native unused-local annotation. Bank tools518e1ab first; preserve18 production
 hashes,801 archive fingerprints and576 unrelated mirror fingerprints. HOMES
 remains339 words/frame0xA8/258 differences. README/metrics and Release stay fixed.
+Consumer9d844d84 banks the pin/docs after tools518e1ab; all14 post-bank checks
+pass72.663s. The incremental build is up to date, all18 production hashes remain
+fixed, and the graph worker completes at41,002 nodes/81,163 edges without force.
 
 Texture vertex-span compiler phase narrowed; still NOT installed/exact:
 [Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md).

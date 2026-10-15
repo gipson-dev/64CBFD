@@ -9,7 +9,7 @@
 - [x] Capture both selected compiler pipelines/mode5; distinguish actual raw identities, four-word endpoint schedules and unsupported numeric allocation costs.
 - [x] Pass14 final selected checks56.686s, two complete guest/native candidates and a returned clobbered-count control; preserve55/63 mismatching private prefixes.
 - [x] Bank tools518e1ab first, preserve18 production inputs/801 archive hashes/576 unrelated mirror fingerprints; shared/standalone checks pass. Keep README/metrics and Release unchanged.
-- [ ] Bank consumer pin/docs, post-bank checks and the incremental graph receipt without forcing the smaller full scan.
+- [x] Bank consumer9d844d84 after tools518e1ab, pass14 post-bank checks72.663s, retain all18 production hashes in an up-to-date build and await the41,002-node/81,163-edge incremental graph worker without forcing the smaller scan.
 - [ ] Continue independent count/maximum allocation and the unresolved end-tag/control-flow schedule before full private/connection/rebase/image installation gates. Keep the full source/Game/rectangle goal active.
 
 ## Texture Vertex Span Compiler Phase Evidence - 2026-10-15
