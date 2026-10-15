@@ -215,3 +215,22 @@ Keep the complete
 inherited-stack renderer deferral, remaining callback entries and caller
 restorations open. This completed function does not finish the persistent
 whole additional-source/Game objective, which remains active and incomplete.
+
+## Post-Bank Verification
+
+Consumer **2bf98aaa** banks the function, aggregate-only README rows, working
+docs and tools **f9563ed** pin. All **14 post-bank checks pass in 48.135
+seconds**, exit 0. The entire independently predicted ELF, all 57 live input
+states, 801 archive hashes, literal private/fault/native/rebase checks,
+actual-current dispatch/helper/cleanup chain and corruption controls remain
+qualified. Raw/padded C remains 49/49 exact with zero target guards/profile
+changes. Normal ELF/progress targets are up to date; no artifact changes on
+the rerun.
+
+Both active checkouts are clean before this receipt edit. Recheck independent
+older mirror **ddbdd16**: all **691 final fingerprints** remain fixed,
+preserving all **687 initial dirty files** and the four hash-equal owned
+copies. Eight docs resolve **5,052 relative links, zero broken**. The source-
+commit incremental graph update finishes at **41,266 nodes / 81,372 edges /
+3,851 communities**, without forcing the refused smaller full scan.
+Continue func_1516FA88 and the complete additional-source/Game queues above.

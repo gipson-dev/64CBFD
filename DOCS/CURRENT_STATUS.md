@@ -45,6 +45,14 @@ slot/extent only; all other bytes, 55 of 57 inputs, guards/progress and
 unchanged. Bank tools f9563ed first; preserve all 687 initial older-mirror
 fingerprints / 691 final paths. Next func_1516FA88, 81 words / frame 0xD0;
 retain the full additional-source/Game objective and remaining repair queues.
+Consumer 2bf98aaa banks the function, aggregate-only README rows, working docs
+and tools f9563ed pin. All 14 post-bank checks pass in 48.135s, exit 0;
+the complete image, inputs/captures, archive hashes and actual dispatch chain
+remain qualified. Normal ELF/progress targets are up to date. All 691 final
+older-mirror fingerprints remain fixed, preserving all 687 initial dirty
+files. Eight docs resolve 5,052 relative links, zero broken. The source-commit
+incremental graph update finishes at 41,266 nodes / 81,372 edges without
+forcing the refused smaller scan. Continue func_1516FA88 above.
 
 Paired factory/event routine installed directly from C:
 [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md).
