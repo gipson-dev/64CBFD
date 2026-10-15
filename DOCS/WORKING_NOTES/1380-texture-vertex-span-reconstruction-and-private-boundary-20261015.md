@@ -12,7 +12,7 @@ Keep the archive read-only, unrelated mirror work intact and host Release frozen
 2. [x] Reconstruct the complete state machine in private semantic C, preserving the backward cursor and nested texture behavior.
 3. [x] Screen23 complete compiled forms/controls and qualify the selected draft in guest/native32, packed fields, aliases and effective negative controls.
 4. [x] Identify the exact remaining literal/private boundary; keep all production inputs and match totals unchanged.
-5. [ ] Bank tools first, consumer pin/docs next and post-bank evidence last; continue fitting THIS function rather than skipping to an easier target.
+5. [x] Bank tools first, consumer pin/docs next and post-bank evidence last; continue fitting THIS function rather than skipping to an easier target.
 6. [ ] Match private homes, register lifetimes, instruction scheduling and full state/prefix behavior; pass both padder/rebase and independent image gates before installation or credit.
 
 ## Original Interface And State Machine
@@ -89,7 +89,9 @@ Earlier separate seven-check42.858s and two pure0.004s receipts are not counted
 as a larger fresh suite.
 
 - 3,872 guest cases compare original versus raw C public memory, return values
-  and the one provider packet across two SP phases. Cover occurrences-1/0/1/2/
+  and public provider fields across two SP phases. The private extent pointer
+  is checked for a valid stack address, NOT literal pointer equality; its
+  different SP offsets are an explicit open boundary. Cover occurrences-1/0/1/2/
   INT_MAX, four external provider modes, signed opcodes, unsigned address
   boundaries, all packed fields, nested texture occurrences and vertex resets.
 - All336 normal-entry reachable retail words execute. The three unvisited
@@ -152,6 +154,20 @@ from2,972 excluded-but-present files. Do not force the smaller graph; await the
 consumer's incremental commit worker. No push, Claude call, setup retry or host/
 Release operation. The full additional-source/Game and rectangle queues stay open.
 Tools1ffbc44 banks the five owned research paths first.
+
+## Post-Bank Verification
+
+Tools1ffbc44 precedes consumer2f46d35a, which banks only the tools pin and
+documentation. All7 selected post-bank private-boundary, immutable-production,
+undefined-domain, output-alias and preceding matrix image/corruption/inverse
+checks pass28.561s. Incremental ELF/progress are up to date. All six Note1379
+installed hashes and every18 captured production inputs remain fixed. Both
+active checkouts are clean before this receipt; the mirror's entire570-path
+dirty state and independent HEAD remain unchanged since the exact owned sync.
+The incremental graph worker completes at40,970 nodes/81,131 edges/3,758
+communities without forcing the smaller full scan. No producer remains live.
+No push, archive edit, mirror-history mutation or host/Release operation.
+Continue the same scanner; this checkpoint is not completion of the wider goal.
 
 ## Next Action
 

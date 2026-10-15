@@ -43,6 +43,9 @@ Game2,884/4,829, total3,557/5,502, different1,945, zero drift. Continue THIS
 function's homes/registers/scheduling before installation; keep the full source/
 Game/rectangle and actual hardware/caller/loading/gameplay boundaries open.
 Tools1ffbc44 banks the five owned research paths before the consumer pin/docs.
+Consumer2f46d35a banks the pin/docs; all7 selected post-bank checks pass28.561s.
+The incremental build is up to date, all18 production hashes remain fixed and
+the graph worker finishes at40,970 nodes/81,131 edges without a forced scan.
 
 View matrix pass recovered with its original product dependency:
 [Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md).
