@@ -11,7 +11,7 @@
 - [x] Close382 changed ELF bytes to381 target-slot bytes and one256->464 extent byte; preserve every other ELF byte and all189,088 protected bytes/720 owners.
 - [x] Correct only guMtxF2L's progress classification c->asm. Exact C counts stay3,552/2,879; denominators become5,503/4,830, different1,951, zero drift. Keep README aggregate-only.
 - [x] Pass93 selected target/history/caller checks166.231s, retain effective CSV corruption/capture controls and shared/standalone tools checks; bank tools0bc11d9 first, preserving801 archive files and531 unrelated mirror fingerprints.
-- [ ] Finish the consumer commit and post-bank graph/build checks with Release frozen.
+- [x] Bank consumer b2f95045 with the original assembly tracked; pass28 selected post-bank checks40.120s, preserve four installed hashes in an up-to-date incremental build, and await the40,918-node/81,081-edge graph worker without forcing a smaller scan.
 - [ ] Continue ordinary46-word func_1510B070 clipping/orthographic setup and full donor/binding/codec/Game work; keep actual FCSR/hardware/runtime and separate rectangle history open.
 
 ## View Projection Family Matches - 2026-10-14

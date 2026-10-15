@@ -48,6 +48,11 @@ All93 selected target/history/caller checks pass166.231s, including the
 corrected historical CSV comparisons and their corruption/capture controls.
 Tools0bc11d9 is banked first; all801 archive hashes and531 unrelated mirror
 fingerprints are preserved. Actual hardware/FCSR/rendering remains separate.
+Consumer b2f95045 banks the tracked assembly/source/pin. All28 selected
+post-bank checks pass40.120s; a fresh audit retains the116-word restoration
+and exact four checkpoint hashes. Incremental ELF/progress are up to date,
+and the graph worker completes at40,918 nodes/81,081 edges without forcing
+the smaller full scan.
 
 Previous view projection family installation and independent image qualification:
 [Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md).

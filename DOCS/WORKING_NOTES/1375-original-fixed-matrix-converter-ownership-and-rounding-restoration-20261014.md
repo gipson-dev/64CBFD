@@ -14,7 +14,7 @@ Preserve all archive files, the independently dirty mirror and frozen Release.
 2. [x] Qualify the original unrolled converter and effective rounding/access-order counterexamples against the incorrect C version.
 3. [x] Restore original assembly ownership and close the entire linked image/progress change without new C-match credit; track the assembly in the consumer commit.
 4. [x] Run affected projection/history/caller gates, preserve immutable inputs and sync only verified owned tools paths.
-5. [ ] Update aggregate-only README and working indexes; bank tools first, then source/pin/docs and post-bank evidence.
+5. [x] Update aggregate-only README and working indexes; bank tools first, then source/pin/docs and post-bank evidence.
 6. [ ] Continue ordinary compiler-generated Game C matching and the wider donor/binding/codec/rectangle queues; keep the full goal active.
 
 ## Initial Evidence
@@ -114,6 +114,22 @@ at19,136 versus40,908, preserving19,398 nodes from2,972 excluded-but-present
 files. Never force that smaller scan; await the consumer incremental worker.
 No external code is imported, no compiler/profile/host configuration changes,
 no REA setup retry or Claude call, and no host/Release operation or push.
+
+## Post-Bank Verification
+
+Consumer b2f95045 banks source, the explicitly tracked original assembly,
+tools0bc11d9 and documentation. All28 selected post-bank target/pure/family/
+FOV/frustum/constructor/caller checks pass40.120s. A fresh audit still proves
+the old64-word other-function identity and all116 restored words with zero
+guards/relocations. Git's committed assembly blob equals the qualified4eefb559
+source; the exact four installed checkpoint hashes remain fixed. Incremental
+ELF/progress build is up to date, retaining7328baa3/e3ea336d. The existing
+duplicate generated_12D630 recipe warnings remain unchanged.
+
+The source commit's incremental graph worker completes at40,918 nodes/81,081
+edges, preserving the curated corpus and skipping only oversized HTML output.
+No forced scan. Both active repositories are clean before this receipt-only
+edit. No push, mirror commit, host/Release operation or new C-match credit.
 
 ## Preservation And Next Target
 
