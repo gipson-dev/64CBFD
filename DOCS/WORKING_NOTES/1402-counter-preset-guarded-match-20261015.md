@@ -159,3 +159,21 @@ Retain the inherited-stack renderer deferral and full
 [failed-comment/binding/unanchored queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md).
 The earlier 1,717-object audit is not rerun or reclassified as fresh evidence.
 The complete additional-source / Game objective remains open.
+
+## Post-Bank Verification
+
+Consumer **be0f980a** banks source, guards, README aggregates, working docs
+and the tools a4ac643 pin. All **14 post-bank checks pass in 50.628 seconds**,
+including the whole independent image, all 52 input states, all 801 archive
+hashes, every appended guard mutation and exact successor-capture controls.
+Normal ELF/progress build is up to date. Raw C remains 85/76; all 84 linked
+words are exact only with the documented 38 guards.
+
+Both active checkouts are clean before this receipt edit. Recheck mirror
+ddbdd16: all **669 final fingerprints** remain fixed, all **665 initial dirty
+files** are preserved and all four owned copies equal active tools. Seven
+documents resolve **5,009 relative links with zero broken**. The source
+commit's actual incremental workers finish at **41,196 nodes / 81,291 edges /
+3,799 communities**, without forcing the refused smaller full scan. No live
+test/build/graph handle from that checkpoint remains. Continue func_1516F024
+and the full source/Game queues; no whole-goal or gameplay completion claim.

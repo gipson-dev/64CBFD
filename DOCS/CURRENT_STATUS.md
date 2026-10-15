@@ -40,6 +40,12 @@ all old guards/progress rows. Fresh Game 2,898/4,828 (60.02%), total 3,571/5,501
 (64.92%), different 1,930, zero drift; conversions unchanged. Bank tools a4ac643
 first and preserve all 665 initial older-mirror fingerprints / 669 final paths.
 Next func_1516F024, 103 words/frame0x68; retain the full source/Game objective.
+Consumer be0f980a banks source/guards/pin/docs; all 14 post-bank checks pass
+in 50.628s. All 52 input states / 801 archive files / 669 final mirror paths
+remain pinned, preserving all 665 initial dirty mirror files. Normal build
+is up to date; 5,009 relative links in seven docs resolve. The source commit's
+incremental graph finishes at 41,196 nodes / 81,291 edges without forcing
+the smaller scan. All 84 linked words remain guarded-exact, not direct C.
 
 Historical counter-preset semantic recovery, superseded by Note 1402 above:
 [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md).
