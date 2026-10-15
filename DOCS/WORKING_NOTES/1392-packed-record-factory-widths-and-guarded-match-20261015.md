@@ -144,3 +144,19 @@ an optional secondary call. Its older archive screen is 120 words / 106 real
 differences, so re-establish its widths and complete active ABI before any
 adoption. The wider additional-source/binding queue, handwritten Init hardware
 routines and func_1510BF60 remain open.
+
+## Post-Bank Verification
+
+Consumer **f3b01c10** banks the source, six guards, tools 49b76f0 pin, README
+aggregates and detailed working documentation. All **14 post-bank checks pass
+in 36.854 seconds**, including the complete independent current image, all 43
+input states and fresh hashes for all 801 archive files. Normal ELF/progress
+build is up to date. Raw C still has six differences; only the guarded slot is
+byte-exact, and the existing caller remains direct C exact.
+
+Both active checkouts are clean before this receipt. All 628 final older-mirror
+fingerprints, including the 623 initial fingerprints and independent ddbdd16
+HEAD, remain fixed. The source commit's incremental graph worker completes at
+**41,095 nodes / 81,191 edges / 3,831 communities**, without forcing the refused
+smaller full scan. No push or host/Release operation. Continue the wider goal
+at func_1516D4E8; do not declare the additional-C / Game queue complete.

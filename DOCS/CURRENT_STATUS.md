@@ -43,6 +43,10 @@ mirror fingerprints and frozen Release. Next: the still-stubbed 100-word
 0x34-byte factory func_1516D4E8; its old 120-word / 106-difference archive
 screen is only a lead. Heap allocation and registration remain opaque in
 the connected model; no complete gameplay or host-transfer claim.
+Consumer f3b01c10 banks the source/guards/pin/docs. All 14 post-bank checks pass
+in 36.854s, with all 43 input states / 801 archive files / 628 final mirror
+fingerprints fixed. Normal ELF/progress build is up to date. The incremental
+graph worker finishes at 41,095 nodes / 81,191 edges; raw C still differs by six.
 
 Prior preset-0x2D factory wrapper recovered directly from C:
 [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md).

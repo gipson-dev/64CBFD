@@ -9,6 +9,7 @@
 - [x] Pass 14 focused checks in 45.597s: 2,048 guest cases, 1,024 stack aliases, 456 fired prefixes, two bounded native32 profiles, six effective negatives, three assembly rebases and 128 actual wrapper/factory/allocator chains.
 - [x] Close every one of 374 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, progress rows and the complete previous guard prefix; append only six rows. Measure Game 2,891/4,828, total 3,564/5,501, different 1,937, zero drift.
 - [x] Bank tools 49b76f0 first and preserve all 801 archive files / 623 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only and frozen Release untouched.
+- [x] Bank consumer f3b01c10 and pass all 14 post-bank checks in 36.854s. Retain all 43 installed input states / 628 final mirror fingerprints; normal ELF/progress build is up to date and the 41,095-node / 81,191-edge incremental graph worker has completed. Raw C still has six scheduling differences.
 - [ ] Recover the still-stubbed func_1516D4E8 packed-record factory and continue the whole additional-C / Game queue. Heap/registration providers and full gameplay remain separate qualification work.
 
 ## Factory Preset Wrapper Direct Match - 2026-10-15
