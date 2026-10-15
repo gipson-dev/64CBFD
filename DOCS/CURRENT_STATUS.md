@@ -43,7 +43,10 @@ different1,947, zero drift; converted counts unchanged. Correct prior single-
 target neighbor prose to13, matching receipts; this two-target batch preserves
 12 neighbors. All50 selected target/history checks pass115.524s; shared and
 standalone tools checks pass. Bank toolscfc5e4b first, retaining801 archive
-hashes and551 unrelated mirror fingerprints. Consumer/post-bank receipts follow.
+hashes and551 unrelated mirror fingerprints. Consumer48610539 banks both
+recoveries/guards/pin/docs. All12 selected post-bank checks pass44.011s; the
+incremental ELF/progress are up to date with all four hashes fixed. Its graph
+worker completes at40,948 nodes/81,118 edges without forcing a smaller scan.
 Continue73-word
 func_1510B690's matrix pass with full source/Game/rectangle and hardware/runtime
 boundaries open. Archive/mirror work is preserved and host Release stays frozen.

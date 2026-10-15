@@ -13,7 +13,7 @@ the independently dirty tools mirror and frozen host Release.
 2. [x] Recover the complete defaulted near/far command and live-count clipping queue; retain argument homes, field offsets, call ordering and dirty flags.
 3. [x] Qualify raw owner preservation, both padders, independent rebases, native/guest aliases, fired prefixes and effective compiled controls before installation.
 4. [x] Close the entire linked image and affected immutable history; measure aggregate progress and update working indexes without README narrative.
-5. [ ] Commit tools first, source/pin/docs second, then post-bank evidence. Keep the full source/Game and separate rectangle work active.
+5. [x] Commit tools first, source/pin/docs second, then post-bank evidence. Keep the full source/Game and separate rectangle work active.
 
 ## Retail Interfaces And C Recovery
 
@@ -155,6 +155,19 @@ Keep immutable before fixtures and exact-input history adapters. Never mask
 whole metadata sections, discard unknown current inputs, recapture a new
 baseline or reset the independently dirty mirror to make checks pass. Root
 README gets measured aggregate rows only. No push or host/Release operation.
+
+## Post-Bank Verification
+
+Toolscfc5e4b precedes consumer48610539, which banks both C bodies, seven guard
+rows, tools pin, aggregate-only README updates and the documented neighbor-count
+correction. All12 selected post-bank image/corruption/inverse checks pass44.011s,
+including the preceding queue, orthographic and fixed-converter historical gates.
+Incremental ELF/progress are up to date; fresh verification retains all three
+installed hashes above and progress e3ea336d. Both active checkouts are clean
+before this receipt. The consumer's incremental graph worker completes at
+40,948 nodes/81,118 edges/3,762 communities without forcing a smaller scan.
+No push, mirror-history mutation or host/Release operation. The full objective
+and separate known-open rectangle gate remain active.
 
 ## Next Target
 

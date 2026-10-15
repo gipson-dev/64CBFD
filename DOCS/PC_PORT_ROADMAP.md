@@ -10,7 +10,7 @@
 - [x] Pass13 pre-install checks32.850s,4,880 guest cases,1,600 prefixes,180 native cases/profile, nine effective compiled controls and180 actual matrix-child connections with bounded SDK providers.
 - [x] Close all328 changed ELF bytes to two code slots/extents only; retain all189,088 protected bytes/720 owners. Measure Game2,883/4,830, total3,556/5,503, different1,947, zero drift.
 - [x] Pass50 selected target/history checks115.524s and shared/standalone tools checks; bank toolscfc5e4b first, preserving801 archive hashes and551 unrelated mirror fingerprints.
-- [ ] Bank source/pin/docs and post-bank build/graph evidence while preserving the archive/mirror and frozen Release.
+- [x] Bank consumer48610539, pass12 selected post-bank checks44.011s, retain all four hashes in an up-to-date incremental build, and await the40,948-node/81,118-edge graph worker without forcing a smaller scan. Preserve the archive/mirror and frozen Release.
 - [ ] Recover73-word/frame0x90 func_1510B690's matrix pass; keep full source/Game/rectangle work and actual SDK/hardware/caller/gameplay acceptance open.
 
 ## Pending View Queue Match - 2026-10-14
