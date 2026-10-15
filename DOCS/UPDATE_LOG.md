@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Capture Request Inline Copy Reconstruction
+
+[Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
+Recover the full func_151745F0 C body from its pseudo-copy gap, with proper byte
+fields, FP/O32 ABI and inline36-byte copy. None of54 bounded controls matches;
+retain39 body words/one alignment NOP/22 differences. All15 final checks pass
+45.771s, while explicitly preserving private-state/prefix mismatches. Bank
+tools10ccd75 first. Production stub,26 input hashes, README/metrics,801 archive
+hashes and Release stay fixed. Continue this allocation/scheduling boundary.
+
 ## 2026-10-15 Selected View Render Pass Dispatch Match
 
 [Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):

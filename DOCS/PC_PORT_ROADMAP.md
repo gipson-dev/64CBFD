@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Capture Request Inline Copy Recovery - 2026-10-15
+
+[Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
+
+- [x] Replace func_151745F0's pseudo-copy only in the private reconstruction with the real typed36-byte assignment and three-record/byte-field/FP-O32 layout.
+- [x] Screen54 controls with zero diagnostics; retain39 body words plus one real alignment NOP, zero frame and22 differences. No match credit or production installation.
+- [x] Qualify14,336 guest cases,2,048 native cases/profile and three returned controls; preserve8,288 private-state and306/322 fired-prefix mismatches.
+- [x] Prove38 reachable body words and the exact unreachable increment/alignment addresses; pass15 final top-level checks45.771s including current installed/history gates.
+- [x] Bank tools10ccd75 first; preserve26 production hashes,801 archive hashes,592 older mirror fingerprints and README/metrics/Release. Shared and standalone checks pass.
+- [ ] Bank the consumer pin/docs, verify the bank and await its incremental graph worker without forcing a smaller scan.
+- [ ] Continue THIS function's base/end allocation and parameter-home/copy-setup schedule before private/rebase/image installation gates. Keep the full source/Game goal active.
+
 ## Selected View Render Pass Match - 2026-10-15
 
 [Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):

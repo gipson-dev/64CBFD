@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Capture-request inline copy reconstruction](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
+  Recover the complete typed C body and real36-byte copy. Qualify public behavior
+  while preserving22 word differences and private-prefix failures; keep this
+  seed private, production/README counts unchanged and the matching goal active.
+
 - [Selected-view render pass dispatch match](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
   Recover all79 words directly with a typed cursor and unsigned viewport stride.
   Qualify live gates, native/private behavior, rebases and the actual viewport

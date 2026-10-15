@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsd98b8d8; tools are committed before the consumer pin.
+  checkpoint pins tools10ccd75; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Capture-request inline-copy body recovered; NOT installed/byte-exact:
+[Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md).
+Reopen func_151745F0's pseudo-copy gap. Recover the real three-record layout,
+byte fields, FP/O32 ABI and inline36-byte struct assignment. All54 controls have
+zero diagnostics; keep the39-word body/one alignment NOP/22-difference seed.
+Qualify14,336 guest cases,2,048 native cases/profile and three returned controls,
+but preserve8,288 private-state and306/322 fired-prefix mismatches. Retail has
+38 reachable words, one unreachable duplicate increment and one alignment NOP.
+All15 final top-level checks pass45.771s, including current image/history gates.
+Bank tools10ccd75 first; preserve all26 production inputs,801 archive hashes,
+592 older mirror fingerprints, README/metrics and frozen Release. Continue
+THIS function's cursor/end allocation and parameter/copy schedule before installing.
 
 Selected-view render pass recovered and byte-exact:
 [Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md).

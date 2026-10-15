@@ -134,6 +134,10 @@ disposable; no recovery is requested. Keep output paths safely quoted.
 
 ## Preservation And Next Action
 
+Next checkpoint: [Note 1386](1386-capture-request-inline-copy-reconstruction-20261015.md)
+recovers func_151745F0's real inline copy, preserving its22-word mismatch and
+keeping production unchanged. The following preserves this checkpoint's evidence.
+
 All15 final top-level checks pass118.890s. Replay five predecessor actor image/
 corruption/inverse/archive gates, including their three preceding matrix gates,
 through only the two exact known changed inputs. The current image is checked

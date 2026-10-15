@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1386](WORKING_NOTES/1386-capture-request-inline-copy-reconstruction-20261015.md):
+Recover the capture-request slot's real inline copy, three-record byte layout
+and mixed ABI. Screen54 complete/profile controls; keep the39-word/22-difference
+seed without installation or match credit. All15 final checks pass45.771s,
+including public guest/native behavior and visible private-prefix mismatches.
+Bank tools10ccd75 first; preserve production/README/metrics/archive/mirror/Release.
+
+2026-10-15:
 [Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md):
 Recover all79 selected-view render-pass words directly, zero guards and no
 profile change. Qualify live gates/cursor/native/private prefixes, three
