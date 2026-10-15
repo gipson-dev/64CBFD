@@ -43,6 +43,14 @@ in the original ROM; this is not proof of unreachability or gameplay parity.
 Tools 2be3d9f is banked first; all 691 initial older-mirror fingerprints
 remain fixed across 695 final paths. Next func_1516FBCC, 97 words, leaf,
 slot-4 callback. The full additional-source/Game objective remains open.
+Consumer f3c47afb banks source, scoped docs, aggregate-only README rows and
+tools 2be3d9f. All 14 post-bank checks pass in 59.104s, exit 0; the complete
+image/input/capture/native/private/fault/rebase/factory-chain controls remain
+qualified. Normal ELF/progress targets are up to date. All 695 final older-
+mirror fingerprints stay fixed; eight docs resolve 5,056 relative inline
+links, zero broken. The source-commit graph update completes at 41,279 nodes /
+81,387 edges while retaining excluded-but-present inputs rather than forcing
+a smaller scan. Continue func_1516FBCC and the full queues above.
 
 Record fade callback installed directly from C:
 [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md).

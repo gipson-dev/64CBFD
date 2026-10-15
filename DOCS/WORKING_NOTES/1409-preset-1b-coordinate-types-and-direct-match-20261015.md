@@ -164,3 +164,22 @@ compilable-but-different matching work. Keep the complete
 [additional-source review queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md),
 remaining callback/caller restorations and inherited-stack renderer deferral
 open. This function does not complete the persistent whole-source/Game goal.
+
+## Post-Bank Verification
+
+Consumer **f3c47afb** banks the function, aggregate-only README rows, scoped
+working docs and tools **2be3d9f** pin. All **14 post-bank checks pass in
+59.104 seconds**, exit 0. Raw/padded C remains 81/81 exact without guards or
+profile changes; the complete predicted image, 57 live states, all before/
+after captures, 801 archive hashes, literal private/fault/native/rebase
+checks and actual-current factory chain remain qualified. Normal ELF and
+conversion-progress targets are up to date; no rerun artifact changes.
+
+Both active checkouts are clean before this receipt edit. All **695 final
+older-mirror fingerprints** stay fixed, preserving all **691 initial dirty
+paths** and the four new hash-equal owned copies; HEAD remains ddbdd16.
+Eight scoped docs resolve **5,056 relative inline links, zero broken**.
+The source-commit incremental graph update finishes at **41,279 nodes /
+81,387 edges / 3,868 communities**, retaining excluded-but-present inputs
+without a forced smaller scan. Continue func_1516FBCC and the complete
+additional-source/Game queues, not a completion claim for the wider goal.
