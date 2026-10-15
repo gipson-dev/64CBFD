@@ -41,6 +41,11 @@ Bank tools e086765 first; preserve all 669 initial dirty older-mirror files /
 671 final paths. Next resolve this same callback's six frame/home words and
 two scheduling/register groups via actual compiler frame provenance. No
 guards/profile/source adoption, host operation or whole-goal completion.
+Consumer e8e7c7f9 banks docs/pin; all ten direct WSL post-bank checks pass in
+42.291s, exit 0. All 52 live inputs / 801 archive files / 671 final mirror
+fingerprints remain fixed. Seven docs resolve 5,015 relative links, zero broken;
+the actual incremental graph completes at 41,207 nodes / 81,301 edges without
+forcing the smaller scan. The production stub and match totals remain unchanged.
 
 Counter preset installed and guarded-exact:
 [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md).

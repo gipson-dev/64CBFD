@@ -163,3 +163,24 @@ Retain the inherited-stack renderer deferral and full
 [failed-comment/binding/unanchored queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md).
 The earlier 1,717-object audit is historical, not freshly rerun here. The full
 additional-source / Game objective remains open.
+
+## Post-Bank Verification
+
+Consumer **e8e7c7f9** banks the recovery docs and tools **e086765** pin, with
+no production C or README changes. All **ten post-bank checks pass in
+42.291 seconds**, direct WSL command exit 0. An earlier PowerShell Tee wrapper
+returned 1 despite unittest reporting ten passes in 44.638s; the direct rerun
+removes that wrapper ambiguity. No target test or production input was changed.
+
+Recheck all 52 live inputs and immutable captures, all 801 archive hashes and
+protected data. ELF, owner, guards and progress hashes remain exactly those
+from Note 1402. All **671 final older-mirror fingerprints** and its independent
+ddbdd16 HEAD remain fixed, preserving all 669 initial dirty files; both owned
+copies still equal active tools. Both active checkouts are clean before this
+receipt edit. Seven documents resolve **5,015 relative links, zero broken**.
+
+The consumer checkpoint's actual incremental graph workers finish at
+**41,207 nodes / 81,301 edges / 3,917 communities**, without forcing the
+refused smaller full scan. The matching boundary remains 103/19/frame 0x60,
+not installed or byte-exact. Continue the same callback and broader source/
+Game queues; this checkpoint does not complete the persistent objective.
