@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
+Recover all 100 small-factory words directly from C, including packed fields
+and the optional typed position/scale pointer. No new guards or profile changes.
+Pass 14 focused checks and actual helper chains, closing the complete 299-byte
+ELF delta. Game 2,892/4,828, total 3,565/5,501, zero drift. Bank tools b545f58
+first; preserve archive/mirror/Release and continue at func_1516D678.
+
+2026-10-15:
 [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
 Recover the real packed record factory and 49-input ABI; all 125 linked words
 match with six closed scheduling guards, not direct raw C identity. Pass 14

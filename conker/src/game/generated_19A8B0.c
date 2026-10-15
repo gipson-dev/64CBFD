@@ -3,6 +3,9 @@
 extern s32 D_800BE9E4;
 
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
+struct PositionScaleRecord71820;
+struct PositionScaleRecord71820 *func_150448D0(s32, s32, s32, s32, s32, s32,
+                                               s32, s16 *, s16 *);
 
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
@@ -10,8 +13,60 @@ s32 func_1516D400() {
     return 0;
 }
 
-s32 func_1516D4E8() {
-    return 0;
+/* Initialize a packed record and optionally bind its position/scale fields. */
+void func_1516D4E8(
+    s16 arg0, s16 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5,
+    u8 arg6, u8 arg7, u8 arg8, u8 arg9, u8 arg10, u8 arg11,
+    u8 arg12, u8 arg13, u8 arg14, u8 arg15, u8 arg16, u8 arg17,
+    u8 arg18, u8 arg19, u8 arg20, u8 arg21, u8 arg22, s16 arg23,
+    s16 arg24, u8 arg25, s16 arg26, s32 arg27, s32 arg28, u8 arg29,
+    s32 arg30) {
+    u8 *record;
+    s32 kind;
+
+    if (arg27 != 0) {
+        kind = 0x67;
+    } else {
+        kind = 0x12;
+    }
+    record = func_15167A68(kind, arg30, 0x34, 0, arg29, 1);
+    if (record != NULL) {
+        *(s16 *)(record + 0xE) = arg0;
+        *(s16 *)(record + 0x10) = arg1;
+        *(s16 *)(record + 0x12) = arg2;
+        record[0x1A] = arg3;
+        record[0x1B] = arg4;
+        record[0x1C] = arg5;
+        record[0x1D] = arg6;
+        record[0x1E] = arg7;
+        record[0x1F] = arg8;
+        record[0x20] = arg9;
+        record[0x21] = arg10;
+        record[0x22] = arg11;
+        record[0x23] = arg12;
+        *(s16 *)(record + 0x14) = arg23;
+        *(s16 *)(record + 0x16) = arg24;
+        record[0x24] = arg25;
+        *(s16 *)(record + 0x18) = arg26;
+        record[0x25] = 0;
+        record[0x26] = arg13;
+        record[0x27] = arg14;
+        record[0x28] = arg15;
+        record[0x29] = arg16;
+        record[0x2A] = arg17;
+        record[0x2B] = arg18;
+        record[0x2C] = arg19;
+        record[0x2D] = arg20;
+        record[0x2E] = arg21;
+        record[0x2F] = arg22;
+        if (arg28 != 0) {
+            *(struct PositionScaleRecord71820 **)(record + 0x30) = func_150448D0(
+                -1, 0, arg28, 0x14, 0x14, 0x14, 0,
+                (s16 *)(record + 0xE), (s16 *)(record + 0x14));
+            return;
+        }
+        *(struct PositionScaleRecord71820 **)(record + 0x30) = NULL;
+    }
 }
 
 s32 func_1516D678() {

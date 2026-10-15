@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 49b76f0; tools are committed before the consumer pin.
+  checkpoint pins tools b545f58; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Packed 0x4C-byte record factory recovered with six scheduling guards:
+Packed 0x34-byte factory and optional position/scale binding recovered directly:
+[Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md).
+func_1516D4E8 matches all 100 words without new guards or profile changes.
+Recover all 31 inputs, packed field widths and the typed optional pointer;
+ordinary statement/declaration order preserves the retail sp+0x34 lifetime.
+All 14 focused checks pass in 47.525s: 3,072 guest cases, 630 fault prefixes,
+native32 O2/O0 and 128 cases connecting actual allocator/position-scale helpers.
+Close all 299 ELF changes to target slot/extent; all 29 neighbors, data, guards
+and progress rows stay fixed. Fresh Game 2,892/4,828 (59.90%), total
+3,565/5,501 (64.81%), different 1,936, zero drift; conversions unchanged.
+Bank tools b545f58 first and preserve archive, older mirror and frozen Release.
+Next: func_1516D678, the still-stubbed 48-word record updater. Its older archive
+screen emits 50 words / 38 real differences, only a lead. Lower heap,
+registration and record-builder providers remain opaque in the connected
+model; no full gameplay or host-transfer acceptance is claimed.
+
+Prior packed 0x4C-byte record factory recovered with six scheduling guards:
 [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md).
 func_1516D99C now matches all 125 linked words. Raw C remains six words
 different in two closed load/store schedules; no profile changes. Correct the

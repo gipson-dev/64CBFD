@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Small Record Factory Direct Match - 2026-10-15
+
+[Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
+
+- [x] Recover func_1516D4E8's 31-argument ABI, packed widths and optional typed position/scale pointer. Use the actual secondary helper signature and preserve the original saved-record lifetime.
+- [x] Match all 100 raw and production-padded words through ordinary field/local order, with no new guards, fake locals or profile changes. Preserve all 29 copied-owner neighbors and existing large-factory/wrapper code.
+- [x] Pass 14 focused checks in 47.525s: 3,072 guest cases, 1,536 stack aliases, 630 fired fault prefixes, two native32 profiles, six effective controls, three original-assembly rebases and 128 actual helper-chain cases.
+- [x] Close all 299 ELF changes to target slot/extent; preserve every other ELF byte, protected data, guard history and progress rows. Measure Game 2,892/4,828, total 3,565/5,501, different 1,936, zero drift.
+- [x] Bank tools b545f58 first, preserve all 801 archive files and all 628 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only; no host/Release action.
+- [ ] Recover the still-stubbed 48-word func_1516D678 record updater and continue the whole additional-C / Game queue. Lower providers and full gameplay remain separate qualification work.
+
 ## Packed Record Factory Guarded Match - 2026-10-15
 
 [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
@@ -10,7 +21,7 @@
 - [x] Close every one of 374 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, progress rows and the complete previous guard prefix; append only six rows. Measure Game 2,891/4,828, total 3,564/5,501, different 1,937, zero drift.
 - [x] Bank tools 49b76f0 first and preserve all 801 archive files / 623 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only and frozen Release untouched.
 - [x] Bank consumer f3b01c10 and pass all 14 post-bank checks in 36.854s. Retain all 43 installed input states / 628 final mirror fingerprints; normal ELF/progress build is up to date and the 41,095-node / 81,191-edge incremental graph worker has completed. Raw C still has six scheduling differences.
-- [ ] Recover the still-stubbed func_1516D4E8 packed-record factory and continue the whole additional-C / Game queue. Heap/registration providers and full gameplay remain separate qualification work.
+- [x] Recover func_1516D4E8 directly in [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md), all 100 words exact without new guards. The wider additional-C / Game queue and provider/gameplay qualification remain open.
 
 ## Factory Preset Wrapper Direct Match - 2026-10-15
 

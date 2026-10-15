@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Small record factory direct match](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
+  Recover the 31-argument packed factory and optional position/scale binding,
+  all 100 words directly from C. Qualify pointer lifetime, live fields, nulls,
+  actual helper chains and the complete linked image without adding guards.
+
 - [Packed record factory widths and guarded match](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
   Recover the real 49-argument factory and all 125 linked words with six closed
   scheduling guards. Preserve its direct caller and qualify packed writes,

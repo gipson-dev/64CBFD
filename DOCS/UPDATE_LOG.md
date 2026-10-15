@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Small Record Factory Direct Match
+
+[Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
+Recover func_1516D4E8's packed fields and typed optional binding, all 100 words
+directly from C with no new guards/profile changes. Pass 14 focused checks and
+actual helper chains; close all 299 ELF changes to target slot/extent while
+preserving data, 29 neighbors, guard history and progress rows. Fresh Game
+2,892/4,828, total 3,565/5,501, different 1,936, zero drift; conversions unchanged.
+Bank tools b545f58 first, preserve archive/mirror/frozen Release, and continue
+at the still-stubbed 48-word updater func_1516D678.
+
 ## 2026-10-15 Packed Record Factory Guarded Match
 
 [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
