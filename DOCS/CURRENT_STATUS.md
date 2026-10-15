@@ -39,6 +39,10 @@ from C to assembly. Converted total 5,501/6,044 (91.02%), bytes 86.04%; Game
 Game; fractions 64.75% / 59.84%, different 1,939, zero drift. No new C credit.
 Bank tools 18698b3 first; preserve archive, older mirror and Release. Next:
 freshly qualify the archived func_1516F1C0 factory-call wrapper, still a stub.
+Consumer 51eb0dad banks the adapter/pin/aggregate correction/docs. All 14
+post-bank checks pass in 93.223s; all 38 input states and 618 final mirror
+fingerprints stay fixed. The incremental graph worker finishes at 41,075
+nodes / 81,169 edges without forcing a smaller scan. C credit remains zero.
 
 Prior actor world-matrix builder recovered directly from C:
 [Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md).

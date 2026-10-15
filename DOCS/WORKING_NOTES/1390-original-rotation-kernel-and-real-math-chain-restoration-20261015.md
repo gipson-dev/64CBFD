@@ -148,6 +148,24 @@ Full `graphify update .` refuses 19,285 nodes against 41,067 curated nodes,
 retaining 19,398 nodes from 2,972 excluded-but-present files. Preserve the
 fail-closed result and await the incremental commit worker; never force it.
 
+## Post-Bank Verification
+
+Consumer `51eb0dad` banks the original adapter, tools `18698b3` pin, corrected
+README aggregates and working documentation. All 14 post-bank checks pass in
+93.223 seconds, including actual finite math/consumer chains, the independent
+complete current image, historical gates and fresh 801-file archive hashes.
+All 38 installed input states remain pinned: three deliberate changes and
+35 unchanged inputs. The normal ELF/progress build is up to date.
+
+Both active checkouts are clean before this receipt. All 618 final mirror
+fingerprints and independent `ddbdd16` HEAD stay fixed, including all 612
+initial fingerprints; the six owned copies remain exact. The source commit's
+incremental graph worker completes at 41,075 nodes / 81,169 edges / 3,862
+communities, without forcing the smaller full scan. No push, host/Release
+operation or new C-match credit. Keep the full C-source/Game goal active.
+
+## Next C Target
+
 Return to the whole additional-C queue at `func_1516F1C0` in
 `generated_19A8B0.c`, confirmed still a zero-return stub. The archive has a
 large factory-call wrapper; its older isolated screen records 78 emitted /
