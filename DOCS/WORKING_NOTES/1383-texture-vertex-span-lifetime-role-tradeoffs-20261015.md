@@ -145,6 +145,11 @@ new advisory or host/Release operation. The full source/Game goal stays active.
 
 ## Next Action
 
+Continued in [Note 1384](1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
+thirty-two return forms do not improve the scanner. Reopen a genuine unresolved
+archive-table case and recover func_1507DF10's53 words directly from C instead.
+The scanner seed stays unmatched; the full binding/failed-source/Game goal stays.
+
 Keep HOMES as the best seed; do not replace it with the274-difference partial
 register recovery or310-word induction form. Avoid repeating these27 controls.
 Inspect the actual UOPT priority/lifetime decision for independent count and

@@ -10,7 +10,6 @@ s32 func_1507D1D8(s32 arg0);
 s32 func_1507D4F8();
 s32 func_1507D754();
 s32 func_1507DB6C();
-s32 func_1507DF10();
 s32 func_1507DFE4();
 s32 func_1507E114();
 s32 func_1507E1D0();
@@ -142,9 +141,34 @@ void func_1507DE4C(struct127 *arg0) {
 }
 
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507DF10.s. */
-s32 func_1507DF10() {
-    return 0;
+/* Apply the selected actor mode's flag masks, preserving all other fields. */
+void func_1507DF10(struct127 *actor, s32 mode) {
+    switch (mode) {
+        case 9:
+            actor->unk94 |= 0x20;
+            actor->unk9C |= 0x78;
+            actor->unk2E4 = 1;
+            break;
+        case 8:
+            actor->unk94 |= 0x40;
+            actor->unk94 &= ~0x200;
+            actor->unk9C |= 0xF00;
+            actor->unk2E4 = 2;
+            break;
+        case 6:
+        case 7:
+            actor->unk94 |= 0xE;
+            actor->unk94 &= ~0x410;
+            actor->unk9C |= 0xEE0000;
+            actor->unk2E4 = 4;
+            break;
+        case 4:
+        case 5:
+            actor->unk94 |= 0x80;
+            actor->unk94 &= ~0x500;
+            actor->unk2E4 = 8;
+            break;
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507DFE4.s. */
 s32 func_1507DFE4() {

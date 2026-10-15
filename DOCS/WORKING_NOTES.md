@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
+Recover53-word actor-mode flags C directly, proving its real retail table and
+zero guards. All16 final top-level checks pass36.209s, including caller/native/
+prefix/rebase and three embedded historical gates. Close all168 ELF byte changes
+to target code/extent; Game2,885/4,829, total3,558/5,502, different1,944, zero
+drift. Preserve archive/mirror/Release, bank tools first and continue the full
+binding/failed-source/Game goal. The scanner remains unmatched; no host transfer.
+
+2026-10-15:
 [Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
 Compile27 further controls; prove the opcode/count lifetime merge recovers
 maximumT0/countA3 but wrongly moves opcodeA3 and worsens to274 differences.

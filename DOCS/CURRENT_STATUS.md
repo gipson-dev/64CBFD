@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools518e1ab; tools are committed before the consumer pin.
+  checkpoint pins tools9d0e2a1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor mode flags donor recovered and byte-exact:
+[Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md).
+Reopen the unresolved .rodata queue and replace func_1507DF10's false stub with
+the archive's complete53-word C switch. Zero guards; bind the compiler pool to
+the original six-entry retail table without changing any data. Preserve15 raw
+neighbors and qualify2,432 guest cases,1,216 native cases/profile,37 prefixes,
+three rebases and760 connections to the already-matched27-word caller. Correct
+the caller reference's unsigned8 gate before claiming acceptance. All16 final
+top-level checks pass36.209s, including three embedded matrix history gates.
+Exactly168 ELF bytes change, confined to this slot and12->212 extent; every
+other ELF byte and189,088 protected data bytes stay fixed. ELF7aee8cd7,
+progress3ad7466c. Fresh Game2,885/4,829 (59.74%), total3,558/5,502 (64.67%),
+different1,944, zero drift; conversions unchanged. README changes aggregate rows
+only. Preserve801 archive fingerprints,580 older mirror fingerprints and Release.
+Tools f2b6070/9d0e2a1 are banked first. The32 scanner return forms give no new
+match; continue the real binding/failed-source/Game queues and retain its258-
+difference HOMES seed. The host still selects a zero stub; no automatic transfer.
 
 Texture vertex-span lifetime tradeoff verified; still NOT installed/exact:
 [Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md).

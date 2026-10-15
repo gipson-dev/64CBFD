@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor mode flags donor and original table binding](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
+  Recover the complete53-word C dispatcher with zero guards and its real retail
+  jump table. Qualify actual caller/native/private behavior and a closed168-byte
+  image delta; keep host transfer and the broader source/Game queues separate.
+
 - [Texture vertex span lifetime role tradeoffs](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
   Test27 complete controls and trace the partial maximum/count allocation
   recovery without claiming a match. Qualify two public candidates while

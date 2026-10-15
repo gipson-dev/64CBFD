@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Actor Mode Flags Donor And Original Table Binding
+
+[Note 1384](WORKING_NOTES/1384-actor-mode-flags-donor-and-original-table-binding-20261015.md):
+Recover all53 func_1507DF10 words from the archive C draft with zero guards,
+using its real original six-entry table. Qualify guest/native/private/prefix/
+rebase and actual caller behavior; all16 top-level final checks pass36.209s,
+including three embedded history gates. Only168 ELF bytes change, target code/
+extent only, with every data and other ELF byte fixed. Fresh Game2,885/4,829,
+total3,558/5,502, different1,944, zero drift; conversions remain unchanged.
+README updates aggregate rows only. Bank tools f2b6070/9d0e2a1 first; preserve
+801 archive hashes,580 older mirror fingerprints and frozen Release. The host
+remains a stub; no transfer/build. Scanner return screens do not improve its seed.
+
 ## 2026-10-15 Texture Vertex Span Lifetime Tradeoffs
 
 [Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
