@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed RGB Callback Byte Match - 2026-10-15
+
+[Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
+
+- [x] Replace func_1516E8CC's stub with complete semantic C, all 248 linked words exact. Keep raw 246 words / five instruction differences explicit; five guards retain the initial register and two preserve the unreachable return/delay slots. No FP guards or profile changes.
+- [x] Pass 14 installed checks in 36.799s: 3,072 semantic cases, 643 fired prefixes, native32 O2/O0, five effective controls, three independent rebases, 256 actual updater/callback/cleanup cases and all 801 archive hashes.
+- [x] Close all 713 ELF changes to 692 target-slot/extent bytes and an exact 21-byte three-symbol/name-order permutation. Preserve every canonical binding, all other code, 189,088 protected bytes / 720 owners, guard history and 49 of 52 scoped inputs. Ignore no metadata ranges.
+- [x] Measure Game 2,896/4,828, total 3,569/5,501, different 1,932, zero drift. Converted counts/bytes stay fixed; README changes only aggregate rows.
+- [x] Bank tools 8981c28 first. Preserve all 654 initial dirty older-mirror fingerprints, copy only five absent owned paths for 659, and pass Windows syntax/ROM-free checks. No push or host/Release action.
+- [ ] Recover func_1516ED68's four-input type gate and full factory packet: 91 words, ROM 0x19C218, frame 0xD0. Continue the whole source-review / Game objective.
+
 ## Packed Color Callback Recovery - 2026-10-15
 
 [Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
@@ -8,8 +19,8 @@
 - [x] Pin 52 inputs and the 48-byte threshold/RGB owner. Pass seven checks in 29.801s: 3,072 paired guest cases, 1,024 further original-guest/native32 O2/O0 cases, five effective controls, all 29 owner neighbors and 801 archive hashes.
 - [x] Screen four maintained forms under two profiles; reject all nonmatches. Preserve production source/ELF/guards/progress, official Game 2,895/4,828 and total 3,568/5,501, zero drift. Keep root README aggregate rows unchanged.
 - [x] Bank tools af89f68 first and preserve all 652 initial dirty older-mirror fingerprints, copying only two absent owned paths for 654. No host or frozen Release action.
-- [ ] Match the original V0 record/color lifetime, retained loop-bound reload and exit shape. The 245-word / 153-positional-difference form is not three remaining scheduling words and cannot be installed.
-- [ ] Complete raw/padded, private/fault, rebase, real callback/cleanup and full linked-image qualification before replacing the production stub. Continue the complete source-review / Game goal.
+- [x] Match the original V0 record/color lifetime, retained loop-bound reload and exit shape in [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md), with seven explicit guards. The historical 245-word / 153-difference form was not installed.
+- [x] Complete raw/padded, private/fault, rebase, real callback/cleanup and full linked-image qualification and replace the production stub in Note 1399. The complete source-review / Game goal remains open.
 
 ## Packed-Coordinate Preset Direct Match - 2026-10-15
 
@@ -21,7 +32,7 @@
 - [x] Close all 258 ELF changes to target slot/extent. Preserve data, every old guard byte, shared headers and progress rows; measure Game 2,895/4,828, total 3,568/5,501, different 1,933, zero drift. Converted counts/bytes remain fixed.
 - [x] Bank tools 8445ba1 first. Verify all 801 original file hashes and preserve all 647 initial older-mirror fingerprints, copying only five absent owned files for 652. README changes aggregate rows only; no host/Release action.
 - [x] Bank consumer 1002474c and pass all 15 post-bank checks in 33.135s. Retain all 50 input states / 652 final mirror fingerprints, normal up-to-date ELF/progress build and the completed 41,146-node / 81,243-edge incremental graph refresh without forcing the smaller scan.
-- [ ] Recover func_1516E8CC's full 248-word callback using actual packed widths, live accumulators, FP and table roles. The older 293-word draft is not a match; continue the full source-review / Game queues.
+- [x] Recover func_1516E8CC's full 248-word callback with its actual packed widths, live accumulators, FP and table roles in [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md). The older 293-word draft was not installed; the full source-review / Game queues remain open.
 
 ## Additional-Source Coverage Refresh And Preset Handoff - 2026-10-15
 

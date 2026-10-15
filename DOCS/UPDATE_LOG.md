@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Packed RGB Callback Byte Match
+
+[Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
+Replace func_1516E8CC's stub with semantic packed intensity/extent/RGB C.
+All 248 linked words match using five initial register guards and two guards
+preserving the unreachable duplicate return; raw C remains 246 words / five
+instruction differences. Pass 14 checks and close all 713 ELF changes to
+target slot/extent plus 21 exactly modeled symbol/name-order bytes, with no
+metadata masking or other code/data drift. Fresh Game 2,896/4,828, total
+3,569/5,501, different 1,932; conversions unchanged. Bank tools 8981c28 first,
+preserve archive/mirror/Release and continue at the 91-word func_1516ED68.
+
 ## 2026-10-15 Packed Color Callback Semantic Recovery
 
 [Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):

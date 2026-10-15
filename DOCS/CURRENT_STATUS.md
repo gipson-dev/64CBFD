@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools af89f68; tools are committed before the consumer pin.
+  checkpoint pins tools 8981c28; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packed RGB callback installed and byte-exact with explicit guards:
+[Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md).
+func_1516E8CC matches all 248 linked words. Raw C is 246 words with five
+initial register differences; seven guards retain that lifetime and the dead
+duplicate return. No FP guard/profile change. All 14 checks pass in 36.799s:
+3,072 semantic cases, 643 fired prefixes, native32 O2/O0, five controls, three
+independent rebases, 256 real callback/cleanup cases and 801 archive hashes.
+Close all 713 ELF changes to target slot/extent plus 21 explicitly modeled
+symbol/name-order bytes; all canonical bindings, other code and protected
+data remain fixed. Of 52 inputs, only owner/ELF/guards change. Fresh Game
+2,896/4,828 (59.98%), total 3,569/5,501 (64.88%), different 1,932, zero drift;
+converted counts/bytes unchanged. Bank tools 8981c28 first and preserve all
+654 initial older-mirror fingerprints / 659 final paths. Next func_1516ED68,
+the 91-word type-gated factory preset; keep the broader source/Game goal open.
 
 Packed color callback semantic recovery, deliberately not installed:
 [Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md).

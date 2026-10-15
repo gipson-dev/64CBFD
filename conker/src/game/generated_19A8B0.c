@@ -5,6 +5,8 @@ extern s32 (*D_8008CBA0[])(u8 *record);
 void func_1516972C(struct102 *record);
 
 extern s32 D_800BE9E4;
+extern u8 D_800A6E00[];
+extern u8 D_800A6E0C[];
 
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 struct PositionScaleRecord71820;
@@ -199,7 +201,63 @@ void func_1516E778(u32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         0, 1, 0, 0, 0, 0, 0, (u8)arg3, arg4);
 }
 
-s32 func_1516E8CC() {
+/* Fade intensity, grow both extents and interpolate the selected RGB ramp.
+ * Five guards retain the start register; two preserve the unreachable return. */
+s32 func_1516E8CC(u8 *record) {
+    u8 *color = record;
+    s32 value = record[0x1F];
+    s32 phase;
+    u8 *time = record;
+    s32 start;
+    f32 weight;
+    f32 complement;
+
+    if (record[0x24] != 0) {
+        if (value != 0xFF) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 5));
+            if (value >= 0x100) {
+                value = 0xFF;
+            }
+            record[0x1F] = value;
+        }
+    } else if (value != 0) {
+        value = (s32)((u32)value - ((u32)D_800BE9E4 << 4));
+        if (value < 0) {
+            value = 0;
+        }
+        record[0x1F] = value;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    value = *(s16 *)(record + 0x14);
+    value = (s32)((u32)value + (u32)D_800BE9E4 * 10);
+    *(s16 *)(record + 0x16) = value;
+    *(s16 *)(record + 0x14) = value;
+    phase = record[0x24];
+    if (record[0x24] == 0) {
+        phase += record[0x1F] >> 5;
+    } else {
+        phase += 8;
+    }
+    start = time[0x26];
+    value = start;
+    if (start < start + 8) {
+        time = D_800A6E00 + start;
+        do {
+            if (phase >= *time) {
+                weight = (f32)(phase - *time) / (f32)(time[-1] - *time);
+                complement = 1.0f - weight;
+                color = D_800A6E0C + value * 3;
+                record[0x1C] = (u32)((f32)(u32)color[0] * complement + (f32)(u32)color[-3] * weight);
+                record[0x1D] = (u32)((f32)(u32)color[1] * complement + (f32)(u32)color[-2] * weight);
+                record[0x1E] = (u32)((f32)(u32)color[2] * complement + (f32)(u32)color[-1] * weight);
+                break;
+            }
+            value++;
+            time++;
+        } while (value < color[0x26] + 8);
+    }
     return 0;
 }
 

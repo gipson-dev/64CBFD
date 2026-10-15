@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
+Install func_1516E8CC's full packed RGB callback, all 248 linked words exact
+with five register guards and two unreachable-tail guards. Pass 14 checks,
+close the entire image including an exact 21-byte symbol serialization, and
+preserve all other code/data/guard history. Game 2,896/4,828, total
+3,569/5,501, zero drift. Bank tools 8981c28 first and continue at the 91-word
+actor-type-gated preset func_1516ED68 without narrowing the full objective.
+
+2026-10-15:
 [Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
 Recover func_1516E8CC's packed intensity/extent/RGB behavior and pin both
 tables. Pass seven checks, 3,072 paired guest cases and native32 O2/O0; keep

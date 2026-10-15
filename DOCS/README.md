@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packed RGB callback byte match](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
+  Install all 248 linked words with explicit register/tail guards, full image
+  closure and real callback-chain qualification; retain raw-C limitations.
 - [Packed color callback semantic recovery](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
   Recover and test packed intensity, extent and RGB behavior while explicitly
   rejecting the still-nonmatching C body; preserve all production inputs.

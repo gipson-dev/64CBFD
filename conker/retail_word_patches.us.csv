@@ -15194,3 +15194,10 @@ generated_19A8B0,func_1516D678,0xAC,0xA0830025,0xA08E0025,-,-,Preserve closed fi
 generated_19A8B0,func_1516ECAC,0x48,0x3C190000,0x3C180000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Preserve closed fade-product operand loads and commutative multiply,,,false
 generated_19A8B0,func_1516ECAC,0x4C,0x90980026,0x8F180000,-,R_MIPS_LO16:D_800BE9E4,Preserve closed fade-product operand loads and commutative multiply,,,false
 generated_19A8B0,func_1516ECAC,0x50,0x8F390000,0x90990026,R_MIPS_LO16:D_800BE9E4,-,Preserve closed fade-product operand loads and commutative multiply,,,false
+generated_19A8B0,func_1516E8CC,0xC0,0x90870026,0x90850026,-,-,Preserve closed initial ramp-index register lifetime,,,false
+generated_19A8B0,func_1516E8CC,0xCC,0x24EC0008,0x24AC0008,-,-,Preserve closed initial ramp-index register lifetime,,,false
+generated_19A8B0,func_1516E8CC,0xD0,0x00EC082A,0x00AC082A,-,-,Preserve closed initial ramp-index register lifetime,,,false
+generated_19A8B0,func_1516E8CC,0xD8,0x00E01825,0x00A01825,-,-,Preserve closed initial ramp-index register lifetime,,,false
+generated_19A8B0,func_1516E8CC,0xDC,0x00ED2821,0x00AD2821,-,-,Preserve closed initial ramp-index register lifetime,,,false
+generated_19A8B0,func_1516E8CC,0x3D0,0x03E00008,0x03E00008,-,-,Preserve original unreachable duplicate return and reachable delay slot,0x00000000,-,false
+generated_19A8B0,func_1516E8CC,0x3D4,0x00000000,0x03E00008,-,-,Preserve original unreachable duplicate return and reachable delay slot,0x00000000,-,false
