@@ -129,6 +129,21 @@ incremental consumer-commit worker separately.
 Claude budget/calls: zero. Direct assembly, compiler, oracle, relocation and
 literal-image evidence settle this bounded task without an advisory call.
 
+## Post-Bank Verification
+
+Consumer `37621fb5` banks the typed C body, two frame guards, tools `c51788d`
+pin and documentation. All 14 post-bank top-level checks pass in 75.216 seconds,
+including the historical image gates and fresh 801-file archive check. All 28
+installed inputs retain their expected hashes: three deliberate changes and
+25 unchanged inputs. The normal ELF/progress build is up to date.
+
+The active consumer/tools checkouts are clean before this documentation receipt.
+All 606 final mirror fingerprints and `ddbdd16` HEAD stay fixed; the five owned
+copies remain byte-identical and all 601 initial fingerprints are preserved.
+The consumer commit's incremental graph workers complete at 41,055 nodes /
+81,161 edges / 3,818 communities, without forcing the smaller full scan.
+No push or host/Release operation. Keep the wider source/Game goal active.
+
 ## Next Action And Limits
 
 `func_1511490C` in `generated_13D350.c` is still a zero-return production stub.

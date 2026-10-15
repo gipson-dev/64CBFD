@@ -39,6 +39,10 @@ Game 2,888/4,829 (59.81%), total 3,561/5,502 (64.72%), different 1,941, zero
 drift; converted counts unchanged. Bank tools c51788d first, preserve archive,
 601 older mirror fingerprints and Release. Next: recover matrix-builder
 func_1511490C, still a production stub; no complete gameplay or host claim.
+Consumer 37621fb5 banks source/guards/pin/docs. All 14 post-bank checks pass
+in 75.216s; all 28 input hashes and 606 final mirror fingerprints stay fixed.
+The incremental graph worker finishes at 41,055 nodes / 81,161 edges without
+forcing the smaller full scan. Keep the guarded/raw boundary explicit.
 
 Prior capture-request slot installed and guarded byte-exact:
 [Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md).

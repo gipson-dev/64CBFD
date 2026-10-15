@@ -10,6 +10,7 @@
 - [x] Match all 51 linked words and independently close all 152 changed ELF bytes to the target slot/extent, preserving 83 neighbors and all protected data.
 - [x] Pass 14 final checks in 77.922s, including exact historical inverses and all 801 archive fingerprints; bank tools c51788d first and preserve the older dirty mirror and Release.
 - [x] Measure Game 2,888/4,829, total 3,561/5,502, different 1,941, zero drift; converted counts unchanged. README aggregate rows only.
+- [x] Bank consumer 37621fb5 after tools c51788d; pass 14 post-bank checks in 75.216s, retain all 28 input hashes / 606 final mirror fingerprints and await the 41,055-node / 81,161-edge incremental graph worker without forcing a smaller scan.
 - [ ] Recover func_1511490C's still-stubbed matrix builder and continue the wider source/Game queue. Do not infer complete gameplay or automatic host transfer.
 
 ## Capture Request Guarded Byte Match - 2026-10-15
