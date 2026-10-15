@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Texture Vertex Span Lifetime Tradeoffs - 2026-10-15
+
+[Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
+
+- [x] Screen27 complete live-role/endpoint/induction/copy controls; keep339-word/frame0xA8/258-difference HOMES as the best seed.
+- [x] Prove the opcode/count merge recovers maximumT0/countA3 but wrongly moves opcodeA3; retain274 overall differences and no C-match credit.
+- [x] Capture both selected compiler pipelines/mode5; distinguish actual raw identities, four-word endpoint schedules and unsupported numeric allocation costs.
+- [x] Pass14 final selected checks56.686s, two complete guest/native candidates and a returned clobbered-count control; preserve55/63 mismatching private prefixes.
+- [x] Bank tools518e1ab first, preserve18 production inputs/801 archive hashes/576 unrelated mirror fingerprints; shared/standalone checks pass. Keep README/metrics and Release unchanged.
+- [ ] Bank consumer pin/docs, post-bank checks and the incremental graph receipt without forcing the smaller full scan.
+- [ ] Continue independent count/maximum allocation and the unresolved end-tag/control-flow schedule before full private/connection/rebase/image installation gates. Keep the full source/Game/rectangle goal active.
+
 ## Texture Vertex Span Compiler Phase Evidence - 2026-10-15
 
 [Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):

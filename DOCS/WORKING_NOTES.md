@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
+Compile27 further controls; prove the opcode/count lifetime merge recovers
+maximumT0/countA3 but wrongly moves opcodeA3 and worsens to274 differences.
+Fresh phase/mode5 evidence and14 final checks pass56.686s. Keep the258-
+difference seed and production/README totals fixed. Tools518e1ab is banked
+first; preserve801 archive fingerprints,576 unrelated mirror paths and Release.
+
+2026-10-15:
 [Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
 Trace actual CFE/UOPT/UGEN records and32-variable/51-constraint mode5 integer
 evidence; the maximum/count/end-tag roles already differ before final UGEN.

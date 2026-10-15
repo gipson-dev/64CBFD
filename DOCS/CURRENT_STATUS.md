@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a01819f; tools are committed before the consumer pin.
+  checkpoint pins tools518e1ab; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Texture vertex-span lifetime tradeoff verified; still NOT installed/exact:
+[Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md).
+Screen27 further complete controls. Merging opcode/count recovers maximumT0/
+countA3 but wrongly assigns opcodeA3 and worsens to274 differences; moving the
+index initialization emits310 words/288 differences. Fresh CFE/UOPT/UGEN and
+31-variable/50-constraint mode5 evidence verify the tradeoff, not a numeric
+priority formula. Two selected candidates pass guest/native behavior, but55/63
+private prefixes still differ. All14 final checks pass56.686s after the explicit
+native unused-local annotation. Bank tools518e1ab first; preserve18 production
+hashes,801 archive fingerprints and576 unrelated mirror fingerprints. HOMES
+remains339 words/frame0xA8/258 differences. README/metrics and Release stay fixed.
 
 Texture vertex-span compiler phase narrowed; still NOT installed/exact:
 [Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md).

@@ -166,6 +166,11 @@ full objective active; this is compiler evidence, not another installed match.
 
 ## Next Action
 
+Continued in [Note 1383](1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
+the actual opcode/count lifetime merge recovers maximumT0/countA3 but wrongly
+moves opcodeA3 and worsens to274 differences. Keep the258-difference seed;
+twenty-seven more controls do not yield an installation or new C-match credit.
+
 Continue THIS HOMES scanner's actual UOPT lifetime/interference graph, especially
 why maximum precedes count allocation and why -33 is not a loop-carried register
 constant. Test a bounded change in value reuse or lifetime against both phase

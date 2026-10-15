@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Texture Vertex Span Lifetime Tradeoffs
+
+[Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
+Screen27 complete controls and qualify two source-lifetime tradeoffs with fresh
+compiler captures and guest/native behavior. The opcode/count merge recovers
+two retail roles but misallocates opcode and worsens overall matching; keep
+the258-difference seed. All14 final checks pass56.686s after the native-only
+unused-local annotation. Bank tools518e1ab first; preserve18 production inputs,
+801 archive fingerprints and576 unrelated mirror fingerprints. No production,
+README/metric, push or host/Release change; continue this same matching boundary.
+
 ## 2026-10-15 Texture Vertex Span Optimizer Phase Evidence
 
 [Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):

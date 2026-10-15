@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Texture vertex span lifetime role tradeoffs](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md):
+  Test27 complete controls and trace the partial maximum/count allocation
+  recovery without claiming a match. Qualify two public candidates while
+  retaining the private mismatch and unchanged production/README metrics.
+
 - [Texture vertex span optimizer allocation and controlflow traces](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
   Capture actual CFE/UOPT/UGEN phases and mode5 integer constraints, ruling
   out60 more forms without claiming a match. Keep production and README fixed;
