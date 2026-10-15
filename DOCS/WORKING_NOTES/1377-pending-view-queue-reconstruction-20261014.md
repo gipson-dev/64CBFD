@@ -12,7 +12,7 @@ and frozen host Release. This routine does not complete the wider goal.
 2. [x] Recover the complete signed inclusive-count loop, sentinel skip, call-then-consume order, post-call count reload and unconditional dirty-byte clear.
 3. [x] Qualify full owner/pool/relocation preservation, both padders/rebases, raw and padded semantics, native32 and effective negative controls.
 4. [x] Close the entire installed image and affected immutable history; measure progress and update aggregate-only README plus working indexes.
-5. [ ] Commit tools first, source/pin/docs next, then post-bank evidence; leave the full source/Game goal active.
+5. [x] Commit tools first, source/pin/docs next, then post-bank evidence; leave the full source/Game goal active.
 
 ## Retail Interface And Recovery
 
@@ -142,6 +142,19 @@ Keep immutable before fixtures; do not recapture current state, mask metadata
 sections or discard unknown inputs to make history tests pass. Bank only after
 every changed ELF byte, symbol definition and string ordering is accounted for.
 Root README receives measured aggregate rows only, not this narrative.
+
+## Post-Bank Verification
+
+Tools64a6bda precedes consumer f520037c, which banks the C recovery, three
+guard rows, tools pin and aggregate-only README/documentation updates. All9
+selected post-bank installed-image/corruption/inverse checks pass35.556s,
+including the orthographic and fixed-converter historical gates. Incremental
+ELF/progress are up to date; fresh verification retains all three installed
+hashes above and progress e3ea336d. Both active checkouts are clean before
+this receipt. The consumer's incremental graph worker completes at40,938
+nodes/81,101 edges/3,766 communities without forcing the smaller full scan.
+No push, mirror-history mutation or host/Release operation. The wider goal
+and separate known-open rectangle gate remain active.
 
 ## Next Target
 

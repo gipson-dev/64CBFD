@@ -10,7 +10,7 @@
 - [x] Pass4,704 guest cases,2,052 fired prefixes and2,352 native32 cases/profile, with six effective compiled semantic controls and96 actual queue/parent/child connections under bounded trig/SDK contracts.
 - [x] Close all132 changed ELF bytes to target code/extent only; retain189,088 protected bytes/720 owners. Measure Game2,881/4,830, total3,554/5,503, different1,949, zero drift.
 - [x] Pass44 selected target/SDK/history checks107.136s and shared/standalone checks; bank tools64a6bda first, retaining801 archive hashes and545 unrelated mirror fingerprints.
-- [ ] Bank source/pin/docs and post-bank build/graph evidence; preserve the archive/mirror and frozen Release.
+- [x] Bank consumer f520037c, pass9 selected post-bank checks35.556s, preserve all four installed hashes in an up-to-date incremental build, and await the40,938-node/81,101-edge graph worker without forcing a smaller scan. Preserve the archive/mirror and frozen Release.
 - [ ] Recover49-word func_1510B458's near/far command and55-word func_1510B51C's clipping queue; keep full source/Game/rectangle and actual hardware/gameplay acceptance open.
 
 ## View Orthographic Setup Direct Match - 2026-10-14

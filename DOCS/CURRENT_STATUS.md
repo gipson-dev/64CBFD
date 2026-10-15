@@ -46,7 +46,10 @@ active and host Release frozen. All44 selected target/SDK/history checks pass
 107.136s; shared and standalone checks pass. Bank tools64a6bda first, preserving
 all801 archive hashes and545 unrelated mirror fingerprints. Prior Note1376's
 106-check receipt is reused only for unchanged non-target behavior, not claimed
-as a fresh broad run. Consumer/post-bank evidence follows.
+as a fresh broad run. Consumer f520037c banks source/guards/pin/docs; all9
+selected post-bank checks pass35.556s. Incremental ELF/progress are up to date
+with all four installed hashes fixed. The incremental graph worker completes
+at40,938 nodes/81,101 edges without forcing the smaller full scan.
 
 Previous view orthographic setup directly matched from semantic C:
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md).
