@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Record Fade Callback Direct Match
+
+[Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
+Replace func_1516F9C4's stub with semantic packed-record C, all 49 raw/padded
+words and frame 0x18 exact, no guards/profile changes. Preserve full-word
+clamps/completion, narrow stores and both helper pointers. Pass 14 installed
+checks and 276 actual-current slot-3 dispatcher/helper/cleanup pairs; keep
+lower unlink/type destructors opaque. Close all 138 ELF changes to target
+slot/extent only; all other bytes, 55 of 57 inputs and protected data stay
+fixed. Fresh Game 2,902/4,828, total 3,575/5,501, different 1,926, zero drift.
+Bank tools f9563ed first, keep README aggregate-only and continue func_1516FA88
+within the full additional-source/Game objective.
+
 ## 2026-10-15 Paired Record Event Direct Match
 
 [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):

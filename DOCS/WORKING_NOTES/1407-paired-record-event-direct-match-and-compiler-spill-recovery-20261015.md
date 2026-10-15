@@ -237,3 +237,11 @@ copies. Eight docs resolve **5,046 relative links, zero broken**. The actual
 captured source-commit graph workers finish at **41,253 nodes / 81,356 edges /
 3,794 communities**, without forcing the refused smaller full scan.
 Continue func_1516F9C4 and the complete additional-source/Game queues above.
+
+## Next-Function Resolution
+
+[Note 1408](1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md)
+finishes func_1516F9C4 directly from C, all 49 words / frame 0x18, without
+guards or profile changes. It also qualifies the actual current slot-3
+dispatcher/helper/cleanup chain. Preserve this note's earlier measurements
+and captures; the full additional-source/Game objective remains open.

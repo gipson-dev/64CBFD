@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
+Match func_1516F9C4 directly from C, all 49 words / frame 0x18, no guards or
+profile changes. Fourteen installed checks cover full-word clamps, private/
+fault/native/rebase behavior and the actual slot-3 dispatch/helper/cleanup
+chain. Close all 138 ELF changes to target slot/extent only. Game 2,902/4,828,
+total 3,575/5,501, different 1,926, zero drift. Bank tools f9563ed first;
+continue func_1516FA88 and the full additional-source/Game queues without
+claiming lower destructor or natural gameplay execution.
+
+2026-10-15:
 [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
 Match func_1516F548 directly from C, all 199 words / frame 0xF8, with no guards
 or profile changes. Four compiler traces prove the real 40-byte UOPT spill

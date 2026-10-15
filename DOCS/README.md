@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Record fade callback direct match and live dispatch chain](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
+  All 49 words directly from C, 14 checks and target-only whole-image closure;
+  qualify the actual slot-3 dispatcher, helpers and completion cleanup path.
 - [Paired record/event direct match and compiler spill recovery](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
   All 199 words directly from C, no guards; real compiler spill provenance,
   17 checks, complete image closure and unchanged caller/runtime boundaries.

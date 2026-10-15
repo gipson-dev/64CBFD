@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Record Fade Callback Direct Match And Live Dispatch Chain - 2026-10-15
+
+[Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
+
+- [x] Recover func_1516F9C4's signed full-word clamp/completion lifetime, exact byte/halfword fields, shift/wrap semantics and original record-pointer helper arguments. Replace the stub with all 49 raw/padded words / frame 0x18 exact, no guards/profile/shared-header changes.
+- [x] Pass 14 installed checks in 48.885s: 3,072 complete private pairs, 408 fired faults, 48 bounded alias pairs, native32 O2/O0 across all 256 values, eight effective guest/native controls, three independent rebases and 801 archive fingerprints. Verify the stored-byte-zero/full-word-256 completion distinction.
+- [x] Verify the live callback table's slot 3 and all nine pointers, then qualify 276 actual-current dispatcher/callback/helper/cleanup pairs, including 116 completion paths. All eight connected bodies / 213 words match retail; preserve the lower unlink/type-destructor opacity and no-gameplay boundary.
+- [x] Close all 138 ELF changes to target slot/extent only, without metadata exclusions. Preserve every other byte, 55 of 57 inputs, guard CSV/progress/profiles and 189,088 protected bytes across 720 owners. Fresh Game 2,902/4,828, total 3,575/5,501, different 1,926, zero drift; conversions fixed.
+- [x] Bank tools f9563ed first, preserve all 687 initial older-mirror fingerprints / 691 final paths and pass Windows syntax/standalone checks. Root README changes only its aggregate rows; no push, host/Release operation or dependency/account change.
+- [ ] Recover func_1516FA88's 81-word single-factory preset, six-input ABI, register-coordinate sign extension, complete 49-word packet and full-word variant/context forwards. Inspect original callers before adopting argument types or narrowing the fourth input.
+- [ ] Continue the complete additional-source/Game repair/binding/unanchored queues, inherited-stack renderer deferral and caller restorations. The callback-table match does not imply the other entries or the broader goal are complete.
+
 ## Paired Record Event Direct Match And Compiler Spill Recovery - 2026-10-15
 
 [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
@@ -9,7 +21,7 @@
 - [x] Pass 17 installed checks in 62.530s: 2,072 complete private pairs, 1,152 fired faults, native32 O2/O0, seven effective guest controls, three rebases, 128 real factory pairs, 801 archive fingerprints and both original caller windows. Keep the one optimized-away/native-only control and current caller placeholders explicit.
 - [x] Close all 620 ELF changes to target slot/extent only, with no metadata exclusions. Preserve all other bytes, 55 of 57 inputs, guards/progress/profiles and 189,088 protected bytes across 720 owners. Fresh Game 2,901/4,828, total 3,574/5,501, different 1,927, zero drift; conversions fixed.
 - [x] Bank tools 2018515 first, preserve all 682 initial older-mirror fingerprints / 687 final paths and pass Windows syntax/standalone checks. Root README changes only its aggregate rows. No push, host/Release operation or dependency/account change.
-- [ ] Recover func_1516F9C4's 49-word fade/completion callback, signed full-word clamp lifetime, exact byte/halfword fields and two real helper calls. Do not copy the archive's premature u8 truncation, widened byte fields or wrong first-helper pointer argument.
+- [x] Recover func_1516F9C4's 49-word callback and actual slot-3 dispatch chain in [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md). Correct the archive's premature u8 truncation, widened byte fields and wrong first-helper pointer argument; all raw/padded words now match without guards.
 - [ ] Continue the full additional-source/Game queues, inherited-stack renderer deferral and caller restorations. This one direct match does not complete the broader objective.
 
 ## Paired Record Event ABI And Candidate Rejection - 2026-10-15

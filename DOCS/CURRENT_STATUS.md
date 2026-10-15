@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2018515; tools are committed before the consumer pin.
+  checkpoint pins tools f9563ed; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Record fade callback installed directly from C:
+[Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md).
+func_1516F9C4 matches all 49 raw/padded words and frame 0x18, without guards
+or profile changes. Preserve the signed full-word clamp/completion value,
+exact byte/halfword stores and original record pointer in both helper calls.
+All 14 installed checks pass in 48.885s: 3,072 complete private pairs,
+408 fired faults, bounded global aliases, native32 O2/O0 across all 256 byte
+values, eight effective guest/native controls, three rebases and 801 archive
+hashes. The actual current slot-3 callback table/dispatcher/helper/cleanup
+chain passes 276 pairs, including 116 cleanup paths; all eight connected
+bodies / 213 words are freshly retail-exact. Lower unlink/type destructors
+remain opaque; no full-gameplay claim. Close all 138 ELF changes to target
+slot/extent only; all other bytes, 55 of 57 inputs, guards/progress and
+189,088 protected bytes / 720 owners stay fixed. Fresh Game 2,902/4,828
+(60.11%), total 3,575/5,501 (64.99%), different 1,926, zero drift; conversions
+unchanged. Bank tools f9563ed first; preserve all 687 initial older-mirror
+fingerprints / 691 final paths. Next func_1516FA88, 81 words / frame 0xD0;
+retain the full additional-source/Game objective and remaining repair queues.
 
 Paired factory/event routine installed directly from C:
 [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md).

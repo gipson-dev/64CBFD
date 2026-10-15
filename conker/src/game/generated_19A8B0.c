@@ -510,7 +510,36 @@ void func_1516F984(u8 *arg0, u32 arg1) {
     *(s16 *) (arg0 + 0x18) = val;
 }
 
-s32 func_1516F9C4() {
+/* Keep the clamp value full-width; narrow only the stored record fields. */
+s32 func_1516F9C4(u8 *record) {
+    s32 extent;
+    s32 value = record[0x1F];
+
+    if (record[0x24] != 0) {
+        if (value != 255) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 4));
+            if (value >= 256) {
+                value = 255;
+            }
+            record[0x1F] = value;
+        }
+    } else {
+        if (value != 0) {
+            value = (s32)((u32)value - ((u32)D_800BE9E4 << 3));
+            if (value < 0) {
+                value = 0;
+            }
+            record[0x1F] = value;
+        }
+        extent = (s32)((u32)value << 9) >> 8;
+        *(s16 *)(record + 0x16) = extent;
+        *(s16 *)(record + 0x14) = extent;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    func_1516F864(record);
+    func_1516F984(record, 0xF0);
     return 0;
 }
 
