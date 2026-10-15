@@ -40,6 +40,9 @@ register roles/control flow, preserving archive/mirror and frozen Release.
 All16 final selected checks pass53.618s after correcting the receipt-input
 collision; shared/standalone checks pass. Bank tools474ff2c first, preserving
 all801 archive hashes and570 older mirror fingerprints.
+Consumer b3975451 banks the pin/docs; all8 selected post-bank checks pass24.397s.
+The incremental build is up to date, all18 production hashes remain fixed and
+the graph worker completes at40,981 nodes/81,142 edges without a forced scan.
 
 Private texture-selected vertex-span reconstruction; NOT installed or exact:
 [Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md).

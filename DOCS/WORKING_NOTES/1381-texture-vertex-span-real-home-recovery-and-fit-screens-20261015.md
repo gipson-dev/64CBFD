@@ -10,7 +10,7 @@ dirty mirror, production inputs and frozen host Release untouched.
 1. [x] Recover the real extent, index-array and vertex-base homes using only existing local declarations.
 2. [x] Independently witness the improvement with18 guest-only private-home aliases against both retail and the previous draft.
 3. [x] Compile102 complete fitting forms/controls across six groups, without guards, profile changes or production installation.
-4. [ ] Finish target/history/tool verification, bank tools first, pin/docs next and post-bank evidence last.
+4. [x] Finish target/history/tool verification, bank tools first, pin/docs next and post-bank evidence last.
 5. [ ] Continue THIS scanner's live maximum/count/end-tag roles, early return computation and exact control flow before installation or credit.
 
 ## Real Homes Recovered
@@ -146,6 +146,21 @@ The full graph update fails closed at19,189 versus40,971 nodes and retains
 19,398 nodes from2,972 excluded-but-present files. Never force it; await the
 consumer's incremental commit worker. No push, new tool setup or host/Release
 operation. Keep the full source/Game and separate rectangle queues active.
+
+## Post-Bank Verification
+
+Tools474ff2c precedes consumer b3975451, which banks only the tools pin and
+working documentation. All8 selected post-bank home/private-prefix/immutable-
+production/private-alias/screen-ownership and preceding matrix image/corruption/
+inverse checks pass24.397s. All six screen input files remain byte-fixed after
+their distinct summary receipt. Incremental ELF/progress are up to date; all18
+captured production hashes and the six Note1379 installed hashes remain fixed.
+Git confirms no README or conker changes since2721b2e0. Both active checkouts
+are clean before this receipt; all573 mirror dirty fingerprints and its HEAD
+remain unchanged since the exact owned sync. The incremental graph worker
+completes at40,981 nodes/81,142 edges/3,951 communities without forcing the
+smaller scan. No producer remains live. No additional advisory, push, mirror-
+history mutation or host/Release operation. The full objective stays active.
 
 ## Next Action
 

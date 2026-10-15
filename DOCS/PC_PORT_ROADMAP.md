@@ -8,7 +8,7 @@
 - [x] Prove18 guest private-home aliases now agree with retail while the previous source fails all18. Keep258 raw differences and55/63 nonmatching prefixes explicit.
 - [x] Compile102 bounded fitting forms/controls; independently test one tool-free advisory, rejecting unchanged end-tag forms and twelve-word capture reallocations as matching fixes.
 - [x] Pass16 final selected checks53.618s after repairing the screen-receipt collision; shared/standalone checks pass. Bank tools474ff2c first, preserving801 archive hashes and570 older mirror fingerprints.
-- [ ] Bank consumer pin/docs and post-bank evidence; preserve all18 production inputs, archive/mirror, README totals and frozen Release.
+- [x] Bank consumer b3975451 after tools474ff2c, pass8 post-bank checks24.397s, retain all18 production hashes in an up-to-date build and await the40,981-node/81,142-edge incremental worker. Preserve archive/mirror, README totals and frozen Release.
 - [ ] Continue THIS recovered-home scanner's maximum/count/end-tag roles and early return/control-flow schedule, then full private/connection/rebase/image gates before installation.
 
 ## Texture Vertex Span Private Reconstruction - 2026-10-15
