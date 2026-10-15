@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-14 View Orthographic Setup Direct C Match
+
+[Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
+Restore func_1510B070's46 words directly from C with its original frame,
+unused incoming home, signed16 clip defaults and typed orthographic call.
+No guards, profile/header changes or altered neighbors. Native, actual SDK,
+alias/prefix and independent whole-image checks qualify all219 changed bytes;
+Game2,880/4,830, total3,553/5,503, different1,950, zero drift. Root README
+changes aggregate rows only; actual caller/gameplay acceptance remains separate.
+All106 selected target/SDK/caller/history checks pass201.247s. Tools5e0f509 is
+committed first; retain all801 archive hashes and538 unrelated mirror files.
+
 ## 2026-10-14 Original Fixed-Matrix Converter Ownership Correction
 
 [Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):

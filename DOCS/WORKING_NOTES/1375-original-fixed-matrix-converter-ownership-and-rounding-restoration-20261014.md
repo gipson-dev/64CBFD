@@ -1,5 +1,10 @@
 # Original Fixed Matrix Converter Ownership And Rounding Restoration
 
+Follow-up: [Note1376](1376-view-orthographic-setup-reconstruction-20261014.md)
+recovers func_1510B070 directly from C, retaining the separate truncating SDK
+chain and qualifying the complete new target/image delta. Measurements below
+remain this prior dated ownership-correction checkpoint.
+
 ## Scope
 
 Resume the active full-source/Game goal from consumer76d7c9ad and tools efe2ace.

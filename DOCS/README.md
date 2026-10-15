@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View orthographic setup reconstruction](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
+  Direct46-word semantic C match with zero guards, signed16 defaults and a
+  typed eight-word call. Qualify full native/guest state and actual SDK
+  connections; preserve all protected data and non-target code/definitions.
+
 - [Original fixed-matrix converter ownership and rounding restoration](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
   Restore the116-word unrolled guMtxF2L slot and current-rounding semantics;
   distinguish it from the64-word C guMtxF2L2 implementation. Qualify all382

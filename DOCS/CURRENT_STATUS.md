@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools0bc11d9; tools are committed before the consumer pin.
+  checkpoint pins tools5e0f509; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,30 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Original fixed-matrix converter restored; C ownership corrected:
+View orthographic setup directly matched from semantic C:
+[Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md).
+Recover func_1510B070's46-word/frame0x28 body, retaining its unused incoming
+argument home, signed16 defaults, far reload and typed eight-word matrix call.
+The simplest source emits all46 words directly, with zero guards or profile/
+header changes. Twenty complete forms include four exact forms; all twelve
+raw owner neighbors/pools/relocations remain fixed. Pass10 pre-install checks
+21.326s and three installed image/negative/inverse gates12.008s. Cover2,052
+guest cases,272 fired prefixes and1,056 native32 cases per O2/O0 profile,
+including the actual SDK C bodies; four semantic controls fail under both
+IDO and native32. Freshly compiled210-word SDK chains pass96 connected cases
+in a finite exact-conversion domain. The full219-byte ELF delta is confined
+to155 target bytes, one12->184 extent byte and three checked symbol/string
+groups. All189,088 protected bytes/720 owners and all guards/progress rows
+remain fixed. ELF ebe9dc50, progress e3ea336d. Game2,880/4,830 (59.63%),
+total3,553/5,503 (64.56%), different1,950, zero drift; converted counts unchanged.
+Original init/scene callers remain production placeholders, so this is not
+working gameplay/camera or full hardware/FCSR acceptance. Next continue42-word
+func_1510B3B0's pending-view queue and the full source/Game/rectangle work.
+All106 selected target/SDK/caller/history checks pass201.247s, with shared and
+standalone tools checks also passing. Tools5e0f509 is banked first;801 archive
+hashes and538 unrelated mirror fingerprints are preserved. No host operation.
+
+Previous original fixed-matrix converter restoration and C ownership correction:
 [Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md).
 guMtxF2L's old C equals the separate guMtxF2L2's64 retail words and truncates
 where this slot follows current rounding. Restore the original115-instruction/

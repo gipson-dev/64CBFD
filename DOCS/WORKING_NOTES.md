@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-14:
+[Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
+Recover func_1510B070 directly across46 words/frame0x28 with zero guards.
+Qualify signed defaults, retained unused home, all eight arguments,2,052 guest
+cases,272 prefixes and1,056 native cases/profile; execute the real SDK chain
+in96 finite-domain guest cases. Close the complete219-byte ELF delta, with
+all neighbors/protected data/guards/progress fixed. Game2,880/4,830,
+total3,553/5,503, different1,950, zero drift. Keep the full goal active.
+All106 selected checks pass201.247s; tools5e0f509 first, with the archive and
+538 unrelated mirror fingerprints preserved and no host/Release operation.
+
+2026-10-14:
 [Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
 Restore guMtxF2L's116-word original assembly slot and rounding behavior. The
 incorrect C was exactly guMtxF2L2's64-word implementation. Pass16 installed/

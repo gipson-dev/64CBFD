@@ -2,6 +2,12 @@
 
 extern u8 *D_800BE628;
 
+extern s16 D_800DD2F2, D_800DD2F4;
+extern f32 D_800D3670, D_800A2C20;
+extern Mtx D_800D9B28;
+void func_151EF954(Mtx *matrix, f32 left, f32 right, f32 bottom, f32 top,
+                  f32 nearPlane, f32 farPlane, f32 scale);
+
 typedef struct {
     u8 padding0[0xC];
     f32 extentX, extentY, axisScaleX, axisScaleY, projectionX, projectionY;
@@ -50,8 +56,15 @@ extern Gfx *func_151742EC(Gfx *, s16);
 
 /* Non-matching placeholders for the text-only asm slice asm/138520.s. */
 
-s32 func_1510B070() {
-    return 0;
+/* Initialize clip defaults and build the shared orthographic projection. */
+void func_1510B070(s32 unused) {
+    D_800D9B20 = D_800DD2F2;
+    D_800D9B1C = D_800DD2F4;
+    D_800D3670 = 100.0f - D_800D9B1C;
+    func_151EF954(&D_800D9B28,
+        -PROJECTION_VIEWS_138520[0].extentX, PROJECTION_VIEWS_138520[0].extentX,
+        -PROJECTION_VIEWS_138520[0].extentY, PROJECTION_VIEWS_138520[0].extentY,
+        1.0f, D_800A2C20, 1.0f);
 }
 
 /* Update effective FOVs, projection scales and the selected view's matrix. */

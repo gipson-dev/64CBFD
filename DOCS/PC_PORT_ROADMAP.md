@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## View Orthographic Setup Direct Match - 2026-10-14
+
+[Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
+
+- [x] Recover the full46-word/frame0x28 void command with one retained unused32-bit argument, signed16 defaults, far reload and a correct private Mtx* callee prototype.
+- [x] Screen20 complete forms/four exact forms; retain the simplest direct source with zero guards, profile or shared-header changes and twelve fixed raw owner neighbors.
+- [x] Match both padders and independent original/generated rebases; preserve entry placement, pools, relative relocations and all guard bytes.
+- [x] Pass2,052 guest cases,272 fired prefixes and1,056 native32 cases/profile, with four effective semantic controls under both IDO and O2/O0 GCC.
+- [x] Freshly compile the210-word SDK chain under its real O3 recipes and execute96 finite exact-conversion guest cases, plus48 actual SDK C cases per native profile.
+- [x] Account for all219 changed ELF bytes and preserve189,088 protected bytes/720 owners; measure Game2,880/4,830, total3,553/5,503, different1,950, zero drift.
+- [x] Pass106 selected target/SDK/caller/history checks201.247s and shared/standalone tools checks; bank tools5e0f509 first, preserving801 archive hashes and538 unrelated mirror fingerprints.
+- [ ] Finish the consumer commit and post-bank build/graph verification with Release frozen.
+- [ ] Recover42-word func_1510B3B0's pending-view queue; keep original caller/hardware/FCSR/gameplay acceptance and the full source/Game/rectangle queues open.
+
 ## Original Fixed-Matrix Converter Restoration - 2026-10-14
 
 [Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md):
@@ -12,7 +26,8 @@
 - [x] Correct only guMtxF2L's progress classification c->asm. Exact C counts stay3,552/2,879; denominators become5,503/4,830, different1,951, zero drift. Keep README aggregate-only.
 - [x] Pass93 selected target/history/caller checks166.231s, retain effective CSV corruption/capture controls and shared/standalone tools checks; bank tools0bc11d9 first, preserving801 archive files and531 unrelated mirror fingerprints.
 - [x] Bank consumer b2f95045 with the original assembly tracked; pass28 selected post-bank checks40.120s, preserve four installed hashes in an up-to-date incremental build, and await the40,918-node/81,081-edge graph worker without forcing a smaller scan.
-- [ ] Continue ordinary46-word func_1510B070 clipping/orthographic setup and full donor/binding/codec/Game work; keep actual FCSR/hardware/runtime and separate rectangle history open.
+- [x] Continue ordinary46-word func_1510B070 clipping/orthographic setup; see Note1376 for its direct C match and qualification.
+- [ ] Continue full donor/binding/codec/Game work; keep actual FCSR/hardware/runtime and separate rectangle history open.
 
 ## View Projection Family Matches - 2026-10-14
 
