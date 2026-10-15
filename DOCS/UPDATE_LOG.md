@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Counter Preset Guarded Match
+
+[Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
+Install func_1516EED4's signed counter gate and full factory packet, all 84
+linked words exact. Raw C stays 85/76; 38 guards preserve a closed allocation
+cycle, opening index reuse/branch delay and callee binding. Pass 14 installed
+checks and close all 252 ELF changes to target slot/extent with no metadata
+allowances. Preserve all other code/data, 49 of 52 inputs and old guard history.
+Fresh Game 2,898/4,828 (60.02%), total 3,571/5,501 (64.92%), different 1,930,
+zero drift. Bank tools a4ac643 first and continue at func_1516F024 without
+narrowing the broader source/Game objective. README changes aggregate rows only.
+
 ## 2026-10-15 Counter Preset Semantic Recovery
 
 [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):

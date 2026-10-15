@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f14494c; tools are committed before the consumer pin.
+  checkpoint pins tools a4ac643; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Counter-preset semantic recovery, not installed:
+Counter preset installed and guarded-exact:
+[Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md).
+func_1516EED4 matches all 84 linked words, frame0xD0. Raw C remains 85/76;
+38 guards preserve a closed temporary-register cycle, one redundant-load
+omission, its branch adjustment and the unchanged call binding. All 14 installed
+checks pass in 138.988s: 3,240 literal private guest cases, 138 fired prefixes,
+native32 O2/O0, ten controls, three independent rebases, 24 aliases and 128 actual
+current factory-chain pairs. Close all 252 ELF changes to target slot/extent,
+with every other byte and 49 of 52 inputs fixed, including protected data and
+all old guards/progress rows. Fresh Game 2,898/4,828 (60.02%), total 3,571/5,501
+(64.92%), different 1,930, zero drift; conversions unchanged. Bank tools a4ac643
+first and preserve all 665 initial older-mirror fingerprints / 669 final paths.
+Next func_1516F024, 103 words/frame0x68; retain the full source/Game objective.
+
+Historical counter-preset semantic recovery, superseded by Note 1402 above:
 [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md).
 Recover func_1516EED4's signed slot/threshold gate, pre-call counter clear
 and complete 49-word packet. Inline subscripts repair input-home clear ordering;

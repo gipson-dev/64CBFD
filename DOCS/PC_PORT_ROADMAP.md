@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Counter Preset Guarded Match - 2026-10-15
+
+[Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
+
+- [x] Replace func_1516EED4's stub with semantic four-input C, preserving the signed slot/threshold gate, pre-call counter clear and complete 49-word factory packet.
+- [x] Match all 84 linked words/frame0xD0 with 38 expected-word guards: 35 closed register-allocation replacements, one branch adjustment, one redundant-load omission and one identity call-binding check. Raw C remains 85/76; no profile, frame or FP guard changes.
+- [x] Pass all 14 installed checks in 138.988s, including 3,240 full-private guest cases, 138 fired prefixes, native32 O2/O0, ten controls, three independent rebases, 24 full-private aliases, 128 current real factory/allocator pairs and 801 archive hashes.
+- [x] Close all 252 ELF changes to target slot/extent only. Preserve every other byte, 49 of 52 inputs, protected data, all 29 neighbors, old guard history and progress rows. Measure Game 2,898/4,828, total 3,571/5,501, different 1,930, zero drift; conversions unchanged.
+- [x] Bank tools a4ac643 first, preserve all 665 initial older-mirror fingerprints and copy only four absent owned paths for 669. Pass native Windows syntax/ROM-free checks and update README aggregates only. No host/Release operation.
+- [ ] Recover func_1516F024's 103-word callback, actual local table storage, packed widths, full-word clamps and real helper interfaces before any C adoption. Keep the full additional-source / Game queues open.
+
 ## Counter Preset Recovery And Private Schedule Gap - 2026-10-15
 
 [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
@@ -8,7 +19,7 @@
 - [x] Repair clear/input-home ordering with inline subscripts. Pass 11 checks: 3,240 guest cases, 40,960 native cases per O2/O0, ten controls, three rebases, 12 repaired home aliases, 138 fired prefixes and 128 actual factory/allocator pairs. Keep private mismatches explicit.
 - [x] Describe the remaining delta with a hash-gated load omission, branch adjustment and closed register cycle: 84 diagnostic words exact. Reject all 85 word flips; do not emit guards or claim a raw/padded/installed match. The 85-word/76-difference C candidate remains non-installable.
 - [x] Preserve all 52 production inputs, 29 neighbors, protected data and 801 archive files. Bank tools f14494c first, retain all 663 initial older-mirror fingerprints / 665 final paths, and leave README aggregates unchanged. One tool-free advisory is independently reconciled; no host/Release action.
-- [ ] Finish the first index/home lifetime and all private/fault/rebase/whole-image matching gates for func_1516EED4 before replacing its production stub. Then continue func_1516F024 and the entire additional-source / Game queue.
+- [x] Finish func_1516EED4's private/fault/rebase/whole-image matching gates and replace its stub in [Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md), all 84 linked words exact with 38 explicit guards. Continue func_1516F024 and the entire additional-source / Game queue.
 
 ## Actor-Type Preset Direct Match - 2026-10-15
 

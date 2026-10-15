@@ -5,6 +5,7 @@ extern s32 (*D_8008CBA0[])(u8 *record);
 void func_1516972C(struct102 *record);
 
 extern s32 D_800BE9E4;
+extern u8 D_800DD2A0;
 extern u8 D_800CC2D4[];
 extern u8 D_800A6E00[];
 extern u8 D_800A6E0C[];
@@ -310,8 +311,19 @@ void func_1516ED68(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     }
 }
 
-s32 func_1516EED4() {
-    return 0;
+/* Consume a qualifying slot counter before creating its effect preset.
+ * Expected-word guards preserve retail index reuse and temporary allocation. */
+void func_1516EED4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    if (arg0 < 4 && (s32)(&D_800DD2A0)[arg0] >= arg1) {
+        (&D_800DD2A0)[arg0] = 0;
+        func_1516D99C(
+            0, 0, 0, 4, 0, 0xFF, 0xFF, 0xFF,
+            0, 0, 0, 0, 2, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0x200, 0x200, 0, 0, 0x1E,
+            0, 0, arg0, 0x14, 0, 0, 0x81, 8,
+            0, 1, 0, 0, 0, 0xC, 0, (u8)arg2, arg3);
+    }
 }
 
 s32 func_1516F024() {

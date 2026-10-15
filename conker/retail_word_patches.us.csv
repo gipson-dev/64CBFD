@@ -15201,3 +15201,41 @@ generated_19A8B0,func_1516E8CC,0xD8,0x00E01825,0x00A01825,-,-,Preserve closed in
 generated_19A8B0,func_1516E8CC,0xDC,0x00ED2821,0x00AD2821,-,-,Preserve closed initial ramp-index register lifetime,,,false
 generated_19A8B0,func_1516E8CC,0x3D0,0x03E00008,0x03E00008,-,-,Preserve original unreachable duplicate return and reachable delay slot,0x00000000,-,false
 generated_19A8B0,func_1516E8CC,0x3D4,0x00000000,0x03E00008,-,-,Preserve original unreachable duplicate return and reachable delay slot,0x00000000,-,false
+generated_19A8B0,func_1516EED4,0x18,0x3C180000,0x3C0F0000,R_MIPS_HI16:D_800DD2A0,R_MIPS_HI16:D_800DD2A0,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x1C,0x27180000,0x25EF0000,R_MIPS_LO16:D_800DD2A0,R_MIPS_LO16:D_800DD2A0,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x24,0x10200047,0x10200046,-,-,Adjust counter-preset exit branch across redundant-load omission,,,false
+generated_19A8B0,func_1516EED4,0x28,0x8FAF00D0,0x8FAF00D0,-,-,Omit redundant index-home reload so pointer add occupies retail branch delay,,,true
+generated_19A8B0,func_1516EED4,0x2C,0x01F81021,0x01CF1021,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x30,0x90590000,0x90580000,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x3C,0x0325082A,0x0305082A,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x48,0x240B0002,0x240A0002,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x4C,0x240C0200,0x240B0200,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x50,0xAFAC006C,0xAFAB006C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x54,0xAFAB0030,0xAFAA0030,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x58,0x240800FF,0x241900FF,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x5C,0x240900FF,0x240800FF,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x60,0x240A00FF,0x240900FF,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x64,0x93AB00DB,0x93AA00DB,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x68,0x8FAC00DC,0x8FAB00DC,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x6C,0x8FAF00D0,0x8FAE00D0,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x70,0xAFAA001C,0xAFA9001C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x74,0xAFA90018,0xAFA80018,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x78,0xAFA80014,0xAFB90014,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x7C,0x24080008,0x24190008,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x80,0x24090001,0x24080001,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x84,0x240A000C,0x2409000C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x88,0x240D0200,0x240C0200,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x8C,0x240E001E,0x240D001E,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x90,0x24180014,0x240F0014,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x94,0x24190081,0x24180081,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x9C,0xAFB90098,0xAFB80098,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xA0,0xAFB8008C,0xAFAF008C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xA4,0xAFAE007C,0xAFAD007C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xA8,0xAFAD0070,0xAFAC0070,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xAC,0xAFAA00B4,0xAFA900B4,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xB0,0xAFA900A4,0xAFA800A4,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0xB4,0xAFA8009C,0xAFB9009C,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x134,0xAFAB00BC,0xAFAA00BC,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x138,0xAFAC00C0,0xAFAB00C0,-,-,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x13C,0x0C000000,0x0C000000,R_MIPS_26:func_1516D99C,R_MIPS_26:func_1516D99C,Normalize closed counter-preset temporary-register allocation,,,false
+generated_19A8B0,func_1516EED4,0x140,0xAFAF0088,0xAFAE0088,-,-,Normalize closed counter-preset temporary-register allocation,,,false

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Counter preset guarded match](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
+  Install all 84 linked words with a closed index/register normalization,
+  literal private/fault/rebase qualification and complete linked-image closure.
 - [Counter preset recovery and private schedule gap](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
   Recover the signed gate, full packet and pre-call clear; retain the strict
   rejection of 85-word C and distinguish an exact diagnostic from installation.

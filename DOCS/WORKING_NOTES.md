@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1402](WORKING_NOTES/1402-counter-preset-guarded-match-20261015.md):
+Finish func_1516EED4 with semantic C and 38 explicit guards, all 84 linked words
+exact; raw 85/76 remains explicit. Pass 14 installed private/fault/rebase/native/
+factory/image checks and preserve every ELF byte outside target slot/extent.
+Game 2,898/4,828, total 3,571/5,501, different 1,930, zero drift; conversions fixed.
+Bank tools a4ac643 first, preserve archive/older mirror/Release, and continue
+at func_1516F024 and the full additional-source repair queue.
+
+2026-10-15:
 [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
 Recover func_1516EED4's signed gate, full packet and pre-call clear; inline
 subscripts repair input-home ordering. All 11 checks pass, but raw 85/76 still
