@@ -167,3 +167,21 @@ before matching. Keep the whole failed-comment/binding/unanchored queues in
 [Note 1396](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md),
 the inherited-stack renderer deferral and the broader Game objective open.
 The previous 1,717-object audit is retained, not rerun here.
+
+## Post-Bank Verification
+
+Consumer **7c1c25ec** banks the semantic callback, seven guard rows, tools
+**8981c28** pin, aggregate README rows and working docs. All **14 post-bank
+checks pass in 68.595 seconds**, including full exact-image closure, all 52
+expected live input states/capture controls, the exact symbol serialization
+and fresh verification of all 801 archive files. The normal ELF/progress build
+is up to date. Both active checkouts are clean before this receipt.
+
+Preserve older mirror ddbdd16 and all **659 final fingerprints**, including
+every one of the 654 initial inputs; do not copy history or commit that mirror.
+Seven documents / **4,991 relative Markdown links** validate with no broken
+target. The full graph scan refuses 19,387 nodes against 41,157 existing;
+preserve its fail-closed result. The actual commit worker completes with
+**41,166 nodes / 81,262 edges / 3,820 communities** without forcing a smaller
+graph. No push or host/Release action. Keep the complete additional-source /
+Game goal active, continuing at the 91-word func_1516ED68 preset.

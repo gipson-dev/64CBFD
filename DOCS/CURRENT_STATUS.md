@@ -41,6 +41,10 @@ data remain fixed. Of 52 inputs, only owner/ELF/guards change. Fresh Game
 converted counts/bytes unchanged. Bank tools 8981c28 first and preserve all
 654 initial older-mirror fingerprints / 659 final paths. Next func_1516ED68,
 the 91-word type-gated factory preset; keep the broader source/Game goal open.
+Consumer 7c1c25ec banks source/guards/pin/docs; all 14 post-bank checks pass
+in 68.595s. All 52 input states / 801 archive files / 659 final mirror
+fingerprints remain pinned, and the normal build is up to date. The incremental
+graph completes at 41,166 nodes / 81,262 edges without forcing the smaller scan.
 
 Packed color callback semantic recovery, deliberately not installed:
 [Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md).
