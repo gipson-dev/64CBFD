@@ -16,7 +16,7 @@ partial source screen. Keep the original129-word/frame0x50 acceptance target.
 2. [x] Test actual cosine/focal/sine lifetimes and source zero-literal types with complete owner compilation.
 3. [x] Follow measured changes with discriminating product/load and clip-branch tests; do not pad an unused local to obtain the frame.
 4. [x] Qualify a private guarded word fit against bounded public/private/fault/ABI/neighbor evidence; retain native/integrated installation gates.
-5. [ ] Preserve production and refresh working handoff, graph and coherent tools/consumer commits.
+5. [x] Preserve production and refresh working handoff, graph and coherent tools/consumer commits.
 6. [ ] Continue literal matching, integrated child/guard changes and the remaining full-source/Game queues until genuinely finished.
 
 ## Source Improvement
@@ -144,4 +144,13 @@ the integrated ABI, whole linked image and immutable history before installing
 source or claiming aggregate credit. Continue the full failed-donor/binding/
 codec/original Game and stale rectangle queues; the wider goal stays active.
 
-Consumer banking, graph and post-bank receipts follow after committing.
+## Post-Bank Verification
+
+Consumerfb3009e3 banks toolsb208c1a and seven documentation paths. All seven
+post-bank owner/padder/rebase/frozen-input/screen/pure/preceding-image checks
+pass9.289s. The incremental build reports ELF/progress up to date and retains
+f36703ce/005fd768 hashes; duplicate generated_12D630 recipe warnings remain.
+The source graph worker finishes at40,895 nodes/81,075 edges, preserving the
+curated/excluded corpus and skipping only oversized HTML visualization. No
+forced scan. Both active repositories are clean before this receipt-only edit.
+No production installation, new aggregate credit, push or host/Release work.

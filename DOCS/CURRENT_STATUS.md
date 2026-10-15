@@ -44,6 +44,9 @@ first; preserve801 archive files and526 unrelated mirror fingerprints. Next:
 native32/broader aliases and actual func_1510B5F8's38-word matrix child, then
 integrated ABI/guard/closed-image/history qualification before installation.
 Keep hardware/FCSR/camera/gameplay and the wider source/Game goal open.
+Consumerfb3009e3 banks the checkpoint; all seven post-bank checks pass9.289s.
+Incremental build retains f36703ce/005fd768 and the source graph worker
+completes at40,895 nodes/81,075 edges, without forcing the smaller full scan.
 
 Previous view projection command private recovery, not installed:
 [Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md).

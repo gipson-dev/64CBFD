@@ -10,6 +10,7 @@
 - [x] Match all129 words under both padders and independent original/rebased links; verify normal and0x9000 symbol rebases with exact entry placement.
 - [x] Pass13 focused checks38.664s,1,080 return-state cases,662 fired prefixes, actual trig/wrapper connections and all expected-input corruption controls.
 - [x] Bank toolsb208c1a first, preserve the801-file archive,526 older mirror fingerprints and every production input; keep README aggregate-only with no new match credit.
+- [x] Bank consumerfb3009e3, pass seven post-bank checks9.289s, preserve pinned ELF/progress and await the40,895-node graph worker without a forced scan.
 - [ ] Complete native32/broader aliases and the actual38-word func_1510B5F8 matrix child, resolving typed-child and obsolete-wrapper guards as an integrated family.
 - [ ] Qualify integrated linked image/history/ABI before source installation or match credit; continue failed donors/bindings/codec/original Game and rectangle history with host Release frozen.
 
