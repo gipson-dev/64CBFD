@@ -192,3 +192,13 @@ inline links, zero broken**. The source-commit graph update finishes at
 present inputs without a forced smaller scan. Continue func_1516FD50 and
 the complete additional-source/Game queues, not a completion claim for the
 wider persistent objective.
+
+## Next-Function Resolution
+
+[Note 1412](1412-record-fade-acceleration-direct-match-20261015.md) restores
+func_1516FD50, all 51 raw/padded words and frame 0x18 directly from C, with
+zero new guards. Preserve full-word fade, the live record home and signed
+byte acceleration after the move helper; fourteen installed checks, the
+actual slot-5 chain and complete predicted ELF pass. Continue func_1516FE1C
+and the full queues. The measurements above remain this note's historical
+guarded FBCC checkpoint.

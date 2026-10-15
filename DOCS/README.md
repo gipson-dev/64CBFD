@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Record fade/acceleration direct match](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
+  All 51 raw/padded words with zero new guards; 14 checks, live post-movement
+  fields, actual slot-5 chain and target-only whole-image closure.
 - [Record color fade proven normalization and match](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
   All 97 padded words exact with defined C and 84 bounded guards; symbolic
   dependency proof, 14 checks, actual slot-4 chain and target-only ELF closure.

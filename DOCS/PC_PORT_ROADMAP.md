@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Record Fade Acceleration Direct Match - 2026-10-15
+
+[Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
+
+- [x] Recover func_1516FD50's complete full-word fade/completion and post-movement signed-byte acceleration. All 51 raw/padded words and frame 0x18 match directly from C with no new guards/profile/shared-header changes. Preserve the incoming record home and live tail fields; no F9C4 scale helper.
+- [x] Pass 14 installed checks: 3,072 complete private pairs, 504 fired fault prefixes, 48 bounded global aliases, native32 O2/O0 with UBSan and all byte/sign boundaries, eight effective guest/native controls, three independent rebases and 801 archive fingerprints.
+- [x] Qualify all 161 words across the current slot-5 dispatcher/callback/move/cleanup bodies and original nine-pointer table. Pass 276 chain pairs, including 116 cleanup paths, release types 0/1/2 and both destructor branches; keep lower unlink/destructor hooks opaque and do not claim full gameplay parity.
+- [x] Close all 144 ELF changes to target slot/extent only. Preserve every other byte, 55 of 57 inputs, guard CSV/profiles/progress and 189,088 protected bytes / 720 owners. Fresh Game 2,905/4,828, total 3,578/5,501, different 1,923, zero drift; conversions fixed.
+- [x] Bank tools 76e1e02 first, preserve all 701 initial older-mirror fingerprints / 705 final paths and pass syntax/standalone checks in both copies plus shared tools checks. Root README changes aggregate rows only; no push or host/Release operation.
+- [ ] Recover func_1516FE1C, 134 words / frame 0x100, both 49-word factory packets and all caller/stack inputs. Inspect the actor word-1 branch, byte-offset-0x14 pointer split and inherited SP+0xFC word. Do not zero the inherited word, treat it as a normal argument, or restore only the convenient branch.
+- [ ] Continue the complete additional-source repair/binding/unanchored queues, remaining callbacks/callers and inherited-stack renderer deferral. This direct match does not complete the broader objective.
+
 ## Record Color Fade Proven Normalization And Match - 2026-10-15
 
 [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
@@ -9,7 +21,7 @@
 - [x] Pass 14 installed checks: 3,586 full private pairs, 194 fired faults, 20 aliases, native32 O2/O0 with UBSan, eight effective negatives, three original/normalized rebases, 801 archive hashes and 256 actual slot-4 dispatcher/callback/cleanup pairs, including 160 completions and all release/destructor branches under opaque lower hooks.
 - [x] Rebuild normally through 694 compiler commands and close all 281 ELF changes to target slot/extent only. Preserve all other ELF bytes, 54 of 57 inputs, old guard prefix, profiles/progress and 189,088 protected bytes / 720 owners. Fresh Game 2,904/4,828, total 3,577/5,501, different 1,924, zero drift; conversion rows fixed.
 - [x] Bank tools aa35689 first, preserve all 697 initial older-mirror fingerprints / 701 final paths, pass both copies' syntax/standalone checks and 11 shared padder tests. Root README changes only aggregate rows. No push or host/Release operations.
-- [ ] Recover func_1516FD50, 51 words / frame 0x18, slot-5 callback. Preserve full-word fade/completion, paired extent stores, live record home across func_1516F864 and the signed byte 0x2C addition into halfword 0x18; do not substitute F9C4's scale helper.
+- [x] Recover func_1516FD50 in [Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md), all 51 raw/padded words directly from C, zero new guards. Preserve the live home and signed-byte post-movement addition; the actual chain and entire predicted ELF pass.
 - [ ] Continue the entire additional-source repair/binding/unanchored queues, remaining callbacks/callers and inherited-stack renderer deferral. This guarded match does not complete the broader objective.
 
 ## Record Color Fade Semantics And Compiler Gap - 2026-10-15

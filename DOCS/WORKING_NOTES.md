@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
+Match func_1516FD50 directly from C, all 51 words / frame 0x18, no new guards
+or profile edits. Fourteen installed checks qualify live post-movement
+acceleration, full-word fade, literal private/fault/native/rebase behavior
+and 276 actual slot-5 chain pairs. Close all 144 ELF changes to target
+slot/extent only. Game 2,905/4,828, total 3,578/5,501, different 1,923, zero
+drift. Bank tools 76e1e02 first; continue func_1516FE1C's complete packet/
+inherited-stack contract and all broader additional-source/Game queues.
+
+2026-10-15:
 [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
 Match func_1516FBCC's 97-word leaf body with defined C and 84 bounded guards,
 not a raw/direct compiler match. Prove complete symbolic dependency/CFG/

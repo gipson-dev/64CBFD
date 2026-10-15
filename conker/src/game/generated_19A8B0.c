@@ -608,7 +608,36 @@ s32 func_1516FBCC(u8 *record) {
     return 0;
 }
 
-s32 func_1516FD50() {
+/* Fade with full-word clamps; apply the live signed byte after movement. */
+s32 func_1516FD50(u8 *record) {
+    s32 extent;
+    s32 value = record[0x1F];
+
+    if (record[0x24] != 0) {
+        if (value != 255) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 4));
+            if (value >= 256) {
+                value = 255;
+            }
+            record[0x1F] = value;
+        }
+    } else {
+        if (value != 0) {
+            value = (s32)((u32)value - ((u32)D_800BE9E4 << 3));
+            if (value < 0) {
+                value = 0;
+            }
+            record[0x1F] = value;
+        }
+        extent = (s32)((u32)value << 9) >> 8;
+        *(s16 *)(record + 0x16) = extent;
+        *(s16 *)(record + 0x14) = extent;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    func_1516F864(record);
+    *(s16 *)(record + 0x18) = *(s8 *)(record + 0x2C) + *(s16 *)(record + 0x18);
     return 0;
 }
 

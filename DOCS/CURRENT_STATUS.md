@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools aa35689; tools are committed before the consumer pin.
+  checkpoint pins tools 76e1e02; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Fade/acceleration callback installed directly from C:
+[Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md).
+func_1516FD50 matches all 51 raw/padded words and frame 0x18 with zero target
+guards/profile/header changes. Preserve full-word fade/completion, the live
+record home across movement, and signed byte 0x2C plus halfword 0x18 after
+the helper. All 14 installed checks pass in 145.837s: 3,072 complete private
+pairs, 504 fired fault prefixes, 48 bounded aliases, native32 O2/O0 with
+UBSan (24,576 cases each), eight guest/native controls, three rebases and
+801 archive hashes. The actual slot-5 dispatcher/callback/move/cleanup chain
+passes 276 pairs, including 116 completions and all release/destructor
+paths under opaque lower hooks. The entire ELF equals the pre-install
+prediction: 144 changed bytes, target slot/extent only. Every other ELF byte,
+55 of 57 inputs, guard CSV/profiles/progress and 189,088 protected bytes /
+720 owners stay fixed. Fresh Game 2,905/4,828 (60.17%), total 3,578/5,501
+(65.04%), different 1,923, zero drift; conversions unchanged. Bank tools
+76e1e02 first; preserve all 701 initial older-mirror fingerprints / 705 final
+paths. Next func_1516FE1C, 134 words / frame 0x100: inspect its inherited
+SP+0xFC word and full two-packet/caller ABI before adopting the archival C.
+Keep the full additional-source/Game objective and all broader queues open.
 
 Record color fade installed with proven MIPS normalization:
 [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md).

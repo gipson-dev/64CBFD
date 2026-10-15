@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Record Fade Acceleration Direct Match
+
+[Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
+Replace func_1516FD50's stub with complete semantic C, all 51 raw/padded
+words / frame 0x18 exact without new guards/profile changes. Recover live
+post-movement signed byte 0x2C plus halfword 0x18 and preserve full-word fade
+clamps/completion. Pass 14 installed checks and 276 actual slot-5 chain
+pairs; close every ELF difference to the target slot/extent (144 bytes).
+Fresh Game 2,905/4,828, total 3,578/5,501, different 1,923, zero drift;
+conversions unchanged. Bank tools 76e1e02 first, keep README aggregate-only
+and continue func_1516FE1C with inherited-stack/caller provenance intact.
+
 ## 2026-10-15 Record Color Fade Guarded Match
 
 [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
