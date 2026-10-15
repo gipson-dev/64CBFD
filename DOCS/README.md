@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Original rotation kernel and real math chains](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
+  Restore the original 84-word assembly slot and actual provider chains while
+  correcting its false C classification. Keep C-fit/native-formula evidence
+  distinct from assembly identity and return to the wider additional-C queue.
+
 - [Actor world-matrix builder direct match](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
   Recover all 40 words with no guards, preserving signed/live fields and alias
   order. Qualify actual helper/consumer connections and every ELF change while

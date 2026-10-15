@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
+Restore original rotation assembly, all 84 slot words exact, while explicitly
+removing its false C classification. Pass 14 checks with real math/consumer
+chains and a closed 280-byte ELF delta. Converted total 5,501, Game 4,828;
+C-exact numerators unchanged, no new C credit. Bank tools 18698b3 first and
+resume the wider C queue at func_1516F1C0, preserving archive/mirror/Release.
+
+2026-10-15:
 [Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
 Recover the 40-word actor world-matrix builder directly from C, zero guards.
 Pass 14 checks with signed/live fields, aliases, native/private/prefix/rebase

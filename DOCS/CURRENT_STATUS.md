@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools3e43b4a; tools are committed before the consumer pin.
+  checkpoint pins tools18698b3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Actor world-matrix builder recovered directly from C:
+Original rotation kernel restored; one false C conversion removed:
+[Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md).
+func_150A8050 matches its complete 84-word slot as original assembly, not C.
+Four C/profile screens do not fit; preserve the split frame and FP lifetime.
+All 14 checks pass in 97.427s, including actual math and complete builder /
+position chains without opaque providers. Close all 280 ELF changes to target
+slot/extent, preserve data/guards and change only its generated progress row
+from C to assembly. Converted total 5,501/6,044 (91.02%), bytes 86.04%; Game
+4,828/5,323 (90.70%), bytes 85.41%. C-exact numerators stay 3,562 total / 2,889
+Game; fractions 64.75% / 59.84%, different 1,939, zero drift. No new C credit.
+Bank tools 18698b3 first; preserve archive, older mirror and Release. Next:
+freshly qualify the archived func_1516F1C0 factory-call wrapper, still a stub.
+
+Prior actor world-matrix builder recovered directly from C:
 [Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md).
 func_1511490C matches all 40 words / frame 0x60 with no guards or profile changes.
 All 14 checks pass in 146.515s: 3,072 guest cases, 576 fired prefixes, native

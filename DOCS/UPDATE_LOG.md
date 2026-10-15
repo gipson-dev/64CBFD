@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Original Rotation Kernel And Real Math Chains
+
+[Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
+Restore func_150A8050's full 84-word original assembly slot after four rejected
+C/profile screens. Pass 14 checks in 97.427s, including real math and complete
+builder/position chains; close every one of 280 ELF changes to target slot /
+extent. Correct one false C row to assembly: converted total 5,501, Game 4,828;
+C byte-exact numerators stay 3,562 / 2,889. No new C credit. Bank tools 18698b3
+first, preserve archive/mirror/Release, and return to archived func_1516F1C0.
+
 ## 2026-10-15 Actor World Matrix Builder Direct Match
 
 [Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
