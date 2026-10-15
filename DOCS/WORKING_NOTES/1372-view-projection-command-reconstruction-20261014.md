@@ -141,6 +141,10 @@ Release operation. No stalled producer was restarted on an observation timeout.
 
 ## Continue The Same Function
 
+Subsequent [Note1373](1373-view-projection-command-lifetime-and-product-fitting-20261014.md)
+reduces the raw differences to19 and qualifies a private guarded129-word fit.
+The native/actual-child/integrated installation boundaries below remain open.
+
 Recover the early coefficient-HI schedule, shared cosine home and FP allocation/
 product sequence first. Preserve the real cut11 witness while testing each
 change. Then recover literal clip branching and qualify the integrated wrapper/

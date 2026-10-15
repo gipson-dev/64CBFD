@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-14:
+[Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
+Improve the same129-word/frame0x50 view command from41->19 differences via
+product/cosine lifetimes. Derive19 private guards, matching both padders and
+independent rebases. Pass13 checks38.664s,1,080 return-state cases and662
+fired prefixes. Toolsb208c1a first; no production or aggregate change. Next
+native/broader aliases, actual38-word child and integrated installation gates.
+
+2026-10-14:
 [Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
 Private func_1510B128 recovery:130 complete screens,129 words/frame0x50,
 41 differences,13 selected checks pass15.678s. Public-state evidence covers

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View projection command lifetime and product fitting](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
+  Improve41->19 raw differences and qualify a private19-word recipe that closes
+  all129 retail words under both padders/rebases. Pass13 focused checks; native,
+  actual child and integrated installation remain open, with production fixed.
+
 - [View projection command private recovery](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
   Screen130 complete forms and qualify public behavior of a129-word/frame0x50
   draft with41 remaining differences. Preserve the first private-fault witness,

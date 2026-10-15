@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-14 View Projection Command Private Guarded Word Fit
+
+[Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
+Recover the shared cosine home and literal projection FP sequence, reducing
+41->19 differences at129 words/frame0x50. Nineteen private guards close both
+padders and independent original/rebased links. All13 focused checks pass,
+including1,080 return-state cases and662 fired prefixes. Toolsb208c1a first;
+production/guards/aggregates remain fixed. Native, actual matrix child and
+integrated ABI/image/history gates must precede installation or match credit.
+
 ## 2026-10-14 View Projection Command Private Recovery
 
 [Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):

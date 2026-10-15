@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools07e0dd5; tools are committed before the consumer pin.
+  checkpoint pins toolsb208c1a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View projection command private recovery, not installed:
+View projection command private guarded word fit, not installed:
+[Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md).
+Improve func_1510B128 from41 to19 raw differences with the same129 words/
+frame0x50. Reversed outer product presentation recovers the literal FP sequence;
+a real cosine copy restores the sharedSP+0x3C home. The private19-word recipe
+uses15 closed scheduling atoms, two symmetric equality comparisons and two
+branch-likely delay-fill words; no frame/math/home guard or omitted word.
+Both padders and independent original/rebased links yield all129 retail words.
+Pass13 focused checks38.664s, including1,080 original/raw/guarded return-state
+cases,662 fired prefixes with state/PC/delay identity, real trig and actual
+wrapper connections, all19 expected-word corruptions and immutable inputs.
+All141 focused screens complete; no raw match. Production/guards/ELF/progress
+remain fixed, so no new match credit or README aggregate change. Toolsb208c1a
+first; preserve801 archive files and526 unrelated mirror fingerprints. Next:
+native32/broader aliases and actual func_1510B5F8's38-word matrix child, then
+integrated ABI/guard/closed-image/history qualification before installation.
+Keep hardware/FCSR/camera/gameplay and the wider source/Game goal open.
+
+Previous view projection command private recovery, not installed:
 [Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md).
 The archive has no C donor for func_1510B128. Screen 130 complete source forms;
 retain homes-1-0-2 at 129 words/frame0x50/41 differences, all real locals.
@@ -48,6 +66,8 @@ Full graph scan fails closed at19,098 vs40,873; never force it.
 Consumer51602818 banks the private checkpoint. All four post-bank checks pass
 2.568s, incremental build retains the pinned image/progress and the graph
 worker completes at40,883 nodes/81,058 edges. No production match credit.
+Subsequently close the private129-word guarded fit in Note1373; native/child/
+integrated installation gates remain open, not another production match.
 
 View FOV transfer guarded match:
 [Note 1371](WORKING_NOTES/1371-view-fov-transfer-reconstruction-20261014.md).

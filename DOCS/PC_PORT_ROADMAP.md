@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## View Projection Command Private Word Fit - 2026-10-14
+
+[Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
+
+- [x] Improve41->21 raw differences with the outer product expression, then21->19 with a real cosine copy; retain129 words/frame0x50 and restore the sharedSP+0x3C home without frame/home guards.
+- [x] Finish141 complete source/control screens, keeping token-identical layout and BSS-ownership controls private; no raw exact match or compiler/profile change.
+- [x] Derive19 private guards from15 closed schedule atoms, two commutative comparisons and two branch-delay words; preserve all calls, arithmetic and original length.
+- [x] Match all129 words under both padders and independent original/rebased links; verify normal and0x9000 symbol rebases with exact entry placement.
+- [x] Pass13 focused checks38.664s,1,080 return-state cases,662 fired prefixes, actual trig/wrapper connections and all expected-input corruption controls.
+- [x] Bank toolsb208c1a first, preserve the801-file archive,526 older mirror fingerprints and every production input; keep README aggregate-only with no new match credit.
+- [ ] Complete native32/broader aliases and the actual38-word func_1510B5F8 matrix child, resolving typed-child and obsolete-wrapper guards as an integrated family.
+- [ ] Qualify integrated linked image/history/ABI before source installation or match credit; continue failed donors/bindings/codec/original Game and rectangle history with host Release frozen.
+
 ## View Projection Command Recovery - 2026-10-14
 
 [Note 1372](WORKING_NOTES/1372-view-projection-command-reconstruction-20261014.md):
