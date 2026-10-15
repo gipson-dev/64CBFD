@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Actor-Type Preset Direct Match
+
+[Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
+Replace func_1516ED68's stub with its unsigned byte type gate and complete
+four-input/49-argument preset. All 91 words match directly from C with no
+new guards/profile changes. Pass 13 checks and close all 280 ELF changes to
+target slot/extent; all other code, metadata, guards, protected data and
+progress rows remain fixed. Fresh Game 2,897/4,828 (60.00%), total
+3,570/5,501 (64.90%), different 1,931, zero drift. Bank tools 50205ee first,
+preserve the archive/older mirror/Release and continue at func_1516EED4.
+
 ## 2026-10-15 Packed RGB Callback Byte Match
 
 [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Actor-Type Preset Direct Match - 2026-10-15
+
+[Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
+
+- [x] Recover func_1516ED68's unsigned byte type gate, wrapping 0x32C lookup, four-input void interface and full 49-argument packet. Preserve complete first/second/last words and the third input's unsigned low byte.
+- [x] Match all 91 raw/padded words and frame0xD0 directly from C, with no new guards/profile changes. Preserve all 29 neighbors, pools, relative relocations and the actual caller interface.
+- [x] Pass 13 installed checks in 43.045s: 4,626 guest cases, ten aliases, 146 fired prefixes, native32 O2/O0, eight effective guest controls plus two native narrowing probes, three independent rebases and 256 real factory/allocator-chain cases.
+- [x] Close all 280 ELF changes to target slot/extent only; preserve every other byte, 189,088 protected bytes / 720 owners, all guard history and 50 of 52 inputs. Measure Game 2,897/4,828, total 3,570/5,501, different 1,931, zero drift; conversions unchanged.
+- [x] Bank tools 50205ee first, preserve all 659 initial older-mirror fingerprints and copy only four absent owned files for 663. Pass Windows syntax/ROM-free checks, keep README aggregate-only and take no host/Release action.
+- [ ] Recover func_1516EED4's signed slot < 4 gate, byte-counter comparison and pre-call clear: 84 words, ROM 0x19C384, frame0xD0. Preserve the complete source-review / Game objective.
+
 ## Packed RGB Callback Byte Match - 2026-10-15
 
 [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
@@ -9,7 +20,7 @@
 - [x] Close all 713 ELF changes to 692 target-slot/extent bytes and an exact 21-byte three-symbol/name-order permutation. Preserve every canonical binding, all other code, 189,088 protected bytes / 720 owners, guard history and 49 of 52 scoped inputs. Ignore no metadata ranges.
 - [x] Measure Game 2,896/4,828, total 3,569/5,501, different 1,932, zero drift. Converted counts/bytes stay fixed; README changes only aggregate rows.
 - [x] Bank tools 8981c28 first. Preserve all 654 initial dirty older-mirror fingerprints, copy only five absent owned paths for 659, and pass Windows syntax/ROM-free checks. No push or host/Release action.
-- [ ] Recover func_1516ED68's four-input type gate and full factory packet: 91 words, ROM 0x19C218, frame 0xD0. Continue the whole source-review / Game objective.
+- [x] Recover func_1516ED68's four-input type gate and full factory packet in [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md): all 91 words directly exact. Continue the whole source-review / Game objective.
 
 ## Packed Color Callback Recovery - 2026-10-15
 

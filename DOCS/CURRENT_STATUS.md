@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8981c28; tools are committed before the consumer pin.
+  checkpoint pins tools 50205ee; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor-type preset recovered directly from C:
+[Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md).
+func_1516ED68 matches all 91 raw/padded words, frame0xD0, with its byte type
+gate and complete four-input/49-word packet. No new guards/profile changes.
+All 13 checks pass in 43.045s: 4,626 guest cases, ten aliases, 146 fired
+prefixes, native32 O2/O0, eight effective guest controls, two native-only
+narrowing probes, three rebases and 256 actual factory-chain cases. Close all
+280 ELF changes to target slot/extent; every other byte and 50 of 52 inputs
+remain fixed, including all guards/progress rows and protected data. Fresh
+Game 2,897/4,828 (60.00%), total 3,570/5,501 (64.90%), different 1,931,
+zero drift; conversions unchanged. Bank tools 50205ee first and preserve all
+659 initial older-mirror fingerprints / 663 final paths. Next func_1516EED4,
+84 words, with the original signed slot gate and pre-call byte clear. Keep
+the complete additional-source / Game objective open.
 
 Packed RGB callback installed and byte-exact with explicit guards:
 [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md).

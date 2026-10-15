@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor-type preset direct match](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
+  Recover all 91 words directly from C, including the byte gate, full packet,
+  actual factory chain and complete image closure without new guards.
 - [Packed RGB callback byte match](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
   Install all 248 linked words with explicit register/tail guards, full image
   closure and real callback-chain qualification; retain raw-C limitations.

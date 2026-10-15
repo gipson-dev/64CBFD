@@ -5,6 +5,7 @@ extern s32 (*D_8008CBA0[])(u8 *record);
 void func_1516972C(struct102 *record);
 
 extern s32 D_800BE9E4;
+extern u8 D_800CC2D4[];
 extern u8 D_800A6E00[];
 extern u8 D_800A6E0C[];
 
@@ -294,8 +295,19 @@ s32 func_1516ECAC(u8 *record) {
     return 0;
 }
 
-s32 func_1516ED68() {
-    return 0;
+/* Create the type-0x3A actor preset; preserve word arguments and the low flag byte. */
+void func_1516ED68(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    u8 type = D_800CC2D4[(u32)arg0 * 0x32C];
+
+    if (type == 0x3A) {
+        func_1516D99C(
+            5, 0, 0, 4, 0, 0xFF, 0xFF, 0xFF,
+            0, 0, 0, 0, 2, 0, 0, 0,
+            0, 0, 0, 8, 0, 0, 0, 0,
+            0, 0, 0, 0x124, 0x124, 0, 0, arg1,
+            0, 0, arg0, 0xC, 0, 0, 0x81, 2,
+            0, 1, 0, 0, 0, 5, 0, (u8)arg2, arg3);
+    }
 }
 
 s32 func_1516EED4() {

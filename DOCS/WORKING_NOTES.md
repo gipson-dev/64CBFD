@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
+Recover func_1516ED68's byte gate and full packet directly from C, all 91
+words exact with no new guards/profile changes. Pass 13 checks and close
+all 280 ELF changes to target slot/extent, with no metadata exceptions.
+Game reaches a rounded 60.00% among converted C: 2,897/4,828; total
+3,570/5,501, zero drift. Bank tools 50205ee first and continue at the
+84-word signed-gate/byte-clear preset func_1516EED4 and the wider source queue.
+
+2026-10-15:
 [Note 1399](WORKING_NOTES/1399-packed-color-callback-byte-match-20261015.md):
 Install func_1516E8CC's full packed RGB callback, all 248 linked words exact
 with five register guards and two unreachable-tail guards. Pass 14 checks,
