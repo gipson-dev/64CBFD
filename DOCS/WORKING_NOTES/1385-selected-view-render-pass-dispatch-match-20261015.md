@@ -13,7 +13,7 @@ The archive is evidence, not permission to transplant unverified code.
 4. [x] Bank qualification tools49961e5 before installing the single-function source change.
 5. [x] Build successfully and independently close all151 changed ELF bytes to the existing316-byte code slot; preserve every other ELF byte.
 6. [x] Pass15 final top-level installed/history/archive checks118.890s; bank installation toolsd98b8d8 before the consumer pin.
-7. [ ] Bank consumer source/pin/docs, verify the bank and await its incremental graph worker.
+7. [x] Bank consumer5eaad3e4 after both tools commits; pass15 post-bank checks53.003s and await the41,023-node incremental graph worker without forcing a smaller scan.
 8. [ ] Continue remaining additional-source/Game matching; retain the scanner and separate host-transfer/hardware boundaries.
 
 ## Direct C Recovery
@@ -111,6 +111,26 @@ Fresh match-progress: Game2,886/4,829 (59.76%), total3,559/5,502 (64.69%),
 different1,943, zero drift. Converted counts remain5,502/6,044 (91.03%): this
 repairs a previously converted nonmatch, not another converted function. Root
 README changes only its two aggregate matching rows; details stay here.
+
+## Post-Bank Verification
+
+Consumer5eaad3e4 banks the single function, toolsd98b8d8 pin, two README aggregate
+rows and working documentation after tools49961e5/d98b8d8. All15 top-level
+post-bank checks pass53.003s, including five embedded actor gates and three
+further embedded matrix gates. Fresh guest/native/private/prefix/helper/rebase,
+current-image corruption, inverse and801-file archive checks pass. The N64
+ELF/progress build is up to date. All24 pinned production inputs equal their
+expected state: two deliberate changes,22 unchanged. ELFf3a09d0a and
+progress3ad7466c remain fixed. Eight-document/4,905-relative-link validation
+has zero broken links.
+
+Both active checkouts are clean before this receipt. All592 mirror dirty hashes
+and ddbdd16 HEAD remain fixed after the exact owned sync, including all586
+preexisting hashes. The source commit's incremental graph workers exit, with
+41,023 nodes/81,138 edges/3,792 communities and no forced smaller scan. No push,
+mirror-history mutation, advisory call or host/Release operation. The user also
+confirms the accidentally overwritten Conkers compiler scratch file was
+disposable; no recovery is requested. Keep output paths safely quoted.
 
 ## Preservation And Next Action
 

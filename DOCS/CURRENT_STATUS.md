@@ -40,8 +40,10 @@ different1,943, zero drift; conversions unchanged. README aggregate rows only.
 Tools49961e5/d98b8d8 are banked first. All15 final top-level checks pass118.890s,
 including five embedded actor gates and their three embedded matrix gates.
 Current/captured corruption controls and exact-input inverses pass; all801
-archive fingerprints remain fixed. The consumer bank and post-bank check follow.
-Preserve586 older mirror fingerprints
+archive fingerprints remain fixed. Consumer5eaad3e4 banks the source/pin/docs;
+all15 post-bank checks pass53.003s, all24 expected hashes remain fixed and the
+build is up to date. The graph worker completes41,023 nodes/81,138 edges without
+forcing a smaller scan. Preserve586 older mirror fingerprints
 and Release. The selected host translation already has this retail-shaped
 function plus witness hooks; no host transfer or rebuild is implied.
 
