@@ -10,6 +10,7 @@
 - [x] Pass 14 installed checks in 123.060s plus the new checkpoint-integrity check in 0.765s: 6,144 guest cases, 130 fired prefixes, native32 O2/O0, six effective negatives, three independent rebases and 256 actual updater/callback/cleanup cases.
 - [x] Close all 135 ELF changes to the target slot/extent. Preserve 29 neighbors, data, shared headers, progress rows and all prior guard bytes. Measure Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift; conversions unchanged.
 - [x] Bank tools 94c4245 first. Preserve all 801 archive files, independent ddbdd16 mirror HEAD and all 638 initial dirty fingerprints; copy only five absent owned files, giving 643. Keep README aggregate-only and Release frozen.
+- [x] Bank consumer c899b74f and pass all 15 post-bank checks in 45.794s. Retain all 49 input states / 643 final mirror fingerprints, normal up-to-date ELF/progress build and the completed 41,125-node / 81,222-edge incremental graph refresh. Raw C remains three words different.
 - [ ] Recover func_1516E778's 85-word preset wrapper, retaining its actual five-input ABI, packed coordinates and full factory packet. Continue the wider additional-C / Game queue.
 - [ ] Resolve func_1516D738's inherited private-word contract or bank a separately qualified original-assembly adapter; neither is achieved by this C callback match.
 

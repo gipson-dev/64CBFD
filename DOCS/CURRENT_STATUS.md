@@ -48,6 +48,11 @@ matching credit; the renderer is unchanged/unrecovered. Next recover the
 85-word preset wrapper func_1516E778 and its true five-input/call-packet ABI.
 Full additional-C / Game, renderer and gameplay/provider qualification remain
 open; no automatic host transfer or whole-goal completion claim.
+Consumer c899b74f banks source/guards/pin/docs. All 15 post-bank checks pass in
+45.794s; all 49 installed input states, 801 archive files and 643 final mirror
+fingerprints remain pinned. Normal ELF/progress build is up to date. The
+incremental graph worker completes at 41,125 nodes / 81,222 edges without
+forcing the smaller full scan. Raw C still differs at three load words.
 
 Prior callback-driven packed-record update recovered with three register guards:
 [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md).

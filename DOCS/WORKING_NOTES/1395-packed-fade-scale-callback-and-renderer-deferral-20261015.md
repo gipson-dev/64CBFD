@@ -168,3 +168,22 @@ retaining 19,398 nodes from 2,972 excluded-but-present files. Preserve that
 fail-closed result and await the incremental commit worker rather than force
 the smaller scan. The tools checkpoint is complete; consumer/post-bank
 verification is recorded below when finished.
+
+## Post-Bank Verification
+
+Consumer **c899b74f** banks the semantic callback, three guards, tools 94c4245
+pin, README aggregate rows and working documentation. All **15 post-bank
+checks pass in 45.794 seconds**, including the independent complete current
+image, all 49 input states/corruption controls, exact-input checkpoint gates
+and fresh hashes for all 801 archive files. Normal ELF/progress build is up
+to date. The raw three-word mismatch is still explicit; only the guarded
+47-word linked slot is retail-exact.
+
+Both active checkouts are clean before this receipt. The older mirror's
+independent ddbdd16 HEAD and all **643 final dirty fingerprints** remain fixed,
+including every one of the 638 initial paths. Seven documents / **4,960
+relative Markdown links** validate with zero broken. The source commit's
+incremental graph worker finishes at **41,125 nodes / 81,222 edges / 3,803
+communities**, preserving the refused smaller full scan without forcing it.
+No push or host/Release action. Continue the whole additional-C / Game goal
+at func_1516E778, keeping the renderer's inherited-stack C deferral open.
