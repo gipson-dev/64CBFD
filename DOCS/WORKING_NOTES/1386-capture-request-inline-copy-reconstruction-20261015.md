@@ -12,7 +12,7 @@ another complete C body, but does **not** install it or claim another byte match
 3. [x] Compile 54 bounded controls: 45 complete owners and nine isolated profile controls. Retain the 39-word/22-difference seed.
 4. [x] Qualify public guest/native behavior, negative controls and explicit private-state/fired-prefix mismatches.
 5. [x] Pass 15 final top-level checks in 45.771 seconds, preserve all production/archive inputs and bank tools `10ccd75` first.
-6. [ ] Bank the consumer tools pin/docs, verify the bank and await the incremental graph worker without forcing a smaller scan.
+6. [x] Bank consumer `f1234a74` after tools `10ccd75`; pass 15 post-bank checks in 54.909 seconds and await the 41,033-node incremental graph worker without forcing a smaller scan.
 7. [ ] Continue THIS function's cursor/end allocation and stack-input/copy-setup schedule before installation or match credit.
 
 ## Actual Source And Layout
@@ -155,6 +155,27 @@ The full graph update refuses 19,251 nodes against the 41,024-node curated
 graph and retains 19,398 nodes from 2,972 excluded-but-present files. Preserve
 that fail-closed result; await the consumer's incremental commit worker instead
 of forcing the smaller scan.
+
+## Post-Bank Verification
+
+Consumer `f1234a74` banks tools `10ccd75` and the working documentation without
+any production or root README edit. All 15 post-bank top-level checks pass in
+54.909 seconds, including five current installed-image gates and their eight
+embedded historical gates. Public behavior, returned controls, real padder and
+all frozen-input corruption checks pass; 22 word differences, 8,288 private
+state differences and 306/322 prefix differences remain explicitly recorded.
+
+All 26 production hashes still equal the pinned baseline, including the stub,
+ELF and progress. All 801 archive fingerprints are unchanged. Both active
+checkouts are clean before this receipt. All 595 mirror dirty fingerprints and
+`ddbdd16` HEAD remain fixed after the exact three-file sync, preserving all
+592 older fingerprints. The consumer's incremental graph workers exit at
+41,033 nodes / 81,148 edges / 3,920 communities without forcing the smaller
+scan. No required producer remains live; no push or host/Release operation.
+The complete source/Game objective remains active, with this function's
+allocation/scheduling boundary as the next action.
+
+## Reproduction And Next Action
 
 Reproduce from the decomp root using the existing local inputs:
 

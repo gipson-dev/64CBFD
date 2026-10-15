@@ -39,6 +39,10 @@ All15 final top-level checks pass45.771s, including current image/history gates.
 Bank tools10ccd75 first; preserve all26 production inputs,801 archive hashes,
 592 older mirror fingerprints, README/metrics and frozen Release. Continue
 THIS function's cursor/end allocation and parameter/copy schedule before installing.
+Consumerf1234a74 banks pin/docs after tools10ccd75. All15 post-bank checks pass
+54.909s, all26 production hashes stay fixed and the graph worker completes
+41,033 nodes/81,148 edges without forcing a smaller scan. Keep every recorded
+private mismatch visible; no additional match or conversion is claimed.
 
 Selected-view render pass recovered and byte-exact:
 [Note 1385](WORKING_NOTES/1385-selected-view-render-pass-dispatch-match-20261015.md).

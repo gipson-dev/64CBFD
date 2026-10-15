@@ -9,7 +9,7 @@
 - [x] Qualify14,336 guest cases,2,048 native cases/profile and three returned controls; preserve8,288 private-state and306/322 fired-prefix mismatches.
 - [x] Prove38 reachable body words and the exact unreachable increment/alignment addresses; pass15 final top-level checks45.771s including current installed/history gates.
 - [x] Bank tools10ccd75 first; preserve26 production hashes,801 archive hashes,592 older mirror fingerprints and README/metrics/Release. Shared and standalone checks pass.
-- [ ] Bank the consumer pin/docs, verify the bank and await its incremental graph worker without forcing a smaller scan.
+- [x] Bank consumerf1234a74 after tools10ccd75; pass15 post-bank checks54.909s, retain all26 production hashes and await the41,033-node/81,148-edge incremental graph worker without forcing a smaller scan.
 - [ ] Continue THIS function's base/end allocation and parameter-home/copy-setup schedule before private/rebase/image installation gates. Keep the full source/Game goal active.
 
 ## Selected View Render Pass Match - 2026-10-15
