@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f9563ed; tools are committed before the consumer pin.
+  checkpoint pins tools 2be3d9f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Preset-0x1B wrapper installed directly from C:
+[Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md).
+func_1516FA88 matches all 81 raw/padded words and frame 0xD0 with signed
+16-bit coordinate formals, full-word variant/context and a narrowed flag.
+No guards/profile/shared-header changes. All 14 installed checks pass in
+64.906s: 1,554 complete private pairs, 324 fired faults, native32 O2/O0 over
+all 16-bit coordinate patterns, eight effective guest/native negatives,
+three rebases, 100 actual-current factory/allocator pairs and 801 archive
+hashes. Close all 241 ELF changes to target slot/extent only; all other
+bytes, 55 of 57 inputs and protected data stay fixed. Fresh Game
+2,903/4,828 (60.13%), total 3,576/5,501 (65.01%), different 1,925, zero drift;
+conversions unchanged. No aligned direct JAL/address-word references found
+in the original ROM; this is not proof of unreachability or gameplay parity.
+Tools 2be3d9f is banked first; all 691 initial older-mirror fingerprints
+remain fixed across 695 final paths. Next func_1516FBCC, 97 words, leaf,
+slot-4 callback. The full additional-source/Game objective remains open.
 
 Record fade callback installed directly from C:
 [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md).

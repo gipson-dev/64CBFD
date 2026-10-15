@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Preset 0x1B Coordinate Types And Direct Match - 2026-10-15
+
+[Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
+
+- [x] Recover func_1516FA88's six-input ABI and complete 49-word factory packet. Signed 16-bit coordinate formals reproduce all 81 raw/padded words and frame 0xD0 directly from C, without guards/profile/shared-header changes. Preserve full-word variant/context and the low-byte flag.
+- [x] Pass 14 installed checks: 1,554 full private pairs, 324 fired guest faults, native32 O2/O0 across every 16-bit coordinate pattern, eight effective guest/native negatives, three original/C rebases, 100 actual-current factory/allocator pairs and 801 archive hashes.
+- [x] Verify the entire original ROM for aligned direct JAL/address-word references; none are found. Keep indirect/encoded references and natural gameplay unknown, and lower heap/registration providers opaque.
+- [x] Close all 241 ELF changes to the target slot/extent only. Preserve every other ELF byte, 55 of 57 inputs, guards/profiles/progress and 189,088 protected bytes / 720 owners. Fresh Game 2,903/4,828, total 3,576/5,501, different 1,925, zero drift; conversion rows fixed.
+- [x] Bank tools 2be3d9f first, preserve all 691 initial older-mirror fingerprints / 695 final paths, pass syntax/standalone checks in both tools copies and shared tools checks. Root README stays aggregate-only; no push or host/Release operations.
+- [ ] Recover func_1516FBCC, the 97-word leaf slot-4 callback. Preserve the full-word fade/completion value, MIPS low-five-bit variable shift, signed extent steps, exact halfword stores and unsigned color interpolation bytes; do not copy the archival widened loads or premature u8 truncation.
+- [ ] Continue the complete additional-source repair/binding/unanchored queues, inherited-stack renderer deferral and caller restorations. This direct match does not complete the broader Game objective.
+
 ## Record Fade Callback Direct Match And Live Dispatch Chain - 2026-10-15
 
 [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
@@ -9,7 +21,7 @@
 - [x] Verify the live callback table's slot 3 and all nine pointers, then qualify 276 actual-current dispatcher/callback/helper/cleanup pairs, including 116 completion paths. All eight connected bodies / 213 words match retail; preserve the lower unlink/type-destructor opacity and no-gameplay boundary.
 - [x] Close all 138 ELF changes to target slot/extent only, without metadata exclusions. Preserve every other byte, 55 of 57 inputs, guard CSV/progress/profiles and 189,088 protected bytes across 720 owners. Fresh Game 2,902/4,828, total 3,575/5,501, different 1,926, zero drift; conversions fixed.
 - [x] Bank tools f9563ed first, preserve all 687 initial older-mirror fingerprints / 691 final paths and pass Windows syntax/standalone checks. Root README changes only its aggregate rows; no push, host/Release operation or dependency/account change.
-- [ ] Recover func_1516FA88's 81-word single-factory preset, six-input ABI, register-coordinate sign extension, complete 49-word packet and full-word variant/context forwards. Inspect original callers before adopting argument types or narrowing the fourth input.
+- [x] Recover func_1516FA88's 81-word single-factory preset in [Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md), including signed coordinate formals, complete packet and full-word variant/context. The aligned ROM reference screen finds no direct caller/address words; do not infer gameplay reachability.
 - [ ] Continue the complete additional-source/Game repair/binding/unanchored queues, inherited-stack renderer deferral and caller restorations. The callback-table match does not imply the other entries or the broader goal are complete.
 
 ## Paired Record Event Direct Match And Compiler Spill Recovery - 2026-10-15

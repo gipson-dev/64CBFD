@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
+Match func_1516FA88's full 49-word packet directly from C, all 81 words /
+frame 0xD0, no guards/profile changes. Fourteen installed checks cover signed
+coordinate formals, literal private/fault/native/rebase behavior and 100
+current factory/allocator pairs. Close all 241 ELF changes to target
+slot/extent only. Game 2,903/4,828, total 3,576/5,501, different 1,925, zero
+drift. Bank tools 2be3d9f first; preserve the no-direct-reference/gameplay
+boundary and continue func_1516FBCC plus the full additional-source queues.
+
+2026-10-15:
 [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
 Match func_1516F9C4 directly from C, all 49 words / frame 0x18, no guards or
 profile changes. Fourteen installed checks cover full-word clamps, private/

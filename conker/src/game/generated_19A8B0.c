@@ -543,8 +543,15 @@ s32 func_1516F9C4(u8 *record) {
     return 0;
 }
 
-s32 func_1516FA88() {
-    return 0;
+/* Preset 0x1B: signed coordinates, full-word variant/context, byte flag. */
+void func_1516FA88(s16 arg0, s16 arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    func_1516D99C(
+        arg0, arg1, arg2, 0x1B, 0, 0xFF, 0xFF, 0xFF,
+        0, 0xFF, 0xFF, 0xFF, 3, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0x400, 0x400, 0, 0, 2,
+        0, 0, 0xFF, 0xF, 0, 0, 9, 0,
+        0xFF, 0xA, 0x5A, 5, arg3, 0, 0, (u8)arg4, arg5);
 }
 
 s32 func_1516FBCC() {

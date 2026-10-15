@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-15 Preset 0x1B Coordinate Types And Direct Match
+
+[Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
+Replace func_1516FA88's stub with its six-input semantic factory packet.
+Signed coordinate formals recover all 81 raw/padded words / frame 0xD0
+without guards/profile changes. Preserve full-word variant/context and byte
+flag. Pass 14 installed checks, including 100 real factory/allocator pairs;
+retain opaque lower providers and the no-direct-reference/gameplay boundary.
+Close all 241 ELF changes to target slot/extent only, keeping every other
+byte and 55 of 57 inputs fixed. Fresh Game 2,903/4,828, total 3,576/5,501,
+different 1,925, zero drift; conversions unchanged. Bank tools 2be3d9f first,
+keep README aggregate-only and continue func_1516FBCC plus the full
+additional-source/Game queues.
+
 ## 2026-10-15 Record Fade Callback Direct Match
 
 [Note 1408](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):

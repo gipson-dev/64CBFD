@@ -234,3 +234,12 @@ copies. Eight docs resolve **5,052 relative links, zero broken**. The source-
 commit incremental graph update finishes at **41,266 nodes / 81,372 edges /
 3,851 communities**, without forcing the refused smaller full scan.
 Continue func_1516FA88 and the complete additional-source/Game queues above.
+
+## Next-Function Resolution
+
+[Note 1409](1409-preset-1b-coordinate-types-and-direct-match-20261015.md)
+restores func_1516FA88: signed coordinate formals recover all 81 raw/padded
+words and frame 0xD0 directly from C. Fourteen installed checks and the entire
+predicted ELF pass; preserve full-word variant/context and the no-direct-
+reference/gameplay boundary. Continue func_1516FBCC and the full queues;
+the measurements above remain this note's historical fade-callback checkpoint.

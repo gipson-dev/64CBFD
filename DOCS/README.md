@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Preset 0x1B coordinate types and direct match](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
+  Recover signed coordinate formals and the complete six-input factory packet;
+  all 81 words directly from C, 14 checks and target-only whole-image closure.
 - [Record fade callback direct match and live dispatch chain](WORKING_NOTES/1408-record-fade-callback-direct-match-and-live-dispatch-chain-20261015.md):
   All 49 words directly from C, 14 checks and target-only whole-image closure;
   qualify the actual slot-3 dispatcher, helpers and completion cleanup path.
