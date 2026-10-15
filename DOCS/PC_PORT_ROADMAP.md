@@ -9,7 +9,7 @@
 - [x] Qualify2,432 guest cases,1,216 native cases/profile,37 fired prefixes, three rebases and760 actual connections to the matched27-word caller, including its unsigned8/unsigned16 arguments.
 - [x] Close all168 changed ELF bytes to target code and12->212 extent only; match Game2,885/4,829, total3,558/5,502, different1,944, zero drift. Converted counts remain unchanged.
 - [x] Pass16 final top-level checks36.209s including three embedded history gates; bank tools f2b6070/9d0e2a1 first, preserving801 archive hashes and580 older mirror fingerprints.
-- [ ] Bank consumer source/pin/docs, post-bank verification and the incremental graph receipt without forcing a smaller scan.
+- [x] Bank consumer b8374cfa after tools f2b6070/9d0e2a1, pass16 post-bank checks41.006s, retain all22 expected installed hashes in an up-to-date build and await the41,013-node/81,175-edge incremental graph worker without forcing a smaller scan.
 - [ ] Qualify host transfer separately: selected64CBFDOGL output still has the zero stub. No host edit/build/launch or Release change in this N64-only checkpoint.
 - [ ] Continue remaining binding/failed-source/Game/rectangle work and the unmatched scanner;32 further return forms do not improve its258-difference seed.
 

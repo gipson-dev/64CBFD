@@ -13,7 +13,7 @@ queue rather than treating its unqualified drafts as permanently rejected.
 3. [x] Qualify full guest/native state, all53 reachable words, fired prefixes, three table/text rebases and the already-matched actual caller.
 4. [x] Install semantic C and one existing owner-specific rodata binding; close every ELF byte and preserve all original data/archive inputs.
 5. [x] Bank tools f2b6070 and9d0e2a1 before the consumer source/pin/docs group.
-6. [ ] Bank consumer/post-bank verification and await the incremental graph worker without forcing a smaller scan.
+6. [x] Bank consumer b8374cfa, pass16 post-bank checks41.006s and await the41,013-node incremental graph worker without forcing a smaller scan.
 7. [ ] Continue the remaining failed/binding/source/Game and separate rectangle queues; keep the unmatched scanner and host transfer boundary explicit.
 
 ## Scanner Return Question Closed
@@ -132,6 +132,25 @@ or frozen Release operation; transfer requires its own qualification.
 The full graph update refuses19,221 nodes against the41,003-node curated graph
 and retains19,398 nodes from2,972 excluded-but-present files. Keep that fail-
 closed result; do not force the smaller scan. Await the consumer commit worker.
+
+## Post-Bank Verification
+
+Consumer b8374cfa banks the source, single table-binding line, tools pin, two
+README aggregate rows and working documentation after tools f2b6070/9d0e2a1.
+All16 top-level post-bank checks pass41.006s, including three embedded prior
+matrix image/corruption/inverse gates. Fresh guest/native/caller/prefix/rebase,
+binding controls, closed image, exact inverse and801-file archive checks pass.
+The incremental ELF/progress build is up to date. All22 installed inputs equal
+their pinned expected state: three deliberate changed inputs,19 unchanged.
+ELF7aee8cd7/progress3ad7466c and all guard bytes remain fixed after the bank.
+Eight-document/4,900-relative-link validation has zero broken links.
+
+Both active checkouts are clean before this receipt. All586 mirror dirty
+fingerprints and ddbdd16 HEAD remain fixed after the exact owned sync, including
+all580 preexisting fingerprints. The consumer incremental graph worker completes
+at41,013 nodes/81,175 edges/3,902 communities, without forcing the smaller full
+scan. No required producer remains live. No push, mirror-history mutation,
+advisory call or host/Release operation. Keep the full objective active.
 
 ## Next Action
 

@@ -44,6 +44,10 @@ only. Preserve801 archive fingerprints,580 older mirror fingerprints and Release
 Tools f2b6070/9d0e2a1 are banked first. The32 scanner return forms give no new
 match; continue the real binding/failed-source/Game queues and retain its258-
 difference HOMES seed. The host still selects a zero stub; no automatic transfer.
+Consumer b8374cfa banks the source/pin/docs after the tools commits. All16 post-
+bank checks pass41.006s, including three embedded history gates. The incremental
+build is up to date, all22 installed inputs retain their expected hashes, and
+the graph worker completes at41,013 nodes/81,175 edges without forcing a scan.
 
 Texture vertex-span lifetime tradeoff verified; still NOT installed/exact:
 [Note 1383](WORKING_NOTES/1383-texture-vertex-span-lifetime-role-tradeoffs-20261015.md).
