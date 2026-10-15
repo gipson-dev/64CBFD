@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-14:
+[Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
+Recover42-word func_1510B3B0's pending-view queue with three closed schedule
+guards and its original frame/saved lifetimes. Qualify4,704 guest cases,
+2,052 fired prefixes,2,352 native cases/profile, six semantic negatives and96
+actual queue/parent/child connections with bounded trig/SDK models. All132
+changed ELF bytes are target code/extent only; old guards/progress and all
+protected data remain fixed. Game2,881/4,830, total3,554/5,503, zero drift.
+Keep the wider goal and actual hardware/caller/gameplay boundaries open.
+All44 selected checks pass107.136s; tools64a6bda is banked first, with801
+archive hashes and545 unrelated mirror fingerprints preserved.
+
+2026-10-14:
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
 Recover func_1510B070 directly across46 words/frame0x28 with zero guards.
 Qualify signed defaults, retained unused home, all eight arguments,2,052 guest

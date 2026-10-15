@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Pending View Queue Match - 2026-10-14
+
+[Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
+
+- [x] Recover the complete42-word/frame0x38 command, signed inclusive live count, -1.0f skip, typed five-word call, post-call consume and dirty clear.
+- [x] Screen24 complete forms; retain the shortest correct guarded loop with three independent argument-schedule guards, no frame/control-flow or profile/header changes.
+- [x] Preserve all twelve raw owner neighbors/pools/relocations and all old guard bytes; match both padders and independent normal/rebased links.
+- [x] Pass4,704 guest cases,2,052 fired prefixes and2,352 native32 cases/profile, with six effective compiled semantic controls and96 actual queue/parent/child connections under bounded trig/SDK contracts.
+- [x] Close all132 changed ELF bytes to target code/extent only; retain189,088 protected bytes/720 owners. Measure Game2,881/4,830, total3,554/5,503, different1,949, zero drift.
+- [x] Pass44 selected target/SDK/history checks107.136s and shared/standalone checks; bank tools64a6bda first, retaining801 archive hashes and545 unrelated mirror fingerprints.
+- [ ] Bank source/pin/docs and post-bank build/graph evidence; preserve the archive/mirror and frozen Release.
+- [ ] Recover49-word func_1510B458's near/far command and55-word func_1510B51C's clipping queue; keep full source/Game/rectangle and actual hardware/gameplay acceptance open.
+
 ## View Orthographic Setup Direct Match - 2026-10-14
 
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
@@ -12,7 +25,7 @@
 - [x] Account for all219 changed ELF bytes and preserve189,088 protected bytes/720 owners; measure Game2,880/4,830, total3,553/5,503, different1,950, zero drift.
 - [x] Pass106 selected target/SDK/caller/history checks201.247s and shared/standalone tools checks; bank tools5e0f509 first, preserving801 archive hashes and538 unrelated mirror fingerprints.
 - [x] Bank consumer edf88a28, pass28 selected post-bank checks68.438s, retain all four installed checkpoint hashes in an up-to-date incremental build, and await the40,928-node/81,091-edge graph worker without forcing a smaller scan. Keep Release frozen.
-- [ ] Recover42-word func_1510B3B0's pending-view queue; keep original caller/hardware/FCSR/gameplay acceptance and the full source/Game/rectangle queues open.
+- [x] Recover42-word func_1510B3B0's pending-view queue; see Note1377. Keep original caller/hardware/FCSR/gameplay acceptance and the full source/Game/rectangle queues open.
 
 ## Original Fixed-Matrix Converter Restoration - 2026-10-14
 

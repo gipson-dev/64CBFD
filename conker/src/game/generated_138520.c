@@ -1,6 +1,7 @@
 #include <ultra64.h>
 
 extern u8 *D_800BE628;
+extern s32 D_80082FA0;
 
 extern s16 D_800DD2F2, D_800DD2F4;
 extern f32 D_800D3670, D_800A2C20;
@@ -108,8 +109,23 @@ void func_1510B32C(s32 index, f32 offsetX, f32 offsetY, f32 scale) {
     D_800D9AF0 = 1;
 }
 
-s32 func_1510B3B0() {
-    return 0;
+/* Apply pending view settings and mark each submitted row consumed. */
+void func_1510B3B0(void) {
+    f32 *pending;
+    s32 index;
+
+    index = 0;
+    if (D_80082FA0 >= 0) {
+        pending = D_800D9AC0[0];
+        do {
+            if (pending[0] != -1.0f) {
+                func_1510B128(index, pending[1], pending[2], pending[0], 0.0f);
+                pending[0] = -1.0f;
+            }
+            pending += 3;
+        } while (++index <= D_80082FA0);
+    }
+    D_800D9AF0 = 0;
 }
 
 s32 func_1510B458() {

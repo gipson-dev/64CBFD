@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools5e0f509; tools are committed before the consumer pin.
+  checkpoint pins tools64a6bda; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View orthographic setup directly matched from semantic C:
+Pending-view projection queue recovered and guarded byte-exact:
+[Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md).
+Recover func_1510B3B0's complete42-word/frame0x38 void command. Preserve the
+signed inclusive live count, -1.0f skip, typed five-word projection call,
+call-then-consume order and unconditional dirty clear. Three expected-word
+guards normalize only a closed argument-load/move cycle; no shared-header or
+profile changes. Pass4,704 guest cases,2,052 fired prefixes,2,352 native cases
+per O2/O0 profile and six effective controls under both compilers;96 cases
+connect the actual queue/parent/child with bounded trig/SDK helpers. All132
+ELF byte changes are target-slot/extent-only, with no metadata changes.
+All189,088 protected bytes/720 owners and all old guard/progress bytes remain
+fixed. ELF307dae85, progress e3ea336d. Game2,881/4,830 (59.65%), total3,554/5,503
+(64.58%), different1,949, zero drift. Original1501878C is still a production
+placeholder, not complete caller/gameplay acceptance. Continue49-word
+func_1510B458, then its clipping queue, with full source/Game/rectangle work
+active and host Release frozen. All44 selected target/SDK/history checks pass
+107.136s; shared and standalone checks pass. Bank tools64a6bda first, preserving
+all801 archive hashes and545 unrelated mirror fingerprints. Prior Note1376's
+106-check receipt is reused only for unchanged non-target behavior, not claimed
+as a fresh broad run. Consumer/post-bank evidence follows.
+
+Previous view orthographic setup directly matched from semantic C:
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md).
 Recover func_1510B070's46-word/frame0x28 body, retaining its unused incoming
 argument home, signed16 defaults, far reload and typed eight-word matrix call.

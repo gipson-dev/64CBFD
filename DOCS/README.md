@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Pending view queue reconstruction](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
+  Recover the42-word live-count command with three closed schedule guards.
+  Qualify callback mutations, native/guest storage and actual parent/child
+  connections; account for all132 ELF byte changes without metadata allowances.
+
 - [View orthographic setup reconstruction](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
   Direct46-word semantic C match with zero guards, signed16 defaults and a
   typed eight-word call. Qualify full native/guest state and actual SDK

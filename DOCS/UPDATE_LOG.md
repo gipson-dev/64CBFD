@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-14 Pending View Queue Guarded C Match
+
+[Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
+Recover func_1510B3B0's42-word/frame0x38 live-count queue. Three guards preserve
+one independent argument schedule; every other word emits directly. Qualify
+callback changes, sentinel skips, post-call consumption and empty dirty clear
+in guest/native32 and actual projection-parent/matrix-child connections. The
+entire132-byte ELF delta is target code/extent only. Game2,881/4,830,
+total3,554/5,503, different1,949, zero drift; converted counts are unchanged.
+README changes aggregate rows only. Actual SDK/hardware/caller/gameplay and
+full donor/binding/codec/Game/rectangle acceptance remain separate.
+All44 selected target/SDK/history checks pass107.136s. Tools64a6bda is committed
+first; preserve all801 archive hashes and545 unrelated mirror fingerprints.
+
 ## 2026-10-14 View Orthographic Setup Direct C Match
 
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):

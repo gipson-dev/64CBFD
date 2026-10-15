@@ -131,6 +131,8 @@ full source/Game goal or the separate known-open rectangle image gate.
 
 ## Next Target
 
+Completed in [Note 1377](1377-pending-view-queue-reconstruction-20261014.md).
+
 Continue func_1510B3B0 at1510B3B0/ROM138860:42 words/frame0x38. It consumes
 pending scale/X/Y rows through the live inclusive player count, skips -1.0f
 scale sentinels, submits the typed five-word1510B128 command, marks consumed rows,
