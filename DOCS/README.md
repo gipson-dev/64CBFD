@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Texture vertex span real home recovery and fit screens](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):
+  Recover all three real homes without new storage;18 private-home aliases
+  improve against retail. Record102 fitting screens and the still-open258-word
+  scheduling mismatch without changing production metrics.
+
 - [Texture vertex span reconstruction and private boundary](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
   Reconstruct the339-word scanner privately and qualify public behavior,
   packed fields, output aliases and effective controls. Record259 remaining

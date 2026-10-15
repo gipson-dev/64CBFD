@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Texture Vertex Span Real Home Recovery
+
+[Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):
+Recover all three real stack homes through existing declaration order, without
+changing executable statements,339-word length or0xA8 frame. All18 guest private
+aliases now match retail where the old source failed. Screen102 forms and
+independently reject advisory proposals that do not improve matching. The
+258-word/private-state boundary remains open; production and README totals
+stay unchanged. Continue this same scanner with the archive/mirror preserved.
+All16 final selected checks pass53.618s after the harness repair; bank
+tools474ff2c first, preserving801 archive hashes and570 older mirror fingerprints.
+
 ## 2026-10-15 Texture Vertex Span Private Reconstruction
 
 [Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):

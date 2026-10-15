@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):
+Recover real extent/index/base homes by declaration order only;18 guest private
+aliases now agree with retail, versus18 failures in the old source. Keep339
+words/frame0xA8,258 differences and55/63 nonmatching prefixes. Record102 fitting
+screens and one independently tested tool-free advisory. No production credit.
+All16 final checks pass53.618s; tools474ff2c is banked first, preserving801
+archive hashes and570 older mirror fingerprints.
+
+2026-10-15:
 [Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
 Private339-word/frame0xA8 scanner reconstruction with259 word differences,
 3,872 guest cases/all336 reachable instructions,1,936 native cases/profile,

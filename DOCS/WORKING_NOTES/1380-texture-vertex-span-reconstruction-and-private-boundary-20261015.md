@@ -171,6 +171,10 @@ Continue the same scanner; this checkpoint is not completion of the wider goal.
 
 ## Next Action
 
+[Note 1381](1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md)
+recovers the three real homes in a stronger private seed. Continue that seed;
+the following paragraph remains the historical handoff, not current home work.
+
 Continue THIS func_1510BF60. Recover the stack allocation and live maximum/count/
 end-opcode roles from the339-word original before choosing any normalization.
 Re-run full private and fired-prefix checks after changes, then qualify actual

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools1ffbc44; tools are committed before the consumer pin.
+  checkpoint pins tools474ff2c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Texture vertex-span real homes recovered privately; still NOT installed/exact:
+[Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md).
+Reorder existing locals to recover extentSP+A0, indicesSP+58 and vertexBaseSP+94
+in func_1510BF60, keeping339 words/frame0xA8 and executable statements unchanged.
+All18 guest private-home aliases now match retail; the previous draft fails
+all18. Raw differences fall259->258, but full private state and55/63 prefixes
+still differ. Compile102 bounded fitting forms/controls; one tool-free advisory
+is independently tested and yields no matching fix. Keep production metrics,
+README and all18 production inputs unchanged. Continue this SAME function's
+register roles/control flow, preserving archive/mirror and frozen Release.
+All16 final selected checks pass53.618s after correcting the receipt-input
+collision; shared/standalone checks pass. Bank tools474ff2c first, preserving
+all801 archive hashes and570 older mirror fingerprints.
 
 Private texture-selected vertex-span reconstruction; NOT installed or exact:
 [Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md).
