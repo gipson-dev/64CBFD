@@ -10,6 +10,7 @@
 - [x] Apply only the scale helper's three existing guards when qualifying its actual 20-word slot; keep the direct-builder versus guarded-helper distinction explicit.
 - [x] Pass 14 final checks in 146.515s, including historical image/caller gates and all 801 archive fingerprints; bank tools 3e43b4a first and preserve the older dirty mirror and Release.
 - [x] Close all 123 changed ELF bytes to the target slot/extent and retain all protected data and 32 other inputs. Measure Game 2,889/4,829, total 3,562/5,502, different 1,940, zero drift; conversions unchanged.
+- [x] Bank consumer 1f226f06 after tools 3e43b4a; pass 14 post-bank checks in 138.253s, preserve all 34 input states / 612 final mirror fingerprints and await the 41,066-node / 81,171-edge incremental graph worker without forcing a smaller scan.
 - [ ] Inspect func_150A8050's still-empty rotation provider, retail saved-FP lifetime and math helpers, then continue the wider source/Game queue. Archived GLOBAL_ASM is not recovered C or gameplay acceptance.
 
 ## Special Object Position Guarded Match - 2026-10-15

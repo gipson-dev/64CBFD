@@ -145,11 +145,33 @@ fail-closed result and await the incremental commit worker, never force it.
 Claude budget/calls: zero; direct compiler/assembly evidence settles this task.
 No push, host source/build/launch, real-save/configuration or Release operation.
 
+## Post-Bank Verification
+
+Consumer `1f226f06` banks the direct C body, tools `3e43b4a` pin and documentation.
+All 14 post-bank checks pass in 138.253 seconds, including the independent
+current image, actual helper/consumer chain, historical gates and fresh
+801-file archive check. All 34 installed inputs retain their expected hashes:
+two deliberate changes and 32 fixed inputs, including every existing guard.
+The normal ELF/progress build is up to date.
+
+Both active checkouts are clean before this documentation receipt. All 612
+final mirror fingerprints and `ddbdd16` HEAD stay fixed, including all 606
+initial fingerprints; the six owned copies remain byte-identical. The source
+commit's incremental graph workers complete at 41,066 nodes / 81,171 edges /
+3,794 communities, without forcing the smaller full scan. No push or host /
+Release operation. Keep the full source/Game goal active.
+
 ## Next Action
 
 `func_150A8050` in `game_D5500.c` is still an empty production C body. Inspect
 its 84-word retail slot, nonstandard saved-FP lifetime and six math-helper calls
 before choosing semantic C recovery or identifying original handwritten code.
+Retail saves F24 before the initial SP decrement, keeps its destination at
+SP+8, then releases 16 bytes at `0x150A80E0` before the matrix arithmetic and
+the final 32-byte release. Six even FP registers are restored. Preserve these
+measured lifetime constraints before attempting a compiler-shaped C template.
+The called `func_150AD780` / `func_150AD78C` slots are currently assembly-owned
+in `generated_DAC30` (12 / 292 bytes); do not invent standard-library replacements.
 The archive supplies GLOBAL_ASM, not a recovered C implementation. Do not count
 that assembly as C or infer initialized production angle matrices/gameplay from
 the explicitly modeled rotation leaf in this checkpoint.

@@ -38,6 +38,10 @@ data and 32 other input paths stay fixed. Game 2,889/4,829 (59.83%), total
 Bank tools 3e43b4a first and preserve archive, older mirror and Release.
 Next: inspect func_150A8050's empty rotation-provider boundary and retail
 saved-FP lifetime. Its archived GLOBAL_ASM is not byte-matching C or gameplay proof.
+Consumer 1f226f06 banks source/pin/docs. All 14 post-bank checks pass in
+138.253s; all 34 expected input states and 612 final mirror fingerprints stay
+fixed. The incremental graph worker finishes at 41,066 nodes / 81,171 edges
+without forcing the smaller full scan. The lower rotation boundary remains open.
 
 Prior special-object position recovered and guarded byte-exact:
 [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md).
