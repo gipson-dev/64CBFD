@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
+Recover the packed-coordinate preset func_1516E778, all 85 words directly from
+C with an explicit mask and zero new guards/profile changes. Verify the whole
+49-word packet, frame and actual factory chain; pass 15 checks and close all
+258 ELF changes to target slot/extent. Game 2,895/4,828, total 3,568/5,501,
+zero drift. Bank tools 8445ba1 first, preserve source-review queues and frozen
+artifacts, and continue at the still-stubbed 248-word func_1516E8CC.
+
+2026-10-15:
 [Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
 Refresh whole-source, commented, header and conditional coverage, verifying
 801 originals and 1,717 successful historical objects. No new raw imports;

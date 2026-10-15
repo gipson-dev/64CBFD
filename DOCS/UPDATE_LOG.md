@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Packed-Coordinate Preset Direct Match
+
+[Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
+Recover func_1516E778's full five-input/49-word preset packet directly from C,
+all 85 words exact with no new guards/profile changes. An explicit low-half
+mask restores the complete compiler allocation/schedule. Pass 15 installed
+checks and close all 258 ELF changes to target slot/extent, preserving other
+code/data, all guards and progress rows. Fresh Game 2,895/4,828, total
+3,568/5,501, different 1,933, zero drift; conversions unchanged. Bank tools
+8445ba1 first and continue at func_1516E8CC without dropping source-review
+queues, archive/mirror preservation or frozen Release.
+
 ## 2026-10-15 Whole Additional-Source And Commented Coverage Refresh
 
 [Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):

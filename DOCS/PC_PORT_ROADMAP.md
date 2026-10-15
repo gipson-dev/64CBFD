@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed-Coordinate Preset Direct Match - 2026-10-15
+
+[Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
+
+- [x] Recover func_1516E778's five-input ABI, signed coordinates, full arg1/arg4 words, two low-byte values and complete 49-argument factory packet. Preserve its address-based name and measured comment.
+- [x] Match all 85 raw/padded words and frame0xD0 with an explicit low-half mask, no new guards, fake locals, volatility or profile changes. Preserve all 29 owner neighbors, pools and relative relocations.
+- [x] Pass 15 installed checks in 36.720s: 3,096 guest cases, 112 fired prefixes, native32 O2/O0, six effective controls, three original/rebased pairs and 256 actual factory/allocator cases. Keep lower heap/registration and hardware/gameplay acceptance separate.
+- [x] Close all 258 ELF changes to target slot/extent. Preserve data, every old guard byte, shared headers and progress rows; measure Game 2,895/4,828, total 3,568/5,501, different 1,933, zero drift. Converted counts/bytes remain fixed.
+- [x] Bank tools 8445ba1 first. Verify all 801 original file hashes and preserve all 647 initial older-mirror fingerprints, copying only five absent owned files for 652. README changes aggregate rows only; no host/Release action.
+- [ ] Recover func_1516E8CC's full 248-word callback using actual packed widths, live accumulators, FP and table roles. The older 293-word draft is not a match; continue the full source-review / Game queues.
+
 ## Additional-Source Coverage Refresh And Preset Handoff - 2026-10-15
 
 [Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
@@ -12,7 +23,8 @@
 - [x] Pass 46 checks in 10.018s, shared tools checks and standalone mirror syntax/nine pure checks. Bank tools 8ec9137 first; preserve all 643 initial older-mirror fingerprints, copying only four absent owned files for 647.
 - [x] Keep every production input, source body, guard byte and progress row fixed; normal build is up to date. Fresh Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift. README aggregates need no change.
 - [x] Bank consumer 83fb85fa; pass all 46 post-bank checks in 9.357s and verify all 49 production inputs / 801 archive files / 173 exported locations / 647 final mirror fingerprints. Await the completed 41,136-node / 81,232-edge incremental graph refresh without forcing the smaller scan. No new matching credit.
-- [ ] Finish the preset's allocation/schedule and all owner/private/fault/rebase/image gates before installation; continue real failed-comment and binding/translation repairs without narrowing the full objective.
+- [x] Finish func_1516E778's allocation/schedule and all owner/private/fault/rebase/image installation gates in [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md), all 85 words directly exact. The broader source-review / Game goal remains open.
+- [ ] Continue real failed-comment and binding/translation repairs without narrowing the full objective.
 
 ## Packed Fade/Scale Callback And Renderer Deferral - 2026-10-15
 
@@ -25,7 +37,7 @@
 - [x] Close all 135 ELF changes to the target slot/extent. Preserve 29 neighbors, data, shared headers, progress rows and all prior guard bytes. Measure Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift; conversions unchanged.
 - [x] Bank tools 94c4245 first. Preserve all 801 archive files, independent ddbdd16 mirror HEAD and all 638 initial dirty fingerprints; copy only five absent owned files, giving 643. Keep README aggregate-only and Release frozen.
 - [x] Bank consumer c899b74f and pass all 15 post-bank checks in 45.794s. Retain all 49 input states / 643 final mirror fingerprints, normal up-to-date ELF/progress build and the completed 41,125-node / 81,222-edge incremental graph refresh. Raw C remains three words different.
-- [ ] Recover func_1516E778's 85-word preset wrapper, retaining its actual five-input ABI, packed coordinates and full factory packet. Continue the wider additional-C / Game queue.
+- [x] Recover func_1516E778's complete 85-word preset directly from C in [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md), including its true five-input ABI and full factory packet. The wider additional-C / Game queue remains open.
 - [ ] Resolve func_1516D738's inherited private-word contract or bank a separately qualified original-assembly adapter; neither is achieved by this C callback match.
 
 ## Packed Record Callback Update - 2026-10-15

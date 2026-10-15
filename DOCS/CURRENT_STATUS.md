@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8ec9137; tools are committed before the consumer pin.
+  checkpoint pins tools 8445ba1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Complete additional-source/commented/conditional coverage refreshed:
+Packed-coordinate preset recovered directly from C:
+[Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md).
+func_1516E778 matches all 85 raw and padded words with an explicit low-half
+mask, no new guards or profile changes. Preserve its full five-input/49-word
+packet and original frame/delay-store lifetime. All 15 installed checks pass
+in 36.720s: 3,096 guest cases, 112 fired prefixes, native32 O2/O0, six effective
+controls, three independent rebases and 256 actual factory/allocator cases.
+Close all 258 ELF changes to target slot/extent; all 29 neighbors, protected
+data, guards, shared headers and progress rows remain fixed. Fresh Game
+2,895/4,828 (59.96%), total 3,568/5,501 (64.86%), different 1,933, zero drift;
+conversions unchanged. Bank tools 8445ba1 first; preserve archive, independent
+older mirror and frozen Release. Next: func_1516E8CC, the 248-word callback.
+The older 293-word / 291-difference draft is only a lead. Whole additional-C /
+Game queues and actual gameplay/provider acceptance remain open.
+
+Prior complete additional-source/commented/conditional coverage refreshed:
 [Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md)
 and the [173-entry obstruction review queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv).
 Verify all 801 original files; scan 558 C files, 91 headers and one assembly

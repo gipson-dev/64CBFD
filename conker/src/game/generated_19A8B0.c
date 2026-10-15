@@ -188,8 +188,15 @@ s32 func_1516DB90() {
     return 0;
 }
 
-s32 func_1516E778() {
-    return 0;
+/* Split packed signed coordinates; forward arg1/arg4 as words and two low bytes. */
+void func_1516E778(u32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    func_1516D99C(
+        (s16)(arg0 >> 16), (s16)(arg0 & 0xFFFF), 0, (u8)arg2, 0, 0, 0, 0,
+        0, 0, 0, 0, 4, 0, 0, 0,
+        0xFF, 0xFF, 0xFF, 0, 8, 8, 1, 0,
+        0, 0, 0, 0x155, 0x155, 0x155, 0x155, arg1,
+        0x1E, 0, 0xFF, 0x28, 0x168, 0x18, 0x21, 4,
+        0, 1, 0, 0, 0, 0, 0, (u8)arg3, arg4);
 }
 
 s32 func_1516E8CC() {

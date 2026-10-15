@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Packed-coordinate preset direct match](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
+  Recover all 85 words directly from C through an explicit signed low-half
+  mask, retaining the complete o32 packet, private frame, real factory chain
+  and whole-image closure with no new guards.
+
 - [Additional-source coverage refresh and preset handoff](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
   Recheck all original sources, comments, conditional bodies and retained
   object screens; keep a [durable obstruction queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv).
