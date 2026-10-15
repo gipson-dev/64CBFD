@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Additional-source coverage refresh and preset handoff](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
+  Recheck all original sources, comments, conditional bodies and retained
+  object screens; keep a [durable obstruction queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv).
+  Continue packet-qualified but deliberately unmatched preset fitting.
+
 - [Packed fade/scale callback and renderer deferral](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
   Recover all 47 callback words with three relocation-aware guards, including
   live word clamps and actual updater/cleanup. Document positive inherited

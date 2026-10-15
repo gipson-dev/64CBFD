@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Additional-Source Coverage Refresh And Preset Handoff - 2026-10-15
+
+[Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
+
+- [x] Follow the expanded objective: whole-source/commented/header/conditional audit before resuming Game matching. Preserve all 801 original files and inspect all 650 game source/support inputs.
+- [x] Reconcile 4,131 lexical C definitions, 353 commented records, zero new header bodies and both #if-0 definitions. Keep current exact recoveries separate from unfinished drafts.
+- [x] Verify historical source/generated/isolated/object inputs, then rescreen all 1,717 successful objects in four corpora and the diagnostic linked-C image. Find zero new applicable raw imports; do not claim new compiles or a runnable snapshot.
+- [x] Retain 57 commented / 70 individual failure functions, 38 binding/translation cases and eight unanchored definitions in the [173-entry review queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv). These obstruction entries are not the complete ordinary word-matching backlog.
+- [x] Resume func_1516E778's full five-input/49-word packet: best 85 words / 46 real differences, 14 source shapes, 1,560 guest cases, native32 O2/O0 and two effective controls. Reject installation while words still differ.
+- [x] Pass 46 checks in 10.018s, shared tools checks and standalone mirror syntax/nine pure checks. Bank tools 8ec9137 first; preserve all 643 initial older-mirror fingerprints, copying only four absent owned files for 647.
+- [x] Keep every production input, source body, guard byte and progress row fixed; normal build is up to date. Fresh Game 2,894/4,828, total 3,567/5,501, different 1,934, zero drift. README aggregates need no change.
+- [ ] Finish the preset's allocation/schedule and all owner/private/fault/rebase/image gates before installation; continue real failed-comment and binding/translation repairs without narrowing the full objective.
+
 ## Packed Fade/Scale Callback And Renderer Deferral - 2026-10-15
 
 [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):

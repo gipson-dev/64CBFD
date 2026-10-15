@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Whole Additional-Source And Commented Coverage Refresh
+
+[Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
+Recheck all 801 originals, 650 game source/support inputs and every retained
+successful draft corpus. No new raw exact imports appear. Retain a durable
+[173-entry obstruction queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv), distinguishing
+commented/individual compile failures, binding placeholders and unanchored code.
+Resume func_1516E778 with 14 tested packet shapes; best 85 words / 46 real
+differences, deliberately not installed. Pass 46 checks; all production inputs
+and aggregate progress remain fixed. Bank tools 8ec9137 first, preserve the
+older mirror/archive/Release and continue the complete source/Game objective.
+
 ## 2026-10-15 Packed Fade/Scale Callback And Renderer Audit
 
 [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):

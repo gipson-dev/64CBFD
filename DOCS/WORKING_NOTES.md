@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md):
+Refresh whole-source, commented, header and conditional coverage, verifying
+801 originals and 1,717 successful historical objects. No new raw imports;
+retain the [173-entry obstruction review queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv).
+Resume packed preset matching at 85 words / 46 differences, with verified
+packet semantics but no installation. Pass 46 checks, bank tools 8ec9137 first
+and preserve all production inputs, aggregate counts, archive/mirror/Release.
+
+2026-10-15:
 [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md):
 Recover packed fade/scale callback func_1516ECAC, all 47 linked words with
 three relocation-aware load guards, raw three-word mismatch explicit. Qualify

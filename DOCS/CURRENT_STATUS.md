@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 94c4245; tools are committed before the consumer pin.
+  checkpoint pins tools 8ec9137; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Packed fade/scale callback recovered, renderer C recovery explicitly deferred:
+Complete additional-source/commented/conditional coverage refreshed:
+[Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md)
+and the [173-entry obstruction review queue](ADDITIONAL_SOURCE_REVIEW_QUEUE.csv).
+Verify all 801 original files; scan 558 C files, 91 headers and one assembly
+include. Find 4,131 active lexical definitions and 353 commented records:
+213 already exact active C, 140 needing qualification; no hidden header bodies.
+Revalidate/re-link all 1,717 historical successful objects across four corpora
+and refresh the linked diagnostic comparison: zero new raw imports. Retain
+57 commented / 70 individual compile-failure functions, 38 binding/translation
+cases and eight unanchored definitions. These are obstruction queues, not the
+whole unmatched Game backlog; do not add duplicated profile/owner counts.
+Resume func_1516E778 matching: selected 85 words / 46 real differences,
+complete 49-word packet verified in 1,560 guest cases and native32 O2/O0.
+All 46 checks pass in 10.018s. The installation gate rejects this mismatch;
+no C, guards, ELF or progress rows change. Fresh official Game 2,894/4,828,
+total 3,567/5,501, different 1,934, zero drift. Bank tools 8ec9137 first and
+preserve archive, 643 initial older-mirror fingerprints and frozen Release.
+Next finish compiler-role/owner/private/fault/rebase gates before installing
+the preset; keep failed-comment/binding repairs and the full goal open.
+
+Prior packed fade/scale callback recovered, renderer C recovery explicitly deferred:
 [Note 1395](WORKING_NOTES/1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md).
 func_1516ECAC matches all 47 linked words with three relocation-aware guards;
 raw C remains three operand-load words different. Recover the actual byte
