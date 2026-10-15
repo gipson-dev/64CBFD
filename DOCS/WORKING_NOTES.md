@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
+Recover the 51-word special-object position routine with a real matrix and two
+frame-only guards. Pass 14 checks, full private/prefix/native/rebase/image gates;
+close 152 changed ELF bytes to the target slot and extent. Game 2,888/4,829,
+total 3,561/5,502, zero drift. Bank tools c51788d first and continue the still
+stubbed matrix builder, preserving source archive, older mirror and Release.
+
+2026-10-15:
 [Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
 Finish the capture-request slot as a guarded40-word match, deriving22 allocation/
 schedule guards and preserving the22-word raw C distinction. All21 final checks

@@ -15180,3 +15180,5 @@ generated_1A11B0,func_151745F0,0x54,0xAC590038,0x24E90024,-,-,Preserve closed ca
 generated_1A11B0,func_151745F0,0x84,0x2442003C,0x2463003C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
 generated_1A11B0,func_151745F0,0x88,0x5443FFE3,0x5462FFE3,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
 generated_1A11B0,func_151745F0,0x8C,0x904E000C,0x906E000C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
+generated_142560,func_1511F31C,0x0,0x27BDFF78,0x27BDFF70,-,-,Preserve retail matrix frame allocation and release,,,false
+generated_142560,func_1511F31C,0xC0,0x27BD0088,0x27BD0090,-,-,Preserve retail matrix frame allocation and release,,,false

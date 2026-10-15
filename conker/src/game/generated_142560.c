@@ -1,5 +1,10 @@
 #include <ultra64.h>
 
+extern s32 D_800BE9F0;
+void func_1511490C(f32 matrix[4][4], u8 *actor);
+void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z,
+                   f32 *outX, f32 *outY, f32 *outZ);
+
 extern s32 D_800BE9E4;
 extern u8 *D_800DBFF0;
 extern u8 *D_800DBEF4;
@@ -456,8 +461,26 @@ s32 func_1511EF40() {
     return 0;
 }
 
-s32 func_1511F31C() {
-    return 0;
+/* Position category-0x35 attachments from their linked actor's matrix.
+ * Two expected-word guards preserve retail's 0x90-byte matrix frame. */
+void func_1511F31C(u8 *object) {
+    f32 matrix[4][4];
+    f32 x;
+    f32 y;
+    f32 z;
+    u8 *actor;
+    u16 selector = *(u16 *)(object + 0x3E);
+
+    if (*(u16 *)(object + 0x54) == 0x8005 && D_800BE9F0 == 0x35) {
+        actor = func_151149AC(selector & 0xFF);
+        if (actor != NULL) {
+            func_1511490C(matrix, actor);
+            func_150A7960(matrix, -3.0f, 223.0f, 549.0f, &x, &y, &z);
+            *(s16 *)(object + 0x10) = (s16)(s32)x;
+            *(s16 *)(object + 0x12) = (s16)(s32)y;
+            *(s16 *)(object + 0x14) = (s16)(s32)z;
+        }
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_142560/func_1511F3E8.s")

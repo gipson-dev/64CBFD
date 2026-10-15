@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Special-object position matrix frame and guarded match](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
+  Recover the real matrix/selector/call ABI and match all 51 words with two
+  frame-only guards. Preserve the raw mismatch and still-stubbed matrix-helper
+  boundary; close every ELF change and continue the wider source/Game audit.
+
 - [Capture-request compiler roles and guarded byte match](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
   Match all40 linked words through22 proven allocation/scheduling guards, keeping
   raw compiler identity distinct. Qualify full private states, prefixes, rebases

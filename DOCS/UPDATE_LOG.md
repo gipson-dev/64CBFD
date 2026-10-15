@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Special Object Position Matrix Frame And Guarded Match
+
+[Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
+Recover func_1511F31C's real matrix allocation, halfword selector and typed
+calls. Match all 51 linked words with two frame-only guards, not raw compiler
+identity. All 14 checks pass in 77.922s; close the 152-byte ELF delta exactly,
+preserve data/neighbors/archive/mirror/Release, and bank tools c51788d first.
+Game 2,888/4,829, total 3,561/5,502, different 1,941, zero drift; conversions
+unchanged. Continue matrix-builder func_1511490C; gameplay remains unqualified.
+
 ## 2026-10-15 Capture Request Compiler Roles And Guarded Byte Match
 
 [Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):

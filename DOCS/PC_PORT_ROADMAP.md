@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Special Object Position Guarded Match - 2026-10-15
+
+[Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
+
+- [x] Recover func_1511F31C's 64-byte matrix, unconditional halfword selector, typed calls and three truncated coordinate stores.
+- [x] Screen 14 complete-owner source forms with zero diagnostics; retain two raw frame differences and derive exactly two balanced frame guards without fake locals or profile changes.
+- [x] Qualify 2,560 complete modeled guest states, 122 fired prefixes, native O2/O0 cases and five controls, three original-assembly rebases and the actual 40-word point transform.
+- [x] Match all 51 linked words and independently close all 152 changed ELF bytes to the target slot/extent, preserving 83 neighbors and all protected data.
+- [x] Pass 14 final checks in 77.922s, including exact historical inverses and all 801 archive fingerprints; bank tools c51788d first and preserve the older dirty mirror and Release.
+- [x] Measure Game 2,888/4,829, total 3,561/5,502, different 1,941, zero drift; converted counts unchanged. README aggregate rows only.
+- [ ] Recover func_1511490C's still-stubbed matrix builder and continue the wider source/Game queue. Do not infer complete gameplay or automatic host transfer.
+
 ## Capture Request Guarded Byte Match - 2026-10-15
 
 [Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md):
@@ -11,7 +23,8 @@
 - [x] Pass21 final top-level checks101.665s including historical gates; bank toolsd59c316/fdae1b3 first. Preserve801 archive hashes,595 older mirror fingerprints and frozen Release.
 - [x] Measure Game2,887/4,829, total3,560/5,502, different1,942 and zero drift; conversions unchanged. Root README aggregate rows only.
 - [x] Bank consumerb8c40270 after toolsd59c316/fdae1b3; pass21 post-bank checks67.669s, retain all26 expected hashes in an up-to-date build and await the41,045-node/81,162-edge incremental graph worker without forcing a smaller scan.
-- [ ] Continue func_1511F31C's prototype/matrix-layout gap and the wider source/Game queue. Host func_151745F0 is still a stub; qualify any transfer separately.
+- [x] Recover func_1511F31C's prototype/matrix-layout gap in [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md); retain the guarded/raw distinction.
+- [ ] Continue the wider source/Game queue and qualify host transfers separately; no automatic PC-port repair is claimed.
 
 ## Capture Request Inline Copy Recovery - 2026-10-15
 

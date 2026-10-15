@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsfdae1b3; tools are committed before the consumer pin.
+  checkpoint pins toolsc51788d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Capture-request slot installed and guarded byte-exact:
+Special-object position recovered and guarded byte-exact:
+[Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md).
+func_1511F31C matches all 51 linked words with a real 64-byte matrix, typed
+helper calls and two frame-only guards. Raw C still differs at allocation and
+release, so this is not a direct compiler match. All 14 checks pass in 77.922s;
+2,560 guest cases, 122 fired prefixes, native O2/O0 controls, three rebases and
+the actual point-transform connection pass. The full ELF closes to 152 changed
+bytes, target slot/extent only; protected data and 25 other inputs stay fixed.
+Game 2,888/4,829 (59.81%), total 3,561/5,502 (64.72%), different 1,941, zero
+drift; converted counts unchanged. Bank tools c51788d first, preserve archive,
+601 older mirror fingerprints and Release. Next: recover matrix-builder
+func_1511490C, still a production stub; no complete gameplay or host claim.
+
+Prior capture-request slot installed and guarded byte-exact:
 [Note 1387](WORKING_NOTES/1387-capture-request-compiler-roles-and-guarded-byte-match-20261015.md).
 func_151745F0 matches all40 linked words with its complete typed C body and22
 relocation-aware allocation/scheduling guards. Raw C still differs22 words;
