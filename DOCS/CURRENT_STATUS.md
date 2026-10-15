@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools474ff2c; tools are committed before the consumer pin.
+  checkpoint pins tools a01819f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Texture vertex-span compiler phase narrowed; still NOT installed/exact:
+[Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md).
+Screen60 more complete forms/profile controls; none improves HOMES339 words/
+frame0xA8/258 differences. Fresh unchanged-code CFE/UOPT/UGEN captures prove
+maximumA3/countT0 and the unallocated end tag already differ before final UGEN
+scheduling. Mode5 supplies32 variables/51 integer constraints, not valid numeric
+timings. All11 selected checks pass50.484s, including15 effective capture
+controls and preceding installed-image gates. Bank tools a01819f first; all18
+production hashes,801 archive fingerprints and573 older mirror fingerprints
+remain fixed. README/metrics are unchanged. Continue THIS scanner's optimizer
+lifetime/value-use shape; no new C match, host operation or Release change.
 
 Texture vertex-span real homes recovered privately; still NOT installed/exact:
 [Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md).

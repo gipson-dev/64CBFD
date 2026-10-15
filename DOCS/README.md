@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Texture vertex span optimizer allocation and controlflow traces](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
+  Capture actual CFE/UOPT/UGEN phases and mode5 integer constraints, ruling
+  out60 more forms without claiming a match. Keep production and README fixed;
+  continue this scanner's optimizer lifetime/value-use shape.
+
 - [Texture vertex span real home recovery and fit screens](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):
   Recover all three real homes without new storage;18 private-home aliases
   improve against retail. Record102 fitting screens and the still-open258-word

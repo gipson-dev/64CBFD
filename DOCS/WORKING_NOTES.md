@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
+Trace actual CFE/UOPT/UGEN records and32-variable/51-constraint mode5 integer
+evidence; the maximum/count/end-tag roles already differ before final UGEN.
+Sixty more forms yield no exact match. All11 selected checks pass50.484s;
+tools a01819f is banked first. Production/README totals stay fixed; preserve
+all801 archive hashes,573 older mirror fingerprints and frozen Release.
+
+2026-10-15:
 [Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):
 Recover real extent/index/base homes by declaration order only;18 guest private
 aliases now agree with retail, versus18 failures in the old source. Keep339

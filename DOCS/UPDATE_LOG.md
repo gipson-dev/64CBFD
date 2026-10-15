@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Texture Vertex Span Optimizer Phase Evidence
+
+[Note 1382](WORKING_NOTES/1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
+Screen60 more forms/profile controls without improving the258-difference seed.
+Fresh compiler captures prove maximum/count/end-tag roles already differ in
+UOPT output, before final scheduling. Pass11 selected checks50.484s, including
+guest/native semantics,15 effective capture controls and prior image gates.
+Bank tools a01819f first; preserve18 production inputs,801 archive hashes and
+573 older mirror fingerprints. No C installation, README/metric change, push
+or host/Release operation. Continue the same scanner's lifetime/value-use shape.
+
 ## 2026-10-15 Texture Vertex Span Real Home Recovery
 
 [Note 1381](WORKING_NOTES/1381-texture-vertex-span-real-home-recovery-and-fit-screens-20261015.md):

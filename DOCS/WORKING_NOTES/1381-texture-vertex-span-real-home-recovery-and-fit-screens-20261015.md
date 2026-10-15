@@ -164,6 +164,11 @@ history mutation or host/Release operation. The full objective stays active.
 
 ## Next Action
 
+Continued in [Note 1382](1382-texture-vertex-span-optimizer-allocation-and-controlflow-traces-20261015.md):
+sixty more screens do not improve the seed, but actual compiler phase captures
+locate the maximum/count/end-tag mismatch in UOPT output before final UGEN.
+No production installation or new C-match credit; retain this recovered seed.
+
 Continue the recovered-home HOMES seed, not the old259-difference source.
 Resolve the first remaining loop-initialization role (A3 versus retail T0),
 the missing loop-carried A0 end-tag, stage1 branch-likely schedule and stage2's
