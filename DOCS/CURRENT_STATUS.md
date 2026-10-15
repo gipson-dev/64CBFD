@@ -43,6 +43,11 @@ Bank tools 6ee5fbe first; preserve archive/mirror/frozen Release. Next:
 func_1516D738, still a 153-word stub. Its older 150-word / 150-difference
 archive draft is only a lead. Lower callbacks/unlink/destructors and full
 gameplay remain separate qualification boundaries; no automatic host transfer.
+Consumer 26623707 banks the source/guards/pin/docs. All 14 post-bank checks pass
+in 31.496s; all 46 input states / 801 archive files / 638 final mirror
+fingerprints remain fixed. Normal ELF/progress build is up to date. The
+incremental graph worker completes at 41,114 nodes / 81,211 edges; raw C still
+differs by three register-allocation words.
 
 Prior packed 0x34-byte factory and optional position/scale binding recovered directly:
 [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md).

@@ -9,6 +9,7 @@
 - [x] Pass 14 focused checks in 26.586s: 1,536 guest cases, 152 fired prefixes, two native32 profiles, six effective negatives, three independent symbol rebases and 128 actual construction/update/cleanup lifecycle cases.
 - [x] Close all 140 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, shared header contents, progress rows and every prior guard byte; append only three rows. Measure Game 2,893/4,828, total 3,566/5,501, different 1,935, zero drift.
 - [x] Bank tools 6ee5fbe first; preserve all 801 archive files and all 633 initial older-mirror fingerprints, copying only five absent owned files. Keep README changes aggregate-only and frozen Release untouched.
+- [x] Bank consumer 26623707 and pass all 14 post-bank checks in 31.496s. Retain all 46 installed input states / 638 final mirror fingerprints; normal ELF/progress build is up to date and the 41,114-node / 81,211-edge incremental graph worker has completed without forcing the smaller scan. Raw C still differs at three words.
 - [ ] Recover func_1516D738's full 153-word body and active ABI, continuing the whole additional-C / Game queue. The old 150-word draft is not a match; provider/gameplay acceptance remains separate.
 
 ## Small Record Factory Direct Match - 2026-10-15

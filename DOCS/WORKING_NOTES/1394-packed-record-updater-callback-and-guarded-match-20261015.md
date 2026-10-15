@@ -150,3 +150,19 @@ owner. Its older archive screen emits 150 words / 150 real differences.
 Re-establish its full retail behavior, arguments and active compiler shape
 before adoption. Keep the whole additional-source/binding queue, handwritten
 Init hardware routines and func_1510BF60 open; no full-game completion claim.
+
+## Post-Bank Verification
+
+Consumer **26623707** banks the source, three guards, tools 6ee5fbe pin,
+README aggregates and working documentation. All **14 post-bank checks pass
+in 31.496 seconds**, including the independent complete current image, all 46
+input states and fresh hashes for all 801 archive files. The normal ELF /
+progress build is up to date. Raw C still has three differences; only the
+guarded complete slot/state is claimed retail-exact.
+
+Both active checkouts are clean before this receipt. All 638 final older-mirror
+fingerprints, including the 633 initial fingerprints and independent ddbdd16
+HEAD, remain fixed. The source commit's incremental graph worker completes at
+**41,114 nodes / 81,211 edges / 3,930 communities**, without forcing the refused
+smaller full scan. No push or host/Release operation. Continue the whole
+additional-C / Game goal at func_1516D738, not a narrower completion claim.
