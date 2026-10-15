@@ -145,3 +145,21 @@ retaining 19,398 nodes from 2,972 excluded-but-present files. Preserve this
 fail-closed result and await the normal incremental commit worker rather than
 force the smaller scan. Seven documents / 4,978 relative Markdown links
 validate with zero broken.
+
+## Post-Bank Verification
+
+Consumer **1002474c** banks the semantic preset, tools 8445ba1 pin, aggregate
+README rows and working documentation. All **15 post-bank checks pass in
+33.135 seconds**, including complete independent current-image closure, all
+50 input states/corruption gates, exact-input checkpoint captures and fresh
+hashes for all 801 archive files. The normal ELF/progress build is up to date.
+All 85 words emit directly from C; no matching guard or profile is added.
+
+Both active checkouts are clean before this receipt. Preserve the older
+mirror's independent ddbdd16 HEAD and all **652 final dirty fingerprints**,
+including every one of the 647 initial inputs. The source commit's incremental
+graph worker completes at **41,146 nodes / 81,243 edges / 3,813 communities**,
+without forcing the refused smaller full scan. Seven documents / 4,978
+relative Markdown links remain valid. No push or host/Release action.
+Continue the whole additional-source / Game goal at func_1516E8CC; the broader
+source-review and inherited-stack C queues remain open.

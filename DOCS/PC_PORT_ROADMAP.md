@@ -9,6 +9,7 @@
 - [x] Pass 15 installed checks in 36.720s: 3,096 guest cases, 112 fired prefixes, native32 O2/O0, six effective controls, three original/rebased pairs and 256 actual factory/allocator cases. Keep lower heap/registration and hardware/gameplay acceptance separate.
 - [x] Close all 258 ELF changes to target slot/extent. Preserve data, every old guard byte, shared headers and progress rows; measure Game 2,895/4,828, total 3,568/5,501, different 1,933, zero drift. Converted counts/bytes remain fixed.
 - [x] Bank tools 8445ba1 first. Verify all 801 original file hashes and preserve all 647 initial older-mirror fingerprints, copying only five absent owned files for 652. README changes aggregate rows only; no host/Release action.
+- [x] Bank consumer 1002474c and pass all 15 post-bank checks in 33.135s. Retain all 50 input states / 652 final mirror fingerprints, normal up-to-date ELF/progress build and the completed 41,146-node / 81,243-edge incremental graph refresh without forcing the smaller scan.
 - [ ] Recover func_1516E8CC's full 248-word callback using actual packed widths, live accumulators, FP and table roles. The older 293-word draft is not a match; continue the full source-review / Game queues.
 
 ## Additional-Source Coverage Refresh And Preset Handoff - 2026-10-15

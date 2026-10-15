@@ -41,6 +41,11 @@ conversions unchanged. Bank tools 8445ba1 first; preserve archive, independent
 older mirror and frozen Release. Next: func_1516E8CC, the 248-word callback.
 The older 293-word / 291-difference draft is only a lead. Whole additional-C /
 Game queues and actual gameplay/provider acceptance remain open.
+Consumer 1002474c banks source/pin/docs. All 15 post-bank checks pass in
+33.135s; all 50 installed input states / 801 archive files / 652 final mirror
+fingerprints remain pinned. Normal ELF/progress build is up to date. The
+incremental graph completes at 41,146 nodes / 81,243 edges without forcing
+the refused smaller scan. All 85 words are directly exact, with no new guards.
 
 Prior complete additional-source/commented/conditional coverage refreshed:
 [Note 1396](WORKING_NOTES/1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md)
