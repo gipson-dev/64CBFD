@@ -42,6 +42,13 @@ inputs, guards/progress and protected data stay fixed. Fresh Game 2,900/4,828
 (60.07%), total 3,573/5,501 (64.95%), different 1,928, zero drift; conversions
 fixed. Bank tools 28f7a09 first; preserve 676 initial older-mirror fingerprints /
 680 final paths. Next func_1516F548, 199 words / frame 0xF8; full goal stays open.
+Consumer 63e6b1b3 banks source/docs/pin; all 14 post-bank checks pass in
+52.117s, exit 0. All 55 input states / 801 archive files / 680 final mirror
+fingerprints remain fixed, preserving 676 initial dirty files. Eight docs
+resolve 5,030 relative links, zero broken; actual incremental graph workers
+finish at 41,229 nodes / 81,332 edges without forcing the smaller scan.
+Next routine reads slots 15/16 and coordinate-home aliases absent from the
+archive's fourteen-formal declaration; retain that precise ABI handoff.
 
 Table-fade callback installed and guarded-exact:
 [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md).

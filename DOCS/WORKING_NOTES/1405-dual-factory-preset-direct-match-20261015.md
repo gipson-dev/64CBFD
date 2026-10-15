@@ -174,9 +174,36 @@ fixed-point shift/sign behavior and complete constructor packets before
 choosing C types or copying the archived scratch locals/parameter numbering.
 No next-function edit or full-caller restoration is included here.
 
+A fresh static read already identifies incoming arg15's low byte at +0x3F
+and arg16's word at +0x40, beyond unused slots 12..14. The archive's fourteen-
+formal declaration cannot preserve those positions; verify actual callers
+before choosing the complete interface. Its `unkspF6/F2/EE` values are the
+low halfwords of initialized coordinate words at SP+0xF4/F0/EC, not independent
+uninitialized locals. The routine submits two 49-word factory packets and a
+final 12-word `func_1000FA64` packet with callback `func_1000EBC4`. These are
+static handoff facts, not a new C recovery or runtime qualification.
+
 The earlier 1,717-object audit remains historical, not freshly rerun. This
 turn freshly compiles the one archived function and 25 source forms, verifies
 55 inputs/801 archive hashes, and completes this one raw C match. Retain the
 inherited-stack renderer deferral and complete
 [failed-comment/binding/unanchored queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md).
 The full additional-source / Game objective remains active and incomplete.
+
+## Post-Bank Verification
+
+Consumer **63e6b1b3** banks source, aggregate-only README updates, working docs
+and the tools **28f7a09** pin. All **14 post-bank checks pass in 52.117 seconds**,
+exit 0. The entire independent ELF, all 55 input states, all 801 archive hashes,
+private/fault/native/factory/caller-boundary checks and corruption controls
+remain qualified. Raw and production-padded C both stay 148/148 exact, with
+no guards or profile changes. No production artifact changes during the rerun.
+The normal ELF/progress build remains up to date.
+
+Both active checkouts are clean before this receipt edit. Recheck older mirror
+ddbdd16: all **680 final fingerprints** remain fixed, all **676 initial dirty
+files** are preserved and all four owned copies equal active tools. Eight
+documents resolve **5,030 relative links, zero broken**. The source commit's
+actual incremental graph workers finish at **41,229 nodes / 81,332 edges /
+3,802 communities**, without forcing the refused smaller full scan. Continue
+func_1516F548 and the full additional-source / Game queues.
