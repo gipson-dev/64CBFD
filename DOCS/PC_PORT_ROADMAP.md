@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Record Factory Guarded Match - 2026-10-15
+
+[Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
+
+- [x] Recover func_1516D99C's 49 argument widths, packed byte/halfword writes, allocation-kind branch, null path and conditional arg41 clamp. Preserve the existing caller through the full-word arg47 ABI and explicit low-byte read.
+- [x] Match all 125 linked words with six expected-word guards for two closed schedules. Keep the raw six-word mismatch explicit; do not claim direct C identity or change profiles.
+- [x] Pass 14 focused checks in 45.597s: 2,048 guest cases, 1,024 stack aliases, 456 fired prefixes, two bounded native32 profiles, six effective negatives, three assembly rebases and 128 actual wrapper/factory/allocator chains.
+- [x] Close every one of 374 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, progress rows and the complete previous guard prefix; append only six rows. Measure Game 2,891/4,828, total 3,564/5,501, different 1,937, zero drift.
+- [x] Bank tools 49b76f0 first and preserve all 801 archive files / 623 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only and frozen Release untouched.
+- [ ] Recover the still-stubbed func_1516D4E8 packed-record factory and continue the whole additional-C / Game queue. Heap/registration providers and full gameplay remain separate qualification work.
+
 ## Factory Preset Wrapper Direct Match - 2026-10-15
 
 [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
@@ -10,7 +21,7 @@
 - [x] Close every one of 233 changed ELF bytes to the target slot/extent; preserve protected data, guards and progress rows. Measure Game 2,890/4,828, total 3,563/5,501, different 1,938, zero drift.
 - [x] Bank tools f0e67c2 first, preserve all 801 archive files and all 618 initial older-mirror fingerprints, and keep README edits aggregate-only. No host/Release action.
 - [x] Bank consumer 63f5eaf7, pass all 13 post-bank checks in 29.006s, retain all 41 installed input states / 623 final mirror fingerprints, and await the 41,085-node / 81,179-edge incremental graph worker. Normal ELF/progress build is up to date.
-- [ ] Recover func_1516D99C's still-stubbed 125-word factory and continue the whole additional-C / Game queue. The old 158-word archive screen is not a match; no gameplay or host-transfer acceptance.
+- [x] Recover func_1516D99C's 125-word factory in [Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md), with six scheduling guards and actual caller connection. The whole additional-C / Game queue and gameplay/host acceptance remain open.
 
 ## Original Rotation Kernel Restoration - 2026-10-15
 

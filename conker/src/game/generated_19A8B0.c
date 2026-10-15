@@ -2,6 +2,8 @@
 
 extern s32 D_800BE9E4;
 
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
 s32 func_1516D400() {
@@ -20,8 +22,81 @@ s32 func_1516D738() {
     return 0;
 }
 
-s32 func_1516D99C() {
-    return 0;
+/* Initialize a packed 0x4C-byte record; cap arg41 for the alternate kind.
+ * Six expected-word guards preserve two independent load/store schedules. */
+void func_1516D99C(
+    s16 arg0, s16 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5,
+    u8 arg6, u8 arg7, u8 arg8, u8 arg9, u8 arg10, u8 arg11,
+    u8 arg12, u8 arg13, u8 arg14, u8 arg15, u8 arg16, u8 arg17,
+    u8 arg18, u8 arg19, u8 arg20, u8 arg21, u8 arg22, u8 arg23,
+    u8 arg24, u8 arg25, u8 arg26, s16 arg27, s16 arg28, s16 arg29,
+    s16 arg30, u16 arg31, u8 arg32, u8 arg33, u8 arg34, u8 arg35,
+    s16 arg36, u16 arg37, u16 arg38, u8 arg39, u8 arg40, u8 arg41,
+    u8 arg42, u8 arg43, s32 arg44, u8 arg45, u8 arg46, s32 arg47,
+    s32 arg48) {
+    s32 kind;
+    u8 *record;
+
+    if (arg44 != 0) {
+        kind = 0x66;
+    } else {
+        kind = 0x11;
+    }
+    /* The flag stays a word at the caller ABI; read its big-endian low byte. */
+    record = func_15167A68(kind, arg48, 0x4C, 0, ((u8 *)&arg47)[3], 1);
+    if (record != NULL) {
+        *(s16 *)(record + 0xE) = arg0;
+        *(s16 *)(record + 0x10) = arg1;
+        *(s16 *)(record + 0x12) = arg2;
+        *(s16 *)(record + 0x14) = arg27;
+        *(s16 *)(record + 0x16) = arg28;
+        *(s16 *)(record + 0x18) = arg29;
+        *(s16 *)(record + 0x1A) = arg30;
+        record[0x24] = arg3;
+        record[0x25] = arg4;
+        record[0x26] = arg5;
+        record[0x27] = arg6;
+        record[0x28] = arg7;
+        record[0x2A] = arg9;
+        record[0x2B] = arg10;
+        record[0x2C] = arg11;
+        record[0x29] = arg8;
+        record[0x2D] = arg12;
+        record[0x2E] = arg13;
+        record[0x2F] = arg14;
+        record[0x30] = arg15;
+        record[0x31] = arg16;
+        record[0x32] = arg17;
+        record[0x33] = arg18;
+        record[0x34] = arg19;
+        record[0x35] = arg20;
+        record[0x36] = arg21;
+        record[0x37] = arg22;
+        record[0x38] = arg23;
+        record[0x39] = arg24;
+        record[0x3A] = arg25;
+        *(u16 *)(record + 0x20) = arg31;
+        record[0x3C] = arg31;
+        record[0x3B] = arg26;
+        record[0x3D] = arg32;
+        record[0x3E] = arg33;
+        record[0x3F] = arg34;
+        record[0x40] = arg35;
+        *(s16 *)(record + 0x1C) = arg36;
+        *(u16 *)(record + 0x1E) = arg37;
+        *(u16 *)(record + 0x22) = arg38;
+        record[0x42] = 0;
+        record[0x41] = arg39;
+        record[0x43] = arg40;
+        if (arg44 != 0 && arg41 >= 4) {
+            arg41 = 3;
+        }
+        record[0x44] = arg41;
+        record[0x45] = arg42;
+        record[0x46] = arg43;
+        record[0x47] = arg45;
+        record[0x48] = arg46;
+    }
 }
 
 s32 func_1516DB90() {

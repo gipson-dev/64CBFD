@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Packed record factory widths and guarded match](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
+  Recover the real 49-argument factory and all 125 linked words with six closed
+  scheduling guards. Preserve its direct caller and qualify packed writes,
+  aliases, connected allocation and the complete installed image.
+
 - [Factory preset wrapper widths and direct match](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
   Recover all 78 words directly from C, fixing two archived argument narrowings.
   Qualify the complete packet, ABI and linked image while leaving the factory's

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
+Recover the real packed record factory and 49-input ABI; all 125 linked words
+match with six closed scheduling guards, not direct raw C identity. Pass 14
+focused checks and actual caller/allocation chains; close the 374-byte ELF
+delta. Game 2,891/4,828, total 3,564/5,501, zero drift. Bank tools 49b76f0 first,
+preserve archive/mirror/Release, and continue at func_1516D4E8.
+
+2026-10-15:
 [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
 Recover the preset-0x2D factory wrapper directly from C, all 78 words exact
 after correcting two archived narrowings. Pass 13 focused checks and close the

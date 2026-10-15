@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Packed Record Factory Guarded Match
+
+[Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md):
+Recover func_1516D99C's real packed field widths and 49-argument ABI. Match all
+125 linked words with six closed scheduling guards; raw C remains six words
+different. Pass 14 focused checks and actual wrapper/factory/allocator chains,
+close all 374 ELF changes to target slot/extent, and preserve data/29 neighbors.
+Fresh Game 2,891/4,828, total 3,564/5,501, different 1,937, zero drift;
+conversions unchanged. Bank tools 49b76f0 first, preserve archive/mirror/Release,
+and continue at the still-stubbed 0x34-byte factory func_1516D4E8.
+
 ## 2026-10-15 Factory Preset Wrapper Direct Match
 
 [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):

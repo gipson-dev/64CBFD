@@ -15182,3 +15182,9 @@ generated_1A11B0,func_151745F0,0x88,0x5443FFE3,0x5462FFE3,-,-,Preserve closed ca
 generated_1A11B0,func_151745F0,0x8C,0x904E000C,0x906E000C,-,-,Preserve closed capture-request allocation and independent scheduling,,,false
 generated_142560,func_1511F31C,0x0,0x27BDFF78,0x27BDFF70,-,-,Preserve retail matrix frame allocation and release,,,false
 generated_142560,func_1511F31C,0xC0,0x27BD0088,0x27BD0090,-,-,Preserve retail matrix frame allocation and release,,,false
+generated_19A8B0,func_1516D99C,0x144,0xA4430020,0x93B9008B,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D99C,0x148,0xA043003C,0xA4430020,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D99C,0x14C,0x93B9008B,0xA043003C,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D99C,0x188,0xA0400042,0xA44E0022,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D99C,0x18C,0xA44E0022,0x93AF00BF,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D99C,0x190,0x93AF00BF,0xA0400042,-,-,Preserve two closed independent factory load and store schedules,,,false

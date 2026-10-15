@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f0e67c2; tools are committed before the consumer pin.
+  checkpoint pins tools 49b76f0; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Preset-0x2D factory wrapper recovered directly from C:
+Packed 0x4C-byte record factory recovered with six scheduling guards:
+[Note 1392](WORKING_NOTES/1392-packed-record-factory-widths-and-guarded-match-20261015.md).
+func_1516D99C now matches all 125 linked words. Raw C remains six words
+different in two closed load/store schedules; no profile changes. Correct the
+archive's overlapping word stores to packed byte/halfword fields and preserve
+the already-exact 78-word caller. All 14 focused checks pass in 45.597s,
+including 2,048 guest cases, 456 fault prefixes, native32 O2/O0 and 128 actual
+wrapper/factory/allocator chains. Close all 374 ELF changes to target slot /
+extent; 29 neighbors, protected data and progress rows stay fixed. Preserve
+every previous guard byte and append six rows. Fresh Game 2,891/4,828 (59.88%),
+total 3,564/5,501 (64.79%), different 1,937, zero drift; conversions unchanged.
+Bank tools 49b76f0 first, preserve all 801 archive files / 623 initial older
+mirror fingerprints and frozen Release. Next: the still-stubbed 100-word
+0x34-byte factory func_1516D4E8; its old 120-word / 106-difference archive
+screen is only a lead. Heap allocation and registration remain opaque in
+the connected model; no complete gameplay or host-transfer claim.
+
+Prior preset-0x2D factory wrapper recovered directly from C:
 [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md).
 func_1516F1C0 matches all 78 words without new guards or profile changes.
 The archive's two incorrect narrowings are removed; only arg2 narrows to a
