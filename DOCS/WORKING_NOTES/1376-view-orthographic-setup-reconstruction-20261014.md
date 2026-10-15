@@ -12,7 +12,7 @@ C donor for this routine. Preserve all archive/mirror work and frozen Release.
 2. [x] Recover a complete semantic C body and qualify the literal frame, unused incoming-word home, signed16 defaults, far reload and eight-word float packet.
 3. [x] Qualify owner neighbors/pools/relocations, both padders/rebases, guest/native aliases and effective controls before production installation.
 4. [x] Close the entire linked image and affected immutable history, measure fresh progress and update aggregate-only README plus working indexes.
-5. [ ] Bank tools first, then source/pin/docs and post-bank build/graph evidence; continue the full source/Game goal.
+5. [x] Bank tools first, then source/pin/docs and post-bank build/graph evidence; continue the full source/Game goal.
 
 ## Interface Evidence
 
@@ -116,6 +116,18 @@ fingerprints and HEAD, leaving547 expected dirty paths. All nine compile
 standalone and two namespace-bound pure checks pass. No mirror reset, commit
 or history duplication. Fresh verification retains all801 original archive
 hashes. Host Release stays frozen.
+
+## Post-Bank Verification
+
+Tools5e0f509 precedes consumer edf88a28, which banks the direct C recovery,
+tools pin and aggregate-only README/status updates. All28 selected post-bank
+target/history checks pass68.438s. The incremental build is up to date;
+fresh verification retains the exact installed ELF ebe9dc50, owner4d528f1c,
+progress e3ea336d and guards b83e74a2 hashes. Both active checkouts are clean
+before this receipt. The consumer's incremental graph worker completes at
+40,928 nodes/81,091 edges/3,771 communities without forcing the smaller scan.
+No push or host/Release operation. This completed function does not close the
+full source/Game goal or the separate known-open rectangle image gate.
 
 ## Next Target
 

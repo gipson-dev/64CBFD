@@ -11,7 +11,7 @@
 - [x] Freshly compile the210-word SDK chain under its real O3 recipes and execute96 finite exact-conversion guest cases, plus48 actual SDK C cases per native profile.
 - [x] Account for all219 changed ELF bytes and preserve189,088 protected bytes/720 owners; measure Game2,880/4,830, total3,553/5,503, different1,950, zero drift.
 - [x] Pass106 selected target/SDK/caller/history checks201.247s and shared/standalone tools checks; bank tools5e0f509 first, preserving801 archive hashes and538 unrelated mirror fingerprints.
-- [ ] Finish the consumer commit and post-bank build/graph verification with Release frozen.
+- [x] Bank consumer edf88a28, pass28 selected post-bank checks68.438s, retain all four installed checkpoint hashes in an up-to-date incremental build, and await the40,928-node/81,091-edge graph worker without forcing a smaller scan. Keep Release frozen.
 - [ ] Recover42-word func_1510B3B0's pending-view queue; keep original caller/hardware/FCSR/gameplay acceptance and the full source/Game/rectangle queues open.
 
 ## Original Fixed-Matrix Converter Restoration - 2026-10-14

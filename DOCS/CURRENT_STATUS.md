@@ -49,6 +49,10 @@ func_1510B3B0's pending-view queue and the full source/Game/rectangle work.
 All106 selected target/SDK/caller/history checks pass201.247s, with shared and
 standalone tools checks also passing. Tools5e0f509 is banked first;801 archive
 hashes and538 unrelated mirror fingerprints are preserved. No host operation.
+Consumer edf88a28 banks the C source/pin/docs. All28 selected post-bank checks
+pass68.438s; the incremental build is up to date and all four installed
+checkpoint hashes remain fixed. Its incremental graph worker completes at
+40,928 nodes/81,091 edges without forcing the smaller full scan.
 
 Previous original fixed-matrix converter restoration and C ownership correction:
 [Note 1375](WORKING_NOTES/1375-original-fixed-matrix-converter-ownership-and-rounding-restoration-20261014.md).
