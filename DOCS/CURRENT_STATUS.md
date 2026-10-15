@@ -42,6 +42,11 @@ Game 2,897/4,828, total 3,570/5,501, different 1,931, zero drift. Bank tools f14
 first, preserve all 663 initial older-mirror fingerprints / 665 final paths,
 and finish this same function's private/rebase/linked-image gates next.
 The full additional-source / Game objective remains open.
+Consumer 9f5b8cf7 banks docs/pin; all 11 post-bank checks pass in 59.781s.
+All 52 production inputs / 801 archive files / 665 final mirror fingerprints
+remain fixed, preserving all 663 initial dirty mirror files. The incremental
+graph completes at 41,186 nodes / 81,281 edges without forcing the smaller
+scan; 5,003 relative links in seven docs validate. No new match credit.
 
 Actor-type preset recovered directly from C:
 [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md).

@@ -161,3 +161,19 @@ diagnostic alone. After this function, continue func_1516F024 and the full
 [additional-source repair queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md).
 Keep the inherited-stack deferral and wider Game objective open. The earlier
 1,717-object audit is not rerun or reclassified as fresh evidence here.
+
+## Post-Bank Verification
+
+Consumer **9f5b8cf7** banks the recovery handoff and tools f14494c pin.
+All **11 post-bank checks pass in 59.781 seconds**, including all 52 unchanged
+production inputs, all 801 original archive hashes, the effective negative
+controls and the diagnostic's 85 independent input-word corruption controls.
+The production stub is still untouched; raw 85/76 remains non-installable.
+
+Both active checkouts are clean before this receipt edit. Recheck mirror
+ddbdd16: all **665 final fingerprints** stay fixed, including every one of
+the **663 initial dirty files**; the two owned copies equal the active tools.
+Seven documents resolve **5,003 relative links with zero broken**. The consumer
+commit's incremental graph workers finish at **41,186 nodes / 81,281 edges /
+3,813 communities**, without forcing the refused smaller full scan. No live
+test or graph handle from that checkpoint remains. Keep the wider goal open.
