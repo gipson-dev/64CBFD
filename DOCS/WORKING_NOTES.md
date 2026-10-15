@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
+Recover the preset-0x2D factory wrapper directly from C, all 78 words exact
+after correcting two archived narrowings. Pass 13 focused checks and close the
+complete 233-byte ELF delta; Game 2,890/4,828, total 3,563/5,501, zero drift.
+Bank tools f0e67c2 first; retain archive/mirror/Release and continue at the
+unrecovered func_1516D99C factory. Its provider boundary remains explicit.
+
+2026-10-15:
 [Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
 Restore original rotation assembly, all 84 slot words exact, while explicitly
 removing its false C classification. Pass 14 checks with real math/consumer

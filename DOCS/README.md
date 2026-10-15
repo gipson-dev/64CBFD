@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Factory preset wrapper widths and direct match](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
+  Recover all 78 words directly from C, fixing two archived argument narrowings.
+  Qualify the complete packet, ABI and linked image while leaving the factory's
+  separate recovery and the wider additional-C queue open.
+
 - [Original rotation kernel and real math chains](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
   Restore the original 84-word assembly slot and actual provider chains while
   correcting its false C classification. Keep C-fit/native-formula evidence

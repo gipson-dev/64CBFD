@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Factory Preset Wrapper Direct Match
+
+[Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
+Recover all 78 func_1516F1C0 words directly from C, removing two incorrect
+archive narrowings without guards/profile changes. Pass 13 focused checks,
+close all 233 ELF changes to target slot/extent, and preserve data/29 neighbors.
+Fresh Game 2,890/4,828, total 3,563/5,501, different 1,938, zero drift;
+conversions unchanged. Bank tools f0e67c2 first and continue at the still-stubbed
+func_1516D99C factory, preserving archive/mirror/frozen Release.
+
 ## 2026-10-15 Original Rotation Kernel And Real Math Chains
 
 [Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):

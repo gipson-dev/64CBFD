@@ -52,8 +52,15 @@ s32 func_1516F024() {
     return 0;
 }
 
-s32 func_1516F1C0() {
-    return 0;
+/* Preset 0x2D: forward arg0/arg1/arg3 as words; only arg2 narrows. */
+void func_1516F1C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
+    func_1516D99C(
+        2, 0, 0, 0x2D, 0, 0xFF, 0xFF, 0xFF,
+        0, 0, 0, 0, 2, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0x50, 0x50, 0, 0, arg1,
+        0xA, 0xA, arg0, 0x3C, 0, 0, 0x81, 4,
+        0, 1, 0, 0, 0, 4, 2, (u8) arg2, arg3);
 }
 
 s32 func_1516F2F8() {

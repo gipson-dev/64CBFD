@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools18698b3; tools are committed before the consumer pin.
+  checkpoint pins tools f0e67c2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Original rotation kernel restored; one false C conversion removed:
+Preset-0x2D factory wrapper recovered directly from C:
+[Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md).
+func_1516F1C0 matches all 78 words without new guards or profile changes.
+The archive's two incorrect narrowings are removed; only arg2 narrows to a
+byte. All 13 focused checks pass in 29.641s, including the 49-word packet,
+786 guest cases, 110 fault prefixes, native32 O2/O0 and three original-assembly
+rebases. Close all 233 ELF changes to target slot/extent; 29 neighbors, data,
+guards and progress rows stay fixed. Fresh Game 2,890/4,828 (59.86%), total
+3,563/5,501 (64.77%), different 1,938, zero drift; conversions unchanged.
+Tools f0e67c2 are banked first; all 801 archive and 618 initial older-mirror
+fingerprints remain fixed, with only five absent owned files copied.
+Next: recover the still-stubbed 125-word factory func_1516D99C. Its older
+archive screen emits 158 words / 140 differences, not adoption evidence.
+The wrapper's factory boundary remains opaque; no gameplay or host claim.
+
+Prior original rotation kernel restored; one false C conversion removed:
 [Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md).
 func_150A8050 matches its complete 84-word slot as original assembly, not C.
 Four C/profile screens do not fit; preserve the split frame and FP lifetime.

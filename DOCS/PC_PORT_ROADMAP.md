@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Factory Preset Wrapper Direct Match - 2026-10-15
+
+[Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md):
+
+- [x] Recover func_1516F1C0's 49-word preset-0x2D packet; retain full arg0/arg1/arg3 words and narrow only arg2. Keep its address-based name and explain the verified widths.
+- [x] Match all 78 words under the existing O2/g3 profile, raw and production-padded, without new guards; preserve all 29 owner neighbors and pools/relative relocations.
+- [x] Pass 13 focused checks in 29.641s: 786 guest cases, 110 fired fault prefixes, two native32 profiles, five effective controls and three independent assembly/call rebases.
+- [x] Close every one of 233 changed ELF bytes to the target slot/extent; preserve protected data, guards and progress rows. Measure Game 2,890/4,828, total 3,563/5,501, different 1,938, zero drift.
+- [x] Bank tools f0e67c2 first, preserve all 801 archive files and all 618 initial older-mirror fingerprints, and keep README edits aggregate-only. No host/Release action.
+- [ ] Recover func_1516D99C's still-stubbed 125-word factory and continue the whole additional-C / Game queue. The old 158-word archive screen is not a match; no gameplay or host-transfer acceptance.
+
 ## Original Rotation Kernel Restoration - 2026-10-15
 
 [Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md):
@@ -11,7 +22,7 @@
 - [x] Correct only its generated progress row from C to assembly. Converted total 5,501, Game 4,828; C byte-exact numerators remain 3,562 / 2,889. No new C-match credit.
 - [x] Bank tools 18698b3 first and preserve all archive / older mirror fingerprints and frozen Release; keep README changes aggregate-only.
 - [x] Bank consumer 51eb0dad after tools 18698b3; pass 14 post-bank checks in 93.223s, retain all 38 input states / 618 final mirror fingerprints and await the 41,075-node / 81,169-edge incremental graph worker without forcing a smaller scan. No new C credit.
-- [ ] Freshly qualify archived func_1516F1C0's factory-call wrapper and continue the full additional-C / Game queue. No automatic host-transfer or gameplay acceptance claim.
+- [x] Freshly qualify archived func_1516F1C0's factory-call wrapper in [Note 1391](WORKING_NOTES/1391-factory-preset-wrapper-widths-and-direct-match-20261015.md). The full additional-C / Game queue remains open; no automatic host-transfer or gameplay acceptance claim.
 
 ## Actor World Matrix Direct Match - 2026-10-15
 
