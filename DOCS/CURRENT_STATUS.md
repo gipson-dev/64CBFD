@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 07a68c3; tools are committed before the consumer pin.
+  checkpoint pins tools 2018515; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Paired record/event ABI qualified; C match remains open:
+Paired factory/event routine installed directly from C:
+[Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md).
+func_1516F548 matches all 199 raw/padded words and frame 0xF8, with no guards
+or profile changes. Repeated narrowed expressions let UOPT create the actual
+40-byte spill region, without named-local reservation or frame rewriting.
+Four hash-gated compiler traces establish CFE/UOPT/UGEN provenance. All 17
+installed checks pass in 62.530s: 2,072 complete private pairs, 1,152 fired
+faults, native32 O2/O0, seven effective guest controls, three rebases, 128 real
+factory/allocator pairs, both original caller windows and 801 archive hashes.
+One unsigned-coordinate source control optimizes away in IDO and is native-
+only. Both linked caller windows remain placeholders; the exact Init event/
+callback are bound but not executed. Close all 620 ELF changes to the target
+slot/extent only; every other byte, 55 of 57 inputs, guards/progress and all
+189,088 protected bytes / 720 owners stay fixed. Fresh Game 2,901/4,828
+(60.09%), total 3,574/5,501 (64.97%), different 1,927, zero drift; conversions
+unchanged. Bank tools 2018515 first; preserve 682 initial older-mirror
+fingerprints / 687 final paths. Next func_1516F9C4, 49 words / frame 0x18;
+keep the full additional-source/Game objective and caller restorations open.
+
+Earlier paired record/event ABI checkpoint (resolved above):
 [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md).
 func_1516F548 consumes 17 physical argument slots, including live slots 15/16
 beyond unused 12..14. Recover the ten real saved word homes, signed coordinate

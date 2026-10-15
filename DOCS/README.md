@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Paired record/event direct match and compiler spill recovery](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
+  All 199 words directly from C, no guards; real compiler spill provenance,
+  17 checks, complete image closure and unchanged caller/runtime boundaries.
 - [Paired record/event ABI and candidate rejection](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
   Recover all 17 inputs and three packets, pass ten focused checks and reject
   all 33 nonmatching forms. Production C and matching credit remain unchanged.

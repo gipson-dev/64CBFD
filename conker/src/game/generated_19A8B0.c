@@ -419,8 +419,40 @@ void func_1516F2F8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
         0, 1, 0, 0, 0, 1, arg3, (u8)(&arg4)[0], arg5);
 }
 
-s32 func_1516F548() {
-    return 0;
+s32 func_1000EBC4(struct00 *arg0, s32 arg1, s32 arg2, s32 arg3);
+u16 func_1000FA64(u16 arg0, s16 arg1, s16 arg2, s16 arg3, s32 arg4,
+                 u16 arg5, s16 arg6, s32 arg7, void *arg8,
+                 s32 arg9, s32 argA, s32 argB);
+
+/* Submit two preset-13 records, then event 7 with the live full-word context.
+ * Slots 12..14 are unused, but retain the caller's arg15/arg16 positions.
+ * Repeated narrowed expressions preserve IDO's shared values and spill homes. */
+void func_1516F548(s32 arg0, s32 arg1, s32 arg2, s32 arg3,
+                   s32 arg4, s32 arg5, s32 arg6, s32 arg7,
+                   s32 arg8, s32 arg9, s32 arg10, s32 arg11,
+                   s32 arg12, s32 arg13, s32 arg14, s32 arg15, s32 arg16) {
+    func_1516D99C(
+        (s16)arg0, (s16)arg1, (s16)arg2, 13, 0, 0x67, 0x17, 13,
+        0, 0, 0x12, 0, 2, (u8)arg4, 0, (u8)arg6,
+        0, 0, 0, arg10, 0, 0, 0, 0, 0, 0, 0,
+        (s16)((s32)((u32)arg7 << 12) / 4096),
+        (s16)((s32)((u32)arg7 << 12) / 4096),
+        (s16)((s32)((u32)arg8 << 12) / 4096),
+        (s16)((s32)((u32)arg8 << 12) / 4096),
+        (u16)arg3, (u8)arg9, 20, 255, 16, (s16)arg5,
+        200, 1, 0, 0, 1, 0, 0, 0, 0, 0, (u8)arg15, arg16);
+    func_1516D99C(
+        (s16)arg0, (s16)arg1, (s16)arg2, 13, 0, 0x67, 0x17, 13,
+        0, 0, 0x12, 0, 2, (u8)arg4, 0, (u8)arg6,
+        0, 0, 0, arg11, 0, 0, 0, 0, 0, 0, 0,
+        (s16)((s32)((u32)arg7 << 12) / 4096),
+        (s16)((s32)((u32)arg7 << 12) / 4096),
+        (s16)((s32)((u32)arg8 << 12) / 4096),
+        (s16)((s32)((u32)arg8 << 12) / 4096),
+        (u16)arg3, (u8)arg9, 20, 255, 16, (s16)arg5,
+        200, 1, 6, 0, 1, 0, 0, 0, 0, 0, (u8)(&arg15)[0], arg16);
+    func_1000FA64(7, (s16)arg0, (s16)arg1, (s16)arg2,
+                 0x36B0, 1000, 100, (s32)func_1000EBC4, (void *)arg3, 0, 0, 0);
 }
 
 // Matched with guarded packed fixed-point register allocation.

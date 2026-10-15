@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Paired Record Event Direct Match
+
+[Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
+Replace func_1516F548's stub with complete 17-input semantic C, all 199 raw/
+padded words and frame 0xF8 exact, without guards/profile changes. Fired
+compiler observations show that repeated narrowed expressions create the
+actual UOPT spill region without duplicate named-local reservation. Pass 17
+installed checks and close all 620 ELF changes to target slot/extent only;
+all other bytes, 55 of 57 inputs and protected data stay fixed. Fresh Game
+2,901/4,828, total 3,574/5,501, different 1,927, zero drift. Bank tools 2018515
+first, keep README aggregate-only and continue at func_1516F9C4. Both original
+caller windows remain distinct from their current linked placeholders.
+
 ## 2026-10-15 Paired Record Event ABI And Candidate Rejection
 
 [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):

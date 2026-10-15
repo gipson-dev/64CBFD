@@ -215,3 +215,12 @@ including every **680 initial dirty file** and both hash-equal owned copies.
 The source commit's actual captured graph workers finish at **41,240 nodes /
 81,337 edges / 3,964 communities**, without forcing the refused smaller scan.
 Keep the compiler-home investigation and production-adoption gates above open.
+
+## Resolution
+
+[Note 1407](1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md)
+resolves this handoff with actual compiler observations and a direct 199-word
+C match. Repeated narrowed input expressions let UOPT create all ten real
+spill homes without the duplicate CFE named-local reservation. The historical
+33-form rejection results and captures above remain unchanged; the complete
+private/fault and independent-image adoption gates are passed in Note 1407.

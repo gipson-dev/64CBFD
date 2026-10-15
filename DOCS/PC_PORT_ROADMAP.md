@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Paired Record Event Direct Match And Compiler Spill Recovery - 2026-10-15
+
+[Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
+
+- [x] Observe four hash-gated compiler runs and actual producer/consumer exits. Ordinary named locals grow CFE 44 bytes into UOPT 72; repeated narrowed input expressions have no CFE M reservation and let UOPT create the correct 40-byte spill region. No UGEN temporary pool or frame patch is involved.
+- [x] Replace func_1516F548's stub with semantic 17-input C, all 199 raw/padded words and frame 0xF8 exact. Preserve both 49-word factory packets, the 12-word Init event packet, saved snapshots, live context/tail and all three call delays. No guards/profile/shared-header changes.
+- [x] Pass 17 installed checks in 62.530s: 2,072 complete private pairs, 1,152 fired faults, native32 O2/O0, seven effective guest controls, three rebases, 128 real factory pairs, 801 archive fingerprints and both original caller windows. Keep the one optimized-away/native-only control and current caller placeholders explicit.
+- [x] Close all 620 ELF changes to target slot/extent only, with no metadata exclusions. Preserve all other bytes, 55 of 57 inputs, guards/progress/profiles and 189,088 protected bytes across 720 owners. Fresh Game 2,901/4,828, total 3,574/5,501, different 1,927, zero drift; conversions fixed.
+- [x] Bank tools 2018515 first, preserve all 682 initial older-mirror fingerprints / 687 final paths and pass Windows syntax/standalone checks. Root README changes only its aggregate rows. No push, host/Release operation or dependency/account change.
+- [ ] Recover func_1516F9C4's 49-word fade/completion callback, signed full-word clamp lifetime, exact byte/halfword fields and two real helper calls. Do not copy the archive's premature u8 truncation, widened byte fields or wrong first-helper pointer argument.
+- [ ] Continue the full additional-source/Game queues, inherited-stack renderer deferral and caller restorations. This one direct match does not complete the broader objective.
+
 ## Paired Record Event ABI And Candidate Rejection - 2026-10-15
 
 [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
@@ -8,8 +20,8 @@
 - [x] Recover both 49-word factory packets, the 12-word Init event packet, full-word live context and fixed-point shift/division semantics. Verify linked factory/allocator and event/callback words; leave the Init provider opaque.
 - [x] Screen 33 forms and pass ten checks: original private/fault behavior, 1,554 normal/live-input candidate cases, 518 decisive private-home rejections, native32 O2/O0, seven controls, three rebases, 128 real factory pairs and unchanged 29 neighbors.
 - [x] Reject every candidate for installation. Preserve all 57 production inputs and unchanged matching credit; bank tools 07a68c3 first and preserve all 680 initial older-mirror fingerprints / 682 final paths. Keep README aggregate-only and Release frozen.
-- [ ] Inspect actual CFE/UOPT/local reservations and resolve the lexical-home/spill split without padding locals, frame guards, incompatible calls or broad callee changes. A 199-word/frame-0xF8 form still differs at 162 words; the closest 199-word form has 73 differences and frame 0x118.
-- [ ] Qualify a genuine match, production padding and the independent complete linked-image change before replacing the stub or claiming credit. Keep the full additional-source/Game queues, inherited-stack renderer deferral and caller restorations open.
+- [x] Resolve the reservation split through fired compiler observations and repeated narrowed expressions in [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md). No named-local padding, frame guards, incompatible calls or broad callee changes.
+- [x] Qualify all 199 raw/padded words and the independently predicted complete ELF, then replace the stub in Note 1407. Keep the full additional-source/Game queues, inherited-stack renderer deferral and caller restorations open above.
 
 ## Dual Factory Preset Direct Match - 2026-10-15
 
@@ -20,7 +32,7 @@
 - [x] Find all five original call sites with an ignore-inclusive search. Qualify ten original setup cases at fired call boundaries and pin both caller owners/assembly. Keep the fact that all five linked windows are currently placeholders explicit; do not claim current/full-caller execution.
 - [x] Close all 442 ELF changes to target slot/extent only; preserve every other byte, all guards/progress, protected data and 53 of 55 inputs. Fresh Game 2,900/4,828, total 3,573/5,501, different 1,928, zero drift; conversions unchanged.
 - [x] Bank tools 28f7a09 first, preserve 676 initial older-mirror fingerprints / 680 final paths, and pass Windows syntax/standalone checks. README remains aggregate-only; no push or host/Release operation.
-- [ ] Finish func_1516F548's 199-word C match after the verified ABI/shift/caller recovery in [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md). No candidate is installed or credited; see the compiler-home and adoption steps above. Keep the entire source/Game queues, inherited-stack renderer deferral and caller restorations open.
+- [x] Finish func_1516F548's 199-word direct C match in [Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md), after the verified ABI/shift/caller recovery in Note 1406. Preserve the historical rejection evidence and keep the entire source/Game queues, inherited-stack renderer deferral and caller restorations open above.
 
 ## Table Fade Callback Frame Restoration And Match - 2026-10-15
 

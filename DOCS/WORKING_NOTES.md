@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-15:
+[Note 1407](WORKING_NOTES/1407-paired-record-event-direct-match-and-compiler-spill-recovery-20261015.md):
+Match func_1516F548 directly from C, all 199 words / frame 0xF8, with no guards
+or profile changes. Four compiler traces prove the real 40-byte UOPT spill
+region; repeated narrowed inputs remove the duplicate named-local reservation.
+Seventeen installed checks cover complete private/fault/native/rebase/chain/
+caller behavior and target-only whole-image closure. Game 2,901/4,828, total
+3,574/5,501, different 1,927, zero drift. Bank tools 2018515 first; continue
+func_1516F9C4 and the full additional-source/Game queues without claiming
+current-caller, Init-provider or gameplay execution.
+
+2026-10-15:
 [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
 Recover func_1516F548's 17 physical inputs, ten genuine saved homes and all
 49/49/12 packet words. Pass ten checks and screen 33 nonmatching forms; preserve
