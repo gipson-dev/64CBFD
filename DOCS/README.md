@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor world-matrix builder direct match](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
+  Recover all 40 words with no guards, preserving signed/live fields and alias
+  order. Qualify actual helper/consumer connections and every ELF change while
+  keeping the lower rotation-provider and full gameplay boundaries explicit.
+
 - [Special-object position matrix frame and guarded match](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
   Recover the real matrix/selector/call ABI and match all 51 words with two
   frame-only guards. Preserve the raw mismatch and still-stubbed matrix-helper

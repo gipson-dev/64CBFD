@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_150A7CB0(f32 matrix[4][4], f32 x, f32 y, f32 z);
 void func_150A8050(f32 [4][4], f32, f32, f32);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 typedef struct {
@@ -129,8 +130,16 @@ void func_151148A8(f32 arg0[4][4], f32 arg1[3]) {
     func_150A7A48(temp, arg0, arg0);
 }
 
-s32 func_1511490C() {
-    return 0;
+/* Build the actor's rotated, translated and scaled world matrix. */
+void func_1511490C(f32 matrix[4][4], u8 *actor) {
+    f32 scale[4][4];
+
+    func_151148A8(matrix, (f32 *)actor);
+    matrix[3][0] = *(s16 *)(actor + 0x10);
+    matrix[3][1] = *(f32 *)(actor + 0x18) + *(s16 *)(actor + 0x12);
+    matrix[3][2] = *(s16 *)(actor + 0x14);
+    func_150A7CB0(scale, *(f32 *)(actor + 0x2C), *(f32 *)(actor + 0x30), *(f32 *)(actor + 0x34));
+    func_150A7A48(scale, matrix, matrix);
 }
 
 u8 *func_151149AC(u8 arg0) {

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Actor World Matrix Builder Direct Match
+
+[Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
+Recover all 40 func_1511490C words directly from C, original frame 0x60 and
+zero new guards/profiles. Qualify signed/live fields, aliases, native controls,
+prefixes, rebases and actual helper/consumer connections. All 14 checks pass
+in 146.515s; close every one of 123 changed ELF bytes to the target slot/extent.
+Game 2,889/4,829, total 3,562/5,502, different 1,940, zero drift; conversions
+unchanged. Bank tools 3e43b4a first; keep the empty rotation leaf as an explicit
+next boundary and preserve archive/mirror/Release without a gameplay claim.
+
 ## 2026-10-15 Special Object Position Matrix Frame And Guarded Match
 
 [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
+Recover the 40-word actor world-matrix builder directly from C, zero guards.
+Pass 14 checks with signed/live fields, aliases, native/private/prefix/rebase
+and actual consumer gates; close the 123-byte ELF delta exactly. Game
+2,889/4,829, total 3,562/5,502, zero drift. Bank tools 3e43b4a first and inspect
+the still-empty rotation provider next, preserving archive, mirror and Release.
+
+2026-10-15:
 [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
 Recover the 51-word special-object position routine with a real matrix and two
 frame-only guards. Pass 14 checks, full private/prefix/native/rebase/image gates;

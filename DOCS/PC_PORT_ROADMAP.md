@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor World Matrix Direct Match - 2026-10-15
+
+[Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md):
+
+- [x] Recover func_1511490C's signed coordinates, live height/scales, real local matrix and in-place product with meaningful local names and a purpose comment.
+- [x] Match all 40 words directly from C with original frame 0x60, no guards, fake locals, header or profile changes; preserve 33 owner neighbors and pools.
+- [x] Qualify 3,072 guest cases, 576 fired prefixes, native O2/O0 returned controls, three original-assembly rebases and 256 helper plus 256 position-consumer connections.
+- [x] Apply only the scale helper's three existing guards when qualifying its actual 20-word slot; keep the direct-builder versus guarded-helper distinction explicit.
+- [x] Pass 14 final checks in 146.515s, including historical image/caller gates and all 801 archive fingerprints; bank tools 3e43b4a first and preserve the older dirty mirror and Release.
+- [x] Close all 123 changed ELF bytes to the target slot/extent and retain all protected data and 32 other inputs. Measure Game 2,889/4,829, total 3,562/5,502, different 1,940, zero drift; conversions unchanged.
+- [ ] Inspect func_150A8050's still-empty rotation provider, retail saved-FP lifetime and math helpers, then continue the wider source/Game queue. Archived GLOBAL_ASM is not recovered C or gameplay acceptance.
+
 ## Special Object Position Guarded Match - 2026-10-15
 
 [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md):
@@ -11,7 +23,8 @@
 - [x] Pass 14 final checks in 77.922s, including exact historical inverses and all 801 archive fingerprints; bank tools c51788d first and preserve the older dirty mirror and Release.
 - [x] Measure Game 2,888/4,829, total 3,561/5,502, different 1,941, zero drift; converted counts unchanged. README aggregate rows only.
 - [x] Bank consumer 37621fb5 after tools c51788d; pass 14 post-bank checks in 75.216s, retain all 28 input hashes / 606 final mirror fingerprints and await the 41,055-node / 81,161-edge incremental graph worker without forcing a smaller scan.
-- [ ] Recover func_1511490C's still-stubbed matrix builder and continue the wider source/Game queue. Do not infer complete gameplay or automatic host transfer.
+- [x] Recover func_1511490C's matrix builder in [Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md), matching all 40 words directly without guards.
+- [ ] Continue the rotation-provider boundary and wider source/Game queue; do not infer complete gameplay or automatic host transfer.
 
 ## Capture Request Guarded Byte Match - 2026-10-15
 

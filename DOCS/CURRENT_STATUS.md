@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsc51788d; tools are committed before the consumer pin.
+  checkpoint pins tools3e43b4a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Special-object position recovered and guarded byte-exact:
+Actor world-matrix builder recovered directly from C:
+[Note 1389](WORKING_NOTES/1389-actor-world-matrix-builder-direct-match-20261015.md).
+func_1511490C matches all 40 words / frame 0x60 with no guards or profile changes.
+All 14 checks pass in 146.515s: 3,072 guest cases, 576 fired prefixes, native
+O2/O0 controls, three rebases and actual helper/position-consumer connections.
+The full ELF closes to 123 changed bytes, target slot/extent only; all protected
+data and 32 other input paths stay fixed. Game 2,889/4,829 (59.83%), total
+3,562/5,502 (64.74%), different 1,940, zero drift; conversions unchanged.
+Bank tools 3e43b4a first and preserve archive, older mirror and Release.
+Next: inspect func_150A8050's empty rotation-provider boundary and retail
+saved-FP lifetime. Its archived GLOBAL_ASM is not byte-matching C or gameplay proof.
+
+Prior special-object position recovered and guarded byte-exact:
 [Note 1388](WORKING_NOTES/1388-special-object-position-matrix-frame-and-guarded-match-20261015.md).
 func_1511F31C matches all 51 linked words with a real 64-byte matrix, typed
 helper calls and two frame-only guards. Raw C still differs at allocation and
