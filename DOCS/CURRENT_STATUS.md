@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 76e1e02; tools are committed before the consumer pin.
+  checkpoint pins tools 9bc6852; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Random direction writer installed directly from C:
+[Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md).
+func_15170034 matches all 41 raw/padded words, frame 0x30, with no new
+guards/profile/header changes. All 18 installed checks pass in 53.253s,
+including the complete predicted ELF: 128 target-slot/extent byte changes,
+every other ELF byte and 55 of 57 inputs fixed. Fresh Game 2,906/4,828
+(60.19%), total 3,579/5,501 (65.06%), different 1,922, zero drift;
+conversions unchanged. FE1C's real 31-word exact caller and slot-7 table
+reference are now confirmed; its conditional incoming-SP-4 input remains
+unresolved for defined C, so that stub stays unchanged. Tools 9bc6852 is
+banked first; preserve all 705 initial older-mirror fingerprints / 710 final
+paths and frozen Release. Next func_151700D8, 266 words / frame 0x190;
+continue the inherited-stack and entire additional-source/Game queues.
 
 Fade/acceleration callback installed directly from C:
 [Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md).

@@ -26,6 +26,10 @@ struct PositionScaleRecord71820;
 struct PositionScaleRecord71820 *func_150448D0(s32, s32, s32, s32, s32, s32,
                                                s32, s16 *, s16 *);
 
+s32 func_150ADA20(void);
+f32 func_150489B0(u8 angle);
+f32 func_15048A40(u8 angle);
+
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
 s32 func_1516D400() {
@@ -645,8 +649,30 @@ s32 func_1516FE1C() {
     return 0;
 }
 
-s32 func_15170034() {
-    return 0;
+/* Write a random direction; flag 0x40 restricts the polar-angle range. */
+void func_15170034(s32 flags, f32 *x, f32 *y, f32 *z) {
+    s32 mask;
+    s32 randomWord;
+    f32 azimuthCosine;
+    f32 radius;
+    s32 angle;
+    f32 azimuthSine;
+
+    if (flags & 0x40) {
+        mask = 0x3F;
+    } else {
+        mask = 0x7F;
+    }
+    randomWord = func_150ADA20() & mask;
+    angle = randomWord;
+    *y = func_150489B0((u8)randomWord);
+    radius = func_15048A40((u8)(&angle)[0]);
+    randomWord = func_150ADA20() & 0xFF;
+    angle = randomWord;
+    azimuthCosine = func_150489B0((u8)randomWord);
+    azimuthSine = func_15048A40((u8)(&angle)[0]);
+    *x = radius * azimuthSine;
+    *z = radius * azimuthCosine;
 }
 
 s32 func_151700D8() {

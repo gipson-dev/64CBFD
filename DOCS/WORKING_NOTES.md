@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
+Qualify FE1C's real caller/table, full paired packets and conditional
+inherited-stack input; defer undefined C adoption. Match func_15170034's
+41 words directly without guards, pass 18 installed checks and close all
+128 ELF changes to target slot/extent. Game 2,906/4,828, total 3,579/5,501,
+different 1,922, zero drift. Bank tools 9bc6852 first; next func_151700D8
+and the full additional-source/Game queues, retaining inherited-stack deferrals.
+
+2026-10-15:
 [Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
 Match func_1516FD50 directly from C, all 51 words / frame 0x18, no new guards
 or profile edits. Fourteen installed checks qualify live post-movement

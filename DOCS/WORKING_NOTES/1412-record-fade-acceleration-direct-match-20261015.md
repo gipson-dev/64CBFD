@@ -165,6 +165,13 @@ remaining callbacks/callers and inherited-stack renderer deferral open.
 This completed direct match does not complete the persistent whole-source/
 Game objective.
 
+Continuation: [Note 1413](1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md)
+finds the already-C, 31-word exact func_15074E04 caller and slot 7 of the
+39-entry D_80086694 table. Both complete packets and the conditional
+incoming-SP-4 input are qualified; that undefined-input C restoration is
+deferred without credit. The next defined routine, func_15170034, is now
+41/41 directly exact, and the ordinary matching handoff moves to 151700D8.
+
 ## Post-Bank Verification
 
 Consumer **6d7ddb42** banks the function, aggregate-only README rows, working

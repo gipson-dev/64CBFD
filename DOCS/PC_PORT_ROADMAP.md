@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Paired Overlay Contract And Random Direction Match - 2026-10-15
+
+[Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
+
+- [x] Confirm FE1C's real exact 31-word caller func_15074E04 and slot 7 of the 39-entry D_80086694 table. Qualify both complete packets, conditional incoming-SP-4 input, live homes and effective controls. Do not infer unreachability from the prior assembly-only reference search.
+- [x] Restore func_15170034 from initialized C, all 41 raw/padded words and frame 0x30 directly exact, without guards/profile/header changes. Preserve two independent random draws, real cosine/sine identities, output order and aliases.
+- [x] Pass all 18 installed checks: 24,576 paired private cases, 252 fired fault prefixes, native32 O2/O0 with UBSan, six effective guest/native negatives, three rebases, 1,536 actual-trig pairs and 801 archive fingerprints, plus FE1C contract and image/capture controls.
+- [x] Close all 128 ELF changes to the target slot/extent only. Every other ELF byte, 55 of 57 inputs and 189,088 protected bytes / 720 owners stay fixed. Fresh Game 2,906/4,828, total 3,579/5,501, different 1,922, zero drift; conversions fixed.
+- [x] Bank tools 9bc6852 first. Preserve all 705 initial older-mirror fingerprints / 710 final paths, pass syntax and all 11 WSL padder checks in both copies plus shared tools checks. Keep README aggregate-only and Release frozen; no push.
+- [ ] Recover FE1C's inherited-stack provenance or separately preserve original assembly. Do not zero it, invent a fifth argument, omit its non-word-1 branch or adopt an undefined C read for matching credit.
+- [ ] Continue func_151700D8, 266 words / frame 0x190, and all additional-source repair/binding/unanchored, callback/caller and renderer queues. This checkpoint does not finish the broader objective.
+
 ## Record Fade Acceleration Direct Match - 2026-10-15
 
 [Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):

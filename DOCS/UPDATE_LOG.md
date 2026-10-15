@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Random Direction Match And Inherited Packet Audit
+
+[Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
+Restore func_15170034 directly from initialized C, all 41 raw/padded words /
+frame 0x30, no new guards/profile changes. Pass 18 installed checks,
+including actual trig helpers, native32 aliases and complete predicted ELF
+closure: 128 target-slot/extent changes only. Fresh Game 2,906/4,828, total
+3,579/5,501, different 1,922, zero drift. Confirm FE1C's exact caller and
+slot-7 table but retain its undefined inherited-input C deferral. Tools
+9bc6852 is banked first; next func_151700D8 and all broader queues.
+
 ## 2026-10-15 Record Fade Acceleration Direct Match
 
 [Note 1412](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):

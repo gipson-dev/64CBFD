@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Paired overlay stack contract and random direction match](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
+  Defer FE1C's undefined inherited input after live-caller/packet qualification;
+  match func_15170034's 41 words directly and verify the entire predicted ELF.
 - [Record fade/acceleration direct match](WORKING_NOTES/1412-record-fade-acceleration-direct-match-20261015.md):
   All 51 raw/padded words with zero new guards; 14 checks, live post-movement
   fields, actual slot-5 chain and target-only whole-image closure.
