@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8445ba1; tools are committed before the consumer pin.
+  checkpoint pins tools af89f68; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packed color callback semantic recovery, deliberately not installed:
+[Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md).
+Recover func_1516E8CC's packed widths, full live clamps, extent growth and
+unsigned RGB interpolation. Seven checks pass in 29.801s: 3,072 paired guest
+cases, 1,024 further guest/native32 O2/O0 cases, five effective controls,
+29 fixed owner neighbors, all 52 fixed production inputs and 801 archive
+hashes. The tested clean body is 241 words / 234 positional differences;
+a separate nested-return form is 245 / 153. Neither is byte-exact; the
+installation gate rejects both, and no C/guard/profile/progress change is
+made. Fresh official Game 2,895/4,828, total 3,568/5,501, different 1,933,
+zero drift. Bank tools af89f68 first, preserve all 652 initial older-mirror
+fingerprints and continue at the original V0 record/color lifetime, live
+loop bound and exit-shape mismatch. Full private/fault/rebase/lifecycle/image
+qualification and the broader additional-source / Game objective remain open.
 
 Packed-coordinate preset recovered directly from C:
 [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md).

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Packed Color Callback Semantic Recovery
+
+[Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
+Recover func_1516E8CC's real packed fields, wrapping full-word intensity,
+extent growth and unsigned RGB interpolation. Pin 52 inputs and both tables;
+pass seven checks including 3,072 paired guest cases, native32 O2/O0 and five
+effective controls. All 29 neighbors / 801 archive hashes remain fixed. Clean
+C emits 241 words / 234 positional differences; nested-return form 245 / 153.
+Reject installation, preserve production source/ELF/guards/counts and leave
+README aggregates unchanged. Bank tools af89f68 before the docs/pin and keep
+the original pointer/loop/exit matching and broader Game objective open.
+
 ## 2026-10-15 Packed-Coordinate Preset Direct Match
 
 [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):

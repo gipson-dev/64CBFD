@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Color Callback Recovery - 2026-10-15
+
+[Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
+
+- [x] Recover func_1516E8CC's byte/halfword fields, full live intensity clamps, extent growth and unsigned single-precision RGB interpolation from all 248 retail words. Correct the archive's wrong access widths without modifying the original archive.
+- [x] Pin 52 inputs and the 48-byte threshold/RGB owner. Pass seven checks in 29.801s: 3,072 paired guest cases, 1,024 further original-guest/native32 O2/O0 cases, five effective controls, all 29 owner neighbors and 801 archive hashes.
+- [x] Screen four maintained forms under two profiles; reject all nonmatches. Preserve production source/ELF/guards/progress, official Game 2,895/4,828 and total 3,568/5,501, zero drift. Keep root README aggregate rows unchanged.
+- [x] Bank tools af89f68 first and preserve all 652 initial dirty older-mirror fingerprints, copying only two absent owned paths for 654. No host or frozen Release action.
+- [ ] Match the original V0 record/color lifetime, retained loop-bound reload and exit shape. The 245-word / 153-positional-difference form is not three remaining scheduling words and cannot be installed.
+- [ ] Complete raw/padded, private/fault, rebase, real callback/cleanup and full linked-image qualification before replacing the production stub. Continue the complete source-review / Game goal.
+
 ## Packed-Coordinate Preset Direct Match - 2026-10-15
 
 [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):

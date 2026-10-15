@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packed color callback semantic recovery](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
+  Recover and test packed intensity, extent and RGB behavior while explicitly
+  rejecting the still-nonmatching C body; preserve all production inputs.
 - [Packed-coordinate preset direct match](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
   Recover all 85 words directly from C through an explicit signed low-half
   mask, retaining the complete o32 packet, private frame, real factory chain

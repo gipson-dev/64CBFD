@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1398](WORKING_NOTES/1398-packed-color-callback-semantic-recovery-20261015.md):
+Recover func_1516E8CC's packed intensity/extent/RGB behavior and pin both
+tables. Pass seven checks, 3,072 paired guest cases and native32 O2/O0; keep
+all production inputs and counts fixed. Neither 241/234 nor 245/153 is a
+byte-exact match. Bank tools af89f68 first and continue original pointer,
+loop-bound and exit-shape matching without installing an unfinished body.
+
+2026-10-15:
 [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md):
 Recover the packed-coordinate preset func_1516E778, all 85 words directly from
 C with an explicit mask and zero new guards/profile changes. Verify the whole
