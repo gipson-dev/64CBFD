@@ -183,3 +183,12 @@ The source-commit incremental graph update finishes at **41,279 nodes /
 81,387 edges / 3,868 communities**, retaining excluded-but-present inputs
 without a forced smaller scan. Continue func_1516FBCC and the complete
 additional-source/Game queues, not a completion claim for the wider goal.
+
+## Next-Function Continuation
+
+[Note 1410](1410-record-color-fade-semantics-and-compiler-gap-20261015.md)
+qualifies func_1516FBCC's defined fade/size/color semantics and staged slot-4
+dispatch/cleanup behavior. Its 98-word candidate is rejected by the exact-
+match gate and actual padder; the original production stub and all matching
+credit stay fixed. Continue that compiler gap rather than marking FBCC done.
+The measurements above remain this note's installed FA88 checkpoint.

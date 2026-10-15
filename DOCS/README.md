@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Record color fade semantics and compiler gap](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
+  Qualify full-width fade, signed size steps and unsigned interpolation;
+  ten checks pass, but reject the 98-word candidate and keep production fixed.
 - [Preset 0x1B coordinate types and direct match](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
   Recover signed coordinate formals and the complete six-input factory packet;
   all 81 words directly from C, 14 checks and target-only whole-image closure.

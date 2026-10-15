@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2be3d9f; tools are committed before the consumer pin.
+  checkpoint pins tools 64fcc0d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Current target: func_1516FBCC semantic recovery and compiler gap:
+[Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md).
+Ten checks pass in 26.686s: 3,586 C/ROM public-state pairs, all byte shift
+counts/phase values, 20 bounded global aliases, eight effective guest/native
+negatives, three independent rebases, native32 O2/O0 with UBSan trap checks
+(131,074 cases each), 128 staged dispatcher/cleanup pairs and 801 archive
+hashes. The defined C is 98 words / 89 length-inclusive differences against
+97-word retail; both the exact-match gate and real padder reject it. The
+97-word unmasked diagnostic still differs at 65 words and is not selected.
+All 3,586 private states differ; 26 of 27 fired prefixes differ. Do not claim
+private/fault parity or current callback execution: production is still a
+three-word stub, while only the current dispatcher/cleanup bodies are used
+around staged callback code. Retail FCC0 is unreachable, so cover 96 reachable
+words rather than inventing a 97-word execution claim. All 57 production
+inputs and matching totals remain fixed. Tools 64fcc0d is banked first;
+preserve all 695 initial older-mirror fingerprints / 697 final paths. Continue
+this exact-match gap and the full additional-source/Game queues.
 
 Preset-0x1B wrapper installed directly from C:
 [Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md).

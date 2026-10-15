@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
+Qualify func_1516FBCC's full-width fade, signed size steps and unsigned color
+interpolation in ten checks. The candidate is 98 words / 89 length-inclusive
+differences; public semantics pass, private/fault parity does not. Cover all
+96 reachable retail words and preserve dead FCC0. Reject installation, keep
+all 57 production inputs and matching credit fixed, bank tools 64fcc0d first
+and continue this exact-match gap and the complete additional-source queues.
+
+2026-10-15:
 [Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
 Match func_1516FA88's full 49-word packet directly from C, all 81 words /
 frame 0xD0, no guards/profile changes. Fourteen installed checks cover signed

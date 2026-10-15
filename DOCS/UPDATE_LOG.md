@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Record Color Fade Semantic Qualification
+
+[Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
+Recover func_1516FBCC's complete defined fade/size/color candidate and pass ten
+checks, including native32 O2/O0 with UBSan trap checks and 128 staged
+dispatcher/cleanup pairs. Preserve the distinction between public semantic
+agreement and private/fault differences. Retail FCC0 is unreachable after
+the repeated width tests. Reject the 98-word / 89-difference candidate and
+the nonselected 97-word / 65-difference unmasked diagnostic. All 57 production
+inputs and matching totals stay fixed; no root README edit. Bank tools
+64fcc0d first and continue this compiler gap plus the full source/Game queues.
+
 ## 2026-10-15 Preset 0x1B Coordinate Types And Direct Match
 
 [Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md):
