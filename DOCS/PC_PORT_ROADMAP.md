@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Edge Emitter Recovery And Count Home - 2026-10-15
+
+[Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
+
+- [x] Recover func_151700D8's complete bounded ten-input ABI, four-edge interpolation, float/byte tables, preset selector and all 31 factory words. Qualify all three original direct-call interfaces without claiming current caller restoration.
+- [x] Restore the addressable count lifetime: 264 -> 266 words, 194 -> 149 differences. A private count writer emits nine packets through original/selected code versus eight through the cached control; keep the reciprocal snapshot.
+- [x] Pass 12 checks: 2,304 public pairs, native32 O2/O0 with UBSan in the valid conversion domain, effective negatives, both zero-divisor traps, actual factory/allocator records and failures, independent rebases, 801 archive hashes and all 62 immutable inputs.
+- [x] Reject installation: frame 0x1A0 still differs from 0x190; private states/faults and 149 words remain different. The real padder fits but does not erase these differences. Keep production, conversions, guards/profiles and official totals unchanged.
+- [x] Bank tools 90506d1/b7c245a first and preserve 710 initial older-mirror fingerprints / 712 final paths. Pass both copies' syntax/shared WSL padder checks and shared tools checks. No push or host/Release action; README figures stay unchanged.
+- [ ] Finish this function's frame, table/count homes and register/load/operand schedules; repeat complete private/fault, padding/rebase and independent image gates before adopting C.
+- [ ] Continue every additional-source repair/binding/unanchored and Game queue, retaining FE1C and renderer inherited-stack boundaries. This recovery checkpoint does not complete the wider objective.
+
 ## Paired Overlay Contract And Random Direction Match - 2026-10-15
 
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):

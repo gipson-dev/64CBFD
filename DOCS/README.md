@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad edge emitter recovery and count home](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
+  Twelve checks qualify complete bounded packets and caller/native behavior;
+  retain the uninstalled 266-word candidate's frame and 149-word matching gap.
 - [Paired overlay stack contract and random direction match](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
   Defer FE1C's undefined inherited input after live-caller/packet qualification;
   match func_15170034's 41 words directly and verify the entire predicted ELF.

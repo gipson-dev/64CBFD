@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
+Recover func_151700D8's complete bounded quad-edge packets, actual caller/
+factory interfaces and live count home. Twelve checks pass; the candidate
+improves to 266 words / frame 0x1A0 / 149 differences but remains uninstalled.
+All 62 production inputs and matching totals stay fixed. Bank tools
+90506d1/b7c245a, retain 710 initial older-mirror fingerprints / 712 final paths,
+and continue frame/homes/scheduling plus the entire additional-source queues.
+
+2026-10-15:
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):
 Qualify FE1C's real caller/table, full paired packets and conditional
 inherited-stack input; defer undefined C adoption. Match func_15170034's

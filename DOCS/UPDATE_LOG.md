@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Quad Edge Emitter Recovery And Count Home
+
+[Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
+Recover func_151700D8's four-edge interpolation, float/byte tables, preset
+identity, complete 31-word packets and three original caller interfaces.
+Pass 12 focused checks, including native32 and actual factory/allocator
+connections. Restore the 266-word count lifetime, reducing differences to
+149, but reject installation while frame 0x1A0 and private/fault behavior
+remain nonmatching. All 62 production inputs and official totals stay fixed.
+Bank tools 90506d1/b7c245a; continue this function's matching, not a new
+conversion batch. Root README remains accurate and unchanged.
+
 ## 2026-10-15 Random Direction Match And Inherited Packet Audit
 
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md):

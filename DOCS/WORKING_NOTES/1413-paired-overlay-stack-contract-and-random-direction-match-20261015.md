@@ -164,3 +164,9 @@ before translating the archival draft's typed-pointer/table accesses.
 This function remains unchanged. Keep FE1C's inherited-stack recovery,
 the prior renderer deferral and all broader queues open; one additional
 match does not complete the persistent objective.
+
+Continuation: [Note 1414](1414-quad-edge-emitter-recovery-and-count-home-20261015.md)
+qualifies 151700D8's bounded complete packet behavior and restores the
+266-word count lifetime. The 0x1A0 frame and 149 word differences still
+reject installation; production and matching totals stay unchanged. Continue
+this function's frame/homes/schedules before advancing to another target.

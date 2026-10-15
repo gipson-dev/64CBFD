@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9bc6852; tools are committed before the consumer pin.
+  checkpoint pins tools b7c245a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Quad edge emitter semantic recovery, not installed:
+[Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md).
+func_151700D8 now has a complete bounded four-edge / 31-field recovery with
+12 checks passing in 64.212s. Its addressable count restores the 266-word
+length and reduces differences from 194 to 149, but frame 0x1A0 still
+differs from retail 0x190. Literal private/fault states do not match; the
+strict gate rejects installation. All 62 production inputs stay fixed.
+Fresh official figures remain Game 2,906/4,828 (60.19%), total 3,579/5,501
+(65.06%), different 1,922, zero drift; README and conversion rows unchanged.
+Tools 90506d1/b7c245a are banked first; preserve 710 initial older-mirror
+fingerprints / 712 final paths. Continue this function's frame/homes and
+scheduling before adoption, plus all additional-source and inherited-stack
+queues. No host/Release action or push.
 
 Random direction writer installed directly from C:
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md).
