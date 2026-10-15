@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## View Matrix Pass And Product Restoration - 2026-10-15
+
+[Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
+
+- [x] Recover the complete 73-word/frame0x90 func_1510B690 C pass with its signed16 counter, live reloads, ordered matrix calls and original temporary home.
+- [x] Screen 25 complete forms; qualify twenty closed GPR-role guards without changing calls, branches, frame, homes, profiles or shared headers.
+- [x] Restore func_150A7A48's original 78-word assembly slot from its false C stub with zero guards; classify it asm, not C credit.
+- [x] Qualify 840 guest cases, 180 actual caller/SDK/product/frustum connections, 1,288 fired caller prefixes, ordered kernel/SDK overlaps and 120 native cases per profile with six effective controls.
+- [x] Retain the separate host signaling-NaN ABI witness, quiet-provider qualification and signed16 wrap-tail evidence without claiming hardware/FCSR or full extreme-count execution.
+- [x] Close every one of 506 changed ELF bytes to two code slots/extents; preserve all protected data and old guard bytes. Measure Game2,884/4,829, total3,557/5,502, different1,945, zero drift.
+- [x] Pass55 selected target/history checks157.389s plus shared/standalone tools checks; bank toolsc526e84 first, preserving all801 archive hashes and557 unrelated mirror fingerprints.
+- [ ] Bank source/pin/docs next and post-bank evidence last; preserve the archive, unrelated dirty mirror work and frozen Release.
+- [ ] Continue func_1510BF60 and full source/Game/rectangle work; keep hardware, complete caller and gameplay acceptance separate.
+
 ## View Clipping Command And Queue Matches - 2026-10-14
 
 [Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
@@ -11,7 +25,7 @@
 - [x] Close all328 changed ELF bytes to two code slots/extents only; retain all189,088 protected bytes/720 owners. Measure Game2,883/4,830, total3,556/5,503, different1,947, zero drift.
 - [x] Pass50 selected target/history checks115.524s and shared/standalone tools checks; bank toolscfc5e4b first, preserving801 archive hashes and551 unrelated mirror fingerprints.
 - [x] Bank consumer48610539, pass12 selected post-bank checks44.011s, retain all four hashes in an up-to-date incremental build, and await the40,948-node/81,118-edge graph worker without forcing a smaller scan. Preserve the archive/mirror and frozen Release.
-- [ ] Recover73-word/frame0x90 func_1510B690's matrix pass; keep full source/Game/rectangle work and actual SDK/hardware/caller/gameplay acceptance open.
+- [x] Recover73-word/frame0x90 func_1510B690's matrix pass and restore its original product dependency; see Note1379. Keep full source/Game/rectangle and actual hardware/caller/gameplay acceptance open.
 
 ## Pending View Queue Match - 2026-10-14
 

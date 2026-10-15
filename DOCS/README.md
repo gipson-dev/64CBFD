@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View matrix pass and product kernel restoration](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
+  Recover the 73-word C pass with twenty GPR-role guards and restore its
+  original 78-word assembly dependency. Qualify actual helper connections,
+  overlaps and native32; close all 506 ELF byte changes to code/extents only.
+
 - [View clipping command and queue reconstruction](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
   Recover the49-word command directly and55-word queue with seven FP-role
   guards. Qualify live homes/count/base, native/guest storage and actual matrix

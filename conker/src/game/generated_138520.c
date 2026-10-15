@@ -38,6 +38,9 @@ extern u8 D_800C35EA, D_800C3662, D_800BEBA0, D_800BEAAA, D_800DBE62;
 extern u16 D_800D18A0;
 extern s32 D_800BE9F0, D_800DCD7C;
 extern u8 D_800D9B90[], D_800D9BD0[], D_800D9C10[];
+extern f32 D_800D9D10[][4][4];
+void func_150A7A48(f32 left[4][4], f32 right[4][4], f32 product[4][4]);
+void func_1501B22C(s32 index);
 extern s32 D_800D9E10[];
 extern u8 D_800D9E20, D_800D9E21, D_800D9E28[];
 extern Gfx *D_800B0E00, *D_800B0E04, *D_800B0E08;
@@ -175,8 +178,21 @@ void func_1510B5F8(s32 index, u16 *normalization, f32 fovY, f32 fovX,
         (Mtx *)(D_800BE628 + index * 0x180 + D_800BE9C0 * 0x40 + 0x100));
 }
 
-s32 func_1510B690() {
-    return 0;
+/* Combine each view's live fixed matrix pair and refresh its side planes. */
+void func_1510B690(void) {
+    f32 (*products)[4][4] = D_800D9D10;
+    f32 projection[4][4];
+    s16 index;
+
+    for (index = 0; index <= D_80082FA0; index++) {
+        guMtxL2F(projection, (Mtx *)(D_800BE628 + (index * 4 - index) * 0x80 +
+            D_800BE9C0 * 0x40 + 0x100));
+        guMtxL2F((f32 (*)[4])(D_800D9C10 + index * 0x40),
+            ((Mtx *)D_800DC2A0[D_800BE9C0]) + index);
+        func_150A7A48((f32 (*)[4])(D_800D9C10 + index * 0x40),
+            projection, products[index]);
+        func_1501B22C(index);
+    }
 }
 
 Gfx *func_1510B7B4(Gfx *arg0, s32 arg1) {

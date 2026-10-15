@@ -9,6 +9,5 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_D4E10/func_150A7A14.s")
 
-s32 func_150A7A48() {
-    return 0;
-}
+/* Original four-row product kernel, caching the complete right operand. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D4E10/func_150A7A48.s")

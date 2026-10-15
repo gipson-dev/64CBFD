@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-15 View Matrix Pass And Original Product Restoration
+
+[Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
+Recover func_1510B690's 73-word C pass with twenty closed GPR-role guards and
+restore func_150A7A48's original 78-word assembly dependency from its false C
+stub. Qualify live reloads, actual helper connections, ordered overlaps,
+native32 and effective corruption controls. All 506 changed ELF bytes are
+target code/extents only. Game2,884/4,829, total3,557/5,502, different1,945,
+zero drift. The product's correct asm classification removes one function/
+312 bytes from converted totals; it is not new C credit. Root README remains
+aggregate-only. All55 selected target/history checks pass157.389s; toolsc526e84
+is committed first. Preserve801 archive hashes,557 unrelated mirror fingerprints
+and frozen Release.
+
 ## 2026-10-14 View Clipping Command And Queue C Matches
 
 [Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):

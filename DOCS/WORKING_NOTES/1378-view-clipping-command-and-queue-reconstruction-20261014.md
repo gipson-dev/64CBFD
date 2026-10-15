@@ -171,6 +171,10 @@ and separate known-open rectangle gate remain active.
 
 ## Next Target
 
+Completed by [Note 1379](1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
+the 73-word matrix pass and its actual product dependency are now restored.
+The following description remains the original handoff, not current work.
+
 Continue the next original routine func_1510B690 at1510B690/ROM138B40,
 73 words/frame0x90, after this two-function checkpoint. It visits an inclusive
 signed16 view index, makes two original guMtxL2F calls, combines matrices with

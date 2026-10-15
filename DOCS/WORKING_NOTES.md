@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-15:
+[Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
+Recover the 73-word matrix pass with twenty GPR-role guards and restore its
+78-word original product dependency, correctly classified asm instead of a
+false C stub. Qualify actual helper connections, native32, overlaps and
+negative/inverse controls. Close all 506 ELF byte changes without metadata
+allowances; Game2,884/4,829, total3,557/5,502, different1,945, zero drift.
+Keep full source/Game/rectangle and hardware/gameplay acceptance open. All55
+selected checks pass157.389s; bank toolsc526e84 first and preserve801 archive
+hashes,557 unrelated mirror fingerprints and frozen Release.
+
 2026-10-14:
 [Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
 Recover the49-word near/far command directly and55-word clipping queue with

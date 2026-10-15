@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-14
+Last verified: 2026-10-15
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolscfc5e4b; tools are committed before the consumer pin.
+  checkpoint pins toolsc526e84; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View near/far command and clipping queue recovered and byte-exact:
+View matrix pass recovered with its original product dependency:
+[Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md).
+Recover func_1510B690's 73-word/frame0x90 C body with twenty closed GPR-role
+guards, its signed16 loop, live page/base/count reloads and proper matrix order.
+Restore func_150A7A48's original 78-word assembly slot from a false C stub;
+this dependency restoration is not new C credit. Qualify actual SDK decoder,
+product and frustum connections, ordered overlaps, native32, signed-wrap tail
+states and effective semantic controls. Keep the native signaling-NaN ABI
+witness separate from target hardware/FCSR behavior. The complete 506-byte
+ELF delta is two code slots and their extents only, with no metadata allowances;
+all 189,088 protected bytes/720 owners remain fixed. ELF2131709f, progress
+3ad7466c. Fresh Game2,884/4,829 (59.72%), total3,557/5,502 (64.65%),
+different1,945, zero drift. Converted counts fall by one/312 bytes because the
+product kernel is correctly classified asm. Preserve all 801 archive hashes
+and 557 unrelated mirror fingerprints. Continue func_1510BF60; broader source/
+Game/rectangle and hardware/caller/gameplay acceptance remain open. All 55
+selected target/history checks pass157.389s; shared and standalone tools checks
+pass. Bank toolsc526e84 before the consumer pin. No host operation; Release
+remains frozen.
+
+Previous view near/far command and clipping queue recovered and byte-exact:
 [Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md).
 Recover func_1510B458 directly across49 words/frame0x28, including signed-zero
 defaults and three live entry homes. Recover func_1510B51C across55 words/
