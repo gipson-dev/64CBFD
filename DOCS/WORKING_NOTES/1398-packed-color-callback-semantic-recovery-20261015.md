@@ -147,3 +147,20 @@ are retained, not rerun here. Keep failed-comment/binding repairs,
 `func_1516D738`'s inherited-stack C deferral, handwritten Init hardware routines,
 `func_1510BF60` and the broader Game objective open. Evidence is ignored under
 `conker/build/game-packed-color-callback/`.
+
+## Post-Bank Verification
+
+Consumer **7f267179** banks the working docs and tools **af89f68** pin. All
+**seven post-bank checks pass in 61.892 seconds**, including the 52 live
+production inputs/capture controls and fresh verification of all 801 archive
+files. Both active checkouts are clean before this receipt. The older mirror
+retains its independent HEAD, all 652 original fingerprints and **654 final
+fingerprints**; the two owned copies remain identical to the tools commit.
+
+Seven documents / **4,984 relative Markdown links** validate without a broken
+target. The full graph scan refuses 19,377 nodes against 41,147 existing;
+preserve that fail-closed result. The actual commit worker completes with
+**41,156 nodes / 81,252 edges / 3,800 communities**, retaining the existing
+excluded-but-present corpus without forcing a smaller graph. No push or
+host/Release action. No match credit is added; continue the original pointer,
+loop-bound and exit-shape investigation described above.

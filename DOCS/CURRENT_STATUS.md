@@ -41,6 +41,10 @@ zero drift. Bank tools af89f68 first, preserve all 652 initial older-mirror
 fingerprints and continue at the original V0 record/color lifetime, live
 loop bound and exit-shape mismatch. Full private/fault/rebase/lifecycle/image
 qualification and the broader additional-source / Game objective remain open.
+Consumer 7f267179 banks docs/pin; all seven post-bank checks pass in 61.892s.
+All 52 inputs / 801 archive files / 654 final mirror fingerprints remain
+fixed, and the incremental graph completes at 41,156 nodes / 81,252 edges
+without forcing the refused smaller scan. No byte-match credit is added.
 
 Packed-coordinate preset recovered directly from C:
 [Note 1397](WORKING_NOTES/1397-packed-coordinate-preset-direct-match-20261015.md).
