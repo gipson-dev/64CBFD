@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Record Color Fade Guarded Match
+
+[Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
+Replace func_1516FBCC's stub with defined semantic C, all 97 padded words
+exact through 84 bounded guards. Keep the source mask; prove its MIPS
+redundancy, closed register/color/LO lifetimes and complete CFG/memory/ABI
+equivalence on 54 syntactic paths. Pass 14 installed checks and 256 actual
+dispatcher/callback/cleanup pairs. After the normal 694-compile rebuild,
+the entire ELF equals the pre-install prediction: 281 target-slot/extent
+changes only. Fresh Game 2,904/4,828, total 3,577/5,501, different 1,924, zero
+drift; conversion rows fixed. Bank tools aa35689 first, keep README
+aggregate-only and continue func_1516FD50 plus the full additional-source queues.
+
 ## 2026-10-15 Record Color Fade Semantic Qualification
 
 [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):

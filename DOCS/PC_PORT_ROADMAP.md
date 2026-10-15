@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Record Color Fade Proven Normalization And Match - 2026-10-15
+
+[Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
+
+- [x] Install func_1516FBCC's complete defined C, all 97 padded words / leaf frame 0 exact. Keep the C mask; 84 target-only guards omit its redundant MIPS instruction, shorten two crossing branches and normalize closed temporary/color/LO schedules. Raw C remains 98 words / 89 differences, not a direct match.
+- [x] Prove equivalence on all 54 syntactic CFG paths, including infeasible width combinations, with preserved symbolic memory/unknown global aliases, return/ABI registers, branch targets and delays. Reject four dependency mutants; accept an independently legal schedule. Preserve REGIMM's branch-kind field and dead FCC0.
+- [x] Pass 14 installed checks: 3,586 full private pairs, 194 fired faults, 20 aliases, native32 O2/O0 with UBSan, eight effective negatives, three original/normalized rebases, 801 archive hashes and 256 actual slot-4 dispatcher/callback/cleanup pairs, including 160 completions and all release/destructor branches under opaque lower hooks.
+- [x] Rebuild normally through 694 compiler commands and close all 281 ELF changes to target slot/extent only. Preserve all other ELF bytes, 54 of 57 inputs, old guard prefix, profiles/progress and 189,088 protected bytes / 720 owners. Fresh Game 2,904/4,828, total 3,577/5,501, different 1,924, zero drift; conversion rows fixed.
+- [x] Bank tools aa35689 first, preserve all 697 initial older-mirror fingerprints / 701 final paths, pass both copies' syntax/standalone checks and 11 shared padder tests. Root README changes only aggregate rows. No push or host/Release operations.
+- [ ] Recover func_1516FD50, 51 words / frame 0x18, slot-5 callback. Preserve full-word fade/completion, paired extent stores, live record home across func_1516F864 and the signed byte 0x2C addition into halfword 0x18; do not substitute F9C4's scale helper.
+- [ ] Continue the entire additional-source repair/binding/unanchored queues, remaining callbacks/callers and inherited-stack renderer deferral. This guarded match does not complete the broader objective.
+
 ## Record Color Fade Semantics And Compiler Gap - 2026-10-15
 
 [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
@@ -9,7 +21,7 @@
 - [x] Prove the repeated width tests make retail 0x1516FCC0 unreachable. Cover all 96 reachable words; keep all 3,586 private differences and 26/27 differing fired prefixes explicit, not a claimed instruction/fault match.
 - [x] Reject installation through the actual gates: defined C emits 98 words / 89 length-inclusive differences, and the padder rejects 0x188 bytes in the 0x184 slot. The unmasked 97-word diagnostic still differs at 65 words and is not selected or credited.
 - [x] Preserve all 57 production inputs, unchanged matching credit and aggregate-only root README. Bank tools 64fcc0d first, preserve all 695 initial older-mirror fingerprints / 697 final paths and pass syntax/standalone checks in both copies plus shared tools checks.
-- [ ] Finish the 97-word match while retaining defined shift behavior: resolve the redundant mask instruction, compiler temporary lifetimes and independent color-load schedule, then repeat owner/private/fault/rebase/padder/whole-image qualification before adopting C. No broad word replay or unproven mask removal.
+- [x] Finish the 97-word match in [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md). Keep defined C; prove the bounded mask/lifetime/schedule normalization, pass the actual padder and private/fault/rebase checks, then verify the entire predicted image before crediting the conversion.
 - [ ] Continue the full additional-source repair/binding/unanchored queues, remaining callbacks/callers and inherited-stack renderer deferral. This candidate qualification does not complete the broader objective.
 
 ## Preset 0x1B Coordinate Types And Direct Match - 2026-10-15
@@ -21,7 +33,7 @@
 - [x] Verify the entire original ROM for aligned direct JAL/address-word references; none are found. Keep indirect/encoded references and natural gameplay unknown, and lower heap/registration providers opaque.
 - [x] Close all 241 ELF changes to the target slot/extent only. Preserve every other ELF byte, 55 of 57 inputs, guards/profiles/progress and 189,088 protected bytes / 720 owners. Fresh Game 2,903/4,828, total 3,576/5,501, different 1,925, zero drift; conversion rows fixed.
 - [x] Bank tools 2be3d9f first, preserve all 691 initial older-mirror fingerprints / 695 final paths, pass syntax/standalone checks in both tools copies and shared tools checks. Root README stays aggregate-only; no push or host/Release operations.
-- [ ] Finish func_1516FBCC, the 97-word leaf slot-4 callback. [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md) qualifies defined semantics but rejects its 98-word candidate. Preserve the full-word fade, low-five-bit shift, signed size steps and unsigned colors; production is not restored yet.
+- [x] Finish func_1516FBCC in [Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md). The defined 98-word C now emits the exact 97-word body through proven bounded guards, with actual current-chain and whole-image closure. Note 1410 remains the historical candidate rejection.
 - [ ] Continue the complete additional-source repair/binding/unanchored queues, inherited-stack renderer deferral and caller restorations. This direct match does not complete the broader Game objective.
 
 ## Record Fade Callback Direct Match And Live Dispatch Chain - 2026-10-15

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Record color fade proven normalization and match](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
+  All 97 padded words exact with defined C and 84 bounded guards; symbolic
+  dependency proof, 14 checks, actual slot-4 chain and target-only ELF closure.
 - [Record color fade semantics and compiler gap](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
   Qualify full-width fade, signed size steps and unsigned interpolation;
   ten checks pass, but reject the 98-word candidate and keep production fixed.

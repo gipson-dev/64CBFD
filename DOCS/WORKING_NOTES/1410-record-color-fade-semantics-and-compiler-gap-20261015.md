@@ -159,3 +159,14 @@ paths** and two owned copies; HEAD remains ddbdd16. Seven scoped docs resolve
 completes at **41,291 nodes / 81,399 edges / 3,834 communities**, retaining
 excluded-but-present inputs rather than forcing a smaller scan. Continue
 FBCC's compiler gap and the full additional-source/Game objective.
+
+## Exact-Match Resolution
+
+[Note 1411](1411-record-color-fade-proven-normalization-and-match-20261015.md)
+resolves the installation gap without removing the C mask or replaying a
+retail word array. Eighty-four bounded guards apply a proven mask omission,
+branch-span repair and closed temporary/color/LO normalization; all 97 padded
+words, literal private/fault behavior, original rebases and the complete ELF
+are exact. The callback is now installed and its actual slot-4 chain passes.
+The candidate measurements and rejection above remain historical; continue
+func_1516FD50 and the complete additional-source/Game queues.

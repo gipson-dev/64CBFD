@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md):
+Match func_1516FBCC's 97-word leaf body with defined C and 84 bounded guards,
+not a raw/direct compiler match. Prove complete symbolic dependency/CFG/
+memory/ABI equivalence, pass 14 installed checks and 256 actual slot-4 chain
+pairs, then close every ELF change to the target slot/extent after a broad
+normal rebuild. Game 2,904/4,828, total 3,577/5,501, different 1,924, zero drift.
+Bank tools aa35689 first; continue func_1516FD50 and the full additional-source
+repair/binding/unanchored, caller and renderer queues.
+
+2026-10-15:
 [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md):
 Qualify func_1516FBCC's full-width fade, signed size steps and unsigned color
 interpolation in ten checks. The candidate is 98 words / 89 length-inclusive

@@ -554,7 +554,57 @@ void func_1516FA88(s16 arg0, s16 arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5) {
         0xFF, 0xA, 0x5A, 5, arg3, 0, 0, (u8)arg4, arg5);
 }
 
-s32 func_1516FBCC() {
+/* Keep fade math full-width and preserve retail's repeated width test.
+ * Guards remove a redundant MIPS shift mask and normalize temporary scheduling. */
+s32 func_1516FBCC(u8 *record) {
+    s16 width;
+    s32 factor;
+    u8 start;
+    s32 value;
+
+    value = record[0x1F];
+    if (record[0x24] != 0) {
+        if (value != 255) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 4));
+            if (value >= 256) {
+                value = 255;
+            }
+            record[0x1F] = value;
+        }
+    } else if (value != 0) {
+        value = (s32)((u32)value - ((u32)D_800BE9E4 << (record[0x2F] & 31)));
+        if (value < 0) {
+            value = 0;
+        }
+        record[0x1F] = value;
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    value = *(s8 *)(record + 0x2D);
+    value = (s32)((u32)value * (u32)D_800BE9E4);
+    *(s16 *)(record + 0x14) = (s16)((u32)(s32)*(s16 *)(record + 0x14) + (u32)value);
+    width = *(s16 *)(record + 0x14);
+    value = *(s8 *)(record + 0x2E);
+    value = (s32)((u32)value * (u32)D_800BE9E4);
+    *(s16 *)(record + 0x16) = (s16)((u32)(s32)*(s16 *)(record + 0x16) + (u32)value);
+    if (width <= 0 || width <= 0) {
+        *(s16 *)(record + 0x16) = 0;
+        *(s16 *)(record + 0x14) = *(s16 *)(record + 0x16);
+        return 1;
+    }
+    value = (s32)((u32)record[0x2C] + (u32)D_800BE9E4);
+    if (value >= 128) {
+        value = 127;
+    }
+    start = record[0x26];
+    factor = (s32)((u32)value << 1);
+    record[0x2C] = value;
+    record[0x1C] = ((s32)((u32)((s32)record[0x29] - start) * (u32)factor) >> 8) + start;
+    start = record[0x27];
+    record[0x1D] = ((s32)((u32)((s32)record[0x2A] - start) * (u32)factor) >> 8) + start;
+    start = record[0x28];
+    record[0x1E] = ((s32)((u32)((s32)record[0x2B] - start) * (u32)factor) >> 8) + start;
     return 0;
 }
 

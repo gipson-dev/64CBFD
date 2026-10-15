@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 64fcc0d; tools are committed before the consumer pin.
+  checkpoint pins tools aa35689; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,30 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Current target: func_1516FBCC semantic recovery and compiler gap:
+Record color fade installed with proven MIPS normalization:
+[Note 1411](WORKING_NOTES/1411-record-color-fade-proven-normalization-and-match-20261015.md).
+func_1516FBCC now matches all 97 padded retail words, leaf/no frame. Raw C
+remains 98 words / 89 length-inclusive differences; 84 target-only guards
+omit one redundant SLLV mask, shorten two crossing branches and normalize
+closed temporary/color-load/LO lifetimes. The C keeps its defined mask.
+Symbolic equivalence covers all 54 syntactic CFG paths, including infeasible
+width combinations, with exact branch edges/delay slots, return, preserved
+ABI registers and symbolic stores. Four dependency mutants are rejected;
+an independent legal schedule is accepted. All 14 installed checks pass in
+33.767s: 3,586 full private pairs, 194 fired faults, 20 aliases, native32
+O2/O0 with UBSan, eight negatives, three rebases, 801 archive hashes and
+256 actual-current dispatch/cleanup pairs (160 completions, release types
+0/1/2, both destructor branches). Lower unlink/destructors remain opaque.
+After the 694-compile normal rebuild, the entire ELF equals the pre-install
+prediction: all 281 changed bytes belong to the target slot/extent; every
+other ELF byte, 54 of 57 inputs, old guard prefix, profiles, progress and
+189,088 protected bytes / 720 owners stay fixed. Fresh Game 2,904/4,828
+(60.15%), total 3,577/5,501 (65.02%), different 1,924, zero drift; conversions
+unchanged. Bank tools aa35689 first; all 697 initial older-mirror fingerprints
+remain fixed across 701 final paths. Next func_1516FD50, 51 words / frame
+0x18, slot 5. Keep the complete additional-source/Game queues open.
+
+Historical func_1516FBCC candidate checkpoint, before Note 1411:
 [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md).
 Ten checks pass in 26.686s: 3,586 C/ROM public-state pairs, all byte shift
 counts/phase values, 20 bounded global aliases, eight effective guest/native
