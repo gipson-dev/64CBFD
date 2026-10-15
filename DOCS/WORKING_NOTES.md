@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
+Match func_1516F2F8 directly from complete C, all 148 words / frame 0xD8,
+no guards/profile changes. Fourteen checks cover both 49-word packets, private/
+fault/native/rebase/factory behavior and complete target-only image closure.
+Keep five original caller windows separate from their current placeholders;
+three narrowing controls are native-only because IDO discards them. Game
+2,900/4,828, total 3,573/5,501, different 1,928, zero drift. Bank tools 28f7a09
+first and continue func_1516F548 and the complete additional-source / Game goal.
+
+2026-10-15:
 [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
 Finish func_1516F024 with its recovered frame and semantic C, all 103 linked
 words exact through 27 bounded guards; raw C remains 103/15. Pass 16 installed

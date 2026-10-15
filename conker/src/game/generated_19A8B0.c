@@ -397,8 +397,26 @@ void func_1516F1C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
         0, 1, 0, 0, 0, 4, 2, (u8) arg2, arg3);
 }
 
-s32 func_1516F2F8() {
-    return 0;
+/* Preset 0x2B twice: snapshot the first input byte; retain word forwards.
+ * Indexed reads preserve the live fifth input and saved snapshot home. */
+void func_1516F2F8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    s32 firstType;
+
+    firstType = (u8)arg0;
+    func_1516D99C(
+        3, 0, 0, 0x2B, 0, 0xFF, 0xFF, 0xFF,
+        0, 0, 0, 0, 2, 0, 0, 0,
+        0, 0, 0, 2, 0, 0, 0, 0,
+        0, 0, 0, 0x50, 0x50, 0, 0, arg1,
+        4, 4, firstType, 0x10, 0, 0, 0x81, 4,
+        0, 1, 0, 0, 0, 1, 0, (u8)arg4, arg5);
+    func_1516D99C(
+        3, 0, 0, 0x2B, 0, 0xFF, 0xFF, 0xFF,
+        0, 0, 0, 0, 2, 0, 0, 0,
+        0, 0, 0, 3, 0, 0, 0, 0,
+        0, 0, 0, 0x50, 0x50, 0, 0, 7,
+        4, 4, (&firstType)[0], arg2, 0, 0, 0x81, 5,
+        0, 1, 0, 0, 0, 1, arg3, (u8)(&arg4)[0], arg5);
 }
 
 s32 func_1516F548() {

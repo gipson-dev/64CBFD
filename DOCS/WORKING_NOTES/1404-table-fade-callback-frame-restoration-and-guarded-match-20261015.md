@@ -195,6 +195,12 @@ make -C conker -j4 build/conker.us.elf progress.csv
 make -C conker match-progress NON_MATCHING=1
 ```
 
+Completed subsequently in [Note 1405](1405-dual-factory-preset-direct-match-20261015.md):
+all 148 words match directly from C. Its three narrowing casts are now measured
+as native-only negatives because this IDO context optimizes them away; the
+actual remaining source/home mismatch is resolved. Preserve the handoff below
+as historical context.
+
 Next recover **func_1516F2F8**, **148 words / 592 bytes**, ROM `0x19C7A8`,
 frame `0xD8`. The adjacent `func_1516F1C0` preset is already semantic/exact;
 do not redo it. The next routine has six inputs and two complete 49-word

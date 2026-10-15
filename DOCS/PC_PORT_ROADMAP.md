@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Dual Factory Preset Direct Match - 2026-10-15
+
+[Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
+
+- [x] Recover func_1516F2F8's six-input/two 49-word-packet ABI, captured first byte and live post-call parameter/snapshot homes. Screen 25 forms; all 148 raw/padded words and frame 0xD8 now match directly, with no new guards/profile changes.
+- [x] Pass 14 installed checks in 158.928s: 4,120 private guest cases, 636 fired faults, native32 O2/O0, seven guest/eight native effective negatives, three independent rebases, 256 real factory/allocator pairs and 801 archive fingerprints. Classify three optimized-away narrowing casts as native-only controls.
+- [x] Find all five original call sites with an ignore-inclusive search. Qualify ten original setup cases at fired call boundaries and pin both caller owners/assembly. Keep the fact that all five linked windows are currently placeholders explicit; do not claim current/full-caller execution.
+- [x] Close all 442 ELF changes to target slot/extent only; preserve every other byte, all guards/progress, protected data and 53 of 55 inputs. Fresh Game 2,900/4,828, total 3,573/5,501, different 1,928, zero drift; conversions unchanged.
+- [x] Bank tools 28f7a09 first, preserve 676 initial older-mirror fingerprints / 680 final paths, and pass Windows syntax/standalone checks. README remains aggregate-only; no push or host/Release operation.
+- [ ] Recover func_1516F548's 199-word constructor/preset routine, true input layout and fixed-point shifts before adopting archived scratch locals or parameter numbering. Keep the entire source/Game queues, inherited-stack renderer deferral and caller restorations open.
+
 ## Table Fade Callback Frame Restoration And Match - 2026-10-15
 
 [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
@@ -9,7 +20,7 @@
 - [x] Pass 16 installed checks in 72.903s: 8,352 private guest cases, 232 fired prefixes, native32 O2/O0, eight controls, three rebases, 264 actual helper pairs, 26 completed aliases plus two identical fault prefixes and 801 archive hashes.
 - [x] Close all 413 ELF changes to target slot/extent and four exact 106-byte symbol/name swaps. Preserve canonical bindings, every other byte, 49 of 52 inputs, all prior guard bytes and protected data. Fresh Game 2,899/4,828, total 3,572/5,501, different 1,929, zero drift; conversions unchanged.
 - [x] Bank tools 908f406 first. Preserve 671 initial older-mirror fingerprints / 676 final paths, pass Windows syntax/standalone checks and keep README aggregate-only. No push or host/Release action.
-- [ ] Recover func_1516F2F8's six-input, two-factory packet contract from all 148 words, preserving the low-byte first input across the first call and full-word forwards that the archived draft narrows. Keep the broader source/Game queues and inherited-stack deferral open.
+- [x] Recover func_1516F2F8's complete contract and match all 148 words directly in [Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md). The archived narrowing casts are measured as native-only controls under this IDO context; source/home fitting closes its actual machine mismatch. Keep the broader source/Game queues and inherited-stack deferral open above.
 
 ## Table Fade Callback Recovery And Frame Gap - 2026-10-15
 

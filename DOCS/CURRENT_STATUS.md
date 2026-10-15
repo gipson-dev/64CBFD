@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 908f406; tools are committed before the consumer pin.
+  checkpoint pins tools 28f7a09; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Dual factory preset installed directly from C:
+[Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md).
+func_1516F2F8 matches all 148 raw/padded words, frame 0xD8, with no new guards
+or profile changes. Indexed reads preserve the live fifth input and saved
+first-byte home across two complete factory packets. All 14 installed checks
+pass in 158.928s: 4,120 private guest cases, 636 fired faults, native32 O2/O0,
+seven effective guest negatives, eight native negatives, three rebases and
+256 real two-factory/allocator pairs. Three narrowing casts optimize away in
+IDO and are native-only controls. Five original caller windows are qualified
+at their call boundaries, but all five linked windows remain placeholders.
+Close all 442 ELF changes to target slot/extent; every other byte, 53 of 55
+inputs, guards/progress and protected data stay fixed. Fresh Game 2,900/4,828
+(60.07%), total 3,573/5,501 (64.95%), different 1,928, zero drift; conversions
+fixed. Bank tools 28f7a09 first; preserve 676 initial older-mirror fingerprints /
+680 final paths. Next func_1516F548, 199 words / frame 0xF8; full goal stays open.
 
 Table-fade callback installed and guarded-exact:
 [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md).

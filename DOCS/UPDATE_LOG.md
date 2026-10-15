@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Dual Factory Preset Direct Match
+
+[Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
+Replace func_1516F2F8's stub with complete semantic C, all 148 raw/padded words
+and original frame exact, without guards/profile changes. Preserve both full
+factory packets and live input/snapshot homes. Pass 14 installed checks and
+close all 442 ELF changes to target slot/extent only; all other bytes, guards,
+progress rows and 53 of 55 inputs stay fixed. Qualify five original caller
+windows without claiming that their current linked placeholders execute.
+Fresh Game 2,900/4,828, total 3,573/5,501, different 1,928, zero drift. Bank tools
+28f7a09 first, keep README aggregate-only and continue at func_1516F548.
+
 ## 2026-10-15 Table Fade Callback Guarded Match
 
 [Note 1404](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):

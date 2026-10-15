@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Dual factory preset direct match](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
+  All 148 words directly from C, no guards; two full packets, live homes,
+  14 checks and complete image closure. Original/current caller limits stay explicit.
 - [Table-fade callback frame restoration and match](WORKING_NOTES/1404-table-fade-callback-frame-restoration-and-guarded-match-20261015.md):
   Genuine live operands recover the frame; 27 bounded guards make all 103
   linked words exact. Sixteen checks and the complete ELF audit pass.
