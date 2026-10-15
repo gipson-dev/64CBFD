@@ -1,24 +1,37 @@
 # PC Port Roadmap located in another project folder
 
+## View Clipping Command And Queue Matches - 2026-10-14
+
+[Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
+
+- [x] Recover the49-word/frame0x28 command directly, with signed-zero defaults, three live entry homes and remembered near/far/dirty stores.
+- [x] Recover the55-word/frame0x40 clipping queue with seven complete FP-role guards, live count/base reloads, branch-delay updates and post-call consumption.
+- [x] Qualify twelve complete queue forms, private matrixScale offset84/view size0x180, twelve unchanged raw neighbors/pools/relocations, both padders and independent rebases.
+- [x] Pass13 pre-install checks32.850s,4,880 guest cases,1,600 prefixes,180 native cases/profile, nine effective compiled controls and180 actual matrix-child connections with bounded SDK providers.
+- [x] Close all328 changed ELF bytes to two code slots/extents only; retain all189,088 protected bytes/720 owners. Measure Game2,883/4,830, total3,556/5,503, different1,947, zero drift.
+- [x] Pass50 selected target/history checks115.524s and shared/standalone tools checks; bank toolscfc5e4b first, preserving801 archive hashes and551 unrelated mirror fingerprints.
+- [ ] Bank source/pin/docs and post-bank build/graph evidence while preserving the archive/mirror and frozen Release.
+- [ ] Recover73-word/frame0x90 func_1510B690's matrix pass; keep full source/Game/rectangle work and actual SDK/hardware/caller/gameplay acceptance open.
+
 ## Pending View Queue Match - 2026-10-14
 
 [Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
 
 - [x] Recover the complete42-word/frame0x38 command, signed inclusive live count, -1.0f skip, typed five-word call, post-call consume and dirty clear.
 - [x] Screen24 complete forms; retain the shortest correct guarded loop with three independent argument-schedule guards, no frame/control-flow or profile/header changes.
-- [x] Preserve all twelve raw owner neighbors/pools/relocations and all old guard bytes; match both padders and independent normal/rebased links.
+- [x] Preserve all thirteen raw owner neighbors/pools/relocations and all old guard bytes; match both padders and independent normal/rebased links.
 - [x] Pass4,704 guest cases,2,052 fired prefixes and2,352 native32 cases/profile, with six effective compiled semantic controls and96 actual queue/parent/child connections under bounded trig/SDK contracts.
 - [x] Close all132 changed ELF bytes to target code/extent only; retain189,088 protected bytes/720 owners. Measure Game2,881/4,830, total3,554/5,503, different1,949, zero drift.
 - [x] Pass44 selected target/SDK/history checks107.136s and shared/standalone checks; bank tools64a6bda first, retaining801 archive hashes and545 unrelated mirror fingerprints.
 - [x] Bank consumer f520037c, pass9 selected post-bank checks35.556s, preserve all four installed hashes in an up-to-date incremental build, and await the40,938-node/81,101-edge graph worker without forcing a smaller scan. Preserve the archive/mirror and frozen Release.
-- [ ] Recover49-word func_1510B458's near/far command and55-word func_1510B51C's clipping queue; keep full source/Game/rectangle and actual hardware/gameplay acceptance open.
+- [x] Recover49-word func_1510B458's near/far command and55-word func_1510B51C's clipping queue; see Note1378. Keep full source/Game/rectangle and actual hardware/gameplay acceptance open.
 
 ## View Orthographic Setup Direct Match - 2026-10-14
 
 [Note 1376](WORKING_NOTES/1376-view-orthographic-setup-reconstruction-20261014.md):
 
 - [x] Recover the full46-word/frame0x28 void command with one retained unused32-bit argument, signed16 defaults, far reload and a correct private Mtx* callee prototype.
-- [x] Screen20 complete forms/four exact forms; retain the simplest direct source with zero guards, profile or shared-header changes and twelve fixed raw owner neighbors.
+- [x] Screen20 complete forms/four exact forms; retain the simplest direct source with zero guards, profile or shared-header changes and thirteen fixed raw owner neighbors.
 - [x] Match both padders and independent original/generated rebases; preserve entry placement, pools, relative relocations and all guard bytes.
 - [x] Pass2,052 guest cases,272 fired prefixes and1,056 native32 cases/profile, with four effective semantic controls under both IDO and O2/O0 GCC.
 - [x] Freshly compile the210-word SDK chain under its real O3 recipes and execute96 finite exact-conversion guest cases, plus48 actual SDK C cases per native profile.

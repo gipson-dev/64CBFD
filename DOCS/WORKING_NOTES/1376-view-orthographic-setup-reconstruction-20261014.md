@@ -40,7 +40,7 @@ while sixteen explicit-local forms have six allocation differences. Retain
 the simplest first form, without guards, volatile qualifiers, dummy uses or
 profile changes. Keep the public name and descriptive private fields/arguments.
 
-All10 pre-install checks pass21.326s. Twelve other owner functions preserve
+All10 pre-install checks pass21.326s. Thirteen other owner functions preserve
 raw bytes, sizes, relative relocations and pools. Both padding implementations
 and independent original/generated links at0/0x1000000 preserve all46 words
 and exact entry placement. SDK source/prototypes and the existing guard table

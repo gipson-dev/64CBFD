@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-14 View Clipping Command And Queue C Matches
+
+[Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
+Recover func_1510B458 directly across49 words and func_1510B51C across55 words
+with seven complete FP-role guards. Preserve defaults, entry homes, live count/
+base, call packets and dirty/consumed rows. Qualify native/guest/prefix/negative
+and actual matrix-child connections. All328 ELF byte changes are two function
+slots/extents only. Game2,883/4,830, total3,556/5,503, different1,947, zero drift;
+converted counts unchanged. Root README remains aggregate-only. Correct prior
+neighbor-count prose from12 to13 without changing its measured receipts.
+All50 selected target/history checks pass115.524s. Toolscfc5e4b is banked first;
+retain all801 archive hashes and551 unrelated mirror fingerprints.
+
 ## 2026-10-14 Pending View Queue Guarded C Match
 
 [Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):

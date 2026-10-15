@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools64a6bda; tools are committed before the consumer pin.
+  checkpoint pins toolscfc5e4b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Pending-view projection queue recovered and guarded byte-exact:
+View near/far command and clipping queue recovered and byte-exact:
+[Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md).
+Recover func_1510B458 directly across49 words/frame0x28, including signed-zero
+defaults and three live entry homes. Recover func_1510B51C across55 words/
+frame0x40 with seven complete FP-register-role guards, live count/base loads,
+sentinel skips and post-call consumption. Name private view+84 matrixScale
+without changing view size or shared headers/profiles. Pass13 pre-install
+checks32.850s,4,880 guest cases,1,600 fired prefixes,180 native cases/profile,
+nine effective compiled controls and180 actual matrix-child connections with
+bounded SDK providers. All328 changed ELF bytes are target code/extents only;
+no other code, metadata or protected data changes. ELF6c21a585, progress
+e3ea336d. Fresh Game2,883/4,830 (59.69%), total3,556/5,503 (64.62%),
+different1,947, zero drift; converted counts unchanged. Correct prior single-
+target neighbor prose to13, matching receipts; this two-target batch preserves
+12 neighbors. All50 selected target/history checks pass115.524s; shared and
+standalone tools checks pass. Bank toolscfc5e4b first, retaining801 archive
+hashes and551 unrelated mirror fingerprints. Consumer/post-bank receipts follow.
+Continue73-word
+func_1510B690's matrix pass with full source/Game/rectangle and hardware/runtime
+boundaries open. Archive/mirror work is preserved and host Release stays frozen.
+
+Previous pending-view projection queue recovered and guarded byte-exact:
 [Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md).
 Recover func_1510B3B0's complete42-word/frame0x38 void command. Preserve the
 signed inclusive live count, -1.0f skip, typed five-word projection call,
@@ -56,7 +77,7 @@ Previous view orthographic setup directly matched from semantic C:
 Recover func_1510B070's46-word/frame0x28 body, retaining its unused incoming
 argument home, signed16 defaults, far reload and typed eight-word matrix call.
 The simplest source emits all46 words directly, with zero guards or profile/
-header changes. Twenty complete forms include four exact forms; all twelve
+header changes. Twenty complete forms include four exact forms; all thirteen
 raw owner neighbors/pools/relocations remain fixed. Pass10 pre-install checks
 21.326s and three installed image/negative/inverse gates12.008s. Cover2,052
 guest cases,272 fired prefixes and1,056 native32 cases per O2/O0 profile,

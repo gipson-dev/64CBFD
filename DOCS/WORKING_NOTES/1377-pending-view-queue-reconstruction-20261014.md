@@ -45,7 +45,7 @@ relocations, calls, frame, arithmetic, stores or control flow are replaced.
 All other39 words emit directly, including saved S0/S1/F20/F22 lifetimes,
 the zero fallback and both branch delays. Both padders and independently linked
 original/generated symbols at normal/+0x1000000 rebases match all42 words.
-All twelve other raw owner functions, their pools and relative relocations
+All thirteen other raw owner functions, their pools and relative relocations
 remain byte-identical. Every old guard byte is retained; append only three rows.
 
 ## Behavioral Qualification
@@ -157,6 +157,8 @@ No push, mirror-history mutation or host/Release operation. The wider goal
 and separate known-open rectangle gate remain active.
 
 ## Next Target
+
+Completed in [Note 1378](1378-view-clipping-command-and-queue-reconstruction-20261014.md).
 
 Continue func_1510B458 at1510B458/ROM138908:49 words/frame0x28. Recover the
 zero-default near/far selection, typed matrix-child call, retained argument

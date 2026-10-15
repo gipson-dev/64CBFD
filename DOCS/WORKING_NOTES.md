@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-14:
+[Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
+Recover the49-word near/far command directly and55-word clipping queue with
+seven complete FP-role guards. All13 pre-install checks pass32.850s, covering
+4,880 guest cases,1,600 prefixes,180 native cases/profile, nine semantic negatives
+and180 actual matrix-child connections under bounded SDK contracts. Close all
+328 changed ELF bytes to target code/extents; preserve every other byte.
+Game2,883/4,830, total3,556/5,503, different1,947, zero drift. Keep the full
+source/Game and separate rectangle goal active, with host Release frozen.
+All50 selected target/history checks pass115.524s; toolscfc5e4b is committed
+first, preserving801 archive hashes and551 unrelated mirror fingerprints.
+
+2026-10-14:
 [Note 1377](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
 Recover42-word func_1510B3B0's pending-view queue with three closed schedule
 guards and its original frame/saved lifetimes. Qualify4,704 guest cases,

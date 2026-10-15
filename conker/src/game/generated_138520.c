@@ -14,7 +14,8 @@ typedef struct {
     f32 extentX, extentY, axisScaleX, axisScaleY, projectionX, projectionY;
     u8 padding24[0x48];
     f32 baseFovX, baseFovY, fovX, fovY, projectionScaleX, projectionScaleY;
-    u8 padding84[0xFC];
+    f32 matrixScale;
+    u8 padding88[0xF8];
 } ViewProjection138520;
 #define PROJECTION_VIEWS_138520 ((ViewProjection138520 *)D_800BE628)
 extern f32 D_800A2C24, D_800A2C28;
@@ -30,6 +31,8 @@ extern f32 D_800D35E0;
 extern f32 D_800D35E4;
 extern f32 D_800D9AC0[][3];
 extern u8 D_800D9AF0;
+extern f32 D_800D9AF8[][2];
+extern u8 D_800D9B18;
 extern u8 *D_800DBFF0;
 extern u8 D_800C35EA, D_800C3662, D_800BEBA0, D_800BEAAA, D_800DBE62;
 extern u16 D_800D18A0;
@@ -128,12 +131,38 @@ void func_1510B3B0(void) {
     D_800D9AF0 = 0;
 }
 
-s32 func_1510B458() {
-    return 0;
+/* Rebuild one view with defaulted clip planes and remember the request. */
+void func_1510B458(s32 index, f32 nearPlane, f32 farPlane) {
+    if (nearPlane == 0.0f) {
+        nearPlane = D_800D9B20;
+    }
+    if (farPlane == 0.0f) {
+        farPlane = D_800D9B1C;
+    }
+    func_1510B5F8(index, (u16 *)(D_800BE628 + index * 0x180 + 0xB8),
+        PROJECTION_VIEWS_138520[index].fovY, PROJECTION_VIEWS_138520[index].fovX,
+        nearPlane, farPlane, PROJECTION_VIEWS_138520[index].matrixScale);
+    D_800D9AF8[index][0] = nearPlane;
+    D_800D9AF8[index][1] = farPlane;
+    D_800D9B18 = 1;
 }
 
-s32 func_1510B51C() {
-    return 0;
+/* Consume pending clip planes using each view's current projection. */
+void func_1510B51C(void) {
+    f32 *pending = D_800D9AF8[0];
+    f32 farPlane;
+    s32 index;
+
+    for (index = 0; index <= D_80082FA0; index++, pending += 2) {
+        if (pending[0] != -1.0f) {
+            farPlane = pending[1];
+            func_1510B5F8(index, (u16 *)(D_800BE628 + index * 0x180 + 0xB8),
+                PROJECTION_VIEWS_138520[index].fovY, PROJECTION_VIEWS_138520[index].fovX,
+                pending[0], farPlane, PROJECTION_VIEWS_138520[index].matrixScale);
+            pending[0] = -1.0f;
+        }
+    }
+    D_800D9B18 = 0;
 }
 
 /* Rebuild the float projection and convert it into the live matrix page. */

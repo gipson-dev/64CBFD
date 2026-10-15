@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View clipping command and queue reconstruction](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md):
+  Recover the49-word command directly and55-word queue with seven FP-role
+  guards. Qualify live homes/count/base, native/guest storage and actual matrix
+  child connections; close all328 ELF byte changes without metadata allowances.
+
 - [Pending view queue reconstruction](WORKING_NOTES/1377-pending-view-queue-reconstruction-20261014.md):
   Recover the42-word live-count command with three closed schedule guards.
   Qualify callback mutations, native/guest storage and actual parent/child
