@@ -1,6 +1,21 @@
 #include <ultra64.h>
 
 extern u8 *D_800BE628;
+
+typedef struct {
+    u8 padding0[0xC];
+    f32 extentX, extentY, axisScaleX, axisScaleY, projectionX, projectionY;
+    u8 padding24[0x48];
+    f32 baseFovX, baseFovY, fovX, fovY, projectionScaleX, projectionScaleY;
+    u8 padding84[0xFC];
+} ViewProjection138520;
+#define PROJECTION_VIEWS_138520 ((ViewProjection138520 *)D_800BE628)
+extern f32 D_800A2C24, D_800A2C28;
+extern f32 D_800C3648, D_800C364C, D_800C3650, D_800D9B1C, D_800D9B20;
+f32 sinf(f32);
+f32 cosf(f32);
+void func_1510B5F8(s32 index, u16 *normalization, f32 fovY, f32 fovX,
+                  f32 nearPlane, f32 farPlane, f32 scale);
 extern u8 D_80089470[];
 extern u8 D_800BE9C0;
 extern u8 *D_800DC2A0[];
@@ -39,16 +54,44 @@ s32 func_1510B070() {
     return 0;
 }
 
-s32 func_1510B128() {
-    return 0;
+/* Update effective FOVs, projection scales and the selected view's matrix. */
+void func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 nearFallback) {
+    f32 farOverride;
+    f32 nearOverride;
+    f32 halfAngle, cosineX, cosineY, focalExtent, nearPlane, farPlane;
+
+    PROJECTION_VIEWS_138520[index].fovX =
+        PROJECTION_VIEWS_138520[index].baseFovX + offsetX + D_800C3648;
+    PROJECTION_VIEWS_138520[index].fovY =
+        PROJECTION_VIEWS_138520[index].baseFovY + offsetY + D_800C3648;
+    halfAngle = PROJECTION_VIEWS_138520[index].fovX * D_800A2C24;
+    cosineX = cosf(halfAngle);
+    cosineY = cosineX;
+    focalExtent = sinf(halfAngle);
+    focalExtent = cosineY * PROJECTION_VIEWS_138520[index].extentX / focalExtent;
+    PROJECTION_VIEWS_138520[index].projectionX = (PROJECTION_VIEWS_138520[index].axisScaleX * focalExtent) * PROJECTION_VIEWS_138520[index].projectionScaleX * scale;
+    halfAngle = PROJECTION_VIEWS_138520[index].fovY * D_800A2C28;
+    cosineY = cosf(halfAngle);
+    focalExtent = sinf(halfAngle);
+    focalExtent = cosineY * PROJECTION_VIEWS_138520[index].extentY / focalExtent;
+    PROJECTION_VIEWS_138520[index].projectionY = (PROJECTION_VIEWS_138520[index].axisScaleY * focalExtent) * PROJECTION_VIEWS_138520[index].projectionScaleY * scale;
+    nearOverride = D_800C364C;
+    if (nearOverride != 0.0f) { nearPlane = nearOverride; }
+    else if (nearFallback != 0.0f) { nearPlane = nearFallback; }
+    else { nearPlane = D_800D9B20; }
+    farOverride = D_800C3650;
+    farPlane = farOverride != 0.0f ? farOverride : D_800D9B1C;
+    func_1510B5F8(index, (u16 *)(D_800BE628 + index * 0x180 + 0xB8),
+        PROJECTION_VIEWS_138520[index].fovY, PROJECTION_VIEWS_138520[index].fovX,
+        nearPlane, farPlane, scale);
 }
 
-// Eight guards preserve retail's five-word float ABI and register sequence.
-s32 func_1510B32C(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
-    func_1510B128(arg0, *(s32 *)&arg1, *(s32 *)&arg2, *(s32 *)&arg3, 0);
-    D_800D9AC0[arg0][0] = arg3;
-    D_800D9AC0[arg0][1] = arg1;
-    D_800D9AC0[arg0][2] = arg2;
+/* Forward FOV offsets and remember the requested view settings. */
+void func_1510B32C(s32 index, f32 offsetX, f32 offsetY, f32 scale) {
+    func_1510B128(index, offsetX, offsetY, scale, 0.0f);
+    D_800D9AC0[index][0] = scale;
+    D_800D9AC0[index][1] = offsetX;
+    D_800D9AC0[index][2] = offsetY;
     D_800D9AF0 = 1;
 }
 
@@ -64,8 +107,14 @@ s32 func_1510B51C() {
     return 0;
 }
 
-s32 func_1510B5F8() {
-    return 0;
+/* Rebuild the float projection and convert it into the live matrix page. */
+void func_1510B5F8(s32 index, u16 *normalization, f32 fovY, f32 fovX,
+                  f32 nearPlane, f32 farPlane, f32 scale) {
+
+    guPerspectiveF((f32 (*)[4])(D_800BE628 + index * 0x180 + 0xBC), normalization,
+        fovY, fovX, nearPlane, farPlane, scale);
+    guMtxF2L((f32 (*)[4])(D_800BE628 + index * 0x180 + 0xBC),
+        (Mtx *)(D_800BE628 + index * 0x180 + D_800BE9C0 * 0x40 + 0x100));
 }
 
 s32 func_1510B690() {

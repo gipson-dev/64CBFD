@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-14:
+[Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
+Install the129-word projection command and38-word matrix child with typed
+void interfaces,25 guards total and a directly exact33-word wrapper. Explicit
+sine sequencing closes native callback order. Pass16 installed/focused checks,
+including native32 O2/O0 and an independent594-byte whole-image accounting.
+Game2,879/4,831; total3,552/5,504, different1,952, zero drift. guMtxF2L's114
+remaining differences and actual SDK/runtime acceptance stay explicit.
+Bank tools efe2ace first; all78 selected target/history checks pass146.606s
+and four strengthened controls pass19.139s. Preserve the archive and mirror.
+
+2026-10-14:
 [Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
 Improve the same129-word/frame0x50 view command from41->19 differences via
 product/cosine lifetimes. Derive19 private guards, matching both padders and

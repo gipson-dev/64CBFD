@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [View projection family matrix child and native qualification](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
+  Install complete129/38-word parent/child guarded matches and a directly exact
+  typed33-word wrapper. Native32 callback ordering and the entire594-byte ELF
+  delta are qualified; keep SDK math, guMtxF2L matching and runtime open.
+
 - [View projection command lifetime and product fitting](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
   Improve41->19 raw differences and qualify a private19-word recipe that closes
   all129 retail words under both padders/rebases. Pass13 focused checks; native,

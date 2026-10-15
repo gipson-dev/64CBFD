@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-14 View Projection Family Guarded Matches
+
+[Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
+Recover func_1510B128 and func_1510B5F8 with complete129/38-word guarded
+matches. The typed33-word wrapper now emits directly, removing eight guards.
+Explicit sine sequencing fixes the measured native callback-order issue.
+Pass16 installed/focused checks, native32 O2/O0 and an independent whole-image
+gate for594 changed bytes with all protected data fixed. Game2,879/4,831,
+total3,552/5,504, different1,952, zero drift. Actual SDK math/runtime and the
+guMtxF2L114-word-difference dependency remain open.
+All78 selected target/history checks pass146.606s, followed by four strengthened
+native/image corruption checks19.139s. Tools efe2ace is committed first;
+preserve801 archive files,528 unrelated mirror files and frozen Release.
+
 ## 2026-10-14 View Projection Command Private Guarded Word Fit
 
 [Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):

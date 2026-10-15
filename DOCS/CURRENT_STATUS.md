@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsb208c1a; tools are committed before the consumer pin.
+  checkpoint pins toolsefe2ace; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View projection command private guarded word fit, not installed:
+View projection family installed and independently image-qualified:
+[Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md).
+Recover func_1510B128's129-word command and func_1510B5F8's38-word matrix
+child, retaining their original frames and typed void interfaces. Explicit
+sine sequencing fixes a real native callback-order issue. Twenty-three parent
+guards and two commutative child guards close the complete retail slots;
+the33-word wrapper emits directly and its eight obsolete guards are removed.
+Pass16 installed/focused checks21.768s, including216 native32 cases per O2/O0,
+128 child cases,324 actual family connections, two field aliases and86 fired
+prefixes. The independent whole-image gate confines all594 changed ELF bytes
+to the two slots/extents and four exact local symbol/string permutations;
+189,088 protected data bytes/720 owners remain exact. Current ELF03db1e76,
+progress005fd768; Game2,879/4,831 (59.59%), total3,552/5,504 (64.53%),
+different1,952, zero drift. Existing guMtxF2L still has114 differences in116
+words; SDK packet mocks are not matrix, camera, pixel or gameplay acceptance.
+Continue that dependency and wider donor/binding/codec/Game queues, retaining
+the separate rectangle history boundary and frozen host Release.
+All78 selected target/history checks pass146.606s; four strengthened native/
+in-file corruption checks pass19.139s. Toolsefe2ace is banked first,801 archive
+hashes are fixed, and the exact mirror sync preserves528 unrelated dirty files.
+
+Previous view projection command private guarded word fit, not installed then:
 [Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md).
 Improve func_1510B128 from41 to19 raw differences with the same129 words/
 frame0x50. Reversed outer product presentation recovers the literal FP sequence;

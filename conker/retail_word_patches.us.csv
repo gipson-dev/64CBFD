@@ -2768,14 +2768,6 @@ generated_12B1C0,func_150FDD10,0x03C,0x26310000,0x26520000,R_MIPS_LO16:D_800D121
 generated_12B1C0,func_150FDD10,0x040,0x24120028,0x24110028,-,-,Retain the target type in retail's s1 lifetime,,,false
 generated_12B1C0,func_150FDD10,0x050,0x564F0004,0x562F0004,-,-,Compare the target type through retail's s1 lifetime,,,false
 generated_12B1C0,func_150FDD10,0x064,0x5611FFF8,0x5612FFF8,-,-,Compare the end pointer through retail's s2 lifetime,,,false
-generated_138520,func_1510B32C,0x014,0xAFA7002C,0xAFA7002C,-,-,Materialize the fifth floating argument before reloading the register arguments,0x44802000,-,false
-generated_138520,func_1510B32C,0x02C,0xAFA00010,0xE7A40010,-,-,Store the zero fifth argument through retail's floating register,,,false
-generated_138520,func_1510B32C,0x048,0xC7A4002C,0xC7A6002C,-,-,Restore retail's first post-call floating register,,,false
-generated_138520,func_1510B32C,0x04C,0xC7A60024,0xC7A80024,-,-,Restore retail's second post-call floating register,,,false
-generated_138520,func_1510B32C,0x050,0xC7A80028,0xC7AA0028,-,-,Restore retail's third post-call floating register,,,false
-generated_138520,func_1510B32C,0x060,0xE4440000,0xE4460000,-,-,Store the first vector component through retail's floating register,,,false
-generated_138520,func_1510B32C,0x064,0xE4460004,0xE4480004,-,-,Store the second vector component through retail's floating register,,,false
-generated_138520,func_1510B32C,0x068,0xE4480008,0xE44A0008,-,-,Store the third vector component through retail's floating register,,,false
 generated_142560,func_1511A410,0x030,0x27A9000C,0x2408FFFD,-,-,Schedule the match tag before materializing the scratch-array base,,,false
 generated_142560,func_1511A410,0x034,0x2408FFFD,0x15050005,-,-,Move the tag comparison to retail's loop head,,,false
 generated_142560,func_1511A410,0x038,0x15050004,0x0002C880,-,-,Compute the match-slot offset in the comparison delay slot,,,false
@@ -15111,3 +15103,28 @@ game_476D0,func_1501B0A0,0x28,0x3C010000,0x01C37023,R_MIPS_HI16:D_800968F4,-,Mov
 game_476D0,func_1501B0A0,0x2C,0x01EE1021,0x000E71C0,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
 game_476D0,func_1501B0A0,0x30,0xC444006C,0x01EE1021,-,-,Move independent half-angle coefficient load before indexed view prologue,,,false
 game_476D0,func_1501B0A0,0x34,0xC4200000,0xC444006C,R_MIPS_LO16:D_800968F4,-,Move independent half-angle coefficient load before indexed view prologue,,,false
+generated_138520,func_1510B128,0x54,0x3C010000,0x460E2180,R_MIPS_HI16:D_800A2C24,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x58,0x460E2180,0x46083280,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x5C,0x46083280,0xE44A0074,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x60,0xE44A0074,0x8E380000,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x64,0x8E380000,0xC7A40058,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x68,0xC7A40058,0xC4680000,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x6C,0xC4680000,0x03101021,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x70,0x03101021,0xC4520070,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x74,0xC4520070,0x46049180,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x78,0x46049180,0x46083280,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x7C,0x46083280,0xE44A0078,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x80,0xE44A0078,0x8E390000,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x84,0x8E390000,0x3C010000,-,R_MIPS_HI16:D_800A2C24,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0xB0,0xC7A8003C,0xC7A6003C,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0xBC,0xC446000C,0xC448000C,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x118,0xC7AA003C,0xC7A8003C,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x11C,0x3C010000,0x44808000,R_MIPS_HI16:D_800C364C,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x124,0xC4480010,0xC44A0010,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x134,0x44808000,0x3C010000,-,R_MIPS_HI16:D_800C364C,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x160,0x46106032,0x460C8032,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x168,0x45010003,0x45030004,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x16C,0x00000000,0x46100032,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B128,0x1A0,0x46100032,0x46008032,-,-,Preserve certified sequenced projection load roles and emitted schedule,,,false
+generated_138520,func_1510B5F8,0x40,0x006F2021,0x01E32021,-,-,Preserve commutative matrix child address operand order,,,false
+generated_138520,func_1510B5F8,0x74,0x00781021,0x03031021,-,-,Preserve commutative matrix child address operand order,,,false

@@ -1,5 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## View Projection Family Matches - 2026-10-14
+
+[Note 1374](WORKING_NOTES/1374-view-projection-family-matrix-child-and-native-qualification-20261014.md):
+
+- [x] Recover the actual38-word/frame0x30 matrix child and type the parent/wrapper/child as void commands without changing shared headers.
+- [x] Explicitly sequence sine before live extent loads; pass216 native32 cases per O2/O0 and five effective semantic controls, including the unsequenced parent.
+- [x] Qualify128 child cases,324 actual family connections, two shared-field aliases and86 fired prefixes; keep SDK matrix math and native fault/FCSR limits explicit.
+- [x] Match129 parent words with23 schedule/load-role guards and38 child words with two commutative address guards under both padders and independent rebases.
+- [x] Remove eight obsolete wrapper guards; preserve its33 direct words,11 owner neighbors and every unrelated CSV record byte.
+- [x] Close all594 changed ELF bytes to two function slots/extents and four exact symbol/string groups, preserving189,088 protected bytes/720 owners.
+- [x] Measure Game2,879/4,831 (59.59%), total3,552/5,504 (64.53%), different1,952, zero drift; keep README aggregate-only.
+- [x] Pass78 selected target/history checks146.606s, four strengthened controls19.139s and shared/standalone tools checks; bank tools efe2ace first, preserving801 archive files and528 unrelated mirror fingerprints.
+- [ ] Finish the consumer commit and post-bank graph/build checks.
+- [ ] Match guMtxF2L's114 differing words and qualify actual SDK matrix/runtime behavior separately; continue full donor/binding/codec/Game and rectangle queues with Release frozen.
+
 ## View Projection Command Private Word Fit - 2026-10-14
 
 [Note 1373](WORKING_NOTES/1373-view-projection-command-lifetime-and-product-fitting-20261014.md):
@@ -11,8 +26,9 @@
 - [x] Pass13 focused checks38.664s,1,080 return-state cases,662 fired prefixes, actual trig/wrapper connections and all expected-input corruption controls.
 - [x] Bank toolsb208c1a first, preserve the801-file archive,526 older mirror fingerprints and every production input; keep README aggregate-only with no new match credit.
 - [x] Bank consumerfb3009e3, pass seven post-bank checks9.289s, preserve pinned ELF/progress and await the40,895-node graph worker without a forced scan.
-- [ ] Complete native32/broader aliases and the actual38-word func_1510B5F8 matrix child, resolving typed-child and obsolete-wrapper guards as an integrated family.
-- [ ] Qualify integrated linked image/history/ABI before source installation or match credit; continue failed donors/bindings/codec/original Game and rectangle history with host Release frozen.
+- [x] Complete native32/broader aliases and the actual38-word func_1510B5F8 matrix child, resolving typed-child and obsolete-wrapper guards as an integrated family; see Note1374.
+- [x] Qualify integrated linked image and typed ABI before source installation or match credit; see Note1374 for current history/banking gates and runtime limits.
+- [ ] Continue failed donors/bindings/codec/original Game and rectangle history with host Release frozen.
 
 ## View Projection Command Recovery - 2026-10-14
 
@@ -25,8 +41,8 @@
 - [x] Prove the typed wrapper emits all33 words directly and existing eight guards reject it; identify the typed child's12->28-byte stub growth and preserve11 other owner neighbors.
 - [x] Keep production source, headers, guards, layout, progress and every ELF byte fixed; commit tools07e0dd5 first, preserving the archive and523 unrelated mirror fingerprints.
 - [x] Bank consumer51602818, pass four post-bank checks2.568s, preserve pinned ELF/progress and await the40,883-node graph worker without a forced scan.
-- [ ] Continue the SAME func_1510B128's literal scheduling, cosine homes, FP allocation/products and branch matching before installation or match credit.
-- [ ] Finish native32/broader aliases, actual child/caller qualification, both padder/rebase and closed-image/history gates for an integrated installable family.
+- [x] Continue the SAME func_1510B128's literal scheduling, cosine homes, FP allocation/products and branch matching before installation or match credit; see Notes1373/1374.
+- [x] Finish native32/broader aliases, actual child/direct-wrapper qualification, both padder/rebase and independent closed-image gates; see Note1374 for history/banking and full-caller/runtime limits.
 - [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle history; keep host Release frozen.
 
 ## View FOV Transfer Match - 2026-10-14
@@ -41,7 +57,7 @@
 - [x] Pass 65 selected target/history checks in 115.601s, shared tools checks and standalone mirror checks; commit tools 7b6f51a first, preserving 801 archive files and 516 unrelated mirror fingerprints.
 - [x] Refresh Game 2,877/4,831 and total 3,550/5,504, different 1,954, zero drift; keep root README aggregate-only.
 - [x] Bank consumer db0141f6, pass 26 post-bank checks in 56.618s, retain pinned ELF/progress and await the 40,872-node graph worker without forcing the smaller full scan.
-- [ ] Recover func_1510B128's 129-word/frame0x50 command and qualify its actual argument/return/caller interface; do not infer functioning production camera behavior from bounded helper models.
+- [x] Recover func_1510B128's129-word/frame0x50 command and its actual matrix child/direct-wrapper interface; see Note1374. Do not infer functioning production camera behavior from bounded helper models.
 - [ ] Continue failed donors/bindings/codec/original Game matching and separate stale rectangle image reconciliation; keep host Release frozen.
 
 ## Game Cosine Direct Match - 2026-10-14

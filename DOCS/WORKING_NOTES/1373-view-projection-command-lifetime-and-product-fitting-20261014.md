@@ -1,5 +1,10 @@
 # View Projection Command Lifetime And Product Fitting
 
+Follow-up: [Note1374](1374-view-projection-family-matrix-child-and-native-qualification-20261014.md)
+qualifies explicit sine sequencing, native32 and the real matrix child, then
+installs the integrated family. The private measurements below remain their
+original dated evidence, not the final installed source or guard recipe.
+
 ## Scope
 
 Continue the SAME func_1510B128 and full additional-source/Game goal from clean

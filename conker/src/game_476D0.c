@@ -11,7 +11,7 @@ typedef struct {
     u8 padding74[0x10C];
 } ViewProjection476D0;
 extern f32 D_800968F4, D_800968F8, D_800968FC;
-s32 func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 fallback);
+void func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 fallback);
 #define VIEW_PROJECTIONS_476D0 ((ViewProjection476D0 *)D_800BE628)
 
 void func_1501B0A0(s32 index, s32 reference);
