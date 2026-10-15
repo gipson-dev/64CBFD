@@ -41,6 +41,10 @@ fingerprints remain fixed, with only five absent owned files copied.
 Next: recover the still-stubbed 125-word factory func_1516D99C. Its older
 archive screen emits 158 words / 140 differences, not adoption evidence.
 The wrapper's factory boundary remains opaque; no gameplay or host claim.
+Consumer 63f5eaf7 banks the source/pin/docs. All 13 post-bank checks pass in
+29.006s; 41 input states, all 801 archive files and all 623 final mirror
+fingerprints remain pinned. The ELF/progress build is up to date, and the
+incremental graph worker completes at 41,085 nodes / 81,179 edges.
 
 Prior original rotation kernel restored; one false C conversion removed:
 [Note 1390](WORKING_NOTES/1390-original-rotation-kernel-and-real-math-chain-restoration-20261015.md).

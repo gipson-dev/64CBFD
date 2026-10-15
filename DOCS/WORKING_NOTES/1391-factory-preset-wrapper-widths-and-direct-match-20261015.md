@@ -112,3 +112,18 @@ words with 140 real differences, so it is a reference lead, not qualified C.
 Recover its real allocation/field-store ABI and independently qualify its
 complete owner before installation. Other additional-source/binding failures,
 handwritten Init hardware routines and func_1510BF60 remain open.
+
+## Post-Bank Verification
+
+Consumer **63f5eaf7** banks the wrapper, tools f0e67c2 pin, aggregate README
+rows and working documentation. All **13 post-bank checks pass in 29.006
+seconds**, including the independent complete image, 41 installed input states
+and fresh 801-file archive audit. The normal ELF/progress build is up to date.
+
+Both active checkouts are clean before this receipt. The older mirror retains
+its independent ddbdd16 HEAD and all 623 final fingerprints, including the
+618 initial fingerprints; all five owned copies remain exact. The source
+commit's incremental graph worker completes at **41,085 nodes / 81,179 edges /
+4,099 communities**, without forcing the refused smaller full scan. No push,
+host/Release operation or claim that the factory is recovered. Continue the
+whole additional-C / Game goal at func_1516D99C.

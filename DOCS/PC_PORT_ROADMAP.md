@@ -9,6 +9,7 @@
 - [x] Pass 13 focused checks in 29.641s: 786 guest cases, 110 fired fault prefixes, two native32 profiles, five effective controls and three independent assembly/call rebases.
 - [x] Close every one of 233 changed ELF bytes to the target slot/extent; preserve protected data, guards and progress rows. Measure Game 2,890/4,828, total 3,563/5,501, different 1,938, zero drift.
 - [x] Bank tools f0e67c2 first, preserve all 801 archive files and all 618 initial older-mirror fingerprints, and keep README edits aggregate-only. No host/Release action.
+- [x] Bank consumer 63f5eaf7, pass all 13 post-bank checks in 29.006s, retain all 41 installed input states / 623 final mirror fingerprints, and await the 41,085-node / 81,179-edge incremental graph worker. Normal ELF/progress build is up to date.
 - [ ] Recover func_1516D99C's still-stubbed 125-word factory and continue the whole additional-C / Game queue. The old 158-word archive screen is not a match; no gameplay or host-transfer acceptance.
 
 ## Original Rotation Kernel Restoration - 2026-10-15
