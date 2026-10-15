@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Paired Record Event ABI And Candidate Rejection
+
+[Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
+Recover func_1516F548's 17-slot interface, ten saved word homes, both factory
+packets and final Init event/callback packet. Pass ten focused checks,
+including both original caller boundaries and 128 real factory pairs, but
+reject all 33 C forms. The tested 199-word/frame-0xF8 form has 162 differences
+and fails forced private-home cases; no production C, guards or credit change.
+All 57 inputs remain fixed. Fresh Game stays 2,900/4,828, total 3,573/5,501,
+different 1,928, zero drift. Bank tools 07a68c3 before the consumer pin and
+continue with compiler home/spill evidence; README remains aggregate-only.
+
 ## 2026-10-15 Dual Factory Preset Direct Match
 
 [Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):

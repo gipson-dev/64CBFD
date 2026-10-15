@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Paired record/event ABI and candidate rejection](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
+  Recover all 17 inputs and three packets, pass ten focused checks and reject
+  all 33 nonmatching forms. Production C and matching credit remain unchanged.
 - [Dual factory preset direct match](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
   All 148 words directly from C, no guards; two full packets, live homes,
   14 checks and complete image closure. Original/current caller limits stay explicit.

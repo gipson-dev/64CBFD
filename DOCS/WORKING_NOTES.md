@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-15:
+[Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
+Recover func_1516F548's 17 physical inputs, ten genuine saved homes and all
+49/49/12 packet words. Pass ten checks and screen 33 nonmatching forms; preserve
+the production stub and every pinned input. A correct-size/frame candidate
+still has 162 differences and 518 private-home rejections. The closest 199-word
+form has 73 differences and the wrong frame. Fresh matching counts stay fixed.
+Bank tools 07a68c3 first; inspect real compiler home/spill reservations next
+without closing the full additional-source/Game objective.
+
+2026-10-15:
 [Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
 Match func_1516F2F8 directly from complete C, all 148 words / frame 0xD8,
 no guards/profile changes. Fourteen checks cover both 49-word packets, private/

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 28f7a09; tools are committed before the consumer pin.
+  checkpoint pins tools 07a68c3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Paired record/event ABI qualified; C match remains open:
+[Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md).
+func_1516F548 consumes 17 physical argument slots, including live slots 15/16
+beyond unused 12..14. Recover the ten real saved word homes, signed coordinate
+aliases, two complete 49-word factory packets and final 12-word Init packet.
+All ten checks pass in 20.978s: 2,072 original guest cases, 1,152 original fault
+prefixes, native32 O2/O0, seven effective controls, three rebases, 128 real
+factory/allocator pairs and both original caller windows. The linked caller
+windows remain placeholders; the Init event/callback are bound and exact but
+not executed. None of 33 diagnostic-free C forms is exact. The tested 199-word
+candidate has frame 0xF8 but 162 differences and fails all 518 forced private-
+home cases; the closest 199-word form has 73 differences and frame 0x118.
+Keep the production stub, ELF, guards/profiles and all 57 pinned inputs fixed;
+zero new credit. Fresh Game stays 2,900/4,828 (60.07%), total 3,573/5,501
+(64.95%), different 1,928, zero drift. Bank tools 07a68c3 first, preserve all
+680 initial older-mirror fingerprints / 682 final paths, and inspect actual
+compiler home/spill reservations next. README stays aggregate-only.
 
 Dual factory preset installed directly from C:
 [Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md).

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Paired Record Event ABI And Candidate Rejection - 2026-10-15
+
+[Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md):
+
+- [x] Recover func_1516F548's full 17-slot ABI, including unused slots 12..14, live slots 15/16, ten saved word homes and signed low-halfword coordinate aliases. Verify both original caller windows without claiming their current placeholders execute.
+- [x] Recover both 49-word factory packets, the 12-word Init event packet, full-word live context and fixed-point shift/division semantics. Verify linked factory/allocator and event/callback words; leave the Init provider opaque.
+- [x] Screen 33 forms and pass ten checks: original private/fault behavior, 1,554 normal/live-input candidate cases, 518 decisive private-home rejections, native32 O2/O0, seven controls, three rebases, 128 real factory pairs and unchanged 29 neighbors.
+- [x] Reject every candidate for installation. Preserve all 57 production inputs and unchanged matching credit; bank tools 07a68c3 first and preserve all 680 initial older-mirror fingerprints / 682 final paths. Keep README aggregate-only and Release frozen.
+- [ ] Inspect actual CFE/UOPT/local reservations and resolve the lexical-home/spill split without padding locals, frame guards, incompatible calls or broad callee changes. A 199-word/frame-0xF8 form still differs at 162 words; the closest 199-word form has 73 differences and frame 0x118.
+- [ ] Qualify a genuine match, production padding and the independent complete linked-image change before replacing the stub or claiming credit. Keep the full additional-source/Game queues, inherited-stack renderer deferral and caller restorations open.
+
 ## Dual Factory Preset Direct Match - 2026-10-15
 
 [Note 1405](WORKING_NOTES/1405-dual-factory-preset-direct-match-20261015.md):
@@ -9,7 +20,7 @@
 - [x] Find all five original call sites with an ignore-inclusive search. Qualify ten original setup cases at fired call boundaries and pin both caller owners/assembly. Keep the fact that all five linked windows are currently placeholders explicit; do not claim current/full-caller execution.
 - [x] Close all 442 ELF changes to target slot/extent only; preserve every other byte, all guards/progress, protected data and 53 of 55 inputs. Fresh Game 2,900/4,828, total 3,573/5,501, different 1,928, zero drift; conversions unchanged.
 - [x] Bank tools 28f7a09 first, preserve 676 initial older-mirror fingerprints / 680 final paths, and pass Windows syntax/standalone checks. README remains aggregate-only; no push or host/Release operation.
-- [ ] Recover func_1516F548's 199-word constructor/preset routine, true input layout and fixed-point shifts before adopting archived scratch locals or parameter numbering. Keep the entire source/Game queues, inherited-stack renderer deferral and caller restorations open.
+- [ ] Finish func_1516F548's 199-word C match after the verified ABI/shift/caller recovery in [Note 1406](WORKING_NOTES/1406-paired-record-event-abi-and-candidate-rejection-20261015.md). No candidate is installed or credited; see the compiler-home and adoption steps above. Keep the entire source/Game queues, inherited-stack renderer deferral and caller restorations open.
 
 ## Table Fade Callback Frame Restoration And Match - 2026-10-15
 
