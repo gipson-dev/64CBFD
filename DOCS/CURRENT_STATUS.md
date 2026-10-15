@@ -42,6 +42,12 @@ data stay fixed. Fresh Game 2,899/4,828 (60.05%), total 3,572/5,501 (64.93%),
 different 1,929, zero drift; conversions fixed. Bank tools 908f406 first and
 preserve 671 initial older-mirror fingerprints / 676 final paths. Next
 func_1516F2F8, 148 words / two full factory packets; keep the full objective open.
+Consumer f01675b3 banks source/guards/docs/pin; all 16 post-bank checks pass
+in 121.611s, exit 0, with the complete independent image and all 52 input
+states / 801 archive files fixed. All 676 final mirror fingerprints remain
+pinned, preserving 671 initial dirty files. Eight docs resolve 5,024 relative
+links, zero broken; the actual incremental graph finishes at 41,218 nodes /
+81,320 edges without forcing the smaller scan. Normal build is up to date.
 
 Table-fade callback semantically recovered, not installed:
 [Note 1403](WORKING_NOTES/1403-table-fade-callback-recovery-and-frame-gap-20261015.md).

@@ -206,3 +206,22 @@ choosing its interface or importing the draft. No next-function edit here.
 Retain the inherited-stack renderer deferral and complete
 [failed-comment/binding/unanchored queues](1396-additional-source-commented-coverage-refresh-and-preset-handoff-20261015.md).
 The full additional-source / Game goal remains active and incomplete.
+
+## Post-Bank Verification
+
+Consumer **f01675b3** banks source, guards, aggregate-only README changes,
+working docs and the tools **908f406** pin. All **16 post-bank checks pass
+in 121.611 seconds**, exit 0, including the entire independent image,
+canonical bindings, all 52 input states, 801 archive hashes, guard-row and
+capture corruption controls, literal private/fault behavior and real helpers.
+The normal ELF/progress build is up to date; no production artifact changes
+during the rerun. Raw C remains 103/15; only the documented guarded output
+is exact across all 103 words.
+
+Both active checkouts are clean before this receipt edit. Recheck independent
+mirror ddbdd16: all **676 final fingerprints** remain fixed, all **671 initial
+dirty files** are preserved and all five owned copies equal active tools.
+Eight documents resolve **5,024 relative links with zero broken**. The source
+commit's actual incremental graph workers finish at **41,218 nodes / 81,320
+edges / 3,948 communities**, without forcing the refused smaller full scan.
+Continue func_1516F2F8 and the complete additional-source / Game queues.
