@@ -141,3 +141,21 @@ Keep the full
 remaining callbacks/callers and inherited-stack renderer deferral open.
 This semantic candidate is progress toward the original objective, not its
 completion and not a completed FBCC conversion.
+
+## Post-Bank Verification
+
+Consumer **d65ea282** banks the candidate handoff, working indexes and tools
+**64fcc0d** pin. All **ten post-bank checks pass in 32.988 seconds**, exit 0.
+The selected candidate remains 98 words / 89 length-inclusive differences;
+both exact-match and actual oversized-slot gates still reject it. All 57
+production hashes, original archive hashes, public/native/rebase/staged-chain
+evidence and explicit private/fault differences remain qualified. No source,
+ELF, guard, profile, conversion row, root README or matching-credit change.
+
+Both active trees are clean before this receipt edit. All **697 final older-
+mirror fingerprints** remain fixed, preserving the **695 initial dirty
+paths** and two owned copies; HEAD remains ddbdd16. Seven scoped docs resolve
+**5,043 relative inline links, zero broken**. The source-commit graph update
+completes at **41,291 nodes / 81,399 edges / 3,834 communities**, retaining
+excluded-but-present inputs rather than forcing a smaller scan. Continue
+FBCC's compiler gap and the full additional-source/Game objective.

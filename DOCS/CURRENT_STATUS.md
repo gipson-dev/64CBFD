@@ -44,6 +44,13 @@ words rather than inventing a 97-word execution claim. All 57 production
 inputs and matching totals remain fixed. Tools 64fcc0d is banked first;
 preserve all 695 initial older-mirror fingerprints / 697 final paths. Continue
 this exact-match gap and the full additional-source/Game queues.
+Consumer d65ea282 banks candidate docs and tools 64fcc0d; all ten post-bank
+checks pass in 32.988s, exit 0. Production hashes, all 697 final older-mirror
+fingerprints and the explicit private/fault rejection evidence remain fixed.
+Seven scoped docs resolve 5,043 relative inline links, zero broken. The
+source-commit graph update completes at 41,291 nodes / 81,399 edges without
+forcing a smaller scan or purging excluded-but-present inputs. Continue FBCC;
+this checkpoint is not a completed conversion or new byte match.
 
 Preset-0x1B wrapper installed directly from C:
 [Note 1409](WORKING_NOTES/1409-preset-1b-coordinate-types-and-direct-match-20261015.md).
