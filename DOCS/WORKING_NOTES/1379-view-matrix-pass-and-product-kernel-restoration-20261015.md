@@ -14,7 +14,7 @@ and frozen host Release. This is progress, not completion of the wider goal.
 2. [x] Recover full semantic C with signed16 counter, live page/base/count reads, proper matrix order and original private buffer/home lifetimes.
 3. [x] Qualify literal words, both owners' neighbors/pools, actual helpers, aliases, native32, effective controls, return-mutation gates and independent rebases before installation.
 4. [x] Close every linked ELF byte, metadata definition and progress-language change; update only measured README aggregates and working indexes.
-5. [ ] Bank tools first, source/pin/docs next and post-bank evidence last; continue the full source/Game and separate rectangle work.
+5. [x] Bank tools first, source/pin/docs next and post-bank evidence last; continue the full source/Game and separate rectangle work.
 
 ## Interfaces And Source Fit
 
@@ -181,10 +181,26 @@ data and profiles are unchanged, not claimed as a fresh larger suite. The
 separate known-open rectangle image gate stays open.
 Toolsc526e84 banks the eight owned paths before the consumer source/pin/docs.
 
+## Post-Bank Verification
+
+Toolsc526e84 precedes consumer af045628, which banks the C pass, original
+product assembly, twenty guards, tools pin and aggregate-only README/docs.
+Generated progress.csv stays ignored; its single c->asm correction follows
+the source representation and is pinned in the qualification checkpoint.
+All15 selected post-bank image/corruption/inverse checks pass53.835s, including
+the preceding clipping, pending queue, fixed converter and orthographic history
+gates. Incremental ELF/progress are up to date. All six installed hashes above
+are freshly unchanged; both active checkouts are clean before this receipt.
+The mirror's entire 565-path dirty state and independent HEAD remain unchanged
+after the exact owned sync. The consumer's incremental graph worker completes
+at40,958 nodes/81,119 edges/3,892 communities without forcing the smaller scan.
+No producer remains live. No push, mirror-history mutation or host/Release
+operation. The full source/Game objective and separate rectangle gate stay open.
+
 ## Next Target
 
 After this checkpoint, continue the remaining Game routines in this owner,
-starting func_1510BF60's full original body and interfaces. Keep actual hardware,
+starting func_1510BF60's full original 339-word body and interfaces. Keep actual hardware,
 complete original callers and gameplay separate from static/model acceptance.
 No push, Claude call, REA setup retry or host/Release operation is authorized
 or performed by this batch. The wider source/Game objective remains active.

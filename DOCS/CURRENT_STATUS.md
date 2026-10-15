@@ -44,8 +44,10 @@ product kernel is correctly classified asm. Preserve all 801 archive hashes
 and 557 unrelated mirror fingerprints. Continue func_1510BF60; broader source/
 Game/rectangle and hardware/caller/gameplay acceptance remain open. All 55
 selected target/history checks pass157.389s; shared and standalone tools checks
-pass. Bank toolsc526e84 before the consumer pin. No host operation; Release
-remains frozen.
+pass. Toolsc526e84 precedes consumer af045628. All15 selected post-bank gates
+pass53.835s, the incremental build is up to date, and all six installed hashes
+remain fixed. The graph worker finishes at40,958 nodes/81,119 edges without a
+forced smaller scan. No host operation; Release remains frozen.
 
 Previous view near/far command and clipping queue recovered and byte-exact:
 [Note 1378](WORKING_NOTES/1378-view-clipping-command-and-queue-reconstruction-20261014.md).

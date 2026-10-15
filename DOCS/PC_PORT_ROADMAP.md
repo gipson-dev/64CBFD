@@ -11,7 +11,7 @@
 - [x] Retain the separate host signaling-NaN ABI witness, quiet-provider qualification and signed16 wrap-tail evidence without claiming hardware/FCSR or full extreme-count execution.
 - [x] Close every one of 506 changed ELF bytes to two code slots/extents; preserve all protected data and old guard bytes. Measure Game2,884/4,829, total3,557/5,502, different1,945, zero drift.
 - [x] Pass55 selected target/history checks157.389s plus shared/standalone tools checks; bank toolsc526e84 first, preserving all801 archive hashes and557 unrelated mirror fingerprints.
-- [ ] Bank source/pin/docs next and post-bank evidence last; preserve the archive, unrelated dirty mirror work and frozen Release.
+- [x] Bank consumer af045628 after toolsc526e84; pass15 post-bank gates53.835s, retain all six installed hashes in an up-to-date build and await the40,958-node/81,119-edge incremental graph worker. Preserve the archive/mirror and frozen Release.
 - [ ] Continue func_1510BF60 and full source/Game/rectangle work; keep hardware, complete caller and gameplay acceptance separate.
 
 ## View Clipping Command And Queue Matches - 2026-10-14
