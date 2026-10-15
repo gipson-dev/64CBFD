@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Counter Preset Semantic Recovery
+
+[Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
+Recover func_1516EED4's signed gate, byte counter and full factory packet.
+Inline subscripts repair capture/clear ordering, but raw C remains 85/76
+against 84 retail words. Pass 11 focused checks and preserve all 52 production
+inputs / 801 archive hashes. An exact 84-word diagnostic explains the remaining
+load/branch/register delta without emitting guards or earning match credit.
+Bank tools f14494c first; keep README figures and the whole source/Game goal
+unchanged while finishing this function's private and installation gates.
+
 ## 2026-10-15 Actor-Type Preset Direct Match
 
 [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):

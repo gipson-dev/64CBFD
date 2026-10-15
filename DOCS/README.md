@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Counter preset recovery and private schedule gap](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
+  Recover the signed gate, full packet and pre-call clear; retain the strict
+  rejection of 85-word C and distinguish an exact diagnostic from installation.
 - [Actor-type preset direct match](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
   Recover all 91 words directly from C, including the byte gate, full packet,
   actual factory chain and complete image closure without new guards.

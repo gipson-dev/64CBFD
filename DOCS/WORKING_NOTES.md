@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
+Recover func_1516EED4's signed gate, full packet and pre-call clear; inline
+subscripts repair input-home ordering. All 11 checks pass, but raw 85/76 still
+fails the 84-word installation gate. Preserve all 52 production inputs and 801
+archive files. A hash-gated exact diagnostic describes the closed remaining
+delta, not a padded/installed match. Bank tools f14494c first and finish this
+same function without narrowing the broader additional-source / Game goal.
+
+2026-10-15:
 [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
 Recover func_1516ED68's byte gate and full packet directly from C, all 91
 words exact with no new guards/profile changes. Pass 13 checks and close

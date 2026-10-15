@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Counter Preset Recovery And Private Schedule Gap - 2026-10-15
+
+[Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md):
+
+- [x] Recover func_1516EED4's signed slot < 4 gate, unsigned counter byte versus signed word threshold, pre-call clear and complete 49-word packet. Preserve the four-input void interface and full physical input words.
+- [x] Repair clear/input-home ordering with inline subscripts. Pass 11 checks: 3,240 guest cases, 40,960 native cases per O2/O0, ten controls, three rebases, 12 repaired home aliases, 138 fired prefixes and 128 actual factory/allocator pairs. Keep private mismatches explicit.
+- [x] Describe the remaining delta with a hash-gated load omission, branch adjustment and closed register cycle: 84 diagnostic words exact. Reject all 85 word flips; do not emit guards or claim a raw/padded/installed match. The 85-word/76-difference C candidate remains non-installable.
+- [x] Preserve all 52 production inputs, 29 neighbors, protected data and 801 archive files. Bank tools f14494c first, retain all 663 initial older-mirror fingerprints / 665 final paths, and leave README aggregates unchanged. One tool-free advisory is independently reconciled; no host/Release action.
+- [ ] Finish the first index/home lifetime and all private/fault/rebase/whole-image matching gates for func_1516EED4 before replacing its production stub. Then continue func_1516F024 and the entire additional-source / Game queue.
+
 ## Actor-Type Preset Direct Match - 2026-10-15
 
 [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md):
@@ -9,7 +19,7 @@
 - [x] Pass 13 installed checks in 43.045s: 4,626 guest cases, ten aliases, 146 fired prefixes, native32 O2/O0, eight effective guest controls plus two native narrowing probes, three independent rebases and 256 real factory/allocator-chain cases.
 - [x] Close all 280 ELF changes to target slot/extent only; preserve every other byte, 189,088 protected bytes / 720 owners, all guard history and 50 of 52 inputs. Measure Game 2,897/4,828, total 3,570/5,501, different 1,931, zero drift; conversions unchanged.
 - [x] Bank tools 50205ee first, preserve all 659 initial older-mirror fingerprints and copy only four absent owned files for 663. Pass Windows syntax/ROM-free checks, keep README aggregate-only and take no host/Release action.
-- [ ] Recover func_1516EED4's signed slot < 4 gate, byte-counter comparison and pre-call clear: 84 words, ROM 0x19C384, frame0xD0. Preserve the complete source-review / Game objective.
+- [x] Recover func_1516EED4's signed slot < 4 gate, byte-counter comparison and pre-call clear in [Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md). This is semantic recovery only; the 84-word matching/installation gate remains open above.
 
 ## Packed RGB Callback Byte Match - 2026-10-15
 

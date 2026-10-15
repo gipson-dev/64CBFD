@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 50205ee; tools are committed before the consumer pin.
+  checkpoint pins tools f14494c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Counter-preset semantic recovery, not installed:
+[Note 1401](WORKING_NOTES/1401-counter-preset-semantic-recovery-and-private-schedule-gap-20261015.md).
+Recover func_1516EED4's signed slot/threshold gate, pre-call counter clear
+and complete 49-word packet. Inline subscripts repair input-home clear ordering;
+raw C stays 85 words / 76 differences versus 84 retail words. All 11 checks pass
+in 142.171s: 3,240 guest cases, native32 O2/O0, ten effective negatives, three
+rebases, 12 repaired home aliases, 138 fired prefixes and 128 real factory-chain
+pairs. All 52 production inputs / 801 archive hashes stay fixed. A hash-gated
+diagnostic describes 84 exact words by one load omission, branch adjustment
+and a closed temporary-register cycle; it emits no guards and is not matching
+qualification. Keep strict installation rejection and README aggregates fixed:
+Game 2,897/4,828, total 3,570/5,501, different 1,931, zero drift. Bank tools f14494c
+first, preserve all 663 initial older-mirror fingerprints / 665 final paths,
+and finish this same function's private/rebase/linked-image gates next.
+The full additional-source / Game objective remains open.
 
 Actor-type preset recovered directly from C:
 [Note 1400](WORKING_NOTES/1400-actor-type-preset-direct-match-20261015.md).
