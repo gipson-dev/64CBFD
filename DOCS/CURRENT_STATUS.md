@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b545f58; tools are committed before the consumer pin.
+  checkpoint pins tools 6ee5fbe; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Packed 0x34-byte factory and optional position/scale binding recovered directly:
+Callback-driven packed-record update recovered with three register guards:
+[Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md).
+func_1516D678 matches all 48 linked words. Raw C remains three words different
+in one closed final-temporary allocation and commutative addition; no profile
+change. Recover the actual callback-table lookup, exact return-1 removal,
+post-callback live fields/delta, halfword lifetime clear and wrapping 24.8 Y.
+All 14 focused checks pass in 26.586s, including 1,536 guest cases, 152 fired
+prefixes, native32 O2/O0 and 128 constructor/update/cleanup lifecycle cases.
+Close all 140 ELF changes to target slot/extent; 29 neighbors, data, shared
+header contents and progress rows remain fixed. Preserve every old guard byte,
+appending only three rows. Fresh Game 2,893/4,828 (59.92%), total
+3,566/5,501 (64.82%), different 1,935, zero drift; conversions unchanged.
+Bank tools 6ee5fbe first; preserve archive/mirror/frozen Release. Next:
+func_1516D738, still a 153-word stub. Its older 150-word / 150-difference
+archive draft is only a lead. Lower callbacks/unlink/destructors and full
+gameplay remain separate qualification boundaries; no automatic host transfer.
+
+Prior packed 0x34-byte factory and optional position/scale binding recovered directly:
 [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md).
 func_1516D4E8 matches all 100 words without new guards or profile changes.
 Recover all 31 inputs, packed field widths and the typed optional pointer;

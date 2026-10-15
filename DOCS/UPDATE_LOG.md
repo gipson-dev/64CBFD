@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Packed Record Callback Update
+
+[Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
+Recover func_1516D678's correct callback-table indirection, live removal state
+and explicitly wrapping fixed-point update. Match all 48 linked words with
+three register guards; raw C still differs at three words. Pass 14 focused
+checks, close all 140 ELF changes to target slot/extent, and preserve data,
+29 neighbors, header contents and previous guard bytes. Fresh Game 2,893/4,828,
+total 3,566/5,501, different 1,935, zero drift; conversions unchanged. Bank tools
+6ee5fbe first, preserve archive/mirror/Release and continue at func_1516D738.
+
 ## 2026-10-15 Small Record Factory Direct Match
 
 [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):

@@ -1,4 +1,8 @@
 #include <ultra64.h>
+#include "structs.h"
+
+extern s32 (*D_8008CBA0[])(u8 *record);
+void func_1516972C(struct102 *record);
 
 extern s32 D_800BE9E4;
 
@@ -69,8 +73,34 @@ void func_1516D4E8(
     }
 }
 
-s32 func_1516D678() {
-    return 0;
+/* Dispatch the packed record; remove only on 1, otherwise advance 24.8 Y.
+ * Three expected-word guards preserve the final temporary and operand order. */
+void func_1516D678(u8 *record) {
+    s32 value = record[0x24];
+    u8 *binding;
+    s32 fixed;
+
+    if (value != 0) {
+        value = (s32)((u32)value - (u32)D_800BE9E4);
+        if (value < 0) {
+            value = 0;
+        }
+        record[0x24] = value;
+    }
+    if (D_8008CBA0[record[0x23]](record) == 1) {
+        binding = *(u8 **)(record + 0x30);
+        if (binding != NULL) {
+            *(s16 *)(binding + 4) = 0;
+        }
+        func_1516972C((struct102 *)record);
+        return;
+    }
+    value = *(s16 *)(record + 0x10);
+    value = value * 256;
+    value += record[0x25];
+    fixed = (s32)((u32)value + (u32)(s32)*(s16 *)(record + 0x18) * (u32)D_800BE9E4);
+    *(s16 *)(record + 0x10) = (s32)fixed >> 8;
+    record[0x25] = fixed;
 }
 
 s32 func_1516D738() {

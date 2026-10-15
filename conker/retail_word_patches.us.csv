@@ -15188,3 +15188,6 @@ generated_19A8B0,func_1516D99C,0x14C,0x93B9008B,0xA043003C,-,-,Preserve two clos
 generated_19A8B0,func_1516D99C,0x188,0xA0400042,0xA44E0022,-,-,Preserve two closed independent factory load and store schedules,,,false
 generated_19A8B0,func_1516D99C,0x18C,0xA44E0022,0x93AF00BF,-,-,Preserve two closed independent factory load and store schedules,,,false
 generated_19A8B0,func_1516D99C,0x190,0x93AF00BF,0xA0400042,-,-,Preserve two closed independent factory load and store schedules,,,false
+generated_19A8B0,func_1516D678,0xA0,0x01821821,0x004C7021,-,-,Preserve closed final fixed-point temporary allocation and commutative addition order,,,false
+generated_19A8B0,func_1516D678,0xA4,0x00036A03,0x000E6A03,-,-,Preserve closed final fixed-point temporary allocation and commutative addition order,,,false
+generated_19A8B0,func_1516D678,0xAC,0xA0830025,0xA08E0025,-,-,Preserve closed final fixed-point temporary allocation and commutative addition order,,,false

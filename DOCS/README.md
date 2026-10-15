@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Packed record callback update and guarded match](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
+  Recover the actual callback/removal contract and wrapping 24.8 update, all
+  48 linked words with three register guards. Qualify live state, aliases,
+  actual construction/cleanup and every installed image change.
+
 - [Small record factory direct match](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
   Recover the 31-argument packed factory and optional position/scale binding,
   all 100 words directly from C. Qualify pointer lifetime, live fields, nulls,

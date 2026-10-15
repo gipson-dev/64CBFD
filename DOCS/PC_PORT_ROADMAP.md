@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Record Callback Update - 2026-10-15
+
+[Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
+
+- [x] Recover func_1516D678's byte countdown, real function-pointer table lookup, exact return-1 removal, live secondary pointer/delta, halfword lifetime clear and explicitly wrapping 24.8 Y arithmetic.
+- [x] Match all 48 linked words with three expected-word guards for one closed final-register lifetime and commutative addition order. Keep raw C's three differences explicit; do not change profiles or patch field/callback semantics.
+- [x] Pass 14 focused checks in 26.586s: 1,536 guest cases, 152 fired prefixes, two native32 profiles, six effective negatives, three independent symbol rebases and 128 actual construction/update/cleanup lifecycle cases.
+- [x] Close all 140 ELF changes to target slot/extent. Preserve all 29 neighbors, protected data, shared header contents, progress rows and every prior guard byte; append only three rows. Measure Game 2,893/4,828, total 3,566/5,501, different 1,935, zero drift.
+- [x] Bank tools 6ee5fbe first; preserve all 801 archive files and all 633 initial older-mirror fingerprints, copying only five absent owned files. Keep README changes aggregate-only and frozen Release untouched.
+- [ ] Recover func_1516D738's full 153-word body and active ABI, continuing the whole additional-C / Game queue. The old 150-word draft is not a match; provider/gameplay acceptance remains separate.
+
 ## Small Record Factory Direct Match - 2026-10-15
 
 [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
@@ -10,7 +21,7 @@
 - [x] Close all 299 ELF changes to target slot/extent; preserve every other ELF byte, protected data, guard history and progress rows. Measure Game 2,892/4,828, total 3,565/5,501, different 1,936, zero drift.
 - [x] Bank tools b545f58 first, preserve all 801 archive files and all 628 initial older-mirror fingerprints, copying only five absent owned files. Keep README edits aggregate-only; no host/Release action.
 - [x] Bank consumer f3a2ee59, pass all 14 post-bank checks in 47.216s, and retain all 45 installed input states / 633 final mirror fingerprints. Normal ELF/progress build is up to date; the 41,104-node / 81,201-edge incremental graph worker has completed without forcing the smaller full scan.
-- [ ] Recover the still-stubbed 48-word func_1516D678 record updater and continue the whole additional-C / Game queue. Lower providers and full gameplay remain separate qualification work.
+- [x] Recover func_1516D678's full 48-word slot with three register-only guards in [Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md). The wider additional-C / Game queue and provider/gameplay qualification remain open.
 
 ## Packed Record Factory Guarded Match - 2026-10-15
 

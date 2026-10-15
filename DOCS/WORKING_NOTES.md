@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1394](WORKING_NOTES/1394-packed-record-updater-callback-and-guarded-match-20261015.md):
+Recover the callback-driven packed-record update, all 48 linked words exact
+with three final-register/operand guards. Preserve the raw mismatch and prove
+live callback state, wrapping math and actual construction/cleanup. Pass 14
+focused checks and close the complete 140-byte ELF delta; Game 2,893/4,828,
+total 3,566/5,501, zero drift. Bank tools 6ee5fbe first and continue the full
+additional-C / Game queue at func_1516D738, preserving archive/mirror/Release.
+
+2026-10-15:
 [Note 1393](WORKING_NOTES/1393-small-record-factory-direct-match-20261015.md):
 Recover all 100 small-factory words directly from C, including packed fields
 and the optional typed position/scale pointer. No new guards or profile changes.
