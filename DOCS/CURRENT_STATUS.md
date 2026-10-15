@@ -49,6 +49,15 @@ other ELF byte, 54 of 57 inputs, old guard prefix, profiles, progress and
 unchanged. Bank tools aa35689 first; all 697 initial older-mirror fingerprints
 remain fixed across 701 final paths. Next func_1516FD50, 51 words / frame
 0x18, slot 5. Keep the complete additional-source/Game queues open.
+Consumer e22e176f banks C, target guards, scoped docs, aggregate-only README
+rows and tools aa35689. All 14 post-bank checks pass in 54.601s, exit 0;
+the complete predicted image, inputs/captures, symbolic/private/fault/native/
+rebase checks and actual installed chain remain qualified. Normal ELF/progress
+targets are up to date; all 701 final older-mirror fingerprints stay fixed.
+Eight scoped docs resolve 5,068 relative inline links, zero broken. The
+source-commit graph update completes at 41,304 nodes / 81,413 edges while
+retaining excluded-but-present inputs rather than forcing a smaller scan.
+Continue func_1516FD50 and all broader queues above.
 
 Historical func_1516FBCC candidate checkpoint, before Note 1411:
 [Note 1410](WORKING_NOTES/1410-record-color-fade-semantics-and-compiler-gap-20261015.md).
