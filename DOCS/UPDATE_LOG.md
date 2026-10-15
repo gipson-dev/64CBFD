@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-15 Texture Vertex Span Private Reconstruction
+
+[Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
+Reconstruct func_1510BF60's full display-list scanner privately. The selected
+draft has the original339 words/frame0xA8 but259 word differences and different
+private homes. Pass14 selected research/history checks43.598s, including guest/
+native output aliases and seven effective semantic controls. Keep the native
+uninitialized-base warning and undefined-input boundary explicit. All18
+production input hashes stay fixed, so README and match totals are unchanged.
+Continue this function's scheduling; preserve801 archive hashes,565 unrelated
+mirror fingerprints and frozen Release. No C-match credit or gameplay claim.
+
 ## 2026-10-15 View Matrix Pass And Original Product Restoration
 
 [Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):

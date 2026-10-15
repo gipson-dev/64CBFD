@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Texture Vertex Span Private Reconstruction - 2026-10-15
+
+[Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
+
+- [x] Audit all339 original words/frame0xA8, actual direct calls, resource ABI and archive assembly-only representation.
+- [x] Reconstruct the complete three-state scanner, backward cursor, nested textures and unsigned vertex-span behavior in private C.
+- [x] Screen23 complete compiled forms/controls; retain a339-word candidate with259 real differences, not an installed match.
+- [x] Pass14 selected checks43.598s, covering3,872 guest cases/all336 reachable words,1,936 native cases/profile,48 guest/24 native output aliases and seven effective semantic controls.
+- [x] Prove56/63 fired prefix pairs and full private state still differ; retain the native uninitialized-base warning and explicit malformed-input boundary.
+- [x] Preserve all18 production inputs,801 archive hashes and565 older mirror fingerprints. Keep production metrics and README unchanged; this is not C-match credit.
+- [x] Bank tools1ffbc44 first with five owned research paths; shared/standalone checks pass and the mirror retains all565 older fingerprints.
+- [ ] Bank consumer pin/docs next and post-bank evidence last; preserve the archive/mirror and frozen Release.
+- [ ] Continue THIS func_1510BF60's private homes, register roles and schedule, then actual connections/rebases/image gates before installation. Keep the full source/Game/rectangle work active.
+
 ## View Matrix Pass And Product Restoration - 2026-10-15
 
 [Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):

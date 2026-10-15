@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
+Private339-word/frame0xA8 scanner reconstruction with259 word differences,
+3,872 guest cases/all336 reachable instructions,1,936 native cases/profile,
+output aliases and seven effective controls. All14 selected checks pass43.598s.
+Private state and56/63 prefixes still differ; retain the native warning and
+defined-input limit. No production edits, README totals or new match credit.
+Continue the SAME function and the full source/Game/rectangle work.
+
+2026-10-15:
 [Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
 Recover the 73-word matrix pass with twenty GPR-role guards and restore its
 78-word original product dependency, correctly classified asm instead of a

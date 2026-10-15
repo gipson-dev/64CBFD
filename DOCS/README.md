@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Texture vertex span reconstruction and private boundary](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md):
+  Reconstruct the339-word scanner privately and qualify public behavior,
+  packed fields, output aliases and effective controls. Record259 remaining
+  word differences and the private/native domain limits; no production credit.
+
 - [View matrix pass and product kernel restoration](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md):
   Recover the 73-word C pass with twenty GPR-role guards and restore its
   original 78-word assembly dependency. Qualify actual helper connections,

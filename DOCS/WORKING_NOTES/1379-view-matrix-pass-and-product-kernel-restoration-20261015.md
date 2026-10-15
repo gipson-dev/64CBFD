@@ -199,6 +199,10 @@ operation. The full source/Game objective and separate rectangle gate stay open.
 
 ## Next Target
 
+[Note 1380](1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md)
+records the next routine's private reconstruction and remaining match boundary.
+It is not yet installed or byte-exact; continue that same function.
+
 After this checkpoint, continue the remaining Game routines in this owner,
 starting func_1510BF60's full original 339-word body and interfaces. Keep actual hardware,
 complete original callers and gameplay separate from static/model acceptance.

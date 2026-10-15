@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins toolsc526e84; tools are committed before the consumer pin.
+  checkpoint pins tools1ffbc44; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Private texture-selected vertex-span reconstruction; NOT installed or exact:
+[Note 1380](WORKING_NOTES/1380-texture-vertex-span-reconstruction-and-private-boundary-20261015.md).
+Audit all339 words of func_1510BF60 and its original direct callers. The archive
+leaves it in assembly, so no C donor is imported. Reconstruct its full scanner,
+backward cursor and nested texture behavior in private C. Screen23 forms;
+the selected339-word/frame0xA8 draft still differs at259 words and private homes.
+Pass14 selected checks43.598s:3,872 guest cases,336 reachable retail words,
+1,936 native cases/profile,48 guest/24 native output aliases and seven effective
+compiled controls. Retain the native maybe-uninitialized warning and defined-
+input boundary;56/63 fired prefixes and full private state still differ.
+All18 production input hashes, all801 archive files and565 older mirror
+fingerprints remain fixed. Production totals and root README are unchanged:
+Game2,884/4,829, total3,557/5,502, different1,945, zero drift. Continue THIS
+function's homes/registers/scheduling before installation; keep the full source/
+Game/rectangle and actual hardware/caller/loading/gameplay boundaries open.
+Tools1ffbc44 banks the five owned research paths before the consumer pin/docs.
 
 View matrix pass recovered with its original product dependency:
 [Note 1379](WORKING_NOTES/1379-view-matrix-pass-and-product-kernel-restoration-20261015.md).
