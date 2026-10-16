@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 Shared Overlay Provider Guarded Match
+
+[Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
+Recover func_150198FC's shared setup, signed capture byte and UI chain.
+All 175 words / frame 0x28 match after 79 derived role/address/scale/schedule
+guards; raw C is still 79 words different. Ten final tests pass in 87.347s.
+The normal build equals the complete 566-byte slot/extent prediction, without
+metadata adjustment or exclusions. Preserve 15 neighbors, 103 other inputs,
+prior guards and protected 189,088 bytes / 720 owners. Fresh Game 2,929/4,828
+(60.67%), total 3,602/5,501 (65.48%), different 1,899, zero drift. Tools d2251c7
+banks first; preserve 859 mirror hashes / 865 paths. README aggregate rows
+only; next func_15019CC8 remains stubbed. The four-word caller cut is not a
+complete frame/gameplay qualification. No push or host/frozen Release action.
+
 ## 2026-10-16 View Render Provider Guarded Match
 
 [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):

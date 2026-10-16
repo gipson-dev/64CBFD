@@ -86,11 +86,15 @@ s32 func_151F2CDC(void);
 void func_151F2BE8(void);
 void func_151F2C4C(void);
 
+/* The capture counter is signed; the framebuffer label is indexed backward. */
+extern s8 D_80082F90;
+extern s32 D_8002AAEC;
+
 /* Generated placeholder declarations. */
 s32 func_1501878C(void);
 s32 func_15019130(void);
 s32 func_150195A0(Gfx *, s16);
-s32 func_150198FC();
+s32 func_150198FC(Gfx *);
 s32 func_15019CC8();
 s32 func_15019F20();
 /* End generated placeholder declarations. */
@@ -215,7 +219,7 @@ s32 func_1501878C(void) {
             }
             D_80082FA4 = 0;
             func_15019414();
-            D_800BE9D0 = (Gfx *)func_150198FC((s32)D_800BE9D0);
+            D_800BE9D0 = (Gfx *)func_150198FC(D_800BE9D0);
             for (view = 0; view <= D_80082FA0; view++) {
                 D_80082FA4 = D_800BE630[view];
                 D_800BE9D0 = (Gfx *)func_1515D6D0((s32)D_800BE9D0, D_80082FA4);
@@ -500,9 +504,45 @@ s32 func_150195A0(Gfx *commands, s16 view) {
     return (s32)func_151674F8(commands, 2, view, 1);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150198FC.s. */
-s32 func_150198FC() {
-    return 0;
+/* Append shared overlays and capture/redraw the disabled framebuffer. */
+s32 func_150198FC(Gfx *commands) {
+    if (D_800BE575 == 1) {
+        commands = (Gfx *)func_151D6778((s32)commands);
+    }
+    if (D_80082FA0 != 0) {
+        D_80082FA4 = (s32)((u32)D_80082FA0 + 1U);
+        gSPViewport(commands++, ((u32)D_80082FA4 * 0x180) + D_800BE628 + 0x40);
+    } else {
+        gSPViewport(commands++, D_800BE628 + 0x40);
+    }
+    commands = (Gfx *)func_1501A490((s32)commands, 0xFF, 0, 0, 0, 0);
+    if (D_800BEAC0 != 0) {
+        if (D_80082F90 == 0) {
+            gDPSetColorImage(commands++, G_IM_FMT_RGBA, G_IM_SIZ_16b, D_800BE620, D_800BE9C4);
+            gDPSetScissor(commands++, G_SC_NON_INTERLACE, 0, 0, D_800BE620, D_800BE624);
+            commands = (Gfx *)func_151D5E90((s32)commands, (&D_8002AAEC)[-(s32)D_800BE9C0], 0, 1);
+            commands = (Gfx *)func_1501A680((s32)commands);
+            D_80082F90 = 1;
+        } else if (D_80082F90 < 5) {
+            D_80082F90++;
+            func_151D61B0(D_800BE9C4);
+        }
+        commands = (Gfx *)func_151D5E90((s32)commands, D_800BE9C4, 0, 1);
+    } else {
+        D_80082F90 = 0;
+    }
+    if (func_1517EFAC(0) == 0) {
+        commands = (Gfx *)func_1517E28C((s32)commands, D_800BE9F0);
+        commands = (Gfx *)func_15172F70((s32)commands);
+        commands = (Gfx *)func_15181EE0((s32)commands);
+    }
+    commands = (Gfx *)func_1517F564((s32)commands);
+    if (D_800BEAC0 == 0 && D_800BEAC1 == 0) {
+        commands = (Gfx *)func_1508FD38((s32)commands);
+    }
+    commands = (Gfx *)func_151674F8(commands, 3, 0, 0);
+    commands = (Gfx *)func_151674F8(commands, 3, 0, 1);
+    return func_15096934((s32)commands);
 }
 
 // Matched with guarded frame-size and viewport-address register normalization.

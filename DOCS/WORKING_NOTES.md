@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
+Restore func_150198FC's 175-word overlay/capture protocol, frame 0x28, with
+79 derived role/address/scale/schedule guards, not a direct C match. Ten
+final tests pass in 87.347s; the normal build equals the full 566-byte ELF
+prediction without metadata exclusions. Fresh Game 2,929/4,828, total
+3,602/5,501, different 1,899, zero drift. Tools d2251c7 banks first;
+preserve 859 mirror hashes / 865 paths. README aggregate rows only. Next
+func_15019CC8 remains a stub; wider Game and gameplay work remain open.
+
+2026-10-16:
 [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
 Restore func_150195A0's 215-word scene/overlay chain with five viewport-role
 guards, frame 0x30 and a binary-unchanged neighbor return correction. Ten

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Shared overlay provider guarded match](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
+  Recover the 175-word overlay/framebuffer pass with 79 derived role/address/
+  schedule guards. The rebuild equals the full 566-byte ELF prediction;
+  keep the remaining provider stubs and full gameplay boundary explicit.
 - [View render provider guarded match](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
   Restore all 215 words with five viewport temporary guards and a binary-unchanged
   return-interface correction. The rebuild equals the entire 680-byte ELF prediction;

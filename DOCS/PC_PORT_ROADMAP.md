@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Shared Overlay Provider Guarded Match - 2026-10-16
+
+[Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
+
+- [x] Restore func_150198FC's viewport, signed capture-byte transitions, framebuffer-pointer protocol, ordered UI passes and final cursor; retain its Gfx * interface and original frame 0x28.
+- [x] Match all 175 words with 79 derived role/address/scale/schedule guards. Explicitly fold and rematerialize the byte address, move bindings, and retarget branches; do not label this a direct C match or only register renaming.
+- [x] Pass ten final tests in 87.347s: 3,240 three-way cases, all byte domains, 124 fault prefixes, 32 repeated transitions, 1,384 native32 O2/O0/UBSan cases each, eight controls, three independent rebases and 384 real caller-cut cases.
+- [x] Reproduce the complete first 566-byte ELF prediction, no metadata adjustment/exclusion. Preserve 15 neighbors, 103 other inputs, guard history and protected 189,088 bytes / 720 owners. Fresh Game 2,929/4,828, total 3,602/5,501, different 1,899, zero drift.
+- [x] Bank tools d2251c7 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check. Preserve mirror HEAD ddbdd16, 859 original hashes and 865 final dirty paths. Root README aggregate rows only.
+- [ ] Recover **func_15019CC8** next: 102 words / frame 0x40, still a 12-byte stub. Keep func_15019F20, rectangle fitting, full gameplay and the wider Game/additional-source queue open.
+
 ## View Render Provider Guarded Match - 2026-10-16
 
 [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Pass ten final tests in 66.748s: 747 three-way cases, 119 fault prefixes, 400 native32 O2/O0/UBSan cases each, seven effective controls, three independent rebases and 128 actual-neighbor ABI cases.
 - [x] Reproduce the complete first 680-byte ELF prediction, no metadata adjustment/exclusion. Preserve 15 neighbors, 102 other inputs, prior guard bytes and protected 189,088 bytes / 720 owners. Fresh Game 2,928/4,828, total 3,601/5,501, different 1,900, zero drift.
 - [x] Bank tools dc4765f before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 853 original hashes / 859 final dirty paths. README aggregate rows only.
-- [ ] Recover **func_150198FC** next: 175 words / frame 0x28, still a 12-byte stub. Keep func_15019CC8, func_15019F20, rectangle fitting, full gameplay and the wider Game/additional-source queue open.
+- [x] Recover **func_150198FC**: all 175 words / frame 0x28 now guarded-exact in [Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md). Remaining providers, rectangle fitting and full gameplay stay separate.
 
 ## Scheduler Frame Driver Guarded Match - 2026-10-16
 
