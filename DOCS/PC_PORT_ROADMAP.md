@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## View Initialization Guarded Match - 2026-10-16
+
+[Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
+
+- [x] Replace func_1501A220's stub/draft with full allocation, signed rounding and live-count callback semantics; recover its void/two-word interface and original constant ownership.
+- [x] Match all 95 words / frame 0x28 with eight closed prologue guards; preserve all 87 other raw words, homes, ten neighbors and normal compiler profile. No padding or private pools.
+- [x] Pass all eleven final tests in 41.745s: 1,704 three-way guest cases, 852 native32 O2/O0/UBSan cases each, seven controls, 420 prologue joins, 128 fault prefixes, independent rebases and 40 original-caller cuts.
+- [x] Reproduce the entire first 300-byte ELF prediction with zero metadata adjustment/exclusion. Protect all 114 inputs, 111 unchanged inputs, old guard prefix and 189,088 bytes / 720 data owners. Fresh Game 2,931/4,828, total 3,604/5,501, different 1,897, zero drift; conversion unchanged.
+- [x] Bank tools 51ebd75 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check, preserving mirror HEAD, all 887 initial hashes / 893 paths. Root README aggregate rows only.
+- [ ] Recover adjacent func_1501A39C: 61 words / frame 0x18, two cursor/output rows and five SDK graphics commands each. Audit aliases, delay-store publication and actual return/caller use; do not trust the three-row commented draft.
+- [ ] Keep timing's 141 differences, remaining view providers, full startup/gameplay and wider Game/additional-source work open. The original startup caller remains a C stub.
+
 ## Frame Timing Frontend Allocation Boundary - 2026-10-16
 
 [Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
@@ -8,7 +20,7 @@
 - [x] Reject unsigned comparison, step-view, switch, global-divisor, declaration-order and gate-width fixes across 19 complete-owner controls. All five final tests pass in 72.853s, including stream/table/lifecycle and phase-role corruption checks.
 - [x] Commit tools dbca3c5 before the consumer pin; keep all 109 live inputs, 141 timing differences and aggregates unchanged. Both copies' checks pass, preserving mirror HEAD, 885 original hashes / 887 paths.
 - [ ] Keep func_15019F20's source/dataflow allocation match open, including signed-zero and zero-reciprocal access-order boundaries; do not repeat the rejected screens or apply a UGEN-only register fix.
-- [ ] Recover adjacent func_1501A220 next: 95 retail words / frame 0x28, still a zero-return view-initialization stub. Audit callers, allocation/count arithmetic, callback mutation and constant ownership before installation.
+- [x] Recover adjacent func_1501A220 in [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md): all 95 words / frame 0x28 guarded-exact after caller, allocation/count, callback and constant-owner qualification. Keep the separate timing match open.
 
 ## Frame Timing Allocation And Signed-Zero Boundary - 2026-10-16
 

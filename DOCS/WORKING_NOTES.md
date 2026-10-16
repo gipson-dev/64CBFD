@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
+Restore the full view initializer, all 95 words guarded-exact with eight closed
+prologue guards. Eleven final tests pass in 41.745s and the complete normal
+ELF equals the first 300-byte prediction, no metadata exclusions. Fresh Game
+2,931/4,828, total 3,604/5,501, different 1,897, zero drift; conversion unchanged.
+Tools 51ebd75 banks first; both copies' checks pass, preserving 887 original
+mirror hashes / 893 paths. Next 61-word func_1501A39C; timing remains open.
+
+2026-10-16:
 [Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
 Qualify timing's frontend/optimizer/emission bindings and 19 rejected source
 controls. Five final tests pass in 72.853s; all 109 live inputs and 141 timing

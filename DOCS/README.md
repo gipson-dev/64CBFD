@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View initialization guarded match](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
+  Restore all 95 words with eight closed prologue guards; eleven final tests
+  and the entire 300-byte ELF prediction pass. Continue the 61-word two-row
+  graphics setup stub; timing and full startup/gameplay stay separate.
 - [Frame timing frontend allocation provenance](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
   Bind byte promotion and residual address roles before UGEN; reject 19 source
   controls with five passing tests. Timing remains open; queue view initialization next.

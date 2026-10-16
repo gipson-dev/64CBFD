@@ -1,7 +1,15 @@
 #include <ultra64.h>
 
 #include "functions.h"
+#define D_800968E0 ViewInitLegacyFactorWord
 #include "variables.h"
+#undef D_800968E0
+
+/* Keep the retail float factor distinct from the legacy integer declaration. */
+extern const f32 D_800968E0;
+s32 allocate_memory(s32 size, s32 tag, s32 pool, s32 flags);
+void func_150006E0(s32 category);
+void func_1510B070(s32 mode);
 
 typedef struct {
     u8 padding0[0xC];
@@ -18,59 +26,47 @@ void func_1501B0A0(s32 index, s32 reference);
 void func_1501B22C(s32 index);
 
 /* Generated placeholder declarations. */
-s32 func_1501A220();
+void func_1501A220(s32 viewCount, s32 projectionMode);
 s32 func_1501A39C();
 s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A220.s. */
-s32 func_1501A220() {
-    return 0;
-}
-// NON-MATCHING: 80% there
-// void func_1501A220(s32 arg0, s32 arg1) {
-//     s32 phi_s0;
-//     s32 i;
-//
-//     f32 temp_f0;
-//     s32 temp_f16;
-//
-//     D_80082FA0 = arg0;
-//
-//     if (arg0 == 0) {
-//         phi_s0 = 1;
-//     } else {
-//         phi_s0 = arg0 + 2;
-//     }
-//     D_800BE628 = allocate_memory((phi_s0 * 3) << 7, 1, 1, 0);
-//     D_800BE62C = allocate_memory(phi_s0 * 16, 1, 1, 0);
-//     if (D_80082FA0 == 1) {
-//         temp_f0 = D_800BE63C - 2.0f;
-//         temp_f16 = temp_f0 * D_800968E0;
-//         phi_s0 = temp_f16 & 3;
-//         if ((temp_f16 < 0) && ((temp_f16 & 3) != 0)) {
-//             phi_s0 -= 4;
-//         }
-//         D_800BE6B8 = (temp_f16 - phi_s0) / temp_f0;
-//     }
-//
-//     func_150006E0(D_800BE9F0);
-//
-//     for(i = 0; i <= D_80082FA0; i++) {
-//         func_1501A8C0(i, D_80082FA0, 1023, 0);
-//     }
-//     if (D_80082FA0 != 0) {
-//         func_1501A8C0(i, 0, 1023, 0);
-//     }
-//
-//     D_800BE617 = 1;
-//     D_800BE614 = 1;
-//     D_800BE635 = 0;
-//     func_1510B070(arg1);
-// }
+/* Allocate view state, round the single-view height and initialize projections. */
+void func_1501A220(s32 viewCount, s32 projectionMode) {
+    u32 slots;
+    s32 index;
+    f32 height;
+    f32 scaledHeight;
+    s32 rounded;
 
+    D_80082FA0 = viewCount;
+    if (viewCount == 0) {
+        slots = 1;
+    } else {
+        slots = (u32)viewCount + 2;
+    }
+    D_800BE628 = allocate_memory((s32)(slots * sizeof(ViewProjection476D0)), 1, 1, 0);
+    D_800BE62C = allocate_memory((s32)(slots * 16), 1, 1, 0);
+    if (D_80082FA0 == 1) {
+        height = (f32)D_800BE63C[0] - 2.0f;
+        scaledHeight = height * D_800968E0;
+        rounded = (s32)scaledHeight;
+        D_800BE6B8 = (f32)(rounded - rounded % 4) / height;
+    }
+    func_150006E0(D_800BE9F0);
+    for (index = 0; index <= (viewCount = D_80082FA0); index = (s32)((u32)index + 1)) {
+        func_1501A8C0(index, viewCount, 1023, 0);
+    }
+    if (viewCount != 0) {
+        func_1501A8C0(index, 0, 1023, 0);
+    }
+    D_800BE617 = 1;
+    D_800BE614 = 1;
+    D_800BE635 = 0;
+    func_1510B070(projectionMode);
+}
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A39C.s. */
 s32 func_1501A39C() {
     return 0;

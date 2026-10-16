@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools dbca3c5; tools are committed before the consumer pin.
+  checkpoint pins tools 51ebd75; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+View initialization restored, **95 words guarded byte-exact**:
+[Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md).
+func_1501A220 now implements wrapping allocation sizes, signed height rounding,
+live-count callbacks and final flag publication. Eight closed prologue guards
+normalize save/copy scheduling and equivalent argument aliases; no profile
+change or padding. All **11 final tests pass in 41.745s**, including 1,704
+three-way guest cases, 852 native32 O2/O0/UBSan cases each, 420 prologue joins,
+128 fault prefixes and original-caller cuts. The entire normal ELF equals the
+first **300-byte** slot/extent prediction, with zero metadata exclusions.
+Preserve ten neighbors, 111 other inputs and protected 189,088 bytes / 720
+owners. Fresh Game **2,931/4,828 (60.71%)**, total **3,604/5,501 (65.52%)**,
+different **1,897**, zero drift; conversion unchanged. Tools **51ebd75** banks
+first; both copies' checks pass, preserving 887 original mirror hashes / 893
+paths. Next: the adjacent **61-word func_1501A39C** display-list setup stub;
+audit its two-row loop and cursor/output aliases, not the obsolete draft.
+Timing's 141 differences and wider Game stay open. Original startup caller
+remains stubbed; no full startup/gameplay, push or host/Release claim.
+
 Timing frontend allocation boundary now captured:
 [Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md).
 Two completed CFE/UOPT/UGEN owner compiles prove the retained residual address
@@ -36,8 +54,8 @@ declaration-order controls are word-identical. All five final tests pass in
 fit is adopted: production stays **191 words / frame 0x18 / 141 differences**,
 and all 109 live inputs/aggregates stay fixed. Tools **dbca3c5** banks first;
 both copies' checks pass, preserving 885 original mirror hashes / 887 paths.
-Keep this timing match open. Next implementation: the adjacent 95-word
-**func_1501A220** view-initialization stub, with caller/interface audit first.
+Keep this timing match open. The queued 95-word **func_1501A220** recovery is
+now completed in [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md).
 
 Latest timing fitting pass rejects source-only false improvements:
 [Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md).

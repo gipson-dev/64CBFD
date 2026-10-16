@@ -136,3 +136,7 @@ reloads, signed remainder/float arithmetic and existing constant ownership
 before changing its interface. The old commented draft is a hypothesis, not
 qualified C. This queued recovery does not complete the timing match or the
 wider Game/additional-source objective.
+
+Follow-up completed in [Note 1453](1453-view-initialization-guarded-match-20261016.md):
+the view initializer is now all 95 words guarded-exact. Continue the adjacent
+61-word func_1501A39C stub; the timing match remains separately open.

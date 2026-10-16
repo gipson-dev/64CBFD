@@ -16729,3 +16729,11 @@ game_45B80,func_15019CC8,0x174,0x01194021,0x01EE7821,-,-,Normalize view-overlay 
 game_45B80,func_15019CC8,0x178,0x8D080000,0x8DEF0000,R_MIPS_LO16:D_800DC2A0,R_MIPS_LO16:D_800DC2A0,Normalize view-overlay closed temporary-register lifetimes,,,false
 game_45B80,func_15019CC8,0x180,0x010A5821,0x01F84821,-,-,Normalize view-overlay closed temporary-register lifetimes,,,false
 game_45B80,func_15019CC8,0x184,0xAC4BFFFC,0xAC49FFFC,-,-,Normalize view-overlay closed temporary-register lifetimes,,,false
+game_476D0,func_1501A220,0xC,0xAFB1001C,0x26520000,-,R_MIPS_LO16:D_80082FA0,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x10,0x00808825,0xAFBF0024,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x14,0x26520000,0xAFB1001C,R_MIPS_LO16:D_80082FA0,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x18,0xAFBF0024,0xAFB00018,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x1C,0xAFB00018,0xAFA5002C,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x20,0xAFA5002C,0xAE440000,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x24,0x16200003,0x14800003,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false
+game_476D0,func_1501A220,0x28,0xAE510000,0x00808825,-,-,Normalize closed view-initializer prologue schedule and live argument aliases,,,false

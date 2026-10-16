@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 View Initialization Guarded Match
+
+[Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
+Replace func_1501A220's zero-return stub and draft with full semantic C;
+all 95 words match using eight closed prologue schedule/argument-alias guards.
+Eleven final tests pass in 41.745s. The normal ELF exactly reproduces the
+first 300-byte slot/extent prediction, without metadata exclusions; ten
+neighbors, 111 other inputs and protected data stay unchanged. Fresh Game
+2,931/4,828 (60.71%), total 3,604/5,501 (65.52%), different 1,897, zero drift;
+conversion unchanged. Tools 51ebd75 banks first, both copies' checks pass and
+all 887 original mirror hashes / 893 paths are preserved. README aggregates
+only. Next recover the adjacent 61-word func_1501A39C; keep timing's 141
+differences and full startup/gameplay separate. No push or host/Release work.
+
 ## 2026-10-16 Frame Timing Frontend Allocation Provenance
 
 [Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
