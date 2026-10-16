@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Graphics Task Submission Direct Match - 2026-10-16
+
+[Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
+
+- [x] Restore func_1501C880's complete 239 words / frame 0x28 directly using SDK OSScTask/Gfx types and graphics macros. Preserve cached capacity SP+0x24, 400-command reserve, live task/page reloads, full-word swap flag, queue protocol and counter narrowing; retain the existing no-unroll profile and all 56 raw neighbors.
+- [x] Correct the frame driver's void prototype and equivalent comparison order. Retire exactly nine obsolete guards, add none, preserve all sixteen padded caller functions and every other guard byte, including the CSV's existing line endings.
+- [x] Pass all twelve final tests in 92.616s: 1,656 guest cases, 72 callback cases, 864 native32 O2/O0/UBSan cases each, six functional controls, 16 original caller cuts, 61 real helper words, independent rebases and 1,136 fault prefixes. Keep hardware/cache/queue/ucode and guest-only word-address boundaries explicit.
+- [x] Reproduce the entire first 800-byte ELF prediction after the normal 695-compile dependency rebuild: 731 code, two extent and 67 exactly constrained metadata bytes, zero exclusions. Protect all 134 inputs and 189,088 bytes / 720 data owners. Fresh Game 2,936/4,828, total 3,609/5,501, different 1,892, zero drift; conversion unchanged.
+- [x] Bank tools 44ac318 before the consumer pin; validate both copies and tools-check, preserving all 921 initial mirror hashes / 928 paths. Root README aggregate rows only; no push or host/Release action.
+- [ ] Restore next 97-word func_1501CC3C in the same owner: microcode selection, four DMA loads and live code/data pointer publication. Recover its interface and requalify the already matched caller; preserve unrelated functions and the no-unroll profile.
+- [ ] Keep timing's 141 differences, wider Game/additional-source work and full gameplay acceptance separate.
+
 ## Viewport Initializer Direct Match - 2026-10-16
 
 [Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
@@ -8,7 +20,7 @@
 - [x] Pass all twelve final tests in 159.799s: 1,144 guest cases, 216 callbacks, 475 native32 O2/O0/UBSan cases each, seven effective controls, 108 real-helper-chain cases, twelve original caller cuts, independent rebases and 1,962 fault prefixes. Keep angle/SDK/hardware/gameplay boundaries explicit.
 - [x] Reproduce the entire first 1,181-byte ELF prediction: 1,157 code, two extent and 22 exactly constrained metadata bytes; zero exclusions. Protect all 130 inputs, 128 unchanged inputs, all guards/Makefile and 189,088 bytes / 720 data owners. All eleven owner functions match.
 - [x] Measure fresh Game 2,935/4,828 (60.79%), total 3,608/5,501 (65.59%), different 1,893, zero drift; conversion unchanged. Root README aggregate rows only. Bank tools 34c77ae first, validate both copies and tools-check, preserve all 914 initial mirror hashes / 921 paths.
-- [ ] Recover next 239-word func_1501C880 in generated_49D30.c: display-list capacity fallback, graphics-task construction/submission, optional page flip and frame count. Recover its caller ABI and actual func_1501A39C interface; preserve the owner's existing no-unroll profile and unrelated functions.
+- [x] Recover the 239-word func_1501C880 in generated_49D30.c in [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md): direct SDK C match, original profile/frame, real setup interface, proper caller ABI and nine retired caller guards.
 - [ ] Keep timing's 141 differences, wider Game/additional-source work and complete startup/frame/gameplay acceptance open.
 
 ## Viewport Initializer Recovery Checkpoint - 2026-10-16

@@ -1,5 +1,10 @@
 # Viewport Initializer Direct Match
 
+Queued follow-up completed:
+[Note 1459](1459-graphics-task-submission-direct-match-20261016.md) restores
+the 239-word graphics-task submitter directly and retires nine caller guards.
+The next provider is the 97-word func_1501CC3C microcode loader.
+
 Date: 2026-10-16. Consumer predecessor **3f6b2735**, tools predecessor
 **54aff68**. Complete the recovery banked in
 [Note 1457](1457-viewport-initializer-recovery-and-matching-boundary-20261016.md).

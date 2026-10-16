@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Graphics task submission direct match](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
+  Restore all 239 words using SDK task records and graphics macros. Twelve
+  final tests and the entire 800-byte ELF prediction pass; retire nine old
+  caller guards without adding guards. Next 97-word func_1501CC3C.
 - [Viewport initializer direct match](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
   Restore all 373 words directly, preserve frame/homes and live callback
   semantics. Twelve final tests and the entire first 1,181-byte ELF prediction

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Graphics Task Submission Direct Match
+
+[Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
+Replace func_1501C880's stub with all 239 words / frame 0x28 directly from SDK
+task/graphics C. Correct the caller's void prototype and comparison order,
+retiring nine guards and adding none. Twelve final tests pass in 92.616s;
+the normal dependency rebuild equals the entire first 800-byte ELF prediction,
+zero exclusions. Fresh Game 2,936/4,828 (60.81%), total 3,609/5,501 (65.61%),
+different 1,892, zero drift; conversion unchanged. Tools 44ac318 banks first,
+preserving 921 mirror hashes / 928 paths. README aggregate rows only; next
+97-word microcode loader func_1501CC3C. No push or host/Release action.
+
 ## 2026-10-16 Viewport Initializer Direct Match
 
 [Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):

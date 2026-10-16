@@ -81,7 +81,7 @@ void func_15125628(void);
 void func_1510D404(void);
 s32 func_15114A1C(void);
 s32 func_1517CFC4(void);
-s32 func_1501C880(s32, s32);
+void func_1501C880(s32 unused, s32 swapBuffers);
 s32 func_151F2CDC(void);
 void func_151F2BE8(void);
 void func_151F2C4C(void);
@@ -263,7 +263,7 @@ s32 func_1501878C(void) {
             } else if (D_800BEAC2 > 0) {
                 D_800BEAC2--;
             }
-            if (D_800BEAC1 != D_800BEAC0) {
+            if (D_800BEAC0 != D_800BEAC1) {
                 D_800BEAC0 = D_800BEAC1;
                 if (D_800BEAC0 != 0) {
                     func_1000E2F4(1);

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
+Restore 239 graphics-task submission words directly from SDK C, original
+frame/no-unroll profile and no new guards; retire nine caller guards after
+the void-interface correction. Twelve final tests pass in 92.616s and the
+complete first 800-byte ELF prediction passes. Fresh Game 2,936/4,828, total
+3,609/5,501, different 1,892, zero drift; conversion unchanged. Tools 44ac318
+banks first, preserving 921 mirror hashes / 928 paths. Next func_1501CC3C.
+
+2026-10-16:
 [Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
 Restore the viewport initializer's 373 words directly, original frame/homes,
 live callback semantics and no new guards/profile. Twelve final tests pass in

@@ -1,5 +1,20 @@
 #include <ultra64.h>
 #include "structs.h"
+#include <PR/sched.h>
+
+extern u8 D_800BE9C0, D_800BE617, D_800BEBA0;
+extern s16 D_800BEAA8;
+extern s32 D_80082FA0;
+extern Gfx *D_800BE9C8[], *D_800BE9D0, *D_800BE9D8[];
+extern OSScTask *D_800BEAD4, D_800BEAD8[];
+extern u64 D_100290D0[], D_100291A0[], D_800C1060[], D_800BEBB0[], D_800CBE10[], D_8003A5E8[];
+extern u64 *D_800BEAD0, *D_800BEB9C, *D_80038090, *D_80038094;
+extern void *D_8002AAE8[];
+extern OSMesgQueue D_8003B1E8, D_800BEA10;
+extern OSScMsg D_800BEA68[];
+void func_1501A39C(void);
+s32 func_1501CC3C(void);
+
 extern u16 *D_800C35C8[];
 extern u8 *D_800C35F0[];
 
@@ -30,8 +45,71 @@ extern s32 D_800C3668[];
 extern void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 u8 *func_151149AC(u8);
 
-s32 func_1501C880() {
-    return 0;
+/* Submit the current graphics task, repairing an out-of-range command cursor. */
+void func_1501C880(s32 unused, s32 swapBuffers) {
+    s32 capacity;
+    Gfx *start;
+    s32 used;
+    s32 available;
+
+    capacity = (s32)((u32)D_800BE9C8[1] - (u32)D_800BE9C8[0]) >> 3;
+    D_800BEAD4 = &D_800BEAD8[D_800BE9C0];
+    D_800BEAD4->next = 0;
+    start = D_800BE9C8[D_800BE9C0];
+    used = (s32)((u32)D_800BE9D0 - (u32)start) >> 3;
+    if (used < 0 || capacity < used) {
+        func_1501A39C();
+        D_800BE9D0 = D_800BE9D8[D_800BE9C0];
+        gDPFullSync(D_800BE9D0++);
+        gSPEndDisplayList(D_800BE9D0++);
+        start = D_800BE9C8[D_800BE9C0];
+        used = (s32)((u32)D_800BE9D0 - (u32)start) >> 3;
+    }
+    available = capacity - 400;
+    if (used < 0 || available < used) {
+        D_800BE9D0 = (Gfx *)((u32)start + ((u32)available << 3));
+        gDPFullSync(D_800BE9D0++);
+        gSPEndDisplayList(D_800BE9D0++);
+        start = D_800BE9C8[D_800BE9C0];
+    }
+    D_800BEAD4->list.t.data_ptr = (u64 *)start;
+    D_800BEAD4->list.t.data_size = (u32)((s32)((u32)D_800BE9D0 - (u32)D_800BE9C8[D_800BE9C0]) >> 3) << 3;
+    func_1501CC3C();
+    D_800BEAD4->list.t.type = M_GFXTASK;
+    D_800BEAD4->list.t.flags = OS_TASK_LOADABLE;
+    D_800BEAD4->list.t.ucode_boot = D_100290D0;
+    D_800BEAD4->list.t.ucode_boot_size = (u32)D_100291A0 - (u32)D_100290D0;
+    if (D_800BEBA0 != 0) {
+        D_800BEAD4->list.t.ucode = D_800C1060;
+        D_800BEAD4->list.t.ucode_data = D_800BEB9C;
+    } else {
+        D_800BEAD4->list.t.ucode = D_800BEBB0;
+        D_800BEAD4->list.t.ucode_data = D_800BEAD0;
+    }
+    D_800BEAD4->list.t.ucode_data_size = SP_UCODE_DATA_SIZE;
+    D_800BEAD4->list.t.dram_stack = D_800CBE10;
+    D_800BEAD4->list.t.dram_stack_size = 0x400;
+    D_800BEAD4->list.t.output_buff = D_80038090;
+    D_800BEAD4->list.t.output_buff_size = D_80038094;
+    D_800BEAD4->list.t.yield_data_ptr = D_8003A5E8;
+    D_800BEAD4->list.t.yield_data_size = OS_YIELD_DATA_SIZE;
+    D_800BEAD4->flags = OS_SC_NEEDS_RDP | OS_SC_NEEDS_RSP | OS_SC_LAST_TASK;
+    if (swapBuffers != 0) {
+        D_800BEAD4->flags |= OS_SC_SWAPBUFFER;
+    }
+    if (D_800BE617 != 0) {
+        D_800BEAD4->flags |= ((u32)D_80082FA0 + 1U) << 16;
+        D_800BE617 = 0;
+    }
+    D_800BEAD4->msgQ = &D_800BEA10;
+    D_800BEAD4->msg = &D_800BEA68[D_800BE9C0];
+    D_800BEAD4->framebuffer = D_8002AAE8[D_800BE9C0];
+    osWritebackDCacheAll();
+    osSendMesg(&D_8003B1E8, D_800BEAD4, OS_MESG_BLOCK);
+    if (swapBuffers != 0) {
+        D_800BE9C0 ^= 1;
+    }
+    D_800BEAA8++;
 }
 
 s32 func_1501CC3C() {

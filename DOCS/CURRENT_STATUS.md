@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 34c77ae; tools are committed before the consumer pin.
+  checkpoint pins tools 44ac318; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Graphics-task submission restored, **239 words directly byte-exact from C**:
+[Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md).
+func_1501C880 now uses SDK OSScTask/Gfx records, cached signed row capacity,
+ordered cursor repair, live task/page reloads, blocking submission and page/
+counter publication. Retain frame 0x28 and the existing no-unroll profile;
+add no guards and retire **nine obsolete caller guards** after correcting its
+void prototype and equivalent comparison order. Preserve 56 raw neighbors
+and all sixteen padded caller functions. All **12 final tests pass in
+92.616s**: 1,656 guest cases, 72 callbacks, 864 native32 O2/O0 cases each,
+16 real caller cuts, 61 real setup words and 1,136 fault prefixes. The normal
+695-compile rebuild equals the entire first **800-byte** ELF prediction,
+zero exclusions; 134 inputs/protected data pass. Fresh Game **2,936/4,828
+(60.81%)**, total **3,609/5,501 (65.61%)**, different **1,892**, zero drift;
+conversion unchanged. Tools **44ac318** banks first, preserving 921 mirror
+hashes / 928 paths. Next **97-word func_1501CC3C**, still a microcode-loader
+stub. Timing's 141 differences, wider Game and gameplay remain open; cache,
+queue and microcode providers are bounded, not hardware/host acceptance.
+
 Viewport initializer restored, **373 words directly byte-exact from C**:
 [Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md).
 func_1501A8C0 now preserves frame 0x48, sine SP+0x34, live base/page reads,
@@ -40,8 +58,9 @@ swaps, zero exclusions. All 130 inputs/protected data pass; all eleven owner
 functions now match. Fresh Game **2,935/4,828 (60.79%)**, total **3,608/5,501
 (65.59%)**, different **1,893**, zero drift; conversion unchanged. Tools
 **34c77ae** banks first, preserving all 914 mirror hashes / 921 paths.
-Next **239-word func_1501C880**, still a graphics-task submission stub in
-generated_49D30.c. Timing's 141 differences, wider Game and gameplay remain
+The **239-word func_1501C880** recovery is completed in
+[Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md).
+Timing's 141 differences, wider Game and gameplay remain
 open; angle/SDK leaves are bounded, not full hardware or host acceptance.
 
 View point projection restored, **87 words directly byte-exact from C**:
