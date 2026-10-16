@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
+Recover func_151700D8's 0x190 frame, three table homes, range limit and live
+count home without guards or padding locals. Fired compiler traces explain
+the 16-byte named-local reduction; 13 checks qualify 266 words / 137 remaining
+differences and retained reciprocal snapshots. Reject installation, preserve
+all 62 production inputs and totals, bank tools 55cd830 first and continue
+loop-state/preset homes plus the entire additional-source/Game objective.
+
+2026-10-15:
 [Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
 Recover func_151700D8's complete bounded quad-edge packets, actual caller/
 factory interfaces and live count home. Twelve checks pass; the candidate

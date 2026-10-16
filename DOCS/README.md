@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad edge emitter named frame and home recovery](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
+  Recover the retail 0x190 frame and table/range/count homes, pass 13 checks
+  and retain 137 remaining differences without installing or crediting C.
 - [Quad edge emitter recovery and count home](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
   Twelve checks qualify complete bounded packets and caller/native behavior;
   retain the uninstalled 266-word candidate's frame and 149-word matching gap.

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-15 Quad Edge Emitter Frame And Named Homes
+
+[Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
+Recover func_151700D8's retail 0x190 frame and table/range/count homes;
+266 words now differ at 137 positions. Fingerprint-locked compiler traces
+show a 16-byte named-local reduction, no hidden temporary allocation.
+Pass 13 checks and reject effective reciprocal/count regressions, but keep
+production unchanged while private/fault and loop-state schedules differ.
+Bank tools 55cd830 first; official Game 2,906/4,828, total 3,579/5,501,
+different 1,922, zero drift. README aggregates remain unchanged.
+
 ## 2026-10-15 Quad Edge Emitter Recovery And Count Home
 
 [Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):

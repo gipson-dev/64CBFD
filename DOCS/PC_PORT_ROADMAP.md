@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Edge Emitter Named Frame And Home Recovery - 2026-10-15
+
+[Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
+
+- [x] Observe complete fingerprint-locked CFE/UOPT/UGEN runs, exact emitted-code identity and producer/consumer/driver exits. The excess is named locals, not a hidden temporary pool.
+- [x] Recover the 0x190 frame, all three copied table homes, limit 0x150 and live count 0x138 through actual declarations/lifetimes. Retain 266 words, no literal pool, diagnostics, padding locals or guards; differences fall 149 -> 137.
+- [x] Pass 13 focused checks: 2,304 complete public pairs, native32 O2/O0, effective negatives, both traps, 2,848 fired prefixes, current factory/allocator effects, caller ABI, rebases, 801 archive hashes and 62 immutable production inputs. Retain the per-edge reciprocal snapshot; nine packets alone do not prove correct positions.
+- [x] Reject installation while all complete private states, 1,276 paired fault prefixes and 137 words remain different. Real padding preserves the candidate but does not normalize it. Fresh official totals and README aggregates remain unchanged.
+- [x] Bank tools 55cd830 first; preserve 712 initial older-mirror fingerprints and add only two absent owned copies, 714 final paths. Syntax/shared padder checks pass in both copies; shared tools checks pass. No push or host/Release action.
+- [ ] Recover current-edge a1 / SP+0x18C lifetime, next-edge 0x104 and preset 0xF4 homes plus the remaining register/operand/load schedules. Repeat complete private/fault, owner/padding/rebase and predicted-image gates before C adoption.
+- [ ] Continue all additional-source repair/binding/unanchored, caller and inherited-stack queues; this experimental frame recovery does not finish the function or wider objective.
+
 ## Quad Edge Emitter Recovery And Count Home - 2026-10-15
 
 [Note 1414](WORKING_NOTES/1414-quad-edge-emitter-recovery-and-count-home-20261015.md):
@@ -9,7 +21,8 @@
 - [x] Pass 12 checks: 2,304 public pairs, native32 O2/O0 with UBSan in the valid conversion domain, effective negatives, both zero-divisor traps, actual factory/allocator records and failures, independent rebases, 801 archive hashes and all 62 immutable inputs.
 - [x] Reject installation: frame 0x1A0 still differs from 0x190; private states/faults and 149 words remain different. The real padder fits but does not erase these differences. Keep production, conversions, guards/profiles and official totals unchanged.
 - [x] Bank tools 90506d1/b7c245a first and preserve 710 initial older-mirror fingerprints / 712 final paths. Pass both copies' syntax/shared WSL padder checks and shared tools checks. No push or host/Release action; README figures stay unchanged.
-- [ ] Finish this function's frame, table/count homes and register/load/operand schedules; repeat complete private/fault, padding/rebase and independent image gates before adopting C.
+- [x] Recover the retail frame and table/count/range homes in [Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md), with 13 checks and 137 remaining differences. The body remains uninstalled.
+- [ ] Finish loop-state/preset homes and register/load/operand schedules; repeat complete private/fault, padding/rebase and independent image gates before adopting C.
 - [ ] Continue every additional-source repair/binding/unanchored and Game queue, retaining FE1C and renderer inherited-stack boundaries. This recovery checkpoint does not complete the wider objective.
 
 ## Paired Overlay Contract And Random Direction Match - 2026-10-15
