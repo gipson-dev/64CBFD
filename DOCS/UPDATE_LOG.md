@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Random Packet Burst Direct Match
+
+[Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
+Restore func_15171200 as complete fourteen-argument C, matching all 256
+words / frame 0xE0 with no instruction guards. All 14 final checks pass.
+Preserve signed-high/unsigned-low RNG behavior, escaped packet lifetimes,
+unsigned duration conversion and literal bindings. The entire ELF matches
+the first prediction, with 793 changed bytes and no exclusions. Game
+2,915/4,828, total 3,588/5,501, different 1,913, zero drift. Tools baff8d3
+banks first; preserve 771 mirror hashes / 777 paths. Next func_15171600;
+the original caller and wider matching queues are still unfinished.
+
 ## 2026-10-16 Table Debris Direct Match
 
 [Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):

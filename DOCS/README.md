@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Random packet burst direct byte match](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
+  Recover the fourteen-input ABI and all 256 instructions directly, pass
+  14 final checks and reproduce every byte of the first predicted ELF.
 - [Table debris direct byte match](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
   Recover all 158 instructions directly with the exact float-literal pool
   alias, pass 15 final checks and close every pre-install predicted ELF byte.

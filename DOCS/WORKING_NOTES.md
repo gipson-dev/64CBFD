@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
+Install func_15171200's fourteen-input random packet burst, all 256 words
+direct / frame 0xE0 / packet SP+0x7C, without target instruction guards.
+All 14 final tests pass, including native32, signed/unsigned RNG, conversion,
+rebases and current consumer copies. Close all 793 first-predicted ELF
+changes, every other byte / 80 inputs fixed, no metadata exclusions.
+Fresh Game 2,915/4,828, total 3,588/5,501, different 1,913, zero drift.
+Bank tools baff8d3 first; preserve 771 mirror hashes / 777 final paths.
+Next func_15171600; unfinished callers and broader queues remain open.
+
+2026-10-16:
 [Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
 Install table debris func_15170F4C, all 158 words direct / frame 0xE8 /
 packet SP+0x84 with the original float-literal pool alias and no instruction

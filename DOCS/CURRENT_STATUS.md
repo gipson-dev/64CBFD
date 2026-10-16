@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a9f3606; tools are committed before the consumer pin.
+  checkpoint pins tools baff8d3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Random packet burst installed as a direct instruction match:
+[Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md).
+func_15171200 matches all 256 words / frame 0xE0, packet SP+0x7C, with
+the fourteen-argument ABI and no target instruction guards. Recover signed
+high-half and unsigned low-half RNG roles, live packet scales, word-to-byte
+duration conversion and the original literal pool. All 14 final tests pass
+in 88.956s. The complete production ELF equals its first pre-install
+prediction: 793 slot/extent bytes, no extra metadata changes or exclusions;
+every other byte / 80 inputs and the protected layout remain fixed. Fresh
+Game 2,915/4,828 (60.38%), total 3,588/5,501 (65.22%), different 1,913,
+zero drift. Tools baff8d3 banks first; preserve all 771 initial mirror
+hashes / 777 final paths. Next func_15171600, 127 words / frame 0x40.
+Caller func_15169C70 remains a placeholder; all broader queues remain
+open. No push or host/frozen Release action.
 
 Table debris installed as a direct instruction match:
 [Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md).

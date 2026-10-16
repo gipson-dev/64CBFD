@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Random Packet Burst Direct Match - 2026-10-16
+
+[Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
+
+- [x] Recover func_15171200's complete fourteen-input ABI, full-word kind lookup, signed-high/unsigned-low RNG roles, positive count gate, 96-byte packet and live scale/duration lifetimes. Keep the reference's narrowed kind and unsigned-high errors out of the source.
+- [x] Match all 256 words / frame 0xE0 / packet SP+0x7C directly through real locals, initializer order and the original float pool. Preserve the existing pool alias, all eight neighbor bodies and the entire guard manifest; no target instruction guards or build-profile changes.
+- [x] Pass all 14 final tests in 88.956s: 384 paired full sequences, native32 O2/O0 with 512 cases each and UBSan, nine effective negatives, 24 conversion cases, 160 fault pairs, three original rebase sets / 48 pairs, six caller captures and 16 real consumer/allocator runs.
+- [x] Predict the complete ELF before editing production, then reproduce all 793 target-slot/extent changes with no extra metadata changes or exclusions. Preserve every other byte / 80 inputs and protected 189,088 bytes / 720 owners. Refresh Game 2,915/4,828 (60.38%), total 3,588/5,501 (65.22%), different 1,913, zero drift; README aggregate rows only.
+- [x] Bank tools baff8d3 before consumer source/pin/docs, preserve all 771 original mirror hashes / 777 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_15171600, VA 0x15171600, ROM 0x19EAB0, 127 words / 508 bytes / frame 0x40, ending at func_151717FC in the same owner. Audit its actor-byte switch and thirteen-input rectangle-emitter calls; do not import the reference's mismatched ABI.
+- [ ] Restore caller func_15169C70 and retain func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues.
+
 ## Table Debris Direct Match - 2026-10-16
 
 [Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Pass all 15 final tests in 102.084s: 648 complete paired sequences, native32 O2/O0 with 1,024 cases each, eleven effective negatives, 474 fault pairs, three independent rebase sets / 72 paired cases, original caller limits, 48 actual consumer/allocator runs and physical word/binding/pool/input/metadata corruption controls.
 - [x] Predict the complete image before production edits, including six exact symbol/string cycles / 121 bytes. Rebuild and match all 628 predicted changes (507 slot/extent + 121 metadata), every other byte and 75 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,914/4,828 (60.36%), total 3,587/5,501 (65.21%), different 1,914, zero drift; README aggregate rows only.
 - [x] Bank tools a9f3606 before consumer source/build/pin/docs, preserve all 767 initial mirror hashes / 771 final paths and pass both copies' syntax/shared padder checks plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_15171200, 256 words / frame 0xE0. Keep caller func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues active.
+- [x] Recover func_15171200, all 256 words / frame 0xE0, in Note 1428. Its unfinished callers and all wider queues remain active in the current section above.
 
 ## Table Debris Recovery - 2026-10-16
 

@@ -214,8 +214,68 @@ void func_151711C4(u8 *arg0) {
     func_15060F28(arg0, 1);
 }
 
-s32 func_15171200() {
-    return 0;
+/* Emit randomized debris; kind stays word-wide for lookup, byte-wide in packets.
+ * Fixed fields are initialized once; reserved packet bytes remain untouched. */
+void func_15171200(s32 count, s32 kind, f32 x, f32 y, f32 z,
+                  f32 verticalBase, f32 minimumScale, f32 maximumScale,
+                  f32 spread, s32 variant, s32 lifetime, f32 coefficient,
+                  u8 flags, s32 context) {
+    s32 index;
+    DebrisPacket19E040 packet;
+    f32 scaleRange;
+    f32 thirdScale;
+    u32 draw0;
+    u32 draw1;
+    u32 draw2;
+    u32 verticalDraw;
+    f32 verticalSpread;
+
+    scaleRange = maximumScale - minimumScale;
+    packet.rotation[0] = 0.0f;
+    packet.rotation[1] = 0.0f;
+    packet.rotation[2] = 0.0f;
+    packet.coefficient[0] = coefficient * -0.75f;
+    packet.coefficient[2] = -0.2f;
+    packet.coefficient[1] = coefficient;
+    packet.lifetime = lifetime;
+    packet.mode = 2;
+    packet.alpha = 255;
+    packet.zero56 = 0;
+    packet.zero57 = 0;
+    packet.zero58 = 0;
+    packet.variant = variant;
+    packet.kind = kind;
+    packet.control5C = 1;
+    packet.control5D = 1;
+    spread = spread * 0.0000152587890625f;
+    verticalSpread = verticalBase * 0.000006103515625f;
+    verticalBase *= 0.8f;
+    index = 0;
+    if (count > 0) {
+        do {
+            packet.position[0] = (f32)(func_150ADA20() >> 16) * spread + x;
+            packet.position[1] = (f32)(func_150ADA20() >> 16) * spread + y;
+            packet.position[2] = (f32)(func_150ADA20() >> 16) * spread + z;
+            packet.asset = func_1518C900(kind);
+            packet.velocity[0] = (f32)(func_150ADA20() >> 16) * 0.0002288818359375f;
+            verticalDraw = (u32)func_150ADA20() & 65535;
+            packet.velocity[1] = (f32)verticalDraw * verticalSpread + verticalBase;
+            packet.velocity[2] = (f32)(func_150ADA20() >> 16) * 0.0002288818359375f;
+            packet.spin[0] = (f32)(func_150ADA20() >> 16) * 0.000152587890625f;
+            packet.spin[1] = (f32)(func_150ADA20() >> 16) * 0.000152587890625f;
+            packet.spin[2] = (f32)(func_150ADA20() >> 16) * 0.000152587890625f;
+            draw0 = (u32)func_150ADA20() & 65535;
+            packet.scale[0] = ((f32)(draw0) * 0.0000152587890625f) * scaleRange + minimumScale;
+            draw1 = (u32)func_150ADA20() & 65535;
+            packet.scale[1] = ((f32)(draw1) * 0.0000152587890625f) * scaleRange + minimumScale;
+            draw2 = (u32)func_150ADA20() & 65535;
+            thirdScale = ((f32)(draw2) * 0.0000152587890625f) * scaleRange + minimumScale;
+            packet.duration = (u32)(((packet.scale[1] + packet.scale[0]) + thirdScale) * 6.666667f + 20.0f);
+            packet.scale[2] = thirdScale;
+            func_15168BE4(&packet, flags, context);
+            index += 1;
+        } while (index != count);
+    }
 }
 
 s32 func_15171600() {

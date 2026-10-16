@@ -16,7 +16,7 @@ Use the existing literal-pool alias mechanism, not a compiler-profile change.
 4. [x] Pass 15 final target/install checks, including native32, all packet bytes, fault prefixes, effective negatives, rebases, original caller limits and connected current consumers.
 5. [x] Predict the complete linked ELF before installation, account for all six symbol/string cycles, install only the body/declarations and pool alias, rebuild and match every predicted byte with no exclusions.
 6. [x] Refresh official numbers and aggregate README rows, preserve the older tools mirror and bank tools before consumer source/build/pin/docs. No push.
-7. [ ] Recover next func_15171200, 256 words / 1,024 bytes, frame 0xE0, VA 0x15171200, ROM 0x19E6B0, ending at 0x15171600 in the same owner. Audit its full float/word/byte ABI, escaped packet, tables and RNG before matching.
+7. [x] Recover func_15171200, all 256 words / 1,024 bytes, frame 0xE0, in [Note 1428](1428-random-packet-burst-direct-byte-match-20261016.md), with its full float/word/byte ABI, escaped packet and RNG qualified. No target instruction guards.
 8. [ ] Restore the wider caller func_1511C638 and retain func_1516D400, inherited-stack func_1516FE1C and all broader Game/additional-source/raw-matching queues.
 
 ## Source And Contract
