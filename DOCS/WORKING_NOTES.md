@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
+Restore func_15094EA0's live matrix pair/product as direct 40-word C,
+frame 0x98, no new guards. Ten final tests pass in 148.649s; the normal
+guest build equals the complete 138-byte prediction. Preserve 18 neighbors,
+100 other inputs, the guard CSV and protected 189,088 bytes / 720 owners.
+Fresh Game 2,925/4,828, overall 3,598/5,501, different 1,903, zero drift.
+Tools d7a8bb1 banks first; preserve all 837 mirror hashes / 841 paths.
+README aggregate rows only. Next func_15019130: original 185-word caller
+still has a 12-byte installed C stub; original-loop qualification does not
+restore it. Rectangle and wider Game work remain open, with no host/Release action.
+
+2026-10-16:
 [Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
 Restore func_1509499C's sixteen-slot provider, signed bounds and void ABI.
 All 71 words match with 33 closed scratch-role guards, no insertion/omission

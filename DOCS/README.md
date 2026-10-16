@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [View matrix preparation direct match](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
+  Restore all 40 words without new guards, pass ten final checks and reproduce
+  the complete 138-byte ELF prediction. Keep the discovered caller stub explicit.
 - [Packed point slot provider byte match](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
   Restore the provider stub as 71-word semantic C with 33 closed scratch-role
   guards; pass ten final checks and reproduce the complete 220-byte ELF prediction.

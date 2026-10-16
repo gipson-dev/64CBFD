@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools cc49cf5; tools are committed before the consumer pin.
+  checkpoint pins tools d7a8bb1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+View matrix preparation installed, **40 words directly byte-exact; no new guards**:
+[Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md).
+Restore func_15094EA0's two fixed-matrix conversions and ordered product,
+using the existing 0x180-byte view record, original frame 0x98 and live
+frame/base rereads. All ten final tests pass in 148.649s: real freshly built
+SDK/product helpers, 2,432 complete-state guest cases, 1,800 fault prefixes,
+480 retail caller-loop cases / 744 invocations and native32 O2/O0/UBSan with
+128 cases each, plus effective controls and independent relocation carries.
+The normal guest build equals the entire first 138-byte code/extent prediction;
+all 18 neighbors, 100 other inputs, guard CSV and protected 189,088 bytes /
+720 owners remain fixed. Fresh Game **2,925/4,828 (60.58%)**, total
+**3,598/5,501 (65.41%)**, different **1,903**, zero drift; conversion unchanged.
+README aggregate rows only. Tools d7a8bb1 banks first; both copies' syntax/
+eleven shared padder tests and tools-check pass, all 837 initial mirror hashes
+/ 841 paths preserved at HEAD ddbdd16. **func_15019130 is still a 12-byte C
+stub**, versus 185 retail words: caller-loop tests use the original ROM block,
+not a restored installed caller. Recover that caller next. The adjacent
+250-word func_15094AB8 and rectangle's 18-word fit remain open, with no full
+gameplay/hardware claim, push, Claude/auth retry or host/frozen Release action.
 
 Packed point slot provider installed, **71 words byte-exact with 33 scratch-role guards**:
 [Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md).

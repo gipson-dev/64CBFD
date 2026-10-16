@@ -22,6 +22,8 @@ extern u8 D_800D2DA8, D_800D2DA9, D_800D2DAA, D_800D2DAB;
 extern u8 D_800BE9A0;
 extern f32 D_800D2CA8[][4][4];
 extern f32 D_800D9B20;
+extern Mtx *D_800DC2A0[];
+void func_150A7A48(f32 left[4][4], f32 right[4][4], f32 product[4][4]);
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
                    f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
 s32 func_1509563C(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY,
@@ -128,8 +130,15 @@ s32 func_15094AB8() {
     return 0;
 }
 
-s32 func_15094EA0() {
-    return 0;
+/* Convert the view's live fixed matrix pair, then combine them in order. */
+void func_15094EA0(s32 index) {
+    f32 model[4][4];
+    f32 projection[4][4];
+
+    guMtxL2F(model, D_800DC2A0[D_800BE9C0] + index);
+    guMtxL2F(projection, (Mtx *)((u8 *)(((ProjectedViewFrame95760 *)D_800BE628) + index) +
+        D_800BE9C0 * 0x40 + 0x100));
+    func_150A7A48(model, projection, D_800D2CA8[index]);
 }
 
 u32 *func_15094F40(u32 *arg0) {

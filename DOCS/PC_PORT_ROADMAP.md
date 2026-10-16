@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## View Matrix Preparation Direct Match - 2026-10-16
+
+[Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
+
+- [x] Restore func_15094EA0's typed matrix pair and void index ABI. Existing 0x180-byte record addressing emits all 40 words / frame 0x98 directly, preserving SP+0x58/SP+0x18 homes, live frame/base rereads and matrix order. No new guard, profile, insertion or omission.
+- [x] Revalidate all 17 complete-owner source screens and all 18 neighbors/bindings. Fresh SDK compilation/padding and the established assembly-processor product owner reproduce the 46/78-word retail helper slots; keep the product kernel classified as assembly.
+- [x] Pass ten final tests in 148.649s: 2,432 complete-state guest cases / 1,536 fired effects, 1,800 fault prefixes, 480 original caller-loop cases / 744 invocations, native32 O2/O0/UBSan with 128 cases each and five effective controls, all 102 frozen/live inputs and independent HI16/LO16/J26 rebases. Preserve the corrected native alignment and explicit caller-stub boundary.
+- [x] Reproduce the complete first 138-byte ELF prediction with the normal guest build: 137 code bytes inside the original 160-byte slot plus one extent byte (12 -> 160), no metadata reorder/exclusions. Preserve the guard CSV, 100 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,925/4,828 (60.58%), total 3,598/5,501 (65.41%), different 1,903, zero drift; README aggregate rows only.
+- [x] Bank tools d7a8bb1 before the consumer pin; pass both copies' syntax/eleven shared padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 837 initial dirty hashes / 841 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
+- [ ] Recover the observed **func_15019130** caller: installed 12-byte zero stub versus 740-byte / 185-word retail routine. The tested original 13-word loop is not an installed caller or full gameplay claim. Keep func_15094AB8's 250-word restoration, func_15095D34's 18 differences and the wider Game queue open.
+
 ## Packed Point Slot Provider - 2026-10-16
 
 [Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
@@ -9,7 +20,8 @@
 - [x] Pass ten final tests in 112.747s: 6,144 provider cases covering all 71 instructions, 4,608 fault prefixes, 2,048 actual caller/provider/matrix cases, actual-provider native32 O2/O0/UBSan with 2,560 cases each, and effective word/binding/pool/input/metadata controls. Keep raw scratch-register identity, portable C alias/fault and full gameplay/hardware claims separate.
 - [x] Reproduce the complete first 220-byte ELF prediction with the normal guest rebuild: 218 code bytes inside the existing slot plus two function-size bytes (12 -> 284), no metadata reorder/exclusions. Preserve 97 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,924/4,828 (60.56%), total 3,597/5,501 (65.39%), different 1,904, zero drift; README aggregate rows only.
 - [x] Bank tools cc49cf5 before the consumer pin, pass both copies' syntax/eleven shared padder tests and tools-check, and preserve mirror HEAD ddbdd16 plus all 833 initial dirty hashes / 837 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
-- [ ] Recover the adjacent **func_15094EA0**: 40 words / frame 0x98, two guMtxL2F calls and matrix combination. Continue **func_15095D34**'s 18-word fit and the wider Game queue; do not relabel the old stubbed provider as still pending or claim full-game completion.
+- [x] Recover the adjacent **func_15094EA0**: 40 words / frame 0x98, two guMtxL2F calls and matrix combination, now directly matched in [Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md).
+- [ ] Continue **func_15095D34**'s 18-word fit and the wider Game queue; do not relabel the restored provider or matrix preparation as still pending or claim full-game completion.
 
 ## Packed Point Transform And Rectangle Screens - 2026-10-16
 

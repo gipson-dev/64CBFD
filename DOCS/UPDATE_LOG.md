@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-16 View Matrix Preparation Direct Match
+
+[Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
+Replace func_15094EA0's zero stub with typed fixed-matrix conversion/product
+C; all 40 words / frame 0x98 match directly, with no new guards or profile
+changes. Ten final tests pass in 148.649s, including fresh real helper slots,
+live effects, fault prefixes, retail caller cuts, native32/UBSan and effective
+relocation/input controls. The normal guest build equals the complete first
+138-byte code/extent prediction, no metadata exclusions. Guard CSV, 18
+neighbors, 100 other inputs and protected 189,088 bytes / 720 owners stay
+fixed. Fresh Game 2,925/4,828 (60.58%), total 3,598/5,501 (65.41%), different
+1,903, zero drift; README aggregate rows only. Tools d7a8bb1 banks first;
+preserve 837 mirror hashes / 841 paths. The original caller func_15019130
+is still a 12-byte installed stub versus 185 retail words; recover it next.
+No full gameplay claim, push, Claude/auth retry or host/frozen Release action.
+
 ## 2026-10-16 Packed Point Slot Provider Byte Match
 
 [Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
