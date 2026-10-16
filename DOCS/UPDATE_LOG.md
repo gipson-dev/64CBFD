@@ -1,5 +1,23 @@
 # Update Log
 
+## 2026-10-16 Packed Point Transform Byte Match
+
+[Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
+Replace func_150948C0's zero stub with the signed-coordinate sixteen-slot
+transform. Match all 55 words / frame 0x90 using two relocation-aware guards
+for independent initialization scheduling. All ten final tests pass in
+103.223s; the normal guest rebuild equals the complete first 208-byte ELF
+prediction, including 40 explicit symbol/string serialization bytes, with
+zero exclusions. Preserve 18 neighbors, 97 other inputs, prior guards and
+protected 189,088 bytes / 720 owners. Fresh Game 2,923/4,828 (60.54%), overall
+3,596/5,501 (65.37%), different 1,905, zero drift; conversion unchanged.
+README aggregate rows only. Bank tools 6909297 first; both tools copies'
+syntax/eleven shared padder tests and tools-check pass, all 828 original
+mirror hashes / 833 dirty paths preserved. Twelve typed-step/staged-corner
+screens improve none: rectangle still 18 differences. The 71-word provider
+func_1509499C remains a production stub, not a restored gameplay pipeline.
+No push, Claude/auth retry or host/frozen Release action.
+
 ## 2026-10-16 Packet Rectangle Native Temporary Blockers
 
 [Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):

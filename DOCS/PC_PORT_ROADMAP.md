@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Point Transform And Rectangle Screens - 2026-10-16
+
+[Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
+
+- [x] Recover func_150948C0's sixteen-slot signed-coordinate transform, correct two-argument entry and seven-argument matrix ABI; match all 55 words / frame 0x90 with two relocation-aware guards for independent initialization scheduling.
+- [x] Revalidate twelve complete-owner typed-step/staged-corner rectangle forms. None improves the installed 346 words / frame 0x88 / 18 differences / literal 148/91 spans; install none of these forms.
+- [x] Pass ten final tests in 103.223s, including 2,048 three-way guest fixtures with real retail helpers, native32 O2/O0/UBSan with 2,560 cases each, full-image/layout checks and effective corruption controls. Preserve the production provider stub; helper qualification is not an installed pipeline claim.
+- [x] Reproduce the complete first ELF prediction after the normal guest rebuild: 208 changed bytes = 167 code + one function-size + 40 explicit symbol/string serialization bytes, zero exclusions. Preserve 18 neighbors, prior guards, 97 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,923/4,828 (60.54%), overall 3,596/5,501 (65.37%), different 1,905, zero drift; README aggregate rows only.
+- [x] Bank tools 6909297 before the consumer pin; pass both tools copies' syntax/eleven shared padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 828 initial dirty hashes / 833 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
+- [ ] Recover and qualify the original 71-word slot provider **func_1509499C**; its drafts remain experimental, not installed or newly matched. Finish **func_15095D34**'s twelve flip-block scratch/schedule words and six macro-home accesses without repeating the rejected step/corner forms or forcing private homes. Wider Game matching remains active.
+
 ## Packet Rectangle Native Temporary Blockers - 2026-10-16
 
 [Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):

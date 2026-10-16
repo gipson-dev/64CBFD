@@ -1,4 +1,16 @@
 #include <ultra64.h>
+typedef struct {
+    u8 padding0;
+    u8 slotRange;
+    u8 padding2[2];
+    s16 (*points)[8];
+} PackedPointSource948C0;
+
+extern f32 (*D_800D2C20)[4];
+s32 func_1509499C();
+void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z,
+                   f32 *outX, f32 *outY, f32 *outZ);
+
 extern s32 D_80082FA4;
 extern u8 *D_800BE628;
 extern u8 D_800BE9C0;
@@ -73,8 +85,24 @@ s32 func_150950D4(s32, structC1D70Descriptor *, s32, s32, s32, s32, s32, s32, s3
 
 s32 func_15095D34();
 
-s32 func_150948C0() {
-    return 0;
+/* Transform populated signed-coordinate slots; leave all other outputs intact. */
+void func_150948C0(PackedPointSource948C0 *source, f32 output[][3]) {
+    s16 *slots[16];
+    s32 index;
+    s16 *point;
+    f32 *destination;
+
+    func_1509499C(source, slots);
+    index = 0;
+    do {
+        point = slots[index];
+        if (point != NULL) {
+            destination = (f32 *)(index * 12 + (u8 *)output);
+            func_150A7960(D_800D2C20, point[0], point[1], point[2],
+                           destination, destination + 1, destination + 2);
+        }
+        index++;
+    } while (index != 16);
 }
 
 s32 func_1509499C() {

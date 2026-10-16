@@ -1,6 +1,20 @@
 # Working Notes
 
 2026-10-16:
+[Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
+Recover func_150948C0's signed-coordinate sixteen-slot transform, matching
+55 words / frame 0x90 with two independent schedule guards. Ten final tests
+pass in 103.223s; the normal guest rebuild equals the entire first 208-byte
+prediction, with 40 explicit metadata serialization bytes and no exclusions.
+Keep 18 neighbors, 97 other inputs and protected 189,088 bytes / 720 owners
+fixed. Fresh Game 2,923/4,828, overall 3,596/5,501, different 1,905, zero
+drift. Tools 6909297 banks first; preserve all 828 mirror hashes / 833 paths.
+Twelve typed-step/staged-corner screens improve none: rectangle stays at 18
+differences. Continue its private-home/schedule fit and the 71-word provider
+func_1509499C, whose original production stub is unchanged. README aggregate
+rows only; no installed-pipeline claim, push or host/frozen Release action.
+
+2026-10-16:
 [Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
 Capture the installed 18-word form, three identical CFE/UOPT stream pairs,
 24 actual temporary-pool events and native forbidden bits at 20 selections.

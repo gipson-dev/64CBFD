@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e3dca0d; tools are committed before the consumer pin.
+  checkpoint pins tools 6909297; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,27 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packed point transform installed, **55 words byte-exact with two schedule guards**:
+[Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md).
+Replace func_150948C0's zero stub with signed-coordinate transformation of
+sixteen optional slots, preserving untouched output rows and the matrix ABI.
+Two relocation-aware guards swap independent matrix-address/count setup;
+this is not an unguarded raw-C match. All ten final tests pass in 103.223s,
+including retail-helper guest execution, native32 O2/O0/UBSan, full-image,
+protected-layout and effective corruption controls. The normal guest build
+equals the complete first 208-byte ELF prediction: 167 code, one extent and
+40 explicit symbol/string serialization bytes, no exclusions. Preserve
+18 neighbors, 97 other inputs and protected 189,088 bytes / 720 owners.
+Fresh Game **2,923/4,828 (60.54%)**, overall **3,596/5,501 (65.37%)**,
+different **1,905**, zero drift; conversion counts unchanged. README changes
+only those aggregate rows. Tools 6909297 banks first; preserve all 828 initial
+mirror hashes / 833 dirty paths at unchanged HEAD ddbdd16. Both tools copies'
+syntax/eleven shared padder tests and tools-check pass. Twelve rectangle
+typed-step/staged-corner screens improve none: func_15095D34 stays at 18
+differences. **func_1509499C remains its original production stub**; its
+71-word recovery and the rectangle remain open, with no gameplay-pipeline
+claim, push, Claude/auth retry or host/frozen Release action.
 
 Packet rectangle native temporary blockers, **evidence only; still 18 differences**:
 [Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md).

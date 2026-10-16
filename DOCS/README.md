@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Packed point transform byte match and rectangle step screens](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
+  Match all 55 transform words with two independent schedule guards, pass
+  ten final checks and reproduce the complete 208-byte ELF prediction.
+  Twelve rectangle forms improve none; its 18 differences and provider stub stay open.
 - [Packet rectangle macro temporary pool and native blockers](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
   Observe actual UOPT pool/forbidden bits for the installed 18-word form,
   pass ten diagnostic checks and reject 29 equivalent/worse source forms.
