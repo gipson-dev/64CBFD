@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Projection And Signed-Packet Draw Match
+
+[Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
+Restore the real float projection ABI and signed-halfword packet drawing.
+func_15095760 matches 84 words directly via SDK graphics macros;
+func_1509563C matches 73 words with ten closed output-scheduling guards.
+All 13 final checks pass. The full rebuild reproduces all 490 first-predicted
+ELF changes, every other byte / 93 inputs fixed, no exclusions. Game
+2,920/4,828, total 3,593/5,501, different 1,908, zero drift. Bank tools
+51f51e1 first; preserve 791 mirror hashes / 796 paths. Keep func_1516D738's
+existing inherited-stack C deferral; next func_150958B0, 102 words / frame
+0x48. Four original callers and lower providers remain unfinished.
+
 ## 2026-10-16 Four-Byte Saturation Direct Match
 
 [Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):

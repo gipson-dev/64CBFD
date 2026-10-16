@@ -16497,3 +16497,13 @@ generated_19E040,func_15170B90,0x324,0x8FB7007C,0x8FB7007C,-,-,Retain debris com
 generated_19E040,func_15170B90,0x328,0x8FBE0080,0x8FBE0080,-,-,Retain debris compiler fingerprint,,,false
 generated_19E040,func_15170B90,0x32C,0x03E00008,0x03E00008,-,-,Retain debris compiler fingerprint,,,false
 generated_19E040,func_15170B90,0x330,0x27BD0120,0x27BD0120,-,-,Retain debris compiler fingerprint,,,false
+generated_C1D70,func_1509563C,0xD8,0xC4680034,0xC4660010,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0xE8,0xC46A0038,0x46103200,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0xF0,0xC4720010,0xC4720034,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0xF4,0x460C2182,0x460C2002,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0xF8,0x46109100,0xC4640038,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0xFC,0x46083000,0x46024282,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0x100,0x46022182,0x46120000,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0x104,0xE4800000,0x460C5082,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0x108,0x460C3202,0xE4800000,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_1509563C,0x10C,0x46085081,0x46022081,-,-,Normalize closed projection output schedule and scratch allocation,,,false

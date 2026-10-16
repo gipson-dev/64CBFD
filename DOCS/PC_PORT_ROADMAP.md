@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Projection And Signed-Packet Draw Match - 2026-10-16
+
+[Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
+
+- [x] Revisit func_1516D738 against Note 1395's existing positive inherited-stack evidence. Keep its C conversion deferred; do not initialize SP+0x5C, import an undefined C read or label an assembly restoration as C.
+- [x] Recover func_15095760's real display-list/signed-halfword packet ABI and all nine draw arguments. Match all 84 words / frame 0x48 directly using SDK pipe-sync and primitive-depth macros, with no draw guards or profile change.
+- [x] Recover provider func_1509563C jointly, avoiding the unqualified float-argument homing introduced by typing its old stub. Match all 73 words / frame 0x28 with ten expected-word guards for a closed floating-point output schedule; verify exact expression trees and store order. Preserve all 17 neighbors and prior guards.
+- [x] Pass all 13 final tests in 123.196s: 576 three-way guest cases, 80 projector alias pairs, real-SDK native32 O2/O0 with 144 joint cases each and UBSan, eight effective guest/native negatives, 380 fired fault pairs, 16 original caller captures and three independent original rebase sets / 48 pairs.
+- [x] Complete the guard-dependent guest rebuild and reproduce the entire first ELF prediction: 490 code/extent bytes across both slots, every other byte / 93 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,920/4,828 (60.48%), total 3,593/5,501 (65.32%), different 1,908, zero drift; README aggregates only.
+- [x] Bank tools 51f51e1 before consumer C/guards/pin/docs, preserve all 791 initial mirror hashes / 796 final paths, and pass both copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_150958B0 in generated_C1D70.c, VA 0x150958B0 / ROM 0xC2D60, 102 words / 408 bytes, frame 0x48, ending at 0x15095A48. Audit the third visible-output pointer, func_15095B08 flag writer, D_8009DEC0 scale and unsigned depth conversion with FCSR save/restore.
+- [ ] Retain func_1516D738 and func_1516FE1C's C deferrals, func_15095B08 and lower draw providers, all four original callers and the broader Game/additional-source/raw-matching queue. Current caller call windows remain zero-filled; no full render/gameplay acceptance is claimed.
+
 ## Four-Byte Saturation Direct Match - 2026-10-16
 
 [Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
@@ -9,7 +22,7 @@
 - [x] Pass all 12 final tests in 80.304s: 7,170 paired guest cases, exhaustive 65,536 native32 start/step pairs per O2/O0 with UBSan, nine effective guest/six native negatives, 56 fired fault pairs, four independent original rebase sets / 48 pairs and eight actual dispatcher connections.
 - [x] Reproduce every byte of the initial linked-image prediction: 164 code/extent bytes, function size 12 -> 232, every other byte / 90 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,918/4,828 (60.44%), total 3,591/5,501 (65.28%), different 1,910, zero drift; README aggregates only.
 - [x] Bank tools eee5a08 before consumer C/pin/docs, preserve all 787 initial mirror hashes / 791 final paths, and pass both copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_1516D738, VA 0x1516D738 / ROM 0x19ABE8, 153 words / 612 bytes, frame 0x98, ending at 0x1516D99C. Audit its display-list/record ABI, helper outputs, cached render state and SP+0x5C read on the cache-equal branch before choosing local initialization.
+- [ ] Finish func_1516D738's C recovery when its inherited-stack contract can be represented honestly. Note 1432 reaffirms the existing Note 1395 deferral and restores its projection/draw providers instead; do not repeat it as a fresh ordinary-C candidate.
 - [ ] Keep func_1516DB90, inherited-stack func_1516FE1C, the external effect helpers/callers and all broader Game/additional-source/raw-matching queues active. Callback record 102 is outside the qualified current driver's 101-record loop; do not claim its invocation or full gameplay acceptance.
 
 ## Actor Effect Dispatch And Owner Completion - 2026-10-16

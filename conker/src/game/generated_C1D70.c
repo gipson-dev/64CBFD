@@ -1,4 +1,23 @@
 #include <ultra64.h>
+extern s32 D_80082FA4;
+extern u8 *D_800BE628;
+extern u8 D_800BE9C0;
+extern f32 D_800D2CA8[][4][4];
+extern f32 D_800D9B20;
+void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
+                   f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
+s32 func_1509563C(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY,
+                   f32 *depth, f32 *divisor, f32 maximum);
+
+typedef struct {
+    u8 prefix[0xC];
+    f32 scaleX, scaleY;
+    u8 padding14[0x20];
+    f32 translateX, translateY;
+    u8 padding3C[4];
+    Vp viewports[20];
+} ProjectedViewFrame95760;
+
 s32 func_15095A90(s32, s32, f32, f32, f32, s32, s32, s32, s32);
 s32 func_15095B08(s32, f32, f32, f32, s32, s32 *);
 s32 func_15095D34(s32, s32, s32, s32, s32);
@@ -103,12 +122,45 @@ s32 func_150950D4(s32 arg0, structC1D70Descriptor *arg1, s32 arg2, s32 arg3,
     return 0;
 }
 
-s32 func_1509563C() {
-    return 0;
+/* Clip transformed coordinates, then map both outputs before either store. */
+s32 func_1509563C(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY,
+                   f32 *depth, f32 *divisor, f32 maximum) {
+    f32 transformedW;
+    f32 inverse;
+    f32 valueX;
+    f32 valueY;
+    ProjectedViewFrame95760 *view;
+
+    func_150A7A00(D_800D2CA8[D_80082FA4], x, y, z, screenX, screenY, depth, divisor);
+    transformedW = *divisor;
+    if (maximum <= transformedW || transformedW <= D_800D9B20) {
+        return 0;
+    }
+    inverse = 1.0f / transformedW;
+    view = (ProjectedViewFrame95760 *)D_800BE628 + D_80082FA4;
+    valueX = *screenX;
+    valueY = *screenY;
+    valueX = (view->scaleX + 5.0f) * valueX * inverse + view->translateX;
+    valueY = view->translateY - (view->scaleY + 5.0f) * valueY * inverse;
+    *screenX = valueX;
+    *screenY = valueY;
+    return 1;
 }
 
-s32 func_15095760() {
-    return 0;
+/* Project a signed coordinate packet, set depth, then draw its screen-space form. */
+Gfx *func_15095760(Gfx *output, s16 *packet) {
+    f32 screenX;
+    f32 screenY;
+    f32 depth;
+    f32 divisor;
+
+    if (func_1509563C(packet[0], packet[1], packet[2],
+                      &screenX, &screenY, &depth, &divisor, 4000.0f) == 0) {
+        return output;
+    }
+    gDPPipeSync(output++);
+    gDPSetPrimDepth(output++, (s32)(((depth / divisor) * ((ProjectedViewFrame95760 *)D_800BE628)[D_80082FA4].viewports[D_800BE9C0].vp.vscale[2] + ((ProjectedViewFrame95760 *)D_800BE628)[D_80082FA4].viewports[D_800BE9C0].vp.vtrans[2]) * 32.0f), 0);
+    return (Gfx *)func_15095A90((s32)output, (s32)packet, screenX, screenY, divisor, 1, 0, 0, 0);
 }
 
 s32 func_150958B0() {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools eee5a08; tools are committed before the consumer pin.
+  checkpoint pins tools 51f51e1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Projection and signed-packet drawing installed together:
+[Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md).
+func_15095760 matches all 84 words / frame 0x48 directly through the SDK
+graphics macros. Its float-ABI provider func_1509563C matches all 73 words /
+frame 0x28 with ten closed output-scheduling guards, not a raw direct match.
+Preserve all 17 neighbors and prior guard history. All 13 final tests pass
+in 123.196s; the full guest rebuild exactly reproduces the first complete
+ELF prediction: 490 code/extent bytes, every other byte / 93 inputs fixed,
+protected data exact, no exclusions. Fresh Game 2,920/4,828 (60.48%), total
+3,593/5,501 (65.32%), different 1,908, zero drift. Tools 51f51e1 banks first;
+preserve 791 mirror hashes / 796 paths. Next func_150958B0, 102 words /
+frame 0x48; audit its visible-output pointer and unsigned-depth/FCSR path.
+func_1516D738 remains C-deferred under the existing Note 1395 inherited-stack
+evidence. Four original caller windows remain zero-filled in the current
+ELF; bounded providers are not full render/gameplay acceptance. No push or host/Release action.
 
 Four-byte saturation installed as a direct instruction match:
 [Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md).

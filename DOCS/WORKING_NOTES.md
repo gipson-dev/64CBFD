@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
+Restore func_15095760, 84 words direct through SDK macros, and provider
+func_1509563C, 73 words with ten closed output-scheduling guards. All 13
+final tests pass; the complete rebuild equals the first 490-byte ELF
+prediction, every other byte / 93 inputs fixed, no exclusions. Fresh Game
+2,920/4,828, total 3,593/5,501, different 1,908, zero drift. Bank tools
+51f51e1 first; preserve 791 mirror hashes / 796 paths. Reaffirm Note 1395's
+func_1516D738 C deferral; next actionable target is func_150958B0, 102 words /
+frame 0x48, with its visible flag and unsigned-depth/FCSR audit.
+
+2026-10-16:
 [Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
 Install func_1516D400, all 58 words / 232 bytes direct, with no frame,
 padding or target guards. Recover the four-counter array view and preserve

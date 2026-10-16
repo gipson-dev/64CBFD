@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Projected-packet draw and projection byte match](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
+  Match the 84-word SDK draw directly and its 73-word provider with ten
+  closed scheduling guards; pass 13 checks and retain the renderer's C deferral.
 - [Four-byte saturation direct byte match](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
   Recover all 58 words directly, qualify conditional byte accesses and the
   actual callback path, and pass 12 final checks with an exact full-image audit.

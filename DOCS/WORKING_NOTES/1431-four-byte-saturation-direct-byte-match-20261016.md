@@ -154,3 +154,9 @@ stores executing. This is an observed instruction path, not yet proof of
 an inherited-stack ABI or permission to invent zero initialization.
 Audit helper writes and caller contracts before selecting its C model.
 The wider matching goal remains open.
+
+Follow-up [Note 1432](1432-projected-packet-draw-and-projection-byte-match-20261016.md)
+locates [Note 1395](1395-packed-fade-scale-callback-and-renderer-deferral-20261015.md)'s
+already-qualified positive inherited-stack evidence. Keep func_1516D738
+C-deferred rather than repeating this as an ordinary local-initialization
+problem; restore its projection/draw providers and continue at func_150958B0.
