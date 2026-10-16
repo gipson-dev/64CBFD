@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Two-row display-list setup guarded match](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
+  Restore two live SDK command rows, all 61 words with a target-only no-unroll
+  object and 38 closed guards. Eleven final tests and the entire 193-byte ELF
+  prediction pass; continue the adjacent 124-word scissor/cursor stub.
 - [View initialization guarded match](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
   Restore all 95 words with eight closed prologue guards; eleven final tests
   and the entire 300-byte ELF prediction pass. Continue the 61-word two-row

@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 Two-Row Display-List Setup Guarded Match
+
+[Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
+Replace func_1501A39C's stub/draft with real SDK graphics setup for two rows.
+All 61 words match with a target-only no-unroll object and 38 derived guards;
+ten normal-profile neighbors and live table/depth/view access order stay fixed.
+All eleven final tests pass in 51.237s. The complete normal ELF reproduces
+the first 193-byte slot/extent prediction, with no metadata exclusions.
+Fresh Game 2,932/4,828 (60.73%), total 3,605/5,501 (65.53%), different 1,896,
+zero drift; conversion unchanged. Tools a83f3a4 banks first, both copies' checks
+pass and all 893 initial mirror hashes / 899 paths are preserved. README
+aggregate rows only. Next 124-word func_1501A490; keep timing's 141 differences
+and full startup/frame/gameplay separate. No push or host/Release action.
+
 ## 2026-10-16 View Initialization Guarded Match
 
 [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):

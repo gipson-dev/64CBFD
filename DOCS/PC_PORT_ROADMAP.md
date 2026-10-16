@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Two-Row Display-List Setup Guarded Match - 2026-10-16
+
+[Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
+
+- [x] Replace func_1501A39C's stub and incorrect three-row draft with real SDK commands for two rows, live depth/view/table reads and ordered cursor publication. Recover the void interface from actual caller cuts.
+- [x] Match all 61 words / frame 0x18 with 38 derived scratch-role/schedule guards. Select only the no-unroll target body, preserving all ten normal-profile neighbors, saved homes, memory-access order and old guards.
+- [x] Pass all eleven final tests in 51.237s: 688 three-way guest cases, 344 native32 O2/O0/UBSan cases each, seven effective controls, 48 original caller cuts, independent rebases and 456 fault prefixes.
+- [x] Reproduce the entire first 193-byte ELF slot/extent prediction, zero metadata exclusions. Protect all 117 inputs, 113 unchanged inputs and 189,088 bytes / 720 data owners. Fresh Game 2,932/4,828, total 3,605/5,501, different 1,896, zero drift; conversion unchanged.
+- [x] Bank tools a83f3a4 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check, preserving mirror HEAD, all 893 initial hashes / 899 paths. Root README aggregate rows only.
+- [ ] Recover adjacent func_1501A490: 124 words / frame 0x48, signed s16 view, pipe-sync/scissor emission, six-word ABI and consumed cursor return. Audit its real four-float clamp and output/data aliases.
+- [ ] On the next owner-build edit, remove game_476D0 from the plain padder static-pattern list to suppress its new explicit-recipe override advisory, retaining the same target-only profile and complete-image gate.
+- [ ] Keep timing's 141 differences, remaining view providers, wider Game/additional-source work and full startup/frame/gameplay acceptance separate.
+
 ## View Initialization Guarded Match - 2026-10-16
 
 [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
@@ -9,7 +22,7 @@
 - [x] Pass all eleven final tests in 41.745s: 1,704 three-way guest cases, 852 native32 O2/O0/UBSan cases each, seven controls, 420 prologue joins, 128 fault prefixes, independent rebases and 40 original-caller cuts.
 - [x] Reproduce the entire first 300-byte ELF prediction with zero metadata adjustment/exclusion. Protect all 114 inputs, 111 unchanged inputs, old guard prefix and 189,088 bytes / 720 data owners. Fresh Game 2,931/4,828, total 3,604/5,501, different 1,897, zero drift; conversion unchanged.
 - [x] Bank tools 51ebd75 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check, preserving mirror HEAD, all 887 initial hashes / 893 paths. Root README aggregate rows only.
-- [ ] Recover adjacent func_1501A39C: 61 words / frame 0x18, two cursor/output rows and five SDK graphics commands each. Audit aliases, delay-store publication and actual return/caller use; do not trust the three-row commented draft.
+- [x] Recover adjacent func_1501A39C in [Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md): all 61 words guarded-exact after two-row, SDK, live-alias and caller qualification. Keep the wider queue separate.
 - [ ] Keep timing's 141 differences, remaining view providers, full startup/gameplay and wider Game/additional-source work open. The original startup caller remains a C stub.
 
 ## Frame Timing Frontend Allocation Boundary - 2026-10-16

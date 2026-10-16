@@ -25,9 +25,12 @@ void func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 fallback)
 void func_1501B0A0(s32 index, s32 reference);
 void func_1501B22C(s32 index);
 
+extern s32 D_800BE9C8[];
+extern Gfx D_8002C930[];
+
 /* Generated placeholder declarations. */
 void func_1501A220(s32 viewCount, s32 projectionMode);
-s32 func_1501A39C();
+void func_1501A39C(void);
 s32 func_1501A764();
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
@@ -67,25 +70,28 @@ void func_1501A220(s32 viewCount, s32 projectionMode) {
     D_800BE635 = 0;
     func_1510B070(projectionMode);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A39C.s. */
-s32 func_1501A39C() {
-    return 0;
+/* Initialize both display-list rows and publish their command cursors. */
+void func_1501A39C(void) {
+    s32 *input;
+    s32 *output;
+    u32 viewportOffset;
+    Gfx *commands;
+
+    input = D_800BE9C8;
+    output = D_800BE9D8;
+    viewportOffset = 0;
+    do {
+        commands = (Gfx *)*input;
+        gSPSegment(commands++, 0, 0);
+        gSPSegment(commands++, 0, 0);
+        gSPDisplayList(commands++, D_8002C930);
+        gDPSetDepthImage(commands++, D_800BE9C4);
+        gSPViewport(commands++, (u32)D_800BE628 + viewportOffset + 0x40);
+        input++;
+        *output++ = (s32)commands;
+        viewportOffset += 0x10;
+    } while (output != &D_800BE9E0);
 }
-// NON-MATCHING: something along these lines
-// extern Gfx* D_800BE9C8;
-// extern s32 D_8002C930;
-// Gfx *func_1501A39C(void) {
-//     s32 i;
-//     Gfx *tmp = D_800BE9C8;
-//     for (i = 0; i < 3; i++) {
-//         gSPSegment(tmp++, 0x00, 0x00000000);
-//         gSPSegment(tmp++, 0x00, 0x00000000);
-//         gSPDisplayList(tmp++, D_8002C930);
-//         gDPSetDepthImage(tmp++, D_800BE9C4);
-//         gSPViewport(tmp++, D_800BE628 + i + 0x40);
-//     }
-//     return tmp;
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A490.s. */
 s32 func_1501A490(s32 arg0, s16 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {

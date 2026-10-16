@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 51ebd75; tools are committed before the consumer pin.
+  checkpoint pins tools a83f3a4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Two-row display-list setup restored, **61 words guarded byte-exact**:
+[Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md).
+func_1501A39C emits five real SDK commands for each of two input rows and
+publishes both cursors with live table/depth/view alias semantics. Select only
+this function's no-unroll object; 38 closed scratch-role/schedule guards recover
+retail while all ten normal-profile neighbors stay unchanged. All **11 final
+tests pass in 51.237s**, including 688 guest cases, 344 native32 O2/O0/UBSan
+cases each, seven effective controls, 48 original caller cuts and 456 fault
+prefixes. The entire normal ELF equals the first **193-byte** slot/extent
+prediction, zero metadata exclusions; protect 113 other inputs and data layout.
+Fresh Game **2,932/4,828 (60.73%)**, total **3,605/5,501 (65.53%)**, different
+**1,896**, zero drift; conversion unchanged. Tools **a83f3a4** banks first,
+both copies' checks pass, preserving 893 initial mirror hashes / 899 paths.
+Next recover the adjacent **124-word func_1501A490** scissor/cursor stub and
+remove the new plain-pattern recipe override advisory on that owner's next
+build edit. Timing's 141 differences and wider Game remain open. The original
+func_1501C880 caller remains stubbed; no full startup/frame/gameplay claim.
+
 View initialization restored, **95 words guarded byte-exact**:
 [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md).
 func_1501A220 now implements wrapping allocation sizes, signed height rounding,
@@ -40,8 +58,8 @@ Preserve ten neighbors, 111 other inputs and protected 189,088 bytes / 720
 owners. Fresh Game **2,931/4,828 (60.71%)**, total **3,604/5,501 (65.52%)**,
 different **1,897**, zero drift; conversion unchanged. Tools **51ebd75** banks
 first; both copies' checks pass, preserving 887 original mirror hashes / 893
-paths. Next: the adjacent **61-word func_1501A39C** display-list setup stub;
-audit its two-row loop and cursor/output aliases, not the obsolete draft.
+paths. The adjacent **61-word func_1501A39C** display-list setup recovery is
+now completed in [Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md).
 Timing's 141 differences and wider Game stay open. Original startup caller
 remains stubbed; no full startup/gameplay, push or host/Release claim.
 

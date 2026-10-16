@@ -490,6 +490,17 @@ $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/p
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 
+# Only the two-row graphics initializer uses the retail no-unroll profile.
+# Keep every neighboring function in the established normal-profile object.
+$(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o: \
+		$(SRC_DIR)/game_476D0.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-loopunroll,0 $(MIPSBIT) -o $@.nounroll.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_476D0 $@.padded.s \
+		--function-object func_1501A39C=$@.nounroll.compact --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.nounroll.compact $@.padded.s
+
 # The recovered audio bootstrap perturbs IDO's translation-unit state for the
 # already matched routines that follow it. Compile only that function from the
 # macro-enabled object while preserving the owner object's established output.

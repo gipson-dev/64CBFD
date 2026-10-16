@@ -177,3 +177,7 @@ installation. Original calls exist in func_1501878C and func_1501C880; current
 C also calls it from func_150186D0. The old draft's Gfx * return is unproven.
 Keep timing's 141 differences, remaining view providers, the wider Game and
 additional-source queue separate. No full startup, frame or gameplay claim.
+
+Follow-up completed in [Note 1454](1454-two-row-display-list-setup-guarded-match-20261016.md):
+the two-row display-list setup is all 61 words guarded-exact. Continue the
+adjacent 124-word func_1501A490 scissor/cursor stub; timing stays open.

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
+Restore the two-row SDK display-list setup, all 61 words guarded-exact using
+a target-only no-unroll object and 38 closed scratch-role/schedule guards.
+Eleven final tests pass in 51.237s and the entire normal ELF equals the first
+193-byte prediction, no metadata exclusions. Fresh Game 2,932/4,828, total
+3,605/5,501, different 1,896, zero drift; conversion unchanged. Tools a83f3a4
+banks first; both copies' checks pass, preserving 893 mirror hashes / 899 paths.
+Next 124-word func_1501A490; timing and full startup/gameplay remain open.
+
+2026-10-16:
 [Note 1453](WORKING_NOTES/1453-view-initialization-guarded-match-20261016.md):
 Restore the full view initializer, all 95 words guarded-exact with eight closed
 prologue guards. Eleven final tests pass in 41.745s and the complete normal
