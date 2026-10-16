@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Visible-depth packet byte match](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
+  Recover the 102-word unsigned-depth/visibility routine with four closed
+  scratch-register guards; pass 12 checks and account for all ELF metadata.
 - [Projected-packet draw and projection byte match](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
   Match the 84-word SDK draw directly and its 73-word provider with ten
   closed scheduling guards; pass 13 checks and retain the renderer's C deferral.

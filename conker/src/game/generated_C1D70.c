@@ -2,6 +2,7 @@
 extern s32 D_80082FA4;
 extern u8 *D_800BE628;
 extern u8 D_800BE9C0;
+extern f32 D_8009DEC0;
 extern f32 D_800D2CA8[][4][4];
 extern f32 D_800D9B20;
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
@@ -163,8 +164,31 @@ Gfx *func_15095760(Gfx *output, s16 *packet) {
     return (Gfx *)func_15095A90((s32)output, (s32)packet, screenX, screenY, divisor, 1, 0, 0, 0);
 }
 
-s32 func_150958B0() {
-    return 0;
+/* Project the packet, update visibility, then emit unsigned primitive depth. */
+Gfx *func_150958B0(Gfx *output, s16 *packet, s32 *visible) {
+    f32 screenX;
+    f32 screenY;
+    f32 depth;
+    f32 divisor;
+    f32 scale;
+    Gfx *command;
+
+    if (func_1509563C(packet[0], packet[1], packet[2],
+                      &screenX, &screenY, &depth, &divisor, 4000.0f) == 0) {
+        *visible = 0;
+        return output;
+    }
+    func_15095B08((s32)packet, screenX, screenY, divisor, 1, visible);
+    if (*visible != 0) {
+        scale = D_8009DEC0;
+        command = output++;
+        command->words.w0 = 0xE7000000;
+        command->words.w1 = 0;
+        command = output++;
+        command->words.w0 = 0xEE000000;
+        command->words.w1 = (u32)((depth / divisor) * scale + scale) << 16;
+    }
+    return output;
 }
 
 void func_15095A48(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {

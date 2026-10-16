@@ -16507,3 +16507,7 @@ generated_C1D70,func_1509563C,0x100,0x46022182,0x46120000,-,-,Normalize closed p
 generated_C1D70,func_1509563C,0x104,0xE4800000,0x460C5082,-,-,Normalize closed projection output schedule and scratch allocation,,,false
 generated_C1D70,func_1509563C,0x108,0x460C3202,0xE4800000,-,-,Normalize closed projection output schedule and scratch allocation,,,false
 generated_C1D70,func_1509563C,0x10C,0x46085081,0x46022081,-,-,Normalize closed projection output schedule and scratch allocation,,,false
+generated_C1D70,func_150958B0,0xD4,0x02001025,0x02001825,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
+generated_C1D70,func_150958B0,0xD8,0xAC580000,0xAC780000,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
+generated_C1D70,func_150958B0,0x178,0x00084C00,0x00085400,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
+generated_C1D70,func_150958B0,0x17C,0xAC490004,0xAC6A0004,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false

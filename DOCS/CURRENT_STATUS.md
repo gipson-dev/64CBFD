@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 51f51e1; tools are committed before the consumer pin.
+  checkpoint pins tools 23a25ff; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Visibility-qualified packet depth installed:
+[Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md).
+func_150958B0 matches all 102 words / frame 0x48 with four closed scratch-GPR
+guards. Recover signed coordinates, the full-word visible output, live
+16352.0f scale and unchanged unsigned-conversion/FCSR sequence; preserve
+all 18 neighbors. All 12 final tests pass in 133.716s. The complete rebuilt
+ELF equals the first prediction: 317 bytes, including 32 explicitly modeled
+symbol/string swaps, no exclusions; every other byte / 94 inputs and
+protected data fixed. Fresh Game 2,921/4,828 (60.50%), total 3,594/5,501
+(65.33%), different 1,907, zero drift. Tools 23a25ff banks first; preserve
+796 mirror hashes / 801 paths. Next func_15095B08, 129 words / frame 0x18:
+audit real visibility writes, extents, view scales and seven output globals.
+Its current zero stub and bounded providers are not full rendering/gameplay
+acceptance. Keep inherited-stack C deferrals and wider queues open.
+No push or host/frozen Release action.
 
 Projection and signed-packet drawing installed together:
 [Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md).

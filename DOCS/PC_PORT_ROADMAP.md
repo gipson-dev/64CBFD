@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Visible-Depth Packet Match - 2026-10-16
+
+[Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
+
+- [x] Recover func_150958B0's display-list/signed-packet/visible-pointer ABI, full-word rejection clear and visibility gate, ignored provider return, live 16352.0f scale and unsigned depth conversion. Match all 102 words / frame 0x48; preserve the entire emitted FP/FCSR sequence.
+- [x] Qualify four expected-word guards for two closed cursor/result scratch-register chains, including a forbidden-register control. Preserve all 18 neighboring compact bodies/relocations and the immutable prior guard prefix; no profile, pool or shared-helper change.
+- [x] Pass all 12 final tests in 133.716s: 1,440 paired connected guest cases, native32 O2/O0 real-SDK reference with 128 cases each and UBSan, 84 bounded conversion cases, nine effective guest/eight native negatives, three independent original rebase sets and all 97 frozen/live input checks. No full hardware-FCSR or natural gameplay claim.
+- [x] Complete the normal guest rebuild and exact first-prediction comparison: 317 bytes = 285 code/extent + 32 explicitly modeled symbol/string swaps, every other byte / 94 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,921/4,828 (60.50%), total 3,594/5,501 (65.33%), different 1,907, zero drift; README aggregate rows only.
+- [x] Bank tools 23a25ff before consumer C/guards/pin/docs, preserve all 796 initial mirror hashes / 801 paths, and pass both tools copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_15095B08 in generated_C1D70.c, VA 0x15095B08 / ROM 0xC2FB8, 129 words / 516 bytes, frame 0x18, ending at 0x15095D0C. Audit signed packet extents, unsigned descriptor dimensions, mode/view scales, overlap equalities, early exits and D_800D2C70..D_800D2C88 writes.
+- [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, lower draw providers, original callers and all broader Game/additional-source/raw-matching work. The current visibility provider remains a zero stub, not a validated natural pipeline.
+
 ## Projection And Signed-Packet Draw Match - 2026-10-16
 
 [Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
@@ -10,7 +22,7 @@
 - [x] Pass all 13 final tests in 123.196s: 576 three-way guest cases, 80 projector alias pairs, real-SDK native32 O2/O0 with 144 joint cases each and UBSan, eight effective guest/native negatives, 380 fired fault pairs, 16 original caller captures and three independent original rebase sets / 48 pairs.
 - [x] Complete the guard-dependent guest rebuild and reproduce the entire first ELF prediction: 490 code/extent bytes across both slots, every other byte / 93 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,920/4,828 (60.48%), total 3,593/5,501 (65.32%), different 1,908, zero drift; README aggregates only.
 - [x] Bank tools 51f51e1 before consumer C/guards/pin/docs, preserve all 791 initial mirror hashes / 796 final paths, and pass both copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_150958B0 in generated_C1D70.c, VA 0x150958B0 / ROM 0xC2D60, 102 words / 408 bytes, frame 0x48, ending at 0x15095A48. Audit the third visible-output pointer, func_15095B08 flag writer, D_8009DEC0 scale and unsigned depth conversion with FCSR save/restore.
+- [x] Recover func_150958B0 in Note 1433, all 102 words / frame 0x48 with four closed scratch-GPR guards. Qualify its visible-output pointer, live scale and direct unsigned-depth/FCSR sequence; func_15095B08 remains the next unfinished provider.
 - [ ] Retain func_1516D738 and func_1516FE1C's C deferrals, func_15095B08 and lower draw providers, all four original callers and the broader Game/additional-source/raw-matching queue. Current caller call windows remain zero-filled; no full render/gameplay acceptance is claimed.
 
 ## Four-Byte Saturation Direct Match - 2026-10-16

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
+Restore func_150958B0, 102 words / frame 0x48, with four closed scratch-GPR
+guards and the direct unsigned-depth/FCSR sequence. Preserve 18 neighbors;
+all 12 final tests pass. Reproduce the complete 317-byte ELF prediction,
+including 32 explicitly modeled metadata bytes, every other byte / 94
+inputs fixed, no exclusions. Fresh Game 2,921/4,828, total 3,594/5,501,
+different 1,907, zero drift. Bank tools 23a25ff first; preserve 796 mirror
+hashes / 801 paths. Next func_15095B08, 129 words / frame 0x18, auditing
+visibility, packet extents, view scales and the seven global outputs.
+
+2026-10-16:
 [Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
 Restore func_15095760, 84 words direct through SDK macros, and provider
 func_1509563C, 73 words with ten closed output-scheduling guards. All 13

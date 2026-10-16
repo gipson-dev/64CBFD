@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Visible-Depth Packet Match
+
+[Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
+Restore func_150958B0's full-word visibility and unsigned primitive depth,
+102 words / frame 0x48 with four closed scratch-register guards. All 12
+final tests pass; the complete 317-byte prediction includes 32 exact
+metadata serialization bytes, no exclusions. Preserve 18 neighbors and
+protected data. Game 2,921/4,828, total 3,594/5,501, different 1,907, zero
+drift. Tools 23a25ff banks first; preserve 796 mirror hashes / 801 paths.
+Next func_15095B08, the 129-word visibility provider still stubbed beneath
+the recovered routine; no full rendering/gameplay acceptance is claimed.
+
 ## 2026-10-16 Projection And Signed-Packet Draw Match
 
 [Note 1432](WORKING_NOTES/1432-projected-packet-draw-and-projection-byte-match-20261016.md):
