@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
+Recover func_15095B08's 129 words / frame 0x18 with seven closed FPR guards,
+full-word visibility and seven draw-global writes. Preserve 18 neighbors;
+all 12 final tests pass, including 48 real projection/depth/visibility pairs.
+The complete rebuilt ELF matches its 551-byte prediction, including 157
+explicit metadata bytes, every other byte / 95 inputs fixed, no exclusions.
+Fresh Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift.
+Bank tools 3a933e0 first; preserve 801 mirror hashes / 806 paths. Next
+func_15095D34, 346-word leaf / frame 0x88; keep wider queues and C deferrals open.
+
+2026-10-16:
 [Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
 Restore func_150958B0, 102 words / frame 0x48, with four closed scratch-GPR
 guards and the direct unsigned-depth/FCSR sequence. Preserve 18 neighbors;

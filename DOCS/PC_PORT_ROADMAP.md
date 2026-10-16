@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Visibility Provider Match - 2026-10-16
+
+[Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
+
+- [x] Recover func_15095B08's full-word visible output, signed +6/+8 extents, unsigned descriptor dimensions, live global and mode-dependent frame scales, exact overlap equalities and seven draw-global writes. Restore its void interface and lazy zero-extent exits without altering the callers' instructions.
+- [x] Match all 129 words / leaf frame 0x18 with seven relocation-aware guards for a closed initial FP-register block. Verify exact expression trees, operand/read order and 108 downstream CFG states; preserve all 18 neighbors, prior guard bytes, SDK layouts, compiler profile and pools.
+- [x] Pass all 12 final tests in 117.051s: 1,296 guest cases in both stack phases, native32 O2/O0 with 1,296 cases each and UBSan, nine effective guest/native controls, 32 guest alias pairs, ten nonfinite cases, 90 fired fault pairs, three original rebase sets / 48 paired runs and 48 actual projection/depth/visibility connections. No full hardware-FCSR or natural gameplay claim.
+- [x] Reproduce the entire first ELF prediction after the normal guest rebuild: 551 bytes = 394 code/extent + 157 explicitly modeled symbol/string swaps, every other byte / 95 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README aggregate rows only.
+- [x] Bank tools 3a933e0 before consumer C/guards/pin/docs, preserve all 801 initial mirror hashes / 806 paths and pass both tools copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_15095D34 in generated_C1D70.c, VA 0x15095D34 / ROM 0xC31E4, 346 words / 1,384 bytes, leaf frame 0x88, ending at 0x1509629C. Audit all seven consumed globals, five-input cursor/packet ABI, clipping/texture commands and animated packet byte +0xC using the real SDK macros.
+- [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, original callers and all broader Game/additional-source/raw-matching work. The lower renderer remains a zero stub; model connections are not full host rendering or gameplay acceptance.
+
 ## Visible-Depth Packet Match - 2026-10-16
 
 [Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Pass all 12 final tests in 133.716s: 1,440 paired connected guest cases, native32 O2/O0 real-SDK reference with 128 cases each and UBSan, 84 bounded conversion cases, nine effective guest/eight native negatives, three independent original rebase sets and all 97 frozen/live input checks. No full hardware-FCSR or natural gameplay claim.
 - [x] Complete the normal guest rebuild and exact first-prediction comparison: 317 bytes = 285 code/extent + 32 explicitly modeled symbol/string swaps, every other byte / 94 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,921/4,828 (60.50%), total 3,594/5,501 (65.33%), different 1,907, zero drift; README aggregate rows only.
 - [x] Bank tools 23a25ff before consumer C/guards/pin/docs, preserve all 796 initial mirror hashes / 801 paths, and pass both tools copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_15095B08 in generated_C1D70.c, VA 0x15095B08 / ROM 0xC2FB8, 129 words / 516 bytes, frame 0x18, ending at 0x15095D0C. Audit signed packet extents, unsigned descriptor dimensions, mode/view scales, overlap equalities, early exits and D_800D2C70..D_800D2C88 writes.
+- [x] Recover func_15095B08 in Note 1434, all 129 words / frame 0x18 with seven closed FPR guards. Qualify signed extents, unsigned dimensions, mode/view scales, overlap equalities, lazy exits and all seven draw-global writes; next func_15095D34.
 - [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, lower draw providers, original callers and all broader Game/additional-source/raw-matching work. The current visibility provider remains a zero stub, not a validated natural pipeline.
 
 ## Projection And Signed-Packet Draw Match - 2026-10-16

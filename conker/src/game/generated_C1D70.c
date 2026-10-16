@@ -3,6 +3,9 @@ extern s32 D_80082FA4;
 extern u8 *D_800BE628;
 extern u8 D_800BE9C0;
 extern f32 D_8009DEC0;
+extern f32 D_800380A0, D_800380A4;
+extern f32 D_800D2C70, D_800D2C74, D_800D2C78, D_800D2C7C;
+extern f32 D_800D2C80, D_800D2C84, D_800D2C88;
 extern f32 D_800D2CA8[][4][4];
 extern f32 D_800D9B20;
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
@@ -13,14 +16,16 @@ s32 func_1509563C(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY,
 typedef struct {
     u8 prefix[0xC];
     f32 scaleX, scaleY;
-    u8 padding14[0x20];
+    f32 flatScaleX, flatScaleY;
+    f32 projectedScaleX, projectedScaleY;
+    f32 clipTop, clipBottom, clipLeft, clipRight;
     f32 translateX, translateY;
     u8 padding3C[4];
     Vp viewports[20];
 } ProjectedViewFrame95760;
 
 s32 func_15095A90(s32, s32, f32, f32, f32, s32, s32, s32, s32);
-s32 func_15095B08(s32, f32, f32, f32, s32, s32 *);
+void func_15095B08(s32, f32, f32, f32, s32, s32 *);
 s32 func_15095D34(s32, s32, s32, s32, s32);
 extern s32 D_800D2CA0;
 extern u8 D_800873D0[];
@@ -44,6 +49,13 @@ typedef struct {
     u8 unkA;
     u8 padB;
 } structC1D70Descriptor;
+
+typedef struct {
+    s16 coordinates[3];
+    s16 extentX, extentY;
+    u8 paddingA[6];
+    structC1D70Descriptor *descriptor;
+} ProjectedPacket95B08;
 
 extern structC1D70Descriptor D_800D2C90;
 
@@ -205,8 +217,56 @@ s32 func_15095A90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s3
     return arg0;
 }
 
-s32 func_15095B08(s32 arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 *arg5) {
-    return 0;
+/* Scale the packet rectangle, test viewport overlap, and publish draw inputs. */
+void func_15095B08(s32 packetAddress, f32 x, f32 y, f32 divisor, s32 projected, s32 *visible) {
+    ProjectedPacket95B08 *packet = (ProjectedPacket95B08 *)packetAddress;
+    ProjectedViewFrame95760 *view;
+    structC1D70Descriptor *descriptor;
+    s32 extentX;
+    s32 extentY;
+    f32 scaleX;
+    f32 scaleY;
+    f32 inverse;
+    f32 width;
+    f32 height;
+
+    *visible = 0;
+    extentX = packet->extentX;
+    if (extentX != 0) {
+        extentY = packet->extentY;
+        if (extentY != 0) {
+            scaleX = D_800380A0;
+            scaleY = D_800380A4;
+            scaleX = (f32)extentX * scaleX;
+            scaleY = (f32)extentY * scaleY;
+            if (projected != 0) {
+                view = (ProjectedViewFrame95760 *)D_800BE628 + D_80082FA4;
+                scaleX *= view->projectedScaleX;
+                scaleY *= view->projectedScaleY;
+            } else {
+                view = (ProjectedViewFrame95760 *)D_800BE628 + D_80082FA4;
+                scaleX *= view->flatScaleX;
+                scaleY *= view->flatScaleY;
+            }
+            descriptor = packet->descriptor;
+            inverse = 1.0f / divisor;
+            width = (f32)(u32)descriptor->unk4 * scaleX * inverse;
+            height = (f32)(u32)descriptor->unk6 * scaleY * inverse;
+            x -= width * 0.5f;
+            y -= height * 0.5f;
+            if (view->clipLeft <= x + width && x < view->clipRight &&
+                view->clipTop <= y + height && y < view->clipBottom) {
+                *visible = 1;
+            }
+            D_800D2C70 = scaleX;
+            D_800D2C74 = scaleY;
+            D_800D2C78 = x;
+            D_800D2C7C = y;
+            D_800D2C80 = divisor;
+            D_800D2C84 = width;
+            D_800D2C88 = height;
+        }
+    }
 }
 
 s32 func_15095D0C(s32 arg0, s32 arg1) {

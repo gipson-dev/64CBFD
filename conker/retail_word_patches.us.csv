@@ -16511,3 +16511,10 @@ generated_C1D70,func_150958B0,0xD4,0x02001025,0x02001825,-,-,Normalize closed vi
 generated_C1D70,func_150958B0,0xD8,0xAC580000,0xAC780000,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
 generated_C1D70,func_150958B0,0x178,0x00084C00,0x00085400,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
 generated_C1D70,func_150958B0,0x17C,0xAC490004,0xAC6A0004,-,-,Normalize closed visible-depth cursor and shifted-result scratch roles,,,false
+generated_C1D70,func_15095B08,0x3C,0x44834000,0x44833000,-,-,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x44,0x468021A0,0x46802020,-,-,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x48,0xC4200000,0xC4280000,R_MIPS_LO16:D_800380A0,R_MIPS_LO16:D_800380A0,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x50,0xC4220000,0xC42A0000,R_MIPS_LO16:D_800380A4,R_MIPS_LO16:D_800380A4,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x58,0x468042A0,0x468030A0,-,-,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x5C,0x46003002,0x46080002,-,-,Normalize closed packet-visibility initial FP scratch roles,,,false
+generated_C1D70,func_15095B08,0x68,0x46025082,0x460A1082,-,-,Normalize closed packet-visibility initial FP scratch roles,,,false

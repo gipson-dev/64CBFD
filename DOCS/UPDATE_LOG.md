@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Packet Visibility Provider Match
+
+[Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
+Restore func_15095B08's actual visibility and seven draw-global outputs,
+129 words / frame 0x18 with seven closed FP-register guards. All 12 final
+tests pass, including native32 and 48 connected projection/depth/visibility
+sequences. The complete 551-byte ELF prediction includes 157 explicitly
+modeled metadata bytes, no exclusions; preserve all 18 neighbors and protected
+data. Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift.
+Tools 3a933e0 banks first; preserve 801 mirror hashes / 806 paths. Next
+func_15095D34, 346 words / frame 0x88; the lower renderer remains unfinished.
+
 ## 2026-10-16 Visible-Depth Packet Match
 
 [Note 1433](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):

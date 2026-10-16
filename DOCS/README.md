@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet visibility provider byte match](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
+  Recover all 129 words with seven closed FPR guards, qualify 12 final
+  checks and connect the real projection/depth/visibility pipeline in the guest model.
 - [Visible-depth packet byte match](WORKING_NOTES/1433-visible-depth-packet-byte-match-20261016.md):
   Recover the 102-word unsigned-depth/visibility routine with four closed
   scratch-register guards; pass 12 checks and account for all ELF metadata.
