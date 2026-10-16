@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Rectangle Inner Flag Capture - 2026-10-16
+
+[Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
+
+- [x] Observe 75 actual allocator events with native row/unit provenance and owned process lifecycle. Establish ordinal flags-123 before fractional-T-137: cheap color 12 is taken first; the next candidate costs 14.75 versus gain 3.0. Reject the full-register-exhaustion interpretation and preserve the initial alias-index validator failure as intermediate evidence.
+- [x] Install the qualified inner flag snapshot, original S-step role and integer inner multipliers: 71 -> 18 retail differences, 346 words / frame 0x88, literal first 148 / last 91 words, no new guards or invented locals.
+- [x] Pass all 20 final tests in 127.844s, including fresh native32 O2/O0/UBSan, modeled geometry/animation/aliases/traps/rebases/real callers, 64 complete prefix states and allocator/installed-image corruption controls. Keep later private-state, hardware and gameplay parity open.
+- [x] Reproduce the first whole-image prediction with the normal guest build: 204 bytes change only inside the existing 1,384-byte slot, zero metadata changes/exclusions, 18 neighbors and 98 other inputs fixed, protected 189,088 bytes / 720 owners exact. Fresh totals unchanged: Game 2,922/4,828, overall 3,595/5,501, different 1,906, zero drift; root README unchanged.
+- [x] Bank tools 05ca56d before consumer source/pin/docs; pass both tools copies' syntax/eleven shared padder tests and tools-check. Preserve old mirror HEAD ddbdd16 and all 820 initial hashes / 826 dirty paths. No push, Claude/auth retry or host/frozen Release action.
+- [ ] Finish **func_15095D34**: first mismatch +0x250 / 0x15095F84, twelve flip-block scratch/schedule words and six macro-home words remain in the 107-word middle window. Inspect the selected body's actual macro temporary allocation; no bulk guards, physical bindings or dummy locals. Wider Game matching remains active.
+
 ## Packet Rectangle Lifetime Rejections - 2026-10-16
 
 [Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Separate aligned-tail evidence from fixed-slot evidence: the mixed 347-word body has a literal last 91 words, but zero same-position suffix and still 226 pointwise differences. Reject the extra word. Read-count probes emit 350/351 words plus SP+0x2C traffic here; external zero-code results do not transfer automatically.
 - [x] Pass all eight final tests in 15.580s, all 100 frozen/live input checks, both tools copies' syntax/eleven shared padder tests and tools-check. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; no production C/guards/ELF/CSV/README edit or guest/native rebuild.
 - [x] Bank tools 3cbb68b before consumer docs/pin; preserve 818 original mirror hashes / 820 paths. One packet-only Claude invocation terminates with expired OAuth / 401 and zero completed advisory; no further invocation/account/provider change. No push or host/frozen Release action.
-- [ ] Continue **func_15095D34** by observing the pinned UOPT's actual allocation/spill-victim selection. Require fired probes, real child/driver exits and unchanged normal/traced words, bindings and pools before attributing a cause. Static symbols are only probe candidates. Retain all 71 differences and the wider Game backlog.
+- [x] Observe the pinned UOPT's actual allocation/cost selection with fired probes, real child/driver exits and unchanged normal/traced words, bindings and pools in Note 1439. Use the resulting source decision to reduce 71 -> 18 differences; finish the remaining fit in the latest section above.
 
 ## Packet Rectangle Compiler Provenance - 2026-10-16
 

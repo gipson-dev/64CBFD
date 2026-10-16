@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet rectangle inner flag capture and allocator order](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
+  Use fired allocator cost gates to reduce 71 -> 18 differences without guards;
+  pass 20 final checks and reproduce the complete 204-byte slot-only prediction.
 - [Packet rectangle lifetime screens and private-home rejection](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
   Revalidate 105 source forms and eight checks; reject equal-count fits with
   changed private homes. Production remains at 71 differences, no new C match.

@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 Packet Rectangle Inner Flag Capture
+
+[Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
+Native allocator probes establish ordinal flag allocation and the fractional-T
+cost rejection. Recover the inner flag snapshot, original S-step role and
+two inner constant spellings: **71 -> 18** differing words, still 346 words /
+frame 0x88, literal 148/91-word spans, no new guards. All 20 final tests pass
+in 127.844s; the guest rebuild matches the first full-image prediction, with
+204 changed bytes confined to the same slot and no metadata exclusions.
+All neighbors, prior guards, 98 other inputs and protected data stay fixed.
+Fresh totals remain Game 2,922/4,828, overall 3,595/5,501, different 1,906,
+zero drift. Tools 05ca56d banks first; preserve 820 mirror hashes / 826 paths.
+README unchanged; the same function remains open, not a new byte-exact match.
+
 ## 2026-10-16 Packet Rectangle Lifetime Rejections
 
 [Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):

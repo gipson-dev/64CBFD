@@ -290,6 +290,7 @@ s32 func_15095D34(Gfx *output, ProjectedPacket95B08 *packet, s32 sOffset, s32 in
     s32 integerScaleX = (s32)width;
     s32 integerScaleY = (s32)height;
     s32 numerator;
+    s32 originalStepS;
     s32 stepS;
     s32 stepT;
     s32 integerX;
@@ -312,21 +313,22 @@ s32 func_15095D34(Gfx *output, ProjectedPacket95B08 *packet, s32 sOffset, s32 in
     if (width < 2.0f) {
         width = 2.0f;
     }
-    stepS = numerator / integerScaleX;
+    originalStepS = numerator / integerScaleX;
+    stepS = originalStepS;
     stepT = numerator / integerScaleY;
     integerX = (s32)left;
     if (D_800D2DAB == 0) {
         gDPSetPrimColor(output++, 1, 0, D_800D2DA8, D_800D2DA9, D_800D2DAA, packet->alpha);
     }
     integerY = (s32)top;
-    textureS = (s32)((u32)(s32)(((32.0f - (left - (f32)integerX) * 32.0f) * divisor) /
+    textureS = (s32)((u32)(s32)(((32.0f - (left - (f32)integerX) * 32) * divisor) /
         (f32)integerScaleX) + (u32)sOffset + 0x2000u);
-    flipFlags = packet->flipFlags;
-    fractionalT = (s32)(((32.0f - (top - (f32)integerY) * 32.0f) * divisor) / (f32)integerScaleY);
+    fractionalT = (s32)(((32.0f - (top - (f32)integerY) * 32) * divisor) / (f32)integerScaleY);
     textureT = (s32)((u32)fractionalT + (u32)insetTOffset + 0x2000u);
-    if (flipFlags != 0) {
+    if (packet->flipFlags != 0) {
+        flipFlags = packet->flipFlags;
         if (flipFlags & 1) {
-            stepS = (u16)(0u - (u32)stepS);
+            stepS = (u16)(0u - (u32)originalStepS);
             textureS = (packet->descriptor->unk4 + 255) << 5;
         }
         if (flipFlags & 2) {

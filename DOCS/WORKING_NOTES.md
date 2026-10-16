@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
+Observe flags-123 before fractional-T-137 in the real ordinal allocator pass;
+the latter fails cost 14.75 versus gain 3.0, not total color exhaustion.
+Install the qualified inner flag capture and original S-step role: 71 -> 18
+differences, 346 words / frame 0x88, literal 148/91 spans, zero new guards.
+All 20 final tests pass in 127.844s; normal rebuild equals the first whole
+204-byte slot-only prediction, with 98 other inputs / neighbors / protected
+data fixed and no exclusions. Fresh totals unchanged; README unchanged.
+Tools 05ca56d banks first; preserve 820 mirror hashes / 826 dirty paths.
+Finish the same routine's twelve scratch/schedule and six macro-home words.
+
+2026-10-16:
 [Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
 Reject 105 complete-owner lifetime forms; best remains 71 differences.
 The split-step control keeps 346/frame0x88/71 and 104/91 literal spans while

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3cbb68b; tools are committed before the consumer pin.
+  checkpoint pins tools 05ca56d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet rectangle inner flag capture, **71 -> 18 differences; still not byte matched**:
+[Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md).
+Fired native allocator probes show flags take cheap color 12 first; fractional
+T then fails a cost gate, not complete register exhaustion. Capture flags
+inside the flip branch, recover the original S-step role and inner constant
+spelling, retaining 346 words / frame 0x88 with literal 148/91-word spans.
+All 20 final tests pass in 127.844s, including fresh native32/UBSan, modeled
+guest/caller/alias/trap checks, 64 complete prefix states and strict installed
+image/corruption checks. The normal guest rebuild equals the first prediction:
+204 changed ELF bytes, all inside the same 1,384-byte slot, zero exclusions
+or new guards. Protected 189,088 bytes / 720 owners and 98 other inputs stay
+fixed. Fresh Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift;
+no new full-function match or README change. Tools 05ca56d banks first;
+preserve all 820 initial mirror hashes / 826 dirty paths. Next recover twelve
+flip-block scratch/schedule words and six macro-home words in this same routine.
+No hardware/gameplay parity claim, Claude retry, push or host/frozen Release action.
 
 Packet rectangle lifetime screens, **evidence only; still not byte matched**:
 [Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md).
