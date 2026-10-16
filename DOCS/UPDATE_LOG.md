@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 Scheduler Frame Driver Guarded Match
+
+[Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
+Recover func_1501878C's scheduler dispatch and ordered display-list passes.
+Match all 412 words / frame 0x68 with 55 derived role/schedule/branch guards;
+raw C is 411 words with 138 differences, not a direct match. Ten final tests
+pass in 217.608s. The normal build equals the complete 1,301-byte
+prediction with 111 closed metadata bytes and zero exclusions. Preserve
+15 neighbors, 101 other inputs, guard history and protected 189,088 bytes /
+720 owners. Fresh Game 2,927/4,828 (60.63%), overall 3,600/5,501 (65.44%),
+different 1,901, zero drift. Tools 5f98c97 banks first; preserve
+847 mirror hashes / 853 paths. README aggregate rows only; continue the
+215-word func_150195A0 provider, with no full gameplay or host/Release claim.
+
 ## 2026-10-16 Frame Coordinator Direct Match
 
 [Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):

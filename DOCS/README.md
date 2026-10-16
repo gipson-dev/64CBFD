@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Scheduler frame driver guarded match](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
+  Restore the complete 412-word routine with 55 derived guards, pass ten
+  final checks, and reproduce the full 1,301-byte ELF prediction.
+  Keep remaining render-provider stubs explicit.
 - [Frame coordinator direct match](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
   Restore all 185 words without guards, pass ten final checks, and match the
   complete 516-byte ELF prediction with closed metadata accounting.

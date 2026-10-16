@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c820bde; tools are committed before the consumer pin.
+  checkpoint pins tools 5f98c97; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Scheduler frame driver installed, **412 words guarded byte-exact**:
+[Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md).
+Restore func_1501878C's message dispatch, ordered display-list passes,
+buffer rollback, audio transition and shutdown drain. The semantic C emits
+411 words / frame 0x68; 55 derived guards recover temporary roles, crossing
+branches and one store/call delay-slot schedule with its original NOP.
+All ten final tests pass in 217.608s. The normal rebuild equals the
+complete first 1,301-byte ELF prediction, including 111 explicitly accounted
+metadata bytes and zero exclusions. Both recovered return interfaces and
+all 15 neighboring bodies/bindings stay binary unchanged; preserve 101
+other inputs, guard history and protected 189,088 bytes / 720 owners.
+Fresh Game **2,927/4,828 (60.63%)**, total **3,600/5,501 (65.44%)**,
+different **1,901**, zero drift. Tools 5f98c97 banks first; both copies'
+syntax/padder checks pass, preserving all 847 initial mirror hashes.
+README aggregate rows only. Next **func_150195A0**, still a 12-byte stub
+versus 215 original words; other render providers remain unfinished.
+No full gameplay/hardware claim, push or host/frozen Release action.
 
 Frame coordinator installed, **185 words directly byte-exact; no new guards**:
 [Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md).

@@ -1,7 +1,11 @@
 #include <ultra64.h>
 
 #include "functions.h"
+/* This owner uses the display-list label as an SDK pointer, not an integer. */
+#define D_800BE9D0 FrameDriverLegacyDisplayListAddress
 #include "variables.h"
+#undef D_800BE9D0
+extern Gfx *D_800BE9D0;
 
 /* Frame-coordinator interfaces recovered from their integer call sites. */
 extern u8 D_800DCD27;
@@ -45,8 +49,45 @@ void func_1517F7B4(void);
 s32 func_15036148(void);
 void func_1515D6C8(void);
 
+/* Scheduler-message and display-list interfaces used by the frame driver. */
+extern Gfx *D_800BE9C8, *D_800BE9CC;
+extern void *D_800BEB9C;
+extern u8 D_800C1060[];
+extern Mtx D_80089470;
+extern LookAt D_800D9B90[];
+extern u8 D_800BE630[], D_800BEBA0, D_800BEAC2;
+extern s32 D_800BEBA4;
+s32 func_1517E1AC(void);
+void func_151412BC(void);
+s32 func_151E51EC(void);
+void func_1501A39C(void);
+void func_1510B3B0(void);
+void func_1510B51C(void);
+void func_1501905C(void);
+void func_1515D69C(void);
+s32 func_15167310(void);
+void func_15018F80(s16);
+Gfx *func_15019464(Gfx *, s16);
+void func_15019414(void);
+s32 func_15019BB8(Gfx *, s32);
+s32 func_15019E60(Gfx *);
+s32 func_151E84B0(s32);
+s32 func_15043384(s32);
+void func_150347E8(void);
+void func_1502E474(void);
+s32 func_15189118(s32);
+s32 func_15084A18(void);
+void func_15125628(void);
+void func_1510D404(void);
+s32 func_15114A1C(void);
+s32 func_1517CFC4(void);
+s32 func_1501C880(s32, s32);
+s32 func_151F2CDC(void);
+void func_151F2BE8(void);
+void func_151F2C4C(void);
+
 /* Generated placeholder declarations. */
-s32 func_1501878C();
+s32 func_1501878C(void);
 s32 func_15019130(void);
 s32 func_150195A0();
 s32 func_150198FC();
@@ -101,10 +142,137 @@ void func_150186D0(void) {
     while (func_151DCFD8(1) != 0) {};
 }
 
-// something big and interesting
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_1501878C.s. */
-s32 func_1501878C() {
-    return 0;
+/* Consume one scheduler message, submit its frame passes, or drain shutdown. */
+s32 func_1501878C(void) {
+    OSMesg message = NULL;
+    s16 view;
+
+    osRecvMesg(&D_800BEA10, &message, OS_MESG_BLOCK);
+    D_8002AC60 = 0;
+    D_8002AC64 = 800;
+    switch (*(s16 *)message) {
+        case 2:
+            func_1517E1AC();
+            if (D_800DC9F0 != 0) {
+                func_151412BC();
+            }
+            (*(s16 *)&D_800BEAA8)--;
+            if (D_800BE615 != 0 && *(s16 *)&D_800BEAA8 == 0) {
+                func_10004074(D_800BE9C8);
+                func_10004074(D_800BE9CC);
+                D_800BE9C8 = NULL;
+                return 0;
+            }
+            break;
+        case 1:
+            if (D_800BE615 != 0) {
+                break;
+            }
+            func_151E51EC();
+            if (D_800BE615 != 0) {
+                break;
+            }
+            if (D_800BE614 != 0) {
+                func_1501A39C();
+                D_800BE614 = 0;
+            }
+            if (D_800D9AF0 != 0) {
+                func_1510B3B0();
+            }
+            if (D_800D9B18 != 0) {
+                func_1510B51C();
+            }
+            func_1501905C();
+            if (D_800BEAC0 == 0 && func_15019130() == 0) {
+                break;
+            }
+            D_800BE9D0 = (Gfx *)func_1501A680((s32)D_800BE9D0);
+            func_1515D69C();
+            func_15167310();
+            for (view = 0; view <= D_80082FA0; view++) {
+                D_80082FA4 = D_800BE630[view];
+                func_15018F80((s16)D_80082FA4);
+                D_800BE9D0 = func_15019464(D_800BE9D0, (s16)D_80082FA4);
+            }
+            if (D_800BEBA0 == 0) {
+                gSPLoadUcodeEx((D_800BE9D0)++, D_800C1060, D_800BEB9C, 0x800);
+                gSPClearGeometryMode((D_800BE9D0)++, G_ZBUFFER | G_SHADE | G_CULL_BOTH |
+                    G_FOG | G_TEXTURE_GEN | G_TEXTURE_GEN_LINEAR | G_LOD | G_SHADING_SMOOTH);
+                gSPSetGeometryMode((D_800BE9D0)++, G_ZBUFFER | G_SHADE | G_LIGHTING | G_SHADING_SMOOTH);
+                gSPMatrix((D_800BE9D0)++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+                gSPLookAtX((D_800BE9D0)++, D_800D9B90 + D_800BE9C0);
+                gSPLight((D_800BE9D0)++, (u8 *)(D_800D9B90 + D_800BE9C0) + 16, 1);
+            }
+            for (view = 0; view <= D_80082FA0; view++) {
+                Gfx *savedCommands;
+                savedCommands = D_800BE9D0;
+                D_80082FA4 = D_800BE630[view];
+                D_800BE9D0 = (Gfx *)func_1515D6D0((s32)D_800BE9D0, D_80082FA4);
+                D_800BE9D0 = (Gfx *)func_150195A0((s32)D_800BE9D0, (s16)D_80082FA4);
+                if (((D_800BE9D0 - ((Gfx **)&D_800BE9C8)[D_800BE9C0]) > D_800BEBA4) ? 1 : 0) {
+                    D_800BE9D0 = savedCommands;
+                }
+            }
+            D_80082FA4 = 0;
+            func_15019414();
+            D_800BE9D0 = (Gfx *)func_150198FC((s32)D_800BE9D0);
+            for (view = 0; view <= D_80082FA0; view++) {
+                D_80082FA4 = D_800BE630[view];
+                D_800BE9D0 = (Gfx *)func_1515D6D0((s32)D_800BE9D0, D_80082FA4);
+                D_800BE9D0 = (Gfx *)func_15019CC8((s32)D_800BE9D0, D_80082FA4);
+                if (D_800BEAC0 == 0 && D_80082FA0 > 0) {
+                    D_800BE9D0 = (Gfx *)func_15019BB8(D_800BE9D0, D_80082FA4);
+                }
+            }
+            D_800BE9D0 = (Gfx *)func_15019E60(D_800BE9D0);
+            if (D_800BEAC0 == 0 && D_80082FA0 == 0) {
+                for (view = 0; view <= D_80082FA0; view++) {
+                    D_80082FA4 = D_800BE630[view];
+                    D_800BE9D0 = (Gfx *)func_15019BB8(D_800BE9D0, D_80082FA4);
+                }
+            }
+            D_800BE9D0 = (Gfx *)func_151E84B0((s32)D_800BE9D0);
+            D_800BE9D0 = (Gfx *)func_15043384((s32)D_800BE9D0);
+            func_150347E8();
+            func_1502E474();
+            func_15189118(0);
+            func_15084A18();
+            func_15125628();
+            gDPFullSync((D_800BE9D0)++);
+            gSPEndDisplayList((D_800BE9D0)++);
+            func_10004674();
+            func_1510D404();
+            func_15114A1C();
+            func_1517CFC4();
+            func_1501C880(0, 1);
+            D_800BE9B4 = 0;
+            if (D_800BEAC0 != 0) {
+                D_800BEAC2 = 2;
+            } else if (D_800BEAC2 > 0) {
+                D_800BEAC2--;
+            }
+            if (D_800BEAC1 != D_800BEAC0) {
+                D_800BEAC0 = D_800BEAC1;
+                if (D_800BEAC0 != 0) {
+                    func_1000E2F4(1);
+                    func_10011E94(1);
+                    if (func_151F2CDC() != 0) {
+                        func_151F2BE8();
+                    }
+                } else {
+                    func_1000E2F4(0);
+                    func_10011E94(0);
+                    if (func_151F2CDC() != 0) {
+                        func_151F2C4C();
+                    }
+                }
+            }
+            break;
+        case 4:
+            while (func_151DCFD8(1) != 0) {}
+            for (;;) {}
+    }
+    return 1;
 }
 
 void func_15018DFC(void) {
@@ -155,7 +323,7 @@ void func_15018F80(s16 arg0) {
 }
 
 void func_1501905C(void) {
-    D_800BE9D0 = D_800BE9D8[D_800BE9C0];
+    D_800BE9D0 = (Gfx *)D_800BE9D8[D_800BE9C0];
     *D_800BE728 = func_1501BBB8();
     func_15019F20();
     if ((D_800BEAC1 != 0) && (D_800BEAC0 == 0)) {
@@ -296,7 +464,7 @@ s32 func_150198FC() {
 }
 
 // Matched with guarded frame-size and viewport-address register normalization.
-void func_15019BB8(Gfx *arg0, s32 arg1) {
+s32 func_15019BB8(Gfx *arg0, s32 arg1) {
     s32 temp_v0;
     s16 sp2A;
 
@@ -310,7 +478,7 @@ void func_15019BB8(Gfx *arg0, s32 arg1) {
         temp_v0 = func_1507DB6C(temp_v0, arg1);
     }
     temp_v0 = func_151674F8((void *)temp_v0, 4, sp2A, 0);
-    func_151674F8((void *)temp_v0, 4, sp2A, 1);
+    return (s32)func_151674F8((void *)temp_v0, 4, sp2A, 1);
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019CC8.s. */
@@ -318,14 +486,14 @@ s32 func_15019CC8() {
     return 0;
 }
 
-void func_15019E60(Gfx *arg0) {
+s32 func_15019E60(Gfx *arg0) {
     if (D_80082FA0 != 0) {
         D_80082FA4 = D_80082FA0 + 1;
         gSPViewport(arg0++, (D_80082FA4 * 0x180) + D_800BE628 + 64);
     } else {
         gSPViewport(arg0++, D_800BE628 + 64);
     }
-    func_15043384(func_151E8620(func_1501A490(arg0, 0xFF, 0, 0, 0, 0)));
+    return func_15043384(func_151E8620(func_1501A490(arg0, 0xFF, 0, 0, 0, 0)));
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019F20.s. */

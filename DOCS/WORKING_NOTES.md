@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
+Restore func_1501878C's 412-word scheduler/render driver with 55 derived
+guards, original frame 0x68 and two binary-unchanged return-interface fixes.
+Ten final tests pass in 217.608s; the normal rebuild equals the
+complete 1,301-byte prediction with closed 111-byte metadata accounting.
+Fresh Game 2,927/4,828, overall 3,600/5,501, different 1,901, zero drift.
+Tools 5f98c97 banks first; preserve 847 mirror hashes / 853 paths.
+README aggregate rows only; next func_150195A0 remains stubbed.
+
+2026-10-16:
 [Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
 Restore func_15019130 as direct 185-word C, frame 0x28, no new guards.
 Ten final tests pass in 179.908s and the normal build equals the

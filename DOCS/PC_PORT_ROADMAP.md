@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Scheduler Frame Driver Guarded Match - 2026-10-16
+
+[Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
+
+- [x] Restore func_1501878C's complete scheduler/display-list semantics, original frame 0x68 and message/cursor homes. Correct the two used return interfaces without changing neighboring machine code.
+- [x] Match all 412 words from the 411-word semantic body with 55 derived guards: 36 graphics-role words, nine state-role words, eight crossing branches and two store/call words, including one original delay NOP.
+- [x] Pass ten final tests in 217.608s: 1,624 three-way cases plus 256 disabled-byte cases, 654 fault prefixes, signed s16 wrap cuts, actual 185/40/46/78-word helpers, native32 O2/O0/UBSan with 293 cases each and seven effective controls.
+- [x] Reproduce the complete first 1,301-byte ELF prediction, with closed 111-byte metadata accounting and zero exclusions. Preserve 15 neighbors, 101 other inputs, prior guard bytes and protected 189,088 bytes / 720 owners.
+- [x] Bank tools 5f98c97 before the consumer pin, update README aggregate counts only, pass both copies' syntax/padder checks and tools-check, and preserve mirror HEAD ddbdd16 plus 847 initial hashes / 853 paths.
+- [ ] Recover **func_150195A0** next: 215 original words, currently a 12-byte C stub. Keep func_150198FC, func_15019CC8, func_15019F20, the rectangle fit and wider Game/additional-source queue open.
+
 ## Frame Coordinator Direct Match - 2026-10-16
 
 [Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
@@ -8,7 +19,8 @@
 - [x] Pass ten final tests in 179.908s: complete-state guest cases, all 1,058 root-access fault prefixes, byte wrapping, actual 40/46/78-word helpers, original upstream cut, native32 O2/O0/UBSan and seven effective controls.
 - [x] Match the complete first 516-byte ELF prediction with 16 explicitly modeled symbol/string serialization bytes and zero exclusions. Preserve 15 neighbors, 101 other inputs, guards and protected 189,088 bytes / 720 owners.
 - [x] Bank tools c820bde before the consumer pin, refresh aggregate README counts, and pass both tools copies' syntax/padder checks and tools-check. Preserve all 841 initial mirror hashes / 847 paths at HEAD ddbdd16.
-- [ ] Recover upstream func_1501878C independently: 412 original words, still a 12-byte installed stub. Keep func_15094AB8, rectangle fitting and the wider Game queue open; no full gameplay claim.
+- [x] Recover upstream func_1501878C independently: all 412 words now guarded-exact in [Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md). Remaining provider stubs and full gameplay are separate.
+- [ ] Keep func_15094AB8, rectangle fitting and the wider Game queue open; no full gameplay claim.
 
 ## View Matrix Preparation Direct Match - 2026-10-16
 
