@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 View Render Provider Guarded Match
+
+[Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
+Restore func_150195A0's gated scene/overlay chain and recover the unchanged
+18E88 cursor-return interface. Match all 215 words / frame 0x30 with five
+viewport temporary guards; no instruction insertion or omission. Ten final
+tests pass in 66.748s, and the normal build equals the complete 680-byte
+slot/extent prediction with no metadata adjustment or exclusions. Preserve
+15 neighbors, 102 other inputs, guard history and protected 189,088 bytes /
+720 owners. Fresh Game 2,928/4,828 (60.65%), total 3,601/5,501 (65.46%),
+different 1,900, zero drift. Tools dc4765f banks first; preserve all 853
+original mirror hashes / 859 paths. README aggregate rows only. Next
+func_150198FC remains stubbed; no full gameplay, push or host/Release claim.
+
 ## 2026-10-16 Scheduler Frame Driver Guarded Match
 
 [Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):

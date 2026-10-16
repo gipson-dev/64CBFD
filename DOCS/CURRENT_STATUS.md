@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5f98c97; tools are committed before the consumer pin.
+  checkpoint pins tools dc4765f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+View render provider installed, **215 words guarded byte-exact**:
+[Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md).
+Restore func_150195A0's gated, ordered scene/overlay passes, original frame
+0x30 and saved state-pointer lifetime. Five viewport temporary guards close
+the raw C's five differences; the caller and corrected 18E88 return interface
+remain binary unchanged. All ten final tests pass in **66.748s**. The normal
+build equals the entire **680-byte** slot/extent prediction, with no metadata
+adjustment or exclusion; preserve 15 neighbors, 102 other inputs and protected
+189,088 bytes / 720 owners. Fresh Game **2,928/4,828 (60.65%)**, total
+**3,601/5,501 (65.46%)**, different **1,900**, zero drift; conversion unchanged.
+Tools **dc4765f** banks first; both copies' syntax/padder checks and tools-check
+pass, preserving all 853 original mirror hashes. README aggregate rows only.
+Next **func_150198FC**, 175 words / frame 0x28, still a 12-byte stub.
+Remaining providers, full gameplay and the wider Game queue remain open.
+No push or host/frozen Release action.
 
 Scheduler frame driver installed, **412 words guarded byte-exact**:
 [Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md).

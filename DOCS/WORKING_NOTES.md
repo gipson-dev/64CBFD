@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
+Restore func_150195A0's 215-word scene/overlay chain with five viewport-role
+guards, frame 0x30 and a binary-unchanged neighbor return correction. Ten
+final tests pass in 66.748s; the normal build equals the entire 680-byte
+slot/extent prediction with no metadata exclusions. Fresh Game 2,928/4,828,
+total 3,601/5,501, different 1,900, zero drift. Tools dc4765f banks first;
+preserve 853 mirror hashes / 859 paths. README aggregate rows only; next
+func_150198FC remains a stub, with wider Game and gameplay work open.
+
+2026-10-16:
 [Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
 Restore func_1501878C's 412-word scheduler/render driver with 55 derived
 guards, original frame 0x68 and two binary-unchanged return-interface fixes.

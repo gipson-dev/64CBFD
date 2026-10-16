@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View render provider guarded match](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
+  Restore all 215 words with five viewport temporary guards and a binary-unchanged
+  return-interface correction. The rebuild equals the entire 680-byte ELF prediction;
+  continue the remaining frame-driver providers without a full gameplay claim.
 - [Scheduler frame driver guarded match](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
   Restore the complete 412-word routine with 55 derived guards, pass ten
   final checks, and reproduce the full 1,301-byte ELF prediction.

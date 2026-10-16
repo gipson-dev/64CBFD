@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## View Render Provider Guarded Match - 2026-10-16
+
+[Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md):
+
+- [x] Restore func_150195A0's full ordered render chain, live gates, saved state pointer, SDK commands and final cursor; recover the used 18E88 return interface without changing neighboring code.
+- [x] Match all 215 words / frame 0x30 with five relocation-aware viewport temporary guards. No insertion, omission, frame/home rewrite or compiler-profile change.
+- [x] Pass ten final tests in 66.748s: 747 three-way cases, 119 fault prefixes, 400 native32 O2/O0/UBSan cases each, seven effective controls, three independent rebases and 128 actual-neighbor ABI cases.
+- [x] Reproduce the complete first 680-byte ELF prediction, no metadata adjustment/exclusion. Preserve 15 neighbors, 102 other inputs, prior guard bytes and protected 189,088 bytes / 720 owners. Fresh Game 2,928/4,828, total 3,601/5,501, different 1,900, zero drift.
+- [x] Bank tools dc4765f before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 853 original hashes / 859 final dirty paths. README aggregate rows only.
+- [ ] Recover **func_150198FC** next: 175 words / frame 0x28, still a 12-byte stub. Keep func_15019CC8, func_15019F20, rectangle fitting, full gameplay and the wider Game/additional-source queue open.
+
 ## Scheduler Frame Driver Guarded Match - 2026-10-16
 
 [Note 1445](WORKING_NOTES/1445-frame-scheduler-driver-guarded-match-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Pass ten final tests in 217.608s: 1,624 three-way cases plus 256 disabled-byte cases, 654 fault prefixes, signed s16 wrap cuts, actual 185/40/46/78-word helpers, native32 O2/O0/UBSan with 293 cases each and seven effective controls.
 - [x] Reproduce the complete first 1,301-byte ELF prediction, with closed 111-byte metadata accounting and zero exclusions. Preserve 15 neighbors, 101 other inputs, prior guard bytes and protected 189,088 bytes / 720 owners.
 - [x] Bank tools 5f98c97 before the consumer pin, update README aggregate counts only, pass both copies' syntax/padder checks and tools-check, and preserve mirror HEAD ddbdd16 plus 847 initial hashes / 853 paths.
-- [ ] Recover **func_150195A0** next: 215 original words, currently a 12-byte C stub. Keep func_150198FC, func_15019CC8, func_15019F20, the rectangle fit and wider Game/additional-source queue open.
+- [x] Recover **func_150195A0**: all 215 words now match with five viewport-role guards in [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md). This closes its stub, not the remaining provider queue or full gameplay.
 
 ## Frame Coordinator Direct Match - 2026-10-16
 

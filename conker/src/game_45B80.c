@@ -89,7 +89,7 @@ void func_151F2C4C(void);
 /* Generated placeholder declarations. */
 s32 func_1501878C(void);
 s32 func_15019130(void);
-s32 func_150195A0();
+s32 func_150195A0(Gfx *, s16);
 s32 func_150198FC();
 s32 func_15019CC8();
 s32 func_15019F20();
@@ -208,7 +208,7 @@ s32 func_1501878C(void) {
                 savedCommands = D_800BE9D0;
                 D_80082FA4 = D_800BE630[view];
                 D_800BE9D0 = (Gfx *)func_1515D6D0((s32)D_800BE9D0, D_80082FA4);
-                D_800BE9D0 = (Gfx *)func_150195A0((s32)D_800BE9D0, (s16)D_80082FA4);
+                D_800BE9D0 = (Gfx *)func_150195A0(D_800BE9D0, (s16)D_80082FA4);
                 if (((D_800BE9D0 - ((Gfx **)&D_800BE9C8)[D_800BE9C0]) > D_800BEBA4) ? 1 : 0) {
                     D_800BE9D0 = savedCommands;
                 }
@@ -291,13 +291,13 @@ void func_15018DFC(void) {
     func_1507C8FC();
 }
 
-void func_15018E88(void *arg0, s16 arg1) {
+s32 func_15018E88(void *arg0, s16 arg1) {
     if (D_800BE616 == 0) {
         func_1517D7B0(&arg0, 1);
     }
     arg0 = func_151674F8(arg0, 0, arg1, 0);
     arg0 = func_151674F8(arg0, 0, arg1, 1);
-    func_15174AA4(arg0, D_800BE9F0, arg1);
+    return func_15174AA4(arg0, D_800BE9F0, arg1);
 }
 
 void *func_15018F08(void *arg0, s16 arg1) {
@@ -453,9 +453,51 @@ Gfx *func_15019464(Gfx *commands, s16 view) {
     return commands;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150195A0.s. */
-s32 func_150195A0() {
-    return 0;
+/* Append the selected view's ordered scene and overlay render passes. */
+s32 func_150195A0(Gfx *commands, s16 view) {
+    struct108 *state = &D_800DBFF0[view];
+
+    if (D_800BEAC0 != 0) {
+        return (s32)commands;
+    }
+    if (D_80084480 != 0) {
+        return (s32)commands;
+    }
+    if (func_1517EFAC(view) != 0 || (D_800D18A0 & (1U << view)) != 0) {
+        return (s32)commands;
+    }
+    if (D_80082FA0 > 0) {
+        commands = (Gfx *)func_1510B7B4((s32)commands, view);
+        commands = (Gfx *)func_1515D6D0((s32)commands, view);
+        func_1510B958(view);
+        gSPViewport(commands++, (view * 0x180) + D_800BE628 + (D_800BE9C0 * 0x10) + 0x40);
+        commands = (Gfx *)func_1501A490((s32)commands, view, 0, 0, 0, 0);
+    }
+    commands = (Gfx *)func_151135C4((s32)commands, 1, view);
+    if (D_800BE575 == 2) {
+        commands = (Gfx *)func_151D6778((s32)commands);
+    }
+    commands = (Gfx *)func_151674F8(commands, 6, view, 0);
+    commands = (Gfx *)func_151674F8(commands, 6, view, 1);
+    commands = (Gfx *)func_15186794((s32)commands, view);
+    commands = (Gfx *)func_1501A490((s32)commands, view, 0, 0, 0, 0);
+    commands = func_1502BAD0(commands, 1, view);
+    commands = (Gfx *)func_15035FE8((s32)commands, view);
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    if (state->unk5F0 & 1) {
+        commands = (Gfx *)func_15018E88(commands, view);
+        commands = (Gfx *)func_151135C4((s32)commands, 0, view);
+        commands = (Gfx *)func_15018F08(commands, view);
+    } else {
+        commands = (Gfx *)func_15018F08(commands, view);
+        commands = (Gfx *)func_151135C4((s32)commands, 0, view);
+        commands = (Gfx *)func_15018E88(commands, view);
+    }
+    commands = (Gfx *)func_15188D00((s32)commands, 0, view);
+    commands = (Gfx *)func_15188D00((s32)commands, 1, view);
+    commands = func_1502BAD0(commands, 2, view);
+    commands = (Gfx *)func_151674F8(commands, 2, view, 0);
+    return (s32)func_151674F8(commands, 2, view, 1);
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_150198FC.s. */
