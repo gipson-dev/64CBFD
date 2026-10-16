@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Rectangle Wrapper Proven Guarded Byte Match - 2026-10-15
+
+[Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
+
+- [x] Install func_151717FC's complete semantic rectangle C, all 61 retail words / frame 0x80. Raw C remains 63; normalize only retained operation scheduling/register fields and two nonescaping homes, with 63 closed expected-word/binding guards, no profile/header change.
+- [x] Prove the complete straight-line ten-word/twelve-float call graph and ABI under an explicit C frame contract. Reject five dependency mutants and accept a legal alternate schedule; do not claim raw private/fault or FP-environment equivalence.
+- [x] Pass 14 installed checks: 2,000 literal private pairs, 320 fired fault prefixes, 24 guest aliases, native32 O2/O0 with 262,144 cases each, effective controls, three independent links, 144 staged original-emitter/current-factory chain pairs and 801 archive hashes.
+- [x] Close the whole rebuilt ELF to its pre-install prediction: exactly 190 changed target-slot/extent bytes, every other ELF byte and 60 inputs fixed, protected 189,088 bytes / 720 owners exact. Preserve all old guard rows and conversion/profile/header inputs.
+- [x] Refresh official Game 2,907/4,828 (60.21%), total 3,580/5,501 (65.08%), different 1,921, zero drift. Update README aggregate rows only; bank tools 94deb33 first and preserve 717 initial older-mirror fingerprints / 722 final paths. Shared checks pass in both copies; no push or host/Release action.
+- [ ] Finish func_151700D8's current-edge/preset lifetimes and 137-word gap using the new successor fingerprints. Its production stub remains unchanged; do not infer working gameplay from the staged original-emitter chain.
+- [ ] Continue the complete additional-source/Game, caller and inherited-stack queues. This one guarded match does not complete the broader objective.
+
 ## Quad Emission Loop Audit And Wrapper Recovery - 2026-10-15
 
 [Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
@@ -9,7 +21,8 @@
 - [x] Pass ten focused checks in 32.886s: 2,000 guest pairs, eight compiled guest negatives, native32 O2/O0 with 262,144 cases each and three negatives, 164 fired prefixes, independent links, 801 archive fingerprints and 63 immutable inputs/capture controls.
 - [x] Reject both unqualified adoptions: emitter remains 266/0x190/137 differences; wrapper is 63 words in a 61-word slot and the actual padder refuses it. Keep production, guards/profiles, README aggregates and official totals unchanged.
 - [x] Bank tools c5817a8 first, preserve all 714 initial older-mirror fingerprints / 717 final paths and pass both copies' syntax/shared padder checks plus shared tools checks. One packet-only, tool-disabled advisory analysis; no push or host/Release operation.
-- [ ] Resolve emitter current-edge def/use and caller-barrier provenance and the wrapper's extra actor home/float allocation. Complete literal private/fault, padding/rebase and predicted-image closure before installation.
+- [x] Finish the wrapper in [Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md): all 61 guarded words exact, complete qualification and whole predicted-image closure. This is not a raw compiler match.
+- [ ] Resolve emitter current-edge def/use and caller-barrier provenance, retaining its own private/fault and complete-image acceptance gates.
 - [ ] Continue the whole Game/additional-source, caller and inherited-stack queues. This is recovery/provenance progress, not a new production byte match or completion.
 
 ## Quad Edge Emitter Named Frame And Home Recovery - 2026-10-15

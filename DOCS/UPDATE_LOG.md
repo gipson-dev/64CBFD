@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Quad Rectangle Wrapper Guarded Byte Match
+
+[Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
+Restore func_151717FC from semantic rectangle C. The guarded build matches
+all 61 retail words / frame 0x80; raw C remains 63. Prove the framed call/value
+graph, pass 14 installed checks and close the entire predicted image to 190
+target-slot/extent changes only. Game 2,907/4,828, total 3,580/5,501,
+different 1,921, zero drift; README changes aggregate rows only. Bank tools
+94deb33 first; next the still-unmatched emitter and all broader Game queues.
+
 ## 2026-10-15 Quad Emission Loop Audit And Wrapper Recovery
 
 [Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):

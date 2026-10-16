@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad rectangle wrapper proven guarded byte match](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
+  Install the complete rectangle C with all 61 guarded words exact; qualify
+  its framed value proof, literal private/fault behavior and whole-image closure.
 - [Quad emission loop provenance and wrapper recovery](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
   Qualify the complete rectangle wrapper and preset ABI, reject a false
   edge-home substitute and keep both nonmatching production stubs unchanged.

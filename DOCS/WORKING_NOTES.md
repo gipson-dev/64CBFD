@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
+Install func_151717FC's complete rectangle C, all 61 retail words / frame 0x80
+through proven register/schedule normalization, not a raw compiler match.
+Pass 14 installed checks and exact whole-image prediction: 190 changed bytes
+in target slot/extent only, all other bytes and 60 inputs fixed. Game 2,907/
+4,828, total 3,580/5,501, different 1,921, zero drift. Bank tools 94deb33 first;
+return to the emitter's remaining 137 differences and keep all broader queues.
+
+2026-10-15:
 [Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
 Observe the compiler-created next-edge 0x104 slot and reject a live 0x18C
 substitute through a ten-versus-five packet poison. Recover 151717FC's full

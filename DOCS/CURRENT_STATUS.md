@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c5817a8; tools are committed before the consumer pin.
+  checkpoint pins tools 94deb33; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,22 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Quad emission loop audit and wrapper recovery, not installed:
-[Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md).
-func_151700D8 retains 266 words / frame 0x190 / 137 differences. Its full-word
-preset formal plus per-edge byte use preserves complete-owner code and
-matches the caller ABI. Direct advancement explains next-edge home 0x104;
-an effective 0x18C poison rejects an addressable control substitute.
-Recover func_151717FC's complete thirteen-input / ten-word / twelve-float
-wrapper, but reject 63 words in its 61-word slot. Ten checks pass in 32.886s,
-including 2,000 public pairs, native32 O2/O0 and rebases; private/fault
-differences remain explicit. All 63 source/reference/build inputs stay fixed.
-Fresh official figures remain Game 2,906/4,828 (60.19%), total 3,579/5,501
-(65.06%), different 1,922, zero drift; README and conversion rows unchanged.
-Tools c5817a8 is banked first; preserve 714 initial older-mirror fingerprints
-/ 717 final paths. Continue emitter current-edge lifetimes and wrapper
-compiler allocation before adoption, plus all additional-source and
-inherited-stack queues. No host/Release action or push.
+Quad rectangle wrapper installed with proven guarded normalization:
+[Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md).
+func_151717FC now matches all 61 retail words / frame 0x80 in the rebuilt
+ELF. Raw C remains 63 words; 63 closed expected-word guards normalize its
+register/schedule layout and omit two nonescaping home operations. The
+framed C value proof is separate from literal normalized private/fault checks;
+no raw FP-environment equivalence claim. All 14 installed checks pass in
+101.707s, including the entire predicted ELF: 190 target-slot/extent changes
+only, all other bytes and 60 of 63 inputs fixed, protected layout exact.
+Fresh Game 2,907/4,828 (60.21%), total 3,580/5,501 (65.08%), different 1,921,
+zero drift; conversions unchanged and README updates aggregate rows only.
+Tools 94deb33 is banked first; preserve 717 initial older-mirror fingerprints
+/ 722 final paths. Return to func_151700D8's 266/0x190/137 gap, folding the
+new successor fingerprints into its experiment. Its stub and the wider
+additional-source/inherited-stack queues remain open. No host/Release action
+or push; the staged original-emitter chain is not current production C.
 
 Random direction writer installed directly from C:
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md).

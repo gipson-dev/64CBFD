@@ -15350,3 +15350,66 @@ generated_19A8B0,func_1516FBCC,0x170,0x00005812,0x0000C812,-,-,Normalize indepen
 generated_19A8B0,func_1516FBCC,0x174,0x000B6203,0x00194203,-,-,Normalize independent color loads and closed multiply/LO lifetimes,,,false
 generated_19A8B0,func_1516FBCC,0x178,0x01856821,0x01034821,-,-,Normalize independent color loads and closed multiply/LO lifetimes,,,false
 generated_19A8B0,func_1516FBCC,0x17C,0xA08D001E,0xA089001E,-,-,Normalize independent color loads and closed multiply/LO lifetimes,,,false
+generated_19E040,func_151717FC,0x0,0x27BDFF80,0x27BDFF80,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0x4,0xAFBF002C,0xAFBF002C,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0x8,0xAFA40080,0xAFA40080,-,-,Omit nonescaping incoming actor spill/reload,,,true
+generated_19E040,func_151717FC,0xC,0xAFA50084,0xAFA50084,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0x10,0xAFA60088,0xAFA60088,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0x14,0xAFA7008C,0xAFA7008C,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0x18,0x8FAE0080,0x8FAE0080,-,-,Omit nonescaping incoming actor spill/reload,,,true
+generated_19E040,func_151717FC,0x1C,0xC7B2008C,0x848E0010,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x20,0xC7B00094,0x848F0012,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x24,0x85CF0010,0xC7A8008C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x28,0x85D90014,0x448E2000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x2C,0x85D80012,0x448F5000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x30,0x448F7000,0x84980014,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x34,0x44996000,0x468021A0,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x38,0x44985000,0x8FB90098,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x3C,0x468073A0,0x8FA800A0,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x40,0xC7A80090,0x8FA900A4,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x44,0xC7A60088,0x93AA00AF,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x48,0xC7A40084,0x46805120,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x4C,0x8FA80098,0x8FAB00B0,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x50,0x46806320,0x27A40050,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x54,0x8FA900A0,0x8FA7009C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x58,0x8FAA00A4,0xAFB90014,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x5C,0xC7A200A8,0x46083380,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x60,0x93AB00AF,0x44984000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x64,0x468052A0,0xC7A60090,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x68,0x8FAC00B0,0xAFA80018,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x6C,0xE7A20010,0x468042A0,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x70,0x27A40050,0xC7A80088,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x74,0x8FA7009C,0x44057000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x78,0x46127480,0xAFA9001C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x7C,0xAFA80014,0xAFAA0020,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x80,0xAFA90018,0x46062300,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x84,0x46106400,0xC7A40094,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x88,0x44059000,0xC7A60084,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x8C,0xAFAA001C,0xAFAB0024,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x90,0x46085200,0x46045400,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x94,0x44068000,0xE7AC0054,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x98,0xAFAB0020,0xE7AC0060,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0x9C,0x46068281,0x460E3480,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xA0,0xE7A80054,0x44068000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xA4,0xE7A80060,0xE7AC006C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xA8,0x46103400,0x46088281,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xAC,0xE7AA003C,0xE7B20050,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xB0,0xC7AA003C,0xE7B20074,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xB4,0x46122180,0x46067081,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xB8,0xE7A8006C,0xE7AA003C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xBC,0xE7A80078,0xC7A4003C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xC0,0x46049101,0x46104000,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xC4,0xE7A60050,0xC7A600A8,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xC8,0xE7A60074,0xE7A2005C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xCC,0xE7B00058,0xE7A20068,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xD0,0xE7A4005C,0xE7A00058,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xD4,0xE7A40068,0xE7A00064,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xD8,0xE7B00064,0xE7AC0078,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xDC,0xE7AA0070,0xE7A40070,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xE0,0xE7AA007C,0xE7A4007C,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xE4,0x0C000000,0x0C000000,R_MIPS_26:func_151700D8,R_MIPS_26:func_151700D8,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xE8,0xAFAC0024,0xE7A60010,-,-,Normalize proven rectangle value graph and call/register schedule,,,false
+generated_19E040,func_151717FC,0xEC,0x8FBF002C,0x8FBF002C,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0xF0,0x27BD0080,0x27BD0080,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0xF4,0x03E00008,0x03E00008,-,-,Retain rectangle compiler fingerprint,,,false
+generated_19E040,func_151717FC,0xF8,0x00000000,0x00000000,-,-,Retain rectangle compiler fingerprint,,,false
