@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Table Debris Recovery Checkpoint
+
+[Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
+Recover func_15170F4C's typed table, late kind reread, packet lifetimes,
+float draws and byte actor flag. Seven tests pass, including 648 paired
+sequences, native32 and eleven effective negatives. Keep production and
+counts unchanged: 158 candidate words fit, but frame 0xF8 and packet
+SP+0x98 differ from retail 0xE8 / +0x84, with 121 real word differences.
+The sole caller func_1511C638 remains a placeholder; original ABI evidence
+is not current caller acceptance. Bank tools 57f58b3 first, preserve 763
+mirror hashes / 767 paths and resume this target's saved-lifetime gap.
+
 ## 2026-10-16 Six-Piece Debris Guarded Match
 
 [Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):

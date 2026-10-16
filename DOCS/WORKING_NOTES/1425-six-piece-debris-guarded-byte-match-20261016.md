@@ -15,7 +15,7 @@ zero-return placeholder for **func_15170B90** with semantic C and match all
 3. [x] Pass all 16 final target/install checks, including all 96 packet bytes, native32, fault prefixes, retained-pointer probes, rebases, callers and the actual consumer/allocator chain.
 4. [x] Install only this body and declarations, append 205 guards, rebuild and explicitly reject the first slot-only image prediction. Account for the additional 84 serialization bytes without exclusions, and reproduce the entire image with two independent full relinks.
 5. [x] Refresh official counts and aggregate README rows, preserve the independent tools mirror, and bank tools before consumer source/guards/pin/docs. No push.
-6. [ ] Recover next func_15170F4C: 158 words / 632 bytes, frame 0xE8, VA 0x15170F4C, ROM 0x19E3FC, ending at 0x151711C4 in the same owner. Audit its actor/byte-flags/word-context ABI and packet lifetimes before matching.
+6. [x] Audit and recover next func_15170F4C's actor/byte-flags/word-context ABI and packet lifetimes in [Note 1426](1426-table-debris-semantic-recovery-20261016.md). Retail is 158 words / frame 0xE8; the selected 158 / 0xF8 candidate still needs frame/saved-lifetime matching and remains uninstalled.
 7. [ ] Continue func_1516D400, inherited-stack func_1516FE1C and every broader Game/additional-source, unconverted-caller and raw compiler-matching queue.
 
 ## Recovered Contract

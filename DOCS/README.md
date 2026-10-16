@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Table debris semantic recovery](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
+  Qualify unsigned-halfword/float-table packets and two RNG draws with
+  seven focused tests; keep production fixed and explicitly reject the
+  remaining frame/saved-lifetime mismatch and missing current caller.
 - [Six-piece debris guarded byte match](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
   Install all 205 checked words with full 96-byte packet qualification;
   pass 16 tests and close the exact ELF audit, explicitly preserving the

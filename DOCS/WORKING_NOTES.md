@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
+Recover table debris func_15170F4C and pass seven semantic/scope checks,
+including 648 paired sequences, native32, eleven compiled negatives and
+48 actual consumer/allocator runs. Reject installation on frame/packet
+home/saved-lifetime differences: 158 words / 0xF8 / +0x98, 121 real
+differences versus retail 158 / 0xE8 / +0x84. Current caller func_1511C638
+is still a placeholder. Production and fresh official counts remain fixed.
+Bank tools 57f58b3 first, preserve 763 mirror hashes / 767 paths; resume
+the same target and leave all broader matching queues open.
+
+2026-10-16:
 [Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
 Install six-piece debris func_15170B90, all 205 checked words / frame
 0x120 with the full escaped 96-byte packet retained. All 16 final tests

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c0bbd87; tools are committed before the consumer pin.
+  checkpoint pins tools 57f58b3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Table debris pre-install recovery:
+[Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md).
+Recover func_15170F4C's unsigned-halfword/float-table contract, late kind
+reread, coefficient snapshots, two float draws and byte actor update.
+All seven tests pass in 42.123s: 648 paired whole sequences, native32
+O2/O0 with 1,024 cases each, eleven compiled negatives, original ABI
+captures, 48 actual consumer/allocator runs and 78 fixed input keys.
+Do not install or take matching credit: selected 158 words / frame 0xF8,
+packet SP+0x98 and 121 real differences versus retail 158 / 0xE8 / +0x84.
+All eight neighbors/pools and production C/guards/ELF remain fixed. The
+sole caller func_1511C638 is still a placeholder; its current call-site
+window is zero-filled. Official numbers below were freshly confirmed
+unchanged. Tools 57f58b3 banks first; preserve 763 mirror hashes / 767
+paths. Resume this target's frame/saved lifetimes, retaining all broader
+queues. No push or host/frozen Release action.
 
 Six-piece debris installed with checked guards:
 [Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md).
