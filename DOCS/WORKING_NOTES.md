@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
+Semantically recover func_15095D34's rectangle/tint commands and byte
+animation using real SDK macros. Keep 345 words / frame 0x88 / 331
+differences separate from retail matching; no new guards or matching credit.
+All 14 final tests pass, including native32 and real caller/provider/renderer
+connections. Reproduce the complete 1,035-byte first image prediction,
+preserving 18 neighbors, protected data, guards and 98 other inputs.
+Fresh totals unchanged: Game 2,922/4,828, total 3,595/5,501, different 1,906,
+zero drift. Bank tools 552f48e first; preserve 806 mirror hashes / 811 paths.
+Continue the same routine's missing instruction, roles and scheduling.
+
+2026-10-16:
 [Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
 Recover func_15095B08's 129 words / frame 0x18 with seven closed FPR guards,
 full-word visibility and seven draw-global writes. Preserve 18 neighbors;

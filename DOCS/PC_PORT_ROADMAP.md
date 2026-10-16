@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Scissored Rectangle Recovery - 2026-10-16
+
+[Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
+
+- [x] Replace func_15095D34's zero-return stub with semantic C for the five-input rectangle renderer, real SDK tint/scissor commands, unsigned descriptor dimensions, dual-purpose inset/T offset and byte animation. Name the recovered packet fields while preserving its 20-byte layout and both callers' instructions.
+- [x] Qualify 2,880 guest geometry cases in both stack phases, native32 O2/O0 with 1,048,576 animation cases each and UBSan, 672 original animation pairs, eight effective guest/native controls, 80 alias pairs, BREAK 6/7 classification, three rebase sets / 48 pairs and 32 real caller/visibility/renderer sequences. All 14 final tests pass in 148.459s; retain explicit hardware/private/gameplay limits.
+- [x] Reproduce the complete first ELF prediction after the normal guest build: 1,035 bytes = 1,017 code/extent + 18 explicit symbol/string swaps, no exclusions. Keep 18 neighbors, prior guards, 98 other inputs and protected 189,088 bytes / 720 owners fixed. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README unchanged.
+- [x] Bank tools 552f48e before consumer source/pin/docs; preserve all 806 original mirror hashes / 811 paths. Both copies pass syntax and eleven shared padder tests; tools-check passes. No push or host/frozen Release action.
+- [ ] Finish **the same func_15095D34**: current 345 words / frame 0x88 versus retail 346 words, 331 pointwise differences, no new guards. Recover the missing instruction and remaining register lifetimes/scheduling from a new immutable semantic baseline. Do not turn a padded semantic body or a bulk replacement manifest into matching credit.
+- [ ] Keep inherited-stack C deferrals, original caller backlog and broader Game/additional-source/raw-matching queues open; guest model agreement does not prove host renderer or natural gameplay acceptance.
+
 ## Packet Visibility Provider Match - 2026-10-16
 
 [Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
@@ -9,8 +20,8 @@
 - [x] Pass all 12 final tests in 117.051s: 1,296 guest cases in both stack phases, native32 O2/O0 with 1,296 cases each and UBSan, nine effective guest/native controls, 32 guest alias pairs, ten nonfinite cases, 90 fired fault pairs, three original rebase sets / 48 paired runs and 48 actual projection/depth/visibility connections. No full hardware-FCSR or natural gameplay claim.
 - [x] Reproduce the entire first ELF prediction after the normal guest rebuild: 551 bytes = 394 code/extent + 157 explicitly modeled symbol/string swaps, every other byte / 95 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README aggregate rows only.
 - [x] Bank tools 3a933e0 before consumer C/guards/pin/docs, preserve all 801 initial mirror hashes / 806 paths and pass both tools copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_15095D34 in generated_C1D70.c, VA 0x15095D34 / ROM 0xC31E4, 346 words / 1,384 bytes, leaf frame 0x88, ending at 0x1509629C. Audit all seven consumed globals, five-input cursor/packet ABI, clipping/texture commands and animated packet byte +0xC using the real SDK macros.
-- [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, original callers and all broader Game/additional-source/raw-matching work. The lower renderer remains a zero stub; model connections are not full host rendering or gameplay acceptance.
+- [x] Recover func_15095D34 semantically in Note 1435: VA 0x15095D34 / ROM 0xC31E4, original 346 words / 1,384 bytes, leaf frame 0x88, ending at 0x1509629C. Audit all seven consumed globals, five-input cursor/packet ABI, clipping/texture commands and animated packet byte +0xC using real SDK macros. Its 331-difference byte matching remains open above.
+- [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, original callers and all broader Game/additional-source/raw-matching work. The lower renderer is now semantic but unmatched; model connections are not full host rendering or gameplay acceptance.
 
 ## Visible-Depth Packet Match - 2026-10-16
 

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3a933e0; tools are committed before the consumer pin.
+  checkpoint pins tools 552f48e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet scissored rectangle semantically recovered, **not byte matched**:
+[Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md).
+Replace func_15095D34's zero stub with SDK rectangle/tint emission and byte
+animation state. The C body is 345 words / frame 0x88 versus retail 346,
+with 331 pointwise differences and no new guards. All 14 final tests pass
+in 148.459s. The installed ELF equals its complete 1,035-byte pre-install
+prediction; every other byte / 98 inputs, 18 neighbors, prior guards and
+protected data remain fixed. Fresh totals stay Game 2,922/4,828 (60.52%),
+total 3,595/5,501 (65.35%), different 1,906, zero drift; README unchanged.
+Tools 552f48e banks first; preserve 806 mirror hashes / 811 paths. Continue
+the **same function's** missing instruction, register lifetimes and scheduling
+under a new immutable semantic baseline. No full private/hardware/gameplay
+claim, push or host/frozen Release action.
 
 Packet visibility provider installed:
 [Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md).

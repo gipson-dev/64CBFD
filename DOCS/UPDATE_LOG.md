@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Packet Scissored Rectangle Recovery
+
+[Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
+Recover func_15095D34's SDK rectangle/tint output and packet-byte animation,
+345 words / frame 0x88, **331 differences, not byte exact**, no new guards.
+All 14 final tests pass; the complete installed ELF matches its first
+1,035-byte prediction, including 18 explicit metadata bytes, no exclusions.
+Preserve all 18 neighbors, prior guards, protected data and 98 other inputs.
+Fresh Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift;
+README figures unchanged. Tools 552f48e banks first; preserve 806 mirror
+hashes / 811 paths. Continue matching the same routine, not a new batch.
+
 ## 2026-10-16 Packet Visibility Provider Match
 
 [Note 1434](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):

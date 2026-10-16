@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet scissored rectangle semantic recovery](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
+  Replace the renderer's zero stub with SDK rectangle/tint and byte animation,
+  pass 14 checks, and keep its 331 retail differences explicit for the next stage.
 - [Packet visibility provider byte match](WORKING_NOTES/1434-packet-visibility-provider-byte-match-20261016.md):
   Recover all 129 words with seven closed FPR guards, qualify 12 final
   checks and connect the real projection/depth/visibility pipeline in the guest model.

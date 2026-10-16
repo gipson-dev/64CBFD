@@ -6,6 +6,8 @@ extern f32 D_8009DEC0;
 extern f32 D_800380A0, D_800380A4;
 extern f32 D_800D2C70, D_800D2C74, D_800D2C78, D_800D2C7C;
 extern f32 D_800D2C80, D_800D2C84, D_800D2C88;
+extern u8 D_800D2DA8, D_800D2DA9, D_800D2DAA, D_800D2DAB;
+extern u8 D_800BE9A0;
 extern f32 D_800D2CA8[][4][4];
 extern f32 D_800D9B20;
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
@@ -26,7 +28,6 @@ typedef struct {
 
 s32 func_15095A90(s32, s32, f32, f32, f32, s32, s32, s32, s32);
 void func_15095B08(s32, f32, f32, f32, s32, s32 *);
-s32 func_15095D34(s32, s32, s32, s32, s32);
 extern s32 D_800D2CA0;
 extern u8 D_800873D0[];
 
@@ -53,9 +54,15 @@ typedef struct {
 typedef struct {
     s16 coordinates[3];
     s16 extentX, extentY;
-    u8 paddingA[6];
+    u8 alpha;
+    u8 animationStep;
+    u8 animationFrame;
+    u8 flipFlags;
+    u8 paddingE[2];
     structC1D70Descriptor *descriptor;
 } ProjectedPacket95B08;
+
+s32 func_15095D34(Gfx *, ProjectedPacket95B08 *, s32, s32, s32);
 
 extern structC1D70Descriptor D_800D2C90;
 
@@ -212,7 +219,7 @@ s32 func_15095A90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s3
 
     func_15095B08(arg1, arg2, arg3, arg4, arg5, &active);
     if (active != 0) {
-        arg0 = func_15095D34(arg0, arg1, arg6, arg7, arg8);
+        arg0 = func_15095D34((Gfx *)arg0, (ProjectedPacket95B08 *)arg1, arg6, arg7, arg8);
     }
     return arg0;
 }
@@ -270,11 +277,89 @@ void func_15095B08(s32 packetAddress, f32 x, f32 y, f32 divisor, s32 projected, 
 }
 
 s32 func_15095D0C(s32 arg0, s32 arg1) {
-    func_15095D34(arg0, arg1, 0, 0, 0);
+    func_15095D34((Gfx *)arg0, (ProjectedPacket95B08 *)arg1, 0, 0, 0);
 }
 
-s32 func_15095D34(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    return 0;
+/* Emit a scissored textured rectangle, then advance the packet animation byte. */
+s32 func_15095D34(Gfx *output, ProjectedPacket95B08 *packet, s32 sOffset, s32 insetTOffset, s32 widthAdjust) {
+    structC1D70Descriptor *descriptor;
+    f32 width = D_800D2C70;
+    f32 height = D_800D2C74;
+    f32 left = D_800D2C78;
+    f32 top = D_800D2C7C;
+    f32 divisor = D_800D2C80;
+    s32 integerScaleX = (s32)width;
+    s32 integerScaleY = (s32)height;
+    s32 stepS;
+    s32 stepT;
+    s32 integerX;
+    s32 integerY;
+    s32 textureS;
+    s32 textureT;
+    s32 fractionalT;
+    s32 animationDelta;
+    s32 flipFlags;
+
+    if (insetTOffset != 0) {
+        D_800D2C84 -= (width + width) / divisor;
+        D_800D2C88 -= (height + height) / divisor;
+        left += width / divisor;
+        top += height / divisor;
+    }
+    width = D_800D2C84;
+    height = D_800D2C88;
+    if (width < 2.0f) {
+        width = 2.0f;
+    }
+    stepS = (s32)((u32)(s32)divisor << 10) / integerScaleX;
+    stepT = (s32)((u32)(s32)divisor << 10) / integerScaleY;
+    integerX = (s32)left;
+    if (D_800D2DAB == 0) {
+        gDPSetPrimColor(output++, 1, 0, D_800D2DA8, D_800D2DA9, D_800D2DAA, packet->alpha);
+    }
+    integerY = (s32)top;
+    textureS = (s32)((u32)(s32)(((32.0f - (left - (f32)integerX) * 32.0f) * divisor) /
+        (f32)integerScaleX) + (u32)sOffset + 0x2000u);
+    flipFlags = packet->flipFlags;
+    fractionalT = (s32)(((32.0f - (top - (f32)integerY) * 32.0f) * divisor) / (f32)integerScaleY);
+    textureT = (s32)((u32)fractionalT + (u32)insetTOffset + 0x2000u);
+    if (flipFlags != 0) {
+        if (flipFlags & 1) {
+            stepS = (u16)(0u - (u32)stepS);
+            textureS = (packet->descriptor->unk4 + 255) << 5;
+        }
+        if (flipFlags & 2) {
+            stepT = (u16)(0u - (u32)stepT);
+            textureT = (s32)((u32)((packet->descriptor->unk6 + 255) << 5) - (u32)fractionalT);
+        }
+    }
+    gSPScisTextureRectangle(output++, (s32)((u32)integerX << 2), (s32)((u32)integerY << 2),
+        (s32)((u32)((s32)((f32)widthAdjust + width - 1.0f) + integerX) << 2),
+        (s32)((u32)((s32)(height - 1.0f) + integerY) << 2), 0, textureS, textureT, stepS, stepT);
+
+    descriptor = packet->descriptor;
+    if (descriptor->unkA != 0) {
+        animationDelta = packet->animationStep * D_800BE9A0;
+        if (descriptor->unkA & 0x80) {
+            if (packet->animationFrame & 0x80) {
+                packet->animationFrame -= animationDelta;
+                if (!(packet->animationFrame & 0x80)) {
+                    packet->animationFrame = (packet->animationFrame + animationDelta) & 0x7F;
+                }
+            } else {
+                packet->animationFrame += animationDelta;
+                if (packet->animationFrame >= ((descriptor->unkA & 0x7F) << 3)) {
+                    packet->animationFrame = (packet->animationFrame - animationDelta) | 0x80;
+                }
+            }
+        } else {
+            packet->animationFrame += animationDelta;
+            if (packet->animationFrame >= (descriptor->unkA << 3)) {
+                packet->animationFrame -= descriptor->unkA << 3;
+            }
+        }
+    }
+    return (s32)output;
 }
 
 s32 func_1509629C() {
