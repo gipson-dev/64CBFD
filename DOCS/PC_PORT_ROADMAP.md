@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Rectangle Native Temporary Blockers - 2026-10-16
+
+[Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
+
+- [x] Capture the installed 18-word form with three identical CFE/UOPT stream pairs and owned CFE/UOPT/UGEN/driver exits. Retain its known object/bindings/pools; do not relabel the intermediate 19-word capture.
+- [x] Observe 24 actual UOPT pool events and 20 home selections. Read native forbidden bits at the selection PC: X blocks temps 0/1 and chooses M-132; Y blocks 0/1/2 and chooses M-136. Correlate integer interference, distinguish intermediate extent 144 from emitted frame 136, and observe the later gettemp reuse rather than infer absence.
+- [x] Revalidate all 29 complete-owner source/object/binding/pool/linked-word screens. Reject larger-frame/count forms; masks, declaration order and unsigned dimension/product spellings remain byte-identical. Install none; production stays 346 / frame 0x88 / 18 differences / literal 148/91 spans.
+- [x] Pass ten final tests in 19.501s, both tools copies' syntax/eleven shared padder tests and tools-check. Keep all 100 live/frozen inputs fixed; fresh Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift. No production rebuild or fresh broad runtime claim.
+- [x] Bank tools e3dca0d before consumer docs/pin; preserve mirror HEAD ddbdd16 and all 826 initial dirty hashes / 828 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action; README unchanged.
+- [ ] Finish **func_15095D34**: relate original-coordinate ranges 73/107, narrowed S-step range 235 and macro intermediates to one typed-step/clipping-stage source hypothesis. Keep the full-width Y sign predicate, twelve flip-block words, six macro-home words and the wider Game backlog explicit. Do not repeat these 29 forms or force homes with padding/bulk guards.
+
 ## Packet Rectangle Inner Flag Capture - 2026-10-16
 
 [Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet rectangle macro temporary pool and native blockers](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
+  Observe actual UOPT pool/forbidden bits for the installed 18-word form,
+  pass ten diagnostic checks and reject 29 equivalent/worse source forms.
 - [Packet rectangle inner flag capture and allocator order](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
   Use fired allocator cost gates to reduce 71 -> 18 differences without guards;
   pass 20 final checks and reproduce the complete 204-byte slot-only prediction.

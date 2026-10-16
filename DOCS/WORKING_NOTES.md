@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
+Capture the installed 18-word form, three identical CFE/UOPT stream pairs,
+24 actual temporary-pool events and native forbidden bits at 20 selections.
+X blocks temps 0/1, Y blocks 0/1/2; map the observed M-132/-136 choices
+without confusing intermediate extent 144 with emitted frame 136. All 29
+source forms remain at best 18; ten final tests pass in 19.501s. Production
+and all 100 inputs stay fixed; fresh totals unchanged, README unchanged.
+Tools e3dca0d banks first; preserve 826 mirror hashes / 828 dirty paths.
+Next follow original coordinates 73/107 and narrowed S-step 235 through
+clipping lifetimes; no repeated equivalent spelling batch or bulk guards.
+
+2026-10-16:
 [Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):
 Observe flags-123 before fractional-T-137 in the real ordinal allocator pass;
 the latter fails cost 14.75 versus gain 3.0, not total color exhaustion.

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Packet Rectangle Native Temporary Blockers
+
+[Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md):
+Capture the installed 18-word body and actual UOPT temporary-pool selections.
+Native forbidden bits establish X's first two and Y's first three blocked
+homes; distinguish the intermediate 144-byte pool from emitted frame 136.
+All 29 source forms remain at best 18 differences. Ten final tests pass in
+19.501s; production C/guards/ELF/CSV and all 100 inputs stay fixed. Fresh
+totals remain Game 2,922/4,828, overall 3,595/5,501, different 1,906, zero
+drift. Tools e3dca0d banks first; preserve 826 mirror hashes / 828 paths.
+README unchanged; continue the same routine's typed-step/clipping lifetimes,
+not another equivalent declaration/mask/dimension spelling screen.
+
 ## 2026-10-16 Packet Rectangle Inner Flag Capture
 
 [Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md):

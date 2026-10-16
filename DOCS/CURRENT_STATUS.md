@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 05ca56d; tools are committed before the consumer pin.
+  checkpoint pins tools e3dca0d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet rectangle native temporary blockers, **evidence only; still 18 differences**:
+[Note 1440](WORKING_NOTES/1440-packet-rectangle-macro-temporary-pool-and-native-blockers-20261016.md).
+Capture the installed 18-word form separately from the earlier 19-word form.
+Three identical CFE/UOPT stream pairs, actual 24-event UOPT pool lifetimes
+and a mode-5 capture establish why macro X/Y choose M-132/-136. Native
+forbidden vectors directly block the first two/three candidate homes; do
+not substitute a graph inference or intermediate 144-byte pool extent for
+the emitted 136-byte frame. All 29 source forms remain at best 18; no
+production C/guard/ELF/CSV/README change. Ten final tests pass in 19.501s,
+including raw native gate, ownership, stream and all-input controls. Fresh
+Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift. Tools
+e3dca0d banks first; preserve all 826 original mirror hashes / 828 paths.
+Next map coordinate ranges 73/107 and signed-16 S-step range 235 to one
+typed-step/clipping-stage source hypothesis, retaining full-width Y sign
+semantics. Note 1439's runtime qualification is prior unchanged evidence.
+No push, Claude/auth retry or host/frozen Release action.
 
 Packet rectangle inner flag capture, **71 -> 18 differences; still not byte matched**:
 [Note 1439](WORKING_NOTES/1439-packet-rectangle-inner-flag-capture-and-allocator-order-20261016.md).
