@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 View Overlay Matrices Semantic Restoration
+
+[Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
+Restore func_15019CC8's full-word view addressing, signed helper arguments,
+SDK viewport/matrices, live category/mode passes and cursor return. This is
+**not byte-exact**: 98 C words / frame 0x40, 94 slot differences, no new guards.
+Nine final tests pass in 86.850s; the complete normal ELF equals the first
+324-byte prediction, with no metadata exclusions and unchanged guard history.
+Preserve 15 neighbors, 105 other inputs and protected 189,088 bytes / 720 owners.
+Fresh Game 2,929/4,828, total 3,602/5,501, different 1,899, zero drift; conversion
+and README aggregates unchanged. Tools e5a8f98 banks first; both copies' checks
+pass, preserving all 865 original mirror hashes / 871 final paths. Keep the
+S0/index lifetime match, remaining stub and full gameplay boundary open.
+
 ## 2026-10-16 Shared Overlay Provider Guarded Match
 
 [Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):

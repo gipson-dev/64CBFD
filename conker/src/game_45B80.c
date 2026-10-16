@@ -95,7 +95,7 @@ s32 func_1501878C(void);
 s32 func_15019130(void);
 s32 func_150195A0(Gfx *, s16);
 s32 func_150198FC(Gfx *);
-s32 func_15019CC8();
+s32 func_15019CC8(Gfx *, s32);
 s32 func_15019F20();
 /* End generated placeholder declarations. */
 
@@ -223,7 +223,7 @@ s32 func_1501878C(void) {
             for (view = 0; view <= D_80082FA0; view++) {
                 D_80082FA4 = D_800BE630[view];
                 D_800BE9D0 = (Gfx *)func_1515D6D0((s32)D_800BE9D0, D_80082FA4);
-                D_800BE9D0 = (Gfx *)func_15019CC8((s32)D_800BE9D0, D_80082FA4);
+                D_800BE9D0 = (Gfx *)func_15019CC8(D_800BE9D0, D_80082FA4);
                 if (D_800BEAC0 == 0 && D_80082FA0 > 0) {
                     D_800BE9D0 = (Gfx *)func_15019BB8(D_800BE9D0, D_80082FA4);
                 }
@@ -563,9 +563,27 @@ s32 func_15019BB8(Gfx *arg0, s32 arg1) {
     return (s32)func_151674F8((void *)temp_v0, 4, sp2A, 1);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019CC8.s. */
-s32 func_15019CC8() {
-    return 0;
+/* Set up a view's overlay matrices and append the category/mode-5 passes. */
+s32 func_15019CC8(Gfx *commands, s32 view) {
+    s32 narrowedView;
+
+    gSPViewport(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x10) + 0x40);
+    narrowedView = (s16)view;
+    commands = (Gfx *)func_1501A490((s32)commands, narrowedView, 0, 0, 0, 0);
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPMatrix(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x40) + 0x100,
+        G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    if (D_800BE9F0 == 0x1D) {
+        commands = func_1502BAD0(commands, 6, narrowedView);
+    }
+    commands = (Gfx *)func_151674F8(commands, 5, 0, 0);
+    commands = (Gfx *)func_151674F8(commands, 5, 0, 1);
+    gSPMatrix(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x40) + 0x100,
+        G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
+    /* The legacy pointer declaration labels the page-pointer table itself. */
+    gSPMatrix(commands++, ((u32 *)&D_800DC2A0)[D_800BE9C0] + ((u32)view * 0x40),
+        G_MTX_PROJECTION | G_MTX_MUL | G_MTX_NOPUSH);
+    return (s32)commands;
 }
 
 s32 func_15019E60(Gfx *arg0) {

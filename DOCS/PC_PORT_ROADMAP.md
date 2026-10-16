@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## View Overlay Matrices Semantic Restoration - 2026-10-16
+
+[Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
+
+- [x] Replace func_15019CC8's zero-return stub with the complete viewport, matrix/category/mode-5 protocol and cursor return; preserve full-word indexing and signed helper arguments.
+- [x] Qualify the unguarded 98-word C body / frame 0x40 through nine final tests in 86.850s: 3,584 guest cases, 1,536 native32 O2/O0 cases each, eight controls, three source rebases and 75 actual caller cuts.
+- [x] Reproduce the complete first 324-byte ELF slot/extent prediction; preserve 15 neighbors, all guard bytes, 105 other inputs and protected 189,088 bytes / 720 owners. Fresh matching/conversion totals and README aggregates are unchanged.
+- [x] Bank tools e5a8f98 before the consumer pin, verify both copies' syntax/eleven shared padder tests and tools-check; preserve mirror HEAD ddbdd16, all 865 original hashes and 871 final paths.
+- [ ] Match func_15019CC8's original 102 words: the slot still has 94 word differences. Investigate retail's S0 carrier, narrowed-word home and repeated index calculations; trailing padding is not a match.
+- [ ] Recover func_15019F20's 192-word stub; keep rectangle fitting, full frame/gameplay and the wider Game/additional-source queue open.
+
 ## Shared Overlay Provider Guarded Match - 2026-10-16
 
 [Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Pass ten final tests in 87.347s: 3,240 three-way cases, all byte domains, 124 fault prefixes, 32 repeated transitions, 1,384 native32 O2/O0/UBSan cases each, eight controls, three independent rebases and 384 real caller-cut cases.
 - [x] Reproduce the complete first 566-byte ELF prediction, no metadata adjustment/exclusion. Preserve 15 neighbors, 103 other inputs, guard history and protected 189,088 bytes / 720 owners. Fresh Game 2,929/4,828, total 3,602/5,501, different 1,899, zero drift.
 - [x] Bank tools d2251c7 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check. Preserve mirror HEAD ddbdd16, 859 original hashes and 865 final dirty paths. Root README aggregate rows only.
-- [ ] Recover **func_15019CC8** next: 102 words / frame 0x40, still a 12-byte stub. Keep func_15019F20, rectangle fitting, full gameplay and the wider Game/additional-source queue open.
+- [x] Recover **func_15019CC8** as semantic C in [Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md); its 102-word instruction match remains open at 94 differences. Keep the remaining queue separate.
 
 ## View Render Provider Guarded Match - 2026-10-16
 

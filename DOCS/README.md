@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View overlay matrices semantic restoration](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
+  Replace the zero-return stub with qualified unguarded C; nine final tests
+  and the complete 324-byte image prediction pass. The 102-word instruction
+  match remains open at 94 differences; aggregate matching is unchanged.
 - [Shared overlay provider guarded match](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
   Recover the 175-word overlay/framebuffer pass with 79 derived role/address/
   schedule guards. The rebuild equals the full 566-byte ELF prediction;

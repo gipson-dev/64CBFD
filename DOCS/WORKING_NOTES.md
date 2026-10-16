@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
+func_15019CC8 is restored as unguarded semantic C, not byte-exact: 98 emitted
+words / frame 0x40 and 94 slot differences. Nine final tests pass in 86.850s;
+the entire normal ELF equals the first 324-byte slot/extent prediction.
+All guard bytes and 105 other inputs stay fixed. Matching/conversion and
+README aggregates are unchanged. Tools e5a8f98 banks first; preserve 865 mirror
+hashes / 871 paths. Next investigate S0/index CSE; func_15019F20 stays stubbed.
+
+2026-10-16:
 [Note 1447](WORKING_NOTES/1447-shared-overlay-provider-guarded-match-20261016.md):
 Restore func_150198FC's 175-word overlay/capture protocol, frame 0x28, with
 79 derived role/address/scale/schedule guards, not a direct C match. Ten
