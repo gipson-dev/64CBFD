@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## View Point Projection Direct Match - 2026-10-16
+
+[Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
+
+- [x] Recover func_1501A764's signed seven-word interface and real eight-word transform-tail call; replace the stub and misleading draft. Name proven view origins and SDK Vp pages without changing the 0x180 record layout.
+- [x] Match all 87 words / frame 0x38 directly from C, preserving arithmetic order and live base/page reloads. Add no guards/profile; preserve ten neighbors and the previous no-unroll selection.
+- [x] Pass all eleven final tests in 66.018s: 1,488 guest cases, 348 native32 O2/O0/UBSan cases each, eight effective controls, 72 actual caller cuts, all 58 real helper words and 672 connected fault prefixes. Keep native/guest/hardware boundaries explicit.
+- [x] Reproduce the complete first 276-byte ELF prediction, zero metadata exclusions. Protect all 128 inputs, 126 unchanged inputs, all guards and 189,088 bytes / 720 data owners. Fresh Game 2,934/4,828, total 3,607/5,501, different 1,894, zero drift; conversion unchanged.
+- [x] Bank tools fed3fa9 before the consumer pin; both copies pass syntax/eleven padder tests and tools-check, preserving mirror HEAD and all 905 initial hashes / 911 paths. Root README aggregate rows only.
+- [ ] Recover adjacent func_1501A8C0: 373 words / frame 0x48, view dimensions, clipping bounds, viewport pages and projection setup. Audit the fourth argument's signed-halfword interface, ordered live reads and real helper chain.
+- [ ] Keep timing's 141 differences, other view providers, wider Game/additional-source work and full gameplay acceptance separate.
+
 ## View Scissor Setup Direct Match - 2026-10-16
 
 [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Pass all ten final tests in 45.415s: 2,996 completed guest cases, 928 invalid-conversion prefixes, 1,252 native32 O2/O0/UBSan cases each, seven effective controls, 48 original caller cuts and 402 connected fault prefixes. Prove four dead helper words statically instead of claiming they executed.
 - [x] Reproduce the entire first 376-byte ELF prediction, zero metadata exclusions. Protect all 120 inputs, 117 unchanged inputs, all guard bytes and 189,088 bytes / 720 data owners. Fresh Game 2,933/4,828, total 3,606/5,501, different 1,895, zero drift; conversion unchanged.
 - [x] Remove game_476D0 from the plain padder static-pattern list without changing its explicit rule/profile; verify the new override advisory is gone. Bank tools e72f87b first, pass both copies' syntax/eleven padder tests and tools-check, preserving all 899 initial mirror hashes / 905 paths.
-- [ ] Recover adjacent func_1501A764: 87 words / frame 0x38, projected outputs, signed view and live base/page reloads. Audit the actual func_150A7A00 nonstandard tail-entry register/stack contract and output aliases before installation.
+- [x] Recover adjacent func_1501A764 directly in [Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md): all 87 words / frame 0x38, real tail ABI, live aliases and consumed caller outputs are qualified.
 - [ ] Keep timing's 141 differences, remaining view providers, wider Game/additional-source work and full startup/frame/gameplay acceptance separate.
 
 ## Two-Row Display-List Setup Guarded Match - 2026-10-16

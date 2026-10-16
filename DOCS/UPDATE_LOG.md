@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 View Point Projection Direct Match
+
+[Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
+Replace func_1501A764's stub and misleading helper draft; all 87 words / frame
+0x38 emit directly from C, no new guards/profile. Eleven final tests pass in
+66.018s with the real 58-word helper chain, live aliases and caller outputs.
+The normal ELF equals the complete first 276-byte prediction, zero exclusions.
+Fresh Game 2,934/4,828 (60.77%), total 3,607/5,501 (65.57%), different 1,894,
+zero drift; conversion unchanged. Tools fed3fa9 banks first; both copies' checks
+pass, preserving 905 mirror hashes / 911 paths. README aggregate rows only.
+Next 373-word func_1501A8C0; no push or host/Release action.
+
 ## 2026-10-16 View Scissor Setup Direct Match
 
 [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View point projection direct match](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
+  Restore all 87 words directly from C with the real transform tail and live
+  aliases. Eleven final tests and the entire 276-byte image prediction pass;
+  continue the 373-word viewport/projection initializer.
 - [View scissor setup direct match](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
   Restore all 124 words directly from C with real SDK/clamp behavior and no
   new guards/profile. Ten final tests and the entire 376-byte image prediction

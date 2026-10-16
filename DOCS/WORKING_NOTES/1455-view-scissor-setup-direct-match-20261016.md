@@ -173,3 +173,8 @@ triangle-transform tail-contract tests. Qualify seven-word input/output ABI,
 signed view, page/table/output aliases, ordered arithmetic and zero/nonfinite
 reciprocal behavior before installation. Keep timing's **141 differences**,
 remaining view providers and the wider Game/additional-source queue separate.
+
+Follow-up completed in [Note 1456](1456-view-point-projection-direct-match-20261016.md):
+func_1501A764 matches all 87 words directly from C after actual transform-tail,
+live alias and consumed-output qualification. Continue the 373-word
+func_1501A8C0 initializer; timing and the wider queue remain open.

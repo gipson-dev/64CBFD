@@ -19,7 +19,10 @@ typedef struct {
     f32 extentX, extentY;
     u8 padding14[0x10];
     f32 top, bottom, left, right;
-    u8 padding34[0x38];
+    f32 originX, originY;
+    u8 padding3C[4];
+    Vp viewport[2];
+    u8 padding60[0xC];
     f32 baseFovX, baseFovY;
     u8 padding74[0x10C];
 } ViewProjection476D0;
@@ -38,7 +41,7 @@ void func_1501AF44(f32 *ulx, f32 *uly, f32 *lrx, f32 *lry);
 /* Generated placeholder declarations. */
 void func_1501A220(s32 viewCount, s32 projectionMode);
 void func_1501A39C(void);
-s32 func_1501A764();
+void func_1501A764(s16 view, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ);
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_1501AE94(s32 arg0);
 /* End generated placeholder declarations. */
@@ -149,29 +152,23 @@ Gfx *func_1501A6CC(Gfx *arg0, s32 a, s32 b, s32 c, s32 d) {
     return arg0;
 }
 
-void func_150A7A00(f32 arg0, f32 arg1, s32 arg2, f32 arg3, f32 arg4, f32 arg5, f32* arg6, f32* arg7, f32* arg8, f32* arg9);
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A764.s. */
-s32 func_1501A764() {
-    return 0;
+/* Handwritten tail entry: matrix/XYZ words and four pointed float outputs. */
+void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
+                   f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
+/* Transform a point and project it through the selected view and viewport. */
+void func_1501A764(s16 view, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ) {
+    f32 transformedX;
+    f32 transformedY;
+    f32 transformedZ;
+    f32 reciprocalW;
+
+    func_150A7A00((f32 (*)[4])((u8 *)D_800D9D10 + (s32)view * 64),
+        x, y, z, &transformedX, &transformedY, &transformedZ, &reciprocalW);
+    reciprocalW = 1.0f / reciprocalW;
+    *outX = VIEW_PROJECTIONS_476D0[view].originX + (VIEW_PROJECTIONS_476D0[view].extentX + 5.0f) * transformedX * reciprocalW;
+    *outY = VIEW_PROJECTIONS_476D0[view].originY - (VIEW_PROJECTIONS_476D0[view].extentY + 5.0f) * transformedY * reciprocalW;
+    *outZ = (transformedZ * reciprocalW * (f32)VIEW_PROJECTIONS_476D0[view].viewport[D_800BE9C0].vp.vscale[2] + (f32)VIEW_PROJECTIONS_476D0[view].viewport[D_800BE9C0].vp.vtrans[2]) * 32.0f;
 }
-// void func_1501A764(s16 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4, f32 *arg5, f32 *arg6) {
-//     f32 sp34;
-//     f32 sp30;
-//     f32 sp2C;
-//     f32 sp28;
-//     struct140 *temp_v0_2;
-//
-//     func_150A7A00(arg1, arg2, &D_800D9D10 + (arg0 << 6), arg1, arg2, arg3, &sp34, &sp30, &sp2C, &sp28);
-//     sp28 = 1.0f / sp28;
-//     // temp_v1 = arg0 * 0x180;
-//     temp_v0_2 = &D_800BE628[arg0];
-//     // sp28 = temp_f8;
-//     *arg4 = (((temp_v0_2->unkC + 5.0f) * sp34 * sp28) + temp_v0_2->unk34);
-//     temp_v0_2 = &D_800BE628 [arg0];
-//     *arg5 = (temp_v0_2->unk38 - ((temp_v0_2->unk10 + 5.0f) * sp30 * sp28));
-//     temp_v0_2 = &D_800BE628[arg0].unk50[D_800BE9C0];  // (D_800BE9C0 * 0x10);
-//     *arg6 = (((f32) temp_v0_2->unk4C + (sp2C * sp28 * (f32) temp_v0_2->unk44)) * 32.0f);
-// }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A8C0.s. */
 s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {

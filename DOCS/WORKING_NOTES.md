@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-16:
+[Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
+Restore all 87 point-projection words directly from C, original frame 0x38 and
+no new guard/profile. Eleven final tests and the complete first 276-byte ELF
+prediction pass. Fresh Game 2,934/4,828, total 3,607/5,501, different 1,894,
+zero drift; conversion unchanged. Tools fed3fa9 banks first, preserving 905
+mirror hashes / 911 paths. Next 373-word func_1501A8C0.
+
+2026-10-16:
 [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
 Restore all 124 scissor/cursor words directly from C, original frame 0x48 and
 no new guard/profile. Ten final tests pass in 45.415s, including actual clamp,

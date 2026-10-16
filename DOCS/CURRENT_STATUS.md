@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e72f87b; tools are committed before the consumer pin.
+  checkpoint pins tools fed3fa9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+View point projection restored, **87 words directly byte-exact from C**:
+[Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md).
+func_1501A764 now preserves its signed seven-word interface, real eight-word
+transform tail, ordered reciprocal/projection and live base/page reloads.
+All **11 final tests pass in 66.018s**: 1,488 guest cases, 348 native32 cases
+at each optimization level, 72 actual caller cuts and 672 connected fault
+prefixes. Every root/helper word executes. The normal ELF equals the entire
+first **276-byte** prediction, no new guards/profile or metadata exclusions;
+128 inputs and protected data pass. Fresh Game **2,934/4,828 (60.77%)**, total
+**3,607/5,501 (65.57%)**, different **1,894**, zero drift; conversion unchanged.
+Tools **fed3fa9** banks first, preserving 905 mirror hashes / 911 paths.
+Next **373-word func_1501A8C0**, viewport/clipping/projection initialization.
+Timing's 141 differences and wider Game remain open; no full gameplay claim.
 
 View scissor setup restored, **124 words directly byte-exact from C**:
 [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md).
@@ -42,8 +56,9 @@ zero metadata exclusions; preserve ten neighbors, all guards, 117 other inputs
 and protected data. Fresh Game **2,933/4,828 (60.75%)**, total **3,606/5,501
 (65.55%)**, different **1,895**, zero drift; conversion unchanged. Tools
 **e72f87b** banks first; both copies' checks pass, preserving 899 mirror hashes /
-905 paths. The new owner recipe warning is fixed. Next **87-word func_1501A764**:
-audit its real transform tail-entry ABI and live output/base/page aliases.
+905 paths. The new owner recipe warning is fixed. The adjacent **87-word
+func_1501A764** recovery is completed in
+[Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md).
 Timing's 141 differences and wider Game remain open; no full gameplay claim.
 
 Two-row display-list setup restored, **61 words guarded byte-exact**:
