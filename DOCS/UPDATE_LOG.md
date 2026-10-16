@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Quad Edge Emitter Guarded Byte Match
+
+[Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
+Install func_151700D8's complete perimeter emitter C, all 266 guarded words
+exact / frame 0x190; raw C remains 137 different. Pass 16 final checks and
+close every image byte: 834 target/extent changes plus two exact symbol-order
+cycles changing 64 bytes, no exclusions. Game 2,908/4,828, total 3,581/5,501,
+different 1,920, zero drift. Bank tools 679f05f first; next 15170500 and all
+broader Game queues. README changes only aggregate rows; no push/host action.
+
 ## 2026-10-15 Quad Emitter Symbolic Loop Obligations
 
 [Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):

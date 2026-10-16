@@ -30,6 +30,17 @@ s32 func_150ADA20(void);
 f32 func_150489B0(u8 angle);
 f32 func_15048A40(u8 angle);
 
+typedef struct FloatTable3_19A8B0 {
+    f32 values[3];
+} FloatTable3_19A8B0;
+typedef struct ByteTable9_19A8B0 {
+    u8 values[9];
+} ByteTable9_19A8B0;
+extern FloatTable3_19A8B0 D_8008CBF4;
+extern FloatTable3_19A8B0 D_8008CC00;
+extern ByteTable9_19A8B0 D_8008CC0C;
+extern f32 D_800A6E84;
+
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
 s32 func_1516D400() {
@@ -675,8 +686,89 @@ void func_15170034(s32 flags, f32 *x, f32 *y, f32 *z) {
     *z = radius * azimuthCosine;
 }
 
-s32 func_151700D8() {
-    return 0;
+/* Emit packed particles along each edge of a four-vertex perimeter.
+ * Guards normalize the checked loop schedule and unescaped private homes. */
+void func_151700D8(f32 *vertices, f32 originX, f32 originZ, s32 preset,
+                  f32 scale, s32 kind, s32 xCount, s32 zCount, u8 flags,
+                  s32 context) {
+    s32 edge;
+    s32 presetByte;
+    s32 xHigh;
+    s32 xLow;
+    s32 zHigh;
+    s32 zLow;
+    f32 startY;
+    f32 startZ;
+    f32 x;
+    f32 y;
+    f32 z;
+    s32 extent;
+    s32 xFixed;
+    s32 zFixed;
+    s32 delay;
+    s32 limit;
+    s32 base;
+    s32 nextIndex;
+    s32 index;
+    f32 *next;
+    u8 *color;
+    s32 count;
+    FloatTable3_19A8B0 initial = D_8008CBF4;
+    FloatTable3_19A8B0 ranges = D_8008CC00;
+    ByteTable9_19A8B0 colors = D_8008CC0C;
+    f32 inverse;
+    f32 *current;
+    s32 nextEdge;
+
+    current = vertices;
+    limit = (s32)(ranges.values[kind] * scale);
+    edge = 0;
+    do {
+        index = 0;
+        if (edge != 3) {
+            nextIndex = edge + 1;
+            nextEdge = nextIndex;
+        } else {
+            nextEdge = edge + 1;
+            nextIndex = 0;
+        }
+        if (edge == 0 || edge == 2) {
+            count = xCount;
+        } else {
+            count = zCount;
+        }
+        next = (f32 *)((u8 *)vertices + nextIndex * 12);
+        color = colors.values + kind * 3;
+        xFixed = (s32)(2.0f * ((next[0] + current[0]) * 0.5f - originX));
+        zFixed = (s32)(2.0f * ((next[2] + current[2]) * 0.5f - originZ));
+        if ((&count)[0] > 0) {
+            presetByte = (u8)preset;
+            base = (s32)(D_800A6E84 * scale);
+            xLow = xFixed & 255;
+            xHigh = (xFixed >> 8) & 255;
+            zHigh = (zFixed >> 8) & 255;
+            zLow = zFixed & 255;
+            inverse = 1.0f / (f32)((&count)[0] - 1);
+            do {
+                startY = current[1];
+                startZ = current[2];
+                x = (next[0] - current[0]) * ((f32)index * inverse) + current[0];
+                y = (next[1] - startY) * ((f32)index * inverse) + startY;
+                z = (next[2] - startZ) * ((f32)index * inverse) + startZ;
+                delay = (func_150ADA20() & 0x1F) + 15;
+                extent = (u32)func_150ADA20() % (u32)(s32)(836.0f * scale) + base;
+                func_1516D4E8((s16)(s32)x, (s16)(s32)y, (s16)(s32)z,
+                    13, 0, color[0], color[1], color[2], 0, 0, 0, 0, 2,
+                    xHigh, xLow, zHigh, zLow, 0, 0, presetByte, 0, 0, 0,
+                    (s16)extent, (s16)extent,
+                    delay, (u32)func_150ADA20() % (u32)limit + (s32)(143.0f * scale),
+                    0, 0, flags, context);
+                index++;
+            } while (index != (&count)[0]);
+        }
+        edge = nextEdge;
+        current += 3;
+    } while (edge != 4);
 }
 
 s32 func_15170500() {

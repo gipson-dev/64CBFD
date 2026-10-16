@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad edge emitter guarded byte match](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
+  Install all 266 normalized words, qualify literal/private/native behavior
+  and account for the complete image, including exact symbol-order cycles.
 - [Quad emitter symbolic loop obligations](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
   Check arbitrary-index loop/call dependencies with explicit assumptions;
   pass eight tests while retaining the uninstalled 137-difference baseline.

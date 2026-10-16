@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bf8dbb3; tools are committed before the consumer pin.
+  checkpoint pins tools 679f05f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Quad edge emitter installed with checked guarded normalization:
+[Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md).
+func_151700D8 now matches all 266 retail words / frame 0x190 in the rebuilt
+ELF; raw C still has 137 differences. All 16 final checks pass in 129.507s,
+including 2,304 private pairs, 1,452 fault prefixes, native32 O2/O0 and the
+actual wrapper/factory chain. The initial slot-only image prediction was
+rejected by 64 symbol-serialization bytes; two exact named cycles and two
+independent relinks close the entire ELF to 898 changes, no exclusions.
+All other bytes and 60 inputs are fixed, protected layout exact. Fresh Game
+2,908/4,828 (60.23%), total 3,581/5,501 (65.10%), different 1,920, zero
+drift; conversions unchanged and README edits aggregate rows only. Tools
+679f05f banks first; preserve 725 older-mirror hashes / 729 final paths.
+Next func_15170500, 184 words / frame 0x100, keeping the full additional-
+source/Game and inherited-stack queues open. No push or host/Release action.
 
 Quad emitter loop obligations checked, production unchanged:
 [Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md).

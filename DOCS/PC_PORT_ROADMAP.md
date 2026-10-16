@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Edge Emitter Guarded Byte Match - 2026-10-15
+
+[Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
+
+- [x] Install func_151700D8's complete semantic four-edge emitter, all 266 normalized words exact / frame 0x190. Raw C remains 137 different; retain 263 operations, derive three private edge-home operations and close all 266 words/bindings with expected-word guards, no profile/header change.
+- [x] Check 24 outer/24 arbitrary-index obligations under explicit finite/framed assumptions; separately pass 2,304 literal state pairs, 1,452 fault prefixes, 14 aliases, both integer traps and effective live-count/dead-edge home controls.
+- [x] Pass native32 O2/O0 with 3,600 cases each and seven negatives, nine compiled guest negatives, independent three-stream rebases, 144 wrapper/emitter/current-factory chain pairs, 801 archive hashes and all actual-padder corruptions. All 16 final checks pass in 129.507s.
+- [x] Reject the initial 64-byte image discrepancy, prove its two exact symbol/string-table cycles and reproduce two full relinks. Account for all 898 changed ELF bytes, every other byte/60 inputs fixed, protected 189,088 bytes / 720 owners exact; no metadata exclusions.
+- [x] Refresh Game 2,908/4,828 (60.23%), total 3,581/5,501 (65.10%), different 1,920, zero drift. README aggregate rows only; bank tools 679f05f first and preserve 725 older-mirror hashes / 729 final paths. Shared checks pass; no push or host/Release action.
+- [ ] Continue func_15170500, 184 words / frame 0x100, and all additional-source/Game, caller and inherited-stack queues. Guarded matching does not finish raw source matching or the wider objective.
+
 ## Quad Emitter Symbolic Loop Obligations - 2026-10-15
 
 [Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
@@ -8,7 +19,7 @@
 - [x] Check 24 outer cases and 24 arbitrary-index step obligations, full 31-word packets, per-edge snapshots, protected ABI/table/home/limit bytes and arbitrary provider clobbers. Finite addition commutation and framed ordinary memory remain explicit assumptions, not raw private/fault/FCSR equivalence.
 - [x] Pass eight checks in 22.383s, nine effective instruction negatives, a legal schedule control, 288 guest pairs, 29 unchanged neighbors and all 63 live/frozen inputs with corruption controls. Both copies pass syntax/shared padder checks; shared tools checks pass.
 - [x] Bank tools bf8dbb3 first; preserve all 722 initial older-mirror hashes / 725 final paths. Fresh Game 2,907/4,828, total 3,580/5,501, different 1,921, zero drift; ELF/README rows and production emitter unchanged. No push or host/Release action.
-- [ ] Derive and qualify the retained-operation register/schedule plan and redundant private edge operations; complete literal private/fault/alias/trap, relocation, padder and whole-image gates before installation or matching credit.
+- [x] Derive and qualify the retained-operation plan and private edge operations in [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md); complete literal private/fault/alias/trap, relocation, padder and closed-image gates before installing all 266 guarded words.
 - [ ] Continue all additional-source/Game, caller and inherited-stack queues; this tooling checkpoint does not finish the wider objective.
 
 ## Quad Rectangle Wrapper Proven Guarded Byte Match - 2026-10-15
@@ -20,7 +31,7 @@
 - [x] Pass 14 installed checks: 2,000 literal private pairs, 320 fired fault prefixes, 24 guest aliases, native32 O2/O0 with 262,144 cases each, effective controls, three independent links, 144 staged original-emitter/current-factory chain pairs and 801 archive hashes.
 - [x] Close the whole rebuilt ELF to its pre-install prediction: exactly 190 changed target-slot/extent bytes, every other ELF byte and 60 inputs fixed, protected 189,088 bytes / 720 owners exact. Preserve all old guard rows and conversion/profile/header inputs.
 - [x] Refresh official Game 2,907/4,828 (60.21%), total 3,580/5,501 (65.08%), different 1,921, zero drift. Update README aggregate rows only; bank tools 94deb33 first and preserve 717 initial older-mirror fingerprints / 722 final paths. Shared checks pass in both copies; no push or host/Release action.
-- [ ] Finish func_151700D8's current-edge/preset lifetimes and 137-word gap using the new successor fingerprints. Its production stub remains unchanged; do not infer working gameplay from the staged original-emitter chain.
+- [x] Replace func_151700D8's stub through qualified normalization in [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md), all 266 words exact. Raw C retains 137 differences; preserve that distinction and do not infer full gameplay from the bounded chain tests.
 - [ ] Continue the complete additional-source/Game, caller and inherited-stack queues. This one guarded match does not complete the broader objective.
 
 ## Quad Emission Loop Audit And Wrapper Recovery - 2026-10-15

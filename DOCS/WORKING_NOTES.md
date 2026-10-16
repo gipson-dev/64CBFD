@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
+Install the complete four-edge emitter C with all 266 guarded words exact,
+frame 0x190, raw 137 differences explicit. Pass 16 installed checks and close
+898 whole-image changes: 834 target/extent plus 64 exact symbol serialization,
+no exclusions. Game 2,908/4,828, total 3,581/5,501, different 1,920, zero drift.
+Bank tools 679f05f first, retain 725 mirror hashes / 729 paths and continue
+184-word 15170500 plus every broader additional-source/Game queue.
+
+2026-10-15:
 [Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
 Check all table kinds/edges and symbolic inner-index continuation/exit,
 retaining full factory words, opaque clobbers and stable snapshots. Eight
