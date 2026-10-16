@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Six-Piece Debris Guarded Match - 2026-10-16
+
+[Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
+
+- [x] Recover func_15170B90's 205-word / frame-0x120 shape and SP+0xBC escaped packet using real locals. Retain all operations; qualify two scheduling/register regions and the unescaped kind home 0x94 -> 0x9C. Append 158 identity / 47 transforming guards; raw C stays 44 real words different and all eight neighbors/pools stay fixed.
+- [x] Pass all 16 final tests in 167.798s: 1,440 complete sequences / 4,320 runs, all 96 bytes and all 205 instructions, 844 fault pairs, 16 retained-pointer guest probes, native32 O2/O0 with 1,024 cases each, eleven compiled negatives, three rebase sets, 16 dispatcher captures, 144 actual consumer/allocator cases and all 801 archive fingerprints.
+- [x] Preserve and reject the initial slot-only ELF prediction. Account for exactly two symbol/string serialization cycles / 84 bytes, preserve canonical definitions, reject fifteen metadata corruptions and reproduce the entire qualified ELF with two independent relinks. Final 759 changes = 675 slot/extent + 84 metadata; every other byte and 72 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions.
+- [x] Refresh official Game 2,913/4,828 (60.34%), total 3,586/5,501 (65.19%), different 1,915, zero drift. Keep conversions fixed and README limited to aggregate rows. Bank tools c0bbd87 first; preserve all 757 initial mirror hashes / 763 paths and pass both copies' syntax/shared padder checks plus tools-check.
+- [ ] Recover next func_15170F4C, 158 words / frame 0xE8 in generated_19E040.c. Keep func_1516D400, inherited-stack func_1516FE1C and all broader Game/additional-source/raw-matching queues active. No push, host or frozen Release action.
+
 ## Randomized Ring Emitter Guarded Match - 2026-10-16
 
 [Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
@@ -9,7 +19,7 @@
 - [x] Pass 15 final tests in 91.919s: 864 whole loops, 514 fault pairs, native32 O2/O0 with 1,024 cases each, ten compiled guest/native negatives, three independent rebase sets, four caller windows, 216 current helper-chain cases and all 801 archive fingerprints. Retain eleven unreachable compiler instructions without claiming execution.
 - [x] Match the entire rebuilt ELF to the initial prediction: 602 target-slot/extent changes, every other byte and 72 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,912/4,828 (60.31%), total 3,585/5,501 (65.17%), different 1,916, zero drift; root README aggregate snapshot only.
 - [x] Bank tools 6f03b11 before consumer source/pin/docs, preserve all 751 initial mirror hashes / 757 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push, host or frozen Release action.
-- [ ] Resume func_15170B90's separate 205-word / frame-0x120 shape and lifetime gap using the now-genuine typed ring. Keep func_1516D400, inherited-stack func_1516FE1C and every broader Game/additional-source queue active.
+- [x] Resolve func_15170B90's separate 205-word / frame-0x120 shape and lifetime gap and install its qualified guarded match in Note 1425. Keep func_1516D400, inherited-stack func_1516FE1C and every broader Game/additional-source queue active.
 
 ## Six-Piece Debris Recovery - 2026-10-15
 
@@ -19,7 +29,7 @@
 - [x] Pass five pre-install checks: 1,440 guest sequences, native32 O2/O0 with 1,024 cases each, ten effective compiled guest/native negatives and all 75 unchanged input gates. Check 90 initialized bytes and provider-seeded holes; do not claim portable first-hole values.
 - [x] Reject the incomplete install gate explicitly: selected C 210 words / frame 0x128 versus retail 205 / 0x120, and typing func_151718F0's stub grows that neighbor 12 -> 28 bytes. Preserve all seven other neighbors/pools, production C/guards/ELF/progress and README. Bank tools b88e200 first and preserve all 747 mirror hashes / 751 paths.
 - [x] Recover the genuine typed ring definition in Note 1424; all 193 guarded words match, resolving that prerequisite without altering the debris stub.
-- [ ] Resolve the debris target's shape/saved lifetimes and qualify proposed normalization, complete literal packets, callers/rebases and connected consumers as needed before its install, build audit or match credit.
+- [x] Resolve the debris target's shape/saved lifetimes, qualify normalization, complete literal packets, callers/rebases and connected consumers, then install and close its complete image audit and fresh counts in Note 1425.
 - [ ] Keep func_1516D400, inherited-stack func_1516FE1C and every wider additional-source/Game queue active. No push, host or frozen Release action.
 
 ## Scaled Random Spray Guarded Match - 2026-10-15

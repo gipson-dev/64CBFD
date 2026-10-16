@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Six-Piece Debris Guarded Match
+
+[Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
+Restore func_15170B90's semantic six-piece producer, matching all 205 words
+/ frame 0x120 with checked scheduling/register/staging-home guards. Raw C
+retains 44 real differences. All 16 final checks pass, including complete
+96-byte packets and actual consumer/allocator connections. Preserve the
+failed first slot-only prediction; account for 84 symbol/string bytes and
+reproduce the full qualified ELF with two independent relinks, no exclusions.
+Game 2,913/4,828, total 3,586/5,501, different 1,915, zero drift. Bank tools
+c0bbd87 first, preserve 757 mirror hashes / 763 paths, and resume next
+func_15170F4C, 158 words / frame 0xE8. Broader queues remain open.
+
 ## 2026-10-16 Randomized Ring Emitter Guarded Match
 
 [Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):

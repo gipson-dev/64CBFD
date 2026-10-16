@@ -15,14 +15,115 @@ void func_1516D4E8(
     s16 arg24, u8 arg25, s16 arg26, s32 arg27, s32 arg28, u8 arg29,
     s32 arg30);
 
+typedef struct DebrisKinds19E040 {
+    u8 values[6];
+} DebrisKinds19E040;
+
+typedef struct DebrisPacket19E040 {
+    f32 position[3];
+    f32 rotation[3];
+    f32 velocity[3];
+    f32 spin[3];
+    f32 scale[3];
+    s32 lifetime;
+    s32 asset;
+    u8 reserved44[4];
+    f32 coefficient[3];
+    u8 mode, alpha, zero56, zero57, zero58, duration, kind, variant;
+    u8 zero5C, zero5D;
+    u8 reserved5E[2];
+} DebrisPacket19E040;
+
+extern DebrisKinds19E040 D_800A6F80;
+extern f32 D_800A6E90[18];
+extern f32 D_800A6F88, D_800A6F8C, D_800A6F90, D_800A6F94;
+s32 func_1518C900(s32 kind);
+f32 fabsf(f32 value);
+#pragma intrinsic (fabsf)
+void func_15168BE4(void *packet, u8 flags, s32 context);
+void func_151718F0(f32 x, f32 y, f32 z, f32 radius, s32 lifetime,
+                  f32 speed, s32 kind, s32 count, u8 flags, s32 context);
+
 extern s32 D_800BE9F0;
 
 void func_151700D8(f32 *, f32, f32, s32, f32, s32, s32, s32, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/19E040.s. */
 
-s32 func_15170B90() {
-    return 0;
+/* Emit six debris pieces, then a ring, and mark the actor's byte flag.
+ * Reserved packet bytes intentionally retain stack residue. Guards normalize
+ * independent schedules, FP registers and the unescaped kind staging home. */
+void func_15170B90(u8 *actor, s32 baseKind, s32 variant, s32 options,
+                  u8 flags, s32 context) {
+    f32 originX;
+    DebrisPacket19E040 packet;
+    f32 originY;
+    f32 originZ;
+    f32 coefficient;
+    f32 *vector;
+    f32 component;
+    s32 index;
+    s32 kind;
+    s32 asset;
+
+    originX = (f32)*(s16 *)(actor + 0x10);
+    originY = (f32)*(s16 *)(actor + 0x12);
+    originZ = (f32)*(s16 *)(actor + 0x14);
+    coefficient = D_800A6F94;
+    packet.rotation[0] = 0.0f;
+    packet.rotation[1] = 0.0f;
+    packet.rotation[2] = 0.0f;
+    packet.scale[0] = 1.0f;
+    packet.scale[1] = 1.0f;
+    packet.scale[2] = 1.0f;
+    packet.lifetime = 60;
+    packet.coefficient[0] = D_800A6F88;
+    packet.coefficient[1] = D_800A6F8C;
+    packet.coefficient[2] = D_800A6F90;
+    packet.mode = 2;
+    packet.alpha = 255;
+    packet.zero56 = 0;
+    packet.zero57 = 0;
+    packet.zero58 = 0;
+    packet.duration = 60;
+    packet.variant = variant;
+    packet.zero5C = 0;
+    packet.zero5D = 0;
+    index = 0;
+    vector = D_800A6E90;
+    do {
+        if (options & 2) {
+            DebrisKinds19E040 kinds;
+            kinds = D_800A6F80;
+            kind = kinds.values[index];
+        } else {
+            kind = options & 1 ? (s32)((u32)baseKind + (u32)index) : baseKind;
+        }
+        asset = func_1518C900(kind);
+        component = vector[0];
+        packet.position[0] = component + originX;
+        packet.velocity[0] = component * coefficient;
+        component = vector[1];
+        packet.position[1] = component + originY;
+        packet.velocity[1] = fabsf(component) * coefficient + 7.0f;
+        component = vector[2];
+        packet.position[2] = component + originZ;
+        packet.velocity[2] = component * coefficient;
+        packet.kind = kind;
+        packet.velocity[0] += (f32)(func_150ADA20() >> 16) * 0.00006103515625f;
+        packet.velocity[1] += (f32)(func_150ADA20() >> 16) * 0.00006103515625f;
+        packet.velocity[2] += (f32)(func_150ADA20() >> 16) * 0.00006103515625f;
+        packet.spin[0] = (f32)(func_150ADA20() >> 16) * 0.0000762939453125f;
+        packet.spin[1] = (f32)(func_150ADA20() >> 16) * 0.0000762939453125f;
+        packet.spin[2] = (f32)(func_150ADA20() >> 16) * 0.0000762939453125f;
+        packet.asset = asset;
+        func_15168BE4(&packet, flags, context);
+        index += 1;
+        vector += 3;
+    } while (index != 6);
+    func_151718F0(originX, originY - 80.0f, originZ, 70.0f,
+                  500, 0.00457763671875f, 0, 10, flags, context);
+    actor[0x6E] = 1;
 }
 
 void func_15170EC4(u8 *arg0, u8 arg1, s32 arg2) {

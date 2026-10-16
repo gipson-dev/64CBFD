@@ -12,9 +12,9 @@ byte match.** Production source, guard CSV, ELF and matching counts stay fixed.
 3. [x] Measure full-owner source/layout/profile screens without changing production flags, headers, assembly or other functions.
 4. [x] Qualify bounded packet sequences, provider mutations, native32, effective negatives and all 75 frozen/live inputs.
 5. [x] Reject installation on the oversized target, different frame and typed-ring neighbor change; bank four tools files before consumer documentation/pin.
-6. [ ] Resolve the original 205-word / frame-0x120 target shape and saved-role lifetimes without artificial locals, volatile workarounds or invented calls.
+6. [x] Resolve the original 205-word / frame-0x120 target shape and saved-role lifetimes without artificial locals, volatile workarounds or invented calls in [Note 1425](1425-six-piece-debris-guarded-byte-match-20261016.md).
 7. [x] Recover the ring func_151718F0's genuine compatible definition in [Note 1424](1424-randomized-ring-emitter-guarded-byte-match-20261016.md). All 193 words now match after eight checked register guards. The debris caller itself remains uninstalled; do not bypass its remaining gates.
-8. [ ] Qualify any proposed normalization, all 96 literal packet bytes, caller/rebase and connected-consumer boundaries as appropriate; then rebuild, audit every ELF byte and refresh official counts before installation credit.
+8. [x] Qualify normalization, all 96 literal packet bytes, callers/rebases and connected consumers; rebuild, audit every ELF byte including the explicit serialization amendment, and refresh official counts in [Note 1425](1425-six-piece-debris-guarded-byte-match-20261016.md).
 9. [ ] Continue every broader Game/additional-source, func_1516D400 and inherited-stack func_1516FE1C queue.
 
 ## Recovered Contract

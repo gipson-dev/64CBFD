@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Six-piece debris guarded byte match](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
+  Install all 205 checked words with full 96-byte packet qualification;
+  pass 16 tests and close the exact ELF audit, explicitly preserving the
+  rejected initial prediction and accounting for 84 serialization bytes.
 - [Randomized ring emitter guarded byte match](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
   Install all 193 normalized ring words and the genuine typed ABI; pass
   15 final checks and close the complete first-predicted ELF without exclusions.

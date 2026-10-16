@@ -15,7 +15,7 @@ caller or wider Game work is finished.
 4. [x] Pass all 15 final checks, including native32, literal/public packets, fault prefixes, rebases, direct callers, current helper connections and corruption controls.
 5. [x] Replace only the ring placeholder, append 193 guards, rebuild and close the complete initially predicted ELF/input audit with no exclusions.
 6. [x] Refresh official numbers, keep README changes to aggregate status/date, preserve the older mirror and bank tools before consumer source/pin/docs.
-7. [ ] Resume func_15170B90's 205-word / frame-0x120 shape and saved lifetimes using the now-genuine void ring definition. Its debris stub remains untouched.
+7. [x] Resolve func_15170B90's 205-word / frame-0x120 shape and saved lifetimes using the now-genuine void ring definition; install its qualified guarded match in [Note 1425](1425-six-piece-debris-guarded-byte-match-20261016.md).
 8. [ ] Continue func_1516D400, inherited-stack func_1516FE1C and every wider Game/additional-source, unconverted-caller and raw compiler-matching queue.
 
 ## Recovered Contract

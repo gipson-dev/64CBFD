@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6f03b11; tools are committed before the consumer pin.
+  checkpoint pins tools c0bbd87; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Six-piece debris installed with checked guards:
+[Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md).
+func_15170B90 matches all 205 retail words / frame 0x120; raw C retains
+44 real differences. Preserve all 96 packet bytes and SP+0xBC, normalize
+only two checked scheduling/register regions and the unescaped kind home.
+All 16 final tests pass in 167.798s, including 1,440 full sequences, 844
+fault pairs, native32 O2/O0, caller/rebase and 144 connected consumer cases.
+Reject and preserve the initial slot-only prediction; account for exactly
+84 extra symbol/string serialization bytes and reproduce the entire ELF
+with two full relinks. Final 759 changes, every other byte and 72 inputs
+fixed, protected layout exact, no metadata exclusions. Fresh Game
+2,913/4,828 (60.34%), total 3,586/5,501 (65.19%), different 1,915, zero
+drift; conversions fixed. Tools c0bbd87 banks first; preserve all 757 older
+mirror hashes / 763 paths. Next func_15170F4C, 158 words / frame 0xE8;
+all broader queues remain active. No push or host/frozen Release action.
 
 Randomized ring emitter installed with checked register guards:
 [Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md).

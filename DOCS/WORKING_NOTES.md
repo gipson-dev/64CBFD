@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1425](WORKING_NOTES/1425-six-piece-debris-guarded-byte-match-20261016.md):
+Install six-piece debris func_15170B90, all 205 checked words / frame
+0x120 with the full escaped 96-byte packet retained. All 16 final tests
+pass. Explicitly reject/preserve the first slot-only image prediction,
+account for 84 metadata serialization bytes, and reproduce the entire
+759-change qualified ELF with two full relinks and no exclusions. Fresh
+Game 2,913/4,828, total 3,586/5,501, different 1,915, zero drift. Bank tools
+c0bbd87 first, preserve 757 mirror hashes / 763 paths. Next func_15170F4C;
+all wider queues stay open.
+
+2026-10-16:
 [Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
 Install the genuine typed ring, all 193 words / frame 0x140 exact after
 eight checked temporary-register guards. Pass 15 final tests, close the
