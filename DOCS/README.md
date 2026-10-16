@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Record random drag guarded byte match](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
+  Recover slot 6's full-word fade and repeated-X threshold, normalize only
+  13 register words and close all 117 retail words and the complete ELF.
 - [Directional burst guarded byte match](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
   Recover both complete factory packets and install all 184 normalized
   words; pass 15 checks and close the entire initially predicted ELF.

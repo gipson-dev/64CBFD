@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Callback-Six Random Drag Guarded Match - 2026-10-15
+
+[Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
+
+- [x] Recover func_151707E0's one-pointer callback ABI and actual dispatch-table slot 6. Preserve byte accesses, full-word fade/completion, the pre-RNG fade snapshot, live post-provider fields, unsigned lifetime remainder and signed drag remainders. Reject the reference's wide accesses, truncated value and bogus RNG arguments.
+- [x] Recover all 117 operations / frame 0x28 using real locals and defined unsigned word arithmetic. Preserve the repeated-X threshold and -32768 wrap. Normalize 13 temporary-register words only, with 104 identity fingerprints; no opcode, schedule, branch, home or relocation change. Raw C remains 13 different.
+- [x] Pass 15 final tests in 80.861s: ordered threshold/ABI dependency check, six effective instruction negatives and an accepted equivalent-square control, 4,032 literal/public cases, all 116 reachable words, 444 fired fault prefixes, six aliases, nine compiled guest/native negatives, native32 O2/O0 with 1,048,578 cases each and 960 current slot-6 wrapper/helper cases. Check all 801 archive hashes and local MULTU HI/LO golden vectors.
+- [x] Match the complete rebuilt ELF to its initial prediction: 316 target-slot/extent changes, every other byte and 64 inputs fixed, protected 189,088 bytes / 720 owners exact, no metadata exclusions. Preserve the old guard prefix, profiles, headers and conversion data.
+- [x] Refresh Game 2,910/4,828 (60.27%), total 3,583/5,501 (65.13%), different 1,918, zero drift. README aggregate rows only; bank tools bce2d08 first, preserve all 736 initial mirror hashes / 741 final paths and pass both copies' syntax/shared padder checks plus tools-check. No push, gameplay or host/Release action.
+- [ ] Continue func_151709B4, ROM 0x19DE64 / frame 0xF8: 118 instructions plus a trailing padding NOP, 119-word retail slot. Retain all additional-source/Game, unconverted-caller and inherited-stack queues; this guarded match is not project or raw compiler completion.
+
 ## Directional Burst Guarded Byte Match - 2026-10-15
 
 [Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
@@ -9,7 +20,8 @@
 - [x] Check both ordered value paths under a framed defined-conversion contract, independently qualify 4,608 literal pairs, 944 fired fault prefixes, effective home poison, native32 O2/O0 with 262,144 cases each, three-stream rebases, 576 current helper-chain pairs, three original caller windows and 801 archive fingerprints. All 15 final tests pass in 95.713s.
 - [x] Match the entire rebuilt ELF to the initial prediction: exactly 575 target-slot/extent byte changes, all other bytes and 64 inputs fixed, protected 189,088 bytes / 720 owners exact, no metadata exclusions. Retain the complete old guard prefix and unchanged conversion/profile/header inputs.
 - [x] Refresh Game 2,909/4,828 (60.25%), total 3,582/5,501 (65.12%), different 1,919, zero drift. README aggregate rows only; bank tools d585639 first and preserve all 729 initial older-mirror hashes / 736 final paths. Both copies pass syntax/shared padder tests and tools-check passes; no push or host/Release operation.
-- [ ] Continue func_151707E0, VA 0x151707E0 / ROM 0x19DC90, 117 words / frame 0x28, then all remaining additional-source/Game, unconverted-caller and inherited-stack queues. Guarded matching and bounded chain tests do not establish raw compiler matching or full gameplay acceptance.
+- [x] Install func_151707E0's complete 117-word guarded match in [Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md), preserving the 13 raw register differences and repeated-X behavior.
+- [ ] Continue all remaining additional-source/Game, unconverted-caller and inherited-stack queues. Guarded matching and bounded chain tests do not establish raw compiler matching or full gameplay acceptance.
 
 ## Quad Edge Emitter Guarded Byte Match - 2026-10-15
 

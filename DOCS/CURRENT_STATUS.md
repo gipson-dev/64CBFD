@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d585639; tools are committed before the consumer pin.
+  checkpoint pins tools bce2d08; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Callback-six fade and random drag installed with checked register guards:
+[Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md).
+func_151707E0 matches all 117 retail words / frame 0x28. Preserve byte record
+fields, full-word fade/completion, unsigned lifetime RNG, signed drag RNG,
+post-movement field reads and retail's repeated-X threshold, including its
+signed wrap at -32768. Raw C remains 117 words / 13 register differences;
+104 identity and 13 transforming guards change no instruction, branch,
+home or binding. All 15 final tests pass in 80.861s: 4,032 literal/public
+cases, 444 fault prefixes, native32 O2/O0 with 1,048,578 cases each, 960
+connected slot-6 cases and all 801 archive fingerprints. All 116 reachable
+words execute; retain and guard the unreachable duplicate load too. The
+whole rebuilt ELF matches the initial prediction: 316 target-slot/extent
+changes, every other byte and 64 inputs fixed, protected layout exact, no
+exclusions. Fresh Game 2,910/4,828 (60.27%), total 3,583/5,501 (65.13%),
+different 1,918, zero drift; conversions unchanged, README aggregate rows
+only. Tools bce2d08 banks first; preserve 736 mirror hashes / 741 paths.
+Next func_151709B4, frame 0xF8, 118 instructions plus one padding NOP in
+its 119-word slot. Keep all broader additional-source/Game, caller and
+inherited-stack queues active. No push, gameplay or host/Release operation.
 
 Directional burst installed with checked guarded normalization:
 [Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md).

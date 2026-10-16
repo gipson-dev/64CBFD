@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Callback-Six Random Drag Guarded Match
+
+[Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
+Restore func_151707E0's complete pointer callback, full-word fade and
+repeated-X threshold, all 117 guarded words exact / frame 0x28. Raw C has
+13 register-only differences; no operation, branch, home or binding moves.
+All 15 tests pass, including native32, literal/fault checks and the actual
+slot-6 wrapper/helper chain. Close the entire initial ELF prediction to
+316 changed target-slot/extent bytes, no exclusions. Game 2,910/4,828,
+total 3,583/5,501, different 1,918, zero drift. Bank tools bce2d08 first,
+preserve 736 mirror hashes / 741 paths and continue func_151709B4 plus all
+broader Game queues. README aggregate rows only; no push or host action.
+
 ## 2026-10-15 Directional Burst Guarded Byte Match
 
 [Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):

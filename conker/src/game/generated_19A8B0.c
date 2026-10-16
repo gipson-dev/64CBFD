@@ -822,7 +822,51 @@ void func_15170500(s16 x, s16 y, s16 z, s32 angle, s32 compact,
     }
 }
 
-s32 func_151707E0() {
+/* Fade the record and apply randomized drag using the repeated X threshold.
+ * Guards normalize only the threshold temporaries and its dead duplicate load. */
+s32 func_151707E0(u8 *record) {
+    s8 high;
+    u8 low;
+    s32 value = record[0x1F];
+
+    if (record[0x24] != 0) {
+        if (value == 0) {
+            record[0x24] = (u32)func_150ADA20() % 25U + 200;
+        }
+        if (value != 254) {
+            value = (s32)((u32)value + ((u32)D_800BE9E4 << 6));
+            if (value >= 255) {
+                value = 254;
+            }
+            record[0x1F] = value;
+        }
+    } else {
+        if (value != 0) {
+            value = (s32)((u32)value - ((u32)D_800BE9E4 << 4));
+            if (value < 0) {
+                value = 0;
+            }
+            record[0x1F] = value;
+        }
+    }
+    if (record[0x24] == 0 && value == 0) {
+        return 1;
+    }
+    func_1516F864(record);
+    if (record[0x2F] != 0) {
+        func_1516F8EC(record, func_151EF610() % 32 + 230);
+        func_1516F91C(record, func_151EF610() % 32 + 230);
+    } else {
+        high = *(s8 *)(record + 0x26);
+        low = record[0x27];
+        if ((s32)((u32)((s32)((u32)high << 8) + low) *
+            (u32)((s32)((u32)high << 8) + low) +
+            (u32)(high * 256 + low) * (u32)(high * 256 + low)) >= 2001) {
+            func_1516F8EC(record, func_151EF610() % 32 + 220);
+            func_1516F91C(record, func_151EF610() % 32 + 220);
+        }
+    }
+    *(s16 *)(record + 0x18) = 0;
     return 0;
 }
 

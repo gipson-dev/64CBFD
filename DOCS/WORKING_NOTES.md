@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-15:
+[Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
+Install callback 6's full-word fade and randomized scaling from semantic C,
+all 117 normalized words exact / frame 0x28, raw 13 register differences.
+Preserve the repeated-X signed-wrap threshold; do not repair it to X/Z.
+Pass 15 final tests, 4,032 literal/public cases, 444 fault prefixes, native32
+O2/O0 and 960 actual wrapper/helper connections. The first whole-image
+prediction passes: 316 changed bytes, all others/64 inputs fixed, no
+exclusions. Game 2,910/4,828, total 3,583/5,501, different 1,918, zero drift.
+Bank tools bce2d08 first, retain 736 mirror hashes / 741 paths and continue
+func_151709B4's 119-word slot plus all broader Game queues.
+
+2026-10-15:
 [Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
 Recover the seven-input directional burst, all 184 guarded words exact /
 frame 0x100, raw 185 words / 97 differences explicit. Pass 15 final checks,
