@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Six-Piece Debris Recovery - 2026-10-15
+
+[Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
+
+- [x] Recover func_15170B90's six-input ABI, 96-byte packet with six unset bytes, full-word asset IDs, signed RNG, live tables, fixed-field lifetimes and ten-input ring call.
+- [x] Pass five pre-install checks: 1,440 guest sequences, native32 O2/O0 with 1,024 cases each, ten effective compiled guest/native negatives and all 75 unchanged input gates. Check 90 initialized bytes and provider-seeded holes; do not claim portable first-hole values.
+- [x] Reject the incomplete install gate explicitly: selected C 210 words / frame 0x128 versus retail 205 / 0x120, and typing func_151718F0's stub grows that neighbor 12 -> 28 bytes. Preserve all seven other neighbors/pools, production C/guards/ELF/progress and README. Bank tools b88e200 first and preserve all 747 mirror hashes / 751 paths.
+- [ ] Resolve target shape/saved lifetimes and recover the genuine typed ring definition; qualify proposed normalization, complete literal packets, callers/rebases and connected consumers as needed before any install, build audit or match credit.
+- [ ] Keep func_1516D400, inherited-stack func_1516FE1C and every wider additional-source/Game queue active. No push, host or frozen Release action.
+
 ## Scaled Random Spray Guarded Match - 2026-10-15
 
 [Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):

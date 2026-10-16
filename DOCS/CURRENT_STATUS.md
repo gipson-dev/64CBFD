@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools de7c6d8; tools are committed before the consumer pin.
+  checkpoint pins tools b88e200; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Six-piece debris pre-install recovery:
+[Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md).
+Recover func_15170B90's 96-byte packet, signed RNG, live tables and typed
+ten-input ring call. Five checks pass: 1,440 guest cases, native32 O2/O0
+with 1,024 cases each, ten effective guest/native negatives and 75 unchanged
+input gates. No new match: candidate 210 words / frame 0x128 versus retail
+205 / 0x120, with a typed-ring stub neighbor growing 12 -> 28 bytes.
+All seven other neighbors are fixed. Production C/guards/ELF/progress and
+root README stay unchanged; Note 1422 counts below are not freshly rerun.
+Bank tools b88e200 first, preserve 747 mirror hashes / 751 paths. Continue
+the target shape/lifetimes and genuine func_151718F0 definition before
+installation; retain all broader queues and frozen host/Release boundaries.
 
 Scaled random spray installed with checked guarded normalization:
 [Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md).

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
+Recover six-piece debris packets and qualify 1,440 guest sequences,
+native32 O2/O0 and ten effective negatives. Reject installation: 210/205
+words, 0x128/0x120 frames and a typed-ring neighbor growing 12 -> 28 bytes.
+Production C/guards/ELF/progress and all 75 input hashes stay unchanged;
+no match credit or README change. Bank tools b88e200 first, preserve 747
+mirror hashes / 751 paths and continue target/ring prerequisites.
+
+2026-10-15:
 [Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
 Install the complete counted spray C, all 119 slot words exact / frame
 0xF8, retaining the 118-word body / one-NOP padding distinction. Raw C has

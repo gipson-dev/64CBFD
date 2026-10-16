@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Six-Piece Debris Recovery Checkpoint
+
+[Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
+Qualify func_15170B90's full initialized packet contract, signed RNG and
+ten-word ring ABI. Five tests pass, including 1,440 guest sequences,
+native32 O2/O0 and ten effective negatives. Keep production unchanged:
+the candidate exceeds its slot, differs in frame/lifetimes and types a
+neighboring ring stub that must be recovered before installation. No new
+matching credit. Bank tools b88e200 first; preserve all 747 mirror hashes.
+
 ## 2026-10-15 Scaled Random Spray Guarded Match
 
 [Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):

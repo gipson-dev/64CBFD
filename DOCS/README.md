@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Six-piece debris semantic recovery](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
+  Qualify packet/RNG/ring behavior while explicitly rejecting the oversized
+  candidate and typed-ring neighbor change. Production and counts stay fixed.
 - [Scaled random spray guarded byte match](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
   Recover the counted seven-input spray and escaped output writes, match
   its complete 119-word slot and pass 15 final whole-loop/image checks.
