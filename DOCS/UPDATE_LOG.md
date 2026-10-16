@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-16 View Scissor Setup Direct Match
+
+[Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
+Replace func_1501A490's stub with typed, branch-local SDK scissor C; all 124
+words / frame 0x48 emit directly, without new guards or profile changes. Ten
+final tests pass in 45.415s, with the real 87-word clamp, aliases, bounded cast
+prefixes and consumed caller returns. The complete normal ELF equals the first
+376-byte slot/extent prediction, zero exclusions; ten neighbors, all guards and
+protected data remain unchanged. Fresh Game 2,933/4,828 (60.75%), total
+3,606/5,501 (65.55%), different 1,895, zero drift; conversion unchanged.
+Tools e72f87b banks first, both copies' checks pass and all 899 initial mirror
+hashes / 905 paths are preserved. README aggregate rows only. Owner recipe
+warning fixed; next 87-word func_1501A764 with its real transform tail ABI.
+No push or host/Release action; timing and full gameplay remain separate.
+
 ## 2026-10-16 Two-Row Display-List Setup Guarded Match
 
 [Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):

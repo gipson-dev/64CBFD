@@ -1,6 +1,9 @@
 #include <ultra64.h>
 
+/* Legacy callers pass the same six word-sized arguments and cursor result. */
+#define func_1501A490 ViewScissorLegacyWordSignature
 #include "functions.h"
+#undef func_1501A490
 #define D_800968E0 ViewInitLegacyFactorWord
 #include "variables.h"
 #undef D_800968E0
@@ -14,7 +17,9 @@ void func_1510B070(s32 mode);
 typedef struct {
     u8 padding0[0xC];
     f32 extentX, extentY;
-    u8 padding14[0x58];
+    u8 padding14[0x10];
+    f32 top, bottom, left, right;
+    u8 padding34[0x38];
     f32 baseFovX, baseFovY;
     u8 padding74[0x10C];
 } ViewProjection476D0;
@@ -27,6 +32,8 @@ void func_1501B22C(s32 index);
 
 extern s32 D_800BE9C8[];
 extern Gfx D_8002C930[];
+
+void func_1501AF44(f32 *ulx, f32 *uly, f32 *lrx, f32 *lry);
 
 /* Generated placeholder declarations. */
 void func_1501A220(s32 viewCount, s32 projectionMode);
@@ -93,9 +100,30 @@ void func_1501A39C(void) {
     } while (output != &D_800BE9E0);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A490.s. */
-s32 func_1501A490(s32 arg0, s16 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
-    return 0;
+/* Append pipe sync and the selected view's clipped scissor rectangle. */
+s32 func_1501A490(Gfx *commands, s16 view, s32 unused2, s32 unused3, s32 bottomLimit, s32 mode) {
+
+    gDPPipeSync(commands++);
+    if (view == 0xFF) {
+        gDPSetScissor(commands++, mode, 2, 0, (f32)(s32)((u32)D_800BE620 - 2), (f32)D_800BE624);
+    } else {
+        f32 left;
+        f32 right;
+        f32 top;
+        f32 bottom;
+
+        left = VIEW_PROJECTIONS_476D0[view].left;
+        right = VIEW_PROJECTIONS_476D0[view].right;
+        top = VIEW_PROJECTIONS_476D0[view].top;
+        if (bottomLimit != 0) {
+            bottom = (f32)bottomLimit < VIEW_PROJECTIONS_476D0[view].bottom ? (f32)bottomLimit : VIEW_PROJECTIONS_476D0[view].bottom;
+        } else {
+            bottom = VIEW_PROJECTIONS_476D0[view].bottom;
+        }
+        func_1501AF44(&left, &top, &right, &bottom);
+        gDPSetScissor(commands++, mode, left, top, right, bottom);
+    }
+    return (s32)commands;
 }
 
 Gfx *func_1501A680(Gfx *arg0) {

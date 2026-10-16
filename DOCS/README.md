@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View scissor setup direct match](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
+  Restore all 124 words directly from C with real SDK/clamp behavior and no
+  new guards/profile. Ten final tests and the entire 376-byte image prediction
+  pass; owner recipe warning fixed. Continue the 87-word projection wrapper.
 - [Two-row display-list setup guarded match](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
   Restore two live SDK command rows, all 61 words with a target-only no-unroll
   object and 38 closed guards. Eleven final tests and the entire 193-byte ELF

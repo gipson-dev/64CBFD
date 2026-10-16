@@ -196,3 +196,8 @@ two scissor mode bits. Audit float conversion/NaNs, live output/data aliases,
 real helper behavior and consumed cursor-return sites before installation.
 Keep timing's 141 differences, the remaining provider/additional-source queue
 and full frame/startup/gameplay acceptance separate.
+
+Follow-up completed in [Note 1455](1455-view-scissor-setup-direct-match-20261016.md):
+func_1501A490 matches all 124 words directly from C, and the owner recipe
+override advisory is removed. Continue the 87-word func_1501A764 wrapper;
+the timing match and wider queue remain open.

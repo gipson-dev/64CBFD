@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## View Scissor Setup Direct Match - 2026-10-16
+
+[Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
+
+- [x] Recover func_1501A490's six-word ABI, signed view, real SDK pipe/scissor commands, original float rounding/clamp order and consumed cursor result. Name the four existing record fields without changing their 0x180 layout.
+- [x] Match all 124 words / frame 0x48 directly from branch-local C and inline record accesses; add no guards or compiler profile. Preserve all ten neighbors, the 87-word real clamp and previous no-unroll selection.
+- [x] Pass all ten final tests in 45.415s: 2,996 completed guest cases, 928 invalid-conversion prefixes, 1,252 native32 O2/O0/UBSan cases each, seven effective controls, 48 original caller cuts and 402 connected fault prefixes. Prove four dead helper words statically instead of claiming they executed.
+- [x] Reproduce the entire first 376-byte ELF prediction, zero metadata exclusions. Protect all 120 inputs, 117 unchanged inputs, all guard bytes and 189,088 bytes / 720 data owners. Fresh Game 2,933/4,828, total 3,606/5,501, different 1,895, zero drift; conversion unchanged.
+- [x] Remove game_476D0 from the plain padder static-pattern list without changing its explicit rule/profile; verify the new override advisory is gone. Bank tools e72f87b first, pass both copies' syntax/eleven padder tests and tools-check, preserving all 899 initial mirror hashes / 905 paths.
+- [ ] Recover adjacent func_1501A764: 87 words / frame 0x38, projected outputs, signed view and live base/page reloads. Audit the actual func_150A7A00 nonstandard tail-entry register/stack contract and output aliases before installation.
+- [ ] Keep timing's 141 differences, remaining view providers, wider Game/additional-source work and full startup/frame/gameplay acceptance separate.
+
 ## Two-Row Display-List Setup Guarded Match - 2026-10-16
 
 [Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
@@ -9,8 +21,8 @@
 - [x] Pass all eleven final tests in 51.237s: 688 three-way guest cases, 344 native32 O2/O0/UBSan cases each, seven effective controls, 48 original caller cuts, independent rebases and 456 fault prefixes.
 - [x] Reproduce the entire first 193-byte ELF slot/extent prediction, zero metadata exclusions. Protect all 117 inputs, 113 unchanged inputs and 189,088 bytes / 720 data owners. Fresh Game 2,932/4,828, total 3,605/5,501, different 1,896, zero drift; conversion unchanged.
 - [x] Bank tools a83f3a4 before the consumer pin; pass both copies' syntax/eleven padder tests and tools-check, preserving mirror HEAD, all 893 initial hashes / 899 paths. Root README aggregate rows only.
-- [ ] Recover adjacent func_1501A490: 124 words / frame 0x48, signed s16 view, pipe-sync/scissor emission, six-word ABI and consumed cursor return. Audit its real four-float clamp and output/data aliases.
-- [ ] On the next owner-build edit, remove game_476D0 from the plain padder static-pattern list to suppress its new explicit-recipe override advisory, retaining the same target-only profile and complete-image gate.
+- [x] Recover adjacent func_1501A490 directly in [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md): all 124 words / frame 0x48 match without new guards after real clamp, alias and caller-return qualification.
+- [x] Remove game_476D0 from the plain padder static-pattern list in [Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md); retain the same explicit target-only profile and verify the complete first image prediction.
 - [ ] Keep timing's 141 differences, remaining view providers, wider Game/additional-source work and full startup/frame/gameplay acceptance separate.
 
 ## View Initialization Guarded Match - 2026-10-16

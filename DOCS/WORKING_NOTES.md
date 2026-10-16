@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1455](WORKING_NOTES/1455-view-scissor-setup-direct-match-20261016.md):
+Restore all 124 scissor/cursor words directly from C, original frame 0x48 and
+no new guard/profile. Ten final tests pass in 45.415s, including actual clamp,
+alias/cast-prefix/native/caller/fault qualification. The entire normal ELF
+equals the first 376-byte prediction, zero metadata exclusions. Fresh Game
+2,933/4,828, total 3,606/5,501, different 1,895, zero drift; conversion unchanged.
+Tools e72f87b banks first; both copies' checks pass, preserving 899 mirror
+hashes / 905 paths. Owner recipe warning fixed; next 87-word func_1501A764.
+
+2026-10-16:
 [Note 1454](WORKING_NOTES/1454-two-row-display-list-setup-guarded-match-20261016.md):
 Restore the two-row SDK display-list setup, all 61 words guarded-exact using
 a target-only no-unroll object and 38 closed scratch-role/schedule guards.
