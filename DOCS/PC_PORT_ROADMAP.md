@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Effect Dispatch And Owner Completion - 2026-10-16
+
+[Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
+
+- [x] Recover func_15171BF4's two-input void ABI, actor +4 byte selector, byte flags, three effect-helper calls and the correctly ordered five-input sound call. Audit actual original callee and caller ABIs, including ignored helper returns and the unused third helper mode word.
+- [x] Match all 42 executable words / frame 0x28 directly and retain the distinct padding nop in its 43-word / 172-byte retail slot. No target guards, invented body instructions, pool or profile change. Preserve all eight neighbors and prior guards.
+- [x] Close all nine owner slots / 4,368 bytes as linked byte-exact and remove the last zero-return placeholder plus obsolete header. Earlier guard-backed matches remain guard-backed, not reclassified as direct raw C.
+- [x] Pass all 13 final tests in 75.277s: 3,072 paired selector/flag/effect cases visiting all 42 body words, native32 O2/O0 with 1,536 cases each and UBSan, ten effective guest/native negatives, 64 fault pairs, eight guest aliases, three original rebase sets / 120 pairs, six caller captures and eight actual muted sound-wrapper connections.
+- [x] Reproduce the complete pre-install ELF prediction: 127 changed code/extent bytes, symbol size 12 -> 168, no extra metadata changes, every other byte / 87 inputs fixed, protected 189,088 bytes / 720 owners exact. Refresh Game 2,917/4,828 (60.42%), total 3,590/5,501 (65.26%), different 1,911, zero drift; README aggregate rows only.
+- [x] Bank tools 166a8a1 before consumer C/pin/docs, preserve all 782 original mirror hashes / 787 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_1516D400 in generated_19A8B0.c, VA 0x1516D400 / ROM 0x19A8B0, 58 words / 232 bytes, no stack frame, ending at func_1516D4E8. Audit its four saturating byte counters, conditionally live increment byte and original caller/result contract before selecting C types.
+- [ ] Restore the external effect helpers func_150AEEB0, func_150BD740 and func_150CDBB0, plus caller func_150265CC. Keep func_15169C70, func_1511C638, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues active.
+
 ## Rectangle Preset Dispatch Direct Match - 2026-10-16
 
 [Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
@@ -9,7 +22,7 @@
 - [x] Pass all 13 final tests in 84.073s: 4,096 paired selector/effect cases visiting every original word, native32 O2/O0 with 768 cases each and UBSan, nine effective guest/native negatives, 142 fault pairs, 16 guest-home aliases, three original rebase sets / 90 pairs, six caller captures and 16 current rectangle-emitter connections.
 - [x] Preserve the rejected slot-only prediction, account for the exact three-symbol cycle / 53 metadata bytes, then rebuild and reproduce all 449 changes (396 slot/extent + 53 metadata), every other byte / 80 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,916/4,828 (60.40%), total 3,589/5,501 (65.24%), different 1,912, zero drift; README aggregate rows only.
 - [x] Bank tools 20f2701 before consumer source/pin/docs, preserve all 777 original mirror hashes / 782 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_15171BF4 at VA 0x15171BF4 / ROM 0x19F0A4, frame 0x28, 43-word / 172-byte retail slot (42 instruction words plus one padding nop), ending at 0x15171CA0. This is the last placeholder in generated_19E040.c; audit its actor +4 byte switch and four helper ABIs before conversion.
+- [x] Recover func_15171BF4's full actor-byte/helper ABI in Note 1430, all 42 executable words direct with the separate slot padding retained. All nine owner slots are now linked byte-exact.
 - [ ] Restore caller func_150265CC and retain func_15169C70, func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues.
 
 ## Random Packet Burst Direct Match - 2026-10-16

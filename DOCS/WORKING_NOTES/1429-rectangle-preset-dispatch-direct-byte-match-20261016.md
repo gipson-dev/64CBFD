@@ -15,7 +15,7 @@ All **127 retail words / 508 bytes** match directly, original frame
 4. [x] Pass ten pre-install checks, including the complete selector domain, native32, effective negatives, aliases/faults, independent rebases, original caller and current rectangle emitter.
 5. [x] Preserve the rejected slot-only prediction, explain its 53 metadata bytes, then predict and reproduce the full linked ELF without exclusions.
 6. [x] Pass thirteen final target/install checks, update fresh aggregates and README rows, preserve the older mirror and commit tools before consumer source/pin/docs. No push.
-7. [ ] Recover next func_15171BF4: VA 0x15171BF4, ROM 0x19F0A4, frame 0x28, 43-word retail slot / 172 bytes (42 instruction words plus one padding nop), ending at 0x15171CA0. It is the last placeholder in this owner. Audit the actor +4 byte and actual helper signatures first.
+7. [x] Recover func_15171BF4's actor-byte/helper ABI in [Note 1430](1430-actor-effect-dispatch-and-owner-completion-20261016.md): 42 executable words direct, distinct padding retained, all nine owner slots linked byte-exact and no zero-return placeholders left.
 8. [ ] Restore caller func_150265CC and retain func_15169C70, func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all broader Game/additional-source/raw-matching queues.
 
 ## Recovered Interface

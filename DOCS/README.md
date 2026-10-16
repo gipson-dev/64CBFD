@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor effect dispatch and owner completion](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
+  Finish the final placeholder and all nine linked slots / 4,368 bytes,
+  qualify 13 final checks and preserve the external-helper acceptance limits.
 - [Rectangle preset dispatch direct byte match](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
   Recover all 127 instructions and the three-to-thirteen-input ABI, pass
   13 final checks and account for the complete 449-byte linked-image change.

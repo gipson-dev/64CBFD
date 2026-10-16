@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 20f2701; tools are committed before the consumer pin.
+  checkpoint pins tools 166a8a1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor effect dispatcher and complete 19E040 owner:
+[Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md).
+func_15171BF4 matches all 42 body words / frame 0x28 directly, plus its
+separate retail padding nop for the full 43-word slot. No target guards.
+All nine owner slots / 4,368 bytes are now linked byte-exact, and no
+zero-return placeholders remain in generated_19E040.c. Earlier guarded
+matches are preserved, not reclassified as raw direct matches. All 13
+final tests pass in 75.277s. The complete ELF equals its first pre-install
+prediction: 127 changed code/extent bytes, every other byte / 87 inputs
+and protected data fixed, no metadata exclusions. Fresh Game 2,917/4,828
+(60.42%), total 3,590/5,501 (65.26%), different 1,911, zero drift. Tools
+166a8a1 banks first; preserve 782 initial mirror hashes / 787 final paths.
+Next func_1516D400, 58-word leaf in generated_19A8B0.c. The three external
+effect helpers and original caller remain unfinished; muted sound-guard
+connections are not audible/gameplay acceptance. No push or host/Release action.
 
 Rectangle preset dispatcher installed as a direct instruction match:
 [Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md).

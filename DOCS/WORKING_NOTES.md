@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
+Restore func_15171BF4's 42-word body / frame 0x28 directly, retaining the
+separate padding nop for its 43-word slot. Complete all nine linked owner
+slots / 4,368 bytes and remove the obsolete placeholder header. All 13
+final tests pass; all 127 first-predicted ELF changes are exact, every
+other byte / 87 inputs fixed, no exclusions. Fresh Game 2,917/4,828, total
+3,590/5,501, different 1,911, zero drift. Bank tools 166a8a1 first, preserve
+782 mirror hashes / 787 paths; resume the 58-word func_1516D400 leaf.
+
+2026-10-16:
 [Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
 Install func_15171600's rectangle preset switch, all 127 words direct /
 frame 0x40 with the true three-to-thirteen-input ABI and no instruction

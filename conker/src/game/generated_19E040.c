@@ -60,11 +60,16 @@ void func_151717FC(u8 *actor, f32 halfWidth, f32 halfDepth, f32 offsetX,
                   f32 offsetY, f32 offsetZ, s32 kind, s32 preset,
                   s32 xCount, s32 zCount, f32 scale, u8 flags, s32 context);
 
+void func_150AEEB0(u8 *actor, u8 flags);
+void func_150BD740(u8 *actor, u8 flags, s32 mode);
+void func_150CDBB0(u8 *actor, u8 flags, s32 mode);
+s32 func_10010154(u16 sound, void *actor, u16 volume, s16 minimum, u16 maximum);
+
 extern s32 D_800BE9F0;
 
 void func_151700D8(f32 *, f32, f32, s32, f32, s32, s32, s32, u8, s32);
 
-/* Non-matching placeholders for the text-only asm slice asm/19E040.s. */
+/* C reconstructions for the text-only asm slice asm/19E040.s. */
 
 /* Emit six debris pieces, then a ring, and mark the actor's byte flag.
  * Reserved packet bytes intentionally retain stack residue. Guards normalize
@@ -401,6 +406,19 @@ void func_151718F0(f32 x, f32 y, f32 z, f32 radius, s32 lifetime,
     }
 }
 
-s32 func_15171BF4() {
-    return 0;
+/* Dispatch actor-specific effects; play the paired sound after the first effect. */
+void func_15171BF4(u8 *actor, u8 flags) {
+    switch (actor[4]) {
+        case 0x13:
+        case 0x23:
+            func_150AEEB0(actor, flags);
+            func_10010154(0x69, actor, 0x7D00, 200, 2000);
+            break;
+        case 0x1E:
+            func_150BD740(actor, flags, 1);
+            break;
+        case 0x54:
+            func_150CDBB0(actor, flags, 1);
+            break;
+    }
 }

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Actor Effects And 19E040 Owner Completion
+
+[Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
+Restore func_15171BF4's byte selector, masked flags, effect/sound ordering
+and typed helper calls. All 42 body words match directly with the original
+padding retained. All nine owner slots / 4,368 bytes are now byte-exact;
+no zero-return placeholders remain. All 13 final checks pass, including
+native32, effective negatives and complete linked-image/input checks.
+Game 2,917/4,828, total 3,590/5,501, different 1,911, zero drift. Bank tools
+166a8a1 first, preserve 782 mirror hashes / 787 paths; next func_1516D400.
+External helpers/callers and broader Game matching remain unfinished.
+
 ## 2026-10-16 Rectangle Preset Dispatch Direct Match
 
 [Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
