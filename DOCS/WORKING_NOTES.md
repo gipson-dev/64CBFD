@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-16:
+[Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
+Qualify timing's frontend/optimizer/emission bindings and 19 rejected source
+controls. Five final tests pass in 72.853s; all 109 live inputs and 141 timing
+differences stay fixed. Tools dbca3c5 banks first; preserve 885 mirror hashes /
+887 paths. Timing remains open; next implementation is the adjacent 95-word
+func_1501A220 view-initialization stub after caller/interface audit.
+
+2026-10-16:
 [Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
 Qualify timing allocation traces and reject a peeled history's signed-zero
 regression. Seven tests pass in 53.158s; retain the 191-word / frame 0x18 body

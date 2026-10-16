@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Frame Timing Frontend Allocation Boundary - 2026-10-16
+
+[Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
+
+- [x] Complete two fingerprint-locked CFE/UOPT/UGEN owner captures with normal-object identity and exact source/phase/emitted-register bindings. The retained residual address is assigned before UGEN; whole-owner load events are not uniquely target-attributed.
+- [x] Reject unsigned comparison, step-view, switch, global-divisor, declaration-order and gate-width fixes across 19 complete-owner controls. All five final tests pass in 72.853s, including stream/table/lifecycle and phase-role corruption checks.
+- [x] Commit tools dbca3c5 before the consumer pin; keep all 109 live inputs, 141 timing differences and aggregates unchanged. Both copies' checks pass, preserving mirror HEAD, 885 original hashes / 887 paths.
+- [ ] Keep func_15019F20's source/dataflow allocation match open, including signed-zero and zero-reciprocal access-order boundaries; do not repeat the rejected screens or apply a UGEN-only register fix.
+- [ ] Recover adjacent func_1501A220 next: 95 retail words / frame 0x28, still a zero-return view-initialization stub. Audit callers, allocation/count arithmetic, callback mutation and constant ownership before installation.
+
 ## Frame Timing Allocation And Signed-Zero Boundary - 2026-10-16
 
 [Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):

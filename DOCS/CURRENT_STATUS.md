@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 061bde1; tools are committed before the consumer pin.
+  checkpoint pins tools dbca3c5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Timing frontend allocation boundary now captured:
+[Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md).
+Two completed CFE/UOPT/UGEN owner compiles prove the retained residual address
+is assigned before UGEN. Unsigned zero comparisons add a conversion; eight
+declaration-order controls are word-identical. All five final tests pass in
+**72.853s**, with 19 complete-owner controls and corruption gates. No source
+fit is adopted: production stays **191 words / frame 0x18 / 141 differences**,
+and all 109 live inputs/aggregates stay fixed. Tools **dbca3c5** banks first;
+both copies' checks pass, preserving 885 original mirror hashes / 887 paths.
+Keep this timing match open. Next implementation: the adjacent 95-word
+**func_1501A220** view-initialization stub, with caller/interface audit first.
 
 Latest timing fitting pass rejects source-only false improvements:
 [Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md).

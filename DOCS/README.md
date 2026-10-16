@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Frame timing frontend allocation provenance](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
+  Bind byte promotion and residual address roles before UGEN; reject 19 source
+  controls with five passing tests. Timing remains open; queue view initialization next.
 - [Frame timing allocation and signed-zero fit boundary](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
   Reject a score-only allocation fit and a peeled history's negative-zero
   regression. Seven focused tests pass; production stays at 141 differences.

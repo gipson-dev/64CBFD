@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-16 Frame Timing Frontend Allocation Provenance
+
+[Note 1452](WORKING_NOTES/1452-frame-timing-frontend-allocation-provenance-20261016.md):
+Two completed owner captures bind CFE byte promotion, optimized register roles
+and the emitted residual carrier. All five final tests pass in 72.853s,
+including 19 source controls and corruption gates; no fit is adopted. Preserve
+all 109 live inputs and 141 timing differences. Tools dbca3c5 banks first;
+both copies' checks pass, preserving 885 original mirror hashes / 887 paths.
+No production, root README or host change. Keep the timing match open; queue
+the adjacent func_1501A220 view-initialization recovery next.
+
 ## 2026-10-16 Frame Timing Allocation And Signed-Zero Boundary
 
 [Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
