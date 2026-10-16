@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9533be8; tools are committed before the consumer pin.
+  checkpoint pins tools 3cbb68b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet rectangle lifetime screens, **evidence only; still not byte matched**:
+[Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md).
+All 105 complete-owner forms remain at best 71 differences; no production
+C/guard/ELF/CSV or README change. Eight tests pass in 15.580s. A split-step
+control retains 346 words / frame 0x88 / 71 differences / literal 104/91 spans,
+but shifts eight stack accesses by four bytes: 32 guest execution pairs have
+equal public output and different private memory. Do not promote equal-count
+fits. Read-count probes add four words here and are rejected. Next observe
+the pinned UOPT's actual spill-victim decision; do not repeat these source
+families or infer executed probes from static symbols. Fresh Game 2,922/4,828,
+total 3,595/5,501, different 1,906, zero drift. Tools 3cbb68b banks first;
+preserve 818 original mirror hashes / 820 dirty paths. One tool-free Claude
+invocation fails with expired OAuth / 401; no advisory completed or account
+change. No fresh broad runtime claim, push or host/frozen Release action.
 
 Packet rectangle compiler provenance, **evidence only; no production change**:
 [Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md).

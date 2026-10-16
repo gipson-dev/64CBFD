@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
+Reject 105 complete-owner lifetime forms; best remains 71 differences.
+The split-step control keeps 346/frame0x88/71 and 104/91 literal spans while
+moving eight stack homes by -4. Verify 32 equal-public/different-private
+execution pairs; all eight final tests pass in 15.580s. Production's 100
+inputs, C/ELF/guards/CSV and matching totals stay fixed. Bank tools 3cbb68b
+before consumer docs/pin; preserve 818 mirror hashes / 820 paths. Next observe
+actual UOPT spill-victim selection, not more equivalent source permutations.
+One optional Claude invocation fails expired OAuth / 401; no advisory completed.
+
+2026-10-16:
 [Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
 Qualify func_15095D34's CFE/UOPT constant payloads, initialized UGEN frame
 observation and mode-5 allocation constraints. Wrong M-128/-132 homes already

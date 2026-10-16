@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Rectangle Lifetime Rejections - 2026-10-16
+
+[Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
+
+- [x] Measure and revalidate 105 complete-owner forms covering snapshots, narrow/wide values, consistent parameter prototypes, original/mutable steps, coordinate corners, semantic argument updates, branch routing and diagnostic priority probes. Best remains 71 differences; install none.
+- [x] Reject a real equal-count control: original-steps-S keeps 346 words / frame 0x88 / 71 differences and literal 104/91 spans, but changes eight stack homes by -4. Verify 32 guest pairs with equal public output and different private memory; require known object/binding identity, not those headline numbers alone.
+- [x] Separate aligned-tail evidence from fixed-slot evidence: the mixed 347-word body has a literal last 91 words, but zero same-position suffix and still 226 pointwise differences. Reject the extra word. Read-count probes emit 350/351 words plus SP+0x2C traffic here; external zero-code results do not transfer automatically.
+- [x] Pass all eight final tests in 15.580s, all 100 frozen/live input checks, both tools copies' syntax/eleven shared padder tests and tools-check. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; no production C/guards/ELF/CSV/README edit or guest/native rebuild.
+- [x] Bank tools 3cbb68b before consumer docs/pin; preserve 818 original mirror hashes / 820 paths. One packet-only Claude invocation terminates with expired OAuth / 401 and zero completed advisory; no further invocation/account/provider change. No push or host/frozen Release action.
+- [ ] Continue **func_15095D34** by observing the pinned UOPT's actual allocation/spill-victim selection. Require fired probes, real child/driver exits and unchanged normal/traced words, bindings and pools before attributing a cause. Static symbols are only probe candidates. Retain all 71 differences and the wider Game backlog.
+
 ## Packet Rectangle Compiler Provenance - 2026-10-16
 
 [Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Qualify mode-5 allocation diagnostics: both forms assign flag expression 123 abstract color 12 and computed fractional-T expression 137 color 0. Locate M-128/-132 storage in UOPT output before UGEN; retain the observed frame-write's limits rather than claiming all later scratch paths absent.
 - [x] Pass all 12 diagnostic tests in 15.687s, both tools copies' syntax/eleven shared padder tests and tools-check. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift. No production source, guards, ELF/CSV or README changes; no guest/native/gameplay requalification claimed.
 - [x] Bank tools 9533be8 before consumer documentation/pin; preserve all 815 initial mirror hashes / 818 dirty paths. No mirror commit/reset, push or host/frozen Release action.
-- [ ] Finish **the same func_15095D34**: recover UOPT's computed fractional-T retention and retail flag spill/copy through a qualified semantic use graph, then close the branch schedule and six macro-home differences. Keep all 71 remaining differences and the wider Game goal open; do not manufacture locals, physical bindings or bulk guards.
+- [ ] Finish **the same func_15095D34**: Note 1438 rejects 105 further lifetime forms and adds an effective private-home control. Observe the actual spill-victim decision next, then recover fractional-T retention, retail flag spill/copy, branch schedule and six macro-home differences. Keep all 71 differences and the wider Game goal open; do not manufacture locals, physical bindings or bulk guards.
 
 ## Packet Rectangle Extent And Lifetime Fitting - 2026-10-16
 

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet rectangle lifetime screens and private-home rejection](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
+  Revalidate 105 source forms and eight checks; reject equal-count fits with
+  changed private homes. Production remains at 71 differences, no new C match.
 - [Packet rectangle constant and spill provenance](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
   Qualify compiler streams, constant sharing and UOPT stack homes with
   12 diagnostic tests. Evidence only: production remains at 71 differences.

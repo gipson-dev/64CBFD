@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Packet Rectangle Lifetime Rejections
+
+[Note 1438](WORKING_NOTES/1438-packet-rectangle-lifetime-screens-and-private-home-rejection-20261016.md):
+All 105 complete-owner screens remain at best 71 differences; no new C match
+or production source/guard/ELF/CSV change. Eight tests pass, including 32 equal
+public/different private guest pairs exposing an eight-home shift hidden by
+equal word/frame/difference/span counts. Separate aligned tails from slot
+identity and reject non-free priority probes. Fresh totals stay Game
+2,922/4,828, total 3,595/5,501, different 1,906, zero drift; README unchanged.
+Tools 3cbb68b banks first; preserve 818 mirror hashes / 820 paths. Next observe
+the pinned UOPT's spill-victim decision. Optional Claude advisory fails with
+expired OAuth / 401; no completed review or further invocation/account change.
+
 ## 2026-10-16 Packet Rectangle Compiler Provenance
 
 [Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
