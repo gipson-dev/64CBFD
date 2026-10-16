@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-16 Randomized Ring Emitter Guarded Match
+
+[Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
+Restore func_151718F0's ten-input void ABI and complete radial factory
+packets, matching all 193 words / frame 0x140 after eight register guards.
+All 15 final tests pass; the full image matches the first prediction with
+602 changed bytes and no exclusions. Game 2,912/4,828, total 3,585/5,501,
+different 1,916, zero drift. Bank tools 6f03b11 first, preserve the older
+mirror and return to func_15170B90's still-open shape/lifetime gap.
+
 ## 2026-10-15 Six-Piece Debris Recovery Checkpoint
 
 [Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):

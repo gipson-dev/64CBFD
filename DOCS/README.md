@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Randomized ring emitter guarded byte match](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
+  Install all 193 normalized ring words and the genuine typed ABI; pass
+  15 final checks and close the complete first-predicted ELF without exclusions.
 - [Six-piece debris semantic recovery](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
   Qualify packet/RNG/ring behavior while explicitly rejecting the oversized
   candidate and typed-ring neighbor change. Production and counts stay fixed.

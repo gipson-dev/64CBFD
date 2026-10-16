@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Randomized Ring Emitter Guarded Match - 2026-10-16
+
+[Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
+
+- [x] Recover func_151718F0's ten-input float/word/byte ABI, empty-count three-byte copy, staged palette-zero colors, field lifetimes, three RNG draws and all 31 physical factory words. Check all four original caller windows; keep nonzero private-stack palette selectors outside native acceptance.
+- [x] Recover 193 words / frame 0x140 and SP+0xF4 using real locals. Normalize only eight checked initialization temporary-register words; append 185 identity and eight transforming guards, with no instruction/home/schedule/FP/branch/binding change. Keep all eight neighbors/pools fixed.
+- [x] Pass 15 final tests in 91.919s: 864 whole loops, 514 fault pairs, native32 O2/O0 with 1,024 cases each, ten compiled guest/native negatives, three independent rebase sets, four caller windows, 216 current helper-chain cases and all 801 archive fingerprints. Retain eleven unreachable compiler instructions without claiming execution.
+- [x] Match the entire rebuilt ELF to the initial prediction: 602 target-slot/extent changes, every other byte and 72 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,912/4,828 (60.31%), total 3,585/5,501 (65.17%), different 1,916, zero drift; root README aggregate snapshot only.
+- [x] Bank tools 6f03b11 before consumer source/pin/docs, preserve all 751 initial mirror hashes / 757 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push, host or frozen Release action.
+- [ ] Resume func_15170B90's separate 205-word / frame-0x120 shape and lifetime gap using the now-genuine typed ring. Keep func_1516D400, inherited-stack func_1516FE1C and every broader Game/additional-source queue active.
+
 ## Six-Piece Debris Recovery - 2026-10-15
 
 [Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
@@ -7,7 +18,8 @@
 - [x] Recover func_15170B90's six-input ABI, 96-byte packet with six unset bytes, full-word asset IDs, signed RNG, live tables, fixed-field lifetimes and ten-input ring call.
 - [x] Pass five pre-install checks: 1,440 guest sequences, native32 O2/O0 with 1,024 cases each, ten effective compiled guest/native negatives and all 75 unchanged input gates. Check 90 initialized bytes and provider-seeded holes; do not claim portable first-hole values.
 - [x] Reject the incomplete install gate explicitly: selected C 210 words / frame 0x128 versus retail 205 / 0x120, and typing func_151718F0's stub grows that neighbor 12 -> 28 bytes. Preserve all seven other neighbors/pools, production C/guards/ELF/progress and README. Bank tools b88e200 first and preserve all 747 mirror hashes / 751 paths.
-- [ ] Resolve target shape/saved lifetimes and recover the genuine typed ring definition; qualify proposed normalization, complete literal packets, callers/rebases and connected consumers as needed before any install, build audit or match credit.
+- [x] Recover the genuine typed ring definition in Note 1424; all 193 guarded words match, resolving that prerequisite without altering the debris stub.
+- [ ] Resolve the debris target's shape/saved lifetimes and qualify proposed normalization, complete literal packets, callers/rebases and connected consumers as needed before its install, build audit or match credit.
 - [ ] Keep func_1516D400, inherited-stack func_1516FE1C and every wider additional-source/Game queue active. No push, host or frozen Release action.
 
 ## Scaled Random Spray Guarded Match - 2026-10-15

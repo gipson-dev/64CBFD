@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-15
+Last verified: 2026-10-16
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b88e200; tools are committed before the consumer pin.
+  checkpoint pins tools 6f03b11; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Randomized ring emitter installed with checked register guards:
+[Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md).
+func_151718F0 matches all 193 retail words / frame 0x140, with the genuine
+ten-input void ABI. Raw C stays eight temporary-register words different;
+no frame/home/schedule/FP/branch/binding change. All 15 final tests pass in
+91.919s, including 864 loop cases, 514 fault pairs, native32 O2/O0, four
+caller windows, three rebase sets and 216 current helper-chain cases.
+The full rebuilt ELF matches its original prediction: 602 slot/extent
+changes, every other byte and 72 inputs fixed, protected layout exact,
+no exclusions. Fresh Game 2,912/4,828 (60.31%), total 3,585/5,501 (65.17%),
+different 1,916, zero drift; conversions fixed, README aggregate rows only.
+Tools 6f03b11 banks first; preserve 751 mirror hashes / 757 paths. Resume
+func_15170B90's 205-word / 0x120 shape with the typed ring prerequisite now
+resolved, retaining all broader queues. No push, gameplay or host/Release action.
 
 Six-piece debris pre-install recovery:
 [Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md).

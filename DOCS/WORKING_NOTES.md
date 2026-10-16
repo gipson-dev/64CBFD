@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-16:
+[Note 1424](WORKING_NOTES/1424-randomized-ring-emitter-guarded-byte-match-20261016.md):
+Install the genuine typed ring, all 193 words / frame 0x140 exact after
+eight checked temporary-register guards. Pass 15 final tests, close the
+entire original ELF prediction to 602 changed bytes with no exclusions,
+and refresh Game 2,912/4,828, total 3,585/5,501, different 1,916, zero drift.
+Bank tools 6f03b11 first and preserve 751 mirror hashes / 757 paths.
+Resume debris func_15170B90's separate shape/lifetime gap; broader work stays open.
+
 2026-10-15:
 [Note 1423](WORKING_NOTES/1423-six-piece-debris-semantic-recovery-20261015.md):
 Recover six-piece debris packets and qualify 1,440 guest sequences,

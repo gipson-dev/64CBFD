@@ -13,7 +13,7 @@ byte match.** Production source, guard CSV, ELF and matching counts stay fixed.
 4. [x] Qualify bounded packet sequences, provider mutations, native32, effective negatives and all 75 frozen/live inputs.
 5. [x] Reject installation on the oversized target, different frame and typed-ring neighbor change; bank four tools files before consumer documentation/pin.
 6. [ ] Resolve the original 205-word / frame-0x120 target shape and saved-role lifetimes without artificial locals, volatile workarounds or invented calls.
-7. [ ] Recover the ring func_151718F0 or otherwise establish its genuine compatible definition before installing its typed caller. Do not bypass the ABI with an incompatible cast or silently change the neighboring placeholder.
+7. [x] Recover the ring func_151718F0's genuine compatible definition in [Note 1424](1424-randomized-ring-emitter-guarded-byte-match-20261016.md). All 193 words now match after eight checked register guards. The debris caller itself remains uninstalled; do not bypass its remaining gates.
 8. [ ] Qualify any proposed normalization, all 96 literal packet bytes, caller/rebase and connected-consumer boundaries as appropriate; then rebuild, audit every ELF byte and refresh official counts before installation credit.
 9. [ ] Continue every broader Game/additional-source, func_1516D400 and inherited-stack func_1516FE1C queue.
 
