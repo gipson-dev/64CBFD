@@ -44,6 +44,10 @@ visual/gameplay acceptance.
 
 ## Matching Still Open
 
+Superseded by [Note 1449](1449-view-overlay-matrices-guarded-match-20261016.md).
+Its audit also identifies scale-mixed's missing outer shift parentheses;
+that particular old screen was not semantic evidence and was never installed.
+
 All **49** complete-owner source/profile screens have receipts in the ignored
 conker/build/game-view-overlay-pass directory. Reproduce the groups through:
 

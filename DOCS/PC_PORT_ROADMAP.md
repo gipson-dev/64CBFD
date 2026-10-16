@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## View Overlay Matrices Guarded Match - 2026-10-16
+
+[Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
+
+- [x] Explain the lost full-view carrier with unchanged normal-profile UOPT diagnostics, then recover all 102 C words / frame 0x40 and original saved-register homes.
+- [x] Close 37 raw differences using only expected-word scratch-role guards; preserve opcodes, constants, scheduling, all 24 binding positions and all 15 owner neighbors.
+- [x] Pass eight focused pre-install tests in 70.903s, including three-way guest/native/caller checks, 158 fault prefixes, independent original/source rebases and four owned compiler traces.
+- [x] Reproduce the complete first 318-byte ELF slot/extent prediction in the normal build. Fresh Game 2,930/4,828, total 3,603/5,501, different 1,898, zero drift; conversion unchanged. Update only two README aggregate rows.
+- [x] Pass all eleven final tests in 74.110s, including all 107 live inputs, the exact guard prefix, 104 unchanged inputs and protected 189,088 bytes / 720 owners. Bank tools 52a9ed6 first; both copies' checks pass while preserving all 871 original mirror hashes / 877 paths.
+- [ ] Recover func_15019F20 next: frame 0x18, 191 body words plus one trailing NOP, still a timing/state updater stub. Keep the full frame/gameplay and wider Game queue open.
+
 ## View Overlay Matrices Semantic Restoration - 2026-10-16
 
 [Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
@@ -8,7 +19,7 @@
 - [x] Qualify the unguarded 98-word C body / frame 0x40 through nine final tests in 86.850s: 3,584 guest cases, 1,536 native32 O2/O0 cases each, eight controls, three source rebases and 75 actual caller cuts.
 - [x] Reproduce the complete first 324-byte ELF slot/extent prediction; preserve 15 neighbors, all guard bytes, 105 other inputs and protected 189,088 bytes / 720 owners. Fresh matching/conversion totals and README aggregates are unchanged.
 - [x] Bank tools e5a8f98 before the consumer pin, verify both copies' syntax/eleven shared padder tests and tools-check; preserve mirror HEAD ddbdd16, all 865 original hashes and 871 final paths.
-- [ ] Match func_15019CC8's original 102 words: the slot still has 94 word differences. Investigate retail's S0 carrier, narrowed-word home and repeated index calculations; trailing padding is not a match.
+- [x] Match func_15019CC8's original 102 words in [Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md), recovering S0 and the original homes before adding 37 closed scratch-role guards. No trailing padding or arithmetic rewrite.
 - [ ] Recover func_15019F20's 192-word stub; keep rectangle fitting, full frame/gameplay and the wider Game/additional-source queue open.
 
 ## Shared Overlay Provider Guarded Match - 2026-10-16

@@ -565,20 +565,18 @@ s32 func_15019BB8(Gfx *arg0, s32 arg1) {
 
 /* Set up a view's overlay matrices and append the category/mode-5 passes. */
 s32 func_15019CC8(Gfx *commands, s32 view) {
-    s32 narrowedView;
 
     gSPViewport(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x10) + 0x40);
-    narrowedView = (s16)view;
-    commands = (Gfx *)func_1501A490((s32)commands, narrowedView, 0, 0, 0, 0);
+    commands = (Gfx *)func_1501A490((s32)commands, (s16)view, 0, 0, 0, 0);
     gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
-    gSPMatrix(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x40) + 0x100,
+    gSPMatrix(commands++, D_800BE628 + (((u32)view * 3) << 7) + (D_800BE9C0 * 0x40) + 0x100,
         G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
     if (D_800BE9F0 == 0x1D) {
-        commands = func_1502BAD0(commands, 6, narrowedView);
+        commands = func_1502BAD0(commands, 6, (s16)view);
     }
     commands = (Gfx *)func_151674F8(commands, 5, 0, 0);
     commands = (Gfx *)func_151674F8(commands, 5, 0, 1);
-    gSPMatrix(commands++, D_800BE628 + ((u32)view * 0x180) + (D_800BE9C0 * 0x40) + 0x100,
+    gSPMatrix(commands++, D_800BE628 + ((((u32)view << 2) - (u32)view) << 7) + (D_800BE9C0 * 0x40) + 0x100,
         G_MTX_PROJECTION | G_MTX_LOAD | G_MTX_NOPUSH);
     /* The legacy pointer declaration labels the page-pointer table itself. */
     gSPMatrix(commands++, ((u32 *)&D_800DC2A0)[D_800BE9C0] + ((u32)view * 0x40),

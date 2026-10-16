@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
+func_15019CC8 now matches all 102 words with 37 scratch-role guards after UOPT
+evidence and equivalent source trees restore S0, the original frame and homes.
+The normal ELF equals the first 318-byte slot/extent prediction. Fresh Game
+2,930/4,828, total 3,603/5,501, different 1,898, zero drift; conversion unchanged.
+All eleven final tests pass in 74.110s. Tools 52a9ed6 banks first; preserve
+104 other inputs, guard history, protected data and 871 mirror hashes / 877 paths.
+Keep the separate frame-0x18 timing/state updater func_15019F20 open.
+
+2026-10-16:
 [Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
 func_15019CC8 is restored as unguarded semantic C, not byte-exact: 98 emitted
 words / frame 0x40 and 94 slot differences. Nine final tests pass in 86.850s;

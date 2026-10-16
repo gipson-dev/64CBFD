@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-16 View Overlay Matrices Guarded Match
+
+[Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
+Close func_15019CC8's 102-word match after unchanged UOPT traces explain the
+cached index and lost S0 carrier. The refined C restores the original frame,
+homes and body length; 37 guards normalize only scratch roles, not scheduling
+or arithmetic. The normal build equals the entire first 318-byte ELF prediction.
+All eleven final tests pass in 74.110s; preserve 104 other inputs, the exact
+guard prefix and protected 189,088 bytes / 720 owners. Tools 52a9ed6 banks
+first; both copies' checks pass, preserving 871 original mirror hashes / 877 paths.
+Fresh Game 2,930/4,828 (60.69%), total 3,603/5,501 (65.50%), different 1,898,
+zero drift; conversion unchanged. Root README gets only its two aggregate rows.
+The separate func_15019F20 timing/state updater remains stubbed; no full
+frame/gameplay or host/Release equivalence is claimed.
+
 ## 2026-10-16 View Overlay Matrices Semantic Restoration
 
 [Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):

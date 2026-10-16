@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [View overlay matrices guarded match](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
+  Recover the original S0 lifetime using compiler evidence, then close all 102
+  words with 37 scratch-role guards. Normal output matches the complete
+  318-byte ELF prediction; continue the separate timing/state updater stub.
 - [View overlay matrices semantic restoration](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md):
   Replace the zero-return stub with qualified unguarded C; nine final tests
   and the complete 324-byte image prediction pass. The 102-word instruction

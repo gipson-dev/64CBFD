@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e5a8f98; tools are committed before the consumer pin.
+  checkpoint pins tools 52a9ed6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,24 +27,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View overlay matrices restored as **semantic C, not byte-exact**:
-[Note 1448](WORKING_NOTES/1448-view-overlay-matrices-semantic-restoration-20261016.md).
-func_15019CC8 now emits its viewport, matrix/category/mode-5 passes and cursor
-return, with full-word address indexing and signed helper arguments. The
-98-word body / frame 0x40 has **94** differences in its 102-word retail slot;
-no new guards or compiler-profile changes. Forty-nine screens do not recover
-retail's S0 lifetime and recomputed indices; that instruction match stays open.
-Nine final tests pass in **86.850s**, including 3,584 guest cases, 1,536
-native32 O2/O0 cases each, eight controls, source rebases and 75 real caller
-cuts. The complete normal ELF equals its first **324-byte** slot/extent
-prediction. Preserve 15 neighbors, 105 other inputs, unchanged guard bytes
-and protected 189,088 bytes / 720 owners, with no metadata exclusions.
-Fresh numbers stay Game **2,929/4,828 (60.67%)**, total **3,602/5,501
-(65.48%)**, different **1,899**, zero drift; conversion and README aggregates
-are unchanged. Tools **e5a8f98** banks first; both copies' syntax/padder and
-tools-check pass. Preserve 865 original mirror hashes / 871 final paths.
-Next investigate func_15019CC8's compiler carrier/CSE shape; func_15019F20
-remains a 192-word stub. No full-frame/gameplay, push or host/Release claim.
+View overlay matrices now **102 words guarded byte-exact**:
+[Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md).
+Fingerprint-locked UOPT traces explain the former cached index and lost S0
+carrier. Direct helper casts and distinct equivalent unsigned scale trees
+recover the original frame 0x40, saved-register homes and full 102-word body.
+Thirty-seven expected-word guards change only closed scratch-register roles,
+not instructions, constants, scheduling or binding positions. This is not a
+direct C match. The complete normal ELF/source/guards equal the first
+**318-byte** slot/extent prediction, with no metadata exclusions.
+Fresh Game **2,930/4,828 (60.69%)**, total **3,603/5,501 (65.50%)**,
+different **1,898**, zero drift; conversion unchanged. Update only two README
+aggregate rows. All **eleven final tests pass in 74.110s**, including all 107
+live-input controls, 158 fault prefixes and four owned compiler traces.
+Preserve 104 other inputs, the exact guard prefix and protected 189,088 bytes /
+720 owners. Tools **52a9ed6** banks first; both copies' syntax/eleven padder
+tests and tools-check pass. Preserve all 871 original mirror hashes / 877 paths.
+Next **func_15019F20**, frame 0x18, a timing/state updater with 191 body words
+plus one trailing NOP. It remains stubbed; full-frame/gameplay and wider Game
+work stay open. No push or host/frozen Release action.
 
 View render provider installed, **215 words guarded byte-exact**:
 [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md).
