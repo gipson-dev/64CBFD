@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
+Restore func_15019130 as direct 185-word C, frame 0x28, no new guards.
+Ten final tests pass in 179.908s and the normal build equals the
+complete 516-byte prediction with closed 16-byte metadata accounting.
+Fresh Game 2,926/4,828, overall 3,599/5,501, different 1,902, zero drift.
+Tools c820bde banks first; preserve 841 mirror hashes / 847 paths.
+README aggregate rows only; next independent upstream func_1501878C
+remains stubbed. No full gameplay or host/frozen Release claim.
+
+2026-10-16:
 [Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
 Restore func_15094EA0's live matrix pair/product as direct 40-word C,
 frame 0x98, no new guards. Ten final tests pass in 148.649s; the normal

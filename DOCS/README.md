@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Frame coordinator direct match](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
+  Restore all 185 words without guards, pass ten final checks, and match the
+  complete 516-byte ELF prediction with closed metadata accounting.
+  Keep the upstream frame-loop stub separate.
 - [View matrix preparation direct match](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
   Restore all 40 words without new guards, pass ten final checks and reproduce
   the complete 138-byte ELF prediction. Keep the discovered caller stub explicit.

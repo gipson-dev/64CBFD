@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d7a8bb1; tools are committed before the consumer pin.
+  checkpoint pins tools c820bde; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,24 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Frame coordinator installed, **185 words directly byte-exact; no new guards**:
+[Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md).
+Restore func_15019130's ordered callbacks, live signed/u8 view loops,
+success return and wrapping ages for 508 software-page records. All ten
+final tests pass in 179.908s, including real 40/46/78-word matrix
+helpers, native32 O2/O0/UBSan, fault/wrap cuts and complete image/input
+controls. The normal guest build equals the complete first 516-byte ELF
+prediction, including 16 explicitly modeled metadata-serialization bytes
+and no exclusions. All 15 neighbors, 101 other inputs, guards and protected
+189,088 bytes / 720 owners remain fixed. Fresh Game **2,926/4,828 (60.60%)**,
+total **3,599/5,501 (65.42%)**, different **1,902**, zero drift. Tools
+c820bde banks first; both tools copies' syntax/padder checks pass,
+with all 841 initial mirror hashes preserved. README aggregate rows only.
+The upstream **func_1501878C remains a 12-byte stub** versus 412 retail
+words; original eight-word caller-cut tests do not restore the full caller
+or establish gameplay. Continue that independent recovery next. No host
+or frozen Release action, push or Claude/auth retry.
 
 View matrix preparation installed, **40 words directly byte-exact; no new guards**:
 [Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md).

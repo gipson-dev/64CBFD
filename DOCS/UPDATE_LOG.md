@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-16 Frame Coordinator Direct Match
+
+[Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
+Restore func_15019130's ordered frame/view passes and 508 page ages.
+All 185 words / frame 0x28 match directly, with no new guards or profiles.
+Ten final tests pass in 179.908s; the normal build equals the complete
+first 516-byte prediction, including 16 closed metadata-serialization bytes
+and zero exclusions. Preserve 15 neighbors, 101 other inputs and protected
+189,088 bytes / 720 owners. Fresh Game 2,926/4,828 (60.60%), overall
+3,599/5,501 (65.42%), different 1,902, zero drift. Tools c820bde banks
+first; preserve 841 old mirror hashes / 847 paths. Root README aggregate
+rows only. The upstream func_1501878C remains a 12-byte stub, not a restored
+full frame loop or gameplay qualification.
+
 ## 2026-10-16 View Matrix Preparation Direct Match
 
 [Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):

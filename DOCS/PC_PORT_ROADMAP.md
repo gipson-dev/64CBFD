@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Frame Coordinator Direct Match - 2026-10-16
+
+[Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md):
+
+- [x] Restore func_15019130's 185-word / frame 0x28 coordinator directly from C, including live gates, distinct signed/u8 loops, return 1 and 508 wrapping record ages. No new guard or profile change.
+- [x] Pass ten final tests in 179.908s: complete-state guest cases, all 1,058 root-access fault prefixes, byte wrapping, actual 40/46/78-word helpers, original upstream cut, native32 O2/O0/UBSan and seven effective controls.
+- [x] Match the complete first 516-byte ELF prediction with 16 explicitly modeled symbol/string serialization bytes and zero exclusions. Preserve 15 neighbors, 101 other inputs, guards and protected 189,088 bytes / 720 owners.
+- [x] Bank tools c820bde before the consumer pin, refresh aggregate README counts, and pass both tools copies' syntax/padder checks and tools-check. Preserve all 841 initial mirror hashes / 847 paths at HEAD ddbdd16.
+- [ ] Recover upstream func_1501878C independently: 412 original words, still a 12-byte installed stub. Keep func_15094AB8, rectangle fitting and the wider Game queue open; no full gameplay claim.
+
 ## View Matrix Preparation Direct Match - 2026-10-16
 
 [Note 1443](WORKING_NOTES/1443-view-matrix-preparation-direct-match-20261016.md):
@@ -9,7 +19,8 @@
 - [x] Pass ten final tests in 148.649s: 2,432 complete-state guest cases / 1,536 fired effects, 1,800 fault prefixes, 480 original caller-loop cases / 744 invocations, native32 O2/O0/UBSan with 128 cases each and five effective controls, all 102 frozen/live inputs and independent HI16/LO16/J26 rebases. Preserve the corrected native alignment and explicit caller-stub boundary.
 - [x] Reproduce the complete first 138-byte ELF prediction with the normal guest build: 137 code bytes inside the original 160-byte slot plus one extent byte (12 -> 160), no metadata reorder/exclusions. Preserve the guard CSV, 100 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,925/4,828 (60.58%), total 3,598/5,501 (65.41%), different 1,903, zero drift; README aggregate rows only.
 - [x] Bank tools d7a8bb1 before the consumer pin; pass both copies' syntax/eleven shared padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 837 initial dirty hashes / 841 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
-- [ ] Recover the observed **func_15019130** caller: installed 12-byte zero stub versus 740-byte / 185-word retail routine. The tested original 13-word loop is not an installed caller or full gameplay claim. Keep func_15094AB8's 250-word restoration, func_15095D34's 18 differences and the wider Game queue open.
+- [x] Recover the observed **func_15019130** caller: all 740 bytes / 185 words now directly matched in [Note 1444](WORKING_NOTES/1444-frame-coordinator-direct-match-20261016.md). This closes the former caller stub, not its still-stubbed upstream func_1501878C or full gameplay.
+- [ ] Keep func_15094AB8's 250-word restoration, func_15095D34's 18 differences and the wider Game queue open.
 
 ## Packed Point Slot Provider - 2026-10-16
 
