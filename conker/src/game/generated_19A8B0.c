@@ -41,6 +41,9 @@ extern FloatTable3_19A8B0 D_8008CC00;
 extern ByteTable9_19A8B0 D_8008CC0C;
 extern f32 D_800A6E84;
 
+extern u16 D_800CC34A;
+s32 func_151EF610(void);
+
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
 s32 func_1516D400() {
@@ -771,8 +774,52 @@ void func_151700D8(f32 *vertices, f32 originX, f32 originZ, s32 preset,
     } while (edge != 4);
 }
 
-s32 func_15170500() {
-    return 0;
+/* Emit a directional burst using the compact or extended record factory.
+ * Guards retain the checked value graph and omit a duplicate zero transfer. */
+void func_15170500(s16 x, s16 y, s16 z, s32 angle, s32 compact,
+                  u8 flags, s32 context) {
+    f32 yawCosine;
+    f32 vx;
+    f32 negativeYawSine;
+    f32 vy;
+    f32 vz;
+    s32 fx;
+    s32 fz;
+    s32 fy;
+    f32 polarCosine;
+    s32 polar;
+    u8 yawByte;
+
+    if (compact == 0) {
+        angle = D_800CC34A;
+    }
+    vy = 0.0f;
+    polar = func_151EF610() % 50;
+    yawByte = angle;
+    yawCosine = func_150489B0((u8)yawByte);
+    negativeYawSine = -func_15048A40((u8)yawByte);
+    polarCosine = func_150489B0((u8)(&polar)[0]);
+    vx = yawCosine * polarCosine;
+    vz = negativeYawSine * polarCosine;
+    vx *= 2.0f;
+    vy *= 2.0f;
+    vz *= 2.0f;
+    if (compact != 0) {
+        fx = (s32)(vx * 256.0f);
+        fz = (s32)(vz * 256.0f);
+        fy = (s32)(vy * 256.0f);
+        func_1516D4E8(x, y, z, 0x2A, 0, 255, 255, 255, 0, 0, 0, 0, 6,
+            fx >> 8, fx & 255, fz >> 8, fz & 255, 0, 0, 0, 0, 0, 1,
+            0x200, 0x166, 255, fy - 50, 0, 0, flags, context);
+    } else {
+        fx = (s32)(vx * 256.0f);
+        fz = (s32)(vz * 256.0f);
+        fy = (s32)(vy * 256.0f);
+        func_1516D99C(x, y, z, 0x2A, 0, 255, 255, 255, 0, 0, 0, 0, 6,
+            fx >> 8, fx & 255, fz >> 8, fz & 255, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0x200, 0x166, 0, 0, 20, 0, 0, 255, 255, fy - 50,
+            200, 9, 1, 0, 1, 50, 20, 0, 0, 0, flags, context);
+    }
 }
 
 s32 func_151707E0() {

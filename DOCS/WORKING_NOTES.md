@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-15:
+[Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
+Recover the seven-input directional burst, all 184 guarded words exact /
+frame 0x100, raw 185 words / 97 differences explicit. Pass 15 final checks,
+both 31/49-word packets, 4,608 literal pairs, 944 fault prefixes, native32
+O2/O0 and 576 connected chain pairs. Account for all 575 ELF changes with
+the initial prediction; every other byte/64 inputs fixed, no exclusions.
+Game 2,909/4,828, total 3,582/5,501, different 1,919, zero drift. Bank tools
+d585639 first, retain 729 mirror hashes / 736 paths and continue 117-word
+func_151707E0 plus every broader additional-source/Game queue.
+
+2026-10-15:
 [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
 Install the complete four-edge emitter C with all 266 guarded words exact,
 frame 0x190, raw 137 differences explicit. Pass 16 installed checks and close

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Directional burst guarded byte match](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
+  Recover both complete factory packets and install all 184 normalized
+  words; pass 15 checks and close the entire initially predicted ELF.
 - [Quad edge emitter guarded byte match](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
   Install all 266 normalized words, qualify literal/private/native behavior
   and account for the complete image, including exact symbol-order cycles.

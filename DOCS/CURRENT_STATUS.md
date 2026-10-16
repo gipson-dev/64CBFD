@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 679f05f; tools are committed before the consumer pin.
+  checkpoint pins tools d585639; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,25 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Directional burst installed with checked guarded normalization:
+[Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md).
+func_15170500 now matches all 184 retail words / frame 0x100. Recover its
+seven typed inputs, signed remainder, pre-call default-angle snapshot and
+complete compact/extended factory packets. Raw C remains 185 words / 97
+differences; 185 closed guards retain 184 operations and omit one duplicate
+zero transfer. All 15 final tests pass in 95.713s, including 4,608 literal
+state pairs, 944 fault prefixes, native32 O2/O0 with 262,144 cases each,
+576 current RNG/trig/factory chain pairs and all 801 archive fingerprints.
+The full rebuilt ELF exactly matches the pre-install prediction: 575 changed
+target-slot/extent bytes, all other bytes and 64 inputs fixed, protected
+189,088 bytes / 720 owners exact, no metadata exclusions. Fresh Game
+2,909/4,828 (60.25%), total 3,582/5,501 (65.12%), different 1,919, zero
+drift; conversions unchanged and README edits aggregate rows only. Tools
+d585639 banks first; preserve 729 older-mirror hashes / 736 final paths.
+Next func_151707E0, 117 words / frame 0x28; retain the entire additional-
+source/Game, unconverted-caller and inherited-stack queues. No push,
+gameplay acceptance or host/Release operation.
 
 Quad edge emitter installed with checked guarded normalization:
 [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md).

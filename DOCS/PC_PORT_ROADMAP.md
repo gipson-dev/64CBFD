@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Directional Burst Guarded Byte Match - 2026-10-15
+
+[Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
+
+- [x] Recover func_15170500's seven-input ABI, unsigned-halfword default snapshot, signed RNG remainder and complete 31/49-word factory packets. Preserve the full compact/context words and byte flags; correct the reference's invented arguments without importing it as-is.
+- [x] Retain 184 compiled operations, omit only a duplicate zero transfer, normalize register/schedule/home fields and recalculate branches. Close all 185 raw words/bindings; installed 184 words / frame 0x100 exact, raw 185 words / 97 differences explicit, no profile/header change.
+- [x] Check both ordered value paths under a framed defined-conversion contract, independently qualify 4,608 literal pairs, 944 fired fault prefixes, effective home poison, native32 O2/O0 with 262,144 cases each, three-stream rebases, 576 current helper-chain pairs, three original caller windows and 801 archive fingerprints. All 15 final tests pass in 95.713s.
+- [x] Match the entire rebuilt ELF to the initial prediction: exactly 575 target-slot/extent byte changes, all other bytes and 64 inputs fixed, protected 189,088 bytes / 720 owners exact, no metadata exclusions. Retain the complete old guard prefix and unchanged conversion/profile/header inputs.
+- [x] Refresh Game 2,909/4,828 (60.25%), total 3,582/5,501 (65.12%), different 1,919, zero drift. README aggregate rows only; bank tools d585639 first and preserve all 729 initial older-mirror hashes / 736 final paths. Both copies pass syntax/shared padder tests and tools-check passes; no push or host/Release operation.
+- [ ] Continue func_151707E0, VA 0x151707E0 / ROM 0x19DC90, 117 words / frame 0x28, then all remaining additional-source/Game, unconverted-caller and inherited-stack queues. Guarded matching and bounded chain tests do not establish raw compiler matching or full gameplay acceptance.
+
 ## Quad Edge Emitter Guarded Byte Match - 2026-10-15
 
 [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
@@ -9,7 +20,8 @@
 - [x] Pass native32 O2/O0 with 3,600 cases each and seven negatives, nine compiled guest negatives, independent three-stream rebases, 144 wrapper/emitter/current-factory chain pairs, 801 archive hashes and all actual-padder corruptions. All 16 final checks pass in 129.507s.
 - [x] Reject the initial 64-byte image discrepancy, prove its two exact symbol/string-table cycles and reproduce two full relinks. Account for all 898 changed ELF bytes, every other byte/60 inputs fixed, protected 189,088 bytes / 720 owners exact; no metadata exclusions.
 - [x] Refresh Game 2,908/4,828 (60.23%), total 3,581/5,501 (65.10%), different 1,920, zero drift. README aggregate rows only; bank tools 679f05f first and preserve 725 older-mirror hashes / 729 final paths. Shared checks pass; no push or host/Release action.
-- [ ] Continue func_15170500, 184 words / frame 0x100, and all additional-source/Game, caller and inherited-stack queues. Guarded matching does not finish raw source matching or the wider objective.
+- [x] Install func_15170500's complete 184-word guarded match in [Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md), retaining its raw 185-word / 97-difference distinction.
+- [ ] Continue all additional-source/Game, caller and inherited-stack queues. Guarded matching does not finish raw source matching or the wider objective.
 
 ## Quad Emitter Symbolic Loop Obligations - 2026-10-15
 

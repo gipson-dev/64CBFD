@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-15 Directional Burst Guarded Byte Match
+
+[Note 1420](WORKING_NOTES/1420-directional-burst-guarded-byte-match-20261015.md):
+Install func_15170500's complete seven-input C with all 184 guarded words
+exact / frame 0x100; raw C remains 185 words / 97 differences. Pass 15 final
+checks, both physical factory packets, native32 O2/O0 and the current
+RNG/trig/factory chain. The whole rebuilt ELF matches its initial prediction:
+575 target-slot/extent changes, every other byte and 64 inputs fixed, no
+exclusions. Game 2,909/4,828, total 3,582/5,501, different 1,919, zero drift.
+Bank tools d585639 first, preserve 729 mirror hashes / 736 final paths and
+continue 117-word func_151707E0 plus all broader Game queues. README changes
+only aggregate rows; no push or host/Release operation.
+
 ## 2026-10-15 Quad Edge Emitter Guarded Byte Match
 
 [Note 1419](WORKING_NOTES/1419-quad-edge-emitter-guarded-byte-match-20261015.md):
