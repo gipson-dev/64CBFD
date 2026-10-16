@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 511d98a; tools are committed before the consumer pin.
+  checkpoint pins tools 061bde1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Latest timing fitting pass rejects source-only false improvements:
+[Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md).
+Production func_15019F20 stays **191 words / frame 0x18 / 141 differences**.
+Four owned UOPT traces identify the retained T1 residual address and explain
+why a 139-difference candidate still has the wrong accumulator role. A peeled
+history loop changes retail's positive-zero mean to negative zero and is
+rejected by actual guest execution. All seven final tests pass in **53.158s**,
+including 6,908 three-way guest cases and 24 opening fault cuts. All 109 live
+inputs, matching/conversion totals and README aggregates stay unchanged.
+Tools **061bde1** banks first; both copies' checks pass, preserving all 883
+original mirror hashes / 885 paths. Next recover the byte-gate promotion and
+branch-local residual addressing; no new guards or installed code change.
 
 Frame timing/state updater restored as **semantic C, not byte-exact**:
 [Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md).

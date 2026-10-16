@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Frame Timing Allocation And Signed-Zero Boundary - 2026-10-16
+
+[Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
+
+- [x] Bank 31 complete-owner fitting screen outputs, including one unchanged extent control; retain production at 191 body words / frame 0x18 / 141 differences, with no new guards.
+- [x] Qualify four owned UOPT observations with normal-object identity. Explain the 139-difference candidate's wrong accumulator colour and retained T1 residual address; do not install a score-only fit.
+- [x] Reject a peeled history loop with an actual guest signed-zero counterexample. Pass all seven final tests in 53.158s, including 6,908 three-way guest cases, 24 opening fault cuts and 3,430 native32 O2/O0/UBSan cases each.
+- [x] Commit tools 061bde1 before the consumer pin; preserve all 109 live inputs and unchanged aggregates. Both copies' checks pass, preserving mirror HEAD, all 883 original hashes / 885 paths.
+- [ ] Recover the byte-gate promotion, M-8 accumulator role and branch-local residual addressing before the instruction match. Retain signed-zero coverage for history folding; zero-reciprocal access order and broader Game work stay open.
+
 ## Frame Timing State Semantic Restoration - 2026-10-16
 
 [Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):

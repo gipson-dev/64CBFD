@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-16 Frame Timing Allocation And Signed-Zero Boundary
+
+[Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
+Four owned compiler observations explain why the 139-difference source still
+has the wrong accumulator role and residual-address lifetime. Actual guest
+execution rejects a peeled history loop's negative-zero mean. All seven final
+tests pass in 53.158s; keep production at 141 differences and all 109 live
+inputs unchanged. Tools 061bde1 banks first; both copies' checks pass while
+preserving 883 original mirror hashes / 885 paths. No production code, image,
+guard, aggregate, root README or host-port change. Continue the same match.
+
 ## 2026-10-16 Frame Timing State Semantic Restoration
 
 [Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):

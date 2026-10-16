@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Frame timing allocation and signed-zero fit boundary](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
+  Reject a score-only allocation fit and a peeled history's negative-zero
+  regression. Seven focused tests pass; production stays at 141 differences.
 - [Frame timing state semantic restoration](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):
   Restore the complete 191-word timing/history body with byte-index alias and
   float-rounding qualification. Ten final tests and the full 755-byte image prediction

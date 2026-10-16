@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-16:
+[Note 1451](WORKING_NOTES/1451-frame-timing-allocation-and-signed-zero-fit-boundary-20261016.md):
+Qualify timing allocation traces and reject a peeled history's signed-zero
+regression. Seven tests pass in 53.158s; retain the 191-word / frame 0x18 body
+and 141 differences. Tools 061bde1 banks first, all 109 live inputs stay fixed,
+and 883 original mirror hashes / 885 paths are preserved. Continue the opening
+roles and branch-local residual-address recovery, not a score-only rewrite.
+
+2026-10-16:
 [Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):
 Restore func_15019F20 as 191-word semantic C / frame 0x18, with 141 slot
 differences and no new guards. Ten final tests pass in 48.712s, including byte
