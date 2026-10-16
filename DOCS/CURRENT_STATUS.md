@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 552f48e; tools are committed before the consumer pin.
+  checkpoint pins tools aff42ac; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet rectangle extent/lifetime fitting installed, **not byte matched**:
+[Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md).
+func_15095D34 now emits the original 346 words / frame 0x88, reducing
+331 -> **71** pointwise differences without guards. Its first 104 and last
+91 words are literal matches; continue the same routine's 151-word middle
+window. All 15 final tests pass in 125.719s, including 64 complete prefix-state
+pairs and an effective private-home control. The guest rebuild equals the
+first 1,152-byte code/extent prediction; all other ELF bytes / 98 inputs,
+18 neighbors, prior guards and protected data remain fixed, no exclusions.
+Fresh totals stay Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%),
+different 1,906, zero drift; README unchanged. Tools aff42ac banks first;
+preserve 811 mirror hashes / 815 paths. No full later private/hardware/gameplay
+claim, push or host/frozen Release action.
 
 Packet scissored rectangle semantically recovered, **not byte matched**:
 [Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md).

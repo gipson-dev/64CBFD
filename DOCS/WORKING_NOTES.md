@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
+Fit func_15095D34 to retail's 346 words / frame 0x88; reduce 331 -> 71
+differences, retaining a literal 104-word prefix and 91-word suffix with
+no guards. All 15 final tests pass, including 64 complete prefix-state pairs
+and a private-home control invisible to public-only checking. The guest
+rebuild equals the complete 1,152-byte code/extent prediction, all other
+bytes / 98 inputs fixed, no exclusions. Fresh matching totals remain
+Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift. Bank tools
+aff42ac first; preserve 811 mirror hashes / 815 paths. Continue the same
+151-word middle window under a new immutable baseline.
+
+2026-10-16:
 [Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
 Semantically recover func_15095D34's rectangle/tint commands and byte
 animation using real SDK macros. Keep 345 words / frame 0x88 / 331

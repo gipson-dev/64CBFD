@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet rectangle extent and lifetime fitting](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
+  Restore 346 words / frame 0x88, reduce 331 -> 71 differences without
+  guards, and qualify literal prefix/suffix spans with 15 final tests.
 - [Packet scissored rectangle semantic recovery](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
   Replace the renderer's zero stub with SDK rectangle/tint and byte animation,
   pass 14 checks, and keep its 331 retail differences explicit for the next stage.

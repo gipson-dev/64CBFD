@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Rectangle Extent And Lifetime Fitting - 2026-10-16
+
+[Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
+
+- [x] Restore func_15095D34's original 346-word body and frame 0x88. Recover the inset divisor's F18-to-F16 transfer, shared numerator roles and animation-tail allocation through semantic C, reducing 331 -> 71 differences without guards. Retain literal first 104 / last 91 words.
+- [x] Pass all 15 final tests in 125.719s, including fresh geometry/animation/native32 O2/O0/UBSan, aliases, effective controls, original rebases and real caller connections. Verify 64 complete modeled prefix states; reject a private-home control with identical public memory. Keep later private/fault/hardware/gameplay claims open.
+- [x] Match the entire first 1,152-byte code/extent prediction after a normal guest rebuild, with zero additional metadata serialization changes or exclusions. Preserve 18 neighbors, prior guards, 98 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README unchanged.
+- [x] Bank tools aff42ac before consumer source/pin/docs; preserve all 811 initial mirror hashes / 815 paths and pass both copies' syntax/eleven shared padder tests plus tools-check. No push or host/frozen Release action.
+- [ ] Finish **the same func_15095D34**: 71 differences remain in the 151-word window +0x1A0..+0x3FC. Recover the two FP constant roles, fractional-T/flip lifetime, branch schedule and six macro-home accesses from a new immutable baseline. Do not substitute bulk guards, physical-register bindings or unused locals for the missing fit.
+- [ ] Retain inherited-stack C deferrals, original caller backlog and all broader Game/additional-source/raw-matching work; this partial fit is not completion of the wider goal.
+
 ## Packet Scissored Rectangle Recovery - 2026-10-16
 
 [Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
@@ -8,7 +19,8 @@
 - [x] Qualify 2,880 guest geometry cases in both stack phases, native32 O2/O0 with 1,048,576 animation cases each and UBSan, 672 original animation pairs, eight effective guest/native controls, 80 alias pairs, BREAK 6/7 classification, three rebase sets / 48 pairs and 32 real caller/visibility/renderer sequences. All 14 final tests pass in 148.459s; retain explicit hardware/private/gameplay limits.
 - [x] Reproduce the complete first ELF prediction after the normal guest build: 1,035 bytes = 1,017 code/extent + 18 explicit symbol/string swaps, no exclusions. Keep 18 neighbors, prior guards, 98 other inputs and protected 189,088 bytes / 720 owners fixed. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README unchanged.
 - [x] Bank tools 552f48e before consumer source/pin/docs; preserve all 806 original mirror hashes / 811 paths. Both copies pass syntax and eleven shared padder tests; tools-check passes. No push or host/frozen Release action.
-- [ ] Finish **the same func_15095D34**: current 345 words / frame 0x88 versus retail 346 words, 331 pointwise differences, no new guards. Recover the missing instruction and remaining register lifetimes/scheduling from a new immutable semantic baseline. Do not turn a padded semantic body or a bulk replacement manifest into matching credit.
+- [x] Restore the missing instruction and original 346-word extent / frame 0x88 in Note 1436, including literal 104/91-word spans. Reduce 331 -> 71 differences with no guards.
+- [ ] Finish **the same func_15095D34**: its remaining 71-difference middle-window fitting is tracked above. Do not turn a partial semantic fit or a bulk replacement manifest into matching credit.
 - [ ] Keep inherited-stack C deferrals, original caller backlog and broader Game/additional-source/raw-matching queues open; guest model agreement does not prove host renderer or natural gameplay acceptance.
 
 ## Packet Visibility Provider Match - 2026-10-16
@@ -20,7 +32,7 @@
 - [x] Pass all 12 final tests in 117.051s: 1,296 guest cases in both stack phases, native32 O2/O0 with 1,296 cases each and UBSan, nine effective guest/native controls, 32 guest alias pairs, ten nonfinite cases, 90 fired fault pairs, three original rebase sets / 48 paired runs and 48 actual projection/depth/visibility connections. No full hardware-FCSR or natural gameplay claim.
 - [x] Reproduce the entire first ELF prediction after the normal guest rebuild: 551 bytes = 394 code/extent + 157 explicitly modeled symbol/string swaps, every other byte / 95 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README aggregate rows only.
 - [x] Bank tools 3a933e0 before consumer C/guards/pin/docs, preserve all 801 initial mirror hashes / 806 paths and pass both tools copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
-- [x] Recover func_15095D34 semantically in Note 1435: VA 0x15095D34 / ROM 0xC31E4, original 346 words / 1,384 bytes, leaf frame 0x88, ending at 0x1509629C. Audit all seven consumed globals, five-input cursor/packet ABI, clipping/texture commands and animated packet byte +0xC using real SDK macros. Its 331-difference byte matching remains open above.
+- [x] Recover func_15095D34 semantically in Note 1435: VA 0x15095D34 / ROM 0xC31E4, original 346 words / 1,384 bytes, leaf frame 0x88, ending at 0x1509629C. Audit all seven consumed globals, five-input cursor/packet ABI, clipping/texture commands and animated packet byte +0xC using real SDK macros. Note 1436 reduces 331 -> 71 differences; byte matching remains open above.
 - [ ] Retain inherited-stack func_1516D738/func_1516FE1C C deferrals, original callers and all broader Game/additional-source/raw-matching work. The lower renderer is now semantic but unmatched; model connections are not full host rendering or gameplay acceptance.
 
 ## Visible-Depth Packet Match - 2026-10-16

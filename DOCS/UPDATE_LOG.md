@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Packet Rectangle Extent And Lifetime Fitting
+
+[Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
+Restore func_15095D34's 346-word extent / frame 0x88 and reduce 331 -> 71
+differences, no guards or function-level matching credit. Retain literal
+104/91-word spans and qualify 64 full prefix-state pairs. All 15 final
+tests pass; the guest rebuild equals the complete 1,152-byte first prediction,
+every other ELF byte / 98 inputs, 18 neighbors, guards and protected data fixed.
+Fresh Game 2,922/4,828, total 3,595/5,501, different 1,906, zero drift;
+README unchanged. Tools aff42ac banks first; preserve 811 mirror hashes /
+815 paths. Continue the same routine's 151-word middle window.
+
 ## 2026-10-16 Packet Scissored Rectangle Recovery
 
 [Note 1435](WORKING_NOTES/1435-packet-scissored-rectangle-recovery-20261016.md):
