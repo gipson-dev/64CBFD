@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Point Slot Provider - 2026-10-16
+
+[Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
+
+- [x] Replace func_1509499C's zero stub with its typed sixteen-slot builder: signed halfword bounds, 32-bit cursor, 16-byte rows, inclusive end and reversed-range clears. Match all 71 words / leaf frame 0 with 33 expected-word scratch-role guards; no raw direct-match claim, insertion, omission or profile change.
+- [x] Revalidate 104 measured complete-owner source forms and unchanged raw words/bindings for all 18 neighbors, including the recovered caller and rectangle. Preserve prior guards as an exact byte prefix.
+- [x] Pass ten final tests in 112.747s: 6,144 provider cases covering all 71 instructions, 4,608 fault prefixes, 2,048 actual caller/provider/matrix cases, actual-provider native32 O2/O0/UBSan with 2,560 cases each, and effective word/binding/pool/input/metadata controls. Keep raw scratch-register identity, portable C alias/fault and full gameplay/hardware claims separate.
+- [x] Reproduce the complete first 220-byte ELF prediction with the normal guest rebuild: 218 code bytes inside the existing slot plus two function-size bytes (12 -> 284), no metadata reorder/exclusions. Preserve 97 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,924/4,828 (60.56%), total 3,597/5,501 (65.39%), different 1,904, zero drift; README aggregate rows only.
+- [x] Bank tools cc49cf5 before the consumer pin, pass both copies' syntax/eleven shared padder tests and tools-check, and preserve mirror HEAD ddbdd16 plus all 833 initial dirty hashes / 837 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
+- [ ] Recover the adjacent **func_15094EA0**: 40 words / frame 0x98, two guMtxL2F calls and matrix combination. Continue **func_15095D34**'s 18-word fit and the wider Game queue; do not relabel the old stubbed provider as still pending or claim full-game completion.
+
 ## Packed Point Transform And Rectangle Screens - 2026-10-16
 
 [Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
@@ -9,7 +20,8 @@
 - [x] Pass ten final tests in 103.223s, including 2,048 three-way guest fixtures with real retail helpers, native32 O2/O0/UBSan with 2,560 cases each, full-image/layout checks and effective corruption controls. Preserve the production provider stub; helper qualification is not an installed pipeline claim.
 - [x] Reproduce the complete first ELF prediction after the normal guest rebuild: 208 changed bytes = 167 code + one function-size + 40 explicit symbol/string serialization bytes, zero exclusions. Preserve 18 neighbors, prior guards, 97 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,923/4,828 (60.54%), overall 3,596/5,501 (65.37%), different 1,905, zero drift; README aggregate rows only.
 - [x] Bank tools 6909297 before the consumer pin; pass both tools copies' syntax/eleven shared padder tests and tools-check. Preserve mirror HEAD ddbdd16 and all 828 initial dirty hashes / 833 paths. No mirror commit/reset, push, Claude/auth retry or host/frozen Release action.
-- [ ] Recover and qualify the original 71-word slot provider **func_1509499C**; its drafts remain experimental, not installed or newly matched. Finish **func_15095D34**'s twelve flip-block scratch/schedule words and six macro-home accesses without repeating the rejected step/corner forms or forcing private homes. Wider Game matching remains active.
+- [x] Recover and qualify the original 71-word slot provider **func_1509499C**; completed in [Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md) with 33 closed scratch-role guards.
+- [ ] Finish **func_15095D34**'s twelve flip-block scratch/schedule words and six macro-home accesses without repeating the rejected step/corner forms or forcing private homes. Wider Game matching remains active.
 
 ## Packet Rectangle Native Temporary Blockers - 2026-10-16
 

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packed point slot provider byte match](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
+  Restore the provider stub as 71-word semantic C with 33 closed scratch-role
+  guards; pass ten final checks and reproduce the complete 220-byte ELF prediction.
 - [Packed point transform byte match and rectangle step screens](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
   Match all 55 transform words with two independent schedule guards, pass
   ten final checks and reproduce the complete 208-byte ELF prediction.

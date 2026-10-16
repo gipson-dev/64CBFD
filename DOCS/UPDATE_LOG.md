@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-16 Packed Point Slot Provider Byte Match
+
+[Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
+Recover func_1509499C's sixteen-slot point table and correct its void ABI.
+Match all 71 words / leaf frame 0 with 33 expected-word scratch-role guards,
+not a raw direct C match. Ten final tests pass in 112.747s, including actual
+caller/provider/matrix and actual-provider native32/UBSan execution. The
+normal guest rebuild equals the entire first 220-byte code/extent prediction,
+with no metadata reorder/exclusions; 18 neighbors, 97 other inputs and
+protected 189,088 bytes / 720 owners remain fixed. Fresh Game 2,924/4,828
+(60.56%), total 3,597/5,501 (65.39%), different 1,904, zero drift; conversion
+unchanged, README aggregate rows only. Tools cc49cf5 banks first; preserve
+all 833 mirror hashes / 837 paths and pass shared tools checks. Next inspect
+40-word func_15094EA0; rectangle remains at 18 differences. No full gameplay
+claim, push, Claude/auth retry or host/frozen Release action.
+
 ## 2026-10-16 Packed Point Transform Byte Match
 
 [Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):

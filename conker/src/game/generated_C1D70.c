@@ -7,7 +7,7 @@ typedef struct {
 } PackedPointSource948C0;
 
 extern f32 (*D_800D2C20)[4];
-s32 func_1509499C();
+void func_1509499C(PackedPointSource948C0 *, s16 **);
 void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z,
                    f32 *outX, f32 *outY, f32 *outZ);
 
@@ -105,8 +105,23 @@ void func_150948C0(PackedPointSource948C0 *source, f32 output[][3]) {
     } while (index != 16);
 }
 
-s32 func_1509499C() {
-    return 0;
+/* Build sixteen point slots from the packed inclusive range; clear unused slots. */
+void func_1509499C(PackedPointSource948C0 *source, s16 **slots) {
+    s16 *point = (s16 *)source->points;
+    s16 first = source->slotRange & 0xF;
+    s32 index = 0;
+    s16 end = (source->slotRange >> 4) + 1;
+
+    for (; index < first; index++) {
+        slots[index] = NULL;
+    }
+    for (index = first; index < end; index++) {
+        slots[index] = point;
+        point += 8;
+    }
+    for (; index < 16; index++) {
+        slots[index] = NULL;
+    }
 }
 
 s32 func_15094AB8() {

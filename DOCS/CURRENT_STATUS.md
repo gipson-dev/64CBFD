@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6909297; tools are committed before the consumer pin.
+  checkpoint pins tools cc49cf5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packed point slot provider installed, **71 words byte-exact with 33 scratch-role guards**:
+[Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md).
+Replace func_1509499C's zero stub with its signed-bound sixteen-slot builder
+and correct void prototype. The caller/provider pair is now recovered C;
+raw C still differs in 33 compiler scratch-register fields, explicitly guarded.
+Ten final tests pass in 112.747s: 6,144 provider cases, 4,608 access-prefix
+cases, 2,048 real caller/provider/matrix cases and actual-provider native32
+O2/O0/UBSan with 2,560 cases each, plus effective corruption controls.
+The normal guest build equals the entire first 220-byte ELF prediction:
+218 code bytes and two extent bytes, no metadata reorder or exclusions.
+Preserve 18 neighbors, 97 other inputs and protected 189,088 bytes / 720 owners.
+Fresh Game **2,924/4,828 (60.56%)**, overall **3,597/5,501 (65.39%)**,
+different **1,904**, zero drift; conversion unchanged, README aggregate rows only.
+Tools cc49cf5 banks first; both copies' syntax/eleven shared padder tests and
+tools-check pass. Preserve all 833 initial mirror hashes / 837 dirty paths
+at HEAD ddbdd16. Next recover the adjacent 40-word func_15094EA0 (frame 0x98,
+two guMtxL2F calls and matrix combination). Rectangle func_15095D34 stays
+at 18 differences; wider Game work remains open. No full gameplay/hardware
+claim, push, Claude/auth retry or host/frozen Release action.
 
 Packed point transform installed, **55 words byte-exact with two schedule guards**:
 [Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md).

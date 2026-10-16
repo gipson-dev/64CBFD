@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-16:
+[Note 1442](WORKING_NOTES/1442-packed-point-slot-provider-byte-match-20261016.md):
+Restore func_1509499C's sixteen-slot provider, signed bounds and void ABI.
+All 71 words match with 33 closed scratch-role guards, no insertion/omission
+or profile change. Ten final tests pass in 112.747s; actual provider/caller
+execution replaces the previous stub boundary. The normal guest build
+equals the complete 220-byte code/extent prediction, no metadata exclusions;
+18 neighbors, 97 other inputs and protected 189,088 bytes / 720 owners stay
+fixed. Fresh Game 2,924/4,828, overall 3,597/5,501, different 1,904, zero
+drift. Tools cc49cf5 banks first; preserve 833 mirror hashes / 837 dirty paths.
+README aggregate rows only. Next 40-word func_15094EA0; rectangle's 18-word
+fit and wider Game queue stay open, with no full gameplay or host/Release claim.
+
+2026-10-16:
 [Note 1441](WORKING_NOTES/1441-packed-point-transform-byte-match-and-rectangle-step-screens-20261016.md):
 Recover func_150948C0's signed-coordinate sixteen-slot transform, matching
 55 words / frame 0x90 with two independent schedule guards. Ten final tests
