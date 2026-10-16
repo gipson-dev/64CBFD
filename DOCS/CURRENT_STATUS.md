@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 94deb33; tools are committed before the consumer pin.
+  checkpoint pins tools bf8dbb3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Quad emitter loop obligations checked, production unchanged:
+[Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md).
+func_151700D8 remains 266 words / frame 0x190 / 137 differences and an
+uninstalled stub. A new current-checkpoint fixture passes eight tests in
+22.383s: 24 outer cases, 24 arbitrary-index step obligations, nine effective
+instruction negatives, 288 guest pairs and all 63 unchanged inputs / 29
+neighbors. Finite addition commutation and framed memory are explicit
+assumptions; raw private/fault/FCSR parity is not established. Two source
+screens reach 134 differences but are not qualified replacements. Tools
+bf8dbb3 banks first; all 722 older-mirror hashes survive / 725 final paths.
+Fresh official totals below are unchanged, as are the ELF and README rows.
+Next derive/qualify the remaining retained-operation schedule and private
+edge operations before adoption; keep all broader Game queues open.
 
 Quad rectangle wrapper installed with proven guarded normalization:
 [Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md).

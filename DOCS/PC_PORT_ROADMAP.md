@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Emitter Symbolic Loop Obligations - 2026-10-15
+
+[Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
+
+- [x] Rebase the emitter fixture onto the installed wrapper without changing historical captures. Selected C remains 266 words / frame 0x190 / 137 differences; eight source screens produce no qualified replacement.
+- [x] Check 24 outer cases and 24 arbitrary-index step obligations, full 31-word packets, per-edge snapshots, protected ABI/table/home/limit bytes and arbitrary provider clobbers. Finite addition commutation and framed ordinary memory remain explicit assumptions, not raw private/fault/FCSR equivalence.
+- [x] Pass eight checks in 22.383s, nine effective instruction negatives, a legal schedule control, 288 guest pairs, 29 unchanged neighbors and all 63 live/frozen inputs with corruption controls. Both copies pass syntax/shared padder checks; shared tools checks pass.
+- [x] Bank tools bf8dbb3 first; preserve all 722 initial older-mirror hashes / 725 final paths. Fresh Game 2,907/4,828, total 3,580/5,501, different 1,921, zero drift; ELF/README rows and production emitter unchanged. No push or host/Release action.
+- [ ] Derive and qualify the retained-operation register/schedule plan and redundant private edge operations; complete literal private/fault/alias/trap, relocation, padder and whole-image gates before installation or matching credit.
+- [ ] Continue all additional-source/Game, caller and inherited-stack queues; this tooling checkpoint does not finish the wider objective.
+
 ## Quad Rectangle Wrapper Proven Guarded Byte Match - 2026-10-15
 
 [Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):

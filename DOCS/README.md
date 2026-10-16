@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad emitter symbolic loop obligations](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
+  Check arbitrary-index loop/call dependencies with explicit assumptions;
+  pass eight tests while retaining the uninstalled 137-difference baseline.
 - [Quad rectangle wrapper proven guarded byte match](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
   Install the complete rectangle C with all 61 guarded words exact; qualify
   its framed value proof, literal private/fault behavior and whole-image closure.

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-15:
+[Note 1418](WORKING_NOTES/1418-quad-emitter-symbolic-loop-obligations-20261015.md):
+Check all table kinds/edges and symbolic inner-index continuation/exit,
+retaining full factory words, opaque clobbers and stable snapshots. Eight
+checks pass; 288 guest pairs agree publicly but differ privately. No new
+match: selected 151700D8 remains 266/0x190/137, all 63 inputs and 29 neighbors
+fixed. Bank tools bf8dbb3 first and preserve 722 mirror hashes / 725 paths.
+
+2026-10-15:
 [Note 1417](WORKING_NOTES/1417-quad-rectangle-wrapper-proven-guarded-byte-match-20261015.md):
 Install func_151717FC's complete rectangle C, all 61 retail words / frame 0x80
 through proven register/schedule normalization, not a raw compiler match.
