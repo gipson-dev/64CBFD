@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Four-Byte Saturation Direct Match
+
+[Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
+Restore func_1516D400's four unsigned counters and conditional increment
+reads, all 58 words directly without target guards. Preserve all 29 owner
+neighbors, including the counter accessor's prior guarded output. All 12
+final tests pass; production equals the complete 164-byte pre-install ELF
+prediction, with every other byte / 90 inputs fixed and no exclusions.
+Game 2,918/4,828, total 3,591/5,501, different 1,910, zero drift. Bank
+tools eee5a08 first; preserve 787 mirror hashes / 791 paths. Next
+func_1516D738, 153 words / frame 0x98; audit the cache-equal SP+0x5C read.
+The bounded current callback test is not full gameplay acceptance.
+
 ## 2026-10-16 Actor Effects And 19E040 Owner Completion
 
 [Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):

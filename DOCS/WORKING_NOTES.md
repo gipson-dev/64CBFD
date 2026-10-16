@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
+Install func_1516D400, all 58 words / 232 bytes direct, with no frame,
+padding or target guards. Recover the four-counter array view and preserve
+all 29 neighbors. All 12 final tests pass; the complete ELF reproduces its
+164-byte first prediction, every other byte / 90 inputs fixed, no exclusions.
+Fresh Game 2,918/4,828, total 3,591/5,501, different 1,910, zero drift.
+Bank tools eee5a08 first; preserve 787 mirror hashes / 791 paths. Resume
+func_1516D738, 153 words / frame 0x98, with the cache-equal SP+0x5C audit.
+
+2026-10-16:
 [Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
 Restore func_15171BF4's 42-word body / frame 0x28 directly, retaining the
 separate padding nop for its 43-word slot. Complete all nine linked owner

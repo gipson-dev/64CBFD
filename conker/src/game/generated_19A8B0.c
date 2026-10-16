@@ -16,7 +16,8 @@ void func_1516F864(u8 *record);
 void func_1516F94C(u8 *record, u32 scale);
 
 extern s32 D_800BE9E4;
-extern u8 D_800DD2A0;
+extern u8 D_800DD2A0[4];
+extern u8 D_800BE9A0;
 extern u8 D_800CC2D4[];
 extern u8 D_800A6E00[];
 extern u8 D_800A6E0C[];
@@ -46,8 +47,19 @@ s32 func_151EF610(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/19A8B0.s. */
 
-s32 func_1516D400() {
-    return 0;
+/* Advance the four counters, retaining each conditional step read. */
+void func_1516D400(void) {
+    s32 index;
+    s32 value;
+    for (index = 0; index < 4; index++) {
+        if ((s32)D_800DD2A0[index] < 255) {
+            value = D_800DD2A0[index] + D_800BE9A0;
+            if (value >= 256) {
+                value = 255;
+            }
+            D_800DD2A0[index] = value;
+        }
+    }
 }
 
 /* Initialize a packed record and optionally bind its position/scale fields. */
@@ -343,8 +355,8 @@ void func_1516ED68(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 /* Consume a qualifying slot counter before creating its effect preset.
  * Expected-word guards preserve retail index reuse and temporary allocation. */
 void func_1516EED4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    if (arg0 < 4 && (s32)(&D_800DD2A0)[arg0] >= arg1) {
-        (&D_800DD2A0)[arg0] = 0;
+    if (arg0 < 4 && (s32)((u8 *)&D_800DD2A0)[arg0] >= arg1) {
+        ((u8 *)&D_800DD2A0)[arg0] = 0;
         func_1516D99C(
             0, 0, 0, 4, 0, 0xFF, 0xFF, 0xFF,
             0, 0, 0, 0, 2, 0, 0, 0,

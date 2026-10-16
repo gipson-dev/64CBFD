@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Four-byte saturation direct byte match](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
+  Recover all 58 words directly, qualify conditional byte accesses and the
+  actual callback path, and pass 12 final checks with an exact full-image audit.
 - [Actor effect dispatch and owner completion](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
   Finish the final placeholder and all nine linked slots / 4,368 bytes,
   qualify 13 final checks and preserve the external-helper acceptance limits.

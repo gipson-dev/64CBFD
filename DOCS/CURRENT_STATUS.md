@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 166a8a1; tools are committed before the consumer pin.
+  checkpoint pins tools eee5a08; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Four-byte saturation installed as a direct instruction match:
+[Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md).
+func_1516D400 matches all 58 words / 232 bytes, no frame or target guards.
+Recover the four-byte array view and conditional live increment; preserve
+all 29 neighbor bodies, including the guarded counter accessor. All 12
+final tests pass in 80.304s. Production exactly reproduces the complete
+pre-install prediction: 164 code/extent bytes, every other ELF byte and
+90 inputs fixed, protected data exact, no exclusions. Fresh Game
+2,918/4,828 (60.44%), total 3,591/5,501 (65.28%), different 1,910, zero
+drift. Tools eee5a08 banks first; preserve 787 mirror hashes / 791 paths.
+Next func_1516D738, 153 words / frame 0x98 in the same owner; audit its
+cached render state and SP+0x5C read before assuming an initialized local.
+The current callback connection is bounded, not whole-game acceptance.
+No push or host/frozen Release action.
 
 Actor effect dispatcher and complete 19E040 owner:
 [Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md).

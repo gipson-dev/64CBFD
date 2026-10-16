@@ -15,7 +15,7 @@ retail slot is **43 words / 172 bytes**. No target instruction guards.
 4. [x] Predict the full linked image before installation, rebuild production and reproduce every byte without exclusions.
 5. [x] Verify all nine owner slots / 4,368 bytes, remove its last zero-return placeholder and obsolete generic header, and preserve earlier guard-backed matches unchanged.
 6. [x] Pass thirteen final checks, refresh aggregate README/status/roadmap rows, preserve the older tools mirror and commit tools before consumer C/pin/docs. No push.
-7. [ ] Recover func_1516D400, 58-word / 232-byte leaf at VA 0x1516D400, ROM 0x19A8B0, ending at 0x1516D4E8 in generated_19A8B0.c. Audit four saturating byte counters, the conditionally live increment and original caller/result contract first.
+7. [x] Recover func_1516D400 in [Note 1431](1431-four-byte-saturation-direct-byte-match-20261016.md): all 58 words direct after qualifying its counter array, conditional increment and current callback/result contract.
 8. [ ] Restore the three external effect helpers and caller func_150265CC; retain func_15169C70, func_1511C638, inherited-stack func_1516FE1C and all broader Game/additional-source/raw-matching queues.
 
 ## Recovered Contract

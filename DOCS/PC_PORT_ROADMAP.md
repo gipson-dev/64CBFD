@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Four-Byte Saturation Direct Match - 2026-10-16
+
+[Note 1431](WORKING_NOTES/1431-four-byte-saturation-direct-byte-match-20261016.md):
+
+- [x] Recover func_1516D400's no-input void ABI, four unsigned byte counters and conditional live step reads. Retain single-byte saturation and the no-read/no-store path for an already-255 counter.
+- [x] Match all 58 words / 232 bytes directly under normal O2/g3, without target guards, padding or profile changes. Recover an owner-local four-byte array view and preserve all 29 neighbor bodies/relocations, including func_1516EED4's existing guarded output.
+- [x] Pass all 12 final tests in 80.304s: 7,170 paired guest cases, exhaustive 65,536 native32 start/step pairs per O2/O0 with UBSan, nine effective guest/six native negatives, 56 fired fault pairs, four independent original rebase sets / 48 pairs and eight actual dispatcher connections.
+- [x] Reproduce every byte of the initial linked-image prediction: 164 code/extent bytes, function size 12 -> 232, every other byte / 90 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,918/4,828 (60.44%), total 3,591/5,501 (65.28%), different 1,910, zero drift; README aggregates only.
+- [x] Bank tools eee5a08 before consumer C/pin/docs, preserve all 787 initial mirror hashes / 791 final paths, and pass both copies' syntax/eleven shared padder checks plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_1516D738, VA 0x1516D738 / ROM 0x19ABE8, 153 words / 612 bytes, frame 0x98, ending at 0x1516D99C. Audit its display-list/record ABI, helper outputs, cached render state and SP+0x5C read on the cache-equal branch before choosing local initialization.
+- [ ] Keep func_1516DB90, inherited-stack func_1516FE1C, the external effect helpers/callers and all broader Game/additional-source/raw-matching queues active. Callback record 102 is outside the qualified current driver's 101-record loop; do not claim its invocation or full gameplay acceptance.
+
 ## Actor Effect Dispatch And Owner Completion - 2026-10-16
 
 [Note 1430](WORKING_NOTES/1430-actor-effect-dispatch-and-owner-completion-20261016.md):
@@ -10,7 +22,7 @@
 - [x] Pass all 13 final tests in 75.277s: 3,072 paired selector/flag/effect cases visiting all 42 body words, native32 O2/O0 with 1,536 cases each and UBSan, ten effective guest/native negatives, 64 fault pairs, eight guest aliases, three original rebase sets / 120 pairs, six caller captures and eight actual muted sound-wrapper connections.
 - [x] Reproduce the complete pre-install ELF prediction: 127 changed code/extent bytes, symbol size 12 -> 168, no extra metadata changes, every other byte / 87 inputs fixed, protected 189,088 bytes / 720 owners exact. Refresh Game 2,917/4,828 (60.42%), total 3,590/5,501 (65.26%), different 1,911, zero drift; README aggregate rows only.
 - [x] Bank tools 166a8a1 before consumer C/pin/docs, preserve all 782 original mirror hashes / 787 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_1516D400 in generated_19A8B0.c, VA 0x1516D400 / ROM 0x19A8B0, 58 words / 232 bytes, no stack frame, ending at func_1516D4E8. Audit its four saturating byte counters, conditionally live increment byte and original caller/result contract before selecting C types.
+- [x] Recover func_1516D400 in Note 1431, all 58 words / 232 bytes direct, after qualifying its four-counter array, conditional increment reads and current callback/result contract.
 - [ ] Restore the external effect helpers func_150AEEB0, func_150BD740 and func_150CDBB0, plus caller func_150265CC. Keep func_15169C70, func_1511C638, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues active.
 
 ## Rectangle Preset Dispatch Direct Match - 2026-10-16
