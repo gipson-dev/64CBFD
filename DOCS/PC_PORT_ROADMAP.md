@@ -1,6 +1,17 @@
 # PC Port Roadmap located in another project folder
 
-## Viewport Initializer Recovery In Progress - 2026-10-16
+## Viewport Initializer Direct Match - 2026-10-16
+
+[Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
+
+- [x] Restore all 373 words / frame 0x48 directly from semantic C, including sine SP+0x34, saved lifetimes, signed origin/flag, full-word depth and live table/base/page reads. Name three real ratio values, sequence cosine calls explicitly and recover the final index-first address add; no new guards/profile.
+- [x] Pass all twelve final tests in 159.799s: 1,144 guest cases, 216 callbacks, 475 native32 O2/O0/UBSan cases each, seven effective controls, 108 real-helper-chain cases, twelve original caller cuts, independent rebases and 1,962 fault prefixes. Keep angle/SDK/hardware/gameplay boundaries explicit.
+- [x] Reproduce the entire first 1,181-byte ELF prediction: 1,157 code, two extent and 22 exactly constrained metadata bytes; zero exclusions. Protect all 130 inputs, 128 unchanged inputs, all guards/Makefile and 189,088 bytes / 720 data owners. All eleven owner functions match.
+- [x] Measure fresh Game 2,935/4,828 (60.79%), total 3,608/5,501 (65.59%), different 1,893, zero drift; conversion unchanged. Root README aggregate rows only. Bank tools 34c77ae first, validate both copies and tools-check, preserve all 914 initial mirror hashes / 921 paths.
+- [ ] Recover next 239-word func_1501C880 in generated_49D30.c: display-list capacity fallback, graphics-task construction/submission, optional page flip and frame count. Recover its caller ABI and actual func_1501A39C interface; preserve the owner's existing no-unroll profile and unrelated functions.
+- [ ] Keep timing's 141 differences, wider Game/additional-source work and complete startup/frame/gameplay acceptance open.
+
+## Viewport Initializer Recovery Checkpoint - 2026-10-16
 
 [Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
 
@@ -8,9 +19,9 @@
 - [x] Recover 373 words / frame 0x48, sine SP+0x34 and exact opening 94 words. Record all 170 source configurations, including 120 declaration permutations; retain the explicit 49-word mismatch.
 - [x] Pass seven recovery tests in 34.931s: 1,144 guest cases including two invalid-cast prefixes, 216 fired callback cases, 131 real bounds/clamp words, six effective controls, original GNU body and ten unchanged normal neighbors. Expose the first literal FPR boundary at 0x1501AA38.
 - [x] Bank research tools 54aff68 first; both copies pass AST/eleven padder tests, and consumer tools-check passes. Preserve all 911 mirror hashes / 914 paths and all 130 production inputs. No source installation, new guards or aggregate credit.
-- [ ] Finish this same function's 48 FPR-field differences and one commutative address word while retaining its frame/homes/saved lifetimes.
-- [ ] Complete native32, full real helper integration, original caller cuts, private/fault/rebase gates and independent whole-ELF prediction before installation.
-- [ ] Install only a qualified recovery, rebuild and verify the full image, then measure fresh aggregates and update README rows. Keep wider Game/timing/gameplay work separate.
+- [x] Finish this same function's 48 FPR-field differences and one commutative address word while retaining its frame/homes/saved lifetimes; direct match in Note 1458.
+- [x] Complete native32, connected real helper bodies with explicit angle/SDK boundaries, original caller cuts, private/fault/rebase gates and independent whole-ELF prediction before installation.
+- [x] Install the qualified recovery, rebuild and verify the full first prediction, then measure fresh aggregates and update README rows in Note 1458. Wider Game/timing/gameplay work stays separate.
 
 ## View Point Projection Direct Match - 2026-10-16
 
@@ -21,7 +32,7 @@
 - [x] Pass all eleven final tests in 66.018s: 1,488 guest cases, 348 native32 O2/O0/UBSan cases each, eight effective controls, 72 actual caller cuts, all 58 real helper words and 672 connected fault prefixes. Keep native/guest/hardware boundaries explicit.
 - [x] Reproduce the complete first 276-byte ELF prediction, zero metadata exclusions. Protect all 128 inputs, 126 unchanged inputs, all guards and 189,088 bytes / 720 data owners. Fresh Game 2,934/4,828, total 3,607/5,501, different 1,894, zero drift; conversion unchanged.
 - [x] Bank tools fed3fa9 before the consumer pin; both copies pass syntax/eleven padder tests and tools-check, preserving mirror HEAD and all 905 initial hashes / 911 paths. Root README aggregate rows only.
-- [ ] Finish func_1501A8C0, begun in [Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md): complete 373-word/frame-0x48 candidate, still 49 differences and not installed; finish the remaining matching/integration gates.
+- [x] Finish func_1501A8C0, begun in [Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md): all 373 words directly matched and installed after the remaining gates in [Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md).
 - [ ] Keep timing's 141 differences, other view providers, wider Game/additional-source work and full gameplay acceptance separate.
 
 ## View Scissor Setup Direct Match - 2026-10-16

@@ -15,16 +15,21 @@ void func_150006E0(s32 category);
 void func_1510B070(s32 mode);
 
 typedef struct {
-    u8 padding0[0xC];
+    u8 padding0;
+    u8 insideBounds;
+    u8 padding2[2];
+    f32 width, height;
     f32 extentX, extentY;
-    u8 padding14[0x10];
+    f32 axisScaleX, axisScaleY;
+    u8 padding1C[8];
     f32 top, bottom, left, right;
     f32 originX, originY;
     u8 padding3C[4];
     Vp viewport[2];
-    u8 padding60[0xC];
+    f32 aspect, layoutAspect, layoutScale;
     f32 baseFovX, baseFovY;
-    u8 padding74[0x10C];
+    f32 fovX, fovY, projectionScaleX, projectionScaleY, projectionScale;
+    u8 padding88[0xF8];
 } ViewProjection476D0;
 extern f32 D_800968F4, D_800968F8, D_800968FC;
 void func_1510B128(s32 index, f32 offsetX, f32 offsetY, f32 scale, f32 fallback);
@@ -38,11 +43,16 @@ extern Gfx D_8002C930[];
 
 void func_1501AF44(f32 *ulx, f32 *uly, f32 *lrx, f32 *lry);
 
+extern const f32 D_800968E4, D_800968E8, D_800968EC, D_800968F0;
+extern f32 D_80082FA8[];
+extern s16 D_800BE668[][2];
+extern u8 D_800BE630[];
+
 /* Generated placeholder declarations. */
 void func_1501A220(s32 viewCount, s32 projectionMode);
 void func_1501A39C(void);
 void func_1501A764(s16 view, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ);
-s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+void func_1501A8C0(s32 index, s32 layout, s32 depth, s16 transferFov);
 s32 func_1501AE94(s32 arg0);
 /* End generated placeholder declarations. */
 
@@ -170,9 +180,77 @@ void func_1501A764(s16 view, f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *out
     *outZ = (transformedZ * reciprocalW * (f32)VIEW_PROJECTIONS_476D0[view].viewport[D_800BE9C0].vp.vscale[2] + (f32)VIEW_PROJECTIONS_476D0[view].viewport[D_800BE9C0].vp.vtrans[2]) * 32.0f;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_476D0/func_1501A8C0.s. */
-s32 func_1501A8C0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
-    return 0;
+/* Initialize view geometry, both viewport pages and the projection state. */
+void func_1501A8C0(s32 index, s32 layout, s32 depth, s16 transferFov) {
+    s16 *origin;
+    f32 referenceWidth, referenceAspect, selectedAspect;
+    f32 sine;
+    f32 trigValue;
+
+    VIEW_PROJECTIONS_476D0[index].width = (f32)((s32 *)&D_800BE638)[layout];
+    VIEW_PROJECTIONS_476D0[index].height = (f32)((s32 *)&D_800BE650)[layout];
+    if (layout != 0) {
+        VIEW_PROJECTIONS_476D0[index].width -= 2.0f;
+        VIEW_PROJECTIONS_476D0[index].height -= 2.0f;
+    }
+    VIEW_PROJECTIONS_476D0[index].layoutAspect = D_80082FA8[layout];
+    VIEW_PROJECTIONS_476D0[index].layoutScale = 2.0f;
+    if (layout == 1) {
+        VIEW_PROJECTIONS_476D0[index].width *= D_800BE6B8;
+        VIEW_PROJECTIONS_476D0[index].baseFovX = D_800968E4 * D_800BE6B8;
+        VIEW_PROJECTIONS_476D0[index].baseFovY = 50.0f;
+    } else {
+        VIEW_PROJECTIONS_476D0[index].baseFovX = D_800968E8;
+        VIEW_PROJECTIONS_476D0[index].baseFovY = 50.0f;
+    }
+    VIEW_PROJECTIONS_476D0[index].fovX = VIEW_PROJECTIONS_476D0[index].baseFovX;
+    VIEW_PROJECTIONS_476D0[index].fovY = VIEW_PROJECTIONS_476D0[index].baseFovY;
+    origin = (s16 *)((u8 *)D_800BE668 + layout * 20 + index * 4);
+    VIEW_PROJECTIONS_476D0[index].aspect = VIEW_PROJECTIONS_476D0[index].width / VIEW_PROJECTIONS_476D0[index].height;
+    VIEW_PROJECTIONS_476D0[index].extentX = VIEW_PROJECTIONS_476D0[index].width * 0.5f;
+    VIEW_PROJECTIONS_476D0[index].extentY = VIEW_PROJECTIONS_476D0[index].height * 0.5f;
+    VIEW_PROJECTIONS_476D0[index].originX = (f32)origin[0];
+    VIEW_PROJECTIONS_476D0[index].originY = (f32)origin[1];
+    VIEW_PROJECTIONS_476D0[index].left = VIEW_PROJECTIONS_476D0[index].originX - VIEW_PROJECTIONS_476D0[index].extentX;
+    VIEW_PROJECTIONS_476D0[index].top = VIEW_PROJECTIONS_476D0[index].originY - VIEW_PROJECTIONS_476D0[index].extentY;
+    VIEW_PROJECTIONS_476D0[index].right = VIEW_PROJECTIONS_476D0[index].originX + VIEW_PROJECTIONS_476D0[index].extentX;
+    VIEW_PROJECTIONS_476D0[index].bottom = VIEW_PROJECTIONS_476D0[index].originY + VIEW_PROJECTIONS_476D0[index].extentY;
+    if (transferFov != 0) {
+        func_1501B0A0(index, layout);
+    } else {
+        referenceWidth = (f32)D_800BE638;
+        referenceAspect = referenceWidth / (f32)D_800BE650;
+        selectedAspect = VIEW_PROJECTIONS_476D0[index].width / VIEW_PROJECTIONS_476D0[index].height;
+        VIEW_PROJECTIONS_476D0[index].axisScaleX = (VIEW_PROJECTIONS_476D0[index].width / referenceWidth) *
+            (referenceAspect / selectedAspect);
+        VIEW_PROJECTIONS_476D0[index].axisScaleY = VIEW_PROJECTIONS_476D0[index].height / (f32)D_800BE650;
+    }
+    trigValue = VIEW_PROJECTIONS_476D0[index].baseFovX * 0.5f * D_800968EC;
+    sine = sinf(trigValue);
+    trigValue = cosf(trigValue);
+    VIEW_PROJECTIONS_476D0[index].projectionScaleX = sine / (VIEW_PROJECTIONS_476D0[index].extentX * trigValue);
+    trigValue = VIEW_PROJECTIONS_476D0[index].baseFovY * 0.5f * D_800968F0;
+    sine = sinf(trigValue);
+    trigValue = cosf(trigValue);
+    VIEW_PROJECTIONS_476D0[index].projectionScaleY = sine / (VIEW_PROJECTIONS_476D0[index].extentY * trigValue);
+    ((Vp *)D_800BE62C)[index].vp.vscale[0] = (s16)(s32)((VIEW_PROJECTIONS_476D0[index].width + 10.0f) * 2.0f);
+    ((Vp *)D_800BE62C)[index].vp.vscale[1] = (s16)(s32)((VIEW_PROJECTIONS_476D0[index].height + 10.0f) * 2.0f);
+    ((Vp *)D_800BE62C)[index].vp.vscale[2] = depth >> 1;
+    ((Vp *)D_800BE62C)[index].vp.vscale[3] = 0;
+    ((Vp *)D_800BE62C)[index].vp.vtrans[0] = (s16)(s32)(VIEW_PROJECTIONS_476D0[index].originX * 4.0f);
+    ((Vp *)D_800BE62C)[index].vp.vtrans[1] = (s16)(s32)(VIEW_PROJECTIONS_476D0[index].originY * 4.0f);
+    ((Vp *)D_800BE62C)[index].vp.vtrans[2] = depth >> 1;
+    ((Vp *)D_800BE62C)[index].vp.vtrans[3] = 0;
+    VIEW_PROJECTIONS_476D0[index].viewport[D_800BE9C0] = ((Vp *)D_800BE62C)[index];
+    VIEW_PROJECTIONS_476D0[index].viewport[!D_800BE9C0] = VIEW_PROJECTIONS_476D0[index].viewport[D_800BE9C0];
+    VIEW_PROJECTIONS_476D0[index].projectionScale = 1.0f;
+    VIEW_PROJECTIONS_476D0[index].insideBounds = func_1501AE94(index);
+    func_1501AF44(&((ViewProjection476D0 *)((u32)index * 0x180 + (u32)D_800BE628))->left,
+        &((ViewProjection476D0 *)((u32)index * 0x180 + (u32)D_800BE628))->top,
+        &((ViewProjection476D0 *)((u32)index * 0x180 + (u32)D_800BE628))->right,
+        &((ViewProjection476D0 *)((u32)index * 0x180 + (u32)D_800BE628))->bottom);
+    func_1510B32C(index, 0.0f, 0.0f, VIEW_PROJECTIONS_476D0[index].projectionScale);
+    D_800BE630[index] = index;
 }
 
 s32 func_1501AE94(s32 arg0) {

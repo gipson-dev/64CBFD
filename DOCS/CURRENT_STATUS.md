@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 54aff68; tools are committed before the consumer pin.
+  checkpoint pins tools 34c77ae; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,16 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Viewport initializer recovery **in progress, not installed**:
-[Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md).
-func_1501A8C0 has a complete **373-word / frame 0x48** candidate, exact opening
-94 words and **49 real differences**. Seven recovery tests pass in 34.931s:
-1,144 guest cases, 216 callback cases, real bounds/clamp execution and six
-effective controls. The first literal FPR mismatch at **0x1501AA38** remains
-explicit; native/full-chain/caller/fault/linked installation gates are open.
-Continue this same function. Production source/image/guards, matching totals
-and README rows remain unchanged. Tools **54aff68** banks the recovery,
-preserving all 911 initial mirror hashes / 914 paths; no conversion credit.
+Viewport initializer restored, **373 words directly byte-exact from C**:
+[Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md).
+func_1501A8C0 now preserves frame 0x48, sine SP+0x34, live base/page reads,
+signed origin/flag and full-word depth semantics. Three named ratio values
+and explicitly sequenced cosine calls resolve the prior 49-word boundary;
+no new guards/profile. All **12 final tests pass in 159.799s**: 1,144 guest,
+216 callback, 475 native32 O2/O0 cases each, 108 real-helper-chain cases,
+12 original caller cuts and 1,962 fault prefixes. The entire normal ELF
+equals the first **1,181-byte** prediction, including two exact metadata
+swaps, zero exclusions. All 130 inputs/protected data pass; all eleven owner
+functions now match. Fresh Game **2,935/4,828 (60.79%)**, total **3,608/5,501
+(65.59%)**, different **1,893**, zero drift; conversion unchanged. Tools
+**34c77ae** banks first, preserving all 914 mirror hashes / 921 paths.
+Next **239-word func_1501C880**, still a graphics-task submission stub in
+generated_49D30.c. Timing's 141 differences, wider Game and gameplay remain
+open; angle/SDK leaves are bounded, not full hardware or host acceptance.
 
 View point projection restored, **87 words directly byte-exact from C**:
 [Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md).
@@ -49,8 +55,8 @@ first **276-byte** prediction, no new guards/profile or metadata exclusions;
 128 inputs and protected data pass. Fresh Game **2,934/4,828 (60.77%)**, total
 **3,607/5,501 (65.57%)**, different **1,894**, zero drift; conversion unchanged.
 Tools **fed3fa9** banks first, preserving 905 mirror hashes / 911 paths.
-The **373-word func_1501A8C0** recovery is in progress in
-[Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md), not installed yet.
+The **373-word func_1501A8C0** recovery is completed in
+[Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md).
 Timing's 141 differences and wider Game remain open; no full gameplay claim.
 
 View scissor setup restored, **124 words directly byte-exact from C**:

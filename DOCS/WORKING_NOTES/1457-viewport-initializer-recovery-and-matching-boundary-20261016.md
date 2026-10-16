@@ -1,5 +1,10 @@
 # Viewport Initializer Recovery And Matching Boundary
 
+Completed follow-up:
+[Note 1458](1458-viewport-initializer-direct-match-20261016.md) installs the
+direct 373-word match after all remaining gates. The 49-difference results
+below remain the historical research checkpoint, not the current status.
+
 Date: 2026-10-16. Consumer predecessor **566bd258**, tools predecessor
 **fed3fa9**. Continue the target queued in
 [Note 1456](1456-view-point-projection-direct-match-20261016.md).

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
+Restore the viewport initializer's 373 words directly, original frame/homes,
+live callback semantics and no new guards/profile. Twelve final tests pass in
+159.799s and the complete first 1,181-byte ELF prediction passes. All eleven
+owner functions now match. Fresh Game 2,935/4,828, total 3,608/5,501, different
+1,893, zero drift; conversion unchanged. Tools 34c77ae banks first, preserving
+914 mirror hashes / 921 paths. Next 239-word func_1501C880.
+
+2026-10-16:
 [Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
 Bank the complete 373-word/frame-0x48 viewport initializer candidate, still
 49 real differences and not installed. Seven recovery tests pass in 34.931s;

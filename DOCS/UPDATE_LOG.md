@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Viewport Initializer Direct Match
+
+[Note 1458](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
+Replace func_1501A8C0's stub with all 373 words / frame 0x48 directly from C,
+no new guards/profile. Explicit cosine sequencing also fixes a native callback
+read-order gap in the old draft. Twelve final tests pass in 159.799s; the
+entire normal ELF equals the first 1,181-byte prediction, zero exclusions.
+All eleven owner functions now match. Fresh Game 2,935/4,828 (60.79%), total
+3,608/5,501 (65.59%), different 1,893, zero drift; conversion unchanged.
+Tools 34c77ae banks first, preserving 914 mirror hashes / 921 paths. README
+aggregate rows only; next 239-word func_1501C880. No push or host/Release action.
+
 ## 2026-10-16 Viewport Initializer Recovery In Progress
 
 [Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):

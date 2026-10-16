@@ -56,9 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Viewport initializer direct match](WORKING_NOTES/1458-viewport-initializer-direct-match-20261016.md):
+  Restore all 373 words directly, preserve frame/homes and live callback
+  semantics. Twelve final tests and the entire first 1,181-byte ELF prediction
+  pass. All eleven owner functions now match; next 239-word func_1501C880.
 - [Viewport initializer recovery and matching boundary](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
   Bank the complete 373-word/frame-0x48 candidate and seven passing recovery
-  tests. Still 49 differences, not installed; continue the same function.
+  tests. Historical 49-difference boundary, now completed in Note 1458.
 - [View point projection direct match](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
   Restore all 87 words directly from C with the real transform tail and live
   aliases. Eleven final tests and the entire 276-byte image prediction pass;
