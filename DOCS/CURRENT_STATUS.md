@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools aff42ac; tools are committed before the consumer pin.
+  checkpoint pins tools 9533be8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Packet rectangle compiler provenance, **evidence only; no production change**:
+[Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md).
+All 45 complete-owner screens remain at best 71 differences; func_15095D34
+stays 346 words / frame 0x88 with literal 104/91-word spans. Qualified
+CFE/UOPT captures explain the two FP constant roles, but both allocation
+traces retain the same flag/fractional-T conflict. The wrong M-128/-132 homes
+already exist in UOPT output; focus next on computed-expression lifetime,
+not speculative UGEN scratch padding. All 12 diagnostic tests pass in
+15.687s, including 100 frozen/live inputs and effective corruption controls.
+Fresh totals stay Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%),
+different 1,906, zero drift. No new C match, guard, ELF/CSV edit or rebuild;
+README unchanged. Tools 9533be8 banks first; preserve all 815 original
+mirror hashes / 818 paths. Prior semantic qualification remains prior
+unchanged evidence, not a fresh native/gameplay claim. No push or host/Release action.
 
 Packet rectangle extent/lifetime fitting installed, **not byte matched**:
 [Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md).

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packet rectangle constant and spill provenance](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
+  Qualify compiler streams, constant sharing and UOPT stack homes with
+  12 diagnostic tests. Evidence only: production remains at 71 differences.
 - [Packet rectangle extent and lifetime fitting](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
   Restore 346 words / frame 0x88, reduce 331 -> 71 differences without
   guards, and qualify literal prefix/suffix spans with 15 final tests.

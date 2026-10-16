@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Packet Rectangle Compiler Provenance
+
+[Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
+Evidence-only checkpoint for func_15095D34; all 45 complete-owner screens
+remain at best 71 differences, with no production C/guard/ELF/CSV changes.
+Qualified compiler captures explain constant sharing and locate M-128/-132
+homes in UOPT output. Both mode-5 allocation traces retain the same computed
+fractional-T spill, so constant spelling alone does not close the fit.
+All 12 diagnostic tests pass; fresh Game 2,922/4,828, total 3,595/5,501,
+different 1,906, zero drift. README unchanged. Tools 9533be8 banks first;
+preserve 815 original mirror hashes / 818 paths. Next: the same routine's
+UOPT expression lifetime and retail flag spill, not another conversion batch.
+
 ## 2026-10-16 Packet Rectangle Extent And Lifetime Fitting
 
 [Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):

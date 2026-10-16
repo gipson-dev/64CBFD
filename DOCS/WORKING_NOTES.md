@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
+Qualify func_15095D34's CFE/UOPT constant payloads, initialized UGEN frame
+observation and mode-5 allocation constraints. Wrong M-128/-132 homes already
+exist before UGEN; computed fractional-T expression 137, not just its named
+local, needs lifetime work. All 45 screens remain at best 71 differences.
+All 12 diagnostic tests pass; production C/ELF/guards/CSV and 100 inputs stay
+fixed, fresh totals unchanged. Bank tools 9533be8 before consumer docs/pin;
+preserve 815 mirror hashes / 818 paths. No new C match or fresh broad runtime
+claim. Continue the same renderer's 151-word middle window.
+
+2026-10-16:
 [Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
 Fit func_15095D34 to retail's 346 words / frame 0x88; reduce 331 -> 71
 differences, retaining a literal 104-word prefix and 91-word suffix with

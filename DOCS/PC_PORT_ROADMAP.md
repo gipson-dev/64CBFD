@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Packet Rectangle Compiler Provenance - 2026-10-16
+
+[Note 1437](WORKING_NOTES/1437-packet-rectangle-constant-and-spill-provenance-20261016.md):
+
+- [x] Revalidate 45 complete-owner source/object/linked-word screens against a new immutable 100-input baseline. Best remains 71 differences; retain the production 346-word / frame 0x88 renderer and literal 104/91-word spans. This checkpoint grants no new C matching credit.
+- [x] Capture qualified CFE/UOPT streams and actual UGEN consumption with fired initialized-table/frame probes, producer/consumer/driver exit-zero checks and normal/traced object, relocation and pool identity. Explain the distinct `32.0` versus folded integer-32 constant payloads without installing the worse 347-word form.
+- [x] Qualify mode-5 allocation diagnostics: both forms assign flag expression 123 abstract color 12 and computed fractional-T expression 137 color 0. Locate M-128/-132 storage in UOPT output before UGEN; retain the observed frame-write's limits rather than claiming all later scratch paths absent.
+- [x] Pass all 12 diagnostic tests in 15.687s, both tools copies' syntax/eleven shared padder tests and tools-check. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift. No production source, guards, ELF/CSV or README changes; no guest/native/gameplay requalification claimed.
+- [x] Bank tools 9533be8 before consumer documentation/pin; preserve all 815 initial mirror hashes / 818 dirty paths. No mirror commit/reset, push or host/frozen Release action.
+- [ ] Finish **the same func_15095D34**: recover UOPT's computed fractional-T retention and retail flag spill/copy through a qualified semantic use graph, then close the branch schedule and six macro-home differences. Keep all 71 remaining differences and the wider Game goal open; do not manufacture locals, physical bindings or bulk guards.
+
 ## Packet Rectangle Extent And Lifetime Fitting - 2026-10-16
 
 [Note 1436](WORKING_NOTES/1436-packet-rectangle-extent-and-lifetime-fitting-20261016.md):
@@ -8,7 +19,7 @@
 - [x] Pass all 15 final tests in 125.719s, including fresh geometry/animation/native32 O2/O0/UBSan, aliases, effective controls, original rebases and real caller connections. Verify 64 complete modeled prefix states; reject a private-home control with identical public memory. Keep later private/fault/hardware/gameplay claims open.
 - [x] Match the entire first 1,152-byte code/extent prediction after a normal guest rebuild, with zero additional metadata serialization changes or exclusions. Preserve 18 neighbors, prior guards, 98 other inputs and protected 189,088 bytes / 720 owners. Fresh Game 2,922/4,828 (60.52%), total 3,595/5,501 (65.35%), different 1,906, zero drift; README unchanged.
 - [x] Bank tools aff42ac before consumer source/pin/docs; preserve all 811 initial mirror hashes / 815 paths and pass both copies' syntax/eleven shared padder tests plus tools-check. No push or host/frozen Release action.
-- [ ] Finish **the same func_15095D34**: 71 differences remain in the 151-word window +0x1A0..+0x3FC. Recover the two FP constant roles, fractional-T/flip lifetime, branch schedule and six macro-home accesses from a new immutable baseline. Do not substitute bulk guards, physical-register bindings or unused locals for the missing fit.
+- [ ] Finish **the same func_15095D34**: 71 differences remain in the 151-word window +0x1A0..+0x3FC. Note 1437 explains the two FP constant roles and locates the wrong homes in UOPT; recover fractional-T/flip lifetime, branch schedule and six macro-home accesses. Do not substitute bulk guards, physical-register bindings or unused locals for the missing fit.
 - [ ] Retain inherited-stack C deferrals, original caller backlog and all broader Game/additional-source/raw-matching work; this partial fit is not completion of the wider goal.
 
 ## Packet Scissored Rectangle Recovery - 2026-10-16
