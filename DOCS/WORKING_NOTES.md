@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
+Install func_15171600's rectangle preset switch, all 127 words direct /
+frame 0x40 with the true three-to-thirteen-input ABI and no instruction
+guards. All 13 final tests pass. Close all 449 ELF changes, including one
+explicit three-symbol cycle / 53 metadata bytes; every other byte and
+80 inputs fixed, no exclusions. Fresh Game 2,916/4,828, total 3,589/5,501,
+different 1,912, zero drift. Bank tools 20f2701 first, preserve 777 mirror
+hashes / 782 paths. Next func_15171BF4; caller and broader queues stay open.
+
+2026-10-16:
 [Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
 Install func_15171200's fourteen-input random packet burst, all 256 words
 direct / frame 0xE0 / packet SP+0x7C, without target instruction guards.

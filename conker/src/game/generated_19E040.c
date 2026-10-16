@@ -55,6 +55,11 @@ extern TableDebris19E040 D_800A6ED8[6];
 extern f32 D_800A6F98, D_800A6F9C, D_800A6FA0;
 f32 func_150ADA68(void);
 
+extern f32 D_800A6FC0, D_800A6FC4;
+void func_151717FC(u8 *actor, f32 halfWidth, f32 halfDepth, f32 offsetX,
+                  f32 offsetY, f32 offsetZ, s32 kind, s32 preset,
+                  s32 xCount, s32 zCount, f32 scale, u8 flags, s32 context);
+
 extern s32 D_800BE9F0;
 
 void func_151700D8(f32 *, f32, f32, s32, f32, s32, s32, s32, u8, s32);
@@ -278,8 +283,26 @@ void func_15171200(s32 count, s32 kind, f32 x, f32 y, f32 z,
     }
 }
 
-s32 func_15171600() {
-    return 0;
+/* Select the rectangle debris preset from the actor's byte-sized type. */
+void func_15171600(u8 *actor, u8 flags, s32 context) {
+    switch (actor[0x72]) {
+        case 0xEB:
+            func_151717FC(actor, 400.0f, 500.0f, 0.0f, D_800A6FC0, 0.0f,
+                          2, 5, 20, 20, 1.0f, flags, context);
+            break;
+        case 0xF6:
+            func_151717FC(actor, 200.0f, 400.0f, -1800.0f, -1000.0f, -1200.0f,
+                          2, 5, 4, 10, 1.0f, flags, context);
+            break;
+        case 0xF8:
+            func_151717FC(actor, 100.0f, 160.0f, -2500.0f, D_800A6FC4, 0.0f,
+                          2, 5, 4, 4, 0.5f, flags, context);
+            break;
+        case 0xF9:
+            func_151717FC(actor, 200.0f, 100.0f, 100.0f, -300.0f, 0.0f,
+                          1, 5, 4, 4, 1.0f, flags, context);
+            break;
+    }
 }
 
 /* Build a rectangle around signed actor coordinates and emit its perimeter.

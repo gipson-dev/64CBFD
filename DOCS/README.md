@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Rectangle preset dispatch direct byte match](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
+  Recover all 127 instructions and the three-to-thirteen-input ABI, pass
+  13 final checks and account for the complete 449-byte linked-image change.
 - [Random packet burst direct byte match](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
   Recover the fourteen-input ABI and all 256 instructions directly, pass
   14 final checks and reproduce every byte of the first predicted ELF.

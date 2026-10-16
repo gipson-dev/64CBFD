@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools baff8d3; tools are committed before the consumer pin.
+  checkpoint pins tools 20f2701; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Rectangle preset dispatcher installed as a direct instruction match:
+[Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md).
+func_15171600 matches all 127 words / frame 0x40 with its three-input
+void ABI and all thirteen rectangle-emitter arguments restored. No target
+instruction guards, new pool or compiler-profile change. All 13 final
+checks pass in 84.073s, including all 256 selector values, native32,
+effective negatives, rebases, caller captures and the current rectangle
+emitter. Preserve the rejected slot-only prediction; explicitly account
+for one three-symbol cycle / 53 metadata bytes and reproduce all 449 ELF
+changes with no exclusions. Every other byte / 80 inputs and protected
+data stay fixed. Fresh Game 2,916/4,828 (60.40%), total 3,589/5,501 (65.24%),
+different 1,912, zero drift. Tools 20f2701 banks first; preserve 777 initial
+mirror hashes / 782 final paths. Next func_15171BF4, 43-word retail slot
+including one padding nop, frame 0x28. Caller func_150265CC and all wider
+queues remain unfinished. No push or host/frozen Release action.
 
 Random packet burst installed as a direct instruction match:
 [Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md).

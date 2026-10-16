@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Rectangle Preset Dispatch Direct Match
+
+[Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
+Restore func_15171600's byte selector and complete rectangle-emitter ABI,
+matching all 127 words / frame 0x40 directly without target guards. All
+13 final checks pass, including all selector values, native32, rebases,
+original caller limits and the current rectangle emitter. Account for the
+53 metadata bytes rather than accepting the initial slot-only prediction;
+the complete rebuilt ELF matches all 449 expected changes with no exclusions.
+Game 2,916/4,828, total 3,589/5,501, different 1,912, zero drift. Bank tools
+20f2701 first, preserve 777 mirror hashes / 782 paths; resume func_15171BF4.
+
 ## 2026-10-16 Random Packet Burst Direct Match
 
 [Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):

@@ -16,7 +16,7 @@ new compiler profile or Makefile change.**
 4. [x] Pass eleven pre-install qualification checks, including independent reference arithmetic, native32, effective negatives, actual caller windows, rebases, literal fault prefixes and connected consumers.
 5. [x] Capture a complete full-link prediction before installation, rebuild only the changed owner/guest ELF, and require every predicted byte with no exclusions.
 6. [x] Pass all fourteen final target/install checks, refresh official aggregates and README rows, preserve the older tools mirror and commit tools before consumer source/pin/docs. No push.
-7. [ ] Recover next func_15171600, 127 words / 508 bytes / frame 0x40, at VA 0x15171600, ROM 0x19EAB0, ending at 0x151717FC in the same owner. Audit its byte switch and rectangle-emitter ABI first.
+7. [x] Recover func_15171600's byte switch and full rectangle-emitter ABI in [Note 1429](1429-rectangle-preset-dispatch-direct-byte-match-20261016.md), matching all 127 words / frame 0x40 directly without instruction guards.
 8. [ ] Restore original caller func_15169C70 and retain func_1511C638, func_1516D400, inherited-stack func_1516FE1C and the broader Game/additional-source/raw-matching queues.
 
 ## Recovered Contract

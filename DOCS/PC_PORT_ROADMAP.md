@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Rectangle Preset Dispatch Direct Match - 2026-10-16
+
+[Note 1429](WORKING_NOTES/1429-rectangle-preset-dispatch-direct-byte-match-20261016.md):
+
+- [x] Recover func_15171600's three-input void ABI, unsigned actor byte at +0x72, four presets, live offset globals and complete thirteen-input rectangle-emitter calls. Preserve actor/byte flags/full-word context; do not import the reference's shifted/mistyped ABI.
+- [x] Match all 127 words / frame 0x40 directly from the first semantic C compile. Keep all eight neighbors, the existing literal pool, Makefile/profile and entire guard manifest fixed; no target instruction guards.
+- [x] Pass all 13 final tests in 84.073s: 4,096 paired selector/effect cases visiting every original word, native32 O2/O0 with 768 cases each and UBSan, nine effective guest/native negatives, 142 fault pairs, 16 guest-home aliases, three original rebase sets / 90 pairs, six caller captures and 16 current rectangle-emitter connections.
+- [x] Preserve the rejected slot-only prediction, account for the exact three-symbol cycle / 53 metadata bytes, then rebuild and reproduce all 449 changes (396 slot/extent + 53 metadata), every other byte / 80 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,916/4,828 (60.40%), total 3,589/5,501 (65.24%), different 1,912, zero drift; README aggregate rows only.
+- [x] Bank tools 20f2701 before consumer source/pin/docs, preserve all 777 original mirror hashes / 782 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_15171BF4 at VA 0x15171BF4 / ROM 0x19F0A4, frame 0x28, 43-word / 172-byte retail slot (42 instruction words plus one padding nop), ending at 0x15171CA0. This is the last placeholder in generated_19E040.c; audit its actor +4 byte switch and four helper ABIs before conversion.
+- [ ] Restore caller func_150265CC and retain func_15169C70, func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues.
+
 ## Random Packet Burst Direct Match - 2026-10-16
 
 [Note 1428](WORKING_NOTES/1428-random-packet-burst-direct-byte-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Pass all 14 final tests in 88.956s: 384 paired full sequences, native32 O2/O0 with 512 cases each and UBSan, nine effective negatives, 24 conversion cases, 160 fault pairs, three original rebase sets / 48 pairs, six caller captures and 16 real consumer/allocator runs.
 - [x] Predict the complete ELF before editing production, then reproduce all 793 target-slot/extent changes with no extra metadata changes or exclusions. Preserve every other byte / 80 inputs and protected 189,088 bytes / 720 owners. Refresh Game 2,915/4,828 (60.38%), total 3,588/5,501 (65.22%), different 1,913, zero drift; README aggregate rows only.
 - [x] Bank tools baff8d3 before consumer source/pin/docs, preserve all 771 original mirror hashes / 777 final paths and pass both copies' syntax/shared padder tests plus tools-check. No push or host/frozen Release action.
-- [ ] Recover next func_15171600, VA 0x15171600, ROM 0x19EAB0, 127 words / 508 bytes / frame 0x40, ending at func_151717FC in the same owner. Audit its actor-byte switch and thirteen-input rectangle-emitter calls; do not import the reference's mismatched ABI.
+- [x] Recover func_15171600's complete byte switch and thirteen-input rectangle-emitter ABI in Note 1429, all 127 words / frame 0x40 direct, with no target instruction guards.
 - [ ] Restore caller func_15169C70 and retain func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues.
 
 ## Table Debris Direct Match - 2026-10-16
