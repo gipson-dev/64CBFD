@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-16:
+[Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
+Bank the complete 373-word/frame-0x48 viewport initializer candidate, still
+49 real differences and not installed. Seven recovery tests pass in 34.931s;
+the first private FPR boundary stays explicit. Tools 54aff68 banks first,
+preserving 911 mirror hashes / 914 paths. Production and aggregates unchanged;
+continue func_1501A8C0's matching and remaining installation gates.
+
+2026-10-16:
 [Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
 Restore all 87 point-projection words directly from C, original frame 0x38 and
 no new guard/profile. Eleven final tests and the complete first 276-byte ELF

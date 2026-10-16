@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-16 Viewport Initializer Recovery In Progress
+
+[Note 1457](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
+Bank a complete func_1501A8C0 candidate, 373 words / frame 0x48 / 49 differences.
+Seven recovery tests pass in 34.931s, but the literal FPR boundary at
+0x1501AA38 and full installation gates remain open. No production source,
+ELF, guard or README aggregate change, and no conversion credit. Tools 54aff68
+banks first, preserving 911 mirror hashes / 914 paths. Continue this same
+function; no push or host/Release action.
+
 ## 2026-10-16 View Point Projection Direct Match
 
 [Note 1456](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):

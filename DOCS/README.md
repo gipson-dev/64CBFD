@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Viewport initializer recovery and matching boundary](WORKING_NOTES/1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
+  Bank the complete 373-word/frame-0x48 candidate and seven passing recovery
+  tests. Still 49 differences, not installed; continue the same function.
 - [View point projection direct match](WORKING_NOTES/1456-view-point-projection-direct-match-20261016.md):
   Restore all 87 words directly from C with the real transform tail and live
   aliases. Eleven final tests and the entire 276-byte image prediction pass;

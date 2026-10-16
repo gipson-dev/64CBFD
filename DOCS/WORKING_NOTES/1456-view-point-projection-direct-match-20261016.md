@@ -168,3 +168,8 @@ contract, table widths, repeated live base reads and float-to-halfword stores.
 Qualify its real func_1501AE94, func_1501AF44 and func_1510B32C chain before
 installation. Keep timing's **141 differences**, other view providers, the
 wider Game/additional-source queue and full gameplay acceptance separately open.
+
+Follow-up in progress in [Note 1457](1457-viewport-initializer-recovery-and-matching-boundary-20261016.md):
+func_1501A8C0 now has a complete 373-word/frame-0x48 research candidate and
+seven passing recovery tests, but still 49 differences. It is not installed;
+continue this same function and its outstanding installation gates.
