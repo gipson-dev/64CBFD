@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Scaled random spray guarded byte match](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
+  Recover the counted seven-input spray and escaped output writes, match
+  its complete 119-word slot and pass 15 final whole-loop/image checks.
 - [Record random drag guarded byte match](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
   Recover slot 6's full-word fade and repeated-X threshold, normalize only
   13 register words and close all 117 retail words and the complete ELF.

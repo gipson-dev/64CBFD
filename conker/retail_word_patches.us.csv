@@ -15981,3 +15981,121 @@ generated_19A8B0,func_151707E0,0x1C4,0x8FB00018,0x8FB00018,-,-,Retain random-dra
 generated_19A8B0,func_151707E0,0x1C8,0x27BD0028,0x27BD0028,-,-,Retain random-drag compiler fingerprint,,,false
 generated_19A8B0,func_151707E0,0x1CC,0x03E00008,0x03E00008,-,-,Retain random-drag compiler fingerprint,,,false
 generated_19A8B0,func_151707E0,0x1D0,0x00000000,0x00000000,-,-,Retain random-drag compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x0,0x27BDFF08,0x27BDFF08,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x4,0xAFB1009C,0xAFB1009C,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x8,0x00E08825,0x00E08825,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0xC,0xAFBF00BC,0xAFBF00BC,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x10,0xAFBE00B8,0xAFBE00B8,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x14,0xAFB700B4,0xAFB700B4,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x18,0xAFB600B0,0xAFB600B0,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1C,0xAFB500AC,0xAFB500AC,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x20,0xAFB400A8,0xAFB400A8,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x24,0xAFB300A4,0xAFB300A4,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x28,0xAFB200A0,0xAFB200A0,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x2C,0xAFB00098,0xAFB00098,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x30,0xF7B60090,0xF7B60090,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x34,0xF7B40088,0xF7B40088,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x38,0x1A200059,0x1A200059,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x3C,0x00008025,0x00008025,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x40,0xC7B40108,0xC7B40108,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x44,0x00049400,0x00049400,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x48,0x00059C00,0x00059C00,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x4C,0x0006A400,0x0006A400,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x50,0x0014C403,0x0014C403,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x54,0x00137C03,0x00137C03,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x58,0x00127403,0x00127403,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x5C,0x01C09025,0x01C09025,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x60,0x01E09825,0x01E09825,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x64,0x0300A025,0x0300A025,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x68,0x27BE00EC,0x27BE00EC,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x6C,0x27B700F0,0x27B700F0,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x70,0x8FB60110,0x8FB60110,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x74,0x93B5010F,0x93B5010F,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x78,0x4614A580,0x4614A580,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x7C,0x24040040,0x24040040,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x80,0x02E02825,0x02E02825,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x84,0x03C03025,0x03C03025,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x88,0x0C000000,0x0C000000,R_MIPS_26:func_15170034,R_MIPS_26:func_15170034,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x8C,0x27A700E8,0x27A700E8,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x90,0xC7A400EC,0xC7A000F0,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x94,0xC7A600F0,0xC7A200EC,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x98,0xC7AA00E8,0xC7AC00E8,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x9C,0x4604B082,0x46140002,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xA0,0x00122400,0x00122400,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0xA4,0x00132C00,0x00143400,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xA8,0x46143002,0x46161082,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xAC,0x00143400,0x00064C03,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xB0,0x240F00FF,0x0004CC03,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xB4,0x46145302,0x46146302,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xB8,0xAFAF0024,0x240A00FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xBC,0x00065C03,0x240B00FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xC0,0x00055403,0x240C00FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xC4,0x00044C03,0x240D00FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xC8,0x240C00FF,0xAFAD0024,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xCC,0x4600020D,0x4600010D,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xD0,0x240D00FF,0xAFAC001C,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xD4,0xAFAD0018,0xAFAB0018,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xD8,0x4600640D,0x4600618D,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xDC,0x44024000,0x44022000,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xE0,0xAFAC0014,0xAFAA0014,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xE4,0x4600148D,0x4600120D,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xE8,0x44038000,0x44033000,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xEC,0x01202025,0x03202025,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xF0,0x01402825,0x01203025,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xF4,0x440F9000,0x440F4000,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xF8,0x01603025,0x00132C00,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0xFC,0x240B0200,0x00054403,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x100,0x240C0200,0x240B0200,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x104,0x240D0028,0x240C0200,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x108,0x240E00FF,0x240D0028,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x10C,0x24180007,0x240E0007,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x110,0x0002CA03,0x305900FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x114,0x304800FF,0x0002C203,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x118,0x306A00FF,0x00034A03,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x11C,0x00034A03,0x306A00FF,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x120,0xE7AC00E8,0xAFAA0040,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x124,0xE7A200EC,0xAFA9003C,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x128,0xE7A000F0,0xAFB80034,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x12C,0xAFA9003C,0xAFB90038,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x130,0xAFAA0040,0xAFAE0030,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x134,0xAFA80038,0xAFAD0064,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x138,0xAFB90034,0xAFAC0060,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x13C,0xAFB80030,0xAFAB005C,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x140,0xAFAE001C,0x01002825,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x144,0xAFAD0064,0xE7AC00E8,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x148,0xAFAC0060,0xE7A200EC,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x14C,0xAFAB005C,0xE7A000F0,-,-,"Normalize checked scaled-spray schedule, temporaries and finite multiply operands",,,false
+generated_19A8B0,func_151709B4,0x150,0x2407002F,0x2407002F,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x154,0xAFA00010,0xAFA00010,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x158,0xAFA00020,0xAFA00020,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x15C,0xAFA00028,0xAFA00028,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x160,0xAFA0002C,0xAFA0002C,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x164,0xAFA00044,0xAFA00044,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x168,0xAFA00048,0xAFA00048,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x16C,0xAFA0004C,0xAFA0004C,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x170,0xAFA00050,0xAFA00050,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x174,0xAFA00054,0xAFA00054,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x178,0xAFA00058,0xAFA00058,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x17C,0xAFA0006C,0xAFA0006C,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x180,0xAFA00070,0xAFA00070,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x184,0xAFB50074,0xAFB50074,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x188,0xAFB60078,0xAFB60078,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x18C,0x0C000000,0x0C000000,R_MIPS_26:func_1516D4E8,R_MIPS_26:func_1516D4E8,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x190,0xAFAF0068,0xAFAF0068,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x194,0x26100001,0x26100001,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x198,0x5611FFB9,0x5611FFB9,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x19C,0x24040040,0x24040040,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1A0,0x8FBF00BC,0x8FBF00BC,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1A4,0xD7B40088,0xD7B40088,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1A8,0xD7B60090,0xD7B60090,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1AC,0x8FB00098,0x8FB00098,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1B0,0x8FB1009C,0x8FB1009C,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1B4,0x8FB200A0,0x8FB200A0,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1B8,0x8FB300A4,0x8FB300A4,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1BC,0x8FB400A8,0x8FB400A8,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1C0,0x8FB500AC,0x8FB500AC,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1C4,0x8FB600B0,0x8FB600B0,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1C8,0x8FB700B4,0x8FB700B4,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1CC,0x8FBE00B8,0x8FBE00B8,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1D0,0x03E00008,0x03E00008,-,-,Retain scaled-spray compiler fingerprint,,,false
+generated_19A8B0,func_151709B4,0x1D4,0x27BD00F8,0x27BD00F8,-,-,Retain scaled-spray compiler fingerprint,,,false

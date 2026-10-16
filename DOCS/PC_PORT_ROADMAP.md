@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Scaled Random Spray Guarded Match - 2026-10-15
+
+[Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
+
+- [x] Recover func_151709B4's word coordinate inputs, signed count, float scale, byte flags and word context from the full body and three original caller windows. Preserve positive-count gating, three escaped direction outputs, their scaled writebacks and all 31 physical factory words; correct the reference's shifted argument packet.
+- [x] Recover the original 0xF8 frame and all three output homes with real locals. Retain every compiled operation, normalize only scheduling/register fields and one finite commutative multiply, append 118 closed guards (71 identity / 47 transforming) and retain the automatic padding NOP. Raw C stays 47 real words different; symbol size 472 and slot size 476 are distinct.
+- [x] Pass arbitrary-index continue/exit and empty-loop obligations with explicit finite/framed assumptions, full escaped-object observations and all 31 legal factory-home clobbers. Pass 3,000 whole-loop cases, 1,260 fired fault prefixes, nine effective compiled guest/native negatives, native32 O2/O0 with 1,048,576 cases each, three independent rebase sets, three caller windows, 640 current helper-chain cases and all 801 archive hashes. All 15 final tests pass in 100.717s.
+- [x] Match the entire rebuilt ELF to its initial prediction: exactly 365 target-slot/extent changes, every other byte and 66 inputs fixed, protected 189,088 bytes / 720 owners exact, no metadata exclusions. Preserve the old guard prefix, profiles, headers and conversion data.
+- [x] Refresh Game 2,911/4,828 (60.29%), total 3,584/5,501 (65.15%), different 1,917, zero drift. README aggregate rows only; bank tools de7c6d8 first, preserve all 741 initial mirror hashes / 747 final paths and pass both copies' syntax/shared padder checks plus tools-check. No push, gameplay or host/Release action.
+- [ ] Continue func_15170B90, ROM 0x19E040, 205 words / frame 0x120, in generated_19E040.c. Keep func_1516D400, inherited-stack func_1516FE1C and every broader Game/additional-source, caller and raw-matching queue active.
+
 ## Callback-Six Random Drag Guarded Match - 2026-10-15
 
 [Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
@@ -9,7 +20,8 @@
 - [x] Pass 15 final tests in 80.861s: ordered threshold/ABI dependency check, six effective instruction negatives and an accepted equivalent-square control, 4,032 literal/public cases, all 116 reachable words, 444 fired fault prefixes, six aliases, nine compiled guest/native negatives, native32 O2/O0 with 1,048,578 cases each and 960 current slot-6 wrapper/helper cases. Check all 801 archive hashes and local MULTU HI/LO golden vectors.
 - [x] Match the complete rebuilt ELF to its initial prediction: 316 target-slot/extent changes, every other byte and 64 inputs fixed, protected 189,088 bytes / 720 owners exact, no metadata exclusions. Preserve the old guard prefix, profiles, headers and conversion data.
 - [x] Refresh Game 2,910/4,828 (60.27%), total 3,583/5,501 (65.13%), different 1,918, zero drift. README aggregate rows only; bank tools bce2d08 first, preserve all 736 initial mirror hashes / 741 final paths and pass both copies' syntax/shared padder checks plus tools-check. No push, gameplay or host/Release action.
-- [ ] Continue func_151709B4, ROM 0x19DE64 / frame 0xF8: 118 instructions plus a trailing padding NOP, 119-word retail slot. Retain all additional-source/Game, unconverted-caller and inherited-stack queues; this guarded match is not project or raw compiler completion.
+- [x] Install func_151709B4's complete 119-word guarded slot in [Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md), preserving 47 raw differences, explicit finite-value assumptions and the 472-byte body / 476-byte slot distinction.
+- [ ] Retain all additional-source/Game, unconverted-caller and inherited-stack queues; this guarded match is not project or raw compiler completion.
 
 ## Directional Burst Guarded Byte Match - 2026-10-15
 

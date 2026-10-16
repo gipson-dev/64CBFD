@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bce2d08; tools are committed before the consumer pin.
+  checkpoint pins tools de7c6d8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Scaled random spray installed with checked guarded normalization:
+[Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md).
+func_151709B4 matches its full 119-word retail slot: 118 body words plus
+one padding NOP, frame 0xF8, symbol size 472 rather than slot size 476.
+Recover word coordinate inputs, positive-count gating, stable scale/flags/
+context and the complete 31-word factory packet; preserve all three escaped
+float output objects and their scaled writebacks. Raw C has 47 real word
+differences, with finite multiplication commutation an explicit assumption.
+All 15 final checks pass in 100.717s: 3,000 whole-loop cases, 1,260 fault
+prefixes, native32 O2/O0 with 1,048,576 cases each, arbitrary-index loop
+obligations, three caller windows and 640 connected helper-chain cases.
+The full rebuilt ELF matches its initial prediction: 365 target-slot/extent
+changes, every other byte and 66 inputs fixed, protected layout exact,
+no exclusions. Fresh Game 2,911/4,828 (60.29%), total 3,584/5,501 (65.15%),
+different 1,917, zero drift; conversions unchanged, README aggregate rows
+only. Tools de7c6d8 banks first; preserve 741 mirror hashes / 747 paths.
+Next func_15170B90, 205 words / frame 0x120, in generated_19E040.c. Keep
+func_1516D400, inherited-stack func_1516FE1C and all broader Game/additional-
+source queues open. No push, gameplay or host/Release operation.
 
 Callback-six fade and random drag installed with checked register guards:
 [Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md).

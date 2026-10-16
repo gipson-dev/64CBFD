@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-15:
+[Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
+Install the complete counted spray C, all 119 slot words exact / frame
+0xF8, retaining the 118-word body / one-NOP padding distinction. Raw C has
+47 real differences; check arbitrary-index obligations and escaped float
+observations with the finite multiplication lemma explicit. All 15 tests
+pass, including 3,000 loop cases, 1,260 fault prefixes, native32 and 640
+current helper-chain cases. Close every ELF byte to 365 predicted changes,
+all others/66 inputs fixed, no exclusions. Game 2,911/4,828, total 3,584/5,501,
+different 1,917, zero drift. Bank tools de7c6d8 first, preserve 741 mirror
+hashes / 747 paths and continue func_15170B90 plus every broader Game queue.
+
+2026-10-15:
 [Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
 Install callback 6's full-word fade and randomized scaling from semantic C,
 all 117 normalized words exact / frame 0x28, raw 13 register differences.

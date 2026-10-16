@@ -870,6 +870,37 @@ s32 func_151707E0(u8 *record) {
     return 0;
 }
 
-s32 func_151709B4() {
-    return 0;
+/* Emit count records using a scaled direction and doubled vertical spread.
+ * Guards normalize temporary scheduling and one finite multiply operand order. */
+void func_151709B4(s32 x, s32 y, s32 z, s32 count, f32 scale,
+                  u8 flags, s32 context) {
+    s32 index;
+    f32 directionX;
+    f32 directionY;
+    f32 directionZ;
+    f32 velocityX;
+    f32 velocityZ;
+    f32 velocityY;
+    s32 fixedX;
+    s32 fixedZ;
+
+    index = 0;
+    if (count > 0) {
+        do {
+            func_15170034(0x40, &directionX, &directionY, &directionZ);
+            velocityX = directionX * scale;
+            velocityY = directionY * (2.0f * scale);
+            velocityZ = directionZ * scale;
+            fixedX = (s32)velocityX;
+            fixedZ = (s32)velocityZ;
+            directionZ = velocityZ;
+            directionY = velocityY;
+            directionX = velocityX;
+            func_1516D4E8(x, y, z, 0x2F, 0, 255, 255, 255, 0, 255, 0, 0, 7,
+                fixedX >> 8, fixedX & 255, fixedZ >> 8, fixedZ & 255,
+                0, 0, 0, 0, 0, 0, 0x200, 0x200, 40, (s32)velocityY, 0, 0,
+                flags, context);
+            index += 1;
+        } while (index != count);
+    }
 }

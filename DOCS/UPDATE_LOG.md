@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-15 Scaled Random Spray Guarded Match
+
+[Note 1422](WORKING_NOTES/1422-scaled-random-spray-guarded-byte-match-20261015.md):
+Restore func_151709B4's complete counted spray C and seven-input word/
+float/byte ABI. Match 118 body words plus the retail padding NOP, frame
+0xF8; raw C retains 47 differences and the finite-multiply assumption.
+Pass 15 final tests, including escaped-output observations, native32 and
+the current direction/trig/factory chain. The entire rebuilt ELF matches
+its first prediction: 365 target-slot/extent changes, no exclusions.
+Game 2,911/4,828, total 3,584/5,501, different 1,917, zero drift. Bank tools
+de7c6d8 first, preserve 741 mirror hashes / 747 paths and continue 205-word
+func_15170B90 plus all broader queues. README aggregate rows only; no push
+or host/Release action.
+
 ## 2026-10-15 Callback-Six Random Drag Guarded Match
 
 [Note 1421](WORKING_NOTES/1421-record-random-drag-guarded-byte-match-20261015.md):
