@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-15:
+[Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
+Observe the compiler-created next-edge 0x104 slot and reject a live 0x18C
+substitute through a ten-versus-five packet poison. Recover 151717FC's full
+wrapper and compatible word-preset interface; ten checks pass, including
+2,000 guest pairs and 262,144 native cases per O2/O0. Reject 63 versus 61
+words; keep both production stubs, all 63 inputs and official totals fixed.
+Bank tools c5817a8 first and retain the full Game/additional-source objective.
+
+2026-10-15:
 [Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
 Recover func_151700D8's 0x190 frame, three table homes, range limit and live
 count home without guards or padding locals. Fired compiler traces explain

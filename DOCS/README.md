@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quad emission loop provenance and wrapper recovery](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
+  Qualify the complete rectangle wrapper and preset ABI, reject a false
+  edge-home substitute and keep both nonmatching production stubs unchanged.
 - [Quad edge emitter named frame and home recovery](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
   Recover the retail 0x190 frame and table/range/count homes, pass 13 checks
   and retain 137 remaining differences without installing or crediting C.

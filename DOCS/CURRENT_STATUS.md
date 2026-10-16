@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 55cd830; tools are committed before the consumer pin.
+  checkpoint pins tools c5817a8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,21 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-Quad edge emitter frame/home recovery, not installed:
-[Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md).
-func_151700D8 now emits 266 words / the retail 0x190 frame with 137
-differences, down from 149. Fired compiler traces account for the full
-16-byte named-local reduction, with no temporary spills. All three table
-homes, the range limit and live count now share their retail offsets.
-Thirteen checks pass in 79.083s; the reciprocal snapshot remains per-edge.
-All complete private states and 1,276 paired fault prefixes still differ;
-the strict gate rejects installation. All 62 production inputs stay fixed.
+Quad emission loop audit and wrapper recovery, not installed:
+[Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md).
+func_151700D8 retains 266 words / frame 0x190 / 137 differences. Its full-word
+preset formal plus per-edge byte use preserves complete-owner code and
+matches the caller ABI. Direct advancement explains next-edge home 0x104;
+an effective 0x18C poison rejects an addressable control substitute.
+Recover func_151717FC's complete thirteen-input / ten-word / twelve-float
+wrapper, but reject 63 words in its 61-word slot. Ten checks pass in 32.886s,
+including 2,000 public pairs, native32 O2/O0 and rebases; private/fault
+differences remain explicit. All 63 source/reference/build inputs stay fixed.
 Fresh official figures remain Game 2,906/4,828 (60.19%), total 3,579/5,501
 (65.06%), different 1,922, zero drift; README and conversion rows unchanged.
-Tools 55cd830 is banked first; preserve 712 initial older-mirror fingerprints
-/ 714 final paths. Continue current-edge/next-edge/preset lifetimes and
-scheduling before adoption, plus all additional-source and inherited-stack
-queues. No host/Release action or push.
+Tools c5817a8 is banked first; preserve 714 initial older-mirror fingerprints
+/ 717 final paths. Continue emitter current-edge lifetimes and wrapper
+compiler allocation before adoption, plus all additional-source and
+inherited-stack queues. No host/Release action or push.
 
 Random direction writer installed directly from C:
 [Note 1413](WORKING_NOTES/1413-paired-overlay-stack-contract-and-random-direction-match-20261015.md).

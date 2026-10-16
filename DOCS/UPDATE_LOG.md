@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-15 Quad Emission Loop Audit And Wrapper Recovery
+
+[Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
+Identify the emitter's compiler-created next-edge slot and rule out an
+addressable control substitute with a fired private-home probe. Recover the
+complete signed-coordinate rectangle wrapper and full-word preset ABI,
+passing ten checks, but keep 151700D8's 137-word gap and 151717FC's 63/61
+overflow uninstalled. All source/build inputs, README aggregates and official
+matching credit remain unchanged. Tools c5817a8 is banked first.
+
 ## 2026-10-15 Quad Edge Emitter Frame And Named Homes
 
 [Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):

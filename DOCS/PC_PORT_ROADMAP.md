@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Quad Emission Loop Audit And Wrapper Recovery - 2026-10-15
+
+[Note 1416](WORKING_NOTES/1416-quad-emission-loop-provenance-and-wrapper-recovery-20261015.md):
+
+- [x] Explain next-edge 0x104 through actual UOPT allocation: CFE136 -> UOPT176, frame0x190, no UGEN temporary. Reject an addressable-edge update with a fired ten-versus-five packet poison; do not invent RNG arguments.
+- [x] Recover func_151717FC's thirteen inputs, signed actor coordinates, twelve rectangle floats and ten outgoing words. Preserve full-word preset and float scale; prove the compatible emitter word-preset form leaves complete-owner code/relocations/pools unchanged.
+- [x] Pass ten focused checks in 32.886s: 2,000 guest pairs, eight compiled guest negatives, native32 O2/O0 with 262,144 cases each and three negatives, 164 fired prefixes, independent links, 801 archive fingerprints and 63 immutable inputs/capture controls.
+- [x] Reject both unqualified adoptions: emitter remains 266/0x190/137 differences; wrapper is 63 words in a 61-word slot and the actual padder refuses it. Keep production, guards/profiles, README aggregates and official totals unchanged.
+- [x] Bank tools c5817a8 first, preserve all 714 initial older-mirror fingerprints / 717 final paths and pass both copies' syntax/shared padder checks plus shared tools checks. One packet-only, tool-disabled advisory analysis; no push or host/Release operation.
+- [ ] Resolve emitter current-edge def/use and caller-barrier provenance and the wrapper's extra actor home/float allocation. Complete literal private/fault, padding/rebase and predicted-image closure before installation.
+- [ ] Continue the whole Game/additional-source, caller and inherited-stack queues. This is recovery/provenance progress, not a new production byte match or completion.
+
 ## Quad Edge Emitter Named Frame And Home Recovery - 2026-10-15
 
 [Note 1415](WORKING_NOTES/1415-quad-edge-emitter-named-frame-and-home-recovery-20261015.md):
