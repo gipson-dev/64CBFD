@@ -30,7 +30,7 @@ typedef struct DebrisPacket19E040 {
     u8 reserved44[4];
     f32 coefficient[3];
     u8 mode, alpha, zero56, zero57, zero58, duration, kind, variant;
-    u8 zero5C, zero5D;
+    u8 control5C, control5D;
     u8 reserved5E[2];
 } DebrisPacket19E040;
 
@@ -43,6 +43,17 @@ f32 fabsf(f32 value);
 void func_15168BE4(void *packet, u8 flags, s32 context);
 void func_151718F0(f32 x, f32 y, f32 z, f32 radius, s32 lifetime,
                   f32 speed, s32 kind, s32 count, u8 flags, s32 context);
+
+typedef struct TableDebris19E040 {
+    u16 kind;
+    u16 reserved02;
+    f32 offset[3];
+    f32 rotation[3];
+} TableDebris19E040;
+
+extern TableDebris19E040 D_800A6ED8[6];
+extern f32 D_800A6F98, D_800A6F9C, D_800A6FA0;
+f32 func_150ADA68(void);
 
 extern s32 D_800BE9F0;
 
@@ -87,8 +98,8 @@ void func_15170B90(u8 *actor, s32 baseKind, s32 variant, s32 options,
     packet.zero58 = 0;
     packet.duration = 60;
     packet.variant = variant;
-    packet.zero5C = 0;
-    packet.zero5D = 0;
+    packet.control5C = 0;
+    packet.control5D = 0;
     index = 0;
     vector = D_800A6E90;
     do {
@@ -137,8 +148,63 @@ void func_15170EC4(u8 *arg0, u8 arg1, s32 arg2) {
     }
 }
 
-s32 func_15170F4C() {
-    return 0;
+/* Emit six live-table debris packets; keep reserved bytes untouched. */
+void func_15170F4C(u8 *actor, u8 flags, s32 context) {
+    s32 index;
+    DebrisPacket19E040 packet;
+    s32 count;
+    f32 originX;
+    f32 originY;
+    f32 originZ;
+    TableDebris19E040 *entry;
+    s32 asset;
+
+    packet.control5C = 2;
+    packet.control5D = 1;
+    packet.variant = 6;
+    packet.duration = 0;
+    count = 6;
+    entry = D_800A6ED8;
+    originX = (f32)*(s16 *)(actor + 0x10);
+    originY = (f32)*(s16 *)(actor + 0x12);
+    originZ = (f32)*(s16 *)(actor + 0x14);
+    packet.rotation[0] = 0.0f;
+    packet.rotation[1] = 0.0f;
+    packet.rotation[2] = 0.0f;
+    packet.scale[0] = 2.0f;
+    packet.scale[1] = 2.0f;
+    packet.scale[2] = 2.0f;
+    packet.lifetime = 60;
+    packet.mode = 2;
+    packet.alpha = 255;
+    packet.zero56 = 0;
+    packet.zero57 = 0;
+    packet.zero58 = 0;
+    packet.coefficient[0] = D_800A6F98;
+    packet.coefficient[1] = D_800A6F9C;
+    packet.coefficient[2] = D_800A6FA0;
+    index = 0;
+    do {
+        asset = func_1518C900(entry->kind);
+        packet.kind = entry->kind;
+        packet.position[0] = entry->offset[0] + originX;
+        packet.position[1] = entry->offset[1] + originY;
+        packet.position[2] = entry->offset[2] + originZ;
+        packet.velocity[0] = entry->offset[0] * 0.09f;
+        packet.velocity[1] = fabsf(entry->offset[1]) * 0.23f;
+        packet.velocity[2] = entry->offset[2] * 0.09f;
+        packet.rotation[0] = entry->rotation[0];
+        packet.rotation[1] = entry->rotation[1];
+        packet.rotation[2] = entry->rotation[2];
+        packet.spin[0] = packet.rotation[0] * 0.1f;
+        packet.spin[1] = func_150ADA68() * 4.0f - 2.0f;
+        packet.spin[2] = func_150ADA68() * 10.0f - 5.0f;
+        packet.asset = asset;
+        func_15168BE4(&packet, flags, context);
+        index += 1;
+        entry += 1;
+    } while (index < count);
+    actor[0x6E] = 1;
 }
 
 void func_151711C4(u8 *arg0) {

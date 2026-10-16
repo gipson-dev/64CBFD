@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Table Debris Direct Match - 2026-10-16
+
+[Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
+
+- [x] Recover func_15170F4C's exact 158-word / frame-0xE8 / packet-SP+0x84 shape, all origin homes and saved FP roles using genuine float literals and real locals. Use the existing D_800A6FA4 literal-pool alias; no target instruction guard or compiler-profile change. Preserve all eight neighbor bodies and the complete guard CSV.
+- [x] Verify three fired owned compiler traces: CFE/UOPT reservation 140 -> 124, UGEN locals 144 -> 128, saved/outgoing 88/16 and no temporary increment. Require completed driver/children and normal/traced functional output equality, without claiming equal mdebug.
+- [x] Pass all 15 final tests in 102.084s: 648 complete paired sequences, native32 O2/O0 with 1,024 cases each, eleven effective negatives, 474 fault pairs, three independent rebase sets / 72 paired cases, original caller limits, 48 actual consumer/allocator runs and physical word/binding/pool/input/metadata corruption controls.
+- [x] Predict the complete image before production edits, including six exact symbol/string cycles / 121 bytes. Rebuild and match all 628 predicted changes (507 slot/extent + 121 metadata), every other byte and 75 inputs fixed, protected 189,088 bytes / 720 owners exact, no exclusions. Refresh Game 2,914/4,828 (60.36%), total 3,587/5,501 (65.21%), different 1,914, zero drift; README aggregate rows only.
+- [x] Bank tools a9f3606 before consumer source/build/pin/docs, preserve all 767 initial mirror hashes / 771 final paths and pass both copies' syntax/shared padder checks plus tools-check. No push or host/frozen Release action.
+- [ ] Recover next func_15171200, 256 words / frame 0xE0. Keep caller func_1511C638, func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues active.
+
 ## Table Debris Recovery - 2026-10-16
 
 [Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
@@ -8,7 +19,7 @@
 - [x] Pass seven focused tests in 42.123s: 648 paired whole sequences, all 158 original instructions, native32 O2/O0 with 1,024 cases each, eleven effective guest/native negatives, four original caller captures, 48 connected consumer/allocator runs and 78 fixed input keys. Distinguish per-stream residue from cross-stream initialized-byte equality.
 - [x] Reject installation on the actual remaining mismatch: candidate 158 words / frame 0xF8 / packet SP+0x98 / 121 real differences versus retail 158 / 0xE8 / +0x84. Preserve all eight neighbors/pools and production C/guards/ELF. Confirm the sole caller func_1511C638 is still a placeholder with a zero-filled current call-site window.
 - [x] Bank tools 57f58b3 before consumer pin/docs, preserve all 763 initial mirror hashes / 767 final paths, pass both copies' syntax/shared padder tests and tools-check, and freshly confirm unchanged official numbers. README stays unchanged.
-- [ ] Resume the same target's frame, escaped packet home and saved FP lifetimes. Qualify any normalization, independent rebases and fault-prefix obligations before installation and a complete linked-image audit.
+- [x] Finish the same target's frame, escaped packet home and saved FP lifetimes, qualify rebases/fault prefixes and install its direct C match with a complete linked-image audit in Note 1427. No instruction normalization is needed.
 - [ ] Restore func_1511C638 and keep func_1516D400, inherited-stack func_1516FE1C and all wider Game/additional-source/raw-matching queues active. No push or host/frozen Release action.
 
 ## Six-Piece Debris Guarded Match - 2026-10-16

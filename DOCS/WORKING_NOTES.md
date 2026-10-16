@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
+Install table debris func_15170F4C, all 158 words direct / frame 0xE8 /
+packet SP+0x84 with the original float-literal pool alias and no instruction
+guards. All 15 final tests pass; fired compiler observations explain the
+frame recovery. Close all 628 first-predicted ELF changes, including six
+exact metadata cycles, every other byte / 75 inputs fixed, no exclusions.
+Fresh Game 2,914/4,828, total 3,587/5,501, different 1,914, zero drift.
+Bank tools a9f3606 first and preserve 767 mirror hashes / 771 paths.
+Next func_15171200, retaining the caller and all wider queues.
+
+2026-10-16:
 [Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
 Recover table debris func_15170F4C and pass seven semantic/scope checks,
 including 648 paired sequences, native32, eleven compiled negatives and

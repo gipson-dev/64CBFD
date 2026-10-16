@@ -13,8 +13,8 @@ unchanged. Continue the same target's frame and saved-lifetime recovery.
 3. [x] Run 40 named O2 source/layout screens, one whole-owner O1 control and three isolated profile controls. Recover the 158-word count, but explicitly reject the remaining frame, packet-home and FP lifetime differences.
 4. [x] Pass seven focused checks: 648 paired sequences, all original instructions, full per-stream packet bytes, native32 O2/O0, eleven effective guest/native negatives, original ABI captures, current consumer/allocator connections and 78 frozen/live input keys.
 5. [x] Preserve all production artifacts and the additional source, refresh official unchanged numbers, check both tools copies, preserve the independent mirror and bank tools before consumer pin/docs.
-6. [ ] Recover retail frame 0xE8, packet SP+0x84, all three origin homes and saved coefficient/constant lifetimes without artificial locals, volatile workarounds, fixed registers or invented calls. The current selected body is 158 words / frame 0xF8, with 121 real differences.
-7. [ ] Qualify any proposed normalization with appropriate expression/lifetime, fault-prefix, caller/rebase and connected-consumer gates. Install only after a complete linked-image audit and fresh matching measurement; do not blindly replace the current 121 words.
+6. [x] Recover retail frame 0xE8, packet SP+0x84, all three origin homes and saved coefficient/constant lifetimes using real locals and the original float literals in [Note 1427](1427-table-debris-direct-byte-match-20261016.md). No artificial padding, volatile, fixed registers or invented calls.
+7. [x] Qualify the direct match, literal pool, fault prefixes, original caller limits, rebases and connected consumers; install and close every byte of the first complete pre-install image prediction and fresh official counts in [Note 1427](1427-table-debris-direct-byte-match-20261016.md). No instruction normalization is needed.
 8. [ ] Recover the sole wider caller func_1511C638 and retain func_1516D400, inherited-stack func_1516FE1C and all broader Game/additional-source/raw-matching queues.
 
 ## Recovered Contract

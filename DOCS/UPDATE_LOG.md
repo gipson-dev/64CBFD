@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Table Debris Direct Match
+
+[Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
+Finish func_15170F4C's 158-word / frame-0xE8 match with genuine float
+literals, exact homes and initialization order; use the original pool
+alias without instruction guards. All 15 final checks pass. The complete
+ELF matches its first pre-install prediction, including 121 explicitly
+accounted metadata bytes, with no exclusions. Game 2,914/4,828, total
+3,587/5,501, different 1,914, zero drift. Bank tools a9f3606 first, preserve
+767 mirror hashes / 771 paths and resume func_15171200. The broader caller
+and remaining Game queues stay open.
+
 ## 2026-10-16 Table Debris Recovery Checkpoint
 
 [Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):

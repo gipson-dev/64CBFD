@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Table debris direct byte match](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md):
+  Recover all 158 instructions directly with the exact float-literal pool
+  alias, pass 15 final checks and close every pre-install predicted ELF byte.
 - [Table debris semantic recovery](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md):
   Qualify unsigned-halfword/float-table packets and two RNG draws with
   seven focused tests; keep production fixed and explicitly reject the

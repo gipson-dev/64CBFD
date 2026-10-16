@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 57f58b3; tools are committed before the consumer pin.
+  checkpoint pins tools a9f3606; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Table debris installed as a direct instruction match:
+[Note 1427](WORKING_NOTES/1427-table-debris-direct-byte-match-20261016.md).
+func_15170F4C matches all 158 words / frame 0xE8, packet SP+0x84, with
+no target instruction guards. Recover genuine float literals, bind their
+12-byte retail pool through the existing Makefile alias and recover the
+last schedule through real initialization order. Fired owned compiler
+observations explain local reservation 144 -> 128 without spill growth.
+All 15 final tests pass in 102.084s. The complete ELF matches its first
+pre-install prediction: 507 slot/extent + 121 exactly accounted metadata
+bytes, every other byte / 75 inputs fixed, protected layout exact, no
+exclusions. Fresh Game 2,914/4,828 (60.36%), total 3,587/5,501 (65.21%),
+different 1,914, zero drift. Tools a9f3606 banks first; preserve 767 mirror
+hashes / 771 paths. Next func_15171200, 256 words / frame 0xE0; caller
+func_1511C638 and all broader queues remain open. No push or host/Release action.
 
 Table debris pre-install recovery:
 [Note 1426](WORKING_NOTES/1426-table-debris-semantic-recovery-20261016.md).
