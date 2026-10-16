@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):
+Restore func_15019F20 as 191-word semantic C / frame 0x18, with 141 slot
+differences and no new guards. Ten final tests pass in 48.712s, including byte
+aliases, float boundaries and 180 real caller cuts. The entire normal ELF equals
+the first 755-byte prediction with explicit metadata accounting and no exclusions.
+Tools 511d98a banks first; preserve 877 mirror hashes / 883 paths. Matching,
+conversion and README aggregates stay fixed. Continue the remaining instruction match.
+
+2026-10-16:
 [Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
 func_15019CC8 now matches all 102 words with 37 scratch-role guards after UOPT
 evidence and equivalent source trees restore S0, the original frame and homes.

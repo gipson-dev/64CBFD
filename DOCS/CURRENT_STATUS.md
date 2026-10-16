@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 52a9ed6; tools are committed before the consumer pin.
+  checkpoint pins tools 511d98a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,25 +27,26 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-View overlay matrices now **102 words guarded byte-exact**:
-[Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md).
-Fingerprint-locked UOPT traces explain the former cached index and lost S0
-carrier. Direct helper casts and distinct equivalent unsigned scale trees
-recover the original frame 0x40, saved-register homes and full 102-word body.
-Thirty-seven expected-word guards change only closed scratch-register roles,
-not instructions, constants, scheduling or binding positions. This is not a
-direct C match. The complete normal ELF/source/guards equal the first
-**318-byte** slot/extent prediction, with no metadata exclusions.
-Fresh Game **2,930/4,828 (60.69%)**, total **3,603/5,501 (65.50%)**,
-different **1,898**, zero drift; conversion unchanged. Update only two README
-aggregate rows. All **eleven final tests pass in 74.110s**, including all 107
-live-input controls, 158 fault prefixes and four owned compiler traces.
-Preserve 104 other inputs, the exact guard prefix and protected 189,088 bytes /
-720 owners. Tools **52a9ed6** banks first; both copies' syntax/eleven padder
-tests and tools-check pass. Preserve all 871 original mirror hashes / 877 paths.
-Next **func_15019F20**, frame 0x18, a timing/state updater with 191 body words
-plus one trailing NOP. It remains stubbed; full-frame/gameplay and wider Game
-work stay open. No push or host/frozen Release action.
+Frame timing/state updater restored as **semantic C, not byte-exact**:
+[Note 1450](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md).
+func_15019F20 now preserves the unusual quotient arithmetic, phase/counter
+wrapping, byte-index aliases and ordered ten-sample float mean. Recover its
+void interface; the actual direct caller func_1501905C remains all 53 words
+byte-exact. The 191-word body / frame 0x18 and one padding word still have
+**141** slot differences; no new guards or profile changes.
+All **ten final tests pass in 48.712s**, including 6,860 guest cases, 3,430
+native32 cases each at O2/O0 with UBSan, ten controls, all byte encodings,
+source rebases and 180 real caller cuts with the prior-result delay store.
+The entire normal ELF equals the first **755-byte** prediction, including
+173 explicitly accounted metadata bytes and no exclusions. Preserve all
+107 other inputs, guard bytes and protected 189,088 bytes / 720 owners.
+Fresh totals stay Game **2,930/4,828 (60.69%)**, total **3,603/5,501
+(65.50%)**, different **1,898**, zero drift; conversion and README aggregates
+unchanged. Tools **511d98a** banks first; both copies' checks pass, preserving
+all 877 original mirror hashes / 883 paths. Next finish this instruction match,
+especially address lifetimes and zero-reciprocal access order. The previous
+func_15019CC8 match remains 102 words guarded-exact in [Note 1449](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md).
+No full-frame/gameplay, push or host/frozen Release claim.
 
 View render provider installed, **215 words guarded byte-exact**:
 [Note 1446](WORKING_NOTES/1446-view-render-provider-guarded-match-20261016.md).

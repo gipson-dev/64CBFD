@@ -90,13 +90,21 @@ void func_151F2C4C(void);
 extern s8 D_80082F90;
 extern s32 D_8002AAEC;
 
+/* Frame-step history, counters and the existing retail mean-factor label. */
+extern u8 D_800BEA0C, D_800BE619, D_800BE61A;
+extern u32 D_800BE610;
+extern u32 D_800BE9AC;
+extern s32 D_800BE9B0;
+extern f32 D_800BE5E8[], D_800BE9B8, D_800BE9BC;
+extern const f32 D_800968D0;
+
 /* Generated placeholder declarations. */
 s32 func_1501878C(void);
 s32 func_15019130(void);
 s32 func_150195A0(Gfx *, s16);
 s32 func_150198FC(Gfx *);
 s32 func_15019CC8(Gfx *, s32);
-s32 func_15019F20();
+void func_15019F20(void);
 /* End generated placeholder declarations. */
 
 void* func_151674F8(void *arg0, s32 arg1, s16 arg2, s32 arg3);
@@ -594,7 +602,70 @@ s32 func_15019E60(Gfx *arg0) {
     return func_15043384(func_151E8620(func_1501A490(arg0, 0xFF, 0, 0, 0, 0)));
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_45B80/func_15019F20.s. */
-s32 func_15019F20() {
-    return 0;
+/* Update frame steps, alternating phase and the ten-sample timing mean. */
+void func_15019F20(void) {
+    u8 historyIndex;
+    u8 divisor;
+    u32 total;
+    f32 sum;
+    s32 i;
+
+    divisor = D_800BEA0C;
+    D_800BEA08 = D_800BE9E4;
+    if (divisor != 0) {
+        if (divisor == 1) {
+            D_800BE9E4 = 0;
+            D_800BE5E0 = 0;
+            D_800BE9A4 = 0.0f;
+        } else {
+            total = D_800BE610 + (u32)D_800BE9E4;
+            D_800BE9A4 = (f32)D_800BE9E4 / (f32)(u32)divisor;
+            D_800BE9E4 = (s32)D_800BE9A4;
+            D_800BE9A4 *= 0.5f;
+            if (total >= divisor) {
+                D_800BE9E4 = total / divisor;
+                /* Retail multiplies by total here, not by the divisor. */
+                D_800BE610 = total - ((u32)D_800BE9E4 * total);
+            } else {
+                D_800BE610 = total;
+                D_800BE9E4 = 0;
+            }
+        }
+    } else {
+        D_800BE9A4 = (f32)D_800BE9E4 * 0.5f;
+    }
+    D_800BE5E0 &= 1;
+    D_800BE5E0 += (u32)D_800BE9E4;
+    D_800BE9A0 = D_800BE5E0 >> 1;
+    if (D_800BE9A4 != 0) {
+        D_800BE9A8 = 1.0f / D_800BE9A4;
+    } else {
+        D_800BE9A4 = 0.0f;
+        D_800BE9A8 = 0.0f;
+    }
+    D_800BE9AC += D_800BE9E4;
+    D_800BE9B0 = (s32)D_800BE9AC % 30;
+    historyIndex = D_800BE619;
+    D_800BE5E8[historyIndex] = D_800BE9A4;
+    D_800BE619 = historyIndex + 1;
+    if (D_800BE619 == 10) {
+        D_800BE619 = 0;
+    }
+    if (D_800BE61A < 10) {
+        D_800BE61A++;
+        D_800BE9B8 = D_800BE9A4;
+        D_800BE9BC = D_800BE9A8;
+    } else {
+        sum = 0.0f;
+        for (i = 0; i < 10; i++) {
+            sum += D_800BE5E8[i];
+        }
+        D_800BE9B8 = sum * D_800968D0;
+        if (D_800BE9B8 != 0) {
+            D_800BE9BC = 1.0f / D_800BE9B8;
+        } else {
+            D_800BE9BC = 0.0f;
+        }
+    }
+    func_150A019C();
 }

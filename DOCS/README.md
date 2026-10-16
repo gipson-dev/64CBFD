@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Frame timing state semantic restoration](WORKING_NOTES/1450-frame-timing-state-semantic-restoration-20261016.md):
+  Restore the complete 191-word timing/history body with byte-index alias and
+  float-rounding qualification. Ten final tests and the full 755-byte image prediction
+  pass; its 141-word instruction difference remains open, with no new guards.
 - [View overlay matrices guarded match](WORKING_NOTES/1449-view-overlay-matrices-guarded-match-20261016.md):
   Recover the original S0 lifetime using compiler evidence, then close all 102
   words with 37 scratch-role guards. Normal output matches the complete
