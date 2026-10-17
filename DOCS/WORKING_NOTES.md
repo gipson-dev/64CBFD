@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
+Install func_1517EFDC's 44-word direct C match, preserving live limit,
+signed progress/strict float gates, frame 0x30 and saved F20 lifetime.
+All 22 installed tests pass in 361.799s; real progress/sequence caller chains
+and native32 qualify the body. The first complete image prediction matches:
+129 code bytes plus one size byte only. Fresh Game 60.98%, total 65.75%,
+no drift. Tools 83a87d2 banks first, preserving 992 unrelated mirror hashes /
+1,001 paths. Next func_1517F08C's 197-word overlay display-list leaf.
+
+2026-10-17:
 [Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
 Install func_1517EF00's complete 43-word direct C match with signed return,
 division/clamp/wrapped inversion and no guards/profile changes. All 20

@@ -153,3 +153,8 @@ fallback, -1-based tally and final limit equality. Preserve saved-register/F20
 lifetime and qualify real calls to the newly restored accessor, including
 negative progress and floating-point boundaries. Wider Game/additional-source
 matching, the query engine, timing's 141 differences and full gameplay stay open.
+
+Subsequent completion: [Note 1472](1472-color-channel-aggregate-direct-match-20261017.md)
+restores func_1517EFDC as a complete 44-word direct C match with its original
+frame/F20 lifetime, actual progress/sequence chains and code/size-only whole
+image audit. The next handoff advances to func_1517F08C.

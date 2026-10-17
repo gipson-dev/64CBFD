@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Color Channel Aggregate Direct Match
+
+[Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
+Restore func_1517EFDC's complete 44-word live-limit/progress/float aggregate,
+directly exact with frame 0x30 and saved F20 pair, no guards/profile change.
+All 22 installed tests pass in 361.799s: real helper/sequence chains, mutable
+callbacks, native32 O2/O0/UBSan and exact image/input/data/fixture gates.
+Only 129 target code bytes and one size byte change in the entire ELF.
+Fresh Game 60.98%, total 65.75%, zero drift. Tools 83a87d2 banks first;
+preserve 992 unrelated mirror hashes / 1,001 paths. README aggregate rows
+only; next func_1517F08C's full 197-word overlay display-list leaf.
+
 ## 2026-10-17 Color Progress Accessor Direct Match
 
 [Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Color Channel Aggregate Direct Match - 2026-10-17
+
+[Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
+
+- [x] Recover func_1517EFDC's complete live-limit, signed-progress and strict-float aggregate; directly match all 44 words on the first candidate.
+- [x] Preserve frame 0x30, saved S0/S1/S2/S3/RA and F20/F21 lifetime, all 27 raw/padded neighbors and every guard byte without new profiles.
+- [x] Qualify 5,142 aggregate guest pairs, real 43-word progress helper, mutable/alias/FP cases, 3,600 full sequence-gate pairs, native32 O2/O0/UBSan, controls, rebases and faults.
+- [x] Freeze the first entire image/source prediction; normal ELF changes only 129 code bytes and one size byte. All 22 installed tests pass, with 148 protected inputs and exact data.
+- [x] Measure fresh Game 2,944/4,828 (60.98%), total 3,617/5,501 (65.75%), zero drift. README aggregate rows only; bank tools 83a87d2 first, preserve 992 unrelated mirror hashes / 1,001 paths.
+- [ ] Recover adjacent func_1517F08C: full 197-word frame-free overlay display-list leaf, SDK commands, RGBA/viewport bounds and unsigned FP/FCSR boundaries.
+- [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Color Progress Accessor Direct Match - 2026-10-17
 
 [Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Qualify 12,840 guest pairs, overflow traps, native32 O2/O0/UBSan, eight controls and real local/registration caller chains; explicitly fire helper entry.
 - [x] Freeze the first whole-image/source prediction; normal ELF changes only 124 code bytes and one size byte. All 20 installed tests and strengthened caller gates pass, with 146 protected inputs and exact data.
 - [x] Measure fresh Game 2,943/4,828 (60.96%), total 3,616/5,501 (65.73%), zero drift. README aggregate rows only; bank tools 5298c5e first, preserve 985 unrelated mirror hashes / 994 paths.
-- [ ] Recover adjacent func_1517EFDC: 44-word channel-state aggregate, frame 0x30, live inclusive limit, signed/float gates and saved F20 lifetime.
+- [x] Recover adjacent func_1517EFDC: 44-word channel-state aggregate, frame 0x30, live inclusive limit, signed/float gates and saved F20 lifetime. Completed directly from C in Note 1472.
 - [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
 
 ## Color State Submit Direct Match - 2026-10-17

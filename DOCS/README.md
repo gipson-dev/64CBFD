@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Color channel aggregate direct match](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
+  First-candidate 44-word direct C match, frame 0x30/F20 lifetime, real
+  helper/sequence chains and 22 passing installed tests. No guards/profile
+  changes; entire image changes only 129 code bytes and one size byte.
 - [Color progress accessor direct match](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
   All 43 words directly exact from signed C, no guards/profile changes,
   27 unchanged neighbors, actual callers and 20 passing installed tests.

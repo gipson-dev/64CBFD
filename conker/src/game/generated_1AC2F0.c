@@ -72,7 +72,19 @@ s32 func_1517EFAC(s32 arg0) {
     return 0;
 }
 
-s32 func_1517EFDC() {
+/* Test whether every live channel has positive progress or float state. */
+s32 func_1517EFDC(void) {
+    s32 channel;
+    s32 active = -1;
+
+    for (channel = 0; channel <= D_80082FA0; channel++) {
+        if (func_1517EF00(channel) > 0 || D_800DDDC8[channel] > 0.0f) {
+            active++;
+        }
+    }
+    if (active == D_80082FA0) {
+        return 1;
+    }
     return 0;
 }
 
