@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Burst Emitter Restoration And Match - 2026-10-17
+
+[Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
+
+- [x] Qualify the actual 58.14f pool binding and five-stage allocation observations; recover frame 0x150 with real locals in alignment gaps, retaining every packet address.
+- [x] Restore complete `func_150F2D14` C and match all 288 words with twenty guards limited to two closed allocation/scheduling groups.
+- [x] Pass seven installed tests (58.929s), seven research tests (91.351s), four historical checks (85.068s), 3,768 private fault prefixes, native32 and two carry rebases.
+- [x] Match the complete first normal ELF's 993-byte prediction, zero exclusions; preserve all other bodies/addresses and 189,088 Game-data bytes.
+- [x] Bank tools 971eddb first, preserve 1,133 unrelated mirror hashes / 1,146 paths, and update README aggregates only: Game 61.41%, total 66.13%, zero drift.
+- [ ] Resume the paused goal at `func_150F34F4` (959 words), the next zero-return placeholder in the same owner.
+- [ ] Keep the 139-word gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game matching open; no host or frozen Release action.
+
 ## Owner Burst UOPT Reservations And Source Controls - 2026-10-17
 
 [Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
@@ -8,8 +20,8 @@
 - [x] Pass four tests (51.504s), 78 effective controls and two complete normal-object/lifecycle traces; distinguish reserved slots from actual spills.
 - [x] Reject vector-copy and overflowing frame-only source changes; leave the literal pool unqualified rather than assigning a synthetic binding.
 - [x] Preserve the complete installed baseline, fresh matching totals and root README; bank tools a825058 first and preserve 1,137 prior mirror hashes / 1,139 paths.
-- [ ] Continue the same `func_150F2D14` reservation eligibility/register dataflow and qualify the literal pool before comparison; recover frame 0x150 while retaining packet addresses.
-- [ ] Require all words/private/fault/rebase/caller/first-image gates before installation; keep the gate, fade gaps and wider Game open.
+- [x] Observe reservation/global-color dataflow, qualify the actual literal pool and recover frame 0x150 while retaining packet addresses; completed in [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md), without claiming the original allocator implementation.
+- [x] Complete scoped word/private/fault/rebase/callback-slot/first-image installation gates in Note1511; full opaque providers/callers and the wider gaps remain open above.
 
 ## Owner Burst Frame Trace And Aligned Packet Qualification - 2026-10-17
 
@@ -20,8 +32,8 @@
 - [x] Pass six research tests (68.711s), 39 fail-closed controls, native32 and both tools-copy checks; reject the frame-fitting seven-word overflow form.
 - [x] Preserve the complete production baseline, prior checkpoints and README; freshly confirm Game 61.39%, total 66.12%, zero drift.
 - [x] Bank tools c2c5a97 first; preserve all 1,134 prior mirror hashes / 1,137 dirty paths.
-- [ ] Continue the same `func_150F2D14`: explain UOPT's local-area expansion and recover frame 0x150, then register roles/scheduling; 85 words and private SP still differ.
-- [ ] Require full private/fault, rebase, caller and first-linked-image qualification before installation; keep the gate, fade gaps and wider Game open.
+- [x] Account for UOPT reservations and recover frame 0x150, register roles and bounded scheduling in [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md); the 85-word/private gap is closed.
+- [x] Qualify full modeled private/fault prefixes, rebases, preserved callback slot and first linked image before installation in Note1511; full opaque caller/provider behavior remains unclaimed.
 
 ## Owner Burst Emitter Recovery And Private Layout Gap - 2026-10-17
 
@@ -32,7 +44,7 @@
 - [x] Expose the 85-word/frame-0x158 gap, first private fault mismatch and nine nonuniform copied-padding differences; do not claim byte matching or add guards.
 - [x] Preserve every production input, whole ELF/data and earlier checkpoint; freshly confirm unchanged Game 61.39%, total 66.12%, zero drift, and unchanged README.
 - [x] Bank tools 44ac35d first; preserve all 1,132 prior mirror hashes / 1,134 paths.
-- [ ] Continue the same `func_150F2D14`: recover frame 0x150 / packet offsets, then register roles and setup scheduling before full installation qualification.
+- [x] Recover frame 0x150 / packet offsets, then register roles and setup scheduling; installed after full scoped qualification in [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md).
 - [ ] Keep the gate, both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Actor Scale Timer Restoration And Match - 2026-10-17
@@ -44,7 +56,7 @@
 - [x] Match the complete first production ELF: 237 code / 2 extent / 28 checked metadata bytes, zero exclusions; all 6,057 bodies and 189,088 Game-data bytes audited.
 - [x] Pass nine affected historical checks (35.937s), preserving the immutable first image and separately hashed test-only followup.
 - [x] Bank tools e033fe7 first; preserve 1,124 unrelated mirror hashes / 1,132 paths and update README aggregates only to Game 61.39%, total 66.12%, zero drift.
-- [ ] Recover `func_150F2D14`'s 288-word/frame-0x150 owner-gated record emitter in the same source owner.
+- [x] Recover `func_150F2D14`'s 288-word/frame-0x150 owner-gated record emitter; restored and matched in [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md).
 - [ ] Keep the 139-word gate, both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Indexed Threshold Mask Direct Restoration And Match - 2026-10-17

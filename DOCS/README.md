@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner burst emitter restoration and match](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
+  complete 288-word C/frame 0x150, twenty bounded guards, seven installed/seven
+  research/four historical checks and exact first image. Game 61.41%, total
+  66.13%, zero drift. Paused resume point: 959-word `func_150F34F4`.
 - [Owner burst UOPT reservations and source controls](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
   all 12 extra optimizer bytes bound to three actual expressions; four tests,
   78 controls and rejected source forms. Frame/matching still open; not installed.

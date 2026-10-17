@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a825058; tools are committed before the consumer pin.
+  checkpoint pins tools 971eddb; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Owner burst emitter **restored and byte-exact with twenty bounded guards**:
+[Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md).
+`func_150F2D14` now matches all 288 words/frame `0x150`: actual literal-pool
+binding and real scalar homes resolve the storage gap; two closed groups
+normalize the remaining allocation/schedule differences. Seven installed
+tests (58.929s), seven research tests (91.351s) and four historical checks
+(85.068s) pass. The entire first normal ELF equals its 993-byte prediction,
+with zero exclusions; all 6,057 bodies and 189,088 Game-data bytes audited.
+Fresh Game **61.41%**, total **66.13%**, zero drift. Tools 971eddb first;
+preserve 1,133 unrelated mirror hashes / 1,146 paths. README aggregates only.
+Goal remains paused after banking this checkpoint. Resume at the same owner's
+959-word `func_150F34F4`; the gate, fade gaps and full runtime remain open.
 
 Owner burst emitter **12 extra UOPT bytes traced to three reservations**:
 [Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md).

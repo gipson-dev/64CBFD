@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Owner Burst Emitter Restoration And Match
+
+[Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
+Restore `func_150F2D14`'s full 288-word C/frame 0x150 with twenty guards in
+two closed allocation/scheduling groups. Seven installed/seven research/four
+historical checks pass; the complete first normal ELF matches all 993 declared
+changed bytes with zero exclusions. All 6,057 bodies and 189,088 Game-data
+bytes audited. Tools 971eddb first; preserve unrelated mirror work and all
+first predictions. Fresh Game 61.41%, total 66.13%, zero drift. README
+aggregates only. Leave the goal paused; next is `func_150F34F4` (959 words).
+
 ## 2026-10-17 Owner Burst UOPT Reservations And Source Controls
 
 [Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):

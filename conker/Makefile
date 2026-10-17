@@ -194,6 +194,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: RETAIL_RODATA_SYMBOL := D_800
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1AC2F0.c.o: RETAIL_RODATA_SYMBOL := D_800A7280
 # Selector point transform uses its preserved six-way retail jump table.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11F780.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A192C
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_11FF10.c.o: RETAIL_RODATA_SYMBOL := D_800A196C
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11F780.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/entrypoint.c.o: RETAIL_RODATA_SYMBOL := jtbl_80095A30_game

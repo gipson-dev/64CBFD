@@ -17129,3 +17129,23 @@ generated_FC5F0,func_150CFF10,0xE8,0x00AF1821,0x00B91821,-,-,Normalize closed te
 generated_11F780,func_150F2480,0x10,0x01C48021,0x008E8021,-,-,Normalize commutative sine-phase state-address ADDU operand order,,,false
 generated_11FF10,func_150F3214,0x78,0x46002082,0x46040082,-,-,Preserve retail commutative scale-timer MUL.S operand order,,,false
 generated_11FF10,func_150F3214,0x98,0x460A6402,0x460C5402,-,-,Preserve retail commutative scale-timer MUL.S operand order,,,false
+generated_11FF10,func_150F2D14,0x80,0x92230222,0x92220222,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0x8C,0x92230222,0x92220222,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0x9C,0x11230008,0x10490008,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0xA0,0x00601025,0x00401825,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0xA4,0x50400007,0x50600007,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0xA8,0xA2030005,0xA2020005,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0xBC,0x92230222,0x92220222,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0xC0,0xA2030005,0xA2020005,-,-,Normalize closed burst state V0 V1 allocation cycle,,,false
+generated_11FF10,func_150F2D14,0x1EC,0xAFB400B0,0x02E02025,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x1F0,0xAFB500B4,0x03C02825,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x1F4,0xAFB600A8,0x46085400,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x1F8,0xAFB200AC,0x46048183,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x1FC,0x46085400,0xE7B000D0,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x200,0x02E02025,0xE7A600D4,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x204,0x03C02825,0xAFB400B0,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x208,0x24070002,0xAFB500B4,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x20C,0x46048183,0xAFB600A8,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x210,0xE7B000D0,0xAFB200AC,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x214,0xE7A600D4,0x8E2601D4,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F2D14,0x218,0x8E2601D4,0x24070002,-,-,Preserve retail burst transform setup dependency schedule,,,false

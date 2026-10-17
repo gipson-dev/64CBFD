@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
+Restore complete `func_150F2D14`, 288 words/frame 0x150, actual literal binding
+and twenty bounded guards. Seven installed/seven research/four historical
+checks pass; whole first ELF exact, 993 changed bytes, zero exclusions. Tools
+971eddb first; preserve 1,133 unrelated mirror hashes / 1,146 paths. Fresh Game
+61.41%, total 66.13%, zero drift. README aggregates only. Goal stays paused;
+resume at the same owner's 959-word `func_150F34F4`, keeping wider gaps open.
+
+2026-10-17:
 [Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
 Account for 12 optimizer-reserved bytes with source-bound expression trees;
 four tests (51.504s), 78 effective controls and two unchanged normal-object
