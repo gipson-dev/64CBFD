@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Actor Scale Timer Restoration And Match
+
+[Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
+Restore `func_150F3214`'s 90-word/frame-0x28 C with two exact multiply guards.
+Seven installed and nine affected historical checks pass; complete first ELF
+matches all 267 declared changed bytes, zero exclusions. All 6,057 bodies and
+189,088 Game-data bytes audited. Tools e033fe7 first; older mirror and first
+predictions preserved. Fresh Game 61.39%, total 66.12%, zero drift. README
+aggregates only. Next `func_150F2D14`; the gate and fade gaps remain open.
+
 ## 2026-10-17 Indexed Threshold Mask Direct Restoration And Match
 
 [Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):

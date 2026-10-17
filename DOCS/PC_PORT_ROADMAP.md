@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Scale Timer Restoration And Match - 2026-10-17
+
+[Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
+
+- [x] Restore `func_150F3214`'s 90-word/frame-0x28 C body; two exact guards preserve only commutative multiply operand order.
+- [x] Pass seven installed tests (16.170s), including all 90 reachable words, 820 fault prefixes, native32 and three independent carry/call rebases.
+- [x] Match the complete first production ELF: 237 code / 2 extent / 28 checked metadata bytes, zero exclusions; all 6,057 bodies and 189,088 Game-data bytes audited.
+- [x] Pass nine affected historical checks (35.937s), preserving the immutable first image and separately hashed test-only followup.
+- [x] Bank tools e033fe7 first; preserve 1,124 unrelated mirror hashes / 1,132 paths and update README aggregates only to Game 61.39%, total 66.12%, zero drift.
+- [ ] Recover `func_150F2D14`'s 288-word/frame-0x150 owner-gated record emitter in the same source owner.
+- [ ] Keep the 139-word gate, both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Indexed Threshold Mask Direct Restoration And Match - 2026-10-17
 
 [Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Match the complete first normal ELF:124 code/one extent/24 checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
 - [x] Preserve historical first images, pass two affected checks (51.377s) and both tools-copy checks; bank tools6a6aca2/9a968aa first.
 - [x] Preserve1,120 unrelated mirror hashes /1,128 paths; update README aggregate rows only to Game61.37%, total66.10%, zero drift.
-- [ ] Continue func_150F3214's90-word/frame0x28 routine in generated_11FF10.
+- [x] Continue func_150F3214's90-word/frame0x28 routine in generated_11FF10; restored and matched in [Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md).
 - [ ] Keep func_150F2A60's139-word gap, both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Actor Record Gate Register Reuse And Reload Control - 2026-10-17

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
+Restore the 90-word/frame-0x28 `func_150F3214` with two multiply guards.
+Seven installed/nine historical checks pass; whole first image exact, no
+exclusions. Tools e033fe7 first; Game 61.39%, total 66.12%, zero drift.
+Preserve 1,124 unrelated mirror hashes / 1,132 paths. README aggregates only;
+next the 288-word `func_150F2D14`, keeping the gate and fade gaps open.
+
+2026-10-17:
 [Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
 Restore func_150F33F8's42-word/frame0 C directly, no new guards. Seven installed
 and two historical checks pass; exact whole first image,124 code/one extent/

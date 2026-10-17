@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor scale timer restoration and match](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
+  complete 90-word C with two multiply guards; seven installed/nine historical
+  checks and exact first image. Game 61.39%, total 66.12%, zero drift.
 - [Indexed threshold mask direct restoration and match](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
   complete42-word C without guards; seven installed/two historical checks and
   exact whole first image; Game61.37%, total66.10%, zero address drift.

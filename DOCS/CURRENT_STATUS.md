@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9a968aa; tools are committed before the consumer pin.
+  checkpoint pins tools e033fe7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor scale/timer **restored and byte-exact with two multiply guards**:
+[Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md).
+`func_150F3214` matches all 90 words/frame `0x28`. Seven installed and nine
+affected historical checks pass; the complete first normal ELF equals its
+267-byte declared-change prediction, with zero exclusions. All 6,057 bodies
+and 189,088 Game-data bytes are audited. Fresh Game **61.39%**, total
+**66.12%**, zero drift. Tools e033fe7 first; preserve 1,124 unrelated mirror
+hashes / 1,132 paths. README aggregates only. Next: `func_150F2D14` (288 words,
+frame `0x150`); the 139-word gate and both fade lifetime gaps remain open.
 
 Indexed threshold mask **restored and byte-exact directly from C**:
 [Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md).

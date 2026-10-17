@@ -1,4 +1,9 @@
 #include <ultra64.h>
+extern f32 D_800A1950[];
+extern f32 D_800BE9A4;
+f32 sqrtf(f32);
+void func_15143134(f32 *, f32 *, u8 *);
+
 extern f32 D_800A1970;
 extern s16 *D_800D9A40;
 
@@ -54,8 +59,29 @@ void func_150F31D4(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x110), (s32) (arg0 + 0x114), (s32) arg0);
 }
 
-s32 func_150F3214() {
-    return 0;
+/* Refresh a linked actor's position, scale, byte value, and timer. */
+s32 func_150F3214(u8 *actor) {
+    u8 *data;
+    f32 scale;
+
+    data = actor + 0x110;
+    if (*(s32 *)(*(u8 **)(actor + 0x110)) == 0 ||
+        data[4] != (*(u8 **)(actor + 0x110))[0x3B] ||
+        *(u8 **)(*(u8 **)(actor + 0x110) + 0x1D4) == NULL) {
+        return 0;
+    }
+    func_15143134(D_800A1950, (f32 *)(actor + 0x34),
+                 *(u8 **)(*(u8 **)(actor + 0x110) + 0x1D4) + 0x3C0);
+    scale = sqrtf(*(f32 *)(data + 8)) * *(f32 *)(data + 0x10);
+    *(f32 *)(actor + 0x30) = scale;
+    *(f32 *)(actor + 0x2C) = scale;
+    actor[0x5C] = (u32)(*(f32 *)(data + 0x14) -
+                        *(f32 *)(data + 0x18) * *(f32 *)(data + 8) * *(f32 *)(data + 8));
+    *(f32 *)(data + 8) += D_800BE9A4;
+    if (*(f32 *)(data + 0xC) < *(f32 *)(data + 8)) {
+        return 0;
+    }
+    return 1;
 }
 
 void func_150F337C(u8 *arg0, s16 arg1) {
