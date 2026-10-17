@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Actor Input Movement Recovery And Fitting Boundary
+
+[Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
+Recover complete `func_150F34F4` and correct its draft widths/signs/call ABI.
+Eleven tests pass (72.175s), including 2,496 core cases, native32, mutations,
+actual curve execution and explicit overflow/private rejection. 962/959 words,
+frame 0x70/0x80 and 811 overlapping differences remain: not installed, no guards
+or credit. Tools 6f22514 first; preserve 1,146 mirror hashes / 1,150 paths and
+all production/checkpoint bytes. Fresh totals and README unchanged. Goal active;
+continue the same routine's storage/frame/extent fitting, then literal matching.
+
 ## 2026-10-17 Owner Burst Emitter Restoration And Match
 
 [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):

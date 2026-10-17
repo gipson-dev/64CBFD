@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor input movement recovery and fitting boundary](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
+  complete routine/ABI recovery and eleven tests; 962/959 words, frame 0x70/0x80
+  and private state still differ. No installation/credit; continue the same fit.
 - [Owner burst emitter restoration and match](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
   complete 288-word C/frame 0x150, twenty bounded guards, seven installed/seven
   research/four historical checks and exact first image. Game 61.41%, total

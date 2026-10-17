@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Input Movement Recovery And Fitting Boundary - 2026-10-17
+
+[Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
+
+- [x] Recover all three `func_150F34F4` state paths with explicit actor/input layouts and actual byte/halfword/float/mixed-ABI contracts.
+- [x] Pass eleven tests (72.175s): 2,496 complete core cases, 947 reachable words plus twelve static unreachable checks, native32 O2/O0, nine mutation modes and effective guest/native controls.
+- [x] Expose 962/959 words, frame 0x70/0x80, 811 overlapping differences and cut-zero private rejection; do not trim the overflow, install, add guards or claim credit.
+- [x] Preserve all production/checkpoint bytes and fresh totals; bank tools 6f22514 first and preserve 1,146 prior mirror hashes / 1,150 paths. README unchanged.
+- [ ] Continue this same routine's CFE/UOPT/UGEN local area and real scalar homes; restore frame 0x80 and remove the three executable excess words before register/schedule/private/first-image matching.
+- [ ] Keep the gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game goal open; no host or frozen Release action.
+
 ## Owner Burst Emitter Restoration And Match - 2026-10-17
 
 [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
@@ -9,7 +20,7 @@
 - [x] Pass seven installed tests (58.929s), seven research tests (91.351s), four historical checks (85.068s), 3,768 private fault prefixes, native32 and two carry rebases.
 - [x] Match the complete first normal ELF's 993-byte prediction, zero exclusions; preserve all other bodies/addresses and 189,088 Game-data bytes.
 - [x] Bank tools 971eddb first, preserve 1,133 unrelated mirror hashes / 1,146 paths, and update README aggregates only: Game 61.41%, total 66.13%, zero drift.
-- [ ] Resume the paused goal at `func_150F34F4` (959 words), the next zero-return placeholder in the same owner.
+- [x] Resume at `func_150F34F4` (959 words); complete uninstalled recovery is banked in [Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md), with matching still open.
 - [ ] Keep the 139-word gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game matching open; no host or frozen Release action.
 
 ## Owner Burst UOPT Reservations And Source Controls - 2026-10-17

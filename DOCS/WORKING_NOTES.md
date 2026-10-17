@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
+Recover complete `func_150F34F4` with actual typed layout and call contracts.
+Eleven tests pass (72.175s), 2,496 core cases and native32; 962/959 words,
+frame 0x70/0x80 and private state still reject installation. Tools 6f22514 first;
+all production bytes/totals/README unchanged, preserve 1,146 prior mirror hashes
+/ 1,150 paths. Goal active: continue the same storage/frame/extent fit.
+
+2026-10-17:
 [Note1511](WORKING_NOTES/1511-owner-burst-emitter-restoration-and-match-20261017.md):
 Restore complete `func_150F2D14`, 288 words/frame 0x150, actual literal binding
 and twenty bounded guards. Seven installed/seven research/four historical
