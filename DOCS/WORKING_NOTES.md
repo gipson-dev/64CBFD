@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
+Account for 12 optimizer-reserved bytes with source-bound expression trees;
+four tests (51.504s), 78 effective controls and two unchanged normal-object
+traces. Reject frame-only/overflow forms; literal pool still unqualified.
+Tools a825058 first; all production inputs/totals/README unchanged, preserve
+1,137 prior mirror hashes / 1,139 paths. Continue the same reservation/register
+dataflow gap; no installation or matching credit.
+
+2026-10-17:
 [Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
 Bind three compiler storage traces to actual emitted addresses; aligned
 packet objects and 3,928 complete public comparisons match without padding

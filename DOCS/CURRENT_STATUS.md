@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c2c5a97; tools are committed before the consumer pin.
+  checkpoint pins tools a825058; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Owner burst emitter **12 extra UOPT bytes traced to three reservations**:
+[Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md).
+Two normal-object-identical traces bind the slots to actor+0x28, owner state
+and its integer conversion; no explicit output M operands target those slots.
+Four tests pass (51.504s), with 78 effective controls. Frame-only source
+changes overflow; the literal-scale pool remains unqualified. No installation,
+guards or matching credit. Tools a825058 first; preserve 1,137 prior mirror
+hashes / 1,139 paths. Production, fresh totals and README unchanged. Continue
+this same function's reservation eligibility/register dataflow, then full match.
 
 Owner burst emitter **public packet padding resolved; private frame still open**:
 [Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md).

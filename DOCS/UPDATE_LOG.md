@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Owner Burst UOPT Reservations And Source Controls
+
+[Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
+Trace `func_150F2D14`'s extra 12 optimizer bytes to three four-byte reservations
+for actor data-base/state expressions. Four tests pass (51.504s), 78 effective
+controls and unchanged normal objects. Frame-only forms overflow; literal pool
+binding remains unqualified. Tools a825058 first; all production inputs, fresh
+totals and README unchanged. Preserve 1,137 mirror hashes / 1,139 paths.
+Continue reservation/register dataflow in the same function; no matching credit.
+
 ## 2026-10-17 Owner Burst Frame Trace And Aligned Packet Qualification
 
 [Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):

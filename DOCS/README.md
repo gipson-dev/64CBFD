@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Owner burst UOPT reservations and source controls](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
+  all 12 extra optimizer bytes bound to three actual expressions; four tests,
+  78 controls and rejected source forms. Frame/matching still open; not installed.
 - [Owner burst frame trace and aligned packet qualification](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
   compiler-backed packet addresses and 3,928 complete public comparisons,
   including unmasked padding. Frame/private/85-word gap still open; not installed.

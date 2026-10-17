@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Burst UOPT Reservations And Source Controls - 2026-10-17
+
+[Note1510](WORKING_NOTES/1510-owner-burst-uopt-reservations-and-source-controls-20261017.md):
+
+- [x] Account for the 12-byte UOPT expansion as three four-byte reservations, binding actual expression trees and source/procedure identities.
+- [x] Pass four tests (51.504s), 78 effective controls and two complete normal-object/lifecycle traces; distinguish reserved slots from actual spills.
+- [x] Reject vector-copy and overflowing frame-only source changes; leave the literal pool unqualified rather than assigning a synthetic binding.
+- [x] Preserve the complete installed baseline, fresh matching totals and root README; bank tools a825058 first and preserve 1,137 prior mirror hashes / 1,139 paths.
+- [ ] Continue the same `func_150F2D14` reservation eligibility/register dataflow and qualify the literal pool before comparison; recover frame 0x150 while retaining packet addresses.
+- [ ] Require all words/private/fault/rebase/caller/first-image gates before installation; keep the gate, fade gaps and wider Game open.
+
 ## Owner Burst Frame Trace And Aligned Packet Qualification - 2026-10-17
 
 [Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
