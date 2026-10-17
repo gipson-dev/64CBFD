@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Sequence Record Setup Frame And Private Home Recovery
+
+[Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
+Recover func_1501D348's frame 0x78 and eight private homes, retaining complete
+473-word/273-difference and 474-word/275-difference fits. Five tests pass in
+207.068s: 484 three-way literal-memory/event/call-cut cases, both native32
+O2/O0/UBSan bodies, sixteen effective controls and 58 bounded screens. Preserve
+56 raw neighbors and 136 inputs. Tools b9e0781 banks first, preserving 962
+mirror hashes / 964 paths. No installation, guards, source/image/CSV/root
+README change or matching credit. Next resolve the second descriptor preheader and
+remaining register fields. No push or host/Release action; gameplay stays open.
+
 ## 2026-10-16 Sequence Record Setup Recovery And Frame Boundary
 
 [Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):

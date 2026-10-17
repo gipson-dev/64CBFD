@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence record setup frame and private home recovery](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
+  Recover frame 0x78, all eight homes and literal memory/call-cut equivalence
+  for complete 473/474-word fits. Five tests pass; no installation or credit.
+  Next resolve the second descriptor preheader and remaining register fields.
 - [Sequence record setup recovery and frame boundary](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
   Complete func_1501D348 C passes five public qualification tests but remains
   471 words / frame 0xA8 / 405 differences versus retail 473 / 0x78. Research

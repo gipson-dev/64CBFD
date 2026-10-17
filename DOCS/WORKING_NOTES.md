@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
+Recover func_1501D348's frame 0x78, opening saved roles and all eight homes.
+Two complete fits remain at 473/273 and 474/275 words/differences. All five
+tests pass in 207.068s: 484 three-way full-memory/event/call-cut cases, both
+native32 O2/O0/UBSan bodies, sixteen controls, 58 bounded screens, 56 raw
+neighbors and 136 inputs. Tools b9e0781 banks first, preserving 962 mirror
+hashes / 964 paths. No source/guards/image/CSV/root README change or matching
+credit. Next the 474-word fit's second descriptor preheader, then remaining
+register fields and eventual match/installation qualification.
+
+2026-10-16:
 [Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
 Recover the complete typed func_1501D348 without installation: 471 words /
 frame 0xA8 / 405 differences versus retail 473 / 0x78. All five public

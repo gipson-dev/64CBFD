@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence Record Setup Frame And Private Home Recovery - 2026-10-16
+
+[Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
+
+- [x] Recover func_1501D348's real frame 0x78, opening saves/argument roles and all eight private homes under the existing profile. Retain complete 473-word/273-difference and 474-word/275-difference fits without guards or production installation.
+- [x] Pass all five tests in 207.068s: 484 three-way guest cases, entire memory including stack, all ordered memory events and saved roles/homes at every call, both native32 O2/O0/UBSan bodies, sixteen effective controls and 58 bounded screens.
+- [x] Preserve 56 raw neighbors and all 136 unchanged/fail-closed inputs. Bank tools b9e0781 before the consumer pin; validate both copies/tools-check and preserve all 962 mirror hashes / 964 paths. No root README, source/guards/image/CSV changes or matching credit.
+- [ ] Resolve PREHEADER's second descriptor preheader: one extra scale word and register-address add versus retail's immediate +8. Retain its recovered first preheader, homes and saved roles; qualify remaining GPR/scheduling fields rather than treating a register-free diagnostic as a guard plan.
+- [ ] Qualify the eventual match's actual caller/helper, private/fault/rebase and complete-image boundaries before installation; then rebuild, audit and measure fresh progress.
+- [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
+
 ## Sequence Record Setup Recovery And Frame Boundary - 2026-10-16
 
 [Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
@@ -7,7 +18,7 @@
 - [x] Recover func_1501D348's complete five-word interface, typed halfword header/full-word descriptors/64-byte runtime records, allocation/publication order, descriptor skip and live provider boundaries.
 - [x] Pass five research tests in 100.001s: 484 two-way guest cases at two stack phases, 60 native32 O2/O0/UBSan cases each, eight effective controls, all 56 raw neighbors and all 136 unchanged/fail-closed inputs.
 - [x] Bank tools 332b6ba before the consumer pin; validate both copies and tools-check, preserve all 957 initial mirror hashes / 962 paths. Keep production source/guards/image/CSVs/root README unchanged; no matching credit.
-- [ ] Fit this same candidate's 471 words / frame 0xA8 / 405 differences to retail 473 / 0x78. The save set/offsets already match; private bundle/runtime/cursor homes remain open. Do not use guards to repair that gap or repeat the five rejected source screens.
+- [x] Recover this same function's frame 0x78 and all private homes in Note 1466, including complete 473/474-word fits and full memory/call-cut qualification. No guards repair the old frame gap; remaining instruction matching and installation stay open in that note.
 - [ ] Qualify the eventual match's caller/helper, private/fault/rebase and complete-image boundaries before installation; then rebuild, audit and measure fresh progress.
 - [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
 
