@@ -141,3 +141,8 @@ busy-byte fast path, signed scaled division, upper clamp and mode-dependent
 inversion, including division/overflow boundaries rather than only nominal
 timing. Keep the query engine, adjacent sequence work, timing's **141
 differences**, wider Game/additional-source matching and full gameplay open.
+
+Subsequent completion: [Note 1471](1471-color-progress-accessor-direct-match-20261017.md)
+restores func_1517EF00 as a complete 43-word direct C match, with signed
+arithmetic/trap qualification, actual caller chains and a code/size-only
+whole-image audit. The next handoff advances to func_1517EFDC.

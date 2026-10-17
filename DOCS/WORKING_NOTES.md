@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
+Install func_1517EF00's complete 43-word direct C match with signed return,
+division/clamp/wrapped inversion and no guards/profile changes. All 20
+installed tests pass in 262.871s, plus strengthened caller-entry checks.
+The first complete prediction matches normal ELF: 124 code bytes plus one
+size byte only. Fresh Game 60.96%, total 65.73%, no drift. Tools 5298c5e
+banks first, preserving 985 unrelated mirror hashes / 994 paths. Next
+func_1517EFDC's 44-word channel-state aggregate.
+
+2026-10-17:
 [Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
 Install func_1517EE40's 48-word direct C match and precise signed-byte caller
 interfaces, with no guards/profile change and 89 unchanged surrounding routines.

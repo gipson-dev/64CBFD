@@ -43,8 +43,26 @@ void func_1517EE40(s32 red, s32 green, s32 blue, s32 duration, s8 mode, s32 chan
     }
 }
 
-s32 func_1517EF00() {
-    return 0;
+/* Return the channel's signed progress, preserving the 32-bit scaled product. */
+s32 func_1517EF00(s32 channel) {
+    s32 progress;
+
+    if (D_800DDDC0[channel] != 0) {
+        progress = D_800DDDC0[channel];
+    } else {
+        if (D_800DDE28[channel] != 0) {
+            progress = (s32)((u32)D_800DDDB0[channel] * 255U) / D_800DDE28[channel];
+            if (progress > 255) {
+                progress = 255;
+            }
+        } else {
+            progress = 255;
+        }
+        if (D_800DDDAC[channel] == 0) {
+            progress = (s32)(255U - (u32)progress);
+        }
+    }
+    return progress;
 }
 
 s32 func_1517EFAC(s32 arg0) {

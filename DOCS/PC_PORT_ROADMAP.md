@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Color Progress Accessor Direct Match - 2026-10-17
+
+[Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
+
+- [x] Recover func_1517EF00's signed busy/division/upper-clamp/inversion body; directly match all 43 words with no frame.
+- [x] Preserve 27 raw/padded owner neighbors and every guard byte, with no new profiles, guards or private pools.
+- [x] Qualify 12,840 guest pairs, overflow traps, native32 O2/O0/UBSan, eight controls and real local/registration caller chains; explicitly fire helper entry.
+- [x] Freeze the first whole-image/source prediction; normal ELF changes only 124 code bytes and one size byte. All 20 installed tests and strengthened caller gates pass, with 146 protected inputs and exact data.
+- [x] Measure fresh Game 2,943/4,828 (60.96%), total 3,616/5,501 (65.73%), zero drift. README aggregate rows only; bank tools 5298c5e first, preserve 985 unrelated mirror hashes / 994 paths.
+- [ ] Recover adjacent func_1517EFDC: 44-word channel-state aggregate, frame 0x30, live inclusive limit, signed/float gates and saved F20 lifetime.
+- [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Color State Submit Direct Match - 2026-10-17
 
 [Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Qualify 3,712 paired guest cases, native32 O2/O0/UBSan, eight effective controls, actual teardown/scan callers, aliases, rebases and 59 fault prefixes.
 - [x] Freeze the first whole-image/source/caller prediction before installation; normal build and all 17 final tests pass, with 144 protected inputs and 189,088 exact data bytes.
 - [x] Measure fresh Game 2,942/4,828 (60.94%), total 3,615/5,501 (65.72%), zero drift. Update README aggregate rows only, bank tools aecf777 first, preserve 978 unrelated mirror hashes / 987 paths.
-- [ ] Recover adjacent func_1517EF00: 43-word frame-free progress accessor, including signed division/overflow boundaries and mode inversion.
+- [x] Recover adjacent func_1517EF00: 43-word frame-free progress accessor, including signed division/overflow boundaries and mode inversion. Completed directly from C in Note 1471.
 - [ ] Keep query-engine, sequence, timing and wider Game/additional-source matching plus full gameplay acceptance open.
 
 ## Sequence Event Scan Installed Guarded Match - 2026-10-17

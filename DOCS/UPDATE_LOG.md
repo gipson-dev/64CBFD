@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Color Progress Accessor Direct Match
+
+[Note 1471](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
+Restore func_1517EF00's complete 43-word signed C accessor, directly exact
+without new guards/profile. Preserve 27 owner neighbors and every guard byte.
+All 20 installed tests pass in 262.871s; strengthened caller gates pass again.
+Qualify 12,840 guest pairs, native32 O2/O0/UBSan and actual local/registration
+callers. The entire predicted/normal image differs only in 124 target code
+bytes and one size byte. Fresh Game 60.96%, total 65.73%, zero drift.
+Tools 5298c5e banks first; preserve 985 unrelated mirror hashes / 994 paths.
+README aggregate rows only; next func_1517EFDC's 44-word channel aggregate.
+
 ## 2026-10-17 Color State Submit Direct Match
 
 [Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):

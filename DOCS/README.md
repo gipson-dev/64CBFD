@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Color progress accessor direct match](WORKING_NOTES/1471-color-progress-accessor-direct-match-20261017.md):
+  All 43 words directly exact from signed C, no guards/profile changes,
+  27 unchanged neighbors, actual callers and 20 passing installed tests.
+  Whole image changes only 124 code bytes and one size byte; Game 60.96%.
 - [Color state submit direct match](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
   Complete 48-word C leaf, precise signed mode interface, no guards/profile
   changes and 89 unchanged surrounding routines. All 17 tests pass; first
