@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Indexed Threshold Mask Direct Restoration And Match - 2026-10-17
+
+[Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F33F8's42-word/frame0 C directly, preserving32-bit address arithmetic, float thresholds and signed-halfword mask stores; no new guards.
+- [x] Pass seven final installed tests (16.055s):1,200 core/216 sparse/160 alias cases,480 private fault prefixes, three signed-HI16-carry rebase links and native32 with six effective controls.
+- [x] Match the complete first normal ELF:124 code/one extent/24 checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve historical first images, pass two affected checks (51.377s) and both tools-copy checks; bank tools6a6aca2/9a968aa first.
+- [x] Preserve1,120 unrelated mirror hashes /1,128 paths; update README aggregate rows only to Game61.37%, total66.10%, zero drift.
+- [ ] Continue func_150F3214's90-word/frame0x28 routine in generated_11FF10.
+- [ ] Keep func_150F2A60's139-word gap, both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Record Gate Register Reuse And Reload Control - 2026-10-17
 
 [Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):

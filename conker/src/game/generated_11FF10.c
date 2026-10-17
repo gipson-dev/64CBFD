@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern f32 D_800A1970;
+extern s16 *D_800D9A40;
+
 extern u8 *D_800DBFF0;
 extern f32 D_800A1980;
 extern f32 D_800A1984;
@@ -68,8 +71,17 @@ void func_150F33B0(u8 *arg0) {
     }
 }
 
-s32 func_150F33F8() {
-    return 0;
+/* Update an indexed state-mask bit from two floating-point thresholds. */
+void func_150F33F8(s32 index) {
+    u8 *record = (u8 *)((s32)D_800DBFF0 + index * 0x9A0);
+
+    if (*(f32 *)(record + 0x300) < D_800A1970) {
+        if (*(f32 *)(record + 0x2FC) > 840.0f) {
+            *D_800D9A40 |= 1 << index;
+        } else {
+            *D_800D9A40 &= ~(1 << index);
+        }
+    }
 }
 
 f32 func_150F34A0(u8 *arg0, f32 arg1) {

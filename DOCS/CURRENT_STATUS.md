@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8a5bfb6; tools are committed before the consumer pin.
+  checkpoint pins tools 9a968aa; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Indexed threshold mask **restored and byte-exact directly from C**:
+[Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md).
+func_150F33F8 emits all42 words/frame0 with no new guards. Seven installed
+tests and two affected historical checks pass. The complete first normal ELF
+matches its prediction:124 code/one extent/24 exactly accounted metadata bytes,
+zero exclusions. All6,057 bodies and189,088 Game-data bytes are audited; only
+the target body changes and every address remains fixed. Fresh Game **61.37%**,
+total **66.10%**, zero drift. Tools6a6aca2/9a968aa first; preserve1,120 unrelated mirror
+hashes /1,128 dirty paths. README changes only aggregate rows. Next:
+func_150F3214; the139-word gate, both fade lifetime gaps and wider Game stay open.
 
 Actor-record gate **actual register reuse observed; reload-only control rejected**:
 [Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md).

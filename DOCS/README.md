@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Indexed threshold mask direct restoration and match](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
+  complete42-word C without guards; seven installed/two historical checks and
+  exact whole first image; Game61.37%, total66.10%, zero address drift.
 - [Actor record gate register reuse and reload control](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
   actual GPR2 reuse observed;139-word reload-only control still fails words
   and private state; four fresh tests, no installation or matching credit.

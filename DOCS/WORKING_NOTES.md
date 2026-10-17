@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1506](WORKING_NOTES/1506-indexed-threshold-mask-direct-restoration-and-match-20261017.md):
+Restore func_150F33F8's42-word/frame0 C directly, no new guards. Seven installed
+and two historical checks pass; exact whole first image,124 code/one extent/
+24 checked metadata bytes. Tools6a6aca2/9a968aa first; Game61.37%, total66.10%, zero
+drift. Preserve1,120 unrelated mirror hashes /1,128 paths. README aggregates
+only; next func_150F3214, with the139-word gate and fade gaps still open.
+
+2026-10-17:
 [Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
 Observe common-image lookup and actual GPR2 reuse; reject the139-word reload
 control at134 word differences and private fault cut0. Four fresh tests pass.
