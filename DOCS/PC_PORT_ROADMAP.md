@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Overlay Fade Packet Recovery And Reload Gap - 2026-10-17
+
+[Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
+
+- [x] Recover func_15182670's complete typed eight-byte packet, signed duration gate, inherited padding and actual SDK memcpy; retain the 54-word original assembly while C emits 53 words.
+- [x] Pass seven final tests, 2,430 guest pairs, 384 native cases/profile, eight effective controls, 7,290 rebase pairs and 288 cases across all four actual call sites.
+- [x] Correct the duration load count to three original LHs versus one in C; verify late division changes trap placement but does not restore the reloads or length.
+- [x] Bank tools 72f748d first and preserve all 1,037 old mirror hashes / 1,041 final paths. No installation, guards or credit; fresh Game 61.06%, total 65.82%, zero drift, production/root README unchanged.
+- [ ] Trace the duration home in actual CFE/UOPT input/output before another bounded source experiment; require all 54 words and private-state acceptance before installation.
+- [ ] Keep the 633-word renderer, deferred pulse lifetime, wider Game/additional-source queue and natural gameplay acceptance open; no host or frozen Release action.
+
 ## Overlay Mode Defaults Direct Match - 2026-10-17
 
 [Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):

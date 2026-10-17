@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Overlay Fade Packet Recovery And Reload Gap
+
+[Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
+Audit func_15182670's complete 53/54-word typed C without replacing exact
+assembly. Seven final tests pass in 124.087s, including live packet padding,
+actual SDK copy, all four callers, rebases and fail-closed input gates.
+Three original duration reloads versus C's one remain; moving division late
+alone does not fix them. No installation, guards or credit; fresh Game 61.06%,
+total 65.82%, zero drift, production/README unchanged. Tools 72f748d first;
+preserve 1,037 old mirror hashes / 1,041 paths. Duration-home tracing next.
+
 ## 2026-10-17 Overlay Mode Defaults Direct Match
 
 [Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):

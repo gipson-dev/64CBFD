@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Overlay fade packet recovery and reload gap](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
+  Complete 53/54-word C diagnostic, inherited padding, actual memcpy and all
+  four callers audited. Seven tests pass; three-versus-one duration loads
+  remain. Exact assembly retained, no new guards or credit, production unchanged.
 - [Overlay mode defaults direct match](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
   Complete 50-word direct C reset, byte stores, late named constant and original
   caller qualified. Nine final tests and seven affected checks pass; entire

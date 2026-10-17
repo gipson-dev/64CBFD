@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e3da0c4; tools are committed before the consumer pin.
+  checkpoint pins tools 72f748d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Overlay fade packet **recovered and audited, not installed or byte-exact**:
+[Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md).
+func_15182670's complete typed C emits 53/54 words, frame 0x40, with 45
+ordinal differences. Seven final tests pass in 124.087s, including actual
+memcpy, inherited padding, all four call sites and independent rebases.
+Retail reloads duration three times versus C's one; moving the division late
+does not close that gap. Keep the exact original assembly and no new guards
+or credit. Fresh Game **61.06%**, total **65.82%**, zero drift; production
+and root README unchanged. Tools **72f748d** first; preserve all 1,037 mirror
+hashes / 1,041 final paths. Trace the duration home before another source
+experiment; the 633-word renderer and wider Game queue remain open.
 
 Overlay mode defaults **installed, all 50 words directly exact from C**:
 [Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md).

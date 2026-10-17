@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
+Recover and qualify func_15182670's complete typed packet, inherited padding,
+actual memcpy and all four callers. Seven final tests pass in 124.087s.
+Still 53/54 words and three-versus-one duration loads; late division alone
+does not restore them. Original exact assembly retained, no new guards or
+credit, production/README unchanged. Fresh Game 61.06%, total 65.82%, zero
+drift. Tools 72f748d first; preserve 1,037 mirror hashes / 1,041 final paths.
+Trace the duration home; keep renderer and wider Game matching open.
+
+2026-10-17:
 [Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
 Install func_15181E18's complete 50-word direct C reset, typed void/channel
 interface, byte-width color clears and late constant load. Nine tests pass
