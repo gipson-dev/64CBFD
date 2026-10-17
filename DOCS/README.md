@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Dual fade argument home and allocation trace](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
+  Qualified SP+0x30 home and actual copied-word recovery, five owned compiler
+  traces and ten tests. Still uninstalled with S0/private/full-slot differences.
 - [Dual buffer fade candidate and private payload gap](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
   Complete public-qualified C, eight tests and a real variadic-wrapper
   counterexample. The 65/69-word/private-home gap keeps it uninstalled.

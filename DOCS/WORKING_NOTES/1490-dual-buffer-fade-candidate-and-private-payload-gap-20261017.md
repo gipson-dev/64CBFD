@@ -153,10 +153,10 @@ zero drift; Init **492/492**, Debugger **181/181**. Root README is unchanged.
 - [x] Qualify public behavior, aliases, actual caller, native and rebased code.
 - [x] Demonstrate the actual sixteen-word payload gap; reject unsupported fixes.
 - [x] Bank tools and the precise handoff without production or matching credit.
-- [ ] Recover retail's S0/argument/subrecord homes. Next discriminator: use the
-  existing owned CFE/UOPT capture machinery to inspect formal-argument address
-  exposure and variable-allocation constraints for record versus previousWeight;
-  compare the normal and explicit-branch candidates before another source sweep.
+- [x] Inspect formal-argument exposure and allocation constraints in owned
+  normal/branch captures; recover the real argument home in Note 1491.
+- [ ] Complete S0/RA/subrecord homes while retaining the qualified parameter
+  home. Note 1491 isolates the remaining caller-save/callee-save decision.
 - [ ] Require complete private/helper-payload/fault parity and the first full
   linked-image prediction before installing. Keep the broader Game goal open.
 

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Dual Fade Argument Home And Allocation Trace - 2026-10-17
+
+[Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
+
+- [x] Capture normal/branch/addressed forms and scoped allocation constraints in five owned compiler drivers, retaining complete code/function/binding/pool identity.
+- [x] Recover the real SP+0x30 record home in a 68-word/frame0x30 candidate without new storage; close actual text payload word8 and qualify adversarial reload controls.
+- [x] Pass ten tests (66.689s), full public/native/caller/rebase checks, capture/input corruption controls and four negative source forms; keep the 61-word full-slot/private gap visible.
+- [x] Bank tools 0a0712a first, preserving all 1,078 initial mirror hashes / 1,080 paths. Production/README unchanged; fresh Game 61.16%, total 65.92%, zero drift.
+- [ ] Inspect old-weight caller-save/callee-save selection with color14 no longer forbidden; recover S0, RA and state homes, then full private/helper/fault/image gates before installation.
+- [ ] Continue broader Game matching; no host or frozen Release action.
+
 ## Dual Buffer Fade Candidate And Private Payload Gap - 2026-10-17
 
 [Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
@@ -8,7 +19,8 @@
 - [x] Pass eight tests (34.140s), including 9,216 public cases, native O2/O0, independent rebases, the full actual caller and protected-input controls.
 - [x] Execute the actual color/text wrappers and positively demonstrate different sixteen-word copied payloads; retain the 65/69-word and S0/stack-home gaps without guards or installation credit.
 - [x] Reproduce six profile/source discriminators and falsify the single bounded advisory suggestion. Bank tools 7960b37 first, preserving all 1,076 initial mirror hashes / 1,078 paths.
-- [ ] Inspect record/previousWeight CFE/UOPT allocation and argument-address constraints; recover the real homes and complete private/helper/fault/image gates before installation.
+- [x] Inspect record/previousWeight CFE/UOPT and formal-address constraints in Note 1491; recover the real argument home, while retaining the S0/private gaps.
+- [ ] Recover the remaining S0/RA/state homes and complete private/helper/fault/image gates before installation.
 - [ ] Continue broader Game matching. Fresh Game 61.16%, total 65.92%, zero drift; production/README and frozen host Release remain unchanged.
 
 ## Link Event Callback Match - 2026-10-17

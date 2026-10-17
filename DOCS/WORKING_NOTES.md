@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
+Qualified func_150D01A0 argument-home recovery, actual text payload word8,
+five owned compiler traces and ten tests. Still 68/69 words with 61 full-slot
+differences and unresolved S0/private homes; uninstalled, zero guards/credit.
+Tools 0a0712a first; preserve all 1,078 mirror hashes / 1,080 paths. Inspect
+old-weight caller-save/callee-save selection next. Production/README unchanged.
+
+2026-10-17:
 [Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
 Complete public-qualified func_150D01A0 candidate, eight tests, actual caller
 and a positive actual variadic-payload counterexample. Still 65/69 words and

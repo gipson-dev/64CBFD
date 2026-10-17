@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Dual Fade Argument Home And Allocation Trace
+
+[Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
+Recover func_150D01A0's real SP+0x30 parameter home in a 68-word/frame0x30
+candidate without new objects or guards. Actual copied text payload word8
+and adversarial reloads now agree. Scoped owned compiler captures separate
+formal promotion from old-weight allocation; ten tests pass (66.689s).
+The 61-word full-slot/S0/private gap still rejects installation and credit.
+Tools 0a0712a first; preserve all 1,078 mirror hashes / 1,080 paths. Fresh
+Game 61.16%, total 65.92%, zero drift; production and README unchanged.
+Continue old-weight caller-save selection and complete remaining gates.
+
 ## 2026-10-17 Dual Buffer Fade Candidate And Private Payload Gap
 
 [Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):

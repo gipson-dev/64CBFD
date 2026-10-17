@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7960b37; tools are committed before the consumer pin.
+  checkpoint pins tools 0a0712a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Dual fade **argument home recovered, S0/private gaps still reject installation**:
+[Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md).
+func_150D01A0 now has a qualified 68-word/frame0x30 candidate retaining the
+real SP+0x30 record argument home without extra storage. Actual text-wrapper
+payload word8 agrees with retail, while other private words remain different.
+Five owned compiler captures isolate formal promotion from the still-unresolved
+old-weight caller-save decision. Ten tests pass in 66.689s. There are still
+61 full-slot word differences, not merely one scheduling word; no installation,
+guards or credit. Tools 0a0712a first; preserve all 1,078 mirror hashes /
+1,080 paths. Fresh Game **61.16%**, total **65.92%**, zero drift; production
+and README unchanged. Next: inspect old-weight live-range/callee-save selection,
+then complete private/helper/fault/image gates. Wider Game stays open.
 
 Dual-buffer fade **candidate qualified, still uninstalled**:
 [Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md).
