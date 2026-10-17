@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Retail Extent Frame And Live Homes - 2026-10-17
+
+[Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
+
+- [x] Qualify four normal-object-identical compiler captures and bind actual frontend/optimizer/UGEN storage, frame budgets and five emitted live storage sites.
+- [x] Recover complete 959-word/frame-0x80 C with real independent values, ordered homes and ordinary heading/animation conversions; no padding variables, trimming or new guards.
+- [x] Pass seven full tests (182.922s) plus two focused checks (25.191s), 49 effective trace controls, the complete public/native corpus and 80 equal initial private-prefix states.
+- [x] Reject the worse global-controller allocation control; retain 744 differences and the cut-10 GPR3/GPR10 boundary without installing or claiming matching credit.
+- [x] Preserve all production/checkpoint bytes, totals and README; bank tools f0fadc5 first and preserve 1,150 prior mirror hashes / 1,152 paths.
+- [ ] Continue the same `func_150F34F4` controller allocation at `0x150F3544`, remaining roles/scheduling and full literal/private/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game objective open; no host or frozen Release action.
+
 ## Actor Input Movement Recovery And Fitting Boundary - 2026-10-17
 
 [Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
@@ -8,7 +20,7 @@
 - [x] Pass eleven tests (72.175s): 2,496 complete core cases, 947 reachable words plus twelve static unreachable checks, native32 O2/O0, nine mutation modes and effective guest/native controls.
 - [x] Expose 962/959 words, frame 0x70/0x80, 811 overlapping differences and cut-zero private rejection; do not trim the overflow, install, add guards or claim credit.
 - [x] Preserve all production/checkpoint bytes and fresh totals; bank tools 6f22514 first and preserve 1,146 prior mirror hashes / 1,150 paths. README unchanged.
-- [ ] Continue this same routine's CFE/UOPT/UGEN local area and real scalar homes; restore frame 0x80 and remove the three executable excess words before register/schedule/private/first-image matching.
+- [x] Restore this routine's real scalar homes, frame 0x80 and 959-word extent in [Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md); register/schedule/private/first-image matching remains open above.
 - [ ] Keep the gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game goal open; no host or frozen Release action.
 
 ## Owner Burst Emitter Restoration And Match - 2026-10-17

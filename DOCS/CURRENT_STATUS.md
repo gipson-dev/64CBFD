@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6f22514; tools are committed before the consumer pin.
+  checkpoint pins tools f0fadc5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor input/movement **retail extent, frame and live homes restored**:
+[Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md).
+The full `func_150F34F4` candidate now emits 959 words/frame `0x80`, with
+744 differences. Four compiler captures bind the live homes; seven full tests
+(182.922s) and two focused checks (25.191s, 49 effective controls) pass.
+The first ten modeled fault boundaries now agree in eight initial states;
+cut 10 still differs in controller GPR3/GPR10 at `0x150F3544`. Not installed;
+no new guards or matching credit. All 290 protected entries and the complete
+production baseline remain intact. Tools f0fadc5 first; preserve 1,150 prior
+mirror hashes / 1,152 paths. Fresh totals and README unchanged. Goal active:
+continue this same routine's allocation, scheduling and full private matching.
 
 Actor input/movement **fully recovered; extent/frame fitting remains open**:
 [Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md).

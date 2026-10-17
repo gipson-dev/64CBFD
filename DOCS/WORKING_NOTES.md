@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
+Restore complete `func_150F34F4` extent/frame/live homes: 959 words, frame
+0x80, still 744 differences. Seven full/two focused checks pass; initial
+private prefixes close, cut-10 controller allocation remains. Tools f0fadc5
+first; preserve all production bytes/totals/README and 1,150 mirror hashes /
+1,152 paths. Goal active: continue the same allocation/scheduling/private fit.
+
+2026-10-17:
 [Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
 Recover complete `func_150F34F4` with actual typed layout and call contracts.
 Eleven tests pass (72.175s), 2,496 core cases and native32; 962/959 words,

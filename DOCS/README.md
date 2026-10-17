@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Movement retail extent frame and live homes](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
+  complete 959-word/frame-0x80 candidate, qualified storage traces and initial
+  private prefixes. Still 744 differences/cut-10 allocation gap; not installed.
 - [Actor input movement recovery and fitting boundary](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
   complete routine/ABI recovery and eleven tests; 962/959 words, frame 0x70/0x80
   and private state still differ. No installation/credit; continue the same fit.

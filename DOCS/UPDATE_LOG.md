@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Retail Extent Frame And Live Homes
+
+[Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
+Restore `func_150F34F4`'s 959-word extent, frame 0x80 and live homes without
+trimming or new guards. Seven full and two focused checks pass, including
+four compiler traces, native32 and 80 equal initial private prefixes. Cut 10
+still differs in GPR3/GPR10; 744 words differ, not installed, no credit. Tools
+f0fadc5 first; preserve 1,150 mirror hashes / 1,152 paths and all production
+bytes. Fresh totals/README unchanged. Continue the same literal matching work.
+
 ## 2026-10-17 Actor Input Movement Recovery And Fitting Boundary
 
 [Note1512](WORKING_NOTES/1512-actor-input-movement-recovery-and-fitting-boundary-20261017.md):
