@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Owner burst frame trace and aligned packet qualification](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
+  compiler-backed packet addresses and 3,928 complete public comparisons,
+  including unmasked padding. Frame/private/85-word gap still open; not installed.
 - [Owner burst emitter recovery and private layout gap](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
   full 288-word candidate and six research tests; frame, private state and
   nonuniform padding still differ. Not installed; production/totals unchanged.

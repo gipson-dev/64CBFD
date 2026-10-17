@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Burst Frame Trace And Aligned Packet Qualification - 2026-10-17
+
+[Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
+
+- [x] Trace CFE/UOPT storage and actual frame construction for three candidates; bind seven emitted addresses to decoded storage operands.
+- [x] Match all caller-relative packet addresses in an aligned proposal; pass 3,900 complete public cases plus 28 modeled FP edges without padding masks.
+- [x] Pass six research tests (68.711s), 39 fail-closed controls, native32 and both tools-copy checks; reject the frame-fitting seven-word overflow form.
+- [x] Preserve the complete production baseline, prior checkpoints and README; freshly confirm Game 61.39%, total 66.12%, zero drift.
+- [x] Bank tools c2c5a97 first; preserve all 1,134 prior mirror hashes / 1,137 dirty paths.
+- [ ] Continue the same `func_150F2D14`: explain UOPT's local-area expansion and recover frame 0x150, then register roles/scheduling; 85 words and private SP still differ.
+- [ ] Require full private/fault, rebase, caller and first-linked-image qualification before installation; keep the gate, fade gaps and wider Game open.
+
 ## Owner Burst Emitter Recovery And Private Layout Gap - 2026-10-17
 
 [Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
+Bind three compiler storage traces to actual emitted addresses; aligned
+packet objects and 3,928 complete public comparisons match without padding
+masks. Six tests (68.711s), 39 controls; frame/private/85-word gap still open.
+Tools c2c5a97 first, all production inputs/totals/README unchanged; preserve
+1,134 prior mirror hashes / 1,137 paths. Continue UOPT local-area expansion
+in the same function; no installation or matching credit.
+
+2026-10-17:
 [Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
 Recover the full 288-word emitter and both packet layouts; six research tests
 pass while asserting the remaining frame/private/padding failures. Not

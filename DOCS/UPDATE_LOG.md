@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Owner Burst Frame Trace And Aligned Packet Qualification
+
+[Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md):
+Trace three compiler storage layouts and qualify an aligned `func_150F2D14`
+alternative. All packet addresses and 3,928 complete public comparisons now
+match without padding masks. Six tests pass (68.711s), 39 effective controls;
+frame 0x160, private SP and 85 words still differ. Not installed, zero matching
+credit. Tools c2c5a97 first; preserve 1,134 mirror hashes / 1,137 paths and all
+production bytes. Fresh totals/README unchanged; continue UOPT local storage.
+
 ## 2026-10-17 Owner Burst Emitter Recovery And Private Layout Gap
 
 [Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):

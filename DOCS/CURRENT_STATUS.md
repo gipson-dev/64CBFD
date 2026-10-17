@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 44ac35d; tools are committed before the consumer pin.
+  checkpoint pins tools c2c5a97; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Owner burst emitter **public packet padding resolved; private frame still open**:
+[Note1509](WORKING_NOTES/1509-owner-burst-frame-trace-and-aligned-packet-qualification-20261017.md).
+Three fingerprint-locked traces bind compiler storage to seven emitted
+addresses. The aligned alternative matches all caller-relative packet
+addresses and 3,928 complete public comparisons, without padding masks.
+Six tests pass (68.711s), with 39 fail-closed controls. It still emits 288
+words/frame `0x160`, 85 unequal words and a 16-byte private SP gap: not
+installed, no new guards or matching credit. Tools c2c5a97 first; preserve
+1,134 prior mirror hashes / 1,137 paths. Production ELF, fresh Game **61.39%**,
+total **66.12%**, zero drift and README unchanged. Continue this same function
+at UOPT local-area expansion/scalar homes, then register roles and scheduling.
 
 Owner burst emitter **fully recovered as an uninstalled candidate**:
 [Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md).
