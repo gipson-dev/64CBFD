@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 36eccea; tools are committed before the consumer pin.
+  checkpoint pins tools e12376f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Transition burst **pointer/flag lifetimes recovered, 91 -> 47 word gap**:
+[Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md).
+func_150CF800 retains 251 words/frame 0x108 and now has the original 47-word
+opening, S4/S3 roles, SP+0x84 transition reload, first flag branch and 41-word
+tail. Aggregate homes remain four bytes high; remaining scratch choices and
+private/rebase/fault/image gates keep it uninstalled, with zero guards/credit.
+Eight tests pass in 61.553s, including 2,688 guest cases, native32 O2/O0,
+compiler captures, caller checks and 390 protected-input controls. Tools
+e12376f first; preserve all 1,065 mirror hashes / 1,067 paths. Fresh Game
+61.12%, total 65.88%, zero drift; production and root README stay unchanged.
+
 Transition child motion **installed, 48 words exact with ten narrow guards**:
 [Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md).
 func_150CFC60 now has its one-pointer kind-13 interface, live-clock quadratic
@@ -36,8 +47,8 @@ pass in 29.536s; the normal ELF equals the first full prediction, with only
 neighbors and 189,088 Game-data bytes unchanged. Fresh Game **2,951/4,828
 (61.12%)**, total **3,624/5,501 (65.88%)**, different **1,877**, zero drift.
 Native linker aliases pass at O0 only; optimized alias and double-NaN limits
-are explicit. The adjacent func_150CF800 remains uninstalled at 91 differences.
-Continue its object/register lifetimes; wider Game matching remains open.
+are explicit. The adjacent func_150CF800 remains uninstalled; Note 1487 reduces
+its gap to 47 words. Continue its aggregate homes; wider Game remains open.
 Eleven predecessor behavior/compiler checks also pass (80.770s); current-input
 corruption checks supersede two historical literal-baseline tests. Tools
 36eccea is banked first; preserve 1,058 unrelated mirror hashes / 1,065 paths.

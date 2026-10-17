@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
+Recover func_150CF800's pointer/flag lifetimes, S4/S3 roles and exact tail;
+91 -> 47 raw word differences at 251 words/frame 0x108. Eight tests pass;
+four-byte aggregate shift and scratch choices keep it uninstalled. Tools
+e12376f first, preserve all 1,065 mirror hashes / 1,067 paths. Wider Game open.
+
+2026-10-17:
 [Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
 Install func_150CFC60's complete 48-word motion/bounce callback with ten narrow
 guards, exact first full-image prediction and unchanged data/neighbors.

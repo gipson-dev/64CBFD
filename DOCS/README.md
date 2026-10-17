@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Transition burst pointer and flag lifetime recovery](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
+  91 -> 47 differences with original prefix/roles/branch/tail recovered;
+  eight focused tests pass, aggregate homes still prevent installation.
 - [Transition child motion guarded match](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
   Complete 48-word semantic callback, ten narrow guards, exact first full
   image and ten installed tests. Fresh Game 61.12%; adjacent burst still open.

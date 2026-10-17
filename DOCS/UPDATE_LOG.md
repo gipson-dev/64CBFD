@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Transition Burst Pointer And Flag Lifetime Recovery
+
+[Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
+Reduce func_150CF800 from 91 to 47 raw word differences with its typed pointer
+gate and explicit first-flag outcomes. Recover the original opening, saved
+roles and tail without guards. The aggregate homes still differ, so no install
+or matching credit. Eight tests pass in 61.553s; tools e12376f first. Preserve
+1,065 initial mirror hashes / 1,067 paths. Fresh Game 61.12%, total 65.88%,
+zero drift; production and root README aggregates remain unchanged.
+
 ## 2026-10-17 Transition Child Motion Guarded Match
 
 [Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):

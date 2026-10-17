@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Transition Burst Pointer And Flag Lifetime Recovery - 2026-10-17
+
+[Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
+
+- [x] Recover the typed pointer gate, original S4/S3 roles, first flag branch and exact 41-word tail; reduce 91 -> 47 raw word differences at 251 words/frame 0x108, without guards.
+- [x] Pass eight focused tests covering 2,688 guest cases, native32 O2/O0, actual compiler captures, original caller and 390 immutable live/frozen controls.
+- [x] Bank tools e12376f first, preserve all 1,065 mirror hashes / 1,067 paths, and remeasure unchanged Game 61.12% / total 65.88%, zero drift. Production and root README remain unchanged.
+- [ ] Recover the actual descriptor/payload homes and remaining scratch choices; close private/rebase/fault/first-image gates before installation.
+- [ ] Keep wider Game/fade/pulse/renderer and gameplay open; no host or frozen Release action.
+
 ## Transition Child Motion Guarded Match - 2026-10-17
 
 [Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
@@ -9,7 +19,8 @@
 - [x] Verify the normal ELF equals the first full prediction: 141 code bytes plus one size byte only, no metadata exclusions, all 24 neighbors and 189,088 Game-data bytes unchanged.
 - [x] Refresh README aggregate rows only: Game 61.12%, total 65.88%, zero drift. Retain native O2 linker-alias and raw double-NaN payload limits explicitly.
 - [x] Pass eleven predecessor behavior/compiler checks, tools-check and both tools-copy padder checks; bank tools 36eccea first and preserve 1,058 unrelated mirror hashes / 1,065 paths.
-- [ ] Continue func_150CF800's real object/register lifetimes and remaining 91 words before installation; the one bounded advisory provided no new supported edit.
+- [x] Recover func_150CF800's real pointer/register/flag lifetimes in Note 1487, reducing 91 -> 47 differences without guards.
+- [ ] Complete its aggregate homes, scratch choices and remaining qualification gates before installation.
 - [ ] Keep wider Game/fade/pulse/renderer and gameplay acceptance open; no host or frozen Release action.
 
 ## Transition Burst Frame Recovery And Native Qualification - 2026-10-17
