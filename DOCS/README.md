@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Clipped rectangle direct match](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
+  Complete 106-word direct C leaf, signed clipping, original cursor homes
+  and all 27 neighbors preserved without new guards/profile/pool/build changes.
+  All 13 final tests pass; first entire image matches. Fresh Game 61.04%,
+  total 65.81%, zero drift. Next the 633-word textured rectangle routine.
 - [Overlay projection direct match](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
   Complete 120-word direct C recovery, original literal binding, frame/private
   ABI and all 27 neighbors preserved without new guards/profile/data.

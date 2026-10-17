@@ -22,8 +22,8 @@ Recover the five-argument interface:
 void func_1517F814(s32 screenSpace, f32 x, f32 y, f32 z, s32 view);
 ```
 
-The original caller is still assembly in func_151814FC. Its actual packet
-ignores V0; no C callers or prototypes require a separate edit. Do not
+The live func_151814FC remains a C placeholder. Its original assembly packet
+ignores V0; no C calls or prototypes require a separate edit. Do not
 replace stable address names with speculative names. The source adds a
 concise semantic comment and typed matrix-helper declaration.
 
@@ -197,7 +197,7 @@ make tools-check
 - [x] Freeze the first whole-image prediction, complete the normal build and pass 36 tests.
 - [x] Measure fresh matching, update aggregate rows/indexes/roadmap and bank tools first.
 - [ ] Resolve the deferred pulse wrapper's supported lifetime/precondition without invented C.
-- [ ] Recover the adjacent clipped rectangle leaf next.
+- [x] Recover the adjacent clipped rectangle leaf in Note 1476.
 
 Next **func_1517F9F4**, same owner: **106 words / 424 bytes**, frame-free,
 VA **0x1517F9F4..0x1517FB9C**, ROM **0x1ACEA4..0x1AD04C**. Recover the
@@ -207,3 +207,7 @@ and one SDK F6 fill-rectangle / eight-byte cursor advance. Preserve incoming
 cursor homes and their live alias/update order, full-word indices and actual
 caller packets before accepting C. Wider Game/additional-source matching,
 query/sequence engines, timing's 141 differences and full gameplay remain open.
+
+Follow-through: [Note 1476](1476-clipped-rectangle-direct-match-20261017.md)
+installs the complete 106-word clipped rectangle directly from C, without
+new guards/profile/pool/build changes. The deferred pulse lifetime stays open.

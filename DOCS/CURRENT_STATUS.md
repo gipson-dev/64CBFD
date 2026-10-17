@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 9d0f799; tools are committed before the consumer pin.
+  checkpoint pins tools d52744e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Clipped rectangle **installed, all 106 words directly exact from C**:
+[Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md).
+func_1517F9F4 has the recovered Gfx pointer/six-word interface, signed sort,
+four signed viewport conversions, strict edge gates and SDK fill command.
+No new guards/profile/pool/build changes; all 27 owner neighbors are unchanged.
+All 13 final tests pass in 199.893s. The entire normal ELF equals the
+first prediction: 329 target code bytes and two size bytes only, with exact data.
+Fresh Game **2,947/4,828 (61.04%)**, total **3,620/5,501 (65.81%)**, different
+**1,881**, zero drift. Tools **d52744e** banks first; preserve 1,015 unrelated
+mirror hashes / 1,025 paths. Next **func_1517FB9C**, the 633-word textured
+rectangle routine, frame 0xD8. The pulse wrapper remains deferred without C credit.
 
 Overlay projection **installed, all 120 words directly exact from C**:
 [Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md).

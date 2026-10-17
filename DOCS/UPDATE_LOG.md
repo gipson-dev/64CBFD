@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Clipped Rectangle Direct Match
+
+[Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
+Restore func_1517F9F4's full 106-word signed clipping/SDK fill leaf directly
+from C, preserving the incoming cursor home and all 27 owner neighbors.
+No new guards/profile/pool/Makefile changes. All 13 final tests pass in
+199.893s; 1,536 guest cases, 588 native cases/profile, 126 faults and
+96 caller cases across all 16 actual call sites. Entire normal ELF equals
+the first prediction: 329 code bytes plus two size bytes only. Fresh Game
+61.04%, total 65.81%, zero drift. Tools d52744e first; preserve 1,015
+unrelated mirror hashes / 1,025 paths. README aggregate rows only.
+Next func_1517FB9C, 633 words; the inherited-blend pulse wrapper stays deferred.
+
 ## 2026-10-17 Overlay Projection Direct Match
 
 [Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):

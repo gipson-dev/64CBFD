@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Clipped Rectangle Direct Match - 2026-10-17
+
+[Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
+
+- [x] Recover func_1517F9F4's complete 106-word signed sorting/clipping leaf, six-word Gfx interface, original incoming cursor home and SDK fill command.
+- [x] Preserve all 27 raw/padded neighbors, two bindings, inherited pool, Makefile/profile and guards; retain all ten entry-unreachable compiler compare/clamp words.
+- [x] Qualify 1,536 three-way guest cases, 588 native32 cases per O2/O0 profile with UBSan, eight effective controls, three rebases, 126 fired faults and 96 real packet cases across all 16 caller sites.
+- [x] Freeze the first whole image/source prediction, complete the normal build and all 13 final tests, protect 156 input entries / 147 paths and all 189,088 Game-data bytes.
+- [x] Measure fresh Game 2,947/4,828 (61.04%), total 3,620/5,501 (65.81%), zero drift. README aggregate rows only; bank tools d52744e first and preserve 1,015 unrelated mirror hashes / 1,025 paths.
+- [ ] Recover func_1517FB9C's full 633-word textured rectangle routine, frame 0xD8, actual size/step/offset/view ABI, signed FP/fixed-point boundaries, original command order and caller/private-state contract.
+- [ ] Keep the deferred pulse C lifetime, broader Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Overlay Projection Direct Match - 2026-10-17
 
 [Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
@@ -10,7 +22,7 @@
 - [x] Freeze the first whole image/source/Makefile prediction before edits; complete the normal broad rebuild and all 36 final tests, protecting 156 input entries / 147 paths and all 189,088 Game-data bytes.
 - [x] Measure fresh Game 2,946/4,828 (61.02%), total 3,619/5,501 (65.79%), zero drift. README aggregate rows only; bank tools 9d0f799 first, preserve 1,008 unrelated mirror hashes / 1,018 paths.
 - [x] Extend the deferred pulse audit with six real reset cases and two indexed-writer guest-only cases without claiming a supported C lifetime or natural/global invariant.
-- [ ] Recover func_1517F9F4's complete 106-word clipped rectangle leaf, signed endpoint/conversion order, strict overlap gates, caller homes and SDK fill command.
+- [x] Recover func_1517F9F4's complete 106-word clipped rectangle leaf, signed endpoint/conversion order, strict overlap gates, caller homes and SDK fill command. Completed directly from C in Note 1476.
 - [ ] Keep func_1517F564's defined C lifetime/precondition recovery, wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
 
 ## Pulsed Overlay Private Lifetime Audit - 2026-10-17

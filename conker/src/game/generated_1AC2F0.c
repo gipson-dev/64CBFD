@@ -259,8 +259,42 @@ void func_1517F814(s32 screenSpace, f32 x, f32 y, f32 z, s32 view) {
     D_800DDDE8[view][1] = projectedY - record->extentY;
 }
 
-s32 func_1517F9F4() {
-    return 0;
+/* Sort and clip signed endpoints, then append one fill rectangle. */
+Gfx *func_1517F9F4(Gfx *commands, s32 left, s32 top, s32 right, s32 bottom, s32 view) {
+    s32 scratch;
+    OverlayViewport1AC2F0 *record;
+    s32 clipTop, clipBottom, clipRight;
+    s32 clipped;
+
+    if (right < left) {
+        scratch = left;
+        left = right;
+        right = scratch;
+    }
+    if (bottom < top) {
+        scratch = top;
+        top = bottom;
+        bottom = scratch;
+    }
+    record = &OVERLAY_VIEWS_1AC2F0[view];
+    /* Sorting scratch now holds the left clip bound. */
+    scratch = (s32)record->left;
+    clipTop = (s32)record->top;
+    clipRight = (s32)record->right;
+    clipBottom = (s32)record->bottom;
+    if (top >= clipBottom || clipTop >= bottom || left >= clipRight || scratch >= right) {
+        return commands;
+    }
+    clipped = left < scratch ? scratch : clipRight < left ? clipRight : left;
+    left = clipped;
+    clipped = top < clipTop ? clipTop : clipBottom < top ? clipBottom : top;
+    top = clipped;
+    clipped = right < scratch ? scratch : clipRight < right ? clipRight : right;
+    right = clipped;
+    clipped = bottom < clipTop ? clipTop : clipBottom < bottom ? clipBottom : bottom;
+    bottom = clipped;
+    gDPFillRectangle(commands++, left, top, right, bottom);
+    return commands;
 }
 
 s32 func_1517FB9C() {

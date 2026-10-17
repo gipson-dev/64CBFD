@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-17:
+[Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
+Install func_1517F9F4's 106-word direct C leaf, signed float clipping and
+SDK fill command, preserving its cursor-home lifetime and all 27 neighbors.
+All 13 final tests pass in 199.893s, including 16 original caller sites.
+No guards/profile/pool/build changes; first whole image equals the normal
+ELF, with only 329 instruction bytes and two size bytes changed. Fresh Game
+61.04%, total 65.81%, zero drift. Tools d52744e first; preserve 1,015
+unrelated mirror hashes / 1,025 paths. Next func_1517FB9C's 633-word texture
+rectangle routine; pulse C remains deferred.
+
+2026-10-17:
 [Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
 Install func_1517F814's 120-word direct C match with original literal binding,
 0x40 frame and actual matrix/private ABI; no instruction guards/profile or
