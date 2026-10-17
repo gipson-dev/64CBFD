@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
+Recover the full 288-word emitter and both packet layouts; six research tests
+pass while asserting the remaining frame/private/padding failures. Not
+installed, 85 words different, no guards or matching credit. Tools 44ac35d
+first; all production inputs/totals and README unchanged. Continue this same
+function's automatic-storage placement and retail register roles.
+
+2026-10-17:
 [Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
 Restore the 90-word/frame-0x28 `func_150F3214` with two multiply guards.
 Seven installed/nine historical checks pass; whole first image exact, no

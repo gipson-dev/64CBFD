@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-17 Owner Burst Emitter Recovery And Private Layout Gap
+
+[Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
+Recover the complete `func_150F2D14` candidate and two packet layouts. Six
+research tests pass; 85 unequal words, frame 0x158 and explicit nonuniform
+padding/private failures keep it uninstalled. Production ELF, inputs and
+matching totals remain unchanged. Tools 44ac35d first; preserve the older
+mirror. README unchanged; continue the same function's automatic-storage fit.
+
 ## 2026-10-17 Actor Scale Timer Restoration And Match
 
 [Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):

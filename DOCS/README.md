@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Owner burst emitter recovery and private layout gap](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
+  full 288-word candidate and six research tests; frame, private state and
+  nonuniform padding still differ. Not installed; production/totals unchanged.
 - [Actor scale timer restoration and match](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
   complete 90-word C with two multiply guards; seven installed/nine historical
   checks and exact first image. Game 61.39%, total 66.12%, zero drift.

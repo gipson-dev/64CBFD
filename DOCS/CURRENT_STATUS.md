@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e033fe7; tools are committed before the consumer pin.
+  checkpoint pins tools 44ac35d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Owner burst emitter **fully recovered as an uninstalled candidate**:
+[Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md).
+`func_150F2D14` emits 288 words, but frame `0x158` versus `0x150` and 85
+unequal words remain. Six research tests pass, including explicit rejection
+checks: nonuniform stack bytes expose nine copied padding differences, and
+private state already diverges at fault cut zero. No guards or production
+inputs change; matching credit is zero. Tools 44ac35d first; preserve all
+1,132 prior mirror hashes / 1,134 paths. Fresh totals remain Game **61.39%**,
+total **66.12%**, zero drift; README unchanged. Continue this same function's
+automatic-storage, packet offsets, register roles and scheduling.
 
 Actor scale/timer **restored and byte-exact with two multiply guards**:
 [Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md).

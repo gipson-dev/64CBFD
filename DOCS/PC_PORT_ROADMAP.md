@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Owner Burst Emitter Recovery And Private Layout Gap - 2026-10-17
+
+[Note1508](WORKING_NOTES/1508-owner-burst-emitter-recovery-and-private-layout-gap-20261017.md):
+
+- [x] Recover all 288 words' semantic behavior and explicit 52-byte payload / 88-byte descriptor layouts without installing the candidate.
+- [x] Pass six research tests (47.767s): 987 uniform-stack cases, 287 reachable words, native32 and rebased protocol checks.
+- [x] Expose the 85-word/frame-0x158 gap, first private fault mismatch and nine nonuniform copied-padding differences; do not claim byte matching or add guards.
+- [x] Preserve every production input, whole ELF/data and earlier checkpoint; freshly confirm unchanged Game 61.39%, total 66.12%, zero drift, and unchanged README.
+- [x] Bank tools 44ac35d first; preserve all 1,132 prior mirror hashes / 1,134 paths.
+- [ ] Continue the same `func_150F2D14`: recover frame 0x150 / packet offsets, then register roles and setup scheduling before full installation qualification.
+- [ ] Keep the gate, both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Scale Timer Restoration And Match - 2026-10-17
 
 [Note1507](WORKING_NOTES/1507-actor-scale-timer-restoration-and-match-20261017.md):
