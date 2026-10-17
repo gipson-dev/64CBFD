@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d698926; tools are committed before the consumer pin.
+  checkpoint pins tools 86254e6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Selector point transform **restored and byte-exact directly from C**:
+[Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md).
+func_150F22D0 emits all43 words, frame0x18, with its preserved retail jump
+table and no new word guards. Ten installed tests and six selected historical
+checks pass. The entire first normal image matches:125 code/one extent/78
+exactly checked metadata bytes; all6,057 bodies and189,088 Game-data bytes
+audited. Fresh Game **61.29%**, total **66.02%**, zero drift. Tools86254e6
+first; preserve1,101 unrelated mirror hashes /1,108 paths. Next: func_150F25A0.
+Both fade lifetime gaps and wider Game remain open.
+
 Fixed-state sine update **restored and byte-exact directly from C**:
 [Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md).
 func_150F23E0 emits all40 retail words, frame0x20, real actor home and delayed
@@ -34,7 +44,7 @@ S0 lifetime, with no new guards. Ten installed tests and three selected
 checkpoint checks pass. The entire first normal image matches:128 code/one
 extent/zero metadata bytes; all6,057 bodies and189,088 Game-data bytes audited.
 Fresh Game **61.27%**, total **66.01%**, zero drift. Toolsd698926 first; preserve
-1,098 unrelated mirror hashes /1,104 dirty paths. Next: func_150F22D0.
+1,098 unrelated mirror hashes /1,104 dirty paths. Its next target is finished in Note1499.
 Both fade lifetime gaps and wider Game remain open.
 
 Sine/phase update **restored and byte-exact with one commutative ADDU guard**:

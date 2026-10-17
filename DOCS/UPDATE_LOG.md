@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Selector Point Transform Direct Restoration And Match
+
+[Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
+Restore func_150F22D0's complete43-word/frame0x18 C with the existing retail
+jump table and no new word guards. Ten installed and six selected historical
+checks pass, including actual matrix helpers and the caller's unchanged
+unsupported-selector stack payload. The complete normal ELF matches its
+first prediction:125 code/one extent/78 exactly checked metadata bytes.
+All6,057 bodies and189,088 Game-data bytes audited. Tools86254e6 first;
+preserve1,101 unrelated mirror hashes /1,108 paths. Game61.29%, total66.02%,
+zero drift. README updates only aggregate rows. Next: func_150F25A0;
+both fade lifetime issues and wider Game remain open.
+
 ## 2026-10-17 Fixed State Sine Update Direct Restoration And Match
 
 [Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):

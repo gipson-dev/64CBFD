@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
+Restore func_150F22D0's43-word C directly with its preserved jump table;
+no new word guards. Exact whole normal image,125 code/one extent/78 checked
+metadata bytes; ten installed and six selected historical checks pass.
+Tools86254e6 first. Game61.29%, total66.02%, zero drift. Preserve1,101
+unrelated mirror hashes /1,108 paths. Continue func_150F25A0; both fade
+lifetime issues and wider Game stay open.
+
+2026-10-17:
 [Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
 Restore func_150F23E0's40-word C directly, with no new guards. Exact whole
 normal image,128 code/one extent/zero metadata bytes; ten installed and three

@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Selector Point Transform Direct Restoration And Match - 2026-10-17
+
+[Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F22D0's43-word/frame0x18 C and byte-selector cases, binding its compiler table to preserved jtbl_800A192C; no new word guards.
+- [x] Pass ten installed tests (41.365s), actual matrix helpers,2,048 selector cases, private caller payload, aliases/faults/native32 and nine independent links.
+- [x] Match the complete first normal ELF:125 code/one extent/78 exactly checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve historical first images and compatibility pins; pass six selected historical checks (164.427s) and both tools-copy checks.
+- [x] Bank tools86254e6 first; preserve1,101 unrelated mirror hashes /1,108 dirty paths.
+- [x] Refresh README aggregate rows only: Game61.29%, total66.02%, zero drift.
+- [ ] Continue func_150F25A0's64-word matrix/point-to-halfword update, checking real private homes and output-pointer reloads.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Fixed State Sine Update Direct Restoration And Match - 2026-10-17
 
 [Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
@@ -10,7 +23,7 @@
 - [x] Preserve earlier first-image/compatibility pins and pass three selected checkpoint checks (53.531s); both tools-copy checks pass.
 - [x] Bank toolsd698926 first; preserve1,098 unrelated mirror hashes /1,104 dirty paths.
 - [x] Refresh README aggregate rows only: Game61.27%, total66.01%, zero drift.
-- [ ] Continue func_150F22D0's43-word selector/table routine and actual func_15143134 interface.
+- [x] Finish func_150F22D0's43-word selector/table routine in Note1499.
 - [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Sine Phase Update Restoration And Match - 2026-10-17

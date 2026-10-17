@@ -6,11 +6,28 @@ f32 func_15144B68(f32);
 void func_151C329C(struct17 *arg0, s32 arg1, s32 arg2);
 void func_150A8050(f32 mtx[4][4], f32 arg1, f32 arg2, f32 arg3);
 extern u8 D_800BE9C0;
+extern f32 D_800A1920[3];
+void func_15143134(f32 *point, f32 *output, u8 *matrix);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/11F780.s. */
 
-s32 func_150F22D0() {
-    return 0;
+/* Transform the selector's indexed actor record into the output point. */
+s32 func_150F22D0(struct17 *output, u8 *actor, u8 selector) {
+    s32 index;
+
+    switch (selector) {
+        case 3: index = 0x29; break;
+        case 4: index = 0x2D; break;
+        case 5: index = 0x31; break;
+        case 6: index = 0x35; break;
+        case 7: index = 0x39; break;
+        case 8: index = 0x3D; break;
+        default: return 0;
+    }
+    func_15143134(D_800A1920, (f32 *)output,
+                 *(u8 **)(actor + 0x1D4) + (index << 6));
+    return 1;
 }
 
 s32 func_150F237C(s32 arg0, s32 arg1) {

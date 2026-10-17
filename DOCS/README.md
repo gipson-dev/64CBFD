@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Selector point transform direct restoration and match](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
+  complete43-word C with preserved retail table and no new word guards;
+  ten installed and six selected historical checks; Game61.29%, total66.02%.
 - [Fixed state sine update direct restoration and match](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
   complete40-word C with no new guards, ten installed and three selected
   checkpoint checks; Game61.27%, total66.01%, zero drift.

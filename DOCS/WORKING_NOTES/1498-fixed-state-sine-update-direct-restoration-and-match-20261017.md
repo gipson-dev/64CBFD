@@ -144,10 +144,9 @@ nodes /2972 existing files before closing.
 - [x] Preserve fixture history; pass three affected checks and both tools-copy
   checks; bank toolsd698926 before the consumer source/docs/pin checkpoint.
 - [x] Refresh official progress and README aggregate rows only.
-- [ ] Continue **func_150F22D0**, same owner,43 words, VA150F22D0..150F237C,
-  ROM11F780..11F82C. Recover its byte selector3..8, six-entry jump table,
-  actor0x1D4 indexed record source and func_15143134 interface. The data owner is
-  **asm/data/2463E0.rodata.s**, containing D_800A1920 and jtbl_800A192C.
+- [x] Finish **func_150F22D0**, same owner,43 words, in
+  [Note1499](1499-selector-point-transform-direct-restoration-and-match-20261017.md).
+  Its full C switch matches with preserved retail-table binding and no new word guards.
 - [ ] Keep both fade S0/private-lifetime gaps and wider Game matching open.
   Handwritten func_150A76F0 remains in the separate assembly workstream.
 
