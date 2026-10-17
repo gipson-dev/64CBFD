@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Actor Record Gate Register Reuse And Reload Control
+
+[Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
+Observe common-image lookup and actual GPR2 reuse for both opening gate nodes.
+Four fresh tests pass (20.278s), with41 provenance/five lifecycle controls.
+Reject a139-word diagnostic reload control:134 word differences, six saved
+GPRs and fault cut0 private mismatch. Tools8a5bfb6 first; preserve1,122 mirror
+hashes /1,124 paths. Production/README/totals unchanged; no matching credit.
+Continue the same actor-address rematerialization/saved-register gap.
+
 ## 2026-10-17 Actor Record Gate Expression Image Sharing
 
 [Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):

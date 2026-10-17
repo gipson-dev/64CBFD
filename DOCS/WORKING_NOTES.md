@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
+Observe common-image lookup and actual GPR2 reuse; reject the139-word reload
+control at134 word differences and private fault cut0. Four fresh tests pass.
+Tools8a5bfb6 first; preserve1,122 mirror hashes /1,124 paths. Production/README
+unchanged, no credit; continue the same actor-address/saved-register gap.
+
+2026-10-17:
 [Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
 Two distinct opening-load nodes acquire one image before global passes.
 Three fresh tests,33 provenance/five lifecycle controls and complete normal

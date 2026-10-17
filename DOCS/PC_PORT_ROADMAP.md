@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Record Gate Register Reuse And Reload Control - 2026-10-17
+
+[Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
+
+- [x] Observe common-image lookup and actual one-memory-load/two-register-read emission using GPR2, preserving the complete normal code/functions/relocations/pools.
+- [x] Reject the139-word diagnostic reload control:134 word differences, six saved GPRs and private fault cut0; do not claim a recovered volatile declaration.
+- [x] Pass four fresh tests (20.278s),41 provenance/five lifecycle controls,960 core/400 sparse/12 actual-helper cases and both tools-copy checks; bank tools8a5bfb6 first.
+- [x] Preserve1,122 pre-existing mirror hashes /1,124 paths, all production bytes/guards/totals and root README; no matching credit.
+- [ ] Continue the same func_150F2A60 block752 actor-address rematerialization and saved-register pressure; require all139 words/private/linked-image gates before installation.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Record Gate Expression Image Sharing - 2026-10-17
 
 [Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):

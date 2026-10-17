@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor record gate register reuse and reload control](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md):
+  actual GPR2 reuse observed;139-word reload-only control still fails words
+  and private state; four fresh tests, no installation or matching credit.
 - [Actor record gate expression image sharing](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
   two distinct opening loads acquire one image before global passes; three
   fresh tests and unchanged normal object, no installation or matching credit.

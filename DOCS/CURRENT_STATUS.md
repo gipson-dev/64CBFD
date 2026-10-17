@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f983786; tools are committed before the consumer pin.
+  checkpoint pins tools 8a5bfb6; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor-record gate **actual register reuse observed; reload-only control rejected**:
+[Note1505](WORKING_NOTES/1505-actor-record-gate-register-reuse-and-reload-control-20261017.md).
+Both gate-load nodes share one lookup result; emission materializes one memory
+load into GPR2 and uses it for both predicates. Four fresh tests pass, with41
+provenance/five lifecycle controls. A diagnostic reload control emits139 words
+but fails134 words and private fault cut0; it is not a recovered qualifier or
+installable fix. Production, totals and README unchanged. Tools8a5bfb6 first;
+preserve1,122 mirror hashes /1,124 paths. Continue block752 actor-address
+rematerialization and saved-register pressure in the same target; Game stays open.
 
 Actor-record gate **shared expression image observed before global passes**:
 [Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md).
