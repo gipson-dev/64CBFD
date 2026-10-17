@@ -17092,3 +17092,13 @@ generated_49D30,func_1501DAAC,0x328,0x95080000,0x954A0000,R_MIPS_LO16:D_800C3C8E
 generated_49D30,func_1501DAAC,0x32C,0x0013C880,0x00134880,-,-,Normalize certified event scan opening schedule and closed scratch roles,,,false
 generated_49D30,func_1501DAAC,0x334,0x00390821,0x00290821,-,-,Normalize certified event scan opening schedule and closed scratch roles,,,false
 generated_49D30,func_1501DAAC,0x338,0xAC280000,0xAC2A0000,R_MIPS_LO16:D_800C35B0,R_MIPS_LO16:D_800C35B0,Normalize certified event scan opening schedule and closed scratch roles,,,false
+generated_FC5F0,func_150CFC60,0x14,0xC4800074,0xC4820074,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x20,0xC4820078,0x44812000,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x24,0x44812000,0xC48C0078,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x30,0xC44C0000,0xC4400000,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x34,0x460C0482,0x46001482,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x3C,0x46022182,0x460C2182,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x44,0x460C3282,0x46003282,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x4C,0x460C5202,0x46005202,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x6C,0x460A1482,0x460A6482,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CFC60,0x74,0x46009200,0x46121200,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false

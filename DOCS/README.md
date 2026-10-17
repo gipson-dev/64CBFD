@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Transition child motion guarded match](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
+  Complete 48-word semantic callback, ten narrow guards, exact first full
+  image and ten installed tests. Fresh Game 61.12%; adjacent burst still open.
 - [Transition burst frame recovery and native qualification](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
   Correct 251-word / frame-0x108 shape, actual frontend home captures and
   bounded native/guest evidence. Still 91 word differences, no installation.

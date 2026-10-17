@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern f32 D_800A0878, D_800A087C, D_800BE9A4;
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
 extern s32 D_80082FA0;
 /* The view byte occupies the first byte of a word-aligned descriptor cell. */
 typedef union {
@@ -143,8 +146,23 @@ s32 func_150CFC38(f32 arg0) {
     func_1515572C(&value, 0x52);
 }
 
-s32 func_150CFC60() {
-    return 0;
+/* Advance the child and damp its velocity after crossing the floor. */
+s32 func_150CFC60(u8 *record) {
+    f32 velocityY = *(f32 *)(record + 0x74);
+    f32 acceleration = *(f32 *)(record + 0x78);
+    f32 *motion;
+
+    *(f32 *)(record + 0x10) += *(f32 *)(record + 0x70) * D_800BE9A4;
+    *(f32 *)(record + 0x14) += velocityY * D_800BE9A4 + 0.5f * acceleration * D_800BE9A4 * D_800BE9A4;
+    *(f32 *)(record + 0x74) = velocityY + acceleration * D_800BE9A4;
+    motion = (f32 *)(record + 0x70);
+    if (*(f32 *)(record + 0x7C) < *(f32 *)(record + 0x14)) {
+        *(f32 *)(record + 0x14) = motion[3];
+        velocityY = fabsf(motion[1]);
+        motion[0] *= D_800A0878;
+        motion[1] = velocityY * D_800A087C;
+    }
+    return 1;
 }
 
 u8 *func_150CFD20(u8 *arg0) {

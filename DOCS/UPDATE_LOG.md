@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-17 Transition Child Motion Guarded Match
+
+[Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
+Replace func_150CFC60's zero-return stub with its complete 48-word semantic C
+callback and ten explicit expected-word guards. The first full-image gate
+passes with 142 changed bytes only; all protected data and neighbors remain
+unchanged. Ten installed tests pass in 29.536s, including aliases, original
+caller, independent rebases, fault prefixes and corruption controls. Native
+optimized linker-alias and raw double-NaN payload limits remain explicit.
+Fresh Game 61.12%, total 65.88%, zero drift. func_150CF800 stays uninstalled
+at 91 differences; the bounded advisory supplied no new supported edit.
+Eleven predecessor behavior/compiler checks also pass in 80.770s. Bank tools
+36eccea first; preserve 1,058 unrelated mirror hashes / 1,065 final paths.
+
 ## 2026-10-17 Transition Burst Frame Recovery And Native Qualification
 
 [Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):

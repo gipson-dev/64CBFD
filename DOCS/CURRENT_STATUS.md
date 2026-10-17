@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5a038ed; tools are committed before the consumer pin.
+  checkpoint pins tools 36eccea; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Transition child motion **installed, 48 words exact with ten narrow guards**:
+[Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md).
+func_150CFC60 now has its one-pointer kind-13 interface, live-clock quadratic
+motion, strict floor comparison and velocity damping. Ten installed tests
+pass in 29.536s; the normal ELF equals the first full prediction, with only
+141 code bytes and one size byte changed, no metadata exclusions, all 24
+neighbors and 189,088 Game-data bytes unchanged. Fresh Game **2,951/4,828
+(61.12%)**, total **3,624/5,501 (65.88%)**, different **1,877**, zero drift.
+Native linker aliases pass at O0 only; optimized alias and double-NaN limits
+are explicit. The adjacent func_150CF800 remains uninstalled at 91 differences.
+Continue its object/register lifetimes; wider Game matching remains open.
+Eleven predecessor behavior/compiler checks also pass (80.770s); current-input
+corruption checks supersede two historical literal-baseline tests. Tools
+36eccea is banked first; preserve 1,058 unrelated mirror hashes / 1,065 paths.
 
 Transition completion burst **retail frame recovered, still uninstalled**:
 [Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md).

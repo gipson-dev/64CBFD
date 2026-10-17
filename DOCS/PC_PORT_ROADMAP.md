@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Transition Child Motion Guarded Match - 2026-10-17
+
+[Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
+
+- [x] Restore func_150CFC60's complete 48-word kind-13 C callback, live-clock motion, strict floor comparison and damping; normalize ten explicitly guarded FP-role/setup/operand-order words.
+- [x] Pass ten installed tests covering aliases/FP edges, actual caller window, nine independent links, fault prefixes, all 193 protected inputs and effective corruption controls.
+- [x] Verify the normal ELF equals the first full prediction: 141 code bytes plus one size byte only, no metadata exclusions, all 24 neighbors and 189,088 Game-data bytes unchanged.
+- [x] Refresh README aggregate rows only: Game 61.12%, total 65.88%, zero drift. Retain native O2 linker-alias and raw double-NaN payload limits explicitly.
+- [x] Pass eleven predecessor behavior/compiler checks, tools-check and both tools-copy padder checks; bank tools 36eccea first and preserve 1,058 unrelated mirror hashes / 1,065 paths.
+- [ ] Continue func_150CF800's real object/register lifetimes and remaining 91 words before installation; the one bounded advisory provided no new supported edit.
+- [ ] Keep wider Game/fade/pulse/renderer and gameplay acceptance open; no host or frozen Release action.
+
 ## Transition Burst Frame Recovery And Native Qualification - 2026-10-17
 
 [Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):

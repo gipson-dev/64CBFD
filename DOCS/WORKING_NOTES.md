@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md):
+Install func_150CFC60's complete 48-word motion/bounce callback with ten narrow
+guards, exact first full-image prediction and unchanged data/neighbors.
+Ten installed tests pass; fresh Game 61.12%, total 65.88%, zero drift.
+Keep native alias/NaN boundaries explicit and func_150CF800's 91-word gap open.
+
+2026-10-17:
 [Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
 Recover func_150CF800's 251-word / frame-0x108 shape, with actual compiler
 home captures and bounded native/guest/caller qualification. The 91 remaining
