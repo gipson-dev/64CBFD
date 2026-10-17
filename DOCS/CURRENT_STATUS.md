@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 40a1e62; tools are committed before the consumer pin.
+  checkpoint pins tools f983786; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor-record gate **shared expression image observed before global passes**:
+[Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md).
+Two distinct opening-load nodes acquire one image during input construction,
+before patchvectors/copypropagate/codemotion. A fresh normal capture preserves
+the complete object and all child/driver exits; three tests,33 provenance
+controls and five lifecycle controls pass. No production/guard/CSV/README
+change or matching credit. Toolsf983786 first; preserve1,120 mirror hashes
+/1,122 dirty paths. Continue the same target's expression-image lookup and
+later reuse decision, plus actor-address rematerialization; wider Game stays open.
 
 Actor-record gate **compiler stages qualified; prolog-only control, no install**:
 [Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md).

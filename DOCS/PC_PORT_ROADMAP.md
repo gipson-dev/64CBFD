@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Record Gate Expression Image Sharing - 2026-10-17
+
+[Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
+
+- [x] Observe two distinct opening-load nodes acquiring one image before patchvectors/copypropagate/codemotion, preserving the complete normal compiler object.
+- [x] Pass three fresh tests (7.394s),33 provenance controls, five lifecycle controls and both tools-copy checks; bank toolsf983786 first.
+- [x] Preserve1,120 pre-existing mirror hashes /1,122 dirty paths, all production bytes/guards/totals and root README; no matching credit.
+- [ ] Continue the same func_150F2A60 at expression-image lookup and later reuse, then recover actor-address rematerialization and full139-word/private behavior before installation.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Record Gate Compiler Stages And Prolog Control - 2026-10-17
 
 [Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):

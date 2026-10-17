@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Actor Record Gate Expression Image Sharing
+
+[Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
+Observe two distinct func_150F2A60 opening-load nodes acquiring one expression
+image before the global passes. Three fresh tests pass (7.394s), with33
+provenance/five lifecycle controls, unchanged complete normal object and all
+compiler exits0. Toolsf983786 first; preserve1,120 mirror hashes /1,122 paths.
+Production, totals and README unchanged. Continue the same expression-image
+lookup/reuse boundary; no function installed or new matching credit.
+
 ## 2026-10-17 Actor Record Gate Compiler Stages And Prolog Control
 
 [Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):

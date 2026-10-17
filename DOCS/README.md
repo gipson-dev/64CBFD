@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor record gate expression image sharing](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
+  two distinct opening loads acquire one image before global passes; three
+  fresh tests and unchanged normal object, no installation or matching credit.
 - [Actor record gate compiler stages and prolog control](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
   full-object-preserving compiler captures and a qualified eight-word prolog
   control; full routine still unmatched, production and totals unchanged.

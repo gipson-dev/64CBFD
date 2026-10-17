@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note1504](WORKING_NOTES/1504-actor-record-gate-expression-image-sharing-20261017.md):
+Two distinct opening-load nodes acquire one image before global passes.
+Three fresh tests,33 provenance/five lifecycle controls and complete normal
+identity pass. Toolsf983786 first; preserve1,120 mirror hashes /1,122 paths.
+No production/README change or matching credit; continue the same image/reuse gap.
+
+2026-10-17:
 [Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
 Observe func_150F2A60's prepared optimizer stages with unchanged full objects.
 The remaining-count control recovers eight opening words and seven early fault
