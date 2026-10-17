@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Transition burst frame recovery and native qualification](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
+  Correct 251-word / frame-0x108 shape, actual frontend home captures and
+  bounded native/guest evidence. Still 91 word differences, no installation.
 - [Transition completion burst candidate and frame gap](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
   Complete 251-word typed candidate, correct callback/factory ABI and exact
   literal pool; 93 word differences and the larger frame keep it uninstalled.

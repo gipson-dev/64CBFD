@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
+Recover func_150CF800's 251-word / frame-0x108 shape, with actual compiler
+home captures and bounded native/guest/caller qualification. The 91 remaining
+words and object/register ownership still reject installation. No guards,
+production/README changes or matching credit. Wider Game stays open.
+Seven tests pass in 53.736s and six predecessor checks in 24.634s. Tools
+5a038ed first; preserve 1,056 mirror hashes / 1,059 paths. Fresh Game 61.10%,
+total 65.86%, zero drift; continue real object/register ownership.
+
+2026-10-17:
 [Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
 Recover func_150CF800's full typed burst, byte interfaces, 88/16-byte objects
 and exact six-word literal pool. Candidate remains uninstalled at 251 words,

@@ -2,6 +2,11 @@
 
 Date: 2026-10-17
 
+Follow-up: [Note 1485](1485-transition-burst-frame-recovery-and-native-qualification-20261017.md)
+recovers the 251-word / frame-0x108 shape and bounded native qualification.
+Its 91 remaining word differences still reject installation. The measurements
+below describe this preserved earlier checkpoint, not the newer candidate.
+
 Continue consumer **6a0e4173**, tools **791eb66**, after the installed
 [fixed transition constructor](1483-fixed-transition-constructor-direct-match-20261017.md).
 Recover **func_150CF800** as a complete typed C experiment, but **do not install**
@@ -135,8 +140,9 @@ make -C conker match-progress NON_MATCHING=1
 - [x] Audit the complete retail body, correct byte/float widths and callback ABI.
 - [x] Recover complete descriptor/payload objects and a reproducible C candidate.
 - [x] Verify the retail literal pool, 24 preserved neighbors and bounded public behavior.
-- [ ] Recover all **251 words and frame 0x108**, with the real register and local-object lifetimes.
-- [ ] Close native, relocation, fault/private, caller and first-image gates before installation.
+- [x] Recover the **251-word / frame-0x108 shape** and bounded native behavior in Note 1485.
+- [ ] Match the remaining 91 words and recover real register/local-object lifetimes.
+- [ ] Close relocation, fault/private, caller and first-image gates before installation; bounded native success is not an installation certificate.
 - [ ] Keep wider Game matching, deferred fade/pulse/renderer work and gameplay open.
 
 Production remains the installed Note 1483 baseline: owner SHA-256

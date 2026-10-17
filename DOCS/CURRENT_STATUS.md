@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f36356e; tools are committed before the consumer pin.
+  checkpoint pins tools 5a038ed; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Transition completion burst **retail frame recovered, still uninstalled**:
+[Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md).
+func_150CF800 now has **251 words / frame 0x108**, with **91 word differences**.
+Actual compiler captures show automatic homes reduced from 144 to 128 bytes.
+Extended guest and native32 checks include the actual factory/copies and
+demonstrate why native-only byte-width checks are insufficient. Descriptor/
+payload homes and saved-register ownership still differ; no production,
+README or matching credit. Continue those lifetimes and remaining private gates.
+Seven tests pass in 53.736s plus six predecessor checks in 24.634s. Native
+O2/O0 each cover 1,728 cases; the guest covers 2,688 three-way cases. Tools
+5a038ed first; preserve 1,056 mirror hashes / 1,059 paths. Fresh Game 61.10%,
+total 65.86%, zero drift. Root README and production source/ELF stay unchanged.
 
 Transition completion burst **recovered as a complete uninstalled candidate**:
 [Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md).

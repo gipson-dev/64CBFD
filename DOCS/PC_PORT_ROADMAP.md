@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Transition Burst Frame Recovery And Native Qualification - 2026-10-17
+
+[Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
+
+- [x] Recover func_150CF800's 251-word length and frame 0x108 using real temporary lifetimes and a byte flag, with no guards, filler or profile/build changes.
+- [x] Capture automatic homes shrinking from 144 to 128 bytes in actual owned compiler children; verify unchanged normal text/functions/bindings/pools and probe cleanup.
+- [x] Qualify 2,688 three-way guest cases, native32 O2/O0 finite cases, the original callback window and effective source/corruption controls, including little-endian native limits.
+- [x] Pass seven final tests in 53.736s and six predecessor checks in 24.634s; bank tools 5a038ed first, preserve all 1,056 old mirror hashes / 1,059 final paths, and remeasure unchanged Game 61.10% / total 65.86%.
+- [ ] Recover retail's SP+0xAC/SP+0x9C objects and parent/output saved-register ownership; close the remaining 91 words and relocation/private/fault/caller/image gates before installation.
+- [ ] Keep wider Game, deferred fade/pulse/renderer and gameplay work open. Production/README and matching credit stay unchanged; no host/frozen Release action.
+
 ## Transition Completion Burst Candidate And Frame Gap - 2026-10-17
 
 [Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
@@ -8,8 +19,8 @@
 - [x] Recover a reproducible uninstalled C candidate, exact six-word retail literal pool and unchanged 24 raw/padded owner neighbors.
 - [x] Qualify bounded public behavior with actual factory, SDK copy, tag leaves and the eleven-word callback window; retain explicit scripted-helper and padding limits.
 - [x] Pass six final tests in 21.605s, including 2,304 public cases, 128 original caller cases and effective corruption controls; bank tools f36356e first and preserve all 1,053 old mirror hashes / 1,056 final paths.
-- [ ] Close the remaining 93 word differences and frame 0x118 versus 0x108, including register/object lifetimes and branch/reload schedules.
-- [ ] Complete native, rebasing, private/fault, caller and first-image gates before installation. No credit or production/README change is claimed for this candidate.
+- [x] Recover the 251-word / frame-0x108 shape and bounded native qualification in Note 1485; 91 word differences remain.
+- [ ] Complete the remaining register/object, rebasing, private/fault, caller and first-image gates before installation. No credit or production/README change is claimed for this candidate.
 - [ ] Keep broader Game matching, deferred fade/pulse/renderer work and gameplay open; no host/frozen Release action.
 
 ## Fixed Transition Constructor Direct Match - 2026-10-17

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Transition Burst Frame Recovery And Native Qualification
+
+[Note 1485](WORKING_NOTES/1485-transition-burst-frame-recovery-and-native-qualification-20261017.md):
+Recover func_150CF800's full 251-word / frame-0x108 shape with real temporary
+lifetimes, byte flag and no new guards. Actual compiler captures establish
+144-to-128-byte frontend homes. Extended guest, native32 and caller checks
+include effective endian-limit controls. Still 91 word differences and wrong
+object/register ownership; no production, README or matching credit.
+Seven tests pass in 53.736s plus six predecessor checks in 24.634s. Tools
+5a038ed first; preserve 1,056 mirror hashes / 1,059 paths. Fresh Game 61.10%,
+total 65.86%, zero drift; wider Game matching remains open.
+
 ## 2026-10-17 Transition Completion Burst Candidate And Frame Gap
 
 [Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
