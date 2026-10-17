@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Dual Fade Native Caller-Save Selection
+
+[Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
+Explain the remaining func_150D01A0 allocation using owned native return bits,
+real compare operands/flags and final colors: caller cost2 beats first-use S0
+cost4. Three tests (20.913s), 162 effective controls and an opposite S0-positive
+control pass. Tools59d8398 first; preserve 1,080 mirror hashes / 1,082 paths.
+No candidate/production/README changes or credit; Game61.16%, total65.92%,
+zero drift. Recover source topology or original profile evidence next.
+
 ## 2026-10-17 Dual Fade Argument Home And Allocation Trace
 
 [Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):

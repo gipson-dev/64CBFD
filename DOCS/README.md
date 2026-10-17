@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Dual fade native caller-save selection](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
+  Actual allocator costs, compare flags, opposite S0-positive control and
+  three tests explain the still-uninstalled candidate's T1 selection.
 - [Dual fade argument home and allocation trace](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
   Qualified SP+0x30 home and actual copied-word recovery, five owned compiler
   traces and ten tests. Still uninstalled with S0/private/full-slot differences.

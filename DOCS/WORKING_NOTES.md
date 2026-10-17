@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
+Native func_150D01A0 caller-save cost2 beats S0 first-use cost4, with actual
+comparison flags, final colors and opposite positive control. Three tests /
+162 effective negatives pass; tools59d8398 first. Still uninstalled68/69 and
+61 full-slot differences, no guards/credit; production/README unchanged.
+Preserve all 1,080 mirror hashes / 1,082 paths. Recover source topology or
+original profile evidence next, then private/fault/image gates.
+
+2026-10-17:
 [Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
 Qualified func_150D01A0 argument-home recovery, actual text payload word8,
 five owned compiler traces and ten tests. Still 68/69 words with 61 full-slot

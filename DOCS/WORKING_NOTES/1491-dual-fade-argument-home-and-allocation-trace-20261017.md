@@ -148,10 +148,12 @@ Debugger **181/181** stay exact. Root README is unchanged, with no narrative.
 - [x] Recover and qualify the real record argument home without new storage.
 - [x] Scope allocation identities by procedure and certify the partial ABI win.
 - [x] Bank the candidate/tools/handoff without guards or matching credit.
-- [ ] Investigate old weight's caller-save versus callee-save decision after
-  color14 is no longer forbidden. Inspect the live-range adjustment/selection
-  boundary with a fingerprint-locked owned probe; preserve all integer records
-  and do not infer suppressed numeric costs or repeat the rejected source sweep.
+- [x] Investigate old weight's caller-save versus callee-save decision after
+  color14 is no longer forbidden in [Note1492](1492-dual-fade-native-caller-save-selection-20261017.md).
+  Raw native costs/compare operands, actual flags and final colors establish
+  caller cost2 versus S0 first-use cost4, not suppressed diagnostic numbers.
+- [ ] Recover the source block/live-unit topology or establish the supported
+  original compiler-profile cause of retail's different S0 selection.
 - [ ] Recover S0, RA and state homes, close the full private/helper/fault gates
   and freeze a complete linked-image prediction before installation. The wider
   Game goal remains open. No host-port or frozen Release action.

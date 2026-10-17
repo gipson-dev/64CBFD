@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0a0712a; tools are committed before the consumer pin.
+  checkpoint pins tools 59d8398; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Dual fade **native caller-save decision explained, still uninstalled**:
+[Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md).
+Two owned compiler traces measure old-weight caller cost2 versus first-use
+S0 cost4 and observe the actual rejecting comparison flags; the normal-record
+control positively selects S0. Three tests pass (20.913s), with 162 effective
+event controls. No candidate or production change, guards or credit; the
+68/69-word, 61-full-slot-difference gap remains. Tools 59d8398 first; preserve
+all 1,080 mirror hashes / 1,082 paths. Fresh Game61.16%, total65.92%, zero
+drift. Next: recover block/live-unit topology or prove an original profile
+difference, then S0/RA/state/private/fault/image gates. Wider Game stays open.
 
 Dual fade **argument home recovered, S0/private gaps still reject installation**:
 [Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md).

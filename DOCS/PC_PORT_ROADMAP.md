@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Dual Fade Native Caller-Save Selection - 2026-10-17
+
+[Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
+
+- [x] Observe old-weight native caller cost2 versus S0 first-use cost4, actual comparison flags and final T1 selection; positively observe the opposite S0 selection for the normal record.
+- [x] Pass three tests (20.913s), 162 effective event controls, full unchanged code inventories and both tools-copy shared checks; bank tools 59d8398 first and preserve all 1,080 mirror hashes / 1,082 paths.
+- [x] Remeasure unchanged Game61.16%, total65.92%, zero drift. No candidate/production/README changes, guards or matching credit; still 68/69 words with 61 full-slot differences.
+- [ ] Recover source block/live-unit topology or prove an original compiler-profile difference explaining retail S0; then close S0/RA/state/private/helper/fault/image gates before installation.
+- [ ] Continue broader Game matching; no host or frozen Release action.
+
 ## Dual Fade Argument Home And Allocation Trace - 2026-10-17
 
 [Note 1491](WORKING_NOTES/1491-dual-fade-argument-home-and-allocation-trace-20261017.md):
@@ -8,7 +18,8 @@
 - [x] Recover the real SP+0x30 record home in a 68-word/frame0x30 candidate without new storage; close actual text payload word8 and qualify adversarial reload controls.
 - [x] Pass ten tests (66.689s), full public/native/caller/rebase checks, capture/input corruption controls and four negative source forms; keep the 61-word full-slot/private gap visible.
 - [x] Bank tools 0a0712a first, preserving all 1,078 initial mirror hashes / 1,080 paths. Production/README unchanged; fresh Game 61.16%, total 65.92%, zero drift.
-- [ ] Inspect old-weight caller-save/callee-save selection with color14 no longer forbidden; recover S0, RA and state homes, then full private/helper/fault/image gates before installation.
+- [x] Inspect old-weight caller-save/callee-save selection with color14 no longer forbidden in Note1492: actual caller cost2 beats S0 first-use cost4, with fired compare flags and final-color evidence.
+- [ ] Recover the source/profile cause of retail's different selection, S0, RA and state homes, then full private/helper/fault/image gates before installation.
 - [ ] Continue broader Game matching; no host or frozen Release action.
 
 ## Dual Buffer Fade Candidate And Private Payload Gap - 2026-10-17
