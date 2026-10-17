@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence Record Setup Recovery And Frame Boundary - 2026-10-16
+
+[Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
+
+- [x] Recover func_1501D348's complete five-word interface, typed halfword header/full-word descriptors/64-byte runtime records, allocation/publication order, descriptor skip and live provider boundaries.
+- [x] Pass five research tests in 100.001s: 484 two-way guest cases at two stack phases, 60 native32 O2/O0/UBSan cases each, eight effective controls, all 56 raw neighbors and all 136 unchanged/fail-closed inputs.
+- [x] Bank tools 332b6ba before the consumer pin; validate both copies and tools-check, preserve all 957 initial mirror hashes / 962 paths. Keep production source/guards/image/CSVs/root README unchanged; no matching credit.
+- [ ] Fit this same candidate's 471 words / frame 0xA8 / 405 differences to retail 473 / 0x78. The save set/offsets already match; private bundle/runtime/cursor homes remain open. Do not use guards to repair that gap or repeat the five rejected source screens.
+- [ ] Qualify the eventual match's caller/helper, private/fault/rebase and complete-image boundaries before installation; then rebuild, audit and measure fresh progress.
+- [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
+
 ## Sequence State Reset Installed Guarded Match - 2026-10-16
 
 [Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
@@ -9,7 +20,7 @@
 - [x] Pass 640 three-way guest cases, 128 real-helper cases, 288 native32 O2/O0/UBSan cases each, eight effective controls, 119 fired fault prefixes and independent carry rebases. Verify the full 33-word caller in 144 runs and the 473-word original other caller with 24 actual call/spill/reload cuts.
 - [x] Reproduce the entire first 651-byte ELF prediction after 695 compiler / 687 padder invocations: 374 code, two extent and 275 exactly constrained metadata bytes, zero exclusions. Protect 136 inputs and 189,088 data bytes / 720 owners; all 24 final tests pass in 170.864s.
 - [x] Measure fresh Game 2,939/4,828 (60.87%), total 3,612/5,501 (65.66%), different 1,889, zero drift; conversion unchanged. Bank tools b7775f4 first, preserve 946 other mirror hashes / 957 paths, update root README aggregate rows only.
-- [ ] Recover next func_1501D348: 473 words, frame 0x78, still a zero-return resource/record-setup stub in the same owner. Preserve the reset, maximum scan, loader and other functions.
+- [x] Recover the complete func_1501D348 research candidate in Note 1465, preserving the reset, maximum scan, loader and all 56 raw neighbors. Production remains stubbed; frame/private-home fitting, matching and installation stay open in that note.
 - [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
 
 ## Priority Record Maximum Installed Guarded Match - 2026-10-16

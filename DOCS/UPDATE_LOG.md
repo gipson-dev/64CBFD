@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Sequence Record Setup Recovery And Frame Boundary
+
+[Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
+Recover the complete typed func_1501D348 candidate with ordered allocation,
+descriptor publication and live provider semantics. Five tests pass in
+100.001s: 484 two-way guest cases, 60 native32 O2/O0/UBSan cases each, eight effective
+controls, 56 raw neighbors and 136 frozen inputs. Still 471 words / frame
+0xA8 / 405 differences versus retail 473 / 0x78; saves match, private homes
+do not. Tools 332b6ba banks research first, preserving 957 mirror hashes /
+962 paths. No production source, guards, image, CSV, root README or matching
+credit changes. Next fit this same function's frame/homes. No push,
+host/Release action or full gameplay claim.
+
 ## 2026-10-16 Sequence State Reset Installed Guarded Match
 
 [Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):

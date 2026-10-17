@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b7775f4; tools are committed before the consumer pin.
+  checkpoint pins tools 332b6ba; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Sequence record setup **recovered and publicly qualified, not installed**:
+[Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md).
+func_1501D348 has a complete typed five-word C candidate and five tests
+passing in 100.001s: 484 two-way guest cases, 60 native32 O2/O0/UBSan cases
+each and eight effective controls. It remains **471 words / frame 0xA8 / 405 differences**
+versus retail 473 / 0x78. S0-S5/RA saves already match; private homes do not.
+Preserve 56 raw neighbors and all 136 production inputs. Tools **332b6ba**
+banks research only, preserving all 957 initial mirror hashes / 962 paths.
+No source/guard/image/CSV/README change or matching credit; the last installed
+counts remain Note 1464 below. Next: fit this same function's frame/homes,
+then qualify the eventual match and installation. Gameplay remains open.
 
 Sequence state reset **installed, all 100 words byte-exact with 13 guards**:
 [Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md).

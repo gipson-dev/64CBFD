@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1465](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
+Recover the complete typed func_1501D348 without installation: 471 words /
+frame 0xA8 / 405 differences versus retail 473 / 0x78. All five public
+qualification tests pass in 100.001s, including 484 two-way guest cases,
+60 native32 O2/O0/UBSan cases each and eight effective controls. Preserve 56 raw neighbors,
+136 production inputs and all 957 initial mirror hashes / 962 paths. Tools
+332b6ba banks first; no source/guard/image/CSV/README changes or matching
+credit. Next fit this same function's private homes; save set/offsets match.
+
+2026-10-16:
 [Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
 Install func_1501D044's ordered slot/shared-state reset, captured limit and
 post-helper clears, with its proper caller prototype and 13 guarded opening/

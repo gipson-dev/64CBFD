@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence record setup recovery and frame boundary](WORKING_NOTES/1465-sequence-record-setup-recovery-and-frame-boundary-20261016.md):
+  Complete func_1501D348 C passes five public qualification tests but remains
+  471 words / frame 0xA8 / 405 differences versus retail 473 / 0x78. Research
+  only, no production changes or credit; next fit this same function's homes.
 - [Sequence state reset installed guarded match](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
   Restore all 100 words using semantic C, a proper caller prototype and 13
   bounded guards. Twenty-four final tests and the entire first 651-byte ELF
