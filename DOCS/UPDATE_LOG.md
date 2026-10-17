@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Dual Buffer Fade Candidate And Private Payload Gap
+
+[Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
+Recover func_150D01A0's complete semantic C and qualify its public behavior,
+aliases, actual caller, native and rebased code. Eight tests pass (34.140s).
+Actual color/text wrappers expose different sixteen-word copied payloads;
+the 65/69-word S0/private-home gap rejects installation and matching credit.
+Six reproducible screens include a falsified bounded advisory suggestion.
+Tools 7960b37 first; preserve all 1,076 mirror hashes / 1,078 paths. Fresh
+Game 61.16%, total 65.92%, zero drift; production and README unchanged.
+Next: inspect owned CFE/UOPT formal/home constraints; wider Game stays open.
+
 ## 2026-10-17 Link Event Callback Match
 
 [Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):

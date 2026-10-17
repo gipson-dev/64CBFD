@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
+Complete public-qualified func_150D01A0 candidate, eight tests, actual caller
+and a positive actual variadic-payload counterexample. Still 65/69 words and
+wrong S0/private homes, so uninstalled with zero guards/credit. Tools 7960b37
+first; preserve all 1,076 mirror hashes / 1,078 paths. Inspect owned CFE/UOPT
+formal/home constraints next; production/README unchanged, broader Game open.
+
+2026-10-17:
 [Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
 Install func_150CF484's complete 43-word removal/link-swap callback with one
 commutative branch guard. Exact first full image, 119 changed bytes, unchanged

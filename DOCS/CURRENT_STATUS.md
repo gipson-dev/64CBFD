@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fed3c57; tools are committed before the consumer pin.
+  checkpoint pins tools 7960b37; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Dual-buffer fade **candidate qualified, still uninstalled**:
+[Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md).
+func_150D01A0 has a complete one-pointer C candidate, signed byte countdown,
+wrapped clock subtraction and live buffer-index behavior. Eight tests pass
+in 34.140s, including 9,216 public cases and the full actual caller. It emits
+65 of retail's 69 words/frame0x30, with S0=record instead of previousWeight.
+The actual 42-word text wrapper positively exposes different sixteen-word
+copied payloads. No installation, guards or matching credit. One bounded
+advisory suggestion is falsified by IDO; inspect owned CFE/UOPT formal/home
+constraints next. Fresh Game **61.16%**, total **65.92%**, zero drift;
+production and root README unchanged. Tools 7960b37 first; preserve all
+1,076 initial mirror hashes / 1,078 dirty paths. Wider Game stays open.
 
 Link-event callback **installed, all 43 words exact with one commutative guard**:
 [Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md).

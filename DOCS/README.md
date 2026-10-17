@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Dual buffer fade candidate and private payload gap](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
+  Complete public-qualified C, eight tests and a real variadic-wrapper
+  counterexample. The 65/69-word/private-home gap keeps it uninstalled.
 - [Link event callback match](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
   Complete 43-word semantic callback with one commutative guard, exact full
   image, nine installed tests and unchanged data. Fresh Game 61.16%.

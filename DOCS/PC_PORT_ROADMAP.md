@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Dual Buffer Fade Candidate And Private Payload Gap - 2026-10-17
+
+[Note 1490](WORKING_NOTES/1490-dual-buffer-fade-candidate-and-private-payload-gap-20261017.md):
+
+- [x] Recover func_150D01A0's complete semantic candidate, signed countdown, byte weights, wrapped clock arithmetic and live post-callback buffer index.
+- [x] Pass eight tests (34.140s), including 9,216 public cases, native O2/O0, independent rebases, the full actual caller and protected-input controls.
+- [x] Execute the actual color/text wrappers and positively demonstrate different sixteen-word copied payloads; retain the 65/69-word and S0/stack-home gaps without guards or installation credit.
+- [x] Reproduce six profile/source discriminators and falsify the single bounded advisory suggestion. Bank tools 7960b37 first, preserving all 1,076 initial mirror hashes / 1,078 paths.
+- [ ] Inspect record/previousWeight CFE/UOPT allocation and argument-address constraints; recover the real homes and complete private/helper/fault/image gates before installation.
+- [ ] Continue broader Game matching. Fresh Game 61.16%, total 65.92%, zero drift; production/README and frozen host Release remain unchanged.
+
 ## Link Event Callback Match - 2026-10-17
 
 [Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
