@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-16 Microcode Loader Recovery Checkpoint
+
+[Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
+Bank the complete func_1501CC3C candidate, 97 words / frame 0x30, with an
+explicit 44-word matching boundary. Seven research tests pass in 15.679s:
+770 selector/cache cases, 80 callback cases, 24 real-table cases and two
+functional controls. All 56 raw neighbors and 135 production inputs remain
+unchanged. Tools 932b4de banks first; preserve 928 mirror hashes / 931 paths.
+No source installation, new guards, matching credit or README change.
+Continue this same function before its remaining installation gates.
+
 ## 2026-10-16 Graphics Task Submission Direct Match
 
 [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):

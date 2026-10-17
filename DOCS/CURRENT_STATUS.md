@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 44ac318; tools are committed before the consumer pin.
+  checkpoint pins tools 932b4de; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Microcode-loader recovery checkpoint, **not installed**:
+[Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md).
+func_1501CC3C's complete C candidate has 97 words / frame 0x30, still **44
+retail word differences**. Seven research tests pass in 15.679s: 770 selector/
+cache cases, 80 fired callback cases, 24 real-table cases and two functional
+controls. Preserve all 56 raw neighbors, including the 239-word matched
+caller, and all 135 production input hashes. Tools **932b4de** banks first,
+preserving 928 mirror hashes / 931 paths. No guards, installation, matching
+credit or root README change. Continue this same function's source fit, then
+complete native32/caller/rebase/fault and whole-image installation gates.
 
 Graphics-task submission restored, **239 words directly byte-exact from C**:
 [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md).

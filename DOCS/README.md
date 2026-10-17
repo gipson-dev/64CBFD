@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Microcode loader recovery and matching boundary](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
+  Bank the 97-word/frame-0x30 candidate and seven passing research tests.
+  Still 44 retail differences, not installed; production and credit unchanged.
 - [Graphics task submission direct match](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
   Restore all 239 words using SDK task records and graphics macros. Twelve
   final tests and the entire 800-byte ELF prediction pass; retire nine old

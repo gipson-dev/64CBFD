@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Microcode Loader Recovery Checkpoint - 2026-10-16
+
+[Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
+
+- [x] Recover the complete func_1501CC3C candidate: unsigned input promoted to a word, signed cache bytes, exactly-one full-word flag, four ordered DMA packets and live table/data-pointer publication.
+- [x] Preserve 97 words / frame 0x30 / original homes and no-unroll profile. Record all 42 source forms and the explicit 44-word boundary; preserve all 56 raw neighbors, including the direct 239-word caller.
+- [x] Pass seven research tests in 15.679s, all 135 unchanged production inputs, two functional controls, real table bytes and positive DMA callback gates. Keep synthetic extended-table/payload and bounded hardware contracts explicit.
+- [x] Bank tools 932b4de before the consumer pin; validate both copies and tools-check, preserving all 928 initial mirror hashes / 931 paths. No source installation, guards, matching credit or README change.
+- [ ] Finish this same function's 44-word source-fit boundary without frame/home or saved-lifetime repairs.
+- [ ] Complete native32, independent rebases, real callers/provider chain, applicable ordered/fault checks and first whole-ELF prediction before installation.
+- [ ] Complete normal build, installed audit and fresh progress measurement; wider Game and full gameplay remain open.
+
 ## Graphics Task Submission Direct Match - 2026-10-16
 
 [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):

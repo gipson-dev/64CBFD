@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-16:
+[Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
+Bank func_1501CC3C's complete 97-word/frame-0x30 candidate, still 44 retail
+differences and not installed. Seven research tests pass in 15.679s; all 56
+raw neighbors and 135 production inputs remain unchanged. Tools 932b4de
+banks first, preserving 928 mirror hashes / 931 paths. Continue the same
+function's fitting and remaining installation gates; no aggregate credit.
+
+2026-10-16:
 [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md):
 Restore 239 graphics-task submission words directly from SDK C, original
 frame/no-unroll profile and no new guards; retire nine caller guards after
