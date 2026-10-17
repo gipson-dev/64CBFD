@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
+Qualify func_1501CC3C's 96-word C body and 23 guarded normalizations to all
+97 retail words, original frame/homes/saves and 56 unchanged raw neighbors.
+Seven tests pass in 42.751s, including native32, real task/setup/loader chain,
+rebases and 346 fault prefixes. Tools 27dc235 banks first; preserve 931 mirror
+hashes / 935 paths. Production and credit unchanged. Continue this same
+function's other caller cut, first whole-image prediction and installation.
+
+2026-10-16:
 [Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
 Bank func_1501CC3C's complete 97-word/frame-0x30 candidate, still 44 retail
 differences and not installed. Seven research tests pass in 15.679s; all 56

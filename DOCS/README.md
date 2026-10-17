@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Microcode loader guarded match qualification](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
+  Qualify all 97 retail words using 96 semantic C words and 23 bounded guards.
+  Seven native/guest/chain/rebase/fault tests pass; installation remains open.
 - [Microcode loader recovery and matching boundary](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
   Bank the 97-word/frame-0x30 candidate and seven passing research tests.
   Still 44 retail differences, not installed; production and credit unchanged.

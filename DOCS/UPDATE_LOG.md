@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-16 Microcode Loader Guarded Match Qualification
+
+[Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
+The complete 96-word C loader, original frame/homes/saves and 23 relocation-
+aware normalizations now emit all 97 retail words. Seven tests pass in
+42.751s, including 449 native32 O2/O0 cases each, 192 real task/setup/loader
+cases, independent rebases and 346 fault prefixes. Preserve 56 raw neighbors
+and all 135 production inputs. Tools 27dc235 banks first, preserving 931
+mirror hashes / 935 paths. Not installed or credited; root README unchanged.
+Next the other actual caller cut, first whole-ELF prediction and installation.
+
 ## 2026-10-16 Microcode Loader Recovery Checkpoint
 
 [Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):

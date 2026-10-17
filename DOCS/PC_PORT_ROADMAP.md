@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Microcode Loader Guarded Match Qualification - 2026-10-16
+
+[Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
+
+- [x] Qualify the complete 96-word C loader and exactly 23 relocation-aware guards to all 97 retail words. Preserve frame 0x30, homes/saved lifetimes, existing no-unroll profile and all 56 raw neighbors; do not label it a direct C match.
+- [x] Pass seven tests in 42.751s: 770 guest cases, 80 positive callbacks, 24 real-table cases, 449 native32 O2/O0/UBSan cases each, four functional controls, independent rebases and 346 original/guarded fault prefixes.
+- [x] Execute the real 239-word task parent, 61-word setup helper and loader in 192 connected cases. Keep PI/cache/queue hardware and full startup/gameplay separate.
+- [x] Bank tools 27dc235 first, validate both copies and tools-check, preserve all 931 initial mirror hashes / 935 paths and 135 production inputs. Production source/guards/image, matching credit and root README remain unchanged.
+- [ ] Qualify the other actual caller func_15007B3C at its real call/post-call cut.
+- [ ] Reproduce the predecessor and independently predict the entire ELF before installing this same function and exactly 23 guard rows.
+- [ ] Complete normal build, installed protected-data/input/image audit and fresh progress, then tools-first banking; keep the wider Game goal open.
+
 ## Microcode Loader Recovery Checkpoint - 2026-10-16
 
 [Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
@@ -8,8 +20,9 @@
 - [x] Preserve 97 words / frame 0x30 / original homes and no-unroll profile. Record all 42 source forms and the explicit 44-word boundary; preserve all 56 raw neighbors, including the direct 239-word caller.
 - [x] Pass seven research tests in 15.679s, all 135 unchanged production inputs, two functional controls, real table bytes and positive DMA callback gates. Keep synthetic extended-table/payload and bounded hardware contracts explicit.
 - [x] Bank tools 932b4de before the consumer pin; validate both copies and tools-check, preserving all 928 initial mirror hashes / 931 paths. No source installation, guards, matching credit or README change.
-- [ ] Finish this same function's 44-word source-fit boundary without frame/home or saved-lifetime repairs.
-- [ ] Complete native32, independent rebases, real callers/provider chain, applicable ordered/fault checks and first whole-ELF prediction before installation.
+- [x] Qualify this same function's guarded fit without frame/home or saved-lifetime repairs in Note 1461: 96 semantic C words plus 23 guards produce all 97 retail words, not a direct match.
+- [x] Complete native32, independent rebases, real task/setup/loader chain and applicable ordered/fault checks in Note 1461.
+- [ ] Complete the other caller cut and first whole-ELF prediction before installation.
 - [ ] Complete normal build, installed audit and fresh progress measurement; wider Game and full gameplay remain open.
 
 ## Graphics Task Submission Direct Match - 2026-10-16

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 932b4de; tools are committed before the consumer pin.
+  checkpoint pins tools 27dc235; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Microcode-loader **guarded match qualified, not installed**:
+[Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md).
+func_1501CC3C's complete C emits 96 words / frame 0x30; 23 closed relocation-
+aware guards produce all 97 retail words, preserving homes/saved lifetimes
+and 56 raw neighbors. Seven tests pass in 42.751s: 770 guest cases, 80
+callbacks, 449 native32 cases each at O2/O0/UBSan, 192 real parent/setup/loader
+cases, independent rebases and 346 fault prefixes. All 135 production inputs
+remain unchanged. Tools **27dc235** banks first, preserving 931 mirror hashes
+/ 935 paths. Next qualify func_15007B3C's actual caller cut and the first
+whole-ELF prediction, then installation/build/audit/progress. This is not a
+direct C match or production matching credit; root README stays unchanged.
+
 Microcode-loader recovery checkpoint, **not installed**:
 [Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md).
 func_1501CC3C's complete C candidate has 97 words / frame 0x30, still **44
@@ -35,8 +47,8 @@ cache cases, 80 fired callback cases, 24 real-table cases and two functional
 controls. Preserve all 56 raw neighbors, including the 239-word matched
 caller, and all 135 production input hashes. Tools **932b4de** banks first,
 preserving 928 mirror hashes / 931 paths. No guards, installation, matching
-credit or root README change. Continue this same function's source fit, then
-complete native32/caller/rebase/fault and whole-image installation gates.
+credit or root README change. This historical 44-word boundary is superseded
+by Note 1461's guarded qualification; installation remains open.
 
 Graphics-task submission restored, **239 words directly byte-exact from C**:
 [Note 1459](WORKING_NOTES/1459-graphics-task-submission-direct-match-20261016.md).

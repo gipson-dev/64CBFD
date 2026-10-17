@@ -6,6 +6,10 @@ Date: 2026-10-16. Consumer predecessor **9f9e1d9c**, tools predecessor
 
 ## Status
 
+Historical checkpoint. [Note 1461](1461-microcode-loader-guarded-match-qualification-20261016.md)
+subsequently qualifies a guarded 97-word match with native32 and connected
+tests. Production installation and matching credit remain open.
+
 **Research checkpoint, not an installed conversion.** The complete C candidate
 for func_1501CC3C has **97 words / 388 bytes / frame 0x30**, but still differs
 from retail at **44 words**. No source installation, guards, compiler-profile
