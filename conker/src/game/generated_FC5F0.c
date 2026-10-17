@@ -27,6 +27,32 @@ typedef struct {
     f32 field04, field08, field0C;
 } TransitionPayloadFC5F0;
 void *func_1515548C(void *, s32, s32 *, s32, s32, u8, s32);
+extern f32 D_800BE9A4;
+extern u8 (*D_8008FCD0[])(void);
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143874(s16, f32, f32 *, f32 *);
+f32 sinf(f32);
+typedef struct {
+    f32 x, y;
+} BurstPositionFC5F0;
+typedef struct {
+    BurstPositionFC5F0 position;
+    f32 scale[2];
+    u8 tag;
+    s16 id;
+    u16 flags;
+    s16 size0, size1;
+    u8 kind, field1B, field1C, field1D, duration, field1F;
+    u8 field20, field21, field22, opacity;
+    s32 field24, field28, field2C, field30, field34, field38, field3C;
+    u8 field40, field41;
+    TransitionViewFC5F0 view;
+    f32 field48, field4C, field50, field54;
+} BurstDescriptorFC5F0;
+typedef struct {
+    f32 velocityX, velocityY, acceleration, floor;
+} BurstPayloadFC5F0;
 void func_151CF898(u8 *, f32, f32);
 extern u8 D_800CC2D0[];
 void *memcpy(void *dst, const void *src, unsigned int len);
@@ -125,8 +151,88 @@ void func_150CF680(s16 id, u8 slot, s32 context) {
     }
 }
 
-s32 func_150CF800() {
-    return 0;
+/* Advance the transition and emit randomized children on completion. */
+s32 func_150CF800(u8 *record) {
+    f32 progress;
+    BurstDescriptorFC5F0 descriptor;
+    BurstPayloadFC5F0 payload;
+    TransitionPayloadFC5F0 *transition;
+    u8 *child;
+    s8 count;
+    u8 flag0;
+    s32 flag1;
+
+    transition = (TransitionPayloadFC5F0 *)(record + 0x70);
+    if (transition->state & 1) {
+        transition->field04 += 0.1900000125f * D_800BE9A4;
+        progress = transition->field04;
+        if (progress >= 1.0f) {
+            transition->field04 = 1.0f;
+            transition->state &= ~1;
+            count = (func_150ADA20() & 3) + 2;
+            payload.floor = *(f32 *)(record + 0x14) + 15.0f;
+            descriptor.position = *(BurstPositionFC5F0 *)(record + 0x10);
+            descriptor.size0 = 12;
+            descriptor.size1 = 21;
+            descriptor.field1B = 0xFF;
+            descriptor.field1C = 0xFF;
+            descriptor.field1D = 0xFF;
+            descriptor.field1F = 0xFF;
+            descriptor.field20 = 0xFF;
+            descriptor.field21 = 0xFF;
+            descriptor.field22 = 0xFF;
+            descriptor.opacity = 0xFF;
+            descriptor.kind = 0;
+            descriptor.field24 = 0;
+            descriptor.field28 = 0x200004;
+            descriptor.field2C = 0x9F0601;
+            descriptor.field40 = 0;
+            descriptor.field41 = 10;
+            descriptor.field30 = 23;
+            descriptor.field34 = 68;
+            descriptor.field38 = 128;
+            descriptor.field3C = 32;
+            descriptor.field48 = 1.0f;
+            descriptor.field4C = 1.0f;
+            descriptor.field54 = 0.0f;
+            descriptor.field50 = 0.0f;
+            descriptor.view.byte = D_80082FA0;
+            if (count > 0) {
+                /* Reuse the completed-progress temporary as the child speed range. */
+                progress = 2.0f;
+                do {
+                    descriptor.duration = func_150ADA20() % 101U + 155;
+                    descriptor.tag = D_8008FCD0[2]();
+                    flag1 = func_150ADA20();
+                    func_15143874((s16)((u32)flag1 % 65U - 160),
+                        func_150ADA68() * progress + 2.5f, &payload.velocityX, &payload.velocityY);
+                    payload.acceleration = func_150ADA68() * 0.3330000043f + 0.4040000141f;
+                    descriptor.scale[1] = descriptor.scale[0] = func_150ADA68() * 1.789999962f + 1.699999928f;
+                    descriptor.id = func_150ADA20() % 26U + 30;
+                    if (func_150ADA20() & 1) {
+                        flag0 = 2;
+                    } else {
+                        flag0 = 0;
+                    }
+                    if (func_150ADA20() & 1) {
+                        flag1 = 4;
+                    } else {
+                        flag1 = 0;
+                    }
+                    descriptor.flags = flag1 | 1 | flag0 | 0x38;
+                    child = func_1515548C(&descriptor, 13, 0, 0, 16, record[0xC], record[1]);
+                    if (child != 0) {
+                        memcpy(child + 0x70, &payload, 16);
+                    }
+                    count--;
+                } while (count > 0);
+            }
+            progress = transition->field04;
+        }
+        *(f32 *)(record + 0x10) = transition->field08 + progress * transition->field0C;
+        *(f32 *)(record + 0x14) = sinf(transition->field04 * 3.141592741f) * -17.5f + 72.0f;
+    }
+    return 1;
 }
 
 void func_150CFBEC(u8 *arg0, f32 *arg1, u8 arg2) {

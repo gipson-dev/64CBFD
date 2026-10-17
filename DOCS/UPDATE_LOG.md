@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Transition Burst Real Object Layout And Guarded Match
+
+[Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
+Restore func_150CF800's complete 251-word C callback. Move the real progress
+declaration to recover aggregate homes, bind the six existing retail motion
+constants, and normalize eleven scratch-register words. The complete normal
+ELF equals its first prediction with 773 changed bytes and zero exclusions;
+all protected Game data remain exact. Fresh Game 61.14%, total 65.90%, zero
+drift. Earlier burst candidates stay archived; wider Game matching stays open.
+Twelve installed tests pass in 133.014s and thirteen affected checks in
+76.513s. Bank tools e537123 first; preserve 1,066 unrelated mirror hashes /
+1,072 paths. Next nearby placeholder is func_150CF484.
+
 ## 2026-10-17 Transition Burst Pointer And Flag Lifetime Recovery
 
 [Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):

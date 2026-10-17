@@ -132,8 +132,8 @@ and Debugger **181/181** remain exact. Normal ELF SHA-256 remains
 
 - [x] Recover the pointer gate, S4/S3 roles, first flag branch and exact tail.
 - [x] Qualify bounded public/native/caller behavior and immutable compiler/input evidence.
-- [ ] Recover the real aggregate homes while retaining the multiplier and helper ABI.
-- [ ] Close the remaining scratch choices and private/rebase/fault/image gates before installation.
+- [x] Recover the real aggregate homes while retaining the multiplier and helper ABI in [Note 1488](1488-transition-burst-real-object-layout-and-guarded-match-20261017.md).
+- [x] Close the scratch normalization and private/rebase/fault/image gates in that guard-assisted installation; raw compiler output still differs at eleven scratch words.
 - [ ] Continue wider Game matching and deferred renderer/gameplay work. No host/frozen Release action.
 
 Prepared-checkout commands:

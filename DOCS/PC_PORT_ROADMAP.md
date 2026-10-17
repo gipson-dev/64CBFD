@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Transition Burst Real Object Layout And Guarded Match - 2026-10-17
+
+[Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
+
+- [x] Restore func_150CF800's complete 251-word C, frame 0x108, original SP+0xAC/SP+0x9C objects and pointer/flag lifetimes; guard only eleven scratch-register words.
+- [x] Bind the six existing motion constants at D_800A0860 without emitting compiler pool-alignment bytes or changing compiler flags.
+- [x] Verify full guest/private/native/caller/rebase/fault gates and the first complete normal image: 773 changed bytes, one explicit symbol permutation, zero metadata exclusions, all Game data exact.
+- [x] Refresh README aggregate rows only: Game 61.14%, total 65.90%, zero drift. Preserve older frozen candidates and unrelated standalone-tools work.
+- [x] Pass twelve installed tests (133.014s), thirteen affected checks (76.513s), both tools-copy shared checks and tools-check; bank tools e537123 first, preserving 1,066 unrelated mirror hashes / 1,072 paths.
+- [ ] Continue the next nearby placeholder, func_150CF484, and broader Game/fade/pulse/renderer work. No host or frozen Release action.
+
 ## Transition Burst Pointer And Flag Lifetime Recovery - 2026-10-17
 
 [Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
@@ -7,7 +18,7 @@
 - [x] Recover the typed pointer gate, original S4/S3 roles, first flag branch and exact 41-word tail; reduce 91 -> 47 raw word differences at 251 words/frame 0x108, without guards.
 - [x] Pass eight focused tests covering 2,688 guest cases, native32 O2/O0, actual compiler captures, original caller and 390 immutable live/frozen controls.
 - [x] Bank tools e12376f first, preserve all 1,065 mirror hashes / 1,067 paths, and remeasure unchanged Game 61.12% / total 65.88%, zero drift. Production and root README remain unchanged.
-- [ ] Recover the actual descriptor/payload homes and remaining scratch choices; close private/rebase/fault/first-image gates before installation.
+- [x] Recover actual descriptor/payload homes and close scratch/private/rebase/fault/first-image gates in the guard-assisted installation, Note 1488.
 - [ ] Keep wider Game/fade/pulse/renderer and gameplay open; no host or frozen Release action.
 
 ## Transition Child Motion Guarded Match - 2026-10-17

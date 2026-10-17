@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
+Install func_150CF800's full 251-word C with real aggregate homes, existing
+constant anchor and eleven scratch guards. Exact first complete image,
+773 changed bytes including twelve declared metadata bytes, data unchanged.
+Fresh Game 61.14%, total 65.90%, zero drift. Continue func_150CF484 next.
+Twelve installed tests plus thirteen affected checks pass; tools e537123
+first. Preserve 1,066 unrelated mirror hashes / 1,072 paths.
+
+2026-10-17:
 [Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
 Recover func_150CF800's pointer/flag lifetimes, S4/S3 roles and exact tail;
 91 -> 47 raw word differences at 251 words/frame 0x108. Eight tests pass;

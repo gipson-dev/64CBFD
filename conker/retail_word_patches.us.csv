@@ -17102,3 +17102,14 @@ generated_FC5F0,func_150CFC60,0x44,0x460C3282,0x46003282,-,-,Normalize child mot
 generated_FC5F0,func_150CFC60,0x4C,0x460C5202,0x46005202,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
 generated_FC5F0,func_150CFC60,0x6C,0x460A1482,0x460A6482,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
 generated_FC5F0,func_150CFC60,0x74,0x46009200,0x46121200,-,-,Normalize child motion closed FP cycle and setup schedule and add operand order,,,false
+generated_FC5F0,func_150CF800,0x2F4,0x01916825,0x0191C825,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x2F8,0x35AE0038,0x372F0038,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x2FC,0x24190010,0x24180010,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x300,0xA7AE00C0,0xA7AF00C0,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x304,0xAFB90010,0xAFB80010,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x308,0x928F000C,0x9288000C,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x314,0xAFAF0014,0xAFA80014,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x318,0x92980001,0x928B0001,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x324,0xAFB80018,0xAFAB0018,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x340,0x00124600,0x00125600,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF800,0x344,0x00089603,0x000A9603,-,-,Normalize certified burst scratch-register roles,,,false

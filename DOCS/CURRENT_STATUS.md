@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e12376f; tools are committed before the consumer pin.
+  checkpoint pins tools e537123; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Transition completion burst **installed, all 251 words exact with eleven guards**:
+[Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md).
+func_150CF800 now has its full semantic C, real SP+0xAC/SP+0x9C objects,
+frame 0x108, correct pointer/flag lifetimes and existing six-word constant
+anchor. A real scalar declaration move closes the stack gap; only scratch
+register roles are guarded. The normal ELF equals the first full prediction:
+759 code bytes, two size bytes and twelve explicitly accounted metadata bytes,
+zero exclusions. All 189,088 Game-data bytes remain exact. Fresh Game
+**2,952/4,828 (61.14%)**, total **3,625/5,501 (65.90%)**, different **1,876**,
+zero drift. Next nearby placeholder: **func_150CF484**; wider Game stays open.
+All twelve installed tests pass in 133.014s; thirteen affected predecessor/
+child checks pass in 76.513s. Tools e537123 first; preserve 1,066 unrelated
+mirror hashes / 1,072 dirty paths. Main README receives aggregate rows only.
+
 Transition burst **pointer/flag lifetimes recovered, 91 -> 47 word gap**:
 [Note 1487](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md).
 func_150CF800 retains 251 words/frame 0x108 and now has the original 47-word
@@ -37,6 +51,7 @@ Eight tests pass in 61.553s, including 2,688 guest cases, native32 O2/O0,
 compiler captures, caller checks and 390 protected-input controls. Tools
 e12376f first; preserve all 1,065 mirror hashes / 1,067 paths. Fresh Game
 61.12%, total 65.88%, zero drift; production and root README stay unchanged.
+This uninstalled snapshot is superseded by the installed recovery in Note 1488.
 
 Transition child motion **installed, 48 words exact with ten narrow guards**:
 [Note 1486](WORKING_NOTES/1486-transition-child-motion-guarded-match-20261017.md).
@@ -47,8 +62,8 @@ pass in 29.536s; the normal ELF equals the first full prediction, with only
 neighbors and 189,088 Game-data bytes unchanged. Fresh Game **2,951/4,828
 (61.12%)**, total **3,624/5,501 (65.88%)**, different **1,877**, zero drift.
 Native linker aliases pass at O0 only; optimized alias and double-NaN limits
-are explicit. The adjacent func_150CF800 remains uninstalled; Note 1487 reduces
-its gap to 47 words. Continue its aggregate homes; wider Game remains open.
+are explicit. The adjacent func_150CF800 is subsequently installed in Note 1488;
+the earlier 47-word snapshot remains archived. Wider Game remains open.
 Eleven predecessor behavior/compiler checks also pass (80.770s); current-input
 corruption checks supersede two historical literal-baseline tests. Tools
 36eccea is banked first; preserve 1,058 unrelated mirror hashes / 1,065 paths.

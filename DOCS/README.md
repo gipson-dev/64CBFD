@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Transition burst real object layout and guarded match](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
+  Complete 251-word semantic C, real object homes, eleven scratch guards and
+  exact first complete image. Fresh Game 61.14%; wider matching remains open.
 - [Transition burst pointer and flag lifetime recovery](WORKING_NOTES/1487-transition-burst-pointer-and-flag-lifetime-recovery-20261017.md):
   91 -> 47 differences with original prefix/roles/branch/tail recovered;
   eight focused tests pass, aggregate homes still prevent installation.

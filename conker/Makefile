@@ -187,6 +187,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_AEB40.c.o: RETAIL_RODATA_SYMBOL := jtbl_8
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1BFCB0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8160_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1C1150.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8258_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_113D60.c.o: RETAIL_RODATA_SYMBOL := D_800A1350
+# Transition burst uses its six existing retail motion constants.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_FC5F0.c.o: RETAIL_RODATA_SYMBOL := D_800A0860
 # Table debris emits its original three motion literals at one fixed anchor.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: RETAIL_RODATA_SYMBOL := D_800A6FA4
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1AC2F0.c.o: RETAIL_RODATA_SYMBOL := D_800A7280
