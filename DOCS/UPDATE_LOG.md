@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-17 Movement Return Boundary And Full-Width Buttons
+
+[Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
+Recover the disabled-exit join and real 32-bit buttons local in complete
+`func_150F34F4`: 959 words/frame 0x80, 475 differences and 137 exact opening
+words. Eight tests pass, including 800 active prefixes, 80 bounded disabled
+private states and 2,700 fault prefixes. Remaining preload/FP gaps stay open;
+not installed or credited. Tools 22cdaac first; production/totals/README unchanged.
+
 ## 2026-10-17 Movement Controller Allocation And Pickup Access Order
 
 [Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
+Recover the movement return boundary and full-width buttons: 959 words/frame
+0x80, 475 differences, first 137 words exact. Eight tests pass; bounded disabled
+private path agrees. Tools 22cdaac first; preserve production/checkpoints/totals/
+README. Continue the same preload/FP/literal matching; no installation/credit.
+
+2026-10-17:
 [Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
 Close the movement controller allocation gap: complete 959-word/frame-0x80 C,
 721 differences, 66 opening words exact. Eight tests and 460 initial prefixes

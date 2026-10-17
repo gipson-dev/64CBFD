@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Movement return boundary and full-width buttons](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
+  complete 959-word/frame-0x80 candidate, 475 differences and 137 exact opening
+  words. Disabled private path agrees in the bounded model; not installed.
 - [Movement controller allocation and pickup access order](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
   complete 959-word/frame-0x80 candidate, 721 differences and opening controller
   gap closed. Eight tests pass; return/PC provenance still differs, not installed.

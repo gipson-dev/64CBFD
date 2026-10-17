@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Return Boundary And Full-Width Buttons - 2026-10-17
+
+[Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
+
+- [x] Recover the real disabled-exit join and full-width buttons snapshot without guards, trimming, dummy padding or a profile change.
+- [x] Qualify complete 959-word/frame-0x80 C with 475 differences, first 137 words exact, eight tests and real UGEN-to-AS1 provenance.
+- [x] Verify 800 initial active prefixes plus all 80 bounded disabled final private states / 2,700 fault prefixes; preserve 297 protected entries and all first-image members. No installation/credit.
+- [x] Bank tools 22cdaac first; preserve 1,154 prior mirror hashes / 1,156 paths, aggregate totals and root README. No frozen Release action.
+- [ ] Continue the same `func_150F34F4` at `0x150F3718`, FPR4/FPR18 at `0x150F3A80` and remaining literal/private/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Controller Allocation And Pickup Access Order - 2026-10-17
 
 [Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
@@ -8,7 +19,7 @@
 - [x] Qualify complete 959-word C with 721 differences, opening 66 words exact, eight tests, two compiler captures and a final CLI trace.
 - [x] Extend initial private evidence to twenty states / 460 equal prefixes; preserve 292 protected entries, ten first-image members and fresh aggregate totals. No installation/credit.
 - [x] Bank tools f63eb42 first; preserve 1,152 prior mirror hashes / 1,154 paths. Root README and frozen Release untouched.
-- [ ] Continue the same `func_150F34F4` at word 66 / `0x150F35FC` and disabled-tail return/delay scheduling; require full literal/private/first-image gates before installation.
+- [x] Recover the disabled-tail return/delay boundary in [Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md); remaining full literal/private/first-image gates stay open above.
 - [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
 
 ## Movement Retail Extent Frame And Live Homes - 2026-10-17
