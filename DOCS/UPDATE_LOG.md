@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 White Text Fade Candidate And Private Lifetime Gap
+
+[Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
+Qualify func_150D0534's complete69-word candidate and real P0 home, but reject
+its62 slot differences and wrong S0/RA/state lifetimes. Eight tests pass,
+including28 actual-wrapper private counterexamples. Tools017c9c4 first;
+preserve all1,090 mirror hashes /1,092 paths. No production/README changes
+or credit; Game61.21%, total65.95%, zero drift. Continue func_150B9560 while
+both fade lifetime issues and the wider Game goal remain open.
+
 ## 2026-10-17 Text Reveal Renderer Direct Restoration And Match
 
 [Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):

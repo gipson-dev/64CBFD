@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b3020e9; tools are committed before the consumer pin.
+  checkpoint pins tools 017c9c4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+White text fade **public candidate qualified, private gap rejects installation**:
+[Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md).
+func_150D0534 has69 candidate/70 body/71 slot words, frame0x30 and the real
+P0 home, but62 full-slot differences and wrong S0/RA/state lifetimes. Eight
+tests pass (39.443s), including28 actual-wrapper private counterexamples.
+No production/guard/ELF/README change or matching credit. Fresh Game61.21%,
+total65.95%, zero drift. Tools017c9c4 first; preserve all1,090 mirror hashes /
+1,092 paths. Next ordinary C target: func_150B9560. Both fade lifetime issues
+remain open; handwritten func_150A76F0 stays in the assembly workstream.
+
 Text reveal renderer **restored and byte-exact directly from C**:
 [Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md).
 func_150D032C now emits all102 retail words, frame0x80 and actual message/
@@ -35,7 +45,8 @@ constructor checks pass. The entire normal ELF matches its first prediction:
 296 code/two extent/20 checked metadata bytes; all6,057 function bodies and
 189,088 Game-data bytes audited. Fresh Game **61.21%**, total **65.95%**, zero
 drift. Tools b3020e9 first; preserve1,084 unrelated mirror hashes /1,090 paths.
-Next: func_150D0534; earlier fade S0/private gates and wider Game remain open.
+The white fade is subsequently investigated in Note1495; both fade S0/private
+gates and wider Game remain open.
 
 Text buffer constructor **restored and byte-exact with twelve scratch guards**:
 [Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md).

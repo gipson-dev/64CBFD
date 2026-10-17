@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
+White fade func_150D0534 remains uninstalled69/70 body words and62 slot
+differences. Eight tests qualify public semantics and expose28 private-helper
+counterexamples. Tools017c9c4 first; all1,090 mirror hashes preserved /
+1,092 paths. Production/README unchanged; Game61.21%, total65.95%, zero drift.
+Next ordinary C: func_150B9560. Both fade lifetime issues remain open.
+
+2026-10-17:
 [Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
 Restore func_150D032C's complete102-word C and0x80 frame directly, without
 new guards. Exact first full ELF,296 code/two extent/20 checked metadata bytes;

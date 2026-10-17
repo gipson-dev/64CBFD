@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [White text fade candidate and private lifetime gap](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
+  Eight tests qualify public behavior and positively reject private payload
+  parity. Still uninstalled69/70 body words; next ordinary C: func_150B9560.
 - [Text reveal renderer direct restoration and match](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
   Complete102-word C with no new guards, exact full image and ten installed
   tests; Game61.21%, total65.95%, zero drift. Tools b3020e9 first.

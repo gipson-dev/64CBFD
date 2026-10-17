@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## White Text Fade Candidate And Private Lifetime Gap - 2026-10-17
+
+[Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
+
+- [x] Recover the complete69-word/frame0x30 candidate, signed countdown reset to20, factor12 weights and real incoming parameter home; no new guards or profile changes.
+- [x] Pass eight tests (39.443s),9,477 public cases,28 actual-wrapper private counterexamples, native32, nine independent links,214 protected inputs and256 actual-dispatcher cases.
+- [x] Replay eight source discriminators; reject the normal form's wrong S0 role and the70-word equal-length form. Bank tools017c9c4 first and preserve all1,090 mirror hashes /1,092 paths.
+- [x] Verify unchanged production/normal ELF/README and Game61.21%, total65.95%, zero drift. No installation or matching credit.
+- [ ] Recover S0/RA/state and private/fault/full-image gates for func_150D0534; keep func_150D01A0's separate lifetime issue open.
+- [ ] Continue ordinary C at func_150B9560's39-word actor update. Keep handwritten func_150A76F0 in the assembly workstream; wider Game stays active.
+
 ## Text Reveal Renderer Direct Restoration And Match - 2026-10-17
 
 [Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
