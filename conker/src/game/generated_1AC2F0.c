@@ -1,6 +1,12 @@
 #include <ultra64.h>
+extern f32 D_800D9D10[][4][4];
+extern f32 D_800A7280, D_800A7284, D_800A7288;
+void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
+    f32 *outX, f32 *outY, f32 *outZ, f32 *outW);
 typedef struct {
-    u8 padding00[0x24];
+    u8 padding00[0xC];
+    f32 extentX, extentY;
+    u8 padding14[0x10];
     f32 top, bottom, left, right;
     u8 padding34[0x14C];
 } OverlayViewport1AC2F0;
@@ -208,8 +214,49 @@ void func_1517F7B4(void) {
     }
 }
 
-s32 func_1517F814() {
-    return 0;
+/* Project or accept screen coordinates, clamp, and publish relative offsets. */
+void func_1517F814(s32 screenSpace, f32 x, f32 y, f32 z, s32 view) {
+    f32 projectedX;
+    f32 projectedY;
+    f32 projectedZ;
+    f32 divisor;
+    f32 lower;
+    OverlayViewport1AC2F0 *record;
+
+    if (screenSpace == 0) {
+        func_150A7A00((f32 (*)[4])((u8 *)D_800D9D10 + (u32)view * 64U),
+            x, y, z, &projectedX, &projectedY, &projectedZ, &divisor);
+        if (divisor == 0.0f) {
+            divisor = 1.0f;
+        }
+        record = &OVERLAY_VIEWS_1AC2F0[view];
+        projectedX = (record->extentX * projectedX) / divisor;
+        projectedY = (record->extentY * projectedY) / divisor;
+        projectedX += record->extentX;
+        projectedY = record->extentY - projectedY;
+        projectedX += record->left;
+        projectedY += record->top;
+    } else {
+        projectedX = x;
+        projectedY = y;
+        record = &OVERLAY_VIEWS_1AC2F0[view];
+    }
+    if (10000.0f < projectedX) {
+        lower = -10000.0f;
+        projectedX = 10000.0f;
+    } else {
+        lower = -10000.0f;
+        if (projectedX < lower) {
+            projectedX = lower;
+        }
+    }
+    if (10000.0f < projectedY) {
+        projectedY = 10000.0f;
+    } else if (projectedY < lower) {
+        projectedY = lower;
+    }
+    D_800DDDE8[view][0] = projectedX - record->extentX;
+    D_800DDDE8[view][1] = projectedY - record->extentY;
 }
 
 s32 func_1517F9F4() {

@@ -156,3 +156,12 @@ assembly, make that a separate, honestly assembly-classified restoration with
 no C-match credit; it does not satisfy the still-open C recovery. Wider Game/
 additional-source matching, query/sequence engines, timing's 141 differences
 and full gameplay acceptance remain open.
+
+Follow-through: [Note 1475](1475-overlay-projection-direct-match-20261017.md)
+adds six actual reset cases and two guest-only indexed-writer witnesses.
+Reset clears the timer, not the pulse byte; channel -16 can alias the alpha
+store onto that byte while the timer is active. The invalid native index is
+not natural-gameplay evidence, and startup inspection does not prove all-path
+initialization. No defined C lifetime or all-program invariant is established.
+Keep this wrapper unchanged/deferred, with no matching credit. Wider matching
+now installs the adjacent 120-word projection; next is the 106-word rectangle.

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Overlay projection direct match](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
+  Complete 120-word direct C recovery, original literal binding, frame/private
+  ABI and all 27 neighbors preserved without new guards/profile/data.
+  All 36 final tests pass; entire first image matches. Fresh Game 61.02%,
+  total 65.79%, zero drift. Pulse lifetime remains open; next clipped rectangle.
 - [Pulsed overlay private lifetime audit](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
   Retail pulse-off RGB depends on inherited SP+0x20 bits. Actual helper/
   caller/setter chains and 10 passing checks reject zero substitution and

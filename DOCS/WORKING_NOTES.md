@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-17:
+[Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
+Install func_1517F814's 120-word direct C match with original literal binding,
+0x40 frame and actual matrix/private ABI; no instruction guards/profile or
+new data, 27 neighbors unchanged. All 36 final tests pass in 482.491s,
+including 2,328 three-way guest cases, 558 native cases/profile, 231 faults
+and 40 real caller packets. The entire normal image equals the first prediction:
+369 code bytes plus two size bytes only. Fresh Game 61.02%, total 65.79%,
+no drift. Tools 9d0f799 first; preserve 1,008 unrelated mirror hashes /
+1,018 paths. Pulse C remains deferred; next func_1517F9F4's 106-word rectangle.
+
+2026-10-17:
 [Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
 Audit func_1517F564's inherited private blend: 6,480 wrapper cases, 512 full
 caller cases, 308 fired faults, actual setter/updater/lookup/draw and 40

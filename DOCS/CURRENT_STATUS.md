@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 381d541; tools are committed before the consumer pin.
+  checkpoint pins tools 9d0f799; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Overlay projection **installed, all 120 words directly exact from C**:
+[Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md).
+func_1517F814 preserves its 0x40 frame, actual matrix tail/private output
+homes, ordered clamps and live relative-coordinate stores. The existing
+literal-pool binding reuses the original three constants; no new instruction
+guards, compiler profile or runtime data. All 27 owner neighbors are unchanged.
+All 36 final tests pass in 482.491s. The entire normal ELF equals the
+first prediction: 369 target code bytes and two size bytes only, with exact data.
+Fresh Game **2,946/4,828 (61.02%)**, total **3,619/5,501 (65.79%)**, different
+**1,882**, zero drift. Tools **9d0f799** banks first; preserve 1,008 unrelated
+mirror hashes / 1,018 final paths. Next **func_1517F9F4**, the 106-word clipped
+rectangle leaf. func_1517F564 remains deferred: reset/indexed-writer evidence
+does not establish a defined inherited-blend lifetime or all-program invariant.
 
 Pulsed-overlay **private-lifetime audit banked; no C adoption or new credit**:
 [Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md).

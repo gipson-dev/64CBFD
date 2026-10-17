@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-17 Overlay Projection Direct Match
+
+[Note 1475](WORKING_NOTES/1475-overlay-projection-direct-match-20261017.md):
+Restore func_1517F814's complete 120-word projection/clamp updater directly
+from C, preserving frame/private homes and all 27 owner neighbors. Reuse the
+original literal block through the existing pool-binding mechanism; no new
+instruction guards/profile/runtime data. All 36 final tests pass in 482.491s.
+The entire normal ELF equals the first prediction: only 369 code bytes and
+two size bytes change. Fresh Game 61.02%, total 65.79%, zero drift. Tools
+9d0f799 banks first; preserve 1,008 unrelated mirror hashes / 1,018 paths.
+README aggregate rows only. The pulse wrapper stays deferred without C credit;
+reset/indexed-writer evidence is not a supported lifetime/global invariant.
+Next func_1517F9F4's 106-word clipped rectangle leaf.
+
 ## 2026-10-17 Pulsed Overlay Private Lifetime Audit
 
 [Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
