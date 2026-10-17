@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-16:
+[Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
+Install func_1501D044's ordered slot/shared-state reset, captured limit and
+post-helper clears, with its proper caller prototype and 13 guarded opening/
+F0/F2 normalizations. All 100 words match, frame 0x18, 56 raw neighbors and
+six caller-owner functions unchanged. All 24 final tests pass in 170.864s;
+normal rebuild equals the entire first 651-byte ELF prediction, zero
+exclusions, all 136 inputs/protected data pass. Fresh Game 2,939/4,828,
+total 3,612/5,501, different 1,889, zero drift; conversion unchanged.
+Tools b7775f4 banks first, preserving 946 other mirror hashes / 957 paths.
+Next 473-word func_1501D348, frame 0x78.
+
+2026-10-16:
 [Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
 Install func_1501CE54's signed-priority record scan and 48 guarded temporary/
 schedule normalizations to all 105 retail words, frame-free with 56 unchanged

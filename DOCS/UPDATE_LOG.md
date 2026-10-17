@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-16 Sequence State Reset Installed Guarded Match
+
+[Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
+Install func_1501D044's semantic void(s32 slot) body, proper caller prototype
+and 13 bounded guards to all 100 retail words. Preserve frame 0x18 / RA+0x14,
+call-delay SH, 56 raw neighbors and all six caller-owner functions. All 24
+final tests pass in 170.864s; normal rebuild equals the entire first 651-byte
+ELF prediction, zero exclusions. Fresh Game 2,939/4,828 (60.87%), total
+3,612/5,501 (65.66%), different 1,889, zero drift; conversion unchanged.
+Tools b7775f4 banks first, preserving 946 other mirror hashes / 957 paths.
+README aggregate rows only; next func_1501D348. No push, host/Release action
+or full gameplay claim.
+
 ## 2026-10-16 Priority Record Maximum Installed Guarded Match
 
 [Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):

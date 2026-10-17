@@ -16837,3 +16837,16 @@ generated_49D30,func_1501CE54,0x178,0x8727FFFE,0x85A7FFFE,-,-,Normalize record m
 generated_49D30,func_1501CE54,0x190,0x0105782A,0x0105082A,-,-,Normalize record maximum temporary register allocation,,,false
 generated_49D30,func_1501CE54,0x194,0x15E0FFE5,0x1420FFE5,-,-,Normalize record maximum temporary register allocation,,,false
 generated_49D30,func_1501CE54,0x198,0x254A0002,0x25290002,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501D044,0x4,0x44801000,0x3C010000,-,R_MIPS_HI16:D_800969C0,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x8,0xAFBF0014,0x44800000,-,-,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0xC,0x2403FFFF,0xC4220000,-,R_MIPS_LO16:D_800969C0,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x10,0x3C010000,0xAFBF0014,R_MIPS_HI16:D_800969C0,-,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x14,0xC4200000,0x2403FFFF,R_MIPS_LO16:D_800969C0,-,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x18,0x3C010000,0x00041080,R_MIPS_HI16:D_800C35B8,-,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x1C,0x00041080,0x3C010000,-,R_MIPS_HI16:D_800C35B8,Normalize sequence reset opening independent schedule and F0/F2 roles,,,false
+generated_49D30,func_1501D044,0x7C,0xE4220000,0xE4200000,R_MIPS_LO16:D_800C3648,R_MIPS_LO16:D_800C3648,Normalize sequence reset closed F0/F2 allocation,,,false
+generated_49D30,func_1501D044,0x84,0xE4220000,0xE4200000,R_MIPS_LO16:D_800C364C,R_MIPS_LO16:D_800C364C,Normalize sequence reset closed F0/F2 allocation,,,false
+generated_49D30,func_1501D044,0x8C,0xE4220000,0xE4200000,R_MIPS_LO16:D_800C3650,R_MIPS_LO16:D_800C3650,Normalize sequence reset closed F0/F2 allocation,,,false
+generated_49D30,func_1501D044,0x11C,0xE4220000,0xE4200000,R_MIPS_LO16:D_800C35A4,R_MIPS_LO16:D_800C35A4,Normalize sequence reset closed F0/F2 allocation,,,false
+generated_49D30,func_1501D044,0x134,0xE4200000,0xE4220000,R_MIPS_LO16:D_800C3674,R_MIPS_LO16:D_800C3674,Normalize sequence reset closed F0/F2 allocation,,,false
+generated_49D30,func_1501D044,0x13C,0xE4200000,0xE4220000,R_MIPS_LO16:D_800C3678,R_MIPS_LO16:D_800C3678,Normalize sequence reset closed F0/F2 allocation,,,false

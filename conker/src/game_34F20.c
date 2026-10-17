@@ -4,6 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
+void func_1501D044(s32 slot);
 s32 func_15007B3C();
 /* End generated placeholder declarations. */
 

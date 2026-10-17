@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence State Reset Installed Guarded Match - 2026-10-16
+
+[Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
+
+- [x] Replace func_1501D044's stub with semantic void(s32 slot) C: correct word/byte indexing, captured float limit, signed sentinels, ordered actor-table clear and two post-call flag clears. Correct the current caller's prototype without changing any of its six raw functions.
+- [x] Qualify 13 expected-word/relocation guards for seven opening schedule positions and six closed F0/F2 store roles only. Retain all 100 words, frame 0x18 / RA+0x14, the JAL-delay SH, no-unroll profile, 56 raw neighbors and all previous guard bytes; label the match guarded, not direct.
+- [x] Pass 640 three-way guest cases, 128 real-helper cases, 288 native32 O2/O0/UBSan cases each, eight effective controls, 119 fired fault prefixes and independent carry rebases. Verify the full 33-word caller in 144 runs and the 473-word original other caller with 24 actual call/spill/reload cuts.
+- [x] Reproduce the entire first 651-byte ELF prediction after 695 compiler / 687 padder invocations: 374 code, two extent and 275 exactly constrained metadata bytes, zero exclusions. Protect 136 inputs and 189,088 data bytes / 720 owners; all 24 final tests pass in 170.864s.
+- [x] Measure fresh Game 2,939/4,828 (60.87%), total 3,612/5,501 (65.66%), different 1,889, zero drift; conversion unchanged. Bank tools b7775f4 first, preserve 946 other mirror hashes / 957 paths, update root README aggregate rows only.
+- [ ] Recover next func_1501D348: 473 words, frame 0x78, still a zero-return resource/record-setup stub in the same owner. Preserve the reset, maximum scan, loader and other functions.
+- [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
+
 ## Priority Record Maximum Installed Guarded Match - 2026-10-16
 
 [Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Pass 436 three-way guest cases, 218 native32 O2/O0/UBSan cases each, eight effective functional controls, six guest aliases, 156 fired fault prefixes, independent carry rebases and 216 real caller cuts from the verified 473-word original caller.
 - [x] Reproduce the entire first 371-byte ELF prediction after the normal rebuild: 318 code, two extent and 51 exactly constrained metadata bytes, zero exclusions. Protect 136 inputs and 189,088 data bytes / 720 owners; all 28 final tests pass in 158.460s.
 - [x] Measure fresh Game 2,938/4,828 (60.85%), total 3,611/5,501 (65.64%), different 1,890, zero drift; conversion unchanged. Bank tools 199b23f first, preserve 937 other mirror hashes / 948 paths, update root README aggregate rows only.
-- [ ] Recover next 100-word func_1501D044, the adjacent state-reset stub with frame 0x18 and a func_150233BC call. Preserve the new scan, loader and other owner routines.
+- [x] Recover the 100-word func_1501D044 reset, correct its actual caller interface and qualify the real helper/caller boundaries in Note 1464, preserving the maximum scan, loader and other owner routines.
 - [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
 
 ## Microcode Loader Installed Guarded Match - 2026-10-16

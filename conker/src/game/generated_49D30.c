@@ -47,6 +47,21 @@ extern RecordMaximum49D30 *D_800C3688[][30];
 extern u16 *D_800C35D0[];
 extern u8 *D_800C3778[][30];
 
+extern s32 D_800C35B8[], D_800C35B0[];
+extern u8 D_800C35C0[], D_800C35EA[];
+extern u8 D_800C3654[], D_800C3656[], D_800C3658[], D_800C365A[];
+extern u8 D_800C365C[], D_800C365E[], D_800C3660[];
+extern u8 D_800C35F8, D_800C3638, D_800C3662, D_800C3C8C, D_800C3C8D;
+extern u8 D_800C35C2, D_800C3A58, D_800C3C8B, D_800C3680, D_800C3672, D_800C3C9D, D_8008FD84;
+extern s8 D_800C3C8A;
+extern s16 D_800C3C8E, D_800C3C9E;
+extern s32 D_800C367C;
+extern void *D_800C3D50;
+extern f32 D_800C3648, D_800C364C, D_800C3650, D_800C35A4, D_800C3674, D_800C3678;
+extern f32 D_800969C0;
+void func_150233BC(void);
+
+
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
@@ -268,8 +283,49 @@ s32 func_1501CFF8(s32 arg0) {
     return sum;
 }
 
-s32 func_1501D044() {
-    return 0;
+/* Reset the selected slot and shared sequence state before clearing actor records. */
+void func_1501D044(s32 slot) {
+    /* Capture the shared limit before resetting indexed state. */
+    f32 limit = D_800969C0;
+
+    D_800C35B8[slot] = -100;
+    D_800C35B0[slot] = 0;
+    D_800C35C0[slot] = 0;
+    D_800C3C8E = 0;
+    D_800C363A[slot] = 0;
+    D_800C35EA[slot] = 0;
+    D_800C3D50 = NULL;
+    D_800C35F8 = 255;
+    D_800C3648 = 0.0f;
+    D_800C364C = 0.0f;
+    D_800C3650 = 0.0f;
+    D_800C3654[slot] = 0;
+    D_800C3656[slot] = 0;
+    D_800C3658[slot] = 1;
+    D_800C365A[slot] = 0;
+    D_800C365C[slot] = 0;
+    D_800C365E[slot] = 0;
+    D_800C3660[slot] = 0;
+    D_800C3638 = 0;
+    D_800C3662 = 0;
+    D_800C3C8C = 0;
+    D_800C3C8D = 0;
+    D_800C35C2 = 0;
+    D_800C3A58 = 0;
+    D_800C35A4 = 0.0f;
+    D_800C3C8A = -1;
+    D_800C3C8B = 0;
+    D_800C3674 = limit;
+    D_800C3678 = limit;
+    D_800C367C = 0;
+    D_800C3680 = 0;
+    D_800C3672 = 0;
+    D_800C3C9D = 100;
+    D_800C3C9E = -1;
+    func_150233BC();
+    /* These flags are cleared only after the actor-table helper returns. */
+    D_8008FD84 = 0;
+    D_800C3670 = 0;
 }
 
 s32 func_1501D1D4(s32 arg0, s32 arg1, s32 index) {

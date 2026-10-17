@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence state reset installed guarded match](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md):
+  Restore all 100 words using semantic C, a proper caller prototype and 13
+  bounded guards. Twenty-four final tests and the entire first 651-byte ELF
+  prediction pass; next func_1501D348.
 - [Priority record maximum installed guarded match](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
   Install all 105 words using semantic C and 48 bounded guards. Twenty-eight
   final tests and the entire first 371-byte ELF prediction pass; next func_1501D044.

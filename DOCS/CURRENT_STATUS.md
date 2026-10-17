@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 199b23f; tools are committed before the consumer pin.
+  checkpoint pins tools b7775f4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Sequence state reset **installed, all 100 words byte-exact with 13 guards**:
+[Note 1464](WORKING_NOTES/1464-sequence-state-reset-installed-guarded-match-20261016.md).
+func_1501D044 replaces its zero-return stub with void(s32 slot) C, correctly
+scaled stores, captured float limit, actor-table clear and two post-call flag
+clears. Retain frame 0x18 / RA+0x14, call-delay SH, existing no-unroll profile,
+56 raw neighbors and all six caller-owner functions. All 24 final tests pass
+in 170.864s; the normal 695-compile rebuild equals the entire first 651-byte
+ELF prediction, zero exclusions. Protect 136 inputs and 189,088 data bytes /
+720 owners. Fresh Game **2,939/4,828 (60.87%)**, total **3,612/5,501 (65.66%)**,
+different **1,889**, zero drift; conversion unchanged. Tools **b7775f4** banks
+first, preserving 946 other mirror hashes / 957 paths. Next **473-word
+func_1501D348**, frame 0x78, still stubbed in this owner. This is a guarded,
+not direct, match; wider Game, timing's 141 differences and gameplay remain open.
 
 Priority record maximum **installed, all 105 words byte-exact with 48 guards**:
 [Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md).
