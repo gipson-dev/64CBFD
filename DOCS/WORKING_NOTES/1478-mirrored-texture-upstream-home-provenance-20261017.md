@@ -137,3 +137,9 @@ SDK Y-sign predicate and unsigned conversion paths. Do not repeat the same
 shape/type screens, reinterpret the length deficit as seven scheduling words,
 or install guards on public agreement alone. Wider Game/additional-source
 matching and the deferred pulse lifetime remain open.
+
+Follow-through: [Note 1479](1479-mirrored-texture-float-color-saturation-20261017.md)
+records actual float-color constraints and partial positiveX residency, still
+not a match. [Note 1480](1480-overlay-mode-defaults-direct-match-20261017.md)
+independently installs the neighboring 50-word reset and adds exact-successor
+fixture adaptation. The mirrored emitter remains uninstalled and without credit.

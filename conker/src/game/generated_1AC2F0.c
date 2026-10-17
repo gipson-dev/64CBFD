@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern u8 D_800BE616, D_800DDE3C[];
+extern f32 D_800A72B4;
 extern f32 D_800D9D10[][4][4];
 extern f32 D_800A7280, D_800A7284, D_800A7288;
 void func_150A7A00(f32 matrix[4][4], f32 x, f32 y, f32 z,
@@ -344,8 +346,28 @@ void func_15181DC8(s32 arg0) {
     D_800DDE20[arg0] = 0;
 }
 
-s32 func_15181E18() {
-    return 0;
+/* Reset a channel to its mode-dependent overlay defaults. */
+void func_15181E18(s32 channel) {
+    u8 *color;
+    f32 *projected;
+
+    if (D_800BE616 != 0) {
+        color = &D_800DDDA0[channel * 3];
+        color[0] = 0;
+        color[1] = 0;
+        color[2] = 0;
+        D_800DDE28[channel] = 25;
+        D_800DDDB0[channel] = 0;
+        D_800DDDAC[channel] = 0;
+        D_800DDDC0[channel] = 0;
+        return;
+    }
+    D_800DDE3C[channel] = 1;
+    D_800DDDC8[channel] = 1.0f;
+    projected = D_800DDDE8[channel];
+    projected[0] = 0.0f;
+    projected[1] = 0.0f;
+    D_800DDDD8[channel] = D_800A72B4;
 }
 
 s32 func_15181EE0() {

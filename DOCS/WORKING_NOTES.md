@@ -1,6 +1,23 @@
 # Working Notes
 
 2026-10-17:
+[Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
+Install func_15181E18's complete 50-word direct C reset, typed void/channel
+interface, byte-width color clears and late constant load. Nine tests pass
+in 97.507s; seven affected checks in 109.690s. The full first image prediction
+equals the normal ELF with no exclusions/guards. Fresh Game 61.06%, total 65.82%,
+zero drift. Tools e3da0c4 first; preserve 1,028 unrelated mirror hashes / 1,037
+paths. README aggregate rows only. Keep 633-word renderer/lifetime work open.
+
+2026-10-17:
+[Note 1479](WORKING_NOTES/1479-mirrored-texture-float-color-saturation-20261017.md):
+Owned mode5 constraints identify positiveY's six-color saturation. An ordered
+X snapshot recovers positiveX spilling and F16/F18 Y roles but still fails
+the home, other roles and 624/633-word identity. Thirteen measured forms are
+not installation qualification. Retain local receipts and ignore debug real
+costs/timings; no renderer C credit.
+
+2026-10-17:
 [Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
 Trace func_1517FB9C's actual CFE/UOPT inputs and fired UGEN nodes with
 unchanged code/bindings/pools. Five tests pass in 28.916s. PositiveY and rate

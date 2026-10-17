@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b44bad7; tools are committed before the consumer pin.
+  checkpoint pins tools e3da0c4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Overlay mode defaults **installed, all 50 words directly exact from C**:
+[Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md).
+func_15181E18 now has its void/channel interface, three byte-sized color clears
+and mode-dependent defaults, preserving the late named float read. Nine final
+tests pass in 97.507s; seven affected predecessor/compiler checks in 109.690s.
+The entire normal image equals the first complete prediction: 170 code bytes,
+one size byte, 30 exactly certified symbol/string bytes, no exclusions/guards.
+Fresh Game **2,948/4,828 (61.06%)**, total **3,621/5,501 (65.82%)**, different
+**1,880**, zero drift. Tools **e3da0c4** first; preserve 1,028 unrelated mirror
+hashes / 1,037 paths. Root README aggregate rows only. Resume the still-open
+633-word renderer; [Note 1479](WORKING_NOTES/1479-mirrored-texture-float-color-saturation-20261017.md)
+locates its six-color saturation and partial positiveX residency recovery.
 
 Mirrored texture **upstream homes traced; no installation or C credit**:
 [Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md).

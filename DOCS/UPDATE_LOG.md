@@ -1,5 +1,25 @@
 # Update Log
 
+## 2026-10-17 Overlay Mode Defaults Direct Match
+
+[Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
+Install func_15181E18's complete 50-word void/channel reset directly from C,
+preserving byte stores and the late named float read, all 27 neighbors and data.
+Nine final tests pass in 97.507s, seven affected checks in 109.690s. Entire
+normal ELF equals the first complete prediction: 170 instruction bytes, one
+size byte, 30 exact symbol/string bytes, no metadata exclusions or guards.
+Fresh Game 61.06%, total 65.82%, zero drift. Tools e3da0c4 first; preserve 1,028
+unrelated mirror hashes / 1,037 paths. README aggregate rows only; renderer open.
+
+## 2026-10-17 Mirrored Texture Float Color Saturation
+
+[Note 1479](WORKING_NOTES/1479-mirrored-texture-float-color-saturation-20261017.md):
+Two owned mode5 captures expose positiveY's six forbidden float colors.
+An ordered X snapshot recovers a positiveX spill and F16/F18 Y roles, but
+still emits 624/633 words and the wrong home/other roles. Thirteen bounded
+forms remain diagnostics; no installation, guards or renderer credit.
+Preserve local receipts and the invalid-real-cost/timing caveat.
+
 ## 2026-10-17 Mirrored Texture Upstream Home Provenance
 
 [Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):

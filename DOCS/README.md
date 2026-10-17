@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Overlay mode defaults direct match](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
+  Complete 50-word direct C reset, byte stores, late named constant and original
+  caller qualified. Nine final tests and seven affected checks pass; entire
+  image prediction exact, no exclusions/guards. Fresh Game 61.06%, total 65.82%.
+- [Mirrored texture float color saturation](WORKING_NOTES/1479-mirrored-texture-float-color-saturation-20261017.md):
+  Actual mode5 constraints and partial positiveX residency recovery. Still
+  624/633 words with wrong homes/roles, no renderer installation or C credit.
 - [Mirrored texture upstream home provenance](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
   Four owned compiler traces and five passing tests locate positiveY/rate
   homes in UOPT output. Comparison forms remain nonmatching, no installation

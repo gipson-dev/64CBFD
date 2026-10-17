@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Overlay Mode Defaults Direct Match - 2026-10-17
+
+[Note 1480](WORKING_NOTES/1480-overlay-mode-defaults-direct-match-20261017.md):
+
+- [x] Restore func_15181E18's complete 50-word void/channel reset directly from C, preserving byte clears, late constant read and all 27 neighbors with no new guards/profile/pool/Makefile changes.
+- [x] Qualify 320 three-way guest cases, 640 native cases/profile, eight effective controls, three rebase pairs, 30 fault prefixes and 32 original caller cases.
+- [x] Freeze the first complete image/source prediction; verify all 201 changed bytes, including the exact four-symbol/string permutation with zero metadata exclusions, and all 158 protected inputs / 189,088 Game-data bytes.
+- [x] Pass nine final tests plus seven affected predecessor/compiler checks; fresh Game 2,948/4,828 (61.06%), total 3,621/5,501 (65.82%), zero drift. Root README aggregate rows only.
+- [x] Bank tools e3da0c4 first; preserve 1,028 unrelated mirror hashes / 1,037 paths without a mirror commit/reset or push.
+- [ ] Resume func_1517FB9C's full 633-word coordinate/rate matching; Note 1479's partial color/residency recovery is not an installation certificate.
+- [ ] Keep wider Game/additional-source, deferred pulse lifetime and natural gameplay acceptance open; no host or frozen Release action.
+
 ## Mirrored Texture Upstream Home Provenance - 2026-10-17
 
 [Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
