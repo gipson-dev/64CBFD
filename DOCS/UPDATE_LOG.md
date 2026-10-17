@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Text Reveal Renderer Direct Restoration And Match
+
+[Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
+Restore func_150D032C's complete102-word C and real0x80 frame without new
+guards. Ten installed and eleven constructor tests pass. The whole normal
+ELF equals its first prediction:296 code/two extent/20 checked metadata bytes;
+all6,057 bodies and189,088 Game-data bytes audited. Game61.21%, total65.95%,
+zero drift. Tools b3020e9 first; preserve1,084 unrelated mirror hashes /
+1,090 paths. README updates only aggregate rows. Continue func_150D0534;
+keep the earlier fade's S0/private gates and wider Game open.
+
 ## 2026-10-17 Text Buffer Constructor Restoration And Match
 
 [Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):

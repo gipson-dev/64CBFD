@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f5cd863; tools are committed before the consumer pin.
+  checkpoint pins tools b3020e9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Text reveal renderer **restored and byte-exact directly from C**:
+[Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md).
+func_150D032C now emits all102 retail words, frame0x80 and actual message/
+header/payload homes, with no new guards. Ten installed tests and eleven
+constructor checks pass. The entire normal ELF matches its first prediction:
+296 code/two extent/20 checked metadata bytes; all6,057 function bodies and
+189,088 Game-data bytes audited. Fresh Game **61.21%**, total **65.95%**, zero
+drift. Tools b3020e9 first; preserve1,084 unrelated mirror hashes /1,090 paths.
+Next: func_150D0534; earlier fade S0/private gates and wider Game remain open.
+
 Text buffer constructor **restored and byte-exact with twelve scratch guards**:
 [Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md).
 func_150CFF10 replaces its zero-return placeholder with complete73-word C,
@@ -36,7 +46,8 @@ bytes, zero other metadata changes. Eleven installed tests and21 affected
 checks pass; all189,088 Game-data bytes remain exact. Tools f5cd863 first;
 preserve1,078 unrelated mirror hashes /1,086 paths. Fresh Game **61.18%**,
 total **65.93%**, zero drift. Root README changes only two aggregate rows.
-Next: func_150D032C; the earlier fade S0/private gates and wider Game stay open.
+The reveal renderer is subsequently finished in Note1494; the earlier fade
+S0/private gates and wider Game stay open.
 
 Dual fade **native caller-save decision explained, still uninstalled**:
 [Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md).

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Text Reveal Renderer Direct Restoration And Match - 2026-10-17
+
+[Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
+
+- [x] Replace func_150D032C's zero-return stub with complete102-word C, actual0x80 frame and real stack objects; no new guards or compiler-profile change.
+- [x] Pass ten installed tests (61.660s): ordered float/count/copy semantics, native32, actual helpers/dispatcher/private payload, rebase, fault and corruption gates.
+- [x] Match the first complete normal ELF:296 code/two extent/20 exactly checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve old first-image fixtures; pass eleven constructor tests, twelve shared checks in each tools copy and both smoke checks. Bank tools b3020e9 first; preserve1,084 unrelated mirror hashes /1,090 paths.
+- [x] Update only README aggregate rows: Game61.21%, total65.95%, zero drift.
+- [ ] Continue func_150D0534's white text fade and keep func_150D01A0's unresolved S0/private gates explicit. Wider Game stays open; no host or frozen Release action.
+
 ## Text Buffer Constructor Restoration And Match - 2026-10-17
 
 [Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
@@ -9,7 +20,8 @@
 - [x] Pass eleven installed tests (41.045s), including guest/native/caller/helper/rebase/fault/corruption gates and exact reversible fixture adapters.
 - [x] Match the first complete normal ELF:220 changed code bytes plus two extent bytes, zero other metadata changes/exclusions, all189,088 Game-data bytes exact. Pass21 affected checks and both tools-copy shared checks.
 - [x] Refresh only README aggregate rows: Game61.18%, total65.93%, zero drift. Bank tools f5cd863 first; preserve1,078 unrelated mirror hashes /1,086 dirty paths.
-- [ ] Continue func_150D032C's102-word reveal renderer and the earlier fade's unresolved S0/private work. Wider Game remains open; no host or frozen Release action.
+- [x] Continue func_150D032C's102-word reveal renderer, now finished in Note1494.
+- [ ] Continue the earlier fade's unresolved S0/private work. Wider Game remains open; no host or frozen Release action.
 
 ## Dual Fade Native Caller-Save Selection - 2026-10-17
 

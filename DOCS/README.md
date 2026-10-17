@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Text reveal renderer direct restoration and match](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
+  Complete102-word C with no new guards, exact full image and ten installed
+  tests; Game61.21%, total65.95%, zero drift. Tools b3020e9 first.
 - [Text buffer constructor restoration and match](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
   Complete73-word C, twelve scratch guards, exact full image and eleven
   installed tests; Game61.18%, total65.93%, zero drift.

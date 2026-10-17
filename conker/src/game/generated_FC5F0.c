@@ -1,5 +1,15 @@
 #include <ultra64.h>
 typedef struct {
+    f32 fraction;
+    s16 characters;
+    u8 reserved[2];
+} TextRevealPayloadFC5F0;
+typedef struct { u8 bytes[5]; } TextRevealHeaderFC5F0;
+extern TextRevealHeaderFC5F0 D_800A0880;
+extern f32 D_800A0888;
+void func_1504332C(u8, u8, u8, u8);
+void func_15042D94(s32, s32, u8, s32, ...);
+typedef struct {
     u8 tag;
     u8 pad01[3];
     u8 *source;
@@ -472,8 +482,39 @@ void func_150D02B4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
     }
 }
 
-s32 func_150D032C() {
-    return 0;
+/* Reveal the current line and append the cursor after the visible characters. */
+s32 func_150D032C(u8 *record) {
+    u8 *state;
+    TextRevealPayloadFC5F0 *payload;
+    u8 message[80];
+    TextRevealHeaderFC5F0 header = D_800A0880;
+
+    state = record + 0x28;
+    payload = *(TextRevealPayloadFC5F0 **)(record + 0x48);
+    if (record[0x30] & 1) {
+        payload->characters = 0;
+        payload->fraction = 0.0f;
+    }
+    if (payload->fraction < (f32)(u32)state[0x14]) {
+        payload->fraction += D_800A0888 * D_800BE9A4;
+        if (1.0f < payload->fraction) {
+            do {
+                payload->characters++;
+                if ((s32)state[0x14] < payload->characters) {
+                    payload->characters = state[0x14];
+                }
+                payload->fraction -= 1.0f;
+            } while (1.0f < payload->fraction);
+        }
+    }
+    memcpy(message, header.bytes, 4);
+    memcpy(message + 4, ((void **)(state + 0x18))[state[0x15]], payload->characters);
+    message[payload->characters + 4] = 0x20;
+    message[payload->characters + 5] = 0xBB;
+    message[payload->characters + 6] = 0;
+    func_1504332C(0, 255, 0, 150);
+    func_15042D94(15, 190, 128, (s32)message);
+    return 1;
 }
 
 void func_150D04C4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {

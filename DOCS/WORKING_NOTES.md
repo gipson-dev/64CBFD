@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md):
+Restore func_150D032C's complete102-word C and0x80 frame directly, without
+new guards. Exact first full ELF,296 code/two extent/20 checked metadata bytes;
+ten installed and eleven constructor tests pass. Tools b3020e9 first.
+Game61.21%, total65.95%, zero drift. Preserve1,084 unrelated mirror hashes /
+1,090 paths. Continue func_150D0534; earlier fade S0/private gates stay open.
+
+2026-10-17:
 [Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
 Restore func_150CFF10's complete73-word constructor, real descriptor/homes and
 dual buffers; twelve scratch guards preserve retail bytes. Exact first full

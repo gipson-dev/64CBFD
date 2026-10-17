@@ -141,8 +141,9 @@ Release remain unchanged.
 - [x] Finish affected link/fade regressions and final protected-input checks.
 - [x] Review and bank tools f5cd863 first, then consumer source/docs/pin. Preserve the
   standalone mirror's unrelated dirty work and existing HEAD; do not push.
-- [ ] Continue **func_150D032C**'s102-word reveal renderer. Keep
-  **func_150D01A0**'s unresolved S0/private gates explicit; wider Game stays open.
+- [x] Continue **func_150D032C**'s102-word reveal renderer, now finished in
+  [Note1494](1494-text-reveal-renderer-direct-restoration-and-match-20261017.md).
+- [ ] Keep **func_150D01A0**'s unresolved S0/private gates explicit; wider Game stays open.
 
 ```sh
 python3 -m tools.experiments.game_text_buffer_constructor
