@@ -1,4 +1,21 @@
 #include <ultra64.h>
+typedef struct {
+    u8 tag;
+    u8 pad01[3];
+    u8 *source;
+    u8 active;
+    u8 pad09[3];
+    u8 *start;
+    u8 *next;
+    u8 length, index;
+    u8 pad16[2];
+    u8 *buffers[2];
+    u8 *payload;
+    s8 kind;
+    u8 flags;
+    u8 pad26[2];
+} TextDescriptorFC5F0;
+void *func_15149130(s16, s8, s8, s8, u8, u8, u32, u8, s32);
 void func_1516972C(u8 *);
 typedef struct {
     s32 value;
@@ -363,9 +380,39 @@ void func_150CFE98(u8 *arg0) {
     }
 }
 
-void *func_150CFF10(u8 arg0, u8 *arg1, s16 arg2, s32 arg3, s8 arg4,
-                    u8 arg5, u8 arg6, s32 arg7) {
-    return 0;
+/* Allocate the descriptor, payload, and two terminated line buffers. */
+void *func_150CFF10(u8 tag, u8 *text, s16 duration, s32 payloadBytes, s8 kind,
+                    u8 flags, u8 view, s32 owner) {
+    TextDescriptorFC5F0 descriptor;
+    u8 *record;
+    u32 lineBytes;
+    TextDescriptorFC5F0 *state;
+
+    descriptor.index = 0;
+    descriptor.active = 1;
+    descriptor.source = text;
+    descriptor.start = text;
+    descriptor.flags = flags;
+    descriptor.kind = kind;
+    descriptor.tag = tag;
+    descriptor.length = func_150CFD84(text, &descriptor.next);
+    descriptor.buffers[0] = 0;
+    descriptor.buffers[1] = 0;
+    descriptor.payload = 0;
+    lineBytes = (u32)func_150CFDB8(text) + 1;
+    record = func_15149130(duration, -1, -1, 5, 3, 0x47,
+        (u32)payloadBytes + (lineBytes - 1) * 2 + 0x2A, view, owner);
+    if (record != 0) {
+        state = (TextDescriptorFC5F0 *)(record + 0x28);
+        memcpy(state, &descriptor, 0x28);
+        state->payload = (u8 *)state + 0x28;
+        state->buffers[0] = (u8 *)((u32)state->payload + (u32)payloadBytes);
+        state->buffers[1] = (u8 *)((u32)state->buffers[0] + lineBytes);
+        *state->buffers[0] = 0;
+        *state->buffers[1] = 0;
+        func_150CFE3C(record);
+    }
+    return record;
 }
 
 s32 func_150D0034(u8 *arg0, u8 *arg1, s32 arg2) {

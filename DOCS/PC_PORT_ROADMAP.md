@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Text Buffer Constructor Restoration And Match - 2026-10-17
+
+[Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
+
+- [x] Replace func_150CFF10's typed zero-return placeholder with complete73-word C, real40-byte descriptor,0x68 frame, original stack homes and dual-buffer initialization.
+- [x] Normalize only twelve scratch-register words; preserve the full instruction schedule, five bindings,24 owner neighbors, pools and existing guard prefix.
+- [x] Pass eleven installed tests (41.045s), including guest/native/caller/helper/rebase/fault/corruption gates and exact reversible fixture adapters.
+- [x] Match the first complete normal ELF:220 changed code bytes plus two extent bytes, zero other metadata changes/exclusions, all189,088 Game-data bytes exact. Pass21 affected checks and both tools-copy shared checks.
+- [x] Refresh only README aggregate rows: Game61.18%, total65.93%, zero drift. Bank tools f5cd863 first; preserve1,078 unrelated mirror hashes /1,086 dirty paths.
+- [ ] Continue func_150D032C's102-word reveal renderer and the earlier fade's unresolved S0/private work. Wider Game remains open; no host or frozen Release action.
+
 ## Dual Fade Native Caller-Save Selection - 2026-10-17
 
 [Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Text buffer constructor restoration and match](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
+  Complete73-word C, twelve scratch guards, exact full image and eleven
+  installed tests; Game61.18%, total65.93%, zero drift.
 - [Dual fade native caller-save selection](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
   Actual allocator costs, compare flags, opposite S0-positive control and
   three tests explain the still-uninstalled candidate's T1 selection.

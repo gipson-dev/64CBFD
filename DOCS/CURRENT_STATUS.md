@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 59d8398; tools are committed before the consumer pin.
+  checkpoint pins tools f5cd863; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Text buffer constructor **restored and byte-exact with twelve scratch guards**:
+[Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md).
+func_150CFF10 replaces its zero-return placeholder with complete73-word C,
+the40-byte descriptor, original0x68 frame and dual-buffer allocation path.
+The normal ELF equals its first prediction:220 code bytes plus two extent
+bytes, zero other metadata changes. Eleven installed tests and21 affected
+checks pass; all189,088 Game-data bytes remain exact. Tools f5cd863 first;
+preserve1,078 unrelated mirror hashes /1,086 paths. Fresh Game **61.18%**,
+total **65.93%**, zero drift. Root README changes only two aggregate rows.
+Next: func_150D032C; the earlier fade S0/private gates and wider Game stay open.
 
 Dual fade **native caller-save decision explained, still uninstalled**:
 [Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md).

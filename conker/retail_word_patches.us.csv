@@ -17114,3 +17114,15 @@ generated_FC5F0,func_150CF800,0x324,0xAFB80018,0xAFAB0018,-,-,Normalize certifie
 generated_FC5F0,func_150CF800,0x340,0x00124600,0x00125600,-,-,Normalize certified burst scratch-register roles,,,false
 generated_FC5F0,func_150CF800,0x344,0x00089603,0x000A9603,-,-,Normalize certified burst scratch-register roles,,,false
 generated_FC5F0,func_150CF484,0x88,0x548A0005,0x55440005,-,-,Preserve retail commutative link-equality branch operand order,,,false
+generated_FC5F0,func_150CFF10,0x1C,0x93B8007F,0x93AE007F,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x20,0x83B9007B,0x83AF007B,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x28,0x240E0001,0x24180001,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x30,0xA3AE0048,0xA3B80048,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x40,0xA3B80065,0xA3AE0065,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x44,0xA3B90064,0xA3AF0064,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x70,0x93B90083,0x93B80083,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x80,0x25D8002A,0x25CF002A,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0x98,0xAFB80018,0xAFAF0018,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0xAC,0xAFB9001C,0xAFB8001C,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0xE4,0x8FAF0074,0x8FB90074,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_FC5F0,func_150CFF10,0xE8,0x00AF1821,0x00B91821,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false

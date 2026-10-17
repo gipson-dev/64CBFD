@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
+Restore func_150CFF10's complete73-word constructor, real descriptor/homes and
+dual buffers; twelve scratch guards preserve retail bytes. Exact first full
+image,220 code/two extent bytes, no other metadata changes. Eleven installed
+tests plus21 affected checks pass; tools f5cd863 first. Game61.18%, total65.93%,
+zero drift. Preserve1,078 unrelated mirror hashes /1,086 paths. Continue the
+reveal renderer; earlier fade S0/private gates and wider Game remain open.
+
+2026-10-17:
 [Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
 Native func_150D01A0 caller-save cost2 beats S0 first-use cost4, with actual
 comparison flags, final colors and opposite positive control. Three tests /

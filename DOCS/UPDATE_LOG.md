@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Text Buffer Constructor Restoration And Match
+
+[Note1493](WORKING_NOTES/1493-text-buffer-constructor-restoration-and-match-20261017.md):
+Restore func_150CFF10's73-word C,40-byte descriptor, original0x68 frame and
+both terminated buffers. Twelve expected-word guards change only scratch
+registers. The normal ELF equals the first complete prediction:220 code/two
+extent bytes, zero other metadata changes; all Game data exact. Eleven
+installed tests plus21 affected checks pass. Tools f5cd863 first; preserve
+1,078 unrelated mirror hashes /1,086 paths. Game61.18%, total65.93%, zero
+drift. README updates only aggregate rows. Continue func_150D032C; keep the
+fade S0/private gates and wider Game open.
+
 ## 2026-10-17 Dual Fade Native Caller-Save Selection
 
 [Note 1492](WORKING_NOTES/1492-dual-fade-native-caller-save-selection-20261017.md):
