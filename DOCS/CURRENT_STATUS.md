@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3daba3b; tools are committed before the consumer pin.
+  checkpoint pins tools b0ae735; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor-record gate **semantic recovery banked, not installed or matching**:
+[Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md).
+func_150F2A60's candidate has137/139 words, frame0x40,118 overlapping-word
+differences and120 full padded-slot differences. Five recovery tests pass,
+including actual28-word lookup/six-word offset setter and native32. Private
+fault cut2 already rejects the saved-register lifetime, and the initial global
+read count is1 instead of2. Seven reproducible screens and one bounded advisory
+yield no installable fix. All253 protected inputs /233 paths, the complete
+production ELF and189,088 Game-data bytes remain unchanged. Matching totals
+stay Game61.35%, total66.08%, zero drift. Toolsb0ae735 first; preserve1,116
+unrelated mirror hashes /1,118 dirty paths. Continue this same139-word target;
+next inspect normal compiler live ranges/CSE rather than repeating equivalent
+source forms. Both fade lifetime gaps and wider Game remain open.
 
 Actor-state update and ordered event-value dependency **restored and byte-exact
 directly from C**:

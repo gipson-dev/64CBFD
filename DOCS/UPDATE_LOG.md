@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Actor Record Gate Recovery And Private Mismatch
+
+[Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
+Bank func_150F2A60's complete semantic candidate and five passing recovery
+tests, not a production restoration. Candidate137/retail139 words, frame0x40,
+118 overlapping-word differences,120 full padded-slot differences. A saved
+S4/S5 mismatch is visible at fault cut2; the opening global load count is also
+wrong. Seven reproducible screens and one advisory provide no accepted fix.
+All production bytes/guards/data and matching numbers remain unchanged:
+Game61.35%, total66.08%, zero drift. Toolsb0ae735 first; preserve1,116 unrelated
+mirror hashes /1,118 paths. README is unchanged. Continue the same target with
+normal compiler liveness/CSE evidence; both fade lifetime gaps remain open.
+
 ## 2026-10-17 Actor State And Event Value Direct Restoration And Match
 
 [Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):

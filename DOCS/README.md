@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor record gate recovery and private mismatch](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
+  uninstalled137/139-word candidate, five recovery tests and a measured saved-register
+  counterexample; production and matching totals unchanged, same target remains open.
 - [Actor state and event value direct restoration and match](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
   complete189/48-word C with no new guards, eight installed and three selected
   historical checks; all nine owner functions match; Game61.35%, total66.08%.

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
+Bank func_150F2A60's uninstalled137/139-word candidate, five recovery tests and
+seven reproducible screens.120 padded-slot differences and saved-register
+fault cut2 reject matching credit; initial global reads1/2 also differ.
+Toolsb0ae735 first; all production/guards/data and matching totals unchanged.
+Preserve1,116 unrelated mirror hashes /1,118 paths. Continue the same target
+with normal compiler evidence; both fade lifetime gaps and wider Game stay open.
+
+2026-10-17:
 [Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
 Restore func_150F26A0/func_150F2994's189/48-word C directly; no new guards.
 Exact whole first image,767 code/three extent/zero metadata bytes; eight installed

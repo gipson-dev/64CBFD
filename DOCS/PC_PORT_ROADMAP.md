@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Record Gate Recovery And Private Mismatch - 2026-10-17
+
+[Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
+
+- [x] Recover func_150F2A60's two-record gate, actor refresh chain and four handle byte-offset updates as an uninstalled C candidate.
+- [x] Pass five recovery tests (17.302s),960 core/400 sparse mutation cases,16 actual lookup cases,24 actual lookup/setter cases and native32 with effective negatives.
+- [x] Bank seven reproducible source/profile screens and explicit rejection:137/139 words,118 overlapping-word differences,120 padded-slot differences, wrong S4/S5 saved word at fault cut2, opening global reads1/2.
+- [x] Use one bounded packet-only advisory; reject duplicated suggestions and an independently tested object-condition form that emits identical words.
+- [x] Preserve every production source/guard, the complete ELF and189,088 Game-data bytes; matching totals and root README remain unchanged.
+- [x] Bank toolsb0ae735 first and pass both tools-copy checks; preserve1,116 unrelated mirror hashes /1,118 dirty paths.
+- [ ] Continue the same func_150F2A60 target using read-only normal compiler live-range/CSE evidence; recover the signed immediate loop test and retail rematerialization before installation.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor State And Event Value Direct Restoration And Match - 2026-10-17
 
 [Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
