@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Color Overlay Draw Direct Match - 2026-10-17
+
+[Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
+
+- [x] Recover func_1517F08C's complete 197-word SDK display-list renderer, typed Gfx pointer and five commands / 40-byte cursor advance, even for zero alpha.
+- [x] Preserve coverage-save blending, packed RGBA, live 0x180-byte viewport bounds, unsigned conversion/FCSR order, five caller bodies and all 38 raw/padded surrounding routines without new guards/profiles.
+- [x] Qualify 2,328 leaf guest pairs, 720 complete caller pairs with actual 43-word progress, 552 native32 cases per O2/O0/UBSan profile, effective controls, three rebases and 90 fault prefixes.
+- [x] Freeze the first complete image/source/caller prediction; normal ELF changes only 537 target code bytes and two size bytes. All 26 installed tests pass, with 152 protected inputs and exact data.
+- [x] Measure fresh Game 2,945/4,828 (61.00%), total 3,618/5,501 (65.77%), zero drift. README aggregate rows only; bank tools 33dda28 first, preserve 999 unrelated mirror hashes / 1,008 paths.
+- [ ] Recover func_1517F564's full 111-word pulse/palette wrapper; resolve its pulse-off SP+0x20 blend read before source/native acceptance, preserving gates, interpolation and channel-zero dispatch.
+- [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Color Channel Aggregate Direct Match - 2026-10-17
 
 [Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Qualify 5,142 aggregate guest pairs, real 43-word progress helper, mutable/alias/FP cases, 3,600 full sequence-gate pairs, native32 O2/O0/UBSan, controls, rebases and faults.
 - [x] Freeze the first entire image/source prediction; normal ELF changes only 129 code bytes and one size byte. All 22 installed tests pass, with 148 protected inputs and exact data.
 - [x] Measure fresh Game 2,944/4,828 (60.98%), total 3,617/5,501 (65.75%), zero drift. README aggregate rows only; bank tools 83a87d2 first, preserve 992 unrelated mirror hashes / 1,001 paths.
-- [ ] Recover adjacent func_1517F08C: full 197-word frame-free overlay display-list leaf, SDK commands, RGBA/viewport bounds and unsigned FP/FCSR boundaries.
+- [x] Recover adjacent func_1517F08C: full 197-word frame-free overlay display-list leaf, SDK commands, RGBA/viewport bounds and unsigned FP/FCSR boundaries. Completed directly from C in Note 1473.
 - [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
 
 ## Color Progress Accessor Direct Match - 2026-10-17

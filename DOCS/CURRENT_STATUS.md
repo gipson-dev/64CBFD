@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 83a87d2; tools are committed before the consumer pin.
+  checkpoint pins tools 33dda28; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Color-overlay renderer **installed, all 197 words directly exact from C**:
+[Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md).
+func_1517F08C uses typed SDK display-list commands, coverage-save blending,
+live viewport bounds and four unsigned FP conversions. No guards/profile
+change; all 38 surrounding owner/caller routines remain unchanged.
+All 26 installed tests pass in 321.565s. The entire normal ELF equals its
+first prediction: only 537 code bytes and two size bytes change, with exact data.
+Fresh Game 2,945/4,828 (61.00%), total 3,618/5,501 (65.77%), zero drift.
+Tools **33dda28** banks first; preserve 999 unrelated mirror hashes / 1,008 paths.
+Next func_1517F564's 111-word pulse/palette wrapper; resolve its pulse-off
+SP+0x20 blend lifetime before accepting C. Full gameplay stays open.
 
 Color-channel aggregate **installed, all 44 words directly exact from C**:
 [Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md).

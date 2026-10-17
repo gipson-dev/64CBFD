@@ -156,3 +156,7 @@ the first rectangle-word store. The leaf always emits even for zero alpha;
 do not move the caller's zero-progress gate into it. Use existing graphics/FP
 oracles and audit its real wrappers. Wider Game/additional-source matching,
 the query engine, timing's 141 differences and full gameplay stay open.
+
+Follow-through: the adjacent overlay leaf is now installed as a full direct
+197-word C match in [Note 1473](1473-color-overlay-draw-direct-match-20261017.md),
+with all five caller interfaces qualified and the first complete image audit.

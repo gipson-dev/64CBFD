@@ -1,4 +1,11 @@
 #include <ultra64.h>
+typedef struct {
+    u8 padding00[0x24];
+    f32 top, bottom, left, right;
+    u8 padding34[0x14C];
+} OverlayViewport1AC2F0;
+extern u8 *D_800BE628;
+#define OVERLAY_VIEWS_1AC2F0 ((OverlayViewport1AC2F0 *)D_800BE628)
 extern s8 D_800DDDAC[];
 extern u8 D_800DDDC0[];
 extern u16 D_800DDE10[];
@@ -88,8 +95,22 @@ s32 func_1517EFDC(void) {
     return 0;
 }
 
-s32 func_1517F08C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
-    return 0;
+/* Append the channel's RGBA overlay using the live viewport bounds. */
+Gfx *func_1517F08C(Gfx *commands, s32 alpha, s32 red, s32 green, s32 blue, s32 channel) {
+
+    gDPPipeSync(commands++);
+    gDPSetCombineMode(commands++, G_CC_PRIMITIVE, G_CC_PRIMITIVE);
+    gDPSetPrimColor(commands++, 0, 0, red, green, blue, alpha);
+    /* The overlay uses coverage-save with the SDK translucent blender. */
+    gDPSetOtherMode(commands++, G_CYC_1CYCLE | G_TP_NONE | G_TF_BILERP |
+        G_TC_FILT | G_CD_DISABLE | G_AD_DISABLE | 0xF,
+        G_ZS_PRIM | CVG_DST_SAVE | ((G_RM_XLU_SURF | G_RM_XLU_SURF2) & ~CVG_DST_SAVE));
+    gDPFillRectangle(commands++,
+        (u32)OVERLAY_VIEWS_1AC2F0[channel].left,
+        (u32)OVERLAY_VIEWS_1AC2F0[channel].top,
+        (u32)OVERLAY_VIEWS_1AC2F0[channel].right,
+        (u32)OVERLAY_VIEWS_1AC2F0[channel].bottom);
+    return commands;
 }
 
 s32 func_1517F3A0(s32 arg0, s32 arg1) {
@@ -99,8 +120,8 @@ s32 func_1517F3A0(s32 arg0, s32 arg1) {
         return arg0;
     }
 
-    return func_1517F08C(
-        arg0,
+    return (s32)func_1517F08C(
+        (Gfx *)arg0,
         mapped,
         D_800DDDA0[arg1 * 3],
         D_800DDDA0[arg1 * 3 + 1],
@@ -147,7 +168,7 @@ s32 func_1517F4D8(s32 arg0, s32 arg1) {
     }
 
     ptr = D_800DDD90 + arg1 * 3;
-    return func_1517F08C(arg0, D_800DDD9C[arg1], ptr[0], ptr[1], ptr[2], arg1);
+    return (s32)func_1517F08C((Gfx *)arg0, D_800DDD9C[arg1], ptr[0], ptr[1], ptr[2], arg1);
 }
 
 s32 func_1517F564() {
@@ -260,7 +281,7 @@ s32 func_15182768(s32 arg0, u8 *arg1, s16 arg2) {
     u8 *values = arg1 + 0x28;
 
     if (arg2 == arg1[0x2C]) {
-        arg0 = func_1517F08C(arg0, values[3], values[0], values[1], values[2], values[4]);
+        arg0 = (s32)func_1517F08C((Gfx *)arg0, values[3], values[0], values[1], values[2], values[4]);
     }
     return arg0;
 }

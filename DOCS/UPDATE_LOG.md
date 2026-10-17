@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Color Overlay Draw Direct Match
+
+[Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
+Restore func_1517F08C's full 197-word SDK overlay renderer and precise pointer
+interface across five callers. No guards/profile change; 38 surrounding
+routines unchanged. All 26 installed tests pass in 321.565s, covering actual
+callers/progress, native32 O2/O0/UBSan, aliases, faults and exact image gates.
+The first whole-image prediction equals the normal ELF: only 537 target
+code bytes and two size bytes change. Fresh Game 61.00%, total 65.77%, zero
+drift. Tools 33dda28 banks first; preserve 999 unrelated mirror hashes /
+1,008 paths. README aggregate rows only; next func_1517F564's 111-word
+pulse/palette wrapper, including the unresolved pulse-off SP+0x20 read.
+
 ## 2026-10-17 Color Channel Aggregate Direct Match
 
 [Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):

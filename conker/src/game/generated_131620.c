@@ -1,6 +1,6 @@
 #include <ultra64.h>
 extern u8 *D_800CC5EC;
-s32 func_1517F08C();
+Gfx *func_1517F08C(Gfx *, s32, s32, s32, s32, s32);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/131620.s. */
@@ -30,7 +30,7 @@ s32 func_1510448C(s32 arg0, u8 *arg1, s16 arg2) {
     if ((gate != 0) || ((value = (*record)[0x1B]) == 0)) {
         return arg0;
     }
-    return func_1517F08C(arg0, ((value << 6) - value) >> 8, 0, 0, 0, arg2);
+    return (s32)func_1517F08C((Gfx *)arg0, ((value << 6) - value) >> 8, 0, 0, 0, arg2);
 }
 
 s32 func_151044F4(void) {

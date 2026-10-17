@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-17:
+[Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
+Install func_1517F08C's 197-word direct SDK C match, typed pointer/caller
+interface, coverage-save mode and live unsigned viewport conversions.
+All 26 installed tests pass in 321.565s; 38 surrounding routines unchanged.
+The entire normal image equals the first prediction: 537 code bytes and two
+size bytes only, no guards/profile change. Fresh Game 61.00%, total 65.77%,
+no drift. Tools 33dda28 banks first, preserving 999 unrelated mirror hashes /
+1,008 paths. Next func_1517F564's 111-word pulse/palette wrapper; resolve
+its pulse-off SP+0x20 blend lifetime before source/native acceptance.
+
+2026-10-17:
 [Note 1472](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
 Install func_1517EFDC's 44-word direct C match, preserving live limit,
 signed progress/strict float gates, frame 0x30 and saved F20 lifetime.

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Color overlay draw direct match](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
+  Complete 197-word direct SDK C match, typed callers, live unsigned bounds,
+  no new guards/profile and 38 unchanged surrounding routines. All 26 tests
+  pass; first whole image matches. Fresh Game 61.00%, total 65.77%, no drift.
 - [Color channel aggregate direct match](WORKING_NOTES/1472-color-channel-aggregate-direct-match-20261017.md):
   First-candidate 44-word direct C match, frame 0x30/F20 lifetime, real
   helper/sequence chains and 22 passing installed tests. No guards/profile
