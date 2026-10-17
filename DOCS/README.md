@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Link event callback match](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
+  Complete 43-word semantic callback with one commutative guard, exact full
+  image, nine installed tests and unchanged data. Fresh Game 61.16%.
 - [Transition burst real object layout and guarded match](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
   Complete 251-word semantic C, real object homes, eleven scratch guards and
   exact first complete image. Fresh Game 61.14%; wider matching remains open.

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Link Event Callback Match - 2026-10-17
+
+[Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
+
+- [x] Replace func_150CF484's stub with the complete 43-word callback, correct void/three-argument interface, word/byte layouts and original alias-sensitive stores.
+- [x] Normalize only one commutative BNE-likely operand order; preserve the frame, all 24 raw/padded neighbors, existing guards and constant mapping.
+- [x] Verify 6,912 guest cases, native O2/O0, full actual dispatcher, independent relocations, faults and effective width/input controls; pass nine installed tests (20.308s).
+- [x] Match the first full ELF prediction exactly: 119 changed bytes, zero metadata differences/exclusions, all 189,088 Game-data bytes unchanged. Pass four focused burst/child regressions (33.305s).
+- [x] Refresh aggregate README rows only: Game 61.16%, total 65.92%, zero drift. Bank tools fed3c57 first, preserving 1,071 unrelated mirror hashes / 1,076 paths.
+- [ ] Continue func_150D01A0's 69-word dual-buffer fade callback, then broader Game matching. No host or frozen Release action.
+
 ## Transition Burst Real Object Layout And Guarded Match - 2026-10-17
 
 [Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
@@ -9,7 +20,7 @@
 - [x] Verify full guest/private/native/caller/rebase/fault gates and the first complete normal image: 773 changed bytes, one explicit symbol permutation, zero metadata exclusions, all Game data exact.
 - [x] Refresh README aggregate rows only: Game 61.14%, total 65.90%, zero drift. Preserve older frozen candidates and unrelated standalone-tools work.
 - [x] Pass twelve installed tests (133.014s), thirteen affected checks (76.513s), both tools-copy shared checks and tools-check; bank tools e537123 first, preserving 1,066 unrelated mirror hashes / 1,072 paths.
-- [ ] Continue the next nearby placeholder, func_150CF484, and broader Game/fade/pulse/renderer work. No host or frozen Release action.
+- [x] Complete the nearby func_150CF484 placeholder in Note 1489; broader Game/fade/pulse/renderer work stays open. No host or frozen Release action.
 
 ## Transition Burst Pointer And Flag Lifetime Recovery - 2026-10-17
 

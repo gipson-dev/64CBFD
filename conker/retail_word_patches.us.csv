@@ -17113,3 +17113,4 @@ generated_FC5F0,func_150CF800,0x318,0x92980001,0x928B0001,-,-,Normalize certifie
 generated_FC5F0,func_150CF800,0x324,0xAFB80018,0xAFAB0018,-,-,Normalize certified burst scratch-register roles,,,false
 generated_FC5F0,func_150CF800,0x340,0x00124600,0x00125600,-,-,Normalize certified burst scratch-register roles,,,false
 generated_FC5F0,func_150CF800,0x344,0x00089603,0x000A9603,-,-,Normalize certified burst scratch-register roles,,,false
+generated_FC5F0,func_150CF484,0x88,0x548A0005,0x55440005,-,-,Preserve retail commutative link-equality branch operand order,,,false

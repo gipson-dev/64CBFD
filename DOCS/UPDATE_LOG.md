@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Link Event Callback Match
+
+[Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
+Restore func_150CF484's complete 43-word removal/link-swap callback and correct
+void interface. One expected-word guard preserves commutative branch operand
+order. The normal ELF equals its first full prediction with 119 changed bytes
+and no metadata differences/exclusions; all owner neighbors and protected data
+remain unchanged. Nine installed tests and four focused burst/child checks
+pass. Fresh Game 61.16%, total 65.92%, zero drift. Tools fed3c57 first;
+preserve 1,071 unrelated mirror hashes / 1,076 paths. Continue func_150D01A0;
+broader Game matching and real destructor/gameplay acceptance remain open.
+
 ## 2026-10-17 Transition Burst Real Object Layout And Guarded Match
 
 [Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md):
+Install func_150CF484's complete 43-word removal/link-swap callback with one
+commutative branch guard. Exact first full image, 119 changed bytes, unchanged
+neighbors/data; nine installed tests plus four focused burst/child checks.
+Fresh Game 61.16%, total 65.92%, zero drift. Bank tools fed3c57 first;
+preserve 1,071 unrelated mirror hashes / 1,076 paths. Continue func_150D01A0.
+
+2026-10-17:
 [Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md):
 Install func_150CF800's full 251-word C with real aggregate homes, existing
 constant anchor and eleven scratch guards. Exact first complete image,

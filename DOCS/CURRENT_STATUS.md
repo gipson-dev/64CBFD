@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e537123; tools are committed before the consumer pin.
+  checkpoint pins tools fed3c57; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Link-event callback **installed, all 43 words exact with one commutative guard**:
+[Note 1489](WORKING_NOTES/1489-game-link-event-callback-match-20261017.md).
+func_150CF484 now has its full void(record, packet, u8 event) interface,
+removal/link-swap behavior, original pointer/access lifetimes and frame 0x18.
+The normal ELF equals the first complete prediction: 118 code bytes plus one
+size byte, zero metadata differences or exclusions. All 24 owner neighbors
+and 189,088 Game-data bytes remain unchanged. Nine installed tests pass in
+20.308s; four burst/child emission/behavior checks pass in 33.305s. Fresh
+Game **2,953/4,828 (61.16%)**, total **3,626/5,501 (65.92%)**, different
+**1,875**, zero drift. Tools fed3c57 first; preserve 1,071 unrelated mirror
+hashes / 1,076 dirty paths. Root README gets aggregate rows only. Next nearby
+placeholder: **func_150D01A0**, the 69-word dual-buffer fade callback;
+wider Game matching and real destructor/gameplay acceptance remain open.
 
 Transition completion burst **installed, all 251 words exact with eleven guards**:
 [Note 1488](WORKING_NOTES/1488-transition-burst-real-object-layout-and-guarded-match-20261017.md).

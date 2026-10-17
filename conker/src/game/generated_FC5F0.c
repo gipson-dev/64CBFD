@@ -1,4 +1,9 @@
 #include <ultra64.h>
+void func_1516972C(u8 *);
+typedef struct {
+    s32 value;
+    u8 tag;
+} LinkStateFC5F0;
 extern f32 D_800A0878, D_800A087C, D_800BE9A4;
 f32 fabsf(f32);
 #pragma intrinsic (fabsf)
@@ -78,8 +83,30 @@ s32 func_150CF140() {
     return 0;
 }
 
-s32 func_150CF484() {
-    return 0;
+/* Event packets use different layouts for removal and link replacement. */
+void func_150CF484(u8 *record, u8 *packet, u8 event) {
+    LinkStateFC5F0 *link;
+    s32 first, current;
+
+    link = (LinkStateFC5F0 *)(record + 0x28);
+    if (event == 0) {
+        first = *(s32 *)packet;
+        if (first == link->value || link->tag == packet[4]) {
+            func_1516972C(record);
+        }
+    } else {
+        if (event == 0x2D) {
+            current = link->value;
+            first = *(s32 *)packet;
+            if (first == current) {
+                link->value = *(s32 *)(packet + 4);
+                link->tag = packet[9];
+            } else if (*(s32 *)(packet + 4) == current) {
+                link->value = first;
+                link->tag = packet[8];
+            }
+        }
+    }
 }
 
 void func_150CF530(s32 arg0) {
