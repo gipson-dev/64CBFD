@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Mirrored Texture Candidate And Private Gap
+
+[Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
+Recover and audit func_1517FB9C's complete four-rectangle SDK candidate,
+not a partial packet or installed match. All seven final tests pass in
+150.349s: 15,576 public guest pairs, 948 native cases/profile, eight
+effective controls, all four original caller windows and exact input gates.
+The 626-word / frame-0xD8 body still has 604 ordinal differences and a measured
++0x54 versus +0x60 private FP spill gap. No production, guard or matching-credit
+change; fresh Game 61.04%, total 65.81%, zero drift, root README untouched.
+Tools 5deb8e2 first; preserve 1,025 old mirror hashes / 1,029 paths.
+Continue the same routine's compiler/private-state work, not broad word patches.
+
 ## 2026-10-17 Clipped Rectangle Direct Match
 
 [Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):

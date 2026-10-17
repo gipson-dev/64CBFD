@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
+Audit the complete func_1517FB9C SDK candidate: all four mirrored rectangles,
+six-word mixed float ABI, asymmetric clipping and unsigned rate conversion.
+All seven final tests pass in 150.349s. Public/native/caller evidence
+does not close its 626/633 word and private +0x54/+0x60 spill gaps; no source
+installation, guards or C credit. Production totals remain Game 61.04% /
+total 65.81%, no drift. Tools 5deb8e2 first; preserve all 1,025 initial
+mirror hashes / 1,029 paths. Same target next, with compiler-origin tracing.
+
+2026-10-17:
 [Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
 Install func_1517F9F4's 106-word direct C leaf, signed float clipping and
 SDK fill command, preserving its cursor-home lifetime and all 27 neighbors.

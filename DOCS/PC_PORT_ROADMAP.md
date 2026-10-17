@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Mirrored Texture Candidate And Private Gap - 2026-10-17
+
+[Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
+
+- [x] Audit all 633 original words, recover the six-word mixed float interface and four mirrored SDK texture rectangles / 24 words / 96-byte cursor advance.
+- [x] Recover a complete 626-word / frame-0xD8 C candidate without uninitialized locals, guards, new profiles/pools or neighbor changes; keep it uninstalled and without matching credit.
+- [x] Qualify 15,576 public guest pairs, 948 native32 cases/profile with UBSan, eight effective controls, three rebase pairs and 192 cases across all four original caller windows.
+- [x] Measure the first private FP spill mismatch (+0x54 versus +0x60), differing 83/78 access counts and 322 positively fired faults without falsely certifying private/fault equivalence.
+- [x] Pass seven final audit tests and 156 fail-closed input gates; protect exact data and every production byte. Fresh Game 61.04%, total 65.81%, zero drift; README untouched.
+- [x] Bank tools 5deb8e2 first and preserve all 1,025 original mirror hashes / 1,029 final paths.
+- [ ] Continue func_1517FB9C's source/compiler-origin work: recover positive-X residency and +0x30/+0x34 step homes, close the full 633-word/private-state contract, then qualify installation.
+- [ ] Keep wider Game/additional-source matching, deferred pulse lifetime, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Clipped Rectangle Direct Match - 2026-10-17
 
 [Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):

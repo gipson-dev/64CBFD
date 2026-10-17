@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Mirrored texture candidate and private gap](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
+  Complete four-rectangle SDK candidate and seven passing audit tests.
+  Public packets/native/callers agree, but 626/633 words and private spill
+  homes differ. Not installed, no new credit; same target stays open.
 - [Clipped rectangle direct match](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md):
   Complete 106-word direct C leaf, signed clipping, original cursor homes
   and all 27 neighbors preserved without new guards/profile/pool/build changes.

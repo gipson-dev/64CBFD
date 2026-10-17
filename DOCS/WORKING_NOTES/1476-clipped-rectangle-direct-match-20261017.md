@@ -188,3 +188,8 @@ order, live viewport/projection offsets and private homes. Do not assume the
 reference's types or arithmetic shifts are correct. The deferred 111-word
 pulse wrapper's supported lifetime/precondition, query/sequence engines,
 timing's 141 differences and full gameplay remain open.
+
+Follow-through: [Note 1477](1477-mirrored-texture-candidate-and-private-gap-20261017.md)
+recovers the next routine's complete four-rectangle SDK candidate and qualifies
+its public packets, native behavior and original caller windows. It remains
+uninstalled: 626/633 words and private spill homes still differ. No new credit.

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d52744e; tools are committed before the consumer pin.
+  checkpoint pins tools 5deb8e2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Mirrored texture **complete SDK candidate audited; not installed or byte-exact**:
+[Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md).
+func_1517FB9C's four rectangles / 24 words / 96-byte advance agree with an
+independent reference in 15,576 guest pairs and 948 native cases/profile.
+All seven final tests pass in 150.349s, including four original caller
+windows, rebases and fail-closed input gates. The C candidate has 626 words,
+frame 0xD8, 604 ordinal differences including its seven-word length deficit.
+Retail's first private FP spill is +0x54; C's is +0x60. Do not install or add
+guards on public equivalence alone. All production bytes/totals stay unchanged:
+Game **61.04%**, total **65.81%**, zero drift. Tools **5deb8e2** banks first;
+preserve all 1,025 initial mirror hashes / 1,029 paths. Continue this same
+routine's float spill / step-home code-generation investigation next.
 
 Clipped rectangle **installed, all 106 words directly exact from C**:
 [Note 1476](WORKING_NOTES/1476-clipped-rectangle-direct-match-20261017.md).
