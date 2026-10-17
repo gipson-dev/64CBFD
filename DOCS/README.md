@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor counter motion direct restoration and match](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
+  Complete39-word C without new guards, exact entire image, ten installed
+  tests and21 affected checks; Game61.23%, total65.97%, zero drift.
 - [White text fade candidate and private lifetime gap](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
   Eight tests qualify public behavior and positively reject private payload
   parity. Still uninstalled69/70 body words; next ordinary C: func_150B9560.

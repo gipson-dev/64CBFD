@@ -119,11 +119,12 @@ receipt before closing the checkpoint.
   home, helper/caller/native/rebase boundaries and positive private rejection.
 - [ ] Recover S0/RA/state lifetimes and private/fault/full-image gates before
   installing func_150D0534. Keep func_150D01A0's related issue open separately.
-- [ ] Continue ordinary C recovery at **func_150B9560**, owner
+- [x] Continue ordinary C recovery at **func_150B9560**, now finished in
+  [Note1496](1496-actor-counter-motion-direct-restoration-and-match-20261017.md), owner
   **generated_E5E90**, VA **150B9560..150B95FC**, ROM **E6A10..E6AAC**,
-  **39 words**. The current zero-return stub lacks its signed actor-state
-  thresholds and float motion updates; inspect constants and caller context
-  before compiling the full body.
+  **39 words**. Its former zero-return placeholder is now replaced with the
+  complete counter-gated updates; see Note1496 for literal and normal-image
+  qualification.
 - [ ] Keep handwritten **func_150A76F0** in the separate assembly/register
   workstream. The fresh census ranks its32-word slot early, but its T4/T9/S6/S7
   inputs and **JR V0** are not an ordinary C ABI. Wider Game stays active.

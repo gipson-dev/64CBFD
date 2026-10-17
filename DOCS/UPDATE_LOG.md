@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Actor Counter Motion Direct Restoration And Match
+
+[Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
+Restore func_150B9560's complete39-word/frame0 C directly, without new guards.
+Ten installed and21 affected tests pass; the entire normal ELF equals its
+first prediction:120 code/one extent/51 checked metadata bytes. All6,057
+bodies and189,088 Game-data bytes audited. Tools39c4f4e first; preserve1,088
+unrelated mirror hashes /1,096 paths. Game61.23%, total65.97%, zero drift.
+README updates only aggregate rows. Continue func_150F2480; keep both fade
+lifetime issues and the wider Game goal open.
+
 ## 2026-10-17 White Text Fade Candidate And Private Lifetime Gap
 
 [Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):

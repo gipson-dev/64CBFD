@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 017c9c4; tools are committed before the consumer pin.
+  checkpoint pins tools 39c4f4e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor counter motion **restored and byte-exact directly from C**:
+[Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md).
+func_150B9560 emits all39 retail words, frame0, with no new guards. Ten
+installed tests and21 affected checks pass. The entire normal ELF equals
+its first prediction:120 code/one extent/51 checked metadata bytes; all6,057
+bodies and189,088 Game-data bytes audited. Fresh Game **61.23%**, total
+**65.97%**, zero drift. Tools39c4f4e first; preserve1,088 unrelated mirror
+hashes /1,096 paths. Next: func_150F2480. Both fade lifetime issues stay open.
+
 White text fade **public candidate qualified, private gap rejects installation**:
 [Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md).
 func_150D0534 has69 candidate/70 body/71 slot words, frame0x30 and the real
@@ -34,8 +43,9 @@ P0 home, but62 full-slot differences and wrong S0/RA/state lifetimes. Eight
 tests pass (39.443s), including28 actual-wrapper private counterexamples.
 No production/guard/ELF/README change or matching credit. Fresh Game61.21%,
 total65.95%, zero drift. Tools017c9c4 first; preserve all1,090 mirror hashes /
-1,092 paths. Next ordinary C target: func_150B9560. Both fade lifetime issues
-remain open; handwritten func_150A76F0 stays in the assembly workstream.
+1,092 paths. The next actor target is subsequently finished in Note1496.
+Both fade lifetime issues remain open; handwritten func_150A76F0 stays in
+the assembly workstream.
 
 Text reveal renderer **restored and byte-exact directly from C**:
 [Note1494](WORKING_NOTES/1494-text-reveal-renderer-direct-restoration-and-match-20261017.md).

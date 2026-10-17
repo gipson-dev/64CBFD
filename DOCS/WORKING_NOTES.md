@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
+Restore func_150B9560's39-word C directly, no new guards. Exact entire normal
+ELF,120 code/one extent/51 checked metadata bytes; ten installed and21 affected
+tests pass. Tools39c4f4e first. Game61.23%, total65.97%, zero drift. Preserve
+1,088 unrelated mirror hashes /1,096 paths. Continue func_150F2480; both fade
+lifetime issues stay open.
+
+2026-10-17:
 [Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
 White fade func_150D0534 remains uninstalled69/70 body words and62 slot
 differences. Eight tests qualify public semantics and expose28 private-helper

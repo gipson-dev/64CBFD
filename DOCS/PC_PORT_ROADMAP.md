@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Counter Motion Direct Restoration And Match - 2026-10-17
+
+[Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
+
+- [x] Replace func_150B9560's zero-return stub with complete39-word/frame0 C, signed counter thresholds, ordered float updates and cached scale; no new guards.
+- [x] Pass ten installed tests (67.268s), including all signed halfwords in native32,14,784 guest cases, aliases, faults, nine independent links and bounded paths through the actual195-word caller.
+- [x] Match the entire first normal image:120 code/one extent/51 exactly checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve historical fixtures; pass21 affected checks and both tools-copy checks. Bank tools39c4f4e first; preserve1,088 unrelated mirror hashes /1,096 dirty paths.
+- [x] Refresh only README aggregate rows: Game61.23%, total65.97%, zero drift.
+- [ ] Continue func_150F2480's38-word sine/phase update. Both fade lifetime issues and wider Game stay open; no host or frozen Release action.
+
 ## White Text Fade Candidate And Private Lifetime Gap - 2026-10-17
 
 [Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md):
@@ -9,7 +20,8 @@
 - [x] Replay eight source discriminators; reject the normal form's wrong S0 role and the70-word equal-length form. Bank tools017c9c4 first and preserve all1,090 mirror hashes /1,092 paths.
 - [x] Verify unchanged production/normal ELF/README and Game61.21%, total65.95%, zero drift. No installation or matching credit.
 - [ ] Recover S0/RA/state and private/fault/full-image gates for func_150D0534; keep func_150D01A0's separate lifetime issue open.
-- [ ] Continue ordinary C at func_150B9560's39-word actor update. Keep handwritten func_150A76F0 in the assembly workstream; wider Game stays active.
+- [x] Continue ordinary C at func_150B9560's39-word actor update, now finished in Note1496.
+- [ ] Keep handwritten func_150A76F0 in the assembly workstream; wider Game stays active.
 
 ## Text Reveal Renderer Direct Restoration And Match - 2026-10-17
 
