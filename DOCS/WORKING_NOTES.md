@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-17:
+[Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
+Recover func_150CF800's full typed burst, byte interfaces, 88/16-byte objects
+and exact six-word literal pool. Candidate remains uninstalled at 251 words,
+93 differences and frame 0x118 versus 0x108. Public/helper/caller evidence
+does not certify private/native/installation state; production and README
+remain unchanged. Six tests pass in 21.605s, including 2,304 public and 128
+caller cases. Tools f36356e first; preserve 1,053 mirror hashes / 1,056
+paths. Fresh Game 61.10%, total 65.86%, zero drift. Continue the real
+frame/register/object lifetime match.
+
+2026-10-17:
 [Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
 Install func_150CF680's complete 96-word direct C constructor and seven-word
 factory call, with properly sized descriptor/payload objects and inherited

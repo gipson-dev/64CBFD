@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Transition completion burst candidate and frame gap](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
+  Complete 251-word typed candidate, correct callback/factory ABI and exact
+  literal pool; 93 word differences and the larger frame keep it uninstalled.
+  Public/caller checks are not private/native or installation acceptance.
 - [Fixed transition constructor direct match](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
   Complete 96-word typed C, proper factory ABI and actual copies/padding
   qualified. Eight final tests plus twelve affected checks pass; first full

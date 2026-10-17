@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 791eb66; tools are committed before the consumer pin.
+  checkpoint pins tools f36356e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Transition completion burst **recovered as a complete uninstalled candidate**:
+[Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md).
+func_150CF800 emits 251 words, but 93 differ and frame 0x118 still exceeds
+retail's 0x108. Correct byte fields, full 88/16-byte objects, callback/factory
+ABI and the six-word literal pool are audited. Public guest/reference and
+actual callback-window checks do not certify private/native/installation
+state. Production source/ELF and README remain unchanged, with no matching
+credit. Six tests pass in 21.605s: 2,304 public cases, 128 original caller
+cases and effective source/word/binding/input controls. Tools f36356e first;
+preserve all 1,053 initial mirror hashes / 1,056 final paths. Fresh Game
+61.10%, total 65.86%, zero drift. Continue this function's real
+frame/register/object lifetimes.
 
 Fixed transition constructor **installed, all 96 words directly exact from C**:
 [Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md).

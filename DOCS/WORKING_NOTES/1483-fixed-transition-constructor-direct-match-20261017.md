@@ -166,7 +166,10 @@ make -C conker match-progress NON_MATCHING=1
 - [x] Install the complete 96-word typed constructor directly from C.
 - [x] Qualify the seven-word interface, actual factory/copies and live padding.
 - [x] Verify first whole image, every protected input, data and affected checks.
-- [ ] Recover neighboring **func_150CF800**, **251 words / frame 0x108**,
-  starting with its complete retail body, descriptor/payload reads and callers.
+- [x] Audit neighboring **func_150CF800**, **251 words / frame 0x108**,
+  and recover its complete uninstalled typed candidate in
+  [Note 1484](1484-transition-completion-burst-candidate-and-frame-gap-20261017.md).
+- [ ] Match all 251 words/frame and close private/native/installation gates;
+  the current 93 differences and larger frame are not matching credit.
 - [ ] Keep the 54-word fade, 633-word renderer, deferred pulse lifetime,
   wider Game/additional-source queue and natural gameplay boundaries open.

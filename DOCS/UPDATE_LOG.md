@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Transition Completion Burst Candidate And Frame Gap
+
+[Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
+Recover func_150CF800's complete typed transition/burst candidate, correct
+byte fields, full 88/16-byte objects and callback/factory ABI. The literal
+pool matches and 24 neighbors are unchanged, but 93 words and frame 0x118
+versus 0x108 still reject installation. Public guest, actual helper/copy and
+callback-window evidence is bounded; remaining native/private/rebase/fault
+and first-image gates stay open. Six final tests pass in 21.605s, including
+2,304 public cases, 128 caller cases and effective corruption controls.
+Tools f36356e first; preserve 1,053 mirror hashes / 1,056 final paths. No
+production, README or matching credit; fresh Game 61.10%, total 65.86%.
+
 ## 2026-10-17 Fixed Transition Constructor Direct Match
 
 [Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):

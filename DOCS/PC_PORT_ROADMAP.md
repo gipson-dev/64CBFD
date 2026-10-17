@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Transition Completion Burst Candidate And Frame Gap - 2026-10-17
+
+[Note 1484](WORKING_NOTES/1484-transition-completion-burst-candidate-and-frame-gap-20261017.md):
+
+- [x] Audit func_150CF800's complete 251-word retail body, byte state/slot/context reads, one-pointer kind-12 callback, seven-word factory and full 88/16-byte objects.
+- [x] Recover a reproducible uninstalled C candidate, exact six-word retail literal pool and unchanged 24 raw/padded owner neighbors.
+- [x] Qualify bounded public behavior with actual factory, SDK copy, tag leaves and the eleven-word callback window; retain explicit scripted-helper and padding limits.
+- [x] Pass six final tests in 21.605s, including 2,304 public cases, 128 original caller cases and effective corruption controls; bank tools f36356e first and preserve all 1,053 old mirror hashes / 1,056 final paths.
+- [ ] Close the remaining 93 word differences and frame 0x118 versus 0x108, including register/object lifetimes and branch/reload schedules.
+- [ ] Complete native, rebasing, private/fault, caller and first-image gates before installation. No credit or production/README change is claimed for this candidate.
+- [ ] Keep broader Game matching, deferred fade/pulse/renderer work and gameplay open; no host/frozen Release action.
+
 ## Fixed Transition Constructor Direct Match - 2026-10-17
 
 [Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
@@ -9,7 +21,8 @@
 - [x] Pass eight installed tests: 3,888 three-way guest cases, 864 native cases/profile, ten effective controls, independent helper rebases, 1,332 fault prefixes and 288 original caller cases.
 - [x] Verify the normal ELF equals the first complete prediction: 292 code bytes and two size bytes only, no guards/profile/pool/metadata exclusions, all 24 neighbors and 189,088 Game-data bytes unchanged.
 - [x] Pass twelve affected checks and bank tools 791eb66 first. Preserve 1,045 unrelated mirror hashes / 1,053 paths; fresh Game 61.10%, total 65.86%, zero drift. README aggregate rows only.
-- [ ] Recover func_150CF800's full 251-word / frame-0x108 body, descriptor/payload reads and caller interface before qualification or installation.
+- [x] Audit func_150CF800's retail body, descriptor/payload reads and caller interface; recover the complete uninstalled candidate in Note 1484.
+- [ ] Match its frame 0x108 and all 251 words, then close the remaining qualification gates before installation.
 - [ ] Keep factory optional-pair/flag-clear branches, real heap/gameplay acceptance, deferred fade/pulse/renderer work and wider Game matching open; no host or frozen Release action.
 
 ## Paired Scrolling Tile Windows Direct Match - 2026-10-17
