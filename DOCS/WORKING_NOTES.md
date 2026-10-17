@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
+Restore func_150F2480's38-word C with one commutative ADDU guard. Exact whole
+normal image,119 code/one extent/zero metadata bytes; ten final installed and
+seven selected compatibility checks pass. Tools931d6c2 first. Game61.25%,
+total65.99%, zero drift. Preserve1,093 unrelated mirror hashes /1,100 paths.
+Continue func_150F23E0; both fade lifetime issues and wider Game stay open.
+
+2026-10-17:
 [Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
 Restore func_150B9560's39-word C directly, no new guards. Exact entire normal
 ELF,120 code/one extent/51 checked metadata bytes; ten installed and21 affected

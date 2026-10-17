@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Sine phase update restoration and match](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
+  complete38-word C with one commutative ADDU guard; ten final installed and
+  seven selected compatibility checks; Game61.25%, total65.99%, zero drift.
 - [Actor counter motion direct restoration and match](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
   Complete39-word C without new guards, exact entire image, ten installed
   tests and21 affected checks; Game61.23%, total65.97%, zero drift.

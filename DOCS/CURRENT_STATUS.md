@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 39c4f4e; tools are committed before the consumer pin.
+  checkpoint pins tools 931d6c2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Sine/phase update **restored and byte-exact with one commutative ADDU guard**:
+[Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md).
+func_150F2480 has38 words/frame0x20, the captured state pointer and four float
+calls. Ten final installed tests and seven selected compatibility checks pass.
+The entire first normal image matches:119 code/one extent/zero metadata bytes;
+all6,057 bodies and189,088 Game-data bytes audited. Fresh Game **61.25%**,
+total **65.99%**, zero drift. Tools931d6c2 first; preserve1,093 unrelated mirror
+hashes /1,100 dirty paths. Next: func_150F23E0. Both fade lifetime gaps stay open.
+
 Actor counter motion **restored and byte-exact directly from C**:
 [Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md).
 func_150B9560 emits all39 retail words, frame0, with no new guards. Ten
@@ -34,7 +43,8 @@ installed tests and21 affected checks pass. The entire normal ELF equals
 its first prediction:120 code/one extent/51 checked metadata bytes; all6,057
 bodies and189,088 Game-data bytes audited. Fresh Game **61.23%**, total
 **65.97%**, zero drift. Tools39c4f4e first; preserve1,088 unrelated mirror
-hashes /1,096 paths. Next: func_150F2480. Both fade lifetime issues stay open.
+hashes /1,096 paths. Its next target is finished in Note1497.
+Both fade lifetime issues stay open.
 
 White text fade **public candidate qualified, private gap rejects installation**:
 [Note1495](WORKING_NOTES/1495-white-text-fade-candidate-and-private-lifetime-gap-20261017.md).

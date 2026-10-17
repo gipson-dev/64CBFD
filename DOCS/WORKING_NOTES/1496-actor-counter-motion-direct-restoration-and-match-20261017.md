@@ -132,9 +132,9 @@ verify the native code-only post-commit Graphify receipt before closing.
 - [x] Pass ten installed tests,21 affected checks, complete function/data audit,
   fresh official progress and both tools-copy checks.
 - [x] Bank tools39c4f4e before the consumer source/docs/pin checkpoint.
-- [ ] Continue **func_150F2480**, owner **generated_11F780**, the38-word
-  sine/phase update. Inspect the offset-selected state, both float helper
-  interfaces and clock reloads before compiling its full body.
+- [x] Finish **func_150F2480**, owner **generated_11F780**, the38-word
+  sine/phase update, in [Note1497](1497-sine-phase-update-restoration-and-match-20261017.md).
+  The complete C body matches with one commutative ADDU operand guard.
 - [ ] Keep both fade S0/private-lifetime issues and wider Game matching open.
   Handwritten func_150A76F0 remains in the separate assembly workstream.
 

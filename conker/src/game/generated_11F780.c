@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern f32 D_800BE9A4;
+f32 func_15144B68(f32);
 #include "structs.h"
 
 void func_151C329C(struct17 *arg0, s32 arg1, s32 arg2);
@@ -28,8 +30,16 @@ s32 func_150F23E0() {
     return 0;
 }
 
-s32 func_150F2480() {
-    return 0;
+/* Update sine outputs, then advance and wrap both phases. */
+s32 func_150F2480(u8 *actor) {
+    f32 *state;
+
+    state = (f32 *)(actor + *(s32 *)(actor + 0x50) + 0xF8);
+    state[9] = state[4] * sinf(state[0]);
+    state[10] = state[5] * sinf(state[1]);
+    state[0] = func_15144B68(state[2] * D_800BE9A4 + state[0]);
+    state[1] = func_15144B68(state[3] * D_800BE9A4 + state[1]);
+    return 1;
 }
 
 s32 func_150F2518(u8 *arg0, s32 arg1) {

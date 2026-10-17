@@ -17126,3 +17126,4 @@ generated_FC5F0,func_150CFF10,0x98,0xAFB80018,0xAFAF0018,-,-,Normalize closed te
 generated_FC5F0,func_150CFF10,0xAC,0xAFB9001C,0xAFB8001C,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
 generated_FC5F0,func_150CFF10,0xE4,0x8FAF0074,0x8FB90074,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
 generated_FC5F0,func_150CFF10,0xE8,0x00AF1821,0x00B91821,-,-,Normalize closed text-constructor scratch-register roles without changing homes or schedule,,,false
+generated_11F780,func_150F2480,0x10,0x01C48021,0x008E8021,-,-,Normalize commutative sine-phase state-address ADDU operand order,,,false

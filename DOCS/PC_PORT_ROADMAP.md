@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Sine Phase Update Restoration And Match - 2026-10-17
+
+[Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F2480's38-word/frame0x20 C, captured state pointer, sine outputs and independently wrapped phases; one commutative ADDU guard.
+- [x] Pass ten final installed tests (40.580s), actual104/24-word math helpers, guest aliases/private faults, native32, nine independent links and the actual41-word timer caller.
+- [x] Match the entire first normal ELF:119 code/one extent/zero metadata bytes, no exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve original predictions and separately predict the reveal guard-audit adapter; pass seven selected compatibility checks (159.102s).
+- [x] Bank tools931d6c2 first; verify both tools copies and preserve1,093 unrelated mirror hashes /1,100 dirty paths.
+- [x] Refresh README aggregate rows only: Game61.25%, total65.99%, zero drift.
+- [ ] Continue func_150F23E0's40-word fixed-state sine updater, including its real actor argument home and S0 lifetime.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Counter Motion Direct Restoration And Match - 2026-10-17
 
 [Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
@@ -9,7 +22,8 @@
 - [x] Match the entire first normal image:120 code/one extent/51 exactly checked metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
 - [x] Preserve historical fixtures; pass21 affected checks and both tools-copy checks. Bank tools39c4f4e first; preserve1,088 unrelated mirror hashes /1,096 dirty paths.
 - [x] Refresh only README aggregate rows: Game61.23%, total65.97%, zero drift.
-- [ ] Continue func_150F2480's38-word sine/phase update. Both fade lifetime issues and wider Game stay open; no host or frozen Release action.
+- [x] Finish func_150F2480's38-word sine/phase update in Note1497.
+- [ ] Both fade lifetime issues and wider Game stay open; no host or frozen Release action.
 
 ## White Text Fade Candidate And Private Lifetime Gap - 2026-10-17
 

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Sine Phase Update Restoration And Match
+
+[Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
+Restore func_150F2480's complete38-word/frame0x20 C with one commutative
+ADDU operand guard. Ten final installed and seven selected compatibility
+checks pass; the whole normal ELF equals its first prediction:119 code/one
+extent/zero metadata bytes. All6,057 bodies and189,088 Game-data bytes audited.
+Tools931d6c2 first; preserve1,093 unrelated mirror hashes /1,100 paths.
+Game61.25%, total65.99%, zero drift. README updates only aggregate rows.
+Next: func_150F23E0; both fade lifetime issues and wider Game remain open.
+
 ## 2026-10-17 Actor Counter Motion Direct Restoration And Match
 
 [Note1496](WORKING_NOTES/1496-actor-counter-motion-direct-restoration-and-match-20261017.md):
