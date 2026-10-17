@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Pulsed overlay private lifetime audit](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
+  Retail pulse-off RGB depends on inherited SP+0x20 bits. Actual helper/
+  caller/setter chains and 10 passing checks reject zero substitution and
+  undefined-local adoption. No production changes or matching credit.
 - [Color overlay draw direct match](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
   Complete 197-word direct SDK C match, typed callers, live unsigned bounds,
   no new guards/profile and 38 unchanged surrounding routines. All 26 tests

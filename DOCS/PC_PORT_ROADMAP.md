@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Pulsed Overlay Private Lifetime Audit - 2026-10-17
+
+[Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
+
+- [x] Independently assemble func_1517F564's complete 111 words / 16 bindings and prove SP+0x20 has no preceding local store; map the read to caller-entry SP-0x38.
+- [x] Execute 6,480 wrapper cases with real phase-shift/wave lookup and 197-word renderer; preserve 96 naturally reachable words and all 111 object words.
+- [x] Execute the real setter/updater in 24 cases, all 175 caller words in 512 cases, and both speed routes of the ten-word sequence packet in 40 cases.
+- [x] Reject actual compiled zero-blend output in eight witnesses, retain both undefined-local forms as rejected diagnostics only, and positively fire 308 fault prefixes.
+- [x] Pass all 10 final checks, protect 154 input entries / 145 distinct paths and bank tools 381d541 first; preserve 1,008 initial mirror hashes / 1,011 final paths.
+- [ ] Resolve a supported inherited-blend lifetime or all-writer precondition for this same routine before accepting C. One named pulse-one packet is not an all-program invariant.
+- [ ] Keep production func_1517F564 unchanged until that gate is satisfied; original-assembly preservation, if pursued separately, must remain honestly assembly-classified with no C matching credit.
+- [ ] Keep wider Game/additional-source matching, query/sequence engines, timing and full gameplay acceptance open.
+
 ## Color Overlay Draw Direct Match - 2026-10-17
 
 [Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):

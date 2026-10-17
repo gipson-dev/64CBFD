@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 33dda28; tools are committed before the consumer pin.
+  checkpoint pins tools 381d541; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Pulsed-overlay **private-lifetime audit banked; no C adoption or new credit**:
+[Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md).
+func_1517F564's pulse-off blend is inherited stack data, read at SP+0x20
+without a preceding local write. Actual setter/updater/lookup/draw and the
+175-word caller reproduce the dependence. A compiled zero-blend candidate
+changes output; the archive also reads an uninitialized local.
+All 10 final checks pass in 134.517s, protecting 154 input entries / 145 paths.
+Source, ELF, CSV, guards and archive are unchanged; fresh Game remains 61.00%,
+total 65.77%, zero drift. Tools **381d541** banks first; preserve all 1,008
+initial mirror hashes / 1,011 final paths. Keep this same routine open:
+resolve a supported lifetime or all-writer precondition before accepting C.
 
 Color-overlay renderer **installed, all 197 words directly exact from C**:
 [Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md).

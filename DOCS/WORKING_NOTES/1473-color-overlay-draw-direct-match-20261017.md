@@ -183,3 +183,8 @@ or claim native definedness. Inspect full caller/private-stack provenance
 and the pulse helper before choosing source. Preserve the retained conversion
 branches and signed/FP/control boundaries. Wider Game/additional-source
 matching, the query engine, timing's 141 differences and full gameplay stay open.
+
+Follow-through: [Note 1474](1474-pulsed-overlay-private-lifetime-audit-20261017.md)
+proves the inherited pulse-off dependence through real retail helper/caller
+chains and rejects zero/undefined-local adoption. The same wrapper remains
+open; this audit changes no production bytes or matching totals.

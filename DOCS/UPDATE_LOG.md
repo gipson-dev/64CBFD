@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Pulsed Overlay Private Lifetime Audit
+
+[Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
+Prove func_1517F564's pulse-off RGB depends on inherited SP+0x20 bits, not a
+hidden argument or helper output. Execute the actual setter/updater/lookup/
+renderer, full 175-word caller and bounded sequence packet. All 10 checks
+pass in 134.517s. Reject zero initialization and both undefined-local source
+forms; no production changes or matching credit. Fresh Game 61.00%, total
+65.77%, no drift; root README remains untouched. Tools 381d541 banks first,
+preserving 1,008 initial mirror hashes / 1,011 final paths. Keep the same
+routine open pending a supported lifetime or all-writer precondition.
+
 ## 2026-10-17 Color Overlay Draw Direct Match
 
 [Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):

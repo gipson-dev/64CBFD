@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1474](WORKING_NOTES/1474-pulsed-overlay-private-lifetime-audit-20261017.md):
+Audit func_1517F564's inherited private blend: 6,480 wrapper cases, 512 full
+caller cases, 308 fired faults, actual setter/updater/lookup/draw and 40
+sequence-packet cases. All 10 final checks pass in 134.517s. Zero substitution
+changes output; the archive's undefined local is not adopted. No source/
+ELF/CSV/guard changes or matching credit. Tools 381d541 first; preserve all
+1,008 initial mirror hashes / 1,011 paths. Continue the same routine's
+lifetime/precondition investigation, not an invented zero blend.
+
+2026-10-17:
 [Note 1473](WORKING_NOTES/1473-color-overlay-draw-direct-match-20261017.md):
 Install func_1517F08C's 197-word direct SDK C match, typed pointer/caller
 interface, coverage-save mode and live unsigned viewport conversions.
