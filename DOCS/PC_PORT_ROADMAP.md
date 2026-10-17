@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Controller Allocation And Pickup Access Order - 2026-10-17
+
+[Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
+
+- [x] Recover T2 controller allocation through real source/index/access-order changes; preserve frame `0x80` and all validated live homes.
+- [x] Qualify complete 959-word C with 721 differences, opening 66 words exact, eight tests, two compiler captures and a final CLI trace.
+- [x] Extend initial private evidence to twenty states / 460 equal prefixes; preserve 292 protected entries, ten first-image members and fresh aggregate totals. No installation/credit.
+- [x] Bank tools f63eb42 first; preserve 1,152 prior mirror hashes / 1,154 paths. Root README and frozen Release untouched.
+- [ ] Continue the same `func_150F34F4` at word 66 / `0x150F35FC` and disabled-tail return/delay scheduling; require full literal/private/first-image gates before installation.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Retail Extent Frame And Live Homes - 2026-10-17
 
 [Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
@@ -9,7 +20,7 @@
 - [x] Pass seven full tests (182.922s) plus two focused checks (25.191s), 49 effective trace controls, the complete public/native corpus and 80 equal initial private-prefix states.
 - [x] Reject the worse global-controller allocation control; retain 744 differences and the cut-10 GPR3/GPR10 boundary without installing or claiming matching credit.
 - [x] Preserve all production/checkpoint bytes, totals and README; bank tools f0fadc5 first and preserve 1,150 prior mirror hashes / 1,152 paths.
-- [ ] Continue the same `func_150F34F4` controller allocation at `0x150F3544`, remaining roles/scheduling and full literal/private/first-image gates.
+- [x] Recover the controller allocation in [Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md); remaining roles/scheduling and full literal/private/first-image gates stay open above.
 - [ ] Keep the gate, both fade lifetime gaps, full caller/provider/runtime acceptance and wider Game objective open; no host or frozen Release action.
 
 ## Actor Input Movement Recovery And Fitting Boundary - 2026-10-17

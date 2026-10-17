@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-17:
+[Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
+Close the movement controller allocation gap: complete 959-word/frame-0x80 C,
+721 differences, 66 opening words exact. Eight tests and 460 initial prefixes
+pass; disabled-tail return/PC provenance remains. Tools f63eb42 first; preserve
+production/checkpoints/totals/README. Continue the same function; no credit.
+
+2026-10-17:
 [Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
 Restore complete `func_150F34F4` extent/frame/live homes: 959 words, frame
 0x80, still 744 differences. Seven full/two focused checks pass; initial

@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-17 Movement Controller Allocation And Pickup Access Order
+
+[Note1514](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
+Recover the opening T2 controller allocation and disabled-link access order in
+complete `func_150F34F4` C: 959 words/frame 0x80, 721 differences, opening 66
+words exact. Eight tests pass, including 460 initial private prefixes and
+native32 O2/O0. Remaining return/PC provenance rejects; not installed or credited.
+Tools f63eb42 first; preserve all production/checkpoints, totals and README.
+
 ## 2026-10-17 Movement Retail Extent Frame And Live Homes
 
 [Note1513](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):

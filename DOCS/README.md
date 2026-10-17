@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Movement controller allocation and pickup access order](WORKING_NOTES/1514-movement-controller-allocation-and-pickup-access-order-20261017.md):
+  complete 959-word/frame-0x80 candidate, 721 differences and opening controller
+  gap closed. Eight tests pass; return/PC provenance still differs, not installed.
 - [Movement retail extent frame and live homes](WORKING_NOTES/1513-movement-retail-extent-frame-and-live-homes-20261017.md):
   complete 959-word/frame-0x80 candidate, qualified storage traces and initial
   private prefixes. Still 744 differences/cut-10 allocation gap; not installed.
