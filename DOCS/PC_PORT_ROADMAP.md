@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Mirrored Texture Upstream Home Provenance - 2026-10-17
+
+[Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
+
+- [x] Qualify four owned CFE/UOPT/UGEN traces with fired nodes, actual producer/consumer paths, complete cleanup and unchanged target words/bindings/pools.
+- [x] Locate positiveY's M-120 / SP+0x60 and three rate homes in UOPT output; reject nonmatching source-order, promoted-rate and register-hint forms.
+- [x] Pass five final tests, seven log controls, eight artifact controls and 156 baseline input gates; no production/README changes or added C credit.
+- [x] Bank tools b44bad7 first; preserve all 1,029 old mirror hashes / 1,031 paths. Fresh Game 61.04%, total 65.81%, zero drift.
+- [ ] Recover func_1517FB9C's coordinate/rate lifetimes consistent with retail's positiveX home, F16/F18 and T4, then close all 633 words and private/fault installation gates.
+- [ ] Keep wider Game/additional-source matching and natural gameplay acceptance open; no host-port or frozen Release action is authorized by this compiler audit.
+
 ## Mirrored Texture Candidate And Private Gap - 2026-10-17
 
 [Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):

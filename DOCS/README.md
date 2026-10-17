@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Mirrored texture upstream home provenance](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
+  Four owned compiler traces and five passing tests locate positiveY/rate
+  homes in UOPT output. Comparison forms remain nonmatching, no installation
+  or C credit; production/README unchanged. Same target stays open.
 - [Mirrored texture candidate and private gap](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
   Complete four-rectangle SDK candidate and seven passing audit tests.
   Public packets/native/callers agree, but 626/633 words and private spill

@@ -216,3 +216,8 @@ then close all 633 words and private/fault gates. Do not treat public agreement
 or a seven-word length gap as permission for a blanket patch batch. Wider
 Game/additional-source matching, deferred pulse lifetime, query/sequence
 engines, timing's 141 differences and full gameplay remain open.
+
+Follow-through: [Note 1478](1478-mirrored-texture-upstream-home-provenance-20261017.md)
+qualifies four target-specific compiler captures. The candidate's positiveY
+and rate homes already exist in UOPT output. Five new tests pass; no source
+installation, private/fault certificate or matching credit is added.

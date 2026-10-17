@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Mirrored Texture Upstream Home Provenance
+
+[Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
+Qualify four target-specific owned CFE/UOPT/UGEN traces with unchanged code,
+bindings and pools. Five tests pass in 28.916s. PositiveY's SP+0x60 home and
+three rate homes already exist in UOPT output; source-order, promoted-rate
+and register-hint forms remain nonmatching. No installation/guards/C credit;
+production/README unchanged, fresh Game 61.04%, total 65.81%, zero drift.
+Tools b44bad7 first; preserve all 1,029 old mirror hashes / 1,031 paths.
+Continue coordinate lifetimes and shared rate residency in func_1517FB9C.
+
 ## 2026-10-17 Mirrored Texture Candidate And Private Gap
 
 [Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):

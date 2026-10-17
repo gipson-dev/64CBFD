@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5deb8e2; tools are committed before the consumer pin.
+  checkpoint pins tools b44bad7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Mirrored texture **upstream homes traced; no installation or C credit**:
+[Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md).
+Four owned compiler traces preserve normal words/bindings/pools. Five tests
+pass in 28.916s. UOPT already supplies positiveY's M-120 / SP+0x60 home and
+three rate homes; promoting the rate removes one copy but still fails retail.
+Game remains **61.04%**, total **65.81%**, zero drift; production/README
+untouched. Tools **b44bad7** first; preserve 1,029 mirror hashes / 1,031 paths.
+Continue the same routine's coordinate lifetimes and shared rate residency.
 
 Mirrored texture **complete SDK candidate audited; not installed or byte-exact**:
 [Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md).

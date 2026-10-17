@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note 1478](WORKING_NOTES/1478-mirrored-texture-upstream-home-provenance-20261017.md):
+Trace func_1517FB9C's actual CFE/UOPT inputs and fired UGEN nodes with
+unchanged code/bindings/pools. Five tests pass in 28.916s. PositiveY and rate
+homes originate upstream; comparison forms still fail retail. No installation
+or new C credit. Tools b44bad7 first; preserve 1,029 mirror hashes / 1,031
+paths, production/README unchanged. Same coordinate/rate lifetime target next.
+
+2026-10-17:
 [Note 1477](WORKING_NOTES/1477-mirrored-texture-candidate-and-private-gap-20261017.md):
 Audit the complete func_1517FB9C SDK candidate: all four mirrored rectangles,
 six-word mixed float ABI, asymmetric clipping and unsigned rate conversion.
