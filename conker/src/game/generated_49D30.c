@@ -36,6 +36,18 @@ extern u16 *D_800C35D8[];
 extern u8 D_800C363A[];
 extern u8 *D_800C3960[][30];
 
+typedef struct {
+    u8 pad00[0xA];
+    s16 maximum;
+    u8 pad0C[6];
+    s16 overrideValue;
+} RecordMaximum49D30;
+extern s32 D_800C3640[];
+extern RecordMaximum49D30 *D_800C3688[][30];
+extern u16 *D_800C35D0[];
+extern u8 *D_800C3778[][30];
+
+
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
 
 extern struct163 D_800C3CA0[3];
@@ -172,8 +184,72 @@ void func_1501CDC0(s32 index) {
     }
 }
 
-s32 func_1501CE54() {
-    return 0;
+/* Prefer an explicit override or primary maximum before scanning fallback tails. */
+void func_1501CE54(s32 slot) {
+    s32 *maximum;
+    s32 count;
+    u16 *primary;
+    s32 i;
+    s32 offset;
+    u16 *enabled;
+    s32 primaryValue;
+    s32 value;
+    u16 active;
+    u16 entries;
+
+    maximum = &D_800C3640[slot];
+    *maximum = 0;
+    count = D_800C363A[slot];
+    if (count != 0) {
+        primary = D_800C35D8[slot];
+        if (primary[0] >= 4) {
+            value = D_800C3688[slot][0]->overrideValue;
+            if (value != -9999) {
+                *maximum = value;
+                return;
+            }
+        }
+        /* In the preferred pass, value records whether the output was updated. */
+        value = 0;
+        i = 0;
+        if (count > 0) {
+            enabled = D_800C35C8[slot];
+            offset = 0;
+            do {
+                active = *enabled++;
+                if (active != 0 && *(u16 *)((u8 *)primary + offset) != 0) {
+                    primaryValue = D_800C3688[slot][i]->maximum;
+                    if (*maximum < primaryValue) {
+                        *maximum = primaryValue;
+                        value = 1;
+                    }
+                }
+                i++;
+                offset += 2;
+            } while ((s32)(i < count) != 0);
+        }
+        if (!value) {
+            i = 0;
+            if (count > 0) {
+                enabled = D_800C35C8[slot];
+                offset = 0;
+                do {
+                    active = *enabled++;
+                    if (active != 0) {
+                        entries = *(u16 *)((u8 *)D_800C35D0[slot] + offset);
+                        if (entries != 0) {
+                            value = *(s16 *)(D_800C3778[slot][i] + entries * 8 - 2);
+                            if (*maximum < value) {
+                                *maximum = value;
+                            }
+                        }
+                    }
+                    i++;
+                    offset += 2;
+                } while ((s32)(i < count) != 0);
+            }
+        }
+    }
 }
 
 s32 func_1501CFF8(s32 arg0) {

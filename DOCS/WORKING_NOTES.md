@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-16:
+[Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
+Install func_1501CE54's signed-priority record scan and 48 guarded temporary/
+schedule normalizations to all 105 retail words, frame-free with 56 unchanged
+raw neighbors. All 28 final tests pass in 158.460s; normal rebuild equals the
+entire first 371-byte ELF prediction, zero exclusions, all 136 inputs and
+protected data pass. Fresh Game 2,938/4,828, total 3,611/5,501, different
+1,890, zero drift; conversion unchanged. Tools 199b23f banks first, preserving
+937 other mirror hashes / 948 paths. Next 100-word func_1501D044.
+
+2026-10-16:
 [Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
 Install func_1501CC3C's complete C and 23 guards to all 97 retail words.
 Eighteen final tests pass in 101.175s; normal rebuild equals the entire first

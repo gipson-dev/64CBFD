@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools fb26ff8; tools are committed before the consumer pin.
+  checkpoint pins tools 199b23f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Priority record maximum **installed, all 105 words byte-exact with 48 guards**:
+[Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md).
+func_1501CE54 replaces its zero-return stub with void(s32 slot) semantic C,
+signed overrides/maxima and preferred-before-fallback priority. Retain the
+frame-free 105-word body, existing no-unroll profile and 56 raw neighbors.
+All 28 final tests pass in 158.460s, including the previous loader suites;
+normal rebuild equals the entire first 371-byte ELF prediction, zero
+exclusions. Protect 136 inputs and 189,088 data bytes / 720 owners. Fresh
+Game **2,938/4,828 (60.85%)**, total **3,611/5,501 (65.64%)**, different
+**1,890**, zero drift; conversion unchanged. Tools **199b23f** banks first,
+preserving 937 other mirror hashes / 948 paths. Next **100-word
+func_1501D044**, the adjacent state-reset stub. This is a guarded, not direct,
+match; wider Game, timing's 141 differences and full gameplay remain open.
 
 Microcode loader **installed, all 97 words byte-exact with 23 guards**:
 [Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md).

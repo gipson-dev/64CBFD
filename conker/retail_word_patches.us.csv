@@ -16789,3 +16789,51 @@ generated_49D30,func_1501CC3C,0x14C,0x032A5823,0x032B6023,-,-,Normalize microcod
 generated_49D30,func_1501CC3C,0x150,0x016C2821,0x018D2821,-,-,Normalize microcode loader closed final DMA register cycle,,,false
 generated_49D30,func_1501CC3C,0x15C,0x8C4E000C,0x8C4F000C,-,-,Normalize microcode loader closed final DMA register cycle,,,false
 generated_49D30,func_1501CC3C,0x168,0x01C33023,0x01E33023,-,-,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CE54,0x58,0x8F2E0000,0x8F2D0000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x60,0x85C70012,0x85A70012,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x88,0x3C090000,0x3C0A0000,R_MIPS_HI16:D_800C35C8,R_MIPS_HI16:D_800C35C8,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x8C,0x01224821,0x01425021,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x90,0x8D290000,0x8D4A0000,R_MIPS_LO16:D_800C35C8,R_MIPS_LO16:D_800C35C8,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x94,0x00005025,0x00004825,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x98,0x952B0000,0x954E0000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x9C,0x25290002,0x254A0002,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xA0,0x00CA7821,0x00C97821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xA4,0x51600012,0x51C00012,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xC0,0x01997021,0x01996821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xC4,0x00087880,0x00087080,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xC8,0x01CFC021,0x01AE7821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xCC,0x8F190000,0x8DF80000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xD0,0x8C6E0000,0x8C790000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xD4,0x872B000A,0x870B000A,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xD8,0x01CB082A,0x032B082A,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xF0,0x0105782A,0x0105082A,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xF4,0x15E0FFE8,0x1420FFE8,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0xF8,0x254A0002,0x25290002,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x10C,0x3C090000,0x3C0A0000,R_MIPS_HI16:D_800C35C8,R_MIPS_HI16:D_800C35C8,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x110,0x01224821,0x01425021,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x114,0x3C0D0000,0x3C0C0000,R_MIPS_HI16:D_800C3778,R_MIPS_HI16:D_800C3778,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x118,0x3C0C0000,0x3C0B0000,R_MIPS_HI16:D_800C35D0,R_MIPS_HI16:D_800C35D0,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x11C,0x8D290000,0x256B0000,R_MIPS_LO16:D_800C35C8,R_MIPS_LO16:D_800C35D0,Normalize record maximum independent setup schedule and temporaries,,,false
+generated_49D30,func_1501CE54,0x120,0x00005025,0x258C0000,-,R_MIPS_LO16:D_800C3778,Normalize record maximum independent setup schedule and temporaries,,,false
+generated_49D30,func_1501CE54,0x124,0x258C0000,0x8D4A0000,R_MIPS_LO16:D_800C35D0,R_MIPS_LO16:D_800C35C8,Normalize record maximum independent setup schedule and temporaries,,,false
+generated_49D30,func_1501CE54,0x128,0x25AD0000,0x00004825,R_MIPS_LO16:D_800C3778,-,Normalize record maximum independent setup schedule and temporaries,,,false
+generated_49D30,func_1501CE54,0x12C,0x952B0000,0x954D0000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x130,0x25290002,0x254A0002,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x134,0x0182C021,0x01627021,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x138,0x51600015,0x51A00015,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x140,0x8F190000,0x8DCF0000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x144,0x00047900,0x0004C900,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x148,0x01E47823,0x0324C823,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x14C,0x032A7021,0x01E9C021,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x150,0x95C60000,0x97060000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x154,0x000F78C0,0x0019C8C0,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x158,0x01AFC021,0x01996821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x160,0x0008C880,0x00087080,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x164,0x03197021,0x01AE7821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x168,0x8DCF0000,0x8DF80000,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x16C,0x0006C0C0,0x0006C8C0,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x174,0x01F8C821,0x03196821,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x178,0x8727FFFE,0x85A7FFFE,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x190,0x0105782A,0x0105082A,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x194,0x15E0FFE5,0x1420FFE5,-,-,Normalize record maximum temporary register allocation,,,false
+generated_49D30,func_1501CE54,0x198,0x254A0002,0x25290002,-,-,Normalize record maximum temporary register allocation,,,false

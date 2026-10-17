@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Priority record maximum installed guarded match](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
+  Install all 105 words using semantic C and 48 bounded guards. Twenty-eight
+  final tests and the entire first 371-byte ELF prediction pass; next func_1501D044.
 - [Microcode loader installed guarded match](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
   Install all 97 words using semantic C and 23 guards. Eighteen final tests
   and the entire first 361-byte ELF prediction pass; next func_1501CE54.

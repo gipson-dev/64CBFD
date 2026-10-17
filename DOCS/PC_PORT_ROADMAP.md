@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Priority Record Maximum Installed Guarded Match - 2026-10-16
+
+[Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
+
+- [x] Replace func_1501CE54's stub with void(s32 slot) C, signed -9999 overrides, preferred maxima and conditional fallback-tail maxima. Retain the original 105-word, frame-free body and no-unroll profile.
+- [x] Qualify 48 expected-word/relocation guards for temporary allocation and one four-word setup schedule only, with no insertion, omission, argument or saved-register repair. Preserve 56 raw neighbors and all previous guard bytes; label the match guarded, not direct.
+- [x] Pass 436 three-way guest cases, 218 native32 O2/O0/UBSan cases each, eight effective functional controls, six guest aliases, 156 fired fault prefixes, independent carry rebases and 216 real caller cuts from the verified 473-word original caller.
+- [x] Reproduce the entire first 371-byte ELF prediction after the normal rebuild: 318 code, two extent and 51 exactly constrained metadata bytes, zero exclusions. Protect 136 inputs and 189,088 data bytes / 720 owners; all 28 final tests pass in 158.460s.
+- [x] Measure fresh Game 2,938/4,828 (60.85%), total 3,611/5,501 (65.64%), different 1,890, zero drift; conversion unchanged. Bank tools 199b23f first, preserve 937 other mirror hashes / 948 paths, update root README aggregate rows only.
+- [ ] Recover next 100-word func_1501D044, the adjacent state-reset stub with frame 0x18 and a func_150233BC call. Preserve the new scan, loader and other owner routines.
+- [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
+
 ## Microcode Loader Installed Guarded Match - 2026-10-16
 
 [Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
@@ -9,7 +21,7 @@
 - [x] Reproduce the entire first 361-byte ELF prediction after 695 compiler / 687 padder invocations: 321 code, two extent and 38 exactly constrained metadata bytes, zero exclusions. Protect all 136 inputs and 189,088 data bytes / 720 owners.
 - [x] Pass all 18 final tests in 101.175s, including native32, both caller paths, the real task/setup/loader chain, independent rebases, fault prefixes and exact successor/fixture corruption checks.
 - [x] Measure fresh Game 2,937/4,828 (60.83%), total 3,610/5,501 (65.62%), different 1,891, zero drift; conversion unchanged. Bank tools fb26ff8 first, preserve 932 other mirror hashes / 939 paths, update root README aggregate rows only.
-- [ ] Recover next 105-word, frame-free func_1501CE54: table/record scan, -9999 sentinel path and signed-halfword maximum. Preserve the installed loader and other owner routines.
+- [x] Recover the 105-word, frame-free func_1501CE54 and its sentinel/priority/signed-maximum contract in Note 1463, preserving the installed loader and other owner routines.
 - [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
 
 ## Microcode Loader Guarded Match Qualification - 2026-10-16

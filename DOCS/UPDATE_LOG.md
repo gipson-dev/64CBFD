@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Priority Record Maximum Installed Guarded Match
+
+[Note 1463](WORKING_NOTES/1463-priority-record-maximum-installed-guarded-match-20261016.md):
+Install the semantic void(s32 slot) func_1501CE54 and exactly 48 guards:
+all 105 linked words match, with no frame, insertion, omission or profile
+change and 56 unchanged raw neighbors. All 28 final tests pass in 158.460s;
+normal rebuild equals the entire first 371-byte ELF prediction, zero
+exclusions. Fresh Game 2,938/4,828 (60.85%), total 3,611/5,501 (65.64%),
+different 1,890, zero drift; conversion unchanged. Tools 199b23f banks first,
+preserving 937 other mirror hashes / 948 paths. README aggregate rows only;
+next func_1501D044. No push, host/Release action or full gameplay claim.
+
 ## 2026-10-16 Microcode Loader Installed Guarded Match
 
 [Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
