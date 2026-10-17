@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-17 Color State Submit Direct Match
+
+[Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
+Restore func_1517EE40's complete 48-word C leaf with signed-byte mode and both
+precise caller declarations. Direct retail match, no guards/profile change;
+preserve 89 surrounding routines and all guard bytes. All 17 tests pass in
+216.960s, including native32, actual callers, aliases, rebases, faults and exact
+whole-image/input/data gates. Fresh Game 60.94%, total 65.72%, zero drift.
+Tools aecf777 banks first, preserving 978 unrelated mirror hashes / 987 paths.
+README aggregate rows only; next func_1517EF00's 43-word progress accessor.
+
 ## 2026-10-17 Sequence Event Scan Installed Guarded Match
 
 [Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):

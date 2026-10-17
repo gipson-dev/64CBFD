@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Color state submit direct match](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
+  Complete 48-word C leaf, precise signed mode interface, no guards/profile
+  changes and 89 unchanged surrounding routines. All 17 tests pass; first
+  whole-image prediction matches. Fresh Game 60.94%, total 65.72%, no drift.
 - [Sequence event scan installed guarded match](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
   All 219 words exact with 77 certified guards, full scratch/LO proof and
   actual setup/color chains. All 29 tests pass; complete prediction matches.

@@ -111,7 +111,7 @@ extern u8 D_800C3C99, D_800C3C9C, D_800C35A9, D_800C35AA;
 extern u8 D_80084110[][3];
 s32 func_15023BB0(u8 *, s32, s32, SequenceEvent49D30 **,
     s32, s32, s32, s32, s32, s32, s32);
-void func_1517EE40(s32, s32, s32, s32, s32, s32);
+void func_1517EE40(s32, s32, s32, s32, s8, s32);
 
 
 

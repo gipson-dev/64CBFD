@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools abf9d17; tools are committed before the consumer pin.
+  checkpoint pins tools aecf777; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Color-state submitter **installed, all 48 words directly exact from C**:
+[Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md).
+func_1517EE40 now has its complete six-argument leaf and signed-byte mode
+interface. No new guards/profile; 89 owner/caller routines and all guard bytes
+remain unchanged. All 17 final tests pass in 216.960s; normal ELF equals the
+first full prediction, protecting 144 inputs and 189,088 data bytes. Fresh Game
+2,942/4,828 (60.94%), total 3,615/5,501 (65.72%), different 1,886, zero drift.
+Tools **aecf777** banks first; preserve 978 unrelated mirror hashes / 987 paths.
+Next func_1517EF00, the 43-word progress/division accessor. Full gameplay stays open.
 
 Sequence event scan **installed, all 219 words guarded-exact**:
 [Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md).

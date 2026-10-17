@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern s8 D_800DDDAC[];
+extern u8 D_800DDDC0[];
 extern u16 D_800DDE10[];
 extern s32 D_80082FA0;
 extern u8 D_800DDD9C[];
@@ -23,8 +25,22 @@ extern f32 D_800A72B0;
 
 /* Non-matching placeholders for the text-only asm slice asm/1AC2F0.s. */
 
-s32 func_1517EE40() {
-    return 0;
+/* Publish a channel's RGB transition when its mode or active state requires it. */
+void func_1517EE40(s32 red, s32 green, s32 blue, s32 duration, s8 mode, s32 channel) {
+    u8 *color;
+
+    if (mode != D_800DDDAC[channel] ||
+        D_800DDDB0[channel] < D_800DDE28[channel] ||
+        D_800DDDC0[channel] != 0) {
+        color = &D_800DDDA0[channel * 3];
+        color[1] = green;
+        color[2] = blue;
+        color[0] = red;
+        D_800DDE28[channel] = duration;
+        D_800DDDB0[channel] = 0;
+        D_800DDDAC[channel] = mode;
+        D_800DDDC0[channel] = 0;
+    }
 }
 
 s32 func_1517EF00() {

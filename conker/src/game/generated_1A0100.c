@@ -6,7 +6,7 @@ extern s8 D_800DD2B0[];
 extern s8 D_800DD2C0[];
 extern u8 D_800BE9B4;
 s32 func_15085430();
-void func_1517EE40(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4,
+void func_1517EE40(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s8 arg4,
                     s32 arg5);
 
 void func_15172C50(s32 value) {

@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
+Install func_1517EE40's 48-word direct C match and precise signed-byte caller
+interfaces, with no guards/profile change and 89 unchanged surrounding routines.
+All 17 tests pass in 216.960s; normal image equals the first complete prediction,
+protecting 144 inputs and 189,088 data bytes. Fresh Game 60.94%, total 65.72%,
+zero drift. Tools aecf777 banks first, preserving 978 unrelated mirror hashes /
+987 paths. Next func_1517EF00's 43-word signed progress/division accessor.
+
+2026-10-17:
 [Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
 Install func_1501DAAC's complete 219-word C recovery with 77 certified guards,
 original frame/homes, full scratch/LO proof and actual setup/color chains.

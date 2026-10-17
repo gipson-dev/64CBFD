@@ -168,3 +168,7 @@ VA **0x1517EE40..0x1517EF00**, ROM **0x1AC2F0..0x1AC3B0**. Recover the actual
 color helper's C body next; the assembly exercised above is not an installed
 C recovery. Keep the query engine, adjacent func_1501DE18, timing's **141
 differences**, wider Game/additional-source matching and full gameplay open.
+
+Subsequent completion: [Note 1470](1470-color-state-submit-direct-match-20261017.md)
+restores func_1517EE40 as a complete 48-word direct C match, including precise
+signed-byte caller interfaces and exact whole-image/data qualification.

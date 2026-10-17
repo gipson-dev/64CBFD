@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Color State Submit Direct Match - 2026-10-17
+
+[Note 1470](WORKING_NOTES/1470-color-state-submit-direct-match-20261017.md):
+
+- [x] Recover func_1517EE40's full six-argument C body and signed-byte mode; directly match all 48 words and frame 0x8.
+- [x] Correct both C caller declarations while preserving all 89 surrounding raw/padded routines, every guard byte and existing profiles.
+- [x] Qualify 3,712 paired guest cases, native32 O2/O0/UBSan, eight effective controls, actual teardown/scan callers, aliases, rebases and 59 fault prefixes.
+- [x] Freeze the first whole-image/source/caller prediction before installation; normal build and all 17 final tests pass, with 144 protected inputs and 189,088 exact data bytes.
+- [x] Measure fresh Game 2,942/4,828 (60.94%), total 3,615/5,501 (65.72%), zero drift. Update README aggregate rows only, bank tools aecf777 first, preserve 978 unrelated mirror hashes / 987 paths.
+- [ ] Recover adjacent func_1517EF00: 43-word frame-free progress accessor, including signed division/overflow boundaries and mode inversion.
+- [ ] Keep query-engine, sequence, timing and wider Game/additional-source matching plus full gameplay acceptance open.
+
 ## Sequence Event Scan Installed Guarded Match - 2026-10-17
 
 [Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Qualify 2,568 three-way cases, native32 O2/O0/UBSan, effective controls, rebases, 363 fault prefixes and actual color/setup/helper chains.
 - [x] Freeze the first whole-image prediction before installation; normal rebuild and all 29 final tests pass. Protect 141 inputs and 189,088 data bytes with no metadata exclusions.
 - [x] Measure fresh Game 2,941/4,828 (60.92%), total 3,614/5,501 (65.70%), zero drift. Update README aggregate rows only; bank tools abf9d17 first and preserve 969 unrelated mirror hashes / 980 paths.
-- [ ] Recover actual func_1517EE40 C next: 48 words, frame 0x8; the original helper exercised by tests is not yet an installed C recovery.
+- [x] Recover actual func_1517EE40 C: 48 words, frame 0x8. Completed as a direct C match in Note 1470, with actual caller qualification and whole-image audit.
 - [ ] Keep the query engine, adjacent func_1501DE18, timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
 
 ## Sequence Record Setup Installed Guarded Match - 2026-10-17
