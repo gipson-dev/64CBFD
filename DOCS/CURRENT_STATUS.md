@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 27dc235; tools are committed before the consumer pin.
+  checkpoint pins tools fb26ff8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Microcode loader **installed, all 97 words byte-exact with 23 guards**:
+[Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md).
+func_1501CC3C replaces its false zero-return stub with complete semantic C;
+retain 96 raw words, frame 0x30, original homes/saves and no-unroll profile.
+The normal 695-compile rebuild equals the entire first 361-byte ELF prediction,
+zero exclusions. All 18 final tests pass in 101.175s, including 192 actual
+startup caller cuts and the real task/setup/loader chain. Protect 136 inputs,
+56 raw neighbors and 189,088 data bytes / 720 owners. Fresh Game **2,937/4,828
+(60.83%)**, total **3,610/5,501 (65.62%)**, different **1,891**, zero drift;
+conversion unchanged. Tools **fb26ff8** banks first, preserving 932 other
+mirror hashes / 939 paths. Next **105-word func_1501CE54**, a frame-free
+record scan still stubbed in the same owner. Keep hardware/startup/gameplay
+boundaries and timing's 141 differences separate; this is not a direct C match.
+
 Microcode-loader **guarded match qualified, not installed**:
 [Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md).
 func_1501CC3C's complete C emits 96 words / frame 0x30; 23 closed relocation-
@@ -35,9 +49,9 @@ and 56 raw neighbors. Seven tests pass in 42.751s: 770 guest cases, 80
 callbacks, 449 native32 cases each at O2/O0/UBSan, 192 real parent/setup/loader
 cases, independent rebases and 346 fault prefixes. All 135 production inputs
 remain unchanged. Tools **27dc235** banks first, preserving 931 mirror hashes
-/ 935 paths. Next qualify func_15007B3C's actual caller cut and the first
-whole-ELF prediction, then installation/build/audit/progress. This is not a
-direct C match or production matching credit; root README stays unchanged.
+/ 935 paths. This pre-install checkpoint is completed by Note 1462's caller,
+whole-image, build, audit and progress gates. Its no-credit boundary is
+historical; Note 1462 owns the installed measurements.
 
 Microcode-loader recovery checkpoint, **not installed**:
 [Note 1460](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md).

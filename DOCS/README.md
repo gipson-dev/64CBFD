@@ -56,9 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Microcode loader installed guarded match](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
+  Install all 97 words using semantic C and 23 guards. Eighteen final tests
+  and the entire first 361-byte ELF prediction pass; next func_1501CE54.
 - [Microcode loader guarded match qualification](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
   Qualify all 97 retail words using 96 semantic C words and 23 bounded guards.
-  Seven native/guest/chain/rebase/fault tests pass; installation remains open.
+  Seven native/guest/chain/rebase/fault tests pass; installation completed in Note 1462.
 - [Microcode loader recovery and matching boundary](WORKING_NOTES/1460-microcode-loader-recovery-and-matching-boundary-20261016.md):
   Bank the 97-word/frame-0x30 candidate and seven passing research tests.
   Still 44 retail differences, not installed; production and credit unchanged.

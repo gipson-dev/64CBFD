@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Microcode Loader Installed Guarded Match
+
+[Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
+Install the semantic func_1501CC3C loader and exactly 23 guards: all 97 linked
+words match, original frame/homes/saves/profile and 56 raw neighbors remain.
+All 18 final tests pass in 101.175s; the normal 695-compile rebuild equals
+the entire first 361-byte ELF prediction with zero exclusions. Fresh Game
+2,937/4,828 (60.83%), total 3,610/5,501 (65.62%), different 1,891, zero drift;
+conversion unchanged. Tools fb26ff8 banks first, preserving 932 other mirror
+hashes / 939 paths. README aggregate rows only; next func_1501CE54. No push
+or host/Release action, and no full startup/gameplay claim.
+
 ## 2026-10-16 Microcode Loader Guarded Match Qualification
 
 [Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):

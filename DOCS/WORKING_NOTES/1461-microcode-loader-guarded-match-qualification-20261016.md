@@ -6,6 +6,10 @@ Date: 2026-10-16. Consumer predecessor **e30824bc**, tools predecessor
 
 ## Status
 
+Historical pre-install checkpoint. [Note 1462](1462-microcode-loader-installed-guarded-match-20261016.md)
+completes the remaining caller, whole-image prediction, installation, normal
+build, installed audit and fresh progress gates.
+
 **The experimental padded object now matches all 97 retail words. It is not
 installed in production.** The complete semantic C emits **96 words** with
 the original **frame 0x30**. Twenty-three relocation-aware guards recover
@@ -130,9 +134,9 @@ No mirror commit/reset, push, host-port or frozen Release action.
 - [x] Qualify the complete guarded 97-word match without frame/home/save repairs.
 - [x] Pass native32, independent rebases, real parent/setup/loader execution and applicable ordered/fault checks.
 - [x] Bank tools first and the consumer handoff; retain the uninstalled production baseline.
-- [ ] Qualify the other actual caller, func_15007B3C, at its real call/post-call cut; keep full startup and hardware acceptance separate.
-- [ ] Reproduce the predecessor and independently predict every ELF byte before installing the source and exactly 23 guard rows.
-- [ ] Complete the normal dependency rebuild, installed image/protected-data/input audit and fresh official progress, then bank tools first and the consumer pin/docs. Root README gets aggregate rows only.
+- [x] Qualify the other actual caller, func_15007B3C, at its real call/post-call cut in Note 1462; keep full startup and hardware acceptance separate.
+- [x] Reproduce the predecessor and independently predict every ELF byte before installing the source and exactly 23 guard rows in Note 1462.
+- [x] Complete the normal dependency rebuild, installed audit, fresh official progress and tools-first banking in Note 1462. Root README gets aggregate rows only.
 
 Next is **installation qualification for this same function**, not another
 conversion batch. The literal production ELF remains

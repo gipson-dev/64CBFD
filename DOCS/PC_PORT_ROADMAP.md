@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Microcode Loader Installed Guarded Match - 2026-10-16
+
+[Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
+
+- [x] Install func_1501CC3C's complete semantic C and exactly 23 target guards to all 97 retail words. Preserve frame 0x30, homes/saves, no-unroll profile, 56 raw neighbors and all previous guard bytes; label this a guarded, not direct, match.
+- [x] Verify all 426 original words of the other caller func_15007B3C and 192 actual call/post-call cuts. Retain separate PI/cache/queue, full-startup and gameplay boundaries.
+- [x] Reproduce the entire first 361-byte ELF prediction after 695 compiler / 687 padder invocations: 321 code, two extent and 38 exactly constrained metadata bytes, zero exclusions. Protect all 136 inputs and 189,088 data bytes / 720 owners.
+- [x] Pass all 18 final tests in 101.175s, including native32, both caller paths, the real task/setup/loader chain, independent rebases, fault prefixes and exact successor/fixture corruption checks.
+- [x] Measure fresh Game 2,937/4,828 (60.83%), total 3,610/5,501 (65.62%), different 1,891, zero drift; conversion unchanged. Bank tools fb26ff8 first, preserve 932 other mirror hashes / 939 paths, update root README aggregate rows only.
+- [ ] Recover next 105-word, frame-free func_1501CE54: table/record scan, -9999 sentinel path and signed-halfword maximum. Preserve the installed loader and other owner routines.
+- [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
+
 ## Microcode Loader Guarded Match Qualification - 2026-10-16
 
 [Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
@@ -8,9 +20,9 @@
 - [x] Pass seven tests in 42.751s: 770 guest cases, 80 positive callbacks, 24 real-table cases, 449 native32 O2/O0/UBSan cases each, four functional controls, independent rebases and 346 original/guarded fault prefixes.
 - [x] Execute the real 239-word task parent, 61-word setup helper and loader in 192 connected cases. Keep PI/cache/queue hardware and full startup/gameplay separate.
 - [x] Bank tools 27dc235 first, validate both copies and tools-check, preserve all 931 initial mirror hashes / 935 paths and 135 production inputs. Production source/guards/image, matching credit and root README remain unchanged.
-- [ ] Qualify the other actual caller func_15007B3C at its real call/post-call cut.
-- [ ] Reproduce the predecessor and independently predict the entire ELF before installing this same function and exactly 23 guard rows.
-- [ ] Complete normal build, installed protected-data/input/image audit and fresh progress, then tools-first banking; keep the wider Game goal open.
+- [x] Qualify the other actual caller func_15007B3C at its real call/post-call cut in Note 1462.
+- [x] Reproduce the predecessor and independently predict the entire ELF before installing this same function and exactly 23 guard rows in Note 1462.
+- [x] Complete normal build, installed protected-data/input/image audit, fresh progress and tools-first banking in Note 1462; keep the wider Game goal open.
 
 ## Microcode Loader Recovery Checkpoint - 2026-10-16
 
@@ -22,8 +34,8 @@
 - [x] Bank tools 932b4de before the consumer pin; validate both copies and tools-check, preserving all 928 initial mirror hashes / 931 paths. No source installation, guards, matching credit or README change.
 - [x] Qualify this same function's guarded fit without frame/home or saved-lifetime repairs in Note 1461: 96 semantic C words plus 23 guards produce all 97 retail words, not a direct match.
 - [x] Complete native32, independent rebases, real task/setup/loader chain and applicable ordered/fault checks in Note 1461.
-- [ ] Complete the other caller cut and first whole-ELF prediction before installation.
-- [ ] Complete normal build, installed audit and fresh progress measurement; wider Game and full gameplay remain open.
+- [x] Complete the other caller cut and first whole-ELF prediction before installation in Note 1462.
+- [x] Complete normal build, installed audit and fresh progress measurement in Note 1462; wider Game and full gameplay remain open.
 
 ## Graphics Task Submission Direct Match - 2026-10-16
 
@@ -34,7 +46,7 @@
 - [x] Pass all twelve final tests in 92.616s: 1,656 guest cases, 72 callback cases, 864 native32 O2/O0/UBSan cases each, six functional controls, 16 original caller cuts, 61 real helper words, independent rebases and 1,136 fault prefixes. Keep hardware/cache/queue/ucode and guest-only word-address boundaries explicit.
 - [x] Reproduce the entire first 800-byte ELF prediction after the normal 695-compile dependency rebuild: 731 code, two extent and 67 exactly constrained metadata bytes, zero exclusions. Protect all 134 inputs and 189,088 bytes / 720 data owners. Fresh Game 2,936/4,828, total 3,609/5,501, different 1,892, zero drift; conversion unchanged.
 - [x] Bank tools 44ac318 before the consumer pin; validate both copies and tools-check, preserving all 921 initial mirror hashes / 928 paths. Root README aggregate rows only; no push or host/Release action.
-- [ ] Restore next 97-word func_1501CC3C in the same owner: microcode selection, four DMA loads and live code/data pointer publication. Recover its interface and requalify the already matched caller; preserve unrelated functions and the no-unroll profile.
+- [x] Restore the 97-word func_1501CC3C loader and its void interface, qualifying both callers and preserving unrelated functions/profile in Note 1462.
 - [ ] Keep timing's 141 differences, wider Game/additional-source work and full gameplay acceptance separate.
 
 ## Viewport Initializer Direct Match - 2026-10-16

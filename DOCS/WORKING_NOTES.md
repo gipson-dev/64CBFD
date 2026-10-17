@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-16:
+[Note 1462](WORKING_NOTES/1462-microcode-loader-installed-guarded-match-20261016.md):
+Install func_1501CC3C's complete C and 23 guards to all 97 retail words.
+Eighteen final tests pass in 101.175s; normal rebuild equals the entire first
+361-byte ELF prediction, zero exclusions, all 136 inputs/protected data pass.
+Fresh Game 2,937/4,828, total 3,610/5,501, different 1,891, zero drift;
+conversion unchanged. Tools fb26ff8 banks first, preserving 932 other mirror
+hashes / 939 paths. Next 105-word frame-free func_1501CE54 in the same owner.
+
+2026-10-16:
 [Note 1461](WORKING_NOTES/1461-microcode-loader-guarded-match-qualification-20261016.md):
 Qualify func_1501CC3C's 96-word C body and 23 guarded normalizations to all
 97 retail words, original frame/homes/saves and 56 unchanged raw neighbors.

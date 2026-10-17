@@ -16766,3 +16766,26 @@ game_476D0,func_1501A39C,0xC8,0x24630004,0x256B0004,-,-,Normalize closed two-row
 game_476D0,func_1501A39C,0xCC,0xAC65FFFC,0x254A0010,-,-,Normalize closed two-row graphics scratch roles and independent schedule,,,false
 game_476D0,func_1501A39C,0xD0,0x1474FFE3,0x1574FFE3,-,-,Normalize closed two-row graphics scratch roles and independent schedule,,,false
 game_476D0,func_1501A39C,0xD4,0x24840010,0xAD62FFFC,-,-,Normalize closed two-row graphics scratch roles and independent schedule,,,false
+generated_49D30,func_1501CC3C,0x70,0x5139003F,0x51390040,-,-,Normalize microcode loader call-home schedule,,,false
+generated_49D30,func_1501CC3C,0x88,0xAFA90028,0x24070001,-,-,Normalize microcode loader call-home schedule,,,false
+generated_49D30,func_1501CC3C,0x8C,0xAFA8002C,0xAFA20020,-,-,Normalize microcode loader call-home schedule,,,false
+generated_49D30,func_1501CC3C,0x90,0xAFA20020,0xAFA8002C,-,-,Normalize microcode loader call-home schedule,,,false
+generated_49D30,func_1501CC3C,0x94,0x24070001,0xAFA90028,-,-,Normalize microcode loader call-home schedule,,,false
+generated_49D30,func_1501CC3C,0xAC,0x27390000,0x3C0A0000,R_MIPS_LO16:D_800C1060,R_MIPS_HI16:D_800BEB9C,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xB8,0x3C010000,0x8C430008,R_MIPS_HI16:D_800BEB9C,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xBC,0x24070001,0x8C4C000C,-,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xC0,0x01CFC023,0x27390000,-,R_MIPS_LO16:D_800C1060,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xC4,0x03192821,0x01CFC023,-,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xC8,0xAC250000,0x254A0000,R_MIPS_LO16:D_800BEB9C,R_MIPS_LO16:D_800BEB9C,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xCC,0x8C430008,0x03192821,-,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xD0,0x8C4B000C,0xAD450000,-,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xD4,0x00702021,0x24070001,-,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xD8,0x0C000000,0x00702021,R_MIPS_26:func_10004514,-,Normalize microcode loader primary data publication address/schedule,,,false
+generated_49D30,func_1501CC3C,0xDC,0x01633023,0x0C000000,-,R_MIPS_26:func_10004514,Normalize microcode loader primary data publication address/schedule,0x01833023,-,false
+generated_49D30,func_1501CC3C,0x134,0x3C0C0000,0x3C0D0000,R_MIPS_HI16:D_800BEBB0,R_MIPS_HI16:D_800BEBB0,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x138,0x258C0000,0x25AD0000,R_MIPS_LO16:D_800BEBB0,R_MIPS_LO16:D_800BEBB0,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x140,0x8C4A0000,0x8C4B0000,-,-,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x14C,0x032A5823,0x032B6023,-,-,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x150,0x016C2821,0x018D2821,-,-,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x15C,0x8C4E000C,0x8C4F000C,-,-,Normalize microcode loader closed final DMA register cycle,,,false
+generated_49D30,func_1501CC3C,0x168,0x01C33023,0x01E33023,-,-,Normalize microcode loader closed final DMA register cycle,,,false

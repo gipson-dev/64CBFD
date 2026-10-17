@@ -13,7 +13,15 @@ extern void *D_8002AAE8[];
 extern OSMesgQueue D_8003B1E8, D_800BEA10;
 extern OSScMsg D_800BEA68[];
 void func_1501A39C(void);
-s32 func_1501CC3C(void);
+/* Each row is text start/end, then data start/end, relative to the ROM base. */
+extern s32 D_80084078[];
+extern struct104 *D_800B0DF0;
+extern s32 D_800BEB98;
+extern s8 D_80084070, D_80084074;
+extern u8 D_2D4B0[];
+s32 func_10004514(s32 devAddr, void *dramAddr, u32 size, s32 block);
+
+void func_1501CC3C(void);
 
 extern u16 *D_800C35C8[];
 extern u8 *D_800C35F0[];
@@ -112,8 +120,34 @@ void func_1501C880(s32 unused, s32 swapBuffers) {
     D_800BEAA8++;
 }
 
-s32 func_1501CC3C() {
-    return 0;
+/* Load both selected microcode pairs when their signed cache bytes differ. */
+void func_1501CC3C(void) {
+    s32 variant;
+    s32 pairedOffset;
+    s32 *range;
+
+    variant = D_800B0DF0->pad2B[0];
+    if ((s32)variant >= 2) {
+        variant -= 2;
+        pairedOffset = 0;
+    } else {
+        pairedOffset = 4;
+    }
+    if (D_800BEB98 == 1) {
+        variant += 2;
+    }
+    range = &D_80084078[variant * 4];
+    if (variant != D_80084070 || pairedOffset != D_80084074) {
+        func_10004514((s32)(range[0] + (u32)D_2D4B0), D_800C1060, range[1] - range[0], 1);
+        D_800BEB9C = (u64 *)((u32)D_800C1060 + (s32)(range[1] - range[0]));
+        func_10004514((s32)(range[2] + (u32)D_2D4B0), D_800BEB9C, range[3] - range[2], 1);
+        D_80084070 = variant;
+        range = &D_80084078[(variant + pairedOffset) * 4];
+        D_80084074 = pairedOffset;
+        func_10004514((s32)(range[0] + (u32)D_2D4B0), D_800BEBB0, range[1] - range[0], 1);
+        D_800BEAD0 = (u64 *)((u32)D_800BEBB0 + (s32)(range[1] - range[0]));
+        func_10004514((s32)(range[2] + (u32)D_2D4B0), D_800BEAD0, range[3] - range[2], 1);
+    }
 }
 
 void func_1501CDC0(s32 index) {
