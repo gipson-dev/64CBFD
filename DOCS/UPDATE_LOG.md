@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Halfword Point Update Direct Restoration And Match
+
+[Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
+Restore func_150F25A0's complete64-word/frame0x88 C directly, with no new guards.
+Recover both private arrays, helper ABI, pointer reloads and signed truncation
+before the three halfword stores. Eight installed tests and three selected
+historical checks pass. The complete normal ELF equals its first prediction:
+174 code/two extent/zero metadata bytes. All6,057 bodies and189,088 Game-data
+bytes audited. Toolsa1a59ae first; preserve1,106 unrelated mirror hashes /1,112
+dirty paths. Game61.31%, total66.04%, zero drift. README changes only aggregate
+rows. Next: func_150F26A0; both fade lifetime gaps and wider Game remain open.
+
 ## 2026-10-17 Selector Point Transform Direct Restoration And Match
 
 [Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):

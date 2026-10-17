@@ -175,7 +175,7 @@ nodes /2972 existing files before closing.
   equality, and pass ten installed tests plus six affected checks.
 - [x] Pass both tools-copy checks; bank tools86254e6 before consumer source/
   binding/docs/pin and refresh only README aggregate rows.
-- [ ] Continue **func_150F25A0**, same owner,64 words/frame0x88,
+- [x] Finish **func_150F25A0** in Note1500, same owner,64 words/frame0x88,
   VA150F25A0..150F26A0, ROM11FA50..11FB50. Inspect both matrix helpers,
   actual matrix/point homes and the repeated actor0x14 output-pointer reloads
   before the three truncated halfword stores.

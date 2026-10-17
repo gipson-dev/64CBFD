@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Halfword Point Update Direct Restoration And Match - 2026-10-17
+
+[Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F25A0's64-word/frame0x88 C directly, including private matrix/point homes and repeated owner/destination pointer loads; no new guards.
+- [x] Pass eight installed tests (39.936s),256 guest cases,1,332 fault prefixes, native32 and nine independent links; connect the original83-word rotation and40-word transform with scripted trig boundaries.
+- [x] Match the complete first normal ELF:174 code/two extent/zero metadata bytes, zero exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve historical first images and exact compatibility pins; pass three selected selector checks (50.188s) and both tools-copy checks.
+- [x] Bank toolsa1a59ae first; preserve1,106 unrelated mirror hashes /1,112 dirty paths.
+- [x] Refresh README aggregate rows only: Game61.31%, total66.04%, zero drift.
+- [ ] Continue func_150F26A0's189-word/frame0x28 actor-state update and inspect its func_150F2994 dependency before attempting the larger conversion.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Selector Point Transform Direct Restoration And Match - 2026-10-17
 
 [Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
@@ -10,7 +23,7 @@
 - [x] Preserve historical first images and compatibility pins; pass six selected historical checks (164.427s) and both tools-copy checks.
 - [x] Bank tools86254e6 first; preserve1,101 unrelated mirror hashes /1,108 dirty paths.
 - [x] Refresh README aggregate rows only: Game61.29%, total66.02%, zero drift.
-- [ ] Continue func_150F25A0's64-word matrix/point-to-halfword update, checking real private homes and output-pointer reloads.
+- [x] Finish func_150F25A0's64-word matrix/point-to-halfword update in Note1500, including real private homes and output-pointer reloads.
 - [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Fixed State Sine Update Direct Restoration And Match - 2026-10-17

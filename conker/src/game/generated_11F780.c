@@ -6,6 +6,8 @@ f32 func_15144B68(f32);
 void func_151C329C(struct17 *arg0, s32 arg1, s32 arg2);
 void func_150A8050(f32 mtx[4][4], f32 arg1, f32 arg2, f32 arg3);
 extern u8 D_800BE9C0;
+void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ);
+
 extern f32 D_800A1920[3];
 void func_15143134(f32 *point, f32 *output, u8 *matrix);
 
@@ -80,8 +82,22 @@ s32 func_150F2518(u8 *arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_150F25A0() {
-    return 0;
+/* Transform the owner-relative point into the destination's signed halfwords. */
+s32 func_150F25A0(u8 *record) {
+    u8 **owner = (u8 **)(record + 0x18);
+    f32 point[3];
+    f32 matrix[4][4];
+
+    func_150A8050(matrix, *(f32 *)(*owner + 0x20) * 3.0f, 0.0f,
+                 *(f32 *)(*owner + 0x28) * 3.0f);
+    matrix[3][0] = *(f32 *)(*owner + 0x38);
+    matrix[3][1] = *(f32 *)(*owner + 0x3C);
+    matrix[3][2] = *(f32 *)(*owner + 0x40);
+    func_150A7960(matrix, 0.0f, -495.0f, 0.0f, &point[0], &point[1], &point[2]);
+    *(s16 *)(*(u8 **)(record + 0x14) + 0x0E) = (s32)point[0];
+    *(s16 *)(*(u8 **)(record + 0x14) + 0x10) = (s32)point[1];
+    *(s16 *)(*(u8 **)(record + 0x14) + 0x12) = (s32)point[2];
+    return 1;
 }
 
 s32 func_150F26A0() {

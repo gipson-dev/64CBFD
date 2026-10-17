@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
+Restore func_150F25A0's64-word/frame0x88 C directly, with no new guards or pool
+changes. Exact first normal image,174 code/two extent/zero metadata bytes;
+eight installed and three selected historical checks pass. Toolsa1a59ae first.
+Game61.31%, total66.04%, zero drift. Preserve1,106 unrelated mirror hashes
+/1,112 paths. Continue func_150F26A0; both fade lifetime gaps and wider Game
+stay open.
+
+2026-10-17:
 [Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
 Restore func_150F22D0's43-word C directly with its preserved jump table;
 no new word guards. Exact whole normal image,125 code/one extent/78 checked

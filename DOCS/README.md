@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Halfword point update direct restoration and match](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
+  complete64-word C, actual frame0x88 private homes and no new guards;
+  eight installed and three selected historical checks; Game61.31%, total66.04%.
 - [Selector point transform direct restoration and match](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md):
   complete43-word C with preserved retail table and no new word guards;
   ten installed and six selected historical checks; Game61.29%, total66.02%.

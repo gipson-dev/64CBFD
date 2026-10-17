@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 86254e6; tools are committed before the consumer pin.
+  checkpoint pins tools a1a59ae; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Owner-relative point update **restored and byte-exact directly from C**:
+[Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md).
+func_150F25A0 emits all64 words, frame0x88, with the actual matrix/point homes,
+repeated owner/destination pointer loads and signed truncation before the three
+halfword stores. No new guards, pools or compiler-profile changes. Eight installed
+tests and three selected historical checks pass. The entire first normal image
+matches:174 code/two extent/zero metadata bytes; all6,057 bodies and189,088
+Game-data bytes audited. Fresh Game **61.31%**, total **66.04%**, zero drift.
+Toolsa1a59ae first; preserve1,106 unrelated mirror hashes /1,112 dirty paths.
+Next: func_150F26A0. Both fade lifetime gaps and wider Game remain open.
+
 Selector point transform **restored and byte-exact directly from C**:
 [Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md).
 func_150F22D0 emits all43 words, frame0x18, with its preserved retail jump
@@ -34,7 +45,7 @@ table and no new word guards. Ten installed tests and six selected historical
 checks pass. The entire first normal image matches:125 code/one extent/78
 exactly checked metadata bytes; all6,057 bodies and189,088 Game-data bytes
 audited. Fresh Game **61.29%**, total **66.02%**, zero drift. Tools86254e6
-first; preserve1,101 unrelated mirror hashes /1,108 paths. Next: func_150F25A0.
+first; preserve1,101 unrelated mirror hashes /1,108 paths. Its next target is finished in Note1500.
 Both fade lifetime gaps and wider Game remain open.
 
 Fixed-state sine update **restored and byte-exact directly from C**:
