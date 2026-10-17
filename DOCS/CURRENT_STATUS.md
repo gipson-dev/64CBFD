@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 72f748d; tools are committed before the consumer pin.
+  checkpoint pins tools 6737b65; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Paired scrolling tile windows **installed, all 38 words directly exact from C**:
+[Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md).
+func_150CF5E8 now emits its two SDK tile-size commands and returns the advanced
+Gfx pointer. Eight installed tests pass in 38.987s; nine affected checks in
+54.048s and one downstream context check in 5.319s. The normal ELF equals the
+first complete prediction: 127 instruction bytes and one size byte only,
+no guards/profile/pool/data changes, all 24 owner neighbors unchanged.
+Fresh Game **2,949/4,828 (61.08%)**, total **3,622/5,501 (65.84%)**, different
+**1,879**, zero drift. Tools **6737b65** first; preserve 1,037 unrelated mirror
+hashes / 1,047 final paths. README aggregate rows only. Fade tracing finds
+three CFE/UOPT LODs plus a VREG annotation before one UGEN LH; no fade adoption.
+Next **func_150CF680**, 96 words/frame 0x98, constructor plus 16-byte copy.
 
 Overlay fade packet **recovered and audited, not installed or byte-exact**:
 [Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md).

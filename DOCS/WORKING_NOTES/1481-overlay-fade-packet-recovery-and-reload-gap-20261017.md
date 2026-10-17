@@ -143,7 +143,8 @@ make -C conker match-progress NON_MATCHING=1
 - [x] Recover and audit a complete typed fade packet, actual copy and callers.
 - [x] Separate the three-versus-one duration reload gap from trap placement.
 - [x] Keep nonmatching C uninstalled, with no new guards or matching credit.
-- [ ] Trace the duration home/value lifetime in actual CFE/UOPT input/output;
-  test a bounded, defined source shape only after identifying the lost reloads.
+- [x] Trace the duration home/value lifetime in actual CFE/UOPT input/output
+  and test bounded source shapes; [Note 1482](1482-paired-scrolling-tile-windows-direct-match-20261017.md)
+  finds three LODs plus a VREG marker before UGEN's one incoming LH. Still no match.
 - [ ] Require all 54 words, caller ABI and private-state acceptance before
   replacing the original assembly. Continue the wider Game queue and renderer.

@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Paired Scrolling Tile Windows Direct Match - 2026-10-17
+
+[Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
+
+- [x] Replace func_150CF5E8's placeholder with its complete 38-word direct SDK C emitter and proper Gfx pointer interface; preserve live second-pair reads and all 24 neighbors.
+- [x] Pass eight installed tests: 1,974 three-way guest cases, 384 native cases/profile, eight controls, three rebase pairs, 112 fault prefixes and 168 original caller cases.
+- [x] Verify the normal ELF equals the first complete prediction: 127 instruction bytes and one size byte only, no metadata exclusions/guards/profile/pool changes, all 189,088 Game-data bytes exact.
+- [x] Pass ten affected/context checks and bank tools 6737b65 first. Preserve 1,037 unrelated mirror hashes / 1,047 paths; fresh Game 61.08%, total 65.84%, zero drift. README aggregate rows only.
+- [x] Trace fade duration through actual CFE/UOPT streams: three LODs survive, with a VREG annotation before one UGEN LH; reject nonmatching source/profile variants without C credit.
+- [ ] Recover func_150CF680's full 96-word / frame-0x98 constructor argument block and actual 16-byte copy, then qualify before installation.
+- [ ] Keep the 54-word fade, 633-word renderer, deferred pulse lifetime, wider Game/additional-source queue and natural gameplay acceptance open; no host/frozen Release action.
+
 ## Overlay Fade Packet Recovery And Reload Gap - 2026-10-17
 
 [Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
@@ -8,7 +20,8 @@
 - [x] Pass seven final tests, 2,430 guest pairs, 384 native cases/profile, eight effective controls, 7,290 rebase pairs and 288 cases across all four actual call sites.
 - [x] Correct the duration load count to three original LHs versus one in C; verify late division changes trap placement but does not restore the reloads or length.
 - [x] Bank tools 72f748d first and preserve all 1,037 old mirror hashes / 1,041 final paths. No installation, guards or credit; fresh Game 61.06%, total 65.82%, zero drift, production/root README unchanged.
-- [ ] Trace the duration home in actual CFE/UOPT input/output before another bounded source experiment; require all 54 words and private-state acceptance before installation.
+- [x] Trace the duration home in actual CFE/UOPT input/output and test bounded source forms in Note 1482; the backend still emits one incoming LH.
+- [ ] Require all 54 words and private-state acceptance before installing the fade constructor.
 - [ ] Keep the 633-word renderer, deferred pulse lifetime, wider Game/additional-source queue and natural gameplay acceptance open; no host or frozen Release action.
 
 ## Overlay Mode Defaults Direct Match - 2026-10-17

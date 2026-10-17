@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Paired Scrolling Tile Windows Direct Match
+
+[Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
+Install func_150CF5E8's complete 38-word SDK emitter with its proper Gfx pointer
+interface and live second-pair reads. Eight final tests pass in 38.987s;
+ten affected/context checks also pass. Entire normal ELF equals its first
+prediction: 127 code bytes and one size byte only, no guards/profile/pool/data
+changes, all 24 owner neighbors unchanged. Fresh Game 61.08%, total 65.84%,
+zero drift. Tools 6737b65 first; preserve 1,037 unrelated mirror hashes /
+1,047 paths. Fade trace locates a backend reuse boundary, not a match.
+Next func_150CF680's 96-word constructor and 16-byte copy.
+
 ## 2026-10-17 Overlay Fade Packet Recovery And Reload Gap
 
 [Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):

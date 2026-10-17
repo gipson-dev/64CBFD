@@ -5,6 +5,7 @@ void *memcpy(void *dst, const void *src, unsigned int len);
 extern s32 D_80088890;
 extern s32 D_80088894;
 extern s32 D_80088898;
+extern s32 D_8008889C;
 extern s32 D_800BE9E4;
 extern s32 (*D_800888A0[])(u8 *arg0);
 extern s32 (*D_800888B0[])(u8 *arg0, u8 *arg1, u8 arg2);
@@ -40,8 +41,11 @@ void func_150CF578(s32 arg0) {
     D_80088898 -= temp;
 }
 
-s32 func_150CF5E8() {
-    return 0;
+/* Publish the two scrolling texture-tile windows. */
+Gfx *func_150CF5E8(Gfx *commands) {
+    gDPSetTileSize(commands++, 0, D_80088890 >> 7, D_80088894 >> 7, 0x47E, 0x47E);
+    gDPSetTileSize(commands++, 1, D_80088898 >> 7, D_8008889C >> 7, 0x47E, 0x47E);
+    return commands;
 }
 
 s32 func_150CF680() {

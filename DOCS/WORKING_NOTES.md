@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
+Install func_150CF5E8's complete 38-word direct SDK tile-window emitter.
+Eight final tests pass in 38.987s plus ten affected/context checks. First
+whole-image prediction exact: 127 code bytes and one size byte only, all
+24 neighbors/data/guards unchanged. Fresh Game 61.08%, total 65.84%, zero
+drift. Tools 6737b65 first; preserve 1,037 unrelated mirror hashes / 1,047
+paths. Fade still has three CFE/UOPT LODs but one UGEN LH; no fade credit.
+Next func_150CF680, 96 words/frame 0x98 and the actual 16-byte copy.
+
+2026-10-17:
 [Note 1481](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
 Recover and qualify func_15182670's complete typed packet, inherited padding,
 actual memcpy and all four callers. Seven final tests pass in 124.087s.

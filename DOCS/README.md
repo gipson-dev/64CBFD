@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Paired scrolling tile windows direct match](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
+  Complete 38-word SDK C emitter, proper Gfx interface and live reads. Eight
+  installed tests plus ten affected/context checks pass; whole-image prediction
+  exact with 128 changed bytes, no guards/data changes. Fresh Game 61.08%.
 - [Overlay fade packet recovery and reload gap](WORKING_NOTES/1481-overlay-fade-packet-recovery-and-reload-gap-20261017.md):
   Complete 53/54-word C diagnostic, inherited padding, actual memcpy and all
   four callers audited. Seven tests pass; three-versus-one duration loads
