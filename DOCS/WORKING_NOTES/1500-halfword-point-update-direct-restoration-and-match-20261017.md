@@ -124,7 +124,7 @@ workers while retaining the19398 excluded nodes /2972 existing files.
   preserve guards, owner pools and preceding checkpoint history.
 - [x] Pass selected historical and both tools-copy checks; bank tools first
   and keep detailed narratives out of the root README.
-- [ ] Continue func_150F26A0, same owner,189 words/frame0x28,
+- [x] Finish func_150F26A0 and its dependency in Note1501, same owner,189 words/frame0x28,
   VA150F26A0..150F2994, ROM11FB50..11FE44. Inspect all actor-state branches and
   its func_150F2994 dependency before installing the larger body.
 - [ ] Keep both fade saved-register/private-lifetime gaps and wider Game

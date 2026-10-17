@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
+Restore func_150F26A0/func_150F2994's189/48-word C directly; no new guards.
+Exact whole first image,767 code/three extent/zero metadata bytes; eight installed
+and three selected historical checks pass. All nine linked owner functions
+match retail. Tools2fae596 then whitespace-only3daba3b first. Game61.35%,
+total66.08%, zero drift. Preserve1,110 unrelated mirror hashes /1,116 paths.
+Continue func_150F2A60; both fade lifetime gaps and wider Game stay open.
+
+2026-10-17:
 [Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
 Restore func_150F25A0's64-word/frame0x88 C directly, with no new guards or pool
 changes. Exact first normal image,174 code/two extent/zero metadata bytes;

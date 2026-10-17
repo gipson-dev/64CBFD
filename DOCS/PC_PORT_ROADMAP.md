@@ -1,5 +1,19 @@
 # PC Port Roadmap located in another project folder
 
+## Actor State And Event Value Direct Restoration And Match - 2026-10-17
+
+[Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F26A0/func_150F2994's189/48-word C, both frame0x28, without new guards, pools or profile changes.
+- [x] Pass eight installed tests (53.548s):2,016 actor cases,2,560 leaf cases,112 actual connected paths,1,000 fault prefixes, native32 and18 independent links.
+- [x] Match the complete first normal ELF:767 code/three extent/zero metadata bytes, no exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Verify all nine linked generated_11F780 functions match retail; preserve seven unchanged neighbors and the existing jump-table binding/guards.
+- [x] Preserve historical first images; pass three selected halfword-point checks (57.716s) and both tools-copy checks.
+- [x] Bank tools2fae596 then whitespace-only3daba3b first; preserve1,110 unrelated mirror hashes /1,116 dirty paths.
+- [x] Refresh README aggregate rows only: Game61.35%, total66.08%, zero drift.
+- [ ] Continue func_150F2A60's139-word/frame0x40 routine in generated_11FF10, checking its shared actor-list globals and real callback contracts.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Halfword Point Update Direct Restoration And Match - 2026-10-17
 
 [Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
@@ -10,7 +24,7 @@
 - [x] Preserve historical first images and exact compatibility pins; pass three selected selector checks (50.188s) and both tools-copy checks.
 - [x] Bank toolsa1a59ae first; preserve1,106 unrelated mirror hashes /1,112 dirty paths.
 - [x] Refresh README aggregate rows only: Game61.31%, total66.04%, zero drift.
-- [ ] Continue func_150F26A0's189-word/frame0x28 actor-state update and inspect its func_150F2994 dependency before attempting the larger conversion.
+- [x] Finish func_150F26A0's189-word/frame0x28 actor-state update and its func_150F2994 dependency in Note1501.
 - [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Selector Point Transform Direct Restoration And Match - 2026-10-17

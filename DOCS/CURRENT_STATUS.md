@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a1a59ae; tools are committed before the consumer pin.
+  checkpoint pins tools 3daba3b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Actor-state update and ordered event-value dependency **restored and byte-exact
+directly from C**:
+[Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md).
+func_150F26A0/func_150F2994 emit all189/48 words, both frame0x28, with no new
+guards, pools or profile changes. Eight installed tests and three selected
+historical checks pass. The complete first normal image matches:767 code/three
+extent/zero metadata bytes; all6,057 bodies and189,088 Game-data bytes audited.
+All nine linked functions in generated_11F780 are now byte-exact. Fresh Game
+**61.35%**, total **66.08%**, zero drift. Tools2fae596 then whitespace-only
+3daba3b before the consumer pin; preserve1,110 unrelated mirror hashes /1,116
+dirty paths. Next: func_150F2A60, owner generated_11FF10. Both fade lifetime
+gaps and wider Game remain open.
+
 Owner-relative point update **restored and byte-exact directly from C**:
 [Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md).
 func_150F25A0 emits all64 words, frame0x88, with the actual matrix/point homes,
@@ -36,7 +49,7 @@ tests and three selected historical checks pass. The entire first normal image
 matches:174 code/two extent/zero metadata bytes; all6,057 bodies and189,088
 Game-data bytes audited. Fresh Game **61.31%**, total **66.04%**, zero drift.
 Toolsa1a59ae first; preserve1,106 unrelated mirror hashes /1,112 dirty paths.
-Next: func_150F26A0. Both fade lifetime gaps and wider Game remain open.
+Its next target and dependency are finished in Note1501. Both fade lifetime gaps and wider Game remain open.
 
 Selector point transform **restored and byte-exact directly from C**:
 [Note1499](WORKING_NOTES/1499-selector-point-transform-direct-restoration-and-match-20261017.md).

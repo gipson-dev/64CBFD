@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Actor State And Event Value Direct Restoration And Match
+
+[Note1501](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
+Restore func_150F26A0's189-word actor-state update and func_150F2994's48-word
+ordered event-value update directly from C; both frame0x28, no new guards.
+Eight installed tests and three selected historical checks pass. The whole
+normal ELF equals its first prediction:767 code/three extent/zero metadata
+bytes. All6,057 bodies and189,088 Game-data bytes audited; all nine functions
+in generated_11F780 are now linked-byte-exact. Tools2fae596 plus whitespace-only
+3daba3b first; preserve1,110 unrelated mirror hashes /1,116 dirty paths.
+Game61.35%, total66.08%, zero drift. README changes only aggregate rows.
+Next: func_150F2A60; both fade lifetime gaps and wider Game remain open.
+
 ## 2026-10-17 Halfword Point Update Direct Restoration And Match
 
 [Note1500](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):

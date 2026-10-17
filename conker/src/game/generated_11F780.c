@@ -6,6 +6,15 @@ f32 func_15144B68(f32);
 void func_151C329C(struct17 *arg0, s32 arg1, s32 arg2);
 void func_150A8050(f32 mtx[4][4], f32 arg1, f32 arg2, f32 arg3);
 extern u8 D_800BE9C0;
+void func_150F2994(u8 *actor, s32 value);
+s32 func_15123934(u8 *, s32, s32, s32, s32);
+void func_15124B18(u8 *);
+void func_15128774(u8 *, u8 *);
+void func_151239CC(u8 *, s32);
+s32 func_1509BE40(s32, s32, s32, s32);
+void func_1509BFB0(s32, s32, s32);
+extern u8 *D_800D2E4C;
+
 void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z, f32 *outX, f32 *outY, f32 *outZ);
 
 extern f32 D_800A1920[3];
@@ -100,10 +109,87 @@ s32 func_150F25A0(u8 *record) {
     return 1;
 }
 
-s32 func_150F26A0() {
-    return 0;
+/* Update actor movement state and refresh its event-controlled flags. */
+void func_150F26A0(u8 *actor) {
+    u8 *state = *(u8 **)(actor + 0x3D0);
+
+    if (state[0x102] && !state[0x104]) {
+        func_150F2994(actor, 1);
+        if (*(s32 *)(actor + 0x2C) != 0x100 && !*(s32 *)(actor + 0x6C8)) {
+            if (func_15123934(actor, 0x80, 0, 0, 3)) {
+                *(u32 *)(actor + 0x84) |= 0x300400;
+                *(u32 *)(actor + 0x84) &= ~6;
+                *(s16 *)(actor + 0x1B4) = 1;
+                *(s16 *)(actor + 0x1E0) = 3;
+                func_15124B18(actor);
+            }
+            *(f32 *)(actor + 0x348) = 29.0f;
+            *(f32 *)(actor + 0x34C) = 29.0f;
+            *(f32 *)(actor + 0x374) = 200.0f;
+            *(f32 *)(actor + 0x190) = -19.0f;
+            if (!actor[0x3E8] && 0.5f * *(f32 *)(actor + 0x374) <
+                    *(f32 *)(actor + 0x370) - *(f32 *)(actor + 0x374)) {
+                func_15128774(actor, *(u8 **)(actor + 0x3D0));
+            }
+        }
+    } else {
+        state[7] = 0xFF;
+        if (actor[0x23E] == 0x3B) {
+            func_150F2994(actor, 1);
+            if (*(s32 *)(actor + 0x2C) != 0x100 && !*(s32 *)(actor + 0x6C8)) {
+                if (func_15123934(actor, 8, 0, 0, 3)) {
+                    *(u32 *)(actor + 0x84) |= 0x300000;
+                    *(u32 *)(actor + 0x84) &= ~4;
+                    *(s16 *)(actor + 0x1B4) = 1;
+                    *(s16 *)(actor + 0x1E0) = 3;
+                }
+                *(s32 *)(actor + 0x134) = 0;
+                *(f32 *)(actor + 0x348) = 125.0f;
+                *(f32 *)(actor + 0x34C) = 125.0f;
+                *(f32 *)(actor + 0x374) = 220.0f;
+                *(f32 *)(actor + 0x190) = 30.0f;
+            }
+        } else {
+            if ((*(s32 *)(actor + 0x2C) == 8 || *(s32 *)(actor + 0x2C) == 0x80) &&
+                    !*(s32 *)(actor + 0x6C8)) {
+                func_151239CC(actor, 3);
+            }
+            if (*(s16 *)(actor + 0x1B4) == 1) {
+                *(s16 *)(actor + 0x1B4) = 2;
+                func_15124B18(actor);
+            }
+            func_150F2994(actor, 0);
+        }
+    }
+    if (func_1509BE40(1, 0x405A, 6, 0x9000)) {
+        *(u32 *)(actor + 0x84) |= 0x80000000;
+    } else {
+        *(u32 *)(actor + 0x84) &= 0x7FFFFFFF;
+    }
+    if (func_1509BE40(1, 0x405E, 6, 0x9000)) {
+        *(u32 *)(actor + 0x84) |= 0x10000;
+    } else {
+        *(u32 *)(actor + 0x84) &= 0xFFFEFFFF;
+    }
+    if (func_1509BE40(1, 0x405F, 6, 0x2000)) {
+        *(u32 *)(actor + 0x84) |= 0x10;
+    } else {
+        *(u32 *)(actor + 0x84) &= ~0x10;
+    }
 }
 
-s32 func_150F2994() {
-    return 0;
+/* Apply the shared event value, including optional player-state events. */
+void func_150F2994(u8 *actor, s32 value) {
+    s32 i;
+
+    for (i = 0; i < 14; i++) {
+        func_1509BFB0(0, i + 0x4016, value);
+    }
+    func_1509BFB0(0, 0x405D, value);
+    func_1509BFB0(0, 0x405F, value);
+    if (D_800D2E4C[0x15] & 8) {
+        func_1509BFB0(0, 0x4063, value);
+        func_1509BFB0(0, 0x4064, value);
+        func_1509BFB0(0, 0x4065, value);
+    }
 }

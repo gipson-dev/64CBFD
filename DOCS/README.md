@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state and event value direct restoration and match](WORKING_NOTES/1501-actor-state-and-event-value-direct-restoration-and-match-20261017.md):
+  complete189/48-word C with no new guards, eight installed and three selected
+  historical checks; all nine owner functions match; Game61.35%, total66.08%.
 - [Halfword point update direct restoration and match](WORKING_NOTES/1500-halfword-point-update-direct-restoration-and-match-20261017.md):
   complete64-word C, actual frame0x88 private homes and no new guards;
   eight installed and three selected historical checks; Game61.31%, total66.04%.
