@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Fixed State Sine Update Direct Restoration And Match - 2026-10-17
+
+[Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
+
+- [x] Restore func_150F23E0's40-word/frame0x20 C directly, preserving its real actor home and delayed S0 lifetime; no new guards.
+- [x] Pass ten installed tests (33.733s), actual104/24-word math helpers, private-home counterexamples, aliases/faults/native32, nine independent links and360 bounded paths through the actual119-word caller.
+- [x] Match the complete first normal ELF:128 code/one extent/zero metadata bytes, no exclusions; all6,057 bodies and189,088 Game-data bytes audited.
+- [x] Preserve earlier first-image/compatibility pins and pass three selected checkpoint checks (53.531s); both tools-copy checks pass.
+- [x] Bank toolsd698926 first; preserve1,098 unrelated mirror hashes /1,104 dirty paths.
+- [x] Refresh README aggregate rows only: Game61.27%, total66.01%, zero drift.
+- [ ] Continue func_150F22D0's43-word selector/table routine and actual func_15143134 interface.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Sine Phase Update Restoration And Match - 2026-10-17
 
 [Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
@@ -10,7 +23,7 @@
 - [x] Preserve original predictions and separately predict the reveal guard-audit adapter; pass seven selected compatibility checks (159.102s).
 - [x] Bank tools931d6c2 first; verify both tools copies and preserve1,093 unrelated mirror hashes /1,100 dirty paths.
 - [x] Refresh README aggregate rows only: Game61.25%, total65.99%, zero drift.
-- [ ] Continue func_150F23E0's40-word fixed-state sine updater, including its real actor argument home and S0 lifetime.
+- [x] Finish func_150F23E0's40-word fixed-state sine updater in Note1498.
 - [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Actor Counter Motion Direct Restoration And Match - 2026-10-17

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Fixed State Sine Update Direct Restoration And Match
+
+[Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
+Restore func_150F23E0's complete40-word/frame0x20 C directly, including the
+real actor home and delayed S0 state pointer, without new guards. Ten
+installed and three selected checkpoint checks pass. The complete normal
+ELF equals its first prediction:128 code/one extent/zero metadata bytes.
+All6,057 bodies and189,088 Game-data bytes audited. Toolsd698926 first;
+preserve1,098 unrelated mirror hashes /1,104 paths. Game61.27%, total66.01%,
+zero drift. README updates only aggregate rows. Next: func_150F22D0;
+both fade lifetime issues and wider Game remain open.
+
 ## 2026-10-17 Sine Phase Update Restoration And Match
 
 [Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):

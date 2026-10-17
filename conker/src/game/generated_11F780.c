@@ -26,8 +26,15 @@ void func_150F2390(u8 *arg0, s32 arg1, s32 arg2) {
     }
 }
 
-s32 func_150F23E0() {
-    return 0;
+/* Update actor offsets from fixed sine state, then advance both phases. */
+s32 func_150F23E0(u8 *actor) {
+    f32 *state = (f32 *)(actor + 0x170);
+
+    *(f32 *)(actor + 0x20) = state[4] * sinf(state[0]);
+    *(f32 *)(actor + 0x28) = state[5] * sinf(state[1]);
+    state[0] = func_15144B68(state[2] * D_800BE9A4 + state[0]);
+    state[1] = func_15144B68(state[3] * D_800BE9A4 + state[1]);
+    return 1;
 }
 
 /* Update sine outputs, then advance and wrap both phases. */

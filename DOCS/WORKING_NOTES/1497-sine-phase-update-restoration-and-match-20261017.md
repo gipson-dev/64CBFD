@@ -154,9 +154,9 @@ the19398 nodes /2972 existing files excluded from the current scan.
   checks; preserve original predictions and the separate compatibility pin.
 - [x] Refresh official progress and README aggregate rows only.
 - [x] Bank tools931d6c2 before the consumer source/guard/docs/pin checkpoint.
-- [ ] Continue **func_150F23E0**, same owner, VA150F23E0..150F2480,
-  ROM11F890..11F930,40 words/frame0x20. Inspect its fixed state at actor0x170,
-  real SP+0x20 actor home and S0 lifetime across the same four float calls.
+- [x] Finish **func_150F23E0**, same owner,40 words/frame0x20, in
+  [Note1498](1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md).
+  Its complete semantic C body matches directly with no new guards.
 - [ ] Keep both fade S0/private-lifetime gaps and wider Game matching open.
   Handwritten func_150A76F0 remains in the separate assembly workstream.
 

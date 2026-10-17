@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1498](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
+Restore func_150F23E0's40-word C directly, with no new guards. Exact whole
+normal image,128 code/one extent/zero metadata bytes; ten installed and three
+selected checkpoint checks pass. Toolsd698926 first. Game61.27%, total66.01%,
+zero drift. Preserve1,098 unrelated mirror hashes /1,104 paths.
+Continue func_150F22D0; both fade lifetime issues and wider Game stay open.
+
+2026-10-17:
 [Note1497](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
 Restore func_150F2480's38-word C with one commutative ADDU guard. Exact whole
 normal image,119 code/one extent/zero metadata bytes; ten final installed and

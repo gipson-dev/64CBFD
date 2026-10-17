@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Fixed state sine update direct restoration and match](WORKING_NOTES/1498-fixed-state-sine-update-direct-restoration-and-match-20261017.md):
+  complete40-word C with no new guards, ten installed and three selected
+  checkpoint checks; Game61.27%, total66.01%, zero drift.
 - [Sine phase update restoration and match](WORKING_NOTES/1497-sine-phase-update-restoration-and-match-20261017.md):
   complete38-word C with one commutative ADDU guard; ten final installed and
   seven selected compatibility checks; Game61.25%, total65.99%, zero drift.
