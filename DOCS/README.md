@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Actor record gate compiler stages and prolog control](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
+  full-object-preserving compiler captures and a qualified eight-word prolog
+  control; full routine still unmatched, production and totals unchanged.
 - [Actor record gate recovery and private mismatch](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
   uninstalled137/139-word candidate, five recovery tests and a measured saved-register
   counterexample; production and matching totals unchanged, same target remains open.

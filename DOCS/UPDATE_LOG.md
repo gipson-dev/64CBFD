@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-17 Actor Record Gate Compiler Stages And Prolog Control
+
+[Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
+Qualify three fingerprint-locked UOPT captures and one stage-wire capture for
+func_150F2A60 without changing their complete normal objects. Observe two-to-one
+opening global loads, signed-less-than to unequal loop rewriting and bound2
+promotion into S5. A remaining-count control removes S5 and recovers the first
+eight retail words/seven early fault prefixes, but the full135-word control
+still has130 padded-slot differences and is not installable. Five new tests
+pass (34.019s), with native32 and effective provenance controls. Tools40a1e62
+first; preserve1,118 unrelated mirror hashes /1,120 paths. Production, matching
+totals and README remain unchanged. Continue the same opening-load CSE gap.
+
 ## 2026-10-17 Actor Record Gate Recovery And Private Mismatch
 
 [Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):

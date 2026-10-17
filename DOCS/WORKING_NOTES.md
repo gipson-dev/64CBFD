@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
+Observe func_150F2A60's prepared optimizer stages with unchanged full objects.
+The remaining-count control recovers eight opening words and seven early fault
+prefixes but still fails at cut7 and130 full-slot words; no install or credit.
+Five new tests pass. Tools40a1e62 first; preserve1,118 unrelated mirror hashes
+/1,120 paths. Production/data/CSV/README unchanged. Continue the same opening
+global-load CSE and actor-address rematerialization gap; wider Game stays open.
+
+2026-10-17:
 [Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
 Bank func_150F2A60's uninstalled137/139-word candidate, five recovery tests and
 seven reproducible screens.120 padded-slot differences and saved-register

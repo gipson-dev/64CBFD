@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b0ae735; tools are committed before the consumer pin.
+  checkpoint pins tools 40a1e62; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor-record gate **compiler stages qualified; prolog-only control, no install**:
+[Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md).
+Three UOPT captures and one CFE/UOPT/UGEN wire capture preserve their complete
+normal objects and prove the prepared optimizer's global-load CSE, loop-test
+rewrite and bound/address promotion. A bounded remaining-count control removes
+S5 and emits the exact first eight retail words; seven early fault prefixes
+agree, then cut7 rejects the opening global-load state. The full control is
+135/139 words with130 padded-slot differences, worse overall than the original
+137-word/120-difference candidate. Five new tests pass; no source or guard is
+installed and no matching credit is added. Production ELF/data/CSV and README
+remain unchanged. Tools40a1e62 first; preserve1,118 unrelated mirror hashes
+/1,120 dirty paths. Continue the same target's opening CSE/rematerialization;
+both fade lifetime gaps and wider Game stay open.
 
 Actor-record gate **semantic recovery banked, not installed or matching**:
 [Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md).

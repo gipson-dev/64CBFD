@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Record Gate Compiler Stages And Prolog Control - 2026-10-17
+
+[Note1503](WORKING_NOTES/1503-actor-record-gate-compiler-stages-and-prolog-control-20261017.md):
+
+- [x] Qualify three UOPT captures and one CFE/UOPT/UGEN wire capture, checking fingerprints, fired probes, all child/driver exits and complete normal-object identity.
+- [x] Observe opening global loads2->1, signed loop comparisons2->0 with one unequal test, bound2 assigned color19/GPR21(S5), and actor address caching in GPR16(S0).
+- [x] Qualify the remaining-count control: first eight words exact and seven early fault prefixes equal; retain rejection at cut7 and130 padded-slot differences across135/139 words.
+- [x] Pass five new tests (34.019s),960 core/400 sparse cases,12 actual-helper cases, native32 and11 effective provenance controls.
+- [x] Preserve all production source/ELF/guards/data/CSV, matching totals and the root README; no new matching credit.
+- [x] Bank tools40a1e62 first and pass both tools-copy checks; preserve1,118 unrelated mirror hashes /1,120 dirty paths.
+- [ ] Continue the same func_150F2A60 opening-load CSE and actor-address rematerialization gap, using exact procedure/variable witnesses rather than more equivalent bound forms.
+- [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
+
 ## Actor Record Gate Recovery And Private Mismatch - 2026-10-17
 
 [Note1502](WORKING_NOTES/1502-actor-record-gate-recovery-and-private-mismatch-20261017.md):
@@ -10,7 +23,7 @@
 - [x] Use one bounded packet-only advisory; reject duplicated suggestions and an independently tested object-condition form that emits identical words.
 - [x] Preserve every production source/guard, the complete ELF and189,088 Game-data bytes; matching totals and root README remain unchanged.
 - [x] Bank toolsb0ae735 first and pass both tools-copy checks; preserve1,116 unrelated mirror hashes /1,118 dirty paths.
-- [ ] Continue the same func_150F2A60 target using read-only normal compiler live-range/CSE evidence; recover the signed immediate loop test and retail rematerialization before installation.
+- [x] Capture func_150F2A60's normal compiler live-range/CSE evidence in Note1503; matching/private gaps remain open there.
 - [ ] Keep both fade lifetime gaps and wider Game open; no host or frozen Release action.
 
 ## Actor State And Event Value Direct Restoration And Match - 2026-10-17

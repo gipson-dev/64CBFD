@@ -137,7 +137,7 @@ claim a fresh full legacy suite or another production match.
 - [x] Demonstrate the private saved-word and global-read counterexamples.
 - [x] Preserve production/data/guards, pass both tools-copy checks and bank
   a precise handoff without adding matching credit.
-- [ ] Continue **this same func_150F2A60**. Use existing read-only IDO/UOPT
+- [x] Continue **this same func_150F2A60** with the qualified captures in Note1503. Use existing read-only IDO/UOPT
   capture patterns to inspect the normal candidate's bound2 promotion,
   actor-base live range and opening global-load CSE. Verify the exact compiler
   fingerprints, fired probes, child/driver completion and normal-object identity.
