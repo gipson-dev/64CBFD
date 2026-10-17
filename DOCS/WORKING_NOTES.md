@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
+Install func_150CF680's complete 96-word direct C constructor and seven-word
+factory call, with properly sized descriptor/payload objects and inherited
+padding. Eight final tests pass in 70.848s; twelve affected checks in 51.749s.
+Whole first image exact: 292 code bytes and two size bytes only, all 24
+neighbors/data/guards unchanged. Fresh Game 61.10%, total 65.86%, zero drift.
+Tools 791eb66 first; preserve 1,045 unrelated mirror hashes / 1,053 paths.
+Next func_150CF800, 251 words/frame 0x108; wider Game remains open.
+
+2026-10-17:
 [Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
 Install func_150CF5E8's complete 38-word direct SDK tile-window emitter.
 Eight final tests pass in 38.987s plus ten affected/context checks. First

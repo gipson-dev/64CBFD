@@ -1,4 +1,29 @@
 #include <ultra64.h>
+extern s32 D_80082FA0;
+/* The view byte occupies the first byte of a word-aligned descriptor cell. */
+typedef union {
+    u8 byte;
+    s32 word;
+} TransitionViewFC5F0;
+typedef struct {
+    f32 position[2];
+    f32 scale[2];
+    u8 tag;
+    s16 id;
+    u16 flags;
+    s16 size0, size1;
+    u8 kind, field1B, field1C, field1D, duration, field1F;
+    u8 field20, field21, field22, opacity;
+    s32 field24, field28, field2C, field30, field34, field38, field3C;
+    u8 field40, field41;
+    TransitionViewFC5F0 view;
+    f32 field48, field4C, field50, field54;
+} TransitionDescriptorFC5F0;
+typedef struct {
+    u8 state;
+    f32 field04, field08, field0C;
+} TransitionPayloadFC5F0;
+void *func_1515548C(void *, s32, s32 *, s32, s32, u8, s32);
 void func_151CF898(u8 *, f32, f32);
 extern u8 D_800CC2D0[];
 void *memcpy(void *dst, const void *src, unsigned int len);
@@ -48,8 +73,53 @@ Gfx *func_150CF5E8(Gfx *commands) {
     return commands;
 }
 
-s32 func_150CF680() {
-    return 0;
+/* Create the fixed descriptor and attach its transition payload. */
+void func_150CF680(s16 id, u8 slot, s32 context) {
+    TransitionDescriptorFC5F0 descriptor;
+    TransitionPayloadFC5F0 payload;
+    u8 *event;
+
+    descriptor.position[1] = 72.0f;
+    descriptor.tag = 0xC1;
+    descriptor.id = id;
+    descriptor.flags = 0x31;
+    descriptor.size0 = 1;
+    descriptor.size1 = 0xFF;
+    descriptor.kind = 8;
+    descriptor.field1B = 0xFF;
+    descriptor.field1C = 0xFF;
+    descriptor.field1D = 0xFF;
+    descriptor.duration = 0xFF;
+    descriptor.field1F = 0xFF;
+    descriptor.field20 = 0xFF;
+    descriptor.field21 = 0xFF;
+    descriptor.field22 = 0xFF;
+    descriptor.opacity = 0xFF;
+    descriptor.field28 = 0x200004;
+    payload.state = 0;
+    payload.field04 = 0.0f;
+    descriptor.position[0] = -300.0f;
+    payload.field08 = -300.0f;
+    payload.field0C = 0.0f;
+    descriptor.scale[1] = 7.5f;
+    descriptor.scale[0] = 7.5f;
+    descriptor.field24 = 0;
+    descriptor.field2C = 0x9F0601;
+    descriptor.field40 = 0;
+    descriptor.field41 = 10;
+    descriptor.field30 = 23;
+    descriptor.field34 = 68;
+    descriptor.field38 = 128;
+    descriptor.field3C = 32;
+    descriptor.field4C = 1.0f;
+    descriptor.field48 = 1.0f;
+    descriptor.field54 = 0.0f;
+    descriptor.field50 = 0.0f;
+    descriptor.view.byte = D_80082FA0;
+    event = func_1515548C(&descriptor, 12, 0, 0, 16, slot, context);
+    if (event != 0) {
+        memcpy(event + 0x70, &payload, 16);
+    }
 }
 
 s32 func_150CF800() {

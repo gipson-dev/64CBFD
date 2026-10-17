@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6737b65; tools are committed before the consumer pin.
+  checkpoint pins tools 791eb66; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Fixed transition constructor **installed, all 96 words directly exact from C**:
+[Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md).
+func_150CF680 has its void/signed-ID/byte-slot interface, complete 88-byte
+descriptor, 16-byte payload and seven-word factory call. Eight final tests
+pass in 70.848s; twelve affected checks in 51.749s. Actual factory/copy words
+execute, preserving all nine inherited bytes; native field checks alone do
+not certify padding. The normal ELF equals the first complete prediction:
+292 code bytes and two size bytes only, no guards/profile/pool/data changes,
+all 24 owner neighbors unchanged. Fresh Game **2,950/4,828 (61.10%)**, total
+**3,623/5,501 (65.86%)**, different **1,878**, zero drift. Tools **791eb66**
+first; preserve 1,045 unrelated mirror hashes / 1,053 paths. README aggregate
+rows only. Next **func_150CF800**, 251 words/frame 0x108; wider Game stays open.
 
 Paired scrolling tile windows **installed, all 38 words directly exact from C**:
 [Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md).

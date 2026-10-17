@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Fixed Transition Constructor Direct Match
+
+[Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
+Install func_150CF680's complete 96-word typed constructor, 88-byte descriptor,
+16-byte payload and proper seven-word factory ABI, without spurious float
+arguments or zeroed padding. Eight final tests pass in 70.848s and twelve
+affected checks in 51.749s, including actual factory/copy execution. Entire
+normal ELF equals its first prediction: 292 code bytes and two size bytes
+only, no guards/profile/pool/data changes, all 24 neighbors unchanged. Fresh
+Game 61.10%, total 65.86%, zero drift. Tools 791eb66 first; preserve 1,045
+unrelated mirror hashes / 1,053 paths. Next func_150CF800, 251 words/frame 0x108.
+
 ## 2026-10-17 Paired Scrolling Tile Windows Direct Match
 
 [Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):

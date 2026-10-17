@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Fixed transition constructor direct match](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
+  Complete 96-word typed C, proper factory ABI and actual copies/padding
+  qualified. Eight final tests plus twelve affected checks pass; first full
+  image exact with 294 changed bytes, no guards/data changes. Fresh Game 61.10%.
 - [Paired scrolling tile windows direct match](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
   Complete 38-word SDK C emitter, proper Gfx interface and live reads. Eight
   installed tests plus ten affected/context checks pass; whole-image prediction

@@ -147,7 +147,8 @@ make -C conker match-progress NON_MATCHING=1
 - [x] Replace the placeholder with the complete 38-word direct SDK routine.
 - [x] Qualify live reads, aliases, typed caller, actual call sites and whole ELF.
 - [x] Locate the fade load-reduction boundary without granting it C credit.
-- [ ] Recover neighboring **func_150CF680**, **96 words / frame 0x98**,
-  including its full constructor argument block and actual 16-byte copy.
+- [x] Recover, qualify and install neighboring **func_150CF680**, **96 words /
+  frame 0x98**, including its full constructor argument block and actual
+  16-byte copy; see [Note 1483](1483-fixed-transition-constructor-direct-match-20261017.md).
 - [ ] Keep the 54-word fade, 633-word renderer, deferred pulse lifetime and
   wider Game/additional-source queue open; natural gameplay remains separate.

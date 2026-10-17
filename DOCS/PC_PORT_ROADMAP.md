@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Fixed Transition Constructor Direct Match - 2026-10-17
+
+[Note 1483](WORKING_NOTES/1483-fixed-transition-constructor-direct-match-20261017.md):
+
+- [x] Replace func_150CF680's placeholder with the complete 96-word direct C constructor, frame 0x98, proper signed ID/byte slot/context interface and full descriptor/payload objects.
+- [x] Recover the seven-word factory call without spurious F12/F14 arguments; execute the actual 54-word factory body and eleven-word SDK copy, preserving all nine inherited bytes on the used paths.
+- [x] Pass eight installed tests: 3,888 three-way guest cases, 864 native cases/profile, ten effective controls, independent helper rebases, 1,332 fault prefixes and 288 original caller cases.
+- [x] Verify the normal ELF equals the first complete prediction: 292 code bytes and two size bytes only, no guards/profile/pool/metadata exclusions, all 24 neighbors and 189,088 Game-data bytes unchanged.
+- [x] Pass twelve affected checks and bank tools 791eb66 first. Preserve 1,045 unrelated mirror hashes / 1,053 paths; fresh Game 61.10%, total 65.86%, zero drift. README aggregate rows only.
+- [ ] Recover func_150CF800's full 251-word / frame-0x108 body, descriptor/payload reads and caller interface before qualification or installation.
+- [ ] Keep factory optional-pair/flag-clear branches, real heap/gameplay acceptance, deferred fade/pulse/renderer work and wider Game matching open; no host or frozen Release action.
+
 ## Paired Scrolling Tile Windows Direct Match - 2026-10-17
 
 [Note 1482](WORKING_NOTES/1482-paired-scrolling-tile-windows-direct-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Verify the normal ELF equals the first complete prediction: 127 instruction bytes and one size byte only, no metadata exclusions/guards/profile/pool changes, all 189,088 Game-data bytes exact.
 - [x] Pass ten affected/context checks and bank tools 6737b65 first. Preserve 1,037 unrelated mirror hashes / 1,047 paths; fresh Game 61.08%, total 65.84%, zero drift. README aggregate rows only.
 - [x] Trace fade duration through actual CFE/UOPT streams: three LODs survive, with a VREG annotation before one UGEN LH; reject nonmatching source/profile variants without C credit.
-- [ ] Recover func_150CF680's full 96-word / frame-0x98 constructor argument block and actual 16-byte copy, then qualify before installation.
+- [x] Recover, qualify and install func_150CF680's full 96-word / frame-0x98 constructor argument block and actual 16-byte copy in Note 1483.
 - [ ] Keep the 54-word fade, 633-word renderer, deferred pulse lifetime, wider Game/additional-source queue and natural gameplay acceptance open; no host/frozen Release action.
 
 ## Overlay Fade Packet Recovery And Reload Gap - 2026-10-17
