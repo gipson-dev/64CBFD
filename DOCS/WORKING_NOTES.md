@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-16:
+[Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
+All 473 words of func_1501D348 are qualified guarded-exact, not installed:
+165 guards, one certified scale omission, original frame/homes and 56 raw/
+padded neighbors. Eight tests pass in 122.782s: all-loop/32-call proof,
+484 three-way cases, native32 O2/O0/UBSan, effective controls, 417 fault
+prefixes, independent rebases and all 136 preserved inputs. Tools c7c0d87
+banks first, preserving 964 mirror hashes / 967 paths. No production/root
+README change or matching credit. Next actual caller/helper gates and first
+complete-image prediction before this same function's installation/build/audit.
+
+2026-10-16:
 [Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
 Recover func_1501D348's frame 0x78, opening saved roles and all eight homes.
 Two complete fits remain at 473/273 and 474/275 words/differences. All five

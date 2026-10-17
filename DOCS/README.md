@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence record setup certified guarded match qualification](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
+  All 473 retail words from complete C plus 165 certified guards, original
+  frame/homes, eight passing tests. Not installed or credited; next caller/
+  helper gates and first whole-image prediction before installation.
 - [Sequence record setup frame and private home recovery](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
   Recover frame 0x78, all eight homes and literal memory/call-cut equivalence
   for complete 473/474-word fits. Five tests pass; no installation or credit.

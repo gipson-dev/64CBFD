@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b9e0781; tools are committed before the consumer pin.
+  checkpoint pins tools c7c0d87; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Sequence record setup **all 473 words guarded-exact, qualified but not installed**:
+[Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md).
+func_1501D348's complete 474-word C retains frame 0x78 and all homes/saves.
+Certify cursor-one induction and closed scratch roles across all loops/32
+calls, then emit 473 retail words with 165 guards and one omission. All eight
+tests pass in 122.782s: 484 three-way cases, native32 O2/O0/UBSan, effective
+controls, 417 fault prefixes and independent rebases. Preserve 56 raw/padded
+neighbors and all 136 inputs. Tools **c7c0d87** banks first, preserving 964
+mirror hashes / 967 paths. Production, root README and installed counts remain
+unchanged. Next actual caller/helper gates and first whole-image prediction,
+then installation/build/audit and fresh progress. Wider Game stays open.
 
 Sequence record setup **frame and private homes recovered, not installed**:
 [Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md).

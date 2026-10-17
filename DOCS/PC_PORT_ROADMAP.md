@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence Record Setup Certified Guarded Match Qualification - 2026-10-16
+
+[Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
+
+- [x] Certify cursor-one induction, sole/dead scale use, return-link boundary, branch-delay routing and complete scratch-role fixed point across all loops and 32 calls. No frame/home/ABI repair or inserted instruction.
+- [x] Produce all 473 retail words using the actual padder and 165 guards, one omission; retain frame 0x78, all private homes and 56 raw/padded neighbors. Label this qualified guarded matching, not direct C or installed progress.
+- [x] Pass eight tests in 122.782s: 484 three-way cases, native32 O2/O0/UBSan, eight native/nine symbolic controls, 417 fault prefixes, independent carry rebases, 1,815 guard-field corruptions and all 136 unchanged/fail-closed inputs.
+- [x] Bank tools c7c0d87 before the consumer pin; validate both copies/tools-check and preserve all 964 mirror hashes / 967 paths. No production source/guards/image/CSV/root README changes or matching credit.
+- [ ] Verify actual caller packets/prototypes and required real-helper windows/chains, then predict the complete first ELF/source/guard successor before installing this same function.
+- [ ] Install the qualified body/guard append, run the normal build, affected tests and whole-image/function/data audit; measure fresh progress and update root README aggregate rows only.
+- [ ] Keep timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
+
 ## Sequence Record Setup Frame And Private Home Recovery - 2026-10-16
 
 [Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
@@ -7,7 +19,7 @@
 - [x] Recover func_1501D348's real frame 0x78, opening saves/argument roles and all eight private homes under the existing profile. Retain complete 473-word/273-difference and 474-word/275-difference fits without guards or production installation.
 - [x] Pass all five tests in 207.068s: 484 three-way guest cases, entire memory including stack, all ordered memory events and saved roles/homes at every call, both native32 O2/O0/UBSan bodies, sixteen effective controls and 58 bounded screens.
 - [x] Preserve 56 raw neighbors and all 136 unchanged/fail-closed inputs. Bank tools b9e0781 before the consumer pin; validate both copies/tools-check and preserve all 962 mirror hashes / 964 paths. No root README, source/guards/image/CSV changes or matching credit.
-- [ ] Resolve PREHEADER's second descriptor preheader: one extra scale word and register-address add versus retail's immediate +8. Retain its recovered first preheader, homes and saved roles; qualify remaining GPR/scheduling fields rather than treating a register-free diagnostic as a guard plan.
+- [x] Qualify PREHEADER's second preheader and remaining scratch fields in Note 1467: certified cursor-one fold, one dead scale omission and complete operand/ABI fixed point produce all 473 retail words with 165 guards. Production installation remains open there.
 - [ ] Qualify the eventual match's actual caller/helper, private/fault/rebase and complete-image boundaries before installation; then rebuild, audit and measure fresh progress.
 - [ ] Keep timing's 141 differences, wider Game/additional-source recovery and full gameplay acceptance open.
 

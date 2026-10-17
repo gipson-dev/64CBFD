@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-16 Sequence Record Setup Certified Guarded Match Qualification
+
+[Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
+Qualify func_1501D348 to all 473 retail words with 165 guards and one certified
+dead scale omission. Complete C retains frame 0x78, private homes and saved
+roles; all-loop operand/ABI proof covers 32 call sites. Eight tests pass in
+122.782s, including native32, 484 three-way cases, 417 fault prefixes,
+independent rebases and fail-closed guards/inputs. Tools c7c0d87 banks first,
+preserving 964 mirror hashes / 967 paths. No production/root README change
+or matching credit. Next caller/helper and complete-image prediction gates,
+then installation, build/audit and fresh progress. No push or host/Release action.
+
 ## 2026-10-16 Sequence Record Setup Frame And Private Home Recovery
 
 [Note 1466](WORKING_NOTES/1466-sequence-record-setup-frame-and-private-home-recovery-20261016.md):
