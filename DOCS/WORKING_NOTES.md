@@ -1,5 +1,16 @@
 # Working Notes
 
+2026-10-17:
+[Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
+Install all 473 guarded-exact words of func_1501D348. Both typed callers,
+actual six-helper chains and nine original assembly call packets pass;
+all 25 tests pass in 325.866s. Normal ELF equals the first complete prediction
+with zero metadata exclusions; protect 140 inputs and 189,088 data bytes.
+Fresh Game 2,940/4,828 (60.89%), total 3,613/5,501 (65.68%), no drift.
+Tools 987e90b banks first, preserving 964 unrelated mirror hashes / 971 paths.
+Root README updates aggregate rows/date only. Next func_1501DAAC, 219 words,
+frame 0x80; wider Game and full gameplay acceptance remain open.
+
 2026-10-16:
 [Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
 All 473 words of func_1501D348 are qualified guarded-exact, not installed:

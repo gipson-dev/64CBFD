@@ -61,6 +61,49 @@ extern f32 D_800C3648, D_800C364C, D_800C3650, D_800C35A4, D_800C3674, D_800C367
 extern f32 D_800969C0;
 void func_150233BC(void);
 
+typedef struct {
+    u16 activeCount;
+    u16 fallbackCount;
+    u16 preferredCount;
+    u16 auxiliaryCount;
+} SequenceHeader49D30;
+typedef struct {
+    u8 *data;
+    u32 bytes;
+} SequenceDescriptor49D30;
+typedef struct {
+    u8 pad00[4];
+    u32 *items;
+    u8 pad08[0x30];
+    u8 *scratch;
+    u8 pad3C[4];
+} SequenceRuntime49D30;
+extern u8 D_800C35C4, D_800C35C5, D_800C35E8[], D_800C3C90, D_800C3C98;
+extern s8 D_800C35A8;
+extern s32 D_800BE9F0, D_800C3C94;
+extern u8 **D_800C35E0[];
+extern SequenceRuntime49D30 *D_800C3A50[];
+extern u8 *D_800C3958[], *D_800C3868[][30];
+extern s16 D_800C3C9A;
+extern u8 D_800DBFF4;
+extern void (*D_800840FC[])(s32, s32, s32, s32);
+s32 allocate_memory(s32, s32, s32, s32);
+void func_1501C730(s32, s32, s32, s32, s32);
+s32 func_15022BA4();
+s32 func_15020388();
+s32 func_150238D0();
+void func_15022234(s32);
+void func_15022248(s32);
+s32 func_1501E81C();
+s32 func_150242F8();
+s32 func_1501EC38();
+s32 func_15022848();
+void func_15022754(s32);
+s32 func_15022528();
+s32 func_15020EC4();
+s32 func_1501DAAC();
+
+
 
 
 /* Non-matching placeholders for the text-only asm slice asm/49D30.s. */
@@ -358,8 +401,119 @@ s32 func_1501D2C4(s32 index, s32 bit) {
     return 0;
 }
 
-s32 func_1501D348() {
-    return 0;
+/* Allocate and publish a slot's record groups, then run its setup providers. */
+void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter) {
+    s32 value;
+    SequenceDescriptor49D30 *bundle;
+    SequenceHeader49D30 *header;
+    s32 i;
+    s32 cursor;
+    s32 bytes;
+
+    /* Retail reuses this word for status, sizes, allocation results and flags. */
+    value = D_800C35EA[slot];
+    if (value == 1 || D_800C35C4 != 0) return;
+    D_800C3C90 = hook;
+    D_800C3C94 = parameter;
+    if (scene != D_800BE9F0) {
+        D_800C35C4 = (u32)sequence + 1U;
+        func_1501C730(1, scene, 0, 0, 0);
+        value = 1;
+        if (D_800C35EA[slot] != 0) D_800C35C5 = 0;
+        else D_800C35C5 = value;
+        return;
+    }
+    D_800C35E8[slot] = sequence;
+    if (value != 2) {
+        D_800C35A8 = D_800BE9F0;
+        D_800C3C98 = sequence;
+    }
+    func_1501D044(slot);
+    if (func_1501D1D4(scene, sequence, slot) == 0) return;
+    bundle = (SequenceDescriptor49D30 *)D_800C3668[slot];
+    header = (SequenceHeader49D30 *)bundle[0].data;
+    D_800C35C8[slot] = (void *)allocate_memory(header->activeCount * 2, 1, 0, 0);
+    cursor = 1;
+    for (i = 0; i < header->activeCount; i++, cursor++) {
+            (D_800C35C8[slot])[i] = bundle[cursor].bytes >> 3;
+    }
+    cursor = 1;
+    value = header->fallbackCount;
+    if (value < header->activeCount) value = header->activeCount;
+    bytes = value * 2;
+    D_800C35D0[slot] = (void *)allocate_memory(bytes, 1, 0, 0);
+    bzero(D_800C35D0[slot], bytes);
+    value = header->preferredCount;
+    if (value < header->activeCount) value = header->activeCount;
+    bytes = value * 2;
+    D_800C35D8[slot] = (void *)allocate_memory(bytes, 1, 0, 0);
+    bzero(D_800C35D8[slot], bytes);
+    D_800C35E0[slot] = (void *)allocate_memory(header->auxiliaryCount * 4, 1, 0, 0);
+    D_800C3A50[slot] = (void *)allocate_memory(header->activeCount * 0x40, 1, 0, 0);
+    for (i = 0; i < header->activeCount; i++) {
+            if ((D_800C35C8[slot])[i] != 0) {
+                value = allocate_memory((D_800C35C8[slot])[i] * 4, 1, 0, 0);
+                (D_800C3A50[slot])[i].items = (void *)value;
+                value = allocate_memory(0x194, 1, 0, 0);
+                (D_800C3A50[slot])[i].scratch = (void *)value;
+            }
+    }
+    D_800C3958[slot] = (void *)allocate_memory(header->activeCount * 0x44, 1, 0, 0);
+    for (i = 0; i < header->activeCount; i++) {
+            D_800C3960[slot][i] = (void *)allocate_memory(0x10, 1, 0, 0);
+    }
+    for (i = 0; i < header->activeCount; i++) {
+            (D_800C35D8[slot])[i] = 0;
+            (D_800C35D0[slot])[i] = 0;
+            (D_800C35C8[slot])[i] = 0;
+    }
+    D_800C363A[slot] = header->activeCount;
+    for (i = 0; i < header->activeCount; i++) {
+            (D_800C35C8[slot])[i] = bundle[cursor].bytes >> 3;
+            D_800C3868[slot][i] = bundle[cursor].data;
+            cursor++;
+    }
+    D_800C35F0[slot] = bundle[cursor].data;
+    /* Retail skips another activeCount descriptors before the fallback group. */
+    cursor += header->activeCount;
+    for (i = 0; i < header->fallbackCount; i++) {
+            (D_800C35D0[slot])[i] = bundle[cursor].bytes >> 3;
+            D_800C3778[slot][i] = bundle[cursor].data;
+            cursor++;
+    }
+    for (i = 0; i < header->preferredCount; i++) {
+            (D_800C35D8[slot])[i] = bundle[cursor].bytes >> 3;
+            D_800C3688[slot][i] = (RecordMaximum49D30 *)bundle[cursor].data;
+            cursor++;
+    }
+    for (i = 0; i < header->auxiliaryCount; i++) {
+            (D_800C35E0[slot])[i] = bundle[cursor + i].data;
+    }
+    if (hook != 0) D_800840FC[hook](scene, sequence, slot, parameter);
+    D_800C3C9A = func_1501CFF8(slot);
+    D_800C3D50 = (void *)allocate_memory((u16)D_800C3C9A * 12, 1, 0, 0);
+    D_800C35B0[slot] = 0;
+    func_1501CDC0(slot);
+    func_1501CE54(slot);
+    func_15022BA4(slot);
+    for (i = 0; i < D_800C363A[slot]; i++) {
+        func_15020388(i, slot);
+    }
+    func_150238D0();
+    value = 1;
+    D_800C35EA[slot] = value;
+    D_800C3638 = value;
+    func_15022234(slot);
+    func_15022248(slot);
+    if (D_800C363A[slot] == 0) func_1501E81C(0, slot);
+    func_150242F8(1, slot);
+    func_1501EC38(slot);
+    func_15022848(slot);
+    func_15022754(slot);
+    func_15022528(slot);
+    func_15020EC4(slot);
+    D_800DBFF4 = 4;
+    func_1501DAAC(slot);
 }
 
 s32 func_1501DAAC() {

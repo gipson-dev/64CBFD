@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence Record Setup Installed Guarded Match - 2026-10-17
+
+[Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
+
+- [x] Execute both complete C callers, all nine original assembly call packets and the actual six-helper chain, including loader, sum, record clear and maximum.
+- [x] Reproduce the predecessor and predict every first ELF/source/caller/guard byte before installation, pinning seven exact symbol-order groups with zero exclusions.
+- [x] Install complete C plus the certified 165-row append; preserve frame/homes, all previous guard bytes and all 56/6/60 owner neighbors. No new compiler profile.
+- [x] Complete the normal object/ELF build and 25 passing tests in 325.866s, all 140 input/fixture/metadata gates and 189,088 protected data bytes. Overall retail checksum still fails; development build passes.
+- [x] Measure fresh Game 2,940/4,828 (60.89%) and total 3,613/5,501 (65.68%), zero drift. Update root README aggregate rows/date only and bank tools 987e90b first, preserving 964 unrelated mirror hashes / 971 paths.
+- [ ] Recover and qualify adjacent func_1501DAAC: 219 words, frame 0x80, final setup provider; do not treat the bounded hook as body acceptance.
+- [ ] Keep timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
+
 ## Sequence Record Setup Certified Guarded Match Qualification - 2026-10-16
 
 [Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
@@ -8,8 +20,8 @@
 - [x] Produce all 473 retail words using the actual padder and 165 guards, one omission; retain frame 0x78, all private homes and 56 raw/padded neighbors. Label this qualified guarded matching, not direct C or installed progress.
 - [x] Pass eight tests in 122.782s: 484 three-way cases, native32 O2/O0/UBSan, eight native/nine symbolic controls, 417 fault prefixes, independent carry rebases, 1,815 guard-field corruptions and all 136 unchanged/fail-closed inputs.
 - [x] Bank tools c7c0d87 before the consumer pin; validate both copies/tools-check and preserve all 964 mirror hashes / 967 paths. No production source/guards/image/CSV/root README changes or matching credit.
-- [ ] Verify actual caller packets/prototypes and required real-helper windows/chains, then predict the complete first ELF/source/guard successor before installing this same function.
-- [ ] Install the qualified body/guard append, run the normal build, affected tests and whole-image/function/data audit; measure fresh progress and update root README aggregate rows only.
+- [x] Verify actual caller packets/prototypes and required real-helper windows/chains, then predict the complete first ELF/source/guard successor before installing this same function. Completed in Note 1468.
+- [x] Install the qualified body/guard append, run the normal build, affected tests and whole-image/function/data audit; measure fresh progress and update root README aggregate rows only. Completed in Note 1468.
 - [ ] Keep timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
 
 ## Sequence Record Setup Frame And Private Home Recovery - 2026-10-16

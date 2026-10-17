@@ -5,6 +5,7 @@
 
 /* Generated placeholder declarations. */
 void func_1501D044(s32 slot);
+void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter);
 s32 func_15007B3C();
 /* End generated placeholder declarations. */
 

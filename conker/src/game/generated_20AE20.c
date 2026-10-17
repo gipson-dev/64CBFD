@@ -54,6 +54,7 @@ extern u8 **D_800E0BD8;
 s32 func_151E43DC();
 s32 func_151E530C();
 void func_151DE85C(void);
+void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter);
 
 extern s16 D_800E0B9A;
 extern u8 D_800E0B94;

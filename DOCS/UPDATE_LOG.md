@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-17 Sequence Record Setup Installed Guarded Match
+
+[Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
+Install func_1501D348's complete C plus 165 certified guards: all 473 retail
+words exact, original frame/homes, no new compiler profile. Two narrow caller
+declarations preserve all 66 caller functions. All 25 tests pass in 325.866s,
+including actual six-helper chains, both complete C callers, nine assembly
+call packets and prior checkpoint integrity. The normal ELF equals the first
+whole-image prediction; protect 140 inputs and 189,088 data bytes. Fresh Game
+2,940/4,828 (60.89%), total 3,613/5,501 (65.68%), different 1,888, no drift.
+Tools 987e90b banks first, preserving 964 unrelated mirror hashes / 971 paths.
+Update root README aggregate rows/date only. Next func_1501DAAC, 219 words;
+full gameplay and the overall retail checksum remain non-matching/open.
+
 ## 2026-10-16 Sequence Record Setup Certified Guarded Match Qualification
 
 [Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):

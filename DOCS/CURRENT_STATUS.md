@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-16
+Last verified: 2026-10-17
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c7c0d87; tools are committed before the consumer pin.
+  checkpoint pins tools 987e90b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Sequence record setup **installed, all 473 words guarded-exact**:
+[Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md).
+func_1501D348 replaces its stub with complete C under the existing profile;
+165 certified guards preserve the frame/homes and omit one dead scale word.
+Both typed C callers and all 56/6/60 owner neighbors remain unchanged.
+Actual six-helper chains, both full C callers and nine original assembly
+call packets pass. All 25 final tests pass in 325.866s. The normally rebuilt
+ELF equals the first complete prediction with no metadata exclusions;
+140 inputs and 189,088 data bytes / 720 owners are protected. Fresh Game
+2,940/4,828 (60.89%), total 3,613/5,501 (65.68%), different 1,888, drift zero.
+Tools **987e90b** banks first; preserve 964 unrelated mirror hashes / 971
+paths. Root README changes only date and aggregate rows. Next func_1501DAAC,
+219 words/frame 0x80, not full gameplay acceptance. Whole-project retail
+checksum remains non-matching; explicit development build passes.
 
 Sequence record setup **all 473 words guarded-exact, qualified but not installed**:
 [Note 1467](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md).

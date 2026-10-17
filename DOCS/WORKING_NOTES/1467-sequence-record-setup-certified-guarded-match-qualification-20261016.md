@@ -187,11 +187,12 @@ make tools-check
 - [x] Produce all 473 retail words with the actual padder, preserving frame/homes and all neighbors.
 - [x] Complete native/guest, effective controls, fault prefixes, rebases and fail-closed guards/inputs.
 - [x] Bank tools first and update concise indexes without changing production or root README.
-- [ ] Verify actual caller packets and narrow void-five-word declarations where needed; qualify required real-helper windows/chains without claiming full gameplay.
-- [ ] Reproduce the predecessor and predict the entire first ELF/source/guard successor before installation, including exact metadata changes.
-- [ ] Install only source.recovered_owner(before, SELECTED) and the certified guard append, preserving unrelated source and all old guard bytes.
-- [ ] Run the normal build, target/affected tests, whole-image/function/data audit and fresh progress measurement; then update root README aggregate rows only and bank tools first.
+- [x] Verify actual caller packets and narrow void-five-word declarations where needed; qualify required real-helper windows/chains without claiming full gameplay. Completed in Note 1468.
+- [x] Reproduce the predecessor and predict the entire first ELF/source/guard successor before installation, including exact metadata changes. Completed in Note 1468.
+- [x] Install only source.recovered_owner(before, SELECTED) and the certified guard append, preserving unrelated source and all old guard bytes. Completed in Note 1468.
+- [x] Run the normal build, target/affected tests, whole-image/function/data audit and fresh progress measurement; then update root README aggregate rows only and bank tools first. Completed in Note 1468.
 
-Continue this same function's installation gates next. Do not reopen the
-resolved preheader or switch to another stub. Wider Game matching, timing's
-141 differences and full gameplay acceptance remain separate open work.
+Installation is completed in
+[Note 1468](1468-sequence-record-setup-installed-guarded-match-20261017.md).
+Do not reopen the resolved preheader. Wider Game matching, timing's 141
+differences and full gameplay acceptance remain separate open work.

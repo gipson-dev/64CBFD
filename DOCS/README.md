@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence record setup installed guarded match](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
+  Install all 473 retail-exact words with certified guards, both typed
+  callers and actual helper chains. All 25 tests pass; whole first prediction
+  and protected data match. Fresh Game 60.89%, total 65.68%, no drift.
 - [Sequence record setup certified guarded match qualification](WORKING_NOTES/1467-sequence-record-setup-certified-guarded-match-qualification-20261016.md):
   All 473 retail words from complete C plus 165 certified guards, original
   frame/homes, eight passing tests. Not installed or credited; next caller/
