@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
+Install func_1501DAAC's complete 219-word C recovery with 77 certified guards,
+original frame/homes, full scratch/LO proof and actual setup/color chains.
+All 29 tests pass in 327.067s; normal image equals the first complete prediction,
+protecting 141 inputs and 189,088 data bytes. Fresh Game 2,941/4,828 (60.92%),
+total 3,614/5,501 (65.70%), zero drift. Tools abf9d17 banks first; preserve
+969 unrelated mirror hashes / 980 paths. Next func_1517EE40's 48-word C body.
+
+2026-10-17:
 [Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
 Install all 473 guarded-exact words of func_1501D348. Both typed callers,
 actual six-helper chains and nine original assembly call packets pass;

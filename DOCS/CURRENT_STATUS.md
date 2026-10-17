@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 987e90b; tools are committed before the consumer pin.
+  checkpoint pins tools abf9d17; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Sequence event scan **installed, all 219 words guarded-exact**:
+[Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md).
+func_1501DAAC now has complete typed C, frame 0x80 and original homes/roles;
+77 certified guards normalize opening scheduling and scratch/LO roles.
+All 29 tests pass in 327.067s, including actual color and setup/helper chains.
+Normal ELF equals the first whole-image prediction; protect 141 inputs and
+189,088 data bytes. Fresh Game 2,941/4,828 (60.92%), total 3,614/5,501 (65.70%),
+different 1,887, zero drift. Tools **abf9d17** banks first; preserve 969 unrelated
+mirror hashes / 980 paths. Next func_1517EE40, the still-stubbed 48-word color
+helper; its assembly oracle is not a C recovery. Query engine/gameplay stay open.
 
 Sequence record setup **installed, all 473 words guarded-exact**:
 [Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md).

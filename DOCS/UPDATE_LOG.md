@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-17 Sequence Event Scan Installed Guarded Match
+
+[Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
+Replace func_1501DAAC's stub with complete typed C and 77 certified guards;
+all 219 retail words exact, frame/homes preserved, no insertions or omissions.
+All 29 tests pass in 327.067s, with 2,568 three-way cases, native32, real color
+and setup chains, 363 fault prefixes, rebases and exact successor audits.
+Normal ELF equals the first complete prediction. Fresh Game 60.92%, total
+65.70%, zero drift; README aggregate rows only. Tools abf9d17 banks first,
+preserving 969 unrelated mirror hashes / 980 paths. Next func_1517EE40's actual
+48-word C body; query-engine and gameplay acceptance remain open.
+
 ## 2026-10-17 Sequence Record Setup Installed Guarded Match
 
 [Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):

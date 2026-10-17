@@ -101,7 +101,18 @@ s32 func_15022848();
 void func_15022754(s32);
 s32 func_15022528();
 s32 func_15020EC4();
-s32 func_1501DAAC();
+void func_1501DAAC(s32 slot);
+typedef struct {
+    u8 pad00[5];
+    s8 colorIndex;
+    s16 mode;
+} SequenceEvent49D30;
+extern u8 D_800C3C99, D_800C3C9C, D_800C35A9, D_800C35AA;
+extern u8 D_80084110[][3];
+s32 func_15023BB0(u8 *, s32, s32, SequenceEvent49D30 **,
+    s32, s32, s32, s32, s32, s32, s32);
+void func_1517EE40(s32, s32, s32, s32, s32, s32);
+
 
 
 
@@ -516,8 +527,60 @@ void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter) {
     func_1501DAAC(slot);
 }
 
-s32 func_1501DAAC() {
-    return 0;
+/* Collect live sequence flags and submit each improving color selection. */
+void func_1501DAAC(s32 slot) {
+    s32 best;
+    s32 value;
+    SequenceEvent49D30 *event;
+    RecordMaximum49D30 **record;
+    u8 *commands;
+    u8 *count;
+    s32 index;
+
+    D_800C3C99 = 0;
+    D_800C35A9 = 0;
+    D_800C3C9C = 0;
+    D_800C35AA = 0;
+    count = &D_800C363A[slot];
+    D_800C3C8E = 0;
+    best = -1;
+    index = 0;
+    if (*count > 0) {
+        record = D_800C3688[slot];
+        do {
+            commands = (u8 *)*record + 0x18;
+            if (*record != NULL) {
+                event = NULL;
+                func_15023BB0(commands, 5, index, &event, 1, 0x1E, 0, 0, 0, 0, slot);
+                if (event != NULL) D_800C3C99 = 1;
+                event = NULL;
+                func_15023BB0(commands, 5, index, &event, 1, 0x0E, 0, 0, 0, 0, slot);
+                if (event != NULL) D_800C3C9C = 1;
+                event = NULL;
+                func_15023BB0(commands, 5, index, &event, 1, 0x68, 0, 0, 0, 0, slot);
+                if (event != NULL) D_800C35AA = 1;
+                event = NULL;
+                func_15023BB0(commands, 5, index, &event, 1, 0x44, 0, 0, 0, 0, slot);
+                if (event != NULL) D_800C35A9 = 1;
+                event = NULL;
+                value = func_15023BB0(commands, 5, index, &event, 1, 0x77, 0, 0, 0, 0, slot);
+                if (event != NULL) D_800C3C8E = value;
+                event = NULL;
+                value = func_15023BB0(commands, 5, index, &event, 1, 1, 1, 0, 0, 0, slot);
+                if (event != NULL && (best == -1 || value < best)) {
+                    best = value;
+                    if (event->mode == 1) {
+                        func_1517EE40(D_80084110[event->colorIndex][0], D_80084110[event->colorIndex][1], D_80084110[event->colorIndex][2], 0, 1, 0);
+                    } else {
+                        func_1517EE40(D_80084110[event->colorIndex][0], D_80084110[event->colorIndex][1], D_80084110[event->colorIndex][2], 0, 0, 0);
+                    }
+                }
+            }
+            index++;
+            record++;
+        } while (index < *count);
+    }
+    D_800C35B0[slot] = (u16)D_800C3C8E;
 }
 
 s32 func_1501DE18() {

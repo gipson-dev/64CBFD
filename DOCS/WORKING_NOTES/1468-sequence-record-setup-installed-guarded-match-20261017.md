@@ -150,3 +150,7 @@ its internals were not accepted by the bounded provider checks above.
 Recover and qualify its full body before crediting another match. Timing's
 **141 differences**, wider Game/additional-source matching and full gameplay
 acceptance remain separately open.
+
+Subsequent completion: [Note 1469](1469-sequence-event-scan-installed-guarded-match-20261017.md)
+installs and audits func_1501DAAC's complete 219-word guarded C match. Its query
+engine remains bounded; the color helper's assembly oracle is not yet a C recovery.

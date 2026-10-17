@@ -1,5 +1,17 @@
 # PC Port Roadmap located in another project folder
 
+## Sequence Event Scan Installed Guarded Match - 2026-10-17
+
+[Note 1469](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
+
+- [x] Recover func_1501DAAC's complete six-query semantics, signed 32-bit values, byte/halfword event fields, live state and actual void interface.
+- [x] Recover frame 0x80 and original homes/roles, certify opening scheduling and complete scratch/LO dataflow, and emit all 219 words with 77 guards and no insertions/omissions.
+- [x] Qualify 2,568 three-way cases, native32 O2/O0/UBSan, effective controls, rebases, 363 fault prefixes and actual color/setup/helper chains.
+- [x] Freeze the first whole-image prediction before installation; normal rebuild and all 29 final tests pass. Protect 141 inputs and 189,088 data bytes with no metadata exclusions.
+- [x] Measure fresh Game 2,941/4,828 (60.92%), total 3,614/5,501 (65.70%), zero drift. Update README aggregate rows only; bank tools abf9d17 first and preserve 969 unrelated mirror hashes / 980 paths.
+- [ ] Recover actual func_1517EE40 C next: 48 words, frame 0x8; the original helper exercised by tests is not yet an installed C recovery.
+- [ ] Keep the query engine, adjacent func_1501DE18, timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
+
 ## Sequence Record Setup Installed Guarded Match - 2026-10-17
 
 [Note 1468](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
@@ -9,7 +21,7 @@
 - [x] Install complete C plus the certified 165-row append; preserve frame/homes, all previous guard bytes and all 56/6/60 owner neighbors. No new compiler profile.
 - [x] Complete the normal object/ELF build and 25 passing tests in 325.866s, all 140 input/fixture/metadata gates and 189,088 protected data bytes. Overall retail checksum still fails; development build passes.
 - [x] Measure fresh Game 2,940/4,828 (60.89%) and total 3,613/5,501 (65.68%), zero drift. Update root README aggregate rows/date only and bank tools 987e90b first, preserving 964 unrelated mirror hashes / 971 paths.
-- [ ] Recover and qualify adjacent func_1501DAAC: 219 words, frame 0x80, final setup provider; do not treat the bounded hook as body acceptance.
+- [x] Recover and qualify adjacent func_1501DAAC: 219 words, frame 0x80, final setup provider; do not treat the bounded hook as body acceptance. Completed in Note 1469 with actual setup/color chains and whole-image audit.
 - [ ] Keep timing's 141 differences, wider Game/additional-source matching and full gameplay acceptance open.
 
 ## Sequence Record Setup Certified Guarded Match Qualification - 2026-10-16

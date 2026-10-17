@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence event scan installed guarded match](WORKING_NOTES/1469-sequence-event-scan-installed-guarded-match-20261017.md):
+  All 219 words exact with 77 certified guards, full scratch/LO proof and
+  actual setup/color chains. All 29 tests pass; complete prediction matches.
+  Fresh Game 60.92%, total 65.70%, no drift. Next the 48-word color helper's C.
 - [Sequence record setup installed guarded match](WORKING_NOTES/1468-sequence-record-setup-installed-guarded-match-20261017.md):
   Install all 473 retail-exact words with certified guards, both typed
   callers and actual helper chains. All 25 tests pass; whole first prediction
