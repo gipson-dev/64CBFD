@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor handle resource retirement byte match](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
+  typed void handle-first retirement replaces the stub; all 46/frame0x20
+  match with three guards. Seven tests and the 141-byte full-link prediction
+  pass. Game advances to 2,969/4,828; next matrix constructor `func_151102CC`.
 - [Actor owned resource cleanup byte match](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
   typed void cleanup replaces the false stub, all 40/frame0x20 match with
   three guards. Seven tests and the 123-byte complete-image prediction pass.

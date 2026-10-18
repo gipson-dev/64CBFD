@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Handle Resource Retirement Byte Match - 2026-10-18
+
+[Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
+
+- [x] Recover typed/commented void `func_15101090`: unsigned +0x1A0 handle first, five ordered resource retirements with post-callback reloads, then original actor retirement. Match all 46 words/frame0x20 with three guards; preserve the normal profile and all 22 neighbors.
+- [x] Pass seven installed tests: 5,120 guest cases, native32 O2/O0 UBSan, seven effective native/guest controls, 4,488 target-memory fault prefixes and 256 real dispatcher sequences. Pin 17 inputs and preserve the exact predecessor/successor fixtures.
+- [x] Reproduce the complete pre-edit link prediction: 141 ELF bytes, comprising 140 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owner/relocations, callback slot and Game data. Bank tools 29952ff first.
+- [x] Measure Game 2,969/4,828, total 3,642/5,501 and zero drift; change only README aggregate rows. Preserve all 1,188 older mirror hashes, adding only two absent task files, and leave host/frozen Release untouched.
+- [ ] Recover ordinary C `func_151102CC` (37 words/frame0x68), preserving its matrix/three-float ABI, helper composition order and already exact wrapper. Keep wider Game, caller, fade, gate and handwritten/register-contract work open.
+
 ## Actor Owned Resource Cleanup Byte Match - 2026-10-18
 
 [Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: native32 O2/O0 UBSan, callback mutations/aliases, effective controls, 1,928 fault prefixes and 128 actual dispatcher sequences. Pin 16 inputs and preserve prior fixtures through an exact three-member view.
 - [x] Predict the complete link before edits and reproduce exactly 123 changed ELF bytes: 122 target-code bytes plus one extent byte. Audit all 6,057 functions/addresses, canonical symbols, actual owner/relocations, callback slot and Game data. Bank tools e371724 first.
 - [x] Measure Game 2,968/4,828, total 3,641/5,501 and zero drift; update only README matching rows. Preserve independent mirror work and frozen Release.
-- [ ] Recover paired `func_15101090` (46 words), including its unsigned +0x1A0 handle release before the five object callbacks. Keep wider Game, caller, fade, gate and handwritten/register-contract work open.
+- [x] Recover paired `func_15101090` (46 words), including its unsigned +0x1A0 handle release before the five object callbacks; see Note1531. Wider Game, caller, fade, gate and handwritten/register-contract work remain open.
 
 ## Rectangle Private Clipping Homes Byte Match - 2026-10-18
 

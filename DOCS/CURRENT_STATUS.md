@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e371724; tools are committed before the consumer pin.
+  checkpoint pins tools 29952ff; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor **handle-first resource retirement restored and matched**:
+[Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md).
+`func_15101090` now stops the unsigned handle, retires five ordered resources,
+then retires its actor. All 46 words/frame0x20 match with three handle-register
+guards; raw C remains three differences. Seven installed tests pass, including
+5,120 guest cases, native O2/O0 UBSan, seven effective controls, 4,488 memory
+fault prefixes and 256 real dispatcher sequences. Actual ELF equals its first
+full-link prediction: 140 target-code bytes plus one extent byte; all other
+bodies/addresses/symbols and Game data are fixed. Tools 29952ff first.
+Game **2,969/4,828 (61.50%)**, total **3,642/5,501 (66.21%)**, 1,859 different,
+zero drift. Next ordinary C target `func_151102CC`, 37-word matrix construction.
 
 Actor **owned-resource cleanup restored and matched**:
 [Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md).

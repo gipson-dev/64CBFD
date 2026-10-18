@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
+Restore unsigned handle-first `func_15101090`, then five resource retirements
+and actor retirement. All 46/frame0x20 match with three guards; raw C stays
+three differences. Seven installed tests and the exact 141-byte full-link
+prediction pass; preserve all other bodies/addresses/symbols/data. Tools
+29952ff first. Game 2,969/4,828, total 3,642/5,501; next `func_151102CC`.
+
+2026-10-18:
 [Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
 Restore the five ordered releases and final actor destruction in
 `func_15101148`: all 40/frame0x20 match with three qualified guards. Seven

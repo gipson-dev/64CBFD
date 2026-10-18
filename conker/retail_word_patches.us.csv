@@ -17292,3 +17292,6 @@ generated_C1D70,func_15095D34,0x3F8,0x8FB90000,0x8FB90008,-,-,Normalize closed c
 generated_12DAB0,func_15101148,0x10,0x8DC40138,0x8DCF0138,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false
 generated_12DAB0,func_15101148,0x14,0x50800004,0x51E00004,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false
 generated_12DAB0,func_15101148,0x20,0x00000000,0x01E02025,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false
+generated_12DAB0,func_15101090,0x10,0x95C401A0,0x95CF01A0,-,-,Normalize unsigned handle register and call-delay argument copy,,,false
+generated_12DAB0,func_15101090,0x14,0x50800004,0x51E00004,-,-,Normalize unsigned handle register and call-delay argument copy,,,false
+generated_12DAB0,func_15101090,0x20,0x00000000,0x01E02025,-,-,Normalize unsigned handle register and call-delay argument copy,,,false

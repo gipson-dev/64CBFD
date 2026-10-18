@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Actor Handle Resource Retirement Byte Match
+
+[Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
+Restore `func_15101090` as typed void handle-first retirement C. Match all
+46/frame0x20 after three guarded scheduling words; raw C stays three differences.
+Seven installed tests pass, with unsigned handle boundaries, callback mutation,
+native O2/O0 UBSan, 4,488 fault prefixes and 256 real dispatcher sequences.
+Actual ELF equals its 141-byte first-link prediction; only the target body and
+extent change. Tools 29952ff first. Game **2,969/4,828**, total **3,642/5,501**,
+zero drift. README aggregate rows only; next ordinary C `func_151102CC`.
+
 ## 2026-10-18 Actor Owned Resource Cleanup Byte Match
 
 [Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):

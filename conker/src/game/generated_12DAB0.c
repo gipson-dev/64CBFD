@@ -13,14 +13,49 @@ typedef struct {
     struct102 *resource34;
 } ActorOwnedResources101148;
 
+extern void func_1513CA6C();
+
+typedef struct {
+    u8 pad0[0x110];
+    ActorOwnedResources101148 resources;
+    u8 pad148[0x58];
+    u16 handle1A0;
+} ActorResourceOwner101090;
+
 /* Non-matching placeholders for the text-only asm slice asm/12DAB0.s. */
 
 s32 func_15100600() {
     return 0;
 }
 
-s32 func_15101090() {
-    return 0;
+/* Stop the unsigned handle, retire each owned object, then retire the actor. */
+void func_15101090(ActorResourceOwner101090 *volatile actor) {
+    extern void func_100111C8(u16 handle);
+    extern void func_1516972C(struct102 *resource);
+    u16 handle;
+    ActorOwnedResources101148 *resources;
+
+    handle = actor->handle1A0;
+    if (handle != 0) {
+        func_100111C8(handle);
+    }
+    resources = &actor->resources;
+    if (resources->resource28 != NULL) {
+        func_1516972C(resources->resource28);
+    }
+    if (resources->resource2C != NULL) {
+        func_1516972C(resources->resource2C);
+    }
+    if (resources->resource24 != NULL) {
+        func_1516972C(resources->resource24);
+    }
+    if (resources->resource30 != NULL) {
+        func_1516972C(resources->resource30);
+    }
+    if (resources->resource34 != NULL) {
+        func_1516972C(resources->resource34);
+    }
+    func_1513CA6C((struct210 *)actor);
 }
 
 /* Release owned objects in retail order, then destroy their actor. */
