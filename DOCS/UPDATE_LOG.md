@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-18 Alternate Route Payload Recovery And Literal Array Homes
+
+[Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
+Recover both func_150896EC modes in complete typed experimental C without
+replacing its production stub. Initial/front points emit302 words/frame288
+with289 differences; retail is305/frame248. Nine tests pass with1069 public
+memory/call/ordered-access cases per point and216 actual installed helper words.
+The front point restores all96 array bytes and literal private call addresses,
+but full memory agreement remains0/1069. Five C negatives and private fault
+witnesses remain effective;30 source screens are not accepted for installation.
+Tools **681037a** first. No new production body/guards/profile/README or matching
+credit. Continue original frame/save-lifetime/extent recovery; native and full
+installation gates remain open. Last fresh totals remain Note1559's counts.
+
 ## 2026-10-18 Route Dispatcher Direct Byte Match
 
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):

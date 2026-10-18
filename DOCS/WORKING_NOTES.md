@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-18:
+[Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
+Recover full func_150896EC C in private fixtures: both modes,302/frame288/289
+differences versus305/frame248. Nine tests pass,1069 public memory/call/access
+cases per point,216 real helper words, five C controls and335 raw controls.
+Front-declaration ordering restores all six literal array homes/96 bytes, but
+complete memories still match0/1069; first private faults expose40-byte SP drift.
+Thirty screens remain rejected for installation. Tools681037a first; preserve
+1254 prior mirror dirty hashes. Production/README/totals unchanged. Next jointly
+recover the original frame, saves, S1 object and extent without frame guards.
+
+2026-10-18:
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
 Install typed void dispatcher15087CC0, all67 words/frame48 directly. No new
 guards or profile change; preserve72 primary neighbors, projection override

@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Alternate route payload semantics and literal array homes](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
+  complete302-word/frame288 experimental C, both modes; nine tests and1069
+  public/ordered-access cases per point with four real helpers. Front declarations
+  recover all96 array bytes/literal pointers, but full memories still differ.
+  Frame/save ordering remains open;30 screens rejected for installation.
+  Tools681037a first; no production, README or matching-count change.
 - [Route dispatcher direct byte match](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
   all67 linked words/frame48 directly, no guard or Make change. Eight installed
   tests cover1850 guest cases,396 fired fault prefixes,40 connected projection

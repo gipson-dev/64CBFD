@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Alternate Route Payload Semantic Recovery And Array Homes - 2026-10-18
+
+[Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
+
+- [x] Recover complete typed experimental func_150896EC for both stop/spline modes, correct byte/halfword widths, captured-object/fresh-enqueue distinction, single phase advance, double-scaled heading and six channel outputs. Verify both direct call sites/0-and1 delay arguments and ignored V0; preserve the production stub and all72 copied-owner neighbors/pools.
+- [x] Pass nine tests:1069 paired public-state/call/access cases for each complete C point, four actual installed byte-exact helpers/216 words, four extra stop queue aliases, five effective compiled C controls,335 raw word/binding controls and22 input fingerprints. Keep sin/cos as explicit deterministic providers, undefined leading history rejected, and native/FCSR/hardware scopes unqualified.
+- [x] Recover all six literal retail array homes by moving seven real float declarations, with all96 array bytes/private call pointers equal in1069 cases. Preserve both302/frame288/289-difference points; complete memories still match0/1069. Two fired private access boundaries expose the40-byte SP shift. Reject30 shape screens for installation, including248-byte-frame forms with only two of three saved FP pairs. Bank tools **681037a** first and preserve1254 prior mirror dirty hashes; no production/README/totals change.
+- [ ] Jointly recover305 words/frame248, all three original saved FP pairs, S1 captured-object lifetime, real save homes and the qualified array homes. Do not normalize the frame or install a same-frame/shorter point merely because it fits. Then qualify native32, independent rebases, full caller/private/fault and actual padding/prediction/install/linked audit/recount gates. Wider Game work remains open.
+
 ## Route Dispatcher Direct Byte Match - 2026-10-18
 
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
@@ -7,7 +16,8 @@
 - [x] Recover void func_15087CC0, signed actor slots/states/counts, live record-table/count reloads, request reset and all three call branches. The indexed actor-array expression emits all67 retail words/frame48 directly; no new guards, normalization or Makefile change.
 - [x] Pass eight installed tests:1850 guest cases (1844 independent public references and six private-stack aliases),396 fired root fault prefixes,40 actual projection/helper cases,96 cases across four independent symbol rebases and1824 native cases per O0/O2/O2+UBSan build. Seven native negatives fail semantically;84 word/binding controls,19 input guards and three mixed-stage controls remain strict. Other callee semantics and hardware traps stay outside acceptance.
 - [x] Reproduce the first214-byte whole-ELF prediction with all6057 addresses,6056 other bodies and189088 protected Game-data bytes/720 owners fixed. Preserve72 primary neighbors, the raw projection override and all16 caller-owner bodies after the void prototype edit. Bank tools **b0a32ea** first; preserve1251 prior mirror dirty hashes. Fresh Game2988/4828, total3661/5501,1840 different, zero drift. README aggregates only.
-- [ ] Recover func_150896EC (305 words/frame248), starting with its full retail body, direct caller interfaces and third argument. The dispatcher passes0/1 in its two alternate branches; its opaque provider tests do not restore or qualify this callee. Vector15088F30 and wider Game work remain open.
+- [x] Inspect func_150896EC's complete305-word retail body and both direct caller interfaces/0-and1 third arguments. Recover both modes in typed experimental C; see Note1560 for public semantic and literal array-home qualification. The production stub is not replaced.
+- [ ] Finish func_150896EC's joint305-word/frame248/save-lifetime match and installation gates above. Its experimental302/frame288 body is not a completed byte match. Vector15088F30 and wider Game work remain open.
 
 ## Route Projection Installed Byte Match - 2026-10-18
 
