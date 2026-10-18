@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route vector installed byte match](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
+  complete typed 83-word/frame-16 normalized C, with 13 installed tests,
+  actual caller/Make qualification and an exact 243-byte whole-ELF prediction.
+  All other code/data/addresses stay fixed. Tools a48f19d first. Fresh Game
+  2990/4828 and total 3663/5501; next the 160-word func_150870D0 setup stub.
 - [Route vector saved roles and isolated layout match](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
   original two-save invariant roles and 83-word/frame-16 C, with a closed
   all-word normalized match. Eight tests include native32, memory prefixes,

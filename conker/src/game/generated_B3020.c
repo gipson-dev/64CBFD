@@ -794,7 +794,7 @@ s32 func_15088A08(u8 *record, f32 delta) {
 
 /* Advance past type-four route links, then place and orient the actor. */
 void func_15088D58(u8 *actor) {
-    extern s32 func_15088F30();
+    extern void func_15088F30(u8 *, f32 *, f32 *, f32 *);
     extern f32 func_150498A4(f32 *, s32, f32, f32 *);
     extern f32 func_150497E0(f32 *, s32, f32);
     extern u16 func_1505A630(f32, f32, s32);
@@ -852,8 +852,63 @@ void func_15088D58(u8 *actor) {
     }
 }
 
-s32 func_15088F30() {
-    return 0;
+/* Build four control points, using the first type-four route neighbor. */
+void func_15088F30(u8 *record, f32 *xOutput, f32 *yOutput, f32 *zOutput) {
+    f32 *x;
+    f32 *y;
+    f32 *z;
+    u8 *cursor;
+    u8 *table;
+    u8 *route;
+    u8 *other;
+    s32 slot;
+    s32 id;
+    s32 candidate;
+    s32 i;
+    s32 currentX;
+    s32 nextX;
+    f32 speed;
+    f32 deltaX;
+    f32 deltaZ;
+
+    slot = 0;
+    cursor = record;
+    x = xOutput;
+    y = yOutput;
+    z = zOutput;
+    do {
+        id = cursor[0x2B];
+        cursor++;
+        if (id != 0xFF) {
+            table = D_800D2350;
+            route = table + id * 0x10;
+            other = route;
+            for (i = 0; i < 5; i++) {
+                candidate = route[i + 9];
+                if (candidate != 0xFF && table[candidate * 0x10 + 0xE] == 4) {
+                    other = (u8 *)((s16 *)table + candidate * 8);
+                    i = 5;
+                }
+            }
+            currentX = *(s16 *)(route + 0);
+            nextX = *(s16 *)(other + 0);
+            speed = *(f32 *)record;
+            deltaX = (f32)(nextX - currentX);
+            deltaZ = (f32)(*(s16 *)(other + 4) - *(s16 *)(route + 4));
+            speed = deltaX * speed;
+            *x = (f32)currentX + speed;
+            *y = (f32)*(s16 *)(route + 2);
+            *z = (f32)*(s16 *)(route + 4) + deltaZ * *(f32 *)record;
+        } else {
+            *x = (f32)(slot * 64);
+            *y = 0.0f;
+            *z = 0.0f;
+        }
+        slot++;
+        x++;
+        y++;
+        z++;
+    } while (slot != 4);
 }
 
 /* Prefer the first matching class; retain the last type match as fallback. */

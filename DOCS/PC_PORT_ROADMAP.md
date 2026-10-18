@@ -1,12 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Route Vector Installed Byte Match - 2026-10-18
+
+[Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
+
+- [x] Install complete typed func_15088F30 and its 83-row closed normalization, retaining all source origins, two saved invariant homes and the complete guard prefix. No Makefile change.
+- [x] Pass 13 installed tests, including all five direct retail interfaces, 144 complete production C caller cases and 576 bounded retail-only windows. Keep the unrecovered three-word func_15087350 caller and finite/provider proof limits explicit. Qualify the seven actual Make commands and retain all 72 neighbors.
+- [x] Reproduce the first 243-byte whole-ELF prediction with only target code/extent changed, all 6,057 addresses/other bodies and 189,088 protected Game-data bytes fixed. Bank tools a48f19d first; preserve 1,268 old mirror hashes. Fresh Game 2990/4828, total 3663/5501, 1,838 different/zero drift; README aggregates only.
+- [ ] Recover the adjacent 160-word route-record setup stub func_150870D0, retaining this installed vector/spline/dispatcher baseline. The larger caller and wider Game work stay open.
+
 ## Route Vector Saved Roles And Isolated Layout Match - 2026-10-18
 
 [Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
 
 - [x] Recover complete func_15088F30 C with 83 words/frame 16, original S0/S1 invariant roles and private homes. Qualify a closed normalized layout retaining all 83 source origins; raw C remains 56 differences.
 - [x] Pass eight tests covering 1,650 guest cases, 957 fired memory cuts, 65,680 native cases per O0/O2 build, 198 rebased cases and actual private mixed-profile padding. Preserve 72 neighbors in both profiles, every other padded byte and the production guard prefix. Bank tools 48c467e first and preserve 1,265 old mirror hashes.
-- [ ] Continue this same vector's full caller audit, connected callers, actual Make path, first whole-ELF prediction, production installation, linked audit and recount. Production/README/counts remain unchanged; do not infer matching credit from the isolated result.
+- [x] Complete the same vector's direct-site audit, full live C caller and bounded retail-only windows, actual Make path, first whole-ELF prediction, installation, linked audit and recount in Note 1565. The larger caller's full execution and strict FP/hardware/unknown-interface scopes remain explicit; matching credit now comes from the installed result.
 
 ## Route Spline Payload Native32 And Installed Byte Match - 2026-10-18
 

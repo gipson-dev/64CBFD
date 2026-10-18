@@ -131,7 +131,7 @@ retain the 38 source screens, raw/normalized receipts, native sources and
 binaries, original assembly object, private guards/objects and rebase links.
 
 Continue **this same function**, not another source batch. Audit all incoming
-interfaces: B3020 retail assembly already shows four calls in the retained
+interfaces: B3020 retail assembly already shows four calls in the unrecovered
 func_15087350 and one in the live C func_15088D58. The typed local declaration
 preserves every parent byte in the fresh owner comparison, but the complete
 caller audit and connected-caller qualification are still separate gates.

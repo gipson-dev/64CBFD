@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-18 Route Vector Installed Byte Match
+
+[Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
+Replace func_15088F30's placeholder with complete typed C and its closed
+83-word/frame-16 normalized match. All source origins remain; no Make change.
+Thirteen installed tests pass, including 144 complete C caller cases, 576
+bounded retail-only windows, native32, rebases and actual mixed-profile Make.
+The first 243-byte whole-ELF prediction reproduces, with only target code and
+extent changed and all other code/data/addresses fixed. Tools a48f19d first;
+preserve 1,268 old mirror hashes. Fresh Game 2990/4828 (61.93%), total
+3663/5501 (66.59%), 1,838 different/zero drift. README aggregates only. Correct
+the other caller's boundary: func_15087350 is still a stub, not retained ASM.
+Next func_150870D0, the adjacent 160-word route-record setup stub.
+
 ## 2026-10-18 Route Vector Saved Roles And Isolated Layout Match
 
 [Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):

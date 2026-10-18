@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
+Install complete typed func_15088F30, 83 words/frame 16, normalized with all
+source origins and saved homes retained. Thirteen installed tests include
+144 complete live C caller cases, 576 bounded retail-only windows, native32,
+rebases and actual Make/padding. Reproduce the 243-byte ELF prediction with
+only target code/extent changed; all other code/data/addresses fixed. Tools
+a48f19d first; preserve 1,268 mirror hashes. Fresh Game 2990/4828, total
+3663/5501, zero drift. Next adjacent 160-word setup stub func_150870D0.
+
+2026-10-18:
 [Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
 Recover func_15088F30's original two saved invariant roles and 83-word/frame-16
 shape. Raw C has 56 differences; a closed layout retaining every source origin
