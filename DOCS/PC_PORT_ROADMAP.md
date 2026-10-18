@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Vector Model And Stack Rejection - 2026-10-18
+
+[Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
+
+- [x] Recover and qualify the four-pointer vector semantics, first-type4 choice, signed differences, FF fallback, fresh table/speed loads and ordered output aliases. Seven tests pass:9,205 guest cases,74,696 native cases per O2/O0 UBSan profile, thirteen guest/ten native controls, nine links/198 rebased cases,144 complete-parent cases and869 public fault prefixes.
+- [x] Reject the83-word/frame16 model:76 word differences, S2/S1/S0 saves versus retail S1/S0, and a demonstrably different first private-store fault. Typed prototype preserves all118 parent words/14 bindings and72 raw owner neighbors. Bank tools **81049a4** first without production/README changes or matching credit; preserve all1,216 prior older-mirror dirty hashes.
+- [ ] Fit the actual saved-invariant/output-cursor roles and full private/control-flow contract, then qualify any closed normalization before prediction, installation and linked audit. Semantic agreement and word count alone do not permit installation.
+- [ ] Recover downstream spline stubs `func_150497E0` and `func_150498A4` after the vector match. Game2,982/4,828 and total3,655/5,501 remain unchanged; wider queues stay open.
+
 ## Actor Route Placement Byte Match - 2026-10-18
 
 [Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):

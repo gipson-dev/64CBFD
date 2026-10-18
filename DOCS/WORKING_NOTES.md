@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
+Qualify non-installable `func_15088F30` model:83 words/frame16,76 differences,
+wrong three-save layout. Seven tests pass with9,205 guest and74,696 native
+cases/profile, explicit private-stack rejection and unchanged live C caller.
+Tools81049a4 first; no production/README edit or matching credit. Resume
+retail invariant/output-register fitting; totals and wider goal unchanged.
+
+2026-10-18:
 [Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
 Recover `func_15088D58`: 118 words/frame0xA8, three equality/temporary guards,
 last-type4-class stepping and actor position/angle outputs. Seven installed

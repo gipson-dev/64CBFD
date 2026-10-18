@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0d4af42; tools are committed before the consumer pin.
+  checkpoint pins tools 81049a4; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route vector model qualified; installation rejected**:
+[Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md).
+`func_15088F30` has a semantic83-word/frame16 experimental C model, but76
+word differences and three saves instead of retail's S0/S1 pair. Seven tests
+pass, including9,205 paired guest cases,74,696 native cases per O2/O0 UBSan
+profile, alias/fault/rebase controls and the complete118-word caller. The
+first private save demonstrably differs; no production source/guard/ELF or
+README change and zero matching credit. Tools **81049a4** first. Totals below
+are unchanged. Next: fit the retail invariant/output-register lifetimes using
+the pinned tests, then qualify before installation; spline stubs remain open.
 
 **Actor route placement restored and byte-matched**:
 [Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md).

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route vector semantic model and stack rejection](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
+  seven qualification tests pass, but the83-word model still has wrong private
+  saves and76 differences. No production edit or matching credit; resume the
+  saved-invariant/output-register fit. Tools81049a4 first.
 - [Actor route placement byte match](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
   complete118-word C routine matches with three equality/temporary guards.
   Seven installed tests, 555 connected retail-helper words, all target

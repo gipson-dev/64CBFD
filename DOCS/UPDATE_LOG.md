@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Vector Model And Stack Rejection
+
+[Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
+Bank a qualified semantic model and rejection tests for `func_15088F30`.
+All seven tests pass, but83 words/frame16 still has76 differences and the
+wrong private saves. No production source/guard/ELF or root README change;
+zero matching credit. Tools **81049a4** first. Totals remain Game2,982/4,828,
+total3,655/5,501, zero drift. Resume the retail saved-invariant/output-cursor
+fit with the pinned tests; the wider matching goal stays active.
+
 ## 2026-10-18 Actor Route Placement Byte Match
 
 [Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
