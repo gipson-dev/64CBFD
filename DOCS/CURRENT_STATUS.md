@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5910e6c; tools are committed before the consumer pin.
+  checkpoint pins tools 12befaa; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **coefficient read/store schedule recovered**:
+[Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md).
+Complete `func_150F34F4` improves 139 to 134 raw differences, 108 to 103 after
+the unchanged 31 private rows. Five C words change and become exact; no old
+exact losses. Still 959/frame0x80 and 478 exact opening words. Sixteen tests
+pass, including 640 coefficient cases / 320 old-C rejections and 52 layout
+controls. Tools 12befaa first; 315 inputs, production, totals and main README
+unchanged. One read-only advisory reconciled; no new guards/installation/credit.
+Next qualify the 149-word register window with fifteen differing words;
+static correspondence alone is not a certificate. Wider matching stays open.
 
 Movement **scalar lifetimes and counter scope recovered**:
 [Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md).

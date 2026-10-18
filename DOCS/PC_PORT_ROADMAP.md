@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Coefficient Read Store Schedule - 2026-10-17
+
+[Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
+
+- [x] Screen 32 complete forms; place B8 calculation before the zero stores and recover all five coefficient schedule words directly from C. Raw differences improve 139 to 134 with zero old exact losses, still 959 words/frame0x80 and eleven neighbors.
+- [x] Keep the 31-row research table byte-identical: 103 normalized differences and 478 exact opening words. No new guards, installation or matching credit.
+- [x] Pass sixteen tests: 640 coefficient cases / 320 old-C rejections, full public/FP/provider corpus, 397 native cases/profile, prior counter/alias/private gates and fresh 74-event/687-record trace with 52 layout/site controls.
+- [x] Bank tools 12befaa first; preserve 315 inputs, 1,172 prior mirror hashes / 1,174 paths, installed bytes, totals and main README. One packet-only advisory independently reconciled; no push or Release action.
+- [ ] Qualify the same function's fifteen GPR-field changes at words478..626 through `func_15059140`, with entry/identity/CFG/live-out proofs, effective controls, actual padding and extended prefixes. The static candidate map is not yet a certificate.
+- [ ] Keep 101 GPR-field-only / two other words, remaining full-function gates, both fade lifetime gaps, provider/runtime acceptance and wider Game objective open.
+
 ## Movement Scalar Lifetimes And Counter Scope - 2026-10-17
 
 [Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):

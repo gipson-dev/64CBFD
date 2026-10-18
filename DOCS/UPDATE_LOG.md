@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Coefficient Read Store Schedule
+
+[Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
+Recover the five pitch coefficient schedule words directly from complete C:
+134 raw differences, 103 with unchanged 31 private rows, 959/frame0x80 and
+478 exact opening words. Sixteen tests pass, including 640 coefficient cases
+and 320 old-C rejections. Tools 12befaa first; 315 inputs, production, totals
+and README unchanged. One advisory reconciled; no new guards/installation/
+credit. Next bounded register-role window remains unqualified.
+
 ## 2026-10-17 Movement Scalar Lifetimes And Counter Scope
 
 [Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):

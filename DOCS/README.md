@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement coefficient read/store schedule](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
+  complete C improves 139 to 134 differences, 103 with unchanged 31 private
+  rows. Sixteen tests pass, including 640 coefficient cases / 320 old-C
+  rejections. No new guards, installation or credit; next role window open.
 - [Movement scalar lifetimes and counter scope](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
   complete C improves 152 to 139 differences, 108 with unchanged 31 private
   rows. Fifteen tests pass, including exact 24-record scans, twelve AST

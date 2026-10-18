@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
+Recover all five coefficient read/store words in complete C: 134 raw
+differences, 103 with unchanged 31 private rows, 959/frame0x80 and 478 exact
+opening words. Sixteen tests pass, including 640 coefficient cases / 320
+old-C rejections and 52 layout controls. Tools 12befaa first; 315 inputs,
+production, totals and README unchanged. One read-only advisory reconciled;
+no new guards/installation/credit. The next GPR window is static
+reconnaissance only until its controls, kernel and prefix gates are qualified.
+
+2026-10-17:
 [Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
 Recover zero comparison, counter scope and speed sampling in complete C:
 139 raw differences, 108 with unchanged 31 private rows, 959/frame0x80 and
