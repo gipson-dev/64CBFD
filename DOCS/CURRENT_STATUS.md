@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0f19fe7; tools are committed before the consumer pin.
+  checkpoint pins tools 3cc55c3; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Gated category pass restored and directly matched**:
+[Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md).
+`func_15022848` now emits all 39 words/frame0x28 directly from typed void C,
+preserving its exact-one gate, context flag and live count after each callback
+pair. The slice's existing no-unroll profile is retained; no guards or build
+changes. Seven installed tests pass: 4,902 paired guest cases, 14,336 native
+cases per O2/O0 UBSan profile, seven effective controls, 126 rebased sequences,
+126 bounded caller windows and 760 fault prefixes. All 56 raw neighbors,
+including the caller, stay fixed after correcting the local declaration.
+Actual ELF equals its first prediction: 130 target-code bytes plus one extent
+byte. Tools 3cc55c3 first. Game **2,974/4,828 (61.60%)**, total
+**3,647/5,501 (66.30%)**, 1,854 different, zero drift. Both callback bodies
+remain stubs. Next `func_15022B08`, a 39-word frameless enabled-record tag query.
 
 **Actor snapshot packet restored and directly matched**:
 [Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md).

@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Gated Category Pass Direct Byte Match - 2026-10-18
+
+[Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
+
+- [x] Recover typed/commented void `func_15022848`, preserving its exact-one gate, context clear/set, ordered callbacks and live count after each pair. All 39 words/frame0x28 emit directly with the existing no-unroll slice profile; no guards or build changes.
+- [x] Pass seven installed tests: 4,902 paired guest cases, 126 extra word-address/alias probes, 14,336 native cases per O2/O0 UBSan profile, seven effective memory controls, 126 rebased sequences, 126 bounded actual caller windows and 760 target-access fault prefixes. Keep native alias and scripted-helper boundaries explicit.
+- [x] Correct the local caller declaration and preserve all 56 raw owner neighbors, including the caller. Reproduce the first whole-ELF prediction: 131 bytes, comprising 130 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, symbols, actual owner/bindings, unchanged guards/build and Game data. Bank tools 3cc55c3 first.
+- [x] Measure Game 2,974/4,828, total 3,647/5,501 and zero drift; change only README aggregate rows. Preserve all 1,198 older mirror hashes, adding two absent task files, without host/frozen Release action. Both callback bodies remain stubs, not claimed restored.
+- [ ] Recover `func_15022B08` (39 words/no frame): qualify snapshot count, enabled-halfword scan, descriptor-byte/current-record tag comparison and boolean return. Audit its observed caller and retain the complete slot, including the apparently unreachable increment, before assigning source structure. Keep wider Game matching and separate gaps open.
+
 ## Actor Snapshot Packet Direct Byte Match - 2026-10-18
 
 [Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 6,000 paired guest cases, 70 extra stack-alias/bit-copy probes, 2,592 native cases per O2/O0 UBSan profile, six effective guest controls, 54 rebased sequences, 48 actual caller/helper chains and 1,920 target/copy fault prefixes. Keep native padding and opaque inner-helper limits explicit.
 - [x] Correct the direct caller's prototype/cast while preserving its complete 328-function object. Reproduce the first whole-ELF prediction: 119 bytes, comprising 118 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, 40 owner neighbors, symbols, actual objects/bindings, unchanged guards and Game data. Bank tools 0f19fe7 first.
 - [x] Measure Game 2,973/4,828, total 3,646/5,501 and zero drift; change only README aggregate rows. Preserve all 1,196 older mirror hashes, adding two absent task files, without host/frozen Release action.
-- [ ] Recover `func_15022848` (39 words/frame0x28): qualify the exact-one category gate, context-byte clear/set, live byte count and ordered `func_15022398`/`func_150222E0` calls. Audit callers/helper contracts before assigning a C return type. Keep wider Game matching and separate gaps open.
+- [x] Recover `func_15022848` (39 words/frame0x28), qualifying the exact-one gate, context byte, live count, callback order and caller ABI; see Note1536. Wider Game matching, the two callback stubs and separate gaps remain open.
 
 ## Fractional Point Outputs Direct Byte Match - 2026-10-18
 

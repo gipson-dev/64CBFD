@@ -97,7 +97,7 @@ void func_15022248(s32);
 s32 func_1501E81C();
 s32 func_150242F8();
 s32 func_1501EC38();
-s32 func_15022848();
+void func_15022848(s32 index);
 void func_15022754(s32);
 s32 func_15022528();
 s32 func_15020EC4();
@@ -788,8 +788,20 @@ void func_150227BC(s32 group) {
     }
 }
 
-s32 func_15022848() {
-    return 0;
+/* Run both callbacks per active entry, reloading the count after each pair. */
+void func_15022848(s32 index) {
+    s32 i;
+    u8 *count;
+
+    if (D_800C35EA[index] == 1) {
+        D_800C3638 = 0;
+        count = &D_800C363A[index];
+        for (i = 0; i < *count; i++) {
+            func_15022398(i, index);
+            func_150222E0(i, index);
+        }
+        D_800C3638 = 1;
+    }
 }
 
 s32 func_150228E4() {

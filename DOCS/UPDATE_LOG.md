@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Gated Category Pass Direct Byte Match
+
+[Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
+Recover `func_15022848` as typed void category-pass C. All 39 words/frame0x28
+match directly with the existing no-unroll slice profile. Preserve the exact-one
+gate, flag clear/set, callback order and count reload after each pair. Seven
+installed tests and the exact 131-byte whole-ELF prediction pass; all other
+bodies/addresses/symbols, guards and data remain fixed. Correct the local
+declaration without changing the caller. Tools 3cc55c3 first. Game
+**2,974/4,828**, total **3,647/5,501**, zero drift. README aggregate rows only;
+next enabled-record tag query `func_15022B08`. Callback bodies remain open stubs.
+
 ## 2026-10-18 Actor Snapshot Packet Direct Byte Match
 
 [Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Gated category pass direct byte match](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
+  typed void C restores all 39 words and live callback-pair counts without
+  guards or build changes. Seven tests and the 131-byte full-link prediction
+  pass; all 56 neighbors stay fixed. Game 2,974/4,828; next `func_15022B08`.
 - [Actor snapshot packet direct byte match](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
   typed void C restores all 38 words and inherited packet bytes without
   guards. Seven tests and the 119-byte full-link prediction pass; the typed

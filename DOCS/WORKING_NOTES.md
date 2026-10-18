@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
+Recover `func_15022848` with the exact-one gate, context flag and live count
+after each ordered callback pair: all 39 words/frame0x28 match directly with
+the existing no-unroll profile. Seven installed tests and the exact 131-byte
+prediction pass. All 56 neighbors, other bodies/addresses/symbols, guards and
+data stay fixed. Tools 3cc55c3 first. Game 2,974/4,828, total 3,647/5,501;
+next frameless tag query `func_15022B08`. The two callback stubs remain open.
+
+2026-10-18:
 [Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
 Recover `func_151AB930` with field snapshots, allocation failure and six
 inherited packet bytes: all 38 words/frame0x48 emit directly with no guards.
