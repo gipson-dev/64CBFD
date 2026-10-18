@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Fractional point outputs direct byte match](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
+  typed four-pointer C restores both fractional outputs; all 38 words/no
+  frame match with normal pool anchoring and zero guards. Seven tests and
+  the 123-byte full-link prediction pass. Game 2,972/4,828; next `func_151AB930`.
 - [Record flag refresh direct byte match](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
   typed void refresh replaces the false stub; all 38 words/no frame emit
   directly. Live count/base aliases, exhaustive native flags and the exact

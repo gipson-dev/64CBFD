@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Fractional Point Outputs Direct Byte Match - 2026-10-18
+
+[Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
+
+- [x] Recover typed/commented four-pointer void `func_15107AE0`, preserving original deltas and sequential source reloads under overlap. Exact 0.333f/0.6667f literals reproduce all 38 words/no frame after standard per-owner rodata binding; no instruction guards or profile override.
+- [x] Pass seven installed tests: 10,240 finite guest overlap cases, 2,560 native32 cases per O2/O0 UBSan profile, five effective native/guest memory controls, a wrong-anchor control, 171 rebased sequences, 95 paired nonfinite cases, 24 bounded retail caller windows and 2,888 target-memory fault prefixes.
+- [x] Reproduce the complete first-link prediction: 123 ELF bytes, comprising 122 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, 36 raw neighbors, canonical symbols, actual owner/bindings, unchanged guards, original literals and Game data. Bank tools 4d3a3d8 first.
+- [x] Measure Game 2,972/4,828, total 3,645/5,501 and zero drift; change only README aggregate rows. Preserve all 1,194 older mirror hashes, adding only two absent task files, with no host/frozen Release action.
+- [ ] Recover `func_151AB930` (38 words/frame0x48), first qualifying its helper/caller ABI, field snapshots, allocation-failure branch and six inherited stack-padding bytes in the 0x1C-byte copied packet. Keep wider Game, caller and inherited-stack work open.
+
 ## Record Flag Refresh Direct Byte Match - 2026-10-18
 
 [Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven final tests: 14,336 guest flag cases, 131,077 native32 cases per O2/O0 UBSan profile, six effective native/guest memory controls, fifteen independently rebased sequences, eight actual caller sequences and 462 target-memory fault prefixes.
 - [x] Reproduce the complete first-link prediction: 112 ELF bytes, comprising 111 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owners/relocations, unchanged guards and Game data. Bank tools d13c136 first.
 - [x] Measure Game 2,971/4,828, total 3,644/5,501 and zero drift; update only README aggregate rows. Preserve all 1,192 older mirror hashes, adding only two absent task files, with no host/frozen Release action.
-- [ ] Recover ordinary `func_15107AE0` (38 words/no frame), qualifying its four-pointer ABI, original deltas, alias-sensitive source reloads and exact 0.333f/0.6667f constants. Keep wider Game, fade, gate, caller and handwritten/register-contract work open.
+- [x] Recover ordinary `func_15107AE0` (38 words/no frame), qualifying its four-pointer ABI, original deltas, alias-sensitive reloads and exact 0.333f/0.6667f literals; see Note1534. Wider Game, fade, gate, caller and handwritten/register-contract work remain open.
 
 ## YXZ Matrix Constructor Direct Byte Match - 2026-10-18
 

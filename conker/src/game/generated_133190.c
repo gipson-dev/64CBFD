@@ -157,8 +157,20 @@ s32 func_15107A20() {
     return 0;
 }
 
-s32 func_15107AE0() {
-    return 0;
+/* Write two fractional points, retaining the original deltas across stores. */
+void func_15107AE0(const f32 start[3], const f32 end[3], f32 first[3], f32 second[3]) {
+    f32 firstFraction = 0.333f;
+    f32 secondFraction = 0.6667f;
+    f32 dx = end[0] - start[0];
+    f32 dy = end[1] - start[1];
+    f32 dz = end[2] - start[2];
+
+    first[0] = start[0] + dx * firstFraction;
+    first[1] = start[1] + dy * firstFraction;
+    first[2] = start[2] + dz * firstFraction;
+    second[0] = start[0] + dx * secondFraction;
+    second[1] = start[1] + dy * secondFraction;
+    second[2] = start[2] + dz * secondFraction;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_15107B78.s")

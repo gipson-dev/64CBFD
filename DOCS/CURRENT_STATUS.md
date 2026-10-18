@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d13c136; tools are committed before the consumer pin.
+  checkpoint pins tools 4d3a3d8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Fractional point outputs restored and directly matched**:
+[Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md).
+`func_15107AE0` now has a typed four-pointer void interface and retains original
+deltas across sequential output stores. Exact 0.333f/0.6667f literals reproduce
+all 38 words/no frame after the existing per-owner rodata binding, with zero
+instruction guards or profile override. Seven installed tests pass: 10,240
+finite overlap cases, native O2/O0 UBSan, effective controls, pool rebases,
+24 bounded retail caller windows and 2,888 fault prefixes. Actual ELF equals
+its first full-link prediction: 122 target-code bytes plus one extent byte.
+Other bodies/addresses/symbols, guards and original data are fixed. Tools
+4d3a3d8 first. Game **2,972/4,828 (61.56%)**, total **3,645/5,501 (66.26%)**,
+1,856 different, zero drift. Next `func_151AB930`, 38-word stack-packet creator;
+qualify helper contracts and inherited padding before copying its 0x1C bytes.
 
 **Record flag refresh restored and directly matched**:
 [Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md).

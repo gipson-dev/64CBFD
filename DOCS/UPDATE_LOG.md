@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Fractional Point Outputs Direct Byte Match
+
+[Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
+Recover `func_15107AE0` as four-pointer fractional point output C. All
+38 words/no frame match after ordinary literal-pool anchoring; no instruction
+guards or profile override. Preserve original deltas, sequential input reloads
+and exact 0.333f/0.6667f bits. Seven installed tests and the exact 123-byte
+full-link prediction pass; unrelated code/metadata/data remain fixed. Tools
+4d3a3d8 first. Game **2,972/4,828**, total **3,645/5,501**, zero drift.
+README aggregate rows only; next stack-packet creator `func_151AB930`.
+
 ## 2026-10-18 Record Flag Refresh Direct Byte Match
 
 [Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):

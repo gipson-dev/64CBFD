@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
+Recover `func_15107AE0` with original deltas and alias-sensitive fractional
+outputs: all 38 words/no frame match with normal literal-pool anchoring and
+zero instruction guards. Seven installed tests and the exact 123-byte full
+prediction pass. Other bodies/addresses/symbols, guards and data stay fixed.
+Tools 4d3a3d8 first. Game 2,972/4,828, total 3,645/5,501; next `func_151AB930`.
+
+2026-10-18:
 [Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
 Recover the live-global record flag loop `func_15113180`: all 38 words/no
 frame emit directly from void C, zero guards. Caller declaration is corrected
