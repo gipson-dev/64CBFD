@@ -161,8 +161,32 @@ s32 func_151AB854() {
 void func_151AB920(s32 arg0, s32 arg1) {
 }
 
-s32 func_151AB930() {
-    return 0;
+/* Snapshot actor fields, then copy the packet if allocation succeeds. */
+void func_151AB930(u8 *actor) {
+    extern f32 D_800A9014;
+    extern u8 func_151D8E20(void);
+    extern void *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+    extern void *memcpy(void *, const void *, u32);
+    u8 *created;
+    struct {
+        u8 *actor;
+        u8 slot;
+        u32 value;
+        f32 time, scale, lifetime;
+        u8 selector;
+    } packet;
+
+    packet.actor = actor;
+    packet.slot = actor[0x3B];
+    packet.value = *(u16 *)(actor + 0x84);
+    packet.time = 0.0f;
+    packet.scale = D_800A9014;
+    packet.lifetime = 3.0f;
+    packet.selector = func_151D8E20();
+    created = func_151491F4(0x3C, -1, 0xE, 1, 9, 0x1C, 0xFF, 0);
+    if (created != NULL) {
+        memcpy(created + 0x28, &packet, 0x1C);
+    }
 }
 
 s32 func_151AB9C8() {

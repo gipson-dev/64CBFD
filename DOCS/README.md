@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor snapshot packet direct byte match](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
+  typed void C restores all 38 words and inherited packet bytes without
+  guards. Seven tests and the 119-byte full-link prediction pass; the typed
+  caller object is unchanged. Game 2,973/4,828; next `func_15022848`.
 - [Fractional point outputs direct byte match](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
   typed four-pointer C restores both fractional outputs; all 38 words/no
   frame match with normal pool anchoring and zero guards. Seven tests and

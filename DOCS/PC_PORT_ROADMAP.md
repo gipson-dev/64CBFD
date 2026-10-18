@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Snapshot Packet Direct Byte Match - 2026-10-18
+
+[Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
+
+- [x] Recover typed/commented void `func_151AB930`, preserving field snapshots and all 0x1C copied bytes. The destination-first local declaration restores all 38 words/frame0x48 directly, without guards, profile or Makefile changes.
+- [x] Pass seven installed tests: 6,000 paired guest cases, 70 extra stack-alias/bit-copy probes, 2,592 native cases per O2/O0 UBSan profile, six effective guest controls, 54 rebased sequences, 48 actual caller/helper chains and 1,920 target/copy fault prefixes. Keep native padding and opaque inner-helper limits explicit.
+- [x] Correct the direct caller's prototype/cast while preserving its complete 328-function object. Reproduce the first whole-ELF prediction: 119 bytes, comprising 118 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, 40 owner neighbors, symbols, actual objects/bindings, unchanged guards and Game data. Bank tools 0f19fe7 first.
+- [x] Measure Game 2,973/4,828, total 3,646/5,501 and zero drift; change only README aggregate rows. Preserve all 1,196 older mirror hashes, adding two absent task files, without host/frozen Release action.
+- [ ] Recover `func_15022848` (39 words/frame0x28): qualify the exact-one category gate, context-byte clear/set, live byte count and ordered `func_15022398`/`func_150222E0` calls. Audit callers/helper contracts before assigning a C return type. Keep wider Game matching and separate gaps open.
+
 ## Fractional Point Outputs Direct Byte Match - 2026-10-18
 
 [Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 10,240 finite guest overlap cases, 2,560 native32 cases per O2/O0 UBSan profile, five effective native/guest memory controls, a wrong-anchor control, 171 rebased sequences, 95 paired nonfinite cases, 24 bounded retail caller windows and 2,888 target-memory fault prefixes.
 - [x] Reproduce the complete first-link prediction: 123 ELF bytes, comprising 122 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, 36 raw neighbors, canonical symbols, actual owner/bindings, unchanged guards, original literals and Game data. Bank tools 4d3a3d8 first.
 - [x] Measure Game 2,972/4,828, total 3,645/5,501 and zero drift; change only README aggregate rows. Preserve all 1,194 older mirror hashes, adding only two absent task files, with no host/frozen Release action.
-- [ ] Recover `func_151AB930` (38 words/frame0x48), first qualifying its helper/caller ABI, field snapshots, allocation-failure branch and six inherited stack-padding bytes in the 0x1C-byte copied packet. Keep wider Game, caller and inherited-stack work open.
+- [x] Recover `func_151AB930` (38 words/frame0x48), qualifying helper/caller ABI, field snapshots, allocation failure and all six inherited packet bytes; see Note1535. Wider Game, caller and inherited-stack work remain open.
 
 ## Record Flag Refresh Direct Byte Match - 2026-10-18
 

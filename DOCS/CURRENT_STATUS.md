@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4d3a3d8; tools are committed before the consumer pin.
+  checkpoint pins tools 0f19fe7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor snapshot packet restored and directly matched**:
+[Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md).
+`func_151AB930` now emits all 38 words/frame0x48 directly from typed void C,
+including the full 0x1C-byte copy and six inherited padding bytes. No guards,
+profile or Makefile changes. Seven installed tests pass: 6,000 paired guest
+cases, native O2/O0 UBSan, effective controls, 54 rebased sequences, 48 actual
+caller/helper chains and 1,920 fault prefixes. Correct the direct caller's
+prototype/cast without changing its complete 328-function object. Actual ELF
+equals the first prediction: 118 target-code bytes plus one extent byte.
+Other bodies/addresses/symbols, guards and data stay fixed. Tools 0f19fe7 first.
+Game **2,973/4,828 (61.58%)**, total **3,646/5,501 (66.28%)**, 1,855 different,
+zero drift. Next `func_15022848`, 39-word gated category pass with a live byte
+count and two ordered helper calls per entry; audit its caller ABI first.
 
 **Fractional point outputs restored and directly matched**:
 [Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md).

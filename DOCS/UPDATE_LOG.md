@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Actor Snapshot Packet Direct Byte Match
+
+[Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
+Recover `func_151AB930` as typed void actor-packet C. All 38 words/frame0x48
+match directly, preserving field snapshots and six inherited bytes in the
+0x1C-byte copy. No guards/profile/build changes. Seven installed tests pass,
+including actual caller/helper/copy execution and 1,920 fault prefixes. The
+typed caller's complete object stays identical; the actual ELF reproduces its
+119-byte first prediction. Tools 0f19fe7 first. Game **2,973/4,828**, total
+**3,646/5,501**, zero drift. README aggregate rows only; next `func_15022848`.
+
 ## 2026-10-18 Fractional Point Outputs Direct Byte Match
 
 [Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):

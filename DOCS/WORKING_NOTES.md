@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1535](WORKING_NOTES/1535-actor-snapshot-packet-direct-byte-match-20261018.md):
+Recover `func_151AB930` with field snapshots, allocation failure and six
+inherited packet bytes: all 38 words/frame0x48 emit directly with no guards.
+Seven installed tests and the exact 119-byte first prediction pass. Correct
+the direct caller declaration without changing its whole object. Other
+code/addresses/symbols, guards and data stay fixed. Tools 0f19fe7 first.
+Game 2,973/4,828, total 3,646/5,501; next gated category pass `func_15022848`.
+
+2026-10-18:
 [Note1534](WORKING_NOTES/1534-fractional-point-outputs-direct-byte-match-20261018.md):
 Recover `func_15107AE0` with original deltas and alias-sensitive fractional
 outputs: all 38 words/no frame match with normal literal-pool anchoring and

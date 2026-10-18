@@ -48,6 +48,7 @@ extern f32 D_8009A110;
 extern s32 D_80099BB8;
 extern f32 D_80099BBC;
 
+void func_151AB930(u8 *actor);
 void func_15131D4C(s32 *arg0, s32 arg1);
 void func_15103E40(struct127 *arg0, struct127 *arg1, struct17 *arg2, u8 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_15143134(f32 *arg0, struct17 *arg1, s32 arg2);
@@ -1141,7 +1142,7 @@ void func_1506FF24(s32 arg0) {
 }
 
 void func_1506FF50(s32 arg0) {
-    func_151AB930(D_800D154C);
+    func_151AB930((u8 *)D_800D154C);
 }
 
 void func_1506FF78(s32 arg0) {
