@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a48f19d; tools are committed before the consumer pin.
+  checkpoint pins tools 483ddb2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route record setup recovered, matching still open**:
+[Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md).
+The experimental three-argument func_150870D0 C emits 160 words/frame 0x60,
+43 raw differences, with all 72 owner neighbors fixed. Six tests pass:
+1,259 guest cases, two 1,286-case native32 profiles, real linked helpers and
+41 retail caller windows. A fired private-order gate still rejects matching:
+325/465 paired memory cuts differ, starting at the first seed's early store.
+Tools **483ddb2** first. No production/README/count changes or matching credit.
+Continue this same function's S7 capture and delayed stores, then the full
+layout/padder/Make/rebase/prediction/install/audit gates. Note 1565's installed
+Game 2990/4828 and total 3663/5501 figures remain unchanged, not freshly recounted.
 
 **Route vector installed byte-exact**:
 [Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md).

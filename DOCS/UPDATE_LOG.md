@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Record Setup Recovery And Private Order Boundary
+
+[Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
+Recover complete three-argument func_150870D0 C in an isolated experiment,
+160 words/frame 0x60/43 differences. Six tests pass, including 1,259 guest
+cases, 1,286 cases per native32 profile, real helpers and 41 caller windows.
+The private-prefix gate still rejects 325/465 cuts; restore the original S7
+capture and delayed seed stores next. Tools 483ddb2 first; preserve 1,270
+old mirror hashes. Production, README and installed counts are unchanged;
+zero matching credit. Continue this function before installation.
+
 ## 2026-10-18 Route Vector Installed Byte Match
 
 [Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):

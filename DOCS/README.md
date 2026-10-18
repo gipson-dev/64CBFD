@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route record setup recovery and private order boundary](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
+  experimental three-argument func_150870D0, 160 words/frame 0x60/43 differences,
+  six tests with guest/native32 and real helper/caller coverage. Private-order
+  rejection remains explicit; no production installation or matching credit.
+  Tools 483ddb2 first. Continue this same function's S7 capture and seed stores.
 - [Route vector installed byte match](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
   complete typed 83-word/frame-16 normalized C, with 13 installed tests,
   actual caller/Make qualification and an exact 243-byte whole-ELF prediction.

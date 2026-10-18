@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Record Setup Recovery And Private Order Boundary - 2026-10-18
+
+[Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
+
+- [x] Recover complete experimental func_150870D0 C with the proper three-argument interface, 160-word/frame-0x60 shape, original S0/S1 walk roles and 43 raw differences. Preserve all 72 neighbors and frozen production inputs.
+- [x] Pass six focused tests: 1,259 guest cases, two 1,286-case native32 profiles/five effective controls, real helpers, 41 retail-only caller windows and fail-closed input/binding checks. Bank tools 483ddb2 first and preserve 1,270 mirror hashes.
+- [ ] Restore the S7 first-result lifetime and delayed seed stores. The fired private-order gate still rejects 325/465 cuts, first at cut 43. No installation or matching credit yet; production/README/installed counts remain fixed.
+- [ ] Complete source-derived all-word/binding matching, private/alias qualification, actual padding/Make, independent rebases, first whole-ELF prediction, installation, linked audit and fresh recount for this same function.
+
 ## Route Vector Installed Byte Match - 2026-10-18
 
 [Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Install complete typed func_15088F30 and its 83-row closed normalization, retaining all source origins, two saved invariant homes and the complete guard prefix. No Makefile change.
 - [x] Pass 13 installed tests, including all five direct retail interfaces, 144 complete production C caller cases and 576 bounded retail-only windows. Keep the unrecovered three-word func_15087350 caller and finite/provider proof limits explicit. Qualify the seven actual Make commands and retain all 72 neighbors.
 - [x] Reproduce the first 243-byte whole-ELF prediction with only target code/extent changed, all 6,057 addresses/other bodies and 189,088 protected Game-data bytes fixed. Bank tools a48f19d first; preserve 1,268 old mirror hashes. Fresh Game 2990/4828, total 3663/5501, 1,838 different/zero drift; README aggregates only.
-- [ ] Recover the adjacent 160-word route-record setup stub func_150870D0, retaining this installed vector/spline/dispatcher baseline. The larger caller and wider Game work stay open.
+- [x] Recover the adjacent 160-word route-record setup in the isolated experiment from Note 1566, retaining this installed vector/spline/dispatcher baseline. Production conversion and exact matching remain open under the new section's unchecked gates; the larger caller and wider Game work stay open.
 
 ## Route Vector Saved Roles And Isolated Layout Match - 2026-10-18
 

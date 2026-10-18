@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
+Recover experimental func_150870D0, three arguments, 160 words/frame 0x60,
+43 differences and unchanged 72 neighbors. Six tests pass: 1,259 guest cases,
+native32, real helpers/caller window and explicit private-prefix rejection.
+Tools 483ddb2 first; preserve 1,270 mirror hashes. No production/count/README
+change or credit. Continue the same function's S7 result and delayed stores;
+325/465 fired paired cuts still differ, starting at cut 43.
+
+2026-10-18:
 [Note 1565](WORKING_NOTES/1565-route-vector-installed-byte-match-20261018.md):
 Install complete typed func_15088F30, 83 words/frame 16, normalized with all
 source origins and saved homes retained. Thirteen installed tests include
