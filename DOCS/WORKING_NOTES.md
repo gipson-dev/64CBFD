@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
+Recover complete movement clamp/acceleration/pitch lifetimes: raw 270
+differences, normalized 242 with unchanged 28 research rows, 959/frame0x80.
+Nine tests pass, including sixteen old-candidate alias rejections, eight AST
+controls, forty clamp cases and 169 native cases/profile. Tools ad45714 first;
+307 inputs, production, fresh totals and README unchanged. No new guards,
+installation or credit; continue the same `0x150F3C48` / `0x150F3C6C` gap.
+
+2026-10-17:
 [Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
 Recover three real button-path FP words: raw C 389 differences. Qualify 21
 new branch-local GPR rewrites, 28 total private rows, giving 361 differences

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement clamp acceleration and pitch lifetimes](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
+  complete 959-word/frame0x80 C improves 389 to 270 differences, 242 after the
+  unchanged 28 private rows. Nine tests pass, including actual-retail alias
+  controls and AST zero-lifetime checks; no new guards, installation or credit.
 - [Movement flag path lifetimes and CFG role proof](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
   three natural C FP improvements give 389 raw differences; 28 total private
   research rewrites give 361 differences and 469 exact opening words. Nine

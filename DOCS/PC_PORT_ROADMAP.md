@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Clamp Acceleration And Pitch Lifetimes - 2026-10-17
+
+[Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
+
+- [x] Screen 29 complete forms; recover combined clamp, exclusive acceleration and early signed-Y/pitch lifetimes, preserving 959 words/frame0x80 and eleven neighbors. Raw differences improve 389 to 270.
+- [x] Keep the private 28-row research table byte-identical, giving 242 normalized differences and 469 exact opening words. No new research/production guards, installation or matching credit.
+- [x] Pass nine tests: eight AST zero controls, sixteen old-C guest-alias rejections, full three-way public/FP corpus, forty clamp cases, two compiled wrong limits, 169 native cases/profile and fresh 74-event/686-record compiler capture. Preserve 307 protected entries and 6,600 bounded private prefixes.
+- [x] Bank tools ad45714 first; preserve 1,164 prior mirror hashes / 1,166 paths, all installed bytes, fresh totals and root README. Frozen Release untouched; zero Claude calls.
+- [ ] Continue the same `func_150F34F4` heading roles at normalized word469 / `0x150F3C48` and private frontier `0x150F3C6C`, then remaining flag/constant/FP scheduling and whole-function literal/private/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Flag Path Lifetimes And CFG Role Proof - 2026-10-17
 
 [Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):

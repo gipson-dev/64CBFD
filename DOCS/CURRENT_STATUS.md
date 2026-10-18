@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 852c2eb; tools are committed before the consumer pin.
+  checkpoint pins tools ad45714; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **clamp/acceleration/pitch lifetimes recovered**:
+[Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md).
+Complete `func_150F34F4` improves to 270 raw differences / 242 after the same
+28 private research rewrites, still 959/frame0x80. Nine tests pass, including
+sixteen old-candidate alias rejections and AST zero-lifetime checks. Tools
+ad45714 first; 307 protected entries, production, fresh totals and README
+unchanged. No new guards/installation/credit. Continue the same heading GPR
+gap at `0x150F3C48`, private frontier `0x150F3C6C`, and remaining full gates.
 
 Movement **button velocity and branch CFG roles qualified**:
 [Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md).

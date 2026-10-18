@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Clamp Acceleration And Pitch Lifetimes
+
+[Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
+Recover combined clamp, acceleration branch and signed-Y/pitch lifetimes in
+complete `func_150F34F4`: raw 270 differences, normalized 242 with the same 28
+private rows, 959/frame0x80. Nine tests pass, including sixteen actual-retail
+alias controls, AST zero proof, forty clamp cases and 169 native cases/profile.
+Tools ad45714 first; preserve production, 307 inputs, totals and README.
+No new guards, installation or credit; same heading GPR gap remains open.
+
 ## 2026-10-17 Movement Flag Path Lifetimes And CFG Role Proof
 
 [Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
