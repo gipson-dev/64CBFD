@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Projection Normal-Profile Roles And Current Node
+
+[Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
+Normal-profile typed-loop C restores the six opening saved roles and all240
+null fault prefixes, but emits334 words and loses the private SP+0x48 save in171
+cases. Eight tests pass and one code-identical owned compiler capture identifies
+the current-node range/color;16 source screens remain rejected. Tools **c77fcd2**
+first. Keep the earlier321-word point distinct; neither is installed. Production,
+root README and Note1554 totals stay fixed, with no new matching credit.
+Next recover the node's second-call lifetime jointly with full retail layout.
+
 ## 2026-10-18 Object Command Enqueue Byte Match
 
 [Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):

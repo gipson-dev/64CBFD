@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Projection normal-profile roles and current node](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
+  334/frame120 recovers six opening roles and240 null fault prefixes. Eight
+  tests and an owned compiler capture identify the remaining SP+0x48 spill loss;
+  16 screens rejected. Toolsc77fcd2 first; no production or matching-credit change.
 - [Object command enqueue byte match](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
   install41-word/frame0 enqueue C after a complete two-path memory/ABI proof,
   30 guarded allocation words and ten installed tests. Exact119-byte ELF delta;

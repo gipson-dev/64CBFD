@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
+Normal typed-loop C recovers334/frame120 and all six opening saved roles;
+eight tests pass, including240 null fault prefixes and one owned compiler
+capture. Current-node expression135 is color15;171 cases lose the SP+0x48 save.
+Sixteen source screens fail extent. Toolsc77fcd2 first. No production/README
+or totals change; keep the prior321/frame120/221 point separate and uninstalled.
+Next jointly recover the node call lifetime, original extent and all homes.
+
+2026-10-18:
 [Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
 Install41-word/frame0 object command enqueue C with30 closed register guards.
 Ten tests pass:352 full guest memories/traces,244 fault prefixes,5120 native

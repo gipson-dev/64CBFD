@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6bebb52; tools are committed before the consumer pin.
+  checkpoint pins tools c77fcd2; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Projection normal-profile roles recovered; joint layout still fails**:
+[Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md).
+The typed loop emits334/frame120 with all six initial saved roles and240/240
+null fault prefixes. Eight tests pass:575 public cases,404 complete memories,
+1458 first-call prefixes and one code-identical owned compiler capture. The
+remaining171 memories differ solely atSP+0x48; the current-node range is color15
+and that store is absent. Sixteen screens are rejected. Tools **c77fcd2** first.
+Keep this point separate from321/frame120/221; neither is installed. Production,
+README and Note1554 totals are unchanged. Next recover the current-node call
+lifetime jointly with the original extent, homes and saved-role order.
 
 **Object command enqueue byte-exact; projection parent remains open**:
 [Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md).

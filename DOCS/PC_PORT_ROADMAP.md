@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Projection Normal-Profile Roles And Current Node - 2026-10-18
+
+[Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
+
+- [x] Test the previously untested normal-profile typed loop on the new sixteen-input baseline. Recover334/frame120 and all six initial saved roles; the same C under the existing owner profile is250/frame128. Preserve72 like-for-like normal-profile neighbors/pools per screen; all16 source variants fail extent and remain rejected. No production profile override.
+- [x] Pass eight tests:575 public cases,404 complete memories, all240 null fault prefixes,1458 first-call prefixes,24 high-bit cases,384 screen cases and effective private/C/corruption controls. Precisely retain171 missing SP+0x48 saves and274/575 public traces. One owned code-identical mode5 capture reports current-node expression135/color15; all children/driver exit0 and no new native choice-order claim.
+- [x] Bank tools **c77fcd2** first, preserving production/README/totals and all1238 prior mirror dirty hashes. Keep the334-word point and the earlier321/frame120/221-difference point distinct and uninstalled. No new matching credit or recount.
+- [ ] Recover the current-node lifetime across the second selector jointly with321 words, frame120, all private homes and original saved-role order. Use the observed current identity, not a reused old expression number; then qualify the remaining native/rebase/fault/normalization/install gates. Wider Game work remains open.
+
 ## Object Command Enqueue Byte Match - 2026-10-18
 
 [Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover typed func_1512D560 C, all four live bank/table reloads, ordered command/payload writes, unsigned cursor increment and equality-only wrap at20. Match all41 words/frame0 after30 guards with a complete two-path ordered-memory/ABI proof and eight independent rebases. Preserve three raw owner neighbors/pools; no profile change.
 - [x] Pass ten installed tests:352 complete guest memories/traces,244 fired fault prefixes,5120 native cases per O0/O2/O2+UBSan build, a native wrap control, seven compiled C controls,575 connected parent cases and strict word/binding/input/guard corruption gates. Reject four parent node-expression forms after72-neighbor/pool and192-public-case checks.
 - [x] Reproduce the first119-byte whole-ELF delta with only target code/size changed, all6057 function addresses preserved and189088 Game-data bytes/720 owners unchanged. Bank tools **6bebb52** first; preserve all1235 prior mirror dirty hashes. Fresh Game2,986/4,828, total3,659/5,501, zero drift. Root README aggregates only.
-- [ ] Finish parent func_150891E8's original allocation/save ordering jointly with321 words, frame120 and all live homes. The retained221-difference model stays uninstalled. Typed-loop normal-profile emission is untested, not an accepted profile override. Vector15088F30, other parent150896EC and wider queues remain open.
+- [ ] Finish parent func_150891E8's original allocation/save ordering jointly with321 words, frame120 and all live homes. The retained221-difference model stays uninstalled. The tested normal-profile point334/frame120 restores opening roles but loses the SP+0x48 save (Note1555); it is not an accepted profile override. Vector15088F30, other parent150896EC and wider queues remain open.
 
 ## Route Projection Allocator Provenance - 2026-10-18
 
