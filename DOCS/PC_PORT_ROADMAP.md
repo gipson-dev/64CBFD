@@ -1,12 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Route Setup Initial S7 Capture And Delayed Stores - 2026-10-18
+
+[Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
+
+- [x] Restore the literal nine-word initial selector/S7/delayed-seed-store block in experimental func_150870D0. Preserve 160 words/frame 0x60 and 72 neighbors; improve 43 to 39 raw differences.
+- [x] Pass eight focused tests, including 472 actual S7/unwritten-seed observations, an effective old-model negative and a four-node later-role witness. Close cut 43 and improve exact private memory/access prefixes from 140 to 174 of 465. Bank tools b12e663 first; preserve 1,272 old mirror hashes.
+- [ ] Restore the seed reload order at the new cut-60 boundary and the later S7=after / FP=before roles. Ordinary output equality is not matching; production, README and installed totals remain fixed with zero new credit.
+- [ ] Complete the same function's remaining all-word/binding, private/alias, actual padding/Make, rebase, first whole-ELF prediction, installation, audit and recount gates.
+
 ## Route Record Setup Recovery And Private Order Boundary - 2026-10-18
 
 [Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
 
 - [x] Recover complete experimental func_150870D0 C with the proper three-argument interface, 160-word/frame-0x60 shape, original S0/S1 walk roles and 43 raw differences. Preserve all 72 neighbors and frozen production inputs.
 - [x] Pass six focused tests: 1,259 guest cases, two 1,286-case native32 profiles/five effective controls, real helpers, 41 retail-only caller windows and fail-closed input/binding checks. Bank tools 483ddb2 first and preserve 1,270 mirror hashes.
-- [ ] Restore the S7 first-result lifetime and delayed seed stores. The fired private-order gate still rejects 325/465 cuts, first at cut 43. No installation or matching credit yet; production/README/installed counts remain fixed.
+- [x] Restore the initial S7 result across the second helper and its delayed seed stores in Note 1567. The broader lifetime/private-order work remains open: the new cut 60 and later S7/FP swap are tracked above. No installation or matching credit; production/README/installed counts remain fixed.
 - [ ] Complete source-derived all-word/binding matching, private/alias qualification, actual padding/Make, independent rebases, first whole-ELF prediction, installation, linked audit and fresh recount for this same function.
 
 ## Route Vector Installed Byte Match - 2026-10-18

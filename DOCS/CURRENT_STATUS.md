@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 483ddb2; tools are committed before the consumer pin.
+  checkpoint pins tools b12e663; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route setup initial S7 capture restored, matching still open**:
+[Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md).
+The experimental func_150870D0 C remains 160 words/frame 0x60 and improves
+43 to 39 raw differences. Nine initial call/capture/store words now match
+literally; 472 real-helper observations verify S7 and the delayed seed stores.
+Eight tests pass, including guest/native32/caller checks. The cut-43 rejection
+is closed; 174/465 private memory/access prefixes agree, with cut 60 now first.
+Later S7/FP roles still swap. Tools **b12e663** first; production/README/counts
+unchanged, zero credit. Continue the same function's reload order and later
+roles before full matching/install gates. Note 1565 figures remain in force.
 
 **Route record setup recovered, matching still open**:
 [Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md).

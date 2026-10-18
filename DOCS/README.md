@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route setup initial S7 capture and delayed stores](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
+  160-word/frame-0x60 experimental C improves 43 to 39 differences. Nine initial
+  words match literally, with eight tests and 472 real-helper observations.
+  Cut 43 closes; cut 60 reload ordering and later S7/FP roles remain. Tools
+  b12e663 first. No production installation, README count change or matching credit.
 - [Route record setup recovery and private order boundary](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
   experimental three-argument func_150870D0, 160 words/frame 0x60/43 differences,
   six tests with guest/native32 and real helper/caller coverage. Private-order

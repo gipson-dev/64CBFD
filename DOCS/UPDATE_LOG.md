@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Setup Initial S7 Capture And Delayed Stores
+
+[Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
+Improve experimental func_150870D0 from 43 to 39 differences, retaining
+160 words/frame 0x60 and 72 neighbors. Nine initial words match literally;
+472 observations verify S7 across the second helper and delayed seed stores.
+Eight tests pass. The private boundary advances from cut 43 to cut 60;
+174/465 memory/access prefixes agree, but later S7/FP roles still swap.
+Tools b12e663 first; preserve 1,272 mirror hashes. No production/README/count
+changes or matching credit. Continue reload order and later roles in this function.
+
 ## 2026-10-18 Route Record Setup Recovery And Private Order Boundary
 
 [Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):

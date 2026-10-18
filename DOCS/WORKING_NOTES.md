@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
+Recover the original nine-word initial selector/S7/delayed-store block in
+experimental func_150870D0; 160 words/frame 0x60, 43 to 39 differences, 72
+neighbors fixed. Eight tests pass, including 472 capture observations and
+the old-model negative. Cut 43 closes; cut 60 reload order/later S7/FP roles
+remain. Tools b12e663 first; preserve 1,272 mirror hashes. No production,
+README or count change/credit. Continue the same function.
+
+2026-10-18:
 [Note 1566](WORKING_NOTES/1566-route-record-setup-semantic-recovery-and-private-order-boundary-20261018.md):
 Recover experimental func_150870D0, three arguments, 160 words/frame 0x60,
 43 differences and unchanged 72 neighbors. Six tests pass: 1,259 guest cases,
