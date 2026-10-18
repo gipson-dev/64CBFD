@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement scalar lifetimes and counter scope](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
+  complete C improves 152 to 139 differences, 108 with unchanged 31 private
+  rows. Fifteen tests pass, including exact 24-record scans, twelve AST
+  controls and 397 native cases/profile. No new guards, installation or credit.
 - [Movement pitch and surface source order](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):
   complete C improves 200 to 152 differences, 121 with the unchanged 31 private
   rows. Thirteen tests pass, including 256 new surface cases and sixteen

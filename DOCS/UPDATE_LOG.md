@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Scalar Lifetimes And Counter Scope
+
+[Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
+Recover complete movement zero/counter/speed lifetimes: 139 raw differences,
+108 with the unchanged 31 private rows, 959/frame0x80 and 478 exact opening
+words. Thirteen gains emit directly from C, with zero old exact losses.
+Fifteen tests pass, including exact 24-record counter scans and 397 native
+cases/profile. Tools 5910e6c first; 313 inputs, production, totals and README
+unchanged. No new guards/installation/credit; earlier private gap remains.
+
 ## 2026-10-17 Movement Pitch And Surface Source Order
 
 [Note1522](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):

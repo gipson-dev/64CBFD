@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-17:
+[Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
+Recover zero comparison, counter scope and speed sampling in complete C:
+139 raw differences, 108 with unchanged 31 private rows, 959/frame0x80 and
+478 exact opening words. Fifteen tests pass, including twelve AST controls,
+400 counter scans / two compiled wrong gates, and 397 native cases/profile.
+Tools 5910e6c first; 313 inputs, production, totals and README unchanged.
+No new guards/installation/credit. Same flag gap remains; 101 GPR-field-only
+and seven other words still need recovery/proof.
+
+2026-10-17:
 [Note1522](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):
 Recover surface velocity/mode/depth/pitch order directly from complete C:
 152 raw differences, 121 with unchanged 31 private rows, 959/frame0x80 and

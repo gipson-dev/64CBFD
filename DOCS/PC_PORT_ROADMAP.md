@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Scalar Lifetimes And Counter Scope - 2026-10-17
+
+[Note1523](WORKING_NOTES/1523-movement-scalar-lifetimes-and-counter-scope-20261017.md):
+
+- [x] Screen 27 complete forms; recover zero comparison, independent count pointer and inline speed sample. Preserve 959 words/frame0x80 and eleven neighbors. Raw differences improve 152 to 139, with thirteen new exact words and zero old exact losses.
+- [x] Keep the 31-row research table byte-identical: 108 normalized differences and 478 exact opening words. No new guards, installation or matching credit.
+- [x] Pass fifteen tests: twelve AST controls, 400 exact 24-record scans / 320 spawn calls, two compiled wrong count gates, full public/FP/provider corpus, 480 heading cases, 6,700 prefixes and 397 native cases/profile. Fresh 74-event/687-record trace proves the A4 M-92/R2 pointer; 47 layout/site controls pass.
+- [x] Bank tools 5910e6c first; preserve all 313 inputs, 1,170 prior mirror hashes / 1,172 paths, installed bytes, totals and main README. Frozen Release untouched; zero Claude calls.
+- [ ] Continue the same `func_150F34F4` flag/constant lifetimes at `0x150F3C6C`, private frontier `0x150F3C88`, then remaining 101 GPR-field-only / seven other words and full-function gates. No global rename authorization.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Pitch And Surface Source Order - 2026-10-17
 
 [Note1522](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):
