@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Projection Allocator Choice Provenance
+
+[Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
+Two owned compiler captures preserve all emitted code while exposing168 native
+allocator events and the current/root/previous/table/record/actor selection
+order. Six tests pass; eight grouped scan screens fail the joint contract.
+One tool-free Pro advisory is reconciled against actual object-spill evidence,
+not treated as approval. Tools **4c718c5** first; the321/frame120 body remains
+at221 differences. No production/README or totals change, no matching credit.
+Next recover original loop/invariant expression priorities and saved roles.
+
 ## 2026-10-18 Route Projection Extent And Named Homes
 
 [Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 1614a2c; tools are committed before the consumer pin.
+  checkpoint pins tools 4c718c5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route projection allocator choices observed; no new body installed**:
+[Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md).
+Two owned, code-identical compiler captures show168 native events and the
+current/anchor/previous/table/record/actor selection order. Initial saved colors
+are not forbidden; object is already spilled at3C. Six tests pass with strict
+capture/input/corruption gates; eight grouped screens are rejected. One bounded
+tool-free advisory is reconciled, not accepted as a fix. Tools **4c718c5**
+first. The321-word/frame120 body stays at221 differences; production/README
+and totals unchanged. Continue loop/invariant expression priorities and the
+joint saved-role contract, with zero new matching credit.
 
 **Route projection extent and named homes recovered; allocation still open**:
 [Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md).

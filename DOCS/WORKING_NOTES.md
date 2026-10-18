@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
+Observe168 native allocator events on a code-identical isolated projection;
+current/root/previous/table/record/actor choice order is measured, not guessed.
+Six tests pass, eight grouped screens rejected and one Pro advisory reconciled.
+Tools4c718c5 first. No new body, production/README or totals change; the321-word
+model remains221 differences. Continue original expression/allocation recovery.
+
+2026-10-18:
 [Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
 Recover321-word/frame120 projection C and original live homes under the
 existing owner profile. Seven tests pass:575 public/frame cases,1458 scan

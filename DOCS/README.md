@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route projection allocator provenance](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
+  code-identical owned captures reveal168 allocator events and saved-role
+  selection order. Six tests pass; eight grouped screens rejected. Tools4c718c5
+  first;321/frame120/221 remains uninstalled, with no matching-credit change.
 - [Route projection extent and named homes](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
   recover321/frame120 and live stack homes under the existing owner profile;
   seven tests/1458 scan prefixes pass, but221 words and actual saved-role/fault

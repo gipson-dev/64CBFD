@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Projection Allocator Provenance - 2026-10-18
+
+[Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
+
+- [x] Reproduce the complete-owner target hash in isolation and capture actual mode5/native allocator data in owned compiler processes. Both probes fire, all children/driver exit0 and code/definitions/bindings/pools stay identical.168 native events establish current/anchor/previous/table/record/actor choice order; no initially forbidden saved colors and object already spilled.
+- [x] Pass six evidence tests,12 fact controls,12 event controls, a producer-exit control, four source/listing/probe controls and30 input controls. Qualify eight rejected grouped screens,72 unchanged neighbors/pools per profile and192 sampled public cases. Reconcile one tool-free Pro advisory; reject its object-promotion explanation and do not claim original source priorities were observed.
+- [x] Bank tools **4c718c5** first, preserving production/README/totals and all1,232 prior mirror dirty hashes. The321/frame120 body and its221 differences are unchanged; no new body, guards, build, recount or match credit.
+- [ ] Recover the actual five-slot/node-address expression priorities and original S0/S2 roles jointly with321 words, frame120, live homes and saved order. Then qualify normalization/rebases/full caller/fault/prediction/install/ELF gates. Wider queues remain open.
+
 ## Route Projection Extent And Homes - 2026-10-18
 
 [Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
@@ -7,6 +16,7 @@
 - [x] Recover321-word/frame120 experimental C with a fixed five-slot scan, meaningful distance lifetime and original30/3C/44/48/50/5C homes. Target bytes/bindings agree under normal and existing no-unroll profiles; preserve72 actual owner neighbors/pools. No Makefile/profile change or padding.
 - [x] Pass seven tests:575 equal public states/complete parent frames,1458 first-call scan prefixes over243 patterns,24 high-bit cases,16 complete null returns and effective private-preference/C controls. Precisely retain the one differing child save word in301 cases,445/575 ordered traces and48 unequal null fault prefixes; do not claim whole-memory/fault parity.
 - [x] Bank tools **f2871fa**, then **1614a2c** first; preserve all1,230 prior mirror dirty hashes and production/README/totals. Four original-loop forms recover opening save roles but fail extent; no matching credit, build or recount.
+- [x] Capture the actual allocator choice sequence with code-identical owned observations; see Note1553. Joint allocation/source-expression recovery is still open.
 - [ ] Recover the actual S0 table-address/S2 record allocation and original save ordering jointly with321 words and all live homes. Then qualify closed normalization/rebases/prediction/install/whole-ELF audit. Enqueue1512D560, vector15088F30, other parent150896EC and wider queues remain open.
 
 ## Route Projection Conditional Lifetime - 2026-10-18
