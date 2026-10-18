@@ -108,9 +108,10 @@ ifeq ($(VERSION),us)
 GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
-	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
-GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES))
+GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
 STANDARD_GENERATED_SLICE_O_FILES := \
 	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
 RETAIL_LAYOUT := retail_layout.$(VERSION).txt
@@ -136,7 +137,7 @@ RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
 	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o $(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o, \
 	$(RETAIL_PAD_O_FILES))
-UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
+UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
 else
 GENERATED_SLICE_C_FILES :=
 GENERATED_SLICE_O_FILES :=
@@ -174,7 +175,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_6E770.c.o: RETAIL_RODATA_SYMBOL := jtbl_8
 # GLOBAL_ASM processing accepts optimization modes, not IDO's -Wo options.
 # Keep loop unrolling disabled for the compiler when restoring targeting asm.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: OPT_FLAGS := -O2 -g3
-$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: CFLAGS += -Wo,-loopunroll,0
+B3020_NO_UNROLL_FLAG := -Wo,-loopunroll,0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: CFLAGS += $(B3020_NO_UNROLL_FLAG)
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_3FC60.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/game_21D5F0.c.o: OPT_FLAGS := -O3
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_siacs2.c.o: OPT_FLAGS := -O1
@@ -456,6 +458,22 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: \
 		--function-object func_1503D804=$@.unrolled.compact --word-patches retail_word_patches.us.csv --filename generated_6A3D0
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.unrolled.compact $@.padded.s
+
+# Preserve every no-unroll neighbor; select only the complete route projection
+# from its separately qualified normal-profile object.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
+		$(SRC_DIR)/game/generated_B3020.c $$(call generated_slice_asm,B3020) $$(wildcard asm/nonmatchings/generated_B3020/*.s) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
+		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+	$(CC) -c -32 $(filter-out $(B3020_NO_UNROLL_FLAG),$(CFLAGS)) $(OPT_FLAGS) $(MIPSBIT) -o $@.normal.compact $(BUILD_DIR)/$<
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.normal.compact \
+		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,B3020) $@.padded.s \
+		--function-object func_150891E8=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.normal.compact $@.padded.s
 
 # Keep the unrecovered factory's output unchanged. Its two restored callers
 # need a complete ABI prototype, isolated from the old zero-return definition.

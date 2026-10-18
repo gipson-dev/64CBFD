@@ -884,8 +884,134 @@ u8 func_1508907C(u8 id, u8 type, u8 excluded, u8 preferred) {
     return result;
 }
 
-s32 func_150891E8() {
-    return 0;
+/* Select the nearer route node and queue a clamped projection payload. */
+void func_150891E8(u8 *record, u8 *actor) {
+    extern u16 D_8008FDBC;
+    extern s8 D_800D23A8;
+    extern f32 D_8009DA08;
+    extern f32 sqrtf(f32);
+    extern void func_1512D560(u8 *, s32, void *);
+    typedef struct {
+        s16 x, y, z;
+        u8 reserved[3];
+        u8 neighbors[5];
+        u8 kind;
+        u8 routeClass;
+    } ProjectionNode;
+    u8 first;
+    u8 next;
+    ProjectionNode *node;
+    ProjectionNode *candidateNode;
+    u8 *payload;
+    s32 i;
+    s32 j;
+    f32 currentDistance;
+    f32 dx;
+    f32 dz;
+    f32 best;
+    f32 dy;
+    ProjectionNode *currentNode;
+    u8 candidate;
+    u8 current;
+    u8 previous;
+    volatile u8 preferred;
+    f32 distance;
+    u8 *object;
+    f32 targetZ;
+
+    i = *(s32 *)(actor + 0x318);
+    if (i != 0) {
+        if (D_8008FDBC & 0x40) {
+            preferred = 1;
+        } else {
+            preferred = 0;
+        }
+        object = (u8 *)(u32)i;
+        if (*(s8 *)(record + 0x30) == 2) {
+            for (i = 0; i < D_80087290; i++) {
+                node = (ProjectionNode *)D_800D2350 + i;
+                if (node->kind == 5 && node->routeClass == 2) {
+                    record[0x4A] = i;
+                    record[0x4B] = i;
+                    for (j = 0; j < 5; j++) {
+                        if ((candidate = node->neighbors[j]) != 0xFF) {
+                            i = D_800D23A8;
+                            candidateNode = (ProjectionNode *)D_800D2350 + candidate;
+                            if ((i == 0 && candidateNode->routeClass == 3) ||
+                                (i != 0 && candidateNode->routeClass != 3)) {
+                                record[0x4B] = candidate;
+                            }
+                        }
+                    }
+                    i = D_80087290;
+                }
+            }
+            current = record[0x4B];
+            previous = record[0x4A];
+            first = current;
+            best = D_8009DA08;
+            do {
+                node = (ProjectionNode *)D_800D2350 + current;
+                next = func_1508907C(current, 0xFF, previous, preferred);
+                previous = current;
+                current = next;
+                dx = *(f32 *)(actor + 0x14) - (f32)node->x;
+                dz = *(f32 *)(actor + 0x1C) - (f32)node->z;
+                distance = dx * dx + dz * dz;
+                if (distance < best) {
+                    best = distance;
+                    record[0x4A] = previous;
+                    record[0x4B] = next;
+                }
+            } while (first != current);
+            func_1512D560(*(u8 **)(actor + 0x318), 5, 0);
+            record[0x30] = 3;
+        }
+        current = record[0x4B];
+        currentNode = (ProjectionNode *)D_800D2350 + current;
+        previous = record[0x4A];
+        node = (ProjectionNode *)D_800D2350 + previous;
+        dx = *(f32 *)(actor + 0x14) - (f32)currentNode->x;
+        dz = *(f32 *)(actor + 0x1C) - (f32)currentNode->z;
+        currentDistance = dx * dx + dz * dz;
+        dx = *(f32 *)(actor + 0x14) - (f32)node->x;
+        dz = *(f32 *)(actor + 0x1C) - (f32)node->z;
+        best = dx * dx + dz * dz;
+        if (currentDistance < best) {
+            record[0x4A] = current;
+            record[0x4B] = func_1508907C(current, 0xFF, previous, preferred);
+            node = currentNode;
+            dx = *(f32 *)(actor + 0x14) - (f32)node->x;
+            dz = *(f32 *)(actor + 0x1C) - (f32)node->z;
+            best = currentDistance;
+        }
+        dy = *(f32 *)(actor + 0x18) - (f32)node->y;
+        best = sqrtf(dy * dy + best);
+        dx /= best;
+        dy /= best;
+        dz /= best;
+        if (best > 1000.0f) {
+            best = 1000.0f;
+        }
+        payload = record + 0x4C;
+        *(u32 *)(payload + 0) = 0;
+        *(f32 *)(payload + 0x20) = *(f32 *)(actor + 0x14);
+        *(f32 *)(payload + 0x24) = *(f32 *)(actor + 0x18);
+        *(f32 *)(payload + 0x28) = *(f32 *)(actor + 0x1C);
+        *(f32 *)(payload + 0x14) = *(f32 *)(actor + 0x14) - dx * best;
+        *(f32 *)(payload + 0x18) = *(f32 *)(actor + 0x18) - dy * best;
+        targetZ = *(f32 *)(actor + 0x1C) - dz * best;
+        *(u32 *)(payload + 4) = 0;
+        *(f32 *)(payload + 0x30) = 30.0f;
+        *(f32 *)(payload + 0x34) = 30.0f;
+        *(f32 *)(payload + 0x2C) = 0.0f;
+        *(f32 *)(payload + 0x1C) = targetZ;
+        func_1512D560(*(u8 **)(actor + 0x318), 7, payload);
+        *(f32 *)(object + 0x19C) = 30.0f;
+        *(f32 *)(object + 0x1A4) = 30.0f;
+        *(f32 *)(object + 0x1A0) = 30.0f;
+        *(f32 *)(object + 0x1A8) = 30.0f;
+    }
 }
 
 s32 func_150896EC() {

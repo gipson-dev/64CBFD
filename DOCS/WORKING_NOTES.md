@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
+Install complete projection C as a321-word/frame120 guarded match, preserving
+72 no-unroll neighbors and four GLOBAL_ASM bodies. Nine installed tests pass:
+three8225-case native builds,575 guest cases,2148 fired fault prefixes and40
+connected retail-caller cases. Real ELF reproduces974 changed bytes, all6057
+addresses and189088 Game-data bytes fixed. Toolsb61d10a first; preserve1248
+prior mirror dirty hashes. Fresh Game2987/4828, total3660/5501, zero drift.
+Next dispatcher15087CC0; direct321-word source output is not claimed.
+
+2026-10-18:
 [Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
 The335-word semantic projection has a closed321-word normalization matching
 all retail words in isolation.23 tests pass, including complete inlined-helper

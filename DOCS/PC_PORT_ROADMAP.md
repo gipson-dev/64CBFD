@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Projection Installed Byte Match - 2026-10-18
+
+[Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
+
+- [x] Qualify complete semantic335-word/frame120 C with8225 native cases per O0/O2/O2+UBSan build and six effective controls. Preserve explicit aligned host-endian/NaN-class scope. Exercise seven actual Make commands, both GLOBAL_ASM passes, the isolated normal-profile override and real padder; preserve72 no-unroll neighbors and four assembly routines.
+- [x] Install only func_150891E8, its target-specific Make rule and335 complete word/binding guards (14 omissions,18 moved bindings). Pass nine installed tests,575 complete guest cases,2148 fired nonnull fault prefixes including780 helper accesses,40 actual retail-caller cases and353 effective padder controls. Hardware traps/status and unknown indirect callers remain outside acceptance.
+- [x] Reproduce the first974-byte whole-ELF prediction: all321 target words exact,6057 addresses fixed, other bodies unchanged and189088 protected Game-data bytes/720 owners intact. Bank tools **b61d10a** first; preserve all1248 previous mirror dirty-file hashes. Fresh Game2,987/4,828, total3,660/5,501,1841 different, zero drift. Root README aggregate rows only.
+- [ ] Recover dispatcher func_15087CC0 (67 words/frame48), including signed actor slots, live table/count reloads and all three call branches. Its40 connected projection-path cases do not restore its production stub or qualify the other callee. Vector15088F30, parent150896EC and wider Game work remain open.
+
 ## Projection Isolated Byte Match And Complete Observational Proof - 2026-10-18
 
 [Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Derive a closed335-to321 layout recipe retaining321 distinct source-instruction origins, all18 moved bindings, fourteen identified redundant words,149 register-renamed output words and eleven payload-base translations. All321 relocated words match retail in isolation; the normalizer reads no files or retail data. Raw C remains335 words/frame120, uninstalled.
 - [x] Compose7/2734 prefix paths with1/10242/6832 suffix paths and one explicit null epilogue, inline the actual91-/41-word helpers, and pass two complete independent data/call rebases. Pass23 tests with effective arithmetic/private/input/recipe/helper-return-address controls. Keep strict FP/memory interleaving, traps and hardware acceptance excluded; reject eight joint source forms after owner/public/private checks.
 - [x] Bank tools **50e46b9**, then **d9ebeb9** first. Preserve production/README/totals,1242 prior mirror leaf hashes and every older capture/point; update only the guarded owned prefix checker and add five absent task files. No installed matching credit.
-- [ ] Qualify native32 C and controls with explicit endian/FP scope; reproduce any isolated normal-profile override, exercise actual padder/contraction/relocations and normalized nonnull caller/fault boundaries, then predict/install/rebuild/audit the whole ELF and freshly recount. Do not change the whole no-unroll owner or claim installed credit from this isolated match. Wider Game work stays open.
+- [x] Complete native32, isolated-profile/padder, normalized nonnull caller/fault and first-prediction gates; install/rebuild/audit/recount in Note1558. Only the target uses the normal-profile override; all72 no-unroll neighbors stay fixed. Wider Game work stays open.
 
 ## Projection Call Spill And Integer Prefix - 2026-10-18
 
@@ -34,7 +43,7 @@
 - [x] Recover typed func_1512D560 C, all four live bank/table reloads, ordered command/payload writes, unsigned cursor increment and equality-only wrap at20. Match all41 words/frame0 after30 guards with a complete two-path ordered-memory/ABI proof and eight independent rebases. Preserve three raw owner neighbors/pools; no profile change.
 - [x] Pass ten installed tests:352 complete guest memories/traces,244 fired fault prefixes,5120 native cases per O0/O2/O2+UBSan build, a native wrap control, seven compiled C controls,575 connected parent cases and strict word/binding/input/guard corruption gates. Reject four parent node-expression forms after72-neighbor/pool and192-public-case checks.
 - [x] Reproduce the first119-byte whole-ELF delta with only target code/size changed, all6057 function addresses preserved and189088 Game-data bytes/720 owners unchanged. Bank tools **6bebb52** first; preserve all1235 prior mirror dirty hashes. Fresh Game2,986/4,828, total3,659/5,501, zero drift. Root README aggregates only.
-- [ ] Finish parent func_150891E8's original allocation/save ordering jointly with321 words, frame120 and all live homes. Note1556's335-word experimental point now retains opening roles and SP+0x48, but is not installed or an accepted profile override. The older221-difference model stays uninstalled. Vector15088F30, other parent150896EC and wider queues remain open.
+- [x] Finish and install parent func_150891E8 through Note1558's qualified335-to321 normalization, retaining frame120, original saved roles and live homes. This is a guarded byte match, not direct321-word C emission. The older221-difference model stays uninstalled. Vector15088F30, other parent150896EC and wider queues remain open.
 
 ## Route Projection Allocator Provenance - 2026-10-18
 

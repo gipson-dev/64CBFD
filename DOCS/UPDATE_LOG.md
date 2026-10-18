@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-18 Route Projection Installed Byte Match
+
+[Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
+Replace func_150891E8's placeholder with complete semantic C and a qualified
+335-to321 layout normalization. A target-only normal-profile override retains
+72 existing no-unroll neighbors and four assembly routines. Nine installed tests
+pass, including8225 native cases per build,575 guest cases,2148 fired nonnull
+fault prefixes and40 connected retail-caller cases. The actual ELF reproduces
+its974-byte first prediction; all other bodies/addresses/protected data stay
+fixed. Tools **b61d10a** first. Fresh Game2,987/4,828 (61.87%), total3,660/5,501
+(66.53%),1841 different and zero drift. README aggregates only; next dispatcher
+15087CC0, with vector15088F30, other parent150896EC and wider Game work open.
+
 ## 2026-10-18 Projection Complete Observational Proof And Isolated Byte Match
 
 [Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):

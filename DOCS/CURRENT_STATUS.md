@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d9ebeb9; tools are committed before the consumer pin.
+  checkpoint pins tools b61d10a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route projection installed byte-exact**:
+[Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md).
+Replace func_150891E8's stub with complete typed C and its321-word/frame120
+normalized match. A target-only normal-profile override preserves72 no-unroll
+neighbors and four GLOBAL_ASM routines. Nine installed tests pass:8225 native
+cases per O0/O2/O2+UBSan build,575 complete guest cases,2148 fired nonnull fault
+prefixes and40 connected retail-caller cases. The real ELF reproduces the974-byte
+prediction;6057 addresses and189088 protected Game-data bytes remain fixed.
+Tools **b61d10a** first. Fresh Game **2,987/4,828 (61.87%)**, total
+**3,660/5,501 (66.53%)**, **1,841 different /zero drift**. Converted counts
+stay5501/6044; root README aggregates only. Next recover67-word caller
+func_15087CC0; vector15088F30, other parent150896EC and wider Game work stay open.
 
 **Projection isolated normalized byte match; installation gates remain**:
 [Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md).

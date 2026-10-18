@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route projection native qualification and installed byte match](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
+  all321 linked words exact using a target-only profile override and335 guards.
+  Nine installed tests, three8225-case native builds,2148 fault prefixes and40
+  connected caller cases;974-byte ELF prediction reproduced, neighbors/data
+  fixed. Toolsb61d10a first. Game2987/4828, total3660/5501, zero drift.
+  Next recover the67-word dispatcher15087CC0; wider Game work remains open.
 - [Projection complete observational proof and isolated byte match](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
   closed335-to321 recipe matches every retail word in isolation.23 tests,
   complete helper-inlined ordinary/nontrapping proof and two full rebases;
