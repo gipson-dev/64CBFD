@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2c94753; tools are committed before the consumer pin.
+  checkpoint pins tools bc4a6e8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route projection semantics recovered; installation rejected**:
+[Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md).
+Complete experimental C for `func_150891E8` passes six tests and575 paired
+guest cases with both real helpers and nine effective compiled C controls.
+Raw307/frame120 versus retail321 still fails the conditional object/private
+lifetime; raw read traces agree in only240/480 base cases. Tools **bc4a6e8**
+first. No production/README edit or matching credit; totals below remain
+unchanged. Continue the original extent/homes/unrolling fit before installation;
+enqueue1512D560 still has a production C stub. Native/rebase/fault/caller and
+gameplay acceptance are not claimed.
 
 **Route neighbor preference restored and byte-matched**:
 [Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md).

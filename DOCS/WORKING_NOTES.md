@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
+Recover complete experimental route projection150891E8; six tests,575 paired
+guest cases and nine effective C controls execute two real helpers. Reject
+307/frame120 versus retail321 and the conditional/private object lifetime;
+raw ordered traces agree in240/480 base cases. Toolsbc4a6e8 first, no production
+or README change and zero match credit. Continue extent/homes/unrolling fit.
+
+2026-10-18:
 [Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
 Recover typed neighbor preference1508907C:91 words/frame8,52 guarded scalar/
 delay changes with a4,688-path independent retail proof. Seven installed

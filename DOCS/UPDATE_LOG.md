@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Projection Recovery Boundary
+
+[Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
+Bank complete experimental C for func_150891E8 and six tests/575 paired guest
+cases executing both actual helpers. Nine compiled C controls change public
+results. The307-word/frame120 model fails retail's321-word extent and private
+object lifetime;240/480 raw traces agree, while the independent reference
+matches all480 retail traces. Tools **bc4a6e8** first; production source,
+guards, ELF, profile, README and matching totals unchanged. Continue the same
+parent's extent/homes/unrolling fit; enqueue1512D560 and wider queues stay open.
+
 ## 2026-10-18 Route Neighbor Preference Byte Match
 
 [Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):

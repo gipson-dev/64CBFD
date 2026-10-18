@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route projection recovery boundary](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
+  complete experimental parent C,575 paired guest cases and six tests; reject
+  raw307/frame120 against retail321 and its conditional object lifetime.
+  Toolsbc4a6e8 first; production/README/totals unchanged. Continue private fit.
 - [Route neighbor preference byte match](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
   recover91 words/frame8 with52 guards, independent retail words and a4,688-path
   scalar CFG proof. Seven installed tests; tools2c94753 first. Next parent150891E8,

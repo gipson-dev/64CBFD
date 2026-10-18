@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Route Projection Recovery Boundary - 2026-10-18
+
+[Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
+
+- [x] Recover complete typed experimental C for `func_150891E8`, anchor/cycle selection, signed coordinates, unclamped normalization, ordered payload writes and captured-object/fresh-helper distinction. Execute the actual selector and enqueue instructions; preserve the production enqueue stub boundary.
+- [x] Pass six tests:575 paired guest cases, nine effective compiled C controls, nine aliases, signed counts/later anchors, strict307-word/18-binding/15-input gates and real private/access-order witnesses. Retail traces480/480, raw240/480. Keep native/rebase/whole-fault/caller scope explicitly unqualified.
+- [x] Bank tools **bc4a6e8** first, preserving production C/guards/ELF/profile/README and all1,226 prior mirror dirty hashes. No match credit; totals stay Game2,985/4,828, total3,658/5,501, zero drift.
+- [ ] Fit retail321-word extent, conditional object lifetime, original private homes and five-slot unrolling before any qualified normalization/install/linked audit. Normal-profile model307/frame120 is not permission to replace the production no-unroll owner profile.
+- [ ] Recover production enqueue1512D560 separately; its ignored41-word C probe is not qualified. Vector15088F30, other parent150896EC and wider queues remain open.
+
 ## Route Neighbor Preference Byte Match - 2026-10-18
 
 [Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
