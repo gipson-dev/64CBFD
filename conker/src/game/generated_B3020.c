@@ -254,8 +254,105 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
     return -1.0f;
 }
 
-s32 func_150870D0() {
-    return 0;
+/* Build a closed route and allocate its player/extra record table. */
+void func_150870D0(s32 key, s32 playerCount, s32 extraCount) {
+    extern s8 D_800D23A8;
+    extern s8 D_800D239A;
+    extern void *allocate_memory(u32, s32, s32, s32);
+    extern void func_15088824(u8 *);
+    /* Represent six observed byte homes within the recovered scratch workspace. */
+    struct {
+        u8 reserved0[4];
+        u8 cursor[4];
+        u8 seed[4];
+        u8 reservedC[20];
+    } scratch;
+    s32 limit;
+    s32 humanLimit;
+    s32 i;
+    u32 offset;
+    u32 length;
+    u8 selected;
+    s32 candidate;
+    s32 neighbor0;
+    s32 neighbor1;
+    u8 start;
+    u8 *table;
+    u8 *route;
+    u8 *other;
+    u8 *record;
+
+    D_800872A0 = 0;
+    start = func_15086D48(key);
+    scratch.seed[3] = start;
+    if (start != 0xFF) {
+        selected = 0xFF;
+        table = D_800D2350;
+        limit = (D_800D23A8 * 0xFF) & 0xFF;
+        route = table + start * 0x10;
+        for (i = 0; i != 5; i++) {
+            candidate = route[9];
+            if (candidate != 0xFF) {
+                other = table + candidate * 0x10;
+                if (other[0xE] == 0 &&
+                    ((D_800D23A8 == 0 && other[0xF] >= limit) ||
+                     (D_800D23A8 != 0 && limit >= other[0xF]))) {
+                    limit = other[0xF] & 0xFF;
+                    selected = candidate;
+                }
+            }
+            route++;
+        }
+        /* Reuse the call-result temporaries for the stored seed pair at the gate. */
+        if (selected != 0xFF) {
+            neighbor0 = (u8)func_150888A8(scratch.seed[3], selected, 0);
+            neighbor1 = func_150888A8(selected, scratch.seed[3], 0);
+            scratch.seed[1] = neighbor0;
+            scratch.seed[0] = neighbor1;
+        }
+        if (selected != 0xFF &&
+            (neighbor1 = scratch.seed[1], neighbor0 = scratch.seed[0], neighbor0 != 0xFF) &&
+            (i = (u8)neighbor1, neighbor1 != 0xFF)) {
+            length = 0;
+            start = scratch.seed[3];
+            scratch.cursor[1] = selected;
+            do {
+                scratch.cursor[0] = scratch.cursor[1];
+                scratch.cursor[1] = i;
+                scratch.cursor[2] = i;
+                i = (u8)func_150888A8(scratch.cursor[0], scratch.cursor[1], 0);
+                length++;
+            } while (start != scratch.cursor[0]);
+            scratch.cursor[2] = i;
+            D_800D2399 = extraCount;
+            D_800D2398 = playerCount;
+            playerCount = (s32)((u32)playerCount + (u32)extraCount);
+            D_800D2394 = 0;
+            D_800872A0 = allocate_memory((u32)playerCount * 0x84u, 1, 0, 0);
+            if (playerCount > 0) {
+                offset = 0;
+                i = 0;
+                do {
+                    record = D_800872A0 + offset;
+                    func_15088824(record);
+                    record[0x2B] = neighbor0;
+                    start = scratch.seed[3];
+                    record[0x2D] = selected;
+                    record[0x2E] = neighbor1;
+                    record[0x2C] = start;
+                    if (i < D_800D2398) {
+                        record[0x31] = i;
+                    }
+                    humanLimit = D_8008FD90;
+                    record[0x26] = length;
+                    offset += 0x84;
+                    record[0x30] = i >= humanLimit;
+                    i++;
+                } while (i != playerCount);
+            }
+            D_800D239A = 1;
+        }
+    }
 }
 
 s32 func_15087350() {

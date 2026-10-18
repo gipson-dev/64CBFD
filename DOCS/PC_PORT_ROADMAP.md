@@ -1,13 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Route Record Setup Installed Byte Match - 2026-10-18
+
+[Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
+
+- [x] Install complete typed three-argument func_150870D0 C and its 160-word/frame0x60 normalized match. Preserve raw37 diagnostics and document the copy coalescing, epilogue-derived taken-return restore and selected-FF read/gate join explicitly. Append 160 guards after the unchanged manifest prefix; no Makefile change.
+- [x] Pass 17 installed tests, including 466 normalized full-state prefixes, native32/semantic controls, real helpers and 41 raw plus 41 normalized caller windows. Qualify ten GNU links, 96 code-rebased guest cases, both profiles/72 neighbors and all seven actual Make commands.
+- [x] Reproduce the first 484-byte ELF prediction with only target code/extent changed, zero metadata exceptions, all 6,057 addresses, 6,056 other bodies and 189,088 protected Game-data bytes fixed. Bank tools38eefad first; preserve 1,274 old mirror hashes. Fresh Game2991/4828, total3664/5501, 1,837 different/zero drift. README aggregates only.
+- [ ] Recover the adjacent 604-word func_15087350 stub, frame0x1C8, with its full argument/helper/provider contract. Prior bounded vector caller windows do not qualify its full logic. Keep the installed setup/vector/spline/dispatcher baseline fixed; wider Game work stays open.
+
 ## Route Setup Initial S7 Capture And Delayed Stores - 2026-10-18
 
 [Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
 
 - [x] Restore the literal nine-word initial selector/S7/delayed-seed-store block in experimental func_150870D0. Preserve 160 words/frame 0x60 and 72 neighbors; improve 43 to 39 raw differences.
 - [x] Pass eight focused tests, including 472 actual S7/unwritten-seed observations, an effective old-model negative and a four-node later-role witness. Close cut 43 and improve exact private memory/access prefixes from 140 to 174 of 465. Bank tools b12e663 first; preserve 1,272 old mirror hashes.
-- [ ] Restore the seed reload order at the new cut-60 boundary and the later S7=after / FP=before roles. Ordinary output equality is not matching; production, README and installed totals remain fixed with zero new credit.
-- [ ] Complete the same function's remaining all-word/binding, private/alias, actual padding/Make, rebase, first whole-ELF prediction, installation, audit and recount gates.
+- [x] Restore the seed reload order and later S7=after / FP=before roles in the qualified normalized body from Note1568. Raw C remains non-matching; installed all-word/private-state/link proof, not ordinary output equality, now earns credit.
+- [x] Complete the same function's all-word/binding, private/alias, actual padding/Make, rebase, first whole-ELF prediction, installation, audit and fresh recount gates in Note1568, retaining the documented finite/native/provider boundaries.
 
 ## Route Record Setup Recovery And Private Order Boundary - 2026-10-18
 
@@ -15,8 +24,8 @@
 
 - [x] Recover complete experimental func_150870D0 C with the proper three-argument interface, 160-word/frame-0x60 shape, original S0/S1 walk roles and 43 raw differences. Preserve all 72 neighbors and frozen production inputs.
 - [x] Pass six focused tests: 1,259 guest cases, two 1,286-case native32 profiles/five effective controls, real helpers, 41 retail-only caller windows and fail-closed input/binding checks. Bank tools 483ddb2 first and preserve 1,270 mirror hashes.
-- [x] Restore the initial S7 result across the second helper and its delayed seed stores in Note 1567. The broader lifetime/private-order work remains open: the new cut 60 and later S7/FP swap are tracked above. No installation or matching credit; production/README/installed counts remain fixed.
-- [ ] Complete source-derived all-word/binding matching, private/alias qualification, actual padding/Make, independent rebases, first whole-ELF prediction, installation, linked audit and fresh recount for this same function.
+- [x] Restore the initial S7 result and delayed stores in Note1567, then close the broader lifetime/private-order gaps in the installed normalized result from Note1568. Preserve the earlier raw-C failures as diagnostics; credit comes from the linked match.
+- [x] Complete source-derived normalized all-word/binding matching, private/alias qualification, actual padding/Make, independent rebases, first whole-ELF prediction, installation, linked audit and fresh recount in Note1568.
 
 ## Route Vector Installed Byte Match - 2026-10-18
 
@@ -25,7 +34,7 @@
 - [x] Install complete typed func_15088F30 and its 83-row closed normalization, retaining all source origins, two saved invariant homes and the complete guard prefix. No Makefile change.
 - [x] Pass 13 installed tests, including all five direct retail interfaces, 144 complete production C caller cases and 576 bounded retail-only windows. Keep the unrecovered three-word func_15087350 caller and finite/provider proof limits explicit. Qualify the seven actual Make commands and retain all 72 neighbors.
 - [x] Reproduce the first 243-byte whole-ELF prediction with only target code/extent changed, all 6,057 addresses/other bodies and 189,088 protected Game-data bytes fixed. Bank tools a48f19d first; preserve 1,268 old mirror hashes. Fresh Game 2990/4828, total 3663/5501, 1,838 different/zero drift; README aggregates only.
-- [x] Recover the adjacent 160-word route-record setup in the isolated experiment from Note 1566, retaining this installed vector/spline/dispatcher baseline. Production conversion and exact matching remain open under the new section's unchecked gates; the larger caller and wider Game work stay open.
+- [x] Recover the adjacent 160-word route-record setup in Note1566 and complete production installation/exact matching in Note1568, retaining this installed vector/spline/dispatcher baseline. The larger caller and wider Game work stay open.
 
 ## Route Vector Saved Roles And Isolated Layout Match - 2026-10-18
 

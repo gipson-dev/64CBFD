@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Record Setup Installed Byte Match
+
+[Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
+Install complete typed func_150870D0 C with a 160-word/frame0x60 normalized
+match. Keep raw37 separate from the explicit saved-role/return/join recipe,
+including one coalesced copy and an epilogue-derived RA restore. Seventeen
+installed tests pass; actual Make and the first 484-byte ELF prediction agree,
+with all other code/data/addresses fixed and zero metadata exceptions.
+Tools 38eefad first; preserve 1,274 mirror hashes. Fresh Game2991/4828 (61.95%),
+total3664/5501 (66.61%), 1,837 different/zero drift. README aggregates only.
+Next the adjacent 604-word func_15087350, still a source stub.
+
 ## 2026-10-18 Route Setup Initial S7 Capture And Delayed Stores
 
 [Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):

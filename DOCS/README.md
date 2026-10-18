@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route record setup installed byte match](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
+  complete typed three-argument C, 160 words/frame0x60 normalized exactly, with
+  the raw37/explicit return-and-read-join distinctions retained. Seventeen
+  installed tests and actual Make reproduce the first 484-byte ELF prediction;
+  all other code/data/addresses remain fixed. Tools38eefad first. Fresh Game
+  2991/4828, total3664/5501; next604-word func_15087350 stub.
 - [Route setup initial S7 capture and delayed stores](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
   160-word/frame-0x60 experimental C improves 43 to 39 differences. Nine initial
   words match literally, with eight tests and 472 real-helper observations.

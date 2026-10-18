@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
+Install complete three-argument func_150870D0 C, normalized160/frame0x60.
+Raw37 remains documented; explicit coalescing/return-delay/read-join changes
+restore all words and private ordering. Seventeen installed tests, actual
+Make and the first 484-byte whole-ELF prediction pass, without metadata
+exceptions or other code/data/address changes. Tools38eefad first; preserve
+1,274 mirror hashes. Fresh Game2991/4828, total3664/5501, zero drift.
+Next604-word func_15087350; larger Game matching remains active.
+
+2026-10-18:
 [Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md):
 Recover the original nine-word initial selector/S7/delayed-store block in
 experimental func_150870D0; 160 words/frame 0x60, 43 to 39 differences, 72

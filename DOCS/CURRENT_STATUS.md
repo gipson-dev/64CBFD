@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b12e663; tools are committed before the consumer pin.
+  checkpoint pins tools 38eefad; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route record setup installed byte-exact**:
+[Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md).
+Replace func_150870D0's placeholder with complete typed three-argument C and
+its 160-word/frame0x60 normalized match. Raw C remains 37 differences; the
+explicit recipe includes copy coalescing, an epilogue-derived return restore
+and the restored speculative read/gate join. Seventeen installed tests pass,
+including full normalized-state prefixes, native32, callers, actual Make and
+independent rebases. The first 484-byte ELF prediction reproduces with zero
+metadata exceptions; all other bodies/addresses/protected data stay fixed.
+Tools **38eefad** first. Fresh Game **2991/4828 (61.95%)**, total **3664/5501
+(66.61%)**, **1,837 different / zero drift**. Conversion counts/bytes unchanged;
+README aggregates only. Next the adjacent 604-word func_15087350 stub.
 
 **Route setup initial S7 capture restored, matching still open**:
 [Note 1567](WORKING_NOTES/1567-route-record-setup-initial-s7-capture-and-delayed-stores-20261018.md).
