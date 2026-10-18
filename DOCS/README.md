@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Record progress/lap updater byte match](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
+  complete 212-word C updater matches after 88 bounded GPR/address guards.
+  Seven installed tests, connected real selector, signed lap/timer boundaries,
+  alias/fault/caller checks and the first 689-byte ELF prediction pass.
+  Preserve all 72 raw neighbors. Tools 64c3a9f first; next `func_15088D58`.
 - [Five-neighbor selector byte match](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
   typed 88-word selector and exact class priority match with sixty GPR/
   equality guards. Seven tests, all 7,776 category combinations, whole live

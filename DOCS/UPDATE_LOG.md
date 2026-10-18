@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-18 Record Progress/Lap Updater Byte Match
+
+[Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
+Recover complete `s32(u8*,f32)` C for `func_15088A08`: one boundary step,
+connected neighbor selection, ordered events, signed laps and bounded timers.
+All 212 words/frame0x18 match after 88 GPR/address guards; no operation,
+branch, delay, schedule or profile changes. Seven installed tests pass with
+7,556 guest cases, 72,867 native cases per O2/O0 UBSan profile, thirteen guest
+controls, independent links, real caller windows and fault prefixes. Exact
+first ELF delta is 628 code plus 61 symbol/string-table bytes; only target
+extent changes canonically. Preserve other code/addresses, all 72 raw
+neighbors, old guards and Game data. Tools **64c3a9f** first. Game
+**2,981/4,828**, total **3,654/5,501**, zero drift. README aggregates only;
+next `func_15088D58`. Wider matching goal remains active.
+
 ## 2026-10-18 Five-Neighbor Selector Byte Match
 
 [Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-18:
+[Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
+Recover complete `func_15088A08`: 212 words/frame0x18, 88 GPR/address guards,
+single-step fraction wrapping, real neighbor selection, ordered events and
+signed lap/timer gates. Seven installed tests, 7,556 guest cases, 72,867
+native cases per O2/O0 UBSan profile, effective controls, independent links,
+original caller windows and the first exact 689-byte ELF delta pass.
+Preserve all other bodies/addresses, 72 raw neighbors, prior guards, profile
+and Game data. Tools 64c3a9f first. Game 2,981/4,828, total 3,654/5,501;
+next `func_15088D58`. Native/guest and zero-division limits remain explicit.
+
+2026-10-18:
 [Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
 Recover `func_150888A8`: 88 words/frame8, sixty GPR/equality guards, exact
 class priority and byte ABI. Remove one redundant typed-call mask while

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 155037c; tools are committed before the consumer pin.
+  checkpoint pins tools 64c3a9f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record progress/lap updater restored and byte-matched**:
+[Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md).
+`func_15088A08` now has complete `s32(u8 *record,f32 delta)` C, 212 words/
+frame0x18, with one fractional boundary step, real neighbor selection,
+mode-specific events, signed lap arithmetic and capped best/finish timers.
+Eighty-eight expected-word guards normalize bounded GPR roles and five
+commutative address operands, not control flow, scheduling or floating ops.
+Seven installed tests pass: 7,556 three-way guest cases, 72,867 native cases
+per O2/O0 UBSan profile, thirteen guest/ten native controls, nine main plus
+three helper links, 144 rebased cases, 36 paired original caller windows
+and 1,355 access-fault prefixes. All 208 non-trap/non-duplicate words run;
+all 212 words match. Reject zero division without inventing hardware results;
+keep guest aliases/negative actor domains distinct from valid native objects.
+Actual whole ELF equals the first prediction: 628 code bytes plus 61 symbol/
+string-table encoding bytes. Only target extent changes canonically; other
+bodies/addresses, all 72 raw neighbors, prior guards, profile and protected
+Game data stay fixed. Tools **64c3a9f** first. Game **2,981/4,828 (61.74%)**,
+total **3,654/5,501 (66.42%)**, **1,847 different /zero drift**. Next: recover
+118-word/frame0xA8 `func_15088D58`, preserving its route-step loop and actor
+projection/angle outputs. Both caller parents remain production stubs;
+bounded caller windows are not whole-parent or gameplay acceptance.
 
 **Five-neighbor selector restored and byte-matched**:
 [Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md).

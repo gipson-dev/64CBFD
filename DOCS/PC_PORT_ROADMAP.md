@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Record Progress/Lap Updater Byte Match - 2026-10-18
+
+[Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
+
+- [x] Recover complete typed `func_15088A08`, one fractional step, ordered neighbor shifts/two real selector sites, mode-specific event flags, signed lap/divisor arithmetic, optional clamp and score/timer gates. All 212 words/frame0x18 match after 88 bounded GPR/address guards; preserve all floating ops, branches, delays, accesses and 26 bindings.
+- [x] Pass seven installed tests: 7,556 three-way guest cases, 72,867 native cases per O2/O0 UBSan profile, all 65,536 tick halfwords, thirteen guest/ten native controls, nine main/three helper links, 144 rebased cases, 36 paired original caller windows and 1,355 fault prefixes. Execute 208 non-trap/non-duplicate words; preserve the complete 212. Reject six zero-divisor crossings without inventing quotient/trap state. Keep native object and guest alias domains explicit.
+- [x] Reproduce the exact first 689-byte whole-link delta: 628 target-code, 25 symbol-table and 36 string-table bytes. Canonical definitions change only target extent12->848; preserve all 6,057 function addresses, other bodies, 72 raw neighbors, old guard prefix, compiler profile and 189,088 protected Game-data bytes. Bank tools 64c3a9f first.
+- [x] Measure Game 2,981/4,828, total 3,654/5,501, zero drift; README aggregate rows only. Preserve all 1,212 older mirror dirty hashes while adding only two absent task files. No mirror commit/reset, push or host/frozen Release action.
+- [ ] Recover `func_15088D58` (118 words/frame0xA8): audit its original caller at ROM0xAA98C, record lookup, saved S0..S6/F20 lifetime, five-neighbor type4 scan and repeated real progress calls with delta1.0. Preserve final projection helpers, actor position/angle stores and valid float-conversion/termination domains. Parent `func_15087350`, retained assembly and wider matching queues remain open.
+
 ## Five-Neighbor Selector Byte Match - 2026-10-18
 
 [Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Preserve all 72 raw neighbors while introducing the byte prototype: remove the redundant `value & 0xFF` expression at the typed call. The complete 34-word C caller remains exact and runs both real selector queries/stores in 144 paired executions.
 - [x] Pass seven installed tests: 16,584 three-way guest cases, all 7,776 category combinations in both modes, 16,832 native cases per O2/O0 UBSan profile, nine observable controls, nine links/144 rebased cases, all 85 reachable words and 472 fault prefixes. Keep native byte-parameter and raw guest-word domains distinct.
 - [x] Reproduce the exact first 256-byte whole-link delta: 254 code bytes and two target-size bytes. Audit all 6,057 bodies/addresses, canonical symbols, actual owner, old guard prefix, fixed profile and Game data. Bank tools 155037c first. Measure Game 2,980/4,828, total 3,653/5,501, zero drift; README aggregate rows only. Preserve all 1,210 older mirror dirty hashes.
-- [ ] Recover `func_15088A08` (212 words/frame0x18): audit pointer/float arguments and signed step result at three original call sites; preserve single-step fractional wrapping, neighbor-byte shifts/two matched selector calls, mode-specific event flags, signed halfword/byte lap arithmetic, divisor and native/guest fault boundaries, score/timer caps and post-store reloads. Caller parents remain stubs; wider Game queues stay open.
+- [x] Recover `func_15088A08` (212 words/frame0x18), preserving its pointer/float ABI, single-step wrapping, neighbor/event order, signed lap arithmetic, timer caps and post-store reloads; see Note1543. Caller parents remain stubs; wider Game queues stay open.
 
 ## Forward Record Actor Selector Byte Match - 2026-10-18
 

@@ -654,8 +654,119 @@ s32 func_150888A8(u8 excludedId, u8 recordIndex, s8 alternate) {
     return selected;
 }
 
-s32 func_15088A08() {
-    return 0;
+/* Advance one neighbor boundary and update signed lap and bounded timer records. */
+s32 func_15088A08(u8 *record, f32 delta) {
+    extern s8 D_800D23A8;
+    extern s8 D_800D2390;
+    extern s8 D_800E0BE7;
+    extern u8 D_800BE616;
+    extern s16 D_800E0C10[];
+    extern s32 D_800E0C18[];
+    s32 step = 0;
+    f32 fraction;
+    s32 neighbor;
+    s32 middle;
+    s32 next;
+    u8 *routes;
+    s32 kind;
+    s32 goal;
+    s32 actorId;
+    s32 time;
+    s32 elapsed;
+    s32 finish;
+    s16 *best;
+    s32 previousBest;
+
+    *(f32 *)(record + 8) += delta;
+    fraction = *(f32 *)(record + 8);
+    if (fraction < 0.0f) {
+        neighbor = record[0x2D];
+        middle = record[0x2C];
+        next = record[0x2B];
+        record[0x2E] = neighbor;
+        *(f32 *)(record + 8) = fraction + 1.0f;
+        record[0x2D] = middle;
+        record[0x2C] = next;
+        record[0x2B] = func_150888A8(middle, next, *(s8 *)(record + 0x2F));
+        step = -1;
+    } else if (fraction >= 1.0f) {
+        neighbor = record[0x2C];
+        middle = record[0x2D];
+        next = record[0x2E];
+        *(f32 *)(record + 8) = fraction - 1.0f;
+        record[0x2B] = neighbor;
+        record[0x2C] = middle;
+        record[0x2D] = next;
+        record[0x2E] = func_150888A8(middle, next, *(s8 *)(record + 0x2F));
+        step = 1;
+        if (D_800D23A8 == 0) {
+            routes = D_800D2350;
+            kind = routes[record[0x2C] * 0x10 + 0xF];
+            if (kind == 5) {
+                D_800D2390 = 1;
+                kind = routes[record[0x2C] * 0x10 + 0xF];
+            }
+            if (kind == 6) {
+                D_800D2390 = 2;
+            }
+        } else {
+            routes = D_800D2350;
+            kind = routes[record[0x2C] * 0x10 + 0xF];
+            if (kind == 7) {
+                D_800D2390 = 1;
+                kind = routes[record[0x2C] * 0x10 + 0xF];
+            }
+            if (kind == 8) {
+                D_800D2390 = 2;
+                kind = routes[record[0x2C] * 0x10 + 0xF];
+            }
+            if (kind == 9) {
+                D_800D2390 = 3;
+            }
+        }
+    }
+    if (step != 0) {
+        goal = D_800E0BE7;
+        *(s16 *)(record + 0x24) = *(s16 *)(record + 0x24) + step;
+        actorId = *(s8 *)(record + 0x31);
+        *(s8 *)(record + 0x27) = *(s16 *)(record + 0x24) / *(s8 *)(record + 0x26);
+        if (D_800BE616 != 0 && goal < *(s8 *)(record + 0x27)) {
+            *(s8 *)(record + 0x27) = goal + 1;
+        }
+        if (*(s8 *)(record + 0x28) < *(s8 *)(record + 0x27)) {
+            *(s8 *)(record + 0x28) = *(s8 *)(record + 0x27);
+            if (actorId < D_8008FD90 && *(s8 *)(record + 0x30) == 0) {
+                time = *(s32 *)(record + 0x1C);
+                if (time > 0) {
+                    if (goal >= *(s8 *)(record + 0x28)) {
+                        best = D_800E0C10 + actorId;
+                        elapsed = (u32)time - *(u32 *)(record + 0x18);
+                        if (elapsed >= 32001) {
+                            elapsed = 32000;
+                        }
+                        previousBest = *best;
+                        if (previousBest <= 0 || elapsed < previousBest) {
+                            *best = elapsed;
+                        }
+                        *(s32 *)(record + 0x20) = elapsed;
+                    }
+                    if (goal == *(s8 *)(record + 0x28)) {
+                        finish = *(s32 *)(record + 0x1C);
+                        if (finish >= 360001) {
+                            finish = 360000;
+                        }
+                        D_800E0C18[actorId] = finish;
+                    }
+                }
+            }
+            if (goal == *(s8 *)(record + 0x28)) {
+                *(u32 *)(record + 0x18) = 0u - *(u32 *)(record + 0x1C);
+            } else if (*(s8 *)(record + 0x28) < goal) {
+                *(s32 *)(record + 0x18) = *(s32 *)(record + 0x1C);
+            }
+        }
+    }
+    return step;
 }
 
 s32 func_15088D58() {
