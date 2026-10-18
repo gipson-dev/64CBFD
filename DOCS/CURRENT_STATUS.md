@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f81bd64; tools are committed before the consumer pin.
+  checkpoint pins tools e1ce81b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Mode-dependent record heading setter restored and directly byte-matched**:
+[Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md).
+`func_15087EF0` now emits all 53 words/frame0x20 directly from typed void C,
+with no guards or build changes. Preserve the captured record pointer,
+post-helper mode/speed reads and distinct ordered float predicates, including
+quiet NaNs. Seven installed tests pass: 3,168 paired guest cases, 32 extra
+null/wide-index/helper-effect cases, 403,712 native cases per O2/O0 UBSan
+profile, nine effective controls, six independent links/288 rebased cases,
+576 bounded caller windows and 512 fault prefixes. The containing production
+parent remains a stub. All 72 raw neighbors stay fixed; actual ELF equals
+its first prediction: 155 target-code bytes plus one extent byte. Other
+bodies/addresses/symbols, guards/build and data stay fixed. Tools e1ce81b first.
+Game **2,977/4,828 (61.66%)**, total **3,650/5,501 (66.35%)**, 1,851 different,
+zero drift. Next `func_150882E4`, a 51-word packed record-separation query.
 
 **Record-driven heading clamp restored and directly byte-matched**:
 [Note1538](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md).

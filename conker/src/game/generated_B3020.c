@@ -311,8 +311,32 @@ void func_15087E54(s32 recordIndex, u8 *actor) {
     }
 }
 
-s32 func_15087EF0() {
-    return 0;
+/* Select a wrapped heading offset from the live mode and record speed. */
+void func_15087EF0(s32 recordIndex, u8 *actor) {
+    extern u16 func_1505A630(f32, f32, s32);
+    extern s8 D_800D23A8;
+    u8 *record;
+    u16 angle;
+    u16 heading;
+
+    if (D_800872A0 != 0) {
+        record = D_800872A0 + recordIndex * 0x84;
+        angle = func_1505A630(*(f32 *)(record + 0x10), *(f32 *)(record + 0x0C), 0);
+        if (D_800D23A8 == 0) {
+            if (*(f32 *)record < 0.5f) {
+                heading = angle + 0x4A00;
+            } else {
+                heading = angle + 0x3600;
+            }
+        } else {
+            if (*(f32 *)record >= 0.5f) {
+                heading = angle + 0x4A00;
+            } else {
+                heading = angle + 0x3600;
+            }
+        }
+        *(u16 *)(actor + 0x76) = heading;
+    }
 }
 
 // Matched with guarded final-pointer register normalization.

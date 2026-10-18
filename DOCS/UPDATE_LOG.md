@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Record Heading Setter Direct Byte Match
+
+[Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
+Recover typed void `func_15087EF0`, preserving its captured record, post-helper
+mode/speed loads and separate ordered float predicates. All 53 words/frame0x20
+match directly, without guards or build changes. Seven installed tests,
+403,712 native cases per profile and the 156-byte first ELF prediction pass.
+Preserve all 72 raw neighbors, other bodies/addresses/symbols, guards and data.
+The caller's production parent remains a stub; only its bounded gate/setup/
+call window is executed. Tools e1ce81b first. Game **2,977/4,828**, total
+**3,650/5,501**, zero drift. Root README aggregate rows only; next `func_150882E4`.
+
 ## 2026-10-18 Record Heading Clamp Direct Byte Match
 
 [Note1538](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):

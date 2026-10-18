@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Record heading setter direct byte match](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
+  captured record and live mode/speed predicates recover all 53 words without
+  guards or build changes. Seven tests and the 156-byte first whole-link
+  prediction pass; all 72 neighbors stay fixed. Game 2,977/4,828; next `func_150882E4`.
 - [Record heading clamp direct byte match](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):
   typed u16 angle lifetimes recover all 39 words without guards or build
   changes. Seven tests and the 126-byte first whole-link prediction pass;
