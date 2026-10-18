@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
+Joint335/frame120 C retains all opening roles and SP+0x48;575 full memories
+match. Eleven tests pass with240 null fault prefixes,1458 first-call prefixes,
+two data rebases and a seven-entry/2734-iteration integer-prefix proof.
+Reproduce/fix a bounded review's CTC1 liveness finding; full suffix remains
+unproved. Toolsd818afc first. No production/README/totals change or match
+credit. Next analyze14 extra prefix words and69 aligned suffix differences.
+
+2026-10-18:
 [Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
 Normal typed-loop C recovers334/frame120 and all six opening saved roles;
 eight tests pass, including240 null fault prefixes and one owned compiler

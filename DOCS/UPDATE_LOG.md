@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Projection Call Spill And Integer Prefix
+
+[Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
+Complete semantic335-word/frame120 C jointly restores opening saved roles and
+SP+0x48. All575 full memories agree; eleven tests pass, including240 null
+fault prefixes and1458 first-call prefixes. Integer-prefix cutpoint proof
+checks seven entry/2734 iteration paths and two independent rebases. A bounded
+tool-free review's CTC1 liveness counterexample is independently reproduced,
+fixed and regression-tested. Tools **d818afc** first. No production/README or
+totals change, install or matching credit. Recover14 extra prefix words and
+69 aligned suffix differences before full-parent qualification/installation.
+
 ## 2026-10-18 Projection Normal-Profile Roles And Current Node
 
 [Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):

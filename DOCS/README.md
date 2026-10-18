@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Projection call spill and integer-prefix qualification](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
+  335/frame120 restores opening roles and SP+0x48 jointly;575 full memories
+  and eleven tests pass. Prefix-only proof, two rebases and a reconciled
+  liveness fix;14 extra prefix words/69 aligned suffix differences remain.
+  Toolsd818afc first; no production or matching-credit change.
 - [Projection normal-profile roles and current node](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md):
   334/frame120 recovers six opening roles and240 null fault prefixes. Eight
   tests and an owned compiler capture identify the remaining SP+0x48 spill loss;

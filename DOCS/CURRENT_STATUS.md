@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c77fcd2; tools are committed before the consumer pin.
+  checkpoint pins tools d818afc; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Projection call spill recovered; integer prefix qualified, parent still open**:
+[Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md).
+335/frame120 jointly restores opening roles and SP+0x48; all575 full memories
+agree, with445/575 public traces. Eleven tests pass, including240 null fault
+prefixes,1458 first-call prefixes and a seven-entry/2734-iteration prefix
+proof with two rebases. One bounded review exposes a latent CTC1 liveness
+gap; independently reproduce, fix and test it. Tools **d818afc** first.
+No install, guards, production/README change or new matching credit. Analyze
+the14 extra prefix words and69 aligned suffix differences; full suffix/FPU,
+native/rebase/fault/normalization/installation gates remain open.
 
 **Projection normal-profile roles recovered; joint layout still fails**:
 [Note1555](WORKING_NOTES/1555-projection-normal-profile-roles-and-current-node-allocation-20261018.md).
