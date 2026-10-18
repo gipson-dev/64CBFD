@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a71464c; tools are committed before the consumer pin.
+  checkpoint pins tools c767262; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update frame and original save layout recovered**:
+[Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md).
+The complete private func_15087350 C is now589 words/frame456, with original
+GP/FP saves and argument homes; first15 and last11 words match directly.
+Eighteen tests pass, including703 real-helper cases and372 screen cases.
+One owned compiler capture of the older point locates its480-byte frame in
+upstream locals; no debugger rerun in tests. Opening prefixes improve to28/34;
+cut14 first rejects T6/T8 argument temporaries. Tools **c767262** first,
+including the early recapture guard that preserves completed evidence.
+Still15 words short/481 differences: no production/README/count change or
+credit. Continue this same604-word function's roles, homes and literal extent,
+then native/private/all-word and production integration gates.
 
 **Route actor update complete candidate, frame matching still open**:
 [Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md).

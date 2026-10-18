@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update frame and save layout](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
+  complete589-word/frame456 C restores original saves/argument homes; first15
+  and last11 words match directly. Eighteen tests and one reused owned
+  compiler capture qualify the progress. Cut14 still rejects argument
+  temporaries;15 words remain missing. Tools c767262 first, zero installation/
+  matching credit. Continue this same function before production integration.
 - [Route actor update recovery and frame boundary](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
   complete private604-word caller recovery; 12 tests with real helpers,
   independent float reference, ranking/width controls and both caller windows.

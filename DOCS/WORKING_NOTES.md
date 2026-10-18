@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
+Recover the complete589-word/frame456 func_15087350 source point, original
+GP/FP saves and argument homes, first15 exact words and last11 exact return
+words. Eighteen tests pass;703 real-helper cases,372 screen cases and16
+caller windows. One owned compiler capture is reused, not rerun. Opening
+28/34 prefixes agree; cut14 rejects T6/T8. Tools c767262 first; preserve1,281
+mirror hashes. No production/README/count change or credit. Continue the same
+604-word function's extent, remaining homes/roles and qualification gates.
+
+2026-10-18:
 [Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
 Recover the complete private func_15087350 route correction/look-ahead/ranking
 body and typed interface. Twelve tests pass, including703 real-helper cases,

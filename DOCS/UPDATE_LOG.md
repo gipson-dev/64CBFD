@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Frame And Save Layout
+
+[Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
+Recover full func_15087350 C at589 words/frame456 with original GP/FP save
+slots and incoming homes. First15 and last11 words match directly. Eighteen
+tests pass with703 real-helper cases,372 new screen cases, seven semantic
+negatives and16 actual caller windows. One owned compiler capture locates
+the old480-byte frame upstream; tests reuse it. Opening28/34 prefixes agree,
+but cut14 still rejects argument temporaries. Tools c767262 first; preserve
+1,281 old mirror hashes. Still15 words short/481 differences, no production/
+README/count change or credit. Continue the same function's extent/homes/roles.
+
 ## 2026-10-18 Route Actor Update Recovery And Frame Boundary
 
 [Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
