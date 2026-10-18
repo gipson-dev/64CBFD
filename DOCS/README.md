@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement turn-role certificate and argument controls](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
+  raw C remains 392 differences; seven certified research-only rewrites give
+  385 differences and 406 exact opening words. Eight full/two focused tests
+  pass; no production guards, installation or credit.
 - [Movement float lifetimes and field heading recovery](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
   complete 959-word/frame-0x80 candidate, 392 differences and 361 exact opening
   words. Eight tests pass, including 4,600 active prefixes; the FP gap is closed

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
+Certify seven bounded turn temporary-role words in private output: raw C still
+392 differences; normalized 385, first 406 words exact, 959 words/frame 0x80.
+Eight full and two focused tests pass, with 480 kernel cases / 5,900 active
+prefixes. Tools a0ea7dd first; all 303 inputs, production, fresh totals and
+README unchanged. No production guards, installation or credit; same target.
+
+2026-10-17:
 [Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
 Recover movement cap/smoothing FP lifetimes and the direct heading field
 update: complete 959-word/frame-0x80 C, 392 differences, 361 exact opening

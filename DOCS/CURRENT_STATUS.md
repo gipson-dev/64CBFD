@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7a40f3f; tools are committed before the consumer pin.
+  checkpoint pins tools a0ea7dd; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **bounded turn-role certificate qualified**:
+[Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md).
+Raw `func_150F34F4` C remains 959 words/frame `0x80`, 392 differences. Seven
+private research rewrites leave 385 differences and 406 exact opening words.
+Eight tests and two focused checks pass, including 480 adverse kernel cases
+and 5,900 normalized active prefixes. No production guards/installation/credit.
+Tools a0ea7dd first; 303 protected entries, production, fresh totals and README
+unchanged. Continue the same controller/flag GPR lifetimes at `0x150F3B4C` /
+`0x150F3B58`, then all remaining whole-function gates.
 
 Movement **float lifetimes and field heading recovered**:
 [Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md).

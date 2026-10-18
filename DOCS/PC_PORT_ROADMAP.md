@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Turn Role Certificate And Argument Controls - 2026-10-17
+
+[Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
+
+- [x] Screen ten complete argument/width forms; reject four overflow controls without trimming and retain the 392-difference raw C baseline.
+- [x] Certify seven local temporary-role rewrites in a 35-word window; the actual private padder/linker gives 385 differences and 406 exact opening words, preserving 959 words/frame 0x80 and eleven neighbors.
+- [x] Pass eight full tests and two focused checks: 38 rejection controls, 480 adverse kernel cases, complete three-way public corpus and 5,900 normalized active prefixes; preserve all prior disabled/mode-0 paths and 303 protected entries.
+- [x] Bank tools a0ea7dd first; preserve 1,160 prior mirror hashes / 1,162 paths, fresh totals and root README. Zero production guards, installation or matching credit; frozen Release untouched.
+- [ ] Continue the same `func_150F34F4` controller/flag GPR order at `0x150F3B4C` / `0x150F3B58`, then all remaining whole-function literal/private/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Float Lifetimes And Field Heading Recovery - 2026-10-17
 
 [Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
@@ -8,7 +19,7 @@
 - [x] Qualify complete 959-word/frame-0x80 C with 392 differences, first 361 words exact, eight tests and actual UGEN-to-AS1 provenance.
 - [x] Verify 4,600 active prefixes across 100 states, all prior disabled/mode-0 private paths, 149 native cases/profile and fired cap boundary/control cases; preserve 301 protected entries and every installed byte. No installation/credit.
 - [x] Bank tools 7a40f3f first; preserve 1,158 prior mirror hashes / 1,160 paths, fresh aggregate totals and root README. Frozen Release untouched.
-- [ ] Continue the same `func_150F34F4` temporary GPR order at `0x150F3A98`, private gap at `0x150F3AB8` and all remaining literal/caller/first-image gates.
+- [x] Certify the bounded turn GPR correspondence in [Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md); remaining whole-function literal/private/caller/first-image gates stay open above, with no production changes.
 - [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
 
 ## Movement Preloads And Smoothing Lifetimes - 2026-10-17

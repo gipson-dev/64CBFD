@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Turn Role Certificate And Argument Controls
+
+[Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
+Retain complete 959-word/frame-0x80 `func_150F34F4` C with 392 differences;
+certify only seven local GPR rewrites in private research output, leaving 385
+differences and 406 exact opening words. Eight full/two focused tests pass,
+including 480 adverse kernel cases and 5,900 normalized active prefixes.
+Tools a0ea7dd first; preserve 303 inputs, production, totals and README.
+No production guards/installation/credit; continue the same controller/flag gap.
+
 ## 2026-10-17 Movement Float Lifetimes And Field Heading Recovery
 
 [Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
