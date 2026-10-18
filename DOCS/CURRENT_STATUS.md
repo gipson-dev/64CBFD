@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3cc55c3; tools are committed before the consumer pin.
+  checkpoint pins tools 5abdd73; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Enabled record tag query restored and byte-matched**:
+[Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md).
+`func_15022B08` now has complete typed boolean-return C, 39 words/no frame,
+including the unreachable increment. Nine relocation-aware guards normalize
+only a closed A0/A2 allocation cycle and independent pointer-load schedule;
+no inserted/omitted instructions or profile changes. Seven installed tests
+pass: 2,688 raw/normalized/retail cases, 16,384 native cases per O2/O0 UBSan
+profile, seven result controls, nine independent links, 162 full restored-C
+caller cases, 48 other retail windows and 472 access-fault prefixes. All 56
+neighbors and the complete 84-function caller object stay fixed. Actual ELF
+equals its first prediction: 117 target-code bytes plus one extent byte.
+The old guard prefix and data remain unchanged. Tools 5abdd73 first. Game
+**2,975/4,828 (61.62%)**, total **3,648/5,501 (66.32%)**, 1,853 different,
+zero drift. Next `func_15087E54`, a 39-word angular clamp with asymmetric limits.
 
 **Gated category pass restored and directly matched**:
 [Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md).

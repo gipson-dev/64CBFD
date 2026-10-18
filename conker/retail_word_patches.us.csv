@@ -17295,3 +17295,12 @@ generated_12DAB0,func_15101148,0x20,0x00000000,0x01E02025,-,-,Normalize first ow
 generated_12DAB0,func_15101090,0x10,0x95C401A0,0x95CF01A0,-,-,Normalize unsigned handle register and call-delay argument copy,,,false
 generated_12DAB0,func_15101090,0x14,0x50800004,0x51E00004,-,-,Normalize unsigned handle register and call-delay argument copy,,,false
 generated_12DAB0,func_15101090,0x20,0x00000000,0x01E02025,-,-,Normalize unsigned handle register and call-delay argument copy,,,false
+generated_49D30,func_15022B08,0x14,0x00053080,0x00052080,-,-,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x1C,0x3C040000,0x3C060000,R_MIPS_HI16:D_800C35C8,R_MIPS_HI16:D_800C35C8,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x20,0x00862021,0x00C43021,-,-,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x2C,0x8C840000,0x24A50000,R_MIPS_LO16:D_800C35C8,R_MIPS_LO16:D_800C35F0,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x30,0x24A50000,0x25080000,R_MIPS_LO16:D_800C35F0,R_MIPS_LO16:D_800DBEF4,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x34,0x25080000,0x8CC60000,R_MIPS_LO16:D_800DBEF4,R_MIPS_LO16:D_800C35C8,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x3C,0x948E0000,0x94CE0000,-,-,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x4C,0x00A67821,0x00A47821,-,-,Normalize closed query register cycle and independent pointer-load schedule,,,false
+generated_49D30,func_15022B08,0x8C,0x24840002,0x24C60002,-,-,Normalize closed query register cycle and independent pointer-load schedule,,,false

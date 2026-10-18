@@ -824,7 +824,25 @@ s32 func_150229E4() {
     return 0;
 }
 
-s32 func_15022B08() {
+/* Find an enabled descriptor whose tag matches the selected record. */
+s32 func_15022B08(s32 recordIndex, s32 category) {
+    extern u8 *D_800DBEF4;
+    s32 i = 0;
+    u16 *enabled;
+
+    if (D_800C363A[category] > 0) {
+        enabled = D_800C35C8[category];
+        do {
+            if (*enabled != 0) {
+                if (D_800C35F0[category][i * 8 + 2] ==
+                    ((u8 (*)[0xA0])D_800DBEF4)[recordIndex][0x72]) {
+                    return 1;
+                }
+            }
+            i++;
+            enabled++;
+        } while (i < D_800C363A[category]);
+    }
     return 0;
 }
 

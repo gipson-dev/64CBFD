@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Enabled record tag query byte match](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
+  complete 39-word C query matches with nine closed register/schedule guards.
+  Seven tests and the 118-byte full-link prediction pass; all neighbors and
+  the caller object stay fixed. Game 2,975/4,828; next `func_15087E54`.
 - [Gated category pass direct byte match](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
   typed void C restores all 39 words and live callback-pair counts without
   guards or build changes. Seven tests and the 131-byte full-link prediction

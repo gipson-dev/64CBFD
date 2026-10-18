@@ -18,7 +18,7 @@ u8 *func_151149AC(u32 arg0);
 u8 *func_15083E90(s32 arg0);
 f32 func_150484A0(f32 arg0, f32 arg1);
 s32 func_15195FB0();
-s32 func_15022B08();
+s32 func_15022B08(s32 recordIndex, s32 category);
 
 f32 func_151172D8(u8 *arg0, f32 arg1);
 f32 func_15117518(u8 *arg0, f32 arg1);

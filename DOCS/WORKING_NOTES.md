@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
+Recover complete boolean `func_15022B08`: 39 words/no frame, nine closed
+register/scheduling guards, no inserted/omitted words. Seven installed tests
+and the exact 118-byte prediction pass. Typed caller declaration preserves
+its complete 84-function object; all 56 owner neighbors, other code/addresses,
+symbols, old guard bytes and data remain fixed. Tools 5abdd73 first. Game
+2,975/4,828, total 3,648/5,501; next angular clamp `func_15087E54`.
+
+2026-10-18:
 [Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
 Recover `func_15022848` with the exact-one gate, context flag and live count
 after each ordered callback pair: all 39 words/frame0x28 match directly with

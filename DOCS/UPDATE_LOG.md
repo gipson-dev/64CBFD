@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Enabled Record Tag Query Byte Match
+
+[Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
+Recover complete typed boolean query `func_15022B08`, preserving all 39 words,
+no frame and the dead increment. Nine relocation-aware guards normalize only
+a closed A0/A2 cycle and independent pointer-load schedule. Seven installed
+tests and the exact 118-byte ELF prediction pass. Correct the caller's
+declaration while preserving its complete object; all other bodies/addresses,
+symbols, previous guard bytes and data stay fixed. Tools 5abdd73 first. Game
+**2,975/4,828**, total **3,648/5,501**, zero drift. README aggregate rows only;
+next angular clamp `func_15087E54`. Two other parent bodies remain stubs.
+
 ## 2026-10-18 Gated Category Pass Direct Byte Match
 
 [Note1536](WORKING_NOTES/1536-gated-category-pass-direct-byte-match-20261018.md):
