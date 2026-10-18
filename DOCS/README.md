@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement preloads and smoothing lifetimes](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
+  complete 959-word/frame-0x80 candidate, 420 differences and 337 exact opening
+  words. Eight tests pass, including 160 complete mode-0 private states;
+  remaining literal/private gaps stay open, not installed or credited.
 - [Movement return boundary and full-width buttons](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
   complete 959-word/frame-0x80 candidate, 475 differences and 137 exact opening
   words. Disabled private path agrees in the bounded model; not installed.

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
+Recover movement preloads and smoothing lifetimes: complete 959-word/frame
+0x80 candidate, 420 differences, 337 exact opening words. Eight tests pass;
+880 active prefixes and all 160 mode-0 private states / 8,320 fault prefixes
+agree. Tools de8f5ff first; production, 299 protected entries, totals and README
+unchanged. Continue the same literal/private matching, no installation/credit.
+
+2026-10-17:
 [Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
 Recover the movement return boundary and full-width buttons: 959 words/frame
 0x80, 475 differences, first 137 words exact. Eight tests pass; bounded disabled

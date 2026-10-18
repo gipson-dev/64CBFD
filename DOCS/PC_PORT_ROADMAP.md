@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Preloads And Smoothing Lifetimes - 2026-10-17
+
+[Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
+
+- [x] Recover initializer/pickup scheduling and real smoothing/turn-step lifetimes without guards, extra locals, trimming or profile changes.
+- [x] Qualify complete 959-word/frame-0x80 C with 420 differences, first 337 words exact, eight passing tests and actual UGEN-to-AS1 provenance.
+- [x] Verify 880 active prefixes, all 160 mode-0 private states / 8,320 fault prefixes and all prior disabled paths; preserve 299 protected entries and all installed bytes. No installation/credit.
+- [x] Bank tools de8f5ff first; preserve 1,156 prior mirror hashes / 1,158 paths, fresh aggregate totals and root README. Frozen Release untouched.
+- [ ] Continue the same `func_150F34F4` at `0x150F3A38`, smoothing/private state at `0x150F3AB8`, then all remaining literal/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Return Boundary And Full-Width Buttons - 2026-10-17
 
 [Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
@@ -8,7 +19,7 @@
 - [x] Qualify complete 959-word/frame-0x80 C with 475 differences, first 137 words exact, eight tests and real UGEN-to-AS1 provenance.
 - [x] Verify 800 initial active prefixes plus all 80 bounded disabled final private states / 2,700 fault prefixes; preserve 297 protected entries and all first-image members. No installation/credit.
 - [x] Bank tools 22cdaac first; preserve 1,154 prior mirror hashes / 1,156 paths, aggregate totals and root README. No frozen Release action.
-- [ ] Continue the same `func_150F34F4` at `0x150F3718`, FPR4/FPR18 at `0x150F3A80` and remaining literal/private/caller/first-image gates.
+- [x] Recover the mode-0 preloads and initial smoothing allocation in [Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md); the remaining literal/private/caller/first-image gates stay open above.
 - [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
 
 ## Movement Controller Allocation And Pickup Access Order - 2026-10-17

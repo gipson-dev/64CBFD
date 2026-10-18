@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Preloads And Smoothing Lifetimes
+
+[Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
+Recover initializer/pickup scheduling and smoothing/turn-step lifetimes in
+complete `func_150F34F4`: 959 words/frame 0x80, 420 differences, first 337 words
+exact. Eight tests pass, including 880 active prefixes and all 160 mode-0
+private states / 8,320 fault prefixes. Tools de8f5ff first; all production,
+299 protected entries, fresh totals and README unchanged. Not installed or
+credited; continue the same velocity-allocation and smoothing/private gaps.
+
 ## 2026-10-17 Movement Return Boundary And Full-Width Buttons
 
 [Note1515](WORKING_NOTES/1515-movement-return-boundary-and-full-width-buttons-20261017.md):
