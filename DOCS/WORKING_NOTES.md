@@ -1,5 +1,14 @@
 # Working Notes
 
+2026-10-18:
+[Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
+Qualify the 149-word physics-call role window: fifteen new private rows,
+88 normalized differences / 633 exact opening words, with complete C still
+134 differences and 959/frame0x80. Injective local/continuation proof locks
+the call delay slot and all eighteen bindings. Private frontier advances to
+`0x150F3EE0` / 8,844 equal prefixes. No production guards/installation/credit;
+86 GPR fields and two address words remain in the same function.
+
 2026-10-17:
 [Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
 Recover all five coefficient read/store words in complete C: 134 raw

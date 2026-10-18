@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement physics-call register roles](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
+  fifteen new private rows give 88 normalized differences / 633 exact opening
+  words. Complete C stays 134 differences; bounded injective lifetime proof
+  and call-slot qualification do not install the body or earn matching credit.
 - [Movement coefficient read/store schedule](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
   complete C improves 139 to 134 differences, 103 with unchanged 31 private
   rows. Sixteen tests pass, including 640 coefficient cases / 320 old-C

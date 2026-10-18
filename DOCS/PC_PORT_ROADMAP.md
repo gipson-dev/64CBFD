@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Physics Call Register Roles - 2026-10-18
+
+[Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
+
+- [x] Qualify the 149-word GPR window through `func_15059140` and its delay slot: injective source/retail roles, 127 local states, 1,457 continuation states and all nine affected physical registers checked without an ABI-clobber shortcut.
+- [x] Preserve complete C/raw bytes at 134 differences, 959 words/frame0x80. Add fifteen private rows only: 46 total, 88 normalized differences and 633 exact opening words, with eleven padded neighbors and all relocation metadata retained.
+- [x] Advance the private frontier to `0x150F3EE0`: 100 active states / 8,844 equal prefixes, with disabled and mode-zero paths still complete. No production guards, installation or matching credit.
+- [x] Pass eighteen tests in 213.375s: 89 controls, 576 poisoned call cases / 384 mutations, complete public/native/alias/counter corpus and measured old/new fault prefixes. Reuse the unchanged compiler capture explicitly.
+- [x] Bank tools d5406cd first, then consumer documentation and pin; preserve 317 inputs, 1,174 prior mirror hashes / 1,176 dirty paths, installed bytes, totals and main README. No push, Claude call or frozen Release action.
+- [ ] Continue the same function at `0x150F3ED8`: 86 GPR-field-only differences and the independent address-setup order at `0x150F4098/9C`. Keep full matching/private/caller/provider gates, both fade gaps, runtime acceptance and wider Game goal open.
+
 ## Movement Coefficient Read Store Schedule - 2026-10-17
 
 [Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):
@@ -8,8 +19,8 @@
 - [x] Keep the 31-row research table byte-identical: 103 normalized differences and 478 exact opening words. No new guards, installation or matching credit.
 - [x] Pass sixteen tests: 640 coefficient cases / 320 old-C rejections, full public/FP/provider corpus, 397 native cases/profile, prior counter/alias/private gates and fresh 74-event/687-record trace with 52 layout/site controls.
 - [x] Bank tools 12befaa first; preserve 315 inputs, 1,172 prior mirror hashes / 1,174 paths, installed bytes, totals and main README. One packet-only advisory independently reconciled; no push or Release action.
-- [ ] Qualify the same function's fifteen GPR-field changes at words478..626 through `func_15059140`, with entry/identity/CFG/live-out proofs, effective controls, actual padding and extended prefixes. The static candidate map is not yet a certificate.
-- [ ] Keep 101 GPR-field-only / two other words, remaining full-function gates, both fade lifetime gaps, provider/runtime acceptance and wider Game objective open.
+- [x] Qualify the same function's fifteen GPR-field changes at words478..626 through `func_15059140`; the bounded entry/identity/CFG/live-out, control, padder and prefix qualification is recorded in Note1525 above.
+- [ ] Continue the remaining 86 GPR-field-only / two other words after Note1525; keep full-function gates, both fade lifetime gaps, provider/runtime acceptance and wider Game objective open.
 
 ## Movement Scalar Lifetimes And Counter Scope - 2026-10-17
 

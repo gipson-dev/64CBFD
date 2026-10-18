@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-18 Movement Physics Call Register Roles
+
+[Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
+Qualify fifteen GPR-field changes through `func_15059140` and its delay slot.
+Raw complete C is unchanged at 134 differences; 46 private rows give 88
+normalized differences and 633 exact opening words, still 959/frame0x80.
+The injective role map has 127 local / 1,457 continuation states, with both
+sides' live-out lifetimes checked. Private frontier advances to `0x150F3EE0`.
+No production guards, installation or credit; remaining 86 GPR fields and
+two address-setup words keep full matching and the wider Game goal open.
+Eighteen tests pass, including 89 controls and 576 call cases / 384 mutations.
+Tools d5406cd first; 317 inputs, production, totals and main README unchanged.
+
 ## 2026-10-17 Movement Coefficient Read Store Schedule
 
 [Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md):

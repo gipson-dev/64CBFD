@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-17
+Last verified: 2026-10-18
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 12befaa; tools are committed before the consumer pin.
+  checkpoint pins tools d5406cd; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **physics-call temporary roles qualified**:
+[Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md).
+The unchanged complete `func_150F34F4` still has 134 raw differences. Fifteen
+new private rows extend the 31-row research table to 46: 88 normalized
+differences and 633 exact opening words, still 959/frame0x80. Local and
+continuation proofs cover both sides of the injective map. The private
+frontier advances to `0x150F3EE0`, with 8,844 equal prefixes / 100 active
+states. Production, totals and main README remain unchanged; no installation
+or matching credit. Continue the same function at `0x150F3ED8`: 86 remaining
+GPR-field-only differences and the address schedule at `0x150F4098/9C`.
+Eighteen tests pass, including 89 effective controls and 576 poisoned call
+cases / 384 mutations. Tools d5406cd first; 317 inputs and prior mirror hashes
+preserved. No Claude call or frozen Release action.
 
 Movement **coefficient read/store schedule recovered**:
 [Note1524](WORKING_NOTES/1524-movement-coefficient-read-store-schedule-20261017.md).
