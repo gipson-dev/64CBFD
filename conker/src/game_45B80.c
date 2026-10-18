@@ -24,7 +24,7 @@ s32 func_150242F8(s32, s32);
 s32 func_1501EC38(s32);
 s32 func_15020EC4(s32);
 s32 func_1501E2F8(s32);
-s32 func_15087CC0(void);
+void func_15087CC0(void);
 void func_1504ADD0(void);
 s32 func_1510FC34(s32);
 void func_15094EA0(s32);

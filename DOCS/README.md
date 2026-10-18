@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route dispatcher direct byte match](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
+  all67 linked words/frame48 directly, no guard or Make change. Eight installed
+  tests cover1850 guest cases,396 fired fault prefixes,40 connected projection
+  cases,96 rebased cases and three1824-case native builds. The214-byte first
+  ELF prediction reproduces exactly; other bodies/data fixed. Toolsb0a32ea
+  first. Game2988/4828, total3661/5501, zero drift; next callee150896EC.
 - [Route projection native qualification and installed byte match](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
   all321 linked words exact using a target-only profile override and335 guards.
   Nine installed tests, three8225-case native builds,2148 fault prefixes and40

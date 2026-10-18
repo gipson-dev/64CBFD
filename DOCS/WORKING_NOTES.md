@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
+Install typed void dispatcher15087CC0, all67 words/frame48 directly. No new
+guards or profile change; preserve72 primary neighbors, projection override
+and16 caller-owner bodies. Eight installed tests:1850 guest cases,396 fired
+fault prefixes,40 connected projection cases,96 rebased cases and1824 native
+cases per build with seven controls. The214-byte ELF prediction reproduces;
+addresses/data fixed. Toolsb0a32ea first;1251 old mirror dirty hashes preserved.
+Fresh Game2988/4828, total3661/5501, zero drift. Next callee150896EC.
+
+2026-10-18:
 [Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
 Install complete projection C as a321-word/frame120 guarded match, preserving
 72 no-unroll neighbors and four GLOBAL_ASM bodies. Nine installed tests pass:

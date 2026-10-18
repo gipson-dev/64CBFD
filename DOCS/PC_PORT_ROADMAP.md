@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Dispatcher Direct Byte Match - 2026-10-18
+
+[Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
+
+- [x] Recover void func_15087CC0, signed actor slots/states/counts, live record-table/count reloads, request reset and all three call branches. The indexed actor-array expression emits all67 retail words/frame48 directly; no new guards, normalization or Makefile change.
+- [x] Pass eight installed tests:1850 guest cases (1844 independent public references and six private-stack aliases),396 fired root fault prefixes,40 actual projection/helper cases,96 cases across four independent symbol rebases and1824 native cases per O0/O2/O2+UBSan build. Seven native negatives fail semantically;84 word/binding controls,19 input guards and three mixed-stage controls remain strict. Other callee semantics and hardware traps stay outside acceptance.
+- [x] Reproduce the first214-byte whole-ELF prediction with all6057 addresses,6056 other bodies and189088 protected Game-data bytes/720 owners fixed. Preserve72 primary neighbors, the raw projection override and all16 caller-owner bodies after the void prototype edit. Bank tools **b0a32ea** first; preserve1251 prior mirror dirty hashes. Fresh Game2988/4828, total3661/5501,1840 different, zero drift. README aggregates only.
+- [ ] Recover func_150896EC (305 words/frame248), starting with its full retail body, direct caller interfaces and third argument. The dispatcher passes0/1 in its two alternate branches; its opaque provider tests do not restore or qualify this callee. Vector15088F30 and wider Game work remain open.
+
 ## Route Projection Installed Byte Match - 2026-10-18
 
 [Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Qualify complete semantic335-word/frame120 C with8225 native cases per O0/O2/O2+UBSan build and six effective controls. Preserve explicit aligned host-endian/NaN-class scope. Exercise seven actual Make commands, both GLOBAL_ASM passes, the isolated normal-profile override and real padder; preserve72 no-unroll neighbors and four assembly routines.
 - [x] Install only func_150891E8, its target-specific Make rule and335 complete word/binding guards (14 omissions,18 moved bindings). Pass nine installed tests,575 complete guest cases,2148 fired nonnull fault prefixes including780 helper accesses,40 actual retail-caller cases and353 effective padder controls. Hardware traps/status and unknown indirect callers remain outside acceptance.
 - [x] Reproduce the first974-byte whole-ELF prediction: all321 target words exact,6057 addresses fixed, other bodies unchanged and189088 protected Game-data bytes/720 owners intact. Bank tools **b61d10a** first; preserve all1248 previous mirror dirty-file hashes. Fresh Game2,987/4,828, total3,660/5,501,1841 different, zero drift. Root README aggregate rows only.
-- [ ] Recover dispatcher func_15087CC0 (67 words/frame48), including signed actor slots, live table/count reloads and all three call branches. Its40 connected projection-path cases do not restore its production stub or qualify the other callee. Vector15088F30, parent150896EC and wider Game work remain open.
+- [x] Recover and install dispatcher func_15087CC0, including signed actor slots, live table/count reloads and all three branches; see Note1559 for its direct67-word match and complete dispatcher qualification. The other callee remains opaque in that qualification. Vector15088F30, parent150896EC and wider Game work remain open.
 
 ## Projection Isolated Byte Match And Complete Observational Proof - 2026-10-18
 

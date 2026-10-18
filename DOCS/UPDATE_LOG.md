@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-18 Route Dispatcher Direct Byte Match
+
+[Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md):
+Replace func_15087CC0's placeholder with complete typed void route-dispatch C.
+All67 words/frame48 emit directly under the existing owner profile; guards
+and Makefile remain byte-identical. Its sole caller's declaration is corrected
+without changing any of that owner's16 bodies. Eight installed tests pass,
+including signed-byte boundaries, effectful helper mutations,396 fault prefixes,
+40 connected projection cases, four rebases and three1824-case native builds.
+The actual ELF reproduces its214-byte first prediction with all other code,
+addresses and protected data fixed. Tools **b0a32ea** first. Fresh Game2988/4828
+(61.89%), total3661/5501 (66.55%),1840 different and zero drift. README aggregate
+rows only; next recover callee150896EC, with vector15088F30 and wider work open.
+
 ## 2026-10-18 Route Projection Installed Byte Match
 
 [Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md):

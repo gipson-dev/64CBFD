@@ -262,8 +262,31 @@ s32 func_15087350() {
     return 0;
 }
 
-s32 func_15087CC0() {
-    return 0;
+/* Dispatch route records using their live actor slot and movement state. */
+void func_15087CC0(void) {
+    extern s8 D_800D23A9;
+    extern void func_150891E8(u8 *, u8 *);
+    extern s32 func_150896EC();
+    s32 i;
+    u8 *record;
+    u8 *actor;
+
+    D_800D23A9 = 0;
+    if (D_800872A0 != 0) {
+        for (i = 0; i < D_800D2398; i++) {
+            record = D_800872A0 + i * 0x84;
+            actor = &D_800CC2D0[*(s8 *)(record + 0x31) * 0x32C];
+            if (*(s32 *)(actor + 0x318) != 0) {
+                if (*(s8 *)(record + 0x30) >= 2) {
+                    func_150891E8(record, actor);
+                } else if (record[0x48] == 0) {
+                    func_150896EC(record, actor, 0);
+                } else if (*(s8 *)(record + 0x49) != 0) {
+                    func_150896EC(record, actor, 1);
+                }
+            }
+        }
+    }
 }
 
 void func_15087DCC(s32 arg0, s32 arg1) {

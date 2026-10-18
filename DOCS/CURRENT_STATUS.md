@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b61d10a; tools are committed before the consumer pin.
+  checkpoint pins tools b0a32ea; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route dispatcher directly byte-exact**:
+[Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md).
+Replace func_15087CC0's stub with typed void C; all 67 words/frame48 emit
+directly under the existing owner profile, with no new guards or Make changes.
+Update its sole direct caller's prototype; all 16 caller-owner bodies stay
+fixed. Eight installed tests pass:1,850 guest cases,396 fired fault prefixes,
+40 connected projection cases,96 rebased cases and1,824 native cases per
+O0/O2/O2+UBSan build with seven effective controls. The real ELF reproduces
+the214-byte first prediction; all other bodies/addresses/protected data stay
+fixed. Tools **b0a32ea** first. Fresh Game **2,988/4,828 (61.89%)**, total
+**3,661/5,501 (66.55%)**, **1,840 different /zero drift**. Conversion counts
+remain fixed; README aggregates only. Next recover func_150896EC (305 words,
+frame248), still a production stub. Vector15088F30 and wider Game work stay open.
 
 **Route projection installed byte-exact**:
 [Note1558](WORKING_NOTES/1558-route-projection-native-qualification-and-installed-byte-match-20261018.md).
