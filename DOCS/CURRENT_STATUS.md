@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ddd9d88; tools are committed before the consumer pin.
+  checkpoint pins tools d8111ab; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Rectangle **direct C improvement, 18 to six differences**:
+[Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md).
+`func_15095D34` now emits all twelve flip words directly after two source
+assignment-order changes. Still 346 words/frame0x88, now 205 literal opening
+words, no old exact losses or new guards. All 13 final tests pass; the actual
+ELF equals the emitted-C prediction with only 21 target bytes changed among
+6,057 bodies and unchanged symbols/data. Tools d8111ab first. Totals below
+and root README stay unchanged. Continue at **0x15096068**: six private
+clipping-home accesses remain unresolved; do not force their stack offsets.
 
 Movement **state machine installed, 959 words byte-exact**:
 [Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md).

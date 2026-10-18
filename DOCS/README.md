@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Rectangle flip order direct C improvement](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
+  twelve flip words now emit directly; 18 to six differences, still
+  346/frame0x88 with zero guards. Thirteen final tests and the exact 21-byte
+  installed-image audit pass. Next clipping-home lifetimes; totals unchanged.
 - [Movement state machine installed](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
   production `func_150F34F4` matches all 959 words after 134 qualified guards.
   The whole-ELF prediction, 25 installed tests and actual-object audit pass.

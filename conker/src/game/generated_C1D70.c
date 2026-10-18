@@ -380,12 +380,12 @@ s32 func_15095D34(Gfx *output, ProjectedPacket95B08 *packet, s32 sOffset, s32 in
     if (packet->flipFlags != 0) {
         flipFlags = packet->flipFlags;
         if (flipFlags & 1) {
-            stepS = (u16)(0u - (u32)originalStepS);
             textureS = (packet->descriptor->unk4 + 255) << 5;
+            stepS = (u16)(0u - (u32)originalStepS);
         }
         if (flipFlags & 2) {
-            stepT = (u16)(0u - (u32)stepT);
             textureT = (s32)((u32)((packet->descriptor->unk6 + 255) << 5) - (u32)fractionalT);
+            stepT = (u16)(0u - (u32)stepT);
         }
     }
     gSPScisTextureRectangle(output++, (s32)((u32)integerX << 2), (s32)((u32)integerY << 2),

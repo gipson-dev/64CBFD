@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Rectangle Flip Order Direct C Improvement - 2026-10-18
+
+[Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
+
+- [x] Screen 19 complete sources against a pinned current baseline without changing old fixture hashes. Recover twelve flip words directly through two assignment-order changes: 18 to six differences, 346 words/frame0x88, no exact losses or guards.
+- [x] Pass 13 final semantic/native/alias/trap/rebase/caller/prefix and corruption tests. Rebuild and audit the exact 21-byte whole-ELF prediction, all 6,057 functions, fixed symbols and 189,088 Game-data bytes / 720 owners.
+- [x] Bank tools d8111ab first, preserve all prior mirror hashes and leave matching totals/main README unchanged. No full function credit, host change or frozen Release action.
+- [ ] Continue `func_15095D34` at 0x15096068. Re-establish current-body macro temporary lifetimes before attempting the six remaining stack-home accesses; keep wider Game/caller/lifetime gates open.
+
 ## Movement State Machine Installed - 2026-10-18
 
 [Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
+Rectangle flip-order recovery reduces `func_15095D34` from 18 to six raw
+differences without guards, exact losses or frame/extent changes. All 13 final
+tests pass and the real ELF equals its 21-byte target-only prediction. Tools
+d8111ab first; totals and root README unchanged. Next current-body clipping
+temporary lifetimes at 0x15096068; six home accesses keep full matching open.
+
+2026-10-18:
 [Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
 Install complete movement source and 134 qualified guards: all 959 words /
 frame0x80 match in the real ELF. Close its entire 3,579-byte first prediction,

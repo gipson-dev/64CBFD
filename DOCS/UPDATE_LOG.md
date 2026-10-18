@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Rectangle Flip Order Direct C Improvement
+
+[Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
+Install two assignment-order changes in `func_15095D34`: 18 to six raw
+differences, all twelve flip words now direct C, unchanged 346/frame0x88 and
+zero guards. All 13 final tests pass. Actual ELF equals the 21-byte target-only
+prediction, with all other bodies/addresses/symbols/data fixed. Tools d8111ab
+first. Totals and root README unchanged. Next six clipping-home accesses
+begin at 0x15096068; no completed-function credit or full private-stack claim.
+
 ## 2026-10-18 Movement State Machine Installed
 
 [Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
