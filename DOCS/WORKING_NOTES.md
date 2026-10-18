@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
+Restore the five ordered releases and final actor destruction in
+`func_15101148`: all 40/frame0x20 match with three qualified guards. Seven
+installed tests and the exact 123-byte full-link prediction pass; preserve
+all unrelated bodies/addresses/symbols/data. Tools e371724 first. Game
+2,968/4,828, total 3,641/5,501; next paired 46-word `func_15101090`.
+
+2026-10-18:
 [Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
 All 346 rectangle words/frame0x88 now match with six closed private-home
 guards; raw C stays six differences. Fresh native/CFG/whole-state/prefix

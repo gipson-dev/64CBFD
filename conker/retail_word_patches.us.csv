@@ -17289,3 +17289,6 @@ generated_C1D70,func_15095D34,0x34C,0x87A30002,0x87A3000A,-,-,Normalize closed c
 generated_C1D70,func_15095D34,0x380,0x8FB90004,0x8FB9000C,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
 generated_C1D70,func_15095D34,0x3C8,0x8FB80004,0x8FB8000C,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
 generated_C1D70,func_15095D34,0x3F8,0x8FB90000,0x8FB90008,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_12DAB0,func_15101148,0x10,0x8DC40138,0x8DCF0138,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false
+generated_12DAB0,func_15101148,0x14,0x50800004,0x51E00004,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false
+generated_12DAB0,func_15101148,0x20,0x00000000,0x01E02025,-,-,Normalize first owned-resource pointer register and call-delay argument copy,,,false

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bcedfb7; tools are committed before the consumer pin.
+  checkpoint pins tools e371724; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Actor **owned-resource cleanup restored and matched**:
+[Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md).
+`func_15101148` now has typed, commented void cleanup C: five ordered releases,
+then actor destruction. All 40 words/frame0x20 match with three first-argument
+register/setup guards; raw C stays three differences. Seven final tests pass,
+including native O2/O0 UBSan, callback mutation, aliasing, 1,928 fault prefixes
+and 128 actual dispatcher sequences. Real ELF equals the first full-link
+prediction: 122 target-code bytes plus one extent byte; all other bodies,
+addresses, symbol definitions and Game data are fixed. Tools e371724 first.
+Game **2,968/4,828 (61.47%)**, total **3,641/5,501 (66.19%)**, 1,860 different,
+zero drift. Next paired `func_15101090` handle/resource cleanup, 46 words.
 
 Rectangle **private clipping homes byte-matched**:
 [Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md).

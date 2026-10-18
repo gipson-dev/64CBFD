@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Owned Resource Cleanup Byte Match - 2026-10-18
+
+[Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
+
+- [x] Replace the false return-zero callback with typed/commented void C, preserving five ordered releases and post-callback reloads. Match all 40 words/frame0x20 with three first-argument guards; retain the normal compiler profile and all 22 neighbors.
+- [x] Pass seven installed tests: native32 O2/O0 UBSan, callback mutations/aliases, effective controls, 1,928 fault prefixes and 128 actual dispatcher sequences. Pin 16 inputs and preserve prior fixtures through an exact three-member view.
+- [x] Predict the complete link before edits and reproduce exactly 123 changed ELF bytes: 122 target-code bytes plus one extent byte. Audit all 6,057 functions/addresses, canonical symbols, actual owner/relocations, callback slot and Game data. Bank tools e371724 first.
+- [x] Measure Game 2,968/4,828, total 3,641/5,501 and zero drift; update only README matching rows. Preserve independent mirror work and frozen Release.
+- [ ] Recover paired `func_15101090` (46 words), including its unsigned +0x1A0 handle release before the five object callbacks. Keep wider Game, caller, fade, gate and handwritten/register-contract work open.
+
 ## Rectangle Private Clipping Homes Byte Match - 2026-10-18
 
 [Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):

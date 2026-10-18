@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Actor Owned Resource Cleanup Byte Match
+
+[Note1530](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
+Restore `func_15101148` as typed void cleanup C. All 40/frame0x20 match after
+three first-argument guards; raw C remains three differences. Seven installed
+tests pass, with callback mutations, native O2/O0 UBSan, 1,928 fault prefixes
+and real dispatcher coverage. The actual ELF equals its 123-byte first-link
+prediction; all unrelated bodies/addresses/symbols/data are fixed. Tools
+e371724 first. Game **2,968/4,828**, total **3,641/5,501**, zero drift.
+README aggregate rows only; next paired `func_15101090` handle/resource cleanup.
+
 ## 2026-10-18 Rectangle Private Clipping Homes Byte Match
 
 [Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):

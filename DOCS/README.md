@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor owned resource cleanup byte match](WORKING_NOTES/1530-actor-owned-resource-cleanup-byte-match-20261018.md):
+  typed void cleanup replaces the false stub, all 40/frame0x20 match with
+  three guards. Seven tests and the 123-byte complete-image prediction pass.
+  Game matching advances to 2,968/4,828; next paired `func_15101090`.
 - [Rectangle private clipping homes byte match](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
   all 346/frame0x88 match with six lifetime-qualified guards; raw C stays six
   differences. Fresh compiler/CFG/state/prefix proofs and the actual six-byte

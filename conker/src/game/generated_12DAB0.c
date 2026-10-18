@@ -1,5 +1,18 @@
 #include <ultra64.h>
 
+#include "structs.h"
+
+extern void func_1513CAA0();
+
+typedef struct {
+    u8 pad0[0x24];
+    struct102 *resource24;
+    struct102 *resource28;
+    struct102 *resource2C;
+    struct102 *resource30;
+    struct102 *resource34;
+} ActorOwnedResources101148;
+
 /* Non-matching placeholders for the text-only asm slice asm/12DAB0.s. */
 
 s32 func_15100600() {
@@ -10,8 +23,30 @@ s32 func_15101090() {
     return 0;
 }
 
-s32 func_15101148() {
-    return 0;
+/* Release owned objects in retail order, then destroy their actor. */
+void func_15101148(struct210 *volatile actor) {
+    extern void func_1516979C(struct102 *resource);
+    struct102 *resource;
+    ActorOwnedResources101148 *resources;
+
+    resource = *(struct102 **)((u8 *)actor + 0x138);
+    if (resource != NULL) {
+        func_1516979C(resource);
+    }
+    resources = (ActorOwnedResources101148 *)((u8 *)actor + 0x110);
+    if (resources->resource2C != NULL) {
+        func_1516979C(resources->resource2C);
+    }
+    if (resources->resource24 != NULL) {
+        func_1516979C(resources->resource24);
+    }
+    if (resources->resource30 != NULL) {
+        func_1516979C(resources->resource30);
+    }
+    if (resources->resource34 != NULL) {
+        func_1516979C(resources->resource34);
+    }
+    func_1513CAA0(actor);
 }
 
 s32 func_151011E8(u8 *arg0) {
