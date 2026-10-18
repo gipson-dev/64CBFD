@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Movement State Machine Installed
+
+[Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
+Install complete `func_150F34F4` C and 134 qualified guards: all 959 words /
+frame0x80 match. The real ELF equals the first 3,579-byte whole-image
+prediction with 22 explicit symbol-order groups and zero exclusions. Only
+the target changes among 6,057 bodies; all addresses/data/callback and actual
+target relocations pass. All 25 installed tests plus the strengthened object
+audit pass. Tools ddd9d88 first. Game **2,966/4,828 (61.43%)**, total
+**3,639/5,501 (66.15%)**, 1,862 different, zero drift. README aggregate/date only.
+Next rectangle `func_15095D34`; wider Game/lifetime gates remain open.
+
 ## 2026-10-18 Movement Complete Private Byte Match
 
 [Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):

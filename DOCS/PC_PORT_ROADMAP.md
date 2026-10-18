@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement State Machine Installed - 2026-10-18
+
+[Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
+
+- [x] Replace the production movement placeholder with the complete typed/commented semantic C body and append 134 guards, preserving the entire existing manifest prefix. Match all 959 words/frame0x80; raw C remains 134 differences.
+- [x] Predict/reproduce the complete successor before editing: 3,579 ELF bytes, 22 closed symbol-order groups / 54 unchanged definitions, zero metadata exclusions. Preserve immutable before/after fixtures and old helpers/hashes through the exact three-member historical view.
+- [x] Compile the actual owner with the new guards, link the real ELF/CSV and audit all 6,057 bodies/addresses, 189,088 Game-data bytes / 720 owners and callback slot. Actual target bytes and 167 relocation sites equal the qualified object; two object corruptions are rejected.
+- [x] Pass 25 installed tests in 292.679s and the strengthened object-audit rerun in 10.694s, plus shared checks/smoke in both tools copies. Preserve 321 inputs and all 1,178 prior mirror hashes / 1,181 dirty paths, with no mirror-history or frozen Release changes.
+- [x] Bank tools ddd9d88 before the consumer source/docs/pin. Fresh Game 2,966/4,828 (61.43%), total 3,639/5,501 (66.15%), 1,862 different, zero drift; update only README aggregate rows/date.
+- [ ] Continue Game matching at `func_15095D34` (346 words / 18 real differences), first reading the native macro-temporary blockers in Note1440 and no-gain step screens in Note1441. Keep both fade lifetime gaps, the other gate and full runtime acceptance open.
+
 ## Movement Complete Private Byte Match - 2026-10-18
 
 [Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
@@ -8,7 +19,7 @@
 - [x] Qualify the two independent address ADDIU words and move their LO16 records: all 959 words/frame0x80 match with 134 private rows. Raw C stays 134 differences, with no inserted/omitted words or production credit.
 - [x] Pass 21 tests in 231.809s: 325 tail controls, 324 poisoned-call cases, 24 independent bound-symbol rebases / 48 links, exact counter reads and 392 complete private states / 30,629 equal prefixes, plus the existing public/native/alias suites.
 - [x] Bank tools cc0020c first, then consumer documentation and pin; preserve 319 inputs, 1,176 prior mirror hashes / 1,178 dirty paths, installed bytes, totals and main README. No push, Claude call or frozen Release action.
-- [ ] Install the qualified semantic source and 134 production guards only after a complete successor prediction and immutable historical-fixture qualification; rebuild and audit every function/address/extent, Game data and callback slot, rerun installed target/shared tests, then update matching totals and README aggregate rows.
+- [x] Install the qualified semantic source and 134 production guards after the complete successor prediction and historical-fixture qualification; the actual build/ELF/data/callback audits and installed tests pass in Note1527 above, with measured totals and README aggregates updated.
 - [ ] Keep full caller/provider/hardware acceptance, the other gate, both fade lifetime gaps and wider Game objective open.
 
 ## Movement Physics Call Register Roles - 2026-10-18

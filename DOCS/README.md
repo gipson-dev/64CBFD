@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement state machine installed](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
+  production `func_150F34F4` matches all 959 words after 134 qualified guards.
+  The whole-ELF prediction, 25 installed tests and actual-object audit pass.
+  Game matching advances to 2,966/4,828; next rectangle matching stays open.
 - [Movement complete private byte match](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
   all 959 words match with 134 private guards; complete C remains 134 raw
   differences. All 21 tests pass. Next production installation and whole-ELF

@@ -17149,3 +17149,137 @@ generated_11FF10,func_150F2D14,0x20C,0x46048183,0xAFB600A8,-,-,Preserve retail b
 generated_11FF10,func_150F2D14,0x210,0xE7B000D0,0xAFB200AC,-,-,Preserve retail burst transform setup dependency schedule,,,false
 generated_11FF10,func_150F2D14,0x214,0xE7A600D4,0x8E2601D4,-,-,Preserve retail burst transform setup dependency schedule,,,false
 generated_11FF10,func_150F2D14,0x218,0x8E2601D4,0x24070002,-,-,Preserve retail burst transform setup dependency schedule,,,false
+generated_11FF10,func_150F34F4,0x5A4,0x960A0076,0x96180076,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x5A8,0x24180019,0x240B0019,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x5FC,0xA218007E,0xA20B007E,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x618,0x440E2000,0x440F2000,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x620,0x014E7823,0x030FC823,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x624,0xA60F0076,0xA6190076,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x62C,0x31E6FFFF,0x3326FFFF,-,-,Normalize closed movement heading step delta result temporary roles,,,false
+generated_11FF10,func_150F34F4,0x658,0x3C0D0000,0x3C0A0000,R_MIPS_HI16:D_800CC284,R_MIPS_HI16:D_800CC284,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x664,0x920C0086,0x920E0086,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x668,0x92190086,0x920C0086,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x66C,0x240B0001,0x240D0001,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x674,0x1720000D,0x1580000D,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x680,0xA20B0086,0xA20D0086,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x690,0x920C0086,0x920E0086,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x698,0x11800004,0x11C00004,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6AC,0x8DAD0000,0x8D4A0000,R_MIPS_LO16:D_800CC284,R_MIPS_LO16:D_800CC284,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6B0,0x24190001,0x240C0001,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6B4,0x95A20000,0x95420000,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6B8,0x304A0010,0x30580010,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6BC,0x15400020,0x17000020,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6C0,0x304E8000,0x304F8000,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6C4,0x11C0000B,0x11E0000B,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6D8,0x3C0F0000,0x3C190000,R_MIPS_HI16:D_800CC284,R_MIPS_HI16:D_800CC284,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6E0,0x8DEF0000,0x8F390000,R_MIPS_LO16:D_800CC284,R_MIPS_LO16:D_800CC284,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6F0,0x95E20000,0x97220000,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6F4,0x30584000,0x304B4000,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x6F8,0x53000012,0x51600012,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x748,0xAFB90010,0xAFAC0010,-,-,Normalize branch-qualified movement flag and controller temporary roles,,,false
+generated_11FF10,func_150F34F4,0x754,0x860B007A,0x860D007A,-,-,Normalize dead local movement heading temporary roles,,,false
+generated_11FF10,func_150F34F4,0x760,0x256C4000,0x25AE4000,-,-,Normalize dead local movement heading temporary roles,,,false
+generated_11FF10,func_150F34F4,0x764,0x448C5000,0x448E5000,-,-,Normalize dead local movement heading temporary roles,,,false
+generated_11FF10,func_150F34F4,0x778,0x920D013C,0x920A013C,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x780,0x240E000A,0x240F000A,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x78C,0x24190001,0x240D0001,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x7B8,0x15A00012,0x15400012,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x810,0x920A0086,0x92180086,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x81C,0x1140000A,0x1300000A,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x8F0,0xA20E00AD,0xA20F00AD,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x900,0xA20E00AD,0xA20F00AD,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x908,0xA20E00AD,0xA20F00AD,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x910,0x944F0000,0x94590000,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x914,0x31F80010,0x332B0010,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x918,0x53000010,0x51600010,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x920,0x80430003,0x804C0003,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x92C,0x44839000,0x448C9000,-,-,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x9C8,0xA0390000,0xA02D0000,R_MIPS_LO16:D_800CBDD3,R_MIPS_LO16:D_800CBDD3,Normalize branch-qualified movement temporaries through physics call delay slot,,,false
+generated_11FF10,func_150F34F4,0x9E4,0x3C0B0000,0x3C0E0000,R_MIPS_HI16:D_800CC284,R_MIPS_HI16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA04,0x8D6B0000,0x8DCE0000,R_MIPS_LO16:D_800CC284,R_MIPS_LO16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA10,0x956C0000,0x95CA0000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA14,0x318D0010,0x31580010,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA18,0x55A0007A,0x5700007A,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA30,0x2408032C,0x2409032C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA34,0x00480019,0x00490019,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA38,0x3C090000,0x3C080000,R_MIPS_HI16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA3C,0x25290000,0x25080000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA48,0x00005012,0x00007812,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA4C,0x012A3021,0x010F3021,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA90,0x90EE0000,0x90F90000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xA9C,0x01C80019,0x03290019,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAA0,0x00007812,0x00005812,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAA4,0x012F2021,0x010B2021,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAB0,0x3C180000,0x3C0C0000,R_MIPS_HI16:D_800CC26D,R_MIPS_HI16:D_800CC26D,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAB4,0x93180000,0x918C0000,R_MIPS_LO16:D_800CC26D,R_MIPS_LO16:D_800CC26D,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAB8,0x3C19FF01,0x3C0DFF01,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xABC,0x37390074,0x35AD0074,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAC4,0xA218013C,0xA20C013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xACC,0xAC390000,0xAC2D0000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAD8,0x3C090000,0x3C080000,R_MIPS_HI16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xADC,0x25290000,0x25080000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAE4,0x2408032C,0x2409032C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAF0,0x30AB0002,0x30AE0002,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAF4,0x51600043,0x51C00043,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xAFC,0x00880019,0x00890019,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB04,0x00A16024,0x00A15024,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB08,0xAE0C025C,0xAE0A025C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB10,0x240A0021,0x240F0021,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB14,0x24180076,0x240C0076,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB18,0x00006812,0x0000C012,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB1C,0x012D1021,0x01181021,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB28,0x8C4E00F8,0x8C5900F8,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB2C,0xA04A0232,0xA04F0232,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB34,0x01C17824,0x03215824,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB3C,0xAC4F00F8,0xAC4B00F8,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB54,0xAC380000,0xAC2C0000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB68,0x3C190000,0x3C0D0000,R_MIPS_HI16:D_800CC288,R_MIPS_HI16:D_800CC288,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB6C,0x8F390000,0x8DAD0000,R_MIPS_LO16:D_800CC288,R_MIPS_LO16:D_800CC288,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB70,0x332B2000,0x31AE2000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB74,0x51600023,0x51C00023,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB7C,0x920C0103,0x920A0103,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB80,0x3C0D0000,0x3C180000,R_MIPS_HI16:D_800BE9F0,R_MIPS_HI16:D_800BE9F0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB84,0x5580001F,0x5540001F,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB8C,0x8DAD0000,0x8F180000,R_MIPS_LO16:D_800BE9F0,R_MIPS_LO16:D_800BE9F0,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xB98,0x15A10019,0x17010019,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBA4,0x24420000,0x24A50000,R_MIPS_LO16:D_800CC5FC,R_MIPS_LO16:D_800D121C,Schedule independent movement record-bound addresses,,,false
+generated_11FF10,func_150F34F4,0xBA8,0x24A50000,0x24420000,R_MIPS_LO16:D_800D121C,R_MIPS_LO16:D_800CC5FC,Schedule independent movement record-bound addresses,,,false
+generated_11FF10,func_150F34F4,0xBB0,0x8C4A0000,0x8C4F0000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBB4,0x51400006,0x51E00006,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBBC,0x904E0004,0x90590004,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBC0,0x548E0003,0x54990003,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBD4,0x8C4A0000,0x8C4F0000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBE0,0x240F0006,0x240B0006,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBE8,0xAC2F0000,0xAC2B0000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBEC,0x24180004,0x240C0004,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xBF4,0xA2180103,0xA20C0103,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC24,0x3C190000,0x3C0D0000,R_MIPS_HI16:D_800CC284,R_MIPS_HI16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC30,0x8F390000,0x8DAD0000,R_MIPS_LO16:D_800CC284,R_MIPS_LO16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC34,0x972B0000,0x95AE0000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC38,0x316C4000,0x31CA4000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC3C,0x5580000A,0x5540000A,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC44,0x920D0086,0x92180086,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC48,0x55A00007,0x57000007,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC50,0x920A013C,0x920F013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC5C,0x51400033,0x51E00033,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC7C,0x3C0EFF01,0x3C19FF01,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC80,0x35CE00A7,0x373900A7,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC98,0xAC2E0000,0xAC390000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xC9C,0x3C0FFF06,0x3C0BFF06,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCA0,0x35EF0372,0x356B0372,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCAC,0xAC2F0000,0xAC2B0000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCC0,0x3C18FF01,0x3C0CFF01,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCC4,0x37180072,0x358C0072,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCDC,0xAC380000,0xAC2C0000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xCFC,0x92190086,0x920D0086,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD04,0x57200005,0x55A00005,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD48,0x3C0B0000,0x3C0E0000,R_MIPS_HI16:D_800CC284,R_MIPS_HI16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD4C,0x8D6B0000,0x8DCE0000,R_MIPS_LO16:D_800CC284,R_MIPS_LO16:D_800CC284,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD58,0x956C0000,0x95CA0000,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD5C,0x318D0010,0x31580010,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD60,0x55A00008,0x57000008,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD90,0x920A0086,0x920F0086,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xD94,0x11400019,0x11E00019,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xEB0,0x920E013C,0x9219013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xEB8,0x920E013C,0x9219013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_11FF10,func_150F34F4,0xEBC,0x51C00005,0x53200005,-,-,Normalize call-invalidated movement tail temporary permutation,,,false

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools cc0020c; tools are committed before the consumer pin.
+  checkpoint pins tools ddd9d88; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+Movement **state machine installed, 959 words byte-exact**:
+[Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md).
+`func_150F34F4` now has its complete typed semantic C body in production.
+All 959 words/frame0x80 match after 134 qualified guards; raw C still has
+134 differences. The actual full ELF equals the first 3,579-byte prediction:
+3,010 code bytes, two extent bytes and 567 explicitly closed metadata bytes,
+with no exclusions. All 6,057 bodies/addresses, 189,088 Game-data bytes /
+720 owners, callback and actual target object/167 relocation sites pass.
+All 25 installed tests and the strengthened object audit pass. Tools
+ddd9d88 first. Fresh Game **2,966/4,828 (61.43%)**, total **3,639/5,501
+(66.15%)**, 1,862 different, zero drift. Conversion unchanged; README only
+updates aggregate rows/date. Next reopen rectangle `func_15095D34` (346
+words / 18 real differences), respecting Notes 1440/1441's native blockers.
+
 Movement **complete private byte match qualified**:
 [Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md).
 Complete `func_150F34F4` now matches all 959 words/frame0x80 after 134 private
@@ -35,8 +49,8 @@ with a call-invalidated tail permutation and two independently relocated
 ADDIU words. All 21 tests pass, including 325 tail controls, 324 poisoned
 call cases, 24 bound-symbol rebases and 392 complete private states / 30,629
 equal prefixes. Tools cc0020c first; 319 inputs, production, totals and main
-README unchanged. **Next install and audit the real production successor**;
-the source/ELF still contains the placeholder, so no matching credit yet.
+README stayed unchanged at that checkpoint. Note1527 above now installs
+and audits the real successor; this paragraph records the private stage.
 
 Movement **physics-call temporary roles qualified**:
 [Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md).

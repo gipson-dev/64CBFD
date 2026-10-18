@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1527](WORKING_NOTES/1527-movement-state-machine-production-installation-20261018.md):
+Install complete movement source and 134 qualified guards: all 959 words /
+frame0x80 match in the real ELF. Close its entire 3,579-byte first prediction,
+including 22 explicit symbol-order groups and no exclusions; preserve every
+other body/address/data/callback. All 25 installed tests plus the strengthened
+actual-object audit pass. Tools ddd9d88 first. Game **2,966/4,828 (61.43%)**,
+total **3,639/5,501 (66.15%)**, 1,862 different, zero drift. README aggregate
+rows/date only. Next `func_15095D34` and its unresolved rectangle blockers.
+
+2026-10-18:
 [Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
 Qualify complete private movement matching: all 959 words/frame0x80 match
 after 134 research rows, raw C unchanged at 134 differences. Tail roles are
