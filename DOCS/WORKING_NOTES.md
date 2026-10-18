@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
+Recover321-word/frame120 projection C and original live homes under the
+existing owner profile. Seven tests pass:575 public/frame cases,1458 scan
+prefixes and effective preference-home controls. Still221 differences, one
+child save word in301 cases and48 rejected null fault prefixes. Tools1614a2c
+first; no production/README or totals change. Joint allocation/save-order fit
+remains, with no matching credit or wider completion claim.
+
+2026-10-18:
 [Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
 Recover projection150891E8's conditional object lifetime/SP+3C and original
 seven save homes. Six tests,575 public cases,24 high-bit pointer cases and

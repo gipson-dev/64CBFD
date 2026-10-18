@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Projection Extent And Homes - 2026-10-18
+
+[Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
+
+- [x] Recover321-word/frame120 experimental C with a fixed five-slot scan, meaningful distance lifetime and original30/3C/44/48/50/5C homes. Target bytes/bindings agree under normal and existing no-unroll profiles; preserve72 actual owner neighbors/pools. No Makefile/profile change or padding.
+- [x] Pass seven tests:575 equal public states/complete parent frames,1458 first-call scan prefixes over243 patterns,24 high-bit cases,16 complete null returns and effective private-preference/C controls. Precisely retain the one differing child save word in301 cases,445/575 ordered traces and48 unequal null fault prefixes; do not claim whole-memory/fault parity.
+- [x] Bank tools **f2871fa**, then **1614a2c** first; preserve all1,230 prior mirror dirty hashes and production/README/totals. Four original-loop forms recover opening save roles but fail extent; no matching credit, build or recount.
+- [ ] Recover the actual S0 table-address/S2 record allocation and original save ordering jointly with321 words and all live homes. Then qualify closed normalization/rebases/prediction/install/whole-ELF audit. Enqueue1512D560, vector15088F30, other parent150896EC and wider queues remain open.
+
 ## Route Projection Conditional Lifetime - 2026-10-18
 
 [Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
@@ -7,6 +16,7 @@
 - [x] Recover the conditional entry-object lifetime and SP+3C home in complete experimental C using a meaningful32-bit carrier and declaration order. Null path preserves retail's complete private memory; all seven original save homes remain. No dummy effects, frame guards or inline assembly.
 - [x] Pass six tests:575 public cases,24 high-bit pointer cases,16 complete null cases/240 fired access-fault prefixes, real old-model/private-home controls and nine effective C semantic negatives. Preserve72 normal-profile owner neighbors/pools and strict302-word/18-binding/15-input gates. Keep PC/dead-GPR, nonnull fault, native/rebase/caller limits explicit.
 - [x] Bank tools **fabe5a1** first; preserve production/README and all1,228 previous mirror dirty hashes. No new matching credit or recount; totals remain Game2,985/4,828, total3,658/5,501, zero drift.
+- [x] Recover321-word extent, named44/48/50/5C homes and five-slot scan; see Note1552. Allocation/save ordering still fails the joint installation gate, including48 null fault prefixes that the older302-word model passed.
 - [ ] Fit the full321-word extent, remaining44/50/5C/48 homes, five-slot unrolling and ordered accesses, then qualify before any normalization/install/linked audit. Selected302/frame120 and the24 measured source forms are not byte-match evidence. Enqueue1512D560, vector15088F30 and other parent150896EC remain open.
 
 ## Route Projection Recovery Boundary - 2026-10-18

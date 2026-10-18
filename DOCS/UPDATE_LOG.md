@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Projection Extent And Named Homes
+
+[Note1552](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
+Recover321-word/frame120 experimental projection C, fixed five-slot scan and
+original live homes under the existing owner profile. Seven tests pass:575
+public/parent-frame cases,1458 scan prefixes and effective private preference
+controls. Still221 differences:301 cases expose one child saved-S0 word and48
+null fault prefixes reject save ordering. Tools **f2871fa**, then **1614a2c**
+first; original-loop role screens fail extent. Production/README and totals
+stay unchanged. Continue the joint allocation fit with zero matching credit.
+
 ## 2026-10-18 Route Projection Conditional Object Lifetime
 
 [Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):

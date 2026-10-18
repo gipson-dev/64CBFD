@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route projection extent and named homes](WORKING_NOTES/1552-route-projection-extent-and-named-home-restoration-20261018.md):
+  recover321/frame120 and live stack homes under the existing owner profile;
+  seven tests/1458 scan prefixes pass, but221 words and actual saved-role/fault
+  differences remain. Tools1614a2c first; no production change or match credit.
 - [Route projection conditional lifetime](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
   restore null private memory and nonnull SP+3C object capture; six tests and
   240 fired null fault prefixes pass. Still302 versus321 words, no production
