@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route cubic spline byte match](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
+  recover the49-word value helper with34 closed FP-lineage/schedule guards,
+  exact private homes and seven installed tests. Tools b91fd0e first;
+  next derivative150498A4, with vector fitting still open.
 - [Route vector semantic model and stack rejection](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
   seven qualification tests pass, but the83-word model still has wrong private
   saves and76 differences. No production edit or matching credit; resume the

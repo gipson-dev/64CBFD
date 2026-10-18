@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Cubic Spline Byte Match - 2026-10-18
+
+[Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
+
+- [x] Recover `f32 func_150497E0(f32*,s32,f32)`, its four-point rounded polynomial, frame16 and exact argument/coefficient homes. All49 words match with34 guarded FP-register/independent-schedule changes backed by a complete operation bijection. No reassociation, inserted/omitted word, dummy store or profile change.
+- [x] Pass seven installed tests:18,212 three-way guest cases,71,216 native cases per O2/O0 UBSan profile, eight guest/native controls, nine links/216 rebased cases,192 complete-caller cases and48 fault prefixes. Keep raw read-order/NaN/FCSR and native-index limits explicit.
+- [x] Reproduce the first167-byte whole-ELF delta:166 code bytes plus one target-size byte. Preserve all6,057 addresses, other code/definitions/section bytes, the raw derivative neighbor, old guard prefix and protected Game data. Tools **b91fd0e** first; all1,218 previous standalone-mirror dirty hashes preserved. README matching aggregates only:Game2,983/4,828, total3,656/5,501, zero drift.
+- [ ] Qualify `func_150498A4` (62 words/frame32), derivative/output aliases, saved F20 and complete copy/schedule lineage; its current probe is not installed. Keep the vector builder's two-save/invariant fit and wider queues open.
+
 ## Route Vector Model And Stack Rejection - 2026-10-18
 
 [Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
@@ -7,7 +16,8 @@
 - [x] Recover and qualify the four-pointer vector semantics, first-type4 choice, signed differences, FF fallback, fresh table/speed loads and ordered output aliases. Seven tests pass:9,205 guest cases,74,696 native cases per O2/O0 UBSan profile, thirteen guest/ten native controls, nine links/198 rebased cases,144 complete-parent cases and869 public fault prefixes.
 - [x] Reject the83-word/frame16 model:76 word differences, S2/S1/S0 saves versus retail S1/S0, and a demonstrably different first private-store fault. Typed prototype preserves all118 parent words/14 bindings and72 raw owner neighbors. Bank tools **81049a4** first without production/README changes or matching credit; preserve all1,216 prior older-mirror dirty hashes.
 - [ ] Fit the actual saved-invariant/output-cursor roles and full private/control-flow contract, then qualify any closed normalization before prediction, installation and linked audit. Semantic agreement and word count alone do not permit installation.
-- [ ] Recover downstream spline stubs `func_150497E0` and `func_150498A4` after the vector match. Game2,982/4,828 and total3,655/5,501 remain unchanged; wider queues stay open.
+- [x] Recover downstream cubic value helper `func_150497E0`; see Note1546. The vector model remains uninstalled.
+- [ ] Recover derivative `func_150498A4` and finish the vector private-register contract; wider queues remain open.
 
 ## Actor Route Placement Byte Match - 2026-10-18
 

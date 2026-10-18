@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
+Recover typed `func_150497E0`:49 words/frame16,34 closed FP-lineage/schedule
+guards, exact private stores and no reassociation. Seven installed tests,
+18,212 guest cases,71,216 native cases/profile and first167-byte ELF delta
+pass. Other code/addresses/data stay fixed; tools b91fd0e first. Game2,983/
+4,828, total3,656/5,501. Next derivative150498A4; vector fitting remains open.
+
+2026-10-18:
 [Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
 Qualify non-installable `func_15088F30` model:83 words/frame16,76 differences,
 wrong three-save layout. Seven tests pass with9,205 guest and74,696 native

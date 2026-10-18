@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 81049a4; tools are committed before the consumer pin.
+  checkpoint pins tools b91fd0e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Cubic route value helper restored and byte-matched**:
+[Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md).
+`func_150497E0` now has complete typed float-return C,49 words/frame16.
+Thirty-four guards implement a proven49-operation FP-lineage bijection with
+unchanged private stores and no reassociation/insertion/omission. Seven final
+installed tests pass:18,212 guest cases,71,216 native cases/profile, effective
+controls and the complete live caller. Actual ELF equals the first167-byte
+prediction; all other code/addresses and Game data remain fixed. Tools
+**b91fd0e** first. Game **2,983/4,828 (61.79%)**, total **3,656/5,501
+(66.46%)**, **1,845 different /zero drift**. Next: qualify62-word derivative
+`func_150498A4`; vector saved-register fitting under Note1545 remains open.
+Raw read/fault/NaN limits and incomplete production helper/gameplay scope are
+explicit in the note. Root README gets aggregate rows only.
 
 **Route vector model qualified; installation rejected**:
 [Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md).

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Cubic Spline Byte Match
+
+[Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
+Recover the typed four-point cubic value helper `func_150497E0`. All49 words/
+frame16 match after34 guards with a complete operation-lineage bijection,
+fixed private homes and no FP reassociation. Seven installed tests pass and
+the whole ELF equals its first167-byte prediction; other code/addresses/data
+are unchanged. Tools **b91fd0e** first. Game **2,983/4,828**, total
+**3,656/5,501**, zero drift. README aggregates only; next derivative150498A4.
+The vector three-save model is still rejected; the wider goal remains active.
+
 ## 2026-10-18 Route Vector Model And Stack Rejection
 
 [Note1545](WORKING_NOTES/1545-route-vector-semantic-model-and-stack-rejection-20261018.md):
