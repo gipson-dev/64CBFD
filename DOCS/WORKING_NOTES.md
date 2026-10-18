@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
+Recover three real button-path FP words: raw C 389 differences. Qualify 21
+new branch-local GPR rewrites, 28 total private rows, giving 361 differences
+and 469 exact opening words, still 959/frame0x80. Nine tests pass, including
+3,072 adverse kernel cases / 6,600 active prefixes. Tools 852c2eb first;
+all 305 inputs, production, fresh totals and README unchanged. Not installed
+or credited; same target continues at `0x150F3C48` / `0x150F3C6C`.
+
+2026-10-17:
 [Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
 Certify seven bounded turn temporary-role words in private output: raw C still
 392 differences; normalized 385, first 406 words exact, 959 words/frame 0x80.

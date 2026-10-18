@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement flag path lifetimes and CFG role proof](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
+  three natural C FP improvements give 389 raw differences; 28 total private
+  research rewrites give 361 differences and 469 exact opening words. Nine
+  tests pass, with 3,072 kernel cases / 6,600 active prefixes; not installed.
 - [Movement turn-role certificate and argument controls](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
   raw C remains 392 differences; seven certified research-only rewrites give
   385 differences and 406 exact opening words. Eight full/two focused tests

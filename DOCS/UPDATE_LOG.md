@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Flag Path Lifetimes And CFG Role Proof
+
+[Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
+Recover three real C FP words in complete `func_150F34F4`, giving raw 389
+differences. Qualify 21 new branch-local research rewrites, 28 total, giving
+361 differences and 469 exact opening words at 959/frame0x80. Nine tests pass,
+including 3,072 adverse kernel cases and 6,600 active prefixes. Tools 852c2eb
+first; preserve 305 inputs, production, totals and README. No installation or
+matching credit; continue the same heading/continuation gap at `0x150F3C48`.
+
 ## 2026-10-17 Movement Turn Role Certificate And Argument Controls
 
 [Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):

@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Flag Path Lifetimes And CFG Role Proof - 2026-10-17
+
+[Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md):
+
+- [x] Screen nine complete forms; recover the button velocity float lifetime and three real FP words, giving raw 389 differences at 959 words/frame0x80. Reject one overflow without trimming.
+- [x] Qualify the 63-word branch region, 21 new private GPR rewrites and four preserved HI16/LO16 bindings. With the preceding seven rewrites: 361 differences, 469 exact opening words, eleven neighbors preserved.
+- [x] Pass nine tests: 95 CFG controls, three actual padder rejections, 3,072 adverse kernel cases with all 62 reachable words, complete three-way public corpus and 6,600 active private prefixes. Own/reconcile one bounded tool-disabled advisory and a fresh compiler capture.
+- [x] Bank tools 852c2eb first; preserve 305 inputs, 1,162 prior mirror hashes / 1,164 paths, fresh totals and root README. Zero production guards/installation/credit; frozen Release untouched.
+- [ ] Continue the same `func_150F34F4` at normalized word469 / `0x150F3C48` and private gap `0x150F3C6C`, then all remaining literal/private/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Turn Role Certificate And Argument Controls - 2026-10-17
 
 [Note1518](WORKING_NOTES/1518-movement-turn-role-certificate-and-argument-controls-20261017.md):
@@ -8,7 +19,7 @@
 - [x] Certify seven local temporary-role rewrites in a 35-word window; the actual private padder/linker gives 385 differences and 406 exact opening words, preserving 959 words/frame 0x80 and eleven neighbors.
 - [x] Pass eight full tests and two focused checks: 38 rejection controls, 480 adverse kernel cases, complete three-way public corpus and 5,900 normalized active prefixes; preserve all prior disabled/mode-0 paths and 303 protected entries.
 - [x] Bank tools a0ea7dd first; preserve 1,160 prior mirror hashes / 1,162 paths, fresh totals and root README. Zero production guards, installation or matching credit; frozen Release untouched.
-- [ ] Continue the same `func_150F34F4` controller/flag GPR order at `0x150F3B4C` / `0x150F3B58`, then all remaining whole-function literal/private/caller/first-image gates.
+- [x] Qualify the controller/flag region in [Note1519](WORKING_NOTES/1519-movement-flag-path-lifetimes-and-cfg-role-proof-20261017.md); remaining whole-function gates continue above without production changes.
 - [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
 
 ## Movement Float Lifetimes And Field Heading Recovery - 2026-10-17
