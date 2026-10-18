@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Pitch And Surface Source Order
+
+[Note1522](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):
+Recover the complete movement surface exit's source order: 152 raw differences,
+121 with the same 31 private rows, 959/frame0x80 and 478 exact opening words.
+All 48 gains emit directly from C, with no formerly exact losses. Thirteen
+tests pass, including 256 surface cases / sixteen old-read rejections. Tools
+74c3bf7 first; 311 inputs, production, totals and README unchanged. No new
+guards, installation or credit; same earlier flag/private frontier remains.
+
 ## 2026-10-17 Movement Release Index Speed Copy And Heading Roles
 
 [Note1521](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md):

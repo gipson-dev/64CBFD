@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement pitch and surface source order](WORKING_NOTES/1522-movement-pitch-and-surface-source-order-20261017.md):
+  complete C improves 200 to 152 differences, 121 with the unchanged 31 private
+  rows. Thirteen tests pass, including 256 new surface cases and sixteen
+  old-read rejections. No new guards, installation or matching credit.
 - [Movement release index speed copy and heading roles](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md):
   complete C improves 270 to 200 differences; three new bounded research rows
   give 169 differences and 478 exact opening words. Twelve tests pass, with
