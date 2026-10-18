@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route projection conditional lifetime](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
+  restore null private memory and nonnull SP+3C object capture; six tests and
+  240 fired null fault prefixes pass. Still302 versus321 words, no production
+  change or match credit. Toolsfabe5a1 first; continue the same parent's fit.
 - [Route projection recovery boundary](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
   complete experimental parent C,575 paired guest cases and six tests; reject
   raw307/frame120 against retail321 and its conditional object lifetime.

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bc4a6e8; tools are committed before the consumer pin.
+  checkpoint pins tools fabe5a1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route projection conditional object lifetime recovered**:
+[Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md).
+Experimental302-word/frame120 C now preserves retail's null private memory,
+conditional object save and nonnull SP+3C home with all seven original save
+slots. Six tests pass:575 public cases,24 high-bit pointer cases,16 complete
+null cases/240 fired fault prefixes and nine effective C controls. Tools
+**fabe5a1** first. Still non-installable: retail321, other homes/unrolling and
+raw access order remain open. Production/README and totals are unchanged;
+continue the same parent's remaining fit, with zero new matching credit.
 
 **Route projection semantics recovered; installation rejected**:
 [Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md).

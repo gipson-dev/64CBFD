@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Projection Conditional Object Lifetime
+
+[Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
+Recover the original conditional object capture and SP+3C home in complete
+experimental func_150891E8 C. Six tests pass:575 public cases,24 high-bit
+pointer cases,16 complete null cases/240 fired access-fault prefixes and nine
+effective C controls. Keep all seven save homes; reject the old early zero
+and a wrong-home control. Tools **fabe5a1** first. Still302 versus321 words,
+other private/access/unrolling fit open; no production/README or totals change.
+Continue the same parent, with zero matching credit and wider Game goal active.
+
 ## 2026-10-18 Route Projection Recovery Boundary
 
 [Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):

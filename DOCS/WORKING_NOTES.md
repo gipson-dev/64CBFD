@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1551](WORKING_NOTES/1551-route-projection-conditional-object-lifetime-restoration-20261018.md):
+Recover projection150891E8's conditional object lifetime/SP+3C and original
+seven save homes. Six tests,575 public cases,24 high-bit pointer cases and
+240 fired null fault prefixes pass. Selected302/frame120 still fails retail321
+and other homes/unrolling. Toolsfabe5a1 first; no production/README or totals
+change. Continue the same parent; no match credit or wider completion claim.
+
+2026-10-18:
 [Note1550](WORKING_NOTES/1550-route-projection-semantic-recovery-and-installation-boundary-20261018.md):
 Recover complete experimental route projection150891E8; six tests,575 paired
 guest cases and nine effective C controls execute two real helpers. Reject
