@@ -1,12 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Ranking Cursor - 2026-10-18
+
+[Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
+
+- [x] Recover five words in the complete ranking tail while preserving frame456, original saves/argument homes and the first15/final11 literal words. Pin the594-word source/bindings and diagnose all21 call-anchored blocks without instruction rewriting. Keep volatile-spill and narrowed-conversion controls unselected.
+- [x] Pass15 tests:703 real-helper cases,12 wide-coordinate cases,228 screen cases,16 caller windows and seven effective semantic negatives. Preserve72 neighbors/pools in both profiles, the projection override, all23 protected inputs and all five screen banks on repeat runs. Bank tools21db626 first; preserve1,284 dirty mirror hashes. Re-audit the existing compiler capture without another debugger launch.
+- [ ] Restore the remaining10-word extent gap, argument roles and private homes/access order in this same func_15087350. Raw594 still has481 differences; opening28/34 prefixes agree, but cut14 rejects T6/T8. Establish the source cause of the SP+0x48 conversion word without inventing an original volatile qualifier or narrowing the defined input domain.
+- [ ] Complete native32/UBSan, aliases/private-prefix and all-word/binding proof, actual padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. Production/README/counts remain at Note1568; zero credit here, broader Game work stays open.
+
 ## Route Actor Update Frame And Save Layout - 2026-10-18
 
 [Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
 
 - [x] Complete one owned, fingerprint-locked compiler capture with unchanged full target code/bindings/pools, all child/driver exits0 and final null inferior. Observe the old480-byte frame as416 locals+48 saved+16 outgoing, with local-span growth already visible before UGEN. Reuse/audit the capture without debugger reruns in tests.
 - [x] Recover the complete589-word/frame456 source point, original GP/FP save slots and argument homes, first15 exact words and last11 exact return words. Pass18 tests:703 real-helper cases,372 new screen cases,16 actual caller windows, seven effective semantic negatives and34 fired opening prefixes. Preserve72 neighbors/pools in both profiles and the strict projection override. Bank tools b00486f then c767262 first; preserve1,281 mirror hashes. Reject recapture before any baseline rewrite.
-- [ ] Restore the same function's604-word extent, argument temporary roles and remaining local homes/scheduling. Current raw589 has481 differences; opening28/34 prefixes agree but cut14 rejects T6/T8. Keep the recovered frame/save/argument layout and full-width modular offset semantics fixed. Complete native32/UBSan, private/alias/access-prefix and all-word/binding qualification before installation.
+- [ ] Restore the same function's604-word extent, argument temporary roles and remaining local homes/scheduling. Note1571 advances raw589 to594 while preserving the frame/save layout;10 words remain missing and481 differences persist. The current continuation and remaining gates are above.
 - [ ] Qualify actual mixed-profile padding/Make, independent GNU rebases and first whole-ELF prediction. Install only a verified match, audit all other code/data/addresses and freshly recount. No production/README/count change or matching credit in this checkpoint; wider Game work stays open.
 
 ## Route Actor Update Recovery And Frame Boundary - 2026-10-18

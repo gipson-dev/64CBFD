@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
+Advance complete func_15087350 C from589 to594 words by recovering its ranking
+cursor, preserving frame456, original saves and first15/final11 literal words.
+Fifteen tests pass;703 real-helper cases,12 wide-coordinate cases,228 screen
+cases and16 caller windows. Tools21db626 first; preserve1,284 mirror hashes.
+Still10 words short/481 differences, with cut14 private rejection unchanged.
+No production/README/count change or credit. Continue this same function's
+conversion spill, joins and remaining qualification gates; no new capture.
+
+2026-10-18:
 [Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
 Recover the complete589-word/frame456 func_15087350 source point, original
 GP/FP saves and argument homes, first15 exact words and last11 exact return

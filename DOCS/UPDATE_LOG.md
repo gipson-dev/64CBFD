@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Ranking Cursor
+
+[Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
+Recover five ranking-tail words in complete private func_15087350 C:
+raw594/frame456, with original saves and first15/final11 literal words retained.
+Fifteen tests pass, including703 real-helper cases,12 wide-coordinate cases,
+228 screen cases and16 caller windows. Call-anchored diagnosis isolates the
+remaining10-word shortfall;481 differences and cut14 private rejection remain.
+Fix repeat-run receipt naming and preserve all five source-screen banks.
+Tools21db626 first; preserve1,284 mirror hashes. No production/README/count
+change or credit. Continue this function before installation; no new capture.
+
 ## 2026-10-18 Route Actor Update Frame And Save Layout
 
 [Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):

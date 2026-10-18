@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update ranking cursor](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
+  complete594-word/frame456 C recovers five tail words without changing the
+  original save layout. Fifteen tests pass;10 words remain missing and481
+  differences persist. Tools21db626 first, no production/count change or credit.
+  Continue the same function's spill/join/private/native/matching gates.
 - [Route actor update frame and save layout](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md):
   complete589-word/frame456 C restores original saves/argument homes; first15
   and last11 words match directly. Eighteen tests and one reused owned

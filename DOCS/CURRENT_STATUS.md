@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c767262; tools are committed before the consumer pin.
+  checkpoint pins tools 21db626; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update ranking cursor recovered, matching still open**:
+[Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md).
+The selected complete C advances from589 to594 words, retaining frame456,
+original saves/argument homes and the first15/final11 literal words. All five added
+words are in the ranking tail; it remains10 words short/481 differences.
+Fifteen tests pass:703 real-helper cases,12 wide-coordinate cases,228 screen
+cases,16 caller windows and seven effective semantic negatives. Tools
+**21db626** first; completed compiler capture audited without rerunning.
+Opening28/34 still rejects at cut14. No production/README/count change or
+credit. Continue the same function's conversion spill, joins, homes/roles and
+native/private/all-word/integration gates. Preserve Note1568's installed totals.
 
 **Route actor update frame and original save layout recovered**:
 [Note 1570](WORKING_NOTES/1570-route-actor-update-frame-and-save-layout-recovery-20261018.md).
