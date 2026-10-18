@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 37acf9b; tools are committed before the consumer pin.
+  checkpoint pins tools 5f0358c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,18 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Alternate route payload isolated layout match; not installed**:
-[Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md).
-Complete experimental func_150896EC now matches all305 words/frame248 through
-a closed file-free layout recipe retaining305 distinct C instruction origins.
-Raw C remains140 differences. Eight tests pass:1,069 compared guest states,
-1,644 fired fault prefixes (1,084 in four real helpers), two full rebases,
-strict338 raw/binding and87 recipe controls. The actual private mixed-profile
-padder preserves72 neighbors and every other owner byte. The formerly failing
-first-save witness now agrees after normalization. Tools **37acf9b** first.
-Production stub/guards/Makefile/README/counts remain unchanged; Note1559's last
-fresh totals apply. Next native32 and remaining caller/proof/Make/prediction/
-production-install/linked-audit/recount gates, with FP/provider limits explicit.
+**Alternate route payload installed byte-exact**:
+[Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md).
+Replace func_150896EC's stub with complete typed C and its305-word/frame248
+normalized match. All305 source origins remain, with no insertions/omissions
+or Make change. Twelve installed tests pass:6,270 native cases per three
+profiles with nine effective controls,1,069 guest states,1,644 fault prefixes,
+100 connected caller cases and two full rebases. All seven actual Make commands
+and72 neighbors remain qualified. The1,050-byte first ELF prediction reproduces
+with three closed named metadata-order groups, unchanged definitions,6,057
+fixed addresses and189,088 protected data bytes. Tools **5f0358c** first.
+Fresh Game **2,989/4,828 (61.91%)**, total **3,662/5,501 (66.57%)**, **1,839
+different /zero drift**. README aggregates only. Next func_15088F30, the83-word
+route XYZ output helper; wider Game work and explicit FP/provider limits remain.
 
 **Route dispatcher directly byte-exact**:
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md).

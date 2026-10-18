@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-18:
+[Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
+Install complete typed func_150896EC,305/frame248 normalized with305 retained
+source origins and no insertions/omissions. Twelve installed tests pass:
+6,270 native cases per profile/nine controls,1,069 guest cases,1,644 fault cuts,
+100 connected caller cases, two rebases and actual mixed-profile Make/padding.
+The1,050-byte ELF prediction reproduces; three named metadata-order groups
+preserve all definitions. All6,057 addresses/other bodies and protected data
+stay fixed. Tools5f0358c first;1,262 prior mirror hashes preserved. Fresh
+Game2989/4828, total3662/5501, zero drift. Next route helper15088F30,83 words.
+
+2026-10-18:
 [Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
 Qualify isolated normalized305-word/frame248 func_150896EC, retaining all305
 C instruction origins and33 bindings; raw C stays140 differences. Eight tests

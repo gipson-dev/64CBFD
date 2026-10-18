@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Spline Payload Native32 And Installed Byte Match - 2026-10-18
+
+[Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
+
+- [x] Qualify the complete raw C with6,270 native cases per O0/O2/O2+UBSan build, four real helper bodies, five required effectful gates and nine ordinary semantic negatives. Preserve aligned host-endian/finite/provider scope and all previous source points.
+- [x] Install only func_150896EC's complete305-word/frame248 normalized body and typed caller prototype, with305 expected-word/binding rows and unchanged guard prefix. Retain all source origins,72 neighbors, the projection override and four GLOBAL_ASM bodies; no Make change. Pass12 installed tests including1,069 guest states,1,644 synthetic fault cuts,100 real caller cases and two rebases.
+- [x] Reproduce the first1,050-byte ELF prediction. Reconstruct only three named symbol-order groups with definitions fixed; preserve all6,057 addresses,6,056 other bodies and189,088 Game-data bytes/720 owners. Bank tools5f0358c first, preserve1,262 prior mirror dirty hashes and update README aggregate rows only. Fresh Game2989/4828, total3662/5501,1,839 different/zero drift.
+- [ ] Recover the83-word route XYZ output helper func_15088F30 and its typed output-array interface, retaining this installed payload/projection/dispatcher baseline. Wider Game work stays open.
+
 ## Route Spline Payload Isolated Layout Match And Private Padder - 2026-10-18
 
 [Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Derive a closed, file-free305-word/frame248 layout recipe from the retained complete semantic C and all33 bindings. Preserve305 unique source origins with no insertions/omissions or frame change; match every isolated retail word and independent assembly binding.
 - [x] Pass eight tests:1,069 compared guest states,1,644 fired instruction-memory prefixes including1,084 real-helper cuts, two complete data/call rebases,338 raw-word/binding controls and87 recipe controls. Keep extrapolation's commutative-FP term policy and opaque trig/hardware/native scope explicit.
 - [x] Exercise the actual private mixed-profile padder/assembler/linker with305 private guard rows. Preserve all72 primary and72 normal-profile neighbors, the projection override, every other padded-owner byte and the complete production guard prefix. Reject stale-primary/wrong-profile controls and the lower113-difference screen's private-memory failure. Bank tools37acf9b first; preserve1,259 prior mirror dirty hashes.
-- [ ] Qualify native32 with effectful helpers and negatives, close remaining caller/raw-versus-normalized proof gaps, then run actual Make/first ELF prediction/production installation/full linked data audit/recount. Do not claim matching credit from this isolated result. Wider Game work stays open.
+- [x] Complete native32/effectful negatives, both known direct caller interfaces, actual Make/first prediction/installation/full linked audit/recount in Note1563. The qualified result is installed; strict FP/hardware/unknown-interface scopes remain explicit rather than claiming a universal symbolic proof. Wider Game work stays open.
 
 ## Route Spline Payload Frame And Joint Extent Recovery - 2026-10-18
 

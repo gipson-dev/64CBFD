@@ -266,7 +266,7 @@ s32 func_15087350() {
 void func_15087CC0(void) {
     extern s8 D_800D23A9;
     extern void func_150891E8(u8 *, u8 *);
-    extern s32 func_150896EC();
+    extern void func_150896EC(u8 *, u8 *, s32);
     s32 i;
     u8 *record;
     u8 *actor;
@@ -1037,8 +1037,142 @@ void func_150891E8(u8 *record, u8 *actor) {
     }
 }
 
-s32 func_150896EC() {
-    return 0;
+/* Queue a route stop or interpolate its six-channel spline payload. */
+void func_150896EC(u8 *record, u8 *actor, s32 stop) {
+    extern s8 D_800D23A8;
+    extern s32 D_800BE9E4;
+    extern f32 D_8009DA0C;
+    extern f32 D_8009DA10;
+    extern f64 D_8009DA18;
+    extern void func_1512D560(u8 *, s32, void *);
+    extern f32 func_150497E0(f32 *, s32, f32);
+    f32 phase;
+    u8 *xCursor;
+    f32 *yCursor;
+    f32 *zCursor;
+    f32 *targetXCursor;
+    f32 *targetYCursor;
+    f32 *targetZCursor;
+    f32 x[4];
+    f32 y[4];
+    f32 z[4];
+    f32 targetX[4];
+    f32 targetY[4];
+    f32 targetZ[4];
+    f32 angle;
+    s32 previousValid;
+    s32 i;
+    u8 routeClass;
+    u8 id;
+    u8 next;
+    u8 old;
+    u8 *node;
+    u8 *recordCursor;
+    u8 *payload;
+
+    node = *(u8 **)(actor + 0x318);
+    if (node != 0) {
+        xCursor = node;
+        if (stop != 0) {
+            payload = record + 0x4C;
+            *(s32 *)(payload + 0x10) = 120;
+            *(f32 *)(payload + 0x0C) = D_8009DA0C;
+            func_1512D560(*(u8 **)(actor + 0x318), 10, payload);
+            func_1512D560(*(u8 **)(actor + 0x318), 6, (void *)(u32)((u8 *)xCursor)[0x23D]);
+            record[0x49] = 0;
+        } else {
+            if (*(s8 *)(record + 0x49) == 0) {
+                routeClass = D_800D23A8 + 1;
+                for (i = 0; i < D_80087290; i++) {
+                    node = D_800D2350 + i * 16;
+                    if (node[14] == 6 && node[15] == routeClass) {
+                        record[0x44] = i;
+                        i = D_80087290;
+                    }
+                }
+                id = func_1508907C(record[0x44], 6, 255, 0);
+                record[0x45] = id;
+                next = func_1508907C(id, 6, record[0x44], 0);
+                record[0x46] = next;
+                record[0x47] = func_1508907C(next, 6, record[0x45], 0);
+                *(f32 *)(record + 0x38) = *(f32 *)(actor + 0x14);
+                *(f32 *)(record + 0x3C) = *(f32 *)(actor + 0x18);
+                *(f32 *)(record + 0x40) = *(f32 *)(actor + 0x1C);
+                *(f32 *)(record + 0x34) = 0.0f;
+                func_1512D560(*(u8 **)(actor + 0x318), 5, (void *)(u32)((u8 *)xCursor)[0x23D]);
+                record[0x49] = 1;
+            }
+            *(f32 *)(record + 0x34) += D_8009DA10 * (f32)D_800BE9E4;
+            if (*(f32 *)(record + 0x34) >= 1.0f) {
+                previousValid = record[0x46];
+                if (previousValid == 255) {
+                    *(f32 *)(record + 0x34) = 1.0f;
+                } else {
+                    i = record[0x47];
+                    old = record[0x45];
+                    record[0x45] = previousValid;
+                    *(f32 *)(record + 0x34) -= 1.0f;
+                    record[0x46] = i;
+                    record[0x44] = old;
+                    record[0x47] = func_1508907C(i, 6, previousValid, 0);
+                }
+            }
+            previousValid = 0;
+            recordCursor = record;
+            xCursor = (u8 *)x;
+            yCursor = y;
+            zCursor = z;
+            targetXCursor = targetX;
+            targetYCursor = targetY;
+            targetZCursor = targetZ;
+            do {
+                id = recordCursor[0x44];
+                if (id != 255) {
+                    previousValid = 1;
+                    func_15086CBC(id, (f32 *)xCursor, yCursor, zCursor);
+                    func_15086CBC(func_1508907C(recordCursor[0x44], 4, 255, 0),
+                        targetXCursor, targetYCursor, targetZCursor);
+                } else if (previousValid == 1) {
+                    previousValid = 0;
+                    angle = (f32)((f64)*(f32 *)(actor + 0x40) * 0.01745);
+                    *(f32 *)xCursor = *(f32 *)(record + 0x38) - sinf(angle) * 500.0f;
+                    *yCursor = *(f32 *)(record + 0x3C) + 180.0f;
+                    *zCursor = *(f32 *)(record + 0x40) - cosf(angle) * 500.0f;
+                    *targetXCursor = *(f32 *)(record + 0x38);
+                    *targetYCursor = *(f32 *)(record + 0x3C) + 120.0f;
+                    *targetZCursor = *(f32 *)(record + 0x40);
+                } else {
+                    *(f32 *)xCursor = (*(f32 *)(xCursor - 4) - *(f32 *)(xCursor - 8)) + *(f32 *)(xCursor - 4);
+                    *yCursor = (yCursor[-1] - yCursor[-2]) + yCursor[-1];
+                    *zCursor = (zCursor[-1] - zCursor[-2]) + zCursor[-1];
+                    *targetXCursor = (targetXCursor[-1] - targetXCursor[-2]) + targetXCursor[-1];
+                    *targetYCursor = (targetYCursor[-1] - targetYCursor[-2]) + targetYCursor[-1];
+                    *targetZCursor = (targetZCursor[-1] - targetZCursor[-2]) + targetZCursor[-1];
+                }
+                targetZCursor++;
+                recordCursor++;
+                xCursor += 4;
+                yCursor++;
+                zCursor++;
+                targetXCursor++;
+                targetYCursor++;
+            } while (targetZCursor != targetZ + 4);
+            phase = *(f32 *)(record + 0x34);
+            payload = record + 0x4C;
+            *(f32 *)(payload + 0x14) = func_150497E0(x, 0, phase);
+            *(f32 *)(payload + 0x18) = func_150497E0(y, 0, phase);
+            *(f32 *)(payload + 0x1C) = func_150497E0(z, 0, phase);
+            *(f32 *)(payload + 0x20) = func_150497E0(targetX, 0, phase);
+            *(f32 *)(payload + 0x24) = func_150497E0(targetY, 0, phase);
+            *(f32 *)(payload + 0x28) = func_150497E0(targetZ, 0, phase);
+            *(u32 *)(payload + 0) = 0;
+            *(u32 *)(payload + 4) = 0;
+            *(f32 *)(payload + 0x30) = 30.0f;
+            *(f32 *)(payload + 0x34) = 30.0f;
+            *(f32 *)(payload + 0x2C) = 0.0f;
+            func_1512D560(*(u8 **)(actor + 0x318), 7, payload);
+        }
+    }
 }
 
 void func_15089BB0() {

@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route spline payload native32 and installed byte match](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
+  complete305-word/frame248 normalized C, all source origins retained. Twelve
+  installed tests include three6,270-case native profiles,1,644 fault prefixes,
+  100 real caller cases and actual Make/padding. The1,050-byte first prediction
+  reproduces with closed metadata-order accounting and all other code/data fixed.
+  Tools5f0358c first. Fresh Game2989/4828, total3662/5501; next helper15088F30.
 - [Route spline payload isolated layout match and private padder](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
   all305 words/frame248 normalized from complete C, retaining every source
   instruction origin. Eight tests cover1,069 guest states,1,644 fired fault

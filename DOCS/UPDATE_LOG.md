@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-18 Route Spline Payload Native32 And Installed Byte Match
+
+[Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
+Replace func_150896EC's placeholder with complete typed C and a305-word/frame248
+normalized match retaining every source instruction. Twelve installed tests
+pass, including three6,270-case native builds/nine negatives,1,644 fired fault
+prefixes,100 connected dispatcher cases and actual Make/padder qualification.
+The first1,050-byte whole-ELF prediction reproduces exactly, accounting for
+three closed symbol-order groups without changing definitions. All other code,
+addresses and protected data stay fixed. Tools5f0358c first; preserve1,262 old
+mirror dirty hashes. Fresh Game2989/4828 (61.91%), total3662/5501 (66.57%),
+1,839 different/zero drift. README aggregates only; next helper15088F30.
+
 ## 2026-10-18 Route Spline Payload Isolated Layout Match And Private Padder
 
 [Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
