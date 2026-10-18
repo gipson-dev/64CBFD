@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Release Index Speed Copy And Heading Roles
+
+[Note1521](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md):
+Recover signed release indexing, speed read order and comparison literal type
+in complete `func_150F34F4`: raw 200 differences, normalized 169 with 31 private
+rows, 959/frame0x80 and 478 exact opening words. Twelve tests pass, including
+100 speed-alias rejections, 480 heading cases, 6,700 private prefixes and 369
+native cases/profile. Tools 201eff8 first; preserve production, 309 inputs,
+totals and README. Three new research rows only; not installed or credited.
+
 ## 2026-10-17 Movement Clamp Acceleration And Pitch Lifetimes
 
 [Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):

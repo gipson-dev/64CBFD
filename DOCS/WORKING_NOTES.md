@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-17:
+[Note1521](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md):
+Recover complete movement release-index/speed/comparison lifetimes: raw 200
+differences, normalized 169 with 31 private rows, first 478 words exact at
+959/frame0x80. Twelve tests pass: 100 old speed-read rejections, 480 heading
+cases, 6,700 prefixes and 369 native cases/profile. Tools 201eff8 first;
+309 inputs, production, fresh totals and README unchanged. Three new research
+rows only; no installation/credit. Same flag gap at `0x150F3C6C` remains.
+
+2026-10-17:
 [Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
 Recover complete movement clamp/acceleration/pitch lifetimes: raw 270
 differences, normalized 242 with unchanged 28 research rows, 959/frame0x80.

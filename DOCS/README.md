@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement release index speed copy and heading roles](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md):
+  complete C improves 270 to 200 differences; three new bounded research rows
+  give 169 differences and 478 exact opening words. Twelve tests pass, with
+  100 speed-alias rejections / 480 heading cases; not installed or credited.
 - [Movement clamp acceleration and pitch lifetimes](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md):
   complete 959-word/frame0x80 C improves 389 to 270 differences, 242 after the
   unchanged 28 private rows. Nine tests pass, including actual-retail alias

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools ad45714; tools are committed before the consumer pin.
+  checkpoint pins tools 201eff8; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **release indexing, speed read and heading roles recovered**:
+[Note1521](WORKING_NOTES/1521-movement-release-index-speed-copy-and-heading-roles-20261017.md).
+Complete `func_150F34F4` improves to 200 raw differences / 169 with 31 private
+rows, still 959/frame0x80, first 478 normalized words exact. Twelve tests pass,
+including 100 old speed-read rejections, 480 heading cases and 6,700 prefixes.
+Tools 201eff8 first; 309 inputs, production, fresh totals and README unchanged.
+Three new research rows, zero production rows/installation/credit. Continue
+the same flag/constant roles at `0x150F3C6C`, private gap `0x150F3C88`, and
+remaining FP/surfacing/full-function gates.
 
 Movement **clamp/acceleration/pitch lifetimes recovered**:
 [Note1520](WORKING_NOTES/1520-movement-clamp-acceleration-and-pitch-lifetimes-20261017.md).
