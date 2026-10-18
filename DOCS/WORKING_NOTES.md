@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
+Bank28 rejected lifetime forms under a fresh strict post-spline checkpoint.
+Six tests,336 paired guest cases,72 fixed neighbors and explicit first-save
+faults preserve the two-save installation boundary. Tools3bd5e4e first;
+production/README and totals unchanged. Continue invariant/inner-loop fitting;
+const bindings and the measured declaration orders do not resolve allocation.
+
+2026-10-18:
 [Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
 Recover typed `func_150498A4`:62 words/frame32,45 guarded FP/identity/schedule
 changes, correct F20 pair and output aliases. Seven installed tests,20,568

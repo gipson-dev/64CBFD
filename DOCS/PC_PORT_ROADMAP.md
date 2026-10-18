@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Route Vector Lifetime Screens - 2026-10-18
+
+[Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
+
+- [x] Establish a new strict post-spline vector fitting checkpoint without weakening Note1545's old ELF/guard pins. Test16 local/const-binding forms and twelve declaration-group forms; all28 retain three saves. Six-test final run passes;72 raw owner neighbors/bindings and pools remain fixed.
+- [x] Compare336 paired guest cases over two raw bodies, exact public memory/traces and saved ABI state; prove two effective unsigned-coordinate controls,165 word/four binding rejection checks and26 live/snapshot input guards. Actual first-private-store faults reject both bodies. Bank tools **3bd5e4e** first; preserve all1,222 prior mirror dirty hashes. No production/README change or matching credit; totals stay Game2,984/4,828, total3,657/5,501, zero drift.
+- [ ] Recover the retail two-save invariant/output-cursor contract, duplicate candidate shift and original branch/delay layout before any complete padding/rebase/linked qualification or installation. The const/declaration screens are measured dead ends, not a reason to add broad guards. Parent15087350 and wider queues remain open.
+
 ## Route Spline Derivative Byte Match - 2026-10-18
 
 [Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):

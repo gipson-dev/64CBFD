@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools bcfe55a; tools are committed before the consumer pin.
+  checkpoint pins tools 3bd5e4e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route vector lifetime screens rejected; production unchanged**:
+[Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md).
+A fresh strict post-spline checkpoint tests28 qualifier/declaration forms.
+All retain three saves;83/frame16 and82/frame16 both fail the actual first
+private-store witness. Six tests pass,336 paired guest cases,72 unchanged
+owner neighbors/pools,165 raw-word/four binding and26 input rejection checks.
+Tools **3bd5e4e** first. No production C/guard/ELF or root README change and no
+matching credit; totals below remain unchanged. Continue the two-save/inner-loop expression
+fit; the old vector model's pre-spline fingerprints remain deliberately fixed.
 
 **Route spline derivative restored and byte-matched**:
 [Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md).

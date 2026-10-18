@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Vector Lifetime Screens Rejected
+
+[Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
+Bank a fresh strict vector checkpoint and28 bounded qualifier/declaration
+forms. Six tests pass, including336 paired guest cases,72 fixed neighbors,
+raw/binding/input corruption guards and actual private-store rejection for
+both distinct raw bodies. All retain three saves. Tools **3bd5e4e** first;
+no production source/guards/ELF/README change, no matching credit or push.
+Totals remain Game2,984/4,828, total3,657/5,501, zero drift. Continue the
+retail two-save/inner-loop expression fit; do not repeat the rejected screen.
+
 ## 2026-10-18 Route Spline Derivative Byte Match
 
 [Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):

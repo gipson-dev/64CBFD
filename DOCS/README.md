@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route vector lifetime screens rejected](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
+  new strict post-spline checkpoint,28 forms and six tests; all still fail
+  retail's two-save private contract. Production and matching totals unchanged;
+  tools3bd5e4e first. Resume invariant/inner-loop fitting, not this dead-end screen.
 - [Route spline derivative byte match](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
   recover62 words/frame32 with45 closed FP/identity/schedule guards, correct
   FR=0 pair and real output aliases. Both spline helpers complete; tools
