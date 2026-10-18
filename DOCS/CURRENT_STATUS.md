@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 681037a; tools are committed before the consumer pin.
+  checkpoint pins tools 6067024; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,20 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Alternate route payload semantics and literal array homes recovered; not installed**:
-[Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md).
-Complete typed experimental func_150896EC covers both stop/spline modes.
-Initial and front-declaration points emit302 words/frame288,289 differences;
-retail is305/frame248. Nine tests pass:1069 paired public-memory/call/access
-cases per point, four real installed helpers/216 words, five effective C
-controls and strict335 word/binding controls. The front point also retains all
-96 array bytes and literal private call addresses; complete memories agree0/1069.
-Both retain72 owner neighbors/pools. Two fired private fault prefixes expose
-the40-byte frame displacement. Thirty screens remain rejected for installation;
-same-frame forms lose one of retail's three saved FP pairs. Tools **681037a**
-first. No production, guards, Makefile, README or count change; Note1559's
-latest matching totals remain in force. Next jointly fit305/frame248, original
-saved roles/homes and these exact array homes before native/rebase/install gates.
+**Alternate route payload frame and retail extent recovered; not byte-exact**:
+[Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md).
+Complete experimental func_150896EC now reaches305 words/frame248, all three
+saved FP pairs and six literal array homes, with140 linked word differences.
+Seven tests pass: both new qualified points have complete memory, literal
+helper arguments and public access traces equal in1,069 paired cases, versus
+0/1,069 complete memories previously. Four real helpers/216 words, five C
+negatives, strict word/binding/pool controls and72 retained neighbors pass.
+A completed owned compiler trace identifies the former upstream local budget.
+The joint point still fails the first-save fault witness; saved roles and
+scheduling remain open. Tools **6067024** first. Production stub, guards,
+Makefile, README and totals stay unchanged; Note1559's last fresh counts apply.
+Next fit the same140-difference point before native/rebase/padder/install gates.
 
 **Route dispatcher directly byte-exact**:
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md).

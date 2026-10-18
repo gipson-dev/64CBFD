@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
+Recover func_150896EC's joint305-word/frame248 shape, all three saved FP pairs
+and literal array homes;140 linked words still differ. Seven tests pass with
+1,069 complete-memory/call/access cases per new point,216 actual helper words,
+five C negatives and strict corruption gates. Completed compiler trace exposes
+the former local reservation;33 screens remain uninstalled. The joint point's
+first-save fault still differs. Tools6067024 first; preserve1,256 prior mirror
+dirty hashes. Production, README and last fresh Note1559 totals unchanged.
+
+2026-10-18:
 [Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
 Recover full func_150896EC C in private fixtures: both modes,302/frame288/289
 differences versus305/frame248. Nine tests pass,1069 public memory/call/access

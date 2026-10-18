@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route spline payload frame and joint extent recovery](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
+  experimental305 words/frame248, three saved FP pairs, literal array homes;
+  140 linked differences. Seven tests and1,069 complete-memory/call/access
+  cases per new point pass; first-save fault state still differs. Tools6067024
+  first. Production/README/counts unchanged; continue register/schedule fitting.
 - [Alternate route payload semantics and literal array homes](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
   complete302-word/frame288 experimental C, both modes; nine tests and1069
   public/ordered-access cases per point with four real helpers. Front declarations

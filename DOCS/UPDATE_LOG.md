@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Spline Payload Frame And Joint Extent Recovery
+
+[Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
+Recover the same func_150896EC's305-word/frame248 shape, three saved FP pairs
+and six literal array homes. Correctly linked words still differ at140 sites.
+Seven tests pass: both new qualified points match complete memory, literal
+helper arguments and public access traces in1,069 cases, with216 real helper
+words and effective corruption/source controls. A completed owned compiler
+trace identifies the old local reservation. Keep the first-save fault failure
+explicit; no production replacement or matching credit. Tools6067024 first;
+preserve1,256 previous mirror dirty hashes. README and last fresh counts fixed.
+
 ## 2026-10-18 Alternate Route Payload Recovery And Literal Array Homes
 
 [Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):

@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Spline Payload Frame And Joint Extent Recovery - 2026-10-18
+
+[Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
+
+- [x] Complete an owned, fingerprint-locked compiler trace with identical normal/traced code and pools. Observe the former288-byte frame as200 local/72 saved/16 outgoing bytes; capture both upstream streams and effective corruption gates without attaching to a game.
+- [x] Recover a complete305-word/frame248 C point with all three saved FP pairs and six literal array homes. Independently bind its exact double literal to retail data;140 linked words still differ. Preserve the earlier302-word frame-correct opening-state control and all older points.
+- [x] Pass seven tests:1,069 complete-memory/literal-call/public-access cases per new point,216 actual helper words, five effective C negatives,335/338 word-binding controls and16 pool-byte controls. Retain72 primary neighbors and all22 production inputs. Bank tools6067024 first and preserve1,256 prior mirror dirty hashes; no production/README/count change.
+- [ ] Recover retail register lifetimes, stop payload-base operations, grouped loads and scheduling. The joint point still fails the fired first-save private-state witness. Complete native32, independent rebases, caller/private/fault and real padder/Make/prediction/install/ELF-data audit/recount gates before matching credit. The wider Game goal stays open.
+
 ## Alternate Route Payload Semantic Recovery And Array Homes - 2026-10-18
 
 [Note1560](WORKING_NOTES/1560-route-spline-payload-semantic-recovery-and-array-homes-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete typed experimental func_150896EC for both stop/spline modes, correct byte/halfword widths, captured-object/fresh-enqueue distinction, single phase advance, double-scaled heading and six channel outputs. Verify both direct call sites/0-and1 delay arguments and ignored V0; preserve the production stub and all72 copied-owner neighbors/pools.
 - [x] Pass nine tests:1069 paired public-state/call/access cases for each complete C point, four actual installed byte-exact helpers/216 words, four extra stop queue aliases, five effective compiled C controls,335 raw word/binding controls and22 input fingerprints. Keep sin/cos as explicit deterministic providers, undefined leading history rejected, and native/FCSR/hardware scopes unqualified.
 - [x] Recover all six literal retail array homes by moving seven real float declarations, with all96 array bytes/private call pointers equal in1069 cases. Preserve both302/frame288/289-difference points; complete memories still match0/1069. Two fired private access boundaries expose the40-byte SP shift. Reject30 shape screens for installation, including248-byte-frame forms with only two of three saved FP pairs. Bank tools **681037a** first and preserve1254 prior mirror dirty hashes; no production/README/totals change.
-- [ ] Jointly recover305 words/frame248, all three original saved FP pairs, S1 captured-object lifetime, real save homes and the qualified array homes. Do not normalize the frame or install a same-frame/shorter point merely because it fits. Then qualify native32, independent rebases, full caller/private/fault and actual padding/prediction/install/linked audit/recount gates. Wider Game work remains open.
+- [ ] Joint305-word/frame248 shape, all three saved FP pairs and exact array homes are recovered in Note1561; S1 captured-object lifetime and literal save/scheduling behavior remain open. Do not normalize the frame or install on shape alone. Native32, rebases, caller/private/fault and padder/prediction/install/audit/recount gates remain open as tracked above.
 
 ## Route Dispatcher Direct Byte Match - 2026-10-18
 
