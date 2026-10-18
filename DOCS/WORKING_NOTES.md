@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1538](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):
+Recover `func_15087E54` as complete typed void C with u16 target/delta values.
+All 39 words/frame0x18 match directly, with no guards or profile changes.
+Seven installed tests and the exact 126-byte first prediction pass; preserve
+72 raw neighbors, other bodies/addresses/symbols, guards and data. Keep the
+stubbed-parent and scripted-helper execution limits explicit. Tools f81bd64
+first. Game 2,976/4,828, total 3,649/5,501; next `func_15087EF0`.
+
+2026-10-18:
 [Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
 Recover complete boolean `func_15022B08`: 39 words/no frame, nine closed
 register/scheduling guards, no inserted/omitted words. Seven installed tests

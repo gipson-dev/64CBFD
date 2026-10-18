@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Record heading clamp direct byte match](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):
+  typed u16 angle lifetimes recover all 39 words without guards or build
+  changes. Seven tests and the 126-byte first whole-link prediction pass;
+  all 72 neighbors stay fixed. Game 2,976/4,828; next `func_15087EF0`.
 - [Enabled record tag query byte match](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
   complete 39-word C query matches with nine closed register/schedule guards.
   Seven tests and the 118-byte full-link prediction pass; all neighbors and

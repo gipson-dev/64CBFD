@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Record Heading Clamp Direct Byte Match - 2026-10-18
+
+[Note1538](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):
+
+- [x] Recover typed void `func_15087E54`, null table/0x84-byte record indexing, exact float argument delivery, saved actor lifetime, u16 target/delta wrap and asymmetric 0xDBFF/0x2401 limits. All 39 words/frame0x18 emit directly with no guards or build changes.
+- [x] Pass seven installed tests: 810 paired guest cases, 24 additional null/wide-index/helper-effect cases, 262,876 native cases per O2/O0 UBSan profile, seven observable controls, six independent links/540 rebased cases, 96 bounded retail caller windows and 272 fault prefixes. Preserve explicit guest/native/fault and stubbed-parent boundaries.
+- [x] Preserve all 72 raw owner neighbors and reproduce the first whole-ELF prediction: 126 bytes, comprising 125 target-code bytes and one symbol-size byte. Audit all 6,057 bodies/addresses, symbols, actual owner/bindings, unchanged guards/build and Game data. Bank tools f81bd64 first.
+- [x] Measure Game 2,976/4,828, total 3,649/5,501 and zero drift; update only README aggregate rows. Preserve all 1,202 older tools-mirror dirty hashes, adding only two absent task files. No host/frozen Release action; the caller parent remains a stub.
+- [ ] Recover adjacent `func_15087EF0` (53 words/frame0x20): audit caller ABI at 0x1505168C, table null behavior, saved record pointer, live mode/speed reads, helper result plus 0x3600/0x4A00 and actor +0x76 store. Preserve opposite mode-dependent float predicates, including NaN behavior. Keep wider Game matching and separate gaps open.
+
 ## Enabled Record Tag Query Byte Match - 2026-10-18
 
 [Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 2,688 three-way guest cases, 16,384 native cases per O2/O0 UBSan profile, seven result controls, 20 scripted-read lifetime cases, nine independent rebased links/144 cases, 162 full restored-C caller cases, 48 other retail windows and 472 access-fault prefixes. Keep raw scratch-state, native memory-lifetime and stubbed-parent limits explicit.
 - [x] Correct the observed C caller declaration without changing its complete 84-function object. Preserve all 56 raw owner neighbors and reproduce the first whole-ELF prediction: 118 bytes, comprising 117 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, symbols, actual objects/bindings, old guard prefix, unchanged Makefile and Game data. Bank tools 5abdd73 first.
 - [x] Measure Game 2,975/4,828, total 3,648/5,501 and zero drift; change only README aggregate rows. Preserve all 1,200 older mirror hashes, adding two absent task files, without host/frozen Release action. Two other retail parent bodies remain stubs.
-- [ ] Recover `func_15087E54` (39 words/frame0x18): audit helper/caller ABI, null table, 0x84-byte indexing, float argument delivery, 16-bit wrap and actor +0x76 update. Preserve the asymmetric negative threshold 0xDBFF versus positive 0x2401; do not simplify to a symmetric signed-angle test. Keep wider Game matching and separate gaps open.
+- [x] Recover `func_15087E54` (39 words/frame0x18), qualifying the saved actor, u16 wrap and asymmetric thresholds without guards; see Note1538. Wider Game matching, the caller parent stub and separate gaps remain open.
 
 ## Gated Category Pass Direct Byte Match - 2026-10-18
 

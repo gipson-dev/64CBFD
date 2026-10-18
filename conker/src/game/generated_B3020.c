@@ -286,8 +286,29 @@ void func_15087DCC(s32 arg0, s32 arg1) {
     rec[0x2F] = arg1;
 }
 
-s32 func_15087E54() {
-    return 0;
+/* Keep the actor heading within the record's asymmetric wrapped-angle limits. */
+void func_15087E54(s32 recordIndex, u8 *actor) {
+    extern u16 func_1505A630(f32, f32, s32);
+    u8 *table = D_800872A0;
+    u8 *record;
+    u16 target;
+    u16 delta;
+
+    if (table != 0) {
+        record = table + recordIndex * 0x84;
+        target = (func_1505A630(*(f32 *)(record + 0x10),
+                              *(f32 *)(record + 0x0C), 0) + 0x4000);
+        delta = target - *(u16 *)(actor + 0x76);
+        if (delta & 0x8000) {
+            if (delta < 0xDBFF) {
+                *(u16 *)(actor + 0x76) = target + 0x2400;
+            }
+        } else {
+            if (delta >= 0x2401) {
+                *(u16 *)(actor + 0x76) = target - 0x2400;
+            }
+        }
+    }
 }
 
 s32 func_15087EF0() {

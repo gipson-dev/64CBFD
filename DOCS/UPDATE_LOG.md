@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Record Heading Clamp Direct Byte Match
+
+[Note1538](WORKING_NOTES/1538-record-heading-clamp-direct-byte-match-20261018.md):
+Recover typed void `func_15087E54` with u16 target/delta values and the exact
+asymmetric wrapped-angle thresholds. All 39 words/frame0x18 match directly;
+no guards or build changes. Seven installed tests, 262,876 native cases per
+profile and the 126-byte first ELF prediction pass. All 72 raw neighbors,
+other bodies/addresses/symbols, guards and data stay fixed. The observed
+retail parent remains a production stub; only its bounded consumer window
+is executed. Tools f81bd64 first. Game **2,976/4,828**, total **3,649/5,501**,
+zero drift. Root README aggregate rows only; next `func_15087EF0`.
+
 ## 2026-10-18 Enabled Record Tag Query Byte Match
 
 [Note1537](WORKING_NOTES/1537-enabled-record-tag-query-byte-match-20261018.md):
