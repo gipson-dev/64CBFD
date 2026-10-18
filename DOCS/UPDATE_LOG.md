@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Native32 And Storage Boundary
+
+[Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
+Qualify the complete selected C with553 cases per three native profiles, five
+real C helpers and the same553 retail/raw guest cases. Six tests pass with
+five ordinary semantic controls and one separate fired cast-domain sanitizer
+control. Ten storage screens/120 guest cases yield no replacement point.
+Tools d4113f7 first; preserve1,286 mirror hashes. Raw594/frame456/481 differences
+and the ten-word deficit remain. No production/README/count change or credit;
+continue private/extent/all-word/integration work in this same function.
+
 ## 2026-10-18 Route Actor Update Ranking Cursor
 
 [Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):

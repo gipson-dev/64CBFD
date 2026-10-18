@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Native32 And Storage Boundary - 2026-10-18
+
+[Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
+
+- [x] Qualify the complete selected C and five recovered C helpers in553-case O0/O2/O2+UBSan builds, including explicit float-cast-overflow checks. Compare the full mapped public arena and canonical calls with the independent ordered-float reference, preserving declared aliases and actual ELF constants. Detect five ordinary semantic controls and a separate deliberate outside-domain sanitizer trap.
+- [x] Pass six tests, connecting the same553 inputs to full retail/raw MIPS with494 actual helper words. Check ten storage screens/120 additional guest cases, all72 neighbors/pools and all23 protected inputs. Bank tools d4113f7 first; preserve1,286 dirty mirror hashes. No new selected source, production/README/count change or credit.
+- [ ] Recover the same function's remaining ten words, argument roles and private homes/access order. Raw594/frame456/481 differences is unchanged. The bounded native gate is qualified; private-stack/unknown-alias/FCSR/hardware equivalence is not. Preserve original saves and the completed audit-only compiler capture.
+- [ ] Complete private-prefix/alias and source-derived all-word/binding proof, actual mixed padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. Broader Game work stays open.
+
 ## Route Actor Update Ranking Cursor - 2026-10-18
 
 [Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover five words in the complete ranking tail while preserving frame456, original saves/argument homes and the first15/final11 literal words. Pin the594-word source/bindings and diagnose all21 call-anchored blocks without instruction rewriting. Keep volatile-spill and narrowed-conversion controls unselected.
 - [x] Pass15 tests:703 real-helper cases,12 wide-coordinate cases,228 screen cases,16 caller windows and seven effective semantic negatives. Preserve72 neighbors/pools in both profiles, the projection override, all23 protected inputs and all five screen banks on repeat runs. Bank tools21db626 first; preserve1,284 dirty mirror hashes. Re-audit the existing compiler capture without another debugger launch.
 - [ ] Restore the remaining10-word extent gap, argument roles and private homes/access order in this same func_15087350. Raw594 still has481 differences; opening28/34 prefixes agree, but cut14 rejects T6/T8. Establish the source cause of the SP+0x48 conversion word without inventing an original volatile qualifier or narrowing the defined input domain.
-- [ ] Complete native32/UBSan, aliases/private-prefix and all-word/binding proof, actual padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. Production/README/counts remain at Note1568; zero credit here, broader Game work stays open.
+- [ ] Native32/UBSan bounded qualification is complete in Note1572 above. Complete the remaining aliases/private-prefix and all-word/binding proof, actual padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. Production/README/counts remain at Note1568; no matching credit from this private checkpoint.
 
 ## Route Actor Update Frame And Save Layout - 2026-10-18
 

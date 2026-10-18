@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
+Six tests qualify complete func_15087350 C in three553-case native builds with
+five real helpers, the same553 connected guest cases, five ordinary negatives
+and a separate fired float-cast-domain control. Ten storage screens add120
+guest cases without replacing raw594/frame456/481 differences. Tools d4113f7
+first; preserve1,286 mirror hashes. No production/README/count change or credit.
+Continue the same function's extent, private homes/roles and matching gates.
+
+2026-10-18:
 [Note 1571](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
 Advance complete func_15087350 C from589 to594 words by recovering its ranking
 cursor, preserving frame456, original saves and first15/final11 literal words.

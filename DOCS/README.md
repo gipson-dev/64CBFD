@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update native32 and storage boundary](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
+  six tests qualify the full C in three553-case native profiles and the same
+  connected guest corpus. Five ordinary controls and one separate sanitizer
+  control fire. Raw594/frame456 still has481 differences; no installation or
+  credit. Tools d4113f7 first; continue the same function's private/extent match.
 - [Route actor update ranking cursor](WORKING_NOTES/1571-route-actor-update-ranking-cursor-recovery-20261018.md):
   complete594-word/frame456 C recovers five tail words without changing the
   original save layout. Fifteen tests pass;10 words remain missing and481
