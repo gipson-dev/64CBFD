@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-18 Route Spline Payload Isolated Layout Match And Private Padder
+
+[Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
+Reach all305 retail words/frame248 through a closed layout of the retained
+complete C body, with no inserted/omitted instruction origins. Eight tests
+pass:1,069 compared guest states,1,644 fired fault prefixes, two full data/call
+rebases and effective input/recipe controls. The actual private mixed-profile
+padder reproduces the target and preserves72 neighbors/other owner bytes.
+Tools37acf9b first; preserve1,259 previous mirror dirty hashes. Raw C stays140
+differences, production is not replaced and no matching credit is claimed.
+Native32, remaining proof/caller and production prediction/install/audit/recount
+gates remain open. Root README and last fresh totals unchanged.
+
 ## 2026-10-18 Route Spline Payload Frame And Joint Extent Recovery
 
 [Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):

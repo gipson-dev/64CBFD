@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
+Qualify isolated normalized305-word/frame248 func_150896EC, retaining all305
+C instruction origins and33 bindings; raw C stays140 differences. Eight tests
+pass:1,069 guest states,1,644 fault prefixes, two full rebases, strict input/
+recipe controls and actual private padder with72 neighbors/other bytes fixed.
+Twenty source screens are not promoted;113-difference form fails private RAM.
+Tools37acf9b first; preserve1,259 prior mirror dirty hashes. Production, README
+and last fresh Note1559 totals unchanged. Next native32/proof/install gates.
+
+2026-10-18:
 [Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
 Recover func_150896EC's joint305-word/frame248 shape, all three saved FP pairs
 and literal array homes;140 linked words still differ. Seven tests pass with

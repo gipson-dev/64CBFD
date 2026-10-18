@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route spline payload isolated layout match and private padder](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
+  all305 words/frame248 normalized from complete C, retaining every source
+  instruction origin. Eight tests cover1,069 guest states,1,644 fired fault
+  prefixes, two full rebases and actual mixed-profile private padding with72
+  neighbors fixed. Tools37acf9b first. Not installed; native/proof gates open.
 - [Route spline payload frame and joint extent recovery](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
   experimental305 words/frame248, three saved FP pairs, literal array homes;
   140 linked differences. Seven tests and1,069 complete-memory/call/access

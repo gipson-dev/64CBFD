@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Spline Payload Isolated Layout Match And Private Padder - 2026-10-18
+
+[Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md):
+
+- [x] Derive a closed, file-free305-word/frame248 layout recipe from the retained complete semantic C and all33 bindings. Preserve305 unique source origins with no insertions/omissions or frame change; match every isolated retail word and independent assembly binding.
+- [x] Pass eight tests:1,069 compared guest states,1,644 fired instruction-memory prefixes including1,084 real-helper cuts, two complete data/call rebases,338 raw-word/binding controls and87 recipe controls. Keep extrapolation's commutative-FP term policy and opaque trig/hardware/native scope explicit.
+- [x] Exercise the actual private mixed-profile padder/assembler/linker with305 private guard rows. Preserve all72 primary and72 normal-profile neighbors, the projection override, every other padded-owner byte and the complete production guard prefix. Reject stale-primary/wrong-profile controls and the lower113-difference screen's private-memory failure. Bank tools37acf9b first; preserve1,259 prior mirror dirty hashes.
+- [ ] Qualify native32 with effectful helpers and negatives, close remaining caller/raw-versus-normalized proof gaps, then run actual Make/first ELF prediction/production installation/full linked data audit/recount. Do not claim matching credit from this isolated result. Wider Game work stays open.
+
 ## Route Spline Payload Frame And Joint Extent Recovery - 2026-10-18
 
 [Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Complete an owned, fingerprint-locked compiler trace with identical normal/traced code and pools. Observe the former288-byte frame as200 local/72 saved/16 outgoing bytes; capture both upstream streams and effective corruption gates without attaching to a game.
 - [x] Recover a complete305-word/frame248 C point with all three saved FP pairs and six literal array homes. Independently bind its exact double literal to retail data;140 linked words still differ. Preserve the earlier302-word frame-correct opening-state control and all older points.
 - [x] Pass seven tests:1,069 complete-memory/literal-call/public-access cases per new point,216 actual helper words, five effective C negatives,335/338 word-binding controls and16 pool-byte controls. Retain72 primary neighbors and all22 production inputs. Bank tools6067024 first and preserve1,256 prior mirror dirty hashes; no production/README/count change.
-- [ ] Recover retail register lifetimes, stop payload-base operations, grouped loads and scheduling. The joint point still fails the fired first-save private-state witness. Complete native32, independent rebases, caller/private/fault and real padder/Make/prediction/install/ELF-data audit/recount gates before matching credit. The wider Game goal stays open.
+- [ ] Isolated normalized register/scheduling recovery, independent rebases and actual private padding are complete in Note1562; the raw point remains140 differences. Native32, remaining caller/raw-versus-normalized proof and production Make/prediction/install/ELF-data audit/recount gates remain open as tracked above.
 
 ## Alternate Route Payload Semantic Recovery And Array Homes - 2026-10-18
 

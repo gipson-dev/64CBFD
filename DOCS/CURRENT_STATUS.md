@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6067024; tools are committed before the consumer pin.
+  checkpoint pins tools 37acf9b; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,19 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Alternate route payload frame and retail extent recovered; not byte-exact**:
-[Note1561](WORKING_NOTES/1561-route-spline-payload-frame-and-joint-extent-recovery-20261018.md).
-Complete experimental func_150896EC now reaches305 words/frame248, all three
-saved FP pairs and six literal array homes, with140 linked word differences.
-Seven tests pass: both new qualified points have complete memory, literal
-helper arguments and public access traces equal in1,069 paired cases, versus
-0/1,069 complete memories previously. Four real helpers/216 words, five C
-negatives, strict word/binding/pool controls and72 retained neighbors pass.
-A completed owned compiler trace identifies the former upstream local budget.
-The joint point still fails the first-save fault witness; saved roles and
-scheduling remain open. Tools **6067024** first. Production stub, guards,
-Makefile, README and totals stay unchanged; Note1559's last fresh counts apply.
-Next fit the same140-difference point before native/rebase/padder/install gates.
+**Alternate route payload isolated layout match; not installed**:
+[Note1562](WORKING_NOTES/1562-route-spline-payload-isolated-layout-match-and-private-padder-20261018.md).
+Complete experimental func_150896EC now matches all305 words/frame248 through
+a closed file-free layout recipe retaining305 distinct C instruction origins.
+Raw C remains140 differences. Eight tests pass:1,069 compared guest states,
+1,644 fired fault prefixes (1,084 in four real helpers), two full rebases,
+strict338 raw/binding and87 recipe controls. The actual private mixed-profile
+padder preserves72 neighbors and every other owner byte. The formerly failing
+first-save witness now agrees after normalization. Tools **37acf9b** first.
+Production stub/guards/Makefile/README/counts remain unchanged; Note1559's last
+fresh totals apply. Next native32 and remaining caller/proof/Make/prediction/
+production-install/linked-audit/recount gates, with FP/provider limits explicit.
 
 **Route dispatcher directly byte-exact**:
 [Note1559](WORKING_NOTES/1559-route-dispatcher-direct-byte-match-20261018.md).
