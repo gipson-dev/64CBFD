@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Rectangle Private Clipping Homes Byte Match
+
+[Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
+Complete `func_15095D34`: all 346/frame0x88 match after six qualified private-
+home guards, raw C still six differences. Fresh native capture, 384 CFG
+states, 5,760 state pairs and 2,912 fault prefixes close the frame lifetimes.
+Target/source suites pass and the real ELF equals its six-byte target-only
+prediction. Tools bcedfb7 first. Game **2,967/4,828**, total **3,640/5,501**,
+1,861 different, zero drift; README aggregate rows only. Next ordinary C
+cleanup `func_15101148`; handwritten/register-contract work stays separate.
+
 ## 2026-10-18 Rectangle Flip Order Direct C Improvement
 
 [Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):

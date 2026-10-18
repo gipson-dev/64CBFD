@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Rectangle private clipping homes byte match](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
+  all 346/frame0x88 match with six lifetime-qualified guards; raw C stays six
+  differences. Fresh compiler/CFG/state/prefix proofs and the actual six-byte
+  whole-ELF audit pass. Game matching advances to 2,967/4,828.
 - [Rectangle flip order direct C improvement](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
   twelve flip words now emit directly; 18 to six differences, still
   346/frame0x88 with zero guards. Thirteen final tests and the exact 21-byte

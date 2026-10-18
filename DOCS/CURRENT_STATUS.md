@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d8111ab; tools are committed before the consumer pin.
+  checkpoint pins tools bcedfb7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Rectangle **private clipping homes byte-matched**:
+[Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md).
+All 346 words/frame0x88 of `func_15095D34` now match after six closed private-
+home guards; raw semantic C remains six differences. Fresh compiler captures,
+384 CFG states, 5,760 paired executions and 2,912 fault prefixes qualify the
+ABI-owned frame mapping. Nine target tests, twelve source regressions and
+the strengthened child-identity check pass. Actual ELF equals its six-byte
+target-only prediction with all other bodies/addresses/symbols/data fixed.
+Tools bcedfb7 first. Game **2,967/4,828 (61.45%)**, total **3,640/5,501
+(66.17%)**, 1,861 different, zero drift. Next ordinary C target:
+`func_15101148`, 40-word resource cleanup; retain handwritten ABI deferrals.
 
 Rectangle **direct C improvement, 18 to six differences**:
 [Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md).

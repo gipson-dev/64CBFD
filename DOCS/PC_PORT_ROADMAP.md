@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Rectangle Private Clipping Homes Byte Match - 2026-10-18
+
+[Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
+
+- [x] Capture the actual six-difference source's compiler streams/native home choices; pin 20 current inputs and preserve older fixtures. Reject all eight coordinate-phase alternatives.
+- [x] Close all six private-home accesses with 384 CFG states, no stack escape/call, complete store dominance, 5,760 state pairs and 2,912 fault prefixes. Match all 346 words/frame0x88 with six guards; raw C remains six differences.
+- [x] Pass nine target tests including twelve predecessor-source regressions, plus the strengthened child-identity check. Rebuild/audit the exact six-byte whole-ELF prediction, actual owner/relocations, all functions/metadata and Game data. Bank tools bcedfb7 first.
+- [x] Measure Game 2,967/4,828 and total 3,640/5,501; update only README matching rows. Preserve mirror dirt, old hashes and frozen Release.
+- [ ] Recover ordinary C target `func_15101148` (40 words), keeping handwritten `func_150A76F0`, wider Game/caller/fade/gate/lifetime work separate and open.
+
 ## Rectangle Flip Order Direct C Improvement - 2026-10-18
 
 [Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):

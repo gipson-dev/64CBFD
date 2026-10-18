@@ -17283,3 +17283,9 @@ generated_11FF10,func_150F34F4,0xD94,0x11400019,0x11E00019,-,-,Normalize call-in
 generated_11FF10,func_150F34F4,0xEB0,0x920E013C,0x9219013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
 generated_11FF10,func_150F34F4,0xEB8,0x920E013C,0x9219013C,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
 generated_11FF10,func_150F34F4,0xEBC,0x51C00005,0x53200005,-,-,Normalize call-invalidated movement tail temporary permutation,,,false
+generated_C1D70,func_15095D34,0x334,0xAFAF0004,0xAFAF000C,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_C1D70,func_15095D34,0x348,0xAFAE0000,0xAFAE0008,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_C1D70,func_15095D34,0x34C,0x87A30002,0x87A3000A,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_C1D70,func_15095D34,0x380,0x8FB90004,0x8FB9000C,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_C1D70,func_15095D34,0x3C8,0x8FB80004,0x8FB8000C,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false
+generated_C1D70,func_15095D34,0x3F8,0x8FB90000,0x8FB90008,-,-,Normalize closed callee-private rectangle clipping temporary homes,,,false

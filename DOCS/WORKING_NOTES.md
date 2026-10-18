@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1529](WORKING_NOTES/1529-rectangle-private-clipping-homes-byte-match-20261018.md):
+All 346 rectangle words/frame0x88 now match with six closed private-home
+guards; raw C stays six differences. Fresh native/CFG/whole-state/prefix
+proofs and target/source suites pass. The real ELF changes only six target
+bytes; other functions/metadata/data are fixed. Tools bcedfb7 first. Game
+2,967/4,828, total 3,640/5,501; next ordinary C cleanup `func_15101148`.
+
+2026-10-18:
 [Note1528](WORKING_NOTES/1528-rectangle-flip-order-direct-c-improvement-20261018.md):
 Rectangle flip-order recovery reduces `func_15095D34` from 18 to six raw
 differences without guards, exact losses or frame/extent changes. All 13 final
