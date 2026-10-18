@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Spline Derivative Byte Match
+
+[Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
+Recover `func_150498A4`, its typed float return/output, saved FR=0 pair and
+aliased point-window behavior. All62 words/frame32 match after45 guarded
+FP/identity/schedule changes; separate proof preserves rounded nodes and
+save/read/store/restore boundaries. Seven installed tests and the first206-
+byte whole-ELF prediction pass; other code/addresses/data and old guards stay
+fixed. Tools **bcfe55a** first. Game **2,984/4,828**, total **3,657/5,501**,
+zero drift. Both spline helpers complete; vector fitting and wider goal open.
+README aggregates only; correct the prior cubic caller count from192 to96.
+
 ## 2026-10-18 Route Cubic Spline Byte Match
 
 [Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route spline derivative byte match](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
+  recover62 words/frame32 with45 closed FP/identity/schedule guards, correct
+  FR=0 pair and real output aliases. Both spline helpers complete; tools
+  bcfe55a first. Next vector saved-register fitting.
 - [Route cubic spline byte match](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
   recover the49-word value helper with34 closed FP-lineage/schedule guards,
   exact private homes and seven installed tests. Tools b91fd0e first;

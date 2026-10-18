@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
+Recover typed `func_150498A4`:62 words/frame32,45 guarded FP/identity/schedule
+changes, correct F20 pair and output aliases. Seven installed tests,20,568
+guest cases,72,352 native cases/profile and first206-byte ELF delta pass.
+Preserve cubic neighbor, other code/addresses/data and prior guards. Tools
+bcfe55a first. Game2,984/4,828, total3,657/5,501; resume vector fitting.
+Correct Note1546's caller count to the authoritative96-case receipt.
+
+2026-10-18:
 [Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
 Recover typed `func_150497E0`:49 words/frame16,34 closed FP-lineage/schedule
 guards, exact private stores and no reassociation. Seven installed tests,

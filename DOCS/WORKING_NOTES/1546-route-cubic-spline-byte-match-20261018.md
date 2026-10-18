@@ -103,7 +103,7 @@ python3 -m unittest tools.tests.test_game_route_cubic_spline -v
   home inputs at both stack phases. Raw finite memory prefixes agree, while
   raw read/register traces differ as documented. Normalized/retail complete
   fault states and traces agree. No portable C fault or hardware FCSR claim.
-- **192 three-way complete118-word caller executions** run555 connected
+- **96 three-way complete118-word caller executions** run555 connected
   helper words. Replace only the actual cubic body; the sole bounded provider
   supplies u16 atan. Public actor/record results, calls and saved ABI agree.
   The vector/derivative overlays are retail code for qualification; their

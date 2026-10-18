@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b91fd0e; tools are committed before the consumer pin.
+  checkpoint pins tools bcfe55a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route spline derivative restored and byte-matched**:
+[Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md).
+`func_150498A4` now has complete typed C,62 words/frame32, saved F20/F21 and
+correct value/derivative outputs under real aliases. Forty-five guards have
+a separate rounded-lineage proof with58 non-identity events/four identity
+slots and strict save/read/store/restore ordering. Seven installed tests pass:
+20,568 guest cases,72,352 native cases/profile,720 fault prefixes and96 whole
+caller cases. Actual ELF equals the first206-byte prediction; other code,
+all addresses, the matched cubic neighbor and Game data stay fixed. Tools
+**bcfe55a** first. Both spline helpers now match111 retail words. Game
+**2,984/4,828 (61.81%)**, total **3,657/5,501 (66.48%)**, **1,844 different
+/zero drift**. Next: resume the vector builder's two-save/invariant fitting
+under Note1545; its model is still uninstalled and gameplay is not claimed.
 
 **Cubic route value helper restored and byte-matched**:
 [Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md).

@@ -1,13 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Route Spline Derivative Byte Match - 2026-10-18
+
+[Note1547](WORKING_NOTES/1547-route-spline-derivative-byte-match-20261018.md):
+
+- [x] Recover `f32 func_150498A4(f32*,s32,f32,f32*)`, exact rounded value/slope, frame32, FR=0 saved pair and coefficient/output ordering. All62 words match with45 guarded FP-register/identity/schedule changes,58 non-identity events/four identity slots and no reassociation or arithmetic insertion/omission.
+- [x] Pass seven installed tests:20,568 three-way guest cases,72,352 native cases per O2/O0 UBSan profile, ten guest/native controls, nine links/360 rebased cases,96 complete-caller cases and720 fault prefixes. Locally adapt the forged saved-slot alias expectation; three actual ABI mutants prove ordinary preservation still fires. Shared runners remain unchanged.
+- [x] Reproduce the first206-byte ELF delta:205 target-code bytes plus one size byte. Preserve all6,057 addresses, other code/definitions/section bytes, the matched cubic neighbor/old guards and protected Game data. Tools **bcfe55a** first; preserve all1,220 previous mirror dirty hashes. README aggregates only:Game2,984/4,828, total3,657/5,501, zero drift. Correct Note1546 caller count to96.
+- [ ] Resume `func_15088F30` with the proper two saved invariant roles, original frame/private stores and ordered aliases. Its three-save model remains rejected; use an explicit predecessor view for its older fixture. Parent15087350 and wider queues stay open.
+
 ## Route Cubic Spline Byte Match - 2026-10-18
 
 [Note1546](WORKING_NOTES/1546-route-cubic-spline-byte-match-20261018.md):
 
 - [x] Recover `f32 func_150497E0(f32*,s32,f32)`, its four-point rounded polynomial, frame16 and exact argument/coefficient homes. All49 words match with34 guarded FP-register/independent-schedule changes backed by a complete operation bijection. No reassociation, inserted/omitted word, dummy store or profile change.
-- [x] Pass seven installed tests:18,212 three-way guest cases,71,216 native cases per O2/O0 UBSan profile, eight guest/native controls, nine links/216 rebased cases,192 complete-caller cases and48 fault prefixes. Keep raw read-order/NaN/FCSR and native-index limits explicit.
+- [x] Pass seven installed tests:18,212 three-way guest cases,71,216 native cases per O2/O0 UBSan profile, eight guest/native controls, nine links/216 rebased cases,96 complete-caller cases and48 fault prefixes. Keep raw read-order/NaN/FCSR and native-index limits explicit.
 - [x] Reproduce the first167-byte whole-ELF delta:166 code bytes plus one target-size byte. Preserve all6,057 addresses, other code/definitions/section bytes, the raw derivative neighbor, old guard prefix and protected Game data. Tools **b91fd0e** first; all1,218 previous standalone-mirror dirty hashes preserved. README matching aggregates only:Game2,983/4,828, total3,656/5,501, zero drift.
-- [ ] Qualify `func_150498A4` (62 words/frame32), derivative/output aliases, saved F20 and complete copy/schedule lineage; its current probe is not installed. Keep the vector builder's two-save/invariant fit and wider queues open.
+- [x] Qualify and match `func_150498A4` (62 words/frame32), derivative/output aliases, saved F20 and complete copy/schedule lineage; see Note1547. Keep vector fitting and wider queues open.
 
 ## Route Vector Model And Stack Rejection - 2026-10-18
 
@@ -17,7 +26,8 @@
 - [x] Reject the83-word/frame16 model:76 word differences, S2/S1/S0 saves versus retail S1/S0, and a demonstrably different first private-store fault. Typed prototype preserves all118 parent words/14 bindings and72 raw owner neighbors. Bank tools **81049a4** first without production/README changes or matching credit; preserve all1,216 prior older-mirror dirty hashes.
 - [ ] Fit the actual saved-invariant/output-cursor roles and full private/control-flow contract, then qualify any closed normalization before prediction, installation and linked audit. Semantic agreement and word count alone do not permit installation.
 - [x] Recover downstream cubic value helper `func_150497E0`; see Note1546. The vector model remains uninstalled.
-- [ ] Recover derivative `func_150498A4` and finish the vector private-register contract; wider queues remain open.
+- [x] Recover derivative `func_150498A4`; see Note1547.
+- [ ] Finish the vector private-register contract; wider queues remain open.
 
 ## Actor Route Placement Byte Match - 2026-10-18
 
