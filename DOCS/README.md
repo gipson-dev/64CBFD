@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Packed record separation query byte match](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
+  complete 51-word C query matches after fifteen register-role guards.
+  Seven tests and the exact 154-byte whole-link prediction pass, preserving
+  all 72 neighbors and prior guard bytes. Game 2,978/4,828; next `func_150883B0`.
 - [Record heading setter direct byte match](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
   captured record and live mode/speed predicates recover all 53 words without
   guards or build changes. Seven tests and the 156-byte first whole-link

@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Packed Record Separation Query Byte Match - 2026-10-18
+
+[Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
+
+- [x] Recover complete word-return `func_150882E4`, signed count/IDs, first matching non-self record, quantized subtraction/magnitude and packed slot result. All 51 words/no frame match after fifteen register-role guards; no instruction insertion/omission, control-flow, operation-order or profile changes.
+- [x] Pass seven installed tests: 6,402 three-way guest cases, 115,457 native cases per O2/O0 UBSan profile, all 65,536 own-halfword patterns, nine observable controls, nine independent links/288 rebased cases, 144 paired caller windows and 264 fault prefixes. Reject five unqualified conversion cases; do not claim hardware FCSR or portable invalid-float conversion behavior.
+- [x] Preserve 72 raw owner neighbors and reproduce the first whole-ELF prediction: 154 bytes, comprising 153 target-code bytes and one symbol-size byte. Audit all 6,057 bodies/addresses, symbols, actual owner/bindings, unchanged old guard prefix, Makefile and Game data. Bank tools 3f4b1c9 first.
+- [x] Measure Game 2,978/4,828, total 3,651/5,501 and zero drift; update only README aggregate rows. Preserve all 1,206 older tools-mirror dirty hashes, adding only two absent task files. No host/frozen Release action; command-query parent remains a stub.
+- [ ] Recover `func_150883B0` (107 words/frame0x20): audit callers and four-argument pointer/output ABI, signed actor/record IDs, positive projected-distance minimum, ordered float comparisons, live table reloads and accepted-candidate count reload after ordered output stores. Preserve saved S0/S1 and complete F20/F22 spill pairs. Keep wider Game matching and separate gaps open.
+
 ## Record Heading Setter Direct Byte Match - 2026-10-18
 
 [Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 3,168 paired guest cases, 32 additional null/wide-index/helper-effect cases, 403,712 native cases per O2/O0 UBSan profile, nine observable controls, six independent links/288 rebased cases, 576 bounded retail caller windows and 512 fault prefixes. Keep native/guest/FCSR and stubbed-parent limits explicit.
 - [x] Preserve all 72 raw owner neighbors and reproduce the first whole-ELF prediction: 156 bytes, comprising 155 target-code bytes and one symbol-size byte. Audit all 6,057 bodies/addresses, symbols, actual owner/bindings, unchanged guards/build and Game data. Bank tools e1ce81b first.
 - [x] Measure Game 2,977/4,828, total 3,650/5,501 and zero drift; change only README aggregate rows. Preserve all 1,204 older tools-mirror dirty hashes, adding only two absent task files. No host/frozen Release action; caller parent remains a stub.
-- [ ] Recover `func_150882E4` (51 words/no frame): audit the command-query caller at 0x1509E524, signed count/record IDs, first matching non-self record, finite-domain float truncation and packed absolute separation/slot return. Preserve sentinel0x10, original evaluation order and signed/unsigned boundaries; audit exceptional float conversion separately before claiming its behavior.
+- [x] Recover `func_150882E4` (51 words/no frame), including the command return window, signed scan and packed word arithmetic; see Note1540. Exceptional conversions remain outside qualification, and the parent stub/wider queues stay open.
 
 ## Record Heading Clamp Direct Byte Match - 2026-10-18
 

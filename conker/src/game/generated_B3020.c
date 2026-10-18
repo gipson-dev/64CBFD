@@ -407,8 +407,32 @@ s32 func_150882B0(s32 arg0) {
     return *(s8 *) (arg0 + 0x27);
 }
 
-s32 func_150882E4() {
-    return 0;
+/* Pack the first matching non-self slot with its quantized separation. */
+u32 func_150882E4(u32 recordIndex, u32 idOffset) {
+    u8 *table = D_800872A0;
+    u8 *candidate;
+    u8 *record;
+    s32 i;
+
+    if (table == 0) {
+        return 0x10;
+    }
+    record = table + recordIndex * 0x84;
+    idOffset = (s32)*(s8 *)(record + 0x29) + idOffset;
+    for (i = 0; i < D_800D2398; i++) {
+        candidate = table + i * 0x84;
+        if ((u32)(s32)*(s8 *)(candidate + 0x29) == idOffset && (u32)i != recordIndex) {
+            recordIndex = (u32)(s32)*(s16 *)(record + 0x24) * 16u +
+                          (u32)(s32)(*(f32 *)(record + 8) * 16.0f) -
+                          (u32)(s32)*(s16 *)(candidate + 0x24) * 16u -
+                          (u32)(s32)(*(f32 *)(candidate + 8) * 16.0f);
+            if ((s32)recordIndex < 0) {
+                recordIndex = 0u - recordIndex;
+            }
+            return (recordIndex << 8) | (u32)i;
+        }
+    }
+    return 0x10;
 }
 
 s32 func_150883B0() {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools e1ce81b; tools are committed before the consumer pin.
+  checkpoint pins tools 3f4b1c9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Packed record separation query restored and byte-matched**:
+[Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md).
+`func_150882E4` now has complete typed word-return C, 51 words/no frame,
+including signed count/ID scanning, first non-self match and unsigned packed
+separation arithmetic. Fifteen expected-word guards normalize only cursor/ID
+and arithmetic temporary register roles; no control-flow, operation-order,
+instruction-count or profile changes. Seven installed tests pass: 6,402
+three-way guest cases, 115,457 native cases per O2/O0 UBSan profile, nine
+observable controls, nine links/288 rebased cases, 144 paired caller windows
+and 264 fault prefixes. Nonfinite/out-of-range conversion behavior remains
+outside the qualification; no FCSR emulation claim. The production caller
+parent remains a stub. All 72 raw neighbors stay fixed; actual ELF equals
+the first prediction: 153 target-code bytes plus one extent byte. Other
+bodies/addresses/symbols, old guard prefix, build and data stay fixed. Tools
+3f4b1c9 first. Game **2,978/4,828 (61.68%)**, total **3,651/5,501 (66.37%)**,
+1,850 different, zero drift. Next 107-word directed actor selector `func_150883B0`.
 
 **Mode-dependent record heading setter restored and directly byte-matched**:
 [Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md).

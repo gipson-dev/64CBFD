@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
+Recover complete `func_150882E4`: 51 words/no frame, fifteen register-role
+guards, unsigned word arithmetic and signed first-match scanning. Seven
+installed tests and the exact 154-byte first prediction pass; preserve 72
+raw neighbors, other code/addresses/symbols, old guard bytes, build and data.
+Keep conversion-domain/FCSR and stubbed-parent limits explicit. Tools
+3f4b1c9 first. Game 2,978/4,828, total 3,651/5,501; next `func_150883B0`.
+
+2026-10-18:
 [Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
 Recover `func_15087EF0` as complete typed void C, retaining captured record,
 live mode/speed and NaN-correct ordered comparisons. All 53 words/frame0x20

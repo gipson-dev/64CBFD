@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Packed Record Separation Query Byte Match
+
+[Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
+Recover complete word-return `func_150882E4`, signed record/count scan, first
+non-self match and wrapped packed arithmetic. All 51 words/no frame match
+after fifteen guarded register-role adjustments, without control-flow or
+profile changes. Seven installed tests and the 154-byte first ELF prediction
+pass. Preserve 72 raw neighbors, other bodies/addresses/symbols, old guard
+prefix and data. Native conversion domain and caller-parent stub remain
+explicit limits. Tools 3f4b1c9 first. Game **2,978/4,828**, total **3,651/5,501**,
+zero drift. README aggregate rows only; next `func_150883B0`.
+
 ## 2026-10-18 Record Heading Setter Direct Byte Match
 
 [Note1539](WORKING_NOTES/1539-record-heading-setter-direct-byte-match-20261018.md):
