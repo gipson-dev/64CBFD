@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [YXZ matrix constructor direct byte match](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
+  five-call Y/X/Z composition replaces the empty body; all 37/frame0x68
+  emit directly with zero guards. Seven final tests and the exact 119-byte
+  full-link prediction pass. Game 2,970/4,828; next `func_15113180`.
 - [Actor handle resource retirement byte match](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
   typed void handle-first retirement replaces the stub; all 46/frame0x20
   match with three guards. Seven tests and the 141-byte full-link prediction

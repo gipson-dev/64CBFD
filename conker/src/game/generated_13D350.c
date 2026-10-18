@@ -18,7 +18,15 @@ s32 func_1510FEA0() {
     return 0;
 }
 
-void func_151102CC(f32 arg0[4][4], f32 arg1, f32 arg2, f32 arg3) {
+/* Compose separate Y, X and Z rotations using one temporary matrix. */
+void func_151102CC(f32 matrix[4][4], f32 x, f32 y, f32 z) {
+    f32 temporary[4][4];
+
+    func_150A8050(matrix, 0.0f, y, 0.0f);
+    func_150A8050(temporary, x, 0.0f, 0.0f);
+    func_150A7A48(matrix, temporary, matrix);
+    func_150A8050(temporary, 0.0f, 0.0f, z);
+    func_150A7A48(matrix, temporary, matrix);
 }
 
 void func_15110360(s32 arg0, f32 arg1[4][4], f32 arg2, f32 arg3, f32 arg4) {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 29952ff; tools are committed before the consumer pin.
+  checkpoint pins tools 236d562; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**YXZ matrix constructor restored and directly matched**:
+[Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md).
+`func_151102CC` now builds Y rotation, composes X, then composes Z using one
+local matrix. All 37 words/frame0x68 emit directly from C with no guards.
+Seven final tests pass, including 544 guest cases, native O2/O0 UBSan, four
+effective controls, real matrix kernels, 12 mixed-angle wrapper/alias cases
+and 180 target-memory fault prefixes. Actual ELF equals its first full-link
+prediction: 118 target-code bytes plus one extent byte. All other bodies,
+addresses, symbol definitions, guards and Game data remain fixed. Tools
+236d562 first. Game **2,970/4,828 (61.52%)**, total **3,643/5,501 (66.22%)**,
+1,858 different, zero drift. Next same-owner `func_15113180`, 38-word record
+flag updater; verify caller result use and alias-sensitive reloads first.
 
 Actor **handle-first resource retirement restored and matched**:
 [Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md).

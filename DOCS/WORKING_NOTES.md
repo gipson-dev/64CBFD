@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
+Recover the complete five-call `func_151102CC` matrix constructor: all
+37/frame0x68 match directly, zero guards. Seven final tests and the exact
+119-byte complete-image prediction pass. Preserve all 33 raw neighbors,
+other linked bodies/addresses/symbols, guards and Game data. Tools 236d562
+first. Game 2,970/4,828, total 3,643/5,501; next `func_15113180`.
+
+2026-10-18:
 [Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
 Restore unsigned handle-first `func_15101090`, then five resource retirements
 and actor retirement. All 46/frame0x20 match with three guards; raw C stays

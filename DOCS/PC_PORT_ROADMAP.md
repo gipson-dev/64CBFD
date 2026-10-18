@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## YXZ Matrix Constructor Direct Byte Match - 2026-10-18
+
+[Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
+
+- [x] Recover typed/commented `func_151102CC`, preserving the matrix/three-float ABI and five-call Y/X/Z composition. All 37 words/frame0x68 emit directly with zero guards under the normal profile; all 33 raw neighbors remain unchanged.
+- [x] Pass seven final tests: 544 guest cases with float-bit boundaries and caller-saved poisoning, native32 O2/O0 UBSan, four effective native/guest controls, ten real matrix-kernel sequences, twelve distinct-angle wrapper/alias sequences and 180 target-memory fault prefixes.
+- [x] Predict and reproduce the complete linked successor: 119 ELF bytes, comprising 118 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owner/relocations, unchanged guards and protected Game data. Bank tools 61528c9 then strengthened caller coverage 236d562 before the consumer pin.
+- [x] Measure Game 2,970/4,828, total 3,643/5,501 and zero drift; update only README aggregate rows. Preserve all 1,190 older mirror hashes, adding only two absent task files, and leave host/frozen Release untouched.
+- [ ] Recover same-owner `func_15113180` (38 words), first auditing caller return-value use and repeated count/base reloads around record flag writes. Keep the wider Game, fade, gate, caller and handwritten/register-contract work open.
+
 ## Actor Handle Resource Retirement Byte Match - 2026-10-18
 
 [Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 5,120 guest cases, native32 O2/O0 UBSan, seven effective native/guest controls, 4,488 target-memory fault prefixes and 256 real dispatcher sequences. Pin 17 inputs and preserve the exact predecessor/successor fixtures.
 - [x] Reproduce the complete pre-edit link prediction: 141 ELF bytes, comprising 140 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owner/relocations, callback slot and Game data. Bank tools 29952ff first.
 - [x] Measure Game 2,969/4,828, total 3,642/5,501 and zero drift; change only README aggregate rows. Preserve all 1,188 older mirror hashes, adding only two absent task files, and leave host/frozen Release untouched.
-- [ ] Recover ordinary C `func_151102CC` (37 words/frame0x68), preserving its matrix/three-float ABI, helper composition order and already exact wrapper. Keep wider Game, caller, fade, gate and handwritten/register-contract work open.
+- [x] Recover ordinary C `func_151102CC` (37 words/frame0x68), preserving its matrix/three-float ABI, helper composition order and already exact wrapper; see Note1532. Wider Game, caller, fade, gate and handwritten/register-contract work remain open.
 
 ## Actor Owned Resource Cleanup Byte Match - 2026-10-18
 

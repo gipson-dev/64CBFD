@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 YXZ Matrix Constructor Direct Byte Match
+
+[Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
+Restore `func_151102CC` as typed/commented Y-then-X-then-Z matrix composition.
+All 37/frame0x68 emit directly from C; no guards or profile override. Seven
+final tests pass, including real kernel execution, native O2/O0 UBSan,
+mixed-angle wrapper/alias coverage and effective controls. Actual ELF equals
+the complete 119-byte prediction; only the target body/extent change. Tools
+236d562 first. Game **2,970/4,828**, total **3,643/5,501**, zero drift.
+README aggregate rows only; next same-owner `func_15113180` flag updater.
+
 ## 2026-10-18 Actor Handle Resource Retirement Byte Match
 
 [Note1531](WORKING_NOTES/1531-actor-handle-resource-retirement-byte-match-20261018.md):
