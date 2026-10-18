@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Local Homes And Error Lifetime
+
+[Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
+Recover core scalar/array homes directly from C and improve func_15087350 from
+481 to450 raw differences while retaining594 words/frame456. Thirteen tests
+pass with553 cases per three native builds,64 private payload cases,492 screen
+cases and16 caller windows. Keep the old point/receipts separate; reject the
+604-word/frame464 control. Tools b668034 first; preserve1,286 unrelated mirror
+hashes. Ten words and full private/all-word/integration work remain; no production,
+README/count change or credit. Continue this same function.
+
 ## 2026-10-18 Route Actor Update Native32 And Storage Boundary
 
 [Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):

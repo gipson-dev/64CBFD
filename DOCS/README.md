@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update local homes and error lifetime](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
+  complete594-word/frame456 C recovers core homes and reduces481 to450 raw
+  differences. Thirteen tests pass; old source/native receipts stay separate.
+  Tools b668034 first, no production/count credit. Continue the same function's
+  ten-word deficit, remaining private state and installation qualification.
 - [Route actor update native32 and storage boundary](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
   six tests qualify the full C in three553-case native profiles and the same
   connected guest corpus. Five ordinary controls and one separate sanitizer

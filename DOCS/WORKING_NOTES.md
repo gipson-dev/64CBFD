@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
+New complete func_15087350 C recovers core scalar/array homes and improves481
+to450 raw differences, retaining594 words/frame456. Thirteen tests pass with
+native/guest553,64 private payload cases,492 screen cases and16 caller windows.
+Tools b668034 first; preserve1,286 unrelated mirror hashes. Old point/receipts
+remain separate. Still ten words short and private cut14 rejects; no production/
+README/count change or credit. Continue the same function's remaining match.
+
+2026-10-18:
 [Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
 Six tests qualify complete func_15087350 C in three553-case native builds with
 five real helpers, the same553 connected guest cases, five ordinary negatives

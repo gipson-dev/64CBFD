@@ -1,12 +1,21 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Local Homes And Error Lifetime - 2026-10-18
+
+[Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
+
+- [x] Recover core scalar/array homes directly from complete C through real float lifetimes, declaration order, packed internal byte locals and explicit error snapshots. Keep594 words/frame456 and first15/final11 literal words; reduce481 to450 differences. Restore the separate correction/event block extents without insertion or guards.
+- [x] Pass13 tests:553 cases per three native profiles, the same connected guest corpus,64 private-home/array-payload cases,492 screen cases, six exact limit witnesses and16 actual caller windows. Preserve72 neighbors/pools in both standard profiles, the projection override and all23 protected inputs. Bank tools b668034 first; preserve1,286 unrelated mirror hashes and retain the old point/native receipts separately.
+- [ ] Recover the ten remaining words and reconcile conversion/error/offset storage, projection/join/ranking operations, argument roles and complete private access order in this same func_15087350. Opening28/34 prefixes agree but cut14 still rejects. A604-word/frame464 control is explicitly not accepted as success.
+- [ ] Complete source-derived all-word/binding and private/alias proof, actual mixed padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. No production/README/count credit yet; broader Game work remains active.
+
 ## Route Actor Update Native32 And Storage Boundary - 2026-10-18
 
 [Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md):
 
 - [x] Qualify the complete selected C and five recovered C helpers in553-case O0/O2/O2+UBSan builds, including explicit float-cast-overflow checks. Compare the full mapped public arena and canonical calls with the independent ordered-float reference, preserving declared aliases and actual ELF constants. Detect five ordinary semantic controls and a separate deliberate outside-domain sanitizer trap.
 - [x] Pass six tests, connecting the same553 inputs to full retail/raw MIPS with494 actual helper words. Check ten storage screens/120 additional guest cases, all72 neighbors/pools and all23 protected inputs. Bank tools d4113f7 first; preserve1,286 dirty mirror hashes. No new selected source, production/README/count change or credit.
-- [ ] Recover the same function's remaining ten words, argument roles and private homes/access order. Raw594/frame456/481 differences is unchanged. The bounded native gate is qualified; private-stack/unknown-alias/FCSR/hardware equivalence is not. Preserve original saves and the completed audit-only compiler capture.
+- [ ] Note1573 above recovers core homes and improves the selected point to594/frame456/450 differences. Finish the remaining ten words, argument roles and complete private access order. Keep the bounded native and hardware/private proof boundaries explicit, and preserve the completed audit-only compiler capture.
 - [ ] Complete private-prefix/alias and source-derived all-word/binding proof, actual mixed padding/Make, independent GNU rebases, first whole-ELF prediction, installation/audit and fresh recount. Broader Game work stays open.
 
 ## Route Actor Update Ranking Cursor - 2026-10-18

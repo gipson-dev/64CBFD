@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d4113f7; tools are committed before the consumer pin.
+  checkpoint pins tools b668034; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update core local homes and error lifetime recovered**:
+[Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md).
+The new selected C keeps594 words/frame456 and reduces481 to450 differences.
+Thirteen tests pass, including553 native cases per three profiles, the same
+connected guest corpus,64 recovered-home/payload cases,492 screen cases and
+16 caller windows. Core scalar/array homes emit at retail offsets; the ten-word
+deficit and cut14 private rejection remain. Tools **b668034** first; old point/
+native receipts retained separately. No production/README/count change or credit.
+Continue the same function's real spills/joins, roles and all-word integration.
 
 **Route actor update native32 qualified, matching still open**:
 [Note 1572](WORKING_NOTES/1572-route-actor-update-native32-and-storage-boundary-20261018.md).
