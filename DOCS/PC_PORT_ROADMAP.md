@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Forward Record Actor Selector Byte Match - 2026-10-18
+
+[Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
+
+- [x] Recover typed pointer-return `func_150883B0`, all four arguments, signed record/actor fields, strict projected minimum and ordered float/tag outputs with fresh selected-ID/count reads. All 107 words/frame0x20 match after 37 guarded GPR/address adjustments; no branch, FPR, memory-order, instruction-count or build changes.
+- [x] Pass seven installed tests: 1,040 three-way guest cases, 5,328 native cases per O2/O0 UBSan profile, twelve guest/six native result controls, nine independent links/270 rebased cases, 36 paired retained-ASM caller windows and 740 fault prefixes. Preserve saved S0/S1 and F20/F21/F22/F23; keep guest alias, native object and FCSR boundaries explicit.
+- [x] Reproduce the first 330-byte whole-link delta: 312 target-code bytes and eighteen symbol/string-table bytes; canonical definitions differ only in target extent. Audit all 6,057 bodies/addresses with only the target changed; preserve 72 raw neighbors, old guards, profile and protected Game data. Commit tools 77d9c40 first.
+- [x] Measure Game 2,979/4,828, total 3,652/5,501 and zero drift. README aggregate rows only. Preserve all 1,208 previous mirror dirty hashes, adding only two absent task files; no mirror reset/commit or host/frozen Release action.
+- [ ] Recover `func_150888A8` (88 words/frame8): audit seven aligned retail call sites and three narrowed input bytes, five neighbor IDs in 0x10-byte D_800D2350 records, candidate +0xE/+0xF filtering, 0xFF sentinel/priorities and the two-at-a-time loop. Preserve saved S0, home-slot byte reads and branch delays. `func_1508855C` already matches all 36 words; do not count it again. Keep the wider Game and separate gap queues open.
+
 ## Packed Record Separation Query Byte Match - 2026-10-18
 
 [Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 6,402 three-way guest cases, 115,457 native cases per O2/O0 UBSan profile, all 65,536 own-halfword patterns, nine observable controls, nine independent links/288 rebased cases, 144 paired caller windows and 264 fault prefixes. Reject five unqualified conversion cases; do not claim hardware FCSR or portable invalid-float conversion behavior.
 - [x] Preserve 72 raw owner neighbors and reproduce the first whole-ELF prediction: 154 bytes, comprising 153 target-code bytes and one symbol-size byte. Audit all 6,057 bodies/addresses, symbols, actual owner/bindings, unchanged old guard prefix, Makefile and Game data. Bank tools 3f4b1c9 first.
 - [x] Measure Game 2,978/4,828, total 3,651/5,501 and zero drift; update only README aggregate rows. Preserve all 1,206 older tools-mirror dirty hashes, adding only two absent task files. No host/frozen Release action; command-query parent remains a stub.
-- [ ] Recover `func_150883B0` (107 words/frame0x20): audit callers and four-argument pointer/output ABI, signed actor/record IDs, positive projected-distance minimum, ordered float comparisons, live table reloads and accepted-candidate count reload after ordered output stores. Preserve saved S0/S1 and complete F20/F22 spill pairs. Keep wider Game matching and separate gaps open.
+- [x] Recover `func_150883B0` (107 words/frame0x20), including the typed pointer/output ABI, ordered float selection, live table/accepted-count loads and complete saved-register pairs; see Note1541. Wider Game matching and separate gaps remain open.
 
 ## Record Heading Setter Direct Byte Match - 2026-10-18
 

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Forward record actor selector byte match](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
+  complete four-argument 107-word C selector matches with 37 GPR/address
+  guards, ordered outputs and live post-store reloads. Seven installed tests
+  and the exact 330-byte whole-link prediction pass, preserving 72 neighbors.
+  Tools 77d9c40 first. Game 2,979/4,828; next `func_150888A8`.
 - [Packed record separation query byte match](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
   complete 51-word C query matches after fifteen register-role guards.
   Seven tests and the exact 154-byte whole-link prediction pass, preserving

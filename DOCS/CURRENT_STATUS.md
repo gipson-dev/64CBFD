@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3f4b1c9; tools are committed before the consumer pin.
+  checkpoint pins tools 77d9c40; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Forward record actor selector restored and byte-matched**:
+[Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md).
+`func_150883B0` now has typed four-argument pointer-return C, 107 words/frame0x20,
+with strict positive projected-distance selection, signed actor/tag/count
+fields and ordered output stores followed by fresh ID/count reads. Thirty-seven
+relocation-aware guards normalize only bounded GPR roles and three commutative
+integer address additions; all floating-point operations, branches, memory
+access order and ten bindings remain fixed. No direct/guard-free claim.
+Seven installed tests pass: 1,040 three-way guest cases, 5,328 native cases
+per O2/O0 UBSan profile, twelve observable guest controls/six native controls,
+nine independent links/270 rebased cases, 36 paired real caller windows and
+740 fault prefixes. Guest byte aliases and negative actor address domains are
+not portable native alias/object claims; FCSR and complete gameplay remain
+outside scope. The retained-assembly caller's whole 4,108-byte slot is exact.
+The actual whole ELF equals the first prediction: 312 code bytes and eighteen
+symbol/string-table encoding bytes. Canonical definitions change only the
+target extent; all 72 raw neighbors, other bodies/addresses, prior guard bytes,
+build and Game data remain fixed. Tools 77d9c40 first. Game **2,979/4,828
+(61.70%)**, total **3,652/5,501 (66.39%)**, 1,849 different, zero drift.
+Next: audit and recover 88-word `func_150888A8`; intervening `func_1508855C`
+already matches its complete 36-word slot and receives no new credit.
 
 **Packed record separation query restored and byte-matched**:
 [Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md).

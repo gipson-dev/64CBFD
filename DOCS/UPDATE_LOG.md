@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-18 Forward Record Actor Selector Byte Match
+
+[Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
+Recover pointer-return `func_150883B0`, signed record/actor scan and strict
+positive projected minimum. Preserve ordered float/tag outputs and fresh
+selected-ID/count loads. All 107 words/frame0x20 match after 37 guarded GPR/
+commutative-address adjustments; no FPR, branch, memory-order or profile
+changes. Seven installed tests and the first 330-byte whole-ELF prediction
+pass. All 72 raw neighbors, other bodies/addresses/canonical definitions,
+old guard prefix and data remain fixed except the target body/extent.
+Keep native-object, guest-alias and FCSR boundaries explicit; the complete
+retained-ASM caller slot is exact, but full gameplay is not qualified.
+Tools 77d9c40 first. Game **2,979/4,828**, total **3,652/5,501**, zero drift.
+README aggregate rows only; next `func_150888A8`. Wider goal remains active.
+
 ## 2026-10-18 Packed Record Separation Query Byte Match
 
 [Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):

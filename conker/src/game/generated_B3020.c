@@ -435,8 +435,60 @@ u32 func_150882E4(u32 recordIndex, u32 idOffset) {
     return 0x10;
 }
 
-s32 func_150883B0() {
-    return 0;
+/* Select the nearest strictly forward actor, optionally restricted by record tag. */
+u8 *func_150883B0(s32 recordIndex, s32 direction, f32 *outValue, s32 *outTag) {
+    extern f32 D_8009DA00;
+    u8 *table = D_800872A0;
+    u8 *record;
+    u8 *actor;
+    u8 *selected;
+    s32 i;
+    s8 excluded;
+    f32 sign;
+    f32 actorX;
+    f32 actorZ;
+    f32 x;
+    f32 z;
+    f32 bias;
+    f32 minimum;
+    f32 distance;
+
+    if (table == 0) {
+        return 0;
+    }
+    record = table + recordIndex * 0x84;
+    if (direction >= 0) {
+        sign = -1.0f;
+    } else {
+        sign = 1.0f;
+    }
+    actor = D_800CC2D0 + *(s8 *)(record + 0x31) * 0x32C;
+    direction = *(s8 *)(record + 0x2F);
+    actorX = *(f32 *)(actor + 0x14);
+    actorZ = *(f32 *)(actor + 0x1C);
+    x = *(f32 *)(record + 0x0C) * sign;
+    z = *(f32 *)(record + 0x10) * sign;
+    selected = 0;
+    excluded = *(u8 *)(actor + 0x124) - 1;
+    bias = -(x * actorX + z * actorZ);
+    minimum = D_8009DA00;
+    for (i = 0; i < D_800D2398; i++) {
+        record = D_800872A0 + i * 0x84;
+        if (*(s8 *)(record + 0x31) != excluded &&
+            (direction == 0 || *(s8 *)(record + 0x2F) == direction)) {
+            actor = D_800CC2D0 + *(s8 *)(record + 0x31) * 0x32C;
+            actorX = *(f32 *)(actor + 0x14);
+            actorZ = *(f32 *)(actor + 0x1C);
+            distance = x * actorX + z * actorZ + bias;
+            if (0.0f < distance && distance < minimum) {
+                minimum = distance;
+                *outValue = *(f32 *)record;
+                *outTag = *(s8 *)(record + 0x2F);
+                selected = D_800CC2D0 + *(s8 *)(record + 0x31) * 0x32C;
+            }
+        }
+    }
+    return selected;
 }
 
 s32 func_1508855C(s32 arg0) {

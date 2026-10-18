@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
+Recover complete `func_150883B0`: 107 words/frame0x20, 37 GPR/address guards,
+strict forward projection and ordered outputs followed by fresh ID/count
+reads. Seven installed tests and the first exact 330-byte ELF delta pass;
+preserve 72 raw neighbors, other bodies/addresses/definitions, old guards,
+build and data. Explicit guest/native/FCSR and bounded caller limits.
+Tools 77d9c40 first. Game 2,979/4,828, total 3,652/5,501; next `func_150888A8`.
+
+2026-10-18:
 [Note1540](WORKING_NOTES/1540-packed-record-separation-query-byte-match-20261018.md):
 Recover complete `func_150882E4`: 51 words/no frame, fifteen register-role
 guards, unsigned word arithmetic and signed first-match scanning. Seven
