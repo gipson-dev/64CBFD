@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
+Recover the live-global record flag loop `func_15113180`: all 38 words/no
+frame emit directly from void C, zero guards. Caller declaration is corrected
+with an identical actual object. Seven final tests and the exact 112-byte
+full-link prediction pass; other bodies/addresses/symbols, guards and data stay
+fixed. Tools d13c136 first. Game 2,971/4,828, total 3,644/5,501; next `func_15107AE0`.
+
+2026-10-18:
 [Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
 Recover the complete five-call `func_151102CC` matrix constructor: all
 37/frame0x68 match directly, zero guards. Seven final tests and the exact

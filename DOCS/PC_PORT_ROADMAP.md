@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Record Flag Refresh Direct Byte Match - 2026-10-18
+
+[Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
+
+- [x] Recover typed/commented void `func_15113180`, preserving live count/base reloads and bit0x40 gates. All 38 words/no frame emit directly with zero guards; all 33 owner neighbors remain fixed. Correct the sole observed caller declaration after proving it discards V0 and preserves its actual object.
+- [x] Pass seven final tests: 14,336 guest flag cases, 131,077 native32 cases per O2/O0 UBSan profile, six effective native/guest memory controls, fifteen independently rebased sequences, eight actual caller sequences and 462 target-memory fault prefixes.
+- [x] Reproduce the complete first-link prediction: 112 ELF bytes, comprising 111 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owners/relocations, unchanged guards and Game data. Bank tools d13c136 first.
+- [x] Measure Game 2,971/4,828, total 3,644/5,501 and zero drift; update only README aggregate rows. Preserve all 1,192 older mirror hashes, adding only two absent task files, with no host/frozen Release action.
+- [ ] Recover ordinary `func_15107AE0` (38 words/no frame), qualifying its four-pointer ABI, original deltas, alias-sensitive source reloads and exact 0.333f/0.6667f constants. Keep wider Game, fade, gate, caller and handwritten/register-contract work open.
+
 ## YXZ Matrix Constructor Direct Byte Match - 2026-10-18
 
 [Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven final tests: 544 guest cases with float-bit boundaries and caller-saved poisoning, native32 O2/O0 UBSan, four effective native/guest controls, ten real matrix-kernel sequences, twelve distinct-angle wrapper/alias sequences and 180 target-memory fault prefixes.
 - [x] Predict and reproduce the complete linked successor: 119 ELF bytes, comprising 118 target-code bytes and one extent byte. Audit all 6,057 bodies/addresses, canonical symbols, actual owner/relocations, unchanged guards and protected Game data. Bank tools 61528c9 then strengthened caller coverage 236d562 before the consumer pin.
 - [x] Measure Game 2,970/4,828, total 3,643/5,501 and zero drift; update only README aggregate rows. Preserve all 1,190 older mirror hashes, adding only two absent task files, and leave host/frozen Release untouched.
-- [ ] Recover same-owner `func_15113180` (38 words), first auditing caller return-value use and repeated count/base reloads around record flag writes. Keep the wider Game, fade, gate, caller and handwritten/register-contract work open.
+- [x] Recover same-owner `func_15113180` (38 words), auditing caller result use and live count/base reloads around flag writes; see Note1533. Wider Game, fade, gate, caller and handwritten/register-contract work remain open.
 
 ## Actor Handle Resource Retirement Byte Match - 2026-10-18
 

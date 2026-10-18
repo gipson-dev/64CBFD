@@ -78,8 +78,27 @@ s32 func_15112A80() {
     return 0;
 }
 
-s32 func_15113180() {
-    return 0;
+/* Refresh bit 0x40 from each record's flags and attached-object state. */
+void func_15113180(void) {
+    s32 index = 0;
+    u32 offset = 0;
+    u8 *record;
+    u32 flags;
+
+    if (D_800DBEF0 > 0) {
+        do {
+            record = D_800DBEF4 + offset;
+            record[0x6F] &= ~0x40;
+            record = D_800DBEF4 + offset;
+            flags = record[0x6F];
+            if (((flags & 0x0F) != 0 || (record[0x70] & 4) == 4) &&
+                *(s32 *)(record + 0x38) != 0) {
+                record[0x6F] = flags | 0x40;
+            }
+            index++;
+            offset += 0xA0;
+        } while (index < D_800DBEF0);
+    }
 }
 
 s32 func_15113218() {

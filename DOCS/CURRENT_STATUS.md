@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 236d562; tools are committed before the consumer pin.
+  checkpoint pins tools d13c136; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record flag refresh restored and directly matched**:
+[Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md).
+`func_15113180` now refreshes bit0x40 across the 0xA0-byte records with live
+base/count reloads. All 38 words/no frame emit directly from void C with no
+guards. Its sole observed caller discards V0; correcting its declaration
+leaves the actual caller object byte-identical. Seven final tests pass,
+including 14,336 guest flag cases, exhaustive native O2/O0 UBSan, six effective
+memory-changing controls, independent rebases/aliases and 462 fault prefixes.
+Actual ELF equals its first full-link prediction: 111 target-code bytes plus
+one extent byte; other bodies/addresses/symbols, guards and Game data are fixed.
+Tools d13c136 first. Game **2,971/4,828 (61.54%)**, total **3,644/5,501 (66.24%)**,
+1,857 different, zero drift. Next `func_15107AE0`, 38-word dual fractional-point
+output; retain its exact 0.333f/0.6667f constants and alias-sensitive reloads.
 
 **YXZ matrix constructor restored and directly matched**:
 [Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md).

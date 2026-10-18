@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Record Flag Refresh Direct Byte Match
+
+[Note1533](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
+Recover `func_15113180` as void record-flag refresh C: all 38 words/no frame
+match directly, zero guards. Live count/base reloads survive global aliases;
+the corrected caller declaration leaves its object byte-identical. Seven
+final tests pass with native exhaustive flags, effective memory controls,
+rebases, caller ABI and fault-prefix coverage. Actual ELF equals the complete
+112-byte prediction; only target body/extent change. Tools d13c136 first.
+Game **2,971/4,828**, total **3,644/5,501**, zero drift. README aggregate rows
+only; next fractional-point helper `func_15107AE0`.
+
 ## 2026-10-18 YXZ Matrix Constructor Direct Byte Match
 
 [Note1532](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):

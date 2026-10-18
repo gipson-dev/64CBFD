@@ -16,7 +16,7 @@ s32 func_1501E400(s32);
 void func_15034F20(void);
 void func_1510B690(void);
 void func_1510F800(s32);
-s32 func_15113180(void);
+void func_15113180(void);
 s32 func_15113E54(s32);
 s32 func_15114188(void);
 void func_15044A28(void);

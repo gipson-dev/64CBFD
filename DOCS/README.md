@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Record flag refresh direct byte match](WORKING_NOTES/1533-record-flag-refresh-direct-byte-match-20261018.md):
+  typed void refresh replaces the false stub; all 38 words/no frame emit
+  directly. Live count/base aliases, exhaustive native flags and the exact
+  112-byte full-link prediction pass. Game 2,971/4,828; next `func_15107AE0`.
 - [YXZ matrix constructor direct byte match](WORKING_NOTES/1532-yxz-matrix-constructor-direct-byte-match-20261018.md):
   five-call Y/X/Z composition replaces the empty body; all 37/frame0x68
   emit directly with zero guards. Seven final tests and the exact 119-byte
