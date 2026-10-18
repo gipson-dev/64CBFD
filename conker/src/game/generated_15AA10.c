@@ -3,8 +3,21 @@ extern u8 *D_800DC2B0;
 
 /* Non-matching placeholders for the text-only asm slice asm/15AA10.s. */
 
-s32 func_1512D560() {
-    return 0;
+/* Append an object command and payload; wrap only when the cursor reaches 20. */
+void func_1512D560(u8 *object, s32 command, void *payload) {
+    u32 stride = 0xB0;
+    u8 *queue;
+
+    queue = D_800DC2B0 + object[0x23D] * stride;
+    *(s32 *)(queue + *(u32 *)(queue + 0xAC) * 8) = command;
+    queue = D_800DC2B0 + object[0x23D] * stride;
+    *(void **)(queue + *(u32 *)(queue + 0xAC) * 8 + 4) = payload;
+    queue = D_800DC2B0 + object[0x23D] * stride;
+    *(u32 *)(queue + 0xAC) += 1;
+    queue = D_800DC2B0 + object[0x23D] * stride;
+    if (*(u32 *)(queue + 0xAC) == 20) {
+        *(u32 *)(queue + 0xAC) = 0;
+    }
 }
 
 /* Note 385: guards preserve one closed IDO register-allocation cycle. */

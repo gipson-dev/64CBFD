@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Object command enqueue byte match](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
+  install41-word/frame0 enqueue C after a complete two-path memory/ABI proof,
+  30 guarded allocation words and ten installed tests. Exact119-byte ELF delta;
+  Game2,986/4,828, total3,659/5,501, zero drift. Tools6bebb52 first. Four parent
+  expression screens rejected; parent150891E8 remains open.
 - [Route projection allocator provenance](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
   code-identical owned captures reveal168 allocator events and saved-role
   selection order. Six tests pass; eight grouped screens rejected. Tools4c718c5

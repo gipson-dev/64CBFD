@@ -17638,3 +17638,33 @@ generated_B3020,func_1508907C,0x13C,0x9198000F,0x9178000F,-,-,"Normalize proven 
 generated_B3020,func_1508907C,0x140,0x308300FF,0x314300FF,-,-,"Normalize proven neighbor scalar routing, opening identity and closed branch-delay lifetimes",,,false
 generated_B3020,func_1508907C,0x150,0x00801025,0x01401025,-,-,"Normalize proven neighbor scalar routing, opening identity and closed branch-delay lifetimes",,,false
 generated_B3020,func_1508907C,0x154,0x1450FFDA,0x1490FFDA,-,-,"Normalize proven neighbor scalar routing, opening identity and closed branch-delay lifetimes",,,false
+generated_15AA10,func_1512D560,0x0,0x3C070000,0x3C030000,R_MIPS_HI16:D_800DC2B0,R_MIPS_HI16:D_800DC2B0,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x4,0x24E70000,0x24630000,R_MIPS_LO16:D_800DC2B0,R_MIPS_LO16:D_800DC2B0,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x8,0x240300B0,0x240700B0,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0xC,0x908E023D,0x908F023D,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x10,0x8CF80000,0x8C6E0000,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x18,0x01C30019,0x01E70019,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x1C,0x00007812,0x0000C012,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x20,0x01F81021,0x01D81021,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x34,0x908A023D,0x908B023D,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x38,0x8CEC0000,0x8C6A0000,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x3C,0x01430019,0x01670019,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x40,0x00005812,0x00006012,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x44,0x016C1021,0x014C1021,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x4C,0x000D70C0,0x000D78C0,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x50,0x004E7821,0x004F7021,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x54,0xADE60004,0xADC60004,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x58,0x9098023D,0x9099023D,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x5C,0x8CE80000,0x8C780000,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x60,0x03030019,0x03270019,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x64,0x0000C812,0x00004012,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x68,0x03281021,0x03081021,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x70,0x252A0001,0x252B0001,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x74,0xAC4A00AC,0xAC4B00AC,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x78,0x908B023D,0x908C023D,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x7C,0x8CED0000,0x8C6A0000,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x80,0x01630019,0x01870019,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x84,0x00006012,0x00006812,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x88,0x018D1021,0x014D1021,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x8C,0x8C4E00AC,0x8C4F00AC,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false
+generated_15AA10,func_1512D560,0x90,0x15C10002,0x15E10002,-,-,Normalize proven queue-append register lifetimes and commutative address sums,,,false

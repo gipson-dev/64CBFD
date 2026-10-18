@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Object Command Enqueue Byte Match
+
+[Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
+Replace func_1512D560's placeholder with semantic command/payload enqueue C.
+All41 words match after30 guards backed by a complete ordered-memory proof;
+ten installed tests pass, including alias-sensitive reloads,244 fault prefixes,
+three native32 builds and575 connected parent cases. The real119-byte ELF
+delta reproduces the first prediction with every other body/address/data
+unchanged. Tools **6bebb52** first. Four node-expression screens are rejected;
+parent150891E8 remains open. Fresh Game2,986/4,828 (61.85%), total3,659/5,501
+(66.52%),1842 different and zero drift. Root README gets aggregate rows only.
+
 ## 2026-10-18 Route Projection Allocator Choice Provenance
 
 [Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):

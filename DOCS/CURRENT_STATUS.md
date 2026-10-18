@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 4c718c5; tools are committed before the consumer pin.
+  checkpoint pins tools 6bebb52; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Object command enqueue byte-exact; projection parent remains open**:
+[Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md).
+Replace func_1512D560's placeholder with typed command/payload enqueue C;
+all41 words match after30 guards proven over both complete ordered-memory
+paths. Ten installed tests pass, including352 full-memory/trace cases,
+244 fault prefixes,5120 native cases per build and575 connected parent cases.
+The real ELF reproduces the119-byte first prediction; all other bodies,
+addresses and189088 protected Game-data bytes stay fixed. Tools **6bebb52**
+first. Fresh Game **2,986/4,828 (61.85%)**, total **3,659/5,501 (66.52%)**,
+**1,842 different /zero drift**. Four node-expression screens fail extent;
+the parent's321/frame120/221-difference model remains uninstalled.
 
 **Route projection allocator choices observed; no new body installed**:
 [Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md).

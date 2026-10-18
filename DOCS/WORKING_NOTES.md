@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
+Install41-word/frame0 object command enqueue C with30 closed register guards.
+Ten tests pass:352 full guest memories/traces,244 fault prefixes,5120 native
+cases per build and575 connected parent cases. The real ELF matches its119-byte
+prediction; other bodies/addresses/data fixed. Tools6bebb52 first. Four parent
+node-expression screens rejected; parent321/frame120/221 stays uninstalled.
+Fresh Game2,986/4,828, total3,659/5,501, zero drift. Continue parent allocation.
+
+2026-10-18:
 [Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
 Observe168 native allocator events on a code-identical isolated projection;
 current/root/previous/table/record/actor choice order is measured, not guessed.

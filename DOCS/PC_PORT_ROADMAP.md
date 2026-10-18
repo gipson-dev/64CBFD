@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Object Command Enqueue Byte Match - 2026-10-18
+
+[Note1554](WORKING_NOTES/1554-object-command-enqueue-byte-match-20261018.md):
+
+- [x] Recover typed func_1512D560 C, all four live bank/table reloads, ordered command/payload writes, unsigned cursor increment and equality-only wrap at20. Match all41 words/frame0 after30 guards with a complete two-path ordered-memory/ABI proof and eight independent rebases. Preserve three raw owner neighbors/pools; no profile change.
+- [x] Pass ten installed tests:352 complete guest memories/traces,244 fired fault prefixes,5120 native cases per O0/O2/O2+UBSan build, a native wrap control, seven compiled C controls,575 connected parent cases and strict word/binding/input/guard corruption gates. Reject four parent node-expression forms after72-neighbor/pool and192-public-case checks.
+- [x] Reproduce the first119-byte whole-ELF delta with only target code/size changed, all6057 function addresses preserved and189088 Game-data bytes/720 owners unchanged. Bank tools **6bebb52** first; preserve all1235 prior mirror dirty hashes. Fresh Game2,986/4,828, total3,659/5,501, zero drift. Root README aggregates only.
+- [ ] Finish parent func_150891E8's original allocation/save ordering jointly with321 words, frame120 and all live homes. The retained221-difference model stays uninstalled. Typed-loop normal-profile emission is untested, not an accepted profile override. Vector15088F30, other parent150896EC and wider queues remain open.
+
 ## Route Projection Allocator Provenance - 2026-10-18
 
 [Note1553](WORKING_NOTES/1553-route-projection-allocator-choice-provenance-20261018.md):
@@ -17,7 +26,7 @@
 - [x] Pass seven tests:575 equal public states/complete parent frames,1458 first-call scan prefixes over243 patterns,24 high-bit cases,16 complete null returns and effective private-preference/C controls. Precisely retain the one differing child save word in301 cases,445/575 ordered traces and48 unequal null fault prefixes; do not claim whole-memory/fault parity.
 - [x] Bank tools **f2871fa**, then **1614a2c** first; preserve all1,230 prior mirror dirty hashes and production/README/totals. Four original-loop forms recover opening save roles but fail extent; no matching credit, build or recount.
 - [x] Capture the actual allocator choice sequence with code-identical owned observations; see Note1553. Joint allocation/source-expression recovery is still open.
-- [ ] Recover the actual S0 table-address/S2 record allocation and original save ordering jointly with321 words and all live homes. Then qualify closed normalization/rebases/prediction/install/whole-ELF audit. Enqueue1512D560, vector15088F30, other parent150896EC and wider queues remain open.
+- [ ] Recover the actual S0 table-address/S2 record allocation and original save ordering jointly with321 words and all live homes. Then qualify closed normalization/rebases/prediction/install/whole-ELF audit. Enqueue1512D560 is separately complete in Note1554; vector15088F30, other parent150896EC and wider queues remain open.
 
 ## Route Projection Conditional Lifetime - 2026-10-18
 
@@ -27,7 +36,7 @@
 - [x] Pass six tests:575 public cases,24 high-bit pointer cases,16 complete null cases/240 fired access-fault prefixes, real old-model/private-home controls and nine effective C semantic negatives. Preserve72 normal-profile owner neighbors/pools and strict302-word/18-binding/15-input gates. Keep PC/dead-GPR, nonnull fault, native/rebase/caller limits explicit.
 - [x] Bank tools **fabe5a1** first; preserve production/README and all1,228 previous mirror dirty hashes. No new matching credit or recount; totals remain Game2,985/4,828, total3,658/5,501, zero drift.
 - [x] Recover321-word extent, named44/48/50/5C homes and five-slot scan; see Note1552. Allocation/save ordering still fails the joint installation gate, including48 null fault prefixes that the older302-word model passed.
-- [ ] Fit the full321-word extent, remaining44/50/5C/48 homes, five-slot unrolling and ordered accesses, then qualify before any normalization/install/linked audit. Selected302/frame120 and the24 measured source forms are not byte-match evidence. Enqueue1512D560, vector15088F30 and other parent150896EC remain open.
+- [ ] Fit the full321-word extent, remaining44/50/5C/48 homes, five-slot unrolling and ordered accesses, then qualify before any normalization/install/linked audit. Selected302/frame120 and the24 measured source forms are not byte-match evidence. Enqueue1512D560 is separately complete in Note1554; vector15088F30 and other parent150896EC remain open.
 
 ## Route Projection Recovery Boundary - 2026-10-18
 
@@ -38,7 +47,7 @@
 - [x] Bank tools **bc4a6e8** first, preserving production C/guards/ELF/profile/README and all1,226 prior mirror dirty hashes. No match credit; totals stay Game2,985/4,828, total3,658/5,501, zero drift.
 - [x] Recover conditional object lifetime and SP+3C home with full null-memory/fault-prefix evidence; see Note1551. Other private locations and full extent remain open.
 - [ ] Fit retail321-word extent, conditional object lifetime, original private homes and five-slot unrolling before any qualified normalization/install/linked audit. Normal-profile model307/frame120 is not permission to replace the production no-unroll owner profile.
-- [ ] Recover production enqueue1512D560 separately; its ignored41-word C probe is not qualified. Vector15088F30, other parent150896EC and wider queues remain open.
+- [x] Recover and independently qualify production enqueue1512D560; see Note1554 for the installed41-word match. The earlier ignored probe alone remains unqualified. Vector15088F30, other parent150896EC and wider queues remain open.
 
 ## Route Neighbor Preference Byte Match - 2026-10-18
 
