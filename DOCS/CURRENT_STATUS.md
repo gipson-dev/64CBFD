@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d5406cd; tools are committed before the consumer pin.
+  checkpoint pins tools cc0020c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+Movement **complete private byte match qualified**:
+[Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md).
+Complete `func_150F34F4` now matches all 959 words/frame0x80 after 134 private
+rows; raw C is unchanged at 134 differences. The last 88 differences close
+with a call-invalidated tail permutation and two independently relocated
+ADDIU words. All 21 tests pass, including 325 tail controls, 324 poisoned
+call cases, 24 bound-symbol rebases and 392 complete private states / 30,629
+equal prefixes. Tools cc0020c first; 319 inputs, production, totals and main
+README unchanged. **Next install and audit the real production successor**;
+the source/ELF still contains the placeholder, so no matching credit yet.
 
 Movement **physics-call temporary roles qualified**:
 [Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md).

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement complete private byte match](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
+  all 959 words match with 134 private guards; complete C remains 134 raw
+  differences. All 21 tests pass. Next production installation and whole-ELF
+  audit; no production matching credit or main README change yet.
 - [Movement physics-call register roles](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
   fifteen new private rows give 88 normalized differences / 633 exact opening
   words. Complete C stays 134 differences; bounded injective lifetime proof

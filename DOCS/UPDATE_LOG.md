@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Movement Complete Private Byte Match
+
+[Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
+Close all 88 remaining movement differences: all 959 words/frame0x80 match
+with 134 private rows, while raw complete C remains 134 differences. The
+tail permutation invalidates roles at every call; the independent address
+pair moves its two LO16 bindings. All 21 tests pass, including 325 controls,
+324 poisoned tail cases, 24 bound-symbol rebases and 30,629 complete private
+prefixes. Tools cc0020c first; 319 inputs, production, totals and README
+unchanged. Next production installation/first-image audit, not another
+register window; no installation or matching credit yet.
+
 ## 2026-10-18 Movement Physics Call Register Roles
 
 [Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):

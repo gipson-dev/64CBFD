@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
+Qualify complete private movement matching: all 959 words/frame0x80 match
+after 134 research rows, raw C unchanged at 134 differences. Tail roles are
+invalidated after all calls; two independent address words move their LO16
+records. All 21 tests pass, including 325 controls, 324 tail cases, 24 bound
+rebases and 392 complete private states / 30,629 equal prefixes. Tools
+cc0020c first; production/README unchanged. Next install and audit the
+production successor before taking matching credit.
+
+2026-10-18:
 [Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
 Qualify the 149-word physics-call role window: fifteen new private rows,
 88 normalized differences / 633 exact opening words, with complete C still

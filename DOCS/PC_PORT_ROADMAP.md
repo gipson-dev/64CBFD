@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Complete Private Byte Match - 2026-10-18
+
+[Note1526](WORKING_NOTES/1526-movement-complete-private-byte-match-20261018.md):
+
+- [x] Close the 86 remaining tail GPR differences with a closed permutation, 1,860 CFG states, nine locked calls and role invalidation after every call; retain the one actual counter-loop backedge and four unreachable duplicate words.
+- [x] Qualify the two independent address ADDIU words and move their LO16 records: all 959 words/frame0x80 match with 134 private rows. Raw C stays 134 differences, with no inserted/omitted words or production credit.
+- [x] Pass 21 tests in 231.809s: 325 tail controls, 324 poisoned-call cases, 24 independent bound-symbol rebases / 48 links, exact counter reads and 392 complete private states / 30,629 equal prefixes, plus the existing public/native/alias suites.
+- [x] Bank tools cc0020c first, then consumer documentation and pin; preserve 319 inputs, 1,176 prior mirror hashes / 1,178 dirty paths, installed bytes, totals and main README. No push, Claude call or frozen Release action.
+- [ ] Install the qualified semantic source and 134 production guards only after a complete successor prediction and immutable historical-fixture qualification; rebuild and audit every function/address/extent, Game data and callback slot, rerun installed target/shared tests, then update matching totals and README aggregate rows.
+- [ ] Keep full caller/provider/hardware acceptance, the other gate, both fade lifetime gaps and wider Game objective open.
+
 ## Movement Physics Call Register Roles - 2026-10-18
 
 [Note1525](WORKING_NOTES/1525-movement-physics-call-register-roles-20261018.md):
@@ -9,7 +20,7 @@
 - [x] Advance the private frontier to `0x150F3EE0`: 100 active states / 8,844 equal prefixes, with disabled and mode-zero paths still complete. No production guards, installation or matching credit.
 - [x] Pass eighteen tests in 213.375s: 89 controls, 576 poisoned call cases / 384 mutations, complete public/native/alias/counter corpus and measured old/new fault prefixes. Reuse the unchanged compiler capture explicitly.
 - [x] Bank tools d5406cd first, then consumer documentation and pin; preserve 317 inputs, 1,174 prior mirror hashes / 1,176 dirty paths, installed bytes, totals and main README. No push, Claude call or frozen Release action.
-- [ ] Continue the same function at `0x150F3ED8`: 86 GPR-field-only differences and the independent address-setup order at `0x150F4098/9C`. Keep full matching/private/caller/provider gates, both fade gaps, runtime acceptance and wider Game goal open.
+- [x] Qualify the remaining 86 GPR-field changes and independent address pair in Note1526 above; complete private matching is now proved. Production installation and wider acceptance remain open.
 
 ## Movement Coefficient Read Store Schedule - 2026-10-17
 
