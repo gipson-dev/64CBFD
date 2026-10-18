@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor route placement byte match](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
+  complete118-word C routine matches with three equality/temporary guards.
+  Seven installed tests, 555 connected retail-helper words, all target
+  instructions and atan results, original caller windows and the first exact
+  402-byte ELF delta pass. Tools 0d4af42 first; next `func_15088F30`.
 - [Record progress/lap updater byte match](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
   complete 212-word C updater matches after 88 bounded GPR/address guards.
   Seven installed tests, connected real selector, signed lap/timer boundaries,

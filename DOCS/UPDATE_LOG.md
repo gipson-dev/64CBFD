@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-18 Actor Route Placement Byte Match
+
+[Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
+Recover complete `void(u8*)` C for `func_15088D58`, the last-type4-class route
+loop, real progress calls and spline/angle actor outputs. All118 words/
+frame0xA8 match after three equality/temporary guards. Seven installed tests
+pass: 3,890 guest cases, 555 retail-helper words, all target instructions,
+69,414 native cases per O2/O0 UBSan profile, effective controls, independent
+links, original caller windows and fault prefixes. Actual ELF equals the
+first402-byte prediction; only target extent changes canonically. Other
+code/addresses, all72 raw neighbors, prior guards, profile and Game data
+remain fixed. Tools **0d4af42** first. Game **2,982/4,828**, total
+**3,655/5,501**, zero drift. README aggregates only; next `func_15088F30`.
+Vector/spline production stubs remain open; retail overlays are not full
+production-call-chain or gameplay acceptance. Wider goal stays active.
+
 ## 2026-10-18 Record Progress/Lap Updater Byte Match
 
 [Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):

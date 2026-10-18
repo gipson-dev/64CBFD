@@ -769,8 +769,64 @@ s32 func_15088A08(u8 *record, f32 delta) {
     return step;
 }
 
-s32 func_15088D58() {
-    return 0;
+/* Advance past type-four route links, then place and orient the actor. */
+void func_15088D58(u8 *actor) {
+    extern s32 func_15088F30();
+    extern f32 func_150498A4(f32 *, s32, f32, f32 *);
+    extern f32 func_150497E0(f32 *, s32, f32);
+    extern u16 func_1505A630(f32, f32, s32);
+    extern f32 func_15144BC8(f32);
+    extern f32 D_8009DA04;
+    s32 rotation;
+    f32 heading;
+    f32 slopeX;
+    f32 slopeZ;
+    f32 x[4];
+    f32 y[4];
+    f32 z[4];
+    s32 index;
+    u8 *record;
+    u8 *routes;
+    u8 *neighbors;
+    s32 kind;
+    s32 i;
+    s32 neighbor;
+
+    index = func_1508855C((s32)actor);
+    if (index >= 0) {
+        record = D_800872A0 + index * 0x84;
+        *(f32 *)(record + 0) = 0.5f;
+        *(f32 *)(record + 4) = 0.5f;
+        *(f32 *)(record + 8) = 0.5f;
+        do {
+            routes = D_800D2350;
+            kind = 0;
+            neighbors = routes + record[0x2C] * 0x10;
+            for (i = 0; i < 5; i++) {
+                neighbor = neighbors[i + 9];
+                if (neighbor != 0xFF) {
+                    if (routes[neighbor * 0x10 + 0xE] == 4) {
+                        kind = routes[neighbor * 0x10 + 0xF];
+                    }
+                }
+            }
+            if (kind != 0) {
+                func_15088A08(record, 1.0f);
+            }
+        } while (kind != 0);
+        *(f32 *)(record + 8) = 0.0f;
+        func_15088F30(record, x, y, z);
+        *(f32 *)(actor + 0x14) = func_150498A4(x, 0, *(f32 *)(record + 8), &slopeX);
+        *(f32 *)(actor + 0x18) = func_150497E0(y, 0, *(f32 *)(record + 8));
+        *(f32 *)(actor + 0x1C) = func_150498A4(z, 0, *(f32 *)(record + 8), &slopeZ);
+        heading = func_15144BC8((func_1505A630(*(f32 *)(record + 0x10),
+            *(f32 *)(record + 0xC), 0) + 0x8000) * 0.0054931640625f);
+        *(f32 *)(actor + 0x40) = heading;
+        rotation = (s32)(heading * D_8009DA04) - 0x4000;
+        *(s16 *)(actor + 0x7A) = rotation;
+        *(s16 *)(actor + 0x78) = rotation;
+        *(s16 *)(actor + 0x76) = rotation;
+    }
 }
 
 s32 func_15088F30() {

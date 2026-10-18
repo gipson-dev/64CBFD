@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Route Placement Byte Match - 2026-10-18
+
+[Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
+
+- [x] Recover `func_15088D58` with a typed actor pointer, lookup gate, exact last-type4-class scan, repeated progress calls and all position/angle stores. All118 words/frame0xA8 match with three equality/temporary guards. Preserve saved S0..S6/F20, real stack buffers, all14 bindings, floating order and existing compiler profile.
+- [x] Pass seven installed tests: 3,890 three-way guest cases, 555 connected retail-helper words and all118 target words, 69,414 native cases per O2/O0 UBSan profile including all65,536 atan results, eleven guest/ten native controls, nine main plus21 helper links, 96 rebased cases, 48 retained-caller windows and 1,608 fault prefixes. Reject five invalid conversions; distinguish native bounded provider models, guest aliases and hardware FCSR.
+- [x] Reproduce the first exact402-byte ELF delta: 362 target-code, 19 symbol-table and21 string-table bytes. Canonical definitions change only target extent12->472; preserve all6,057 function addresses, other bodies, 72 raw neighbors, old guard bytes and protected Game data. Bank tools **0d4af42** first.
+- [x] Measure Game2,982/4,828, total3,655/5,501 and zero drift; README aggregates only. Preserve all1,214 previous mirror dirty hashes, adding only two absent task paths. No mirror commit/reset, push, host or frozen Release action.
+- [ ] Recover `func_15088F30` (83 words/frame0x10), its four-pointer interface, four neighbor slots, first eligible type4 choice, signed coordinates and FF fallback vectors. Preserve per-iteration table reloads, repeated record-speed reads, x/y/z store order and saved S0/S1. Update the parent helper declaration with no raw parent change. Its two spline callees remain production stubs and need their own later recovery; wider queues stay open.
+
 ## Record Progress/Lap Updater Byte Match - 2026-10-18
 
 [Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 7,556 three-way guest cases, 72,867 native cases per O2/O0 UBSan profile, all 65,536 tick halfwords, thirteen guest/ten native controls, nine main/three helper links, 144 rebased cases, 36 paired original caller windows and 1,355 fault prefixes. Execute 208 non-trap/non-duplicate words; preserve the complete 212. Reject six zero-divisor crossings without inventing quotient/trap state. Keep native object and guest alias domains explicit.
 - [x] Reproduce the exact first 689-byte whole-link delta: 628 target-code, 25 symbol-table and 36 string-table bytes. Canonical definitions change only target extent12->848; preserve all 6,057 function addresses, other bodies, 72 raw neighbors, old guard prefix, compiler profile and 189,088 protected Game-data bytes. Bank tools 64c3a9f first.
 - [x] Measure Game 2,981/4,828, total 3,654/5,501, zero drift; README aggregate rows only. Preserve all 1,212 older mirror dirty hashes while adding only two absent task files. No mirror commit/reset, push or host/frozen Release action.
-- [ ] Recover `func_15088D58` (118 words/frame0xA8): audit its original caller at ROM0xAA98C, record lookup, saved S0..S6/F20 lifetime, five-neighbor type4 scan and repeated real progress calls with delta1.0. Preserve final projection helpers, actor position/angle stores and valid float-conversion/termination domains. Parent `func_15087350`, retained assembly and wider matching queues remain open.
+- [x] Recover `func_15088D58` (118 words/frame0xA8), including its original caller interface, last-type4-class loop, real progress calls and position/angle outputs; see Note1544. Downstream vector/spline stubs, parent `func_15087350`, retained assembly and wider matching queues remain open.
 
 ## Five-Neighbor Selector Byte Match - 2026-10-18
 

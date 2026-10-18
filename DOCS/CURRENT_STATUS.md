@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 64c3a9f; tools are committed before the consumer pin.
+  checkpoint pins tools 0d4af42; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,29 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor route placement restored and byte-matched**:
+[Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md).
+`func_15088D58` now has complete `void(u8 *actor)` C, 118 words/frame0xA8,
+with the last qualifying type4 neighbor class, repeated real progress calls,
+three spline positions and angle/rotation outputs. Three expected-word guards
+normalize one symmetric equality and a two-word final temporary lifetime;
+no schedule, frame, stack-buffer, floating-operation or profile changes.
+Seven installed tests pass: 3,890 three-way guest cases, all118 target words,
+555 connected retail-helper words, 69,414 native cases per O2/O0 UBSan profile,
+all65,536 atan return values, eleven guest/ten native controls, thirty
+independent main/helper links, 96 rebased cases, 48 paired retained-caller
+windows and 1,608 fault prefixes. Native lookup/vector/spline/atan helpers are
+bounded typed models; guest helpers execute retail code except the atan
+provider. Five invalid conversions fail closed without invented FCSR results.
+Actual ELF equals the first prediction: 362 code plus40 symbol/string-table
+encoding bytes. Only target extent changes canonically; all other code and
+addresses, 72 raw neighbors, prior guards and protected Game data stay fixed.
+Tools **0d4af42** first. Game **2,982/4,828 (61.76%)**, total
+**3,655/5,501 (66.44%)**, **1,846 different /zero drift**. Next: recover
+83-word/frame0x10 `func_15088F30`, then the downstream spline stubs. The
+connected retail overlays are not a claim that the current production C
+call chain or full gameplay is complete.
 
 **Record progress/lap updater restored and byte-matched**:
 [Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md).

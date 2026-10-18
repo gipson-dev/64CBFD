@@ -17504,3 +17504,6 @@ generated_B3020,func_15088A08,0x320,0x000E7823,0x000B6023,-,-,Normalize progress
 generated_B3020,func_15088A08,0x328,0xACEF0018,0xACEC0018,-,-,Normalize progress lap snapshot and temporary register roles and route addresses,,,false
 generated_B3020,func_15088A08,0x334,0x8CF8001C,0x8CED001C,-,-,Normalize progress lap snapshot and temporary register roles and route addresses,,,false
 generated_B3020,func_15088A08,0x338,0xACF80018,0xACED0018,-,-,Normalize progress lap snapshot and temporary register roles and route addresses,,,false
+generated_B3020,func_15088D58,0xA0,0x10910006,0x12240006,-,-,Normalize actor route sentinel equality and final rotation temporary,,,false
+generated_B3020,func_15088D58,0x194,0x44022000,0x440D2000,-,-,Normalize actor route sentinel equality and final rotation temporary,,,false
+generated_B3020,func_15088D58,0x19C,0x2442C000,0x25A2C000,-,-,Normalize actor route sentinel equality and final rotation temporary,,,false

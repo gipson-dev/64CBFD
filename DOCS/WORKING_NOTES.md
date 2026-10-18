@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note1544](WORKING_NOTES/1544-actor-route-placement-byte-match-20261018.md):
+Recover `func_15088D58`: 118 words/frame0xA8, three equality/temporary guards,
+last-type4-class stepping and actor position/angle outputs. Seven installed
+tests, 3,890 guest cases with555 connected retail-helper words, 69,414 native
+cases per O2/O0 UBSan profile and the first402-byte ELF delta pass. Preserve
+other code/addresses, 72 raw neighbors, old guards, profile and data. Tools
+0d4af42 first. Game2,982/4,828, total3,655/5,501; next `func_15088F30`.
+Native provider, guest alias and incomplete production-helper limits explicit.
+
+2026-10-18:
 [Note1543](WORKING_NOTES/1543-record-progress-lap-updater-byte-match-20261018.md):
 Recover complete `func_15088A08`: 212 words/frame0x18, 88 GPR/address guards,
 single-step fraction wrapping, real neighbor selection, ordered events and
