@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Movement Float Lifetimes And Field Heading Recovery - 2026-10-17
+
+[Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
+
+- [x] Recover the high-position cap, FPR12 X sample, direct heading field update and smoothing operand order without new guards, profile changes, trimming or padding variables.
+- [x] Qualify complete 959-word/frame-0x80 C with 392 differences, first 361 words exact, eight tests and actual UGEN-to-AS1 provenance.
+- [x] Verify 4,600 active prefixes across 100 states, all prior disabled/mode-0 private paths, 149 native cases/profile and fired cap boundary/control cases; preserve 301 protected entries and every installed byte. No installation/credit.
+- [x] Bank tools 7a40f3f first; preserve 1,158 prior mirror hashes / 1,160 paths, fresh aggregate totals and root README. Frozen Release untouched.
+- [ ] Continue the same `func_150F34F4` temporary GPR order at `0x150F3A98`, private gap at `0x150F3AB8` and all remaining literal/caller/first-image gates.
+- [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
+
 ## Movement Preloads And Smoothing Lifetimes - 2026-10-17
 
 [Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
@@ -8,7 +19,7 @@
 - [x] Qualify complete 959-word/frame-0x80 C with 420 differences, first 337 words exact, eight passing tests and actual UGEN-to-AS1 provenance.
 - [x] Verify 880 active prefixes, all 160 mode-0 private states / 8,320 fault prefixes and all prior disabled paths; preserve 299 protected entries and all installed bytes. No installation/credit.
 - [x] Bank tools de8f5ff first; preserve 1,156 prior mirror hashes / 1,158 paths, fresh aggregate totals and root README. Frozen Release untouched.
-- [ ] Continue the same `func_150F34F4` at `0x150F3A38`, smoothing/private state at `0x150F3AB8`, then all remaining literal/caller/first-image gates.
+- [x] Recover the cap and initial smoothing FP lifetimes in [Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md); remaining GPR/literal/private/caller/first-image gates stay open above.
 - [ ] Keep the gate, both fade lifetime gaps, full provider/runtime acceptance and wider Game objective open.
 
 ## Movement Return Boundary And Full-Width Buttons - 2026-10-17

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-17 Movement Float Lifetimes And Field Heading Recovery
+
+[Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
+Recover the high-position cap, initial smoothing FP lifetimes and field heading
+update in complete `func_150F34F4`: 959 words/frame 0x80, 392 differences and
+361 exact opening words. Eight tests pass, including 4,600 active prefixes
+across 100 states with full FPR agreement at the first GPR gap. Tools 7a40f3f
+first; preserve production, 301 protected entries, totals and README. Not
+installed or credited; continue the same GPR/literal/private matching work.
+
 ## 2026-10-17 Movement Preloads And Smoothing Lifetimes
 
 [Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):

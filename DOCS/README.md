@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Movement float lifetimes and field heading recovery](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
+  complete 959-word/frame-0x80 candidate, 392 differences and 361 exact opening
+  words. Eight tests pass, including 4,600 active prefixes; the FP gap is closed
+  at the first remaining GPR boundary, not installed or credited.
 - [Movement preloads and smoothing lifetimes](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
   complete 959-word/frame-0x80 candidate, 420 differences and 337 exact opening
   words. Eight tests pass, including 160 complete mode-0 private states;

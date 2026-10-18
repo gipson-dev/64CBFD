@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-17:
+[Note1517](WORKING_NOTES/1517-movement-float-lifetimes-and-field-heading-recovery-20261017.md):
+Recover movement cap/smoothing FP lifetimes and the direct heading field
+update: complete 959-word/frame-0x80 C, 392 differences, 361 exact opening
+words. Eight tests pass; 4,600 active prefixes across 100 states agree before
+the remaining GPR-only gap. Tools 7a40f3f first; production, 301 protected
+entries, fresh totals and README unchanged. Not installed or credited.
+
+2026-10-17:
 [Note1516](WORKING_NOTES/1516-movement-preloads-and-smoothing-lifetimes-20261017.md):
 Recover movement preloads and smoothing lifetimes: complete 959-word/frame
 0x80 candidate, 420 differences, 337 exact opening words. Eight tests pass;
