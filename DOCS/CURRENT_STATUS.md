@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 77d9c40; tools are committed before the consumer pin.
+  checkpoint pins tools 155037c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,28 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Five-neighbor selector restored and byte-matched**:
+[Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md).
+`func_150888A8` now has typed `s32(u8,u8,s8)` C, 88 words/frame8, with five
+byte neighbor IDs, exclusion/disable gates, nonzero-class priority and last
+requested-class fallback. Sixty expected-word guards normalize bounded GPR
+roles and symmetric equality operands; opcode sequence, branch displacements,
+delays, memory order and both bindings remain fixed. No direct/guard-free
+claim or profile change. Remove one redundant caller mask now supplied by
+the typed byte parameter: all 72 raw neighbors, including the complete
+34-word live C caller, retain identical bytes and relative bindings.
+Seven installed tests pass: 16,584 three-way guest cases, all 7,776 category
+combinations in both modes, 16,832 native cases per O2/O0 UBSan profile, nine
+observable controls, nine independent links/144 rebased cases, 144 paired
+whole-caller executions and 472 fault prefixes. All 85 reachable words run;
+the three retail unreachable tail duplicates are preserved, not discarded.
+Actual ELF equals the first prediction: 254 code bytes plus two target-size
+bytes. Other bodies/addresses/definitions, old guards, build and Game data
+remain fixed. Tools 155037c first. Game **2,980/4,828 (61.72%)**, total
+**3,653/5,501 (66.41%)**, 1,848 different, zero drift. Next: recover the
+212-word record-progress/lap updater `func_15088A08`, using the now-matched
+selector and auditing its three original call sites and numeric boundaries.
 
 **Forward record actor selector restored and byte-matched**:
 [Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md).

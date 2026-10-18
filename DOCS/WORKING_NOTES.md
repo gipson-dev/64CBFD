@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
+Recover `func_150888A8`: 88 words/frame8, sixty GPR/equality guards, exact
+class priority and byte ABI. Remove one redundant typed-call mask while
+preserving all 72 raw neighbors. Seven installed tests, exhaustive neighbor
+categories, whole live C caller runs and the first 256-byte ELF delta pass.
+Preserve other bodies/addresses/definitions, old guards, build and data.
+Tools 155037c first. Game 2,980/4,828, total 3,653/5,501; next `func_15088A08`.
+
+2026-10-18:
 [Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
 Recover complete `func_150883B0`: 107 words/frame0x20, 37 GPR/address guards,
 strict forward projection and ordered outputs followed by fresh ID/count

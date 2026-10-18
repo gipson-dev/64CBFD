@@ -27,7 +27,7 @@ extern s8 D_800D2399;
 void *func_1502B5C8(s32 *size, u32 depth, ...);
 s32 func_1509BFB0();
 s32 func_15085BE8();
-s32 func_150888A8();
+s32 func_150888A8(u8 excludedId, u8 recordIndex, s8 alternate);
 
 s32 func_15085B70(s32 arg0) {
     s16 *temp_v0 = (s16 *) func_1502B5C8(0, 2, 0x19, arg0);
@@ -280,7 +280,7 @@ void func_15087DCC(s32 arg0, s32 arg1) {
     if (arg1 != 0) {
         value = func_150888A8(rec[0x2B], rec[0x2C], 1);
         rec[0x2D] = value;
-        value = func_150888A8(rec[0x2C], value & 0xFF, 1);
+        value = func_150888A8(rec[0x2C], value, 1);
         rec[0x2E] = value;
     }
     rec[0x2F] = arg1;
@@ -571,8 +571,87 @@ void func_15088824(u8 *arg0) {
     *(f32 *) (arg0 + 0x10) = 1.0f;
 }
 
-s32 func_150888A8() {
-    return 0;
+/* Prefer a non-requested neighbor class; retain the last requested-class fallback. */
+s32 func_150888A8(u8 excludedId, u8 recordIndex, s8 alternate) {
+    s32 excluded;
+    s32 requested;
+    s32 fallback;
+    s32 i;
+    s32 selected;
+    s32 current;
+    s32 candidate;
+    s32 firstCandidate;
+    s32 second;
+    s32 kind;
+    s32 secondKind;
+    u8 *record;
+    u8 *cursor;
+    u8 *entry;
+    u8 *firstEntry;
+    u8 *secondEntry;
+
+    excluded = excludedId;
+    selected = 0xFF;
+    fallback = 0xFF;
+    if (alternate != 0) {
+        requested = 1;
+    } else {
+        requested = 2;
+    }
+    record = D_800D2350 + recordIndex * 0x10;
+    firstCandidate = record[9];
+    if (firstCandidate != 0xFF && excluded != firstCandidate) {
+        firstEntry = D_800D2350 + firstCandidate * 0x10;
+        if (firstEntry[0xE] == 0) {
+            if (requested != firstEntry[0xF]) {
+                selected = firstCandidate & 0xFF;
+            } else {
+                fallback = firstCandidate & 0xFF;
+            }
+        }
+    }
+    i = 1;
+    cursor = record + 1;
+    current = selected;
+    /* The retail loop handles the remaining four neighbors in pairs. */
+    do {
+        candidate = cursor[9];
+        i += 2;
+        if (candidate != 0xFF && excluded != candidate) {
+            entry = D_800D2350 + candidate * 0x10;
+            if (entry[0xE] == 0) {
+                kind = entry[0xF];
+                if (requested != kind) {
+                    if (current == 0xFF || kind != 0) {
+                        selected = candidate & 0xFF;
+                        current = selected;
+                    }
+                } else {
+                    fallback = candidate & 0xFF;
+                }
+            }
+        }
+        second = cursor[0xA];
+        if (second != 0xFF && excluded != second) {
+            secondEntry = D_800D2350 + second * 0x10;
+            if (secondEntry[0xE] == 0) {
+                secondKind = secondEntry[0xF];
+                if (requested != secondKind) {
+                    if (current == 0xFF || secondKind != 0) {
+                        selected = second & 0xFF;
+                        current = selected;
+                    }
+                } else {
+                    fallback = second & 0xFF;
+                }
+            }
+        }
+        cursor += 2;
+    } while (i != 5);
+    if (current == 0xFF) {
+        selected = fallback & 0xFF;
+    }
+    return selected;
 }
 
 s32 func_15088A08() {

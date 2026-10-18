@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Five-neighbor selector byte match](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
+  typed 88-word selector and exact class priority match with sixty GPR/
+  equality guards. Seven tests, all 7,776 category combinations, whole live
+  C caller execution and the first 256-byte ELF prediction pass. Preserve
+  all 72 raw neighbors. Tools 155037c first; next `func_15088A08`.
 - [Forward record actor selector byte match](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
   complete four-argument 107-word C selector matches with 37 GPR/address
   guards, ordered outputs and live post-store reloads. Seven installed tests

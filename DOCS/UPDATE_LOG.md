@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-18 Five-Neighbor Selector Byte Match
+
+[Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
+Recover complete typed `func_150888A8`, exact five-neighbor priority and
+0xFF fallback behavior. All 88 words/frame8 match after sixty GPR/equality
+guards with fixed opcodes, delays, accesses and profile. The byte prototype
+and one equivalent caller-expression cleanup preserve every raw neighbor;
+144 paired whole-C-caller runs execute both queries and stores. Seven
+installed tests, 16,584 guest cases, 16,832 native cases per O2/O0 UBSan
+profile and the first exact 256-byte ELF delta pass. Other code/addresses/
+definitions, old guards and data remain fixed. Tools 155037c first.
+Game **2,980/4,828**, total **3,653/5,501**, zero drift. README aggregates
+only; next `func_15088A08`. Wider matching goal remains active.
+
 ## 2026-10-18 Forward Record Actor Selector Byte Match
 
 [Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):

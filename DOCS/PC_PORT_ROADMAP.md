@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Five-Neighbor Selector Byte Match - 2026-10-18
+
+[Note1542](WORKING_NOTES/1542-five-neighbor-selector-byte-match-20261018.md):
+
+- [x] Recover typed `func_150888A8`, five neighbor bytes, exclusion/disable gates, exact class/zero-class priority and requested-class fallback. All 88 words/frame8 match after sixty GPR/equality guards; preserve three unreachable retail tail duplicates, input home slots, saved S0, memory order and both bindings.
+- [x] Preserve all 72 raw neighbors while introducing the byte prototype: remove the redundant `value & 0xFF` expression at the typed call. The complete 34-word C caller remains exact and runs both real selector queries/stores in 144 paired executions.
+- [x] Pass seven installed tests: 16,584 three-way guest cases, all 7,776 category combinations in both modes, 16,832 native cases per O2/O0 UBSan profile, nine observable controls, nine links/144 rebased cases, all 85 reachable words and 472 fault prefixes. Keep native byte-parameter and raw guest-word domains distinct.
+- [x] Reproduce the exact first 256-byte whole-link delta: 254 code bytes and two target-size bytes. Audit all 6,057 bodies/addresses, canonical symbols, actual owner, old guard prefix, fixed profile and Game data. Bank tools 155037c first. Measure Game 2,980/4,828, total 3,653/5,501, zero drift; README aggregate rows only. Preserve all 1,210 older mirror dirty hashes.
+- [ ] Recover `func_15088A08` (212 words/frame0x18): audit pointer/float arguments and signed step result at three original call sites; preserve single-step fractional wrapping, neighbor-byte shifts/two matched selector calls, mode-specific event flags, signed halfword/byte lap arithmetic, divisor and native/guest fault boundaries, score/timer caps and post-store reloads. Caller parents remain stubs; wider Game queues stay open.
+
 ## Forward Record Actor Selector Byte Match - 2026-10-18
 
 [Note1541](WORKING_NOTES/1541-record-forward-actor-selector-byte-match-20261018.md):
@@ -8,7 +18,7 @@
 - [x] Pass seven installed tests: 1,040 three-way guest cases, 5,328 native cases per O2/O0 UBSan profile, twelve guest/six native result controls, nine independent links/270 rebased cases, 36 paired retained-ASM caller windows and 740 fault prefixes. Preserve saved S0/S1 and F20/F21/F22/F23; keep guest alias, native object and FCSR boundaries explicit.
 - [x] Reproduce the first 330-byte whole-link delta: 312 target-code bytes and eighteen symbol/string-table bytes; canonical definitions differ only in target extent. Audit all 6,057 bodies/addresses with only the target changed; preserve 72 raw neighbors, old guards, profile and protected Game data. Commit tools 77d9c40 first.
 - [x] Measure Game 2,979/4,828, total 3,652/5,501 and zero drift. README aggregate rows only. Preserve all 1,208 previous mirror dirty hashes, adding only two absent task files; no mirror reset/commit or host/frozen Release action.
-- [ ] Recover `func_150888A8` (88 words/frame8): audit seven aligned retail call sites and three narrowed input bytes, five neighbor IDs in 0x10-byte D_800D2350 records, candidate +0xE/+0xF filtering, 0xFF sentinel/priorities and the two-at-a-time loop. Preserve saved S0, home-slot byte reads and branch delays. `func_1508855C` already matches all 36 words; do not count it again. Keep the wider Game and separate gap queues open.
+- [x] Recover `func_150888A8` (88 words/frame8), preserving narrowed inputs, five-byte neighbor scan, exact priority, home slots, saved S0 and branch delays; see Note1542. `func_1508855C` was already exact and receives no new credit. Wider Game queues remain open.
 
 ## Packed Record Separation Query Byte Match - 2026-10-18
 
