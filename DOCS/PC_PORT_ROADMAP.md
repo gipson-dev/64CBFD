@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Route Vector Saved Roles And Isolated Layout Match - 2026-10-18
+
+[Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
+
+- [x] Recover complete func_15088F30 C with 83 words/frame 16, original S0/S1 invariant roles and private homes. Qualify a closed normalized layout retaining all 83 source origins; raw C remains 56 differences.
+- [x] Pass eight tests covering 1,650 guest cases, 957 fired memory cuts, 65,680 native cases per O0/O2 build, 198 rebased cases and actual private mixed-profile padding. Preserve 72 neighbors in both profiles, every other padded byte and the production guard prefix. Bank tools 48c467e first and preserve 1,265 old mirror hashes.
+- [ ] Continue this same vector's full caller audit, connected callers, actual Make path, first whole-ELF prediction, production installation, linked audit and recount. Production/README/counts remain unchanged; do not infer matching credit from the isolated result.
+
 ## Route Spline Payload Native32 And Installed Byte Match - 2026-10-18
 
 [Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):

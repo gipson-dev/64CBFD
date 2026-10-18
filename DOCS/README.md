@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route vector saved roles and isolated layout match](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
+  original two-save invariant roles and 83-word/frame-16 C, with a closed
+  all-word normalized match. Eight tests include native32, memory prefixes,
+  rebases and actual mixed-profile padding. Tools 48c467e first; production
+  remains unchanged. Continue the same vector's caller/install gates.
 - [Route spline payload native32 and installed byte match](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
   complete305-word/frame248 normalized C, all source origins retained. Twelve
   installed tests include three6,270-case native profiles,1,644 fault prefixes,

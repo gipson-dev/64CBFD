@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Vector Saved Roles And Isolated Layout Match
+
+[Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
+The complete func_15088F30 C now has the original 83-word/frame-16 shape,
+S0/S1 roles and private homes. Its 56 raw differences are accounted for by a
+closed layout retaining all source origins; all isolated words/bindings match.
+Eight tests pass: 1,650 guest cases, 957 fired memory cuts, two 65,680-case
+native builds, 198 rebased cases and actual private mixed-profile padding.
+Tools 48c467e first; all 1,265 old mirror hashes preserved. No production or
+README change and zero matching credit. Continue caller/Make/first whole-link
+prediction, installation, linked audit and recount for this same function.
+
 ## 2026-10-18 Route Spline Payload Native32 And Installed Byte Match
 
 [Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):

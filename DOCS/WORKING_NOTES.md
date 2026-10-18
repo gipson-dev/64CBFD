@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md):
+Recover func_15088F30's original two saved invariant roles and 83-word/frame-16
+shape. Raw C has 56 differences; a closed layout retaining every source origin
+matches all isolated words/bindings. Eight tests pass, including native32,
+full memory/access prefixes, rebases and actual private mixed-profile padding.
+Tools 48c467e first; preserve 1,265 mirror hashes. Production/README/counts
+unchanged. Continue the same function's caller/Make/prediction/install gates.
+
+2026-10-18:
 [Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md):
 Install complete typed func_150896EC,305/frame248 normalized with305 retained
 source origins and no insertions/omissions. Twelve installed tests pass:

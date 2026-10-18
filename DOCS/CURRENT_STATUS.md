@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5f0358c; tools are committed before the consumer pin.
+  checkpoint pins tools 48c467e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route vector saved roles recovered; isolated normalized match, not installed**:
+[Note 1564](WORKING_NOTES/1564-route-vector-saved-role-recovery-and-isolated-layout-match-20261018.md).
+The complete func_15088F30 C candidate now emits 83 words/frame 16 with the
+original S0/S1 invariant roles and homes. Raw C has 56 differences; its closed
+layout retains all 83 source origins and matches every isolated retail word.
+Eight tests pass: 1,650 guest cases, 957 fired memory cuts, 65,680 native cases
+per profile, 198 rebased cases and actual private mixed-profile padding with
+72 neighbors fixed. Tools **48c467e** first. Production source/guards/Makefile/
+ELF and README remain unchanged, with zero new matching credit. Continue this
+function's caller/Make/whole-link prediction/install/audit/recount gates.
 
 **Alternate route payload installed byte-exact**:
 [Note1563](WORKING_NOTES/1563-route-spline-payload-native32-and-installed-byte-match-20261018.md).
