@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Recovery And Frame Boundary
+
+[Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
+Recover complete experimental func_15087350 C with typed arguments, route
+correction, actor look-ahead and stable ranking. Twelve tests pass:703 paired
+real-helper cases, independent float reference, seven semantic negatives,
+144 profile cases and16 actual caller windows. Raw588/frame480/599 differences
+still fails the first private RA-store address; no screen is installable.
+Tools a71464c first; preserve1,279 mirror hashes and frozen production/README/
+counts. Continue the same604-word/frame456 function's homes/roles, native/
+private/all-word proof and production integration gates. Zero matching credit.
+
 ## 2026-10-18 Route Record Setup Installed Byte Match
 
 [Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):

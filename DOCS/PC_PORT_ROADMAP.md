@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Recovery And Frame Boundary - 2026-10-18
+
+[Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
+
+- [x] Recover complete experimental func_15087350 C with its full-width index/active and float look-ahead interface, correction loop, actor outputs and stable ranking. Verify both direct retail caller interfaces, actual delay slots and ignored V0 consumers.
+- [x] Pass 12 tests: 703 paired real-helper cases, independent ordered-float reference, seven effective semantic negatives, 16 caller windows, 144 profile cases and 658 fingerprint controls. Preserve 72 neighbors and all 23 production inputs. Bank tools a71464c first; preserve 1,279 old mirror hashes. No production/README/count change or credit.
+- [ ] Restore the original604-word/frame456 extent, three saved FP pairs, array/scalar homes and literal roles/scheduling. Current raw588/frame480/599 differences already fails the first RA-store address; none of12 source/profile screens is installable. Complete native32/UBSan, private/alias/access-prefix and all-word/binding qualification for this same function.
+- [ ] Qualify both owner profiles, existing projection override/four GLOBAL_ASM bodies, actual padding/Make, independent GNU rebases and first whole-ELF prediction. Install only an actual match, audit all other bodies/addresses/protected data and freshly recount. Wider Game work stays open.
+
 ## Route Record Setup Installed Byte Match - 2026-10-18
 
 [Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Install complete typed three-argument func_150870D0 C and its 160-word/frame0x60 normalized match. Preserve raw37 diagnostics and document the copy coalescing, epilogue-derived taken-return restore and selected-FF read/gate join explicitly. Append 160 guards after the unchanged manifest prefix; no Makefile change.
 - [x] Pass 17 installed tests, including 466 normalized full-state prefixes, native32/semantic controls, real helpers and 41 raw plus 41 normalized caller windows. Qualify ten GNU links, 96 code-rebased guest cases, both profiles/72 neighbors and all seven actual Make commands.
 - [x] Reproduce the first 484-byte ELF prediction with only target code/extent changed, zero metadata exceptions, all 6,057 addresses, 6,056 other bodies and 189,088 protected Game-data bytes fixed. Bank tools38eefad first; preserve 1,274 old mirror hashes. Fresh Game2991/4828, total3664/5501, 1,837 different/zero drift. README aggregates only.
-- [ ] Recover the adjacent 604-word func_15087350 stub, frame0x1C8, with its full argument/helper/provider contract. Prior bounded vector caller windows do not qualify its full logic. Keep the installed setup/vector/spline/dispatcher baseline fixed; wider Game work stays open.
+- [x] Recover the complete adjacent func_15087350 experimental body and bounded argument/helper/provider contract in Note1569, beyond the older vector windows. Production remains a stub; native/private/604-word frame matching and installation gates stay open above. Preserve the installed setup/vector/spline/dispatcher baseline.
 
 ## Route Setup Initial S7 Capture And Delayed Stores - 2026-10-18
 

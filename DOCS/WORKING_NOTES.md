@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-18:
+[Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
+Recover the complete private func_15087350 route correction/look-ahead/ranking
+body and typed interface. Twelve tests pass, including703 real-helper cases,
+an independent float reference, seven semantic negatives and16 caller windows.
+Raw588/frame480/599 differences fails the first saved-RA address;12 source/
+profile screens remain non-installable. Tools a71464c first; preserve1,279
+mirror hashes. No production/README/count change or credit. Continue the same
+604-word/frame456 function's homes, roles and remaining qualification gates.
+
+2026-10-18:
 [Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
 Install complete three-argument func_150870D0 C, normalized160/frame0x60.
 Raw37 remains documented; explicit coalescing/return-delay/read-join changes

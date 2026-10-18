@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update recovery and frame boundary](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md):
+  complete private604-word caller recovery; 12 tests with real helpers,
+  independent float reference, ranking/width controls and both caller windows.
+  Raw588/frame480/599 differences is explicitly rejected at the first private
+  RA store. Tools a71464c first; no production/count change. Continue frame,
+  homes and literal matching in this same function before installation.
 - [Route record setup installed byte match](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md):
   complete typed three-argument C, 160 words/frame0x60 normalized exactly, with
   the raw37/explicit return-and-read-join distinctions retained. Seventeen

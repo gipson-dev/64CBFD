@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 38eefad; tools are committed before the consumer pin.
+  checkpoint pins tools a71464c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update complete candidate, frame matching still open**:
+[Note 1569](WORKING_NOTES/1569-route-actor-update-semantic-recovery-and-frame-boundary-20261018.md).
+Recover the full private func_15087350 C and typed index/active/float interface,
+including correction, look-ahead and stable ranking. Twelve tests pass with
+703 paired real-helper cases, an independent float reference, seven effective
+semantic negatives, 144 source/profile cases and 16 actual caller windows.
+Raw588/frame480/599 differences fails the first private RA-store address;
+all twelve screens remain non-installable. Tools **a71464c** first; production,
+README and counts stay frozen at Note1568. Continue this same604-word/frame456
+function's frame/homes/roles, then native/private/all-word/link qualification.
 
 **Route record setup installed byte-exact**:
 [Note 1568](WORKING_NOTES/1568-route-record-setup-installed-byte-match-20261018.md).
