@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
+The335-word semantic projection has a closed321-word normalization matching
+all retail words in isolation.23 tests pass, including complete inlined-helper
+observational paths, two full data/call rebases and effective private/FP/input
+controls. Strict FP/memory interleaving is explicitly not proved. Eight source
+screens remain rejected. Toolsd9ebeb9 first. No production/README/count change
+or installed credit; next native32, isolated profile/padder and linked prediction.
+
+2026-10-18:
 [Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
 Joint335/frame120 C retains all opening roles and SP+0x48;575 full memories
 match. Eleven tests pass with240 null fault prefixes,1458 first-call prefixes,

@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Projection Isolated Byte Match And Complete Observational Proof - 2026-10-18
+
+[Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
+
+- [x] Derive a closed335-to321 layout recipe retaining321 distinct source-instruction origins, all18 moved bindings, fourteen identified redundant words,149 register-renamed output words and eleven payload-base translations. All321 relocated words match retail in isolation; the normalizer reads no files or retail data. Raw C remains335 words/frame120, uninstalled.
+- [x] Compose7/2734 prefix paths with1/10242/6832 suffix paths and one explicit null epilogue, inline the actual91-/41-word helpers, and pass two complete independent data/call rebases. Pass23 tests with effective arithmetic/private/input/recipe/helper-return-address controls. Keep strict FP/memory interleaving, traps and hardware acceptance excluded; reject eight joint source forms after owner/public/private checks.
+- [x] Bank tools **50e46b9**, then **d9ebeb9** first. Preserve production/README/totals,1242 prior mirror leaf hashes and every older capture/point; update only the guarded owned prefix checker and add five absent task files. No installed matching credit.
+- [ ] Qualify native32 C and controls with explicit endian/FP scope; reproduce any isolated normal-profile override, exercise actual padder/contraction/relocations and normalized nonnull caller/fault boundaries, then predict/install/rebuild/audit the whole ELF and freshly recount. Do not change the whole no-unroll owner or claim installed credit from this isolated match. Wider Game work stays open.
+
 ## Projection Call Spill And Integer Prefix - 2026-10-18
 
 [Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover all six opening saved roles and the SP+0x48 call spill jointly in complete semantic335-word/frame120 C. All575 full memories now match retail; retain the old334- and321-word points unchanged. No profile override or installation.
 - [x] Pass eleven focused tests:575 full memories,240 null fault prefixes,1458 first-call prefixes,24 high-bit cases, effective C/private/input controls and ten rejected source screens. Prove seven entry/2734 iteration paths with two independent prefix rebases, ordered memory and checked cut interfaces; the float-tail scope control remains effective.
 - [x] Reconcile one tool-free proof advisory: reproduce and fix CTC1 GP-use liveness, check all four GP/control moves and unknown-rs rejection, and anchor both epilogue cuts. Bank tools **d818afc** first; preserve1240 prior mirror dirty hashes, production/README/totals. No matching credit.
-- [ ] Recover321 words while retaining the joint call-spill/saved-role contract. Analyze14 extra integer-prefix words and69 aligned suffix differences. Complete full suffix/FPU/call proof, native32, whole-parent rebases/nonnull faults and any normalization/padding/prediction/installation gates before claiming a byte match. Wider Game work remains open.
+- [x] Qualify a closed321-word normalized candidate for the unchanged335-word/frame120 C, including the complete nontrapping observational suffix/call proof and whole-parent/helper rebases (Note1557). This does not recover direct321-word source output or qualify FP traps. Native32, actual padding, normalized caller/fault boundaries and prediction/installation remain open above.
 
 ## Projection Normal-Profile Roles And Current Node - 2026-10-18
 

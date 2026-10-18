@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d818afc; tools are committed before the consumer pin.
+  checkpoint pins tools d9ebeb9; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Projection isolated normalized byte match; installation gates remain**:
+[Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md).
+The unchanged335-word/frame120 semantic body now has a closed321-word layout
+recipe matching every retail word. Complete observational proof inlines both
+real helpers:7/2734 prefix paths,1/10242/6832 suffix paths, one null epilogue
+and two full data/call rebases.23 tests pass. FP traps/interleaving stay excluded;
+no hardware or raw nonnull-fault claim. Eight source forms remain rejected.
+Tools **50e46b9**, then **d9ebeb9** first. No production/README/guard/total change.
+Next native32, isolated-profile/padder qualification and first linked prediction
+before installation, full ELF audit and recount.
 
 **Projection call spill recovered; integer prefix qualified, parent still open**:
 [Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md).

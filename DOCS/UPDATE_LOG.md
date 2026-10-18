@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Projection Complete Observational Proof And Isolated Byte Match
+
+[Note1557](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
+Keep complete335-word/frame120 C; a closed layout recipe now emits all321
+retail words in isolation without reading retail data.23 tests pass with a
+complete ordinary/nontrapping proof, both actual leaf helpers and two full
+data/call rebases. Strict FP/memory-interleaving and hardware/fault-PC claims
+remain excluded. Eight joint source forms stay rejected. Tools **50e46b9**,
+then **d9ebeb9** first. No production/README/count change or installed credit. Next
+native32, isolated-profile/padder qualification and the first linked prediction.
+
 ## 2026-10-18 Projection Call Spill And Integer Prefix
 
 [Note1556](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Projection complete observational proof and isolated byte match](WORKING_NOTES/1557-projection-complete-observational-proof-and-isolated-byte-match-20261018.md):
+  closed335-to321 recipe matches every retail word in isolation.23 tests,
+  complete helper-inlined ordinary/nontrapping proof and two full rebases;
+  native/profile/padder/linked-install gates remain open. Toolsd9ebeb9 first;
+  no production or installed matching-credit change.
 - [Projection call spill and integer-prefix qualification](WORKING_NOTES/1556-projection-call-spill-and-integer-prefix-cutpoint-qualification-20261018.md):
   335/frame120 restores opening roles and SP+0x48 jointly;575 full memories
   and eleven tests pass. Prefix-only proof, two rebases and a reconciled
