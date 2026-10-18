@@ -833,8 +833,55 @@ s32 func_15088F30() {
     return 0;
 }
 
-s32 func_1508907C() {
-    return 0;
+/* Prefer the first matching class; retain the last type match as fallback. */
+u8 func_1508907C(u8 id, u8 type, u8 excluded, u8 preferred) {
+    s32 i;
+    u8 first;
+    u8 candidate;
+    u8 next;
+    u8 result;
+    u8 *node;
+    u8 *selectedFirst;
+    u8 *selected;
+    u8 *selectedNext;
+    u8 *cursor;
+
+    result = 0xFF;
+    if (id >= D_80087290) {
+        return 0xFF;
+    }
+    node = D_800D2350 + id * 0x10;
+    first = node[9];
+    if (first != 0xFF && first != excluded &&
+        ((selectedFirst = D_800D2350 + first * 0x10, selectedFirst[0xE] == type) || type == 0xFF)) {
+        result = first;
+        if (selectedFirst[0xF] == preferred) {
+            return first;
+        }
+    }
+    i = 1;
+    cursor = node + 1;
+    do {
+        candidate = cursor[9];
+        if (candidate != 0xFF && candidate != excluded &&
+            ((selected = D_800D2350 + candidate * 0x10, selected[0xE] == type) || type == 0xFF)) {
+            result = candidate;
+            if (selected[0xF] == preferred) {
+                return candidate;
+            }
+        }
+        next = cursor[10];
+        i += 2;
+        if (next != 0xFF && next != excluded &&
+            ((selectedNext = D_800D2350 + next * 0x10, selectedNext[0xE] == type) || type == 0xFF)) {
+            result = next;
+            if (selectedNext[0xF] == preferred) {
+                return next;
+            }
+        }
+        cursor += 2;
+    } while (i != 5);
+    return result;
 }
 
 s32 func_150891E8() {

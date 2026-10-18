@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Neighbor Preference Byte Match
+
+[Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
+Restore typed `func_1508907C`, first preferred class/last accepted type semantics,
+original homes and S0 frame. All91 words match with52 guarded scalar-routing/
+delay changes, an independent retail hash/vector and4,688-path CFG proof.
+Seven installed tests and the first263-byte ELF prediction pass; every other
+byte/address and Game data stay fixed. Tools **2c94753** first. Game
+**2,985/4,828**, total **3,658/5,501**, zero drift. Root README aggregates only.
+Next parent150891E8; vector two-save fitting and wider goal remain open.
+
 ## 2026-10-18 Route Vector Lifetime Screens Rejected
 
 [Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):

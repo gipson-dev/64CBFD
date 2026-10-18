@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
+Recover typed neighbor preference1508907C:91 words/frame8,52 guarded scalar/
+delay changes with a4,688-path independent retail proof. Seven installed
+tests and the first263-byte ELF delta pass; other bytes/addresses/data fixed.
+Tools2c94753 first. Game2,985/4,828, total3,658/5,501, zero drift. Next
+parent150891E8; vector two-save fitting remains open. README aggregates only.
+
+2026-10-18:
 [Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
 Bank28 rejected lifetime forms under a fresh strict post-spline checkpoint.
 Six tests,336 paired guest cases,72 fixed neighbors and explicit first-save

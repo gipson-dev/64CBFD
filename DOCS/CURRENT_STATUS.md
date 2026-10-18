@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3bd5e4e; tools are committed before the consumer pin.
+  checkpoint pins tools 2c94753; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route neighbor preference restored and byte-matched**:
+[Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md).
+`func_1508907C` now has complete typed C, 91 words/frame8 and its original
+argument homes/S0 save. Fifty-two guards have an independent retail-vector,
+4,688-path scalar CFG proof with explicit duplicate-delay gates. Seven installed
+tests pass: 7,826 guest cases, 71,786 native cases/profile, 593 fault prefixes,
+288 rebased cases and112 actual call/delay windows. ELF equals the first263-byte
+prediction; every other byte/address and Game data are fixed. Tools **2c94753**
+first. Game **2,985/4,828 (61.83%)**, total **3,658/5,501 (66.50%)**,
+**1,843 different /zero drift**. Next parent150891E8; vector's two-save fit
+and wider queues remain open. Root README receives aggregate rows only.
 
 **Route vector lifetime screens rejected; production unchanged**:
 [Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md).

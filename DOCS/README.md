@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route neighbor preference byte match](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
+  recover91 words/frame8 with52 guards, independent retail words and a4,688-path
+  scalar CFG proof. Seven installed tests; tools2c94753 first. Next parent150891E8,
+  keeping the vector two-save fit and wider Game queues open.
 - [Route vector lifetime screens rejected](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
   new strict post-spline checkpoint,28 forms and six tests; all still fail
   retail's two-save private contract. Production and matching totals unchanged;

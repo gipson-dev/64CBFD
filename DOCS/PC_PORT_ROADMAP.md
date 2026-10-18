@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Neighbor Preference Byte Match - 2026-10-18
+
+[Note1549](WORKING_NOTES/1549-route-neighbor-preference-byte-match-20261018.md):
+
+- [x] Recover typed `u8 func_1508907C(u8,u8,u8,u8)`, signed count gate, ordered five-neighbor type/class preference, literal/wildcard distinctions, original argument homes and S0 save. All91 words/frame8 match after52 guards derived from a4,688-path independent retail proof and explicit identity/duplicate-delay gates. No profile change.
+- [x] Pass seven installed tests:7,826 three-way guest cases, all byte argument/type/class values,71,786 native cases per O2/O0 UBSan profile, seven native controls,593 fault prefixes, nine links/288 rebased cases and112 actual call/delay windows. Preserve72 raw neighbors/pools; keep full-parent, dead raw fault GPR and hardware scope limits explicit.
+- [x] Reproduce the first263-byte whole-ELF delta:261 target-code bytes and two size bytes, every other byte/address fixed. Game data189,088 bytes/720 owners unchanged. Tools **2c94753** first; preserve all1,224 previous mirror dirty hashes. Root README aggregates only:Game2,985/4,828, total3,658/5,501, zero drift.
+- [ ] Recover parent `func_150891E8` (321 words/frame0x78), then qualify its complete real interface/helper behavior. Keep vector15088F30 and other parent150896EC open; call windows do not qualify complete parents or gameplay.
+
 ## Route Vector Lifetime Screens - 2026-10-18
 
 [Note1548](WORKING_NOTES/1548-route-vector-lifetime-screens-rejected-20261018.md):
