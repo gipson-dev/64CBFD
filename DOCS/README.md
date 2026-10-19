@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update casts, projection and finalizer core](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
+  closed490-word core, all20 calls and60 bindings; all15 core/retained tests pass.
+  Tools3ca3f0d first, no ranking/return or installed credit. Continue the same
+  function's114-word retail tail, full proof and actual build integration.
 - [Route actor update correction prefix layout](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
   closed244-word normalized prefix only; seven tests pass with563 bounded cases,
   850 caller cuts and three GNU maps. No tail/install/count credit. Tools3076fa7

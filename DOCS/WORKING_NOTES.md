@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
+Close490 normalized words through func_15087350's finalizer, all20 calls and60
+bindings. Fifteen tests pass with581 corpus/boundary cases,18 wide casts and
+1,090 fired core cuts. Tools3ca3f0d first; preserve1,292 prior mirror hashes.
+No ranking/return tail, production change or credit. Raw594/frame456/450 stays
+fixed; continue the same function's114-word retail tail and full integration.
+
+2026-10-18:
 [Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
 Source-derived244-word correction prefix matches in isolation; seven tests
 pass with563 bounded cases,850 fired caller cuts and three GNU maps. Tools3076fa7

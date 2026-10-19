@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Casts, Projection And Finalizer Core - 2026-10-18
+
+[Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
+
+- [x] Extend the closed source-derived recipe from244 to490 exact words, all20 calls and60 bindings. Recover full32 conversion spills/reloads, start-Z storage, unit-constant roles and branch joins, with explicit multiply-spacing and SLLV rules. Keep the earlier244-word recipe unchanged; emit no ranking/return tail.
+- [x] Pass all15 new/retained tests with581 corpus/boundary cases,18 wide casts,1,090 fired core cuts, effective emitted-word negatives, all256 shift bytes and three independent GNU maps. Preserve72 neighbors,23 production inputs and all1,292 pre-existing mirror hashes. Bank tools3ca3f0d first; no installation/count credit.
+- [ ] Reconcile the remaining retail114-word / raw113-word ranking/return tail, including current/next induction, folded constants/relocations, live-ins and all saved-register returns. The full raw source remains594/frame456/450 differences, not a completed604-word match.
+- [ ] Finish complete source-derived all-word/binding/private/alias proof, actual mixed padding/Make, independent rebases, first whole-ELF prediction, installation/audit and fresh recount. Root README/counts remain unchanged; wider Game work stays active.
+
 ## Route Actor Update Correction Prefix Layout - 2026-10-18
 
 [Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):

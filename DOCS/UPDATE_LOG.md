@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Casts, Projection And Finalizer Core
+
+[Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
+Extend the source-derived core recipe to490 exact words, all20 calls and60
+bindings, recovering cast/start-Z storage and closed schedules. All15 core and
+retained-prefix tests pass:581 corpus/boundary cases,18 wide casts,1,090 fired
+cuts,256 shift values and three GNU maps. Tools3ca3f0d first; preserve1,292
+prior mirror hashes. Raw594/frame456/450, production and README/counts remain
+unchanged. Continue this same routine's ranking/return and full installation proof.
+
 ## 2026-10-18 Route Actor Update Correction Prefix Layout
 
 [Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
