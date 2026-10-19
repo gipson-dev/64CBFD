@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-19:
+[Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
+Complete experimental func_1508BF14, eight tests,94 fixtures/188 public pairs,
+native32/UBSan, ten effective negatives, all160 retail words visited, actual
+caller, GNU rebases and real owner padding/Make shadow. Frame224/123 differences
+still fail retail176 and private matching; a frame-only control corrupts the
+caller RA home. Tools de2850c first; no production edit, guards or new credit.
+Game3008/4832,total3681/5505,1,824 different/zero drift unchanged. Continue
+the same function's private storage, saved roles and scheduling.
+
+2026-10-19:
 [Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
 Install complete func_1508B9BC, 153 exact words/frame96 through 151 guarded
 layout words. Eight installed tests pass across 107 fixtures, 1,060 private

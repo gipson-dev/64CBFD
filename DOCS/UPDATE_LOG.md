@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Balanced Target Assignment Recovery And Private Layout Boundary
+
+[Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
+Recover complete experimental func_1508BF14 and qualify94 public/native
+fixtures, two-pass reuse scoring, sentinels, the real caller, GNU rebases and
+both owner profiles/actual padding/Make shadow. Eight tests pass. The160-word/
+frame224 body still differs at123 words from retail160/frame176; a frame-only
+edit overwrites the caller RA home. Preserve the explicit native/retail private
+miss-cell distinction. Tools de2850c first; no production edit/build, guards
+or matching credit. Fresh Game3008/4832,total3681/5505,1,824 different/zero
+drift; README unchanged. Continue this same function's storage/layout recovery.
+
 ## 2026-10-19 Weighted Target Selection Complete Match
 
 [Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):

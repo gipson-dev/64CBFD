@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c939d75; tools are committed before the consumer pin.
+  checkpoint pins tools de2850c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Balanced target assignment recovered experimentally; private layout open**:
+[Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md).
+Complete func_1508BF14 emits160 words/frame224 with123 differences versus
+retail160/frame176. Eight tests pass:94 fixtures/188 public pairs, native32/
+UBSan and ten effective negatives, all160 retail words visited, actual caller,
+GNU maps and real owner padding/Make shadow. A frame-only control corrupts
+the caller's RA home; retail's uninitialized private miss byte is not the raw
+C's backed zero-initialized byte. Tools de2850c first; no production change,
+new guards, build or matching credit. Fresh Game3008/4832,total3681/5505,
+1,824 different/zero drift; README unchanged. Continue this function's private
+storage, saved-role and scheduling recovery; preserve1,374 old mirror hashes.
 
 **Weighted target selection installed: all 153 words byte-exact**:
 [Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md).

@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Balanced Target Assignment Recovery - 2026-10-19
+
+[Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
+
+- [x] Recover complete experimental func_1508BF14: cached table bases/current team, remainder/four-byte clear, flag2/3-first passes, opposite-team active filtering,16-entry sentinel search, signed wrapping reuse penalties, first strict minimum, ordered cost/target stores and zero result. Back the native no-selection byte without pretending it is retail's uninitialized private byte.
+- [x] Pass eight tests:94 fixtures/188 public pairs covering all160 retail words, native32 O0/O2/UBSan with ten effective negatives, four private poisons, two fired private-cut negatives,18 actual returning-caller runs,33 rebased pairs across three GNU maps, both owner profiles and real padding/seven-command Make shadow preserving72 neighbors/all73 addresses/pools.
+- [x] Bank the actual boundary:160 words/frame224/123 differences versus retail160/frame176. A frame-only patch corrupts the real caller RA home. Tools de2850c first; preserve all1,374 older mirror hashes. No production source/guard/ELF/CSV/build change, matching credit or README edit; fresh Game3008/4832,total3681/5505,1,824 different/zero drift.
+- [ ] Continue the same function's private storage/frame176, saved-register roles, pointer homes and schedule. Resolve the defined native miss-cell backing versus emitted retail poison behavior before literal private/fault/caller qualification, byte-exact installation and strict whole-image prediction. Do not start a broad conversion batch.
+
 ## Weighted Target Selection Complete Match - 2026-10-19
 
 [Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
@@ -8,7 +17,7 @@
 - [x] Match all 153 words/frame96 using 151 expected-word guards. Retain every source instruction and all 16 bindings; recover three private spill homes, the coefficient colors and two return-edge words. Reject a frame-only edit and preserve the unfinished helper body unchanged.
 - [x] Pass eight installed tests: 107 fixtures/214 completed triples, 1,060 fired private-cut pairs, native32 O0/O2/UBSan with eight effective negatives, publication/context alias with its own effective negative, 27 actual returning-caller runs and 30 rebased pairs across three independent GNU maps.
 - [x] Reproduce the strict 546-byte image prediction while preserving all 6,056 other bodies, every address and protected Game data. Fresh Game 3008/4832, total 3681/5505, 1,824 different/zero drift; owner 60/73 exact. Tools c939d75 first; README aggregate rows only; preserve all 1,369 older mirror hashes.
-- [ ] Recover func_1508BF14, 160 words/frame176, VA1508BF14..1508C194, ROM B93C4..B9644. Audit its caller, helper/cache boundaries, row bounds and publication before installation. The preparation helpers remain separate unfinished work, not acceptance claims for this match.
+- [x] Recover and qualify complete experimental func_1508BF14 in Note1597 above, including the real caller, no-helper cache boundaries, bounds, two-pass scoring and publication. Its private-layout matching and installation remain open above. The preparation helpers remain separate unfinished work, not acceptance claims for this match.
 
 ## Sine-Weighted Actor Selector Complete Match - 2026-10-19
 
