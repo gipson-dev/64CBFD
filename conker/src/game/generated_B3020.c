@@ -924,7 +924,37 @@ void func_150885EC(s32 sourceIndex, s32 destinationIndex) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_1508868C.s")
+extern u8 *D_800872A0;
+extern s8 D_800D2399;
+extern s8 D_800D2398;
+extern s32 D_800D2394;
+extern u8 D_800CC2D0[];
+void func_15088824(u8 *);
+
+/* Reserve the first free route slot and associate it with the actor. */
+s32 func_1508868C(u8 *actor) {
+    s32 recordIndex;
+    u32 bit;
+    u8 *table;
+
+    table = D_800872A0;
+    if (table == 0) {
+        return -1;
+    }
+    bit = 1;
+    for (recordIndex = 0; recordIndex < D_800D2399; recordIndex++, bit <<= 1) {
+        if (((u32)D_800D2394 & bit) == 0) {
+            D_800D2394 |= bit;
+            recordIndex += D_800D2398;
+            func_15088824((u8 *)((u32)recordIndex * 0x84 + (u32)table));
+            ((u8 *)((u32)D_800872A0 + (u32)recordIndex * 0x84))[0x30] = 1;
+            ((u8 *)((u32)D_800872A0 + (u32)recordIndex * 0x84))[0x31] =
+                (s32)((u32)actor - (u32)D_800CC2D0) / 0x32C;
+            return recordIndex;
+        }
+    }
+    return -1;
+}
 
 void func_15088780(s32 arg0) {
     s32 idx;

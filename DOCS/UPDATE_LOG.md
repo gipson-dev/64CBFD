@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Slot Reservation Direct C Conversion
+
+[Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
+Complete func_1508868C directly matches all 61 words/frame0x28 and 15 bindings.
+Ten installed tests pass, covering signed bounds, mask wrap, actual reset,
+table/private aliases, native32/UBSan and bounded caller checks. The complete
+ELF, all addresses and protected data remain unchanged. Fresh Game2996/4832
+(62.00%), total3669/5505 (66.65%), 1,836 different /zero drift. Toolsc1fbc31
+first; README aggregate rows only. Continue from the 44-word switch stub
+func_1508E6D0, not this finished routine or a claim of complete owner recovery.
+
 ## 2026-10-18 Route Record Copy Direct C Conversion
 
 [Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):

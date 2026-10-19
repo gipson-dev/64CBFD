@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5d8bc93; tools are committed before the consumer pin.
+  checkpoint pins tools c1fbc31; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route slot reservation converted directly to exact C: all 61 words**:
+[Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md).
+Complete func_1508868C preserves signed count/base bytes, wrapping bit scan,
+the real reset helper and ordered table reloads, with no new guards. Ten
+installed tests pass: 1,496 guest/native32 inputs, 372 fired cuts, six effective
+source negatives and eight bounded caller windows. The entire ELF, all 6,057
+bodies/addresses and protected data stay fixed. Fresh Game **2996/4832 (62.00%)**,
+total **3669/5505 (66.65%)**, **1,836 different / zero drift**. Tools **c1fbc31**
+first; README aggregate rows only. This removes the owner's last GLOBAL_ASM,
+not its remaining C stubs. Next audit the 44-word switch func_1508E6D0 and its
+63-entry table; broader Game work stays active.
 
 **Route record copy converted directly to exact C: all 40 words**:
 [Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md).

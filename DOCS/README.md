@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route slot reservation direct C conversion](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
+  all 61 words/frame0x28 directly exact; ten installed tests, real reset helper
+  and unchanged whole-ELF audit pass. Toolsc1fbc31 first; fresh Game2996/4832
+  (62.00%), total3669/5505. Next audit the 44-word C stub func_1508E6D0.
+
 - [Route record copy direct C conversion](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
   all 40 words/frame0x28 directly exact; ten installed tests, real SDK overlap
   and unchanged whole-ELF audit pass. Tools5d8bc93 first; fresh Game2995/4831

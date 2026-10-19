@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Slot Reservation Direct C Conversion - 2026-10-18
+
+[Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
+
+- [x] Recover complete returning func_1508868C with signed count/base bytes, unsigned mask wrap, real reset call, full-width actor difference and repeated table reloads. Match all 61 words/frame0x28 and 15 bindings directly; no new guards or compiler settings.
+- [x] Pass ten installed tests: 1,496 guest/native32 cases, all 33 real reset words, private/table aliases, 372 fired cuts, six effective source negatives, eight bounded caller windows, three GNU maps and 32 code-rebased pairs. Keep mapped guest and native32 domains separate from hardware/gameplay acceptance.
+- [x] Install through actual mixed Make and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected Game data. Fresh Game2996/4832 (62.00%), total3669/5505 (66.65%), 1,836 different/zero drift. Bank toolsc1fbc31 first; update README aggregate rows only.
+- [ ] Continue broader Game matching with unfinished C, starting from the 44-word func_1508E6D0 switch and its 63-entry jtbl_8009DA94. Qualify the complete full-word selector, default path, table layout and actual caller interface. No GLOBAL_ASM remains in generated_B3020, but its C stubs are not complete.
+
 ## Route Record Copy Direct C Conversion - 2026-10-18
 
 [Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete void func_150885EC with full-width indices, the complete 132-byte copy, saved signed ID/state words and ordered table reloads. Match all 40 words/frame0x28 and five bindings directly; no new guards or compiler settings.
 - [x] Pass ten installed tests: 448 guest/native32 cases, 193 real SDK words, 144 helper overlap/alignment cases, 988 fired connected cuts, five effective source negatives, 16 bounded caller windows, three GNU maps and 32 code-rebased pairs. Keep provider/native/private/hardware boundaries explicit.
 - [x] Install through actual mixed Make and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected Game data. Fresh Game2995/4831 (62.00%), total3668/5504, 1,836 different/zero drift. Bank tools5d8bc93 first; update README aggregate rows only.
-- [ ] Continue broader Game conversion/matching with the remaining GLOBAL_ASM func_1508868C: 61 words, ending at 15088780. Qualify the signed count/base, allocation mask, real reset helper, table mutation and actor-index interface before conversion.
+- [x] Qualify signed count/base, wrapping mask, real reset helper, table/private mutation and actor-index interface, then convert retained 61-word func_1508868C in Note1580 above. Broader Game matching stays open.
 
 ## Route Event Dispatcher Direct C Conversion - 2026-10-18
 
