@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Frame And Captures
+
+[Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
+Recover complete `func_1508A6FC`'s 678-word extent, frame 288, eleven eager
+captures and real timer reload in experimental C. Eight tests pass in both
+copies, including 57 native fixtures at three optimization levels with UBSan.
+Tools `01e3b05` first. Private homes/roles/read order and 607 word differences
+remain open; no production installation, README change or new matching credit.
+
 ## 2026-10-19 Actor State Tick Recovery And Layout Boundary
 
 [Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):

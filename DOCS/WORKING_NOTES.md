@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
+Recover experimental `func_1508A6FC`'s complete 678-word extent/frame 288,
+eleven eager table bases and timer reload. Eight tests pass in both copies;
+57 native fixtures pass O0/O2/O3 with UBSan. Tools `01e3b05` first. Continue
+private homes/register roles/read order; 607 differences is not a byte match.
+
+2026-10-19:
 [Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
 Recover complete experimental `func_1508A6FC`, 658 words/frame 328, not the
 retail 678/frame 288. Seven tests/262 bounded fixtures pass in both copies;

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick frame and native qualification](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
+  experimental `func_1508A6FC`, 678 words/frame 288, eager bases and timer
+  reload recovered; eight tests pass in both copies, including native32.
+  Continue private homes/roles/read order; no installation or new match.
 - [Actor state tick recovery and layout boundary](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
   experimental `func_1508A6FC`, 658 words/frame 328; seven tests/262 bounded
   fixtures pass in both copies. Continue pointer captures/private frame;

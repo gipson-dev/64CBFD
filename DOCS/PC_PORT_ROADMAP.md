@@ -1,13 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Actor State Tick Frame, Captures And Native Qualification - 2026-10-19
+
+[Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
+
+- [x] Recover complete `func_1508A6FC`'s 678-word extent and frame 288 through semantic C, preserving all eleven eager table captures and the real timer reload. Retain 27 bounded source controls without a new compiler profile.
+- [x] Pass eight tests in both tools copies: 262 completed fixtures, 24 public-read footprint pairs, 57 native32 fixtures at O0/O2/O3 with UBSan, three effective native negatives and a fired sanitizer control. Preserve both owner profiles' 72 neighbors/pools. Tools `01e3b05` first; all 1,436 older mirror hashes preserved.
+- [ ] Recover the actual private homes and complete saved-register lifetimes; close the measured timer/difficulty read order. Current 607 word differences is not exact despite equal extent/frame.
+- [ ] Finish instruction/private/fault/alias and independent GNU original-assembly coverage, then actual padding/Make/strict-image and installation gates before rebuilding and recounting. Keep production, README and the wider goal unchanged until qualified.
+
 ## Actor State Tick Recovery And Layout Boundary - 2026-10-19
 
 [Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
 
 - [x] Read complete `func_1508A6FC` and its script caller; recover the no-argument changed-mask interface and complete typed experimental body. Correct donor byte/halfword widths, float operations, cursor strides and live/captured inputs.
 - [x] Pass seven tests in both tools copies: 262 bounded fixtures, 660/678 retail words visited, fired helper mutations, three effective negatives and both full owner profiles/72 neighbors and pools preserved. Tools `e831838` first; preserve all 1,434 older mirror dirty hashes.
-- [ ] Recover eager table-pointer captures, frame 288 and the full 678-word layout. Current 658/frame 328 is not matching; source-form/profile screens do not justify an installation.
-- [ ] Complete native32, remaining instruction/private/access-fault/alias coverage and independent GNU rebases, then owner/padding/Make/strict-image gates before installation and recount. Production and README remain unchanged; keep the wider Game goal active.
+- [x] Recover eager table-pointer captures, frame 288 and the full 678-word extent in Note 1616 above. Exact private homes, roles and schedule remain separate open gates; do not install on shape alone.
+- [ ] Complete remaining instruction/private/access-fault/alias coverage and independent GNU rebases, then owner/padding/Make/strict-image gates before installation and recount. Native32 is now qualified in Note 1616; production and README remain unchanged, and the wider Game goal stays active.
 
 ## Queued-Zone Selection Complete Match - 2026-10-19
 
