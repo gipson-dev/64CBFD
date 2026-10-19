@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
+Convert func_1508802C from retained ASM to complete direct C, all 51 words exact
+with no new guards. Eleven installed tests pass; the whole ELF and protected
+data remain unchanged. Fresh Game2993/4829, total3666/5502, 1,836 different /
+zero drift. Tools eabe57c first; preserve 1,298 mirror hashes. Next audit the
+53-word caller func_150880F8; broader Game matching stays active.
+
+2026-10-18:
 [Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
 Restore and install complete func_15087350 C, all604 guarded words exact.
 Seventeen post-install tests pass; actual mixed Make and the retained first link

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Actor Event Direct C Conversion
+
+[Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
+Complete typed func_1508802C C directly matches all 51 words/frame0x18, with
+no guards or build-profile changes. Correct its stale void declaration while
+preserving all linked instructions and the entire ELF. Eleven installed tests
+pass, including native32/UBSan, alias cuts, actual caller returns and rebases.
+Fresh Game2993/4829, total3666/5502, 1,836 different /zero drift. Tools eabe57c
+first; README aggregate rows only. Continue from caller func_150880F8.
+
 ## 2026-10-18 Route Actor Update Complete Match And Installation
 
 [Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):

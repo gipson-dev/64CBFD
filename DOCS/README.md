@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor event direct C conversion](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
+  all 51 words directly exact, no new guards; 11 installed tests and the literal
+  unchanged whole-ELF audit pass. Tools eabe57c first; fresh Game2993/4829,
+  total3666/5502. Continue with the retained caller func_150880F8.
+
 - [Route actor update complete match and installation](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
   complete typed C and604 guarded exact words;17 post-install tests, actual Make,
   retained first-link reconciliation and full installed audit pass. Tools6327a76

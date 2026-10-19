@@ -370,7 +370,7 @@ void func_15087350(s32 recordIndex, s32 active, f32 lookAhead) {
     extern f32 func_150497E0(f32 *, s32, f32);
     extern s32 func_15088A08(u8 *, f32);
     extern void func_15042D78(s32);
-    extern void func_1508802C(u8 *, u8 *, s32);
+    extern s32 func_1508802C(u8 *, u8 *, s32);
     f32 gain;
     f32 startZ;
     f32 positionX;
@@ -686,7 +686,36 @@ void func_15087FEC(s32 arg0, s32 arg1) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_1508802C.s")
+extern u8 D_800CC2D0[];
+extern u16 D_800D18A0;
+extern u8 *D_800D154C;
+extern s8 D_800C3E78;
+extern s32 func_1507BB28(s32, s32);
+
+/* Start an unblocked actor event and mark its route record active. */
+s32 func_1508802C(u8 *record, u8 *actor, s32 reason) {
+    u8 *state;
+    s32 slot;
+
+    state = *(u8 **)(actor + 0x31C);
+    if (state[0x120] != 0) {
+        return 1;
+    }
+    slot = (s32)((u32)actor - (u32)D_800CC2D0) / 0x32C;
+    if (D_800D18A0 & (1U << slot)) {
+        return 1;
+    }
+    state[0x84] = 1;
+    *(s32 *)actor = 0xC;
+    actor[0x232] = reason;
+    D_800D154C = actor;
+    D_800C3E78 = *(s8 *)(record + 0x31);
+    *(s32 *)(actor + 0x218) = func_1507BB28(0, reason);
+    *(u16 *)(actor + 0x21C) = 0;
+    actor[0x125] = 0xFF;
+    record[0x30] = 2;
+    return 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_150880F8.s")
 

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6327a76; tools are committed before the consumer pin.
+  checkpoint pins tools eabe57c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor event converted directly to exact C: all 51 words**:
+[Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md).
+Replace func_1508802C's GLOBAL_ASM with the typed returning routine and correct
+the stale local void declaration. Eleven installed tests pass: 1,112 native32/
+guest cases, 310 fired cuts, 72 actual caller cases and three GNU maps. The
+entire ELF, all 6,057 bodies/addresses, guards, Makefile and protected data stay
+unchanged. Fresh Game **2993/4829**, total **3666/5502**, **1,836 different /
+zero drift**. Tools **eabe57c** first. README aggregate rows only; next audit
+retained 53-word caller func_150880F8. Wider Game work remains open.
 
 **Route actor update restored and installed: all604 words exact**:
 [Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md).

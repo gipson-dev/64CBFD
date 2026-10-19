@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Event Direct C Conversion - 2026-10-18
+
+[Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
+
+- [x] Recover the complete returning func_1508802C C routine and correct its local caller declaration; match all 51 words/frame0x18 directly with nine bindings and no new guards.
+- [x] Pass 11 installed tests: 1,112 native32/guest cases, 310 fired access cuts, four ordinary guest negatives, 72 actual caller cases and three GNU relocation maps. Keep the valid 26-slot C domain separate from out-of-table guest artifact checks.
+- [x] Install through the existing mixed-profile Make recipe and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected data. Freshly recount Game2993/4829, total3666/5502, 1,836 different/zero drift. Bank tools eabe57c first; update only aggregate README rows.
+- [ ] Continue broader Game conversion/matching with retained 53-word caller func_150880F8; recover its null-table and signed-byte/counter paths before claiming C coverage.
+
 ## Route Actor Update Complete Match And Installation - 2026-10-18
 
 [Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Restore the complete typed func_15087350 C body and close the ranking/return tail: all604 guarded words,70 bindings and20 calls exact. Keep raw594/frame456/450 differences explicit; recover semantics and source-derived normalization rather than retail replay.
 - [x] Pass17 post-install tests, including source/reference/ranking/ABI checks,544 fired tail/return cuts, effective finite negatives, five GNU maps and12 code-rebased cases. Preserve the earlier490-word core and its receipts; retain the completed old compiler capture without another attach.
 - [x] Qualify actual mixed-profile padding and all seven Make commands; retain/reconcile the first link with five strictly bounded symbol-order groups. Install/rebuild and audit all6,057 bodies/addresses, all protected Game data and the exact predicted ELF. Freshly recount Game2992/4828 and total3665/5501,1,836 different/zero drift. Tools6327a76 first; update README aggregate rows only.
-- [ ] Continue the broader Game decomp/matching work. Audit nearby51-word GLOBAL_ASM func_1508802C and its callers before conversion; preserve this completed checkpoint and the unrelated dirty tools mirror.
+- [x] Audit and convert nearby 51-word GLOBAL_ASM func_1508802C with its caller/return contract in Note1577 above. Preserve this completed checkpoint and the unrelated dirty tools mirror; broader Game work remains open.
 
 ## Route Actor Update Casts, Projection And Finalizer Core - 2026-10-18
 
