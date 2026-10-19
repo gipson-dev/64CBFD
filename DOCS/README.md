@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Category boundaries recovery and matching boundary](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
+  complete experimental C, seven tests, public/native/caller/map qualification
+  and a fired first-read mismatch.112 words/frame96,54 differences; not installed.
 - [Record query/release complete match](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
   complete78-word query/clear/coordinate capture with seven GPR-only guards,
   eleven installed tests and an exact240-byte production-image prediction.

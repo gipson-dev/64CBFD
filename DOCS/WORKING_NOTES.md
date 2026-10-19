@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
+Recover complete experimental func_15085BE8 C,112 words/frame96 but54
+differences. Seven semantic/native/caller/map/isolation tests pass; a fired
+first-read gate confirms literal order is still unmatched. Do not install or
+add broad guards. Production source/ELF/manifest and matching totals stay
+unchanged. Tools46c5d3c first; resume this function's private/literal layout.
+
+2026-10-19:
 [Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
 Install complete func_1508DAEC,78 exact words/frame0 with seven checked GPR
 guards, all instruction/binding positions retained and FP operations fixed.

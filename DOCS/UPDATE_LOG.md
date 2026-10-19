@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Category Boundaries Recovery And Matching Boundary
+
+[Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
+Recover complete experimental func_15085BE8 C and pass seven tests covering
+1,354 public-result pairs, native32/UBSan/signed16 sweeps, effective negatives,
+fired retail cuts, actual returning caller, GNU maps and owner isolation.
+The tested source emits112 words/frame96 but remains54 words different;
+its first constant read already differs from retail. No production source,
+guard, profile or ELF change. Fresh matching stays Game3004/4832,total3677/5505,
+1,828 different/zero drift. Tools46c5d3c first; resume literal matching of this
+function rather than counting semantic recovery as a completed byte match.
+
 ## 2026-10-19 Record Query/Release Complete Match
 
 [Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md):

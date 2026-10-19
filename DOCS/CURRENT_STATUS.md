@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f873d04; tools are committed before the consumer pin.
+  checkpoint pins tools 46c5d3c; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Category boundaries recovered experimentally; matching remains open**:
+[Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md).
+Complete func_15085BE8 C now covers six extrema, compact categories, midpoint
+boundaries, overlap result and final sentinel. The tested candidate emits
+112 words/frame96 but **54 words still differ**, including a fired first-read
+ordering mismatch; it is not installed and has no new guards. Seven tests
+pass:1,354 public-result pairs, native32/UBSan plus signed16 sweeps, effective
+negatives, returning caller, GNU maps and unchanged owner neighbors/pools.
+Production source/ELF/guards remain byte-identical to the prior checkpoint.
+Fresh totals remain **Game3004/4832 (62.17%)**, **total3677/5505 (66.79%)**,
+**1,828 different / zero drift**, owner56/73 exact. Tools **46c5d3c** first;
+continue this function's literal initializer, scratch placement, control-flow
+and allocation recovery before any installation. README totals stay unchanged.
 
 **Record query/release restored and byte-exact: all 78 words**:
 [Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md).
