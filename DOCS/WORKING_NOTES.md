@@ -1,5 +1,13 @@
 # Working Notes
 
+2026-10-19:
+[Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
+Complete experimental func_1508E89C emits189 words/frame80/100 differences.
+Eight tests pass for950 bounded fixtures and native32/UBSan; private/fault
+matching still fails. No production source/guard/ELF change or matching credit.
+Game2998/4832, total3671/5505,1,834 different/zero drift. Toolsa53e876 first;
+resume this same routine's spill homes and four computed-address checks.
+
 2026-10-18:
 [Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
 Restore both selector modes of func_1508E780, 71 exact words/frame0 and all 57

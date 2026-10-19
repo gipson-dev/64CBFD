@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-18
+Last verified: 2026-10-19
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8b851a0; tools are committed before the consumer pin.
+  checkpoint pins tools a53e876; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Slot-state transfer recovered experimentally; not yet installable**:
+[Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md).
+Complete func_1508E89C C emits189 words/frame0x50 with100 real differences.
+Eight tests pass:950 bounded fixtures,1,900 paired guest runs, native32/UBSan,
+effective negatives and16 bounded caller windows. Private homes and literal
+fault state still differ; no production source/guard/ELF change or match credit.
+Fresh Game **2998/4832 (62.04%)**, total **3671/5505 (66.68%)**, **1,834 different /
+zero drift**. Tools **a53e876** first; README rows unchanged. Resume this same
+routine's spill homes and four computed-address checks, not another target.
 
 **Mode-dependent type code restored and byte-exact: all 71 words**:
 [Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md).

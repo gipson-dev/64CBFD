@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Slot-state transfer recovery and matching boundary](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
+  complete189-word experimental C, eight passing bounded recovery tests and
+  explicit100-word/private/fault nonmatch; not installed or counted as exact.
 - [Mode-dependent type code complete match](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
   replace the C stub with 71 exact words and 57 verified table targets, with
   only two table bindings. Eight installed tests and the exact 257-byte image

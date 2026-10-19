@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Slot-State Transfer Recovery And Matching Boundary
+
+[Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
+Recover complete experimental func_1508E89C,189 words/frame80/100 differences.
+Eight tests pass across950 fixtures,1,900 paired guest runs, native32/UBSan,
+effective source controls and16 actual caller windows. Preserve explicit
+private/fault nonmatch witnesses. Do not install or take matching credit;
+source/guards/ELF and README rows remain unchanged. Fresh Game2998/4832,
+total3671/5505,1,834 different/zero drift. Toolsa53e876 first; continue this
+routine's temporary homes, destination spill and computed-address checks.
+
 ## 2026-10-18 Mode-Dependent Type Code Complete Match
 
 [Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):

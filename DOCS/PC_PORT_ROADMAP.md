@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Slot-State Transfer Recovery And Matching Boundary - 2026-10-19
+
+[Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
+
+- [x] Recover the complete experimental func_1508E89C body and actual full-word caller/two-argument final-helper interface. Preserve helper-induced table/state changes, ordered masks, signed views, computed-address null checks and the zero return.
+- [x] Pass eight bounded qualification tests:950 fixtures/two phases,1,900 paired guest runs,46 extra guest boundary pairs, native32 O0/O2/UBSan, three effective source negatives,16 actual caller windows and both owner profiles with72 neighbors/pools fixed.
+- [x] Bank recovery toolsad184da and coverage correctiona53e876 with the explicit matching boundary:189 words/frame0x50/100 real differences. Typed-table field/element screens emit identical code. Preserve production source/guards/ELF, all1,316 prior mirror hashes and unchanged README matching rows. Fresh Game2998/4832, total3671/5505,1,834 different/zero drift.
+- [ ] Continue this same routine's first-helper temporary spill block, destination pointer home and four computed-address branch forms. Literal private/fault parity still fails; qualify remaining fitting, actual helper boundaries, rebases/padder and the complete production image before installation or match credit.
+
 ## Mode-Dependent Type Code Complete Match - 2026-10-18
 
 [Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover both complete selector modes of func_1508E780, the signed-halfword 0xB8 gate, all default returns and all 57 active table targets. Match 71 words/frame0 directly in isolation; add only two checked retained-table bindings, preserving the prior switch's 63 entries and all neighbors.
 - [x] Pass eight installed tests: 32,490 paired guest runs, all 65,536 mode halfwords across six native probes, 1,805 full-word selectors, 1,044 fired cuts, five effective source negatives, 120 bounded caller windows, four binding-corruption controls and 150 executed code/table/global-rebased cases across three GNU maps.
 - [x] Qualify both profiles and actual shadow Make, then reproduce the exact 257-byte first/production-image prediction: 215 target bytes, two extent bytes and 40 bounded symbol-order bytes. Preserve all other 6,056 bodies, every address and protected data. Fresh Game2998/4832 (62.04%), total3671/5505 (66.68%), 1,834 different/zero drift. Bank tools8b851a0 first; README aggregate rows only.
-- [ ] Continue broader Game matching from the 189-word func_1508E89C C stub. Recover mask updates, signed helper argument views, repeated global-table reads, slot/actor state transfer, optional script updates and the zero return; qualify helper mutation and original frame0x50 before installation.
+- [x] Recover and qualify the complete experimental 189-word func_1508E89C body in Note1583 above. Installation remains open there:100 words and private/fault state still differ, with no match credit.
 
 ## Route Limit Switch Complete Match - 2026-10-18
 
