@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools c1fbc31; tools are committed before the consumer pin.
+  checkpoint pins tools 943620e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route limit switch restored and byte-exact: all 44 words**:
+[Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md).
+Replace func_1508E6D0's zero-return stub with its complete full-word switch.
+All code and 63 table entries match; two checked bindings select the retained
+retail table, without scheduling guards. Eight installed tests pass: 1,805
+guest/native32 cases, 126 fired cuts, 18 bounded caller windows and three
+executed GNU code/data maps. Actual Make reproduces the exact 221-byte image
+prediction; all other 6,056 bodies, all addresses and protected data stay fixed.
+Fresh Game **2997/4832 (62.02%)**, total **3670/5505 (66.67%)**, **1,835 different /
+zero drift**. Tools **943620e** first; README aggregate rows only. Continue with
+71-word func_1508E780, its signed-halfword mode gate and 57 active table entries.
+Broader Game matching stays active; no host or Release changes.
 
 **Route slot reservation converted directly to exact C: all 61 words**:
 [Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md).

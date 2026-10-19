@@ -19145,3 +19145,5 @@ generated_B3020,func_15087350,0x938,0x8FB3003C,0x8FB3003C,-,-,Normalize source-d
 generated_B3020,func_15087350,0x93C,0x8FB40040,0x8FB40040,-,-,Normalize source-derived route update output word 601; closed complete layout,,,false
 generated_B3020,func_15087350,0x940,0x03E00008,0x03E00008,-,-,Normalize source-derived route update output word 602; closed complete layout,,,false
 generated_B3020,func_15087350,0x944,0x27BD01C8,0x27BD01C8,-,-,Normalize source-derived route update output word 603; closed complete layout,,,false
+generated_B3020,func_1508E6D0,0x10,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_8009DA94_game,Bind semantic route limit switch to its verified retained retail table,,,false
+generated_B3020,func_1508E6D0,0x18,0x8C2E0008,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DA94_game,Bind semantic route limit switch to its verified retained retail table,,,false

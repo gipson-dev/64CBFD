@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
+Restore func_1508E6D0's complete switch, 44 exact words/frame0 and all 63 table
+targets. Two checked table bindings, no scheduling guards. Eight installed
+tests and the exact 221-byte image audit pass; all other bodies/addresses/data
+stay fixed. Fresh Game2997/4832 (62.02%), total3670/5505 (66.67%), 1,835 different /
+zero drift. Tools943620e first; preserve all 1,310 prior mirror hashes. Next
+audit the 71-word func_1508E780 and its 57 active table entries.
+
+2026-10-18:
 [Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
 Convert func_1508868C directly to 61 exact words/frame0x28, with no new guards.
 Ten installed tests pass: 1,496 guest/native32 inputs, actual reset/private/table

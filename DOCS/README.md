@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Route limit switch complete match](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
+  replace the zero-return C stub with all 44 exact words and 63 verified table
+  targets; two relocation bindings, no scheduling guards. Eight installed tests
+  and the exact 221-byte image audit pass. Tools943620e first; Game2997/4832
+  (62.02%), total3670/5505 (66.67%). Next audit 71-word func_1508E780.
+
 - [Route slot reservation direct C conversion](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
   all 61 words/frame0x28 directly exact; ten installed tests, real reset helper
   and unchanged whole-ELF audit pass. Toolsc1fbc31 first; fresh Game2996/4832

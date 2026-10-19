@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Limit Switch Complete Match
+
+[Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
+Replace func_1508E6D0's false zero return with its complete full-word switch,
+all 44 instructions and 63 table targets exact. Two checked bindings select
+the retained retail table; no scheduling changes. Eight installed tests and
+the exact 221-byte production-image prediction pass, with all other bodies,
+addresses and protected data fixed. Fresh Game2997/4832 (62.02%), total3670/5505
+(66.67%), 1,835 different /zero drift. Tools943620e first; README aggregate
+rows only. Continue from the 71-word mode-gated switch stub func_1508E780.
+
 ## 2026-10-18 Route Slot Reservation Direct C Conversion
 
 [Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):

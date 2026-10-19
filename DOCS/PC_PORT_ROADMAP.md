@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Limit Switch Complete Match - 2026-10-18
+
+[Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
+
+- [x] Recover the complete returning func_1508E6D0 switch, full-word selector, all default paths and all 63 table targets. Match 44 words/frame0 directly in isolation; bind the full owner's table through two expected-word/relocation checks, with no scheduling guards.
+- [x] Pass eight installed tests: 1,805 guest/native32 inputs, all 44 words and 63 entries visited, 126 fired read cuts, three effective native source negatives, 18 bounded actual caller windows, four fired binding-corruption controls and three independently assembled/executed code/data maps.
+- [x] Qualify both profiles and actual shadow Make, then rebuild production and reproduce the exact 221-byte first-link prediction: 144 target bytes, one extent byte and 76 bounded symbol-order bytes. Preserve all other 6,056 bodies, every address and protected data. Fresh Game2997/4832 (62.02%), total3670/5505 (66.67%), 1,835 different/zero drift. Bank tools943620e first; README aggregate rows only.
+- [ ] Continue broader Game matching with the 71-word func_1508E780 C stub. Recover its signed-halfword mode gate, full-word selector and 57 active jtbl_8009DB90 entries; distinguish its three trailing alignment words from actual table entries before pool/layout qualification.
+
 ## Route Slot Reservation Direct C Conversion - 2026-10-18
 
 [Note 1580](WORKING_NOTES/1580-route-slot-reservation-direct-c-conversion-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete returning func_1508868C with signed count/base bytes, unsigned mask wrap, real reset call, full-width actor difference and repeated table reloads. Match all 61 words/frame0x28 and 15 bindings directly; no new guards or compiler settings.
 - [x] Pass ten installed tests: 1,496 guest/native32 cases, all 33 real reset words, private/table aliases, 372 fired cuts, six effective source negatives, eight bounded caller windows, three GNU maps and 32 code-rebased pairs. Keep mapped guest and native32 domains separate from hardware/gameplay acceptance.
 - [x] Install through actual mixed Make and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected Game data. Fresh Game2996/4832 (62.00%), total3669/5505 (66.65%), 1,836 different/zero drift. Bank toolsc1fbc31 first; update README aggregate rows only.
-- [ ] Continue broader Game matching with unfinished C, starting from the 44-word func_1508E6D0 switch and its 63-entry jtbl_8009DA94. Qualify the complete full-word selector, default path, table layout and actual caller interface. No GLOBAL_ASM remains in generated_B3020, but its C stubs are not complete.
+- [x] Recover and qualify the complete 44-word func_1508E6D0 switch, all 63 table entries and actual caller interface in Note1581 above. No GLOBAL_ASM remains in generated_B3020, but its other C stubs are not complete.
 
 ## Route Record Copy Direct C Conversion - 2026-10-18
 
