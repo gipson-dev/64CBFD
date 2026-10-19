@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Record query/release complete match](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
+  complete78-word query/clear/coordinate capture with seven GPR-only guards,
+  eleven installed tests and an exact240-byte production-image prediction.
+  Owner56/73 exact; next audit112-word func_15085BE8's extrema/boundary builder.
 - [Parallel array reset complete match](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
   complete52-word reset with current bounds and cached outputs, ten installed
   tests and an exact161-byte production-image prediction. Owner55/73 exact;

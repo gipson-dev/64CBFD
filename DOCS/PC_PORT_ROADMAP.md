@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Record Query/Release Complete Match - 2026-10-19
+
+[Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
+
+- [x] Recover complete func_1508DAEC: null/negative-record rejection, negative-mode query, early EB0 clear, mask0x2 gate, ordered record clears, current-context reloads and mode1 timer/XYZ capture. Match all78 words/frame0 through seven checked GPR-only guards, with every instruction and all four bindings in their original positions; FP arithmetic and transfer fields are unchanged.
+- [x] Pass eleven installed tests:948 fixtures/two phases,1,896 literal pairs and ordered raw-C public checks,639 native32 O0/O2/UBSan full-buffer fixtures, five effective native negatives, two completed guest caching controls,262 fired access-cut pairs, three invalid-pointer prefixes, fired FP-load/conversion boundaries,96 pairs at six actual call sites and270 mapped executions across three GNU layouts. Do not claim hardware FCSR/traps or invalid conversion results.
+- [x] Reproduce the complete first/production image:238 target-code bytes and two symbol-size bytes change. Preserve all6,056 other bodies, every address, protected data and historical guards. Fresh Game3004/4832,total3677/5505,1,828 different/zero drift. Tools f873d04 first; README aggregates only. Owner56/73 exact,17 nonmatches remain.
+- [ ] Continue with func_15085BE8,112 words/frame96 at ROM B3098..B3258. Recover six-category min/max initialization, signed-count16 row scan, compact active categories, adjacent midpoint/overlap test and terminal sentinel. Freeze242480.rodata.s, preserve float32 operation order and explicit valid-category/native bounds, then qualify the actual returning caller before installation.
+
 ## Parallel Array Reset Complete Match - 2026-10-19
 
 [Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete func_1508DA1C: first -1 fill and five ordered reset arrays, signed bounds, cached initial outputs, fresh global context/count reads and void operation with literal residual state retained. Match all52 words/frame8 through19 checked pointer/copy-schedule guards, with no inserted/omitted source position and both bindings unchanged.
 - [x] Pass ten installed tests:864 fixtures/two phases,1,728 literal pairs, ordered raw/normalized public stores,384 native32 O0/O2/UBSan full-buffer fixtures, five native negatives, effective first/second cached-bound controls,222 fired access-cut pairs, bounded huge-count/unaligned-read prefixes,100 actual caller pairs and348 executed cases across three GNU maps. Separate guest null-pointer aliases from portable C validity.
 - [x] Reproduce the complete first/production image:160 target-code bytes and one symbol-size byte change. Preserve all6,056 other bodies, every address, protected data and historical guards. Fresh Game3003/4832,total3676/5505,1,829 different/zero drift. Tools958811a first; README aggregates only. Owner55/73 exact,18 nonmatches remain.
-- [ ] Continue with func_1508DAEC,78 words/frame0 at ROM BAF9C..BB0D4. Recover its null/negative-record rejection, negative-mode query, early slot clear, flag gate, ordered record clears and mode1 timer/coordinate stores. Qualify full-word arguments, current-context reloads, FP truncation boundaries and six deduplicated direct call sites before installation.
+- [x] Finish func_1508DAEC in Note1589 above:78 exact words/frame0, query/release and float32 coordinate paths, seven checked allocation guards and all six deduplicated direct call sites. Broader Game work continues with the remaining17 owner nonmatches.
 
 ## Round-Robin Slot Selector Complete Match - 2026-10-19
 

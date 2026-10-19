@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
+Install complete func_1508DAEC,78 exact words/frame0 with seven checked GPR
+guards, all instruction/binding positions retained and FP operations fixed.
+Eleven installed tests and the strict240-byte production-image audit pass.
+Game3004/4832,total3677/5505,1,828 different/zero drift. Tools f873d04 first;
+preserve all1,343 prior mirror hashes. Owner56/73 exact; next func_15085BE8.
+
+2026-10-19:
 [Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
 Install complete func_1508DA1C,52 exact words/frame8 with19 checked pointer/
 copy-schedule guards, all source origins and both bindings retained. Ten

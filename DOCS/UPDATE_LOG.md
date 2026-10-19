@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-19 Record Query/Release Complete Match
+
+[Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md):
+Restore complete func_1508DAEC, all78 words/frame0 exact with seven checked
+GPR-only guards. Keep all source/binding positions and FP operations unchanged.
+Eleven installed tests pass:1,896 literal pairs, ordered raw-C public checks,
+native32/UBSan, fired access/FP boundaries, effective caching negatives,
+six actual caller sites and independent GNU maps. Production reproduces the
+exact240-byte prediction; all other bodies/addresses/data remain fixed.
+Game3004/4832 (62.17%),total3677/5505 (66.79%),1,828 different/zero drift.
+Tools f873d04 first; README aggregate rows only. Owner56/73 exact; next audit
+112-word func_15085BE8 and its six-category extrema/boundary construction.
+
 ## 2026-10-19 Parallel Array Reset Complete Match
 
 [Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):

@@ -19357,3 +19357,10 @@ generated_B3020,func_1508DA1C,0x84,0x24050001,0x01006025,-,-,Normalize parallel-
 generated_B3020,func_1508DA1C,0x90,0xAC900000,0xAD500000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
 generated_B3020,func_1508DA1C,0x94,0xAD650000,0xAD640000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
 generated_B3020,func_1508DA1C,0xB0,0x24840004,0x254A0004,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DAEC,0x84,0x8C430EAC,0x8C450EAC,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0xB8,0x01F82821,0x01F81821,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0xBC,0xC4A40014,0xC4640014,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0xD4,0x24030004,0x24050004,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0xE4,0xC4A80018,0xC4680018,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0x104,0xC4A4001C,0xC464001C,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_1508DAEC,0x128,0xAF031070,0xAF051070,-,-,Normalize record-release state and actor GPR allocation,,,false

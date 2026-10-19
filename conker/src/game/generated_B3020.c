@@ -1975,7 +1975,39 @@ void func_1508DA1C(void) {
     }
 }
 
-s32 func_1508DAEC() {
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+
+/* Query or release a selected record, optionally capturing actor position. */
+s32 func_1508DAEC(s32 slot, s32 mode) {
+    s32 record;
+    s32 nextState;
+    u8 *actor;
+
+    if (D_800D23B0 == 0) {
+        return 0;
+    }
+    record = *(s32 *)((u8 *)D_800D23B0 + slot * 4 + 0xEB0);
+    if (record >= 0) {
+        if (mode < 0) {
+            return 1;
+        }
+        *(s32 *)((u8 *)D_800D23B0 + slot * 4 + 0xEB0) = -1;
+        if (!(*(u32 *)((u8 *)D_800D23B0 + record * 4 + 0x11F4) & 2)) {
+            *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0xF70) = -1;
+            *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x10F0) = -1;
+            nextState = *(s32 *)((u8 *)D_800D23B0 + 0xEAC);
+            if (mode == 1) {
+                *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x12F4) = 300;
+                actor = D_800CC2D0 + slot * 0x32C;
+                *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x1374) = (s32)*(f32 *)(actor + 0x14);
+                *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x13F4) = (s32)(*(f32 *)(actor + 0x18) + 50.0f);
+                *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x1474) = (s32)*(f32 *)(actor + 0x1C);
+                nextState = 4;
+            }
+            *(s32 *)((u8 *)D_800D23B0 + record * 4 + 0x1070) = nextState;
+        }
+    }
     return 0;
 }
 

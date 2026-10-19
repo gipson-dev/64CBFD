@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 958811a; tools are committed before the consumer pin.
+  checkpoint pins tools f873d04; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record query/release restored and byte-exact: all 78 words**:
+[Note 1589](WORKING_NOTES/1589-record-release-complete-match-20261019.md).
+Replace func_1508DAEC's stub with complete query, early clear, flag rejection,
+ordered release and optional actor-coordinate capture. Seven checked GPR
+guards retain every word/binding position, frame0 and all FP operations.
+Eleven installed tests pass:1,896 literal pairs, ordered raw-C public checks,
+native32/UBSan, fired alias/FP boundaries, six actual call sites and three GNU
+maps. Production equals the exact240-byte image prediction; all other
+bodies/addresses/data stay fixed. Fresh Game **3004/4832 (62.17%)**, total
+**3677/5505 (66.79%)**, **1,828 different / zero drift**. Tools **f873d04** first;
+README aggregate rows only. Owner **56/73 exact**,17 still different. Next
+audit **func_15085BE8**,112 words/frame96: six-category extrema/boundary builder.
 
 **Parallel array reset restored and byte-exact: all 52 words**:
 [Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md).
