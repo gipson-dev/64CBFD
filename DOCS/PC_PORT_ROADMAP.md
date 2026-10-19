@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Balanced Target Assignment Complete Match - 2026-10-19
+
+[Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
+
+- [x] Install complete func_1508BF14,160 words/frame176 exact. Qualify160 expected-word guards retaining158 source origins, omitting the native-only miss-byte initializer and redundant shift mask, and inserting two clear copies. Restore private homes, closed GP roles, clear-loop edges and original poison behavior without Makefile changes or physical-register C bindings.
+- [x] Pass eight installed tests:94 fixtures/188 triples, all160 retail words visited,1,080 fired private-cut pairs, native32 O0/O2/UBSan and ten effective negatives,1,536 byte/score mask tuples, four private poisons,27 actual returning-caller runs,33 pairs across three independent GNU maps, completed global-publication alias and strict stale/image controls. Reject the actual caller-corrupting frame-only edit.
+- [x] Reproduce the exact485-byte production-image prediction:483 target-code bytes and two size bytes only. Preserve all6,056 other bodies, all addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift; owner61/73 exact. Tools557a160 first; README aggregates only; preserve1,377 older mirror hashes.
+- [ ] Recover func_15086098 next:179 words/frame112,168 differences, VA15086098..15086364, ROM B3548..B3814. Inspect the full routine and actual caller/interface against this installed baseline before another qualified match; no broad conversion batch.
+
 ## Balanced Target Assignment Recovery - 2026-10-19
 
 [Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete experimental func_1508BF14: cached table bases/current team, remainder/four-byte clear, flag2/3-first passes, opposite-team active filtering,16-entry sentinel search, signed wrapping reuse penalties, first strict minimum, ordered cost/target stores and zero result. Back the native no-selection byte without pretending it is retail's uninitialized private byte.
 - [x] Pass eight tests:94 fixtures/188 public pairs covering all160 retail words, native32 O0/O2/UBSan with ten effective negatives, four private poisons, two fired private-cut negatives,18 actual returning-caller runs,33 rebased pairs across three GNU maps, both owner profiles and real padding/seven-command Make shadow preserving72 neighbors/all73 addresses/pools.
 - [x] Bank the actual boundary:160 words/frame224/123 differences versus retail160/frame176. A frame-only patch corrupts the real caller RA home. Tools de2850c first; preserve all1,374 older mirror hashes. No production source/guard/ELF/CSV/build change, matching credit or README edit; fresh Game3008/4832,total3681/5505,1,824 different/zero drift.
-- [ ] Continue the same function's private storage/frame176, saved-register roles, pointer homes and schedule. Resolve the defined native miss-cell backing versus emitted retail poison behavior before literal private/fault/caller qualification, byte-exact installation and strict whole-image prediction. Do not start a broad conversion batch.
+- [x] Finish in Note1598 above: recover frame176, saved roles, pointer homes, schedule and original private poison behavior; pass literal/private/fault/caller checks and install the exact strictly predicted image. The earlier recovery remains historical, not a separate credited match.
 
 ## Weighted Target Selection Complete Match - 2026-10-19
 

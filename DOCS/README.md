@@ -56,10 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Balanced target assignment complete match](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
+  complete func_1508BF14 installed; all160 words/frame176 exact with160 guards.
+  Eight installed tests,1,080 private cuts, original miss-byte poisons, actual
+  caller/GNU checks and the strict485-byte production-image audit pass.
 - [Balanced target assignment recovery and private layout boundary](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
   complete experimental func_1508BF14; eight tests,94 fixtures and actual
   caller/GNU/padder/Make-shadow checks. Frame224 and123 differences remain;
-  the frame-only control corrupts caller RA. No installation or new credit.
+  the frame-only control corrupts caller RA. Historical, superseded by Note1598.
 - [Weighted target selection complete match](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
   complete func_1508B9BC, all 153 words/frame96 exact with 151 checked guards.
   Eight installed tests cover helper caches, publication alias, private cuts,

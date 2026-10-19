@@ -2078,7 +2078,99 @@ s32 func_1508BC20() {
     return 0;
 }
 
-s32 func_1508BF14() {
+extern s32 D_800D23B0;
+
+/* Assign opposite-team neighbors in two passes, penalizing repeated choices. */
+s32 func_1508BF14(void) {
+    s32 current = *(s32 *)((u8 *)D_800D23B0 + 4);
+    s32 count = *(s32 *)((u8 *)D_800D23B0 + 0x10);
+    s32 *flags = (s32 *)((u8 *)D_800D23B0 + 0x15C);
+    s32 *active = (s32 *)((u8 *)D_800D23B0 + 0x39C);
+    s32 *teams = (s32 *)((u8 *)D_800D23B0 + 0xE64);
+    s32 *costs = (s32 *)((u8 *)D_800D23B0 + 0x45C);
+    s32 *targets = (s32 *)((u8 *)D_800D23B0 + 0x49C);
+    s32 ownTeam = teams[current];
+    s32 *neighbors = (s32 *)((u8 *)D_800D23B0 + 0x5DC);
+    s32 *distances = (s32 *)((u8 *)D_800D23B0 + 0x9DC);
+    s8 usageStorage[41];
+    s8 *uses = usageStorage + 1;
+    s32 pass;
+    s32 i;
+    s32 candidate;
+    s32 special;
+    s32 selected;
+    s32 best;
+    s32 scan;
+    s32 limit;
+    s32 score;
+    s32 remainder;
+    s8 *clear;
+    s8 *end;
+
+    /* Back the no-selection byte too; its value never participates in scoring. */
+    usageStorage[0] = 0;
+    i = 0;
+    if (count > 0) {
+        remainder = count & 3;
+        if (remainder != 0) {
+            clear = uses;
+            do {
+                i++;
+                *clear++ = 0;
+            } while (i != remainder);
+        }
+        if (i != count) {
+            clear = uses + i;
+            end = uses + count;
+            do {
+                clear += 4;
+                clear[-4] = 0;
+                clear[-3] = 0;
+                clear[-2] = 0;
+                clear[-1] = 0;
+            } while (clear != end);
+        }
+    }
+    pass = 0;
+    do {
+        for (i = 0; i < count; i++) {
+            special = 0;
+            if ((flags[i] == 2) || (flags[i] == 3)) {
+                special = 1;
+            }
+            if ((special && (pass == 0)) || (!special && (pass != 0))) {
+                best = 10000000;
+                selected = -1;
+                if (teams[i] == ownTeam) {
+                    for (candidate = 0; candidate < count; candidate++) {
+                        if ((active[candidate] > 0) && (teams[candidate] != ownTeam)) {
+                            score = -1;
+                            scan = candidate * 16;
+                            limit = scan + 16;
+                            while ((scan < limit) && (neighbors[scan] != -1)) {
+                                if (neighbors[scan] == i) {
+                                    score = distances[scan];
+                                    scan = limit;
+                                } else {
+                                    scan++;
+                                }
+                            }
+                            if (score != -1) {
+                                score = (s32)((u32)score << ((u32)uses[candidate] & 31));
+                                if (score < best) {
+                                    best = score;
+                                    selected = candidate;
+                                }
+                            }
+                        }
+                    }
+                    uses[selected]++;
+                    costs[i] = best;
+                    targets[i] = selected;
+                }
+            }
+        }
+    } while (++pass != 2);
     return 0;
 }
 

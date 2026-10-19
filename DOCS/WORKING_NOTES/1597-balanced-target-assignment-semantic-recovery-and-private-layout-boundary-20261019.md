@@ -1,5 +1,8 @@
 # Balanced Target Assignment Semantic Recovery And Private Layout Boundary
 
+Superseded by [Note1598's installed complete match](1598-balanced-target-assignment-complete-match-20261019.md).
+The measurements below describe the earlier experimental checkpoint.
+
 Verified: 2026-10-19. Complete experimental **func_1508BF14** is recovered and
 passes eight focused tests. **It is not installed or byte-exact.** Preserve
 the production source, guards, Makefile, assembly, ROM, ELF and progress CSV.

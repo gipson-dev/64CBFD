@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools de2850c; tools are committed before the consumer pin.
+  checkpoint pins tools 557a160; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Balanced target assignment recovered experimentally; private layout open**:
+**Balanced target assignment installed: all160 words byte-exact**:
+[Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md).
+Complete func_1508BF14 now matches its640-byte slot/frame176 through160
+expected-word guards. Eight installed tests pass across94 fixtures,1,080 fired
+private cuts, native32/UBSan, signed-byte mask/poison cases, the actual caller,
+GNU maps and publication/global alias. The exact485-byte production-image
+prediction preserves all6,056 other bodies, every address and protected Game
+data. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift; owner61/73
+exact,12 remaining. Tools557a160 first; README aggregate rows only. Next:
+func_15086098,179 words/frame112. Preserve1,377 older mirror hashes.
+
+**Earlier balanced-assignment recovery (superseded by Note1598)**:
 [Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md).
 Complete func_1508BF14 emits160 words/frame224 with123 differences versus
 retail160/frame176. Eight tests pass:94 fixtures/188 public pairs, native32/

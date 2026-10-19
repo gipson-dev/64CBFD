@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Balanced Target Assignment Complete Match
+
+[Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
+Install complete func_1508BF14, all160 words/frame176 exact with160 checked
+layout guards. Recover saved roles, private homes, clear-loop edges/copies,
+shift-mask equivalence and original uninitialized miss-byte behavior. Eight
+installed tests and the strict485-byte whole-image audit pass; all6,056 other
+bodies, every address and protected Game data stay fixed. Fresh Game3009/4832,
+total3682/5505,1,823 different/zero drift; owner61/73 exact. Tools557a160 first;
+README aggregates only. Next recover func_15086098,179 words/frame112.
+
 ## 2026-10-19 Balanced Target Assignment Recovery And Private Layout Boundary
 
 [Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):

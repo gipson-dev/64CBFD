@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-19:
+[Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
+Install complete func_1508BF14:160 exact words/frame176 through160 checked
+private-layout/lifetime guards. Eight installed tests include94 fixtures,
+1,080 fired cuts, native32/UBSan, original miss-byte poisons, mask controls,
+actual caller, GNU maps and publication alias. Exact485-byte image prediction
+preserves all other bodies/addresses/data. Game3009/4832,total3682/5505,
+1,823 different/zero drift; owner61/73 exact. Tools557a160 first. Next:
+func_15086098,179 words/frame112; README aggregate rows only.
+
+2026-10-19:
 [Note 1597](WORKING_NOTES/1597-balanced-target-assignment-semantic-recovery-and-private-layout-boundary-20261019.md):
 Complete experimental func_1508BF14, eight tests,94 fixtures/188 public pairs,
 native32/UBSan, ten effective negatives, all160 retail words visited, actual
