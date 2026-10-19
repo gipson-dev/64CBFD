@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):
+Recover seventeen homes and ordered public reads for experimental
+`func_1508A6FC`, retaining 678 words/frame 288. Eight tests pass in both copies;
+34 old-home aliases are effective negatives. Tools `59b52f1` first. Continue
+three output-cursor homes, anonymous spills and roles; 600 differences remain.
+
+2026-10-19:
 [Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
 Recover experimental `func_1508A6FC`'s complete 678-word extent/frame 288,
 eleven eager table bases and timer reload. Eight tests pass in both copies;

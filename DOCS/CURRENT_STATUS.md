@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `01e3b05`; tools are committed before the consumer pin.
+  checkpoint pins tools `59b52f1`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor state tick: seventeen homes and ordered public reads recovered**:
+[Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md).
+Complete experimental `func_1508A6FC` retains 678 words/frame 288, recovers
+seventeen homes through real declarations and closes the timer/difficulty
+read order. Eight tests pass in both copies: 262 ordered-read fixtures,
+34 guest alias pairs/effective old-home negatives and native32 qualification.
+There are still 600 word differences. Continue the output-cursor homes,
+anonymous spills and whole-function roles/schedule; no install or new credit.
+Production, root README and installed totals below remain unchanged.
 
 **Actor state tick extent, frame and eager captures recovered**:
 [Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md).

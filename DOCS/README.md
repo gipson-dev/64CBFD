@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick homes and ordered reads](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):
+  experimental `func_1508A6FC` recovers seventeen homes and the read schedule,
+  678 words/frame 288; eight tests pass in both copies. Continue remaining
+  cursor homes/spills/roles; no installation or new matching credit.
 - [Actor state tick frame and native qualification](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
   experimental `func_1508A6FC`, 678 words/frame 288, eager bases and timer
   reload recovered; eight tests pass in both copies, including native32.

@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Homes And Ordered Reads
+
+[Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):
+Recover seventeen actual homes and the timer/difficulty read schedule in
+complete experimental `func_1508A6FC`, 678 words/frame 288/600 differences.
+Eight tests pass in both copies, including 262 ordered public-read fixtures,
+34 effective guest alias pairs and native32/UBSan. Tools `59b52f1` first;
+three output-cursor homes and remaining literal gates stay open. No production
+installation, root README narrative or new matching credit.
+
 ## 2026-10-19 Actor State Tick Frame And Captures
 
 [Note 1616](WORKING_NOTES/1616-actor-state-tick-frame-captures-and-native-qualification-20261019.md):
