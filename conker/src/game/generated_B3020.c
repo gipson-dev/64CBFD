@@ -2134,6 +2134,37 @@ void func_1508EDBC(u32 arg0) {
     }
 }
 
-s32 func_1508EE0C() {
-    return 0;
+extern u8 *D_800D23C0;
+extern u32 D_80087380;
+void func_15114B94(s32);
+void func_1503DDD0(s32);
+void func_1508EDBC(u32);
+
+/* Dispatch typed entries in the first matching packed row, then clear it. */
+void func_1508EE0C(u16 group, u16 value) {
+    u32 rowIndex;
+    u32 entryIndex;
+    u16 key;
+    u16 packed;
+
+    for (rowIndex = 0; rowIndex < D_80087380; rowIndex++) {
+        for (entryIndex = 0; entryIndex < ((PackedPeerRow *)D_800D23C0)[rowIndex].count; entryIndex++) {
+            key = (group << 12) + value;
+            if (((PackedPeerRow *)D_800D23C0)[rowIndex].entries[entryIndex] == key) {
+                for (entryIndex = 0; entryIndex < ((PackedPeerRow *)D_800D23C0)[rowIndex].count; entryIndex++) {
+                    packed = ((PackedPeerRow *)D_800D23C0)[rowIndex].entries[entryIndex];
+                    switch (packed >> 12) {
+                        case 2:
+                            func_15114B94(packed & 0xFFF);
+                            break;
+                        case 3:
+                            func_1503DDD0(packed & 0xFFF);
+                            break;
+                    }
+                }
+                func_1508EDBC(rowIndex);
+                return;
+            }
+        }
+    }
 }

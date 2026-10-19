@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
+Install complete func_1508EE0C, 91 exact words/frame48 plus two tail NOPs,
+with 15 checked layout guards and all source origins retained. Ten installed
+tests and the strict 287-byte production-image audit pass. Game3001/4832,
+total3674/5505, 1,831 different/zero drift. Tools7a6f9fa first; preserve all
+1,328 prior mirror hashes. Owner53/73 exact; continue from func_1508C9CC.
+
+2026-10-19:
 [Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
 Install complete func_1508ECC0, 63 exact words/frame8 with checked parameter
 homes, early return and allocation. Ten installed tests and the exact 207-byte

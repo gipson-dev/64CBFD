@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Packed-row dispatch complete match](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
+  complete 91-word dispatcher with checked layout, two retained tail NOPs,
+  ten installed tests and an exact 287-byte production-image prediction.
+  Owner53/73 exact; the remaining 47-word func_1508C9CC is the next target.
 - [Packed-entry peer lookup complete match](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
   complete 63-word lookup with checked argument homes/layout, ten installed
   tests and an exact 207-byte target-only production-image prediction.

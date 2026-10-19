@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Packed-Row Dispatch Complete Match - 2026-10-19
+
+[Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
+
+- [x] Recover complete func_1508EE0C: first matching packed row, unsigned halfword key inputs, type2/3 low12 helper dispatch, callback-induced pointer/count changes, original-row clear and void/ignored result. Match all 91 words/frame48 and both tail NOPs with 15 checked layout guards, no inserted/omitted source positions and all 11 bindings retained.
+- [x] Pass ten installed tests: 1,908 fixtures/two phases, 3,816 literal pairs, raw-C public checks, native32 O0/O2/UBSan plus full halfword views, five effective source negatives, 340 fired cuts, 594 actual-clear pairs, 108 actual caller-window pairs and 552 mapped cases across three independent GNU layouts. Keep bounded handler contracts separate from actual helper execution.
+- [x] Install and reproduce the complete first/production image: 285 code bytes and two symbol-size bytes change. Preserve every other linked body/address, protected data and historical guards. Fresh Game3001/4832, total3674/5505, 1,831 different/zero drift. Bank tools7a6f9fa first; README aggregate rows only. Audit the owner as 53/73 exact, with 20 earlier nonmatches still open.
+- [ ] Continue with func_1508C9CC, the remaining 47-word/frame0 stub at ROM B9E7C..B9F38. Recover its signed-byte round-robin cursor/count, actor/nested-state eligibility gates, exclusion mask, final cursor store and -1 fallback; qualify callers and signed/wrapping edges before installation. The broader Game goal stays active.
+
 ## Packed-Entry Peer Lookup Complete Match - 2026-10-19
 
 [Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete func_1508ECC0, including unsigned input/count views, truncated key addition, first matching row, distinct-index peer selection, low12 result and early -1. Restore all 63 words/frame8 with 60 checked source rows, three derived stream insertions and no omitted source origin.
 - [x] Pass ten installed tests: 1,828 fixtures/two phases, 3,656 literal pairs, independent raw-C public checks, all halfword input views in native32 O0/O2/UBSan, four effective source negatives, fired cuts/aliases/width prefixes, 46 synthetic ABI pairs and 486 executed code/global/row-rebased cases across three GNU maps. No actual direct caller is claimed.
 - [x] Install and reproduce the first/production image exactly: 206 target bytes and one size byte change. Preserve all other 6,056 bodies, every address, protected Game data and historical guards. Fresh Game3000/4832, total3673/5505, 1,832 different/zero drift. Bank tools825aaa5 first; README aggregate rows only.
-- [ ] Continue broader Game work from func_1508EE0C: 91 instructions plus two alignment NOPs, frame0x30, 89 slot differences. Recover packed-row dispatch, helper mutation/reloads, final clear and actual return interface. The intervening 20-word func_1508EDBC already matches.
+- [x] Finish func_1508EE0C in Note1586 above, including all 91 instructions, both alignment words, helper mutation/reloads and actual void/ignored-return interface. The 20-word func_1508EDBC remains exact; broader Game work continues from the remaining owner nonmatches.
 
 ## Slot-State Transfer Complete Match - 2026-10-19
 

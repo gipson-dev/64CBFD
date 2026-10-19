@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 825aaa5; tools are committed before the consumer pin.
+  checkpoint pins tools 7a6f9fa; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Packed-row dispatcher restored and byte-exact: all 91 words plus tail**:
+[Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md).
+Replace func_1508EE0C's stub with first-row typed dispatch, callback-induced
+table/count reloads and the exact row-clear helper. Fifteen checked layout
+guards preserve all source origins, frame48, argument homes and both tail NOPs.
+Ten installed tests pass: 3,816 literal pairs, native32/UBSan, actual clear,
+fired cuts, three mapped layouts and three actual call sites. Production
+equals the exact 287-byte image prediction; all other bodies/addresses/data
+stay fixed. Fresh Game **3001/4832 (62.11%)**, total **3674/5505 (66.74%)**,
+**1,831 different / zero drift**. Tools **7a6f9fa** first; README aggregates only.
+The owner is now **53/73 exact**, not finished. Resume its 47-word stub
+**func_1508C9CC**; retain the complete 20-function nonmatch list in Note1586.
 
 **Packed-entry peer lookup restored and byte-exact: all 63 words**:
 [Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md).

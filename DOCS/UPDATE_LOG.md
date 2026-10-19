@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Packed-Row Dispatch Complete Match
+
+[Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
+Restore complete func_1508EE0C, all 91 words/frame48 plus two retained tail
+NOPs exact with 15 checked schedule/shared-ID guards. Ten installed tests
+pass, including 3,816 literal pairs, native32/UBSan, real clear code, fired
+cuts, independent maps and three actual call sites. Production reproduces
+the exact 287-byte prediction; all other bodies/addresses/data stay fixed.
+Game3001/4832 (62.11%), total3674/5505 (66.74%), 1,831 different/zero drift.
+Tools7a6f9fa first; README aggregate rows only. Owner53/73 exact; next recover
+the remaining 47-word stub func_1508C9CC rather than declare the owner done.
+
 ## 2026-10-19 Packed-Entry Peer Lookup Complete Match
 
 [Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
