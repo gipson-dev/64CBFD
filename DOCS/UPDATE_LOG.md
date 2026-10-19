@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Spill Ownership
+
+[Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
+Qualify an experimental post-compile mapping of eleven cursor/call-save
+slots, retaining the cached timer row and all 62 relocation entries. Nine
+tests pass in both copies, including 56 effective aliases and 22 old-layout
+negatives. Tools `8a650a3` first. Missing draw-index/private-store equivalence
+and 600 differences prevent installation; production/README/totals unchanged.
+
 ## 2026-10-19 Actor State Tick Homes And Ordered Reads
 
 [Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):

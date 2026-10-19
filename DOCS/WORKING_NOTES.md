@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
+Qualify eleven cursor/call-save mappings and cached timer ownership in an
+experimental post-compile A6FC transform. Nine tests pass in both copies:
+262 three-way fixtures, 56 effective aliases and 22 old-layout negatives.
+Tools `8a650a3` first; draw-index/private-store/role gates and 600 differences
+remain open. No production installation, README change or matching increment.
+
+2026-10-19:
 [Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):
 Recover seventeen homes and ordered public reads for experimental
 `func_1508A6FC`, retaining 678 words/frame 288. Eight tests pass in both copies;

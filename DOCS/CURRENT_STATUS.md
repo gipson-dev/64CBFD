@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `59b52f1`; tools are committed before the consumer pin.
+  checkpoint pins tools `8a650a3`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor state tick spill ownership qualified experimentally**:
+[Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md).
+An explicitly post-compile experiment maps eleven cursor/call-save slots and
+retains the cached timer row, all 62 bindings and 678 words/frame 288. Nine
+tests pass in both copies: 262 three-way fixtures, 56 effective alias pairs
+and 22 old-layout negatives. Draw-index and empty-count private-store gaps
+remain demonstrated; 600 differences remain. No production change or credit.
+Continue those gaps and lifetime-scoped register roles; README/totals unchanged.
 
 **Actor state tick: seventeen homes and ordered public reads recovered**:
 [Note 1617](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md).

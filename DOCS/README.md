@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick spill ownership](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
+  experimental post-compile cursor/call-save mappings and cached timer row;
+  nine tests pass in both copies, 56 effective aliases. Draw-index/private
+  stores/roles and 600 differences remain open; no production install or credit.
 - [Actor state tick homes and ordered reads](WORKING_NOTES/1617-actor-state-tick-homes-and-ordered-reads-20261019.md):
   experimental `func_1508A6FC` recovers seventeen homes and the read schedule,
   678 words/frame 288; eight tests pass in both copies. Continue remaining
