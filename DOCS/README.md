@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Barrier crossing audit and matching boundary](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
+  existing func_15086D94 improves experimentally to207 words/frame144/68
+  differences; seven semantic/ABI/helper/owner tests pass, but fired cut12
+  still exposes the minimum's wrong private home. No production change or
+  matching credit; continue this same function, retaining its last-crossing quirk.
 - [Cyclic weight profiles complete match](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
   complete void func_1508BC20 installed,189 words/frame136 exact with188
   checked guards and one additional scoped normal-profile selection. Eight

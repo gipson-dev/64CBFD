@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools d3b35eb; tools are committed before the consumer pin.
+  checkpoint pins tools 5829d1a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Barrier crossing audit; matching still open**:
+[Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md).
+Existing func_15086D94 emits207 words/frame128/102 differences; retail uses
+frame144. Experimental assignment lifetimes recover207/frame144/68 differences,
+not an exact match. Seven tests pass:105 fixtures/630 guest runs, six native32
+profiles/bodies with nine negatives,66 actual-height runs and both owner/padder
+profiles preserving72 neighbors/all73 addresses. Fired cut12 still writes the
+minimum at SP+58 instead of SP+50 with prior literal state identical. Preserve
+the last rejected-crossing return quirk. No production/guard/build/credit or
+root README change; fresh Game3011/4832,total3684/5505,zero drift. Continue this
+private home and FP schedule. Tools5829d1a first;1,392 older mirror hashes preserved.
+
 **Cyclic weight profiles installed: all189 words byte-exact**:
 [Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md).
 Complete void func_1508BC20 now matches its756-byte slot/frame136 through188
@@ -38,8 +50,9 @@ caller and GNU/Make checks. Preserve the inclusive RNG's count16 SP60 scratch
 caveat; it is guest-qualified, not portable C safety. Strict565-byte image
 prediction preserves every other body/address/data byte. Fresh Game3011/4832,
 total3684/5505,1,821 different/zero drift; owner63/73 exact,10 remaining.
-README aggregate rows only. Next existing C func_15086D94,207 words/frame144,
-102 differences. Tools d3b35eb first; all1,387 older mirror hashes are preserved.
+README aggregate rows only. The next target func_15086D94 is now audited in
+Note1602 above; its retail144 frame is distinct from installed C's128 frame.
+Tools d3b35eb first; all1,387 older mirror hashes are preserved.
 
 **Spatial neighbor refinement installed: all179 words byte-exact**:
 [Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md).

@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-19:
+[Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
+Audit existing func_15086D94:207/frame128/102 differences versus retail207/frame144.
+Selected experimental lifetimes emit207/frame144/68 differences. Seven tests
+cover105 fixtures/630 guest runs, native32/UBSan and nine negatives,66 actual
+height-helper runs and actual owner padding preserving72 neighbors/all73
+addresses. Fired cut12 still stores the minimum at SP+58 rather than SP+50.
+Preserve the last rejected-crossing fraction. No production/guard/build/credit
+or README edit; fresh Game3011/4832,total3684/5505,zero drift. Continue this
+same function's private home and FP schedule; tools5829d1a precedes the pin.
+
+2026-10-19:
 [Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
 Complete void func_1508BC20 installed,189 words/frame136 exact with188 checked
 guards and scoped normal-profile selection. All source words/six bindings stay;

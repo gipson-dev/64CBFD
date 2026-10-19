@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Barrier Crossing Audit And Matching Boundary - 2026-10-19
+
+[Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
+
+- [x] Audit complete existing C func_15086D94, its five-float ABI, original207-word routine and four direct call sites. Preserve signed16 node coordinates/count, post-helper capture, exact type/category/neighbor filters, endpoint inequalities and the last crossing fraction even after a rejected edge.
+- [x] Bank the experimental improvement from207/frame128/102 differences to207/frame144/68 differences. Pass seven tests:105 fixtures/630 guest runs, six native32 body/profile runs with UBSan and nine effective negatives,66 connected actual-height runs,13 fired private-cut pairs and both copied owner profiles/real padding preserving72 neighbors/all73 addresses/extents/pools. Record198/207 target words visited, not full coverage.
+- [x] Preserve source, assembly, guards, Makefile, ELF and progress CSV; no production build, new guards, credit or root README edit. Fresh Game3011/4832,total3684/5505,1,821 different/zero drift. Commit tools5829d1a before the consumer pin; preserve all1,392 older standalone mirror hashes, no mirror commit or push.
+- [ ] Finish this same function's minimum home SP+50, FP lifetimes/rotated-normal copy and instruction schedule. At fired access12 the selected C writes SP+58 with prior literal state identical. Require complete words, private/fault/alias/actual-caller/GNU/Make and strict whole-image gates before installation or aggregate credit.
+
 ## Cyclic Weight Profiles Complete Match - 2026-10-19
 
 [Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
@@ -8,7 +17,7 @@
 - [x] Select only func_1508BC20 and existing func_150891E8 from the already compiled normal-profile object. Retain all188 source origins and six bindings with188 expected-word guards:156 identity checks and32 schedule/home changes plus one early RA-load copy. Preserve all72 neighbors/pools and all73 owner addresses; no broad owner flag change.
 - [x] Pass eight installed tests:100 fixtures/200 triples,1,386 general and32 endpoint fired-cut pairs,182/189 retail words visited with seven explicit unvisited words,88 native O0/O2/UBSan vectors,14 native and four guest negatives,194 raw/binding controls, all256 divisor patterns,90 actual RNG runs,36 fired-stop caller prefixes,24 rebased pairs across three GNU maps, aliases and actual seven-command Make/padder qualification. Reject unsafe endpoint/odd-stream native fixtures explicitly.
 - [x] Reproduce the strict565-byte production-image prediction:563 target-code bytes and two size bytes only. Preserve all6,056 other bodies, every address and189,088 protected Game-data bytes/720 owners. Fresh Game3011/4832,total3684/5505,1,821 different/zero drift; owner63/73 exact. README aggregate rows only; preserve all1,387 older mirror hashes. Commit tools first, then the consumer pin; no push.
-- [ ] Match existing C func_15086D94 next:207 words/frame144,102 differences, VA15086D94..150870D0, ROM B4244..B4580. Inspect its full assembly and actual callers against this installed baseline before another qualified match; no broad conversion batch.
+- [ ] Finish existing C func_15086D94: retail207 words/frame144, VA15086D94..150870D0, ROM B4244..B4580. Its full assembly/call interfaces are audited in Note1602 above; selected experimental C reaches207/frame144/68 differences, but matching/private-state gates remain open. No broad conversion batch or unearned credit.
 
 ## Spatial Neighbor Refinement Complete Match - 2026-10-19
 

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Barrier Crossing Audit And Matching Boundary
+
+[Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
+Audit complete existing C func_15086D94 and preserve its last-crossing return
+quirk. Experimental source lifetimes improve207/frame128/102 differences to
+207/frame144/68 differences, still uninstalled. Seven tests,105 fixtures,
+nine native negatives, actual-height/owner/padder checks pass. Fired access12
+still stores the minimum eight bytes above its retail home. No production
+change, guard, build, matching credit or README edit; Game3011/4832,
+total3684/5505,zero drift. Continue this function's private home/FP schedule.
+Tools5829d1a first; all1,392 pre-existing standalone mirror hashes preserved.
+
 ## 2026-10-19 Cyclic Weight Profiles Complete Match
 
 [Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
