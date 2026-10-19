@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Mode context initializer complete match](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
+  complete func_15089BC0 replaces its stub,247 words/frame40 exact. Two table
+  binding rows, two requalified neighbor expected cells and one scoped normal
+  override require no instruction-layout guards. Ten installed tests, fresh
+  affected-neighbor regressions and a strict769-byte ELF prediction pass.
+  All other bodies, addresses and protected data remain fixed.
 - [Barrier crossing complete match](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
   complete func_15086D94 installed,207 words/frame144 exact with C-recovered
   scalar homes and207 checked FP/copy/schedule guards. Ten installed tests,

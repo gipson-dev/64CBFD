@@ -1786,7 +1786,70 @@ void func_15089BB0() {
     D_800D23B0 = 0;
 }
 
-s32 func_15089BC0() {
+extern s32 D_800D2E48;
+extern s32 D_800D23B0;
+extern s8 D_800E0BD0;
+extern f32 D_800872B0[];
+extern f32 D_800872F8[];
+extern s8 D_800872F0[];
+u8 *func_1509B570(s32 key);
+void func_1508BC20(void);
+
+/* Select the supported asset context, then reset and seed its sixteen rows. */
+s32 func_15089BC0(void) {
+    u8 *data;
+    s32 offset;
+    s32 key;
+
+    key = D_800D2E48;
+    data = func_1509B570(key);
+
+    if (data == NULL) {
+        return 0;
+    }
+    switch (key) {
+        case 0xB9:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xB8:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xBB:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xBA:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xB7:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xBD:
+            D_800D23B0 = (s32)data;
+            break;
+        case 0xBE:
+            D_800D23B0 = (s32)data;
+            break;
+        default:
+            D_800D23B0 = 0;
+            return 0;
+    }
+    func_1508BC20();
+    ((u8 *)D_800D23B0)[0x1700] = 0;
+    ((u8 *)D_800D23B0)[0x1701] = 0;
+    ((u8 *)D_800D23B0)[0x1703] = 0;
+    ((u8 *)D_800D23B0)[0x1702] = 0;
+    ((u8 *)D_800D23B0)[0x1704] = 0;
+    *(s16 *)((u8 *)D_800D23B0 + 0x16BC) = key;
+    *(f32 *)((u8 *)D_800D23B0 + 0x16B8) = D_800872B0[D_800E0BD0];
+    ((u8 *)D_800D23B0)[0x1745] = 0;
+    for (offset = 0; offset < 0x40; offset += 4) {
+        *(s32 *)((u8 *)D_800D23B0 + 0x16C0 + offset) = 0;
+        *(f32 *)((u8 *)D_800D23B0 + 0x1868 + offset) = D_800872F8[D_800E0BD0];
+        *(f32 *)((u8 *)D_800D23B0 + 0x17A8 + offset) = 0.0f;
+        *(f32 *)((u8 *)D_800D23B0 + 0x17E8 + offset) = 0.0f;
+        *(f32 *)((u8 *)D_800D23B0 + 0x1828 + offset) = 0.0f;
+    }
+    *(s32 *)((u8 *)D_800D23B0 + 0xC) = D_800872F0[D_800E0BD0];
     return 0;
 }
 

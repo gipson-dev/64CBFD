@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-19:
+[Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
+Complete func_15089BC0 replaces its stub,247 words/frame40 exact. Two checked
+switch-table binding rows and two requalified old neighbor expected cells
+preserve retained data; no instruction-layout guards. A third scoped normal
+override leaves72 padded neighbors/all73 addresses fixed. Ten installed tests,
+312 fixtures/624 pairs,1,362 fired cuts, native32/UBSan/nine negatives, actual
+helpers/caller/GNU, fresh affected-neighbor regressions and Make shadow pass.
+Strict769-byte image prediction changes only767 target-code and two target-size
+bytes. Fresh Game3013/4832,total3686/5505,zero drift; owner65/73 exact. Next
+func_1508C1A4,261-word C stub. Tools23cce29 first; README aggregate rows only;
+all1,399 older standalone mirror hashes preserved, no push.
+
+2026-10-19:
 [Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
 Complete func_15086D94 installed,207 words/frame144 exact. Scalar homes50/54
 emit from C;207 checked guards retain206 source origins/all five bindings,

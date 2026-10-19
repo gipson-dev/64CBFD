@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3923525; tools are committed before the consumer pin.
+  checkpoint pins tools 23cce29; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Mode context initializer installed: all247 words byte-exact**:
+[Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md).
+Complete func_15089BC0 replaces its zero-return stub,988 bytes/frame40.
+Semantic C emits all instruction words; two switch-table binding rows and
+two requalified old neighbor expected cells preserve retained retail tables.
+Only this function is added to the existing scoped normal-object overrides.
+Ten installed tests pass:312 fixtures/624 pairs,1,362 fired cuts, native32/
+UBSan and nine negatives, actual helpers/caller/GNU, fresh affected-neighbor
+regressions and actual Make shadow. Strict769-byte ELF prediction permits
+only767 target-code bytes and two target-size bytes; all other bodies,
+addresses and protected data stay fixed. Fresh Game3013/4832,total3686/5505,
+1,819 different/zero drift; owner65/73 exact, eight remain. Next func_1508C1A4,
+261 words/frame168, a C stub. Tools23cce29 first; README aggregate rows only;
+all1,399 older mirror hashes preserved. No push or host/frozen Release work.
 
 **Barrier crossing installed: all207 words byte-exact**:
 [Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md).

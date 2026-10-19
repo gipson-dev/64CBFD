@@ -459,8 +459,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: \
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.unrolled.compact $@.padded.s
 
-# Preserve no-unroll neighbors; select the route projection and cyclic weight
-# profiles from their separately qualified normal-profile object.
+# Preserve no-unroll neighbors; select only the route projection, cyclic weights,
+# and mode-context initializer from the qualified normal-profile object.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
 		$(SRC_DIR)/game/generated_B3020.c $$(call generated_slice_asm,B3020) $$(wildcard asm/nonmatchings/generated_B3020/*.s) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
@@ -471,7 +471,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.normal.compact \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,B3020) $@.padded.s \
-		--function-object func_150891E8=$@.normal.compact --function-object func_1508BC20=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
+		--function-object func_150891E8=$@.normal.compact --function-object func_1508BC20=$@.normal.compact --function-object func_15089BC0=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.normal.compact $@.padded.s
 

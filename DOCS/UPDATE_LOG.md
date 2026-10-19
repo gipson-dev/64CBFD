@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-19 Mode Context Initializer Complete Match
+
+[Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
+Replace func_15089BC0's zero-return stub with complete semantic C,247 words/
+988 bytes/frame40 exact. Bind its eight-entry switch with two checked rows,
+requalify only two old neighbor expected cells and add only this function
+to the existing normal-object overrides. No instruction-layout guards.
+Ten installed tests,1,362 fired cuts, native32/UBSan/nine negatives, actual
+helpers/caller/GNU, fresh affected-neighbor regressions and actual Make pass.
+Strict769-byte ELF prediction permits only767 target-code and two target-size
+bytes, preserving every other body/address and protected data. Fresh
+Game3013/4832,total3686/5505,1,819 different/zero drift; owner65/73 exact.
+Tools23cce29 first; all1,399 older mirror hashes preserved. README aggregate
+rows only. Next func_1508C1A4,261-word C stub; no push or host operation.
+
 ## 2026-10-19 Barrier Crossing Complete Match
 
 [Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):

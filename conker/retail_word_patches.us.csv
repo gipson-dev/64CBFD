@@ -19146,9 +19146,9 @@ generated_B3020,func_15087350,0x93C,0x8FB40040,0x8FB40040,-,-,Normalize source-d
 generated_B3020,func_15087350,0x940,0x03E00008,0x03E00008,-,-,Normalize source-derived route update output word 602; closed complete layout,,,false
 generated_B3020,func_15087350,0x944,0x27BD01C8,0x27BD01C8,-,-,Normalize source-derived route update output word 603; closed complete layout,,,false
 generated_B3020,func_1508E6D0,0x10,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_8009DA94_game,Bind semantic route limit switch to its verified retained retail table,,,false
-generated_B3020,func_1508E6D0,0x18,0x8C2E0008,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DA94_game,Bind semantic route limit switch to its verified retained retail table,,,false
+generated_B3020,func_1508E6D0,0x18,0x8C2E0028,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DA94_game,Bind semantic route limit switch to its verified retained retail table,,,false
 generated_B3020,func_1508E780,0x24,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_8009DB90_game,Bind semantic mode-dependent type code to its verified retained retail table,,,false
-generated_B3020,func_1508E780,0x2C,0x8C380104,0x8C380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DB90_game,Bind semantic mode-dependent type code to its verified retained retail table,,,false
+generated_B3020,func_1508E780,0x2C,0x8C380124,0x8C380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DB90_game,Bind semantic mode-dependent type code to its verified retained retail table,,,false
 generated_B3020,func_1508E89C,0x4C,0x94590000,0x944B0000,-,-,Normalize closed slot-transfer allocation and schedule; output word 19,,,false
 generated_B3020,func_1508E89C,0x5C,0x03287824,0x01687824,-,-,Normalize closed slot-transfer allocation and schedule; output word 23,,,false
 generated_B3020,func_1508E89C,0x68,0xA44F0000,0x00C3C825,-,-,Normalize closed slot-transfer allocation and schedule; output word 26,,,false
@@ -20479,3 +20479,5 @@ generated_B3020,func_15086D94,0x32C,0x8FB00044,0x8FB00044,-,-,Normalize proven c
 generated_B3020,func_15086D94,0x330,0x8FB10048,0x8FB10048,-,-,Normalize proven crossing FP/copy/schedule; source word 0x330,,,false
 generated_B3020,func_15086D94,0x334,0x03E00008,0x03E00008,-,-,Normalize proven crossing FP/copy/schedule; source word 0x334,,,false
 generated_B3020,func_15086D94,0x338,0x27BD0090,0x27BD0090,-,-,Normalize proven crossing FP/copy/schedule; source word 0x338,,,false
+generated_B3020,func_15089BC0,0x38,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_8009DA24_game,Bind semantic mode-context switch to its verified retained retail table,,,false
+generated_B3020,func_15089BC0,0x40,0x8C2E0008,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009DA24_game,Bind semantic mode-context switch to its verified retained retail table,,,false

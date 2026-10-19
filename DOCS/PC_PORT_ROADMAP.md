@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Mode Context Initializer Complete Match - 2026-10-19
+
+[Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
+
+- [x] Replace func_15089BC0's zero-return stub with complete semantic C,247 words/frame40 exact. Retain the cached full-word asset key, NULL versus unsupported lookup behavior, BC default, seven supported switch assignments, weight-helper order, fresh context/signed-selector loads, ordered flag clears, sixteen seeded rows and signed byte-derived output.
+- [x] Bind the retained eight-entry table with two checked rows and zero instruction-layout guards. Requalify only two old neighbor expected-word cells for the added32-byte compiler pool. Select only this function as the third existing normal-object override; preserve72 padded neighbors, their extents and all73 addresses, with actual seven-command Make-shadow proof.
+- [x] Pass ten installed tests:312 fixtures/624 literal pairs, all256 signed selector patterns, all247 words visited,1,362 fired private-cut pairs, native32 O0/O2/O3 with UBSan and nine effective negatives,24 actual lookup/weight runs,16 actual caller-return runs,27 rebased pairs/three GNU maps,279 raw/binding stale controls, two actual-padder stale controls, four image corruption controls and fresh1,805/16,245 newly padded neighbor regression pairs. Keep full lookup/RNG/dispatcher/gameplay and cross-view native table aliases outside this acceptance claim.
+- [x] Reproduce the strict769-byte production-image prediction:767 target-code bytes and two target st_size bytes only. Preserve all6,056 other bodies/extents, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3013/4832,total3686/5505,1,819 different/zero drift; owner65/73 exact. Commit tools23cce29 first; preserve all1,399 older mirror hashes. Root README aggregate rows only; no push or host/frozen Release operation.
+- [ ] Recover and match next func_1508C1A4,261 words/frame168, VA1508C1A4..1508C5B8, ROM B9654..B9A68, currently a12-byte C stub. Freeze this installed baseline and inspect its complete routine/callers before another qualified conversion. Seven other owner nonmatches remain separate unfinished work.
+
 ## Barrier Crossing Complete Match - 2026-10-19
 
 [Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
@@ -8,7 +18,7 @@
 - [x] Qualify207 expected-word guards:157 identity checks,49 changed retained rows, one omitted redundant signed-end copy and one derived tangent copy. Preserve206 unique origins/all five bindings, every memory instruction and retained opcode/format. Keep Makefile and both existing normal overrides unchanged; preserve72 neighbors/pools/all73 owner addresses/extents.
 - [x] Pass ten installed tests:105 fixtures/210 triples,738 fired literal private-cut pairs, six native32 O0/O2/O3 body/profile runs with UBSan and nine negatives,66 actual-height runs,30 fired-stop returning-caller prefixes,27 rebased triples across three GNU maps, two completed guest frame aliases with effective old-home negative,212 raw/binding controls, two actual-padder stale controls and four complete-image corruption controls. Record198/207 executed words, not full coverage.
 - [x] Reproduce the strict251-byte production-image prediction, all target code, with no symbol/extent/metadata change or section exclusion. Preserve all6,056 other bodies, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3012/4832,total3685/5505,1,820 different/zero drift; owner64/73 exact. Commit tools3923525 first; preserve all1,395 older mirror hashes. Root README aggregate rows only; no push or host/frozen Release operation.
-- [ ] Recover and match next func_15089BC0,247 words/frame40, VA15089BC0..15089F9C, ROM B7070..B744C. Freeze this installed baseline and inspect the complete routine/callers before another qualified conversion. Eight other owner nonmatches remain separate unfinished work.
+- [x] Finish next func_15089BC0 in Note1604 above: complete247-word/frame40 C body, checked retained switch bindings, scoped compiler profile, affected-neighbor regressions and strict production-image gates all pass. This earlier next-target item is complete; the wider Game goal remains active above.
 
 ## Barrier Crossing Audit And Matching Boundary - 2026-10-19
 
