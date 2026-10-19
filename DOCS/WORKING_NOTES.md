@@ -1,6 +1,20 @@
 # Working Notes
 
 2026-10-19:
+[Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
+Complete void func_1508C1A4 installed,261 words/frame168 exact. Real-local
+ordering recovers named endpoint/query homes;261 checked layout rows retain
+257 origins/all16 bindings, omit four redundant masks and derive four copy/
+ABI words. Ten installed tests pass:430 fixtures/860 triples,902 fired cuts,
+native32/UBSan/nine negatives, actual helpers/callers, GNU maps, four frame
+aliases with effective old-home negatives and actual Make/padder checks.
+Strict829-byte ELF prediction permits only827 target-code/two target-size
+bytes; all other bodies/addresses/data stay fixed. Fresh Game3014/4832,
+total3687/5505,zero drift; owner66/73 exact. Next func_1508C5B8,261/frame192.
+Tools f1e8e57 first; all1,407 older mirror hashes preserved. README aggregate
+rows only; Makefile/profile selections unchanged, no push or host operation.
+
+2026-10-19:
 [Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
 Recover complete experimental void func_1508C1A4 and its15-argument query ABI.
 Improve258/frame184/257 differences to261/frame168/225, preserving separate

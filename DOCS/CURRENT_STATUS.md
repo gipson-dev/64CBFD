@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 8361e6f; tools are committed before the consumer pin.
+  checkpoint pins tools f1e8e57; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor pair masks recovered; private matching remains open**:
+**Actor pair masks installed: all261 words byte-exact**:
+[Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md).
+Complete void func_1508C1A4 replaces its stub,1,044 bytes/frame168 exact.
+Interleaved real locals recover named endpoint/query homes directly;261
+checked layout rows retain257 source origins/all16 bindings, omit four
+redundant count masks and derive four copy/ABI words. Both flags and the
+15-argument query interface stay intact. Ten installed tests pass:430
+fixtures/860 triples,902 fired cuts, native32/UBSan/nine negatives, actual
+helpers/callers, GNU maps, frame aliases and Make. Strict829-byte prediction
+permits only827 target-code/two target-size bytes; every other body/address
+and protected data stays fixed. Fresh Game3014/4832,total3687/5505,1,818
+different/zero drift; owner66/73 exact. Next func_1508C5B8,261 words/frame192.
+Tools f1e8e57 first; all1,407 older mirror hashes preserved. README aggregate
+rows only; Makefile/profile selections unchanged, no push or host operation.
+
+**Earlier actor pair recovery (superseded by Note1606)**:
 [Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md).
 Complete experimental void func_1508C1A4 improves258/frame184/257 differences
 to261/frame168/225 differences. Frame/RA/incoming/two flag homes emit directly;

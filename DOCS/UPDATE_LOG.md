@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-19 Actor Pair Mask Complete Match
+
+[Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
+Install complete void func_1508C1A4,261 words/frame168 exact. Recover named
+homes from real C locals, then qualify the closed allocation/schedule/ABI
+recipe through261 checked rows,257 source origins/all16 bindings and four
+derived words. Ten installed tests,902 fired cuts, native32/UBSan/nine
+negatives, actual helpers/callers/GNU/frame-alias/Make checks and the strict
+829-byte production prediction pass. All other bodies/addresses/data stay
+fixed; Makefile/profile selections unchanged. Fresh Game3014/4832,
+total3687/5505,1,818 different/zero drift; owner66/73 exact. Tools f1e8e57
+first; all1,407 older mirror hashes preserved. README aggregate rows only.
+Next func_1508C5B8,261-word/frame192 stub; no push or host/frozen Release work.
+
 ## 2026-10-19 Actor Pair Mask Recovery And Private Home Boundary
 
 [Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):

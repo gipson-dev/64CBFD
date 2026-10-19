@@ -2387,8 +2387,115 @@ s32 func_1508C194(s32 arg0) {
     return 0;
 }
 
-s32 func_1508C1A4() {
-    return 0;
+extern s32 D_800D23B0;
+extern s8 D_800E0BD0;
+extern s16 D_800872C4[];
+u8 *func_1505EEF4(s32 key);
+s32 func_150AC9C0(f32, f32, f32, f32, f32, f32, s32, s32,
+    void **, void **, void **, f32 *, s32, s32, f32);
+f32 func_15086D94(f32, f32, f32, f32, f32);
+
+/* Set symmetric pair masks after the collision and barrier queries. */
+void func_1508C1A4(s32 first, s32 second) {
+    s32 clear;
+    s32 queryClear;
+    u8 *actor;
+    f32 dx;
+    f32 dz;
+    f32 dy;
+    u8 *nested;
+    f32 distance;
+    void *hitA;
+    void *hitB;
+    void *hitC;
+    f32 hitDistance;
+    f32 x;
+    f32 otherX;
+    f32 y;
+    f32 otherY;
+    f32 startZ;
+    f32 otherZ;
+    u8 active;
+    u8 otherActive;
+    u8 *other;
+    u32 *row;
+
+    queryClear = 0;
+    clear = 0;
+    actor = func_1505EEF4(first & 0xFFFF0FFF);
+    other = func_1505EEF4(second & 0xFFFF0FFF);
+    if ((actor != NULL) && (other != NULL)) {
+        x = *(f32 *)(actor + 0x14);
+        startZ = *(f32 *)(actor + 0x1C);
+        nested = *(u8 **)(actor + 0x31C);
+        active = nested[0x84];
+        if (active != 0) {
+            y = *(f32 *)(actor + 0x18) + (f32)*(s16 *)(nested + 0x114) * 0.75f;
+            if ((nested[0x75] & 0x7F) == 9) {
+                y -= 50.0f;
+            }
+            nested = *(u8 **)(other + 0x31C);
+            otherActive = nested[0x84];
+        } else if (*(s32 *)actor == 0x1F) {
+            nested = *(u8 **)(other + 0x31C);
+            otherActive = nested[0x84];
+            y = *(f32 *)(actor + 0x18) + 80.0f;
+        } else {
+            nested = *(u8 **)(other + 0x31C);
+            otherActive = nested[0x84];
+            if ((otherActive != 0) && (D_800872C4[D_800E0BD0] != -1)) {
+                x = (f32)*(s16 *)(actor + 0x1A4);
+                startZ = (f32)*(s16 *)(actor + 0x1A8);
+                y = (f32)*(s16 *)(actor + 0x1A6);
+            } else {
+                y = *(f32 *)(actor + 0x18) + 40.0f;
+            }
+        }
+        otherX = *(f32 *)(other + 0x14);
+        otherZ = *(f32 *)(other + 0x1C);
+        if (otherActive != 0) {
+            otherY = *(f32 *)(other + 0x18) + (f32)*(s16 *)(nested + 0x114) * 0.75f;
+            if ((nested[0x75] & 0x7F) == 9) {
+                otherY -= 50.0f;
+            }
+        } else if (*(s32 *)other == 0x1F) {
+            otherY = *(f32 *)(other + 0x18) + 80.0f;
+        } else if ((active != 0) && (D_800872C4[D_800E0BD0] != -1)) {
+            otherX = (f32)*(s16 *)(other + 0x1A4);
+            otherY = (f32)*(s16 *)(other + 0x1A6);
+            otherZ = (f32)*(s16 *)(other + 0x1A8);
+        } else {
+            otherY = *(f32 *)(other + 0x18) + 40.0f;
+        }
+        dy = otherY - y;
+        dz = otherZ - startZ;
+        dx = otherX - x;
+        distance = sqrtf((dx * dx) + (dy * dy) + (dz * dz));
+        if (func_150AC9C0(x, y, startZ, dx, dy, dz, 0, 0,
+                &hitA, &hitB, &hitC, &hitDistance, 0, 0, 0.0f) == 0) {
+            clear = 1;
+        } else if (distance < hitDistance) {
+            clear = 1;
+        }
+        queryClear = clear;
+        if (clear != 0) {
+            if (func_15086D94(x, y, startZ, dx, dz) > 0.0f) {
+                clear = 0;
+            }
+        }
+    }
+    if (clear != 0) {
+        row = (u32 *)((u8 *)D_800D23B0 + (u32)first * 4);
+        row[0x16C0 / 4] |= 1u << ((u32)second & 31);
+        row = (u32 *)((u8 *)D_800D23B0 + (u32)second * 4);
+        row[0x16C0 / 4] |= 1u << ((u32)first & 31);
+    }
+    if (queryClear != 0) {
+        row = (u32 *)((u8 *)D_800D23B0 + (u32)first * 4);
+        row[0x16C0 / 4] |= 0x10000u << ((u32)second & 31);
+        row = (u32 *)((u8 *)D_800D23B0 + (u32)second * 4);
+        row[0x16C0 / 4] |= 0x10000u << ((u32)first & 31);
+    }
 }
 
 s32 func_1508C5B8() {

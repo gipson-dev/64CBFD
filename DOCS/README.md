@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor pair mask complete match](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
+  complete void func_1508C1A4 installed,261 words/frame168 exact through
+  direct C home recovery and261 checked layout rows. Ten installed tests,
+  902 fired cuts, frame aliases and a strict829-byte image prediction pass;
+  all other bodies, addresses and protected data stay fixed. Make unchanged.
 - [Actor pair mask recovery and private-home boundary](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
   complete experimental void func_1508C1A4 emits261 words/frame168 with225
   differences. Eight semantic/native/helper/caller/GNU/owner tests pass, but

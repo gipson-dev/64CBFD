@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Pair Mask Complete Match - 2026-10-19
+
+[Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
+
+- [x] Install complete void func_1508C1A4,261 words/frame168 exact, retaining the15-argument query interface, masked lookup keys but original indices, signed/byte fields, strict query/barrier gates, separate low/high flags and live symmetric context updates. Recover named endpoint/query homes from the same real C locals; no dummy storage, volatile, physical-register binding or frame patch.
+- [x] Qualify261 expected-word rows:86 identity checks,171 changed retained rows, four omitted explicit count masks and four derived copy/ABI words. Preserve257 unique source origins, every arithmetic operation and all16 bindings; document the one likely-branch and one typed-DX-load opcode exception. Preserve72 neighbors/pools/all73 addresses with both raw profiles, actual padding and seven-command Make-shadow proof. Keep Makefile and the three normal overrides unchanged.
+- [x] Pass ten installed tests:430 fixtures/860 literal/private/public triples,902 fired cut pairs, native32 O0/O2/O3 with UBSan/nine negatives, raw/normalized actual helper and caller passes,36 triples/three independent GNU maps, four completed guest frame aliases/four effective old-home negatives,277 raw/binding stale controls, two recipe corruptions, two actual-padder stale controls and four image corruptions. Record258/261 executed words and retain the documented opaque-provider, NaN/FCSR and gameplay limits.
+- [x] Reproduce the strict829-byte production prediction:827 target-code bytes and two target st_size bytes only. Preserve all6,056 other bodies/extents, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3014/4832,total3687/5505,1,818 different/zero drift; owner66/73 exact. Commit tools f1e8e57 first; preserve1,407 older mirror hashes. README aggregate rows only; no push or host/frozen Release operation.
+- [ ] Recover and match next func_1508C5B8,261 words/frame192, VA1508C5B8..1508C9CC, ROM B9A68..B9E7C, currently a12-byte C stub. Freeze this installed baseline and inspect its complete routine/callers before another qualified conversion. Six other owner nonmatches remain separate unfinished work.
+
 ## Actor Pair Mask Recovery And Private Home Boundary - 2026-10-19
 
 [Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
@@ -8,7 +18,7 @@
 - [x] Improve the complete source from258/frame184/257 differences to261/frame168/225 differences through real flag lifetime, split query branches, coordinate-copy removal and declaration order. Recover frame/RA/incoming/two flag homes directly, without dummy storage, volatile, physical-register bindings, frame patches or new guards.
 - [x] Pass eight tests:430 fixtures/860 public pairs, all256 signed modes/all32 shift counts, native32 O0/O2/O3 with UBSan/nine effective negatives, completed context alias,12 actual lookup runs, eight actual restored-barrier runs,32 actual returning-caller windows with fired stops,36 rebased pairs/three independent GNU maps and both owner profiles/actual padding/seven-command Make shadow preserving72 neighbors/all73 addresses/pools. Record258/261 executed words and keep full collision/scheduler/gameplay outside acceptance.
 - [x] Preserve all production inputs and the existing three normal overrides; no production build or matching credit. Fresh Game3013/4832,total3686/5505,1,819 different/zero drift; owner65/73 exact. Commit tools8361e6f first; preserve all1,404 older mirror hashes. Root README unchanged; no push or host/frozen Release operation.
-- [ ] Continue this same func_1508C1A4: fix fired access13's start-Z home, retail SP64 versus raw SP80, then remaining scalar/GP/FP/query/branch-delay layout. Equal261 words/frame168 and public/native agreement are not an installable match. Keep complete private/alias/owner/image gates before production changes; func_1508C5B8 remains later work.
+- [x] Finish the same func_1508C1A4 in Note1606 above: direct C named-home recovery closes cut13; complete literal/private/fault/alias/owner/GNU/Make and strict production-image gates pass. Install all261 exact words. This earlier225-difference recovery is historical, not a separate match.
 
 ## Mode Context Initializer Complete Match - 2026-10-19
 
@@ -18,7 +28,7 @@
 - [x] Bind the retained eight-entry table with two checked rows and zero instruction-layout guards. Requalify only two old neighbor expected-word cells for the added32-byte compiler pool. Select only this function as the third existing normal-object override; preserve72 padded neighbors, their extents and all73 addresses, with actual seven-command Make-shadow proof.
 - [x] Pass ten installed tests:312 fixtures/624 literal pairs, all256 signed selector patterns, all247 words visited,1,362 fired private-cut pairs, native32 O0/O2/O3 with UBSan and nine effective negatives,24 actual lookup/weight runs,16 actual caller-return runs,27 rebased pairs/three GNU maps,279 raw/binding stale controls, two actual-padder stale controls, four image corruption controls and fresh1,805/16,245 newly padded neighbor regression pairs. Keep full lookup/RNG/dispatcher/gameplay and cross-view native table aliases outside this acceptance claim.
 - [x] Reproduce the strict769-byte production-image prediction:767 target-code bytes and two target st_size bytes only. Preserve all6,056 other bodies/extents, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3013/4832,total3686/5505,1,819 different/zero drift; owner65/73 exact. Commit tools23cce29 first; preserve all1,399 older mirror hashes. Root README aggregate rows only; no push or host/frozen Release operation.
-- [ ] Finish func_1508C1A4 after the qualified recovery in Note1605 above. Its complete experimental261-word/frame168 C body still differs225 words and fails start-Z's private home; the production12-byte stub is unchanged. Complete matching remains open, along with seven other owner nonmatches.
+- [x] Finish func_1508C1A4 in Note1606 above: complete261-word/frame168 C body and checked layout recipe pass every declared matching gate. The earlier zero-return stub is replaced; the wider Game goal remains active with func_1508C5B8 next.
 
 ## Barrier Crossing Complete Match - 2026-10-19
 
