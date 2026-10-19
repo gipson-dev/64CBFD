@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Weighted target selection complete match](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
+  complete func_1508B9BC, all 153 words/frame96 exact with 151 checked guards.
+  Eight installed tests cover helper caches, publication alias, private cuts,
+  native32/UBSan, actual caller, GNU rebases and the strict 546-byte image.
 - [Actor sine selector saved-lifetime match](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
   complete C installed;136 words/frame112 exact through138 checked lifetime
   guards. Eight installed tests,1,192 private cuts, actual sine/caller,

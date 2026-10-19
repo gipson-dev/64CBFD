@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Weighted Target Selection Complete Match
+
+[Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
+Install complete func_1508B9BC, all 153 words/frame96 exact through 151
+expected-word guards. Recover the pair-processing budget, cached/fresh helper
+boundaries, unsigned weights, strict minimum and publication/distance stores.
+Eight installed tests and the strict 546-byte image audit pass; all 6,056
+other bodies, addresses and protected Game data stay fixed. Fresh Game
+3008/4832, total 3681/5505, 1,824 different/zero drift; owner 60/73 exact.
+Tools c939d75 first; README aggregate rows only. Next recover func_1508BF14.
+
 ## 2026-10-19 Actor Sine Selector Saved-Lifetime Match
 
 [Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):

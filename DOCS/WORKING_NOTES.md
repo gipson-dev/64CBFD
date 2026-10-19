@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md):
+Install complete func_1508B9BC, 153 exact words/frame96 through 151 guarded
+layout words. Eight installed tests pass across 107 fixtures, 1,060 private
+cuts, helper mutations, publication alias, native32/UBSan, actual caller and
+GNU maps. Strict 546-byte image prediction preserves all other bodies/data/
+addresses. Game 3008/4832, total 3681/5505, 1,824 different/zero drift;
+owner 60/73 exact. Tools c939d75 first. Next: func_1508BF14, 160 words.
+
+2026-10-19:
 [Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
 Install complete func_15089F9C:136 words/frame112 exact after138 explicit
 saved-lifetime guards. Eight installed tests pass, including1,192 fired cuts,

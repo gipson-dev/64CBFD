@@ -148,7 +148,7 @@ global data, conversion count or unrelated guard-prefix change.
 Installed owner SHA256:
 
 ```text
-5d8b6cbccee79b0db84aaaac92d5533d213bebee62bf683686ad1f2379eee0f37
+5d8b6cbccee79b0db84aaaac92d5533d213bebe62bf683686ad1f2379eee0f37
 ```
 
 Installed guard CSV SHA256:

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3457d8d; tools are committed before the consumer pin.
+  checkpoint pins tools c939d75; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Weighted target selection installed: all 153 words byte-exact**:
+[Note 1596](WORKING_NOTES/1596-weighted-target-selection-complete-match-20261019.md).
+Complete func_1508B9BC now matches its 612-byte retail slot/frame96 through
+151 checked layout guards. All eight installed tests pass: 107 fixtures,
+1,060 fired private cuts, native32/UBSan, helper mutation contracts, a real
+returning-caller window, publication alias and independent GNU maps. The
+strict 546-byte image prediction preserves all 6,056 other bodies, every
+address and protected Game data. Fresh Game 3008/4832, total 3681/5505,
+1,824 different/zero drift; owner 60/73 exact, 13 remaining. Tools c939d75
+first; README aggregates only. Next: func_1508BF14, 160 words/frame176.
 
 **Sine-weighted actor selector installed: all 136 words byte-exact**:
 [Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md).

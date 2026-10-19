@@ -1990,7 +1990,87 @@ void func_1508B3F8(void) {
     *(s8 *)((u8 *)D_800D23B0 + 0x1745) = 0;
 }
 
-s32 func_1508B9BC() {
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+extern f32 D_8009DA60;
+extern f32 D_8009DA64;
+s32 func_1508C5B8();
+s32 func_1508A1BC(void);
+
+/* Publish the first minimum weighted neighbor and its current X/Z distance. */
+s32 func_1508B9BC(void) {
+    s32 count = *(s32 *)((u8 *)D_800D23B0 + 0x10);
+    s32 current = *(s32 *)((u8 *)D_800D23B0 + 4);
+    s32 *active = (s32 *)((u8 *)D_800D23B0 + 0x39C);
+    s32 *neighbors = (s32 *)((u8 *)D_800D23B0 + 0x5DC);
+    s32 *distances = (s32 *)((u8 *)D_800D23B0 + 0x9DC);
+    s32 *targets = (s32 *)((u8 *)D_800D23B0 + 0x11C);
+    s32 pairBudget = 1;
+    s32 selected;
+    s32 best;
+    s32 i;
+    s32 scan;
+    s32 limit;
+    s32 score;
+    u8 *weights;
+    u8 *actor;
+    u8 *target;
+    f32 weight;
+    f32 targetScale;
+    f32 weightScale;
+    f32 dx;
+    f32 dz;
+
+    if (count >= 9) {
+        pairBudget = 4;
+    }
+    func_1508C5B8(0, pairBudget);
+    func_1508A1BC();
+    weights = (u8 *)D_800D23B0 + current * 16 + 0x15B4;
+    selected = -1;
+    best = 10000000;
+    if (count > 0) {
+        targetScale = D_8009DA60;
+        weightScale = D_8009DA64;
+        i = 0;
+        do {
+            if ((active[i] > 0) && (i != current)) {
+                score = -1;
+                scan = i * 16;
+                limit = scan + 16;
+                while ((scan < limit) && (neighbors[scan] != -1)) {
+                    if (neighbors[scan] == current) {
+                        score = distances[scan];
+                        scan = limit;
+                    } else {
+                        scan++;
+                    }
+                }
+                if (score != -1) {
+                    weight = (f32)(u32)weights[i] * weightScale;
+                    if (targets[current] == i) {
+                        weight *= targetScale;
+                    }
+                    score = (s32)((f32)score * weight);
+                    if (score < best) {
+                        best = score;
+                        selected = i;
+                    }
+                }
+            }
+        } while (++i < count);
+    }
+    *(s32 *)((u8 *)D_800D23B0 + current * 4 + 0x49C) = selected;
+    if (selected != -1) {
+        actor = D_800CC2D0 + current * 0x32C;
+        target = D_800CC2D0 + selected * 0x32C;
+        dx = *(f32 *)(actor + 0x14) - *(f32 *)(target + 0x14);
+        dz = *(f32 *)(actor + 0x1C) - *(f32 *)(target + 0x1C);
+        *(s32 *)((u8 *)D_800D23B0 + current * 4 + 0x45C) =
+            (s32)sqrtf(dx * dx + dz * dz);
+    } else {
+        *(s32 *)((u8 *)D_800D23B0 + current * 4 + 0x45C) = best;
+    }
     return 0;
 }
 
