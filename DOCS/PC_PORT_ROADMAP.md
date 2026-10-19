@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Sine-Weighted Actor Selector Recovery - 2026-10-19
+
+[Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
+
+- [x] Recover complete experimental func_15089F9C: flag-dependent ranges, cached count/active mask/state rows/phase, fresh eligibility and coefficient reads, clamped X/Z distance, actual Game sine and first strict-best result. Freeze helper code and supplying data.
+- [x] Pass nine tests:105 fixtures/two phases, native32 O0/O2/UBSan and six effective negatives,88 actual-sine pairs, null-actor and NaN provider cases,20 returning-caller runs,27 rebased pairs across three GNU maps, owner isolation and the fired negative private-store boundary. Actual production sine is104 words exact;15 Game-data constant words are verified.
+- [x] Bank the actual boundary:138 words/frame128 versus136/frame112,77 differences, first RA store16 bytes off and eight-byte slot overflow rejected by the real padder. Retaining only the old target in a private pad preserves all73 baseline bodies; no installation or new guards. Tools0df9f7e first; preserve1,363 older mirror hashes. Fresh totals and README remain unchanged.
+- [ ] Finish coefficient-storage and saved GP/FP lifetime recovery, qualify private prefixes/literal pools, fit the actual136-word slot and predict the complete image before installation. Do not replace source recovery with a frame patch or dummy uses.
+
 ## Actor Target Timer Complete Match - 2026-10-19
 
 [Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Finish complete func_1508D850 and its explicit signed32 slot prototype. Match all115 words/frame80 with60 checked lifetime, duplicate-slot-CSE and mutually exclusive timer-edge-load guards. Preserve FP fields/constants, all16 bindings, private access order and the original partial-return shape.
 - [x] Pass eleven installed tests:316 literal pairs/raw private traces,105 fired cut triples, native32 O0/O2/UBSan and five effective negatives,24 actual indirect script-consumer triples including real seeded RNG and an effective zero-result negative, real RNG/notification wrapper, returning caller, five backed large-target triples,45 rebased pairs across three GNU maps, stale manifests and strict image controls. Do not infer a portable C fallthrough result or full interpreter/hardware qualification.
 - [x] Reproduce the exact461-byte production-image prediction:341 code bytes, two target-size bytes and118 explicitly bounded symbol-serialization bytes. Preserve all6,056 other bodies, every address and protected Game data. Fresh Game3006/4832,total3679/5505,1,826 different/zero drift; owner58/73 exact. Tools2728516 first; README aggregate rows only. Preserve1,358 older mirror hashes.
-- [ ] Recover func_15089F9C,136 words/frame112 at ROM B744C..B766C. Audit cached count/masks, exclusions, clamped distance/sine score, strict-best result, saved GP/FP lifetimes, sinf contract and the actual full-word caller in func_1509E3DC.
+- [x] Recover and qualify the complete experimental func_15089F9C in Note1594 above, including the sine/caching/caller contracts. Its frame/slot/private-lifetime matching and production installation remain explicitly open above; no matching credit is inferred from semantic recovery.
 
 ## Actor Target Timer Recovery And Matching Boundary - 2026-10-19
 

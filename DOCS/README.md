@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor sine selector recovery and frame boundary](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
+  complete experimental C and nine qualification tests;138 words/frame128,
+  77 differences, fired private-frame mismatch and rejected slot overflow.
+  No installation or matching credit; continue saved/literal lifetimes.
 - [Actor target timer complete match](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
   all115 words/frame80 exact through60 checked lifetime/CSE/edge-load guards,
   explicit retail script-result qualification, eleven installed tests and a

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-19:
+[Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
+Complete func_15089F9C semantic recovery, nine tests and105 public/native
+fixtures with actual sine, caching mutations, caller and GNU rebases. Frame
+128/138 words still fails retail112/136 and the first private-store gate;
+actual padding rejects the target. Tools0df9f7e first; no production change
+or new matching credit. Game3006/4832,total3679/5505,zero drift unchanged.
+Resume coefficient-storage/saved-register recovery; preserve1,363 old mirror
+hashes and keep the literal/private boundary explicit.
+
+2026-10-19:
 [Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
 Install complete func_1508D850,115 exact words/frame80. Sixty checked
 lifetime/CSE/edge-load guards preserve actual script-result V0 and private

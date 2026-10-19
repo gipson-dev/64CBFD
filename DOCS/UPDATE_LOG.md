@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Actor Sine Selector Recovery And Frame Boundary
+
+[Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
+Recover complete experimental func_15089F9C and pass nine public/native/sine/
+caller/rebase/isolation tests. The selected138-word/frame128 body still has77
+differences; the fired first private store and actual padder confirm the frame
+and eight-byte slot boundary. Literal forms recover frame112 but the wrong
+constant/fallback lifetimes. No production edit/build, guards or matching
+credit. Tools0df9f7e first; Game3006/4832,total3679/5505,1,826 different/zero
+drift unchanged. Continue this function's source/lifetime recovery.
+
 ## 2026-10-19 Actor Target Timer Complete Match
 
 [Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 2728516; tools are committed before the consumer pin.
+  checkpoint pins tools 0df9f7e; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Sine-weighted actor selector recovered; frame matching remains open**:
+[Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md).
+Complete experimental func_15089F9C passes nine tests across105 public/native
+fixtures, actual sine, callback caches, caller and GNU rebases. Its138 words/
+frame128 still differ from retail136/frame112; a fired first-store gate is16
+bytes off and the actual padder rejects the eight-byte overflow. Do not install
+or patch the frame. Source, guards and ELF remain unchanged; fresh Game3006/
+4832,total3679/5505,1,826 different/zero drift, owner58/73 exact. Tools0df9f7e
+first; README unchanged. Continue coefficient-storage and saved-mask/FP lifetime
+recovery. One bounded, tools-disabled Claude advisory was tested as hypotheses.
 
 **Actor target timer restored and byte-exact: all115 words**:
 [Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md).
