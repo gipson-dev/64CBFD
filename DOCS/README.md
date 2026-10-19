@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Mode-dependent type code complete match](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
+  replace the C stub with 71 exact words and 57 verified table targets, with
+  only two table bindings. Eight installed tests and the exact 257-byte image
+  audit pass. Tools8b851a0 first; Game2998/4832 (62.04%), total3671/5505
+  (66.68%). Next audit the 189-word slot-state transfer func_1508E89C.
+
 - [Route limit switch complete match](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
   replace the zero-return C stub with all 44 exact words and 63 verified table
   targets; two relocation bindings, no scheduling guards. Eight installed tests

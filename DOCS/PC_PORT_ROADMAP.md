@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Mode-Dependent Type Code Complete Match - 2026-10-18
+
+[Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
+
+- [x] Recover both complete selector modes of func_1508E780, the signed-halfword 0xB8 gate, all default returns and all 57 active table targets. Match 71 words/frame0 directly in isolation; add only two checked retained-table bindings, preserving the prior switch's 63 entries and all neighbors.
+- [x] Pass eight installed tests: 32,490 paired guest runs, all 65,536 mode halfwords across six native probes, 1,805 full-word selectors, 1,044 fired cuts, five effective source negatives, 120 bounded caller windows, four binding-corruption controls and 150 executed code/table/global-rebased cases across three GNU maps.
+- [x] Qualify both profiles and actual shadow Make, then reproduce the exact 257-byte first/production-image prediction: 215 target bytes, two extent bytes and 40 bounded symbol-order bytes. Preserve all other 6,056 bodies, every address and protected data. Fresh Game2998/4832 (62.04%), total3671/5505 (66.68%), 1,834 different/zero drift. Bank tools8b851a0 first; README aggregate rows only.
+- [ ] Continue broader Game matching from the 189-word func_1508E89C C stub. Recover mask updates, signed helper argument views, repeated global-table reads, slot/actor state transfer, optional script updates and the zero return; qualify helper mutation and original frame0x50 before installation.
+
 ## Route Limit Switch Complete Match - 2026-10-18
 
 [Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover the complete returning func_1508E6D0 switch, full-word selector, all default paths and all 63 table targets. Match 44 words/frame0 directly in isolation; bind the full owner's table through two expected-word/relocation checks, with no scheduling guards.
 - [x] Pass eight installed tests: 1,805 guest/native32 inputs, all 44 words and 63 entries visited, 126 fired read cuts, three effective native source negatives, 18 bounded actual caller windows, four fired binding-corruption controls and three independently assembled/executed code/data maps.
 - [x] Qualify both profiles and actual shadow Make, then rebuild production and reproduce the exact 221-byte first-link prediction: 144 target bytes, one extent byte and 76 bounded symbol-order bytes. Preserve all other 6,056 bodies, every address and protected data. Fresh Game2997/4832 (62.02%), total3670/5505 (66.67%), 1,835 different/zero drift. Bank tools943620e first; README aggregate rows only.
-- [ ] Continue broader Game matching with the 71-word func_1508E780 C stub. Recover its signed-halfword mode gate, full-word selector and 57 active jtbl_8009DB90 entries; distinguish its three trailing alignment words from actual table entries before pool/layout qualification.
+- [x] Recover both complete modes, the signed-halfword gate and all 57 active jtbl_8009DB90 entries, excluding the three alignment words, then install the 71-word func_1508E780 match in Note1582 above. Broader Game work stays open.
 
 ## Route Slot Reservation Direct C Conversion - 2026-10-18
 

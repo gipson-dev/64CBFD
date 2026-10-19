@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
+Restore both selector modes of func_1508E780, 71 exact words/frame0 and all 57
+active table targets, with only two checked bindings. Eight installed tests
+and the exact 257-byte image audit pass; all other bodies/addresses/data stay
+fixed. Game2998/4832 (62.04%), total3671/5505 (66.68%), 1,834 different /zero
+drift. Tools8b851a0 first; preserve all 1,313 prior mirror hashes. Next audit
+the 189-word mask/slot-state transfer func_1508E89C and its helper lifetimes.
+
+2026-10-18:
 [Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
 Restore func_1508E6D0's complete switch, 44 exact words/frame0 and all 63 table
 targets. Two checked table bindings, no scheduling guards. Eight installed

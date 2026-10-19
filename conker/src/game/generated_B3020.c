@@ -1957,8 +1957,38 @@ s32 func_1508E6D0(s32 type) {
     }
 }
 
-s32 func_1508E780() {
-    return 0;
+/* Return the mode-dependent code for the selected type. */
+s32 func_1508E780(s32 type) {
+    if (*(s16 *)((u8 *)D_800D23B0 + 0x16BC) != 0xB8) {
+        switch (type) {
+            case 20: return 0x28;
+            case 63: return 0x2F;
+            case 34: return 0x56;
+            case 35: return 0x16;
+            case 22: return 0x24;
+            case 21: return 0x4B;
+            case 33: return 0x58;
+            case 36: return 0x63;
+            case 25: return 0x57;
+            case 64: return 0x21;
+            case 9: return 0x1D;
+            case 56: return 0x7B;
+            case 57: return 0x82;
+            case 55: return 0x85;
+            case 24: return 0x55;
+            case 65: return 0x2E;
+            case 37: return 0x1060;
+            default: return -1;
+        }
+    } else {
+        switch (type) {
+            case 8: return -1;
+            case 1: return 0x105C;
+            case 16: return 0x1019;
+            case 2: return 0x1059;
+        }
+    }
+    return -1;
 }
 
 s32 func_1508E89C() {

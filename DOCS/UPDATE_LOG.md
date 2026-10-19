@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-18 Mode-Dependent Type Code Complete Match
+
+[Note 1582](WORKING_NOTES/1582-mode-dependent-type-code-complete-match-20261018.md):
+Restore func_1508E780's two complete selector modes and halfword gate, all
+71 instructions and 57 active table targets exact. Two checked bindings,
+no scheduling guards. Eight installed tests cover the full halfword mode
+domain, 32,490 paired guest runs, native32/UBSan, fired cuts and actual caller
+windows. Actual Make reproduces the exact 257-byte image prediction; all other
+bodies/addresses/data stay fixed. Game2998/4832 (62.04%), total3671/5505 (66.68%),
+1,834 different /zero drift. Tools8b851a0 first; README aggregate rows only.
+Continue from the 189-word func_1508E89C, not this completed lookup.
+
 ## 2026-10-18 Route Limit Switch Complete Match
 
 [Note 1581](WORKING_NOTES/1581-route-limit-switch-complete-match-20261018.md):
