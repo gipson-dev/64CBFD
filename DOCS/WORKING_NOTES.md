@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
+Install complete func_1508D850,115 exact words/frame80. Sixty checked
+lifetime/CSE/edge-load guards preserve actual script-result V0 and private
+traces. Eleven installed tests and the strict461-byte production-image audit
+pass; other bodies/addresses/data stay fixed. Game3006/4832,total3679/5505,
+1,826 different/zero drift. Tools2728516 first; preserve1,358 older mirror
+hashes. Owner58/73 exact; next audit func_15089F9C,136 words/frame112.
+
+2026-10-19:
 [Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
 Complete actor-target timer semantic checkpoint:func_1508D850 emits115 words/
 frame80,60 differences. Seven tests pass across158 fixtures, native32/UBSan,

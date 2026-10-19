@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Target Timer Complete Match - 2026-10-19
+
+[Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
+
+- [x] Finish complete func_1508D850 and its explicit signed32 slot prototype. Match all115 words/frame80 with60 checked lifetime, duplicate-slot-CSE and mutually exclusive timer-edge-load guards. Preserve FP fields/constants, all16 bindings, private access order and the original partial-return shape.
+- [x] Pass eleven installed tests:316 literal pairs/raw private traces,105 fired cut triples, native32 O0/O2/UBSan and five effective negatives,24 actual indirect script-consumer triples including real seeded RNG and an effective zero-result negative, real RNG/notification wrapper, returning caller, five backed large-target triples,45 rebased pairs across three GNU maps, stale manifests and strict image controls. Do not infer a portable C fallthrough result or full interpreter/hardware qualification.
+- [x] Reproduce the exact461-byte production-image prediction:341 code bytes, two target-size bytes and118 explicitly bounded symbol-serialization bytes. Preserve all6,056 other bodies, every address and protected Game data. Fresh Game3006/4832,total3679/5505,1,826 different/zero drift; owner58/73 exact. Tools2728516 first; README aggregate rows only. Preserve1,358 older mirror hashes.
+- [ ] Recover func_15089F9C,136 words/frame112 at ROM B744C..B766C. Audit cached count/masks, exclusions, clamped distance/sine score, strict-best result, saved GP/FP lifetimes, sinf contract and the actual full-word caller in func_1509E3DC.
+
 ## Actor Target Timer Recovery And Matching Boundary - 2026-10-19
 
 [Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete experimental func_1508D850: early target publication/reread, signed rejection, float32 distance classes, signed threshold/timer views, current mask/context reads, cached actor/timer pointers across notification, and fresh nested/selector/probability reads after RNG.
 - [x] Pass seven tests:158 fixtures/two phases, complete public buffers/stores, native32 O0/O2/UBSan and five effective negatives,50 real64-bit RNG fixture pairs, actual26-word notification wrapper to modeled script provider,32 fired cut pairs, backed publication alias,20 returning-caller runs and two owner profiles/private padding preserving72 neighbors/pools/all73 addresses.
 - [x] Bank the honest boundary:115 words/frame80,60 differences and an unresolved general return contract. Tools4211351 first; no source/guard/ELF/CSV/build change or new matching credit. Fresh Game3005/4832,total3678/5505,1,827 different/zero drift; README unchanged. Preserve all1,355 old mirror hashes.
-- [ ] Finish the return-consumer audit, source pointer lifetimes and notification likely-branch/reload schedule. Qualify complete literal/private states and independent rebases before accepting any recipe or installing this body.
+- [x] Finish in Note1593 above: trace the actual interpreter result store, retain the original partial-return shape, qualify the explicit lifetime/CSE/edge-load recipe and reproduce the strict complete production image. The old60-difference experimental state is superseded, not counted as a separate match.
 
 ## Category Boundaries Complete Match - 2026-10-19
 
@@ -16,7 +25,7 @@
 - [x] Finish complete func_15085BE8 and its no-argument prototype. Recover the original initializer order, SP+18/SP+30 scratch arrays, frame96 and logical row-loop setup directly in C. Match all112 words with35 checked lifetime/allocation guards and one swap of independent nontrapping address adds; retain all112 origins and all20 binding positions without changing a predicate, immediate or frame.
 - [x] Pass twelve installed tests:1,354 full literal-state pairs and independent public/reference checks, identical raw private memory/access traces,364 fired access-cut pairs,34 completed backed guest alias cases, native32 O0/O2/UBSan and signed16 sweeps, five effective native negatives, actual returning caller, independently assembled GNU rebases and corrupted recipe/manifest/image controls. Guest out-of-range cases are not portable native C claims.
 - [x] Install and reproduce the exact complete image:337 target-code bytes, two target-size bytes and75 bounded symbol-serialization bytes change. Keep every other6,056 body, every function address, canonical symbol identity/value and protected Game data fixed. Fresh Game3005/4832,total3678/5505,1,827 different/zero drift. Tools6dbeb82 first; README aggregates only. Owner57/73 exact,16 nonmatches remain.
-- [ ] Recover func_1508D850,115 words/frame80 at ROM BAD00..BAECC. Preserve the early target-byte store, signed target rejection, horizontal-distance classes, signed selector/table views, timer clear, current-context/mask reload, cached actor/timer pointers across helpers and later probability update. Qualify the actual full-word caller, helper contracts and return semantics before installation.
+- [x] Finish func_1508D850 in Note1593 above: complete115-word/frame80 C, callback-aware state, explicit full-word slot, actual script-result consumer, qualified60-word recipe and exact production image. Continue the remaining15 owner nonmatches separately.
 
 ## Category Boundaries Recovery And Matching Boundary - 2026-10-19
 

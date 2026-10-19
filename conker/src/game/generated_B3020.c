@@ -1997,8 +1997,57 @@ s32 func_1508CAD8() {
     return 0;
 }
 
-s32 func_1508D850() {
-    return 0;
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+extern s8 D_800E0BD0;
+extern s16 D_80087320[];
+extern s8 D_800872E8[];
+extern f32 D_8009DA8C;
+s32 func_1508EB90(s32, s32, s32);
+f32 func_150ADA68(void);
+
+/* Publish the target and update its distance timer and probability flag.
+ * Only the negative-target path defines a C result; preserve retail fallthrough. */
+s32 func_1508D850(s32 slot) {
+    s32 *targets = (s32 *)((u8 *)D_800D23B0 + 0x11C);
+    s32 *timers = (s32 *)((u8 *)D_800D23B0 + 0x29C);
+    s32 *timer;
+    u8 *actor = D_800CC2D0 + slot * 0x32C;
+    u8 *targetActor;
+    s32 target;
+    s32 distanceClass;
+    f32 dx;
+    f32 dz;
+    f32 distance;
+
+    (*(u8 **)(actor + 0x31C))[0x129] = targets[slot];
+    target = targets[slot];
+    if (target < 0) {
+        return 0;
+    }
+    targetActor = D_800CC2D0 + target * 0x32C;
+    dx = *(f32 *)(targetActor + 0x14) - *(f32 *)(actor + 0x14);
+    dz = *(f32 *)(targetActor + 0x1C) - *(f32 *)(actor + 0x1C);
+    distance = sqrtf(dx * dx + dz * dz);
+    if (D_8009DA8C < distance) {
+        distanceClass = 0;
+    } else {
+        distanceClass = distance > 2000.0f ? 1 : 2;
+    }
+    timer = timers + slot;
+    if (D_80087320[D_800E0BD0 * 3 + distanceClass] < *timer) {
+        *timer = 0;
+        if ((0x10000U << targets[slot]) & *(u32 *)((u8 *)D_800D23B0 + slot * 4 + 0x16C0)) {
+            func_1508EB90(slot, 0x61, 0x2000);
+        }
+    }
+    if (*timer == 0) {
+        (*(u8 **)(actor + 0x31C))[0x12A] = 0;
+        distance = func_150ADA68();
+        if (D_800872E8[D_800E0BD0] < (s32)(distance * 100.0f)) {
+            (*(u8 **)(actor + 0x31C))[0x12A] = 1;
+        }
+    }
 }
 
 extern s32 D_800D23B0;

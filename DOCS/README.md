@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor target timer complete match](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
+  all115 words/frame80 exact through60 checked lifetime/CSE/edge-load guards,
+  explicit retail script-result qualification, eleven installed tests and a
+  strict461-byte image prediction. Owner58/73 exact; next func_15089F9C.
 - [Actor target timer recovery and matching boundary](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
   complete experimental C, seven semantic/native/helper/caller/isolation tests,
   115 words/frame80 and60 remaining differences. Return contract stays open;

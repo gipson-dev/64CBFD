@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Actor Target Timer Complete Match
+
+[Note 1593](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
+Install complete func_1508D850, all115 words/frame80 exact with60 checked
+lifetime/CSE/timer-edge guards. Retain partial C return and verify the actual
+retail interpreter stores the correct emitted V0, including seeded RNG65535;
+do not substitute a float cast or constant return. Eleven installed tests and
+the exact461-byte production-image audit pass. All other bodies/addresses/data
+stay fixed. Fresh Game3006/4832,total3679/5505,1,826 different/zero drift;
+owner58/73 exact. Tools2728516 first; README aggregates only. Next audit
+136-word/frame112 func_15089F9C's distance/sine-weighted actor selection.
+
 ## 2026-10-19 Actor Target Timer Recovery And Matching Boundary
 
 [Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
