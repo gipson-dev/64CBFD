@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Neighbor Row Builder Complete Match
+
+[Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):
+Install complete `func_1508A1BC`, 336 words/frame 168 exact through the checked
+source-origin recipe. Ten installed tests pass in both tools copies, with
+literal/private/fault/alias/native/GNU/Make gates. The strict 1,066-byte image
+prediction changes only target code/size; all other bodies/addresses/data
+stay fixed. Fresh totals: Game 3,016/4,832, overall 3,689/5,505, zero drift;
+owner 68/73 exact. Tools `7899ba5` first; README aggregate rows only.
+Next: `func_1508B3F8`.
+
 ## 2026-10-19 Neighbor Row Frame And Quad Loops
 
 [Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):

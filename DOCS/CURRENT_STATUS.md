@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f0db953`; tools are committed before the consumer pin.
+  checkpoint pins tools `7899ba5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Neighbor row builder installed: all 336 words byte-exact**:
+[Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md).
+Complete `func_1508A1BC` replaces its stub with typed C and checked source-origin
+guards; its 168-byte frame is exact. Ten installed tests pass in both tools
+copies. The strict 1,066-byte image prediction preserves all 6,056 other bodies,
+all 6,057 addresses and 189,088 protected data bytes. Fresh totals: Game
+3,016/4,832, overall 3,689/5,505; 1,816 different and zero drift. The owner is
+68/73 exact. Next: `func_1508B3F8`, 369 words, frame 320, existing C but 281
+differences. The wider Game goal stays open.
 
 **Neighbor row frame168 and explicit quad loops recovered**:
 [Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md).

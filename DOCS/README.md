@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Neighbor row builder complete match](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):
+  complete `func_1508A1BC` installed, 336 words/frame 168 exact; ten installed
+  tests and strict full-image proof preserve other bodies/addresses/data.
+  Fresh totals: Game 3,016/4,832, overall 3,689/5,505; next `func_1508B3F8`.
 - [Neighbor row frame and quad loops](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
   direct frame168 and explicit four-way loops for experimental func_1508A1BC;
   eleven focused tests pass in both tools copies. Continue the measured

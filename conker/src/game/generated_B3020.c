@@ -1926,7 +1926,172 @@ s32 func_15089F9C(s32 slot) {
     return selected;
 }
 
-s32 func_1508A1BC() {
+extern s32 D_800D23B0;
+extern s8 D_8008FD90;
+extern u8 D_800CC2D0[];
+s32 func_150859AC(s16 slot, s32 field);
+f32 sqrtf(f32 value);
+
+/* Rebuild one sorted neighbor row and publish its unweighted minimum distance. */
+s32 func_1508A1BC(void) {
+    u8 *state;
+    s32 *groups;
+    s32 *states;
+    s32 *active;
+    s32 *teams;
+    s32 *neighbors;
+    s32 *scores;
+    s32 count;
+    u32 enabled;
+    s32 slot;
+    s32 start;
+    s32 group;
+    u32 mask;
+    s32 used;
+    s32 nearest;
+    s32 i;
+    s32 position;
+    s32 copy;
+    s8 primaryCount;
+    s16 mode;
+    s32 distance;
+    s32 score;
+    f32 dx;
+    f32 dz;
+
+    state = (u8 *)D_800D23B0;
+    groups = (s32 *)(state + 0xE64);
+    count = *(s32 *)(state + 0x10);
+    enabled = *(u32 *)(state + 0x14);
+    states = (s32 *)(state + 0x15C);
+    active = (s32 *)(state + 0x39C);
+    teams = (s32 *)(state + 0x9C);
+    neighbors = (s32 *)(state + 0x5DC);
+    scores = (s32 *)(state + 0x9DC);
+    *(s8 *)(state + 0x1704) = (s8)(*(s8 *)(state + 0x1704) + 1);
+    state = (u8 *)D_800D23B0;
+    slot = *(s8 *)(state + 0x1704);
+    if (*(s32 *)(state + 0x10) == slot) {
+        *(s8 *)(state + 0x1704) = 0;
+        state = (u8 *)D_800D23B0;
+        slot = *(s8 *)(state + 0x1704);
+    }
+    start = slot * 16;
+    used = 0;
+    nearest = 32000;
+    if (!(enabled & (1u << ((u32)slot & 31)))) {
+        for (i = 0; i != 64; i += 16) {
+            *(s32 *)((u8 *)neighbors + start * 4 + i + 0) = -1;
+            *(s32 *)((u8 *)neighbors + start * 4 + i + 4) = -1;
+            *(s32 *)((u8 *)neighbors + start * 4 + i + 8) = -1;
+            *(s32 *)((u8 *)neighbors + start * 4 + i + 12) = -1;
+        }
+        return 0;
+    }
+    group = groups[slot];
+    mask = *(u32 *)(state + slot * 4 + 0x16C0);
+    for (i = 0; i < count; i++) {
+        if ((active[i] > 0) && (group != groups[i])) {
+            primaryCount = D_8008FD90;
+            mode = *(s16 *)((u8 *)D_800D23B0 + 0x16BC);
+            if ((u32)(D_800CC2D0 + (u32)i * 0x32C) != 0) {
+                dx = *(f32 *)(D_800CC2D0 + slot * 0x32C + 0x14) - *(f32 *)(D_800CC2D0 + (u32)i * 0x32C + 0x14);
+                dz = *(f32 *)(D_800CC2D0 + slot * 0x32C + 0x1C) - *(f32 *)(D_800CC2D0 + (u32)i * 0x32C + 0x1C);
+                distance = (s32)sqrtf(dx * dx + dz * dz);
+            } else {
+                distance = 32000;
+            }
+            score = distance;
+            if (teams[slot] != teams[i]) {
+                score = (s32)((u32)score + 500u);
+            }
+            if (mask & (0x10000u << ((u32)i & 31))) {
+                if ((score >= 3001) && (D_800CC2D0[(u32)i * 0x32C + 0x65] != 0)) {
+                    score = -1;
+                }
+            } else {
+                if (i >= primaryCount) {
+                    score = (s32)((u32)score * 2u);
+                }
+                if ((mode != 0xB8) && ((states[i] == 2) || (states[i] == 3))) {
+                    score = -1;
+                }
+            }
+            if (mode == 0xB7) {
+                if (score == -1) {
+                    score = distance;
+                }
+                if (D_800CC2D0[(u32)i * 0x32C + 0x13C] != 0) {
+                    if (i >= primaryCount) {
+                        score = (s32)((u32)score * 2u);
+                    }
+                    score = score / (s32)((u32)func_150859AC((s16)i, 6) + 2u);
+                    primaryCount = D_8008FD90;
+                }
+            }
+            if ((i < primaryCount) && (score != -1)) {
+                score = (s32)((f32)score * *(f32 *)((u8 *)D_800D23B0 + 0x16B8));
+            }
+            if (score >= 0) {
+                position = 0;
+                while ((position < used) && (scores[start + position] < score)) {
+                    position++;
+                }
+                copy = used;
+                if (position < used) {
+                    if (((used - position) & 3) != 0) {
+                        do {
+                        neighbors[start + copy] = neighbors[start + copy - 1];
+                        scores[start + copy] = scores[start + copy - 1];
+                        copy--;
+                        } while (copy != used - ((used - position) & 3));
+                    }
+                    if (copy != position) {
+                        do {
+                        neighbors[start + copy - 0] = neighbors[start + copy - 1];
+                        scores[start + copy - 0] = scores[start + copy - 1];
+                        neighbors[start + copy - 1] = neighbors[start + copy - 2];
+                        scores[start + copy - 1] = scores[start + copy - 2];
+                        neighbors[start + copy - 2] = neighbors[start + copy - 3];
+                        scores[start + copy - 2] = scores[start + copy - 3];
+                        neighbors[start + copy - 3] = neighbors[start + copy - 4];
+                        scores[start + copy - 3] = scores[start + copy - 4];
+                        copy -= 4;
+                        } while (copy != position);
+                    }
+                }
+                neighbors[start + position] = i;
+                used++;
+                scores[start + position] = score;
+            }
+            if (distance < nearest) {
+                nearest = distance;
+            }
+        }
+    }
+    i = used;
+    if (used < 16) {
+        if (((16 - used) & 3) != 0) {
+            do {
+                neighbors[start + i] = -1;
+                i++;
+            } while (i != used + ((16 - used) & 3));
+        }
+        if (i != 16) {
+            copy = i * 4;
+            do {
+                *(s32 *)((u8 *)neighbors + start * 4 + copy + 0) = -1;
+                *(s32 *)((u8 *)neighbors + start * 4 + copy + 4) = -1;
+                *(s32 *)((u8 *)neighbors + start * 4 + copy + 8) = -1;
+                *(s32 *)((u8 *)neighbors + start * 4 + copy + 12) = -1;
+                copy += 16;
+            } while (copy != 64);
+        }
+    }
+    state = (u8 *)D_800D23B0;
+    if ((u32)state + 0x51Cu != 0) {
+        *(s32 *)(state + slot * 4 + 0x51C) = nearest;
+    }
     return 0;
 }
 

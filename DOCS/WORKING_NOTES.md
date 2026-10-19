@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):
+Install complete `func_1508A1BC`, 336 words/frame 168 exact with checked source
+origins. Ten installed tests and a strict 1,066-byte image prediction preserve
+all other bodies/addresses/data. Fresh totals: Game 3,016/4,832, overall
+3,689/5,505, zero drift; owner 68/73 exact. Continue `func_1508B3F8`, 369 words,
+frame 320, 281 differences.
+
+2026-10-19:
 [Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
 Recover func_1508A1BC's frame168 and explicit four-way loops without a new
 profile. Eleven tests/353 fixtures pass in both tools copies;345 words/312
