@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Cyclic Weight Profiles Complete Match
+
+[Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
+Install complete void func_1508BC20,189 words/frame136 exact, using the existing
+normal object for only this function and func_150891E8.188 guards retain all
+source words/bindings, recover32 schedule/home changes and add one RA-load copy.
+Eight installed tests pass, including1,418 fired cuts and the actual RNG's
+inclusive-one endpoint. Preserve and document the count16 private-byte caveat;
+native fixtures explicitly reject unsafe indices. Exact565-byte image prediction
+preserves every other body/address/data byte. Game3011/4832,total3684/5505,zero
+drift; owner63/73 exact. README aggregates only. Next func_15086D94,207 words.
+
 ## 2026-10-19 Spatial Neighbor Refinement Complete Match
 
 [Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):

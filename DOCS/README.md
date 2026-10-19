@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Cyclic weight profiles complete match](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
+  complete void func_1508BC20 installed,189 words/frame136 exact with188
+  checked guards and one additional scoped normal-profile selection. Eight
+  installed tests,1,418 fired cuts and a strict565-byte image prediction pass.
+  The actual RNG's inclusive-one/count16 scratch caveat is preserved explicitly.
 - [Spatial neighbor refinement complete match](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
   complete func_15086098 installed,179 words/frame112 exact through176 checked
   guards. Eight installed tests,572 private cuts, actual caller/helper/GNU

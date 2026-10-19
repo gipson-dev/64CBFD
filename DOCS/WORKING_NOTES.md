@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-19:
+[Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
+Complete void func_1508BC20 installed,189 words/frame136 exact with188 checked
+guards and scoped normal-profile selection. All source words/six bindings stay;
+32 schedule/home changes and one RA copy recover private identity. Eight
+installed tests include100 fixtures,1,418 fired cuts,14 native/four guest
+negatives, actual RNG/caller and GNU/Make checks. Inclusive-one/count16 scratch
+behavior is preserved, not claimed native-safe. Strict565-byte image prediction
+preserves all other bodies/addresses/data. Game3011/4832,total3684/5505,zero
+drift; owner63/73 exact. Next func_15086D94,207 words/frame144; README aggregates.
+
+2026-10-19:
 [Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
 Complete func_15086098 installed,179 words/frame112 exact through176 checked
 private/FP/loop guards; all11 bindings retained. Live record-wrapper return is

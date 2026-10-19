@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 342de47; tools are committed before the consumer pin.
+  checkpoint pins tools d3b35eb; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Cyclic weight profiles installed: all189 words byte-exact**:
+[Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md).
+Complete void func_1508BC20 now matches its756-byte slot/frame136 through188
+checked guards:156 identity checks,32 schedule/home changes and one copied RA
+load. The existing normal object now supplies only this function and route
+projection func_150891E8. Eight installed tests pass:100 fixtures,1,418 fired
+cuts,88 native32/UBSan vectors,14 native and four guest negatives, actual RNG/
+caller and GNU/Make checks. Preserve the inclusive RNG's count16 SP60 scratch
+caveat; it is guest-qualified, not portable C safety. Strict565-byte image
+prediction preserves every other body/address/data byte. Fresh Game3011/4832,
+total3684/5505,1,821 different/zero drift; owner63/73 exact,10 remaining.
+README aggregate rows only. Next existing C func_15086D94,207 words/frame144,
+102 differences. Tools d3b35eb first; all1,387 older mirror hashes are preserved.
 
 **Spatial neighbor refinement installed: all179 words byte-exact**:
 [Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md).

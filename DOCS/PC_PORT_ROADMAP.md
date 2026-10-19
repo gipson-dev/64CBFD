@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Cyclic Weight Profiles Complete Match - 2026-10-19
+
+[Note1601](WORKING_NOTES/1601-cyclic-weight-profiles-complete-match-20261019.md):
+
+- [x] Install complete void func_1508BC20,189 words/frame136 exact. Recover signed cached count/base, safe170/max(2,count>>1) step, per-row scratch clear, two RNG calls, strict direction, wrapped occupancy search, cyclic byte stores, upper saturation/bounce and16-byte row stride. Retain the unchecked inclusive RNG endpoint and document the count16 uncleared-SP60 caveat.
+- [x] Select only func_1508BC20 and existing func_150891E8 from the already compiled normal-profile object. Retain all188 source origins and six bindings with188 expected-word guards:156 identity checks and32 schedule/home changes plus one early RA-load copy. Preserve all72 neighbors/pools and all73 owner addresses; no broad owner flag change.
+- [x] Pass eight installed tests:100 fixtures/200 triples,1,386 general and32 endpoint fired-cut pairs,182/189 retail words visited with seven explicit unvisited words,88 native O0/O2/UBSan vectors,14 native and four guest negatives,194 raw/binding controls, all256 divisor patterns,90 actual RNG runs,36 fired-stop caller prefixes,24 rebased pairs across three GNU maps, aliases and actual seven-command Make/padder qualification. Reject unsafe endpoint/odd-stream native fixtures explicitly.
+- [x] Reproduce the strict565-byte production-image prediction:563 target-code bytes and two size bytes only. Preserve all6,056 other bodies, every address and189,088 protected Game-data bytes/720 owners. Fresh Game3011/4832,total3684/5505,1,821 different/zero drift; owner63/73 exact. README aggregate rows only; preserve all1,387 older mirror hashes. Commit tools first, then the consumer pin; no push.
+- [ ] Match existing C func_15086D94 next:207 words/frame144,102 differences, VA15086D94..150870D0, ROM B4244..B4580. Inspect its full assembly and actual callers against this installed baseline before another qualified match; no broad conversion batch.
+
 ## Spatial Neighbor Refinement Complete Match - 2026-10-19
 
 [Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
@@ -8,7 +18,7 @@
 - [x] Correct the observed func_15086C70 return to s32 and explicitly return its nested call's V0, preserving all20 original wrapper instructions under both owner profiles. Do not credit its unfinished deeper providers.
 - [x] Pass eight installed tests:103 fixtures/206 triples,572 fired private-cut pairs,175/179 retail words visited with four explicit unvisited words, native32 O0/O2/UBSan and13 effective negatives,187 raw/binding controls, frame-only incoming-list corruption,24 actual helper runs,96 actual caller runs,30 pairs across three GNU maps, aliases and actual owner/padder/seven-command Make qualification.
 - [x] Reproduce the strict578-byte production-image prediction:537 code bytes, two size bytes, and39 explicitly closed symbol/string serialization bytes. Preserve all6,056 other bodies, every address and189,088 protected Game-data bytes/720 owners. Fresh Game3010/4832,total3683/5505,1,822 different/zero drift; owner62/73 exact. README aggregate rows only; preserve all1,383 older mirror hashes. Commit tools first, then the consumer pin.
-- [ ] Recover func_1508BC20 next:189 words/frame136,184 differences, VA1508BC20..1508BF14, ROM B90D0..B93C4. Inspect its full assembly and actual callers against this installed baseline before another qualified match; no broad conversion batch.
+- [x] Recover, qualify and install complete func_1508BC20 in Note1601 above, including its actual void ABI, normal-profile selection, private schedule and inclusive RNG endpoint caveat. This earlier next-target item is finished; the wider Game goal remains active above.
 
 ## Spatial Neighbor Refinement Recovery - 2026-10-19
 

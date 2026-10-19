@@ -2165,8 +2165,62 @@ s32 func_1508B9BC(void) {
     return 0;
 }
 
-s32 func_1508BC20() {
-    return 0;
+extern s8 D_8008FD8C;
+extern s32 D_800D23B0;
+f32 func_150ADA68(void);
+
+/* Fill each weight row from a random cyclic origin with an upper-threshold bounce. */
+void func_1508BC20(void) {
+    s32 count = D_8008FD8C;
+    u8 *weights = (u8 *)D_800D23B0 + 0x15B4;
+    s32 divisor = count >> 1;
+    s32 step;
+    s8 used[16];
+    s32 row;
+    s32 i;
+    s32 position;
+    s32 direction;
+    s32 value;
+    s32 delta;
+
+    if (divisor < 2) {
+        divisor = 2;
+    }
+    step = 170 / divisor;
+    for (row = 0; row < count; row++, weights += 16) {
+        direction = -1;
+        value = 85;
+        delta = step;
+        for (i = 0; i < 16; i++) {
+            used[i] = 0;
+        }
+        /* The inclusive RNG endpoint is used without an initial index clamp. */
+        position = (s32)(func_150ADA68() * (f32)count);
+        if (func_150ADA68() > 0.5f) {
+            direction = 1;
+        }
+        while (used[position] != 0) {
+            position += direction;
+            if (position < 0) {
+                position = count - 1;
+            }
+            if (position >= count) {
+                position = 0;
+            }
+        }
+        used[position] = 1;
+        for (i = 0; i < count; i++) {
+            weights[position] = value < 256 ? value : 255;
+            position++;
+            if (position >= count) {
+                position = 0;
+            }
+            value += delta;
+            if (value >= 256) {
+                delta = -delta;
+            }
+        }
+    }
 }
 
 extern s32 D_800D23B0;
