@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Neighbor Row Frame And Quad Loops
+
+[Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
+Recover frame168 directly from complete C and make all three four-way loops
+explicit on the existing primary profile. Eleven tests pass in both tools
+copies; selected345 words/312 differences preserves ordered public writes.
+Fired faults identify the remaining save-area/S8 boundary; zero-address guest
+runs qualify the null fallback. Tools f0db953 precedes the consumer pin.
+No production installation, README change or new matching credit.
+
 ## 2026-10-19 Neighbor Row Builder Recovery
 
 [Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):

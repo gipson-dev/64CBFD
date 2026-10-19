@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Neighbor Row Frame And Quad Loops - 2026-10-19
+
+[Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
+
+- [x] Recover retail frame168 directly from complete C by eliminating two temporary actor-address locals. Make all three four-way loops/remainders explicit on the existing primary no-unroll profile, without dummy storage, volatile, a frame patch or a new profile override.
+- [x] Pass eleven focused tests/353 fixtures in both tools copies: ordered selected public writes, native32/UBSan/effective negatives, both owner profiles/72 preserved neighbors, original helper, GNU maps and six zero-address guest runs with an effective removed-null-check negative.
+- [x] Bank tools f0db953 first; preserve all1,422 older mirror hashes and production bytes. Selected345 words/frame168/312 differences is not retail336/frame168. Root README and matching totals remain unchanged.
+- [ ] Recover the remaining private save area, S7-nearest/S2-distance lifetimes and named retail homes; close register/address/branch-delay scheduling. Access-zero faults now prove equal frame size but different first selected write and an extra S8 save.
+- [ ] Pass literal/private/access/alias, actual padder/Make and strict full-image gates before installation, then rebuild/audit and refresh README aggregates. Keep this same function and the wider Game goal active.
+
 ## Neighbor Row Builder Recovery - 2026-10-19
 
 [Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
@@ -8,7 +18,7 @@
 - [x] Pass ten focused tests/353 fixtures in both tools copies:2,106 completed guest runs,12 fired divide traps,99 native32 fixtures/three UBSan profiles/effective negatives, original helper/table, both owner profiles/72 preserved neighbors and27 runs on three GNU maps.
 - [x] Bank tools5b33fbe before the consumer pin; preserve all1,419 older mirror hashes and every production input. Root README and installed totals stay unchanged; no new matching credit.
 - [x] Record the remaining private/order boundary and correct the unsafe equality-only byte-fill experiment with the effective26-actor negative. Best screened330 words/frame176 still differs from retail336/frame168.
-- [ ] Recover this same function's frame168/private homes and complete register/unroll/branch-delay/ordered-store matching. Keep the initial no-unroll candidate as the ordered semantic baseline.
+- [x] Recover frame168 and explicit four-way loops with ordered selected public stores in Note1611 above. Keep the earlier no-unroll candidate as a semantic baseline; private homes/register allocation/scheduling and installation remain unchecked above.
 - [ ] Pass literal/private/access/alias, actual padder/Make and strict linked-image gates, then install/rebuild/audit and refresh README aggregates. The production12-byte stub remains until these gates pass.
 
 ## Actor Pair Scheduler Complete Match - 2026-10-19

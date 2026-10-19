@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Neighbor row frame and quad loops](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
+  direct frame168 and explicit four-way loops for experimental func_1508A1BC;
+  eleven focused tests pass in both tools copies. Continue the measured
+  private save-area boundary; no production install or matching credit.
 - [Neighbor row builder recovery](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
   complete experimental func_1508A1BC, ten focused tests/353 fixtures in both
   tools copies; best330 words/frame176 still needs ordered/private layout.

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note1611](WORKING_NOTES/1611-neighbor-row-builder-frame-and-quad-loops-20261019.md):
+Recover func_1508A1BC's frame168 and explicit four-way loops without a new
+profile. Eleven tests/353 fixtures pass in both tools copies;345 words/312
+differences is not exact. Continue the measured save-area/S8 and minimum-
+distance lifetime boundary; production and matching totals stay unchanged.
+
+2026-10-19:
 [Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
 Recover complete experimental func_1508A1BC; ten tests/353 fixtures, native32,
 original field-query helper, both owner profiles and GNU maps pass in both
