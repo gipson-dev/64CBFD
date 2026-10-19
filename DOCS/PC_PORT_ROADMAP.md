@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Record Copy Direct C Conversion - 2026-10-18
+
+[Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
+
+- [x] Recover complete void func_150885EC with full-width indices, the complete 132-byte copy, saved signed ID/state words and ordered table reloads. Match all 40 words/frame0x28 and five bindings directly; no new guards or compiler settings.
+- [x] Pass ten installed tests: 448 guest/native32 cases, 193 real SDK words, 144 helper overlap/alignment cases, 988 fired connected cuts, five effective source negatives, 16 bounded caller windows, three GNU maps and 32 code-rebased pairs. Keep provider/native/private/hardware boundaries explicit.
+- [x] Install through actual mixed Make and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected Game data. Fresh Game2995/4831 (62.00%), total3668/5504, 1,836 different/zero drift. Bank tools5d8bc93 first; update README aggregate rows only.
+- [ ] Continue broader Game conversion/matching with the remaining GLOBAL_ASM func_1508868C: 61 words, ending at 15088780. Qualify the signed count/base, allocation mask, real reset helper, table mutation and actor-index interface before conversion.
+
 ## Route Event Dispatcher Direct C Conversion - 2026-10-18
 
 [Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete func_150880F8 with its null-table path, full-width index/reason, signed slot/state, child return and repeated counter access. Match all 53 words/frame0x20 and seven bindings directly, no new guards.
 - [x] Pass eight installed tests: 1,760 connected/native32 cases, 550 fired access cuts, 261 additional guest pairs, four effective guest negatives, three GNU maps and 36 code-rebased pairs. Preserve the actual 51-word child and distinguish bounded C backing from out-of-backing guest checks.
 - [x] Install through the existing mixed-profile recipe, reproduce the literally unchanged first/production ELF, and audit all 6,057 bodies/addresses and protected Game data. Fresh Game2994/4830, total3667/5503, 1,836 different/zero drift. Bank tools7bc7dfc first; README aggregate rows only.
-- [ ] Continue broader Game conversion/matching with retained 40-word func_150885EC; qualify bcopy direction/overlap, preserved destination ID/state, table mutation and restore ordering before conversion.
+- [x] Qualify bcopy direction/overlap, preserved destination ID/state, table mutation and restore ordering, then convert retained 40-word func_150885EC directly in Note1579 above. Broader Game work stays open.
 
 ## Route Actor Event Direct C Conversion - 2026-10-18
 

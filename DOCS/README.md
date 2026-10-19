@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route record copy direct C conversion](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
+  all 40 words/frame0x28 directly exact; ten installed tests, real SDK overlap
+  and unchanged whole-ELF audit pass. Tools5d8bc93 first; fresh Game2995/4831
+  (62.00%), total3668/5504. Next audit retained 61-word func_1508868C.
+
 - [Route event dispatcher direct C conversion](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
   all 53 words/frame0x20 directly exact, no guards; eight installed tests and
   unchanged whole-ELF audit pass. Tools7bc7dfc first; fresh Game2994/4830,

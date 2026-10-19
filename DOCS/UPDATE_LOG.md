@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Record Copy Direct C Conversion
+
+[Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
+Complete func_150885EC directly matches all 40 words/frame0x28 and five bindings.
+Ten installed tests pass, connecting real SDK bcopy, overlap, table/restore
+aliases, native32/UBSan and bounded caller-return checks. The complete ELF,
+all addresses and protected data remain unchanged. Fresh Game2995/4831 (62.00%),
+total3668/5504, 1,836 different /zero drift. Tools5d8bc93 first; README aggregate
+rows only. Continue broader Game work from the 61-word func_1508868C.
+
 ## 2026-10-18 Route Event Dispatcher Direct C Conversion
 
 [Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):

@@ -905,7 +905,24 @@ s32 func_1508855C(s32 arg0) {
     return -1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_150885EC.s")
+extern u8 *D_800872A0;
+
+/* Copy a route record while keeping the destination's identity and state. */
+void func_150885EC(s32 sourceIndex, s32 destinationIndex) {
+    s32 savedId;
+    s32 savedState;
+    u8 *table;
+
+    table = D_800872A0;
+    if (table != 0) {
+        savedId = *(s8 *)((u32)table + ((u32)destinationIndex * 0x84) + 0x31);
+        savedState = *(s8 *)((u32)table + ((u32)destinationIndex * 0x84) + 0x30);
+        bcopy((u8 *)((u32)sourceIndex * 0x84 + (u32)table),
+              table + ((u32)destinationIndex * 0x84), 0x84);
+        D_800872A0[((u32)destinationIndex * 0x84) + 0x31] = savedId;
+        D_800872A0[((u32)destinationIndex * 0x84) + 0x30] = savedState;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_1508868C.s")
 

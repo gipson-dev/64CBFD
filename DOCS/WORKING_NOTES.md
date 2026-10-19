@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note 1579](WORKING_NOTES/1579-route-record-copy-direct-c-conversion-20261018.md):
+Convert func_150885EC directly to 40 exact words/frame0x28, with no guards.
+Ten installed tests pass: 448 guest/native32 inputs, actual SDK overlap/alias
+checks, 988 fired cuts and 16 bounded caller windows. The entire ELF remains
+unchanged. Fresh Game2995/4831 (62.00%), total3668/5504, 1,836 different /zero
+drift. Tools5d8bc93 first; preserve 1,304 mirror hashes. Next audit the retained
+61-word slot reservation func_1508868C, not a guessed span through 150888A8.
+
+2026-10-18:
 [Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
 Convert complete func_150880F8 directly to 53 exact words/frame0x20, with no
 new guards. Eight installed tests pass, including real child C/code and 1,760
