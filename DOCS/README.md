@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Category boundaries complete match](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
+  all112 words/frame96 exact with recovered source lifetimes,35 checked guards,
+  twelve installed tests and a strict414-byte image prediction. Owner57/73
+  exact; next audit115-word func_1508D850 and its helper/return contracts.
 - [Category boundaries recovery and matching boundary](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
   complete experimental C, seven tests, public/native/caller/map qualification
   and a fired first-read mismatch.112 words/frame96,54 differences; not installed.

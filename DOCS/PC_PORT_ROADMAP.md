@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Category Boundaries Complete Match - 2026-10-19
+
+[Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
+
+- [x] Finish complete func_15085BE8 and its no-argument prototype. Recover the original initializer order, SP+18/SP+30 scratch arrays, frame96 and logical row-loop setup directly in C. Match all112 words with35 checked lifetime/allocation guards and one swap of independent nontrapping address adds; retain all112 origins and all20 binding positions without changing a predicate, immediate or frame.
+- [x] Pass twelve installed tests:1,354 full literal-state pairs and independent public/reference checks, identical raw private memory/access traces,364 fired access-cut pairs,34 completed backed guest alias cases, native32 O0/O2/UBSan and signed16 sweeps, five effective native negatives, actual returning caller, independently assembled GNU rebases and corrupted recipe/manifest/image controls. Guest out-of-range cases are not portable native C claims.
+- [x] Install and reproduce the exact complete image:337 target-code bytes, two target-size bytes and75 bounded symbol-serialization bytes change. Keep every other6,056 body, every function address, canonical symbol identity/value and protected Game data fixed. Fresh Game3005/4832,total3678/5505,1,827 different/zero drift. Tools6dbeb82 first; README aggregates only. Owner57/73 exact,16 nonmatches remain.
+- [ ] Recover func_1508D850,115 words/frame80 at ROM BAD00..BAECC. Preserve the early target-byte store, signed target rejection, horizontal-distance classes, signed selector/table views, timer clear, current-context/mask reload, cached actor/timer pointers across helpers and later probability update. Qualify the actual full-word caller, helper contracts and return semantics before installation.
+
 ## Category Boundaries Recovery And Matching Boundary - 2026-10-19
 
 [Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete experimental func_15085BE8: six min/max entries, signed16 count/heights, byte categories, compact IDs, ordered midpoint stores, strict overlap result and unconditional final sentinel. Freeze the supplying242480.rodata.s. Keep this recovery separate from production installation.
 - [x] Pass seven tests:677 fixtures/two phases,1,354 public-result pairs and ordered public stores, native32 O0/O2/UBSan full buffers plus all signed16 height views per category and nonpositive count views, five effective native negatives,364 fired retail cuts,80 actual returning-caller pairs and144 mapped pairs across three GNU layouts. Preserve72 other owner routines/pools/addresses in actual private padding and every frozen production input.
 - [x] Measure and retain the actual matching boundary: tested112 words/frame96 still differ at54 words; retail's first constant read is C0, raw C's is C4. No new guards, production edit or build. Fresh matching totals remain Game3004/4832,total3677/5505,1,828 different/zero drift. Tools46c5d3c first; preserve the standalone mirror's1,348 previous dirty leaves.
-- [ ] Finish func_15085BE8's literal initializer order, SP+18/SP+30 arrays, row-loop entry/reset shape, FP/GPR allocation and bindings. Qualify private/fired-order behavior, then exact actual padding, strict first-image prediction and production audit before installation. Do not turn the54 differences into an unproven blanket patch.
+- [x] Finish func_15085BE8 in Note1591 above. Recover the initializer/stack/loop shape in C, prove raw private/access traces, qualify the explicit35-word recipe and reproduce the strictly predicted production image. The old54-difference form is superseded, not installed or blanket-patched.
 
 ## Record Query/Release Complete Match - 2026-10-19
 
@@ -16,7 +25,7 @@
 - [x] Recover complete func_1508DAEC: null/negative-record rejection, negative-mode query, early EB0 clear, mask0x2 gate, ordered record clears, current-context reloads and mode1 timer/XYZ capture. Match all78 words/frame0 through seven checked GPR-only guards, with every instruction and all four bindings in their original positions; FP arithmetic and transfer fields are unchanged.
 - [x] Pass eleven installed tests:948 fixtures/two phases,1,896 literal pairs and ordered raw-C public checks,639 native32 O0/O2/UBSan full-buffer fixtures, five effective native negatives, two completed guest caching controls,262 fired access-cut pairs, three invalid-pointer prefixes, fired FP-load/conversion boundaries,96 pairs at six actual call sites and270 mapped executions across three GNU layouts. Do not claim hardware FCSR/traps or invalid conversion results.
 - [x] Reproduce the complete first/production image:238 target-code bytes and two symbol-size bytes change. Preserve all6,056 other bodies, every address, protected data and historical guards. Fresh Game3004/4832,total3677/5505,1,828 different/zero drift. Tools f873d04 first; README aggregates only. Owner56/73 exact,17 nonmatches remain.
-- [ ] Finish matching func_15085BE8 from Note1590 above. Complete C semantics and the actual returning caller are qualified experimentally, but the112-word/frame96 candidate remains54 words different and is not installed. Preserve explicit native bounds and the unresolved literal access/private-layout boundary.
+- [x] Finish matching func_15085BE8 in Note1591 above: all112 words/frame96 exact, with recovered source lifetimes, checked allocation/address-add scheduling, private/fired-order qualification and strict production-image audit. Continue the remaining16 owner nonmatches separately.
 
 ## Parallel Array Reset Complete Match - 2026-10-19
 

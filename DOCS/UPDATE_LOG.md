@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-19 Category Boundaries Complete Match
+
+[Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
+Install complete func_15085BE8 and proper no-argument prototype, all112 words
+and frame96 exact. Source recovery fixes initializer order, scratch placement
+and logical row-loop shape. Thirty-five checked allocation/schedule guards
+preserve all source/binding positions, opcodes, immediates and access order.
+Twelve installed tests pass, including raw private traces, full literal states,
+fired cuts, guest aliases, native32/UBSan, caller, maps and corruption controls.
+Production reproduces the exact414-byte prediction, including75 bounded
+symbol-serialization bytes; every other body/address and protected data stay
+fixed. Game3005/4832 (62.19%),total3678/5505 (66.81%),1,827 different/zero
+drift. Tools6dbeb82 first; README aggregates only. Owner57/73 exact; next
+audit115-word func_1508D850's distance/timer/probability update.
+
 ## 2026-10-19 Category Boundaries Recovery And Matching Boundary
 
 [Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):

@@ -19364,3 +19364,38 @@ generated_B3020,func_1508DAEC,0xD4,0x24030004,0x24050004,-,-,Normalize record-re
 generated_B3020,func_1508DAEC,0xE4,0xC4A80018,0xC4680018,-,-,Normalize record-release state and actor GPR allocation,,,false
 generated_B3020,func_1508DAEC,0x104,0xC4A4001C,0xC464001C,-,-,Normalize record-release state and actor GPR allocation,,,false
 generated_B3020,func_1508DAEC,0x128,0xAF031070,0xAF051070,-,-,Normalize record-release state and actor GPR allocation,,,false
+generated_B3020,func_15085BE8,0x8,0xC4200000,0xC4220000,R_MIPS_LO16:D_8009D9C0,R_MIPS_LO16:D_8009D9C0,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x14,0xC4220000,0xC4200000,R_MIPS_LO16:D_8009D9C4,R_MIPS_LO16:D_8009D9C4,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x30,0xE442FFFC,0xE440FFFC,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x38,0xE4A0FFFC,0xE4A2FFFC,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x50,0x00024900,0x00024100,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x5C,0x27AB0018,0x27AA0018,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x60,0x27AA0030,0x27A90030,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x68,0x90A60006,0x90A20006,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x74,0x00063880,0x00023080,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x78,0x01474021,0x01263821,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x80,0xC5060000,0xC4E60000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x84,0x0089082A,0x0088082A,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x88,0x01671021,0x01461021,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x9C,0xE5000000,0xE4E00000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0xD0,0x27AA0030,0x27A90030,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0xD4,0x27AB0018,0x27AA0018,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x12C,0x3C050000,0x3C060000,R_MIPS_HI16:D_800D237C,R_MIPS_HI16:D_800D237C,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x130,0x24A50000,0x24C60000,R_MIPS_LO16:D_800D237C,R_MIPS_LO16:D_800D237C,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x144,0x3C060000,0x3C080000,R_MIPS_HI16:D_800D2360,R_MIPS_HI16:D_800D2360,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x14C,0x24C60000,0x25080000,R_MIPS_LO16:D_800D2360,R_MIPS_LO16:D_800D2360,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x150,0x90B90000,0x90C50000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x154,0x90AE0001,0x90C70001,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x15C,0x00196080,0x00056080,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x160,0x000E7880,0x0007C880,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x164,0x016C6821,0x01395821,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x168,0x014FC021,0x014C6821,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x16C,0xC5A00000,0xC5A20000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x170,0xC7020000,0xC5600000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x178,0x24A50001,0x24C60001,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x17C,0x46001480,0x46020480,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x180,0x4600103C,0x4602003C,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x18C,0xE4C40000,0xE5040000,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x198,0x24C60004,0x25080004,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x1A8,0x0004C880,0x00047080,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false
+generated_B3020,func_15085BE8,0x1AC,0x00390821,0x002E0821,-,-,Normalize proven category-boundary register lifetimes and independent address adds,,,false

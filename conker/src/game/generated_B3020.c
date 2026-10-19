@@ -26,7 +26,7 @@ extern s8 D_800D2398;
 extern s8 D_800D2399;
 void *func_1502B5C8(s32 *size, u32 depth, ...);
 s32 func_1509BFB0();
-s32 func_15085BE8();
+s32 func_15085BE8(void);
 s32 func_150888A8(u8 excludedId, u8 recordIndex, s8 alternate);
 
 s32 func_15085B70(s32 arg0) {
@@ -44,8 +44,60 @@ s32 func_15085B70(s32 arg0) {
     return func_15085BE8();
 }
 
-s32 func_15085BE8() {
-    return 0;
+extern s16 D_80087290;
+extern u8 *D_800D2350;
+extern u8 D_800D2358;
+extern u8 D_800D237C[];
+extern f32 D_800D2360[];
+extern f32 D_8009D9C0;
+extern f32 D_8009D9C4;
+extern f32 D_8009D9C8;
+
+/* Build category height boundaries and report overlapping adjacent ranges. */
+s32 func_15085BE8(void) {
+    s32 overlap = 0;
+    s32 i;
+    u8 category;
+    f32 lower;
+    f32 upper;
+    u8 *row;
+    f32 minimum[6];
+    f32 maximum[6];
+
+    upper = D_8009D9C0;
+    lower = D_8009D9C4;
+    for (i = 0; i < 6; i++) {
+        minimum[i] = lower;
+        maximum[i] = upper;
+    }
+    for (i = 0; i < D_80087290; i++) {
+        row = D_800D2350 + i * 16;
+        category = row[6];
+        upper = (f32)*(s16 *)(row + 2);
+        if (upper < minimum[category]) {
+            minimum[category] = upper;
+        }
+        if (maximum[category] < upper) {
+            maximum[category] = upper;
+        }
+    }
+    D_800D2358 = 0;
+    for (i = 0; i < 6; i++) {
+        if (minimum[i] <= maximum[i]) {
+            D_800D237C[D_800D2358] = i;
+            D_800D2358++;
+        }
+    }
+    for (i = 0; i < D_800D2358 - 1; i++) {
+        upper = maximum[D_800D237C[i]];
+        lower = minimum[D_800D237C[i + 1]];
+        D_800D2360[i] = (lower + upper) * 0.5f;
+        if (lower < upper) {
+            overlap = 1;
+        }
+    }
+    D_800D2360[i] = D_8009D9C8;
+    return overlap;
 }
 
 s32 func_15085DA8(f32 arg0) {

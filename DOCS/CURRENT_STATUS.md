@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 46c5d3c; tools are committed before the consumer pin.
+  checkpoint pins tools 6dbeb82; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Category boundaries recovered experimentally; matching remains open**:
+**Category boundaries restored and byte-exact: all 112 words**:
+[Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md).
+Install complete func_15085BE8 and its proper no-argument prototype. Source
+recovers initializer order, both scratch arrays in frame96 and the logical
+row-loop lifetime. Thirty-five checked allocation/address-schedule guards
+retain every source origin and all20 binding positions; no frame, predicate,
+immediate or memory-access ordering patch. Twelve installed tests pass,
+including full literal/private state, raw private traces, fired cuts, backed
+guest aliases, native32/UBSan and independent GNU maps. Production reproduces
+the strict414-byte image prediction, including75 explicitly predicted symbol
+serialization bytes; all other bodies/addresses/data stay fixed. Fresh Game
+**3005/4832 (62.19%)**, total **3678/5505 (66.81%)**, **1,827 different / zero
+drift**. Tools **6dbeb82** first; README aggregates only. Owner **57/73 exact**,
+16 nonmatches remain. Next audit **func_1508D850**,115 words/frame80.
+
+**Earlier category-boundary recovery (superseded by Note1591)**:
 [Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md).
 Complete func_15085BE8 C now covers six extrema, compact categories, midpoint
 boundaries, overlap result and final sentinel. The tested candidate emits

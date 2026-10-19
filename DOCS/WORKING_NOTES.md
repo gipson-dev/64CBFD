@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
+Install complete func_15085BE8,112 exact words/frame96. Source recovers the
+initializer, scratch and loop lifetimes;35 checked guards preserve all origins
+and bindings. Twelve installed tests and strict414-byte production-image audit
+pass, including bounded symbol serialization. Game3005/4832,total3678/5505,
+1,827 different/zero drift. Tools6dbeb82 first; preserve all1,351 old mirror
+hashes. Owner57/73 exact; next audit func_1508D850,115 words/frame80.
+
+2026-10-19:
 [Note 1590](WORKING_NOTES/1590-category-boundaries-semantic-recovery-and-layout-boundary-20261019.md):
 Recover complete experimental func_15085BE8 C,112 words/frame96 but54
 differences. Seven semantic/native/caller/map/isolation tests pass; a fired
