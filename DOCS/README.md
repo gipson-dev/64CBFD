@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update complete match and installation](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
+  complete typed C and604 guarded exact words;17 post-install tests, actual Make,
+  retained first-link reconciliation and full installed audit pass. Tools6327a76
+  first; fresh Game2992/4828,total3665/5501. Continue broader Game work.
 - [Route actor update casts, projection and finalizer core](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
   closed490-word core, all20 calls and60 bindings; all15 core/retained tests pass.
   Tools3ca3f0d first, no ranking/return or installed credit. Continue the same

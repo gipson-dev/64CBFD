@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Complete Match And Installation
+
+[Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
+Replace func_15087350's false C placeholder with the full typed routine; all604
+guarded words/70 bindings now match. Seventeen post-install tests, actual Make,
+five-map relocation proof and the first whole-image link pass with five bounded
+metadata-order groups. Other6,056 bodies/addresses and protected data stay fixed.
+Fresh Game2992/4828,total3665/5501,1,836 different/zero drift. Tools6327a76 first;
+preserve1,294 prior mirror hashes. README aggregate rows only; continue Game work
+from this completed function, with func_1508802C as the next audit candidate.
+
 ## 2026-10-18 Route Actor Update Casts, Projection And Finalizer Core
 
 [Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):

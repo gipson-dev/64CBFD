@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-18:
+[Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
+Restore and install complete func_15087350 C, all604 guarded words exact.
+Seventeen post-install tests pass; actual mixed Make and the retained first link
+agree with five bounded symbol-order groups. All other6,056 bodies/addresses and
+protected Game data stay fixed. Fresh Game2992/4828,total3665/5501,1,836 different/
+zero drift. Tools6327a76 first; preserve1,294 old mirror hashes. README aggregate
+rows only; next audit51-word GLOBAL_ASM func_1508802C. Broader Game stays active.
+
+2026-10-18:
 [Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
 Close490 normalized words through func_15087350's finalizer, all20 calls and60
 bindings. Fifteen tests pass with581 corpus/boundary cases,18 wide casts and

@@ -355,8 +355,217 @@ void func_150870D0(s32 key, s32 playerCount, s32 extraCount) {
     }
 }
 
-s32 func_15087350() {
-    return 0;
+/* Project an actor onto its route, update look-ahead state, then rank players. */
+void func_15087350(s32 recordIndex, s32 active, f32 lookAhead) {
+    extern f32 D_8009D9E0, D_8009D9E4, D_8009D9E8;
+    extern f64 D_8009D9F0;
+    extern f32 D_8009D9F8, D_8009D9FC;
+    extern s8 D_800D2390, D_800D23A9;
+    extern s32 D_800BE9E4;
+    extern u16 D_800D18A0;
+    extern f32 D_800D239C, D_800D23A0, D_800D23A4, D_800CC310;
+    extern u8 **D_800D2104;
+    extern void func_15088F30(u8 *, f32 *, f32 *, f32 *);
+    extern f32 func_150498A4(f32 *, s32, f32, f32 *);
+    extern f32 func_150497E0(f32 *, s32, f32);
+    extern s32 func_15088A08(u8 *, f32);
+    extern void func_15042D78(s32);
+    extern void func_1508802C(u8 *, u8 *, s32);
+    f32 gain;
+    f32 startZ;
+    f32 positionX;
+    f32 positionZ;
+    f32 slopeX;
+    f32 slopeZ;
+    f32 intercept;
+    f32 error;
+    f32 absoluteError;
+    f32 previousError;
+    f32 chordLength;
+    f32 valueX;
+    f32 inverse;
+    f32 x[4];
+    f32 y[4];
+    f32 z[4];
+    f32 pointZ;
+    u8 *actor;
+    s8 temporary;
+    s8 refresh;
+    s8 iterations;
+    s8 again;
+    u8 copy[0x84];
+    s8 order[32];
+    f32 scores[17];
+    u32 recordOffset;
+    s32 i;
+    u8 *record;
+    u8 *cursor;
+
+    iterations = 0;
+    if (D_800872A0 == 0) {
+        return;
+    }
+    recordOffset = (u32)recordIndex * 0x84u;
+    record = D_800872A0 + recordOffset;
+    actor = D_800CC2D0 + (s8)record[0x31] * 0x32C;
+    positionX = *(f32 *)(actor + 0x14);
+    positionZ = *(f32 *)(actor + 0x1C);
+    D_800D2390 = 0;
+    if ((s8)record[0x30] == 0) {
+        *(f32 *)record = 0.5f;
+    } else {
+        valueX = (*(f32 *)(record + 4) - *(f32 *)record) * 0.125f;
+        if (D_8009D9E0 < valueX) {
+            valueX = D_8009D9E0;
+        }
+        if (valueX < D_8009D9E4) {
+            valueX = D_8009D9E4;
+        }
+        *(f32 *)record += valueX;
+    }
+    previousError = D_8009D9E8;
+    gain = 0.75f;
+    refresh = 1;
+    do {
+        again = 0;
+        if (refresh != 0) {
+            func_15088F30(record, x, y, z);
+            slopeX = x[2] - x[1];
+            slopeZ = z[2] - z[1];
+            chordLength = sqrtf(slopeX * slopeX + slopeZ * slopeZ);
+        }
+        valueX = func_150498A4(x, 0, *(f32 *)(record + 8), &slopeX);
+        pointZ = func_150498A4(z, 0, *(f32 *)(record + 8), &slopeZ);
+        inverse = -1.0f / sqrtf(slopeX * slopeX + slopeZ * slopeZ);
+        slopeX *= inverse;
+        slopeZ *= inverse;
+        *(f32 *)(record + 0xC) = slopeX;
+        *(f32 *)(record + 0x10) = slopeZ;
+        intercept = -(valueX * slopeX + pointZ * slopeZ);
+        /* Reuse the sampled-Z carrier for the signed plane error. */
+        pointZ = (slopeX * positionX + slopeZ * positionZ) + intercept;
+        if (pointZ < -50.0f || 50.0f < pointZ) {
+            absoluteError = pointZ;
+            if (pointZ < 0.0f) {
+                absoluteError = -pointZ;
+            }
+            if (previousError < absoluteError) {
+                gain *= 0.5f;
+            }
+            previousError = absoluteError;
+            again = 1;
+            inverse = (pointZ * gain) / chordLength;
+            if (inverse < -0.5f) {
+                inverse = -0.5f;
+            }
+            if (0.5f < inverse) {
+                inverse = 0.5f;
+            }
+            error = pointZ;
+            refresh = func_15088A08(record, -inverse);
+            pointZ = error;
+        }
+        iterations++;
+        if (iterations >= 11) {
+            again = 0;
+        }
+    } while (again != 0);
+    error = pointZ;
+    func_15042D78(0x80);
+    *(s8 *)(record + 0x32) = *(s8 *)(record + 0x33);
+    *(s8 *)(record + 0x33) = D_800BE9E4;
+    *(f32 *)(record + 0x14) = (((*(f32 *)(actor + 0x2C) * slopeX +
+        *(f32 *)(actor + 0x34) * slopeZ) + intercept) - error) * 4.0f / (f32)(s8)record[0x32];
+    if ((s8)record[0x30] != 0) {
+        bcopy(record, copy, 0x84);
+        func_15088A08(copy, lookAhead + lookAhead);
+        func_15088F30(copy, x, y, z);
+        D_800D239C = func_150497E0(x, 0, *(f32 *)(copy + 8));
+        D_800D23A0 = func_150497E0(y, 0, *(f32 *)(copy + 8));
+        D_800D23A4 = func_150497E0(z, 0, *(f32 *)(copy + 8));
+        if (recordIndex < D_800D2398) {
+            if (active == 0) {
+                valueX = (f32)((f64)D_800CC310 * D_8009D9F0);
+                D_800D239C = sinf(valueX) * 300.0f + *(f32 *)(actor + 0x14);
+                D_800D23A0 = *(f32 *)(actor + 0x18);
+                D_800D23A4 = cosf(valueX) * 300.0f + *(f32 *)(actor + 0x1C);
+            }
+            *(s16 *)(D_800D2104[actor[0x13F]] + 8) = (s32)D_800D239C;
+            *(s16 *)(D_800D2104[actor[0x13F]] + 10) = (s32)D_800D23A0;
+            *(s16 *)(D_800D2104[actor[0x13F]] + 12) = (s32)D_800D23A4;
+            *(f32 *)(actor + 0x44) = (f32)active;
+            if (D_800D2390 == 1) {
+                *(f32 *)(actor + 0x20) = 75.0f;
+            } else if (D_800D2390 == 2) {
+                *(f32 *)(actor + 0x20) = 55.0f;
+            } else if (D_800D2390 == 3) {
+                *(f32 *)(actor + 0x20) = 65.0f;
+            }
+            actor[0x21E] = 0;
+        }
+    } else {
+        *(f32 *)record = 0.0f;
+        func_15088F30(record, x, y, z);
+        valueX = func_150497E0(x, 0, *(f32 *)(record + 8));
+        startZ = func_150497E0(z, 0, *(f32 *)(record + 8));
+        *(f32 *)record = 1.0f;
+        func_15088F30(record, x, y, z);
+        slopeX = func_150497E0(x, 0, *(f32 *)(record + 8)) - valueX;
+        error = func_150497E0(z, 0, *(f32 *)(record + 8));
+        slopeZ = error - startZ;
+        chordLength = sqrtf(slopeX * slopeX + slopeZ * slopeZ);
+        if (1.0f < chordLength) {
+            absoluteError = 1.0f / chordLength;
+            slopeX *= absoluteError;
+            slopeZ *= absoluteError;
+            *(f32 *)record = ((slopeX * positionX + slopeZ * positionZ) -
+                (slopeX * valueX + slopeZ * startZ)) * absoluteError;
+        } else {
+            *(f32 *)record = 0.0f;
+        }
+    }
+    record[0x48] = active;
+    D_800D23A9 = 1;
+    if ((s8)record[0x30] == 0 && record[0x48] > 0 &&
+        !(D_800D18A0 & (1u << ((u32)(s8)record[0x31] & 31)))) {
+        *(u32 *)(record + 0x1C) += (u32)D_800BE9E4;
+    }
+    if ((s8)record[0x30] >= 2 && (*(u8 **)(actor + 0x31C))[0x84] == 0) {
+        func_1508802C(record, actor, 0xD);
+    }
+    if (recordOffset == 0) {
+        recordOffset = (u32)(D_800D2398 - 1);
+        cursor = D_800872A0;
+        for (i = 0; i < D_800D2398; i++) {
+            order[i] = i;
+            scores[i] = *(f32 *)(cursor + 8) + (f32)*(s16 *)(cursor + 0x24);
+            if ((s8)cursor[0x2A] != 0x7F) {
+                scores[i] += D_8009D9F8 - (f32)(s8)cursor[0x2A] * 1000.0f;
+            }
+            if (D_800D18A0 & (1u << ((u32)(s8)cursor[0x31] & 31))) {
+                scores[i] -= D_8009D9FC;
+            }
+            cursor += 0x84;
+        }
+        do {
+            again = 1;
+            cursor = (u8 *)scores;
+            for (i = 0; i < (s32)recordOffset; i++, cursor += 4) {
+                inverse = *(f32 *)cursor;
+                if (inverse < *(f32 *)(cursor + 4)) {
+                    temporary = order[i + 1];
+                    order[i + 1] = order[i];
+                    order[i] = temporary;
+                    *(f32 *)cursor = scores[i + 1];
+                    scores[i + 1] = inverse;
+                    again = 0;
+                }
+            }
+        } while (!again);
+        for (i = 0; i < D_800D2398; i++) {
+            D_800872A0[order[i] * 0x84 + 0x29] = i + 1;
+        }
+    }
 }
 
 /* Dispatch route records using their live actor slot and movement state. */

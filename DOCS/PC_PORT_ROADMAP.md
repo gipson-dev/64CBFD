@@ -1,13 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Complete Match And Installation - 2026-10-18
+
+[Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md):
+
+- [x] Restore the complete typed func_15087350 C body and close the ranking/return tail: all604 guarded words,70 bindings and20 calls exact. Keep raw594/frame456/450 differences explicit; recover semantics and source-derived normalization rather than retail replay.
+- [x] Pass17 post-install tests, including source/reference/ranking/ABI checks,544 fired tail/return cuts, effective finite negatives, five GNU maps and12 code-rebased cases. Preserve the earlier490-word core and its receipts; retain the completed old compiler capture without another attach.
+- [x] Qualify actual mixed-profile padding and all seven Make commands; retain/reconcile the first link with five strictly bounded symbol-order groups. Install/rebuild and audit all6,057 bodies/addresses, all protected Game data and the exact predicted ELF. Freshly recount Game2992/4828 and total3665/5501,1,836 different/zero drift. Tools6327a76 first; update README aggregate rows only.
+- [ ] Continue the broader Game decomp/matching work. Audit nearby51-word GLOBAL_ASM func_1508802C and its callers before conversion; preserve this completed checkpoint and the unrelated dirty tools mirror.
+
 ## Route Actor Update Casts, Projection And Finalizer Core - 2026-10-18
 
 [Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md):
 
 - [x] Extend the closed source-derived recipe from244 to490 exact words, all20 calls and60 bindings. Recover full32 conversion spills/reloads, start-Z storage, unit-constant roles and branch joins, with explicit multiply-spacing and SLLV rules. Keep the earlier244-word recipe unchanged; emit no ranking/return tail.
 - [x] Pass all15 new/retained tests with581 corpus/boundary cases,18 wide casts,1,090 fired core cuts, effective emitted-word negatives, all256 shift bytes and three independent GNU maps. Preserve72 neighbors,23 production inputs and all1,292 pre-existing mirror hashes. Bank tools3ca3f0d first; no installation/count credit.
-- [ ] Reconcile the remaining retail114-word / raw113-word ranking/return tail, including current/next induction, folded constants/relocations, live-ins and all saved-register returns. The full raw source remains594/frame456/450 differences, not a completed604-word match.
-- [ ] Finish complete source-derived all-word/binding/private/alias proof, actual mixed padding/Make, independent rebases, first whole-ELF prediction, installation/audit and fresh recount. Root README/counts remain unchanged; wider Game work stays active.
+- [x] Reconcile the remaining retail114-word / raw113-word ranking/return tail through the complete source-derived layout in Note1576 above. Raw594/frame456/450 remains explicit; the installed604-word guarded body is now exact.
+- [x] Complete the declared-domain proof, actual mixed padding/Make, rebases, first whole-ELF reconciliation, installation/audit and fresh recount in Note1576 above. Wider Game work remains active.
 
 ## Route Actor Update Correction Prefix Layout - 2026-10-18
 

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 3ca3f0d; tools are committed before the consumer pin.
+  checkpoint pins tools 6327a76; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update restored and installed: all604 words exact**:
+[Note1576](WORKING_NOTES/1576-route-actor-update-complete-match-and-installation-20261018.md).
+Replace func_15087350's false zero-return C with its complete typed body and
+source-derived guarded layout. All17 post-install tests pass; actual Make and
+the original first-link prediction agree. The other6,056 bodies/addresses and
+all protected Game data stay fixed; five bounded symbol-order groups are explicit.
+Fresh counts: **Game2992/4828**, **total3665/5501**, **1,836 different /zero drift**.
+Tools **6327a76** first; README gets aggregate rows only. Continue Game work;
+next useful audit is retained51-word GLOBAL_ASM func_1508802C, not another change
+to this completed routine. No host/Release action.
 
 **Route actor update core matches through the finalizer in isolation**:
 [Note 1575](WORKING_NOTES/1575-route-actor-update-casts-projection-and-finalizer-core-20261018.md).
