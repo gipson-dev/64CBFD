@@ -19324,3 +19324,17 @@ generated_B3020,func_1508EE0C,0xC4,0x00000000,0x30450FFF,-,-,Normalize packed-ro
 generated_B3020,func_1508EE0C,0xC8,0x10B5000A,0x1075000A,-,-,Normalize packed-row dispatcher schedule and shared low-ID allocation,,,false
 generated_B3020,func_1508EE0C,0xDC,0x30640FFF,0x00A02025,-,-,Normalize packed-row dispatcher schedule and shared low-ID allocation,,,false
 generated_B3020,func_1508EE0C,0xF8,0x30640FFF,0x00A02025,-,-,Normalize packed-row dispatcher schedule and shared low-ID allocation,,,false
+generated_B3020,func_1508C9CC,0x0,0x3C030000,0x3C050000,R_MIPS_HI16:D_800D23B0,R_MIPS_HI16:D_800D23B0,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x4,0x8C630000,0x8CA50000,R_MIPS_LO16:D_800D23B0,R_MIPS_LO16:D_800D23B0,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x8,0x3C050000,0x3C060000,R_MIPS_HI16:D_8008FD8C,R_MIPS_HI16:D_8008FD8C,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x18,0x80A50000,0x2403FFFF,R_MIPS_LO16:D_8008FD8C,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x1C,0x2406FFFF,0x25290000,-,R_MIPS_LO16:D_800CC2D0,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x20,0x25290000,0x256B0000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800D18A0,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x24,0x256B0000,0x80C60000,R_MIPS_LO16:D_800D18A0,R_MIPS_LO16:D_8008FD8C,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x2C,0x80641702,0x80A41702,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x3C,0x0085082A,0x0086082A,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x94,0x00A01025,0x00C01025,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0x98,0x00803025,0x00801825,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0xA0,0x0045082A,0x0046082A,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0xAC,0xA0641702,0xA0A41702,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508C9CC,0xB0,0x00C01025,0x00601025,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false

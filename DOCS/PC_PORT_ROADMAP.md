@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Round-Robin Slot Selector Complete Match - 2026-10-19
+
+[Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
+
+- [x] Recover complete func_1508C9CC: signed-byte cursor/count, do/while first attempt even for nonpositive count, ordered actor/nested/ready gates, u16 exclusion mask, first eligible return, final cursor byte and -1 fallback. Restore all47 words/frame0 through14 checked GPR/schedule guards, with no inserted/omitted instruction and all8 bindings retained.
+- [x] Pass nine installed tests:3,032 fixtures/two phases,6,064 literal pairs, raw-C public checks,2,520 native32 O0/O2/UBSan fixtures plus all65,536 masks, five effective source negatives,154 fired cuts,12 guest aliases,116 actual returning-caller pairs and516 mapped cases across three independent GNU layouts. Arbitrary negative guest indices are not portable native array/shift claims.
+- [x] Reproduce the exact first/production image:142 target-code bytes and one symbol-size byte change. Keep all6,056 other linked bodies, every address, protected data and historical guards fixed. Fresh Game3002/4832,total3675/5505,1,830 different/zero drift. Tools cf919bf first; README aggregates only. Owner54/73 exact,19 nonmatches remain.
+- [ ] Continue with func_1508DA1C,52 words/frame8 at ROM BAECC..BAF9C. Recover the first -1 fill and five parallel reset arrays; keep cached initial output pointers, current global context/count reads after stores, signed count gates, saved S0 and actual return interface. Do not flatten the mutable count loops into cached bounds.
+
 ## Packed-Row Dispatch Complete Match - 2026-10-19
 
 [Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete func_1508EE0C: first matching packed row, unsigned halfword key inputs, type2/3 low12 helper dispatch, callback-induced pointer/count changes, original-row clear and void/ignored result. Match all 91 words/frame48 and both tail NOPs with 15 checked layout guards, no inserted/omitted source positions and all 11 bindings retained.
 - [x] Pass ten installed tests: 1,908 fixtures/two phases, 3,816 literal pairs, raw-C public checks, native32 O0/O2/UBSan plus full halfword views, five effective source negatives, 340 fired cuts, 594 actual-clear pairs, 108 actual caller-window pairs and 552 mapped cases across three independent GNU layouts. Keep bounded handler contracts separate from actual helper execution.
 - [x] Install and reproduce the complete first/production image: 285 code bytes and two symbol-size bytes change. Preserve every other linked body/address, protected data and historical guards. Fresh Game3001/4832, total3674/5505, 1,831 different/zero drift. Bank tools7a6f9fa first; README aggregate rows only. Audit the owner as 53/73 exact, with 20 earlier nonmatches still open.
-- [ ] Continue with func_1508C9CC, the remaining 47-word/frame0 stub at ROM B9E7C..B9F38. Recover its signed-byte round-robin cursor/count, actor/nested-state eligibility gates, exclusion mask, final cursor store and -1 fallback; qualify callers and signed/wrapping edges before installation. The broader Game goal stays active.
+- [x] Finish the47-word/frame0 func_1508C9CC selector and its returning caller in Note1587 above. Signed/wrapping guest edges and bounded native array/shift domains are separated explicitly; broader Game work continues with the remaining owner nonmatches.
 
 ## Packed-Entry Peer Lookup Complete Match - 2026-10-19
 

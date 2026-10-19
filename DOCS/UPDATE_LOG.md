@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Round-Robin Slot Selector Complete Match
+
+[Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
+Restore complete func_1508C9CC, all47 words/frame0 exact with14 checked
+register/schedule guards and all8 bindings retained. Nine installed tests
+pass:6,064 literal pairs, native32/UBSan/all masks, fired cuts/aliases,
+actual returning caller and independent maps. Production reproduces the
+exact143-byte prediction; every other body/address and protected data stay
+fixed. Game3002/4832 (62.13%), total3675/5505 (66.76%),1,830 different/zero
+drift. Tools cf919bf first; README aggregates only. Owner54/73 exact;
+continue with52-word func_1508DA1C's two reset loops and fresh count reads.
+
 ## 2026-10-19 Packed-Row Dispatch Complete Match
 
 [Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):

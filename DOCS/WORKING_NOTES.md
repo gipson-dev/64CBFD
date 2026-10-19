@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
+Install complete func_1508C9CC,47 exact words/frame0 with14 checked GPR/
+schedule guards, no insertions/omissions and8 retained bindings. Nine
+installed tests and the strict143-byte production-image audit pass.
+Game3002/4832,total3675/5505,1,830 different/zero drift. Tools cf919bf first;
+preserve all1,333 prior mirror hashes. Owner54/73 exact; next func_1508DA1C.
+
+2026-10-19:
 [Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
 Install complete func_1508EE0C, 91 exact words/frame48 plus two tail NOPs,
 with 15 checked layout guards and all source origins retained. Ten installed

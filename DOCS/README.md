@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Round-robin slot selector complete match](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
+  complete47-word signed selector with checked layout, nine installed tests
+  and an exact143-byte production-image prediction. Owner54/73 exact;
+  continue with52-word func_1508DA1C and its store/count reload ordering.
 - [Packed-row dispatch complete match](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md):
   complete 91-word dispatcher with checked layout, two retained tail NOPs,
   ten installed tests and an exact 287-byte production-image prediction.

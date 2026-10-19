@@ -1893,8 +1893,38 @@ s32 func_1508C5B8() {
     return 0;
 }
 
-s32 func_1508C9CC() {
-    return 0;
+extern s32 D_800D23B0;
+extern s8 D_8008FD8C;
+extern u16 D_800D18A0;
+extern u8 D_800CC2D0[];
+
+/* Advance the signed slot cursor to the next eligible, unmasked actor. */
+s32 func_1508C9CC(void) {
+    s32 attempts = 0;
+    u8 *state = (u8 *)D_800D23B0;
+    s32 slot = *(s8 *)(state + 0x1702);
+    s32 count = D_8008FD8C;
+    s32 selected = -1;
+    u8 *actor;
+    u8 *nested;
+
+    do {
+        slot = (s8)(slot + 1);
+        if (slot >= count) {
+            slot = 0;
+        }
+        actor = D_800CC2D0 + slot * 0x32C;
+        if (*(s32 *)actor != 0) {
+            nested = *(u8 **)(actor + 0x31C);
+            if (nested != 0 && nested[0x84] != 0 && !(D_800D18A0 & (1U << slot))) {
+                attempts = count;
+                selected = slot;
+            }
+        }
+        attempts++;
+    } while (attempts < count);
+    *(s8 *)(state + 0x1702) = slot;
+    return selected;
 }
 
 s32 func_1508CA88() {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 7a6f9fa; tools are committed before the consumer pin.
+  checkpoint pins tools cf919bf; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Signed round-robin slot selector restored and byte-exact: all 47 words**:
+[Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md).
+Replace func_1508C9CC's stub with the complete cursor advance, signed wrap,
+ordered eligibility gates, exclusion mask, first selection and cursor store.
+Fourteen checked guards restore a closed GPR cycle/opening schedule, with no
+inserted/omitted instruction and frame0 intact. Nine installed tests pass:
+6,064 literal pairs, native32/UBSan and all masks, fired cuts/aliases, actual
+returning caller and independent GNU maps. Production equals the exact
+143-byte image prediction; all other bodies/addresses/data stay fixed.
+Fresh Game **3002/4832 (62.13%)**, total **3675/5505 (66.76%)**, **1,830 different /
+zero drift**. Tools **cf919bf** first; README aggregate rows only. Owner **54/73
+exact**,19 still different. Next recover **func_1508DA1C**,52 words/frame8,
+preserving cached output pointers and fresh count/context reads after stores.
 
 **Packed-row dispatcher restored and byte-exact: all 91 words plus tail**:
 [Note 1586](WORKING_NOTES/1586-packed-row-dispatch-complete-match-20261019.md).
