@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 557a160; tools are committed before the consumer pin.
+  checkpoint pins tools 94acbb1; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Spatial neighbor refinement recovered; matching still open**:
+[Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md).
+Complete experimental func_15086098 emits176 words/frame112/164 differences
+versus retail179/frame112. Eight tests cover103 fixtures, native32/UBSan,
+13 effective negatives, actual helper/caller windows, GNU rebases and owner/
+padder/Make isolation. The observed record-wrapper V0 return is instruction-
+identical after its experimental type correction. Access0 still saves at
+incomingSP-56 instead of-40. No production change, new guards, build, credit
+or README edit. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift;
+owner61/73 exact. Continue this function's S0/private/FP/loop scheduling.
+All1,380 older mirror hashes are preserved; tools94acbb1 precedes the consumer pin.
 
 **Balanced target assignment installed: all160 words byte-exact**:
 [Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md).

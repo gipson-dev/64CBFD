@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Spatial Neighbor Refinement Recovery And Matching Boundary
+
+[Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
+Recover complete experimental func_15086098, its seven-argument signed-byte/
+full-word-result interface, live record-wrapper return and five-neighbor
+forward-line scan. Eight tests pass across103 fixtures, native32/UBSan and
+13 effective negatives, actual helper/caller windows, GNU maps and whole-owner/
+padder/Make checks. Selected176 words/frame112 still differs from retail179;
+access0 fails the private-save gate. No production change, guards, build or
+credit; README unchanged. Fresh Game3009/4832,total3682/5505,zero drift.
+Continue this same function's retained index, private homes and FP/loop schedule.
+
 ## 2026-10-19 Balanced Target Assignment Complete Match
 
 [Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):

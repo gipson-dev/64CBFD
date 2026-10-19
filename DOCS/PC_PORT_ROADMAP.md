@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Spatial Neighbor Refinement Recovery - 2026-10-19
+
+[Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
+
+- [x] Recover complete experimental func_15086098: verified seven-argument interface, signed-byte count/option, full-word results, live record-wrapper return, post-helper table capture, containment/radius paths, five-neighbor forward projection, strict first minimum and original-index refinement acceptance.
+- [x] Pass eight recovery tests:103 fixtures/206 public pairs, native32 O0/O2/UBSan and13 effective negatives,175/179 retail words visited with four explicit unvisited words,12 actual connected-helper runs,48 actual caller/result-consumer runs,30 rebased pairs across three GNU maps, both owner profiles and real padding/seven-command Make shadow preserving72 neighbors/all73 addresses/pools.
+- [x] Bank the measured boundary:176 words/frame112/164 differences versus retail179/frame112; access0 saves at incomingSP-56 instead of-40. The experimental record-wrapper return correction is instruction-identical. No production source/guard/ELF/CSV/build change, new guards, credit or README edit. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift; preserve all1,380 older mirror hashes. Commit tools before the consumer pin.
+- [ ] Finish this same function's index S0, private homes and saved FP lifetimes, local coefficient, coordinate access order, NEG/ADD projection and SLTI/backedge scheduling. Require private/fault-prefix, caller/alias, GNU/padder and strict full-image qualification before guards or installation; no broad conversion batch.
+
 ## Balanced Target Assignment Complete Match - 2026-10-19
 
 [Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Install complete func_1508BF14,160 words/frame176 exact. Qualify160 expected-word guards retaining158 source origins, omitting the native-only miss-byte initializer and redundant shift mask, and inserting two clear copies. Restore private homes, closed GP roles, clear-loop edges and original poison behavior without Makefile changes or physical-register C bindings.
 - [x] Pass eight installed tests:94 fixtures/188 triples, all160 retail words visited,1,080 fired private-cut pairs, native32 O0/O2/UBSan and ten effective negatives,1,536 byte/score mask tuples, four private poisons,27 actual returning-caller runs,33 pairs across three independent GNU maps, completed global-publication alias and strict stale/image controls. Reject the actual caller-corrupting frame-only edit.
 - [x] Reproduce the exact485-byte production-image prediction:483 target-code bytes and two size bytes only. Preserve all6,056 other bodies, all addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift; owner61/73 exact. Tools557a160 first; README aggregates only; preserve1,377 older mirror hashes.
-- [ ] Recover func_15086098 next:179 words/frame112,168 differences, VA15086098..15086364, ROM B3548..B3814. Inspect the full routine and actual caller/interface against this installed baseline before another qualified match; no broad conversion batch.
+- [x] Recover and qualify complete experimental func_15086098 in Note1599 above, after inspecting its full routine and actual callers. Its byte-exact installation remains open above; no match is credited for this recovery.
 
 ## Balanced Target Assignment Recovery - 2026-10-19
 

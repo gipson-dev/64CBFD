@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Spatial neighbor refinement recovery and matching boundary](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
+  complete experimental func_15086098; eight tests,103 fixtures, native32/
+  UBSan and13 effective negatives, actual helper/caller windows, GNU rebases
+  and real padding/Make shadow.176 words/frame112 still fails retail179 and
+  private saves. No production change or matching credit; continue this target.
 - [Balanced target assignment complete match](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
   complete func_1508BF14 installed; all160 words/frame176 exact with160 guards.
   Eight installed tests,1,080 private cuts, original miss-byte poisons, actual

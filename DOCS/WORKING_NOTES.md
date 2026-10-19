@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
+Complete experimental func_15086098, eight tests,103 fixtures,13 effective
+native negatives, actual helpers/caller, GNU rebases and real owner padding/
+Make shadow. Seven arguments and the observed record-wrapper V0 are recovered.
+176 words/frame112/164 differences still fail retail179 and the first private
+save. No production change/guards/credit; Game3009/4832,total3682/5505,zero
+drift unchanged. Continue the same function's S0/homes/FP/loop scheduling.
+
+2026-10-19:
 [Note1598](WORKING_NOTES/1598-balanced-target-assignment-complete-match-20261019.md):
 Install complete func_1508BF14:160 exact words/frame176 through160 checked
 private-layout/lifetime guards. Eight installed tests include94 fixtures,
