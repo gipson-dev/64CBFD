@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-19 Actor Pair Scheduler Complete Match
+
+[Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
+Complete func_1508C5B8 replaces its stub and matches261 words/frame192 through
+the qualified source-origin/relocation recipe. Full literal/private/fault,
+native, alias, GNU, owner/Make and strict linked-image gates pass. Preserve all
+other bodies, addresses and data; fresh Game3015/4832,total3688/5505,zero drift.
+Detailed recovery stays in this note; root README gets aggregate rows only.
+
 ## 2026-10-19 Actor Pair Scheduler Frame And Buffer Homes
 
 [Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):

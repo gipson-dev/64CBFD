@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor pair scheduler complete match](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
+  complete func_1508C5B8 installed,261 words/frame192 exact through checked
+  source origins and literal/private/GNU/Make/image qualification. All other
+  bodies, addresses and protected data remain fixed; next func_1508A1BC.
 - [Actor pair scheduler frame and buffer homes](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
   direct C frame192, real buffer homes and saved actor lifetime; ten tests,
   complete RAM and effective aliases pass. Continue register/schedule matching

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
+Install complete func_1508C5B8,261 words/frame192 exact with checked layout
+guards. Preserve all other bodies/addresses/data under a strict854-byte image
+prediction, including one bounded three-symbol serialization cycle. Fresh
+Game3015/4832,total3688/5505,zero drift; owner67/73. Next func_1508A1BC.
+
+2026-10-19:
 [Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
 Recover func_1508C5B8's frame192, real7C/80/90 homes and saved FP actor lifetime
 directly from C. Ten tests pass, including166 complete-RAM pairs,30 literal

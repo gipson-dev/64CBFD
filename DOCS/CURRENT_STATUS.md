@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ed38dd5`; tools are committed before the consumer pin.
+  checkpoint pins tools `faa4dfb`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor pair scheduler frame and homes recovered, not installed**:
+**Actor pair scheduler installed: all261 words byte-exact**:
+[Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md).
+Complete func_1508C5B8 replaces its stub,1,044 bytes/frame192 exact through
+255 checked source-origin rows. The strict854-byte image prediction preserves
+all6,056 other bodies, all6,057 addresses and189,088 protected data bytes.
+Fresh Game3015/4832,total3688/5505,1,817 different/zero drift; owner67/73 exact.
+Next func_1508A1BC,336 words/frame168, still a12-byte C stub.
+
+**Earlier scheduler home recovery (superseded by Note1609)**:
 [Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md).
 Complete experimental func_1508C5B8 now emits frame192 and retail7C/80/90
 homes directly, with FP's saved actor lifetime. Ten tests pass, including166

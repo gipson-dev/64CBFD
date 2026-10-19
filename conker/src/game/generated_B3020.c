@@ -2149,7 +2149,7 @@ extern s32 D_800D23B0;
 extern u8 D_800CC2D0[];
 extern f32 D_8009DA60;
 extern f32 D_8009DA64;
-s32 func_1508C5B8();
+s32 func_1508C5B8(s32 rowIndex, s32 pairBudget);
 s32 func_1508A1BC(void);
 
 /* Publish the first minimum weighted neighbor and its current X/Z distance. */
@@ -2498,8 +2498,136 @@ void func_1508C1A4(s32 first, s32 second) {
     }
 }
 
-s32 func_1508C5B8() {
-    return 0;
+extern s32 D_800D23B0;
+extern s8 D_8008FD90;
+extern s8 D_8008FD8C;
+extern u16 D_800D18A0;
+extern u8 D_800CC2D0[];
+extern f32 D_8009DA68;
+void func_1508C1A4(s32 first, s32 second);
+
+/* Refresh three ranked pairs per primary actor, then advance the pair cursor. */
+s32 func_1508C5B8(s32 rowIndex, s32 pairBudget) {
+    u8 *actor;
+    u32 *row;
+    s32 primary;
+    s32 candidate;
+    s32 primaryCount;
+    s32 count;
+    s32 i;
+    s32 attempts;
+    s8 displaced;
+    u8 first;
+    u8 second;
+    u8 kind;
+    f32 sentinel;
+    f32 dx;
+    s8 choices[4];
+    f32 costs[4];
+    s32 *groups;
+    f32 x;
+    f32 sameX;
+    f32 dz;
+    f32 cost;
+
+    first = ((u8 *)D_800D23B0)[0x1700];
+    second = ((u8 *)D_800D23B0)[0x1701];
+    groups = (s32 *)((u8 *)D_800D23B0 + 0xE64);
+    if (pairBudget != 0) {
+        primaryCount = D_8008FD90;
+        primary = 0;
+        if (primaryCount > 0) {
+            actor = D_800CC2D0;
+            sentinel = D_8009DA68;
+            do {
+                x = *(f32 *)(actor + 0x14);
+                sameX = x;
+                count = D_8008FD8C;
+                for (i = 0; i < 3; i++) {
+                    choices[i] = -1;
+                    costs[i] = sentinel;
+                }
+                for (candidate = primaryCount; candidate < count; candidate++) {
+                    if ((groups[primary] != groups[candidate]) &&
+                            !(*(u32 *)((u8 *)D_800D23B0 + primary * 4 + 0x16C0) &
+                                (0x10001u << ((u32)candidate & 31)))) {
+                        /* Retail uses this primary actor's X in both deltas. */
+                        dx = sameX - x;
+                        dz = x - *(f32 *)(actor + 0x1C);
+                        if (primary == *(s32 *)((u8 *)D_800D23B0 + candidate * 4 + 0x11C)) {
+                            dx *= 0.5f;
+                            dz *= 0.5f;
+                        }
+                        cost = dx * dx + dz * dz;
+                        if (cost < costs[2]) {
+                            i = 2;
+                            dz = costs[i];
+                            do {
+                                displaced = choices[i];
+                                costs[i + 1] = dz;
+                                choices[i] = candidate;
+                                costs[i] = cost;
+                                choices[i + 1] = displaced;
+                                i--;
+                                if (i < 0) {
+                                    break;
+                                }
+                                dz = costs[i];
+                            } while (cost < dz);
+                        }
+                    }
+                }
+                for (i = 0; i < 3; i++) {
+                    candidate = choices[i];
+                    if (candidate != -1) {
+                        row = (u32 *)((u8 *)D_800D23B0 + primary * 4);
+                        row[0x16C0 / 4] &= ~(0x10001u << ((u32)candidate & 31));
+                        row = (u32 *)((u8 *)D_800D23B0 + candidate * 4);
+                        row[0x16C0 / 4] &= ~(0x10001u << ((u32)primary & 31));
+                        func_1508C1A4(primary, candidate);
+                    }
+                }
+                primary++;
+                actor += 0x32C;
+                primaryCount = D_8008FD90;
+            } while (primary < primaryCount);
+        }
+    }
+    if (pairBudget != 0) {
+        actor = D_800CC2D0 + first * 0x32C;
+        do {
+            kind = actor[0x128];
+            attempts = 0;
+            do {
+                second++;
+                count = D_8008FD8C;
+                if (second >= count) {
+                    first++;
+                    if (first >= count - 1) {
+                        first = 0;
+                    }
+                    second = first + 1;
+                    actor = D_800CC2D0 + first * 0x32C;
+                    kind = actor[0x128];
+                }
+                row = (u32 *)((u8 *)D_800D23B0 + first * 4);
+                row[0x16C0 / 4] &= ~(0x10001u << ((u32)second & 31));
+                row = (u32 *)((u8 *)D_800D23B0 + second * 4);
+                row[0x16C0 / 4] &= ~(0x10001u << ((u32)first & 31));
+                attempts++;
+                if (attempts >= 64) {
+                    break;
+                }
+            } while ((D_800D18A0 & ((1u << ((u32)first & 31)) |
+                    (1u << ((u32)second & 31)))) ||
+                (kind == D_800CC2D0[second * 0x32C + 0x128]));
+            func_1508C1A4(first, second);
+            pairBudget = (s32)((u32)pairBudget - 1u);
+        } while (pairBudget != 0);
+    }
+    ((u8 *)D_800D23B0)[0x1700] = first;
+    ((u8 *)D_800D23B0)[0x1701] = second;
+    return *(s32 *)((u8 *)D_800D23B0 + (u32)rowIndex * 4 + 0x16C0);
 }
 
 extern s32 D_800D23B0;

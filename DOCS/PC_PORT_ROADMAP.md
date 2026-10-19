@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Pair Scheduler Complete Match - 2026-10-19
+
+[Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
+
+- [x] Replace func_1508C5B8's zero-return stub with the complete typed semantic C, preserving its retail ranking quirk, scratch arrays, unsigned cursors, signed live counts, fresh contexts, symmetric clears and64-attempt limit.
+- [x] Match all261 words/frame192 with255 expected-word rows,249 retained origins,12 derived forms, five omitted redundant shift masks, one omitted first-index mirror and24 output bindings. Preserve every prior guard byte and the original compiler-profile selections.
+- [x] Pass literal/private/public/native/alias/GNU/Make qualification, including1,608 fired private-cut pairs and effective semantic/stale-input/image negatives. Reproduce the strict854-byte full-image prediction; preserve all6,056 other bodies, all6,057 addresses and189,088 protected Game-data bytes.
+- [x] Measure fresh Game3015/4832,total3688/5505,1,817 different/zero drift; owner67/73 exact. Update root README aggregates only and keep the wider Game goal open.
+- [ ] Recover next func_1508A1BC,336 words/frame168, VA1508A1BC..1508A6FC, ROM B766C..B7BAC, still a12-byte C stub. Freeze this installed baseline before another qualified conversion; five other owner nonmatches remain separate work.
+
 ## Actor Pair Scheduler Frame And Buffer Homes - 2026-10-19
 
 [Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
@@ -7,7 +17,7 @@
 - [x] Recover retail frame192, group/cost/choice homes7C/80/90, incoming C0/C4, saved FP actor lifetime and actual first-call mask-clear delay slot from real C lifetimes and declaration order. No dummy storage, frame patch or new profile.
 - [x] Pass ten focused tests:83 fixtures/166 complete-RAM pairs,80 native32 fixtures/three UBSan profiles/eight negatives,30 fired literal initial-cut pairs, four completed guest frame aliases/four effective old-home negatives, both owner profiles/72 preserved neighbors and12 actual NULL-actor child runs.
 - [x] Preserve frozen production inputs and record the remaining access15 A2/V1 allocation boundary. Raw255 words/frame192/238 differences is not a completed match; keep aggregate totals and root README unchanged.
-- [ ] Recover the complete GP/FP/copy/loop/scheduling layout and qualify source origins, relocations, literal state/faults, aliases, GNU, actual padding/Make and strict linked scope before installing all261 words. Continue this function, not another broad batch.
+- [x] Finish the same function in Note1609 above: complete GP/FP/copy/loop/scheduling layout and source-origin/relocation/private/fault/alias/GNU/padder/Make/strict-image gates pass; install all261 exact words.
 
 ## Actor Pair Scheduler Recovery - 2026-10-19
 
@@ -17,7 +27,7 @@
 - [x] Pass eight focused tests:83 fixtures/166 guest pairs,80 native32 fixtures at O0/O2/O3 with UBSan/eight effective negatives, both owner profiles/72 preserved neighbors and pools,12 actual null-actor child runs, and two fired negative-budget prefix stops. No production input changes or match credit.
 - [x] Record the fired cut0 boundary: selected256 words/frame208/241 differences versus retail261/frame192. Preserve the three new tools files and all1,411 older mirror hashes; keep root README unchanged.
 - [x] Recover frame192, real7C/80/90 homes and saved actor lifetime in Note1608 above. Close the original cut0 frame boundary with30 fired initial literal-cut pairs and four effective aliases.
-- [ ] Finish GP/FP/branch/copy layout and complete matching qualification in Note1608 above; the original12-byte C stub remains.
+- [x] Finish GP/FP/branch/copy layout and complete matching qualification in Note1609 above; the original12-byte C stub is replaced.
 
 ## Actor Pair Mask Complete Match - 2026-10-19
 
@@ -27,7 +37,7 @@
 - [x] Qualify261 expected-word rows:86 identity checks,171 changed retained rows, four omitted explicit count masks and four derived copy/ABI words. Preserve257 unique source origins, every arithmetic operation and all16 bindings; document the one likely-branch and one typed-DX-load opcode exception. Preserve72 neighbors/pools/all73 addresses with both raw profiles, actual padding and seven-command Make-shadow proof. Keep Makefile and the three normal overrides unchanged.
 - [x] Pass ten installed tests:430 fixtures/860 literal/private/public triples,902 fired cut pairs, native32 O0/O2/O3 with UBSan/nine negatives, raw/normalized actual helper and caller passes,36 triples/three independent GNU maps, four completed guest frame aliases/four effective old-home negatives,277 raw/binding stale controls, two recipe corruptions, two actual-padder stale controls and four image corruptions. Record258/261 executed words and retain the documented opaque-provider, NaN/FCSR and gameplay limits.
 - [x] Reproduce the strict829-byte production prediction:827 target-code bytes and two target st_size bytes only. Preserve all6,056 other bodies/extents, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3014/4832,total3687/5505,1,818 different/zero drift; owner66/73 exact. Commit tools f1e8e57 first; preserve1,407 older mirror hashes. README aggregate rows only; no push or host/frozen Release operation.
-- [ ] Finish matching func_1508C5B8,261 words/frame192, VA1508C5B8..1508C9CC, ROM B9A68..B9E7C. Its semantic recovery and baseline audit are banked in Note1607 above; the12-byte production stub and six other owner nonmatches remain unfinished.
+- [x] Finish matching func_1508C5B8 in Note1609 above,261 words/frame192 exact, VA1508C5B8..1508C9CC, ROM B9A68..B9E7C. The production stub is replaced; six other owner nonmatches remain unfinished.
 
 ## Actor Pair Mask Recovery And Private Home Boundary - 2026-10-19
 
