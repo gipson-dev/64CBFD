@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Recovery And Layout Boundary
+
+[Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
+Recover complete experimental `func_1508A6FC`, 658 words/frame 328 versus
+retail 678/frame 288. Seven tests pass in both copies, with 262 bounded
+fixtures and both owner profiles preserving 72 neighbors/pools. Tools `e831838`
+first. No production change, README narrative or matching increment; continue
+the pointer captures/private frame and open native/fault/rebase qualification.
+
 ## 2026-10-19 Queued-Zone Selection Complete Match
 
 [Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):

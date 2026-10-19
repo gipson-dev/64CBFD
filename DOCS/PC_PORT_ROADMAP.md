@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor State Tick Recovery And Layout Boundary - 2026-10-19
+
+[Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
+
+- [x] Read complete `func_1508A6FC` and its script caller; recover the no-argument changed-mask interface and complete typed experimental body. Correct donor byte/halfword widths, float operations, cursor strides and live/captured inputs.
+- [x] Pass seven tests in both tools copies: 262 bounded fixtures, 660/678 retail words visited, fired helper mutations, three effective negatives and both full owner profiles/72 neighbors and pools preserved. Tools `e831838` first; preserve all 1,434 older mirror dirty hashes.
+- [ ] Recover eager table-pointer captures, frame 288 and the full 678-word layout. Current 658/frame 328 is not matching; source-form/profile screens do not justify an installation.
+- [ ] Complete native32, remaining instruction/private/access-fault/alias coverage and independent GNU rebases, then owner/padding/Make/strict-image gates before installation and recount. Production and README remain unchanged; keep the wider Game goal active.
+
 ## Queued-Zone Selection Complete Match - 2026-10-19
 
 [Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):

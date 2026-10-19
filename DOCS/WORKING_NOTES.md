@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
+Recover complete experimental `func_1508A6FC`, 658 words/frame 328, not the
+retail 678/frame 288. Seven tests/262 bounded fixtures pass in both copies;
+72 neighbors/pools remain fixed on both profiles. Tools `e831838` first.
+Continue pointer captures/private frame; no production install or new credit.
+
+2026-10-19:
 [Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
 Install complete `func_1508B3F8`, all 369 words/frame 320 exact with checked
 origins, retaining all 58 public memory instructions. Literal/private, GNU,

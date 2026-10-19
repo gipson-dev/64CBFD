@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4a805fc`; tools are committed before the consumer pin.
+  checkpoint pins tools `e831838`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor state tick recovered experimentally; layout still open**:
+[Note 1615](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md).
+Complete typed `func_1508A6FC` emits 658 words/frame 328, not retail 678/frame
+288. Seven tests pass in both tools copies: 262 bounded fixtures, 660 retail
+words visited, fired provider mutations, effective negatives and both owner
+profiles/72 neighbors preserved. No installation or matching credit. Continue
+its eager table-pointer captures/private frame; native/fault/rebase gates stay
+open. Production, root README and installed totals below are unchanged.
 
 **Queued-zone selection installed: all 369 words byte-exact**:
 [Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md).

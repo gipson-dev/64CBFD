@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick recovery and layout boundary](WORKING_NOTES/1615-actor-state-tick-recovery-and-layout-boundary-20261019.md):
+  experimental `func_1508A6FC`, 658 words/frame 328; seven tests/262 bounded
+  fixtures pass in both copies. Continue pointer captures/private frame;
+  no production install or matching credit.
 - [Queued-zone selection complete match](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
   `func_1508B3F8` installed, all 369 words/frame 320 exact with checked origins;
   literal/private, GNU, native, Make and strict 897-byte image proof. Fresh
