@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Actor Update Correction Prefix Layout - 2026-10-18
+
+[Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
+
+- [x] Derive the244-word correction prefix from the complete qualified C object: schedules, register roles, error copy and three scalar-home changes. Match all244 words and20 relocated bindings without a retail replay, executable tail, guards or installation.
+- [x] Pass seven tests with553 existing corpus cases, ten additional boundary cases,850 fired caller cuts, two effective emitted-word negatives and three independent GNU relocation maps. Preserve72 neighbors,23 production inputs, all1,290 prior mirror hashes and installed counts. Bank tools3076fa7 first.
+- [ ] Extend this same function through look-ahead/conversion spills, nonmoving projection, finalizer/ranking and every continuation/return. Raw594/frame456/450 differences is still ten words short. Only the normalized prefix closes cut14; do not claim complete raw/private parity.
+- [ ] Complete source-derived all-word/binding and private/alias proof, actual padding/Make, rebases, first whole-ELF prediction, installation/audit and fresh recount. No production/README/count credit from this isolated prefix; broader Game work stays active.
+
 ## Route Actor Update Local Homes And Error Lifetime - 2026-10-18
 
 [Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):

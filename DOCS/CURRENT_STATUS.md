@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools b668034; tools are committed before the consumer pin.
+  checkpoint pins tools 3076fa7; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route actor update correction prefix matches in isolation**:
+[Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md).
+A closed source-derived recipe emits only244 exact opening words, with no tail
+or installation. Seven tests pass:553 existing corpus cases, ten added boundary
+cases,850 fired caller cuts and three independent GNU maps. The raw C remains
+594/frame456/450 differences; normalized-prefix cut14 closes, raw cut14 does not.
+Tools **3076fa7** first; all23 production inputs/counts and old receipts stay
+fixed. Continue the same function's real spills, projection/ranking and full proof.
 
 **Route actor update core local homes and error lifetime recovered**:
 [Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md).

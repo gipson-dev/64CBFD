@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
+Source-derived244-word correction prefix matches in isolation; seven tests
+pass with563 bounded cases,850 fired caller cuts and three GNU maps. Tools3076fa7
+first; preserve1,290 prior mirror hashes. No executable tail or installation:
+full raw594/frame456/450 differences remains ten words short. Production/counts
+stay fixed; continue the same function's remaining spills, joins and full proof.
+
+2026-10-18:
 [Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
 New complete func_15087350 C recovers core scalar/array homes and improves481
 to450 raw differences, retaining594 words/frame456. Thirteen tests pass with

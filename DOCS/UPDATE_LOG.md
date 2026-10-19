@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Actor Update Correction Prefix Layout
+
+[Note1574](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
+Close the first244 normalized words of func_15087350 with source-derived
+operation provenance and20 bindings. Seven tests pass:563 bounded cases,
+850 fired caller cuts, effective error controls and three GNU maps. Tools3076fa7
+first; preserve all1,290 pre-existing mirror hashes. The raw full body remains
+594/frame456/450 differences. No executable tail, installation, README/count
+change or credit; continue the same function's full matching/integration work.
+
 ## 2026-10-18 Route Actor Update Local Homes And Error Lifetime
 
 [Note1573](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):

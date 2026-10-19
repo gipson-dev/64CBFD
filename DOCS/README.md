@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route actor update correction prefix layout](WORKING_NOTES/1574-route-actor-update-correction-prefix-layout-20261018.md):
+  closed244-word normalized prefix only; seven tests pass with563 bounded cases,
+  850 caller cuts and three GNU maps. No tail/install/count credit. Tools3076fa7
+  first; continue the same function's full604-word matching qualification.
 - [Route actor update local homes and error lifetime](WORKING_NOTES/1573-route-actor-update-local-homes-and-error-lifetime-20261018.md):
   complete594-word/frame456 C recovers core homes and reduces481 to450 raw
   differences. Thirteen tests pass; old source/native receipts stay separate.
