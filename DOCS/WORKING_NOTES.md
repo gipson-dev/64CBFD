@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
+Install complete func_1508DA1C,52 exact words/frame8 with19 checked pointer/
+copy-schedule guards, all source origins and both bindings retained. Ten
+installed tests and the strict161-byte image audit pass. Game3003/4832,
+total3676/5505,1,829 different/zero drift. Tools958811a first; preserve all
+1,338 prior mirror hashes. Owner55/73 exact; next audit func_1508DAEC.
+
+2026-10-19:
 [Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
 Install complete func_1508C9CC,47 exact words/frame0 with14 checked GPR/
 schedule guards, no insertions/omissions and8 retained bindings. Nine

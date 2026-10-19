@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools cf919bf; tools are committed before the consumer pin.
+  checkpoint pins tools 958811a; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Parallel array reset restored and byte-exact: all 52 words**:
+[Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md).
+Replace func_1508DA1C's stub with both complete reset loops, initial cached
+output pointers and fresh context/count reads after stores. Nineteen checked
+allocation/copy-schedule guards preserve frame8, saved S0 and all52 source
+origins. Ten installed tests pass:1,728 literal pairs, ordered stores,
+native32/UBSan, fired alias cuts, effective cached-bound controls, actual
+caller and independent GNU maps. Production equals the exact161-byte image
+prediction; all other bodies/addresses/data stay fixed. Fresh Game
+**3003/4832 (62.15%)**, total **3676/5505 (66.78%)**, **1,829 different / zero
+drift**. Tools **958811a** first; README aggregate rows only. Owner **55/73
+exact**,18 still different. Next audit **func_1508DAEC**,78 words/frame0,
+including its query mode, ordered clears, fresh context reads and FP stores.
 
 **Signed round-robin slot selector restored and byte-exact: all 47 words**:
 [Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md).

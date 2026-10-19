@@ -19338,3 +19338,22 @@ generated_B3020,func_1508C9CC,0x98,0x00803025,0x00801825,-,-,Normalize round-rob
 generated_B3020,func_1508C9CC,0xA0,0x0045082A,0x0046082A,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
 generated_B3020,func_1508C9CC,0xAC,0xA0641702,0xA0A41702,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
 generated_B3020,func_1508C9CC,0xB0,0x00C01025,0x00601025,-,-,Normalize round-robin slot GPR cycle and independent opening schedule,,,false
+generated_B3020,func_1508DA1C,0x20,0x24640EB0,0x24620EB0,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x24,0x24650F70,0x24640F70,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x28,0x24660FF0,0x24650FF0,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x2C,0x24671070,0x24661070,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x30,0x246810F0,0x246710F0,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x38,0x246A12F4,0x246812F4,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x3C,0x00805825,0x00405025,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x40,0xAD700000,0xAD500000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x4C,0x256B0004,0x254A0004,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x5C,0xAD700000,0xAD500000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x6C,0x00C01825,0x00A01825,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x74,0x00A01025,0x00E05025,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x78,0x01002025,0x00801025,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x7C,0x00E05825,0x24040001,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x80,0x01406025,0x00C05825,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x84,0x24050001,0x01006025,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x90,0xAC900000,0xAD500000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0x94,0xAD650000,0xAD640000,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false
+generated_B3020,func_1508DA1C,0xB0,0x24840004,0x254A0004,-,-,Normalize parallel-reset pointer allocation and independent copy schedule,,,false

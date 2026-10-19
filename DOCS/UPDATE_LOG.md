@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Parallel Array Reset Complete Match
+
+[Note 1588](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
+Restore complete func_1508DA1C, all52 words/frame8 exact with19 checked
+pointer/copy-schedule guards, no insertions/omissions and both bindings fixed.
+Ten installed tests pass:1,728 literal pairs, ordered stores, native32/UBSan,
+fired cuts/redirections, effective cached-bound controls, actual caller and
+independent maps. Production reproduces the exact161-byte prediction;
+all other bodies/addresses/data remain fixed. Game3003/4832 (62.15%),
+total3676/5505 (66.78%),1,829 different/zero drift. Tools958811a first;
+README aggregates only. Owner55/73 exact; next audit78-word func_1508DAEC.
+
 ## 2026-10-19 Round-Robin Slot Selector Complete Match
 
 [Note 1587](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):

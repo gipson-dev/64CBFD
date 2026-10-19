@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Parallel array reset complete match](WORKING_NOTES/1588-parallel-array-reset-complete-match-20261019.md):
+  complete52-word reset with current bounds and cached outputs, ten installed
+  tests and an exact161-byte production-image prediction. Owner55/73 exact;
+  continue with78-word func_1508DAEC's query/clear and coordinate paths.
 - [Round-robin slot selector complete match](WORKING_NOTES/1587-round-robin-slot-selector-complete-match-20261019.md):
   complete47-word signed selector with checked layout, nine installed tests
   and an exact143-byte production-image prediction. Owner54/73 exact;

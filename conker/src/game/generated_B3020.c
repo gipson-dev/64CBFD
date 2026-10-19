@@ -1949,8 +1949,30 @@ s32 func_1508D850() {
     return 0;
 }
 
-s32 func_1508DA1C() {
-    return 0;
+extern s32 D_800D23B0;
+
+/* Reset the cached arrays while reloading their current context bounds. */
+void func_1508DA1C(void) {
+    u8 *state = (u8 *)D_800D23B0;
+    s32 *resetEB0 = (s32 *)(state + 0xEB0);
+    s32 *resetF70 = (s32 *)(state + 0xF70);
+    s32 *resetFF0 = (s32 *)(state + 0xFF0);
+    s32 *reset1070 = (s32 *)(state + 0x1070);
+    s32 *reset10F0 = (s32 *)(state + 0x10F0);
+    s32 i = 0;
+    s32 *reset12F4 = (s32 *)(state + 0x12F4);
+
+    for (; i < *(s32 *)(state + 0x10); i++) {
+        resetEB0[i] = -1;
+        state = (u8 *)D_800D23B0;
+    }
+    for (i = 0; i < *(s32 *)((u8 *)D_800D23B0 + 0xEA4); i++) {
+        resetF70[i] = -1;
+        resetFF0[i] = 0;
+        reset10F0[i] = -1;
+        reset1070[i] = 1;
+        reset12F4[i] = 0;
+    }
 }
 
 s32 func_1508DAEC() {
