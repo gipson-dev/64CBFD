@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `cdcece5`; tools are committed before the consumer pin.
+  checkpoint pins tools `f48f2f9`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor state tick installed: all 678 words byte-exact**:
+[Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md).
+Complete semantic `func_1508A6FC` replaces its stub; 344 checked origin guards
+retain frame 288, all 311 memory origins and 62 bindings. Both installed suites
+pass 15 tests, including private state, fired access cuts, native32 and GNU
+rebases. The build exactly reproduces the strict 2,183-byte ELF prediction;
+all other bodies/addresses and protected data stay fixed. Fresh totals: Game
+3,018/4,832 (62.46%), overall 3,691/5,505 (67.05%), 1,814 different/zero drift;
+owner 70/73 exact. README aggregate rows only. Next: `func_15086364`, 539 words,
+frame 0x600, still a 12-byte C stub. Wider Game goal stays active.
 
 **Actor state tick direct draw homes and cursor lifetimes recovered**:
 [Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md).

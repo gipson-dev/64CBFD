@@ -2095,8 +2095,302 @@ s32 func_1508A1BC(void) {
     return 0;
 }
 
-s32 func_1508A6FC() {
-    return 0;
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+extern u8 D_800E0BB8[];
+extern s32 D_800BE9E4;
+extern s8 D_800E0BD0;
+extern s16 D_800872C4[];
+extern s8 D_800872D0[];
+extern s8 D_800872E0[];
+extern s8 D_800872E8[];
+extern f32 D_800872F8[];
+extern u8 *D_800BE628;
+extern s32 D_80082FA0;
+extern u8 D_8009DA20[];
+s32 func_150859AC(s16, s32);
+s32 func_15085DA8(f32);
+void func_1508EC5C(s32, s32);
+s32 func_1508DAEC(s32, s32);
+void func_1508EBF8(s32, s32);
+s32 func_1508CAD8();
+f32 func_150ADA68(void);
+void func_1508B3F8(void);
+void func_1504332C(s32, s32, s32, s32);
+s32 func_15042D94(s32, s32, s32, void *, ...);
+
+/* Advance actor timers, state transitions and steering; return changed slots. */
+s32 func_1508A6FC(void) {
+    s32 offset;
+    s32 slot;
+    u8 *actor;
+    s32 first;
+    u32 bit;
+    s32 group;
+    s32 actorAction;
+    u32 changed;
+    s32 *status;
+    s32 previousTimer;
+    s32 value;
+    s32 started;
+    u32 active;
+    u32 seen;
+    s32 count;
+    s32 expired;
+    s32 *groups;
+    s32 *latches;
+    s32 *actions;
+    u8 *address;
+    s32 *states;
+    s32 *elapsed;
+    s32 *timers;
+    s32 *cooldowns;
+    s32 *timeouts;
+    s32 *events;
+    u8 *context;
+    s32 *groupCounts;
+    s32 *scores;
+    u8 idle;
+    s32 *reset;
+    s32 index;
+    s32 *band;
+    s32 *counter;
+    u8 *row;
+    s16 limit;
+    s8 steering;
+    u16 flags;
+    s32 halfWidth;
+
+    context = (u8 *)D_800D23B0;
+    changed = 0;
+    slot = 0;
+    active = *(u32 *)(context + 0x14);
+    seen = *(u32 *)(context + 0x18);
+    count = *(s32 *)(context + 0x10);
+    groups = (s32 *)(D_800D23B0 + 0xE64);
+    latches = (s32 *)(D_800D23B0 + 0x35C);
+    actions = (s32 *)(D_800D23B0 + 0x31C);
+    states = (s32 *)(D_800D23B0 + 0x19C);
+    elapsed = (s32 *)(D_800D23B0 + 0x21C);
+    timers = (s32 *)(D_800D23B0 + 0x29C);
+    cooldowns = (s32 *)(D_800D23B0 + 0x25C);
+    timeouts = (s32 *)(D_800D23B0 + 0x41C);
+    events = (s32 *)(D_800D23B0 + 0x3DC);
+    groupCounts = (s32 *)(D_800D23B0 + 0xDDC);
+    scores = (s32 *)(D_800D23B0 + 0x1574);
+    address = (u8 *)D_800D23B0 + 0x1C;
+    row = (u8 *)D_800D23B0 + 0x39C;
+    context = (u8 *)D_800D23B0 + 0x9C;
+    if (count > 0) {
+        reset = (s32 *)address;
+        status = (s32 *)row;
+        band = (s32 *)context;
+        offset = 0;
+        do {
+            bit = 1U << slot;
+            *reset = 0;
+            first = 0;
+            value = active & bit;
+            if (value == 0) {
+                if (!(seen & bit)) {
+                    first = 1;
+                }
+                seen |= bit;
+            }
+            if (value != 0 || first != 0) {
+                actor = D_800CC2D0 + slot * 0x32C;
+                group = *(s32 *)((u8 *)groups + offset);
+                idle = 1;
+                if (group != 0 && *(s16 *)((u8 *)D_800D23B0 + 0x16BC) == 0xB9) {
+                    actor[0x1E4] = 1;
+                }
+                context = (u8 *)latches + offset;
+                previousTimer = *(s32 *)((u8 *)timers + offset);
+                *(s32 *)((u8 *)elapsed + offset) += D_800BE9E4;
+                *(s32 *)((u8 *)timers + offset) += D_800BE9E4;
+                *(s32 *)((u8 *)cooldowns + offset) -= D_800BE9E4;
+                if (*(s32 *)((u8 *)cooldowns + offset) <= 0) {
+                    *(s32 *)((u8 *)cooldowns + offset) = 0;
+                }
+                *(s32 *)((u8 *)timeouts + offset) -= D_800BE9E4;
+                if (*(s32 *)((u8 *)timeouts + offset) <= 0) {
+                    *(s32 *)((u8 *)timeouts + offset) = 0;
+                }
+                *(s32 *)((u8 *)scores + offset) -= D_800BE9E4;
+                if (*(s32 *)((u8 *)scores + offset) < 0) {
+                    *(s32 *)((u8 *)scores + offset) = 0;
+                }
+                if (*(s32 *)((u8 *)states + offset) == 3 && (*(s32 *)((u8 *)cooldowns + offset) & 0x1F) >= 0x1D) {
+                    func_1508EC5C(slot, 0x8000);
+                }
+                *(s32 *)((u8 *)events + offset) = D_800E0BB8[slot];
+                D_800E0BB8[slot] &= 0x7F;
+                if ((u8 *)D_800D23B0 != (u8 *)-0x4DC) {
+                    *(s32 *)((u8 *)D_800D23B0 + offset + 0x4DC) =
+                        (*(u8 **)(actor + 0x31C))[0x19A];
+                }
+                *status = func_150859AC((s16)slot, 4);
+                *band = func_15085DA8(*(f32 *)(actor + 0x18));
+                if (*status == 0 || first != 0 || actor[0x2FD] != 0) {
+                    if (*(s32 *)context == 0) {
+                        actorAction = actor[0x20F];
+                        if (actorAction != 0xFF) {
+                            *(s32 *)((u8 *)D_800D23B0 + offset + 0x59C) = actorAction;
+                        } else {
+                            *(s32 *)((u8 *)D_800D23B0 + offset + 0x59C) = -1;
+                        }
+                        *(s32 *)context = 1;
+                        *(s32 *)((u8 *)cooldowns + offset) = 0;
+                        *(s32 *)((u8 *)states + offset) = 0;
+                        *(s32 *)((u8 *)D_800D23B0 + offset + 0x5C) = 1;
+                        *(s32 *)((u8 *)D_800D23B0 + offset + 0x11C) = -1;
+                        counter = groupCounts + group;
+                        *counter -= 1;
+                        value = *(s32 *)((u8 *)events + offset) & 0x7F;
+                        if (value < count) {
+                            index = groups[value];
+                            if (group != index) {
+                                counter = groupCounts + index;
+                                *counter += 1;
+                            }
+                        }
+                        if (*(s16 *)((u8 *)D_800D23B0 + 0x16BC) != 0xB9) {
+                            *(s32 *)((u8 *)D_800D23B0 + offset + 0xFF0) = 0;
+                            func_1508DAEC(slot, 1);
+                        }
+                        changed |= bit;
+                    }
+                } else {
+                    *(s32 *)context = 0;
+                }
+                value = *(s32 *)((u8 *)actions + offset);
+                if (value != 0 && *(s16 *)((u8 *)D_800D23B0 + 0x16BC) != 0xB8) {
+                    expired = 0;
+                    if (*(s32 *)((u8 *)states + offset) != 1 && *(s32 *)((u8 *)elapsed + offset) < 0x1E) {
+                        actorAction = actor[0x232];
+                        actor[0x222] = value - 2;
+                        if (actorAction != 4 && actorAction != 5) {
+                            func_1508EBF8(slot, 4);
+                        }
+                        if (actorAction == 4) {
+                            *(s32 *)((u8 *)elapsed + offset) = 0;
+                        }
+                        if (actorAction == 5) {
+                            *(s32 *)((u8 *)elapsed + offset) = 0x1E;
+                            *(f32 *)((u8 *)D_800D23B0 + offset + 0x1868) = D_800872F8[D_800E0BD0];
+                            *(f32 *)((u8 *)D_800D23B0 + offset + 0x17A8) =
+                                func_150ADA68() * 50.0f + *(f32 *)(actor + 0x14);
+                            *(f32 *)((u8 *)D_800D23B0 + offset + 0x17E8) = *(f32 *)(actor + 0x18) + 40.0f;
+                            *(f32 *)((u8 *)D_800D23B0 + offset + 0x1828) =
+                                func_150ADA68() * 50.0f + *(f32 *)(actor + 0x1C);
+                            value = *(s32 *)((u8 *)actions + offset);
+                            if (value - 2 >= 2) {
+                                address = D_800CC2D0 + value * 0x32C - 0x658;
+                                row = (u8 *)D_800D23B0 + offset;
+                                *(f32 *)(row + 0x17A8) +=
+                                    (*(f32 *)(address + 0x14) - *(f32 *)(actor + 0x14)) * 0.5f;
+                                row = (u8 *)D_800D23B0 + offset;
+                                *(f32 *)(row + 0x1828) +=
+                                    (*(f32 *)(address + 0x1C) - *(f32 *)(actor + 0x1C)) * 0.5f;
+                            }
+                        }
+                    }
+                    idle = 0;
+                    value = *(s32 *)((u8 *)timers + offset);
+                    started = 0;
+                    index = D_800E0BD0;
+                    if (D_800872D0[index] < value) {
+                        *(s32 *)((u8 *)timers + offset) = 0;
+                        previousTimer = -1;
+                        index = D_800E0BD0;
+                        /* Read back through the retained slot cursor. */
+                        value = timers[slot];
+                    }
+                    if (value >= 0 && previousTimer < 0) {
+                        started = 1;
+                    }
+                    limit = D_800872C4[index];
+                    if (limit != -1 && *(s32 *)((u8 *)elapsed + offset) >= limit) {
+                        expired = 1;
+                    }
+                    row = (u8 *)D_800D23B0 + slot;
+                    steering = *(s8 *)(row + 0x1725);
+                    *(s8 *)(row + 0x1725) = steering + ((*(s8 *)(row + 0x1705) - steering) >> 2);
+                    row = (u8 *)D_800D23B0 + slot;
+                    steering = *(s8 *)(row + 0x1735);
+                    *(s8 *)(row + 0x1735) = steering + ((*(s8 *)(row + 0x1715) - steering) >> 2);
+                    row = (u8 *)D_800D23B0 + slot;
+                    if (func_1508CAD8(slot, *(s32 *)((u8 *)actions + offset) - 2, started, expired,
+                        *(s8 *)(row + 0x1725), *(s8 *)(row + 0x1735)) != 0 && *(s32 *)((u8 *)states + offset) != 1) {
+                        *(s32 *)((u8 *)elapsed + offset) = 0;
+                    }
+                    if (*(s32 *)((u8 *)timers + offset) == 0) {
+                        ((u8 *)D_800D23B0)[slot + 0x1705] = 0;
+                        ((u8 *)D_800D23B0)[slot + 0x1715] = 0;
+                        if (D_800872E8[D_800E0BD0] < (s32)(func_150ADA68() * 100.0f)) {
+                            if (func_150ADA68() > 0.5f) {
+                                ((u8 *)D_800D23B0)[slot + 0x1705] = -50;
+                            } else {
+                                ((u8 *)D_800D23B0)[slot + 0x1705] = 50;
+                            }
+                            if (func_150ADA68() > 0.5f) {
+                                ((u8 *)D_800D23B0)[slot + 0x1715] = 50;
+                            } else {
+                                ((u8 *)D_800D23B0)[slot + 0x1715] = 0;
+                            }
+                        }
+                    }
+                }
+                if (idle != 0 && *(s16 *)((u8 *)D_800D23B0 + 0x16BC) != 0xB8) {
+                    *(s32 *)((u8 *)timers + offset) = -D_800872E0[D_800E0BD0];
+                }
+                flags = *(u16 *)(actor + 0x22C);
+                *(u16 *)(actor + 0x22C) = flags & 0xFDFF;
+                if ((flags & 0x200) || (*(s32 *)((u8 *)events + offset) & 0x80)) {
+                    *(s32 *)((u8 *)states + offset) = 0;
+                    *reset = 1;
+                }
+                if ((*(u8 **)(actor + 0x31C))[0x1AC] != 0) {
+                    *(s32 *)((u8 *)cooldowns + offset) = 0x14;
+                }
+            } else {
+                *status = 0;
+                *band = -1;
+            }
+            slot++;
+            band++;
+            status++;
+            reset++;
+            offset += 4;
+        } while (slot != count);
+    }
+    *(u32 *)((u8 *)D_800D23B0 + 0x18) = seen;
+    if (D_800BE9E4 != 0) {
+        *(f32 *)((u8 *)D_800D23B0 + 0x16B4) = (f32)D_800BE9E4;
+    } else {
+        *(f32 *)((u8 *)D_800D23B0 + 0x16B4) = 1.0f;
+    }
+    if ((u8 *)D_800D23B0 != (u8 *)-0x55C) {
+        func_1508B3F8();
+    }
+    if (*(s16 *)((u8 *)D_800D23B0 + 0x16BC) == 0xB9) {
+        halfWidth = (s32)(*(f32 *)(D_800BE628 + 0x30) - *(f32 *)(D_800BE628 + 0x2C)) >> 1;
+        func_1504332C(0xFF, 0xFF, 0xFF, 0xFF);
+        actor = D_800CC2D0;
+        index = 0;
+        if (D_80082FA0 >= 0) {
+            do {
+                if (actor[0x128] == 0) {
+                    row = D_800BE628 + index * 0x180;
+                    func_15042D94((s32)(*(f32 *)(row + 0x2C) + (f32)halfWidth),
+                        (s32)(*(f32 *)(row + 0x24) + 6.0f), 1, D_8009DA20, scores[index] / 60);
+                }
+                index++;
+                actor += 0x32C;
+            } while (D_80082FA0 >= index);
+        }
+    }
+    return changed;
 }
 
 s32 func_1508B194(s32 arg0) {

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick complete match](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
+  semantic C plus checked origins matches all 678 words/frame 288. Fifteen
+  installed tests pass in both copies; strict ELF/body/address/data audit.
+  Fresh Game 3,018/4,832, overall 3,691/5,505, zero drift. Next: `func_15086364`.
 - [Actor state tick direct draw homes](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
   complete experimental C retains 678 words/frame 288, recovers nineteen homes
   and reduces raw differences 600 to 344. Thirteen tests pass in both copies;

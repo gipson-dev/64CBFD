@@ -1,13 +1,24 @@
 # PC Port Roadmap located in another project folder
 
+## Actor State Tick Complete Match - 2026-10-19
+
+[Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
+
+- [x] Install complete semantic `func_1508A6FC`, 678 words/frame 288, preserving its name and no-argument changed-mask interface. Retain 675 unique origins, three derived forms, every one of 311 memory origins and all 62 relocation entries; omit only three checked pure instructions.
+- [x] Close the nine remaining frame mappings, cached timer readback, lifetime-scoped temporary roles, opening/private-store schedules and branch/delay targets. Append 344 expected-word guards with every preceding manifest byte preserved. This is not a compiler-only match.
+- [x] Pass fifteen pre-install and fifteen installed tests in both copies: 262 literal/private fixtures, 58 effective frame aliases, 18 wrong-layout negatives, twelve word-action aliases, two cached-timer aliases, 876 fired access cuts, native32/UBSan and 27 independent GNU rebased runs. Coverage is 660/678 retail words; full hardware/FCSR/gameplay acceptance remains separate.
+- [x] Qualify both owner profiles/72 neighbors, seven-command actual Make shadows and independent first links. Build and reproduce the strict 2,183-byte ELF prediction, including only target code, target symbol size and two closed metadata-order groups. Preserve all other 6,056 bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners.
+- [x] Recount Game 3,018/4,832, overall 3,691/5,505, 1,814 different/zero drift; owner 70/73 exact. Tools `f48f2f9` first; all 1,444 older mirror hashes preserved. README aggregate rows only; no host/frozen Release change.
+- [ ] Recover `func_15086364`, 539 words/frame 0x600, VA 15086364..15086BD0, ROM B3814..B4080. Read its complete routine and callers before replacing the 12-byte stub/522 classified differences; recover argument widths, large local workspace and helper contracts. The other owner nonmatches are `func_1508CAD8` (862 words) and `func_1508DC24` (681). Keep the wider Game goal active.
+
 ## Actor State Tick Direct Draw Homes - 2026-10-19
 
 [Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
 
 - [x] Recover the draw-index SP+A0 and actor-action SP+104 saves directly from C, retaining nineteen named homes and 39 real locals. Recover eager opening addresses with positive-count-only cursor stores and the sampled main saved-register roles. No transform or new compiler profile.
 - [x] Retain 678 words/frame 288 and reduce raw differences 600 to 344. Pass thirteen tests in both copies: 262 ordered-read fixtures, 38 effective home aliases, four predecessor negatives, twelve word-action aliases, four empty-count/private-store pairs, fresh native32/UBSan and both owner profiles/72 neighbors. Tools `cdcece5` first; preserve all 1,442 older mirror hashes.
-- [ ] Recover remaining cursor/row homes and cached timer readback, then whole-function roles and instruction scheduling. Two fired timer-table aliases still demonstrate a real open boundary; sampled saved-register agreement is not whole-function closure.
-- [ ] Complete private/fault/alias/instruction and independent original-assembly/GNU gates, then actual padding/Make/strict image and installed-state qualification before installation/recount. Production, README totals and the wider Game goal stay unchanged until qualified.
+- [x] Recover remaining cursor/row homes, cached timer readback and whole-function roles/scheduling in Note 1620 above. Both previously failing timer-table aliases now agree; the raw source remains an effective negative.
+- [x] Pass the bounded private/access-cut/alias and independent original-assembly/GNU gates, actual padding/Make/strict-image and installed-state checks in Note 1620; install and recount. These model receipts are not full hardware, FCSR or gameplay acceptance.
 
 ## Actor State Tick Spill Ownership - 2026-10-19
 
@@ -16,8 +27,8 @@
 - [x] Qualify an explicitly experimental post-compile mapping for eleven cursor/call-save slots while retaining seventeen existing homes, frame 288, 678 words, every memory origin and all 62 relocation entries. Preserve branch targets and delay-slot adjacency.
 - [x] Pass nine tests in both copies: 262 three-way public-observation fixtures, 56 effective guest aliases, 22 old-layout negatives and two cached-timer controls. Demonstrate the missing draw-index spill and extra zero-count private stores instead of claiming closure. Tools `8a650a3` first; preserve all 1,440 older mirror hashes.
 - [x] Recover the missing draw-index accesses and nonpositive-count cursor-store gating directly from C in Note 1619 above. Its sampled main saved-register roles also agree; this does not establish whole-function scheduling.
-- [ ] Finish remaining frame homes and whole-function roles/scheduling from Note 1619's new source. The older partial transform is not a production recipe and its fingerprints must not be applied to the new raw body.
-- [ ] Close remaining private/fault/alias/instruction and independent GNU original-assembly gates, then actual padding/Make/strict image, installation and recount. Keep production, root README totals and the wider Game goal unchanged until qualified.
+- [x] Finish remaining frame homes and whole-function roles/scheduling from Note 1619's new source in Note 1620. Use its freshly fingerprinted complete recipe, never the older partial transform on the new body.
+- [x] Pass the bounded private/access-cut/alias and independent GNU gates, then actual padding/Make/strict image, installation and recount in Note 1620. Wider Game work remains active.
 
 ## Actor State Tick Homes And Ordered Reads - 2026-10-19
 
@@ -26,8 +37,8 @@
 - [x] Recover seventeen observed homes with a closed permutation of 39 real declarations; retain the 678-word extent/frame 288. Confirm 101 changed stack fields with unchanged opcode/register operands.
 - [x] Retain the real difficulty selector so the independent difficulty/timer loads emit in retail order, moving only their associated LO16 binding. Compare ordered public reads across all 262 fixtures.
 - [x] Pass eight tests in both copies, including 34 fired guest aliases and effective old-home negatives, 57 native32 fixtures at O0/O2/O3 with UBSan, both owner profiles/72 neighbors and tools checks. Tools `59b52f1` first; preserve all 1,438 older mirror hashes.
-- [ ] Recover reset/status/band homes (retail SP+84/60/5C), anonymous spill ownership and whole-function saved roles/schedule. Current 600 word differences is not a match.
-- [ ] Finish remaining instruction/private/fault/alias and independent GNU original-assembly gates, then actual padding/Make/strict image and installation/recount. Keep production, root README and the wider goal unchanged until qualified.
+- [x] Recover reset/status/band homes (retail SP+84/60/5C), anonymous spill ownership and whole-function roles/schedule in Note 1620. Its complete normalized output is byte-exact; raw C still has 344 differences.
+- [x] Pass the bounded private/access-cut/alias and independent GNU gates, actual padding/Make/strict image and installation/recount in Note 1620. Complete hardware/instruction coverage is not claimed.
 
 ## Actor State Tick Frame, Captures And Native Qualification - 2026-10-19
 
@@ -35,8 +46,8 @@
 
 - [x] Recover complete `func_1508A6FC`'s 678-word extent and frame 288 through semantic C, preserving all eleven eager table captures and the real timer reload. Retain 27 bounded source controls without a new compiler profile.
 - [x] Pass eight tests in both tools copies: 262 completed fixtures, 24 public-read footprint pairs, 57 native32 fixtures at O0/O2/O3 with UBSan, three effective native negatives and a fired sanitizer control. Preserve both owner profiles' 72 neighbors/pools. Tools `01e3b05` first; all 1,436 older mirror hashes preserved.
-- [ ] Recover remaining private homes and complete saved-register lifetimes. Note 1617 above closes seventeen homes and the measured timer/difficulty read order; the remaining 600 word differences still prevent a match.
-- [ ] Finish instruction/private/fault/alias and independent GNU original-assembly coverage, then actual padding/Make/strict-image and installation gates before rebuilding and recounting. Keep production, README and the wider goal unchanged until qualified.
+- [x] Recover remaining private homes and complete saved-register lifetimes through Notes 1617-1620. Nineteen homes emit directly from C; the checked complete origin recipe closes the remaining frame/register/schedule differences.
+- [x] Qualify bounded private/access-cut/alias and independent GNU original-assembly cases, actual padding/Make/strict image and installed state in Note 1620; rebuild and recount without claiming exhaustive hardware coverage.
 
 ## Actor State Tick Recovery And Layout Boundary - 2026-10-19
 
@@ -45,7 +56,7 @@
 - [x] Read complete `func_1508A6FC` and its script caller; recover the no-argument changed-mask interface and complete typed experimental body. Correct donor byte/halfword widths, float operations, cursor strides and live/captured inputs.
 - [x] Pass seven tests in both tools copies: 262 bounded fixtures, 660/678 retail words visited, fired helper mutations, three effective negatives and both full owner profiles/72 neighbors and pools preserved. Tools `e831838` first; preserve all 1,434 older mirror dirty hashes.
 - [x] Recover eager table-pointer captures, frame 288 and the full 678-word extent in Note 1616 above. Exact private homes, roles and schedule remain separate open gates; do not install on shape alone.
-- [ ] Complete remaining instruction/private/access-fault/alias coverage and independent GNU rebases, then owner/padding/Make/strict-image gates before installation and recount. Native32 is now qualified in Note 1616; production and README remain unchanged, and the wider Game goal stays active.
+- [x] Qualify the remaining bounded private/access-cut/alias and independent GNU cases, owner/padding/Make/strict-image and installed-state gates in Note 1620; install and recount. Coverage remains 660/678 retail words, not exhaustive hardware/FCSR/gameplay acceptance.
 
 ## Queued-Zone Selection Complete Match - 2026-10-19
 
@@ -56,7 +67,7 @@
 - [x] Pass the complete pre-install suites in both copies, literal/private and 702 fired instruction-access cuts, native32/UBSan/effective negatives, eight effective old-home aliases and independent GNU original-parent/visitor maps. Complete both owner/Make shadows and strict first links.
 - [x] Pass all 16 installed-state checks in both tools copies, including the migrated production-slot contract and native fixtures extracted from the actual installed C. Keep caller/helper/hardware/gameplay acceptance separate.
 - [x] Build and reproduce the exact 897-byte target-only ELF prediction, preserving 6,056 other bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners. Tools `4a805fc` first; README aggregate rows only. Fresh Game 3,017/4,832, overall 3,690/5,505; owner 69/73 exact.
-- [ ] Continue `func_1508A6FC`: 678 words/frame 288, VA 1508A6FC..1508B194, ROM B7BAC..B8644, still a 12-byte stub/665 classified differences. Recover its full signature, state-array lifetimes, control flow and helper contracts before installation; keep the wider goal active.
+- [x] Recover and install complete `func_1508A6FC`, 678 words/frame 288, VA 1508A6FC..1508B194, ROM B7BAC..B8644, replacing its 12-byte stub. Notes 1615-1620 recover its interface, lifetimes, control flow and helper contracts; Note 1620 qualifies the complete byte match. Wider Game work remains active.
 
 ## Zone Selection Query And Scalar Homes - 2026-10-19
 

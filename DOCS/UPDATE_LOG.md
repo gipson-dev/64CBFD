@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Complete Match
+
+[Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
+Install complete semantic `func_1508A6FC`, all 678 words/frame 288 exact through
+344 checked origin guards, not a compiler-only match. Fifteen installed tests
+pass in both copies; the strict 2,183-byte ELF prediction preserves all other
+bodies/addresses and protected data. Tools `f48f2f9` first; all 1,444 older
+mirror hashes preserved. Fresh Game 3,018/4,832, overall 3,691/5,505, zero drift;
+owner 70/73 exact. README aggregate rows only. Next: 539-word `func_15086364`.
+
 ## 2026-10-19 Actor State Tick Direct Draw Homes
 
 [Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):

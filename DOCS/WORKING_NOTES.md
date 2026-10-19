@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
+Install complete semantic A6FC C, 678 words/frame 288 exact with 344 checked
+origin guards. Fifteen installed tests pass in both copies; all 311 memory
+origins and 62 bindings survive. Strict ELF prediction preserves every other
+body/address and protected Game data. Tools `f48f2f9` first. Fresh Game
+3,018/4,832, overall 3,691/5,505, zero drift; owner 70/73 exact. Next: 539-word
+`func_15086364`, frame 0x600. Wider Game goal active; README aggregates only.
+
+2026-10-19:
 [Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
 Recover nineteen homes, actual draw-index/action saves and count-gated cursor
 stores directly in complete experimental A6FC C. Retain 678 words/frame 288;
