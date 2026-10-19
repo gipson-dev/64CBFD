@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools f1e8e57; tools are committed before the consumer pin.
+  checkpoint pins tools `63868c8`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,13 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor pair scheduler recovery, not installed**:
+[Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md).
+Complete experimental func_1508C5B8 passes eight focused semantic/native/owner
+tests, but emits256 words/frame208 versus retail261/frame192. Fired cut0
+exposes the private-frame difference. Continue this same function's homes and
+layout; production inputs and Game3014/4832,total3687/5505 remain unchanged.
 
 **Actor pair masks installed: all261 words byte-exact**:
 [Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md).

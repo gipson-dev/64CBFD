@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
+Recover complete experimental func_1508C5B8; eight focused tests qualify
+ranking/cursor semantics, native32/eight negatives and both owner profiles.
+256 words/frame208 still differs from retail261/frame192 at fired cut0.
+No production change or match credit; continue this same function's layout.
+
+2026-10-19:
 [Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
 Complete void func_1508C1A4 installed,261 words/frame168 exact. Real-local
 ordering recovers named endpoint/query homes;261 checked layout rows retain

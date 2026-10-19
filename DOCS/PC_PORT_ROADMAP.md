@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Pair Scheduler Recovery - 2026-10-19
+
+[Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
+
+- [x] Freeze the installed baseline, inspect all261 retail words and the direct caller, and reconstruct complete experimental func_1508C5B8 with corrected types, real scratch arrays, ranking quirk, unsigned cursors, live counts/context and64-attempt bound.
+- [x] Pass eight focused tests:83 fixtures/166 guest pairs,80 native32 fixtures at O0/O2/O3 with UBSan/eight effective negatives, both owner profiles/72 preserved neighbors and pools,12 actual null-actor child runs, and two fired negative-budget prefix stops. No production input changes or match credit.
+- [x] Record the fired cut0 boundary: selected256 words/frame208/241 differences versus retail261/frame192. Preserve the three new tools files and all1,411 older mirror hashes; keep root README unchanged.
+- [ ] Recover frame192 and real buffer/home lifetimes, then GP/FP/branch/copy layout. Qualify private/fault/alias/GNU/padder/Make and strict linked scope before installation; the original12-byte C stub remains.
+
 ## Actor Pair Mask Complete Match - 2026-10-19
 
 [Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
@@ -8,7 +17,7 @@
 - [x] Qualify261 expected-word rows:86 identity checks,171 changed retained rows, four omitted explicit count masks and four derived copy/ABI words. Preserve257 unique source origins, every arithmetic operation and all16 bindings; document the one likely-branch and one typed-DX-load opcode exception. Preserve72 neighbors/pools/all73 addresses with both raw profiles, actual padding and seven-command Make-shadow proof. Keep Makefile and the three normal overrides unchanged.
 - [x] Pass ten installed tests:430 fixtures/860 literal/private/public triples,902 fired cut pairs, native32 O0/O2/O3 with UBSan/nine negatives, raw/normalized actual helper and caller passes,36 triples/three independent GNU maps, four completed guest frame aliases/four effective old-home negatives,277 raw/binding stale controls, two recipe corruptions, two actual-padder stale controls and four image corruptions. Record258/261 executed words and retain the documented opaque-provider, NaN/FCSR and gameplay limits.
 - [x] Reproduce the strict829-byte production prediction:827 target-code bytes and two target st_size bytes only. Preserve all6,056 other bodies/extents, all6,057 addresses and189,088 protected Game-data bytes/720 owners. Fresh Game3014/4832,total3687/5505,1,818 different/zero drift; owner66/73 exact. Commit tools f1e8e57 first; preserve1,407 older mirror hashes. README aggregate rows only; no push or host/frozen Release operation.
-- [ ] Recover and match next func_1508C5B8,261 words/frame192, VA1508C5B8..1508C9CC, ROM B9A68..B9E7C, currently a12-byte C stub. Freeze this installed baseline and inspect its complete routine/callers before another qualified conversion. Six other owner nonmatches remain separate unfinished work.
+- [ ] Finish matching func_1508C5B8,261 words/frame192, VA1508C5B8..1508C9CC, ROM B9A68..B9E7C. Its semantic recovery and baseline audit are banked in Note1607 above; the12-byte production stub and six other owner nonmatches remain unfinished.
 
 ## Actor Pair Mask Recovery And Private Home Boundary - 2026-10-19
 

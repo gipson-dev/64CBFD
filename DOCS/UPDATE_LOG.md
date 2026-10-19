@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-19 Actor Pair Scheduler Recovery
+
+[Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
+Bank the complete experimental func_1508C5B8 and eight focused tests without
+installing. Preserve retail ranking quirks, byte cursors, live counts/context
+and the64-attempt boundary. Raw256/frame208 is not retail261/frame192;
+fired cut0 records the remaining frame mismatch. Production totals unchanged.
+
 ## 2026-10-19 Actor Pair Mask Complete Match
 
 [Note1606](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):

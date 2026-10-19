@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor pair scheduler recovery and frame boundary](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
+  complete experimental func_1508C5B8 passes eight focused tests, but its
+  256-word/frame208 raw layout still differs from retail261/frame192.
+  No installation or match credit; continue this function's private layout.
 - [Actor pair mask complete match](WORKING_NOTES/1606-actor-pair-mask-complete-match-20261019.md):
   complete void func_1508C1A4 installed,261 words/frame168 exact through
   direct C home recovery and261 checked layout rows. Ten installed tests,
