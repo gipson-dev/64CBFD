@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 23cce29; tools are committed before the consumer pin.
+  checkpoint pins tools 8361e6f; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor pair masks recovered; private matching remains open**:
+[Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md).
+Complete experimental void func_1508C1A4 improves258/frame184/257 differences
+to261/frame168/225 differences. Frame/RA/incoming/two flag homes emit directly;
+fired access13 still stores start-Z at SP80 instead of SP64. Eight tests pass:
+430 fixtures/860 public pairs, native32/UBSan/nine negatives, actual lookup/
+barrier/caller windows, GNU maps and both owner profiles/padder/Make shadow.
+Preserve separate low/high mask flags and the recovered15-argument query ABI.
+No production C/guard/profile/build/credit or root README change. Fresh
+Game3013/4832,total3686/5505,zero drift; owner65/73 exact. Continue this same
+function's scalar homes and GP/FP/scheduling. Tools8361e6f first; all1,404
+older mirror hashes preserved, no push or host/frozen Release work.
 
 **Mode context initializer installed: all247 words byte-exact**:
 [Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md).

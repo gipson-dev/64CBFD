@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Actor Pair Mask Recovery And Private Home Boundary
+
+[Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
+Recover complete experimental func_1508C1A4 with void/two-index interface,
+correct endpoint widths and15-argument collision query. Source screens recover
+261 words/frame168 but leave225 differences; fired access13 still puts start-Z
+at SP80 rather than SP64. Eight tests,430 fixtures, native32/UBSan/nine
+negatives, actual lookup/barrier/caller windows, GNU and real owner/Make pass.
+No production change or credit; fresh Game3013/4832,total3686/5505,zero drift,
+owner65/73 exact. Continue the same function; tools8361e6f precedes the pin.
+All1,404 older mirror hashes preserved; root README unchanged, no push.
+
 ## 2026-10-19 Mode Context Initializer Complete Match
 
 [Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):

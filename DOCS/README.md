@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor pair mask recovery and private-home boundary](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
+  complete experimental void func_1508C1A4 emits261 words/frame168 with225
+  differences. Eight semantic/native/helper/caller/GNU/owner tests pass, but
+  fired access13 still exposes start-Z's wrong private home. No production
+  change or matching credit; continue this same function.
 - [Mode context initializer complete match](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
   complete func_15089BC0 replaces its stub,247 words/frame40 exact. Two table
   binding rows, two requalified neighbor expected cells and one scoped normal

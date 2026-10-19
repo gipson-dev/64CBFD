@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-19:
+[Note1605](WORKING_NOTES/1605-actor-pair-mask-recovery-and-private-home-boundary-20261019.md):
+Recover complete experimental void func_1508C1A4 and its15-argument query ABI.
+Improve258/frame184/257 differences to261/frame168/225, preserving separate
+query-clear/low-mask flags, signed endpoint fields and live context writes.
+Eight tests pass across430 fixtures/860 public pairs, native32/UBSan/nine
+negatives, real lookup/barrier/caller windows, independent GNU maps and
+actual owner/padder/Make qualification. Fired access13 still writes start-Z
+at SP80 rather than SP64; continue this same function's private/FP/GP layout.
+No production change or matching credit; fresh Game3013/4832,total3686/5505,
+zero drift, owner65/73 exact. Tools8361e6f first; preserve1,404 older mirror
+hashes. Root README unchanged; no push or host/frozen Release operation.
+
+2026-10-19:
 [Note1604](WORKING_NOTES/1604-mode-context-initializer-complete-match-20261019.md):
 Complete func_15089BC0 replaces its stub,247 words/frame40 exact. Two checked
 switch-table binding rows and two requalified old neighbor expected cells
