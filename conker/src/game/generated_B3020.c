@@ -1698,8 +1698,77 @@ s32 func_15089BC0() {
     return 0;
 }
 
-s32 func_15089F9C() {
-    return 0;
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+extern f32 D_8009DA44;
+extern f32 D_8009DA48;
+extern f32 D_8009DA4C;
+extern f32 D_8009DA50;
+extern f32 D_8009DA54;
+extern f32 D_8009DA58;
+
+/* Select the first eligible actor with the greatest distance-weighted sine score. */
+s32 func_15089F9C(s32 slot) {
+    u8 *state = (u8 *)D_800D23B0;
+    s32 *states = (s32 *)(state + 0xE64);
+    u32 activeMask = *(u32 *)(state + 0x14);
+    s32 count = *(s32 *)(state + 0x10);
+    s32 selected = -1;
+    s32 slotOffset = slot * 4;
+    s32 i;
+    u32 bit;
+    u8 *actor;
+    u8 *sourceActor;
+    f32 minimum;
+    f32 maximum;
+    f32 best;
+    f32 factor;
+    f32 dx;
+    f32 dz;
+    f32 distance;
+    f32 score;
+    f32 phase;
+
+    if (*(s32 *)(state + slotOffset + 0x15C) == 0) {
+        minimum = D_8009DA44;
+        maximum = D_8009DA48;
+    } else {
+        minimum = D_8009DA4C;
+        maximum = 8000.0f;
+    }
+    best = D_8009DA50;
+    if (count > 0) {
+        phase = D_8009DA54;
+        i = 0;
+        do {
+            bit = 1U << i;
+            if ((states[i] != 3) && (activeMask & bit) &&
+                (*(u32 *)((u8 *)D_800D23B0 + slotOffset + 0x16C0) & (bit << 16))) {
+                factor = D_8009DA58 / (maximum - minimum);
+                actor = D_800CC2D0 + i * 0x32C;
+                if (actor != 0) {
+                    sourceActor = D_800CC2D0 + slot * 0x32C;
+                    dx = *(f32 *)(sourceActor + 0x14) - *(f32 *)(actor + 0x14);
+                    dz = *(f32 *)(sourceActor + 0x1C) - *(f32 *)(actor + 0x1C);
+                    distance = sqrtf(dx * dx + dz * dz);
+                } else {
+                    distance = 32000.0f;
+                }
+                if (maximum < distance) {
+                    distance = maximum;
+                }
+                if (distance < minimum) {
+                    distance = minimum;
+                }
+                score = sinf((distance - minimum) * factor + phase) + 1.0f;
+                if (best < score) {
+                    best = score;
+                    selected = i;
+                }
+            }
+        } while (++i < count);
+    }
+    return selected;
 }
 
 s32 func_1508A1BC() {

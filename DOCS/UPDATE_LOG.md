@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Actor Sine Selector Saved-Lifetime Match
+
+[Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
+Install complete semantic func_15089F9C, all136 words/frame112 exact. Explicit
+138-word guard coverage recovers the saved active mask, rematerialized
+coefficient, early/cached state cursor, incoming argument home and branch
+schedule. Eight installed tests include1,192 private cuts and an effective
+frame-only corruption negative. The strict619-byte image prediction matches;
+all6,056 other bodies, addresses and protected data stay fixed. Fresh Game3007/
+4832,total3680/5505,1,825 different/zero drift; owner59/73 exact. Tools3457d8d
+first. Next recover func_1508B9BC; the root README changes aggregate rows only.
+
 ## 2026-10-19 Actor Sine Selector Recovery And Frame Boundary
 
 [Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 0df9f7e; tools are committed before the consumer pin.
+  checkpoint pins tools 3457d8d; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Sine-weighted actor selector recovered; frame matching remains open**:
+**Sine-weighted actor selector installed: all 136 words byte-exact**:
+[Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md).
+Complete func_15089F9C now occupies its original 544-byte slot/frame112.
+The raw C still emits138 words/frame128;138 explicit expected-word guards
+normalize the proven saved-mask/coefficient/cursor lifetimes, not merely the
+frame immediate. Eight installed tests pass, including1,192 fired private cuts,
+the actual sine, native32/UBSan, returning caller, four GNU maps and effective
+stale/image controls. The619-byte production-image prediction is exact; all
+6,056 other bodies, every address and protected Game data remain unchanged.
+Fresh Game3007/4832,total3680/5505,1,825 different/zero drift. Tools3457d8d
+first; README aggregate rows only. Owner59/73 exact,14 nonmatches remain.
+Next recover func_1508B9BC,153 words/frame96, preserving pre-helper caches
+versus the reloaded context, weighted strict-minimum selection and distance.
+
+**Earlier sine-selector recovery (superseded by Note1595)**:
 [Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md).
 Complete experimental func_15089F9C passes nine tests across105 public/native
 fixtures, actual sine, callback caches, caller and GNU rebases. Its138 words/

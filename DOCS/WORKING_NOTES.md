@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-19:
+[Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
+Install complete func_15089F9C:136 words/frame112 exact after138 explicit
+saved-lifetime guards. Eight installed tests pass, including1,192 fired cuts,
+actual sine/caller, native32/UBSan, four GNU maps and the rejected frame-only
+caller-corruption negative. Strict619-byte image prediction preserves every
+other body/address and Game data. Game3007/4832,total3680/5505,1,825 different/
+zero drift; owner59/73 exact. Tools3457d8d first; README aggregates only.
+Next recover153-word/frame96 func_1508B9BC's weighted target selection.
+
+2026-10-19:
 [Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
 Complete func_15089F9C semantic recovery, nine tests and105 public/native
 fixtures with actual sine, caching mutations, caller and GNU rebases. Frame

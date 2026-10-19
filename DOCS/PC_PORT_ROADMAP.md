@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Sine-Weighted Actor Selector Complete Match - 2026-10-19
+
+[Note 1595](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
+
+- [x] Install complete semantic func_15089F9C with explicit slot parameter. Normalize the closed mask/coefficient/cursor lifetimes through138 expected-word guards:135 retained source words, three dead words removed, one cursor move inserted, all19 bindings retained,136 retail words/frame112 exact. No literal pools or Makefile changes.
+- [x] Pass eight installed tests:210 completed triples,1,192 fired private access-cut pairs,88 connected actual-sine pairs, native32 O0/O2/UBSan and six semantic negatives,30 actual returning-caller runs,36 rebased pairs across four GNU maps including actor base zero, full-body stale controls and an effective frame-only caller-corruption negative.
+- [x] Reproduce the complete619-byte image prediction:433 code bytes, two size bytes and184 bounded symbol-serialization bytes. Preserve all6,056 other bodies, all addresses and protected Game data. Fresh Game3007/4832,total3680/5505,1,825 different/zero drift; owner59/73 exact. Tools3457d8d first; README aggregates only. Preserve unrelated standalone mirror work.
+- [ ] Recover func_1508B9BC,153 words/frame96, ROM B8E6C..B90D0. Audit cached context/count/tables across func_1508C5B8 and func_1508A1BC, the16-entry sentinel search, unsigned weight conversion, optional current-target multiplier, strict minimum, target publication and truncated X/Z distance.
+
 ## Sine-Weighted Actor Selector Recovery - 2026-10-19
 
 [Note 1594](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover complete experimental func_15089F9C: flag-dependent ranges, cached count/active mask/state rows/phase, fresh eligibility and coefficient reads, clamped X/Z distance, actual Game sine and first strict-best result. Freeze helper code and supplying data.
 - [x] Pass nine tests:105 fixtures/two phases, native32 O0/O2/UBSan and six effective negatives,88 actual-sine pairs, null-actor and NaN provider cases,20 returning-caller runs,27 rebased pairs across three GNU maps, owner isolation and the fired negative private-store boundary. Actual production sine is104 words exact;15 Game-data constant words are verified.
 - [x] Bank the actual boundary:138 words/frame128 versus136/frame112,77 differences, first RA store16 bytes off and eight-byte slot overflow rejected by the real padder. Retaining only the old target in a private pad preserves all73 baseline bodies; no installation or new guards. Tools0df9f7e first; preserve1,363 older mirror hashes. Fresh totals and README remain unchanged.
-- [ ] Finish coefficient-storage and saved GP/FP lifetime recovery, qualify private prefixes/literal pools, fit the actual136-word slot and predict the complete image before installation. Do not replace source recovery with a frame patch or dummy uses.
+- [x] Finish and qualify the closed saved-lifetime normalization in Note1595 above, including private prefixes, actual slot fit and the strict complete image. A frame-only patch is an effective rejected negative; no dummy uses, volatile declarations or physical-register C bindings were introduced.
 
 ## Actor Target Timer Complete Match - 2026-10-19
 

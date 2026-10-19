@@ -56,10 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Actor sine selector saved-lifetime match](WORKING_NOTES/1595-actor-sine-selector-saved-lifetime-match-20261019.md):
+  complete C installed;136 words/frame112 exact through138 checked lifetime
+  guards. Eight installed tests,1,192 private cuts, actual sine/caller,
+  independent GNU maps and the strict619-byte image prediction pass.
 - [Actor sine selector recovery and frame boundary](WORKING_NOTES/1594-actor-sine-selector-semantic-recovery-and-frame-boundary-20261019.md):
   complete experimental C and nine qualification tests;138 words/frame128,
   77 differences, fired private-frame mismatch and rejected slot overflow.
-  No installation or matching credit; continue saved/literal lifetimes.
+  Historical pre-installation boundary, superseded by Note1595 above.
 - [Actor target timer complete match](WORKING_NOTES/1593-actor-target-timer-complete-match-20261019.md):
   all115 words/frame80 exact through60 checked lifetime/CSE/edge-load guards,
   explicit retail script-result qualification, eleven installed tests and a

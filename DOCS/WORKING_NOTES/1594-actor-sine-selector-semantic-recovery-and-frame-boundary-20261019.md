@@ -1,5 +1,10 @@
 # Actor Sine Selector Recovery And Frame Boundary
 
+Historical pre-installation checkpoint. Superseded by the complete, qualified
+[saved-lifetime match in Note1595](1595-actor-sine-selector-saved-lifetime-match-20261019.md).
+The raw compiler boundary below remains real; the later note proves the
+complete normalization and rejects a frame-only patch.
+
 Verified: 2026-10-19. **Complete experimental C recovery, not installed and not
 byte-exact.** Continue func_15089F9C, generated_B3020, VA15089F9C..1508A1BC,
 ROM B744C..B766C, retail136 words /544 bytes, frame112. Consumer predecessor
