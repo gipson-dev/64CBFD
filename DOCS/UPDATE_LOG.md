@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Zone Selection Query And Scalar Homes
+
+[Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
+Recover four real private homes for complete experimental `func_1508B3F8`,
+369 words/frame 320/277 raw differences. Fourteen tests and independent
+owner/padder qualification pass in both tools copies. Eight old-home aliases
+are effective negatives; the 18th-store/register boundary remains open.
+Tools `743f234` first; production C/guards/ELF/README and totals unchanged.
+Continue the same function without claiming an installed match.
+
 ## 2026-10-19 Neighbor Row Builder Complete Match
 
 [Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):

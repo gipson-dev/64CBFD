@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7899ba5`; tools are committed before the consumer pin.
+  checkpoint pins tools `743f234`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Zone-selection query and scalar homes recovered experimentally**:
+[Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md).
+`func_1508B3F8`'s complete candidate retains 369 words/frame 320 and recovers
+query +0xAC, selections +0x124, zone +0x94 and counter +0x13C through existing
+declarations only. Raw differences fall 282 to 277; 14 tests pass in both
+tools copies, including eight effective old-home alias negatives. The opening
+store-order/retained-register boundary remains open, so no production install
+or matching credit. Continue this same function; README and totals unchanged.
 
 **Neighbor row builder installed: all 336 words byte-exact**:
 [Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md).

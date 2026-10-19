@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
+Recover query and three scalar homes in experimental `func_1508B3F8`,
+369 words/frame 320/277 raw differences, with no production change or credit.
+Fourteen tests and owner/padding checks pass in both tools copies; eight
+old-home aliases reject the predecessor. Continue its measured opening
+store-order and saved-register boundary. Tools `743f234` first.
+
+2026-10-19:
 [Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):
 Install complete `func_1508A1BC`, 336 words/frame 168 exact with checked source
 origins. Ten installed tests and a strict 1,066-byte image prediction preserve

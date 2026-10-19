@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Zone Selection Query And Scalar Homes - 2026-10-19
+
+[Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
+
+- [x] Reproduce the installed 369-word/frame 320/282-raw-difference body and screen 32 source forms without changing production C, guards, ABI or compiler flags.
+- [x] Recover query SP+0xAC, selections +0x124, zone +0x94 and counter +0x13C through a closed permutation of real declarations. The complete candidate stays 369 words/frame 320 with 277 raw differences; no dummy storage or matching credit.
+- [x] Pass 14 tests in both tools copies: 2,990 four-way guest cases, all parent/visitor words, 1,424 native fixtures at three optimization levels with UBSan, a fired sanitizer control, 16 guest alias runs/eight effective old-home negatives and three semantic negatives.
+- [x] Independently qualify both owner profiles and actual padding in primary/mirror, preserving 72 neighbors, all 73 addresses/extents, pools and relocation bindings. Commit tools `743f234` first and preserve all 1,427 older mirror hashes. Keep all 19 pinned production inputs and the README unchanged.
+- [ ] Continue the same `func_1508B3F8`: close the 18th-store order, query/visited/255 saved roles, global-address lifetimes, byte-winner and cursor scheduling. Complete private/fault/alias, Make and strict full-image gates before any installation or exact-match credit.
+
 ## Neighbor Row Builder Complete Match - 2026-10-19
 
 [Note 1612](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):

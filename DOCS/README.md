@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Zone-selection query and scalar homes](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
+  experimental `func_1508B3F8` retains 369 words/frame 320 and recovers four
+  retail homes; 277 raw differences, 14 tests in both copies. Continue the
+  measured store-order/register boundary; no production install or credit.
 - [Neighbor row builder complete match](WORKING_NOTES/1612-neighbor-row-builder-complete-match-20261019.md):
   complete `func_1508A1BC` installed, 336 words/frame 168 exact; ten installed
   tests and strict full-image proof preserve other bodies/addresses/data.
