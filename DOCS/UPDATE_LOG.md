@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-10-19 Actor Pair Scheduler Frame And Buffer Homes
+
+[Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
+Direct C lifetimes/declaration order recover frame192, SP7C/80/90 and saved
+FP actor lifetime. Ten tests pass, including complete RAM, fired initial cuts
+and effective frame aliases. Access15 still exposes A2/V1 allocation; raw255
+words/238 differences remains uninstalled, with production totals unchanged.
+
 ## 2026-10-19 Actor Pair Scheduler Recovery
 
 [Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
+Recover func_1508C5B8's frame192, real7C/80/90 homes and saved FP actor lifetime
+directly from C. Ten tests pass, including166 complete-RAM pairs,30 literal
+cuts and four effective frame aliases. Raw255 words/238 differences is not
+installed; continue the measured access15 allocation boundary. Totals unchanged.
+
+2026-10-19:
 [Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
 Recover complete experimental func_1508C5B8; eight focused tests qualify
 ranking/cursor semantics, native32/eight negatives and both owner profiles.

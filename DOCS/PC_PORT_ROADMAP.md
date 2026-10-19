@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Pair Scheduler Frame And Buffer Homes - 2026-10-19
+
+[Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
+
+- [x] Recover retail frame192, group/cost/choice homes7C/80/90, incoming C0/C4, saved FP actor lifetime and actual first-call mask-clear delay slot from real C lifetimes and declaration order. No dummy storage, frame patch or new profile.
+- [x] Pass ten focused tests:83 fixtures/166 complete-RAM pairs,80 native32 fixtures/three UBSan profiles/eight negatives,30 fired literal initial-cut pairs, four completed guest frame aliases/four effective old-home negatives, both owner profiles/72 preserved neighbors and12 actual NULL-actor child runs.
+- [x] Preserve frozen production inputs and record the remaining access15 A2/V1 allocation boundary. Raw255 words/frame192/238 differences is not a completed match; keep aggregate totals and root README unchanged.
+- [ ] Recover the complete GP/FP/copy/loop/scheduling layout and qualify source origins, relocations, literal state/faults, aliases, GNU, actual padding/Make and strict linked scope before installing all261 words. Continue this function, not another broad batch.
+
 ## Actor Pair Scheduler Recovery - 2026-10-19
 
 [Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
@@ -7,7 +16,8 @@
 - [x] Freeze the installed baseline, inspect all261 retail words and the direct caller, and reconstruct complete experimental func_1508C5B8 with corrected types, real scratch arrays, ranking quirk, unsigned cursors, live counts/context and64-attempt bound.
 - [x] Pass eight focused tests:83 fixtures/166 guest pairs,80 native32 fixtures at O0/O2/O3 with UBSan/eight effective negatives, both owner profiles/72 preserved neighbors and pools,12 actual null-actor child runs, and two fired negative-budget prefix stops. No production input changes or match credit.
 - [x] Record the fired cut0 boundary: selected256 words/frame208/241 differences versus retail261/frame192. Preserve the three new tools files and all1,411 older mirror hashes; keep root README unchanged.
-- [ ] Recover frame192 and real buffer/home lifetimes, then GP/FP/branch/copy layout. Qualify private/fault/alias/GNU/padder/Make and strict linked scope before installation; the original12-byte C stub remains.
+- [x] Recover frame192, real7C/80/90 homes and saved actor lifetime in Note1608 above. Close the original cut0 frame boundary with30 fired initial literal-cut pairs and four effective aliases.
+- [ ] Finish GP/FP/branch/copy layout and complete matching qualification in Note1608 above; the original12-byte C stub remains.
 
 ## Actor Pair Mask Complete Match - 2026-10-19
 

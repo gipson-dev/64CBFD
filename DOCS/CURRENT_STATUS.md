@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `63868c8`; tools are committed before the consumer pin.
+  checkpoint pins tools `ed38dd5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor pair scheduler recovery, not installed**:
+**Actor pair scheduler frame and homes recovered, not installed**:
+[Note1608](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md).
+Complete experimental func_1508C5B8 now emits frame192 and retail7C/80/90
+homes directly, with FP's saved actor lifetime. Ten tests pass, including166
+complete-RAM pairs,30 fired literal cuts and four effective frame aliases.
+Raw255 words/238 differences remains unmatched; continue access15's A2/V1
+allocation boundary. Production inputs and aggregate matching totals stay fixed.
+
+**Earlier actor pair scheduler recovery (superseded by Note1608)**:
 [Note1607](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md).
 Complete experimental func_1508C5B8 passes eight focused semantic/native/owner
 tests, but emits256 words/frame208 versus retail261/frame192. Fired cut0

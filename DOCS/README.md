@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor pair scheduler frame and buffer homes](WORKING_NOTES/1608-actor-pair-scheduler-frame-and-buffer-homes-20261019.md):
+  direct C frame192, real buffer homes and saved actor lifetime; ten tests,
+  complete RAM and effective aliases pass. Continue register/schedule matching
+  from access15; no production installation or matching credit yet.
 - [Actor pair scheduler recovery and frame boundary](WORKING_NOTES/1607-actor-pair-scheduler-recovery-and-frame-boundary-20261019.md):
   complete experimental func_1508C5B8 passes eight focused tests, but its
   256-word/frame208 raw layout still differs from retail261/frame192.
