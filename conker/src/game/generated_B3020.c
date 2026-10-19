@@ -2093,8 +2093,35 @@ void func_1508EC5C(s32 arg0, s32 arg1) {
     func_1509BFB0(1, temp_v0 | 0x2000, 0x61, arg1);
 }
 
-s32 func_1508ECC0() {
-    return 0;
+typedef struct {
+    u16 unk0;
+    u16 count;
+    u32 unk4;
+    u16 entries[8];
+} PackedPeerRow;
+/* Find a different group entry in the first row containing the packed key. */
+s32 func_1508ECC0(u32 group, u32 value, u16 peerGroup) {
+    u32 rowIndex;
+    u32 keyIndex;
+    u32 peerIndex;
+    u16 key;
+
+    group = (u16)group;
+    value = (u16)value;
+    for (rowIndex = 0; rowIndex < D_80087380; rowIndex++) {
+        for (keyIndex = 0; keyIndex < ((PackedPeerRow *)D_800D23C0)[rowIndex].count; keyIndex++) {
+            key = (group << 12) + value;
+            if (((PackedPeerRow *)D_800D23C0)[rowIndex].entries[keyIndex] == key) {
+                for (peerIndex = 0; peerIndex < ((PackedPeerRow *)D_800D23C0)[rowIndex].count; peerIndex++) {
+                    if ((((PackedPeerRow *)D_800D23C0)[rowIndex].entries[peerIndex] >> 12) == peerGroup && peerIndex != keyIndex) {
+                        return ((PackedPeerRow *)D_800D23C0)[rowIndex].entries[peerIndex] & 0xFFF;
+                    }
+                }
+                return -1;
+            }
+        }
+    }
+    return -1;
 }
 
 void func_1508EDBC(u32 arg0) {

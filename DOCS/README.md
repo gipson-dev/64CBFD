@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Packed-entry peer lookup complete match](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
+  complete 63-word lookup with checked argument homes/layout, ten installed
+  tests and an exact 207-byte target-only production-image prediction.
 - [Slot-state transfer complete match](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
   complete 189-word C recovery with checked layout, eleven installed tests and
   an exact 595-byte target-only production-image prediction.

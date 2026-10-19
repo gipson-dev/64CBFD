@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Packed-Entry Peer Lookup Complete Match
+
+[Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
+Restore complete func_1508ECC0, all 63 words/frame8 exact through 60 checked
+source rows and three derived stream insertions. Ten installed tests pass:
+3,656 literal pairs, native32/UBSan, fired cuts, mapped globals and synthetic
+full-word ABI windows. Production equals the 207-byte target-only prediction;
+all other bodies/addresses/data stay fixed. Game3000/4832 (62.09%), total3673/5505
+(66.72%), 1,832 different/zero drift. Tools825aaa5 first; README aggregate rows
+only. Continue with func_1508EE0C, preserving its two alignment words.
+
 ## 2026-10-19 Slot-State Transfer Complete Match
 
 [Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):

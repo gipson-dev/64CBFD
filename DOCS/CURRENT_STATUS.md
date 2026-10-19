@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 63f4733; tools are committed before the consumer pin.
+  checkpoint pins tools 825aaa5; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Packed-entry peer lookup restored and byte-exact: all 63 words**:
+[Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md).
+Install complete func_1508ECC0 with unsigned views, first-row behavior and
+distinct-index peer selection. Sixty checked source rows encode the original
+63-word/frame8 layout. Ten installed tests pass, including 3,656 literal pairs,
+native32/UBSan, fired cuts, mapped globals and synthetic full-word ABI windows.
+Actual Make reproduces the exact 207-byte target-only image prediction; all
+other bodies/addresses/data stay fixed. Fresh Game **3000/4832 (62.09%)**, total
+**3673/5505 (66.72%)**, **1,832 different / zero drift**. Tools **825aaa5** first;
+README aggregate rows only. Skip exact func_1508EDBC and audit func_1508EE0C's
+91 instructions/two alignment words and actual return interface next.
 
 **Slot-state transfer restored and byte-exact: all 189 words**:
 [Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md).

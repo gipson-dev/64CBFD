@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Packed-Entry Peer Lookup Complete Match - 2026-10-19
+
+[Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
+
+- [x] Recover complete func_1508ECC0, including unsigned input/count views, truncated key addition, first matching row, distinct-index peer selection, low12 result and early -1. Restore all 63 words/frame8 with 60 checked source rows, three derived stream insertions and no omitted source origin.
+- [x] Pass ten installed tests: 1,828 fixtures/two phases, 3,656 literal pairs, independent raw-C public checks, all halfword input views in native32 O0/O2/UBSan, four effective source negatives, fired cuts/aliases/width prefixes, 46 synthetic ABI pairs and 486 executed code/global/row-rebased cases across three GNU maps. No actual direct caller is claimed.
+- [x] Install and reproduce the first/production image exactly: 206 target bytes and one size byte change. Preserve all other 6,056 bodies, every address, protected Game data and historical guards. Fresh Game3000/4832, total3673/5505, 1,832 different/zero drift. Bank tools825aaa5 first; README aggregate rows only.
+- [ ] Continue broader Game work from func_1508EE0C: 91 instructions plus two alignment NOPs, frame0x30, 89 slot differences. Recover packed-row dispatch, helper mutation/reloads, final clear and actual return interface. The intervening 20-word func_1508EDBC already matches.
+
 ## Slot-State Transfer Complete Match - 2026-10-19
 
 [Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Finish the complete func_1508E89C C recovery, retaining all 189 source words/frame0x50. Specify register roles, ten home references, independent schedules and four equivalent computed-address checks through 100 expected-word/relocation guards. No insertions, omissions, dummy padding or shared build changes.
 - [x] Pass eleven installed tests: 1,900 literal guest state pairs, 844 fired access cuts, native32 O0/O2/UBSan, effective source/layout/manifest/image negatives, 16 actual caller windows, three independent GNU maps and both owner profiles with 72 neighbors/pools fixed.
 - [x] Install and reproduce the first/production image exactly: 593 target bytes and two size bytes change, with no symbol-order exception. Preserve all other 6,056 bodies, every address, protected Game data and historical guards. Fresh Game2999/4832, total3672/5505, 1,833 different/zero drift. Bank tools63f4733 first; README aggregate rows only.
-- [ ] Continue broader Game matching from the 63-word/frame8 func_1508ECC0 stub. Recover unsigned-halfword inputs, packed-key addition, unsigned row/entry loops, second-entry exclusion and early -1; qualify S0/argument homes and actual callers. The intervening three wrappers already match.
+- [x] Finish the 63-word/frame8 func_1508ECC0 lookup and its entry ABI in Note1585 above. No named direct caller was found; synthetic windows are explicitly separated from retail caller evidence. Broader Game work continues there.
 
 ## Slot-State Transfer Recovery And Matching Boundary - 2026-10-19
 

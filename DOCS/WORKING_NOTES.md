@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1585](WORKING_NOTES/1585-packed-entry-peer-lookup-complete-match-20261019.md):
+Install complete func_1508ECC0, 63 exact words/frame8 with checked parameter
+homes, early return and allocation. Ten installed tests and the exact 207-byte
+image audit pass; all other bodies/addresses/data stay fixed. Game3000/4832,
+total3673/5505, 1,832 different/zero drift. Tools825aaa5 first; preserve all1,323
+prior mirror hashes. Next audit func_1508EE0C's 91 instructions/two tail NOPs.
+
+2026-10-19:
 [Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
 Install complete func_1508E89C, 189 exact words/frame80 with 100 checked layout
 guards. Eleven installed tests and the exact 595-byte production-image audit
