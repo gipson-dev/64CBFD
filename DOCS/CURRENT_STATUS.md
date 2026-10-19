@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `faa4dfb`; tools are committed before the consumer pin.
+  checkpoint pins tools `5b33fbe`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Neighbor row builder recovered; exact layout still open**:
+[Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md).
+Complete experimental func_1508A1BC passes ten focused tests/353 fixtures,
+native32/UBSan, original helper, owner and GNU checks in both tools copies.
+Best screened330 words/frame176 still differs from retail336/frame168 and
+ordered stores. Production remains unchanged; no new matching credit.
+Continue this same function's private homes/layout before installation.
 
 **Actor pair scheduler installed: all261 words byte-exact**:
 [Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md).

@@ -1,6 +1,13 @@
 # Working Notes
 
 2026-10-19:
+[Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
+Recover complete experimental func_1508A1BC; ten tests/353 fixtures, native32,
+original field-query helper, both owner profiles and GNU maps pass in both
+tools copies. Best330/frame176 is not retail336/frame168; ordered/private
+layout remains open. Production and matching totals stay unchanged.
+
+2026-10-19:
 [Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
 Install complete func_1508C5B8,261 words/frame192 exact with checked layout
 guards. Preserve all other bodies/addresses/data under a strict854-byte image

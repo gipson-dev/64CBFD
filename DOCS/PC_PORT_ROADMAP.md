@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Neighbor Row Builder Recovery - 2026-10-19
+
+[Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
+
+- [x] Recover complete experimental func_1508A1BC from all336 retail words and the direct caller, retaining signed cursor/equality wrap, captured tables/count/group/masks, live callback inputs, ranked ties, uncapped rows and unweighted minimum.
+- [x] Pass ten focused tests/353 fixtures in both tools copies:2,106 completed guest runs,12 fired divide traps,99 native32 fixtures/three UBSan profiles/effective negatives, original helper/table, both owner profiles/72 preserved neighbors and27 runs on three GNU maps.
+- [x] Bank tools5b33fbe before the consumer pin; preserve all1,419 older mirror hashes and every production input. Root README and installed totals stay unchanged; no new matching credit.
+- [x] Record the remaining private/order boundary and correct the unsafe equality-only byte-fill experiment with the effective26-actor negative. Best screened330 words/frame176 still differs from retail336/frame168.
+- [ ] Recover this same function's frame168/private homes and complete register/unroll/branch-delay/ordered-store matching. Keep the initial no-unroll candidate as the ordered semantic baseline.
+- [ ] Pass literal/private/access/alias, actual padder/Make and strict linked-image gates, then install/rebuild/audit and refresh README aggregates. The production12-byte stub remains until these gates pass.
+
 ## Actor Pair Scheduler Complete Match - 2026-10-19
 
 [Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
@@ -8,7 +19,7 @@
 - [x] Match all261 words/frame192 with255 expected-word rows,249 retained origins,12 derived forms, five omitted redundant shift masks, one omitted first-index mirror and24 output bindings. Preserve every prior guard byte and the original compiler-profile selections.
 - [x] Pass literal/private/public/native/alias/GNU/Make qualification, including1,608 fired private-cut pairs and effective semantic/stale-input/image negatives. Reproduce the strict854-byte full-image prediction; preserve all6,056 other bodies, all6,057 addresses and189,088 protected Game-data bytes.
 - [x] Measure fresh Game3015/4832,total3688/5505,1,817 different/zero drift; owner67/73 exact. Update root README aggregates only and keep the wider Game goal open.
-- [ ] Recover next func_1508A1BC,336 words/frame168, VA1508A1BC..1508A6FC, ROM B766C..B7BAC, still a12-byte C stub. Freeze this installed baseline before another qualified conversion; five other owner nonmatches remain separate work.
+- [x] Recover the complete experimental func_1508A1BC and freeze this installed baseline in Note1610 above. Its exact private/order layout and production installation remain unchecked there; five other owner nonmatches stay separate work.
 
 ## Actor Pair Scheduler Frame And Buffer Homes - 2026-10-19
 

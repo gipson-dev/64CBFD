@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Neighbor row builder recovery](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
+  complete experimental func_1508A1BC, ten focused tests/353 fixtures in both
+  tools copies; best330 words/frame176 still needs ordered/private layout.
+  No production installation or matching credit; continue this function.
 - [Actor pair scheduler complete match](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
   complete func_1508C5B8 installed,261 words/frame192 exact through checked
   source origins and literal/private/GNU/Make/image qualification. All other

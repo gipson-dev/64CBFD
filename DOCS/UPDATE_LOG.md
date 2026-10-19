@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Neighbor Row Builder Recovery
+
+[Note1610](WORKING_NOTES/1610-neighbor-row-builder-recovery-and-private-boundary-20261019.md):
+Recover complete experimental func_1508A1BC and qualify353 fixtures through
+ten tests in both tools copies, native32/UBSan/effective negatives, original
+field-query helper, both owner profiles and independent GNU maps. Best330
+words/frame176 still differs from retail336/frame168 and ordered stores.
+Bank tools5b33fbe first; production and README remain unchanged. Continue
+this same function's private homes/layout, without claiming another match.
+
 ## 2026-10-19 Actor Pair Scheduler Complete Match
 
 [Note1609](WORKING_NOTES/1609-actor-pair-scheduler-complete-match-20261019.md):
