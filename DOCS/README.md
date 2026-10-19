@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor state tick direct draw homes](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
+  complete experimental C retains 678 words/frame 288, recovers nineteen homes
+  and reduces raw differences 600 to 344. Thirteen tests pass in both copies;
+  remaining frame/cached-timer/schedule gates stay open. No installation or credit.
 - [Actor state tick spill ownership](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
   experimental post-compile cursor/call-save mappings and cached timer row;
   nine tests pass in both copies, 56 effective aliases. Draw-index/private

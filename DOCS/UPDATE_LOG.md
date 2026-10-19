@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Actor State Tick Direct Draw Homes
+
+[Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
+Complete experimental A6FC C recovers nineteen homes, the draw-index/action
+save pairs, empty-count store gating and sampled main saved roles. Shape stays
+678 words/frame 288; raw differences fall 600 to 344, without a transform.
+Thirteen tests pass in both copies, including 38 effective home aliases and
+fresh native32/owner checks. Tools `cdcece5` first. Remaining frame/cache/schedule
+gates prevent installation; production, README and totals remain unchanged.
+
 ## 2026-10-19 Actor State Tick Spill Ownership
 
 [Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):

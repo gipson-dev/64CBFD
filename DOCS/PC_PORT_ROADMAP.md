@@ -1,12 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Actor State Tick Direct Draw Homes - 2026-10-19
+
+[Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
+
+- [x] Recover the draw-index SP+A0 and actor-action SP+104 saves directly from C, retaining nineteen named homes and 39 real locals. Recover eager opening addresses with positive-count-only cursor stores and the sampled main saved-register roles. No transform or new compiler profile.
+- [x] Retain 678 words/frame 288 and reduce raw differences 600 to 344. Pass thirteen tests in both copies: 262 ordered-read fixtures, 38 effective home aliases, four predecessor negatives, twelve word-action aliases, four empty-count/private-store pairs, fresh native32/UBSan and both owner profiles/72 neighbors. Tools `cdcece5` first; preserve all 1,442 older mirror hashes.
+- [ ] Recover remaining cursor/row homes and cached timer readback, then whole-function roles and instruction scheduling. Two fired timer-table aliases still demonstrate a real open boundary; sampled saved-register agreement is not whole-function closure.
+- [ ] Complete private/fault/alias/instruction and independent original-assembly/GNU gates, then actual padding/Make/strict image and installed-state qualification before installation/recount. Production, README totals and the wider Game goal stay unchanged until qualified.
+
 ## Actor State Tick Spill Ownership - 2026-10-19
 
 [Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
 
 - [x] Qualify an explicitly experimental post-compile mapping for eleven cursor/call-save slots while retaining seventeen existing homes, frame 288, 678 words, every memory origin and all 62 relocation entries. Preserve branch targets and delay-slot adjacency.
 - [x] Pass nine tests in both copies: 262 three-way public-observation fixtures, 56 effective guest aliases, 22 old-layout negatives and two cached-timer controls. Demonstrate the missing draw-index spill and extra zero-count private stores instead of claiming closure. Tools `8a650a3` first; preserve all 1,440 older mirror hashes.
-- [ ] Recover the missing draw-index accesses and count-branch private-store schedule, then lifetime-scoped saved-register roles and complete scheduling. The partial transform still has 600 real differences; it is not a production recipe or direct C home recovery.
+- [x] Recover the missing draw-index accesses and nonpositive-count cursor-store gating directly from C in Note 1619 above. Its sampled main saved-register roles also agree; this does not establish whole-function scheduling.
+- [ ] Finish remaining frame homes and whole-function roles/scheduling from Note 1619's new source. The older partial transform is not a production recipe and its fingerprints must not be applied to the new raw body.
 - [ ] Close remaining private/fault/alias/instruction and independent GNU original-assembly gates, then actual padding/Make/strict image, installation and recount. Keep production, root README totals and the wider Game goal unchanged until qualified.
 
 ## Actor State Tick Homes And Ordered Reads - 2026-10-19

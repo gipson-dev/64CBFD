@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1619](WORKING_NOTES/1619-actor-state-tick-direct-draw-homes-and-cursor-lifetimes-20261019.md):
+Recover nineteen homes, actual draw-index/action saves and count-gated cursor
+stores directly in complete experimental A6FC C. Retain 678 words/frame 288;
+raw differences fall 600 to 344. Thirteen tests pass in both copies, including
+fresh native32 and owner checks. Tools `cdcece5` first. Continue remaining frame
+slots/cached timer/scheduling; no installation, README change or new credit.
+
+2026-10-19:
 [Note 1618](WORKING_NOTES/1618-actor-state-tick-spill-ownership-and-cached-timer-20261019.md):
 Qualify eleven cursor/call-save mappings and cached timer ownership in an
 experimental post-compile A6FC transform. Nine tests pass in both copies:
