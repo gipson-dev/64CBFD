@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 5829d1a; tools are committed before the consumer pin.
+  checkpoint pins tools 3923525; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Barrier crossing audit; matching still open**:
+**Barrier crossing installed: all207 words byte-exact**:
+[Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md).
+Complete func_15086D94 matches828 bytes/frame144. Minimum/fraction homes50/54
+emit directly from C;207 checked guards recover only FP/copy/schedule details,
+retaining206 origins/all five bindings and preserving the last-crossing quirk.
+Ten installed tests pass:105 fixtures/210 triples,738 fired cuts, native32/
+UBSan and nine negatives, actual helper/caller, GNU maps, aliases and Make.
+Strict251-byte code-only image prediction preserves every other body/address/
+extent/metadata/data byte. Fresh Game3012/4832,total3685/5505,1,820 different/
+zero drift; owner64/73 exact, nine remain. README aggregate rows only. Next
+func_15089BC0,247 words/frame40, a C stub. Tools3923525 first; all1,395 older
+mirror hashes are preserved.
+
+**Earlier barrier crossing audit (superseded by Note1603)**:
 [Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md).
 Existing func_15086D94 emits207 words/frame128/102 differences; retail uses
 frame144. Experimental assignment lifetimes recover207/frame144/68 differences,

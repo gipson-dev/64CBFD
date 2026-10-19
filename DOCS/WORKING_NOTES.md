@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-19:
+[Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
+Complete func_15086D94 installed,207 words/frame144 exact. Scalar homes50/54
+emit from C;207 checked guards retain206 source origins/all five bindings,
+omit one redundant copy and derive the tangent copy/FP schedule. Ten installed
+tests pass across105 fixtures/210 triples,738 fired cuts, nine native negatives,
+actual helper/caller/GNU/alias/Make checks. Strict251-byte code-only prediction
+preserves all other bodies/addresses/extents/metadata/data. Fresh Game3012/4832,
+total3685/5505,zero drift; owner64/73 exact. Next func_15089BC0,247-word C stub.
+Tools3923525 first; README aggregate rows only.
+
+2026-10-19:
 [Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
 Audit existing func_15086D94:207/frame128/102 differences versus retail207/frame144.
 Selected experimental lifetimes emit207/frame144/68 differences. Seven tests

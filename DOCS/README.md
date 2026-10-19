@@ -56,8 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Barrier crossing complete match](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
+  complete func_15086D94 installed,207 words/frame144 exact with C-recovered
+  scalar homes and207 checked FP/copy/schedule guards. Ten installed tests,
+  738 fired cuts and a strict251-byte code-only image prediction pass; all
+  neighbors, addresses, extents, metadata and protected data remain unchanged.
 - [Barrier crossing audit and matching boundary](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):
-  existing func_15086D94 improves experimentally to207 words/frame144/68
+  earlier func_15086D94 checkpoint improves experimentally to207 words/frame144/68
   differences; seven semantic/ABI/helper/owner tests pass, but fired cut12
   still exposes the minimum's wrong private home. No production change or
   matching credit; continue this same function, retaining its last-crossing quirk.

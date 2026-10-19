@@ -310,6 +310,7 @@ s32 func_15086D48(s32 arg0) {
     return 0xFF;
 }
 
+/* Measure horizontal node-edge crossings, retaining the last crossing fraction. */
 f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
     s32 band;
     s32 count;
@@ -320,17 +321,17 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
     u8 *first;
     u8 *second;
     u8 *cursor;
-    f32 minimum;
-    f32 fraction;
-    f32 ax;
-    f32 az;
-    f32 nx;
-    f32 nz;
-    f32 constant;
     f32 start;
     f32 end;
     f32 a;
     f32 b;
+    f32 ax;
+    f32 fraction;
+    f32 minimum;
+    f32 az;
+    f32 nx;
+    f32 nz;
+    f32 constant;
     f32 cross_x;
     f32 cross_z;
     f32 swap;
@@ -354,10 +355,10 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
                             ax = (f32)*(s16 *)(first + 0);
                             az = (f32)*(s16 *)(first + 4);
                             constant = -(ax * nx + nz * az);
-                            start = x * nx + z * nz + constant;
-                            a = start;
-                            end = (x + dx) * nx + (z + dz) * nz + constant;
-                            b = end;
+                            a = x * nx + z * nz + constant;
+                            start = a;
+                            b = (x + dx) * nx + (z + dz) * nz + constant;
+                            end = b;
                             if ((end < 0.0f && 0.0f <= start) ||
                                 (start < 0.0f && 0.0f <= end)) {
                                 if (end < 0.0f) {
@@ -370,7 +371,7 @@ f32 func_15086D94(f32 x, f32 y, f32 z, f32 dx, f32 dz) {
                                 nx = -nz;
                                 nz = swap;
                                 fraction = a / (a + b);
-                                constant = -(ax * nx + swap * az);
+                                constant = -(ax * nx + nz * az);
                                 cross_x = x + fraction * dx;
                                 cross_z = z + fraction * dz;
                                 a = cross_x * nx + cross_z * nz + constant;

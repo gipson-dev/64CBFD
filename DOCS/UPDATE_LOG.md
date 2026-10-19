@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Barrier Crossing Complete Match
+
+[Note1603](WORKING_NOTES/1603-barrier-crossing-complete-match-20261019.md):
+Install complete func_15086D94, all207 words/frame144 exact. Recover scalar
+homes50/54 directly in C and derive the FP/copy/endpoint schedule through207
+checked guards, preserving206 source origins and all five bindings. Retain the
+last rejected-crossing fraction. Ten installed tests,738 fired private cuts,
+actual helper/caller/GNU/alias/Make checks and a strict251-byte code-only ELF
+prediction pass. Every other body/address/extent/metadata/data byte stays fixed.
+Fresh Game3012/4832,total3685/5505,1,820 different/zero drift; owner64/73 exact.
+Tools3923525 first; README aggregate rows only. Next func_15089BC0,247-word stub.
+
 ## 2026-10-19 Barrier Crossing Audit And Matching Boundary
 
 [Note1602](WORKING_NOTES/1602-barrier-crossing-semantic-audit-and-matching-boundary-20261019.md):

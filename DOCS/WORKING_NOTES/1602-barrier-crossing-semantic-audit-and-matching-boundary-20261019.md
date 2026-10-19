@@ -2,6 +2,9 @@
 
 Date: 2026-10-19
 
+Matching status is superseded by [Note1603](1603-barrier-crossing-complete-match-20261019.md),
+which installs all207 exact words. The measurements below describe this earlier audit.
+
 ## Baseline And Scope
 
 Continue existing C `func_15086D94`, owner `generated_B3020`, after installed
