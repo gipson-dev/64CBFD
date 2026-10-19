@@ -717,7 +717,33 @@ s32 func_1508802C(u8 *record, u8 *actor, s32 reason) {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_B3020/func_150880F8.s")
+extern u8 *D_800872A0;
+extern u8 D_800CC2D0[];
+extern s8 D_800D239A;
+s32 func_1508802C(u8 *, u8 *, s32);
+
+/* Dispatch a route actor's event state and stamp its sequence counter. */
+s32 func_150880F8(s32 recordIndex, s32 reason) {
+    u8 *record;
+    u8 *actor;
+    s32 result;
+
+    result = 0;
+    if (D_800872A0 == 0) {
+        return 0;
+    }
+    record = (u8 *)((u32)recordIndex * 0x84 + (u32)D_800872A0);
+    actor = (u8 *)((u32)D_800CC2D0 + (s32)*(s8 *)(record + 0x31) * 0x32C);
+    if (*(s8 *)(record + 0x30) == 0) {
+        result = func_1508802C(record, actor, reason);
+    } else if (*(s8 *)(record + 0x30) == 1) {
+        record[0x30] = 2;
+        actor[0x125] = 0xFF;
+    }
+    record[0x2A] = D_800D239A;
+    D_800D239A++;
+    return result;
+}
 
 s32 func_150881CC(s32 arg0) {
     u8 *temp_v1 = D_800872A0;

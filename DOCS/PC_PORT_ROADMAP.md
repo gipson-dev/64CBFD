@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Route Event Dispatcher Direct C Conversion - 2026-10-18
+
+[Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
+
+- [x] Recover complete func_150880F8 with its null-table path, full-width index/reason, signed slot/state, child return and repeated counter access. Match all 53 words/frame0x20 and seven bindings directly, no new guards.
+- [x] Pass eight installed tests: 1,760 connected/native32 cases, 550 fired access cuts, 261 additional guest pairs, four effective guest negatives, three GNU maps and 36 code-rebased pairs. Preserve the actual 51-word child and distinguish bounded C backing from out-of-backing guest checks.
+- [x] Install through the existing mixed-profile recipe, reproduce the literally unchanged first/production ELF, and audit all 6,057 bodies/addresses and protected Game data. Fresh Game2994/4830, total3667/5503, 1,836 different/zero drift. Bank tools7bc7dfc first; README aggregate rows only.
+- [ ] Continue broader Game conversion/matching with retained 40-word func_150885EC; qualify bcopy direction/overlap, preserved destination ID/state, table mutation and restore ordering before conversion.
+
 ## Route Actor Event Direct C Conversion - 2026-10-18
 
 [Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
@@ -7,7 +16,7 @@
 - [x] Recover the complete returning func_1508802C C routine and correct its local caller declaration; match all 51 words/frame0x18 directly with nine bindings and no new guards.
 - [x] Pass 11 installed tests: 1,112 native32/guest cases, 310 fired access cuts, four ordinary guest negatives, 72 actual caller cases and three GNU relocation maps. Keep the valid 26-slot C domain separate from out-of-table guest artifact checks.
 - [x] Install through the existing mixed-profile Make recipe and audit the literally unchanged first/production ELF, all 6,057 bodies/addresses and protected data. Freshly recount Game2993/4829, total3666/5502, 1,836 different/zero drift. Bank tools eabe57c first; update only aggregate README rows.
-- [ ] Continue broader Game conversion/matching with retained 53-word caller func_150880F8; recover its null-table and signed-byte/counter paths before claiming C coverage.
+- [x] Recover and convert retained 53-word caller func_150880F8, including its null-table and signed-byte/counter paths, in Note1578 above. Broader Game conversion/matching remains open.
 
 ## Route Actor Update Complete Match And Installation - 2026-10-18
 

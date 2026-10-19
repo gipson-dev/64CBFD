@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-18:
+[Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
+Convert complete func_150880F8 directly to 53 exact words/frame0x20, with no
+new guards. Eight installed tests pass, including real child C/code and 1,760
+native32/guest cases; the whole ELF stays unchanged. Fresh Game2994/4830,
+total3667/5503, 1,836 different /zero drift. Tools7bc7dfc first; preserve 1,301
+mirror hashes. Next audit the retained 40-word record copier func_150885EC.
+
+2026-10-18:
 [Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
 Convert func_1508802C from retained ASM to complete direct C, all 51 words exact
 with no new guards. Eleven installed tests pass; the whole ELF and protected

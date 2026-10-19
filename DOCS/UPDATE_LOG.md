@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-18 Route Event Dispatcher Direct C Conversion
+
+[Note 1578](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
+Restore complete returning func_150880F8 C, all 53 words directly exact with
+original frame0x20 and seven bindings. Eight installed tests pass: 1,760
+connected/native32 cases, 550 fired cuts, effective negatives and three GNU
+maps. All code/data/addresses and the entire ELF stay fixed. Fresh Game2994/4830,
+total3667/5503, 1,836 different /zero drift. Tools7bc7dfc first; README aggregate
+rows only. Continue broader Game work with func_150885EC's copy/restore contract.
+
 ## 2026-10-18 Route Actor Event Direct C Conversion
 
 [Note 1577](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):

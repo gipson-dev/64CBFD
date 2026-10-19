@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Route event dispatcher direct C conversion](WORKING_NOTES/1578-route-event-dispatcher-direct-c-conversion-20261018.md):
+  all 53 words/frame0x20 directly exact, no guards; eight installed tests and
+  unchanged whole-ELF audit pass. Tools7bc7dfc first; fresh Game2994/4830,
+  total3667/5503. Next audit retained 40-word func_150885EC.
+
 - [Route actor event direct C conversion](WORKING_NOTES/1577-route-actor-event-direct-c-conversion-20261018.md):
   all 51 words directly exact, no new guards; 11 installed tests and the literal
   unchanged whole-ELF audit pass. Tools eabe57c first; fresh Game2993/4829,
