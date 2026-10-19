@@ -155,8 +155,99 @@ s32 func_15085DF8(f32 x, f32 y, f32 z, s8 mode, s8 band) {
     return best;
 }
 
-s32 func_15086098() {
-    return 0;
+extern u8 *D_800D2350;
+extern f32 D_8009D9D0;
+s32 func_15085DA8(f32 y);
+s32 func_15085DF8(f32 x, f32 y, f32 z, s8 mode, s8 band);
+s32 func_15086C70(s32 index);
+s32 func_150A32B4(s32 object, s32 x, s32 y, s32 z);
+s32 func_150A3194();
+s32 func_15086364();
+
+/* Refine a spatial node using record containment or the nearest forward edge. */
+s32 func_15086098(f32 x, f32 y, f32 z, s8 count, s8 option, u8 *list, u8 *state) {
+    s32 refined = 0xFF;
+    s32 index;
+    s32 object;
+
+    index = func_15085DF8(x, y, z, 0, func_15085DA8(y));
+    if ((count > 0) && (index != 0xFF)) {
+        object = func_15086C70(index);
+        if ((object != 0) && (func_150A32B4(object, (s32)x, (s32)y, (s32)z) != 0)) {
+            refined = func_15086364(index, count, option, list, state);
+        } else {
+            u8 *nodes;
+            u8 *node;
+            f32 radius;
+            f32 minimum;
+
+            nodes = D_800D2350;
+            node = nodes + index * 16;
+            radius = (f32)(u32)node[8];
+            minimum = D_8009D9D0;
+            radius += radius;
+            if (minimum < radius * radius) {
+                refined = func_15086364(index, count, option, list, state);
+            } else {
+                s32 selected;
+                s32 candidate;
+                s32 i;
+                u8 *cursor;
+
+                selected = 0xFF;
+                cursor = node;
+                i = 0;
+                do {
+                    candidate = cursor[9];
+                    i++;
+                    if (candidate != 0xFF) {
+                        s32 originX;
+                        s32 originZ;
+                        u8 *neighbor;
+                        f32 dx;
+                        f32 dz;
+                        f32 inverseLength;
+                        f32 baseX;
+                        f32 baseZ;
+                        f32 projection;
+                        f32 distance;
+
+                        neighbor = nodes + candidate * 16;
+                        originX = *(s16 *)(node + 0);
+                        originZ = *(s16 *)(node + 4);
+                        dx = (f32)(*(s16 *)(neighbor + 0) - originX);
+                        dz = (f32)(*(s16 *)(neighbor + 4) - originZ);
+                        inverseLength = 1.0f / sqrtf(dx * dx + dz * dz);
+                        dx = dx * inverseLength;
+                        dz = dz * inverseLength;
+                        baseX = (f32)originX;
+                        baseZ = (f32)originZ;
+                        projection = (x * dx + z * dz) + -(baseX * dx + baseZ * dz);
+                        if (projection > 0.0f) {
+                            dx = x - (baseX + dx * projection);
+                            dz = z - (baseZ + dz * projection);
+                            distance = dx * dx + dz * dz;
+                            if (distance < minimum) {
+                                selected = candidate;
+                                minimum = distance;
+                            }
+                        }
+                    }
+                    cursor++;
+                } while (i < 5);
+                if (selected != 0xFF) {
+                    object = func_15086364(index, count, option, list, state);
+                    if (object == selected) {
+                        refined = object;
+                    }
+                }
+            }
+        }
+    }
+    if (refined != 0xFF) {
+        index = refined;
+    }
+    return index;
 }
 
 s32 func_15086364() {
@@ -182,13 +273,13 @@ f32 func_15086BD0(s32 arg0, s32 arg1) {
     return sqrtf((x * x) + (y * y) + (z * z));
 }
 
-void func_15086C70(arg0)
+s32 func_15086C70(arg0)
 s32 arg0;
 {
     u8 *temp_v0 = (u8 *) ((s32) D_800D2350 + arg0 * 16);
     s32 temp_v1 = *(s16 *) (temp_v0 + 4);
 
-    func_150A3194(3, 0xB, *(s16 *) temp_v0, *(s16 *) (temp_v0 + 2), temp_v1);
+    return func_150A3194(3, 0xB, *(s16 *) temp_v0, *(s16 *) (temp_v0 + 2), temp_v1);
 }
 
 s32 func_15086CBC(s32 arg0, f32 *arg1, f32 *arg2, f32 *arg3) {

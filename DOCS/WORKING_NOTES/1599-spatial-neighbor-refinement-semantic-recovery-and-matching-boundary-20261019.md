@@ -1,5 +1,8 @@
 # Spatial Neighbor Refinement Recovery And Matching Boundary
 
+Superseded by [Note1600's installed complete match](1600-spatial-neighbor-refinement-complete-match-20261019.md).
+The measurements below describe the earlier experimental checkpoint.
+
 Verified: 2026-10-19. Complete experimental **func_15086098** is recovered,
 with descriptive local names and its address-based export. **It is not
 installed or byte-exact.** VA15086098..15086364, ROM B3548..B3814,

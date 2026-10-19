@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Spatial Neighbor Refinement Complete Match - 2026-10-19
+
+[Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
+
+- [x] Install complete func_15086098,179 words/frame112 exact through176 expected-word/relocation guards. Retain174 source origins and all11 bindings, omit the dead coefficient copy and strength-reduced bound load, and derive five copy/NEG/SLTI/hazard words. Restore S0, private homes, FP lifetimes, coordinate schedule and five-step backedge without Makefile/profile changes or physical-register C bindings.
+- [x] Correct the observed func_15086C70 return to s32 and explicitly return its nested call's V0, preserving all20 original wrapper instructions under both owner profiles. Do not credit its unfinished deeper providers.
+- [x] Pass eight installed tests:103 fixtures/206 triples,572 fired private-cut pairs,175/179 retail words visited with four explicit unvisited words, native32 O0/O2/UBSan and13 effective negatives,187 raw/binding controls, frame-only incoming-list corruption,24 actual helper runs,96 actual caller runs,30 pairs across three GNU maps, aliases and actual owner/padder/seven-command Make qualification.
+- [x] Reproduce the strict578-byte production-image prediction:537 code bytes, two size bytes, and39 explicitly closed symbol/string serialization bytes. Preserve all6,056 other bodies, every address and189,088 protected Game-data bytes/720 owners. Fresh Game3010/4832,total3683/5505,1,822 different/zero drift; owner62/73 exact. README aggregate rows only; preserve all1,383 older mirror hashes. Commit tools first, then the consumer pin.
+- [ ] Recover func_1508BC20 next:189 words/frame136,184 differences, VA1508BC20..1508BF14, ROM B90D0..B93C4. Inspect its full assembly and actual callers against this installed baseline before another qualified match; no broad conversion batch.
+
 ## Spatial Neighbor Refinement Recovery - 2026-10-19
 
 [Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
@@ -7,7 +17,7 @@
 - [x] Recover complete experimental func_15086098: verified seven-argument interface, signed-byte count/option, full-word results, live record-wrapper return, post-helper table capture, containment/radius paths, five-neighbor forward projection, strict first minimum and original-index refinement acceptance.
 - [x] Pass eight recovery tests:103 fixtures/206 public pairs, native32 O0/O2/UBSan and13 effective negatives,175/179 retail words visited with four explicit unvisited words,12 actual connected-helper runs,48 actual caller/result-consumer runs,30 rebased pairs across three GNU maps, both owner profiles and real padding/seven-command Make shadow preserving72 neighbors/all73 addresses/pools.
 - [x] Bank the measured boundary:176 words/frame112/164 differences versus retail179/frame112; access0 saves at incomingSP-56 instead of-40. The experimental record-wrapper return correction is instruction-identical. No production source/guard/ELF/CSV/build change, new guards, credit or README edit. Fresh Game3009/4832,total3682/5505,1,823 different/zero drift; preserve all1,380 older mirror hashes. Commit tools before the consumer pin.
-- [ ] Finish this same function's index S0, private homes and saved FP lifetimes, local coefficient, coordinate access order, NEG/ADD projection and SLTI/backedge scheduling. Require private/fault-prefix, caller/alias, GNU/padder and strict full-image qualification before guards or installation; no broad conversion batch.
+- [x] Finish in Note1600 above: restore index S0, private homes, saved FP lifetimes, local coefficient, coordinate access order, NEG/ADD projection and SLTI/backedge scheduling; pass private/fault/caller/alias/GNU/padder and strict whole-image gates and install the exact body. The earlier recovery remains historical, not a separately credited match.
 
 ## Balanced Target Assignment Complete Match - 2026-10-19
 

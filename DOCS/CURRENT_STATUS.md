@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 94acbb1; tools are committed before the consumer pin.
+  checkpoint pins tools 342de47; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Spatial neighbor refinement recovered; matching still open**:
+**Spatial neighbor refinement installed: all179 words byte-exact**:
+[Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md).
+Complete func_15086098 now matches its716-byte slot/frame112 through176
+checked source-origin/private/FP/loop guards. The directly observed record
+wrapper now returns V0 without changing any of its20 instructions. Eight
+installed tests pass:103 fixtures,572 fired private cuts, native32/UBSan,
+13 effective negatives, actual helper/caller windows and GNU maps. The strict
+578-byte whole-image prediction preserves all6,056 other bodies, every address
+and protected Game data. Fresh Game3010/4832,total3683/5505,1,822 different/
+zero drift; owner62/73 exact,11 remaining. README aggregate rows only. Next:
+func_1508BC20,189 words/frame136. Tools342de47 first; all1,383 older mirror
+hashes are preserved.
+
+**Earlier spatial refinement recovery (superseded by Note1600)**:
 [Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md).
 Complete experimental func_15086098 emits176 words/frame112/164 differences
 versus retail179/frame112. Eight tests cover103 fixtures, native32/UBSan,

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Spatial neighbor refinement complete match](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
+  complete func_15086098 installed,179 words/frame112 exact through176 checked
+  guards. Eight installed tests,572 private cuts, actual caller/helper/GNU
+  qualification and the strict578-byte whole-image audit pass; the live record
+  return correction preserves its wrapper's20 original instructions.
 - [Spatial neighbor refinement recovery and matching boundary](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
   complete experimental func_15086098; eight tests,103 fixtures, native32/
   UBSan and13 effective negatives, actual helper/caller windows, GNU rebases

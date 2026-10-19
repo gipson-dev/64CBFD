@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Spatial Neighbor Refinement Complete Match
+
+[Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
+Install complete func_15086098,179 exact words/frame112 with176 checked guards.
+Recover S0/private homes, FP roles, local coefficient, projection and five-step
+loop schedule; retain the record wrapper's V0 with an instruction-identical
+return-type correction. Eight installed tests,572 private cuts and the strict
+578-byte whole-image prediction pass. All6,056 other bodies/addresses and
+protected Game data remain fixed. Fresh Game3010/4832,total3683/5505,1,822
+different/zero drift; owner62/73 exact. README aggregates only. Next recover
+func_1508BC20,189 words/frame136. Commit tools before the consumer pin; no push.
+
 ## 2026-10-19 Spatial Neighbor Refinement Recovery And Matching Boundary
 
 [Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):

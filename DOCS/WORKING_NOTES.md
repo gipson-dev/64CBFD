@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-19:
+[Note1600](WORKING_NOTES/1600-spatial-neighbor-refinement-complete-match-20261019.md):
+Complete func_15086098 installed,179 words/frame112 exact through176 checked
+private/FP/loop guards; all11 bindings retained. Live record-wrapper return is
+corrected with no instruction change. Eight installed tests cover103 fixtures,
+572 fired cuts, native32/UBSan and13 negatives, actual callers/helpers, aliases
+and GNU/Make/padder checks. Strict578-byte image prediction preserves every
+other body/address/data byte. Game3010/4832,total3683/5505,zero drift; owner
+62/73 exact. Next func_1508BC20,189 words/frame136. README aggregates only.
+
+2026-10-19:
 [Note1599](WORKING_NOTES/1599-spatial-neighbor-refinement-semantic-recovery-and-matching-boundary-20261019.md):
 Complete experimental func_15086098, eight tests,103 fixtures,13 effective
 native negatives, actual helpers/caller, GNU rebases and real owner padding/
