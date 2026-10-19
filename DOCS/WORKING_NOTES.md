@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
+Complete actor-target timer semantic checkpoint:func_1508D850 emits115 words/
+frame80,60 differences. Seven tests pass across158 fixtures, native32/UBSan,
+actual RNG and notification wrapper, fired cuts, caller and owner isolation.
+Return contract is still open; no production edit/guards/build or new matching
+credit. Tools4211351 first; Game3005/4832,total3678/5505,zero drift unchanged.
+Continue source/literal matching and preserve the1,355 old mirror hashes.
+
+2026-10-19:
 [Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
 Install complete func_15085BE8,112 exact words/frame96. Source recovers the
 initializer, scratch and loop lifetimes;35 checked guards preserve all origins

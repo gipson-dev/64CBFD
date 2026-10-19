@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor Target Timer Recovery And Matching Boundary - 2026-10-19
+
+[Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
+
+- [x] Recover complete experimental func_1508D850: early target publication/reread, signed rejection, float32 distance classes, signed threshold/timer views, current mask/context reads, cached actor/timer pointers across notification, and fresh nested/selector/probability reads after RNG.
+- [x] Pass seven tests:158 fixtures/two phases, complete public buffers/stores, native32 O0/O2/UBSan and five effective negatives,50 real64-bit RNG fixture pairs, actual26-word notification wrapper to modeled script provider,32 fired cut pairs, backed publication alias,20 returning-caller runs and two owner profiles/private padding preserving72 neighbors/pools/all73 addresses.
+- [x] Bank the honest boundary:115 words/frame80,60 differences and an unresolved general return contract. Tools4211351 first; no source/guard/ELF/CSV/build change or new matching credit. Fresh Game3005/4832,total3678/5505,1,827 different/zero drift; README unchanged. Preserve all1,355 old mirror hashes.
+- [ ] Finish the return-consumer audit, source pointer lifetimes and notification likely-branch/reload schedule. Qualify complete literal/private states and independent rebases before accepting any recipe or installing this body.
+
 ## Category Boundaries Complete Match - 2026-10-19
 
 [Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):

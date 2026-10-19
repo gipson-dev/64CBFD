@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Actor Target Timer Recovery And Matching Boundary
+
+[Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
+Recover complete experimental func_1508D850 and qualify public/native behavior,
+callback reloads, real RNG/wrapper connections, cuts, caller and owner isolation
+in seven passing tests. Correct115-word/frame80 shape still has60 differences;
+general numeric return remains unestablished. No production edit, new guards,
+build or matching credit. Fresh Game3005/4832,total3678/5505,1,827 different/zero
+drift. Tools4211351 first; README unchanged. Resume this function's return,
+pointer-lifetime and notification branch/reload audit.
+
 ## 2026-10-19 Category Boundaries Complete Match
 
 [Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):

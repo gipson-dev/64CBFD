@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools 6dbeb82; tools are committed before the consumer pin.
+  checkpoint pins tools 4211351; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor target timer recovered; matching remains open**:
+[Note 1592](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md).
+Experimental func_1508D850 emits115 words/frame80 with60 differences. Seven
+tests pass:158 public/native fixtures, signed distance/timer/probability edges,
+callback mutations, real25-word RNG and26-word notification wrapper, fired
+cuts, returning caller and both owner profiles/private padding. Keep the void
+semantic contract separate from the partial-int compiler study; retail only
+establishes a numeric return on one path. No production edit or new guards.
+Fresh totals stay Game3005/4832,total3678/5505,1,827 different/zero drift,
+owner57/73 exact. Tools4211351 first; README unchanged. Continue this function's
+return-contract, pointer-lifetime and branch/reload matching audit.
 
 **Category boundaries restored and byte-exact: all 112 words**:
 [Note 1591](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md).

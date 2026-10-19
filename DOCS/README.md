@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor target timer recovery and matching boundary](WORKING_NOTES/1592-actor-target-timer-semantic-recovery-and-matching-boundary-20261019.md):
+  complete experimental C, seven semantic/native/helper/caller/isolation tests,
+  115 words/frame80 and60 remaining differences. Return contract stays open;
+  no production edit or matching credit. Continue this function's literal fit.
 - [Category boundaries complete match](WORKING_NOTES/1591-category-boundaries-complete-match-20261019.md):
   all112 words/frame96 exact with recovered source lifetimes,35 checked guards,
   twelve installed tests and a strict414-byte image prediction. Owner57/73
