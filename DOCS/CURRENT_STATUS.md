@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `743f234`; tools are committed before the consumer pin.
+  checkpoint pins tools `4a805fc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Queued-zone selection installed: all 369 words byte-exact**:
+[Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md).
+Complete `func_1508B3F8` emits 367 semantic C words/frame 320; checked origins
+retain all 58 public memory instructions and produce the full retail routine.
+The production build exactly reproduces an 897-byte target-only ELF change,
+preserving all other bodies, addresses and protected data. Fresh totals:
+Game 3,017/4,832, overall 3,690/5,505, 1,815 different and zero drift; owner
+69/73 exact. Next: the 678-word/frame 288 `func_1508A6FC` stub and caller.
 
 **Zone-selection query and scalar homes recovered experimentally**:
 [Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md).

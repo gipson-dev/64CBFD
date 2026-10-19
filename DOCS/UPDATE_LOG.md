@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-19 Queued-Zone Selection Complete Match
+
+[Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
+Install complete `func_1508B3F8`, all 369 words/frame 320 exact through checked
+source origins. Preserve all 58 public memory instructions and every previous
+guard byte. Literal/private, fired-cut, native, GNU and owner/Make gates pass;
+the build exactly reproduces an 897-byte target-only ELF change. Fresh Game
+3,017/4,832, overall 3,690/5,505, zero drift; owner 69/73 exact. Tools `4a805fc`
+first; README aggregate rows only. Next: `func_1508A6FC`, 678 words/frame 288.
+
 ## 2026-10-19 Zone Selection Query And Scalar Homes
 
 [Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):

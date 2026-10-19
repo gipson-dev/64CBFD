@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Queued-zone selection complete match](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
+  `func_1508B3F8` installed, all 369 words/frame 320 exact with checked origins;
+  literal/private, GNU, native, Make and strict 897-byte image proof. Fresh
+  Game 3,017/4,832, overall 3,690/5,505; next `func_1508A6FC`.
 - [Zone-selection query and scalar homes](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
   experimental `func_1508B3F8` retains 369 words/frame 320 and recovers four
   retail homes; 277 raw differences, 14 tests in both copies. Continue the

@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
+Install complete `func_1508B3F8`, all 369 words/frame 320 exact with checked
+origins, retaining all 58 public memory instructions. Literal/private, GNU,
+native, Make and strict 897-byte image proof preserve other bodies/data.
+Fresh Game 3,017/4,832, overall 3,690/5,505, zero drift; owner 69/73 exact.
+Tools `4a805fc` first. Continue the 678-word `func_1508A6FC` caller stub.
+
+2026-10-19:
 [Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
 Recover query and three scalar homes in experimental `func_1508B3F8`,
 369 words/frame 320/277 raw differences, with no production change or credit.

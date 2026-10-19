@@ -2169,16 +2169,15 @@ void func_1508B2A8(u8 id, NeighborVisitQueryB3020 *query) {
     }
 }
 
+/* Resolve queued zones into per-player neighbor labels. */
 void func_1508B3F8(void) {
-    NeighborVisitQueryB3020 query;
+    s32 i;
     NeighborVisitQueryB3020 *context;
-    s32 *selections;
-    u8 *zone;
     u8 *actor;
     u8 *nodes;
     u8 *node;
-    s32 i;
     s32 player;
+    s32 *selections;
     s32 ready;
     s32 root;
     s32 best;
@@ -2187,11 +2186,13 @@ void func_1508B3F8(void) {
     f32 y;
     f32 z;
     f32 dx;
+    NeighborVisitQueryB3020 query;
     f32 dz;
     f32 minimum;
     u8 *ids;
     u8 *distances;
     u8 *end;
+    u8 *zone;
     s32 remainder;
 
     context = &query;
@@ -2203,7 +2204,7 @@ void func_1508B3F8(void) {
         }
     }
     for (i = 0; i < *(s8 *)((u8 *)D_800D23B0 + 0x1745); i++, zone += 12) {
-        context->threshold = *(f32 *)(zone + 0);
+        query.threshold = *(f32 *)(zone + 0);
         x = (f32)*(s16 *)(zone + 4);
         y = (f32)*(s16 *)(zone + 6);
         z = (f32)*(s16 *)(zone + 8);
@@ -2214,7 +2215,7 @@ void func_1508B3F8(void) {
             if (dz < 200.0f && -100.0f < dz) {
                 dx = *(f32 *)(actor + 0x14) - x;
                 dz = *(f32 *)(actor + 0x1C) - z;
-                if (dx * dx + dz * dz < context->threshold + 100.0f) {
+                if (dx * dx + dz * dz < query.threshold + 100.0f) {
                     best = 0xFF;
                     minimum = D_8009DA5C;
                     if (!ready) {

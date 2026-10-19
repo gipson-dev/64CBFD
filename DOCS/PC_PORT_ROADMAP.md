@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Queued-Zone Selection Complete Match - 2026-10-19
+
+[Note 1614](WORKING_NOTES/1614-zone-selection-complete-match-20261019.md):
+
+- [x] Install complete `func_1508B3F8`, all 369 words/frame 320 exact through checked source origins. Use the query object for its threshold and retain all four real homes, without added storage, header or compiler-profile changes.
+- [x] Retain all 58 public memory instructions; qualify 364 retained origins, five derived forms, three omissions and 32 output bindings. Append 367 expected-word rows while preserving every previous manifest byte.
+- [x] Pass the complete pre-install suites in both copies, literal/private and 702 fired instruction-access cuts, native32/UBSan/effective negatives, eight effective old-home aliases and independent GNU original-parent/visitor maps. Complete both owner/Make shadows and strict first links.
+- [x] Pass all 16 installed-state checks in both tools copies, including the migrated production-slot contract and native fixtures extracted from the actual installed C. Keep caller/helper/hardware/gameplay acceptance separate.
+- [x] Build and reproduce the exact 897-byte target-only ELF prediction, preserving 6,056 other bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners. Tools `4a805fc` first; README aggregate rows only. Fresh Game 3,017/4,832, overall 3,690/5,505; owner 69/73 exact.
+- [ ] Continue `func_1508A6FC`: 678 words/frame 288, VA 1508A6FC..1508B194, ROM B7BAC..B8644, still a 12-byte stub/665 classified differences. Recover its full signature, state-array lifetimes, control flow and helper contracts before installation; keep the wider goal active.
+
 ## Zone Selection Query And Scalar Homes - 2026-10-19
 
 [Note 1613](WORKING_NOTES/1613-zone-selection-query-and-scalar-homes-20261019.md):
@@ -8,7 +19,7 @@
 - [x] Recover query SP+0xAC, selections +0x124, zone +0x94 and counter +0x13C through a closed permutation of real declarations. The complete candidate stays 369 words/frame 320 with 277 raw differences; no dummy storage or matching credit.
 - [x] Pass 14 tests in both tools copies: 2,990 four-way guest cases, all parent/visitor words, 1,424 native fixtures at three optimization levels with UBSan, a fired sanitizer control, 16 guest alias runs/eight effective old-home negatives and three semantic negatives.
 - [x] Independently qualify both owner profiles and actual padding in primary/mirror, preserving 72 neighbors, all 73 addresses/extents, pools and relocation bindings. Commit tools `743f234` first and preserve all 1,427 older mirror hashes. Keep all 19 pinned production inputs and the README unchanged.
-- [ ] Continue the same `func_1508B3F8`: close the 18th-store order, query/visited/255 saved roles, global-address lifetimes, byte-winner and cursor scheduling. Complete private/fault/alias, Make and strict full-image gates before any installation or exact-match credit.
+- [x] Close `func_1508B3F8`'s store order, saved roles, address lifetimes, byte-winner and cursor schedule through the qualified source-origin recipe in Note 1614 above. Complete private/fault/alias, Make and strict full-image gates, then install the full 369-word match.
 
 ## Neighbor Row Builder Complete Match - 2026-10-19
 
