@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Slot-State Transfer Complete Match
+
+[Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
+Install complete func_1508E89C, all 189 words/frame80 exact through 100 checked
+layout guards, without inserted/omitted words. Eleven installed tests pass,
+including literal private/fault state, native32/UBSan, actual caller windows
+and GNU maps. Production equals the first 595-byte target-only prediction;
+all other bodies/addresses/data stay fixed. Game2999/4832 (62.07%), total3672/5505
+(66.70%), 1,833 different/zero drift. Tools63f4733 first; README aggregate rows
+only. Continue with 63-word func_1508ECC0; the intervening three wrappers match.
+
 ## 2026-10-19 Slot-State Transfer Recovery And Matching Boundary
 
 [Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):

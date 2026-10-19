@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools a53e876; tools are committed before the consumer pin.
+  checkpoint pins tools 63f4733; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Slot-state transfer restored and byte-exact: all 189 words**:
+[Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md).
+Install complete func_1508E89C with 100 checked allocation/address/schedule
+guards, retaining every source word and all bindings. Eleven installed tests
+pass: 1,900 literal state pairs, 844 fired cuts, native32/UBSan and 16 bounded
+caller windows. Actual Make reproduces the exact 595-byte target-only image
+prediction; all other 6,056 bodies/addresses and protected data remain fixed.
+Fresh Game **2999/4832 (62.07%)**, total **3672/5505 (66.70%)**, **1,833 different /
+zero drift**. Tools **63f4733** first; README aggregate rows only. The next three
+wrappers already match; continue from the 63-word stub func_1508ECC0.
 
 **Slot-state transfer recovered experimentally; not yet installable**:
 [Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md).

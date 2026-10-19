@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Slot-State Transfer Complete Match - 2026-10-19
+
+[Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
+
+- [x] Finish the complete func_1508E89C C recovery, retaining all 189 source words/frame0x50. Specify register roles, ten home references, independent schedules and four equivalent computed-address checks through 100 expected-word/relocation guards. No insertions, omissions, dummy padding or shared build changes.
+- [x] Pass eleven installed tests: 1,900 literal guest state pairs, 844 fired access cuts, native32 O0/O2/UBSan, effective source/layout/manifest/image negatives, 16 actual caller windows, three independent GNU maps and both owner profiles with 72 neighbors/pools fixed.
+- [x] Install and reproduce the first/production image exactly: 593 target bytes and two size bytes change, with no symbol-order exception. Preserve all other 6,056 bodies, every address, protected Game data and historical guards. Fresh Game2999/4832, total3672/5505, 1,833 different/zero drift. Bank tools63f4733 first; README aggregate rows only.
+- [ ] Continue broader Game matching from the 63-word/frame8 func_1508ECC0 stub. Recover unsigned-halfword inputs, packed-key addition, unsigned row/entry loops, second-entry exclusion and early -1; qualify S0/argument homes and actual callers. The intervening three wrappers already match.
+
 ## Slot-State Transfer Recovery And Matching Boundary - 2026-10-19
 
 [Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
@@ -7,7 +16,7 @@
 - [x] Recover the complete experimental func_1508E89C body and actual full-word caller/two-argument final-helper interface. Preserve helper-induced table/state changes, ordered masks, signed views, computed-address null checks and the zero return.
 - [x] Pass eight bounded qualification tests:950 fixtures/two phases,1,900 paired guest runs,46 extra guest boundary pairs, native32 O0/O2/UBSan, three effective source negatives,16 actual caller windows and both owner profiles with72 neighbors/pools fixed.
 - [x] Bank recovery toolsad184da and coverage correctiona53e876 with the explicit matching boundary:189 words/frame0x50/100 real differences. Typed-table field/element screens emit identical code. Preserve production source/guards/ELF, all1,316 prior mirror hashes and unchanged README matching rows. Fresh Game2998/4832, total3671/5505,1,834 different/zero drift.
-- [ ] Continue this same routine's first-helper temporary spill block, destination pointer home and four computed-address branch forms. Literal private/fault parity still fails; qualify remaining fitting, actual helper boundaries, rebases/padder and the complete production image before installation or match credit.
+- [x] Finish this routine's temporary/destination homes, computed-address forms and complete private/fault/layout/padder/image qualification in Note1584 above. All 189 installed words now match; broader Game work continues there.
 
 ## Mode-Dependent Type Code Complete Match - 2026-10-18
 

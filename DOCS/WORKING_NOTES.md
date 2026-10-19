@@ -1,6 +1,14 @@
 # Working Notes
 
 2026-10-19:
+[Note 1584](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
+Install complete func_1508E89C, 189 exact words/frame80 with 100 checked layout
+guards. Eleven installed tests and the exact 595-byte production-image audit
+pass; all other bodies/addresses/data remain fixed. Game2999/4832, total3672/5505,
+1,833 different/zero drift. Tools63f4733 first; preserve all 1,319 prior mirror
+hashes. Continue from the 63-word func_1508ECC0 stub, not the exact wrappers.
+
+2026-10-19:
 [Note 1583](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
 Complete experimental func_1508E89C emits189 words/frame80/100 differences.
 Eight tests pass for950 bounded fixtures and native32/UBSan; private/fault

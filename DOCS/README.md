@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Slot-state transfer complete match](WORKING_NOTES/1584-slot-state-transfer-complete-match-20261019.md):
+  complete 189-word C recovery with checked layout, eleven installed tests and
+  an exact 595-byte target-only production-image prediction.
 - [Slot-state transfer recovery and matching boundary](WORKING_NOTES/1583-slot-state-transfer-recovery-and-matching-boundary-20261019.md):
   complete189-word experimental C, eight passing bounded recovery tests and
   explicit100-word/private/fault nonmatch; not installed or counted as exact.

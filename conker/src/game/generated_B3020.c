@@ -1991,7 +1991,87 @@ s32 func_1508E780(s32 type) {
     return -1;
 }
 
-s32 func_1508E89C() {
+extern u8 D_800D18A4[];
+extern u16 D_800D18A2;
+extern u16 D_800D18A0;
+extern s32 D_800D23B0;
+extern u8 D_800CC2D0[];
+extern s32 D_800BE9F0;
+extern s32 D_800D2E48;
+extern s8 D_8008FD94;
+s32 func_150859AC(s16, s32);
+void func_15085710(s16, s32, s32);
+void func_15062800(u8 *, u8 *);
+u8 *func_1509B570(s32);
+void func_15128774(u8 *, u8 *);
+
+typedef struct { u8 bytes[0x32C]; } SlotTransferActor;
+/* Transfer slot state and restore the destination actor's control fields. */
+s32 func_1508E89C(s32 destinationSlot, s32 sourceSlot) {
+    s32 actorIndex;
+    s32 savedHalfword;
+    u8 *script;
+    s32 scriptOffset;
+    u8 linkedSlot;
+    u8 *destination;
+    u32 sourceBit;
+    u32 inverseDestination;
+
+    if (D_800D18A4[destinationSlot] >= 0x33 &&
+        !(D_800D18A2 & (1U << destinationSlot))) {
+        inverseDestination = ~(1U << destinationSlot);
+        sourceBit = 1U << sourceSlot;
+        D_800D18A0 &= inverseDestination;
+        D_800D18A2 |= 1U << destinationSlot;
+        D_800D18A0 |= sourceBit;
+        func_15085710((s16)destinationSlot, 2, func_150859AC((s16)sourceSlot, 3));
+        func_15085710((s16)sourceSlot, 2, 0);
+        if (*(s32 *)((u8 *)D_800D23B0 + 0x18) != 0) {
+            *(s32 *)((u8 *)D_800D23B0 + 0x18) &= inverseDestination;
+            *(s32 *)((u8 *)D_800D23B0 + 0x18) |= sourceBit;
+        }
+        if ((u8 *)D_800D23B0 + 0x9C != 0) {
+            ((s32 *)((u8 *)D_800D23B0 + 0x9C))[destinationSlot] =
+                ((s32 *)((u8 *)D_800D23B0 + 0x9C))[sourceSlot];
+        }
+        if ((u8 *)D_800D23B0 + 0x39C != 0) {
+            ((s32 *)((u8 *)D_800D23B0 + 0x39C))[destinationSlot] =
+                ((s32 *)((u8 *)D_800D23B0 + 0x39C))[sourceSlot];
+        }
+        if ((u8 *)D_800D23B0 + 0x3DC != 0) {
+            ((s32 *)((u8 *)D_800D23B0 + 0x3DC))[destinationSlot] =
+                ((s32 *)((u8 *)D_800D23B0 + 0x3DC))[sourceSlot];
+        }
+        if ((u8 *)D_800D23B0 + 0xEB0 != 0) {
+            ((s32 *)((u8 *)D_800D23B0 + 0xEB0))[destinationSlot] =
+                ((s32 *)((u8 *)D_800D23B0 + 0xEB0))[sourceSlot];
+            if (((s32 *)((u8 *)D_800D23B0 + 0xEB0))[destinationSlot] >= 0) {
+                ((s32 *)((u8 *)D_800D23B0 + 0xF70))[
+                    ((s32 *)((u8 *)D_800D23B0 + 0xEB0))[destinationSlot]] = destinationSlot;
+            }
+        }
+        ((s32 *)((u8 *)D_800D23B0 + 0x16C0))[destinationSlot] =
+            ((s32 *)((u8 *)D_800D23B0 + 0x16C0))[sourceSlot];
+        destination = ((SlotTransferActor *)D_800CC2D0)[destinationSlot].bytes;
+        savedHalfword = *(s16 *)(*(u8 **)(destination + 0x31C) + 0x1AA);
+        func_15062800(((SlotTransferActor *)D_800CC2D0)[sourceSlot].bytes, destination);
+        if (D_800BE9F0 == 0x3F && destination[0x13C] >= 100) {
+            linkedSlot = destination[0x13C] - 100;
+            script = func_1509B570(D_800D2E48);
+            if (script != 0) {
+                scriptOffset = ((SlotTransferActor *)D_800CC2D0)[linkedSlot].bytes[0x3B] - 20;
+                actorIndex = (SlotTransferActor *)destination - (SlotTransferActor *)D_800CC2D0;
+                ((s32 *)(script + 0x24B8))[scriptOffset] = actorIndex | 0x2000;
+                ((s32 *)(script + 0x24DC))[scriptOffset] = actorIndex;
+            }
+        }
+        (*(u8 **)(destination + 0x31C))[0x84] = 0;
+        destination[0x125] = 0x5A;
+        *(s16 *)(*(u8 **)(destination + 0x31C) + 0x1AA) = savedHalfword;
+        (*(u8 **)(destination + 0x31C))[0x1AF] = 0x40;
+        func_15128774(*(u8 **)(destination + 0x318), destination);
+        D_8008FD94++;
+    }
     return 0;
 }
 
