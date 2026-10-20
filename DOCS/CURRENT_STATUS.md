@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7aa7932`; tools are committed before the consumer pin.
+  checkpoint pins tools `ac05ac7`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**List node cleanup installed as guarded C: all 40 words exact**:
+[Note 1643](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md).
+`func_1514D310` preserves cached successors, signed descriptor/callback
+indices, the -1 sentinel and callback-before-removal order. Five checked
+saved-role/setup guards close the original frame48 and five bindings.
+Both copies pass eight tests before and after installation, including the
+real caller window, callbacks and bounded removal chain. Preserve 77
+neighbors and the old manifest prefix; the strict ELF change is 168 bytes,
+with zero exclusions. Tools `ac05ac7` first. Total 3,708/5,505 (67.36%),
+Game 3,035/4,832 (62.81%), zero drift; 421 more to 75%.
+Next `func_15195698` is queued only, with no draft or matching credit.
 
 **Attachment position installed as guarded C: all 40 words exact**:
 [Note 1642](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md).

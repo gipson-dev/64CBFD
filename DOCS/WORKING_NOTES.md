@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1643](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md):
+Recover `func_1514D310`, all 40 words/frame48 with five checked saved-role/setup
+guards. Preserve cached successors, signed table indices, the exact -1 sentinel,
+callback/removal order and one return. Both copies pass eight tests before
+and after installation, including the actual caller window, callbacks and
+bounded removal chain. Keep 77 neighbors and the old guard prefix; strict ELF
+change is 168 bytes with zero exclusions. Tools `ac05ac7` first; total
+3,708/5,505 (67.36%), zero drift; 421 more to 75%.
+Next `func_15195698` is queued only, with no draft or matching credit.
+
+2026-10-20:
 [Note 1642](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md):
 Recover `func_150C5BD4`, all 40 words/frame24 with one closed commutative ADDU
 guard. Preserve live actor/identity gates, sequential world copies, unsigned

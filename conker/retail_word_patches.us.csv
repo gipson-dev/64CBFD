@@ -23310,3 +23310,8 @@ generated_1FA770,func_151CE634,0x098,0x00001025,0x00001025,-,-,Context search cl
 generated_1FA770,func_151CE634,0x09C,0x03E00008,0x03E00008,-,-,Context search closed C origin/schedule normalization,,,false
 generated_1FA770,func_151CE634,0x0A0,0x00000000,0x00000000,-,-,Context search closed C origin/schedule normalization,,,false
 generated_F2820,func_150C5BD4,0x088,0x01883021,0x010C3021,-,-,Normalize commutative attachment matrix address addition,,,false
+generated_179F30,func_1514D310,0x02C,0x2413FFFF,0x3C130000,-,R_MIPS_HI16:D_8008ABE8,Normalize closed cleanup saved roles and pure setup schedule,,,false
+generated_179F30,func_1514D310,0x030,0x3C120000,0x26730000,R_MIPS_HI16:D_8008ABE8,R_MIPS_LO16:D_8008ABE8,Normalize closed cleanup saved roles and pure setup schedule,,,false
+generated_179F30,func_1514D310,0x034,0x26520000,0x2412FFFF,R_MIPS_LO16:D_8008ABE8,-,Normalize closed cleanup saved roles and pure setup schedule,,,false
+generated_179F30,func_1514D310,0x044,0x024FC021,0x026FC021,-,-,Normalize closed cleanup saved roles and pure setup schedule,,,false
+generated_179F30,func_1514D310,0x050,0x10530006,0x12420006,-,-,Normalize closed cleanup saved roles and pure setup schedule,,,false

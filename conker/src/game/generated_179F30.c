@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern void (*D_8008AB58[])();
+extern s16 *D_8008ABE8[];
+void func_1516972C();
+
 s32 func_151ACA60(u8 *, f32, s32);
 extern u8 *D_800D2E4C;
 void func_15083568(u8 *, s32, f32, s32);
@@ -10,7 +14,6 @@ void func_1500EE18();
 
 s32 func_1514F194();
 void func_1514DCAC();
-s32 func_1516972C();
 s32 func_1515F10C();
 s32 func_1514E920();
 s32 func_1514E89C();
@@ -79,8 +82,22 @@ s32 func_1514D15C() {
     return 0;
 }
 
-s32 func_1514D310() {
-    return 0;
+/* Run each list node's optional payload callback, then remove the node. */
+s32 func_1514D310(u8 *owner) {
+    GameListNode *next;
+    GameListNode *node = *(GameListNode **)(owner + 0x2F4);
+    s16 callback;
+
+    while (node != NULL) {
+        next = node->next;
+        callback = D_8008ABE8[node->unk1C][1];
+        if (callback != -1) {
+            D_8008AB58[callback](node->unk10);
+        }
+        func_1516972C(node);
+        node = next;
+    }
+    return 1;
 }
 
 s32 func_1514D3B0() {

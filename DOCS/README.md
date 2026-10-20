@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [List node cleanup guarded C match](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md):
+  all 40 words/frame48 match with five checked saved-role/setup guards.
+  Both copies pass eight pre-install/installed tests, the actual caller window,
+  callbacks and bounded removal chain. Preserve 77 neighbors and the old
+  guard prefix; exact ELF change is 168 bytes. Total 3,708/5,505 (67.36%);
+  421 more to 75%.
 - [Attachment position guarded C match](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md):
   all 40 words/frame24 match with one checked commutative ADDU guard.
   Both copies pass eight pre-install/installed tests, the complete caller and
