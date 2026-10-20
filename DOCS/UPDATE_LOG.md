@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Dual Random Point Direct C Match
+
+[Note 1640](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md):
+Recover `func_150F7F8C`, all 40 words/frame48 directly from normal C, with no
+new guards/profile changes. Two real locals in recovered declaration order
+retain the first RNG result's original home; preserve both float32 expressions,
+the exact constant and second submission after NULL/non-NULL first results.
+Eight tests pass in both copies before and after installation, including both
+actual caller windows and the full secondary helper. Preserve 16 neighbors
+and reproduce the strict 128-byte ELF. Tools `12b5844` first; total
+3,705/5,505 (67.30%), zero drift; 424 more to 75%. Next `func_151220D0` is queued.
+
 ## 2026-10-20 Actor Radial Point Direct C Match
 
 [Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):

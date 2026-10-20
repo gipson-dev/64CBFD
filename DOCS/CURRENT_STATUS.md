@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5092f17`; tools are committed before the consumer pin.
+  checkpoint pins tools `12b5844`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Dual random point wrapper installed directly from C: all 40 words exact**:
+[Note 1640](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md).
+`func_150F7F8C` preserves independent RNG samples, the first sample's SP+0x28
+home, float32 arithmetic/exact constant, ignored pointer return and post-helper
+argument reloads. Declaration order closes the two initial home differences;
+frame48 and all four bindings match without guards/profile changes. Eight
+tests pass in both copies before and after installation: 1,030 modeled phases,
+512 native cases/UBSan, both caller windows, the original NULL path and the
+complete 56-word secondary helper. Preserve 16 neighbors; production matches
+the strict 128-byte ELF prediction. Tools `12b5844` first. Total 3,705/5,505
+(67.30%), Game 3,032/4,832 (62.75%), zero drift; 424 more matches to 75%.
+Next `func_151220D0` remains queued, without a draft or matching credit.
 
 **Actor radial point installed directly from C: all 39 body words exact**:
 [Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md).

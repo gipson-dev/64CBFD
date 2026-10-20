@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1640](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md):
+Restore `func_150F7F8C`, all 40 words/frame48 directly from C, retaining its
+SP+0x28 RNG home, exact float32 expressions/constant, ignored pointer result
+and late argument reloads. Eight tests pass in both copies pre-install and
+installed: 1,030 modeled phases, 512 native cases/UBSan, 88 caller windows,
+18 actual NULL-path phases and 78 complete secondary-helper phases. Preserve
+16 neighbors; production changes only the strict 128 ELF bytes. Tools
+`12b5844` first; total 3,705/5,505 (67.30%), zero drift; 424 more to 75%.
+Next `func_151220D0` remains queued and uncounted.
+
+2026-10-20:
 [Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):
 Recover `func_150F2230`, all 39 body words/frame 56 directly from C, with a
 separate alignment word and no guards/profile changes. Preserve the gates,

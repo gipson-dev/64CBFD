@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Dual random point direct C match](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md):
+  all 40 words/frame48 emit directly after recovering the first RNG home through
+  declaration order. Both copies pass eight pre-install and installed tests,
+  including both caller windows and the complete original secondary helper.
+  Preserve 16 neighbors and the strict 128-byte ELF. Total 3,705/5,505 (67.30%);
+  424 more matches to 75%.
 - [Actor radial point direct C match](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):
   all 39 body words/frame 56 emit directly; retain the separate alignment word.
   Both copies pass eight pre-install and installed tests, including the full
