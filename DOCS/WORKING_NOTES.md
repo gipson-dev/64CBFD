@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
+Recover the experimental route search's real late start spill and three
+reloads, retaining all 535 C origins/14 bindings in 539 words/frame 1536. A
+three-origin reorder closes all 213 public-read sequences. Eleven tests pass
+in both copies, including 426 complete final-memory comparisons and effective
+old-start controls. Tools `a7eba1d` first. Continue 426 instruction differences,
+scoped roles and literal/integration gates; no install, README or totals change.
+
+2026-10-19:
 [Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
 Close four route-search table/avoid-pointer capture probes, using direct typed
 C reloads plus an explicitly post-compile five-field table-home mapping. Ten

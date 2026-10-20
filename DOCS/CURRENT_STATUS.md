@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5830074`; tools are committed before the consumer pin.
+  checkpoint pins tools `a7eba1d`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route-search start home, full extent and ordered public reads restored**:
+[Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md).
+Experimental `func_15086364` now has 539 words/frame 1536 through four real
+start spill/reload instructions plus a three-origin coordinate reorder. The
+post-compile mapping retains all 535 C origins/14 bindings; raw C stays 535
+words. Eleven tests pass in both copies, closing the start alias, all 213
+ordered public-read fixtures and complete final memory across 426 phases.
+There are still 426 instruction differences; lifetime-scoped register roles,
+intermediate state and integration gates remain open. No production install,
+matching credit, root README or installed-totals change. Continue this function.
 
 **Route-search captures closed; incoming start home still open**:
 [Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md).

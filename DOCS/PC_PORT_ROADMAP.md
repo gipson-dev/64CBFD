@@ -1,5 +1,16 @@
 # PC Port Roadmap located in another project folder
 
+## Route-Search Start Home, Extent And Ordered Reads - 2026-10-19
+
+[Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
+
+- [x] Recover the real late start spill and three incoming-home reloads through a checked post-compile origin mapping. Preserve all 535 C origins/14 bindings, add four functional private-memory instructions and reach 539 words/frame 1536 without NOP padding or omitted instructions. Raw C remains 535 words; this is not a compiler-only match.
+- [x] Close the two SP+600 aliases (retail/candidate waypoint 3 versus old candidate 1), retain two early-overwrite and two selected-cost cases, and compare exact start-home read/store histories and complete final public/private memory across all 426 fixture/phases. Keep the existing table/avoid/F2/path/flag probes and effective controls.
+- [x] Reorder three existing coordinate origins and close all 213 ordered public-read sequences. Preserve an effective old-schedule control whose read multiset still agrees but order differs. Keep full private-access/fault state separate from this bounded result.
+- [x] Pass eleven final tests in both copies, including native32/UBSan, 1,084 stale raw/binding/linked controls, both raw owner profiles/72 neighbors and all seven production pins. Tools `a7eba1d` first; all 1,455 older mirror leaf hashes/statuses preserved.
+- [ ] Resolve the remaining 426 instruction differences through lifetime-scoped GPR/FPR roles and original instruction/private-store scheduling. Complete final-memory equality does not prove intermediate private/register/FCSR or fault-prefix equality.
+- [ ] Complete independent original-assembly/GNU rebases, actual Make/padding/539-word owner metadata/strict first image and installed-state gates before production installation/recount. Production/profile/root README/totals remain unchanged; wider Game work is unfinished.
+
 ## Route-Search Capture Closure And Start-Home Boundary - 2026-10-19
 
 [Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
@@ -8,7 +19,7 @@
 - [x] Qualify an explicitly post-compile five-displacement mapping from cached-table SP+5FC to SP+60. Preserve all 535 origins/14 bindings, with zero inserted/omitted words and all other original object bytes/metadata unchanged. This is not a compiler-only or complete byte match.
 - [x] Close four fired table/avoid capture aliases and reject four effective old-capture controls. Pass ten tests in both copies, including 426 guest fixture/phases, 213 native32 cases/UBSan, 549 stale word/binding controls, both owner profiles/72 neighbors and all seven production pins. Tools `a2d506c`, then `5830074`, first; all 1,453 older mirror hashes preserved.
 - [x] Check selected-cost SP+290 and incoming-start SP+600 at the same read gate in both phases. Selected cost agrees (waypoint 2); start remains demonstrably open (retail waypoint 3 versus candidate 1). Preserve that effective failure as the next target.
-- [ ] Recover the start-home SP+600 store/reload lifetime without premature private stores, shifting accepted homes or padding over missing instructions. Normal output remains four words short, with 492 counted differences; ordered reads and full private/register equivalence remain open.
+- [x] Close start-home SP+600 and the four-word deficit in Note 1624 above, without premature stores, shifted accepted homes or padding. The reconstructed result is 539/frame 1536/426 differences; ordered public reads and complete final memories now agree. Full intermediate private/register equivalence remains open.
 - [ ] Finish literal/access-cut/FCSR boundaries, independent original-assembly/GNU rebases, actual Make/padding/strict first image and installed-state gates before production installation/recount. No production/profile/root README/totals change or matching credit yet. Wider Game work remains unfinished.
 
 ## Route-Search Sentinel And Capture Boundaries - 2026-10-19
@@ -19,7 +30,7 @@
 - [x] Pass eight tests in both copies: 426 guest fixture/phases, 213 native fixtures at O0/O2/O3 with UBSan, five compiled semantic negatives, six effective live-home aliases, two old-save negatives, both owner profiles/72 neighbors and all seven production pins. All 213 public read footprints agree; ordered reads do not yet agree.
 - [x] Demonstrate four fired open-capture probes in both stack phases. Retail reacts to a changed SP+60 table home or incoming avoid-pointer home after the second goal read; selected C retains the baseline route. Preserve the failures as evidence, not installation acceptance. Tools `6c7b058` first; all 1,451 older mirror hashes preserved.
 - [x] Close cached table-home SP+60 and retail avoid-pointer reload probes in Note 1623 above: typed C reloads plus an explicit five-field post-compile slot mapping. Existing arrays/F2 home survive. Complete compiler/private layout and the four missing words remain separate open work.
-- [ ] Finish remaining scalar/register/access order, literal/private/access-cut and independent GNU original-assembly gates, actual Make/padding/strict image and installed-state qualification. Current 483 differences comprise 479 linked overlap differences plus four missing words. Production/profile/README/totals stay unchanged until qualified; wider Game work remains unfinished.
+- [ ] Finish remaining scalar/register and complete intermediate/private-access order, literal/access-cut and independent GNU original-assembly gates, actual Make/padding/strict image and installed-state qualification. Note 1624 closes public-read order, final memory and full extent; 426 reconstructed instruction differences remain. Production/profile/README/totals stay unchanged until qualified; wider Game work remains unfinished.
 
 ## Route Node Search Recovery And Retail Workspace - 2026-10-19
 
@@ -28,7 +39,7 @@
 - [x] Read complete `func_15086364`, its direct call sites and the donor draft. Recover the five-argument interface with signed-byte list counts, unsigned-byte IDs, signed-halfword coordinates, word costs and float32 distance operations. Retain the opening-edge-only signed-halfword narrowing, strict frontier ties, hole reuse and waypoint compression.
 - [x] Recover the complete experimental C body, exact 1536-byte normal-profile frame, five array homes SP+7C/BC/FC/1C4/28C and the live F2 save SP+5D0 without guards, dummy storage or compiler-flag edits. Screen sixteen lifetime forms, twenty-four declaration partitions and four pointer/tail controls; selected output remains 545 words/488 differences.
 - [x] Pass seven tests in both copies: 426 completed guest fixture/phases, 213 native32 fixtures at O0/O2/O3 with UBSan, three effective compiled semantic negatives, six fired live-home alias pairs and two old-save negatives. Preserve both owner profiles' 72 other bodies/pools and all seven production pins. Tools `e70e8dc` first; all 1,448 older mirror hashes preserved.
-- [ ] Continue the four missing words, saved-register lifetimes, scalar/private homes and ordered accesses after Notes 1622/1623. Coverage remains 538/539 retail words; offset 0x7C8 is unvisited. Table/avoid probes are closed; incoming start-home SP+600 remains open. Shape/public-observation agreement is not whole-machine equivalence.
+- [x] Restore the complete extent, SP+600 lifetime, ordered public reads and complete final memory in Note 1624 above. Coverage remains 538/539 retail words; offset 0x7C8 is unvisited. Continue saved-role/intermediate-state and literal integration work in that section; these bounded results are not whole-machine equivalence.
 - [ ] Complete literal/private/access-cut and independent original-assembly/GNU gates, then actual per-function Make selection, padding, strict first image and installed-state qualification before installation/recount. Current owner primary profile disables unrolling; the closer candidate uses the existing normal profile. No production/profile/README/totals change or matching credit yet. Wider Game work remains unfinished.
 
 ## Actor State Tick Complete Match - 2026-10-19

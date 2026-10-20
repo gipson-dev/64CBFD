@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route-search start home, extent and ordered reads](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
+  experimental output reaches 539 words/frame 1536, closes start aliases, all
+  213 public-read sequences and 426 final memories. Eleven tests in both copies;
+  426 instruction differences remain. No installation or matching credit.
 - [Route-search capture closure and start-home boundary](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
   direct typed C closes avoid reloads; a five-field experimental mapping closes
   the table home. Ten tests in both copies, 535 words/frame 1536; incoming start

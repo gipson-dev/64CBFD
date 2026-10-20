@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Route-Search Start Home, Extent And Ordered Reads
+
+[Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
+Reconstruct the real start spill/three reloads and reorder three existing
+coordinate origins in experimental `func_15086364`. All 535 C origins/14
+bindings survive; output is now 539 words/frame 1536 with 426 real differences,
+not byte-exact. Eleven tests pass in both copies: start aliases close, all 213
+ordered public-read lists agree and all 426 final memories agree. Tools
+`a7eba1d` first; preserve 1,455 older mirror hashes. Continue register/schedule
+and literal/integration gates; production, root README and totals unchanged.
+
 ## 2026-10-19 Route-Search Capture Closure And Start-Home Boundary
 
 [Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
