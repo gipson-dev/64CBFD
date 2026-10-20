@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):
+Install complete `func_1519BE1C`, all 39 words/frame 16 directly from C, no
+guards/relocations/profile changes. All seven pre-install and installed tests
+pass in both copies, covering 526 modeled phases, 147 native cases/UBSan,
+five compiled negatives and independent GNU rebases. The strict 120-byte
+full-image prediction preserves every other body/address and protected data.
+Tools `f1f3716` first; total 3,694/5,505 (67.10%), zero drift, 435 matches to
+the current 75% threshold. Next `func_150BA4C0` has an isolated exact draft;
+its caller interface and copied padding are not yet qualified.
+
+2026-10-20:
 [Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
 Install complete `func_1508DC24`, all 681 words/frame 280 exact through checked
 C origins and 680 expected-word rows. All 27 pre-install and installed tests

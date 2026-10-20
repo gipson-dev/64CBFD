@@ -2,10 +2,20 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1628: 3,693/5,505 exact (67.08%), 1,812 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Generate an ELF-pinned remaining-function triage queue. Identify 1,677 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries; these are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 436 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
-- [ ] Continue with the shortest credible C candidates, beginning with the complete 39-word `func_1519BE1C` kinematic integrator. Audit its callers, struct-copy/alias ordering and float32 evaluation before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+- [x] Measure the installed project after Note 1629: 3,694/5,505 exact (67.10%), 1,811 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,676 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 435 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
+- [ ] Qualify the next 39-word `func_150BA4C0` effect-payload draft. Its isolated C is already exact/frame 72, but caller/return use and the three locally unwritten payload bytes represented as padding remain open. Keep `func_15070C40` and the 862-word `func_1508CAD8` owner stub queued.
+
+## Kinematic Step Direct C Match - 2026-10-20
+
+[Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):
+
+- [x] Restore typed `func_1519BE1C` with its original name, three-float vector copy, no-return-value interface and purpose comment. Emit all 39 words/frame 16 directly from the existing O2/g3 profile, without guards, relocations or Makefile changes.
+- [x] Pass seven pre-install and seven installed tests in both copies: 263 cases/526 full modeled states, exact ordered public reads/writes, all 39 retail words, 290 overlapping guest phases, 147 valid native vector cases at O0/O2/O3 with UBSan, five compiled semantic negatives, a placeholder negative and 24 independently GNU-rebased phases. Keep hardware FCSR/MMU, partial-overlap portable C and connected gameplay acceptance separate.
+- [x] Preserve 68 other raw/padded owner bodies and pools; qualify the actual three-command Make path and eight wrong-image controls. Build the strict 120-byte ELF prediction with no metadata exclusions; preserve all 6,056 other bodies, 6,057 addresses and 189,088 protected data bytes/720 owners.
+- [x] Recount total 3,694/5,505 (67.10%), Game 3,021/4,832 (62.52%), 1,811 different/zero drift, with converted rows/bytes unchanged. Tools `f1f3716` first; preserve all 1,470 existing mirror hashes/statuses. README aggregate rows only; continue the 75% goal above.
 
 ## Pickup Update Complete Match - 2026-10-20
 

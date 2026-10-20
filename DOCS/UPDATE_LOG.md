@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Kinematic Step Direct C Match
+
+[Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):
+Install typed `func_1519BE1C`, all 39 words/frame 16 directly from normal C,
+without guards or profile changes. Seven pre-install and installed tests pass
+in both copies; float/copy/alias ordering, native32/UBSan, five compiled negatives
+and independent GNU rebases qualify it. The strict production ELF changes only
+120 predicted bytes and fixes all other bodies/addresses/data. Tools `f1f3716`
+first. Fresh total 3,694/5,505 (67.10%), Game 3,021/4,832 (62.52%); 435 further
+matches needed for 75%. Next effect-payload draft is exact in isolation only;
+caller/padding qualification remains open. No host acceptance is inferred.
+
 ## 2026-10-20 Pickup Update Complete Match
 
 [Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):

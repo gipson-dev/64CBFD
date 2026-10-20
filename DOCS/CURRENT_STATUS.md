@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b66644c`; tools are committed before the consumer pin.
+  checkpoint pins tools `f1f3716`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Kinematic step installed directly from C: all 39 words byte-exact**:
+[Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md).
+Typed `func_1519BE1C` preserves its three-float velocity capture, float32
+polynomial and no-return-value interface. No guards, relocations, flag or
+Makefile changes. All seven pre-install and installed tests pass in both
+copies: 263 cases/526 full modeled states, 147 native32 cases at O0/O2/O3 with
+UBSan, five compiled negatives and independent GNU rebases. The production
+build exactly matches the 120-byte target/size prediction and fixes all other
+code/addresses/data. Tools `f1f3716` first. Fresh total 3,694/5,505 (67.10%),
+Game 3,021/4,832 (62.52%), zero drift; 435 more matches are needed for 75% at
+this denominator. Next `func_150BA4C0` already has an isolated 39-word/frame-72
+exact draft, not installed; qualify caller ABI and copied padding first.
 
 **Pickup update installed: all 681 words byte-exact**:
 [Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md).

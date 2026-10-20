@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Kinematic step direct C match](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):
+  all 39 words/frame 16 installed directly from normal C, without guards.
+  Seven pre-install and installed tests pass in both copies; strict 120-byte
+  ELF prediction preserves all other code/data. Total 3,694/5,505 (67.10%);
+  435 further matches are needed for the current 75% threshold.
 - [Pickup update complete match](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
   all 681 words/frame 280 installed exact through checked C origins/680 guards.
   All 27 pre-install and installed tests pass in both copies; strict whole-ELF

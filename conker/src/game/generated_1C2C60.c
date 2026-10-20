@@ -383,8 +383,18 @@ s32 func_1519B4B8() {
     return 0;
 }
 
-s32 func_1519BE1C() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} KinematicVector;
+
+/* Advance position from saved velocity and apply vertical acceleration. */
+void func_1519BE1C(KinematicVector *position, KinematicVector *velocity,
+                   f32 acceleration, f32 timestep) {
+    KinematicVector saved = *velocity;
+    velocity->y += acceleration * timestep;
+    position->x += saved.x * timestep;
+    position->y += saved.y * timestep + 0.5f * acceleration * timestep * timestep;
+    position->z += saved.z * timestep;
 }
 
 void func_1519BEB8(u8 *arg0) {
