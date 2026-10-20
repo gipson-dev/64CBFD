@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `23bad49`; tools are committed before the consumer pin.
+  checkpoint pins tools `8061257`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor sound constructor installed directly from C: all 39 words exact**:
+[Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md).
+`func_151BB044` preserves word-before-short coordinate conversion, all twelve
+registration arguments, the callback/context and unsigned handle return.
+Seven pre-install and installed tests pass in both copies, with 756 modeled
+phases, 377 native cases/sanitizers, 80 actual original registration phases
+and the complete 93-word original caller. The callback itself remains
+unrecovered. Preserve 56 owner neighbors and reproduce the strict 117-byte
+ELF prediction; all other code/addresses/data stay fixed. Tools `8061257`
+first, no guards/profile changes. Total 3,701/5,505 (67.23%), Game 3,028/4,832
+(62.67%), zero drift; 428 more matches to 75%. Next `func_151CE634` has a
+complete semantic draft at 41 words/frame 0/41 differences, not installed.
 
 **Actor-position dispatch installed directly from C: all 39 words exact**:
 [Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md).

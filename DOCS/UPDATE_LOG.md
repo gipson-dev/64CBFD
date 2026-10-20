@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Actor Sound Constructor Direct C Match
+
+[Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):
+Restore typed `func_151BB044`, all 39 words/frame 56 directly from C, with
+word-then-short coordinates, twelve arguments and the real unsigned handle
+return. Seven tests pass pre-install and installed in both copies, including
+original registration/caller execution and native32 sanitizers. Preserve 56
+owner neighbors; production exactly matches the strict 117-byte ELF prediction.
+Tools `8061257` first, no guards/profile changes; total 3,701/5,505 (67.23%),
+zero drift; 428 more to 75%. Next `func_151CE634` is a 41-word semantic draft,
+not installed or counted. Callback and full SDK/gameplay acceptance stay open.
+
 ## 2026-10-20 Actor Position Dispatch Direct C Match
 
 [Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):

@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-20:
+[Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):
+Restore `func_151BB044`, 39 words/frame 56 directly from C, preserving twelve
+sound-registration arguments, explicit word-before-short casts and unsigned
+handle return. Seven tests pass in both copies pre-install and installed:
+756 modeled phases, 377 native cases/sanitizers, original registration and
+the full 93-word caller. Preserve 56 owner neighbors and reproduce the strict
+117-byte ELF. Tools `8061257` first; total 3,701/5,505 (67.23%), zero drift;
+428 further matches to 75%. Next `func_151CE634` is semantic but still differs.
+
+2026-10-20:
 [Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
 Fit `func_15070C40`, 39 words/frame 64 directly from C with canonical types.
 Six tests pass pre-install and installed in both copies: 2,816 modeled phases,

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor sound constructor direct C match](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):
+  all 39 words/frame 56 emit directly with word-then-short coordinates and a
+  preserved unsigned handle return. Seven tests pass in both copies before
+  and after installation; original registration/caller and strict 117-byte
+  ELF gates pass. Total 3,701/5,505 (67.23%); 428 more matches to 75%.
 - [Actor position dispatch direct C match](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
   all 39 words/frame 64 emit directly; both copies pass six pre-install and
   installed tests. Preserve 327 owner neighbors and fully account for overflow

@@ -26,8 +26,15 @@ s32 func_151BA468() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1E73B0/func_151BA518.s")
 
-s32 func_151BB044() {
-    return 0;
+#include "structs.h"
+u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
+s32 func_151BB0E0();
+
+/* Register the actor's sound callback and return the sound-entry handle. */
+u16 func_151BB044(struct127 *actor) {
+    return func_1000FA64(0x4A7, (s16)(s32)actor->x_position,
+        (s16)(s32)actor->y_position, (s16)(s32)actor->z_position,
+        0x2000, 800, 200, (s32)func_151BB0E0, actor, 0, 8, 0);
 }
 
 s32 func_151BB0E0() {
