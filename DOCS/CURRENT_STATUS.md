@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d106360`; tools are committed before the consumer pin.
+  checkpoint pins tools `9e5b77d`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Randomized point burst installed directly from C: all 40 words exact**:
+[Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md).
+`func_150CA930` preserves unsigned RNG modulo/count, float32 scale, late point
+reads, the signed-short home and twelve-argument floating ABI. Seven tests
+pass in both copies before and after installation: 846 modeled phases, 421
+native cases/UBSan, ten compiled controls and 56 actual caller-window phases
+covering both direct callers. Preserve 18 owner neighbors and reproduce the
+strict 120-byte production ELF; all other code/addresses/data remain fixed.
+Tools `9e5b77d` first, no guards/profile changes. Total 3,703/5,505 (67.27%),
+Game 3,030/4,832 (62.71%), zero drift; 426 more matches to 75%. Next
+`func_150F2230` is queued only, with no installed draft or matching credit.
 
 **Context-node search matched through guarded semantic C: 39 words exact**:
 [Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md).

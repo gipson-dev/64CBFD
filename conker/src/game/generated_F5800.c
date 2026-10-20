@@ -54,8 +54,18 @@ s32 func_150CA150() {
     return 0;
 }
 
-s32 func_150CA930() {
-    return 0;
+#include "structs.h"
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
+
+/* Submit a randomized type-19 burst at the point after both RNG calls. */
+void func_150CA930(struct17 *point) {
+    s16 count = (u32)func_150ADA20() % 21U + 10;
+    f32 scale = func_150ADA68() * 59.0f + 170.0f;
+
+    func_1514C678(point->unk0, point->unk4, point->unk8, scale,
+        0, 255, count, 0x13, 0, 0.0f, 0, 255);
 }
 
 s32 func_150CA9D0(u8 *arg0) {

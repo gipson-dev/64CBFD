@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Randomized Point Burst Direct C Match
+
+[Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
+Restore typed `func_150CA930`, all 40 words/frame 64 directly from normal C,
+with unsigned random modulo/count, float32 multiply/add, post-RNG point reads
+and twelve original arguments. Seven tests pass in both tools copies before
+and after installation, including native32, effective controls and both actual
+caller windows. Preserve 18 owner neighbors; production exactly matches the
+strict 120-byte body/size-only ELF. Tools `9e5b77d` first, no guards/profile
+changes; total 3,703/5,505 (67.27%), zero drift; 426 more matches to 75%.
+Next `func_150F2230` remains queued, uninstalled and uncounted.
+
 ## 2026-10-20 Context Node Search Guarded C Match
 
 [Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Randomized point burst direct C match](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
+  all 40 words/frame 64 emit directly, with unsigned modulo/count, float32
+  scale and late point reads. Both copies pass seven pre-install and installed
+  tests, including two actual caller windows. Preserve 18 owner neighbors and
+  the strict 120-byte production ELF. Total 3,703/5,505 (67.27%); 426 more to 75%.
 - [Context node search guarded C match](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):
   complete 41-word C search normalizes to 39 retail words/frame 0 with closed
   input/origin/binding guards. Seven tests pass in both copies; preserve 51

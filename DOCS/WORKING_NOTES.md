@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-20:
+[Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
+Restore `func_150CA930`, all 40 words/frame 64 directly from C, preserving
+unsigned RNG modulo, short count, float32 scale and late point reads.
+Seven tests pass in both copies pre-install and installed: 846 modeled phases,
+421 native cases/UBSan, ten compiled controls and 56 actual windows across
+both direct callers. Preserve 18 owner neighbors and the strict 120-byte ELF.
+Tools `9e5b77d` first; total 3,703/5,505 (67.27%), zero drift; 426 more to 75%.
+Next `func_150F2230` remains queued and uncounted.
+
+2026-10-20:
 [Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):
 Recover the complete read-only `func_151CE634` search. Forty-one compiled C
 words normalize to the 39-word/frame-zero retail slot with 41 checked guards,
