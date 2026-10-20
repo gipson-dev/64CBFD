@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Type-0x5A color factory direct C match](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
+  all 40 words/frame32/one binding emit directly with the recovered eight-argument
+  ABI, full word value, RGB/view fields and wrapping payload-size request.
+  Both copies pass eight tests before/after, all three caller sites and the
+  bounded allocation/list chain. Keep 22 neighbors and all guards unchanged;
+  exact ELF change is 116 bytes. Total 3,710/5,505 (67.39%); 419 more to 75%.
 - [Zero-health callback direct C match](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md):
   all 40 words/frame48/three bindings emit directly using the existing actor
   fields and corrected byte-pointer callback ABI. Both copies pass eight tests

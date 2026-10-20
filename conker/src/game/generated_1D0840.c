@@ -1,4 +1,19 @@
 #include <ultra64.h>
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+
+typedef struct {
+    u8 header[0x10];
+    u32 value;
+    u8 selector;
+    u8 red;
+    u8 green;
+    u8 blue;
+    u8 state;
+    u8 callback;
+    u8 view;
+    u8 reserved[5];
+} Type5AColorRecord;
+
 void func_15169260(void *, s32, s32, u8);
 void func_15143134(void *, void *, s32);
 extern u8 D_800A8D70[];
@@ -155,8 +170,24 @@ void func_151A4F7C(u8 *arg0, u8 *arg1, u8 arg2) {
     }
 }
 
-s32 func_151A4FD0() {
-    return 0;
+/* Create a type-0x5A color record with optional trailing payload. */
+Type5AColorRecord *func_151A4FD0(s32 selector, u32 value, s32 red, s32 green,
+    s32 blue, s32 view, u8 callback, u32 extraBytes) {
+    Type5AColorRecord *record = func_15167A68(0x5A, 0,
+        (s32)(extraBytes + 0x20U), 0, 0xFF, 1);
+
+    if (record == NULL) {
+        return NULL;
+    }
+    record->selector = selector;
+    record->value = value;
+    record->red = red;
+    record->green = green;
+    record->blue = blue;
+    record->callback = callback;
+    record->state = 0;
+    record->view = view;
+    return record;
 }
 
 s32 func_151A5070() {

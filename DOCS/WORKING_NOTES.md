@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-20:
+[Note 1645](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
+Recover `func_151A4FD0`, all 40 words/frame32/one binding directly from C.
+Preserve the full word value, RGB/view bytes, eight-argument ABI, wrapping
+size-plus-0x20 request, NULL return and exact late argument reloads/stores.
+Both copies pass eight tests before and after installation, including all
+three real caller sites and the bounded original allocation/list chain.
+Keep 22 neighbors and the entire guard manifest; strict ELF change is
+116 bytes with zero exclusions. Tools `da87893` first; total 3,710/5,505
+(67.39%), zero drift; 419 more to 75%.
+Next `func_151B8B40` is queued only, with no draft or matching credit.
+
+2026-10-20:
 [Note 1644](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md):
 Recover `func_15195698`, all 40 words/frame48/three bindings directly from C.
 Preserve unsigned health/selector gates, eight-argument call setup, ordered

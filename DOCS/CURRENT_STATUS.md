@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `41229dd`; tools are committed before the consumer pin.
+  checkpoint pins tools `da87893`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Type-0x5A color factory installed directly from C: all 40 words exact**:
+[Note 1645](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
+Recover `func_151A4FD0`, all 40 words/frame32/one binding directly from C.
+Preserve the full word value, RGB/view bytes, eight-argument ABI, wrapping
+size-plus-0x20 request, NULL return and exact late argument reloads/stores.
+Both copies pass eight tests before and after installation, including all
+three real caller sites and the bounded original allocation/list chain.
+Keep 22 neighbors and the entire guard manifest; strict ELF change is
+116 bytes with zero exclusions. Tools `da87893` first; total 3,710/5,505
+(67.39%), zero drift; 419 more to 75%.
+Next `func_151B8B40` is queued only, with no draft or matching credit.
+Game is 3,037/4,832 (62.85%). Preserve all 1,502 pre-existing older-mirror
+dirty paths; add only the two task files without committing that mirror.
 
 **Zero-health callback installed directly from C: all 40 words exact**:
 [Note 1644](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md).
