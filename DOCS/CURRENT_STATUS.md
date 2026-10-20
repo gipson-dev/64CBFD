@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e707d3e`; tools are committed before the consumer pin.
+  checkpoint pins tools `9c3c005`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Pickup-update private homes and selector lifetimes recovered**:
+[Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md).
+Complete experimental `func_1508DC24` now emits 17 original homes directly from
+C and preserves the cached selector base separately from its live cursor.
+Eighteen tests pass in both copies: 34 home aliases, two cursor aliases, 936
+ordered-public-state comparisons, 468 literal final memories/FPR vectors,
+native32/UBSan and eight real coordinate-helper phases. Raw output is still
+680 words/frame 280/636 differences, not installed; GPRs and 73-versus-77
+relocation placement remain open. Tools `9c3c005` first. All seven production
+inputs, root README and installed totals remain unchanged. Continue this function.
 
 **Player-item and pickup update reconstructed, not installed**:
 [Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md).

@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Pickup Update Private Homes And Selector Cursor - 2026-10-19
+
+[Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
+
+- [x] Recover all 17 targeted private homes directly from real C declaration placement, without added locals/dummy storage or transforms. Prove the intermediate changes only 60 SP displacement fields and preserves all 77 intermediate bindings.
+- [x] Close the cached selector-base versus live-cursor mismatch and retain the signed selector update without an extra public read. Pass 34 fired home aliases, two live-cursor aliases and effective old controls.
+- [x] Pass 18 tests in both copies: 936 ordered-public-state comparisons, all 681 retail words, 468 complete final memories/FPR vectors, native32 at O0/O2/O3 with UBSan, six compiled negatives and eight bounded real coordinate-helper phases. Both raw owner profiles keep 72 neighbors/pools; all seven production pins and root README remain unchanged. Tools `9c3c005` first; preserve all 1,464 older mirror hashes/statuses.
+- [x] Assemble/link the original complete 681-word slot independently with GNU and verify literal ROM identity. Record its 77 entries versus 73 in selected C, including the exact eight-original-extra/four-C-extra binding multisets; do not equate this one-address check with independent rebases.
+- [ ] Finish the missing word, scoped GPR lifetimes, address materialization/bindings and instruction/branch-delay layout. Final GPR vectors are not yet literal; full intermediate/access-cut, independent GNU rebase, actual Make/padding and strict first-image gates remain open. Install/recount only after qualification; wider Game matching remains unfinished.
+
 ## Player Item And Pickup Update Reconstruction - 2026-10-19
 
 [Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
@@ -7,7 +17,8 @@
 - [x] Read all 681 original words and the direct command caller; recover the no-argument void interface, exact field widths and helper contracts. Reconstruct complete C in tools with meaningful locals/comment, rather than importing the donor's incorrect widths/signatures.
 - [x] Restore frame 280 with a byte-indexed pickup cursor: selected output is 680 words/665 counted differences, including one missing word. Keep the existing two compiler profiles; their selected bytes agree. No guards, dummy storage or padding.
 - [x] Pass eight tests in both copies: 234 cases, 936 candidate fixture/profile/phases, all 681 retail words, equal ordered public reads/writes/calls and complete public memory, native32 at O0/O2/O3 with trap UBSan and six effective compiled negatives. Qualify both raw owner profiles/72 neighbors and all seven unchanged production pins. Tools `e707d3e` first; preserve 1,461 existing mirror hashes/statuses.
-- [ ] Continue this function's missing functional word, private homes, saved-role lifetimes and exact instruction/branch-delay layout. Add fired alias/call-save/full-state/access-cut and independent GNU original-assembly gates before any normalization or installation. Public behavior and exact frame alone are insufficient.
+- [x] Recover the 17 targeted private homes, fired home/cursor aliases and complete final memory/FPR parity in Note 1627 above. Production remains unchanged; this is not a complete match.
+- [ ] Continue this function's missing word, saved GPR-role lifetimes and exact instruction/branch-delay layout. Add full intermediate/access-cut and independent GNU rebase gates before normalization or installation. Public behavior, final memory and exact frame alone are insufficient.
 - [ ] Qualify actual owner padding/Make selection and strict first linked image, install only the qualified body, rerun installed tests and recount. Root README and installed totals stay unchanged until that point. `func_1508CAD8` (862 words) remains the next other owner stub; wider Game matching is unfinished.
 
 ## Route Node Search Complete Match - 2026-10-19

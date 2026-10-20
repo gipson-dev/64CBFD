@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Pickup Update Private Homes And Selector Cursor
+
+[Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
+Complete experimental `func_1508DC24` now recovers 17 private homes from C,
+separates its cached selector base/live cursor and avoids an extra selector
+read. Eighteen tests pass in both copies, including 468 complete final memories
+and FPR vectors, 34 home/two cursor aliases, native32 and real coordinate-helper
+phases. Tools `9c3c005` first. Raw 680 words/frame 280/636 differences; no
+installation or credit. Continue GPR/relocation/scheduling and integration
+gates. All seven production inputs and root README remain unchanged.
+
 ## 2026-10-19 Player Item And Pickup Update Reconstruction
 
 [Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):

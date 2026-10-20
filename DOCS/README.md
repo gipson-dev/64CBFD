@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Pickup update private homes and selector cursor](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
+  17 direct C homes, cached/live selector captures and 468 complete final
+  memories/FPR vectors qualify in 18 tests in both copies. Raw 680/frame 280/
+  636 differences; continue GPR/binding/layout gates before installation.
 - [Player item and pickup update reconstruction](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
   complete experimental `func_1508DC24`, 680 words/frame 280, one word short;
   eight tests in both copies qualify 234 public-state/native32 cases and all

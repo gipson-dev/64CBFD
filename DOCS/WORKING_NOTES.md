@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
+Recover 17 pickup-update private homes directly from real C declarations,
+the cached-base/live-cursor distinction and signed rotating-selector capture.
+Eighteen tests pass in both copies: 34 home/two cursor aliases, all public
+read sequences, 468 full final memories/FPR vectors, native32/UBSan and eight
+real helper phases. Tools `9c3c005` first. Raw 680/frame 280/636 differences;
+GPR/layout/binding gates remain open. No production/README/totals change.
+
+2026-10-19:
 [Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
 Recover complete player-item/effect and pickup-respawn `func_1508DC24` C in
 tools. Selected byte cursor restores frame 280 in 680 words; 665 differences
