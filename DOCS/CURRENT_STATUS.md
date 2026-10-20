@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `12b5844`; tools are committed before the consumer pin.
+  checkpoint pins tools `c6aefcc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Camera heading installed directly from C: all 40 words exact**:
+[Note 1641](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md).
+`func_151220D0` uses the existing camera layout, unsigned descriptor mask,
+late displacement reads and degrees/radians stores before unconditional
+continuation. Frame40 and all five bindings match without guards/profile
+changes. Eight tests pass in both copies before and after installation,
+including both complete callers and bounded original helper paths.
+Preserve the owner neighbor; production exactly reproduces the closed
+177-byte ELF prediction, including the named symbol/string permutation.
+Tools `c6aefcc` first. Total 3,706/5,505 (67.32%), Game 3,033/4,832 (62.77%),
+zero drift; 423 more matches to 75%. Next `func_150C5BD4` is queued only.
 
 **Dual random point wrapper installed directly from C: all 40 words exact**:
 [Note 1640](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md).

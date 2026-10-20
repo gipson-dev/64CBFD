@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-20:
+[Note 1641](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md):
+Recover `func_151220D0`, all 40 words/frame40 directly from C. Preserve the
+descriptor gate, late camera displacement, degrees/radians store order and
+unconditional continuation. Both copies pass eight pre-install/installed
+tests, both full callers and bounded original helpers; preserve the neighbor
+and exact 177-byte ELF prediction, including closed symbol/string ordering.
+Tools `c6aefcc` first; total 3,706/5,505 (67.32%), zero drift; 423 more to 75%.
+Next `func_150C5BD4` remains queued and uncounted.
+
+2026-10-20:
 [Note 1640](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md):
 Restore `func_150F7F8C`, all 40 words/frame48 directly from C, retaining its
 SP+0x28 RNG home, exact float32 expressions/constant, ignored pointer result

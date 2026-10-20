@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Camera heading direct C match](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md):
+  all 40 words/frame40 emit directly using the existing camera layout.
+  Both copies pass eight pre-install/installed tests, both full callers and
+  bounded original helper paths. The 177-byte ELF prediction accounts for
+  every code/metadata change. Total 3,706/5,505 (67.32%); 423 more to 75%.
 - [Dual random point direct C match](WORKING_NOTES/1640-dual-random-point-direct-c-match-20261020.md):
   all 40 words/frame48 emit directly after recovering the first RNG home through
   declaration order. Both copies pass eight pre-install and installed tests,
