@@ -158,8 +158,29 @@ s32 func_1511650C() {
     return 0;
 }
 
-s32 func_15116888() {
-    return 0;
+#include "structs.h"
+s32 func_150490A8(struct17 *);
+f32 func_15048A40(u8);
+
+/* Project the actor's speed onto the horizontal direction from an origin. */
+s32 func_15116888(s32 originX, s32 originZ, void *unused, void *actor) {
+    s32 actorX = (s32)*(f32 *)((u8 *)actor + 0x14);
+    s32 actorZ = (s32)*(f32 *)((u8 *)actor + 0x1C);
+    s32 deltaZ = (s32)((u32)actorZ - (u32)originZ);
+    s32 facing;
+    s32 angle;
+    f32 scale;
+    struct17 offset;
+    f32 projected;
+    offset.unk0 = (s32)((u32)actorX - (u32)originX);
+    offset.unk8 = deltaZ;
+    angle = func_150490A8(&offset);
+    facing = *(u16 *)((u8 *)actor + 0x76);
+    facing = 64 - (facing >> 8);
+    facing -= angle;
+    scale = func_15048A40((u8)facing);
+    projected = *(f32 *)((u8 *)actor + 0x3C) * scale;
+    return (s32)projected;
 }
 
 void func_15116924(s32 arg0) {

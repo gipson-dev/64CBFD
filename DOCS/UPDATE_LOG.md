@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-20 Heading-Projected Speed Direct C Match
+
+[Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):
+Install typed `func_15116888`, all 39 words/frame 64 directly from normal C.
+Named facing stages close the seven expression/register differences; retain
+the canonical vector, modulo-word deltas and actual unused context pointer.
+Eight pre-install and installed tests pass in both copies, with 386 native
+cases/UBSan, nine semantic controls and 738 original math-chain phases using
+frozen data. The 223-word caller remains static-only. Strict 121-byte ELF
+audit preserves all other code/data/header. Tools `55e2533` first; total
+3,699/5,505 (67.19%), zero drift; 430 further matches to 75%. Next
+`func_15070C40` is exact in isolation only, not installed or counted.
+
 ## 2026-10-20 Record Effect Payload And Pointer Return Match
 
 [Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):

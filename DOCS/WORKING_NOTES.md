@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-20:
+[Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):
+Install complete `func_15116888`, 39 words/frame 64 directly from C, with
+canonical struct17 and the actual unused context-pointer argument. Staged
+facing data flow closes all seven differences. Eight pre-install and installed
+tests pass in both copies: 784 modeled phases, 386 native cases/UBSan, nine
+compiled controls and 738 original math-chain phases, including all 113 helper
+words with frozen data. Caller ABI stays static-only. Strict 121-byte ELF
+prediction fixes other code/addresses/data/header. Tools `55e2533` first;
+total 3,699/5,505 (67.19%), zero drift; 430 further matches to 75%.
+Next `func_15070C40` has an isolated exact 39-word/frame-64 draft, not installed.
+
+2026-10-20:
 [Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):
 Install complete pointer-returning `func_151CD2C0`, all 39 words/frame 72
 directly from C, with its typed unchanged-code C caller. Eight pre-install

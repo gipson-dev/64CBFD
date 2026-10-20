@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Heading-projected speed direct C match](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):
+  all 39 words/frame 64 emit directly with canonical types and staged facing
+  calculation. Eight pre-install and installed tests pass in both copies;
+  original math-chain execution and strict 121-byte ELF audit preserve other
+  code/data. Fresh total 3,699/5,505 (67.19%); 430 further matches to 75%.
 - [Record effect payload and pointer return match](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):
   all 39 words/frame 72 emit directly, with a typed unchanged-code C caller.
   Eight pre-install and installed tests pass in both copies; strict 121-byte

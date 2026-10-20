@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `2a385cc`; tools are committed before the consumer pin.
+  checkpoint pins tools `55e2533`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Heading-projected speed installed directly from C: all 39 words exact**:
+[Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md).
+`func_15116888` preserves coordinate truncation/word wrap, the canonical
+struct17 vector, staged facing calculation and post-helper speed read.
+The caller's actual unused context pointer is typed correctly; its 223-word
+routine remains a static ABI check. Eight pre-install and installed tests
+pass in both copies: 784 modeled phases, 386 native cases/UBSan, nine compiled
+controls and 738 actual original math-chain phases (736 lookup entries).
+All 113 helper words execute with frozen data. Strict 121-byte production
+audit fixes all other code/addresses/data/header. Tools `55e2533` first;
+no guards/profile changes. Fresh total 3,699/5,505 (67.19%), Game 3,026/4,832
+(62.62%), zero drift; 430 further matches to 75%. Next `func_15070C40` has
+an isolated exact 39-word/frame-64 conditional-argument draft, not installed
+or counted; qualify selection/capture/callers and full owner first.
 
 **Record effect payload and pointer return installed: all 39 words exact**:
 [Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md).
