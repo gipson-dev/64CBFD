@@ -104,7 +104,33 @@ s32 func_151CE51C() {
     return 0;
 }
 
-s32 func_151CE634() {
+extern u8 D_800DCE50[0x340];
+extern s8 D_800DD190;
+extern s32 D_800A5760[2];
+
+/* Find the first type-11 node whose associated payload names this context. */
+void *func_151CE634(void *context) {
+    u8 phase;
+    u8 *row;
+    void **column;
+    void *node;
+
+    for (phase = 0; phase < 2; phase++) {
+        row = D_800DCE50;
+        column = (void **)(row + D_800A5760[phase] * 4);
+        do {
+            node = *column;
+            while (node != 0) {
+                if (*(s32 *)((u8 *)node + 0x20) == 11 &&
+                    *(void **)((u8 *)*(void **)((u8 *)node + 0x98) + 0x48) == context) {
+                    return node;
+                }
+                node = *(void **)((u8 *)node + 8);
+            }
+            row += 0x1A0;
+            column = (void **)((u32)column + 0x1A0);
+        } while (row != (u8 *)&D_800DD190);
+    }
     return 0;
 }
 

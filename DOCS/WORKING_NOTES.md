@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):
+Recover the complete read-only `func_151CE634` search. Forty-one compiled C
+words normalize to the 39-word/frame-zero retail slot with 41 checked guards,
+closed C origins, six bindings and the entire old manifest prefix preserved.
+Guarded, not compiler-only. Seven tests pass in both copies, including 782
+three-way phases, 389 native cases/UBSan, 47 fired guards and 42 caller windows.
+Preserve 51 owner neighbors; strict production change is 126 ELF bytes only.
+Tools `d106360` first; total 3,702/5,505 (67.25%), zero drift; 427 more to 75%.
+Next `func_150CA930` remains queued and uncounted.
+
+2026-10-20:
 [Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):
 Restore `func_151BB044`, 39 words/frame 56 directly from C, preserving twelve
 sound-registration arguments, explicit word-before-short casts and unsigned

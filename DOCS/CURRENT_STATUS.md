@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8061257`; tools are committed before the consumer pin.
+  checkpoint pins tools `d106360`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Context-node search matched through guarded semantic C: 39 words exact**:
+[Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md).
+`func_151CE634` now implements the complete phase/row/list first-match search.
+Normal C emits 41 words; 41 checked normalization rows close address folds,
+register lifetimes and the split row advance. This is not compiler-only.
+The final unsigned-address advance is word/binding-identical and requalified.
+Seven tests pass in both copies before and after installation: 782 three-way
+phases, 389 native cases/UBSan, 47 fired word/binding negatives and 42 caller
+windows. Preserve 51 owner neighbors and the old guard prefix; production
+reproduces the strict 126-byte ELF prediction, fixing other code/addresses/data.
+Tools `d106360` first. Total 3,702/5,505 (67.25%), Game 3,029/4,832 (62.69%),
+zero drift; 427 more matches to 75%. Next `func_150CA930` is queued only.
 
 **Actor sound constructor installed directly from C: all 39 words exact**:
 [Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md).

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Context Node Search Guarded C Match
+
+[Note 1637](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):
+Recover the complete `func_151CE634` search and pointer return. Its 41 C words
+normalize to retail's 39/frame 0 through 41 input guards, three closed folds
+and one split advance; all six bindings and the old manifest prefix are checked.
+This is guarded C, not compiler-only output. Seven tests pass in both copies,
+including native32, read-order/first-match, mutant and caller-window checks.
+Preserve 51 owner neighbors and reproduce the strict 126-byte production ELF.
+Tools `d106360` first; total 3,702/5,505 (67.25%), zero drift; 427 more to 75%.
+Next `func_150CA930` is queued; no extra matching credit is claimed.
+
 ## 2026-10-20 Actor Sound Constructor Direct C Match
 
 [Note 1636](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):

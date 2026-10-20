@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Context node search guarded C match](WORKING_NOTES/1637-context-node-search-guarded-c-match-20261020.md):
+  complete 41-word C search normalizes to 39 retail words/frame 0 with closed
+  input/origin/binding guards. Seven tests pass in both copies; preserve 51
+  owner neighbors and the old manifest prefix, and reproduce the strict
+  126-byte ELF. Total 3,702/5,505 (67.25%); 427 more matches to 75%.
 - [Actor sound constructor direct C match](WORKING_NOTES/1636-actor-sound-constructor-direct-c-match-20261020.md):
   all 39 words/frame 56 emit directly with word-then-short coordinates and a
   preserved unsigned handle return. Seven tests pass in both copies before
