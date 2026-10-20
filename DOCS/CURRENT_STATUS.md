@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `6c7b058`; tools are committed before the consumer pin.
+  checkpoint pins tools `5830074`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route-search captures closed; incoming start home still open**:
+[Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md).
+Complete experimental `func_15086364` now emits the avoid-pointer reloads from
+typed C; a five-displacement post-compile mapping closes the cached table home.
+All four formerly failing capture probes now agree, with four effective old
+controls. Ten tests pass in both copies. Normal output stays 535 words/frame
+1536, with 492 counted differences including four missing words; no installation
+or credit. The next fired probe is start-home SP+600: retail waypoint 3 versus
+candidate 1 in both phases. Selected-cost probes already agree. Continue that
+start lifetime and exact layout; production, root README and totals unchanged.
 
 **Route-search sentinel and coordinate captures recovered**:
 [Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md).

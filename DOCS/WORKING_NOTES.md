@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
+Close four route-search table/avoid-pointer capture probes, using direct typed
+C reloads plus an explicitly post-compile five-field table-home mapping. Ten
+tests pass in both copies; all 535 origins and 14 bindings survive. Tools
+`5830074` first. Start-home SP+600 still yields retail 3 versus candidate 1;
+selected-cost probes already agree. Continue that lifetime and four missing
+words; 492 differences, no production/README/totals change or new match credit.
+
+2026-10-19:
 [Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
 Recover the shared route-search loop sentinel and early signed-coordinate
 captures directly from complete C. Retain frame 1536/six homes; normal output

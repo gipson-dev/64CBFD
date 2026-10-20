@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Route-Search Capture Closure And Start-Home Boundary
+
+[Note 1623](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
+Close the table/avoid-pointer probes in complete experimental `func_15086364`:
+typed C recovers avoid reloads; five guarded frame-displacement fields map the
+cached table home. All 535 origins/14 bindings survive; no added/omitted words.
+Ten tests pass in both copies, including four effective old-capture controls.
+Start-home SP+600 remains open (retail 3 versus candidate 1); cost probes close.
+Tools `a2d506c`, then `5830074`, precede the consumer pin. Preserve 1,453 older
+mirror hashes. Continue the same function's 492 differences/four missing words;
+no production/README change, installation or matching credit.
+
 ## 2026-10-19 Route-Search Sentinel And Capture Boundaries
 
 [Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):

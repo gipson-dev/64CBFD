@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route-search capture closure and start-home boundary](WORKING_NOTES/1623-route-search-capture-closure-and-start-home-boundary-20261019.md):
+  direct typed C closes avoid reloads; a five-field experimental mapping closes
+  the table home. Ten tests in both copies, 535 words/frame 1536; incoming start
+  home SP+600 remains open. No installation or matching credit.
 - [Route-search sentinel and capture boundaries](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
   complete C recovers the shared loop sentinel/early coordinates, 535 words/
   frame 1536. Eight tests in both copies; four fired probes demonstrate open
