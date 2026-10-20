@@ -2,16 +2,26 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1634: 3,699/5,505 exact (67.19%), 1,806 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,671 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 430 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1635: 3,700/5,505 exact (67.21%), 1,805 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,671 simple zero-return placeholders, 125 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 429 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
 - [x] Qualify and install complete `func_151A499C` in Note 1632, 39 words/frame 80 directly from C: real-local layout closes nine differences; global capture, both reserved ranges, original factory/memcpy, static caller ABI and owner/Make/closed-image gates pass.
 - [x] Qualify and install complete `func_151CD2C0` in Note 1633, 39 words/frame 72 directly from C: captured record fields, all 16 bytes, argument homes, allocation return across memcpy, actual typed caller and owner/Make/strict-image gates pass.
 - [x] Qualify and install complete `func_15116888` in Note 1634, 39 words/frame 64 directly from C: staged facing flow, canonical vector, actual unused pointer, helper bounds, conversions, original math chain, static caller and owner/Make/image gates pass.
-- [ ] Qualify the isolated exact 39-word/frame-64 `func_15070C40` conditional-argument fit: captured three-float position, one-based actor selection/domain, helper/callers, private storage, full large owner and actual Make/image. It is not installed or counted. Keep `func_151BB044` and the 862-word `func_1508CAD8` owner stub queued.
+- [x] Qualify and install the complete 39-word/frame-64 `func_15070C40` conditional-argument fit in Note 1635: captured position, one-based selection, byte/helper ABI, actual wrappers, full owner and actual Make/complete ELF prediction pass, including closed overflow-removal accounting.
+- [ ] Qualify isolated-exact `func_151BB044` (39 words/frame 56): settle return/callback ABI, signed-short coordinate narrowing/domain, homes, full owner and actual Make/image first. Void/u16/s32 drafts emit identically; that alone does not determine the correct interface. Not installed or counted. Keep the 862-word `func_1508CAD8` owner stub queued.
+
+## Actor Position Dispatch Direct C Match - 2026-10-20
+
+[Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
+
+- [x] Fit purpose-commented `func_15070C40` with canonical actor/vector types; all 39 words/frame 64 emit directly from normal O2/g3. Preserve five original bindings and the guard/profile manifests.
+- [x] Pass six pre-install and installed tests in both copies: 704 cases/2,816 modeled phases, 319 native cases at O0/O2/O3 with UBSan, eight semantic negatives, both complete original wrappers, 126 independently GNU-rebased phases and four image controls.
+- [x] Preserve 327 raw/padded owner neighbors/pools and actual five-command Make behavior. Remove only the obsolete 160-byte overflow body; account for six moved overflow bodies, four jump relocations, all symbol/string/header bytes and 189,088 protected data bytes/720 owners. Production exactly matches the complete ELF prediction with zero exclusions.
+- [x] Recount total 3,700/5,505 (67.21%), Game 3,027/4,832 (62.64%), 1,805 different/zero drift. Commit tools `23bad49` first; preserve all 1,482 older mirror dirty paths. README aggregates only; host Release remains frozen. Continue toward 75%, not complete.
 
 ## Heading-Projected Speed Direct C Match - 2026-10-20
 

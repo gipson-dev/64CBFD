@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `55e2533`; tools are committed before the consumer pin.
+  checkpoint pins tools `23bad49`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor-position dispatch installed directly from C: all 39 words exact**:
+[Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md).
+`func_15070C40` preserves XYZ capture, one-based actor selection, byte mode
+and seven helper arguments. Six pre-install and installed tests pass in both
+copies, including 2,816 guest phases, 319 native cases/UBSan and both complete
+original wrappers. All 327 owner neighbors/pools are preserved. The complete
+ELF prediction accounts for removing its old 160-byte overflow body, six
+overflow moves, four relocated jumps and all metadata without exclusions;
+protected data and retail entry addresses stay fixed. Tools `23bad49` first,
+no guards/profile changes. Total 3,700/5,505 (67.21%), Game 3,027/4,832
+(62.64%), zero drift; 429 further matches to 75%. Next `func_151BB044` has
+an isolated exact 39-word/frame-56 draft; settle return/callback ABI before
+qualification. It is not installed or counted. Older entries below retain
+their historical checkpoint measurements and next-target boundaries.
 
 **Heading-projected speed installed directly from C: all 39 words exact**:
 [Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md).

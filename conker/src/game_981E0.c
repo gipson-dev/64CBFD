@@ -1273,20 +1273,16 @@ void func_15070C18(s32 arg0) {
     func_15199834(D_800D154C);
 }
 
-void func_15070C40(u8 arg0) {
-    struct17 tmp;
-    struct127 *temp_a1;
-    struct127 *phi_a0;
+/* Dispatch the captured position using the current or selected actor. */
+void func_15070C40(u8 mode) {
+    struct17 position;
+    struct127 *actor = D_800D154C;
 
-    phi_a0 = temp_a1 = D_800D154C;
-    tmp.unk0 = temp_a1->x_position;
-    tmp.unk4 = temp_a1->y_position;
-    tmp.unk8 = temp_a1->z_position;
-
-    if (temp_a1->unk124 != 0) {
-        phi_a0 = &D_800CC2D0[temp_a1->unk124 - 1];
-    }
-    func_15103E40(phi_a0, temp_a1, &tmp, arg0, 0, 0xFF, 0);
+    position.unk0 = actor->x_position;
+    position.unk4 = actor->y_position;
+    position.unk8 = actor->z_position;
+    func_15103E40(actor->unk124 != 0 ? &D_800CC2D0[actor->unk124 - 1] : actor,
+                 actor, &position, mode, 0, 0xFF, 0);
 }
 
 void func_15070CDC(s32 arg0) {

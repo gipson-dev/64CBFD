@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Actor Position Dispatch Direct C Match
+
+[Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
+Fit semantic `func_15070C40`, all 39 words/frame 64 directly from normal C,
+preserving canonical types, position capture and selected-actor arguments.
+Six pre-install and installed tests pass in both copies. Preserve 327 owner
+neighbors; remove the obsolete 160-byte overflow body with closed accounting
+for six moved overflow bodies, four jumps and every ELF metadata byte.
+Production exactly reproduces the independent image; no guards/profile changes.
+Tools `23bad49` first; total 3,700/5,505 (67.21%), zero drift; 429 more to 75%.
+Next `func_151BB044` is isolated exact only; its return/callback ABI is open.
+
 ## 2026-10-20 Heading-Projected Speed Direct C Match
 
 [Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):

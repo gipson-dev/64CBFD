@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor position dispatch direct C match](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
+  all 39 words/frame 64 emit directly; both copies pass six pre-install and
+  installed tests. Preserve 327 owner neighbors and fully account for overflow
+  removal, relocated jumps and ELF metadata. Total 3,700/5,505 (67.21%), zero
+  drift; 429 further matches to 75%.
 - [Heading-projected speed direct C match](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):
   all 39 words/frame 64 emit directly with canonical types and staged facing
   calculation. Eight pre-install and installed tests pass in both copies;

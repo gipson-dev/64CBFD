@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-20:
+[Note 1635](WORKING_NOTES/1635-actor-position-dispatch-direct-c-match-20261020.md):
+Fit `func_15070C40`, 39 words/frame 64 directly from C with canonical types.
+Six tests pass pre-install and installed in both copies: 2,816 modeled phases,
+319 native cases/UBSan, complete original wrappers and independent rebases.
+Preserve 327 owner neighbors. Removing the old overflow has a complete ELF
+byte prediction, including six moves, four jump relocations and all metadata.
+Tools `23bad49` first; total 3,700/5,505 (67.21%), zero drift; 429 more to 75%.
+Next `func_151BB044` is isolated exact only; settle return/callback ABI first.
+
+2026-10-20:
 [Note 1634](WORKING_NOTES/1634-heading-projected-speed-direct-c-match-20261020.md):
 Install complete `func_15116888`, 39 words/frame 64 directly from C, with
 canonical struct17 and the actual unused context-pointer argument. Staged
