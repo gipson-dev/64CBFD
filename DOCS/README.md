@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Player item and pickup update reconstruction](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
+  complete experimental `func_1508DC24`, 680 words/frame 280, one word short;
+  eight tests in both copies qualify 234 public-state/native32 cases and all
+  681 retail words. No installation or credit; continue private/layout gates.
 - [Route node search complete match](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):
   full typed C is installed, all 539 words/frame 1536 exact through guarded
   origins/lifetimes. Nineteen tests in both copies and a strict 1,632-byte ELF

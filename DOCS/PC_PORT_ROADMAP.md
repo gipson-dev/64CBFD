@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Player Item And Pickup Update Reconstruction - 2026-10-19
+
+[Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
+
+- [x] Read all 681 original words and the direct command caller; recover the no-argument void interface, exact field widths and helper contracts. Reconstruct complete C in tools with meaningful locals/comment, rather than importing the donor's incorrect widths/signatures.
+- [x] Restore frame 280 with a byte-indexed pickup cursor: selected output is 680 words/665 counted differences, including one missing word. Keep the existing two compiler profiles; their selected bytes agree. No guards, dummy storage or padding.
+- [x] Pass eight tests in both copies: 234 cases, 936 candidate fixture/profile/phases, all 681 retail words, equal ordered public reads/writes/calls and complete public memory, native32 at O0/O2/O3 with trap UBSan and six effective compiled negatives. Qualify both raw owner profiles/72 neighbors and all seven unchanged production pins. Tools `e707d3e` first; preserve 1,461 existing mirror hashes/statuses.
+- [ ] Continue this function's missing functional word, private homes, saved-role lifetimes and exact instruction/branch-delay layout. Add fired alias/call-save/full-state/access-cut and independent GNU original-assembly gates before any normalization or installation. Public behavior and exact frame alone are insufficient.
+- [ ] Qualify actual owner padding/Make selection and strict first linked image, install only the qualified body, rerun installed tests and recount. Root README and installed totals stay unchanged until that point. `func_1508CAD8` (862 words) remains the next other owner stub; wider Game matching is unfinished.
+
 ## Route Node Search Complete Match - 2026-10-19
 
 [Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):

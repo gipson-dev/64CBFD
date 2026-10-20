@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Player Item And Pickup Update Reconstruction
+
+[Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
+Complete experimental `func_1508DC24` C now emits 680 words/frame 280. Eight
+tests pass in both copies: 234 cases, all 681 retail words, equal public
+read/write/call sequences and final public state, native32/UBSan and six
+effective compiled negatives. Raw owner neighbors/pools and all seven live
+production inputs remain fixed. Tools `e707d3e` first; no installation, root
+README change or new match credit. Continue the missing word and private/layout
+qualification before advancing to another function.
+
 ## 2026-10-19 Route Node Search Complete Match
 
 [Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):

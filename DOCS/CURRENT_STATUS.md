@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `27fb65e`; tools are committed before the consumer pin.
+  checkpoint pins tools `e707d3e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Player-item and pickup update reconstructed, not installed**:
+[Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md).
+Complete semantic `func_1508DC24` now qualifies in tools: 680 words/frame 280,
+one word short of retail, 665 counted differences. Eight tests pass in both
+copies: 234 cases, 936 candidate fixture/profile/phases, all 681 retail words,
+equal ordered public reads/writes/calls and complete public memory, native32
+at O0/O2/O3 with UBSan and six compiled negatives. Both raw owner profiles keep
+72 other bodies/pools; all seven production inputs and README remain unchanged.
+Continue this function's missing word, private homes/roles and exact layout
+before integration or matching credit. Tools `e707d3e` first; wider goal active.
 
 **Route node search installed: all 539 words byte-exact**:
 [Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md).

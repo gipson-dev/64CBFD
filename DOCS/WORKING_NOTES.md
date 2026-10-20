@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1626](WORKING_NOTES/1626-player-item-and-pickup-update-reconstruction-20261019.md):
+Recover complete player-item/effect and pickup-respawn `func_1508DC24` C in
+tools. Selected byte cursor restores frame 280 in 680 words; 665 differences
+include one missing word. Eight tests pass in both copies: 234 cases, all 681
+retail words, 936 ordered-public-state comparisons, native32/UBSan and six
+compiled negatives. Tools `e707d3e` first. Continue private homes/roles/layout;
+all seven production inputs, README and installed totals remain unchanged.
+
+2026-10-19:
 [Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):
 Install complete semantic route search `func_15086364`, 539 words/frame 1536
 byte-exact through checked C origins, scoped roles and 535 expected-word rows.
