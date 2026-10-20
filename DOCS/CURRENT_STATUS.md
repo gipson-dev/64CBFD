@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-19
+Last verified: 2026-10-20
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9c3c005`; tools are committed before the consumer pin.
+  checkpoint pins tools `b66644c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Pickup update installed: all 681 words byte-exact**:
+[Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md).
+Complete typed `func_1508DC24` replaces its stub through the checked C-origin
+recipe and 680 expected-word rows. All 27 pre-install and installed tests pass
+in both copies: 468 full modeled final states, 818 fired access cuts, all 681
+words and 36 independently GNU-rebased phases. The production build reproduces
+the strict 2,205-byte ELF prediction; all other bodies/addresses/data are fixed.
+Fresh Game 3,020/4,832 (62.50%), overall 3,693/5,505 (67.08%), zero drift;
+owner 72/73. Tools `b66644c` first; README aggregates only. The active objective
+is now 75% total matching: 4,129/5,505 exact, requiring 436 more matches at this
+denominator. Audit the small-candidate queue, beginning with `func_1519BE1C`
+(39 words); `func_1508CAD8` (862 words) remains the other owner stub.
+Earlier entries below are historical checkpoints, superseded where closed.
 
 **Pickup-update private homes and selector lifetimes recovered**:
 [Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md).

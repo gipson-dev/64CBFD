@@ -1,5 +1,22 @@
 # PC Port Roadmap located in another project folder
 
+## Total C Matching To 75% - 2026-10-20
+
+- [x] Measure the installed project after Note 1628: 3,693/5,505 exact (67.08%), 1,812 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Generate an ELF-pinned remaining-function triage queue. Identify 1,677 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries; these are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 436 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [ ] Continue with the shortest credible C candidates, beginning with the complete 39-word `func_1519BE1C` kinematic integrator. Audit its callers, struct-copy/alias ordering and float32 evaluation before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+
+## Pickup Update Complete Match - 2026-10-20
+
+[Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
+
+- [x] Replace `func_1508DC24`'s false zero-return body with complete purpose-commented `void(void)` C, preserving its original name, 17 recovered homes and cached/live selector lifetimes.
+- [x] Close all 681 words/frame 280 through the checked 667 unique C origins, 13 coalescences, 14 additional uses, scoped roles and 77 output bindings. Append 680 expected-word rows/181 identity checks and one real effect preload; preserve the entire preceding manifest prefix. This is guarded reconstruction, not compiler-only output.
+- [x] Pass 27 pre-install and 27 installed tests in each copy: all 681 retail words, 936 public fixture/profile/phases, 468 literal full modeled final states, 818 fired own-access cuts, home/cursor aliases, native32/UBSan, effective negatives and 36 independently GNU-rebased phases. Hardware FCSR/MMU, complete provider/gameplay and host acceptance remain separate.
+- [x] Qualify both raw profiles/72 neighbors, unchanged Makefile/four existing normal overlays, actual seven-command Make shadows and padding. Reproduce the strict 2,205-byte full-ELF prediction, including target code/size and two exact symbol-order groups, with no metadata exclusions. Preserve 6,056 other bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners.
+- [x] Build/recount Game 3,020/4,832 (62.50%), overall 3,693/5,505 (67.08%), 1,812 different/zero drift; owner 72/73. Keep conversion rows/bytes fixed and README updates aggregate-only. Tools `b66644c` first; all 1,466 older mirror hashes/statuses preserved. No host/frozen Release operations. Continue the wider 75% goal above.
+
 ## Pickup Update Private Homes And Selector Cursor - 2026-10-19
 
 [Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
@@ -8,7 +25,7 @@
 - [x] Close the cached selector-base versus live-cursor mismatch and retain the signed selector update without an extra public read. Pass 34 fired home aliases, two live-cursor aliases and effective old controls.
 - [x] Pass 18 tests in both copies: 936 ordered-public-state comparisons, all 681 retail words, 468 complete final memories/FPR vectors, native32 at O0/O2/O3 with UBSan, six compiled negatives and eight bounded real coordinate-helper phases. Both raw owner profiles keep 72 neighbors/pools; all seven production pins and root README remain unchanged. Tools `9c3c005` first; preserve all 1,464 older mirror hashes/statuses.
 - [x] Assemble/link the original complete 681-word slot independently with GNU and verify literal ROM identity. Record its 77 entries versus 73 in selected C, including the exact eight-original-extra/four-C-extra binding multisets; do not equate this one-address check with independent rebases.
-- [ ] Finish the missing word, scoped GPR lifetimes, address materialization/bindings and instruction/branch-delay layout. Final GPR vectors are not yet literal; full intermediate/access-cut, independent GNU rebase, actual Make/padding and strict first-image gates remain open. Install/recount only after qualification; wider Game matching remains unfinished.
+- [x] Finish the missing word, scoped GPR lifetimes, address materialization/bindings and branch-delay layout in Note 1628 above. Literal full modeled states, fired access cuts, independent GNU rebases, actual Make/padding and strict first-image gates pass. Installation/recount is complete; the wider 75% objective remains open.
 
 ## Player Item And Pickup Update Reconstruction - 2026-10-19
 
@@ -18,8 +35,8 @@
 - [x] Restore frame 280 with a byte-indexed pickup cursor: selected output is 680 words/665 counted differences, including one missing word. Keep the existing two compiler profiles; their selected bytes agree. No guards, dummy storage or padding.
 - [x] Pass eight tests in both copies: 234 cases, 936 candidate fixture/profile/phases, all 681 retail words, equal ordered public reads/writes/calls and complete public memory, native32 at O0/O2/O3 with trap UBSan and six effective compiled negatives. Qualify both raw owner profiles/72 neighbors and all seven unchanged production pins. Tools `e707d3e` first; preserve 1,461 existing mirror hashes/statuses.
 - [x] Recover the 17 targeted private homes, fired home/cursor aliases and complete final memory/FPR parity in Note 1627 above. Production remains unchanged; this is not a complete match.
-- [ ] Continue this function's missing word, saved GPR-role lifetimes and exact instruction/branch-delay layout. Add full intermediate/access-cut and independent GNU rebase gates before normalization or installation. Public behavior, final memory and exact frame alone are insufficient.
-- [ ] Qualify actual owner padding/Make selection and strict first linked image, install only the qualified body, rerun installed tests and recount. Root README and installed totals stay unchanged until that point. `func_1508CAD8` (862 words) remains the next other owner stub; wider Game matching is unfinished.
+- [x] Close this function's missing word, saved GPR lifetimes and exact instruction/branch-delay layout in Note 1628. Full modeled intermediate/access-cut and independent GNU rebase gates qualify the explicit origin recipe; public behavior/frame alone are not the acceptance evidence.
+- [x] Qualify actual owner padding/Make selection and strict first linked image in Note 1628, install only that body, rerun installed tests and recount. README aggregate rows are updated. `func_1508CAD8` (862 words) remains the other owner stub; wider matching continues toward 75%.
 
 ## Route Node Search Complete Match - 2026-10-19
 
@@ -30,7 +47,8 @@
 - [x] Pass 19 pre-install and 19 installed tests in both copies: 426 full modeled final states, 940 fired own-access cuts, 539/539 retail word coverage, 213 native32 fixtures at O0/O2/O3 with UBSan, effective old-layout/bound/schedule controls and 18 independent GNU-rebased runs. Keep hardware FCSR/MMU and connected gameplay acceptance separate.
 - [x] Qualify both raw owner profiles/72 neighbors, function-specific normal selection, actual seven-command Make shadows, actual padding and wrong-profile/image controls. Reproduce the strict first full ELF with exactly 1,632 changed bytes: 1,630 target-code bytes and two target-size bytes, without metadata exclusions. Preserve 6,056 other bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners.
 - [x] Rebuild/recount Game 3,019/4,832 (62.48%), overall 3,692/5,505 (67.07%), 1,813 different/zero drift; owner 71/73 exact. Converted rows/bytes remain fixed. Tools `27fb65e` first; preserve all 1,457 older mirror hashes/statuses. README aggregate rows only; no host/frozen Release operations.
-- [ ] Recover the next remaining owner stub, `func_1508DC24` (681 words), then `func_1508CAD8` (862). Audit complete original bodies and caller/provider interfaces before donor import or type selection. Wider Game work remains unfinished.
+- [x] Recover and install `func_1508DC24` (681 words) in Note 1628 after complete original-body, caller/provider, semantic and literal qualification.
+- [ ] Recover `func_1508CAD8` (862 words), the remaining owner stub. Audit its complete original body and caller/provider interfaces before donor import or type selection. The wider 75% matching goal remains unfinished.
 
 ## Route-Search Start Home, Extent And Ordered Reads - 2026-10-19
 

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Pickup update complete match](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
+  all 681 words/frame 280 installed exact through checked C origins/680 guards.
+  All 27 pre-install and installed tests pass in both copies; strict whole-ELF
+  audit fixes all other code/data. Total 3,693/5,505 (67.08%); the new 75% goal
+  requires 436 further matches at this denominator. Earlier entries are history.
 - [Pickup update private homes and selector cursor](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
   17 direct C homes, cached/live selector captures and 468 complete final
   memories/FPR vectors qualify in 18 tests in both copies. Raw 680/frame 280/

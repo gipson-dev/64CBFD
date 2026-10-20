@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Pickup Update Complete Match
+
+[Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
+Install complete `func_1508DC24`, all 681 words/frame 280 byte-exact through
+qualified C origins and 680 guarded rows, not compiler-only output. All 27
+pre-install and installed tests pass in both copies. Literal modeled states,
+818 access cuts, independent GNU rebases and the strict 2,205-byte ELF audit
+pass. Tools `b66644c` first. Fresh Game 3,020/4,832, total 3,693/5,505 (67.08%),
+zero drift; owner 72/73. The new 75% objective needs 436 more exact functions
+at the present denominator. Small-candidate triage begins with `func_1519BE1C`;
+the remaining 862-word owner stub is tracked separately. No host qualification.
+
 ## 2026-10-19 Pickup Update Private Homes And Selector Cursor
 
 [Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):

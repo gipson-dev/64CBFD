@@ -1,5 +1,15 @@
 # Working Notes
 
+2026-10-20:
+[Note 1628](WORKING_NOTES/1628-pickup-update-complete-match-20261020.md):
+Install complete `func_1508DC24`, all 681 words/frame 280 exact through checked
+C origins and 680 expected-word rows. All 27 pre-install and installed tests
+pass in both copies: literal modeled state, 818 fired cuts, full word coverage
+and independent GNU rebases. Strict production image/data audit passes.
+Tools `b66644c` first; Game 3,020/4,832, total 3,693/5,505 (67.08%), zero drift.
+The new 75% total goal needs 436 more matches at denominator 5,505. Begin the
+small-candidate audit with `func_1519BE1C`; keep `func_1508CAD8` queued.
+
 2026-10-19:
 [Note 1627](WORKING_NOTES/1627-pickup-update-private-homes-and-selector-cursor-20261019.md):
 Recover 17 pickup-update private homes directly from real C declarations,
