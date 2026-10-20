@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Route-Search Sentinel And Capture Boundaries
+
+[Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
+Recover the shared selection/scan sentinel and early integer coordinates in
+complete experimental `func_15086364`. Normal output falls 545 to 535 words,
+retaining frame 1536 and six homes; retail is 539 words. Eight tests pass in
+both copies, including 213 equal public read footprints and four fired probes
+that explicitly demonstrate remaining table-home/avoid-pointer differences.
+Tools `6c7b058` first; preserve all 1,451 older mirror hashes. Continue the same
+function: 483 differences/four missing words, no production or README change,
+installation or new matching credit.
+
 ## 2026-10-19 Route Node Search Recovery And Workspace
 
 [Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):

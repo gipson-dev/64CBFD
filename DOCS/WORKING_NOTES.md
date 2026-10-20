@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
+Recover the shared route-search loop sentinel and early signed-coordinate
+captures directly from complete C. Retain frame 1536/six homes; normal output
+is 535 words, four short, with 483 counted differences. Eight tests pass in
+both copies, including equal public read footprints and four effective open
+capture probes. Tools `6c7b058` first. Continue table-home/avoid-pointer lifetime
+and exact-layout gates; production, root README and installed totals unchanged.
+
+2026-10-19:
 [Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
 Recover complete experimental `func_15086364`, 545 words/frame 1536, versus
 retail 539/frame 1536. Five array homes and live SP+5D0 float save emit directly

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route-search sentinel and capture boundaries](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
+  complete C recovers the shared loop sentinel/early coordinates, 535 words/
+  frame 1536. Eight tests in both copies; four fired probes demonstrate open
+  table/argument captures. No installation or matching credit.
 - [Route node search recovery and retail workspace](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
   complete experimental C recovers frame 1536, five array homes and the live
   float save. Seven tests pass in both copies; 545 versus 539 words and 488

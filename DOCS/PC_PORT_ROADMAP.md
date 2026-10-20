@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Route-Search Sentinel And Capture Boundaries - 2026-10-19
+
+[Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md):
+
+- [x] Recover the real do/while selection sentinel, its reuse as the inner frontier scan counter and reset/append branch, and early signed-halfword origin-coordinate captures. Normal output falls 545 to 535 words while retaining frame 1536, five array homes and the live SP+5D0 F2 save. No guards, dummy storage or compiler changes.
+- [x] Pass eight tests in both copies: 426 guest fixture/phases, 213 native fixtures at O0/O2/O3 with UBSan, five compiled semantic negatives, six effective live-home aliases, two old-save negatives, both owner profiles/72 neighbors and all seven production pins. All 213 public read footprints agree; ordered reads do not yet agree.
+- [x] Demonstrate four fired open-capture probes in both stack phases. Retail reacts to a changed SP+60 table home or incoming avoid-pointer home after the second goal read; selected C retains the baseline route. Preserve the failures as evidence, not installation acceptance. Tools `6c7b058` first; all 1,451 older mirror hashes preserved.
+- [ ] Recover the cached table home SP+60 rather than source SP+5FC, and retail avoid-pointer reload lifetimes. Preserve existing arrays/F2 home and close the demonstrated aliases before treating the four missing words as scheduling-only work.
+- [ ] Finish remaining scalar/register/access order, literal/private/access-cut and independent GNU original-assembly gates, actual Make/padding/strict image and installed-state qualification. Current 483 differences comprise 479 linked overlap differences plus four missing words. Production/profile/README/totals stay unchanged until qualified; wider Game work remains unfinished.
+
 ## Route Node Search Recovery And Retail Workspace - 2026-10-19
 
 [Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
@@ -7,7 +17,7 @@
 - [x] Read complete `func_15086364`, its direct call sites and the donor draft. Recover the five-argument interface with signed-byte list counts, unsigned-byte IDs, signed-halfword coordinates, word costs and float32 distance operations. Retain the opening-edge-only signed-halfword narrowing, strict frontier ties, hole reuse and waypoint compression.
 - [x] Recover the complete experimental C body, exact 1536-byte normal-profile frame, five array homes SP+7C/BC/FC/1C4/28C and the live F2 save SP+5D0 without guards, dummy storage or compiler-flag edits. Screen sixteen lifetime forms, twenty-four declaration partitions and four pointer/tail controls; selected output remains 545 words/488 differences.
 - [x] Pass seven tests in both copies: 426 completed guest fixture/phases, 213 native32 fixtures at O0/O2/O3 with UBSan, three effective compiled semantic negatives, six fired live-home alias pairs and two old-save negatives. Preserve both owner profiles' 72 other bodies/pools and all seven production pins. Tools `e70e8dc` first; all 1,448 older mirror hashes preserved.
-- [ ] Finish the six excess words, saved-register lifetimes, scalar/private homes and ordered accesses. Coverage is 538/539 retail words; offset 0x7C8 is unvisited in the bounded corpus. Shape and public-observation agreement are not a byte match or whole-machine equivalence.
+- [ ] Continue the four missing words, saved-register lifetimes, scalar/private homes and ordered accesses after Note 1622's outer-loop recovery. Coverage remains 538/539 retail words; offset 0x7C8 is unvisited. Explicit table/argument capture failures remain; shape/public-observation agreement is not whole-machine equivalence.
 - [ ] Complete literal/private/access-cut and independent original-assembly/GNU gates, then actual per-function Make selection, padding, strict first image and installed-state qualification before installation/recount. Current owner primary profile disables unrolling; the closer candidate uses the existing normal profile. No production/profile/README/totals change or matching credit yet. Wider Game work remains unfinished.
 
 ## Actor State Tick Complete Match - 2026-10-19

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e70e8dc`; tools are committed before the consumer pin.
+  checkpoint pins tools `6c7b058`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route-search sentinel and coordinate captures recovered**:
+[Note 1622](WORKING_NOTES/1622-route-search-sentinel-and-capture-boundaries-20261019.md).
+Complete experimental `func_15086364` now uses the retail shared outer-loop/
+frontier-scan sentinel and early signed coordinate captures. Normal output is
+535 words/frame 1536, four short of retail; 483 differences include those four
+missing words. Eight tests pass in both copies, retaining the six proven homes,
+426 guest fixture/phases, 213 native cases and all public read footprints.
+Four fired probes demonstrate open table-home/avoid-pointer capture boundaries;
+ordered reads and literal/private equivalence are not closed. Continue those
+captures and exact layout, not padding. Production, README and installed totals
+remain unchanged; no matching credit.
 
 **Route node search recovered with retail workspace homes**:
 [Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md).
