@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f48f2f9`; tools are committed before the consumer pin.
+  checkpoint pins tools `e70e8dc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route node search recovered with retail workspace homes**:
+[Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md).
+Complete experimental `func_15086364` emits 545 words/frame 1536 on the normal
+profile, versus retail 539/frame 1536. Five array homes and the live F2 save at
+SP+5D0 agree directly from C. Seven tests pass in both copies: 426 guest
+fixture/phases, 213 native32 fixtures, six effective home aliases and two
+old-save negatives; both owner profiles preserve 72 neighbors/pools. Continue
+the six excess words, whole-function roles/private layout and exact-match
+qualification. There are still 488 aligned differences; no installation,
+matching credit, production/profile or root README change. Installed totals
+remain Note 1620 below.
 
 **Actor state tick installed: all 678 words byte-exact**:
 [Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md).

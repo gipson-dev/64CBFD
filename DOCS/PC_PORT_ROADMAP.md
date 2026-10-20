@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Route Node Search Recovery And Retail Workspace - 2026-10-19
+
+[Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
+
+- [x] Read complete `func_15086364`, its direct call sites and the donor draft. Recover the five-argument interface with signed-byte list counts, unsigned-byte IDs, signed-halfword coordinates, word costs and float32 distance operations. Retain the opening-edge-only signed-halfword narrowing, strict frontier ties, hole reuse and waypoint compression.
+- [x] Recover the complete experimental C body, exact 1536-byte normal-profile frame, five array homes SP+7C/BC/FC/1C4/28C and the live F2 save SP+5D0 without guards, dummy storage or compiler-flag edits. Screen sixteen lifetime forms, twenty-four declaration partitions and four pointer/tail controls; selected output remains 545 words/488 differences.
+- [x] Pass seven tests in both copies: 426 completed guest fixture/phases, 213 native32 fixtures at O0/O2/O3 with UBSan, three effective compiled semantic negatives, six fired live-home alias pairs and two old-save negatives. Preserve both owner profiles' 72 other bodies/pools and all seven production pins. Tools `e70e8dc` first; all 1,448 older mirror hashes preserved.
+- [ ] Finish the six excess words, saved-register lifetimes, scalar/private homes and ordered accesses. Coverage is 538/539 retail words; offset 0x7C8 is unvisited in the bounded corpus. Shape and public-observation agreement are not a byte match or whole-machine equivalence.
+- [ ] Complete literal/private/access-cut and independent original-assembly/GNU gates, then actual per-function Make selection, padding, strict first image and installed-state qualification before installation/recount. Current owner primary profile disables unrolling; the closer candidate uses the existing normal profile. No production/profile/README/totals change or matching credit yet. Wider Game work remains unfinished.
+
 ## Actor State Tick Complete Match - 2026-10-19
 
 [Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
@@ -9,7 +19,7 @@
 - [x] Pass fifteen pre-install and fifteen installed tests in both copies: 262 literal/private fixtures, 58 effective frame aliases, 18 wrong-layout negatives, twelve word-action aliases, two cached-timer aliases, 876 fired access cuts, native32/UBSan and 27 independent GNU rebased runs. Coverage is 660/678 retail words; full hardware/FCSR/gameplay acceptance remains separate.
 - [x] Qualify both owner profiles/72 neighbors, seven-command actual Make shadows and independent first links. Build and reproduce the strict 2,183-byte ELF prediction, including only target code, target symbol size and two closed metadata-order groups. Preserve all other 6,056 bodies, all 6,057 addresses and 189,088 protected data bytes/720 owners.
 - [x] Recount Game 3,018/4,832, overall 3,691/5,505, 1,814 different/zero drift; owner 70/73 exact. Tools `f48f2f9` first; all 1,444 older mirror hashes preserved. README aggregate rows only; no host/frozen Release change.
-- [ ] Recover `func_15086364`, 539 words/frame 0x600, VA 15086364..15086BD0, ROM B3814..B4080. Read its complete routine and callers before replacing the 12-byte stub/522 classified differences; recover argument widths, large local workspace and helper contracts. The other owner nonmatches are `func_1508CAD8` (862 words) and `func_1508DC24` (681). Keep the wider Game goal active.
+- [x] Recover complete experimental `func_15086364`, its argument widths, large workspace and bounded helper contracts in Note 1621 above. Production remains its 12-byte stub/522 classified differences; continue the same function's exact layout/integration gates before installation. The other owner nonmatches remain `func_1508CAD8` (862 words) and `func_1508DC24` (681).
 
 ## Actor State Tick Direct Draw Homes - 2026-10-19
 

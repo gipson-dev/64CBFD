@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-19 Route Node Search Recovery And Workspace
+
+[Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
+Recover complete typed experimental `func_15086364`, correcting donor access
+widths, opening-edge halfword narrowing and frontier updates. Its selected
+normal-profile body emits 545 words/frame 1536, with all five array homes and
+the live SP+5D0 float save recovered. Seven tests pass in both copies, including
+426 guest fixture/phases, 213 native fixtures and effective frame aliases.
+Tools `e70e8dc` first; all 1,448 older mirror hashes preserved. Six excess words
+and 488 differences remain: continue this function, without production install,
+new matching credit, compiler-flag or root README changes.
+
 ## 2026-10-19 Actor State Tick Complete Match
 
 [Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):

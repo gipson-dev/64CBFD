@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route node search recovery and retail workspace](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
+  complete experimental C recovers frame 1536, five array homes and the live
+  float save. Seven tests pass in both copies; 545 versus 539 words and 488
+  differences remain. Continue the same function; no install or new credit.
 - [Actor state tick complete match](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
   semantic C plus checked origins matches all 678 words/frame 288. Fifteen
   installed tests pass in both copies; strict ELF/body/address/data audit.

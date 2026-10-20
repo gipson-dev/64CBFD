@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1621](WORKING_NOTES/1621-route-node-search-recovery-and-retail-workspace-20261019.md):
+Recover complete experimental `func_15086364`, 545 words/frame 1536, versus
+retail 539/frame 1536. Five array homes and live SP+5D0 float save emit directly
+from C. Seven tests pass in both copies: 426 guest fixture/phases, 213 native
+fixtures, six effective home aliases and two old-save negatives. Tools
+`e70e8dc` first; production/README/totals unchanged. Continue the six excess
+words and 488 aligned differences, then complete literal/integration gates.
+
+2026-10-19:
 [Note 1620](WORKING_NOTES/1620-actor-state-tick-complete-match-20261019.md):
 Install complete semantic A6FC C, 678 words/frame 288 exact with 344 checked
 origin guards. Fifteen installed tests pass in both copies; all 311 memory
