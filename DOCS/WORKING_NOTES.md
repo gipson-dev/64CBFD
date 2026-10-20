@@ -1,6 +1,16 @@
 # Working Notes
 
 2026-10-20:
+[Note 1642](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md):
+Recover `func_150C5BD4`, all 40 words/frame24 with one closed commutative ADDU
+guard. Preserve live actor/identity gates, sequential world copies, unsigned
+matrix selection, callback packets and Boolean result. Both copies pass eight
+pre-install/installed tests, the complete caller and bounded original math
+chain. Keep 14 neighbors and the old guard prefix; strict ELF change is 112 bytes.
+Tools `7aa7932` first; total 3,707/5,505 (67.34%), zero drift; 422 more to 75%.
+Next `func_1514D310` remains queued and uncounted.
+
+2026-10-20:
 [Note 1641](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md):
 Recover `func_151220D0`, all 40 words/frame40 directly from C. Preserve the
 descriptor gate, late camera displacement, degrees/radians store order and

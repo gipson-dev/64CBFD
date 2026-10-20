@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c6aefcc`; tools are committed before the consumer pin.
+  checkpoint pins tools `7aa7932`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Attachment position installed as guarded C: all 40 words exact**:
+[Note 1642](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md).
+`func_150C5BD4` checks live actor state and saved identity, then copies world
+position or transforms the local offset with an unsigned byte matrix index.
+One expected-word guard commutes ADDU operands; frame24 and the sole binding
+already match. Eight tests pass in both copies before and after installation,
+including the full 79-word caller, native32 and bounded original math chain.
+Preserve 14 neighbors and the full old guard prefix; production reproduces
+the strict 112-byte ELF prediction. Tools `7aa7932` first. Total 3,707/5,505
+(67.34%), Game 3,034/4,832 (62.79%), zero drift; 422 more to 75%.
+Next `func_1514D310` is queued only, with no draft or matching credit.
 
 **Camera heading installed directly from C: all 40 words exact**:
 [Note 1641](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md).

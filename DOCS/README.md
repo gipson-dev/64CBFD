@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Attachment position guarded C match](WORKING_NOTES/1642-attachment-position-guarded-c-match-20261020.md):
+  all 40 words/frame24 match with one checked commutative ADDU guard.
+  Both copies pass eight pre-install/installed tests, the complete caller and
+  bounded original math chain. Preserve 14 neighbors and the old guard prefix;
+  exact ELF change is 112 bytes. Total 3,707/5,505 (67.34%); 422 more to 75%.
 - [Camera heading direct C match](WORKING_NOTES/1641-camera-heading-direct-c-match-20261020.md):
   all 40 words/frame40 emit directly using the existing camera layout.
   Both copies pass eight pre-install/installed tests, both full callers and
