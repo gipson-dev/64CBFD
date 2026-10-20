@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-20 Extended Effect Payload Direct C Match
+
+[Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
+Install typed `func_151A499C`, all 39 words/frame 80 directly from C. Existing
+local declaration order restores SP+2C and closes nine layout differences.
+Preserve global capture, the variant byte and both copied reserved ranges.
+Eight pre-install and installed tests pass in both copies, with actual original
+factory/memcpy, native32/UBSan and independent HI16/LO16 rebases. The sole
+unrecovered caller stays static-only. Strict 138-byte ELF audit accounts for
+one closed three-symbol cycle and preserves other code/data. Tools `219a63c`
+first; total 3,697/5,505 (67.16%), zero drift; 432 further matches to 75%.
+Next `func_151CD2C0` is exact in isolation only, not installed or counted.
+
 ## 2026-10-20 Effect Position Payload Direct C Match
 
 [Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):

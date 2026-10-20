@@ -73,8 +73,37 @@ s32 func_151A4900(UpdateRecord1D0840 *arg0, s32 arg1) {
     return 1;
 }
 
-s32 func_151A499C() {
-    return 0;
+extern f32 D_800A8D64;
+typedef struct {
+    void *source;
+    u8 sourceByte;
+    u8 reserved0[3];
+    f32 value;
+    f32 zero;
+    u8 active;
+    u8 reserved1[3];
+    f32 vector[3];
+} ExtendedEffectPayload;
+void *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Initialize the extended source-backed effect payload. */
+void func_151A499C(void *source, u8 variant) {
+    u8 *effect;
+    ExtendedEffectPayload payload;
+    u8 *actor = source;
+    payload.source = actor;
+    payload.sourceByte = actor[0x3B];
+    payload.value = D_800A8D64;
+    payload.zero = 0.0f;
+    payload.active = 1;
+    payload.vector[0] = 0.0f;
+    payload.vector[1] = 0.0f;
+    payload.vector[2] = 0.0f;
+    effect = func_151491F4(300, -1, 5, 0, 1, 32, variant, 0);
+    if (effect != 0) {
+        memcpy(effect + 0x28, &payload, 32);
+    }
 }
 
 s32 func_151A4A38() {

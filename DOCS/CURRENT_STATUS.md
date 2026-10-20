@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `db39e84`; tools are committed before the consumer pin.
+  checkpoint pins tools `219a63c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Extended effect payload installed directly from C: all 39 words exact**:
+[Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md).
+`func_151A499C` now uses the retail SP+2C payload layout, preserving its global
+float capture, variant byte and both copied reserved ranges. Existing-local
+declaration order closes all nine differences; no guards or profile changes.
+Eight pre-install and installed tests pass in both copies: 1,312 modeled
+phases, 94 native cases/UBSan, nine compiled negatives, 656 original factory-
+wrapper phases and 392 fired original memcpy entries. The sole unrecovered
+caller's ABI remains static-only. Production exactly matches the 138-byte
+prediction, including a closed three-symbol cycle without metadata exclusions.
+All other code/addresses/data are fixed. Tools `219a63c` first. Fresh total
+3,697/5,505 (67.16%), Game 3,024/4,832 (62.58%), zero drift; 432 more matches
+to 75%. Next `func_151CD2C0` has an isolated exact 39-word/frame-72 draft,
+not installed or counted; qualify return lifetime, payload, callers and owner.
 
 **Effect position payload installed directly from C: all 39 words exact**:
 [Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md).

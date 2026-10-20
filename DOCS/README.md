@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Extended effect payload direct C match](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
+  all 39 words/frame 80 emit directly after restoring the real-local layout.
+  Eight pre-install and installed tests pass in both copies; strict 138-byte
+  ELF audit accounts for one closed symbol cycle and fixes all other code/data.
+  Fresh total 3,697/5,505 (67.16%); 432 further matches to the 75% threshold.
 - [Effect position payload direct C match](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):
   all 39 words/frame 88 installed without guards, with the correct unchanged-
   code C-caller prototype. Eight pre-install and installed tests pass in both

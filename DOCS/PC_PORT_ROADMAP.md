@@ -2,13 +2,24 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1631: 3,696/5,505 exact (67.14%), 1,809 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,674 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 433 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1632: 3,697/5,505 exact (67.16%), 1,808 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,673 simple zero-return placeholders, 126 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 432 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
-- [ ] Finish `func_151A499C`: its 32-byte extended-payload semantic draft is 39 words/frame 80 with nine differences, not installed or counted. Recover scheduling/homes and qualify reserved bytes, global float binding, factory and callers. Keep `func_15070C40` and the 862-word `func_1508CAD8` owner stub queued.
+- [x] Qualify and install complete `func_151A499C` in Note 1632, 39 words/frame 80 directly from C: real-local layout closes nine differences; global capture, both reserved ranges, original factory/memcpy, static caller ABI and owner/Make/closed-image gates pass.
+- [ ] Qualify the isolated exact 39-word/frame-72 `func_151CD2C0` draft: returned allocation pointer across memcpy, captured record word/byte, reserved bytes, argument homes, factory/callers and owner/Make/image. It is not installed or counted. Keep `func_15070C40`, `func_151BB044` and the 862-word `func_1508CAD8` owner stub queued.
+
+## Extended Effect Payload Direct C Match - 2026-10-20
+
+[Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
+
+- [x] Restore typed, purpose-commented `func_151A499C` with its original name. Existing-local declaration order emits the full 39 words/frame 80 directly from normal O2/g3, with two call bindings and the global HI16/LO16 pair, no new guards/profile changes.
+- [x] Preserve global/source-byte capture, variant truncation and all 32 payload bytes, including six locally unwritten reserved bytes. Pass eight pre-install and installed tests in both copies: 164 cases/1,312 modeled phases, 94 native cases at O0/O2/O3 with UBSan, nine compiled negatives and two effective reserved-byte negative phases.
+- [x] Scan all pristine US functions and audit the sole caller at 151A3458 statically; do not claim full unrecovered-caller execution. Execute 656 original factory-wrapper phases and 392 fired original memcpy entries, separately from 656 configured copy phases; pass 24 independently GNU-rebased phases including signed global HI16/LO16 carries.
+- [x] Preserve 22 other owner functions/pools and its existing GLOBAL_ASM path; pass five actual Make commands. Predict the exact three-symbol rotation with all named definitions intact and no metadata exclusions; pass 14 wrong-image controls and reproduce the strict 138-byte production image, fixing all other code/addresses/data.
+- [x] Recount total 3,697/5,505 (67.16%), Game 3,024/4,832 (62.58%), 1,808 different/zero drift, conversion rows fixed. Tools `219a63c` first; preserve all 1,476 older dirty mirror paths. README aggregate rows only; frozen host Release untouched. Continue to 75%, not complete.
 
 ## Effect Position Payload Direct C Match - 2026-10-20
 

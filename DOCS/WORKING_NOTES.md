@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-20:
+[Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
+Install complete `func_151A499C`, all 39 words/frame 80 directly from C.
+Real-local declaration order restores its payload to SP+2C; no new guards.
+Eight pre-install and installed tests pass in both copies: 1,312 modeled
+phases, 94 native cases/UBSan, nine compiled negatives, 656 original factory
+wrapper phases, 392 fired memcpy entries and independent global HI16/LO16
+rebases. The caller remains a static ABI check. Strict 138-byte production
+prediction includes the exact closed three-symbol cycle; all other code/data
+stay fixed. Tools `219a63c` first; total 3,697/5,505 (67.16%), zero drift,
+432 further matches to 75%. Next `func_151CD2C0` has an isolated exact
+39-word/frame-72 draft, not installed or counted.
+
+2026-10-20:
 [Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):
 Install complete `func_150F10D4`, all 39 words/frame 88 directly from C,
 and its explicit unchanged-code C-caller prototype. Eight pre-install and
