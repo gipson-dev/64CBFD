@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Route node search complete match](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):
+  full typed C is installed, all 539 words/frame 1536 exact through guarded
+  origins/lifetimes. Nineteen tests in both copies and a strict 1,632-byte ELF
+  prediction pass. Game 3,019/4,832; next `func_1508DC24`, 681 words.
 - [Route-search start home, extent and ordered reads](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
   experimental output reaches 539 words/frame 1536, closes start aliases, all
   213 public-read sequences and 426 final memories. Eleven tests in both copies;

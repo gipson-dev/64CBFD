@@ -1,6 +1,15 @@
 # Working Notes
 
 2026-10-19:
+[Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):
+Install complete semantic route search `func_15086364`, 539 words/frame 1536
+byte-exact through checked C origins, scoped roles and 535 expected-word rows.
+Nineteen installed tests pass in both copies, including 940 access cuts,
+539/539 coverage and independent GNU rebases. Strict first-image reproduction
+preserves every other body/address and protected data. Tools `27fb65e` first.
+Fresh Game 3,019/4,832, total 3,692/5,505, zero drift; next `func_1508DC24`.
+
+2026-10-19:
 [Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
 Recover the experimental route search's real late start spill and three
 reloads, retaining all 535 C origins/14 bindings in 539 words/frame 1536. A

@@ -471,7 +471,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.normal.compact \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,B3020) $@.padded.s \
-		--function-object func_150891E8=$@.normal.compact --function-object func_1508BC20=$@.normal.compact --function-object func_15089BC0=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
+		--function-object func_150891E8=$@.normal.compact --function-object func_1508BC20=$@.normal.compact --function-object func_15089BC0=$@.normal.compact --function-object func_15086364=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.normal.compact $@.padded.s
 

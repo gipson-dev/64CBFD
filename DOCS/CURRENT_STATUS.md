@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a7eba1d`; tools are committed before the consumer pin.
+  checkpoint pins tools `27fb65e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Route node search installed: all 539 words byte-exact**:
+[Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md).
+Complete typed `func_15086364` replaces its stub. The guarded origin recipe
+retains frame 1536, 530 unique C origins/nine derived forms and all 14 bindings;
+535 expected-word rows include 109 identity checks and four real start inserts.
+Both installed suites pass 19 tests, including 940 access cuts, all 539 words,
+native32/UBSan and independent GNU rebases. The build exactly reproduces the
+strict 1,632-byte target/body-size prediction; all other code/addresses and
+protected data remain fixed. Fresh Game 3,019/4,832, overall 3,692/5,505,
+1,813 different/zero drift; owner 71/73 exact. README aggregates only. Next:
+`func_1508DC24` (681 words), then `func_1508CAD8` (862); wider Game goal active.
 
 **Route-search start home, full extent and ordered public reads restored**:
 [Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md).

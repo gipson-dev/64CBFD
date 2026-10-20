@@ -162,7 +162,7 @@ s32 func_15085DF8(f32 x, f32 y, f32 z, s8 mode, s8 band);
 s32 func_15086C70(s32 index);
 s32 func_150A32B4(s32 object, s32 x, s32 y, s32 z);
 s32 func_150A3194();
-s32 func_15086364();
+s32 func_15086364(s32, s8, s8, u8 *, u8 *);
 
 /* Refine a spatial node using record containment or the nearest forward edge. */
 s32 func_15086098(f32 x, f32 y, f32 z, s8 count, s8 option, u8 *list, u8 *state) {
@@ -250,9 +250,218 @@ s32 func_15086098(f32 x, f32 y, f32 z, s8 count, s8 option, u8 *list, u8 *state)
     return index;
 }
 
-s32 func_15086364() {
-    return 0;
+extern s16 D_80087290;
+extern u8 D_80087298;
+extern u8 *D_800D2350;
+extern s32 D_800D2354;
+s32 func_15086C70(s32);
+f32 func_15086BD0(s32, s32);
+
+/* Search five-neighbor routes, then choose a waypoint and accumulate distance. */
+s32 func_15086364(s32 start, s8 goalCount, s8 avoidCount, u8 *goals, u8 *avoid) {
+    u8 *nodes;
+    u8 *node;
+    u8 *cursor;
+    u8 *other;
+    s32 frontierCount;
+    s32 pathCount;
+    s32 selected;
+    s32 minimum;
+    s32 current;
+    s32 next;
+    s32 penalty;
+    f32 distance;
+    s32 currentCost;
+    s32 hole;
+    s32 found;
+    s32 i;
+    s32 edge;
+    s32 previous;
+    s32 chosen;
+    f32 dx;
+    f32 dy;
+    s32 costs[200];
+    u8 frontier[200];
+    u8 parents[200];
+    u8 path[64];
+    u8 special[64];
+    f32 dz;
+    s32 proposed;
+
+    D_80087298 = 0xFF;
+    D_800D2354 = 0;
+    if (goalCount <= 0) {
+        return 0xFF;
+    }
+    if (start < 0 || start >= D_80087290) {
+        return 0xFF;
+    }
+    found = 1;
+    for (i = 0; i < goalCount; i++) {
+        if (start == goals[i]) {
+            found = 0;
+        }
+    }
+    frontierCount = 0;
+    if (found == 0) {
+        D_80087298 = start;
+        return start;
+    }
+    if (D_80087290 > 0) {
+        other = (u8 *)costs;
+        cursor = other + D_80087290 * 4;
+        do {
+            *(s32 *)other = 1000000;
+            other += 4;
+        } while (other < cursor);
+    }
+    nodes = D_800D2350;
+    node = nodes + start * 16;
+    cursor = node;
+    edge = 0;
+    do {
+        next = cursor[9];
+        edge++;
+        if (next != 0xFF) {
+            penalty = 0;
+            for (i = 0; i < avoidCount; i++) {
+                if (next == (*(u8 **)&avoid)[i]) {
+                    penalty = 5000;
+                }
+            }
+            frontier[frontierCount] = next;
+            other = nodes + next * 16;
+            parents[cursor[9]] = start;
+            dx = (f32)(*(s16 *)(node + 0) - *(s16 *)(other + 0));
+            dy = (f32)(*(s16 *)(node + 2) - *(s16 *)(other + 2));
+            dz = (f32)(*(s16 *)(node + 4) - *(s16 *)(other + 4));
+            frontierCount++;
+            /* Only the opening edge is narrowed to a signed halfword. */
+            costs[cursor[9]] = (s16)(s32)sqrtf((dx * dx + dy * dy) + dz * dz) + penalty;
+        }
+        cursor++;
+    } while (edge != 5);
+    pathCount = 0;
+    do {
+        minimum = 1000000;
+        selected = 0xFF;
+        for (i = 0; i < frontierCount; i++) {
+            if (frontier[i] != 0xFF && costs[frontier[i]] < minimum) {
+                minimum = costs[frontier[i]];
+                selected = i;
+            }
+        }
+        if (selected != 0xFF) {
+            if (frontierCount == selected + 1) {
+                frontierCount--;
+            }
+            current = frontier[selected];
+            frontier[selected] = 0xFF;
+            found = 0;
+            for (i = 0; i < goalCount; i++) {
+                if (current == goals[i]) {
+                    found = 1;
+                }
+            }
+            if (found != 0) {
+                D_80087298 = current;
+                next = current;
+                while (next != start) {
+                    path[pathCount] = next;
+                    next = parents[next];
+                    pathCount++;
+                }
+                path[pathCount] = next;
+                pathCount++;
+                selected = 0xFF;
+            } else {
+                node = nodes + current * 16;
+                currentCost = costs[current];
+                cursor = node;
+                edge = 0;
+                selected = 0;
+                do {
+                    next = cursor[9];
+                    edge++;
+                    if (next != 0xFF && next != start) {
+                        s32 originX = *(s16 *)(node + 0);
+                        s32 originY = *(s16 *)(node + 2);
+                        s32 originZ = *(s16 *)(node + 4);
+                        penalty = 0;
+                        for (i = 0; i < avoidCount; i++) {
+                            if (next == (*(u8 **)&avoid)[i]) {
+                                penalty = 5000;
+                            }
+                        }
+                        other = nodes + next * 16;
+                        dx = (f32)(originX - *(s16 *)(other + 0));
+                        dy = (f32)(originY - *(s16 *)(other + 2));
+                        dz = (f32)(originZ - *(s16 *)(other + 4));
+                        proposed = (s32)sqrtf((dx * dx + dy * dy) + dz * dz) + currentCost + penalty;
+                        if (proposed < costs[next]) {
+                            hole = 0xFF;
+                            for (selected = 0; selected < frontierCount; selected++) {
+                                if (hole == 0xFF && frontier[selected] == 0xFF) {
+                                    hole = selected;
+                                }
+                                if (next == frontier[selected]) {
+                                    costs[next] = proposed;
+                                    parents[next] = current;
+                                    selected = frontierCount + 10;
+                                }
+                            }
+                            if (selected == frontierCount) {
+                                parents[next] = current;
+                                costs[next] = proposed;
+                                if (hole == 0xFF) {
+                                    hole = frontierCount;
+                                    frontierCount++;
+                                }
+                                frontier[hole] = next;
+                            }
+                            selected = 0;
+                        }
+                    }
+                    cursor++;
+                } while (edge != 5);
+            }
+        }
+    } while (selected != 0xFF);
+    if (pathCount < 2) {
+        return 0xFF;
+    }
+    pathCount = pathCount - 2;
+    current = path[pathCount];
+    for (i = 0; i <= pathCount + 1; i++) {
+        special[i] = func_15086C70(path[i]) != 0;
+    }
+    distance = 0.0f;
+    chosen = 0;
+    if (special[pathCount] != 0 &&
+        (special[pathCount + 1] == 0 || (pathCount > 0 && special[pathCount - 1] == 0))) {
+        chosen = 1;
+    }
+    while (pathCount > 0) {
+        previous = pathCount - 1;
+        if (special[pathCount - 1] != 0) {
+            while (previous >= 0 && special[previous] != 0) {
+                previous--;
+            }
+            previous++;
+        }
+        distance += func_15086BD0(path[pathCount], path[previous]);
+        if (chosen == 0) {
+            chosen = 1;
+            if (special[pathCount] != 0) {
+                current = path[previous];
+            }
+        }
+        pathCount = previous;
+    }
+    D_800D2354 = (s32)distance;
+    return current;
 }
+
 
 f32 func_15086BD0(s32 arg0, s32 arg1) {
     u8 *first;

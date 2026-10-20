@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-19 Route Node Search Complete Match
+
+[Note 1625](WORKING_NOTES/1625-route-node-search-complete-match-20261019.md):
+Install complete typed `func_15086364`, all 539 words/frame 1536 exact through
+the qualified origin/lifetime map and 535 expected-word rows with four real
+start inserts. Nineteen pre-install and installed tests pass in both copies;
+940 access cuts, full word coverage and independent GNU rebases qualify the
+result. The actual build changes only the predicted 1,632 ELF bytes and fixes
+all other code/addresses/data. Tools `27fb65e` first. Fresh Game 3,019/4,832,
+overall 3,692/5,505, zero drift; owner 71/73 exact. Next: `func_1508DC24`.
+
 ## 2026-10-19 Route-Search Start Home, Extent And Ordered Reads
 
 [Note 1624](WORKING_NOTES/1624-route-search-start-home-extent-and-ordered-reads-20261019.md):
