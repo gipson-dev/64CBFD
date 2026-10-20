@@ -23315,3 +23315,13 @@ generated_179F30,func_1514D310,0x030,0x3C120000,0x26730000,R_MIPS_HI16:D_8008ABE
 generated_179F30,func_1514D310,0x034,0x26520000,0x2412FFFF,R_MIPS_LO16:D_8008ABE8,-,Normalize closed cleanup saved roles and pure setup schedule,,,false
 generated_179F30,func_1514D310,0x044,0x024FC021,0x026FC021,-,-,Normalize closed cleanup saved roles and pure setup schedule,,,false
 generated_179F30,func_1514D310,0x050,0x10530006,0x12420006,-,-,Normalize closed cleanup saved roles and pure setup schedule,,,false
+game_2DF70,func_15002754,0x018,0x3C050000,0x3C060000,R_MIPS_HI16:D_800DBE38,R_MIPS_HI16:D_800DBE38,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x028,0x8CA50000,0x8CC60000,R_MIPS_LO16:D_800DBE38,R_MIPS_LO16:D_800DBE38,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x034,0x0005C880,0x0006C880,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x03C,0x0325C823,0x0326C823,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x040,0x00043080,0x00042880,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x044,0x00260821,0x00250821,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x05C,0x00260821,0x00250821,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x060,0x000548C0,0x000648C0,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x074,0x00260821,0x00250821,-,-,Normalize closed scratch partition count/index allocation,,,false
+game_2DF70,func_15002754,0x078,0x00055880,0x00065880,-,-,Normalize closed scratch partition count/index allocation,,,false

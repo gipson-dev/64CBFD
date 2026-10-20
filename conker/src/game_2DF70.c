@@ -11,6 +11,7 @@ void *func_1502B5C8(s32 *size, u32 depth, ...);
 
 void func_15002560(u8 *arg0, u8 *arg1);
 s32 func_150027F8(s32 arg0);
+void func_1510F800(s32);
 
 void func_15000AC0(void) {
     D_800D9E64 = (u8)0;
@@ -282,21 +283,20 @@ void func_15002724(s32 arg0) {
     D_800DBE38 += func_150027F8(arg0);
 }
 
+/* Partition the current context's scratch arrays, then reset the count. */
 void func_15002754(void) {
-    s32 aligned;
-    s32 index = D_800DBE50;
-    s32 count = D_800DBE38;
+    u32 count;
+    s32 index;
 
-    aligned = (D_800B0DC0 + 3) & ~3;
-    D_800B0DC0 = aligned;
-    D_800DBDD8[index] = aligned;
-    aligned += count * 12;
-    D_800B0DC0 = aligned;
-    D_800DBDE8[index] = aligned;
-    aligned += count * 8;
-    D_800B0DC0 = aligned;
-    D_800DBDF8[index] = aligned;
-    D_800B0DC0 = aligned + (count * 4);
+    D_800B0DC0 = (s32) (((u32) D_800B0DC0 + 3U) & ~3U);
+    count = (u32) D_800DBE38;
+    index = D_800DBE50;
+    D_800DBDD8[index] = D_800B0DC0;
+    D_800B0DC0 = (s32) ((u32) D_800B0DC0 + count * 12U);
+    D_800DBDE8[index] = D_800B0DC0;
+    D_800B0DC0 = (s32) ((u32) D_800B0DC0 + count * 8U);
+    D_800DBDF8[index] = D_800B0DC0;
+    D_800B0DC0 = (s32) ((u32) D_800B0DC0 + count * 4U);
     func_1510F800(index);
     D_800DBE38 = 0;
 }

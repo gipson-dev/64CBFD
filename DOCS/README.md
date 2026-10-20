@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Scratch-array partition guarded C match](WORKING_NOTES/1647-scratch-array-partition-byte-match-20261020.md):
+  existing semantic 41-word/frame24 routine, ten checked allocation guards,
+  both eight-test pre-install suites, two installed tests per copy, 25 fixed neighbors and strict 128-byte
+  ELF change. Total 3,712/5,505 (67.43%); 417 more to 75%.
 - [Oscillating motion direct C match](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):
   all 40 words/frame24/six bindings emit directly from C with live phase,
   timestep and coordinate ordering. Both copies pass eight tests before/after,

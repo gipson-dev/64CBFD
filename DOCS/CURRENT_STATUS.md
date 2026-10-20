@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f81540b`; tools are committed before the consumer pin.
+  checkpoint pins tools `ff22329`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Scratch-array partition installed as guarded C: all 41 words exact**:
+[Note 1647](WORKING_NOTES/1647-scratch-array-partition-byte-match-20261020.md):
+Match existing semantic `func_15002754`, all 41 words/frame24/15 bindings,
+with ten checked words closing one a1/a2 register-allocation cycle.
+Preserve wrapping arithmetic, four cursor stores, count/index captures and
+post-helper count clear. Each copy passes eight pre-install and two installed tests; reuse six
+unchanged tests per copy under the strict input/object/image audit. Keep
+25 neighbors and the old guard prefix. Strict ELF change: 128 bytes,
+zero exclusions. Tools `ff22329` first; total 3,712/5,505 (67.43%),
+Game 3,039/4,832 (62.89%), zero drift; 417 more to 75%.
+Next `func_150B6C90` is a 41-word/frame40 placeholder, queued only.
+Preserve all 1,506 older-mirror dirty statuses/hashes; add only the two task
+files, without committing that mirror.
 
 **Oscillating-motion callback installed directly from C: all 40 words exact**:
 [Note 1646](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):

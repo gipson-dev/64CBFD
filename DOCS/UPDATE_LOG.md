@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-20 Scratch Array Partition Guarded C Match
+
+[Note 1647](WORKING_NOTES/1647-scratch-array-partition-byte-match-20261020.md):
+Match existing semantic `func_15002754`, all 41 words/frame24/15 bindings,
+with ten checked words closing one a1/a2 register-allocation cycle.
+Preserve wrapping arithmetic, four cursor stores, count/index captures and
+post-helper count clear. Each copy passes eight pre-install and two installed tests; reuse six
+unchanged tests per copy under the strict input/object/image audit. Keep
+25 neighbors and the old guard prefix. Strict ELF change: 128 bytes,
+zero exclusions. Tools `ff22329` first; total 3,712/5,505 (67.43%),
+Game 3,039/4,832 (62.89%), zero drift; 417 more to 75%.
+Next `func_150B6C90` is a 41-word/frame40 placeholder, queued only.
+
 ## 2026-10-20 Oscillating Motion Direct C Match
 
 [Note 1646](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):
