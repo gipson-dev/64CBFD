@@ -1,4 +1,10 @@
 #include <ultra64.h>
+#include "structs.h"
+s32 func_150ADA20(void);
+void func_15143874(s16, f32, f32 *, f32 *);
+void func_15143134(f32 *, f32 *, u8 *);
+void func_151C329C(struct17 *, s32, s32);
+
 extern s32 D_800A1674;
 extern s32 D_800A1680;
 s32 func_15160A58(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32);
@@ -271,6 +277,17 @@ s32 func_150F20F0() {
     return 0;
 }
 
-s32 func_150F2230() {
-    return 0;
+/* Transform a random horizontal offset through the actor's matrix and submit it. */
+void func_150F2230(struct127 *actor, u8 kind, s32 flags) {
+    struct17 offset;
+    struct17 point;
+
+    if (actor->unk1D4 != 0 && (actor->unk74 & 0xF) != 0xF) {
+        offset.unk0 = 0.0f;
+        offset.unk4 = 0.0f;
+        offset.unk8 = 0.0f;
+        func_15143874((u8)func_150ADA20(), 100.0f, &offset.unk0, &offset.unk8);
+        func_15143134((f32 *)&offset, (f32 *)&point, (u8 *)((u32)actor->unk1D4 + 0x4C0));
+        func_151C329C(&point, kind, flags);
+    }
 }

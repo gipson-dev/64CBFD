@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Actor radial point direct C match](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):
+  all 39 body words/frame 56 emit directly; retain the separate alignment word.
+  Both copies pass eight pre-install and installed tests, including the full
+  caller and original direction/lookup chain. Preserve 43 neighbors, all 328
+  caller-owner functions and the strict 122-byte ELF. Total 3,704/5,505 (67.28%);
+  425 more matches to 75%.
 - [Randomized point burst direct C match](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
   all 40 words/frame 64 emit directly, with unsigned modulo/count, float32
   scale and late point reads. Both copies pass seven pre-install and installed

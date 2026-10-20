@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):
+Recover `func_150F2230`, all 39 body words/frame 56 directly from C, with a
+separate alignment word and no guards/profile changes. Preserve the gates,
+zeroed vector, byte angle, late matrix reload and outgoing byte/word widths.
+Eight tests pass in both copies pre-install and installed: 1,684 modeled phases,
+840 native cases/UBSan, 64 full caller phases and 512 original direction/lookup
+phases. Preserve 43 neighbors and all 328 typed caller-owner functions; strict
+production change is 122 ELF bytes. Tools `5092f17` first; total 3,704/5,505
+(67.28%), zero drift; 425 more to 75%. Next `func_150F7F8C` is queued only.
+
+2026-10-20:
 [Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
 Restore `func_150CA930`, all 40 words/frame 64 directly from C, preserving
 unsigned RNG modulo, short count, float32 scale and late point reads.

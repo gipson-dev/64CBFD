@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9e5b77d`; tools are committed before the consumer pin.
+  checkpoint pins tools `5092f17`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor radial point installed directly from C: all 39 body words exact**:
+[Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md).
+`func_150F2230` preserves the matrix/nibble gates, zeroed vector, byte angle,
+post-helper matrix reload, selector byte and full parameter word. The 40-word
+slot includes a separate alignment word; frame 56 and all four bindings match
+without guards/profile changes. Eight tests pass in both copies before and
+after installation: 1,684 modeled phases, 840 native cases/UBSan, the complete
+12-word caller and 512 original direction/lookup phases. Preserve 43 target
+neighbors and all 328 typed caller-owner functions; production reproduces the
+strict 122-byte ELF prediction. Tools `5092f17` first. Total 3,704/5,505
+(67.28%), Game 3,031/4,832 (62.73%), zero drift; 425 more matches to 75%.
+Next `func_150F7F8C` is queued only, without a draft or matching credit.
 
 **Randomized point burst installed directly from C: all 40 words exact**:
 [Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md).

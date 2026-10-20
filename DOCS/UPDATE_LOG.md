@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Actor Radial Point Direct C Match
+
+[Note 1639](WORKING_NOTES/1639-actor-radial-point-direct-c-match-20261020.md):
+Restore typed `func_150F2230`, all 39 body words/frame 56 directly from normal
+C, with its alignment tail separate and no new guards/profile changes.
+Eight tests pass in both tools copies before and after installation, covering
+the actor gates, late reload, native32 controls, complete caller and original
+direction/lookup chain. Preserve 43 neighbors and all 328 caller-owner functions
+after adding the explicit C prototype. Production matches the strict 122-byte
+ELF. Tools `5092f17` first; total 3,704/5,505 (67.28%), zero drift; 425 more
+matches to 75%. Next `func_150F7F8C` remains queued and uncounted.
+
 ## 2026-10-20 Randomized Point Burst Direct C Match
 
 [Note 1638](WORKING_NOTES/1638-randomized-point-burst-direct-c-match-20261020.md):
