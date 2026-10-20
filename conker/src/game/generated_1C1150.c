@@ -1,4 +1,9 @@
 #include <ultra64.h>
+#include "structs.h"
+s32 func_15136C3C(void *, s32, s32, s32, s32, s32, s32, s32);
+void func_15145A50(struct127 *);
+s32 func_1507CD64(struct127 *, s32);
+
 
 extern s8 D_8008FD90;
 extern s32 D_800E9D00;
@@ -195,8 +200,16 @@ void func_15195650(u8 *arg0, s32 arg1, s32 arg2) {
     func_151B09BC(arg0, arg1, 0x3E8, 0xFF, 0);
 }
 
-s32 func_15195698() {
-    return 0;
+/* Dispatch zero-health actor updates, then clear the type-0x47 actor. */
+void func_15195698(struct127 *other, struct127 *actor, u8 *arg2) {
+    if ((actor->health == 0) && (actor->unk127 != 0xFF)) {
+        func_15136C3C(actor, 1, 1, 1, 1, 0, 0xFF, 1);
+        func_15145A50(actor);
+        func_1507CD64(actor, 6);
+    }
+    if (other->id == 0x47) {
+        other->health = 0;
+    }
 }
 
 void func_15195738(s32 arg0, s32 arg1, s32 arg2) {

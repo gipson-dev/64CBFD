@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Zero-health callback direct C match](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md):
+  all 40 words/frame48/three bindings emit directly using the existing actor
+  fields and corrected byte-pointer callback ABI. Both copies pass eight tests
+  before/after installation, real dispatcher windows and bounded helpers.
+  Keep 28 neighbors and all old guards; exact ELF change is 125 bytes.
+  Total 3,709/5,505 (67.38%); 420 more to 75%.
 - [List node cleanup guarded C match](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md):
   all 40 words/frame48 match with five checked saved-role/setup guards.
   Both copies pass eight pre-install/installed tests, the actual caller window,

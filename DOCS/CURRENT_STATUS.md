@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ac05ac7`; tools are committed before the consumer pin.
+  checkpoint pins tools `41229dd`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Zero-health callback installed directly from C: all 40 words exact**:
+[Note 1644](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md).
+`func_15195698` uses existing actor health/selector fields, preserves all three
+helper calls and late first-actor type check, and restores the unused byte
+pointer/void callback ABI. Frame48 and three bindings match without guards
+or profile changes. Both copies pass eight tests before and after installation,
+including both real dispatch windows, native32 and bounded original helpers.
+Preserve 28 neighbors and the entire guard manifest; production reproduces
+the strict 125-byte ELF prediction. Tools `41229dd` first. Total 3,709/5,505
+(67.38%), Game 3,036/4,832 (62.83%), zero drift; 420 more matches to 75%.
+Next `func_151A4FD0` is queued only, with no draft or matching credit.
 
 **List node cleanup installed as guarded C: all 40 words exact**:
 [Note 1643](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md).

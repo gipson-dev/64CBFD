@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Zero-Health Callback Direct C Match
+
+[Note 1644](WORKING_NOTES/1644-zero-health-callback-direct-c-match-20261020.md):
+Recover `func_15195698`, all 40 words/frame48/three bindings directly from C.
+Preserve unsigned health/selector gates, eight-argument call setup, ordered
+helpers, late first-actor type check and the actual unused byte-pointer ABI.
+Both copies pass eight tests before and after installation, including both
+real dispatcher windows, native32 and bounded original helpers. Preserve
+28 neighbors and the entire guard manifest; strict ELF change is 125 bytes.
+Tools `41229dd` first; total 3,709/5,505 (67.38%), zero drift; 420 more to 75%.
+Next `func_151A4FD0` is queued only, with no draft or matching credit.
+
 ## 2026-10-20 List Node Cleanup Guarded C Match
 
 [Note 1643](WORKING_NOTES/1643-list-node-cleanup-guarded-c-match-20261020.md):
