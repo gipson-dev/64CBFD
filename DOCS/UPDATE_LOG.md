@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-20 Effect Payload Spawn Direct C Match
+
+[Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md):
+Install `func_150BA4C0`, 39 words/frame 72 directly from C, and type its C
+caller without changing any of that owner's 328 bodies. Preserve unsigned
+random selection and all 12 payload bytes. Eight pre-install and installed
+tests pass in both copies, including actual retail wrapper/memcpy execution
+and native32/UBSan. The all-function scan finds two original direct callers;
+the large dispatcher's ABI window is static-only. Strict 117-byte ELF audit
+preserves all other code/data. Tools `67c13be` first; total 3,695/5,505 (67.12%),
+zero drift, 434 matches to the current 75% threshold. Next isolated position-
+payload draft is exact but not installed. No host acceptance is inferred.
+
 ## 2026-10-20 Kinematic Step Direct C Match
 
 [Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):

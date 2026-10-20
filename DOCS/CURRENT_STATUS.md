@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f1f3716`; tools are committed before the consumer pin.
+  checkpoint pins tools `67c13be`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Effect payload spawn installed directly from C: all 39 words exact**:
+[Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md).
+Typed `func_150BA4C0` preserves unsigned random selection and all 12 copied
+payload bytes, including three locally unwritten reserved bytes. Add the
+proper existing C-caller prototype without changing any of its 328 functions.
+All eight pre-install and installed tests pass in both copies: 1,352 modeled
+phases, 326 native cases/UBSan, six compiled negatives, 352 fired original
+memcpy entries and both direct-call ABI checks. The production ELF matches
+the strict 117-byte prediction; all other code/addresses/data are fixed.
+Tools `67c13be` first; no guards/profile changes. Fresh total 3,695/5,505
+(67.12%), Game 3,022/4,832 (62.54%), zero drift: 434 further matches to 75%
+at this denominator. Next `func_150F10D4` has an isolated exact 39-word/frame-88
+24-byte position-payload draft, not installed; qualify captures/callers first.
 
 **Kinematic step installed directly from C: all 39 words byte-exact**:
 [Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md).

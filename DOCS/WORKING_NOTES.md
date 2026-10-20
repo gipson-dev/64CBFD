@@ -1,6 +1,17 @@
 # Working Notes
 
 2026-10-20:
+[Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md):
+Install complete `func_150BA4C0`, all 39 words/frame 72 directly from C,
+with a proper unchanged-code C-caller prototype. Eight pre-install and installed
+tests pass in both copies: unsigned width/capture/payload semantics, 1,352
+modeled phases, 326 native cases, six compiled negatives, original wrapper/
+memcpy and independent GNU rebases. The strict 117-byte ELF prediction fixes
+every other body/address and protected data. Tools `67c13be` first; total
+3,695/5,505 (67.12%), zero drift; 434 more matches to 75%. Next `func_150F10D4`
+has an exact isolated 39-word/frame-88 draft, not yet qualified or installed.
+
+2026-10-20:
 [Note 1629](WORKING_NOTES/1629-kinematic-step-direct-c-match-20261020.md):
 Install complete `func_1519BE1C`, all 39 words/frame 16 directly from C, no
 guards/relocations/profile changes. All seven pre-install and installed tests
