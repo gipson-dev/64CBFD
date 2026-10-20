@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Oscillating motion direct C match](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):
+  all 40 words/frame24/six bindings emit directly from C with live phase,
+  timestep and coordinate ordering. Both copies pass eight tests before/after,
+  the real slot-14 dispatch window, native32 and bounded retail math.
+  Preserve three neighbors and all guards; exact ELF change is 132 bytes.
+  Total 3,711/5,505 (67.41%); 418 more to 75%.
 - [Type-0x5A color factory direct C match](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
   all 40 words/frame32/one binding emit directly with the recovered eight-argument
   ABI, full word value, RGB/view fields and wrapping payload-size request.

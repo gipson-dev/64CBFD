@@ -1,6 +1,19 @@
 # Working Notes
 
 2026-10-20:
+
+[Note 1646](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):
+Recover `func_151B8B40`, all 40 words/frame24/six bindings directly from C.
+Preserve sine/phase ordering, late timestep reloads, planar integration and
+the slot-14 callback's exact return of one. Both copies pass eight tests
+before/after installation, the real dispatch window and bounded retail math.
+Keep three neighbors and the entire guard manifest; strict ELF change is
+132 bytes with zero exclusions. Tools `f81540b` first; total 3,711/5,505
+(67.41%), zero drift; 418 more to 75%.
+Next `func_15002754` is an existing semantic 41-word/frame24 routine with
+38 differences; no new recovery or matching credit is claimed for it.
+
+2026-10-20:
 [Note 1645](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
 Recover `func_151A4FD0`, all 40 words/frame32/one binding directly from C.
 Preserve the full word value, RGB/view bytes, eight-argument ABI, wrapping

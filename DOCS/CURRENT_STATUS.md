@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `da87893`; tools are committed before the consumer pin.
+  checkpoint pins tools `f81540b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Oscillating-motion callback installed directly from C: all 40 words exact**:
+[Note 1646](WORKING_NOTES/1646-oscillating-motion-direct-c-match-20261020.md):
+Recover `func_151B8B40`, all 40 words/frame24/six bindings directly from C.
+Preserve sine/phase ordering, late timestep reloads, planar integration and
+the slot-14 callback's exact return of one. Both copies pass eight tests
+before/after installation, the real dispatch window and bounded retail math.
+Keep three neighbors and the entire guard manifest; strict ELF change is
+132 bytes with zero exclusions. Tools `f81540b` first; total 3,711/5,505
+(67.41%), zero drift; 418 more to 75%.
+Next `func_15002754` is an existing semantic 41-word/frame24 routine with
+38 differences; no new recovery or matching credit is claimed for it.
+Game is 3,038/4,832 (62.87%). Preserve all 1,504 pre-existing older-mirror
+dirty paths and add only the two task files; do not commit that mirror.
 
 **Type-0x5A color factory installed directly from C: all 40 words exact**:
 [Note 1645](WORKING_NOTES/1645-type5a-color-factory-direct-c-match-20261020.md):
