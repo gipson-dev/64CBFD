@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `67c13be`; tools are committed before the consumer pin.
+  checkpoint pins tools `db39e84`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Effect position payload installed directly from C: all 39 words exact**:
+[Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md).
+Typed `func_150F10D4` captures all three coordinates before the factory,
+preserves saved S0 and copies the full 24-byte payload including reserved
+bytes. Its explicit C-caller prototype preserves all 328 owner functions.
+Eight pre-install and installed tests pass in both copies: 576 modeled phases,
+82 native cases/UBSan, eight compiled negatives, 128 original-wrapper phases
+and 160 fired original memcpy entries. The production ELF exactly matches the
+120-byte target/size prediction; all other code/addresses/data stay fixed.
+Tools `db39e84` first; no guards/profile changes. Fresh total 3,696/5,505
+(67.14%), Game 3,023/4,832 (62.56%), zero drift: 433 more matches to 75%.
+Next `func_151A499C` has a semantic 39-word/frame-80 draft with nine word
+differences; not installed or counted. Recover its scheduling and qualify it.
 
 **Effect payload spawn installed directly from C: all 39 words exact**:
 [Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md).

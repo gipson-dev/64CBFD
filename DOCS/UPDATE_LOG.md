@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-20 Effect Position Payload Direct C Match
+
+[Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):
+Install typed `func_150F10D4`, 39 words/frame 88 directly from C, with its
+unchanged-code caller prototype. Preserve coordinate capture before the
+factory, saved S0 and all 24 payload bytes. Eight pre-install and installed
+tests pass in both copies, including original caller/memcpy, native32/UBSan,
+effective negatives and independent GNU rebases. Strict 120-byte ELF audit
+fixes all other code/data. Tools `db39e84` first; total 3,696/5,505 (67.14%),
+zero drift, 433 further matches to 75%. Next `func_151A499C` remains an
+uninstalled nine-difference semantic draft. No host acceptance is inferred.
+
 ## 2026-10-20 Effect Payload Spawn Direct C Match
 
 [Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md):

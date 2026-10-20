@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Effect position payload direct C match](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):
+  all 39 words/frame 88 installed without guards, with the correct unchanged-
+  code C-caller prototype. Eight pre-install and installed tests pass in both
+  copies; strict 120-byte ELF audit fixes all other code/data. Fresh total
+  3,696/5,505 (67.14%), with 433 further matches to the current 75% threshold.
 - [Effect payload spawn direct C match](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md):
   all 39 words/frame 72 installed without guards; the typed C caller keeps
   all 328 bodies fixed. Eight pre-install and installed tests pass in both

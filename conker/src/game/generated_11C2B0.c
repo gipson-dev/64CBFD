@@ -177,8 +177,30 @@ s32 func_150F1020() {
     return 0;
 }
 
-s32 func_150F10D4() {
-    return 0;
+typedef struct {
+    void *source;
+    u8 sourceByte;
+    u8 reserved[3];
+    f32 value;
+    f32 position[3];
+} EffectPositionPayload;
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Capture the source position and attach the complete payload to an effect. */
+void func_150F10D4(void *source) {
+    EffectPositionPayload payload;
+    u8 *effect;
+    payload.source = source;
+    payload.sourceByte = ((u8 *)source)[0x3B];
+    payload.value = 0.0f;
+    payload.position[0] = *(f32 *)((u8 *)source + 0x14);
+    payload.position[1] = *(f32 *)((u8 *)source + 0x18);
+    payload.position[2] = *(f32 *)((u8 *)source + 0x1C);
+    effect = func_15149130(0x12C, -1, 0x4C, -1, 0, 0x3A, 24, 0xFF, 1);
+    if (effect != 0) {
+        memcpy(effect + 0x28, &payload, 24);
+    }
 }
 
 s32 func_150F1170() {

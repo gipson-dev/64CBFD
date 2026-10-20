@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-20:
+[Note 1631](WORKING_NOTES/1631-effect-position-payload-direct-c-match-20261020.md):
+Install complete `func_150F10D4`, all 39 words/frame 88 directly from C,
+and its explicit unchanged-code C-caller prototype. Eight pre-install and
+installed tests pass in both copies: early XYZ capture, saved S0, reserved
+bytes, 576 modeled phases, 82 native cases/UBSan, eight compiled negatives,
+128 original-wrapper phases and 160 fired original memcpy entries. The strict
+120-byte production ELF prediction fixes all other code/addresses/data.
+Tools `db39e84` first; total 3,696/5,505 (67.14%), zero drift; 433 more matches
+to 75%. Next `func_151A499C` has a semantic 39-word/frame-80 draft with nine
+word differences, not installed or counted.
+
+2026-10-20:
 [Note 1630](WORKING_NOTES/1630-effect-payload-spawn-direct-c-match-20261020.md):
 Install complete `func_150BA4C0`, all 39 words/frame 72 directly from C,
 with a proper unchanged-code C-caller prototype. Eight pre-install and installed

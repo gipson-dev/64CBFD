@@ -48,6 +48,7 @@ extern f32 D_8009A110;
 extern s32 D_80099BB8;
 extern f32 D_80099BBC;
 
+void func_150F10D4(void *source);
 void func_150BA4C0(void *source, u8 variant, s32 parameter);
 void func_151AB930(u8 *actor);
 void func_15131D4C(s32 *arg0, s32 arg1);
