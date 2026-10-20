@@ -9,8 +9,29 @@ extern f32 D_800BE9A4;
 s32 func_151D10E4(u8 *, s32, u8);
 void func_151D13E0(u8 *);
 
-s32 func_151CD2C0() {
-    return 0;
+typedef struct {
+    void *source;
+    s32 value;
+    s32 zero;
+    u8 selector;
+    u8 reserved[3];
+} EffectRecordPayload;
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Capture record state, attach the payload and return the allocated effect. */
+void *func_151CD2C0(void *source, u8 variant, s32 parameter) {
+    u8 *effect;
+    EffectRecordPayload payload;
+    payload.source = source;
+    payload.value = *(s32 *)((u8 *)source + 0x18);
+    payload.zero = 0;
+    payload.selector = *(s32 *)((u8 *)source + 0x1C);
+    effect = func_15149130(300, -1, -1, -1, 0, 30, 16, variant, parameter);
+    if (effect != 0) {
+        memcpy(effect + 0x28, &payload, 16);
+    }
+    return effect;
 }
 
 void func_151CD35C(s32 arg0) {

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `219a63c`; tools are committed before the consumer pin.
+  checkpoint pins tools `2a385cc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record effect payload and pointer return installed: all 39 words exact**:
+[Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md).
+Typed `func_151CD2C0` captures its complete record word/selector, copies all
+16 bytes and preserves the allocation result across memcpy. Type its real C
+caller consistently while preserving all 32 caller-owner functions. Eight
+pre-install and installed tests pass in both copies: 864 modeled phases,
+180 native cases/UBSan, ten compiled negatives, 32 original-wrapper phases,
+256 fired original memcpy entries and 32 effective saved-result overlaps.
+Production exactly reproduces the 121-byte body/size prediction, fixing all
+other code/addresses/data; owner warnings remain unchanged. Tools `2a385cc`
+first, no guards/profile changes. Fresh total 3,698/5,505 (67.18%), Game
+3,025/4,832 (62.60%), zero drift; 431 more matches to 75%. Next
+`func_15116888` is a semantic 39-word/frame-64 draft with seven differences,
+not installed or counted; finish scheduling and qualify bounds/callers first.
 
 **Extended effect payload installed directly from C: all 39 words exact**:
 [Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md).

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-20 Record Effect Payload And Pointer Return Match
+
+[Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):
+Install `func_151CD2C0`, 39 words/frame 72 directly from C, and type its
+existing caller without changing any of that owner's 32 functions. Preserve
+captured record fields, all 16 copied bytes and allocation return across
+memcpy. Eight pre-install and installed tests pass in both copies, including
+actual caller/copy, native32/UBSan, ten negatives and effective return-home
+overlaps. Strict 121-byte ELF audit fixes other code/data; inherited owner
+warnings stay unchanged. Tools `2a385cc` first; total 3,698/5,505 (67.18%),
+zero drift; 431 further matches to 75%. Next `func_15116888` is a semantic
+39-word/frame-64 draft with seven differences, not installed or counted.
+
 ## 2026-10-20 Extended Effect Payload Direct C Match
 
 [Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):

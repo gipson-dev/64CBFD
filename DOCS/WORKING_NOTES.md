@@ -1,6 +1,18 @@
 # Working Notes
 
 2026-10-20:
+[Note 1633](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):
+Install complete pointer-returning `func_151CD2C0`, all 39 words/frame 72
+directly from C, with its typed unchanged-code C caller. Eight pre-install
+and installed tests pass in both copies: 864 modeled phases, 180 native
+cases/UBSan, ten compiled negatives, 32 original-wrapper phases, 256 fired
+original memcpy entries and 32 effective saved-result overlap phases. The
+strict 121-byte production prediction fixes every other body/address/data;
+owner warnings remain unchanged. Tools `2a385cc` first; total 3,698/5,505
+(67.18%), zero drift; 431 further matches to 75%. Next `func_15116888`
+has a semantic 39-word/frame-64 draft with seven differences, not installed.
+
+2026-10-20:
 [Note 1632](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
 Install complete `func_151A499C`, all 39 words/frame 80 directly from C.
 Real-local declaration order restores its payload to SP+2C; no new guards.

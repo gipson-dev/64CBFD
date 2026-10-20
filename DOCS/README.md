@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Record effect payload and pointer return match](WORKING_NOTES/1633-record-effect-payload-pointer-return-direct-c-match-20261020.md):
+  all 39 words/frame 72 emit directly, with a typed unchanged-code C caller.
+  Eight pre-install and installed tests pass in both copies; strict 121-byte
+  ELF audit preserves other code/data. Fresh total 3,698/5,505 (67.18%),
+  zero drift; 431 further matches to the current 75% threshold.
 - [Extended effect payload direct C match](WORKING_NOTES/1632-extended-effect-payload-direct-c-match-20261020.md):
   all 39 words/frame 80 emit directly after restoring the real-local layout.
   Eight pre-install and installed tests pass in both copies; strict 138-byte
