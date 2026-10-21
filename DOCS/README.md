@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor selector callback family](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md):
+  all 47/44/41 words emit directly from C, frame0, with no guards.
+  Both copies pass eight pre-install and two fresh installed tests; preserve
+  four neighbors and the full guard manifest. Strict ELF change: 393 bytes,
+  zero exclusions. Total 3,718/5,505 (67.54%); 411 more to 75%.
 - [Indexed record commands](WORKING_NOTES/1650-indexed-record-command-match-20261021.md):
   all 41 words/frame0/six bindings emit directly from C, with no guards.
   Both copies pass eight pre-install and two fresh installed tests; preserve

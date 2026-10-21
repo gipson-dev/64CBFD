@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4d6f908`; tools are committed before the consumer pin.
+  checkpoint pins tools `55e5533`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Three actor selector callbacks installed directly from C: 132 words exact**:
+[Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md).
+Recover `func_150D7420`, `func_150D74DC` and `func_150D758C`, all frame0,
+without guards. Both copies pass eight pre-install and two fresh installed
+tests; six unchanged checks per copy are explicitly reused under strict
+identity. Qualify the real void/byte ABI, complete 55-word dispatcher,
+aliases and unreachable-load boundaries. Preserve four owner neighbors,
+all other linked bodies/addresses/data and the entire guard manifest.
+Production reproduces the strict 393-byte image prediction; all 15,773
+live/copy inputs and outputs are qualified. Tools `55e5533` first.
+Total 3,718/5,505 (67.54%), Game 3,045/4,832 (63.02%), zero drift;
+411 more to 75%. Next `func_15174AA4` is a 41-word/frame40 placeholder,
+screened only. Preserve all 1,514 older-mirror dirty paths and add only
+the two task files, without committing that mirror.
 
 **Indexed record commands installed directly from C: all 41 words exact**:
 [Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md).

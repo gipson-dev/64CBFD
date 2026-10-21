@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-21 Actor Selector Callback Family Direct C Match
+
+[Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md):
+recover `func_150D7420`, `func_150D74DC` and `func_150D758C`, all 132 words
+directly from C with frame0, no guards and the real void/byte callback ABI.
+Both copies pass eight pre-install and two fresh installed tests; six
+unchanged checks per copy are explicitly reused under strict identity.
+Preserve four neighbors and the entire guard manifest; reproduce the exact
+393-byte image prediction with zero exclusions. Tools `55e5533` first.
+Total 3,718/5,505 (67.54%), Game 3,045/4,832 (63.02%), zero drift;
+411 more to 75%. Next `func_15174AA4` is queued only, with no new credit.
+
 ## 2026-10-21 Indexed Record Commands Direct C Match
 
 [Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md):

@@ -2,6 +2,19 @@
 
 2026-10-21:
 
+**Three actor selector callbacks installed directly from C: 132 words exact**:
+[Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md).
+Recover `func_150D7420`, `func_150D74DC` and `func_150D758C`, frame0,
+without guards. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity.
+Qualify the complete 55-word dispatcher, native32, aliases and unreachable
+boundaries; preserve four neighbors, the full manifest and all other data.
+Production reproduces the strict 393-byte image prediction, zero exclusions.
+Tools `55e5533` first; total 3,718/5,505 (67.54%), 411 more to 75%.
+Next `func_15174AA4` remains screened only, not installed or credited.
+
+2026-10-21:
+
 **Indexed record commands installed directly from C: all 41 words exact**:
 [Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md).
 Recover `func_150A02D0`, frame0/six bindings, without guards. Both copies
