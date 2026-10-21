@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ff22329`; tools are committed before the consumer pin.
+  checkpoint pins tools `8310f77`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Color-record/table reset installed as guarded C: all 41 words exact**:
+[Note 1648](WORKING_NOTES/1648-color-record-pointer-table-reset-match-20261020.md):
+Recover `func_150B6C90`, frame40, with the post-release eight-word factory
+packet, NULL publication, byte state and all ten pointer clears. Raw C emits
+42 words; 17 checked rows close setup/allocation and one fixed-layout
+address fold. Both copies pass eight pre-install and two fresh installed
+tests; reuse six unchanged checks per copy under strict object/input/image
+identity. Preserve 20 neighbors and the entire old guard prefix. Strict ELF
+change: 209 bytes including two bounded symbol/name permutations, no
+exclusions. Tools `8310f77` first; total 3,713/5,505 (67.45%),
+Game 3,040/4,832 (62.91%), zero drift; 416 more to 75%.
+Next `func_150E6E34` is a 41-word/frame32 placeholder, screened only;
+its sole literal is table slot 0 at 80088A20, with no direct JAL in ROM.
+Preserve all 1,508 older-mirror dirty statuses/hashes; add only the two task
+files, without committing that mirror.
 
 **Scratch-array partition installed as guarded C: all 41 words exact**:
 [Note 1647](WORKING_NOTES/1647-scratch-array-partition-byte-match-20261020.md):

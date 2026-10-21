@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern s32 D_800BE9E8;
+extern u8 D_800D98A0[];
+void *func_151A4FD0(s32, u32, s32, s32, s32, s32, u8, u32);
+
 extern u8 D_800D98A4[];
 extern u8 D_800D9898[];
 extern u8 D_800D98C0[];
@@ -15,8 +19,25 @@ s32 func_150B6BC0() {
     return 0;
 }
 
-s32 func_150B6C90() {
-    return 0;
+/* Replace the color record and reset the ten pointer slots. */
+void func_150B6C90(void) {
+    void **current;
+
+    if (D_800D9894 != NULL) {
+        func_1516972C(D_800D9894);
+    }
+    D_800D9894 = func_151A4FD0(0, 0, 255, 0, 0, D_800BE9E8, 0, 0);
+    D_800D9890 = 3;
+    ((void **)D_800D9898)[0] = NULL;
+    ((void **)D_800D9898)[1] = NULL;
+    current = (void **)D_800D98A0;
+    do {
+        current[1] = NULL;
+        current[2] = NULL;
+        current[3] = NULL;
+        current[0] = NULL;
+        current += 4;
+    } while (current != (void **)D_800D98C0);
 }
 
 void func_150B6D34(void) {

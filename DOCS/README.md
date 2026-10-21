@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Color-record and pointer-table reset](WORKING_NOTES/1648-color-record-pointer-table-reset-match-20261020.md):
+  all 41 words/frame40 exact with 17 checked normalization rows and one
+  fixed-layout address fold. Both copies pass eight pre-install and two fresh
+  installed tests; strict ELF change is 209 bytes with no exclusions.
+  Total 3,713/5,505 (67.45%); 416 more to 75%.
 - [Scratch-array partition guarded C match](WORKING_NOTES/1647-scratch-array-partition-byte-match-20261020.md):
   existing semantic 41-word/frame24 routine, ten checked allocation guards,
   both eight-test pre-install suites, two installed tests per copy, 25 fixed neighbors and strict 128-byte
