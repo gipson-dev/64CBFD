@@ -2,6 +2,18 @@
 
 2026-10-21:
 
+**Indexed record commands installed directly from C: all 41 words exact**:
+[Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md).
+Recover `func_150A02D0`, frame0/six bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests, explicitly reusing
+six unchanged checks per copy under strict identity. Both actual dispatch
+paths, four owner neighbors, the full manifest and all other bodies/data
+are qualified; production reproduces the strict 126-byte image prediction.
+Tools `4d6f908` first; total 3,715/5,505 (67.48%), 414 more to 75%.
+Next `func_150D758C` remains screened only, not installed or credited.
+
+2026-10-21:
+
 [Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md):
 recover the complete two-range position callback directly from normal O2/g3,
 all 41 words/frame32/eight bindings, without guards or profile changes.

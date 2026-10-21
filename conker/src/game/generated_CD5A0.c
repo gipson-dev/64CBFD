@@ -35,7 +35,21 @@ s32 func_150A0264(s32 index, GeneratedCD5A0Record *arg1) {
     return 1;
 }
 
-s32 func_150A02D0() {
+/* Apply the record flag/value commands and report whether one was handled. */
+s32 func_150A02D0(u32 index, s32 command, const s32 *payload) {
+    extern u8 D_800D3014[];
+
+    switch (command) {
+        case 0:
+            D_800D3010[index].status = (D_800D3010[index].status & ~0x40) | 0x40;
+            return 1;
+        case 1:
+            D_800D3010[index].status &= ~0x40;
+            return 1;
+        case 2:
+            *(s32 *)(D_800D3014 + index * 12) = payload[2];
+            return 1;
+    }
     return 0;
 }
 

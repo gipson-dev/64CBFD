@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-21 Indexed Record Commands Direct C Match
+
+[Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md):
+recover `func_150A02D0`, all 41 words/frame0/six bindings directly from C,
+with exact flag/value widths, access order and forwarded Boolean result.
+Both copies pass eight pre-install and two fresh installed tests; six
+unchanged checks per copy are explicitly reused under strict identity.
+Preserve four neighbors and the entire guard manifest; reproduce the exact
+126-byte image prediction with zero exclusions. Tools `4d6f908` first.
+Total 3,715/5,505 (67.48%), Game 3,042/4,832 (62.96%), zero drift;
+414 more to 75%. Next `func_150D758C` is queued only, with no new credit.
+
 ## 2026-10-21 Two-Range Position Sampler Direct C Match
 
 [Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md):

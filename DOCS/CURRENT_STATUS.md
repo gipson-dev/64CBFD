@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `62ce8ef`; tools are committed before the consumer pin.
+  checkpoint pins tools `4d6f908`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Indexed record commands installed directly from C: all 41 words exact**:
+[Note 1650](WORKING_NOTES/1650-indexed-record-command-match-20261021.md).
+Recover `func_150A02D0`, frame0/six bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests; six unchanged checks
+per copy are explicitly reused under strict identity. Execute the complete
+92-word variadic caller and 26-word script window, including forwarded
+returns. Preserve four neighbors, all other linked bodies/addresses/data
+and the entire guard manifest. Production matches the strict 126-byte ELF
+prediction; all 15,768 live/copy inputs and outputs are qualified.
+Tools `4d6f908` first. Total 3,715/5,505 (67.48%), Game 3,042/4,832
+(62.96%), zero drift; 414 more to 75%. Next `func_150D758C` is a
+41-word/frame0 placeholder, screened only. Preserve all 1,512 older-mirror
+dirty paths and add only the two task files, without committing that mirror.
 
 **Two-range position sampler installed directly from C: all 41 words exact**:
 [Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md).
