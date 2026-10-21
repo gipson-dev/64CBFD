@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-21 Two-Range Position Sampler Direct C Match
+
+[Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md):
+recover `func_150E6E34`, all 41 words/frame32/eight bindings directly from C,
+with the real void callback ABI, two RNG calls and ordered range interpolation.
+Both copies pass eight pre-install and two fresh installed tests; six unchanged
+checks per copy are explicitly reused under strict identity. Preserve 28
+neighbors and the entire guard manifest; reproduce the exact 123-byte image
+prediction with zero exclusions. Tools `62ce8ef` first. Total 3,714/5,505
+(67.47%), Game 3,041/4,832 (62.93%), zero drift; 415 more to 75%.
+Next `func_150A02D0` is queued only, with no new draft or matching credit.
+
 ## 2026-10-20 Color Record And Pointer Table Reset
 
 **Color-record/table reset installed as guarded C: all 41 words exact**:

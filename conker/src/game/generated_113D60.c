@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern f32 *D_80088A3C, *D_80088A40;
+extern f32 D_800A130C;
+
 #include "structs.h"
 extern void *D_800D9A20[];
 extern f32 D_800A1378;
@@ -313,8 +316,20 @@ s32 func_150E6B84() {
     return 0;
 }
 
-s32 func_150E6E34() {
-    return 0;
+/* Select one range, then sample all three axes with a shared fraction. */
+void func_150E6E34(f32 *output) {
+    f32 *range;
+    f32 fraction;
+
+    if (func_150ADA68() < D_800A130C) {
+        range = D_80088A3C;
+    } else {
+        range = D_80088A40;
+    }
+    fraction = func_150ADA68();
+    output[0] = range[0] + (range[3] - range[0]) * fraction;
+    output[1] = range[1] + (range[4] - range[1]) * fraction;
+    output[2] = range[2] + (range[5] - range[2]) * fraction;
 }
 
 void func_150E6ED8(u8 *arg0) {

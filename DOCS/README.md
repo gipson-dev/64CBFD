@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Two-range position sampler](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md):
+  all 41 words/frame32/eight bindings emit directly from C, without guards.
+  Both copies pass eight pre-install and two fresh installed tests; preserve
+  28 neighbors and the full guard manifest. Strict ELF change: 123 bytes,
+  zero exclusions. Total 3,714/5,505 (67.47%); 415 more to 75%.
 - [Color-record and pointer-table reset](WORKING_NOTES/1648-color-record-pointer-table-reset-match-20261020.md):
   all 41 words/frame40 exact with 17 checked normalization rows and one
   fixed-layout address fold. Both copies pass eight pre-install and two fresh

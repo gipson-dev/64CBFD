@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-21:
+
+[Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md):
+recover the complete two-range position callback directly from normal O2/g3,
+all 41 words/frame32/eight bindings, without guards or profile changes.
+Both copies pass eight pre-install and two fresh installed tests; explicitly
+reuse six unchanged checks per copy under strict identity. Preserve 28
+neighbors, the whole guard manifest and all other linked bodies/addresses/data.
+Production reproduces the exact 123-byte image prediction, zero exclusions.
+Tools `62ce8ef` first; total 3,714/5,505 (67.47%), 415 more to 75%.
+Next `func_150A02D0` is screened only, with no draft/install/matching credit.
+
 2026-10-20:
 
 **Color-record/table reset installed as guarded C: all 41 words exact**:

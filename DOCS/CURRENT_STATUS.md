@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-20
+Last verified: 2026-10-21
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8310f77`; tools are committed before the consumer pin.
+  checkpoint pins tools `62ce8ef`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Two-range position sampler installed directly from C: all 41 words exact**:
+[Note 1649](WORKING_NOTES/1649-two-range-position-sampler-match-20261020.md).
+Recover the void callback, late threshold read, selected-pointer lifetime
+and ordered XYZ interpolation stores using normal O2/g3, with no guards.
+Both copies pass eight pre-install and two fresh installed tests; explicitly
+reuse six unchanged checks per copy under strict identity. Preserve 28
+neighbors and the entire guard manifest; production reproduces the exact
+123-byte image/size prediction, zero exclusions. Tools `62ce8ef` first.
+Total 3,714/5,505 (67.47%), Game 3,041/4,832 (62.93%), zero drift;
+415 more to 75%. Next `func_150A02D0` is a queued 41-word/frame0
+callback; both static dispatch paths still require executed ABI qualification.
+All 1,510 old mirror dirty paths are preserved; only the two task files
+are added, without committing that mirror.
 
 **Color-record/table reset installed as guarded C: all 41 words exact**:
 [Note 1648](WORKING_NOTES/1648-color-record-pointer-table-reset-match-20261020.md):
