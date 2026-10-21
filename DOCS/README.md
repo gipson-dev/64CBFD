@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [SDK segment-bank draw pair](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md):
+  40 body words/frame24 emit directly from SDK-macro C, with the original
+  alignment word, complete caller, bounded original helper and no guards.
 - [Quadratic position callback](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md):
   all 41 words/frame0 emit directly from C, with signed counter bounds,
   late reload, overlap qualification and the original keep/skip dispatch.

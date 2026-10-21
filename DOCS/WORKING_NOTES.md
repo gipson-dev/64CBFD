@@ -2,6 +2,19 @@
 
 2026-10-21:
 
+**SDK segment-bank draw pair installed directly from C: 40 body words exact**:
+[Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md).
+Recover `func_151D710C`, frame24/six bindings, without guards. Preserve the
+alignment word, late fifth-argument pointer and both helper returns. Both
+copies pass eight pre-install and two fresh installed tests; explicitly reuse
+six unchanged checks under strict identity. Qualify the complete caller and
+bounded original helper, preserving six neighbors and the whole caller object.
+All 15,786 live/copy files are qualified; production reproduces the strict
+123-byte image prediction. Tools `fcaa532` first; total 3,722/5,505 (67.61%),
+407 more to 75%. Next `func_150B3DD0` remains screened only.
+
+2026-10-21:
+
 **Quadratic position callback installed directly from C: all 41 words exact**:
 [Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md).
 Recover `func_1517B7F8`, frame0/no bindings, without guards. Both copies

@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern Gfx D_80083740[], D_800838C0[];
+Gfx *func_15133EEC(Gfx *, u16, u8, s32);
+
 extern s32 D_800BE9F0;
 
 /* Non-matching placeholders for the text-only asm slice asm/203E20.s. */
@@ -33,6 +36,15 @@ void func_151D70CC(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) target, (s32) (target + 4), (s32) arg0);
 }
 
-s32 func_151D710C() {
-    return 0;
+/* Select the segment-8 bank, submit segments 6/7 and mark the draw state. */
+Gfx *func_151D710C(Gfx *commands, u8 *descriptor, s32 unused2, s32 unused3, u8 *changed) {
+    if (descriptor[0x43] < 0xFF) {
+        gSPSegment(commands++, 8, D_80083740);
+    } else {
+        gSPSegment(commands++, 8, D_800838C0);
+    }
+    commands = func_15133EEC(commands, 0xC3, 6, 3);
+    commands = func_15133EEC(commands, 0xC3, 7, 3);
+    *changed = 1;
+    return commands;
 }

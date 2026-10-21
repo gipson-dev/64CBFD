@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `81b5376`; tools are committed before the consumer pin.
+  checkpoint pins tools `fcaa532`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**SDK segment-bank draw pair installed directly from C: 40 body words exact**:
+[Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md).
+Recover `func_151D710C`, frame24/six bindings, using real SDK macros without
+guards. Its queued 41-word slot is 40 body words plus one alignment word.
+Preserve descriptor selection, both helper returns and the late fifth-argument
+byte output. Qualify the complete 22-word caller and original 59-word helper;
+the lower decoder remains a bounded provider and the current helper a stub.
+Both tools copies pass eight pre-install and two fresh installed tests;
+six unchanged checks per copy are explicitly reused under strict identity.
+Keep six owner neighbors, all 18 caller functions and its entire object fixed.
+Production reproduces the strict 123-byte image prediction; all 15,786
+live/copy files and 1,454 linker objects are covered. Tools `fcaa532` first.
+Total 3,722/5,505 (67.61%), Game 3,049/4,832 (63.10%), zero drift;
+407 more to 75%. Next `func_150B3DD0` is a 41-word/frame40 placeholder,
+screened only. Preserve all 1,520 old mirror dirty paths and add only two
+task files without committing that mirror. No gameplay claim.
 
 **Quadratic position callback installed directly from C: 41 words exact**:
 [Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md).

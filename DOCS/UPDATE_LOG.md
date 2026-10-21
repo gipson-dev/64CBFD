@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-21 SDK Segment-Bank Draw Pair Direct C Match
+
+[Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md):
+recover `func_151D710C`, 40 body words/frame24/six bindings directly from
+SDK-macro C, preserving its separate alignment word. Qualify both returned
+cursors, all five caller arguments, the complete caller and bounded original
+helper. Both copies pass eight pre-install and two fresh installed tests;
+six unchanged checks per copy are explicitly reused under strict identity.
+Preserve six neighbors, the whole caller object and all other code/data;
+reproduce the strict 123-byte image prediction with zero exclusions.
+Tools `fcaa532` first. Total 3,722/5,505 (67.61%), Game 3,049/4,832
+(63.10%), zero drift; 407 more to 75%. Next `func_150B3DD0` is screened
+only. The current helper remains a stub; no natural gameplay claim.
+
 ## 2026-10-21 Quadratic Position Callback Direct C Match
 
 [Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md):

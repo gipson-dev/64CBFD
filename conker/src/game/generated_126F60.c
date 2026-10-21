@@ -89,11 +89,11 @@ s32 func_150FB188(u8 *arg0) {
     return 1;
 }
 
-s32 func_151D710C(s32, s32, s32, s32, s32);
+Gfx *func_151D710C(Gfx *, u8 *, s32, s32, u8 *);
 s32 func_15157F80(s32, s32, s32, s32, s32);
 
 void func_150FB1E8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
-    arg0 = func_151D710C(arg0, arg1, arg2, arg3, arg4);
+    arg0 = (s32)func_151D710C((Gfx *)arg0, (u8 *)arg1, arg2, arg3, (u8 *)arg4);
     func_15157F80(arg0, arg1, arg2, arg3, arg4);
 }
 

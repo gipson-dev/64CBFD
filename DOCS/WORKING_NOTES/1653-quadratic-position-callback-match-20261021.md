@@ -167,7 +167,7 @@ The 75% threshold is 4,129; **408 more exact functions** are required. The
 broader goal is not complete. The new ELF-pinned screen contains 1,651
 placeholders, 124 semantic/other definitions and nine unlocated entries.
 
-Next: `func_151D710C`, 41 body words/frame24 plus a separate alignment word,
+Next: `func_151D710C`, 41 slot words: 40 body words/frame24 plus one alignment word,
 in `conker/src/game/generated_203E20.c`, reference `conker/asm/203E20.s`.
 VA 151D710C..151D71AC, ROM 2045BC..20465C, ends exclusive; slot ends 151D71B0.
 Static inspection shows the descriptor byte+0x43 gate, two segment-address
