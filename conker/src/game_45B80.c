@@ -54,6 +54,9 @@ extern Gfx *D_800BE9C8, *D_800BE9CC;
 extern void *D_800BEB9C;
 extern u8 D_800C1060[];
 extern Mtx D_80089470;
+Gfx *func_15174AA4(Gfx *, s32, s32);
+Gfx *func_15174B48(Gfx *, s32, s32);
+
 extern LookAt D_800D9B90[];
 extern u8 D_800BE630[], D_800BEBA0, D_800BEAC2;
 extern s32 D_800BEBA4;
@@ -309,7 +312,7 @@ s32 func_15018E88(void *arg0, s16 arg1) {
     }
     arg0 = func_151674F8(arg0, 0, arg1, 0);
     arg0 = func_151674F8(arg0, 0, arg1, 1);
-    return func_15174AA4(arg0, D_800BE9F0, arg1);
+    return (s32)func_15174AA4(arg0, D_800BE9F0, arg1);
 }
 
 void *func_15018F08(void *arg0, s16 arg1) {

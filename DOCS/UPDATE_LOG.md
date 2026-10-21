@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-21 Paired SDK Matrix Callback Wrappers
+
+[Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md):
+recover `func_15174AA4` and `func_15174B48`, each 41 words/frame40
+directly from SDK-macro C without guards. Qualify ordered graphics stores,
+late selectors, callback returns and both complete callers. Typed caller
+declarations remove one warning while preserving its entire object.
+Both copies pass eight pre-install and two fresh installed tests;
+six unchanged checks per copy are explicitly reused under strict identity.
+Keep all other bodies/addresses/data and the entire manifest fixed;
+reproduce the strict 248-byte image prediction with zero exclusions.
+Tools `d6164dc` first. Total 3,720/5,505 (67.57%), Game 3,047/4,832
+(63.06%), zero drift; 409 more to 75%. Next `func_1517B7F8` is
+screened only, with no new credit. Natural callback registration is unproven.
+
 ## 2026-10-21 Actor Selector Callback Family Direct C Match
 
 [Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md):

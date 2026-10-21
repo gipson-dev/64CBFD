@@ -2,6 +2,20 @@
 
 2026-10-21:
 
+**Paired SDK matrix wrappers installed directly from C: 82 words exact**:
+[Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md).
+Recover `func_15174AA4` and `func_15174B48`, each 41 words/frame40,
+with real SDK macros and no guards. Both copies pass eight pre-install and
+two fresh installed tests, explicitly reusing six unchanged checks under
+strict identity. Qualify both complete callers and preserve all 16 caller
+functions and its entire object despite corrected pointer declarations.
+Production reproduces the strict 248-byte ELF prediction, zero exclusions;
+all 15,777 live/copy inputs and outputs are qualified. Tools `d6164dc` first.
+Total 3,720/5,505 (67.57%), 409 more to 75%. Next `func_1517B7F8`
+remains screened only; fixture callbacks are not natural gameplay evidence.
+
+2026-10-21:
+
 **Three actor selector callbacks installed directly from C: 132 words exact**:
 [Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md).
 Recover `func_150D7420`, `func_150D74DC` and `func_150D758C`, frame0,

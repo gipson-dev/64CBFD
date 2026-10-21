@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Paired SDK matrix callback wrappers](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md):
+  two 41-word/frame40 bodies emit directly from SDK-macro C without guards;
+  both real callers and the complete unchanged caller object are qualified.
 - [Actor selector callback family](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md):
   all 47/44/41 words emit directly from C, frame0, with no guards.
   Both copies pass eight pre-install and two fresh installed tests; preserve

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `55e5533`; tools are committed before the consumer pin.
+  checkpoint pins tools `d6164dc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Paired SDK matrix wrappers installed directly from C: 82 words exact**:
+[Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md).
+Recover `func_15174AA4` and `func_15174B48`, each 41 words/frame40,
+using real SDK graphics macros without guards. Qualify ordered stores,
+late selectors, callback results and both complete callers. Add typed
+caller declarations without changing any of its 16 functions or object
+bytes; remove only the corresponding implicit pointer warning.
+Both tools copies pass eight pre-install and two fresh installed tests;
+six unchanged checks per copy are explicitly reused under strict identity.
+Production reproduces the strict 248-byte ELF prediction; all 15,777
+live/copy inputs and outputs are qualified. Tools `d6164dc` first.
+Total 3,720/5,505 (67.57%), Game 3,047/4,832 (63.06%), zero drift;
+409 more to 75%. Next `func_1517B7F8` is a 41-word/frame0 placeholder,
+screened only. Preserve all 1,516 older-mirror dirty paths and add only
+the two task files, without committing that mirror. Retail callback banks
+remain empty; fixture callbacks do not prove natural rendering/gameplay.
 
 **Three actor selector callbacks installed directly from C: 132 words exact**:
 [Note 1651](WORKING_NOTES/1651-actor-selector-flag-callback-family-match-20261021.md).

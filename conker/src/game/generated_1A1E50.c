@@ -1,4 +1,11 @@
 #include <ultra64.h>
+#include "structs.h"
+
+extern struct104 *D_800B0DF0;
+extern Mtx D_80089470;
+typedef Gfx *(*MatrixWrapperCallback)(Gfx *, s32);
+extern MatrixWrapperCallback D_8008CD74[], D_8008CD7C[];
+
 
 /* Non-matching placeholders for the text-only asm slice asm/1A1E50.s. */
 
@@ -21,10 +28,24 @@ s32 func_151749F8() {
     return 0;
 }
 
-s32 func_15174AA4() {
-    return 0;
+/* Wrap the selected layer in pipe synchronization and model-view loads. */
+Gfx *func_15174AA4(Gfx *commands, s32 unused, s32 view) {
+    gDPPipeSync(commands++);
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    if (((u8 *)D_800B0DF0)[0xC] != 0) {
+        commands = D_8008CD74[((u8 *)D_800B0DF0)[0xC]](commands, view);
+    }
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    return commands;
 }
 
-s32 func_15174B48() {
-    return 0;
+/* Wrap the selected layer in pipe synchronization and model-view loads. */
+Gfx *func_15174B48(Gfx *commands, s32 unused, s32 view) {
+    gDPPipeSync(commands++);
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    if (((u8 *)D_800B0DF0)[0xD] != 0) {
+        commands = D_8008CD7C[((u8 *)D_800B0DF0)[0xD]](commands, view);
+    }
+    gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    return commands;
 }
