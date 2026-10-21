@@ -2,6 +2,19 @@
 
 2026-10-21:
 
+**Quadratic position callback installed directly from C: all 41 words exact**:
+[Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md).
+Recover `func_1517B7F8`, frame0/no bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests; explicitly reuse six
+unchanged checks per copy under strict identity. Qualify bounded signed
+math, aliases, the original dispatch window and the exact 110-byte image
+prediction. Preserve 13 neighbors and all other bodies/addresses/data.
+All 15,782 live/copy files and 1,454 linker inputs are qualified.
+Tools `81b5376` first; total 3,721/5,505 (67.59%), 408 more to 75%.
+Next `func_151D710C` remains screened only; no gameplay claim.
+
+2026-10-21:
+
 **Paired SDK matrix wrappers installed directly from C: 82 words exact**:
 [Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md).
 Recover `func_15174AA4` and `func_15174B48`, each 41 words/frame40,

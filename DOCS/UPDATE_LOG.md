@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-21 Quadratic Position Callback Direct C Match
+
+[Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md):
+recover `func_1517B7F8`, all 41 words/frame0 directly from C, without guards.
+Preserve the signed counter, quadratic integer offset, late reload and
+ordered copies. Both copies pass eight pre-install and two fresh installed
+tests; six unchanged checks per copy are explicitly reused under strict
+identity. Qualify the original caller window, not its still-stubbed parent.
+Keep 13 neighbors and all other bodies/addresses/data fixed; reproduce the
+strict 110-byte image prediction with zero exclusions. Recreated-cache
+qualification explicitly covers all 1,454 linker objects and 15,782 files.
+Tools `81b5376` first. Total 3,721/5,505 (67.59%), Game 3,048/4,832
+(63.08%), zero drift; 408 more to 75%. Next `func_151D710C` is screened
+only, with no new credit. Host Release remains untouched.
+
 ## 2026-10-21 Paired SDK Matrix Callback Wrappers
 
 [Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md):

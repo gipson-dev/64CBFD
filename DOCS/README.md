@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Quadratic position callback](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md):
+  all 41 words/frame0 emit directly from C, with signed counter bounds,
+  late reload, overlap qualification and the original keep/skip dispatch.
 - [Paired SDK matrix callback wrappers](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md):
   two 41-word/frame40 bodies emit directly from SDK-macro C without guards;
   both real callers and the complete unchanged caller object are qualified.

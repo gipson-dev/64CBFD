@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d6164dc`; tools are committed before the consumer pin.
+  checkpoint pins tools `81b5376`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Quadratic position callback installed directly from C: 41 words exact**:
+[Note 1653](WORKING_NOTES/1653-quadratic-position-callback-match-20261021.md).
+Recover `func_1517B7F8`, frame0/no bindings, without guards. Preserve signed
+counter gates, bounded integer division, late counter reload and Y/X/Z stores.
+Both tools copies pass eight pre-install and two fresh installed tests;
+six unchanged checks per copy are explicitly reused under strict identity.
+Qualify the original 54-word dispatch window, not its still-stubbed parent.
+Preserve 13 neighbors, all other bodies/addresses/data and the full manifest.
+Production reproduces the strict 110-byte image prediction. Recreate the
+missing Linux cache, explicitly cover all 1,454 linker objects and qualify
+all 15,782 live/copy files before generated-artifact adoption. Tools `81b5376`
+first. Total 3,721/5,505 (67.59%), Game 3,048/4,832 (63.08%), zero drift;
+408 more to 75%. Next `func_151D710C` is a 41-word/frame24 placeholder,
+screened only. Preserve all 1,518 old mirror dirty paths and add only the two
+task files without committing that mirror. No natural gameplay claim.
 
 **Paired SDK matrix wrappers installed directly from C: 82 words exact**:
 [Note 1652](WORKING_NOTES/1652-matrix-callback-wrapper-pair-match-20261021.md).

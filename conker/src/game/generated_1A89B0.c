@@ -45,7 +45,29 @@ s32 func_1517B7A8(s16 *arg0, s16 *arg1, s32 *arg2, s32 arg3) {
     return 0;
 }
 
-s32 func_1517B7F8() {
+/* Apply the quadratic Y offset and advance the position callback counter. */
+s32 func_1517B7F8(s16 *input, s16 *output, s32 *counter, s32 unused) {
+    s32 offset;
+
+    if (*counter >= 0xD00) {
+        return 1;
+    }
+    if (*counter >= 0x100) {
+        offset = *counter - 0x600;
+        offset = 0x190000 - offset * offset;
+        output[1] = input[1] + offset / 0x1E00;
+        if (*counter >= 0x200) {
+            if (*counter >= 0xA01) {
+                *counter -= 0x800;
+            } else {
+                *counter = 0x200;
+            }
+        }
+    } else {
+        output[1] = input[1];
+    }
+    output[0] = input[0];
+    output[2] = input[2];
     return 0;
 }
 
