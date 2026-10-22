@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
+void func_1516972C(struct102 *);
 s32 func_150ADA20(void);
 void func_15143874(s16, f32, f32 *, f32 *);
 void func_15143134(f32 *, f32 *, u8 *);
@@ -153,8 +154,28 @@ s32 func_150F03F8() {
     return 0;
 }
 
-s32 func_150F07E4() {
-    return 0;
+/* Handle release notifications and swap the selected descriptor pair. */
+void func_150F07E4(u8 *owner, s32 eventAddress, u8 command) {
+    u8 *state = *(u8 **)(owner + 0x60);
+    u8 *event = (u8 *)eventAddress;
+    s32 value = command;
+
+    if (command == 0) {
+        value = *(s32 *)event;
+        if (value == *(s32 *)state || state[4] == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (value == 0x2D) {
+        s32 first = *(s32 *)event;
+        value = *(s32 *)state;
+        if (first == value) {
+            *(s32 *)state = *(s32 *)(event + 4);
+            state[4] = event[9];
+        } else if (*(s32 *)(event + 4) == value) {
+            *(s32 *)state = first;
+            state[4] = event[8];
+        }
+    }
 }
 
 s32 func_150F088C() {
@@ -222,7 +243,7 @@ void func_150F15F8(u8 *arg0, u8 *volatile arg1, volatile u8 arg2) {
 
         if ((*(s32 *)word_owner == *(s32 *)target) ||
             (target[4] == byte_owner[4])) {
-            func_1516972C(arg0);
+            func_1516972C((struct102 *)arg0);
         }
     } else {
         func_15149514((s32)arg1, arg2, (s32)target,
@@ -236,7 +257,7 @@ void func_150F1684(u8 *arg0, u8 *arg1, u8 arg2) {
 
     if (arg2 == 0x43) {
         if ((*(s32 *)arg1 == *(s32 *)target) || (target[4] == arg1[4])) {
-            func_1516972C(arg0);
+            func_1516972C((struct102 *)arg0);
         }
     }
 }

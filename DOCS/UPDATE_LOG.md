@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-22 Descriptor-Pair Command Callback Guarded C Match
+
+[Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md):
+recover `func_150F07E4`,42 words/frame24/one binding, from its zero-return
+stub using complete C and one checked commutative bnel operand-order guard.
+Preserve the byte command, full-word pair, short-circuit release and late
+alias-sensitive byte loads. Both copies pass eight pre-install and two fresh
+installed tests, explicitly reusing six unchanged checks under strict identity.
+Qualify the full22-word dispatcher and original28-word release helper bounds;
+preserve43 neighbors, all other code/addresses/data and the old guard prefix.
+Production reproduces the strict113-byte image prediction. Tools `9b32c4e`
+first. Total3,728/5,505 (67.72%), Game3,055/4,832 (63.22%), zero drift;
+401 more to75%. Next `func_1514F640` is screened only. Preserve the older
+mirror and frozen host Release. No portable-fault, allocator or gameplay claim.
+
 ## 2026-10-22 Actor Record Table Index Direct C Match
 
 [Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md):

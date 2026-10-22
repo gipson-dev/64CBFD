@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Descriptor-pair command callback installed as guarded C: all42 words exact**:
+[Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md).
+Recover `func_150F07E4`, frame24/one binding, from its zero-return stub.
+One checked guard swaps only a commutative bnel's register operands; retain
+complete C, ordered pair/byte updates, the full dispatcher and original helper
+bounds. Both copies pass eight pre-install and two fresh installed tests;
+explicitly reuse six unchanged checks under strict program/image identity.
+Preserve43 neighbors, all other linked code/addresses/data and the old guard
+prefix. Tools `9b32c4e` first; total3,728/5,505 (67.72%),401 more to75%.
+Next `func_1514F640` is screened only. No allocator or gameplay claim.
+
+2026-10-22:
+
 **Actor record table index installed directly from C: all 42 words exact**:
 [Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md).
 Match `func_1505E7CC`, frame0/two bindings, without guards. Preserve

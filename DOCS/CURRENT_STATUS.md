@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d38ac24`; tools are committed before the consumer pin.
+  checkpoint pins tools `9b32c4e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Descriptor-pair command callback installed as guarded C: all 42 words exact**:
+[Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md).
+Recover `func_150F07E4`, frame24/one binding, from its zero-return stub.
+Complete C emits42 words; one checked guard swaps only the two registers in
+an otherwise identical commutative bnel. Preserve the byte command, full-word
+pair, short-circuit release gate, late byte reads and incoming argument home.
+Both copies pass eight pre-install and two fresh installed tests; explicitly
+reuse six unchanged checks under strict program/object/image identity.
+Qualify the complete 22-word dispatcher and28-word original release helper;
+lower release providers and the other callback remain bounded. Preserve43
+neighbors, all other6054 bodies/6055 addresses and the old guard prefix.
+Production matches the strict113-byte image prediction across15,810 files.
+Tools `9b32c4e` first. Total3,728/5,505 (67.72%), Game3,055/4,832
+(63.22%), zero drift;401 more to75%. Next `func_1514F640` is screened only,
+42 words/frame40. Preserve all1,532 old mirror dirty paths and frozen host
+Release. No allocator, portable-fault, hardware or gameplay acceptance claim.
 
 **Actor record table index installed directly from C: all 42 words exact**:
 [Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md).

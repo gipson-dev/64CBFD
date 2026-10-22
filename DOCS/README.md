@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Descriptor-pair command callback](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md):
+  all42 words/frame24 match from complete C and one checked commutative branch
+  operand guard. Preserve ordered pair updates, the full dispatcher, bounded
+  release helper,43 neighbors and the exact113-byte full-image prediction.
 - [Actor record table index](WORKING_NOTES/1659-actor-table-index-match-20261022.md):
   all 42 words/frame0 emit directly from C without guards. Preserve full-word
   keys, unsigned lengths, ordered reads and all seven caller windows; remove
