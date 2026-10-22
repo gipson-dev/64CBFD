@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-22 Randomized Player Byte-State Direct C Match
+
+[Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md):
+recover `func_1507EEF4`, all 43 words/frame 32/four bindings directly
+from C without guards. Preserve the original state branch, captured
+attachment, mandatory RNG draws and post-call unsigned counter reads.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify the actual caller
+window and retained 64-bit RNG. Preserve fifteen neighbors and the strict
+126-byte image across all 15,870 sealed inputs. Tools `cd36a32` first.
+Total 3,744/5,505 (68.01%), Game 3,071/4,832 (63.56%), zero drift;
+385 more to 75%. Next `func_1515F1B0` screened only. Host Release untouched.
+
 ## 2026-10-22 Frame-Layer Dispatcher Direct C Match
 
 [Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md):

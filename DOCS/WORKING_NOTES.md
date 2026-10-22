@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Randomized player byte-state installed directly from C: all 43 words exact**:
+[Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md).
+Recover `func_1507EEF4`, frame 32/four bindings, with explicit RNG-before-
+counter sequencing and captured attachment lifetime. Both copies pass eight
+pre-install and two fresh installed checks, reusing six unchanged checks.
+Qualify the actual caller window and retained 64-bit RNG; preserve fifteen
+neighbors, the whole guard manifest and strict 126-byte image across
+15,870 inputs. Tools `cd36a32` first. Total 3,744/5,505 (68.01%),
+385 more to 75%. Next `func_1515F1B0` screened only. Host Release frozen.
+
+2026-10-22:
+
 **Frame-layer dispatcher installed directly from C: all 43 words exact**:
 [Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md).
 Recover `func_151749F8`, frame 24/seventeen bindings, with typed helpers

@@ -50,8 +50,27 @@ void func_1507EEB8(u8 arg0, u8 *arg1) {
     arg1[0] = arg0;
 }
 
-s32 func_1507EEF4() {
-    return 0;
+/* Advance the captured player byte-state using a fresh random threshold. */
+void func_1507EEF4(void) {
+    u8 *state = *(u8 **)(D_800D154C + 0x31C) + 0x58;
+    s32 threshold;
+
+    if (state[0xC] == 0) {
+        state[0xC] = 1;
+        state[0xD] = 0;
+    } else if (state[0xC] == 1) {
+        func_150ADA20();
+        if (state[0xD] >= 3) {
+            state[0xC] = 2;
+            state[0xD] = 0;
+        }
+    } else {
+        threshold = (func_150ADA20() & 3) + 8;
+        if (state[0xD] >= threshold) {
+            state[0xC] = 1;
+            state[0xD] = 0;
+        }
+    }
 }
 
 void func_1507EFA0(s32 arg0, u8 *arg1) {

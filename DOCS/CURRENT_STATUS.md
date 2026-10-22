@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `14aa389`; tools are committed before the consumer pin.
+  checkpoint pins tools `cd36a32`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Randomized player byte-state installed directly from C: all 43 words exact**:
+[Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md).
+Recover `func_1507EEF4`, frame 32/four bindings, preserving the captured
+attachment, original state branch and post-RNG unsigned counter read.
+Both copies pass eight pre-install and two fresh installed checks; six
+unchanged checks are reused under strict identity. Qualify the actual
+caller window and retained 64-bit RNG; preserve fifteen neighbors and
+the strict 126-byte image across all 15,870 sealed inputs. No new guards.
+Tools `cd36a32` first. Total 3,744/5,505 (68.01%), Game 3,071/4,832 (63.56%),
+zero drift; 385 more to 75%. Next `func_1515F1B0` is screened only.
+Host Release remains untouched.
 
 **Frame-layer dispatcher installed directly from C: all 43 words exact**:
 [Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md).

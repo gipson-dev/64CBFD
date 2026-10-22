@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Randomized player byte-state](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md):
+  all 43 words/frame 32/four bindings emit directly from C without guards.
+  Preserve the captured attachment, original branch and late counter read;
+  qualify the caller/RNG and preserve fifteen neighbors and strict 126-byte image.
 - [Frame-layer dispatcher](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md):
   all 43 words/frame 24/seventeen bindings emit directly from C without
   guards. Preserve call order, late gates, unsigned accumulator wrap,
