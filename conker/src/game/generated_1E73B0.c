@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1E73B0.s. */
 
@@ -10,7 +11,7 @@ extern s32 D_800AA760;
 extern s32 D_800AA76C;
 
 s32 func_15160CDC(s32 arg0, s32 arg1, s32 *arg2, s32 *arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
-void func_1516972C(void *arg0);
+void func_1516972C(struct102 *arg0);
 
 s32 func_151B9F00() {
     return 0;
@@ -26,7 +27,6 @@ s32 func_151BA468() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1E73B0/func_151BA518.s")
 
-#include "structs.h"
 u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
 s32 func_151BB0E0();
 
@@ -74,8 +74,29 @@ s32 func_151BC580(u8 *arg0) {
     return 1;
 }
 
-s32 func_151BC5A4() {
-    return 0;
+/* Handle release notifications and update the inline descriptor pair. */
+void func_151BC5A4(struct102 *object, s32 eventAddress, u8 command) {
+    u8 *owner = (u8 *)object;
+    u8 *state = owner + 0x40;
+    s32 first = *(s32 *)state;
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0) {
+        if (first == *(s32 *)event || event[4] == owner[0x44]) {
+            func_1516972C(object);
+        }
+    } else if (code == 0x2D) {
+        s32 value = *(s32 *)state;
+        first = *(s32 *)event;
+        if (first == value) {
+            *(s32 *)state = *(s32 *)(event + 4);
+            state[4] = event[9];
+        } else if (*(s32 *)(event + 4) == value) {
+            *(s32 *)state = first;
+            state[4] = event[8];
+        }
+    }
 }
 
 s32 func_151BC64C() {
@@ -314,6 +335,6 @@ s32 func_151BFBD0(s32 arg0) {
 
 void func_151BFBFC(u8 *arg0, u8 arg1, u8 arg2) {
     if (arg2 == 0x57) {
-        func_1516972C(arg0);
+        func_1516972C((struct102 *)arg0);
     }
 }

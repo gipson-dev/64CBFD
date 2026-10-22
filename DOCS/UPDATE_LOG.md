@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Inline Descriptor Pair Callback Guarded C Match
+
+[Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md):
+recover `func_151BC5A4`, complete 42-word/frame24 C and one checked
+commutative bnel operand guard. Both copies pass eight pre-install and two
+fresh installed tests, explicitly reusing six unchanged checks under strict
+identity. Preserve the unconditional inline read, full 15-word caller and
+28-word helper bounds, 56 neighbors and the strict 117-byte image prediction.
+Tools `e3608fc` first. Total 3,733/5,505 (67.81%), Game 3,060/4,832 (63.33%),
+zero drift; 396 more to75%. Next `func_150049A4` is screened only.
+Host Release stays frozen.
+
 ## 2026-10-22 Dual-Preset Effect Start Direct C Match
 
 [Note 1664](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md):

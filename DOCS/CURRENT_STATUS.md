@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `33774a8`; tools are committed before the consumer pin.
+  checkpoint pins tools `e3608fc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Inline descriptor pair callback installed as guarded C: all 42 words exact**:
+[Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md).
+Recover `func_151BC5A4`, frame24/one binding, with one checked commutative
+bnel operand swap. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Preserve
+the unconditional inline-word read, full caller/release-helper bounds, all
+56 neighbors and the strict 117-byte image prediction across 15,830 sealed
+files. Total 3,733/5,505 (67.81%), Game 3,060/4,832 (63.33%), zero drift;
+396 more to75%. Next `func_150049A4` is screened only. Host Release untouched.
 
 **Dual-preset effect start installed directly from C: all 42 words exact**:
 [Note 1664](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md).

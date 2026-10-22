@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Inline descriptor pair callback installed as guarded C: all 42 words exact**:
+[Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md).
+Recover `func_151BC5A4`, frame24/one binding, with one checked commutative
+bnel operand swap. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Preserve
+the unconditional inline read, complete caller/helper bounds, 56 neighbors
+and the strict 117-byte image prediction. Tools `e3608fc` first; total
+3,733/5,505 (67.81%), 396 more to75%. Next `func_150049A4` is screened only.
+Host Release remains frozen.
+
+2026-10-22:
+
 **Dual-preset effect start installed directly from C: all 42 words exact**:
 [Note 1664](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md).
 Recover `func_1519E3BC`, frame40/four bindings, without guards. Both copies
