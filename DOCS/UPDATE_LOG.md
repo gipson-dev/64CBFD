@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-21 Keyed Node Removal Direct C Match
+
+[Note 1656](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md):
+recover `func_15188AD0`, all 41 words/frame48/four bindings directly
+from C without guards. Preserve every matching removal, cached successors,
+unlink order and separate payload-marker/node-free semantics. Both copies
+pass eight pre-install and two fresh installed tests; explicitly reuse six
+unchanged checks under strict identity. Qualify both original caller windows
+and bounded actual Init helpers; preserve 14 neighbors and all other code/data.
+Production reproduces the strict 122-byte image prediction. Tools `d86b5c2`
+first. Total 3,724/5,505 (67.65%), Game 3,051/4,832 (63.14%), zero drift;
+405 more to 75%. Next `func_15189FF0` is screened only. No gameplay claim.
+
 ## 2026-10-21 Six Ordered Byte Submissions Direct C Match
 
 [Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md):

@@ -1,4 +1,13 @@
 #include <ultra64.h>
+typedef struct KeyedNode15188AD0 {
+    u8 opaque[8];
+    s32 *payload;
+    struct KeyedNode15188AD0 *next;
+    s32 key;
+} KeyedNode15188AD0;
+void func_100043B4(s32 *, u32);
+void func_10004074(void *);
+
 extern u8 *D_800DF7C8;
 
 /* Non-matching placeholders for the text-only asm slice asm/1B5CC0.s. */
@@ -52,8 +61,27 @@ void func_15188A9C(s32 arg0) {
     }
 }
 
-s32 func_15188AD0() {
-    return 0;
+/* Unlink keyed nodes, mark their payload blocks, and free the removed nodes. */
+void func_15188AD0(s32 key) {
+    KeyedNode15188AD0 *next;
+    KeyedNode15188AD0 *node = (KeyedNode15188AD0 *)D_800DF7C8;
+    KeyedNode15188AD0 *previous = NULL;
+
+    while (node != NULL) {
+        next = node->next;
+        if (key == node->key) {
+            if (previous == NULL) {
+                D_800DF7C8 = (u8 *)next;
+            } else {
+                previous->next = next;
+            }
+            func_100043B4(node->payload, 2);
+            func_10004074(node);
+        } else {
+            previous = node;
+        }
+        node = next;
+    }
 }
 
 s32 func_15188B74() {
@@ -79,13 +107,13 @@ s32 func_15189118() {
 s32 func_151895A4(u8 *arg0) {
     u8 *temp_a2 = arg0;
 
-    func_100043B4(*(s32 *)(temp_a2 + 8), 2);
+    func_100043B4(*(s32 **)(temp_a2 + 8), 2);
 }
 
 s32 func_151895CC(u8 *arg0) {
     u8 *temp_a2 = arg0;
 
-    func_100043B4(*(s32 *)(temp_a2 + 8), 2);
+    func_100043B4(*(s32 **)(temp_a2 + 8), 2);
 }
 
 s32 func_151895F4() {

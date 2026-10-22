@@ -2,6 +2,18 @@
 
 2026-10-21:
 
+**Keyed node removal installed directly from C: all 41 words exact**:
+[Note 1656](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md).
+Recover `func_15188AD0`, frame48/four bindings, without guards. Preserve
+successor/predecessor lifetime and unlink-before-helper order. Both copies
+pass eight pre-install and two fresh installed tests, explicitly reusing six
+unchanged checks under strict identity. Qualify both original caller windows
+and bounded actual Init helpers; preserve all 14 neighbors and the exact
+122-byte image prediction. Tools `d86b5c2` first; total 3,724/5,505
+(67.65%), 405 more to 75%. Next `func_15189FF0` remains screened only.
+
+2026-10-21:
+
 **Six ordered byte submissions installed directly from C: all 41 words exact**:
 [Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md).
 Recover `func_150B3DD0`, frame40/seven bindings, without guards.

@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Keyed node removal](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md):
+  all 41 words/frame48 emit directly from typed C without guards. Preserve
+  unlink order, cached successors, both caller windows and bounded Init helpers.
 - [Six ordered byte submissions](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md):
   all 41 words/frame40 emit directly from C without guards. Preserve the
   shared stack buffer, ordered byte stores, both original wrappers and

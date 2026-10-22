@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `bda743c`; tools are committed before the consumer pin.
+  checkpoint pins tools `d86b5c2`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Keyed node removal installed directly from C: all 41 words exact**:
+[Note 1656](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md).
+Recover `func_15188AD0`, frame48/four bindings, without guards. Preserve
+cached successors, unlink-before-helper order and the last unmatched
+predecessor. Two typed neighbor payload casts leave all 14 neighboring
+bodies unchanged. Both tools copies pass eight pre-install and two fresh
+installed tests; six unchanged checks are explicitly reused under strict
+identity. Qualify both original caller windows and bounded actual Init
+helpers, not complete parents, allocator paths or gameplay.
+Production reproduces the strict 122-byte image prediction across 15,794
+sealed files. Tools `d86b5c2` first. Total 3,724/5,505 (67.65%),
+Game 3,051/4,832 (63.14%), zero drift; 405 more to 75%.
+Next `func_15189FF0` is screened only, 41 words/frame56.
+Preserve all 1,524 pre-existing older-mirror dirty paths; host Release untouched.
 
 **Six ordered byte submissions installed directly from C: all 41 words exact**:
 [Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md).
