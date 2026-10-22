@@ -18,6 +18,13 @@ typedef struct {
     s32 z;
 } Func1515CF9CPosition;
 
+typedef struct {
+    void *source;
+    f32 value;
+    u8 selector;
+    u8 reserved[3];
+} SelectorCallbackPayload;
+
 void *func_1515C2F0(u8 *arg0, u8 *arg1, void *arg2, s32 arg3, u8 arg4, s32 arg5) {
     u8 *temp_v0;
 
@@ -77,28 +84,24 @@ s32 func_1515D030(u8 *arg0, s32 arg1) {
     return result;
 }
 
-void *func_1515D088(u8 *arg0) {
-    struct {
-        void *unk0;
-        f32 unk4;
-        s8 unk8;
-        u8 pad[3];
-    } data;
-    u8 *temp_v0;
-    s32 value = *(s32 *)(arg0 + 0x18);
+/* Create a selector-0/1 callback record with its source and zero parameter. */
+void *func_1515D088(void *source) {
+    u8 *created;
+    SelectorCallbackPayload data;
+    s32 selector;
 
-    data.unk8 = value;
-    if ((value & 0xFF) >= 2) {
+    data.selector = *(s32 *)((u8 *)source + 0x18);
+    selector = (u8)data.selector;
+    if (selector < 0 || selector >= 2) {
         return NULL;
     }
-
-    data.unk0 = arg0;
-    data.unk4 = 0.0f;
-    temp_v0 = (u8 *)func_151491F4(0x12C, -1, 0x11, 0, 0xD, 0xC, 0xFF, 1);
-    if (temp_v0 != NULL) {
-        memcpy(temp_v0 + 0x28, &data, 0xC);
+    data.source = source;
+    data.value = 0.0f;
+    created = (u8 *)func_151491F4(0x12C, -1, 0x11, 0, 0xD, 0xC, 0xFF, 1);
+    if (created != NULL) {
+        memcpy(created + 0x28, &data, sizeof(data));
     }
-    return temp_v0;
+    return created;
 }
 
 // fat struct

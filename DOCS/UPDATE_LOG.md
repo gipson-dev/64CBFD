@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-22 Selector Callback Factory Direct C Match
+
+[Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md):
+match existing semantic `func_1515D088`, all 42 words/frame64/two bindings
+directly from C without new guards. Recover the unsigned selector capture,
+signed range-check shape and actual 12-byte payload/reserved-byte layout.
+Both copies pass eight pre-install and two fresh installed tests, explicitly
+reusing six unchanged checks under strict identity. Qualify the complete caller
+and original wrapper/memcpy bounds; preserve seven neighbors, the entire
+caller object, old guards and the strict 123-byte image prediction.
+Tools `3bb6ee8` first. Total 3,726/5,505 (67.68%), Game 3,053/4,832
+(63.18%), zero drift; 403 more to 75%. Next `func_1505E7CC` is screened
+only. Preserve the older mirror and frozen host Release. No gameplay claim.
+
 ## 2026-10-22 Source Runtime-Block Factory Guarded C Match
 
 [Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md):

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Selector callback factory](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md):
+  all 42 words/frame64 emit directly from C without guards. Preserve captured
+  selectors, all reserved bytes, the complete caller and original helper bounds;
+  keep the 32-function caller object and full guard manifest unchanged.
 - [Source runtime-block factory](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md):
   all 41 linked words/frame56 match from complete 40-word C and two checked
   return-join rows. Preserve all six caller windows, actual factory/memcpy

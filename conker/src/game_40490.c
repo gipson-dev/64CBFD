@@ -20,6 +20,7 @@ s32 func_15015354();
 s32 func_150156F4();
 /* End generated placeholder declarations. */
 struct17 *func_1515F1B0(u8 *arg0);
+void *func_1515D088(void *);
 void *func_151CD2C0(void *source, u8 variant, s32 parameter);
 
 s32 func_151BE850(struct17 *arg0, s32 arg1, u8 arg2, u8 arg3, u8 arg4, u8 arg5, u8 arg6);

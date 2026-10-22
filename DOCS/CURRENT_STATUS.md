@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `741c325`; tools are committed before the consumer pin.
+  checkpoint pins tools `3bb6ee8`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Selector callback factory installed directly from C: all 42 words exact**:
+[Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md).
+Match existing semantic `func_1515D088`, frame64/two bindings, without
+new guards. Recover the captured unsigned-byte gate and real 12-byte local,
+including three untouched reserved bytes; retain the allocated-base return.
+Both copies pass eight pre-install and two fresh installed tests, explicitly
+reusing six unchanged checks under strict identity. Qualify the complete
+11-word caller and actual factory-wrapper/memcpy bounds. Preserve seven
+neighbors, all 32 caller functions, its complete object and the full manifest.
+Production matches the strict 123-byte image prediction across 15,802 files.
+Tools `3bb6ee8` first. Total 3,726/5,505 (67.68%), Game 3,053/4,832
+(63.18%), zero drift; 403 more to 75%. Next `func_1505E7CC` is screened
+only, 42 static words/frame0/39 differences. Preserve all 1,528 pre-existing
+older-mirror dirty paths; no full-constructor/gameplay claim or host change.
 
 **Source runtime-block factory installed as guarded C: all 41 linked words exact**:
 [Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md).

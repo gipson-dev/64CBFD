@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Selector callback factory installed directly from C: all 42 words exact**:
+[Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md).
+Match `func_1515D088`, frame64/two bindings, without new guards.
+Recover the captured selector and actual 12-byte local with three reserved
+bytes untouched. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity.
+Qualify the full caller and original wrapper/memcpy bounds; preserve seven
+neighbors, all caller bytes, the full manifest and 123-byte image prediction.
+Tools `3bb6ee8` first; total 3,726/5,505 (67.68%), 403 more to 75%.
+Next `func_1505E7CC` remains screened only. No full-constructor/gameplay claim.
+
+2026-10-22:
+
 **Source runtime-block factory installed as guarded C: all 41 linked words exact**:
 [Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md).
 Recover `func_15189FF0`, frame56/two bindings from complete 40-word C
