@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Category-gated framebuffer fill](WORKING_NOTES/1668-category-frame-fill-match-20261022.md):
+  all 42 words/frame40 emit directly from C without guards. Preserve category
+  and child gates, unused float homes, complete helper packet, 33 neighbors
+  and the strict 136-byte image. Keep caller/helper stub limits explicit.
 - [Five-field motion callback](WORKING_NOTES/1667-five-field-motion-match-20261022.md):
   all 42 words/frame0 emit directly from C without guards. Preserve live
   timestep loads, single-precision ordering, bounded callback flow and three

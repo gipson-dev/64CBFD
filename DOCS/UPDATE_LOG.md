@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-22 Category-Gated Framebuffer Fill Direct C Match
+
+[Note 1668](WORKING_NOTES/1668-category-frame-fill-match-20261022.md):
+recover `func_15110600`, all 42 words/frame40/eleven bindings directly from C.
+Both copies pass eight pre-install and two fresh installed tests, reusing six
+unchanged checks under strict identity. Preserve category/child gates, float
+homes, the complete helper packet, 33 neighbors and strict 136-byte image.
+Original caller/helper coverage does not finish their C stubs. Tools `81b701f`
+first. Total 3,736/5,505 (67.87%), Game 3,063/4,832 (63.39%), zero drift;
+393 more to75%. Next `func_1514A4EC` is screened only. Host Release untouched.
+
 ## 2026-10-22 Five-Field Motion Callback Direct C Match
 
 [Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md):

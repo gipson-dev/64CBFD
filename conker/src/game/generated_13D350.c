@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern s32 D_800BE9F0, D_800BE620, D_800BE624;
+extern u8 *D_800DBFF0;
+extern u8 D_800DBEA8[];
+
 void func_150A7CB0(f32 matrix[4][4], f32 x, f32 y, f32 z);
 void func_150A8050(f32 [4][4], f32, f32, f32);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
@@ -12,7 +16,7 @@ extern s32 D_800DBEF0;
 extern u8 *D_800DBEF4;
 extern s32 *D_800DBF94;
 
-/* Non-matching placeholders for the text-only asm slice asm/13D350.s. */
+/* Partially recovered text-only slice asm/13D350.s. */
 
 s32 func_1510FEA0() {
     return 0;
@@ -42,8 +46,15 @@ s32 func_15110544() {
     return 0;
 }
 
-s32 func_15110600() {
-    return 0;
+/* Fill the frame for the selected categories and qualifying child state. */
+Gfx *func_15110600(Gfx *commands, f32 unusedX, f32 unusedY, f32 unusedZ) {
+    if (D_800BE9F0 == 0x1B || D_800BE9F0 == 0x1E ||
+        (D_800BE9F0 == 0x31 && (*(u8 **)(D_800DBFF0 + 0x3D4))[0x78] == 3)) {
+        commands = (Gfx *)func_15110544(commands, 2, 0,
+            (s32)((u32)D_800BE620 - 2), D_800BE624,
+            D_800DBEA8[0], D_800DBEA8[1], D_800DBEA8[2]);
+    }
+    return commands;
 }
 
 s32 func_151106A8() {

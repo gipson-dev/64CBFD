@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Category-gated framebuffer fill installed directly from C: all 42 words exact**:
+[Note 1668](WORKING_NOTES/1668-category-frame-fill-match-20261022.md).
+Recover `func_15110600`, frame40/eleven bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests, reusing six unchanged
+checks under strict identity. Preserve float homes, bounded caller/helper
+coverage, 33 neighbors and the strict 136-byte image. Tools `81b701f` first;
+total 3,736/5,505 (67.87%), 393 more to75%. Next `func_1514A4EC` is screened
+only. Host Release stays frozen.
+
+2026-10-22:
+
 **Five-field motion callback installed directly from C: all 42 words exact**:
 [Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md).
 Recover `func_150BA37C`, frame0/four bindings, without guards. Both copies

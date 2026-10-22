@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a185029`; tools are committed before the consumer pin.
+  checkpoint pins tools `81b701f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Category-gated framebuffer fill installed directly from C: all 42 words exact**:
+[Note 1668](WORKING_NOTES/1668-category-frame-fill-match-20261022.md).
+Recover `func_15110600`, frame40/eleven bindings, without guards. Preserve the
+word category gate, conditional child byte, float argument homes, dimensions,
+RGB packet and helper return. Both copies pass eight pre-install and two fresh
+installed tests, reusing six unchanged checks under strict identity. Preserve
+33 neighbors and the strict 136-byte image across 15,842 sealed files.
+Total 3,736/5,505 (67.87%), Game 3,063/4,832 (63.39%), zero drift;
+393 more to75%. Next `func_1514A4EC` is screened only. Host Release untouched.
 
 **Five-field motion callback installed directly from C: all 42 words exact**:
 [Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md).
