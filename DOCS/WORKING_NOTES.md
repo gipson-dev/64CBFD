@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Parameterized owner-selector payload installed as guarded C: all 42 words exact**:
+[Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md).
+Recover `func_15192D48`, frame56/two bindings, with seventeen checked scheduling
+words. Both copies pass eight pre-install and two fresh installed tests,
+reusing six unchanged checks under strict identity. Preserve argument widths,
+twelve payload bytes, allocation return, five neighbors and strict 125-byte
+image. Tools `15e1f5a` first; total 3,738/5,505 (67.90%),
+391 more to75%. Next `func_151A4590` is screened only. Host Release frozen.
+
+2026-10-22:
+
 **Damped motion snapshot installed as guarded C: all 42 words exact**:
 [Note 1669](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md).
 Recover `func_1514A4EC`, frame0/two bindings, with seven checked copy-lifetime

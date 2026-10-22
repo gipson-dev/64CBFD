@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Parameterized owner-selector payload](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md):
+  all 42 words/frame56 match from complete C and seventeen checked scheduling
+  words. Preserve signed lifetime, byte selector, twelve copied bytes,
+  allocation return, five neighbors and the strict 125-byte image.
 - [Damped motion snapshot](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md):
   all 42 words/frame0 match from complete C and seven checked copy-lifetime/
   scheduling words. Preserve raw snapshots, captured damping, live timestep,

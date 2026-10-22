@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e9b7a5e`; tools are committed before the consumer pin.
+  checkpoint pins tools `15e1f5a`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Parameterized owner-selector payload installed as guarded C: all 42 words exact**:
+[Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md).
+Recover `func_15192D48`, frame56/two bindings, with seventeen checked scheduling
+words. Preserve signed lifetime, byte selector, full parameter, all twelve
+payload bytes and allocation-result lifetime. Both copies pass eight
+pre-install and two fresh installed tests, reusing six unchanged checks under
+strict identity. Preserve five neighbors and the strict 125-byte image across
+15,850 sealed files. Total 3,738/5,505 (67.90%), Game 3,065/4,832 (63.43%),
+zero drift; 391 more to75%. Next `func_151A4590` is screened only.
+Host Release untouched.
 
 **Damped motion snapshot installed as guarded C: all 42 words exact**:
 [Note 1669](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md).

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Parameterized Owner-Selector Payload Guarded C Match
+
+[Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md):
+recover `func_15192D48`, complete 42-word/frame56 C and seventeen checked
+scheduling words. Both copies pass eight pre-install and two fresh installed
+tests, reusing six unchanged checks under strict identity. Preserve incoming
+widths, copied reserved bytes, allocation result, five neighbors and strict
+125-byte image. Keep caller/helper and raw private/fault limits explicit.
+Tools `15e1f5a` first. Total 3,738/5,505 (67.90%), Game 3,065/4,832 (63.43%),
+zero drift; 391 more to75%. Next `func_151A4590` is screened only.
+Host Release untouched.
+
 ## 2026-10-22 Damped Motion Snapshot Guarded C Match
 
 [Note 1669](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md):

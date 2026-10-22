@@ -23366,3 +23366,20 @@ generated_176A00,func_1514A4EC,0x020,0xAC8E0040,0x8C81003C,-,-,Normalize positio
 generated_176A00,func_1514A4EC,0x024,0xAC8F0044,0xAC980044,-,-,Normalize position snapshot copy lifetimes and independent load schedule,,,false
 generated_176A00,func_1514A4EC,0x028,0xAC980048,0xC488013C,-,-,Normalize position snapshot copy lifetimes and independent load schedule,,,false
 generated_176A00,func_1514A4EC,0x02C,0xC488013C,0xAC810048,-,-,Normalize position snapshot copy lifetimes and independent load schedule,,,false
+generated_1BFDD0,func_15192D48,0x01C,0x2405FFFF,0x8FAF0038,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x020,0x24060018,0x2405FFFF,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x028,0x24070001,0x24060018,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x034,0x8FAF0038,0xAFAF0028,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x038,0x87A4003E,0x91F8003B,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x03C,0x93A90043,0x44802000,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x040,0xAFAF0028,0x93A90043,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x044,0x91F8003B,0x8FAA0044,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x048,0x44802000,0x24190016,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x04C,0x8FAA0044,0x2408000C,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x050,0x24190016,0xAFA80014,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x054,0x2408000C,0xAFB90010,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x058,0xAFA80014,0x87A4003E,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x05C,0xAFB90010,0x24070001,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x060,0xAFA90018,0xA3B8002C,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x064,0xA3B8002C,0xE7A40030,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1BFDD0,func_15192D48,0x068,0xE7A40030,0xAFA90018,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
