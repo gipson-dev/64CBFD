@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `853c975`; tools are committed before the consumer pin.
+  checkpoint pins tools `14c2fc9`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Alternate descriptor pair callback installed as guarded C: all 42 words exact**:
+[Note 1663](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md).
+Recover `func_151A8A78`, frame24/one binding, with one checked commutative
+bnel operand swap. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Preserve
+event-first comparisons, the full dispatcher/release-helper bounds, 22 neighbors
+and the strict 113-byte image prediction across 15,822 sealed files.
+Total 3,731/5,505 (67.77%), Game 3,058/4,832 (63.29%), zero drift;
+398 more to75%. Next `func_1519E3BC` is screened only. Host Release untouched.
 
 **Linked descriptor command callback installed as guarded C: all42 words exact**:
 [Note 1662](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md).

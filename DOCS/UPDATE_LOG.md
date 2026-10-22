@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-22 Alternate Descriptor Pair Callback Guarded C Match
+
+[Note 1663](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md):
+recover `func_151A8A78`, 42 words/frame24/one binding, with complete C and
+one checked commutative bnel operand guard. Both copies pass eight pre-install
+and two fresh installed tests, reusing six unchanged checks under strict
+identity. Preserve event-first comparisons, the complete 22-word dispatcher,
+28-word release-helper bounds, 22 neighbors and the strict 113-byte image.
+Tools `14c2fc9` first. Total 3,731/5,505 (67.77%), Game 3,058/4,832 (63.29%),
+zero drift; 398 more to75%. Next `func_1519E3BC` is screened only.
+
 ## 2026-10-22 Linked Descriptor Command Callback Guarded C Match
 
 [Note 1662](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md):

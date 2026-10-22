@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Alternate descriptor pair callback installed as guarded C: all 42 words exact**:
+[Note 1663](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md).
+Recover `func_151A8A78`, frame24/one binding, with one checked commutative
+bnel operand swap. Both copies pass eight pre-install and two fresh installed
+tests, reusing six unchanged checks under strict identity. Preserve event-first
+comparisons, complete dispatcher/helper bounds, 22 neighbors and the strict
+113-byte image prediction. Tools `14c2fc9` first; total 3,731/5,505 (67.77%),
+398 more to75%. Next `func_1519E3BC` remains screened only.
+
+2026-10-22:
+
 **Linked descriptor command callback installed as guarded C: all42 words exact**:
 [Note 1662](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md).
 Recover `func_151A4CE0`, frame24/one binding, with one checked commutative

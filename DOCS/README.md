@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Alternate descriptor pair callback](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md):
+  all 42 words/frame24 match from complete C and one checked commutative branch
+  operand guard. Preserve event-first loads, full dispatcher/release-helper
+  bounds, 22 neighbors and the exact 113-byte complete-image prediction.
 - [Linked descriptor command callback](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md):
   all42 words/frame24 match from complete C and one checked commutative branch
   operand guard. Qualify the full dispatcher and flag-transfer helper; preserve

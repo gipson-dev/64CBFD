@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include "structs.h"
+void func_1516972C(struct102 *);
 
 /* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
 
@@ -71,8 +73,28 @@ void func_151A8A20(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151A8A78() {
-    return 0;
+/* Handle release notifications and switch the selected descriptor pair. */
+void func_151A8A78(u8 *owner, s32 eventAddress, u8 command) {
+    u8 *state = *(u8 **)(owner + 0x60);
+    u8 *event = (u8 *)eventAddress;
+    s32 value = command;
+
+    if (command == 0) {
+        value = *(s32 *)event;
+        if (value == *(s32 *)state || event[4] == state[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (value == 0x2D) {
+        s32 first = *(s32 *)event;
+        value = *(s32 *)state;
+        if (first == value) {
+            *(s32 *)state = *(s32 *)(event + 4);
+            state[4] = event[9];
+        } else if (*(s32 *)(event + 4) == value) {
+            *(s32 *)state = first;
+            state[4] = event[8];
+        }
+    }
 }
 
 s32 func_151A8B20() {
