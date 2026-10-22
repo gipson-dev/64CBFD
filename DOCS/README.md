@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Dual-preset effect start](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md):
+  all 42 words/frame40 emit directly from C without guards. Preserve signed
+  duration, byte slot, late homes, 22 neighbors and the strict 127-byte image.
+  Original caller/helper checks do not finish their remaining stubs.
 - [Alternate descriptor pair callback](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md):
   all 42 words/frame24 match from complete C and one checked commutative branch
   operand guard. Preserve event-first loads, full dispatcher/release-helper

@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
+void func_1519E688(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/1CA420.s. */
 
@@ -68,8 +69,13 @@ s32 func_1519E304() {
     return 0;
 }
 
-s32 func_1519E3BC() {
-    return 0;
+/* Reset the effect group and start both presets with their controller. */
+void func_1519E3BC(u8 *actor, s16 duration, u8 slot, s32 context) {
+    func_1519E688();
+    /* Promote the slot explicitly at the legacy builder boundary. */
+    func_1519D030(actor, 3, 300, 0, (u32)slot, context);
+    func_1519D030(actor, 4, 300, 0, (u32)slot, context);
+    func_151491F4(duration, 6, -1, 1, 3, 0, slot, context);
 }
 
 s32 func_1519E464() {

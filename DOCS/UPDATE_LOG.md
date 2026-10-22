@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Dual-Preset Effect Start Direct C Match
+
+[Note 1664](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md):
+recover `func_1519E3BC`, all 42 words/frame40/four bindings directly from C,
+without guards. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Preserve
+signed duration, byte slot, late homes, 22 neighbors and the strict 127-byte
+image prediction. Keep original caller/helper coverage separate from their
+unfinished production bodies. Tools `33774a8` first. Total 3,732/5,505
+(67.79%), Game 3,059/4,832 (63.31%), zero drift; 397 more to75%.
+Next `func_151BC5A4` is screened only. Host Release remains untouched.
+
 ## 2026-10-22 Alternate Descriptor Pair Callback Guarded C Match
 
 [Note 1663](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md):

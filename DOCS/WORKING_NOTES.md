@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Dual-preset effect start installed directly from C: all 42 words exact**:
+[Note 1664](WORKING_NOTES/1664-dual-preset-effect-start-match-20261022.md).
+Recover `func_1519E3BC`, frame40/four bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests, explicitly reusing six
+unchanged checks under strict identity. Preserve signed duration, byte slot,
+late homes, 22 neighbors and the strict 127-byte image prediction. Original
+caller/helper tests remain bounded; their unfinished bodies are not credited.
+Tools `33774a8` first; total 3,732/5,505 (67.79%), 397 more to75%.
+Next `func_151BC5A4` remains screened only. Host Release stays frozen.
+
+2026-10-22:
+
 **Alternate descriptor pair callback installed as guarded C: all 42 words exact**:
 [Note 1663](WORKING_NOTES/1663-alternate-pair-command-match-20261022.md).
 Recover `func_151A8A78`, frame24/one binding, with one checked commutative
