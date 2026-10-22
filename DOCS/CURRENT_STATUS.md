@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e3608fc`; tools are committed before the consumer pin.
+  checkpoint pins tools `c241262`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**SDK command-stream relocator installed as guarded C: all 42 words exact**:
+[Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md).
+Recover `func_150049A4`, frame8/no bindings, with eleven checked fields
+closing one cursor lifetime from v1 to vacant a1. Preserve signed opcodes,
+both opening reads, wrapping offsets, saved S0 and retail's unreachable
+positive G_DL case. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Preserve
+eight neighbors and the strict 126-byte image prediction across 15,834 files.
+Total 3,734/5,505 (67.83%), Game 3,061/4,832 (63.35%), zero drift;
+395 more to75%. Next `func_150BA37C` is screened only. Host Release untouched.
 
 **Inline descriptor pair callback installed as guarded C: all 42 words exact**:
 [Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md).

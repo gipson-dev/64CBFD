@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**SDK command-stream relocator installed as guarded C: all 42 words exact**:
+[Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md).
+Recover `func_150049A4`, frame8/no bindings, with eleven checked cursor
+fields and no inserted instructions. Both copies pass eight pre-install and
+two fresh installed tests, explicitly reusing six unchanged checks under
+strict identity. Preserve signed SDK commands, both opening reads, wrapping
+offsets, saved S0, eight neighbors and the strict 126-byte image prediction.
+Tools `c241262` first; total 3,734/5,505 (67.83%), 395 more to75%.
+Next `func_150BA37C` remains screened only. Host Release stays frozen.
+
+2026-10-22:
+
 **Inline descriptor pair callback installed as guarded C: all 42 words exact**:
 [Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md).
 Recover `func_151BC5A4`, frame24/one binding, with one checked commutative

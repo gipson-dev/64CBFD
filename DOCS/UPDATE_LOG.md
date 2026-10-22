@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 SDK Command-Stream Relocator Guarded C Match
+
+[Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md):
+recover complete `func_150049A4`, 42 words/frame8/no bindings, with eleven
+checked cursor-field guards. Preserve signed SDK opcodes, opening double-read,
+wrapping offsets, saved S0 and the unreachable positive G_DL case. Both copies
+pass eight pre-install and two fresh installed tests, explicitly reusing six
+unchanged checks under strict identity. Preserve eight neighbors, the guard
+prefix and strict 126-byte image. Tools `c241262` first.
+Total 3,734/5,505 (67.83%), Game 3,061/4,832 (63.35%), zero drift;
+395 more to75%. Next `func_150BA37C` is screened only. Host Release untouched.
+
 ## 2026-10-22 Inline Descriptor Pair Callback Guarded C Match
 
 [Note 1665](WORKING_NOTES/1665-inline-pair-command-match-20261022.md):

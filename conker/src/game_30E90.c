@@ -6,7 +6,7 @@
 /* Generated placeholder declarations. */
 s32 func_150039E0();
 s32 func_150045C4();
-s32 func_150049A4();
+void func_150049A4(s8 *, u32, u32);
 s32 func_15004AAC();
 s32 func_15004BF0();
 /* End generated placeholder declarations. */
@@ -31,9 +31,30 @@ void func_150045BC(void) {
 s32 func_150045C4() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_30E90/func_150049A4.s. */
-s32 func_150049A4() {
-    return 0;
+/* Relocate vertex/data and matrix command addresses in place. */
+void func_150049A4(s8 *commands, u32 dataOffset, u32 matrixOffset) {
+    s32 index;
+    s8 *command;
+    s32 opcode;
+
+    for (index = 0; commands[index << 3] != (s8)G_ENDDL; index++) {
+        command = commands + (index << 3);
+        opcode = command[0];
+        switch (opcode) {
+            /* Retail keeps this positive comparison after the signed load. */
+            case G_DL:
+                *(u32 *)(command + 4) += dataOffset;
+                break;
+            case G_VTX:
+                *(u32 *)(command + 4) += dataOffset;
+                break;
+            case (s8)G_MOVEMEM:
+                if ((u8)command[3] == G_MV_MATRIX) {
+                    *(u32 *)(command + 4) += matrixOffset;
+                }
+                break;
+        }
+    }
 }
 // NON-MATCHING: not this...
 void func_15004A4C(void) {

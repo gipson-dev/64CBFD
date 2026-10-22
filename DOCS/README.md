@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [SDK command-stream relocator](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md):
+  all 42 words/frame8 match from complete SDK-based C and eleven cursor-field
+  guards. Preserve signed opcodes, both opening reads, wrapping offsets, eight
+  neighbors and the strict 126-byte image. Caller windows are bounded evidence.
 - [Inline descriptor pair callback](WORKING_NOTES/1665-inline-pair-command-match-20261022.md):
   all 42 words/frame24 match from complete C and one checked commutative branch
   operand guard. Preserve the unconditional inline read, complete caller/helper

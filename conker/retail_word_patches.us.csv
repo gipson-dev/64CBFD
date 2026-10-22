@@ -23348,3 +23348,14 @@ generated_11C2B0,func_150F07E4,0x084,0x546A0005,0x55430005,-,-,Preserve retail c
 generated_1D0840,func_151A4CE0,0x084,0x546B0005,0x55630005,-,-,Preserve retail commutative bnel register operand order,,,false
 generated_1D4E00,func_151A8A78,0x084,0x546A0005,0x55430005,-,-,Preserve retail commutative bnel register operand order,,,false
 generated_1E73B0,func_151BC5A4,0x084,0x548A0005,0x55440005,-,-,Preserve retail commutative bnel register operand order,,,false
+game_30E90,func_150049A4,0x01C,0x00801825,0x00802825,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x044,0x8C790004,0x8CB90004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x050,0x8C6F0004,0x8CAF0004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x05C,0xAC780004,0xACB80004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x060,0x8C790004,0x8CB90004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x06C,0xAC6D0004,0xACAD0004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x070,0x906E0003,0x90AE0003,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x07C,0x8C6F0004,0x8CAF0004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x084,0xAC780004,0xACB80004,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x08C,0x03241821,0x03242821,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
+game_30E90,func_150049A4,0x090,0x80660000,0x80A60000,-,-,Keep the command cursor in retail a1 after capturing the input offset,,,false
