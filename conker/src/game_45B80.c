@@ -29,7 +29,7 @@ void func_1504ADD0(void);
 s32 func_1510FC34(s32);
 void func_15094EA0(s32);
 s32 func_15112A80(s32);
-s32 func_151749F8(s32, s32);
+void func_151749F8(s32, s32);
 s32 func_15188B74(s32);
 void func_1516706C(void);
 s32 func_151671E8(void);

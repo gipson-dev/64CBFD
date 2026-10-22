@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-22 Frame-Layer Dispatcher Direct C Match
+
+[Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md):
+recover `func_151749F8`, all 43 words/frame 24/seventeen bindings directly
+from C, no guards. Correct the void caller declaration while preserving its
+entire object. Both copies pass eight pre-install tests, two installed
+checks and one final disjoint-rebase rerun, reusing five unchanged checks.
+Close the strict 168-byte image, including checked symbol/string ordering.
+Tools `6b78fa7` then test-only `14aa389`; all 15,866 inputs reverified.
+Total 3,743/5,505 (67.99%), Game 3,070/4,832 (63.53%), zero drift;
+386 more to 75%. Next `func_1507EEF4` is screened only.
+Host Release untouched.
+
 ## 2026-10-22 Embedded Oscillating Motion Direct C Match
 
 [Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md):

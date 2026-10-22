@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b6ea02b`; tools are committed before the consumer pin.
+  checkpoint pins tools `14aa389`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Frame-layer dispatcher installed directly from C: all 43 words exact**:
+[Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md).
+Recover `func_151749F8`, frame 24/seventeen bindings, and correct its
+sole caller declaration to void without changing the complete caller object.
+Both copies pass eight pre-install tests, two installed checks and one
+final disjoint-rebase rerun; five unchanged behavioral checks are reused.
+Preserve three neighbors, all other code/data and the strict 168-byte image,
+including forty explicitly checked symbol/string serialization bytes.
+Tools `6b78fa7` then test-only `14aa389`; all 15,866 inputs reverified.
+Total 3,743/5,505 (67.99%), Game 3,070/4,832 (63.53%), zero drift;
+386 more to 75%. Next `func_1507EEF4` is screened only.
+Host Release remains untouched.
 
 **Embedded oscillating-motion callback installed directly from C: all 42 words exact**:
 [Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md).

@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Frame-layer dispatcher installed directly from C: all 43 words exact**:
+[Note 1674](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md).
+Recover `func_151749F8`, frame 24/seventeen bindings, with typed helpers
+and the correct void caller declaration. Preserve the full caller object,
+late gates and unsigned halfword wrap. Both copies pass eight pre-install
+tests, two installed checks and one final disjoint-rebase rerun; five checks
+are reused under strict identity. Preserve three neighbors and the strict
+168-byte image with checked metadata serialization. Tools `6b78fa7` then
+`14aa389`; all inputs reverified. Total 3,743/5,505 (67.99%), 386 more to 75%.
+Next `func_1507EEF4` is screened only. Host Release frozen.
+
+2026-10-22:
+
 **Embedded oscillating-motion callback installed directly from C: all 42 words exact**:
 [Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md).
 Recover `func_151B8C54`, frame 32/six bindings, preserving the separate

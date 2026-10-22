@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Frame-layer dispatcher](WORKING_NOTES/1674-frame-layer-dispatch-match-20261022.md):
+  all 43 words/frame 24/seventeen bindings emit directly from C without
+  guards. Preserve call order, late gates, unsigned accumulator wrap,
+  complete caller object and strict 168-byte image with checked serialization.
 - [Embedded oscillating motion](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md):
   all 42 words/frame 32/six bindings emit directly from C without guards.
   Preserve the separate output, embedded fields, late clocks, signed
