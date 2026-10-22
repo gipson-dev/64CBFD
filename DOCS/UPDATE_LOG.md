@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-22 Linked Descriptor Command Callback Guarded C Match
+
+[Note 1662](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md):
+recover `func_151A4CE0`,42 words/frame24/one binding, using complete C and
+one checked commutative bnel operand guard. Both copies pass eight pre-install
+and two fresh installed tests, reusing six unchanged checks under strict
+identity. Qualify the complete18-word dispatcher and12-word flag-transfer
+helper; preserve22 neighbors, old guards and the strict113-byte image.
+Tools `853c975` first. Total3,730/5,505 (67.76%), Game3,057/4,832 (63.27%),
+zero drift;399 more to75%. Next `func_151A8A78` is screened only.
+
 ## 2026-10-22 Oriented Triangle Record Direct C Match
 
 [Note 1661](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md):

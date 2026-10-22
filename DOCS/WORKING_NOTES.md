@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Linked descriptor command callback installed as guarded C: all42 words exact**:
+[Note 1662](WORKING_NOTES/1662-linked-descriptor-command-match-20261022.md).
+Recover `func_151A4CE0`, frame24/one binding, with one checked commutative
+bnel operand swap. Both copies pass eight pre-install and two fresh installed
+tests, explicitly reusing six unchanged checks under strict identity. Qualify
+the complete dispatcher/flag helper; preserve22 neighbors and the strict
+113-byte full-image prediction. Native controls share three compiler runs.
+Tools `853c975` first; total3,730/5,505 (67.76%),399 more to75%.
+Next `func_151A8A78` remains screened only. No gameplay/hardware claim.
+
+2026-10-22:
+
 **Oriented triangle record installed directly from C: all42 words exact**:
 [Note 1661](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md).
 Recover `func_1514F640`, frame40/two bindings, without guards. Both copies

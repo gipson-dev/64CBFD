@@ -1,4 +1,5 @@
 #include <ultra64.h>
+void func_151A4E9C(u8 *);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
 typedef struct {
@@ -125,8 +126,27 @@ s32 func_151A4A38() {
     return 0;
 }
 
-s32 func_151A4CE0() {
-    return 0;
+/* Handle linked-record notifications and swap its selected descriptor pair. */
+void func_151A4CE0(u8 *owner, s32 eventAddress, u8 command) {
+    u8 *state = *(u8 **)(owner + 0x98);
+    u8 *event = (u8 *)eventAddress;
+    s32 value = command;
+
+    if (command == 0) {
+        if (*(s32 *)state == *(s32 *)event || state[4] == event[4]) {
+            func_151A4E9C(owner);
+        }
+    } else if (value == 0x2D) {
+        s32 first = *(s32 *)event;
+        value = *(s32 *)state;
+        if (first == value) {
+            *(s32 *)state = *(s32 *)(event + 4);
+            state[4] = event[9];
+        } else if (*(s32 *)(event + 4) == value) {
+            *(s32 *)state = first;
+            state[4] = event[8];
+        }
+    }
 }
 
 s32 func_151A4D88() {
