@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c241262`; tools are committed before the consumer pin.
+  checkpoint pins tools `a185029`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Five-field motion callback installed directly from C: all 42 words exact**:
+[Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md).
+Recover `func_150BA37C`, frame0/four bindings, without guards. Preserve live
+timestep loads, single-precision ordering and the nonzero callback return.
+Both copies pass seven pre-install and two fresh installed tests, reusing five
+unchanged checks under strict identity. Preserve three neighbors and all other
+code/data; close the full 154-byte image prediction across 15,838 sealed files.
+Total 3,735/5,505 (67.85%), Game 3,062/4,832 (63.37%), zero drift;
+394 more to75%. Next `func_15110600` is screened only. Host Release untouched.
 
 **SDK command-stream relocator installed as guarded C: all 42 words exact**:
 [Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md).

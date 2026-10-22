@@ -1,6 +1,9 @@
 #include <ultra64.h>
+extern f32 D_800BE9A4;
+extern f32 D_8009FE2C;
 
-/* Non-matching placeholders for the text-only asm slice asm/E7380.s. */
+
+/* Partially recovered text-only slice asm/E7380.s. */
 
 s32 func_150B9ED0() {
     return 0;
@@ -15,8 +18,15 @@ s32 func_150BA35C(u8 *arg0) {
     return 1;
 }
 
-s32 func_150BA37C() {
-    return 0;
+/* Apply vertical acceleration and advance five float fields by the live timestep. */
+s32 func_150BA37C(u8 *actor) {
+    *(f32 *)(actor + 0x114) += D_8009FE2C * D_800BE9A4;
+    *(f32 *)(actor + 0x34) += *(f32 *)(actor + 0x110) * D_800BE9A4;
+    *(f32 *)(actor + 0x38) += *(f32 *)(actor + 0x114) * D_800BE9A4;
+    *(f32 *)(actor + 0x3C) += *(f32 *)(actor + 0x118) * D_800BE9A4;
+    *(f32 *)(actor + 0x40) += *(f32 *)(actor + 0x11C) * D_800BE9A4;
+    *(f32 *)(actor + 0x44) += *(f32 *)(actor + 0x120) * D_800BE9A4;
+    return 1;
 }
 
 s32 func_150BA424(u8 *arg0) {

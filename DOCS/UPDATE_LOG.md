@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-22 Five-Field Motion Callback Direct C Match
+
+[Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md):
+recover `func_150BA37C`, all 42 words/frame0/four bindings directly from C.
+Both copies pass seven pre-install and two fresh installed tests, reusing five
+unchanged checks under strict identity. Preserve live timestep loads, bounded
+callback flow, three neighbors and the strict 154-byte image prediction,
+including checked absolute-symbol serialization. Tools `a185029` first.
+Total 3,735/5,505 (67.85%), Game 3,062/4,832 (63.37%), zero drift;
+394 more to75%. Next `func_15110600` is screened only. Host Release untouched.
+
 ## 2026-10-22 SDK Command-Stream Relocator Guarded C Match
 
 [Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md):

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Five-field motion callback](WORKING_NOTES/1667-five-field-motion-match-20261022.md):
+  all 42 words/frame0 emit directly from C without guards. Preserve live
+  timestep loads, single-precision ordering, bounded callback flow and three
+  neighbors; close the full 154-byte image including symbol serialization.
 - [SDK command-stream relocator](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md):
   all 42 words/frame8 match from complete SDK-based C and eleven cursor-field
   guards. Preserve signed opcodes, both opening reads, wrapping offsets, eight

@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Five-field motion callback installed directly from C: all 42 words exact**:
+[Note 1667](WORKING_NOTES/1667-five-field-motion-match-20261022.md).
+Recover `func_150BA37C`, frame0/four bindings, without guards. Both copies
+pass seven pre-install and two fresh installed tests, reusing five unchanged
+checks under strict identity. Preserve live timestep reads, callback bounds,
+three neighbors and the full 154-byte prediction. Tools `a185029` first;
+total 3,735/5,505 (67.85%), 394 more to75%. Next `func_15110600` is screened
+only. Host Release stays frozen.
+
+2026-10-22:
+
 **SDK command-stream relocator installed as guarded C: all 42 words exact**:
 [Note 1666](WORKING_NOTES/1666-command-stream-relocator-match-20261022.md).
 Recover `func_150049A4`, frame8/no bindings, with eleven checked cursor
