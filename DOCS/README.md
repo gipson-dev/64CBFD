@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Circular buffer transfer pair](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md):
+  both 42-word/frame 48 bodies emit directly from C without new guards.
+  Preserve wrapping transfer/count behavior, five caller-site windows,
+  actual memcpy, fourteen neighbors and the strict 278-byte image.
 - [Source-backed descriptor preset](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md):
   all 42 words/frame72 match from complete C and eighteen checked scheduling
   words with a moved low relocation. Preserve the descriptor, holes, captures,

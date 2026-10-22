@@ -6,8 +6,8 @@
 
 /* Generated placeholder declarations. */
 s32 func_15043384(s32 arg0);
-s32 func_15043A20();
-s32 func_15043AC8();
+s32 func_15043A20(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count);
+s32 func_15043AC8(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count);
 s32 func_15043CA4();
 /* End generated placeholder declarations. */
 
@@ -92,14 +92,37 @@ void func_15043A00(struct105 *arg0, s32 arg1, s32 arg2) {
     }
 }
 
-// something with memcpy
-/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043A20.s. */
-s32 func_15043A20() {
-    return 0;
+/* Copy linear bytes into the ring and return its updated cursor. */
+s32 func_15043A20(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count) {
+    s32 chunk;
+
+    while (count != 0) {
+        chunk = capacity < (s32)((u32)cursor + (u32)count) ? (s32)((u32)capacity - (u32)cursor) : count;
+        memcpy(ring + cursor, linear, chunk);
+        cursor = (s32)((u32)cursor + (u32)chunk);
+        linear += chunk;
+        count = (s32)((u32)count - (u32)chunk);
+        if (cursor >= capacity) {
+            cursor = 0;
+        }
+    }
+    return cursor;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043AC8.s. */
-s32 func_15043AC8() {
-    return 0;
+/* Copy linear bytes from the ring and return its updated cursor. */
+s32 func_15043AC8(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count) {
+    s32 chunk;
+
+    while (count != 0) {
+        chunk = capacity < (s32)((u32)cursor + (u32)count) ? (s32)((u32)capacity - (u32)cursor) : count;
+        memcpy(linear, ring + cursor, chunk);
+        cursor = (s32)((u32)cursor + (u32)chunk);
+        linear += chunk;
+        count = (s32)((u32)count - (u32)chunk);
+        if (cursor >= capacity) {
+            cursor = 0;
+        }
+    }
+    return cursor;
 }
 
 s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {

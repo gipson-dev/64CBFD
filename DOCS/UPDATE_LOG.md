@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Circular Buffer Transfer Pair Direct C Match
+
+[Note 1672](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md):
+recover `func_15043A20` and `func_15043AC8`, each 42 words/frame 48 directly
+from complete C, no new guards. Both copies pass eight pre-install and two
+fresh installed tests, reusing six unchanged checks under strict identity.
+Qualify five caller sites and actual memcpy; preserve fourteen neighbors,
+the entire guard manifest and strict 278-byte image. Tools `b84deda` first.
+Total 3,741/5,505 (67.96%), Game 3,068/4,832 (63.49%), zero drift;
+388 more to 75%. Next `func_151B8C54` is screened only.
+Host Release untouched.
+
 ## 2026-10-22 Source-Backed Descriptor Preset Guarded C Match
 
 [Note 1671](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md):
