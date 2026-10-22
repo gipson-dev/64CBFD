@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `15e1f5a`; tools are committed before the consumer pin.
+  checkpoint pins tools `3a491ad`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Source-backed descriptor preset installed as guarded C: all 42 words exact**:
+[Note 1671](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md).
+Recover `func_151A4590`, frame72/three bindings, with eighteen checked schedule
+words and the corresponding low-relocation move. Preserve the complete
+48-byte descriptor, holes, null gate, captured owner/global and byte variant.
+Both copies pass eight pre-install and two fresh installed tests, reusing six
+unchanged checks under strict identity. Preserve 22 neighbors and the strict
+127-byte image across 15,854 sealed files. Total 3,739/5,505 (67.92%),
+Game 3,066/4,832 (63.45%), zero drift; 390 more to75%.
+Next `func_15043A20` is screened only. Host Release untouched.
 
 **Parameterized owner-selector payload installed as guarded C: all 42 words exact**:
 [Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md).

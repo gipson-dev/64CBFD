@@ -23383,3 +23383,21 @@ generated_1BFDD0,func_15192D48,0x05C,0xAFB90010,0x24070001,-,-,Normalize closed 
 generated_1BFDD0,func_15192D48,0x060,0xAFA90018,0xA3B8002C,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
 generated_1BFDD0,func_15192D48,0x064,0xA3B8002C,0xE7A40030,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
 generated_1BFDD0,func_15192D48,0x068,0xE7A40030,0xAFA90018,-,-,Normalize closed owner-selector payload and argument-home schedule,,,false
+generated_1D0840,func_151A4590,0x034,0xAFAF0024,0x91F8003B,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x038,0x91F8003B,0x44800000,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x03C,0x44800000,0xC4240000,-,R_MIPS_LO16:D_800A8D5C,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x040,0xC4240000,0x3C014040,R_MIPS_LO16:D_800A8D5C,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x044,0x3C014040,0x44813000,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x048,0x44813000,0x2409000A,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x04C,0x2409000A,0x240A0001,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x050,0x240A0001,0x240BFFFF,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x054,0x240BFFFF,0xA3B90028,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x058,0xA3B90028,0xA7A80040,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x05C,0xA7A80040,0xA3A90042,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x060,0xA3A90042,0xA3AA0043,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x064,0xA3AA0043,0xA3AB0044,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x068,0xA3AB0044,0xA3A00045,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x06C,0xA3A00045,0x27A40018,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x070,0x27A40018,0x00002825,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x074,0x00002825,0x00003825,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_1D0840,func_151A4590,0x078,0x00003825,0xAFAF0024,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false

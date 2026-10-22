@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Source-Backed Descriptor Preset Guarded C Match
+
+[Note 1671](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md):
+recover `func_151A4590`, complete 42-word/frame72 C with eighteen checked
+scheduling words and the relocated float load. Both copies pass eight
+pre-install and two fresh installed tests, reusing six checks under strict
+identity. Preserve all 48 descriptor bytes, caller/constructor bounds,
+22 neighbors and strict 127-byte image. Raw local-alias limits remain explicit.
+Tools `3a491ad` first. Total 3,739/5,505 (67.92%), Game 3,066/4,832 (63.45%),
+zero drift; 390 more to75%. Next `func_15043A20` is screened only.
+Host Release untouched.
+
 ## 2026-10-22 Parameterized Owner-Selector Payload Guarded C Match
 
 [Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md):

@@ -1,4 +1,19 @@
 #include <ultra64.h>
+typedef struct {
+    u32 zero0, zero4;
+    u8 ownerSelector, reserved09[3];
+    u8 *owner;
+    u8 attachment, reserved11[3];
+    f32 vector[3];
+    f32 value20, value24;
+    s16 value28;
+    u8 flags, value2B;
+    s8 value2C;
+    u8 value2D;
+} OwnerPresetDescriptor1D0840;
+extern f32 D_800A8D5C;
+void *func_1513418C(OwnerPresetDescriptor1D0840 *, s32, u8, s32);
+
 void func_151A4E9C(u8 *);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
@@ -22,7 +37,7 @@ extern s32 D_800BE9E4;
 typedef struct { s32 val; } OneWord1D0840;
 extern void (*D_8008F900[])();
 
-/* Non-matching placeholders for the text-only asm slice asm/1D0840.s. */
+/* Partially recovered text-only slice asm/1D0840.s. */
 
 extern void (*D_8008F904[])(u8 *, s32, u8);
 
@@ -46,8 +61,28 @@ s32 func_151A3BE4() {
     return 0;
 }
 
-s32 func_151A4590() {
-    return 0;
+/* Submit the source-backed descriptor preset for the selected variant. */
+void func_151A4590(u8 * volatile owner, u8 variant) {
+    OwnerPresetDescriptor1D0840 descriptor;
+
+    if (owner != NULL) {
+        descriptor.zero0 = 0;
+        descriptor.zero4 = 0;
+        descriptor.owner = owner;
+        descriptor.ownerSelector = descriptor.owner[0x3B];
+        descriptor.attachment = 1;
+        descriptor.vector[0] = 0.0f;
+        descriptor.vector[1] = 0.0f;
+        descriptor.vector[2] = 0.0f;
+        descriptor.value20 = D_800A8D5C;
+        descriptor.value24 = 3.0f;
+        descriptor.value28 = 100;
+        descriptor.flags = 10;
+        descriptor.value2B = 1;
+        descriptor.value2C = -1;
+        descriptor.value2D = 0;
+        func_1513418C(&descriptor, 0, variant, 0);
+    }
 }
 
 s32 func_151A4638() {

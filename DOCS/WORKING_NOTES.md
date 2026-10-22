@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Source-backed descriptor preset installed as guarded C: all 42 words exact**:
+[Note 1671](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md).
+Recover `func_151A4590`, frame72/three bindings, with eighteen scheduling words
+and a checked low-relocation move. Both copies pass eight pre-install and two
+fresh installed tests, reusing six unchanged checks under strict identity.
+Preserve the descriptor's eight reserved bytes, null gate, captures, byte variant,
+22 neighbors and strict 127-byte image; keep raw stack-alias limits explicit.
+Tools `3a491ad` first; total 3,739/5,505 (67.92%), 390 more to75%.
+Next `func_15043A20` is screened only. Host Release frozen.
+
+2026-10-22:
+
 **Parameterized owner-selector payload installed as guarded C: all 42 words exact**:
 [Note 1670](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md).
 Recover `func_15192D48`, frame56/two bindings, with seventeen checked scheduling

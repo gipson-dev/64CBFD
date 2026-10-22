@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Source-backed descriptor preset](WORKING_NOTES/1671-owner-descriptor-preset-match-20261022.md):
+  all 42 words/frame72 match from complete C and eighteen checked scheduling
+  words with a moved low relocation. Preserve the descriptor, holes, captures,
+  null gate, byte variant, 22 neighbors and strict 127-byte image.
 - [Parameterized owner-selector payload](WORKING_NOTES/1670-parameterized-owner-selector-payload-match-20261022.md):
   all 42 words/frame56 match from complete C and seventeen checked scheduling
   words. Preserve signed lifetime, byte selector, twelve copied bytes,
