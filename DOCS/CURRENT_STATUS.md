@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-21
+Last verified: 2026-10-22
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d86b5c2`; tools are committed before the consumer pin.
+  checkpoint pins tools `741c325`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Source runtime-block factory installed as guarded C: all 41 linked words exact**:
+[Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md).
+Recover `func_15189FF0`, frame56/two bindings. Normal C emits 40 words;
+two checked return-join rows add one redundant null-path branch. Preserve
+the source-record subtype store, ten-argument factory packet, failure gate,
+all 32 runtime bytes and allocated-base return across memcpy. Both tools
+copies pass eight pre-install and two fresh installed tests; explicitly
+reuse six unchanged checks under strict identity. Qualify all six original
+caller windows and the actual factory/memcpy, with the lower allocator bounded.
+Preserve five neighbors and the complete old guard prefix; production matches
+the strict 123-byte image prediction across 15,798 sealed files.
+Tools `741c325` first. Total 3,725/5,505 (67.67%), Game 3,052/4,832
+(63.16%), zero drift; 404 more to 75%. Next `func_1515D088` is screened
+only, 42 words/frame64/37 differences. Preserve all 1,526 pre-existing
+older-mirror dirty paths; host Release remains frozen. No gameplay claim.
 
 **Keyed node removal installed directly from C: all 41 words exact**:
 [Note 1656](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md).

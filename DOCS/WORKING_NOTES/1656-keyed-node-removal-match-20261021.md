@@ -176,8 +176,8 @@ placeholders, 124 semantic/other definitions and nine unlocated entries.
 Next: `func_15189FF0`, 41 body words/frame56 in
 `conker/src/game/generated_1B74A0.c`, reference `conker/asm/1B74A0.s`.
 VA15189FF0..1518A094 / ROM1B74A0..1B7544, ends exclusive. Static inspection
-shows an actor+0x58 byte store of 0x0B, a ten-argument factory call using
-resource 0x80 and byte arguments, a NULL gate, then a 32-byte copy to the
+shows a source-record+0x58 byte store of 0x0B, a ten-argument factory call using
+a 0x80-byte source-copy size and byte arguments, a NULL gate, then a 32-byte copy to the
 returned object+0x170. Preserve the allocation result across memcpy and
 determine the actual caller/return ABI, argument homes, widths and factory
 contract before drafting/installing. No matching credit or source change

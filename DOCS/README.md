@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Source runtime-block factory](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md):
+  all 41 linked words/frame56 match from complete 40-word C and two checked
+  return-join rows. Preserve all six caller windows, actual factory/memcpy
+  bounds, five neighbors and the old manifest prefix.
 - [Keyed node removal](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md):
   all 41 words/frame48 emit directly from typed C without guards. Preserve
   unlink order, cached successors, both caller windows and bounded Init helpers.

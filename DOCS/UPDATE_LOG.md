@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-22 Source Runtime-Block Factory Guarded C Match
+
+[Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md):
+recover `func_15189FF0`, 41 linked words/frame56/two bindings from
+40-word semantic C and two checked return-join rows, not compiler-only.
+Preserve the source subtype, factory packet, failure gate, all runtime bytes
+and allocated-base return. Both copies pass eight pre-install and two fresh
+installed tests, explicitly reusing six unchanged checks under strict identity.
+Qualify six original caller windows and actual factory/memcpy bounds;
+preserve five neighbors, old guards and the strict 123-byte image prediction.
+Tools `741c325` first. Total 3,725/5,505 (67.67%), Game 3,052/4,832
+(63.16%), zero drift; 404 more to 75%. Next `func_1515D088` is screened
+only. Preserve the dirty older mirror and frozen host Release. No gameplay claim.
+
 ## 2026-10-21 Keyed Node Removal Direct C Match
 
 [Note 1656](WORKING_NOTES/1656-keyed-node-removal-match-20261021.md):

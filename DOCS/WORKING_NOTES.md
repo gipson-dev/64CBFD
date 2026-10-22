@@ -1,5 +1,17 @@
 # Working Notes
 
+2026-10-22:
+
+**Source runtime-block factory installed as guarded C: all 41 linked words exact**:
+[Note 1657](WORKING_NOTES/1657-runtime-block-factory-match-20261022.md).
+Recover `func_15189FF0`, frame56/two bindings from complete 40-word C
+and two checked return-join rows. Both copies pass eight pre-install and
+two fresh installed tests; explicitly reuse six unchanged checks under
+strict identity. Qualify six original caller windows and actual factory/memcpy
+bounds; preserve five neighbors, old guards and the 123-byte image prediction.
+Tools `741c325` first; total 3,725/5,505 (67.67%), 404 more to 75%.
+Next `func_1515D088` remains screened only. No full-parent/gameplay claim.
+
 2026-10-21:
 
 **Keyed node removal installed directly from C: all 41 words exact**:

@@ -1,9 +1,26 @@
 #include <ultra64.h>
+u8 *func_151407D0(void *, s32, u8 *, u8, u8, u8, u8, s8, u8, s32);
+void *memcpy(void *, const void *, size_t);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/1B74A0.s. */
 
-s32 func_15189FF0() {
-    return 0;
+/* Set source subtype 0x0B, create the object, and copy its runtime block. */
+u8 *func_15189FF0(u8 *descriptor, u8 *source, const void *runtime,
+                  u8 kind, u8 mode, u8 first, u8 variant) {
+    u8 *result;
+
+    source[0x58] = 0x0B;
+    result = func_151407D0(source, 0x80, descriptor, kind, mode, first, variant, -1, 0xFF, 1);
+    if (result != NULL) {
+        memcpy(result + 0x170, runtime, 0x20);
+        goto return_created;
+    }
+    goto return_null;
+return_created:
+    return result;
+return_null:
+    return NULL;
 }
 
 s32 func_1518A094() {
