@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Oriented triangle record installed directly from C: all42 words exact**:
+[Note 1661](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md).
+Recover `func_1514F640`, frame40/two bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests, reusing six unchanged
+checks under strict identity. Preserve both complete callers, original math
+helper bounds,40 neighbors and the strict120-byte full-image prediction.
+Tools `fad6d01` first; total3,729/5,505 (67.74%),400 more to75%.
+Next `func_151A4CE0` remains screened only; no gameplay/hardware claim.
+
+2026-10-22:
+
 **Descriptor-pair command callback installed as guarded C: all42 words exact**:
 [Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md).
 Recover `func_150F07E4`, frame24/one binding, from its zero-return stub.

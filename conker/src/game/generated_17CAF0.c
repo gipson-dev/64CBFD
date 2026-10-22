@@ -1,4 +1,6 @@
 #include <ultra64.h>
+s32 func_15144E80(s16 *, f32 *, f32 *, f32 *);
+f32 func_15144A74(f32 *, f32 *);
 
 typedef struct { s32 a, b; } TwoWord17CAF0;
 
@@ -12,8 +14,18 @@ s32 func_150ADA20(void);
 s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 
-s32 func_1514F640() {
-    return 0;
+/* Build triangle vectors and orient the normal toward the source vector. */
+void func_1514F640(u8 *source, u8 *output) {
+    output[0] = 2;
+    *(f32 *)(output + 0x28) = *(f32 *)(source + 0x20);
+    if (func_15144E80((s16 *)(source + 0xC), (f32 *)(output + 0x10),
+                     (f32 *)(output + 0x1C), (f32 *)(output + 4))) {
+        if (func_15144A74((f32 *)(output + 4), (f32 *)source) < 0.0f) {
+            *(f32 *)(output + 4) = -*(f32 *)(output + 4);
+            *(f32 *)(output + 8) = -*(f32 *)(output + 8);
+            *(f32 *)(output + 0xC) = -*(f32 *)(output + 0xC);
+        }
+    }
 }
 
 s32 func_1514F6E8() {
@@ -35,7 +47,7 @@ s32 func_1514F808() {
 void func_1514FEFC(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     u8 temp[0x2C];
 
-    func_1514F640(arg0, temp);
+    func_1514F640((u8 *)arg0, temp);
     func_1514FF44(temp, arg1, arg2, arg3, arg4);
 }
 
@@ -123,7 +135,7 @@ s32 func_151539B4() {
 void func_15153C84(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     u8 temp[0x2C];
 
-    func_1514F640(arg0, temp);
+    func_1514F640((u8 *)arg0, temp);
     func_15153CCC(temp, arg1, arg2, arg3, arg4);
 }
 

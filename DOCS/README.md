@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Oriented triangle record](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md):
+  all42 words/frame40 emit directly from C without guards. Preserve both
+  complete callers, original geometry-helper bounds,40 neighbors and the
+  strict120-byte complete-image prediction.
 - [Descriptor-pair command callback](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md):
   all42 words/frame24 match from complete C and one checked commutative branch
   operand guard. Preserve ordered pair updates, the full dispatcher, bounded

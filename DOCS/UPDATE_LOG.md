@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-22 Oriented Triangle Record Direct C Match
+
+[Note 1661](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md):
+recover `func_1514F640`, all42 words/frame40/two bindings, directly from C.
+Both copies pass eight pre-install and two fresh installed tests, explicitly
+reusing six unchanged checks under strict identity. Preserve both full callers,
+bounded original geometry helpers,40 neighbors, the complete guard manifest
+and the strict120-byte ELF prediction. Tools `fad6d01` first.
+Total3,729/5,505 (67.74%), Game3,056/4,832 (63.25%), zero drift;
+400 more to75%. Next `func_151A4CE0` is screened only. Host Release untouched.
+
 ## 2026-10-22 Descriptor-Pair Command Callback Guarded C Match
 
 [Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md):

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9b32c4e`; tools are committed before the consumer pin.
+  checkpoint pins tools `fad6d01`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Oriented triangle record installed directly from C: all42 words exact**:
+[Note 1661](WORKING_NOTES/1661-oriented-triangle-record-match-20261022.md).
+Recover `func_1514F640`, frame40/two bindings, without guards. Both copies
+pass eight pre-install and two fresh installed tests; explicitly reuse six
+unchanged checks under strict identity. Preserve40 neighbors, both complete
+callers, all other6054 bodies/6055 addresses, data and the guard manifest.
+The15,814-file build reproduces the strict120-byte image prediction.
+Total3,729/5,505 (67.74%), Game3,056/4,832 (63.25%), zero drift;
+400 more to75%. Next `func_151A4CE0` is screened only. Keep consumer,
+FPU/hardware and gameplay limits explicit; host Release remains frozen.
 
 **Descriptor-pair command callback installed as guarded C: all 42 words exact**:
 [Note 1660](WORKING_NOTES/1660-descriptor-pair-command-match-20261022.md).
