@@ -1,4 +1,7 @@
 #include <ultra64.h>
+void func_15147D64(void *, u8);
+void func_151494E0(void *, u8);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/E1280.s. */
 
@@ -6,8 +9,23 @@ void func_1000FC18(u16, s16, s16, s16, u16);
 s32 func_151478F4(s32);
 s32 func_15147928(s32);
 
-s32 func_150B3DD0() {
-    return 0;
+/* Submit the six ordered byte selections after initializing the first group. */
+void func_150B3DD0(void) {
+    u8 selection[4];
+
+    func_15147D64(0, 5);
+    selection[0] = 0;
+    func_151494E0(selection, 0x18);
+    selection[0] = 2;
+    func_151494E0(selection, 0x18);
+    selection[0] = 4;
+    func_151494E0(selection, 0x18);
+    selection[0] = 1;
+    func_151494E0(selection, 0x18);
+    selection[0] = 3;
+    func_151494E0(selection, 0x18);
+    selection[0] = 5;
+    func_151494E0(selection, 0x18);
 }
 
 void func_150B3E74(s32 arg0) {

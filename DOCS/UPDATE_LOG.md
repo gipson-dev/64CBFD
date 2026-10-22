@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-21 Six Ordered Byte Submissions Direct C Match
+
+[Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md):
+recover `func_150B3DD0`, all 41 words/frame40/seven bindings directly
+from C without guards. Preserve the initial helper, six ordered byte
+submissions and shared four-byte local; leave its unused tail uninitialized.
+Both copies pass eight pre-install and two fresh installed tests, explicitly
+reusing six unchanged checks under strict identity. Qualify both original
+wrappers and selected original caller paths, not its current stub or natural
+handler behavior. Preserve nine neighbors and all other code/data; reproduce
+the strict 128-byte image prediction across 15,790 sealed files.
+Tools `bda743c` first. Total 3,723/5,505 (67.63%), Game 3,050/4,832
+(63.12%), zero drift; 406 more to 75%. Next `func_15188AD0` is
+screened only. Host Release remains frozen.
+
 ## 2026-10-21 SDK Segment-Bank Draw Pair Direct C Match
 
 [Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md):

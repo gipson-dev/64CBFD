@@ -2,6 +2,20 @@
 
 2026-10-21:
 
+**Six ordered byte submissions installed directly from C: all 41 words exact**:
+[Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md).
+Recover `func_150B3DD0`, frame40/seven bindings, without guards.
+Preserve all seven submissions and the shared four-byte local with only
+byte zero initialized. Both tools copies pass eight pre-install and two
+fresh installed tests; explicitly reuse six unchanged checks under strict
+identity. Qualify both original wrappers and selected original caller paths.
+Preserve nine neighbors and the strict 128-byte image prediction across all
+15,790 sealed files. Tools `bda743c` first; total 3,723/5,505 (67.63%),
+406 more to 75%. Next `func_15188AD0` remains screened only.
+Current caller/lower-dispatcher stubs remain; no natural gameplay claim.
+
+2026-10-21:
+
 **SDK segment-bank draw pair installed directly from C: 40 body words exact**:
 [Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md).
 Recover `func_151D710C`, frame24/six bindings, without guards. Preserve the

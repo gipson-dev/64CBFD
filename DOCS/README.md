@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Six ordered byte submissions](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md):
+  all 41 words/frame40 emit directly from C without guards. Preserve the
+  shared stack buffer, ordered byte stores, both original wrappers and
+  selected original caller paths; keep current-stub/gameplay limits explicit.
 - [SDK segment-bank draw pair](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md):
   40 body words/frame24 emit directly from SDK-macro C, with the original
   alignment word, complete caller, bounded original helper and no guards.

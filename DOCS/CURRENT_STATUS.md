@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `fcaa532`; tools are committed before the consumer pin.
+  checkpoint pins tools `bda743c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,23 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Six ordered byte submissions installed directly from C: all 41 words exact**:
+[Note 1655](WORKING_NOTES/1655-six-byte-dispatch-match-20261021.md).
+Recover `func_150B3DD0`, frame40/seven bindings, without guards. Preserve
+the initial helper, six command-0x18 submissions in 0/2/4/1/3/5 order and
+the same four-byte local with only byte zero initialized. Both tools copies
+pass eight pre-install and two fresh installed tests; six unchanged checks
+per copy are explicitly reused under strict identity. Qualify both original
+wrappers and command-8/default paths of the original caller, not its current
+stub or the lower dispatcher's handler implementations. Preserve nine owner
+neighbors, all other code/addresses/data and the complete manifest.
+Production reproduces the strict 128-byte image prediction across 15,790
+sealed files and 1,454 linker objects. Tools `bda743c` first.
+Total 3,723/5,505 (67.63%), Game 3,050/4,832 (63.12%), zero drift;
+406 more to 75%. Next `func_15188AD0` is screened only, 41 words/frame48.
+Preserve all 1,522 old mirror dirty paths and add only two task files
+without committing that mirror. No gameplay claim; host Release untouched.
 
 **SDK segment-bank draw pair installed directly from C: 40 body words exact**:
 [Note 1654](WORKING_NOTES/1654-sdk-segment-bank-draw-pair-match-20261021.md).
