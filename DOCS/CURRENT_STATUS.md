@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `cd36a32`; tools are committed before the consumer pin.
+  checkpoint pins tools `a83687e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Linked shape-measure node installed directly from C: all 43 words exact**:
+[Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md).
+Recover `func_1515F1B0`, frame 48/three bindings, with a private sixteen-byte
+node, captured descriptor, ordered measurements and late link clear.
+Correct the caller's vertex-typed local interface without changing any byte
+of its 32-function object. Both copies pass eight pre-install and two fresh
+installed checks; six unchanged checks are reused under strict identity.
+Qualify the complete caller, list insertion and actual measurement helpers;
+preserve 34 neighbors and the strict 116-byte image across 15,874 inputs.
+No new guards. Tools `a83687e` first. Total 3,745/5,505 (68.03%),
+Game 3,072/4,832 (63.58%), zero drift; 384 more to 75%.
+Next `func_150A3398` screened only. Host Release remains untouched.
 
 **Randomized player byte-state installed directly from C: all 43 words exact**:
 [Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md).

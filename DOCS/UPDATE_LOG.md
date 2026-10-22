@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-22 Linked Shape-Measure Node Direct C Match
+
+[Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md):
+recover `func_1515F1B0`, all 43 words/frame 48/three call bindings directly
+from C without guards. Use a private sixteen-byte node and correct the
+caller's vertex-typed local interface, preserving its complete object.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify the complete caller,
+list insertion and existing measurement helpers. Preserve 34 neighbors
+and the strict 116-byte image across all 15,874 sealed inputs.
+Tools `a83687e` first. Total 3,745/5,505 (68.03%), Game 3,072/4,832 (63.58%),
+zero drift; 384 more to 75%. Next `func_150A3398` screened only.
+Host Release untouched.
+
 ## 2026-10-22 Randomized Player Byte-State Direct C Match
 
 [Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md):

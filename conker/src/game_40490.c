@@ -19,7 +19,7 @@ s32 func_150151D4();
 s32 func_15015354();
 s32 func_150156F4();
 /* End generated placeholder declarations. */
-struct17 *func_1515F1B0(u8 *arg0);
+u8 *func_1515F1B0(u8 *arg0);
 void *func_1515D088(void *);
 void *func_151CD2C0(void *source, u8 variant, s32 parameter);
 
@@ -266,13 +266,13 @@ s32 func_15014F6C() {
 }
 
 s32 func_150150A4(u8 *arg0) {
-    struct17 *temp_v0 = func_1515F1B0(arg0);
+    u8 *temp_v0 = func_1515F1B0(arg0);
     if (temp_v0 == NULL) {
         return 1;
     }
 
     func_1515F25C(&D_800DCDC4, temp_v0);
-    D_800DCD90 += temp_v0->unk8;
+    D_800DCD90 += *(f32 *)(temp_v0 + 8);
     return 1;
 }
 

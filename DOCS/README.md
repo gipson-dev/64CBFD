@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Linked shape-measure node](WORKING_NOTES/1676-shape-measure-node-match-20261022.md):
+  all 43 words/frame 48/three bindings emit directly from C without guards.
+  Recover the sixteen-byte node and opaque caller interface; preserve the
+  caller object, 34 neighbors and strict 116-byte image.
 - [Randomized player byte-state](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md):
   all 43 words/frame 32/four bindings emit directly from C without guards.
   Preserve the captured attachment, original branch and late counter read;

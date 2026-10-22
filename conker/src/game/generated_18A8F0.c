@@ -1,4 +1,17 @@
 #include <ultra64.h>
+#include "structs.h"
+s32 func_10003C6C(s32, s32, s32, s32, s32);
+f32 func_1514462C(struct134 *);
+f32 func_15144598(struct134 *);
+
+typedef struct ShapeMeasureNode {
+    u8 *descriptor;
+    f32 volume;
+    f32 area;
+    struct ShapeMeasureNode *next;
+} ShapeMeasureNode;
+
+
 extern void (*D_8008B0C0[])();
 extern s32 D_800DCD7C;
 extern u8 D_800DCD20[];
@@ -182,8 +195,26 @@ void func_1515F170(s32 arg0, u8 arg1) {
     }
 }
 
-s32 func_1515F1B0() {
-    return 0;
+/* Allocate a linked shape record with its volume and area measurements. */
+u8 *func_1515F1B0(u8 *descriptor) {
+    ShapeMeasureNode *node = (ShapeMeasureNode *)func_10003C6C(0x10, 1, 2, 0, 1);
+
+    if (node == NULL) {
+        return NULL;
+    }
+    node->descriptor = descriptor;
+    if (descriptor != NULL) {
+        node->volume = func_1514462C((struct134 *)descriptor);
+    } else {
+        node->volume = 0.0f;
+    }
+    if (descriptor != NULL) {
+        node->area = func_15144598((struct134 *)descriptor);
+    } else {
+        node->area = 0.0f;
+    }
+    node->next = NULL;
+    return (u8 *)node;
 }
 
 void func_1515F25C(u8 **arg0, u8 *arg1) {

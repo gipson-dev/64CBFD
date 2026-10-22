@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Linked shape-measure node installed directly from C: all 43 words exact**:
+[Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md).
+Recover `func_1515F1B0`, frame 48/three bindings, with a private sixteen-byte
+node and corrected opaque caller interface. Both copies pass eight
+pre-install and two fresh installed checks, reusing six unchanged checks.
+Qualify the complete caller, list insertion and measurement helpers;
+preserve 34 neighbors, the full caller object and strict 116-byte image.
+Tools `a83687e` first; 15,874 inputs sealed. Total 3,745/5,505 (68.03%),
+384 more to 75%. Next `func_150A3398` screened only. Host Release frozen.
+
+2026-10-22:
+
 **Randomized player byte-state installed directly from C: all 43 words exact**:
 [Note 1675](WORKING_NOTES/1675-randomized-byte-state-match-20261022.md).
 Recover `func_1507EEF4`, frame 32/four bindings, with explicit RNG-before-
