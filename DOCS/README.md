@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor record table index](WORKING_NOTES/1659-actor-table-index-match-20261022.md):
+  all 42 words/frame0 emit directly from C without guards. Preserve full-word
+  keys, unsigned lengths, ordered reads and all seven caller windows; remove
+  the old overflow with closed code, relocation and ELF metadata accounting.
 - [Selector callback factory](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md):
   all 42 words/frame64 emit directly from C without guards. Preserve captured
   selectors, all reserved bytes, the complete caller and original helper bounds;

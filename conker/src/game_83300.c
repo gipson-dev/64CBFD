@@ -951,37 +951,42 @@ s32 func_1505E0C4() {
     return 0;
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E650.s")
-u32 func_1505E7CC(s32 arg0, struct127 *arg1) {
-    u8 id = arg1->id;
-    u8 *table;
+/* Find the first matching record in the actor's 0x18-byte table. */
+u32 func_1505E7CC(s32 key, struct127 *actor) {
+    u8 *header;
+    u8 *entries;
+    u8 *cursor;
     u32 count;
-    u32 i;
+    u32 index;
+    u8 id = actor->id;
 
     if (id == 0xFF) {
         return 0;
     }
-
-    table = (u8 *)D_800D1588[id];
-    if (table == NULL) {
+    header = (u8 *)D_800D1588[id];
+    if (header == NULL) {
         return 0;
     }
-
-    count = *(u32 *)(table - 4);
+    count = *(u32 *)(header - 4);
     if (count == 0) {
         return 0;
     }
-
     count /= 0x18;
-    table = *(u8 **)(table - 8);
-    if (table == NULL) {
+    entries = *(u8 **)(header - 8);
+    if (entries == NULL) {
         return 0;
     }
 
-    for (i = 0; i < count; i++) {
-        if (arg0 == table[0]) {
-            return i;
-        }
-        table += 0x18;
+    index = 0;
+    if (count != 0) {
+        cursor = entries;
+        do {
+            if (key == cursor[0]) {
+                return index;
+            }
+            index++;
+            cursor += 0x18;
+        } while (index < count);
     }
     return 0;
 }

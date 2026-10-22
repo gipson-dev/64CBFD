@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `3bb6ee8`; tools are committed before the consumer pin.
+  checkpoint pins tools `d38ac24`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor record table index installed directly from C: all 42 words exact**:
+[Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md).
+Match existing semantic `func_1505E7CC`, frame0/two bindings, without
+guards or profile changes. Preserve full-word keys, unsigned lengths,
+first-match indexing and the original read order. Both copies pass eight
+pre-install and two fresh installed tests; six unchanged checks are explicitly
+reused under strict identity. Qualify all seven original JAL/delay windows,
+not complete parents. Preserve 88 owner neighbors and all guard bytes.
+Production exactly reproduces the closed full-ELF prediction: remove the
+284-byte target overflow, move seven unchanged overflow bodies and update
+four jump destinations; retail entries/data stay fixed. Verify 15,806 files.
+Tools `d38ac24` first. Total 3,727/5,505 (67.70%), Game 3,054/4,832
+(63.20%), zero drift; 402 more to 75%. Next `func_150F07E4` is screened
+only, 42 words/frame24. Preserve all 1,530 old mirror dirty paths and frozen
+host Release. No full-parent, portable-fault or gameplay acceptance claim.
 
 **Selector callback factory installed directly from C: all 42 words exact**:
 [Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md).

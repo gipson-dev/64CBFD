@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-22 Actor Record Table Index Direct C Match
+
+[Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md):
+match existing semantic `func_1505E7CC`, all 42 words/frame0/two bindings
+directly from C without guards. Preserve unsigned lengths, full-word keys,
+first-match indexing and read order. Both copies pass eight pre-install and
+two fresh installed tests, explicitly reusing six unchanged checks under
+strict identity. Qualify seven original JAL/delay windows, not full parents.
+Preserve 88 neighbors and all guard bytes; the complete ELF prediction closes
+the target overflow removal, seven moved bodies and four updated jumps.
+Tools `d38ac24` first. Total 3,727/5,505 (67.70%), Game 3,054/4,832
+(63.20%), zero drift; 402 more to 75%. Next `func_150F07E4` is screened
+only. Preserve the older mirror and frozen host Release. No gameplay claim.
+
 ## 2026-10-22 Selector Callback Factory Direct C Match
 
 [Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md):

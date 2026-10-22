@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Actor record table index installed directly from C: all 42 words exact**:
+[Note 1659](WORKING_NOTES/1659-actor-table-index-match-20261022.md).
+Match `func_1505E7CC`, frame0/two bindings, without guards. Preserve
+full-word keys, unsigned lengths, ordered reads and first-match indexing.
+Both copies pass eight pre-install and two fresh installed tests; explicitly
+reuse six unchanged checks under strict identity. Qualify all seven original
+JAL/delay windows, not full parents. Preserve 88 neighbors, all guard bytes
+and the closed full-ELF overflow-removal prediction. Tools `d38ac24` first;
+total 3,727/5,505 (67.70%), 402 more to 75%. Next `func_150F07E4` is
+screened only. No portable-fault, complete-parent or gameplay claim.
+
+2026-10-22:
+
 **Selector callback factory installed directly from C: all 42 words exact**:
 [Note 1658](WORKING_NOTES/1658-selector-callback-factory-match-20261022.md).
 Match `func_1515D088`, frame64/two bindings, without new guards.
