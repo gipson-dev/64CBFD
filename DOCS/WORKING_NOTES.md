@@ -2,6 +2,17 @@
 
 2026-10-22:
 
+**Damped motion snapshot installed as guarded C: all 42 words exact**:
+[Note 1669](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md).
+Recover `func_1514A4EC`, frame0/two bindings, with seven checked copy-lifetime
+and scheduling words. Both copies pass eight pre-install and two fresh
+installed tests, reusing six unchanged checks under strict identity. Preserve
+raw snapshots, damping/timestep semantics, 35 neighbors and the strict
+139-byte image. Tools `e9b7a5e` first; total 3,737/5,505 (67.88%),
+392 more to75%. Next `func_15192D48` is screened only. Host Release frozen.
+
+2026-10-22:
+
 **Category-gated framebuffer fill installed directly from C: all 42 words exact**:
 [Note 1668](WORKING_NOTES/1668-category-frame-fill-match-20261022.md).
 Recover `func_15110600`, frame40/eleven bindings, without guards. Both copies

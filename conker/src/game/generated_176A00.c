@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/176A00.s. */
+/* Partially recovered text-only slice asm/176A00.s. */
 
 extern f32 D_800BE9A4;
 
@@ -66,8 +66,20 @@ s32 func_1514A498(u8 *arg0) {
     return 1;
 }
 
-s32 func_1514A4EC() {
-    return 0;
+/* Snapshot position, damp horizontal velocity and integrate the live timestep. */
+s32 func_1514A4EC(u8 *actor) {
+    f32 damping = *(f32 *)(actor + 0x140);
+
+    *(u32 *)(actor + 0x40) = *(u32 *)(actor + 0x34);
+    *(u32 *)(actor + 0x44) = *(u32 *)(actor + 0x38);
+    *(u32 *)(actor + 0x48) = *(u32 *)(actor + 0x3C);
+    *(f32 *)(actor + 0x130) *= damping;
+    *(f32 *)(actor + 0x134) += *(f32 *)(actor + 0x13C) * D_800BE9A4;
+    *(f32 *)(actor + 0x138) *= damping;
+    *(f32 *)(actor + 0x34) += *(f32 *)(actor + 0x130) * D_800BE9A4;
+    *(f32 *)(actor + 0x38) += *(f32 *)(actor + 0x134) * D_800BE9A4;
+    *(f32 *)(actor + 0x3C) += *(f32 *)(actor + 0x138) * D_800BE9A4;
+    return 1;
 }
 
 s32 func_1514A594() {

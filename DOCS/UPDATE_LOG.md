@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Damped Motion Snapshot Guarded C Match
+
+[Note 1669](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md):
+recover `func_1514A4EC`, complete 42-word/frame0 C and seven checked
+copy-lifetime/scheduling words. Both copies pass eight pre-install and two
+fresh installed tests, reusing six unchanged checks under strict identity.
+Preserve raw snapshots, captured damping, live timestep, 35 neighbors and
+the strict 139-byte image. Raw private-state/fault limits remain explicit.
+Tools `e9b7a5e` first. Total 3,737/5,505 (67.88%), Game 3,064/4,832 (63.41%),
+zero drift; 392 more to75%. Next `func_15192D48` is screened only.
+Host Release untouched.
+
 ## 2026-10-22 Category-Gated Framebuffer Fill Direct C Match
 
 [Note 1668](WORKING_NOTES/1668-category-frame-fill-match-20261022.md):

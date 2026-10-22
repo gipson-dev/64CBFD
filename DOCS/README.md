@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Damped motion snapshot](WORKING_NOTES/1669-damped-motion-snapshot-match-20261022.md):
+  all 42 words/frame0 match from complete C and seven checked copy-lifetime/
+  scheduling words. Preserve raw snapshots, captured damping, live timestep,
+  35 neighbors and the strict 139-byte image; distinguish raw from guarded state.
 - [Category-gated framebuffer fill](WORKING_NOTES/1668-category-frame-fill-match-20261022.md):
   all 42 words/frame40 emit directly from C without guards. Preserve category
   and child gates, unused float homes, complete helper packet, 33 neighbors
