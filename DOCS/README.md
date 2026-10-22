@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Embedded oscillating motion](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md):
+  all 42 words/frame 32/six bindings emit directly from C without guards.
+  Preserve the separate output, embedded fields, late clocks, signed
+  slot-2 callback gate, three neighbors and strict 138-byte image.
 - [Circular buffer transfer pair](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md):
   both 42-word/frame 48 bodies emit directly from C without new guards.
   Preserve wrapping transfer/count behavior, five caller-site windows,

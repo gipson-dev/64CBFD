@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b84deda`; tools are committed before the consumer pin.
+  checkpoint pins tools `b6ea02b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Embedded oscillating-motion callback installed directly from C: all 42 words exact**:
+[Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md).
+Recover `func_151B8C54`, frame 32/six bindings, with a private embedded
+motion layout and the separate oscillation output. No new guards.
+Both copies pass eight pre-install and two fresh installed tests, reusing
+six unchanged checks under strict identity. Qualify the signed slot-2
+dispatcher window and original math chain; preserve three neighbors and
+the strict 138-byte image across 15,862 sealed files.
+Total 3,742/5,505 (67.97%), Game 3,069/4,832 (63.51%), zero drift;
+387 more to 75%. Next `func_151749F8` is screened only.
+Host Release remains untouched.
 
 **Circular buffer transfer pair installed directly from C: all 84 words exact**:
 [Note 1672](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md).

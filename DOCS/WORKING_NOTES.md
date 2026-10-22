@@ -2,6 +2,18 @@
 
 2026-10-22:
 
+**Embedded oscillating-motion callback installed directly from C: all 42 words exact**:
+[Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md).
+Recover `func_151B8C54`, frame 32/six bindings, preserving the separate
+oscillation output, embedded motion fields, late clocks and signed slot-2
+caller gate. Both copies pass eight pre-install and two fresh installed
+tests, reusing six unchanged checks under strict identity. Preserve three
+neighbors, the complete guard manifest and strict 138-byte image.
+Tools `b6ea02b` first; total 3,742/5,505 (67.97%), 387 more to 75%.
+Next `func_151749F8` is screened only. Host Release frozen.
+
+2026-10-22:
+
 **Circular buffer transfer pair installed directly from C: all 84 words exact**:
 [Note 1672](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md).
 Recover `func_15043A20` and `func_15043AC8`, each 42 words/frame 48 with

@@ -1,5 +1,19 @@
 #include <ultra64.h>
 typedef struct {
+    f32 x;
+    u8 reserved04[4];
+    f32 z;
+    u8 reserved0C[4];
+    f32 phase;
+    f32 base;
+    f32 phaseRate;
+    f32 velocityX;
+    u8 reserved20[4];
+    f32 velocityZ;
+    f32 amplitude;
+} EmbeddedOscillatingMotion;
+
+typedef struct {
     u8 header[0x20];
     f32 x;
     u8 reserved24[4];
@@ -40,8 +54,16 @@ void func_151B8BE0(u8 *arg0, s32 arg1) {
     func_151D9450(arg0, arg1);
 }
 
-s32 func_151B8C54() {
-    return 0;
+/* Advance the embedded oscillation, phase and planar coordinates. */
+s32 func_151B8C54(u8 *actor) {
+    EmbeddedOscillatingMotion *motion = (EmbeddedOscillatingMotion *)(actor + 0x120);
+
+    *(f32 *)(actor + 0x58) = sinf(motion->phase) * motion->amplitude + motion->base;
+    motion->phase += motion->phaseRate * D_800BE9A4;
+    motion->phase = func_15144B68(motion->phase);
+    motion->x += motion->velocityX * D_800BE9A4;
+    motion->z += motion->velocityZ * D_800BE9A4;
+    return 1;
 }
 
 s32 func_151B8CFC() {

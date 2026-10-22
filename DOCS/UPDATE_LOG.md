@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-22 Embedded Oscillating Motion Direct C Match
+
+[Note 1673](WORKING_NOTES/1673-embedded-oscillating-motion-match-20261022.md):
+recover `func_151B8C54`, all 42 words/frame 32/six bindings directly from
+typed C, no new guards. Both copies pass eight pre-install and two fresh
+installed tests, reusing six unchanged checks under strict identity.
+Qualify the signed slot-2 caller gate and original math chain; preserve
+three neighbors, the complete guard manifest and strict 138-byte image.
+Tools `b6ea02b` first. Total 3,742/5,505 (67.97%),
+Game 3,069/4,832 (63.51%), zero drift; 387 more to 75%.
+Next `func_151749F8` is screened only. Host Release untouched.
+
 ## 2026-10-22 Circular Buffer Transfer Pair Direct C Match
 
 [Note 1672](WORKING_NOTES/1672-ring-buffer-transfers-match-20261022.md):
