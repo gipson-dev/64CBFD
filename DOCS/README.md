@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Recursive node identifier search](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md):
+  all 43 words/frame 32/four bindings emit directly from C without guards.
+  Qualify ordered links, signed gates, actual caller prefixes and bounded
+  cycles; preserve 77 neighbors and strict 123-byte image. Total 3,750/5,505.
 - [Embedded actor-link event](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md):
   complete 43-word callback with four derived allocation guards and the actual
   pointer/byte ABI. Qualify the registered dispatcher and release chain;

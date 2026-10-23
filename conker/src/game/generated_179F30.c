@@ -104,7 +104,12 @@ s32 func_1514D3B0() {
     return 0;
 }
 
-s32 func_1514D4B8() {
+/* Search both ordered node links for the requested signed identifier. */
+s32 func_1514D4B8(s16 index, s16 wanted) {
+    if (index == -1) return 0;
+    if (index == wanted) return 1;
+    if (func_1514D4B8(D_8008ABE8[index][3], wanted)) return 1;
+    if (func_1514D4B8(D_8008ABE8[index][2], wanted)) return 1;
     return 0;
 }
 

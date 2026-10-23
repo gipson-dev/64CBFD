@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-22
+Last verified: 2026-10-23
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0723f62`; tools are committed before the consumer pin.
+  checkpoint pins tools `24b7f918`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Recursive node search installed directly from C: all 43 words exact**:
+[Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md).
+Recover `func_1514D4B8`, frame 32/four bindings, without guards. Preserve
+signed -1 priority, ordered recursive links and late table-pointer reload.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify both original caller
+prefixes and bounded cycle/fault behavior; their current C parents remain
+unconverted. Preserve 77 neighbors, the external caller object and strict
+123-byte image across 15,890 inputs. Tools `24b7f918` first.
+Total 3,750/5,505 (68.12%), Game 3,077/4,832 (63.68%), zero drift;
+379 more to 75%. Next `func_15193234` queued only, uncredited.
+Host Release, saves and configuration remain untouched.
 
 **Embedded actor-link callback installed from guarded C: all 43 words exact**:
 [Note 1679](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md).

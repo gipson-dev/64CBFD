@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-23 Recursive Node Identifier Search Direct C Match
+
+[Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md):
+recover `func_1514D4B8`, all 43 words/frame 32/four bindings directly from C
+without guards. Preserve sentinel priority, ordered recursion and late table
+reloads. Both copies pass eight pre-install and two fresh installed checks,
+reusing six unchanged checks. Qualify 58 original caller-prefix words and
+bounded cycles without claiming full parents or adding a cycle guard.
+Preserve 77 neighbors and the strict 123-byte image across 15,890 inputs.
+Tools `24b7f918` first. Total 3,750/5,505 (68.12%), Game 3,077/4,832 (63.68%),
+zero drift; 379 more to 75%. Next `func_15193234` queued only, uncredited.
+Host Release untouched.
+
 ## 2026-10-22 Embedded Actor Link Event Guarded C Match
 
 [Note 1679](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md):

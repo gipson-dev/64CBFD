@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-23:
+
+**Recursive node identifier search installed directly from C: 43 words exact**:
+[Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md).
+Recover `func_1514D4B8`, frame 32/four bindings, without guards. Preserve
+signed sentinel priority, recursion order and late table reloads. Both copies
+pass eight pre-install and two fresh installed checks, reusing six unchanged
+checks. Qualify both original caller prefixes and bounded cycle/fault paths;
+the current C parents remain unconverted. Preserve 77 neighbors, the external
+caller object and strict 123-byte image. Tools `24b7f918` first;
+15,890 inputs sealed. Total 3,750/5,505 (68.12%), 379 more to 75%.
+Next `func_15193234` queued only, uncredited. Host Release frozen.
+
 2026-10-22:
 
 **Embedded actor-link event installed from guarded C: all 43 words exact**:
