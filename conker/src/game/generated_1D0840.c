@@ -1,4 +1,9 @@
 #include <ultra64.h>
+#include "structs.h"
+void func_1516972C(struct102 *);
+
+typedef struct { u8 *owner; u8 identity; u8 opaque5[3]; } PayloadOwnerLink;
+typedef struct { u8 *before; u8 *after; u8 before_identity; u8 after_identity; u8 opaqueA[2]; } PayloadOwnerLinkEvent;
 typedef struct {
     u32 zero0, zero4;
     u8 ownerSelector, reserved09[3];
@@ -184,8 +189,25 @@ void func_151A4CE0(u8 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_151A4D88() {
-    return 0;
+/* Retarget the payload owner link or release its matching actor. */
+void func_151A4D88(struct260 *owner, s32 eventAddress, u8 command) {
+    PayloadOwnerLink *link = (PayloadOwnerLink *)((u8 *)owner + 0x28);
+    PayloadOwnerLinkEvent *event = (PayloadOwnerLinkEvent *)eventAddress;
+
+    if (command == 0) {
+        if (link->owner == event->before || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    }
 }
 
 s32 func_151A4E34(u8 *arg0, void *arg1) {
@@ -220,7 +242,7 @@ void func_151A4F7C(u8 *arg0, u8 *arg1, u8 arg2) {
 
     if (arg2 == 0) {
         if ((*(s32 *)temp_v0 == *(s32 *)arg1) || (temp_v0[4] == arg1[4])) {
-            func_1516972C(arg0);
+            func_1516972C((struct102 *)arg0);
         }
     }
 }

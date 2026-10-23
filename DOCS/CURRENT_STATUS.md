@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b792eeb`; tools are committed before the consumer pin.
+  checkpoint pins tools `31e7a37`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Three payload-link callbacks installed from guarded C: all 129 words exact**:
+[Note 1682](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md).
+Recover `func_1519E570`, `func_151A4D88` and `func_151ABD54`, each 43 words/
+frame 24/one binding, with six derived allocation guards per complete body.
+Preserve command-zero priority, owner-before-event reads and late identities.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify all 23 dispatcher words,
+its actual native C body, every selector byte and 56 retained helper words.
+Preserve 84 neighbors, eighteen assembly neighbors, the twelve-function caller
+object and strict 357-byte image across 15,898 inputs. Tools `31e7a37` first.
+Total 3,754/5,505 (68.19%), Game 3,081/4,832 (63.76%), zero drift;
+375 more to 75%. Next `func_150A00F0` queued only, uncredited.
+Host Release, saves and configuration remain untouched.
 
 **Payload owner-link callback installed from guarded C: all 43 words exact**:
 [Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md).

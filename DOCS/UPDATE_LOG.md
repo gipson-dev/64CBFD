@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-23 Payload Link Event Trio Guarded C Match
+
+[Note 1682](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md):
+recover `func_1519E570`, `func_151A4D88` and `func_151ABD54`, each 43 words/
+frame 24/one binding with six derived allocation guards. Preserve command-zero
+priority, owner-before-event reads, first-match links and late identities.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify the full dispatcher,
+its actual native C body, all selector bytes and 56 release-chain words.
+Preserve 84 neighbors, eighteen assembly neighbors, the entire twelve-function
+caller object and strict 357-byte image across 15,898 inputs. Tools `31e7a37`
+first. Total 3,754/5,505 (68.19%), Game 3,081/4,832 (63.76%), zero drift;
+375 more to 75%. Next `func_150A00F0` queued only. Host Release untouched.
+
 ## 2026-10-23 Payload Owner Link Event Guarded C Match
 
 [Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md):

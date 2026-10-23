@@ -1,5 +1,10 @@
 #include <ultra64.h>
 #include "structs.h"
+void func_1516972C(struct102 *);
+
+typedef struct { u8 *owner; u8 identity; u8 opaque5[3]; } PayloadOwnerLink;
+typedef struct { u8 *before; u8 *after; u8 before_identity; u8 after_identity; u8 opaqueA[2]; } PayloadOwnerLinkEvent;
+#include "structs.h"
 void func_1519E688(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/1CA420.s. */
@@ -82,13 +87,30 @@ s32 func_1519E464() {
     return 0;
 }
 
-s32 func_1519E570() {
-    return 0;
+/* Retarget the payload owner link or release its matching actor. */
+void func_1519E570(struct260 *owner, s32 eventAddress, u8 command) {
+    PayloadOwnerLink *link = (PayloadOwnerLink *)((u8 *)owner + 0x28);
+    PayloadOwnerLinkEvent *event = (PayloadOwnerLinkEvent *)eventAddress;
+
+    if (command == 0) {
+        if (link->owner == event->before || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    }
 }
 
 void func_1519E61C(u8 *arg0, s32 arg1, u8 arg2) {
     if ((arg2 == 0) || (arg2 == 9)) {
-        func_1516972C(arg0);
+        func_1516972C((struct102 *)arg0);
     }
 }
 

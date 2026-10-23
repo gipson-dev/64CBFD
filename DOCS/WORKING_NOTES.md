@@ -2,6 +2,19 @@
 
 2026-10-23:
 
+**Payload-link callback trio installed from guarded C: all 129 words exact**:
+[Note 1682](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md).
+Recover `func_1519E570`, `func_151A4D88` and `func_151ABD54`, each 43 words/
+frame 24/one binding, with six checked allocation guards apiece. Both copies
+pass eight pre-install and two fresh installed checks, reusing six unchanged
+checks. Qualify every selector byte, the actual 23-word dispatcher/native C
+body and 56 release-chain words. Preserve 84 neighbors, eighteen assembly
+neighbors, the twelve-function caller object and strict 357-byte image.
+Tools `31e7a37` first; 15,898 inputs sealed. Total 3,754/5,505 (68.19%),
+375 more to 75%. Next `func_150A00F0` queued only. Host Release frozen.
+
+2026-10-23:
+
 **Payload owner-link callback installed from guarded C: all 43 words exact**:
 [Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md).
 Recover `func_15193234`, frame 24/one binding, with the actual typed ABI and

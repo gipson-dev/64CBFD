@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Payload-link event trio](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md):
+  three complete 43-word callbacks with six checked allocation guards each.
+  Qualify all selector bytes, the actual dispatcher and release chain;
+  preserve 84 neighbors and strict 357-byte image. Total 3,754/5,505 (68.19%).
 - [Payload owner-link event](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md):
   complete 43-word callback with the actual typed ABI and four allocation
   guards. Qualify all selector bytes, the full dispatcher and release chain;
