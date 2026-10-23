@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ee347ee`; tools are committed before the consumer pin.
+  checkpoint pins tools `41380d8`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Embedded owner-link event pair installed from guarded C: all 86 words exact**:
+[Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md).
+Recover `func_150CE694` and `func_150D6E60`, each 43 words/frame 24,
+with private typed link views and four checked allocation guards apiece.
+Preserve command/identity widths, first-match behavior and late packet reads.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify both complete registered
+callers, all 56 retained release-helper words and defined native32 cases.
+Preserve twenty neighbors and the strict 238-byte image across 15,882 inputs.
+Tools `41380d8` first. Total 3,748/5,505 (68.08%), Game 3,075/4,832 (63.64%),
+zero drift; 381 more to 75%. Next `func_150F088C` queued only.
+Host Release, saves and configuration remain untouched.
 
 **Masked record fields installed directly from C: all 43 words exact**:
 [Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md).

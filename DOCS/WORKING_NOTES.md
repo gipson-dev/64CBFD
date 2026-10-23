@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Embedded owner-link event pair installed from guarded C: all 86 words exact**:
+[Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md).
+Recover `func_150CE694` and `func_150D6E60`, each 43 words/frame 24,
+with private typed views and four checked allocation guards apiece.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks. Qualify both complete registered callers and all
+56 release-chain words; preserve twenty neighbors and the strict 238-byte
+image. Tools `41380d8` first; 15,882 inputs sealed.
+Total 3,748/5,505 (68.08%), 381 more to 75%.
+Next `func_150F088C` queued only. Host Release frozen.
+
+2026-10-22:
+
 **Masked record fields installed directly from C: all 43 words exact**:
 [Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md).
 Recover `func_150A3398`, frame zero/four bindings, retaining independent

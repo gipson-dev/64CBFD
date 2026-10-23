@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-22 Embedded Owner Link Event Pair Guarded C Match
+
+[Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md):
+recover `func_150CE694` and `func_150D6E60`, each 43 words/frame 24,
+with four checked allocation guards apiece. Preserve first-match pointer
+capture, late packet identities and command-zero byte +4. Both copies pass
+eight pre-install and two fresh installed checks, reusing six unchanged
+checks under strict identity. Qualify both complete registered callers,
+all 56 retained helper words and native32 O0/O2/O3. Preserve twenty neighbors
+and the strict 238-byte image across 15,882 inputs. Tools `41380d8` first.
+Total 3,748/5,505 (68.08%), Game 3,075/4,832 (63.64%), zero drift;
+381 more to 75%. Next `func_150F088C` queued only. Host Release untouched.
+
 ## 2026-10-22 Masked Record Fields Direct C Match
 
 [Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md):

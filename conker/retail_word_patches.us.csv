@@ -23401,3 +23401,11 @@ generated_1D0840,func_151A4590,0x06C,0xA3A00045,0x27A40018,-,-,Normalize closed 
 generated_1D0840,func_151A4590,0x070,0x27A40018,0x00002825,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
 generated_1D0840,func_151A4590,0x074,0x00002825,0x00003825,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
 generated_1D0840,func_151A4590,0x078,0x00003825,0xAFAF0024,-,-,Normalize closed owner-descriptor preset schedule and float-load relocation,,,false
+generated_FB600,func_150CE694,0x028,0x8C430000,0x8C440000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_FB600,func_150CE694,0x02C,0x8CA40000,0x8CA30000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_FB600,func_150CE694,0x050,0x54790013,0x57240013,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_FB600,func_150CE694,0x058,0xAC440000,0xAC430000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_1028F0,func_150D6E60,0x028,0x8C430000,0x8C440000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_1028F0,func_150D6E60,0x02C,0x8CA40000,0x8CA30000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_1028F0,func_150D6E60,0x050,0x54790013,0x57240013,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+generated_1028F0,func_150D6E60,0x058,0xAC440000,0xAC430000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false

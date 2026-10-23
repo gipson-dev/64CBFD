@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Embedded owner-link event pair](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md):
+  two complete 43-word callbacks, each with four checked allocation guards.
+  Qualify actual registrations, callers and the release chain; preserve twenty
+  neighbors and the strict 238-byte image. Total 3,748/5,505 exact (68.08%).
 - [Masked record fields](WORKING_NOTES/1677-masked-record-fields-match-20261022.md):
   all 43 words/frame zero/four bindings emit directly from C without guards.
   Qualify independent field masks, late reads and the original caller path;
