@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Payload owner-link event](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md):
+  complete 43-word callback with the actual typed ABI and four allocation
+  guards. Qualify all selector bytes, the full dispatcher and release chain;
+  preserve five neighbors and strict 119-byte image. Total 3,751/5,505.
 - [Recursive node identifier search](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md):
   all 43 words/frame 32/four bindings emit directly from C without guards.
   Qualify ordered links, signed gates, actual caller prefixes and bounded

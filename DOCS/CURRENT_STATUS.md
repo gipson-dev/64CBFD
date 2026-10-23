@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `24b7f918`; tools are committed before the consumer pin.
+  checkpoint pins tools `b792eeb`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Payload owner-link callback installed from guarded C: all 43 words exact**:
+[Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md).
+Recover `func_15193234`, frame 24/one binding, with the actual
+`struct260 *`/word-address/byte ABI and four checked allocation guards.
+Preserve first-match link updates, late identities and raw release byte +4.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks under strict identity. Qualify the complete 23-word
+dispatcher, its actual native C body and all 56 retained helper words.
+Preserve five neighbors, the twelve-function caller object and strict
+119-byte image across 15,894 inputs. Tools `b792eeb` first.
+Total 3,751/5,505 (68.14%), Game 3,078/4,832 (63.70%), zero drift;
+378 more to 75%. Next `func_1519E570` queued only, uncredited.
+Host Release, saves and configuration remain untouched.
 
 **Recursive node search installed directly from C: all 43 words exact**:
 [Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md).

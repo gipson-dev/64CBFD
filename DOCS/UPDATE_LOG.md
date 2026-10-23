@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-23 Payload Owner Link Event Guarded C Match
+
+[Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md):
+recover `func_15193234`, all 43 words/frame 24/one binding with four checked
+allocation guards. Preserve the actual typed ABI, command-0x2D priority,
+first-match pointer capture and late packet identities. Both copies pass
+eight pre-install and two fresh installed checks, reusing six unchanged
+checks. Qualify the complete dispatcher over all selector bytes, its actual
+native C body and all 56 release-chain words. Preserve five neighbors,
+the twelve-function caller object and strict 119-byte image across 15,894
+inputs. Tools `b792eeb` first. Total 3,751/5,505 (68.14%), Game 3,078/4,832
+(63.70%), zero drift; 378 more to 75%. Next `func_1519E570` queued only.
+Host Release untouched.
+
 ## 2026-10-23 Recursive Node Identifier Search Direct C Match
 
 [Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md):

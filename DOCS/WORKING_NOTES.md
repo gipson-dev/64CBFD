@@ -2,6 +2,19 @@
 
 2026-10-23:
 
+**Payload owner-link callback installed from guarded C: all 43 words exact**:
+[Note 1681](WORKING_NOTES/1681-payload-owner-link-event-match-20261023.md).
+Recover `func_15193234`, frame 24/one binding, with the actual typed ABI and
+four checked allocation guards. Both copies pass eight pre-install and two
+fresh installed checks, reusing six unchanged checks. Qualify the complete
+23-word dispatcher, all selector bytes, its actual native C body and the
+56-word release chain; preserve five neighbors, the twelve-function caller
+object and strict 119-byte image. Tools `b792eeb` first; 15,894 inputs sealed.
+Total 3,751/5,505 (68.14%), 378 more to 75%.
+Next `func_1519E570` queued only, uncredited. Host Release frozen.
+
+2026-10-23:
+
 **Recursive node identifier search installed directly from C: 43 words exact**:
 [Note 1680](WORKING_NOTES/1680-recursive-node-identifier-search-match-20261023.md).
 Recover `func_1514D4B8`, frame 32/four bindings, without guards. Preserve
