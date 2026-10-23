@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-22 Masked Record Fields Direct C Match
+
+[Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md):
+recover `func_150A3398`, all 43 words/frame zero/four bindings directly from
+C without guards. Retain independent mask bits, byte truncation, repeated
+table loads and late stack arguments. Both copies pass eight pre-install
+and two fresh installed checks, reusing six unchanged checks under strict
+identity. Qualify 108 original caller-path phases, 512 guest aliases and
+all 65,536 native masks at three optimizations. Preserve 27 neighbors and
+the strict 122-byte image across 15,878 inputs. Tools `ee347ee` first.
+Total 3,746/5,505 (68.05%), Game 3,073/4,832 (63.60%), zero drift;
+383 more to 75%. Next `func_150CE694` queued only. Host Release untouched.
+
 ## 2026-10-22 Linked Shape-Measure Node Direct C Match
 
 [Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md):

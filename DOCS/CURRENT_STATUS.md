@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a83687e`; tools are committed before the consumer pin.
+  checkpoint pins tools `ee347ee`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Masked record fields installed directly from C: all 43 words exact**:
+[Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md).
+Recover `func_150A3398`, frame zero/four bindings, using the existing 0x34-byte
+record, independent mask bits, word-sized values and late argument loads.
+Both copies pass eight pre-install and two fresh installed checks; six
+unchanged checks are reused under strict identity. Qualify 108 original
+caller-path phases, 512 aliases and all 65,536 native masks at O0/O2/O3.
+Preserve 27 neighbors and the strict 122-byte image across 15,878 inputs.
+No new guards. Tools `ee347ee` first. Total 3,746/5,505 (68.05%),
+Game 3,073/4,832 (63.60%), zero drift; 383 more to 75%.
+Next `func_150CE694` queued only. Host Release remains untouched.
 
 **Linked shape-measure node installed directly from C: all 43 words exact**:
 [Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md).

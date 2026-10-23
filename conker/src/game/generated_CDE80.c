@@ -183,8 +183,20 @@ void func_150A3330(s32 arg0, s32 *arg1, s32 *arg2, s32 *arg3, s32 *arg4) {
     *arg4 = D_800D3098[arg0].field20;
 }
 
-s32 func_150A3398() {
-    return 0;
+/* Update the selected byte and word fields of a 0x34-byte record. */
+void func_150A3398(s32 index, u16 mask, s32 value17, s32 value18, s32 value1C, s32 value20) {
+    if (mask & 1) {
+        D_800D3098[index].field17 = value17;
+    }
+    if (mask & 2) {
+        D_800D3098[index].field18 = value18;
+    }
+    if (mask & 4) {
+        D_800D3098[index].field1C = value1C;
+    }
+    if (mask & 8) {
+        D_800D3098[index].field20 = value20;
+    }
 }
 
 void func_150A3444(s32 index, s16 arg1, s16 arg2, s16 arg3) {

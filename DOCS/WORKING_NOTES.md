@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Masked record fields installed directly from C: all 43 words exact**:
+[Note 1677](WORKING_NOTES/1677-masked-record-fields-match-20261022.md).
+Recover `func_150A3398`, frame zero/four bindings, retaining independent
+field masks, byte truncation, repeated pointer reads and late arguments.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks. Qualify 108 original caller-path phases, 512 guest
+aliases and all native masks; preserve 27 neighbors and the strict 122-byte
+image. Tools `ee347ee` first; 15,878 inputs sealed.
+Total 3,746/5,505 (68.05%), 383 more to 75%.
+Next `func_150CE694` queued only. Host Release frozen.
+
+2026-10-22:
+
 **Linked shape-measure node installed directly from C: all 43 words exact**:
 [Note 1676](WORKING_NOTES/1676-shape-measure-node-match-20261022.md).
 Recover `func_1515F1B0`, frame 48/three bindings, with a private sixteen-byte

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Masked record fields](WORKING_NOTES/1677-masked-record-fields-match-20261022.md):
+  all 43 words/frame zero/four bindings emit directly from C without guards.
+  Qualify independent field masks, late reads and the original caller path;
+  preserve 27 neighbors and the strict 122-byte image.
 - [Linked shape-measure node](WORKING_NOTES/1676-shape-measure-node-match-20261022.md):
   all 43 words/frame 48/three bindings emit directly from C without guards.
   Recover the sixteen-byte node and opaque caller interface; preserve the
