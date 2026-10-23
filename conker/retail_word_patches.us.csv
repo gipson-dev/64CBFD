@@ -23435,3 +23435,23 @@ generated_1D6E80,func_151ABD54,0x060,0x8C430000,0x8C440000,-,-,Normalize two clo
 generated_1D6E80,func_151ABD54,0x064,0x8CA40000,0x8CA30000,-,-,Normalize two closed payload-link register cycles and equality operand order,,,false
 generated_1D6E80,func_151ABD54,0x088,0x546B0005,0x55640005,-,-,Normalize two closed payload-link register cycles and equality operand order,,,false
 generated_1D6E80,func_151ABD54,0x090,0xAC440000,0xAC430000,-,-,Normalize two closed payload-link register cycles and equality operand order,,,false
+generated_CD5A0,func_150A00F0,0x008,0x3C010000,0x00000000,R_MIPS_HI16:D_800D3010,-,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,true
+generated_CD5A0,func_150A00F0,0x00C,0x3C180000,0x3C010000,R_MIPS_HI16:D_800D3010,R_MIPS_HI16:D_800D3014,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x010,0x31CFFF7F,0xAC200000,-,R_MIPS_LO16:D_800D3014,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x014,0xA02F0000,0x31CFFF7F,R_MIPS_LO16:D_800D3010,-,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x018,0x3C010000,0xA02F0000,R_MIPS_HI16:D_800D3010,R_MIPS_LO16:D_800D3010,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x01C,0xAC200004,0x3C010000,R_MIPS_LO16:D_800D3010,R_MIPS_HI16:D_800D3018,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x020,0x3C010000,0xAC200000,R_MIPS_HI16:D_800D3010,R_MIPS_LO16:D_800D3018,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x024,0xAC200008,0x3C180000,R_MIPS_LO16:D_800D3010,R_MIPS_HI16:D_800D301C,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x028,0x9318000C,0x93180000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D301C,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x02C,0x3C010000,0x00000000,R_MIPS_HI16:D_800D3010,-,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,true
+generated_CD5A0,func_150A00F0,0x030,0x3C030000,0x3C030000,R_MIPS_HI16:D_800D3010,R_MIPS_HI16:D_800D3028,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x034,0x3319FF7F,0x3C020000,-,R_MIPS_HI16:D_800D3088,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x038,0xA039000C,0x3319FF7F,R_MIPS_LO16:D_800D3010,-,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x03C,0x3C010000,0xA0390000,R_MIPS_HI16:D_800D3010,R_MIPS_LO16:D_800D301C,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x040,0xAC200010,0x3C010000,R_MIPS_LO16:D_800D3010,R_MIPS_HI16:D_800D3020,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x044,0x3C010000,0x00000000,R_MIPS_HI16:D_800D3010,-,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,true
+generated_CD5A0,func_150A00F0,0x048,0x3C020000,0xAC200000,R_MIPS_HI16:D_800D3010,R_MIPS_LO16:D_800D3020,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x04C,0x24420078,0xAC200000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3024,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x050,0xAC200014,0x24420000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3088,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_CD5A0,func_150A00F0,0x054,0x24630018,0x24630000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3028,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false

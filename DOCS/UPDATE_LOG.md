@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-23 Ten-Record State Reset Guarded C Match
+
+[Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md):
+recover `func_150A00F0`, all 43 words/frame zero/seventeen bindings from a
+complete 46-word C loop. Twenty checked rows close scheduling, field aliases
+and three redundant-high-load folds. Both copies pass eight pre-install and
+two fresh installed checks, reusing six unchanged checks under strict identity.
+Qualify the complete 28-word caller and actual native C body; preserve its
+entire six-function object, four owner neighbors and strict 303-byte image.
+Tools `7ea237d` first; 15,902 inputs sealed. Total 3,755/5,505 (68.21%),
+Game 3,082/4,832 (63.78%), zero drift; 374 more to 75%.
+Next `func_150F00EC` queued only. Host Release untouched.
+
 ## 2026-10-23 Payload Link Event Trio Guarded C Match
 
 [Note 1682](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md):

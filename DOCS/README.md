@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Ten-record state reset](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md):
+  complete 46-word C loop normalizes to 43 words with twenty checked rows.
+  Qualify the full caller/native body, preserve four neighbors and account for
+  all 303 changed image bytes without exclusions. Total 3,755/5,505 (68.21%).
 - [Payload-link event trio](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md):
   three complete 43-word callbacks with six checked allocation guards each.
   Qualify all selector bytes, the actual dispatcher and release chain;

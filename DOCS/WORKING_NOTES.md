@@ -2,6 +2,18 @@
 
 2026-10-23:
 
+**Ten-record state reset installed from guarded C: all 43 words exact**:
+[Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md).
+Recover `func_150A00F0`, frame zero/seventeen bindings, using the complete
+46-word C loop and twenty checked normalization rows. Both copies pass eight
+pre-install and two installed checks, reusing six unchanged checks. Qualify
+the complete caller/native body; preserve four neighbors, the entire caller
+object and strict 303-byte image across 15,902 inputs. Tools `7ea237d` first.
+Total 3,755/5,505 (68.21%), 374 more to 75%.
+Next `func_150F00EC` queued only, uncredited. Host Release frozen.
+
+2026-10-23:
+
 **Payload-link callback trio installed from guarded C: all 129 words exact**:
 [Note 1682](WORKING_NOTES/1682-payload-link-event-trio-match-20261023.md).
 Recover `func_1519E570`, `func_151A4D88` and `func_151ABD54`, each 43 words/

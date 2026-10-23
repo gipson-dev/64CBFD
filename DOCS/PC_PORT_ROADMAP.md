@@ -2,9 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1682: 3,754/5,505 exact (68.19%), 1,751 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,620 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 375 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1683: 3,755/5,505 exact (68.21%), 1,750 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,619 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 374 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
@@ -59,7 +59,19 @@
 - [x] Qualify and install `func_1514D4B8` in Note 1680: all 43 words/frame 32/four bindings emit directly from C without guards. Preserve signed sentinel priority, ordered recursive links and late table reloads. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify both original caller prefixes and bounded cycles; preserve 77 neighbors, the external caller object and strict 123-byte image across 15,890 inputs.
 - [x] Qualify and install `func_15193234` in Note 1681: complete 43-word/frame 24 semantic C with the actual typed ABI and four allocation guards. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the full dispatcher over every selector byte and retained release chain; preserve five neighbors, the twelve-function caller object and strict 119-byte image across 15,894 inputs.
 - [x] Qualify and install `func_1519E570`, `func_151A4D88` and `func_151ABD54` in Note 1682: each complete 43-word/frame 24 semantic C with six derived allocation guards. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the full registered dispatcher and release chain; preserve 84 neighbors, eighteen assembly neighbors, the twelve-function caller object and strict 357-byte image across 15,898 inputs.
-- [ ] Qualify queued `func_150A00F0` (43 words, placeholder/42 differences): establish the complete interface, access order and actual callers, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+- [x] Qualify and install `func_150A00F0` in Note 1683: complete 46-word/frame-zero semantic C normalizes to 43 words/seventeen bindings with twenty checked rows and three redundant-high-load folds. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the complete caller/native body; preserve four neighbors, the entire six-function caller object and strict 303-byte image across 15,902 inputs.
+- [ ] Qualify queued `func_150F00EC` (43 words, placeholder/42 differences): establish the complete interface, access order and actual callers, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+
+## Ten-Record State Reset Guarded C Match - 2026-10-23
+
+[Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md):
+
+- [x] Recover the complete ten-record active-bit/counter reset using the existing local type and void/no-argument ABI. Preserve low flag bits, padding and both full-word clears. Retain original assembly and all four neighbors.
+- [x] Derive twenty expected-word/relocation rows from a closed source schedule, field aliases and three redundant-high-load folds. No inserted words; guarded semantic C, not compiler-only. Reject layouts incompatible with retail's shared-high constraints.
+- [x] Pass eight pre-install and two fresh installed checks per copy, reusing six unchanged checks under strict identity. Cover 3,584 target phases, native32 O0/O2/O3, ten effective wrong-C controls, nine independent GNU links, thirty rebase phases, 320 fired fault prefixes and 32 guest stack-overlap phases.
+- [x] Qualify all 28 caller words/frame 24 across 64 phases and its actual native C body. Preserve the typed caller's entire six-function object under the real ordinary C padder; keep prepare/bzero providers explicitly bounded.
+- [x] Reproduce the strict 303-byte image prediction: 161 code bytes and 142 metadata bytes, including six closed existing symbol/string cycles, zero exclusions. Pass actual three-command Make for owner and caller; preserve all other 6,054 bodies/6,055 addresses and protected data across 15,902 inputs / 1,454 objects.
+- [x] Recount total 3,755/5,505 (68.21%), Game 3,082/4,832 (63.78%), 1,750 different/zero drift. Tools `7ea237d` first; preserve all 1,578 older-mirror dirty paths, adding only two task files. README aggregates only; host Release untouched. The 75% objective remains incomplete, with 374 more matches needed.
 
 ## Payload Link Event Trio Guarded C Match - 2026-10-23
 

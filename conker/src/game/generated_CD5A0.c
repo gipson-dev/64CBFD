@@ -11,8 +11,14 @@ typedef struct {
 
 extern GeneratedCD5A0Record D_800D3010[];
 
-s32 func_150A00F0() {
-    return 0;
+/* Clear the active bit and both counters in all ten records. */
+void func_150A00F0(void) {
+    s32 index;
+    for (index = 0; index < 10; index++) {
+        D_800D3010[index].status &= (u16)~0x80;
+        D_800D3010[index].value = 0;
+        D_800D3010[index].unk8 = 0;
+    }
 }
 
 s32 func_150A019C() {
