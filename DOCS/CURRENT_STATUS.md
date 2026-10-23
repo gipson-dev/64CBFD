@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `41380d8`; tools are committed before the consumer pin.
+  checkpoint pins tools `0723f62`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Embedded actor-link callback installed from guarded C: all 43 words exact**:
+[Note 1679](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md).
+Recover `func_150F088C`, frame 24/one binding, with the actual pointer/byte
+callback interface and four checked allocation guards. Preserve command-zero
+priority, first-match links and late identity reads. Both copies pass eight
+pre-install and two fresh installed checks, reusing six unchanged checks.
+Qualify the complete registered dispatcher, its native C body and all 56
+retained release-helper words. Preserve 43 neighbors, the sixteen-function
+caller object and strict 121-byte image across 15,886 sealed inputs.
+Tools `0723f62` first. Total 3,749/5,505 (68.10%), Game 3,076/4,832 (63.66%),
+zero drift; 380 more to 75%. Next `func_1514D4B8` screened only, uncredited.
+Host Release, saves and configuration remain untouched.
 
 **Embedded owner-link event pair installed from guarded C: all 86 words exact**:
 [Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md).

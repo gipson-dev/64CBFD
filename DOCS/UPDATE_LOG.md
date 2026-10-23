@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-22 Embedded Actor Link Event Guarded C Match
+
+[Note 1679](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md):
+recover `func_150F088C`, all 43 words/frame 24/one binding with four checked
+allocation guards. Use the actual pointer/byte callback interface; preserve
+command-zero priority, first-match links and late packet identities.
+Both copies pass eight pre-install and two fresh installed checks, reusing
+six unchanged checks. Qualify the complete registered dispatcher, its native
+C body and all 56 retained helper words. Preserve 43 neighbors, the entire
+sixteen-function caller object and strict 121-byte image across 15,886 inputs.
+Tools `0723f62` first. Total 3,749/5,505 (68.10%), Game 3,076/4,832 (63.66%),
+zero drift; 380 more to 75%. Next `func_1514D4B8` screened only, uncredited.
+Host Release untouched.
+
 ## 2026-10-22 Embedded Owner Link Event Pair Guarded C Match
 
 [Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md):

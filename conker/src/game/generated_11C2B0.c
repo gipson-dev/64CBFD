@@ -1,6 +1,9 @@
 #include <ultra64.h>
 #include "structs.h"
 void func_1516972C(struct102 *);
+
+typedef struct { u8 *owner; u8 identity; u8 opaque5[3]; } EmbeddedOwnerLink;
+typedef struct { u8 *before; u8 *after; u8 before_identity; u8 after_identity; u8 opaqueA[2]; } OwnerLinkEvent;
 s32 func_150ADA20(void);
 void func_15143874(s16, f32, f32 *, f32 *);
 void func_15143134(f32 *, f32 *, u8 *);
@@ -178,8 +181,26 @@ void func_150F07E4(u8 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_150F088C() {
-    return 0;
+/* Retarget the embedded owner link or release its matching actor. */
+void func_150F088C(u8 *owner, u8 *eventBytes, u8 command) {
+    EmbeddedOwnerLink *link = (EmbeddedOwnerLink *)(owner + 0x170);
+    OwnerLinkEvent *event = (OwnerLinkEvent *)eventBytes;
+
+    if (command == 0) {
+        u8 *first = event->before;
+        if (first == link->owner || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    }
 }
 
 /* Submit the two preset descriptors through the common 16-argument helper. */

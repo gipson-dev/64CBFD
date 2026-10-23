@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Embedded actor-link event](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md):
+  complete 43-word callback with four derived allocation guards and the actual
+  pointer/byte ABI. Qualify the registered dispatcher and release chain;
+  preserve 43 neighbors and strict 121-byte image. Total 3,749/5,505 (68.10%).
 - [Embedded owner-link event pair](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md):
   two complete 43-word callbacks, each with four checked allocation guards.
   Qualify actual registrations, callers and the release chain; preserve twenty

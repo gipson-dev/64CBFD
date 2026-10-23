@@ -2,6 +2,19 @@
 
 2026-10-22:
 
+**Embedded actor-link event installed from guarded C: all 43 words exact**:
+[Note 1679](WORKING_NOTES/1679-embedded-actor-link-event-match-20261022.md).
+Recover `func_150F088C`, frame 24/one binding, with the actual pointer/byte
+callback interface and four checked allocation guards. Both copies pass
+eight pre-install and two fresh installed checks, reusing six unchanged
+checks. Qualify the complete registered dispatcher and all 56 release-chain
+words; preserve 43 neighbors, the sixteen-function caller object and strict
+121-byte image. Tools `0723f62` first; 15,886 inputs sealed.
+Total 3,749/5,505 (68.10%), 380 more to 75%.
+Next `func_1514D4B8` screened only, uncredited. Host Release frozen.
+
+2026-10-22:
+
 **Embedded owner-link event pair installed from guarded C: all 86 words exact**:
 [Note 1678](WORKING_NOTES/1678-embedded-owner-link-event-pair-match-20261022.md).
 Recover `func_150CE694` and `func_150D6E60`, each 43 words/frame 24,
