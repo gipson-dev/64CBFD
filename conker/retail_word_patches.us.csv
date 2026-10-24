@@ -23532,3 +23532,43 @@ generated_1BA1D0,func_1518F058,0x04C,0xC4860148,0xC4920144,-,-,Normalize checked
 generated_1BA1D0,func_1518F058,0x050,0x46022302,0xC4860148,-,-,Normalize checked timestep address role and independent return initialization,,,false
 generated_1BA1D0,func_1518F058,0x054,0xC4840038,0x46022302,-,-,Normalize checked timestep address role and independent return initialization,,,false
 generated_1BA1D0,func_1518F058,0x058,0x24020001,0xC4840038,-,-,Normalize checked timestep address role and independent return initialization,,,false
+generated_20A990,func_151DD8C0,0x000,0x3C060000,0x3C050000,R_MIPS_HI16:D_800E0A74,R_MIPS_HI16:D_800BE748,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x004,0x3C070000,0x3C060000,R_MIPS_HI16:D_800BE748,R_MIPS_HI16:D_800E0A74,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x008,0x3C080000,0x3C070000,R_MIPS_HI16:D_800E0BD2,R_MIPS_HI16:D_800E0BD2,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x00C,0x25080000,0x24E70000,R_MIPS_LO16:D_800E0BD2,R_MIPS_LO16:D_800E0BD2,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x010,0x24E70000,0x24C60000,R_MIPS_LO16:D_800BE748,R_MIPS_LO16:D_800E0A74,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x014,0x24C60000,0x24A50000,R_MIPS_LO16:D_800E0A74,R_MIPS_LO16:D_800BE748,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x018,0x8CC20000,0x8CC30000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x01C,0x3C0F0000,0x3C180000,R_MIPS_HI16:D_800E0A70,R_MIPS_HI16:D_800E0A70,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x020,0x8DEF0000,0x8F180000,R_MIPS_LO16:D_800E0A70,R_MIPS_LO16:D_800E0A70,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x024,0x00027080,0x0003C880,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x028,0x01C27023,0x0323C823,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x02C,0x000E7040,0x0019C840,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x030,0x01CF1821,0x03192021,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x034,0x80780000,0x80880000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x038,0x94E40000,0x94A20000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x03C,0x284101F3,0x286101F3,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x040,0xA0F80002,0xA0A80002,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x044,0x80790001,0x80890001,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x048,0x30891000,0x304F1000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x04C,0x240F01F3,0xA0A90003,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x050,0xA0F90003,0x948A0004,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x054,0x94650004,0xA0E00000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x058,0xA1000000,0x014F5825,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x05C,0x00A95025,0x10200008,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x060,0x10200008,0xA4AB0000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x064,0xA4EA0000,0x3C050000,-,R_MIPS_HI16:D_800BE9E4,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x068,0x3C050000,0x94820008,R_MIPS_HI16:D_800BE9E4,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x06C,0x94640008,0x8CA50000,-,R_MIPS_LO16:D_800BE9E4,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x070,0x8CA50000,0x00A2082A,R_MIPS_LO16:D_800BE9E4,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x074,0x00A4082A,0x10200002,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x078,0x10200002,0x00456023,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x07C,0x00855823,0xA0EC0000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x080,0xA10B0000,0x94820002,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x084,0x946C0002,0x3C010000,-,R_MIPS_HI16:D_800BE9E4,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x088,0x3C010000,0x246D0001,R_MIPS_HI16:D_800BE9E4,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x08C,0x244D0001,0xAC220000,-,R_MIPS_LO16:D_800BE9E4,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x090,0xAC2C0000,0x29A101F3,R_MIPS_LO16:D_800BE9E4,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x094,0x29A101F3,0x14200003,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x098,0x14200002,0xACCD0000,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false
+generated_20A990,func_151DD8C0,0x09C,0xACCD0000,0x240F01F3,-,-,"Normalize checked playback register lifetimes, address setup and clamp scheduling",,,false

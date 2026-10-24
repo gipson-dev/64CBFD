@@ -140,6 +140,41 @@ s32 func_151DD710(OSMesgQueue *mq, OSContStatus *data) {
     return data->errno;
 }
 
-s32 func_151DD8C0() {
-    return 0;
+typedef struct {
+    s8 x, y;
+    u16 ticks;
+    u16 buttons;
+} RecordedInput20A990;
+extern RecordedInput20A990 *D_800E0A70;
+extern s32 D_800E0A74, D_800BE9E4;
+extern u8 D_800E0BD2;
+extern OSContPad D_800BE748;
+
+/* Apply a recorded sample, preserve Start, and cap the playback cursor. */
+void func_151DD8C0(void) {
+    s32 index;
+    RecordedInput20A990 *record;
+    u16 held;
+    u16 buttons;
+
+    index = D_800E0A74;
+    record = &D_800E0A70[index];
+    held = D_800BE748.button;
+    D_800BE748.stick_x = record->x;
+    D_800BE748.stick_y = record->y;
+    buttons = record->buttons;
+    D_800E0BD2 = 0;
+    D_800BE748.button = buttons | (held & 0x1000);
+    if (index < 499) {
+        s32 next = record[1].ticks;
+        s32 previous = D_800BE9E4;
+        if (previous < next) {
+            D_800E0BD2 = (u8)((u32)next - (u32)previous);
+        }
+    }
+    D_800BE9E4 = record->ticks;
+    D_800E0A74 = (s32)((u32)index + 1U);
+    if (D_800E0A74 >= 499) {
+        D_800E0A74 = 499;
+    }
 }

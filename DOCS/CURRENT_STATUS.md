@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `2266dcb`; tools are committed before the consumer pin.
+  checkpoint pins tools `6113d8c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Recorded-input playback restored with checked clamp scheduling**:
+[Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md).
+`func_151DD8C0` matches all 43 body words/frame zero/twelve bindings,
+preserving its separate alignment word. Complete C plus 40 derived lifetime/
+address/scheduling guards retains signed sticks, the held Start bit, ordered
+button capture, signed tick gates, byte gap and wrapping cursor capped at 499.
+Both copies pass eight fresh checks before/after, aliases, the actual caller
+window, native32 controls and GNU rebases. Preserve three SDK neighbors,
+the guard prefix and strict 192-byte image with both symbol cycles explicitly
+predicted, zero exclusions. Fresh live total 3,781/5,505 (68.68%),
+Game 3,108/4,832 (64.32%), zero drift; 348 more to 75%.
+Tools `6113d8c` first. Next real placeholder `func_150B1EE0`; existing
+`func_15014094` remains a separate semantic-C matching case. Not compiler-only
+or full-parent/gameplay acceptance; host artifacts untouched.
 
 **Actor class dispatcher restored directly from C, no guards**:
 [Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md).

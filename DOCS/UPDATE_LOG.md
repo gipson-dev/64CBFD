@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-24 Recorded-Input Playback Match
+
+[Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
+recover `func_151DD8C0`, 43 body words/frame zero/twelve bindings plus one
+unchanged alignment word. Complete C with 40 derived lifetime/address/clamp-
+scheduling guards preserves signed stick bytes, Start, captured buttons,
+signed tick comparison, byte gap and wrapping cursor saturation. Both copies
+pass eight fresh checks before/after, aliases, the actual caller window,
+native32 controls and GNU rebases. Preserve three SDK neighbors, the guard
+prefix and strict 192-byte image with both symbol cycles predicted, zero
+exclusions. Tools `6113d8c` first. Fresh live total 3,781/5,505 (68.68%),
+Game 3,108/4,832 (64.32%), zero drift; 348 more to 75%.
+Next real placeholder `func_150B1EE0`; existing `func_15014094` stays separate.
+Not compiler-only, full-parent or gameplay acceptance; host untouched.
+
 ## 2026-10-24 Actor Class Dispatch Direct C Match
 
 [Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):

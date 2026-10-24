@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Recorded-input playback](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
+  complete 43-word C body plus 40 checked lifetime/address/clamp-scheduling
+  guards and one preserved alignment word. Qualify signed timing, all stick
+  bytes, eight aliases, real caller window and native C; preserve three SDK
+  neighbors and strict 192-byte image with closed symbol cycles. Total 68.68%,
+  348 more to 75%; not compiler-only or full-parent acceptance.
 - [Actor class dispatcher](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):
   all 44 words directly from C, no guards. Qualify all ID bytes/classes,
   world boundaries, actual selector/mask helpers, full caller and native C;

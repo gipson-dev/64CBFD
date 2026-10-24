@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
+recorded-input playback, 43 body words/frame zero/twelve bindings plus one
+alignment word. Complete C needs 40 derived lifetime/address/clamp-scheduling
+guards, not compiler-only. Both copies pass eight fresh checks before/after,
+signed timing, stick bytes, aliases, actual mode/call window and native32
+controls. Preserve three SDK neighbors, the guard prefix and strict 192-byte
+image with two closed symbol cycles, zero exclusions. Tools `6113d8c` first;
+fresh total 68.68%, 348 more to 75%. Next real placeholder `func_150B1EE0`;
+`func_15014094` stays a separate existing-C matching case. Host untouched.
+
+2026-10-24:
+
 [Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):
 actor class dispatcher, all 44 words/frame 48/six bindings directly from C,
 no guards. Both copies pass eight fresh checks before/after, all ID bytes
