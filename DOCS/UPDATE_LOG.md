@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-24 Linked Owner Retirement Guarded C Match
+
+[Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):
+recover `func_151A4ECC`, all 44 words/frame 32 with two checked spill guards.
+Pass eight fresh checks per copy before/after, native32, the complete actual
+caller and bounded original factory. Preserve 22 neighbors, caller object,
+old guard prefix and strict 117-byte image. Tools `d8ec960` first.
+Total 3,762/5,505 (68.34%), Game 3,089/4,832 (63.93%), zero drift;
+367 more to 75%. Factory stub and host Release remain unchanged.
+
 ## 2026-10-24 Paired Actor Child Teardown Direct C Match
 
 [Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):

@@ -233,8 +233,26 @@ void func_151A4E9C(u8 *arg0) {
     *(temp_v0 + 0x30) |= 4;
 }
 
-s32 func_151A4ECC() {
-    return 0;
+/* Retire an invalid owner link, submitting the final effect when needed. */
+void func_151A4ECC(struct260 *owner) {
+    PayloadOwnerLink *link = (PayloadOwnerLink *)((u8 *)owner + 0x28);
+    s32 failed = 0;
+
+    if (*(s32 *)link->owner == 0) {
+        failed = 1;
+    }
+    if (link->identity != link->owner[0x3B]) {
+        failed = 1;
+    }
+    if (failed == 0 && *(s32 *)(link->owner + 0x1D4) != 0
+        && (link->owner[0x74] & 0xF) != 0xF) {
+        func_151A3504(link, ((u8 *)owner)[0xC]);
+        failed = 1;
+    }
+    if (failed != 0) {
+        *(s16 *)((u8 *)owner + 0xE) = -1;
+        ((u8 *)owner)[0xD] |= 1;
+    }
 }
 
 void func_151A4F7C(u8 *arg0, u8 *arg1, u8 arg2) {

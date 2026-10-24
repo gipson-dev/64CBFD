@@ -2,6 +2,14 @@
 
 2026-10-24:
 
+[Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):
+complete linked-owner retirement C, 44 words/frame 32/one binding, with two
+checked Boolean spill words. Eight fresh checks per copy before/after,
+all 45 caller words and all 70 original helper words visited; live helper
+stub remains unchanged/uncredited. Total 68.34%, 367 more to 75%.
+
+2026-10-24:
+
 [Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):
 paired child teardown, 44 words each directly from C. Eight fresh checks per
 copy before/after; explicit caller owner arguments leave its full object

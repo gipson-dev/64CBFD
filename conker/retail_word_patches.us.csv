@@ -23455,3 +23455,5 @@ generated_CD5A0,func_150A00F0,0x048,0x3C020000,0xAC200000,R_MIPS_HI16:D_800D3010
 generated_CD5A0,func_150A00F0,0x04C,0x24420078,0xAC200000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3024,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
 generated_CD5A0,func_150A00F0,0x050,0xAC200014,0x24420000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3088,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
 generated_CD5A0,func_150A00F0,0x054,0x24630018,0x24630000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3028,"Normalize fixed-layout record high-address folds, field aliases and independent reset scheduling",,,false
+generated_1D0840,func_151A4ECC,0x070,0xAFA30018,0xA3A3001B,-,-,Normalize Boolean spill to the retail low byte,,,false
+generated_1D0840,func_151A4ECC,0x07C,0x8FA30018,0x93A3001B,-,-,Normalize Boolean spill to the retail low byte,,,false

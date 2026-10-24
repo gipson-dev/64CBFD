@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Linked-owner retirement](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):
+  44 words from semantic C and two checked spill guards; preserve 22 neighbors
+  and strict 117-byte image. Total 68.34%; factory helper still uncredited.
 - [Paired actor child teardown](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):
   44 words each directly from C; qualify both dispatchers and preserve the
   caller object, 42 neighbors and strict 252-byte image. Total 68.32%.

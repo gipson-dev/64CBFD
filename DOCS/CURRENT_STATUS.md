@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a0858ab`; tools are committed before the consumer pin.
+  checkpoint pins tools `d8ec960`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Linked-owner retirement restored with two checked spill words**:
+[Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md).
+`func_151A4ECC` matches all 44 words from complete semantic C plus two
+Boolean word/byte spill guards, not compiler-only. Both copies pass eight
+fresh checks before/after; preserve 22 neighbors and the caller object.
+Total 3,762/5,505 (68.34%), Game 3,089/4,832 (63.93%), zero drift;
+367 more to 75%. Tools `d8ec960` first. Factory helper remains uncredited.
 
 **Paired child teardown installed, 88 words directly from C**:
 [Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md).
