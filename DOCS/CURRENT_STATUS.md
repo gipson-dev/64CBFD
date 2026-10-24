@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `060e110`; tools are committed before the consumer pin.
+  checkpoint pins tools `b844373`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record collision bounce restored directly from C, no guards**:
+[Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md).
+`func_15131B7C` matches all 44 words/frame zero/four bindings under normal
+O2/g3. Recover the typed four-argument callback, height correction, ordered
+damping/reflection, strict settling threshold and motion-flag clears.
+Both copies pass eight fresh checks before/after, all flag bytes, eight
+guest alias layouts, the complete original dispatcher and native32 controls.
+Preserve 30 mixed-owner neighbors, all guard CSV bytes and strict 159-byte
+whole image with closed metadata accounting, zero exclusions. Fresh live
+total 3,777/5,505 (68.61%), Game 3,104/4,832 (64.24%), zero drift;
+352 more to 75%. Tools `b844373` first. Next `func_151BA468`.
+Parent `func_151319C4` C placeholder remains uncredited; query providers
+are bounded. No full-game/hardware claim; host artifacts untouched.
 
 **Actor angle blend restored directly from C, no guards**:
 [Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md).

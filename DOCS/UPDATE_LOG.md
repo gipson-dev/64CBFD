@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Record Bounce Response Direct C Match
+
+[Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):
+recover `func_15131B7C`, all 44 words/frame zero/four bindings directly
+from typed C without guards. Preserve ordered height/velocity updates,
+strict settling, vertical acceleration and late flag clears. Both copies
+pass eight fresh checks before/after, all flag bytes, guest aliases, the
+complete original dispatcher, native32 controls and GNU rebases. Preserve
+30 mixed-owner neighbors, the whole guard CSV and strict 159-byte image
+with both symbol/string exchanges explicitly predicted, zero exclusions.
+Tools `b844373` first. Fresh live total 3,777/5,505 (68.61%), Game
+3,104/4,832 (64.24%), zero drift; 352 more to 75%. Next `func_151BA468`.
+Parent C remains a placeholder; query providers are bounded. Host untouched.
+
 ## 2026-10-24 Actor Angle Blend Direct C Match
 
 [Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):

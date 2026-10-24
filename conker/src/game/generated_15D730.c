@@ -148,8 +148,40 @@ void func_15131B3C(u8 *arg0, s32 arg1) {
     func_151319C4(arg0, arg1, arg0 + 0xB0);
 }
 
-s32 func_15131B7C() {
-    return 0;
+typedef struct {
+    u8 reserved[0x3C];
+    f32 extent;
+    f32 position[3];
+    u8 reserved4C[0xC];
+    f32 velocity[3];
+    f32 verticalAcceleration;
+    u32 flags;
+} BounceRecord15D730;
+typedef struct {
+    u8 flags;
+    s8 kind;
+    u8 reserved[2];
+    f32 damping;
+} BounceResponse15D730;
+extern f32 D_800A3848, D_800A384C;
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+
+/* Reflect and damp collision velocity, then settle motion below the threshold. */
+s32 func_15131B7C(BounceRecord15D730 *record, void *surface, f32 *point, BounceResponse15D730 *response) {
+    record->position[1] = point[1] + record->extent * D_800A3848;
+    record->velocity[0] *= response->damping;
+    record->velocity[1] *= -response->damping;
+    record->velocity[2] *= response->damping;
+    if (fabsf(record->velocity[1]) < D_800A384C) {
+        record->velocity[0] = 0.0f;
+        record->velocity[1] = 0.0f;
+        record->velocity[2] = 0.0f;
+        record->verticalAcceleration = 0.0f;
+        response->flags &= ~1;
+        record->flags &= ~6;
+    }
+    return 1;
 }
 
 void func_15131C2C(u8 *arg0, s32 arg1, u8 arg2) {

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Record collision bounce](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):
+  all 44 words directly from typed C, no guards. Qualify settling boundaries,
+  all flag bytes, aliases, the full original dispatcher and native callback;
+  preserve 30 mixed-owner neighbors and strict 159-byte image. Total 68.61%,
+  352 more to 75%.
 - [Actor angle blend](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):
   all 44 words directly from C, no guards. Qualify float boundaries, the retained
   angle helper, original caller and native C; preserve 14 neighbors and strict

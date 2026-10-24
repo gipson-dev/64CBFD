@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):
+record collision bounce callback, all 44 words directly from typed C, no
+guards. Both copies pass eight fresh checks before/after, float boundaries,
+all response bytes, aliases, the complete original dispatcher and native32
+controls. Preserve 30 mixed-owner neighbors and strict 159-byte full image
+with closed metadata accounting; whole guard CSV unchanged. Tools `b844373`
+first, fresh total 68.61%, 352 more to 75%. Next `func_151BA468`.
+Parent C and the full query-service implementations remain uncredited.
+
+2026-10-24:
+
 [Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):
 actor angle blend, all 44 words directly from typed C without guards.
 Both copies pass eight fresh checks before/after, float/alias boundaries,
