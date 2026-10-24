@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1DD500.s. */
 
@@ -119,6 +120,32 @@ s32 func_151B1B34() {
     return 0;
 }
 
-s32 func_151B1FAC() {
-    return 0;
+/* Only the record payload's identity word and saved key are exposed. */
+typedef struct {
+    s32 value;
+    u8 key;
+} RecordIdentity1DD500;
+
+/* Retarget a saved record identity, or release it for a matching event. */
+void func_151B1FAC(struct260 *record, s32 eventAddress, u8 command) {
+    u8 *owner = (u8 *)record;
+    RecordIdentity1DD500 *state = (RecordIdentity1DD500 *)(owner + 0x28);
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0x2D) {
+        s32 current = state->value;
+        s32 first = *(s32 *)event;
+        if (first == current) {
+            state->value = *(s32 *)(event + 4);
+            state->key = event[9];
+        } else if (*(s32 *)(event + 4) == current) {
+            state->value = first;
+            state->key = event[8];
+        }
+    } else if (code == 0) {
+        if (*(s32 *)event == state->value || state->key == event[4]) {
+            func_1516972C(owner);
+        }
+    }
 }

@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Record identity event](WORKING_NOTES/1714-record-identity-event-match-20261024.md):
+  43 body words/frame 24, eleven checked role/read-order guards, canonical
+  record dispatch and strict 119-byte image. Both copies pass eight fresh
+  prechecks, then two fresh installed checks and six fingerprinted reuses.
+  Adopted-ELF total 68.85%, 339 more to 75%; not compiler-only or gameplay proof.
 - [Lifetime envelope ramps](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
   45 words/frame zero, two checked multiply guards, both copies' fresh suites,
   original caller windows and strict 122-byte image. Adopted-ELF total 68.83%,

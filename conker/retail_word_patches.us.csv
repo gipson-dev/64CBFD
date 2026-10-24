@@ -23640,3 +23640,14 @@ generated_F2820,func_150C5D0C,0x088,0x546B0005,0x55640005,-,-,Derive closed atta
 generated_F2820,func_150C5D0C,0x090,0xAC440000,0xAC430000,-,-,Derive closed attachment identity register roles and commutative comparison operands,,,false
 generated_1CC440,func_151A1E34,0x078,0x03030019,0x00780019,-,-,Derive commutative unsigned lifetime multiply operand order,,,false
 generated_1CC440,func_151A1E34,0x09C,0x01230019,0x00690019,-,-,Derive commutative unsigned lifetime multiply operand order,,,false
+generated_1DD500,func_151B1FAC,0x028,0x8C430000,0x8C440000,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x02C,0x8CA40000,0x8CA30000,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x030,0x54830007,0x54640007,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x050,0x54790013,0x57240013,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x058,0xAC440000,0xAC430000,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x074,0x8C490000,0x8CA30000,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x078,0x8CAA0000,0x8C490000,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x07C,0x112A0005,0x10690005,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x084,0x904B0004,0x904A0004,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x088,0x90AC0004,0x90AB0004,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false
+generated_1DD500,func_151B1FAC,0x08C,0x556C0004,0x554B0004,-,-,"Derive record identity roles, independent read order and commutative comparisons",,,false

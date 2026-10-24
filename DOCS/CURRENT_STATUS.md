@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `01d4808`; tools are committed before the consumer pin.
+  checkpoint pins tools `9129308`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record identity events restored with checked roles and read order**:
+[Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md).
+`func_151B1FAC` matches 43 body words/frame 24/one binding and two alignment
+words, with eleven guards. Preserve the canonical record callback, existing
+release declaration, first-match priority and late key reads. Both copies pass
+eight fresh pre-install checks; two fresh installed checks plus six explicitly
+fingerprinted reuses verify production. Preserve 15 neighbors, one GLOBAL_ASM
+routine, the exact existing caller and strict 119-byte image, zero exclusions.
+Tools `9129308` first. Adopted-native-ELF total 3,790/5,505 (68.85%),
+Game 3,117/4,832 (64.51%), zero drift; 339 more to 75%.
+Next ordinary placeholder `func_150F1020`; existing-C `func_15014094` and
+parser-missed `func_1510D8C0` stay separate. Guarded C, not compiler-only or
+full-provider/gameplay acceptance; host artifacts untouched.
 
 **Lifetime envelope ramps restored with two checked multiply guards**:
 [Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md).

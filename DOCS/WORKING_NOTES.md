@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md):
+record identity callback `func_151B1FAC` installed and adopted, 43 body words/
+frame 24/one binding plus two alignment words, with eleven derived guards.
+Both copies pass eight fresh prechecks, two fresh installed checks and six
+fingerprinted reuses. Cover canonical dispatch, native32, aliases/faults and
+GNU rebases; preserve 15 neighbors, the handwritten routine and strict 119-byte
+image, zero exclusions. Tools `9129308` first; actual native-ELF total 68.85%,
+339 more to 75%. Next `func_150F1020`; existing-C/parser-missed tasks stay separate.
+Guarded C, not compiler-only or full-provider/gameplay acceptance.
+
+2026-10-24:
+
 [Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
 lifetime envelope ramps `func_151A1E34` installed and adopted, all 45 words/
 frame zero/no bindings with two checked commutative multiply guards. Both

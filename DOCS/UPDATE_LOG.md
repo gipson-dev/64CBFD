@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 Record Identity Event Match
+
+[Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md):
+install `func_151B1FAC`, all 43 body words/frame 24/one binding plus two alignment
+words, from complete C and eleven checked role/read-order guards. Keep the
+canonical record callback, existing release interface and store-before-key-read
+order. Both copies pass eight fresh prechecks; two fresh installed checks and
+six fingerprinted reuses verify exact source/object/image identity. Preserve
+15 neighbors, one GLOBAL_ASM routine, the existing caller and strict 119-byte
+image, zero exclusions. Tools `9129308` first. Adopted-native-ELF total
+3,790/5,505 (68.85%), Game 3,117/4,832 (64.51%), zero drift; 339 more to 75%.
+Next `func_150F1020`. Guarded C, not compiler-only or full-provider/gameplay proof.
+
 ## 2026-10-24 Lifetime Envelope Ramps Match
 
 [Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
