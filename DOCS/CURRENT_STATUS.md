@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d8ec960`; tools are committed before the consumer pin.
+  checkpoint pins tools `af5ead1`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Payload-link swap event restored with four checked allocation words**:
+[Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md).
+`func_151932E0` matches its complete 43-word body/frame 24 with four closed
+register-role guards, not compiler-only. Preserve its separate alignment
+word, five neighbors and unchanged caller. Both copies pass eight fresh
+checks before/after, the complete dispatcher and retained release chain.
+Fresh live total 3,763/5,505 (68.36%), Game 3,090/4,832 (63.95%), zero drift;
+366 more to 75%. Tools `af5ead1` first. Host Release/saves/config untouched.
 
 **Linked-owner retirement restored with two checked spill words**:
 [Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md).

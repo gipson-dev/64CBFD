@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-24 Payload Link Swap Event Guarded C Match
+
+[Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
+recover `func_151932E0`, all 43 body words/frame 24 with four checked
+allocation guards. Preserve the separate alignment word and five neighbors.
+Both copies pass eight fresh checks before/after, native32, the complete
+actual dispatcher and retained 56-word release chain. Reproduce the strict
+119-byte full-image prediction without exclusions. Tools `af5ead1` first.
+Fresh live total 3,763/5,505 (68.36%), Game 3,090/4,832 (63.95%), zero drift;
+366 more to 75%. Root README contains aggregate changes only; host untouched.
+
 ## 2026-10-24 Linked Owner Retirement Guarded C Match
 
 [Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):

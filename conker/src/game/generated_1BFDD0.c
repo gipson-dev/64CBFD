@@ -80,6 +80,24 @@ void func_15193234(struct260 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_151932E0() {
-    return 0;
+/* Retarget the payload owner link or release its matching actor. */
+void func_151932E0(struct260 *owner, s32 eventAddress, u8 command) {
+    EmbeddedOwnerLink *link = (EmbeddedOwnerLink *)((u8 *)owner + 0x28);
+    OwnerLinkEvent *event = (OwnerLinkEvent *)eventAddress;
+
+    if (command == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    } else if (command == 0) {
+        u8 *first = event->before;
+        if (first == link->owner || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    }
 }

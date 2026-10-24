@@ -2,9 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1689: 3,762/5,505 exact (68.34%), 1,743 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,612 simple zero-return placeholders, 122 semantic/other definitions and nine parser-unlocated entries. These are source-shape screens, not qualification; `func_1510D8C0` already has a `Gfx *` C definition. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 367 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1690: 3,763/5,505 exact (68.36%), 1,742 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,611 simple zero-return placeholders, 122 semantic/other definitions and nine parser-unlocated entries. These are source-shape screens, not qualification; `func_1510D8C0` already has a `Gfx *` C definition. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 366 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
@@ -66,7 +66,19 @@
 - [x] Qualify and install `func_15171CA0` in Note 1687: all 43 words/frame 32/one binding emit directly from SDK-typed C. Both copies pass six fresh checks before and after installation. Qualify both original caller windows and retained/native allocator; preserve six neighbors and strict 126-byte image across 15,918 inputs. No new guards.
 - [x] Qualify and install `func_150EF7B0` and `func_150EF860` in Note 1688: each 44 words/frame 40/five bindings directly from C. Both tools copies pass eight fresh checks before/after, both complete dispatchers, native boundary probes and the retained 119-word helper chain. Preserve 42 neighbors and the complete 59-function caller object; strict 252-byte image, no guards.
 - [x] Qualify and install `func_151A4ECC` in Note 1689: complete 44-word/frame 32 C with two checked Boolean spill words and one binding. Both copies pass eight fresh checks before/after, the complete actual caller, native boundaries and all original helper words. Preserve 22 neighbors, caller object and strict 117-byte image; factory stub unchanged/uncredited.
+- [x] Qualify and install `func_151932E0` in Note 1690: complete 43-word/frame 24 C with four checked allocation guards, one binding and a separate unchanged alignment word. Both copies pass eight fresh checks before/after, the complete actual dispatcher and retained 56-word release chain. Preserve five neighbors, caller object and strict 119-byte image without exclusions.
 - [ ] Continue triage of `func_1510D8C0` (44 words, existing `Gfx *` semantic body), `func_1518C850` and the remaining 44-word queue. Private screens remain uncredited. Keep the 862-word `func_1508CAD8` owner stub separate.
+
+## Payload Link Swap Event Guarded C Match - 2026-10-24
+
+[Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
+
+- [x] Recover the typed callback, command-0x2D bidirectional pointer/identity replacement and command-zero release test. Reuse local types and guard only four words in one closed A0/V1 register cycle; no relocation or control-flow changes.
+- [x] Pass eight fresh checks per copy before/after: 5,420 guest phases, 240 alias phases, 2,631,680 native cases per optimization and twelve effective wrong-C controls. Preserve all 43 body words, including one unreachable word, and the separate alignment word; no raw complete-state/native-alias claim.
+- [x] Visit every word of the actual 23-word dispatcher in 20,480 phases, validate slot 22 in its 74-entry table and exercise the actual C parent across selector bytes. Keep other callbacks bounded and the caller source/object unchanged.
+- [x] Visit every word in the retained 56-word release/scan/default chain across 120 phases. Preserve signed counts, cached bounds and provider selection; lower services remain bounded, with no full heap/hardware acceptance claim.
+- [x] Verify nine independent GNU links, 120 rebase phases, 866 fired fault prefixes and seven image controls. Preserve five neighbors, all other 6,054 bodies/6,055 addresses and protected data; strict 119-byte image, zero exclusions.
+- [x] Seal 15,930 files / 30 focused inputs / 1,454 objects, preserve the guard prefix and append only four rows. Tools `af5ead1` first; preserve all 1,592 prior mirror dirty paths. Fresh live total 68.36%, 366 more to 75%; README aggregate rows only, host untouched.
 
 ## Linked Owner Retirement Guarded C Match - 2026-10-24
 

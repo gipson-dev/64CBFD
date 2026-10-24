@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Payload-link swap event](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
+  43 words with four checked allocation guards, plus one unchanged alignment
+  word. Preserve five neighbors and the strict 119-byte image. Fresh live
+  total 68.36%; 366 more to 75%.
 - [Linked-owner retirement](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):
   44 words from semantic C and two checked spill guards; preserve 22 neighbors
   and strict 117-byte image. Total 68.34%; factory helper still uncredited.

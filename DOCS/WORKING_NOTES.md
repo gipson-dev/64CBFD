@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
+complete payload-link swap callback, 43 words/frame 24 with four checked
+allocation guards and one separate alignment word. Eight fresh checks per
+copy before/after, full actual dispatcher and 56-word release chain.
+Preserve five neighbors and strict 119-byte image. Tools `af5ead1` first;
+fresh live total 68.36%, 366 more to 75%. Host untouched.
+
+2026-10-24:
+
 [Note 1689](WORKING_NOTES/1689-linked-owner-retirement-match-20261024.md):
 complete linked-owner retirement C, 44 words/frame 32/one binding, with two
 checked Boolean spill words. Eight fresh checks per copy before/after,
