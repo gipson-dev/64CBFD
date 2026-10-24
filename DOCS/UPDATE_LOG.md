@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-24 Lifetime Envelope Ramps Match
+
+[Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
+install `func_151A1E34`, all 45 words/frame zero/no bindings from complete C
+plus two checked commutative multiply guards. Preserve four signed lifetime
+gates and later-ramp priority. Both copies pass eight fresh checks before/after,
+bounded original callers, native32, aliases/faults and GNU links. Preserve
+38 neighbors, six GLOBAL_ASM routines and strict 122-byte image, zero exclusions.
+Tools `01d4808` first. Adopted-native-ELF total 3,789/5,505 (68.83%),
+Game 3,116/4,832 (64.49%), zero drift; 340 more to 75%.
+Next `func_151B1FAC`. Guarded C, not compiler-only or full-parent/gameplay proof.
+
 ## 2026-10-24 Attachment Identity Event Match
 
 [Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md):

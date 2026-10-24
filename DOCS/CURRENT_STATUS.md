@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e451e2c`; tools are committed before the consumer pin.
+  checkpoint pins tools `01d4808`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Lifetime envelope ramps restored with two checked multiply guards**:
+[Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md).
+`func_151A1E34` matches all 45 words/frame zero/no bindings. Both tools copies
+pass eight fresh checks before/after, signed timer coverage, bounded original
+caller windows, native32, aliases/faults and GNU links. Preserve 38 neighbors,
+six GLOBAL_ASM routines and the strict 122-byte image, zero exclusions.
+Tools `01d4808` first. Adopted-native-ELF total 3,789/5,505 (68.83%),
+Game 3,116/4,832 (64.49%), zero drift; 340 more to 75%.
+Next ordinary placeholder `func_151B1FAC`; existing-C `func_15014094` and
+parser-missed `func_1510D8C0` stay separate. Guarded C, not compiler-only or
+full-parent/provider/gameplay acceptance; host artifacts untouched.
 
 **Attachment identity event restored with five checked operand guards**:
 [Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md).

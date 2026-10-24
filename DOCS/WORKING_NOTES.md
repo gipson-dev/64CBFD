@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1713](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
+lifetime envelope ramps `func_151A1E34` installed and adopted, all 45 words/
+frame zero/no bindings with two checked commutative multiply guards. Both
+copies pass eight fresh checks before/after, original caller windows, native32,
+aliases/faults and GNU links. Preserve 38 neighbors, six GLOBAL_ASM routines
+and strict 122-byte image, zero exclusions. Tools `01d4808` first; adopted-native
+ELF total 68.83%, 340 more to 75%. Next `func_151B1FAC`; existing-C/parser-missed
+tasks stay separate. Guarded C, not compiler-only or full-parent/gameplay proof.
+
+2026-10-24:
+
 [Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md):
 attachment identity callback `func_150C5D0C` installed and adopted, 43 body
 words/frame 24/one binding, five checked operand guards and two alignment

@@ -206,8 +206,23 @@ s32 func_151A1998() {
     return 0;
 }
 
-s32 func_151A1E34() {
-    return 0;
+/* Later matching lifetime ramps intentionally override earlier ramps. */
+void func_151A1E34(u8 *effect) {
+    s16 *parameters = (s16 *)(effect + 0x50);
+    s32 time = *(s16 *)(effect + 0x38);
+
+    if (parameters[2] < time) {
+        effect[0x3F] = parameters[0] * (parameters[1] - time);
+    }
+    if (parameters[5] < time) {
+        *(s16 *)(effect + 0x34) = *(s16 *)(effect + 0x36) = parameters[3] * (parameters[4] - time);
+    }
+    if (time < parameters[6]) {
+        effect[0x3F] = parameters[7] * time;
+    }
+    if (time < parameters[8]) {
+        *(s16 *)(effect + 0x34) = *(s16 *)(effect + 0x36) = parameters[9] * time;
+    }
 }
 
 s32 func_151A1EE8() {

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Lifetime envelope ramps](WORKING_NOTES/1713-lifetime-envelope-ramps-match-20261024.md):
+  45 words/frame zero, two checked multiply guards, both copies' fresh suites,
+  original caller windows and strict 122-byte image. Adopted-ELF total 68.83%,
+  340 more to 75%; guarded C, not compiler-only or gameplay acceptance.
 - [Attachment identity event](WORKING_NOTES/1712-attachment-event-match-20261024.md):
   43 body words/frame 24/one binding plus two alignment words; five checked
   operand guards. Both copies pass eight fresh checks before/after, native32,
