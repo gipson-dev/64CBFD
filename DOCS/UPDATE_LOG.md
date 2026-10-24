@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Four-Head Lookup Match
+
+[Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):
+install `func_151AE590`, all 44 words/frame zero/four bindings from complete
+43-word C plus 37 derived address/allocation/loop rows. Preserve column-first
+search, full incoming home, next capture on success and dead move. Both
+copies pass eight fresh checks before/after, bounded original caller,
+native32 controls, six aliases, faults and independent GNU rebases.
+Preserve 32 neighbors/six handwritten routines, old guard prefix and strict
+151-byte image (140 code/11 metadata), one closed symbol cycle, zero exclusions.
+Tools `f2a63f5` first; actual native adoption/recount gives 3,786/5,505 (68.77%),
+Game 3,113/4,832 (64.42%), zero drift; 343 more to 75%. Next `func_1517CFC4`.
+Guarded C, not compiler-only or full-parent/math/gameplay acceptance.
+
 ## 2026-10-24 Four-Head Lookup Private Candidate
 
 [Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md):

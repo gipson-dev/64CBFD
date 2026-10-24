@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Four-head lookup](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):
+  complete 43-word C plus 37 derived rows matches 44/frame zero/four bindings.
+  Preserve column-first search, incoming home, next capture and dead move.
+  Both copies pass eight fresh checks before/after, bounded caller, native32,
+  aliases, faults and rebases. Preserve 32 neighbors/six handwritten routines
+  and strict 151-byte image with its closed symbol cycle, zero exclusions.
+  Fresh adopted-ELF total 68.77%, 343 more to 75%; not compiler-only or full-parent/
+  math/gameplay acceptance. Preliminary private work remains in Note 1709.
 - [Linked-record event](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
   complete 42-word C normalizes to 44/frame 24/one binding with nine checked
   setup/return rows and two derived RA-load copies. Preserve the canonical

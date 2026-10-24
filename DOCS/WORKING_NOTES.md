@@ -2,6 +2,19 @@
 
 2026-10-24:
 
+[Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):
+four-head lookup `func_151AE590` installed and adopted, 44 words/frame zero/
+four bindings. Complete 43-word C normalizes with 37 derived guard rows,
+preserving column-first priority, full incoming home, next load on hit and
+the dead move. Both copies pass eight fresh checks before/after, original
+caller windows, native32, six aliases, faults and GNU rebases. Preserve
+32 neighbors, six handwritten routines and strict 151-byte image with one
+closed metadata cycle, zero exclusions. Tools `f2a63f5` first. Fresh total
+68.77%, 343 more to 75%; next `func_1517CFC4`. Not compiler-only or full-parent/
+math/gameplay acceptance. Note 1709 remains the preliminary uncredited record.
+
+2026-10-24:
+
 [Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md):
 four-head lookup `func_151AE590`, private and uncredited. Complete 43-word C
 has a derived 44-word recipe equal to retail, with closed register lifetimes,

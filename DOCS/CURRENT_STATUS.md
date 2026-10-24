@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c750161`; tools are committed before the consumer pin.
+  checkpoint pins tools `f2a63f5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,14 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Current private audit, not another installed match**:
-[Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md).
-`func_151AE590`'s complete 43-word C now has a derived 44-word recipe that
-reproduces retail bytes. All byte keys across 2,048 valid-list cases agree
-with retail and the column-first model; 43 raw-word perturbations reject.
-Native32, aliases/faults, independent rebases, caller/owner/padder and actual
-Make/strict-image gates remain open. Nothing installed or credited; resume
-those gates before changing the source or guards. Counts below are unchanged.
+**Four-head lookup restored with checked loop/allocation guards**:
+[Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md).
+`func_151AE590` matches all 44 words/frame zero/four bindings from complete
+43-word C plus 37 derived rows, including its moved existing return delay.
+Both copies pass eight fresh checks before/after, all key bytes, six aliases,
+bounded original caller windows, native32 controls, faults and GNU rebases.
+Preserve 32 neighbors, six handwritten routines, old guards and strict
+151-byte image (140 code, 11 metadata), including one closed symbol/string
+cycle, zero exclusions. Tools `f2a63f5` first. Fresh adopted-native-ELF total
+3,786/5,505 (68.77%), Game 3,113/4,832 (64.42%), zero drift; 343 more to 75%.
+Next audit `func_1517CFC4`; existing `func_15014094` stays separate.
+Guarded semantic C, not compiler-only or full-parent/math/gameplay acceptance.
+The preliminary uncredited work is retained in Note 1709; host is untouched.
 
 **Linked-record event restored with checked setup/return paths**:
 [Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md).

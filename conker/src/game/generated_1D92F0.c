@@ -136,8 +136,43 @@ s32 func_151AE3A8() {
     return 0;
 }
 
-s32 func_151AE590() {
-    return 0;
+/* Only selected head cells and the node's link/key prefix are known here. */
+typedef struct LookupNode1D92F0 LookupNode1D92F0;
+struct LookupNode1D92F0 {
+    u8 reserved00[8];
+    LookupNode1D92F0 *next;
+    u8 reserved0C[4];
+    u8 key;
+};
+typedef struct {
+    LookupNode1D92F0 *cells[104];
+} LookupRow1D92F0;
+
+extern u8 D_800DCE50[0x340];
+extern s32 D_800A9270[2];
+
+/* Search selected columns first, scanning both rows before the next column. */
+LookupNode1D92F0 *func_151AE590(u8 key) {
+    LookupNode1D92F0 *node, *next;
+    u8 outer, row;
+    s32 column;
+
+    outer = 0;
+    do {
+        column = D_800A9270[outer];
+        row = 0;
+        do {
+            node = ((LookupRow1D92F0 *)D_800DCE50)[row].cells[column];
+            while (node != NULL) {
+                next = node->next;
+                if (key == node->key) return node;
+                node = next;
+            }
+            row++;
+        } while (row < 2);
+        outer++;
+    } while (outer < 2);
+    return NULL;
 }
 
 void func_151AE640(u8 *arg0, s32 *arg1, u8 arg2) {
