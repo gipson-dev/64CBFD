@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Actor class dispatcher](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):
+  all 44 words directly from C, no guards. Qualify all ID bytes/classes,
+  world boundaries, actual selector/mask helpers, full caller and native C;
+  preserve the selector neighbor, all 328 caller-owner functions and strict
+  133-byte image. Total 68.66%, 349 more to 75%; callbacks remain bounded.
 - [Dual-point motion callback](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
   complete 44-word typed C plus 20 checked address-role/return-scheduling
   guards. Qualify float order, twelve timestep aliases, the original callback

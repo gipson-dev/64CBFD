@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8e2e877`; tools are committed before the consumer pin.
+  checkpoint pins tools `2266dcb`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor class dispatcher restored directly from C, no guards**:
+[Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md).
+`func_15192800` matches all 44 words/frame 48/six bindings under normal
+O2/g3. Recover its NULL/type gates, class/world-selected callback column,
+unused word home and void return; explicitly declare that ABI in the actual
+caller. Both copies pass eight fresh checks before/after, all actor ID bytes,
+all 32 class values, the original selector/mask helpers, full original caller
+and native32 controls. Preserve the selector neighbor, all 328 caller-owner
+functions, the whole guard CSV and strict 133-byte image without exclusions.
+Fresh live total 3,780/5,505 (68.66%), Game 3,107/4,832 (64.30%), zero drift;
+349 more to 75%. Tools `2266dcb` first. Next `func_151DD8C0`.
+Callback bodies remain bounded; no gameplay/hardware claim, host untouched.
 
 **Dual-point motion callback restored with checked return scheduling**:
 [Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md).

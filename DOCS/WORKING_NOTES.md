@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):
+actor class dispatcher, all 44 words/frame 48/six bindings directly from C,
+no guards. Both copies pass eight fresh checks before/after, all ID bytes
+and classes, original selector/mask helpers, the full caller and actual
+native C parent. Preserve the selector neighbor, all 328 caller-owner
+functions, whole CSV and strict 133-byte image. Tools `2266dcb` first;
+fresh total 68.66%, 349 more to 75%. Next `func_151DD8C0`, still a private
+unqualified screen. Callback bodies remain bounded; host untouched.
+
+2026-10-24:
+
 [Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
 dual-point motion callback, all 44 words from typed semantic C plus 20
 derived address-role/return-scheduling guards. Both copies pass eight fresh

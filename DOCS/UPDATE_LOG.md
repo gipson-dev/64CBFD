@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-24 Actor Class Dispatch Direct C Match
+
+[Note 1703](WORKING_NOTES/1703-callback-class-dispatch-direct-match-20261024.md):
+recover `func_15192800`, all 44 words/frame 48/six bindings directly from C
+without guards. Preserve NULL/type gates, class/world callback selection,
+the unused word home and void-return ABI. Add the actual caller's explicit
+prototype without changing its object. Both copies pass eight fresh checks
+before/after, all actor IDs/classes, original selector/mask helpers, the
+full caller, native32 controls and GNU rebases. Preserve the selector
+neighbor, all 328 caller-owner functions, the whole guard CSV and strict
+133-byte image without exclusions. Tools `2266dcb` first. Fresh live total
+3,780/5,505 (68.66%), Game 3,107/4,832 (64.30%), zero drift;
+349 more to 75%. Next `func_151DD8C0`, private/unqualified/uncredited.
+Callbacks remain bounded; no gameplay/hardware claim or host changes.
+
 ## 2026-10-24 Dual-Point Motion Match
 
 [Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
