@@ -2,9 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1685: 3,757/5,505 exact (68.25%), 1,748 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,617 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 372 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1686: 3,758/5,505 exact (68.27%), 1,747 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,616 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 371 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
@@ -62,7 +62,18 @@
 - [x] Qualify and install `func_150A00F0` in Note 1683: complete 46-word/frame-zero semantic C normalizes to 43 words/seventeen bindings with twenty checked rows and three redundant-high-load folds. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the complete caller/native body; preserve four neighbors, the entire six-function caller object and strict 303-byte image across 15,902 inputs.
 - [x] Qualify and install `func_150F00EC` in Note 1684: all 43 words/frame zero/no bindings emit directly from C. Both copies pass six fresh pre-install and six fresh installed checks. Qualify the actual original slot-30 call window; preserve 43 neighbors, the caller object and strict 134-byte image across 15,906 inputs. No new guards.
 - [x] Qualify and install `func_150FAA40` in Note 1685: all 43 words/frame 72/eight bindings emit directly from C. Both copies pass six fresh checks before and after installation. Qualify both original caller windows and retained factory/memcpy; preserve seventeen neighbors, both caller objects and strict 140-byte image across 15,910 inputs. No new guards.
-- [ ] Qualify queued `func_1512D238` (43 words, placeholder/42 differences): establish its complete interface, helper semantics, access order and actual callers, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+- [x] Qualify and install `func_1512D238` in Note 1686: all 43 words/frame 64/five bindings emit directly from C. Both copies pass six fresh checks before and after installation. Qualify the complete retail/native variadic helper and original caller window; preserve five neighbors, the caller object and strict 135-byte image across 15,914 inputs. No new guards.
+- [ ] Qualify queued `func_15171CA0` (43 words, placeholder/42 differences): establish its complete allocation/interface and caller semantics, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+
+## Four-Entry Pointer And Count Loader Direct C Match - 2026-10-23
+
+[Note 1686](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md):
+
+- [x] Recover four pointer/count stores using the actual signed size output, variadic depth/path interface, unsigned division by 24 and no-argument void return. Retain null-result writes, the unreachable divisor break, original assembly, shared headers and guard manifest.
+- [x] Pass six fresh checks before and after installation per tools copy: 4,096 ordinary guest phases, 2,304 connected-helper phases, 98,304 native calls per optimization with the actual C helper, eleven effective wrong-C controls, 33 GNU links, 176 rebase/alias cases, 832 fired fault prefixes and nine image controls.
+- [x] Execute all 61 retail loader words and the actual native variadic C body for depth two; bound lower lookup/fetch providers. Qualify the six-word original caller window over 32 phases and preserve its complete object. Do not claim the full placeholder parent or whole asset pipeline.
+- [x] Reproduce the strict 135-byte image: 134 code bytes and one size byte, zero exclusions. Preserve five neighbors, all other 6,054 bodies/6,055 addresses and protected data across 15,914 inputs / 1,454 objects.
+- [x] Recount total 3,758/5,505 (68.27%), Game 3,085/4,832 (63.85%), 1,747 different/zero drift. Tools `19a576c` first; preserve all 1,584 older-mirror dirty paths, adding only two task files. README aggregates only; host Release untouched. The 75% goal remains incomplete, with 371 more matches needed.
 
 ## One-Shot Owner Link Payload Direct C Match - 2026-10-23
 

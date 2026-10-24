@@ -12,8 +12,18 @@ s32 func_1512D070() {
     return 0;
 }
 
-s32 func_1512D238() {
-    return 0;
+extern void *D_800DC280[];
+void *func_1502B5C8(s32 *, u32, ...);
+
+/* Load four entries and record their counts of 24-byte elements. */
+void func_1512D238(void) {
+    s32 size;
+    s32 index;
+
+    for (index = 0; index < 4; index++) {
+        D_800DC280[index] = func_1502B5C8(&size, 2, 27, index);
+        D_800DC290[index] = (u32)size / 24;
+    }
 }
 
 void func_1512D2E4(u8 *arg0, s32 arg1) {

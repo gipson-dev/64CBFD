@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-23 Four-Entry Pointer And Count Loader Direct C Match
+
+[Note 1686](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md):
+recover `func_1512D238`, all 43 words/frame 64/five bindings directly from C.
+Preserve the four depth-two variadic loads, unsigned size/24 counts,
+unconditional null-result stores and six saved-register lifetimes. Both
+copies pass six fresh checks before and after installation. Execute all 61
+retail helper words and its actual native C body; qualify the original caller
+window and bound the lower asset providers. Preserve five neighbors, the
+caller object and strict 135-byte image without exclusions or new guards.
+Tools `19a576c` first; 15,914 inputs sealed. Total 3,758/5,505 (68.27%),
+Game 3,085/4,832 (63.85%), zero drift; 371 more to 75%.
+Next `func_15171CA0` queued only. Host Release, saves/configuration untouched.
+
 ## 2026-10-23 One-Shot Owner Link Payload Direct C Match
 
 [Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md):

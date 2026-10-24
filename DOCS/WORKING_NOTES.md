@@ -2,6 +2,17 @@
 
 2026-10-23:
 
+**Four-entry pointer/count loader installed: all 43 words directly from C**:
+[Note 1686](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md).
+Recover `func_1512D238`, frame 64/five bindings, with no guards. Both copies
+pass six fresh checks before and after installation. Qualify the complete
+retail/native variadic helper and original caller window; preserve five
+neighbors, the caller object and strict 135-byte image across 15,914 inputs.
+Tools `19a576c` first. Total 3,758/5,505 (68.27%), 371 more to 75%.
+Next `func_15171CA0` queued only. Host Release frozen.
+
+2026-10-23:
+
 **One-shot owner-link payload installed: all 43 words directly from C**:
 [Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md).
 Recover `func_150FAA40`, frame 72/eight bindings, with no guards. Both copies

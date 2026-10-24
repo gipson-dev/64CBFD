@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Four-entry pointer/count loader](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md):
+  all 43 words/frame 64 directly from C, no guards. Qualify the actual
+  variadic helper and caller window; preserve five neighbors and the strict
+  135-byte image. Total 3,758/5,505 (68.27%).
 - [One-shot owner-link payload](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md):
   all 43 words/frame 72 directly from C, no guards. Qualify both original
   callers and the retained factory/memcpy; preserve seventeen neighbors and

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7027bcb`; tools are committed before the consumer pin.
+  checkpoint pins tools `19a576c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Four-entry pointer/count loader installed: all 43 words directly from C**:
+[Note 1686](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md).
+Recover `func_1512D238`, frame 64/five bindings, with the actual variadic
+helper interface, unsigned size division and unconditional pointer/count
+writes. No guards. Both copies pass six fresh checks before and after
+installation. Execute the complete original helper and its native C body;
+qualify the original caller window without claiming the full parent.
+Preserve five neighbors, the caller object and strict 135-byte image across
+15,914 inputs. Tools `19a576c` first. Total 3,758/5,505 (68.27%),
+Game 3,085/4,832 (63.85%), zero drift; 371 more to 75%.
+Next `func_15171CA0` queued only. Host Release, saves/configuration untouched.
 
 **One-shot owner-link payload installed: all 43 words directly from C**:
 [Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md).
