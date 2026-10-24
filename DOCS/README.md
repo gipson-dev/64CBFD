@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor angle blend](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):
+  all 44 words directly from C, no guards. Qualify float boundaries, the retained
+  angle helper, original caller and native C; preserve 14 neighbors and strict
+  163-byte image with closed metadata accounting. Total 68.59%, 353 more to 75%.
 - [Actor reference event](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):
   complete 43-word C body with one commutative branch guard and one preserved
   alignment word. Qualify the full retained dispatcher/release chain, aliases

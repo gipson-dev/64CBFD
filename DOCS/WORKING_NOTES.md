@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):
+actor angle blend, all 44 words directly from typed C without guards.
+Both copies pass eight fresh checks before/after, float/alias boundaries,
+retained angle helper, complete original caller and native32 controls.
+Preserve 14 neighbors, the whole guard CSV and strict 163-byte image with
+explicit two-name metadata accounting. Tools `060e110` first; fresh live
+total 68.59%, 353 more to 75%. Next `func_15131B7C`.
+Parent C remains a placeholder and uncredited; no gameplay/hardware claim.
+
+2026-10-24:
+
 [Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):
 actor reference/tag event, all 43 body words from semantic C plus one checked
 branch-operand guard, one alignment word preserved. Both copies pass eight

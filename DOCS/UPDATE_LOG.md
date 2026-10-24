@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Actor Angle Blend Direct C Match
+
+[Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md):
+recover `func_1512C150`, all 44 words/frame 24/five bindings directly from
+C, no guards. Preserve the upper-only phase clamp, completion sentinel and
+late reads around the retained angle helper. Both copies pass eight fresh
+checks before/after, the complete original caller, float/native32 controls
+and GNU rebases. Preserve 14 neighbors, the whole guard CSV and strict
+163-byte image, including a closed two-name serialization exchange with no
+exclusions. Tools `060e110` first. Fresh live total 3,776/5,505 (68.59%),
+Game 3,103/4,832 (64.22%), zero drift; 353 more to 75%.
+Next `func_15131B7C`; original caller's C placeholder remains uncredited.
+No gameplay/hardware claim; host Release, saves and configuration untouched.
+
 ## 2026-10-24 Actor Reference Event Match
 
 [Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):

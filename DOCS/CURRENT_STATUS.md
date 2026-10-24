@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `3f7fb09`; tools are committed before the consumer pin.
+  checkpoint pins tools `060e110`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor angle blend restored directly from C, no guards**:
+[Note 1699](WORKING_NOTES/1699-angle-blend-update-direct-match-20261024.md).
+`func_1512C150` matches all 44 words/frame 24/five bindings under normal
+O2/g3. Preserve the upper-only blend clamp, completion sentinel/flag clear,
+one-fold angle helper and late post-call reads. Both copies pass eight fresh
+checks before/after, float boundaries, original caller, native32 and GNU
+rebases. Preserve 14 neighbors, all guard CSV bytes and a strict 163-byte
+image, including an explicitly predicted two-name metadata exchange with
+zero exclusions. Fresh live total 3,776/5,505 (68.59%), Game 3,103/4,832
+(64.22%), zero drift; 353 more to 75%. Tools `060e110` first.
+Next `func_15131B7C`; parent `func_1512C068` remains a placeholder and
+uncredited. No full-game/hardware claim; host artifacts untouched.
 
 **Actor reference event restored with one checked branch word**:
 [Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md).

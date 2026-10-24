@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/157840.s. */
 
@@ -53,8 +54,22 @@ s32 func_1512C068() {
     return 0;
 }
 
-s32 func_1512C150() {
-    return 0;
+extern f32 D_800A3694, D_800A3698;
+f32 func_15048A70(f32 current, f32 target);
+
+/* Advance the angle blend, then mark completion or apply one wrapped delta. */
+void func_1512C150(struct108 *actor) {
+    f32 delta;
+
+    actor->unk5CC += D_800A3694;
+    actor->unk5CC = actor->unk5CC > 1.0f ? 1.0f : actor->unk5CC;
+    if (actor->unk5CC == 1.0f) {
+        actor->unk384 = D_800A3698;
+        actor->unk240 &= ~2;
+    } else {
+        delta = func_15048A70(actor->unk384, actor->unk37C);
+        actor->unk384 += delta * actor->unk5CC;
+    }
 }
 
 void func_1512C200(s32 arg0) {
