@@ -2,6 +2,16 @@
 
 2026-10-24:
 
+[Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):
+actor reference/tag event, all 43 body words from semantic C plus one checked
+branch-operand guard, one alignment word preserved. Both copies pass eight
+fresh checks before/after, full retained dispatcher/release routing, native C,
+aliases and actual guard corruptions. Preserve five neighbors and strict
+119-byte image. Tools `3f7fb09` first; fresh total 68.57%, 354 more to 75%.
+Next `func_1512C150`; not compiler-only, no gameplay/hardware claim.
+
+2026-10-24:
+
 [Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
 owner reference/tag event, all 41 body words directly from C without guards,
 three preserved alignment words. Both copies pass eight fresh checks before/

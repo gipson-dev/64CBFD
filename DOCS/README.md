@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Actor reference event](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):
+  complete 43-word C body with one commutative branch guard and one preserved
+  alignment word. Qualify the full retained dispatcher/release chain, aliases
+  and native C; strict 119-byte image. Total 68.57%, 354 more to 75%.
 - [Owner paired-reference event](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
   all 41 body words directly from C, no guards, plus three preserved alignment
   words. Qualify byte commands, late tag reads, the original dispatcher and

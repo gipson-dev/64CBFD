@@ -23493,3 +23493,4 @@ generated_CBAF0,func_1509E640,0x074,0x8CC5000C,0x1000000A,-,-,Restore derived ad
 generated_CBAF0,func_1509E640,0x078,0x10000009,0x24020001,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
 generated_CBAF0,func_1509E640,0x07C,0x24020001,0x8CC40008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
 generated_CBAF0,func_1509E640,0x084,0x8CC40008,0x00002825,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_E2880,func_150B5840,0x088,0x548A0005,0x55440005,-,-,Preserve retail commutative reference-equality branch operand order,,,false

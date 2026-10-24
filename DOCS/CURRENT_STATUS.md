@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ce6299b`; tools are committed before the consumer pin.
+  checkpoint pins tools `3f7fb09`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor reference event restored with one checked branch word**:
+[Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md).
+`func_150B5840` matches all 43 body words/frame 24/one binding, preserving
+one alignment word. Complete semantic C needs only a commutative branch-
+operand guard, not a profile or scheduling change; not compiler-only.
+Both copies pass eight fresh checks before/after, all selector bytes through
+the retained 23-word dispatcher, the 28-word release helper and actual native
+C parent/root/helper checks. Preserve five neighbors, the old guard prefix
+and strict 119-byte image without exclusions. Fresh live total 3,775/5,505
+(68.57%), Game 3,102/4,832 (64.20%), zero drift; 354 more to 75%.
+Tools `3f7fb09` first. Next `func_1512C150`; private screens remain uncredited.
+No gameplay/hardware claim; host Release, saves and configuration untouched.
 
 **Owner paired-reference event restored directly from C, no guards**:
 [Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md).

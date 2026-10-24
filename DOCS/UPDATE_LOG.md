@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-24 Actor Reference Event Match
+
+[Note 1698](WORKING_NOTES/1698-owner-reference-event-match-20261024.md):
+recover `func_150B5840`, all 43 body words/frame 24/one binding from complete
+semantic C and one checked commutative branch word, plus one preserved
+alignment word. Both copies pass eight fresh checks before/after, the full
+retained dispatcher and release helper, raw/private aliases, native32 and
+actual guard corruptions. Preserve five neighbors, the old guard prefix and
+strict 119-byte image without exclusions. Tools `3f7fb09` first. Fresh live
+total 3,775/5,505 (68.57%), Game 3,102/4,832 (64.20%), zero drift;
+354 more to 75%. Not compiler-only or gameplay acceptance; host untouched.
+
 ## 2026-10-24 Owner Pair Event Direct C Match
 
 [Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
