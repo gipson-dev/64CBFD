@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a6facec`; tools are committed before the consumer pin.
+  checkpoint pins tools `88fe8e9`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Paired-reference event handler restored with five checked allocation words**:
+[Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md).
+`func_15169850` matches its complete 41-word body/frame 24/one binding,
+plus three unchanged alignment words in the 44-word slot. Five guards close
+one v0/v1 allocation cycle; this is semantic C, not compiler-only. Both copies
+pass eight fresh checks before/after; preserve 41 neighbors and strict
+108-byte image. Scan all 27 direct call sites, execute two complete original
+callers and the retained 28-word release helper with bounded lower providers.
+Fresh live total 3,771/5,505 (68.50%), Game 3,098/4,832 (64.11%), zero drift;
+358 more to 75%. Tools `88fe8e9` first; existing caller ABI unchanged.
+Host Release, saves and configuration untouched.
 
 **Two point sound-position callbacks restored directly from C, no guards**:
 [Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md).

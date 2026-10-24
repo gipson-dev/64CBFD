@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 Paired Reference Event Match
+
+[Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):
+recover `func_15169850` from its empty typed placeholder. Complete 41-word
+body/frame 24/one binding, five checked words closing one v0/v1 allocation
+cycle, and three preserved alignment words. Keep the public five-argument
+ABI, command-zero short circuit and command-0x2D late tag reads. Both copies
+pass eight fresh checks before/after; preserve 41 neighbors, historical guard
+prefix and strict 108-byte image without exclusions. Tools `88fe8e9` first.
+Fresh live total 3,771/5,505 (68.50%), Game 3,098/4,832 (64.11%), zero drift;
+358 more to 75%. Lower providers and full remaining parents stay unclaimed;
+host Release, saves and configuration untouched.
+
 ## 2026-10-24 Point Sound Position Direct C Match
 
 [Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):

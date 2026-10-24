@@ -478,6 +478,23 @@ void func_15169824(struct102 *arg0) {
     func_10004074(arg0);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15169850.s. */
-void func_15169850(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4) {
+/* Release a matching owner, or exchange a paired reference and its identity tag. */
+void func_15169850(s32 pairAddress, u8 command, s32 valueAddress, s32 tagAddress, s32 owner) {
+    s32 *pair = (s32 *)pairAddress;
+    s32 *value = (s32 *)valueAddress;
+    u8 *tag = (u8 *)tagAddress;
+
+    if (command == 0) {
+        if ((pair[0] == *value) || (((u8 *)pair)[4] == *tag)) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        if (pair[0] == *value) {
+            *value = pair[1];
+            *tag = ((u8 *)pair)[9];
+        } else if (pair[1] == *value) {
+            *value = pair[0];
+            *tag = ((u8 *)pair)[8];
+        }
+    }
 }

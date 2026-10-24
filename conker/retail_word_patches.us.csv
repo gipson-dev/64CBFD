@@ -23461,3 +23461,8 @@ generated_1BFDD0,func_151932E0,0x028,0x8C430000,0x8C440000,-,-,Normalize closed 
 generated_1BFDD0,func_151932E0,0x02C,0x8CA40000,0x8CA30000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
 generated_1BFDD0,func_151932E0,0x050,0x54790013,0x57240013,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
 generated_1BFDD0,func_151932E0,0x058,0xAC440000,0xAC430000,-,-,Normalize closed embedded-owner pointer register cycle and equality operand order,,,false
+game_1944C0,func_15169850,0x058,0x8C820000,0x8C830000,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
+game_1944C0,func_15169850,0x05C,0x8CC30000,0x8CC20000,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
+game_1944C0,func_15169850,0x060,0x54430007,0x54620007,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
+game_1944C0,func_15169850,0x080,0x55630005,0x55620005,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
+game_1944C0,func_15169850,0x088,0xACC20000,0xACC30000,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false

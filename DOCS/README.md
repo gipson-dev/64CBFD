@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Paired-reference event handler](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):
+  complete 41-word body with five checked allocation guards and three unchanged
+  alignment words. Preserve 41 neighbors and strict 108-byte image; qualify
+  original callers and retained release routing. Fresh live total 68.50%.
 - [Point sound-position callbacks](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):
   all 44 words each directly from typed C, no guards. Qualify signed indices,
   original caller windows and the real retained helper; preserve 67 neighbors

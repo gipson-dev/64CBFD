@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):
+paired-reference release/exchange events, complete 41-word body with five
+allocation guards and three separate alignment words. Both copies pass eight
+fresh checks before/after; raw C semantics, ordered aliases, original callers
+and retained release routing qualified. Preserve 41 neighbors and strict
+108-byte image. Tools `88fe8e9` first; total 68.50%, 358 more to 75%.
+
+2026-10-24:
+
 [Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):
 two signed-index point sound refresh callbacks, each 44 words directly from
 C without guards. Both copies pass eight fresh checks before/after; native
