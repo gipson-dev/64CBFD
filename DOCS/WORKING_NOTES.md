@@ -2,6 +2,19 @@
 
 2026-10-24:
 
+[Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
+linked-record event, complete 42-word C normalizes to 44/frame 24/one binding
+using nine checked setup/return rows and two copies of its existing RA load.
+Keep the canonical callback ABI, seven live pointer reads, late eighth reload
+and conditional helper call. Both copies pass eight fresh checks before/after,
+the full original dispatcher, native32, aliases, faults and GNU rebases.
+Preserve sixteen neighbors, caller object, old guard prefix and strict
+132-byte image, zero exclusions. Tools `c750161` first; fresh total 68.76%,
+344 more to 75%. Next audit `func_151AE590`. Guarded C, not compiler-only;
+the large helper and gameplay remain unqualified.
+
+2026-10-24:
+
 [Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):
 owner-vector descriptor, all 44 words/frame 72/seven bindings directly from
 C, no guards. Preserve the full preset, identity snapshot, eight untouched

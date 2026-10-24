@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Linked-record event](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
+  complete 42-word C normalizes to 44/frame 24/one binding with nine checked
+  setup/return rows and two derived RA-load copies. Preserve the canonical
+  callback ABI and late record-pointer reads; qualify the full dispatcher,
+  native32, aliases and faults. Sixteen neighbors, old guard bytes and the
+  strict 132-byte image pass, zero exclusions. Total 68.76%, 344 more to 75%;
+  not compiler-only or full-helper/gameplay acceptance.
 - [Owner-vector descriptor](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):
   all 44 words/frame 72/seven bindings directly from C, no guards. Preserve
   the complete preset and unspecified packet bytes; type the actual caller

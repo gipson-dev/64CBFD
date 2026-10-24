@@ -54,8 +54,34 @@ void func_150F884C(u8 arg0, s32 arg1) {
     func_151494E0(value, 0x3F);
 }
 
-s32 func_150F887C() {
-    return 0;
+typedef struct {
+    s32 reference;
+    u8 tag, reserved05[3];
+    u8 selected, reserved09[3];
+    u8 *records[8];
+} LinkedRecordGroup124920;
+
+s32 func_150F892C();
+
+/* Select the final linked record or forward a matching reference event. */
+void func_150F887C(struct260 *owner, s32 packetAddress, u8 command) {
+    LinkedRecordGroup124920 *group;
+    u8 i;
+
+    if (command == 0x42) {
+        group = (LinkedRecordGroup124920 *)((u8 *)owner + 0x28);
+        if (((u8 *)packetAddress)[4] == group->tag) {
+            for (i = 0; i < 7; i++) {
+                group->records[i][0x6E] = 1;
+            }
+            group->records[7][0x6E] = 0;
+            group->selected = 7;
+        }
+    } else if (command == 0x3F) {
+        if (*(s32 *)packetAddress == *(s32 *)((u8 *)owner + 0x28)) {
+            func_150F892C(owner);
+        }
+    }
 }
 
 s32 func_150F892C() {

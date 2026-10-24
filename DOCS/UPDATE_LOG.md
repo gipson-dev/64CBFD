@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-24 Linked-Record Event Match
+
+[Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
+recover `func_150F887C`, all 44 words/frame 24/one binding from complete
+42-word C plus nine checked setup/return rows. Two new static RA loads are
+copies of its existing restore; derive every relative target and helper
+relocation without inserted NOPs or profile changes. Keep the canonical
+void/word/byte callback ABI, live record reads and late eighth-pointer reload.
+Both copies pass eight fresh checks before/after, actual 23-word dispatcher,
+native32 controls, aliases, faults and GNU rebases. Preserve sixteen neighbors,
+caller object, old guard prefix and strict 132-byte image, zero exclusions.
+Tools `c750161` first. Fresh live total 3,785/5,505 (68.76%),
+Game 3,112/4,832 (64.40%), zero drift; 344 more to 75%.
+Next audit `func_151AE590`; existing `func_15014094` remains separate.
+Guarded semantic C, not compiler-only or full-helper/gameplay acceptance.
+
 ## 2026-10-24 Owner-Vector Descriptor Direct C Match
 
 [Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):

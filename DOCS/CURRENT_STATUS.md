@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5a4132f`; tools are committed before the consumer pin.
+  checkpoint pins tools `c750161`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Linked-record event restored with checked setup/return paths**:
+[Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md).
+`func_150F887C` matches all 44 words/frame 24/one binding from complete
+42-word C plus nine derived rows and two copies of its existing RA restore.
+Preserve the canonical void/word/byte callback ABI, seven live record reads,
+late eighth-pointer reload, selected index and conditional helper handoff.
+Both copies pass eight fresh checks before/after, all command/tag bytes,
+the original 23-word dispatcher, native32 controls, aliases, faults and GNU
+rebases. Preserve sixteen neighbors, the caller object, old guard prefix
+and strict 132-byte image (131 code plus one size byte), zero exclusions.
+Tools `c750161` first. Fresh live total 3,785/5,505 (68.76%),
+Game 3,112/4,832 (64.40%), zero drift; 344 more to 75%.
+Next audit `func_151AE590`; existing `func_15014094` stays separate.
+Guarded semantic C, not compiler-only; large helper/gameplay remain
+unqualified and host artifacts untouched.
 
 **Owner-vector descriptor restored directly from C, no guards**:
 [Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md).
