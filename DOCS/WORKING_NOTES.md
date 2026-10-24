@@ -2,6 +2,16 @@
 
 2026-10-24:
 
+[Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
+owner reference/tag event, all 41 body words directly from C without guards,
+three preserved alignment words. Both copies pass eight fresh checks before/
+after, the complete original dispatcher, retained release helper, aliases,
+native32 and GNU rebases. Preserve eight neighbors and strict 114-byte image.
+Tools `ce6299b` first; fresh live total 68.56%, 355 more to 75%.
+The separate 121-word C parent remains unmatched; next `func_150B5840`.
+
+2026-10-24:
+
 [Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):
 phase-cycle callback, all 44 words directly from typed C, no guards. Both
 copies pass eight fresh checks before/after, strict float boundaries,

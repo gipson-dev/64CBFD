@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5a4c194`; tools are committed before the consumer pin.
+  checkpoint pins tools `ce6299b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner paired-reference event restored directly from C, no guards**:
+[Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md).
+`func_1518C850` matches all 41 body words/frame 24/one binding, preserving
+three alignment words. Recover the actual descriptor-table byte-command ABI,
+ordered reference/tag exchange and release gate. Both copies pass eight
+fresh checks before/after, the complete original 124-word dispatcher,
+retained 28-word release helper and native C controls. Preserve eight
+neighbors, the whole guard CSV and strict 114-byte image, zero exclusions.
+Fresh live total 3,774/5,505 (68.56%), Game 3,101/4,832 (64.18%), zero drift;
+355 more to 75%. Tools `ce6299b` first. The existing 121-word C dispatcher
+remains unmatched and uncredited; no full native-parent or gameplay claim.
+Next real placeholder: `func_150B5840`; host artifacts untouched.
 
 **Phase-cycle callback restored directly from C, no guards**:
 [Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md).

@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 Owner Pair Event Direct C Match
+
+[Note 1697](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
+recover `func_1518C850`, all 41 body words/frame 24/one binding directly
+from C, preserving three alignment words. Match the descriptor byte-command
+ABI, ordered reference/tag exchange and release gate using separate pair-word
+captures. Both copies pass eight fresh checks before/after, the complete
+original 124-word dispatcher, retained release helper and native32 controls.
+Preserve eight neighbors, all guard CSV bytes and strict 114-byte image,
+zero exclusions. Tools `ce6299b` first. Fresh live total 3,774/5,505 (68.56%),
+Game 3,101/4,832 (64.18%), zero drift; 355 more to 75%. The current 121-word
+C dispatcher stays unmatched/uncredited; host Release/saves/config untouched.
+
 ## 2026-10-24 Phase Cycle Callback Direct C Match
 
 [Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):

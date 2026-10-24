@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1B8F40.s. */
 
@@ -56,6 +57,24 @@ s32 func_1518C69C() {
     return 0;
 }
 
-s32 func_1518C850() {
-    return 0;
+void func_1516972C(struct102 *owner);
+
+/* Exchange a paired reference/tag, or release an owner matching the event. */
+void func_1518C850(void *owner, s32 pairAddress, u8 command) {
+    s32 *pair = (s32 *)pairAddress;
+    if (command == 0x2D) {
+        s32 first = pair[0];
+        if (first == *(s32 *)((u8 *)owner + 0x24)) {
+            *(s32 *)((u8 *)owner + 0x24) = pair[1];
+            *((u8 *)owner + 0x28) = ((u8 *)pair)[9];
+        } else if (pair[1] == *(s32 *)((u8 *)owner + 0x24)) {
+            *(s32 *)((u8 *)owner + 0x24) = first;
+            *((u8 *)owner + 0x28) = ((u8 *)pair)[8];
+        }
+    } else if (command == 0) {
+        s32 first = pair[0];
+        if (first == *(s32 *)((u8 *)owner + 0x24) || *((u8 *)owner + 0x28) == ((u8 *)pair)[4]) {
+            func_1516972C(owner);
+        }
+    }
 }

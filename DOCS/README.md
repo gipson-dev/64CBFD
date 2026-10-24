@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner paired-reference event](WORKING_NOTES/1697-owner-pair-event-direct-match-20261024.md):
+  all 41 body words directly from C, no guards, plus three preserved alignment
+  words. Qualify byte commands, late tag reads, the original dispatcher and
+  retained release helper; strict 114-byte image. Total 68.56%, 355 more to 75%.
 - [Phase-cycle callback](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):
   all 44 words directly from typed C, no guards. Preserve strict float wrapping,
   threshold gating, six neighbors and strict 126-byte image. Qualify the full
