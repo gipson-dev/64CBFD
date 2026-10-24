@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
+dual-point motion callback, all 44 words from typed semantic C plus 20
+derived address-role/return-scheduling guards. Both copies pass eight fresh
+checks before/after, twelve guest timestep aliases, the original 16-word
+return-sensitive caller window and native32 controls. Preserve 60 neighbors,
+the historical guard prefix and strict 147-byte image, zero exclusions.
+Tools `8e2e877` first; fresh total 68.65%, 350 more to 75%.
+Next `func_15192800`. Parent C stub remains uncredited; not compiler-only.
+
+2026-10-24:
+
 [Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):
 computed-tail reference event, all 44 words from semantic C plus 18 derived
 allocation/commutative-operand guards. Both copies pass eight fresh checks

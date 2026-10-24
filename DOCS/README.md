@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Dual-point motion callback](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
+  complete 44-word typed C plus 20 checked address-role/return-scheduling
+  guards. Qualify float order, twelve timestep aliases, the original callback
+  window and native32; preserve 60 neighbors and strict 147-byte image.
+  Total 68.65%, 350 more to 75%; not compiler-only or full-parent acceptance.
 - [Computed-tail reference event](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):
   complete 44-word semantic C plus 18 checked register-lifetime/operand guards.
   Qualify the referenced-object tag, aliases, actual caller/release chain and

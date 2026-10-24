@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-24 Dual-Point Motion Match
+
+[Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md):
+recover `func_1518F058`, complete 44-word/frame-zero semantic C with
+20 derived address-role/return-scheduling guards and two symbolic bindings.
+Preserve planar damping, vertical acceleration, early/late timestep reads,
+shared displacement and the slot-eight exact-one callback return. Both
+copies pass eight fresh checks before/after, twelve guest aliases, the
+actual 16-word caller window, native32 controls and GNU rebases. Preserve
+60 neighbors, the historical guard prefix and strict 147-byte image without
+exclusions. Tools `8e2e877` first. Fresh live total 3,779/5,505 (68.65%),
+Game 3,106/4,832 (64.28%), zero drift; 350 more to 75%.
+Next `func_15192800`. Not compiler-only; full parent C remains uncredited.
+No FCSR/gameplay/hardware claim; host Release, saves and configuration untouched.
+
 ## 2026-10-24 Computed-Tail Reference Event Match
 
 [Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):

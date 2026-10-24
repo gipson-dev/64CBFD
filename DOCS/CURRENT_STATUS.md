@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `27b4a97`; tools are committed before the consumer pin.
+  checkpoint pins tools `8e2e877`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Dual-point motion callback restored with checked return scheduling**:
+[Note 1702](WORKING_NOTES/1702-dual-point-motion-match-20261024.md).
+`func_1518F058` matches all 44 words/frame zero/two bindings from complete
+typed C plus 20 derived address-role/return-scheduling guards. Preserve
+planar damping, vertical acceleration, early/late timestep reads and the
+shared displacement applied to both points. Both copies pass eight fresh
+checks before/after, twelve guest alias layouts, the original return-sensitive
+call window and native32 controls. Preserve 60 neighbors, historical guard
+bytes and the strict 147-byte image with zero exclusions. Fresh live total
+3,779/5,505 (68.65%), Game 3,106/4,832 (64.28%), zero drift;
+350 more to 75%. Tools `8e2e877` first. Next `func_15192800`.
+Guarded semantic C, not compiler-only; the larger parent C stub remains
+uncredited. No full-parent, FCSR or gameplay acceptance; host untouched.
 
 **Computed-tail reference event restored with checked register lifetimes**:
 [Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md).

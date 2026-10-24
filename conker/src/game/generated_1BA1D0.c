@@ -184,8 +184,36 @@ s32 func_1518EF54() {
     return 0;
 }
 
-s32 func_1518F058() {
-    return 0;
+typedef struct {
+    u8 reserved[0x34];
+    f32 position[3];
+    f32 endPoint[3];
+    u8 reserved4C[0xF4];
+    f32 velocity[3];
+    f32 verticalAcceleration;
+    f32 damping;
+} DualPointMotion1BA1D0;
+
+/* Damp planar velocity and advance both points by the same displacement. */
+s32 func_1518F058(DualPointMotion1BA1D0 *motion) {
+    f32 damping = motion->damping;
+    f32 step;
+    f32 dx, dy, dz;
+
+    motion->velocity[0] *= damping;
+    motion->velocity[1] += motion->verticalAcceleration * D_800BE9A4;
+    motion->velocity[2] *= damping;
+    step = D_800BE9A4;
+    dx = motion->velocity[0] * step;
+    dy = motion->velocity[1] * step;
+    dz = motion->velocity[2] * step;
+    motion->position[0] += dx;
+    motion->position[1] += dy;
+    motion->position[2] += dz;
+    motion->endPoint[0] += dx;
+    motion->endPoint[1] += dy;
+    motion->endPoint[2] += dz;
+    return 1;
 }
 
 s32 func_1518F108(u8 *arg0) {
