@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7971484`; tools are committed before the consumer pin.
+  checkpoint pins tools `455e79a`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,22 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner-linked large payload restored with checked result scheduling**:
+[Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md).
+`func_150CE150` matches all 44 words/frame 0x918/four bindings. Complete
+46-word C keeps explicit NULL/payload-pointer returns; twelve derived guards
+restore independent setup and remove two redundant result copies. Preserve
+the partially initialized eight-byte header and 0x8F0-byte owner payload,
+including every untouched byte in emitted guest execution. Native checks
+assert defined fields and returns, not portable values for unspecified bytes.
+Both copies pass eight fresh checks before/after, the actual caller window,
+retained factory/copy, faults and GNU carry-boundary links. Preserve four
+neighbors and the strict 149-byte image, zero exclusions. Tools `455e79a`
+first. Fresh live total 3,783/5,505 (68.72%), Game 3,110/4,832 (64.36%),
+zero drift; 346 more to 75%. Next audit `func_150E0348`; existing
+`func_15014094` stays separate. Not compiler-only or full-parent/gameplay
+acceptance; host artifacts untouched.
 
 **Randomized vector payload restored directly from C, no guards**:
 [Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md).

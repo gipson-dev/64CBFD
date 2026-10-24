@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-24 Owner-Linked Large Payload Match
+
+[Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
+recover `func_150CE150`, all 44 words/frame 0x918/four bindings from complete
+46-word C plus twelve derived guards. Preserve explicit NULL/payload-pointer
+returns, the eight-byte header and partially initialized 0x8F0-byte payload;
+do not zero reserved bytes or credit the private fallthrough candidate.
+Both copies pass eight fresh checks before/after, full guest storage, native
+defined fields/returns, the actual caller, original factory/copy, faults and
+GNU carry-boundary links. Preserve four neighbors, the historical guard
+prefix and strict 149-byte image (148 code plus one size byte), zero exclusions.
+Tools `455e79a` first. Fresh live total 3,783/5,505 (68.72%),
+Game 3,110/4,832 (64.36%), zero drift; 346 more to 75%.
+Next audit `func_150E0348`; existing `func_15014094` remains separate.
+Not compiler-only, full-parent, portable unspecified-byte or gameplay acceptance.
+
 ## 2026-10-24 Randomized Vector Payload Direct Match
 
 [Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):

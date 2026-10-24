@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Owner-linked large payload](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
+  complete 46-word C with explicit returns normalizes to 44 words/frame
+  0x918/four bindings using twelve derived guards and two redundant-copy
+  omissions. Preserve unspecified payload/header bytes in the guest model;
+  native checks assert only defined fields and returns. Actual caller,
+  factory/copy, four neighbors and strict 149-byte image pass. Total 68.72%,
+  346 more to 75%; not compiler-only or full-parent acceptance.
 - [Randomized vector payload](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):
   all 44 words/frame 72/three bindings directly from C, no guards. Explicit
   RNG sequencing preserves the early vector and late owner-byte reads.

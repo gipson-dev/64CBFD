@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
+owner-linked large payload, 46 complete C words normalized to 44/frame
+0x918/four bindings with twelve checked setup/result guards. Keep explicit
+returns and untouched bytes in the 0x8F0-byte payload; native tests assert
+defined fields, not unspecified values. Both copies pass eight fresh checks
+before/after, actual caller/factory/copy, faults and GNU carry-boundary links.
+Preserve four neighbors, the old guard prefix and strict 149-byte image,
+zero exclusions. Tools `455e79a` first; fresh total 68.72%, 346 more to 75%.
+Next audit `func_150E0348`. Not compiler-only or full-parent/gameplay acceptance.
+
+2026-10-24:
+
 [Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):
 randomized vector payload, all 44 words/frame 72/three bindings directly
 from C, no guards. Preserve early vector/zero capture and explicitly
