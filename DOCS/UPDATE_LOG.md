@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Extended Identity Event Match
+
+[Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):
+install `func_150F1020`, all 45 words/frame 24/one binding from complete C
+and eleven checked role/read-order guards. Preserve both release modes,
+first-match priority and the real 14-entry flag-gated dispatcher without an
+active-index clamp. Both copies pass eight fresh prechecks; two fresh
+installed checks plus six fingerprinted reuses verify exact production.
+Preserve 43 neighbors and strict 125-byte image, zero exclusions. Tools
+`add059c` first. Adopted-native-ELF total 3,791/5,505 (68.86%), Game
+3,118/4,832 (64.53%), zero drift; 338 more to 75%.
+Next `func_1517E080` is privately direct-matching only, uninstalled/uncredited.
+Guarded C, not compiler-only or full-provider/gameplay proof; host untouched.
+
 ## 2026-10-24 Record Identity Event Match
 
 [Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md):

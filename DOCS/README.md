@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Extended identity event](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):
+  45 words/frame 24, eleven checked guards, both release commands and the
+  real 14-entry flag-gated dispatcher. Both copies pass eight fresh prechecks,
+  then two fresh installed checks and six fingerprinted reuses. Preserve 43
+  neighbors and strict 125-byte image, zero exclusions. Adopted-ELF total
+  68.86%, 338 more to 75%; guarded C, not gameplay acceptance.
 - [Record identity event](WORKING_NOTES/1714-record-identity-event-match-20261024.md):
   43 body words/frame 24, eleven checked role/read-order guards, canonical
   record dispatch and strict 119-byte image. Both copies pass eight fresh

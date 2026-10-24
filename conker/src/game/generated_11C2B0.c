@@ -310,8 +310,33 @@ s32 func_150F0E48() {
     return 0;
 }
 
-s32 func_150F1020() {
-    return 0;
+/* Only the payload's identity word and saved key are exposed. */
+typedef struct {
+    s32 value;
+    u8 key;
+} IdentityEvent11C2B0;
+
+/* Retarget an embedded identity, or release its owner for a matching event. */
+void func_150F1020(u8 *owner, s32 eventAddress, u8 command) {
+    IdentityEvent11C2B0 *state = (IdentityEvent11C2B0 *)(owner + 0xA8);
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0x2D) {
+        s32 current = state->value;
+        s32 first = *(s32 *)event;
+        if (first == current) {
+            state->value = *(s32 *)(event + 4);
+            state->key = event[9];
+        } else if (*(s32 *)(event + 4) == current) {
+            state->value = first;
+            state->key = event[8];
+        }
+    } else if (code == 0 || code == 0x43) {
+        if (*(s32 *)event == state->value || state->key == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    }
 }
 
 typedef struct {

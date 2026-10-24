@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9129308`; tools are committed before the consumer pin.
+  checkpoint pins tools `add059c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Extended identity events restored with both release modes**:
+[Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md).
+`func_150F1020` matches all 45 words/frame 24/one binding with eleven checked
+role/read-order guards and no alignment tail. Preserve commands zero/0x43,
+retarget priority and the real 14-entry flag-gated dispatcher without inventing
+an active-index clamp. Both copies pass eight fresh pre-install checks; two
+fresh installed checks plus six fingerprinted reuses verify production.
+Preserve 43 neighbors, the existing caller and strict 125-byte image, zero
+exclusions. Tools `add059c` first. Adopted-native-ELF total 3,791/5,505 (68.86%),
+Game 3,118/4,832 (64.53%), zero drift; 338 more to 75%.
+Next ordinary placeholder `func_1517E080` has private direct-45-word C only;
+it remains uninstalled/uncredited. Existing-C/parser-missed tasks stay separate.
+Guarded C, not compiler-only or full-provider/gameplay proof; host untouched.
 
 **Record identity events restored with checked roles and read order**:
 [Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md).

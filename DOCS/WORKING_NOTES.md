@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):
+extended identity callback `func_150F1020` installed and adopted, all 45 words/
+frame 24/one binding, eleven checked guards and no alignment tail. Both copies
+pass eight fresh prechecks, two fresh installed checks and six fingerprinted
+reuses. Cover both release modes, native32, aliases/faults and the actual
+14-entry flag-gated dispatcher. Preserve 43 neighbors and strict 125-byte
+image, zero exclusions. Tools `add059c` first; actual Native-ELF total 68.86%,
+338 more to 75%. Next `func_1517E080` has private direct C only; it is not
+installed or counted. Guarded C, not full-provider/gameplay acceptance.
+
+2026-10-24:
+
 [Note 1714](WORKING_NOTES/1714-record-identity-event-match-20261024.md):
 record identity callback `func_151B1FAC` installed and adopted, 43 body words/
 frame 24/one binding plus two alignment words, with eleven derived guards.
