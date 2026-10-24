@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Sequence script dispatcher](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
+  complete 44-word C body with 27 derived layout guards, not compiler-only.
+  Qualify the original VM window and 95 retained helper words; preserve three
+  neighbors and strict 123-byte image. Fresh live total 68.52%; 357 more to 75%.
 - [Paired-reference event handler](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):
   complete 41-word body with five checked allocation guards and three unchanged
   alignment words. Preserve 41 neighbors and strict 108-byte image; qualify

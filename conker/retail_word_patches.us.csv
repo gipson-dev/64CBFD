@@ -23466,3 +23466,30 @@ game_1944C0,func_15169850,0x05C,0x8CC30000,0x8CC20000,-,-,Normalize the closed v
 game_1944C0,func_15169850,0x060,0x54430007,0x54620007,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
 game_1944C0,func_15169850,0x080,0x55630005,0x55620005,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
 game_1944C0,func_15169850,0x088,0xACC20000,0xACC30000,-,-,Normalize the closed v0/v1 pair-reference allocation cycle,,,false
+generated_CBAF0,func_1509E640,0x008,0x10A00009,0x10A00008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x014,0x10A10010,0x10A1000F,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x018,0x3C0F0000,0x24010002,R_MIPS_HI16:D_800D3840,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x01C,0x24010002,0x10A1001C,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x020,0x10A1001B,0x00001025,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x024,0x00001025,0x1000001E,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x028,0x1000001D,0x00000000,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x02C,0x00000000,0x8DCE0000,-,R_MIPS_LO16:D_800D3840,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x030,0x8DCE0000,0x24057FFF,R_MIPS_LO16:D_800D3840,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x034,0x24057FFF,0x29C10003,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x038,0x29C10003,0x14200002,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x03C,0x14200002,0x00000000,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x040,0x00000000,0x8CC50008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x044,0x8CC50008,0x0C000000,-,R_MIPS_26:func_1001263C,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x048,0x0C000000,0x24060040,R_MIPS_26:func_1001263C,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x04C,0x24060040,0x10000014,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x050,0x10000013,0x24020001,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x054,0x24020001,0x3C0F0000,-,R_MIPS_HI16:D_800D3840,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x060,0x00002825,0x55E10007,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x064,0x15E10006,0x8CC40008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x068,0x00000000,0x8CC40008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x06C,0x8CC40008,0x0C000000,-,R_MIPS_26:func_151F2D6C,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x070,0x0C000000,0x8CC5000C,R_MIPS_26:func_151F2D6C,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x074,0x8CC5000C,0x1000000A,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x078,0x10000009,0x24020001,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x07C,0x24020001,0x8CC40008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
+generated_CBAF0,func_1509E640,0x084,0x8CC40008,0x00002825,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false

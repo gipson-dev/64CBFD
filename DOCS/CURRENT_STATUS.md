@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `88fe8e9`; tools are committed before the consumer pin.
+  checkpoint pins tools `f5559d5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Sequence script dispatcher restored with derived layout guards**:
+[Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md).
+`func_1509E640` matches all 44 body words/frame 24/eight bindings using
+complete semantic C and 27 relocation-aware guards. The explicit address/
+call-schedule recipe retains one unreachable duplicate load; not compiler-only.
+Both copies pass eight fresh checks before/after, 54 actual guard corruption
+controls, the original 26-word VM window and all 95 retained helper words.
+Preserve three neighbors and the strict 123-byte image, zero exclusions.
+Fresh live total 3,772/5,505 (68.52%), Game 3,099/4,832 (64.13%), zero drift;
+357 more to 75%. Tools `f5559d5` first. Full VM/audio backend acceptance and
+the separate 92-word dispatcher remain uncredited; host artifacts untouched.
 
 **Paired-reference event handler restored with five checked allocation words**:
 [Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md).

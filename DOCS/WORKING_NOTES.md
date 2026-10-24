@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
+sequence start/level/stop script dispatcher, all 44 words with 27 derived
+layout guards. Both copies pass eight fresh checks before/after; raw C/native32,
+the original VM window, 95 retained helper words and actual guard corruptions.
+Preserve three neighbors and strict 123-byte image. Tools `f5559d5` first;
+fresh live total 68.52%, 357 more to 75%. Not full VM/audio acceptance.
+
+2026-10-24:
+
 [Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):
 paired-reference release/exchange events, complete 41-word body with five
 allocation guards and three separate alignment words. Both copies pass eight

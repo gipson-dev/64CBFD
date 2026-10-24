@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Sequence Script Dispatcher Match
+
+[Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
+recover `func_1509E640`, all 44 body words/frame 24/eight bindings from
+complete semantic C plus 27 checked layout words. Derive the address rotation,
+crossing branches, two-arm call schedule and unreachable duplicate explicitly;
+this is not compiler-only matching. Both copies pass eight fresh checks
+before/after, 54 actual guard controls, the original VM dispatch window and
+95 retained helper words. Preserve three neighbors and strict 123-byte image
+without exclusions. Tools `f5559d5` first. Fresh live total 3,772/5,505
+(68.52%), Game 3,099/4,832 (64.13%), zero drift; 357 more to 75%.
+Full VM/audio/hardware acceptance and the separate 92-word stub stay unclaimed.
+Host Release, saves and configuration untouched.
+
 ## 2026-10-24 Paired Reference Event Match
 
 [Note 1694](WORKING_NOTES/1694-pair-reference-event-match-20261024.md):

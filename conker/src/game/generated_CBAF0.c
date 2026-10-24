@@ -2,7 +2,34 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/CBAF0.s. */
 
-s32 func_1509E640() {
+extern s32 D_800D3840;
+void func_1001263C(s32, s32, s32);
+void func_151F2D6C(s32, s32);
+void func_151F2BA8(void);
+
+/* Dispatch sequence start, level, and stop requests from the script packet. */
+s32 func_1509E640(s32 sequence, s32 command, s32 *packet) {
+    s32 level;
+
+    switch (command) {
+        case 0:
+            level = 0x7FFF;
+            if (D_800D3840 >= 3) {
+                level = packet[2];
+            }
+            func_1001263C(sequence, level, 0x40);
+            return 1;
+        case 1:
+            if (D_800D3840 == 4) {
+                func_151F2D6C(packet[2], packet[3]);
+            } else {
+                func_151F2D6C(packet[2], 0);
+            }
+            return 1;
+        case 2:
+            func_151F2BA8();
+            return 1;
+    }
     return 0;
 }
 
