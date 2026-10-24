@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `455e79a`; tools are committed before the consumer pin.
+  checkpoint pins tools `5a4132f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner-vector descriptor restored directly from C, no guards**:
+[Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md).
+`func_150E0348` matches all 44 words/frame 72/seven bindings under normal
+O2/g3. Preserve the complete vector preset, identity snapshot, eight untouched
+descriptor bytes and explicit pointer return. Its typed ten-word caller
+retains the complete original object and receives no second credit.
+Both copies pass eight fresh checks before/after, original constructor/copy
+paths, native32 controls, aliases, faults and GNU carry-boundary links.
+Preserve twelve neighbors, all sixteen caller-owner functions, every guard
+byte and the strict 201-byte image with two closed symbol cycles predicted,
+zero exclusions. Tools `5a4132f` first. Fresh live total 3,784/5,505 (68.74%),
+Game 3,111/4,832 (64.38%), zero drift; 345 more to 75%.
+Next audit `func_150F887C`; existing `func_15014094` stays separate.
+Constructor C, full matrix/FCSR and gameplay remain unqualified; host untouched.
 
 **Owner-linked large payload restored with checked result scheduling**:
 [Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md).

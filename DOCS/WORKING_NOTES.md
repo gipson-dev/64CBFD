@@ -2,6 +2,19 @@
 
 2026-10-24:
 
+[Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):
+owner-vector descriptor, all 44 words/frame 72/seven bindings directly from
+C, no guards. Preserve the full preset, identity snapshot, eight untouched
+bytes and explicit pointer result. Type the actual caller without changing
+its complete object. Both copies pass eight fresh checks before/after,
+original constructor/copy, native32, aliases, faults and GNU links. Preserve
+twelve neighbors, all sixteen caller-owner functions, every guard byte and
+strict 201-byte image with both symbol cycles predicted, zero exclusions.
+Tools `5a4132f` first; fresh total 68.74%, 345 more to 75%.
+Next audit `func_150F887C`. Full matrix/FCSR and gameplay remain unqualified.
+
+2026-10-24:
+
 [Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
 owner-linked large payload, 46 complete C words normalized to 44/frame
 0x918/four bindings with twelve checked setup/result guards. Keep explicit

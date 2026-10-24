@@ -63,8 +63,46 @@ void func_150E0300(void) {
     }
 }
 
-s32 func_150E0348() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} OwnerVector10CD70;
+
+typedef struct {
+    u32 zero0, zero4;
+    u8 ownerIdentity, reserved09[3];
+    u8 *owner;
+    u8 attachment, reserved11[3];
+    OwnerVector10CD70 vector;
+    f32 value20, value24;
+    s16 duration;
+    u8 flags, kind;
+    s8 callback;
+    u8 mode;
+} OwnerVectorDescriptor10CD70;
+
+/* Retail reads the complete 12-byte vector preset at this symbol. */
+extern OwnerVector10CD70 D_800A5480;
+extern f32 D_800A0FB4, D_800A0FB8;
+void *func_1513418C(void *, s32, u8, s32);
+
+/* Submit the owner-linked descriptor with the shared vector preset. */
+void *func_150E0348(u8 *owner, u8 selector, s32 category) {
+    OwnerVectorDescriptor10CD70 descriptor;
+
+    descriptor.zero0 = 0;
+    descriptor.zero4 = 0;
+    descriptor.ownerIdentity = owner[0x3B];
+    descriptor.owner = owner;
+    descriptor.attachment = 0;
+    descriptor.vector = D_800A5480;
+    descriptor.value20 = D_800A0FB4;
+    descriptor.value24 = D_800A0FB8;
+    descriptor.duration = 300;
+    descriptor.flags = 0x1B;
+    descriptor.kind = 0x0B;
+    descriptor.callback = -1;
+    descriptor.mode = 0;
+    return func_1513418C(&descriptor, 0, selector, category);
 }
 
 s32 func_150E03F8() {

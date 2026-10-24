@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Owner-vector descriptor](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):
+  all 44 words/frame 72/seven bindings directly from C, no guards. Preserve
+  the complete preset and unspecified packet bytes; type the actual caller
+  without changing its object. Both copies pass native/guest/constructor
+  checks, twelve neighbors and strict 201-byte image with both symbol
+  cycles predicted, zero exclusions. Total 68.74%, 345 more to 75%;
+  full matrix/FCSR and gameplay remain unqualified.
 - [Owner-linked large payload](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
   complete 46-word C with explicit returns normalizes to 44 words/frame
   0x918/four bindings using twelve derived guards and two redundant-copy

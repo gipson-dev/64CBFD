@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
+void *func_150E0348(u8 *, u8, s32);
 
 typedef struct {
     u8 *object;
@@ -90,8 +91,9 @@ void func_1506A5F0(u8 *actor, s32 arg1) {
     func_151A6F00(&packet, 1, 0xFF, 1);
 }
 
-s32 func_1506A6FC(s32 arg0, s32 arg1) {
-    func_150E0348(arg0, 0xFF, 1);
+/* Forward the owner preset and preserve the created-record result. */
+void *func_1506A6FC(u8 *owner, s32 unused) {
+    return func_150E0348(owner, 0xFF, 1);
 }
 
 void func_1506A724(s32 arg0, s32 arg1) {

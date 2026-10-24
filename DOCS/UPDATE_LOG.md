@@ -1,5 +1,22 @@
 # Update Log
 
+## 2026-10-24 Owner-Vector Descriptor Direct C Match
+
+[Note 1707](WORKING_NOTES/1707-owner-vector-descriptor-direct-match-20261024.md):
+recover `func_150E0348`, all 44 words/frame 72/seven bindings directly from
+C with no guards. Preserve the full vector preset, owner identity, eight
+untouched bytes and explicit pointer return. Type the actual caller while
+retaining its entire object; it was already exact and gains no second credit.
+Both copies pass eight fresh checks before/after, actual constructor/copy,
+native32 controls, aliases, faults and GNU carry-boundary links. Preserve
+twelve neighbors, all sixteen caller-owner functions, every guard byte and
+strict 201-byte image (136 code plus 65 metadata), zero exclusions.
+Both closed symbol/string cycles are predicted, not ignored.
+Tools `5a4132f` first. Fresh live total 3,784/5,505 (68.74%),
+Game 3,111/4,832 (64.38%), zero drift; 345 more to 75%.
+Next audit `func_150F887C`; existing `func_15014094` remains separate.
+Constructor C, full matrix/FCSR and gameplay remain unqualified; host untouched.
+
 ## 2026-10-24 Owner-Linked Large Payload Match
 
 [Note 1706](WORKING_NOTES/1706-large-owner-payload-match-20261024.md):
