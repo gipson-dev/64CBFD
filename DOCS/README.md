@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Four character-effect pairs](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):
+  all 44 words each directly from C, no guards. Preserve 74 neighbors and
+  the strict 624-byte image; qualify original caller windows and explicit
+  helper boundaries. Fresh live total 68.43%; 362 more to 75%.
 - [Payload-link swap event](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
   43 words with four checked allocation guards, plus one unchanged alignment
   word. Preserve five neighbors and the strict 119-byte image. Fresh live

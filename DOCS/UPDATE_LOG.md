@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-24 Four Character Effect Pairs Direct C Match
+
+[Note 1691](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):
+recover `func_1514E508`, `func_1514E5B8`, `func_1514E668` and
+`func_1514E718`, each 44 words/frame 48/six bindings directly from C.
+Both copies pass eight fresh checks before/after, including native32,
+three original caller windows and 90 original/retained helper words.
+Preserve 74 neighbors, the complete guard CSV and strict 624-byte image
+without exclusions. Tools `7ed1444` first. Fresh live total 3,767/5,505
+(68.43%), Game 3,094/4,832 (64.03%), zero drift; 362 more to 75%.
+Parent/factory/attachment stubs remain uncredited. Host untouched.
+
 ## 2026-10-24 Payload Link Swap Event Guarded C Match
 
 [Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):

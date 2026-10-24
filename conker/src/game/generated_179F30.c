@@ -319,24 +319,67 @@ s32 func_1514E31C() {
     return 0;
 }
 
-s32 func_1514E508() {
-    return 0;
+extern u8 D_800A58D0[];
+extern u8 D_800A58E4[];
+extern u8 D_800A58F8[];
+extern u8 D_800A590C[];
+s32 func_1518D1C0(void *, s32, s32, s32, u8, u8, void *);
+s32 func_1515D5F8(s32, s32, s32, s32, u8, u8, u8, u8, s32, s32);
+
+/* Create the character effect and attach its owner-address companion. */
+void func_1514E508(u8 *owner) {
+    s32 result;
+    s32 address;
+
+    result = func_1518D1C0(owner, 5, 0, 1, 0xFF, 1, D_800A58D0);
+    func_1514EC1C(result, (s32)owner, 0xD);
+    address = (s32)(owner + 0x14);
+    result = func_1515D5F8(-0x8000, address >> 16, address & 0xFFFF,
+                          5, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0);
+    func_1514EC1C(result, (s32)owner, 0x18);
 }
 
-s32 func_1514E5B8() {
-    return 0;
+/* Create the character effect and attach its owner-address companion. */
+void func_1514E5B8(u8 *owner) {
+    s32 result;
+    s32 address;
+
+    result = func_1518D1C0(owner, 5, 0, 1, 0xFF, 1, D_800A58E4);
+    func_1514EC1C(result, (s32)owner, 0xD);
+    address = (s32)(owner + 0x14);
+    result = func_1515D5F8(-0x8000, address >> 16, address & 0xFFFF,
+                          5, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0);
+    func_1514EC1C(result, (s32)owner, 0x18);
 }
 
-s32 func_1514E668() {
-    return 0;
+/* Create the character effect and attach its owner-address companion. */
+void func_1514E668(u8 *owner) {
+    s32 result;
+    s32 address;
+
+    result = func_1518D1C0(owner, 5, 0, 1, 0xFF, 1, D_800A58F8);
+    func_1514EC1C(result, (s32)owner, 0xD);
+    address = (s32)(owner + 0x14);
+    result = func_1515D5F8(-0x8000, address >> 16, address & 0xFFFF,
+                          5, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0);
+    func_1514EC1C(result, (s32)owner, 0x18);
 }
 
-s32 func_1514E718() {
-    return 0;
+/* Create the character effect and attach its owner-address companion. */
+void func_1514E718(u8 *owner) {
+    s32 result;
+    s32 address;
+
+    result = func_1518D1C0(owner, 5, 0, 1, 0xFF, 1, D_800A590C);
+    func_1514EC1C(result, (s32)owner, 0xE);
+    address = (s32)(owner + 0x14);
+    result = func_1515D5F8(-0x8000, address >> 16, address & 0xFFFF,
+                          5, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0);
+    func_1514EC1C(result, (s32)owner, 0x18);
 }
 
 void func_1514E7C8(s32 arg0) {
-    s32 temp_v0 = func_1518D1C0(arg0, 7, 0, 1, 0xFF, 1, D_800A5920);
+    s32 temp_v0 = func_1518D1C0((void *)arg0, 7, 0, 1, 0xFF, 1, D_800A5920);
 
     func_1514EC1C(temp_v0, arg0, 0xF);
 }
@@ -557,7 +600,7 @@ void func_1514F3CC(u8 *arg0) {
 }
 
 void func_1514F44C(s32 arg0) {
-    s32 temp_v0 = func_1518D1C0(arg0, 5, 0, 1, 0xFF, 1, D_800A5988);
+    s32 temp_v0 = func_1518D1C0((void *)arg0, 5, 0, 1, 0xFF, 1, D_800A5988);
 
     func_1514EC1C(temp_v0, arg0, 0xD);
 }

@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1691](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):
+four character-effect pair callbacks, each 44 words/frame 48/six bindings
+directly from C. Both copies pass eight fresh checks before/after. Preserve
+74 neighbors, original caller windows, guard CSV and strict 624-byte image.
+Tools `7ed1444` first; fresh live total 68.43%, 362 more to 75%.
+Keep parent/factory/attachment stubs uncredited and host artifacts unchanged.
+
+2026-10-24:
+
 [Note 1690](WORKING_NOTES/1690-payload-link-swap-event-match-20261024.md):
 complete payload-link swap callback, 43 words/frame 24 with four checked
 allocation guards and one separate alignment word. Eight fresh checks per
