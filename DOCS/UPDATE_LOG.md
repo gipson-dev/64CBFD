@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Pending-Record Drain Match
+
+[Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):
+install `func_1517CFC4`, all 44 words/frame 48/eight bindings from semantic C
+and three independent setup guards. Preserve the 15-record scan, clear on
+missing destination, live pending reload before free and per-call scratch.
+Both copies pass eight fresh checks before/after, original caller boundary,
+native32 controls, aliases, fault prefixes and ten independent GNU links.
+Preserve 13 neighbors, all 16 caller functions, unchanged caller object and
+strict 136-byte image (135 code/one symbol-size byte), zero exclusions.
+Tools `ce0d707` first. Actual native adoption/recount gives 3,787/5,505 (68.79%),
+Game 3,114/4,832 (64.45%), zero drift; 342 more to 75%. Next `func_150C5D0C`.
+Guarded C, not compiler-only or full-helper/parent/gameplay acceptance.
+
 ## 2026-10-24 Four-Head Lookup Match
 
 [Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):

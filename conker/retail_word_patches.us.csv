@@ -23630,3 +23630,6 @@ generated_1D92F0,func_151AE590,0x09C,0x01C01025,0x1420FFDD,-,-,"Derive four-head
 generated_1D92F0,func_151AE590,0x0A0,0x00001025,0x01A01025,-,-,"Derive four-head lookup address setup, register lifetimes and peeled branch scheduling",,,false
 generated_1D92F0,func_151AE590,0x0A4,0x03E00008,0x00001025,-,-,"Derive four-head lookup address setup, register lifetimes and peeled branch scheduling",,,false
 generated_1D92F0,func_151AE590,0x0A8,0x00000000,0x03E00008,-,-,"Derive four-head lookup address setup, register lifetimes and peeled branch scheduling",0x00000000,-,false
+generated_1A89B0,func_1517CFC4,0x02C,0x26100000,0x26520000,R_MIPS_LO16:D_800DDA90,R_MIPS_LO16:D_800DD478,"Cycle independent pending-drain destination, scratch and source address setup",,,false
+generated_1A89B0,func_1517CFC4,0x030,0x26520000,0x26940000,R_MIPS_LO16:D_800DD478,R_MIPS_LO16:D_8003809C,"Cycle independent pending-drain destination, scratch and source address setup",,,false
+generated_1A89B0,func_1517CFC4,0x034,0x26940000,0x26100000,R_MIPS_LO16:D_8003809C,R_MIPS_LO16:D_800DDA90,"Cycle independent pending-drain destination, scratch and source address setup",,,false

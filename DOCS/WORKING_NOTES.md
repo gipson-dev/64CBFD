@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):
+pending-record drain `func_1517CFC4` installed and adopted, 44 words/frame 48/
+eight bindings with three derived setup guards. Both copies pass eight fresh
+checks before/after, helper reload/mutation cases, native32, original caller,
+aliases, faults and GNU rebases. Preserve 13 neighbors, all 16 caller
+functions, the caller object and strict 136-byte image, zero exclusions.
+Tools `ce0d707` first; fresh native-ELF total 68.79%, 342 more to 75%.
+Next `func_150C5D0C`; keep existing-C/parser-missed cases separate.
+Guarded C, not compiler-only or full-helper/parent/gameplay acceptance.
+
+2026-10-24:
+
 [Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):
 four-head lookup `func_151AE590` installed and adopted, 44 words/frame zero/
 four bindings. Complete 43-word C normalizes with 37 derived guard rows,

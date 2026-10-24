@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f2a63f5`; tools are committed before the consumer pin.
+  checkpoint pins tools `ce0d707`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Pending-record drain restored with three checked setup guards**:
+[Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md).
+`func_1517CFC4` matches all 44 words/frame 48/eight bindings from complete
+semantic C; only three independent low-address setups are normalized.
+Preserve the 15-record scan, null-destination clear, post-processing source
+reload and per-call scratch read. Both copies pass eight fresh checks
+before/after, native32 controls, aliases, fault prefixes, GNU rebases and
+the original caller boundary. Preserve 13 neighbors, all 16 caller functions,
+the complete caller object, old guard prefix and strict 136-byte image
+(135 code/one symbol-size byte), zero exclusions. Tools `ce0d707` first.
+Fresh adopted-native-ELF total 3,787/5,505 (68.79%), Game 3,114/4,832 (64.45%),
+zero drift; 342 more to 75%. Next ordinary placeholder `func_150C5D0C`.
+Keep existing-C `func_15014094` and parser-missed `func_1510D8C0` separate.
+Guarded C, not compiler-only or full-helper/parent/gameplay acceptance.
 
 **Four-head lookup restored with checked loop/allocation guards**:
 [Note 1710](WORKING_NOTES/1710-four-head-lookup-match-20261024.md).

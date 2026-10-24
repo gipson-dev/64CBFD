@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Pending-record drain](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):
+  44 words/frame 48/eight bindings; three checked setup guards. Both copies
+  pass eight fresh checks before/after, helper reloads, caller boundary,
+  native32, aliases/faults and GNU links. Preserve 13 neighbors and the caller
+  object; strict 136-byte image, zero exclusions. Fresh adopted-ELF total
+  68.79%, 342 more to 75%; not compiler-only or full-helper/gameplay acceptance.
 - [Four-head lookup](WORKING_NOTES/1710-four-head-lookup-match-20261024.md):
   complete 43-word C plus 37 derived rows matches 44/frame zero/four bindings.
   Preserve column-first search, incoming home, next capture and dead move.
