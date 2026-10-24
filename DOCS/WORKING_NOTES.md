@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):
+randomized vector payload, all 44 words/frame 72/three bindings directly
+from C, no guards. Preserve early vector/zero capture and explicitly
+sequence RNG before late owner bytes. Both copies pass eight fresh checks
+before/after, actual callback window and RNG/factory/memcpy, native32,
+aliases, faults and GNU links. Four neighbors, all guard CSV bytes and the
+strict 130-byte image are preserved, zero exclusions. Tools `7971484`
+first; fresh total 68.70%, 347 more to 75%. Next audit `func_150CE150`;
+existing `func_15014094` stays separate. No full-parent/gameplay claim.
+
+2026-10-24:
+
 [Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
 recorded-input playback, 43 body words/frame zero/twelve bindings plus one
 alignment word. Complete C needs 40 derived lifetime/address/clamp-scheduling

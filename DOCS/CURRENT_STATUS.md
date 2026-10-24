@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `6113d8c`; tools are committed before the consumer pin.
+  checkpoint pins tools `7971484`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Randomized vector payload restored directly from C, no guards**:
+[Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md).
+`func_150B1EE0` matches all 44 words/frame 72/three bindings under normal
+O2/g3. Copy the vector and positive-zero scalar before the handwritten RNG;
+explicitly sequence its unsigned modulo-133 lifetime before late owner-byte
+reads. Preserve the canonical factory ABI, failure gate and full 16-byte copy.
+Both copies pass eight fresh checks before/after, aliases, the original
+callback window, retained RNG/factory/memcpy and native32 controls. Preserve
+four neighbors, all guard CSV bytes and the strict 130-byte image, zero
+exclusions. Tools `7971484` first. Fresh live total 3,782/5,505 (68.70%),
+Game 3,109/4,832 (64.34%), zero drift; 347 more to 75%.
+Next audit `func_150CE150`, whose 0x8F0-byte payload needs separate review;
+existing `func_15014094` remains a semantic-C matching case. Full parent C,
+native factory pointer arithmetic and gameplay are not qualified; host untouched.
 
 **Recorded-input playback restored with checked clamp scheduling**:
 [Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md).

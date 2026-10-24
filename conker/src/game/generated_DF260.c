@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include <string.h>
+#include "structs.h"
 s32 func_1509BE40(s32, ...);
 
 /* Non-matching placeholders for the text-only asm slice asm/DF260.s. */
@@ -21,8 +23,32 @@ void func_150B1E20(void *actor) {
     }
 }
 
-s32 func_150B1EE0() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} PayloadVectorDF260;
+
+typedef struct {
+    PayloadVectorDF260 position;
+    f32 scalar;
+} RandomVectorPayloadDF260;
+
+s32 func_150ADA20(void);
+struct260 *func_15149130(s16, s8, s8, s8, u8, u8, struct37 *, u8, s32);
+
+/* Copy the spawn vector and submit a randomized-lifetime payload. */
+void func_150B1EE0(u8 *owner, PayloadVectorDF260 *position, s32 unused2, s32 unused3) {
+    RandomVectorPayloadDF260 payload;
+    u8 *record;
+    u32 lifetime;
+
+    payload.position = *position;
+    payload.scalar = 0.0f;
+    lifetime = func_150ADA20() % 133U + 69U;
+    record = (u8 *)func_15149130((s16)lifetime,
+        -1, 0x49, -1, 1, 0, (struct37 *)0x10, owner[0xC], owner[1]);
+    if (record != NULL) {
+        memcpy(record + 0x28, &payload, sizeof(payload));
+    }
 }
 
 s32 func_150B1F90() {

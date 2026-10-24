@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Randomized vector payload](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):
+  all 44 words/frame 72/three bindings directly from C, no guards. Explicit
+  RNG sequencing preserves the early vector and late owner-byte reads.
+  Qualify the callback window, actual RNG/factory/copy chain and native32;
+  preserve four neighbors, the whole guard CSV and strict 130-byte image.
+  Total 68.70%, 347 more to 75%; parent C and gameplay remain unqualified.
 - [Recorded-input playback](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
   complete 43-word C body plus 40 checked lifetime/address/clamp-scheduling
   guards and one preserved alignment word. Qualify signed timing, all stick

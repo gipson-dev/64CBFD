@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-10-24 Randomized Vector Payload Direct Match
+
+[Note 1705](WORKING_NOTES/1705-random-vector-payload-direct-match-20261024.md):
+recover `func_150B1EE0`, all 44 words/frame 72/three bindings directly from C
+with no guards. Preserve early vector capture, positive zero, unsigned
+random lifetime, late routing bytes, canonical factory ABI and conditional
+16-byte copy. Explicit sequencing fixes a native argument-evaluation-order
+counterexample without changing target words. Both copies pass eight fresh
+checks before/after, retained helpers, actual table/call window, aliases,
+native32 controls, faults and GNU links. Four neighbors and all guard CSV
+bytes remain unchanged. Strict image: 129 code plus one size byte, zero
+exclusions. Tools `7971484` first. Fresh live total 3,782/5,505 (68.70%),
+Game 3,109/4,832 (64.34%), zero drift; 347 more to 75%.
+Next audit `func_150CE150`; its large copied payload is not qualified yet.
+No full-parent C, native factory-pointer-arithmetic or gameplay claim; host untouched.
+
 ## 2026-10-24 Recorded-Input Playback Match
 
 [Note 1704](WORKING_NOTES/1704-recorded-input-step-match-20261024.md):
