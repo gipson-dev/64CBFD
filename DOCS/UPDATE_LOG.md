@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-23 Owner Ray Callback Direct C Match
+
+[Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md):
+recover `func_150F00EC`, all 43 words/frame zero/no bindings directly from C.
+Preserve raw position copies, sequential float32 endpoint calculations,
+active-bit priority, both inactive flag clears and the nonzero return.
+Both copies pass six fresh pre-install and six fresh installed checks;
+qualify the actual original slot-30 call window and zero-return control.
+Preserve all 43 neighbors, the entire caller object and strict 134-byte
+image without exclusions or new guards. Tools `65a27ef` first;
+15,906 inputs sealed. Total 3,756/5,505 (68.23%), Game 3,083/4,832 (63.80%),
+zero drift; 373 more to 75%. Next `func_150FAA40` queued only.
+Host Release, saves and configuration untouched.
+
 ## 2026-10-23 Ten-Record State Reset Guarded C Match
 
 [Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md):

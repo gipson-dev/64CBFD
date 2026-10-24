@@ -2,6 +2,17 @@
 
 2026-10-23:
 
+**Owner-following endpoint callback installed: all 43 words directly from C**:
+[Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md).
+Recover `func_150F00EC`, frame zero/no bindings/guards. Both copies pass six
+fresh checks before and after installation. Qualify the actual original
+slot-30 call window without claiming the unrecovered full dispatcher.
+Preserve 43 neighbors, the entire caller object and strict 134-byte image
+across 15,906 inputs. Tools `65a27ef` first. Total 3,756/5,505 (68.23%),
+373 more to 75%. Next `func_150FAA40` queued only. Host Release frozen.
+
+2026-10-23:
+
 **Ten-record state reset installed from guarded C: all 43 words exact**:
 [Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md).
 Recover `func_150A00F0`, frame zero/seventeen bindings, using the complete

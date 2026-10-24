@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7ea237d`; tools are committed before the consumer pin.
+  checkpoint pins tools `65a27ef`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner-following endpoint callback installed: all 43 words directly from C**:
+[Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md).
+Recover `func_150F00EC`, frame zero/no bindings, with local typed views and
+no guards. Both copies pass six fresh pre-install and six fresh installed
+checks. Qualify the actual slot-30 original callback window, not the
+unrecovered full dispatcher. Preserve 43 neighbors, the caller object and
+strict 134-byte image across 15,906 inputs. Tools `65a27ef` first.
+Total 3,756/5,505 (68.23%), Game 3,083/4,832 (63.80%), zero drift;
+373 more to 75%. Next `func_150FAA40` queued only, uncredited.
+Host Release, saves and configuration remain untouched.
 
 **Ten-record state reset installed from guarded C: all 43 words exact**:
 [Note 1683](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md).

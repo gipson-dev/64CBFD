@@ -1,5 +1,34 @@
 #include <ultra64.h>
 #include "structs.h"
+
+typedef struct {
+    f32 x, y, z;
+} EffectRayVector;
+
+typedef struct {
+    u8 opaque0[0x18];
+    u8 active;
+    u8 opaque19[0x17];
+    EffectRayVector direction;
+} EffectRayMotion;
+
+typedef struct {
+    u8 opaque0[0x34];
+    EffectRayVector position;
+    u8 opaque40[0xD0];
+    EffectRayMotion motion;
+} EffectRayOwner;
+
+typedef struct {
+    u8 opaque0[0x34];
+    EffectRayVector position;
+    EffectRayVector endPoint;
+    u8 opaque4C[0xC];
+    u32 flags;
+    u8 opaque5C[0x11C];
+    EffectRayOwner *owner;
+} OwnerRayEffect;
+
 void func_1516972C(struct102 *);
 
 typedef struct { u8 *owner; u8 identity; u8 opaque5[3]; } EmbeddedOwnerLink;
@@ -77,8 +106,22 @@ s32 func_150EFEC8() {
     return 0;
 }
 
-s32 func_150F00EC() {
-    return 0;
+/* Follow the active owner's position and project its direction by 500 units. */
+s32 func_150F00EC(OwnerRayEffect *effect) {
+    EffectRayOwner *owner = effect->owner;
+    EffectRayMotion *motion = &owner->motion;
+
+    if (owner->motion.active & 1) {
+        effect->position = owner->position;
+        effect->endPoint.x = owner->position.x + motion->direction.x * 500.0f;
+        effect->endPoint.y = owner->position.y + motion->direction.y * 500.0f;
+        effect->endPoint.z = owner->position.z + motion->direction.z * 500.0f;
+        effect->flags |= 6;
+    } else {
+        effect->flags &= ~4;
+        effect->flags &= ~2;
+    }
+    return 1;
 }
 
 s32 func_150F0198() {

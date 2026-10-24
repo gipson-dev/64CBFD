@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Owner-following endpoint callback](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md):
+  all 43 words/frame zero directly from C, no guards. Qualify the original
+  callback window, preserve 43 neighbors and account for all 134 changed
+  image bytes without exclusions. Total 3,756/5,505 (68.23%).
 - [Ten-record state reset](WORKING_NOTES/1683-ten-record-state-reset-match-20261023.md):
   complete 46-word C loop normalizes to 43 words with twenty checked rows.
   Qualify the full caller/native body, preserve four neighbors and account for
