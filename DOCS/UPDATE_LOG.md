@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Computed-Tail Reference Event Match
+
+[Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):
+recover `func_151BA468`, complete 44-word/frame 24 semantic C with 18
+derived register-lifetime/commutative-operand guards and one unchanged binding.
+Preserve the unconditional computed-tail read, referenced-object tag and
+ordered pair updates. Fix the caller's void declaration with identical
+object bytes. Both copies pass eight fresh checks before/after, raw semantics,
+full actual caller/release chain, native32 and guard corruptions. Preserve
+56 neighbors, all 13 caller-owner functions, the historical guard prefix and
+strict 121-byte image without exclusions. Tools `27b4a97` first.
+Fresh live total 3,778/5,505 (68.63%), Game 3,105/4,832 (64.26%), zero drift;
+351 more to 75%. Next `func_1518F058`. Not compiler-only; host untouched.
+
 ## 2026-10-24 Record Bounce Response Direct C Match
 
 [Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):

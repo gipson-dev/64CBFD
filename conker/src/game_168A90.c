@@ -11,7 +11,7 @@ s32 func_1513BAE8();
 s32 func_1513BBFC();
 s32 func_1513BEB0();
 s32 func_15109064(struct132 *, s32, u8);
-s32 func_151BA468(struct132 *, s32, u8);
+void func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
 
 extern s32 (*D_80089C18[])();

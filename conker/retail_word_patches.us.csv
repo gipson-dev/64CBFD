@@ -23494,3 +23494,21 @@ generated_CBAF0,func_1509E640,0x078,0x10000009,0x24020001,-,-,Restore derived ad
 generated_CBAF0,func_1509E640,0x07C,0x24020001,0x8CC40008,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
 generated_CBAF0,func_1509E640,0x084,0x8CC40008,0x00002825,-,-,Restore derived address rotation and two-arm call schedule; retain the unreachable duplicate load,,,false
 generated_E2880,func_150B5840,0x088,0x548A0005,0x55440005,-,-,Preserve retail commutative reference-equality branch operand order,,,false
+generated_1E73B0,func_151BA468,0x018,0x00C04825,0x00C04025,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x020,0x01E41821,0x008F1021,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x024,0x8C6800F8,0x8C4300F8,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x028,0x246300F8,0x244200F8,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x030,0x01003825,0x00603825,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x034,0x8CA20000,0x8CB80000,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x038,0x10470005,0x10F80005,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x040,0x90F8003B,0x90F9003B,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x044,0x90B90004,0x90A90004,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x048,0x57190016,0x57290016,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x060,0x55210010,0x55010010,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x068,0x8CA20000,0x8CA40000,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x06C,0x54480007,0x54830007,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x078,0xAC6A0000,0xAC4A0000,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x084,0xA06B0004,0xA04B0004,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x08C,0x550C0005,0x55830005,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x094,0xAC620000,0xAC440000,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false
+generated_1E73B0,func_151BA468,0x09C,0xA06D0004,0xA04D0004,-,-,Normalize checked offset-reference register lifetimes and commutative operand order,,,false

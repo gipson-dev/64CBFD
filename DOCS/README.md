@@ -56,6 +56,11 @@ confirmed.
 
 ## Planning and history
 
+- [Computed-tail reference event](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):
+  complete 44-word semantic C plus 18 checked register-lifetime/operand guards.
+  Qualify the referenced-object tag, aliases, actual caller/release chain and
+  native C; preserve 56 neighbors and strict 121-byte image. Total 68.63%,
+  351 more to 75%; not compiler-only.
 - [Record collision bounce](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):
   all 44 words directly from typed C, no guards. Qualify settling boundaries,
   all flag bytes, aliases, the full original dispatcher and native callback;

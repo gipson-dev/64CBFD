@@ -21,8 +21,39 @@ s32 func_151BA084() {
     return 0;
 }
 
-s32 func_151BA468() {
-    return 0;
+typedef struct {
+    s32 value;
+    u8 tag;
+} OffsetReference1E73B0;
+
+
+/* Handle removal and ordered pair swaps through the owner's variable tail. */
+void func_151BA468(struct132 *owner, s32 pairAddress, u8 command) {
+    u8 *packet = (u8 *)pairAddress;
+    OffsetReference1E73B0 *link;
+    s32 first, current;
+    u8 *reference;
+
+    link = (OffsetReference1E73B0 *)((u8 *)owner + *(s32 *)((u8 *)owner + 0x50) + 0xF8);
+    reference = (u8 *)link->value;
+    current = link->value;
+    if (command == 0) {
+        first = *(s32 *)packet;
+        if (reference == (u8 *)first || reference[0x3B] == packet[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else {
+        if (command == 0x2D) {
+            first = *(s32 *)packet;
+            if (first == current) {
+                link->value = *(s32 *)(packet + 4);
+                link->tag = packet[9];
+            } else if (*(s32 *)(packet + 4) == current) {
+                link->value = first;
+                link->tag = packet[8];
+            }
+        }
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1E73B0/func_151BA518.s")

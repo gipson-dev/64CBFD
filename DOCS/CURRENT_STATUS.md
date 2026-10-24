@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b844373`; tools are committed before the consumer pin.
+  checkpoint pins tools `27b4a97`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Computed-tail reference event restored with checked register lifetimes**:
+[Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md).
+`func_151BA468` matches all 44 words/frame 24/one binding from complete
+semantic C plus 18 derived allocation/commutative-operand guards. Preserve
+the unconditional computed-tail read, referenced-object tag, ordered pair
+exchange and full byte-argument home. Correct the caller's void declaration;
+its complete object remains byte-identical. Both copies pass eight fresh
+checks before/after, raw-C semantics, the complete caller/release chain and
+native32 controls. Preserve 56 neighbors, all 13 caller-owner functions,
+the guard prefix and strict 121-byte image, zero exclusions.
+Fresh live total 3,778/5,505 (68.63%), Game 3,105/4,832 (64.26%), zero drift;
+351 more to 75%. Tools `27b4a97` first. Next `func_1518F058`.
+Guarded semantic C, not compiler-only or gameplay acceptance; host untouched.
 
 **Record collision bounce restored directly from C, no guards**:
 [Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md).

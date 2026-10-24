@@ -2,6 +2,17 @@
 
 2026-10-24:
 
+[Note 1701](WORKING_NOTES/1701-offset-reference-event-match-20261024.md):
+computed-tail reference event, all 44 words from semantic C plus 18 derived
+allocation/commutative-operand guards. Both copies pass eight fresh checks
+before/after, aliases, raw-C semantics, full retained caller/release chain
+and native32 controls. Preserve 56 neighbors, all 13 caller-owner functions,
+the historical guard prefix and strict 121-byte full image. Tools `27b4a97`
+first; fresh total 68.63%, 351 more to 75%. Next `func_1518F058`.
+Caller declaration corrected with identical object bytes; not compiler-only.
+
+2026-10-24:
+
 [Note 1700](WORKING_NOTES/1700-record-bounce-response-direct-match-20261024.md):
 record collision bounce callback, all 44 words directly from typed C, no
 guards. Both copies pass eight fresh checks before/after, float boundaries,
