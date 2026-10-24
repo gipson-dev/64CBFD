@@ -2,6 +2,16 @@
 
 2026-10-24:
 
+[Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md):
+four-head lookup `func_151AE590`, private and uncredited. Complete 43-word C
+has a derived 44-word recipe equal to retail, with closed register lifetimes,
+folded map relocation and branch-likely peeling. All byte keys across 2,048
+valid-list cases agree; all 43 raw-word mutations reject. Full native, alias,
+fault, relocation, caller/owner/padder and production image gates remain open.
+No source, guard, object or ELF adoption. Total remains 68.76%, 344 more to 75%.
+
+2026-10-24:
+
 [Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
 linked-record event, complete 42-word C normalizes to 44/frame 24/one binding
 using nine checked setup/return rows and two copies of its existing RA load.

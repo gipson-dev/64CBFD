@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Bank the private `func_151AE590` lookup audit in [Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md): complete 43-word C, derived 44-word retail-byte recipe, 2,048 valid-list cases across every byte key, and 43 rejected raw-word perturbations. This is an experiment, not another installed match; source, guards, object, ELF and counts are unchanged.
+- [ ] Finish `func_151AE590` qualification: native32, aliases/access faults, independent relocation rebases, actual caller interface, complete owner/padder, actual Make and strict full-image gates. Install and freshly recount only after those pass; keep this candidate uncredited in the meantime.
 - [x] Measure the installed project after Note 1708: 3,785/5,505 exact (68.76%), 1,720 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
 - [x] Refresh the ELF-pinned remaining-function triage queue: 1,591 simple zero-return placeholders, 120 semantic/other definitions and nine parser-unlocated entries. These are source-shape screens, not qualification; `func_1510D8C0` already has a `Gfx *` C definition. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
 - [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 344 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.

@@ -27,6 +27,15 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Current private audit, not another installed match**:
+[Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md).
+`func_151AE590`'s complete 43-word C now has a derived 44-word recipe that
+reproduces retail bytes. All byte keys across 2,048 valid-list cases agree
+with retail and the column-first model; 43 raw-word perturbations reject.
+Native32, aliases/faults, independent rebases, caller/owner/padder and actual
+Make/strict-image gates remain open. Nothing installed or credited; resume
+those gates before changing the source or guards. Counts below are unchanged.
+
 **Linked-record event restored with checked setup/return paths**:
 [Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md).
 `func_150F887C` matches all 44 words/frame 24/one binding from complete

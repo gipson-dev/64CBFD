@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 Four-Head Lookup Private Candidate
+
+[Note 1709](WORKING_NOTES/1709-four-head-lookup-private-normalization-20261024.md):
+recover `func_151AE590`'s column-first four-list semantics and a complete
+43-word C body. A private derived normalization reproduces all 44 retail
+words; 2,048 valid-list cases cover every byte key, and all 43 raw-word
+perturbations reject. Record the actual mapping, sole prepared-reference
+JAL, caller limits and measured compiler profiles. This is not an installed
+or compiler-only match: native32, aliases/faults, independent GNU rebases,
+caller/owner/padder and actual Make/strict full-image gates remain open.
+No source/guard/object/ELF changes or new credit. Total remains 3,785/5,505
+(68.76%), Game 3,112/4,832 (64.40%), zero drift; 344 more to 75%.
+
 ## 2026-10-24 Linked-Record Event Match
 
 [Note 1708](WORKING_NOTES/1708-linked-record-event-match-20261024.md):
