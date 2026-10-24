@@ -230,7 +230,7 @@ void func_1513CB58(struct210 *arg0) {
     } else {
         idx = 0;
     }
-    D_80089EF8[idx]();
+    ((void (*)(struct210 *))D_80089EF8[idx])(arg0);
 }
 
 void func_1513CBA4(struct210 *arg0) {
@@ -240,7 +240,7 @@ void func_1513CBA4(struct210 *arg0) {
     } else {
         idx = 0;
     }
-    D_80089F2C[idx]();
+    ((void (*)(struct210 *))D_80089F2C[idx])(arg0);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513CBF0.s. */
 s32 func_1513CBF0() {

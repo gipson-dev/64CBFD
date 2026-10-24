@@ -82,12 +82,58 @@ s32 func_150EF784(u8 *arg0, u8 arg1, u8 arg2) {
     return 0;
 }
 
-s32 func_150EF7B0() {
-    return 0;
+typedef struct {
+    u8 opaque0[0x1C];
+    struct102 *children[5];
+} ChildReleaseState11C2B0;
+
+void func_1516972C(struct102 *);
+void func_1516979C(struct102 *);
+void func_1513CA6C(struct210 *);
+void func_1513CAA0(struct210 *);
+
+/* Release the five attached children, then run the actor's base teardown. */
+void func_150EF7B0(struct210 *owner) {
+    ChildReleaseState11C2B0 *state = (ChildReleaseState11C2B0 *)((u8 *)owner + 0x110);
+    s32 index;
+
+    for (index = 0; index < 2; index++) {
+        if (state->children[index] != NULL) {
+            func_1516972C(state->children[index]);
+        }
+    }
+    if (state->children[2] != NULL) {
+        func_1516972C(state->children[2]);
+    }
+    if (state->children[3] != NULL) {
+        func_1516972C(state->children[3]);
+    }
+    if (state->children[4] != NULL) {
+        func_1516972C(state->children[4]);
+    }
+    func_1513CA6C(owner);
 }
 
-s32 func_150EF860() {
-    return 0;
+/* Release the five attached children, then run the actor's base teardown. */
+void func_150EF860(struct210 *owner) {
+    ChildReleaseState11C2B0 *state = (ChildReleaseState11C2B0 *)((u8 *)owner + 0x110);
+    s32 index;
+
+    for (index = 0; index < 2; index++) {
+        if (state->children[index] != NULL) {
+            func_1516979C(state->children[index]);
+        }
+    }
+    if (state->children[2] != NULL) {
+        func_1516979C(state->children[2]);
+    }
+    if (state->children[3] != NULL) {
+        func_1516979C(state->children[3]);
+    }
+    if (state->children[4] != NULL) {
+        func_1516979C(state->children[4]);
+    }
+    func_1513CAA0(owner);
 }
 
 s32 func_150EF910() {

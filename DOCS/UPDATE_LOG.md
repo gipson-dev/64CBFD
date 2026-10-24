@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-24 Paired Actor Child Teardown Direct C Match
+
+[Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):
+recover `func_150EF7B0` and `func_150EF860`, 44 words each directly from C.
+Pass eight fresh checks before/after per tools copy, full original dispatchers,
+typed native probes and 119 retained helper words. Preserve 42 neighbors,
+the 59-function caller object and strict 252-byte image. Tools `a0858ab` first.
+Total 3,761/5,505 (68.32%), Game 3,088/4,832 (63.91%), zero drift;
+368 more to 75%. No new guards or host changes.
+
 ## 2026-10-24 Animated Quad Record Direct C Match
 
 **Animated quad record installed: all 43 words directly from C**:

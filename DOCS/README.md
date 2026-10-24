@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Paired actor child teardown](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):
+  44 words each directly from C; qualify both dispatchers and preserve the
+  caller object, 42 neighbors and strict 252-byte image. Total 68.32%.
 - [Animated quad record](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md):
   all 43 words/frame 32 directly from SDK-typed C, no guards. Qualify both
   callers and the original/native allocator; preserve six neighbors and the

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c31f6b2`; tools are committed before the consumer pin.
+  checkpoint pins tools `a0858ab`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,14 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Paired child teardown installed, 88 words directly from C**:
+[Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md).
+`func_150EF7B0` and `func_150EF860` each match all 44 words without guards.
+Both copies pass eight fresh checks before and after installation; preserve
+42 neighbors and the complete 59-function caller object. Total 3,761/5,505
+(68.32%), Game 3,088/4,832 (63.91%), zero drift; 368 more to 75%.
+Tools `a0858ab` first. Host Release, saves/configuration untouched.
 
 **Animated quad record installed: all 43 words directly from C**:
 [Note 1687](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md).

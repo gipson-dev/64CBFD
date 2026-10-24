@@ -2,6 +2,13 @@
 
 2026-10-24:
 
+[Note 1688](WORKING_NOTES/1688-actor-child-cleanup-direct-match-20261024.md):
+paired child teardown, 44 words each directly from C. Eight fresh checks per
+copy before/after; explicit caller owner arguments leave its full object
+unchanged. Total 3,761/5,505 (68.32%), 368 more to 75%. No new guards.
+
+2026-10-24:
+
 **Animated quad record installed: all 43 words directly from C**:
 [Note 1687](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md).
 Recover `func_15171CA0`, frame 32/one binding, with SDK vertices, packed
