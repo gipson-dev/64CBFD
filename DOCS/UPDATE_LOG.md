@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-23 One-Shot Owner Link Payload Direct C Match
+
+[Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md):
+recover `func_150FAA40`, all 43 words/frame 72/eight bindings directly from C.
+Preserve the byte latch, pre-allocation pointer captures, allocation failure,
+success-only latch store, separate nonnull tests and complete twelve-byte
+copy. Both copies pass six fresh checks before and after installation.
+Qualify both original caller windows, retained factory/memcpy and explicit
+malformed guest return boundaries. Preserve seventeen neighbors, both caller
+objects and strict 140-byte image without exclusions or new guards.
+Tools `7027bcb` first; 15,910 inputs sealed. Total 3,757/5,505 (68.25%),
+Game 3,084/4,832 (63.82%), zero drift; 372 more to 75%.
+Next `func_1512D238` queued only. Host Release, saves/configuration untouched.
+
 ## 2026-10-23 Owner Ray Callback Direct C Match
 
 [Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md):

@@ -2,6 +2,18 @@
 
 2026-10-23:
 
+**One-shot owner-link payload installed: all 43 words directly from C**:
+[Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md).
+Recover `func_150FAA40`, frame 72/eight bindings, with no guards. Both copies
+pass six fresh checks before and after installation. Qualify both original
+caller windows, the retained factory/memcpy and bounded malformed guest
+returns. Preserve seventeen neighbors, both caller objects and strict
+140-byte image across 15,910 inputs. Tools `7027bcb` first.
+Total 3,757/5,505 (68.25%), 372 more to 75%.
+Next `func_1512D238` queued only. Host Release frozen.
+
+2026-10-23:
+
 **Owner-following endpoint callback installed: all 43 words directly from C**:
 [Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md).
 Recover `func_150F00EC`, frame zero/no bindings/guards. Both copies pass six

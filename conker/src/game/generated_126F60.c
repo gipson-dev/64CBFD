@@ -24,8 +24,33 @@ s32 func_150FA520() {
     return 0;
 }
 
-s32 func_150FAA40() {
-    return 0;
+typedef struct {
+    void *first;
+    void *second;
+    f32 zero;
+} OneShotLinkPayload;
+
+extern u8 D_80088B60;
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Capture both owner links and attach the payload only once allocation succeeds. */
+void func_150FAA40(u8 code, s32 value) {
+    OneShotLinkPayload payload;
+    u8 *effect;
+
+    if (D_80088B60 == 0) {
+        payload.first = D_800D3098 + 0x71C;
+        payload.second = D_800D3098 + 0x6E8;
+        payload.zero = 0.0f;
+        effect = func_15149130(300, -1, 0x57, -1, 0, 0x46, 12, code, value);
+        if (effect != 0) {
+            D_80088B60 = 1;
+        }
+        if (effect != 0) {
+            memcpy(effect + 0x28, &payload, 12);
+        }
+    }
 }
 
 s32 func_150FAAEC() {

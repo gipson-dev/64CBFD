@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `65a27ef`; tools are committed before the consumer pin.
+  checkpoint pins tools `7027bcb`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**One-shot owner-link payload installed: all 43 words directly from C**:
+[Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md).
+Recover `func_150FAA40`, frame 72/eight bindings, with a local twelve-byte
+payload, byte/word arguments and void return. No new guards. Both copies
+pass six fresh checks before and after installation. Qualify both original
+caller windows, the retained factory/memcpy and explicit malformed guest
+return boundaries. Preserve seventeen neighbors and strict 140-byte image
+across 15,910 inputs. Tools `7027bcb` first. Total 3,757/5,505 (68.25%),
+Game 3,084/4,832 (63.82%), zero drift; 372 more to 75%.
+Next `func_1512D238` queued only. Host Release, saves/configuration untouched.
 
 **Owner-following endpoint callback installed: all 43 words directly from C**:
 [Note 1684](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md).

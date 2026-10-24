@@ -2,9 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] Measure the installed project after Note 1684: 3,756/5,505 exact (68.23%), 1,749 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
-- [x] Refresh the ELF-pinned remaining-function triage queue: 1,618 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
-- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 373 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
+- [x] Measure the installed project after Note 1685: 3,757/5,505 exact (68.25%), 1,748 different and zero address drift. Use the README's byte-exact C-function metric, not converted bytes or all assembly functions.
+- [x] Refresh the ELF-pinned remaining-function triage queue: 1,617 simple zero-return placeholders, 122 semantic/other definitions and nine unlocated entries. These are source-shape screens, not qualification. Exclude nonstandard handwritten routines from automatic ordinary-C assumptions.
+- [ ] Reach at least ceil(0.75 * converted C functions) exact matches. At the present denominator this is 4,129/5,505, requiring 372 more matches. Recompute the threshold if the denominator changes; do not replace genuine semantics with matching placeholders or change classifications just to raise the percentage.
 - [x] Qualify and install the complete 39-word `func_1519BE1C` kinematic integrator in Note 1629: caller ABI, copied velocity, float32 ordering, aliases, native32, raw/padded owner, actual Make and strict whole-image gates all pass.
 - [x] Qualify and install the 39-word `func_150BA4C0` effect-payload recovery in Note 1630: both direct-call ABI windows, explicit C-caller prototype, unsigned selection, all copied reserved bytes, actual memcpy and production gates pass.
 - [x] Qualify and install the complete 39-word/frame-88 `func_150F10D4` position payload in Note 1631: caller ABI/prototype, captured coordinates, saved S0, reserved bytes, native32, owner/Make and strict production image all pass.
@@ -61,7 +61,18 @@
 - [x] Qualify and install `func_1519E570`, `func_151A4D88` and `func_151ABD54` in Note 1682: each complete 43-word/frame 24 semantic C with six derived allocation guards. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the full registered dispatcher and release chain; preserve 84 neighbors, eighteen assembly neighbors, the twelve-function caller object and strict 357-byte image across 15,898 inputs.
 - [x] Qualify and install `func_150A00F0` in Note 1683: complete 46-word/frame-zero semantic C normalizes to 43 words/seventeen bindings with twenty checked rows and three redundant-high-load folds. Both copies pass eight pre-install and two installed checks, reusing six unchanged checks. Qualify the complete caller/native body; preserve four neighbors, the entire six-function caller object and strict 303-byte image across 15,902 inputs.
 - [x] Qualify and install `func_150F00EC` in Note 1684: all 43 words/frame zero/no bindings emit directly from C. Both copies pass six fresh pre-install and six fresh installed checks. Qualify the actual original slot-30 call window; preserve 43 neighbors, the caller object and strict 134-byte image across 15,906 inputs. No new guards.
-- [ ] Qualify queued `func_150FAA40` (43 words, placeholder/42 differences): establish its complete interface, access order and actual callers, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+- [x] Qualify and install `func_150FAA40` in Note 1685: all 43 words/frame 72/eight bindings emit directly from C. Both copies pass six fresh checks before and after installation. Qualify both original caller windows and retained factory/memcpy; preserve seventeen neighbors, both caller objects and strict 140-byte image across 15,910 inputs. No new guards.
+- [ ] Qualify queued `func_1512D238` (43 words, placeholder/42 differences): establish its complete interface, helper semantics, access order and actual callers, then pass focused native/guest, owner, Make and strict image gates before installation. Keep the 862-word `func_1508CAD8` owner stub queued.
+
+## One-Shot Owner Link Payload Direct C Match - 2026-10-23
+
+[Note 1685](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md):
+
+- [x] Recover the byte/word arguments, void return, pre-allocation pointer captures, positive float zero, success-only latch and complete twelve-byte copy. Preserve separate nonnull tests, original assembly, shared headers and the entire guard manifest.
+- [x] Pass six fresh checks before and after installation in each tools copy: 10,688 guest phases, 196,608 native calls per optimization, eleven effective wrong-C controls, nine GNU links, 48 rebase cases, 258 fired access prefixes and nine image controls. Qualify 96 malformed allocation/return boundaries as guest-only evidence.
+- [x] Qualify both original five-word caller windows over 32 phases and execute the 49-word factory plus 11-word memcpy. Bound the lower allocator and bzero providers; do not claim either full caller C body or other dispatcher paths.
+- [x] Reproduce the strict 140-byte image: 139 code bytes and one symbol-size byte, zero exclusions. Pass actual Make, preserve seventeen neighbors, both caller objects, all other 6,054 bodies/6,055 addresses and protected data across 15,910 inputs / 1,454 objects.
+- [x] Recount total 3,757/5,505 (68.25%), Game 3,084/4,832 (63.82%), 1,748 different/zero drift. Tools `7027bcb` first; preserve all 1,582 older-mirror dirty paths, adding only two task files. README aggregates only; host Release untouched. The 75% objective remains incomplete, with 372 more matches needed.
 
 ## Owner Ray Callback Direct C Match - 2026-10-23
 

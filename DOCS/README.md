@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [One-shot owner-link payload](WORKING_NOTES/1685-one-shot-link-payload-direct-match-20261023.md):
+  all 43 words/frame 72 directly from C, no guards. Qualify both original
+  callers and the retained factory/memcpy; preserve seventeen neighbors and
+  the strict 140-byte image. Total 3,757/5,505 (68.25%).
 - [Owner-following endpoint callback](WORKING_NOTES/1684-effect-owner-ray-direct-match-20261023.md):
   all 43 words/frame zero directly from C, no guards. Qualify the original
   callback window, preserve 43 neighbors and account for all 134 changed
