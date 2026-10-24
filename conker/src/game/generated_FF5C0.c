@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/FF5C0.s. */
 
@@ -11,8 +12,33 @@ s32 func_150D2110() {
     return 0;
 }
 
-s32 func_150D21CC() {
-    return 0;
+/* The callback receives the common actor header followed by this local state. */
+typedef struct {
+    u8 active;
+    u8 pad1[3];
+    f32 phase;
+    f32 threshold;
+    f32 unused;
+    f32 period;
+} PhaseCycle;
+
+extern f32 D_800BE9A4;
+void func_1515D4D4(s32 red, s32 green, s32 blue, u8 priority);
+
+/* Advance the phase and enable the white override during its threshold window. */
+void func_150D21CC(struct260 *owner) {
+    PhaseCycle *cycle = (PhaseCycle *)((u8 *)owner + 0x28);
+
+    cycle->phase += D_800BE9A4;
+    while (cycle->phase > cycle->period) {
+        cycle->phase -= cycle->period;
+    }
+    if (cycle->phase <= cycle->threshold) {
+        cycle->active = 1;
+        func_1515D4D4(255, 255, 255, 255);
+    } else {
+        cycle->active = 0;
+    }
 }
 
 s32 func_150D227C(s32 arg0) {

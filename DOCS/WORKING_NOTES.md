@@ -2,6 +2,16 @@
 
 2026-10-24:
 
+[Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):
+phase-cycle callback, all 44 words directly from typed C, no guards. Both
+copies pass eight fresh checks before/after, strict float boundaries,
+full registered parent/color-helper path and native O0/O2/O3 controls.
+Preserve six neighbors, the whole guard CSV and strict 126-byte image.
+Tools `5a4c194` first; fresh live total 68.54%, 356 more to 75%.
+Malformed nonprogress is guest-bounded; no rendering/FCSR/hardware claim.
+
+2026-10-24:
+
 [Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
 sequence start/level/stop script dispatcher, all 44 words with 27 derived
 layout guards. Both copies pass eight fresh checks before/after; raw C/native32,

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f5559d5`; tools are committed before the consumer pin.
+  checkpoint pins tools `5a4c194`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Phase-cycle callback restored directly from C, no guards**:
+[Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md).
+`func_150D21CC` matches all 44 words/frame 24/three bindings with the
+registered `void(struct260 *)` interface, strict float phase wrapping and
+threshold-gated white override. Both copies pass eight fresh checks before/
+after, the complete 45-word parent and retained 19-word color helper, plus
+actual native C at O0/O2/O3. Preserve six neighbors, the whole guard CSV
+and strict 126-byte image with zero exclusions. Fresh live total
+3,773/5,505 (68.54%), Game 3,100/4,832 (64.16%), zero drift;
+356 more to 75%. Tools `5a4c194` first. Malformed nonprogress loops remain
+unchanged and guest-bounded; no FCSR, rendering or hardware acceptance claim.
+Host Release, saves and configuration untouched.
 
 **Sequence script dispatcher restored with derived layout guards**:
 [Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md).

@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Phase-cycle callback](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):
+  all 44 words directly from typed C, no guards. Preserve strict float wrapping,
+  threshold gating, six neighbors and strict 126-byte image. Qualify the full
+  parent/color chain and native C; fresh live total 68.54%, 356 more to 75%.
 - [Sequence script dispatcher](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
   complete 44-word C body with 27 derived layout guards, not compiler-only.
   Qualify the original VM window and 95 retained helper words; preserve three

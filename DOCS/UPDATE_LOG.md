@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 Phase Cycle Callback Direct C Match
+
+[Note 1696](WORKING_NOTES/1696-phase-cycle-gate-match-20261024.md):
+recover `func_150D21CC`, all 44 words/frame 24/three bindings directly from
+C without guards. Preserve strict single-precision wrapping, inclusive
+threshold gating and the actual slot-47 callback/helper ABI. Both copies
+pass eight fresh checks before/after, full parent/color-helper execution and
+the actual native C chain at O0/O2/O3. Preserve six neighbors, the entire
+guard CSV and strict 126-byte image, zero exclusions. Tools `5a4c194` first.
+Fresh live total 3,773/5,505 (68.54%), Game 3,100/4,832 (64.16%), zero drift;
+356 more to 75%. Malformed loops are preserved and guest-bounded, not fixed.
+No rendering, FCSR or hardware acceptance claim; host artifacts untouched.
+
 ## 2026-10-24 Sequence Script Dispatcher Match
 
 [Note 1695](WORKING_NOTES/1695-sequence-event-dispatch-match-20261024.md):
