@@ -19,7 +19,7 @@ s32 func_1514E920();
 s32 func_1514E89C();
 s32 func_15158BD0();
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
-s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2);
+s32 func_1514EC1C(s32 arg0, s32 arg1, s16 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 s32 func_15160A58();
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
@@ -463,8 +463,31 @@ GameListNode *func_1514EBA4(s32 arg0, s16 arg1, s32 arg2) {
     return node;
 }
 
-s32 func_1514EC1C(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+/* Attach an object to the owner's list, or dispose of it if the node cannot be allocated. */
+s32 func_1514EC1C(s32 object, s32 ownerAddress, s16 key) {
+    GameListNode *node = NULL;
+    u8 *owner = (u8 *)ownerAddress;
+    s16 callback;
+
+    if (object != 0) {
+        node = func_1514EBA4(object, key, 0);
+        if (node != NULL) {
+            node->next = *(GameListNode **)(owner + 0x2F4);
+            *(GameListNode **)(owner + 0x2F4) = node;
+            node->prev = NULL;
+            if (node->next != NULL) {
+                node->next->prev = node;
+            }
+        } else {
+            callback = D_8008ABE8[key][1];
+            if (callback != -1) {
+                D_8008AB58[callback](object);
+            } else {
+                func_1516972C(object);
+            }
+        }
+    }
+    return (s32)node;
 }
 
 s32 func_1514ECE0(GameListNode *node, s16 key, GameListNode **result) {

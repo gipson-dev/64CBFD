@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Object attachment helper](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
+  all 49 words directly from C with a signed-short key, no guards. Qualify
+  all 32 original caller windows and native C paths; preserve 77 neighbors,
+  the 89-function caller object and strict 147-byte image. Total 68.45%.
 - [Four character-effect pairs](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):
   all 44 words each directly from C, no guards. Preserve 74 neighbors and
   the strict 624-byte image; qualify original caller windows and explicit

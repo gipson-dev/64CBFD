@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7ed1444`; tools are committed before the consumer pin.
+  checkpoint pins tools `aece198`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Object attachment helper restored directly from C, no guards**:
+[Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md).
+`func_1514EC1C` matches all 49 words/frame 32/six bindings after recovering
+its signed-short key. Both copies pass eight fresh checks before/after,
+all 32 original caller argument windows, actual native C callers and the
+retained node/allocator chain. Preserve 77 neighbors, all 89 external-caller
+functions and strict 147-byte image; guard CSV unchanged. Fresh live total
+3,768/5,505 (68.45%), Game 3,095/4,832 (64.05%), zero drift;
+361 more to 75%. Tools `aece198` first. Factory/parent stubs remain uncredited;
+host Release, saves and configuration untouched.
 
 **Four character-effect pairs restored directly from C, no guards**:
 [Note 1691](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md).

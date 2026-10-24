@@ -46,7 +46,7 @@ s32 func_1510F8CC(s32);
 s32 func_15141CC0(s32 context);
 void func_15141E38(u8 *actor, s32 index);
 s32 func_1514ECE0(u8 *, s16, u8 **);
-s32 func_1514EC1C(s32, s32, s32);
+s32 func_1514EC1C(s32, s32, s16);
 
 typedef struct {
     u32 unk0;

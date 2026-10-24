@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-24 Object Attachment Direct C Match
+
+[Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
+recover `func_1514EC1C`, all 49 words/frame 32/six bindings directly from C
+with its actual signed-short key. Correct owner/external declarations while
+preserving 77 neighbors and the complete 89-function caller object. Both
+copies pass eight fresh checks before/after, all 32 original caller argument
+windows, actual native C paths and 58 retained helper words. Tools `aece198`
+first; strict 147-byte image, no guards or exclusions. Fresh live total
+3,768/5,505 (68.45%), Game 3,095/4,832 (64.05%), zero drift;
+361 more to 75%. Factory/parent stubs and host artifacts remain unchanged.
+
 ## 2026-10-24 Four Character Effect Pairs Direct C Match
 
 [Note 1691](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):

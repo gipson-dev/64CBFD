@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
+object-list attachment and allocation-failure cleanup, all 49 words directly
+from C with the signed-short key. Both copies pass eight fresh checks
+before/after; 32 caller argument windows, native callers and retained helpers
+qualified. Preserve 77 neighbors, the external caller object and strict
+147-byte image. Tools `aece198` first; total 68.45%, 361 more to 75%.
+
+2026-10-24:
+
 [Note 1691](WORKING_NOTES/1691-character-effect-pair-direct-match-20261024.md):
 four character-effect pair callbacks, each 44 words/frame 48/six bindings
 directly from C. Both copies pass eight fresh checks before/after. Preserve
