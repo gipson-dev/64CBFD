@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ce0d707`; tools are committed before the consumer pin.
+  checkpoint pins tools `e451e2c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Attachment identity event restored with five checked operand guards**:
+[Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md).
+`func_150C5D0C` matches all 43 body words/frame 24/one binding and preserves
+two alignment words. Recover the canonical callback ABI, OR-gated release,
+first-match identity exchange and store-before-key-read order. Both copies
+pass eight fresh checks before/after, native32, aliases/faults, the actual
+18-word dispatcher, retained release helper and GNU rebases. Preserve 14
+neighbors, old guard bytes and the strict 119-byte image, zero exclusions.
+Tools `e451e2c` first. Actual adopted-native-ELF total 3,788/5,505 (68.81%),
+Game 3,115/4,832 (64.47%), zero drift; 341 more to 75%.
+Next ordinary placeholder `func_151A1E34`; keep existing-C `func_15014094`
+and parser-missed `func_1510D8C0` separate. Guarded C, not compiler-only or
+full-provider/parent/gameplay acceptance; host artifacts untouched.
 
 **Pending-record drain restored with three checked setup guards**:
 [Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md).

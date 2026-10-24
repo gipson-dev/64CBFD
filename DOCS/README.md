@@ -56,6 +56,12 @@ confirmed.
 
 ## Planning and history
 
+- [Attachment identity event](WORKING_NOTES/1712-attachment-event-match-20261024.md):
+  43 body words/frame 24/one binding plus two alignment words; five checked
+  operand guards. Both copies pass eight fresh checks before/after, native32,
+  aliases/faults, the full dispatcher, release helper and GNU links. Preserve
+  14 neighbors and strict 119-byte image, zero exclusions. Fresh adopted-ELF
+  total 68.81%, 341 more to 75%; not compiler-only or gameplay acceptance.
 - [Pending-record drain](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):
   44 words/frame 48/eight bindings; three checked setup guards. Both copies
   pass eight fresh checks before/after, helper reloads, caller boundary,

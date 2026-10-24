@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Attachment Identity Event Match
+
+[Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md):
+install `func_150C5D0C`, all 43 body words/frame 24/one binding from complete
+semantic C plus five checked register/commutative-operand guards. Preserve
+two alignment words, the canonical byte-command callback, OR-gated release,
+first-match retargeting and store-before-key-read order. Both copies pass
+eight fresh checks before/after, native32, aliases/faults, the full 18-word
+dispatcher, retained release helper and GNU rebases. Preserve 14 neighbors,
+old guard bytes and the strict 119-byte image, zero exclusions.
+Tools `e451e2c` first. Actual native adoption/recount gives 3,788/5,505 (68.81%),
+Game 3,115/4,832 (64.47%), zero drift; 341 more to 75%. Next `func_151A1E34`.
+Guarded C, not compiler-only or full-provider/parent/gameplay acceptance.
+
 ## 2026-10-24 Pending-Record Drain Match
 
 [Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):

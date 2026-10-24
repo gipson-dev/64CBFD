@@ -2,6 +2,18 @@
 
 2026-10-24:
 
+[Note 1712](WORKING_NOTES/1712-attachment-event-match-20261024.md):
+attachment identity callback `func_150C5D0C` installed and adopted, 43 body
+words/frame 24/one binding, five checked operand guards and two alignment
+words. Both copies pass eight fresh checks before/after, all command/key
+bytes, native32, eight alias layouts, faults, full dispatcher and release
+helper bounds. Preserve 14 neighbors and the strict 119-byte image, zero
+exclusions. Tools `e451e2c` first; actual native-ELF total 68.81%, 341 more
+to 75%. Next `func_151A1E34`; existing-C/parser-missed tasks stay separate.
+Guarded C, not compiler-only or full-provider/parent/gameplay acceptance.
+
+2026-10-24:
+
 [Note 1711](WORKING_NOTES/1711-pending-record-drain-match-20261024.md):
 pending-record drain `func_1517CFC4` installed and adopted, 44 words/frame 48/
 eight bindings with three derived setup guards. Both copies pass eight fresh

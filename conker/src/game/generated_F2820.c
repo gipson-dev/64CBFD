@@ -112,6 +112,33 @@ void func_150C5CC4(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_150C5D0C() {
-    return 0;
+void func_1516972C(struct102 *);
+
+/* Only the attachment's identity word and saved key are exposed here. */
+typedef struct {
+    s32 value;
+    u8 key;
+} AttachmentIdentityF2820;
+
+/* Release a matching attachment or retarget its saved identity and key. */
+void func_150C5D0C(u8 *owner, s32 eventAddress, u8 command) {
+    AttachmentIdentityF2820 *state = (AttachmentIdentityF2820 *)(owner + 0xC8);
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0) {
+        if (state->value == *(s32 *)event || state->key == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (code == 0x2D) {
+        s32 current = state->value;
+        s32 first = *(s32 *)event;
+        if (first == current) {
+            state->value = *(s32 *)(event + 4);
+            state->key = event[9];
+        } else if (*(s32 *)(event + 4) == current) {
+            state->value = first;
+            state->key = event[8];
+        }
+    }
 }
