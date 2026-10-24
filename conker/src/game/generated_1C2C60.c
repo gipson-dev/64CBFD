@@ -237,8 +237,31 @@ s32 func_15198C60(void) {
     func_10010F30(0x1AA, 0x7FFF, 0x40, 0, 0);
 }
 
-s32 func_15198C90() {
-    return 0;
+typedef struct { f32 x, y, z; u8 opaque[24]; } SoundPoint36;
+typedef struct { f32 x, y, z; u8 opaque[28]; } SoundPoint40;
+typedef struct {
+    u8 opaque0[0x2C];
+    s8 active, index;
+    u8 opaque2E[0x66];
+    void *points;
+    u8 *audio;
+} PointSoundOwner;
+void func_1000F91C(u16, u16, s16, u8, s32, s16, s16, s16, s16, s16);
+
+/* Refresh the active point's sound position using the signed point index. */
+void func_15198C90(PointSoundOwner *state) {
+    u8 *audio = state->audio;
+    SoundPoint36 *points = state->points;
+    u16 handle;
+
+    if (state->active != 0) {
+        handle = *(u16 *)(audio + 0x66);
+        if (handle != 0) {
+            func_1000F91C(handle, 0x7FFF, 0, 0, 0,
+                          (s32)points[state->index].x, (s32)points[state->index].y,
+                          (s32)points[state->index].z, 500, 5000);
+        }
+    }
 }
 
 void func_15198D40(u8 *arg0) {
@@ -445,8 +468,20 @@ s32 func_1519BF8C(void) {
     func_10010F30(0x1AA, 0x7FFF, 0x40, 0, 0);
 }
 
-s32 func_1519BFBC() {
-    return 0;
+/* Refresh the active point's sound position using the signed point index. */
+void func_1519BFBC(PointSoundOwner *state) {
+    u8 *audio = state->audio;
+    SoundPoint40 *points = state->points;
+    u16 handle;
+
+    if (state->active != 0) {
+        handle = *(u16 *)(audio + 0x130);
+        if (handle != 0) {
+            func_1000F91C(handle, 0x7FFF, 0, 0, 0,
+                          (s32)points[state->index].x, (s32)points[state->index].y,
+                          (s32)points[state->index].z, 500, 5000);
+        }
+    }
 }
 
 void func_1519C06C(arg0, arg1)

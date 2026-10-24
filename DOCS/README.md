@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Point sound-position callbacks](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):
+  all 44 words each directly from typed C, no guards. Qualify signed indices,
+  original caller windows and the real retained helper; preserve 67 neighbors
+  and strict 253-byte image. Fresh live total 68.48%; 359 more to 75%.
 - [Object attachment helper](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
   all 49 words directly from C with a signed-short key, no guards. Qualify
   all 32 original caller windows and native C paths; preserve 77 neighbors,

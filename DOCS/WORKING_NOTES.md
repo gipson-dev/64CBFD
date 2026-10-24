@@ -2,6 +2,15 @@
 
 2026-10-24:
 
+[Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):
+two signed-index point sound refresh callbacks, each 44 words directly from
+C without guards. Both copies pass eight fresh checks before/after; native
+real-helper C, original caller windows and explicit backend boundaries.
+Preserve 67 neighbors, guard CSV and strict 253-byte image.
+Tools `a6facec` first; fresh live total 68.48%, 359 more to 75%.
+
+2026-10-24:
+
 [Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
 object-list attachment and allocation-failure cleanup, all 49 words directly
 from C with the signed-short key. Both copies pass eight fresh checks

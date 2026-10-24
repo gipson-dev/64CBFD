@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `aece198`; tools are committed before the consumer pin.
+  checkpoint pins tools `a6facec`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Two point sound-position callbacks restored directly from C, no guards**:
+[Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md).
+`func_15198C90` and `func_1519BFBC` each match all 44 words/frame 48/one
+binding with signed point indices, distinct record strides and the real
+audio-helper prototype. Both copies pass eight fresh checks before/after,
+two original caller windows and the retained 46-word helper. Preserve
+67 neighbors and strict 253-byte image; guard CSV unchanged. Fresh live
+total 3,770/5,505 (68.48%), Game 3,097/4,832 (64.09%), zero drift;
+359 more to 75%. Tools `a6facec` first. Full parent, attenuation backend
+and audible/hardware acceptance remain unclaimed. Host untouched.
 
 **Object attachment helper restored directly from C, no guards**:
 [Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md).

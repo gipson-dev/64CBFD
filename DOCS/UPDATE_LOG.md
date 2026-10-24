@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 Point Sound Position Direct C Match
+
+[Note 1693](WORKING_NOTES/1693-point-sound-position-direct-match-20261024.md):
+recover `func_15198C90` and `func_1519BFBC`, all 44 words/frame 48/one
+binding each directly from C. Preserve signed point indexing, 36/40-byte
+strides, distinct handle offsets and the actual narrow audio-helper ABI.
+Both copies pass eight fresh checks before/after, two original caller
+windows, native32 and all 46 retained helper words. Preserve 67 neighbors,
+the entire guard CSV and strict 253-byte image without exclusions.
+Tools `a6facec` first. Fresh live total 3,770/5,505 (68.48%),
+Game 3,097/4,832 (64.09%), zero drift; 359 more to 75%.
+Full parents, audio backends and hardware acceptance remain unclaimed.
+Host Release, saves and configuration untouched.
+
 ## 2026-10-24 Object Attachment Direct C Match
 
 [Note 1692](WORKING_NOTES/1692-object-attachment-direct-match-20261024.md):
