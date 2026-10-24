@@ -1,5 +1,20 @@
 # Working Notes
 
+2026-10-24:
+
+**Animated quad record installed: all 43 words directly from C**:
+[Note 1687](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md).
+Recover `func_15171CA0`, frame 32/one binding, with SDK vertices, packed
+color, lifetime/animation metadata and the eight-argument pointer-return
+interface. No guards. Both tools copies pass six fresh checks before and
+after installation. Qualify both original caller windows, all 28 allocator
+words and its actual native C body, with bounded lower providers. Preserve
+six neighbors and the strict 126-byte image across 15,918 inputs.
+Tools `c31f6b2` first. Total 3,759/5,505 (68.28%),
+Game 3,086/4,832 (63.87%), zero drift; 370 more to 75%.
+Next triage `func_1510D8C0`, then `func_1518C850`, uncredited.
+Host Release, saves/configuration untouched.
+
 2026-10-23:
 
 **Four-entry pointer/count loader installed: all 43 words directly from C**:

@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-23
+Last verified: 2026-10-24
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `19a576c`; tools are committed before the consumer pin.
+  checkpoint pins tools `c31f6b2`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Animated quad record installed: all 43 words directly from C**:
+[Note 1687](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md).
+Recover `func_15171CA0`, frame 32/one binding, with SDK vertices, packed
+color, lifetime/animation metadata and the eight-argument pointer-return
+interface. No guards. Both tools copies pass six fresh checks before and
+after installation. Qualify both original caller windows, all 28 allocator
+words and its actual native C body, with bounded lower providers. Preserve
+six neighbors and the strict 126-byte image across 15,918 inputs.
+Tools `c31f6b2` first. Total 3,759/5,505 (68.28%),
+Game 3,086/4,832 (63.87%), zero drift; 370 more to 75%.
+Next triage `func_1510D8C0`, then `func_1518C850`, uncredited.
+Host Release, saves/configuration untouched.
 
 **Four-entry pointer/count loader installed: all 43 words directly from C**:
 [Note 1686](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md).

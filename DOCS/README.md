@@ -56,6 +56,10 @@ confirmed.
 
 ## Planning and history
 
+- [Animated quad record](WORKING_NOTES/1687-quad-effect-record-direct-match-20261024.md):
+  all 43 words/frame 32 directly from SDK-typed C, no guards. Qualify both
+  callers and the original/native allocator; preserve six neighbors and the
+  strict 126-byte image. Total 3,759/5,505 (68.28%).
 - [Four-entry pointer/count loader](WORKING_NOTES/1686-four-entry-loader-direct-match-20261023.md):
   all 43 words/frame 64 directly from C, no guards. Qualify the actual
   variadic helper and caller window; preserve five neighbors and the strict
