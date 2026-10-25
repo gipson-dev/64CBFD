@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-24 List Record Image Sampler Direct C Match
+
+[Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):
+install `func_1517E1AC`, all 56 words/frame zero/eight bindings directly from C,
+no guards. Retain canonical buffer ABI, lazy bounds checks, per-node global
+reads and unsigned halfword-only stores. The typed scheduler caller's complete
+object stays identical; fresh native probes recheck the old constructor under
+the refined private layout. Both copies pass six fresh prechecks, two fresh
+installed checks and four fingerprinted reuses. Preserve seven neighbors, one
+GLOBAL_ASM and strict 152-byte image, zero exclusions. Tools `138a580` first.
+Actual adopted-Native-ELF total 3,793/5,505 (68.90%), Game 3,120/4,832 (64.57%),
+zero drift; 336 more to 75%. Next `func_1519E818` stays private/non-exact.
+No full FCSR, scheduler, hardware/gameplay or host acceptance is inferred.
+
 ## 2026-10-24 List Record Constructor Direct C Match
 
 [Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):

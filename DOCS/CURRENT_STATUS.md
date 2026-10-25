@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7c3f573`; tools are committed before the consumer pin.
+  checkpoint pins tools `138a580`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**List record RGBA16 sampler restored directly from C**:
+[Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md).
+`func_1517E1AC` matches all 56 words/frame zero/eight bindings with no guards.
+Keep the canonical signed buffer word, unsigned halfword sample, lazy clipping
+and live per-record globals. Type the scheduler caller without changing its
+complete object; recheck the constructor under the refined private layout.
+Both copies pass six fresh prechecks, then two fresh installed checks plus
+four fingerprinted semantic reuses. Preserve seven neighbors, one GLOBAL_ASM,
+all other linked bodies/addresses and the strict 152-byte image, zero exclusions.
+Tools `138a580` first. Actual adopted-Native-ELF total 3,793/5,505 (68.90%),
+Game 3,120/4,832 (64.57%), zero drift; 336 more to 75%. Next ordinary target
+`func_1519E818` remains privately non-exact and uncredited. Full scheduler,
+FCSR, hardware/gameplay and host acceptance remain outside this bounded proof.
 
 **List record constructor restored directly from C**:
 [Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md).

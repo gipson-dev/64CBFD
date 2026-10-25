@@ -11,7 +11,8 @@ typedef struct ListRecord1AB530 {
     u8 opaque14[0x10];
     struct ListRecord1AB530 *next;
     s16 state28;
-    u8 opaque2A[4];
+    u16 sample2A;
+    u8 opaque2C[2];
     u8 flags2E;
     u8 first2F;
     u8 second30;
@@ -20,6 +21,9 @@ typedef struct ListRecord1AB530 {
 
 extern ListRecord1AB530 *D_800DDD64;
 s32 allocate_memory(s32, s32, s32, s32);
+
+extern s32 D_800BE620, D_800BE624;
+extern s32 D_800BE9C4;
 
 /* Append through the captured tail link and initialize only the owned fields. */
 struct162 *func_1517E080(s32 first, s32 second) {
@@ -52,8 +56,17 @@ struct162 *func_1517E080(s32 first, s32 second) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1AB530/func_1517E134.s")
 
-s32 func_1517E1AC() {
-    return 0;
+/* Sample the current RGBA16 image at each in-bounds record position. */
+void func_1517E1AC(void) {
+    ListRecord1AB530 *node = D_800DDD64;
+
+    while (node != NULL) {
+        if (node->valueC >= 0.0f && node->valueC < D_800BE620 &&
+            node->value10 >= 0.0f && node->value10 < D_800BE624) {
+            node->sample2A = ((u16 *)D_800BE9C4)[(s32)node->valueC + (s32)node->value10 * D_800BE620];
+        }
+        node = node->next;
+    }
 }
 
 s32 func_1517E28C() {

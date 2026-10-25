@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [List record image sampler](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):
+  56 words/frame zero/eight bindings directly from C, no guards. Preserve
+  signed bounds, live RGBA16 buffer reads and halfword-only record updates;
+  type the scheduler caller without changing its complete object. Both copies
+  pass six fresh prechecks, two fresh installed checks and four fingerprinted
+  reuses, including constructor-layout regression. Strict 152-byte image,
+  zero exclusions; adopted-ELF total 68.90%, 336 more to 75%. Full scheduler,
+  hardware/gameplay and host acceptance remain outside this bounded proof.
 - [List record constructor](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):
   45 words/frame 32 directly from C, three bindings and zero guards; captured
   tail publication, partial initialization, late homes and typed caller/allocator

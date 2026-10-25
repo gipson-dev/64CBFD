@@ -2,6 +2,19 @@
 
 2026-10-24:
 
+[Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):
+RGBA16 list sampler `func_1517E1AC` installed/adopted, all 56 words/frame zero/
+eight bindings directly from C, no guards. Preserve the signed buffer-word ABI,
+lazy clipping, live globals and halfword-only stores; the typed scheduler
+caller object remains identical. Both copies pass six fresh prechecks, two
+fresh installed checks and four fingerprinted reuses, including fresh native
+constructor-layout regression. Seven neighbors, one GLOBAL_ASM and strict
+152-byte image pass, zero exclusions. Tools `138a580` first; actual Native-ELF
+total 68.90%, 336 more to 75%. Next `func_1519E818` remains private/non-exact.
+No full FCSR, scheduler, hardware/gameplay or host acceptance is claimed.
+
+2026-10-24:
+
 [Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):
 list constructor `func_1517E080` installed/adopted, all 45 words/frame 32/three
 bindings directly from C, no guards. Correct allocator/caller ABI, preserve
