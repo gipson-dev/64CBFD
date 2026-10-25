@@ -2,6 +2,17 @@
 
 2026-10-25:
 
+[Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md):
+preset payload dispatch `func_1518F51C` adopted, all 45 words/frame 56/four
+bindings directly from C, no guards. Preserve scalar argument widths, late
+homes, all 60 neighbors and the strict 150-byte image with one closed symbol/
+string cycle, zero exclusions. Both copies pass six fresh prechecks, two fresh
+installed checks and four fingerprinted reuses. Tools `8ad2cea` first; actual
+Native-ELF total 69.05%, 328 more to 75%. Next ordinary target `func_151D3D50`
+is uncredited; retained provider stubs and full callers/gameplay stay separate.
+
+2026-10-25:
+
 [Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md):
 setup-byte defaults `func_1518E524` adopted, all 45 words/frame 24/two bindings
 directly from C, no guards. Preserve two independent draws, early flags and

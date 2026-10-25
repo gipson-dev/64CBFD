@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `6a49597`; tools are committed before the consumer pin.
+  checkpoint pins tools `8ad2cea`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Preset payload dispatch restored directly from C**:
+[Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md).
+`func_1518F51C` matches all 45 words/frame 56/four bindings without guards.
+Preserve the classifier result gate, late argument homes and 80-byte preset
+stride; extraBytes/context are scalar words. Both copies pass six fresh
+prechecks, then two fresh installed checks plus four fingerprinted reuses.
+Actual Make reproduces the strict 150-byte image, including one closed symbol/
+string permutation and no exclusions. All 60 neighbors and other linked bodies/
+addresses stay fixed. Tools `8ad2cea` first; adopted Native-ELF total 3,801/5,505
+(69.05%), Game 3,128/4,832 (64.74%), zero drift; 328 more to 75%.
+Next ordinary placeholder `func_151D3D50` is uncredited. The two retained provider
+stubs and full caller/gameplay acceptance remain outside this recovery.
+
 **Setup-byte defaults restored directly from C**:
 [Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md).
 `func_1518E524` matches all 45 words/frame 24/two bindings without guards.
@@ -36,7 +49,7 @@ plus four fingerprinted reuses. Actual Make reproduces the strict 125-byte
 image, zero exclusions; all 60 neighbors and the original indirect caller stay
 fixed. Tools `6a49597` first; actual adopted Native-ELF total 3,800/5,505
 (69.03%), Game 3,127/4,832 (64.71%), zero drift; 329 more to 75%.
-Next ordinary placeholder `func_1518F51C` remains uncredited. The bounded
+Its then-private `func_1518F51C` is now adopted in Note 1725 above. The bounded
 original caller window does not qualify its full entry/return or gameplay.
 
 **Current-owner node cleanup restored directly from C**:

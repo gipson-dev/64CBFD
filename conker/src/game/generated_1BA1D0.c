@@ -1,4 +1,8 @@
 #include <ultra64.h>
+typedef struct { u32 words[20]; } Generated1BA1D0Preset;
+extern Generated1BA1D0Preset *D_8008D630[];
+s32 func_1518FDC4();
+void *func_1518F5D0();
 f32 func_150ADA68();
 s32 func_150ADA20(void);
 void func_151429E0(u8, u8 *, u8 *, u8 *);
@@ -296,12 +300,25 @@ void func_1518F49C(u8 *arg0, u8 *arg1, s32 arg2) {
     func_1516972C(arg0);
 }
 
-s32 func_1518F51C() {
-    return 0;
+/* Select the object's preset, then forward the payload arguments. */
+void *func_1518F51C(void *object, u8 variant, s16 mode, s8 first,
+                  s8 second, s8 third, u8 value, s32 extraBytes,
+                  u8 channel, s32 context) {
+    u32 reserved; /* Retail keeps this word unwritten above the byte output. */
+    u8 preset;
+
+    if (object == NULL) {
+        return NULL;
+    }
+    if (!func_1518FDC4(object, &preset, variant)) {
+        return NULL;
+    }
+    return func_1518F5D0(object, &D_8008D630[preset][variant], mode, first,
+                       second, third, value, extraBytes, channel, context);
 }
 
-s32 func_1518F5D0() {
-    return 0;
+void *func_1518F5D0() {
+    return NULL;
 }
 
 s32 func_1518F7C4(u8 *arg0) {

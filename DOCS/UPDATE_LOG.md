@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-25 Preset Payload Dispatch Direct C Match
+
+[Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md): adopt
+`func_1518F51C`, all 45 words/frame 56/four bindings directly from C, no guards.
+Preserve late argument reads, scalar extraBytes/context, all 60 neighbors and
+the exact 150-byte image, including one closed symbol/string permutation, zero
+exclusions. Both copies pass six fresh prechecks, two fresh installed checks
+and four fingerprinted reuses. Tools `8ad2cea` first; actual Native ELF
+3,801/5,505 (69.05%), Game 3,128/4,832 (64.74%), zero drift; 328 more to 75%.
+Next ordinary target `func_151D3D50` is uncredited. The classifier's original
+code and all five caller windows are tested; its C stub is not recovered here.
+
 ## 2026-10-25 Setup-Byte Defaults Direct C Match
 
 [Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md): adopt
