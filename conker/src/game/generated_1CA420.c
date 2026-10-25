@@ -144,8 +144,29 @@ s32 func_1519E754() {
     return 0;
 }
 
-s32 func_1519E818() {
-    return 0;
+/* Retarget the payload link, or release this record and clear the global. */
+void func_1519E818(struct260 *owner, s32 eventAddress, u8 command) {
+    PayloadOwnerLink *link = (PayloadOwnerLink *)((u8 *)owner + 0x28);
+    PayloadOwnerLinkEvent *event = (PayloadOwnerLinkEvent *)eventAddress;
+    s32 code = command;
+
+    if (command == 0) {
+        u8 *current = link->owner;
+        u8 *first = event->before;
+        if (current == first || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+            D_800E0920 = NULL;
+        }
+    } else if (code == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    }
 }
 
 s32 func_1519E8CC(u8 *arg0) {

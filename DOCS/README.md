@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Global identity event](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
+  45 words/frame 24/three bindings from C and eighteen checked operand guards;
+  preserve release-before-global-clear ordering and late retarget key reads.
+  Both copies pass eight fresh prechecks, two fresh installed checks and six
+  fingerprinted reuses, including the installed-object verifier regression.
+  Preserve 22 neighbors and strict 127-byte image, zero exclusions. Actual
+  adopted-ELF total 68.92%, 335 more to 75%; next `func_151B19A4` remains private
+  and four words different. Guarded C, not full-provider/gameplay acceptance.
 - [List record image sampler](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):
   56 words/frame zero/eight bindings directly from C, no guards. Preserve
   signed bounds, live RGBA16 buffer reads and halfword-only record updates;

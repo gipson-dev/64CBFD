@@ -1,5 +1,18 @@
 # Working Notes
 
+2026-10-25:
+
+[Note 1718](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
+global identity callback `func_1519E818` installed/adopted, all 45 words/frame 24/
+three bindings with eighteen checked operand guards. Preserve release then
+global clear, retarget priority, late key reads and existing typed interfaces.
+Both copies pass eight fresh prechecks, two fresh installed checks and six
+fingerprinted reuses; the installed-object verifier has a fresh regression.
+Preserve 22 neighbors and strict 127-byte image, zero exclusions. Tools
+`0122290`, then `84d483f`, first; actual Native-ELF total 68.92%, 335 more to 75%.
+Next `func_151B19A4` remains private, four words different, uninstalled/uncredited.
+Guarded C, not compiler-only, full-provider/gameplay or host acceptance.
+
 2026-10-24:
 
 [Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):

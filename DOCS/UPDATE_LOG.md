@@ -1,5 +1,20 @@
 # Update Log
 
+## 2026-10-25 Global Identity Event Match
+
+[Note 1718](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
+install `func_1519E818`, all 45 words/frame 24/three bindings from complete C
+and eighteen checked operand guards. Reuse existing payload views/interfaces;
+preserve release-before-global-clear ordering, first-match retargeting and
+late key reads. Both copies pass eight fresh prechecks, two fresh installed
+checks and six fingerprinted reuses. The installed-object input checker is
+fixed with acceptance and six corruption controls. Preserve 22 neighbors,
+all other linked bodies/addresses and strict 127-byte image, zero exclusions.
+Tools `0122290`, then `84d483f`, first. Actual adopted-Native-ELF total
+3,794/5,505 (68.92%), Game 3,121/4,832 (64.59%), zero drift; 335 more to 75%.
+Next `func_151B19A4` is private/non-exact at four words, not installed or credited.
+Guarded C, not compiler-only or full-provider/gameplay proof; host untouched.
+
 ## 2026-10-24 List Record Image Sampler Direct C Match
 
 [Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md):

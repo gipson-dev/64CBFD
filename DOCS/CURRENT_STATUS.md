@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-24
+Last verified: 2026-10-25
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `138a580`; tools are committed before the consumer pin.
+  checkpoint pins tools `84d483f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,21 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Global identity event restored with post-release clear**:
+[Note 1718](WORKING_NOTES/1718-global-identity-event-match-20261025.md).
+`func_1519E818` matches all 45 words/frame 24/three bindings with eighteen
+checked operand guards. Preserve release-before-global-clear ordering,
+first-match retargeting and late key reads; reuse existing payload views and
+typed interfaces without shared-header or caller edits. Both copies pass eight
+fresh prechecks, then two fresh installed checks plus six fingerprinted reuses.
+The installed-object verifier regression is fixed and freshly tested. Preserve
+22 neighbors, all other linked bodies/addresses and the strict 127-byte image,
+zero exclusions. Tools `0122290`, then `84d483f`, first. Actual adopted-Native-ELF
+total 3,794/5,505 (68.92%), Game 3,121/4,832 (64.59%), zero drift; 335 more to 75%.
+Next ordinary target `func_151B19A4` is private and four words different,
+uninstalled/uncredited. Guarded C, not compiler-only or full-provider/gameplay
+acceptance; host artifacts remain untouched.
+
 **List record RGBA16 sampler restored directly from C**:
 [Note 1717](WORKING_NOTES/1717-list-record-image-sampler-match-20261024.md).
 `func_1517E1AC` matches all 56 words/frame zero/eight bindings with no guards.
@@ -37,8 +52,8 @@ Both copies pass six fresh prechecks, then two fresh installed checks plus
 four fingerprinted semantic reuses. Preserve seven neighbors, one GLOBAL_ASM,
 all other linked bodies/addresses and the strict 152-byte image, zero exclusions.
 Tools `138a580` first. Actual adopted-Native-ELF total 3,793/5,505 (68.90%),
-Game 3,120/4,832 (64.57%), zero drift; 336 more to 75%. Next ordinary target
-`func_1519E818` remains privately non-exact and uncredited. Full scheduler,
+Game 3,120/4,832 (64.57%), zero drift; 336 more to 75%. Its then-private target
+`func_1519E818` is now adopted in Note 1718 above. Full scheduler,
 FCSR, hardware/gameplay and host acceptance remain outside this bounded proof.
 
 **List record constructor restored directly from C**:
