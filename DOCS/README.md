@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Eager owner identity event](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):
+  45 words/frame 24/one binding from semantic C and four checked register-role
+  guards. Preserve eager owner access, both release modes and late retarget
+  keys. Both copies pass eight fresh prechecks, two fresh installed checks and
+  six fingerprinted reuses. Preserve 15 neighbors, one GLOBAL_ASM and strict
+  126-byte image, zero exclusions. Actual adopted-ELF total 68.94%, 334 more to
+  75%; next `func_151B8CFC` is privately direct-body-exact but uncredited.
+  Guarded C here, not full-provider/gameplay acceptance.
 - [Global identity event](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
   45 words/frame 24/three bindings from C and eighteen checked operand guards;
   preserve release-before-global-clear ordering and late retarget key reads.

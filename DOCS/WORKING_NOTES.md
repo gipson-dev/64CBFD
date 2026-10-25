@@ -2,6 +2,18 @@
 
 2026-10-25:
 
+[Note 1719](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):
+eager owner callback `func_151B19A4` installed/adopted, all 45 words/frame 24/
+one binding with four checked register-role guards. Preserve eager owner access,
+release modes zero/0x13, retarget priority, late key reads and both dead words.
+Both copies pass eight fresh prechecks, two fresh installed checks and six
+fingerprinted reuses. Preserve 15 neighbors, one GLOBAL_ASM and strict 126-byte
+image, zero exclusions. Tools `d1965a7` first; actual Native-ELF total 68.94%,
+334 more to 75%. Next `func_151B8CFC` is privately direct-body-exact but uncredited.
+Guarded C here, not compiler-only, full-provider/gameplay or host acceptance.
+
+2026-10-25:
+
 [Note 1718](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
 global identity callback `func_1519E818` installed/adopted, all 45 words/frame 24/
 three bindings with eighteen checked operand guards. Preserve release then

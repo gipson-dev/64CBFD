@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-25 Eager Owner Identity Event Match
+
+[Note 1719](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):
+install `func_151B19A4`, all 45 words/frame 24/one binding from complete C
+and four checked register-role guards. Preserve the owner read before every
+command gate, release modes zero/0x13, first-match retargeting and late key
+reads. Both copies pass eight fresh prechecks, two fresh installed checks and
+six fingerprinted reuses. Preserve 15 neighbors, one GLOBAL_ASM routine,
+all other linked bodies/addresses and strict 126-byte image, zero exclusions.
+Tools `d1965a7` first. Actual adopted-Native-ELF total 3,795/5,505 (68.94%),
+Game 3,122/4,832 (64.61%), zero drift; 334 more to 75%. Next `func_151B8CFC`
+has private direct C for all 43 body words but is not installed or credited.
+Guarded C here, not compiler-only or full-provider/gameplay proof; host untouched.
+
 ## 2026-10-25 Global Identity Event Match
 
 [Note 1718](WORKING_NOTES/1718-global-identity-event-match-20261025.md):

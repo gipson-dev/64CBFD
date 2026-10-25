@@ -78,8 +78,41 @@ void func_151B1918(u8 *arg0) {
     } while (offset != 0x84);
 }
 
-s32 func_151B19A4() {
-    return 0;
+/* Only the owner identity word, saved key and event pair are exposed. */
+typedef struct {
+    void *owner;
+    u8 key;
+} OwnerIdentity1DD500;
+typedef struct {
+    void *before;
+    void *after;
+    u8 before_key;
+    u8 after_key;
+} OwnerIdentityEvent1DD500;
+
+/* Capture the owner before dispatch, then release or retarget this record. */
+void func_151B19A4(struct260 *record, s32 eventAddress, u8 command) {
+    u8 *owner = (u8 *)record;
+    OwnerIdentity1DD500 *state = (OwnerIdentity1DD500 *)(owner + 0x28);
+    OwnerIdentityEvent1DD500 *event = (OwnerIdentityEvent1DD500 *)eventAddress;
+    void *saved = state->owner;
+    s32 code = command;
+
+    if (command == 0 || command == 0x13) {
+        if (saved == event->before || state->key == ((u8 *)event)[4]) {
+            func_1516972C(owner);
+        }
+    } else if (code == 0x2D) {
+        void *current = state->owner;
+        void *first = event->before;
+        if (current == first) {
+            state->owner = event->after;
+            state->key = event->after_key;
+        } else if (event->after == current) {
+            state->owner = first;
+            state->key = event->before_key;
+        }
+    }
 }
 
 s32 func_151B1A58(s32 arg0) {

@@ -23680,3 +23680,7 @@ generated_1CA420,func_1519E818,0x090,0x54690005,0x55640005,-,-,Restore phase-loc
 generated_1CA420,func_1519E818,0x098,0xAC440000,0xAC430000,-,-,Restore phase-local global identity callback roles and equality operand order,,,false
 generated_1CA420,func_1519E818,0x09C,0x90AA0008,0x90AC0008,-,-,Restore phase-local global identity callback roles and equality operand order,,,false
 generated_1CA420,func_1519E818,0x0A0,0xA04A0004,0xA04C0004,-,-,Restore phase-local global identity callback roles and equality operand order,,,false
+generated_1DD500,func_151B19A4,0x068,0x8C430000,0x8C440000,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
+generated_1DD500,func_151B19A4,0x06C,0x8CA40000,0x8CA30000,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
+generated_1DD500,func_151B19A4,0x090,0x546A0005,0x55440005,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
+generated_1DD500,func_151B19A4,0x098,0xAC440000,0xAC430000,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
