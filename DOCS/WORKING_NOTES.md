@@ -2,6 +2,19 @@
 
 2026-10-24:
 
+[Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):
+list constructor `func_1517E080` installed/adopted, all 45 words/frame 32/three
+bindings directly from C, no guards. Correct allocator/caller ABI, preserve
+captured-tail publication, partial stores and late argument homes; cover the
+actual allocator wrapper and caller, guest aliases/faults, native32 and GNU
+rebases. Both copies pass six fresh prechecks, two fresh installed checks and
+four fingerprinted reuses. Preserve seven neighbors, one GLOBAL_ASM and strict
+127-byte image, zero exclusions. Tools `7c3f573` first; actual Native-ELF total
+68.88%, 337 more to 75%. Next `func_1519E818` is private and non-exact at 44/45
+words, uninstalled/uncredited. No deeper allocator/gameplay or host acceptance.
+
+2026-10-24:
+
 [Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):
 extended identity callback `func_150F1020` installed and adopted, all 45 words/
 frame 24/one binding, eleven checked guards and no alignment tail. Both copies

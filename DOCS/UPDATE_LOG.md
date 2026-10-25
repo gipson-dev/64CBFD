@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-24 List Record Constructor Direct C Match
+
+[Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):
+install `func_1517E080`, all 45 words/frame 32/three bindings directly from C,
+zero guards. Recover the captured tail, partial stores and late argument homes;
+use the allocator's real `s32` return and a typed, byte-identical caller. Both
+copies pass six fresh prechecks and two fresh installed checks plus four
+fingerprinted reuses. Preserve seven neighbors, one GLOBAL_ASM and the strict
+127-byte image, zero exclusions. Tools `7c3f573` first. Actual adopted-Native-ELF
+total 3,792/5,505 (68.88%), Game 3,119/4,832 (64.55%), zero drift; 337 more to
+75%. Next `func_1519E818` has only a private non-exact screen, no credit.
+The deeper allocator/gameplay and host remain outside this bounded proof.
+
 ## 2026-10-24 Extended Identity Event Match
 
 [Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):

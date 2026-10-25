@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+struct162 *func_1517E080(s32 first, s32 second);
+
 
 void func_15009150(s32 arg0) {
     struct162 *tmp;

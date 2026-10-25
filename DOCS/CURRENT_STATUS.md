@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `add059c`; tools are committed before the consumer pin.
+  checkpoint pins tools `7c3f573`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,20 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**List record constructor restored directly from C**:
+[Note 1716](WORKING_NOTES/1716-list-record-constructor-match-20261024.md).
+`func_1517E080` matches all 45 words/frame 32/three bindings with zero new
+guards. Preserve the captured pre-allocation tail, partial initialization and
+late full-word argument homes. Correct the allocator's `s32` return declaration
+and type the existing caller without changing its complete object. Both copies
+pass six fresh prechecks; two fresh installed checks plus four fingerprinted
+semantic reuses verify production. Preserve seven neighbors, one GLOBAL_ASM,
+all other linked bodies/addresses and the strict 127-byte image, zero exclusions.
+Tools `7c3f573` first. Actual adopted-native-ELF total 3,792/5,505 (68.88%),
+Game 3,119/4,832 (64.55%), zero drift; 337 more to 75%. Next ordinary target
+`func_1519E818` has only a private non-exact 44/45-word screen; it is uninstalled
+and uncredited. Deeper providers/gameplay and the host remain outside this proof.
+
 **Extended identity events restored with both release modes**:
 [Note 1715](WORKING_NOTES/1715-extended-identity-event-match-20261024.md).
 `func_150F1020` matches all 45 words/frame 24/one binding with eleven checked
@@ -37,8 +51,8 @@ fresh installed checks plus six fingerprinted reuses verify production.
 Preserve 43 neighbors, the existing caller and strict 125-byte image, zero
 exclusions. Tools `add059c` first. Adopted-native-ELF total 3,791/5,505 (68.86%),
 Game 3,118/4,832 (64.53%), zero drift; 338 more to 75%.
-Next ordinary placeholder `func_1517E080` has private direct-45-word C only;
-it remains uninstalled/uncredited. Existing-C/parser-missed tasks stay separate.
+Its then-private next candidate `func_1517E080` is now adopted in Note 1716 above;
+the older private probe adds no separate credit. Existing-C/parser-missed tasks stay separate.
 Guarded C, not compiler-only or full-provider/gameplay proof; host untouched.
 
 **Record identity events restored with checked roles and read order**:

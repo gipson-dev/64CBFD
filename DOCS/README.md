@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [List record constructor](WORKING_NOTES/1716-list-record-constructor-match-20261024.md):
+  45 words/frame 32 directly from C, three bindings and zero guards; captured
+  tail publication, partial initialization, late homes and typed caller/allocator
+  ABI. Both copies pass six fresh prechecks, then two fresh installed checks and
+  four fingerprinted reuses. Preserve seven neighbors, one GLOBAL_ASM and strict
+  127-byte image, zero exclusions. Adopted-ELF total 68.88%, 337 more to 75%;
+  deeper allocator/gameplay and the host remain outside this bounded proof.
+
 - [Extended identity event](WORKING_NOTES/1715-extended-identity-event-match-20261024.md):
   45 words/frame 24, eleven checked guards, both release commands and the
   real 14-entry flag-gated dispatcher. Both copies pass eight fresh prechecks,
