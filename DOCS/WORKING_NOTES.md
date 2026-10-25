@@ -2,6 +2,16 @@
 
 2026-10-25:
 
+[Note 1723](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):
+current-owner node cleanup `func_150AFDB0` adopted, all 45 words/frame 32/19
+bindings directly from C, no new guards. Preserve live owner/depth/iterator
+behavior, 17 neighbors and strict 162-byte image, zero exclusions. Both copies
+pass six fresh prechecks, two fresh installed checks and four fingerprinted
+reuses. Tools `0fa6f1a` first; actual Native-ELF total 69.01%, 330 more to 75%.
+Next ordinary target `func_1518E524` is uncredited; retained caller unchanged.
+
+2026-10-25:
+
 [Note 1722](WORKING_NOTES/1722-view-plane-query-match-20261025.md): masked
 view-plane query `func_150A2FA4` adopted, all 45 words/frame 24/seven bindings
 directly from C, no new guards. Preserve 27 neighbors, the two assembly bodies,

@@ -1,4 +1,10 @@
 #include <ultra64.h>
+#include "structs.h"
+extern s8 D_800DD190;
+extern struct102 *D_800DCE94;
+extern void *D_800DD198[];
+extern u8 D_800C3E78;
+void func_1516972C(struct102 *);
 extern s32 D_800BE9F0;
 s32 func_150AF200(s32, u8);
 s32 func_15179008(s32);
@@ -97,8 +103,20 @@ s32 func_150AFC68() {
     return 0;
 }
 
-s32 func_150AFDB0() {
-    return 0;
+/* Release list nodes owned by the current object, preserving nested iterators. */
+void func_150AFDB0(void) {
+    struct102 *node;
+
+    D_800DD190++;
+    node = D_800DCE94;
+    while (node != NULL) {
+        D_800DD198[D_800DD190] = (struct102 *)node->unk8;
+        if (D_800C3E78 == node->pad3E[1]) {
+            func_1516972C(node);
+        }
+        node = D_800DD198[D_800DD190];
+    }
+    D_800DD190--;
 }
 
 s32 func_150AFE64() {
@@ -123,7 +141,7 @@ s32 func_150B02C0(u8 *arg0) {
     u8 *temp_a1 = arg0;
 
     if (*(s32 volatile *)(temp_a1 + 0x170) != 0) {
-        func_1516972C(*(s32 volatile *)(temp_a1 + 0x170));
+        func_1516972C((struct102 *)*(s32 volatile *)(temp_a1 + 0x170));
     }
 }
 

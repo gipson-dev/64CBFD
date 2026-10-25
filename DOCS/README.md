@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Current-owner node cleanup](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):
+  45 words/frame 32/19 bindings directly from C, no new guards. Preserve live
+  owner/depth/iterator behavior, 17 neighbors and the strict 162-byte image,
+  zero exclusions. Both copies pass six fresh prechecks, two fresh installed
+  checks and four fingerprinted reuses. Adopted Native-ELF total 69.01%, 330 more
+  to 75%; next ordinary placeholder `func_1518E524` remains uncredited.
+
 - [Masked view-plane query](WORKING_NOTES/1722-view-plane-query-match-20261025.md):
   45 words/frame 24/seven bindings directly from C, no new guards. Preserve
   unsigned strict bounds, float argument bits, all 27 neighbors and the strict

@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-25 Current-Owner Node Cleanup Direct C Match
+
+[Note 1723](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):
+adopt `func_150AFDB0`, all 45 words/frame 32/19 bindings directly from C,
+no new guards. Preserve live owner/depth/iterator behavior, all 17 neighbors,
+the original caller and strict 162-byte image, zero exclusions. Both copies
+pass six fresh prechecks, two fresh installed checks and four fingerprinted
+reuses. Tools `0fa6f1a` first; actual adopted Native ELF 3,799/5,505 (69.01%),
+Game 3,126/4,832 (64.69%), zero drift; 330 more to 75%. Next ordinary target
+`func_1518E524` remains uncredited; full heap/gameplay acceptance stays separate.
+
 ## 2026-10-25 Masked View-Plane Query Direct C Match
 
 [Note 1722](WORKING_NOTES/1722-view-plane-query-match-20261025.md): adopt
