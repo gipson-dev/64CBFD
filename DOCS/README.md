@@ -56,13 +56,21 @@ confirmed.
 
 ## Planning and history
 
+- [Compact embedded oscillation](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):
+  all 43 body words/frame 32/six bindings directly from C, no guards and two
+  preserved alignment words. Both copies pass ten fresh prechecks, then two
+  fresh installed checks plus eight fingerprinted reuses. Preserve helper
+  mutations, late time-step reads, three neighbors and strict 142-byte image,
+  zero exclusions. Actual adopted-ELF total 68.96%, 333 more to 75%; next
+  `func_15085ABC` is privately body-exact but uncredited. Original-dispatcher
+  evidence is not retained-caller or gameplay acceptance.
 - [Eager owner identity event](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):
   45 words/frame 24/one binding from semantic C and four checked register-role
   guards. Preserve eager owner access, both release modes and late retarget
   keys. Both copies pass eight fresh prechecks, two fresh installed checks and
   six fingerprinted reuses. Preserve 15 neighbors, one GLOBAL_ASM and strict
   126-byte image, zero exclusions. Actual adopted-ELF total 68.94%, 334 more to
-  75%; next `func_151B8CFC` is privately direct-body-exact but uncredited.
+  75%; its then-private `func_151B8CFC` is now adopted in Note 1720 above.
   Guarded C here, not full-provider/gameplay acceptance.
 - [Global identity event](WORKING_NOTES/1718-global-identity-event-match-20261025.md):
   45 words/frame 24/three bindings from C and eighteen checked operand guards;

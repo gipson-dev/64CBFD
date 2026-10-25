@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d1965a7`; tools are committed before the consumer pin.
+  checkpoint pins tools `284f840`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Compact embedded oscillation restored directly from C**:
+[Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md).
+`func_151B8CFC` matches all 43 body words/frame 32/six bindings without guards;
+both alignment words remain exact. Preserve helper mutations, float32 operation
+order and separate live planar time steps. Both copies pass ten fresh prechecks,
+then two fresh installed checks plus eight fingerprinted reuses. All three
+neighbors, other linked bodies/addresses and the strict 142-byte image remain
+fixed, zero exclusions. Tools `284f840` first. Actual adopted-Native-ELF total
+3,796/5,505 (68.96%), Game 3,123/4,832 (64.63%), zero drift; 333 more to 75%.
+Next ordinary target `func_15085ABC` has private direct 44-word C after an AND
+operand-order change, but remains uninstalled/uncredited. Original-dispatcher
+tests do not establish retained-caller or gameplay parity; host untouched.
+
 **Eager owner identity event restored with both release modes**:
 [Note 1719](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md).
 `func_151B19A4` matches all 45 words/frame 24/one binding using four checked
@@ -36,9 +49,8 @@ eight fresh prechecks, then two fresh installed checks plus six fingerprinted
 reuses. Preserve 15 neighbors, one GLOBAL_ASM routine, all other linked bodies/
 addresses and the strict 126-byte image, zero exclusions. Tools `d1965a7` first.
 Actual adopted-Native-ELF total 3,795/5,505 (68.94%), Game 3,122/4,832 (64.61%),
-zero drift; 334 more to 75%. Next ordinary target `func_151B8CFC` has a private
-direct 43-word C body, but full qualification/adoption remain open and it is
-uncredited. Guarded C here, not compiler-only or full-provider/gameplay proof;
+zero drift; 334 more to 75%. Its then-private target `func_151B8CFC` is now
+adopted in Note 1720 above. Guarded C here, not compiler-only or full-provider/gameplay proof;
 host artifacts remain untouched.
 
 **Global identity event restored with post-release clear**:

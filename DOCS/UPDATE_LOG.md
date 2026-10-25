@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-25 Compact Embedded Oscillation Direct C Match
+
+[Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):
+install `func_151B8CFC`, all 43 body words/frame 32/six bindings directly from
+C, no guards and two preserved alignment words. Retain helper mutations and
+separate live planar time steps. Both copies pass ten fresh prechecks, then
+two fresh installed checks plus eight fingerprinted reuses. Preserve three
+neighbors, all other bodies/addresses and strict 142-byte image, zero exclusions.
+Tools `284f840` first. Actual adopted-Native-ELF total 3,796/5,505 (68.96%),
+Game 3,123/4,832 (64.63%), zero drift; 333 more to 75%. Next `func_15085ABC`
+has private direct 44-word C but is uninstalled/uncredited. The original caller
+tests do not establish retained-dispatcher or gameplay parity; host untouched.
+
 ## 2026-10-25 Eager Owner Identity Event Match
 
 [Note 1719](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):

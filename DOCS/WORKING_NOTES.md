@@ -2,6 +2,17 @@
 
 2026-10-25:
 
+[Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):
+compact oscillation `func_151B8CFC` installed/adopted, all 43 body words/frame 32/
+six bindings directly from C, no guards and two preserved alignment words.
+Preserve helper mutations, late clocks, all three neighbors and strict 142-byte
+image, zero exclusions. Both copies pass ten fresh prechecks, two fresh installed
+checks and eight fingerprinted reuses. Tools `284f840` first; actual Native-ELF
+total 68.96%, 333 more to 75%. Next `func_15085ABC` is privately direct-body-exact
+but uncredited. Original caller coverage is not retained-C/gameplay acceptance.
+
+2026-10-25:
+
 [Note 1719](WORKING_NOTES/1719-eager-owner-identity-event-match-20261025.md):
 eager owner callback `func_151B19A4` installed/adopted, all 45 words/frame 24/
 one binding with four checked register-role guards. Preserve eager owner access,
