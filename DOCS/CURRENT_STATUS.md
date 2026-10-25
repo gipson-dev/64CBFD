@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8ad2cea`; tools are committed before the consumer pin.
+  checkpoint pins tools `ca1a655`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Timed vertical oscillation restored directly from C**:
+[Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md).
+`func_151D3D50` matches all 45 words/frame 32/six bindings without guards.
+Both tools copies pass eight fresh checks before and after installation.
+Actual Make reproduces the strict 143-byte image, zero exclusions; all 27
+neighbors and other linked bodies/addresses stay fixed. Tools `ca1a655` first;
+adopted Native-ELF total 3,802/5,505 (69.06%), Game 3,129/4,832 (64.76%), zero
+drift; 327 more to 75%. Next ordinary placeholder `func_15013000` remains
+uncredited; its private indexed screen has 23 differences and an unresolved
+global-storage declaration. The original caller's tested paths do not restore
+its C stub or establish full provider/hardware/gameplay acceptance.
+
 **Preset payload dispatch restored directly from C**:
 [Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md).
 `func_1518F51C` matches all 45 words/frame 56/four bindings without guards.
@@ -37,8 +49,8 @@ Actual Make reproduces the strict 150-byte image, including one closed symbol/
 string permutation and no exclusions. All 60 neighbors and other linked bodies/
 addresses stay fixed. Tools `8ad2cea` first; adopted Native-ELF total 3,801/5,505
 (69.05%), Game 3,128/4,832 (64.74%), zero drift; 328 more to 75%.
-Next ordinary placeholder `func_151D3D50` is uncredited. The two retained provider
-stubs and full caller/gameplay acceptance remain outside this recovery.
+Its then-private `func_151D3D50` is now adopted in Note 1726 above. The two
+retained provider stubs and full caller/gameplay acceptance stay separate.
 
 **Setup-byte defaults restored directly from C**:
 [Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md).

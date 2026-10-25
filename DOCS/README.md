@@ -56,13 +56,21 @@ confirmed.
 
 ## Planning and history
 
+- [Timed vertical oscillation](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md):
+  45 words/frame 32/six bindings directly from C, no guards. Both copies pass
+  eight fresh checks before/after installation; preserve 27 neighbors and the
+  strict 143-byte image, zero exclusions. Actual Native-ELF total 69.06%, 327
+  more to 75%. Next `func_15013000` remains uncredited; caller/provider/hardware/
+  gameplay acceptance stays within the limits recorded in the note.
+
 - [Preset payload dispatch](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md):
   45 words/frame 56/four bindings directly from C, no guards. Preserve late
   homes, scalar extraBytes/context, all 60 neighbors and the strict 150-byte
   image with one closed symbol/string cycle, zero exclusions. Both copies pass
   six fresh prechecks, two fresh installed checks and four fingerprinted reuses.
-  Adopted Native-ELF total 69.05%, 328 more to 75%; next `func_151D3D50` remains
-  uncredited. Retained providers and full callers/gameplay are not recovered here.
+  Adopted Native-ELF total then 69.05%, 328 more to 75%; its next target
+  `func_151D3D50` is now adopted above. Retained providers and full callers/gameplay
+  are not recovered by the preset wrapper.
 
 - [Setup-byte defaults](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md):
   45 words/frame 24/two bindings directly from C, no guards. Preserve both

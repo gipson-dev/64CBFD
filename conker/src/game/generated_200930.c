@@ -1,4 +1,16 @@
 #include <ultra64.h>
+typedef struct { f32 x,y,z; } BobVector200930;
+typedef struct { s16 remaining; u16 reserved; f32 phase,rate,amplitude; } BobState200930;
+typedef struct {
+    u8 pad0[0x20]; BobVector200930 position;
+    u8 pad2C[0x24]; BobVector200930 base;
+    u8 pad5C[0x114]; BobState200930 bob;
+} BobActor200930;
+extern f32 D_800BE9A4;
+extern s32 D_800BE9E4;
+f32 func_15144B68(f32);
+f32 sinf(f32);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/200930.s. */
 
@@ -7,8 +19,19 @@ s32 func_15131958();
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D3480.s")
 
-s32 func_151D3D50() {
-    return 0;
+/* Advance the vertical oscillation, or restore the base position. */
+s32 func_151D3D50(BobActor200930 *actor) {
+    BobState200930 *bob = &actor->bob;
+
+    if (bob->remaining > 0) {
+        bob->phase += bob->rate * D_800BE9A4;
+        bob->phase = func_15144B68(bob->phase);
+        actor->position.y = sinf(bob->phase) * bob->amplitude + actor->base.y;
+        bob->remaining -= D_800BE9E4;
+    } else {
+        actor->position = actor->base;
+    }
+    return 1;
 }
 
 

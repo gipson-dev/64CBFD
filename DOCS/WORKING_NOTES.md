@@ -2,14 +2,24 @@
 
 2026-10-25:
 
+[Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md):
+timed vertical oscillation `func_151D3D50` adopted, all 45 words/frame 32/six
+bindings directly from C, no guards. Both copies pass eight fresh checks
+before/after installation; preserve 27 neighbors and the strict 143-byte
+image, zero exclusions. Tools `ca1a655` first; actual Native-ELF total 69.06%,
+327 more to 75%. Next `func_15013000` is uncredited; full caller/provider/
+hardware/gameplay acceptance remains separate.
+
+2026-10-25:
+
 [Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md):
 preset payload dispatch `func_1518F51C` adopted, all 45 words/frame 56/four
 bindings directly from C, no guards. Preserve scalar argument widths, late
 homes, all 60 neighbors and the strict 150-byte image with one closed symbol/
 string cycle, zero exclusions. Both copies pass six fresh prechecks, two fresh
 installed checks and four fingerprinted reuses. Tools `8ad2cea` first; actual
-Native-ELF total 69.05%, 328 more to 75%. Next ordinary target `func_151D3D50`
-is uncredited; retained provider stubs and full callers/gameplay stay separate.
+Native-ELF total then 69.05%, 328 more to 75%. Its next `func_151D3D50` is now
+adopted above; retained provider stubs and full callers/gameplay stay separate.
 
 2026-10-25:
 

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-25 Timed Vertical Oscillation Direct C Match
+
+[Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md): adopt
+`func_151D3D50`, all 45 words/frame 32/six bindings directly from C, no guards.
+Both copies pass eight fresh prechecks and eight fresh installed checks.
+Preserve the signed timer, late fields/tick, bit-preserving vector restore,
+all 27 neighbors and the strict 143-byte image, zero exclusions. Tools
+`ca1a655` first; actual Native ELF 3,802/5,505 (69.06%), Game 3,129/4,832
+(64.76%), zero drift; 327 more to 75%. Next `func_15013000` is uncredited.
+The original caller's tested paths do not restore its C stub or prove full
+provider/hardware/gameplay acceptance.
+
 ## 2026-10-25 Preset Payload Dispatch Direct C Match
 
 [Note 1725](WORKING_NOTES/1725-preset-payload-dispatch-match-20261025.md): adopt
@@ -9,8 +21,9 @@ the exact 150-byte image, including one closed symbol/string permutation, zero
 exclusions. Both copies pass six fresh prechecks, two fresh installed checks
 and four fingerprinted reuses. Tools `8ad2cea` first; actual Native ELF
 3,801/5,505 (69.05%), Game 3,128/4,832 (64.74%), zero drift; 328 more to 75%.
-Next ordinary target `func_151D3D50` is uncredited. The classifier's original
-code and all five caller windows are tested; its C stub is not recovered here.
+That then-private `func_151D3D50` is now adopted above. The classifier's original
+code and all five caller windows are tested by the wrapper's recovery; its C
+stub is not recovered there.
 
 ## 2026-10-25 Setup-Byte Defaults Direct C Match
 
