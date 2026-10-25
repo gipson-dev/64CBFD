@@ -1,5 +1,15 @@
 # Update Log
 
+## 2026-10-25 Grouped Live Actor Walk Guarded C Match
+
+[Note 1728](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md): adopt `func_150228E4`, all 45 words/frame 48/seven bindings
+from semantic C plus four checked setup guards. Both tools copies pass eight
+fresh checks before and after installation. Preserve live count/row/helper
+behavior, 56 neighbors, the actual caller and strict 144-byte image, zero
+exclusions. Tools `e338265` first; actual Native ELF 3,804/5,505 (69.10%),
+Game 3,131/4,832 (64.80%), zero drift; 325 more to 75%. Next
+`func_150AEDF8` is uncredited. Retained caller/provider/gameplay stays separate.
+
 ## 2026-10-25 Live Record Callback Loop Guarded C Match
 
 [Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md): adopt
@@ -8,7 +18,7 @@ opening-schedule guards. Preserve live count/base/type/table behavior,31 owner
 neighbors and the actual caller boundary. Both copies pass eight fresh checks
 before/after; actual Make reproduces the strict149-byte image, zero exclusions.
 Tools `a90bd4e` first; adopted Native ELF3,803/5,505 (69.08%), Game3,130/4,832
-(64.78%), zero drift;326 more to75%. Next `func_150228E4` is uncredited.
+(64.78%), zero drift; 326 more to 75% then. That private `func_150228E4` is now adopted above.
 The retained caller C stub and full provider/hardware/gameplay remain separate.
 
 ## 2026-10-25 Timed Vertical Oscillation Direct C Match

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a90bd4e`; tools are committed before the consumer pin.
+  checkpoint pins tools `e338265`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Grouped live actor walk restored from C**:
+[Note 1728](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md).
+`func_150228E4` matches all 45 words/frame 48/seven bindings through four
+derived setup-scheduling guards. Preserve the live byte count, unsigned actor
+indices, helper mutations, all 56 neighbors and the actual caller boundary.
+Both tools copies pass eight fresh checks before and after installation.
+Actual Make reproduces the strict 144-byte image, zero exclusions. Tools
+`e338265` first; adopted Native ELF 3,804/5,505 (69.10%), Game 3,131/4,832
+(64.80%), zero drift; 325 more to 75%. Next ordinary placeholder
+`func_150AEDF8` remains uncredited. Deliberate saved-slot aliases
+are guest-only; retained caller/provider/gameplay acceptance stays separate.
+
 **Live record callback loop restored from C**:
 [Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md).
 `func_15013000` matches all45 words/frame40/12 bindings with14 checked
@@ -35,8 +47,8 @@ neighbors, the original caller boundary and582 fired access-fault prefixes.
 Both copies pass eight fresh checks before and after installation; actual Make
 reproduces the strict149-byte image, zero exclusions. Tools `a90bd4e` first;
 adopted Native-ELF total3,803/5,505 (69.08%), Game3,130/4,832 (64.78%), zero
-drift;326 more to75%. Next ordinary placeholder `func_150228E4` remains
-uncredited. The retained caller C stub and full provider/hardware/gameplay
+drift; 326 more to 75% at that checkpoint. Its then-private
+`func_150228E4` is now adopted in Note 1728 above. The retained caller C stub and full provider/hardware/gameplay
 acceptance remain separate.
 
 **Timed vertical oscillation restored directly from C**:

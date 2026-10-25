@@ -2,13 +2,23 @@
 
 2026-10-25:
 
+[Note 1728](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md):
+grouped live actor walk `func_150228E4` adopted, all 45 words/frame 48/seven
+bindings from semantic C plus four derived setup guards. Both copies pass eight
+fresh checks before/after. Preserve 56 neighbors, the actual caller boundary,
+588 fired accesses and strict 144-byte image, zero exclusions. Tools `e338265`
+first; actual Native-ELF total 69.10%, 325 more to 75%. Next
+`func_150AEDF8` remains uncredited; full caller/provider/gameplay stays separate.
+
+2026-10-25:
+
 [Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md):
 live record callback loop `func_15013000` adopted, all45 words/frame40/12
 bindings from semantic C plus14 derived opening-schedule guards. Both copies
 pass eight fresh checks before/after; preserve31 neighbors, the actual caller
 boundary,582 fired access prefixes and the strict149-byte image, zero exclusions.
-Tools `a90bd4e` first; actual Native-ELF total69.08%,326 more to75%. Next
-`func_150228E4` remains uncredited; full caller/provider/gameplay stays separate.
+Tools `a90bd4e` first; actual Native-ELF total69.08%,326 more to75% then.
+That then-private `func_150228E4` is now adopted above; full caller/provider/gameplay stays separate.
 
 2026-10-25:
 

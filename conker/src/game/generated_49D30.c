@@ -126,6 +126,8 @@ extern void func_1516D328(u8 *arg0);
 
 extern u8 D_800C3510[];
 extern u8 D_800C3518[][25];
+extern struct127 D_800CC2D0[];
+void func_15060F28(struct127 *, s32);
 extern u8 D_800C354A[];
 extern u8 D_800C3550[][30];
 extern u8 D_800C3670;
@@ -804,8 +806,22 @@ void func_15022848(s32 index) {
     }
 }
 
-s32 func_150228E4() {
-    return 0;
+/* Process live group actors; the helper may change the remaining entries. */
+void func_150228E4(s32 group) {
+    s32 index;
+    u8 *cursor;
+
+    index = 0;
+    if (D_800C3510[group] > 0) {
+        cursor = D_800C3518[group];
+        do {
+            if (D_800CC2D0[*cursor].interaction_state != 0) {
+                func_15060F28(&D_800CC2D0[*cursor], 0);
+            }
+            index++;
+            cursor++;
+        } while (index < D_800C3510[group]);
+    }
 }
 
 void func_15022998(s32 *arg0) {

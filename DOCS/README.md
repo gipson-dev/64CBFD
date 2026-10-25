@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Grouped live actor walk](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md):
+  45-word/frame-48 C plus four checked setup guards, live byte-count/helper
+  behavior, 56 preserved neighbors and strict 144-byte image; Native total 69.10%.
 - [Live record callback loop](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md):
  45-word/frame40 C plus14 checked schedule guards, live count/base callbacks,
  31 preserved neighbors, strict149-byte image and actual Native-ELF total69.08%.
