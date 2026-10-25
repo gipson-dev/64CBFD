@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-25 Setup-Byte Defaults Direct C Match
+
+[Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md): adopt
+`func_1518E524`, all 45 words/frame 24/two bindings directly from C, no guards.
+Preserve independent draws, flag-reset/write order, all 60 neighbors and the
+strict 125-byte image, zero exclusions. Both copies pass six fresh prechecks,
+two fresh installed checks and four fingerprinted reuses. Tools `6a49597`
+first; actual adopted Native ELF 3,800/5,505 (69.03%), Game 3,127/4,832 (64.71%),
+zero drift; 329 more to 75%. Next ordinary target `func_1518F51C` is uncredited.
+The original caller window and retained RNG are tested; full caller/gameplay
+acceptance remains separate.
+
 ## 2026-10-25 Current-Owner Node Cleanup Direct C Match
 
 [Note 1723](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):

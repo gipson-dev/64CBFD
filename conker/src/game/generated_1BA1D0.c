@@ -135,8 +135,26 @@ s32 func_1518E4F8(s32 arg0) {
     func_15169824(arg0);
 }
 
-s32 func_1518E524() {
-    return 0;
+/* Initialize flags, choose the kind, and set opaque black RGBA defaults. */
+void func_1518E524(u8 *kind, u8 *flags, u8 *red, u8 *green, u8 *blue,
+                  u8 *alpha, s16 *mode) {
+    *flags = 2;
+    if (func_150ADA20() & 1) {
+        *flags |= 1;
+    }
+    switch (func_150ADA20() & 1) {
+        case 0:
+            *kind = 0x13;
+            break;
+        case 1:
+            *kind = 0x14;
+            break;
+    }
+    *red = 0;
+    *green = 0;
+    *blue = 0;
+    *alpha = 0xFF;
+    *mode = 0x301;
 }
 
 void func_1518E5D8(u8 *arg0, u8 *arg1, u8 *arg2, u8 *arg3, u8 *arg4, u8 *arg5, s16 *arg6) {

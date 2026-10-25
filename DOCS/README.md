@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Setup-byte defaults](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md):
+  45 words/frame 24/two bindings directly from C, no guards. Preserve both
+  independent random draws, flag/write order, all 60 neighbors and the strict
+  125-byte image, zero exclusions. Both copies pass six fresh prechecks, two
+  fresh installed checks and four fingerprinted reuses. Adopted Native-ELF
+  total 69.03%, 329 more to 75%; next ordinary placeholder `func_1518F51C`
+  remains uncredited. Full original-caller and gameplay acceptance stay open.
+
 - [Current-owner node cleanup](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):
   45 words/frame 32/19 bindings directly from C, no new guards. Preserve live
   owner/depth/iterator behavior, 17 neighbors and the strict 162-byte image,

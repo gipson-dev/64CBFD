@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0fa6f1a`; tools are committed before the consumer pin.
+  checkpoint pins tools `6a49597`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Setup-byte defaults restored directly from C**:
+[Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md).
+`func_1518E524` matches all 45 words/frame 24/two bindings without guards.
+Preserve both independent random draws, early flag reset and late RGBA/mode
+writes. Both copies pass six fresh prechecks, then two fresh installed checks
+plus four fingerprinted reuses. Actual Make reproduces the strict 125-byte
+image, zero exclusions; all 60 neighbors and the original indirect caller stay
+fixed. Tools `6a49597` first; actual adopted Native-ELF total 3,800/5,505
+(69.03%), Game 3,127/4,832 (64.71%), zero drift; 329 more to 75%.
+Next ordinary placeholder `func_1518F51C` remains uncredited. The bounded
+original caller window does not qualify its full entry/return or gameplay.
+
 **Current-owner node cleanup restored directly from C**:
 [Note 1723](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md).
 `func_150AFDB0` matches all 45 words/frame 32/19 bindings without new guards.
@@ -35,8 +47,8 @@ reloads; all 17 neighbors and the original caller remain unchanged. Both copies
 pass six fresh prechecks, then two fresh installed checks plus four fingerprinted
 reuses. Actual Make reproduces the strict 162-byte image, zero exclusions. Tools
 `0fa6f1a` first; adopted Native-ELF total 3,799/5,505 (69.01%), Game 3,126/4,832
-(64.69%), zero drift; 330 more to 75%. Next ordinary target `func_1518E524`
-remains uncredited. The tested helper chain does not establish full heap/gameplay
+(64.69%), zero drift; 330 more to 75%. Its then-private `func_1518E524` is now
+adopted in Note 1724 above. The tested helper chain does not establish full heap/gameplay
 acceptance; the retained caller stub receives no recovery credit.
 
 **Masked view-plane query restored directly from C**:

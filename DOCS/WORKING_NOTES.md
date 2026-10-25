@@ -2,6 +2,17 @@
 
 2026-10-25:
 
+[Note 1724](WORKING_NOTES/1724-setup-byte-defaults-match-20261025.md):
+setup-byte defaults `func_1518E524` adopted, all 45 words/frame 24/two bindings
+directly from C, no guards. Preserve two independent draws, early flags and
+late RGBA/mode writes, all 60 neighbors and the strict 125-byte image, zero
+exclusions. Both copies pass six fresh prechecks, two fresh installed checks
+and four fingerprinted reuses. Tools `6a49597` first; actual Native-ELF total
+69.03%, 329 more to 75%. Next ordinary target `func_1518F51C` is uncredited;
+the tested original caller window does not establish full caller/gameplay parity.
+
+2026-10-25:
+
 [Note 1723](WORKING_NOTES/1723-current-owner-node-cleanup-match-20261025.md):
 current-owner node cleanup `func_150AFDB0` adopted, all 45 words/frame 32/19
 bindings directly from C, no new guards. Preserve live owner/depth/iterator
