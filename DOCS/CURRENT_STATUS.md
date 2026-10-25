@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ab2eb2e`; tools are committed before the consumer pin.
+  checkpoint pins tools `283d45f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Masked view-plane query restored directly from C**:
+[Note 1722](WORKING_NOTES/1722-view-plane-query-match-20261025.md).
+`func_150A2FA4` matches all 45 words/frame 24/seven bindings with no new guards.
+Preserve the unsigned strict bounds check, early reads, mixed float ABI and all
+27 neighbors, including two assembly routines and the guarded plane helper.
+Both copies pass six fresh prechecks, then two fresh installed checks plus four
+fingerprinted reuses. Actual Make reproduces the strict 148-byte image with no
+exclusions. Tools `283d45f` first; adopted Native-ELF total 3,798/5,505 (68.99%),
+Game 3,125/4,832 (64.67%), zero drift; 331 more to 75%. Next ordinary target is
+`func_150AFDB0`. The original caller route is tested; its retained stub remains
+uncredited. Host/gameplay acceptance stays separate.
 
 **Four-player health dispatch restored directly from C**:
 [Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md).

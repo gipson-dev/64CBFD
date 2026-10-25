@@ -56,6 +56,13 @@ confirmed.
 
 ## Planning and history
 
+- [Masked view-plane query](WORKING_NOTES/1722-view-plane-query-match-20261025.md):
+  45 words/frame 24/seven bindings directly from C, no new guards. Preserve
+  unsigned strict bounds, float argument bits, all 27 neighbors and the strict
+  148-byte image, with no exclusions. Both copies pass six fresh prechecks,
+  two fresh installed checks and four fingerprinted reuses. Adopted Native-ELF
+  total 68.99%, 331 more to 75%; next ordinary target `func_150AFDB0` is uncredited.
+
 - [Four-player health dispatch](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):
   44 body words/frame 48/five bindings directly from C, no guards. Preserve the
   live health reads, one-time gate, seven neighbors, typed caller's full object

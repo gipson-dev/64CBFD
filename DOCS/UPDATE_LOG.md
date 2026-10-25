@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-25 Masked View-Plane Query Direct C Match
+
+[Note 1722](WORKING_NOTES/1722-view-plane-query-match-20261025.md): adopt
+`func_150A2FA4`, all 45 words/frame 24/seven bindings directly from C, no new
+guards. Preserve all 27 neighbors, two assembly routines, existing helper guards
+and the strict 148-byte image, zero exclusions. Both copies pass six fresh
+prechecks, two fresh installed checks and four fingerprinted reuses. Tools
+`283d45f` first; actual adopted Native ELF 3,798/5,505 (68.99%), Game 3,125/4,832
+(64.67%), zero drift; 331 more to 75%. Next ordinary target `func_150AFDB0` is
+uncredited. The tested original caller's retained stub and host remain untouched.
+
 ## 2026-10-25 Four-Player Health Dispatch Direct C Match
 
 [Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):

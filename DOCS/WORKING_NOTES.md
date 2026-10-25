@@ -2,6 +2,16 @@
 
 2026-10-25:
 
+[Note 1722](WORKING_NOTES/1722-view-plane-query-match-20261025.md): masked
+view-plane query `func_150A2FA4` adopted, all 45 words/frame 24/seven bindings
+directly from C, no new guards. Preserve 27 neighbors, the two assembly bodies,
+existing helper guards and strict 148-byte image, zero exclusions. Both copies
+pass six fresh prechecks, two fresh installed checks and four fingerprinted
+reuses. Tools `283d45f` first; actual Native-ELF total 68.99%, 331 more to 75%.
+Next ordinary target `func_150AFDB0` is uncredited; retained caller unchanged.
+
+2026-10-25:
+
 [Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):
 four-player health dispatch `func_15085ABC` adopted, all 44 body words/frame 48/
 five bindings directly from C, no guards. Preserve live reads, the one-time gate,

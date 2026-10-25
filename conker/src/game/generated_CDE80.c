@@ -4,18 +4,25 @@
 /* Non-matching placeholders for the text-only asm slice asm/CDE80.s. */
 
 typedef struct {
-    s16 field0;
-    s16 field2;
-    s16 field4;
-    u8 pad6[0x11];
+    s16 origin0;
+    s16 origin1;
+    s16 origin2;
+    u8 pad6[0xF];
+    u8 flags;
+    u8 pad16;
     u8 field17;
     s32 field18;
     s32 field1C;
     s32 field20;
-    u8 pad24[0x10];
+    f32 coefficient0;
+    f32 scale;
+    f32 coefficient1;
+    f32 coefficient2;
 } GeneratedCDE80Record;
 
 extern GeneratedCDE80Record *D_800D3098;
+extern s32 D_800D3094;
+extern struct108 *D_800DBFF0;
 extern f32 D_8009F5A0;
 extern f32 D_8009F5A4;
 
@@ -30,16 +37,7 @@ typedef struct {
     f32 sine1;
 } GeneratedCDE80TrigRecord;
 
-typedef struct {
-    s16 origin0;
-    s16 origin1;
-    s16 origin2;
-    u8 pad6[0x1E];
-    f32 coefficient0;
-    f32 scale;
-    f32 coefficient1;
-    f32 coefficient2;
-} GeneratedCDE80Plane;
+typedef GeneratedCDE80Record GeneratedCDE80Plane;
 
 f32 func_150AD780(f32);
 f32 func_150AD78C(f32);
@@ -147,7 +145,18 @@ s32 func_150A2EE4() {
     return 0;
 }
 
-s32 func_150A2FA4() {
+/* Test a masked volume selector against the selected view position. */
+s32 func_150A2FA4(s32 viewIndex, s32 selector) {
+    struct108 *view;
+
+    view = &D_800DBFF0[viewIndex];
+    selector &= 0xFFF;
+    if ((u32)D_800D3094 < (u32)selector) {
+        return 1;
+    }
+    if ((D_800D3098[selector].flags & 3) == 3) {
+        return func_150A2E4C(&D_800D3098[selector], view->unk2F8, view->unk2FC, view->unk300);
+    }
     return 0;
 }
 
@@ -200,9 +209,9 @@ void func_150A3398(s32 index, u16 mask, s32 value17, s32 value18, s32 value1C, s
 }
 
 void func_150A3444(s32 index, s16 arg1, s16 arg2, s16 arg3) {
-    D_800D3098[index].field0 = arg1;
-    D_800D3098[index].field2 = arg2;
-    D_800D3098[index].field4 = arg3;
+    D_800D3098[index].origin0 = arg1;
+    D_800D3098[index].origin1 = arg2;
+    D_800D3098[index].origin2 = arg3;
 }
 
 s32 func_150A3504();
