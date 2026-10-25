@@ -1,5 +1,16 @@
 # Update Log
 
+## 2026-10-25 Live Record Callback Loop Guarded C Match
+
+[Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md): adopt
+`func_15013000`,45 words/frame40/12 bindings from semantic C plus14 checked
+opening-schedule guards. Preserve live count/base/type/table behavior,31 owner
+neighbors and the actual caller boundary. Both copies pass eight fresh checks
+before/after; actual Make reproduces the strict149-byte image, zero exclusions.
+Tools `a90bd4e` first; adopted Native ELF3,803/5,505 (69.08%), Game3,130/4,832
+(64.78%), zero drift;326 more to75%. Next `func_150228E4` is uncredited.
+The retained caller C stub and full provider/hardware/gameplay remain separate.
+
 ## 2026-10-25 Timed Vertical Oscillation Direct C Match
 
 [Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md): adopt
@@ -8,7 +19,7 @@ Both copies pass eight fresh prechecks and eight fresh installed checks.
 Preserve the signed timer, late fields/tick, bit-preserving vector restore,
 all 27 neighbors and the strict 143-byte image, zero exclusions. Tools
 `ca1a655` first; actual Native ELF 3,802/5,505 (69.06%), Game 3,129/4,832
-(64.76%), zero drift; 327 more to 75%. Next `func_15013000` is uncredited.
+(64.76%), zero drift;327 more to75% then. That private `func_15013000` is now adopted above.
 The original caller's tested paths do not restore its C stub or prove full
 provider/hardware/gameplay acceptance.
 

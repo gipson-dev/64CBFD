@@ -2,13 +2,23 @@
 
 2026-10-25:
 
+[Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md):
+live record callback loop `func_15013000` adopted, all45 words/frame40/12
+bindings from semantic C plus14 derived opening-schedule guards. Both copies
+pass eight fresh checks before/after; preserve31 neighbors, the actual caller
+boundary,582 fired access prefixes and the strict149-byte image, zero exclusions.
+Tools `a90bd4e` first; actual Native-ELF total69.08%,326 more to75%. Next
+`func_150228E4` remains uncredited; full caller/provider/gameplay stays separate.
+
+2026-10-25:
+
 [Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md):
 timed vertical oscillation `func_151D3D50` adopted, all 45 words/frame 32/six
 bindings directly from C, no guards. Both copies pass eight fresh checks
 before/after installation; preserve 27 neighbors and the strict 143-byte
 image, zero exclusions. Tools `ca1a655` first; actual Native-ELF total 69.06%,
-327 more to 75%. Next `func_15013000` is uncredited; full caller/provider/
-hardware/gameplay acceptance remains separate.
+327 more to75% then. That private `func_15013000` is now adopted above;
+full caller/provider/hardware/gameplay acceptance remains separate.
 
 2026-10-25:
 

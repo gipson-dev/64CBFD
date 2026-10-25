@@ -23684,3 +23684,17 @@ generated_1DD500,func_151B19A4,0x068,0x8C430000,0x8C440000,-,-,Close eager owner
 generated_1DD500,func_151B19A4,0x06C,0x8CA40000,0x8CA30000,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
 generated_1DD500,func_151B19A4,0x090,0x546A0005,0x55440005,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
 generated_1DD500,func_151B19A4,0x098,0xAC440000,0xAC430000,-,-,Close eager owner identity retarget register roles and commutative comparisons,,,false
+game_40490,func_15013000,0x18,0x3C040000,0x44802000,R_MIPS_HI16:D_800D3094,-,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x1c,0x8C840000,0x3C010000,R_MIPS_LO16:D_800D3094,R_MIPS_HI16:D_800DCDC4,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x20,0x3C010000,0xAC200000,R_MIPS_HI16:D_800DCDC4,R_MIPS_LO16:D_800DCDC4,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x24,0x44802000,0x3C010000,-,R_MIPS_HI16:D_800DCD90,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x28,0xAC200000,0xE4240000,R_MIPS_LO16:D_800DCDC4,R_MIPS_LO16:D_800DCD90,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x2c,0x3C010000,0x3C040000,R_MIPS_HI16:D_800DCD90,R_MIPS_HI16:D_800D3094,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x30,0x00008825,0x8C840000,-,R_MIPS_LO16:D_800D3094,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x34,0x10800018,0x00008825,-,-,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x38,0xE4240000,0x00008025,R_MIPS_LO16:D_800DCD90,-,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x3c,0x3C130000,0x10800016,R_MIPS_HI16:D_80082E30,-,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x40,0x3C120000,0x3C130000,R_MIPS_HI16:D_800D3098,R_MIPS_HI16:D_80082E30,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x44,0x26520000,0x3C120000,R_MIPS_LO16:D_800D3098,R_MIPS_HI16:D_800D3098,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x48,0x26730000,0x26520000,R_MIPS_LO16:D_80082E30,R_MIPS_LO16:D_800D3098,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false
+game_40490,func_15013000,0x4c,0x00008025,0x26730000,-,R_MIPS_LO16:D_80082E30,Normalize closed record-dispatch opening schedule and exit-branch displacement,,,false

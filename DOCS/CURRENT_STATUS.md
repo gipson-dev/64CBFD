@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ca1a655`; tools are committed before the consumer pin.
+  checkpoint pins tools `a90bd4e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Live record callback loop restored from C**:
+[Note 1727](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md).
+`func_15013000` matches all45 words/frame40/12 bindings with14 checked
+opening-schedule guards. Preserve live count/base/type/table behavior,31
+neighbors, the original caller boundary and582 fired access-fault prefixes.
+Both copies pass eight fresh checks before and after installation; actual Make
+reproduces the strict149-byte image, zero exclusions. Tools `a90bd4e` first;
+adopted Native-ELF total3,803/5,505 (69.08%), Game3,130/4,832 (64.78%), zero
+drift;326 more to75%. Next ordinary placeholder `func_150228E4` remains
+uncredited. The retained caller C stub and full provider/hardware/gameplay
+acceptance remain separate.
+
 **Timed vertical oscillation restored directly from C**:
 [Note 1726](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md).
 `func_151D3D50` matches all 45 words/frame 32/six bindings without guards.
@@ -34,9 +46,8 @@ Both tools copies pass eight fresh checks before and after installation.
 Actual Make reproduces the strict 143-byte image, zero exclusions; all 27
 neighbors and other linked bodies/addresses stay fixed. Tools `ca1a655` first;
 adopted Native-ELF total 3,802/5,505 (69.06%), Game 3,129/4,832 (64.76%), zero
-drift; 327 more to 75%. Next ordinary placeholder `func_15013000` remains
-uncredited; its private indexed screen has 23 differences and an unresolved
-global-storage declaration. The original caller's tested paths do not restore
+drift;327 more to75% at that checkpoint. Its then-private `func_15013000` is
+now adopted in Note1727 above. The original caller's tested paths do not restore
 its C stub or establish full provider/hardware/gameplay acceptance.
 
 **Preset payload dispatch restored directly from C**:

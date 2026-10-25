@@ -1,10 +1,22 @@
 #include <ultra64.h>
 
 #include "functions.h"
+/* This owner reads the retail base-pointer word at D_800D3098. */
+#define D_800D3098 D_800D3098_legacy_array
 #include "variables.h"
+#undef D_800D3098
+
+typedef struct {
+    u8 reserved[0x15];
+    u8 kindFlags;
+    u8 tail[0x1E];
+} DispatchRecord40490;
+typedef s32 (*RecordCallback40490)(DispatchRecord40490 *);
+extern DispatchRecord40490 *D_800D3098;
+extern RecordCallback40490 D_80082E30[];
 
 /* Generated placeholder declarations. */
-s32 func_15013000();
+void func_15013000(void);
 s32 func_150130B4();
 s32 func_15013778();
 s32 func_150139AC();
@@ -32,9 +44,21 @@ void func_15012FE0(void) {
     D_800BE575 = 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_40490/func_15013000.s. */
-s32 func_15013000() {
-    return 0;
+/* Reset both accumulators and dispatch each record's type callback. */
+void func_15013000(void) {
+    u8 kindFlags;
+    u32 index;
+    RecordCallback40490 callback;
+
+    D_800DCDC4 = 0;
+    D_800DCD90 = 0.0f;
+    for (index = 0; index < (u32)D_800D3094; index++) {
+        kindFlags = D_800D3098[index].kindFlags;
+        callback = D_80082E30[(u8)(kindFlags >> 2)];
+        if (callback != NULL) {
+            callback(&D_800D3098[index]);
+        }
+    }
 }
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_40490/func_150130B4.s. */

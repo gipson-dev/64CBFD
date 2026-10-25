@@ -56,6 +56,9 @@ confirmed.
 
 ## Planning and history
 
+- [Live record callback loop](WORKING_NOTES/1727-live-record-callback-loop-match-20261025.md):
+ 45-word/frame40 C plus14 checked schedule guards, live count/base callbacks,
+ 31 preserved neighbors, strict149-byte image and actual Native-ELF total69.08%.
 - [Timed vertical oscillation](WORKING_NOTES/1726-timed-vertical-oscillation-match-20261025.md):
   45 words/frame 32/six bindings directly from C, no guards. Both copies pass
   eight fresh checks before/after installation; preserve 27 neighbors and the
