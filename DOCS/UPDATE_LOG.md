@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-25 Four-Player Health Dispatch Direct C Match
+
+[Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):
+adopt `func_15085ABC`, all 44 body words/frame 48/five bindings directly from C,
+no guards and one preserved alignment word. Add its local typed caller without
+changing any of the 16 caller functions or the caller object. Both copies pass
+ten fresh prechecks, two fresh installed checks and eight fingerprinted reuses.
+Preserve seven neighbors and the strict 142-byte image, zero exclusions. Tools
+`ab2eb2e` first; actual adopted Native ELF 3,797/5,505 (68.97%), Game 3,124/4,832
+(64.65%), zero drift; 332 more to 75%. Next ordinary target `func_150A2FA4` is
+uncredited. The existing helper stub receives no recovery credit; host untouched.
+
 ## 2026-10-25 Compact Embedded Oscillation Direct C Match
 
 [Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):

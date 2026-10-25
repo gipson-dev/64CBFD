@@ -56,6 +56,14 @@ confirmed.
 
 ## Planning and history
 
+- [Four-player health dispatch](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):
+  44 body words/frame 48/five bindings directly from C, no guards. Preserve the
+  live health reads, one-time gate, seven neighbors, typed caller's full object
+  and strict 142-byte image. Both copies pass ten fresh prechecks, two fresh
+  installed checks and eight fingerprinted reuses. Actual adopted-ELF total
+  68.97%, 332 more to 75%; next ordinary placeholder `func_150A2FA4` is uncredited.
+  The retained helper stub is not restored or gameplay-qualified here.
+
 - [Compact embedded oscillation](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):
   all 43 body words/frame 32/six bindings directly from C, no guards and two
   preserved alignment words. Both copies pass ten fresh prechecks, then two

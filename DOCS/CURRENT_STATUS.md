@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `284f840`; tools are committed before the consumer pin.
+  checkpoint pins tools `ab2eb2e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Four-player health dispatch restored directly from C**:
+[Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md).
+`func_15085ABC` matches all 44 body words/frame 48/five bindings without guards;
+the alignment word and seven neighbors stay fixed. A local `void(s16)` caller
+declaration preserves all 16 caller functions and the full caller object. Both
+copies pass ten fresh prechecks, then two fresh installed checks plus eight
+fingerprinted reuses. Actual Make reproduces the strict 142-byte image with no
+exclusions. Tools `ab2eb2e` first; actual Native-ELF total 3,797/5,505 (68.97%),
+Game 3,124/4,832 (64.65%), zero drift; 332 more to 75%. Next ordinary target is
+`func_150A2FA4`. The helper stub receives no credit; gameplay/host remain separate.
 
 **Compact embedded oscillation restored directly from C**:
 [Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md).

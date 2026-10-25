@@ -2,6 +2,16 @@
 
 2026-10-25:
 
+[Note 1721](WORKING_NOTES/1721-four-player-health-dispatch-match-20261025.md):
+four-player health dispatch `func_15085ABC` adopted, all 44 body words/frame 48/
+five bindings directly from C, no guards. Preserve live reads, the one-time gate,
+seven neighbors, the full typed-caller object and strict 142-byte image. Both
+copies pass ten fresh prechecks, two fresh installed checks and eight reuses.
+Tools `ab2eb2e` first; actual Native-ELF total 68.97%, 332 more to 75%. Next
+ordinary target `func_150A2FA4` is uncredited; the helper remains unresolved.
+
+2026-10-25:
+
 [Note 1720](WORKING_NOTES/1720-compact-embedded-oscillation-match-20261025.md):
 compact oscillation `func_151B8CFC` installed/adopted, all 43 body words/frame 32/
 six bindings directly from C, no guards and two preserved alignment words.

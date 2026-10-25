@@ -1,6 +1,7 @@
 #include <ultra64.h>
 
 #include "functions.h"
+void func_15085ABC(s16);
 /* This owner uses the display-list label as an SDK pointer, not an integer. */
 #define D_800BE9D0 FrameDriverLegacyDisplayListAddress
 #include "variables.h"

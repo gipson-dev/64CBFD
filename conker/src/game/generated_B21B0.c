@@ -1,4 +1,9 @@
 #include <ultra64.h>
+#include "structs.h"
+
+extern struct127 D_800CC2D0[26];
+extern u8 D_800D18A8;
+
 
 /* Non-matching placeholders for the text-only asm slice asm/B21B0.s. */
 
@@ -55,6 +60,15 @@ s32 func_150859AC() {
     return 0;
 }
 
-s32 func_15085ABC() {
-    return 0;
+/* Publish each selected player's current health to its status record. */
+void func_15085ABC(s16 mask) {
+    s32 slot;
+
+    if (!D_800D18A8) {
+        for (slot = 0; slot < 4; slot++) {
+            if ((1 << slot) & mask) {
+                func_15085710((s16)slot, 5, D_800CC2D0[slot].health);
+            }
+        }
+    }
 }
