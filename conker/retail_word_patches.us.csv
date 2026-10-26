@@ -23713,3 +23713,14 @@ game_DBA60,func_150AEDF8,0x07C,0x112A0005,0x10690005,-,-,"Derive inline identity
 game_DBA60,func_150AEDF8,0x084,0x904B0004,0x904A0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
 game_DBA60,func_150AEDF8,0x088,0x90AC0004,0x90AB0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
 game_DBA60,func_150AEDF8,0x08C,0x556C0004,0x554B0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x028,0x8C430000,0x8C440000,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x02C,0x8CA40000,0x8CA30000,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x030,0x54830007,0x54640007,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x050,0x54790013,0x57240013,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x058,0xAC440000,0xAC430000,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x074,0x8C490000,0x8CA30000,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x078,0x8CAA0000,0x8C490000,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x07C,0x112A0005,0x10690005,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x084,0x904B0004,0x904A0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x088,0x90AC0004,0x90AB0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
+generated_1028F0,func_150D7068,0x08C,0x556C0004,0x554B0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false

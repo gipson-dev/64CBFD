@@ -101,6 +101,25 @@ s32 func_150D6F0C() {
     return 0;
 }
 
-s32 func_150D7068() {
-    return 0;
+/* Retarget the embedded owner reference, or release the owner for a matching event. */
+void func_150D7068(u8 *owner, s32 eventAddress, u8 command) {
+    EmbeddedOwnerLink *link = (EmbeddedOwnerLink *)(owner + 0xA8);
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0x2D) {
+        u8 *current = link->owner;
+        u8 *first = *(u8 **)event;
+        if (first == current) {
+            link->owner = *(u8 **)(event + 4);
+            link->identity = event[9];
+        } else if (*(u8 **)(event + 4) == current) {
+            link->owner = first;
+            link->identity = event[8];
+        }
+    } else if (code == 0) {
+        if (*(u8 **)event == link->owner || link->identity == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    }
 }

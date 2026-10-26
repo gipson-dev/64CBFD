@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Embedded owner pointer event](WORKING_NOTES/1730-embedded-owner-event-match-20261025.md): complete 43-word C, eleven derived guards, real dispatcher, 16 neighbors/six assembly routines and strict 119-byte image; Native total 69.14%.
 - [Inline owner identity event](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md): 43-word/frame-24 C plus eleven checked role guards, real dispatcher, seven neighbors and strict 119-byte image; Native total 69.12%.
 - [Grouped live actor walk](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md):
   45-word/frame-48 C plus four checked setup guards, live byte-count/helper

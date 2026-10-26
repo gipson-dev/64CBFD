@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `2bb4d78`; tools are committed before the consumer pin.
+  checkpoint pins tools `bed7f69`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,17 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Embedded owner pointer event restored from C**:
+[Note 1730](WORKING_NOTES/1730-embedded-owner-event-match-20261025.md).
+`func_150D7068` matches 43 body words, three alignment words and its 24-byte
+frame through eleven derived guards. Reuse the existing pointer view and
+preserve all 16 neighbors, including six assembly routines. Both tools copies
+pass eight private checks; installed checks reuse six unchanged semantic checks
+by exact fingerprint. Actual Make reproduces the strict 119-byte image with
+zero exclusions. Tools `bed7f69` first; actual Native ELF 3,806/5,505 (69.14%),
+Game 3,133/4,832 (64.84%), zero drift; 323 more to 75%. Continue with
+`func_1510F820`; full provider and gameplay acceptance remains separate.
+
 **Inline owner identity event restored from C**:
 [Note 1729](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md). `func_150AEDF8` matches its 43 body words,
 three alignment words/frame 24/one binding through eleven derived role guards.
@@ -35,7 +46,7 @@ two fresh installed checks each reuse six unchanged semantic checks. Preserve
 seven neighbors, the real 74-entry dispatcher and strict 119-byte image,
 zero exclusions. Tools `2bb4d78` first; actual Native ELF 3,805/5,505 (69.12%),
 Game 3,132/4,832 (64.82%), zero drift; 324 more to 75%. Next
-`func_150D7068` remains uncredited; full provider/gameplay stays separate.
+That then-private `func_150D7068` is adopted in Note 1730 above; full provider/gameplay stays separate.
 
 **Grouped live actor walk restored from C**:
 [Note 1728](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md).

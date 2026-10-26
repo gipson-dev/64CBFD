@@ -2,6 +2,19 @@
 
 2026-10-25:
 
+**Embedded owner pointer event restored from C**:
+[Note 1730](WORKING_NOTES/1730-embedded-owner-event-match-20261025.md).
+`func_150D7068` matches 43 body words, three alignment words and its 24-byte
+frame through eleven derived guards. Reuse the existing pointer view and
+preserve all 16 neighbors, including six assembly routines. Both tools copies
+pass eight private checks; installed checks reuse six unchanged semantic checks
+by exact fingerprint. Actual Make reproduces the strict 119-byte image with
+zero exclusions. Tools `bed7f69` first; actual Native ELF 3,806/5,505 (69.14%),
+Game 3,133/4,832 (64.84%), zero drift; 323 more to 75%. Continue with
+`func_1510F820`; full provider and gameplay acceptance remains separate.
+
+2026-10-25:
+
 **Inline owner identity event restored from C**:
 [Note 1729](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md). `func_150AEDF8` matches its 43 body words,
 three alignment words/frame 24/one binding through eleven derived role guards.
@@ -10,7 +23,7 @@ two fresh installed checks each reuse six unchanged semantic checks. Preserve
 seven neighbors, the real 74-entry dispatcher and strict 119-byte image,
 zero exclusions. Tools `2bb4d78` first; actual Native ELF 3,805/5,505 (69.12%),
 Game 3,132/4,832 (64.82%), zero drift; 324 more to 75%. Next
-`func_150D7068` remains uncredited; full provider/gameplay stays separate.
+That then-private `func_150D7068` is adopted in Note 1730 above; full provider/gameplay stays separate.
 
 2026-10-25:
 
