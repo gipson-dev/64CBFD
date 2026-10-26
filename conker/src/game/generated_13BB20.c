@@ -1,5 +1,9 @@
 #include <ultra64.h>
 
+extern f32 D_800A2D9C;
+f32 sqrtf(f32);
+s32 func_1510E388(void *, void *, f32 *, f32 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/13BB20.s. */
 
 extern u8 *D_800DBE48;
@@ -49,12 +53,29 @@ void func_1510F800(s32 context) {
     func_150A49F4(context);
 }
 
-s32 func_1510F820() {
-    return 0;
+/* Resolve the plane components and normalize their scaled length. */
+void func_1510F820(void *indirectVertices, void *packedVertices,
+                   f32 *directionA, f32 *directionB, f32 *unusedOutput,
+                   f32 *rawA, f32 *rawB) {
+    f32 first, second, length;
+
+    func_1510E388(indirectVertices, packedVertices, &first, &second);
+    length = sqrtf(first * first + second * second);
+    *rawA = first;
+    *rawB = second;
+    length *= D_800A2D9C;
+    if (length == 0.0f) {
+        *directionA = 1.0f;
+        *directionB = 0.0f;
+    } else {
+        *directionA = first / length;
+        *directionB = second / length;
+    }
 }
 
-s32 func_1510F8CC() {
-    return 0;
+/* Extract the low five bits of the incoming word. */
+u32 func_1510F8CC(u32 value) {
+    return value & 0x1F;
 }
 
 s32 func_1510F8D8() {

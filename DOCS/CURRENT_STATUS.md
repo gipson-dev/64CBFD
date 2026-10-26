@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `bed7f69`; tools are committed before the consumer pin.
+  checkpoint pins tools `7f41664`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,19 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Planar direction and low-bit accessor restored from C**:
+[Note 1731](WORKING_NOTES/1731-planar-direction-and-low-bit-accessor-match-20261025.md). `func_1510F820` matches its complete 43-word/frame-40
+body through one checked comparison-operand guard; the three-word
+`func_1510F8CC` matches directly without guards. Correct only their merged
+layout extent and the leaf's stale absolute fallback. Inventory-only linking
+adds no matching credit; converted instruction-byte totals are unchanged.
+Both tools copies pass eight private checks, then nine fresh final checks
+after the tracked symbol annotation. Final suites reuse no checks. Actual Make reproduces the strict 150-byte
+image, zero exclusions. Tools `7f41664` first; adopted Native ELF
+3,808/5,506 (69.16%), Game 3,135/4,833 (64.87%), zero drift; 322 more to 75%.
+Next screened placeholder `func_151592B8` remains uncredited. Full helper,
+caller and gameplay acceptance remains separate.
+
 **Embedded owner pointer event restored from C**:
 [Note 1730](WORKING_NOTES/1730-embedded-owner-event-match-20261025.md).
 `func_150D7068` matches 43 body words, three alignment words and its 24-byte
@@ -35,8 +48,9 @@ preserve all 16 neighbors, including six assembly routines. Both tools copies
 pass eight private checks; installed checks reuse six unchanged semantic checks
 by exact fingerprint. Actual Make reproduces the strict 119-byte image with
 zero exclusions. Tools `bed7f69` first; actual Native ELF 3,806/5,505 (69.14%),
-Game 3,133/4,832 (64.84%), zero drift; 323 more to 75%. Continue with
-`func_1510F820`; full provider and gameplay acceptance remains separate.
+Game 3,133/4,832 (64.84%), zero drift; 323 more to 75% at that checkpoint. The then-private
+`func_1510F820` and leaf are adopted in Note 1731 above; full provider
+and gameplay acceptance remains separate.
 
 **Inline owner identity event restored from C**:
 [Note 1729](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md). `func_150AEDF8` matches its 43 body words,
