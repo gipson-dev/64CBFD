@@ -22,7 +22,23 @@ s32 func_1509F248(s32 arg0, u8 *arg1) {
     return 1;
 }
 
-s32 func_1509F284() {
+void func_1509F660(s32, s32);
+/* Full-width call slots are narrowed inside this provider. */
+s32 func_1509F77C(u32, s32, s32, s32, s32);
+
+/* Decode the packed identifiers for the three recognized record commands. */
+s32 func_1509F284(s32 unused, s32 command, u32 *record) {
+    switch (command) {
+        case 1:
+            func_1509F660(record[2] & 0xFFF, 0);
+            return 1;
+        case 0:
+            func_1509F660(record[2] & 0xFFF, 1);
+            return 1;
+        case 2:
+            func_1509F77C((record[0] & 0xFFFF0000U) >> 16, record[2] & 0xFFF, record[3], record[4], record[5]);
+            return 1;
+    }
     return 0;
 }
 
@@ -88,16 +104,17 @@ s32 func_1509F6E8(s32 arg0, s32 arg1, u16 arg2, s32 arg3, s32 arg4) {
 }
 
 // Matches retail directly from the explicit coordinate temporaries.
-s32 func_1509F77C(u16 arg0, s32 arg1, s16 arg2, s32 arg3, s32 arg4) {
+/* Preserve full incoming words; narrow identifiers at the downstream call. */
+s32 func_1509F77C(u32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     u8 *object = (u8 *)func_1505EEF4(arg1);
     s32 x = (s32)*(f32 *)(object + 0x14);
     s32 y = (s32)*(f32 *)(object + 0x18);
     s32 z = (s32)*(f32 *)(object + 0x1C);
 
     return func_1000F91C(
-        arg0,
+        (u16) arg0,
         0x7FFF,
-        arg2,
+        (s16) arg2,
         0,
         0,
         x,

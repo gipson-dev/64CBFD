@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Packed object commands](WORKING_NOTES/1737-packed-object-command-match-20261026.md): direct C (46 words, 40-byte frame), three bindings, no guards, explicit provider narrowing, real callbacks and 16 preserved neighbors; strict 136-byte image. Adopted Native total 69.27%.
 - [Sentinel query fallback](WORKING_NOTES/1736-sentinel-query-fallback-match-20261026.md): 45-word/frame-64 guarded C plus one alignment word, 26 checked rows, four fixed-call address folds, actual caller and eighteen neighbors; strict 135-byte image. Adopted Native total 69.25%.
 - [Environment color command scan](WORKING_NOTES/1735-environment-color-command-scan-match-20261026.md): 46-word guarded C, 40 checked rows, no omitted words; actual parent tail, fixed guest overlaps, three neighbors and strict 187-byte image. Adopted Native total 69.23%.
 - [Owner subtype factory callback](WORKING_NOTES/1734-owner-subtype-factory-callback-match-20261026.md): direct 46-word/frame-40 C, no guards, actual indirect caller, 11 neighbors and strict 129-byte image; adopted Native total 69.22%.

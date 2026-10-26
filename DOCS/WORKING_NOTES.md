@@ -2,6 +2,18 @@
 
 2026-10-26:
 
+**Packed object commands restored directly from C**:
+[Note 1737](WORKING_NOTES/1737-packed-object-command-match-20261026.md). `func_1509F284` matches all 46 words directly,
+using a 40-byte frame, three bindings and no guards. Keep full incoming provider slots and
+explicit internal narrowing; all 16 neighbors remain byte-identical. Both copies
+pass six fresh canonical methods and two fresh installed checks plus four
+fingerprinted reuses. Cover the real variadic/script callbacks, native32,
+faults and GNU carries. Tools `3626aca` first; strict 136-byte image, zero
+exclusions. Adopted Native total 3,814/5,506 (69.27%), Game 3,141/4,833 (64.99%),
+zero drift; 316 more to 75%. Next screened placeholder `func_1512B100` remains uncredited.
+
+2026-10-26:
+
 **Sentinel query fallback restored as guarded C**:
 [Note 1736](WORKING_NOTES/1736-sentinel-query-fallback-match-20261026.md). `func_1503B708` matches its 45-word/frame-64
 body and one zero alignment word through 26 checked rows, folding two fixed
@@ -10,8 +22,7 @@ all eleven argument slots, lazy fallback, actual 38-word caller window and
 eighteen neighbors. Both copies pass six fresh canonical checks and two fresh
 installed checks plus four fingerprinted reuses. Tools `efb8378` first;
 strict 135-byte image, zero exclusions. Adopted Native total 3,813/5,506
-(69.25%), Game 3,140/4,833 (64.97%), zero drift; 317 more to 75%. Next
-screened placeholder `func_1509F284` remains uncredited.
+(69.25%), Game 3,140/4,833 (64.97%), zero drift; 317 more to 75%. That then-private `func_1509F284` is adopted in Note 1737 above.
 
 2026-10-26:
 
