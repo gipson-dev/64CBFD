@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4980b4b`; tools are committed before the consumer pin.
+  checkpoint pins tools `c22a5c3`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,16 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Menu selection reset restored from C**: [Note 1733](WORKING_NOTES/1733-menu-selection-reset-match-20261026.md).
+`func_15007778` matches its 44-word/frame-zero body and two alignment
+words through 23 derived loop, pointer-role and sentinel-forwarding guards.
+Both copies pass nine fresh canonical checks, then two fresh installed checks
+plus seven fingerprinted reuses. Actual Make reproduces the strict 238-byte
+image, zero exclusions; the shared-declaration rebuild has an explicitly
+qualified debugger metadata delta. Tools `c22a5c3` first; actual adopted
+Native ELF 3,810/5,506 (69.20%), Game 3,137/4,833 (64.91%), zero drift;
+320 more to 75%. Next screened placeholder `func_150DDED0` is uncredited.
+
 **Two-key actor state classifier restored from C**:
 [Note 1732](WORKING_NOTES/1732-two-key-actor-state-classifier-match-20261026.md). `func_151592B8` matches all 46 words/frame 24
 through nine derived register/local-storage guards. Preserve the unsigned
@@ -36,7 +46,7 @@ reuse six unchanged semantic checks only by exact fingerprint. Actual Make
 reproduces the strict 137-byte image, zero exclusions. Tools `4980b4b`
 first; adopted Native ELF 3,809/5,506 (69.18%), Game 3,136/4,833 (64.89%),
 zero drift; 321 more to 75%. Inventory and converted bytes are unchanged.
-Next screened placeholder `func_15007778` remains uncredited; full parent and
+That then-private `func_15007778` is adopted in Note 1733 above; full parent and
 gameplay acceptance stays separate.
 
 **Planar direction and low-bit accessor restored from C**:

@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-26 Menu Selection Reset Guarded C Match
+
+**Menu selection reset restored from C**: [Note 1733](WORKING_NOTES/1733-menu-selection-reset-match-20261026.md).
+`func_15007778` matches its 44-word/frame-zero body and two alignment
+words through 23 derived loop, pointer-role and sentinel-forwarding guards.
+Both copies pass nine fresh canonical checks, then two fresh installed checks
+plus seven fingerprinted reuses. Actual Make reproduces the strict 238-byte
+image, zero exclusions; the shared-declaration rebuild has an explicitly
+qualified debugger metadata delta. Tools `c22a5c3` first; actual adopted
+Native ELF 3,810/5,506 (69.20%), Game 3,137/4,833 (64.91%), zero drift;
+320 more to 75%. Next screened placeholder `func_150DDED0` is uncredited.
+
 ## 2026-10-26 Two-Key Actor State Classifier Guarded C Match
 
 **Two-key actor state classifier restored from C**:
@@ -11,7 +23,7 @@ reuse six unchanged semantic checks only by exact fingerprint. Actual Make
 reproduces the strict 137-byte image, zero exclusions. Tools `4980b4b`
 first; adopted Native ELF 3,809/5,506 (69.18%), Game 3,136/4,833 (64.89%),
 zero drift; 321 more to 75%. Inventory and converted bytes are unchanged.
-Next screened placeholder `func_15007778` remains uncredited; full parent and
+That then-private `func_15007778` is adopted in Note 1733 above; full parent and
 gameplay acceptance stays separate.
 
 ## 2026-10-25 Planar Direction and Low-Bit Accessor C Match

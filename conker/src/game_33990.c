@@ -12,7 +12,6 @@ s32 func_1500727C();
 s32 func_15007360();
 s32 func_15007440();
 s32 func_15007558();
-s32 func_15007778();
 /* End generated placeholder declarations. */
 
 void func_150064E0(void) {
@@ -109,35 +108,33 @@ void func_15007750(s32 arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007778.s. */
-s32 func_15007778() {
-    return 0;
+/* Reset inline record sentinels, the pointed-to bytes and local selection bytes. */
+void func_15007778(void) {
+    s32 i;
+    u8 *cursor;
+
+    D_800BE3F8.unk8 = -1;
+    D_800BE3F8.unk18 = -1;
+    D_800BE3F8.unk28 = -1;
+    D_800BE3F8.unkE = -1;
+    D_800BE3F8.unk1E = -1;
+    D_800BE3F8.unk2E = -1;
+    D_800BE3DC = -1;
+    D_800BE3DE = 0;
+    D_80082BC0 = 1;
+
+    i = 0;
+    for (;;) {
+        ((u8 *)D_800D2E4C)[i++] = 0;
+        if (i >= 27) {
+            break;
+        }
+    }
+
+    cursor = D_800D2E60;
+    do {
+        *cursor++ = 0;
+    } while (cursor < D_800D2E60 + 9);
+
+    D_800BE3D8.byte0 = D_800BE3D8.byte1 = D_800BE3D8.byte2 = D_800BE3D8.byte3 = -1;
 }
-// NON-MATCHING: should probably start over..
-// void func_15007778(void) {
-//     s32 phi_v0;
-//
-//     D_800BE3F8->unk8 = -1;
-//     D_800BE3F8->unk18 = -1;
-//     D_800BE3F8->unk28 = -1;
-//     D_800BE3F8->unkE = -1;
-//     D_800BE3F8->unk1E = -1;
-//     D_800BE3F8->unk2E = -1;
-//     D_800BE3DC = -1;
-//     D_80082BC0 = 1;
-//     D_800BE3DE = 0;
-//
-//     phi_v0 = 0;
-//     do {
-//         ((u8*)D_800D2E4C)[phi_v0++] = 0;
-//     } while (phi_v0 < 27);
-//
-//     for (phi_v0 = 0; phi_v0 < 9; phi_v0++) {
-//         D_800D2E60[phi_v0] = 0;
-//     }
-//
-//     D_800BE3DB = -1;
-//     D_800BE3DA = -1;
-//     D_800BE3D9 = -1;
-//     D_800BE3D8 = -1;
-// }

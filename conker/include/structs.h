@@ -1913,6 +1913,14 @@ typedef struct {
     s8  pad2F;
 } struct162;
 
+/* Four adjacent signed menu-selection sentinels at D_800BE3D8. */
+typedef struct {
+    s8 byte0;
+    s8 byte1;
+    s8 byte2;
+    s8 byte3;
+} MenuResetSentinels;
+
 typedef struct {
     s16 unk0;
     u8  pad2[0xA];
