@@ -1,5 +1,19 @@
 # Working Notes
 
+2026-10-26:
+
+**Two-key actor state classifier restored from C**:
+[Note 1732](WORKING_NOTES/1732-two-key-actor-state-classifier-match-20261026.md). `func_151592B8` matches all 46 words/frame 24
+through nine derived register/local-storage guards. Preserve the unsigned
+kind, mode gate, flag/float priority, 36 neighbors and six assembly routines.
+Both copies pass eight fresh private checks; two fresh installed checks each
+reuse six unchanged semantic checks only by exact fingerprint. Actual Make
+reproduces the strict 137-byte image, zero exclusions. Tools `4980b4b`
+first; adopted Native ELF 3,809/5,506 (69.18%), Game 3,136/4,833 (64.89%),
+zero drift; 321 more to 75%. Inventory and converted bytes are unchanged.
+Next screened placeholder `func_15007778` remains uncredited; full parent and
+gameplay acceptance stays separate.
+
 2026-10-25:
 
 **Planar direction and low-bit accessor restored from C**:
@@ -12,7 +26,7 @@ Both tools copies pass eight private checks, then nine fresh final checks
 after the tracked symbol annotation. Final suites reuse no checks. Actual Make reproduces the strict 150-byte
 image, zero exclusions. Tools `7f41664` first; adopted Native ELF
 3,808/5,506 (69.16%), Game 3,135/4,833 (64.87%), zero drift; 322 more to 75%.
-Next screened placeholder `func_151592B8` remains uncredited. Full helper,
+That then-private `func_151592B8` is adopted in Note 1732 above. Full helper,
 caller and gameplay acceptance remains separate.
 
 2026-10-25:

@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+extern u16 D_8008B040;
+
 extern s32 D_80082FA0;
 extern f32 D_800A63A0;
 extern s32 D_800BE9E4;
@@ -218,8 +220,37 @@ done:
     return result;
 }
 
-s32 func_151592B8() {
-    return 0;
+/* Prioritize the two special actor types, then flag and motion states. */
+s32 func_151592B8(u8 *actor, u8 mode) {
+    u16 keys[1];
+    u32 cursor;
+    s32 actorType;
+    s32 matched;
+    s32 result;
+
+    if (mode == 0) {
+        keys[0] = D_8008B040;
+        matched = 0;
+        actorType = *(u16 *)(actor + 0x84);
+        cursor = (u32)((u8 *)keys + 1);
+        do {
+            if (actorType == *(u8 *)cursor--) {
+                matched = 1;
+            }
+        } while (!matched && cursor >= (u32)(u8 *)keys);
+    } else {
+        matched = 0;
+    }
+    if (matched) {
+        result = 3;
+    } else if (actor[0xAD] != 0) {
+        result = 2;
+    } else if (0.0f != *(f32 *)(actor + 0x28)) {
+        result = 1;
+    } else {
+        result = 4;
+    }
+    return result;
 }
 
 s32 func_15159370() {

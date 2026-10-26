@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Two-key actor state classifier](WORKING_NOTES/1732-two-key-actor-state-classifier-match-20261026.md): complete 46-word/frame-24 C plus nine derived guards, real caller, 36 neighbors/six assembly routines and strict 137-byte image; adopted Native total 69.18%.
 - [Planar direction and low-bit accessor](WORKING_NOTES/1731-planar-direction-and-low-bit-accessor-match-20261025.md): complete 43-word normalizer with one derived comparison guard and direct three-word leaf; durable inventory split with actual Splat coverage, strict 150-byte image and adopted Native total 69.16%.
 - [Embedded owner pointer event](WORKING_NOTES/1730-embedded-owner-event-match-20261025.md): complete 43-word C, eleven derived guards, real dispatcher, 16 neighbors/six assembly routines and strict 119-byte image; Native total 69.14%.
 - [Inline owner identity event](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md): 43-word/frame-24 C plus eleven checked role guards, real dispatcher, seven neighbors and strict 119-byte image; Native total 69.12%.

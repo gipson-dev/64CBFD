@@ -23725,3 +23725,12 @@ generated_1028F0,func_150D7068,0x084,0x904B0004,0x904A0004,-,-,"Derive inline id
 generated_1028F0,func_150D7068,0x088,0x90AC0004,0x90AB0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
 generated_1028F0,func_150D7068,0x08C,0x556C0004,0x554B0004,-,-,"Derive inline identity roles, independent read order and commutative comparisons",,,false
 generated_13BB20,func_1510F820,0x064,0x460C1032,0x46026032,-,-,Preserve the commutative zero-length comparison operand order,,,false
+generated_185560,func_151592B8,0x024,0x27A50015,0x27A6000D,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x028,0xA7AF0014,0xA7AF000C,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x02C,0x94830084,0x94850084,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x030,0x27A70014,0x27A7000C,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x034,0x90B80000,0x90D80000,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x038,0x24A5FFFF,0x24C6FFFF,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x03C,0x00A7082B,0x00C7082B,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x040,0x14780002,0x14B80002,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false
+generated_185560,func_151592B8,0x058,0x90B80000,0x90D80000,-,-,Derive two live register roles and the complete two-byte local stack relocation,,,false

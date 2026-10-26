@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-25
+Last verified: 2026-10-26
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7f41664`; tools are committed before the consumer pin.
+  checkpoint pins tools `4980b4b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,18 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Two-key actor state classifier restored from C**:
+[Note 1732](WORKING_NOTES/1732-two-key-actor-state-classifier-match-20261026.md). `func_151592B8` matches all 46 words/frame 24
+through nine derived register/local-storage guards. Preserve the unsigned
+kind, mode gate, flag/float priority, 36 neighbors and six assembly routines.
+Both copies pass eight fresh private checks; two fresh installed checks each
+reuse six unchanged semantic checks only by exact fingerprint. Actual Make
+reproduces the strict 137-byte image, zero exclusions. Tools `4980b4b`
+first; adopted Native ELF 3,809/5,506 (69.18%), Game 3,136/4,833 (64.89%),
+zero drift; 321 more to 75%. Inventory and converted bytes are unchanged.
+Next screened placeholder `func_15007778` remains uncredited; full parent and
+gameplay acceptance stays separate.
+
 **Planar direction and low-bit accessor restored from C**:
 [Note 1731](WORKING_NOTES/1731-planar-direction-and-low-bit-accessor-match-20261025.md). `func_1510F820` matches its complete 43-word/frame-40
 body through one checked comparison-operand guard; the three-word
@@ -37,7 +49,7 @@ Both tools copies pass eight private checks, then nine fresh final checks
 after the tracked symbol annotation. Final suites reuse no checks. Actual Make reproduces the strict 150-byte
 image, zero exclusions. Tools `7f41664` first; adopted Native ELF
 3,808/5,506 (69.16%), Game 3,135/4,833 (64.87%), zero drift; 322 more to 75%.
-Next screened placeholder `func_151592B8` remains uncredited. Full helper,
+That then-private `func_151592B8` is adopted in Note 1732 above. Full helper,
 caller and gameplay acceptance remains separate.
 
 **Embedded owner pointer event restored from C**:
