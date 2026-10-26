@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Environment color command scan](WORKING_NOTES/1735-environment-color-command-scan-match-20261026.md): 46-word guarded C, 40 checked rows, no omitted words; actual parent tail, fixed guest overlaps, three neighbors and strict 187-byte image. Adopted Native total 69.23%.
 - [Owner subtype factory callback](WORKING_NOTES/1734-owner-subtype-factory-callback-match-20261026.md): direct 46-word/frame-40 C, no guards, actual indirect caller, 11 neighbors and strict 129-byte image; adopted Native total 69.22%.
 - [Menu selection reset](WORKING_NOTES/1733-menu-selection-reset-match-20261026.md): 44-word/frame-zero guarded C, corrected inline globals, real caller, 17 neighbors and strict 238-byte image; adopted Native total 69.20%.
 - [Two-key actor state classifier](WORKING_NOTES/1732-two-key-actor-state-classifier-match-20261026.md): complete 46-word/frame-24 C plus nine derived guards, real caller, 36 neighbors/six assembly routines and strict 137-byte image; adopted Native total 69.18%.

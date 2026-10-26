@@ -2,6 +2,18 @@
 
 2026-10-26:
 
+**Environment color command scan restored as guarded C**:
+[Note 1735](WORKING_NOTES/1735-environment-color-command-scan-match-20261026.md). `func_15012ED8` matches all 46 words/frame zero
+through 40 checked normalization rows, with no inserted or omitted words.
+Preserve the count return, three payload reads, fixed table/input overlap, actual
+parent tail, three neighbors and strict 187-byte image, zero exclusions. Both
+tools copies pass six fresh checks, then two fresh installed checks plus four
+unchanged semantic checks reused by exact fingerprint. Tools `6b2f3e8` first;
+actual Native ELF 3,812/5,506 (69.23%), Game 3,139/4,833 (64.95%), zero drift;
+318 more to 75%. Next screened placeholder `func_1503B708` remains uncredited.
+
+2026-10-26:
+
 **Owner subtype factory callback restored directly from C**:
 [Note 1734](WORKING_NOTES/1734-owner-subtype-factory-callback-match-20261026.md). `func_150DDED0` matches all 46 words/frame 40
 with no guards. Both tools copies pass six fresh checks; two fresh installed
@@ -9,7 +21,7 @@ checks reuse four unchanged semantic checks only by exact identity. Preserve
 the late owner read, eight-argument ABI, original indirect caller, 11 neighbors
 and strict 129-byte image, zero exclusions. Tools `b94c8d5` first; actual
 Native ELF 3,811/5,506 (69.22%), Game 3,138/4,833 (64.93%), zero drift;
-319 more to 75%. Next screened placeholder `func_15012ED8` remains uncredited.
+319 more to 75%. That then-private `func_15012ED8` is adopted in Note 1735 above.
 
 2026-10-26:
 
