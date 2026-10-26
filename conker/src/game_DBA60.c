@@ -6,7 +6,6 @@
 /* Generated placeholder declarations. */
 s32 func_150AE790();
 s32 func_150AEB9C();
-s32 func_150AEDF8();
 /* End generated placeholder declarations. */
 
 void func_150AE5B0(struct108 *arg0) {
@@ -97,38 +96,32 @@ s32 func_150AEDD8(struct202 *arg0) {
     return 1;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_DBA60/func_150AEDF8.s. */
-s32 func_150AEDF8() {
-    return 0;
+/* Only the inline link's identity word and saved key are exposed. */
+typedef struct {
+    s32 value;
+    u8 key;
+} InlineOwnerIdentityDBA60;
+
+/* Retarget the inline owner link, or release the owner for a matching event. */
+void func_150AEDF8(struct260 *record, s32 eventAddress, u8 command) {
+    u8 *owner = (u8 *)record;
+    InlineOwnerIdentityDBA60 *state = (InlineOwnerIdentityDBA60 *)(owner + 0x28);
+    u8 *event = (u8 *)eventAddress;
+    s32 code = command;
+
+    if (command == 0x2D) {
+        s32 current = state->value;
+        s32 first = *(s32 *)event;
+        if (first == current) {
+            state->value = *(s32 *)(event + 4);
+            state->key = event[9];
+        } else if (*(s32 *)(event + 4) == current) {
+            state->value = first;
+            state->key = event[8];
+        }
+    } else if (code == 0) {
+        if (*(s32 *)event == state->value || state->key == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    }
 }
-// void func_150AEDF8(void *arg0, void *arg1, s32 arg2) {
-//     s32 temp_a0;
-//     s32 temp_t6;
-//     s32 temp_v1;
-//     void *temp_v0;
-//     void *temp_v0_2;
-//
-//     temp_t6 = arg2 & 0xFF;
-//     if (temp_t6 == 0x2D) {
-//         temp_v0 = arg0->unk28;
-//         temp_a0 = temp_v0->unk0;
-//         temp_v1 = arg1->unk0;
-//         if (temp_v1 == temp_a0) {
-//             temp_v0->unk0 = (s32) arg1->unk4;
-//             temp_v0->unk4 = (u8) arg1->unk9;
-//             return;
-//         }
-//         if (arg1->unk4 == temp_a0) {
-//             temp_v0->unk0 = temp_v1;
-//             temp_v0->unk4 = (u8) arg1->unk8;
-//             return;
-//         }
-//     } else {
-//         temp_v0 = arg0->unk28;
-//         if (temp_t6 == 0) {
-//             if ((arg1->unk0 == temp_v0->unk0) || ((temp_v0->unk4 == (u8) arg1->unk4))) {
-//                 func_1516972C(arg0, temp_t6, arg0);
-//             }
-//         }
-//     }
-// }

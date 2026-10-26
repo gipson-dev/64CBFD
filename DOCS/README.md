@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Inline owner identity event](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md): 43-word/frame-24 C plus eleven checked role guards, real dispatcher, seven neighbors and strict 119-byte image; Native total 69.12%.
 - [Grouped live actor walk](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md):
   45-word/frame-48 C plus four checked setup guards, live byte-count/helper
   behavior, 56 preserved neighbors and strict 144-byte image; Native total 69.10%.

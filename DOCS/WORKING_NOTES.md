@@ -2,13 +2,25 @@
 
 2026-10-25:
 
+**Inline owner identity event restored from C**:
+[Note 1729](WORKING_NOTES/1729-inline-owner-identity-event-match-20261025.md). `func_150AEDF8` matches its 43 body words,
+three alignment words/frame 24/one binding through eleven derived role guards.
+Both copies pass eight private checks accepted by exact canonical identity;
+two fresh installed checks each reuse six unchanged semantic checks. Preserve
+seven neighbors, the real 74-entry dispatcher and strict 119-byte image,
+zero exclusions. Tools `2bb4d78` first; actual Native ELF 3,805/5,505 (69.12%),
+Game 3,132/4,832 (64.82%), zero drift; 324 more to 75%. Next
+`func_150D7068` remains uncredited; full provider/gameplay stays separate.
+
+2026-10-25:
+
 [Note 1728](WORKING_NOTES/1728-grouped-live-actor-walk-match-20261025.md):
 grouped live actor walk `func_150228E4` adopted, all 45 words/frame 48/seven
 bindings from semantic C plus four derived setup guards. Both copies pass eight
 fresh checks before/after. Preserve 56 neighbors, the actual caller boundary,
 588 fired accesses and strict 144-byte image, zero exclusions. Tools `e338265`
-first; actual Native-ELF total 69.10%, 325 more to 75%. Next
-`func_150AEDF8` remains uncredited; full caller/provider/gameplay stays separate.
+first; actual Native-ELF total 69.10%, 325 more to 75% then.
+That private `func_150AEDF8` is now adopted above; full caller/provider/gameplay stays separate.
 
 2026-10-25:
 
