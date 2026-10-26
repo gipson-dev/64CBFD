@@ -15,8 +15,24 @@ s32 func_1512AD54() {
     return 0;
 }
 
-s32 func_1512B100() {
-    return 0;
+extern u8 D_800BEAC0;
+extern u8 D_800C3671;
+
+/* Request the fixed state unless the actor can use its normal handler. */
+void func_1512B100(u8 *actor) {
+    s32 type = *(s32 *)(actor + 0x2C);
+
+    if ((type & ~0x100) && !D_800BEAC0 && !D_800C3671) {
+        if ((type != 0x40) && (*(s32 *)(actor + 0x84) & 8) &&
+            !(*(s32 *)(actor + 0x84) & 0x200) && !actor[0x23C] &&
+            !(*(s32 *)(actor + 0x5F0) & 0x80) && !(*(s32 *)(actor + 0x5F0) & 0x40)) {
+            func_1512AD54(actor);
+        } else {
+            *(s16 *)(actor + 0x5F8) = 1;
+            *(u16 *)(actor + 0x5FC) = 2;
+            *(s16 *)(actor + 0x5FE) = 60;
+        }
+    }
 }
 
 s32 func_1512B1B8() {

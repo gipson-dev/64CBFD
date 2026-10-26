@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-26 Actor State Request Direct C Match
+
+**Actor-state request restored directly from C**:
+[Note 1738](WORKING_NOTES/1738-actor-state-request-match-20261026.md). `func_1512B100` matches all 46 words directly,
+using a 24-byte frame, five bindings and no guards. Preserve the captured type,
+lazy byte/flag gates, ordered halfword writes, real caller windows and all
+14 neighbors. Both copies pass six fresh canonical methods and two fresh
+installed checks plus four fingerprinted reuses. Guest/native, aliases, faults
+and GNU carries pass; strict 142-byte image, zero exclusions. Tools `af1ffab`
+first. Adopted Native total 3,815/5,506 (69.29%), Game 3,142/4,833 (65.01%),
+zero drift; 315 more to 75%. Next screened placeholder `func_151A8F6C` remains uncredited.
+
 ## 2026-10-26 Packed Object Command Direct C Match
 
 **Packed object commands restored directly from C**:
@@ -10,7 +22,7 @@ pass six fresh canonical methods and two fresh installed checks plus four
 fingerprinted reuses. Cover the real variadic/script callbacks, native32,
 faults and GNU carries. Tools `3626aca` first; strict 136-byte image, zero
 exclusions. Adopted Native total 3,814/5,506 (69.27%), Game 3,141/4,833 (64.99%),
-zero drift; 316 more to 75%. Next screened placeholder `func_1512B100` remains uncredited.
+zero drift; 316 more to 75%. That then-private `func_1512B100` is adopted in Note 1738 above.
 
 ## 2026-10-26 Sentinel Query Fallback Guarded C Match
 
