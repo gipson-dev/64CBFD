@@ -1,4 +1,12 @@
 #include <ultra64.h>
+
+extern f32 D_800986EC;
+extern f32 D_800C3FD0[];
+
+/* Typed call views retain the recovered ABI while provider bodies remain placeholders. */
+typedef s32 (*SentinelPrimaryQuery)(s32, f32 *);
+typedef s32 (*SentinelFallbackQuery)(f32 *, s32, s32, s32, f32, s32, f32 *, s32, s32, s32, s32);
+
 extern u8 D_800C3FFA;
 extern u8 D_800C3E78;
 extern u8 D_800CC2D0[];
@@ -101,6 +109,17 @@ s32 func_1503A830() {
     return 0;
 }
 
-s32 func_1503B708() {
-    return 0;
+/* Initialize both sentinels and use the fallback only if the primary query declines. */
+void func_1503B708(f32 *output, s32 arg1, s32 arg2, s32 playerIndex, f32 arg4, s32 arg5, f32 *distance, s32 arg7, s32 arg8, s32 arg9, s32 arg10) {
+    f32 sentinel = D_800986EC;
+
+    output[0] = sentinel;
+    output[1] = sentinel;
+    output[2] = sentinel;
+    D_800C3FD0[0] = sentinel;
+    D_800C3FD0[1] = sentinel;
+    D_800C3FD0[2] = sentinel;
+    if (((SentinelPrimaryQuery) func_15037880)(playerIndex, output) == 0) {
+        ((SentinelFallbackQuery) func_150380C0)(output, arg1, arg2, playerIndex, arg4, arg5, distance, arg7, arg8, arg9, arg10);
+    }
 }

@@ -23797,3 +23797,29 @@ generated_3FC60,func_15012ED8,0x0A0,0x0018CE00,0x000C6E00,-,-,Derive closed colo
 generated_3FC60,func_15012ED8,0x0A4,0x00191603,0x000D1E03,-,-,Derive closed color-scan register lifetimes and independent address/arithmetic scheduling,,,false
 generated_3FC60,func_15012ED8,0x0A8,0x1447FFE5,0x1466FFE5,-,-,Derive closed color-scan register lifetimes and independent address/arithmetic scheduling,,,false
 generated_3FC60,func_15012ED8,0x0B4,0x00601025,0x00000000,-,-,Replace redundant count return copy by NOP after allocating the complete count lifetime to V0,,,false
+generated_64120,func_1503B708,0x00C,0x24420000,0x3C010000,R_MIPS_LO16:D_800C3FD0,R_MIPS_HI16:D_800986EC,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x010,0x00808025,0xC4200000,-,R_MIPS_LO16:D_800986EC,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x014,0xAFBF003C,0x24420000,-,R_MIPS_LO16:D_800C3FD0,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x018,0xAFA50044,0x00808025,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x01C,0xAFA60048,0xAFBF003C,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x020,0xAFA7004C,0xAFA50044,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x024,0x3C010000,0xAFA60048,R_MIPS_HI16:D_800986EC,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x028,0xC4200000,0xAFA7004C,R_MIPS_LO16:D_800986EC,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x02C,0x3C190000,0x3C190000,R_MIPS_HI16:func_15037880,-,Fold fixed function address construction into the original relocation-aware direct JAL,,,true
+generated_64120,func_1503B708,0x030,0x27390000,0x27390000,R_MIPS_LO16:func_15037880,-,Fold fixed function address construction into the original relocation-aware direct JAL,,,true
+generated_64120,func_1503B708,0x040,0x8FA4004C,0xE4400000,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x044,0x02002825,0xE4400004,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x048,0xE4400000,0xE4400008,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x04C,0xE4400004,0x8FA4004C,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x050,0x0320F809,0x0C000000,-,R_MIPS_26:func_15037880,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x054,0xE4400008,0x02002825,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x058,0x14400015,0x14400013,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x070,0x8FA80060,0x8FB90060,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x074,0x8FA90064,0x8FA80064,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x078,0x8FAA0068,0x8FA90068,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x07C,0x3C190000,0x3C190000,R_MIPS_HI16:func_150380C0,-,Fold fixed function address construction into the original relocation-aware direct JAL,,,true
+generated_64120,func_1503B708,0x080,0x27390000,0x27390000,R_MIPS_LO16:func_150380C0,-,Fold fixed function address construction into the original relocation-aware direct JAL,,,true
+generated_64120,func_1503B708,0x0A0,0xAFA80020,0xAFB90020,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x0A4,0xAFA90024,0xAFA80024,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x0A8,0x0320F809,0x0C000000,-,R_MIPS_26:func_150380C0,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
+generated_64120,func_1503B708,0x0AC,0xAFAA0028,0xAFA90028,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false

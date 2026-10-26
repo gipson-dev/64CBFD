@@ -1,5 +1,18 @@
 # Update Log
 
+## 2026-10-26 Sentinel Query Fallback Guarded C Match
+
+**Sentinel query fallback restored as guarded C**:
+[Note 1736](WORKING_NOTES/1736-sentinel-query-fallback-match-20261026.md). `func_1503B708` matches its 45-word/frame-64
+body and one zero alignment word through 26 checked rows, folding two fixed
+call addresses and omitting four address-construction instructions. Preserve
+all eleven argument slots, lazy fallback, actual 38-word caller window and
+eighteen neighbors. Both copies pass six fresh canonical checks and two fresh
+installed checks plus four fingerprinted reuses. Tools `efb8378` first;
+strict 135-byte image, zero exclusions. Adopted Native total 3,813/5,506
+(69.25%), Game 3,140/4,833 (64.97%), zero drift; 317 more to 75%. Next
+screened placeholder `func_1509F284` remains uncredited.
+
 ## 2026-10-26 Environment Color Command Scan Guarded C Match
 
 **Environment color command scan restored as guarded C**:
@@ -10,7 +23,7 @@ parent tail, three neighbors and strict 187-byte image, zero exclusions. Both
 tools copies pass six fresh checks, then two fresh installed checks plus four
 unchanged semantic checks reused by exact fingerprint. Tools `6b2f3e8` first;
 actual Native ELF 3,812/5,506 (69.23%), Game 3,139/4,833 (64.95%), zero drift;
-318 more to 75%. Next screened placeholder `func_1503B708` remains uncredited.
+318 more to 75%. That then-private `func_1503B708` is adopted in Note 1736 above.
 
 ## 2026-10-26 Owner Subtype Factory Callback Direct C Match
 
