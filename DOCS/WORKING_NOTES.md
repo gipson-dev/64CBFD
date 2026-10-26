@@ -2,6 +2,17 @@
 
 2026-10-26:
 
+**Owner subtype factory callback restored directly from C**:
+[Note 1734](WORKING_NOTES/1734-owner-subtype-factory-callback-match-20261026.md). `func_150DDED0` matches all 46 words/frame 40
+with no guards. Both tools copies pass six fresh checks; two fresh installed
+checks reuse four unchanged semantic checks only by exact identity. Preserve
+the late owner read, eight-argument ABI, original indirect caller, 11 neighbors
+and strict 129-byte image, zero exclusions. Tools `b94c8d5` first; actual
+Native ELF 3,811/5,506 (69.22%), Game 3,138/4,833 (64.93%), zero drift;
+319 more to 75%. Next screened placeholder `func_15012ED8` remains uncredited.
+
+2026-10-26:
+
 **Menu selection reset restored from C**: [Note 1733](WORKING_NOTES/1733-menu-selection-reset-match-20261026.md).
 `func_15007778` matches its 44-word/frame-zero body and two alignment
 words through 23 derived loop, pointer-role and sentinel-forwarding guards.
@@ -10,7 +21,7 @@ plus seven fingerprinted reuses. Actual Make reproduces the strict 238-byte
 image, zero exclusions; the shared-declaration rebuild has an explicitly
 qualified debugger metadata delta. Tools `c22a5c3` first; actual adopted
 Native ELF 3,810/5,506 (69.20%), Game 3,137/4,833 (64.91%), zero drift;
-320 more to 75%. Next screened placeholder `func_150DDED0` is uncredited.
+320 more to 75%. That then-private `func_150DDED0` is adopted in Note 1734 above.
 
 2026-10-26:
 
