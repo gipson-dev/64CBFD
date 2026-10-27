@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include "structs.h"
+void func_1516972C(struct102 *);
 typedef struct { s32 a, b, c; } ThreeWord1FA770;
 
 extern ThreeWord1FA770 D_800AAF9C[];
@@ -218,8 +220,28 @@ s32 func_151D014C() {
     return 0;
 }
 
-s32 func_151D08F0() {
-    return 0;
+/* Release the owner or retarget its embedded source/identity pair. */
+void func_151D08F0(struct260 *record, s32 eventAddress, u8 command) {
+    u8 *owner = (u8 *)record;
+    u8 *event = (u8 *)eventAddress;
+    u8 *state = owner + 0x28;
+    s32 value = command;
+    if (command == 0 || value == 0x18) {
+        value = *(s32 *)event;
+        if (value == *(s32 *)state || state[4] == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (value == 0x2D) {
+        s32 current = *(s32 *)state;
+        value = *(s32 *)event;
+        if (value == current) {
+            *(s32 *)state = *(s32 *)(event + 4);
+            state[4] = event[9];
+        } else if (*(s32 *)(event + 4) == current) {
+            *(s32 *)state = value;
+            state[4] = event[8];
+        }
+    }
 }
 
 s32 func_151D09A8() {
@@ -230,7 +252,7 @@ s32 func_151D0ED8(u8 *arg0) {
     u8 *temp_a1 = arg0;
 
     if (*(s32 volatile *)(temp_a1 + 0xA8) != 0) {
-        func_1516972C(*(s32 volatile *)(temp_a1 + 0xA8));
+        func_1516972C((struct102 *)*(s32 volatile *)(temp_a1 + 0xA8));
     }
 }
 

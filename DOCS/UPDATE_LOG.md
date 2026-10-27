@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Owner Identity-Event Callback
+
+**Owner identity-event callback restored as guarded C**: [Note 1740](WORKING_NOTES/1740-owner-identity-event-match-20261027.md). All 46 words match with one checked comparison-operand guard; both tools copies pass eight fresh canonical methods. Production reproduces the strict 128-byte image, zero exclusions, preserving 51 neighbors. Native total 3,817/5,506 (69.32%), Game 3,144/4,833 (65.05%), zero drift; 313 more to 75%. Next screened placeholder `func_150222E0` remains uncredited.
+
 ## 2026-10-26 Owner Radial Point And Height Outputs
 
-**Owner radial point and height outputs restored as guarded C**: [Note 1739](WORKING_NOTES/1739-owner-radial-height-match-20261026.md). All 46 words match with two checked temporary-slot guards; both tools copies pass six fresh canonical methods. Production reproduces the strict 134-byte image, zero exclusions. Native total 3,816/5,506 (69.31%), Game 3,143/4,833 (65.03%), zero drift; 314 more to 75%. Next screened placeholder `func_151D08F0` remains uncredited.
+**Owner radial point and height outputs restored as guarded C**: [Note 1739](WORKING_NOTES/1739-owner-radial-height-match-20261026.md). All 46 words match with two checked temporary-slot guards; both tools copies pass six fresh canonical methods. Production reproduces the strict 134-byte image, zero exclusions. Native total 3,816/5,506 (69.31%), Game 3,143/4,833 (65.03%), zero drift; 314 more to 75%. That then-private `func_151D08F0` is adopted in Note 1740 above.
 
 ## 2026-10-26 Actor State Request Direct C Match
 

@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Owner identity-event callback](WORKING_NOTES/1740-owner-identity-event-match-20261027.md): 46-word guarded C, typed callback/release interfaces, original registry and complete dispatcher, strict 128-byte image. Native total 69.32%.
 - [Owner radial point and height outputs](WORKING_NOTES/1739-owner-radial-height-match-20261026.md): 46-word guarded C, two closed temporary-slot guards, actual math helpers and callback selector, strict 134-byte image. Native total 69.31%.
 - [Actor-state request](WORKING_NOTES/1738-actor-state-request-match-20261026.md): direct C (46 words, 24-byte frame), five bindings, no guards, lazy gates, real caller windows and 14 preserved neighbors; strict 142-byte image. Adopted Native total 69.29%.
 - [Packed object commands](WORKING_NOTES/1737-packed-object-command-match-20261026.md): direct C (46 words, 40-byte frame), three bindings, no guards, explicit provider narrowing, real callbacks and 16 preserved neighbors; strict 136-byte image. Adopted Native total 69.27%.

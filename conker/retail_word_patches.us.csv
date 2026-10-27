@@ -23825,3 +23825,4 @@ generated_64120,func_1503B708,0x0A8,0x0320F809,0x0C000000,-,R_MIPS_26:func_15038
 generated_64120,func_1503B708,0x0AC,0xAFAA0028,0xAFA90028,-,-,Derive fixed direct calls and closed argument lifetimes with the original sentinel/home/store schedule,,,false
 generated_1D4E00,func_151A8F6C,0x28,0xafa20028,0xafa20024,-,-,Normalize closed random-point integer temporary stack slot,,,false
 generated_1D4E00,func_151A8F6C,0x30,0x8fa40028,0x8fa40024,-,-,Normalize closed random-point integer temporary stack slot,,,false
+generated_1FA770,func_151D08F0,0x94,0x548a0005,0x55440005,-,-,Normalize commutative embedded-identity branch operand order,,,false
