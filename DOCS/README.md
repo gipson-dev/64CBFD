@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record ground rebound callback](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md): direct 46-word C, six-argument registry ABI, complete retained dispatcher and strict 182-byte image prediction. Native total 69.38%.
 - [Actor transition initializer](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md): direct 46-word C, actual SDK/provider interfaces, retail dispatcher route, strict 148-byte image with no guards. Native total 69.36%.
 - [Live type-2 group actor reset](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md): direct 46-word C, actual byte-selector/provider interfaces, complete caller and lookup, strict 150-byte image with no guards. Native total 69.34%.
 - [Owner identity-event callback](WORKING_NOTES/1740-owner-identity-event-match-20261027.md): 46-word guarded C, typed callback/release interfaces, original registry and complete dispatcher, strict 128-byte image. Native total 69.32%.

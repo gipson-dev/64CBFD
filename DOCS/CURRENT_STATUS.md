@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `bf1d5f2`; tools are committed before the consumer pin.
+  checkpoint pins tools `9cdb326`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor transition initializer restored as direct C**: [Note 1742](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 148-byte image, zero exclusions, preserving 18 neighbors. Native total 3,819/5,506 (69.36%), Game 3,146/4,833 (65.09%), zero drift; 311 more to 75%. Next screened placeholder `func_150BCFB8` remains uncredited.
+**Record ground rebound callback restored as direct C**: [Note 1743](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 182-byte image, zero exclusions, preserving eight neighbors. Native total 3,820/5,506 (69.38%), Game 3,147/4,833 (65.11%), zero drift; 310 more to 75%. Next screened placeholder `func_150FA468` remains uncredited.
+
+**Actor transition initializer restored as direct C**: [Note 1742](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 148-byte image, zero exclusions, preserving 18 neighbors. Native total 3,819/5,506 (69.36%), Game 3,146/4,833 (65.09%), zero drift; 311 more to 75%. That then-private `func_150BCFB8` is adopted in Note 1743 above.
 
 **Live type-2 group actor reset restored as direct C**: [Note 1741](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 150-byte image, zero exclusions, preserving 56 neighbors. Native total 3,818/5,506 (69.34%), Game 3,145/4,833 (65.07%), zero drift; 312 more to 75%. That then-private `func_15063570` is adopted in Note 1742 above.
 

@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Record Ground Rebound Callback
+
+**Record ground rebound callback restored as direct C**: [Note 1743](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 182-byte image, zero exclusions, preserving eight neighbors. Native total 3,820/5,506 (69.38%), Game 3,147/4,833 (65.11%), zero drift; 310 more to 75%. Next screened placeholder `func_150FA468` remains uncredited.
+
 ## 2026-10-27 Actor Transition Initializer
 
-**Actor transition initializer restored as direct C**: [Note 1742](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 148-byte image, zero exclusions, preserving 18 neighbors. Native total 3,819/5,506 (69.36%), Game 3,146/4,833 (65.09%), zero drift; 311 more to 75%. Next screened placeholder `func_150BCFB8` remains uncredited.
+**Actor transition initializer restored as direct C**: [Note 1742](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 148-byte image, zero exclusions, preserving 18 neighbors. Native total 3,819/5,506 (69.36%), Game 3,146/4,833 (65.09%), zero drift; 311 more to 75%. That then-private `func_150BCFB8` is adopted in Note 1743 above.
 
 ## 2026-10-27 Live Type-2 Group Actor Reset
 
