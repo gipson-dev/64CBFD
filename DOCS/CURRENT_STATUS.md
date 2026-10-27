@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `dab739d`; tools are committed before the consumer pin.
+  checkpoint pins tools `3d000d5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Record color command callback restored as direct C**: [Note 1744](WORKING_NOTES/1744-record-color-command-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 137-byte image, zero exclusions, preserving 17 neighbors. Native total 3,821/5,506 (69.40%), Game 3,148/4,833 (65.14%), zero drift; 309 more to 75%. Next screened placeholder `func_15116058` remains uncredited.
+**Vertex texture-coordinate shift restored as guarded C**: [Note 1745](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md). All 46 words match after 40 derived register/schedule guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 139-byte image with zero exclusions, preserving 83 neighbors. Native total 3,822/5,506 (69.42%), Game 3,149/4,833 (65.16%), zero drift; 308 more to 75%. Next screened placeholder `func_1519E304` remains uncredited.
+
+**Record color command callback restored as direct C**: [Note 1744](WORKING_NOTES/1744-record-color-command-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 137-byte image, zero exclusions, preserving 17 neighbors. Native total 3,821/5,506 (69.40%), Game 3,148/4,833 (65.14%), zero drift; 309 more to 75%. That then-private `func_15116058` is adopted in Note 1745 above.
 
 **Record ground rebound callback restored as direct C**: [Note 1743](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 182-byte image, zero exclusions, preserving eight neighbors. Native total 3,820/5,506 (69.38%), Game 3,147/4,833 (65.11%), zero drift; 310 more to 75%. That then-private `func_150FA468` is adopted in Note 1744 above.
 

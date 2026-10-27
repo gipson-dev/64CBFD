@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Vertex Texture-Coordinate Shift
+
+**Vertex texture-coordinate shift restored as guarded C**: [Note 1745](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md). All 46 words match after 40 derived register/schedule guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 139-byte image with zero exclusions, preserving 83 neighbors. Native total 3,822/5,506 (69.42%), Game 3,149/4,833 (65.16%), zero drift; 308 more to 75%. Next screened placeholder `func_1519E304` remains uncredited.
+
 ## 2026-10-27 Record Color Command Callback
 
-**Record color command callback restored as direct C**: [Note 1744](WORKING_NOTES/1744-record-color-command-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 137-byte image, zero exclusions, preserving 17 neighbors. Native total 3,821/5,506 (69.40%), Game 3,148/4,833 (65.14%), zero drift; 309 more to 75%. Next screened placeholder `func_15116058` remains uncredited.
+**Record color command callback restored as direct C**: [Note 1744](WORKING_NOTES/1744-record-color-command-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 137-byte image, zero exclusions, preserving 17 neighbors. Native total 3,821/5,506 (69.40%), Game 3,148/4,833 (65.14%), zero drift; 309 more to 75%. That then-private `func_15116058` is adopted in Note 1745 above.
 
 ## 2026-10-27 Record Ground Rebound Callback
 

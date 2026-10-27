@@ -121,8 +121,34 @@ s32 func_15115F68() {
     return 0;
 }
 
-s32 func_15116058() {
-    return 0;
+typedef struct {
+    u8 reserved[0x16];
+    u16 vertexCount;
+    u8 reserved18[8];
+    u8 *buffers[2];
+    u8 reserved28[0x14];
+    s32 packedOffset;
+} TexcoordShiftRecord;
+extern u8 D_800BE9C0;
+
+/* Add packed signed offsets to texture coordinates in the selected buffer. */
+void func_15116058(TexcoordShiftRecord *record) {
+    s16 offsetS = record->packedOffset >> 16;
+    s16 offsetT = record->packedOffset & 0xFFFF;
+    s32 index = 0;
+    s32 offset;
+
+    if (record->vertexCount > 0) {
+        offset = 0;
+        do {
+            *(s16 *)(record->buffers[D_800BE9C0] + offset + 8) =
+                *(s16 *)(record->buffers[!D_800BE9C0] + offset + 8) + offsetS;
+            *(s16 *)(record->buffers[D_800BE9C0] + offset + 10) =
+                *(s16 *)(record->buffers[!D_800BE9C0] + offset + 10) + offsetT;
+            index++;
+            offset += 16;
+        } while (index < record->vertexCount);
+    }
 }
 
 void func_15116110(u8 *arg0) {

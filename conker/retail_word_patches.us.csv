@@ -23826,3 +23826,43 @@ generated_64120,func_1503B708,0x0AC,0xAFAA0028,0xAFA90028,-,-,Derive fixed direc
 generated_1D4E00,func_151A8F6C,0x28,0xafa20028,0xafa20024,-,-,Normalize closed random-point integer temporary stack slot,,,false
 generated_1D4E00,func_151A8F6C,0x30,0x8fa40028,0x8fa40024,-,-,Normalize closed random-point integer temporary stack slot,,,false
 generated_1FA770,func_151D08F0,0x94,0x548a0005,0x55440005,-,-,Normalize commutative embedded-identity branch operand order,,,false
+generated_142560,func_15116058,0x000,0x8C85003C,0x8C8C003C,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x004,0x948A0016,0x948F0016,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x00C,0x00051403,0x000CC403,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x010,0x00027400,0x0018CC00,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x014,0x0005C400,0x000C6C00,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x018,0x000E1403,0x00191403,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x01C,0x19400024,0x19E00024,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x020,0x00182C03,0x000D2C03,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x028,0x00001825,0x25290000,-,R_MIPS_LO16:D_800BE9C0,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x02C,0x25290000,0x00004025,R_MIPS_LO16:D_800BE9C0,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x030,0x91280000,0x91270000,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x038,0x2D070001,0x2CE30001,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x03C,0x00075880,0x0003C080,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x040,0x008B6021,0x0098C821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x044,0x8D8D0020,0x8F2A0020,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x048,0x0008C880,0x00077080,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x04C,0x00995021,0x008E7821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x050,0x01A37021,0x01485821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x054,0x85CF0008,0x856C0008,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x058,0x8D4B0020,0x8DF80020,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x05C,0x01E2C021,0x01826821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x060,0x01636021,0x0308C821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x064,0xA5980008,0xA72D0008,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x068,0x91280000,0x91270000,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x06C,0x2D070001,0x2CE30001,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x070,0x00076880,0x00035080,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x074,0x008D7021,0x008A5821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x078,0x8DCF0020,0x8D6C0020,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x07C,0x0008C080,0x00076880,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x080,0x00986021,0x008DC821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x084,0x01E3C821,0x01887021,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x088,0x872A000A,0x85CF000A,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x08C,0x8D8D0020,0x8F2A0020,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x090,0x01455821,0x01E5C021,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x094,0x01A37021,0x01485821,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x098,0xA5CB000A,0xA578000A,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x09C,0x948F0016,0x948C0016,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x0A0,0x24630010,0x25080010,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x0A4,0x00CF082A,0x00CC082A,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_142560,func_15116058,0x0AC,0x91280000,0x91270000,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
