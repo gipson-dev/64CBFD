@@ -3,6 +3,8 @@
 
 extern struct127 D_800CC2D0[];
 void func_150836CC(struct127 *arg0, s32 arg1);
+u8 *func_15083568(u8 *, s32, f32, s32);
+void func_1505E650(u8 *, u16, f32, f32, f32, f32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/90840.s. */
 
@@ -25,8 +27,18 @@ void func_150634E4(struct127 *arg0) {
     arg0->unk83 = 0;
 }
 
-s32 func_15063570() {
-    return 0;
+/* Start the actor's transition state and its animation providers. */
+void func_15063570(struct127 *actor) {
+    s32 index = ((s32)actor - (s32)D_800CC2D0) / (s32)sizeof(struct127);
+    struct127 *entry = &D_800CC2D0[(u32)index];
+
+    entry->unk31C->unk78 = 0x3B;
+    entry->unk31C->unk11A = 2;
+    func_15083568((u8 *)actor, 0x89, 1.0f, 0);
+    actor->disable_jump = 20;
+    actor->disable_run = 0;
+    actor->unk83 = 0;
+    func_1505E650((u8 *)actor, 0x221, 1.0f, 0.0f, 0.0f, 0.0f, 0);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_90840/func_15063628.s")

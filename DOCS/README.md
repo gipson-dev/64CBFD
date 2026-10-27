@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Actor transition initializer](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md): direct 46-word C, actual SDK/provider interfaces, retail dispatcher route, strict 148-byte image with no guards. Native total 69.36%.
 - [Live type-2 group actor reset](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md): direct 46-word C, actual byte-selector/provider interfaces, complete caller and lookup, strict 150-byte image with no guards. Native total 69.34%.
 - [Owner identity-event callback](WORKING_NOTES/1740-owner-identity-event-match-20261027.md): 46-word guarded C, typed callback/release interfaces, original registry and complete dispatcher, strict 128-byte image. Native total 69.32%.
 - [Owner radial point and height outputs](WORKING_NOTES/1739-owner-radial-height-match-20261026.md): 46-word guarded C, two closed temporary-slot guards, actual math helpers and callback selector, strict 134-byte image. Native total 69.31%.

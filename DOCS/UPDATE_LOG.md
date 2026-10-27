@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Actor Transition Initializer
+
+**Actor transition initializer restored as direct C**: [Note 1742](WORKING_NOTES/1742-actor-transition-initializer-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 148-byte image, zero exclusions, preserving 18 neighbors. Native total 3,819/5,506 (69.36%), Game 3,146/4,833 (65.09%), zero drift; 311 more to 75%. Next screened placeholder `func_150BCFB8` remains uncredited.
+
 ## 2026-10-27 Live Type-2 Group Actor Reset
 
-**Live type-2 group actor reset restored as direct C**: [Note 1741](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 150-byte image, zero exclusions, preserving 56 neighbors. Native total 3,818/5,506 (69.34%), Game 3,145/4,833 (65.07%), zero drift; 312 more to 75%. Next screened placeholder `func_15063570` remains uncredited.
+**Live type-2 group actor reset restored as direct C**: [Note 1741](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 150-byte image, zero exclusions, preserving 56 neighbors. Native total 3,818/5,506 (69.34%), Game 3,145/4,833 (65.07%), zero drift; 312 more to 75%. That then-private `func_15063570` is adopted in Note 1742 above.
 
 ## 2026-10-27 Owner Identity-Event Callback
 
