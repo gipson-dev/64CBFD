@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Matrix-bound point interpolation](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md): direct 46-word C, six-argument O32 ABI, three original caller windows and transform-helper integration; strict 142-byte image, zero new guards. Native total 69.43%.
 - [Vertex texture-coordinate shift](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md): complete 46-word C with 40 derived register/schedule guards, live count/selector/pointer reads and strict 139-byte image, zero exclusions. Native total 69.42%.
 - [Record color command callback](WORKING_NOTES/1744-record-color-command-match-20261027.md): direct 46-word C, typed registry ABI, complete dispatcher and maximum-priority color-provider route; strict 137-byte image, zero guards. Native total 69.40%.
 - [Record ground rebound callback](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md): direct 46-word C, six-argument registry ABI, complete retained dispatcher and strict 182-byte image prediction. Native total 69.38%.

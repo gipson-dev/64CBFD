@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Vertex texture-coordinate shift restored as guarded C**: [Note 1745](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md). All 46 words match after 40 derived register/schedule guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 139-byte image with zero exclusions, preserving 83 neighbors. Native total 3,822/5,506 (69.42%), Game 3,149/4,833 (65.16%), zero drift; 308 more to 75%. Next screened placeholder `func_1519E304` remains uncredited.
+**Matrix-bound point interpolation restored as direct C**: [Note 1746](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md). All 46 words match with zero new guards; both tools copies pass eight fresh canonical methods. The six-argument O32 interface is checked through three original caller windows and original/retained transform-helper routes. Production reproduces the strict 142-byte image with zero exclusions, preserving 22 neighbors. Native total 3,823/5,506 (69.43%), Game 3,150/4,833 (65.18%), zero drift; 307 more to 75%. Next screened placeholder `func_1514E920` remains uncredited.
+
+2026-10-27:
+
+**Vertex texture-coordinate shift restored as guarded C**: [Note 1745](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md). All 46 words match after 40 derived register/schedule guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 139-byte image with zero exclusions, preserving 83 neighbors. Native total 3,822/5,506 (69.42%), Game 3,149/4,833 (65.16%), zero drift; 308 more to 75%. That then-private `func_1519E304` is adopted in Note 1746 above.
 
 2026-10-27:
 

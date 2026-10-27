@@ -70,8 +70,30 @@ s32 func_1519E1F4() {
     return 0;
 }
 
-s32 func_1519E304() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 reserved4;
+    u8 matrixIndex;
+    u8 reserved6[2];
+    f32 point[3];
+} MatrixPointBinding;
+void func_15143134(f32 *, f32 *, u8 *);
+
+/* Transform the bound point, then interpolate each coordinate from the origin. */
+s32 func_1519E304(MatrixPointBinding *binding, f32 *output,
+                 f32 x, f32 y, f32 z, f32 amount) {
+    f32 transformed[3];
+    u8 (*matrices)[64] = *(u8 (**)[64])(binding->owner + 0x1D4);
+
+    if (matrices == NULL) {
+        return 0;
+    }
+    func_15143134(binding->point, transformed,
+                  matrices[binding->matrixIndex]);
+    output[0] = (transformed[0] - x) * amount + x;
+    output[1] = (transformed[1] - y) * amount + y;
+    output[2] = (transformed[2] - z) * amount + z;
+    return 1;
 }
 
 /* Reset the effect group and start both presets with their controller. */
