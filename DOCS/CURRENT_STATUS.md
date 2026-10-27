@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `af1ffab`; tools are committed before the consumer pin.
+  checkpoint pins tools `a5afa26`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,6 +27,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
+**Owner radial point and height outputs restored as guarded C**: [Note 1739](WORKING_NOTES/1739-owner-radial-height-match-20261026.md). All 46 words match with two checked temporary-slot guards; both tools copies pass six fresh canonical methods. Production reproduces the strict 134-byte image, zero exclusions. Native total 3,816/5,506 (69.31%), Game 3,143/4,833 (65.03%), zero drift; 314 more to 75%. Next screened placeholder `func_151D08F0` remains uncredited.
+
 **Actor-state request restored directly from C**:
 [Note 1738](WORKING_NOTES/1738-actor-state-request-match-20261026.md). `func_1512B100` matches all 46 words directly,
 using a 24-byte frame, five bindings and no guards. Preserve the captured type,
@@ -35,7 +37,7 @@ lazy byte/flag gates, ordered halfword writes, real caller windows and all
 installed checks plus four fingerprinted reuses. Guest/native, aliases, faults
 and GNU carries pass; strict 142-byte image, zero exclusions. Tools `af1ffab`
 first. Adopted Native total 3,815/5,506 (69.29%), Game 3,142/4,833 (65.01%),
-zero drift; 315 more to 75%. Next screened placeholder `func_151A8F6C` remains uncredited.
+zero drift; 315 more to 75%. That then-private `func_151A8F6C` is adopted in Note 1739 above.
 
 **Packed object commands restored directly from C**:
 [Note 1737](WORKING_NOTES/1737-packed-object-command-match-20261026.md). `func_1509F284` matches all 46 words directly,

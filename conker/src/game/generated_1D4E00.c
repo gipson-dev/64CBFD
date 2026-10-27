@@ -110,8 +110,20 @@ void func_151A8F1C(u8 *arg0, f32 *arg1, f32 *arg2, f32 *arg3) {
     arg1[1] = arg2[0];
 }
 
-s32 func_151A8F6C() {
-    return 0;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143874(s16, f32, f32 *, f32 *);
+
+/* Build a random horizontal offset and return the owner height values. */
+void func_151A8F6C(u8 *owner, f32 *vector, f32 *out0, f32 *out1) {
+    f32 *state = (f32 *)(owner + 0x28);
+    s32 code = func_150ADA20();
+    func_15143874((s16)(code & 0xFF), state[8] * func_150ADA68(), vector, vector + 2);
+    vector[0] += state[4];
+    vector[2] += state[6];
+    vector[1] = state[5];
+    *out0 = state[5];
+    *out1 = state[7];
 }
 
 void func_151A9024(u8 *arg0, s32 arg1, u8 arg2) {
