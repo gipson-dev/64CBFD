@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Record ground rebound callback restored as direct C**: [Note 1743](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 182-byte image, zero exclusions, preserving eight neighbors. Native total 3,820/5,506 (69.38%), Game 3,147/4,833 (65.11%), zero drift; 310 more to 75%. Next screened placeholder `func_150FA468` remains uncredited.
+**Record color command callback restored as direct C**: [Note 1744](WORKING_NOTES/1744-record-color-command-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 137-byte image, zero exclusions, preserving 17 neighbors. Native total 3,821/5,506 (69.40%), Game 3,148/4,833 (65.14%), zero drift; 309 more to 75%. Next screened placeholder `func_15116058` remains uncredited.
+
+2026-10-27:
+
+**Record ground rebound callback restored as direct C**: [Note 1743](WORKING_NOTES/1743-record-ground-rebound-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 182-byte image, zero exclusions, preserving eight neighbors. Native total 3,820/5,506 (69.38%), Game 3,147/4,833 (65.11%), zero drift; 310 more to 75%. That then-private `func_150FA468` is adopted in Note 1744 above.
 
 2026-10-27:
 

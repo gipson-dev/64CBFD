@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern u8 *D_800D3098;
 extern f32 D_800A1DC0;
 
@@ -16,8 +17,21 @@ s32 func_150FA1B8() {
     return 0;
 }
 
-s32 func_150FA468() {
-    return 0;
+void func_1515D4D4(s32, s32, s32, u8);
+
+/* Set the record timer and apply the requested black or white color override. */
+void func_150FA468(struct260 *record, s32 eventAddress, u8 command) {
+    if (command == 0x4C) {
+        record->unk11 = -1;
+        func_1515D4D4(0, 0, 0, 255);
+    } else if (command == 0x4D) {
+        record->unk11 = 30;
+    } else if (command == 0x4E) {
+        record->unk11 = -1;
+    } else if (command == 0x4F) {
+        record->unk11 = -1;
+        func_1515D4D4(255, 255, 255, 255);
+    }
 }
 
 s32 func_150FA520() {
