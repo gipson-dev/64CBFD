@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Owner identity-event callback restored as guarded C**: [Note 1740](WORKING_NOTES/1740-owner-identity-event-match-20261027.md). All 46 words match with one checked comparison-operand guard; both tools copies pass eight fresh canonical methods. Production reproduces the strict 128-byte image, zero exclusions, preserving 51 neighbors. Native total 3,817/5,506 (69.32%), Game 3,144/4,833 (65.05%), zero drift; 313 more to 75%. Next screened placeholder `func_150222E0` remains uncredited.
+**Live type-2 group actor reset restored as direct C**: [Note 1741](WORKING_NOTES/1741-group-type2-actor-reset-match-20261027.md). All 46 words match with zero guards; both tools copies pass eight fresh canonical methods. Production reproduces the strict 150-byte image, zero exclusions, preserving 56 neighbors. Native total 3,818/5,506 (69.34%), Game 3,145/4,833 (65.07%), zero drift; 312 more to 75%. Next screened placeholder `func_15063570` remains uncredited.
+
+2026-10-27:
+
+**Owner identity-event callback restored as guarded C**: [Note 1740](WORKING_NOTES/1740-owner-identity-event-match-20261027.md). All 46 words match with one checked comparison-operand guard; both tools copies pass eight fresh canonical methods. Production reproduces the strict 128-byte image, zero exclusions, preserving 51 neighbors. Native total 3,817/5,506 (69.32%), Game 3,144/4,833 (65.05%), zero drift; 313 more to 75%. That then-private `func_150222E0` is adopted in Note 1741 above.
 
 2026-10-26:
 

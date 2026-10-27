@@ -25,6 +25,8 @@ void func_1501CC3C(void);
 
 extern u16 *D_800C35C8[];
 extern u8 *D_800C35F0[];
+u8 *func_15083E90(u8);
+void func_1507E7E4(u8 *, u8, u8, u16, s32);
 
 extern void (*D_80086014[])();
 extern f32 D_800C3594;
@@ -711,8 +713,31 @@ void func_1502225C(s32 value, s32 group) {
     *count = count_value + 1;
 }
 
-s32 func_150222E0() {
-    return 0;
+/* Reset the actor referenced by a live type-2 group record. */
+void func_150222E0(s32 index, s32 group) {
+    u8 *actor;
+    u8 *record;
+    if (D_800C35C8[group][index] == 0) {
+        return;
+    }
+    record = D_800C35F0[group] + (u32)index * 8;
+    if (*(u16 *)record != 2) {
+        return;
+    }
+    actor = func_15083E90(record[2]);
+    if (actor != NULL) {
+        actor[0x6C] = 0;
+        actor[0x6D] = 0;
+        actor[0x6A] = 0;
+        actor[0x6B] = 0;
+        *(u16 *)(actor + 0x282) = 0;
+        *(u16 *)(actor + 0x27A) = 0;
+        *(u16 *)(actor + 0x27C) = 0;
+        *(u16 *)(actor + 0x27E) = 0;
+        *(u16 *)(actor + 0x280) = 0;
+        func_1507E7E4(actor, 0, 3, 0xFFFF, 10);
+        actor[0x71] = 0;
+    }
 }
 
 s32 func_15022398() {
