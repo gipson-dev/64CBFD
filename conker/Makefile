@@ -132,7 +132,7 @@ RETAIL_PAD_SKIP_C_FILES := \
 	$(SRC_DIR)/game/done/game_75950.c
 RETAIL_PAD_C_FILES := $(filter-out $(GENERATED_SLICE_C_FILES) $(RETAIL_PAD_SKIP_C_FILES),$(C_FILES))
 RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
-RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES))
+RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES)))
 RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
 	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o $(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o, \
@@ -474,6 +474,21 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
 		--function-object func_150891E8=$@.normal.compact --function-object func_1508BC20=$@.normal.compact --function-object func_15089BC0=$@.normal.compact --function-object func_15086364=$@.normal.compact --word-patches retail_word_patches.us.csv --filename generated_B3020
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.normal.compact $@.padded.s
+
+# Give the recovered actor-effects dispatcher its typed helper interface while
+# preserving the unrecovered helper definitions in the original owner.
+$(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o: \
+		$(SRC_DIR)/game_161520.c $(SRC_DIR)/game/translation_units/161520_actor_point_effects.c \
+		$(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< > $(BUILD_DIR)/$<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
+	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
+		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.effects.compact $(SRC_DIR)/game/translation_units/161520_actor_point_effects.c
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_161520 $@.padded.s \
+		--function-object func_15138BC0=$@.effects.compact --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.effects.compact $@.padded.s
 
 # Keep the unrecovered factory's output unchanged. Its two restored callers
 # need a complete ABI prototype, isolated from the old zero-return definition.

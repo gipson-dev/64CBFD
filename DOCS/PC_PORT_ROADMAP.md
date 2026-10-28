@@ -2,6 +2,7 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_15138BC0` in [Note 1779](WORKING_NOTES/1779-actor-point-effects-match-20261028.md): direct 48-word C, frame96, six bindings, no guards. Isolate typed helper calls while preserving64 neighbors. Both copies pass eight fresh checks and two installed checks. Strict155-byte image, zero exclusions. Native total70.05%, 273 more to75%.
 - [x] Qualify and adopt `func_15131828` in [Note 1778](WORKING_NOTES/1778-record-planar-phase-match-20261028.md): 48 words, frame 24, four bindings and two checked multiply guards. Explicit sequencing passes native32 O0/O2/O3; verify all four original callers and both retained helpers. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Preserve 30 neighbors; strict 149-byte image. Native total 70.03%, 274 more to 75%.
 
 - [x] Qualify and adopt `func_151DC8BC` in [Note 1777](WORKING_NOTES/1777-type91-point-effect-match-20261028.md): all 48 words, frame 72, three bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify the six-argument ABI, optional companion call, all 20 payload bytes, both original command-27 routes, five retained helpers, native32 semantics and aliases; preserve both neighbors and reproduce the strict 146-byte image. Native total 70.01%, 275 more to 75%.

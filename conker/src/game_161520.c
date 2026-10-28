@@ -28,7 +28,7 @@ s32 func_15138120();
 s32 func_151382E0();
 s32 func_15138424();
 s32 func_151389A8();
-s32 func_15138BC0();
+void func_15138BC0(struct102 *actor, u8 group, s32 context);
 s32 func_15138C80();
 s32 func_15138E98();
 s32 func_15139578();
@@ -455,10 +455,10 @@ s32 func_15138424() {
 }/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151389A8.s. */
 s32 func_151389A8() {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138BC0.s. */
-s32 func_15138BC0() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138C80.s. */
+}
+
+/* Actor point effects are compiled in game/translation_units/161520_actor_point_effects.c. */
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138C80.s. */
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_161520/func_15138C80.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138E98.s. */
