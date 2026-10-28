@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Type-7 parameter-record constructor](WORKING_NOTES/1772-type07-parameter-record-match-20261028.md): complete 48-word direct C, sixteen-input void interface, five original call sites and retained allocator/initializer integration. Preserve three neighbors; strict 143-byte image. Native total 69.92%, 280 more to 75%.
+
 - [Color record pulse](WORKING_NOTES/1771-color-record-pulse-match-20261028.md): complete 48-word direct C, canonical descriptor callback, countdown/color/clock semantics, original dispatcher and retained helper integration. Preserve 22 neighbors; strict 143-byte image. Native total 69.91%, 281 more to 75%.
 - [Owner link event gate](WORKING_NOTES/1770-owner-link-event-gate-match-20261028.md): complete 48-word guarded C, actual 74-entry callback dispatcher, alias/fault/native controls and preserved neighbors. Strict 134-byte image; Native total 69.89%, 282 more to 75%.
 

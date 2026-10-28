@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_151B9BF0` in [Note 1772](WORKING_NOTES/1772-type07-parameter-record-match-20261028.md): all 48 words, frame 32, one call binding and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify all sixteen inputs, ordered narrowing stores, late argument-home reads, five original call sites and retained allocator/initializer integration; preserve three neighbors and reproduce the strict 143-byte image. Native total 69.92%, 280 more to 75%.
+
 - [x] Qualify and adopt `func_151A5070` in [Note 1771](WORKING_NOTES/1771-color-record-pulse-match-20261028.md): all 48 words, frame 24, six bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify countdown wrap, signed color clamps, late clock/home reads, native32 controls and the original dispatcher with 60 retained helper words; preserve 22 neighbors and one GLOBAL_ASM routine and reproduce the strict 143-byte image. Native total 69.91%, 281 more to 75%.
 
 - [x] Qualify and adopt `func_150D596C` in [Note 1770](WORKING_NOTES/1770-owner-link-event-gate-match-20261028.md): all 48 words, frame 24, one binding and four checked register guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify all command/identity bytes, the actual 74-entry dispatcher, late identity reads, native controls and fault prefixes; preserve 16 neighbors and six GLOBAL_ASM routines and reproduce the strict 134-byte image. Native total 69.89%, 282 more to 75%.
