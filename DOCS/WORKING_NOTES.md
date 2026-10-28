@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Object event retarget callback restored as guarded C**: [Note 1752](WORKING_NOTES/1752-object-event-retarget-match-20261027.md). `func_151D324C` now matches all 47 retail words from complete semantic C plus four checked scheduling/operand guards, including one inserted selector-load word. Both tools copies pass eight fresh canonical methods, the original registry caller window, original release-helper integration, native32, aliases, faults and GNU rebases. Production preserves 18 neighbors and reproduces the strict 138-byte image with zero exclusions. Native total 3,830/5,506 (69.56%), Game 3,157/4,833 (65.32%), zero drift; 300 more to 75%. Next inspect `func_1507E114`; `func_1514E920` remains parked and uncredited.
+**Spawn-result query restored as direct C**: [Note 1753](WORKING_NOTES/1753-spawn-result-query-match-20261027.md). `func_1507E114` matches all 47 words/frame 96/nine bindings with zero guards. Both tools copies pass eight fresh methods, including the actual unused-pointer caller and return store, the complete original spawn helper, output-home/alias/fault cases and native32 checks. The five-command GLOBAL_ASM Make route preserves 15 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,831/5,506 (69.58%), Game 3,158/4,833 (65.34%), zero drift; 299 more to 75%. Next inspect `func_150D2110`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Object event retarget callback restored as guarded C**: [Note 1752](WORKING_NOTES/1752-object-event-retarget-match-20261027.md). `func_151D324C` now matches all 47 retail words from complete semantic C plus four checked scheduling/operand guards, including one inserted selector-load word. Both tools copies pass eight fresh canonical methods, the original registry caller window, original release-helper integration, native32, aliases, faults and GNU rebases. Production preserves 18 neighbors and reproduces the strict 138-byte image with zero exclusions. Native total 3,830/5,506 (69.56%), Game 3,157/4,833 (65.32%), zero drift; 300 more to 75%. That then-private `func_1507E114` is adopted in Note 1753 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 

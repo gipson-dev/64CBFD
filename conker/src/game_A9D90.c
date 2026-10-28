@@ -11,7 +11,7 @@ s32 func_1507D4F8();
 s32 func_1507D754();
 s32 func_1507DB6C();
 s32 func_1507DFE4();
-s32 func_1507E114();
+s32 func_1507E114(s32 *unusedSelection);
 s32 func_1507E1D0();
 /* End generated placeholder declarations. */
 
@@ -174,9 +174,30 @@ void func_1507DF10(struct127 *actor, s32 mode) {
 s32 func_1507DFE4() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507E114.s. */
-s32 func_1507E114() {
-    return 0;
+#include "variables.h"
+
+s32 func_15084D70(s32, s32, s32, s16 *, f32 *, u8 *, u8 *, s32 *, s32 *, s32, s32 *);
+
+/* Query the pending spawn result while preserving the legacy context word and signed byte. */
+s32 func_1507E114(s32 *unusedSelection) {
+    s32 result;
+    s16 position[3];
+    f32 rotation[3];
+    s32 flags;
+    u8 firstByte;
+    u8 secondByte;
+    s32 signedTag;
+
+    if (!D_800D18A8) {
+        return 0;
+    }
+    if (((s32)D_800BE9F4 == 0x22) || ((s32)D_800BE9F4 == 0x18)) {
+        return 0;
+    }
+    D_800BE9F4 = (u16 *)(s32)(s8)D_800BE3DF;
+    func_15084D70(0, D_800BE3E0, 1, position, rotation, &firstByte, &secondByte,
+                  &flags, &signedTag, 1, &result);
+    return result + 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507E1D0.s. */
 s32 func_1507E1D0() {
