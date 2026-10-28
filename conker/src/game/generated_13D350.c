@@ -42,8 +42,19 @@ s32 func_151103C8() {
     return 0;
 }
 
-s32 func_15110544() {
-    return 0;
+Gfx *func_1501A680(Gfx *commands);
+Gfx *func_1501A6CC(Gfx *commands, s32 left, s32 top, s32 right, s32 bottom);
+
+/* Append an RGBA16 fill rectangle, with the retail legacy blend-mask bits. */
+Gfx *func_15110544(Gfx *commands, s32 left, s32 top, s32 right, s32 bottom,
+                    u8 red, u8 green, u8 blue) {
+    gDPPipeSync(commands++);
+    gDPSetOtherMode(commands++, G_CYC_FILL | G_TF_BILERP | G_TC_FILT | 0xF,
+        G_AC_NONE | G_ZS_PRIM | G_RM_NOOP | G_RM_NOOP2);
+    commands = func_1501A680(commands);
+    gDPSetFillColor(commands++, ((u32)GPACK_RGBA5551(red, green, blue, 1) << 16) |
+        GPACK_RGBA5551(red, green, blue, 1));
+    return func_1501A6CC(commands, left, top, right, bottom);
 }
 
 /* Fill the frame for the selected categories and qualifying child state. */

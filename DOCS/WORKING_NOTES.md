@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Object-record ensure callback restored as direct C**: [Note 1748](WORKING_NOTES/1748-object-record-ensure-match-20261027.md). `func_15097910` matches all 47 words with zero new guards after recovering its byte carrier and local index home. Both tools copies pass eight fresh canonical methods, including the original interpreter dispatch window and original/retained lookup-helper integrations. Production preserves three neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,826/5,506 (69.49%), Game 3,153/4,833 (65.24%), zero drift; 304 more to 75%. Next screened placeholder `func_15110544` remains uncredited.
+**RGB rectangle fill restored as direct C**: [Note 1749](WORKING_NOTES/1749-rgb-fill-rectangle-match-20261027.md). `func_15110544` matches all 47 words with no new guards. Its eight-argument O32 interface, byte color homes, actual category caller and both complete graphics helpers pass focused qualification in both tools copies. Production preserves 33 neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,827/5,506 (69.51%), Game 3,154/4,833 (65.26%), zero drift; 303 more to 75%. Next inspect `func_15147040`; parked `func_1514E920` remains uncredited.
+
+2026-10-27:
+
+**Object-record ensure callback restored as direct C**: [Note 1748](WORKING_NOTES/1748-object-record-ensure-match-20261027.md). `func_15097910` matches all 47 words with zero new guards after recovering its byte carrier and local index home. Both tools copies pass eight fresh canonical methods, including the original interpreter dispatch window and original/retained lookup-helper integrations. Production preserves three neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,826/5,506 (69.49%), Game 3,153/4,833 (65.24%), zero drift; 304 more to 75%. That then-private `func_15110544` is adopted in Note 1749 above.
 
 2026-10-27:
 

@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [RGB rectangle fill](WORKING_NOTES/1749-rgb-fill-rectangle-match-20261027.md): direct 47-word C, eight-argument byte-color ABI, complete category caller and both graphics helpers; strict 140-byte image, zero guards. Native total 69.51%.
 - [Object-record ensure callback](WORKING_NOTES/1748-object-record-ensure-match-20261027.md): direct 47-word C, byte carrier/local home recovery, original interpreter callback window and lookup-helper integration; strict 141-byte image, zero new guards. Native total 69.49%.
 - [Bound-object reference event pair](WORKING_NOTES/1747-reference-event-pair-match-20261027.md): two 47-word callbacks, one symmetric-branch guard each, actual registry/dispatcher qualification and strict 256-byte image. Native total 69.47%.
 - [Matrix-bound point interpolation](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md): direct 46-word C, six-argument O32 ABI, three original caller windows and transform-helper integration; strict 142-byte image, zero new guards. Native total 69.43%.

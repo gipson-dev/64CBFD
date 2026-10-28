@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f77d4b4`; tools are committed before the consumer pin.
+  checkpoint pins tools `5a5f2e5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Object-record ensure callback restored as direct C**: [Note 1748](WORKING_NOTES/1748-object-record-ensure-match-20261027.md). `func_15097910` matches all 47 words with zero new guards after recovering its byte carrier and local index home. Both tools copies pass eight fresh canonical methods, including the original interpreter dispatch window and original/retained lookup-helper integrations. Production preserves three neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,826/5,506 (69.49%), Game 3,153/4,833 (65.24%), zero drift; 304 more to 75%. Next screened placeholder `func_15110544` remains uncredited.
+**RGB rectangle fill restored as direct C**: [Note 1749](WORKING_NOTES/1749-rgb-fill-rectangle-match-20261027.md). `func_15110544` matches all 47 words with no new guards. Its eight-argument O32 interface, byte color homes, actual category caller and both complete graphics helpers pass focused qualification in both tools copies. Production preserves 33 neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,827/5,506 (69.51%), Game 3,154/4,833 (65.26%), zero drift; 303 more to 75%. Next inspect `func_15147040`; parked `func_1514E920` remains uncredited.
+
+**Object-record ensure callback restored as direct C**: [Note 1748](WORKING_NOTES/1748-object-record-ensure-match-20261027.md). `func_15097910` matches all 47 words with zero new guards after recovering its byte carrier and local index home. Both tools copies pass eight fresh canonical methods, including the original interpreter dispatch window and original/retained lookup-helper integrations. Production preserves three neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,826/5,506 (69.49%), Game 3,153/4,833 (65.24%), zero drift; 304 more to 75%. That then-private `func_15110544` is adopted in Note 1749 above.
 
 **Bound-object reference event pair restored as guarded C**: [Note 1747](WORKING_NOTES/1747-reference-event-pair-match-20261027.md). `func_15198054` and `func_1519986C` each match all 47 words with one symmetric-branch operand guard. Both tools copies pass eight fresh canonical methods, including the actual 20-entry registry and complete original/retained dispatcher. Production preserves 67 neighbors and reproduces the strict 256-byte image with zero exclusions. Native total 3,825/5,506 (69.47%), Game 3,152/4,833 (65.22%), zero drift; 305 more to 75%. `func_1514E920` remains a parked private screen. That then-private `func_15097910` is adopted in Note 1748 above.
 
