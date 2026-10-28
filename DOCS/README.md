@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Object-record ensure callback](WORKING_NOTES/1748-object-record-ensure-match-20261027.md): direct 47-word C, byte carrier/local home recovery, original interpreter callback window and lookup-helper integration; strict 141-byte image, zero new guards. Native total 69.49%.
 - [Bound-object reference event pair](WORKING_NOTES/1747-reference-event-pair-match-20261027.md): two 47-word callbacks, one symmetric-branch guard each, actual registry/dispatcher qualification and strict 256-byte image. Native total 69.47%.
 - [Matrix-bound point interpolation](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md): direct 46-word C, six-argument O32 ABI, three original caller windows and transform-helper integration; strict 142-byte image, zero new guards. Native total 69.43%.
 - [Vertex texture-coordinate shift](WORKING_NOTES/1745-vertex-texcoord-shift-match-20261027.md): complete 46-word C with 40 derived register/schedule guards, live count/selector/pointer reads and strict 139-byte image, zero exclusions. Native total 69.42%.

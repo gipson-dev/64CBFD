@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Object-Record Ensure Callback
+
+**Object-record ensure callback restored as direct C**: [Note 1748](WORKING_NOTES/1748-object-record-ensure-match-20261027.md). `func_15097910` matches all 47 words with zero new guards after recovering its byte carrier and local index home. Both tools copies pass eight fresh canonical methods, including the original interpreter dispatch window and original/retained lookup-helper integrations. Production preserves three neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,826/5,506 (69.49%), Game 3,153/4,833 (65.24%), zero drift; 304 more to 75%. Next screened placeholder `func_15110544` remains uncredited.
+
 ## 2026-10-27 Bound-Object Reference Event Pair
 
-**Bound-object reference event pair restored as guarded C**: [Note 1747](WORKING_NOTES/1747-reference-event-pair-match-20261027.md). `func_15198054` and `func_1519986C` each match all 47 words with one symmetric-branch operand guard. Both tools copies pass eight fresh canonical methods, including the actual 20-entry registry and complete original/retained dispatcher. Production preserves 67 neighbors and reproduces the strict 256-byte image with zero exclusions. Native total 3,825/5,506 (69.47%), Game 3,152/4,833 (65.22%), zero drift; 305 more to 75%. `func_1514E920` remains a parked private screen. Next screened placeholder `func_15097910` remains uncredited.
+**Bound-object reference event pair restored as guarded C**: [Note 1747](WORKING_NOTES/1747-reference-event-pair-match-20261027.md). `func_15198054` and `func_1519986C` each match all 47 words with one symmetric-branch operand guard. Both tools copies pass eight fresh canonical methods, including the actual 20-entry registry and complete original/retained dispatcher. Production preserves 67 neighbors and reproduces the strict 256-byte image with zero exclusions. Native total 3,825/5,506 (69.47%), Game 3,152/4,833 (65.22%), zero drift; 305 more to 75%. `func_1514E920` remains a parked private screen. That then-private `func_15097910` is adopted in Note 1748 above.
 
 ## 2026-10-27 Matrix-Bound Point Interpolation
 
