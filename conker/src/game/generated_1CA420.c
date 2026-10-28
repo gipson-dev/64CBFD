@@ -10,6 +10,7 @@ void func_1519E688(void);
 /* Non-matching placeholders for the text-only asm slice asm/1CA420.s. */
 
 extern u8 *D_800E0920;
+extern s32 D_800BE9E4;
 struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 /* Retail copies the three untouched alignment bytes after code. */
@@ -162,8 +163,38 @@ void func_1519E6BC(u8 *arg0) {
     }
 }
 
-s32 func_1519E754() {
-    return 0;
+/* Retire an invalid owner link or transition it after the timed state ends. */
+typedef struct {
+    u8 *owner;
+    u8 identity;
+    u8 reserved5[3];
+    s32 elapsed;
+} OwnerTimeoutPayload1CA420;
+
+void func_1519E754(u8 *record) {
+    OwnerTimeoutPayload1CA420 *payload = (OwnerTimeoutPayload1CA420 *)(record + 0x28);
+    u8 retire = 0;
+
+    if (*(s32 *)payload->owner == 0) {
+        retire = 1;
+    }
+    if (payload->identity != payload->owner[0x3B]) {
+        retire = 1;
+    }
+    if (retire == 0) {
+        payload->elapsed = (s32)((u32)payload->elapsed + (u32)D_800BE9E4);
+        if (*(u16 *)(payload->owner + 0x84) != 0x7C) {
+            retire = 1;
+            if (payload->elapsed > 200) {
+                func_1519E3BC(payload->owner, 300, record[0xC], record[1]);
+            }
+        }
+    }
+    if (retire != 0) {
+        D_800E0920 = NULL;
+        *(s16 *)(record + 0xE) = -1;
+        record[0xD] |= 1;
+    }
 }
 
 /* Retarget the payload link, or release this record and clear the global. */
