@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Owner link event gate](WORKING_NOTES/1770-owner-link-event-gate-match-20261028.md): complete 48-word guarded C, actual 74-entry callback dispatcher, alias/fault/native controls and preserved neighbors. Strict 134-byte image; Native total 69.89%, 282 more to 75%.
+
 - [Recursive dependency readiness](WORKING_NOTES/1769-recursive-dependency-readiness-match-20261028.md): complete 48-word guarded C, actual recursive graphs and full caller, exhaustive entry joins and native32 controls. Preserve 18 neighbors with the retail no-unroll profile; strict 146-byte image. Native total 69.87%, 283 more to 75%.
 
 - [Actor action dispatch](WORKING_NOTES/1768-actor-action-dispatch-match-20261028.md): direct 48-word C, signed index bounds, live state/global reads, lazy context access and original interpreter/25-slot actor lookup integration. Strict 145-byte image, zero guards. Native total 69.85%, 284 more to 75%.

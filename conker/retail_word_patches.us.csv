@@ -23932,3 +23932,7 @@ generated_C9EC0,func_1509CBD4,0x070,0x012A5804,0x014B6004,-,-,Normalize closed b
 generated_C9EC0,func_1509CBD4,0x074,0x010B6024,0x01896824,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
 generated_C9EC0,func_1509CBD4,0x078,0x11800003,0x11A00003,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
 generated_C9EC0,func_1509CBD4,0x098,0x1613FFEC,0x1670FFEC,-,-,Normalize symmetric loop sentinel comparison operand order,,,false
+generated_1028F0,func_150D596C,0x074,0x8C430000,0x8C440000,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
+generated_1028F0,func_150D596C,0x078,0x8CA40000,0x8CA30000,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
+generated_1028F0,func_150D596C,0x09C,0x546A0005,0x55440005,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
+generated_1028F0,func_150D596C,0x0A4,0xAC440000,0xAC430000,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false

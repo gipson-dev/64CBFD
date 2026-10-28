@@ -37,8 +37,28 @@ s32 func_150D54C8() {
     return 0;
 }
 
-s32 func_150D596C() {
-    return 0;
+/* Release matching owner links for 0/3/0x2F, or retarget them for 0x2D. */
+void func_150D596C(struct260 *owner, s32 eventAddress, u8 command) {
+    EmbeddedOwnerLink *link = (EmbeddedOwnerLink *)((u8 *)owner + 0x28);
+    OwnerLinkEvent *event = (OwnerLinkEvent *)eventAddress;
+
+    if (command == 0 || command == 0x2F || command == 3) {
+        u8 *first = event->before;
+        /* Retail compares byte +4: the second pointer overlaps this identity. */
+        if (first == link->owner || link->identity == ((u8 *)event)[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *current = link->owner;
+        if (current == event->before) {
+            link->owner = event->after;
+            /* Read the identity after the pointer store; packet/link may overlap. */
+            link->identity = event->after_identity;
+        } else if (current == event->after) {
+            link->owner = event->before;
+            link->identity = event->before_identity;
+        }
+    }
 }
 
 void func_150D5A2C(u8 *arg0) {
