@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Recursive dependency readiness](WORKING_NOTES/1769-recursive-dependency-readiness-match-20261028.md): complete 48-word guarded C, actual recursive graphs and full caller, exhaustive entry joins and native32 controls. Preserve 18 neighbors with the retail no-unroll profile; strict 146-byte image. Native total 69.87%, 283 more to 75%.
+
 - [Actor action dispatch](WORKING_NOTES/1768-actor-action-dispatch-match-20261028.md): direct 48-word C, signed index bounds, live state/global reads, lazy context access and original interpreter/25-slot actor lookup integration. Strict 145-byte image, zero guards. Native total 69.85%, 284 more to 75%.
 
 - [Actor random effect](WORKING_NOTES/1767-actor-random-effect-match-20261028.md): direct 48-word C, live actor/ID/parameter reads, separate float rounding and original dispatcher/wrapper integration. Preserve 327 neighbors and 14 GLOBAL_ASM routines; strict 199-byte image, zero guards. Native total 69.83%, 285 more to 75%.

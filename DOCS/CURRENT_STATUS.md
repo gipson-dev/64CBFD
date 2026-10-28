@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8441b98`; tools are committed before the consumer pin.
+  checkpoint pins tools `1387bd0`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor action dispatch restored as direct C**: [Note 1768](WORKING_NOTES/1768-actor-action-dispatch-match-20261028.md). `func_150979CC` matches all 48 words, frame 24 and ten bindings with zero guards. Recover signed index bounds, live state/global reads, lazy context access and the 0/999999 result. Both tools copies pass eight fresh methods, including all 25 original lookup slots, upper command bits, thirteen native controls and 554 fault-prefix pairs. Preserve three neighbors; production reproduces the strict 145-byte image with zero exclusions. Native total 3,846/5,506 (69.85%), Game 3,173/4,833 (65.65%), zero drift; 284 more to 75%. Next inspect `func_1509CBD4`; `func_1514E920` remains parked and uncredited.
+**Recursive dependency readiness matched as guarded C**: [Note 1769](WORKING_NOTES/1769-recursive-dependency-readiness-match-20261028.md). `func_1509CBD4` matches all 48 words, frame 40 and five bindings with twelve checked entry-layout/register guards. Both tools copies pass eight fresh methods covering actual recursion, all halfword entry joins, native32 controls and the complete caller. Preserve 18 neighbors under the existing no-unroll profile; production reproduces the strict 146-byte image with zero exclusions. Native total 3,847/5,506 (69.87%), Game 3,174/4,833 (65.67%), zero drift; 283 more to 75%. Next inspect `func_150D596C`; `func_1514E920` remains parked and uncredited.
+
+**Actor action dispatch restored as direct C**: [Note 1768](WORKING_NOTES/1768-actor-action-dispatch-match-20261028.md). `func_150979CC` matches all 48 words, frame 24 and ten bindings with zero guards. Recover signed index bounds, live state/global reads, lazy context access and the 0/999999 result. Both tools copies pass eight fresh methods, including all 25 original lookup slots, upper command bits, thirteen native controls and 554 fault-prefix pairs. Preserve three neighbors; production reproduces the strict 145-byte image with zero exclusions. Native total 3,846/5,506 (69.85%), Game 3,173/4,833 (65.65%), zero drift; 284 more to 75%. That then-private `func_1509CBD4` is adopted in Note 1769 above; `func_1514E920` remains parked and uncredited.
 
 **Actor random effect restored as direct C**: [Note 1767](WORKING_NOTES/1767-actor-random-effect-match-20261028.md). `func_1506FD30` matches all 48 words, frame 80 and six bindings with zero guards. Both tools copies pass eight fresh methods covering live actor/ID/parameter reads, float rounding, fourteen native32 controls and the original dispatcher with the complete effect wrapper. Preserve 327 neighbors and 14 GLOBAL_ASM routines; production reproduces the strict 199-byte image, including a closed three-symbol serialization reorder, with zero exclusions. Native total 3,845/5,506 (69.83%), Game 3,172/4,833 (65.63%), zero drift; 285 more to 75%. That then-private `func_150979CC` is adopted in Note 1768 above; `func_1514E920` remains parked and uncredited.
 

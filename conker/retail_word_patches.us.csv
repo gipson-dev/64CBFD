@@ -23920,3 +23920,15 @@ generated_157840,func_1512B53C,0x0A8,0x2719FFFF,0x2738FFFF,-,-,Normalize proven 
 generated_157840,func_1512B53C,0x0B0,0xA49905FC,0xA49805FC,-,-,Normalize proven actor-slot refill GPR allocation and independent opening schedule,,,false
 generated_1A89B0,func_1517B6E8,0x010,0x848E0002,0x848F0002,-,-,Normalize closed opening counter-shift and input-Y GPR exchange,,,false
 generated_1A89B0,func_1517B6E8,0x014,0x00027983,0x00027183,-,-,Normalize closed opening counter-shift and input-Y GPR exchange,,,false
+generated_C9EC0,func_1509CBD4,0x03C,0x94500000,0x944F0000,-,-,Normalize closed empty-list branch and delay-slot value lifetime,,,false
+generated_C9EC0,func_1509CBD4,0x044,0x52130017,0x126F0016,-,-,Normalize closed empty-list branch and delay-slot value lifetime,,,false
+generated_C9EC0,func_1509CBD4,0x048,0x24020001,0x31F0FFFF,-,-,Normalize closed empty-list branch and delay-slot value lifetime,,,false
+generated_C9EC0,func_1509CBD4,0x05C,0x240A0001,0x240B0001,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x060,0x001078C3,0x0010C8C3,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x064,0x01F8C821,0x03194021,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x068,0x93280000,0x91090000,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x06C,0x32090007,0x320A0007,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x070,0x012A5804,0x014B6004,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x074,0x010B6024,0x01896824,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x078,0x11800003,0x11A00003,-,-,Normalize closed bitmap-check scratch allocation and commutative operands,,,false
+generated_C9EC0,func_1509CBD4,0x098,0x1613FFEC,0x1670FFEC,-,-,Normalize symmetric loop sentinel comparison operand order,,,false

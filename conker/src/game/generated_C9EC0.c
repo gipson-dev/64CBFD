@@ -64,8 +64,24 @@ s32 func_1509CB68(void) {
     return count;
 }
 
-s32 func_1509CBD4() {
-    return 0;
+extern u8 *D_800D2E4C;
+
+/* Require every dependency to be recursively ready and marked active. */
+s32 func_1509CBD4(s32 index) {
+    u16 *initial = *(u16 **)((u8 *)D_8008743C + index * 20);
+    u16 *dependency;
+    s32 child;
+    s32 result;
+    if ((child = *initial) != 0xFFFF) {
+        dependency = initial;
+        do {
+            result = func_1509CBD4(child);
+            child = *dependency;
+            if (!(D_800D2E4C[child >> 3] & (1 << (child & 7))) || result == 0) { return 0; }
+            child = *++dependency;
+        } while (child != 0xFFFF);
+    }
+    return 1;
 }
 
 void func_1509CC94(s32 arg0) {
