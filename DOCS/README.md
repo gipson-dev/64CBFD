@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record effect packet](WORKING_NOTES/1757-record-effect-packet-match-20261027.md): direct 47-word callback C, complete 32-byte capture, source/copy aliases, full original expiration dispatcher and retained constructor/copy integration; strict 141-byte image, zero guards. Native total 69.65%, 295 more to 75%.
+
 - [Animated quad setup wrapper](WORKING_NOTES/1756-quad-setup-wrapper-match-20261027.md): direct 47-word C, thirteen-slot ABI, late image-table reads and original caller/constructor integration; strict 165-byte image including a typed provider placeholder that remains uncredited. Native total 69.63%, 296 more to 75%.
 
 - [Ordered record classifier](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md): direct 47-word leaf C, writable alias/rule priority, exhaustive native pairs and complete original caller integration; strict 130-byte image, zero guards. Native total 69.61%, 297 more to 75%.

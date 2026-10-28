@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 typedef struct {
     s32 first;
@@ -198,8 +199,39 @@ s32 func_151A175C() {
     return 0;
 }
 
-s32 func_151A18DC() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} EffectPacketPosition1CC440;
+
+typedef struct {
+    EffectPacketPosition1CC440 position;
+    f32 sourceValueA;
+    f32 phase;
+    f32 sourceValueB;
+    s16 parameters[4];
+} RecordEffectPacket1CC440;
+
+struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Spawn an effect from the record's captured 32-byte parameter packet. */
+void func_151A18DC(struct260 *record) {
+    struct260 *effect;
+    RecordEffectPacket1CC440 packet;
+
+    packet.position = *(EffectPacketPosition1CC440 *)((u8 *)record + 0x28);
+    packet.sourceValueA = *(f32 *)((u8 *)record + 0x34);
+    packet.phase = 0.0f;
+    packet.sourceValueB = *(f32 *)((u8 *)record + 0x38);
+    packet.parameters[0] = *(s16 *)((u8 *)record + 0x3E);
+    packet.parameters[1] = *(s16 *)((u8 *)record + 0x40);
+    packet.parameters[2] = *(s16 *)((u8 *)record + 0x42);
+    packet.parameters[3] = *(s16 *)((u8 *)record + 0x44);
+    effect = func_151491F4(*(s16 *)((u8 *)record + 0x3C), -1, 3, 1, 0,
+                          sizeof(packet), ((u8 *)record)[0xC], ((u8 *)record)[1]);
+    if (effect != NULL) {
+        memcpy((u8 *)effect + 0x28, &packet, sizeof(packet));
+    }
 }
 
 s32 func_151A1998() {

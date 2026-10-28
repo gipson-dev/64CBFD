@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Animated quad setup wrapper restored as direct C**: [Note 1756](WORKING_NOTES/1756-quad-setup-wrapper-match-20261027.md). `func_15171F04` matches all 47 words/frame 48/five bindings with zero guards. Both tools copies pass eight fresh methods, including thirteen argument slots, late home/table reads, aliases, native32 controls and original caller/constructor integration. The geometry provider receives a typed interface but remains an uncredited placeholder; its four argument-home stores are explicitly included in the strict 165-byte image. Five other neighbors and all function addresses remain fixed. Native total 3,834/5,506 (69.63%), Game 3,161/4,833 (65.40%), zero drift; 296 more to 75%. Next inspect `func_151A18DC`; `func_1514E920` remains parked and uncredited.
+**Record effect packet restored as direct C**: [Note 1757](WORKING_NOTES/1757-record-effect-packet-match-20261027.md). `func_151A18DC` matches all 47 words/frame 88/two call bindings with zero guards. Both copies pass eight fresh methods, including complete packet capture, source/copy aliases, exhaustive native halfwords, the full original expiration dispatcher and 116 words of retained constructor/copy helpers. Preserve all 38 neighbors and six GLOBAL_ASM routines; actual Make reproduces the strict 141-byte image with zero exclusions. Native total 3,835/5,506 (69.65%), Game 3,162/4,833 (65.43%), zero drift; 295 more to 75%. Next inspect `func_151ED1E0`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Animated quad setup wrapper restored as direct C**: [Note 1756](WORKING_NOTES/1756-quad-setup-wrapper-match-20261027.md). `func_15171F04` matches all 47 words/frame 48/five bindings with zero guards. Both tools copies pass eight fresh methods, including thirteen argument slots, late home/table reads, aliases, native32 controls and original caller/constructor integration. The geometry provider receives a typed interface but remains an uncredited placeholder; its four argument-home stores are explicitly included in the strict 165-byte image. Five other neighbors and all function addresses remain fixed. Native total 3,834/5,506 (69.63%), Game 3,161/4,833 (65.40%), zero drift; 296 more to 75%. That then-private `func_151A18DC` is adopted in Note 1757 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
