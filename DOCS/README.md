@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor action dispatch](WORKING_NOTES/1768-actor-action-dispatch-match-20261028.md): direct 48-word C, signed index bounds, live state/global reads, lazy context access and original interpreter/25-slot actor lookup integration. Strict 145-byte image, zero guards. Native total 69.85%, 284 more to 75%.
+
 - [Actor random effect](WORKING_NOTES/1767-actor-random-effect-match-20261028.md): direct 48-word C, live actor/ID/parameter reads, separate float rounding and original dispatcher/wrapper integration. Preserve 327 neighbors and 14 GLOBAL_ASM routines; strict 199-byte image, zero guards. Native total 69.83%, 285 more to 75%.
 
 - [Display-list buffer allocation](WORKING_NOTES/1766-display-list-buffer-allocation-match-20261028.md): direct 47-word C plus one alignment word, live count/pointer/slot reloads, wrapped gaps and original caller/allocator-wrapper behavior. Strict 149-byte image, zero guards. Native total 69.81%, 286 more to 75%.
