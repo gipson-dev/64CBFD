@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Attached actor random burst restored as direct C**: [Note 1750](WORKING_NOTES/1750-actor-random-burst-match-20261027.md). `func_15147040` matches all 47 words with no guards after recovering its early return, byte context and signed short count home. Both tools copies pass eight fresh canonical methods, including the actual effect-table route, original point/matrix paths and retained RNG routines. Production preserves 12 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,828/5,506 (69.52%), Game 3,155/4,833 (65.28%), zero drift; 302 more to 75%. Next inspect `func_1516C878`; `func_1514E920` remains parked and uncredited.
+**Text segment cursor restored as direct C**: [Note 1751](WORKING_NOTES/1751-text-segment-skip-match-20261027.md). `func_1516C878` matches all 47 words with no guards after recovering its signed-halfword bank selector and original cursor home. Both tools copies pass eight fresh canonical methods, including three real caller windows, separator/alias/fault cases and native32 checks. Production preserves 11 neighbors and reproduces the strict 196-byte image, including a closed three-symbol/name cycle, with zero exclusions. Native total 3,829/5,506 (69.54%), Game 3,156/4,833 (65.30%), zero drift; 301 more to 75%. Next inspect `func_151D324C`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Attached actor random burst restored as direct C**: [Note 1750](WORKING_NOTES/1750-actor-random-burst-match-20261027.md). `func_15147040` matches all 47 words with no guards after recovering its early return, byte context and signed short count home. Both tools copies pass eight fresh canonical methods, including the actual effect-table route, original point/matrix paths and retained RNG routines. Production preserves 12 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,828/5,506 (69.52%), Game 3,155/4,833 (65.28%), zero drift; 302 more to 75%. That then-private `func_1516C878` is adopted in Note 1751 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 

@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/197C20.s. */
+/* Partially recovered text-only slice asm/197C20.s. */
 
 s32 func_1516A770(u8 *arg0) {
     s32 count = 1;
@@ -28,8 +28,42 @@ s32 func_1516B6BC() {
     return 0;
 }
 
-s32 func_1516C878() {
-    return 0;
+typedef struct {
+    u8 *text;
+    u32 reserved;
+} TextBankEntry;
+typedef struct {
+    u32 flags;
+    union { u32 index; u8 *text; } value;
+} TextSegmentSource;
+extern TextBankEntry *D_800DD254;
+extern TextBankEntry *D_800DD258;
+
+/* Select bank 0/1 or direct text (2), then advance across zero-separated text runs. */
+u8 *func_1516C878(TextSegmentSource *source, s32 segment, s16 bank) {
+    s32 current;
+    u8 *text;
+
+    switch (bank) {
+        case 0:
+            text = D_800DD254[source->value.index].text;
+            break;
+        case 1:
+            text = D_800DD258[source->value.index].text;
+            break;
+        case 2:
+            text = source->value.text;
+            break;
+    }
+    for (current = 0; current < segment; current++) {
+        while (*text != 0) {
+            text++;
+        }
+        while (*text == 0) {
+            text++;
+        }
+    }
+    return text;
 }
 
 s32 func_1516C934() {
