@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_150F55C8` in [Note 1780](WORKING_NOTES/1780-record-opacity-envelope-match-20261028.md): direct 49-word C, no frame, bindings or guards. Validate signed packed phases, all lifetime encodings, the direct wrapper and four callback dispatchers. Both copies pass eight fresh checks and two installed checks; preserve 23 neighbors and the strict 131-byte image. Native total 70.07%, 272 more to 75%.
+
 - [x] Qualify and adopt `func_15138BC0` in [Note 1779](WORKING_NOTES/1779-actor-point-effects-match-20261028.md): direct 48-word C, frame96, six bindings, no guards. Isolate typed helper calls while preserving64 neighbors. Both copies pass eight fresh checks and two installed checks. Strict155-byte image, zero exclusions. Native total70.05%, 273 more to75%.
 - [x] Qualify and adopt `func_15131828` in [Note 1778](WORKING_NOTES/1778-record-planar-phase-match-20261028.md): 48 words, frame 24, four bindings and two checked multiply guards. Explicit sequencing passes native32 O0/O2/O3; verify all four original callers and both retained helpers. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Preserve 30 neighbors; strict 149-byte image. Native total 70.03%, 274 more to 75%.
 

@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record opacity envelope](WORKING_NOTES/1780-record-opacity-envelope-match-20261028.md): direct 49-word C, signed lifetime and packed phase durations, four original callback dispatchers, 23 preserved neighbors and strict 131-byte image. Native total 70.07%, 272 more to 75%.
 - [Actor point effects](WORKING_NOTES/1779-actor-point-effects-match-20261028.md): direct48-word C in an isolated translation unit; preserve64 neighbors and the strict155-byte image. Native total70.05%, 273 more to75%.
 - [Record planar phase offsets](WORKING_NOTES/1778-record-planar-phase-match-20261028.md): explicit sequencing, 48-word guarded C, all four original callers and both retained helpers. Preserve 30 neighbors; strict 149-byte image. Native total 70.03%, 274 more to 75%.
 - [Type-0x5B point effect](WORKING_NOTES/1777-type91-point-effect-match-20261028.md): direct 48-word C, six-argument interface, complete 20-byte payload, both original command-27 routes and five retained helpers. Preserve both neighbors; strict 146-byte image. Native total 70.01%, 275 more to 75%.

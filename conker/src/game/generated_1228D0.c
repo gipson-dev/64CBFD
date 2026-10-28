@@ -3,7 +3,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/1228D0.s. */
 
-s32 func_150F55C8();
+void func_150F55C8(u8 *record);
 
 s32 func_15179008();
 
@@ -26,8 +26,22 @@ void func_150F5590(u8 *arg0) {
     func_150F55C8(arg0);
 }
 
-s32 func_150F55C8() {
-    return 0;
+/* Apply the record opacity envelope to its remaining lifetime. */
+void func_150F55C8(u8 *record) {
+    s32 duration = *(s32 *)(record + 0x1C) & 0xFFFF;
+    s32 fadeIn = *(s32 *)(record + 0x18) >> 16;
+    s32 hold = *(s32 *)(record + 0x18) & 0xFFFF;
+    s32 fadeOut = *(s32 *)(record + 0x1C) >> 16;
+    s32 boundary = duration - fadeIn;
+    s32 remaining = *(s16 *)(record + 0x24);
+
+    if (boundary < remaining) {
+        record[0x45] = ((duration - remaining) * 255) / fadeIn;
+    } else if (boundary - hold < remaining) {
+        record[0x45] = 255;
+    } else {
+        record[0x45] = (remaining * 255) / fadeOut;
+    }
 }
 
 void func_150F568C(s32 arg0) {
