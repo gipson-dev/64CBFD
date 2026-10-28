@@ -75,7 +75,7 @@ Gfx *func_15019464(Gfx *, s16);
 void func_15019414(void);
 s32 func_15019BB8(Gfx *, s32);
 s32 func_15019E60(Gfx *);
-s32 func_151E84B0(s32);
+Gfx *func_151E84B0(Gfx *);
 s32 func_15043384(s32);
 void func_150347E8(void);
 void func_1502E474(void);
@@ -247,7 +247,7 @@ s32 func_1501878C(void) {
                     D_800BE9D0 = (Gfx *)func_15019BB8(D_800BE9D0, D_80082FA4);
                 }
             }
-            D_800BE9D0 = (Gfx *)func_151E84B0((s32)D_800BE9D0);
+            D_800BE9D0 = func_151E84B0(D_800BE9D0);
             D_800BE9D0 = (Gfx *)func_15043384((s32)D_800BE9D0);
             func_150347E8();
             func_1502E474();

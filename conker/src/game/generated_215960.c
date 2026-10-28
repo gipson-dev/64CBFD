@@ -8,7 +8,7 @@ extern u8 D_800BE740;
 extern s8 D_8008FD90;
 extern s8 D_800E0BD3;
 extern u8 **D_800E0BD8;
-extern s32 (*D_8008FFF4[])(s32);
+extern Gfx *(*D_8008FFF4[])(Gfx *);
 extern Gfx *(*D_8008FFC0[])(Gfx *);
 extern s32 D_80090058;
 extern s16 D_800E0C78;
@@ -34,7 +34,7 @@ extern s8 D_800E0C00[];
 extern u8 D_D10;
 extern u8 D_D14;
 extern u8 D_D16;
-s32 func_151ED1E0(void);
+Gfx *func_151ED1E0(Gfx *);
 Gfx *func_151E966C(Gfx *, s32, s32, s8, volatile u8);
 Gfx *func_151E9D18(Gfx *, s32, s32);
 void func_1503F7B8(u8 *);
@@ -49,15 +49,15 @@ typedef struct {
 
 /* Non-matching placeholders for the text-only asm slice asm/215960.s. */
 
-s32 func_151E84B0(void) {
+Gfx *func_151E84B0(Gfx *commands) {
     /* Retain retail's local-slot gap under IDO's debug layout. */
     s32 stack_pad;
-    s32 result;
+    Gfx *result;
     s32 index = 0;
-    s32 (*callback)(s32);
+    Gfx *(*callback)(Gfx *);
 
     D_8003C8E0 = 0x09000001;
-    result = func_151ED1E0();
+    result = func_151ED1E0(commands);
     callback = D_8008FFF4[D_800E0B94];
     if (callback != NULL) {
         result = callback(result);
@@ -820,8 +820,25 @@ s32 func_151ED09C() {
     return 0;
 }
 
-s32 func_151ED1E0() {
-    return 0;
+extern u8 D_800E0B96;
+extern s32 D_800BE620;
+extern s32 D_800BE624;
+Gfx *func_1501A6CC(Gfx *, s32, s32, s32, s32);
+
+/* Append a black screen overlay using the current fade alpha and screen bounds. */
+Gfx *func_151ED1E0(Gfx *commands) {
+    if (D_800E0B96 == 0) {
+        return commands;
+    }
+    gDPPipeSync(commands++);
+    /* Preserve the retail reserved blend-mask bits. */
+    gDPSetOtherMode(commands++, G_CYC_1CYCLE | G_TP_PERSP | G_TF_BILERP |
+        G_TC_FILT | G_CD_MAGICSQ | G_AD_DISABLE | (0xF << G_MDSFT_BLENDMASK),
+        G_AC_NONE | G_ZS_PIXEL | G_RM_CLD_SURF | G_RM_CLD_SURF2);
+    gDPSetCombineLERP(commands++, 0, 0, 0, ENVIRONMENT, 0, 0, 0, ENVIRONMENT,
+        0, 0, 0, ENVIRONMENT, 0, 0, 0, ENVIRONMENT);
+    gDPSetEnvColor(commands++, 0, 0, 0, D_800E0B96);
+    return func_1501A6CC(commands, 0, 0, D_800BE620, D_800BE624);
 }
 
 s32 func_151ED29C() {
