@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d635940`; tools are committed before the consumer pin.
+  checkpoint pins tools `48c9c08`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Text segment cursor restored as direct C**: [Note 1751](WORKING_NOTES/1751-text-segment-skip-match-20261027.md). `func_1516C878` matches all 47 words with no guards after recovering its signed-halfword bank selector and original cursor home. Both tools copies pass eight fresh canonical methods, including three real caller windows, separator/alias/fault cases and native32 checks. Production preserves 11 neighbors and reproduces the strict 196-byte image, including a closed three-symbol/name cycle, with zero exclusions. Native total 3,829/5,506 (69.54%), Game 3,156/4,833 (65.30%), zero drift; 301 more to 75%. Next inspect `func_151D324C`; `func_1514E920` remains parked and uncredited.
+**Object event retarget callback restored as guarded C**: [Note 1752](WORKING_NOTES/1752-object-event-retarget-match-20261027.md). `func_151D324C` now matches all 47 retail words from complete semantic C plus four checked scheduling/operand guards, including one inserted selector-load word. Both tools copies pass eight fresh canonical methods, the original registry caller window, original release-helper integration, native32, aliases, faults and GNU rebases. Production preserves 18 neighbors and reproduces the strict 138-byte image with zero exclusions. Native total 3,830/5,506 (69.56%), Game 3,157/4,833 (65.32%), zero drift; 300 more to 75%. Next inspect `func_1507E114`; `func_1514E920` remains parked and uncredited.
+
+**Text segment cursor restored as direct C**: [Note 1751](WORKING_NOTES/1751-text-segment-skip-match-20261027.md). `func_1516C878` matches all 47 words with no guards after recovering its signed-halfword bank selector and original cursor home. Both tools copies pass eight fresh canonical methods, including three real caller windows, separator/alias/fault cases and native32 checks. Production preserves 11 neighbors and reproduces the strict 196-byte image, including a closed three-symbol/name cycle, with zero exclusions. Native total 3,829/5,506 (69.54%), Game 3,156/4,833 (65.30%), zero drift; 301 more to 75%. That then-private `func_151D324C` is adopted in Note 1752 above; `func_1514E920` remains parked and uncredited.
 
 **Attached actor random burst restored as direct C**: [Note 1750](WORKING_NOTES/1750-actor-random-burst-match-20261027.md). `func_15147040` matches all 47 words with no guards after recovering its early return, byte context and signed short count home. Both tools copies pass eight fresh canonical methods, including the actual effect-table route, original point/matrix paths and retained RNG routines. Production preserves 12 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,828/5,506 (69.52%), Game 3,155/4,833 (65.28%), zero drift; 302 more to 75%. That then-private `func_1516C878` is adopted in Note 1751 above; `func_1514E920` remains parked and uncredited.
 

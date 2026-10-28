@@ -23868,3 +23868,7 @@ generated_142560,func_15116058,0x0A4,0x00CF082A,0x00CC082A,-,-,Close texture-coo
 generated_142560,func_15116058,0x0AC,0x91280000,0x91270000,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
 generated_1C2C60,func_15198054,0x098,0x544B0005,0x55620005,-,-,Normalize symmetric branch-likely comparison operand order,,,false
 generated_1C2C60,func_1519986C,0x098,0x544B0005,0x55620005,-,-,Normalize symmetric branch-likely comparison operand order,,,false
+game_1FFF60,func_151D324C,0x014,0x14C00009,0x14C0000A,-,-,Restore object-event command reload and selector delay schedule,,,false
+game_1FFF60,func_151D324C,0x034,0x10000013,0x93A60023,-,-,Restore object-event command reload and selector delay schedule,0x10000014,-,false
+game_1FFF60,func_151D324C,0x038,0x93A60023,0x9089001D,-,-,Restore object-event command reload and selector delay schedule,,,false
+game_1FFF60,func_151D324C,0x070,0x54790005,0x57230005,-,-,Retain equivalent paired-reference comparison operand order,,,false

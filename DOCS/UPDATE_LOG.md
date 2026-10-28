@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Text segment cursor restored as direct C**: [Note 1751](WORKING_NOTES/1751-text-segment-skip-match-20261027.md). `func_1516C878` matches all 47 words with no guards after recovering its signed-halfword bank selector and original cursor home. Both tools copies pass eight fresh canonical methods, including three real caller windows, separator/alias/fault cases and native32 checks. Production preserves 11 neighbors and reproduces the strict 196-byte image, including a closed three-symbol/name cycle, with zero exclusions. Native total 3,829/5,506 (69.54%), Game 3,156/4,833 (65.30%), zero drift; 301 more to 75%. Next inspect `func_151D324C`; `func_1514E920` remains parked and uncredited.
+**Object event retarget callback restored as guarded C**: [Note 1752](WORKING_NOTES/1752-object-event-retarget-match-20261027.md). `func_151D324C` now matches all 47 retail words from complete semantic C plus four checked scheduling/operand guards, including one inserted selector-load word. Both tools copies pass eight fresh canonical methods, the original registry caller window, original release-helper integration, native32, aliases, faults and GNU rebases. Production preserves 18 neighbors and reproduces the strict 138-byte image with zero exclusions. Native total 3,830/5,506 (69.56%), Game 3,157/4,833 (65.32%), zero drift; 300 more to 75%. Next inspect `func_1507E114`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Text segment cursor restored as direct C**: [Note 1751](WORKING_NOTES/1751-text-segment-skip-match-20261027.md). `func_1516C878` matches all 47 words with no guards after recovering its signed-halfword bank selector and original cursor home. Both tools copies pass eight fresh canonical methods, including three real caller windows, separator/alias/fault cases and native32 checks. Production preserves 11 neighbors and reproduces the strict 196-byte image, including a closed three-symbol/name cycle, with zero exclusions. Native total 3,829/5,506 (69.54%), Game 3,156/4,833 (65.30%), zero drift; 301 more to 75%. That then-private `func_151D324C` is adopted in Note 1752 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 

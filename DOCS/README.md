@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Object event retarget callback](WORKING_NOTES/1752-object-event-retarget-match-20261027.md): complete semantic C with four scheduling/operand guards matches 47 retail words; actual registry caller, release helper, alias/fault/native32 checks and strict 138-byte image. Native total 69.56%, 300 more to 75%.
+
 - [Text segment cursor](WORKING_NOTES/1751-text-segment-skip-match-20261027.md): direct 47-word C, signed selector and cursor-home recovery, three real caller windows and closed named metadata cycle; strict 196-byte image, zero guards. Native total 69.54%.
 - [Attached actor random burst](WORKING_NOTES/1750-actor-random-burst-match-20261027.md): direct 47-word C, byte-context/short-count ABI, real registry/dispatcher and original point/matrix plus retained RNG integration; strict 141-byte image, zero guards. Native total 69.52%.
 - [RGB rectangle fill](WORKING_NOTES/1749-rgb-fill-rectangle-match-20261027.md): direct 47-word C, eight-argument byte-color ABI, complete category caller and both graphics helpers; strict 140-byte image, zero guards. Native total 69.51%.

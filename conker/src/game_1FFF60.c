@@ -20,7 +20,7 @@ s32 func_151D2C40();
 struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3);
 s32 func_151D2F90();
 s32 func_151D3130(s32 arg0);
-s32 func_151D324C();
+void func_151D324C(struct224 *, struct223 *, u8);
 /* End generated placeholder declarations. */
 
 void func_151D3354(struct224 *arg0);
@@ -154,9 +154,29 @@ void func_151D3220(struct102 *arg0) {
     func_15169824(arg0);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D324C.s. */
-s32 func_151D324C() {
-    return 0;
+#include "structs.h"
+typedef void (*ObjectEventCallback)(struct224 *, struct223 *, u8);
+extern ObjectEventCallback D_8008FC64[];
+void func_151D33FC(struct224 *, struct223 *);
+
+/* Retarget object references, then dispatch using the selector after the release check. */
+void func_151D324C(struct224 *object, struct223 *event, u8 command) {
+    s32 first;
+    if (command == 0) {
+        func_151D33FC(object, event);
+    } else if (command == 0x2D) {
+        first = event->unk0;
+        if (first == object->unk10) {
+            object->unk10 = event->unk4.w;
+            object->unk14 = event->unk9;
+        } else if (event->unk4.w == object->unk10) {
+            object->unk10 = first;
+            object->unk14 = event->unk8;
+        }
+    }
+    if (D_8008FC64[((u8 *)object)[0x1D]] != NULL) {
+        D_8008FC64[((u8 *)object)[0x1D]](object, event, command);
+    }
 }
 
 void func_151D3308(struct224 *arg0) {
