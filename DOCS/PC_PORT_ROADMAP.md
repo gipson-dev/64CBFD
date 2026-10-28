@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_15183C28` in [Note 1791](WORKING_NOTES/1791-record-cleanup-match-20261028.md): complete 64-word C, frame 32, seventeen bindings and six closed spill guards. Verify shared row/view aliases, signed flags, original caller loop and resource helper. Both copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 266-byte image with zero exclusions. Native total 70.27%, 261 more to 75%.
+
 - [x] Qualify and adopt `func_151839F0` in [Note 1790](WORKING_NOTES/1790-dependent-record-load-match-20261028.md): direct 55-word C, frame 40, eight bindings and no guards. Verify live two-index gates, equal rows, original caller and connected initializer/loader. Both copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 165-byte image. Native total 70.25%, 262 more to 75%.
 
 - [x] Qualify and adopt `func_15183ACC` in [Note 1789](WORKING_NOTES/1789-record-initializer-match-20261028.md): direct 54-word C, frame 40, eight bindings and no guards. Verify fifteen call sites, two complete wrappers, both provider interfaces and late ready-flag publication. Both copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 164-byte image. Native total 70.23%, 263 more to 75%.

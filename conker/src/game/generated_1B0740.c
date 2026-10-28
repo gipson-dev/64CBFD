@@ -119,8 +119,38 @@ Gfx *func_15183BA4(Gfx *dl, s32 selector, s16 arg2, s16 arg3) {
     return dl;
 }
 
-s32 func_15183C28() {
-    return 0;
+extern s8 D_800DDF70;
+extern s8 D_800DDF71;
+extern s32 D_800DDF20;
+extern u32 D_800DDF98;
+void func_1510D630(s16 *allocation);
+void func_10004074(void *allocation);
+
+/* Release a record's resources and its shared backing allocation when ready. */
+void func_15183C28(s32 index) {
+    s16 *resources;
+
+    resources = (s16 *)D_800DDE80[index].words[4];
+    if (resources != 0) {
+        func_1510D630(resources);
+        D_800DDE80[index].words[4] = 0;
+    }
+    if (index == 8) {
+        if (D_800DDF71 != -2) {
+            return;
+        }
+    } else if (index == 9) {
+        if (D_800DDF70 == -2 && D_800DDF20 != 0) {
+            func_10004074((void *)D_800DDF20);
+            D_800DDF20 = 0;
+            D_800DDF98 = 0;
+        }
+    }
+    if (D_800DDE80[index].words[0] != 0) {
+        func_10004074((void *)D_800DDE80[index].words[0]);
+        D_800DDE80[index].words[0] = 0;
+        D_800DDF78[index] = 0;
+    }
 }
 
 s32 func_15183D28() {

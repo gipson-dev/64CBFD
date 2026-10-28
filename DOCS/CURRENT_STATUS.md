@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7949902`; tools are committed before the consumer pin.
+  checkpoint pins tools `b59a7a4`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Dependent record load restored as direct C**: [Note 1790](WORKING_NOTES/1790-dependent-record-load-match-20261028.md). `func_151839F0` matches all 55 words, frame 40 and eight bindings without guards. Verify live prerequisite/destination gates, all 121 index pairs, the original 24-word caller route and connected initializer/loader paths. Both tools copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 165-byte image with zero exclusions. Native total 3,868/5,506 (70.25%), Game 3,195/4,833 (66.11%), zero drift; 262 more to 75%. Next inspect `func_15183C28`; `func_1514E920` remains parked and uncredited.
+**Shared record cleanup restored as guarded C**: [Note 1791](WORKING_NOTES/1791-record-cleanup-match-20261028.md). `func_15183C28` matches all 64 words with frame 32 and 17 bindings. Six expected-word guards move one closed record-pointer spill; the signed status gates, record-8 storage aliases and call order are recovered in semantic C. Both tools copies pass eight fresh and two installed checks. Preserve eight neighbors and the strict 266-byte image, including three closed metadata permutations, with zero exclusions. Native total 3,869/5,506 (70.27%), Game 3,196/4,833 (66.13%), zero drift; 261 more to 75%. Next inspect `func_15183D28`; `func_1514E920` remains parked and uncredited.
+
+**Dependent record load restored as direct C**: [Note 1790](WORKING_NOTES/1790-dependent-record-load-match-20261028.md). `func_151839F0` matches all 55 words, frame 40 and eight bindings without guards. Verify live prerequisite/destination gates, all 121 index pairs, the original 24-word caller route and connected initializer/loader paths. Both tools copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 165-byte image with zero exclusions. Native total 3,868/5,506 (70.25%), Game 3,195/4,833 (66.11%), zero drift; 262 more to 75%. The former next candidate, `func_15183C28`, is adopted in Note 1791 above; `func_1514E920` remains parked and uncredited.
 
 **Record initializer restored as direct C**: [Note 1789](WORKING_NOTES/1789-record-initializer-match-20261028.md). `func_15183ACC` matches all 54 words, frame 40 and eight bindings without guards. Verify all fifteen original call sites, both neighboring wrappers, variadic loader integration and graphics-helper publication/flag ordering. Both tools copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 164-byte image with zero exclusions. Native total 3,867/5,506 (70.23%), Game 3,194/4,833 (66.09%), zero drift; 263 more to 75%. The former next candidate, `func_151839F0`, is adopted in Note 1790 above; `func_1514E920` remains parked and uncredited.
 

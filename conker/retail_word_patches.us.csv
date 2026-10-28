@@ -23984,3 +23984,9 @@ generated_C9EC0,func_1509CE64,0x084,0x012A5804,0x014B6004,-,-,Normalize dependen
 generated_C9EC0,func_1509CE64,0x088,0x010B6025,0x012C6825,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
 generated_C9EC0,func_1509CE64,0x08C,0xA04C0000,0xA04D0000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
 generated_C9EC0,func_1509CE64,0x094,0x1613FFEE,0x1670FFEE,-,-,Normalize symmetric dependency loop sentinel comparison,,,false
+generated_1B0740,func_15183C28,0x30,0xafa30018,0xafa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183C28,0x3c,0x8fa30018,0x8fa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183C28,0x98,0xafa30018,0xafa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183C28,0xb0,0x8fa30018,0x8fa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183C28,0xc8,0xafa30018,0xafa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183C28,0xd8,0x8fa30018,0x8fa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
