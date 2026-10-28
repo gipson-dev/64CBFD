@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_1509CE64` in [Note 1785](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md): all 49 words, frame 56, four bindings and 16 checked register guards. Verify live callback/state reloads, recursive parent/wrapper execution, shared dependency graphs, all entry halfwords and aliases. Both copies pass eight fresh and two installed checks; preserve 18 neighbors and the strict 152-byte image. Native total 70.16%, 267 more to 75%.
+
 - [x] Qualify and adopt `func_1500A6D8` in [Note 1784](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md): direct 49-word C, frame 80, seven bindings and no guards. Verify commands 0x49..0x4B, payload lookup, allocation failure, header padding and all original caller/helper words. Both copies pass eight fresh and two installed checks; preserve 81 neighbors and the strict 149-byte image. Native total 70.14%, 268 more to 75%.
 
 - [x] Qualify and adopt `func_1519E754` in [Note 1783](WORKING_NOTES/1783-owner-timeout-transition-match-20261028.md): direct 49-word C, frame 40, five bindings and no guards. Verify owner identity, wrapped timer, saved retirement flag and complete original dispatcher/helper instruction coverage. Both copies pass eight fresh and two installed checks; preserve 22 neighbors and the strict 144-byte image. Native total 70.12%, 269 more to 75%.

@@ -23968,3 +23968,19 @@ generated_1D0840,func_151A483C,0x074,0x46005400,0xE4880038,-,-,Normalize thresho
 generated_1D0840,func_151A483C,0x078,0xE4880038,0xE490003C,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
 generated_1D0840,func_151A483C,0x07C,0xE490003C,0x8483001A,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
 generated_1D0840,func_151A483C,0x0A8,0x01A30019,0x006D0019,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_C9EC0,func_1509CE64,0x02C,0x94820000,0x948E0000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x038,0x12620018,0x126E0018,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x03C,0x00408025,0x31D0FFFF,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x058,0x962E0000,0x962F0000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x05C,0x240A0001,0x240B0001,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x064,0x028E7821,0x028FC021,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x068,0xA1F50000,0xA3150000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x070,0x8ED90000,0x8EC80000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x074,0x0010C0C3,0x0010C8C3,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x078,0x03191021,0x03281021,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x07C,0x90480000,0x90490000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x080,0x32090007,0x320A0007,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x084,0x012A5804,0x014B6004,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x088,0x010B6025,0x012C6825,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x08C,0xA04C0000,0xA04D0000,-,-,Normalize dependency visitor closed value lifetime and scratch register allocation,,,false
+generated_C9EC0,func_1509CE64,0x094,0x1613FFEE,0x1670FFEE,-,-,Normalize symmetric dependency loop sentinel comparison,,,false

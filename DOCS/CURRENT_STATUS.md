@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f3e54d7`; tools are committed before the consumer pin.
+  checkpoint pins tools `26ab7c6`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Selector payload effect restored as direct C**: [Note 1784](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md). `func_1500A6D8` matches all 49 words, frame 80 and seven bindings without guards. Recover category-dependent selection, the 24-byte payload, allocation failure and the two-argument callback. Both tools copies pass eight fresh and two installed checks; preserve all 81 neighbors and the strict 149-byte image with zero exclusions. Native total 3,862/5,506 (70.14%), Game 3,189/4,833 (65.98%), zero drift; 268 more to 75%. Next inspect `func_1509CE64`; `func_1514E920` remains parked and uncredited.
+**Recursive dependency visitor restored as guarded C**: [Note 1785](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md). `func_1509CE64` matches all 49 words, frame 56 and four bindings with 16 checked register guards. Recover the typed visitor callback, live list reloads, state-byte update and bitmap mark. Both tools copies pass eight fresh and two installed checks, including actual recursive calls, shared dependency graphs and mutation aliases. Preserve 18 neighbors and reproduce the strict 152-byte image with zero exclusions. Native total 3,863/5,506 (70.16%), Game 3,190/4,833 (66.00%), zero drift; 267 more to 75%. Next inspect `func_151140C4`; `func_1514E920` remains parked and uncredited.
+
+**Selector payload effect restored as direct C**: [Note 1784](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md). `func_1500A6D8` matches all 49 words, frame 80 and seven bindings without guards. Recover category-dependent selection, the 24-byte payload, allocation failure and the two-argument callback. Both tools copies pass eight fresh and two installed checks; preserve all 81 neighbors and the strict 149-byte image with zero exclusions. Native total 3,862/5,506 (70.14%), Game 3,189/4,833 (65.98%), zero drift; 268 more to 75%. The former next candidate, `func_1509CE64`, is adopted in Note 1785 above; `func_1514E920` remains parked and uncredited.
 
 **Owner timeout transition restored as direct C**: [Note 1783](WORKING_NOTES/1783-owner-timeout-transition-match-20261028.md). `func_1519E754` matches all 49 words, frame 40 and five bindings without guards. Verify signed timer wrap, retirement state, all original dispatcher/helper words and 22 preserved neighbors. Both tools copies pass eight fresh and two installed checks; production reproduces the strict 144-byte image with zero exclusions. Native total 3,861/5,506 (70.12%), Game 3,188/4,833 (65.96%), zero drift; 269 more to 75%. The former next candidate, `func_1500A6D8`, is adopted in Note 1784 above; `func_1514E920` remains parked and uncredited.
 

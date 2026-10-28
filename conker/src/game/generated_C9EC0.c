@@ -6,7 +6,7 @@ extern u8 D_800D2E70[];
 /* Non-matching placeholders for the text-only asm slice asm/C9EC0.s. */
 
 void func_1509CCB4();
-s32 func_1509CE64();
+void func_1509CE64(u16 *dependency, void (*visit)(s32));
 
 extern u8 D_8008743A[];
 
@@ -89,7 +89,7 @@ void func_1509CC94(s32 arg0) {
 }
 
 void func_1509CCB4(s32 arg0) {
-    func_1509CE64(*(s32 *) ((u8 *) D_8008743C + arg0 * 20), func_1509CCB4);
+    func_1509CE64(*(u16 **) ((u8 *) D_8008743C + arg0 * 20), func_1509CCB4);
 }
 
 s32 func_1509CCF4() {
@@ -117,8 +117,21 @@ void func_1509CDDC(s32 arg0) {
     } while (changes != 0);
 }
 
-s32 func_1509CE64() {
-    return 0;
+/* Visit a sentinel-terminated dependency list, then mark each live entry. */
+void func_1509CE64(u16 *dependency, void (*visit)(s32)) {
+    s32 index;
+    u16 *cursor;
+    if (*dependency != 0xFFFF) {
+        index = *dependency;
+        cursor = dependency;
+        do {
+            visit(index);
+            D_800D2E70[*cursor] = 3;
+            index = *cursor++;
+            D_800D2E4C[index >> 3] |= 1 << (index & 7);
+            index = *cursor;
+        } while (index != 0xFFFF);
+    }
 }
 
 s32 func_1509CF28() {
