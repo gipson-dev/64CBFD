@@ -23918,3 +23918,5 @@ generated_157840,func_1512B53C,0x084,0x01AE7821,0x018E7821,-,-,Normalize proven 
 generated_157840,func_1512B53C,0x09C,0x849805FC,0x849905FC,-,-,Normalize proven actor-slot refill GPR allocation and independent opening schedule,,,false
 generated_157840,func_1512B53C,0x0A8,0x2719FFFF,0x2738FFFF,-,-,Normalize proven actor-slot refill GPR allocation and independent opening schedule,,,false
 generated_157840,func_1512B53C,0x0B0,0xA49905FC,0xA49805FC,-,-,Normalize proven actor-slot refill GPR allocation and independent opening schedule,,,false
+generated_1A89B0,func_1517B6E8,0x010,0x848E0002,0x848F0002,-,-,Normalize closed opening counter-shift and input-Y GPR exchange,,,false
+generated_1A89B0,func_1517B6E8,0x014,0x00027983,0x00027183,-,-,Normalize closed opening counter-shift and input-Y GPR exchange,,,false

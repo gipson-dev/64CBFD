@@ -25,7 +25,24 @@ s32 func_1517B500() {
     return 0;
 }
 
-s32 func_1517B6E8() {
+/* Adjust the position and attenuate vertex alpha after the counter reaches 0x600. */
+s32 func_1517B6E8(s16 *input, s16 *output, s32 *counter, u8 *alpha) {
+    s32 current = *counter;
+    s32 scaled;
+
+    if (current >= 0x600) {
+        output[1] = (current >> 6) + input[1] - 24;
+        output[0] = input[0] + (*counter >> 8) - 6;
+        scaled = ((*alpha << 7) / ((*counter >> 6) - 23)) >> 4;
+        if (scaled < *alpha) {
+            *alpha = scaled;
+        }
+        *counter = 0x600;
+    } else {
+        output[0] = input[0];
+        output[1] = input[1];
+    }
+    output[2] = input[2];
     return 0;
 }
 

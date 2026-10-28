@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Position and alpha attenuation](WORKING_NOTES/1765-position-alpha-attenuation-match-20261028.md): complete 48-word guarded C, live counter/vector/alpha aliases, signed-division guards and original four-vertex caller behavior. Preserve 13 neighbors; strict 131-byte image and two checked register guards. Native total 69.80%, 287 more to 75%.
+
 - [Actor slot refill](WORKING_NOTES/1764-actor-slot-refill-match-20261028.md): complete 48-word guarded C, symbolic schedule/register proof, live loop aliases, native32 controls and actual caller skip gate. Preserve 14 neighbors; strict 147-byte image and 21 checked guards. Native total 69.78%, 288 more to 75%.
 
 - [Record phase and lifetime](WORKING_NOTES/1763-record-phase-lifetime-match-20261028.md): direct 48-word C, signed callbacks and live homes, single phase adjustment, late clock aliases and connected original dispatcher/release code. Strict 136-byte image, zero guards. Native total 69.76%, 289 more to 75%.
