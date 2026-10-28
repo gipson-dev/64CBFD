@@ -39,7 +39,27 @@ s32 func_1512B1B8() {
     return 0;
 }
 
-s32 func_1512B53C() {
+extern s32 D_800BE628;
+/* Reset each active slot marker while the actor's refresh counter is nonzero. */
+s32 func_1512B53C(u8 *actor) {
+    s32 index;
+    u32 offset;
+
+    if (*(s16 *)(actor + 0x5FC) == 0) goto inactive;
+    {
+        *(s16 *)(actor + 0x5F8) = 1;
+        index = 0;
+        offset = 0;
+        while ((f32)index < *(f32 *)((u32)D_800BE628 + actor[0x23D] * 0x180 + 4)) {
+            *(u16 *)(*(u8 **)(actor + 0x8BC) + offset) = 0xFFFC;
+            index = (s32)((u32)index + 1);
+            offset += 2;
+        }
+        *(f32 *)(actor + 0x60C) = 0.0f;
+        *(s16 *)(actor + 0x5FC) -= 1;
+        return 1;
+    }
+inactive:
     return 0;
 }
 

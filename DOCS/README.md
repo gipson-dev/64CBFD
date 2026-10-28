@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor slot refill](WORKING_NOTES/1764-actor-slot-refill-match-20261028.md): complete 48-word guarded C, symbolic schedule/register proof, live loop aliases, native32 controls and actual caller skip gate. Preserve 14 neighbors; strict 147-byte image and 21 checked guards. Native total 69.78%, 288 more to 75%.
+
 - [Record phase and lifetime](WORKING_NOTES/1763-record-phase-lifetime-match-20261028.md): direct 48-word C, signed callbacks and live homes, single phase adjustment, late clock aliases and connected original dispatcher/release code. Strict 136-byte image, zero guards. Native total 69.76%, 289 more to 75%.
 
 - [Record value restore](WORKING_NOTES/1762-record-value-restore-match-20261028.md): complete 48-word guarded C; signed halfwords, wrapped updates, separately rounded float/truncation path, lazy aliases and original registry/callback windows. Preserve 83 neighbors and the strict 187-byte image. Native total 69.74%, 290 more to 75%.
