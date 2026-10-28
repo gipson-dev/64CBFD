@@ -22,7 +22,7 @@ s32 func_1506E2CC();
 s32 func_1506E46C(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1506F1A8();
 s32 func_1506F54C();
-s32 func_1506FD30();
+void func_1506FD30(s32 arg0);
 s32 func_15070300();
 s32 func_15070898();
 s32 func_15070D24();
@@ -1110,9 +1110,15 @@ void func_1506FCC8(s32 arg0) {
 void func_1506FCFC(s32 arg0) {
     func_15196438(D_800D154C, 5, 0xFF, 0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506FD30.s. */
-s32 func_1506FD30() {
-    return 0;
+extern f32 D_80099EA0;
+/* Submit the current actor effect with its randomized scalar. */
+void func_1506FD30(s32 arg0) {
+    f32 random = func_150ADA68();
+    f32 zero = 0.0;
+
+    func_150E2EA4(D_800D154C, D_800D154C->unique_id, 1, -1,
+        0.0f, zero, D_80099EA0, 0.0f, zero, 414.0f,
+        3, 3, 5, 20.0f, random * 10.0f + 40.0f, 1, 50.0f);
 }
 void func_1506FDF0(s32 arg0) {
     func_151AABC4(D_800D154C, 0);

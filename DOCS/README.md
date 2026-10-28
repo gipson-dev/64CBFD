@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor random effect](WORKING_NOTES/1767-actor-random-effect-match-20261028.md): direct 48-word C, live actor/ID/parameter reads, separate float rounding and original dispatcher/wrapper integration. Preserve 327 neighbors and 14 GLOBAL_ASM routines; strict 199-byte image, zero guards. Native total 69.83%, 285 more to 75%.
+
 - [Display-list buffer allocation](WORKING_NOTES/1766-display-list-buffer-allocation-match-20261028.md): direct 47-word C plus one alignment word, live count/pointer/slot reloads, wrapped gaps and original caller/allocator-wrapper behavior. Strict 149-byte image, zero guards. Native total 69.81%, 286 more to 75%.
 
 - [Position and alpha attenuation](WORKING_NOTES/1765-position-alpha-attenuation-match-20261028.md): complete 48-word guarded C, live counter/vector/alpha aliases, signed-division guards and original four-vertex caller behavior. Preserve 13 neighbors; strict 131-byte image and two checked register guards. Native total 69.80%, 287 more to 75%.
