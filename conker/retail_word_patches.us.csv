@@ -23957,3 +23957,14 @@ generated_1BA1D0,func_151918BC,0x078,0x354B0001,0x860A000E,-,-,Normalize linked-
 generated_1BA1D0,func_151918BC,0x07C,0xA08B0008,0x356C0001,-,-,Normalize linked-owner effect redundant address and independent field scheduling,,,false
 generated_1BA1D0,func_151918BC,0x080,0x860C000E,0xA08C0008,-,-,Normalize linked-owner effect redundant address and independent field scheduling,,,false
 generated_1BA1D0,func_151918BC,0x088,0xA48C0006,0xA48A0006,-,-,Normalize linked-owner effect redundant address and independent field scheduling,,,false
+generated_1D0840,func_151A483C,0x024,0x01E30019,0x006F0019,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x05C,0x8483001A,0x00005012,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x060,0x00005012,0x448A2000,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x064,0x448A2000,0x00000000,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x068,0x00000000,0x46802020,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x06C,0x46802020,0x46003200,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x070,0x46003200,0x46005400,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x074,0x46005400,0xE4880038,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x078,0xE4880038,0xE490003C,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x07C,0xE490003C,0x8483001A,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false
+generated_1D0840,func_151A483C,0x0A8,0x01A30019,0x006D0019,-,-,Normalize threshold update commutative multiplies and independent counter reload,,,false

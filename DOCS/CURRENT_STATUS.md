@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `663e430`; tools are committed before the consumer pin.
+  checkpoint pins tools `ce80285`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Linked-owner effect restored as guarded C**: [Note 1781](WORKING_NOTES/1781-linked-owner-effect-match-20261028.md). `func_151918BC` matches all 49 retail words, frame 48 and two call bindings. Eleven checked guards remove a redundant address calculation and normalize independent scheduling; raw C behavior is verified separately. Both tools copies pass eight fresh checks, including the original dispatcher and helper. Preserve all 60 neighbors and reproduce the strict 136-byte image with zero exclusions. Native total 3,859/5,506 (70.09%), Game 3,186/4,833 (65.92%), zero drift; 271 more to 75%. Next inspect `func_151A483C`; `func_1514E920` remains parked and uncredited.
+**Threshold effect update restored as guarded C**: [Note 1782](WORKING_NOTES/1782-threshold-effect-update-match-20261028.md). `func_151A483C` matches all 49 words without a frame. Eleven checked guards normalize two integer multiply operand orders and the independent counter reload. Both copies pass eight fresh checks, original-parent return/expiry routes and the next callback transition. Preserve 22 neighbors and one GLOBAL_ASM routine; production reproduces the strict 132-byte image with zero exclusions. Native total 3,860/5,506 (70.11%), Game 3,187/4,833 (65.94%), zero drift; 270 more to 75%. Next inspect `func_1519E754`; `func_1514E920` remains parked and uncredited.
+
+**Linked-owner effect restored as guarded C**: [Note 1781](WORKING_NOTES/1781-linked-owner-effect-match-20261028.md). `func_151918BC` matches all 49 retail words, frame 48 and two call bindings. Eleven checked guards remove a redundant address calculation and normalize independent scheduling; raw C behavior is verified separately. Both tools copies pass eight fresh checks, including the original dispatcher and helper. Preserve all 60 neighbors and reproduce the strict 136-byte image with zero exclusions. Native total 3,859/5,506 (70.09%), Game 3,186/4,833 (65.92%), zero drift; 271 more to 75%. The former next candidate, `func_151A483C`, is adopted in Note 1782 above; `func_1514E920` remains parked and uncredited.
 
 **Record opacity envelope restored as direct C**: [Note 1780](WORKING_NOTES/1780-record-opacity-envelope-match-20261028.md). `func_150F55C8` matches all 49 words with no frame, external bindings or guards. Recover the packed fade/hold durations, signed remaining lifetime and byte opacity store. Verify the direct wrapper and all four original callback dispatch routes; preserve all 23 neighbors. Both tools copies pass eight fresh checks, and production reproduces the strict 131-byte image with zero exclusions. Native total 3,858/5,506 (70.07%), Game 3,185/4,833 (65.90%), zero drift; 272 more to 75%. That function is adopted in Note 1781 above; `func_1514E920` remains parked and uncredited.
 

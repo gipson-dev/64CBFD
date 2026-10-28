@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Threshold effect update](WORKING_NOTES/1782-threshold-effect-update-match-20261028.md): guarded 49-word C with no frame, signed thresholds and wrapped clock scaling. Validate the original callback result and next-tick transition, preserve 22 neighbors and reproduce the strict 132-byte image. Native total 70.11%, 270 more to 75%.
+
 - [Linked-owner effect](WORKING_NOTES/1781-linked-owner-effect-match-20261028.md): guarded 49-word C, frame 48, two bindings and 11 checked normalization entries. Verify raw behavior, the original dispatcher/helper, all 60 neighbors and the strict 136-byte image. Native total 70.09%, 271 more to 75%.
 
 - [Record opacity envelope](WORKING_NOTES/1780-record-opacity-envelope-match-20261028.md): direct 49-word C, signed lifetime and packed phase durations, four original callback dispatchers, 23 preserved neighbors and strict 131-byte image. Native total 70.07%, 272 more to 75%.

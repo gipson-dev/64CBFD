@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_151A483C` in [Note 1782](WORKING_NOTES/1782-threshold-effect-update-match-20261028.md): all 49 words, no frame, two clock bindings and 11 checked guards. Verify signed thresholds, wrapped float increments, incoming argument homes, original-parent return/expiry routes and slot-1 transition. Both copies pass eight fresh and two installed checks. Preserve 22 neighbors, one GLOBAL_ASM routine and the strict 132-byte image. Native total 70.11%, 270 more to 75%.
+
 - [x] Qualify and adopt `func_151918BC` in [Note 1781](WORKING_NOTES/1781-linked-owner-effect-match-20261028.md): all 49 words, frame 48, two bindings and 11 checked guards. Validate raw C semantics, saved release lifetime, the original 45-word dispatcher and 52-word helper. Both copies pass eight fresh checks and two installed checks; preserve 60 neighbors and the strict 136-byte image. Native total 70.09%, 271 more to 75%.
 
 - [x] Qualify and adopt `func_150F55C8` in [Note 1780](WORKING_NOTES/1780-record-opacity-envelope-match-20261028.md): direct 49-word C, no frame, bindings or guards. Validate signed packed phases, all lifetime encodings, the direct wrapper and four callback dispatchers. Both copies pass eight fresh checks and two installed checks; preserve 23 neighbors and the strict 131-byte image. Native total 70.07%, 272 more to 75%.

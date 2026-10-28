@@ -94,8 +94,47 @@ s32 func_151A4638() {
     return 0;
 }
 
-s32 func_151A483C() {
-    return 0;
+/* Update lifetime-scaled outputs and switch to the next update callback. */
+typedef struct {
+    u8 reserved00[0x18];
+    s16 state;
+    s16 counter;
+    u8 reserved1C[0xF];
+    u8 firstOutput;
+    u8 secondOutput;
+    u8 reserved2D[0xB];
+    f32 firstValue;
+    f32 secondValue;
+    u8 reserved40[0x30];
+    u8 firstMode;
+    u8 secondMode;
+    u8 updateSelector;
+    u8 reserved73[0x35];
+    s16 parameters[6];
+} ThresholdEffectRecord1D0840;
+
+s32 func_151A483C(ThresholdEffectRecord1D0840 *record, void *unusedContext) {
+    s16 *parameters = record->parameters;
+    s32 counter = record->counter;
+    f32 increment;
+
+    if (counter < parameters[2]) {
+        record->firstOutput = counter * parameters[3];
+    }
+    if (counter < parameters[4]) {
+        increment = (s32)((u32)parameters[5] * (u32)D_800BE9E4);
+        record->firstValue += increment;
+        record->secondValue += increment;
+        counter = record->counter;
+    }
+    if (counter < parameters[0]) {
+        record->updateSelector = 1;
+        record->firstMode = 2;
+        record->secondMode = 2;
+        record->secondOutput = counter * parameters[1];
+        record->state = 0x5203;
+    }
+    return 1;
 }
 
 typedef struct {
