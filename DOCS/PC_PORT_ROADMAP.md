@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_150A2EE4` in [Note 1774](WORKING_NOTES/1774-actor-volume-selector-match-20261028.md): all 48 words, frame 24, seven bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify unsigned bounds, masked flags, the inline actor table, mixed float arguments, the original command-13 return route and retained 38-word plane helper; preserve 27 neighbors and reproduce the strict 158-byte image. Native total 69.96%, 278 more to 75%.
+
 - [x] Qualify and adopt `func_1509F4E8` in [Note 1773](WORKING_NOTES/1773-record-range-sound-match-20261028.md): all 48 words, frame 56, four bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify explicit selector/read order, unsigned clamp against signed limits, all byte choice spans, 13 native controls, the actual caller return and retained 29-word sound wrapper; preserve 16 neighbors and reproduce the strict 149-byte image. Native total 69.94%, 279 more to 75%.
 
 - [x] Qualify and adopt `func_151B9BF0` in [Note 1772](WORKING_NOTES/1772-type07-parameter-record-match-20261028.md): all 48 words, frame 32, one call binding and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify all sixteen inputs, ordered narrowing stores, late argument-home reads, five original call sites and retained allocator/initializer integration; preserve three neighbors and reproduce the strict 143-byte image. Native total 69.92%, 280 more to 75%.

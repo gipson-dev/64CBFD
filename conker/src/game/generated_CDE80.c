@@ -141,7 +141,18 @@ s32 func_150A2E4C(GeneratedCDE80Plane *plane, f32 value0, f32 value1,
     return 0;
 }
 
-s32 func_150A2EE4() {
+extern struct127 D_800CC2D0[26];
+
+/* Test a masked volume selector against the selected actor position. */
+s32 func_150A2EE4(s32 actorIndex, s32 selector) {
+    selector &= 0xFFF;
+    if ((u32)D_800D3094 < (u32)selector) {
+        return 1;
+    }
+    if ((D_800D3098[selector].flags & 3) == 3) {
+        return func_150A2E4C(&D_800D3098[selector], D_800CC2D0[actorIndex].x_position,
+                            D_800CC2D0[actorIndex].y_position, D_800CC2D0[actorIndex].z_position);
+    }
     return 0;
 }
 
