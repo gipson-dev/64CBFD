@@ -1,4 +1,6 @@
 #include <ultra64.h>
+s32 func_1000F568(s32, u32);
+u16 func_10010F88(s32, u16, s16, u8, s32, s16, s16, s16, s16, s16);
 
 /* Non-matching placeholders for the text-only asm slice asm/CBDB0.s. */
 
@@ -55,8 +57,23 @@ s32 func_1509F47C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s16 arg4, s32 arg5) {
     return func_15114D24(temp_v0, func_1000F568(arg0, (u8) (arg1 - arg0 + 1)), arg2, arg4, arg5, 0);
 }
 
-s32 func_1509F4E8() {
-    return 0;
+typedef struct {
+    s16 x, y, z, distanceLimit;
+    u8 pad8[0x2C];
+} RecordSoundEntry;
+extern RecordSoundEntry *D_800D3098;
+
+/* Select a sound and submit it at the record position with a bounded distance. */
+u16 func_1509F4E8(s32 first, s32 last, u16 volume, s32 index, u32 distance) {
+    RecordSoundEntry *record = &D_800D3098[index];
+    s32 limit = record->distanceLimit;
+    s32 selected;
+
+    if (distance >= (u32)limit) {
+        distance = limit - 1;
+    }
+    selected = func_1000F568(first, (u8)((u32)last - (u32)first + 1));
+    return func_10010F88(selected, volume, 0, 0, 0, record->x, record->y, record->z, distance, limit);
 }
 
 void func_1509F5A8(s32 arg0, s32 arg1, u16 arg2) {

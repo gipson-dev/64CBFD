@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record sound selection](WORKING_NOTES/1773-record-range-sound-match-20261028.md): complete 48-word direct C, explicit mutable-coordinate read order, unsigned distance clamp, original caller return and retained sound wrapper. Preserve 16 neighbors; strict 149-byte image. Native total 69.94%, 279 more to 75%.
+
 - [Type-7 parameter-record constructor](WORKING_NOTES/1772-type07-parameter-record-match-20261028.md): complete 48-word direct C, sixteen-input void interface, five original call sites and retained allocator/initializer integration. Preserve three neighbors; strict 143-byte image. Native total 69.92%, 280 more to 75%.
 
 - [Color record pulse](WORKING_NOTES/1771-color-record-pulse-match-20261028.md): complete 48-word direct C, canonical descriptor callback, countdown/color/clock semantics, original dispatcher and retained helper integration. Preserve 22 neighbors; strict 143-byte image. Native total 69.91%, 281 more to 75%.
