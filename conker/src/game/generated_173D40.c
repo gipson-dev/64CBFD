@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/173D40.s. */
+/* Partially recovered text-only slice asm/173D40.s. */
 
 s32 func_15146BF8();
 
@@ -36,8 +36,23 @@ s32 func_15146E84() {
     return 0;
 }
 
-s32 func_15147040() {
-    return 0;
+s32 func_15146890();
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
+
+/* Submit a randomized type-22 burst at the attached object's selected point. */
+void func_15147040(u8 *actor, u8 context, s32 unused) {
+    f32 position[3];
+    s16 count;
+
+    if (*(void **)(actor + 0x1D4) == NULL) {
+        return;
+    }
+    func_15146890(position, actor, 0, context);
+    count = (u32)func_150ADA20() % 11U + 5;
+    func_1514C678(position[0], position[1], position[2], func_150ADA68() * 11.0f,
+        0, 255, count, 0x16, 0, 0.0f, NULL, 255);
 }
 
 s32 func_151470FC() {
