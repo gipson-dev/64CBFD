@@ -8,19 +8,41 @@ Gfx *func_1517F08C(Gfx *, s32, s32, s32, s32, s32);
 
 extern u8 D_800D9900;
 
-s32 func_150D2110() {
-    return 0;
-}
-
-/* The callback receives the common actor header followed by this local state. */
 typedef struct {
     u8 active;
     u8 pad1[3];
     f32 phase;
     f32 threshold;
-    f32 unused;
+    f32 inactiveDuration;
     f32 period;
+    u8 activeColor;
+    u8 inactiveColor;
 } PhaseCycle;
+
+extern u8 D_800D9900;
+
+struct260 *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Spawn a phase cycle and copy its state, retaining the packet's original padding bytes. */
+void func_150D2110(s16 lifetime, f32 activeDuration, f32 inactiveDuration,
+                   u8 activeColor, u8 inactiveColor, u8 priority, s32 owner) {
+    PhaseCycle cycle;
+    struct260 *effect;
+
+    D_800D9900++;
+    cycle.threshold = activeDuration;
+    cycle.inactiveDuration = inactiveDuration;
+    cycle.period = activeDuration + inactiveDuration;
+    cycle.active = 0;
+    cycle.phase = 0.0f;
+    cycle.activeColor = activeColor;
+    cycle.inactiveColor = inactiveColor;
+    effect = func_15149130(lifetime, -1, 0x2F, 2, 1, 0x26, sizeof(PhaseCycle), priority, owner);
+    if (effect != NULL) {
+        memcpy((u8 *)effect + 0x28, &cycle, sizeof(PhaseCycle));
+    }
+}
 
 extern f32 D_800BE9A4;
 void func_1515D4D4(s32 red, s32 green, s32 blue, u8 priority);

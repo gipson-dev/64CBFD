@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Spawn-result query restored as direct C**: [Note 1753](WORKING_NOTES/1753-spawn-result-query-match-20261027.md). `func_1507E114` matches all 47 words/frame 96/nine bindings with zero guards. Both tools copies pass eight fresh methods, including the actual unused-pointer caller and return store, the complete original spawn helper, output-home/alias/fault cases and native32 checks. The five-command GLOBAL_ASM Make route preserves 15 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,831/5,506 (69.58%), Game 3,158/4,833 (65.34%), zero drift; 299 more to 75%. Next inspect `func_150D2110`; `func_1514E920` remains parked and uncredited.
+**Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. Next inspect `func_15159370`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Spawn-result query restored as direct C**: [Note 1753](WORKING_NOTES/1753-spawn-result-query-match-20261027.md). `func_1507E114` matches all 47 words/frame 96/nine bindings with zero guards. Both tools copies pass eight fresh methods, including the actual unused-pointer caller and return store, the complete original spawn helper, output-home/alias/fault cases and native32 checks. The five-command GLOBAL_ASM Make route preserves 15 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,831/5,506 (69.58%), Game 3,158/4,833 (65.34%), zero drift; 299 more to 75%. That then-private `func_150D2110` is adopted in Note 1754 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 

@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Phase-cycle spawn](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md): direct 47-word C, exact packet/padding preservation, original caller and constructor/copy integration; strict 140-byte image and zero guards. Native total 69.60%, 298 more to 75%.
+
 - [Spawn-result query](WORKING_NOTES/1753-spawn-result-query-match-20261027.md): direct 47-word C with eleven output-helper arguments, original caller/return store and complete original-helper paths, preserving unwritten guest result homes; strict 141-byte image, zero guards. Native total 69.58%, 299 more to 75%.
 
 - [Object event retarget callback](WORKING_NOTES/1752-object-event-retarget-match-20261027.md): complete semantic C with four scheduling/operand guards matches 47 retail words; actual registry caller, release helper, alias/fault/native32 checks and strict 138-byte image. Native total 69.56%, 300 more to 75%.
