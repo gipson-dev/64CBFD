@@ -15,8 +15,27 @@ s32 func_15183290() {
     return 0;
 }
 
-s32 func_151838B0() {
-    return 0;
+extern u8 D_800DDF69[];
+void *func_1502B6BC(s32 *size, s32 count, s32 *relocated, s32 depth, ...);
+
+/* Load the adjacent record on demand and copy its owner fields. */
+void func_151838B0(s32 index) {
+    s32 *result;
+
+    if (D_800DDE80[index].words[0] == 0) {
+        func_15183ACC(index);
+    }
+    if (D_800DDE80[index + 1].words[0] == 0) {
+        result = func_1502B6BC(0, 0, 0, 2, 9, index + 0xAE);
+        if (result != NULL) {
+            D_800DDE80[index + 1].words[0] = (s32)result;
+            D_800DDE80[index + 1].words[1] = result[0];
+            D_800DDE80[index + 1].words[2] = result[2];
+            D_800DDE80[index + 1].words[3] = D_800DDE80[index].words[3];
+            D_800DDE80[index + 1].words[4] = 0;
+            D_800DDF69[index] = 1;
+        }
+    }
 }
 
 void func_15183974(s32 arg0) {

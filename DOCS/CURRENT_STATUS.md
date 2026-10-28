@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `a3fb6da`; tools are committed before the consumer pin.
+  checkpoint pins tools `5d58769`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Two-vector effect callback restored as direct C**: [Note 1787](WORKING_NOTES/1787-two-vector-effect-match-20261028.md). `func_1514F308` matches all 49 words, frame 96 and seven bindings without guards. Recover both local vector snapshots and the sixteen-argument provider call. Both tools copies pass eight fresh and two installed checks, three original caller windows and all 85 original provider words. Preserve 77 neighbors and reproduce the strict 226-byte image, including closed symbol/string permutations, with zero exclusions. Native total 3,865/5,506 (70.20%), Game 3,192/4,833 (66.05%), zero drift; 265 more to 75%. Next inspect `func_151838B0`; `func_1514E920` remains parked and uncredited.
+**Adjacent record load restored as direct C**: [Note 1788](WORKING_NOTES/1788-adjacent-record-load-match-20261028.md). `func_151838B0` matches all 49 words, frame 40 and six bindings without guards. Both tools copies pass eight fresh and two installed checks, with original caller/initializer/loader integration and table-alias coverage. Preserve eight neighbors and the strict 149-byte image with zero exclusions. Native total 3,866/5,506 (70.21%), Game 3,193/4,833 (66.07%), zero drift; 264 more to 75%. Next inspect `func_15183ACC`; `func_1514E920` remains parked and uncredited.
+
+**Two-vector effect callback restored as direct C**: [Note 1787](WORKING_NOTES/1787-two-vector-effect-match-20261028.md). `func_1514F308` matches all 49 words, frame 96 and seven bindings without guards. Recover both local vector snapshots and the sixteen-argument provider call. Both tools copies pass eight fresh and two installed checks, three original caller windows and all 85 original provider words. Preserve 77 neighbors and reproduce the strict 226-byte image, including closed symbol/string permutations, with zero exclusions. Native total 3,865/5,506 (70.20%), Game 3,192/4,833 (66.05%), zero drift; 265 more to 75%. The former next candidate, `func_151838B0`, is adopted in Note 1788 above; `func_1514E920` remains parked and uncredited.
 
 **First marked record bit restored as direct C**: [Note 1786](WORKING_NOTES/1786-record-first-marked-bit-match-20261028.md). `func_151140C4` matches all 49 words with no frame or guards. Recover the record flag gate, signed table index and first-set-bit scan, including defined bit-31 handling. Both tools copies pass eight fresh and two installed checks; preserve all 33 neighbors and reproduce the strict 149-byte image with zero exclusions. Original command-0x17 and lookup routes pass. Native total 3,864/5,506 (70.18%), Game 3,191/4,833 (66.03%), zero drift; 266 more to 75%. The former next candidate, `func_1514F308`, is adopted in Note 1787 above; `func_1514E920` remains parked and uncredited.
 
