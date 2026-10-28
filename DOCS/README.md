@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Actor direction point](WORKING_NOTES/1776-actor-direction-point-match-20261028.md): direct 48-word C, typed five-argument interface, both original caller return paths and five retained helpers. Preserve 36 neighbors; strict 144-byte image. Native total 70.00%, 276 more to 75%.
 - [Type-0x46 distance record](WORKING_NOTES/1775-type46-distance-record-match-20261028.md): complete 48-word guarded C, typed payload and distance, all 58 original caller words and 71 retained helper words. Preserve 14 neighbors; strict 145-byte image. Native total 69.98%, 277 more to 75%.
 - [Actor volume selection](WORKING_NOTES/1774-actor-volume-selector-match-20261028.md): complete 48-word direct C, inline actor positions, masked bounds/flags, original dispatcher return and retained plane helper. Preserve 27 neighbors; strict 158-byte image. Native total 69.96%, 278 more to 75%.
 

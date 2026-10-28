@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/133190.s. */
 
@@ -153,8 +154,24 @@ s32 func_15107924() {
     return 0;
 }
 
-s32 func_15107A20() {
-    return 0;
+void func_1515C244(struct127 *, struct17 *, f32 *, f32 *);
+void func_15143794(s16, s16, f32, vertex *);
+
+/* Apply the actor-scaled direction to its queried origin and optionally return that origin. */
+void func_15107A20(struct127 *actor, s16 yaw, s16 pitch, vertex *point, struct17 *originOut) {
+    struct17 origin;
+    f32 radius;
+    f32 otherScale;
+
+    func_1515C244(actor, &origin, &radius, &otherScale);
+    func_15143794(yaw, pitch, radius, point);
+    point->y *= actor->unkF0;
+    point->x += origin.unk0;
+    point->y += origin.unk4;
+    point->z += origin.unk8;
+    if (originOut != NULL) {
+        *originOut = origin;
+    }
 }
 
 /* Write two fractional points, retaining the original deltas across stores. */
