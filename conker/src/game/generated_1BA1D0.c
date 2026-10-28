@@ -564,8 +564,34 @@ s32 func_1519187C(u8 *arg0) {
     return 1;
 }
 
-s32 func_151918BC() {
-    return 0;
+/* Release invalid owner links, or emit the owner payload before releasing the record. */
+void func_151918BC(u8 *record) {
+    /* Preserve the retail frame and the release flag spill at incoming SP - 9. */
+    s32 unused[2];
+    u8 release = 0;
+    u8 *owner = *(u8 **)(record + 0x28);
+    u8 *payload;
+
+    (void)unused;
+    if (*(s32 *)owner == 0) {
+        release = 1;
+    } else if (record[0x2C] != owner[0x3B]) {
+        release = 1;
+    }
+    if (!release && *(s32 *)(owner + 0x1D4) != 0) {
+        payload = record + 0x28;
+        release = 1;
+        if (record[0xD] & 1) {
+            payload[8] |= 1;
+            *(s16 *)(payload + 6) = *(s16 *)(record + 0xE);
+        } else {
+            *(s16 *)(payload + 6) = 300;
+        }
+        func_15190770(payload, 0, record[0xC], record[1]);
+    }
+    if (release) {
+        func_1516972C(record);
+    }
 }
 
 s32 func_15191980() {
