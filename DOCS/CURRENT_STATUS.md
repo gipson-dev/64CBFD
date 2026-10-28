@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4e8fbb1`; tools are committed before the consumer pin.
+  checkpoint pins tools `9b6dcfa`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Ballistic billboard motion restored as direct C**: [Note 1760](WORKING_NOTES/1760-ballistic-billboard-motion-match-20261028.md). `func_1514AF74` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering quadratic float rounding, all 88 clock aliases and original slot-28 cleanup behavior. Preserve 35 neighbors and the current dispatcher placeholder; production reproduces the strict 139-byte image with zero exclusions. Native total 3,838/5,506 (69.71%), Game 3,165/4,833 (65.49%), zero drift; 292 more to 75%. Next inspect `func_151DD3A0`; `func_1514E920` remains parked and uncredited.
+**EEPROM block reader restored as direct C**: [Note 1761](WORKING_NOTES/1761-eeprom-block-read-match-20261028.md). `func_151DD3A0` matches all 45 body words in its 48-word slot, frame 48 and three call bindings, with zero guards. Both tools copies pass eight fresh methods covering signed lengths, complete partial blocks, byte-address wrapping, provider capture/clobbers, three original caller windows and native32 controls. Actual three-command Make and production reproduce the strict 137-byte image with zero exclusions; preserve all helpers and current caller placeholders. Native total 3,839/5,506 (69.72%), Game 3,166/4,833 (65.51%), zero drift; 291 more to 75%. Next inspect `func_151152A8`; `func_1514E920` remains parked and uncredited.
+
+**Ballistic billboard motion restored as direct C**: [Note 1760](WORKING_NOTES/1760-ballistic-billboard-motion-match-20261028.md). `func_1514AF74` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering quadratic float rounding, all 88 clock aliases and original slot-28 cleanup behavior. Preserve 35 neighbors and the current dispatcher placeholder; production reproduces the strict 139-byte image with zero exclusions. Native total 3,838/5,506 (69.71%), Game 3,165/4,833 (65.49%), zero drift; 292 more to 75%. That then-private `func_151DD3A0` is adopted in Note 1761 above; `func_1514E920` remains parked and uncredited.
 
 **Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
 
