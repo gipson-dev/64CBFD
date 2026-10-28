@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_1514F308` in [Note 1787](WORKING_NOTES/1787-two-vector-effect-match-20261028.md): direct 49-word C, frame 96, seven bindings and no guards. Verify copied vectors, the sixteen-argument call, three original callback windows and all 85 provider words. Both copies pass eight fresh and two installed checks; preserve 77 neighbors and the strict 226-byte image, including symbol/string ordering. Native total 70.20%, 265 more to 75%.
+
 - [x] Qualify and adopt `func_151140C4` in [Note 1786](WORKING_NOTES/1786-record-first-marked-bit-match-20261028.md): direct 49-word C, no frame, four bindings and no guards. Verify all flag bytes/bits, signed record indexing, disabled access gate, original command-0x17 route and retained lookup. Both copies pass eight fresh and two installed checks; preserve 33 neighbors and the strict 149-byte image. Native total 70.18%, 266 more to 75%.
 
 - [x] Qualify and adopt `func_1509CE64` in [Note 1785](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md): all 49 words, frame 56, four bindings and 16 checked register guards. Verify live callback/state reloads, recursive parent/wrapper execution, shared dependency graphs, all entry halfwords and aliases. Both copies pass eight fresh and two installed checks; preserve 18 neighbors and the strict 152-byte image. Native total 70.16%, 267 more to 75%.

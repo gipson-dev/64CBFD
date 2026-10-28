@@ -603,8 +603,18 @@ s32 func_1514F194() {
     return 0;
 }
 
-s32 func_1514F308() {
-    return 0;
+typedef struct { f32 x, y, z; } GameEffectVector;
+extern GameEffectVector D_800A5970, D_800A597C;
+extern f32 D_800A5E58;
+void *func_15160CDC(u8 *, u8, GameEffectVector *, GameEffectVector *, f32,
+                   u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
+
+/* Submit a type-five effect using the two stored vector presets. */
+void func_1514F308(u8 *owner) {
+    GameEffectVector first = D_800A5970;
+    GameEffectVector second = D_800A597C;
+    func_15160CDC(owner, 5, &first, &second, D_800A5E58, 2, 300,
+                 255, 255, 255, 255, 1, 0, 0, 255, 1);
 }
 
 /* Note 531: owner payload allocation and conditional copy. */
