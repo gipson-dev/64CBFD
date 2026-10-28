@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Damped billboard motion](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md): direct 48-word C, rounded float operations, live clock aliases and original dispatcher cleanup; strict 132-byte image, zero guards. Native total 69.69%, 293 more to 75%.
+
 - [Screen overlay](WORKING_NOTES/1758-screen-overlay-match-20261027.md): direct 47-word SDK C, correct pointer interfaces, late alpha/dimension aliases, full original parent and retained rectangle; strict 145-byte image, zero guards. Native total 69.67%, 294 more to 75%.
 
 - [Record effect packet](WORKING_NOTES/1757-record-effect-packet-match-20261027.md): direct 47-word callback C, complete 32-byte capture, source/copy aliases, full original expiration dispatcher and retained constructor/copy integration; strict 141-byte image, zero guards. Native total 69.65%, 295 more to 75%.

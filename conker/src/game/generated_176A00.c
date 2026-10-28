@@ -28,8 +28,19 @@ s32 func_15149BF4(u8 *arg0) {
     return 1;
 }
 
-s32 func_15149C58() {
-    return 0;
+/* Damp billboard extents, integrate vertical motion and test the active bounds. */
+s32 func_15149C58(u8 *actor) {
+    *(f32 *)(actor + 0x2C) -= *(f32 *)(actor + 0x2C) * *(f32 *)(actor + 0x150);
+    *(f32 *)(actor + 0x30) -= *(f32 *)(actor + 0x30) * *(f32 *)(actor + 0x150);
+    *(f32 *)(actor + 0x50) += *(f32 *)(actor + 0x4C) * D_800BE9A4;
+    *(f32 *)(actor + 0x38) += *(f32 *)(actor + 0x50) * D_800BE9A4;
+    if (*(f32 *)(actor + 0x15C) < *(f32 *)(actor + 0x38)) {
+        return 0;
+    }
+    if (*(f32 *)(actor + 0x2C) < 4.0f || *(f32 *)(actor + 0x30) < 4.0f) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_15149D18() {

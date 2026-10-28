@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Screen overlay restored as direct C**: [Note 1758](WORKING_NOTES/1758-screen-overlay-match-20261027.md). `func_151ED1E0` matches all 47 words/frame 32/seven bindings with zero guards. Recover the SDK render state, late alpha/dimension reads and returned display-list cursor. Correct both caller pointer interfaces while preserving the 92-word parent, all 26 neighbors and all 16 functions and padded bytes in the second owner. Both tools copies pass eight fresh methods, including original caller/rectangle integration, live aliases and native32 controls; production reproduces the strict 145-byte image with zero exclusions. Native total 3,836/5,506 (69.67%), Game 3,163/4,833 (65.45%), zero drift; 294 more to 75%. Next inspect `func_15149C58`; `func_1514E920` remains parked and uncredited.
+**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. Next inspect `func_1514AF74`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Screen overlay restored as direct C**: [Note 1758](WORKING_NOTES/1758-screen-overlay-match-20261027.md). `func_151ED1E0` matches all 47 words/frame 32/seven bindings with zero guards. Recover the SDK render state, late alpha/dimension reads and returned display-list cursor. Correct both caller pointer interfaces while preserving the 92-word parent, all 26 neighbors and all 16 functions and padded bytes in the second owner. Both tools copies pass eight fresh methods, including original caller/rectangle integration, live aliases and native32 controls; production reproduces the strict 145-byte image with zero exclusions. Native total 3,836/5,506 (69.67%), Game 3,163/4,833 (65.45%), zero drift; 294 more to 75%. That then-private `func_15149C58` is adopted in Note 1759 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
