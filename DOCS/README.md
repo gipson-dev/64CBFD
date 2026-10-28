@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record value restore](WORKING_NOTES/1762-record-value-restore-match-20261028.md): complete 48-word guarded C; signed halfwords, wrapped updates, separately rounded float/truncation path, lazy aliases and original registry/callback windows. Preserve 83 neighbors and the strict 187-byte image. Native total 69.74%, 290 more to 75%.
+
 - [EEPROM block reader](WORKING_NOTES/1761-eeprom-block-read-match-20261028.md): direct 45-word C plus three alignment words; signed lengths, complete blocks, byte wrapping, three original caller windows and bounded provider lifetime. Strict 137-byte image, zero guards. Native total 69.72%, 291 more to 75%.
 
 - [Ballistic billboard motion](WORKING_NOTES/1760-ballistic-billboard-motion-match-20261028.md): direct 48-word C, quadratic position update, late velocity-clock read, rounding/alias controls and original dispatcher cleanup; strict 139-byte image, zero guards. Native total 69.71%, 292 more to 75%.

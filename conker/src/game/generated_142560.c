@@ -6,6 +6,7 @@ void func_150A7960(f32 matrix[4][4], f32 x, f32 y, f32 z,
                    f32 *outX, f32 *outY, f32 *outZ);
 
 extern s32 D_800BE9E4;
+extern f32 D_800A2F8C;
 extern u8 *D_800DBFF0;
 extern u8 *D_800DBEF4;
 extern u8 D_800C35EA;
@@ -77,8 +78,29 @@ void func_151151FC(u8 *arg0) {
 void func_1511529C(s32 arg0) {
 }
 
-s32 func_151152A8() {
-    return 0;
+/* Capture the initial value and advance the signed halfword by its selected mode. */
+void func_151152A8(u8 *record) {
+    s32 baseline = *(s32 *)(record + 0x7C);
+    s32 current;
+    s32 difference;
+    s32 packed;
+
+    if (baseline == 0) {
+        baseline = *(s16 *)(record + 0x12);
+        *(s32 *)(record + 0x7C) = baseline;
+    }
+    current = *(s16 *)(record + 0x12);
+    difference = (s32)((u32)baseline - (u32)current);
+    if (record[0x4F] & 4) {
+        packed = *(s32 *)(record + 0x3C);
+        if (difference < (s16)packed) {
+            *(s16 *)(record + 0x12) = (u32)current -
+                (u32)(s16)(packed >> 16) * (u32)D_800BE9E4;
+        }
+    } else {
+        *(s16 *)(record + 0x12) = (s32)((f32)current +
+            (f32)difference * D_800A2F8C * (f32)D_800BE9E4);
+    }
 }
 
 s32 func_15115368() {

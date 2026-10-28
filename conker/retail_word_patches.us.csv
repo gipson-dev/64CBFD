@@ -23872,3 +23872,28 @@ game_1FFF60,func_151D324C,0x014,0x14C00009,0x14C0000A,-,-,Restore object-event c
 game_1FFF60,func_151D324C,0x034,0x10000013,0x93A60023,-,-,Restore object-event command reload and selector delay schedule,0x10000014,-,false
 game_1FFF60,func_151D324C,0x038,0x93A60023,0x9089001D,-,-,Restore object-event command reload and selector delay schedule,,,false
 game_1FFF60,func_151D324C,0x070,0x54790005,0x57230005,-,-,Retain equivalent paired-reference comparison operand order,,,false
+generated_142560,func_151152A8,0x00C,0x908E004F,0x908F004F,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x018,0x908E004F,0x908F004F,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x020,0x31CF0004,0x31F80004,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x024,0x51E00012,0x53000012,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x028,0x00437823,0x0043C023,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x030,0x0043C023,0x0043C823,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x034,0x3C0C0000,0x3C0D0000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x038,0x0005CC00,0x00054400,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x03C,0x00194403,0x00084C03,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x040,0x0308082A,0x0329082A,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x048,0x00054C03,0x00055403,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x04C,0x8D8C0000,0x8DAD0000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x050,0x00095400,0x000A5C00,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x054,0x000A5C03,0x000B6403,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x058,0x016C0019,0x018D0019,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x05C,0x00006812,0x00007012,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x060,0x006D7023,0x006E7823,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x068,0xA48E0012,0xA48F0012,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x06C,0x00437823,0x0043C023,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x070,0x448F2000,0x44982000,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x074,0x3C190000,0x3C080000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x078,0x8F390000,0x8D080000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x084,0x44998000,0x44888000,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x0AC,0x44085000,0x44095000,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
+generated_142560,func_151152A8,0x0B4,0xA4880012,0xA4890012,-,-,Normalize one closed record-value restore compiler GPR allocation cycle,,,false
