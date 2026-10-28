@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record phase and lifetime](WORKING_NOTES/1763-record-phase-lifetime-match-20261028.md): direct 48-word C, signed callbacks and live homes, single phase adjustment, late clock aliases and connected original dispatcher/release code. Strict 136-byte image, zero guards. Native total 69.76%, 289 more to 75%.
+
 - [Record value restore](WORKING_NOTES/1762-record-value-restore-match-20261028.md): complete 48-word guarded C; signed halfwords, wrapped updates, separately rounded float/truncation path, lazy aliases and original registry/callback windows. Preserve 83 neighbors and the strict 187-byte image. Native total 69.74%, 290 more to 75%.
 
 - [EEPROM block reader](WORKING_NOTES/1761-eeprom-block-read-match-20261028.md): direct 45-word C plus three alignment words; signed lengths, complete blocks, byte wrapping, three original caller windows and bounded provider lifetime. Strict 137-byte image, zero guards. Native total 69.72%, 291 more to 75%.

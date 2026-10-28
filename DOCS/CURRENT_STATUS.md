@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c57fb83`; tools are committed before the consumer pin.
+  checkpoint pins tools `35c985f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Record value restore matched as guarded C**: [Note 1762](WORKING_NOTES/1762-record-value-restore-match-20261028.md). `func_151152A8` matches its complete 48-word slot with no frame, six bindings and 25 checked guards for one closed register-allocation cycle. Both copies pass eight fresh methods covering signed halfwords, wrapped arithmetic, float truncation, lazy aliases, the original registry/callback windows and native32 controls. Preserve 83 neighbors and ten GLOBAL_ASM routines; production reproduces the strict 187-byte image, including a closed three-name metadata reorder, with zero exclusions. Native total 3,840/5,506 (69.74%), Game 3,167/4,833 (65.53%), zero drift; 290 more to 75%. Next inspect `func_15169988`; `func_1514E920` remains parked and uncredited.
+**Record phase and lifetime restored as direct C**: [Note 1763](WORKING_NOTES/1763-record-phase-lifetime-match-20261028.md). `func_15169988` matches all 48 words with frame 24, five bindings and zero guards. Both tools copies pass eight fresh methods covering signed callback selectors, live argument homes, one-step phase wrapping, late lifetime-clock reads, native32 controls and the original dispatcher with 56 retained release-helper words. Preserve three neighbors; production reproduces the strict 136-byte image with zero exclusions. Native total 3,841/5,506 (69.76%), Game 3,168/4,833 (65.55%), zero drift; 289 more to 75%. Next inspect `func_1512B53C`; `func_1514E920` remains parked and uncredited.
+
+**Record value restore matched as guarded C**: [Note 1762](WORKING_NOTES/1762-record-value-restore-match-20261028.md). `func_151152A8` matches its complete 48-word slot with no frame, six bindings and 25 checked guards for one closed register-allocation cycle. Both copies pass eight fresh methods covering signed halfwords, wrapped arithmetic, float truncation, lazy aliases, the original registry/callback windows and native32 controls. Preserve 83 neighbors and ten GLOBAL_ASM routines; production reproduces the strict 187-byte image, including a closed three-name metadata reorder, with zero exclusions. Native total 3,840/5,506 (69.74%), Game 3,167/4,833 (65.53%), zero drift; 290 more to 75%. That then-private `func_15169988` is adopted in Note 1763 above; `func_1514E920` remains parked and uncredited.
 
 **EEPROM block reader restored as direct C**: [Note 1761](WORKING_NOTES/1761-eeprom-block-read-match-20261028.md). `func_151DD3A0` matches all 45 body words in its 48-word slot, frame 48 and three call bindings, with zero guards. Both tools copies pass eight fresh methods covering signed lengths, complete partial blocks, byte-address wrapping, provider capture/clobbers, three original caller windows and native32 controls. Actual three-command Make and production reproduce the strict 137-byte image with zero exclusions; preserve all helpers and current caller placeholders. Native total 3,839/5,506 (69.72%), Game 3,166/4,833 (65.51%), zero drift; 291 more to 75%. That then-private `func_151152A8` is adopted in Note 1762 above; `func_1514E920` remains parked and uncredited.
 
