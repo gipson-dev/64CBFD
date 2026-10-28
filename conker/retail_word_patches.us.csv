@@ -23866,3 +23866,5 @@ generated_142560,func_15116058,0x09C,0x948F0016,0x948C0016,-,-,Close texture-coo
 generated_142560,func_15116058,0x0A0,0x24630010,0x25080010,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
 generated_142560,func_15116058,0x0A4,0x00CF082A,0x00CC082A,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
 generated_142560,func_15116058,0x0AC,0x91280000,0x91270000,-,-,Close texture-coordinate GPR lifetimes and independent opening address schedule,,,false
+generated_1C2C60,func_15198054,0x098,0x544B0005,0x55620005,-,-,Normalize symmetric branch-likely comparison operand order,,,false
+generated_1C2C60,func_1519986C,0x098,0x544B0005,0x55620005,-,-,Normalize symmetric branch-likely comparison operand order,,,false

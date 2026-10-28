@@ -1,8 +1,12 @@
 # Update Log
 
+## 2026-10-27 Bound-Object Reference Event Pair
+
+**Bound-object reference event pair restored as guarded C**: [Note 1747](WORKING_NOTES/1747-reference-event-pair-match-20261027.md). `func_15198054` and `func_1519986C` each match all 47 words with one symmetric-branch operand guard. Both tools copies pass eight fresh canonical methods, including the actual 20-entry registry and complete original/retained dispatcher. Production preserves 67 neighbors and reproduces the strict 256-byte image with zero exclusions. Native total 3,825/5,506 (69.47%), Game 3,152/4,833 (65.22%), zero drift; 305 more to 75%. `func_1514E920` remains a parked private screen. Next screened placeholder `func_15097910` remains uncredited.
+
 ## 2026-10-27 Matrix-Bound Point Interpolation
 
-**Matrix-bound point interpolation restored as direct C**: [Note 1746](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md). All 46 words match with zero new guards; both tools copies pass eight fresh canonical methods. The six-argument O32 interface is checked through three original caller windows and original/retained transform-helper routes. Production reproduces the strict 142-byte image with zero exclusions, preserving 22 neighbors. Native total 3,823/5,506 (69.43%), Game 3,150/4,833 (65.18%), zero drift; 307 more to 75%. Next screened placeholder `func_1514E920` remains uncredited.
+**Matrix-bound point interpolation restored as direct C**: [Note 1746](WORKING_NOTES/1746-matrix-point-interpolation-match-20261027.md). All 46 words match with zero new guards; both tools copies pass eight fresh canonical methods. The six-argument O32 interface is checked through three original caller windows and original/retained transform-helper routes. Production reproduces the strict 142-byte image with zero exclusions, preserving 22 neighbors. Native total 3,823/5,506 (69.43%), Game 3,150/4,833 (65.18%), zero drift; 307 more to 75%. That `func_1514E920` screen is parked and uncredited; see Note 1747 above.
 
 ## 2026-10-27 Vertex Texture-Coordinate Shift
 

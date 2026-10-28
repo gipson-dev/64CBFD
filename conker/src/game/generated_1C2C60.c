@@ -213,9 +213,36 @@ s32 func_15197C10() {
     return 0;
 }
 
-s32 func_15198054() {
-    return 0;
+typedef struct {
+    u8 *object;
+    u8 identifier;
+    u8 reserved5[3];
+} BoundObjectReference;
+void func_151993B4(u8 *);
+void func_1516972C(u8 *);
+
+/* Retire a matching bound object, or update its reference after replacement. */
+void func_15198054(u8 *owner, s32 eventAddress, u8 command) {
+    u8 *event = (u8 *)eventAddress;
+    BoundObjectReference *reference = *(BoundObjectReference **)(owner + 0x98);
+
+    if ((command == 0) || (command == 2) || (command == 8)) {
+        if ((reference->object == *(u8 **)event) ||
+            (reference->identifier == event[4])) {
+            func_151993B4(owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *object = *(u8 **)event;
+        if (object == reference->object) {
+            reference->object = *(u8 **)(event + 4);
+            reference->identifier = event[9];
+        } else if (reference->object == *(u8 **)(event + 4)) {
+            reference->object = object;
+            reference->identifier = event[8];
+        }
+    }
 }
+
 
 s32 func_15198110() {
     return 0;
@@ -358,9 +385,28 @@ void func_15199834(u8 *arg0) {
     }
 }
 
-s32 func_1519986C() {
-    return 0;
+/* Retire a matching bound object, or update its reference after replacement. */
+void func_1519986C(u8 *owner, s32 eventAddress, u8 command) {
+    u8 *event = (u8 *)eventAddress;
+    BoundObjectReference *reference = *(BoundObjectReference **)(owner + 0x98);
+
+    if ((command == 0) || (command == 2) || (command == 0x26)) {
+        if ((reference->object == *(u8 **)event) ||
+            (reference->identifier == event[4])) {
+            func_1516972C(owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *object = *(u8 **)event;
+        if (object == reference->object) {
+            reference->object = *(u8 **)(event + 4);
+            reference->identifier = event[9];
+        } else if (reference->object == *(u8 **)(event + 4)) {
+            reference->object = object;
+            reference->identifier = event[8];
+        }
+    }
 }
+
 
 s32 func_15199928(s32 arg0) {
     func_15199980(arg0);
