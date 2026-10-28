@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Dependent record load](WORKING_NOTES/1790-dependent-record-load-match-20261028.md): direct 55-word C, live prerequisite and destination checks, all 121 index pairs and original caller/helper integration. Preserve eight neighbors and the strict 165-byte image. Native total 70.25%, 262 more to 75%.
 - [Record initializer](WORKING_NOTES/1789-record-initializer-match-20261028.md): direct 54-word C, variadic asset load, resource publication and ready-flag ordering; fifteen original call sites and both complete neighboring wrappers. Preserve eight neighbors and the strict 164-byte image. Native total 70.23%, 263 more to 75%.
 - [Adjacent record load](WORKING_NOTES/1788-adjacent-record-load-match-20261028.md): direct 49-word C, live row reloads, actual variadic loader ABI and table aliases; original caller and helper integration. Preserve eight neighbors and the strict 149-byte image. Native total 70.21%, 264 more to 75%.
 - [Two-vector effect callback](WORKING_NOTES/1787-two-vector-effect-match-20261028.md): direct 49-word C with copied vectors and sixteen provider arguments; three original callback windows and complete 85-word provider coverage. Preserve 77 neighbors and the strict 226-byte image. Native total 70.20%, 265 more to 75%.

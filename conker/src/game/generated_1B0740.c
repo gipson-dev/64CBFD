@@ -52,11 +52,30 @@ void func_15183974(s32 arg0) {
     }
 }
 
-s32 func_151839F0() {
-    return 0;
+extern u8 D_800DDF68[];
+
+/* Load a second record after its prerequisite record becomes available. */
+void func_151839F0(s32 requiredIndex, s32 index) {
+    s32 *result;
+
+    if (D_800DDE80[requiredIndex].words[0] == 0) {
+        func_15183ACC(requiredIndex);
+    }
+    if (D_800DDE80[requiredIndex].words[0] != 0) {
+        if (D_800DDE80[index].words[0] == 0) {
+            result = func_1502B6BC(0, 0, 0, 2, 9, index + 0xAD);
+            if (result != NULL) {
+                D_800DDE80[index].words[0] = (s32)result;
+                D_800DDE80[index].words[1] = result[0];
+                D_800DDE80[index].words[2] = result[2];
+                D_800DDE80[index].words[3] = result[6];
+                D_800DDE80[index].words[4] = 0;
+                D_800DDF68[index] = 1;
+            }
+        }
+    }
 }
 
-extern u8 D_800DDF68[];
 s32 func_1510CE60(void *data, s32 unresolvedOnly, s32 retain, s32 priority, s32 *output);
 
 /* Load an empty record and prepare its referenced graphics resources. */
