@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Color record pulse](WORKING_NOTES/1771-color-record-pulse-match-20261028.md): complete 48-word direct C, canonical descriptor callback, countdown/color/clock semantics, original dispatcher and retained helper integration. Preserve 22 neighbors; strict 143-byte image. Native total 69.91%, 281 more to 75%.
 - [Owner link event gate](WORKING_NOTES/1770-owner-link-event-gate-match-20261028.md): complete 48-word guarded C, actual 74-entry callback dispatcher, alias/fault/native controls and preserved neighbors. Strict 134-byte image; Native total 69.89%, 282 more to 75%.
 
 - [Recursive dependency readiness](WORKING_NOTES/1769-recursive-dependency-readiness-match-20261028.md): complete 48-word guarded C, actual recursive graphs and full caller, exhaustive entry joins and native32 controls. Preserve 18 neighbors with the retail no-unroll profile; strict 146-byte image. Native total 69.87%, 283 more to 75%.

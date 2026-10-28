@@ -285,8 +285,41 @@ Type5AColorRecord *func_151A4FD0(s32 selector, u32 value, s32 red, s32 green,
     return record;
 }
 
-s32 func_151A5070() {
-    return 0;
+void func_10011FA0(s32 *);
+/* Update a finite lifetime and pulse the record color between 0x90 and 0xFF. */
+void func_151A5070(struct102 *object) {
+    Type5AColorRecord *record = (Type5AColorRecord *)object;
+    s32 remaining = (s32)record->value;
+    s32 step;
+    s32 shade;
+
+    if (remaining != 0) {
+        remaining = (s32)((u32)remaining - (u32)D_800BE9E4);
+        if (remaining <= 0) {
+            func_1516972C((struct102 *)record);
+            return;
+        }
+        record->value = remaining;
+    }
+    if (record->callback == 0) {
+        func_10011FA0((s32 *)2);
+    }
+    step = (s32)((u32)D_800BE9E4 * 2U);
+    shade = record->red;
+    if (record->state == 0) {
+        shade = (s32)((u32)shade - (u32)step);
+        if (shade < 0x90) {
+            shade = 0x90;
+            record->state = 1;
+        }
+    } else {
+        shade = (s32)((u32)shade + (u32)step);
+        if (shade >= 0x100) {
+            shade = 0xFF;
+            record->state = 0;
+        }
+    }
+    record->red = shade;
 }
 
 void func_151A5130(arg0, arg1, arg2)
