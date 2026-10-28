@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include <string.h>
 #include "structs.h"
 void func_15143134(f32 *, f32 *, u8 *);
 
@@ -9,8 +10,41 @@ extern void (*D_800887B8[])();
 
 extern void (*D_800887C8[])(u8 *, s32, u8);
 
-s32 func_150C5370() {
-    return 0;
+typedef struct {
+    f32 first[3];
+    f32 second[3];
+    u8 attributes[12];
+} Type46DistancePayload;
+
+typedef struct {
+    u8 header[0x10];
+    s32 active;
+    s32 state;
+    Type46DistancePayload payload;
+    u8 pad3C[0x84];
+    f32 distance;
+    u32 tail;
+} Type46DistanceRecord;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+f32 func_15143E64(f32 *);
+
+/* Create a type-0x46 record and cache the distance between its first two points. */
+Type46DistanceRecord *func_150C5370(const Type46DistancePayload *payload, u32 extraBytes) {
+    Type46DistanceRecord *record;
+    f32 delta[3];
+
+    record = func_15167A68(0x46, 0, (s32)(extraBytes + 0xC8u), 1, 0xFF, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(&record->payload, payload, 0x24);
+    delta[0] = record->payload.first[0] - record->payload.second[0];
+    delta[1] = record->payload.first[1] - record->payload.second[1];
+    delta[2] = record->payload.first[2] - record->payload.second[2];
+    record->distance = func_15143E64(delta);
+    record->active = 1;
+    record->state = 0;
+    return record;
 }
 
 void func_150C5430() {

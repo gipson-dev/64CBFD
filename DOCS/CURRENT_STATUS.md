@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `df938bc`; tools are committed before the consumer pin.
+  checkpoint pins tools `1e78e1a`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor volume selection restored as direct C**: [Note 1774](WORKING_NOTES/1774-actor-volume-selector-match-20261028.md). `func_150A2EE4` matches all 48 words, frame 24 and seven bindings with zero guards. Recover masked unsigned bounds, low flag bits, the inline 812-byte actor table and mixed pointer/float arguments. Both tools copies pass eight fresh methods, including the original command-13 actor route and all 38 retained plane-helper words. Preserve 27 neighbors and reproduce the strict 158-byte image with zero exclusions. Native total 3,852/5,506 (69.96%), Game 3,179/4,833 (65.78%), zero drift; 278 more to 75%. Next inspect `func_150C5370`; `func_1514E920` remains parked and uncredited.
+**Type-0x46 distance record restored as guarded C**: [Note 1775](WORKING_NOTES/1775-type46-distance-record-match-20261028.md). `func_150C5370` matches all 48 retail words, frame 48 and three call bindings. Recover its typed 36-byte payload, wrapped allocation size, copied-point distance and returned record. Eight checked guards normalize independent scheduling and the final result register, inserting one return move. Both tools copies pass eight fresh methods, all 58 original caller words and 71 retained helper words. Preserve 14 neighbors and reproduce the strict 145-byte image with zero exclusions. Native total 3,853/5,506 (69.98%), Game 3,180/4,833 (65.80%), zero drift; 277 more to 75%. Next inspect `func_15107A20`; `func_1514E920` remains parked and uncredited.
+
+**Actor volume selection restored as direct C**: [Note 1774](WORKING_NOTES/1774-actor-volume-selector-match-20261028.md). `func_150A2EE4` matches all 48 words, frame 24 and seven bindings with zero guards. Recover masked unsigned bounds, low flag bits, the inline 812-byte actor table and mixed pointer/float arguments. Both tools copies pass eight fresh methods, including the original command-13 actor route and all 38 retained plane-helper words. Preserve 27 neighbors and reproduce the strict 158-byte image with zero exclusions. Native total 3,852/5,506 (69.96%), Game 3,179/4,833 (65.78%), zero drift; 278 more to 75%. That then-private `func_150C5370` is adopted in Note 1775 above; `func_1514E920` remains parked and uncredited.
 
 **Record sound selection restored as direct C**: [Note 1773](WORKING_NOTES/1773-record-range-sound-match-20261028.md). `func_1509F4E8` matches all 48 words, frame 56 and four bindings with zero guards. Recover its u16 result, unsigned distance clamp against a signed record limit, wrapped byte-sized choice span and explicit selector-before-coordinate read order. Both tools copies pass eight fresh methods, including the original caller/return path and retained 29-word sound wrapper. Preserve all 16 neighbors and reproduce the strict 149-byte image with zero exclusions. Native total 3,851/5,506 (69.94%), Game 3,178/4,833 (65.76%), zero drift; 279 more to 75%. That then-private `func_150A2EE4` is adopted in Note 1774 above; `func_1514E920` remains parked and uncredited.
 

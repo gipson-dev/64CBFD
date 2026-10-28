@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Type-0x46 distance record](WORKING_NOTES/1775-type46-distance-record-match-20261028.md): complete 48-word guarded C, typed payload and distance, all 58 original caller words and 71 retained helper words. Preserve 14 neighbors; strict 145-byte image. Native total 69.98%, 277 more to 75%.
 - [Actor volume selection](WORKING_NOTES/1774-actor-volume-selector-match-20261028.md): complete 48-word direct C, inline actor positions, masked bounds/flags, original dispatcher return and retained plane helper. Preserve 27 neighbors; strict 158-byte image. Native total 69.96%, 278 more to 75%.
 
 - [Record sound selection](WORKING_NOTES/1773-record-range-sound-match-20261028.md): complete 48-word direct C, explicit mutable-coordinate read order, unsigned distance clamp, original caller return and retained sound wrapper. Preserve 16 neighbors; strict 149-byte image. Native total 69.94%, 279 more to 75%.

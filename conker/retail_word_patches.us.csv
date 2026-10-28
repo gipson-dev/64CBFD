@@ -23936,3 +23936,11 @@ generated_1028F0,func_150D596C,0x074,0x8C430000,0x8C440000,-,-,Normalize closed 
 generated_1028F0,func_150D596C,0x078,0x8CA40000,0x8CA30000,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
 generated_1028F0,func_150D596C,0x09C,0x546A0005,0x55440005,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
 generated_1028F0,func_150D596C,0x0A4,0xAC440000,0xAC430000,-,-,Normalize closed owner/event pointer register exchange and symmetric comparison,,,false
+generated_F2820,func_150C5370,0x040,0x1000001A,0x1000001B,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x060,0x27A40020,0xC4640018,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x064,0xC4640018,0xC4660024,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x068,0xC4660024,0x27A40020,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x098,0x8FA2002C,0x8FA3002C,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x0A0,0xE44000C0,0xE46000C0,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x0A4,0xAC580010,0xAC780010,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
+generated_F2820,func_150C5370,0x0A8,0xAC400014,0xAC600014,-,-,Normalize type46 distance record independent schedule and saved result register,0x00601025,-,false
