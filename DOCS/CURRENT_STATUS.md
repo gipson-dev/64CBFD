@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `50e7703`; tools are committed before the consumer pin.
+  checkpoint pins tools `1c2d8ca`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Actor direction point restored as direct C**: [Note 1776](WORKING_NOTES/1776-actor-direction-point-match-20261028.md). `func_15107A20` matches all 48 words, frame 56 and two bindings with zero guards. Recover its five-argument void interface, signed angles, late actor scale and optional origin output. Both tools copies pass eight fresh methods, both original caller return paths and retained origin/direction/trig/interpolation/copy instructions. Preserve 36 neighbors and reproduce the strict 144-byte image with zero exclusions. Native total 3,854/5,506 (70.00%), Game 3,181/4,833 (65.82%), zero drift; 276 more to 75%. Next inspect `func_151DC8BC`; `func_1514E920` remains parked and uncredited.
+**Type-0x5B point effect restored as direct C**: [Note 1777](WORKING_NOTES/1777-type91-point-effect-match-20261028.md). `func_151DC8BC` matches all 48 words, frame 72 and three call bindings with zero guards. Recover its six-argument void interface, optional companion effects and complete 20-byte point/accumulator/flag payload. Both tools copies pass eight fresh methods, the two original command-27 dispatcher routes and retained factory/allocation/list/zero/copy instructions. Preserve both neighbors and reproduce the strict 146-byte image with zero exclusions. Native total 3,855/5,506 (70.01%), Game 3,182/4,833 (65.84%), zero drift; 275 more to 75%. Next inspect `func_15131828`; `func_1514E920` remains parked and uncredited.
+
+**Actor direction point restored as direct C**: [Note 1776](WORKING_NOTES/1776-actor-direction-point-match-20261028.md). `func_15107A20` matches all 48 words, frame 56 and two bindings with zero guards. Recover its five-argument void interface, signed angles, late actor scale and optional origin output. Both tools copies pass eight fresh methods, both original caller return paths and retained origin/direction/trig/interpolation/copy instructions. Preserve 36 neighbors and reproduce the strict 144-byte image with zero exclusions. Native total 3,854/5,506 (70.00%), Game 3,181/4,833 (65.82%), zero drift; 276 more to 75%. That then-private `func_151DC8BC` is adopted in Note 1777 above; `func_1514E920` remains parked and uncredited.
 
 **Type-0x46 distance record restored as guarded C**: [Note 1775](WORKING_NOTES/1775-type46-distance-record-match-20261028.md). `func_150C5370` matches all 48 retail words, frame 48 and three call bindings. Recover its typed 36-byte payload, wrapped allocation size, copied-point distance and returned record. Eight checked guards normalize independent scheduling and the final result register, inserting one return move. Both tools copies pass eight fresh methods, all 58 original caller words and 71 retained helper words. Preserve 14 neighbors and reproduce the strict 145-byte image with zero exclusions. Native total 3,853/5,506 (69.98%), Game 3,180/4,833 (65.80%), zero drift; 277 more to 75%. That then-private `func_15107A20` is adopted in Note 1776 above; `func_1514E920` remains parked and uncredited.
 

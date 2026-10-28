@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_151DC8BC` in [Note 1777](WORKING_NOTES/1777-type91-point-effect-match-20261028.md): all 48 words, frame 72, three bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify the six-argument ABI, optional companion call, all 20 payload bytes, both original command-27 routes, five retained helpers, native32 semantics and aliases; preserve both neighbors and reproduce the strict 146-byte image. Native total 70.01%, 275 more to 75%.
+
 - [x] Qualify and adopt `func_15107A20` in [Note 1776](WORKING_NOTES/1776-actor-direction-point-match-20261028.md): all 48 words, frame 56, two bindings and zero guards. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify signed angles, late scale, optional origin, both original caller return paths, five retained helpers, native32 semantics and aliases; preserve 36 neighbors and reproduce the strict 144-byte image. Native total 70.00%, 276 more to 75%.
 
 - [x] Qualify and adopt `func_150C5370` in [Note 1775](WORKING_NOTES/1775-type46-distance-record-match-20261028.md): all 48 retail words, frame 48, three bindings and eight checked scheduling/result-register guards including one return move. Both copies pass eight fresh methods, two fresh installed checks and six fingerprinted semantic reuses. Verify the typed payload, wrapped allocation size, original 58-word caller, retained 71 helper words, native32 semantics and aliases; preserve 14 neighbors and reproduce the strict 145-byte image. Native total 69.98%, 277 more to 75%.
