@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9c51017`; tools are committed before the consumer pin.
+  checkpoint pins tools `5f66100`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. Next inspect `func_15159370`; `func_1514E920` remains parked and uncredited.
+**Ordered record classifier restored as direct C**: [Note 1755](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md). `func_15159370` matches all 47 words/frame zero/two bindings with zero guards. Both tools copies pass eight fresh methods, including writable record/output aliases, exhaustive native type pairs, faults/rebases and the complete original caller with allocation/release branches. Production preserves 36 neighbors and reproduces the strict 130-byte image with zero exclusions. Native total 3,833/5,506 (69.61%), Game 3,160/4,833 (65.38%), zero drift; 297 more to 75%. Next inspect `func_15171F04`; `func_1514E920` remains parked and uncredited.
+
+**Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. That then-private `func_15159370` is adopted in Note 1755 above; `func_1514E920` remains parked and uncredited.
 
 **Spawn-result query restored as direct C**: [Note 1753](WORKING_NOTES/1753-spawn-result-query-match-20261027.md). `func_1507E114` matches all 47 words/frame 96/nine bindings with zero guards. Both tools copies pass eight fresh methods, including the actual unused-pointer caller and return store, the complete original spawn helper, output-home/alias/fault cases and native32 checks. The five-command GLOBAL_ASM Make route preserves 15 neighbors and reproduces the strict 141-byte image with zero exclusions. Native total 3,831/5,506 (69.58%), Game 3,158/4,833 (65.34%), zero drift; 299 more to 75%. That then-private `func_150D2110` is adopted in Note 1754 above; `func_1514E920` remains parked and uncredited.
 

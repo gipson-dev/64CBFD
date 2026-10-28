@@ -253,8 +253,40 @@ s32 func_151592B8(u8 *actor, u8 mode) {
     return result;
 }
 
-s32 func_15159370() {
-    return 0;
+extern u8 D_800BE616;
+
+/* Apply each classification rule in order; later matching rules replace the output byte. */
+s32 func_15159370(u8 *record, u8 *classification) {
+    s32 matched = 0;
+
+    if (D_800BE616 != 0) {
+        *classification = 0;
+        matched = 1;
+    }
+    if (record[0x3B] == 1) {
+        *classification = 0;
+        matched = 1;
+    }
+    if ((record[5] == 5) || (record[5] == 2)) {
+        *classification = 1;
+        matched = 1;
+    }
+    switch (record[4]) {
+        case 8:
+            *classification = 2;
+            matched = 1;
+            break;
+        case 10:
+            *classification = 3;
+            matched = 1;
+            break;
+        case 0x29:
+        case 0x2A:
+            *classification = 4;
+            matched = 1;
+            break;
+    }
+    return matched;
 }
 
 s32 func_1515942C() {

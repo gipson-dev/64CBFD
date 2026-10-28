@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Ordered record classifier](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md): direct 47-word leaf C, writable alias/rule priority, exhaustive native pairs and complete original caller integration; strict 130-byte image, zero guards. Native total 69.61%, 297 more to 75%.
+
 - [Phase-cycle spawn](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md): direct 47-word C, exact packet/padding preservation, original caller and constructor/copy integration; strict 140-byte image and zero guards. Native total 69.60%, 298 more to 75%.
 
 - [Spawn-result query](WORKING_NOTES/1753-spawn-result-query-match-20261027.md): direct 47-word C with eleven output-helper arguments, original caller/return store and complete original-helper paths, preserving unwritten guest result homes; strict 141-byte image, zero guards. Native total 69.58%, 299 more to 75%.

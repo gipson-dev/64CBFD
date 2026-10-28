@@ -2,7 +2,11 @@
 
 2026-10-27:
 
-**Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. Next inspect `func_15159370`; `func_1514E920` remains parked and uncredited.
+**Ordered record classifier restored as direct C**: [Note 1755](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md). `func_15159370` matches all 47 words/frame zero/two bindings with zero guards. Both tools copies pass eight fresh methods, including writable record/output aliases, exhaustive native type pairs, faults/rebases and the complete original caller with allocation/release branches. Production preserves 36 neighbors and reproduces the strict 130-byte image with zero exclusions. Native total 3,833/5,506 (69.61%), Game 3,160/4,833 (65.38%), zero drift; 297 more to 75%. Next inspect `func_15171F04`; `func_1514E920` remains parked and uncredited.
+
+2026-10-27:
+
+**Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. That then-private `func_15159370` is adopted in Note 1755 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
