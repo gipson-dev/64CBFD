@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [First marked record bit](WORKING_NOTES/1786-record-first-marked-bit-match-20261028.md): direct 49-word C, flag gate, signed table index and bit-31-safe scan; original command-0x17 and lookup execution. Preserve 33 neighbors and the strict 149-byte image. Native total 70.18%, 266 more to 75%.
 - [Recursive dependency visit and mark](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md): typed list and visitor, live reloads, state byte and bitmap update; all 49 words with 16 checked register guards. Preserve 18 neighbors and the strict 152-byte image; original recursive caller and wrapper execute. Native total 70.16%, 267 more to 75%.
 - [Selector payload effect](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md): direct 49-word C, two-argument callback, category-specific IDs and 24-byte payload. Preserve all 81 neighbors and the strict 149-byte image; original caller and both helpers execute. Native total 70.14%, 268 more to 75%.
 - [Owner timeout transition](WORKING_NOTES/1783-owner-timeout-transition-match-20261028.md): direct 49-word C, signed wrapped timer, state-dependent retirement and original dispatcher/helper integration. Preserve all 22 neighbors and the strict 144-byte image. Native total 70.12%, 269 more to 75%.

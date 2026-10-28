@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `26ab7c6`; tools are committed before the consumer pin.
+  checkpoint pins tools `5b1c463`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Recursive dependency visitor restored as guarded C**: [Note 1785](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md). `func_1509CE64` matches all 49 words, frame 56 and four bindings with 16 checked register guards. Recover the typed visitor callback, live list reloads, state-byte update and bitmap mark. Both tools copies pass eight fresh and two installed checks, including actual recursive calls, shared dependency graphs and mutation aliases. Preserve 18 neighbors and reproduce the strict 152-byte image with zero exclusions. Native total 3,863/5,506 (70.16%), Game 3,190/4,833 (66.00%), zero drift; 267 more to 75%. Next inspect `func_151140C4`; `func_1514E920` remains parked and uncredited.
+**First marked record bit restored as direct C**: [Note 1786](WORKING_NOTES/1786-record-first-marked-bit-match-20261028.md). `func_151140C4` matches all 49 words with no frame or guards. Recover the record flag gate, signed table index and first-set-bit scan, including defined bit-31 handling. Both tools copies pass eight fresh and two installed checks; preserve all 33 neighbors and reproduce the strict 149-byte image with zero exclusions. Original command-0x17 and lookup routes pass. Native total 3,864/5,506 (70.18%), Game 3,191/4,833 (66.03%), zero drift; 266 more to 75%. Next inspect `func_1514F308`; `func_1514E920` remains parked and uncredited.
+
+**Recursive dependency visitor restored as guarded C**: [Note 1785](WORKING_NOTES/1785-dependency-visit-mark-match-20261028.md). `func_1509CE64` matches all 49 words, frame 56 and four bindings with 16 checked register guards. Recover the typed visitor callback, live list reloads, state-byte update and bitmap mark. Both tools copies pass eight fresh and two installed checks, including actual recursive calls, shared dependency graphs and mutation aliases. Preserve 18 neighbors and reproduce the strict 152-byte image with zero exclusions. Native total 3,863/5,506 (70.16%), Game 3,190/4,833 (66.00%), zero drift; 267 more to 75%. The former next candidate, `func_151140C4`, is adopted in Note 1786 above; `func_1514E920` remains parked and uncredited.
 
 **Selector payload effect restored as direct C**: [Note 1784](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md). `func_1500A6D8` matches all 49 words, frame 80 and seven bindings without guards. Recover category-dependent selection, the 24-byte payload, allocation failure and the two-argument callback. Both tools copies pass eight fresh and two installed checks; preserve all 81 neighbors and the strict 149-byte image with zero exclusions. Native total 3,862/5,506 (70.14%), Game 3,189/4,833 (65.98%), zero drift; 268 more to 75%. The former next candidate, `func_1509CE64`, is adopted in Note 1785 above; `func_1514E920` remains parked and uncredited.
 

@@ -155,7 +155,18 @@ s32 func_15114050(u8 *arg0, s32 arg1) {
     return 0;
 }
 
-s32 func_151140C4() {
+/* Return the first set record-mask bit, or zero when disabled or empty. */
+s32 func_151140C4(u8 *record) {
+    s32 index = 0;
+    s32 mask;
+    if (record[0x4F] & 0x80) {
+        mask = D_800DBF94[(record - D_800DBEF4) / 0xA0];
+        for (; index < 32; index++) {
+            if (mask & (1U << index)) {
+                return index;
+            }
+        }
+    }
     return 0;
 }
 
