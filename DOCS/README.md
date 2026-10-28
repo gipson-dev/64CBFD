@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Animated quad setup wrapper](WORKING_NOTES/1756-quad-setup-wrapper-match-20261027.md): direct 47-word C, thirteen-slot ABI, late image-table reads and original caller/constructor integration; strict 165-byte image including a typed provider placeholder that remains uncredited. Native total 69.63%, 296 more to 75%.
+
 - [Ordered record classifier](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md): direct 47-word leaf C, writable alias/rule priority, exhaustive native pairs and complete original caller integration; strict 130-byte image, zero guards. Native total 69.61%, 297 more to 75%.
 
 - [Phase-cycle spawn](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md): direct 47-word C, exact packet/padding preservation, original caller and constructor/copy integration; strict 140-byte image and zero guards. Native total 69.60%, 298 more to 75%.

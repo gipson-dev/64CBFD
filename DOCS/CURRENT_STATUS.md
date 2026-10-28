@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5f66100`; tools are committed before the consumer pin.
+  checkpoint pins tools `44b34ed`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Ordered record classifier restored as direct C**: [Note 1755](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md). `func_15159370` matches all 47 words/frame zero/two bindings with zero guards. Both tools copies pass eight fresh methods, including writable record/output aliases, exhaustive native type pairs, faults/rebases and the complete original caller with allocation/release branches. Production preserves 36 neighbors and reproduces the strict 130-byte image with zero exclusions. Native total 3,833/5,506 (69.61%), Game 3,160/4,833 (65.38%), zero drift; 297 more to 75%. Next inspect `func_15171F04`; `func_1514E920` remains parked and uncredited.
+**Animated quad setup wrapper restored as direct C**: [Note 1756](WORKING_NOTES/1756-quad-setup-wrapper-match-20261027.md). `func_15171F04` matches all 47 words/frame 48/five bindings with zero guards. Both tools copies pass eight fresh methods, including thirteen argument slots, late home/table reads, aliases, native32 controls and original caller/constructor integration. The geometry provider receives a typed interface but remains an uncredited placeholder; its four argument-home stores are explicitly included in the strict 165-byte image. Five other neighbors and all function addresses remain fixed. Native total 3,834/5,506 (69.63%), Game 3,161/4,833 (65.40%), zero drift; 296 more to 75%. Next inspect `func_151A18DC`; `func_1514E920` remains parked and uncredited.
+
+**Ordered record classifier restored as direct C**: [Note 1755](WORKING_NOTES/1755-record-priority-classifier-match-20261027.md). `func_15159370` matches all 47 words/frame zero/two bindings with zero guards. Both tools copies pass eight fresh methods, including writable record/output aliases, exhaustive native type pairs, faults/rebases and the complete original caller with allocation/release branches. Production preserves 36 neighbors and reproduces the strict 130-byte image with zero exclusions. Native total 3,833/5,506 (69.61%), Game 3,160/4,833 (65.38%), zero drift; 297 more to 75%. That then-private `func_15171F04` is adopted in Note 1756 above; `func_1514E920` remains parked and uncredited.
 
 **Phase-cycle spawn restored as direct C**: [Note 1754](WORKING_NOTES/1754-phase-cycle-spawn-match-20261027.md). `func_150D2110` matches all 47 words/frame 80/four bindings with zero guards. Both tools copies pass eight fresh methods, including the original caller, original/retained constructor and copy helpers, full packet padding, allocation, alias/fault and native32 checks. Production preserves six neighbors and reproduces the strict 140-byte image with zero exclusions. Native total 3,832/5,506 (69.60%), Game 3,159/4,833 (65.36%), zero drift; 298 more to 75%. That then-private `func_15159370` is adopted in Note 1755 above; `func_1514E920` remains parked and uncredited.
 
