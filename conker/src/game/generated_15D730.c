@@ -95,8 +95,18 @@ s32 func_15131814(s32 arg0, s32 arg1) {
     return 0;
 }
 
-s32 func_15131828() {
-    return 0;
+f32 func_151423D8(u8);
+
+/* Write the two phase-driven offsets, then advance the byte phases by the live tick count. */
+void func_15131828(u8 *record, f32 *amplitudes, u8 *phases, u8 *rates) {
+    f32 sample;
+
+    sample = func_151423D8((u8)(phases[0] - 0x40));
+    *(f32 *)(record + 0x4C) = sample * amplitudes[0];
+    sample = func_151423D8((u8)(phases[1] - 0x40));
+    *(f32 *)(record + 0x54) = sample * amplitudes[1];
+    phases[0] += rates[0] * (u32)D_800BE9E4;
+    phases[1] += rates[1] * (u32)D_800BE9E4;
 }
 
 /* The mixed pointer/float ABI carries arg1's raw bits in a1. */

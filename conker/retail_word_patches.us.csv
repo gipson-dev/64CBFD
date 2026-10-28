@@ -23944,3 +23944,5 @@ generated_F2820,func_150C5370,0x098,0x8FA2002C,0x8FA3002C,-,-,Normalize type46 d
 generated_F2820,func_150C5370,0x0A0,0xE44000C0,0xE46000C0,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
 generated_F2820,func_150C5370,0x0A4,0xAC580010,0xAC780010,-,-,Normalize type46 distance record independent schedule and saved result register,,,false
 generated_F2820,func_150C5370,0x0A8,0xAC400014,0xAC600014,-,-,Normalize type46 distance record independent schedule and saved result register,0x00601025,-,false
+generated_15D730,func_15131828,0x03C,0x46002182,0x46040182,-,-,Normalize record phase-offset commutative floating multiply operand order,,,false
+generated_15D730,func_15131828,0x070,0x46004282,0x46080282,-,-,Normalize record phase-offset commutative floating multiply operand order,,,false

@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record planar phase offsets](WORKING_NOTES/1778-record-planar-phase-match-20261028.md): explicit sequencing, 48-word guarded C, all four original callers and both retained helpers. Preserve 30 neighbors; strict 149-byte image. Native total 70.03%, 274 more to 75%.
 - [Type-0x5B point effect](WORKING_NOTES/1777-type91-point-effect-match-20261028.md): direct 48-word C, six-argument interface, complete 20-byte payload, both original command-27 routes and five retained helpers. Preserve both neighbors; strict 146-byte image. Native total 70.01%, 275 more to 75%.
 - [Actor direction point](WORKING_NOTES/1776-actor-direction-point-match-20261028.md): direct 48-word C, typed five-argument interface, both original caller return paths and five retained helpers. Preserve 36 neighbors; strict 144-byte image. Native total 70.00%, 276 more to 75%.
 - [Type-0x46 distance record](WORKING_NOTES/1775-type46-distance-record-match-20261028.md): complete 48-word guarded C, typed payload and distance, all 58 original caller words and 71 retained helper words. Preserve 14 neighbors; strict 145-byte image. Native total 69.98%, 277 more to 75%.
