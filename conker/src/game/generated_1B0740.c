@@ -7,7 +7,7 @@ typedef struct {
 extern Record15183974 D_800DDE80[11];
 extern u8 D_800A72D0[];
 extern u32 D_800DDF78[];
-s32 func_15183ACC();
+void func_15183ACC(s32 index);
 
 /* Non-matching placeholders for the text-only asm slice asm/1B0740.s. */
 
@@ -56,8 +56,26 @@ s32 func_151839F0() {
     return 0;
 }
 
-s32 func_15183ACC() {
-    return 0;
+extern u8 D_800DDF68[];
+s32 func_1510CE60(void *data, s32 unresolvedOnly, s32 retain, s32 priority, s32 *output);
+
+/* Load an empty record and prepare its referenced graphics resources. */
+void func_15183ACC(s32 index) {
+    s32 *result;
+
+    if (D_800DDE80[index].words[0] == 0) {
+        result = func_1502B6BC(0, 0, 0, 2, 9, index + 0xAD);
+        if (result != NULL) {
+            D_800DDE80[index].words[0] = (s32)result;
+            D_800DDE80[index].words[1] = result[0];
+            D_800DDE80[index].words[2] = result[2];
+            D_800DDE80[index].words[3] = result[6];
+            D_800DDF78[index] = result[4];
+            func_1510CE60((void *)D_800DDF78[index], 0, 1, 0x3E,
+                          &D_800DDE80[index].words[4]);
+            D_800DDF68[index] = 1;
+        }
+    }
 }
 
 Gfx *func_15183BA4(Gfx *dl, s32 selector, s16 arg2, s16 arg3) {
