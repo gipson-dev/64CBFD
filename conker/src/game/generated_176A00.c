@@ -109,8 +109,17 @@ s32 func_1514AD9C() {
     return 0;
 }
 
-s32 func_1514AF74() {
-    return 0;
+/* Damp billboard extents and integrate position before advancing vertical velocity. */
+s32 func_1514AF74(u8 *actor) {
+    *(f32 *)(actor + 0x2C) -= *(f32 *)(actor + 0x2C) * *(f32 *)(actor + 0x150);
+    *(f32 *)(actor + 0x30) -= *(f32 *)(actor + 0x30) * *(f32 *)(actor + 0x150);
+    *(f32 *)(actor + 0x38) += *(f32 *)(actor + 0x50) * D_800BE9A4 +
+        0.5f * *(f32 *)(actor + 0x4C) * D_800BE9A4 * D_800BE9A4;
+    *(f32 *)(actor + 0x50) += *(f32 *)(actor + 0x4C) * D_800BE9A4;
+    if (*(f32 *)(actor + 0x2C) < 10.0f || *(f32 *)(actor + 0x30) < 10.0f) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_1514B034() {

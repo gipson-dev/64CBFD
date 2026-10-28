@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Ballistic billboard motion](WORKING_NOTES/1760-ballistic-billboard-motion-match-20261028.md): direct 48-word C, quadratic position update, late velocity-clock read, rounding/alias controls and original dispatcher cleanup; strict 139-byte image, zero guards. Native total 69.71%, 292 more to 75%.
+
 - [Damped billboard motion](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md): direct 48-word C, rounded float operations, live clock aliases and original dispatcher cleanup; strict 132-byte image, zero guards. Native total 69.69%, 293 more to 75%.
 
 - [Screen overlay](WORKING_NOTES/1758-screen-overlay-match-20261027.md): direct 47-word SDK C, correct pointer interfaces, late alpha/dimension aliases, full original parent and retained rectangle; strict 145-byte image, zero guards. Native total 69.67%, 294 more to 75%.

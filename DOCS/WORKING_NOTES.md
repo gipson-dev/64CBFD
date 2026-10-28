@@ -1,8 +1,12 @@
 # Working Notes
 
+2026-10-28:
+
+**Ballistic billboard motion restored as direct C**: [Note 1760](WORKING_NOTES/1760-ballistic-billboard-motion-match-20261028.md). `func_1514AF74` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering quadratic float rounding, all 88 clock aliases and original slot-28 cleanup behavior. Preserve 35 neighbors and the current dispatcher placeholder; production reproduces the strict 139-byte image with zero exclusions. Native total 3,838/5,506 (69.71%), Game 3,165/4,833 (65.49%), zero drift; 292 more to 75%. Next inspect `func_151DD3A0`; `func_1514E920` remains parked and uncredited.
+
 2026-10-27:
 
-**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. Next inspect `func_1514AF74`; `func_1514E920` remains parked and uncredited.
+**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
