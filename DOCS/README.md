@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Selector payload effect](WORKING_NOTES/1784-selector-payload-effect-match-20261028.md): direct 49-word C, two-argument callback, category-specific IDs and 24-byte payload. Preserve all 81 neighbors and the strict 149-byte image; original caller and both helpers execute. Native total 70.14%, 268 more to 75%.
 - [Owner timeout transition](WORKING_NOTES/1783-owner-timeout-transition-match-20261028.md): direct 49-word C, signed wrapped timer, state-dependent retirement and original dispatcher/helper integration. Preserve all 22 neighbors and the strict 144-byte image. Native total 70.12%, 269 more to 75%.
 
 - [Threshold effect update](WORKING_NOTES/1782-threshold-effect-update-match-20261028.md): guarded 49-word C with no frame, signed thresholds and wrapped clock scaling. Validate the original callback result and next-tick transition, preserve 22 neighbors and reproduce the strict 132-byte image. Native total 70.11%, 270 more to 75%.

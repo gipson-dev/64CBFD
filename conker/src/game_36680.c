@@ -5,9 +5,24 @@
 
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 
+typedef struct { u8 values[2][3]; } EffectSelectorTable36680;
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    u8 *record;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+} UnkB060C;
+extern EffectSelectorTable36680 D_80082BEC;
+extern s32 D_800BE9F0;
+s32 func_150B060C(u8, UnkB060C *);
+struct225 *func_1516037C(Header *, struct226 *, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
 /* Generated placeholder declarations. */
 s32 func_15009334(s32 arg0);
-s32 func_1500A6D8();
+void func_1500A6D8(struct226 *actor, s32 command);
 s32 func_1500A7E8();
 s32 func_1500AC14();
 s32 func_1500AD84();
@@ -88,7 +103,7 @@ void func_15009628(s32 arg0, s32 arg1) {
     tmp.unk2 = 300;
     tmp.unk4 = sp24[arg1 - 3];
 
-    func_1516037C(&tmp, arg0, 0, 255, 1);
+    func_1516037C((Header *)&tmp, (struct226 *)arg0, 0, 255, 1);
 }
 
 void func_1500969C(s32 arg0, s32 arg1) {
@@ -103,7 +118,7 @@ void func_150096C4(s32 arg0, s32 arg1) {
     tmp.unk2 = 300;
     tmp.unk4 = sp24[arg1 - 8];
 
-    func_1516037C(&tmp, arg0, 0, 255, 1);
+    func_1516037C((Header *)&tmp, (struct226 *)arg0, 0, 255, 1);
 }
 
 void func_15009740(s32 arg0, s32 arg1) {
@@ -171,7 +186,7 @@ void func_15009A38(s32 arg0, s32 arg1) {
     tmp.unk1 = -1;
     tmp.unk2 = 300;
     tmp.unk4 = D_80095B27[arg1];
-    func_1516037C(&tmp, arg0, 0, 255, 1);
+    func_1516037C((Header *)&tmp, (struct226 *)arg0, 0, 255, 1);
 }
 
 void func_15009AA0(s32 arg0, s32 arg1) {
@@ -364,38 +379,30 @@ void func_1500A68C(s32 arg0, s32 arg1) {
     func_15162740(arg0, 21, 6, 0, 300, 2, 255, 1);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_36680/func_1500A6D8.s. */
-s32 func_1500A6D8() {
-    return 0;
-}
-// void func_1500A6D8(s32 arg0, s32 arg1) {
-//     s8 sp4C;
-//     s16 sp4A;
-//     s8 sp49;
-//     s8 sp48;
-//     ? sp30;
-//     ? sp24;
-//     s32 temp_v0;
-//     s32 phi_v0;
-//
-//     sp24.unk0 = (s32) (void *)0x80082BEC->unk0;
-//     sp24.unk4 = (u16) (void *)0x80082BEC->unk4;
-//     phi_v0 = 0;
-//     if (D_800BE9F0 == 6) {
-//         phi_v0 = 1;
-//     }
-//     if (func_150B060C((&sp24 + ((phi_v0 * 4) - phi_v0) + arg1)->unk-49, &sp30, arg1) != 0) {
-//         sp48 = 0;
-//         sp49 = 23;
-//         sp4A = 300;
-//         sp4C = 0;
-//         temp_v0 = func_1516037C(&sp48, arg0, 24, 255, 1);
-//         if (temp_v0 != 0) {
-//             memcpy(temp_v0 + 0x18, &sp30, 0x18);
-//         }
-//     }
-// }
+/* Select the category-specific payload for commands 0x49..0x4B and spawn it. */
+void func_1500A6D8(struct226 *actor, s32 command) {
+    Header header;
+    UnkB060C payload;
+    s32 variant = 0;
+    EffectSelectorTable36680 ids = D_80082BEC;
+    struct225 *effect;
 
+    if (D_800BE9F0 == 6) {
+        variant = 1;
+    } else {
+        variant = 0;
+    }
+    if (func_150B060C(ids.values[variant][command - 0x49], &payload) != 0) {
+        header.unk0 = 0;
+        header.unk1 = 23;
+        header.unk2 = 300;
+        header.unk4 = 0;
+        effect = func_1516037C(&header, actor, sizeof(payload), 255, 1);
+        if (effect != NULL) {
+            memcpy((u8 *)effect + 0x18, &payload, sizeof(payload));
+        }
+    }
+}
 void func_1500A79C(s32 arg0, s32 arg1) {
     func_15162740(arg0, 22, 6, 0, 300, 2, 255, 1);
 }
