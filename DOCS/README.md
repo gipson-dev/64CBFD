@@ -1,5 +1,8 @@
 # Documentation
 
+**Segment resource setup restored**: [Note 1845](WORKING_NOTES/1845-segment-resource-setup-match-20261029.md). `func_150DFBD0` emits all 54 words directly from C, with its original 88-byte frame and no guards. Total **3,922/5,506 (71.23%)**, Game **3,249/4,833 (67.23%)**, zero drift; **208** more to 75%. Next screen `func_1518F384`; private candidates remain uncredited.
+
+
 **Live record dispatch restored**: [Note 1844](WORKING_NOTES/1844-live-record-dispatch-match-20261029.md). `func_150A278C` emits all 54 words directly from C, with its original 48-byte frame and no guards. Total **3,921/5,506 (71.21%)**, Game **3,248/4,833 (67.20%)**, zero drift; **209** more to 75%. Next screen `func_150DFBD0`; private candidates remain uncredited.
 
 

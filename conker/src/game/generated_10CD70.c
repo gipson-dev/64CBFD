@@ -27,8 +27,33 @@ s32 func_150DF920() {
     return 0;
 }
 
-s32 func_150DFBD0() {
-    return 0;
+extern u8 D_800DD405;
+extern s32 D_80090324[];
+u32 func_1510D0EC(s32, s32 *, s32, s32);
+
+/* Load the three resource segments selected by the live activity and variant. */
+Gfx *func_150DFBD0(Gfx *cursor) {
+    s32 index;
+    /* The loader writes one word; preserve the retail aligned output cell. */
+    union {
+        s64 alignment;
+        s32 value;
+    } extent;
+    s32 resource;
+    u32 address;
+
+    for (index = 0; index < 3; index++) {
+        address = func_150DF8C0(index);
+        if (address) {
+            address = D_800DD405;
+            resource = D_80090324[address + 9];
+        } else {
+            resource = D_80090324[8];
+        }
+        address = func_1510D0EC(resource, &extent.value, 3, 0);
+        gSPSegment(cursor++, index + 2, address);
+    }
+    return cursor;
 }
 
 s32 func_150DFCA8() {
