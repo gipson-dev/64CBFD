@@ -90,8 +90,36 @@ s32 func_15082A44() {
     return 0;
 }
 
-s32 func_150832AC() {
-    return 0;
+extern s32 D_80082FA0;
+u8 *func_1515D480(s32);
+u8 *func_1515D440(void);
+
+/* Allocate each active view's resources and retain the shared trailing resource. */
+void func_150832AC(u8 *actor) {
+    u8 *descriptor = *(u8 **)(actor + 0x144);
+    u8 *cursor;
+    s32 index;
+    s32 resourceCount;
+    s32 rawCount;
+
+    if (descriptor != NULL) {
+        rawCount = descriptor[0x2F];
+        cursor = actor;
+        resourceCount = rawCount;
+        if (rawCount == 0) {
+            resourceCount = actor[0x127] == 0 ? 5 : 3;
+        }
+        index = 0;
+        while (index <= D_80082FA0) {
+            *(u8 **)(cursor + 0x304) = func_1515D480(resourceCount);
+            index++;
+            cursor += 4;
+        }
+        if (*(u32 *)(actor + index * 4 + 0x300) != 0) {
+            actor[0x301] = resourceCount;
+        }
+        *(u8 **)(actor + 0x314) = func_1515D440();
+    }
 }
 
 s32 func_15083384() {
@@ -275,14 +303,11 @@ void func_150839B8(u8 *actor, s32 identity, u8 *configuration) {
 
 extern u8 D_800CC2D0[];
 extern u8 *D_800D1C90[];
-extern s32 D_80082FA0;
 extern u8 D_800C35EA, D_800C3638;
 s32 func_1503D774(s32, s32);
 s32 func_1503D660(s32, s32);
 u8 *func_1505ED34(void);
 void func_150615DC(u8 *);
-u32 func_1515D480(s32);
-u32 func_1515D440(void);
 void func_150837D4(s32, s32, s32);
 
 u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
@@ -351,7 +376,7 @@ u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
     cursor = created;
     if (D_80082FA0 >= 0) {
         do {
-            *(u32 *)(cursor + 0x304) = func_1515D480(1);
+            *(u8 **)(cursor + 0x304) = func_1515D480(1);
             i++;
             cursor += 4;
         } while (i <= D_80082FA0);
@@ -359,7 +384,7 @@ u8 *func_15083AC8(u8 *actor, s32 attachment, s32 identity, s32 kind,
     if (*(u32 *)(created + i * 4 + 0x300) != 0) {
         created[0x301] = 1;
     }
-    *(u32 *)(created + 0x314) = func_1515D440();
+    *(u8 **)(created + 0x314) = func_1515D440();
     if (D_800C35EA == 1) {
         active = 1;
     } else {

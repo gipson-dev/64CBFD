@@ -1,5 +1,8 @@
 # Documentation
 
+**Actor resource allocation restored**: [Note 1838](WORKING_NOTES/1838-actor-resource-allocation-match-20261029.md). `func_150832AC` matches all 54 retail words using complete semantic C, 18 checked normalization rows and one redundant-branch insertion within its unchanged 48-byte frame. Both retained caller windows, live signed count changes, pointer-return interfaces, aliases and native C pass qualification. Total **3,915/5,506 (71.10%)**, Game **3,242/4,833 (67.08%)**, zero drift; **215** more to 75%. Next screen `func_150BE210`; private candidates remain uncredited.
+
+
 **Secondary motion integration restored**: [Note 1837](WORKING_NOTES/1837-secondary-motion-integration-match-20261029.md). `func_150CB008` matches its complete 53-instruction body and one alignment word from semantic C plus 33 checked register/scheduling normalizations. Its index-4 registration, original dispatch window, ordered floating-point arithmetic and alias behavior pass qualification. Total **3,914/5,506 (71.09%)**, Game **3,241/4,833 (67.06%)**, zero drift; **216** more to 75%. Next screen `func_150832AC`; private candidates remain uncredited.
 
 
