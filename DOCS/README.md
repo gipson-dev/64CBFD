@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Distance-scaled effect handle](WORKING_NOTES/1805-distance-effect-handle-match-20261029.md): 50 direct C words; original caller and both helper routines qualified. Total 70.52%, 247 more to 75%.
 - [Scene-state reset callback](WORKING_NOTES/1804-scene-state-reset-match-20261029.md): 50 direct C words; original callback and integrity routes qualified. Total 70.51%, 248 more to 75%.
 - [Owner effect descriptor](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md): 50 direct C words; notification, constructor and complete caller qualified. Total 70.49%, 249 more to 75%.
 - [Owner float payload](WORKING_NOTES/1802-owner-float-payload-match-20261028.md): 50 direct C words; original caller, allocator wrapper and byte-copy loop qualified. Total 70.47%, 250 more to 75%.

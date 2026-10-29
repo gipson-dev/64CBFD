@@ -1,4 +1,9 @@
 #include <ultra64.h>
+
+s32 func_150AD9A0(s32, s32, s32);
+s32 func_150E3020(s32, s32, s32, s32, s32, s32, s32, f32,
+                 s32, f32, f32, f32, s32, s16);
+
 #include "structs.h"
 extern f32 D_800BE9A4;
 extern f32 D_800A1054;
@@ -23,7 +28,20 @@ s32 func_150E3020(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
     return 0;
 }
 
-s32 func_150E3208() {
+/* Create a distance-scaled effect and return its one-based slot handle. */
+s32 func_150E3208(s32 x, s32 y, s32 z, s32 targetX, s32 targetY,
+                  s32 targetZ, s32 kind, s32 duration) {
+    u8 *effect;
+    f32 step;
+
+    step = (f32)func_150AD9A0((s32)((u32)x - (u32)targetX),
+                            (s32)((u32)y - (u32)targetY),
+                            (s32)((u32)z - (u32)targetZ)) / (f32)duration;
+    effect = (u8 *)func_150E3020(x, y, z, targetX, targetY, targetZ,
+                               kind, step, 0, 0.0f, 0.0f, 0.0f, 0, -99);
+    if (effect != NULL) {
+        return effect[0x48] + 1;
+    }
     return 0;
 }
 

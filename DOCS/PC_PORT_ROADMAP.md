@@ -2,7 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] **Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. Next inspect `func_150E3208`; `func_1514E920` remains parked and uncredited.
+- [x] **Distance-scaled effect handle restored**: [Note 1805](WORKING_NOTES/1805-distance-effect-handle-match-20261029.md). `func_150E3208` emits all 50 words directly from C with a 64-byte frame, two call bindings and no guards. Its eight-argument interface, floating-point step, original caller and trapping distance helper are qualified. Total 3,883/5,506 (70.52%), Game 3,210/4,833 (66.42%), zero drift; 247 more to 75%. Next inspect `func_15131C84`; `func_1514E920` remains parked and uncredited.
+
+- [x] **Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. The former next candidate, `func_150E3208`, is adopted in Note 1805 above; `func_1514E920` remains parked and uncredited.
 
 - [x] **Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. The former next candidate, `func_151E327C`, is adopted in Note 1804 above; `func_1514E920` remains parked and uncredited.
 

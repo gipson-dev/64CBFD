@@ -2,7 +2,9 @@
 
 2026-10-29:
 
-**Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. Next inspect `func_150E3208`; `func_1514E920` remains parked and uncredited.
+**Distance-scaled effect handle restored**: [Note 1805](WORKING_NOTES/1805-distance-effect-handle-match-20261029.md). `func_150E3208` emits all 50 words directly from C with a 64-byte frame, two call bindings and no guards. Its eight-argument interface, floating-point step, original caller and trapping distance helper are qualified. Total 3,883/5,506 (70.52%), Game 3,210/4,833 (66.42%), zero drift; 247 more to 75%. Next inspect `func_15131C84`; `func_1514E920` remains parked and uncredited.
+
+**Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. The former next candidate, `func_150E3208`, is adopted in Note 1805 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-28:
 
