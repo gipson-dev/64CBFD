@@ -90,8 +90,21 @@ s32 func_150A25D4() {
     return 0;
 }
 
-s32 func_150A278C() {
-    return 0;
+s32 func_15172E7C(struct127 *, u8, s32);
+
+/* Dispatch eligible records using the live table and count after each helper. */
+void func_150A278C(struct127 *actor) {
+    u32 index;
+
+    if (((u8 *)actor)[0x65] == 0) {
+        for (index = 0; index < (u32)D_800D3094; index++) {
+            if ((D_800D3098[index].flags >> 2) == 8 &&
+                func_150A1DA0(actor, (s32)&D_800D3098[index], 0) == 0) {
+                func_15172E7C(actor, D_800D3098[index].field17,
+                             D_800D3098[index].field18);
+            }
+        }
+    }
 }
 
 s32 func_150A2864() {

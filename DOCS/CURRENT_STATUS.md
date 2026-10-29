@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `6260cb4`; tools are committed before the consumer pin.
+  checkpoint pins tools `a683266`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Live record dispatch restored**: [Note 1844](WORKING_NOTES/1844-live-record-dispatch-match-20261029.md). `func_150A278C` emits all 54 words directly from C, with its original 48-byte frame and no guards. Total **3,921/5,506 (71.21%)**, Game **3,248/4,833 (67.20%)**, zero drift; **209** more to 75%. Next screen `func_150DFBD0`; private candidates remain uncredited.
 
 **Owner record admission restored**: [Note 1843](WORKING_NOTES/1843-owner-record-admission-match-20261029.md). `func_151ACA60` emits all 54 words directly from C, with its original 48-byte frame and no guards. Total **3,920/5,506 (71.20%)**, Game **3,247/4,833 (67.18%)**, zero drift; **210** more to 75%. Next screen `func_150A278C`; private candidates remain uncredited.
 
