@@ -1,4 +1,14 @@
 #include <ultra64.h>
+
+extern s8 D_80087260, D_8008FD8C, D_8008FD90, D_800BE3DF;
+extern u8 D_80087270[], D_800BE618, D_800D23A8, D_800E0B94;
+extern u8 D_800D2E40, D_800BE3E0, D_800E0B99, D_800E0BB1;
+extern s16 D_8008FDBC;
+extern s32 D_8008FD94;
+extern u32 D_800E9D00;
+void func_1501C730(s32, s32, s32, s32, s32);
+void func_151E7EF8(void);
+
 extern u8 D_800C35EA;
 s32 func_151F2CDC(void);
 void func_151F2D6C(s32, s32);
@@ -243,8 +253,26 @@ s32 func_151E30C4() {
     return 0;
 }
 
-s32 func_151E327C() {
-    return 0;
+/* Reset scene flags, submit the saved transition, then run the integrity check. */
+void func_151E327C(void) {
+    D_80087260 = 3;
+    if (D_800E9D00 & 0x200) {
+        D_80087260 = 0x33;
+    }
+    D_80087270[0] = 0;
+    D_8008FD8C = 1;
+    D_8008FD90 = 1;
+    /* Retail changes only the first representation byte of this word. */
+    *(s8 *)&D_8008FD94 = 1;
+    D_8008FDBC = 0;
+    *(s8 *)&D_800BE618 = 1;
+    D_800D23A8 = 0;
+    D_800E0B94 = 0;
+    D_800D2E40 = 0;
+    func_1501C730(6, D_800BE3DF, D_800BE3E0, 0, 1);
+    D_800E0B99 = 1;
+    *(s8 *)&D_800E0BB1 = 1;
+    func_151E7EF8();
 }
 
 s32 func_151E3344() {

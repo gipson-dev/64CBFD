@@ -2,7 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] **Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. Next inspect `func_151E327C`; `func_1514E920` remains parked and uncredited.
+- [x] **Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. Next inspect `func_150E3208`; `func_1514E920` remains parked and uncredited.
+
+- [x] **Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. The former next candidate, `func_151E327C`, is adopted in Note 1804 above; `func_1514E920` remains parked and uncredited.
 
 - [x] **Owner float payload restored**: [Note 1802](WORKING_NOTES/1802-owner-float-payload-match-20261028.md). `func_1510A344` emits all 50 words directly from C with its four-argument pointer interface, 72-byte frame, six symbol bindings and no new guards. The original caller, allocation helper and byte-copy loop are qualified; payload padding is preserved. Total 3,880/5,506 (70.47%), Game 3,207/4,833 (66.36%), zero drift; 250 more to 75%. The former next candidate, `func_151AF270`, is adopted in Note 1803 above; `func_1514E920` remains parked and uncredited.
 

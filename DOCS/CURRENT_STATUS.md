@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-28
+Last verified: 2026-10-29
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `591549d`; tools are committed before the consumer pin.
+  checkpoint pins tools `83a89e9`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. Next inspect `func_151E327C`; `func_1514E920` remains parked and uncredited.
+**Scene-state reset callback restored**: [Note 1804](WORKING_NOTES/1804-scene-state-reset-match-20261029.md). `func_151E327C` emits all 50 words directly from C with a 32-byte frame, 32 bindings and no new guards. Signed/unsigned selectors, the partial-word reset, original callback routes and retained integrity helpers are qualified. Total 3,882/5,506 (70.51%), Game 3,209/4,833 (66.40%), zero drift; 248 more to 75%. Next inspect `func_150E3208`; `func_1514E920` remains parked and uncredited.
+
+**Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. The former next candidate, `func_151E327C`, is adopted in Note 1804 above; `func_1514E920` remains parked and uncredited.
 
 **Owner float payload restored**: [Note 1802](WORKING_NOTES/1802-owner-float-payload-match-20261028.md). `func_1510A344` emits all 50 words directly from C with its four-argument pointer interface, 72-byte frame, six symbol bindings and no new guards. The original caller, allocation helper and byte-copy loop are qualified; payload padding is preserved. Total 3,880/5,506 (70.47%), Game 3,207/4,833 (66.36%), zero drift; 250 more to 75%. The former next candidate, `func_151AF270`, is adopted in Note 1803 above; `func_1514E920` remains parked and uncredited.
 
