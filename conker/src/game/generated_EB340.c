@@ -50,8 +50,26 @@ s32 func_150BE1C4(u8 *arg0) {
     return 1;
 }
 
-s32 func_150BE210() {
-    return 0;
+void func_1511650C(u8 *, s32, s32, f32);
+void func_100111C8(u16);
+
+/* Advance the actor's angle and complete its state after the full turn. */
+void func_150BE210(u8 *actor) {
+    if ((actor[0x73] & 3) != 3) {
+        func_1511650C(actor, 1, 0x62C, 500.0f);
+        if (actor[0x4F] & 4) {
+            *(f32 *)(actor + 0x84) += *(f32 *)(actor + 0x64);
+        } else if (*(f32 *)(actor + 0x84) > 270.0f) {
+            *(f32 *)(actor + 0x84) = 270.0f;
+        }
+        if (*(f32 *)(actor + 0x84) > 360.0f) {
+            actor[0x73] &= ~3;
+            actor[0x73] |= 3;
+            *(f32 *)(actor + 0x64) = 0.0f;
+            func_100111C8(*(u16 *)(actor + 0x74));
+            *(u16 *)(actor + 0x74) = 0;
+        }
+    }
 }
 
 s32 func_150BE2E8() {

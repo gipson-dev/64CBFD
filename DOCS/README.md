@@ -1,5 +1,8 @@
 # Documentation
 
+**Direct actor state completion restored**: [Note 1839](WORKING_NOTES/1839-direct-actor-state-completion-match-20261029.md). `func_150BE210` emits all 54 retail words directly from C with its original 32-byte frame and no new guards. Runtime cases cover all 53 reachable words; a static CFG check certifies the one unreachable scheduling word. Callback registration, dispatch, helper mutations and IEEE boundary effects pass qualification. Total **3,916/5,506 (71.12%)**, Game **3,243/4,833 (67.10%)**, zero drift; **214** more to 75%. Next screen `func_151C56A4`; private candidates remain uncredited.
+
+
 **Actor resource allocation restored**: [Note 1838](WORKING_NOTES/1838-actor-resource-allocation-match-20261029.md). `func_150832AC` matches all 54 retail words using complete semantic C, 18 checked normalization rows and one redundant-branch insertion within its unchanged 48-byte frame. Both retained caller windows, live signed count changes, pointer-return interfaces, aliases and native C pass qualification. Total **3,915/5,506 (71.10%)**, Game **3,242/4,833 (67.08%)**, zero drift; **215** more to 75%. Next screen `func_150BE210`; private candidates remain uncredited.
 
 
