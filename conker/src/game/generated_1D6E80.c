@@ -159,8 +159,29 @@ void func_151AB828(u8 *arg0) {
     func_15141DA4(*(s32 *) (arg0 + 0x18), 0, 4);
 }
 
-s32 func_151AB854() {
-    return 0;
+void *func_15190770(struct185 *, s32, u8, s32);
+
+/* Submit an effect for supported actor types and reset the attached timer. */
+void func_151AB854(u8 *record) {
+    u8 *actor = *(u8 **)(record + 0x18);
+    struct185 packet;
+
+    if (actor[4] == 0 || actor[4] == 1 || actor[4] == 2 || actor[4] == 3 || actor[4] == 4 || actor[4] == 150) {
+        packet.unk0 = (struct127 *)actor;
+        packet.unk4 = actor[0x3B];
+        packet.unk6 = 300;
+        packet.unk8 = 0;
+        packet.unk9 = 0;
+        if (actor[4] == 150) {
+            packet.unkA = 3;
+        } else {
+            packet.unkA = 0;
+        }
+        if (actor[0x127] != 255) {
+            *(s16 *)(*(u8 **)(actor + 0x31C) + 0x66) = 500;
+        }
+        func_15190770(&packet, 0, record[0xC], record[1]);
+    }
 }
 
 void func_151AB920(s32 arg0, s32 arg1) {
