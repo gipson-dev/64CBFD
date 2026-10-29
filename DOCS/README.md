@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Owner byte scale](WORKING_NOTES/1807-owner-byte-scale-match-20261029.md): 51 exact retail words from semantic C with two scheduling guards; original callback result, full image and native32 behavior qualified. Total 70.56%, 245 more to 75%.
+
 - [Byte phase offsets](WORKING_NOTES/1806-byte-phase-offset-match-20261029.md): 50 C instructions with two operand-order guards; both complete callers, corrected C ABI and original trig helper qualified. Total 70.54%, 246 more to 75%.
 
 - [Distance-scaled effect handle](WORKING_NOTES/1805-distance-effect-handle-match-20261029.md): 50 direct C words; original caller and both helper routines qualified. Total 70.52%, 247 more to 75%.

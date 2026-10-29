@@ -24071,3 +24071,5 @@ generated_CD5A0,func_150A019C,0x004,0x3C0B0000,0x3C0B0000,R_MIPS_HI16:D_800D3010
 generated_CD5A0,func_150A019C,0x020,0x256B0078,0x256B0000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3088,Bind the ten-record one-past address to its retail end label,,,false
 generated_15D730,func_15131C84,0x080,0x46002182,0x46040182,-,-,Normalize byte phase-offset commutative floating multiply operand order,,,false
 generated_15D730,func_15131C84,0x0B0,0x46008482,0x46100482,-,-,Normalize byte phase-offset commutative floating multiply operand order,,,false
+generated_F4B20,func_150C7670,0x004,0x3C014F80,0x3C014F80,-,-,Move the existing success result before unsigned conversions and retain the retail nop,0x24020001,-,false
+generated_F4B20,func_150C7670,0x0BC,0x24020001,0x00000000,-,-,Move the existing success result before unsigned conversions and retain the retail nop,,,false
