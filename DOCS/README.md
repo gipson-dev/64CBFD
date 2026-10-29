@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Payload effect factory](WORKING_NOTES/1800-payload-effect-factory-match-20261028.md): 50 direct C words; original caller and allocation chain qualified. Total 70.43%, 252 more to 75%.
 - [Record timer update](WORKING_NOTES/1799-record-timer-update-match-20261028.md): 50 exact words; unsigned timer semantics, original caller window and end-label bindings qualified. Total 70.41%, 253 more to 75%.
 - [Record position command](WORKING_NOTES/1798-record-position-command-match-20261028.md): 50 direct C words; explicit callback sequencing, original dispatch and helper windows qualified. Total 70.40%, 254 more to 75%.
 - [Menu scene choice callback](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md): 50 words of direct C; original registration and indirect invocation qualified. Total 70.38%, 255 more to 75%.

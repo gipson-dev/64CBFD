@@ -170,8 +170,29 @@ s32 func_150F00EC(OwnerRayEffect *effect) {
     return 1;
 }
 
-s32 func_150F0198() {
-    return 0;
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Create the type-0x21 effect and attach its four-byte owner payload. */
+struct225 *func_150F0198(u8 arg0, u8 arg1, u8 arg2, u8 arg3, void *owner, u8 arg5, s32 arg6) {
+    struct225 *created;
+    Header header;
+    Header2 position;
+    void *payload;
+
+    payload = owner;
+    header.unk0 = 2;
+    header.unk1 = -1;
+    header.unk2 = 300;
+    header.unk4 = 0x21;
+    position.unk0 = 0;
+    position.unk4 = 0;
+    position.unk8 = 0;
+    created = func_151602C0(&header, &position, arg0, arg1, arg2, arg3, 0xFF, 0, 4, arg5, arg6);
+    if (created != NULL) {
+        memcpy((u8 *)created + 0x18, &payload, 4);
+    }
+    return created;
 }
 
 void func_150F0260(register u8 *arg0) {
@@ -347,7 +368,6 @@ typedef struct {
     f32 position[3];
 } EffectPositionPayload;
 void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
-void *memcpy(void *, const void *, u32);
 
 /* Capture the source position and attach the complete payload to an effect. */
 void func_150F10D4(void *source) {
