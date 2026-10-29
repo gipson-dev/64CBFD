@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record prefix activity](WORKING_NOTES/1795-record-prefix-active-match-20261028.md): 50-word direct C predicate with exact read traces, signed counts, native bounds and the original caller gate qualified. Strict 148-byte image. Native total 70.34%, 257 more to 75%.
 - [Actor audio release](WORKING_NOTES/1794-actor-audio-release-match-20261028.md): 50-instruction direct C recovery; live callback effects, signed audio arguments, five original caller windows and three original helpers qualified. Strict 143-byte image. Native total 70.32%, 258 more to 75%.
 - [Owner entry recycler](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md): 47-instruction semantic C with eleven guards and one redundant-copy omission; active/free chains, live pointer reload and original indirect caller qualified. Strict 134-byte image. Native total 70.31%, 259 more to 75%.
 - [Live record dispatcher](WORKING_NOTES/1792-live-record-dispatcher-match-20261028.md): complete 252-word C with 66 checked guards, live status/timer updates, both geometry streams and cleanup. Correct void caller and carry-safe relocations; strict 933-byte image. Native total 70.29%, 260 more to 75%.

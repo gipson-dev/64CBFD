@@ -13,7 +13,14 @@ s32 func_15096970(void) {
     D_800D2DB4 = 0;
 }
 
-s32 func_150969A0() {
+/* Return whether any preceding 0x24-byte record has an active flag. */
+s32 func_150969A0(s32 count) {
+    s32 i;
+    for (i = 0; i < count; i++) {
+        if (D_800D2DC0[i * 0x24] != 0) {
+            return 1;
+        }
+    }
     return 0;
 }
 
