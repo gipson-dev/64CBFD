@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `fd5ca02`; tools are committed before the consumer pin.
+  checkpoint pins tools `0d594c3`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Menu scene choice callback restored as direct C**: [Note 1797](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md). `func_151E4314` matches all 50 words with its recovered void interface, signed scene/sequence records, 20 symbol bindings and no guards. Both original registration routes, indirect invocation, native32 semantics and strict 244-byte image are qualified; all 59 neighbors are preserved. Total 3,875/5,506 (70.38%), Game 3,202/4,833 (66.25%), zero drift; 255 more to 75%. Next inspect `func_1509DDFC`; `func_1514E920` remains parked and uncredited.
+**Record position command restored as direct C**: [Note 1798](WORKING_NOTES/1798-record-position-command-match-20261028.md). `func_1509DDFC` matches all 50 words with its three-argument boolean interface, 40-byte frame, five symbol bindings and no guards. Explicit actor-resolution sequencing passes native callback mutation; both original indirect dispatch routes and four original helpers are qualified within bounded windows. The strict image changes only 152 code bytes and one symbol-size byte; all seven neighbors are preserved. Total 3,876/5,506 (70.40%), Game 3,203/4,833 (66.27%), zero drift; 254 more to 75%. Next inspect `func_150A019C`; `func_1514E920` remains parked and uncredited.
+
+**Menu scene choice callback restored as direct C**: [Note 1797](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md). `func_151E4314` matches all 50 words with its recovered void interface, signed scene/sequence records, 20 symbol bindings and no guards. Both original registration routes, indirect invocation, native32 semantics and strict 244-byte image are qualified; all 59 neighbors are preserved. Total 3,875/5,506 (70.38%), Game 3,202/4,833 (66.25%), zero drift; 255 more to 75%. The former next candidate, `func_1509DDFC`, is adopted in Note 1798 above; `func_1514E920` remains parked and uncredited.
 
 **Bounce sound callback restored as direct C**: [Note 1796](WORKING_NOTES/1796-bounce-random-sound-match-20261028.md). `func_15133C58` matches all 50 words with its six-argument interface, four call relocations and no guards. Both original dispatch routes, retained bounce/RNG/audio helpers, native32 conversions and strict 146-byte image are qualified. Preserve all 30 neighbors. Total 3,874/5,506 (70.36%), Game 3,201/4,833 (66.23%), zero drift; 256 more to 75%. The former next candidate, `func_151E4314`, is adopted in Note 1797 above; `func_1514E920` remains parked and uncredited.
 

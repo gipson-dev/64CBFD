@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record position command](WORKING_NOTES/1798-record-position-command-match-20261028.md): 50 direct C words; explicit callback sequencing, original dispatch and helper windows qualified. Total 70.40%, 254 more to 75%.
 - [Menu scene choice callback](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md): 50 words of direct C; original registration and indirect invocation qualified. Total 70.38%, 255 more to 75%.
 - [Bounce sound callback](WORKING_NOTES/1796-bounce-random-sound-match-20261028.md): 50 words of direct C; original dispatch routes and bounce/RNG/audio helpers qualified. Total 70.36%, 256 more to 75%.
 - [Record prefix activity](WORKING_NOTES/1795-record-prefix-active-match-20261028.md): 50-word direct C predicate with exact read traces, signed counts, native bounds and the original caller gate qualified. Strict 148-byte image. Native total 70.34%, 257 more to 75%.
