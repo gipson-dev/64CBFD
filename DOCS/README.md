@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Owner effect descriptor](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md): 50 direct C words; notification, constructor and complete caller qualified. Total 70.49%, 249 more to 75%.
 - [Owner float payload](WORKING_NOTES/1802-owner-float-payload-match-20261028.md): 50 direct C words; original caller, allocator wrapper and byte-copy loop qualified. Total 70.47%, 250 more to 75%.
 - [Paired sine update](WORKING_NOTES/1801-paired-sine-update-match-20261028.md): 50 direct C words; original slot-11 callback and math helpers qualified. Total 70.45%, 251 more to 75%.
 - [Payload effect factory](WORKING_NOTES/1800-payload-effect-factory-match-20261028.md): 50 direct C words; original caller and allocation chain qualified. Total 70.43%, 252 more to 75%.

@@ -1,4 +1,6 @@
 #include <ultra64.h>
+
+void *func_151AF270(u8 *, u8, s32);
 #include "structs.h"
 s32 func_15136C3C(void *, s32, s32, s32, s32, s32, s32, s32);
 void func_15145A50(struct127 *);

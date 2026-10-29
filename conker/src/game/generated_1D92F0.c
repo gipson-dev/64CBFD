@@ -218,8 +218,49 @@ s32 func_151AEAB4() {
 /* Note 362: original ROM blood effect and dependencies. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AECA0.s")
 
-s32 func_151AF270() {
-    return 0;
+typedef struct {
+    u32 zero0, zero4;
+    u8 ownerIdentity, reserved09[3];
+    u8 *owner;
+    u8 attachment, reserved11[3];
+    f32 vector[3];
+    f32 value20, value24;
+    s16 duration;
+    u8 flags, kind;
+    s8 callback;
+    u8 mode;
+} OwnerEffectDescriptor1D92F0;
+
+extern f32 D_800A9DCC, D_800A9DD0;
+void func_1516962C(s32, void *, u8);
+void *func_1513418C(void *, s32, u8, s32);
+
+/* Notify the owner before constructing its attached effect descriptor. */
+void *func_151AF270(u8 *owner, u8 selector, s32 category) {
+    void *created;
+    OwnerEffectDescriptor1D92F0 descriptor;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    func_1516962C(40, owner, 22);
+    descriptor.zero0 = 0;
+    descriptor.zero4 = 0;
+    descriptor.ownerIdentity = owner[0x3B];
+    descriptor.owner = owner;
+    descriptor.attachment = 1;
+    descriptor.vector[0] = 0.0f;
+    descriptor.vector[1] = 0.0f;
+    descriptor.vector[2] = 0.0f;
+    descriptor.value20 = D_800A9DCC;
+    descriptor.value24 = D_800A9DD0;
+    descriptor.flags = 6;
+    descriptor.duration = 320;
+    descriptor.kind = 10;
+    descriptor.callback = -1;
+    descriptor.mode = 9;
+    created = func_1513418C(&descriptor, 0, selector, category);
+    return created;
 }
 
 s32 func_151AF388(f32 *, f32, f32, f32, u8);

@@ -2,7 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] **Owner float payload restored**: [Note 1802](WORKING_NOTES/1802-owner-float-payload-match-20261028.md). `func_1510A344` emits all 50 words directly from C with its four-argument pointer interface, 72-byte frame, six symbol bindings and no new guards. The original caller, allocation helper and byte-copy loop are qualified; payload padding is preserved. Total 3,880/5,506 (70.47%), Game 3,207/4,833 (66.36%), zero drift; 250 more to 75%. Next inspect `func_151AF270`; `func_1514E920` remains parked and uncredited.
+- [x] **Owner effect descriptor restored**: [Note 1803](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md). `func_151AF270` emits all 50 words directly from C with an 80-byte frame, six bindings and no new guards. Notification precedes descriptor reads; the original constructor, copy loop and complete 31-word caller are qualified. Total 3,881/5,506 (70.49%), Game 3,208/4,833 (66.38%), zero drift; 249 more to 75%. Next inspect `func_151E327C`; `func_1514E920` remains parked and uncredited.
+
+- [x] **Owner float payload restored**: [Note 1802](WORKING_NOTES/1802-owner-float-payload-match-20261028.md). `func_1510A344` emits all 50 words directly from C with its four-argument pointer interface, 72-byte frame, six symbol bindings and no new guards. The original caller, allocation helper and byte-copy loop are qualified; payload padding is preserved. Total 3,880/5,506 (70.47%), Game 3,207/4,833 (66.36%), zero drift; 250 more to 75%. The former next candidate, `func_151AF270`, is adopted in Note 1803 above; `func_1514E920` remains parked and uncredited.
 
 - [x] **Paired sine update restored**: [Note 1801](WORKING_NOTES/1801-paired-sine-update-match-20261028.md). `func_151025F4` emits all 50 words directly from C with its 48-byte frame, six symbol bindings and no new guards. The slot-11 owner/context callback and both original math helpers are qualified. Total 3,879/5,506 (70.45%), Game 3,206/4,833 (66.34%), zero drift; 251 more to 75%. The former next candidate, `func_1510A344`, is adopted in Note 1802 above; `func_1514E920` remains parked and uncredited.
 
