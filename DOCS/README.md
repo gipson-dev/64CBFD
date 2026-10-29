@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Byte phase offsets](WORKING_NOTES/1806-byte-phase-offset-match-20261029.md): 50 C instructions with two operand-order guards; both complete callers, corrected C ABI and original trig helper qualified. Total 70.54%, 246 more to 75%.
+
 - [Distance-scaled effect handle](WORKING_NOTES/1805-distance-effect-handle-match-20261029.md): 50 direct C words; original caller and both helper routines qualified. Total 70.52%, 247 more to 75%.
 - [Scene-state reset callback](WORKING_NOTES/1804-scene-state-reset-match-20261029.md): 50 direct C words; original callback and integrity routes qualified. Total 70.51%, 248 more to 75%.
 - [Owner effect descriptor](WORKING_NOTES/1803-owner-effect-descriptor-match-20261028.md): 50 direct C words; notification, constructor and complete caller qualified. Total 70.49%, 249 more to 75%.

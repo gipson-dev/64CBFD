@@ -205,8 +205,17 @@ void func_15131C2C(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_15131C84() {
-    return 0;
+/* Advance the byte phases, then write their scaled offsets around the base. */
+void func_15131C84(u8 *phases, s8 *rates, f32 base, f32 *amplitudes,
+                  f32 *first, f32 *second) {
+    f32 sample;
+
+    phases[0] += rates[0] * (u32)D_800BE9E4;
+    phases[1] += rates[1] * (u32)D_800BE9E4;
+    sample = func_151423D8((u8)(phases[0] - 0x40));
+    *first = sample * amplitudes[0] + base;
+    sample = func_151423D8((u8)(phases[1] - 0x40));
+    *second = sample * amplitudes[1] + base;
 }
 
 void func_15131D4C(s32 arg0, u8 arg1) {
