@@ -1,4 +1,12 @@
 #include <ultra64.h>
+
+extern f32 D_800BE9A4;
+extern f32 D_800A2470, D_800A2474, D_800A2478, D_800A247C;
+f32 func_15144B68(f32);
+f32 sinf(f32);
+void func_15108B80(u8 *);
+void func_15108BC0(u8 *);
+
 extern u8 D_800C35EA;
 extern u8 *D_800C3958;
 void func_15169260(void *, s32, s32, u8);
@@ -14,8 +22,21 @@ s32 func_15108850() {
     return 0;
 }
 
-s32 func_15108AB4() {
-    return 0;
+/* Advance the two phases and derive their sine-scaled offsets.
+ * Refresh the owner timer and lookup value, then keep the callback active. */
+s32 func_15108AB4(u8 *owner) {
+    f32 *delta = &D_800BE9A4;
+    f32 *state = (f32 *)(owner + *(s32 *)(owner + 0x50) + 0xF8);
+
+    state[2] += D_800A2470 * *delta;
+    state[3] += D_800A2474 * *delta;
+    state[2] = func_15144B68(state[2]);
+    state[3] = func_15144B68(state[3]);
+    state[0] = sinf(state[2]) * D_800A2478;
+    state[1] = sinf(state[3]) * D_800A247C;
+    func_15108B80(owner);
+    func_15108BC0(owner);
+    return 1;
 }
 
 void func_15108B80(u8 *arg0) {

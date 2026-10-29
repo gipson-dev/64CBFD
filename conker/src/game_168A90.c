@@ -14,7 +14,7 @@ s32 func_15109064(struct132 *, s32, u8);
 void func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
 
-extern s32 (*D_80089C18[])();
+extern s32 (*D_80089C18[])(u8 *);
 
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B5E0.s. */
 s32 func_1513B5E0() {
@@ -33,7 +33,7 @@ void func_1513B798(u8 *arg0) {
 
     if (remove == 0) {
         callbackIndex = *(s8 *)(arg0 + 0x11);
-        if ((callbackIndex != -1) && (D_80089C18[callbackIndex]() == 0)) {
+        if ((callbackIndex != -1) && (D_80089C18[callbackIndex](arg0) == 0)) {
             remove = 1;
         }
     }

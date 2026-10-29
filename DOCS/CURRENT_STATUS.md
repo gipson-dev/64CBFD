@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `325527b`; tools are committed before the consumer pin.
+  checkpoint pins tools `289df16`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Owner lifetime descriptor restored**: [Note 1811](WORKING_NOTES/1811-owner-lifetime-descriptor-match-20261029.md). `func_150F6890` constructs an owner-attached effect with a signed lifetime and disabled optional callbacks. All 51 words emit directly from C with zero guards. The original constructor, copy loop and caller, native32 behavior, and complete 185-byte image delta are qualified. Total 3,889/5,506 (70.63%), Game 3,216/4,833 (66.54%), zero drift; 241 more to 75%. Next inspect `func_15108AB4`; `func_1514E920` and `func_151D7000` remain parked and uncredited.
+**Owner phase-pair callback restored**: [Note 1812](WORKING_NOTES/1812-owner-phase-pair-match-20261029.md). `func_15108AB4` advances and wraps two phases, computes their sine offsets, updates the owner state and keeps its callback active. Its complete 51-word slot is exact with one commutative-ADDU operand guard. The indirect caller now explicitly forwards the owner pointer, with its object unchanged. Original helpers/caller, native32 behavior and the complete 181-byte image delta are qualified. Total 3,890/5,506 (70.65%), Game 3,217/4,833 (66.56%), zero drift; 240 more to 75%. Next inspect `func_1518AA10`; `func_1514E920` and `func_151D7000` remain parked and uncredited.
+
+**Owner lifetime descriptor restored**: [Note 1811](WORKING_NOTES/1811-owner-lifetime-descriptor-match-20261029.md). `func_150F6890` constructs an owner-attached effect with a signed lifetime and disabled optional callbacks. All 51 words emit directly from C with zero guards. The original constructor, copy loop and caller, native32 behavior, and complete 185-byte image delta are qualified. Total 3,889/5,506 (70.63%), Game 3,216/4,833 (66.54%), zero drift; 241 more to 75%. The former next candidate, `func_15108AB4`, is adopted in Note 1812 above; `func_1514E920` and `func_151D7000` remain parked and uncredited.
 
 **Record address relocator restored**: [Note 1810](WORKING_NOTES/1810-record-address-relocator-match-20261029.md). `func_15003120` relocates the list pointer and both address fields of each 12-byte record, preserving its byte count and terminator. All 51 words emit directly from C with no guards. Its original caller, aliases, native32 behavior and all 209 header-dependent owners are qualified; the complete image changes by 147 bytes. Total 3,888/5,506 (70.61%), Game 3,215/4,833 (66.52%), zero drift; 242 more to 75%. The former next candidate, `func_150F6890`, is adopted in Note 1811 above. The cash-label candidate `func_151D7000` is deferred until its formatter return contract is recovered; it and `func_1514E920` remain uncredited.
 
