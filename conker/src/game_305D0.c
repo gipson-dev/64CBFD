@@ -4,7 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15003120();
+void func_15003120(s32 index, u32 offset, u32 *records);
 s32 func_150031EC();
 void func_15003570(void);
 s32 func_15003668();
@@ -13,10 +13,20 @@ s32 func_15003668();
 void *allocate_memory(s32, s32, s32, s32);
 extern u8 D_1A37E0;
 
-// what is this loop doing?
-/* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_15003120.s. */
-s32 func_15003120() {
-    return 0;
+/* Install a record list and relocate its two address fields in place. */
+void func_15003120(s32 index, u32 offset, u32 *records) {
+    s32 count;
+
+    D_800B0E30[index] = records;
+    D_800B0E34[index] = 0;
+    if (records != 0) {
+        D_800B0E30[index] = (u32 *)((u32)D_800B0E30[index] + offset);
+        for (count = 0; D_800B0E30[index][count * 3] != 0; count++) {
+            D_800B0E30[index][count * 3] += offset;
+            D_800B0E30[index][count * 3 + 1] += offset;
+        }
+        D_800B0E34[index] = count;
+    }
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_305D0/func_150031EC.s. */

@@ -875,8 +875,8 @@ extern struct104 *D_800B0DF0;
 extern s32 D_800B0E00[];
 extern s32  D_800B0E04;
 
-extern s32  D_800B0E30[];
-extern u8   D_800B0E34[];
+extern u32 **D_800B0E30;
+extern u8 *D_800B0E34;
 
 extern s32 D_800B0E58[7762];
 

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ffcb7cd`; tools are committed before the consumer pin.
+  checkpoint pins tools `a445ec0`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Position effect burst restored**: [Note 1809](WORKING_NOTES/1809-position-effect-burst-match-20261029.md). `func_151D5648` submits the paired position effects and a randomized burst. All 51 words emit directly from C with no guards. Its original caller, both original random generators, native32 behavior and complete 157-byte image delta are qualified. Total 3,887/5,506 (70.60%), Game 3,214/4,833 (66.50%), zero drift; 243 more to 75%. Next inspect `func_151D7000`; `func_1514E920` remains parked and uncredited.
+**Record address relocator restored**: [Note 1810](WORKING_NOTES/1810-record-address-relocator-match-20261029.md). `func_15003120` relocates the list pointer and both address fields of each 12-byte record, preserving its byte count and terminator. All 51 words emit directly from C with no guards. Its original caller, aliases, native32 behavior and all 209 header-dependent owners are qualified; the complete image changes by 147 bytes. Total 3,888/5,506 (70.61%), Game 3,215/4,833 (66.52%), zero drift; 242 more to 75%. Next inspect `func_150F6890`. The cash-label candidate `func_151D7000` is deferred until its formatter return contract is recovered; it and `func_1514E920` remain uncredited.
+
+**Position effect burst restored**: [Note 1809](WORKING_NOTES/1809-position-effect-burst-match-20261029.md). `func_151D5648` submits the paired position effects and a randomized burst. All 51 words emit directly from C with no guards. Its original caller, both original random generators, native32 behavior and complete 157-byte image delta are qualified. Total 3,887/5,506 (70.60%), Game 3,214/4,833 (66.50%), zero drift; 243 more to 75%. The former next candidate, `func_151D7000`, is deferred by the formatter audit in Note 1810 above; `func_1514E920` remains parked and uncredited.
 
 **Owner sine scale restored**: [Note 1808](WORKING_NOTES/1808-owner-sine-scale-match-20261029.md). `func_151B6254` advances and wraps its phase, writes the sine-modulated scale and forwards the final callback result. Its 48-word body and three padding words are exact after five checked scheduling guards. Original caller and connected sine/motion/return helpers, native32 behavior and the complete 200-byte image delta are qualified. Total 3,886/5,506 (70.58%), Game 3,213/4,833 (66.48%), zero drift; 244 more to 75%. The former next candidate, `func_151D5648`, is adopted in Note 1809 above; `func_1514E920` remains parked and uncredited.
 

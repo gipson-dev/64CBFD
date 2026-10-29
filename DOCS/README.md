@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record address relocator](WORKING_NOTES/1810-record-address-relocator-match-20261029.md): 51 direct words, zero guards, 209 dependent owners audited. Total 70.61%, 242 more to 75%.
+
 - [Position effect burst](WORKING_NOTES/1809-position-effect-burst-match-20261029.md): 51 words directly from C without guards; original caller and random generators qualified. Total 70.60%, 243 more to 75%.
 
 - [Owner sine scale](WORKING_NOTES/1808-owner-sine-scale-match-20261029.md): 48 exact body words plus three padding words, with five scheduling guards; forwarded result and connected original helpers qualified. Total 70.58%, 244 more to 75%.
