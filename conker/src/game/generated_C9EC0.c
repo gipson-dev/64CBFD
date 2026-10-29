@@ -36,8 +36,32 @@ s32 func_1509CA78(register s32 arg0) {
     return D_80087430[arg0].field4;
 }
 
-s32 func_1509CA98() {
-    return 0;
+/* Find the first active record whose masked key equals the requested value. */
+s32 func_1509CA98(u32 key) {
+    s32 index = 0;
+    GeneratedC9EC0Entry *entry = D_80087430;
+
+    do {
+        if (entry[0].field0 != 0 &&
+            ((u32)entry[0].field4 & 0x1FFFFFFF) + 1 == key) {
+            return index;
+        }
+        if (entry[1].field0 != 0 &&
+            ((u32)entry[1].field4 & 0x1FFFFFFF) + 1 == key) {
+            return index + 1;
+        }
+        if (entry[2].field0 != 0 &&
+            ((u32)entry[2].field4 & 0x1FFFFFFF) + 1 == key) {
+            return index + 2;
+        }
+        if (entry[3].field0 != 0 &&
+            ((u32)entry[3].field4 & 0x1FFFFFFF) + 1 == key) {
+            return index + 3;
+        }
+        index += 4;
+        entry += 4;
+    } while (index != 204);
+    return 204;
 }
 
 s32 func_1509CB68(void) {

@@ -24090,3 +24090,5 @@ generated_124920,func_150F9950,0x06C,0x93190002,0x91090002,-,-,Normalize one clo
 generated_124920,func_150F9950,0x070,0x8CEA01D4,0x8CF901D4,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
 generated_124920,func_150F9950,0x080,0x00194180,0x00095180,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
 generated_124920,func_150F9950,0x08C,0x010A3021,0x032A3021,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
+generated_C9EC0,func_1509CA98,0xc,0x24420000,0x34a5ffff,R_MIPS_LO16:D_80087430,-,Exchange independent mask and table-address completions,,,false
+generated_C9EC0,func_1509CA98,0x10,0x34a5ffff,0x24420000,-,R_MIPS_LO16:D_80087430,Exchange independent mask and table-address completions,,,false

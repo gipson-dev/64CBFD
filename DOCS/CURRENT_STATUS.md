@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `01183bc`; tools are committed before the consumer pin.
+  checkpoint pins tools `8242b0f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Active record lookup restored**: [Note 1823](WORKING_NOTES/1823-active-record-lookup-match-20261029.md). `func_1509CA98` returns the first active record with the requested masked key, or 204 when absent. Its 52-word body matches with two relocation-aware guards exchanging independent setup words under the existing no-unroll profile. Original caller windows, native32 behavior and the complete 159-byte image delta pass. Total 3,901/5,506 (70.85%), Game 3,228/4,833 (66.79%), zero drift; 229 more to 75%. Next screen `func_151738C4`.
 
 **Owner payload buffer restored**: [Note 1822](WORKING_NOTES/1822-owner-buffer-constructor-match-20261029.md). `func_15190770` notifies the owner, allocates its payload buffer, copies the request and initializes its working region. All 52 words emit directly from C with no guards. Four original caller routes, native32 behavior and the complete 151-byte image delta pass. The shared caller declaration is corrected with its padded object unchanged. Total 3,900/5,506 (70.83%), Game 3,227/4,833 (66.77%), zero drift; 230 more to 75%. Next screen `func_1509CA98`.
 
