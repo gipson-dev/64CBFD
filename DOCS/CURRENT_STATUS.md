@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `aa668df`; tools are committed before the consumer pin.
+  checkpoint pins tools `18421e1`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Secondary motion integration restored**: [Note 1837](WORKING_NOTES/1837-secondary-motion-integration-match-20261029.md). `func_150CB008` matches its complete 53-instruction body and one alignment word from semantic C plus 33 checked register/scheduling normalizations. Its index-4 registration, original dispatch window, ordered floating-point arithmetic and alias behavior pass qualification. Total **3,914/5,506 (71.09%)**, Game **3,241/4,833 (67.06%)**, zero drift; **216** more to 75%. Next screen `func_150832AC`; private candidates remain uncredited.
 
 **Record-key association restored**: [Note 1836](WORKING_NOTES/1836-record-key-chain-association-match-20261029.md). `func_15195D00` now matches all 53 words from semantic void C plus four checked spill/scheduling normalizations within its unchanged 0x28 frame. The unusual look-ahead traversal, only retained caller, full guest frame state and native C effects are qualified. Both tools copies and the strict 168-byte image prediction pass; 68 owner neighbors remain unchanged. Total 3,913/5,506 (71.07%), Game 3,240/4,833 (67.04%), zero drift; 217 more to 75%. Next screen `func_150A613C`; parked candidates remain private and uncredited.
 
