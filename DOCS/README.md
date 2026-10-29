@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor channel command](WORKING_NOTES/1818-actor-channel-command-match-20261029.md): 51 direct C words, no guards; original dispatcher and count/apply helper qualification. Total 70.76%, 234 more to 75%.
+
 - [Payload owner command](WORKING_NOTES/1817-payload-owner-command-match-20261029.md): 50 compiler words, six checked guards, full 51-word match; caller/helper and native32 qualification. Total 70.74%, 235 more to 75%.
 
 - [Record impact response](WORKING_NOTES/1816-record-impact-response-match-20261029.md): 51 direct C words, no guards, explicit selector sequencing, typed caller and retained-helper qualification. Total 70.72%, 236 more to 75%.
