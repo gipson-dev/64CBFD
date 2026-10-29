@@ -257,8 +257,35 @@ void func_151A1E34(u8 *effect) {
     }
 }
 
-s32 func_151A1EE8() {
-    return 0;
+typedef struct {
+    EffectPacketPosition1CC440 position;
+    f32 sourceValueA;
+    f32 phase;
+    f32 sourceValueB;
+    s16 parameters[6];
+} RecordEffectPacketSix1CC440;
+
+/* Spawn an effect from the record's captured 36-byte parameter packet. */
+void func_151A1EE8(struct260 *record) {
+    struct260 *effect;
+    RecordEffectPacketSix1CC440 packet;
+    u8 *bytes = (u8 *)record;
+
+    packet.position = *(EffectPacketPosition1CC440 *)(bytes + 0x28);
+    packet.sourceValueA = *(f32 *)(bytes + 0x34);
+    packet.phase = 0.0f;
+    packet.sourceValueB = *(f32 *)(bytes + 0x38);
+    packet.parameters[0] = *(s16 *)(bytes + 0x3E);
+    packet.parameters[1] = *(s16 *)(bytes + 0x40);
+    packet.parameters[2] = *(s16 *)(bytes + 0x42);
+    packet.parameters[3] = *(s16 *)(bytes + 0x44);
+    packet.parameters[4] = *(s16 *)(bytes + 0x46);
+    packet.parameters[5] = *(s16 *)(bytes + 0x48);
+    effect = func_151491F4(*(s16 *)(bytes + 0x3C), -1, 4, 1, 0,
+                          sizeof(packet), bytes[0xC], bytes[1]);
+    if (effect != NULL) {
+        memcpy((u8 *)effect + 0x28, &packet, sizeof(packet));
+    }
 }
 
 s32 func_151A1FB4() {

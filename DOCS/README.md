@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Six-parameter effect packet](WORKING_NOTES/1814-record-effect-packet-six-match-20261029.md): 51 words directly from C, no guards, complete dispatcher and factory-chain qualification. Total 70.69%, 238 more to 75%.
+
 - [Queued-entry retirement](WORKING_NOTES/1813-queued-entry-retire-match-20261029.md): 51 words directly from C, no guards, original callback/release and dispatcher-window qualification. Total 70.67%, 239 more to 75%.
 
 - [Owner phase-pair callback](WORKING_NOTES/1812-owner-phase-pair-match-20261029.md): 51 exact words, explicit owner forwarding, original helper/caller qualification. Total 70.65%, 240 more to 75%.
