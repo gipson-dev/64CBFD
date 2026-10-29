@@ -24067,3 +24067,5 @@ generated_EDE60,func_150C1198,0x080,0x14C70004,0x01034821,-,-,Normalize equal si
 generated_EDE60,func_150C1198,0x084,0x01202025,0x01202025,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,true
 generated_EDE60,func_150C1198,0x0A8,0x03032021,0x03034821,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
 generated_EDE60,func_150C1198,0x0B0,0xA4990004,0xA5390004,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_CD5A0,func_150A019C,0x004,0x3C0B0000,0x3C0B0000,R_MIPS_HI16:D_800D3010,R_MIPS_HI16:D_800D3088,Bind the ten-record one-past address to its retail end label,,,false
+generated_CD5A0,func_150A019C,0x020,0x256B0078,0x256B0000,R_MIPS_LO16:D_800D3010,R_MIPS_LO16:D_800D3088,Bind the ten-record one-past address to its retail end label,,,false

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0d594c3`; tools are committed before the consumer pin.
+  checkpoint pins tools `4a20d04`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Record position command restored as direct C**: [Note 1798](WORKING_NOTES/1798-record-position-command-match-20261028.md). `func_1509DDFC` matches all 50 words with its three-argument boolean interface, 40-byte frame, five symbol bindings and no guards. Explicit actor-resolution sequencing passes native callback mutation; both original indirect dispatch routes and four original helpers are qualified within bounded windows. The strict image changes only 152 code bytes and one symbol-size byte; all seven neighbors are preserved. Total 3,876/5,506 (70.40%), Game 3,203/4,833 (66.27%), zero drift; 254 more to 75%. Next inspect `func_150A019C`; `func_1514E920` remains parked and uncredited.
+**Record timer update restored**: [Note 1799](WORKING_NOTES/1799-record-timer-update-match-20261028.md). `func_150A019C` now matches all 50 words with a zero-argument void interface, no frame and ten symbol bindings. Semantic C advances enabled records with unsigned wrap and at most one period per update; two guarded relocation changes preserve the retail array-end label. The untouched compiler object matches all three tested GNU link layouts. The caller declaration is corrected to void, with all four target-owner neighbors and all 16 caller-owner routines preserved. The strict image accounts for 156 code bytes, one extent byte and a closed ten-byte metadata permutation, with no exclusions. Total 3,877/5,506 (70.41%), Game 3,204/4,833 (66.29%), zero drift; 253 more to 75%. Next inspect `func_150F0198`; `func_1514E920` remains parked and uncredited.
+
+**Record position command restored as direct C**: [Note 1798](WORKING_NOTES/1798-record-position-command-match-20261028.md). `func_1509DDFC` matches all 50 words with its three-argument boolean interface, 40-byte frame, five symbol bindings and no guards. Explicit actor-resolution sequencing passes native callback mutation; both original indirect dispatch routes and four original helpers are qualified within bounded windows. The strict image changes only 152 code bytes and one symbol-size byte; all seven neighbors are preserved. Total 3,876/5,506 (70.40%), Game 3,203/4,833 (66.27%), zero drift; 254 more to 75%. The former next candidate, `func_150A019C`, is adopted in Note 1799 above; `func_1514E920` remains parked and uncredited.
 
 **Menu scene choice callback restored as direct C**: [Note 1797](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md). `func_151E4314` matches all 50 words with its recovered void interface, signed scene/sequence records, 20 symbol bindings and no guards. Both original registration routes, indirect invocation, native32 semantics and strict 244-byte image are qualified; all 59 neighbors are preserved. Total 3,875/5,506 (70.38%), Game 3,202/4,833 (66.25%), zero drift; 255 more to 75%. The former next candidate, `func_1509DDFC`, is adopted in Note 1798 above; `func_1514E920` remains parked and uncredited.
 

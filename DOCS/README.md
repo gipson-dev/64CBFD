@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Record timer update](WORKING_NOTES/1799-record-timer-update-match-20261028.md): 50 exact words; unsigned timer semantics, original caller window and end-label bindings qualified. Total 70.41%, 253 more to 75%.
 - [Record position command](WORKING_NOTES/1798-record-position-command-match-20261028.md): 50 direct C words; explicit callback sequencing, original dispatch and helper windows qualified. Total 70.40%, 254 more to 75%.
 - [Menu scene choice callback](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md): 50 words of direct C; original registration and indirect invocation qualified. Total 70.38%, 255 more to 75%.
 - [Bounce sound callback](WORKING_NOTES/1796-bounce-random-sound-match-20261028.md): 50 words of direct C; original dispatch routes and bounce/RNG/audio helpers qualified. Total 70.36%, 256 more to 75%.

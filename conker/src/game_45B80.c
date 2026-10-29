@@ -135,7 +135,7 @@ s32  func_15181EE0(s32 arg0);
 s32  func_1517F564(s32 arg0);
 s32  func_1508FD38(s32 arg0);
 s32  func_15096934(s32 arg0);
-s32  func_150A019C(void);
+void func_150A019C(void);
 
 
 void func_150186D0(void) {
