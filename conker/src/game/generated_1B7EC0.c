@@ -1,5 +1,11 @@
 #include <ultra64.h>
 
+#include "structs.h"
+extern s32 D_800BE9E4;
+extern void (*D_8008D5C0[])(u8 *);
+void func_1516972C(struct102 *);
+
+
 /* Non-matching placeholders for the text-only asm slice asm/1B7EC0.s. */
 
 typedef struct {
@@ -25,8 +31,33 @@ typedef struct {
 
 void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5);
 
-s32 func_1518AA10() {
-    return 0;
+/* Retire the queued entry after expiry, or advance the enabled timer. */
+void func_1518AA10(u8 *queue) {
+    u8 *next;
+    u8 *entry;
+
+    if (*(u32 *)(queue + 0x1C) != 0) {
+        if (*(s16 *)(queue + 0x22) < 0) {
+            entry = *(u8 **)(queue + 0x14);
+            next = *(u8 **)(entry + 0x18);
+            if (next == NULL) {
+                *(s32 *)(queue + 0x10) = 0;
+                *(s32 *)(queue + 0x14) = 0;
+            } else {
+                /* Reload the link after clearing next: the fields may alias. */
+                *(s32 *)(next + 0x14) = 0;
+                *(u8 **)(queue + 0x14) = *(u8 **)(entry + 0x18);
+            }
+            if (entry[0x1C] != 0) {
+                D_8008D5C0[entry[0x1C]](*(u8 **)(entry + 0x10));
+            }
+            func_1516972C((struct102 *)entry);
+            /* Release callbacks can change the count before this decrement. */
+            *(u32 *)(queue + 0x1C) -= 1;
+        } else if (queue[0x24] & 1) {
+            *(s16 *)(queue + 0x22) = (u32)*(s16 *)(queue + 0x22) - (u32)D_800BE9E4;
+        }
+    }
 }
 
 Generated1B7EC0Command1D *func_1518AADC(s32 arg0, volatile s16 arg1, volatile u8 arg2) {

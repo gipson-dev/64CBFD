@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Queued-entry retirement](WORKING_NOTES/1813-queued-entry-retire-match-20261029.md): 51 words directly from C, no guards, original callback/release and dispatcher-window qualification. Total 70.67%, 239 more to 75%.
+
 - [Owner phase-pair callback](WORKING_NOTES/1812-owner-phase-pair-match-20261029.md): 51 exact words, explicit owner forwarding, original helper/caller qualification. Total 70.65%, 240 more to 75%.
 
 - [Owner lifetime descriptor](WORKING_NOTES/1811-owner-lifetime-descriptor-match-20261029.md): 51 direct words, signed callback indices, original constructor/copy/caller qualified. Total 70.63%, 241 more to 75%.
