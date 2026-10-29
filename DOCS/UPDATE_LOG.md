@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Owner payload buffer restored**: [Note 1822](WORKING_NOTES/1822-owner-buffer-constructor-match-20261029.md). `func_15190770` notifies the owner, allocates its payload buffer, copies the request and initializes its working region. All 52 words emit directly from C with no guards. Four original caller routes, native32 behavior and the complete 151-byte image delta pass. The shared caller declaration is corrected with its padded object unchanged. Total 3,900/5,506 (70.83%), Game 3,227/4,833 (66.77%), zero drift; 230 more to 75%. Next screen `func_1509CA98`.
+
 **Owner variant descriptor restored**: [Note 1821](WORKING_NOTES/1821-owner-variant-descriptor-match-20261029.md). `func_150D10E4` constructs the owner-attached effect packet with a low-byte-selected signed offset. All 52 words emit directly from C with no guards. Original constructor/copy and paired-caller execution, native32 behavior and the complete 168-byte image delta pass. Total 3,899/5,506 (70.81%), Game 3,226/4,833 (66.75%), zero drift; 231 more to 75%. Next screen `func_15190770`.
 
 **Actor height position restored**: [Note 1820](WORKING_NOTES/1820-actor-height-position-match-20261029.md). `func_150BA930` copies the ordered actor position and optionally queries its vertical interval, preserving the start vector across provider effects. All 52 words emit directly from C with no guards. Original caller/helper execution, native32 overlaps and the complete 152-byte image delta pass. Total 3,898/5,506 (70.80%), Game 3,225/4,833 (66.73%), zero drift; 232 more to 75%. The height initializer remains non-matching and receives no new credit.

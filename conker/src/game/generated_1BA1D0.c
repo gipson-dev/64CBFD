@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 typedef struct { u32 words[20]; } Generated1BA1D0Preset;
 extern Generated1BA1D0Preset *D_8008D630[];
 s32 func_1518FDC4();
@@ -516,8 +517,35 @@ void func_1519072C(u8 *arg0) {
     func_1518F45C(locals.rec_ptr, 0x49);
 }
 
-s32 func_15190770() {
-    return 0;
+void func_15191B8C(s32, u8);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void *memcpy(void *, const void *, u32);
+u8 func_151D8E20(void);
+typedef struct {
+    u8 *owner;
+    u8 owner_id;
+    u8 padding[7];
+} OwnerBufferNotice1BA1D0;
+/* Notify the owner, then allocate and initialize its payload buffer. */
+void *func_15190770(struct185 *payload, s32 extraBytes, u8 priority, s32 context) {
+    OwnerBufferNotice1BA1D0 notice;
+    u8 *created;
+
+    notice.owner = (u8 *)payload->unk0;
+    notice.owner_id = ((u8 *)payload->unk0)[0x3B];
+    func_15191B8C((s32)&notice, 14);
+    created = func_15167A68(0x20, context, extraBytes + 0x300, 1, priority, 1);
+    if (created == NULL) {
+        return NULL;
+    }
+    memcpy(created + 0x10, payload, 12);
+    *(u8 **)(created + 0x24) = created + 0x30;
+    *(u8 **)(created + 0x28) = created + 0x300;
+    *(s32 *)(created + 0x20) = 0;
+    *(f32 *)(created + 0x1C) = 0.0f;
+    bzero(created + 0x30, 0x2D0);
+    created[0x2C] = func_151D8E20();
+    return created;
 }
 
 s32 func_15190840(s32 arg0) {
@@ -587,7 +615,7 @@ void func_151918BC(u8 *record) {
         } else {
             *(s16 *)(payload + 6) = 300;
         }
-        func_15190770(payload, 0, record[0xC], record[1]);
+        func_15190770((struct185 *)payload, 0, record[0xC], record[1]);
     }
     if (release) {
         func_1516972C(record);

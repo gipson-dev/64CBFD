@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Shared owner-buffer constructor contract. */
+void *func_15190770(struct185 *, s32, u8, s32);
+
 
 void func_150120B0(s32 arg0) {
     struct37 *temp_v0;

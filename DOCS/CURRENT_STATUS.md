@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7e259bf`; tools are committed before the consumer pin.
+  checkpoint pins tools `01183bc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner payload buffer restored**: [Note 1822](WORKING_NOTES/1822-owner-buffer-constructor-match-20261029.md). `func_15190770` notifies the owner, allocates its payload buffer, copies the request and initializes its working region. All 52 words emit directly from C with no guards. Four original caller routes, native32 behavior and the complete 151-byte image delta pass. The shared caller declaration is corrected with its padded object unchanged. Total 3,900/5,506 (70.83%), Game 3,227/4,833 (66.77%), zero drift; 230 more to 75%. Next screen `func_1509CA98`.
 
 **Owner variant descriptor restored**: [Note 1821](WORKING_NOTES/1821-owner-variant-descriptor-match-20261029.md). `func_150D10E4` constructs the owner-attached effect packet with a low-byte-selected signed offset. All 52 words emit directly from C with no guards. Original constructor/copy and paired-caller execution, native32 behavior and the complete 168-byte image delta pass. Total 3,899/5,506 (70.81%), Game 3,226/4,833 (66.75%), zero drift; 231 more to 75%. Next screen `func_15190770`.
 
