@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Owner record admission restored**: [Note 1843](WORKING_NOTES/1843-owner-record-admission-match-20261029.md). `func_151ACA60` emits all 54 words directly from C, with its original 48-byte frame and no guards. Total **3,920/5,506 (71.20%)**, Game **3,247/4,833 (67.18%)**, zero drift; **210** more to 75%. Next screen `func_150A278C`; private candidates remain uncredited.
+
 - [x] **Coordinate query float result restored**: [Note 1842](WORKING_NOTES/1842-coordinate-query-result-match-20261029.md). `func_1510F648` matches all 54 words with seven checked local-slot guards in its unchanged 48-byte frame. Total **3,919/5,506 (71.18%)**, Game **3,246/4,833 (67.16%)**, zero drift; **211** more to 75%. Next screen `func_151ACA60`; private candidates remain uncredited.
 
 - [x] **Owner default-lifetime factory restored**: [Note 1841](WORKING_NOTES/1841-owner-default-lifetime-factory-match-20261029.md). `func_150B53D0` emits all 54 words directly from C, with its original 80-byte frame and zero guards. Total **3,918/5,506 (71.16%)**, Game **3,245/4,833 (67.14%)**, zero drift; **212** more to 75%. Next screen `func_1510F648`; private candidates remain uncredited.

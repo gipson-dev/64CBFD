@@ -82,8 +82,33 @@ s32 func_151ACA20(u8 *arg0) {
     return 1;
 }
 
-s32 func_151ACA60() {
-    return 0;
+extern u8 D_800CC2D0[];
+void *func_15167A68(s32, s32, s32, s32, u8, s32);
+s32 func_151ACB38(u8 *, u8 *);
+void func_1516979C(void *);
+
+/* Allocate an admitted owner record and return its 32-bit address handle. */
+s32 func_151ACA60(u8 *owner, f32 scale, s32 payloadSize) {
+    u8 *record;
+
+    if (owner == NULL) {
+        return 0;
+    }
+    record = func_15167A68(0x30, 0, (s32)((u32)payloadSize + 0x30U), 1, 0xFF, 1);
+    if (record == NULL) {
+        return 0;
+    }
+    if (func_151ACB38(owner, record + 0x18) == 0) {
+        func_1516979C(record);
+        return 0;
+    }
+    *(u8 **)(record + 0x1C) = owner;
+    record[0x20] = owner[0x3B];
+    *(s32 *)(record + 0x24) = (s32)((u32)owner - (u32)D_800CC2D0) / 0x32C;
+    *(f32 *)(record + 0x28) = scale;
+    *(s32 *)(record + 0x10) = 1;
+    *(s32 *)(record + 0x14) = 0;
+    return (s32)record;
 }
 
 s32 func_151ACB38(u8 *arg0, u8 *arg1) {
