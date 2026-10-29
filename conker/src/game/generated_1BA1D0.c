@@ -268,8 +268,40 @@ s32 func_1518F1A0() {
     return 0;
 }
 
-s32 func_1518F384() {
-    return 0;
+extern f32 D_800A7B74;
+extern f32 D_800A7B78;
+
+typedef struct {
+    f32 firstUpper;
+    f32 firstLower;
+    f32 firstTarget;
+    f32 secondUpper;
+    f32 secondLower;
+    f32 reserved14;
+    f32 secondTarget;
+    s16 firstReady;
+    s16 secondReady;
+} RandomTargets1BA1D0;
+
+/* Initialize missing random targets, then interpolate the two live coordinates. */
+s32 func_1518F384(u8 *object) {
+    RandomTargets1BA1D0 *targets = (RandomTargets1BA1D0 *)(object + 0x110);
+
+    if (targets->firstReady == 0) {
+        targets->firstTarget = func_150ADA68() *
+            (targets->firstUpper - targets->firstLower) + targets->firstLower;
+        targets->firstReady = 1;
+    }
+    if (targets->secondReady == 0) {
+        targets->secondTarget = func_150ADA68() *
+            (targets->secondUpper - targets->secondLower) + targets->secondLower;
+        targets->secondReady = 1;
+    }
+    *(f32 *)(object + 0x30) +=
+        (targets->secondTarget - *(f32 *)(object + 0x30)) * D_800A7B74;
+    *(f32 *)(object + 0x2C) +=
+        (targets->firstTarget - *(f32 *)(object + 0x2C)) * D_800A7B78;
+    return 1;
 }
 
 void func_1518F45C(s32 arg0, u8 arg1) {

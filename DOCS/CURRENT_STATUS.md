@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f8dc2c4`; tools are committed before the consumer pin.
+  checkpoint pins tools `c758f9f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Random target interpolation restored**: [Note 1846](WORKING_NOTES/1846-random-target-interpolation-match-20261029.md). `func_1518F384` emits all 54 words directly from C, with its original 32-byte frame and no guards. Total **3,923/5,506 (71.25%)**, Game **3,250/4,833 (67.25%)**, zero drift; **207** more to 75%. Next screen `func_151E530C`; private candidates remain uncredited.
 
 **Segment resource setup restored**: [Note 1845](WORKING_NOTES/1845-segment-resource-setup-match-20261029.md). `func_150DFBD0` emits all 54 words directly from C, with its original 88-byte frame and no guards. Total **3,922/5,506 (71.23%)**, Game **3,249/4,833 (67.23%)**, zero drift; **208** more to 75%. Next screen `func_1518F384`; private candidates remain uncredited.
 
