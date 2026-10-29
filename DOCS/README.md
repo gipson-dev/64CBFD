@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Owner lifetime descriptor](WORKING_NOTES/1811-owner-lifetime-descriptor-match-20261029.md): 51 direct words, signed callback indices, original constructor/copy/caller qualified. Total 70.63%, 241 more to 75%.
+
 - [Record address relocator](WORKING_NOTES/1810-record-address-relocator-match-20261029.md): 51 direct words, zero guards, 209 dependent owners audited. Total 70.61%, 242 more to 75%.
 
 - [Position effect burst](WORKING_NOTES/1809-position-effect-burst-match-20261029.md): 51 words directly from C without guards; original caller and random generators qualified. Total 70.60%, 243 more to 75%.

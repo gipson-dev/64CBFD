@@ -1,4 +1,34 @@
 #include <ultra64.h>
+
+extern f32 D_800A1B70;
+void *func_15134DAC(s32, s32);
+typedef struct {
+    u8 owner_id;
+    u8 pad1[3];
+    u8 *owner;
+    u8 attachmentIndex;
+    u8 pad9[3];
+    f32 zero0;
+    f32 zero1;
+    f32 zero2;
+    f32 zero3;
+    f32 value1C;
+    f32 value20;
+    u8 mode;
+    u8 pad25;
+    s16 activeFrames;
+    s16 restartDelay;
+    s16 lifetime;
+    s16 value2C;
+    s8 startCallback;
+    s8 transformCallback;
+    s8 updateCallback;
+    u8 pad31[3];
+    f32 rate;
+    u8 flags;
+    s8 finishCallback;
+} OwnerLifetimeDescriptor1228D0;
+
 #include "functions.h"
 
 /* Non-matching placeholders for the text-only asm slice asm/1228D0.s. */
@@ -148,8 +178,32 @@ void func_150F6850(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
 }
 
-s32 func_150F6890() {
-    return 0;
+/* Construct an owner-attached effect with a signed lifetime.
+ * The two -1 callback indices disable those optional callbacks.
+ * The original four-argument ABI retains the unused selector and context. */
+void *func_150F6890(u8 *owner, s16 lifetime, s32 unusedSelector, s32 unusedContext) {
+    OwnerLifetimeDescriptor1228D0 packet;
+    packet.owner_id = owner[0x3B];
+    packet.owner = owner;
+    packet.attachmentIndex = 3;
+    packet.zero0 = 0.0f;
+    packet.zero1 = 0.0f;
+    packet.zero2 = 0.0f;
+    packet.zero3 = 0.0f;
+    packet.value1C = D_800A1B70;
+    packet.value20 = 8.5f;
+    packet.mode = 2;
+    packet.activeFrames = 40;
+    packet.restartDelay = 16;
+    packet.lifetime = lifetime;
+    packet.startCallback = 5;
+    packet.transformCallback = 8;
+    packet.updateCallback = -1;
+    packet.rate = 1.0f;
+    packet.flags = 0;
+    packet.finishCallback = -1;
+    packet.value2C = 0;
+    return func_15134DAC((s32)&packet, 0);
 }
 
 s32 func_150F695C() {
