@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Owner float payload](WORKING_NOTES/1802-owner-float-payload-match-20261028.md): 50 direct C words; original caller, allocator wrapper and byte-copy loop qualified. Total 70.47%, 250 more to 75%.
 - [Paired sine update](WORKING_NOTES/1801-paired-sine-update-match-20261028.md): 50 direct C words; original slot-11 callback and math helpers qualified. Total 70.45%, 251 more to 75%.
 - [Payload effect factory](WORKING_NOTES/1800-payload-effect-factory-match-20261028.md): 50 direct C words; original caller and allocation chain qualified. Total 70.43%, 252 more to 75%.
 - [Record timer update](WORKING_NOTES/1799-record-timer-update-match-20261028.md): 50 exact words; unsigned timer semantics, original caller window and end-label bindings qualified. Total 70.41%, 253 more to 75%.

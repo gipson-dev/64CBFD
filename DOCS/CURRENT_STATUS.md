@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4e83f09`; tools are committed before the consumer pin.
+  checkpoint pins tools `2097c26`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Paired sine update restored**: [Note 1801](WORKING_NOTES/1801-paired-sine-update-match-20261028.md). `func_151025F4` emits all 50 words directly from C with its 48-byte frame, six symbol bindings and no new guards. The slot-11 owner/context callback and both original math helpers are qualified. Total 3,879/5,506 (70.45%), Game 3,206/4,833 (66.34%), zero drift; 251 more to 75%. Next inspect `func_1510A344`; `func_1514E920` remains parked and uncredited.
+**Owner float payload restored**: [Note 1802](WORKING_NOTES/1802-owner-float-payload-match-20261028.md). `func_1510A344` emits all 50 words directly from C with its four-argument pointer interface, 72-byte frame, six symbol bindings and no new guards. The original caller, allocation helper and byte-copy loop are qualified; payload padding is preserved. Total 3,880/5,506 (70.47%), Game 3,207/4,833 (66.36%), zero drift; 250 more to 75%. Next inspect `func_151AF270`; `func_1514E920` remains parked and uncredited.
+
+**Paired sine update restored**: [Note 1801](WORKING_NOTES/1801-paired-sine-update-match-20261028.md). `func_151025F4` emits all 50 words directly from C with its 48-byte frame, six symbol bindings and no new guards. The slot-11 owner/context callback and both original math helpers are qualified. Total 3,879/5,506 (70.45%), Game 3,206/4,833 (66.34%), zero drift; 251 more to 75%. The former next candidate, `func_1510A344`, is adopted in Note 1802 above; `func_1514E920` remains parked and uncredited.
 
 **Payload effect factory restored**: [Note 1800](WORKING_NOTES/1800-payload-effect-factory-match-20261028.md). `func_150F0198` emits all 50 words directly from C with no new guards; the seven-argument interface, original caller and allocation chain are qualified. Total 3,878/5,506 (70.43%), Game 3,205/4,833 (66.31%), zero drift; 252 more to 75%. The former next candidate, `func_151025F4`, is adopted in Note 1801 above; `func_1514E920` remains parked and uncredited.
 
