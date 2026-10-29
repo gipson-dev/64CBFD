@@ -24094,3 +24094,11 @@ generated_C9EC0,func_1509CA98,0xc,0x24420000,0x34a5ffff,R_MIPS_LO16:D_80087430,-
 generated_C9EC0,func_1509CA98,0x10,0x34a5ffff,0x24420000,-,R_MIPS_LO16:D_80087430,Exchange independent mask and table-address completions,,,false
 game_EF410,func_150C308C,0x054,0x46062000,0x46062300,-,-,Normalize closed planar squared-length temporary from f0 to f12,,,false
 game_EF410,func_150C308C,0x058,0x4608003C,0x4608603C,-,-,Normalize closed planar squared-length temporary from f0 to f12,,,false
+generated_1D6E80,func_151A99D0,0x014,0x3C010000,0xC4440014,R_MIPS_HI16:D_800A8F74,-,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x018,0xC4260000,0x3C010000,R_MIPS_LO16:D_800A8F74,R_MIPS_HI16:D_800A8F74,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x01C,0xC4440014,0xC4260000,-,R_MIPS_LO16:D_800A8F74,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x020,0x3C014316,0xE7A40030,-,-,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x024,0xE7A40030,0xC4400118,-,-,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x028,0xC4400118,0x3C014316,-,-,Normalize independent height probe setup schedule,,,false
+generated_1D6E80,func_151A99D0,0x080,0xAFA70028,0xAFA7002C,-,-,Normalize closed height-result pointer spill slot,,,false
+generated_1D6E80,func_151A99D0,0x0A4,0x8FA50028,0x8FA5002C,-,-,Normalize closed height-result pointer spill slot,,,false
