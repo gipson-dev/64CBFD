@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `3871bb5`; tools are committed before the consumer pin.
+  checkpoint pins tools `d9f996f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Kind-four height-effect probe restored**: [Note 1830](WORKING_NOTES/1830-height-effect-four-probe-match-20261029.md). `func_151A9FC8` recovers the attached-actor height probe and conditional effect submission. All 53 words match after six checked setup scheduling words and two private spill offsets. Full-owner, original caller-window, guest/native and strict 183-byte image-delta checks pass, including a closed 27-byte ELF metadata permutation. Total 3,907/5,506 (70.96%), Game 3,234/4,833 (66.91%), zero drift; 223 more to 75%. The reference-event callback investigation remains parked and uncredited. Next screen `func_151AA09C`.
 
 **Height-effect probe restored**: [Note 1829](WORKING_NOTES/1829-height-effect-probe-match-20261029.md). `func_151A99D0` recovers the attached-actor height probe and conditional effect submission. All 53 words match after six checked setup scheduling words and two private spill offsets. Full-owner, original caller-window, guest/native and strict 191-byte image-delta checks pass, including a closed 35-byte ELF metadata permutation. Total 3,906/5,506 (70.94%), Game 3,233/4,833 (66.89%), zero drift; 224 more to 75%. The reference-event callback investigation remains parked and uncredited. Next screen `func_151A9FC8`.
 

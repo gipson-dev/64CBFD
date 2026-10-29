@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern f32 D_800A8F8C;
+
 extern f32 D_800A8F74;
 s32 func_15045800(f32 *, u16, f32, void *);
 void func_151ABE40(f32 *, void *, s32, u8, s32);
@@ -46,8 +48,24 @@ s32 func_151A9BA0() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151A9EC0.s")
 
-s32 func_151A9FC8() {
-    return 0;
+/* Probe below the attached actor and submit a height-aligned kind-four effect on a hit. */
+void func_151A9FC8(u8 *input) {
+    u8 *owner = input;
+    f32 position[3];
+    u8 *actor;
+
+    actor = *(u8 **)(owner + 0x18);
+    position[0] = *(f32 *)(actor + 0x14);
+    if (D_800A8F8C < *(f32 *)(actor + 0x118)) {
+        position[1] = *(f32 *)(actor + 0x118) + 100.0f;
+    } else {
+        position[1] = *(f32 *)(actor + 0x18) + 150.0f;
+    }
+    position[2] = *(f32 *)(actor + 0x1C);
+    if (func_15045800(position, 0, position[1] - 300.0f, owner + 0x34)) {
+        position[1] = *(f32 *)(owner + 0x34);
+        func_151ABE40(position, owner + 0x34, 4, owner[0xC], owner[1]);
+    }
 }
 
 s32 func_151AA09C() {
