@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Record impact response](WORKING_NOTES/1816-record-impact-response-match-20261029.md): 51 direct C words, no guards, explicit selector sequencing, typed caller and retained-helper qualification. Total 70.72%, 236 more to 75%.
+
 - [Actor status effect](WORKING_NOTES/1815-actor-status-effect-match-20261029.md): 51 words directly from C, no guards, original dispatch-window/helper qualification. Total 70.70%, 237 more to 75%.
 
 - [Six-parameter effect packet](WORKING_NOTES/1814-record-effect-packet-six-match-20261029.md): 51 words directly from C, no guards, complete dispatcher and factory-chain qualification. Total 70.69%, 238 more to 75%.

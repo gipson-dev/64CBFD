@@ -31,8 +31,27 @@ s32 func_151AC408() {
     return 0;
 }
 
-s32 func_151AC550() {
-    return 0;
+u8 func_151D8E20(void);
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+
+typedef struct { f32 x, y, z, velocityY, other; } ImpactMotionRecord;
+
+/* Submit the impact effect, then mark the captured payload as handled. */
+s32 func_151AC550(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
+                  f32 height, void *result) {
+    u8 *payload = *(u8 **)(actor + 0x98);
+    ImpactMotionRecord *records = *(ImpactMotionRecord **)(actor + 0x94);
+    f32 position[3];
+    u8 selector;
+
+    position[0] = records[*(s8 *)(actor + 0x2D)].x;
+    position[1] = height;
+    position[2] = records[*(s8 *)(actor + 0x2D)].z;
+    selector = func_151D8E20();
+    func_151DBCBC(selector, *(f32 *)payload * 7.0f, payload[0x1B],
+                  (s32)result, position, actor[0xC], actor[1]);
+    payload[0x20] = 4;
+    return 1;
 }
 
 /* Note 313: original ROM implementation, retained as assembly until C conversion. */
