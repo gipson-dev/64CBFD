@@ -2,6 +2,8 @@
 
 Last verified: 2026-10-29
 
+**Byte-transition allocator audit, still private**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` passes bounded guest/native behavior screens; mode-home lifetime and instruction scheduling remain unmatched. No source installed or new credit. Accepted total remains 3,902/5,506 (70.87%).
+
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
 under [WORKING_NOTES/](WORKING_NOTES/).
