@@ -24118,3 +24118,36 @@ generated_1D6E80,func_151AA09C,0x024,0xE7A40030,0xC4400118,-,-,Normalize indepen
 generated_1D6E80,func_151AA09C,0x028,0xC4400118,0x3C014316,-,-,Normalize independent height probe setup schedule,,,false
 generated_1D6E80,func_151AA09C,0x080,0xAFA70028,0xAFA7002C,-,-,Normalize closed height-result pointer spill slot,,,false
 generated_1D6E80,func_151AA09C,0x0A4,0x8FA50028,0x8FA5002C,-,-,Normalize closed height-result pointer spill slot,,,false
+generated_F5800,func_150CA07C,0x000,0x3C030000,0x3C020000,R_MIPS_HI16:D_800BE9A4,R_MIPS_HI16:D_800BE9A4,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x004,0x24630000,0x24420000,R_MIPS_LO16:D_800BE9A4,R_MIPS_LO16:D_800BE9A4,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x00C,0xC4660000,0xC4460000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x014,0xC480005C,0xC48C005C,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x030,0xC46C0000,0xC4400000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x034,0x460C0482,0x46006482,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x03C,0x460C9102,0x46009102,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x04C,0x460C1202,0x46001202,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x060,0xC4680000,0xC4480000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x06C,0xE4900040,0xC4920050,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x070,0xC4640000,0xE4900040,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x074,0x46040382,0xC4440000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x078,0x460E1180,0x46046182,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x07C,0xE4860048,0xC4840020,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x080,0xC4880050,0x46061200,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x084,0xC4720000,0xE4880048,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x088,0xC4900020,0xC44A0000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x08C,0xC4860054,0xC4880054,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x090,0x46124282,0x460A9402,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x094,0x24020001,0x46102180,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x098,0x460A8100,0xC4840024,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x09C,0xC4900024,0xE4860020,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0A0,0xE4840020,0xC4520000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0A4,0xC4680000,0xC4860058,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0A8,0xC4840058,0x46124282,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0AC,0x46083482,0x460A2400,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0B0,0x46128280,0xC4840028,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0B4,0xC4900028,0xE4900024,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0B8,0xE48A0024,0xC4480000,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0BC,0xC4660000,0x24020001,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0C0,0x46062202,0x46083482,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0C4,0x46088480,0x46122280,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+generated_F5800,func_150CA07C,0x0C8,0xE4920028,0xE48A0028,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
