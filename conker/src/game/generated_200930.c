@@ -1,4 +1,11 @@
 #include <ultra64.h>
+
+void func_151D5514(f32 *, u8, s32);
+void func_151D3FF4(f32 *, u8, s32);
+f32 func_150ADA68(void);
+s32 func_150ADA20(void);
+u8 *func_151541B8(f32 *, f32, f32, f32, f32, u8, s32);
+
 typedef struct { f32 x,y,z; } BobVector200930;
 typedef struct { s16 remaining; u16 reserved; f32 phase,rate,amplitude; } BobState200930;
 typedef struct {
@@ -104,8 +111,17 @@ void func_151D5148(u8 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D5514.s")
 
-s32 func_151D5648() {
-    return 0;
+/* Submit the paired position effects, then the randomized burst. */
+void func_151D5648(f32 *position, u8 kind, s32 mode) {
+    u32 randomValue;
+    f32 randomScale;
+
+    func_151D5514(position, kind, mode);
+    func_151D3FF4(position, kind, mode);
+    randomScale = func_150ADA68();
+    randomValue = (u32)func_150ADA20();
+    func_151541B8(position, randomScale * 4.0f + 12.0f, 1.6409999f,
+                 (randomValue % 56U) + 200U, 0.0f, kind, mode);
 }
 
 s32 func_151D5714() {

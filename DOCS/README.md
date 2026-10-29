@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Position effect burst](WORKING_NOTES/1809-position-effect-burst-match-20261029.md): 51 words directly from C without guards; original caller and random generators qualified. Total 70.60%, 243 more to 75%.
+
 - [Owner sine scale](WORKING_NOTES/1808-owner-sine-scale-match-20261029.md): 48 exact body words plus three padding words, with five scheduling guards; forwarded result and connected original helpers qualified. Total 70.58%, 244 more to 75%.
 
 - [Owner byte scale](WORKING_NOTES/1807-owner-byte-scale-match-20261029.md): 51 exact retail words from semantic C with two scheduling guards; original callback result, full image and native32 behavior qualified. Total 70.56%, 245 more to 75%.
