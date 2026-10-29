@@ -1,5 +1,8 @@
 # Documentation
 
+**Owner variant descriptor restored**: [Note 1821](WORKING_NOTES/1821-owner-variant-descriptor-match-20261029.md). `func_150D10E4` constructs the owner-attached effect packet with a low-byte-selected signed offset. All 52 words emit directly from C with no guards. Original constructor/copy and paired-caller execution, native32 behavior and the complete 168-byte image delta pass. Total 3,899/5,506 (70.81%), Game 3,226/4,833 (66.75%), zero drift; 231 more to 75%. Next screen `func_15190770`.
+
+
 ## PC-port cross-project update - 2026-09-23
 
 The sibling `64CBFDOGL` host port now completes Training through the natural Windy entrance and a fresh retained-save reload in RelWithDebInfo; repeat traversal used FLY. The user has **VERIFIED the second-level Chapters unlock**. The Gargoyle held-release repair uses original `func_15073A50` (232 bytes); guest/ROM builds and exact-byte checks are recorded in [host Note 738](../../64CBFDOGL/DOCS/WORKING_NOTES/738-gargoyle-actor-and-original-held-release-20260923.md). This is scoped progression evidence, not complete retail presentation or full-game acceptance.

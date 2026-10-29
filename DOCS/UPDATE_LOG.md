@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Owner variant descriptor restored**: [Note 1821](WORKING_NOTES/1821-owner-variant-descriptor-match-20261029.md). `func_150D10E4` constructs the owner-attached effect packet with a low-byte-selected signed offset. All 52 words emit directly from C with no guards. Original constructor/copy and paired-caller execution, native32 behavior and the complete 168-byte image delta pass. Total 3,899/5,506 (70.81%), Game 3,226/4,833 (66.75%), zero drift; 231 more to 75%. Next screen `func_15190770`.
+
 **Actor height position restored**: [Note 1820](WORKING_NOTES/1820-actor-height-position-match-20261029.md). `func_150BA930` copies the ordered actor position and optionally queries its vertical interval, preserving the start vector across provider effects. All 52 words emit directly from C with no guards. Original caller/helper execution, native32 overlaps and the complete 152-byte image delta pass. Total 3,898/5,506 (70.80%), Game 3,225/4,833 (66.73%), zero drift; 232 more to 75%. The height initializer remains non-matching and receives no new credit.
 
 **Actor descriptor effect restored**: [Note 1819](WORKING_NOTES/1819-actor-descriptor-effect-match-20261029.md). `func_150F9950` recovers descriptor geometry and submits paired effects. Its 49-word body matches with five checked register-allocation guards; three alignment words complete the retail slot. The lookup wrapper now explicitly returns its descriptor pointer with its entire object unchanged. Caller/lookup execution, native32 behavior and the complete 154-byte image delta pass. Total 3,897/5,506 (70.78%), Game 3,224/4,833 (66.71%), zero drift; 233 more to 75%.
