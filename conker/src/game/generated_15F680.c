@@ -319,8 +319,18 @@ s32 func_15133A94() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133B98.s")
 
-s32 func_15133C58() {
-    return 0;
+s32 func_15133B98(u8 *, f32, f32, f32, f32, void *);
+s32 func_150ADA20(void);
+u16 func_10010F88(s32, u16, s16, u8, s32, s16, s16, s16, s16, s16);
+
+/* Apply the bounce response, then sometimes play a positional impact sound. */
+s32 func_15133C58(u8 *actor, f32 x, f32 y, f32 z, f32 height, void *contact) {
+    func_15133B98(actor, x, y, z, height, contact);
+    if (func_150ADA20() & 1) {
+        func_10010F88((u32)func_150ADA20() % 9 + 0x2DE,
+                     0x2EE0, 0, 0, 0, (s32)x, (s32)y, (s32)z, 500, 1000);
+    }
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133D20.s")
