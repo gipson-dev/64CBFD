@@ -268,8 +268,37 @@ void func_151E4264(void) {
     }
 }
 
-s32 func_151E4314() {
-    return 0;
+typedef struct {
+    s16 scene;
+    s8 sequence;
+    s8 alternateSequence;
+} MenuSceneChoice20AE20;
+extern s8 D_800AB692[];
+extern MenuSceneChoice20AE20 D_800AB7A4[];
+
+/* Start the selected menu scene, or use the fallback transition. */
+void func_151E4314(void) {
+    s32 choiceIndex;
+    s32 sequence;
+    MenuSceneChoice20AE20 *choice;
+
+    choiceIndex = D_800AB692[D_8008FDD4[0x42] * 10];
+    if (choiceIndex >= 0) {
+        if (D_800E0C00[0]) {
+            choice = &D_800AB7A4[choiceIndex];
+            sequence = choice->alternateSequence;
+        } else {
+            choice = &D_800AB7A4[choiceIndex];
+            sequence = choice->sequence;
+        }
+        func_1501D348(choice->scene, sequence, 0, 0, 0);
+        D_8008FD80 = 1;
+        D_800E0B94 = 5;
+        D_8008FD8C = 1;
+        D_8008FD90 = 1;
+    } else {
+        func_151E2834();
+    }
 }
 
 s32 func_151E43DC() {

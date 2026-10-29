@@ -2,7 +2,9 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
-- [x] **Bounce sound callback restored as direct C**: [Note 1796](WORKING_NOTES/1796-bounce-random-sound-match-20261028.md). `func_15133C58` matches all 50 words with its six-argument interface, four call relocations and no guards. Both original dispatch routes, retained bounce/RNG/audio helpers, native32 conversions and strict 146-byte image are qualified. Preserve all 30 neighbors. Total 3,874/5,506 (70.36%), Game 3,201/4,833 (66.23%), zero drift; 256 more to 75%. Next inspect `func_151E4314`; `func_1514E920` remains parked and uncredited.
+- [x] **Menu scene choice callback restored as direct C**: [Note 1797](WORKING_NOTES/1797-menu-scene-choice-match-20261028.md). `func_151E4314` matches all 50 words with its recovered void interface, signed scene/sequence records, 20 symbol bindings and no guards. Both original registration routes, indirect invocation, native32 semantics and strict 244-byte image are qualified; all 59 neighbors are preserved. Total 3,875/5,506 (70.38%), Game 3,202/4,833 (66.25%), zero drift; 255 more to 75%. Next inspect `func_1509DDFC`; `func_1514E920` remains parked and uncredited.
+
+- [x] **Bounce sound callback restored as direct C**: [Note 1796](WORKING_NOTES/1796-bounce-random-sound-match-20261028.md). `func_15133C58` matches all 50 words with its six-argument interface, four call relocations and no guards. Both original dispatch routes, retained bounce/RNG/audio helpers, native32 conversions and strict 146-byte image are qualified. Preserve all 30 neighbors. Total 3,874/5,506 (70.36%), Game 3,201/4,833 (66.23%), zero drift; 256 more to 75%. The former next candidate, `func_151E4314`, is adopted in Note 1797 above; `func_1514E920` remains parked and uncredited.
 
 - [x] Qualify and adopt `func_150969A0` in [Note 1795](WORKING_NOTES/1795-record-prefix-active-match-20261028.md): 50-word direct C prefix predicate, four relocations, no frame or guards. Verify first-active reads, signed counts, native bounds, the original eight-word caller gate, both tools copies and strict 148-byte image. Preserve six neighbors. Native total 70.34%, 257 more to 75%.
 
