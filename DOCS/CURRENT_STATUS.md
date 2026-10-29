@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `420857c`; tools are committed before the consumer pin.
+  checkpoint pins tools `e7024c7`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Second motion integrator restored**: [Note 1833](WORKING_NOTES/1833-second-motion-integration-match-20261029.md). `func_150CBE88` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,910/5,506 (71.01%), Game 3,237/4,833 (66.98%), zero drift; 220 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
 
 **Motion integrator restored**: [Note 1832](WORKING_NOTES/1832-motion-integration-match-20261029.md). `func_150CA07C` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,909/5,506 (71.00%), Game 3,236/4,833 (66.96%), zero drift; 221 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
 

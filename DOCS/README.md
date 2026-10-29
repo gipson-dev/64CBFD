@@ -1,5 +1,8 @@
 # Documentation
 
+**Second motion integrator restored**: [Note 1833](WORKING_NOTES/1833-second-motion-integration-match-20261029.md). `func_150CBE88` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,910/5,506 (71.01%), Game 3,237/4,833 (66.98%), zero drift; 220 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
+
+
 **Motion integrator restored**: [Note 1832](WORKING_NOTES/1832-motion-integration-match-20261029.md). `func_150CA07C` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,909/5,506 (71.00%), Game 3,236/4,833 (66.96%), zero drift; 221 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
 
 

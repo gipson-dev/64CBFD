@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Second motion integrator restored**: [Note 1833](WORKING_NOTES/1833-second-motion-integration-match-20261029.md). `func_150CBE88` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,910/5,506 (71.01%), Game 3,237/4,833 (66.98%), zero drift; 220 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
+
 **Motion integrator restored**: [Note 1832](WORKING_NOTES/1832-motion-integration-match-20261029.md). `func_150CA07C` now matches all 53 words from semantic C plus 33 checked register/scheduling normalizations. Ordered IEEE arithmetic, record/time aliases, the original dispatch window, both tools copies and the strict 158-byte image prediction pass. Total 3,909/5,506 (71.00%), Game 3,236/4,833 (66.96%), zero drift; 221 more to 75%. Next screen `func_150CBE88`; `func_15030310` remains private and uncredited.
 
 **Second kind-four height-effect probe restored**: [Note 1831](WORKING_NOTES/1831-height-effect-next-probe-match-20261029.md). `func_151AA09C` recovers the attached-actor height probe and conditional effect submission. All 53 words match after six checked setup scheduling words and two private spill offsets. Full-owner, original caller-window, guest/native and strict 209-byte image-delta checks pass, including a closed 53-byte ELF metadata permutation. Total 3,908/5,506 (70.98%), Game 3,235/4,833 (66.94%), zero drift; 222 more to 75%. The reference-event callback investigation remains parked and uncredited. Next screen `func_15030310`.
