@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_150E3514` in [Note 1794](WORKING_NOTES/1794-actor-audio-release-match-20261028.md): 50 instructions directly from C, five relocations, zero guards. Verify actor-slot clearing, callback order, signed audio coordinates, all five original caller windows, 86 helper words, both tools copies and the strict 143-byte image. Preserve twelve neighbors. Native total 70.32%, 258 more to 75%.
+
 - [x] Qualify and adopt `func_150C1198` in [Note 1793](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md): 47-instruction recycler, eleven guards and one redundant-copy omission, full 50-word slot exact. Verify active/free chains, live pointer reload, original caller/release helper, both tools copies and the strict 134-byte image. Preserve six neighbors. Native total 70.31%, 259 more to 75%.
 
 - [x] Qualify and adopt `func_15183D28` in [Note 1792](WORKING_NOTES/1792-live-record-dispatcher-match-20261028.md): 252-word guarded C with live flags, timers, geometry dispatch, cleanup and aging. Verify the repaired void caller, relocation carry boundary, both tools copies and the strict 933-byte image. Preserve eight neighbors and all sixteen caller functions. Native total 70.29%, 260 more to 75%.

@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `01a45c2`; tools are committed before the consumer pin.
+  checkpoint pins tools `b5f11e0`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Owner entry recycler restored as guarded C**: [Note 1793](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md). `func_150C1198` matches all 47 instructions and its full 50-word slot. Recover first-match active-chain removal, free-chain insertion and the live entry-table reload. Eleven guards normalize ten words and omit one redundant pointer copy. Both tools copies pass eight fresh and two installed checks, with original indirect-caller/release-helper coverage, guest aliases and native32 validation. Preserve six neighbors and the strict 134-byte image with zero exclusions. Native total 3,871/5,506 (70.31%), Game 3,198/4,833 (66.17%), zero drift; 259 more to 75%. Next inspect `func_150E3514`; `func_1514E920` remains parked and uncredited.
+**Actor audio release restored as direct C**: [Note 1794](WORKING_NOTES/1794-actor-audio-release-match-20261028.md). `func_150E3514` matches all 50 instructions directly with its 56-byte frame, five relocations and no guards. Recover conditional actor-slot clearing, active-sound stop, live coordinate reads, ten-argument audio submission and actor release. Qualify all five original caller windows and 86 helper words; both tools copies pass eight fresh and two installed checks. Preserve twelve neighbors and the strict 143-byte image with zero exclusions. Native total 3,872/5,506 (70.32%), Game 3,199/4,833 (66.19%), zero drift; 258 more to 75%. Next inspect `func_150969A0`; `func_1514E920` remains parked and uncredited.
+
+**Owner entry recycler restored as guarded C**: [Note 1793](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md). `func_150C1198` matches all 47 instructions and its full 50-word slot. Recover first-match active-chain removal, free-chain insertion and the live entry-table reload. Eleven guards normalize ten words and omit one redundant pointer copy. Both tools copies pass eight fresh and two installed checks, with original indirect-caller/release-helper coverage, guest aliases and native32 validation. Preserve six neighbors and the strict 134-byte image with zero exclusions. Native total 3,871/5,506 (70.31%), Game 3,198/4,833 (66.17%), zero drift; 259 more to 75%. The former next candidate, `func_150E3514`, is adopted in Note 1794 above; `func_1514E920` remains parked and uncredited.
 
 **Live record dispatcher restored as guarded C**: [Note 1792](WORKING_NOTES/1792-live-record-dispatcher-match-20261028.md). `func_15183D28` matches all 252 words: 186 direct and 66 checked guards. Recover live flags, four timers, both geometry streams, cleanup and aging; repair the caller declaration to `void`. Both tools copies pass eight fresh and two installed checks, including a relocation carry-boundary negative. Preserve eight owner neighbors, all sixteen caller functions and the strict 933-byte image with zero exclusions. Native total 3,870/5,506 (70.29%), Game 3,197/4,833 (66.15%), zero drift; 260 more to 75%. The former next candidate, `func_150C1198`, is adopted in Note 1793 above; `func_1514E920` remains parked and uncredited.
 

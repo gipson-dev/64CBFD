@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern f32 D_800BE9A4;
 extern f32 D_800A1054;
 
@@ -56,8 +57,26 @@ s32 func_150E3414() {
     return 0;
 }
 
-s32 func_150E3514() {
-    return 0;
+void func_100111C8(u16 handle);
+u16 func_10010F88(s32, u16, s16, u8, s32, s16, s16, s16, s16, s16);
+void func_1516972C(struct102 *actor);
+
+/* Clear the matching actor slot, replace an active sound, then release the actor. */
+void func_150E3514(u8 *actor) {
+    s32 slot;
+    slot = *(u8 *)(actor + 0x48);
+    if (slot >= 0 && (u8 *)D_800D99D0[slot] == actor) {
+        D_800D99D0[slot] = NULL;
+    }
+    if (*(u16 *)(actor + 0x4A) != 0) {
+        func_100111C8(*(u16 *)(actor + 0x4A));
+        *(u16 *)(actor + 0x4A) = 0;
+        func_10010F88(0x2D7, 0x5DC0, 0, 0, 0,
+                     (s32)*(f32 *)(actor + 0x28),
+                     (s32)*(f32 *)(actor + 0x2C),
+                     (s32)*(f32 *)(actor + 0x30), 1000, 6000);
+    }
+    func_1516972C((struct102 *)actor);
 }
 
 s32 func_150E35DC() {
