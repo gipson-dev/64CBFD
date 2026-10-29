@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `d3c3f14`; tools are committed before the consumer pin.
+  checkpoint pins tools `24ea520`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Payload owner command restored**: [Note 1817](WORKING_NOTES/1817-payload-owner-command-match-20261029.md). `func_151D4C38` releases or deactivates matching owner links and forwards other pair commands. Its recovered three-argument void interface emits 50 C words; six checked guards restore the full 51-word retail sequence and original epilogue. Caller/helper execution, native32 behavior and the complete 150-byte image delta pass. Total 3,895/5,506 (70.74%), Game 3,222/4,833 (66.67%), zero drift; 235 more to 75%. Next screen `func_15080430`; `func_1514E920` and `func_151D7000` remain parked and uncredited.
 
 **Record impact response restored**: [Note 1816](WORKING_NOTES/1816-record-impact-response-match-20261029.md). `func_151AC550` captures signed-index motion coordinates, selects and submits an effect, and marks the captured payload as handled. All 51 words emit directly from C with no guards; explicit selector sequencing preserves retail load order. The typed six-argument caller route, retained helpers, native32 behavior and complete 152-byte image delta are qualified. Total 3,894/5,506 (70.72%), Game 3,221/4,833 (66.65%), zero drift; 236 more to 75%. Next inspect `func_151D4C38`; `func_1514E920` and `func_151D7000` remain parked and uncredited.
 

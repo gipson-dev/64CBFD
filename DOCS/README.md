@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Payload owner command](WORKING_NOTES/1817-payload-owner-command-match-20261029.md): 50 compiler words, six checked guards, full 51-word match; caller/helper and native32 qualification. Total 70.74%, 235 more to 75%.
+
 - [Record impact response](WORKING_NOTES/1816-record-impact-response-match-20261029.md): 51 direct C words, no guards, explicit selector sequencing, typed caller and retained-helper qualification. Total 70.72%, 236 more to 75%.
 
 - [Actor status effect](WORKING_NOTES/1815-actor-status-effect-match-20261029.md): 51 words directly from C, no guards, original dispatch-window/helper qualification. Total 70.70%, 237 more to 75%.

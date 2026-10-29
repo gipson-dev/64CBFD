@@ -24079,3 +24079,9 @@ generated_1E34C0,func_151B6254,0x00C,0xC4220000,0xAFBF0014,R_MIPS_LO16:D_800AA45
 generated_1E34C0,func_151B6254,0x0A4,0x0C000000,0xE4820018,R_MIPS_26:func_15133894,-,Preserve retail save and global-load schedule plus pre-call output store and nop,,,false
 generated_1E34C0,func_151B6254,0x0A8,0xE4820018,0x0C000000,-,R_MIPS_26:func_15133894,Preserve retail save and global-load schedule plus pre-call output store and nop,0x00000000,-,false
 generated_135D00,func_15108AB4,0x02C,0x01C48021,0x008E8021,-,-,Preserve retail operand order for commutative unsigned owner-address addition,,,false
+generated_200930,func_151D4C38,0x048,0x5719001B,0x5719001C,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
+generated_200930,func_151D4C38,0x058,0x10000017,0x10000018,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
+generated_200930,func_151D4C38,0x064,0x1441000E,0x1441000F,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
+generated_200930,func_151D4C38,0x088,0x554B000B,0x554B000C,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
+generated_200930,func_151D4C38,0x098,0x10000006,0xA0CD0010,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
+generated_200930,func_151D4C38,0x09C,0xA0CD0010,0x10000007,-,-,Restore payload-owner command flag-store branch and return-address reload,0x8FBF0024,-,false

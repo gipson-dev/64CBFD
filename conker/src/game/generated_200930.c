@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 void func_151D5514(f32 *, u8, s32);
 void func_151D3FF4(f32 *, u8, s32);
@@ -73,8 +74,25 @@ s32 func_151D4668(u8 *arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D4794.s")
 
 
-s32 func_151D4C38() {
-    return 0;
+void func_1516972C(struct102 *);
+void func_15149514(s32, u8, s32, s32, s32);
+
+/* Release or deactivate matching owner links, otherwise dispatch the pair event. */
+void func_151D4C38(struct260 *owner, s32 eventAddress, u8 command) {
+    u8 *link = (u8 *)owner + 0x28;
+    u8 *event = (u8 *)eventAddress;
+
+    if (command == 60) {
+        if (*(s32 *)link == *(s32 *)event || link[4] == event[4]) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 4) {
+        if (*(s32 *)link == *(s32 *)event || link[4] == event[4]) {
+            link[0x10] &= ~1;
+        }
+    } else {
+        func_15149514(eventAddress, command, (s32)link, (s32)(link + 4), (s32)owner);
+    }
 }
 
 s32 func_151D4D04(u8 *arg0, s32 arg1) {
