@@ -24265,3 +24265,7 @@ generated_1B74A0,func_1518A214,0x0B8,0xA0AC0000,0xA0AC0000,-,-,Normalize closed 
 generated_1B74A0,func_1518A214,0x0BC,0x24020001,0x24020001,-,-,Normalize closed subtype appearance scheduling and expand folded interior addresses,,,false
 generated_1B74A0,func_1518A214,0x0C0,0x03E00008,0x03E00008,-,-,Normalize closed subtype appearance scheduling and expand folded interior addresses,,,false
 generated_1B74A0,func_1518A214,0x0C4,0x00000000,0x00000000,-,-,Normalize closed subtype appearance scheduling and expand folded interior addresses,,,false
+generated_1C2C60,func_15195D00,0x08C,0xAFA30020,0xAFA30024,-,-,Normalize one record spill home within the unchanged frame and retail mode-load schedule,,,false
+generated_1C2C60,func_15195D00,0x090,0x8FA30020,0x8FA30024,-,-,Normalize one record spill home within the unchanged frame and retail mode-load schedule,,,false
+generated_1C2C60,func_15195D00,0x0B4,0xAC400010,0x8FA80034,-,-,Normalize one record spill home within the unchanged frame and retail mode-load schedule,,,false
+generated_1C2C60,func_15195D00,0x0B8,0x8FA80034,0xAC400010,-,-,Normalize one record spill home within the unchanged frame and retail mode-load schedule,,,false

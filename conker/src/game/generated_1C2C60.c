@@ -96,8 +96,35 @@ s32 func_15195AA8() {
     return 0;
 }
 
-s32 func_15195D00() {
-    return 0;
+/* Preserve the retail key-chain cursor and append a missing association. */
+void func_15195D00(u8 *owner, s32 key, s32 index, s32 mode) {
+    u8 *cursor = *(u8 **)(owner + 0x18);
+    u8 *record;
+
+    if (cursor != NULL) {
+        record = cursor;
+        do {
+            if (*(s32 *)(record + 8) == key && *(u16 *)(record + 0xC) == index) {
+                return;
+            }
+            /* The look-ahead cursor exits before testing the final record. */
+            cursor = *(u8 **)(record + 0x10);
+            if (cursor != NULL) {
+                record = cursor;
+                cursor = *(u8 **)(cursor + 0x10);
+            }
+        } while (cursor != NULL);
+        cursor = (u8 *)func_151957B0(0x14, (u8 *)&D_800E08E0, (u8 *)&D_800E08E4);
+        *(u8 **)(record + 0x10) = cursor;
+    } else {
+        cursor = (u8 *)func_151957B0(0x14, (u8 *)&D_800E08E0, (u8 *)&D_800E08E4);
+        *(u8 **)(owner + 0x18) = cursor;
+    }
+    *(s32 *)(cursor + 8) = key;
+    *(u16 *)(cursor + 0xC) = index;
+    *(u8 **)(cursor + 0x10) = NULL;
+    cursor[0xE] = mode;
+    return;
 }
 
 s32 func_15195DD4() {

@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4f766bb`; tools are committed before the consumer pin.
+  checkpoint pins tools `aa668df`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record-key association restored**: [Note 1836](WORKING_NOTES/1836-record-key-chain-association-match-20261029.md). `func_15195D00` now matches all 53 words from semantic void C plus four checked spill/scheduling normalizations within its unchanged 0x28 frame. The unusual look-ahead traversal, only retained caller, full guest frame state and native C effects are qualified. Both tools copies and the strict 168-byte image prediction pass; 68 owner neighbors remain unchanged. Total 3,913/5,506 (71.07%), Game 3,240/4,833 (67.04%), zero drift; 217 more to 75%. Next screen `func_150A613C`; parked candidates remain private and uncredited.
 
 **Descriptor subtype appearance callback restored**: [Note 1835](WORKING_NOTES/1835-descriptor-subtype-appearance-match-20261029.md). `func_1518A214` now matches all 53 retail words from 50 semantic C words plus a checked scheduling/address-expansion recipe. The four subtype paths, output aliases, floating payloads and original caller window are qualified. Both tools copies and the strict 223-byte image prediction pass, including 60 bytes of explicitly accounted symbol/string ordering. Total 3,912/5,506 (71.05%), Game 3,239/4,833 (67.02%), zero drift; 218 more to 75%. Next screen `func_15195D00`; parked candidates remain private and uncredited.
 
