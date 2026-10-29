@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8796721`; tools are committed before the consumer pin.
+  checkpoint pins tools `16eddda`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -26,6 +26,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor descriptor effect restored**: [Note 1819](WORKING_NOTES/1819-actor-descriptor-effect-match-20261029.md). `func_150F9950` recovers descriptor geometry and submits paired effects. Its 49-word body matches with five checked register-allocation guards; three alignment words complete the retail slot. The lookup wrapper now explicitly returns its descriptor pointer with its entire object unchanged. Caller/lookup execution, native32 behavior and the complete 154-byte image delta pass. Total 3,897/5,506 (70.78%), Game 3,224/4,833 (66.71%), zero drift; 233 more to 75%.
 
 **Actor channel command restored**: [Note 1818](WORKING_NOTES/1818-actor-channel-command-match-20261029.md). `func_15080430` applies channel commands, mode/flag updates and a signed optional duration clamp. Its complete 51-word body emits directly from C with no guards. Original dispatcher/helper execution, native32 behavior and the complete 150-byte image delta pass. Total 3,896/5,506 (70.76%), Game 3,223/4,833 (66.69%), zero drift; 234 more to 75%. `func_1514E920` and `func_151D7000` remain parked and uncredited.
 

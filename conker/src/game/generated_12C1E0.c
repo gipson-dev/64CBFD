@@ -8,7 +8,7 @@ void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
-s32 func_1503195C();
+s32 func_1503195C(u8 *, s32, u32);
 s32 func_150ADA20(void);
 s32 func_151D3E6C();
 s32 func_151D5A18();
@@ -26,8 +26,8 @@ extern u8 D_800CC2D0[];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_12C1E0/func_150FF084.s")
 
-void func_150FF288(s32 arg0) {
-    func_1503195C(arg0, 0x82, 0);
+u8 *func_150FF288(u8 *actor) {
+    return (u8 *)func_1503195C(actor, 0x82, 0);
 }
 
 void func_150FF2AC(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {

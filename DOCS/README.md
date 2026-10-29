@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor descriptor effect](WORKING_NOTES/1819-actor-descriptor-effect-match-20261029.md): 49 C words, five register guards, corrected byte-identical lookup wrapper ABI. Total 70.78%, 233 more to 75%.
+
 - [Actor channel command](WORKING_NOTES/1818-actor-channel-command-match-20261029.md): 51 direct C words, no guards; original dispatcher and count/apply helper qualification. Total 70.76%, 234 more to 75%.
 
 - [Payload owner command](WORKING_NOTES/1817-payload-owner-command-match-20261029.md): 50 compiler words, six checked guards, full 51-word match; caller/helper and native32 qualification. Total 70.74%, 235 more to 75%.

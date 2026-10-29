@@ -117,6 +117,28 @@ s32 func_150F97EC() {
     return 0;
 }
 
-s32 func_150F9950() {
-    return 0;
+u8 *func_150FF288(u8 *);
+s32 func_150FF6E0(struct17 *, struct17 *, struct17 *, struct17 *, struct17 *, u8 *, u8 *);
+void func_151D3F14(struct17 *, u8, s32);
+void func_151D4408(struct17 *, struct17 *, void *, u8 *, f32, u8, s32);
+void func_150FF474(struct17 *, struct17 *, u8, s32);
+/* Recover descriptor geometry and submit the actor's paired effects. */
+void func_150F9950(u8 *actor, u8 selector, s32 parameter) {
+    struct17 points[6];
+    struct17 origin;
+    struct17 direction;
+    struct17 velocity;
+    struct17 other;
+    u8 *descriptor;
+
+    descriptor = func_150FF288(actor);
+    if (descriptor != 0) {
+        if (func_150FF6E0(points, &origin, &direction, &velocity, &other, actor, descriptor)) {
+            func_151D3F14(&origin, selector, parameter);
+            func_151D4408(&direction, &velocity,
+                *(u8 **)(actor + 0x1D4) + descriptor[2] * 64,
+                actor, 1.0f, selector, parameter);
+            func_150FF474(&origin, points, selector, parameter);
+        }
+    }
 }

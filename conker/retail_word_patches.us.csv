@@ -24085,3 +24085,8 @@ generated_200930,func_151D4C38,0x064,0x1441000E,0x1441000F,-,-,Restore payload-o
 generated_200930,func_151D4C38,0x088,0x554B000B,0x554B000C,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
 generated_200930,func_151D4C38,0x098,0x10000006,0xA0CD0010,-,-,Restore payload-owner command flag-store branch and return-address reload,,,false
 generated_200930,func_151D4C38,0x09C,0xA0CD0010,0x10000007,-,-,Restore payload-owner command flag-store branch and return-address reload,0x8FBF0024,-,false
+generated_124920,func_150F9950,0x060,0x8FB8002C,0x8FA8002C,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
+generated_124920,func_150F9950,0x06C,0x93190002,0x91090002,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
+generated_124920,func_150F9950,0x070,0x8CEA01D4,0x8CF901D4,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
+generated_124920,func_150F9950,0x080,0x00194180,0x00095180,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
+generated_124920,func_150F9950,0x08C,0x010A3021,0x032A3021,-,-,Normalize one closed descriptor-index matrix-address register allocation cycle,,,false
