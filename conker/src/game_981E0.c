@@ -4,6 +4,7 @@
 #include "variables.h"
 
 void func_15192800(void *, s32);
+void func_151D0058(void *, u8, u8, s32);
 
 /* Generated placeholder declarations. */
 s32 func_1506AD30();
@@ -1390,7 +1391,7 @@ void func_1507161C(s32 arg0) {
 }
 
 void func_15071628(s32 arg0) {
-    func_151D0058(D_800D154C, (arg0 - 0x55) & 0xFF, 0xFF, 1);
+    func_151D0058(D_800D154C, (u8)(arg0 - 0x55), 0xFF, 1);
 }
 
 void func_15071668(s32 arg0) {

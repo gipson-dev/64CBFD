@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Randomized owner packet restored**: [Note 1826](WORKING_NOTES/1826-owner-random-packet-match-20261029.md). `func_151D0058` captures owner state, samples its randomized byte and submits the effect packet. All 52 words emit directly from C with no guards. The typed caller retains its complete object; full-owner, original-caller, guest/native and strict 161-byte image-delta checks pass. Total 3,903/5,506 (70.89%), Game 3,230/4,833 (66.83%), zero drift; 227 more to 75%. The allocator in Note 1825 remains uncredited. Next screen `func_15084488`.
+
 **State byte publisher restored**: [Note 1824](WORKING_NOTES/1824-state-byte-publisher-match-20261029.md). `func_151738C4` gates the provider update and publishes the selected three-byte state, preserving snapshot versus interleaved copy order. All 52 words and 14 bindings emit directly from C with no guards. Its mixed-profile owner, unchanged caller object, original caller/provider-entry windows, native32 behavior and complete 165-byte image delta pass. Total 3,902/5,506 (70.87%), Game 3,229/4,833 (66.81%), zero drift; 228 more to 75%. The provider remains an uncredited placeholder. Next screen `func_15187EC0`.
 
 **Active record lookup restored**: [Note 1823](WORKING_NOTES/1823-active-record-lookup-match-20261029.md). `func_1509CA98` returns the first active record with the requested masked key, or 204 when absent. Its 52-word body matches with two relocation-aware guards exchanging independent setup words under the existing no-unroll profile. Original caller windows, native32 behavior and the complete 159-byte image delta pass. Total 3,901/5,506 (70.85%), Game 3,228/4,833 (66.79%), zero drift; 229 more to 75%. Next screen `func_151738C4`.

@@ -204,8 +204,34 @@ s32 func_151D0024(u8 *arg0) {
     func_151494E0(&temp, 0x18);
 }
 
-s32 func_151D0058() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 ownerId;
+    u8 reserved0;
+    u16 flags;
+    f32 midpoint;
+    u8 randomByte;
+    u8 variant;
+    u8 reserved1[2];
+} OwnerRandomPacket;
+s32 func_150ADA20(void);
+void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+/* Capture owner state and submit a randomized sixteen-byte effect packet. */
+void func_151D0058(void *owner, u8 variant, u8 priority, s32 context) {
+    u8 *effect;
+    OwnerRandomPacket packet;
+
+    packet.owner = owner;
+    packet.ownerId = ((u8 *)owner)[0x3B];
+    packet.midpoint = (*(f32 *)((u8 *)owner + 0x150) + *(f32 *)((u8 *)owner + 0x14C)) * 0.5f;
+    packet.variant = variant;
+    packet.randomByte = (u32)func_150ADA20() % 56U + 200;
+    packet.flags = *(u16 *)((u8 *)owner + 0x84);
+    effect = func_15149130(300, -1, 0x61, 4, 0, 0x31, sizeof(packet), priority, context);
+    if (effect != NULL) {
+        memcpy(effect + 0x28, &packet, sizeof(packet));
+    }
 }
 
 void func_151D0128(u8 *arg0) {

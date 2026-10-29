@@ -2,7 +2,7 @@
 
 Last verified: 2026-10-29
 
-**Byte-transition allocator audit, still private**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` passes bounded guest/native behavior screens; mode-home lifetime and instruction scheduling remain unmatched. No source installed or new credit. Accepted total remains 3,902/5,506 (70.87%).
+**Unfinished allocator**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` remains private and uncredited; its mode-home lifetime and instruction scheduling are unresolved.
 
 This page is the short, current handoff for `64CBFD`. Historical experiments
 remain in [WORKING_NOTES.md](WORKING_NOTES.md); detailed session handoffs live
@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `7e97ee1`; tools are committed before the consumer pin.
+  checkpoint pins tools `6ef3f39`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Randomized owner packet restored**: [Note 1826](WORKING_NOTES/1826-owner-random-packet-match-20261029.md). `func_151D0058` captures owner state, samples its randomized byte and submits the effect packet. All 52 words emit directly from C with no guards. The typed caller retains its complete object; full-owner, original-caller, guest/native and strict 161-byte image-delta checks pass. Total 3,903/5,506 (70.89%), Game 3,230/4,833 (66.83%), zero drift; 227 more to 75%. The allocator in Note 1825 remains uncredited. Next screen `func_15084488`.
 
 **State byte publisher restored**: [Note 1824](WORKING_NOTES/1824-state-byte-publisher-match-20261029.md). `func_151738C4` gates the provider update and publishes the selected three-byte state, preserving snapshot versus interleaved copy order. All 52 words and 14 bindings emit directly from C with no guards. Its mixed-profile owner, unchanged caller object, original caller/provider-entry windows, native32 behavior and complete 165-byte image delta pass. Total 3,902/5,506 (70.87%), Game 3,229/4,833 (66.81%), zero drift; 228 more to 75%. The provider remains an uncredited placeholder. Next screen `func_15187EC0`.
 
