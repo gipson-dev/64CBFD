@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Owner default-lifetime factory restored**: [Note 1841](WORKING_NOTES/1841-owner-default-lifetime-factory-match-20261029.md). `func_150B53D0` emits all 54 words directly from C, with its original 80-byte frame and zero guards. Total **3,918/5,506 (71.16%)**, Game **3,245/4,833 (67.14%)**, zero drift; **212** more to 75%. Next screen `func_1510F648`; private candidates remain uncredited.
+
 **Randomized position effect restored**: [Note 1840](WORKING_NOTES/1840-randomized-position-effect-match-20261029.md). `func_151C56A4` emits all 54 words directly from C, with its original 80-byte frame and zero guards. Total **3,917/5,506 (71.14%)**, Game **3,244/4,833 (67.12%)**, zero drift; **213** more to 75%. Next screen `func_150B53D0`; private candidates remain uncredited.
 
 **Direct actor state completion restored**: [Note 1839](WORKING_NOTES/1839-direct-actor-state-completion-match-20261029.md). `func_150BE210` emits all 54 retail words directly from C with its original 32-byte frame and no new guards. Runtime cases cover all 53 reachable words; a static CFG check certifies the one unreachable scheduling word. Callback registration, dispatch, helper mutations and IEEE boundary effects pass qualification. Total **3,916/5,506 (71.12%)**, Game **3,243/4,833 (67.10%)**, zero drift; **214** more to 75%. Next screen `func_151C56A4`; private candidates remain uncredited.
