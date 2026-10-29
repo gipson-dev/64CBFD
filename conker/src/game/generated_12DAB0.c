@@ -170,8 +170,44 @@ s32 func_151022AC() {
     return 0;
 }
 
-s32 func_151025F4() {
-    return 0;
+typedef struct {
+    f32 valueX;
+    f32 valueY;
+    f32 baseX;
+    f32 baseY;
+    f32 amplitudeX;
+    f32 amplitudeY;
+    f32 phaseX;
+    f32 phaseY;
+    f32 rateX;
+    f32 rateY;
+} PairedSineState;
+typedef struct {
+    u8 pad[0xA8];
+    PairedSineState state;
+} PairedSineOwner;
+extern f32 D_800BE9A4;
+f32 sinf(f32);
+f32 func_15144B68(f32);
+
+/* Update both sine outputs, advance their phases, then normalize each phase. */
+s32 func_151025F4(PairedSineOwner *volatile owner, void *context) {
+    /* Preserve the retail frame and first-sine stack slot. */
+    struct { f32 y; f32 x; f32 reserved[2]; } sines;
+    PairedSineState *state;
+
+    sines.x = sinf(owner->state.phaseX);
+    state = (PairedSineState *)owner;
+    sines.y = ((PairedSineOwner *)state)->state.phaseY;
+    state = (PairedSineState *)((u8 *)state + 0xA8);
+    sines.y = sinf(sines.y);
+    state->valueX = state->baseX + state->amplitudeX * sines.x;
+    state->valueY = state->baseY + state->amplitudeY * sines.y;
+    state->phaseX += state->rateX * D_800BE9A4;
+    state->phaseY += state->rateY * D_800BE9A4;
+    state->phaseX = func_15144B68(state->phaseX);
+    state->phaseY = func_15144B68(state->phaseY);
+    return 1;
 }
 
 s32 func_151026BC() {
