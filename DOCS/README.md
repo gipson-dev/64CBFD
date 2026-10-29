@@ -56,6 +56,7 @@ confirmed.
 
 ## Planning and history
 
+- [Owner entry recycler](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md): 47-instruction semantic C with eleven guards and one redundant-copy omission; active/free chains, live pointer reload and original indirect caller qualified. Strict 134-byte image. Native total 70.31%, 259 more to 75%.
 - [Live record dispatcher](WORKING_NOTES/1792-live-record-dispatcher-match-20261028.md): complete 252-word C with 66 checked guards, live status/timer updates, both geometry streams and cleanup. Correct void caller and carry-safe relocations; strict 933-byte image. Native total 70.29%, 260 more to 75%.
 - [Shared record cleanup](WORKING_NOTES/1791-record-cleanup-match-20261028.md): complete 64-word C with six closed spill guards, signed retention flags, real storage aliases and original caller/resource-helper checks. Strict 266-byte image; total 70.27%, 261 more to 75%.
 - [Dependent record load](WORKING_NOTES/1790-dependent-record-load-match-20261028.md): direct 55-word C, live prerequisite and destination checks, all 121 index pairs and original caller/helper integration. Preserve eight neighbors and the strict 165-byte image. Native total 70.25%, 262 more to 75%.

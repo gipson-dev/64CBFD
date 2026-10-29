@@ -24056,3 +24056,14 @@ generated_1B0740,func_15183D28,0x3c0,0xA04F0003,0xA22F0003,-,-,Normalize closed 
 generated_1B0740,func_15183D28,0x3c4,0x24420004,0x26310004,-,-,Normalize closed flag-aging schedule and register roles,,,false
 generated_1B0740,func_15183D28,0x3c8,0x5444FFDF,0x5623FFDF,-,-,Normalize closed flag-aging schedule and register roles,,,false
 generated_1B0740,func_15183D28,0x3cc,0x80430000,0x82220000,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_EDE60,func_150C1198,0x010,0x84460044,0x84470044,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x01C,0x00063C00,0x00073400,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x020,0x00077C03,0x00067C03,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x024,0x10CA0011,0x11EA0011,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x028,0x01E03825,0x01E03025,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x06C,0x10600012,0x10600011,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x07C,0x01034821,0x14C70004,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x080,0x14C70004,0x01034821,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x084,0x01202025,0x01202025,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,true
+generated_EDE60,func_150C1198,0x0A8,0x03032021,0x03034821,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false
+generated_EDE60,func_150C1198,0x0B0,0xA4990004,0xA5390004,-,-,Normalize equal signed-index copy and closed released-entry pointer scheduling,,,false

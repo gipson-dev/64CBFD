@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] Qualify and adopt `func_150C1198` in [Note 1793](WORKING_NOTES/1793-owner-entry-recycle-match-20261028.md): 47-instruction recycler, eleven guards and one redundant-copy omission, full 50-word slot exact. Verify active/free chains, live pointer reload, original caller/release helper, both tools copies and the strict 134-byte image. Preserve six neighbors. Native total 70.31%, 259 more to 75%.
+
 - [x] Qualify and adopt `func_15183D28` in [Note 1792](WORKING_NOTES/1792-live-record-dispatcher-match-20261028.md): 252-word guarded C with live flags, timers, geometry dispatch, cleanup and aging. Verify the repaired void caller, relocation carry boundary, both tools copies and the strict 933-byte image. Preserve eight neighbors and all sixteen caller functions. Native total 70.29%, 260 more to 75%.
 
 - [x] Qualify and adopt `func_15183C28` in [Note 1791](WORKING_NOTES/1791-record-cleanup-match-20261028.md): complete 64-word C, frame 32, seventeen bindings and six closed spill guards. Verify shared row/view aliases, signed flags, original caller loop and resource helper. Both copies pass eight fresh and two installed checks; preserve eight neighbors and the strict 266-byte image with zero exclusions. Native total 70.27%, 261 more to 75%.
