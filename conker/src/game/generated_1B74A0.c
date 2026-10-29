@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern f32 D_800A73C0,D_800A73C4,D_800A73C8;
 u8 *func_151407D0(void *, s32, u8 *, u8, u8, u8, u8, s8, u8, s32);
 void *memcpy(void *, const void *, size_t);
 
@@ -27,8 +28,51 @@ s32 func_1518A094() {
     return 0;
 }
 
-s32 func_1518A214() {
-    return 0;
+/* Apply the descriptor subtype's scale/color and report its active gate. */
+s32 func_1518A214(u8 *object, u8 *enabled) {
+    switch (*(u8 *)(*(u8 **)(object + 0x188) + 0x68) - 15) {
+    default: {
+        f32 scale = D_800A73C0;
+        f32 *attributes = (f32 *)(object + 0x110);
+
+        attributes[6] = scale;
+        attributes[7] = scale;
+        object[0x2A] = 0;
+        object[0x29] = 0;
+        object[0x28] = 255;
+        *enabled = 1;
+        break;
+    }
+    case 0:
+        *(u32 *)(object + 0x58) &= ~2;
+        *enabled = 0;
+        break;
+    case 1: {
+        f32 scale = D_800A73C4;
+        f32 *attributes = (f32 *)(object + 0x110);
+
+        attributes[6] = scale;
+        attributes[7] = scale;
+        object[0x2A] = 0;
+        object[0x29] = 0;
+        object[0x28] = 128;
+        *enabled = 1;
+        break;
+    }
+    case 2: {
+        f32 scale = D_800A73C8;
+        f32 *attributes = (f32 *)(object + 0x110);
+
+        attributes[6] = scale;
+        attributes[7] = scale;
+        object[0x2A] = 0;
+        object[0x29] = 0;
+        object[0x28] = 255;
+        *enabled = 1;
+        break;
+    }
+    }
+    return 1;
 }
 
 s32 func_1518A2E8(u8 *arg0, u8 *arg1) {

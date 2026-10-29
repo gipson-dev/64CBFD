@@ -1,5 +1,8 @@
 # Documentation
 
+**Descriptor subtype appearance callback restored**: [Note 1835](WORKING_NOTES/1835-descriptor-subtype-appearance-match-20261029.md). `func_1518A214` now matches all 53 retail words from 50 semantic C words plus a checked scheduling/address-expansion recipe. The four subtype paths, output aliases, floating payloads and original caller window are qualified. Both tools copies and the strict 223-byte image prediction pass, including 60 bytes of explicitly accounted symbol/string ordering. Total 3,912/5,506 (71.05%), Game 3,239/4,833 (67.02%), zero drift; 218 more to 75%. Next screen `func_15195D00`; parked candidates remain private and uncredited.
+
+
 **Path-node command gate restored**: [Note 1834](WORKING_NOTES/1834-path-node-command-gate-match-20261029.md). `func_1507B974` now matches all 53 words from semantic C plus 31 checked register/address-scheduling normalizations. Its void callback interface, two-level path lookup, unsigned key, aliased parameters and real dispatcher window are qualified. Both tools copies and the strict 181-byte image prediction pass; 210 owner neighbors remain unchanged. Total 3,911/5,506 (71.03%), Game 3,238/4,833 (67.00%), zero drift; 219 more to 75%. Next screen `func_1518A214`; `func_15030310` remains private and uncredited.
 
 
