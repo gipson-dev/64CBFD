@@ -24073,3 +24073,8 @@ generated_15D730,func_15131C84,0x080,0x46002182,0x46040182,-,-,Normalize byte ph
 generated_15D730,func_15131C84,0x0B0,0x46008482,0x46100482,-,-,Normalize byte phase-offset commutative floating multiply operand order,,,false
 generated_F4B20,func_150C7670,0x004,0x3C014F80,0x3C014F80,-,-,Move the existing success result before unsigned conversions and retain the retail nop,0x24020001,-,false
 generated_F4B20,func_150C7670,0x0BC,0x24020001,0x00000000,-,-,Move the existing success result before unsigned conversions and retain the retail nop,,,false
+generated_1E34C0,func_151B6254,0x004,0xAFBF0014,0x3C010000,-,R_MIPS_HI16:D_800AA454,Preserve retail save and global-load schedule plus pre-call output store and nop,,,false
+generated_1E34C0,func_151B6254,0x008,0x3C010000,0xC4220000,R_MIPS_HI16:D_800AA454,R_MIPS_LO16:D_800AA454,Preserve retail save and global-load schedule plus pre-call output store and nop,,,false
+generated_1E34C0,func_151B6254,0x00C,0xC4220000,0xAFBF0014,R_MIPS_LO16:D_800AA454,-,Preserve retail save and global-load schedule plus pre-call output store and nop,,,false
+generated_1E34C0,func_151B6254,0x0A4,0x0C000000,0xE4820018,R_MIPS_26:func_15133894,-,Preserve retail save and global-load schedule plus pre-call output store and nop,,,false
+generated_1E34C0,func_151B6254,0x0A8,0xE4820018,0x0C000000,-,R_MIPS_26:func_15133894,Preserve retail save and global-load schedule plus pre-call output store and nop,0x00000000,-,false

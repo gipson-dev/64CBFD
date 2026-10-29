@@ -12,7 +12,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `595e5bb`; tools are committed before the consumer pin.
+  checkpoint pins tools `f61c6c9`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -27,7 +27,9 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 
 ## Measured progress
 
-**Owner byte scale restored**: [Note 1807](WORKING_NOTES/1807-owner-byte-scale-match-20261029.md). `func_150C7670` scales a linked data byte into the owner output and returns success. Fifty compiler instructions become the exact 51-word retail slot through two checked scheduling guards. The original indirect callback window, native32 behavior and complete 146-byte image delta are qualified. Total 3,885/5,506 (70.56%), Game 3,212/4,833 (66.46%), zero drift; 245 more to 75%. Next inspect `func_151B6254`; `func_1514E920` remains parked and uncredited.
+**Owner sine scale restored**: [Note 1808](WORKING_NOTES/1808-owner-sine-scale-match-20261029.md). `func_151B6254` advances and wraps its phase, writes the sine-modulated scale and forwards the final callback result. Its 48-word body and three padding words are exact after five checked scheduling guards. Original caller and connected sine/motion/return helpers, native32 behavior and the complete 200-byte image delta are qualified. Total 3,886/5,506 (70.58%), Game 3,213/4,833 (66.48%), zero drift; 244 more to 75%. Next inspect `func_151D5648`; `func_1514E920` remains parked and uncredited.
+
+**Owner byte scale restored**: [Note 1807](WORKING_NOTES/1807-owner-byte-scale-match-20261029.md). `func_150C7670` scales a linked data byte into the owner output and returns success. Fifty compiler instructions become the exact 51-word retail slot through two checked scheduling guards. The original indirect callback window, native32 behavior and complete 146-byte image delta are qualified. Total 3,885/5,506 (70.56%), Game 3,212/4,833 (66.46%), zero drift; 245 more to 75%. The former next candidate, `func_151B6254`, is adopted in Note 1808 above; `func_1514E920` remains parked and uncredited.
 
 **Byte phase offsets restored**: [Note 1806](WORKING_NOTES/1806-byte-phase-offset-match-20261029.md). `func_15131C84` emits all 50 instructions with its 24-byte frame and four bindings; two checked guards exchange only floating-multiply source operands. Both complete callers and the original trig helper are qualified. Correct the C caller's void/float interface while preserving its entire object. Total 3,884/5,506 (70.54%), Game 3,211/4,833 (66.44%), zero drift; 246 more to 75%. The former next candidate, `func_150C7670`, is adopted in Note 1807 above; `func_1514E920` remains parked and uncredited.
 
