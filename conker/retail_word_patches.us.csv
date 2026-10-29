@@ -24320,3 +24320,10 @@ generated_AEB40,func_150832AC,0x080,0x26310004,0x26100004,-,-,Normalize actor re
 generated_AEB40,func_150832AC,0x084,0x0310082A,0x0311082A,-,-,Normalize actor resource count CFG and closed register allocation,,,false
 generated_AEB40,func_150832AC,0x090,0x0010C880,0x0011C880,-,-,Normalize actor resource count CFG and closed register allocation,,,false
 generated_AEB40,func_150832AC,0x094,0x03344021,0x02994021,-,-,Normalize actor resource count CFG and closed register allocation,,,false
+generated_13BB20,func_1510F648,0x02C,0x27A60024,0x27A60028,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x05C,0xAFA2001C,0xAFA20020,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x064,0xAFA30018,0xAFA3001C,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x070,0x8FA40024,0x8FA40028,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x084,0x8FA4001C,0x8FA40020,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x088,0x8FA50018,0x8FA5001C,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_13BB20,func_1510F648,0x090,0x8FA60024,0x8FA60028,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false

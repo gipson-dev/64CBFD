@@ -41,8 +41,30 @@ void func_1510E8BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_13BB20/func_1510E950.s")
 
-s32 func_1510F648() {
-    return 0;
+extern u8 D_800D3830[];
+extern s32 D_800D3300;
+extern f32 D_800A2D98;
+void func_1510F800(s32);
+s32 func_150A64C8(s16, s16, s32 *, s32);
+void func_150A44F0(s32, void *, s32);
+s32 func_150A43E0(s32, s32, s32, void *);
+
+/* Return the coordinate query's scaled result, or its fallback value. */
+f32 func_1510F648(f32 x, f32 y, f32 z) {
+    s32 intX, intZ, value;
+    f32 result;
+
+    func_1510F800(2);
+    intX = x;
+    intZ = z;
+    func_150A64C8(intX, intZ, &value, (s32)y);
+    func_150A44F0(value, D_800D3830, 0);
+    if (func_150A43E0(intX, intZ, value, D_800D3830)) {
+        result = D_800D3300 * (1.0f / 256.0f);
+    } else {
+        result = D_800A2D98;
+    }
+    return result;
 }
 
 s32 func_1510F720() {
