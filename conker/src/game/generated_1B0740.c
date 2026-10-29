@@ -52,7 +52,7 @@ void func_15183974(s32 arg0) {
     }
 }
 
-extern u8 D_800DDF68[];
+extern s8 D_800DDF68[];
 
 /* Load a second record after its prerequisite record becomes available. */
 void func_151839F0(s32 requiredIndex, s32 index) {
@@ -153,8 +153,96 @@ void func_15183C28(s32 index) {
     }
 }
 
-s32 func_15183D28() {
-    return 0;
+typedef struct {
+    u8 unused00[0x18];
+    f32 position[3];
+    f32 phase;
+    f32 extentA;
+    f32 extentB;
+    f32 scale;
+    s32 unused34;
+} RecordUpdate15183D28;
+extern RecordUpdate15183D28 D_8008D0B0[];
+extern RecordUpdate15183D28 D_8008D318[];
+extern u8 *D_8008D3C0[];
+extern u8 D_800A72E8[];
+extern u8 D_800DDF60[];
+extern u8 D_800DDF64[];
+extern s32 D_800BE9E4;
+void func_15165C80(f32 *position, void *vertices, f32 scale, f32 *phase,
+                   f32 extentA, f32 extentB, u8 *indices, u8 count);
+void func_1517725C(u8 index);
+void func_15179DB0(u8 index);
+void func_15183C28(s32 index);
+
+/* Update active record geometry, release expired records, and age their flags. */
+void func_15183D28(void) {
+    s32 age;
+    s32 i;
+    s32 remaining;
+    u8 *timer;
+    s8 *flags;
+    RecordUpdate15183D28 *update;
+
+    for (i = 0, flags = D_800DDF68; ; ) {
+        if (*flags >= -1) {
+            if (D_800DDE80[i].words[0] == 0 || D_800DDF78[i] == 0) {
+                *flags = -2;
+            }
+        }
+        i++; flags++;
+        if (i >= 11) break;
+    }
+    /* Four byte timers use the current signed frame-tick decrement. */
+    timer = D_800DDF60;
+    do {
+        if (*timer > 0) {
+            remaining = *timer - D_800BE9E4;
+            if (remaining < 0) {
+                remaining = 0;
+            }
+            *timer = remaining;
+        }
+        timer++;
+    } while (timer < D_800DDF64);
+    for (i = 0, flags = D_800DDF68; i < 7; i++, flags++) {
+        if (*flags == 1) {
+            update = &D_8008D0B0[i];
+            func_15165C80(update->position, (void *)D_800DDE80[i].words[2],
+                update->scale, &update->phase, update->extentA, update->extentB,
+                D_8008D3C0[i], D_800A72E8[i]);
+        }
+    }
+    /* Rows 2..4 have a second vertex stream in record word 1. */
+    for (i = 2, flags = D_800DDF68 + 2; i < 5; i++, flags++) {
+        if (*flags == 1) {
+            update = &D_8008D318[i - 2];
+            func_15165C80(update->position, (void *)D_800DDE80[i].words[1],
+                update->scale, &update->phase, update->extentA, update->extentB,
+                D_8008D3C0[i], D_800A72E8[i]);
+        }
+    }
+    if (D_800DDF68[7] == 1) {
+        func_1517725C(7);
+    }
+    for (i = 0, flags = D_800DDF68; i < 2; i++, flags++) {
+        if (flags[8] == 1) {
+            func_15179DB0(i + 8);
+        }
+    }
+    /* Reread after the providers above: they can change the live flags. */
+    if (D_800DDF68[7] == 1) {
+        D_800DDF68[10] = 1;
+    }
+    for (i = 0, flags = D_800DDF68; i < 11; i++, flags++) {
+        if (*flags == -2 && D_800DDE80[i].words[0] != 0) {
+            func_15183C28(i);
+        }
+    }
+    /* Positive flags become 0, then age through -1 to expired (-2). */
+    for (age = 0; age < 11; age++) {
+        if (D_800DDF68[age] > 0) { D_800DDF68[age] = 0; } else if (D_800DDF68[age] >= -1) { (D_800DDF68[age])--; }
+    }
 }
 
 s32 func_15184118(u8 *arg0) {

@@ -41,7 +41,7 @@ s32 func_151738C4(s32);
 s32 func_1502C1A4(void);
 s32 func_15113C88(void);
 s32 func_150636F0(void);
-s32 func_15183D28(void);
+void func_15183D28(void);
 s32 func_151670C0(void);
 s32 func_15177A94(void);
 s32 func_151814FC(void);

@@ -23990,3 +23990,69 @@ generated_1B0740,func_15183C28,0x98,0xafa30018,0xafa3001c,-,-,Normalize closed r
 generated_1B0740,func_15183C28,0xb0,0x8fa30018,0x8fa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
 generated_1B0740,func_15183C28,0xc8,0xafa30018,0xafa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
 generated_1B0740,func_15183C28,0xd8,0x8fa30018,0x8fa3001c,-,-,Normalize closed record pointer spill slot within unchanged frame,,,false
+generated_1B0740,func_15183D28,0x84,0x2401000B,0x2A01000B,-,-,Normalize finite eleven-row counter comparison,,,false
+generated_1B0740,func_15183D28,0x88,0x1601FFEC,0x1420FFEC,-,-,Normalize finite eleven-row counter comparison,,,false
+generated_1B0740,func_15183D28,0x9c,0x24630000,0x24A50000,R_MIPS_LO16:D_800DDF60,R_MIPS_LO16:D_800BE9E4,Normalize independent timer address setup,,,false
+generated_1B0740,func_15183D28,0xa0,0x24A50000,0x24C60000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800DDF64,Normalize independent timer address setup,,,false
+generated_1B0740,func_15183D28,0xa4,0x24C60000,0x24630000,R_MIPS_LO16:D_800DDF64,R_MIPS_LO16:D_800DDF60,Normalize independent timer address setup,,,false
+generated_1B0740,func_15183D28,0x2a4,0x2401000B,0x2A01000B,-,-,Normalize finite eleven-row counter comparison,,,false
+generated_1B0740,func_15183D28,0x2a8,0x1601FFF1,0x1420FFF1,-,-,Normalize finite eleven-row counter comparison,,,false
+generated_1B0740,func_15183D28,0x2b8,0x3C040000,0x3C110000,R_MIPS_HI16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2bc,0x2484000B,0x26310003,R_MIPS_LO16:D_800DDF68,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2c4,0x2841FFFF,0x3C030000,-,R_MIPS_HI16:D_800DDF73,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2cc,0x10000005,0x10000006,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2d4,0x14200003,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2d8,0x2459FFFF,0x14200003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2dc,0x3C010000,0x2459FFFF,R_MIPS_HI16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2e0,0xA0390000,0x3C010000,R_MIPS_LO16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2e4,0x3C020000,0xA0390000,R_MIPS_HI16:D_800DDF68,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2e8,0x80420001,0x3C020000,R_MIPS_LO16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2ec,0x18400004,0x80420001,-,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2f0,0x2841FFFF,0x24630000,-,R_MIPS_LO16:D_800DDF73,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2f4,0x3C010000,0x18400004,R_MIPS_HI16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2f8,0x10000005,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x2fc,0xA0200001,0x3C010000,R_MIPS_LO16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x300,0x14200003,0x10000005,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x304,0x2449FFFF,0xA0200001,-,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x308,0x3C010000,0x14200003,R_MIPS_HI16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x30c,0xA0290001,0x2449FFFF,R_MIPS_LO16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x310,0x3C020000,0x3C010000,R_MIPS_HI16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x314,0x80420002,0xA0290001,R_MIPS_LO16:D_800DDF68,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x318,0x18400004,0x3C020000,-,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x31c,0x2841FFFF,0x80420002,-,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x320,0x3C010000,0x18400004,R_MIPS_HI16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x324,0x10000005,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x328,0xA0200002,0x3C010000,R_MIPS_LO16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x32c,0x14200003,0x10000005,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x330,0x244BFFFF,0xA0200002,-,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x334,0x3C010000,0x14200003,R_MIPS_HI16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x338,0xA02B0002,0x244BFFFF,R_MIPS_LO16:D_800DDF68,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x33c,0x3C020000,0x3C010000,R_MIPS_HI16:D_800DDF68,R_MIPS_HI16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x340,0x24420003,0xA02B0002,R_MIPS_LO16:D_800DDF68,R_MIPS_LO16:D_800DDF68,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x344,0x80430000,0x82220000,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x348,0x18600003,0x18400003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x34c,0x2861FFFF,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x354,0xA0400000,0xA2200000,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x35c,0x246CFFFF,0x244CFFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x360,0xA04C0000,0xA22C0000,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x364,0x80430001,0x82220001,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x368,0x18600003,0x18400003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x36c,0x2861FFFF,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x374,0xA0400001,0xA2200001,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x37c,0x246DFFFF,0x244DFFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x380,0xA04D0001,0xA22D0001,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x384,0x80430002,0x82220002,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x388,0x18600003,0x18400003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x38c,0x2861FFFF,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x394,0xA0400002,0xA2200002,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x39c,0x246EFFFF,0x244EFFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3a0,0xA04E0002,0xA22E0002,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3a4,0x80430003,0x82220003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3a8,0x18600003,0x18400003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3ac,0x2861FFFF,0x2841FFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3b4,0xA0400003,0xA2200003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3bc,0x246FFFFF,0x244FFFFF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3c0,0xA04F0003,0xA22F0003,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3c4,0x24420004,0x26310004,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3c8,0x5444FFDF,0x5623FFDF,-,-,Normalize closed flag-aging schedule and register roles,,,false
+generated_1B0740,func_15183D28,0x3cc,0x80430000,0x82220000,-,-,Normalize closed flag-aging schedule and register roles,,,false
