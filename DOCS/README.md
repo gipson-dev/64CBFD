@@ -56,6 +56,8 @@ confirmed.
 
 ## Planning and history
 
+- [Actor height position](WORKING_NOTES/1820-actor-height-position-match-20261029.md): 52 direct C words, no guards; ordered overlaps and original height-query route qualification. Total 70.80%, 232 more to 75%.
+
 - [Actor descriptor effect](WORKING_NOTES/1819-actor-descriptor-effect-match-20261029.md): 49 C words, five register guards, corrected byte-identical lookup wrapper ABI. Total 70.78%, 233 more to 75%.
 
 - [Actor channel command](WORKING_NOTES/1818-actor-channel-command-match-20261029.md): 51 direct C words, no guards; original dispatcher and count/apply helper qualification. Total 70.76%, 234 more to 75%.

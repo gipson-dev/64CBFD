@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Actor height position restored**: [Note 1820](WORKING_NOTES/1820-actor-height-position-match-20261029.md). `func_150BA930` copies the ordered actor position and optionally queries its vertical interval, preserving the start vector across provider effects. All 52 words emit directly from C with no guards. Original caller/helper execution, native32 overlaps and the complete 152-byte image delta pass. Total 3,898/5,506 (70.80%), Game 3,225/4,833 (66.73%), zero drift; 232 more to 75%. The height initializer remains non-matching and receives no new credit.
+
 - [x] **Actor descriptor effect restored**: [Note 1819](WORKING_NOTES/1819-actor-descriptor-effect-match-20261029.md). `func_150F9950` recovers descriptor geometry and submits paired effects. Its 49-word body matches with five checked register-allocation guards; three alignment words complete the retail slot. The lookup wrapper now explicitly returns its descriptor pointer with its entire object unchanged. Caller/lookup execution, native32 behavior and the complete 154-byte image delta pass. Total 3,897/5,506 (70.78%), Game 3,224/4,833 (66.71%), zero drift; 233 more to 75%.
 
 - [x] **Actor channel command restored**: [Note 1818](WORKING_NOTES/1818-actor-channel-command-match-20261029.md). `func_15080430` applies channel commands, mode/flag updates and a signed optional duration clamp. Its complete 51-word body emits directly from C with no guards. Original dispatcher/helper execution, native32 behavior and the complete 150-byte image delta pass. Total 3,896/5,506 (70.76%), Game 3,223/4,833 (66.69%), zero drift; 234 more to 75%. `func_1514E920` and `func_151D7000` remain parked and uncredited.
