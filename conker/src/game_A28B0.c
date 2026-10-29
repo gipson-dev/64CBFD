@@ -12,7 +12,7 @@ s32 func_15077F64();
 s32 func_150793D8();
 s32 func_15079B30();
 s32 func_15079FBC();
-s32 func_1507B974();
+void func_1507B974(void);
 s32 func_1507BB28();
 /* End generated placeholder declarations. */
 
@@ -2050,28 +2050,24 @@ void func_1507B958(void) {
     D_800D154C->unkB0 = D_800D1890;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507B974.s. */
-s32 func_1507B974() {
-    return 0;
-}
-// NON-MATCHING: dont think D_800D2104 is correct
-// void func_1507B974(void) {
-//     struct127 *phi_v1;
-//     struct169 *foo;
-//
-//     phi_v1 = D_800D154C;
-//     if (D_800D154C->unk65 != 0) {
-//         phi_v1 = &D_800CC2D0[D_800D154C->unk65 - 1];
-//     }
-//     foo = &D_800D2104[phi_v1->unk13F + phi_v1->unk21E + D_800D1893];
-//     if (D_800D1891 == foo->unk0) {
-//         D_800D1892 ^= 1;
-//     }
-//     if (D_800D1892 != 0) {
-//         func_15075400(D_800D1890);
-//     }
-// }
+/* Toggle the selected path-record key gate before the optional script step. */
+void func_1507B974(void) {
+    struct127 *actor = D_800D154C;
+    u8 *node;
 
+    if (actor->unk65 != 0) {
+        actor = &D_800CC2D0[actor->unk65 - 1];
+    }
+    node = ((u8 **)D_800D2104)[actor->unk13F];
+    node += actor->unk21E * 8;
+    node += D_800D1893 * 8;
+    if (D_800D1891 == *(u16 *)(node + 6)) {
+        D_800D1892 ^= 1;
+    }
+    if (D_800D1892 != 0) {
+        func_15075400(D_800D1890);
+    }
+}
 void func_1507BA48(void) {
     u16 tmp = ((D_800D1892 << 8) | D_800D1893);
     if (D_800D1890 != 0) {

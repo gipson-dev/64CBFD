@@ -24184,3 +24184,34 @@ generated_F8590,func_150CBE88,0x0BC,0xC4660000,0x24020001,-,-,Normalize closed m
 generated_F8590,func_150CBE88,0x0C0,0x46062202,0x46083482,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
 generated_F8590,func_150CBE88,0x0C4,0x46088480,0x46122280,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
 generated_F8590,func_150CBE88,0x0C8,0xE4920028,0xE48A0028,-,-,Normalize closed motion integrator register allocation and independent scheduling,,,false
+game_A28B0,func_1507B974,0x008,0x3C030000,0x3C020000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D154C,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x00C,0x8C630000,0x8C430000,R_MIPS_LO16:D_800D154C,R_MIPS_LO16:D_800D154C,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x018,0x90620065,0x90640065,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x01C,0x3C190000,0x3C190000,R_MIPS_HI16:D_800D2104,R_MIPS_HI16:D_800D1891,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x020,0x3C0D0000,0x3C080000,R_MIPS_HI16:D_800D1893,R_MIPS_HI16:D_800D2104,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x024,0x1040000B,0x1080000B,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x028,0x00027080,0x00047080,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x02C,0x01C27023,0x01C47023,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x034,0x01C27021,0x01C47021,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x03C,0x01C27023,0x01C47023,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x044,0x01C27023,0x01C47023,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x054,0x9068013F,0x9069013F,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x058,0x8F390000,0x8D080000,R_MIPS_LO16:D_800D2104,R_MIPS_LO16:D_800D2104,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x05C,0x906B021E,0x906D021E,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x060,0x00084880,0x00095080,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x064,0x03295021,0x3C180000,-,R_MIPS_HI16:D_800D1893,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x068,0x8D420000,0x010A5821,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x06C,0x91AD0000,0x8D6C0000,R_MIPS_LO16:D_800D1893,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x070,0x000B60C0,0x93180000,-,R_MIPS_LO16:D_800D1893,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x074,0x004C1021,0x000D70C0,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x078,0x000D70C0,0x018E7821,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x07C,0x004E1021,0x001848C0,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x080,0x3C0F0000,0x01E94021,R_MIPS_HI16:D_800D1891,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x084,0x91EF0000,0x950A0006,R_MIPS_LO16:D_800D1891,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x088,0x94580006,0x93390000,-,R_MIPS_LO16:D_800D1891,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x094,0x15F80004,0x172A0004,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x09C,0x90480000,0x904B0000,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x0A0,0x39190001,0x396D0001,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x0A4,0xA0590000,0xA04D0000,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x0B0,0x90490000,0x904C0000,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
+game_A28B0,func_1507B974,0x0B4,0x51200004,0x51800004,-,-,Normalize closed path-node gate register allocation and independent address scheduling,,,false
