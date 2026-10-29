@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Planar motion callback restored**: [Note 1828](WORKING_NOTES/1828-planar-motion-state-match-20261029.md). `func_150C308C` replaces its zero-return placeholder with signed actor-state gating, planar squared-length and angular-difference tests, a conditional state-five store, and the original constant-one callback result. All 53 words match after two guarded floating-register substitutions. Full-owner, original indirect-dispatcher, guest/native and strict 152-byte image-delta checks pass. Total 3,905/5,506 (70.92%), Game 3,232/4,833 (66.87%), zero drift; 225 more to 75%. Next screen `func_15163FEC`.
+
 - [x] **Resource byte-list loader restored**: [Note 1827](WORKING_NOTES/1827-resource-byte-list-match-20261029.md). `func_15084488` selects its inline or table-backed list and forwards each byte to both resource helpers, reloading it between calls. All 52 words emit directly from C with no guards. Full-owner, bounded original-caller, guest/native and strict 166-byte image-delta checks pass. Total 3,904/5,506 (70.91%), Game 3,231/4,833 (66.85%), zero drift; 226 more to 75%. The original parent remains an uncredited placeholder. Next screen `func_150C308C`.
 
 - [x] **Randomized owner packet restored**: [Note 1826](WORKING_NOTES/1826-owner-random-packet-match-20261029.md). `func_151D0058` captures owner state, samples its randomized byte and submits the effect packet. All 52 words emit directly from C with no guards. The typed caller retains its complete object; full-owner, original-caller, guest/native and strict 161-byte image-delta checks pass. Total 3,903/5,506 (70.89%), Game 3,230/4,833 (66.83%), zero drift; 227 more to 75%. The allocator in Note 1825 remains uncredited. Next screen `func_15084488`.

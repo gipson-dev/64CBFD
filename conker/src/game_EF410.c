@@ -18,6 +18,7 @@ typedef struct PacketEF410 {
 
 extern f32 D_800A0280;
 extern f32 D_800A0284;
+f32 *func_15144B34(s32);
 void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 
 /* Generated placeholder declarations. */
@@ -30,7 +31,7 @@ void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C2898();
 s32 func_150C29F0();
 s32 func_150C2C00();
-s32 func_150C308C();
+s32 func_150C308C(u8 *);
 Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
 s32 func_150C3574();
@@ -207,41 +208,32 @@ s32 func_150C2FCC(void *effect) {
     }
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C308C.s. */
-s32 func_150C308C() {
-    return 0;
+/* Move an active actor to state five when either motion test succeeds. */
+s32 func_150C308C(u8 *actor) {
+    u8 stop = 0;
+    f32 *motion;
+    f32 x, z;
+
+    if (*(s16 *)(actor + 0x1C) >= 6) {
+        motion = func_15144B34(D_80082FA4);
+        x = motion[0];
+        z = motion[2];
+        x = x * x + z * z;
+        if (x < D_800A0310) {
+            stop = 1;
+        } else {
+            x = func_150484A0(motion[0], motion[2]);
+            x = func_15144C8C(x, *(f32 *)(actor + 0x160));
+            if (D_800A0314 < x) {
+                stop = 1;
+            }
+        }
+    }
+    if (stop != 0) {
+        *(s16 *)(actor + 0x1C) = 5;
+    }
+    return 1;
 }
-// ? func_150C308C(void *arg0) {
-//     u8 sp1F;
-//     f32 temp_f0;
-//     f32 temp_f2;
-//     u8 temp_a1;
-//     void *temp_v0;
-//     u8 phi_a1;
-//
-//     phi_a1 = (u8)0U;
-//     if ((s32) arg0->unk1C >= 6) {
-//         sp1F = 0;
-//         temp_v0 = func_15144B34(D_80082FA4, (u8)0U);
-//         temp_f0 = temp_v0->unk0;
-//         temp_f2 = temp_v0->unk8;
-//         temp_a1 = sp1F;
-//         if (((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) < D_800A0310) {
-// block_4:
-//             phi_a1 = (u8)1U;
-//         } else {
-//             sp1F = temp_a1;
-//             phi_a1 = temp_a1;
-//             if (D_800A0314 < func_15144C8C(func_150484A0(temp_v0->unk0, temp_v0->unk8, temp_a1), arg0->unk160)) {
-//                 goto block_4;
-//             }
-//         }
-//     }
-//     if (phi_a1 != 0) {
-//         arg0->unk1C = (u16)5;
-//     }
-//     return 1;
-// }
 
 /* Emit the special actor texture phase and retain the previous phase for wrapping. */
 Gfx *func_150C3160(Gfx *commands, u8 *actor) {

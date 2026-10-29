@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `884c9ee`; tools are committed before the consumer pin.
+  checkpoint pins tools `1d8b2c7`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Planar motion callback restored**: [Note 1828](WORKING_NOTES/1828-planar-motion-state-match-20261029.md). `func_150C308C` replaces its zero-return placeholder with signed actor-state gating, planar squared-length and angular-difference tests, a conditional state-five store, and the original constant-one callback result. All 53 words match after two guarded floating-register substitutions. Full-owner, original indirect-dispatcher, guest/native and strict 152-byte image-delta checks pass. Total 3,905/5,506 (70.92%), Game 3,232/4,833 (66.87%), zero drift; 225 more to 75%. Next screen `func_15163FEC`.
 
 **Resource byte-list loader restored**: [Note 1827](WORKING_NOTES/1827-resource-byte-list-match-20261029.md). `func_15084488` selects its inline or table-backed list and forwards each byte to both resource helpers, reloading it between calls. All 52 words emit directly from C with no guards. Full-owner, bounded original-caller, guest/native and strict 166-byte image-delta checks pass. Total 3,904/5,506 (70.91%), Game 3,231/4,833 (66.85%), zero drift; 226 more to 75%. The original parent remains an uncredited placeholder. Next screen `func_150C308C`.
 
