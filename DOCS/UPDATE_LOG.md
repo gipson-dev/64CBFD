@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Resource byte-list loader restored**: [Note 1827](WORKING_NOTES/1827-resource-byte-list-match-20261029.md). `func_15084488` selects its inline or table-backed list and forwards each byte to both resource helpers, reloading it between calls. All 52 words emit directly from C with no guards. Full-owner, bounded original-caller, guest/native and strict 166-byte image-delta checks pass. Total 3,904/5,506 (70.91%), Game 3,231/4,833 (66.85%), zero drift; 226 more to 75%. The original parent remains an uncredited placeholder. Next screen `func_150C308C`.
+
 **Randomized owner packet restored**: [Note 1826](WORKING_NOTES/1826-owner-random-packet-match-20261029.md). `func_151D0058` captures owner state, samples its randomized byte and submits the effect packet. All 52 words emit directly from C with no guards. The typed caller retains its complete object; full-owner, original-caller, guest/native and strict 161-byte image-delta checks pass. Total 3,903/5,506 (70.89%), Game 3,230/4,833 (66.83%), zero drift; 227 more to 75%. The allocator in Note 1825 remains uncredited. Next screen `func_15084488`.
 
 **State byte publisher restored**: [Note 1824](WORKING_NOTES/1824-state-byte-publisher-match-20261029.md). `func_151738C4` gates the provider update and publishes the selected three-byte state, preserving snapshot versus interleaved copy order. All 52 words and 14 bindings emit directly from C with no guards. Its mixed-profile owner, unchanged caller object, original caller/provider-entry windows, native32 behavior and complete 165-byte image delta pass. Total 3,902/5,506 (70.87%), Game 3,229/4,833 (66.81%), zero drift; 228 more to 75%. The provider remains an uncredited placeholder. Next screen `func_15187EC0`.

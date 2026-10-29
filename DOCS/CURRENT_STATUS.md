@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `6ef3f39`; tools are committed before the consumer pin.
+  checkpoint pins tools `884c9ee`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Resource byte-list loader restored**: [Note 1827](WORKING_NOTES/1827-resource-byte-list-match-20261029.md). `func_15084488` selects its inline or table-backed list and forwards each byte to both resource helpers, reloading it between calls. All 52 words emit directly from C with no guards. Full-owner, bounded original-caller, guest/native and strict 166-byte image-delta checks pass. Total 3,904/5,506 (70.91%), Game 3,231/4,833 (66.85%), zero drift; 226 more to 75%. The original parent remains an uncredited placeholder. Next screen `func_150C308C`.
 
 **Randomized owner packet restored**: [Note 1826](WORKING_NOTES/1826-owner-random-packet-match-20261029.md). `func_151D0058` captures owner state, samples its randomized byte and submits the effect packet. All 52 words emit directly from C with no guards. The typed caller retains its complete object; full-owner, original-caller, guest/native and strict 161-byte image-delta checks pass. Total 3,903/5,506 (70.89%), Game 3,230/4,833 (66.83%), zero drift; 227 more to 75%. The allocator in Note 1825 remains uncredited. Next screen `func_15084488`.
 

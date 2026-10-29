@@ -277,8 +277,8 @@ extern u8 D_800CC2D0[];
 extern u8 *D_800D1C90[];
 extern s32 D_80082FA0;
 extern u8 D_800C35EA, D_800C3638;
-void func_1503D774(s32, s32);
-void func_1503D660(s32, s32);
+s32 func_1503D774(s32, s32);
+s32 func_1503D660(s32, s32);
 u8 *func_1505ED34(void);
 void func_150615DC(u8 *);
 u32 func_1515D480(s32);
@@ -578,8 +578,33 @@ s32 func_150843AC() {
     return 0;
 }
 
-s32 func_15084488() {
-    return 0;
+/* Load the selected resource and both resources named by each list byte. */
+void func_15084488(u8 *record, s32 unused, s32 context) {
+    s32 identity;
+    s32 count;
+    s32 i;
+    u8 *resource;
+    u8 *cursor;
+    u8 *list;
+
+    identity = record[4];
+    if (identity != 255) {
+        func_1503D774(identity, context);
+        resource = D_800D1C90[identity];
+        count = resource[4];
+        list = record + 4;
+        if (count == 0) {
+            count = 1;
+        } else {
+            list = (u8 *)D_80086CAC[resource[5]];
+        }
+        count += resource[0x38];
+        for (i = 0, cursor = list; i < count; i++) {
+            func_1503D774(*cursor, context);
+            func_1503D660(*cursor, context);
+            cursor++;
+        }
+    }
 }
 
 s32 func_15084558() {
