@@ -11,12 +11,14 @@ extern u8 D_8002AC5C;
 extern OSMesgQueue D_800BE900;
 s32 func_151DCEF0(OSMesgQueue *, s32, void *, s32);
 
+s32 func_151DD3A0(OSMesgQueue *, u8, u8 *, s32);
+
 /* Generated placeholder declarations. */
 s32 func_15006590();
 s32 func_15006BEC();
 s32 func_1500707C();
 s32 func_15007168();
-s32 func_1500727C();
+void func_1500727C(void);
 void func_15007360(void);
 s32 func_15007440();
 s32 func_15007558();
@@ -52,9 +54,21 @@ s32 func_1500707C() {
 s32 func_15007168() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_1500727C.s. */
-s32 func_1500727C() {
-    return 0;
+/* Read the save block and dispatch its checksum-mismatch handler. */
+void func_1500727C(void) {
+    u16 checksum;
+    s32 index;
+
+    func_151DD3A0(&D_800BE900, 0x44, D_800BE2F0.bytes, 0x70);
+    checksum = D_800BE2F2;
+    checksum = (checksum << 2) + 0xCC;
+    checksum += D_800BE2F3 << 3;
+    for (index = 4; index < 104; index++) {
+        checksum += D_800BE2F0.bytes[index] << (index & 3);
+    }
+    if (checksum != D_800BE2F0.checksum) {
+        func_15007168();
+    }
 }
 /* Recompute the weighted checksum and submit the save block when enabled. */
 void func_15007360(void) {

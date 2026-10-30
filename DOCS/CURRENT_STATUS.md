@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `585829b`; tools are committed before the consumer pin.
+  checkpoint pins tools `bf59762`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Save checksum reader restored from C**: [Note 1882](WORKING_NOTES/1882-save-checksum-load-match-20261030.md). `func_1500727C` restores save-block loading, weighted checksum validation and mismatch defaults. All 57 words match after ten exact scheduling/address/equality guards, with no inserted or omitted instructions. Original transfer/default helpers, caller, native32, owner and strict image checks pass. Total **3,959/5,506 (71.90%)**, Game **3,286/4,833 (67.99%)**, zero drift; **171** more to 75%. Next screen `func_150ECA68`; private candidates remain uncredited.
 
 **Active actor update loop restored from C**: [Note 1881](WORKING_NOTES/1881-active-actor-update-match-20261030.md). `func_1502378C` restores the alternate mode, 25-slot traversal, live current-index writes and conditional update sequence. Its 54-word body matches after two independent initialization scheduling guards; all three alignment words remain fixed. Guest/native32, original type dispatcher, caller, owner and strict image checks pass. Total **3,958/5,506 (71.89%)**, Game **3,285/4,833 (67.97%)**, zero drift; **172** more to 75%. Next screen `func_1500727C`; private candidates remain uncredited.
 

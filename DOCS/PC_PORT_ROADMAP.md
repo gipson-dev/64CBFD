@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Save checksum reader restored from C**: [Note 1882](WORKING_NOTES/1882-save-checksum-load-match-20261030.md). `func_1500727C` restores save-block loading, weighted checksum validation and mismatch defaults. All 57 words match after ten exact scheduling/address/equality guards, with no inserted or omitted instructions. Original transfer/default helpers, caller, native32, owner and strict image checks pass. Total **3,959/5,506 (71.90%)**, Game **3,286/4,833 (67.99%)**, zero drift; **171** more to 75%. Next screen `func_150ECA68`; private candidates remain uncredited.
+
 - [x] **Active actor update loop restored from C**: [Note 1881](WORKING_NOTES/1881-active-actor-update-match-20261030.md). `func_1502378C` restores the alternate mode, 25-slot traversal, live current-index writes and conditional update sequence. Its 54-word body matches after two independent initialization scheduling guards; all three alignment words remain fixed. Guest/native32, original type dispatcher, caller, owner and strict image checks pass. Total **3,958/5,506 (71.89%)**, Game **3,285/4,833 (67.97%)**, zero drift; **172** more to 75%. Next screen `func_1500727C`; private candidates remain uncredited.
 
 - [x] **Actor parameter clamp restored directly from C**: [Note 1880](WORKING_NOTES/1880-actor-parameter-clamp-match-20261030.md). `func_150DB630` restores the parameter pointer reread, byte clamp and success return. All 57 retail words emit directly, with no guards, insertions or omissions. Guest/native32, original callback dispatch, owner and strict image checks pass. Total **3,957/5,506 (71.87%)**, Game **3,284/4,833 (67.95%)**, zero drift; **173** more to 75%. Next screen `func_1502378C`; private candidates remain uncredited.
