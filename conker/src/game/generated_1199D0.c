@@ -1,4 +1,12 @@
 #include <ultra64.h>
+#include "structs.h"
+struct260 *func_15149130(s16, s8, s8, s8, u8, u8, struct37 *, u8, s32);
+void *memcpy(void *, const void *, u32);
+typedef struct {
+    u8 *owner;
+    u8 identity, first, second, third, fourth, fifth;
+} AttachedEffectPayload1199D0;
+
 void func_1502EA98(u8 *arg0, u8 arg1, u8 arg2, u8 arg3, u8 arg4,
                    s32 arg5, u8 arg6);
 
@@ -12,8 +20,24 @@ s32 func_150EC6B0() {
     return 0;
 }
 
-s32 func_150ECA68() {
-    return 0;
+/* Capture the owner and effect settings; publish them only after allocation. */
+void func_150ECA68(u8 *owner, u8 first, u8 second, u8 third, u8 fourth,
+                   u8 fifth, s16 duration, u8 selector, s32 category) {
+    AttachedEffectPayload1199D0 payload;
+    u8 *effect;
+    payload.owner = owner;
+    payload.identity = owner[0x3B];
+    payload.first = first;
+    payload.second = second;
+    payload.third = third;
+    payload.fourth = fourth;
+    payload.fifth = fifth;
+    effect = (u8 *)func_15149130(duration == -1 ? 300 : duration, -1, 0x5D, -1,
+                                duration == -1 ? 0 : 1, 0x45,
+                                (struct37 *)sizeof(payload), selector, category);
+    if (effect != NULL) {
+        memcpy(effect + 0x28, &payload, sizeof(payload));
+    }
 }
 
 void func_150ECB4C(u8 *arg0, s32 arg1, u8 arg2) {

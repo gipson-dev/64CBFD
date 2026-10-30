@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `bf59762`; tools are committed before the consumer pin.
+  checkpoint pins tools `fd96793`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Attached effect payload constructor matched directly from C**: [Note 1883](WORKING_NOTES/1883-attached-effect-payload-direct-match-20261030.md). `func_150ECA68` captures the owner and five settings, chooses the signed lifetime and copies its 12-byte payload after successful allocation. All 57 words and both bindings match without guards. Padding, original allocator/copy, full wrapper, native32, owner and strict image checks pass. Total **3,960/5,506 (71.92%)**, Game **3,287/4,833 (68.01%)**, zero drift; **170** more to 75%. Next screen `func_15109ED4`; private candidates remain uncredited.
 
 **Save checksum reader restored from C**: [Note 1882](WORKING_NOTES/1882-save-checksum-load-match-20261030.md). `func_1500727C` restores save-block loading, weighted checksum validation and mismatch defaults. All 57 words match after ten exact scheduling/address/equality guards, with no inserted or omitted instructions. Original transfer/default helpers, caller, native32, owner and strict image checks pass. Total **3,959/5,506 (71.90%)**, Game **3,286/4,833 (67.99%)**, zero drift; **171** more to 75%. Next screen `func_150ECA68`; private candidates remain uncredited.
 
