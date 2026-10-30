@@ -121,8 +121,34 @@ void func_1518E37C(u8 *arg0, u8 arg1) {
     }
 }
 
-s32 func_1518E3C4() {
-    return 0;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void *memcpy(void *, const void *, u32);
+
+/* Reject descriptor type150; otherwise allocate and initialize its effect buffer. */
+void *func_1518E3C4(void *descriptor, u8 priority) {
+    u8 *record;
+
+    if ((*(u8 **)descriptor)[4] == 150) {
+        return NULL;
+    }
+    record = func_15167A68(0x21, 1, 0x9EC, 1, priority, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(record + 0x18, descriptor, 12);
+    *(u32 *)(record + 0x28) = 0;
+    record[0x2C] = 8;
+    record[0x2D] = 4;
+    *(u32 *)(record + 0x30) = 0;
+    *(u32 *)(record + 0x10) = 1;
+    *(u32 *)(record + 0x14) = 0;
+    *(f32 *)(record + 0x24) = 0.0f;
+    *(f32 *)(record + 0x38) = 0.0f;
+    *(f32 *)(record + 0x3C) = 0.0f;
+    *(f32 *)(record + 0x40) = 0.0f;
+    *(f32 *)(record + 0x34) = 1.0f;
+    bzero(record + 0x48, 0x960);
+    return record;
 }
 
 void func_1518E4A0(u8 *arg0) {

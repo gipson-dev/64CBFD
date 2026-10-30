@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Descriptor-gated effect buffer constructor restored**: [Note 1857](WORKING_NOTES/1857-gated-effect-buffer-constructor-match-20261030.md). `func_1518E3C4` emits all 55 words directly from C with its original 40-byte frame and no guards. The descriptor type gate, live post-allocation copy and 2,400-byte clear are qualified. Total **3,934/5,506 (71.45%)**, Game **3,261/4,833 (67.47%)**, zero drift; **196** more to 75%. Next screen `func_150843AC`; private candidates remain uncredited.
+
 - [x] **Captured position effect chain restored**: [Note 1856](WORKING_NOTES/1856-position-effect-chain-match-20261029.md). `func_150B2494` emits all 55 body words directly from C, retaining its full callback ABI and 72-byte frame without guards. Total **3,933/5,506 (71.43%)**, Game **3,260/4,833 (67.45%)**, zero drift; **197** more to 75%. Next screen `func_1518BBF4`; private candidates remain uncredited.
 
 - [x] **Actor coordinate effect callback restored**: [Note 1855](WORKING_NOTES/1855-actor-coordinate-effect-dispatch-match-20261029.md). `func_150D8A34` emits all 54 body words directly from C, retaining its alignment word, full callback ABI and 64-byte frame without guards. Total **3,932/5,506 (71.41%)**, Game **3,259/4,833 (67.43%)**, zero drift; **198** more to 75%. Next screen `func_150A23E4`; private candidates remain uncredited.

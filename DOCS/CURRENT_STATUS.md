@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-29
+Last verified: 2026-10-30
 
 **Unfinished allocator**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` remains private and uncredited; its mode-home lifetime and instruction scheduling are unresolved.
 
@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ba3a8d7`; tools are committed before the consumer pin.
+  checkpoint pins tools `27fd4f0`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Descriptor-gated effect buffer constructor restored**: [Note 1857](WORKING_NOTES/1857-gated-effect-buffer-constructor-match-20261030.md). `func_1518E3C4` emits all 55 words directly from C with its original 40-byte frame and no guards. The descriptor type gate, live post-allocation copy and 2,400-byte clear are qualified. Total **3,934/5,506 (71.45%)**, Game **3,261/4,833 (67.47%)**, zero drift; **196** more to 75%. Next screen `func_150843AC`; private candidates remain uncredited.
 
 **Captured position effect chain restored**: [Note 1856](WORKING_NOTES/1856-position-effect-chain-match-20261029.md). `func_150B2494` emits all 55 body words directly from C, retaining its full callback ABI and 72-byte frame without guards. Total **3,933/5,506 (71.43%)**, Game **3,260/4,833 (67.45%)**, zero drift; **197** more to 75%. Next screen `func_1518BBF4`; private candidates remain uncredited.
 
