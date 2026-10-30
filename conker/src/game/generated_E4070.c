@@ -123,8 +123,68 @@ void func_150B73F0(u8 *arg0) {
     *(f32 *)(arg0 + 0x30) = (f32)y;
 }
 
-s32 func_150B7484() {
-    return 0;
+extern u8 D_800918DC[];
+void *func_15169968(void *);
+
+typedef struct {
+    u8 *asset;
+    u8 reserved04[0x10];
+    s16 field14;
+    s16 field16;
+    s16 field18;
+    u8 reserved1A[2];
+    f32 field1C;
+    f32 field20;
+    s16 field24;
+    s16 field26;
+    s16 field28;
+    s16 field2A;
+    s16 field2C;
+    s16 field2E;
+    u8 field30;
+    u8 field31;
+    u8 field32;
+    u8 field33;
+    u8 field34;
+    u8 field35;
+    u8 field36;
+    u8 field37;
+    u8 field38;
+    u8 field39;
+    u8 reserved3A[2];
+} MenuRecordDescriptorE4070;
+
+/* Replace the menu record from its fixed descriptor, then select state 3. */
+void func_150B7484(void) {
+    MenuRecordDescriptorE4070 descriptor;
+
+    descriptor.field31 = 1;
+    descriptor.field2C = 88;
+    descriptor.field1C = 60.0f;
+    descriptor.field20 = 60.0f;
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field18 = 0;
+    descriptor.field2E = 88;
+    descriptor.field30 = 6;
+    descriptor.asset = D_800918DC;
+    descriptor.field32 = 255;
+    descriptor.field33 = 0;
+    descriptor.field34 = 0;
+    descriptor.field35 = 255;
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field39 = 0;
+    descriptor.field36 = 7;
+    descriptor.field37 = 21;
+    descriptor.field38 = 1;
+    descriptor.field28 = 81;
+    descriptor.field2A = 81;
+    if (*(void **)D_800D9898 != NULL) {
+        func_1516972C(*(void **)D_800D9898);
+    }
+    *(void **)D_800D9898 = func_15169968(&descriptor);
+    D_800D9890 = 3;
 }
 
 s32 func_150B7560() {
