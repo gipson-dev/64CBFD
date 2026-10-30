@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `27fd4f0`; tools are committed before the consumer pin.
+  checkpoint pins tools `52cfcfe`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Live resource-pair release restored**: [Note 1858](WORKING_NOTES/1858-resource-pair-release-match-20261030.md). `func_150843AC` emits all 55 words directly from C with its original 48-byte frame and no guards. Both selected resources, shared byte reference counts and helper mutations are qualified. Total **3,935/5,506 (71.47%)**, Game **3,262/4,833 (67.49%)**, zero drift; **195** more to 75%. Next screen `func_150A2864`; private candidates remain uncredited.
 
 **Descriptor-gated effect buffer constructor restored**: [Note 1857](WORKING_NOTES/1857-gated-effect-buffer-constructor-match-20261030.md). `func_1518E3C4` emits all 55 words directly from C with its original 40-byte frame and no guards. The descriptor type gate, live post-allocation copy and 2,400-byte clear are qualified. Total **3,934/5,506 (71.45%)**, Game **3,261/4,833 (67.47%)**, zero drift; **196** more to 75%. Next screen `func_150843AC`; private candidates remain uncredited.
 

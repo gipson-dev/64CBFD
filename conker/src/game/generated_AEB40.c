@@ -9,7 +9,7 @@ extern u8 D_800D2100;
 extern u8 D_800D2101;
 extern s32 func_1507DF10();
 extern s32 func_150ADA20();
-s32 func_150843AC();
+void func_150843AC(u8 *, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/AEB40.s. */
 
@@ -599,8 +599,32 @@ void func_1508434C(u8 *arg0) {
     }
 }
 
-s32 func_150843AC() {
-    return 0;
+void func_100043B4(s32 *, u32);
+
+/* Release both selected resources, decrementing shared-resource references. */
+void func_150843AC(u8 *record, s32 slot) {
+    u8 *cursor;
+    u8 *resource;
+    s32 offset;
+    s32 identity;
+    register s32 limit;
+
+    if (*(u8 **)((s32)record + slot * 8 + 0x28C) != NULL ||
+        *(u8 **)((s32)record + slot * 8 + 0x290) != NULL) {
+        identity = (*(u8 **)(record + 0x2C4))[slot];
+        cursor = (u8 *)((s32)record + (slot << 3));
+        for (offset = 0, limit = 8; offset != limit; offset += 4, cursor += 4) {
+            resource = *(u8 **)(cursor + 0x28C);
+            if (resource != NULL) {
+                if (resource != D_800D19A0[identity]) {
+                    func_100043B4((s32 *)resource, 3);
+                } else {
+                    D_800D1F80[identity]--;
+                }
+                *(u8 **)(cursor + 0x28C) = NULL;
+            }
+        }
+    }
 }
 
 /* Load the selected resource and both resources named by each list byte. */

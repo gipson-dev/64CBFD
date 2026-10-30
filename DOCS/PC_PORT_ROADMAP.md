@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Live resource-pair release restored**: [Note 1858](WORKING_NOTES/1858-resource-pair-release-match-20261030.md). `func_150843AC` emits all 55 words directly from C with its original 48-byte frame and no guards. Both selected resources, shared byte reference counts and helper mutations are qualified. Total **3,935/5,506 (71.47%)**, Game **3,262/4,833 (67.49%)**, zero drift; **195** more to 75%. Next screen `func_150A2864`; private candidates remain uncredited.
+
 - [x] **Descriptor-gated effect buffer constructor restored**: [Note 1857](WORKING_NOTES/1857-gated-effect-buffer-constructor-match-20261030.md). `func_1518E3C4` emits all 55 words directly from C with its original 40-byte frame and no guards. The descriptor type gate, live post-allocation copy and 2,400-byte clear are qualified. Total **3,934/5,506 (71.45%)**, Game **3,261/4,833 (67.47%)**, zero drift; **196** more to 75%. Next screen `func_150843AC`; private candidates remain uncredited.
 
 - [x] **Captured position effect chain restored**: [Note 1856](WORKING_NOTES/1856-position-effect-chain-match-20261029.md). `func_150B2494` emits all 55 body words directly from C, retaining its full callback ABI and 72-byte frame without guards. Total **3,933/5,506 (71.43%)**, Game **3,260/4,833 (67.45%)**, zero drift; **197** more to 75%. Next screen `func_1518BBF4`; private candidates remain uncredited.
