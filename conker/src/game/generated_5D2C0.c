@@ -363,8 +363,29 @@ s32 func_15030E08() {
     return 0;
 }
 
-s32 func_15030F94() {
-    return 0;
+s32 func_150311C4();
+
+/* Render each enabled node in the actor's group, retaining its next link across calls. */
+Gfx *func_15030F94(Gfx *cursor, u8 *actor, s32 view, s32 mode) {
+    u8 *node;
+    u8 *next;
+
+    if (actor == NULL || *(u32 *)(actor + 0x1D4) == 0 || actor[0x3B] == 0) {
+        return cursor;
+    }
+    node = D_800C3EE0;
+    if (node != NULL) {
+        do {
+            next = *(u8 **)(node + 0x54);
+            if (actor[0x3B] != node[0] || node[3] == 0) {
+                node = next;
+            } else {
+                cursor = (Gfx *)func_150311C4(cursor, node, actor, view, mode);
+                node = next;
+            }
+        } while (node != NULL);
+    }
+    return cursor;
 }
 
 /* Complete non-matching recovery; byte-match boundary in Working Note 1107. */

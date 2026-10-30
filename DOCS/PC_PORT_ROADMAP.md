@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Actor group node renderer restored**: [Note 1849](WORKING_NOTES/1849-group-node-render-match-20261029.md). `func_15030F94` emits all 55 words directly from C, with its original 56-byte frame and no guards. Total **3,926/5,506 (71.30%)**, Game **3,253/4,833 (67.31%)**, zero drift; **204** more to 75%. Next screen `func_150CCCB4`; private candidates remain uncredited.
+
 - [x] **Periodic phase spawn restored**: [Note 1848](WORKING_NOTES/1848-periodic-phase-spawn-match-20261029.md). `func_150D2374` emits all 53 body words directly from C, with its original 64-byte frame and no guards. Total **3,925/5,506 (71.29%)**, Game **3,252/4,833 (67.29%)**, zero drift; **205** more to 75%. Next screen `func_15030F94`; private candidates remain uncredited.
 
 - [x] **Status intensity update restored**: [Note 1847](WORKING_NOTES/1847-status-intensity-update-match-20261029.md). `func_151E530C` emits all 55 words directly from C, as a leaf with no stack frame or guards. Total **3,924/5,506 (71.27%)**, Game **3,251/4,833 (67.27%)**, zero drift; **206** more to 75%. Next screen `func_150D2374`; private candidates remain uncredited.
