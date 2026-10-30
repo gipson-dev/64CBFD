@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `593d879`; tools are committed before the consumer pin.
+  checkpoint pins tools `b98276e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Effect motion limit restored directly from C**: [Note 1875](WORKING_NOTES/1875-effect-motion-limit-direct-match-20261030.md). `func_150B36AC` restores threshold-controlled motion reset/scaling and its six-argument callback ABI. All 56 words match with zero guards and no frame. Guest access prefixes, both original indirect call windows and native32 controls pass. Total **3,952/5,506 (71.78%)**, Game **3,279/4,833 (67.85%)**, zero drift; **178** more to 75%. Next screen `func_150CEF60`; private candidates remain uncredited.
 
 **XZ pivot rotation restored**: [Note 1874](WORKING_NOTES/1874-xz-pivot-rotation-match-20261030.md). `func_1508EF80` rotates X/Z around the pivot while preserving output Y and the retail repeated trig calls. All 55 words match with eight closed opening guards and the original frame64/spill lifetimes. Eight original caller sites, connected retail trig providers and native controls pass. Total **3,951/5,506 (71.76%)**, Game **3,278/4,833 (67.83%)**, zero drift; **179** more to 75%. Next screen `func_150B36AC`; private candidates remain uncredited.
 
