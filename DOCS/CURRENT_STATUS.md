@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b0ed1b0`; tools are committed before the consumer pin.
+  checkpoint pins tools `ba3a8d7`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Captured position effect chain restored**: [Note 1856](WORKING_NOTES/1856-position-effect-chain-match-20261029.md). `func_150B2494` emits all 55 body words directly from C, retaining its full callback ABI and 72-byte frame without guards. Total **3,933/5,506 (71.43%)**, Game **3,260/4,833 (67.45%)**, zero drift; **197** more to 75%. Next screen `func_1518BBF4`; private candidates remain uncredited.
 
 **Actor coordinate effect callback restored**: [Note 1855](WORKING_NOTES/1855-actor-coordinate-effect-dispatch-match-20261029.md). `func_150D8A34` emits all 54 body words directly from C, retaining its alignment word, full callback ABI and 64-byte frame without guards. Total **3,932/5,506 (71.41%)**, Game **3,259/4,833 (67.43%)**, zero drift; **198** more to 75%. Next screen `func_150A23E4`; private candidates remain uncredited.
 

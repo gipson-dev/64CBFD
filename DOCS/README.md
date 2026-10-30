@@ -1,5 +1,8 @@
 # Documentation
 
+**Captured position effect chain restored**: [Note 1856](WORKING_NOTES/1856-position-effect-chain-match-20261029.md). `func_150B2494` emits all 55 body words directly from C, retaining its full callback ABI and 72-byte frame without guards. Total **3,933/5,506 (71.43%)**, Game **3,260/4,833 (67.45%)**, zero drift; **197** more to 75%. Next screen `func_1518BBF4`; private candidates remain uncredited.
+
+
 **Actor coordinate effect callback restored**: [Note 1855](WORKING_NOTES/1855-actor-coordinate-effect-dispatch-match-20261029.md). `func_150D8A34` emits all 54 body words directly from C, retaining its alignment word, full callback ABI and 64-byte frame without guards. Total **3,932/5,506 (71.41%)**, Game **3,259/4,833 (67.43%)**, zero drift; **198** more to 75%. Next screen `func_150A23E4`; private candidates remain uncredited.
 
 
