@@ -1,5 +1,10 @@
 #include <ultra64.h>
 #include "structs.h"
+f32 sqrtf(f32);
+/* Keep the current provider return declaration; this caller ignores it. */
+s32 func_15123A54(struct108 *);
+void func_1512C150(struct108 *);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/157840.s. */
 
@@ -86,8 +91,31 @@ s32 func_1512BB10() {
     return 0;
 }
 
-s32 func_1512C068() {
-    return 0;
+/* Start a near-target angle blend, then advance the current blend. */
+void func_1512C068(struct108 *actor) {
+    f32 direction;
+    f32 x;
+    f32 z;
+    f32 distance;
+
+    if (actor->unk390 < 180.0f) {
+        direction = 2.0f;
+    } else {
+        direction = -2.0f;
+    }
+    if (actor->unk2C != 0x80 && actor->unk2C != 0x40) {
+        x = actor->unk2F8 - actor->unk2BC;
+        z = actor->unk300 - actor->unk2C4;
+        distance = sqrtf(x * x + z * z);
+        *(f32 *)actor->pad370 = distance;
+        if (distance < 42.0f) {
+            actor->unk384 = actor->unk37C - 45.0f * direction;
+            actor->unk5CC = 0.0f;
+            func_15123A54(actor);
+            actor->unk240 |= 2;
+        }
+    }
+    func_1512C150(actor);
 }
 
 extern f32 D_800A3694, D_800A3698;
