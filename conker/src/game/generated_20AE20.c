@@ -538,8 +538,30 @@ s32 func_151E6C1C() {
     return 0;
 }
 
-s32 func_151E7DC0() {
-    return 0;
+extern u8 D_8008FFB0[][6];
+extern f32 D_800ABA8C;
+u8 *func_151149AC(u8);
+
+/* Mark the two status-selected actors for mode 2, using live state after each lookup. */
+void func_151E7DC0(void) {
+    s32 index;
+    u8 key;
+    u8 *actor;
+
+    if (*(f32 *)(D_8008FDD4 + 8) < D_800ABA8C && D_8008FDD4[0x3E] == 0) {
+        return;
+    }
+    for (index = 0; index < 2; index++) {
+        if (D_8008FDD4[0x3E] == 0) {
+            key = D_8008FFB0[index][D_8008FDD4[0x2C]];
+        } else {
+            key = D_8008FFB0[index][0];
+        }
+        actor = func_151149AC(key);
+        if (actor != NULL) {
+            *(s32 *)(actor + 0x80) = 2;
+        }
+    }
 }
 
 void func_151E7E9C(void) {

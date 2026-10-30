@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0984a15`; tools are committed before the consumer pin.
+  checkpoint pins tools `ef0b6b6`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Status-selected actor mode update restored**: [Note 1851](WORKING_NOTES/1851-status-actor-mode-update-match-20261029.md). `func_151E7DC0` emits all 55 words directly from C, with its original 48-byte frame and no guards. Total **3,928/5,506 (71.34%)**, Game **3,255/4,833 (67.35%)**, zero drift; **202** more to 75%. Next screen `func_1505EEF4`; private candidates remain uncredited.
 
 **Accelerated motion update restored**: [Note 1850](WORKING_NOTES/1850-accelerated-motion-update-match-20261029.md). `func_150CCCB4` emits all 53 body words directly from C, as a leaf with no stack frame or guards. Total **3,927/5,506 (71.32%)**, Game **3,254/4,833 (67.33%)**, zero drift; **203** more to 75%. Next screen `func_151A084C`; private candidates remain uncredited.
 
