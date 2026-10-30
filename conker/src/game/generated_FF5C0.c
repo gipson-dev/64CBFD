@@ -87,6 +87,34 @@ s32 func_150D22F4(s32 arg0, u8 *arg1, s16 arg2) {
     return arg0;
 }
 
-s32 func_150D2374() {
-    return 0;
+extern s32 D_800BE9E4;
+s32 func_150ADA20(void);
+
+typedef struct {
+    u32 baseDelay;
+    u32 delayRange;
+    s32 timer;
+    s16 baseLifetime;
+    s16 lifetimeRange;
+    f32 activeDuration;
+    f32 inactiveDuration;
+    u8 activeColor;
+    u8 inactiveColor;
+} PeriodicPhaseSpawnFF5C0;
+
+/* Spawn a randomized phase cycle on expiry, then select the next delay. */
+void func_150D2374(u8 *owner) {
+    PeriodicPhaseSpawnFF5C0 *state = (PeriodicPhaseSpawnFF5C0 *)(owner + 0x28);
+    u32 random;
+
+    *(s32 *)(owner + 0x30) = (s32)((u32)*(s32 *)(owner + 0x30) - (u32)D_800BE9E4);
+    if (*(s32 *)(owner + 0x30) < 0) {
+        random = (u32)func_150ADA20();
+        func_150D2110((s16)(random % (state->lifetimeRange + 1) + state->baseLifetime),
+                     state->activeDuration, state->inactiveDuration,
+                     state->activeColor, state->inactiveColor, owner[0xC], owner[1]);
+        random = (u32)func_150ADA20();
+        state->timer = (s32)(random % (state->delayRange + 1U) +
+                             state->baseDelay);
+    }
 }

@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5723650`; tools are committed before the consumer pin.
+  checkpoint pins tools `992d9db`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Periodic phase spawn restored**: [Note 1848](WORKING_NOTES/1848-periodic-phase-spawn-match-20261029.md). `func_150D2374` emits all 53 body words directly from C, with its original 64-byte frame and no guards. Total **3,925/5,506 (71.29%)**, Game **3,252/4,833 (67.29%)**, zero drift; **205** more to 75%. Next screen `func_15030F94`; private candidates remain uncredited.
 
 **Status intensity update restored**: [Note 1847](WORKING_NOTES/1847-status-intensity-update-match-20261029.md). `func_151E530C` emits all 55 words directly from C, as a leaf with no stack frame or guards. Total **3,924/5,506 (71.27%)**, Game **3,251/4,833 (67.27%)**, zero drift; **206** more to 75%. Next screen `func_150D2374`; private candidates remain uncredited.
 
