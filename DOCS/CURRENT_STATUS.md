@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `55edb20`; tools are committed before the consumer pin.
+  checkpoint pins tools `479d95e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Selector record coordinate payload restored**: [Note 1869](WORKING_NOTES/1869-selector-record-coordinate-payload-match-20261030.md). `func_1500A7E8` emits all 56 body words directly from C with its 80-byte frame and no guards. Six command callbacks, signed coordinates, null paths and original lookup/factory execution are qualified. Total **3,946/5,506 (71.67%)**, Game **3,273/4,833 (67.72%)**, zero drift; **184** more to 75%. Next screen `func_1501E73C`; private candidates remain uncredited.
 
 **Alternate actor point interval restored**: [Note 1868](WORKING_NOTES/1868-alternate-point-interval-match-20261030.md). `func_15146890` emits all 56 body words directly from C with its 56-byte frame and no guards. Its K&R mode promotion, typed-null caller, eight original call windows and point indices 0x13/0x17 are qualified. Total **3,945/5,506 (71.65%)**, Game **3,272/4,833 (67.70%)**, zero drift; **185** more to 75%. Next screen `func_1500A7E8`; private candidates remain uncredited.
 

@@ -20,10 +20,14 @@ s32 func_150B060C(u8, UnkB060C *);
 struct225 *func_1516037C(Header *, struct226 *, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 
+typedef struct { u8 values[6]; } EffectPointIds36680;
+extern EffectPointIds36680 D_80082BF4;
+u8 *func_151149AC(u8);
+
 /* Generated placeholder declarations. */
 s32 func_15009334(s32 arg0);
 void func_1500A6D8(struct226 *actor, s32 command);
-s32 func_1500A7E8();
+void func_1500A7E8(struct226 *actor, s32 command);
 s32 func_1500AC14();
 s32 func_1500AD84();
 s32 func_1500AF08();
@@ -407,48 +411,30 @@ void func_1500A79C(s32 arg0, s32 arg1) {
     func_15162740(arg0, 22, 6, 0, 300, 2, 255, 1);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_36680/func_1500A7E8.s. */
-s32 func_1500A7E8() {
-    return 0;
-}
-// void func_1500A7E8(s32 arg0, s32 arg1) {
-//     s8 sp4C;
-//     s16 sp4A;
-//     s8 sp49;
-//     s8 sp48;
-//     f32 sp44;
-//     f32 sp40;
-//     f32 sp3C;
-//     void *sp38;
-//     f32 sp34;
-//     f32 sp30;
-//     ? sp24;
-//     s32 temp_v0_2;
-//     s8 *temp_a0;
-//     void *temp_v0;
-//
-//     sp24.unk0 = (s32) (void *)0x80082BF4->unk0;
-//     sp24.unk4 = (u16) (void *)0x80082BF4->unk4;
-//     temp_v0 = func_151149AC((&sp24 + arg1)->unk-50);
-//     sp38 = temp_v0;
-//     if (temp_v0 != 0) {
-//         sp30 = -400.0f;
-//         sp34 = 4.0f;
-//         temp_a0 = &sp48;
-//         sp3C = (f32) temp_v0->unk10;
-//         sp40 = (f32) temp_v0->unk12;
-//         sp48 = 0;
-//         sp49 = 0x17;
-//         sp4A = 300;
-//         sp4C = 0;
-//         sp44 = (f32) temp_v0->unk14;
-//         temp_v0_2 = func_1516037C(temp_a0, arg0, 0x18, 255, 1);
-//         if (temp_v0_2 != 0) {
-//             memcpy(temp_v0_2 + 0x18, &sp30, 0x18);
-//         }
-//     }
-// }
+/* Resolve commands 0x50..0x55's record and spawn its coordinate payload. */
+void func_1500A7E8(struct226 *actor, s32 command) {
+    Header header;
+    UnkB060C payload;
+    struct225 *effect;
+    EffectPointIds36680 ids = D_80082BF4;
 
+    payload.record = func_151149AC(ids.values[command - 0x50]);
+    if (payload.record != NULL) {
+        payload.unk0 = -400.0f;
+        payload.unk4 = 4.0f;
+        payload.unkC = (f32)*(s16 *)(payload.record + 0x10);
+        payload.unk10 = (f32)*(s16 *)(payload.record + 0x12);
+        payload.unk14 = (f32)*(s16 *)(payload.record + 0x14);
+        header.unk0 = 0;
+        header.unk1 = 23;
+        header.unk2 = 300;
+        header.unk4 = 0;
+        effect = func_1516037C(&header, actor, sizeof(payload), 255, 1);
+        if (effect != NULL) {
+            memcpy((u8 *)effect + 0x18, &payload, sizeof(payload));
+        }
+    }
+}
 void func_1500A8C8(s32 arg0, s32 arg1) {
     func_151615F8(arg0, 0, 6, 0xE, 255, 1);
 }
