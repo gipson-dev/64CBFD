@@ -1,5 +1,8 @@
 # Documentation
 
+**Owner lifetime descriptor restored directly from C**: [Note 1878](WORKING_NOTES/1878-owner-lifetime-descriptor-direct-match-20261030.md). `func_151AE7B0` restores notification-before-read behavior, a signed lifetime override and its attached-effect packet. All 56 words and four bindings match directly with frame80 and no guards. Guest/native32, original caller and connected notification/constructor/memcpy checks pass. Total **3,955/5,506 (71.83%)**, Game **3,282/4,833 (67.91%)**, zero drift; **175** more to 75%. Next screen `func_1510F720`; private candidates remain uncredited.
+
+
 **Effect slot cleanup restored from C**: [Note 1877](WORKING_NOTES/1877-effect-slot-release-match-20261030.md). `func_150E35DC` restores both effect lists, unsigned slot filtering and the live nested iterator. Its 55-word semantic C normalizes to all 56 retail words using five expected-word guards and one scheduling insertion. Guest/native32, original caller and connected release providers pass. Total **3,954/5,506 (71.81%)**, Game **3,281/4,833 (67.89%)**, zero drift; **176** more to 75%. Next screen `func_151AE7B0`; private candidates remain uncredited.
 
 

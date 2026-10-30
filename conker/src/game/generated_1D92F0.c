@@ -243,25 +243,6 @@ s32 func_151AE6B0() {
     return 0;
 }
 
-s32 func_151AE7B0() {
-    return 0;
-}
-
-s32 func_151AE890() {
-    return 0;
-}
-
-s32 func_151AE984() {
-    return 0;
-}
-
-s32 func_151AEAB4() {
-    return 0;
-}
-
-/* Note 362: original ROM blood effect and dependencies. */
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AECA0.s")
-
 typedef struct {
     u32 zero0, zero4;
     u8 ownerIdentity, reserved09[3];
@@ -278,6 +259,56 @@ typedef struct {
 extern f32 D_800A9DCC, D_800A9DD0;
 void func_1516962C(s32, void *, u8);
 void *func_1513418C(void *, s32, u8, s32);
+
+extern f32 D_800A9D80;
+
+/* Notify the owner, then submit an attached effect with the selected lifetime. */
+void *func_151AE7B0(u8 *owner, f32 scale, s16 duration, u8 selector, s32 category) {
+    void *created;
+    OwnerEffectDescriptor1D92F0 descriptor;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    func_1516962C(40, owner, 17);
+    descriptor.zero0 = 0;
+    descriptor.zero4 = 0;
+    descriptor.ownerIdentity = owner[0x3B];
+    descriptor.owner = owner;
+    descriptor.attachment = 1;
+    descriptor.vector[0] = 0.0f;
+    descriptor.vector[1] = 0.0f;
+    descriptor.vector[2] = 0.0f;
+    descriptor.value20 = D_800A9D80;
+    descriptor.value24 = scale;
+    descriptor.flags = 2;
+    if (duration != 0) {
+        descriptor.duration = duration;
+        descriptor.flags = 6;
+    } else {
+        descriptor.duration = 300;
+    }
+    descriptor.kind = 6;
+    descriptor.callback = -1;
+    descriptor.mode = 5;
+    created = func_1513418C(&descriptor, 0, selector, category);
+    return created;
+}
+
+s32 func_151AE890() {
+    return 0;
+}
+
+s32 func_151AE984() {
+    return 0;
+}
+
+s32 func_151AEAB4() {
+    return 0;
+}
+
+/* Note 362: original ROM blood effect and dependencies. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AECA0.s")
 
 /* Notify the owner before constructing its attached effect descriptor. */
 void *func_151AF270(u8 *owner, u8 selector, s32 category) {
