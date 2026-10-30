@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0285fd5`; tools are committed before the consumer pin.
+  checkpoint pins tools `ea77507`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Active actor alternate-key lookup restored**: [Note 1853](WORKING_NOTES/1853-active-actor-secondary-key-lookup-match-20261029.md). `func_1505EFD0` emits all 55 linked retail words directly from C, with no frame or guards. It searches active actor slots 0 through 24 by unsigned byte+0x127, with its original constant-zero caller qualified. Total **3,930/5,506 (71.38%)**, Game **3,257/4,833 (67.39%)**, zero drift; **200** more to 75%. Next screen `func_150AE280`; private candidates remain uncredited.
 
 **First active actor key lookup restored**: [Note 1852](WORKING_NOTES/1852-active-actor-key-lookup-match-20261029.md). `func_1505EEF4` emits all 55 linked retail words directly from C, with no stack frame or guards. It scans slots 0 through 24 and excludes reserved slot 25. Total **3,929/5,506 (71.36%)**, Game **3,256/4,833 (67.37%)**, zero drift; **201** more to 75%. Next screen `func_1505EFD0`; private candidates remain uncredited.
 
