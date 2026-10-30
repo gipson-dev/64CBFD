@@ -24389,3 +24389,12 @@ generated_142560,func_151193F4,0xc8,0xA0890073,0xA08B0073,-,-,Normalize closed h
 generated_142560,func_151193F4,0xcc,0x908A0073,0x908C0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
 generated_142560,func_151193F4,0xd0,0x354B0003,0x358D0003,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
 generated_142560,func_151193F4,0xd4,0xA08B0073,0xA08D0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+game_33990,func_15007360,0x2c,0x3C040000,0x3C040000,R_MIPS_HI16:D_800BE2F0,R_MIPS_HI16:D_800BE2F4,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x30,0x01001025,0x24840000,-,R_MIPS_LO16:D_800BE2F4,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x34,0x24840004,0x01001025,R_MIPS_LO16:D_800BE2F0,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x48,0x246E0001,0x306A0003,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x4c,0x306A0003,0x246E0001,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x64,0x24690002,0x004B6021,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x68,0x004B6021,0x24690002,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x6c,0x0198C821,0x312A0003,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false
+game_33990,func_15007360,0x70,0x312A0003,0x0198C821,-,-,Normalize closed checksum loop schedule and equivalent save-block data address,,,false

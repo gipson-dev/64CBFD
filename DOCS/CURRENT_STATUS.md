@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `06f91d2`; tools are committed before the consumer pin.
+  checkpoint pins tools `6bd651c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Save checksum submission restored**: [Note 1872](WORKING_NOTES/1872-save-checksum-submission-match-20261030.md). `func_15007360` restores the weighted save-block checksum and conditional submission. All 56 words match with nine closed scheduling/address guards, retail frame32 and result home; no insertions or omissions. Original helper/caller windows and native controls pass. Total **3,949/5,506 (71.72%)**, Game **3,276/4,833 (67.78%)**, zero drift; **181** more to 75%. Next screen `func_15063404`; private candidates remain uncredited.
 
 **Record signed halfword approach restored**: [Note 1871](WORKING_NOTES/1871-record-signed-halfword-approach-match-20261030.md). `func_151193F4` recovers signed scaling, movement and reached-state bits. All 56 words match with 32 expected-word allocation/scheduling guards; no insertions or omissions. All 22 symbolic paths, original indirect callback windows, guest access order and native controls pass. Total **3,948/5,506 (71.70%)**, Game **3,275/4,833 (67.76%)**, zero drift; **182** more to 75%. Next screen `func_15007360`; private candidates remain uncredited.
 
