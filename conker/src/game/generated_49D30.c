@@ -963,6 +963,37 @@ s32 func_150235DC() {
     return 0;
 }
 
-s32 func_1502378C() {
-    return 0;
+extern u8 D_800C3E78;
+void func_1504A730(void);
+void func_1507E73C(struct127 *);
+void func_150627D4(struct127 *);
+void func_1507FEA0(struct127 *);
+void func_15061B4C(void);
+
+/* Update the 25 active actor slots, or dispatch the alternate update mode. */
+void func_1502378C(void) {
+    struct127 *actor = D_800CC2D0;
+    s32 index = 0;
+
+    if (D_800C3654[0] != 0) {
+        func_1504A730();
+    } else {
+        u8 limit = 25;
+        do {
+            if (actor->interaction_state != 0) {
+                D_800C3E78 = index;
+                func_15022998((s32 *)actor);
+                func_1507E73C(actor);
+                if (func_150229E4(actor) != 0) {
+                    func_1502178C(actor, 0, -1);
+                    func_150627D4(actor);
+                    func_1507FEA0(actor);
+                    actor->unk2FF = 1;
+                }
+            }
+            index++;
+            actor++;
+        } while (index != limit);
+        func_15061B4C();
+    }
 }

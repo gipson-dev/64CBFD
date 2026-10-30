@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9770c2e`; tools are committed before the consumer pin.
+  checkpoint pins tools `585829b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Active actor update loop restored from C**: [Note 1881](WORKING_NOTES/1881-active-actor-update-match-20261030.md). `func_1502378C` restores the alternate mode, 25-slot traversal, live current-index writes and conditional update sequence. Its 54-word body matches after two independent initialization scheduling guards; all three alignment words remain fixed. Guest/native32, original type dispatcher, caller, owner and strict image checks pass. Total **3,958/5,506 (71.89%)**, Game **3,285/4,833 (67.97%)**, zero drift; **172** more to 75%. Next screen `func_1500727C`; private candidates remain uncredited.
 
 **Actor parameter clamp restored directly from C**: [Note 1880](WORKING_NOTES/1880-actor-parameter-clamp-match-20261030.md). `func_150DB630` restores the parameter pointer reread, byte clamp and success return. All 57 retail words emit directly, with no guards, insertions or omissions. Guest/native32, original callback dispatch, owner and strict image checks pass. Total **3,957/5,506 (71.87%)**, Game **3,284/4,833 (67.95%)**, zero drift; **173** more to 75%. Next screen `func_1502378C`; private candidates remain uncredited.
 
