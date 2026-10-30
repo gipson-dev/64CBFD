@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Actor point interval restored**: [Note 1867](WORKING_NOTES/1867-actor-point-interval-match-20261030.md). `func_150EAF50` emits all 56 body words directly from C, including its unreachable duplicate load, with the original 56-byte frame and no guards. Mode gates, live point/result aliases, original caller routes and original height helpers are qualified. Total **3,944/5,506 (71.63%)**, Game **3,271/4,833 (67.68%)**, zero drift; **186** more to 75%. Next screen `func_15146890`; private candidates remain uncredited.
+
 - [x] **Actor effect descriptor callback restored**: [Note 1866](WORKING_NOTES/1866-actor-yellow-effect-match-20261030.md). `func_150E67D0` emits all 54 body words directly from C, preserving its 120-byte frame, two alignment words and original indirect callback result. Descriptor bytes, fourteen constructor arguments and the disjoint RNG seed contract are qualified without guards. Total **3,943/5,506 (71.61%)**, Game **3,270/4,833 (67.66%)**, zero drift; **187** more to 75%. Next screen `func_150EAF50`; private candidates remain uncredited.
 
 - [x] **Randomized position packet restored**: [Note 1865](WORKING_NOTES/1865-random-position-packet-match-20261030.md). `func_150B6000` emits all 56 words directly from C, with its original 80-byte frame and no guards. Unsigned modulo-nine/modulo-201 RNG values, coordinate truncation timing, all eleven constructor arguments and both original call windows are qualified. Total **3,942/5,506 (71.59%)**, Game **3,269/4,833 (67.64%)**, zero drift; **188** more to 75%. Next screen `func_150E67D0`; private candidates remain uncredited.
