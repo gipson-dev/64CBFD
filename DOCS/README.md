@@ -1,5 +1,8 @@
 # Documentation
 
+**Actor distance fade restored**: [Note 1862](WORKING_NOTES/1862-actor-distance-fade-match-20261030.md). `func_150E05F8` emits its complete 56-word leaf directly from C without guards. Its signed-halfword coordinates, retail threshold pool, float32 interpolation and callback interface are qualified. Total **3,939/5,506 (71.54%)**, Game **3,266/4,833 (67.58%)**, zero drift; **191** more to 75%. Next screen `func_15158FA4`; private candidates remain uncredited.
+
+
 **Actor event-mode selection restored**: [Note 1861](WORKING_NOTES/1861-actor-event-mode-match-20261030.md). `func_150D0650` emits all 53 body words directly from C with its original 40-byte frame, three alignment words and no guards. Live helper mutations, the fifth argument, selector underflow and post-setter timer stores are qualified. Total **3,938/5,506 (71.52%)**, Game **3,265/4,833 (67.56%)**, zero drift; **192** more to 75%. Next screen `func_150E05F8`; private candidates remain uncredited.
 
 

@@ -189,6 +189,9 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_AEB40.c.o: RETAIL_RODATA_SYMBOL := jtbl_8
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1BFCB0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8160_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1C1150.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A8258_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_113D60.c.o: RETAIL_RODATA_SYMBOL := D_800A1350
+# Distance fade uses its preserved near/far literal pair.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o: RETAIL_RODATA_SYMBOL := D_800A0FD0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o: Makefile
 # Fractional points use their two original adjacent coefficient literals.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_133190.c.o: RETAIL_RODATA_SYMBOL := D_800A2420
 # Transition burst uses its six existing retail motion constants.

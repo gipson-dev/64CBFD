@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Actor distance fade restored**: [Note 1862](WORKING_NOTES/1862-actor-distance-fade-match-20261030.md). `func_150E05F8` emits its complete 56-word leaf directly from C without guards. Its signed-halfword coordinates, retail threshold pool, float32 interpolation and callback interface are qualified. Total **3,939/5,506 (71.54%)**, Game **3,266/4,833 (67.58%)**, zero drift; **191** more to 75%. Next screen `func_15158FA4`; private candidates remain uncredited.
+
 - [x] **Actor event-mode selection restored**: [Note 1861](WORKING_NOTES/1861-actor-event-mode-match-20261030.md). `func_150D0650` emits all 53 body words directly from C with its original 40-byte frame, three alignment words and no guards. Live helper mutations, the fifth argument, selector underflow and post-setter timer stores are qualified. Total **3,938/5,506 (71.52%)**, Game **3,265/4,833 (67.56%)**, zero drift; **192** more to 75%. Next screen `func_150E05F8`; private candidates remain uncredited.
 
 - [x] **Sampled actor factor-to-byte update restored**: [Note 1860](WORKING_NOTES/1860-actor-intensity-byte-match-20261030.md). `func_1511BA24` emits all 56 words directly from C with its original 32-byte frame and no guards. The original 15-word getter and registered callback dispatch are qualified under a bounded FP model. Total **3,937/5,506 (71.50%)**, Game **3,264/4,833 (67.54%)**, zero drift; **193** more to 75%. Next screen `func_1507E1D0`; private candidates remain uncredited.

@@ -134,8 +134,35 @@ s32 func_150E03F8() {
     return 0;
 }
 
-s32 func_150E05F8() {
-    return 0;
+extern u8 *D_800DBFF0;
+
+/* Fade the record byte between the near and far player-distance thresholds. */
+void func_150E05F8(u8 *record) {
+    f32 z;
+    f32 x;
+    f32 y;
+    f32 nearDistance;
+    f32 distance;
+    s32 result;
+
+    nearDistance = 2570.0f;
+    z = *(f32 *)(D_800DBFF0 + 0x300) - *(s16 *)(record + 0x14);
+    x = *(f32 *)(D_800DBFF0 + 0x2F8) - *(s16 *)(record + 0x10);
+    y = *(f32 *)(D_800DBFF0 + 0x2FC) - *(s16 *)(record + 0x12);
+    distance = sqrtf(z * z + (x * x + y * y));
+
+    if (distance <= nearDistance) {
+        result = 255;
+    } else {
+        f32 farDistance = 3850.0f;
+        if (farDistance <= distance) {
+            result = 0;
+        } else {
+            result = (s32)(255 - (distance - nearDistance) *
+                           (1.0f / (farDistance - nearDistance)) * 255.0f);
+        }
+    }
+    record[0x8A] = result;
 }
 
 s32 func_150E06D8() {
