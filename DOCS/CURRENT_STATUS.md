@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0f928ea`; tools are committed before the consumer pin.
+  checkpoint pins tools `9770c2e`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor parameter clamp restored directly from C**: [Note 1880](WORKING_NOTES/1880-actor-parameter-clamp-match-20261030.md). `func_150DB630` restores the parameter pointer reread, byte clamp and success return. All 57 retail words emit directly, with no guards, insertions or omissions. Guest/native32, original callback dispatch, owner and strict image checks pass. Total **3,957/5,506 (71.87%)**, Game **3,284/4,833 (67.95%)**, zero drift; **173** more to 75%. Next screen `func_1502378C`; private candidates remain uncredited.
 
 **Relative spatial query restored from C**: [Note 1879](WORKING_NOTES/1879-relative-spatial-query-match-20261030.md). `func_1510F720` restores strict coordinate admission, signed relative traversal and late output-offset reads. Its 56-word C normalizes to all 56 retail words using 21 exact register-allocation guards, with no inserted or omitted instructions. ABI/live-role, alias, native32 and original caller checks pass. Total **3,956/5,506 (71.85%)**, Game **3,283/4,833 (67.93%)**, zero drift; **174** more to 75%. Next screen `func_150DB630`; private candidates remain uncredited.
 
