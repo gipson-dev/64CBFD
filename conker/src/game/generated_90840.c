@@ -10,8 +10,20 @@ void func_1505E650(u8 *, u16, f32, f32, f32, f32, s32);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_90840/func_15063390.s")
 
-s32 func_15063404() {
-    return 0;
+/* Set nested state 9, start requests 0x1D/0x1E, and reset its counters. */
+void func_15063404(struct127 *actor) {
+    struct127 *entry = &D_800CC2D0[(u32)(((s32)actor -
+        (s32)D_800CC2D0) / (s32)sizeof(struct127))];
+
+    entry->unk31C->unk78 = 9;
+    func_15083568((u8 *)actor, 0x1D, 1.0f, 0);
+    func_15083568((u8 *)actor, 0x1E, 1.0f, 0);
+    actor->disable_jump = 20;
+    actor->disable_run = 0;
+    actor->unk83 = 0;
+    *(s16 *)((u8 *)entry->unk31C + 0x24) = 60;
+    entry->unk31C->unk11A = 2;
+    func_1505E650((u8 *)actor, 0x7F, 1.0f, 0.0f, 0.0f, 0.0f, 0);
 }
 
 void func_150634E4(struct127 *arg0) {

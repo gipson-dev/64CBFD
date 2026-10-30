@@ -1,5 +1,8 @@
 # Documentation
 
+**Actor state-9 start restored directly from C**: [Note 1873](WORKING_NOTES/1873-actor-state9-start-direct-match-20261030.md). `func_15063404` starts requests 0x1D/0x1E, resets actor counters and starts animation 0x7F. All 56 raw compiler words match with zero new guards, retail frame48 and captured-entry/actor lifetimes. Original caller paths, bounded provider routes and native controls pass. Total **3,950/5,506 (71.74%)**, Game **3,277/4,833 (67.80%)**, zero drift; **180** more to 75%. Next screen `func_1508EF80`; private candidates remain uncredited.
+
+
 **Save checksum submission restored**: [Note 1872](WORKING_NOTES/1872-save-checksum-submission-match-20261030.md). `func_15007360` restores the weighted save-block checksum and conditional submission. All 56 words match with nine closed scheduling/address guards, retail frame32 and result home; no insertions or omissions. Original helper/caller windows and native controls pass. Total **3,949/5,506 (71.72%)**, Game **3,276/4,833 (67.78%)**, zero drift; **181** more to 75%. Next screen `func_15063404`; private candidates remain uncredited.
 
 
