@@ -1,0 +1,28 @@
+# 1859: Resource status and active-set bit clear recovered
+
+Verified 2026-10-30. `func_150A2864` is restored in `conker/src/game/generated_CDE80.c`, retaining its original name and adding a semantic comment. Tools commit `1ecbc53704fc0814739bc01ac76cac3be2d175e3` precedes the consumer pin. No push.
+
+The routine masks its identity to12bits. When that identity is below the **unsigned** global record count, it stores the low status byte at offset `0x14` of the selected `0x34`-byte record. It compares the **full32-bit status to1**, then clears the selected bit from each of16 three-word64-bit active-set rows spanning `D_800D30F0..D_800D3270`. The original recomputes `1ULL << (identity&63)` through `__ll_lshift` in every iteration. The column is `identity>>6`; the row stride is24bytes. The existing record's `flags` field at0x15 remains distinct.
+
+The compiler emits the complete **55-word /220-byte body** with the original **64-byte frame**, RA at36, S2/S1/S0 at32/28/24, shift-count homes40/44 and16 outgoing bytes. There are no insertions, omissions, frame changes, shared-header changes or new compiler profiles. **Ten expected-word and relocation guards** normalize six setup words and four temporary-register words; this is a guarded semantic C match, not raw compiler byte equality.
+
+The setup guards move the independent identity-bit mask, zero high count, bit-table HI/LO setup and two cached-count stores before their first uses. The loop guards exchange T6/T7 with T8/T9 for the loaded64-bit row and complemented64-bit mask. The two commutative AND instructions already match, as do the stores, loop branch and epilogue. Those temporaries are dead at the next helper call/return under the ABI. Each guard checks its exact raw word and relocation set; all20 deliberate word/relocation preimage corruptions fail closed. The inherited manifest prefix is preserved exactly.
+
+All **27 neighboring functions** and normalized pools are fixed. The actual **five-command Make recipe**, including the existing assembly preprocessing/postprocessing, reproduces the qualified object with zero C diagnostics. The inherited duplicate12D630 Make warning remains.
+
+Qualification:
+
+- **9,504 guest cases /28,512 executions** cover all4096 masked identities, high input bits, bit31/32/63 transitions, byte/full-status differences, unsigned count boundaries, table columns and two stack phases. Original assembly and guarded output agree in literal full state; raw C independently agrees on public memory and helper calls. Raw volatile-register and interrupted private-stack equality are not claimed.
+- **120 interrupted access prefixes**, **108 rebased cases over three layouts**, and **18 deliberate guest alias cases** preserve original/guarded literal state and raw public effects. All55 words are reachable and exercised.
+- All **six retail call windows**,15 cases each, preserve their actual delay words. Five receive identity inA0 and status0/1 in the delay slot; one receives a full status inA1 and loads the unsigned identity byte throughS1 in the delay slot. Full parent functions are not claimed. The guest uses a bounded SDK shift provider; its original MIPS-III instructions are not executed by the32-bit interpreter.
+- Native32 **4,960 cases per profile** pass `-O0`, `-O2` and `-O3` with UBSan and nine effective controls. The native domain bounds masked identities to0..191. Records and112 backing64-bit words are checked byte-for-byte; the sentinel is an actual link alias384bytes into the same array. Additional backing keeps incorrect controls defined. Native C executes its own64-bit shift. Guest identities beyond the normal three columns and deliberate aliases are not portable-C claims.
+- Both tools copies independently run eight canonical checks plus their repository checks. Installed copies freshly verify source/input identity and linked/protected data; six unchanged checks are reused only under exact module, complete input and artifact fingerprints.
+- Independent whole-image prediction equals production exactly: **182 changed bytes =181 target code +1 target extent**, metadata0/exclusions0. All **6,055 other linked bodies**, all function addresses and **189,088 protected Game bytes /720 owners** are fixed. The existing C inventory is unchanged; no helper earns extra credit.
+
+Qualified ELF SHA256: `124447d9285fc55fbc7b74645e44f00586270bdf696c29ede80f7b41aee8a15b`. Qualified object SHA256: `21083fd970bec9a235ac90e1f24d5e575f50f4442cb30da2b2986f87aac42196`.
+
+Actual-ELF recount is **3,936 /5,506 (71.49%)**, Game **3,263 /4,833 (67.51%)**, Init492/492 and Debugger181/181, zero drift. **194** further matches reach4,130/5,506. `func_1511BA24` is the next private screen; parked candidates remain uncredited. The README changes only its aggregate rows; this note holds the recovery details.
+
+Graphify refreshes eleven changed C/tool/Markdown sources, retains every old node or unique relocation and every still-valid directed relationship, and retires the obsolete s32 return edge. It records the guarded C signature, row semantics, helper binding and six retail call windows. Historical outside-scope corpus rows and communities remain historical; no full-corpus or gameplay claim is made. The guard manifest's exact hash and appended rows are independently source-validated.
+
+Evidence is retained in `conker/build/game-resource-status-bit-clear-match/`, including frozen snapshots, raw/padded objects, guarded preimage controls, Make command evidence, canonical receipts, production proof, recount, graph retention and final audit. The older mirror's2015 inherited dirty paths are preserved, with three new mirrored qualification files and no mirror commit.

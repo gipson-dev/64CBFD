@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `52cfcfe`; tools are committed before the consumer pin.
+  checkpoint pins tools `1ecbc53`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Resource status and active-set bit clear restored**: [Note 1859](WORKING_NOTES/1859-resource-status-bit-clear-match-20261030.md). `func_150A2864` recovers its status byte and 16-row 64-bit bit clear from C with its original 64-byte frame. Ten relocation-aware guards normalize independent setup and a closed register cycle. Total **3,936/5,506 (71.49%)**, Game **3,263/4,833 (67.51%)**, zero drift; **194** more to 75%. Next screen `func_1511BA24`; private candidates remain uncredited.
 
 **Live resource-pair release restored**: [Note 1858](WORKING_NOTES/1858-resource-pair-release-match-20261030.md). `func_150843AC` emits all 55 words directly from C with its original 48-byte frame and no guards. Both selected resources, shared byte reference counts and helper mutations are qualified. Total **3,935/5,506 (71.47%)**, Game **3,262/4,833 (67.49%)**, zero drift; **195** more to 75%. Next screen `func_150A2864`; private candidates remain uncredited.
 

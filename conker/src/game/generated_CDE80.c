@@ -107,8 +107,26 @@ void func_150A278C(struct127 *actor) {
     }
 }
 
-s32 func_150A2864() {
-    return 0;
+extern u64 D_800D30F0[];
+extern u64 D_800D3270[];
+
+/* Set a resource status byte and clear its bit from each active-set row. */
+void func_150A2864(u32 identity, s32 status) {
+    u64 *row;
+    u32 word;
+    u64 shift;
+
+    identity &= 0xFFF;
+    if (identity < (u32)D_800D3094) {
+        ((u8 *)&D_800D3098[identity])[0x14] = status;
+    }
+    if (status == 1) {
+        for (shift = identity & 0x3F, word = identity >> 6, row = D_800D30F0; ; ) {
+            row[word] = row[word] & ~(1ULL << shift);
+            row += 3;
+            if (row == D_800D3270) break;
+        }
+    }
 }
 
 s32 func_150A2940() {

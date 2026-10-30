@@ -24327,3 +24327,13 @@ generated_13BB20,func_1510F648,0x070,0x8FA40024,0x8FA40028,-,-,Normalize closed 
 generated_13BB20,func_1510F648,0x084,0x8FA4001C,0x8FA40020,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
 generated_13BB20,func_1510F648,0x088,0x8FA50018,0x8FA5001C,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
 generated_13BB20,func_1510F648,0x090,0x8FA60024,0x8FA60028,-,-,Normalize closed coordinate-query local slots within the unchanged frame,,,false
+generated_CDE80,func_150A2864,0x058,0x3C100000,0x3089003F,R_MIPS_HI16:D_800D30F0,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x064,0x3089003F,0x240A0000,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x068,0x240A0000,0x3C100000,-,R_MIPS_HI16:D_800D30F0,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x074,0xAFAA0028,0x26100000,-,R_MIPS_LO16:D_800D30F0,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x078,0xAFA9002C,0xAFAA0028,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x080,0x26100000,0xAFA9002C,R_MIPS_LO16:D_800D30F0,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x09C,0x8C980000,0x8C8E0000,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x0A0,0x8C990004,0x8C8F0004,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x0A4,0x00407027,0x0040C027,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_CDE80,func_150A2864,0x0A8,0x00607827,0x0060C827,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
