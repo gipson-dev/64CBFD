@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Preset record routine restored**: [Note 1864](WORKING_NOTES/1864-preset-record-reload-match-20261030.md). `func_150F5340` emits all 53 body words directly from C, with its original 112-byte frame, 68-byte local preset and three alignment words. The 17 mode-one submissions preserve the preset snapshot while reloading the live record base, then enable category nine; no new guards are needed. Total **3,941/5,506 (71.58%)**, Game **3,268/4,833 (67.62%)**, zero drift; **189** more to 75%. Next screen `func_150B6000`; private candidates remain uncredited.
+
 - [x] **Selection-pair event handler restored**: [Note 1863](WORKING_NOTES/1863-selection-pair-event-match-20261030.md). `func_15158FA4` recovers the byte-command gates, paired word/tag exchange and two helper calls. All 56 words match with its original 24-byte frame and 15 guards limited to temporary register fields. Three original callback windows and alias-sensitive late byte reads are qualified. Total **3,940/5,506 (71.56%)**, Game **3,267/4,833 (67.60%)**, zero drift; **190** more to 75%. Next screen `func_150F5340`; private candidates remain uncredited.
 
 - [x] **Actor distance fade restored**: [Note 1862](WORKING_NOTES/1862-actor-distance-fade-match-20261030.md). `func_150E05F8` emits its complete 56-word leaf directly from C without guards. Its signed-halfword coordinates, retail threshold pool, float32 interpolation and callback interface are qualified. Total **3,939/5,506 (71.54%)**, Game **3,266/4,833 (67.58%)**, zero drift; **191** more to 75%. Next screen `func_15158FA4`; private candidates remain uncredited.
