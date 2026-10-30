@@ -1,5 +1,8 @@
 # Documentation
 
+**Rotated origin callback restored directly from C**: [Note 1876](WORKING_NOTES/1876-rotated-origin-direct-match-20261030.md). `func_150CEF60` restores the scaled-angle rotation, signed coordinate submission and phase update. All 56 words and nine bindings match directly, including frame64 and both captured spill lifetimes. Original caller, connected retail helpers and native32 controls pass. Total **3,953/5,506 (71.79%)**, Game **3,280/4,833 (67.87%)**, zero drift; **177** more to 75%. Next screen `func_150E35DC`; private candidates remain uncredited.
+
+
 **Effect motion limit restored directly from C**: [Note 1875](WORKING_NOTES/1875-effect-motion-limit-direct-match-20261030.md). `func_150B36AC` restores threshold-controlled motion reset/scaling and its six-argument callback ABI. All 56 words match with zero guards and no frame. Guest access prefixes, both original indirect call windows and native32 controls pass. Total **3,952/5,506 (71.78%)**, Game **3,279/4,833 (67.85%)**, zero drift; **178** more to 75%. Next screen `func_150CEF60`; private candidates remain uncredited.
 
 
