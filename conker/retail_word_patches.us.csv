@@ -24411,3 +24411,24 @@ generated_1104D0,func_150E35DC,0x034,0x26730000,0x26940000,R_MIPS_LO16:D_800DD19
 generated_1104D0,func_150E35DC,0x038,0x26940000,0x26520000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DCE50,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false
 generated_1104D0,func_150E35DC,0x0B4,0x1654FFE2,0xA26F0000,-,-,Normalize closed iterator address setup and outer-loop depth preload rotation,0x5654FFE2,-,false
 generated_1104D0,func_150E35DC,0x0B8,0xA26F0000,0x826E0000,-,-,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false
+generated_13BB20,func_1510F720,0x010,0x00808025,0x00C08025,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x034,0x01D02023,0x01C42823,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x038,0x04810003,0x04A10003,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x03C,0x00802825,0x00A03025,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x044,0x00042823,0x00053023,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x04C,0x01E62021,0x020F2821,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x050,0x00A4082A,0x00C5082A,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x058,0x84450004,0x84460004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x060,0x03112823,0x03113023,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x064,0x04A10003,0x04C10003,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x068,0x00A03825,0x00C03825,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x070,0x00053823,0x00063823,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x074,0x00E4082A,0x00E5082A,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x07C,0x84450004,0x84460004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x080,0x8444000C,0x8445000C,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x084,0x50800004,0x50A00004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x090,0x00802825,0x00A03025,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x0A4,0x84450004,0x84460004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x0A8,0x84450004,0x84460004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x0AC,0x50A00004,0x50C00004,-,-,Normalize closed spatial-query register allocation cycle,,,false
+generated_13BB20,func_1510F720,0x0B8,0x00451021,0x00461021,-,-,Normalize closed spatial-query register allocation cycle,,,false

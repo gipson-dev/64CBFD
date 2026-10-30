@@ -67,8 +67,35 @@ f32 func_1510F648(f32 x, f32 y, f32 z) {
     return result;
 }
 
-s32 func_1510F720() {
-    return 0;
+/* Collect nearby leaf records while following signed relative record offsets. */
+s32 func_1510F720(s32 x, s32 z, s32 radius, u8 **output) {
+    u8 *node = D_800DBE48;
+    s32 count = 0;
+    s32 dx, dz, limit, absX, absZ;
+    s32 offset, child;
+
+    while (node != NULL) {
+        dx = (s32)((u32)*(s16 *)(node + 8) - (u32)x);
+        absX = dx < 0 ? (s32)(0u - (u32)dx) : dx;
+        limit = (s32)((u32)radius + *(u16 *)(node + 6));
+        if (absX < limit &&
+            (dz = (s32)((u32)*(s16 *)(node + 10) - (u32)z),
+             absZ = dz < 0 ? (s32)(0u - (u32)dz) : dz,
+             absZ < limit)) {
+            child = *(s16 *)(node + 12);
+            if (child != 0) {
+                offset = child;
+            } else {
+                *output++ = node;
+                count++;
+                offset = *(s16 *)(node + 4);
+            }
+        } else {
+            offset = *(s16 *)(node + 4);
+        }
+        node = offset != 0 ? node + offset : NULL;
+    }
+    return count;
 }
 
 void func_1510F800(s32 context) {
