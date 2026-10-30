@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Group actor channel normalization restored**: [Note 1870](WORKING_NOTES/1870-group-actor-channel-normalization-match-20261030.md). `func_1501E73C` restores the live type-2 record scan and actor-channel clears. All 56 words match with five relocation-aware opening-schedule guards; no insertions or omissions. Original helper/caller windows, aliases, live count/table changes and native controls are qualified. Total **3,947/5,506 (71.69%)**, Game **3,274/4,833 (67.74%)**, zero drift; **183** more to 75%. Next screen `func_151193F4`; private candidates remain uncredited.
+
 - [x] **Selector record coordinate payload restored**: [Note 1869](WORKING_NOTES/1869-selector-record-coordinate-payload-match-20261030.md). `func_1500A7E8` emits all 56 body words directly from C with its 80-byte frame and no guards. Six command callbacks, signed coordinates, null paths and original lookup/factory execution are qualified. Total **3,946/5,506 (71.67%)**, Game **3,273/4,833 (67.72%)**, zero drift; **184** more to 75%. Next screen `func_1501E73C`; private candidates remain uncredited.
 
 - [x] **Alternate actor point interval restored**: [Note 1868](WORKING_NOTES/1868-alternate-point-interval-match-20261030.md). `func_15146890` emits all 56 body words directly from C with its 56-byte frame and no guards. Its K&R mode promotion, typed-null caller, eight original call windows and point indices 0x13/0x17 are qualified. Total **3,945/5,506 (71.65%)**, Game **3,272/4,833 (67.70%)**, zero drift; **185** more to 75%. Next screen `func_1500A7E8`; private candidates remain uncredited.

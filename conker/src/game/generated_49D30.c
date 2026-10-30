@@ -615,8 +615,39 @@ s32 func_1501E540() {
     return 0;
 }
 
-s32 func_1501E73C() {
-    return 0;
+void func_1507EABC(u8 *);
+
+/* Normalize channel values of at least 10 on type-2 group actors. */
+void func_1501E73C(s32 group) {
+    s32 offset;
+    u8 **records;
+    u8 *actor;
+    u8 *record;
+
+    if (D_800C363A[group] > 0) {
+        records = &D_800C35F0[group];
+        offset = 0;
+        do {
+            record = *records + offset;
+            if (*(u16 *)record == 2) {
+                actor = func_15083E90(record[2]);
+                if (actor == NULL) goto advance;
+                {
+                    if (actor[0x6C] >= 10) {
+                        actor[0x6C] = 0;
+                        actor[0x6A] = 0;
+                    }
+                    if (actor[0x6D] >= 10) {
+                        actor[0x6D] = 0;
+                        actor[0x6B] = 0;
+                    }
+                    func_1507EABC(actor);
+                }
+            }
+advance:
+            offset += 8;
+        } while (offset < D_800C363A[group] * 8);
+    }
 }
 
 s32 func_1501E81C() {

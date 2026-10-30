@@ -24352,3 +24352,8 @@ generated_185560,func_15158FA4,0x0B0,0x118D0005,0x11AE0005,-,-,Normalize closed 
 generated_185560,func_15158FA4,0x0B8,0x908E001C,0x908F001C,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
 generated_185560,func_15158FA4,0x0BC,0x90AF0004,0x90B80004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
 generated_185560,func_15158FA4,0x0C0,0x55CF0004,0x55F80004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_49D30,func_1501E73C,0x28,0x00008025,0x3C180000,-,R_MIPS_HI16:D_800C35F0,Normalize closed group actor channel scan opening address and counter schedule,,,false
+generated_49D30,func_1501E73C,0x2c,0x00047880,0x27180000,-,R_MIPS_LO16:D_800C35F0,Normalize closed group actor channel scan opening address and counter schedule,,,false
+generated_49D30,func_1501E73C,0x34,0x3C180000,0x00047880,R_MIPS_HI16:D_800C35F0,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
+generated_49D30,func_1501E73C,0x38,0x27180000,0x01F89021,R_MIPS_LO16:D_800C35F0,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
+generated_49D30,func_1501E73C,0x3c,0x01F89021,0x00008025,-,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
