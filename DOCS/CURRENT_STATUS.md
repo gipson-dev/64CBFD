@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `0297342`; tools are committed before the consumer pin.
+  checkpoint pins tools `7b89b7b`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor effect descriptor callback restored**: [Note 1866](WORKING_NOTES/1866-actor-yellow-effect-match-20261030.md). `func_150E67D0` emits all 54 body words directly from C, preserving its 120-byte frame, two alignment words and original indirect callback result. Descriptor bytes, fourteen constructor arguments and the disjoint RNG seed contract are qualified without guards. Total **3,943/5,506 (71.61%)**, Game **3,270/4,833 (67.66%)**, zero drift; **187** more to 75%. Next screen `func_150EAF50`; private candidates remain uncredited.
 
 **Randomized position packet restored**: [Note 1865](WORKING_NOTES/1865-random-position-packet-match-20261030.md). `func_150B6000` emits all 56 words directly from C, with its original 80-byte frame and no guards. Unsigned modulo-nine/modulo-201 RNG values, coordinate truncation timing, all eleven constructor arguments and both original call windows are qualified. Total **3,942/5,506 (71.59%)**, Game **3,269/4,833 (67.64%)**, zero drift; **188** more to 75%. Next screen `func_150E67D0`; private candidates remain uncredited.
 
