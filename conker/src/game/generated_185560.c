@@ -167,8 +167,38 @@ s32 func_15158D2C() {
     return 0;
 }
 
-s32 func_15158FA4() {
-    return 0;
+void func_1519F400(u8 *selection);
+
+/* Apply a matching selection event or exchange the two indexed choices. */
+void func_15158FA4(u8 *selection, u8 *event, u8 opcode) {
+    s32 first;
+    s32 current;
+
+    if (opcode == 0) {
+        if ((*(s32 *)(selection + 0x18) == *(s32 *)(event + 0)) ||
+            (selection[0x1C] == event[4])) {
+            func_1516972C(selection);
+        }
+    } else if (opcode == 0x2D) {
+        first = *(s32 *)(event + 0);
+        current = *(s32 *)(selection + 0x18);
+        if (first == current) {
+            *(s32 *)(selection + 0x18) = *(s32 *)(event + 4);
+            selection[0x1C] = event[9];
+        } else {
+            s32 second = *(s32 *)(event + 4);
+            if (second != current) {
+                return;
+            }
+            *(s32 *)(selection + 0x18) = first;
+            selection[0x1C] = event[8];
+        }
+    } else if (opcode == 4) {
+        if ((*(s32 *)(selection + 0x18) == *(s32 *)(event + 0)) ||
+            (selection[0x1C] == event[4])) {
+            func_1519F400(selection);
+        }
+    }
 }
 
 s32 func_15159084(u8 *arg0, u8 arg1) {

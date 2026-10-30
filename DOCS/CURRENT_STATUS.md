@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `56cf597`; tools are committed before the consumer pin.
+  checkpoint pins tools `7362283`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Selection-pair event handler restored**: [Note 1863](WORKING_NOTES/1863-selection-pair-event-match-20261030.md). `func_15158FA4` recovers the byte-command gates, paired word/tag exchange and two helper calls. All 56 words match with its original 24-byte frame and 15 guards limited to temporary register fields. Three original callback windows and alias-sensitive late byte reads are qualified. Total **3,940/5,506 (71.56%)**, Game **3,267/4,833 (67.60%)**, zero drift; **190** more to 75%. Next screen `func_150F5340`; private candidates remain uncredited.
 
 **Actor distance fade restored**: [Note 1862](WORKING_NOTES/1862-actor-distance-fade-match-20261030.md). `func_150E05F8` emits its complete 56-word leaf directly from C without guards. Its signed-halfword coordinates, retail threshold pool, float32 interpolation and callback interface are qualified. Total **3,939/5,506 (71.54%)**, Game **3,266/4,833 (67.58%)**, zero drift; **191** more to 75%. Next screen `func_15158FA4`; private candidates remain uncredited.
 

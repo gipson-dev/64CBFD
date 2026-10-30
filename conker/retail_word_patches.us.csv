@@ -24337,3 +24337,18 @@ generated_CDE80,func_150A2864,0x09C,0x8C980000,0x8C8E0000,-,-,Normalize independ
 generated_CDE80,func_150A2864,0x0A0,0x8C990004,0x8C8F0004,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
 generated_CDE80,func_150A2864,0x0A4,0x00407027,0x0040C027,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
 generated_CDE80,func_150A2864,0x0A8,0x00607827,0x0060C827,-,-,Normalize independent bit-clear setup and closed temporary register allocation,,,false
+generated_185560,func_15158FA4,0x058,0x8CA30000,0x8CA20000,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x05C,0x8C860018,0x8C830018,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x060,0x54660007,0x54430007,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x064,0x8CA20004,0x8CAB0004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x07C,0x8CA20004,0x8CAB0004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x080,0x54460014,0x55630014,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x088,0xAC830018,0xAC820018,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x08C,0x90AB0008,0x90AC0008,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x090,0xA08B001C,0xA08C001C,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0A8,0x8C8C0018,0x8C8D0018,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0AC,0x8CAD0000,0x8CAE0000,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0B0,0x118D0005,0x11AE0005,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0B8,0x908E001C,0x908F001C,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0BC,0x90AF0004,0x90B80004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
+generated_185560,func_15158FA4,0x0C0,0x55CF0004,0x55F80004,-,-,Normalize closed selection-event compiler temporary register allocation,,,false
