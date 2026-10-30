@@ -97,8 +97,29 @@ void func_150E3514(u8 *actor) {
     func_1516972C((struct102 *)actor);
 }
 
-s32 func_150E35DC() {
-    return 0;
+extern u8 D_800DCE50[0x340];
+extern s8 D_800DD190;
+extern void *D_800DD198[];
+
+/* Release matching effect slots while preserving the nested list iterator. */
+void func_150E35DC(s32 handle) {
+    u8 *row;
+    u8 *node;
+    handle = (s32)((u32)handle - 1u);
+    row = D_800DCE50;
+    do {
+        node = *(u8 **)(row + 0x9C);
+        D_800DD190++;
+        while (node != NULL) {
+            D_800DD198[D_800DD190] = *(void **)(node + 8);
+            if (handle == -1 || handle == node[0x48]) {
+                func_150E3514(node);
+            }
+            node = D_800DD198[D_800DD190];
+        }
+        D_800DD190--;
+        row += 0x1A0;
+    } while ((u32)row != (u32)&D_800DD190);
 }
 
 void func_150E36BC(s32 arg0, s32 *arg1, s32 *arg2, s32 *arg3) {

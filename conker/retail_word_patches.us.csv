@@ -24406,3 +24406,8 @@ game_BC430,func_1508EF80,0x30,0xC4B20008,0xC4B00008,-,-,Normalize closed XZ pivo
 game_BC430,func_1508EF80,0x34,0xC4900008,0xC48A0008,-,-,Normalize closed XZ pivot rotation opening schedule and volatile-FP allocation,,,false
 game_BC430,func_1508EF80,0x3C,0x46128101,0x46105481,-,-,Normalize closed XZ pivot rotation opening schedule and volatile-FP allocation,,,false
 game_BC430,func_1508EF80,0x48,0xE7A40038,0xE7B20038,-,-,Normalize closed XZ pivot rotation opening schedule and volatile-FP allocation,,,false
+generated_1104D0,func_150E35DC,0x030,0x26520000,0x26730000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD190,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false
+generated_1104D0,func_150E35DC,0x034,0x26730000,0x26940000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DD190,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false
+generated_1104D0,func_150E35DC,0x038,0x26940000,0x26520000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DCE50,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false
+generated_1104D0,func_150E35DC,0x0B4,0x1654FFE2,0xA26F0000,-,-,Normalize closed iterator address setup and outer-loop depth preload rotation,0x5654FFE2,-,false
+generated_1104D0,func_150E35DC,0x0B8,0xA26F0000,0x826E0000,-,-,Normalize closed iterator address setup and outer-loop depth preload rotation,,,false

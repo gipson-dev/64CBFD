@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Effect slot cleanup restored from C**: [Note 1877](WORKING_NOTES/1877-effect-slot-release-match-20261030.md). `func_150E35DC` restores both effect lists, unsigned slot filtering and the live nested iterator. Its 55-word semantic C normalizes to all 56 retail words using five expected-word guards and one scheduling insertion. Guest/native32, original caller and connected release providers pass. Total **3,954/5,506 (71.81%)**, Game **3,281/4,833 (67.89%)**, zero drift; **176** more to 75%. Next screen `func_151AE7B0`; private candidates remain uncredited.
+
 - [x] **Rotated origin callback restored directly from C**: [Note 1876](WORKING_NOTES/1876-rotated-origin-direct-match-20261030.md). `func_150CEF60` restores the scaled-angle rotation, signed coordinate submission and phase update. All 56 words and nine bindings match directly, including frame64 and both captured spill lifetimes. Original caller, connected retail helpers and native32 controls pass. Total **3,953/5,506 (71.79%)**, Game **3,280/4,833 (67.87%)**, zero drift; **177** more to 75%. Next screen `func_150E35DC`; private candidates remain uncredited.
 
 - [x] **Effect motion limit restored directly from C**: [Note 1875](WORKING_NOTES/1875-effect-motion-limit-direct-match-20261030.md). `func_150B36AC` restores threshold-controlled motion reset/scaling and its six-argument callback ABI. All 56 words match with zero guards and no frame. Guest access prefixes, both original indirect call windows and native32 controls pass. Total **3,952/5,506 (71.78%)**, Game **3,279/4,833 (67.85%)**, zero drift; **178** more to 75%. Next screen `func_150CEF60`; private candidates remain uncredited.

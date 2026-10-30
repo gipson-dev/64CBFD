@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8068062`; tools are committed before the consumer pin.
+  checkpoint pins tools `baf53e5`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Effect slot cleanup restored from C**: [Note 1877](WORKING_NOTES/1877-effect-slot-release-match-20261030.md). `func_150E35DC` restores both effect lists, unsigned slot filtering and the live nested iterator. Its 55-word semantic C normalizes to all 56 retail words using five expected-word guards and one scheduling insertion. Guest/native32, original caller and connected release providers pass. Total **3,954/5,506 (71.81%)**, Game **3,281/4,833 (67.89%)**, zero drift; **176** more to 75%. Next screen `func_151AE7B0`; private candidates remain uncredited.
 
 **Rotated origin callback restored directly from C**: [Note 1876](WORKING_NOTES/1876-rotated-origin-direct-match-20261030.md). `func_150CEF60` restores the scaled-angle rotation, signed coordinate submission and phase update. All 56 words and nine bindings match directly, including frame64 and both captured spill lifetimes. Original caller, connected retail helpers and native32 controls pass. Total **3,953/5,506 (71.79%)**, Game **3,280/4,833 (67.87%)**, zero drift; **177** more to 75%. Next screen `func_150E35DC`; private candidates remain uncredited.
 
