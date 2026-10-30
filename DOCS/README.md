@@ -1,5 +1,8 @@
 # Documentation
 
+**XZ pivot rotation restored**: [Note 1874](WORKING_NOTES/1874-xz-pivot-rotation-match-20261030.md). `func_1508EF80` rotates X/Z around the pivot while preserving output Y and the retail repeated trig calls. All 55 words match with eight closed opening guards and the original frame64/spill lifetimes. Eight original caller sites, connected retail trig providers and native controls pass. Total **3,951/5,506 (71.76%)**, Game **3,278/4,833 (67.83%)**, zero drift; **179** more to 75%. Next screen `func_150B36AC`; private candidates remain uncredited.
+
+
 **Actor state-9 start restored directly from C**: [Note 1873](WORKING_NOTES/1873-actor-state9-start-direct-match-20261030.md). `func_15063404` starts requests 0x1D/0x1E, resets actor counters and starts animation 0x7F. All 56 raw compiler words match with zero new guards, retail frame48 and captured-entry/actor lifetimes. Original caller paths, bounded provider routes and native controls pass. Total **3,950/5,506 (71.74%)**, Game **3,277/4,833 (67.80%)**, zero drift; **180** more to 75%. Next screen `func_1508EF80`; private candidates remain uncredited.
 
 
