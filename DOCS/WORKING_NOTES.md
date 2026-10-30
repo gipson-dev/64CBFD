@@ -2,6 +2,8 @@
 
 2026-10-29:
 
+**Actor coordinate effect callback restored**: [Note 1855](WORKING_NOTES/1855-actor-coordinate-effect-dispatch-match-20261029.md). `func_150D8A34` emits all 54 body words directly from C, retaining its alignment word, full callback ABI and 64-byte frame without guards. Total **3,932/5,506 (71.41%)**, Game **3,259/4,833 (67.43%)**, zero drift; **198** more to 75%. Next screen `func_150A23E4`; private candidates remain uncredited.
+
 **Menu record descriptor reset restored**: [Note 1854](WORKING_NOTES/1854-menu-record-descriptor-reset-match-20261029.md). `func_150B7484` emits all 55 words directly from typed C, with its original 88-byte frame and no guards. The factory wrapper now correctly returns its pointer without changing its object bytes. Total **3,931/5,506 (71.39%)**, Game **3,258/4,833 (67.41%)**, zero drift; **199** more to 75%. Next screen `func_150D8A34`; private candidates remain uncredited.
 
 **Active actor alternate-key lookup restored**: [Note 1853](WORKING_NOTES/1853-active-actor-secondary-key-lookup-match-20261029.md). `func_1505EFD0` emits all 55 linked retail words directly from C, with no frame or guards. It searches active actor slots 0 through 24 by unsigned byte+0x127, with its original constant-zero caller qualified. Total **3,930/5,506 (71.38%)**, Game **3,257/4,833 (67.39%)**, zero drift; **200** more to 75%. Next screen `func_150AE280`; private candidates remain uncredited.

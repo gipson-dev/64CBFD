@@ -40,6 +40,22 @@ s32 func_150D8A20(s32 arg0, s32 arg1) {
     return 8;
 }
 
-s32 func_150D8A34() {
-    return 0;
+extern f32 D_800A0B30;
+extern f32 D_800A0B34;
+s32 func_151875E0(f32, f32, f32, s32, s32, s32, f32, f32);
+s32 func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
+
+/* Use the callback selector byte to emit both coordinate effects. */
+/* Keep the complete three-word callback ABI, including the unused third word. */
+void func_150D8A34(u8 *owner, s32 selector, s32 unused) {
+    f32 position[3];
+
+    if (*(s32 *)(owner + 0x1D4) != 0) {
+        func_150D88E0(position, owner, (u8)selector);
+        func_151875E0(position[0], position[1], position[2], 30, 15, 7,
+                     D_800A0B30, D_800A0B34);
+        func_15165F80(-1, (s32)position[0],
+                     (s32)(*(f32 *)(owner + 0x180) + 4.0f),
+                     (s32)position[2], 4, 50, 0, 255, 0);
+    }
 }
