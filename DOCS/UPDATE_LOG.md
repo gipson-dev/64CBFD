@@ -2,6 +2,8 @@
 
 2026-10-30:
 
+**Randomized position packet restored**: [Note 1865](WORKING_NOTES/1865-random-position-packet-match-20261030.md). `func_150B6000` emits all 56 words directly from C, with its original 80-byte frame and no guards. Unsigned modulo-nine/modulo-201 RNG values, coordinate truncation timing, all eleven constructor arguments and both original call windows are qualified. Total **3,942/5,506 (71.59%)**, Game **3,269/4,833 (67.64%)**, zero drift; **188** more to 75%. Next screen `func_150E67D0`; private candidates remain uncredited.
+
 **Preset record routine restored**: [Note 1864](WORKING_NOTES/1864-preset-record-reload-match-20261030.md). `func_150F5340` emits all 53 body words directly from C, with its original 112-byte frame, 68-byte local preset and three alignment words. The 17 mode-one submissions preserve the preset snapshot while reloading the live record base, then enable category nine; no new guards are needed. Total **3,941/5,506 (71.58%)**, Game **3,268/4,833 (67.62%)**, zero drift; **189** more to 75%. Next screen `func_150B6000`; private candidates remain uncredited.
 
 **Selection-pair event handler restored**: [Note 1863](WORKING_NOTES/1863-selection-pair-event-match-20261030.md). `func_15158FA4` recovers the byte-command gates, paired word/tag exchange and two helper calls. All 56 words match with its original 24-byte frame and 15 guards limited to temporary register fields. Three original callback windows and alias-sensitive late byte reads are qualified. Total **3,940/5,506 (71.56%)**, Game **3,267/4,833 (67.60%)**, zero drift; **190** more to 75%. Next screen `func_150F5340`; private candidates remain uncredited.

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern u8 D_8009FC30[];
 extern u8 D_800C35EA;
 extern u8 D_800CC34A[];
@@ -35,8 +36,22 @@ s32 func_150B5E34() {
     return 0;
 }
 
-s32 func_150B6000() {
-    return 0;
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+
+/* Submit a randomized effect at the position's truncated integer coordinates. */
+void func_150B6000(f32 *position, u8 kind, s32 mode) {
+    Header header;
+    Header2 coordinates;
+
+    header.unk0 = 3;
+    header.unk1 = -1;
+    header.unk2 = (u32)func_150ADA20() % 9U + 3;
+    header.unk4 = 0;
+    coordinates.unk0 = position[0];
+    coordinates.unk4 = position[1];
+    coordinates.unk8 = position[2];
+    func_151602C0(&header, &coordinates, ((u32)func_150ADA20() % 201U) + 55,
+                 0xFF, 0xFF, 0xFF, 0xFF, 0, 0, kind, mode);
 }
 
 void func_150B60E0(u8 *arg0, s32 arg1) {
