@@ -1,5 +1,8 @@
 # Documentation
 
+**Resource query bitmap restored from C**: [Note 1887](WORKING_NOTES/1887-resource-query-bitmap-match-20261030.md). `func_15016588` restores 67 variadic queries, live selector reloads and size-based bitmap updates, including the preserved ninth byte after the retail eight-byte clear. Its 55-word body matches with two independent scheduling guards; three alignment words remain fixed. Original providers/startup/consumer, native32, owner, actual Make and strict image checks pass. Total **3,964/5,506 (71.99%)**, Game **3,291/4,833 (68.09%)**, zero drift; **166** more to 75%. Next screen `func_151668B8`; private candidates remain uncredited.
+
+
 **Distance-triggered angle blend matched directly from C**: [Note 1886](WORKING_NOTES/1886-distance-angle-blend-direct-match-20261030.md). `func_1512C068` restores the heading/type gates, planar distance, near-target blend reset and live post-provider flag update. All 58 words and both bindings match directly, preserving its 24-byte frame and one unreachable duplicate. Original providers/caller windows, native32, 14 neighbors, actual Make and strict image checks pass. Total **3,963/5,506 (71.98%)**, Game **3,290/4,833 (68.07%)**, zero drift; **167** more to 75%. Next screen `func_15016588`; private candidates remain uncredited.
 
 

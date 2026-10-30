@@ -1,10 +1,14 @@
 #include <ultra64.h>
+extern u8 D_800BE580[];
+extern u8 D_800BEAAB;
+u32 func_1502B020(u32 *, u32, ...);
+
 
 #include "functions.h"
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15016588();
+void func_15016588(void);
 /* End generated placeholder declarations. */
 
 void func_15016500(void) {
@@ -23,8 +27,27 @@ void func_15016500(void) {
     D_800D1998 = 0;
 }
 
-// grim looking loop
-/* Non-matching C placeholders for asm/nonmatchings/game_439B0/func_15016588.s. */
-s32 func_15016588() {
-    return 0;
+/* Rebuild the resource-presence bits using each query's returned size. */
+void func_15016588(void) {
+    s32 index;
+    s32 byteIndex;
+    s32 mask;
+    u32 size;
+
+    bzero(D_800BE580, 8);
+    byteIndex = -1;
+    index = 0;
+    do {
+        if ((index & 7) == 0) {
+            mask = 1;
+            byteIndex++;
+        } else {
+            mask <<= 1;
+        }
+        func_1502B020(&size, 3, 0x1A, D_800BEAAB, index);
+        index++;
+        if (size != 0) {
+            D_800BE580[byteIndex] |= mask;
+        }
+    } while (index != 67);
 }

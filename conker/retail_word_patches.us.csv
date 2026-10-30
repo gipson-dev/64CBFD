@@ -24452,3 +24452,5 @@ generated_200930,func_151D5714,0x0B0,0xE7B20044,0xE7A80048,-,-,Normalize closed 
 generated_200930,func_151D5714,0x0B4,0xE7A80048,0xC7AA0068,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
 generated_200930,func_151D5714,0x0B8,0x27A4004C,0x93AD006F,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
 generated_200930,func_151D5714,0x0BC,0x27A50040,0x8FAE0070,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+game_439B0,func_15016588,0x040,0x00008025,0x26B50000,-,R_MIPS_LO16:D_800BEAAB,Normalize independent selector address and loop-index initialization schedule,,,false
+game_439B0,func_15016588,0x044,0x26B50000,0x00008025,R_MIPS_LO16:D_800BEAAB,-,Normalize independent selector address and loop-index initialization schedule,,,false
