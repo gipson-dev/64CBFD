@@ -1,5 +1,8 @@
 # Documentation
 
+**Owner value payload constructor matched directly from C**: [Note 1884](WORKING_NOTES/1884-owner-value-payload-direct-match-20261030.md). `func_15109ED4` restores null-owner handling, signed lifetime selection, float/setting capture, extra-size forwarding and the returned allocation pointer. All 57 words and both bindings match without guards. Both original caller windows, original factory/copy, native32, padding, the declaration-affected neighbor and strict image pass. Total **3,961/5,506 (71.94%)**, Game **3,288/4,833 (68.03%)**, zero drift; **169** more to 75%. Next screen `func_151D5714`; private candidates remain uncredited.
+
+
 **Attached effect payload constructor matched directly from C**: [Note 1883](WORKING_NOTES/1883-attached-effect-payload-direct-match-20261030.md). `func_150ECA68` captures the owner and five settings, chooses the signed lifetime and copies its 12-byte payload after successful allocation. All 57 words and both bindings match without guards. Padding, original allocator/copy, full wrapper, native32, owner and strict image checks pass. Total **3,960/5,506 (71.92%)**, Game **3,287/4,833 (68.01%)**, zero drift; **170** more to 75%. Next screen `func_15109ED4`; private candidates remain uncredited.
 
 
