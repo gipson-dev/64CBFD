@@ -67,6 +67,25 @@ s32 func_150CCA7C() {
     return 0;
 }
 
-s32 func_150CCCB4() {
-    return 0;
+typedef struct {
+    u8 pad0[0x20];
+    f32 rotation[3];
+    u8 pad2C[0xC];
+    f32 position[3];
+    f32 velocity[3];
+    f32 angularVelocity[3];
+    f32 verticalAcceleration;
+} GeneratedF9430KinematicObject;
+
+/* Advance position and rotation, including vertical acceleration over the timestep. */
+s32 func_150CCCB4(GeneratedF9430KinematicObject *object) {
+    object->position[0] += object->velocity[0] * D_800BE9A4;
+    object->position[1] += object->velocity[1] * D_800BE9A4 +
+        object->verticalAcceleration * D_800BE9A4 * D_800BE9A4 * 0.5f;
+    object->position[2] += object->velocity[2] * D_800BE9A4;
+    object->velocity[1] += object->verticalAcceleration * D_800BE9A4;
+    object->rotation[0] += object->angularVelocity[0] * D_800BE9A4;
+    object->rotation[1] += object->angularVelocity[1] * D_800BE9A4;
+    object->rotation[2] += object->angularVelocity[2] * D_800BE9A4;
+    return 1;
 }
