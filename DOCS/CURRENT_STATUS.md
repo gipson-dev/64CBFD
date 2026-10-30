@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `942ec39`; tools are committed before the consumer pin.
+  checkpoint pins tools `3691b93`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Signed ring render callback restored from C**: [Note 1888](WORKING_NOTES/1888-ring-render-submit-match-20261030.md). `func_151668B8` preserves signed halfword wrap, the nine-argument resource submission, live renderer flags and the returned display-list cursor. Its 56-word body matches with five guarded temporary-register/read-order corrections and two fixed alignment words. Original helpers and indirect caller, native32, four neighbors, actual Make and strict image checks pass. Total **3,965/5,506 (72.01%)**, Game **3,292/4,833 (68.12%)**, zero drift; **165** more to 75%. Next screen `func_1500F290`; private candidates remain uncredited.
 
 **Resource query bitmap restored from C**: [Note 1887](WORKING_NOTES/1887-resource-query-bitmap-match-20261030.md). `func_15016588` restores 67 variadic queries, live selector reloads and size-based bitmap updates, including the preserved ninth byte after the retail eight-byte clear. Its 55-word body matches with two independent scheduling guards; three alignment words remain fixed. Original providers/startup/consumer, native32, owner, actual Make and strict image checks pass. Total **3,964/5,506 (71.99%)**, Game **3,291/4,833 (68.09%)**, zero drift; **166** more to 75%. Next screen `func_151668B8`; private candidates remain uncredited.
 
