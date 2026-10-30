@@ -341,8 +341,49 @@ void func_151193AC(u8 *arg0, u8 *arg1) {
     }
 }
 
-s32 func_151193F4() {
-    return 0;
+/* Approach the scaled signed halfword target and mark an already reached target. */
+void func_151193F4(u8 *record) {
+    s32 step;
+    s32 scale;
+    s32 origin;
+    s32 rate;
+    s32 target;
+    s32 current;
+    s32 difference;
+
+    if (*(s32 *)(record + 0x84) == 0) {
+        current = *(s16 *)(record + 0x12);
+        *(s32 *)(record + 0x84) = current | 0x80000000;
+    }
+    step = *(s32 *)(record + 0x7C);
+    if (step != 0) {
+        scale = *(s32 *)(record + 0x80);
+        origin = *(s32 *)(record + 0x84);
+        origin = (s16)origin;
+        rate = (*(s32 *)(record + 0x3C) >> 16) & 0xFFFF;
+        current = *(s16 *)(record + 0x12);
+        record[0x73] &= ~3;
+        target = (s32)((u32)rate * (u32)scale) / 256 + origin;
+        if (target != current) {
+            difference = current - target;
+            if (difference < 0) {
+                if (-difference < step) {
+                    *(s16 *)(record + 0x12) = target;
+                } else {
+                    *(s16 *)(record + 0x12) = (u32)current + (u32)step;
+                }
+            } else {
+                if (difference < step) {
+                    *(s16 *)(record + 0x12) = target;
+                } else {
+                    *(s16 *)(record + 0x12) = (u32)current - (u32)step;
+                }
+            }
+            record[0x73] |= 0;
+        } else {
+            record[0x73] |= 3;
+        }
+    }
 }
 
 s32 func_151194D4() {

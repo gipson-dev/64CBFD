@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `ef1cee7`; tools are committed before the consumer pin.
+  checkpoint pins tools `06f91d2`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record signed halfword approach restored**: [Note 1871](WORKING_NOTES/1871-record-signed-halfword-approach-match-20261030.md). `func_151193F4` recovers signed scaling, movement and reached-state bits. All 56 words match with 32 expected-word allocation/scheduling guards; no insertions or omissions. All 22 symbolic paths, original indirect callback windows, guest access order and native controls pass. Total **3,948/5,506 (71.70%)**, Game **3,275/4,833 (67.76%)**, zero drift; **182** more to 75%. Next screen `func_15007360`; private candidates remain uncredited.
 
 **Group actor channel normalization restored**: [Note 1870](WORKING_NOTES/1870-group-actor-channel-normalization-match-20261030.md). `func_1501E73C` restores the live type-2 record scan and actor-channel clears. All 56 words match with five relocation-aware opening-schedule guards; no insertions or omissions. Original helper/caller windows, aliases, live count/table changes and native controls are qualified. Total **3,947/5,506 (71.69%)**, Game **3,274/4,833 (67.74%)**, zero drift; **183** more to 75%. Next screen `func_151193F4`; private candidates remain uncredited.
 

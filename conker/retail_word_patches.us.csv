@@ -24357,3 +24357,35 @@ generated_49D30,func_1501E73C,0x2c,0x00047880,0x27180000,-,R_MIPS_LO16:D_800C35F
 generated_49D30,func_1501E73C,0x34,0x3C180000,0x00047880,R_MIPS_HI16:D_800C35F0,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
 generated_49D30,func_1501E73C,0x38,0x27180000,0x01F89021,R_MIPS_LO16:D_800C35F0,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
 generated_49D30,func_1501E73C,0x3c,0x01F89021,0x00008025,-,-,Normalize closed group actor channel scan opening address and counter schedule,,,false
+generated_142560,func_151193F4,0xc,0x84820012,0x848F0012,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x14,0x00417825,0x01E1C025,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x18,0xAC8F0084,0xAC980084,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x30,0x8C860084,0x8C990084,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x34,0x00074C03,0x00075C03,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x38,0x312AFFFF,0x316CFFFF,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x3c,0x01450019,0x01850019,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x40,0x908B0073,0x908D0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x44,0x0006C400,0x00194C00,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x4c,0x0018CC03,0x00095403,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x54,0x03203025,0x01403025,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x58,0x316CFFFC,0x31AEFFFC,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x5c,0x01403825,0x01803825,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x60,0xA08C0073,0xA08E0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x64,0x00006812,0x00007812,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x68,0x05A10003,0x05E10003,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x6c,0x000D7203,0x000FC203,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x70,0x25A100FF,0x25E100FF,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x74,0x00017203,0x0001C203,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x78,0x01C64021,0x03064021,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x7c,0x10480013,0x11020013,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x8c,0x00057823,0x0005C823,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x90,0x01E3082A,0x0323082A,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0x98,0x0043C021,0x00434821,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xa8,0xA4980012,0xA4890012,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xb0,0x0043C823,0x00435023,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xbc,0xA4990012,0xA48A0012,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xc0,0x90890073,0x908B0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xc8,0xA0890073,0xA08B0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xcc,0x908A0073,0x908C0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xd0,0x354B0003,0x358D0003,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
+generated_142560,func_151193F4,0xd4,0xA08B0073,0xA08D0073,-,-,Normalize closed halfword approach compiler temporary allocation and independent schedule,,,false
