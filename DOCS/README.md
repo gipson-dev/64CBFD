@@ -1,5 +1,8 @@
 # Documentation
 
+**Status intensity update restored**: [Note 1847](WORKING_NOTES/1847-status-intensity-update-match-20261029.md). `func_151E530C` emits all 55 words directly from C, as a leaf with no stack frame or guards. Total **3,924/5,506 (71.27%)**, Game **3,251/4,833 (67.27%)**, zero drift; **206** more to 75%. Next screen `func_150D2374`; private candidates remain uncredited.
+
+
 **Random target interpolation restored**: [Note 1846](WORKING_NOTES/1846-random-target-interpolation-match-20261029.md). `func_1518F384` emits all 54 words directly from C, with its original 32-byte frame and no guards. Total **3,923/5,506 (71.25%)**, Game **3,250/4,833 (67.25%)**, zero drift; **207** more to 75%. Next screen `func_151E530C`; private candidates remain uncredited.
 
 

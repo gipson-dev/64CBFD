@@ -62,7 +62,7 @@ extern u8 **D_800E0BD8;
 /* Non-matching placeholders for the text-only asm slice asm/20AE20.s. */
 
 s32 func_151E43DC();
-s32 func_151E530C();
+void func_151E530C(void);
 void func_151DE85C(void);
 void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter);
 
@@ -422,8 +422,29 @@ s32 func_151E51EC() {
     return 0;
 }
 
-s32 func_151E530C() {
-    return 0;
+/* Decay the status intensity, then derive a replacement from an active record. */
+void func_151E530C(void) {
+    s32 intensity;
+    s8 *record;
+
+    if (D_800E0B94 != 2) {
+        if (D_800E0B96 != 0) {
+            intensity = (s32)((u32)D_800E0B96 - (u32)D_800BE9E4 * D_8008FD74);
+            if (intensity < 0) {
+                intensity = 0;
+            }
+            D_800E0B96 = intensity;
+        }
+        record = D_8008FDD4;
+        if (record != NULL && record[0x2B] == 0 &&
+            *(f32 *)(record + 0xC) > 0.0f && *(f32 *)(record + 8) > 0.5f) {
+            intensity = (s32)((*(f32 *)(record + 8) - 0.5f) * 524.0f);
+            if (intensity >= 256) {
+                intensity = 255;
+            }
+            D_800E0B96 = intensity;
+        }
+    }
 }
 
 s32 func_151E53E8() {
