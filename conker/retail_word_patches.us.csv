@@ -24444,3 +24444,11 @@ game_33990,func_1500727C,0x084,0x004B6021,0x24690002,-,-,Normalize closed save c
 game_33990,func_1500727C,0x088,0x0198C821,0x312A0003,-,-,Normalize closed save checksum reader schedule and equivalent save-block data address,,,false
 game_33990,func_1500727C,0x08C,0x312A0003,0x0198C821,-,-,Normalize closed save checksum reader schedule and equivalent save-block data address,,,false
 game_33990,func_1500727C,0x0C4,0x51390004,0x53290004,-,-,Normalize closed save checksum reader schedule and equivalent save-block data address,,,false
+generated_200930,func_151D5714,0x09C,0xC7AA0068,0x8FA6003C,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0A4,0x93AD006F,0xE7B20044,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0A8,0x8FAE0070,0x27A4004C,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0AC,0x8FA6003C,0x27A50040,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0B0,0xE7B20044,0xE7A80048,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0B4,0xE7A80048,0xC7AA0068,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0B8,0x27A4004C,0x93AD006F,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false
+generated_200930,func_151D5714,0x0BC,0x27A50040,0x8FAE0070,-,-,Normalize closed disjoint stack-transfer and call-address schedule,,,false

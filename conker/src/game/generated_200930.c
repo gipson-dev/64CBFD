@@ -1,5 +1,9 @@
 #include <ultra64.h>
 #include "structs.h"
+void func_15145EA4(struct17 **, struct17 **, u8 *, s32);
+/* Assembly consumer: pass the explicitly truncated selector as an ABI word. */
+void func_151D4408(struct17 *, struct17 *, void *, u8 *, f32, s32, s32);
+
 
 void func_151D5514(f32 *, u8, s32);
 void func_151D3FF4(f32 *, u8, s32);
@@ -142,8 +146,27 @@ void func_151D5648(f32 *position, u8 kind, s32 mode) {
                  (randomValue % 56U) + 200U, 0.0f, kind, mode);
 }
 
-s32 func_151D5714() {
-    return 0;
+/* Transform both points, then submit their origin and displacement. */
+void func_151D5714(struct127 *actor, f32 *first, f32 *second, s32 joint,
+                   f32 scale, s32 kind, s32 mode) {
+    struct17 origin;
+    struct17 direction;
+    u8 *matrix;
+    struct17 *inputs[2];
+    struct17 *outputs[2];
+
+    if (actor->unk1D4 != NULL && (actor->unk74 & 0xF) != 0xF) {
+        matrix = (u8 *)actor->unk1D4 + ((u8)joint << 6);
+        inputs[0] = (struct17 *)first;
+        inputs[1] = (struct17 *)second;
+        outputs[0] = &origin;
+        outputs[1] = &direction;
+        func_15145EA4(inputs, outputs, matrix, 2);
+        direction.unk0 -= origin.unk0;
+        direction.unk4 -= origin.unk4;
+        direction.unk8 -= origin.unk8;
+        func_151D4408(&origin, &direction, matrix, (u8 *)actor, scale, (u8)kind, mode);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_200930/func_151D57F8.s")

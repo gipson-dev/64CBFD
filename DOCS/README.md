@@ -1,5 +1,8 @@
 # Documentation
 
+**Actor point pair transform matched**: [Note 1885](WORKING_NOTES/1885-actor-point-pair-transform-match-20261030.md). `func_151D5714` restores the matrix/tag gates, joint matrix selection, two-point transform and origin/displacement submission. Its 57-word body matches with eight closed scheduling guards, preserving the 88-byte frame and both bindings. Original primary/callers, native32, actual Make, 27 neighbors and strict image checks pass. Total **3,962/5,506 (71.96%)**, Game **3,289/4,833 (68.05%)**, zero drift; **168** more to 75%. Next screen `func_1512C068`; private candidates remain uncredited.
+
+
 **Owner value payload constructor matched directly from C**: [Note 1884](WORKING_NOTES/1884-owner-value-payload-direct-match-20261030.md). `func_15109ED4` restores null-owner handling, signed lifetime selection, float/setting capture, extra-size forwarding and the returned allocation pointer. All 57 words and both bindings match without guards. Both original caller windows, original factory/copy, native32, padding, the declaration-affected neighbor and strict image pass. Total **3,961/5,506 (71.94%)**, Game **3,288/4,833 (68.03%)**, zero drift; **169** more to 75%. Next screen `func_151D5714`; private candidates remain uncredited.
 
 
