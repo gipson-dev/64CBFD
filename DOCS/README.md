@@ -1,5 +1,8 @@
 # Documentation
 
+**First active actor key lookup restored**: [Note 1852](WORKING_NOTES/1852-active-actor-key-lookup-match-20261029.md). `func_1505EEF4` emits all 55 linked retail words directly from C, with no stack frame or guards. It scans slots 0 through 24 and excludes reserved slot 25. Total **3,929/5,506 (71.36%)**, Game **3,256/4,833 (67.37%)**, zero drift; **201** more to 75%. Next screen `func_1505EFD0`; private candidates remain uncredited.
+
+
 **Status-selected actor mode update restored**: [Note 1851](WORKING_NOTES/1851-status-actor-mode-update-match-20261029.md). `func_151E7DC0` emits all 55 words directly from C, with its original 48-byte frame and no guards. Total **3,928/5,506 (71.34%)**, Game **3,255/4,833 (67.35%)**, zero drift; **202** more to 75%. Next screen `func_1505EEF4`; private candidates remain uncredited.
 
 

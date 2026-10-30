@@ -23,7 +23,7 @@ s32 func_1505DDA8();
 s32 func_1505DF10();
 s32 func_1505E0C4();
 s32 func_1505ED34();
-s32 func_1505EEF4();
+struct127 *func_1505EEF4(s32);
 s32 func_1505EFD0();
 s32 func_1505F188(void *arg0);
 s32 func_1505F298();
@@ -1021,9 +1021,18 @@ s32 func_1505ED34() {
 // }
 // I HATE LOOPS.
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505EEB0.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505EEF4.s. */
-s32 func_1505EEF4() {
-    return 0;
+/* Return the first active actor whose key matches, excluding reserved slot 25. */
+struct127 *func_1505EEF4(s32 key) {
+    struct127 *actor;
+    s32 index;
+
+    actor = D_800CC2D0;
+    for (index = 0; index < 25; actor++, index++) {
+        if (actor->interaction_state != 0 && actor->unk13F == key) {
+            return actor;
+        }
+    }
+    return NULL;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505EFD0.s. */
 s32 func_1505EFD0() {
