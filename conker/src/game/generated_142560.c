@@ -444,8 +444,17 @@ s32 func_1511B7D4() {
     return 0;
 }
 
-s32 func_1511BA24() {
-    return 0;
+void func_15188010(s32, f32 *);
+
+/* Store the sampled factor scaled to a nonzero actor byte. */
+void func_1511BA24(u8 *actor) {
+    f32 factor = 0.0f;
+
+    func_15188010(*(s32 *)(actor + 0x3C), &factor);
+    actor[0x8A] = (u32)(factor * 255.0f);
+    if (actor[0x8A] == 0) {
+        actor[0x8A] = 1;
+    }
 }
 
 s32 func_1511BB04(u8 *arg0, s32 arg1, s32 arg2, f32 arg3, f32 arg4) {

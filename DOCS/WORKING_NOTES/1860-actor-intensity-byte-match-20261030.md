@@ -1,0 +1,26 @@
+# 1860: Sampled actor factor-to-byte update recovered directly from C
+
+Verified 2026-10-30. `func_1511BA24` is restored in `conker/src/game/generated_142560.c`, retaining its original symbol name and adding a semantic comment. Qualification tools commit `f21dbe3975a6dff96e5fffa2a4a83ddad377b32a` precedes the consumer pin. No push.
+
+The routine initializes a local float tozero, samples the signed record index from `actor+0x3C` through `func_15188010(index,&factor)`, multiplies the sampled factor by255.0f, converts it to an unsigned32-bit value and stores its low byte at `actor+0x8A`. A zero output byte becomesone. The existing getter's signed range gate can leave the output float untouched, so the initial zero is necessary. The getter prototype is recovered as `void(s32,f32*)`.
+
+All **56 words /224 bytes** emit directly from C, with **zero guards**, insertions, omissions or frame adjustments. The original32-byte frame retains RA at20, the factor at28, the owner argument in its incoming home at32, and16 outgoing bytes. The owner pointer is saved in the call delay slot and reloaded after the getter. The unreachable duplicate MFC1 atoffset0xAC remains literal; all55 reachable target words are exercised and a no-branch-target check accounts for the remaining word. No new compiler profile, shared-header, layout or guard-manifest change is needed.
+
+The complete owner preserves **83 neighboring functions** and normalized pools. Its actual **five-command Make recipe**, including retained assembly preprocessing/postprocessing, reproduces the qualified object with zero C diagnostics. The inherited duplicate12D630 Make warning remains.
+
+Validation:
+
+- **4,416 guest cases /13,248 executions** compare original assembly, raw compiler output and padded output in literal register, float, memory, call, trace and modeled FP-control state. Cases include signed getter-index/count boundaries, zero/subnormal inputs, byte wrap, the unsigned conversion's upper-half fallback, infinities, quietNaN and multiplication overflow. All15 instructions of the original getter execute from retail assembly; it reads `D_800DF7B4` and the36-byte-stride float table at `D_800DF70C`.
+- **33 interrupted access prefixes**, **48 rebased cases over three layouts**, and **eight guest alias cases** preserve literal state. Aliases include the getter's table source overlapping the caller's initialized local and the output byte's containing word. These guest aliases are not portable-C claims.
+- The registration triple atROM `0x22D7C8` is `(func_1511BA24,0,0)`: index10, stride12 in `D_80088C90`, callback atVA `0x80088D08`. Original actor registration loads that first word into `actor+0x38`. The five-instruction dispatch window at `15113EE0..15113EF4` passes32 cases with the actor forwarded, the result ignored, and the caller's loop counter updated. Complete parent routines are not claimed.
+- Native32 **1,032 cases per profile** pass `-O0`, `-O2` and `-O3` with UBSan and nine effective negative controls. Every actor byte is checked, including unchanged index/storage fields. Native conversion inputs are finite products in `[0,2**32)`; invalid/nonfinite conversion behavior remains guest-only. The native helper models the same signed getter gate. The guest FP model is bounded and nontrapping; preserving its control value does not prove hardware FCSR exception/trap behavior or NaN payload fidelity.
+- Both tools copies independently execute eight canonical checks and their repository checks. Installed copies freshly check source/input identity and linked/protected data; six unchanged checks are reused only under complete input/module/artifact fingerprints.
+- Independent whole-image prediction equals production exactly: **150 changed bytes =149 target code +1 target extent**, metadata0/exclusions0. All **6,055 other linked bodies**, all function addresses and **189,088 protected Game bytes /720 owners** remain fixed. The getter earns no additional matching credit and the C inventory is unchanged.
+
+Qualified ELF SHA256: `3bb458fa9924d6bb5da1d2f5f10e8a761111e1867388fae31e38a184d428c936`. Qualified object SHA256: `973d1774f93eae6ee36856178028c5b39629fdbac31fd0a9b86f84b4edb2644a`.
+
+Actual-ELF recount: **3,937 /5,506 (71.50%)**, Game **3,264 /4,833 (67.54%)**, Init492/492 and Debugger181/181, zero drift. **193** further matches reach4,130/5,506. `func_1507E1D0` is the next private screen; parked candidates stay uncredited. The README updates only its two aggregate rows; this note holds the recovery details.
+
+Graphify refreshes eleven changed C, tools and Markdown sources, retains all old nodes or unique relocations and all still-valid directed relationships, and retires the obsolete s32 return edge. It records the void signature, getter binding, table registration and original dispatch window. Outside-scope corpus rows and communities remain historical; no full-corpus or gameplay validation is claimed.
+
+Evidence remains under `conker/build/game-actor-intensity-byte-match/`: frozen snapshots, raw/padded objects, Make command evidence, canonical receipts, production proof, actual-ELF recount, graph retention and final audit. The older mirror's2018 inherited dirty paths remain preserved, with three new mirrored tools files and no mirror commit.
