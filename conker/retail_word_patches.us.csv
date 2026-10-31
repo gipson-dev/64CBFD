@@ -24472,3 +24472,7 @@ generated_FF0E0,func_150D1F6C,0x08C,0xA04B0044,0x10000012,-,-,Restore actor-comm
 generated_20A3A0,func_151DCEF0,0x03C,0x8FAF002C,0x93AF002F,-,-,Normalize EEPROM byte-home load and low-clock alias +4,,,false
 generated_20A3A0,func_151DCEF0,0x068,0x3C070000,0x3C070000,R_MIPS_HI16:D_8002BD10,R_MIPS_HI16:D_8002BD14,Normalize EEPROM byte-home load and low-clock alias +4,,,false
 generated_20A3A0,func_151DCEF0,0x06C,0x8CE70004,0x8CE70000,R_MIPS_LO16:D_8002BD10,R_MIPS_LO16:D_8002BD14,Normalize EEPROM byte-home load and low-clock alias +4,,,false
+game_18D770,func_15161F4C,0x018,0x14C00013,0x14C00014,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,,,false
+game_18D770,func_15161F4C,0x040,0x5728001C,0x5728001D,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,,,false
+game_18D770,func_15161F4C,0x060,0x10000013,0x8FA70018,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,,,false
+game_18D770,func_15161F4C,0x064,0x8FA70018,0x10000014,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,0x90ED001D,-,false

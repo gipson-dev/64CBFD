@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `30d6f3c`; tools are committed before the consumer pin.
+  checkpoint pins tools `092a8a2`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner-reference command callback restored from C**: [Note 1895](WORKING_NOTES/1895-owner-reference-swap-match-20261031.md). `func_15161F4C` removes a matching reference, swaps either side of a pointer/ID pair for mode `0x2D`, then forwards all three arguments through the live callback table. The complete 58-word slot is exact using four expected-word guards and one inserted delay-slot load. Two original dispatch levels, the retained final callback, guest aliases/fault prefixes, native SDK32, all 77 owner neighbors, five-command Make and strict image checks pass. Total **3,972/5,506 (72.14%)**, Game **3,299/4,833 (68.26%)**, zero drift; **158** more to 75%. Next screen `func_151A0A10`; private candidates remain uncredited.
 
 **Type46 owner callback restored directly from C**: [Note 1894](WORKING_NOTES/1894-type46-owner-payload-direct-match-20261031.md). `func_1514D564` captures owner identity, builds a 36-byte descriptor, copies a 20-byte extension and submits command `0x15`. All 58 words match with zero guards. The original 109-word dispatcher, connected retail providers, guest aliases/fault prefixes, native SDK32, all 77 owner neighbors, actual Make and the complete ELF prediction pass. Total **3,971/5,506 (72.12%)**, Game **3,298/4,833 (68.24%)**, zero drift; **159** more to 75%. Next screen `func_15161F4C`; private candidates remain uncredited.
 

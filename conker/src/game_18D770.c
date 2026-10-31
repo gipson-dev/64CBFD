@@ -10,7 +10,6 @@ s32 func_15160B74();
 s32 func_15160CDC();
 s32 func_15160E30();
 s32 func_151618BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
-s32 func_15161F4C();
 s32 func_151621B8();
 s32 func_151623F4();
 s32 func_15162510();
@@ -640,9 +639,32 @@ struct225 *func_15161E24(struct127 *arg0, u8 arg1, u8 arg2, s16 arg3, s32 arg4, 
 void func_15161F2C(struct225 *arg0) {
     func_15163F50(arg0, &arg0->unk18);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15161F4C.s. */
-s32 func_15161F4C() {
-    return 0;
+typedef struct {void *reference;u8 unique_id;u8 callback;} ReferencePayload;
+typedef struct {u8 pad0[0x18];ReferencePayload payload;} ReferenceRecord;
+typedef union {
+ struct {void *reference;u8 unique_id;} single;
+ struct {void *first;void *second;u8 first_id;u8 second_id;} swap;
+} ReferenceCommand;
+extern void (*D_8008B358[])(ReferenceRecord *, const ReferenceCommand *, u8);
+/* Remove a matching reference, replace either side of a pair, then run its callback. */
+void func_15161F4C(ReferenceRecord *record, const ReferenceCommand *command, u8 mode) {
+ ReferencePayload *payload = &record->payload;
+ if (mode == 0) {
+  if (command->single.reference == payload->reference || command->single.unique_id == payload->unique_id) {
+   func_1516972C((void *)record);
+  }
+ } else if (mode == 0x2D) {
+  if (payload->reference == command->swap.first) {
+   payload->reference = command->swap.second;
+   payload->unique_id = command->swap.second_id;
+  } else if (payload->reference == command->swap.second) {
+   payload->reference = command->swap.first;
+   payload->unique_id = command->swap.first_id;
+  }
+ }
+ if (D_8008B358[payload->callback] != NULL) {
+  D_8008B358[payload->callback](record, command, mode);
+ }
 }
 struct225 *func_15162034(s32 arg0, u8 arg1, s32 arg2) {
     struct225 *temp_v0;
