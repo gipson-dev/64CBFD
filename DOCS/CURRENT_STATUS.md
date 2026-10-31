@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `34d6ee2`; tools are committed before the consumer pin.
+  checkpoint pins tools `025de7f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Typed actor payload callback restored from C**: [Note 1892](WORKING_NOTES/1892-actor-command-payload-match-20261031.md). `func_150D1F6C` restores position/value payloads, owner flag commands, vector reset and actor release. Its 56 compiler words normalize to the full 58-word slot with eight guarded rows and two original RA reloads. Registered callback ABI, original dispatcher/release, guest/native aliases, four neighbors, actual Make and strict image checks pass. Total **3,969/5,506 (72.08%)**, Game **3,296/4,833 (68.20%)**, zero drift; **161** more to 75%. Next screen `func_151DCEF0`; private candidates remain uncredited.
 
 **Timed actor channel cycle restored directly from C**: [Note 1891](WORKING_NOTES/1891-channel-timer-cycle-direct-match-20261031.md). `func_15080348` restores the actor gate, timer thresholds, five-entry cycle and RNG countdown. All 58 words match directly with zero guards. Guest/native aliases, original RNG, three neighbors, actual Make and strict image checks pass. No static caller was found in the measured ROM transfer/pointer census. Total **3,968/5,506 (72.07%)**, Game **3,295/4,833 (68.18%)**, zero drift; **162** more to 75%. Next screen `func_150D1F6C`; private candidates remain uncredited.
 
