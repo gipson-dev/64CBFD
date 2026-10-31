@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Sampled record byte callback restored directly from C**: [Note 1923](WORKING_NOTES/1923-sampled-record-byte-direct-match-20261031.md). `func_151638E0` emits all 60 words and both bindings with zero guards. Live record fields, both original getters, the complete callback dispatcher, 77 neighbors, actual Make and strict production checks pass. All 48 inherited warnings are unchanged. Guest FP evidence remains bounded; native conversions use defined inputs. Total **4,000/5,506 (72.65%)**, Game **3,327/4,833 (68.84%)**, zero drift; **130** more to 75%. Next screen `func_15115F68`; private candidates remain uncredited.
+
 **Packed attached-state decoder restored**: [Note 1922](WORKING_NOTES/1922-attached-packed-state-guarded-match-20261031.md). `func_15073B38` matches all 60 words and four bindings after four closed tail-register guards. Repeated reads, bounded FP conversion/FCSR, the original command callback, 327 neighbors, actual Make and strict production checks pass. All 36 inherited warnings are unchanged. Total **3,999/5,506 (72.63%)**, Game **3,326/4,833 (68.82%)**, zero drift; **131** more to 75%. Next screen `func_151638E0`; private candidates remain uncredited.
 
 **Effect-suite dispatcher restored directly from C**: [Note 1921](WORKING_NOTES/1921-effect-suite-dispatch-direct-match-20261031.md). `func_151C9DE8` emits all 59 words and ten bindings with no guards. Ordered six-call ABI, mixed byte arguments, argument-home lifetimes, both retail callers, connected packet helper, 45 neighbors, actual Make and strict production image checks pass. Total **3,998/5,506 (72.61%)**, Game **3,325/4,833 (68.80%)**, zero drift; **132** more to 75%. Next screen `func_15073B38`; private candidates remain uncredited.

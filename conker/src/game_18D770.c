@@ -17,7 +17,7 @@ s32 func_1516295C();
 s32 func_15162B28();
 s32 func_151630F4();
 s32 func_15163504(struct225 *arg0);
-s32 func_151638E0();
+s32 func_151638E0(struct225 *state);
 s32 func_15163FEC();
 s32 func_15164134();
 void func_1516441C(struct225 *arg0, struct227 *arg1);
@@ -1056,22 +1056,26 @@ void func_1516387C(s32 arg0, u8 arg1, s8 arg2, s16 arg3, u8 arg4, s32 offset, u8
     func_1516037C(&tmp, arg0, offset, arg6, arg7);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151638E0.s. */
-s32 func_151638E0() {
-    return 0;
-}
-// NON-MATCHING: struct isnt quite right..
-// s32 func_151638E0(struct225 *arg0) {
-//     struct227 *temp_v1;
-//     f32 sp20[3];
-//     f32 sp1C;
-//
-//     temp_v1 = &arg0->unk18;
-//     func_15187FC0(arg0->unk18, &sp20); // missing a lw here
-//     func_15188010(temp_v1, &sp1C);
-//     arg0->unk14->unk2F = (temp_v1->unk4 + (temp_v1->unk8 * sp1C));
-//     return 1;
-// }
+void func_15187FC0(s32 index, u32 *vector);
+void func_15188010(s32 index, f32 *value);
+typedef struct {
+    s32 index;
+    f32 base;
+    f32 scale;
+} GameScalarSample;
 
+/* Sample the live scalar record and publish its affine byte value. */
+s32 func_151638E0(struct225 *state) {
+    GameScalarSample *record;
+    u32 vector[3];
+    /* The scalar getter writes this slot only for a valid index. */
+    f32 factor;
+    record = (GameScalarSample *)&state->unk18;
+    func_15187FC0(record->index, vector);
+    func_15188010(record->index, &factor);
+    state->unk14->unk2F = (u8)(record->base + record->scale * factor);
+    return 1;
+}
 s32 func_151639D0(struct225 *arg0, s32 arg1, u8 arg2) {
     if (arg2 == 0x27) {
         arg0->unk14->unk9 = 1;
