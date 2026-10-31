@@ -1,5 +1,8 @@
 # Documentation
 
+**Preset effect payload restored from direct C**: [Note 1912](WORKING_NOTES/1912-preset-effect-payload-direct-match-20261031.md). `func_150E1060` matches all 59 words and seven bindings directly with no guards. Byte arguments, signed coordinates, retained stack padding, original memcpy and caller window, two neighbors, actual Make and strict production image checks pass. Total **3,989/5,506 (72.45%)**, Game **3,316/4,833 (68.61%)**, zero drift; **141** more to 75%. Next screen `func_15108D24`; private candidates remain uncredited.
+
+
 **Ordered script-list insertion restored from guarded C**: [Note 1911](WORKING_NOTES/1911-ordered-script-list-insertion-match-20261031.md). `func_1509B810` matches all 59 words after eight checked register-allocation guards. Low-ten-bit ordering, final predecessor read, count wrap, original caller, 16 neighbors, five actual Make commands and strict production image checks pass. Total **3,988/5,506 (72.43%)**, Game **3,315/4,833 (68.59%)**, zero drift; **142** more to 75%. Next screen `func_150E1060`; private candidates remain uncredited.
 
 
