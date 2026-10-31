@@ -1,5 +1,8 @@
 # Documentation
 
+**Owner matrix scale callback restored from guarded C**: [Note 1913](WORKING_NOTES/1913-owner-matrix-scale-callback-match-20261031.md). `func_15108D24` matches all 59 words after seven checked register-cycle guards. Nine basis products, unscaled height, live globals, captured state, original converter and table-dispatched caller, ten neighbors, actual Make and strict production image checks pass. Total **3,990/5,506 (72.47%)**, Game **3,317/4,833 (68.63%)**, zero drift; **140** more to 75%. Next screen `func_15109410`; private candidates remain uncredited.
+
+
 **Preset effect payload restored from direct C**: [Note 1912](WORKING_NOTES/1912-preset-effect-payload-direct-match-20261031.md). `func_150E1060` matches all 59 words and seven bindings directly with no guards. Byte arguments, signed coordinates, retained stack padding, original memcpy and caller window, two neighbors, actual Make and strict production image checks pass. Total **3,989/5,506 (72.45%)**, Game **3,316/4,833 (68.61%)**, zero drift; **141** more to 75%. Next screen `func_15108D24`; private candidates remain uncredited.
 
 

@@ -72,8 +72,27 @@ s32 func_15108C38() {
     return 0;
 }
 
-s32 func_15108D24() {
-    return 0;
+extern f32 D_800A2490;
+extern u8 D_800BE9C0;
+void func_150A8050(f32 matrix[4][4],f32 x,f32 y,f32 z);
+/* Scale the owner's rotation matrix, retain its height and publish the active slot. */
+s32 func_15108D24(u8 *owner, s32 view) {
+    f32 matrix[4][4];
+    u8 *state;
+    state = owner + *(s32 *)(owner + 0x50) + 0xF8;
+    func_150A8050(matrix, *(f32 *)state, 0.0f, *(f32 *)(state + 4));
+    matrix[3][1] = *(f32 *)(state + 0x10);
+    matrix[0][0] *= D_800A2490;
+    matrix[0][1] *= D_800A2490;
+    matrix[0][2] *= D_800A2490;
+    matrix[1][0] *= D_800A2490;
+    matrix[1][1] *= D_800A2490;
+    matrix[1][2] *= D_800A2490;
+    matrix[2][0] *= D_800A2490;
+    matrix[2][1] *= D_800A2490;
+    matrix[2][2] *= D_800A2490;
+    guMtxF2L(matrix, (Mtx *)(owner + ((u32)D_800BE9C0 << 6) + 0x78));
+    return 1;
 }
 
 s32 func_15108E10() {

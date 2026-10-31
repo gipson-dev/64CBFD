@@ -24561,3 +24561,10 @@ game_C8950,func_1509B810,0x0BC,0x1720FFE4,0x1420FFE4,-,-,"Normalize closed tail 
 game_C8950,func_1509B810,0x0D8,0x950A0000,0x95190000,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
 game_C8950,func_1509B810,0x0DC,0x254B0001,0x272A0001,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
 game_C8950,func_1509B810,0x0E0,0xA50B0000,0xA50A0000,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+generated_135D00,func_15108D24,0x01C,0x8DCF0050,0x8DD80050,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x020,0x01EE1021,0x01D81021,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x0A8,0x3C180000,0x3C080000,R_MIPS_HI16:D_800BE9C0,R_MIPS_HI16:D_800BE9C0,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x0B0,0x93180000,0x91080000,R_MIPS_LO16:D_800BE9C0,R_MIPS_LO16:D_800BE9C0,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x0B4,0x8FA80060,0x8FB90060,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x0BC,0x0018C980,0x00084980,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_135D00,func_15108D24,0x0C0,0x03282821,0x03292821,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false

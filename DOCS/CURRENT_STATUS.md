@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `3f5d2e8`; tools are committed before the consumer pin.
+  checkpoint pins tools `81c550d`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Owner matrix scale callback restored from guarded C**: [Note 1913](WORKING_NOTES/1913-owner-matrix-scale-callback-match-20261031.md). `func_15108D24` matches all 59 words after seven checked register-cycle guards. Nine basis products, unscaled height, live globals, captured state, original converter and table-dispatched caller, ten neighbors, actual Make and strict production image checks pass. Total **3,990/5,506 (72.47%)**, Game **3,317/4,833 (68.63%)**, zero drift; **140** more to 75%. Next screen `func_15109410`; private candidates remain uncredited.
 
 **Preset effect payload restored from direct C**: [Note 1912](WORKING_NOTES/1912-preset-effect-payload-direct-match-20261031.md). `func_150E1060` matches all 59 words and seven bindings directly with no guards. Byte arguments, signed coordinates, retained stack padding, original memcpy and caller window, two neighbors, actual Make and strict production image checks pass. Total **3,989/5,506 (72.45%)**, Game **3,316/4,833 (68.61%)**, zero drift; **141** more to 75%. Next screen `func_15108D24`; private candidates remain uncredited.
 
