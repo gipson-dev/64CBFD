@@ -24496,3 +24496,5 @@ generated_1CC440,func_151A0F28,0x0C0,0xAFA40068,0xE7A00010,-,-,Restore independe
 generated_1CC440,func_151A0F28,0x0C4,0xE7A00010,0xE7A00028,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
 generated_1CC440,func_151A0F28,0x0C8,0xE7A00028,0xE7A00044,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
 generated_1CC440,func_151A0F28,0x0CC,0xE7A00044,0xAFA40068,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_C9EC0,func_1509CCF4,0x054,0x10760019,0x12C30019,-,-,Preserve retail commutative equality-branch operand order,,,false
+generated_C9EC0,func_1509CCF4,0x0B4,0x5476FFEC,0x56C3FFEC,-,-,Preserve retail commutative equality-branch operand order,,,false

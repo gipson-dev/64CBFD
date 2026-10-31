@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-30
+Last verified: 2026-10-31
 
 **Unfinished allocator**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` remains private and uncredited; its mode-home lifetime and instruction scheduling are unresolved.
 
@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f5e137b`; tools are committed before the consumer pin.
+  checkpoint pins tools `9532066`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Dependency activation restored from guarded C**: [Note 1900](WORKING_NOTES/1900-dependency-activation-guarded-match-20261031.md). `func_1509CCF4` matches all 58 words with two checked equality-branch operand swaps. Its 56-byte frame, seven saved registers, repeated memory reads, callback count and original caller/helper chain are qualified. All 18 neighbors, three-command Make and the full ELF prediction pass. Total **3,977/5,506 (72.23%)**, Game **3,304/4,833 (68.36%)**, zero drift; **153** more to 75%. Next screen `func_150DE6D8`; private candidates remain uncredited.
 
 **Resource-pair payload restored directly from C**: [Note 1899](WORKING_NOTES/1899-resource-pair-payload-direct-match-20261031.md). `func_151B5240` matches all 58 words without guards, preserving its 1,504-byte frame, 1,448-byte packet and constructor/copy ABI. Guest/native checks, both owner neighbors, three-command Make and the complete ELF prediction pass. Total **3,976/5,506 (72.21%)**, Game **3,303/4,833 (68.34%)**, zero drift; **154** more to 75%. Next screen `func_1509CCF4`; private candidates remain uncredited.
 

@@ -116,8 +116,28 @@ void func_1509CCB4(s32 arg0) {
     func_1509CE64(*(u16 **) ((u8 *) D_8008743C + arg0 * 20), func_1509CCB4);
 }
 
-s32 func_1509CCF4() {
-    return 0;
+typedef struct {u16 *entries;u8 reserved[16];} DependencyActivationRow;
+extern DependencyActivationRow D_80087440[];
+extern u8 *D_800D2E4C;
+extern u8 D_800D2E70[];
+void func_1509CCB4(s32);
+/* Mark every listed dependency active and count newly activated callbacks. */
+s32 func_1509CCF4(s32 index) {
+    u16 *entry = D_80087440[index].entries;
+    s32 resource;
+    s32 count = 0;
+    if ((resource = *entry) != 0xFFFF) {
+        do {
+            D_800D2E4C[resource >> 3] |= 1 << (resource & 7);
+            if (D_800D2E70[*entry] != 3) {
+                D_800D2E70[*entry] = 3;
+                func_1509CCB4(*entry);
+                count++;
+            }
+            resource = *++entry;
+        } while (resource != 0xFFFF);
+    }
+    return count;
 }
 
 // Matched with guarded loop-invariant allocation normalization.
