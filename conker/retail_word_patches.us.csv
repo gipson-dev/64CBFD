@@ -24604,3 +24604,4 @@ generated_49D30,func_1501DE18,0x080,0x26730000,0x00008825,R_MIPS_LO16:D_800C3E78
 generated_E4070,func_150B76BC,0x034,0x240E0001,0x3C01432A,-,-,Rotate independent AT float constant and T6/T7 descriptor constant setup,,,false
 generated_E4070,func_150B76BC,0x038,0x240F0058,0x240E0001,-,-,Rotate independent AT float constant and T6/T7 descriptor constant setup,,,false
 generated_E4070,func_150B76BC,0x03C,0x3C01432A,0x240F0058,-,-,Rotate independent AT float constant and T6/T7 descriptor constant setup,,,false
+generated_135D00,func_15108C38,0x034,0x01D18021,0x022E8021,-,-,Preserve retail commutative owner-offset ADDU operand order,,,false

@@ -68,8 +68,28 @@ void func_15108BC0(u8 *arg0) {
     }
 }
 
-s32 func_15108C38() {
-    return 0;
+extern f32 D_800A2480, D_800A2484, D_800A2488, D_800A248C;
+
+/* Advance the two phases and derive their sine-scaled offsets.
+ * Refresh the owner timer and lookup value, then publish the live state mode and keep the callback active. */
+s32 func_15108C38(u8 *owner) {
+    f32 *delta = &D_800BE9A4;
+    f32 *state = (f32 *)(owner + *(s32 *)(owner + 0x50) + 0xF8);
+
+    state[2] += D_800A2480 * *delta;
+    state[3] += D_800A2484 * *delta;
+    state[2] = func_15144B68(state[2]);
+    state[3] = func_15144B68(state[3]);
+    state[0] = sinf(state[2]) * D_800A2488;
+    state[1] = sinf(state[3]) * D_800A248C;
+    func_15108B80(owner);
+    func_15108BC0(owner);
+    if (*((u8 *)state + 0x20) != 0) {
+        owner[0x12] = 4;
+    } else {
+        owner[0x12] = 2;
+    }
+    return 1;
 }
 
 extern f32 D_800A2490;
