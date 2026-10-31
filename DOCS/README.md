@@ -1,5 +1,8 @@
 # Documentation
 
+**Save-slot EEPROM erase restored from guarded C**: [Note 1908](WORKING_NOTES/1908-save-slot-eeprom-erase-guarded-match-20261031.md). `func_1500707C` matches all 59 retail words after 29 checked layout rows. Signed IDs, both writes, ignored statuses, original caller, 17 neighbors, actual Make and strict production image checks pass. Total **3,985/5,506 (72.38%)**, Game **3,312/4,833 (68.53%)**, zero drift; **145** more to 75%. Next screen `func_15007558`; private candidates remain uncredited.
+
+
 **Actor script lookup restored from guarded C**: [Note 1907](WORKING_NOTES/1907-actor-script-lookup-guarded-match-20261031.md). `func_1507BB28` matches all 59 words after 14 checked layout rows and one inserted address word. Raw-C/native tests, four original return consumers, 210 neighbors, five-command Make and strict image prediction pass. Total **3,984/5,506 (72.36%)**, Game **3,311/4,833 (68.51%)**, zero drift; **146** more to 75%. Next screen `func_1500707C`; private candidates remain uncredited.
 
 

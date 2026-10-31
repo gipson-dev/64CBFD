@@ -24519,3 +24519,32 @@ game_A28B0,func_1507BB28,0x0AC,0x24840001,0x24630008,-,-,Normalize independent s
 game_A28B0,func_1507BB28,0x0C4,0x24420008,0x24840001,-,-,Normalize independent script index and cursor updates,,,false
 game_A28B0,func_1507BB28,0x0C8,0x24840001,0x24420008,-,-,Normalize independent script index and cursor updates,,,false
 game_A28B0,func_1507BB28,0x0CC,0x54AFFFE5,0x54AFFFE4,-,-,Rebase branch around restored address word,,,false
+game_33990,func_1500707C,0x004,0xAFB60030,0xAFB70030,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x008,0x0080B025,0x0080B825,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x010,0xAFB5002C,0xAFB6002C,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x014,0xAFB40028,0xAFB50028,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x018,0xAFB30024,0xAFB40024,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x01C,0xAFB20020,0xAFB30020,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x020,0xAFB1001C,0xAFB2001C,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x024,0xAFB00018,0xAFB10018,-,-,Normalize closed saved-register allocation and frame spill packing,0xAFB00014,-,false
+game_33990,func_1500707C,0x06C,0x3C130000,0x3C150000,R_MIPS_HI16:D_800BE900,R_MIPS_HI16:D_800BE900,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x070,0x26730000,0x26B50000,R_MIPS_LO16:D_800BE900,R_MIPS_LO16:D_800BE900,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x074,0x24150004,0x24160004,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x07C,0x00108900,0x00101100,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x080,0x26310004,0x24420004,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x084,0x16D8000A,0x16F8000A,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x088,0x02602025,0x02A02025,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x08C,0x322500FF,0x304500FF,-,-,Normalize independent paired-write argument scheduling and discarded status,0x02803025,-,false
+game_33990,func_1500707C,0x094,0x02803025,0x24530001,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x098,0x26250001,0x00408825,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x09C,0x30B900FF,0x02A02025,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x0A0,0x03202825,0x326500FF,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x0A4,0x02602025,0x02602025,-,-,Normalize independent paired-write argument scheduling and discarded status,,,true
+game_33990,func_1500707C,0x0B4,0x1615FFF0,0x1616FFF0,-,-,Normalize independent paired-write argument scheduling and discarded status,,,false
+game_33990,func_1500707C,0x0C0,0x8FB00018,0x8FB00014,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0C4,0x8FB1001C,0x8FB10018,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0C8,0x8FB20020,0x8FB2001C,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0CC,0x8FB30024,0x8FB30020,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0D0,0x8FB40028,0x8FB40024,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0D4,0x8FB5002C,0x8FB50028,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
+game_33990,func_1500707C,0x0D8,0x8FB60030,0x8FB6002C,-,-,Normalize closed saved-register allocation and frame spill packing,0x8FB70030,-,false

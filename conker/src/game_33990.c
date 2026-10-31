@@ -12,11 +12,12 @@ extern OSMesgQueue D_800BE900;
 s32 func_151DCEF0(OSMesgQueue *, s32, void *, s32);
 
 s32 func_151DD3A0(OSMesgQueue *, u8, u8 *, s32);
+s32 func_151DD4E0(OSMesgQueue *, u8, u8 *);
 
 /* Generated placeholder declarations. */
 s32 func_15006590();
 s32 func_15006BEC();
-s32 func_1500707C();
+void func_1500707C(s32 slot);
 s32 func_15007168();
 void func_1500727C(void);
 void func_15007360(void);
@@ -45,9 +46,28 @@ s32 func_15006590() {
 s32 func_15006BEC() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_1500707C.s. */
-s32 func_1500707C() {
-    return 0;
+/* Erase both EEPROM blocks for every matching signed slot ID; ignore write errors. */
+void func_1500707C(s32 slot) {
+    s32 i;
+    s8 *entry;
+    s32 block;
+    s32 status;
+
+    for (i = 0; i < 8; i++) {
+        *((u8 *)D_800BE358 + i) = 0xFF;
+    }
+    osWritebackDCacheAll();
+    if (D_8002AC5C == 0) {
+        entry = (s8 *)&D_800BE3D8;
+        for (i = 0; i != 4; i++) {
+            if (slot == *entry) {
+                block = (i << 4) + 4;
+                status = func_151DD4E0(&D_800BE900, (u8)block, D_800BE358);
+                func_151DD4E0(&D_800BE900, (u8)(block + 1), D_800BE358);
+            }
+            entry++;
+        }
+    }
 }
 // requires jump table
 /* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007168.s. */
