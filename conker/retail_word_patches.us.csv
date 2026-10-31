@@ -24548,3 +24548,6 @@ game_33990,func_1500707C,0x0CC,0x8FB30024,0x8FB30020,-,-,Normalize closed saved-
 game_33990,func_1500707C,0x0D0,0x8FB40028,0x8FB40024,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
 game_33990,func_1500707C,0x0D4,0x8FB5002C,0x8FB50028,-,-,Normalize closed saved-register allocation and frame spill packing,,,false
 game_33990,func_1500707C,0x0D8,0x8FB60030,0x8FB6002C,-,-,Normalize closed saved-register allocation and frame spill packing,0x8FB70030,-,false
+game_33990,func_15007558,0x014,0x24420002,0x24840000,R_MIPS_LO16:D_800BE358,R_MIPS_LO16:D_800E0BFC,Normalize closed payload-pointer displacement and independent address schedule,,,false
+game_33990,func_15007558,0x01C,0x24840000,0x24420000,R_MIPS_LO16:D_800E0BFC,R_MIPS_LO16:D_800BE358,Normalize closed payload-pointer displacement and independent address schedule,,,false
+game_33990,func_15007558,0x034,0xA04EFFFF,0xA04E0001,-,-,Normalize closed payload-pointer displacement and independent address schedule,,,false

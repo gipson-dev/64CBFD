@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Settings packet writer and storage extents restored**: [Note 1909](WORKING_NOTES/1909-settings-packet-writer-and-storage-extents-20261031.md). `func_15007558` matches all 59 words after three checked layout rows. The 128-byte scratch and 28-byte settings declarations are qualified with all 17/60 owner neighbors, affected erase tests, actual Make and strict production image checks. Total **3,986/5,506 (72.39%)**, Game **3,313/4,833 (68.55%)**, zero drift; **144** more to 75%. Next screen `func_15043CA4`; private work remains uncredited.
+
 **Save-slot EEPROM erase restored from guarded C**: [Note 1908](WORKING_NOTES/1908-save-slot-eeprom-erase-guarded-match-20261031.md). `func_1500707C` matches all 59 retail words after 29 checked layout rows. Signed IDs, both writes, ignored statuses, original caller, 17 neighbors, actual Make and strict production image checks pass. Total **3,985/5,506 (72.38%)**, Game **3,312/4,833 (68.53%)**, zero drift; **145** more to 75%. Next screen `func_15007558`; private candidates remain uncredited.
 
 **Actor script lookup restored from guarded C**: [Note 1907](WORKING_NOTES/1907-actor-script-lookup-guarded-match-20261031.md). `func_1507BB28` matches all 59 words after 14 checked layout rows and one inserted address word. Raw-C/native tests, four original return consumers, 210 neighbors, five-command Make and strict image prediction pass. Total **3,984/5,506 (72.36%)**, Game **3,311/4,833 (68.51%)**, zero drift; **146** more to 75%. Next screen `func_1500707C`; private candidates remain uncredited.

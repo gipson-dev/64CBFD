@@ -109,7 +109,7 @@ typedef struct {
     u8 unk44;
 } StatusReset20AE20;
 extern s8 D_8008FE54[23];
-s8 D_800E0BE0[23];
+s8 D_800E0BE0[28]; // Persisted settings span; reset initializes the first 23 bytes.
 extern u8 D_800AB570[];
 extern u8 D_800E0B95;
 
