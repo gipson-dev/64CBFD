@@ -20,7 +20,7 @@ typedef struct {
 
 /* Generated placeholder declarations. */
 s32 func_1509B5AC(s32 arg0, s32 arg1);
-s32 func_1509B810();
+void func_1509B810(ScriptNodeC8950 *node);
 s32 func_1509B950(s32 arg0);
 s32 func_1509BA04();
 s32 func_1509BBA0();
@@ -107,9 +107,60 @@ void func_1509B764(ScriptNodeC8950 *node) {
     SCRIPT_LIST_C8950.length--;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B810.s. */
-s32 func_1509B810() {
-    return 0;
+/* Insert by the low ten kind bits, scanning backward from the script-list tail. */
+void func_1509B810(ScriptNodeC8950 *node) {
+    s32 length;
+    ScriptNodeC8950 *cursor;
+    ScriptNodeC8950 *tail;
+    s32 key;
+    s32 count;
+    s32 mask = 0xFFFF03FF;
+
+    cursor = SCRIPT_LIST_C8950.unk8;
+    tail = cursor;
+    key = node->kind & mask;
+    length = SCRIPT_LIST_C8950.length;
+    if (length == 0) {
+        SCRIPT_LIST_C8950.unk4 = node;
+        SCRIPT_LIST_C8950.unk8 = node;
+        node->next = NULL;
+        node->prev = NULL;
+        SCRIPT_LIST_C8950.length++;
+        return;
+    }
+    if (length > 0) {
+        count = 0;
+        do {
+            count++;
+            if ((cursor->kind & mask) >= key) {
+                goto next_node;
+            }
+            {
+                if (cursor == tail) {
+                    node->prev = cursor;
+                    node->next = NULL;
+                    cursor->next = node;
+                    SCRIPT_LIST_C8950.unk8 = node;
+                    SCRIPT_LIST_C8950.length++;
+                    return;
+                }
+                node->prev = cursor;
+                node->next = cursor->next;
+                cursor->next->prev = node;
+                cursor->next = node;
+                SCRIPT_LIST_C8950.length++;
+                return;
+            }
+next_node:
+            cursor = cursor->prev;
+        } while ((count < length) != 0);
+    }
+    cursor = SCRIPT_LIST_C8950.unk4;
+    SCRIPT_LIST_C8950.unk4 = node;
+    node->prev = NULL;
+    node->next = cursor;
+    cursor->prev = node;
+    SCRIPT_LIST_C8950.length++;
 }
 
 void func_1509B8FC(s16 arg0) {

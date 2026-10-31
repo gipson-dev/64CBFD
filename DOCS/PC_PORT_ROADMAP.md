@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Ordered script-list insertion restored from guarded C**: [Note 1911](WORKING_NOTES/1911-ordered-script-list-insertion-match-20261031.md). `func_1509B810` matches all 59 words after eight checked register-allocation guards. Low-ten-bit ordering, final predecessor read, count wrap, original caller, 16 neighbors, five actual Make commands and strict production image checks pass. Total **3,988/5,506 (72.43%)**, Game **3,315/4,833 (68.59%)**, zero drift; **142** more to 75%. Next screen `func_150E1060`; private candidates remain uncredited.
+
 - [x] **Ring message receiver restored from guarded C**: [Note 1910](WORKING_NOTES/1910-ring-message-receiver-match-20261031.md). `func_15043CA4` matches its 58-word body and alignment NOP after two checked instruction guards. Length headers, wrap, truncation, original transfer chain and Init caller, 15 neighbors, actual Make and strict production image checks pass. Total **3,987/5,506 (72.41%)**, Game **3,314/4,833 (68.57%)**, zero drift; **143** more to 75%. Next screen `func_1509B810`; private candidates remain uncredited.
 
 - [x] **Settings packet writer and storage extents restored**: [Note 1909](WORKING_NOTES/1909-settings-packet-writer-and-storage-extents-20261031.md). `func_15007558` matches all 59 words after three checked layout rows. The 128-byte scratch and 28-byte settings declarations are qualified with all 17/60 owner neighbors, affected erase tests, actual Make and strict production image checks. Total **3,986/5,506 (72.39%)**, Game **3,313/4,833 (68.55%)**, zero drift; **144** more to 75%. Next screen `func_15043CA4`; private work remains uncredited.

@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `e66a15d`; tools are committed before the consumer pin.
+  checkpoint pins tools `646f4fd`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Ordered script-list insertion restored from guarded C**: [Note 1911](WORKING_NOTES/1911-ordered-script-list-insertion-match-20261031.md). `func_1509B810` matches all 59 words after eight checked register-allocation guards. Low-ten-bit ordering, final predecessor read, count wrap, original caller, 16 neighbors, five actual Make commands and strict production image checks pass. Total **3,988/5,506 (72.43%)**, Game **3,315/4,833 (68.59%)**, zero drift; **142** more to 75%. Next screen `func_150E1060`; private candidates remain uncredited.
 
 **Ring message receiver restored from guarded C**: [Note 1910](WORKING_NOTES/1910-ring-message-receiver-match-20261031.md). `func_15043CA4` matches its 58-word body and alignment NOP after two checked instruction guards. Length headers, wrap, truncation, original transfer chain and Init caller, 15 neighbors, actual Make and strict production image checks pass. Total **3,987/5,506 (72.41%)**, Game **3,314/4,833 (68.57%)**, zero drift; **143** more to 75%. Next screen `func_1509B810`; private candidates remain uncredited.
 

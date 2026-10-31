@@ -24553,3 +24553,11 @@ game_33990,func_15007558,0x01C,0x24840000,0x24420000,R_MIPS_LO16:D_800E0BFC,R_MI
 game_33990,func_15007558,0x034,0xA04EFFFF,0xA04E0001,-,-,Normalize closed payload-pointer displacement and independent address schedule,,,false
 game_70200,func_15043CA4,0x030,0x8E2F000C,0x8E38000C,-,-,Normalize closed empty-queue temporary allocation and symmetric comparison,,,false
 game_70200,func_15043CA4,0x038,0x55EE0004,0x55D80004,-,-,Normalize closed empty-queue temporary allocation and symmetric comparison,,,false
+game_C8950,func_1509B810,0x014,0x8D020008,0x8D030008,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x01C,0x00401825,0x00601025,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x064,0x00E6C82A,0x00E6082A,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x0B8,0x00E6C82A,0x00E6082A,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x0BC,0x1720FFE4,0x1420FFE4,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x0D8,0x950A0000,0x95190000,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x0DC,0x254B0001,0x272A0001,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
+game_C8950,func_1509B810,0x0E0,0xA50B0000,0xA50A0000,-,-,"Normalize closed tail snapshot, loop predicate and final increment temporaries",,,false
