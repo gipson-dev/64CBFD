@@ -145,8 +145,25 @@ s32 func_151C9BA0() {
     return 0;
 }
 
-s32 func_151C9DE8() {
-    return 0;
+extern s32 D_800BE9F0;
+void func_151C9F38(void *, s32, u8, s8, u8);
+void func_151CC524(void *, s32, s32, s32, u8, u8);
+void func_151CC840(void *, s32, s32, s32, u8, u8);
+s32 func_151CCF08();
+void func_150BDE90(void *, u8, s32);
+void func_151CB5FC(void *, s32, u8, s8, u8);
+
+/* Submit the ordered effect suite and mark category 0x27 after the helpers. */
+void func_151C9DE8(void *owner, u8 slot, s8 kind, u8 selector, s32 value) {
+    func_151C9F38(owner, 4, slot, kind, selector);
+    func_151CC524(owner, 0, 50, 255, slot, selector);
+    func_151CC840(owner, 0, 50, 255, slot, selector);
+    func_151CCF08(owner, slot & 0xFF, kind, selector & 0xFF);
+    func_150BDE90(owner, selector, value);
+    func_151CB5FC(owner, 2, slot, kind, selector);
+    if (D_800BE9F0 == 0x27) {
+        D_8008CD00 = 1;
+    }
 }
 
 void func_151C9ED4(void *arg0) {

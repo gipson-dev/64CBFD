@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Effect-suite dispatcher restored directly from C**: [Note 1921](WORKING_NOTES/1921-effect-suite-dispatch-direct-match-20261031.md). `func_151C9DE8` emits all 59 words and ten bindings with no guards. Ordered six-call ABI, mixed byte arguments, argument-home lifetimes, both retail callers, connected packet helper, 45 neighbors, actual Make and strict production image checks pass. Total **3,998/5,506 (72.61%)**, Game **3,325/4,833 (68.80%)**, zero drift; **132** more to 75%. Next screen `func_15073B38`; private candidates remain uncredited.
+
 - [x] **Owner phase/state callback restored from semantic C**: [Note 1920](WORKING_NOTES/1920-owner-phase-state-guarded-match-20261031.md). `func_15108C38` matches all 59 words after one checked commutative ADDU operand guard. Phase order, saved owner/state, live mode flag, complete callback dispatcher, original math/timer/value helpers, ten neighbors, actual Make and strict production image checks pass. Total **3,997/5,506 (72.59%)**, Game **3,324/4,833 (68.78%)**, zero drift; **133** more to 75%. Next screen `func_151C9DE8`; private candidates remain uncredited.
 
 - [x] **Sentinel record angle patch restored directly from C**: [Note 1919](WORKING_NOTES/1919-record-angle-patch-direct-match-20261031.md). `func_150C7C90` emits all 59 retail words and its relocation with no guards. Signed sentinel scan, cached index, live heading/mirror flags, both callback windows, original lookup, six neighbors, actual Make and strict production image checks pass. Total **3,996/5,506 (72.58%)**, Game **3,323/4,833 (68.76%)**, zero drift; **134** more to 75%. Next screen `func_15108C38`; private candidates remain uncredited.
