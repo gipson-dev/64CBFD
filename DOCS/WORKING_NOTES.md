@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Conditional byte blend and observed pointer return restored**: [Note 1902](WORKING_NOTES/1902-conditional-byte-blend-pointer-return-match-20261031.md). `func_151CB510` matches all 59 words with seven checked cursor-allocation guards. Original caller tests prove the returned blend-state address is used; bounded FP-control/native checks, 45 neighbors, five-command Make and strict image prediction pass. Total **3,979/5,506 (72.27%)**, Game **3,306/4,833 (68.40%)**, zero drift; **151** more to 75%. Next screen `func_151162D4`; private candidates remain uncredited.
+
 **Actor phase motion restored directly from C**: [Note 1901](WORKING_NOTES/1901-actor-phase-motion-direct-match-20261031.md). `func_150DE6D8` matches all 58 words without guards, preserving its 32-byte frame, ordered f32 operations, callback boundaries and unsigned phase wrap. Eight neighbors, actual Make, original callback windows and the complete ELF prediction pass. Total **3,978/5,506 (72.25%)**, Game **3,305/4,833 (68.38%)**, zero drift; **152** more to 75%. Next screen `func_151CB510`; private candidates remain uncredited.
 
 **Dependency activation restored from guarded C**: [Note 1900](WORKING_NOTES/1900-dependency-activation-guarded-match-20261031.md). `func_1509CCF4` matches all 58 words with two checked equality-branch operand swaps. Its 56-byte frame, seven saved registers, repeated memory reads, callback count and original caller/helper chain are qualified. All 18 neighbors, three-command Make and the full ELF prediction pass. Total **3,977/5,506 (72.23%)**, Game **3,304/4,833 (68.36%)**, zero drift; **153** more to 75%. Next screen `func_150DE6D8`; private candidates remain uncredited.

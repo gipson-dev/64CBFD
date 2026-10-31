@@ -24498,3 +24498,10 @@ generated_1CC440,func_151A0F28,0x0C8,0xE7A00028,0xE7A00044,-,-,Restore independe
 generated_1CC440,func_151A0F28,0x0CC,0xE7A00044,0xAFA40068,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
 generated_C9EC0,func_1509CCF4,0x054,0x10760019,0x12C30019,-,-,Preserve retail commutative equality-branch operand order,,,false
 generated_C9EC0,func_1509CCF4,0x0B4,0x5476FFEC,0x56C3FFEC,-,-,Preserve retail commutative equality-branch operand order,,,false
+generated_1F4650,func_151CB510,0x01C,0x24830070,0x24820070,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x030,0xC4600008,0xC4400008,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x038,0x24830070,0x24820070,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x03C,0xC4620004,0xC4420004,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x05C,0xE46A0004,0xE44A0004,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x068,0xC4700004,0xC4500004,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false
+generated_1F4650,func_151CB510,0x0E0,0x00601025,0x00000000,-,-,Normalize closed v1-to-v0 blend cursor allocation and redundant return move,,,false

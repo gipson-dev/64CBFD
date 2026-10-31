@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f30f6b4`; tools are committed before the consumer pin.
+  checkpoint pins tools `8abc138`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Conditional byte blend and observed pointer return restored**: [Note 1902](WORKING_NOTES/1902-conditional-byte-blend-pointer-return-match-20261031.md). `func_151CB510` matches all 59 words with seven checked cursor-allocation guards. Original caller tests prove the returned blend-state address is used; bounded FP-control/native checks, 45 neighbors, five-command Make and strict image prediction pass. Total **3,979/5,506 (72.27%)**, Game **3,306/4,833 (68.40%)**, zero drift; **151** more to 75%. Next screen `func_151162D4`; private candidates remain uncredited.
 
 **Actor phase motion restored directly from C**: [Note 1901](WORKING_NOTES/1901-actor-phase-motion-direct-match-20261031.md). `func_150DE6D8` matches all 58 words without guards, preserving its 32-byte frame, ordered f32 operations, callback boundaries and unsigned phase wrap. Eight neighbors, actual Make, original callback windows and the complete ELF prediction pass. Total **3,978/5,506 (72.25%)**, Game **3,305/4,833 (68.38%)**, zero drift; **152** more to 75%. Next screen `func_151CB510`; private candidates remain uncredited.
 

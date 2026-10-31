@@ -190,8 +190,29 @@ void func_151CB49C(u8 *arg0, u8 **arg1, u8 arg2) {
     }
 }
 
-s32 func_151CB510() {
-    return 0;
+typedef struct {u8 reserved[0x19E];u16 gate;} ConditionalBlendPeer;
+typedef struct {
+    u8 reserved00[0x36C];
+    u16 *flags;
+    u8 reserved370[0x64];
+    ConditionalBlendPeer *peer;
+} ConditionalBlendOwner;
+typedef struct {ConditionalBlendOwner *owner;f32 current,target;} ConditionalBlendState;
+typedef struct {u8 reserved00[0x2E];u8 output;u8 reserved2F[0x41];ConditionalBlendState blend;} ConditionalByteBlend;
+extern f32 D_800AAEA8;
+/* Smooth the enabled target and publish the low byte of its unsigned conversion. */
+ConditionalBlendState *func_151CB510(ConditionalByteBlend *record) {
+    ConditionalBlendState *blend = &record->blend;
+    ConditionalBlendOwner *owner = blend->owner;
+    f32 target;
+    if ((*owner->flags & 0x2000) && owner->peer->gate == 0) {
+        target = blend->target;
+    } else {
+        target = 0.0f;
+    }
+    blend->current += (target - blend->current) * D_800AAEA8;
+    record->output = (u32)blend->current;
+    return blend;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1F4650/func_151CB5FC.s")
