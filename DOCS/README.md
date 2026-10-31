@@ -1,5 +1,8 @@
 # Documentation
 
+**Retail callback attribution corrected**: [Note 1924](WORKING_NOTES/1924-retail-callback-table-attribution-correction-20261031.md). Physical Game-data mapping places `func_15073B38` in `D_800863FC[138]` and `func_151638E0` in `D_8008B0F0[16]`. The latter uses the original 41-word `func_151603FC` dispatcher, which consumes its return value. Both corrected pairs pass 32 fresh target tests and both shared checks. Production bytes and **4,000/5,506 (72.65%)** are unchanged; **130** more to 75%.
+
+
 **Sampled record byte callback restored directly from C**: [Note 1923](WORKING_NOTES/1923-sampled-record-byte-direct-match-20261031.md). `func_151638E0` emits all 60 words and both bindings with zero guards. Live record fields, both original getters, the complete callback dispatcher, 77 neighbors, actual Make and strict production checks pass. All 48 inherited warnings are unchanged. Guest FP evidence remains bounded; native conversions use defined inputs. Total **4,000/5,506 (72.65%)**, Game **3,327/4,833 (68.84%)**, zero drift; **130** more to 75%. Next screen `func_15115F68`; private candidates remain uncredited.
 
 

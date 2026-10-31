@@ -51,7 +51,7 @@ The closed instruction-level allocation proof independently checks the four word
   All 36 memory-access cuts agree. Two independent symbol layouts pass 18
   rebased cases; 36 guest alias cases qualify the repeated input reads.
 - The aligned retail pointer census finds only ROM `0x22B0E4`, corresponding
-  to `D_800863FC[206]` (command `0xCE`), and no direct JAL. The original six-word
+  to `D_800863FC[138]` (command `0x8A`), and no direct JAL. The original six-word
   dispatch window at ROM `0x98360`, VA `0x1506AEB0..0x1506AEC8`, executes in
   30 cases. The target result is ignored. This qualifies the callback window,
   without claiming recovery of the complete dispatcher parent.
@@ -88,3 +88,5 @@ valid relationship, and retires the obsolete signed-placeholder return edges.
 It does not claim full-corpus extraction, reclustering or new global analytics.
 Next queued screen: `func_151638E0`. Private candidates remain uncredited.
 No push or host-port/Release changes are included.
+
+Caller attribution corrected by [Note 1924](1924-retail-callback-table-attribution-correction-20261031.md); the physical pointer VA is `0x80086624`.

@@ -47,10 +47,13 @@ fallback word is replaced to obtain the match.
   the unwritten scalar's initial stack bytes; zero-initializing it is an effective
   wrong variant. This is guest machine evidence, not portable C initialization.
 - The aligned ROM census finds no direct JAL and one callback pointer at
-  ROM `0x22FBF0`, `D_8008B208[14]`. The complete original 23-word dispatcher
-  `func_15161804` executes in 48 cases, with both optional-precall branches.
-  Its optional `func_1515F10C` remains an explicit ABI hook. The parent ignores
-  the callback result; this callback still emits its original return value 1.
+  ROM `0x22FBF0`, VA `0x8008B130`, `D_8008B0F0[16]`. The actual 41-word
+  dispatcher `func_151603FC` consumes the return value: 1 retains the owner
+  when its timer permits; zero invokes the free helper. The corrected suite
+  runs 48 callback cases and two timer-expiry cases, plus an independent
+  return-zero control. The free helper remains an ABI hook. See
+  [Note 1924](1924-retail-callback-table-attribution-correction-20261031.md),
+  which supersedes the earlier unrelated 23-word caller fixture.
 - Native32 SDK C passes 5,066 cases per O0/O2/O3 profile with UBSan. Its providers
   always write the scalar; inputs are finite and the final float-to-byte conversion
   is defined. Every output byte, fractional boundaries, live-record/target
