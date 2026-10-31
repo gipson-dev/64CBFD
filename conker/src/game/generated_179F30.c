@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include <string.h>
 extern void (*D_8008AB58[])();
 extern s16 *D_8008ABE8[];
 void func_1516972C();
@@ -113,8 +114,72 @@ s32 func_1514D4B8(s16 index, s16 wanted) {
     return 0;
 }
 
-s32 func_1514D564() {
-    return 0;
+typedef struct {
+    f32 first[3];
+    f32 second[3];
+    u8 attributes[12];
+} Type46DistancePayload;
+
+typedef struct {
+    u8 header[0x10];
+    s32 active;
+    s32 state;
+    Type46DistancePayload payload;
+    u8 pad3C[0x84];
+    f32 distance;
+    u32 tail;
+} Type46DistanceRecord;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+f32 func_15143E64(f32 *);
+
+typedef struct {
+    u8 *owner;
+    u8 unique_id;
+    u8 command;
+    u8 pad6[2];
+    f32 zero;
+    f32 lower;
+    f32 upper;
+} OwnerEffectPayload;
+typedef struct {
+    f32 first[3];
+    f32 second[3];
+    u8 enabled;
+    u8 pad19[3];
+    f32 scale;
+    u8 mode;
+    u8 tail[3];
+} OwnerEffectDescriptor;
+extern f32 D_800A5DE4, D_800A5DE8, D_800A5DEC, D_800A5DF0;
+Type46DistanceRecord *func_150C5370(const Type46DistancePayload *, u32);
+s32 func_1514EC1C(s32, s32, s16);
+
+/* Create a type-0x46 effect, copy captured owner data and submit command 0x15. */
+void func_1514D564(u8 *owner) {
+    OwnerEffectDescriptor descriptor;
+    Type46DistanceRecord *record;
+    OwnerEffectPayload payload;
+
+    payload.owner = owner;
+    payload.unique_id = owner[0x3B];
+    payload.command = 6;
+    payload.zero = 0.0f;
+    payload.lower = -180.0f;
+    payload.upper = 77.0f;
+    descriptor.enabled = 1;
+    descriptor.first[0] = D_800A5DE4;
+    descriptor.first[1] = D_800A5DE8;
+    descriptor.first[2] = D_800A5DEC;
+    descriptor.second[0] = *(f32 *)(owner + 0x14);
+    descriptor.second[1] = *(f32 *)(owner + 0x18);
+    descriptor.second[2] = *(f32 *)(owner + 0x1C);
+    descriptor.scale = D_800A5DF0;
+    descriptor.mode = 1;
+    record = func_150C5370((const Type46DistancePayload *)&descriptor, 0x14);
+    if (record != NULL) {
+        memcpy((u8 *)record + 0xC8, &payload, 0x14);
+        func_1514EC1C((s32)record, (s32)owner, 0x15);
+    }
 }
 
 s32 func_1514D64C() {

@@ -1,5 +1,8 @@
 # Documentation
 
+**Type46 owner callback restored directly from C**: [Note 1894](WORKING_NOTES/1894-type46-owner-payload-direct-match-20261031.md). `func_1514D564` captures owner identity, builds a 36-byte descriptor, copies a 20-byte extension and submits command `0x15`. All 58 words match with zero guards. The original 109-word dispatcher, connected retail providers, guest aliases/fault prefixes, native SDK32, all 77 owner neighbors, actual Make and the complete ELF prediction pass. Total **3,971/5,506 (72.12%)**, Game **3,298/4,833 (68.24%)**, zero drift; **159** more to 75%. Next screen `func_15161F4C`; private candidates remain uncredited.
+
+
 **EEPROM request setup and timer result restored from C**: [Note 1893](WORKING_NOTES/1893-eeprom-request-timer-match-20261031.md). `func_151DCEF0` drains pending work, publishes four request fields, submits a 64-bit timer count and returns its signed status. All 58 words match with three guarded rows for the byte-home load and low-clock alias. Three callers, signed result stores, native SDK64, the unchanged poller neighbor, actual Make and strict image checks pass; seven closed metadata permutations are predicted explicitly. Total **3,970/5,506 (72.10%)**, Game **3,297/4,833 (68.22%)**, zero drift; **160** more to 75%. Next screen `func_1514D564`; private candidates remain uncredited.
 
 
