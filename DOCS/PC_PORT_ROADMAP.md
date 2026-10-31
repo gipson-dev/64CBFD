@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **Attached random effect restored directly from C**: [Note 1904](WORKING_NOTES/1904-attached-random-effect-direct-match-20261031.md). `func_150B5950` matches all 59 words without guards. Lifecycle/guest/native tests, the original dispatcher and position wrapper, 11 neighbors, three-command Make and strict image prediction pass. Total **3,981/5,506 (72.30%)**, Game **3,308/4,833 (68.45%)**, zero drift; **149** more to 75%. Next screen `func_151A90C0`; private candidates remain uncredited.
+
 - [x] **Cosine height delta restored directly from C**: [Note 1903](WORKING_NOTES/1903-cosine-height-delta-direct-match-20261031.md). `func_151162D4` matches all 59 words without guards. Native/guest tests, the complete original caller, connected cosine code, 83 neighbors, five-command Make and strict image prediction pass. Total **3,980/5,506 (72.28%)**, Game **3,307/4,833 (68.43%)**, zero drift; **150** more to 75%. Next screen `func_150B5950`; private candidates remain uncredited.
 
 - [x] **Conditional byte blend and observed pointer return restored**: [Note 1902](WORKING_NOTES/1902-conditional-byte-blend-pointer-return-match-20261031.md). `func_151CB510` matches all 59 words with seven checked cursor-allocation guards. Original caller tests prove the returned blend-state address is used; bounded FP-control/native checks, 45 neighbors, five-command Make and strict image prediction pass. Total **3,979/5,506 (72.27%)**, Game **3,306/4,833 (68.40%)**, zero drift; **151** more to 75%. Next screen `func_151162D4`; private candidates remain uncredited.

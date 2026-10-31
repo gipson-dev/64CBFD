@@ -20,8 +20,31 @@ u8 *func_150B58F0(u8 *arg0, s32 arg1) {
     return arg0 + 4;
 }
 
-s32 func_150B5950() {
-    return 0;
+extern f32 D_8009FC98, D_8009FC9C;
+f32 func_150ADA68(void);
+s32 func_150B5A3C();
+void func_150B60E0(u8 *actor, f32 *output);
+/* Expire a stale attachment or submit the two independently sampled effects. */
+void func_150B5950(u8 *record) {
+    f32 sample;
+    f32 position[3];
+    u8 *actor = *(u8 **)(record + 0x28);
+    if (*(s32 *)actor == 0 || record[0x2C] != actor[0x3B]) {
+        *(s16 *)(record + 0xE) = -1;
+    } else if (*(s32 *)(actor + 0x1D4) != 0) {
+        sample = func_150ADA68();
+        if (sample < D_8009FC98) {
+            position[0] = *(f32 *)(actor + 0x14);
+            position[1] = *(f32 *)(actor + 0x18);
+            position[2] = *(f32 *)(actor + 0x1C);
+            func_150B5A3C(position, record[0xC], record[1]);
+        }
+        sample = func_150ADA68();
+        if (sample < D_8009FC9C) {
+            func_150B60E0(actor, position);
+            func_150B5A3C(position, record[0xC], record[1]);
+        }
+    }
 }
 
 s32 func_150B5A3C() {
@@ -54,7 +77,7 @@ void func_150B6000(f32 *position, u8 kind, s32 mode) {
                  0xFF, 0xFF, 0xFF, 0xFF, 0, 0, kind, mode);
 }
 
-void func_150B60E0(u8 *arg0, s32 arg1) {
+void func_150B60E0(u8 *arg0, f32 *arg1) {
     func_15143134(&D_8009FC30, arg1, *(s32 *) (arg0 + 0x1D4) + 0x140);
 }
 

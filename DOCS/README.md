@@ -1,5 +1,8 @@
 # Documentation
 
+**Attached random effect restored directly from C**: [Note 1904](WORKING_NOTES/1904-attached-random-effect-direct-match-20261031.md). `func_150B5950` matches all 59 words without guards. Lifecycle/guest/native tests, the original dispatcher and position wrapper, 11 neighbors, three-command Make and strict image prediction pass. Total **3,981/5,506 (72.30%)**, Game **3,308/4,833 (68.45%)**, zero drift; **149** more to 75%. Next screen `func_151A90C0`; private candidates remain uncredited.
+
+
 **Cosine height delta restored directly from C**: [Note 1903](WORKING_NOTES/1903-cosine-height-delta-direct-match-20261031.md). `func_151162D4` matches all 59 words without guards. Native/guest tests, the complete original caller, connected cosine code, 83 neighbors, five-command Make and strict image prediction pass. Total **3,980/5,506 (72.28%)**, Game **3,307/4,833 (68.43%)**, zero drift; **150** more to 75%. Next screen `func_150B5950`; private candidates remain uncredited.
 
 
