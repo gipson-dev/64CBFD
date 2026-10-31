@@ -24551,3 +24551,5 @@ game_33990,func_1500707C,0x0D8,0x8FB60030,0x8FB6002C,-,-,Normalize closed saved-
 game_33990,func_15007558,0x014,0x24420002,0x24840000,R_MIPS_LO16:D_800BE358,R_MIPS_LO16:D_800E0BFC,Normalize closed payload-pointer displacement and independent address schedule,,,false
 game_33990,func_15007558,0x01C,0x24840000,0x24420000,R_MIPS_LO16:D_800E0BFC,R_MIPS_LO16:D_800BE358,Normalize closed payload-pointer displacement and independent address schedule,,,false
 game_33990,func_15007558,0x034,0xA04EFFFF,0xA04E0001,-,-,Normalize closed payload-pointer displacement and independent address schedule,,,false
+game_70200,func_15043CA4,0x030,0x8E2F000C,0x8E38000C,-,-,Normalize closed empty-queue temporary allocation and symmetric comparison,,,false
+game_70200,func_15043CA4,0x038,0x55EE0004,0x55D80004,-,-,Normalize closed empty-queue temporary allocation and symmetric comparison,,,false

@@ -8,7 +8,7 @@
 s32 func_15043384(s32 arg0);
 s32 func_15043A20(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count);
 s32 func_15043AC8(u8 *ring, s32 capacity, s32 cursor, u8 *linear, s32 count);
-s32 func_15043CA4();
+s32 func_15043CA4(struct105 *queue, u8 *output, s32 capacity);
 /* End generated placeholder declarations. */
 
 void func_15042D50(void) {
@@ -143,7 +143,28 @@ s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 void func_15043BB8(struct105* arg0, void *arg1, s32 arg2) {
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043CA4.s. */
-s32 func_15043CA4() {
-    return 0;
+/* Receive one length-prefixed message; fields are ring, size, read and write cursors. */
+s32 func_15043CA4(struct105 *queue, u8 *output, s32 capacity) {
+    s32 cursor;
+    s32 messageLength;
+
+    messageLength = 0;
+    if (queue->unk8 == queue->unkC) {
+        return 0;
+    }
+    cursor = func_15043AC8((u8 *)queue->unk0, queue->unk4, queue->unk8,
+                         (u8 *)&messageLength, 4);
+    if (capacity < messageLength) {
+        capacity = (s32)((u32)capacity - 1);
+        cursor = func_15043AC8((u8 *)queue->unk0, queue->unk4, cursor,
+                             output, capacity);
+        output[capacity] = 0;
+        cursor = func_15043B70(queue->unk0, queue->unk4, cursor,
+                             (s32)((u32)messageLength - (u32)capacity));
+    } else if (messageLength != 0) {
+        cursor = func_15043AC8((u8 *)queue->unk0, queue->unk4, cursor,
+                             output, messageLength);
+    }
+    queue->unk8 = cursor;
+    return messageLength;
 }
