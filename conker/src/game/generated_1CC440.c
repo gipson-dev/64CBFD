@@ -164,8 +164,47 @@ void func_151A09B4(u8 *arg0, u8 *arg1, u8 arg2) {
     }
 }
 
-s32 func_151A0A10() {
-    return 0;
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+    u8 selected;
+    u8 padD[3];
+    f32 zero;
+} ActorHeightEffectPayload;
+extern u8 D_800C35EA;
+u32 func_1510F8CC(u32);
+struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+/* Capture the actor position and cached height, then submit the selected effect. */
+void func_151A0A10(u8 *actor, s16 effect, u8 variant, s32 flags) {
+    struct260 *record;
+    ActorHeightEffectPayload payload;
+
+    if (actor != NULL) {
+        payload.x = *(f32 *)(actor + 0x14);
+        payload.z = *(f32 *)(actor + 0x1C);
+        if (D_800C35EA != 1) {
+            payload.y = *(f32 *)(actor + 0x180);
+            payload.zero = 0.0f;
+            switch (func_1510F8CC(*(u32 *)(actor + 0x184))) {
+                case 10:
+                    payload.selected = 0;
+                    break;
+                case 15:
+                case 17:
+                    payload.selected = 1;
+                    break;
+                default:
+                    payload.selected = 0;
+                    break;
+            }
+            record = func_151491F4(effect, -1, 1, 1, 0, 0x14, variant, flags);
+            if (record != NULL) {
+                memcpy((u8 *)record + 0x28, &payload, 0x14);
+            }
+        }
+    }
 }
 
 s32 func_151A0AF8() {

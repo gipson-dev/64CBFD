@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `092a8a2`; tools are committed before the consumer pin.
+  checkpoint pins tools `e369fd6`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Actor-height effect restored directly from C**: [Note 1896](WORKING_NOTES/1896-actor-height-effect-direct-match-20261031.md). `func_151A0A10` captures actor X/Z and cached height, selects the low-five-bit kind, and submits a 20-byte packet with its signed effect, variant and context. All 58 words match with zero guards. Three original callers, the retained classifier/factory chain, guest aliases/fault prefixes, native SDK32, all 38 owner neighbors, five-command Make and the complete ELF prediction pass. Total **3,973/5,506 (72.16%)**, Game **3,300/4,833 (68.28%)**, zero drift; **157** more to 75%. Next screen `func_151A0E40`; private candidates remain uncredited.
 
 **Owner-reference command callback restored from C**: [Note 1895](WORKING_NOTES/1895-owner-reference-swap-match-20261031.md). `func_15161F4C` removes a matching reference, swaps either side of a pointer/ID pair for mode `0x2D`, then forwards all three arguments through the live callback table. The complete 58-word slot is exact using four expected-word guards and one inserted delay-slot load. Two original dispatch levels, the retained final callback, guest aliases/fault prefixes, native SDK32, all 77 owner neighbors, five-command Make and strict image checks pass. Total **3,972/5,506 (72.14%)**, Game **3,299/4,833 (68.26%)**, zero drift; **158** more to 75%. Next screen `func_151A0A10`; private candidates remain uncredited.
 
