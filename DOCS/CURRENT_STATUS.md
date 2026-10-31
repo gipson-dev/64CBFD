@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `4adfeeb`; tools are committed before the consumer pin.
+  checkpoint pins tools `34d6ee2`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Timed actor channel cycle restored directly from C**: [Note 1891](WORKING_NOTES/1891-channel-timer-cycle-direct-match-20261031.md). `func_15080348` restores the actor gate, timer thresholds, five-entry cycle and RNG countdown. All 58 words match directly with zero guards. Guest/native aliases, original RNG, three neighbors, actual Make and strict image checks pass. No static caller was found in the measured ROM transfer/pointer census. Total **3,968/5,506 (72.07%)**, Game **3,295/4,833 (68.18%)**, zero drift; **162** more to 75%. Next screen `func_150D1F6C`; private candidates remain uncredited.
 
 **Linked actor cleanup scan restored from C**: [Note 1890](WORKING_NOTES/1890-linked-actor-request-match-20261030.md). `func_150626EC` scans 25 actor records, preserves signed owner-slot arithmetic and live gates, and forwards the cleanup request. Its 58 words match after two guarded endpoint-alias bindings, changing one instruction word. Recursive original-helper/caller, native32, 88 neighbors, actual Make and strict image checks pass; eight inherited owner warnings are unchanged. Total **3,967/5,506 (72.05%)**, Game **3,294/4,833 (68.16%)**, zero drift; **163** more to 75%. Next screen `func_15080348`; private candidates remain uncredited.
 
