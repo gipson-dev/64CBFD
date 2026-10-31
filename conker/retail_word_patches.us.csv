@@ -24568,3 +24568,33 @@ generated_135D00,func_15108D24,0x0B0,0x93180000,0x91080000,R_MIPS_LO16:D_800BE9C
 generated_135D00,func_15108D24,0x0B4,0x8FA80060,0x8FB90060,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
 generated_135D00,func_15108D24,0x0BC,0x0018C980,0x00084980,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
 generated_135D00,func_15108D24,0x0C0,0x03282821,0x03292821,-,-,"Normalize closed state-offset, matrix-page and owner temporary register cycles",,,false
+generated_193430,func_15166118,0x040,0x00403825,0x00404025,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x04C,0x00401825,0x00003025,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x050,0x00002825,0x00401825,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x054,0x24022000,0x24070002,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x058,0x24060002,0x24052800,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x05C,0x24042800,0x24042000,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x060,0x24A50001,0x24C60001,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x068,0xA462FFD8,0xA464FFD8,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x06C,0xA462FFDA,0xA464FFDA,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x070,0xA464FFE8,0xA465FFE8,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x074,0xA462FFEA,0xA464FFEA,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x078,0xA464FFF8,0xA465FFF8,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x07C,0xA464FFFA,0xA465FFFA,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x080,0xA4620008,0xA4640008,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x084,0x14A6FFF6,0x14C7FFF6,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x088,0xA464000A,0xA465000A,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0A0,0xA4F9009E,0xA519009E,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0A4,0xA0E20092,0xA1020092,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0A8,0xA0E20093,0xA1020093,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0AC,0xA4E40098,0xA5040098,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0B0,0xA4E5009A,0xA505009A,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0B4,0xA4E6009C,0xA506009C,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0B8,0x8FA80034,0x8FA90034,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0BC,0xA4E80096,0xA5090096,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0C0,0x8FA9003C,0x8FAA003C,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0C4,0xA0E90094,0xA10A0094,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0C8,0x8FAA0020,0x8FAB0020,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0CC,0xA0EA00A0,0xA10B00A0,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0D0,0x8FAB0024,0x8FAC0024,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
+generated_193430,func_15166118,0x0D8,0xA0EB00A1,0xA10C00A1,-,-,"Normalize closed allocator-result, quad-loop and parameter-store register allocation",,,false
