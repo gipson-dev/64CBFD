@@ -41,8 +41,24 @@ s32 func_150DE458() {
     return 0;
 }
 
-s32 func_150DE6D8() {
-    return 0;
+typedef struct {
+    f32 x,y,z;
+    u8 reserved0C[6];
+    s16 pitch;
+    u8 reserved14[0x68];
+    u32 phaseX,phaseY,phaseZ;
+} ActorPhaseMotion;
+extern f32 D_800A0D48,D_800A0D4C,D_800A0D50,D_800A0D54;
+extern s32 D_800BE9E4;
+f32 func_15048A40(u8 angle);
+/* Update the actor's oscillating pitch/position and advance three phase counters. */
+void func_150DE6D8(ActorPhaseMotion *actor) {
+    actor->pitch = func_15048A40((u8)((s32)actor->phaseX >> 3)) * D_800A0D48 + D_800A0D4C;
+    actor->x = func_15048A40((u8)((s32)actor->phaseY >> 3)) * D_800A0D50;
+    actor->z = func_15048A40((u8)((s32)actor->phaseZ >> 3)) * D_800A0D54;
+    actor->phaseX += (u32)D_800BE9E4 * 12;
+    actor->phaseY += (u32)D_800BE9E4 * 16;
+    actor->phaseZ += (u32)D_800BE9E4 * 24;
 }
 
 s32 func_150DE7C0() {
