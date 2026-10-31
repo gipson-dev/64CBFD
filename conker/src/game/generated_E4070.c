@@ -13,7 +13,7 @@ extern void func_1516972C(void *arg0);
 /* Non-matching placeholders for the text-only asm slice asm/E4070.s. */
 
 extern u8 D_800D9890;
-s32 func_150B76BC();
+void func_150B76BC(s32 x, s32 slot);
 
 s32 func_150B6BC0() {
     return 0;
@@ -201,8 +201,38 @@ s32 func_150B768C(void) {
     D_800D9890 = 3;
 }
 
-s32 func_150B76BC() {
-    return 0;
+extern u8 D_800918E8[];
+
+/* Replace the selected menu record using its screen-position descriptor. */
+void func_150B76BC(s32 x, s32 slot) {
+    MenuRecordDescriptorE4070 descriptor;
+
+    descriptor.field31 = 1;
+    descriptor.field2C = 88;
+    descriptor.field1C = (f32)x;
+    descriptor.field2E = 64;
+    descriptor.field20 = 170.0f;
+    descriptor.field30 = 6;
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field18 = 0;
+    descriptor.asset = D_800918E8;
+    descriptor.field32 = 255;
+    descriptor.field33 = 0;
+    descriptor.field34 = 0;
+    descriptor.field35 = 255;
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field39 = 0;
+    descriptor.field36 = 7;
+    descriptor.field37 = 21;
+    descriptor.field38 = 1;
+    descriptor.field28 = 81;
+    descriptor.field2A = 81;
+    if (((void **)D_800D9898)[slot] != NULL) {
+        func_1516972C(((void **)D_800D9898)[slot]);
+    }
+    ((void **)D_800D9898)[slot] = func_15169968(&descriptor);
 }
 
 s32 func_150B77A8() {

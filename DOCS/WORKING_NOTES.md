@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Indexed menu record restored from guarded C**: [Note 1918](WORKING_NOTES/1918-indexed-menu-record-guarded-match-20261031.md). `func_150B76BC` matches all 59 words after three checked independent constant-setup guards under the retail no-unroll profile. Indexed replacement, signed x conversion, descriptor fields, both complete callers, original factory chain, 20 neighbors, actual Make and strict production image checks pass. Total **3,995/5,506 (72.56%)**, Game **3,322/4,833 (68.74%)**, zero drift; **135** more to 75%. Next screen `func_150C7C90`; private candidates remain uncredited.
+
 **Slot actor refresh restored from guarded C**: [Note 1917](WORKING_NOTES/1917-slot-actor-refresh-guarded-match-20261031.md). `func_1501DE18` matches all 59 words after three checked setup/LO16 guards under the retail no-unroll profile. Wrapping timestamp, 25 live actor records, original repeat caller and eligibility paths, 56 neighbors, actual Make and strict production image checks pass. Total **3,994/5,506 (72.54%)**, Game **3,321/4,833 (68.72%)**, zero drift; **136** more to 75%. Next screen `func_150B76BC`; private candidates remain uncredited.
 
 **Double quad effect constructor restored from guarded C**: [Note 1916](WORKING_NOTES/1916-double-quad-effect-guarded-match-20261031.md). `func_15166118` matches all 59 words after thirty checked register/setup guards. Two UV blocks, ten-argument ABI, narrowed fields, failed allocation, original caller/origin writer, four neighbors, actual Make and strict production image checks pass. Total **3,993/5,506 (72.52%)**, Game **3,320/4,833 (68.69%)**, zero drift; **137** more to 75%. Next screen `func_1501DE18`; private candidates remain uncredited.
