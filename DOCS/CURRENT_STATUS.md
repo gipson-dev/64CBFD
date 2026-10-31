@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `025de7f`; tools are committed before the consumer pin.
+  checkpoint pins tools `583732f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**EEPROM request setup and timer result restored from C**: [Note 1893](WORKING_NOTES/1893-eeprom-request-timer-match-20261031.md). `func_151DCEF0` drains pending work, publishes four request fields, submits a 64-bit timer count and returns its signed status. All 58 words match with three guarded rows for the byte-home load and low-clock alias. Three callers, signed result stores, native SDK64, the unchanged poller neighbor, actual Make and strict image checks pass; seven closed metadata permutations are predicted explicitly. Total **3,970/5,506 (72.10%)**, Game **3,297/4,833 (68.22%)**, zero drift; **160** more to 75%. Next screen `func_1514D564`; private candidates remain uncredited.
 
 **Typed actor payload callback restored from C**: [Note 1892](WORKING_NOTES/1892-actor-command-payload-match-20261031.md). `func_150D1F6C` restores position/value payloads, owner flag commands, vector reset and actor release. Its 56 compiler words normalize to the full 58-word slot with eight guarded rows and two original RA reloads. Registered callback ABI, original dispatcher/release, guest/native aliases, four neighbors, actual Make and strict image checks pass. Total **3,969/5,506 (72.08%)**, Game **3,296/4,833 (68.20%)**, zero drift; **161** more to 75%. Next screen `func_151DCEF0`; private candidates remain uncredited.
 
