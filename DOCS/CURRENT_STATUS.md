@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `92cac11`; tools are committed before the consumer pin.
+  checkpoint pins tools `7de173c`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Alternate floating packet submission restored**: [Note 1898](WORKING_NOTES/1898-alternate-debug-packet-submission-match-20261031.md). `func_151A0F28` forwards the original 28-argument packet using its separate float constant and compatible empty helper. All 58 words match after ten checked scheduling guards. Guest/native controls, all 38 neighbors, five-command Make and the complete ELF prediction including the closed four-symbol metadata permutation pass. Total **3,975/5,506 (72.19%)**, Game **3,302/4,833 (68.32%)**, zero drift; **155** more to 75%. Next screen `func_151B5240`; private candidates remain uncredited.
 
 **Fixed floating packet submission restored**: [Note 1897](WORKING_NOTES/1897-effect-debug-packet-submission-match-20261031.md). `func_151A0E40` forwards three float representations and the original 28-argument packet to the empty retail debug/effect stub. All 58 words match after ten checked scheduling guards; the helper's complete signature preserves all six original words. Guest/native controls, all 38 owner neighbors, five-command Make and the complete ELF prediction pass. Total **3,974/5,506 (72.18%)**, Game **3,301/4,833 (68.30%)**, zero drift; **156** more to 75%. Next screen `func_151A0F28`; private candidates remain uncredited.
 

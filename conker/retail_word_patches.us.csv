@@ -24486,3 +24486,13 @@ generated_1CC440,func_151A0E40,0x0C0,0xAFA40068,0xE7A00010,-,-,Restore independe
 generated_1CC440,func_151A0E40,0x0C4,0xE7A00010,0xE7A00028,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
 generated_1CC440,func_151A0E40,0x0C8,0xE7A00028,0xE7A00044,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
 generated_1CC440,func_151A0E40,0x0CC,0xE7A00044,0xAFA40068,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x004,0xAFBF0074,0x3C010000,-,R_MIPS_HI16:D_800A8D24,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x008,0xAFA60080,0xC4200000,-,R_MIPS_LO16:D_800A8D24,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x00C,0xAFA70084,0xAFBF0074,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x010,0x30E400FF,0xAFA60080,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x014,0x3C010000,0xAFA70084,R_MIPS_HI16:D_800A8D24,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x018,0xC4200000,0x30E400FF,R_MIPS_LO16:D_800A8D24,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x0C0,0xAFA40068,0xE7A00010,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x0C4,0xE7A00010,0xE7A00028,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x0C8,0xE7A00028,0xE7A00044,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0F28,0x0CC,0xE7A00044,0xAFA40068,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false

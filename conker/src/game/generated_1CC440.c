@@ -226,8 +226,14 @@ void func_151A0E40(f32 x, f32 y, f32 value, u8 variant, s32 flags) {
         70, 66, 1055, 1270, 7, 65, 4, 1, variant, flags);
 }
 
-s32 func_151A0F28() {
-    return 0;
+extern f32 D_800A8D24;
+/* Submit the original fixed debug-display argument packet to its retail stub. */
+void func_151A0F28(f32 x, f32 y, f32 value, u8 variant, s32 flags) {
+    func_151A11CC(
+        x, y, value, 163.0f, D_800A8D24,
+        160, 75, 1055, 1270, 1, D_800A8D24,
+        135, 68, 1055, 1270, 2, 1, D_800A8D24,
+        70, 66, 1055, 1270, 7, 65, 4, 1, variant, flags);
 }
 
 s32 func_151A1010() {
