@@ -1,5 +1,19 @@
 #include <ultra64.h>
 #include "structs.h"
+typedef struct {
+    u8 kind;
+    u8 reserved01[3];
+    u8 *owner;
+    f32 primary;
+    f32 secondary;
+    f32 zero[5];
+    u8 enabled;
+    s8 mode;
+    u8 flags;
+} ParitySpawnRequest;
+extern f32 D_800A8F58, D_800A8F5C, D_800A8F60, D_800A8F64;
+/* The unfinished allocator returns a pointer; this call supplies five arguments. */
+u8 *func_151A8B20();
 void func_1516972C(struct102 *);
 
 /* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
@@ -14,7 +28,7 @@ void func_151432BC(void *, f32 *, f32 *, f32 *, f32 *);
 extern s32 (*D_8008F94C[])();
 extern s32 (*D_8008F958[])();
 extern void (*D_8008F964[])(u8 *, s32, u8);
-extern s32 (*D_8008F984[])(u8 *, s32);
+extern void (*D_8008F984[])(u8 *, s32);
 
 s32 func_151A7950() {
     return 0;
@@ -97,7 +111,7 @@ void func_151A8A78(u8 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_151A8B20() {
+u8 *func_151A8B20() {
     return 0;
 }
 
@@ -134,7 +148,7 @@ void func_151A9024(u8 *arg0, s32 arg1, u8 arg2) {
 
 s32 func_151A9060(u8 *arg0) {
     s32 index;
-    s32 (*callback)(u8 *, s32);
+    void (*callback)(u8 *, s32);
 
     arg0[0x16] |= 4;
     index = *(s32 *)(arg0 + 0x18);
@@ -148,8 +162,29 @@ s32 func_151A9060(u8 *arg0) {
     return 1;
 }
 
-s32 func_151A90C0() {
-    return 0;
+/* Create a parity-selected descriptor and attach the selector's low byte. */
+void func_151A90C0(u8 *owner, s32 selector) {
+    ParitySpawnRequest request;
+    f32 parity = selector & 1;
+    u8 tag[1];
+    u8 *created;
+    request.kind = 2;
+    request.owner = owner;
+    request.primary = parity ? D_800A8F58 : D_800A8F5C;
+    request.secondary = parity ? D_800A8F60 : D_800A8F64;
+    request.zero[0] = 0.0f;
+    request.zero[1] = 0.0f;
+    request.zero[2] = 0.0f;
+    request.zero[3] = 0.0f;
+    request.zero[4] = 0.0f;
+    request.enabled = 1;
+    request.mode = -1;
+    request.flags = 0;
+    tag[0] = selector;
+    created = func_151A8B20(&request, -1, 1, 0xFF, 0);
+    if (created != NULL) {
+        memcpy(created + 0x80, tag, 1);
+    }
 }
 
 s32 func_151A91AC() {

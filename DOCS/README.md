@@ -1,5 +1,8 @@
 # Documentation
 
+**Parity descriptor constructor restored directly from C**: [Note 1905](WORKING_NOTES/1905-parity-descriptor-constructor-direct-match-20261031.md). `func_151A90C0` matches all 59 words without guards. Packet/guest/native tests, the original dispatcher and memcpy, 22 neighbors, three-command Make and strict image prediction pass. Total **3,982/5,506 (72.32%)**, Game **3,309/4,833 (68.47%)**, zero drift; **148** more to 75%. Next screen `func_151AE2BC`; private candidates remain uncredited.
+
+
 **Attached random effect restored directly from C**: [Note 1904](WORKING_NOTES/1904-attached-random-effect-direct-match-20261031.md). `func_150B5950` matches all 59 words without guards. Lifecycle/guest/native tests, the original dispatcher and position wrapper, 11 neighbors, three-command Make and strict image prediction pass. Total **3,981/5,506 (72.30%)**, Game **3,308/4,833 (68.45%)**, zero drift; **149** more to 75%. Next screen `func_151A90C0`; private candidates remain uncredited.
 
 
