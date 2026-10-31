@@ -12,8 +12,43 @@ typedef struct {
 
 /* Non-matching placeholders for the text-only asm slice asm/1368C0.s. */
 
-s32 func_15109410() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 ownerId;
+    f32 zero;
+    f32 value;
+    s8 first, second;
+} OwnerStateValuePayload1368C0;
+/* Create a value payload with the owner's captured identity and signed settings. */
+void *func_15109410(u8 *owner, s16 lifetime, s8 first, s8 second, f32 value,
+                   u32 extraBytes, u8 selector, s32 category) {
+    u8 *created;
+    OwnerStateValuePayload1368C0 payload;
+    s16 duration;
+    u8 flags;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    flags = 0;
+    if (lifetime < 0) {
+        duration = 300;
+    } else {
+        flags = 1;
+        duration = lifetime;
+    }
+    payload.zero = 0.0f;
+    payload.value = value;
+    payload.first = first;
+    payload.second = second;
+    payload.owner = owner;
+    payload.ownerId = owner[0x3B];
+    created = (u8 *)func_15149130(duration, -1, 0x1A, -1, flags, 0x1A,
+                                 (struct37 *)(extraBytes + sizeof(payload)), selector, category);
+    if (created != NULL) {
+        memcpy(created + 0x28, &payload, sizeof(payload));
+    }
+    return created;
 }
 
 s32 func_151094FC() {
