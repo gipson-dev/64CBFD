@@ -1,4 +1,18 @@
 #include <ultra64.h>
+extern u8 *D_800DBFF0;
+extern s32 D_800DBDC0, D_800DBDC4;
+extern u8 *D_800DBDC8;
+extern f32 D_800DBDCC, D_800DBDD0;
+extern s16 D_800DBE30[];
+extern s32 D_800BE9F0;
+u8 *func_1510FD20();
+s32 func_1510FE30(u8 *);
+void func_150A6760(s32);
+void func_150F33F8(s32);
+
+typedef struct { u8 bytes[0x9A0]; } ViewRecord;
+
+/* Publish view coordinates and refresh its leaf/category state. */
 
 extern f32 D_800A2D9C;
 f32 sqrtf(f32);
@@ -131,11 +145,34 @@ s32 func_1510F8D8() {
     return 0;
 }
 
-s32 func_1510FC34() {
-    return 0;
+void func_1510FC34(s32 view) {
+    u8 *record;
+    s32 x, z;
+    u8 *leaf;
+    s32 category;
+    s16 *previous;
+
+    D_800DBDC0 = view;
+    record = (u8 *)&((ViewRecord *)D_800DBFF0)[view];
+    x = (s32)*(f32 *)(record + 0x2F8);
+    z = (s32)*(f32 *)(record + 0x300);
+    D_800DBDCC = (f32)x;
+    D_800DBDD0 = (f32)z;
+    leaf = func_1510FD20(x, z);
+    D_800DBDC8 = leaf;
+    category = func_1510FE30(leaf);
+    D_800DBDC4 = category;
+    previous = &D_800DBE30[view];
+    if (category != *previous) {
+        *previous = category;
+        func_150A6760(view);
+    }
+    if (D_800BE9F0 == 60) {
+        func_150F33F8(view);
+    }
 }
 
-s32 func_1510FD20() {
+u8 *func_1510FD20() {
     return 0;
 }
 

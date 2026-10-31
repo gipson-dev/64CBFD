@@ -1,5 +1,8 @@
 # Documentation
 
+**View leaf/category state restored directly from C**: [Note 1906](WORKING_NOTES/1906-view-leaf-category-direct-match-20261031.md). `func_1510FC34` matches all 59 words without guards. Guest/native tests, the original view loop and spatial walkers, 13 neighbors, five-command Make and strict image prediction pass. Total **3,983/5,506 (72.34%)**, Game **3,310/4,833 (68.49%)**, zero drift; **147** more to 75%. Next screen `func_1507BB28`; private candidates remain uncredited.
+
+
 **Parity descriptor constructor restored directly from C**: [Note 1905](WORKING_NOTES/1905-parity-descriptor-constructor-direct-match-20261031.md). `func_151A90C0` matches all 59 words without guards. Packet/guest/native tests, the original dispatcher and memcpy, 22 neighbors, three-command Make and strict image prediction pass. Total **3,982/5,506 (72.32%)**, Game **3,309/4,833 (68.47%)**, zero drift; **148** more to 75%. Next screen `func_151AE2BC`; private candidates remain uncredited.
 
 
