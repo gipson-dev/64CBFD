@@ -24605,3 +24605,7 @@ generated_E4070,func_150B76BC,0x034,0x240E0001,0x3C01432A,-,-,Rotate independent
 generated_E4070,func_150B76BC,0x038,0x240F0058,0x240E0001,-,-,Rotate independent AT float constant and T6/T7 descriptor constant setup,,,false
 generated_E4070,func_150B76BC,0x03C,0x3C01432A,0x240F0058,-,-,Rotate independent AT float constant and T6/T7 descriptor constant setup,,,false
 generated_135D00,func_15108C38,0x034,0x01D18021,0x022E8021,-,-,Preserve retail commutative owner-offset ADDU operand order,,,false
+game_981E0,func_15073B38,0x0D4,0x8C790000,0x8C680000,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
+game_981E0,func_15073B38,0x0DC,0x8F28031C,0x8D09031C,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
+game_981E0,func_15073B38,0x0E0,0x000FC603,0x000FCE03,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
+game_981E0,func_15073B38,0x0E4,0xA11800AD,0xA13900AD,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false

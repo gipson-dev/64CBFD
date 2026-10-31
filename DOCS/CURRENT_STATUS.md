@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `9eaed78`; tools are committed before the consumer pin.
+  checkpoint pins tools `ebde643`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Packed attached-state decoder restored**: [Note 1922](WORKING_NOTES/1922-attached-packed-state-guarded-match-20261031.md). `func_15073B38` matches all 60 words and four bindings after four closed tail-register guards. Repeated reads, bounded FP conversion/FCSR, the original command callback, 327 neighbors, actual Make and strict production checks pass. All 36 inherited warnings are unchanged. Total **3,999/5,506 (72.63%)**, Game **3,326/4,833 (68.82%)**, zero drift; **131** more to 75%. Next screen `func_151638E0`; private candidates remain uncredited.
 
 **Effect-suite dispatcher restored directly from C**: [Note 1921](WORKING_NOTES/1921-effect-suite-dispatch-direct-match-20261031.md). `func_151C9DE8` emits all 59 words and ten bindings with no guards. Ordered six-call ABI, mixed byte arguments, argument-home lifetimes, both retail callers, connected packet helper, 45 neighbors, actual Make and strict production image checks pass. Total **3,998/5,506 (72.61%)**, Game **3,325/4,833 (68.80%)**, zero drift; **132** more to 75%. Next screen `func_15073B38`; private candidates remain uncredited.
 

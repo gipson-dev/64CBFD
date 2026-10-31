@@ -38,7 +38,7 @@ s32 func_15072F10();
 s32 func_15073118();
 s32 func_1507342C();
 s32 func_15073A50();
-s32 func_15073B38();
+void func_15073B38(void);
 s32 func_15073FA0();
 s32 func_150746F0();
 s32 func_15074C80();
@@ -1813,8 +1813,21 @@ void func_15073A28(void) {
 /* Original held-actor release, used by the Training Gargoyle at animation frame 106. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15073A50.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15073B38.s. */
-s32 func_15073B38() {
-    return 0;
+typedef struct {
+    u8 pad[0xA8];
+    f32 value;
+    u8 mode;
+    u8 flags;
+} GameAttachedPackedState;
+/* Decode the packed word into the currently attached object. */
+void func_15073B38(void) {
+    f32 value;
+    f32 mode;
+    value = (f32)(D_800D1580 & 0xFFFF);
+    ((GameAttachedPackedState *)D_800D154C->unk31C)->value = value;
+    mode = (f32)((D_800D1580 >> 16) & 0xFF);
+    ((GameAttachedPackedState *)D_800D154C->unk31C)->mode = (u8)mode;
+    ((GameAttachedPackedState *)D_800D154C->unk31C)->flags = (u8)(D_800D1580 >> 24);
 }
 void func_15073C28(void) {
     func_1507F640();
