@@ -587,8 +587,40 @@ void func_1501DAAC(s32 slot) {
     D_800C35B0[slot] = (u16)D_800C3C8E;
 }
 
-s32 func_1501DE18() {
-    return 0;
+extern s32 D_800C3640[], D_800C35B0[], D_800BEA08;
+extern struct127 D_800CC2D0[];
+extern u8 D_800C3E78;
+s32 func_150242F8();
+s32 func_1501EC38();
+s32 func_15020EC4();
+s32 func_150229E4();
+s32 func_1502178C();
+s32 func_1501E81C();
+/* Advance the slot timestamp and refresh the 25 active actor records. */
+void func_1501DE18(s32 slot) {
+    struct127 *actor;
+    s32 index;
+    u8 limit;
+
+    D_800C35B0[slot] = (u32)D_800C3640[slot] + (u32)D_800BEA08;
+    func_150242F8(1, 0);
+    func_1501EC38(0);
+    func_150242F8(0, 0);
+    func_15020EC4(0);
+    actor = D_800CC2D0;
+    index = 0;
+    limit = 25;
+    do {
+        if (actor->interaction_state != 0) {
+            D_800C3E78 = index;
+            if (func_150229E4(actor) != 0) {
+                func_1502178C(actor, slot, -1);
+            }
+        }
+        index++;
+        actor++;
+    } while (index != limit);
+    func_1501E81C(1, slot);
 }
 
 s32 func_1501DF04() {

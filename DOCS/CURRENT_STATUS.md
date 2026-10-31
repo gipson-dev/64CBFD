@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `473beb8`; tools are committed before the consumer pin.
+  checkpoint pins tools `1c4dc21`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Slot actor refresh restored from guarded C**: [Note 1917](WORKING_NOTES/1917-slot-actor-refresh-guarded-match-20261031.md). `func_1501DE18` matches all 59 words after three checked setup/LO16 guards under the retail no-unroll profile. Wrapping timestamp, 25 live actor records, original repeat caller and eligibility paths, 56 neighbors, actual Make and strict production image checks pass. Total **3,994/5,506 (72.54%)**, Game **3,321/4,833 (68.72%)**, zero drift; **136** more to 75%. Next screen `func_150B76BC`; private candidates remain uncredited.
 
 **Double quad effect constructor restored from guarded C**: [Note 1916](WORKING_NOTES/1916-double-quad-effect-guarded-match-20261031.md). `func_15166118` matches all 59 words after thirty checked register/setup guards. Two UV blocks, ten-argument ABI, narrowed fields, failed allocation, original caller/origin writer, four neighbors, actual Make and strict production image checks pass. Total **3,993/5,506 (72.52%)**, Game **3,320/4,833 (68.69%)**, zero drift; **137** more to 75%. Next screen `func_1501DE18`; private candidates remain uncredited.
 
