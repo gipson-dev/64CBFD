@@ -35,7 +35,7 @@ s32 func_150617BC();
 s32 func_150619A8();
 s32 func_15061B4C();
 s32 func_150623F4();
-s32 func_150626EC();
+void func_150626EC(struct127 *, s32);
 s32 func_15062800();
 s32 func_15062D10();
 s32 func_15062E24();
@@ -1197,9 +1197,19 @@ s32 func_15061B4C() {
 s32 func_150623F4() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_150626EC.s. */
-s32 func_150626EC() {
-    return 0;
+/* Submit the request to active actors attached to the selected owner slot. */
+void func_150626EC(struct127 *owner, s32 request) {
+    s32 index;
+    struct127 *record;
+
+    for (index = 0; index < 25; index++) {
+        record = &D_800CC2D0[index];
+        if (record->interaction_state != 0 &&
+            record->unk65 == (s32)((u32)owner - (u32)D_800CC2D0) / (s32)sizeof(struct127) + 1 &&
+            record->unk127 == 255) {
+            func_15060F28(record, request);
+        }
+    }
 }
 void func_150627D4(struct127 *arg0) {
     arg0->unk2FB = 0;
