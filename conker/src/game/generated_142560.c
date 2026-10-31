@@ -194,8 +194,35 @@ s32 func_1511617C() {
     return 0;
 }
 
-s32 func_151162D4() {
-    return 0;
+
+typedef struct {
+    u8 reserved00[0x12];
+    s16 height;
+    u8 reserved14[4];
+    f32 offset;
+    u8 reserved1C[0x20];
+    s32 packed;
+    u8 reserved40[0x1C];
+    s16 delta;
+    u8 reserved5E[0x1E];
+    u32 phase;
+} CosineHeightRecord;
+extern s32 D_800BE9E4;
+
+/* Advance the cosine offset and publish its change in integral height. */
+void func_151162D4(CosineHeightRecord *record) {
+    f32 amplitude;
+    s32 speed;
+    s16 previousHeight;
+    f32 offset;
+
+    previousHeight = (s32)((f32)record->height + record->offset);
+    amplitude = (s16)(record->packed & 0xFFFF);
+    speed = (record->packed >> 16) & 0xFFFF;
+    offset = cosf((f32)(s32)record->phase * 0.0054931640625f) * amplitude;
+    record->offset = offset;
+    record->phase += (u32)speed * (u32)D_800BE9E4;
+    record->delta = (s32)(((f32)record->height + offset) - (f32)previousHeight);
 }
 
 s32 func_151163C0() {
@@ -442,7 +469,7 @@ void func_1511A738(u8 *arg0) {
         }
     }
 
-    func_151162D4(arg0);
+    func_151162D4((CosineHeightRecord *)arg0);
     func_1511A494(arg0, arg0 + 0x80, arg0 + 0x84);
 }
 

@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Cosine height delta restored directly from C**: [Note 1903](WORKING_NOTES/1903-cosine-height-delta-direct-match-20261031.md). `func_151162D4` matches all 59 words without guards. Native/guest tests, the complete original caller, connected cosine code, 83 neighbors, five-command Make and strict image prediction pass. Total **3,980/5,506 (72.28%)**, Game **3,307/4,833 (68.43%)**, zero drift; **150** more to 75%. Next screen `func_150B5950`; private candidates remain uncredited.
+
 **Conditional byte blend and observed pointer return restored**: [Note 1902](WORKING_NOTES/1902-conditional-byte-blend-pointer-return-match-20261031.md). `func_151CB510` matches all 59 words with seven checked cursor-allocation guards. Original caller tests prove the returned blend-state address is used; bounded FP-control/native checks, 45 neighbors, five-command Make and strict image prediction pass. Total **3,979/5,506 (72.27%)**, Game **3,306/4,833 (68.40%)**, zero drift; **151** more to 75%. Next screen `func_151162D4`; private candidates remain uncredited.
 
 **Actor phase motion restored directly from C**: [Note 1901](WORKING_NOTES/1901-actor-phase-motion-direct-match-20261031.md). `func_150DE6D8` matches all 58 words without guards, preserving its 32-byte frame, ordered f32 operations, callback boundaries and unsigned phase wrap. Eight neighbors, actual Make, original callback windows and the complete ELF prediction pass. Total **3,978/5,506 (72.25%)**, Game **3,305/4,833 (68.38%)**, zero drift; **152** more to 75%. Next screen `func_151CB510`; private candidates remain uncredited.
