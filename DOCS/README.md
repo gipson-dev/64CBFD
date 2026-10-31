@@ -1,5 +1,8 @@
 # Documentation
 
+**Random effect spawn matched directly from C**: [Note 1889](WORKING_NOTES/1889-random-effect-spawn-direct-match-20261030.md). `func_1500F290` restores the descriptor stores, signed RNG remainder, three float coordinates and returned allocation pointer. All 58 words match directly with its retail 112-byte frame, two call bindings and no guards. Original RNG/provider/caller windows, native32, two neighbors, actual Make and strict image checks pass. Total **3,966/5,506 (72.03%)**, Game **3,293/4,833 (68.14%)**, zero drift; **164** more to 75%. Next screen `func_150626EC`; private candidates remain uncredited.
+
+
 **Signed ring render callback restored from C**: [Note 1888](WORKING_NOTES/1888-ring-render-submit-match-20261030.md). `func_151668B8` preserves signed halfword wrap, the nine-argument resource submission, live renderer flags and the returned display-list cursor. Its 56-word body matches with five guarded temporary-register/read-order corrections and two fixed alignment words. Original helpers and indirect caller, native32, four neighbors, actual Make and strict image checks pass. Total **3,965/5,506 (72.01%)**, Game **3,292/4,833 (68.12%)**, zero drift; **165** more to 75%. Next screen `func_1500F290`; private candidates remain uncredited.
 
 
