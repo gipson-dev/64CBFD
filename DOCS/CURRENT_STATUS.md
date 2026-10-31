@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `c66c713`; tools are committed before the consumer pin.
+  checkpoint pins tools `6009273`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Texture segment pair builder restored from direct C**: [Note 1915](WORKING_NOTES/1915-texture-segment-pair-direct-match-20261031.md). `func_15133EEC` matches all 59 words without guards. SDK segment commands, captured resource metadata, narrow arguments, all five retail call sites, bounded original loader paths, 30 neighbors, actual Make and strict production image checks pass. Total **3,992/5,506 (72.50%)**, Game **3,319/4,833 (68.67%)**, zero drift; **138** more to 75%. Next screen `func_15166118`; private candidates remain uncredited.
 
 **Owner identity and value payload restored from direct C**: [Note 1914](WORKING_NOTES/1914-owner-state-value-payload-direct-match-20261031.md). `func_15109410` matches all 59 words without guards. Captured identity, signed lifetime/settings, 20-byte payload, original helpers and both caller windows, nine neighbors, actual Make and strict production image checks pass. Total **3,991/5,506 (72.48%)**, Game **3,318/4,833 (68.65%)**, zero drift; **139** more to 75%. Next screen `func_15133EEC`; private candidates remain uncredited.
 

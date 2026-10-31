@@ -52,7 +52,15 @@ typedef struct {
 /* Non-matching placeholders for the text-only asm slice asm/15F680.s. */
 
 
-s32 func_15133EEC();
+typedef struct {
+    s32 *resource;
+    u8 reserved[6];
+    u8 segments;
+    u8 layout;
+} TextureSegmentRecord15F680;
+extern TextureSegmentRecord15F680 D_80090B60[];
+u32 func_1510D0EC(s32, s32 *, s32, s32);
+Gfx *func_15133EEC(Gfx *, u16, u8, s32);
 void func_151424F4(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
     f32 cx, f32 cy, f32 cz, f32 tx, f32 ty, f32 tz);
 void func_15142838(Mtx *output, f32 row0, f32 row1, f32 rx, f32 ry, f32 rz,
@@ -354,15 +362,31 @@ void func_15133E3C(s32 arg0, u8 arg1) {
 }
 
 s32 func_15133E84(s32 arg0, u8 *arg1, s32 arg2) {
-    func_15133EEC(arg0, *(u16 *)(arg1 + 0x170), *(u8 *)(arg1 + 0x172), *(s32 *)(arg1 + 0x174));
+    func_15133EEC((Gfx *)arg0, *(u16 *)(arg1 + 0x170), *(u8 *)(arg1 + 0x172), *(s32 *)(arg1 + 0x174));
 }
 
 s32 func_15133EB8(s32 arg0, u8 *arg1, s32 arg2) {
-    func_15133EEC(arg0, *(u16 *)(arg1 + 0x174), *(u8 *)(arg1 + 0x176), *(s32 *)(arg1 + 0x178));
+    func_15133EEC((Gfx *)arg0, *(u16 *)(arg1 + 0x174), *(u8 *)(arg1 + 0x176), *(s32 *)(arg1 + 0x178));
 }
 
-s32 func_15133EEC() {
-    return 0;
+/* Load a texture resource and append its one or two segment bindings. */
+Gfx *func_15133EEC(Gfx *cursor, u16 index, u8 segment, s32 priority) {
+    s32 resource;
+    u8 segments;
+    u8 layout;
+    u32 address;
+    s32 extent;
+
+    resource = *D_80090B60[index].resource;
+    segments = D_80090B60[index].segments;
+    layout = D_80090B60[index].layout;
+    address = func_1510D0EC(resource, &extent, priority, 0);
+    gSPSegment(cursor++, segment, address);
+    if (segments == 2) {
+        gSPSegment(cursor++, segment + 1,
+                   address + extent - (layout == 1 ? 0x200 : 0x20));
+    }
+    return cursor;
 }
 
 s32 func_15133FD8(s32 arg0, u8 *arg1, s32 arg2) {
@@ -371,7 +395,7 @@ s32 func_15133FD8(s32 arg0, u8 *arg1, s32 arg2) {
 
     i = 0;
     while (i < entries[0]) {
-        arg0 = func_15133EEC(arg0, *(u16 *)(entries + i * 8 + 4),
+        arg0 = (s32)func_15133EEC((Gfx *)arg0, *(u16 *)(entries + i * 8 + 4),
                              entries[i * 8 + 6],
                              *(s32 *)(entries + i * 8 + 8));
         i = (i + 1) & 0xFF;
