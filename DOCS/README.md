@@ -1,5 +1,8 @@
 # Documentation
 
+**Actor script lookup restored from guarded C**: [Note 1907](WORKING_NOTES/1907-actor-script-lookup-guarded-match-20261031.md). `func_1507BB28` matches all 59 words after 14 checked layout rows and one inserted address word. Raw-C/native tests, four original return consumers, 210 neighbors, five-command Make and strict image prediction pass. Total **3,984/5,506 (72.36%)**, Game **3,311/4,833 (68.51%)**, zero drift; **146** more to 75%. Next screen `func_1500707C`; private candidates remain uncredited.
+
+
 **View leaf/category state restored directly from C**: [Note 1906](WORKING_NOTES/1906-view-leaf-category-direct-match-20261031.md). `func_1510FC34` matches all 59 words without guards. Guest/native tests, the original view loop and spatial walkers, 13 neighbors, five-command Make and strict image prediction pass. Total **3,983/5,506 (72.34%)**, Game **3,310/4,833 (68.49%)**, zero drift; **147** more to 75%. Next screen `func_1507BB28`; private candidates remain uncredited.
 
 

@@ -2087,10 +2087,50 @@ void func_1507BAF8(void) {
 void func_1507BB20(void) {
 }
 
-// scary loops
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507BB28.s. */
-s32 func_1507BB28() {
-    return 0;
+typedef struct {
+    struct216 *script;
+    u8 id;
+    u8 reserved05[3];
+} ScriptLookupEntry;
+extern ScriptLookupEntry D_80086A88[];
+extern struct216 D_8009A120;
+
+/* Return the script address for the requested ID, using the global fallback. */
+s32 func_1507BB28(s32 unused, s32 id) {
+    u8 *resource;
+    ScriptLookupEntry *table;
+    ScriptLookupEntry *cursor;
+    s32 index;
+
+    resource = (u8 *)D_800D1588[D_800D154C->id];
+    if (resource == NULL) {
+        return (s32)&D_8009A120;
+    }
+    table = *(ScriptLookupEntry **)(resource - 0x10);
+    if (table == NULL) {
+        return (s32)&D_8009A120;
+    }
+    index = 0;
+    cursor = table;
+    while (cursor->id != id) {
+        if (cursor->script == NULL) {
+            table = D_80086A88;
+            cursor = table;
+            index = 0;
+            while (cursor->id != id) {
+                if (table->script == NULL) {
+                    for (;;) {}
+                }
+                cursor++;
+                table++;
+                index++;
+            }
+            return (s32)D_80086A88[index].script;
+        }
+        cursor++;
+        index++;
+    }
+    return (s32)table[index].script;
 }
 
 void func_1507BC14(struct127 *arg0) {
