@@ -46,8 +46,36 @@ s32 func_150C79BC() {
     return 0;
 }
 
-s32 func_150C7C90() {
-    return 0;
+u8 *func_151149AC(u8);
+
+/* Patch the sentinel record with the wrapped object-relative angle. */
+void func_150C7C90(u8 *actor) {
+    s32 index;
+    u8 *record;
+    s32 angle;
+
+    if (*(s32 *)(actor + 0x7C) == 0) {
+        record = *(u8 **)(actor + 0x1C);
+        index = 0;
+        while (*(s8 *)(record + (index << 3)) != -14) {
+            index++;
+        }
+        *(s32 *)(actor + 0x7C) = index;
+    }
+    index = *(s32 *)(actor + 0x7C);
+    record = *(u8 **)(actor + 0x1C) + index * 8;
+    angle = -669 - *(s16 *)(func_151149AC(*(u32 *)(actor + 0x3C) & 0xFF) + 0x12);
+    if (*(u32 *)(actor + 0x3C) & 0x8000) {
+        angle = 836 - angle;
+    }
+    while (angle < 0) {
+        angle += 1024;
+    }
+    while (angle >= 1024) {
+        angle -= 1024;
+    }
+    *(u32 *)record &= ~0xFFF;
+    *(u32 *)record |= angle;
 }
 
 void func_150C7D7C(u8 *destination) {

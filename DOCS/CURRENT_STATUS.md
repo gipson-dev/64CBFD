@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `04fcaab`; tools are committed before the consumer pin.
+  checkpoint pins tools `904d09f`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Sentinel record angle patch restored directly from C**: [Note 1919](WORKING_NOTES/1919-record-angle-patch-direct-match-20261031.md). `func_150C7C90` emits all 59 retail words and its relocation with no guards. Signed sentinel scan, cached index, live heading/mirror flags, both callback windows, original lookup, six neighbors, actual Make and strict production image checks pass. Total **3,996/5,506 (72.58%)**, Game **3,323/4,833 (68.76%)**, zero drift; **134** more to 75%. Next screen `func_15108C38`; private candidates remain uncredited.
 
 **Indexed menu record restored from guarded C**: [Note 1918](WORKING_NOTES/1918-indexed-menu-record-guarded-match-20261031.md). `func_150B76BC` matches all 59 words after three checked independent constant-setup guards under the retail no-unroll profile. Indexed replacement, signed x conversion, descriptor fields, both complete callers, original factory chain, 20 neighbors, actual Make and strict production image checks pass. Total **3,995/5,506 (72.56%)**, Game **3,322/4,833 (68.74%)**, zero drift; **135** more to 75%. Next screen `func_150C7C90`; private candidates remain uncredited.
 
