@@ -1,5 +1,8 @@
 # Documentation
 
+**Resource-pair payload restored directly from C**: [Note 1899](WORKING_NOTES/1899-resource-pair-payload-direct-match-20261031.md). `func_151B5240` matches all 58 words without guards, preserving its 1,504-byte frame, 1,448-byte packet and constructor/copy ABI. Guest/native checks, both owner neighbors, three-command Make and the complete ELF prediction pass. Total **3,976/5,506 (72.21%)**, Game **3,303/4,833 (68.34%)**, zero drift; **154** more to 75%. Next screen `func_1509CCF4`; private candidates remain uncredited.
+
+
 **Alternate floating packet submission restored**: [Note 1898](WORKING_NOTES/1898-alternate-debug-packet-submission-match-20261031.md). `func_151A0F28` forwards the original 28-argument packet using its separate float constant and compatible empty helper. All 58 words match after ten checked scheduling guards. Guest/native controls, all 38 neighbors, five-command Make and the complete ELF prediction including the closed four-symbol metadata permutation pass. Total **3,975/5,506 (72.19%)**, Game **3,302/4,833 (68.32%)**, zero drift; **155** more to 75%. Next screen `func_151B5240`; private candidates remain uncredited.
 
 
