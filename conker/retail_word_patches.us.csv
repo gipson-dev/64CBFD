@@ -24476,3 +24476,13 @@ game_18D770,func_15161F4C,0x018,0x14C00013,0x14C00014,-,-,Restore reference-comm
 game_18D770,func_15161F4C,0x040,0x5728001C,0x5728001D,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,,,false
 game_18D770,func_15161F4C,0x060,0x10000013,0x8FA70018,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,,,false
 game_18D770,func_15161F4C,0x064,0x8FA70018,0x10000014,-,-,Restore reference-command owner reload and callback-selector branch-delay placement,0x90ED001D,-,false
+generated_1CC440,func_151A0E40,0x004,0xAFBF0074,0x3C010000,-,R_MIPS_HI16:D_800A8D20,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x008,0xAFA60080,0xC4200000,-,R_MIPS_LO16:D_800A8D20,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x00C,0xAFA70084,0xAFBF0074,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x010,0x30E400FF,0xAFA60080,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x014,0x3C010000,0xAFA70084,R_MIPS_HI16:D_800A8D20,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x018,0xC4200000,0x30E400FF,R_MIPS_LO16:D_800A8D20,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x0C0,0xAFA40068,0xE7A00010,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x0C4,0xE7A00010,0xE7A00028,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x0C8,0xE7A00028,0xE7A00044,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false
+generated_1CC440,func_151A0E40,0x0CC,0xE7A00044,0xAFA40068,-,-,Restore independent debug constant-load and outgoing-stack-store scheduling,,,false

@@ -215,8 +215,15 @@ s32 func_151A0C0C() {
     return 0;
 }
 
-s32 func_151A0E40() {
-    return 0;
+extern f32 D_800A8D20;
+void func_151A11CC(f32, f32, f32, f32, f32, s32, s32, s32, s32, s32, f32, s32, s32, s32, s32, s32, s32, f32, s32, s32, s32, s32, s32, s32, s32, s32, u32, s32);
+/* Submit the original fixed debug-display argument packet to its retail stub. */
+void func_151A0E40(f32 x, f32 y, f32 value, u8 variant, s32 flags) {
+    func_151A11CC(
+        x, y, value, 163.0f, D_800A8D20,
+        160, 75, 1055, 1270, 1, D_800A8D20,
+        135, 68, 1055, 1270, 2, 1, D_800A8D20,
+        70, 66, 1055, 1270, 7, 65, 4, 1, variant, flags);
 }
 
 s32 func_151A0F28() {
@@ -227,7 +234,7 @@ s32 func_151A1010() {
     return 0;
 }
 
-void func_151A11CC(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
+void func_151A11CC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, f32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15, s32 arg16, f32 arg17, s32 arg18, s32 arg19, s32 arg20, s32 arg21, s32 arg22, s32 arg23, s32 arg24, s32 arg25, u32 arg26, s32 arg27) {
 }
 
 s32 func_151A11E4() {
