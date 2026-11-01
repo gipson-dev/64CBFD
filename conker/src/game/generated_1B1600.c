@@ -111,8 +111,17 @@ s32 func_151859FC(f32 *arg0) {
     return D_800D3688 < arg0[2];
 }
 
-s32 func_15185A28() {
-    return 0;
+/* Interpolate the depth-plane crossing and advance the output vertex cursor. */
+ClipVertex *func_15185A28(ClipVertex *a, ClipVertex *b, ClipVertex *out) {
+    f32 ratio;
+    ratio = (D_800D368C - a->z) / (b->z - a->z);
+    out->x = a->x + (b->x - a->x) * ratio;
+    out->y = a->y + (b->y - a->y) * ratio;
+    out->z = D_800D368C;
+    out->first = a->first + (b->first - a->first) * ratio;
+    out->second = a->second + (b->second - a->second) * ratio;
+    out->third = a->third + (b->third - a->third) * ratio;
+    return out + 1;
 }
 
 s32 func_15185B28(f32 *arg0) {
