@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+void func_15143134(f32 *, f32 *, u8 *);
+
 /* Generated placeholder declarations. */
 s32 func_1507C8FC();
 s32 func_1507CD64();
@@ -12,7 +14,6 @@ s32 func_1507D754();
 s32 func_1507DB6C();
 s32 func_1507DFE4();
 s32 func_1507E114(s32 *unusedSelection);
-s32 func_1507E1D0();
 /* End generated placeholder declarations. */
 
 void func_1507C8E0(struct127 *arg0, s32 arg1) {
@@ -199,7 +200,29 @@ s32 func_1507E114(s32 *unusedSelection) {
                   &flags, &signedTag, 1, &result);
     return result + 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507E1D0.s. */
-s32 func_1507E1D0() {
-    return 0;
+/* Query the actor's transformed vertical offset, or its live world position. */
+void func_1507E1D0(struct127 *actor, f32 *x, f32 *y, f32 *z) {
+    u8 *matrix;
+
+    if (actor->unk1D4 != NULL) {
+        struct17 offset;
+        struct17 position;
+        offset.unk0 = 0.0f;
+        offset.unk4 = actor->y_scale * 30.0f;
+        offset.unk8 = 0.0f;
+        matrix = (u8 *)actor->unk1D4;
+        if (actor->interaction_state == 1) {
+            matrix += 0x300;
+        } else if (actor->interaction_state == 30) {
+            matrix += 0xC0;
+        }
+        func_15143134((f32 *)&offset, (f32 *)&position, matrix);
+        *x = position.unk0;
+        *y = position.unk4;
+        *z = position.unk8;
+    } else {
+        *x = actor->x_position;
+        *y = actor->y_position;
+        *z = actor->z_position;
+    }
 }
