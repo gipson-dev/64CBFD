@@ -207,8 +207,38 @@ void func_15116110(u8 *arg0) {
     }
 }
 
-s32 func_1511617C() {
-    return 0;
+extern u16 D_800CC354;
+extern f32 D_800A2FA8, D_800A2FAC;
+f32 func_1510F648(f32, f32, f32);
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+
+/* Query the surface height, relax its signed offset, and retain the Y change. */
+void func_1511617C(u8 *state) {
+    s16 oldY = *(s16 *)(state + 0x12);
+    s32 velocity;
+    s32 target;
+
+    *(f32 *)(state + 0x7C) = func_1510F648((f32)*(s16 *)(state + 0x10),
+        (f32)*(s16 *)(state + 0x12), (f32)*(s16 *)(state + 0x14));
+    if (fabsf(*(f32 *)(state + 0x7C) - (f32)*(s16 *)(state + 0x12)) > 200.0f) {
+        *(s32 *)(state + 0x3C) = 0;
+    }
+    if (!(state[0x4F] & 4)) {
+        velocity = *(s32 *)(state + 0x3C);
+        *(s32 *)(state + 0x3C) = (s32)((f32)velocity +
+            (f32)(s32)(0u - (u32)velocity) * D_800A2FA8);
+    } else {
+        target = -20;
+        if (D_800CC354 == 0x4B) {
+            target = -40;
+        }
+        velocity = *(s32 *)(state + 0x3C);
+        *(s32 *)(state + 0x3C) = (s32)((f32)velocity +
+            (f32)(s32)((u32)target - (u32)velocity) * D_800A2FAC);
+    }
+    *(s16 *)(state + 0x12) = (s32)(*(f32 *)(state + 0x7C) + (f32)*(s32 *)(state + 0x3C));
+    *(s16 *)(state + 0x5C) = *(s16 *)(state + 0x12) - oldY;
 }
 
 
