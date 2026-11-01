@@ -100,7 +100,7 @@ All 6,055 other function bodies and all addresses are fixed. Protected Game
 data is byte-exact across 189,088 bytes and 720 owners.
 
 Changing the shared guard CSV caused normal Make to rebuild dependent
-objects. Only `sinf.c.o` differed outside the target. Its previously stale
+objects. The focused fixture caught `sinf.c.o` outside the target. Its previously stale
 undefined `D_800BE358` size 8 became 128, matching the already existing
 `variables.h` declaration; the debug array upper bound and external size
 followed, and debug timestamp/header-size records refreshed. Exactly 210
@@ -109,6 +109,16 @@ constructor predicts every changed byte from the frozen predecessor. All
 other sections, its function body and bindings are identical. Its metadata
 does not change the literal whole-ELF prediction. This dependency is audited
 explicitly rather than excluded from the input or image checks.
+
+The subsequent full 17,365-file baseline audit also found the same stale
+EEPROM extern metadata in `debugger_258ED0.c.o`, outside the focused fixture.
+Its only changed sections are likewise `.symtab` and `.mdebug`, with the
+sole named-symbol delta being the undefined EEPROM size 8->128. Its function
+body, all bindings and every other section are identical. The independently
+predicted complete ELF remains byte-identical after this full-build audit.
+`dependent-full-build-audit-v18.json` records that additional object and
+its before/after SHA-256 values; the rebuilt object is preserved in both
+Native and WSL current baselines.
 
 Production ELF SHA-256:
 `164df1215699e8a1c71efe922af788dbe97ff180ded1ecd2770e73265b09e108`.
