@@ -115,8 +115,25 @@ s32 func_1511575C() {
     return 0;
 }
 
-s32 func_15115E0C(f32 arg0, f32 arg1, u8 *arg2) {
-    return 0;
+extern f32 D_800A2FA0, D_800A2FA4;
+f32 func_150AD780(f32);
+f32 func_150AD78C(f32);
+
+/* Apply the oriented target displacement when state flag 4 is set. */
+void func_15115E0C(u8 *state, u8 *target) {
+    f32 cosine;
+    f32 sine;
+    f32 deltaX;
+    f32 deltaZ;
+
+    cosine = func_150AD780(*(f32 *)(state + 4) * D_800A2FA0);
+    sine = func_150AD78C(*(f32 *)(state + 4) * D_800A2FA4);
+    deltaX = *(f32 *)(target + 0x14) - (f32)*(s16 *)(state + 0x10);
+    deltaZ = *(f32 *)(target + 0x1C) - (f32)*(s16 *)(state + 0x14);
+    if ((state[0x4F] & 4) == 4) {
+        *(f32 *)(state + 0x7C) += sine * deltaX + cosine * deltaZ;
+        *(f32 *)(state + 0x80) -= sine * deltaZ + cosine * deltaX;
+    }
 }
 
 void func_15115EDC(u8 *arg0, u8 *arg1) {
@@ -127,7 +144,7 @@ void func_15115EDC(u8 *arg0, u8 *arg1) {
 
     old_x = *(f32 *) (arg0 + 0x7C);
     old_z = *(f32 *) (arg0 + 0x80);
-    func_15115E0C(old_x, old_z, arg1);
+    func_15115E0C(arg0, arg1);
 
     if (*(u16 *) (arg1 + 0x84) == 0x4B) {
         x = *(f32 *) (arg0 + 0x7C);
