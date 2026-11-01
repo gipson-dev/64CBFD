@@ -24679,3 +24679,9 @@ generated_142560,func_1511617C,0x128,0x46062280,0x46085480,-,-,Normalize height 
 generated_142560,func_1511617C,0x12C,0x4600520D,0x4600910D,-,-,Normalize height response closed private frame and FP allocation,,,false
 generated_142560,func_1511617C,0x130,0x44084000,0x44082000,-,-,Normalize height response closed private frame and FP allocation,,,false
 generated_142560,func_1511617C,0x154,0x27BD0020,0x27BD0028,-,-,Normalize height response closed private frame and FP allocation,,,false
+generated_142560,func_151163C0,0x010,0x304E00FF,0x305800FF,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
+generated_142560,func_151163C0,0x014,0x448E2000,0x44982000,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
+generated_142560,func_151163C0,0x028,0x00027C03,0x00027403,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
+generated_142560,func_151163C0,0x030,0x31F800FF,0x31CF00FF,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
+generated_142560,func_151163C0,0x038,0xE7A6002C,0xAFAF0028,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
+generated_142560,func_151163C0,0x03C,0xAFB80028,0xE7A6002C,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false

@@ -272,8 +272,25 @@ void func_151162D4(CosineHeightRecord *record) {
     record->delta = (s32)(((f32)record->height + offset) - (f32)previousHeight);
 }
 
-s32 func_151163C0() {
-    return 0;
+extern f32 D_800A2FB0, D_800A2FB4;
+
+/* Apply the packed cosine amplitudes and phase steps, then publish both deltas. */
+void func_151163C0(u8 *state) {
+    f32 amplitude = (f32)((*(s32 *)(state + 0x3C)) & 0xFF);
+    u32 firstStep = ((*(s32 *)(state + 0x3C)) >> 16) & 0xFF;
+    u32 secondStep = ((*(s32 *)(state + 0x3C)) >> 24) & 0xFF;
+    f32 angleAmplitude = (f32)(u32)(((*(s32 *)(state + 0x3C)) >> 8) & 0xFF) * 1.40625f;
+    s16 previousY = *(s16 *)(state + 0x12);
+    f32 previousAngle = *(f32 *)state;
+    f32 angle;
+
+    *(f32 *)(state + 0x18) = cosf((f32)*(s32 *)(state + 0x7C) * D_800A2FB0) * amplitude;
+    angle = cosf((f32)*(s32 *)(state + 0x80) * D_800A2FB4) * angleAmplitude;
+    *(f32 *)state = angle;
+    *(u32 *)(state + 0x7C) += firstStep * (u32)D_800BE9E4;
+    *(u32 *)(state + 0x80) += secondStep * (u32)D_800BE9E4;
+    *(s16 *)(state + 0x5C) = *(s16 *)(state + 0x12) - previousY;
+    *(f32 *)(state + 0x60) = angle - previousAngle;
 }
 
 s32 func_1511650C() {
