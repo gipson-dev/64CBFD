@@ -3,6 +3,10 @@
 #include "functions.h"
 #include "variables.h"
 
+s32 func_1507CD64(struct127 *, s32);
+void func_1517F488(s32,s32,s32,s32,s32,s32);
+
+
 void func_15192800(void *, s32);
 void func_151D0058(void *, u8, u8, s32);
 
@@ -40,7 +44,7 @@ s32 func_1507342C();
 s32 func_15073A50();
 void func_15073B38(void);
 s32 func_15073FA0();
-s32 func_150746F0();
+void func_150746F0(void);
 s32 func_15074C80();
 s32 func_1507515C();
 /* End generated placeholder declarations. */
@@ -1938,9 +1942,32 @@ void func_15074664(void) {
         attached->unk94 = D_800D1580;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_150746F0.s. */
-s32 func_150746F0() {
-    return 0;
+/* Apply the command amount to the selected actor and submit its resulting effect. */
+void func_150746F0(void) {
+    struct127 *actor;
+
+    actor = NULL;
+    if (D_800BE616 != 0) {
+        actor = D_800D154C;
+    } else if (D_800D154C->unk13C != 0) {
+        actor = D_800CC2D0;
+    }
+    if (actor != NULL) {
+        if (actor->health <= D_800D1580) {
+            actor->health = 0;
+            D_800D154C->health = 0;
+            if (actor->interaction_state == 1) {
+                actor->immune = 0xFF;
+                func_1507CD64(actor, 6);
+            }
+        } else {
+            actor->health -= (u32)D_800D1580;
+            /* Effect state exposes an enable byte at offset 0x197. */
+            if ((actor->unk31C != NULL) && (actor->camera != NULL) && (((u8 *)actor->unk31C)[0x197] != 0)) {
+                func_1517F488(0xFF, 0, 0, 0xB4, 0x14, actor->camera->unk23D);
+            }
+        }
+    }
 }
 void func_150747E4(void) {
     struct127 *temp_a0;
