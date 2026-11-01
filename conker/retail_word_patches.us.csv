@@ -24720,3 +24720,5 @@ game_A28B0,func_15076D3C,0x05C,0x3C010000,0x000C3C03,R_MIPS_HI16:D_8009A144,-,No
 game_A28B0,func_15076D3C,0x060,0xC4200000,0x44875000,R_MIPS_LO16:D_8009A144,-,Normalize packed scale independent coefficient-load schedule,,,false
 game_A28B0,func_15076D3C,0x064,0x46805420,0x8C4F0000,-,-,Normalize packed scale independent coefficient-load schedule,,,false
 game_A28B0,func_15076D3C,0x068,0x8C4F0000,0x46805420,-,-,Normalize packed scale independent coefficient-load schedule,,,false
+game_83300,func_1505A184,0x08C,0xE7AC0024,0xE7AC0020,-,-,Normalize paired private yaw-angle spill slot,,,false
+game_83300,func_1505A184,0x090,0xC7AC0024,0xC7AC0020,-,-,Normalize paired private yaw-angle spill slot,,,false

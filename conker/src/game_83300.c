@@ -711,17 +711,21 @@ s32 func_150597FC() {
 s32 func_15059C84(s32 arg0) {
     return 0;
 }
-void func_1505A184(u16 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4, f32 *arg5) {
-    f32 scaled_dist = arg1 * 0.5f;
-    f32 angle = arg2 * D_800994B8;
-    f32 tmp;
+/* Form X/Z/Y offsets with captured pitch and yaw trig results. */
+void func_1505A184(u16 yaw, f32 distance, f32 pitch, f32 *x, f32 *z, f32 *y) {
+    f32 cosine;
+    f32 sine;
+    f32 yawAngle;
 
-    *arg5 = func_150AD78C(angle) * -scaled_dist;
-    tmp = func_150AD780(angle) * scaled_dist;
-
-    angle = (f32)arg0 * D_800994BC;
-    *arg4 = func_150AD780(angle) * tmp;
-    *arg3 = -func_150AD78C(angle) * tmp;
+    distance *= 0.5f;
+    pitch *= D_800994B8;
+    *y = func_150AD78C(pitch) * -distance;
+    distance = func_150AD780(pitch) * distance;
+    yawAngle = (f32)(u32)yaw * D_800994BC;
+    cosine = func_150AD780(yawAngle);
+    sine = func_150AD78C(yawAngle);
+    *x = cosine * distance;
+    *z = -sine * distance;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505A250.s. */
 void func_1505A250(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4) {
