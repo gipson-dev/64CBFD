@@ -18,10 +18,12 @@ typedef struct {
 } ScriptListC8950;
 #define SCRIPT_LIST_C8950 (*(ScriptListC8950 *)&D_800D2F48)
 
+s32 allocate_memory(s32 size, s32 color, s32 side, s32 flags);
+
 /* Generated placeholder declarations. */
 s32 func_1509B5AC(s32 arg0, s32 arg1);
 void func_1509B810(ScriptNodeC8950 *node);
-s32 func_1509B950(s32 arg0);
+struct248 *func_1509B950(struct248 *block);
 s32 func_1509BA04();
 s32 func_1509BBA0();
 s32 func_1509BE40();
@@ -173,9 +175,31 @@ void func_1509B8FC(s16 arg0) {
     func_1509B950(temp_v0);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B950.s. */
-s32 func_1509B950(s32 arg0) {
-    return 0;
+/* Append a zeroed tail at the next eight-byte boundary and release the source.
+ * Both alignments advance a full eight bytes when already aligned.
+ * Keep header updates before allocation and reload fields after helper calls. */
+struct248 *func_1509B950(struct248 *block) {
+    s32 alignmentPadding;
+    u32 tailOffset;
+    u32 newSize;
+    u32 tailSize;
+    struct248 *copy;
+
+    tailSize = block->unk6;
+    alignmentPadding = 8 - (((u32)block + block->unk4) & 7);
+    tailOffset = block->unk4 + alignmentPadding;
+    newSize = tailOffset + tailSize;
+    block->unk4 = newSize;
+    block->unkA = tailOffset;
+    block->unk4 = block->unk4 - (((u32)block + block->unk4) & 7) + 8;
+    copy = (struct248 *)allocate_memory(block->unk4, 255, 2, 0);
+    if (copy == NULL) {
+        for (;;) {}
+    }
+    bcopy(block, copy, block->unk4);
+    bzero((u8 *)copy + copy->unkA, copy->unk6);
+    func_10004074(block);
+    return copy;
 }
 
 /* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BA04.s. */

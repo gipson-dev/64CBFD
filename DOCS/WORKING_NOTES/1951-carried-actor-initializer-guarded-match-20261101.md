@@ -153,3 +153,7 @@ Next inspect **func_150A76F0**, owner `generated_D4450`, the smallest remaining
 C placeholder in the fresh live recount: **32 retail words / 29 differences**.
 Read its complete assembly, ABI and callers before choosing C source. The 75%
 goal stays active. No Claude calls, pushes, host/editor or Release changes.
+
+Continuation correction: [Note 1952](1952-aligned-zero-tail-guarded-match-20261101.md) supersedes the
+func_150A76F0 queue recommendation above. That routine is handwritten custom-ABI
+assembly and remains in the separate register-contract workstream.
