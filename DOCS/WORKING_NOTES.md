@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**X=-Z plane interpolation restored directly from C**: [Note 1935](WORKING_NOTES/1935-negative-xz-plane-interpolation-direct-match-20261101.md). `func_1518557C` emits all 64 words with no frame, relocations or guards. Signed plane arithmetic, X/Z/Y stores, output aliases, the original classifier and complete polygon caller, native controls, 31 neighbors, actual Make and strict production image pass. Total **4,010/5,506 (72.83%)**, Game **3,337/4,833 (69.05%)**, zero drift; **120** more to 75%. Next screen `func_15185454`; private candidates remain uncredited.
+
 **X=Z plane interpolation restored directly from C**: [Note 1934](WORKING_NOTES/1934-xz-plane-interpolation-direct-match-20261101.md). `func_151857DC` emits all 62 words with no frame, relocations or guards. Finite arithmetic, X/Z/Y store order, output aliases, the original classifier and complete polygon caller, native controls, 31 neighbors, actual Make and strict production image pass. Total **4,009/5,506 (72.81%)**, Game **3,336/4,833 (69.03%)**, zero drift; **121** more to 75%. Next screen `func_1518557C`; private candidates remain uncredited.
 
 **Polygon plane clipping restored directly from C**: [Note 1933](WORKING_NOTES/1933-polygon-plane-clip-direct-match-20261031.md). `func_15185DD4` emits all 84 words and four bindings with zero guards. All ten table entries, 18 original callbacks, four caller windows, native mutation/control cases, 31 neighbors, actual Make and strict production image pass. Total **4,008/5,506 (72.79%)**, Game **3,335/4,833 (69.00%)**, zero drift; **122** more to 75%. Next screen `func_151857DC`; private candidates remain uncredited.

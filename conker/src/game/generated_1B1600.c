@@ -35,8 +35,17 @@ s32 func_15185554(f32 *arg0) {
     return arg0[2] < arg0[1];
 }
 
-s32 func_1518557C() {
-    return 0;
+/* Interpolate the X=-Z crossing and advance the output vertex cursor. */
+ClipVertex *func_1518557C(ClipVertex *a, ClipVertex *b, ClipVertex *out) {
+    f32 ratio;
+    ratio = (a->z + a->x) / ((a->x - b->x) + (a->z - b->z));
+    out->x = a->x + (b->x - a->x) * ratio;
+    out->y = a->y + (b->y - a->y) * ratio;
+    out->z = -out->x;
+    out->first = a->first + (b->first - a->first) * ratio;
+    out->second = a->second + (b->second - a->second) * ratio;
+    out->third = a->third + (b->third - a->third) * ratio;
+    return out + 1;
 }
 
 s32 func_1518567C(f32 *arg0) {
