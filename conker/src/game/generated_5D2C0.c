@@ -56,7 +56,7 @@ extern f32 D_80097B68;
 
 s32 func_1503195C();
 
-s32 func_15030310();
+s32 func_15030310(u8 *, s32, u32);
 
 extern u8 D_800DF7D0[];
 extern s32 *D_800DF9B8[];
@@ -213,11 +213,40 @@ void func_15030158(u8 *node, s32 immediate) {
 }
 
 void func_150302F0(register s32 arg0, register s32 arg1) {
-    func_15030310(arg0, arg1, 0xFF);
+    func_15030310((u8 *)arg0, arg1, 0xFF);
 }
 
-s32 func_15030310() {
-    return 0;
+/* Release one indexed match, or all matches for the 0xFF sentinel. */
+s32 func_15030310(u8 *actor, s32 filter, u32 skip) {
+    u8 *current;
+    u8 *next;
+    s32 released;
+
+    if (actor[0x3B] == 0) {
+        return 0;
+    }
+    current = D_800C3EE0;
+    released = 0;
+    if (current != NULL) {
+        do {
+            next = *(u8 **)(current + 0x54);
+            if (actor[0x3B] == current[0] && filter == current[6]) {
+                if (skip != 0xFF && skip != 0) {
+                    skip--;
+                    current = next;
+                    continue;
+                } else {
+                    func_15030158(current, 0);
+                    released = 1;
+                    if (skip == 0) {
+                        break;
+                    }
+                }
+            }
+            current = next;
+        } while (current != NULL);
+    }
+    return released;
 }
 
 s32 func_150303E4(u8 *arg0) {
