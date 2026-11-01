@@ -655,8 +655,26 @@ s32 func_1511BEBC() {
 void func_1511C540() {
 }
 
-s32 func_1511C548() {
-    return 0;
+extern f32 D_800BE9A4,D_800A31EC,D_800A31F0;
+f32 func_15144B68(f32);
+
+/* Update paired sine outputs and wrapped phases, preserving the zero fallback. */
+void func_1511C548(u8 *state) {
+    f32 second;
+    f32 first;
+
+    first = sinf(*(f32 *)(state + 0x80));
+    second = sinf(*(f32 *)(state + 0x84));
+    *(f32 *)state = first * 16.0f;
+    *(f32 *)(state + 8) = second * 16.0f;
+    *(f32 *)(state + 0x80) += D_800A31EC * D_800BE9A4;
+    *(f32 *)(state + 0x84) += D_800A31F0 * D_800BE9A4;
+    *(f32 *)(state + 0x80) = func_15144B68(*(f32 *)(state + 0x80));
+    *(f32 *)(state + 0x84) = func_15144B68(*(f32 *)(state + 0x84));
+    if (0.0f == *(f32 *)(state + 8) && 0.0f == *(f32 *)(state + 0x84)) {
+        *(f32 *)state = 7.5f;
+        *(f32 *)(state + 8) = 8.0f;
+    }
 }
 
 s32 func_1511C638() {
