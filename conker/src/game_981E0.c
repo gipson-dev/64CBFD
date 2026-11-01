@@ -22,7 +22,7 @@ void func_1506C32C(void);
 s32 func_1506CE6C();
 s32 func_1506D2E8();
 s32 func_1506D584();
-s32 func_1506D958();
+void func_1506D958(void);
 s32 func_1506DE84();
 s32 func_1506E0EC();
 s32 func_1506E2CC();
@@ -626,9 +626,23 @@ void func_1506D934(void) {
 
 void func_1506D950(void) {
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506D958.s. */
-s32 func_1506D958() {
-    return 0;
+/* Clear bit zero, then apply the packed high byte to the first matching owner/tag record. */
+void func_1506D958(void) {
+    s32 flagBits;
+    s32 matchByte;
+    s32 slot;
+
+    matchByte = D_800D1580 & 0xFF;
+    flagBits = (D_800D1580 >> 8) & 0xFF;
+    for (slot = 0; slot < 25; slot++) {
+        if ((D_800CC2D0[slot].interaction_state != 0) &&
+            (D_800CC2D0[slot].unkAB == matchByte) &&
+            (D_800CC2D0[slot].unk65 == D_800C3E78 + 1)) {
+            D_800CC2D0[slot].unk101 &= ~1;
+            D_800CC2D0[slot].unk101 |= flagBits;
+            return;
+        }
+    }
 }
 void func_1506DA78(void) {
     D_800D154C->immune = D_800D1580;
