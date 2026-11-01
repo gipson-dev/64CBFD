@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Private scalar smoother behavior qualified; byte matching pending**: [Note 1940](WORKING_NOTES/1940-scalar-smoother-private-semantics-and-codegen-boundary-20261101.md). `func_150495B0` agrees with retail in 1,072 finite guest cases and native O0/O2/O3 controls, including pointer aliases. All 67 JAL sites are owned by original assembly. The best ordinary C remains 55 words/frame 16 versus retail 54/frame 24, with 38 differences; it is uninstalled and uncredited. Total stays **4,014/5,506 (72.90%)**, **116** more to 75%. Continue compiler lifetime diagnostics and actual caller qualification.
+
 **Near depth-plane interpolation restored directly from C**: [Note 1939](WORKING_NOTES/1939-near-depth-plane-interpolation-direct-match-20261101.md). `func_15185A28` emits all 64 words and two bindings without guards. Live loads, global rebases, native controls, its original classifier and complete polygon caller, 31 neighbors, actual Make and strict image pass. All 18 plane callbacks now match all 608 original words. Total **4,014/5,506 (72.90%)**, Game **3,341/4,833 (69.13%)**, zero drift; **116** more to 75%. Next screen `func_150495B0`; private candidates remain uncredited.
 
 **Far depth-plane interpolation restored directly from C**: [Note 1938](WORKING_NOTES/1938-far-depth-plane-interpolation-direct-match-20261101.md). `func_151858FC` emits all 64 words and two bindings without guards. Live depth reloads, signed-low16 global rebases, finite guest/native cases, the original classifier and complete polygon caller, 31 neighbors, actual Make and strict image pass. Total **4,013/5,506 (72.88%)**, Game **3,340/4,833 (69.11%)**, zero drift; **117** more to 75%. Next screen `func_15185A28`; private candidates remain uncredited.

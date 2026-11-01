@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `8b6940f`; tools are committed before the consumer pin.
+  checkpoint pins tools `9558afc`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Private scalar smoother behavior qualified; byte matching pending**: [Note 1940](WORKING_NOTES/1940-scalar-smoother-private-semantics-and-codegen-boundary-20261101.md). `func_150495B0` agrees with retail in 1,072 finite guest cases and native O0/O2/O3 controls, including pointer aliases. All 67 JAL sites are owned by original assembly. The best ordinary C remains 55 words/frame 16 versus retail 54/frame 24, with 38 differences; it is uninstalled and uncredited. Total stays **4,014/5,506 (72.90%)**, **116** more to 75%. Continue compiler lifetime diagnostics and actual caller qualification.
 
 **Near depth-plane interpolation restored directly from C**: [Note 1939](WORKING_NOTES/1939-near-depth-plane-interpolation-direct-match-20261101.md). `func_15185A28` emits all 64 words and two bindings without guards. Live loads, global rebases, native controls, its original classifier and complete polygon caller, 31 neighbors, actual Make and strict image pass. All 18 plane callbacks now match all 608 original words. Total **4,014/5,506 (72.90%)**, Game **3,341/4,833 (69.13%)**, zero drift; **116** more to 75%. Next screen `func_150495B0`; private candidates remain uncredited.
 
