@@ -1,5 +1,11 @@
 #include <ultra64.h>
 
+typedef struct {
+    f32 x, y, z;
+    s16 first, second, third;
+    u8 retained[2];
+} ClipVertex;
+
 /* Non-matching placeholders for the text-only asm slice asm/1B1600.s. */
 
 extern f32 D_800D3688;
@@ -45,8 +51,17 @@ s32 func_151857B0(f32 *arg0) {
     return arg0[1] < -arg0[2];
 }
 
-s32 func_151857DC() {
-    return 0;
+/* Interpolate the X=Z crossing and advance the output vertex cursor. */
+ClipVertex *func_151857DC(ClipVertex *a, ClipVertex *b, ClipVertex *out) {
+    f32 ratio;
+    ratio = (a->z - a->x) / ((b->x - a->x) - (b->z - a->z));
+    out->x = a->x + (b->x - a->x) * ratio;
+    out->y = a->y + (b->y - a->y) * ratio;
+    out->z = out->x;
+    out->first = a->first + (b->first - a->first) * ratio;
+    out->second = a->second + (b->second - a->second) * ratio;
+    out->third = a->third + (b->third - a->third) * ratio;
+    return out + 1;
 }
 
 s32 func_151858D4(f32 *arg0) {
@@ -69,11 +84,6 @@ s32 func_15185B28(f32 *arg0) {
     return arg0[2] < D_800D368C;
 }
 
-typedef struct {
-    f32 x, y, z;
-    s16 first, second, third;
-    u8 retained[2];
-} ClipVertex;
 
 /* Interpolate the X=0 crossing and advance the output vertex cursor. */
 ClipVertex *func_15185B54(ClipVertex *a, ClipVertex *b, ClipVertex *out) {

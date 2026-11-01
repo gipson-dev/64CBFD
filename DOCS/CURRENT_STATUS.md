@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Last verified: 2026-10-31
+Last verified: 2026-11-01
 
 **Unfinished allocator**: [Note 1825](WORKING_NOTES/1825-byte-transition-slot-private-audit-20261029.md). `func_15187EC0` remains private and uncredited; its mode-home lifetime and instruction scheduling are unresolved.
 
@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `f7e5208`; tools are committed before the consumer pin.
+  checkpoint pins tools `3912ea7`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**X=Z plane interpolation restored directly from C**: [Note 1934](WORKING_NOTES/1934-xz-plane-interpolation-direct-match-20261101.md). `func_151857DC` emits all 62 words with no frame, relocations or guards. Finite arithmetic, X/Z/Y store order, output aliases, the original classifier and complete polygon caller, native controls, 31 neighbors, actual Make and strict production image pass. Total **4,009/5,506 (72.81%)**, Game **3,336/4,833 (69.03%)**, zero drift; **121** more to 75%. Next screen `func_1518557C`; private candidates remain uncredited.
 
 **Polygon plane clipping restored directly from C**: [Note 1933](WORKING_NOTES/1933-polygon-plane-clip-direct-match-20261031.md). `func_15185DD4` emits all 84 words and four bindings with zero guards. All ten table entries, 18 original callbacks, four caller windows, native mutation/control cases, 31 neighbors, actual Make and strict production image pass. Total **4,008/5,506 (72.79%)**, Game **3,335/4,833 (69.00%)**, zero drift; **122** more to 75%. Next screen `func_151857DC`; private candidates remain uncredited.
 
