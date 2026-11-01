@@ -12,6 +12,8 @@ void func_1517F488(s32,s32,s32,s32,s32,s32);
 void func_15192800(void *, s32);
 void func_151D0058(void *, u8, u8, s32);
 
+void func_151B5BA0(struct127 *owner, struct127 *carried);
+
 /* Generated placeholder declarations. */
 s32 func_1506AD30();
 s32 func_1506B3B8();
@@ -37,7 +39,7 @@ s32 func_15070F60(s32 arg0);
 s32 func_15071B18();
 s32 func_15071FDC();
 s32 func_15072420();
-s32 func_1507266C();
+void func_1507266C(void);
 s32 func_150727F0();
 void func_15072B44(void);
 s32 func_15072F10();
@@ -1665,9 +1667,32 @@ void func_150723E0(void) {
 /* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15072420.s. */
 /* Note 454: original carried actor creation and owned script event. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_15072420.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1507266C.s. */
-/* Note 454: original carried actor attachment/effect. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_981E0/func_1507266C.s")
+/* Initialize the carried actor from the packed command, then notify its owner. */
+void func_1507266C(void) {
+    s32 parameter;
+    s32 command;
+    struct127 *carried;
+
+    if (D_800BE616 || D_800D154C->unk222) {
+        carried = &D_800CC2D0[D_800D154C->unk222];
+        parameter = D_800D1580 >> 16;
+        command = D_800D1580;
+        carried->unk65 = D_800C3E78 + 1;
+        carried->unk5C = parameter;
+        carried->unk101 = 4;
+        carried->stunned = 0;
+        carried->immune = 255;
+        carried->unk218 = 0;
+        carried->unkE4 = 0;
+        carried->unkE6 = 0;
+        carried->unk232 = command;
+        carried->unkEC = 1.0f;
+        carried->unkF0 = 1.0f;
+        carried->unkDC = 1.0f;
+        carried->unkE0 = 1.0f;
+        func_151B5BA0(&D_800CC2D0[D_800C3E78],carried);
+    }
+}
 void func_15072740(void) {
     s32 temp_v0;
     struct127 *temp_v1;

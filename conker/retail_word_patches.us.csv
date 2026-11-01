@@ -24626,3 +24626,7 @@ generated_17CAF0,func_15154C90,0x9c,0x004E082A,0x006E082A,-,-,Normalize closed l
 generated_17CAF0,func_15154C90,0xb0,0x01E20019,0x006F0019,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
 generated_17CAF0,func_15154C90,0xb4,0x00001812,0x00001012,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
 generated_17CAF0,func_15154C90,0xb8,0x0003C400,0x0002C400,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+game_981E0,func_1507266C,0x4C,0x8C420000,0x8C430000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Normalize closed carried initializer command register lifetimes,,,false
+game_981E0,func_1507266C,0x68,0x00021C03,0x00033403,-,-,Normalize closed carried initializer command register lifetimes,,,false
+game_981E0,func_1507266C,0x7C,0xACA3005C,0xACA6005C,-,-,Normalize closed carried initializer command register lifetimes,,,false
+game_981E0,func_1507266C,0x98,0xA0A20232,0xA0A30232,-,-,Normalize closed carried initializer command register lifetimes,,,false
