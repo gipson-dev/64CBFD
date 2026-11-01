@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Attached cash-label callback restored**: [Note 1926](WORKING_NOTES/1926-attached-cash-label-guarded-match-20261031.md). `func_151D7000` matches all 51 words and six bindings after ten closed signed-clamp/control-flow/private-spill guards. The complete parent, original text emitters, exhaustive low16 proof, native controls, six neighbors, actual Make and strict production image pass. Total **4,001/5,506 (72.67%)**, Game **3,328/4,833 (68.86%)**, zero drift; **129** more to 75%. Next screen `func_15154C90`; private candidates remain uncredited.
+
 **Compiler trace and private callback triage banked**: [Note 1925](WORKING_NOTES/1925-byte-lifetime-compiler-trace-and-private-triage-20261031.md). Fingerprinted CFE/UOPT captures show why `func_15115F68`'s early byte assignments are removed. The next label-fade screen, `func_151D7000`, emits 51 words with 15 differences; branch/spill and helper-return ABI questions remain. No private screen is installed or credited. Production stays **4,000/5,506 (72.65%)**, **130** more to 75%.
 
 **Retail callback attribution corrected**: [Note 1924](WORKING_NOTES/1924-retail-callback-table-attribution-correction-20261031.md). Physical Game-data mapping places `func_15073B38` in `D_800863FC[138]` and `func_151638E0` in `D_8008B0F0[16]`. The latter uses the original 41-word `func_151603FC` dispatcher, which consumes its return value. Both corrected pairs pass 32 fresh target tests and both shared checks. Production bytes and **4,000/5,506 (72.65%)** are unchanged; **130** more to 75%.

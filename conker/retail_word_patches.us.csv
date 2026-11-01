@@ -24609,3 +24609,13 @@ game_981E0,func_15073B38,0x0D4,0x8C790000,0x8C680000,-,-,Normalize closed tail r
 game_981E0,func_15073B38,0x0DC,0x8F28031C,0x8D09031C,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
 game_981E0,func_15073B38,0x0E0,0x000FC603,0x000FCE03,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
 game_981E0,func_15073B38,0x0E4,0xA11800AD,0xA13900AD,-,-,Normalize closed tail register allocation in packed attached-state decoder,,,false
+generated_203E20,func_151D7000,0x4c,0x5020000B,0x1020000A,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x50,0x00C02025,0x00000000,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x58,0x01040019,0x00880019,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x60,0x3049FFFF,0x00024C00,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x64,0x00095400,0x00091403,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x68,0x000A5C03,0x04430004,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x6c,0x05610002,0x00C02025,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x70,0x01201025,0x10000001,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x7c,0xA7A2001C,0xA7A2001A,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_203E20,func_151D7000,0x88,0x97A2001C,0x87A2001A,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false

@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `44366b2`; tools are committed before the consumer pin.
+  checkpoint pins tools `762ffce`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Attached cash-label callback restored**: [Note 1926](WORKING_NOTES/1926-attached-cash-label-guarded-match-20261031.md). `func_151D7000` matches all 51 words and six bindings after ten closed signed-clamp/control-flow/private-spill guards. The complete parent, original text emitters, exhaustive low16 proof, native controls, six neighbors, actual Make and strict production image pass. Total **4,001/5,506 (72.67%)**, Game **3,328/4,833 (68.86%)**, zero drift; **129** more to 75%. Next screen `func_15154C90`; private candidates remain uncredited.
 
 **Retail callback attribution corrected**: [Note 1924](WORKING_NOTES/1924-retail-callback-table-attribution-correction-20261031.md). Physical Game-data mapping places `func_15073B38` in `D_800863FC[138]` and `func_151638E0` in `D_8008B0F0[16]`. The latter uses the original 41-word `func_151603FC` dispatcher, which consumes its return value. Both corrected pairs pass 32 fresh target tests and both shared checks. Production bytes and **4,000/5,506 (72.65%)** are unchanged; **130** more to 75%.
 
