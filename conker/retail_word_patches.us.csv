@@ -24722,3 +24722,5 @@ game_A28B0,func_15076D3C,0x064,0x46805420,0x8C4F0000,-,-,Normalize packed scale 
 game_A28B0,func_15076D3C,0x068,0x8C4F0000,0x46805420,-,-,Normalize packed scale independent coefficient-load schedule,,,false
 game_83300,func_1505A184,0x08C,0xE7AC0024,0xE7AC0020,-,-,Normalize paired private yaw-angle spill slot,,,false
 game_83300,func_1505A184,0x090,0xC7AC0024,0xC7AC0020,-,-,Normalize paired private yaw-angle spill slot,,,false
+generated_1CC440,func_151A084C,0x068,0xAFA80024,0xAFA80028,-,-,Restore closed output-base spill to its retail private frame slot,,,false
+generated_1CC440,func_151A084C,0x08C,0x8FA80024,0x8FA80028,-,-,Reload closed output-base spill from its retail private frame slot,,,false

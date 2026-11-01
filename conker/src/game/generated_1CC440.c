@@ -124,8 +124,30 @@ s32 func_1519FE6C() {
     return 0;
 }
 
-s32 func_151A084C() {
-    return 0;
+/* Refresh the selected linked-state value and invalidate a completed entry. */
+void func_151A084C(struct260 *entry) {
+    u8 **link;
+    u8 *actor;
+    FourWord1CC440 *outputs;
+    u8 invalid;
+    link = (u8 **)((u8 *)entry + 0x28);
+    actor = *(u8 **)(*link + 0x18);
+    outputs = (FourWord1CC440 *)(*link + 0x58);
+    invalid = 0;
+    if (*(s32 *)actor == 0) invalid = 1;
+    if ((*link)[0x1C] != actor[0x3B]) invalid = 1;
+    if (invalid == 0 && *(s32 *)(actor + 0x1D4) != 0) {
+        s32 result;
+        invalid = 1;
+        result = func_1519F1C8(*link, ((u8 *)link)[4]);
+        if (((u8 *)link)[4] == 6) outputs->first = result;
+        else outputs->third = result;
+    }
+    if (invalid) {
+        func_151A0928((u8 *)entry);
+        entry->unkE = -1;
+        entry->unkD |= 1;
+    }
 }
 
 void func_151A0928(u8 *arg0) {
