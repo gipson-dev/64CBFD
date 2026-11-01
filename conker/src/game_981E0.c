@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+s32 func_151EF610(void);
+
 s32 func_1507CD64(struct127 *, s32);
 void func_1517F488(s32,s32,s32,s32,s32,s32);
 
@@ -14,7 +16,7 @@ void func_151D0058(void *, u8, u8, s32);
 s32 func_1506AD30();
 s32 func_1506B3B8();
 void func_1506B634(u8 choiceCount);
-s32 func_1506BCC8();
+void func_1506BCC8(void);
 s32 func_1506BF5C();
 void func_1506C32C(void);
 s32 func_1506CE6C();
@@ -395,10 +397,26 @@ void func_1506BCA0(void) {
     D_800D154C->y_velocity = D_800D1580;
 }
 
-// ???
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506BCC8.s. */
-s32 func_1506BCC8() {
-    return 0;
+/* Apply vertical velocity at the reference height, with state-22 random scaling. */
+void func_1506BCC8(void) {
+    f32 heightDifference;
+
+    if (D_800D154C->interaction_state == 0x16) {
+        if (D_800D154C->y_position == D_800D154C->unk180) {
+            /* Add with retail 32-bit wrapping before the signed float conversion. */
+            D_800D154C->y_velocity = (f32)(s32)((u32)(func_151EF610() % 8) + (u32)D_800D1580);
+            if (D_800D154C->xz_velocity != 0.0f) {
+                D_800D154C->y_velocity *= D_800D154C->xz_velocity / 40.0f;
+            } else {
+                D_800D154C->y_velocity = 0.0f;
+            }
+        }
+    } else {
+        heightDifference = D_800D154C->y_position - D_800D154C->unk180;
+        if ((-5.0f < heightDifference) && (heightDifference < 5.0f)) {
+            D_800D154C->y_velocity = (f32)D_800D1580;
+        }
+    }
 }
 void func_1506BDE8(void) {
     if (D_800D154C->y_position < D_80099C40) {
