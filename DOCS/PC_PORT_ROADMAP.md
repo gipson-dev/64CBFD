@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+**Scalar smoother caller windows qualified; compiler mismatch remains**: [Note 1941](WORKING_NOTES/1941-scalar-smoother-caller-windows-and-ucode-lifetimes-20261101.md). Three original windows cover five call sites, including caller stack position and both outgoing float homes; 3,216 executions and six effective controls pass. CFE/UOPT captures identify cached deltaTime and two next-position reloads; six further declaration-home variants are ineffective. Four focused tests per tools copy and both shared checks pass. Candidate stays private at 55 words/frame 16/38 differences; production stays **4,014/5,506 (72.90%)**, **116** more to 75%.
+
 ## Total C Matching To 75% - 2026-10-20
 
 - [x] **Private scalar smoother behavior qualified; byte matching pending**: [Note 1940](WORKING_NOTES/1940-scalar-smoother-private-semantics-and-codegen-boundary-20261101.md). `func_150495B0` agrees with retail in 1,072 finite guest cases and native O0/O2/O3 controls, including pointer aliases. All 67 JAL sites are owned by original assembly. The best ordinary C remains 55 words/frame 16 versus retail 54/frame 24, with 38 differences; it is uninstalled and uncredited. Total stays **4,014/5,506 (72.90%)**, **116** more to 75%. Continue compiler lifetime diagnostics and actual caller qualification.
