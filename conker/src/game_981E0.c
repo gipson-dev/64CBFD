@@ -1584,9 +1584,24 @@ void func_150721A4(void) {
 struct127 *func_150721E8(struct127 *arg0) {
     return func_15072208(arg0, 0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15072208.s. */
-struct127 * func_15072208(struct127 *arg0, s32 arg1) {
-    return 0;
+/* Return the zero-based ordinal match for the owner's one-based actor link.
+ * Slot 25 is the pool sentinel; only slots 0 through 24 are searched. */
+struct127 *func_15072208(struct127 *owner, s32 ordinal) {
+    s32 ownerIndex;
+    s32 matchIndex;
+    s32 slot;
+
+    ownerIndex = owner - D_800CC2D0 + 1;
+    matchIndex = 0;
+    for (slot = 0; slot < 25; slot++) {
+        if (D_800CC2D0[slot].unk65 == ownerIndex) {
+            if (matchIndex == ordinal) {
+                return &D_800CC2D0[slot];
+            }
+            matchIndex++;
+        }
+    }
+    return NULL;
 }
 void func_150722F0(void) {
     struct127 *temp_v0 = func_150721E8(D_800D154C);
