@@ -8,7 +8,7 @@ s32 func_1513C060();
 s32 func_1513CBF0();
 s32 func_1513CFE4();
 s32 func_1513DB00();
-s32 func_1513DF9C();
+void func_1513DF9C(void *, s32, u8);
 s32 func_1513E6E8();
 s32 func_1513E83C();
 s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
@@ -22,6 +22,7 @@ void func_151400D0(u8 *out, u8 *input);
 Vtx *func_15140190(u8 *actor, s16 view);
 Vtx *func_15140410(u8 *actor, f32 *widthAxis, f32 *heightAxis, s16 view);
 s32 func_151406AC(s32 token, u32 column, u32 row, s16 bypass);
+extern void (*D_80089F64[])(void *, s32, u8);
 /* End generated placeholder declarations. */
 
 void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
@@ -475,9 +476,30 @@ s32 func_1513DB00() {
     return 0;
 }
 // jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513DF9C.s. */
-s32 func_1513DF9C() {
-    return 0;
+/* Dispatch an actor event by category, using entry zero when flag 22 is clear. */
+void func_1513DF9C(void *actorPointer, s32 eventAddress, u8 command) {
+    u8 *actor = actorPointer;
+    s32 index;
+    if ((*(u32 *)(actor + 0x58) & 0x400000) == 0) {
+        index = 0;
+    } else {
+        switch (actor[0x19]) {
+        case 12: index = 10; break;
+        case 11: index = 9; break;
+        case 0:
+        case 2: index = 0; break;
+        case 1: index = 1; break;
+        case 5: index = 2; break;
+        case 6: index = 3; break;
+        case 3: index = 4; break;
+        case 7: index = 5; break;
+        case 8: index = 6; break;
+        case 9: index = 7; break;
+        case 4: index = 8; break;
+        default: index = 0; break;
+        }
+    }
+    D_80089F64[index](actor, eventAddress, command);
 }
 void func_1513E070(s32 arg0, s32 arg1, s32 arg2) {
 }

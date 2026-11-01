@@ -208,6 +208,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/entrypoint.c.o: RETAIL_RODATA_SYMBOL := jtbl_80095A30_game
 $(BUILD_DIR)/$(SRC_DIR)/game_433F0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800966C0_game
 $(BUILD_DIR)/$(SRC_DIR)/game_A9D90.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009B884_game
+$(BUILD_DIR)/$(SRC_DIR)/game_169510.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A5188_game
 # Actor classification emits the original two-table pool at one fixed anchor.
 $(BUILD_DIR)/$(SRC_DIR)/game_16EE20.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A5218_game
 $(BUILD_DIR)/$(SRC_DIR)/game_16EE20.c.o: Makefile
