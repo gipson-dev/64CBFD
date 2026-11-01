@@ -24687,3 +24687,11 @@ generated_142560,func_151163C0,0x038,0xE7A6002C,0xAFAF0028,-,-,Normalize packed 
 generated_142560,func_151163C0,0x03C,0xAFB80028,0xE7A6002C,-,-,Normalize packed cosine dead temporaries and independent capture stores,,,false
 generated_142560,func_1511C548,0x098,0xC6060008,0xE6000084,-,-,Normalize paired sine independent output store and load,,,false
 generated_142560,func_1511C548,0x09C,0xE6000084,0xC6060008,-,-,Normalize paired sine independent output store and load,,,false
+generated_142560,func_1511AF30,0x030,0x460A4082,0x460A4302,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x034,0x460E1032,0x460E6032,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x044,0x460E1301,0x460E6081,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x054,0x46006005,0x46001005,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x06C,0xE482007C,0xE48C007C,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x078,0x4612603C,0x4612103C,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x09C,0x460E3200,0x46067200,-,-,Normalize random approach closed FP registers and operand order,,,false
+generated_142560,func_1511AF30,0x128,0x46005400,0x460A0400,-,-,Normalize random approach closed FP registers and operand order,,,false

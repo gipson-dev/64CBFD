@@ -592,8 +592,39 @@ s32 func_1511A838() {
     return 0;
 }
 
-s32 func_1511AF30() {
-    return 0;
+s32 func_150ADA20(void);
+extern f32 D_800A3188,D_800A318C,D_800A3190,D_800A3194;
+
+/* Approach the command target and filter a randomized resting offset. */
+void func_1511AF30(u8 *state) {
+    f32 command = (f32)*(s32 *)(state + 0x3C);
+    f32 target = 75.0f * command * D_800A3188;
+    f32 current = *(f32 *)(state + 0x7C);
+    f32 delta;
+    s32 step;
+    s32 sample;
+    f32 resting;
+    f32 adjustment;
+
+    if (target != current) {
+        delta = target - current;
+        if (fabsf(delta) < 1.0f) {
+            *(f32 *)(state + 0x7C) = target;
+        } else {
+            step = delta < 0.0f ? -1 : 1;
+            *(f32 *)(state + 0x7C) = current + (f32)step;
+        }
+        *(f32 *)(state + 0x80) = 0.0f;
+    } else {
+        sample = (u32)func_150ADA20() % 1000U;
+        if (sample < 500) {
+            *(f32 *)(state + 0x84) = (f32)sample * 5.0f * command * D_800A318C * D_800A3190;
+        }
+        resting = *(f32 *)(state + 0x80);
+        adjustment = *(f32 *)(state + 0x84) - resting;
+        *(f32 *)(state + 0x80) = resting + adjustment * D_800A3194;
+    }
+    *(f32 *)state = *(f32 *)(state + 0x80) + *(f32 *)(state + 0x7C);
 }
 
 s32 func_1511B07C() {
