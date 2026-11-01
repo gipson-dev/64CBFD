@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Y-plane vertex interpolation restored directly from C**: [Note 1932](WORKING_NOTES/1932-y-plane-interpolation-direct-match-20261031.md). `func_15185C6C` emits all 60 words with no frame, relocations or guards. Fresh Y-axis reference/native checks, both original table classifiers, the complete polygon caller, 31 neighbors, actual Make and strict production image pass. Total **4,007/5,506 (72.78%)**, Game **3,334/4,833 (68.98%)**, zero drift; **123** more to 75%. Next screen `func_15185DD4`; private candidates remain uncredited.
+
 **X-plane vertex interpolation restored directly from C**: [Note 1931](WORKING_NOTES/1931-x-plane-interpolation-direct-match-20261031.md). `func_15185B54` emits all 60 words with no frame, relocations or guards. The complete original polygon caller, both classifiers, native conversion controls, 31 neighbors, actual Make and strict production image pass. Total **4,006/5,506 (72.76%)**, Game **3,333/4,833 (68.96%)**, zero drift; **124** more to 75%. Next screen `func_15185C6C`; private candidates remain uncredited.
 
 **Packed argument descriptor restored directly from C**: [Note 1930](WORKING_NOTES/1930-packed-argument-descriptor-direct-match-20261031.md). `func_1510A930` emits all 57 body words and five bindings with zero guards. Full-word packing, wrapping sums, the original caller/provider chain, native controls, actual Make and the complete production image pass. Total **4,005/5,506 (72.74%)**, Game **3,332/4,833 (68.94%)**, zero drift; **125** more to 75%. Next screen `func_15185B54`; private candidates remain uncredited.
