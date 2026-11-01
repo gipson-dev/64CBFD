@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `3ad93ca`; tools are committed before the consumer pin.
+  checkpoint pins tools `f7e5208`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Polygon plane clipping restored directly from C**: [Note 1933](WORKING_NOTES/1933-polygon-plane-clip-direct-match-20261031.md). `func_15185DD4` emits all 84 words and four bindings with zero guards. All ten table entries, 18 original callbacks, four caller windows, native mutation/control cases, 31 neighbors, actual Make and strict production image pass. Total **4,008/5,506 (72.79%)**, Game **3,335/4,833 (69.00%)**, zero drift; **122** more to 75%. Next screen `func_151857DC`; private candidates remain uncredited.
 
 **Y-plane vertex interpolation restored directly from C**: [Note 1932](WORKING_NOTES/1932-y-plane-interpolation-direct-match-20261031.md). `func_15185C6C` emits all 60 words with no frame, relocations or guards. Fresh Y-axis reference/native checks, both original table classifiers, the complete polygon caller, 31 neighbors, actual Make and strict production image pass. Total **4,007/5,506 (72.78%)**, Game **3,334/4,833 (68.98%)**, zero drift; **123** more to 75%. Next screen `func_15185DD4`; private candidates remain uncredited.
 

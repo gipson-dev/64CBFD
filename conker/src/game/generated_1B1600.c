@@ -117,8 +117,36 @@ s32 func_15185DAC(f32 *arg0) {
     return arg0[1] > 0.0f;
 }
 
-s32 func_15185DD4() {
-    return 0;
+typedef ClipVertex *(*ClipInterpolate)(ClipVertex *, ClipVertex *, ClipVertex *);
+typedef s32 (*ClipClassify)(ClipVertex *);
+extern ClipInterpolate D_8008D498[];
+extern ClipClassify D_8008D4C0[];
+
+/* Clip a closed polygon against the selected plane and return the output cursor. */
+ClipVertex *func_15185DD4(ClipVertex *vertices, s32 count, u32 plane, ClipVertex *out) {
+    ClipVertex *current;
+    /* Preserve the guest's word-address calculation even when count is nonpositive. */
+    ClipVertex *previous = (ClipVertex *)((u32)count * sizeof(ClipVertex) + (u32)vertices - sizeof(ClipVertex));
+    ClipInterpolate interpolate = D_8008D498[plane];
+    ClipClassify classify = D_8008D4C0[plane];
+    s32 i;
+    current = vertices;
+
+    for (i = 0; i < count; i++) {
+        if (classify(current)) {
+            if (classify(previous)) {
+                *out++ = *current;
+            } else {
+                out = interpolate(previous, current, out);
+                *out++ = *current;
+            }
+        } else if (classify(previous)) {
+            out = interpolate(previous, current, out);
+        }
+        previous = current;
+        current++;
+    }
+    return out;
 }
 
 s32 func_15185F24() {

@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Polygon plane clipping restored directly from C**: [Note 1933](WORKING_NOTES/1933-polygon-plane-clip-direct-match-20261031.md). `func_15185DD4` emits all 84 words and four bindings with zero guards. All ten table entries, 18 original callbacks, four caller windows, native mutation/control cases, 31 neighbors, actual Make and strict production image pass. Total **4,008/5,506 (72.79%)**, Game **3,335/4,833 (69.00%)**, zero drift; **122** more to 75%. Next screen `func_151857DC`; private candidates remain uncredited.
+
 **Y-plane vertex interpolation restored directly from C**: [Note 1932](WORKING_NOTES/1932-y-plane-interpolation-direct-match-20261031.md). `func_15185C6C` emits all 60 words with no frame, relocations or guards. Fresh Y-axis reference/native checks, both original table classifiers, the complete polygon caller, 31 neighbors, actual Make and strict production image pass. Total **4,007/5,506 (72.78%)**, Game **3,334/4,833 (68.98%)**, zero drift; **123** more to 75%. Next screen `func_15185DD4`; private candidates remain uncredited.
 
 **X-plane vertex interpolation restored directly from C**: [Note 1931](WORKING_NOTES/1931-x-plane-interpolation-direct-match-20261031.md). `func_15185B54` emits all 60 words with no frame, relocations or guards. The complete original polygon caller, both classifiers, native conversion controls, 31 neighbors, actual Make and strict production image pass. Total **4,006/5,506 (72.76%)**, Game **3,333/4,833 (68.96%)**, zero drift; **124** more to 75%. Next screen `func_15185C6C`; private candidates remain uncredited.
