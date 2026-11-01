@@ -906,17 +906,14 @@ void func_15077DA0(void) {
     D_800D154C->unk21E = D_800D1890;
 }
 
+/* Copy the selected signed path-node coordinates using live actor/table loads. */
 void func_15077DBC(void) {
-    PathNode8 *temp_v0;
-
     if (D_800D1890 != 0xFA) {
         D_800D154C->unk21E = D_800D1890;
     }
-
-    temp_v0 = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D154C->unk21E + 1];
-    D_800D154C->x_position = temp_v0->x;
-    D_800D154C->y_position = temp_v0->pad2;
-    D_800D154C->z_position = temp_v0->z;
+    D_800D154C->x_position = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D154C->unk21E + 1].x;
+    D_800D154C->y_position = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D154C->unk21E + 1].pad2;
+    D_800D154C->z_position = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D154C->unk21E + 1].z;
 }
 
 void func_15077E9C(void) {
