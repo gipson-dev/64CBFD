@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `424726b`; tools are committed before the consumer pin.
+  checkpoint pins tools `a410754`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Y=-Z plane interpolation restored directly from C**: [Note 1937](WORKING_NOTES/1937-negative-yz-plane-interpolation-direct-match-20261101.md). `func_151856A8` emits all 66 words with no frame, relocations or guards. X/Y/Z stores and negated-Y access order, finite guest/native cases, the original classifier and complete polygon caller, 31 neighbors, actual Make and strict production image pass. Total **4,012/5,506 (72.87%)**, Game **3,339/4,833 (69.09%)**, zero drift; **118** more to 75%. Next screen `func_151858FC`; private candidates remain uncredited.
 
 **Y=Z plane interpolation restored directly from C**: [Note 1936](WORKING_NOTES/1936-yz-plane-interpolation-direct-match-20261101.md). `func_15185454` emits all 64 words with no frame, relocations or guards. Its chained Y/Z assignment preserves the original stores; finite guest/native checks, original classifier and complete polygon caller, 31 neighbors, actual Make and strict production image pass. Total **4,011/5,506 (72.85%)**, Game **3,338/4,833 (69.07%)**, zero drift; **119** more to 75%. Next screen `func_151856A8`; private candidates remain uncredited.
 
