@@ -302,8 +302,40 @@ void func_15116930(u8 *arg0, u8 *arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_142560/func_15116BAC.s")
 
-s32 func_15116D7C() {
-    return 0;
+/* Approach three target angular velocities and wrap each updated angle once. */
+void func_15116D7C(u8 *state) {
+    f32 maxStep = (f32)*(s32 *)(state + 0x3C) * 0.00390625f;
+    f32 ticks = (f32)D_800BE9E4;
+    s32 offset = 0;
+    f32 *angle = (f32 *)state;
+    f32 *velocity = (f32 *)(state + 0x60);
+    f32 *desired = (f32 *)(state + 0x7C);
+
+    do {
+        if (*desired != *velocity) {
+            if (*velocity > *desired) {
+                *velocity -= maxStep;
+                if (*velocity < *desired) {
+                    *velocity = *desired;
+                }
+            } else {
+                *velocity += maxStep;
+                if (*velocity > *desired) {
+                    *velocity = *desired;
+                }
+            }
+        }
+        *angle += *velocity * ticks;
+        if (*angle < 0.0f) {
+            *angle += 360.0f;
+        } else if (*angle >= 360.0f) {
+            *angle -= 360.0f;
+        }
+        velocity++;
+        desired++;
+        angle++;
+        offset += 4;
+    } while (offset != 12);
 }
 
 s32 func_15116EA4() {

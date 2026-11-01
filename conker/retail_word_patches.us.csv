@@ -24638,3 +24638,17 @@ game_C8950,func_1509B950,0x40,0xA6030004,0xA6020004,-,-,Normalize closed zero ta
 game_1FFF60,func_151D3130,0x8C,0x0011402B,0x02208025,-,-,Normalize closed child-chain loop backedge and next-kind preload,,,false
 game_1FFF60,func_151D3130,0x90,0x1500FFF1,0x5620FFF2,-,-,Normalize closed child-chain loop backedge and next-kind preload,,,false
 game_1FFF60,func_151D3130,0x94,0x02208025,0x8202002A,-,-,Normalize closed child-chain loop backedge and next-kind preload,,,false
+generated_142560,func_15116D7C,0x034,0x00801825,0x00001825,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x040,0x00001025,0x00803825,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x044,0x2404000C,0x2402000C,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x048,0xC4CC0000,0xC4AE0000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x04C,0xC4AE0000,0xC4CC0000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x050,0x24420004,0x24630004,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x054,0x460E6032,0x460C7032,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x0CC,0xC4680000,0xC4E80000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x0DC,0xE4640000,0xE4E40000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x0E0,0xC46C0000,0xC4EC0000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x0FC,0xE4660000,0xE4E60000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x114,0xE4680000,0xE4E80000,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x118,0x1444FFCB,0x1462FFCB,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
+generated_142560,func_15116D7C,0x11C,0x24630004,0x24E70004,-,-,Normalize angular velocity closed loop register and independent opening schedule,,,false
