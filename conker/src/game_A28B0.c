@@ -991,20 +991,23 @@ void func_150781A4(void) {
     D_800D154C->unk242 = D_800D1893;
 }
 
+/* Branch the actor script on strict distance to the selected path node. */
 void func_150781F4(void) {
-    PathNode8 *temp_v1;
-    f32 temp_f0;
-    f32 temp_f2;
-    f32 temp_f12;
+    s32 nodeIndex;
+    PathNode8 *pathNode;
+    f32 distance;
+    f32 deltaX;
+    f32 deltaZ;
 
-    temp_v1 = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1891 + 1];
-    temp_f2 = temp_v1->x - D_800D154C->x_position;
-    temp_f12 = temp_v1->z - D_800D154C->z_position;
-    temp_f0 = sqrtf((temp_f2 * temp_f2) + (temp_f12 * temp_f12));
-    temp_f2 = D_800D1893 * 8.0f;
+    nodeIndex = D_800D1891 + 1;
+    pathNode = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][nodeIndex];
+    deltaX = pathNode->x - D_800D154C->x_position;
+    deltaZ = pathNode->z - D_800D154C->z_position;
+    distance = sqrtf((deltaX * deltaX) + (deltaZ * deltaZ));
+    deltaX = (f32)(D_800D1893 << 3);
 
-    if (((D_800D1892 == 0) && (temp_f0 < temp_f2)) ||
-        ((D_800D1892 != 0) && (temp_f2 < temp_f0))) {
+    if (((D_800D1892 == 0) && (distance < deltaX)) ||
+        ((D_800D1892 != 0) && (deltaX < distance))) {
         func_15075400(D_800D1890);
     }
 }
