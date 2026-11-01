@@ -95,8 +95,9 @@ and map, `private-owner-qualification.json`, `private-guest-runtime.json`,
 Public tool modules are `experiments/game_record_flag_effect_match.py` and
 its three test modules. Root README receives aggregate status rows only.
 
-Next bounded adjacent candidate: `func_15014220`; inspect its original 35-word
-body and partially initialized payload before using the current reconstruction.
+Follow-up audit in Note 1971 confirms that `func_15014220` was already byte-exact
+and counted. Its source remains unchanged, with no additional credit; select
+future targets from the verified actual-ELF difference inventory.
 Descriptor `func_150174C0` and peer-event `func_15164134` remain private and
 uncredited. Their audit1968 snapshots need explicit rebasing before more screens;
 this turn does not overwrite their historical evidence. Handwritten

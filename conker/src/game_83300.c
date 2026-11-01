@@ -1051,9 +1051,18 @@ struct127 *func_1505EFD0(s32 key) {
     }
     return NULL;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505F0AC.s. */
-struct127 * func_1505F0AC(s32 arg0) {
-    return 0;
+/* Return the first active actor with this ID, excluding reserved slot 25. */
+struct127 *func_1505F0AC(s32 id) {
+    struct127 *actor;
+    s32 index;
+
+    actor = D_800CC2D0;
+    for (index = 0; index < 25; actor++, index++) {
+        if (actor->interaction_state != 0 && actor->id == id) {
+            return actor;
+        }
+    }
+    return NULL;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505F188.s. */
 s32 func_1505F188(void *arg0) {
