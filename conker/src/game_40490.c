@@ -174,44 +174,25 @@ s32 func_1501407C(s32 arg0) {
     return 1;
 }
 
-s32 func_15014094(u8 *arg0) {
+/* Spawn a type-0x21 effect with the original partially initialized record. */
+s32 func_15014094(u8 *record) {
+    /* Retail copies the untouched payload bytes; do not clear this buffer. */
     u8 data[0x34];
-    u8 *temp_v0;
+    u8 *effect;
 
-    arg0[0x16] |= 4;
-    bzero(data, sizeof(data));
-    *(void **)(data + 0) = arg0;
-    *(f32 *)(data + 4) = func_15144598((struct134 *)arg0);
+    record[0x16] |= 4;
+    *(void **)(data + 0) = record;
+    *(f32 *)(data + 4) = func_15144598((struct134 *)record);
     *(f32 *)(data + 8) = 0.0f;
     func_1510F800(0);
-    *(s32 *)(data + 0xC) = func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
-
-    temp_v0 = (u8 *)func_15149130(0x12C, -1, 0x21, -1, 0, 0, (struct37 *)0x34, 0xFF, 1);
-    if (temp_v0 != NULL) {
-        memcpy(temp_v0 + 0x28, data, 0x34);
+    *(s32 *)(data + 0xC) = func_1510FD20(*(s16 *)(record + 0), *(s16 *)(record + 4));
+    data[0x2C] = 0;
+    effect = (u8 *)func_15149130(0x12C, -1, 0x21, -1, 0, 0, (struct37 *)0x34, 0xFF, 1);
+    if (effect != NULL) {
+        memcpy(effect + 0x28, data, 0x34);
     }
-    return 1;
+    /* The record dispatcher ignores this callback's incidental return value. */
 }
-// NON-MATCHING: kinda right idea, but not executed correctly
-// void func_15014094(struct134 *arg0) {
-//     struct135 tmp;
-//
-//     tmp.unk0 = arg0;
-//     // tmp.unk4 = tmp.unk0;
-//     tmp.unk0->unk16 |= 4;
-//     // tmp.unkC = tmp.unk0;
-//     // arg0 = tmp.unk0;
-//     tmp.unk10 = func_15144598(tmp.unk4); //, tmp.unk0);
-//     tmp.unk14 = 0.0f;
-//     func_1510F800(0);
-//     tmp.unk18 = func_1510FD20(arg0->unk0, arg0->unk4, arg0);
-//     tmp.unk1C = 0;
-//     tmp.unk8 = func_15149130(0x12C, -1, 0x21, -1, 0, 0, 0x34, 0xFF, 1);
-//     if (tmp.unk8 != 0) {
-//         memcpy(tmp.unk8 + 0x28, &tmp, 0x34);
-//     }
-// }
-
 s32 func_15014144(u8 *arg0) {
     s32 flags = 0;
     s32 bits = *(s32 *)(arg0 + 0x18);
