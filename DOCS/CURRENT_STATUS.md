@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `b23f346`; tools are committed before the consumer pin.
+  checkpoint pins tools `75baf67`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Record byte-ID search restored directly from C**: [Note 1928](WORKING_NOTES/1928-record-byte-id-search-direct-match-20261031.md). `func_15004BF0` emits all 60 words and twelve bindings with zero guards. Both search directions and saturation fallbacks, three original caller windows, native controls, independent rebases, eight neighbors, actual Make and strict production image pass. Total **4,003/5,506 (72.70%)**, Game **3,330/4,833 (68.90%)**, zero drift; **127** more to 75%. Next screen `func_15049350`; private candidates remain uncredited.
 
 **Lifetime/callback/fade dispatcher restored**: [Note 1927](WORKING_NOTES/1927-lifetime-callback-fade-guarded-match-20261031.md). `func_15154C90` matches all 60 words and five bindings after seven closed byte-spill/register-role guards. Wrapping timer subtraction, live callback mutations, complete original parent, native controls, 40 neighbors, actual Make and strict production checks pass. Total **4,002/5,506 (72.68%)**, Game **3,329/4,833 (68.88%)**, zero drift; **128** more to 75%. Next screen `func_15004BF0`; private candidates remain uncredited.
 

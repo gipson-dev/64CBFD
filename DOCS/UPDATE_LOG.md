@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Record byte-ID search restored directly from C**: [Note 1928](WORKING_NOTES/1928-record-byte-id-search-direct-match-20261031.md). `func_15004BF0` emits all 60 words and twelve bindings with zero guards. Both search directions and saturation fallbacks, three original caller windows, native controls, independent rebases, eight neighbors, actual Make and strict production image pass. Total **4,003/5,506 (72.70%)**, Game **3,330/4,833 (68.90%)**, zero drift; **127** more to 75%. Next screen `func_15049350`; private candidates remain uncredited.
+
 **Lifetime/callback/fade dispatcher restored**: [Note 1927](WORKING_NOTES/1927-lifetime-callback-fade-guarded-match-20261031.md). `func_15154C90` matches all 60 words and five bindings after seven closed byte-spill/register-role guards. Wrapping timer subtraction, live callback mutations, complete original parent, native controls, 40 neighbors, actual Make and strict production checks pass. Total **4,002/5,506 (72.68%)**, Game **3,329/4,833 (68.88%)**, zero drift; **128** more to 75%. Next screen `func_15004BF0`; private candidates remain uncredited.
 
 **Attached cash-label callback restored**: [Note 1926](WORKING_NOTES/1926-attached-cash-label-guarded-match-20261031.md). `func_151D7000` matches all 51 words and six bindings after ten closed signed-clamp/control-flow/private-spill guards. The complete parent, original text emitters, exhaustive low16 proof, native controls, six neighbors, actual Make and strict production image pass. Total **4,001/5,506 (72.67%)**, Game **3,328/4,833 (68.86%)**, zero drift; **129** more to 75%. Next screen `func_15154C90`; private candidates remain uncredited.

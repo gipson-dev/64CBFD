@@ -2,13 +2,15 @@
 
 #include "functions.h"
 #include "variables.h"
+typedef struct { u8 reserved[0x72]; u8 id; u8 tail[0x2D]; } ByteIdRecordView;
+
 
 /* Generated placeholder declarations. */
 s32 func_150039E0();
 s32 func_150045C4();
 void func_150049A4(s8 *, u32, u32);
 s32 func_15004AAC();
-s32 func_15004BF0();
+s32 func_15004BF0(s32 descending);
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/game_30E90/func_150039E0.s. */
@@ -70,9 +72,32 @@ void func_15004A4C(void) {
 s32 func_15004AAC() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_30E90/func_15004BF0.s. */
-s32 func_15004BF0() {
-    return 0;
+/* Search record byte IDs in either direction, retaining saturation fallbacks. */
+s32 func_15004BF0(s32 descending) {
+    s32 id;
+    s32 index;
+    /* After choosing direction, retain the scan boundary in the argument. */
+    if (descending == 0) {
+        id = 1;
+        for (index = descending = D_800DBF00; index < D_800DBEF0; index++) {
+            if (id == ((ByteIdRecordView *)D_800DBEF4)[index].id) {
+                id++;
+                index = descending - 1;
+            }
+            if (id >= 256) { id = 255; break; }
+        }
+    } else {
+        descending = 255 - D_800DBF00;
+        id = descending;
+        for (index = 0; index < D_800DBEF0; index++) {
+            if (id == ((ByteIdRecordView *)D_800DBEF4)[index].id) {
+                id--;
+                index = -1;
+            }
+            if (id <= 0) { id = descending; break; }
+        }
+    }
+    return id;
 }
 void func_15004CE0(s8 *arg0, s32 arg1) {
     s32 i = 0;
