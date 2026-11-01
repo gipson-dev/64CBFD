@@ -2,6 +2,8 @@
 
 ## Total C Matching To 75% - 2026-10-20
 
+- [x] **X-plane vertex interpolation restored directly from C**: [Note 1931](WORKING_NOTES/1931-x-plane-interpolation-direct-match-20261031.md). `func_15185B54` emits all 60 words with no frame, relocations or guards. The complete original polygon caller, both classifiers, native conversion controls, 31 neighbors, actual Make and strict production image pass. Total **4,006/5,506 (72.76%)**, Game **3,333/4,833 (68.96%)**, zero drift; **124** more to 75%. Next screen `func_15185C6C`; private candidates remain uncredited.
+
 - [x] **Packed argument descriptor restored directly from C**: [Note 1930](WORKING_NOTES/1930-packed-argument-descriptor-direct-match-20261031.md). `func_1510A930` emits all 57 body words and five bindings with zero guards. Full-word packing, wrapping sums, the original caller/provider chain, native controls, actual Make and the complete production image pass. Total **4,005/5,506 (72.74%)**, Game **3,332/4,833 (68.94%)**, zero drift; **125** more to 75%. Next screen `func_15185B54`; private candidates remain uncredited.
 
 - [x] **Plane coefficients restored directly from C**: [Note 1929](WORKING_NOTES/1929-plane-coefficients-direct-match-20261031.md). `func_15049350` emits all 57 body words and eight bindings with zero guards; three alignment words complete its retail slot. The recovered 36-byte aggregate ABI, four original caller windows, floating-point controls, both neighbors, actual Make and strict production image pass. Total **4,004/5,506 (72.72%)**, Game **3,331/4,833 (68.92%)**, zero drift; **126** more to 75%. Next screen `func_1510A930`; private candidates remain uncredited.
