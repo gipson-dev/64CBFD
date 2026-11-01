@@ -15,11 +15,36 @@ typedef struct {
     s32 value;
 } OneWordCopy;
 
+typedef struct ReleaseChainNode ReleaseChainNode;
+struct ReleaseChainNode {
+    u8 retained[0x2A];
+    s8 releaseKind;
+    u8 pad2B;
+    void *owner;
+    u8 pad30[4];
+    u8 payload[12];
+    ReleaseChainNode *next;
+};
+typedef struct {
+    u8 retained[0x10];
+    void *listOwner;
+    u8 pad14[9];
+    u8 releaseKind;
+    u8 pad1E[6];
+    ReleaseChainNode *head;
+} ReleaseChainOwner;
+typedef void (*ReleaseOwnerCallback)(ReleaseChainOwner *);
+typedef void (*ReleaseNodeCallback)(ReleaseChainNode *, void *);
+extern ReleaseOwnerCallback D_8008FC5C[];
+extern ReleaseNodeCallback D_8008FC48[];
+void func_1516972C(struct102 *);
+void func_1514EDF0(s32, u8 *);
+
 /* Generated placeholder declarations. */
 s32 func_151D2C40();
 struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3);
 s32 func_151D2F90();
-s32 func_151D3130(s32 arg0);
+void func_151D3130(void *ownerData);
 void func_151D324C(struct224 *, struct223 *, u8);
 /* End generated placeholder declarations. */
 
@@ -139,9 +164,35 @@ s32 func_151D2F90() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D3130.s. */
-s32 func_151D3130(s32 arg0) {
-    return 0;
+/* Notify the owner and release its child chain using links captured before callbacks.
+ * Finally detach the owner key from the referenced object's list. */
+void func_151D3130(void *ownerData) {
+    ReleaseChainOwner *owner = ownerData;
+    ReleaseChainNode *node;
+    ReleaseChainNode *next;
+    ReleaseOwnerCallback callback;
+    ReleaseNodeCallback *callbacks;
+    s32 skipKind;
+
+    callback = D_8008FC5C[owner->releaseKind];
+    if (callback != NULL) {
+        callback(owner);
+    }
+    node = owner->head;
+    callbacks = D_8008FC48;
+    skipKind = -1;
+    if (node != NULL) {
+        do {
+            next = node->next;
+            if (node->releaseKind != skipKind) {
+                callbacks[node->releaseKind](node, node->payload);
+            }
+            node->owner = NULL;
+            func_1516972C((struct102 *)node);
+            node = next;
+        } while ((node != NULL) != 0);
+    }
+    func_1514EDF0((s32)owner, (u8 *)owner->listOwner);
 }
 
 void func_151D31F4(struct102 *arg0) {
