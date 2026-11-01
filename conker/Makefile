@@ -167,6 +167,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_21D420.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O2
 # Retail object for this slice was built without loop unrolling.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009FD00_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_49D30.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_C9EC0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
