@@ -13,7 +13,7 @@ void func_151D0058(void *, u8, u8, s32);
 /* Generated placeholder declarations. */
 s32 func_1506AD30();
 s32 func_1506B3B8();
-s32 func_1506B634(s32 arg0);
+void func_1506B634(u8 choiceCount);
 s32 func_1506BCC8();
 s32 func_1506BF5C();
 void func_1506C32C(void);
@@ -240,42 +240,31 @@ void func_1506B5E4(void) {
     D_800D154C->animation_speed = 0.0f;
     D_800D154C->unk2D0->unk10 = 0.0f;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506B634.s. */
-s32 func_1506B634(s32 arg0) {
-    return 0;
+/* Select a packed byte animation entry and apply its special follow-up. */
+void func_1506B634(u8 choiceCount) {
+    u32 remainder;
+    u8 choice;
+    struct126 *state;
+
+    remainder = (u32)func_150ADA20() % choiceCount;
+    choice = (u8)remainder;
+    state = D_800D154C->unk31C;
+    if (state->unk16 != 0) {
+        if ((D_800BE9F0 == 0x29) && ((u8)remainder == 7)) {
+            choice = 0;
+        }
+        /* Both choice tables contain bytes despite their legacy s16 declarations. */
+        state->unkE = ((u8 *)D_80099ABC)[choice];
+    } else {
+        state->unkE = ((u8 *)D_80099AB4)[(u8)remainder];
+    }
+    if (D_800D154C->unk31C->unkE == 0xA7) {
+        D_800D1580 = 0xFF020144;
+        D_800D154C->unk31C->unkC = ((u32)func_150ADA20() % 3U) + 2;
+        func_1506E8D8();
+        D_800D154C->xz_velocity *= D_80099C38;
+    }
 }
-// NON-MATCHING: miles away
-// void func_1506B634(u8 arg0) {
-//     s32 temp_a0;
-//     u32 temp_hi;
-//     struct126 *temp_a1;
-//     s32 phi_a0;
-//     s32 phi_a0_2;
-//
-//     temp_hi = func_150ADA20() % (u32) arg0;
-//     temp_a0 = temp_hi & 0xFF;
-//     temp_a1 = D_800D154C->unk31C;
-//     if (temp_a1->unk16 != 0) {
-//         phi_a0 = temp_a0;
-//         if (D_800BE9F0 == 0x29) {
-//             phi_a0 = temp_a0;
-//             if ((temp_hi & 0xFF) == 7) {
-//                 phi_a0 = 0;
-//             }
-//         }
-//         temp_a1->unkE = (s16) D_80099ABC[phi_a0]; // + 0x800A0000)->unk-6544;
-//         phi_a0_2 = phi_a0;
-//     } else {
-//         temp_a1->unkE = (s16) D_80099AB4[(temp_hi & 0xFF)]; // + 0x800A0000)->unk-654C;
-//         phi_a0_2 = temp_a0;
-//     }
-//     if (D_800D154C->unk31C->unkE == 0xA7) {
-//         D_800D1580 = 0xFF020144; // 4278321476
-//         D_800D154C->unk31C->unkC = (func_150ADA20(phi_a0_2, temp_a1, &D_800D154C) % 3U) + 2;
-//         func_1506E8D8();
-//         D_800D154C->xz_velocity = (f32) (D_800D154C->xz_velocity * D_80099C38);
-//     }
-// }
 
 void func_1506B740(void) {
     u8 res = func_150ADA20() & 0xFF;
