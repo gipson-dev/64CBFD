@@ -193,27 +193,12 @@ s32 func_15014094(u8 *record) {
     }
     /* The record dispatcher ignores this callback's incidental return value. */
 }
-s32 func_15014144(u8 *arg0) {
-    s32 flags = 0;
-    s32 bits = *(s32 *)(arg0 + 0x18);
+/* Submit record effect flags, inverting bit 1 and preserving bits 0..4. */
+s32 func_15014144(u8 *record) {
+    s32 bits = *(s32 *)(record + 0x18);
 
-    if (bits & 8) {
-        flags |= 8;
-    }
-    if (bits & 4) {
-        flags |= 4;
-    }
-    if ((bits & 2) == 0) {
-        flags |= 2;
-    }
-    if (bits & 1) {
-        flags |= 1;
-    }
-    if (bits & 0x10) {
-        flags |= 0x10;
-    }
-
-    func_151A9390(flags, arg0[0x1F], arg0, NULL, *(f32 *)&D_8009667C, 100.0f, -1, 0xFF, 1);
+    func_151A9390((bits & 1 ? 1 : 0) | (bits & 2 ? 0 : 2) | (bits & 4 ? 4 : 0) | (bits & 8 ? 8 : 0) | (bits & 0x10 ? 0x10 : 0), record[0x1F], record, NULL,
+        *(f32 *)&D_8009667C, 100.0f, -1, 0xFF, 1);
     return 1;
 }
 
