@@ -14,7 +14,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `33f0728`; tools are committed before the consumer pin.
+  checkpoint pins tools `555d11a`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after
@@ -28,6 +28,8 @@ under [WORKING_NOTES/](WORKING_NOTES/).
   coverage and port support; it is not C-decomp completion.
 
 ## Measured progress
+
+**Packed argument descriptor restored directly from C**: [Note 1930](WORKING_NOTES/1930-packed-argument-descriptor-direct-match-20261031.md). `func_1510A930` emits all 57 body words and five bindings with zero guards. Full-word packing, wrapping sums, the original caller/provider chain, native controls, actual Make and the complete production image pass. Total **4,005/5,506 (72.74%)**, Game **3,332/4,833 (68.94%)**, zero drift; **125** more to 75%. Next screen `func_15185B54`; private candidates remain uncredited.
 
 **Plane coefficients restored directly from C**: [Note 1929](WORKING_NOTES/1929-plane-coefficients-direct-match-20261031.md). `func_15049350` emits all 57 body words and eight bindings with zero guards; three alignment words complete its retail slot. The recovered 36-byte aggregate ABI, four original caller windows, floating-point controls, both neighbors, actual Make and strict production image pass. Total **4,004/5,506 (72.72%)**, Game **3,331/4,833 (68.92%)**, zero drift; **126** more to 75%. Next screen `func_1510A930`; private candidates remain uncredited.
 
