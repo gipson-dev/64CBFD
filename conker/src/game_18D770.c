@@ -2,6 +2,13 @@
 #include "functions.h"
 #include "variables.h"
 
+extern struct100 D_800886F0, D_800886F4, D_800886F8;
+void func_1511172C(s32 mode);
+void func_1515F170(s32 category, u8 enabled);
+/* The shared legacy declaration is a pointer; this slot contains inline RGB bytes. */
+#define CATEGORY_MODE_TINT (*(struct100 *)&D_800DCD20)
+
+
 /* Private view of the state used by the vertical-point transform pair. */
 typedef struct {
     u8 retained[0x14];
@@ -37,7 +44,7 @@ s32 func_151638E0(struct225 *state);
 s32 func_15163FEC();
 s32 func_15164134();
 void func_1516441C(struct225 *arg0, struct227 *arg1);
-s32 func_151645C4();
+void func_151645C4(u8 enabled);
 /* End generated placeholder declarations. */
 
 s32 func_151149AC(u32);
@@ -1336,8 +1343,57 @@ void func_151644F4(ActorMatrixPositionState *owner, struct17 *translation, f32 h
     owner->actor->unk10 = point[1];
     owner->actor->unk12 = point[2];
 }
-// loop
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151645C4.s. */
-s32 func_151645C4() {
-    return 0;
+/* Apply the category-specific mode transition and restore the matching colors. */
+void func_151645C4(u8 enabled) {
+    D_800DCDD0 = enabled;
+    if (enabled) {
+        switch (D_800BE9F0) {
+            case 0xB:
+                func_1511172C(4);
+                return;
+
+            case 6:
+                func_1515F170(10, 1);
+                func_1511172C(4);
+                /* fall through */
+            case 0x39:
+                CATEGORY_MODE_TINT.unk0 = D_800886F0.unk0;
+                CATEGORY_MODE_TINT.unk1 = D_800886F0.unk1;
+                CATEGORY_MODE_TINT.unk2 = D_800886F0.unk2;
+                D_800B0DF0->unk5 = D_800886F4.unk0;
+                D_800B0DF0->unk6 = D_800886F4.unk1;
+                D_800B0DF0->unk7 = D_800886F4.unk2;
+                break;
+            case 7:
+            case 0xC:
+                break;
+            default:
+                return;
+        }
+    } else {
+        switch (D_800BE9F0) {
+            case 6:
+                func_1515F170(10, 0);
+                /* fall through */
+            case 7:
+            case 0xC:
+            case 0x39:
+                func_1511172C(6);
+                CATEGORY_MODE_TINT.unk0 = D_800886F8.unk0;
+                CATEGORY_MODE_TINT.unk1 = D_800886F8.unk1;
+                CATEGORY_MODE_TINT.unk2 = D_800886F8.unk2;
+                D_800B0DF0->unk5 = 0xFF;
+                D_800B0DF0->unk6 = 0xFF;
+                D_800B0DF0->unk7 = 0xFF;
+                break;
+            case 0xB:
+                func_1511172C(6);
+                return;
+            case 0x29:
+                func_1511172C(1);
+                break;
+            default:
+                return;
+        }
+    }
 }

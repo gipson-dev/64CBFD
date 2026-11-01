@@ -1,5 +1,9 @@
 # PC Port Roadmap located in another project folder
 
+**Category color-mode dispatcher restored directly from C**: [Note 1943](WORKING_NOTES/1943-category-color-mode-direct-match-20261101.md). `func_151645C4` matches all 108 body words, three alignment words and 27 bindings with zero guards. All three original caller windows, byte-alias controls, native profiles, 77 neighbors, actual Make and literal whole-image prediction pass. Total **4,016/5,506 (72.94%)**, Game **3,343/4,833 (69.17%)**, zero drift; **114** more to 75%. Next screen `func_15072208`; parked candidates remain uncredited.
+
+- [x] Restore and byte-match `func_151645C4`, including all three caller sites and complete image qualification (Note 1943).
+
 **Actor matrix-position transform restored directly from C**: [Note 1942](WORKING_NOTES/1942-actor-matrix-position-direct-match-20261101.md). `func_151644F4` matches all 52 words and both bindings with its original frame and zero guards. Its typed local state view preserves the parent and all 77 owner neighbors. Original parent/point-helper execution, native controls, actual Make and literal full-image audit pass. Total **4,015/5,506 (72.92%)**, Game **3,342/4,833 (69.15%)**, zero drift; **115** more to 75%. Next screen `func_151645C4`; parked candidates remain uncredited.
 
 - [x] Restore and byte-match `func_151644F4` with original caller, build and whole-image qualification (Note 1942).
