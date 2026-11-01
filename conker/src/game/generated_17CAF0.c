@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern s32 D_800BE9E4;
+extern s32 (*D_8008ACC8[])(u8 *);
+void func_1516972C(u8 *);
+
 s32 func_15144E80(s16 *, f32 *, f32 *, f32 *);
 f32 func_15144A74(f32 *, f32 *);
 
@@ -159,8 +163,25 @@ s32 func_15154684() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154A88.s")
 
-s32 func_15154C90() {
-    return 0;
+/* Advance a live effect, dispatch its update and limit the fading byte. */
+void func_15154C90(u8 *owner) {
+    s8 expired;
+    s32 method;
+    s16 opacity;
+    expired = 0;
+    if (*(u16 *)(owner + 0x24) & 1) {
+        *(s16 *)(owner + 0x22) = (u32)*(s16 *)(owner + 0x22) - (u32)D_800BE9E4;
+        if (*(s16 *)(owner + 0x22) < 0) expired = 1;
+    }
+    if ((method = owner[0x68] & 15) && !expired) {
+        if (!D_8008ACC8[method](owner)) expired = 1;
+    }
+    if ((*(u16 *)(owner + 0x24) & 8) &&
+        *(s16 *)(owner + 0x22) < *(s16 *)(owner + 0x26)) {
+        opacity = *(s16 *)(owner + 0x22) * *(s16 *)(owner + 0x28);
+        if (opacity < owner[0x2E]) owner[0x2E] = opacity;
+    }
+    if (expired) func_1516972C(owner);
 }
 
 s32 func_15154D80() {

@@ -24619,3 +24619,10 @@ generated_203E20,func_151D7000,0x6c,0x05610002,0x00C02025,-,-,Normalize closed s
 generated_203E20,func_151D7000,0x70,0x01201025,0x10000001,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
 generated_203E20,func_151D7000,0x7c,0xA7A2001C,0xA7A2001A,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
 generated_203E20,func_151D7000,0x88,0x97A2001C,0x87A2001A,-,-,Normalize closed signed-low16 cash-label clamp and private halfword spill layout,,,false
+generated_17CAF0,func_15154C90,0x68,0xA3A5001F,0xA3A5001B,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0x7c,0x83A5001F,0x83A5001B,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0x94,0x84820022,0x84830022,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0x9c,0x004E082A,0x006E082A,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0xb0,0x01E20019,0x006F0019,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0xb4,0x00001812,0x00001012,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false
+generated_17CAF0,func_15154C90,0xb8,0x0003C400,0x0002C400,-,-,Normalize closed lifetime dispatcher byte spill and V0/V1 register roles,,,false

@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Lifetime/callback/fade dispatcher restored**: [Note 1927](WORKING_NOTES/1927-lifetime-callback-fade-guarded-match-20261031.md). `func_15154C90` matches all 60 words and five bindings after seven closed byte-spill/register-role guards. Wrapping timer subtraction, live callback mutations, complete original parent, native controls, 40 neighbors, actual Make and strict production checks pass. Total **4,002/5,506 (72.68%)**, Game **3,329/4,833 (68.88%)**, zero drift; **128** more to 75%. Next screen `func_15004BF0`; private candidates remain uncredited.
+
 **Attached cash-label callback restored**: [Note 1926](WORKING_NOTES/1926-attached-cash-label-guarded-match-20261031.md). `func_151D7000` matches all 51 words and six bindings after ten closed signed-clamp/control-flow/private-spill guards. The complete parent, original text emitters, exhaustive low16 proof, native controls, six neighbors, actual Make and strict production image pass. Total **4,001/5,506 (72.67%)**, Game **3,328/4,833 (68.86%)**, zero drift; **129** more to 75%. Next screen `func_15154C90`; private candidates remain uncredited.
 
 **Compiler trace and private callback triage banked**: [Note 1925](WORKING_NOTES/1925-byte-lifetime-compiler-trace-and-private-triage-20261031.md). Fingerprinted CFE/UOPT captures show why `func_15115F68`'s early byte assignments are removed. The next label-fade screen, `func_151D7000`, emits 51 words with 15 differences; branch/spill and helper-return ABI questions remain. No private screen is installed or credited. Production stays **4,000/5,506 (72.65%)**, **130** more to 75%.

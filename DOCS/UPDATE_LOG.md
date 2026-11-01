@@ -2,6 +2,8 @@
 
 2026-10-31:
 
+**Lifetime/callback/fade dispatcher restored**: [Note 1927](WORKING_NOTES/1927-lifetime-callback-fade-guarded-match-20261031.md). `func_15154C90` matches all 60 words and five bindings after seven closed byte-spill/register-role guards. Wrapping timer subtraction, live callback mutations, complete original parent, native controls, 40 neighbors, actual Make and strict production checks pass. Total **4,002/5,506 (72.68%)**, Game **3,329/4,833 (68.88%)**, zero drift; **128** more to 75%. Next screen `func_15004BF0`; private candidates remain uncredited.
+
 **Attached cash-label callback restored**: [Note 1926](WORKING_NOTES/1926-attached-cash-label-guarded-match-20261031.md). `func_151D7000` matches all 51 words and six bindings after ten closed signed-clamp/control-flow/private-spill guards. The complete parent, original text emitters, exhaustive low16 proof, native controls, six neighbors, actual Make and strict production image pass. Total **4,001/5,506 (72.67%)**, Game **3,328/4,833 (68.86%)**, zero drift; **129** more to 75%. Next screen `func_15154C90`; private candidates remain uncredited.
 
 **Retail callback attribution corrected**: [Note 1924](WORKING_NOTES/1924-retail-callback-table-attribution-correction-20261031.md). Physical Game-data mapping places `func_15073B38` in `D_800863FC[138]` and `func_151638E0` in `D_8008B0F0[16]`. The latter uses the original 41-word `func_151603FC` dispatcher, which consumes its return value. Both corrected pairs pass 32 fresh target tests and both shared checks. Production bytes and **4,000/5,506 (72.65%)** are unchanged; **130** more to 75%.
