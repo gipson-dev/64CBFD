@@ -630,15 +630,16 @@ void func_15076D04(void) {
     D_800D154C->xz_velocity = D_800D1890;
 }
 
-// ???
+/* Decode signed little-endian script scales and update the current actor. */
 void func_15076D3C(void) {
-    s32 temp_a3;
-    s32 tmp2;
+    f32 scale = D_8009A144;
+    s32 x;
+    s32 y;
 
-    temp_a3 = D_800D1892 | (D_800D1893 << 8);
-    tmp2 = D_800D1890 | (D_800D1891 << 8);
-    D_800D154C->xz_scale = (s16)tmp2 * D_8009A144;
-    D_800D154C->y_scale = (s16)temp_a3 * D_8009A144;
+    x = (s16)(D_800D1890 | (D_800D1891 << 8));
+    y = (s16)(D_800D1892 | (D_800D1893 << 8));
+    D_800D154C->xz_scale = (f32)x * scale;
+    D_800D154C->y_scale = (f32)y * scale;
     D_800D154C->unk154 = D_800D154C->xz_scale;
     D_800D154C->unk158 = D_800D154C->y_scale;
     func_15062BDC(D_800D154C, D_800D154C->xz_scale, D_800D154C->y_scale);
