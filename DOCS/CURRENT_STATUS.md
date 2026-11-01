@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+**Actor matrix-position transform restored directly from C**: [Note 1942](WORKING_NOTES/1942-actor-matrix-position-direct-match-20261101.md). `func_151644F4` matches all 52 words and both bindings with its original frame and zero guards. Its typed local state view preserves the parent and all 77 owner neighbors. Original parent/point-helper execution, native controls, actual Make and literal full-image audit pass. Total **4,015/5,506 (72.92%)**, Game **3,342/4,833 (69.15%)**, zero drift; **115** more to 75%. Next screen `func_151645C4`; parked candidates remain uncredited.
+
 **Scalar smoother caller windows qualified; compiler mismatch remains**: [Note 1941](WORKING_NOTES/1941-scalar-smoother-caller-windows-and-ucode-lifetimes-20261101.md). Three original windows cover five call sites, including caller stack position and both outgoing float homes; 3,216 executions and six effective controls pass. CFE/UOPT captures identify cached deltaTime and two next-position reloads; six further declaration-home variants are ineffective. Four focused tests per tools copy and both shared checks pass. Candidate stays private at 55 words/frame 16/38 differences; production stays **4,014/5,506 (72.90%)**, **116** more to 75%.
 
 Last verified: 2026-11-01
@@ -16,7 +18,7 @@ under [WORKING_NOTES/](WORKING_NOTES/).
 - Decomp tools now live in the separate `64CBFD-Tools` repository, pinned at
   `tools/`. See [tools repository setup](TOOLS_REPOSITORY.md) for the
   2026-10-08 split and existing-checkout bootstrap. The latest authorized
-  checkpoint pins tools `5d8ddc3`; tools are committed before the consumer pin.
+  checkpoint pins tools `696b894`; tools are committed before the consumer pin.
   No push requested/performed. Preserve the independently dirty older
   standalone tools mirror without resetting or duplicating its history.
 - The restoration baseline is banked in coherent commits beginning after

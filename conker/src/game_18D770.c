@@ -2,6 +2,22 @@
 #include "functions.h"
 #include "variables.h"
 
+/* Private view of the state used by the vertical-point transform pair. */
+typedef struct {
+    u8 retained[0x14];
+    struct226 *actor;
+    f32 height;
+    f32 angleScale;
+    struct17 *angleFactors;
+    struct17 translation;
+} ActorMatrixPositionState;
+
+void func_150A8050(f32 matrix[4][4], f32, f32, f32);
+void func_150A7960(f32 matrix[4][4], f32, f32, f32, f32 *, f32 *, f32 *);
+
+
+
+
 /* Generated placeholder declarations. */
 s32 func_151604A0();
 s32 func_151606A8();
@@ -81,8 +97,8 @@ s32  func_1516429C(struct237 *arg0);
 void func_1516434C(u8 *arg0, u8 *arg1, u8 arg2);
 void func_151643A8(struct225 *arg0, s32 arg1, u8 arg2);
 s32  func_151643F8(struct225 *arg0);
-void func_151644F4(struct242 *arg0, struct17 *arg1, s32 arg2, f32 arg3, f32 arg4);
-s32  func_151644A8(struct242 *arg0);
+void func_151644F4(ActorMatrixPositionState *, struct17 *, f32, f32, f32);
+s32  func_151644A8(ActorMatrixPositionState *);
 
 struct225 *func_151602C0(Header *header, Header2 *header2, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u8 arg6, u8 arg7, s32 offset, u8 arg9, s32 argA) {
     struct225 *ret;
@@ -1295,38 +1311,31 @@ void func_1516441C(struct225 *arg0, struct227 *arg1) {
     arg0->unk14->unk10 = (s16)output.unk4;
     arg0->unk14->unk12 = (s16)output.unk8;
 }
-s32 func_151644A8(struct242 *arg0) {
-    f32 temp_f0;
-    struct17 *temp_v0;
+s32 func_151644A8(ActorMatrixPositionState *state) {
+    f32 angleScale;
+    struct17 *vector;
 
-    temp_v0 = arg0->unk20;
-    temp_f0 = arg0->unk1C;
-    func_151644F4(arg0, &arg0->unk24, arg0->unk18, temp_v0->unk0 * temp_f0, temp_v0->unk8 * temp_f0);
+    vector = state->angleFactors;
+    angleScale = state->angleScale;
+    func_151644F4(state, &state->translation, state->height,
+                  vector->unk0 * angleScale, vector->unk8 * angleScale);
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151644F4.s. */
-void func_151644F4(struct242 *arg0, struct17 *arg1, s32 arg2, f32 arg3, f32 arg4) {
+/* Rotate and translate the vertical point, then publish actor coordinates.
+ * Height and both angle arguments use the original o32 floating-value ABI. */
+void func_151644F4(ActorMatrixPositionState *owner, struct17 *translation, f32 height,
+                   f32 angleX, f32 angleZ) {
+    f32 point[3];
+    f32 matrix[4][4];
+    func_150A8050(matrix, angleX, 0.0f, angleZ);
+    matrix[3][0] = translation->unk0;
+    matrix[3][1] = translation->unk4;
+    matrix[3][2] = translation->unk8;
+    func_150A7960(matrix, 0.0f, height, 0.0f, &point[0], &point[1], &point[2]);
+    owner->actor->unkE = point[0];
+    owner->actor->unk10 = point[1];
+    owner->actor->unk12 = point[2];
 }
-// NON-MATCHING: close...
-// void func_151644F4(struct242 *arg0, struct17 *arg1, s32 arg2, f32 arg3, f32 arg4) {
-//     f32 tmp1;
-//     f32 tmp2;
-//     f32 tmp3;
-//
-//     f32 tmp[16];
-//
-//     func_150A8050(&tmp, arg3, 0.0f, arg4);
-//
-//     tmp[13] = arg1->unk0;
-//     tmp[14] = arg1->unk4;
-//     tmp[15] = arg1->unk8;
-//     func_150A7960(&tmp, NULL, arg0, NULL, &tmp1, &tmp2, &tmp3);
-//
-//     arg0->unk14->unkE =  tmp1;
-//     arg0->unk14->unk10 = tmp2;
-//     arg0->unk14->unk12 = tmp3;
-// }
-
 // loop
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151645C4.s. */
 s32 func_151645C4() {
