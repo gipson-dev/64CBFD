@@ -4,8 +4,79 @@
 
 extern f32 D_800A81E8;
 
-s32 func_15193660() {
-    return 0;
+typedef struct {
+ s32 baseCount, countRange;
+ f32 position[3];
+ s16 field14,field16,field18,field1A;
+ f32 parameters[5];
+ s16 field30,field32;
+ s32 field34,field38,field3C;
+ f32 values[10];
+ u8 colors[8];
+ u8 field70,field71;
+ s16 field72,field74;
+ u8 padding76[2];
+} PointEffectPayload;
+void func_15142314(u8 *,s32,f32 *);
+void func_15152520(PointEffectPayload *,u8,s32);
+extern f32 D_800A81C0;
+extern f32 D_800A81C4;
+extern f32 D_800A81C8;
+extern f32 D_800A81CC;
+extern f32 D_800A81D0;
+extern f32 D_800A81D4;
+extern f32 D_800A81D8;
+extern f32 D_800A81DC;
+extern f32 D_800A81E0;
+/* Resolve attached point 10 and submit its live particle parameters after validating the owner. */
+void func_15193660(u8 *owner, s32 mode, s32 extra) {
+    PointEffectPayload payload;
+    u8 *attached;
+    if (owner != 0 && *(u32 *)owner != 0) {
+        attached = *(u8 **)(owner + 0x1D4);
+        if (attached != 0) {
+            func_15142314(attached, 10, payload.position);
+            payload.baseCount = 8;
+            payload.countRange = 7;
+            payload.values[6] = D_800A81C0;
+            payload.values[4] = D_800A81C0;
+            payload.values[9] = D_800A81C4;
+            payload.values[7] = D_800A81C4;
+            payload.parameters[0] = D_800A81C8;
+            payload.field14 = 0;
+            payload.field16 = 255;
+            payload.field18 = -33;
+            payload.field1A = 24;
+            payload.field30 = 40;
+            payload.field32 = 35;
+            payload.field34 = 160;
+            payload.field38 = 19;
+            payload.field3C = 0;
+            payload.field70 = 33;
+            payload.colors[0] = 255;
+            payload.colors[1] = 255;
+            payload.colors[2] = 255;
+            payload.colors[3] = 255;
+            payload.colors[4] = 255;
+            payload.colors[5] = 255;
+            payload.colors[6] = 255;
+            payload.colors[7] = 255;
+            payload.field71 = 15;
+            payload.field72 = 25;
+            payload.field74 = 10;
+            payload.parameters[1] = D_800A81CC;
+            payload.parameters[2] = D_800A81D0;
+            payload.parameters[3] = D_800A81D4;
+            payload.parameters[4] = D_800A81D8;
+            payload.values[1] = D_800A81DC;
+            payload.values[0] = 0;
+            payload.values[3] = 0;
+            payload.values[5] = 0.0f;
+            payload.values[8] = 0.0f;
+            payload.values[2] = D_800A81E0;
+            func_15152520(&payload, (u8)mode, extra);
+        }
+    }
 }
 
 typedef struct {

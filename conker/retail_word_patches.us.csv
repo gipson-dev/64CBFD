@@ -24786,3 +24786,21 @@ generated_17CAF0,func_1514F808,0x0D0,0x46123280,0x46128200,-,-,Normalize closed 
 generated_17CAF0,func_1514F808,0x0D4,0x460A2400,0x46044180,-,-,Normalize closed floating register roles and commutative operand order in random basis position,,,false
 generated_17CAF0,func_1514F808,0x0D8,0x46008202,0x46003282,-,-,Normalize closed floating register roles and commutative operand order in random basis position,,,false
 generated_17CAF0,func_1514F808,0x0DC,0xE4480008,0xE44A0008,-,-,Normalize closed floating register roles and commutative operand order in random basis position,,,false
+generated_1C0B10,func_15193660,0x024,0x8C8701D4,0x8C8201D4,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x02C,0x10E00055,0x10400055,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x030,0x00E02025,0x00402025,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x040,0xC4200000,0xC4220000,R_MIPS_LO16:D_800A81C0,R_MIPS_LO16:D_800A81C0,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x048,0xC4220000,0xC42E0000,R_MIPS_LO16:D_800A81C4,R_MIPS_LO16:D_800A81C4,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x084,0x44806000,0x44800000,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x088,0x44807000,0x44806000,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x0A8,0x240E0021,0x3C010000,-,R_MIPS_HI16:D_800A81E0,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x0AC,0x240F00FF,0x240E0021,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x0B0,0x3C010000,0x240F00FF,R_MIPS_HI16:D_800A81E0,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x148,0xE7A00078,0xE7A20078,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x14C,0xE7A00070,0xE7A20070,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x150,0xE7A20084,0xE7AE0084,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x154,0xE7A2007C,0xE7AE007C,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x16C,0xE7AC0060,0xE7A00060,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x170,0xE7AC006C,0xE7A0006C,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x174,0xE7AE0074,0xE7AC0074,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
+generated_1C0B10,func_15193660,0x178,0xE7AE0080,0xE7AC0080,-,-,Normalize closed pointer and floating register roles and independent address setup in point effect payload,,,false
