@@ -609,8 +609,130 @@ void func_15152F70(OrientedEffectInput *input, u8 mode) {
     }
 }
 
-s32 func_15153298() {
-    return 0;
+
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+    s16 countBase;
+    s16 countRange;
+    s16 firstAngleBase;
+    s16 firstAngleRange;
+    s16 secondAngleBase;
+    s16 secondAngleRange;
+    f32 speedBase;
+    f32 speedRange;
+    s16 magnitudeBase;
+    s16 magnitudeRange;
+    s16 field22Base;
+    s16 field22Range;
+    s8 fixed1F;
+    u8 fixed34;
+    s16 field2ABase;
+    s16 field2ARange;
+    s16 fixed0E;
+    s16 field24Base;
+    s16 field24Range;
+    s16 field26Base;
+    s16 field26Range;
+    s32 owner;
+    u8 color;
+    u8 alpha;
+    u8 privateTail3E[2];
+} ShortPacketInput;
+
+typedef struct {
+    s32 owner;
+    u8 private04[8];
+    s16 zero0C;
+    s16 fixed0E;
+    s16 positionX;
+    s16 positionY;
+    s16 positionZ;
+    s16 directionX;
+    s16 directionZ;
+    u8 private1A[2];
+    s8 scaledX;
+    s8 scaledY;
+    s8 scaledZ;
+    s8 fixed1F;
+    s16 directionY;
+    s16 field22;
+    s16 field24;
+    s16 field26;
+    s16 magnitude;
+    s8 field2A;
+    u8 private2B;
+    u8 color0;
+    u8 color1;
+    u8 color2;
+    u8 alpha;
+    s8 zero30;
+    s8 zero31;
+    s8 zero32;
+    u8 private33;
+    u16 fixed34;
+    u8 privateTail36[2];
+} ShortPacket;
+
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+f32 func_151423D8(s32 angle);
+void func_15167D84(void *packet, s32 kind, s32 offset, s8 marker, u8 mode, s32 owner);
+/* Emit randomized short-form effect packets from a complete live input record. */
+void func_15153298(ShortPacketInput *input, u8 mode, s32 owner) {
+    ShortPacket packet;
+    f32 speed;
+    f32 secondPrimary;
+    f32 secondQuarter;
+    f32 firstPrimary;
+    f32 firstQuarter;
+    f32 product;
+    s16 firstAngle;
+    s16 secondAngle;
+    s32 remaining;
+
+    packet.positionX = (s16)input->x;
+    packet.positionY = (s16)input->y;
+    packet.positionZ = (s16)input->z;
+    packet.scaledX = (s8)(input->x * 256.0f);
+    packet.scaledY = (s8)(input->y * 256.0f);
+    packet.scaledZ = (s8)(input->z * 256.0f);
+    packet.color0 = input->color;
+    packet.color1 = input->color;
+    packet.zero30 = 0;
+    packet.zero31 = 0;
+    packet.zero32 = 0;
+    packet.color2 = input->color;
+    packet.alpha = input->alpha;
+    packet.fixed1F = input->fixed1F;
+    packet.zero0C = 0;
+    packet.fixed34 = input->fixed34;
+    packet.fixed0E = input->fixed0E;
+    packet.owner = input->owner;
+    remaining = (u32)func_150ADA20() % ((u32)input->countRange + 1U) + input->countBase;
+    if (remaining != 0) {
+        do {
+            firstAngle = (u32)func_150ADA20() % ((u32)input->firstAngleRange + 1U) + input->firstAngleBase;
+            secondAngle = (u32)func_150ADA20() % ((u32)input->secondAngleRange + 1U) + input->secondAngleBase;
+            secondPrimary = func_151423D8((u8)secondAngle);
+            secondQuarter = func_151423D8((u8)(secondAngle - 0x40));
+            firstPrimary = func_151423D8((u8)firstAngle);
+            firstQuarter = func_151423D8((u8)(firstAngle - 0x40));
+            speed = func_150ADA68() * input->speedRange + input->speedBase;
+            product = speed * secondPrimary;
+            packet.magnitude = (u32)func_150ADA20() % ((u32)input->magnitudeRange + 1U) + input->magnitudeBase;
+            packet.directionX = (s16)(product * firstQuarter);
+            packet.directionY = (s16)(-speed * secondQuarter);
+            packet.directionZ = (s16)(product * firstPrimary);
+            packet.field22 = (u32)func_150ADA20() % ((u32)input->field22Range + 1U) + input->field22Base;
+            packet.field2A = (u32)func_150ADA20() % ((u32)input->field2ARange + 1U) + input->field2ABase;
+            packet.field24 = (u32)func_150ADA20() % ((u32)input->field24Range + 1U) + input->field24Base;
+            packet.field26 = (u32)func_150ADA20() % ((u32)input->field26Range + 1U) + input->field26Base;
+            func_15167D84(&packet, 0, 0, -1, mode, owner);
+            remaining--;
+        } while (remaining != 0);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15153634.s")
