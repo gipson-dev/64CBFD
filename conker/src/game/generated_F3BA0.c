@@ -15,8 +15,40 @@ void func_150C66F0(u8 *arg0) {
     }
 }
 
-s32 func_150C673C() {
-    return 0;
+typedef struct {
+    u32 opaque0;
+    u8 notification;
+    u8 opaque5[3];
+    f32 base;
+    f32 amplitude;
+    f32 target;
+    s16 remaining;
+    s16 minimum;
+    s16 range;
+    u16 opaque1A;
+    f32 gain;
+} EmbeddedIntegerOscillator;
+extern s32 D_800BE9E4;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+/* Capture and clear notification, renew expired timing, then blend the signed rate. */
+s32 func_150C673C(u8 *input) {
+    EmbeddedIntegerOscillator *oscillator;
+    s8 notified;
+    oscillator = (EmbeddedIntegerOscillator *)(input + 0xB0);
+    notified = 1;
+    if (oscillator->notification == 0) notified = 0;
+    oscillator->notification = 0;
+    oscillator->remaining -= (u32)D_800BE9E4;
+    if (oscillator->remaining < 0) {
+        u32 randomValue;
+        randomValue = (u32)func_150ADA20();
+        oscillator->remaining = randomValue % (oscillator->range + 1) + oscillator->minimum;
+        oscillator->target = func_150ADA68();
+        oscillator->target = oscillator->target * oscillator->amplitude + oscillator->base;
+    }
+    *(s32 *)(input + 0x24) = (u32)(s32)((oscillator->target - (f32)*(s32 *)(input + 0x24)) * oscillator->gain) + (u32)*(s32 *)(input + 0x24);
+    return notified;
 }
 
 // Retail retains the otherwise dead temp_v0 + 0x58 update before the call.
