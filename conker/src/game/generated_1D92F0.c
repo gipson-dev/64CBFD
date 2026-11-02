@@ -1,6 +1,10 @@
 #include <ultra64.h>
+extern f32 D_800A9D84, D_800A9D88;
+f32 func_150ADA68(void);
+s32 func_151AE984();
+s32 func_151AEAB4();
 
-/* Non-matching placeholders for the text-only asm slice asm/1D92F0.s. */
+/* Recovered routines and remaining placeholders for asm/1D92F0.s. */
 
 s32 func_151AE3A8();
 s32 func_151AE0E4(u8 *arg0, u8 arg1);
@@ -295,8 +299,27 @@ void *func_151AE7B0(u8 *owner, f32 scale, s16 duration, u8 selector, s32 categor
     return created;
 }
 
-s32 func_151AE890() {
-    return 0;
+/* Route a position and raw effect payload through a random constructor. */
+void func_151AE890(f32 x, f32 y, f32 z, s32 effect_arg0_bits,
+                   s32 effect_arg1_bits, s32 effect_arg2_bits, u8 *actor) {
+    f32 position[3];
+    f32 sample;
+
+    position[0] = x;
+    position[1] = y;
+    position[2] = z;
+    sample = func_150ADA68();
+    if (sample < D_800A9D84) {
+        return;
+    }
+    if (sample < 0.25f) {
+        func_151AEAB4(position,
+                      0.0f < func_150ADA68() ? 1 : 0, actor[0xC]);
+    } else {
+        s32 flag = D_800A9D88 < func_150ADA68() ? 1 : 0;
+        func_151AE984(position, effect_arg0_bits, effect_arg1_bits,
+                      effect_arg2_bits, flag, actor[0xC]);
+    }
 }
 
 s32 func_151AE984() {
