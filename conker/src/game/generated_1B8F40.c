@@ -6,12 +6,38 @@
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_150ADA20(void);
 
+extern u8 D_800DCE50[0x340];
+extern s8 D_800DD190;
+extern u8 *D_800DD198[];
+void func_1516972C(struct102 *);
+
 s32 func_1518BA90() {
     return 0;
 }
 
-s32 func_1518BBF4() {
-    return 0;
+/* Walk both rows, retaining each next link across record cleanup. */
+void func_1518BBF4(u8 *owner) {
+    u8 *row;
+    u8 *record;
+    u8 *rowEnd;
+    if (owner != NULL) {
+        row = D_800DCE50;
+        rowEnd = D_800DCE50 + 0x340;
+        do {
+            record = *(u8 **)(row + 0x7C);
+            D_800DD190++;
+            while (record != NULL) {
+                D_800DD198[D_800DD190] = *(u8 **)(record + 8);
+                *(u8 **)(record + 0x24) = owner;
+                if (owner != NULL || owner[0x3B] == record[0x28]) {
+                    func_1516972C((struct102 *)record);
+                }
+                record = D_800DD198[D_800DD190];
+            }
+            D_800DD190--;
+            row += 0x1A0;
+        } while (row != rowEnd);
+    }
 }
 
 void *func_1518BCD0(void *arg0, u8 arg1, s32 arg2) {

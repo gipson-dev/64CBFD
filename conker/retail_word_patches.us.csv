@@ -24724,3 +24724,11 @@ game_83300,func_1505A184,0x08C,0xE7AC0024,0xE7AC0020,-,-,Normalize paired privat
 game_83300,func_1505A184,0x090,0xC7AC0024,0xC7AC0020,-,-,Normalize paired private yaw-angle spill slot,,,false
 generated_1CC440,func_151A084C,0x068,0xAFA80024,0xAFA80028,-,-,Restore closed output-base spill to its retail private frame slot,,,false
 generated_1CC440,func_151A084C,0x08C,0x8FA80024,0x8FA80028,-,-,Reload closed output-base spill from its retail private frame slot,,,false
+generated_1B8F40,func_1518BBF4,0x020,0x12000025,0x12000026,-,-,Retarget null-owner exit across the closed loop-rotation word,,,false
+generated_1B8F40,func_1518BBF4,0x028,0x3C140000,0x3C140000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_800DD190,Bind the table endpoint high half to its retained end alias,,,false
+generated_1B8F40,func_1518BBF4,0x034,0x26730000,0x26310000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD190,Move independent traversal-depth address completion first,,,false
+generated_1B8F40,func_1518BBF4,0x038,0x26940340,0x26520000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD198,Move independent traversal-stack address completion second,,,false
+generated_1B8F40,func_1518BBF4,0x03C,0x26310000,0x26940000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DD190,Complete the retained table endpoint alias third,,,false
+generated_1B8F40,func_1518BBF4,0x040,0x26520000,0x26730000,R_MIPS_LO16:D_800DD198,R_MIPS_LO16:D_800DCE50,Complete the initial row address after the independent setup cycle,,,false
+generated_1B8F40,func_1518BBF4,0x0B0,0x1674FFE4,0xA22E0000,-,-,Place the depth decrement store before the rotated back edge,,,false
+generated_1B8F40,func_1518BBF4,0x0B4,0xA22E0000,0x5674FFE4,-,-,Rotate the next-row depth load into the likely back-edge delay slot,0x822E0000,,false
