@@ -24870,3 +24870,40 @@ generated_17CAF0,func_15152520,0x2DC,0xC6100040,0xC6040040,-,-,Normalize closed 
 generated_17CAF0,func_15152520,0x2E4,0x46120102,0x46100482,-,-,Normalize closed private scratch placement and register roles in particle factory,,,false
 generated_17CAF0,func_15152520,0x2FC,0x02802025,0x02A02025,-,-,Normalize closed private scratch placement and register roles in particle factory,,,false
 generated_17CAF0,func_15152520,0x300,0x46048180,0x46049180,-,-,Normalize closed private scratch placement and register roles in particle factory,,,false
+generated_17CAF0,func_15152F70,0x000,0x27BDFEF0,0x27BDFEF8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x008,0xAFB10070,0xAFB60084,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x014,0x30B100FF,0x30B600FF,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x018,0x27B700F8,0x27B700EC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x020,0xAFB60084,0xAFB50080,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x024,0xAFB50080,0xAFB4007C,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x028,0xAFB4007C,0xAFB30078,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x02C,0xAFB30078,0xAFB20074,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x030,0xAFB20074,0xAFB10070,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x048,0xAFA50114,0xAFA5010C,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x054,0xAFAE0108,0xAFAE00FC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x058,0xA7AF0106,0xA7AF00FA,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x068,0xA3B800F1,0xA3B800E5,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x078,0xA3B900F2,0xA3B900E6,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x088,0xA3A800F0,0xA3A800E4,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x094,0xA3A900F3,0xA3A900E7,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0B4,0xAFA000B4,0xAFA000A8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0B8,0xAFAD00B8,0xAFAD00AC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0BC,0xAFAE00BC,0xAFAE00B0,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0C0,0xAFAF00C0,0xAFAF00B4,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0C4,0xAFB800C4,0xAFB800B8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0C8,0xAFB900C8,0xAFB900BC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0CC,0xAFA800CC,0xAFA800C0,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0D0,0xA3A000D0,0xA3A000C4,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0D8,0xA3A900D1,0xA3A900C5,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x0E4,0x0220B025,0x27B500A8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x104,0x27B500B4,0x27B400CC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x108,0x12600077,0x52600078,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x10C,0x27B400D8,0x8FBF008C,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x1F8,0xA3AC010D,0xA3AC0101,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x228,0xA7B90104,0xA7B900F8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x248,0xE7A400D8,0xE7A400CC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x278,0xE7B000E8,0xE7B000DC,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x288,0xE7B200DC,0xE7B200D0,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x28C,0xE7A600E0,0xE7A600D4,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x290,0xE7A800E4,0xE7A800D8,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false
+generated_17CAF0,func_15152F70,0x324,0x27BD0110,0x27BD0108,-,-,Normalize closed private oriented-effect scratch placement and saved-register roles,,,false

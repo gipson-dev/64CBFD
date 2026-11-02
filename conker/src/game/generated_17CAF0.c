@@ -467,8 +467,146 @@ void func_15152B38(CompositeEffectInput *input, u8 mode, s32 extra) {
     }
 }
 
-s32 func_15152F70() {
-    return 0;
+
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+} OrientedEffectPosition;
+
+typedef struct {
+    OrientedEffectPosition position;
+    f32 fieldCBase;
+    f32 field10Range;
+    f32 field14Base;
+    f32 field18Range;
+    f32 speedBase;
+    f32 speedRange;
+    s16 countBase;
+    s16 countRange;
+    s16 firstAngleBase;
+    s16 firstAngleRange;
+    s16 secondAngleBase;
+    s16 secondAngleRange;
+    s16 byteBase;
+    s16 byteRange;
+    s16 shortBase;
+    s16 shortRange;
+    u8 fixed38;
+    u8 fixed39;
+    u8 private3A[2];
+    s32 argument3C;
+    s32 argument40;
+    s32 argument44;
+    s32 argument48;
+    s32 argument4C;
+    s32 argument50;
+    u8 fixed54;
+    u8 fixed55;
+    u8 privateTail56[2];
+} OrientedEffectInput;
+
+typedef struct {
+    s32 field0;
+    s32 field4;
+    s32 field8;
+    s32 fieldC;
+    s32 field10;
+    s32 field14;
+    s32 field18;
+    u8 field1C;
+    u8 field1D;
+    u8 privateTail1E[6];
+} OrientedEffectDescriptor;
+
+typedef struct {
+    f32 field0;
+    f32 direction[3];
+    f32 field10;
+    u8 private14[4];
+    u8 fixed18;
+    u8 fixed19;
+    u8 fixed1A;
+    u8 fixed1B;
+    u8 privateTail1C[4];
+} OrientedEffectMotion;
+
+typedef struct {
+    OrientedEffectPosition position;
+    s16 randomC;
+    s16 constantE;
+    s32 constant10;
+    u8 private14;
+    s8 random15;
+    u8 privateTail16[2];
+} OrientedEffectHeader;
+
+typedef struct {
+    OrientedEffectDescriptor descriptor;
+    OrientedEffectMotion motion;
+    OrientedEffectHeader header;
+} OrientedEffectScratch;
+
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+f32 func_151423D8(s32 angle);
+void func_15147DA0();
+/* Emit oriented randomized effect packets from live input fields using complete private scratch extents. */
+void func_15152F70(OrientedEffectInput *input, u8 mode) {
+    OrientedEffectHeader header;
+    OrientedEffectMotion motion;
+    OrientedEffectDescriptor descriptor;
+    f32 speed;
+    f32 secondPrimary;
+    f32 secondQuarter;
+    f32 firstPrimary;
+    f32 firstQuarter;
+    f32 product;
+    s16 firstAngle;
+    s16 secondAngle;
+    s32 remaining;
+
+    header.constant10 = 1;
+    header.constantE = 1;
+    motion.fixed19 = input->fixed38;
+    motion.fixed1A = input->fixed54;
+    motion.fixed18 = input->fixed39;
+    motion.fixed1B = input->fixed55;
+    header.position = input->position;
+    descriptor.field0 = 0;
+    descriptor.field4 = 1;
+    descriptor.field8 = 0x160600;
+    descriptor.fieldC = 3;
+    descriptor.field10 = 0x10;
+    descriptor.field14 = 0x80;
+    descriptor.field18 = 0x20;
+    descriptor.field1C = 0;
+    descriptor.field1D = 9;
+    remaining = (u32)func_150ADA20() % ((u32)input->countRange + 1U) + input->countBase;
+    if (remaining != 0) {
+        do {
+            firstAngle = (u32)func_150ADA20() % ((u32)input->firstAngleRange + 1U) + input->firstAngleBase;
+            secondAngle = (u32)func_150ADA20() % ((u32)input->secondAngleRange + 1U) + input->secondAngleBase;
+            secondPrimary = func_151423D8((u8)secondAngle);
+            secondQuarter = func_151423D8((u8)(secondAngle - 0x40));
+            firstPrimary = func_151423D8((u8)firstAngle);
+            firstQuarter = func_151423D8((u8)(firstAngle - 0x40));
+            speed = func_150ADA68() * input->speedRange + input->speedBase;
+            header.random15 = (u32)func_150ADA20() % ((u32)input->byteRange + 1U) + input->byteBase;
+            header.randomC = (u32)func_150ADA20() % ((u32)input->shortRange + 1U) + input->shortBase;
+            motion.field0 = func_150ADA68() * input->field10Range + input->fieldCBase;
+            product = speed * secondPrimary;
+            motion.field10 = func_150ADA68() * input->field18Range + input->field14Base;
+            motion.direction[0] = product * firstQuarter;
+            motion.direction[1] = -speed * secondQuarter;
+            motion.direction[2] = product * firstPrimary;
+            func_15147DA0(&header.position, &motion.field0, 0,
+                          input->argument3C, input->argument40, input->argument44,
+                          input->argument48, input->argument4C, input->argument50,
+                          0, 0, &descriptor, 0, mode, 1);
+            remaining--;
+        } while (remaining != 0);
+    }
 }
 
 s32 func_15153298() {
