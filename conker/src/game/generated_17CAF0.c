@@ -36,8 +36,21 @@ s32 func_1514F6E8() {
     return 0;
 }
 
-s32 func_1514F808() {
-    return 0;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143874(s16,f32,f32*,f32*);
+/* Sample a radial point and transform its three components through the live basis. */
+void func_1514F808(f32 *basis, f32 scale, f32 *output) {
+    f32 second;
+    f32 first;
+    f32 sample;
+    s32 random;
+    random = func_150ADA20();
+    sample = func_150ADA68();
+    func_15143874((s16)(random & 255), sample * basis[10], &first, &second);
+    output[0] = ((basis[4] * first + basis[7] * second) + basis[1]) * scale;
+    output[1] = ((basis[5] * first + basis[8] * second) + basis[2]) * scale;
+    output[2] = ((basis[6] * first + basis[9] * second) + basis[3]) * scale;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1514F8F8.s")
