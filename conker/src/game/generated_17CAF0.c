@@ -997,8 +997,76 @@ void func_15153F18(AngularTrailInput *arg0, LocalizedTrailInput *arg1,
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1515452C.s")
 
-s32 func_15154684() {
-    return 0;
+typedef struct {
+    s16 countBase;
+    s16 countRange;
+    void *providerType;
+    u8 private8[2];
+    s16 secondAngleBase;
+    s16 privateC;
+    s16 secondAngleRange;
+    f32 radiusBase;
+    f32 radiusRange;
+    f32 scaleBase;
+    f32 scaleRange;
+    f32 *mode;
+    u8 selectorBase;
+    u8 selectorRange;
+    s16 durationBase;
+    s16 durationRange;
+    u8 private2A[2];
+    f32 timeBase;
+    f32 timeRange;
+    f32 opaqueChance;
+    s32 requestValue;
+} DirectionEffectInput;
+void func_151C5F44(void *, f32 *, f32, f32 *, s32, s32, f32, s32,
+                  s32, s32, s32);
+
+/* Emit randomized directional effects from a complete live configuration. */
+void func_15154684(DirectionEffectInput *arg0, s32 arg1, s32 arg2) {
+    f32 direction[3];
+    f32 scaleRandom;
+    f32 timeRandom;
+    s32 remaining;
+    u32 secondAngleRandom;
+    u32 durationRandom;
+    u32 firstAngleRandom;
+    u32 selectorRandom;
+
+    remaining = (u32)func_150ADA20() % ((u32)arg0->countRange + 1U)
+                + arg0->countBase;
+    if (remaining > 0) {
+        do {
+            firstAngleRandom = (u32)func_150ADA20();
+            secondAngleRandom = (u32)func_150ADA20();
+            func_15143794(
+                (s16)(firstAngleRandom & 0xFF),
+                (s16)(secondAngleRandom % ((u32)arg0->secondAngleRange + 1U)
+                      + arg0->secondAngleBase),
+                func_150ADA68() * arg0->radiusRange + arg0->radiusBase,
+                direction);
+            scaleRandom = func_150ADA68();
+            selectorRandom = (u32)func_150ADA20();
+            durationRandom = (u32)func_150ADA20();
+            timeRandom = func_150ADA68();
+            func_151C5F44(
+                arg0->providerType,
+                direction,
+                scaleRandom * arg0->scaleRange + arg0->scaleBase,
+                arg0->mode,
+                selectorRandom % ((u32)arg0->selectorRange + 1U)
+                    + arg0->selectorBase,
+                durationRandom % ((u32)arg0->durationRange + 1U)
+                    + arg0->durationBase,
+                timeRandom * arg0->timeRange + arg0->timeBase,
+                func_150ADA68() < arg0->opaqueChance,
+                arg0->requestValue,
+                arg1 & 0xFF,
+                arg2);
+            remaining--;
+        } while (remaining > 0);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154884.s")

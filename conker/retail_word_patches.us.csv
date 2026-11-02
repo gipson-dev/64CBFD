@@ -25059,3 +25059,34 @@ generated_17CAF0,func_15153F18,0x190,0x46144282,0x4608A282,-,-,Normalize commuta
 generated_17CAF0,func_15153F18,0x1E0,0x026C001B,0x022C001B,-,-,Normalize closed random-sample register allocation,,,false
 generated_17CAF0,func_15153F18,0x22C,0x93AC00D7,0x93AC00C7,-,-,Normalize complete three-float scratch frame layout,,,false
 generated_17CAF0,func_15153F18,0x29C,0x27BD00C8,0x27BD00B8,-,-,Normalize complete three-float scratch frame layout,,,false
+generated_17CAF0,func_15154684,0x000,0x27BDFF68,0x27BDFF70,-,-,Normalize complete direction-scratch frame layout,,,false
+generated_17CAF0,func_15154684,0x008,0xAFB1004C,0xAFB5005C,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x014,0x00A08825,0x30B500FF,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x020,0xAFB5005C,0xAFB40058,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x024,0xAFB40058,0xAFB30054,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x028,0xAFB30054,0xAFB20050,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x02C,0xAFB20050,0xAFB1004C,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x038,0x0C000000,0xAFA50094,R_MIPS_26:func_150ADA20,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x03C,0x00000000,0x0C000000,-,R_MIPS_26:func_150ADA20,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x040,0x860E0002,0x00000000,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x044,0x86190000,0x860E0002,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x048,0x323500FF,0x86190000,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x04C,0x25CF0001,0x27B40080,-,-,Normalize complete direction-scratch frame layout,,,false
+generated_17CAF0,func_15154684,0x050,0x004F001B,0x25CF0001,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x054,0x0000C010,0x004F001B,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x058,0x03199821,0x0000C010,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x05C,0x15E00002,0x03199821,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x060,0x00000000,0x15E00002,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x064,0x0007000D,0x00000000,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x068,0x27B4008C,0x0007000D,-,-,Normalize opening argument-home and count schedule,,,false
+generated_17CAF0,func_15154684,0x080,0x00408825,0x00409025,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x088,0x00409025,0x00408825,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x09C,0x024B001B,0x022B001B,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x0AC,0x322400FF,0x324400FF,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x0F8,0x00408825,0x00409025,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x100,0x00409025,0x00408825,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x11C,0x0239001B,0x0259001B,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x140,0x46148482,0x4610A482,-,-,Normalize commutative floating multiply operand order,,,false
+generated_17CAF0,func_15154684,0x148,0x024C001B,0x022C001B,-,-,Normalize closed random-sample register allocation,,,false
+generated_17CAF0,func_15154684,0x164,0x46164282,0x4608B282,-,-,Normalize commutative floating multiply operand order,,,false
+generated_17CAF0,func_15154684,0x1FC,0x27BD0098,0x27BD0090,-,-,Normalize complete direction-scratch frame layout,,,false
