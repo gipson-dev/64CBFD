@@ -215,8 +215,65 @@ void func_15152520(ParticleFactoryInput *input, u8 mode, s32 extra) {
     }
 }
 
-s32 func_15152874() {
-    return 0;
+typedef struct { f32 x, y, z; } EffectPosition;
+typedef struct {
+    s32 baseCount, countRange;
+    EffectPosition position;
+    s16 firstBase, firstRange, secondBase, secondRange;
+    f32 radiusBase, radiusRange, field24;
+    f32 scaleBase, scaleRange;
+    s8 colorSelector;
+    u8 padding31;
+    s16 lifetimeBase, lifetimeRange;
+    u8 padding36[2];
+    f32 field38, field3C, field40, field44, field48;
+} ColorEffectInput;
+typedef struct {
+    EffectPosition position;
+    f32 direction[3];
+    f32 field18, scale;
+    u8 colors[4];
+    s32 lifetime;
+    f32 field28, field2C, field30;
+    u8 privateTail34[4];
+} ColorEffectPacket;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16, s16, f32, f32 *);
+s32 func_150CCEB0(ColorEffectPacket *, u8, u8);
+extern void (*D_8008AC60[])(u8 *);
+/* Emit randomized color-effect packets from live input fields using the complete private packet extent. */
+void func_15152874(ColorEffectInput *input, u8 mode, s32 extra) {
+    ColorEffectPacket packet;
+    u32 remaining;
+    u32 first, second;
+    first = (u32)func_150ADA20();
+    remaining = first % ((u32)input->countRange + 1U) + (u32)input->baseCount;
+    packet.position = input->position;
+    packet.field18 = input->field24;
+    packet.field30 = input->field48;
+    while (remaining != 0) {
+        first = (u32)func_150ADA20();
+        second = (u32)func_150ADA20();
+        func_15143794((s16)(first % (u32)(input->firstRange + 1) + input->firstBase),
+                      (s16)(second % (u32)(input->secondRange + 1) + input->secondBase),
+                      func_150ADA68() * input->radiusRange + input->radiusBase, packet.direction);
+        packet.scale = func_150ADA68() * input->scaleRange + input->scaleBase;
+        first = (u32)func_150ADA20();
+        packet.lifetime = first % (u32)(input->lifetimeRange + 1) + input->lifetimeBase;
+        packet.field28 = func_150ADA68() * input->field40 + input->field38;
+        packet.field2C = func_150ADA68() * input->field44 + input->field3C;
+        if (input->colorSelector != -1) {
+            D_8008AC60[input->colorSelector](packet.colors);
+        } else {
+            packet.colors[0] = 255;
+            packet.colors[1] = 255;
+            packet.colors[2] = 255;
+            packet.colors[3] = 255;
+        }
+        func_150CCEB0(&packet, (u8)mode, (u8)extra);
+        remaining--;
+    }
 }
 
 /* Note 532: randomized RGBA color initialization. */
