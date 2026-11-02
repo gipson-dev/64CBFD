@@ -863,6 +863,15 @@ typedef struct {
     s16 secondValue;
     s32 requestValue;
 } LocalizedTrailInput;
+
+typedef struct {
+    s16 firstAngleBase;
+    s16 firstAngleRange;
+    s16 secondAngleBase;
+    s16 secondAngleRange;
+} AngularTrailInput;
+extern f32 D_800A6000;
+void func_15143794(s16, s16, f32, f32 *);
 extern f32 D_800A5FFC;
 u8 *func_151DA6F8(void *, void *, f32, s16, s32, f32, s32, s32,
                   f32, f32, s32, s32, s32, s16, s16, s32, s32, s32);
@@ -925,8 +934,63 @@ void func_15153CCC(void *arg0, LocalizedTrailInput *arg1, s32 arg2,
     }
 }
 
-s32 func_15153F18() {
-    return 0;
+/* Emit angular localized trails from a complete live configuration. */
+void func_15153F18(AngularTrailInput *arg0, LocalizedTrailInput *arg1,
+                    s32 arg2, s32 arg3, s32 arg4) {
+    f32 velocity[3];
+    f32 temp_f20;
+    f32 temp_f22;
+    f32 temp_f24;
+    s32 remaining;
+    u32 secondRandom;
+    u32 firstRandom;
+    u32 requestRandom;
+    u32 modeRandom;
+    u32 durationRandom;
+
+    remaining = (u32)func_150ADA20() % ((u32)arg1->countRange + 1U)
+                + arg1->countBase;
+    if (remaining != 0) {
+        temp_f24 = D_800A6000;
+        do {
+            firstRandom = (u32)func_150ADA20();
+            secondRandom = (u32)func_150ADA20();
+            func_15143794(
+                (s16)(firstRandom % ((u32)arg0->firstAngleRange + 1U)
+                      + arg0->firstAngleBase),
+                (s16)(secondRandom % ((u32)arg0->secondAngleRange + 1U)
+                      + arg0->secondAngleBase),
+                func_150ADA68() * arg1->radiusRange + arg1->radiusBase,
+                velocity);
+            temp_f22 = func_150ADA68();
+            durationRandom = (u32)func_150ADA20();
+            modeRandom = (u32)func_150ADA20();
+            temp_f20 = func_150ADA68();
+            requestRandom = (u32)func_150ADA20();
+            func_151DA6F8(
+                arg1,
+                velocity,
+                temp_f22 * arg1->scaleRange + arg1->scaleBase,
+                (s16)(durationRandom % ((u32)arg1->durationRange + 1U)
+                      + arg1->durationBase),
+                modeRandom % ((u32)arg1->modeRange + 1U) + arg1->modeBase,
+                temp_f20 * arg1->timeRange + arg1->timeBase,
+                requestRandom % ((u32)arg1->requestSelectorRange + 1U)
+                    + arg1->requestSelectorBase,
+                func_150ADA68() < arg1->opaqueChance,
+                temp_f24,
+                temp_f24,
+                1,
+                arg1->selector,
+                arg2,
+                arg1->firstValue,
+                arg1->secondValue,
+                arg1->requestValue,
+                ((u8 *)&arg3)[3],
+                arg4);
+            remaining--;
+        } while (remaining != 0);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_151541B8.s")
