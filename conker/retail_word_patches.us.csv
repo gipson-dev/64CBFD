@@ -24751,3 +24751,15 @@ game_305D0,func_15003570,0x0BC,0xA644FFFE,0x26520002,-,-,Restore bounded metadat
 game_305D0,func_15003570,0x0C0,0x26730002,0xA663FFFE,-,-,Restore bounded metadata cursor/temporary roles and independent address or integer schedule,,,false
 game_305D0,func_15003570,0x0C4,0x1655FFE4,0x1675FFE4,-,-,Restore bounded metadata cursor/temporary roles and independent address or integer schedule,,,false
 game_305D0,func_15003570,0x0C8,0x02058021,0x02188021,-,-,Restore bounded metadata cursor/temporary roles and independent address or integer schedule,,,false
+generated_F3270,func_150C5E0C,0x044,0xAFA30018,0xAFA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_F3270,func_150C5E0C,0x050,0xA3A60023,0xA3A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_F3270,func_150C5E0C,0x054,0x8FA30018,0x8FA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_F3270,func_150C5E0C,0x05C,0x83A60023,0x83A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_F3270,func_150C5E0C,0x090,0x8FA30018,0x8FA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_F3270,func_150C5E0C,0x098,0x83A60023,0x83A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x044,0xAFA30018,0xAFA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x050,0xA3A60023,0xA3A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x054,0x8FA30018,0x8FA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x05C,0x83A60023,0x83A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x090,0x8FA30018,0x8FA3001C,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
+generated_1D6E80,func_151AB090,0x098,0x83A60023,0x83A60027,-,-,Relocate closed oscillator pointer and captured notification spills within the existing 40-byte frame,,,false
