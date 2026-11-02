@@ -25297,3 +25297,12 @@ generated_139FC0,func_1510D8C0,0x090,0x24630010,0x1420FFE3,-,-,Normalize queued 
 generated_139FC0,func_1510D8C0,0x094,0x00801025,0x24840010,-,-,Normalize queued segment writer register allocation and scheduling,,,false
 generated_139FC0,func_1510D8C0,0x098,0x03E00008,0x00C01025,-,-,Normalize queued segment writer register allocation and scheduling,,,false
 generated_139FC0,func_1510D8C0,0x09C,0x00000000,0x03E00008,-,-,Normalize queued segment writer register allocation and scheduling,,,false
+generated_5D2C0,func_15031070,0x03C,0x1000003F,0x10000040,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x06C,0x10000032,0x10000033,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x0A8,0x10000023,0x10000024,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x0B0,0x9625001E,0x9622001E,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x0B4,0x50A00019,0x5040001A,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x0BC,0x8FA40024,0x8FA40024,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,0x00402825,-,false
+generated_5D2C0,func_15031070,0x104,0x24020001,0x24020001,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,true
+generated_5D2C0,func_15031070,0x110,0x1000000A,0xAE0F0000,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,,,false
+generated_5D2C0,func_15031070,0x114,0xAE0F0000,0x1000000A,-,-,Normalize matrix-pair resolver key lifetime and recursive success schedule,0x24020001,-,false

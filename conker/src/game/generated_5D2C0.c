@@ -417,7 +417,7 @@ Gfx *func_15030F94(Gfx *cursor, u8 *actor, s32 view, s32 mode) {
     return cursor;
 }
 
-/* Complete non-matching recovery; byte-match boundary in Working Note 1107. */
+/* Resolve a node's primary/secondary matrix pair; guarded byte-exact in Working Note 2002. */
 s32 func_15031070(u8 *node, u8 *actor, Mtx **primary, Mtx **secondary) {
     u8 *attachment;
     u8 *parent;
