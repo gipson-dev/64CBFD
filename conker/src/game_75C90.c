@@ -67,27 +67,22 @@ f32 func_15048864(f32 arg0) {
     return (arg0 < 0.0f) ? (255.0f - temp_f14) : temp_f14;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_75C90/func_150488C8.s. */
-f32 func_150488C8(f32 arg0) {
-    return 0.0f;
+/* Interpolate the unsigned angle table and restore the input sign.
+ * Preserve the retail routine's unchecked table index. */
+f32 func_150488C8(f32 input) {
+    f32 base;
+    f32 scaled;
+    s32 index;
+    f32 next;
+    f32 fraction;
+    scaled = fabsf(input) * D_8009900C;
+    index = scaled;
+    fraction = scaled - (f32)index;
+    base = D_80098E00[index];
+    next = (index < 255) ? D_80098E00[index + 1] : D_80099010;
+    base = ((((next - base) * fraction) + base) * D_80099014) / 65536.0f;
+    if (input < 0.0f) {
+        return -base;
+    }
+    return base;
 }
-// NON-MATCHING: needs more work
-// f32 func_150488C8(f32 arg0) {
-//     f32 temp_f16;
-//     f32 temp_f2;
-//     s32 index;
-//     f32 phi_f0;
-//     f32 phi_f16;
-//
-//
-//     index = temp_f2 = fabsf(arg0) * D_8009900C;
-//     phi_f16 = D_80098E00[index];
-//
-//     phi_f0 = (index < 255) ? D_80098E00[index+1] : D_80099010;
-//
-//     temp_f16 = ((((phi_f0 - phi_f16) * (temp_f2 - (f32)index)) + phi_f16) * D_80099014) / 65536.0f;
-//     if (arg0 < 0.0f) {
-//         return -temp_f16;
-//     }
-//     return temp_f16;
-// }
