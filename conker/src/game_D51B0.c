@@ -1,23 +1,28 @@
 #include <ultra64.h>
-#include "functions.h"
-#include "variables.h"
 
+/* Build an N64 fixed-point translation matrix from three floating-point offsets. */
+void func_150A7D00(volatile s16 *matrix, f32 x, f32 y, f32 z) {
+    s32 fixedX = x * 65536.0f;
+    s32 fixedY = y * 65536.0f;
+    s32 fixedZ = z * 65536.0f;
+    u64 *words = (u64 *)matrix;
 
-// s16 / f32 matrix
-void func_150A7D00(s16 *arg0, f32 arg1, f32 arg2, f32 arg3) {
-    s32 x = arg1 * 65536.0f;
-    s32 y = arg2 * 65536.0f;
-    s32 z = arg3 * 65536.0f;
-
-    bzero(arg0, 0x40);
-    arg0[0] = 1;
-    arg0[5] = 1;
-    arg0[10] = 1;
-    arg0[15] = 1;
-    arg0[12] = x >> 16;
-    arg0[13] = y >> 16;
-    arg0[14] = z >> 16;
-    arg0[28] = x;
-    arg0[29] = y;
-    arg0[30] = z;
+    words[0] = 0;
+    words[1] = 0;
+    words[2] = 0;
+    words[3] = 0;
+    words[4] = 0;
+    words[5] = 0;
+    words[6] = 0;
+    words[7] = 0;
+    matrix[0] = 1;
+    matrix[5] = 1;
+    matrix[10] = 1;
+    matrix[15] = 1;
+    matrix[12] = fixedX >> 16;
+    matrix[13] = fixedY >> 16;
+    matrix[14] = fixedZ >> 16;
+    matrix[28] = fixedX;
+    matrix[29] = fixedY;
+    matrix[30] = fixedZ;
 }

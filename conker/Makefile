@@ -341,6 +341,9 @@ $(BUILD_DIR)/$(SRC_DIR)/init_3920.c.o: OPT_FLAGS := -O2
 # This fixed-matrix leaf uses retail's eight 64-bit zero stores.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_D50C0.c.o: MIPSBIT := -mips3
 
+# This fixed-translation leaf uses retail's eight 64-bit zero stores.
+$(BUILD_DIR)/$(SRC_DIR)/game_D51B0.c.o: MIPSBIT := -mips3
+
 # uses native 64-bit ops (func_150ADA20's PRNG step) - needs MIPS III, not
 # the project-wide default MIPS II, or IDO emits __ll_lshift/__ull_rshift
 # software-emulation calls instead of dsll/dsrl/daddiu/ld/sd.
