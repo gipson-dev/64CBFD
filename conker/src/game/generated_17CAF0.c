@@ -110,8 +110,109 @@ s32 func_15152190() {
     return 0;
 }
 
-s32 func_15152520() {
-    return 0;
+typedef struct {
+    s32 baseCount, countRange;
+    f32 position[3];
+    s16 field14, field16, field18, field1A;
+    f32 parameters[5];
+    s16 lifetimeBase, lifetimeRange;
+    s32 field34, field38, field3C;
+    f32 values[10];
+    u8 colors[8];
+    u8 field70, field71;
+    s16 field72, field74;
+    u8 padding76[2];
+} ParticleFactoryInput;
+typedef struct { u8 r, g, b, a; } ParticleColor;
+typedef struct { f32 x, y, z; } ParticlePosition;
+typedef struct {
+    u8 flags, field1, field2;
+    s8 field3, field4;
+    u8 padding5;
+    s16 lifetime;
+    s32 field8, fieldC, field10;
+    u32 field14, field18;
+    s32 field1C, field20, field24, field28;
+    u8 field2C, field2D, padding2E[2];
+    ParticleColor colors[2];
+    u8 field38, padding39[3];
+    s32 field3C;
+    u8 field40, field41, padding42[2];
+    ParticlePosition position;
+    u8 padding50[4];
+    s16 field54, field56;
+} ParticleSpawnDescriptor;
+typedef struct {
+    f32 rotation[3];
+    f32 fieldC;
+    f32 direction[3];
+    f32 velocity[3];
+    f32 field28, field2C;
+    u8 property, padding31[3];
+} ParticleSpawnState;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16, s16, f32, f32 *);
+s32 func_15157898(s32, void *, s32, f32,
+                  s32, s32, u8 *, u8, s32);
+
+/* Spawn copies state plus the descriptor first word from this complete object. */
+typedef struct { ParticleSpawnState state; ParticleSpawnDescriptor descriptor; } ParticleSpawnScratch;
+/* Emit randomized particles from live input fields using one contiguous spawn scratch object. */
+void func_15152520(ParticleFactoryInput *input, u8 mode, s32 extra) {
+    ParticleSpawnScratch scratch;
+    u32 remaining;
+    u32 first;
+    u32 second;
+
+    scratch.descriptor.field38 = 0;
+    scratch.descriptor.flags = input->field70 | 2;
+    scratch.descriptor.field1 = 0;
+    scratch.descriptor.field2 = 1;
+    scratch.descriptor.field3 = -1;
+    scratch.descriptor.field4 = -1;
+    scratch.descriptor.field8 = input->field34;
+    scratch.descriptor.fieldC = input->field38;
+    scratch.descriptor.field24 = 128;
+    scratch.descriptor.field28 = 32;
+    scratch.descriptor.field10 = 0;
+    scratch.descriptor.field14 = 0x220405;
+    scratch.descriptor.field18 = 0x40200;
+    scratch.descriptor.field2C = 0;
+    scratch.descriptor.field2D = 8;
+    scratch.descriptor.field1C = 1;
+    scratch.descriptor.field20 = 0x38;
+    scratch.descriptor.field3C = 0;
+    scratch.descriptor.field40 = 0;
+    scratch.descriptor.field41 = 2;
+    scratch.descriptor.position = *(ParticlePosition *)input->position;
+    scratch.state.field2C = input->parameters[2];
+    scratch.descriptor.colors[0] = *(ParticleColor *)&input->colors[0];
+    scratch.descriptor.colors[1] = *(ParticleColor *)&input->colors[4];
+    scratch.descriptor.field54 = input->field72;
+    scratch.descriptor.field56 = input->field74;
+    scratch.state.property = input->field71;
+    remaining = (u32)func_150ADA20();
+    remaining = remaining % ((u32)input->countRange + 1U) + (u32)input->baseCount;
+    while (remaining != 0) {
+        first = (u32)func_150ADA20();
+        scratch.descriptor.lifetime = (s16)(first % (u32)(input->lifetimeRange + 1) + input->lifetimeBase);
+        scratch.state.rotation[0] = func_150ADA68() * 360.0f;
+        scratch.state.rotation[1] = func_150ADA68() * 360.0f;
+        scratch.state.rotation[2] = func_150ADA68() * 360.0f;
+        scratch.state.fieldC = func_150ADA68() * input->values[3] + input->values[2];
+        first = (u32)func_150ADA20();
+        second = (u32)func_150ADA20();
+        func_15143794((s16)(first % (u32)(input->field16 + 1) + input->field14),
+                      (s16)(second % (u32)(input->field1A + 1) + input->field18),
+                      func_150ADA68() * input->parameters[1] + input->parameters[0], scratch.state.direction);
+        scratch.state.velocity[0] = func_150ADA68() * input->values[7] + input->values[4];
+        scratch.state.velocity[1] = func_150ADA68() * input->values[8] + input->values[5];
+        scratch.state.velocity[2] = func_150ADA68() * input->values[9] + input->values[6];
+        scratch.state.field28 = func_150ADA68() * input->parameters[4] + input->parameters[3];
+        func_15157898((s32)&scratch.descriptor, &scratch, input->field3C, func_150ADA68() * input->values[1] + input->values[0], 0, 0, 0, (u8)mode, extra);
+        remaining--;
+    }
 }
 
 s32 func_15152874() {
