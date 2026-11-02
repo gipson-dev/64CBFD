@@ -1,7 +1,8 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/1A6360.s. */
+/* Recovered routines and remaining placeholders for asm/1A6360.s. */
 
+extern u8 *D_800DBFF0;
 extern s16 D_800DD436;
 extern u8 **D_800DD440;
 
@@ -50,6 +51,16 @@ s32 func_15179B14() {
     return 0;
 }
 
-s32 func_15179CB0() {
-    return 0;
+/* Derive the record opacity byte from planar viewer distance. */
+void func_15179CB0(u8 *record) {
+    f32 dx;
+    f32 dz;
+    f32 distance;
+    u8 *viewer;
+
+    viewer = D_800DBFF0;
+    dx = (f32)*(s16 *)(record + 0xA0) - *(f32 *)(viewer + 0x300);
+    dz = (f32)*(s16 *)(record + 0x9C) - *(f32 *)(viewer + 0x2F8);
+    distance = sqrtf(dx * dx + dz * dz);
+    record[0xB4] = (u32)(255.0f - distance * 160.0f / 1000.0f);
 }
