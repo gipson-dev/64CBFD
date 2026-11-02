@@ -1230,7 +1230,16 @@ s32 func_15154D80() {
     return 0;
 }
 
-s32 func_151555AC(u8 *, f32 *, s32 *, s32);
+extern s32 D_800A6030[2];
+extern u8 D_800DCE50[];
+extern s8 D_800DD190;
+
+typedef struct {
+    s32 first;
+    s32 second;
+} EffectOverlapColumns151555AC;
+
+s32 func_151555AC(f32 *, f32 *, s32 *, s32);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 
 /* Allocate an effect record after an optional overlap check. */
@@ -1242,7 +1251,7 @@ void *func_1515548C(u8 *descriptor, s32 callback, s32 *pair, s32 pairCount,
     if (pair != NULL && pairCount > 0) {
         position[0] = *(f32 *)(descriptor + 8);
         position[1] = *(f32 *)(descriptor + 0xC);
-        if (func_151555AC(descriptor, position, pair, pairCount)) {
+        if (func_151555AC((f32 *)descriptor, position, pair, pairCount)) {
             return NULL;
         }
     }
@@ -1266,7 +1275,57 @@ void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_151555AC.s")
+/* Report whether a tagged live effect overlaps the requested rectangle. */
+s32 func_151555AC(f32 *center, f32 *extent, s32 *tags, s32 tagCount) {
+    EffectOverlapColumns151555AC columns =
+        *(EffectOverlapColumns151555AC *)D_800A6030;
+    u8 *row;
+    u8 column;
+
+    row = D_800DCE50;
+    do {
+        column = 0;
+        do {
+            u8 *node = *(u8 **)(row + ((s32 *)&columns)[column] * 4);
+            u8 *next;
+            if (node != NULL) {
+                do {
+                    next = *(u8 **)(node + 8);
+                    {
+                    s32 matched = 0;
+                    if (tagCount > 0) {
+                        s32 offset = tagCount * 4;
+                        s32 *cursor = (s32 *)((u8 *)tags + offset);
+                        do {
+                            if (node[0x2A] == *(cursor - 1)) {
+                                matched = 1;
+                            } else {
+                                offset -= 4;
+                                cursor--;
+                            }
+                        } while (offset >= 4 && matched == 0);
+                    }
+                    if (matched != 0) {
+                        f32 extentX = *(f32 *)(node + 0x18) + extent[0];
+                        f32 extentY = *(f32 *)(node + 0x1C) + extent[1];
+                        f32 nodeX = *(f32 *)(node + 0x10);
+                        f32 nodeY = *(f32 *)(node + 0x14);
+                        if (center[0] - extentX <= nodeX &&
+                            nodeX <= center[0] + extentX &&
+                            center[1] - extentY <= nodeY &&
+                            nodeY <= center[1] + extentY) {
+                            return 1;
+                        }
+                    }
+                    }
+                } while ((node = next) != NULL);
+            }
+            column++;
+        } while (column < 2);
+        row += 0x1A0;
+    } while (row != (u8 *)&D_800DD190);
+    return 0;
+}
 
 void func_1515572C(void *arg0, u8 arg1) {
     TwoWord17CAF0 tmp;
