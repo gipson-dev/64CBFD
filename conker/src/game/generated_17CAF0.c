@@ -16,7 +16,6 @@ extern u8 D_800A5FE0[][3];
 void func_15169260(void *, s32, void *, u8);
 s32 func_150ADA20(void);
 s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
-s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4);
 
 /* Build triangle vectors and orient the normal toward the source vector. */
 void func_1514F640(u8 *source, u8 *output) {
@@ -841,15 +840,89 @@ void func_151539B4(WidePacketInput *input, u8 mode) {
     }
 }
 
+typedef struct {
+    f32 position[3];
+    f32 timeBase;
+    f32 timeRange;
+    f32 scaleBase;
+    f32 scaleRange;
+    f32 radiusBase;
+    f32 radiusRange;
+    s16 countBase;
+    s16 countRange;
+    s16 requestSelectorBase;
+    s16 requestSelectorRange;
+    s16 durationBase;
+    s16 durationRange;
+    s16 modeBase;
+    s16 modeRange;
+    u8 selector;
+    u8 private35[3];
+    f32 opaqueChance;
+    s16 firstValue;
+    s16 secondValue;
+    s32 requestValue;
+} LocalizedTrailInput;
+extern f32 D_800A5FFC;
+u8 *func_151DA6F8(void *, void *, f32, s16, s32, f32, s32, s32,
+                  f32, f32, s32, s32, s32, s16, s16, s32, s32, s32);
+void func_15153CCC(void *, LocalizedTrailInput *, s32, s32, s32);
+
 void func_15153C84(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     u8 temp[0x2C];
 
     func_1514F640((u8 *)arg0, temp);
-    func_15153CCC(temp, arg1, arg2, arg3, arg4);
+    func_15153CCC(temp, (LocalizedTrailInput *)arg1, arg2, arg3, arg4);
 }
 
-s32 func_15153CCC(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
-    return 0;
+/* Emit localized trail requests from a complete live configuration. */
+void func_15153CCC(void *arg0, LocalizedTrailInput *arg1, s32 arg2,
+                    s32 arg3, s32 arg4) {
+    f32 velocity[3];
+    f32 temp_f20;
+    f32 temp_f22;
+    f32 temp_f24;
+    s32 var_s4;
+    u32 temp_s1;
+    u32 temp_s2;
+    u32 temp_s3;
+
+    if (func_1514F6E8(arg0) != 0) {
+        var_s4 = (u32)func_150ADA20() % ((u32)arg1->countRange + 1U) + arg1->countBase;
+        if (var_s4 != 0) {
+            temp_f24 = D_800A5FFC;
+            do {
+                func_1514F808(arg0,
+                              func_150ADA68() * arg1->radiusRange + arg1->radiusBase,
+                              velocity);
+                temp_f22 = func_150ADA68();
+                temp_s1 = (u32)func_150ADA20();
+                temp_s2 = (u32)func_150ADA20();
+                temp_f20 = func_150ADA68();
+                temp_s3 = (u32)func_150ADA20();
+                func_151DA6F8(
+                    arg1,
+                    velocity,
+                    temp_f22 * arg1->scaleRange + arg1->scaleBase,
+                    (s16)(temp_s1 % ((u32)arg1->durationRange + 1U) + arg1->durationBase),
+                    temp_s2 % ((u32)arg1->modeRange + 1U) + arg1->modeBase,
+                    temp_f20 * arg1->timeRange + arg1->timeBase,
+                    temp_s3 % ((u32)arg1->requestSelectorRange + 1U) + arg1->requestSelectorBase,
+                    func_150ADA68() < arg1->opaqueChance,
+                    temp_f24,
+                    temp_f24,
+                    1,
+                    arg1->selector,
+                    arg2,
+                    arg1->firstValue,
+                    arg1->secondValue,
+                    arg1->requestValue,
+                    ((u8 *)&arg3)[3],
+                    arg4);
+                var_s4--;
+            } while (var_s4 != 0);
+        }
+    }
 }
 
 s32 func_15153F18() {
