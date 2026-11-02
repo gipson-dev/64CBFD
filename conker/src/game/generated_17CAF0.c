@@ -1069,7 +1069,119 @@ void func_15154684(DirectionEffectInput *arg0, s32 arg1, s32 arg2) {
     }
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154884.s")
+typedef struct { f32 x, y, z; } EffectVector15154884;
+typedef struct {
+    f32 field00;
+    f32 field04;
+    f32 field08;
+    f32 field0C;
+    f32 rotation[3];
+    f32 scale[3];
+    EffectVector15154884 position;
+    EffectVector15154884 velocity;
+    f32 field40;
+    f32 field44;
+    f32 field48;
+    f32 field4C;
+    u32 flags;
+    s16 duration;
+    s16 resource;
+    u8 field58;
+    u8 reserved59[3];
+    u32 field5C;
+    u8 field60;
+    u8 field61;
+    u8 field62;
+    u8 field63;
+    u8 field64;
+    u8 field65;
+    u8 field66;
+    u8 field67;
+    u8 field68;
+    u8 reserved69;
+    u8 field6A;
+    u8 reserved6B;
+    u32 field6C;
+    u8 field70;
+    u8 reserved71;
+    s16 field72;
+    s16 field74;
+    u8 reserved76[2];
+} EffectActorDescriptor15154884;
+typedef struct {
+    f32 lifetime;
+    f32 amplitude;
+    f32 height;
+    f32 phase;
+    f32 rate;
+} EffectActorPayload15154884;
+extern f32 D_800A601C;
+extern f32 D_800A6020;
+extern f32 D_800A6024;
+extern f32 D_800A6028;
+extern f32 D_800A602C;
+f32 func_150ADA68(void);
+void *func_15132A4C(void *, s32, s32, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Create a randomized effect actor and attach its complete motion payload. */
+void *func_15154884(EffectVector15154884 *position, f32 lifetime,
+                      f32 amplitude, f32 height, u8 slot, s32 context) {
+    EffectActorDescriptor15154884 descriptor;
+    EffectActorPayload15154884 payload;
+    void *created;
+
+    if (lifetime <= 0.0f) {
+        return NULL;
+    }
+    payload.lifetime = lifetime;
+    payload.amplitude = amplitude;
+    payload.height = height;
+    payload.phase = 0.0f;
+    payload.rate = D_800A601C / lifetime;
+    descriptor.field00 = 1.0f;
+    descriptor.field04 = 1.0f;
+    descriptor.field08 = 0.0f;
+    descriptor.field0C = 0.0f;
+    descriptor.rotation[0] = func_150ADA68() * 360.0f;
+    descriptor.rotation[1] = func_150ADA68() * 360.0f;
+    descriptor.rotation[2] = func_150ADA68() * 360.0f;
+    descriptor.scale[0] = 1.0f;
+    descriptor.scale[1] = 1.0f;
+    descriptor.scale[2] = 1.0f;
+    descriptor.position = *position;
+    descriptor.velocity.x = 0.0f;
+    descriptor.velocity.y = 0.0f;
+    descriptor.velocity.z = 0.0f;
+    descriptor.field40 = func_150ADA68() * D_800A6020 + D_800A6024;
+    descriptor.field44 = 0.0f;
+    descriptor.field48 = func_150ADA68() * D_800A6028 + D_800A602C;
+    descriptor.field4C = 0.0f;
+    descriptor.flags = 0x140;
+    descriptor.resource = 0x55;
+    descriptor.field58 = 0;
+    descriptor.field5C = 0;
+    descriptor.field60 = 0xFF;
+    descriptor.field61 = 0x12;
+    descriptor.field62 = 0;
+    descriptor.field63 = 0;
+    descriptor.field64 = 0;
+    descriptor.field65 = 0;
+    descriptor.field66 = 0;
+    descriptor.field67 = 0;
+    descriptor.field68 = 2;
+    descriptor.field6A = 0;
+    descriptor.field6C = 0;
+    descriptor.field70 = 0;
+    descriptor.field72 = 1;
+    descriptor.field74 = 0xFF;
+    descriptor.duration = 0x12C;
+    created = func_15132A4C(&descriptor, 0, 0, sizeof(payload), slot, context);
+    if (created != NULL) {
+        memcpy((u8 *)created + 0x170, &payload, sizeof(payload));
+    }
+    return created;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154A88.s")
 

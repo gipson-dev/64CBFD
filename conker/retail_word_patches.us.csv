@@ -25090,3 +25090,13 @@ generated_17CAF0,func_15154684,0x140,0x46148482,0x4610A482,-,-,Normalize commuta
 generated_17CAF0,func_15154684,0x148,0x024C001B,0x022C001B,-,-,Normalize closed random-sample register allocation,,,false
 generated_17CAF0,func_15154684,0x164,0x46164282,0x4608B282,-,-,Normalize commutative floating multiply operand order,,,false
 generated_17CAF0,func_15154684,0x1FC,0x27BD0098,0x27BD0090,-,-,Normalize complete direction-scratch frame layout,,,false
+generated_17CAF0,func_15154884,0x000,0x27BDFF48,0x27BDFF40,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x018,0xAFA400B8,0xAFA400C0,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x01C,0xAFA700C4,0xAFA700CC,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x044,0xC7A400C4,0xC7A400CC,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x0B4,0x8FAF00B8,0x8FAF00C0,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x130,0x93AF00CB,0x93AF00D3,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x134,0x8FA800CC,0x8FA800D4,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x1E4,0xAFA20028,0xAFA200BC,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x1E8,0x8FA30028,0x8FA300BC,-,-,"Normalize constructor frame, argument homes and result spill",,,false
+generated_17CAF0,func_15154884,0x1F8,0x27BD00B8,0x27BD00C0,-,-,"Normalize constructor frame, argument homes and result spill",,,false
