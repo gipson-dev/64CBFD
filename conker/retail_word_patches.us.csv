@@ -25469,3 +25469,27 @@ generated_1B5370,func_15187EC0,0x0A8,0x8D0D0000,0x8D190000,-,-,Normalize color-e
 generated_1B5370,func_15187EC0,0x0AC,0x25AE0001,0x27290001,-,-,Normalize color-effect initializer argument loads and store schedule,,,false
 generated_1B5370,func_15187EC0,0x0B0,0xAD0E0000,0xAD090000,-,-,Normalize color-effect initializer argument loads and store schedule,,,false
 generated_1B5370,func_15187EC0,0x0B8,0x25C2FFFF,0x2522FFFF,-,-,Normalize color-effect initializer argument loads and store schedule,,,false
+generated_10CD70,func_150DFCA8,0x00C,0xC4840004,0xC4880004,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x010,0x448E3000,0x448E2000,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x018,0x44819000,0x44818000,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x01C,0x46803220,0x468021A0,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x024,0x46081282,0x46061002,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x028,0x460A2400,0x46004280,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x02C,0xE4900004,0xE48A0004,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x030,0xC4800004,0xC48C0004,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x034,0x4612003C,0x4610603C,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x040,0x44813000,0x44819000,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x058,0x44813000,0x44819000,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x060,0x4600303C,0x460C903C,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x070,0xC4200000,0xC42E0000,R_MIPS_LO16:D_800A0FA4,R_MIPS_LO16:D_800A0FA4,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x078,0x46000007,0x46007007,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x098,0xC4280000,0xC4240000,R_MIPS_LO16:D_800A0FA8,R_MIPS_LO16:D_800A0FA8,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x09C,0x46081100,0x46041180,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0A0,0xE4840064,0xE4860064,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0A4,0xC48A0064,0xC4880064,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0A8,0x460A003C,0x4608003C,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0D0,0xC4300000,0xC42A0000,R_MIPS_LO16:D_800A0FAC,R_MIPS_LO16:D_800A0FAC,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0D4,0x46101481,0x460A1401,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0D8,0xE4920064,0xE4900064,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0DC,0xC4860064,0xC4920064,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_10CD70,func_150DFCA8,0x0E0,0x4600303C,0x4600903C,-,-,Normalize motion-target clamp floating-register allocation,,,false

@@ -56,9 +56,50 @@ Gfx *func_150DFBD0(Gfx *cursor) {
     return cursor;
 }
 
+#ifdef RETAIL_FUNC_150DFCA8
+extern f32 D_800A0FA0, D_800A0FA4, D_800A0FA8, D_800A0FAC;
+extern s32 D_800BE9E4;
+typedef struct MotionTargetState150DFCA8 {
+    f32 field0;
+    f32 position;
+    u8 reserved08[0x5C];
+    f32 velocity;
+    u8 reserved68[0x14];
+    f32 targetVelocity;
+} MotionTargetState150DFCA8;
+
+/* Integrate vertical motion and approach the region-selected velocity. */
+void func_150DFCA8(MotionTargetState150DFCA8 *state) {
+    f32 target;
+
+    state->position += state->velocity * (f32)D_800BE9E4;
+    if (state->position < 11.0f) {
+        target = D_800A0FA0;
+        state->targetVelocity = target;
+    } else if (55.0f < state->position) {
+        target = -D_800A0FA4;
+        state->targetVelocity = target;
+    } else {
+        target = state->targetVelocity;
+    }
+
+    if (state->velocity < target) {
+        state->velocity += D_800A0FA8;
+        if (target < state->velocity) {
+            state->velocity = target;
+        }
+    } else if (target < state->velocity) {
+        state->velocity -= D_800A0FAC;
+        if (state->velocity < target) {
+            state->velocity = target;
+        }
+    }
+}
+#else
 s32 func_150DFCA8() {
     return 0;
 }
+#endif
 
 void func_150DFDA4(u8 *arg0) {
     u8 *temp_v0 = *(u8 **) (arg0 + 0x1D4) + 0x40;

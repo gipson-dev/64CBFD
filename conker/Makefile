@@ -107,6 +107,7 @@ GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.
 ifeq ($(VERSION),us)
 GENERATED_SLICE_O_FILES := $(foreach file,$(GENERATED_SLICE_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o
@@ -458,6 +459,19 @@ $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<)) $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# The recovered motion-target clamp changes IDO's floating-register state for
+# a later matched routine. Select only this callback from the macro-enabled
+# object while preserving every established neighbor from the base compile.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o: \
+		$(SRC_DIR)/game/generated_10CD70.c $$(call generated_slice_asm,10CD70) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -DRETAIL_FUNC_150DFCA8 $(MIPSBIT) -o $@.motion.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,10CD70) $@.padded.s \
+		--function-object func_150DFCA8=$@.motion.compact --word-patches retail_word_patches.us.csv \
+		--filename generated_10CD70 $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.motion.compact $@.padded.s
 
 # Preserve this slice's no-unroll neighbors; select only the complete
 # vertex-coordinate copy from its retail unrolled object.
