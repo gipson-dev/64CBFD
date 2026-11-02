@@ -1158,7 +1158,7 @@ extern s32 D_800D2138;
 
 extern s16 D_800D2340;
 extern u8  D_800D23A9;
-extern s32 D_800D23C0;
+extern u8 *D_800D23C0;
 extern s32 D_800D23D0;
 
 extern f32 D_800D2410[];
