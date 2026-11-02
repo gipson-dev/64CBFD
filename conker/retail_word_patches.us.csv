@@ -25010,3 +25010,28 @@ generated_17CAF0,func_15153298,0x324,0x00005010,0x00006810,-,-,Normalize closed 
 generated_17CAF0,func_15153298,0x328,0x014B6021,0x01AE7821,-,-,Normalize closed private short-packet scratch and integer register roles,,,false
 generated_17CAF0,func_15153298,0x32C,0x15200002,0x15800002,-,-,Normalize closed private short-packet scratch and integer register roles,,,false
 generated_17CAF0,func_15153298,0x338,0xA7AC00AE,0xA7AF00AE,-,-,Normalize closed private short-packet scratch and integer register roles,,,false
+generated_17CAF0,func_151539B4,0x004,0xAFB50058,0xAFB40054,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x010,0x30B500FF,0x30B400FF,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x018,0xAFB40054,0xAFB50058,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x04C,0x8E080004,0x8E010004,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x05C,0x92000028,0x27B5007C,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x060,0xAFA8007C,0xAEA10000,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x064,0x8E090008,0x8E0A0008,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x074,0xAFA90080,0xAEAA0004,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x078,0x8E0A000C,0x8E01000C,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x084,0xAFAA0084,0xAEA10008,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x0C4,0x9208002F,0x9209002F,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x0C8,0xA3A800A3,0xA3A900A3,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x0CC,0x92090030,0x92080030,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x0D0,0xA3A900A4,0xA3A800A4,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x0FC,0x27B4007C,0x00000000,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x13C,0x86090016,0x86080016,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x144,0x252A0001,0x250A0001,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x1B0,0x46020102,0x46001102,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x20C,0x27280001,0x27290001,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x210,0x0048001B,0x0049001B,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x214,0x00004810,0x00004010,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x218,0x012A5821,0x010A5821,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x21C,0x15000002,0x15200002,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x254,0x02802025,0x02A02025,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false
+generated_17CAF0,func_151539B4,0x288,0x32A700FF,0x328700FF,-,-,"Normalize closed packet-pointer, saved-register and local scheduling roles",,,false

@@ -737,8 +737,108 @@ void func_15153298(ShortPacketInput *input, u8 mode, s32 owner) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15153634.s")
 
-s32 func_151539B4() {
-    return 0;
+
+typedef struct {
+    s16 countBase;
+    s16 countRange;
+    f32 origin[3];
+    s16 firstAngleBase;
+    s16 secondAngleBase;
+    s16 firstAngleRange;
+    s16 secondAngleRange;
+    f32 firstValueBase;
+    f32 firstValueRange;
+    f32 secondValueBase;
+    f32 secondValueRange;
+    u8 copiedBytes[9];
+    u8 private31;
+    s16 shortBase;
+    s16 shortRange;
+    u16 fixed36;
+    f32 floatBase;
+    f32 floatRange;
+    u8 byteBase;
+    u8 byteRange;
+    s16 fixed42;
+    s16 fixed44;
+    u8 kind;
+    u8 privateTail47;
+} WidePacketInput;
+
+typedef struct {
+    f32 origin[3];
+    f32 directionX;
+    f32 directionY;
+    f32 directionZ;
+    f32 firstValue;
+    f32 secondValue;
+    u8 copiedBytes[9];
+    u8 private29;
+    s16 randomShort;
+    u16 fixed2C;
+    u8 private2E[2];
+    f32 randomFloat;
+    s8 randomByte;
+    u8 private35;
+    s16 fixed36;
+    s16 fixed38;
+    u8 privateTail3A[2];
+} WidePacket;
+
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+f32 func_151423D8(s32 angle);
+void func_15156190(void *packet, u8 kind, s32 zero, u8 mode, s32 owner);
+/* Emit randomized wide effect packets from a complete live input record. */
+void func_151539B4(WidePacketInput *input, u8 mode) {
+    WidePacket packet;
+    WidePacket *packetPtr;
+    f32 secondPrimary;
+    f32 secondQuarter;
+    f32 firstPrimary;
+    f32 directionScale;
+    s16 firstAngle;
+    s16 secondAngle;
+    s32 remaining;
+
+    remaining = (u32)func_150ADA20() % ((u32)input->countRange + 1U) + input->countBase;
+    packetPtr = &packet;
+    *(volatile u8 *)&input->copiedBytes[0];
+    *(s32 *)&packetPtr->origin[0] = *(s32 *)&input->origin[0];
+    *(s32 *)&packetPtr->origin[1] = *(s32 *)&input->origin[1];
+    *(s32 *)&packetPtr->origin[2] = *(s32 *)&input->origin[2];
+    packetPtr->copiedBytes[0] = input->copiedBytes[0];
+    packetPtr->copiedBytes[1] = input->copiedBytes[1];
+    packetPtr->copiedBytes[2] = input->copiedBytes[2];
+    packetPtr->copiedBytes[3] = input->copiedBytes[3];
+    packetPtr->copiedBytes[4] = input->copiedBytes[4];
+    packetPtr->copiedBytes[5] = input->copiedBytes[5];
+    packetPtr->copiedBytes[6] = input->copiedBytes[6];
+    packetPtr->copiedBytes[7] = input->copiedBytes[7];
+    packetPtr->copiedBytes[8] = input->copiedBytes[8];
+    packetPtr->fixed2C = input->fixed36;
+    packetPtr->fixed36 = input->fixed42;
+    packetPtr->fixed38 = input->fixed44;
+    if (remaining != 0) {
+        do {
+            firstAngle = (u32)func_150ADA20() % ((u32)input->firstAngleRange + 1U) + input->firstAngleBase;
+            secondAngle = (u32)func_150ADA20() % ((u32)input->secondAngleRange + 1U) + input->secondAngleBase;
+            secondPrimary = func_151423D8((u8)secondAngle);
+            secondQuarter = func_151423D8((u8)(secondAngle - 0x40));
+            firstPrimary = func_151423D8((u8)firstAngle);
+            directionScale = 10.0f * secondPrimary;
+            packetPtr->directionX = directionScale * func_151423D8((u8)(firstAngle - 0x40));
+            packetPtr->directionY = -10.0f * secondQuarter;
+            packetPtr->directionZ = directionScale * firstPrimary;
+            packetPtr->firstValue = func_150ADA68() * input->firstValueRange + input->firstValueBase;
+            packetPtr->secondValue = func_150ADA68() * input->secondValueRange + input->secondValueBase;
+            packetPtr->randomShort = (u32)func_150ADA20() % ((u32)input->shortRange + 1U) + input->shortBase;
+            packetPtr->randomFloat = func_150ADA68() * input->floatRange + input->floatBase;
+            packetPtr->randomByte = (u32)func_150ADA20() % ((u32)input->byteRange + 1U) + input->byteBase;
+            func_15156190(packetPtr, input->kind, 0, mode, 0);
+            remaining--;
+        } while (remaining != 0);
+    }
 }
 
 void func_15153C84(s32 arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
