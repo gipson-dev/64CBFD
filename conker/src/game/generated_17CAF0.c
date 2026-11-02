@@ -289,8 +289,182 @@ void func_15152ABC(u8 *arg0) {
     arg0[2] = color[2];
 }
 
-s32 func_15152B38() {
-    return 0;
+
+typedef struct {
+    f32 x, y, z;
+} CompositeEffectPosition;
+
+typedef struct {
+    s32 baseCount;
+    s32 countRange;
+    CompositeEffectPosition position;
+    f32 field14Base;
+    f32 field18Range;
+    f32 field1CBase;
+    f32 field20Range;
+    f32 radiusBase;
+    f32 radiusRange;
+    s16 firstBase;
+    s16 firstRange;
+    s16 secondBase;
+    s16 secondRange;
+    s32 headerByteBase;
+    s32 headerByteRange;
+    s16 headerShortBase;
+    s16 headerShortRange;
+    u16 field40;
+    u8 fixed42;
+    u8 fixed43;
+    u8 fixed44;
+    u8 byteBase45;
+    u8 byteBase46;
+    u8 byteBase47;
+    u8 byteBase48;
+    u8 byteRange49;
+    u8 byteRange4A;
+    u8 byteRange4B;
+    u8 byteRange4C;
+    u8 byteBase4D;
+    u8 byteBase4E;
+    u8 byteBase4F;
+    u8 byteBase50;
+    u8 byteRange51;
+    u8 byteRange52;
+    u8 byteRange53;
+    u8 byteRange54;
+    u8 byteBase55;
+    u8 byteRange56;
+    u8 fixed57;
+    u8 fixed58;
+    u8 padding59[3];
+    s32 field5C;
+    s32 field60;
+    s16 field64;
+    s16 field66;
+    s16 field68;
+    u8 field6A;
+    u8 padding6B;
+    f32 field6C;
+    s8 field70;
+    s8 field71;
+    u8 privateTail72[2];
+} CompositeEffectInput;
+
+typedef struct {
+    f32 field0;
+    f32 direction[3];
+    f32 field10;
+    u8 fixed14;
+    u8 fixed15;
+    u8 fixed16;
+    s8 random17;
+    s8 random18;
+    s8 random19;
+    s8 random1A;
+    s8 random1B;
+    s8 random1C;
+    s8 random1D;
+    s8 random1E;
+    s8 random1F;
+    u8 fixed20;
+    u8 fixed21;
+    u8 private22[2];
+    s32 field24;
+    s32 field28;
+    s16 field2C;
+    s16 field2E;
+    s16 field30;
+    u8 field32;
+    u8 private33;
+    f32 field34;
+    s8 field38;
+    s8 field39;
+    u8 privateTail3A[2];
+} CompositeEffectPacket;
+
+typedef struct {
+    CompositeEffectPosition position;
+    s16 randomC;
+    u16 fieldE;
+    s32 constant10;
+    u8 private14;
+    s8 random15;
+    u8 privateTail16[2];
+} CompositeEffectHeader;
+
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16, s16, f32, f32 *);
+s32 func_1515C2F0(CompositeEffectHeader *, s32, CompositeEffectPacket *, s32, u8, s32);
+
+typedef struct {
+    CompositeEffectPacket packet;
+    CompositeEffectHeader header;
+    u8 privateTail54[4];
+} CompositeEffectScratch;
+/* Emit randomized composite-effect packets from live input fields using the complete private scratch extents. */
+void func_15152B38(CompositeEffectInput *input, u8 mode, s32 extra) {
+    CompositeEffectScratch scratch;
+    u32 remaining;
+    u32 first;
+    u32 second;
+
+    first = (u32)func_150ADA20();
+    remaining = first % ((u32)input->countRange + 1U) + (u32)input->baseCount;
+    scratch.header.position = input->position;
+    scratch.header.fieldE = input->field40;
+    scratch.header.constant10 = 10;
+    scratch.packet.fixed14 = input->fixed42;
+    scratch.packet.fixed15 = input->fixed43;
+    scratch.packet.fixed16 = input->fixed44;
+    scratch.packet.fixed20 = input->fixed57;
+    scratch.packet.fixed21 = input->fixed58;
+    scratch.packet.field24 = input->field5C;
+    scratch.packet.field28 = input->field60;
+    scratch.packet.field2C = input->field64;
+    scratch.packet.field2E = input->field66;
+    scratch.packet.field38 = input->field70;
+    scratch.packet.field39 = input->field71;
+    scratch.packet.field30 = input->field68;
+    scratch.packet.field32 = input->field6A;
+    scratch.packet.field34 = input->field6C;
+
+    while (remaining != 0) {
+        first = (u32)func_150ADA20();
+        scratch.header.random15 = (s8)(first % ((u32)input->headerByteRange + 1U) +
+                                  (u32)input->headerByteBase);
+        first = (u32)func_150ADA20();
+        scratch.header.randomC = (s16)(first % ((u32)(input->headerShortRange + 1)) +
+                                   input->headerShortBase);
+        scratch.packet.field0 = func_150ADA68() * input->field18Range + input->field14Base;
+        scratch.packet.field10 = func_150ADA68() * input->field20Range + input->field1CBase;
+        first = (u32)func_150ADA20();
+        second = (u32)func_150ADA20();
+        func_15143794((s16)(first % (u32)(input->firstRange + 1) + input->firstBase),
+                      (s16)(second % (u32)(input->secondRange + 1) + input->secondBase),
+                      func_150ADA68() * input->radiusRange + input->radiusBase,
+                      scratch.packet.direction);
+        first = (u32)func_150ADA20();
+        scratch.packet.random17 = (s8)(first % ((u32)input->byteRange49 + 1U) + input->byteBase45);
+        first = (u32)func_150ADA20();
+        scratch.packet.random18 = (s8)(first % ((u32)input->byteRange4A + 1U) + input->byteBase46);
+        first = (u32)func_150ADA20();
+        scratch.packet.random19 = (s8)(first % ((u32)input->byteRange4B + 1U) + input->byteBase47);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1A = (s8)(first % ((u32)input->byteRange4C + 1U) + input->byteBase48);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1B = (s8)(first % ((u32)input->byteRange51 + 1U) + input->byteBase4D);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1C = (s8)(first % ((u32)input->byteRange52 + 1U) + input->byteBase4E);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1D = (s8)(first % ((u32)input->byteRange53 + 1U) + input->byteBase4F);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1E = (s8)(first % ((u32)input->byteRange54 + 1U) + input->byteBase50);
+        first = (u32)func_150ADA20();
+        scratch.packet.random1F = (s8)(first % ((u32)input->byteRange56 + 1U) + input->byteBase55);
+        func_1515C2F0(&scratch.header, 0, &scratch.packet, 0, (u8)mode, extra);
+        remaining--;
+    }
 }
 
 s32 func_15152F70() {
