@@ -1183,7 +1183,27 @@ void *func_15154884(EffectVector15154884 *position, f32 lifetime,
     return created;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15154A88.s")
+extern f32 D_800BE9A4;
+f32 sinf(f32);
+
+/* Update a sine-scaled effect actor and report whether its lifetime remains active. */
+s32 func_15154A88(u8 *actor) {
+    f32 *payload = (f32 *)(actor + 0x170);
+    f32 wave = sinf(*(f32 *)(actor + 0x17C));
+    f32 scale = payload[1] * wave;
+
+    *(f32 *)(actor + 0x18) = *(f32 *)(actor + 0x1C) = scale;
+    actor[0x70] = (u8)((u8)payload[2] * wave);
+    payload[0] -= D_800BE9A4;
+    if (payload[0] <= 0.0f) {
+        return 0;
+    }
+    payload[3] += payload[4] * D_800BE9A4;
+    *(f32 *)(actor + 0x20) += *(f32 *)(actor + 0x50) * D_800BE9A4;
+    *(f32 *)(actor + 0x24) += *(f32 *)(actor + 0x54) * D_800BE9A4;
+    *(f32 *)(actor + 0x28) += *(f32 *)(actor + 0x58) * D_800BE9A4;
+    return 1;
+}
 
 /* Advance a live effect, dispatch its update and limit the fading byte. */
 void func_15154C90(u8 *owner) {
