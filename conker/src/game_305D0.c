@@ -52,12 +52,13 @@ s32 func_150034B4(void) {
       }
 }
 
+/* Read each aligned resource header and publish its truncated extent. */
 void func_15003570(void) {
     u8 *buffer;
     u8 *header;
-    u16 *length = D_80091D20;
-    u16 *extent = D_800B87A0;
-    u16 *end = D_800B87A0 + 7762;
+    u16 *length;
+    u16 *extent;
+    u16 *end;
     u32 source;
     u32 skip;
     u32 value;
@@ -65,13 +66,19 @@ void func_15003570(void) {
 
     buffer = allocate_memory(16, 1, 2, 0);
     source = (u32)&D_1A37E0;
+    length = D_80091D20;
+    extent = D_800B87A0;
+    end = D_800B87A0 + 7762;
     do {
-        skip = source & 1;
-        source -= skip;
+        if (source & 1) {
+            source--;
+            skip = 1;
+        } else {
+            skip = 0;
+        }
         func_10004514(source, buffer, 16, 1);
         header = buffer + skip;
-        value = ((u32)header[0] << 24) + header[3]
-              + ((u32)header[1] << 16) + ((u32)header[2] << 8);
+        value = ((u32)header[0] << 24) + ((u32)header[1] << 16) + ((u32)header[2] << 8) + header[3];
         amount = *length + skip;
         *extent++ = value;
         length++;
