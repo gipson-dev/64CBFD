@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern f32 D_800BE9A4;
 typedef struct { s32 a, b, c; } ThreeWord15D730;
 void func_15169260(void *, s32, s32, u8);
 void *func_15130280(void *, u8, void *, s32, u8, s32);
@@ -8,7 +9,7 @@ extern void (*D_80089814[])();
 extern void (*D_80089878[])(u8 *, s32, u8);
 extern s32 D_800BE9E4;
 
-/* Non-matching placeholders for the text-only asm slice asm/15D730.s. */
+/* Recovered routines and remaining placeholders from asm/15D730.s. */
 
 void func_151318E8(f32 *, f32);
 
@@ -227,8 +228,22 @@ void func_15131D4C(s32 arg0, u8 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15D730/func_15131D9C.s")
 
-s32 func_15131DEC() {
-    return 0;
+/* Update the paired scale, curve byte, and bounded timer. */
+s32 func_15131DEC(u8 *record, s32 event) {
+    f32 scale;
+    f32 time;
+
+    scale = sqrtf(*(f32 *)(record + 0xA8)) * *(f32 *)(record + 0xB0);
+    *(f32 *)(record + 0x3C) = scale;
+    *(f32 *)(record + 0x38) = scale;
+    time = *(f32 *)(record + 0xA8);
+    record[0x2B] = (u32)(*(f32 *)(record + 0xB4) -
+                         *(f32 *)(record + 0xB8) * time * time);
+    *(f32 *)(record + 0xA8) += D_800BE9A4;
+    if (*(f32 *)(record + 0xAC) < *(f32 *)(record + 0xA8)) {
+        return 0;
+    }
+    return 1;
 }
 
 s32 func_15131EE4() {

@@ -25386,3 +25386,4 @@ generated_76A60,func_150495B0,0x0BC,0x44803000,0x44802000,-,-,"Normalize scalar 
 generated_76A60,func_150495B0,0x0C8,0x44803000,0x44802000,-,-,"Normalize scalar smoother frame, floating-register and local schedule allocation",,,false
 generated_76A60,func_150495B0,0x0D0,0xE4C60000,0xE4C40000,-,-,"Normalize scalar smoother frame, floating-register and local schedule allocation",,,false
 generated_76A60,func_150495B0,0x0D8,0x27BD0010,0x27BD0018,-,-,"Normalize scalar smoother frame, floating-register and local schedule allocation",,,false
+generated_15D730,func_15131DEC,0x024,0x46002302,0x46040302,-,-,Preserve retail commutative curve-timer MUL.S operand order,,,false
