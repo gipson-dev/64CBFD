@@ -1230,7 +1230,33 @@ s32 func_15154D80() {
     return 0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_1515548C.s")
+s32 func_151555AC(u8 *, f32 *, s32 *, s32);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+
+/* Allocate an effect record after an optional overlap check. */
+void *func_1515548C(u8 *descriptor, s32 callback, s32 *pair, s32 pairCount,
+                    s32 extraBytes, u8 slot, s32 context) {
+    u8 *created;
+    f32 position[2];
+
+    if (pair != NULL && pairCount > 0) {
+        position[0] = *(f32 *)(descriptor + 8);
+        position[1] = *(f32 *)(descriptor + 0xC);
+        if (func_151555AC(descriptor, position, pair, pairCount)) {
+            return NULL;
+        }
+    }
+
+    created = func_15167A68((*(u16 *)(descriptor + 0x14) & 0x20) ? 0x57 : 0x5D,
+                            context, extraBytes + 0x70, 1, slot, 1);
+    if (created == NULL) {
+        return NULL;
+    }
+    memcpy(created + 0x10, descriptor, 0x58);
+    created[0x68] = 0;
+    created[0x68] |= (u8)callback;
+    return created;
+}
 
 void func_15155564(u8 *arg0, s32 arg1, u8 arg2) {
     void (*callback)(u8 *, s32, u8) = D_8008AD04[arg0[0x2A]];
