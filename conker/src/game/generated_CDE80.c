@@ -106,7 +106,7 @@ s32 func_150A25D4() {
     return 0;
 }
 
-s32 func_15172E7C(struct127 *, u8, s32);
+void func_15172E7C(struct127 *, s32, s32);
 
 /* Dispatch eligible records using the live table and count after each helper. */
 void func_150A278C(struct127 *actor) {
