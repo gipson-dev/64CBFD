@@ -192,8 +192,59 @@ void func_1509D054(void) {
     }
 }
 
-s32 func_1509D08C() {
-    return 0;
+s32 func_1509D08C(s32 arg0, s32 index, s32 *first, s32 *second) {
+    u8 *base = D_800D2FB0;
+    u8 *entry = base + index * 8;
+    u8 *record;
+    s16 *dependency;
+    u32 count;
+    u32 position;
+    s32 resource;
+
+    if (base == NULL) {
+        if (first != NULL) {
+            *first = 0xBF;
+        }
+        if (second != NULL) {
+            *second = 0;
+        }
+        return 0;
+    }
+
+    record = *(u8 **)(entry + 8);
+    if (record == NULL) {
+        if (first != NULL) {
+            *first = 0xBF;
+        }
+        if (second != NULL) {
+            *second = 0;
+        }
+        return 0;
+    }
+
+    if (first != NULL) {
+        *first = **(s16 **)(record + 8);
+        record = *(u8 **)(entry + 8);
+    }
+    if (second != NULL) {
+        *second = **(s16 **)record;
+        record = *(u8 **)(entry + 8);
+    }
+
+    count = *(u32 *)(record + 0xC);
+    position = 0;
+    if (count != 0) {
+        dependency = *(s16 **)(record + 8);
+        do {
+            resource = *dependency;
+            position++;
+            if ((D_800D2E4C[resource >> 3] & (1 << (resource & 7))) == 0) {
+                return 0;
+            }
+            dependency++;
+        } while (position < count);
+    }
+    return 1;
 }
 
 s32 func_1509D180() {

@@ -25501,3 +25501,15 @@ generated_1F4650,func_151C95D8,0x020,0x8FB80020,0x8FB00020,-,-,Normalize cleanup
 generated_1F4650,func_151C95D8,0x040,0x8FB80020,0x8FB00020,-,-,Normalize cleanup callback owner reload register allocation,,,false
 generated_1F4650,func_151C95D8,0x044,0x8F040144,0x8E040144,-,-,Normalize cleanup callback owner reload register allocation,,,false
 generated_1F4650,func_151C95D8,0x048,0x27100110,0x26100110,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_C9EC0,func_1509D08C,0x014,0x01E21821,0x004F1821,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x094,0x8C82000C,0x8C83000C,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x098,0x00001825,0x00001025,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x09C,0x50400013,0x50600013,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0B0,0x240F0001,0x240C0001,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0B4,0x24630001,0x24420001,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0B8,0x000458C3,0x000470C3,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0BC,0x01666021,0x00CE7821,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0C0,0x918D0000,0x91F80000,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0C4,0x308E0007,0x308B0007,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0C8,0x01CFC004,0x016C6804,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_C9EC0,func_1509D08C,0x0D4,0x0062082B,0x0043082B,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
