@@ -3,7 +3,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15134070();
+s32 func_15134070(u8 *actor);
 s32 func_1513418C();
 s32 func_151342BC();
 s32 func_151347CC();
@@ -56,9 +56,71 @@ s32 func_1513B0F8();
 
 void func_151BC5A4(struct102 *arg0, s32 arg1, u8 arg2);
 // requires jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15134070.s. */
-s32 func_15134070() {
-    return 0;
+/* Map an actor identity to its point/effect descriptor type. */
+s32 func_15134070(u8 *actor) {
+    s32 identity = actor[4];
+
+    switch (identity) {
+        case 0x87:
+        case 0xB0:
+            return 14;
+        case 0xB1:
+            return 15;
+        case 0xB4:
+            return 16;
+        case 0x70:
+        case 0xB2:
+            return 17;
+        case 0xAB:
+            return 18;
+        case 0x10:
+        case 0x38:
+        case 0x91:
+            return 13;
+        case 0x98:
+            return 12;
+        case 0x34:
+            return 11;
+        case 0x47:
+            return 10;
+        case 0x11:
+        case 0x14:
+        case 0x3B:
+            return 1;
+        case 0x5A:
+        case 0x5F:
+        case 0x74:
+        case 0x75:
+        case 0x7A:
+            return 2;
+        case 0x58:
+        case 0x5B:
+        case 0x80:
+            return 3;
+        case 0x16:
+        case 0x88:
+        case 0x90:
+            return 4;
+        case 0x9C:
+            return 5;
+        case 0x9D:
+            return 6;
+        case 0x96:
+            return 7;
+        case 0xA0:
+            return 8;
+        case 0x9F:
+            return 9;
+        case 0x9A:
+            return 19;
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            return 0;
+    }
+    return 99;
 }
 s32 func_1513416C(struct102 *arg0) {
     s16 temp_v0 = arg0->unk1C;

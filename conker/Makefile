@@ -502,7 +502,9 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o: \
 	rm -f $@.compact $@.normal.compact $@.padded.s
 
 # Give the recovered actor-effects dispatcher its typed helper interface while
-# preserving the unrecovered helper definitions in the original owner.
+# preserving the unrecovered helper definitions in the original owner. The
+# selector's compiler-emitted tables bind to their original Game-data pool.
+$(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A4350_game
 $(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o: \
 		$(SRC_DIR)/game_161520.c $(SRC_DIR)/game/translation_units/161520_actor_point_effects.c \
 		$(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
@@ -512,7 +514,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o: \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.effects.compact $(SRC_DIR)/game/translation_units/161520_actor_point_effects.c
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_161520 $@.padded.s \
-		--function-object func_15138BC0=$@.effects.compact --word-patches retail_word_patches.us.csv
+		--function-object func_15138BC0=$@.effects.compact --word-patches retail_word_patches.us.csv \
+		--rodata-symbol $(RETAIL_RODATA_SYMBOL)
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.effects.compact $@.padded.s
 
