@@ -1,4 +1,7 @@
 #include <ultra64.h>
+extern f32 D_800A9D70;
+s32 func_15045800(f32 *, u16, f32, void *);
+u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
 extern f32 D_800A9D84, D_800A9D88;
 f32 func_150ADA68(void);
 s32 func_151AE984();
@@ -243,8 +246,25 @@ void func_151AE640(u8 *arg0, s32 *arg1, u8 arg2) {
     }
 }
 
-s32 func_151AE6B0() {
-    return 0;
+/* Probe below the attached actor, submit an effect, and start its hit sound. */
+void func_151AE6B0(u8 *input) {
+    u8 *owner = input;
+    f32 position[3];
+    u8 *actor;
+
+    actor = *(u8 **)(owner + 0x18);
+    position[0] = *(f32 *)(actor + 0x14);
+    if (D_800A9D70 < *(f32 *)(actor + 0x118)) {
+        position[1] = *(f32 *)(actor + 0x118) + 100.0f;
+    } else {
+        position[1] = *(f32 *)(actor + 0x18) + 150.0f;
+    }
+    position[2] = *(f32 *)(actor + 0x1C);
+    if (func_15045800(position, 0, position[1] - 300.0f, owner + 0x34)) {
+        position[1] = *(f32 *)(owner + 0x34);
+        func_151ABE40(position, owner + 0x34, 5, owner[0xC], owner[1]);
+        func_10010FFC(0, 0x11, 0x5208, 0, 0, actor);
+    }
 }
 
 typedef struct {

@@ -25718,3 +25718,14 @@ generated_1D6E80,func_151A9BA0,0x088,0xAFA3002C,0xAFA3003C,-,-,Normalize closed 
 generated_1D6E80,func_151A9BA0,0x0A0,0x8FA3002C,0x8FA3003C,-,-,Normalize closed attached-actor spill reload,,,false
 generated_1D6E80,func_151A9BA0,0x0BC,0xAFA3002C,0xAFA3003C,-,-,Normalize closed attached-actor spill home,,,false
 generated_1D6E80,func_151A9BA0,0x0CC,0x8FA3002C,0x8FA3003C,-,-,Normalize closed attached-actor spill reload,,,false
+generated_1D92F0,func_151AE6B0,0x014,0x3C010000,0xC4640014,R_MIPS_HI16:D_800A9D70,-,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x018,0xC4260000,0x3C010000,R_MIPS_LO16:D_800A9D70,R_MIPS_HI16:D_800A9D70,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x01C,0xC4640014,0xC4260000,-,R_MIPS_LO16:D_800A9D70,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x020,0x3C014316,0xE7A40030,-,-,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x024,0x27A40030,0xC4600118,-,-,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x028,0xE7A40030,0x3C014316,-,-,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x02C,0xC4600118,0x27A40030,-,-,Normalize independent height/sound probe setup schedule,,,false
+generated_1D92F0,func_151AE6B0,0x088,0xAFA3002C,0xAFA3003C,-,-,Normalize closed attached-actor spill home,,,false
+generated_1D92F0,func_151AE6B0,0x0A0,0x8FA3002C,0x8FA3003C,-,-,Normalize closed attached-actor spill reload,,,false
+generated_1D92F0,func_151AE6B0,0x0BC,0xAFA3002C,0xAFA3003C,-,-,Normalize closed attached-actor spill home,,,false
+generated_1D92F0,func_151AE6B0,0x0CC,0x8FA3002C,0x8FA3003C,-,-,Normalize closed attached-actor spill reload,,,false
