@@ -8,6 +8,9 @@ extern u8 *D_80086BA0[];
 extern u8 *D_80086C24[];
 extern u8 D_8009BBF0[];
 extern s32 D_800BE9F0;
+extern s32 D_800BE9E4;
+extern u8 D_800C35EA;
+void func_1507FF94(u8 *);
 
 s32 func_150ADA20(void);
 
@@ -145,8 +148,48 @@ s32 func_1507FC2C() {
     return 0;
 }
 
-s32 func_1507FEA0() {
-    return 0;
+/* Advance or reset an actor's child state, then finish its update. */
+void func_1507FEA0(u8 *actor) {
+    u8 *child = *(u8 **)(actor + 0x31C);
+    u8 *state = child + 0x58;
+    u8 countdown;
+    s32 timer;
+    s32 tick;
+    u16 count;
+
+    if (child == NULL || actor[0x127] == 0xFF) {
+        return;
+    }
+    countdown = actor[0x13A];
+    if (countdown != 0) {
+        actor[0x13A] = countdown - 1;
+    }
+    if (state[0] == 1 && D_800C35EA != 1) {
+        tick = D_800BE9E4;
+        count = *(u16 *)(state + 2);
+        if (count < 0xFFFF - tick) {
+            *(u16 *)(state + 2) = count + tick;
+        }
+    } else {
+        *(u16 *)(state + 2) = 0;
+        state[4] = 0;
+        state[5] = 0;
+        state[0xC] = 0;
+        state[0xD] = 0;
+    }
+    child = *(u8 **)(actor + 0x31C);
+    timer = *(s16 *)(child + 0x66);
+    if (timer != 0) {
+        tick = D_800BE9E4;
+        if (tick < timer) {
+            *(s16 *)(child + 0x66) = timer - tick;
+        } else {
+            func_1507FF94(actor);
+            child = *(u8 **)(actor + 0x31C);
+            *(s16 *)(child + 0x66) = 0;
+        }
+    }
+    func_1507FC2C(actor);
 }
 
 void func_1507FF94(u8 *arg0) {

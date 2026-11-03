@@ -25596,3 +25596,18 @@ generated_1E26F0,func_151B5A9C,0x084,0x10000019,0x1000001A,-,-,Normalize closed 
 generated_1E26F0,func_151B5A9C,0x08C,0x54860018,0x54860019,-,-,Normalize closed dual-identity event compiler schedule,,,false
 generated_1E26F0,func_151B5A9C,0x09C,0x10000013,0xA049058C,-,-,Normalize closed dual-identity event compiler schedule,0x10000014,-,false
 generated_1E26F0,func_151B5A9C,0x0A0,0xA049058C,0x8FBF0014,-,-,Normalize closed dual-identity event compiler schedule,,,false
+generated_AC030,func_1507FEA0,0x028,0x90C2013A,0x90C3013A,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x02C,0x3C190000,0x24A20058,R_MIPS_HI16:D_800C35EA,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x030,0x10400002,0x3C190000,-,R_MIPS_HI16:D_800C35EA,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x034,0x244FFFFF,0x10600002,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x038,0xA0CF013A,0x246FFFFF,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x03C,0x24A20058,0xA0CF013A,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x060,0x94440002,0x94450002,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x068,0x01034823,0x01032023,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x06C,0x0089082A,0x00A4082A,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x074,0x00835021,0x00A34821,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x078,0xA44A0002,0xA4490002,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x0BC,0x00435823,0x00435023,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x0C4,0xA4AB0066,0xA4AA0066,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x0D4,0x8CC5031C,0x8CCB031C,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
+generated_AC030,func_1507FEA0,0x0D8,0xA4A00066,0xA5600066,-,-,Normalize actor child-state finisher compiler allocation and schedule,,,false
