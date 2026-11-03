@@ -1,6 +1,27 @@
 #include <ultra64.h>
 #include "structs.h"
 
+typedef struct {
+    u8 retained00[0x10];
+    u8 mode;
+    u8 flags;
+    u8 command;
+    u8 retained13;
+    s16 timer;
+    u8 retained16[2];
+    s32 cursor;
+    s32 packet;
+    u8 retained20[0x18];
+    s8 updateCallback;
+    s8 removeCallback;
+} TimedPacketRecord1515BAE0;
+typedef s32 (*TimedPacketCallback1515BAE0)(void *);
+extern TimedPacketCallback1515BAE0 D_8008B078[];
+extern TimedPacketCallback1515BAE0 D_8008B07C[];
+extern s32 D_800BE9E4;
+s32 func_1514401C(u8, s32 *, s32 *, u8);
+void func_1516972C(void *);
+
 typedef struct ResetNode {
     u8 pad0[8];
     struct ResetNode *next;
@@ -20,8 +41,39 @@ extern ResetRow D_800DD190[];
 
 /* Non-matching placeholders for the text-only asm slice asm/188F90.s. */
 
-s32 func_1515BAE0() {
-    return 0;
+/* Advance a timed packet and remove it when its callbacks request completion. */
+void func_1515BAE0(TimedPacketRecord1515BAE0 *record) {
+    s32 remove = 0;
+    s8 callbackIndex;
+
+    if ((record->flags & 1) != 0) {
+        record->timer -= D_800BE9E4;
+        if (record->timer < 0) {
+            remove = 1;
+        }
+    }
+    if (remove == 0) {
+        callbackIndex = record->updateCallback;
+        if (callbackIndex != -1) {
+            if (D_8008B078[callbackIndex](record) == 0) {
+                remove = 1;
+            }
+        }
+        if (record->packet != 0) {
+            remove = func_1514401C(record->mode, &record->packet,
+                                  &record->cursor, record->command) & 0xFF;
+        }
+    }
+    if (remove != 0) {
+        callbackIndex = record->removeCallback;
+        if (callbackIndex != -1) {
+            if (D_8008B07C[callbackIndex](record) != 0) {
+                func_1516972C(record);
+            }
+        } else {
+            func_1516972C(record);
+        }
+    }
 }
 
 s32 func_1515BBF0() {
