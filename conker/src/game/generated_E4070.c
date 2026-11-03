@@ -1,4 +1,13 @@
 #include <ultra64.h>
+typedef struct {
+    u8 retained00[0x18];
+    s32 progress;
+    u8 retained1C[0x10];
+    f32 xPosition;
+    f32 yPosition;
+    u8 retained34[0x11];
+    u8 opacity;
+} DiagonalMenuRecord150B709C;
 extern s32 D_800BE9E8;
 extern u8 D_800D98A0[];
 void *func_151A4FD0(s32, u32, s32, s32, s32, s32, u8, u32);
@@ -127,8 +136,26 @@ s32 func_150B6E3C() {
     return 0;
 }
 
-s32 func_150B709C() {
-    return 0;
+/* Advance the diagonal menu entry and pulse its terminal opacity. */
+void func_150B709C(DiagonalMenuRecord150B709C *record) {
+    s32 progress = record->progress;
+
+    if (progress == 30) {
+        s32 opacity = record->opacity;
+
+        opacity += D_800BE9E4 * 8;
+        if (opacity >= 256) {
+            opacity = 0;
+        }
+        record->opacity = opacity;
+    }
+    progress += D_800BE9E4 * 2;
+    if (progress >= 31) {
+        progress = 30;
+    }
+    record->progress = progress;
+    record->xPosition = (f32)((progress * -84) / 30 + 230);
+    record->yPosition = (f32)((progress * -50) / 30 + 170);
 }
 
 void func_150B71A8(u8 *arg0) {
