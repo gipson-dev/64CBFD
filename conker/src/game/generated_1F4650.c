@@ -75,12 +75,96 @@ s32 func_151C9198() {
     return 0;
 }
 
-s32 func_151C94D4() {
-    return 0;
+/* Release callback-owned resources from their live slots, then destroy the owner. */
+void func_151C94D4(u8 *owner) {
+    u8 *state = owner + 0x110;
+    void *resource;
+
+    if (*(void **)(owner + 0x13C) != NULL) {
+        func_1516972C(*(u8 **)(state + 0x2C));
+        func_1000FD38(func_151C87AC, state, 0);
+    }
+
+    resource = *(void **)(owner + 0x144);
+    state = owner + 0x110;
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x38);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x3C);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x40);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x44);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x48);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x4C);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x50);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    func_1513CA6C(owner);
 }
 
-s32 func_151C95D8() {
-    return 0;
+/* Twin cleanup callback for the alternate owner finalizer. */
+void func_151C95D8(u8 *owner) {
+    u8 *state = owner + 0x110;
+    void *resource;
+
+    if (*(void **)(owner + 0x13C) != NULL) {
+        func_1516972C(*(u8 **)(state + 0x2C));
+        func_1000FD38(func_151C87AC, state, 0);
+    }
+
+    resource = *(void **)(owner + 0x144);
+    state = owner + 0x110;
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x38);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x3C);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x40);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x44);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x48);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x4C);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    resource = *(void **)(state + 0x50);
+    if (resource != NULL) {
+        func_1516972C(resource);
+    }
+    func_1513CAA0(owner);
 }
 
 s32 func_151C96DC(u8 *arg0, u8 arg1) {

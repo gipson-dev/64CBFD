@@ -25493,3 +25493,11 @@ generated_10CD70,func_150DFCA8,0x0D4,0x46101481,0x460A1401,-,-,Normalize motion-
 generated_10CD70,func_150DFCA8,0x0D8,0xE4920064,0xE4900064,-,-,Normalize motion-target clamp floating-register allocation,,,false
 generated_10CD70,func_150DFCA8,0x0DC,0xC4860064,0xC4920064,-,-,Normalize motion-target clamp floating-register allocation,,,false
 generated_10CD70,func_150DFCA8,0x0E0,0x4600303C,0x4600903C,-,-,Normalize motion-target clamp floating-register allocation,,,false
+generated_1F4650,func_151C94D4,0x020,0x8FB80020,0x8FB00020,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C94D4,0x040,0x8FB80020,0x8FB00020,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C94D4,0x044,0x8F040144,0x8E040144,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C94D4,0x048,0x27100110,0x26100110,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C95D8,0x020,0x8FB80020,0x8FB00020,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C95D8,0x040,0x8FB80020,0x8FB00020,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C95D8,0x044,0x8F040144,0x8E040144,-,-,Normalize cleanup callback owner reload register allocation,,,false
+generated_1F4650,func_151C95D8,0x048,0x27100110,0x26100110,-,-,Normalize cleanup callback owner reload register allocation,,,false
