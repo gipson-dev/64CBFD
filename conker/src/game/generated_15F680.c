@@ -13,6 +13,20 @@ extern s32 D_800DC640[];
 extern s32 D_800BE9F0;
 extern u8 D_800BE616;
 extern u8 D_800C3E90;
+extern u8 D_800BE9C0;
+typedef s32 (*ActorMatrixCallback15F680)(Mtx *, u8 *);
+extern ActorMatrixCallback15F680 D_8008998C[];
+s32 func_151464B8(void *);
+void func_1516972C(u8 *);
+
+typedef struct {
+    u8 retained00[0x60];
+    u32 flags;
+    u8 retained64[8];
+    void *gate;
+    u8 retained70[8];
+    u8 matrixCallback;
+} ActorMatrixDispatch15F680;
 
 typedef struct {
     f32 matrix[4][4];
@@ -230,8 +244,36 @@ void *func_15132A4C(void *arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5)
     return func_1513264C(arg0, arg1, arg2, 0, arg3, arg4, arg5);
 }
 
-s32 func_15132A88() {
-    return 0;
+/* Run the selected matrix callback and publish its actor status. */
+void func_15132A88(ActorMatrixDispatch15F680 *actor) {
+    s32 flags;
+    s32 result;
+
+    actor->flags &= ~0x200000;
+    flags = actor->flags;
+    if (flags & 0x20000) {
+        return;
+    }
+    if ((flags & 0x400) && actor->gate != NULL &&
+        func_151464B8(actor->gate) != 0) {
+        return;
+    }
+    flags = actor->flags;
+    if (flags & 0x80000) {
+        actor->flags = flags | 0x200000;
+        return;
+    }
+    result = D_8008998C[actor->matrixCallback](
+        (Mtx *)((u8 *)actor + (D_800BE9C0 << 6) + 0x90), (u8 *)actor);
+    if (result == -1) {
+        func_1516972C((u8 *)actor);
+        return;
+    }
+    if (result == 0) {
+        actor->flags &= ~0x40000;
+    } else {
+        actor->flags |= 0x240000;
+    }
 }
 
 s32 func_15132B80() {
