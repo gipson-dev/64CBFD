@@ -25798,3 +25798,64 @@ generated_1D6E80,func_151AB1C4,0x02C,0xC6000118,0x3C014316,-,-,Normalize indepen
 generated_1D6E80,func_151AB1C4,0x084,0xAFA7002C,0xAFA70028,-,-,Normalize closed ground-result pointer spill home,,,false
 generated_1D6E80,func_151AB1C4,0x0A8,0x8FA5002C,0x8FA50028,-,-,Normalize closed ground-result pointer spill home,,,false
 generated_1D6E80,func_151AB1C4,0x0E8,0x8FA5002C,0x8FA50028,-,-,Normalize closed ground-result pointer spill home,,,false
+game_2062D0,func_151DA6F8,0x094,0x01E67821,0x3C190000,-,R_MIPS_HI16:D_800AB3F4,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0A0,0x240D00FF,0x01E67821,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0A4,0x27A50090,0x0326C821,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0D0,0x3C0A0000,0x00001025,R_MIPS_HI16:D_800AB3F4,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0D4,0x00001025,0x240A00FF,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0DC,0x01465021,0x27A50090,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0EC,0x03035825,0x03032025,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0F0,0x356C0040,0x93B800EF,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0F4,0x93AB00EF,0x93390000,-,R_MIPS_LO16:D_800AB3F4,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0F8,0x914A0000,0x93AD00E3,R_MIPS_LO16:D_800AB3F4,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x0FC,0x93AE00E3,0x87AE0106,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x100,0x87AF0106,0x87AF010A,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x104,0x87B8010A,0x348B0040,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x108,0x319900FF,0x316C00FF,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x10C,0x03202025,0x01802025,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x110,0xA3AD00AA,0xA3AA00AA,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x114,0xA3AA00A9,0xA3B900A9,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x118,0xA3AE00AB,0xA3AD00AB,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x11C,0xA7AF00AC,0xA7AE00AC,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x120,0x11600006,0x13000006,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x124,0xA7B800AE,0xA7AF00AE,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x128,0x372C0003,0x358B0003,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x130,0xA3AC00A8,0xA3AB00A8,-,-,Normalize constructor table and register allocation schedule,,,false
+game_2062D0,func_151DA6F8,0x148,0x93B900FB,0xC7A800F0,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x14C,0xC7A800F0,0xC7AA00F4,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x150,0xC7AA00F4,0xA3A6008C,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x154,0x3C0A0022,0xE7A80084,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x158,0x3C0D0005,0xE7AA0088,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x15C,0x354A0005,0x93AC00FB,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x160,0x35AD0600,0x3C190022,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x164,0x240E0003,0x3C0A0005,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x168,0x240F0046,0x37390005,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x16C,0x24180080,0x354A0600,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x170,0x240B0020,0x240D0003,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x174,0x240C000C,0x240E0046,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x178,0xA3A6008C,0x240F0080,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x17C,0xAFA00064,0x24180020,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x180,0xAFAA0068,0x240B000C,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x184,0xAFAD006C,0xAFA00054,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x188,0xAFAE0070,0xAFB90058,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x18C,0xAFAF0074,0xAFAA005C,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x190,0xAFB80078,0xAFAD0060,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x194,0xAFAB007C,0xAFAE0064,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x198,0xA3A00080,0xAFAF0068,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x19C,0xA3AC0081,0xAFB8006C,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1A0,0xE7A80084,0xA3A00070,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1A4,0x13200004,0x11800004,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1A8,0xE7AA0088,0xA3AB0071,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1C0,0x8FAD0100,0x8FAA0100,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1C4,0x93AE0113,0x93AD0113,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1C8,0x8FAF0114,0x8FAE0114,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1CC,0x27AA0064,0x27B90054,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1D0,0xAFAA002C,0xAFB9002C,-,-,"Normalize constructor payload, render, and stack layout",,,false
+game_2062D0,func_151DA6F8,0x1F8,0xAFAD0030,0xAFAA0030,-,-,Normalize constructor outgoing argument allocation,,,false
+game_2062D0,func_151DA6F8,0x1FC,0xAFAE0034,0xAFAD0034,-,-,Normalize constructor outgoing argument allocation,,,false
+game_2062D0,func_151DA6F8,0x204,0xAFAF0038,0xAFAE0038,-,-,Normalize constructor outgoing argument allocation,,,false
+game_2062D0,func_151DA6F8,0x208,0x10400008,0x00401825,-,-,Normalize constructor result and payload-copy schedule,,,false
+game_2062D0,func_151DA6F8,0x20C,0x00401825,0x10400007,-,-,Normalize constructor result and payload-copy schedule,,,false
+game_2062D0,func_151DA6F8,0x210,0x8C440098,0x27A50084,-,-,Normalize constructor result and payload-copy schedule,,,false
+game_2062D0,func_151DA6F8,0x214,0xAFA200CC,0x8C640098,-,-,Normalize constructor result and payload-copy schedule,,,false
+game_2062D0,func_151DA6F8,0x218,0x27A50084,0xAFA300CC,-,-,Normalize constructor result and payload-copy schedule,,,false
