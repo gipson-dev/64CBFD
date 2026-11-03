@@ -25591,3 +25591,8 @@ generated_CDE80,func_150A23E4,0x0CC,0x27BD0040,0x8FB00038,-,-,Normalize closed r
 generated_CDE80,func_150A23E4,0x0D0,0x03E00008,0x27BD0040,-,-,Normalize closed record sound-start epilogue schedule,,,false
 generated_CDE80,func_150A23E4,0x0D4,0x00000000,0x03E00008,-,-,Normalize closed record sound-start epilogue schedule,0x00000000,-,false
 game_14FF90,func_151283B8,0x0A8,0x00002825,0x24050000,-,-,Normalize zero second-argument instruction selection,,,false
+generated_1E26F0,func_151B5A9C,0x018,0x14C10022,0x14C10023,-,-,Normalize closed dual-identity event compiler schedule,,,false
+generated_1E26F0,func_151B5A9C,0x084,0x10000019,0x1000001A,-,-,Normalize closed dual-identity event compiler schedule,,,false
+generated_1E26F0,func_151B5A9C,0x08C,0x54860018,0x54860019,-,-,Normalize closed dual-identity event compiler schedule,,,false
+generated_1E26F0,func_151B5A9C,0x09C,0x10000013,0xA049058C,-,-,Normalize closed dual-identity event compiler schedule,0x10000014,-,false
+generated_1E26F0,func_151B5A9C,0x0A0,0xA049058C,0x8FBF0014,-,-,Normalize closed dual-identity event compiler schedule,,,false
