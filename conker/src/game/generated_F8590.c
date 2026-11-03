@@ -1,10 +1,44 @@
 #include <ultra64.h>
 #include "variables.h"
 
+typedef struct HeightResult71820 HeightResult71820;
+typedef struct HeightActor71820 HeightActor71820;
+extern f32 D_800A05E0[];
+extern f32 D_800A05EC[];
+void func_15143134(f32 *, f32 *, u8 *);
+void func_1504715C(HeightResult71820 *, HeightActor71820 *);
+s32 func_15046C80(f32 *, u16, f32, HeightResult71820 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/F8590.s. */
 
-s32 func_150CB0E0() {
-    return 0;
+/* Transform the selected actor offset and optionally query its height interval. */
+s32 func_150CB0E0(f32 *position, u8 *actor, HeightResult71820 *result, u8 mode) {
+    f32 start[3];
+    f32 *point;
+    u8 *matrix;
+
+    if (mode != 1 && mode != 2) {
+        return 0;
+    }
+    if (mode == 1) {
+        point = D_800A05EC;
+    } else {
+        point = D_800A05E0;
+    }
+    if (mode == 1) {
+        matrix = *(u8 **)(actor + 0x1D4) + 0xA00;
+    } else {
+        matrix = *(u8 **)(actor + 0x1D4) + 0xBC0;
+    }
+    func_15143134(point, position, matrix);
+    if (result == NULL) {
+        return 1;
+    }
+    start[0] = position[0];
+    start[1] = position[1] + 100.0f;
+    start[2] = position[2];
+    func_1504715C(result, (HeightActor71820 *)actor);
+    return func_15046C80(start, 0, position[1] - 500.0f, result);
 }
 
 s32 func_150CB1E0(s32 arg0, s32 arg1) {
