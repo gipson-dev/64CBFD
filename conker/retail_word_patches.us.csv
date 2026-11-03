@@ -25772,3 +25772,4 @@ game_14FF90,func_15123070,0x0E4,0xE4F20390,0xE4E40390,-,-,Normalize camera headi
 game_14FF90,func_15123070,0x0F8,0x46020480,0x46020100,-,-,Normalize camera heading float-register scheduling,,,false
 generated_188F90,func_1515BAE0,0x070,0xAFA30024,0xA3A30023,-,-,Normalize timed packet completion flag spill width,,,false
 generated_188F90,func_1515BAE0,0x080,0x8FA30024,0x93A30023,-,-,Normalize timed packet completion flag reload width,,,false
+generated_1A0790,func_151732E0,0x028,0x544E0007,0x55C20007,-,-,Normalize environment range comparison operand order,,,false
