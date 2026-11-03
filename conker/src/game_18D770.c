@@ -43,7 +43,7 @@ void func_150A7960(f32 matrix[4][4], f32, f32, f32, f32 *, f32 *, f32 *);
 
 /* Generated placeholder declarations. */
 s32 func_151604A0();
-s32 func_151606A8();
+s32 func_151606A8(struct225 *arg0);
 s32 func_15160A58(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
 s32 func_15160B74();
 s32 func_15160CDC();
@@ -184,36 +184,26 @@ s32 func_15160684(struct225 *arg0) {
     func_15163DEC(arg0, &arg0->unk18);
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151606A8.s. */
-s32 func_151606A8() {
-    return 0;
+/* Transform the shared point through the linked actor rotation. */
+s32 func_151606A8(struct225 *arg0) {
+    struct227 *transform;
+    struct227 **transformRef;
+    f32 matrix[4][4];
+    struct17 point;
+
+    transform = arg0->unk18;
+    func_150A8050(matrix, transform->unk0, transform->unk4, transform->unk8);
+    transformRef = &arg0->unk18;
+    matrix[3][0] = (*transformRef)->unk10;
+    matrix[3][1] = *(s16 *)&(*transformRef)->pad12[0];
+    matrix[3][2] = *(s16 *)&(*transformRef)->pad12[2];
+    func_150A7960(matrix, D_800A66B4[0], D_800A66B4[1], D_800A66B4[2],
+                  &point.unk0, &point.unk4, &point.unk8);
+    arg0->unk14->unkE = point.unk0;
+    arg0->unk14->unk10 = point.unk4;
+    arg0->unk14->unk12 = point.unk8;
+    return 1;
 }
-// NON-MATCHING: something along these lines...
-// void func_150A7960(s32, f32, f32, f32, f32*, f32*, f32*);
-// s32 func_151606A8(struct225 *arg0) {
-//     struct227 *temp_v0;
-//     struct226 *temp_v0_2;
-//
-//     f32 tmp[16];
-//
-//     f32 sp3C;
-//     f32 sp38;
-//     f32 sp34;
-//
-//     temp_v0 = arg0->unk18;
-//     func_150A8050(&tmp[1], temp_v0->unk0, temp_v0->unk4, temp_v0->unk8);
-//
-//     temp_v0_2 = arg0->unk18;
-//     tmp[13] = temp_v0_2->unk10;
-//     tmp[14] = temp_v0_2->unk12;
-//     tmp[15] = temp_v0_2->unk14;
-//
-//     func_150A7960(&tmp, D_800A66B4[0], D_800A66B4[1], D_800A66B4[2], &sp34, &sp38, &sp3C);
-//     arg0->unk14->unkE = sp34;
-//     arg0->unk14->unk10 = sp38;
-//     arg0->unk14->unk12 = sp3C;
-//     return 1;
-// }
 
 s32 func_151607A4(struct225 *arg0) {
     struct227 *temp_a1 = &arg0->unk18;
