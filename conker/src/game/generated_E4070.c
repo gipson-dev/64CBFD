@@ -19,7 +19,7 @@ void func_150B6C90(void);
 void func_150B6D34(void);
 void func_150B6D78(void);
 void func_150B7484(void);
-s32 func_150B7560(void);
+void func_150B7560(void);
 s32 func_150B765C(void);
 s32 func_150B768C(void);
 s32 func_150B77A8(void);
@@ -227,8 +227,41 @@ void func_150B7484(void) {
     D_800D9890 = 3;
 }
 
-s32 func_150B7560() {
-    return 0;
+/* Replace both fixed menu records, then select state 3. */
+void func_150B7560(void) {
+    MenuRecordDescriptorE4070 descriptor;
+
+    if (*(void **)D_800D9898 != NULL) {
+        func_1516972C(*(void **)D_800D9898);
+        *(void **)D_800D9898 = NULL;
+    }
+    descriptor.field18 = 77;
+    descriptor.field31 = 15;
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field2C = 88;
+    descriptor.field2E = 88;
+    descriptor.field30 = 0;
+    descriptor.asset = D_800918DC;
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field32 = 255;
+    descriptor.field33 = 0;
+    descriptor.field34 = 0;
+    descriptor.field35 = 255;
+    descriptor.field36 = 7;
+    descriptor.field37 = 17;
+    descriptor.field38 = 1;
+    descriptor.field39 = 0;
+    descriptor.field28 = 4096;
+    descriptor.field2A = 4096;
+    descriptor.field1C = 60.0f;
+    descriptor.field20 = 60.0f;
+    if (*(void **)D_800D98A4 != NULL) {
+        func_1516972C(*(void **)D_800D98A4);
+    }
+    *(void **)D_800D98A4 = func_15169968(&descriptor);
+    D_800D9890 = 3;
 }
 
 s32 func_150B765C(void) {
