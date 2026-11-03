@@ -139,8 +139,29 @@ s32 func_15043B70(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
     return arg2;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_70200/func_15043BB8.s. */
-void func_15043BB8(struct105* arg0, void *arg1, s32 arg2) {
+/* Write one aligned length-prefixed message when the ring has room. */
+s32 func_15043BB8(struct105 *queue, u8 *input, s32 length) {
+    s32 cursor;
+
+    if (length != 0 && input != 0) {
+        length += 4;
+        length = (length + 3) & ~3;
+        cursor = queue->unkC;
+        if (cursor < queue->unk8) {
+            if (cursor + length >= queue->unk8) {
+                return 1;
+            }
+        } else if (cursor + length - queue->unk4 >= queue->unk8) {
+            return 1;
+        }
+        length -= 4;
+        cursor = func_15043A20((u8 *)queue->unk0, queue->unk4, cursor,
+                              (u8 *)&length, 4);
+        cursor = func_15043A20((u8 *)queue->unk0, queue->unk4, cursor,
+                              input, length);
+        queue->unkC = cursor;
+    }
+    return 0;
 }
 
 /* Receive one length-prefixed message; fields are ring, size, read and write cursors. */

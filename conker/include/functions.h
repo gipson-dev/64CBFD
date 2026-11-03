@@ -1064,7 +1064,7 @@ s32  func_1501A490(s32 arg0, s16 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5);
 u32 func_1502B7F0(void **output, u32 depth, ...);
 struct126 *func_1503195C(struct127 *, s32, s32);
 void func_150403C8(void *arg0, u32 arg1, s32 arg2);
-void func_15043BB8(struct105* arg0, void *arg1, s32 arg2);
+s32 func_15043BB8(struct105 *queue, u8 *input, s32 length);
 f32  func_15047C00(f32 arg0);
 f32  func_15047D60(f32 arg0);
 f32  func_150488C8(f32 arg0);
