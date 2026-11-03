@@ -490,12 +490,43 @@ u8 arg2;
     return 1;
 }
 
-s32 func_1514E920() {
-    return 0;
+/* Toggle, enable, or disable an owner and clear its attached enable byte. */
+s32 func_1514E920(u8 *owner, s32 mode, s32 context) {
+    u8 *extension;
+    u8 *attached;
+
+    extension = owner + 0x110;
+    switch (mode) {
+        case 0:
+            if ((*(s32 *)(owner + 0x10) & 1) != 0) {
+                *(s32 *)(owner + 0x10) &= ~1;
+                attached = *(u8 **)(extension + 0x44);
+                if (attached != NULL) {
+                    attached[0x30] = 0;
+                }
+            } else {
+                *(s32 *)(owner + 0x10) |= 1;
+            }
+            break;
+        case 2:
+            *(s32 *)(owner + 0x10) &= ~1;
+            attached = *(u8 **)(extension + 0x44);
+            if (attached != NULL) {
+                attached[0x30] = 0;
+            }
+            break;
+        case 1:
+            *(s32 *)(owner + 0x10) |= 1;
+            break;
+        default:
+            return func_1514E89C(owner, mode, context);
+    }
+    return 1;
 }
 
-void func_1514E9DC(u8 *arg0, s32 arg1) {
-    func_1514E920(arg0, arg1);
+/* Forward the complete operation callback context to the enable gate. */
+void func_1514E9DC(u8 *owner, s32 mode, s32 context) {
+    func_1514E920(owner, mode, context);
 }
 
 void func_1514E9FC(u8 *arg0, s32 arg1, s32 arg2) {
