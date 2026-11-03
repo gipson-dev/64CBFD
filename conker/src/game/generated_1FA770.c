@@ -21,6 +21,24 @@ typedef struct {
 void *func_15149130(s16, s8, s8, s8, u8, u8, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
 
+typedef struct {
+    u8 *source;
+    s32 identity;
+    u8 *effect;
+    u8 variant;
+    u8 reservedD[3];
+} EffectLinkRecord151CD3CC;
+typedef struct {
+    u8 reserved0;
+    u8 sourceKind;
+    u8 reserved2[10];
+    u8 ownerMode;
+    u8 reservedD[27];
+    EffectLinkRecord151CD3CC link;
+} EffectLinkOwner151CD3CC;
+void *func_151CD4C0();
+void func_151CE47C(u8 *);
+
 /* Capture record state, attach the payload and return the allocated effect. */
 void *func_151CD2C0(void *source, u8 variant, s32 parameter) {
     u8 *effect;
@@ -54,11 +72,28 @@ void func_151CD394(s32 arg0) {
     }
 }
 
-s32 func_151CD3CC() {
-    return 0;
+/* Create, retire or detach the linked effect selected by an event command. */
+void func_151CD3CC(EffectLinkOwner151CD3CC *owner, s32 *identity, u8 command) {
+    EffectLinkRecord151CD3CC *link = &owner->link;
+
+    if (command == 0x17) {
+        if (link->identity == *identity && link->effect == 0) {
+            link->effect = func_151CD4C0(
+                link->source, link->variant, link->identity,
+                owner->ownerMode, owner->sourceKind);
+            link->source[0x14] = 0;
+        }
+    } else if (command == 0x18) {
+        if (link->identity == *identity && link->effect != 0) {
+            func_151CE47C(link->effect);
+        }
+    } else if (command == 0x23 && link->identity == *identity) {
+        link->effect = 0;
+        link->source[0x14] = 1;
+    }
 }
 
-s32 func_151CD4C0() {
+void *func_151CD4C0() {
     return 0;
 }
 

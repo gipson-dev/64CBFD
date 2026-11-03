@@ -25653,3 +25653,13 @@ game_18D770,func_151606A8,0x050,0x8C460004,0x8C660004,-,-,Normalize actor point 
 game_18D770,func_151606A8,0x054,0x8C470008,0x8C670008,-,-,Normalize actor point transform pointer/global register cycle,,,false
 game_18D770,func_151606A8,0x060,0x8E180018,0x8C580000,-,-,Normalize actor point transform pointer/global register cycle,,,false
 game_18D770,func_151606A8,0x078,0x8E080018,0x8C480000,-,-,Normalize actor point transform pointer/global register cycle,,,false
+generated_1FA770,func_151CD3CC,0x000,0x27BDFFD0,0x27BDFFC0,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x008,0xAFA60038,0xAFA60048,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x020,0x14C10015,0x14C10016,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x034,0x54CF002A,0x54CF002B,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x040,0x57000027,0x57000028,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x058,0xAFA30028,0xAFA3002C,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x064,0x8FA30028,0x8FA3002C,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x070,0x1000001A,0xA1000014,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_1FA770,func_151CD3CC,0x074,0xA1000014,0x1000001B,-,-,Normalize linked-effect event dispatcher compiler layout,0x8FBF0024,-,false
+generated_1FA770,func_151CD3CC,0x0E4,0x27BD0030,0x27BD0040,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
