@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern f32 D_800A8FEC;
+void func_151AA264(u8 *, f32 *);
 extern f32 D_800A8F7C;
 u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
 extern f32 D_800A8F90;
@@ -248,8 +250,25 @@ s32 func_151AB090(u8 *input) {
 // Retail retains the otherwise dead temp_v0 + 0x58 update before the call.
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151AB180.s")
 
-s32 func_151AB1C4() {
-    return 0;
+/* Probe below the attached actor, submit the hit effect and sound, then finalize it. */
+void func_151AB1C4(u8 *owner) {
+    u8 *actor;
+    f32 position[3];
+
+    actor = *(u8 **)(owner + 0x18);
+    position[0] = *(f32 *)(actor + 0x14);
+    if (D_800A8FEC < *(f32 *)(actor + 0x118)) {
+        position[1] = *(f32 *)(actor + 0x118) + 100.0f;
+    } else {
+        position[1] = *(f32 *)(actor + 0x18) + 150.0f;
+    }
+    position[2] = *(f32 *)(actor + 0x1C);
+    if (func_15045800(position, 0, position[1] - 300.0f, owner + 0x34)) {
+        position[1] = *(f32 *)(owner + 0x34);
+        func_151ABE40(position, owner + 0x34, 3, owner[0xC], owner[1]);
+        func_10010FFC(0, 0x11, 0x5208, 0, 0, actor);
+    }
+    func_151AA264(actor, (f32 *)(owner + 0x34));
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151AB2C4.s")

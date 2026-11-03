@@ -25789,3 +25789,12 @@ generated_1A5440,func_15178C9C,0x0C8,0x00C60019,0x00A50019,-,-,Normalize record-
 generated_1A5440,func_15178C9C,0x0CC,0x0000C812,0x00002812,-,-,Normalize record-distance Z square result register,,,false
 generated_1A5440,func_15178C9C,0x0D0,0x03194021,0x01C57821,-,-,Normalize record-distance XYZ accumulator registers,,,false
 generated_1A5440,func_15178C9C,0x0D4,0x44885000,0x448F5000,-,-,Normalize record-distance squared-sum register,,,false
+generated_1D6E80,func_151AB1C4,0x018,0x3C010000,0xC6040014,R_MIPS_HI16:D_800A8FEC,-,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x01C,0xC4260000,0x3C010000,R_MIPS_LO16:D_800A8FEC,R_MIPS_HI16:D_800A8FEC,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x020,0xC6040014,0xC4260000,-,R_MIPS_LO16:D_800A8FEC,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x024,0x3C014316,0xE7A40030,-,-,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x028,0xE7A40030,0xC6000118,-,-,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x02C,0xC6000118,0x3C014316,-,-,Normalize independent ground-effect setup schedule,,,false
+generated_1D6E80,func_151AB1C4,0x084,0xAFA7002C,0xAFA70028,-,-,Normalize closed ground-result pointer spill home,,,false
+generated_1D6E80,func_151AB1C4,0x0A8,0x8FA5002C,0x8FA50028,-,-,Normalize closed ground-result pointer spill home,,,false
+generated_1D6E80,func_151AB1C4,0x0E8,0x8FA5002C,0x8FA50028,-,-,Normalize closed ground-result pointer spill home,,,false
