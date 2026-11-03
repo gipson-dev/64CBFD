@@ -25682,3 +25682,15 @@ generated_61D10,func_15035714,0x0D4,0xE7A8001C,0xE7A6001C,-,-,Normalize reflecte
 generated_61D10,func_15035714,0x0F0,0x27BD0030,0x27BD0040,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
 generated_15F680,func_15133A94,0x0A4,0x01832821,0x006C2821,-,-,Normalize commutative selected-matrix base and index addition,,,false
 generated_15F680,func_15133A94,0x0C4,0x01C32821,0x006E2821,-,-,Normalize commutative selected-matrix base and index addition,,,false
+game_16EE20,func_1514654C,0x044,0x1000005D,0x1000005E,-,-,Retarget early failure branch across the inserted primary preload,,,false
+game_16EE20,func_1514654C,0x054,0x9605001E,0x9602001E,-,-,Keep lookup key in retail V0 during attachment fallthrough,,,false
+game_16EE20,func_1514654C,0x068,0x10000054,0x10000055,-,-,Retarget attachment failure branch across the inserted primary preload,,,false
+game_16EE20,func_1514654C,0x084,0x1000002F,0x10000030,-,-,Retarget attachment success branch across the inserted primary preload,,,false
+game_16EE20,func_1514654C,0x08C,0x9605001E,0x9602001E,-,-,Reload lookup key into retail V0 before the keyed route,,,false
+game_16EE20,func_1514654C,0x094,0x50A0001B,0x1040001B,-,-,Use the retail normal zero-key branch through V0,,,false
+game_16EE20,func_1514654C,0x098,0x8E020034,0x00402825,-,-,Move the nonzero lookup key into A1 in the branch delay slot,,,false
+game_16EE20,func_1514654C,0x0AC,0x10000043,0x10000044,-,-,Retarget keyed lookup failure branch across the inserted primary preload,,,false
+game_16EE20,func_1514654C,0x0D0,0x1000003A,0x1000003B,-,-,Retarget resolver failure branch across the inserted primary preload,,,false
+game_16EE20,func_1514654C,0x0D8,0x8E2A0048,0x8E2A0048,-,-,Load resolved primary before testing the post-resolver attachment,0x8FA50090,-,false
+game_16EE20,func_1514654C,0x0FC,0x8FA50090,0x00000000,-,-,Retire the duplicate late primary reload after the eager preload,,,false
+game_16EE20,func_1514654C,0x138,0x03233021,0x00793021,-,-,Use retail commutative delegated bank and index operand order,,,false

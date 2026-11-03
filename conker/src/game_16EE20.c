@@ -1990,7 +1990,7 @@ void func_15146508(struct127 *arg0, struct127 *arg1) {
     tmp.unk9 = arg1->unique_id;
     func_15169040(&tmp, 45, arg0, arg1);
 }
-/* Non-matching: complete matrix-route recovery; see Working Note 1104. */
+/* Matched with guarded branch/load scheduling normalization; see Working Note 2036. */
 s32 func_1514654C(struct127 *actor, u8 *descriptor, s32 index,
     struct17 **inputArgument, struct17 **outputArgument, s32 count) {
     Mtx *matrix;
@@ -1999,10 +1999,10 @@ s32 func_1514654C(struct127 *actor, u8 *descriptor, s32 index,
     Mtx *lookupMatrix;
     Mtx *other;
     f32 converted[4][4];
-    struct17 **outputs;
+    u8 *bank;
     s32 i;
 
-    if (actor == 0 || descriptor == 0 || (matrix = (Mtx *)actor->unk1D4) == 0) {
+    if (actor == 0 || descriptor == 0 || (bank = (u8 *)actor->unk1D4) == 0) {
         return 0;
     }
     attachment = *(u8 **)(descriptor + 0x48);
@@ -2027,20 +2027,20 @@ s32 func_1514654C(struct127 *actor, u8 *descriptor, s32 index,
     } else if (*(Mtx **)(descriptor + 0x34) != 0) {
         matrix = *(Mtx **)(descriptor + 0x34) + D_800BE9C0;
     } else {
-        func_15145EA4(inputArgument, outputArgument, (u8 *)matrix + descriptor[2] * 64, count);
+        func_15145EA4(inputArgument, outputArgument, bank + descriptor[2] * 64, count);
         return 1;
     }
     if (matrix != 0) {
         guMtxL2F(converted, matrix);
         i = 0;
         input = inputArgument;
-        outputs = outputArgument;
+        actor = (struct127 *)outputArgument;
         if (count > 0) {
             do {
                 func_150A7960(converted, (*input)->unk0, (*input)->unk4, (*input)->unk8,
-                    &(*outputs)->unk0, &(*outputs)->unk4, &(*outputs)->unk8);
+                    &(*(struct17 **)actor)->unk0, &(*(struct17 **)actor)->unk4, &(*(struct17 **)actor)->unk8);
                 input++;
-                outputs++;
+                actor = (struct127 *)((u8 *)actor + 4);
                 i++;
             } while (i != count);
             return 1;
