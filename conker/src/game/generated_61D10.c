@@ -16,6 +16,12 @@ extern f32 D_80097D50, D_80097D54, D_80097D58, D_80097D5C;
 
 /* Non-matching placeholders for the text-only asm slice asm/61D10.s. */
 
+extern u8 *D_800BE628;
+extern u8 *D_800D1C90[];
+extern f32 D_800D9C10[4][4];
+extern f32 D_80097D70;
+s32 func_150A6360(u8 *, f32 [4][4], f32, f32, f32, f32, f32, f32);
+
 extern u8 D_800C3F00;
 extern s16 D_800C3EF0;
 extern f32 D_80097D60;
@@ -377,7 +383,37 @@ u8 *func_150356C8(void) {
     return D_800C3F08 + (val - 1) * 12;
 }
 
-s32 func_15035714() {
+/* Test an actor's reflected projection against the current view. */
+s32 func_15035714(s32 mode, u8 *actor, u8 *projection, f32 reflectionY) {
+    u8 *view;
+    u8 *descriptor;
+    s32 identity;
+    f32 scale;
+    f32 actorScale;
+    f32 halfWidth;
+    f32 halfHeight;
+    f32 verticalRadius;
+
+    view = D_800BE628;
+    identity = actor[4];
+    descriptor = D_800D1C90[identity];
+    scale = (f32)*(u16 *)(descriptor + 0xE);
+    actorScale = *(f32 *)(actor + 0x150);
+    halfWidth = *(f32 *)(actor + 0x14C) * scale;
+    halfHeight = actorScale * scale;
+    verticalRadius = actorScale * (f32)*(s16 *)(descriptor + 0x10);
+    if (mode == 1 || mode == 0) {
+        actorScale = reflectionY -
+            ((*(f32 *)(actor + 0x18) + verticalRadius) - reflectionY);
+    } else {
+        actorScale = *(f32 *)(actor + 0x18) + verticalRadius;
+    }
+    if (func_150A6360(view, D_800D9C10,
+        *(f32 *)(projection + 0x30), actorScale,
+        *(f32 *)(projection + 0x38),
+        halfWidth, halfHeight, D_80097D70) == 0) {
+        return 1;
+    }
     return 0;
 }
 

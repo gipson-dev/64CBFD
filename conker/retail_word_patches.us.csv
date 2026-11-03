@@ -25663,3 +25663,20 @@ generated_1FA770,func_151CD3CC,0x064,0x8FA30028,0x8FA3002C,-,-,Normalize linked-
 generated_1FA770,func_151CD3CC,0x070,0x1000001A,0xA1000014,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
 generated_1FA770,func_151CD3CC,0x074,0xA1000014,0x1000001B,-,-,Normalize linked-effect event dispatcher compiler layout,0x8FBF0024,-,false
 generated_1FA770,func_151CD3CC,0x0E4,0x27BD0030,0x27BD0040,-,-,Normalize linked-effect event dispatcher compiler layout,,,false
+generated_61D10,func_15035714,0x000,0x27BDFFD0,0x27BDFFC0,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x00C,0xAFA60038,0xAFA60048,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x020,0xAFAE002C,0xAFAE0028,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x028,0x8FA80038,0x8FA80048,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x064,0x46004402,0x46080402,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x06C,0x46001482,0x46020482,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x084,0xC4A40018,0xC4AA0018,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x090,0x460E4281,0x460E4001,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x098,0x460A7081,0x46007081,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x09C,0xC4A40018,0xC4AA0018,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0A0,0x460C2080,0x460C5080,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0A4,0xC5060038,0xC5040038,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0B0,0xC4280000,0xC4260000,R_MIPS_LO16:D_80097D70,R_MIPS_LO16:D_80097D70,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0C8,0x8FA4002C,0x8FA40028,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0CC,0xE7A60010,0xE7A40010,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0D4,0xE7A8001C,0xE7A6001C,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_61D10,func_15035714,0x0F0,0x27BD0030,0x27BD0040,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
