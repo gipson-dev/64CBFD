@@ -9,8 +9,25 @@ typedef struct CleanupNode {
     u8 *owner;
 } CleanupNode;
 
+typedef struct {
+    u8 retained00[0x18];
+    s32 positionX;
+    s32 positionY;
+    s32 positionZ;
+} DistanceRecord15178C9C;
+
+typedef struct {
+    u8 retained00[0x14];
+    f32 positionX;
+    f32 positionY;
+    f32 positionZ;
+    u8 retained20[0x30C];
+} DistanceActor15178C9C;
+
 extern u8 *D_800DCF38;
 extern CleanupNode *D_800DCF3C;
+extern DistanceActor15178C9C D_800CC2D0[];
+f32 sqrtf(f32 value);
 extern s32 func_15168118(u8 *arg0);
 void func_100111C8(u16 arg0);
 void func_1516972C(u8 *arg0);
@@ -74,8 +91,22 @@ void func_15178C34(u8 arg0, s32 arg1, s32 arg2, s32 arg3, s16 arg4) {
     }
 }
 
-s32 func_15178C9C() {
-    return 0;
+/* Return the integer distance from a selected record to an actor position. */
+s32 func_15178C9C(u8 recordId, s32 actorIndex) {
+    DistanceRecord15178C9C *record;
+    s32 deltaX;
+    s32 deltaY;
+    s32 deltaZ;
+
+    record = (DistanceRecord15178C9C *)func_15178B98(recordId);
+    if (record != NULL) {
+        deltaX = (s32)(D_800CC2D0[actorIndex].positionX - (f32)record->positionX);
+        deltaY = (s32)(D_800CC2D0[actorIndex].positionY - (f32)record->positionY);
+        deltaZ = (s32)(D_800CC2D0[actorIndex].positionZ - (f32)record->positionZ);
+        return (s32)sqrtf((f32)((deltaX * deltaX + deltaY * deltaY) +
+                                deltaZ * deltaZ));
+    }
+    return 1;
 }
 
 void func_15178DA4(u8 *arg0) {

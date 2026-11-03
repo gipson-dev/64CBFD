@@ -25773,3 +25773,19 @@ game_14FF90,func_15123070,0x0F8,0x46020480,0x46020100,-,-,Normalize camera headi
 generated_188F90,func_1515BAE0,0x070,0xAFA30024,0xA3A30023,-,-,Normalize timed packet completion flag spill width,,,false
 generated_188F90,func_1515BAE0,0x080,0x8FA30024,0x93A30023,-,-,Normalize timed packet completion flag reload width,,,false
 generated_1A0790,func_151732E0,0x028,0x544E0007,0x55C20007,-,-,Normalize environment range comparison operand order,,,false
+generated_1A5440,func_15178C9C,0x060,0x03191821,0x03193021,-,-,Normalize record-distance actor pointer register,,,false
+generated_1A5440,func_15178C9C,0x064,0xC4640014,0xC4C40014,-,-,Normalize record-distance actor X base register,,,false
+generated_1A5440,func_15178C9C,0x06C,0xC4720018,0xC4D20018,-,-,Normalize record-distance actor Y base register,,,false
+generated_1A5440,func_15178C9C,0x084,0x44048000,0x44038000,-,-,Normalize record-distance X delta register,,,false
+generated_1A5440,func_15178C9C,0x08C,0xC470001C,0xC4D0001C,-,-,Normalize record-distance actor Z base register,,,false
+generated_1A5440,func_15178C9C,0x090,0x00840019,0x00630019,-,-,Normalize record-distance X square register,,,false
+generated_1A5440,func_15178C9C,0x0A0,0x00007012,0x00001812,-,-,Normalize record-distance X square result register,,,false
+generated_1A5440,func_15178C9C,0x0A8,0x44055000,0x44045000,-,-,Normalize record-distance Y delta register,,,false
+generated_1A5440,func_15178C9C,0x0B0,0x00A50019,0x00840019,-,-,Normalize record-distance Y square register,,,false
+generated_1A5440,func_15178C9C,0x0B8,0x44064000,0x44054000,-,-,Normalize record-distance Z delta register,,,false
+generated_1A5440,func_15178C9C,0x0BC,0x00007812,0x00002012,-,-,Normalize record-distance Y square result register,,,false
+generated_1A5440,func_15178C9C,0x0C0,0x01CFC021,0x00647021,-,-,Normalize record-distance XY accumulator registers,,,false
+generated_1A5440,func_15178C9C,0x0C8,0x00C60019,0x00A50019,-,-,Normalize record-distance Z square register,,,false
+generated_1A5440,func_15178C9C,0x0CC,0x0000C812,0x00002812,-,-,Normalize record-distance Z square result register,,,false
+generated_1A5440,func_15178C9C,0x0D0,0x03194021,0x01C57821,-,-,Normalize record-distance XYZ accumulator registers,,,false
+generated_1A5440,func_15178C9C,0x0D4,0x44885000,0x448F5000,-,-,Normalize record-distance squared-sum register,,,false
