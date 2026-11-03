@@ -1,10 +1,42 @@
 #include <ultra64.h>
+typedef struct HeightResult71820 HeightResult71820;
+typedef struct HeightActor71820 HeightActor71820;
+void func_15142314(u8 *, s32, f32 *);
+void func_1504715C(HeightResult71820 *, HeightActor71820 *);
+s32 func_15046C80(f32 *, u16, f32, HeightResult71820 *);
+
 s32 func_1509BE40(s32, ...);
 
 /* Non-matching placeholders for the text-only asm slice asm/EBE60.s. */
 
-s32 func_150BE9B0() {
-    return 0;
+/* Resolve the mode-selected actor point and optionally query its vertical interval. */
+s32 func_150BE9B0(f32 *position, u8 * volatile actor,
+        HeightResult71820 *result, u8 mode) {
+    f32 start[3];
+    register s32 index = 0x10;
+
+    switch (mode) {
+        case 4:
+            index = 0x17;
+            break;
+        case 5:
+            index = 0x14;
+            break;
+        case 6:
+            index = 0xC;
+            break;
+        case 7:
+            break;
+    }
+    func_15142314(*(u8 **)(actor + 0x1D4), index, position);
+    if (result == 0) {
+        return 1;
+    }
+    start[0] = position[0];
+    start[1] = position[1] + 10.0f;
+    start[2] = position[2];
+    func_1504715C(result, (HeightActor71820 *)actor);
+    return func_15046C80(start, 0, position[1] - 50.0f, result);
 }
 
 s32 func_150BEAA8(s32 arg0, s32 arg1) {
@@ -18,8 +50,34 @@ s32 func_150BEACC() {
     return 0;
 }
 
-s32 func_150BEC30() {
-    return 0;
+/* Resolve the mode-selected actor point and optionally query its vertical interval. */
+s32 func_150BEC30(f32 *position, u8 * volatile actor,
+        HeightResult71820 *result, u8 mode) {
+    f32 start[3];
+    register s32 index = 0x10;
+
+    switch (mode) {
+        case 4:
+            index = 0x19;
+            break;
+        case 5:
+            index = 0x16;
+            break;
+        case 6:
+            index = 0xC;
+            break;
+        case 7:
+            break;
+    }
+    func_15142314(*(u8 **)(actor + 0x1D4), index, position);
+    if (result == 0) {
+        return 1;
+    }
+    start[0] = position[0];
+    start[1] = position[1] + 10.0f;
+    start[2] = position[2];
+    func_1504715C(result, (HeightActor71820 *)actor);
+    return func_15046C80(start, 0, position[1] - 50.0f, result);
 }
 
 s32 func_150BED28(s32 arg0, s32 arg1) {

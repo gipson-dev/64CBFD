@@ -25533,3 +25533,37 @@ generated_20AE20,func_151E2404,0x0B8,0x80680007,0x80880007,-,-,Normalize complet
 generated_20AE20,func_151E2404,0x0C0,0x80690013,0x80890013,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
 generated_20AE20,func_151E2404,0x0C8,0x806A0016,0x808A0016,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
 generated_20AE20,func_151E2404,0x0D0,0x806B0006,0x808B0006,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_EBE60,func_150BE9B0,0x028,0x10E1000A,0x10E1000B,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x02C,0x24050010,0x8FAF003C,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x034,0x10E10009,0x10E1000A,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x03C,0x10E10009,0x10E1000A,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x040,0x24010007,0x24050010,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x044,0x50E10009,0x24010007,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x048,0x8FAF003C,0x10E10009,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x04C,0x10000007,0x00000000,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x050,0x8FAF003C,0x10000007,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x054,0x10000004,0x00000000,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x058,0x24050017,0x10000005,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x05C,0x10000002,0x24050017,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x060,0x24050014,0x10000003,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x064,0x2405000C,0x24050014,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x068,0x8FAF003C,0x10000001,-,-,Normalize closed actor point selector switch compiler layout,0x2405000C,-,false
+generated_EBE60,func_150BE9B0,0x06C,0x02003025,0x8DE401D4,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BE9B0,0x074,0x8DE401D4,0x02003025,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x028,0x10E1000A,0x10E1000B,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x02C,0x24050010,0x8FAF003C,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x034,0x10E10009,0x10E1000A,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x03C,0x10E10009,0x10E1000A,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x040,0x24010007,0x24050010,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x044,0x50E10009,0x24010007,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x048,0x8FAF003C,0x10E10009,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x04C,0x10000007,0x00000000,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x050,0x8FAF003C,0x10000007,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x054,0x10000004,0x00000000,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x058,0x24050019,0x10000005,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x05C,0x10000002,0x24050019,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x060,0x24050016,0x10000003,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x064,0x2405000C,0x24050016,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x068,0x8FAF003C,0x10000001,-,-,Normalize closed actor point selector switch compiler layout,0x2405000C,-,false
+generated_EBE60,func_150BEC30,0x06C,0x02003025,0x8DE401D4,-,-,Normalize closed actor point selector switch compiler layout,,,false
+generated_EBE60,func_150BEC30,0x074,0x8DE401D4,0x02003025,-,-,Normalize closed actor point selector switch compiler layout,,,false
