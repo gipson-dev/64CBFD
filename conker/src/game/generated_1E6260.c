@@ -1,5 +1,22 @@
 #include <ultra64.h>
 typedef struct {
+    u8 retained00[0x18];
+    f32 horizontalScale;
+    f32 verticalScale;
+    u8 retained20[0x18];
+    f32 xPosition;
+    f32 yPosition;
+    f32 zPosition;
+    u8 retained44[0x12C];
+    f32 zRotation;
+} AnisotropicMatrixState151B9310;
+typedef struct {
+    u32 retained;
+    f32 values[4][4];
+} MatrixWorkspace151B9310;
+void func_150A8050(f32 matrix[4][4], f32, f32, f32);
+
+typedef struct {
     f32 oscillation;
     f32 amplitude;
     f32 phase;
@@ -47,8 +64,25 @@ s32 func_151B9214(u8 *owner) {
     return 1;
 }
 
-s32 func_151B9310() {
-    return 0;
+/* Build and submit the state's translated, anisotropically scaled matrix. */
+s32 func_151B9310(Mtx *output, AnisotropicMatrixState151B9310 *state) {
+    MatrixWorkspace151B9310 workspace;
+
+    func_150A8050(workspace.values, 0.0f, 0.0f, state->zRotation);
+    workspace.values[3][0] = state->xPosition;
+    workspace.values[3][1] = state->yPosition;
+    workspace.values[3][2] = state->zPosition;
+    workspace.values[0][0] *= state->horizontalScale;
+    workspace.values[0][1] *= state->horizontalScale;
+    workspace.values[0][2] *= state->horizontalScale;
+    workspace.values[1][0] *= state->verticalScale;
+    workspace.values[1][1] *= state->verticalScale;
+    workspace.values[1][2] *= state->verticalScale;
+    workspace.values[2][0] *= state->horizontalScale;
+    workspace.values[2][1] *= state->horizontalScale;
+    workspace.values[2][2] *= state->horizontalScale;
+    guMtxF2L(workspace.values, output);
+    return 1;
 }
 
 s32 func_151B9408() {
