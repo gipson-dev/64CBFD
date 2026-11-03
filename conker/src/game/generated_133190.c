@@ -150,13 +150,38 @@ void func_151078E4(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) target, (s32) (target + 4), (s32) arg0);
 }
 
-s32 func_15107924() {
-    return 0;
-}
-
 void func_1515C244(struct127 *, struct17 *, f32 *, f32 *);
 void func_15143794(s16, s16, f32, vertex *);
+void func_15107A20(struct127 *, s16, s16, vertex *, struct17 *);
+void func_15107AE0(const f32 *, const f32 *, f32 *, f32 *);
 
+/* Update the linked actor point and rebuild its fractional points when changed. */
+s32 func_15107924(u8 *owner, u8 *changed) {
+    u8 *link = *(u8 **)(owner + 0x60);
+    struct127 *actor = *(struct127 **)link;
+    struct17 original;
+    f32 *savedPoint;
+    f32 *point;
+
+    if (*(s32 *)actor == 0 ||
+            (point = (f32 *)(owner + 0x14),
+             link[4] != *((u8 *)actor + 0x3B))) {
+        return 0;
+    }
+    *changed = 0;
+    original = *(struct17 *)point;
+    savedPoint = point;
+    func_15107A20(actor, *(s16 *)(link + 6), *(s16 *)(link + 8),
+                  (vertex *)point, NULL);
+    if (original.unk0 != *(f32 *)(owner + 0x14) ||
+            original.unk4 != *(f32 *)(owner + 0x18) ||
+            original.unk8 != *(f32 *)(owner + 0x1C)) {
+        *changed = 1;
+        func_15107AE0(savedPoint, (f32 *)(owner + 0x38),
+                      (f32 *)(owner + 0x20), (f32 *)(owner + 0x2C));
+    }
+    return 1;
+}
 /* Apply the actor-scaled direction to its queried origin and optionally return that origin. */
 void func_15107A20(struct127 *actor, s16 yaw, s16 pitch, vertex *point, struct17 *originOut) {
     struct17 origin;
