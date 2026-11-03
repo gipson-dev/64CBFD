@@ -3,6 +3,7 @@
 s32 func_10003C6C(s32, s32, s32, s32, s32);
 f32 func_1514462C(struct134 *);
 f32 func_15144598(struct134 *);
+s32 func_150A1DA0(struct127 *, s32, s32);
 
 typedef struct ShapeMeasureNode {
     u8 *descriptor;
@@ -136,7 +137,32 @@ s32 func_1515E888() {
     return 0;
 }
 
-s32 func_1515EB84() {
+/* Find the first enabled record accepting the supplied point. */
+u8 *func_1515EB84(s32 x, s32 y, s32 z, s32 mask, LinkedNode *node) {
+    struct127 query;
+    u8 *record;
+
+    query.y_position = y;
+    query.unk180 = y;
+    query.old_y_position = y;
+    query.x_position = x;
+    query.old_x_position = x;
+    query.z_position = z;
+    query.old_z_position = z;
+
+    if (node != 0) {
+        do {
+            record = *(u8 **)&node->data[0];
+            if (record[0x14] == 0 &&
+                (mask == 0 || ((*(u32 *)(record + 0x18) >> 24) & mask) != 0) &&
+                ((record[0x15] >> 2) == 24 ||
+                 (*(u32 *)(record + 0x18) >> 31) == 0) &&
+                func_150A1DA0(&query, (s32)record, 0) == 0) {
+                return *(u8 **)&node->data[0];
+            }
+            node = node->next;
+        } while (node != 0);
+    }
     return 0;
 }
 

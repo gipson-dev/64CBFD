@@ -25694,3 +25694,7 @@ game_16EE20,func_1514654C,0x0D0,0x1000003A,0x1000003B,-,-,Retarget resolver fail
 game_16EE20,func_1514654C,0x0D8,0x8E2A0048,0x8E2A0048,-,-,Load resolved primary before testing the post-resolver attachment,0x8FA50090,-,false
 game_16EE20,func_1514654C,0x0FC,0x8FA50090,0x00000000,-,-,Retire the duplicate late primary reload after the eager preload,,,false
 game_16EE20,func_1514654C,0x138,0x03233021,0x00793021,-,-,Use retail commutative delegated bank and index operand order,,,false
+generated_18A8F0,func_1515EB84,0x020,0x44852000,0x44853000,-,-,Convert Y through retail temporary F6,,,false
+generated_18A8F0,func_1515EB84,0x024,0x44843000,0x44842000,-,-,Convert X through retail temporary F4,,,false
+generated_18A8F0,func_1515EB84,0x02C,0x46802020,0x46803020,-,-,Complete the Y conversion from retail F6,,,false
+generated_18A8F0,func_1515EB84,0x038,0x468030A0,0x468020A0,-,-,Complete the X conversion from retail F4,,,false
