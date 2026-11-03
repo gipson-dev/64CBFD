@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern s32 D_800BE9E4;
+f32 func_151423D8(u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/1DD500.s. */
 
@@ -42,8 +44,29 @@ s32 func_151B14AC() {
     return 0;
 }
 
-s32 func_151B1828() {
-    return 0;
+/* Advance two phase bytes and ease the planar position toward their sampled offsets. */
+s32 func_151B1828(u8 *state) {
+    u8 *parameters = state;
+    f32 firstSample;
+    f32 secondSample;
+    f32 firstCurrent;
+    f32 secondCurrent;
+
+    state[0x120] += (s32)*(s8 *)(state + 0x122) * (u32)D_800BE9E4;
+    state[0x121] += (s32)*(s8 *)(state + 0x123) * (u32)D_800BE9E4;
+    firstSample = func_151423D8((u8)(state[0x120] - 0x40));
+    parameters += 0x110;
+    secondSample = func_151423D8((u8)(parameters[0x11] - 0x40));
+
+    firstCurrent = *(f32 *)(state + 0x2C);
+    secondCurrent = *(f32 *)(state + 0x30);
+    *(f32 *)(state + 0x2C) =
+        ((*(f32 *)(parameters + 0x1C) * firstSample +
+          *(f32 *)(parameters + 0x14)) - firstCurrent) * 0.5f + firstCurrent;
+    *(f32 *)(state + 0x30) =
+        ((*(f32 *)(parameters + 0x20) * secondSample +
+          *(f32 *)(parameters + 0x18)) - secondCurrent) * 0.5f + secondCurrent;
+    return 1;
 }
 
 void func_1516972C(void *arg0);
