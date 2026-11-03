@@ -25513,3 +25513,23 @@ generated_C9EC0,func_1509D08C,0x0C0,0x918D0000,0x91F80000,-,-,Normalize dependen
 generated_C9EC0,func_1509D08C,0x0C4,0x308E0007,0x308B0007,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
 generated_C9EC0,func_1509D08C,0x0C8,0x01CFC004,0x016C6804,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
 generated_C9EC0,func_1509D08C,0x0D4,0x0062082B,0x0043082B,-,-,Normalize dependency status address operand order and closed loop register allocation,,,false
+generated_20AE20,func_151E2404,0x004,0x3C030000,0x3C040000,R_MIPS_HI16:D_800E0BE0,R_MIPS_HI16:D_800E0BE0,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x008,0x24630000,0x24840000,R_MIPS_LO16:D_800E0BE0,R_MIPS_LO16:D_800E0BE0,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x01C,0x3C040000,0x3C030000,R_MIPS_HI16:D_800AB690,R_MIPS_HI16:D_800AB690,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x034,0x00982021,0x00781821,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x038,0x80840000,0x80630000,R_MIPS_LO16:D_800AB690,R_MIPS_LO16:D_800AB690,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x03C,0x00850019,0x00650019,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x040,0x2C81000A,0x2C61000A,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x044,0x00046880,0x00036880,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x054,0x80690002,0x80890002,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x05C,0x806A0003,0x808A0003,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x064,0x806B0010,0x808B0010,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x06C,0x806C0011,0x808C0011,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x08C,0x806E0004,0x808E0004,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x098,0x806F000D,0x808F000D,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0A0,0x8078000E,0x8098000E,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0AC,0x80790012,0x80990012,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0B8,0x80680007,0x80880007,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0C0,0x80690013,0x80890013,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0C8,0x806A0016,0x808A0016,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false
+generated_20AE20,func_151E2404,0x0D0,0x806B0006,0x808B0006,-,-,Normalize complete menu source/index a0-v1 allocation cycle,,,false

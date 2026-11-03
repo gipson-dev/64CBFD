@@ -206,6 +206,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_11F780.c.o: RETAIL_RODATA_SYMBOL := jtbl_
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11FF10.c.o: RETAIL_RODATA_SYMBOL := D_800A196C
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11F780.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: Makefile
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_20AE20.c.o: RETAIL_RODATA_SYMBOL := jtbl_800AB9BC
 $(BUILD_DIR)/$(SRC_DIR)/game/entrypoint.c.o: RETAIL_RODATA_SYMBOL := jtbl_80095A30_game
 $(BUILD_DIR)/$(SRC_DIR)/game_433F0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800966C0_game
 $(BUILD_DIR)/$(SRC_DIR)/game_A9D90.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009B884_game

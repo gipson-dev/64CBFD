@@ -113,6 +113,10 @@ s8 D_800E0BE0[28]; // Persisted settings span; reset initializes the first 23 by
 extern u8 D_800AB570[];
 extern u8 D_800E0B95;
 
+extern s8 D_800AB690[];
+extern s8 *D_80082BBC;
+void func_150076A0(void);
+
 void func_151E557C(void);
 void func_151E6BFC(void);
 void func_151E55A8(void);
@@ -237,8 +241,42 @@ s32 func_151E22BC() {
     return 0;
 }
 
-s32 func_151E2404() {
-    return 0;
+/* Copy the selected menu settings into its ten-byte record, then submit it. */
+void func_151E2404(void) {
+    s32 index;
+    volatile s8 *source;
+    s8 *record;
+
+    source = D_800E0BE0;
+    index = D_800AB690[D_8008FDD4[0x42] * 10];
+    record = D_80082BBC + index * 10;
+    record[0] = 0;
+    record[1] = source[2];
+    record[2] = source[3];
+    record[3] = source[0x10];
+    record[4] = source[0x11];
+    switch (index) {
+        case 0:
+            record[5] = source[4];
+            break;
+        case 1:
+        case 2:
+            record[5] = source[0xD];
+            record[6] = source[0xE];
+            break;
+        case 5:
+        case 7:
+            record[5] = source[0x12];
+            break;
+        case 8:
+        case 9:
+            record[5] = source[7];
+            record[6] = source[0x13];
+            break;
+    }
+    record[8] = source[0x16];
+    record[9] = source[6];
+    func_150076A0();
 }
 
 s32 func_151E24F0() {
