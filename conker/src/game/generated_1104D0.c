@@ -6,6 +6,7 @@ s32 func_150E3020(s32, s32, s32, s32, s32, s32, s32, f32,
 
 #include "structs.h"
 extern f32 D_800BE9A4;
+extern f32 D_800A1050;
 extern f32 D_800A1054;
 
 typedef struct {
@@ -19,6 +20,8 @@ typedef struct {
 extern Generated1104D0Actor *D_800D99D0[8];
 
 void func_151C3B0C(void *, f32, f32, f32, f32, s32, s32, s32);
+f32 func_150484A0(f32, f32);
+void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1104D0.s. */
 
@@ -140,8 +143,22 @@ s32 func_150E3738() {
     return 0;
 }
 
-s32 func_150E4010() {
-    return 0;
+/* Submit this actor's position and direction as object slot 25. */
+void func_150E4010(u8 *actor) {
+    u8 *extension;
+
+    extension = actor + 0x110;
+    if (*(s32 *)(actor + 0x1B4) != 0) {
+        func_1505D1C4(*(f32 *)(extension + 0x30),
+                      *(f32 *)(extension + 0x34),
+                      *(f32 *)(extension + 0x38),
+                      *(s32 *)(extension + 0xA4) | 0x60000,
+                      -1,
+                      (((u32)(func_150484A0(*(f32 *)(extension + 0x60),
+                                            *(f32 *)(extension + 0x64)) *
+                                D_800A1050) & 0xFFFF) - 0x4000) | 1,
+                      0, 0);
+    }
 }
 
 void func_150E411C(void *arg0) {
