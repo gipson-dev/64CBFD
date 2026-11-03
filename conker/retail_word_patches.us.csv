@@ -25630,3 +25630,7 @@ generated_179F30,func_1514E920,0x064,0x2401FFFE,0x03214024,-,-,Normalize owner e
 generated_179F30,func_1514E920,0x068,0x03214024,0xAC880010,-,-,Normalize owner enable-gate compiler control flow and schedule,,,false
 generated_179F30,func_1514E920,0x06C,0x1040000B,0x8CE20044,-,-,Normalize owner enable-gate compiler control flow and schedule,,,false
 generated_179F30,func_1514E920,0x070,0xAC880010,0x5040000C,-,-,Normalize owner enable-gate compiler control flow and schedule,0x24020001,,false
+game_EF410,func_150C2424,0x01C,0x3C01C3F5,0x3C010000,-,R_MIPS_HI16:D_800A0268,Normalize dual effect-band first-call constant and global schedule,,,false
+game_EF410,func_150C2424,0x020,0x44817000,0xC42C0000,-,R_MIPS_LO16:D_800A0268,Normalize dual effect-band first-call constant and global schedule,,,false
+game_EF410,func_150C2424,0x028,0x3C010000,0x3C01C3F5,R_MIPS_HI16:D_800A0268,-,Normalize dual effect-band first-call constant and global schedule,,,false
+game_EF410,func_150C2424,0x02C,0xC42C0000,0x44817000,R_MIPS_LO16:D_800A0268,-,Normalize dual effect-band first-call constant and global schedule,,,false

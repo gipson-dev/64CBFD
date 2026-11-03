@@ -18,13 +18,15 @@ typedef struct PacketEF410 {
 
 extern f32 D_800A0280;
 extern f32 D_800A0284;
+extern f32 D_800A0268;
+extern f32 D_800A026C;
+void func_1514C470(f32, f32, f32, f32, f32, f32, f32, s32, s32, f32, void *, u8);
 f32 *func_15144B34(s32);
 void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
-s32 func_150C2424();
 s32 func_150C2558();
 s32 func_150C2700();
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
@@ -141,9 +143,14 @@ s32 func_150C2290() {
 //     func_15151A38(&sp18, arg0 & 0xFF, 1);
 // }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2424.s. */
-s32 func_150C2424() {
-    return 0;
+/* Emit both randomized effect bands used by event 0x2E. */
+void func_150C2424(u8 channel) {
+    func_1514C470(D_800A0268, -490.0f, -328.0f, D_800A0268,
+                 -490.0f, 328.0f, func_150ADA68() * 8.0f + 8.0f,
+                 1, 0, 0.0f, NULL, channel);
+    func_1514C470(D_800A026C, -560.0f, -580.0f, 8117.0f,
+                 -560.0f, -580.0f, func_150ADA68() * 3.0f + 4.0f,
+                 3, 0, 0.0f, NULL, channel);
 }
 // NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
 s32 func_150C251C(struct202 *arg0) {
