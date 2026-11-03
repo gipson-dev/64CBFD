@@ -25680,3 +25680,5 @@ generated_61D10,func_15035714,0x0C8,0x8FA4002C,0x8FA40028,-,-,Normalize reflecte
 generated_61D10,func_15035714,0x0CC,0xE7A60010,0xE7A40010,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
 generated_61D10,func_15035714,0x0D4,0xE7A8001C,0xE7A6001C,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
 generated_61D10,func_15035714,0x0F0,0x27BD0030,0x27BD0040,-,-,Normalize reflected projection probe compiler allocation and frame,,,false
+generated_15F680,func_15133A94,0x0A4,0x01832821,0x006C2821,-,-,Normalize commutative selected-matrix base and index addition,,,false
+generated_15F680,func_15133A94,0x0C4,0x01C32821,0x006E2821,-,-,Normalize commutative selected-matrix base and index addition,,,false

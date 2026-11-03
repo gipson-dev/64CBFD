@@ -12,6 +12,12 @@ extern s16 D_800DC468[];
 extern s32 D_800DC640[];
 extern s32 D_800BE9F0;
 extern u8 D_800BE616;
+extern u8 D_800C3E90;
+
+typedef struct {
+    f32 matrix[4][4];
+    u8 reserved40[8];
+} MatrixWorkspace15F680;
 
 typedef struct ExtendedResource15F680 {
     void *data;
@@ -321,8 +327,35 @@ s32 func_15133A50(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4) {
     return 1;
 }
 
-s32 func_15133A94() {
-    return 0;
+/* Copy the selected attached-actor matrix in the active representation. */
+s32 func_15133A94(Mtx *output, u8 *actor) {
+    MatrixWorkspace15F680 workspace;
+    u8 *attached;
+    u8 *matrices;
+
+    attached = *(u8 **)(actor + 0x7C);
+    if (attached == NULL || *(u32 *)attached == 0 || attached[4] == 0xFF ||
+        actor[0x80] != attached[0x3B]) {
+        return -1;
+    }
+    matrices = *(u8 **)(attached + 0x1D4);
+    if (matrices == NULL) {
+        return 0;
+    }
+    if ((attached[0x74] & 0xF) == 0xF) {
+        return 0;
+    }
+    if (D_800C3E90 != 0) {
+        memcpy(output, matrices + (actor[0x170] << 6), 0x40);
+    } else {
+        memcpy(workspace.matrix, matrices + (actor[0x170] << 6), 0x40);
+        workspace.matrix[0][3] = 0.0f;
+        workspace.matrix[1][3] = 0.0f;
+        workspace.matrix[2][3] = 0.0f;
+        workspace.matrix[3][3] = 1.0f;
+        guMtxF2L(workspace.matrix, output);
+    }
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15F680/func_15133B98.s")
