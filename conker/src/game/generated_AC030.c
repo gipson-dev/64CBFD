@@ -2,6 +2,9 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/AC030.s. */
 
+extern u8 D_800B85A4[];
+void func_1505E650(u8 *, u16, f32, f32, f32, f32, s32);
+
 void func_1507EEB8(u8 arg0, u8 *arg1);
 extern u8 *D_800D154C;
 extern u8 *D_80086BA0[];
@@ -136,8 +139,34 @@ s32 func_1507F4C0(s32 arg0) {
     return (func_150ADA20() % (u32) arg0) + base;
 }
 
-s32 func_1507F54C() {
-    return 0;
+/* Start the actor animation selected for its current slot. */
+void func_1507F54C(u8 *actor) {
+    s32 animation;
+
+    if (actor[0x13C] >= 100) {
+        switch (D_800B85A4[actor[0x13C] * 0x32C]) {
+        case 0x57:
+            animation = 0x115;
+            break;
+        case 0x8C:
+            animation = 0x1A5;
+            break;
+        case 0xA8:
+        case 0xA9:
+            animation = 0x1AF;
+            break;
+        case 0x89:
+        case 0xBA:
+            animation = 0x1FA;
+            break;
+        default:
+            animation = 0xD8;
+            break;
+        }
+        func_1505E650(actor, animation, 1.0f, 4.0f, 0.0f, 0.0f, 0);
+    } else {
+        func_1505E650(actor, 0xF, 1.0f, 3.0f, 0.0f, 0.0f, 0);
+    }
 }
 
 s32 func_1507F640() {
