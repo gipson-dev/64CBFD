@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern f32 D_800A8F7C;
+u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
 extern f32 D_800A8F90;
 
 extern f32 D_800A8F8C;
@@ -39,8 +41,25 @@ void func_151A99D0(u8 *input) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151A9AA4.s")
 
-s32 func_151A9BA0() {
-    return 0;
+/* Probe below the attached actor, submit an effect, and start its hit sound. */
+void func_151A9BA0(u8 *input) {
+    u8 *owner = input;
+    f32 position[3];
+    u8 *actor;
+
+    actor = *(u8 **)(owner + 0x18);
+    position[0] = *(f32 *)(actor + 0x14);
+    if (D_800A8F7C < *(f32 *)(actor + 0x118)) {
+        position[1] = *(f32 *)(actor + 0x118) + 100.0f;
+    } else {
+        position[1] = *(f32 *)(actor + 0x18) + 150.0f;
+    }
+    position[2] = *(f32 *)(actor + 0x1C);
+    if (func_15045800(position, 0, position[1] - 300.0f, owner + 0x34)) {
+        position[1] = *(f32 *)(owner + 0x34);
+        func_151ABE40(position, owner + 0x34, 1, owner[0xC], owner[1]);
+        func_10010FFC(0, 0x11, 0x5208, 0, 0, actor);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D6E80/func_151A9CA0.s")
