@@ -14,13 +14,16 @@ typedef struct {
 typedef s32 (*RecordCallback40490)(DispatchRecord40490 *);
 extern DispatchRecord40490 *D_800D3098;
 extern RecordCallback40490 D_80082E30[];
+typedef void (*RecordModeCallback40490)(u8 *, f32);
+extern RecordModeCallback40490 D_80082F28[];
+extern f32 D_80096650;
+extern u8 D_800C35E8;
 
 /* Generated placeholder declarations. */
 void func_15013000(void);
 s32 func_150130B4();
 s32 func_15013778();
 s32 func_150139AC();
-s32 func_15013C38();
 s32 func_15013DE8();
 s32 func_150142EC();
 s32 func_150144B8();
@@ -104,9 +107,31 @@ s32 func_150139AC() {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_40490/func_15013C38.s. */
-s32 func_15013C38() {
-    return 0;
+/* Dispatch the record's scaled value unless the current mode suppresses it. */
+s32 func_15013C38(u8 *record) {
+    RecordModeCallback40490 callback;
+    s32 mode;
+    f32 scaled;
+
+    record[0x16] |= 4;
+    mode = *(s32 *)(record + 0x18);
+    if ((((u8 *)D_800D2E4C)[0x11] & 4) && D_800BE9F0 == 0x13) {
+        return 1;
+    }
+    if (D_800C35EA == 1 &&
+        (D_800C35E8 == 0xF || D_800C35E8 == 0x10 ||
+         D_800C35E8 == 0x11)) {
+        return 1;
+    }
+    if (mode >= 6) {
+        return 1;
+    }
+    callback = D_80082F28[mode];
+    if (callback != NULL) {
+        scaled = (f32)*(u32 *)(record + 0x1C) * D_80096650;
+        callback(record, scaled);
+    }
+    return 1;
 }
 
 s32 func_15013D38(u8 *arg0) {
