@@ -25698,3 +25698,12 @@ generated_18A8F0,func_1515EB84,0x020,0x44852000,0x44853000,-,-,Convert Y through
 generated_18A8F0,func_1515EB84,0x024,0x44843000,0x44842000,-,-,Convert X through retail temporary F4,,,false
 generated_18A8F0,func_1515EB84,0x02C,0x46802020,0x46803020,-,-,Complete the Y conversion from retail F6,,,false
 generated_18A8F0,func_1515EB84,0x038,0x468030A0,0x468020A0,-,-,Complete the X conversion from retail F4,,,false
+generated_1BA1D0,func_15190F9C,0x000,0x27BDFFE0,0x27BDFFD0,-,-,Normalize dual-phase callback frame size,,,false
+generated_1BA1D0,func_15190F9C,0x05C,0xAFA50020,0xAFA50030,-,-,Normalize dual-phase callback owner home,,,false
+generated_1BA1D0,func_15190F9C,0x060,0x8FA50020,0x8FA50030,-,-,Normalize dual-phase callback owner reload,,,false
+generated_1BA1D0,func_15190F9C,0x064,0xE7A00018,0xE7A00024,-,-,Normalize first trigonometric sample home,,,false
+generated_1BA1D0,func_15190F9C,0x088,0xC7A60018,0xC7A60024,-,-,Normalize first trigonometric sample reload,,,false
+generated_1BA1D0,func_15190F9C,0x08C,0x8FA50020,0x8FA50030,-,-,Normalize post-call owner reload,,,false
+generated_1BA1D0,func_15190F9C,0x0BC,0x46022180,0x46041180,-,-,Normalize first commutative smoothing addition,,,false
+generated_1BA1D0,func_15190F9C,0x0DC,0x460C3200,0x46066200,-,-,Normalize second commutative smoothing addition,,,false
+generated_1BA1D0,func_15190F9C,0x0EC,0x27BD0020,0x27BD0030,-,-,Normalize dual-phase callback frame restore,,,false
