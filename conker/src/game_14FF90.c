@@ -23,9 +23,18 @@ s32 func_15127520();
 s32 func_151277B0();
 s32 func_151279A0();
 s32 func_15128030();
-s32 func_151283B8(s32 arg0);
+void func_151283B8(struct108 *camera);
 s32 func_15128540(s32 arg0);
 /* End generated placeholder declarations. */
+
+void func_15120158(struct108 *);
+s32 func_15121C80();
+void func_151220D0(struct108 *);
+void func_15122170(struct108 *);
+void func_15122440(struct108 *);
+void func_15122980(struct108 *);
+void func_15129934(struct108 *);
+void func_1512DEA4(struct108 *);
 
 extern f32 D_800A34B0[4][2];
 extern f32 D_800A34D0;
@@ -738,9 +747,39 @@ void func_15127FEC(struct108 *arg0, s32 arg1, s32 arg2) {
 s32 func_15128030() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151283B8.s. */
-s32 func_151283B8(s32 arg0) {
-    return 0;
+/* Dispatch the camera update selected by its sparse mode word. */
+void func_151283B8(struct108 *camera) {
+    switch (camera->unk2C) {
+    case 0x80:
+        func_15122440(camera);
+        break;
+    case 0x40:
+        func_15129934(camera);
+        break;
+    case 1:
+        func_15122980(camera);
+        break;
+    case 8:
+        func_15121C80(camera, 0);
+        break;
+    case 2:
+        func_151220D0(camera);
+        break;
+    case 0x400:
+        func_15122170(camera);
+        break;
+    case 0x800:
+        func_15122980(camera);
+        break;
+    case 0x100:
+        func_15120158(camera);
+        break;
+    case 0x800000:
+        func_1512DEA4(camera);
+        break;
+    case 0x2000:
+        break;
+    }
 }
 void func_151284C4(struct108 *arg0) {
     u8 counter;

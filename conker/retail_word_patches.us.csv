@@ -25590,3 +25590,4 @@ generated_CDE80,func_150A23E4,0x0C8,0x8FB00038,0x8FBF003C,-,-,Normalize closed r
 generated_CDE80,func_150A23E4,0x0CC,0x27BD0040,0x8FB00038,-,-,Normalize closed record sound-start epilogue schedule,,,false
 generated_CDE80,func_150A23E4,0x0D0,0x03E00008,0x27BD0040,-,-,Normalize closed record sound-start epilogue schedule,,,false
 generated_CDE80,func_150A23E4,0x0D4,0x00000000,0x03E00008,-,-,Normalize closed record sound-start epilogue schedule,0x00000000,-,false
+game_14FF90,func_151283B8,0x0A8,0x00002825,0x24050000,-,-,Normalize zero second-argument instruction selection,,,false
