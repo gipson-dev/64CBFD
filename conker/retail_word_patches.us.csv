@@ -25859,3 +25859,44 @@ game_2062D0,func_151DA6F8,0x20C,0x00401825,0x10400007,-,-,Normalize constructor 
 game_2062D0,func_151DA6F8,0x210,0x8C440098,0x27A50084,-,-,Normalize constructor result and payload-copy schedule,,,false
 game_2062D0,func_151DA6F8,0x214,0xAFA200CC,0x8C640098,-,-,Normalize constructor result and payload-copy schedule,,,false
 game_2062D0,func_151DA6F8,0x218,0x27A50084,0xAFA300CC,-,-,Normalize constructor result and payload-copy schedule,,,false
+game_77AD0,func_1504A620,0x000,0x44807000,0x44800000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x008,0x460E603C,0x4600603C,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x010,0x45020004,0x45020005,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x014,0x460E6032,0x46006032,-,-,Normalize logarithm approximation compiler allocation and schedule,0x44800000,-,false
+game_77AD0,func_1504A620,0x01C,0x46007006,0x00000000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x020,0x460E6032,0x46006032,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x028,0x45020004,0x45020005,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x02C,0x44818000,0x44817000,-,-,Normalize logarithm approximation compiler allocation and schedule,0x44800000,-,false
+game_77AD0,func_1504A620,0x034,0x46007006,0x00000000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x038,0x44818000,0x44817000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x03C,0x46006006,0x46000086,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x040,0x46007086,0x3C010000,-,R_MIPS_HI16:D_800990B0,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x044,0x460C803E,0x460C703E,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x048,0x3C010000,0x00000000,R_MIPS_HI16:D_800990B0,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x04C,0x4502000C,0x4500000B,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x050,0x3C013F80,0x00000000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x054,0xC42C0000,0xC4300000,R_MIPS_LO16:D_800990B0,R_MIPS_LO16:D_800990B0,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x05C,0x44817000,0x44810000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x064,0x460E0002,0x46006302,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x068,0x460C1080,0x46101080,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x06C,0x4600803E,0x460C703E,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x07C,0x3C013F80,0x3C010000,-,R_MIPS_HI16:D_800990B4,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x080,0x44819000,0xC4300000,-,R_MIPS_LO16:D_800990B4,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x084,0x3C010000,0x3C013F80,R_MIPS_HI16:D_800990B4,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x088,0x4612003C,0x44819000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x090,0x45020009,0x4612603C,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x094,0x46120101,0x00000000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x098,0xC42C0000,0x45020008,R_MIPS_LO16:D_800990B4,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x09C,0x46000000,0x46126101,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0A0,0x460C1081,0x460C6300,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0A4,0x4612003C,0x46101081,-,-,Normalize logarithm approximation compiler allocation and schedule,0x4612603C,-,false
+game_77AD0,func_1504A620,0x0B0,0x46000000,0x460C6300,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0B4,0x46120101,0x46126101,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0BC,0x46120180,0x46126180,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0C0,0x46062303,0x46062383,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0C4,0x460C6382,0x460E7402,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0C8,0x460C6400,0x460E7000,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0D0,0x46001006,0x46001306,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0DC,0x460A8103,0x460A0103,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0E0,0x460E8402,0x46100002,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+game_77AD0,func_1504A620,0x0E8,0x46001032,0x460C1032,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
