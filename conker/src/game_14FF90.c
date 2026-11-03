@@ -1,11 +1,15 @@
 #include <ultra64.h>
 
+/* Retail keeps the camera in the vector helper's unused fourth argument. */
+#define func_15048F90 func_15048F90_legacy_three_argument_signature
 #include "functions.h"
+#undef func_15048F90
+extern void func_15048F90();
 #include "variables.h"
 
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
-s32 func_15123070(s32 arg0);
+void func_15123070(struct108 *camera);
 s32 func_1512317C(s32 arg0);
 s32 func_15123568(s32 arg0);
 s32 func_151236D0();
@@ -302,32 +306,28 @@ s32 func_15122C5C(s32 arg0) {
 //         func_151284C4(arg0);
 //     }
 // }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15123070.s. */
-s32 func_15123070(s32 arg0) {
-    return 0;
+/* Update and normalize the camera heading relative to its tracked actor. */
+void func_15123070(struct108 *camera) {
+    f32 heading;
+    struct17 direction;
+    f32 special_heading;
+
+    if ((camera->unk6C8 != 0) &&
+            ((camera->unk6FC == 10) || (camera->unk6FC == 14))) {
+        func_15048F90((struct17 *)&camera->unk618, &camera->unk2A4, &direction, camera);
+        special_heading = camera->unk37C - func_15048FC8(&direction);
+        camera->unk390 = special_heading;
+    } else {
+        heading = camera->unk3D0->unk40 - camera->unk37C - 180.0f;
+        while (heading < 0.0f) {
+            heading += 360.0f;
+        }
+        camera->unk390 = heading;
+    }
+    while (camera->unk390 < -360.0f) {
+        camera->unk390 += 360.0f;
+    }
 }
-// NON-MATCHING: 1 missing lui
-// void func_15123070(struct108 *arg0) {
-//     f32 temp_f0;
-//     struct17 tmp;
-//
-//     if ((arg0->unk6C8 != 0) && ((arg0->unk6FC == 10) || (arg0->unk6FC == 14))) {
-//         func_15048F90(&arg0->unk618, &arg0->unk2A4, &tmp, arg0);
-//         arg0->unk390 = arg0->unk37C - func_15048FC8(&tmp);
-//     } else {
-//         temp_f0 = arg0->unk3D0->unk40 - arg0->unk37C - 180.0f;
-//
-//         while (temp_f0 < 0.0f) {
-//             temp_f0 += 360.0f;
-//         }
-//
-//         arg0->unk390 = temp_f0;
-//     }
-//
-//     while (arg0->unk390 < -360.0f) {
-//         arg0->unk390 += 360.0f;
-//     }
-// }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_1512317C.s. */
 s32 func_1512317C(s32 arg0) {
     return 0;

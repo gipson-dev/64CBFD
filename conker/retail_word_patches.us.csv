@@ -25758,3 +25758,15 @@ generated_1E6260,func_151B9214,0x0D4,0x46002482,0x460C2482,-,-,Scale the amplitu
 generated_1E6260,func_151B9214,0x0D8,0x460A1200,0x460A0200,-,-,Add the scaled phase-rate delta through retail F0,,,false
 generated_1E6260,func_151B9214,0x0DC,0x46126180,0x46121180,-,-,Add the scaled amplitude delta through retail F2,,,false
 generated_1E6260,func_151B9214,0x0F0,0x27BD0028,0x27BD0020,-,-,Normalize timed oscillation callback frame restore,,,false
+game_14FF90,func_15123070,0x050,0xC4E4037C,0x44811000,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x054,0x46002081,0xC4E4037C,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x058,0xE4E20390,0x46002181,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x05C,0x44811000,0xE4E60390,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x06C,0xC4E8037C,0xC4EA037C,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x074,0xC5E60040,0xC5E80040,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x078,0x44818000,0x44819000,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x080,0x46083281,0x460A4401,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x088,0x46105001,0x46128001,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x0E0,0x46020480,0x46020100,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x0E4,0xE4F20390,0xE4E40390,-,-,Normalize camera heading float-register scheduling,,,false
+game_14FF90,func_15123070,0x0F8,0x46020480,0x46020100,-,-,Normalize camera heading float-register scheduling,,,false
