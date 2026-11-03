@@ -25581,3 +25581,12 @@ game_18D770,func_15164134,0x078,0x10000011,0x10000012,-,-,Normalize closed owner
 game_18D770,func_15164134,0x084,0x54CA000F,0x55460010,-,-,Normalize closed owner identity event compiler schedule,,,false
 game_18D770,func_15164134,0x094,0x1000000A,0xA04B0004,-,-,Normalize closed owner identity event compiler schedule,0x1000000B,-,false
 game_18D770,func_15164134,0x098,0xA04B0004,0x8FBF0014,-,-,Normalize closed owner identity event compiler schedule,,,false
+generated_CDE80,func_150A23E4,0x018,0x55C0002A,0x55C0002B,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0B8,0x10000002,0xAE180020,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0BC,0xAE180020,0x10000003,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0C0,0xAE190020,0x8FBF003C,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0C4,0x8FBF003C,0xAE190020,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0C8,0x8FB00038,0x8FBF003C,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0CC,0x27BD0040,0x8FB00038,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0D0,0x03E00008,0x27BD0040,-,-,Normalize closed record sound-start epilogue schedule,,,false
+generated_CDE80,func_150A23E4,0x0D4,0x00000000,0x03E00008,-,-,Normalize closed record sound-start epilogue schedule,0x00000000,-,false

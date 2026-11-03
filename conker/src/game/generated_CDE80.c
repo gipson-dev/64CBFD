@@ -78,8 +78,24 @@ s32 func_150A1DA0(struct127 *arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_150A23E4() {
-    return 0;
+u16 func_1000FA64(u16,s16,s16,s16,s32,u16,s16,s32,void*,s32,s32,s32);
+/* Submit an inactive record sound before publishing its active state. */
+void func_150A23E4(GeneratedCDE80Record *record) {
+    s32 extra;
+    s32 mode;
+    if (record->field20 == 0) {
+        extra = 0;
+        mode = 8;
+        if ((record->flags & 3) == 0) extra = 0x8000;
+        if (record->field17 >> 7) mode = 0x108;
+        func_1000FA64((u32)record->field1C >> 16,
+            record->origin0, record->origin1, record->origin2,
+            (record->field17 & 0x7F) * 327,
+            record->field18 | extra, record->field1C & 0xFFFF, 0, 0, 0, mode, 0);
+        record->field20 = 1;
+    } else {
+        record->field20 = 1;
+    }
 }
 
 s32 func_150A24C0() {
