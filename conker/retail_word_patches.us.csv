@@ -25567,3 +25567,17 @@ generated_EBE60,func_150BEC30,0x064,0x2405000C,0x24050016,-,-,Normalize closed a
 generated_EBE60,func_150BEC30,0x068,0x8FAF003C,0x10000001,-,-,Normalize closed actor point selector switch compiler layout,0x2405000C,-,false
 generated_EBE60,func_150BEC30,0x06C,0x02003025,0x8DE401D4,-,-,Normalize closed actor point selector switch compiler layout,,,false
 generated_EBE60,func_150BEC30,0x074,0x8DE401D4,0x02003025,-,-,Normalize closed actor point selector switch compiler layout,,,false
+game_18D770,func_15163FEC,0x038,0x57190022,0x57190023,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15163FEC,0x048,0x1000001E,0x1000001F,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15163FEC,0x054,0x14410011,0x14410012,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15163FEC,0x078,0x10000011,0x10000012,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15163FEC,0x084,0x54CA000F,0x55460010,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15163FEC,0x094,0x1000000A,0xA04B0004,-,-,Normalize closed owner identity event compiler schedule,0x1000000B,-,false
+game_18D770,func_15163FEC,0x098,0xA04B0004,0x8FBF0014,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x038,0x57190022,0x57190023,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x048,0x1000001E,0x1000001F,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x054,0x14410011,0x14410012,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x078,0x10000011,0x10000012,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x084,0x54CA000F,0x55460010,-,-,Normalize closed owner identity event compiler schedule,,,false
+game_18D770,func_15164134,0x094,0x1000000A,0xA04B0004,-,-,Normalize closed owner identity event compiler schedule,0x1000000B,-,false
+game_18D770,func_15164134,0x098,0xA04B0004,0x8FBF0014,-,-,Normalize closed owner identity event compiler schedule,,,false

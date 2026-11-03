@@ -2,6 +2,20 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct {
+    u32 key;
+    u8 tag;
+} OwnerIdentityState;
+
+typedef struct {
+    u32 first;
+    u32 second;
+    u8 firstTag;
+    u8 secondTag;
+} OwnerIdentityEvent;
+
+typedef void (*OwnerIdentityCallback)(void *, void *, u8);
+
 typedef struct { s32 ids[10]; } SoundIds;
 
 extern struct100 D_800886F0, D_800886F4, D_800886F8;
@@ -43,8 +57,8 @@ s32 func_15162B28();
 s32 func_151630F4();
 s32 func_15163504(struct225 *arg0);
 s32 func_151638E0(struct225 *state);
-s32 func_15163FEC();
-s32 func_15164134();
+void func_15163FEC(void *, void *, u8);
+void func_15164134(void *, void *, u8);
 void func_1516441C(struct225 *arg0, struct227 *arg1);
 void func_151645C4(u8 enabled);
 /* End generated placeholder declarations. */
@@ -1229,10 +1243,39 @@ s32 func_15163F50(struct225 *arg0, struct225 *arg1) {
     return 1;
 }
 
-// ???
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15163FEC.s. */
-s32 func_15163FEC() {
-    return 0;
+/* Apply an identity event, or delegate it through the owner's subtype table. */
+void func_15163FEC(void *owner, void *event, u8 kind) {
+    OwnerIdentityState *current;
+    OwnerIdentityState *identity;
+    OwnerIdentityEvent *replacement;
+    OwnerIdentityCallback callback;
+    u32 key;
+    u32 oldKey;
+
+    current = (OwnerIdentityState *)((u8 *)owner + 0x18);
+    if (kind == 0) {
+        identity = event;
+        key = identity->key;
+        if ((key == current->key) || (identity->tag == current->tag)) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (kind == 0x2D) {
+        replacement = event;
+        oldKey = current->key;
+        key = replacement->first;
+        if (key == oldKey) {
+            current->key = replacement->second;
+            current->tag = replacement->secondTag;
+        } else if (oldKey == replacement->second) {
+            current->key = key;
+            current->tag = replacement->firstTag;
+        }
+    } else {
+        callback = ((OwnerIdentityCallback *)D_8008B374)[*((u8 *)owner + 0x2d)];
+        if (callback != NULL) {
+            callback(owner, event, kind);
+        }
+    }
 }
 void func_151640C0(u8 *volatile arg0, u8 *volatile arg1, u8 arg2) {
     u8 *src;
@@ -1255,9 +1298,39 @@ void func_151640C0(u8 *volatile arg0, u8 *volatile arg1, u8 arg2) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15164134.s. */
-s32 func_15164134() {
-    return 0;
+/* Apply an identity event, or delegate it through the owner's subtype table. */
+void func_15164134(void *owner, void *event, u8 kind) {
+    OwnerIdentityState *current;
+    OwnerIdentityState *identity;
+    OwnerIdentityEvent *replacement;
+    OwnerIdentityCallback callback;
+    u32 key;
+    u32 oldKey;
+
+    current = (OwnerIdentityState *)((u8 *)owner + 0x18);
+    if (kind == 0) {
+        identity = event;
+        key = identity->key;
+        if ((key == current->key) || (identity->tag == current->tag)) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (kind == 0x2D) {
+        replacement = event;
+        oldKey = current->key;
+        key = replacement->first;
+        if (key == oldKey) {
+            current->key = replacement->second;
+            current->tag = replacement->secondTag;
+        } else if (oldKey == replacement->second) {
+            current->key = key;
+            current->tag = replacement->firstTag;
+        }
+    } else {
+        callback = ((OwnerIdentityCallback *)D_8008B37C)[*((u8 *)owner + 0x3d)];
+        if (callback != NULL) {
+            callback(owner, event, kind);
+        }
+    }
 }
 struct225 *func_15164208(s32 arg0, u8 arg1, u8 arg2, s32 arg3) {
     struct225 *temp_v0;
