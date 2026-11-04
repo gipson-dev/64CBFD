@@ -1,4 +1,29 @@
 #include <ultra64.h>
+#include <string.h>
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+} PayloadVector1515AA84;
+
+typedef struct {
+    u32 words[10];
+} OwnerState1515AA84;
+
+typedef struct {
+    f32 zero;
+    PayloadVector1515AA84 position;
+    f32 scalar;
+    OwnerState1515AA84 ownerState;
+} ExtendedRandomPayload1515AA84;
+
+typedef struct {
+    s16 minimum;
+    s16 rangeMinusOne;
+} LifetimeRange1515AA84;
+s32 func_150ADA20(void);
+u8 *func_15149130(s16, s8, s8, s8, u8, u8, void *, u8, s32);
+
 typedef struct {
     u8 retained00[0x48];
     f32 xPosition;
@@ -435,8 +460,30 @@ s32 func_1515A974() {
     return 0;
 }
 
-s32 func_1515AA84() {
-    return 0;
+/* Submit the position and retained owner state with a randomized lifetime. */
+void func_1515AA84(u8 * volatile owner,
+        PayloadVector1515AA84 *position, f32 scalar, s32 unused3) {
+    ExtendedRandomPayload1515AA84 payload;
+    u8 *ownerAfter;
+    LifetimeRange1515AA84 *range;
+    u32 random;
+    u8 * record;
+    u16 lifetime;
+
+    payload.zero = 0.0f;
+    payload.position = *position;
+    payload.scalar = scalar;
+    payload.ownerState = *(OwnerState1515AA84 *)(owner + 0x84);
+    random = func_150ADA20();
+    ownerAfter = owner;
+    range = (LifetimeRange1515AA84 *)(ownerAfter + 0x80);
+    lifetime = random % (range->rangeMinusOne + 1U) + range->minimum;
+    record = (u8 *)func_15149130((s16)lifetime,
+        -1, 0x3F, -1, 1, 0, (void *)0x3C,
+        ownerAfter[0xC], ownerAfter[1]);
+    if (record != NULL) {
+        memcpy((u8 *)record + 0x28, &payload, sizeof(payload));
+    }
 }
 
 s32 func_1515AB88() {
