@@ -1,6 +1,20 @@
 #include <ultra64.h>
 #include "structs.h"
 typedef struct {
+    u8 retained00[0x10];
+    u8 *owner;
+    u8 ownerId;
+    u8 retained15;
+    s16 timer;
+    u8 flags;
+} OwnerEventRecord15191980;
+
+typedef struct {
+    u8 *owner;
+    u8 ownerId;
+} OwnerEvent15191980;
+
+typedef struct {
     s32 period;
     s32 elapsed;
     struct127 *eventTarget;
@@ -741,8 +755,34 @@ void func_151918BC(u8 *record) {
     }
 }
 
-s32 func_15191980() {
-    return 0;
+/* Apply owner-scoped event state, release, or generic forwarding.
+ * The volatile parameter reads preserve the callback's retail stack homes and
+ * final command-byte reload; the owner tests and state changes remain C. */
+void func_15191980(OwnerEventRecord15191980 *record,
+                   OwnerEvent15191980 *volatile event, s32 rawCommand) {
+    if (((u8 *)&rawCommand)[3] == 0x0D) {
+        if (event->owner != record->owner && event->ownerId != record->ownerId) {
+            return;
+        }
+        record->timer = 100;
+        record->flags |= 1;
+        return;
+    }
+    if (((u8 *)&rawCommand)[3] == 0x0C ||
+        ((u8 *)&rawCommand)[3] == 0x50 ||
+        ((u8 *)&rawCommand)[3] == 0x0E) {
+        if (event->owner != record->owner && event->ownerId != record->ownerId) {
+            return;
+        }
+        func_1516972C(record);
+        return;
+    }
+    if (((u8 *)&rawCommand)[3] == 0x4E) {
+        func_1516972C(record);
+        return;
+    }
+    func_15169850((s32)event, ((volatile u8 *)&rawCommand)[3],
+                  (s32)&record->owner, (s32)&record->ownerId, (s32)record);
 }
 
 s32 func_15191A84() {
