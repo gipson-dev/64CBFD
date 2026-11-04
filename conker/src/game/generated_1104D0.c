@@ -1,6 +1,7 @@
 #include <ultra64.h>
 
 s32 func_150AD9A0(s32, s32, s32);
+u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
 s32 func_150E3020(s32, s32, s32, s32, s32, s32, s32, f32,
                  s32, f32, f32, f32, s32, s16);
 
@@ -23,7 +24,7 @@ void func_151C3B0C(void *, f32, f32, f32, f32, s32, s32, s32);
 f32 func_150484A0(f32, f32);
 void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
-/* Non-matching placeholders for the text-only asm slice asm/1104D0.s. */
+/* Restored functions and remaining placeholders for asm/1104D0.s. */
 
 s32 func_150E3020(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
                   s32 arg6, f32 arg7, s32 arg8, f32 arg9, f32 arg10,
@@ -74,7 +75,20 @@ s32 func_150E33CC(s32 arg0, s32 arg1, s32 *arg2, s32 arg3) {
     return 0;
 }
 
-s32 func_150E3414() {
+/* Create an effect with an attached positional sound and return its slot. */
+s32 func_150E3414(s32 soundX, s32 soundY, s32 soundZ,
+                  s32 x, s32 y, s32 z, s32 context, s32 kind, f32 step) {
+    s32 effect;
+
+    effect = func_150E3020(x, y, z, 0, 0, 0, kind, step, context,
+                           (f32)soundX, (f32)soundY, (f32)soundZ, 0, -99);
+    if (effect != 0) {
+        *(u16 *)(effect + 0x4A) = func_1000FA64(
+            0x2D0, (s16)soundX, (s16)soundY, (s16)soundZ,
+            0x5DC0, 0x1770, 0x3E8, (s32)func_150E33CC,
+            NULL, 0, 0, 0);
+        return *(u8 *)(effect + 0x48) + 1;
+    }
     return 0;
 }
 
