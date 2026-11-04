@@ -25970,3 +25970,6 @@ generated_6CCB0,func_1503F800,0x0EC,0x24020001,0x84640008,-,-,"Normalize spatial
 generated_6CCB0,func_1503F800,0x0F0,0x8FBF001C,0x24020001,-,-,"Normalize spatial-membership query compiler frame, allocation, and schedule",,,false
 generated_6CCB0,func_1503F800,0x0F4,0x8FB00018,0x8FBF0014,-,-,"Normalize spatial-membership query compiler frame, allocation, and schedule",,,false
 generated_6CCB0,func_1503F800,0x0F8,0x27BD0020,0x27BD0018,-,-,"Normalize spatial-membership query compiler frame, allocation, and schedule",,,false
+game_A28B0,func_15075938,0x014,0x3C190000,0x3C180000,R_MIPS_HI16:D_800D2108,R_MIPS_HI16:D_800D2108,Materialize the negative-wrap path-count table through retail's t8 lifetime,,,false
+game_A28B0,func_15075938,0x034,0x9078013F,0x8F180000,-,R_MIPS_LO16:D_800D2108,Load the negative-wrap path-count table before the actor path index,,,false
+game_A28B0,func_15075938,0x038,0x8F390000,0x9079013F,R_MIPS_LO16:D_800D2108,-,Load the actor path index through retail's independent t9 lifetime,,,false

@@ -4,7 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15075938();
+void func_15075938(void);
 s32 func_1507602C();
 void func_15076768(void);
 s32 func_15077508();
@@ -161,59 +161,51 @@ void func_15075884(void) {
     D_800D154C->unk44 = 2.0f * (temp_f0 / temp_f2);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15075938.s. */
-s32 func_15075938() {
-    return 0;
+/* Test the wrapped path offset against the script condition. */
+void func_15075938(void) {
+    s32 changed;
+    s32 current;
+    s32 target;
+    s32 pathCount;
+
+    changed = 0;
+    current = D_800D154C->unk21E - D_800D154C->unk221;
+    if (current < 0) {
+        pathCount = D_800D2108[D_800D154C->unk13F];
+        current = current + pathCount - 1;
+    } else {
+        pathCount = D_800D2108[D_800D154C->unk13F];
+        if (current >= pathCount - 1) {
+            current = current - pathCount + 1;
+        }
+    }
+
+    if (D_800D1891 == 0xFF) {
+        target = pathCount - 2;
+    } else {
+        target = D_800D1891;
+    }
+
+    if (D_800D1892 == 0) {
+        if (target == current) {
+            changed = 1;
+        }
+    } else if (D_800D1892 == 1) {
+        if (target != current) {
+            changed = 1;
+        }
+    } else if (D_800D1892 == 2) {
+        if (target < current) {
+            changed = 1;
+        }
+    } else if (target > current) {
+        changed = 1;
+    }
+
+    if (changed != 0) {
+        func_15075400(D_800D1890);
+    }
 }
-// NON-MATCHING: 2nd half ok, 1st is a mystery
-// void func_15075938(void) {
-//     u8 tmp;
-//     u8 changed;
-//     s32 temp_a0;
-//     s32 phi_v1;
-//     u8 temp_v0;
-//
-//     changed = 0;
-//
-//     temp_a0 = D_800D154C->unk21E - D_800D154C->unk221;
-//     if (temp_a0 < 0) {
-//         temp_v0 = D_800D154C->unk13F + D_800D2108;
-//         temp_a0 = (temp_a0 + temp_v0) - 1;
-//     } else {
-//         temp_v0 = D_800D154C->unk13F + D_800D2108;
-//         if ((temp_v0 - 1) <= temp_a0) {
-//             temp_a0 = (temp_a0 - temp_v0) + 1;
-//         }
-//     }
-//
-//     if (D_800D1891 == 0xFF) {
-//         phi_v1 = temp_v0 - 2;
-//     } else {
-//         phi_v1 = D_800D1891;
-//     }
-//
-//     if (D_800D1892 == 0) {
-//         if (phi_v1 == temp_a0) {
-//             changed = 1;
-//         }
-//     } else if (D_800D1892 == 1) {
-//         if (phi_v1 != temp_a0) {
-//             changed = 1;
-//         }
-//     } else if (D_800D1892 == 2) {
-//         if (phi_v1 < temp_a0) {
-//             changed = 1;
-//         }
-//     } else {
-//         if (phi_v1 > temp_a0) {
-//             changed = 1;
-//         }
-//     }
-//
-//     if (changed) {
-//         func_15075400(D_800D1890);
-//     }
-// }
 
 void func_15075A50(void) {
     u8 temp_v0 = D_800D154C->unk21E;
