@@ -44,6 +44,7 @@ s32 func_15171D4C() {
     return 0;
 }
 
+extern s32 D_800BE9E4;
 extern u8 *D_8008CA4C[];
 s32 func_151725FC(Vtx *, void *, f32, f32, f32, f32, s32, u8);
 void func_1516972C(struct102 *);
@@ -64,8 +65,36 @@ void func_15171F04(f32 x, f32 y, f32 z, void *indirectVertices,
     }
 }
 
-s32 func_15171FC0() {
-    return 0;
+/* Advance an animated quad's lifetime and 8.8 fixed-point image frame. */
+void func_15171FC0(QuadEffect19F150 *record) {
+    s32 frameCount;
+
+    if (record->lifetime < -1) {
+        record->lifetime++;
+        if (record->lifetime == -1) {
+            func_1516972C((struct102 *)record);
+        }
+    } else if (record->lifetime == 0) {
+        record->lifetime = -3;
+    } else if (record->lifetime != -1) {
+        if ((record->flags & 4) == 0) {
+            if (record->lifetime > D_800BE9E4) {
+                record->lifetime = (s32)((u32)record->lifetime -
+                                         (u32)D_800BE9E4);
+            } else {
+                record->lifetime = 0;
+            }
+        }
+        record->frame += record->frameStep;
+        frameCount = D_8008CA4C[record->imageIndex][4];
+        if (record->frame / 256 >= frameCount) {
+            if (record->flags & 4) {
+                record->lifetime = -3;
+            } else {
+                record->frame = (frameCount << 8) - 256;
+            }
+        }
+    }
 }
 
 s32 func_151720C4() {
