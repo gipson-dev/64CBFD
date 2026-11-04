@@ -67,8 +67,34 @@ s32 func_1519D9F4() {
     return 0;
 }
 
-s32 func_1519E1F4() {
-    return 0;
+/* Route matching owner-link events or retarget the bound link. */
+void func_1519E1F4(u8 *record, s32 eventAddress, u8 command) {
+    u8 *link;
+    u8 *event;
+
+    link = *(u8 **)(record + 0x98);
+    event = (u8 *)eventAddress;
+    if (command == 0) {
+        if (*(s32 *)link == *(s32 *)event || link[4] == event[4]) {
+            func_1519CFA0(record);
+        }
+    } else if (command == 6) {
+        if (event[0] == link[0x4C]) {
+            func_1519CFA0(record);
+        }
+    } else if (command == 7) {
+        if (*(s32 *)link == *(s32 *)event || link[4] == event[4]) {
+            func_1519CFA0(record);
+        }
+    } else if (command == 0x2D) {
+        if (*(u8 **)event == *(u8 **)link) {
+            *(u8 **)link = *(u8 **)(event + 4);
+            link[4] = event[9];
+        } else if (*(u8 **)(event + 4) == *(u8 **)link) {
+            *(u8 **)link = *(u8 **)event;
+            link[4] = event[8];
+        }
+    }
 }
 
 typedef struct {
