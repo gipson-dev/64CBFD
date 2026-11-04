@@ -25902,3 +25902,19 @@ game_77AD0,func_1504A620,0x0E0,0x460E8402,0x46100002,-,-,Normalize logarithm app
 game_77AD0,func_1504A620,0x0E8,0x46001032,0x460C1032,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
 generated_1A0100,func_15172D80,0x000,0x27BDFFC0,0x27BDFFC8,-,-,Normalize actor channel release frame size,,,false
 generated_1A0100,func_15172D80,0x0F0,0x27BD0040,0x27BD0038,-,-,Normalize actor channel release frame restore,,,false
+game_3F820,func_15012370,0x040,0x3C140000,0x24140180,R_MIPS_HI16:D_800DCC10,-,Keep the 0x180 view stride in retail's s4 lifetime,,,false
+game_3F820,func_15012370,0x054,0x3C120000,0x3C130000,R_MIPS_HI16:D_800BE628,R_MIPS_HI16:D_800BE628,Keep the mutable view-base address in retail's s3 lifetime,,,false
+game_3F820,func_15012370,0x058,0x4481A000,0x3C120000,-,R_MIPS_HI16:D_800DCC10,Materialize the matrix-table address through retail's s2 lifetime,,,false
+game_3F820,func_15012370,0x05C,0x26520000,0x4481A000,R_MIPS_LO16:D_800BE628,-,Restore the independent half-scale setup schedule,,,false
+game_3F820,func_15012370,0x060,0x26940000,0x26520000,R_MIPS_LO16:D_800DCC10,R_MIPS_LO16:D_800DCC10,Complete the matrix-table address through s2,,,false
+game_3F820,func_15012370,0x064,0x24130180,0x26730000,-,R_MIPS_LO16:D_800BE628,Complete the mutable view-base address through s3,,,false
+game_3F820,func_15012370,0x068,0x02130019,0x02140019,-,-,Multiply the wrapped view index by retail's s4 stride,,,false
+game_3F820,func_15012370,0x06C,0x8E4F0000,0x8E780000,-,-,Reload the mutable view base through retail's s3 lifetime,,,false
+game_3F820,func_15012370,0x070,0x0010C980,0x00107980,-,-,Scale the matrix index through retail's t7 lifetime,,,false
+game_3F820,func_15012370,0x074,0x02992021,0x024F2021,-,-,Construct the matrix pointer from retail's s2 and t7 lifetimes,,,false
+game_3F820,func_15012370,0x078,0x0000C012,0x0000C812,-,-,Read the view-record product through retail's t9 lifetime,,,false
+game_3F820,func_15012370,0x07C,0x01F81021,0x03191021,-,-,Construct the view-record pointer through retail's t8 and t9 lifetimes,,,false
+game_3F820,func_15012370,0x084,0xC4460008,0xC4480008,-,-,Load the vertical extent through retail's f8 lifetime,,,false
+game_3F820,func_15012370,0x098,0x46143082,0x46144082,-,-,Scale the vertical extent through retail's f8 lifetime,,,false
+game_3F820,func_15012370,0x09C,0x46000207,0x46000187,-,-,Negate the horizontal half extent through retail's f6 lifetime,,,false
+game_3F820,func_15012370,0x0A4,0x44054000,0x44053000,-,-,Pass the negative horizontal extent from retail's f6 lifetime,,,false
