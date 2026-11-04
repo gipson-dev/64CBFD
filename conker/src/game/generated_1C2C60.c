@@ -1,4 +1,24 @@
 #include <ultra64.h>
+typedef struct {
+    u8 retained00[0x08];
+    s16 key;
+    s16 width;
+    s16 height;
+    s16 scaledX;
+    s16 scaledY;
+    u8 retained12[0x02];
+    u8 active;
+    u8 retained15[0x03];
+    s32 link;
+    s16 primary[5];
+    s16 secondary0;
+    s16 secondary1;
+    s16 secondary2;
+    s16 secondary3;
+    s16 secondary4;
+    u8 retained30[0x0C];
+} PackedLayoutRecord15195984;
+
 
 typedef struct {
     u8 pad0[0x1C];
@@ -84,8 +104,42 @@ s32 func_15195868() {
     return 0;
 }
 
-s32 func_15195984() {
-    return 0;
+/* Allocate and initialize a record from two packed 12-bit pairs. */
+PackedLayoutRecord15195984 *func_15195984(s32 key, s32 packedSize,
+                                          s32 packedScale, s32 doubleSize) {
+    PackedLayoutRecord15195984 *record;
+    s32 index;
+    s32 width;
+    s32 height;
+
+    record = (PackedLayoutRecord15195984 *)func_151957B0(
+        0x3C, (u8 *)&D_800E08E8, (u8 *)&D_800E08EC);
+    if (record != NULL) {
+        record->link = 0;
+        for (index = 0; index < 5; index++) {
+            record->primary[index] = -1;
+        }
+        record->secondary0 = -1;
+        record->secondary2 = -1;
+        record->secondary3 = -1;
+        record->secondary4 = -1;
+        record->secondary1 = -1;
+        record->key = key;
+        width = ((packedSize >> 12) & 0xFFF) + 2;
+        height = (packedSize & 0xFFF) + 2;
+        if (doubleSize != 0) {
+            width *= 2;
+            height *= 2;
+        }
+        record->scaledX = (packedScale >> 12) & 0xFFF;
+        record->scaledY = packedScale & 0xFFF;
+        record->width = width;
+        record->height = height;
+        record->scaledX *= 8;
+        record->scaledY *= 8;
+        record->active = 1;
+    }
+    return record;
 }
 
 s32 func_15195A84(s16 arg0, s32 arg1, s32 arg2, s32 arg3) {
