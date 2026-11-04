@@ -1,12 +1,14 @@
 #include <ultra64.h>
 #include "structs.h"
+extern s16 D_800DC204[];
+extern s16 D_800DC206[];
 f32 sqrtf(f32);
 /* Keep the current provider return declaration; this caller ignores it. */
 s32 func_15123A54(struct108 *);
 void func_1512C150(struct108 *);
 
 
-/* Non-matching placeholders for the text-only asm slice asm/157840.s. */
+/* Restored functions and remaining placeholders for asm/157840.s. */
 
 s32 func_1512A390() {
     return 0;
@@ -79,7 +81,45 @@ void func_1512B5FC(u8 *arg0, s32 arg1, s32 arg2) {
     *(s32 *) (arg0 + 4) = arg1;
 }
 
-s32 func_1512B630() {
+typedef struct {
+    u8 state;
+    u8 active;
+    u8 previous;
+    u8 pad3;
+    s32 value;
+    s32 threshold;
+} ActorThresholdTransition;
+
+/* Update a directional transition from the actor's signed threshold. */
+s32 func_1512B630(u8 *actor, ActorThresholdTransition *transition,
+                  s32 threshold, s32 value, s32 otherValue, s32 alternate) {
+    s32 actorThreshold;
+
+    if (alternate == 0) {
+        actorThreshold = *(s16 *)((u8 *)D_800DC204 +
+                                  *(s16 *)(actor + 0x1B4) * 8 +
+                                  actor[0x23D] * 0x20);
+    } else {
+        actorThreshold = *(s16 *)((u8 *)D_800DC206 +
+                                  *(s16 *)(actor + 0x1B4) * 8 +
+                                  actor[0x23D] * 0x20);
+    }
+    if (*(s32 *)(actor + 0x84) & 0x8000) {
+        actorThreshold = (s16)(actorThreshold * 2);
+    }
+    if ((actorThreshold < threshold) && (value < otherValue)) {
+        transition->state = 2;
+        func_1512B5FC((u8 *)transition, value, threshold);
+        return 1;
+    }
+    if ((actorThreshold < threshold) && (otherValue < value)) {
+        transition->state = 1;
+        func_1512B5FC((u8 *)transition, value, threshold);
+        return 1;
+    }
+    transition->active = 0;
+    transition->state = 0;
+    transition->threshold = 0xFFFC;
     return 0;
 }
 
