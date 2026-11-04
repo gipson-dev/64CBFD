@@ -25980,3 +25980,7 @@ game_C8950,func_1509C120,0x0C8,0x11A00008,0x11C00008,-,-,Test the preserved old 
 game_C8950,func_1509C120,0x0CC,0xAC220000,0xAC2D0000,R_MIPS_LO16:D_800D2E4C,R_MIPS_LO16:D_800D2E4C,Install the selected state block through retail's t5 lifetime,,,false
 game_C8950,func_1509C120,0x0D8,0x01A02025,0x01C02025,-,-,Pass the preserved old block to bcopy through retail's t6 lifetime,,,false
 game_C8950,func_1509C120,0x0E8,0x8FA40048,0x8FA40034,-,-,Reload the old block from retail's scalar slot for release,,,false
+generated_F5800,func_150C851C,0x070,0x0013C203,0x00137A03,-,-,Normalize the independent span fixed-point shift register,,,false
+generated_F5800,func_150C851C,0x074,0x00127A03,0x0012C203,-,-,Normalize the independent base fixed-point shift register,,,false
+generated_F5800,func_150C851C,0x078,0x01E09025,0x03009025,-,-,Carry the base through retail's t8 fixed-point lifetime,,,false
+generated_F5800,func_150C851C,0x07C,0x27130032,0x25F30032,-,-,Carry the span through retail's t7 fixed-point lifetime,,,false

@@ -1,19 +1,40 @@
 #include <ultra64.h>
 extern f32 D_800BE9A4;
+extern s32 D_800BE4E0;
+s32 func_150ADA20(void);
+void func_150CDB6C(s32 value);
 
 
-/* Non-matching placeholders for the text-only asm slice asm/F5800.s. */
+/* Restored functions and remaining placeholders for asm/F5800.s. */
 
 s32 func_150C8350() {
     return 0;
 }
 
-s32 func_150C84F4() {
-    return 0;
+/* Advance the motion table once for the primary frame layer. */
+void func_150C84F4(s32 view) {
+    if (view == 0) {
+        func_150C8350();
+    }
 }
 
-s32 func_150C851C() {
-    return 0;
+/* Randomize ten motion targets from the selected intensity. */
+void func_150C851C(s32 intensity) {
+    s32 offset;
+    s32 base;
+    u32 span;
+    s32 target;
+
+    if (D_800BE4E0 != 0) {
+        func_150CDB6C(intensity);
+        base = (intensity * 300) >> 8;
+        span = ((intensity * 50) >> 8) + 50;
+        for (offset = 0; offset != 100; offset += 10) {
+            target = base;
+            target += (u32)func_150ADA20() % span;
+            *(s16 *)(D_800BE4E0 + offset + 8) = target;
+        }
+    }
 }
 
 s32 func_150C8600() {
