@@ -129,9 +129,10 @@ A final note-only refresh after recording this section preserved the same
 
 ## Continuation
 
-Continue the ordinary Game queue at `func_150A76F0`, currently the smallest
-remaining real-difference candidate. The seven documented handwritten/custom-
-ABI boundary cases remain in their separate lane. Every next candidate still
-requires source, ABI/caller, owner, guest/native, actual Make, complete-image,
-protected-data, production recount, documentation, and graph-retention gates
-before credit.
+The fresh ranking begins with the seven documented non-ordinary boundary
+cases: handwritten/custom-ABI `func_150A76F0`, `func_151F8870`,
+`func_150A613C`, `func_150AE280`, `func_15115F68`, `func_151AE2BC`, and
+`func_150A6760`. Continue the ordinary Game queue at `func_15012370` (64
+words, 63 real differences). Every next candidate still requires source,
+ABI/caller, owner, guest/native, actual Make, complete-image, protected-data,
+production recount, documentation, and graph-retention gates before credit.
