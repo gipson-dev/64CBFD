@@ -5,6 +5,20 @@ typedef struct {
     f32 yPosition;
     f32 zPosition;
     u8 retained54[0xA4];
+    f32 scaleByte;
+} TranslationScaleState15158920;
+typedef struct {
+    f32 values[4][4];
+} MatrixOnlyWorkspace15158920;
+extern f32 D_800A6070;
+extern MatrixOnlyWorkspace15158920 D_8008AE18;
+
+typedef struct {
+    u8 retained00[0x48];
+    f32 xPosition;
+    f32 yPosition;
+    f32 zPosition;
+    u8 retained54[0xA4];
     f32 xRotation;
     f32 yRotation;
     f32 zRotation;
@@ -113,8 +127,27 @@ s32 func_15158684() {
     return 0;
 }
 
-s32 func_15158920() {
-    return 0;
+/* Build and submit the state's translated, byte-scaled matrix. */
+s32 func_15158920(Mtx *output, TranslationScaleState15158920 *state) {
+    MatrixOnlyWorkspace15158920 workspace = D_8008AE18;
+    f32 scale;
+
+    scale = state->scaleByte * D_800A6070;
+    workspace.values[3][0] = state->xPosition;
+    workspace.values[3][1] = state->yPosition;
+    workspace.values[3][2] = state->zPosition;
+
+    workspace.values[0][0] *= scale;
+    workspace.values[0][1] *= scale;
+    workspace.values[0][2] *= scale;
+    workspace.values[1][0] *= scale;
+    workspace.values[1][1] *= scale;
+    workspace.values[1][2] *= scale;
+    workspace.values[2][0] *= scale;
+    workspace.values[2][1] *= scale;
+    workspace.values[2][2] *= scale;
+    guMtxF2L(workspace.values, output);
+    return 1;
 }
 
 void func_15158A20(ResourceOwner185560 *arg0) {

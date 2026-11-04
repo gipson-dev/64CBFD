@@ -25988,3 +25988,25 @@ generated_14D110,func_151218C4,0x074,0xA60B084A,0x44800000,-,-,Schedule the shar
 generated_14D110,func_151218C4,0x078,0x44800000,0xA60B084A,-,-,Schedule the fallback timer store after the shared floating-zero load,,,false
 generated_14D110,func_151218C4,0x090,0xE6040374,0x26020740,-,-,Form the shared view-state base before publishing the reset distance,,,false
 generated_14D110,func_151218C4,0x094,0x26020740,0xE6040374,-,-,Publish the reset distance after forming the shared view-state base,,,false
+generated_185560,func_15158920,0x010,0x27A40020,0x27A40018,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x064,0xC7B20020,0xC7B20018,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x06C,0xE7A80050,0xE7A80048,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x074,0xC7A60024,0xC7A6001C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x078,0xE7AA0054,0xE7AA004C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x084,0xC7AA0028,0xC7AA0020,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x088,0xE7B00058,0xE7B00050,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x090,0xC7B20030,0xC7B20028,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x094,0xC7A60034,0xC7A6002C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x09C,0xE7A40020,0xE7A40018,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0A0,0xC7AA0038,0xC7AA0030,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0A8,0xE7A80024,0xE7A8001C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0AC,0xC7B20040,0xC7B20038,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0B4,0xE7B00028,0xE7B00020,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0B8,0xC7A60044,0xC7A6003C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0C0,0xE7A40030,0xE7A40028,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0C4,0xC7AA0048,0xC7AA0040,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0CC,0xE7A80034,0xE7A8002C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0D4,0xE7B00038,0xE7B00030,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0DC,0xE7A40040,0xE7A40038,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0E0,0xE7A80044,0xE7A8003C,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
+generated_185560,func_15158920,0x0E8,0xE7B00048,0xE7B00040,-,-,Normalize translated byte-scale matrix local workspace placement,,,false
