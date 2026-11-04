@@ -221,9 +221,34 @@ s32 func_1509BE40() {
 /* Retail variable-argument script dispatcher, also used by Race respawn. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_C8950/func_1509BFB0.s")
 
-// need a bigger brain
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509C120.s. */
+/* Replace the active state block through a randomized allocation slot. */
 void func_1509C120(void) {
+    s32 index;
+    struct102 *old;
+    s32 blocks[4];
+    s32 i;
+    s32 kept;
+
+    index = func_150ADA20() & 3;
+    old = D_800D2E4C;
+    if ((old == NULL) || ((func_150ADA20() & 4) != 0)) {
+        for (i = 0; i <= index; i++) {
+            blocks[i] = allocate_memory(0x1B, 0xFF, 2, 0);
+        }
+
+        for (i = 0; i <= index; i++) {
+            if (i != index) {
+                func_10004074((void *)blocks[i]);
+            }
+        }
+
+        kept = blocks[index];
+        D_800D2E4C = (struct102 *)kept;
+        if (old != NULL) {
+            bcopy(old, D_800D2E4C, 0x1B);
+            func_10004074(old);
+        }
+    }
 }
 
 void func_1509C228(void) {
