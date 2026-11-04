@@ -25900,3 +25900,5 @@ game_77AD0,func_1504A620,0x0D0,0x46001006,0x46001306,-,-,Normalize logarithm app
 game_77AD0,func_1504A620,0x0DC,0x460A8103,0x460A0103,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
 game_77AD0,func_1504A620,0x0E0,0x460E8402,0x46100002,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
 game_77AD0,func_1504A620,0x0E8,0x46001032,0x460C1032,-,-,Normalize logarithm approximation compiler allocation and schedule,,,false
+generated_1A0100,func_15172D80,0x000,0x27BDFFC0,0x27BDFFC8,-,-,Normalize actor channel release frame size,,,false
+generated_1A0100,func_15172D80,0x0F0,0x27BD0040,0x27BD0038,-,-,Normalize actor channel release frame restore,,,false

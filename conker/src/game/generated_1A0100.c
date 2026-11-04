@@ -4,12 +4,15 @@
 /* Non-matching placeholders for the text-only asm slice asm/1A0100.s. */
 
 extern s8 D_800DD2B0[];
-extern s8 D_800DD2C0[];
+extern u8 D_800DD2C0[];
 extern u8 D_800BE9B4;
 extern s32 D_800BE9F0;
 s32 func_15085430();
 void func_1517EE40(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s8 arg4,
                     s32 arg5);
+extern struct127 D_800CC2D0[];
+void func_1501C730(s32, s32, s32, s32, s32);
+s32 func_1517F40C(s32);
 
 void func_15172C50(s32 value) {
     s32 i;
@@ -45,8 +48,27 @@ void func_15172D28(u8 *arg0, s32 arg1) {
     }
 }
 
-s32 func_15172D80() {
-    return 0;
+/* Release a channel effect and apply its pending payload to its actor. */
+void func_15172D80(s32 channel) {
+    s8 *slot;
+    struct127 *actor;
+
+    slot = &D_800DD2B0[channel];
+    if (*slot != -1) {
+        actor = &D_800CC2D0[channel];
+        if (actor->health == 0) {
+            *slot = -1;
+            func_1517EE40(0, 0, 0, 0x32, 0, channel);
+        }
+        if (func_1517F40C(channel) != 0) {
+            if (D_800BE9F0 != *slot) {
+                func_1501C730(1, *slot, 0, 0, 0);
+                return;
+            }
+            func_15172CA8(channel);
+            func_15172D28((u8 *)actor, D_800DD2C0[channel]);
+        }
+    }
 }
 
 /* Route an actor's channel event through its active camera or fallback state. */
