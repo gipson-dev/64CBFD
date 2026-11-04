@@ -2,6 +2,41 @@
 #include "structs.h"
 
 typedef struct {
+    u8 retained00[0x14];
+    f32 x;
+    f32 y;
+    f32 z;
+} RequestedObject1515BE50;
+
+typedef struct {
+    RequestedObject1515BE50 *object;
+    u8 uniqueId;
+    u8 retained05;
+    u16 size;
+} ObjectRequest1515BE50;
+
+typedef struct {
+    u8 retained00[0x10];
+    s32 active;
+    s32 state;
+    ObjectRequest1515BE50 request;
+    f32 currentX;
+    f32 currentY;
+    f32 currentZ;
+    f32 previousX;
+    f32 previousY;
+    f32 previousZ;
+    f32 velocityX;
+    f32 velocityY;
+    f32 velocityZ;
+    s32 listState;
+    s32 listIndex;
+} ObjectFollowRecord1515BE50;
+
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+
+
+typedef struct {
     u8 retained00[0x10];
     u8 mode;
     u8 flags;
@@ -80,8 +115,34 @@ s32 func_1515BBF0() {
     return 0;
 }
 
-s32 func_1515BE50() {
-    return 0;
+/* Allocate a tracking record for an object request and seed both positions. */
+ObjectFollowRecord1515BE50 *func_1515BE50(ObjectRequest1515BE50 *request,
+                                          s32 extraBytes, u8 channel,
+                                          s32 context) {
+    ObjectFollowRecord1515BE50 *record;
+
+    if (request->object == NULL) {
+        return NULL;
+    }
+    record = func_15167A68(0x32, context, extraBytes + 0x50, 1, channel, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    memcpy(&record->request, request, sizeof(*request));
+    record->currentX = request->object->x;
+    record->currentY = request->object->y;
+    record->currentZ = request->object->z;
+    record->previousX = request->object->x;
+    record->previousY = request->object->y;
+    record->previousZ = request->object->z;
+    record->listState = 0;
+    record->listIndex = -1;
+    record->active = 1;
+    record->state = 0;
+    record->velocityX = 0.0f;
+    record->velocityY = 0.0f;
+    record->velocityZ = 0.0f;
+    return record;
 }
 
 s32 func_1515BF50(u8 *arg0) {
