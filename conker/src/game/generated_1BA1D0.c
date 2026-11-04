@@ -1,5 +1,21 @@
 #include <ultra64.h>
 #include "structs.h"
+typedef struct {
+    s32 period;
+    s32 elapsed;
+    struct127 *eventTarget;
+} PeriodicActorEventClock151905BC;
+
+typedef struct {
+    u8 retained00[0x10];
+    struct127 *owner;
+    u8 retained14[0x7C];
+    PeriodicActorEventClock151905BC clock;
+} PeriodicActorEventNested151905BC;
+
+s32 func_1505D024(struct127 *, s32, u16, s32);
+extern struct127 D_800CC2D0[];
+
 extern s32 D_800BE9E4;
 f32 func_151423D8(u8);
 typedef struct { u32 words[20]; } Generated1BA1D0Preset;
@@ -533,8 +549,30 @@ void func_15190550(u8 *arg0, void *arg1, u8 arg2) {
     }
 }
 
-s32 func_151905BC() {
-    return 0;
+/* Emit one actor event per elapsed period and refresh the attached target. */
+s32 func_151905BC(PeriodicActorEventNested151905BC *record) {
+    PeriodicActorEventClock151905BC *clock = &record->clock;
+    struct127 *base;
+    s32 eventCode;
+    s32 stride;
+    struct126 *attached;
+
+    clock->elapsed = (s32)((u32)clock->elapsed + (u32)D_800BE9E4);
+    if (clock->elapsed >= clock->period) {
+        base = D_800CC2D0;
+        eventCode = 0x60021;
+        stride = sizeof(struct127);
+        do {
+            func_1505D024(record->owner, eventCode, 0,
+                          (s32)((u32)clock->eventTarget - (u32)base) / stride);
+            clock->elapsed = (s32)((u32)clock->elapsed - (u32)clock->period);
+        } while (clock->elapsed >= clock->period);
+    }
+    attached = record->owner->unk31C;
+    if (attached != NULL && ((u8 *)attached)[0x84] == 0) {
+        *(s16 *)((u8 *)attached + 0x46) = 1000;
+    }
+    return 1;
 }
 
 void func_151906C4(u8 *arg0) {
