@@ -1,10 +1,73 @@
 #include <ultra64.h>
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+} ActorPosition151B6320;
+
+typedef struct {
+    ActorPosition151B6320 position;
+    s16 duration;
+    u16 flags;
+    s32 kind;
+    u8 reserved14; /* Preserved stack byte copied by the retail helper. */
+    u8 count;
+    u8 reserved16[2]; /* Preserved stack bytes copied by the retail helper. */
+} ActorEffectRequest151B6320;
+
+typedef struct {
+    u8 *owner;
+    u8 identity;
+    u8 reserved05[3];
+    ActorPosition151B6320 position;
+    f32 velocityX;
+    f32 velocityY;
+    f32 lowerBound;
+    f32 upperBound;
+    f32 velocityZ;
+    u32 reserved28; /* Retail copies this untouched stack word. */
+} ActorEffectPayload151B6320;
+
+typedef struct {
+    ActorEffectPayload151B6320 payload;
+    u32 layoutGap; /* Original local spacing; not part of either packet. */
+    ActorEffectRequest151B6320 request;
+    u32 layoutTail; /* Preserves the original 0x90-byte frame. */
+} ActorEffectLocals151B6320;
+
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32,
+    void *, u8, s32);
+void *memcpy(void *, const void *, unsigned int);
+
 extern void (*D_8008FB98[])(u8 *, s32, u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/1E37D0.s. */
 
-s32 func_151B6320() {
-    return 0;
+/* Snapshot one actor position and submit its retail effect packet. */
+void func_151B6320(u8 *actor, u8 channel, s32 context) {
+    ActorEffectLocals151B6320 locals;
+    u8 *record;
+
+    locals.request.count = 10;
+    locals.request.position.x = *(f32 *)(actor + 0x14);
+    locals.request.position.y = *(f32 *)(actor + 0x18);
+    locals.request.position.z = *(f32 *)(actor + 0x1C);
+    locals.request.duration = 300;
+    locals.request.flags = 6;
+    locals.payload.owner = actor;
+    locals.payload.identity = actor[0x3B];
+    locals.payload.position = locals.request.position;
+    locals.payload.velocityX = 0.0f;
+    locals.payload.velocityY = 0.0f;
+    locals.payload.upperBound = -16384.0f;
+    locals.payload.lowerBound = -16384.0f;
+    locals.payload.velocityZ = 0.0f;
+    locals.request.kind = 13;
+    record = func_15147A80(&locals.request, 0x30, 0x1C, 0xB, 0xB, 0xB,
+        0, 0, NULL, channel, context);
+    if (record != NULL) {
+        memcpy(*(void **)(record + 0x98), &locals.payload, 0x2C);
+    }
 }
 
 s32 func_151B6420() {
