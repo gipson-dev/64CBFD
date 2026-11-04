@@ -22,6 +22,7 @@ extern u8 D_8008FE28;
 extern u8 D_800E0B98;
 extern u8 D_800E0B97;
 extern s32 D_800E0A90;
+extern s32 D_80000300;
 extern s32 D_800E0AF0;
 extern u8 D_800E0B96;
 extern u8 D_8008FD74;
@@ -158,8 +159,32 @@ s32 func_151DDC20() {
     return 0;
 }
 
-s32 func_151DE6D4() {
-    return 0;
+/* Advance the boot-logo phase and request the opening scene. */
+void func_151DE6D4(void) {
+    s32 timer;
+
+    func_151E530C();
+    D_800CC2D0[0].unk25C |= 0x200;
+    D_800CC2D0[0].y_position = 1000.0f;
+    if (D_80000300 == 0) {
+        D_800E0A90 = 0;
+    }
+    timer = D_800E0A90;
+    if ((timer >= 0x14B) && (D_800E0B9A & 0x8000)) {
+        if (timer < 0x1E0) {
+            timer = D_800E0A90 = 0x1E0;
+        }
+        if ((timer >= 0x259) && (timer < 0x2D0)) {
+            timer = D_800E0A90 = 0x2D0;
+        }
+    }
+    if (timer >= 0x349) {
+        D_8008FE28 = 2;
+        D_800E0B94 = 1;
+        D_800D2E40 = 0;
+        func_1501C730(6, 0x21, 0, 0, 1);
+        D_800E0B96 = 0xFF;
+    }
 }
 
 void func_151DE7D4(void) {
