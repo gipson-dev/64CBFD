@@ -1,4 +1,24 @@
 #include <ultra64.h>
+typedef struct {
+    u8 *owner;
+    u8 identity;
+    u8 reserved5[3];
+    s32 preset;
+} OwnerEffectPayload1519E464;
+
+typedef struct {
+    u8 reserved00;
+    u8 context;
+    u8 reserved02[10];
+    u8 slot;
+    u8 flags;
+    s16 duration;
+    u8 reserved10[24];
+    OwnerEffectPayload1519E464 payload;
+} OwnerEffectRecord1519E464;
+s32 func_1514ED3C();
+s32 func_1514EC1C();
+
 #include "structs.h"
 void func_1516972C(struct102 *);
 
@@ -132,8 +152,39 @@ void func_1519E3BC(u8 *actor, s16 duration, u8 slot, s32 context) {
     func_151491F4(duration, 6, -1, 1, 3, 0, slot, context);
 }
 
-s32 func_1519E464() {
-    return 0;
+/* Submit one owner-bound effect, then retire this callback record. */
+void func_1519E464(OwnerEffectRecord1519E464 *record) {
+    u8 retire;
+    OwnerEffectPayload1519E464 *payload;
+    u8 *owner;
+    u8 *effect;
+    u8 maskedFlags;
+
+    retire = 0;
+    payload = &record->payload;
+    if (*(s32 *)record->payload.owner == 0) {
+        retire = 1;
+    }
+    owner = payload->owner;
+    if (payload->identity != owner[0x3B]) {
+        retire = 1;
+    }
+    if (retire == 0 && *(u8 **)(owner + 0x1D4) != NULL) {
+        maskedFlags = record->flags;
+        retire = 1;
+        effect = (u8 *)func_1519D030(owner, payload->preset,
+            record->duration, maskedFlags & 1, record->slot, record->context);
+        if (effect != NULL) {
+            if (func_1514ED3C(*(u8 **)(payload->owner + 0x2F4),
+                    (u8 *)record, 0) != 0) {
+                func_1514EC1C(effect, payload->owner, 0x10, effect);
+            }
+        }
+    }
+    if (retire != 0) {
+        record->duration = -1;
+        record->flags |= 1;
+    }
 }
 
 /* Retarget the payload owner link or release its matching actor. */
