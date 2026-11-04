@@ -1,12 +1,40 @@
 #include <ultra64.h>
 #include "structs.h"
+extern s32 D_80082FA4;
+extern u8 *D_800BE628;
+
+typedef struct {
+    u8 pad0[0x24];
+    f32 top;
+    f32 bottom;
+    f32 left;
+    f32 right;
+    u8 pad34[0x14C];
+} ViewBounds150F9AB0;
+
+void func_15110360(s32, f32 [4][4], f32, f32, f32);
+Gfx *func_15110544(Gfx *, s32, s32, s32, s32, u8, u8, u8);
+Gfx *func_150FB4C0(Gfx *, f32 [4][4]);
 extern u8 *D_800D3098;
 extern f32 D_800A1DC0;
 
-/* Non-matching placeholders for the text-only asm slice asm/126F60.s. */
+/* Restored functions and remaining placeholders for asm/126F60.s. */
 
-s32 func_150F9AB0() {
-    return 0;
+/* Draw through the active view using the requested matrix rotation. */
+Gfx *func_150F9AB0(Gfx *commands, f32 unusedX, f32 unusedY, f32 unusedZ,
+                   f32 rotationX, f32 rotationY, f32 rotationZ,
+                   void *unusedContext) {
+    f32 matrix[4][4];
+    ViewBounds150F9AB0 *view;
+
+    func_15110360(D_80082FA4, matrix, rotationX, rotationY, rotationZ);
+    view = &((ViewBounds150F9AB0 *)D_800BE628)[D_80082FA4];
+    commands = func_15110544(commands, (s32)view->left, (s32)view->top,
+        (s32)(view->right - 1.0f), (s32)view->bottom, 0, 0, 0);
+    gDPPipeSync(commands++);
+    gDPSetOtherMode(commands++, 0x2C0F, 0x0F0A4004);
+    gDPSetCombine(commands++, 0x357E6A, 0xFFFFFFFF);
+    return func_150FB4C0(commands, matrix);
 }
 
 s32 func_150F9BB0() {
