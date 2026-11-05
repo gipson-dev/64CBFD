@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <string.h>
 #include "structs.h"
+s32 func_1514D3B0(u8 *, s16, s32, s32);
 void func_15143134(f32 *, f32 *, u8 *);
 
 extern void (*D_800887C0[])();
@@ -131,11 +132,11 @@ s32 func_150C5BD4(u8 *effect) {
 }
 
 s32 func_150C5C74(s32 arg0) {
-    func_1514D3B0(arg0, 0x15, 1, 0);
+    func_1514D3B0((u8 *)arg0, 0x15, 1, 0);
 }
 
 s32 func_150C5C9C(s32 arg0) {
-    func_1514D3B0(arg0, 0x15, 2, 0);
+    func_1514D3B0((u8 *)arg0, 0x15, 2, 0);
 }
 
 void func_150C5CC4(u8 *arg0, s32 arg1, u8 arg2) {

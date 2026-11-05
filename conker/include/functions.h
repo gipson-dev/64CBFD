@@ -1129,7 +1129,7 @@ f32  func_151423D8(u8);
 f32  func_15144598(struct134 *arg0);
 f32  func_1514462C(struct134 *arg0);
 f32  func_15144B68(f32 arg0);
-void func_1514D3B0(s32, s16, u8, u8);
+s32 func_1514D3B0(u8 *owner, s16 root, s32 first, s32 second);
 s32  func_1515D6D0(s32 arg0, s32 arg1);
 void func_1515D4D4(u8, u8, u8, s32);
 void func_15169260(void *, s32, s32, u8);

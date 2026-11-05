@@ -101,8 +101,31 @@ s32 func_1514D310(u8 *owner) {
     return 1;
 }
 
-s32 func_1514D3B0() {
-    return 0;
+typedef s32 (*GamePayloadCallback179F30)(s32, s32, s32);
+extern GamePayloadCallback179F30 D_8008AB64[];
+s32 func_1514D4B8(s16, s16);
+
+/* Dispatch matching nodes and return the last invoked callback's boolean result. */
+s32 func_1514D3B0(u8 *owner, s16 root, s32 first, s32 second) {
+    GameListNode *node = *(GameListNode **)(owner + 0x2F4);
+    s32 result = 0;
+    s16 callback;
+
+    while (node != NULL) {
+        if (node->unk1C == root ||
+            func_1514D4B8(D_8008ABE8[root][2], node->unk1C)) {
+            callback = D_8008ABE8[node->unk1C][0];
+            if ((u32)-1 != (u32)callback) {
+                if (D_8008AB64[callback](node->unk10, first, second)) {
+                    result = 1;
+                } else {
+                    result = 0;
+                }
+            }
+        }
+        node = node->next;
+    }
+    return result;
 }
 
 /* Search both ordered node links for the requested signed identifier. */
