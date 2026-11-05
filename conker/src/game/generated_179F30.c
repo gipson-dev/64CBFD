@@ -18,7 +18,7 @@ void func_1514DCAC();
 s32 func_1515F10C();
 s32 func_1514E920();
 s32 func_1514E89C();
-s32 func_15158BD0();
+void *func_15158BD0(u8 *, u8, s32);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1514EC1C(s32 arg0, s32 arg1, s16 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);

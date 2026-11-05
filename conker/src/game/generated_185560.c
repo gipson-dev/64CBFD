@@ -62,6 +62,33 @@ void func_1516972C(u8 *arg0);
 void func_100043B4(s32 *, u32);
 
 typedef struct {
+    u8 header[0x10];
+    s32 active;
+    s32 state;
+    u8 *owner;
+    u8 ownerId;
+    u8 classification;
+    u8 pad1E[2];
+    f32 x;
+    f32 y;
+    f32 z;
+    u8 class0;
+    u8 class1;
+    u8 class2;
+    u8 class3;
+    u8 zero;
+    u8 enabled;
+    u8 pad32[0x1E];
+    u8 tail;
+    u8 pad51[7];
+} OwnerEffectRecord15158BD0;
+
+void *func_15167A68();
+s32 func_15159370();
+void func_1516979C(void *);
+
+
+typedef struct {
     u8 pad0[0xE0];
     s32 entries[4];
     s32 trailing;
@@ -238,8 +265,39 @@ void func_15158B3C(Generated185560Selection *selection,
     selection->selector = 0;
 }
 
-s32 func_15158BD0() {
-    return 0;
+/* Allocate and initialize an owner-bound type-0x2E effect record. */
+OwnerEffectRecord15158BD0 *func_15158BD0(u8 *owner, u8 enabled, s32 extraBytes) {
+    OwnerEffectRecord15158BD0 *record;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    record = func_15167A68(0x2E, 0, extraBytes + 0x58, 1, 0xFF, 1);
+    if (record == NULL) {
+        return NULL;
+    }
+    record->owner = owner;
+    record->class0 = 2;
+    record->class1 = 2;
+    record->class2 = 2;
+    record->class3 = 3;
+    record->zero = 0;
+    record->ownerId = owner[0x3B];
+    record->x = *(f32 *)(owner + 0x14);
+    record->y = *(f32 *)(owner + 0x18);
+    record->enabled = 0;
+    record->z = *(f32 *)(owner + 0x1C);
+    if (enabled != 0) {
+        record->enabled = 1;
+    }
+    record->active = 1;
+    record->state = 0;
+    if (func_15159370(owner, &record->classification, record) == 0) {
+        func_1516979C(record);
+        return NULL;
+    }
+    record->tail = 0;
+    return record;
 }
 
 s32 func_15158CD4(u8 *arg0) {
