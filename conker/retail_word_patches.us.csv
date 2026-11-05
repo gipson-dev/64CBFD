@@ -26360,3 +26360,19 @@ game_161520,func_1513A48C,0x0CC,0xE7A0005C,0x27A4002C,-,-,Derive initial scale s
 game_161520,func_1513A48C,0x0D0,0xE7A00060,0x24070001,-,-,Derive initial scale snapshot and independent packet store schedules,,,false
 generated_173D40,func_15146D60,0x034,0xAFA70020,0xAFA70024,-,-,Derive closed saved-mode stack lifetime from SP+0x20 to retail SP+0x24,,,false
 generated_173D40,func_15146D60,0x0F8,0x8FAB0020,0x8FAB0024,-,-,Derive closed saved-mode stack lifetime from SP+0x20 to retail SP+0x24,,,false
+generated_20A290,func_151DCDE0,0x004,0xAFBF0024,0x3C010000,-,R_MIPS_HI16:D_800AB558,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x008,0xAFA40068,0xC4200000,-,R_MIPS_LO16:D_800AB558,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x00C,0xAFA5006C,0xAFBF0024,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x010,0xAFA60070,0xAFA40068,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x014,0x8FB90068,0xAFA5006C,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x018,0x3C010000,0xAFA60070,R_MIPS_HI16:D_800AB558,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x01C,0x240E000C,0x8FB90068,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x020,0x240F0005,0x240E000C,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x024,0xC4200000,0x240F0005,R_MIPS_LO16:D_800AB558,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0B8,0x24C60000,0xE7A0005C,R_MIPS_LO16:D_800AB554,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0BC,0x24A50000,0xE7A00060,R_MIPS_LO16:D_800AB550,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0C0,0xAFA00014,0x24C60000,-,R_MIPS_LO16:D_800AB554,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0C4,0x27A4002C,0x24A50000,-,R_MIPS_LO16:D_800AB550,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0C8,0x24070001,0xAFA00014,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0CC,0xE7A0005C,0x27A4002C,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_20A290,func_151DCDE0,0x0D0,0xE7A00060,0x24070001,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false

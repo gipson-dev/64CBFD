@@ -1,5 +1,7 @@
 # Working Notes
 
+**Copied-position burst configuration matched as guarded C**: [Note 2100](WORKING_NOTES/2100-game-point-burst-configuration-guarded-match-20261105.md). `func_151DCDE0`: 66 body words plus two alignment words/frame104, sixteen derived scheduling rows, thirteen bindings, nine focused checks and strict production closure. Production **4,171/5,512 (75.67%)**, Game **3,498/4,839 (72.29%)**, zero drift; **239 more** to 80%. Next: `func_1501E2F8`.
+
 **Fractional burst emitter directly matched**: [Note 2099](WORKING_NOTES/2099-game-fractional-burst-emitter-direct-match-20261105.md). `func_151A0AF8`: 69 direct words/frame96, no guards, ten focused checks, explicit RNG sequencing, 38 neighbors, six bindings and strict production closure. Production **4,170/5,512 (75.65%)**, Game **3,497/4,839 (72.27%)**, zero drift; **240 more** to 80%. Next: `func_151DCDE0`.
 
 **Dual damped motion directly matched**: [Note 2098](WORKING_NOTES/2098-game-dual-damped-motion-direct-match-20261105.md). `func_15197AB4`: 66 direct words/frame0, no guards, eight focused checks, 68 neighbors, two bindings and strict production closure. Production **4,169/5,512 (75.63%)**, Game **3,496/4,839 (72.25%)**, zero drift; **241 more** to 80%. Next: `func_151A0AF8`.
