@@ -1,5 +1,7 @@
 # Working Notes
 
+**Seven-field player status accessor directly matched**: [Note 2102](WORKING_NOTES/2102-game-player-status-accessor-direct-match-20261105.md). `func_150859AC`: 68 direct words/frame0, no guards, sixteen bindings, seven neighbors, an existing switch-pool binding, eight focused checks and unchanged fifteen caller objects. Production **4,173/5,512 (75.71%)**, Game **3,500/4,839 (72.33%)**, zero drift; **237 more** to 80%. Next: `func_150A70C0`.
+
 **Live sequence catch-up matched as guarded C**: [Note 2101](WORKING_NOTES/2101-game-sequence-catchup-guarded-match-20261105.md). `func_1501E2F8`: 66 exact words/frame56, seventeen derived prologue scheduling rows, fourteen bindings, 56 neighbors, nine focused checks, unchanged typed caller object and strict production closure. Production **4,172/5,512 (75.69%)**, Game **3,499/4,839 (72.31%)**, zero drift; **238 more** to 80%. Next: `func_150859AC`.
 
 **Copied-position burst configuration matched as guarded C**: [Note 2100](WORKING_NOTES/2100-game-point-burst-configuration-guarded-match-20261105.md). `func_151DCDE0`: 66 body words plus two alignment words/frame104, sixteen derived scheduling rows, thirteen bindings, nine focused checks and strict production closure. Production **4,171/5,512 (75.67%)**, Game **3,498/4,839 (72.29%)**, zero drift; **239 more** to 80%. Next: `func_1501E2F8`.

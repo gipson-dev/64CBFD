@@ -2138,7 +2138,7 @@ s32 func_15089F9C(s32 slot) {
 extern s32 D_800D23B0;
 extern s8 D_8008FD90;
 extern u8 D_800CC2D0[];
-s32 func_150859AC(s16 slot, s32 field);
+s32 func_150859AC(s16 slot, s16 field);
 f32 sqrtf(f32 value);
 
 /* Rebuild one sorted neighbor row and publish its unweighted minimum distance. */
@@ -2317,7 +2317,7 @@ extern f32 D_800872F8[];
 extern u8 *D_800BE628;
 extern s32 D_80082FA0;
 extern u8 D_8009DA20[];
-s32 func_150859AC(s16, s32);
+s32 func_150859AC(s16, s16);
 s32 func_15085DA8(f32);
 void func_1508EC5C(s32, s32);
 s32 func_1508DAEC(s32, s32);
@@ -3874,7 +3874,7 @@ extern u8 D_800CC2D0[];
 extern s32 D_800BE9F0;
 extern s32 D_800D2E48;
 extern s8 D_8008FD94;
-s32 func_150859AC(s16, s32);
+s32 func_150859AC(s16, s16);
 void func_15085710(s16, s32, s32);
 void func_15062800(u8 *, u8 *);
 u8 *func_1509B570(s32);

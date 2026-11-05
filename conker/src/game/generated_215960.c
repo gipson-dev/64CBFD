@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "variables.h"
+s32 func_150859AC(s16 slot, s16 field);
 extern s16 D_8008FDCC;
 extern s32 D_800E0A90;
 extern u8 D_800E0B94;

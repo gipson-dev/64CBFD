@@ -56,8 +56,28 @@ s32 func_15085710() {
     return 0;
 }
 
-s32 func_150859AC() {
-    return 0;
+/* The six field labels are offset views of 0x1C-byte status records. */
+typedef struct { s32 value; u8 padding[24]; } StatusWordB21B0;
+typedef struct { s8 value; u8 padding[27]; } StatusSignedByteB21B0;
+typedef struct { u8 value; u8 padding[27]; } StatusUnsignedByteB21B0;
+extern s16 D_800D2340;
+extern StatusWordB21B0 D_800D213C[], D_800D2140[], D_800D2148[];
+extern StatusSignedByteB21B0 D_800D2144[], D_800D2145[];
+extern StatusUnsignedByteB21B0 D_800D2146[];
+
+/* Read one of the seven status fields; slots at least 255 return zero. */
+s32 func_150859AC(s16 slot, s16 field) {
+    if (slot >= 255) return 0;
+    switch (field) {
+        case 0: return (u16)D_800D2340 & (1u << slot);
+        case 1: return D_800D213C[slot].value;
+        case 2: return D_800D2140[slot].value;
+        case 3: return D_800D2144[slot].value;
+        case 4: return D_800D2145[slot].value;
+        case 5: return D_800D2146[slot].value;
+        case 6: return D_800D2148[slot].value;
+    }
+    /* Other selectors have the retail routine's unspecified result. */
 }
 
 /* Publish each selected player's current health to its status record. */

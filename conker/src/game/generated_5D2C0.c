@@ -40,7 +40,7 @@ void func_150D3360(u8 *, s32, s32);
 void func_150D5440(u8 *, s32, s32);
 void func_151BD828(u8 *, s32, s32);
 void func_151D74B0(u8 *, s32, s32, s32, s32);
-s32 func_150859AC(s32, s32);
+s32 func_150859AC(s16, s16);
 extern s32 D_80090228;
 extern s32 D_8009022C;
 void func_1503F5B8(u8 *, s32, s32, f32, f32, s32);
