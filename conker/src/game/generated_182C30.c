@@ -18,7 +18,7 @@ extern LookupOwner15155FD4 D_800DCE50[];
 extern LookupOwner15155FD4 D_800DD190[];
 extern u8 D_800CC37D;
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
-void func_1518C900(s32);
+s32 func_1518C900(s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/182C30.s. */
 

@@ -1,5 +1,7 @@
 # Working Notes
 
+**Resource-cache acquire matched as guarded C**: [Note 2086](WORKING_NOTES/2086-game-resource-cache-acquire-guarded-match-20261105.md). `func_1518C900`: 65 exact words/frame64, six private-spill rows, lazy loading, late publication and live saturating counts. All six callers, guest/native/private/layout checks, byte-identical caller prototype repair, eleven bindings and strict production image pass. Production **4,157/5,512 (75.42%)**, Game **3,484/4,839 (72.00%)**, zero drift; **253 more** to 80%. Next: `func_1518EF54`.
+
 **Settle/fade callback matched directly from C**: [Note 2085](WORKING_NOTES/2085-game-settle-fade-direct-match-20261105.md). `func_1517A84C`: 67 exact words/frame24, no guards, signed motion/spin, landing transition and wrapped signed fade. Guest/native/control/dispatcher checks, ten neighbors, three bindings and strict production image pass. Production **4,156/5,512 (75.40%)**, Game **3,483/4,839 (71.98%)**, zero drift; **254 more** to 80%. Next: `func_1518C900`.
 
 **Object-follow updater matched directly from C**: [Note 2084](WORKING_NOTES/2084-game-object-follow-update-direct-match-20261104.md). `func_1515BFA8`: 68 exact words/frame24, no guards, wrapped timer, stale-object gates, position history, reverse displacement and live scale aliases. Guest/native/control/dispatcher checks, ten neighbors, five bindings and the strict production image pass. Production **4,155/5,512 (75.38%)**, Game **3,482/4,839 (71.96%)**, zero drift; **255 more** to 80%. Next: `func_1517A84C`.
