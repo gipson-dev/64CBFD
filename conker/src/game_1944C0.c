@@ -8,7 +8,7 @@ s32 func_151670C0();
 s32 func_151671E8();
 s32 func_15167310();
 s32 func_151674F8();
-s32 func_15167B44();
+void func_15167B44(u8 *state);
 s32 func_15167C58();
 s32 func_15167E0C();
 s32 func_15168118();
@@ -111,9 +111,37 @@ void func_15167AD8(void *arg0, u8 arg1, s32 arg2) {
         tmp[0x23] = 0xFF;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167B44.s. */
-s32 func_15167B44() {
-    return 0;
+/* Apply the optional update callback, rate countdown and wrapped animation phase. */
+void func_15167B44(u8 *state) {
+    s32 rate;
+    s32 remaining;
+    s32 cost;
+
+    if (state[0x24] != 0) {
+        D_8008CA20[state[0x24]](state);
+    }
+    rate = *(s8 *)(state + 0x22);
+    if (rate > 0) {
+        remaining = state[0x23];
+        if (rate < remaining) {
+            state[0x23] = remaining - rate;
+        } else {
+            *(s16 *)(state + 0x14) = (*(u8 **)(state + 0x10))[4] << 8;
+        }
+    } else if (rate < 0) {
+        cost = -rate;
+        if (*(s16 *)(state + 0x14) / 256 >= (*(u8 **)(state + 0x10))[4] - 1) {
+            remaining = state[0x23];
+            if (cost < remaining) {
+                state[0x23] = remaining - cost;
+                *(s16 *)(state + 0x14) -= *(s16 *)(state + 0x16);
+            }
+        }
+    }
+    *(s16 *)(state + 0x14) += *(s16 *)(state + 0x16);
+    if (*(s16 *)(state + 0x14) / 256 >= (*(u8 **)(state + 0x10))[4]) {
+        func_1516972C((struct102 *)state);
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167C58.s. */
 s32 func_15167C58() {
