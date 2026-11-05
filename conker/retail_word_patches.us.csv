@@ -26323,3 +26323,13 @@ generated_1CC440,func_151A25E0,0x0F4,0x00004812,0x00005812,-,-,Derive effect ram
 generated_1CC440,func_151A25E0,0x0F8,0xA0890042,0xA08B0042,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
 generated_1CC440,func_151A25E0,0x0FC,0xA0890041,0xA08B0041,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
 generated_1CC440,func_151A25E0,0x100,0xA0890040,0xA08B0040,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+game_83300,func_15056A00,0x080,0x01E8C021,0x010FC021,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0A0,0x03023821,0x03022821,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0A4,0x90F90000,0x90B90000,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0C0,0x8C8200F4,0x8C8E00F4,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0D8,0x90E50000,0x90AD0000,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0E0,0x00413024,0x01C17824,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0E4,0xAC8600F4,0xAC8F00F4,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0E8,0x34CD0004,0x35F90004,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0EC,0xAC8D00F4,0xAC9900F4,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+game_83300,func_15056A00,0x0FC,0xA4850244,0xA48D0244,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false

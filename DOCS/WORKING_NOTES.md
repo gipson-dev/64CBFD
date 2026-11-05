@@ -1,5 +1,7 @@
 # Working Notes
 
+**Turn-animation selector matched as guarded C**: [Note 2090](WORKING_NOTES/2090-game-turn-animation-select-guarded-match-20261105.md). `func_15056A00`: 66 exact words/frame0, ten derived corrections, eight installed checks, 88 neighbors, two bindings and strict production closure. Production **4,161/5,512 (75.49%)**, Game **3,488/4,839 (72.08%)**, zero drift; **249 more** to 80%. Next: `func_1509C8FC`.
+
 **Effect lifetime growth matched as guarded C**: [Note 2089](WORKING_NOTES/2089-game-effect-lifetime-growth-guarded-match-20261105.md). `func_151A25E0`: 67 exact words/frame0, 23 derived word corrections, eight installed checks, 38 neighbors, two bindings and strict production closure. Production **4,160/5,512 (75.47%)**, Game **3,487/4,839 (72.06%)**, zero drift; **250 more** to 80%. Next: `func_15056A00`.
 
 **Owner event release callback matched as guarded C**: [Note 2088](WORKING_NOTES/2088-game-owner-event-release-first-guarded-match-20261105.md). `func_15191A84`: 66 exact words/frame40, 39 checked word corrections, eight installed focused checks, 60 neighbors, three bindings and strict production closure. Production **4,159/5,512 (75.45%)**, Game **3,486/4,839 (72.04%)**, zero drift; **251 more** to 80%. Next: `func_151A25E0`.

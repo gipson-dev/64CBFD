@@ -8,7 +8,7 @@ s32 func_15194FF4(struct127 *, struct127 *, s32);
 /* Generated placeholder declarations. */
 s32 func_15055E50(s32 arg0, s32 arg1);
 s32 func_150562FC();
-s32 func_15056A00();
+void func_15056A00(void *, u8, u8);
 s32 func_15056B08(s32 arg0);
 s32 func_150597FC();
 s32 func_15059C84(s32 arg0);
@@ -334,9 +334,44 @@ s32 func_1505693C(struct127 *arg0, s32 arg1) {
     }
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15056A00.s. */
-s32 func_15056A00() {
-    return 0;
+/* Select a turn animation from magnitude thresholds and wrapped heading sign. */
+void func_15056A00(void *inputActor, u8 magnitude, u8 row) {
+    struct127 *actor = inputActor;
+    struct TurnAnimationRow15056A00 { u8 bytes[10]; } *rows = (void *)D_80099A3C;
+    u8 *table = (u8 *)D_80099A3C;
+    u8 index = 0;
+    u16 heading;
+    u8 *entry;
+
+    if (rows[row].bytes[7] < magnitude) {
+        index = 5;
+    } else if (rows[row].bytes[2] < magnitude) {
+        index = 2;
+    }
+    heading = actor->unk76;
+    if ((actor->unk78 - heading) & 0x8000) {
+        index += 3;
+    } else {
+        index += 4;
+    }
+    entry = table + row * 10 + index;
+    if (*entry != 0xFF) {
+        u8 animation;
+        s32 flags = actor->unkF4;
+
+        actor->unk218 = (struct216 *)((u32)actor->unk218 - 5u);
+        actor->unk21C = 20000;
+        actor->unk223 = 13;
+        actor->unk44 = 0.0f;
+        animation = *entry;
+        /* Retain both observed flag stores before aligning the actor headings. */
+        *(volatile s32 *)&actor->unkF4 = flags & ~0xE;
+        *(volatile s32 *)&actor->unkF4 = (flags & ~0xE) | 4;
+        actor->unk78 = heading;
+        actor->unk7A = heading;
+        actor->unk138 = 0;
+        actor->unk244 = animation;
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15056B08.s. */
 s32 func_15056B08(s32 arg0) {
