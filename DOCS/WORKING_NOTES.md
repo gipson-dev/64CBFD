@@ -1,5 +1,7 @@
 # Working Notes
 
+**Position configuration packet matched as guarded C**: [Note 2094](WORKING_NOTES/2094-game-point-configuration-packet-guarded-match-20261105.md). `func_1513A48C`: 66 exact words/frame104, sixteen derived rows, nine focused checks, 64 padded neighbors, thirteen bindings and strict production closure. Production **4,165/5,512 (75.56%)**, Game **3,492/4,839 (72.16%)**, zero drift; **245 more** to 80%. Next: `func_15146D60`.
+
 **Cosine phase/sound callback matched as guarded C**: [Note 2093](WORKING_NOTES/2093-game-cosine-phase-sound-guarded-match-20261105.md). `func_1510ADD8`: 66 exact words/frame32, nine derived rows, nine installed checks, three neighbors, eleven bindings and strict production closure. Production **4,164/5,512 (75.54%)**, Game **3,491/4,839 (72.14%)**, zero drift; **246 more** to 80%. Next: `func_1513A48C`.
 
 **Point-interval effect callback directly matched**: [Note 2092](WORKING_NOTES/2092-game-point-interval-effect-direct-match-20261105.md). `func_150EB090`: 73 direct body words plus three alignment words/frame88, no guards, nine focused checks, two neighbors, six bindings and strict production closure. Production **4,163/5,512 (75.53%)**, Game **3,490/4,839 (72.12%)**, zero drift; **247 more** to 80%. Next: `func_1510ADD8`.

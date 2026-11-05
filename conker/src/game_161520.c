@@ -2,6 +2,30 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct { f32 x, y, z; } Position161520;
+typedef struct {
+    s32 count;
+    s32 countRange;
+    Position161520 position;
+    s16 angle;
+    s16 angleRange;
+    s16 pitch;
+    s16 pitchRange;
+    f32 speed;
+    f32 speedRange;
+    f32 vertical;
+    f32 verticalRange;
+    s16 lifetime;
+    s16 lifetimeRange;
+    f32 scale;
+    f32 scaleRange;
+    f32 spread;
+} Configuration161520;
+extern f32 D_800A4950, D_800A4954, D_800A4958, D_800A495C;
+extern s32 D_800A4260;
+extern f32 D_800A4264;
+void func_15152190(Configuration161520 *, s32 *, f32 *, s32, f32, u8, u8, s32);
+
 /* Generated placeholder declarations. */
 s32 func_15134070(u8 *actor);
 s32 func_1513418C();
@@ -35,7 +59,7 @@ s32 func_15139578();
 s32 func_15139768();
 s32 func_15139D74();
 s32 func_1513A24C();
-s32 func_1513A48C();
+void func_1513A48C(Position161520 *position, u8 channel, s32 context);
 s32 func_1513A5E0(s32 arg0, u8 arg1, s32 arg2);
 s32 func_1513A6E0();
 s32 func_1513ABB8();
@@ -538,9 +562,29 @@ s32 func_151389A8() {
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_1513A24C.s. */
 s32 func_1513A24C() {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_1513A48C.s. */
-s32 func_1513A48C() {
-    return 0;
+}
+/* Submit a copied position and fixed effect parameters for this channel. */
+void func_1513A48C(Position161520 *position, u8 channel, s32 context) {
+    Configuration161520 packet;
+    f32 scale = D_800A4950;
+
+    packet.count = 8;
+    packet.countRange = 4;
+    packet.position = *position;
+    packet.angle = 0;
+    packet.angleRange = 255;
+    packet.pitch = -55;
+    packet.pitchRange = 32;
+    packet.speed = 10.0f;
+    packet.speedRange = 9.0f;
+    packet.vertical = D_800A4954;
+    packet.verticalRange = D_800A4958;
+    packet.lifetime = 40;
+    packet.lifetimeRange = 20;
+    packet.scale = scale;
+    packet.scaleRange = scale;
+    packet.spread = D_800A495C;
+    func_15152190(&packet, &D_800A4260, &D_800A4264, 1, 0.0f, 1, channel, context);
 }
 void func_1513A594(struct127 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     func_1513A5E0(arg1, arg3, arg4);
