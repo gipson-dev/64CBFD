@@ -29,6 +29,11 @@ typedef struct LinkedNode {
     u8 data[0x30];
 } LinkedNode;
 
+extern LinkedNode *D_800DCD84;
+extern u8 D_800DCD24[], D_800DCD28[];
+extern u8 D_800DCD3C, D_800DCD3D;
+u8 *func_1515EB84(s32, s32, s32, s32, LinkedNode *);
+
 /* Non-matching placeholders for the text-only asm slice asm/18A8F0.s. */
 
 s32 func_1515D5F8();
@@ -125,8 +130,30 @@ s32 func_1515E278() {
     return 0;
 }
 
-s32 func_1515E43C() {
-    return 0;
+/* Resolve packed record colors or copy the live default colors in byte order. */
+void func_1515E43C(s32 x, s32 y, s32 z, s32 unused,
+                   u8 *primary, u8 *secondary, u8 *secondaryExtra, u8 *primaryExtra) {
+    u8 *record = func_1515EB84(x, y, z, 0, D_800DCD84);
+
+    if (record != 0) {
+        primary[0] = (*(u32 *)(record + 0x18)) & 0xFF;
+        primary[1] = (*(u32 *)(record + 0x18) >> 8) & 0xFF;
+        primary[2] = (*(u32 *)(record + 0x18) >> 16) & 0xFF;
+        secondary[0] = (*(u32 *)(record + 0x1C)) & 0xFF;
+        secondary[1] = (*(u32 *)(record + 0x1C) >> 8) & 0xFF;
+        secondary[2] = (*(u32 *)(record + 0x1C) >> 16) & 0xFF;
+        *secondaryExtra = (*(u32 *)(record + 0x1C) >> 24) & 0xFF;
+        *primaryExtra = (*(u32 *)(record + 0x18) >> 24) & 0xFF;
+    } else {
+        primary[0] = D_800DCD24[0];
+        primary[1] = D_800DCD24[1];
+        primary[2] = D_800DCD24[2];
+        secondary[0] = D_800DCD28[0];
+        secondary[1] = D_800DCD28[1];
+        secondary[2] = D_800DCD28[2];
+        *secondaryExtra = D_800DCD3C;
+        *primaryExtra = D_800DCD3D;
+    }
 }
 
 s32 func_1515E544() {

@@ -1,5 +1,7 @@
 # Working Notes
 
+**Packed record color query directly matched**: [Note 2096](WORKING_NOTES/2096-game-record-color-query-direct-match-20261105.md). `func_1515E43C`: 66 direct words/frame32, no guards, nine focused checks, 34 neighbors, eleven bindings and strict production closure. Production **4,167/5,512 (75.60%)**, Game **3,494/4,839 (72.21%)**, zero drift; **243 more** to 80%. Next: `func_15167B44`.
+
 **Alternate point/height effect matched as guarded C**: [Note 2095](WORKING_NOTES/2095-game-alternate-point-effect-guarded-match-20261105.md). `func_15146D60`: 73 exact words/frame88, two saved-mode rows, nine focused checks, twelve neighbors, six bindings and strict production closure. Production **4,166/5,512 (75.58%)**, Game **3,493/4,839 (72.18%)**, zero drift; **244 more** to 80%. Next: `func_1515E43C`.
 
 **Position configuration packet matched as guarded C**: [Note 2094](WORKING_NOTES/2094-game-point-configuration-packet-guarded-match-20261105.md). `func_1513A48C`: 66 exact words/frame104, sixteen derived rows, nine focused checks, 64 padded neighbors, thirteen bindings and strict production closure. Production **4,165/5,512 (75.56%)**, Game **3,492/4,839 (72.16%)**, zero drift; **245 more** to 80%. Next: `func_15146D60`.
