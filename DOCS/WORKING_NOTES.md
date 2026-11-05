@@ -1,5 +1,7 @@
 # Working Notes
 
+**Point-interval effect callback directly matched**: [Note 2092](WORKING_NOTES/2092-game-point-interval-effect-direct-match-20261105.md). `func_150EB090`: 73 direct body words plus three alignment words/frame88, no guards, nine focused checks, two neighbors, six bindings and strict production closure. Production **4,163/5,512 (75.53%)**, Game **3,490/4,839 (72.12%)**, zero drift; **247 more** to 80%. Next: `func_1510ADD8`.
+
 **Actor camera-position forwarding directly matched**: [Note 2091](WORKING_NOTES/2091-game-actor-camera-position-direct-match-20261105.md). `func_1509C8FC`: 66 direct body words plus three alignment words/frame24, no guards, nine installed checks, two neighbors, five bindings and strict production closure. Production **4,162/5,512 (75.51%)**, Game **3,489/4,839 (72.10%)**, zero drift; **248 more** to 80%. Next: `func_150EB090`.
 
 **Turn-animation selector matched as guarded C**: [Note 2090](WORKING_NOTES/2090-game-turn-animation-select-guarded-match-20261105.md). `func_15056A00`: 66 exact words/frame0, ten derived corrections, eight installed checks, 88 neighbors, two bindings and strict production closure. Production **4,161/5,512 (75.49%)**, Game **3,488/4,839 (72.08%)**, zero drift; **249 more** to 80%. Next: `func_1509C8FC`.
