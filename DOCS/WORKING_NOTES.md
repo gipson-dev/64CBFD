@@ -1,5 +1,7 @@
 # Working Notes
 
+**Actor camera-position forwarding directly matched**: [Note 2091](WORKING_NOTES/2091-game-actor-camera-position-direct-match-20261105.md). `func_1509C8FC`: 66 direct body words plus three alignment words/frame24, no guards, nine installed checks, two neighbors, five bindings and strict production closure. Production **4,162/5,512 (75.51%)**, Game **3,489/4,839 (72.10%)**, zero drift; **248 more** to 80%. Next: `func_150EB090`.
+
 **Turn-animation selector matched as guarded C**: [Note 2090](WORKING_NOTES/2090-game-turn-animation-select-guarded-match-20261105.md). `func_15056A00`: 66 exact words/frame0, ten derived corrections, eight installed checks, 88 neighbors, two bindings and strict production closure. Production **4,161/5,512 (75.49%)**, Game **3,488/4,839 (72.08%)**, zero drift; **249 more** to 80%. Next: `func_1509C8FC`.
 
 **Effect lifetime growth matched as guarded C**: [Note 2089](WORKING_NOTES/2089-game-effect-lifetime-growth-guarded-match-20261105.md). `func_151A25E0`: 67 exact words/frame0, 23 derived word corrections, eight installed checks, 38 neighbors, two bindings and strict production closure. Production **4,160/5,512 (75.47%)**, Game **3,487/4,839 (72.06%)**, zero drift; **250 more** to 80%. Next: `func_15056A00`.
