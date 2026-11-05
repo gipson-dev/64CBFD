@@ -2,6 +2,16 @@
 #include "structs.h"
 
 typedef struct {
+    u8 retained00[0x0D];
+    u8 flags;
+    s16 timer;
+    u8 retained10[0x18];
+    u8 *owner;
+    u8 ownerId;
+} OwnerEventRecord15191A84;
+
+
+typedef struct {
     u8 retained00[0x34];
     f32 position[3];
     f32 endPoint[3];
@@ -823,8 +833,37 @@ void func_15191980(OwnerEventRecord15191980 *record,
                   (s32)&record->owner, (s32)&record->ownerId, (s32)record);
 }
 
-s32 func_15191A84() {
-    return 0;
+/* Release matching owner events before applying timer or forwarding commands.
+ * Keep the event pointer and command byte in their retail argument homes. */
+void func_15191A84(OwnerEventRecord15191A84 *record,
+                   OwnerEvent15191980 *volatile event, s32 rawCommand) {
+    if (((u8 *)&rawCommand)[3] == 0x0C ||
+        ((u8 *)&rawCommand)[3] == 0x0E ||
+        ((u8 *)&rawCommand)[3] == 0x50) {
+        if (record->owner != event->owner && record->ownerId != event->ownerId) {
+            return;
+        }
+        func_1516972C(record);
+        return;
+    }
+    if (((u8 *)&rawCommand)[3] == 0x4E) {
+        func_1516972C(record);
+        return;
+    }
+    if (((u8 *)&rawCommand)[3] == 0x0D) {
+        if (record->owner != event->owner && record->ownerId != event->ownerId) {
+            return;
+        }
+        {
+            u8 flags = record->flags;
+
+            record->timer = 100;
+            record->flags = flags | 1;
+        }
+        return;
+    }
+    func_15169850((s32)event, ((volatile u8 *)&rawCommand)[3],
+                  (s32)&record->owner, (s32)&record->ownerId, (s32)record);
 }
 
 void func_15191B8C(s32 arg0, u8 arg1) {
