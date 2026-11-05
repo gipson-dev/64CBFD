@@ -26333,3 +26333,12 @@ game_83300,func_15056A00,0x0E4,0xAC8600F4,0xAC8F00F4,-,-,Derive turn-animation G
 game_83300,func_15056A00,0x0E8,0x34CD0004,0x35F90004,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
 game_83300,func_15056A00,0x0EC,0xAC8D00F4,0xAC9900F4,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
 game_83300,func_15056A00,0x0FC,0xA4850244,0xA48D0244,-,-,Derive turn-animation GPR lifetimes and commutative row-address addition,,,false
+generated_137ED0,func_1510ADD8,0x064,0x46025301,0x46025401,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x070,0xE48C0060,0xE4900060,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x078,0xC4260000,0xC4320000,R_MIPS_LO16:D_800A26B4,R_MIPS_LO16:D_800A26B4,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x07C,0xC4900080,0xC4860080,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x088,0x4610303E,0x4606903E,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x0B8,0xC4800080,0xC4220000,-,R_MIPS_LO16:D_800A26B8,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x0BC,0xC4220000,0xC4800080,R_MIPS_LO16:D_800A26B8,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x0D8,0x46020301,0x46020101,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
+generated_137ED0,func_1510ADD8,0x0E8,0xE48C0080,0xE4840080,-,-,Derive closed cosine-motion FPR roles and adjacent phase/period reads,,,false
