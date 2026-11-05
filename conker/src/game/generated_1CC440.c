@@ -11,6 +11,22 @@ typedef struct {
     s32 fourth;
 } FourWord1CC440;
 
+typedef struct {
+    f32 x, y, z;
+    u8 tag;
+    u8 retained0D[3];
+    f32 phase;
+} FractionalBurstPayload151A0AF8;
+typedef struct {
+    u8 retained00[0x0C];
+    u8 context;
+    u8 retained0D[0x1B];
+    FractionalBurstPayload151A0AF8 payload;
+} FractionalBurstEmitter151A0AF8;
+extern f32 D_800A8D10, D_800BE9A4;
+f32 func_150ADA68(void);
+void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
+
 /* Non-matching placeholders for the text-only asm slice asm/1CC440.s. */
 
 void func_1519F48C(u8 *arg0);
@@ -232,8 +248,21 @@ void func_151A0A10(u8 *actor, s16 effect, u8 variant, s32 flags) {
     }
 }
 
-s32 func_151A0AF8() {
-    return 0;
+/* Accumulate fractional emissions and submit each burst using live payload fields. */
+void func_151A0AF8(FractionalBurstEmitter151A0AF8 *record) {
+    record->payload.phase += D_800A8D10 * D_800BE9A4;
+    if (record->payload.phase > 1.0f) {
+        FractionalBurstPayload151A0AF8 *payload = &record->payload;
+
+        do {
+            f32 magnitude = func_150ADA68() * 25.0f + 15.0f;
+
+            func_1514C678(payload->x, payload->y, payload->z,
+                magnitude,
+                0, 255, 5, 4, payload->tag, 0.0f, NULL, record->context);
+            payload->phase -= 1.0f;
+        } while (payload->phase > 1.0f);
+    }
 }
 
 s32 func_151A0C0C() {

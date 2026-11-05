@@ -1,5 +1,7 @@
 # Working Notes
 
+**Fractional burst emitter directly matched**: [Note 2099](WORKING_NOTES/2099-game-fractional-burst-emitter-direct-match-20261105.md). `func_151A0AF8`: 69 direct words/frame96, no guards, ten focused checks, explicit RNG sequencing, 38 neighbors, six bindings and strict production closure. Production **4,170/5,512 (75.65%)**, Game **3,497/4,839 (72.27%)**, zero drift; **240 more** to 80%. Next: `func_151DCDE0`.
+
 **Dual damped motion directly matched**: [Note 2098](WORKING_NOTES/2098-game-dual-damped-motion-direct-match-20261105.md). `func_15197AB4`: 66 direct words/frame0, no guards, eight focused checks, 68 neighbors, two bindings and strict production closure. Production **4,169/5,512 (75.63%)**, Game **3,496/4,839 (72.25%)**, zero drift; **241 more** to 80%. Next: `func_151A0AF8`.
 
 **Animation state tick directly matched**: [Note 2097](WORKING_NOTES/2097-game-animation-state-tick-direct-match-20261105.md). `func_15167B44`: 69 direct words/frame24, no guards, nine focused checks, 41 neighbors, three bindings and strict production closure. Production **4,168/5,512 (75.62%)**, Game **3,495/4,839 (72.23%)**, zero drift; **242 more** to 80%. Next: `func_15197AB4`.
