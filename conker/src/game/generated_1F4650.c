@@ -1,4 +1,6 @@
 #include <ultra64.h>
+s32 func_151C87E0();
+s32 func_151C899C();
 
 /* Non-matching placeholders for the text-only asm slice asm/1F4650.s. */
 
@@ -46,8 +48,41 @@ void func_151C8674(s32 arg0, s32 arg1) {
     }
 }
 
-s32 func_151C86AC() {
-    return 0;
+/* Apply owner state events and forward matching action requests. */
+void func_151C86AC(u8 *owner, u8 *event, u8 eventCode) {
+    u8 **ownerHome;
+    u8 selector;
+    u8 *state;
+
+    ownerHome = &owner;
+    switch (eventCode) {
+    case 0x20:
+        state = *ownerHome + 0x110;
+        if ((state[0x86] & 0x10) &&
+                *(s32 *)(state + 0x28) == *(s32 *)(event + 4) &&
+                func_151C87E0(*(s32 *)event, *ownerHome) != 0) {
+            func_151C899C(*(s32 *)event, *ownerHome);
+            return;
+        }
+        return;
+    case 0x3A:
+        state = *ownerHome + 0x110;
+        if (*(s32 *)(state + 0x28) == *(s32 *)event) {
+            selector = event[4];
+            switch (selector) {
+            case 0:
+                state[0x86] |= 2;
+                return;
+            case 1:
+                state[0x86] &= 0xFFFD;
+                return;
+            case 2:
+                func_151C899C(NULL, *ownerHome);
+                break;
+            }
+        }
+        break;
+    }
 }
 
 s32 func_151C87AC(u8 *arg0, u8 arg1, u8 arg2, u8 arg3, s32 arg4, s32 arg5, u16 *arg6) {
