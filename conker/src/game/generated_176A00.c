@@ -47,7 +47,40 @@ s32 func_15149D18() {
     return 0;
 }
 
-s32 func_15149EC4() {
+typedef struct { f32 x, y, z; } EffectPosition176A00;
+typedef struct {
+    EffectPosition176A00 position;
+    u8 retained0C[10];
+    s16 value16, value18, value1A, value1C, value1E, value20;
+    s16 value22, value24, value26;
+    u8 firstRGB[3], secondRGB[3], alpha, value2F;
+    s8 value30;
+    u8 flags;
+} EffectDescriptor176A00;
+s32 func_150ADA20(void);
+void func_151429E0(u8, u8 *, u8 *, u8 *);
+void func_1518CA80(EffectDescriptor176A00 *, u8);
+
+/* Submit a position snapshot with ordered random fields and two color rows. */
+s32 func_15149EC4(u8 *actor) {
+    EffectDescriptor176A00 descriptor;
+
+    descriptor.position = *(EffectPosition176A00 *)(actor + 0x34);
+    descriptor.value16 = 0;
+    descriptor.value18 = 0;
+    descriptor.value1A = descriptor.value1C = (u32)func_150ADA20() % 6u + 8;
+    descriptor.value1E = 0;
+    descriptor.value20 = 0;
+    descriptor.value22 = (u32)func_150ADA20() % 201u + 100;
+    descriptor.value24 = (u32)func_150ADA20() % 5u + 3;
+    descriptor.value26 = 600;
+    func_151429E0(3, &descriptor.firstRGB[0], &descriptor.firstRGB[1], &descriptor.firstRGB[2]);
+    func_151429E0(4, &descriptor.secondRGB[0], &descriptor.secondRGB[1], &descriptor.secondRGB[2]);
+    descriptor.alpha = 255;
+    descriptor.value2F = (u32)func_150ADA20() % 65u + 92;
+    descriptor.value30 = (u32)func_150ADA20() % 3u + 1;
+    descriptor.flags = 0;
+    func_1518CA80(&descriptor, 1);
     return 0;
 }
 

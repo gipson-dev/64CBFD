@@ -1,5 +1,7 @@
 # Working Notes
 
+**Random/color effect descriptor directly matched**: [Note 2105](WORKING_NOTES/2105-game-random-colored-effect-descriptor-direct-match-20261105.md). `func_15149EC4`: 67 direct words/frame 80, no guards, eight bindings, 35 neighbors, untouched descriptor gaps, seven focused checks and literal full-image production proof. Production **4,176/5,512 (75.76%)**, Game **3,503/4,839 (72.39%)**, zero drift; **234 more** to 80%. Next: `func_1514D3B0`; retain the eight separate boundaries.
+
 **Spatial leaf lookup directly matched**: [Note 2104](WORKING_NOTES/2104-game-spatial-leaf-lookup-direct-match-20261105.md). `func_1510FD20`: 68 direct words/frame 0, no guards, two bindings, thirteen neighbors, pointer/handle interface repair, seven focused checks and literal full-image production proof. Production **4,175/5,512 (75.74%)**, Game **3,502/4,839 (72.37%)**, zero drift; **235 more** to 80%. Next: `func_15149EC4`; retain the eight separate boundaries.
 
 **Animation-gated material tile callback matched as guarded C**: [Note 2103](WORKING_NOTES/2103-game-material-tile-animation-guarded-match-20261105.md). `func_150D82BC`: 71 words/frame 0, nine register guards, four bindings, eight neighbors, seven focused checks and literal full-image production proof. Production **4,174/5,512 (75.73%)**, Game **3,501/4,839 (72.35%)**, zero drift; **236 more** to 80%. Next: `func_1510FD20`; handwritten `func_150A70C0` joins the separate eight-case boundary list.
