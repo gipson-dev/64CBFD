@@ -1,6 +1,39 @@
 #include <ultra64.h>
 #include "structs.h"
 
+typedef struct {
+    s32 kind;
+    s32 variant;
+    u8 reserved08[0xC];
+    f32 value14;
+    f32 value18;
+    f32 value1C;
+    f32 value20;
+    f32 value24;
+    f32 value28;
+    s32 selector2C;
+    s32 selector30;
+    f32 value34;
+    f32 value38;
+    f32 value3C;
+    f32 value40;
+    s16 value44;
+    s16 value46;
+    s16 value48;
+    s16 value4A;
+    s16 value4C;
+    s16 value4E;
+    s8 mode;
+} EffectPreset150D64E8;
+
+extern f32 D_800A0AB8;
+extern f32 D_800A0ABC;
+extern f32 D_800A0AC0;
+extern f32 D_800A0AC4;
+extern f32 D_800A0AC8;
+extern s32 D_80082FA0;
+extern s8 D_8008FD8C;
+
 typedef struct { u8 *owner; u8 identity; u8 opaque5[3]; } EmbeddedOwnerLink;
 typedef struct { u8 *before; u8 *after; u8 before_identity; u8 after_identity; u8 opaqueA[2]; } OwnerLinkEvent;
 
@@ -75,8 +108,34 @@ void func_150D5A4C(u8 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1028F0/func_150D6434.s")
 
-s32 func_150D64E8() {
-    return 0;
+/* Initialize the fixed effect descriptor and its auxiliary scalar. */
+void func_150D64E8(EffectPreset150D64E8 *preset, f32 *auxiliary) {
+    preset->kind = 6;
+    preset->variant = 3;
+    *auxiliary = D_800A0AB8;
+    preset->value14 = D_800A0ABC;
+    preset->value18 = D_800A0AC0;
+    preset->value1C = 150.0f;
+    preset->value20 = 105.0f;
+    preset->value24 = 396.0f;
+    preset->value28 = 612.0f;
+    preset->selector2C = 4;
+    preset->selector30 = 3;
+    preset->value34 = 25.0f;
+    preset->value38 = D_800A0AC4;
+    preset->value3C = -2.0f;
+    preset->value40 = D_800A0AC8;
+    preset->value44 = 20;
+    preset->value46 = 30;
+    preset->value48 = 100;
+    preset->value4A = 100;
+    preset->value4C = 12;
+    preset->value4E = 20;
+    if ((D_80082FA0 >= 2) || (D_8008FD8C >= 8)) {
+        preset->mode = -1;
+    } else {
+        preset->mode = 0;
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1028F0/func_150D65F0.s")
