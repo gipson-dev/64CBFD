@@ -1,6 +1,9 @@
 #include <ultra64.h>
 #include "structs.h"
 
+extern s32 D_800BE9E4;
+
+
 typedef struct {
     s32 first;
     s32 second;
@@ -370,8 +373,33 @@ s32 func_151A24A8() {
     return 0;
 }
 
-s32 func_151A25E0() {
-    return 0;
+/* Apply lifetime ramps in order, with live size growth and a one-shot switch. */
+void func_151A25E0(u8 *effect) {
+    s16 *parameters = (s16 *)(effect + 0x50);
+    s32 time = *(s16 *)(effect + 0x38);
+
+    if (parameters[2] < time) {
+        effect[0x3F] = parameters[0] * (parameters[1] - time);
+    }
+    if (parameters[5] < time) {
+        *(s16 *)(effect + 0x34) = *(s16 *)(effect + 0x36) = parameters[3] * (parameters[4] - time);
+    }
+    if (time < parameters[8]) {
+        effect[0x3F] = parameters[9] * time;
+    }
+    if (time < parameters[10]) {
+        u32 increment = parameters[11] * (u32)D_800BE9E4;
+
+        *(s16 *)(effect + 0x34) += increment;
+        *(s16 *)(effect + 0x36) += increment;
+        time = *(s16 *)(effect + 0x38);
+    }
+    if (time < parameters[12]) {
+        *(s16 *)(effect + 0x32) = parameters[13];
+        parameters[12] = -9999;
+        time = *(s16 *)(effect + 0x38);
+    }
+    effect[0x40] = effect[0x41] = effect[0x42] = parameters[7] * time;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1CC440/func_151A26EC.s")

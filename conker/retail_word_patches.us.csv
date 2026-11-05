@@ -26300,3 +26300,26 @@ generated_1BA1D0,func_15191A84,0x0E0,0x91050003,0x26060028,-,-,Normalize release
 generated_1BA1D0,func_15191A84,0x0E4,0xAFB00010,0x24C70004,-,-,Normalize release-first owner-event address materialization and compiler schedule,,,false
 generated_1BA1D0,func_15191A84,0x0E8,0x26060028,0x93A50033,-,-,Normalize release-first owner-event address materialization and compiler schedule,,,false
 generated_1BA1D0,func_15191A84,0x0F0,0x2607002C,0xAFB00010,-,-,Normalize release-first owner-event address materialization and compiler schedule,,,false
+generated_1CC440,func_151A25E0,0x07C,0x03030019,0x00780019,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x098,0x844F0018,0x84590018,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0A4,0x848B0034,0x848D0034,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0A8,0x848D0036,0x848F0036,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0B0,0x84830038,0x00006012,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0B4,0x00002812,0x01AC7021,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0B8,0x01656021,0x01ECC021,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0BC,0x01A57021,0xA48E0034,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0C0,0xA48C0034,0xA4980036,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0C4,0xA48E0036,0x84830038,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0C8,0x844F0018,0x84590018,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0CC,0x006F082A,0x0079082A,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0D4,0x8448000E,0x844A000E,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0D8,0x8458001A,0x8448001A,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0DC,0x2419D8F1,0x2409D8F1,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0E0,0xA4980032,0xA4880032,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0E4,0xA4590018,0xA4490018,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0EC,0x8448000E,0x844A000E,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0F0,0x01030019,0x006A0019,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0F4,0x00004812,0x00005812,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0F8,0xA0890042,0xA08B0042,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x0FC,0xA0890041,0xA08B0041,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
+generated_1CC440,func_151A25E0,0x100,0xA0890040,0xA08B0040,-,-,Derive effect ramp GPR lifetimes and independent timer-load schedule,,,false
