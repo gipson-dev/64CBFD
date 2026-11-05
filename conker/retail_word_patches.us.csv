@@ -26376,3 +26376,20 @@ generated_20A290,func_151DCDE0,0x0C4,0x27A4002C,0x24A50000,-,R_MIPS_LO16:D_800AB
 generated_20A290,func_151DCDE0,0x0C8,0x24070001,0xAFA00014,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
 generated_20A290,func_151DCDE0,0x0CC,0xE7A0005C,0x27A4002C,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
 generated_20A290,func_151DCDE0,0x0D0,0xE7A00060,0x24070001,-,-,Derive initial scale snapshot and independent burst packet store schedules,,,false
+generated_49D30,func_1501E2F8,0x004,0xAFB1001C,0xAFB60030,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x008,0x00808825,0xAFB5002C,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x00C,0xAFBF0034,0xAFB40028,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x010,0xAFB60030,0xAFB30024,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x014,0xAFB5002C,0x3C130000,-,R_MIPS_HI16:D_800C3C8C,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x018,0xAFB40028,0x3C140000,-,R_MIPS_HI16:D_800C35EA,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x01C,0xAFB30024,0x3C150000,-,R_MIPS_HI16:D_800C35B0,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x020,0xAFB20020,0x3C160000,-,R_MIPS_HI16:D_800C3640,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x024,0xAFB00018,0xAFB20020,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x028,0x3C160000,0xAFB1001C,R_MIPS_HI16:D_800C3640,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x02C,0x3C150000,0x00808825,R_MIPS_HI16:D_800C35B0,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x030,0x3C140000,0x24120001,R_MIPS_HI16:D_800C35EA,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x034,0x3C130000,0x26D60000,R_MIPS_HI16:D_800C3C8C,R_MIPS_LO16:D_800C3640,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x038,0x26730000,0x26B50000,R_MIPS_LO16:D_800C3C8C,R_MIPS_LO16:D_800C35B0,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x040,0x26B50000,0x26730000,R_MIPS_LO16:D_800C35B0,R_MIPS_LO16:D_800C3C8C,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x044,0x26D60000,0xAFBF0034,R_MIPS_LO16:D_800C3640,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_49D30,func_1501E2F8,0x048,0x24120001,0xAFB00018,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false

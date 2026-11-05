@@ -635,8 +635,27 @@ s32 func_1501E1B4() {
     return 0;
 }
 
-s32 func_1501E2F8() {
-    return 0;
+s32 func_1501E400();
+
+/* Catch up an active sequence, rechecking slot zero after each full pass. */
+void func_1501E2F8(s32 slot) {
+    for (;;) {
+        if (D_800C35EA[slot] != 1) break;
+        if (D_800C35B0[slot] < D_800C3640[slot]) break;
+        if (D_800C3C8C == 0) {
+            func_1501E81C(0, slot);
+            if (D_800C35EA[slot] != 1) break;
+            func_1501E400(0);
+            slot = 0;
+            func_150242F8(1, 0);
+            func_1501EC38(0);
+            func_150242F8(0, 0);
+            func_15020EC4(0);
+        } else {
+            D_800C3C8C = 2;
+            break;
+        }
+    }
 }
 
 s32 func_1501E400() {
