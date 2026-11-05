@@ -2,6 +2,19 @@
 #include "structs.h"
 
 typedef struct {
+    u8 retained00[0x18];
+    u8 *object;
+    u8 objectId;
+    u8 flags;
+    s16 timer;
+    struct17 current;
+    struct17 previous;
+    struct17 velocity;
+} ObjectFollowUpdate1515BFA8;
+
+extern f32 D_800BE9A8;
+
+typedef struct {
     u8 retained00[0x14];
     f32 x;
     f32 y;
@@ -155,8 +168,34 @@ s32 func_1515BF7C(u8 *arg0) {
     func_15169824(arg0);
 }
 
-s32 func_1515BFA8() {
-    return 0;
+/* Track the live object's position and reverse displacement, or retire a stale record. */
+void func_1515BFA8(ObjectFollowUpdate1515BFA8 *record) {
+    s32 remove = 0;
+    u8 *object;
+
+    if ((record->flags & 1) != 0) {
+        record->timer = (s16)((u32)record->timer - (u32)D_800BE9E4);
+        if (record->timer < 0) {
+            remove = 1;
+        }
+    }
+    object = record->object;
+    if (*(s32 *)object == 0 || record->objectId != object[0x3B]) {
+        remove = 1;
+    }
+    if (remove == 0) {
+        record->previous = record->current;
+        object = record->object;
+        record->current.unk0 = *(f32 *)(object + 0x14);
+        record->current.unk4 = *(f32 *)(object + 0x18);
+        record->current.unk8 = *(f32 *)(object + 0x1C);
+        record->velocity.unk0 = (record->previous.unk0 - record->current.unk0) * D_800BE9A8;
+        record->velocity.unk4 = (record->previous.unk4 - record->current.unk4) * D_800BE9A8;
+        record->velocity.unk8 = (record->previous.unk8 - record->current.unk8) * D_800BE9A8;
+    }
+    if (remove != 0) {
+        func_1516972C(record);
+    }
 }
 
 void func_1515C0B8(u8 *arg0, s32 arg1, u8 arg2) {
