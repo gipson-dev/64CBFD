@@ -26358,3 +26358,5 @@ game_161520,func_1513A48C,0x0C4,0x27A4002C,0x24C60000,-,R_MIPS_LO16:D_800A4264,D
 game_161520,func_1513A48C,0x0C8,0x24070001,0x24A50000,-,R_MIPS_LO16:D_800A4260,Derive initial scale snapshot and independent packet store schedules,,,false
 game_161520,func_1513A48C,0x0CC,0xE7A0005C,0x27A4002C,-,-,Derive initial scale snapshot and independent packet store schedules,,,false
 game_161520,func_1513A48C,0x0D0,0xE7A00060,0x24070001,-,-,Derive initial scale snapshot and independent packet store schedules,,,false
+generated_173D40,func_15146D60,0x034,0xAFA70020,0xAFA70024,-,-,Derive closed saved-mode stack lifetime from SP+0x20 to retail SP+0x24,,,false
+generated_173D40,func_15146D60,0x0F8,0x8FAB0020,0x8FAB0024,-,-,Derive closed saved-mode stack lifetime from SP+0x20 to retail SP+0x24,,,false
