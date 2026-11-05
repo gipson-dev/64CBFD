@@ -26402,3 +26402,12 @@ generated_105760,func_150D82BC,0xf0,0x4810002,0x4e10002,-,-,Normalize closed mat
 generated_105760,func_150D82BC,0xf4,0x803025,0xe03025,-,-,Normalize closed material tile callback register allocation,,,false
 generated_105760,func_150D82BC,0xf8,0x8e3021,0xef3021,-,-,Normalize closed material tile callback register allocation,,,false
 generated_105760,func_150D82BC,0x10c,0xac690000,0xac890000,-,-,Normalize closed material tile callback register allocation,,,false
+generated_197120,func_1516A538,0x0,0x27bdffb8,0x27bdffb0,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x1c,0xafa40048,0xafa40050,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x28,0x8fa40048,0x8fa40050,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x30,0xafaf0044,0xafaf0048,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x3c,0xafb80040,0xafb80044,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x48,0x8fa40048,0x8fa40050,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x4c,0x8fab0044,0x8fab0048,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0xac,0x8fae0040,0x8fae0044,-,-,Normalize randomized effect frame and two spill slots,,,false
+generated_197120,func_1516A538,0x104,0x27bd0048,0x27bd0050,-,-,Normalize randomized effect frame and two spill slots,,,false
