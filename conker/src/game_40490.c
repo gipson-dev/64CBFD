@@ -210,7 +210,7 @@ s32 func_15014094(u8 *record) {
     *(f32 *)(data + 4) = func_15144598((struct134 *)record);
     *(f32 *)(data + 8) = 0.0f;
     func_1510F800(0);
-    *(s32 *)(data + 0xC) = func_1510FD20(*(s16 *)(record + 0), *(s16 *)(record + 4));
+    *(s32 *)(data + 0xC) = (s32)func_1510FD20(*(s16 *)(record + 0), *(s16 *)(record + 4));
     data[0x2C] = 0;
     effect = (u8 *)func_15149130(0x12C, -1, 0x21, -1, 0, 0, (struct37 *)0x34, 0xFF, 1);
     if (effect != NULL) {
@@ -308,7 +308,7 @@ s32 func_15015104(u8 *arg0) {
     data.unk0 = arg0;
     data.unk4 = *(s32 *)(arg0 + 0x1C);
     func_1510F800(0);
-    data.unk8 = func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
+    data.unk8 = (s32)func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
 
     flags = *(s32 *)(arg0 + 0x20);
     data.unkC = (flags ? 1 : 0) | (flags ? 2 : 0);
@@ -357,7 +357,7 @@ s32 func_15015644(u8 *arg0) {
     data.unk0 = arg0;
     data.unk4 = func_15144598((struct134 *)arg0);
     func_1510F800(0);
-    data.unk8 = func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
+    data.unk8 = (s32)func_1510FD20(*(s16 *)(arg0 + 0), *(s16 *)(arg0 + 4));
     data.unkC = 0;
 
     temp_v0 = (u8 *)func_15149130(0x12C, -1, 0x44, -1, 0, 0x2F, (struct37 *)0x10, 0xFF, 0);

@@ -5,7 +5,7 @@ extern u8 *D_800DBDC8;
 extern f32 D_800DBDCC, D_800DBDD0;
 extern s16 D_800DBE30[];
 extern s32 D_800BE9F0;
-u8 *func_1510FD20();
+u8 *func_1510FD20(s32, s32);
 s32 func_1510FE30(u8 *);
 void func_150A6760(s32);
 void func_150F33F8(s32);
@@ -172,9 +172,41 @@ void func_1510FC34(s32 view) {
     }
 }
 
-u8 *func_1510FD20() {
-    return 0;
+/* Keep the N64's wrapping absolute difference, including INT_MIN. */
+#define SPATIAL_ABS_13BB20(value) ((value) < 0 ? (s32)(0u - (u32)(value)) : (value))
+
+/* Find the first containing leaf in the signed-relative spatial record chain. */
+u8 *func_1510FD20(s32 x, s32 z) {
+    u8 *node = D_800DBE48;
+    s32 child;
+    s32 offset;
+
+    while (node != NULL) {
+        child = *(s16 *)(node + 12);
+        if (child != 0) {
+            if (SPATIAL_ABS_13BB20((s32)((u32)x - (u32)*(s16 *)(node + 8))) <= *(u16 *)(node + 6) &&
+                SPATIAL_ABS_13BB20((s32)((u32)z - (u32)*(s16 *)(node + 10))) <= *(u16 *)(node + 6)) {
+                node += child;
+            } else {
+                offset = *(s16 *)(node + 4);
+                if (offset != 0) node += offset;
+                else node = NULL;
+            }
+        } else {
+            if (SPATIAL_ABS_13BB20((s32)((u32)x - (u32)*(s16 *)(node + 8))) <= *(u16 *)(node + 6) &&
+                SPATIAL_ABS_13BB20((s32)((u32)z - (u32)*(s16 *)(node + 10))) <= *(u16 *)(node + 6)) {
+                return node;
+            } else {
+                offset = *(s16 *)(node + 4);
+                if (offset != 0) node += offset;
+                else node = NULL;
+            }
+        }
+    }
+    return NULL;
 }
+
+#undef SPATIAL_ABS_13BB20
 
 s32 func_1510FE30(u8 *arg0) {
     u8 *current = D_800DBE48;

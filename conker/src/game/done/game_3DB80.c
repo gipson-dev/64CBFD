@@ -14,7 +14,7 @@ s32 func_150106D0(struct39 *arg0) {
 
     func_1510F800(0);
 
-    tmp.unk8 = func_1510FD20(arg0->unk0, arg0->unk4);
+    tmp.unk8 = (s32)func_1510FD20(arg0->unk0, arg0->unk4);
     if (tmp.unk8 == 0) {
         return 1;
     } else {

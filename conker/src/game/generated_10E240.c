@@ -11,7 +11,7 @@ typedef struct {u8 index;u8 retained[3];PresetHeader *resource;s32 handle;f32 ze
 extern u8 D_800A0FE0[2];
 PresetHeader *func_151149AC(u32);
 void func_1510F800(s32);
-s32 func_1510FD20(s32,s32);
+u8 *func_1510FD20(s32, s32);
 void *func_15149130(s16,s8,s8,s8,u8,u8,s32,u8,s32);
 void *memcpy(void *,const void *,u32);
 /* Build the selected preset's sixteen-byte effect payload. */
@@ -30,7 +30,7 @@ void *func_150E1060(u8 index, u8 variant, s32 flags) {
         return NULL;
     }
     func_1510F800(0);
-    packet.handle = func_1510FD20(packet.resource->x, packet.resource->y);
+    packet.handle = (s32)func_1510FD20(packet.resource->x, packet.resource->y);
     packet.zero = 0.0f;
     created = func_15149130(300,-1,31,-1,0,31,16,variant,flags);
     if (created != NULL) {

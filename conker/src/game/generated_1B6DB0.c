@@ -25,7 +25,7 @@ typedef struct {
 
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void func_1510F800(s32);
-s32 func_1510FD20(s32, s32);
+u8 *func_1510FD20(s32, s32);
 void *memcpy(void *, const void *, u32);
 
 /* Recovered function and remaining placeholders for asm/1B6DB0.s. */
@@ -41,7 +41,7 @@ void func_15189900(MotionEffectDescriptor15189900 *descriptor, u8 enabled) {
     if (effect != NULL) {
         memcpy(&effect->descriptor, descriptor, sizeof(*descriptor));
         func_1510F800(0);
-        effect->spatialHandle = func_1510FD20(
+        effect->spatialHandle = (s32)func_1510FD20(
             (s32)(effect->descriptor.positionX + effect->descriptor.velocityX * 0.5f),
             (s32)(effect->descriptor.positionZ + effect->descriptor.velocityZ * 0.5f));
         if (enabled != 0) {
