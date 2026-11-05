@@ -1,5 +1,7 @@
 # Working Notes
 
+**Dual damped motion directly matched**: [Note 2098](WORKING_NOTES/2098-game-dual-damped-motion-direct-match-20261105.md). `func_15197AB4`: 66 direct words/frame0, no guards, eight focused checks, 68 neighbors, two bindings and strict production closure. Production **4,169/5,512 (75.63%)**, Game **3,496/4,839 (72.25%)**, zero drift; **241 more** to 80%. Next: `func_151A0AF8`.
+
 **Animation state tick directly matched**: [Note 2097](WORKING_NOTES/2097-game-animation-state-tick-direct-match-20261105.md). `func_15167B44`: 69 direct words/frame24, no guards, nine focused checks, 41 neighbors, three bindings and strict production closure. Production **4,168/5,512 (75.62%)**, Game **3,495/4,839 (72.23%)**, zero drift; **242 more** to 80%. Next: `func_15197AB4`.
 
 **Packed record color query directly matched**: [Note 2096](WORKING_NOTES/2096-game-record-color-query-direct-match-20261105.md). `func_1515E43C`: 66 direct words/frame32, no guards, nine focused checks, 34 neighbors, eleven bindings and strict production closure. Production **4,167/5,512 (75.60%)**, Game **3,494/4,839 (72.21%)**, zero drift; **243 more** to 80%. Next: `func_15167B44`.

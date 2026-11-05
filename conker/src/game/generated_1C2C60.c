@@ -41,6 +41,19 @@ typedef struct {
     s16 scale;
 } Generated1C2C60Params;
 
+typedef struct {
+    u8 retained00[0x34];
+    f32 position[3];
+    f32 endPoint[3];
+    u8 retained4C[0xF4];
+    f32 velocity[3];
+    f32 endVelocity[3];
+    f32 verticalAcceleration;
+    f32 damping;
+    f32 endDamping;
+} DualDampedMotion15197AB4;
+extern f32 D_800BE9A4;
+
 /* Non-matching placeholders for the text-only asm slice asm/1C2C60.s. */
 
 s32 func_1519CDB0(s32 arg0, f32 arg1, s32 arg2);
@@ -271,8 +284,25 @@ void func_15197A7C(u8 *arg0) {
     }
 }
 
-s32 func_15197AB4() {
-    return 0;
+/* Damp and accelerate each velocity triple, then advance its own point. */
+s32 func_15197AB4(DualDampedMotion15197AB4 *motion) {
+    f32 damping = motion->damping;
+    f32 acceleration = motion->verticalAcceleration;
+    f32 endDamping = motion->endDamping;
+
+    motion->velocity[0] *= damping;
+    motion->velocity[1] += acceleration * D_800BE9A4;
+    motion->velocity[2] *= damping;
+    motion->endVelocity[0] *= endDamping;
+    motion->endVelocity[1] += acceleration * D_800BE9A4;
+    motion->endVelocity[2] *= endDamping;
+    motion->position[0] += motion->velocity[0] * D_800BE9A4;
+    motion->position[1] += motion->velocity[1] * D_800BE9A4;
+    motion->position[2] += motion->velocity[2] * D_800BE9A4;
+    motion->endPoint[0] += motion->endVelocity[0] * D_800BE9A4;
+    motion->endPoint[1] += motion->endVelocity[1] * D_800BE9A4;
+    motion->endPoint[2] += motion->endVelocity[2] * D_800BE9A4;
+    return 1;
 }
 
 s32 func_15197BBC(u8 *arg0) {
