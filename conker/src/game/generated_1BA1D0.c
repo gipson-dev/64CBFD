@@ -1,5 +1,18 @@
 #include <ultra64.h>
 #include "structs.h"
+
+typedef struct {
+    u8 retained00[0x34];
+    f32 position[3];
+    f32 endPoint[3];
+    u8 retained4C[0xF4];
+    f32 velocity[3];
+    f32 verticalAcceleration;
+    f32 damping;
+    u8 retained154[8];
+    f32 blend;
+} BlendedDualPointMotion1518EF54;
+
 typedef struct {
     u8 retained00[0x10];
     u8 *owner;
@@ -261,8 +274,33 @@ s32 func_1518EB10() {
     return 0;
 }
 
-s32 func_1518EF54() {
-    return 0;
+/* Advance both damped points, then blend the endpoint toward the position. */
+s32 func_1518EF54(BlendedDualPointMotion1518EF54 *motion) {
+    struct BlendedPointPayload1518EF54 {
+        u8 retained00[0x4C];
+        f32 blend;
+    } *payload = (void *)((u8 *)motion + 0x110);
+    f32 damping = motion->damping;
+    f32 step;
+    f32 dx, dy, dz;
+
+    motion->velocity[0] *= damping;
+    motion->velocity[1] += motion->verticalAcceleration * D_800BE9A4;
+    motion->velocity[2] *= damping;
+    step = D_800BE9A4;
+    dx = motion->velocity[0] * step;
+    dy = motion->velocity[1] * step;
+    dz = motion->velocity[2] * step;
+    motion->position[0] += dx;
+    motion->position[1] += dy;
+    motion->position[2] += dz;
+    motion->endPoint[0] += dx;
+    motion->endPoint[1] += dy;
+    motion->endPoint[2] += dz;
+    motion->endPoint[0] = motion->position[0] + (motion->endPoint[0] - motion->position[0]) * motion->blend;
+    motion->endPoint[1] = motion->position[1] + (motion->endPoint[1] - motion->position[1]) * payload->blend;
+    motion->endPoint[2] = motion->position[2] + (motion->endPoint[2] - motion->position[2]) * payload->blend;
+    return 1;
 }
 
 typedef struct {
