@@ -26195,3 +26195,12 @@ generated_185560,func_15158BD0,0x0A8,0xC608001C,0xA0400031,-,-,Normalize owner-e
 generated_185560,func_15158BD0,0x0B8,0xACCA0010,0xACCB0010,-,-,Normalize owner-effect record factory compiler scheduling,,,false
 generated_185560,func_15158BD0,0x0BC,0xA0490031,0xA04A0031,-,-,Normalize owner-effect record factory compiler scheduling,,,false
 generated_185560,func_15158BD0,0x0C0,0xACCA0010,0xACCB0010,-,-,Normalize owner-effect record factory compiler scheduling,,,false
+generated_133190,func_15107E48,0x000,0x27BDFFC0,0x27BDFFC8,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x014,0xAFA50044,0xAFA5003C,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x048,0x8FA80044,0x8FA8003C,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x068,0x27A9002C,0x27A90024,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x094,0xC7A4002C,0xC7A40024,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x09C,0xC7A80030,0xC7A80028,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x0A8,0x8FAD0044,0x8FAD003C,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x0C0,0xC7B00034,0xC7B0002C,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false
+generated_133190,func_15107E48,0x108,0x27BD0040,0x27BD0038,-,-,Normalize linked-matrix point callback frame and snapshot homes,,,false

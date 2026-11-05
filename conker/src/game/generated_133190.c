@@ -221,8 +221,34 @@ s32 func_15107C1C() {
     return 0;
 }
 
-s32 func_15107E48() {
-    return 0;
+void func_15107F54(u8 *, u8, u8 *, u8 *);
+
+/* Transform a valid linked actor point and refresh its fractional points if moved. */
+s32 func_15107E48(u8 *owner, u8 *changed) {
+    u8 *link = *(u8 **)(owner + 0x60);
+    u8 *actor = *(u8 **)link;
+    struct17 original;
+    f32 *savedPoint;
+    f32 *point;
+
+    if (*(s32 *)actor == 0 || link[4] != actor[0x3B]) {
+        return 0;
+    }
+    if ((point = (f32 *)(owner + 0x14), *(s32 *)(actor + 0x1D4) == 0)) {
+        return 0;
+    }
+    *changed = 0;
+    original = *(struct17 *)point;
+    savedPoint = point;
+    func_15107F54(actor, link[0x14], link + 8, (u8 *)point);
+    if (original.unk0 != *(f32 *)(owner + 0x14) ||
+            original.unk4 != *(f32 *)(owner + 0x18) ||
+            original.unk8 != *(f32 *)(owner + 0x1C)) {
+        *changed = 1;
+        func_15107AE0(savedPoint, (f32 *)(owner + 0x38),
+                      (f32 *)(owner + 0x20), (f32 *)(owner + 0x2C));
+    }
+    return 1;
 }
 
 void func_15107F54(u8 *arg0, u8 arg1, u8 *arg2, u8 *arg3) {
