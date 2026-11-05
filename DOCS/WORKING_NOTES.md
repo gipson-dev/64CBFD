@@ -1,5 +1,7 @@
 # Working Notes
 
+**Settle/fade callback matched directly from C**: [Note 2085](WORKING_NOTES/2085-game-settle-fade-direct-match-20261105.md). `func_1517A84C`: 67 exact words/frame24, no guards, signed motion/spin, landing transition and wrapped signed fade. Guest/native/control/dispatcher checks, ten neighbors, three bindings and strict production image pass. Production **4,156/5,512 (75.40%)**, Game **3,483/4,839 (71.98%)**, zero drift; **254 more** to 80%. Next: `func_1518C900`.
+
 **Object-follow updater matched directly from C**: [Note 2084](WORKING_NOTES/2084-game-object-follow-update-direct-match-20261104.md). `func_1515BFA8`: 68 exact words/frame24, no guards, wrapped timer, stale-object gates, position history, reverse displacement and live scale aliases. Guest/native/control/dispatcher checks, ten neighbors, five bindings and the strict production image pass. Production **4,155/5,512 (75.38%)**, Game **3,482/4,839 (71.96%)**, zero drift; **255 more** to 80%. Next: `func_1517A84C`.
 
 **Linked matrix point update matched as guarded C**: [Note 2083](WORKING_NOTES/2083-game-linked-matrix-point-update-guarded-match-20261104.md). `func_15107E48`: 67 exact words, frame56 after nine checked frame/home rows, six connected original helpers, live index/matrix aliases, original callback dispatcher, 36 unchanged neighbors and strict production image. Five installed tests, shared regressions and tools check pass. Production **4,154/5,512 (75.36%)**, Game **3,481/4,839 (71.94%)**, zero drift; **256 more** to 80%. Next: `func_1515BFA8`.
