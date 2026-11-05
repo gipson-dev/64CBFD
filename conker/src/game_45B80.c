@@ -63,7 +63,7 @@ extern u8 D_800BE630[], D_800BEBA0, D_800BEAC2;
 extern s32 D_800BEBA4;
 void func_1517E1AC(void);
 void func_151412BC(void);
-s32 func_151E51EC(void);
+void func_151E51EC(void);
 void func_1501A39C(void);
 void func_1510B3B0(void);
 void func_1510B51C(void);

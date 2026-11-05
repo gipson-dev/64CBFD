@@ -18,7 +18,7 @@ extern s8 D_8008FD8C;
 extern s8 D_800E0BEB;
 extern s8 D_800E0C00[];
 extern u8 D_800BE616;
-extern u8 D_8008FE28;
+extern s8 D_8008FE28;
 extern u8 D_800E0B98;
 extern u8 D_800E0B97;
 extern s32 D_800E0A90;
@@ -481,8 +481,41 @@ void func_151E50C8(void) {
     D_800E0B95 = D_800E0B94;
 }
 
-s32 func_151E51EC() {
-    return 0;
+extern s32 D_8003C8E0;
+extern u8 D_800E0BDC;
+extern u16 D_800BE930;
+extern void (*D_8008FDEC[])(void);
+void func_15042D78(u8);
+s32 func_151E6964();
+
+/* Run the live mode callback and account for time outside mode 7. */
+void func_151E51EC(void) {
+    u8 previous = D_800E0B94;
+
+    D_8003C8E0 = 0x08000000;
+    D_800E0BDC = 255;
+    func_15042D78(0x81);
+    D_800E0B9A = D_800BE930;
+    if (D_8008FE28 != 0) {
+        D_8008FE28--;
+        D_800E0B9A = 0;
+    }
+    if (D_800E0B94 == 0) {
+        func_151E6964(2);
+    } else if (D_800E0B94 == 8) {
+        func_151E6964(4);
+    } else {
+        func_151E6964(1);
+    }
+    D_8008FDEC[D_800E0B94]();
+    if (D_800E0B94 != 7) {
+        D_800E0A90 = (u32)D_800E0A90 + (u32)D_800BE9E4;
+        if (D_800E0B94 != previous) {
+            D_800E0B95 = previous;
+            D_800E0A90 = 0;
+        }
+    }
+    D_8003C8E0 = 0;
 }
 
 /* Decay the status intensity, then derive a replacement from an active record. */
