@@ -1,5 +1,7 @@
 # Working Notes
 
+**Animation-gated material tile callback matched as guarded C**: [Note 2103](WORKING_NOTES/2103-game-material-tile-animation-guarded-match-20261105.md). `func_150D82BC`: 71 words/frame 0, nine register guards, four bindings, eight neighbors, seven focused checks and literal full-image production proof. Production **4,174/5,512 (75.73%)**, Game **3,501/4,839 (72.35%)**, zero drift; **236 more** to 80%. Next: `func_1510FD20`; handwritten `func_150A70C0` joins the separate eight-case boundary list.
+
 **Seven-field player status accessor directly matched**: [Note 2102](WORKING_NOTES/2102-game-player-status-accessor-direct-match-20261105.md). `func_150859AC`: 68 direct words/frame0, no guards, sixteen bindings, seven neighbors, an existing switch-pool binding, eight focused checks and unchanged fifteen caller objects. Production **4,173/5,512 (75.71%)**, Game **3,500/4,839 (72.33%)**, zero drift; **237 more** to 80%. Next: `func_150A70C0`.
 
 **Live sequence catch-up matched as guarded C**: [Note 2101](WORKING_NOTES/2101-game-sequence-catchup-guarded-match-20261105.md). `func_1501E2F8`: 66 exact words/frame56, seventeen derived prologue scheduling rows, fourteen bindings, 56 neighbors, nine focused checks, unchanged typed caller object and strict production closure. Production **4,172/5,512 (75.69%)**, Game **3,499/4,839 (72.31%)**, zero drift; **238 more** to 80%. Next: `func_150859AC`.

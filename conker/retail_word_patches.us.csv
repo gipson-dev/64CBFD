@@ -26393,3 +26393,12 @@ generated_49D30,func_1501E2F8,0x038,0x26730000,0x26B50000,R_MIPS_LO16:D_800C3C8C
 generated_49D30,func_1501E2F8,0x040,0x26B50000,0x26730000,R_MIPS_LO16:D_800C35B0,R_MIPS_LO16:D_800C3C8C,Derive the closed sequence catch-up prologue scheduling permutation,,,false
 generated_49D30,func_1501E2F8,0x044,0x26D60000,0xAFBF0034,R_MIPS_LO16:D_800C3640,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
 generated_49D30,func_1501E2F8,0x048,0x24120001,0xAFB00018,-,-,Derive the closed sequence catch-up prologue scheduling permutation,,,false
+generated_105760,func_150D82BC,0xcc,0x6c1821,0x6c2021,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xd0,0x8c620000,0x8c820000,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xd8,0x26b03,0x27303,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xe0,0x31ae0fff,0x31cf0fff,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xe8,0x44043000,0x44073000,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xf0,0x4810002,0x4e10002,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xf4,0x803025,0xe03025,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0xf8,0x8e3021,0xef3021,-,-,Normalize closed material tile callback register allocation,,,false
+generated_105760,func_150D82BC,0x10c,0xac690000,0xac890000,-,-,Normalize closed material tile callback register allocation,,,false

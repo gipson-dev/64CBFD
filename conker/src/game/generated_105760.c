@@ -5,7 +5,38 @@
 void func_150D82B0(s32 arg0) {
 }
 
-s32 func_150D82BC() {
+extern s32 D_80090298[];
+extern f32 D_800A0B10;
+
+/* Select the animation material and move its first tile-size command. */
+s32 func_150D82BC(u8 *material, u8 *actor) {
+    u8 *animation;
+    Gfx *commands;
+    s32 index;
+    f32 fraction;
+    s32 offset;
+    s32 coordinate;
+    s32 previous;
+
+    animation = *(u8 **)(actor + 0x2D0);
+    if (animation == NULL) return 0;
+    *(s16 *)(material + 0x18) = D_80090298[6];
+    if (*(u16 *)(actor + 0x84) == 13) {
+        if (*(f32 *)(animation + 8) >= 23.0f &&
+            *(f32 *)(animation + 8) <= 40.0f) {
+            *(s16 *)(material + 0x18) = D_80090298[7];
+            fraction = *(f32 *)(animation + 8) - 23.0f;
+            fraction *= D_800A0B10;
+            commands = **(Gfx ***)(material + 0x24);
+            for (index = 0; *(s8 *)&commands[index] != -14; index++) {}
+            commands += index;
+            previous = (*(s32 *)commands >> 12) & 0xFFF;
+            offset = 70.0f * fraction + 2.0f;
+            coordinate = offset;
+            if (offset < 0) coordinate = offset + previous;
+            commands->words.w0 = ((coordinate & 0xFFF) << 12) | 0xF2000000 | 2;
+        }
+    }
     return 0;
 }
 
