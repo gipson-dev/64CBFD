@@ -20,6 +20,50 @@ extern f32 D_800A0280;
 extern f32 D_800A0284;
 extern f32 D_800A0268;
 extern f32 D_800A026C;
+typedef struct {
+    s16 kind;
+    s16 mode;
+    s16 offset;
+    s16 eventCode;
+} EffectBandDescriptor150C2700;
+
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+    s16 type;
+    s16 variant;
+    f32 width;
+    f32 height;
+    s16 lifetime;
+    s16 zero;
+    f32 parameter0;
+    f32 parameter1;
+    u8 opacity;
+    u8 scale;
+    u8 reserved26[2];
+    f32 parameter2;
+    f32 velocity;
+    u8 active;
+    u8 classId;
+    u8 reserved32[2];
+    f32 acceleration;
+    u8 loop;
+    u8 reserved39[3];
+    f32 phase;
+} EffectBandPayload150C2700;
+
+typedef struct {
+    EffectBandDescriptor150C2700 descriptor;
+    EffectBandPayload150C2700 payload;
+} EffectBandLocals150C2700;
+
+extern f32 D_800A0274;
+extern f32 D_800A0278;
+extern f32 D_800A027C;
+void func_15150178(EffectBandDescriptor150C2700 *,
+                   EffectBandPayload150C2700 *, s32, u8, s32);
+
 void func_1514C470(f32, f32, f32, f32, f32, f32, f32, s32, s32, f32, void *, u8);
 f32 *func_15144B34(s32);
 void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
@@ -28,7 +72,10 @@ void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 s32 func_150C1F60();
 s32 func_150C2290();
 s32 func_150C2558();
-s32 func_150C2700();
+s32 func_150C2700(
+        void *unusedOwner, s32 unusedEvent, f32 x, f32 y, f32 z,
+        s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
+        s32 unused10, s32 unused11, s32 unused12, s32 unused13, u8 channel);
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C2898();
 s32 func_150C29F0();
@@ -172,10 +219,41 @@ s32 func_150C251C(struct202 *arg0) {
 s32 func_150C2558() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2700.s. */
-s32 func_150C2700() {
-    return 0;
+/* Submit the fixed effect-band descriptor and caller position packet. */
+s32 func_150C2700(
+        void *unusedOwner, s32 unusedEvent, f32 x, f32 y, f32 z,
+        s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
+        s32 unused10, s32 unused11, s32 unused12, s32 unused13, u8 channel) {
+    EffectBandLocals150C2700 locals;
+
+    locals.descriptor.kind = 0x6B;
+    locals.descriptor.mode = 0x46;
+    locals.descriptor.offset = -0x1F;
+    locals.descriptor.eventCode = 0x2E;
+    locals.payload.x = x;
+    locals.payload.y = y;
+    locals.payload.z = z;
+    locals.payload.type = 6;
+    locals.payload.variant = 5;
+    locals.payload.width = 30.0f;
+    locals.payload.height = 35.0f;
+    locals.payload.lifetime = 100;
+    locals.payload.zero = 0;
+    locals.payload.parameter0 = D_800A0274;
+    locals.payload.parameter1 = D_800A0278;
+    locals.payload.opacity = 0x9B;
+    locals.payload.scale = 100;
+    locals.payload.parameter2 = D_800A027C;
+    locals.payload.velocity = 0.0f;
+    locals.payload.active = 1;
+    locals.payload.classId = 6;
+    locals.payload.acceleration = 0.0f;
+    locals.payload.loop = 1;
+    locals.payload.phase = 0.0f;
+    func_15150178(&locals.descriptor, &locals.payload, 0, channel, 1);
+    return 1;
 }
+
 /* Float-reference effect packet dispatch. */
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context) {
     PacketEF410 packet;
