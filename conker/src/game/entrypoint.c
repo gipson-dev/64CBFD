@@ -7,7 +7,7 @@ void func_15003570(void);
 void func_10008180(void);
 void func_15006234(void);
 void func_15008A60(void);
-void func_15015920(s32);
+void func_15015920(s16);
 void func_15016588(void);
 void func_15017498(void);
 void func_150186D0(void);
