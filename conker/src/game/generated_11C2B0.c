@@ -40,7 +40,7 @@ void func_151C329C(struct17 *, s32, s32);
 
 extern s32 D_800A1674;
 extern s32 D_800A1680;
-s32 func_15160A58(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32);
+struct225 *func_15160A58(u8 *, u8, void *, u8, s16, s32, s32, s32, s32, s32, s32, s8, s32, u8, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/11C2B0.s. */
 
@@ -315,8 +315,8 @@ void func_150F088C(u8 *owner, u8 *eventBytes, u8 command) {
 
 /* Submit the two preset descriptors through the common 16-argument helper. */
 void func_150F0938(s32 context) {
-    func_15160A58(context, 0x25, (s32)&D_800A1674, 2, 0x12C, 4, 0, 0xFF, 0, 0xFF, 0, -1, 0, 0, 0xFF, 1);
-    func_15160A58(context, 2, (s32)&D_800A1680, 2, 0x12C, 0xD, 0xFF, 0xFF, 0xFF, 0xFF, 0, -1, 0, 0, 0xFF, 1);
+    func_15160A58((u8 *)context, 0x25, &D_800A1674, 2, 0x12C, 4, 0, 0xFF, 0, 0xFF, 0, -1, 0, 0, 0xFF, 1);
+    func_15160A58((u8 *)context, 2, &D_800A1680, 2, 0x12C, 0xD, 0xFF, 0xFF, 0xFF, 0xFF, 0, -1, 0, 0, 0xFF, 1);
 }
 
 s32 func_150F0A24() {

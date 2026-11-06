@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <string.h>
+#include "structs.h"
 extern void (*D_8008AB58[])();
 extern s16 *D_8008ABE8[];
 void func_1516972C();
@@ -22,7 +23,7 @@ void *func_15158BD0(u8 *, u8, s32);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1514EC1C(s32 arg0, s32 arg1, s16 arg2);
 s32 func_1515BE50(void *arg0, s32 arg1, u8 arg2, s32 arg3);
-s32 func_15160A58();
+struct225 *func_15160A58(u8 *, u8, void *, u8, s16, s32, s32, s32, s32, s32, s32, s8, s32, u8, u8, s32);
 void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
                     u8 arg5, s32 arg6, u8 arg7, s32 arg8);
 extern u8 D_800A5920[];
@@ -294,8 +295,8 @@ void func_1514DB98(u8 *arg0) {
 
 /* Note 530: fixed resource-constructor call and complete argument schedule. */
 s32 func_1514DBB8(s32 arg0) {
-    return func_15160A58(
-        arg0, 2, D_800A58A0, 2,
+    return (s32)func_15160A58(
+        (u8 *)arg0, 2, D_800A58A0, 2,
         0x12C, 0x28, 0xFF, 0xFF,
         0xFF, 0xFF, 0, -1,
         0, 0, 0xFF, 1);

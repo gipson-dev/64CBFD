@@ -1,6 +1,16 @@
 #include <ultra64.h>
 #include "functions.h"
 #include "variables.h"
+typedef struct {
+    u8 *owner;
+    u8 identity, kind;
+    u8 pad06[2];
+    struct17 vector;
+    s8 tag;
+    u8 flags;
+    u8 pad16[2];
+} OwnerVectorPayload15160A58;
+
 
 typedef struct {
     u32 key;
@@ -44,7 +54,7 @@ void func_150A7960(f32 matrix[4][4], f32, f32, f32, f32 *, f32 *, f32 *);
 /* Generated placeholder declarations. */
 s32 func_151604A0();
 s32 func_151606A8(struct225 *arg0);
-s32 func_15160A58(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
+struct225 *func_15160A58(u8 *, u8, void *, u8, s16, s32, s32, s32, s32, s32, s32, s8, s32, u8, u8, s32);
 s32 func_15160B74();
 s32 func_15160CDC();
 s32 func_15160E30();
@@ -245,55 +255,39 @@ void func_15160954(f32 *arg0, f32 *arg1, f32 *arg2, f32 *arg3, struct225 *arg4) 
         func_151618BC(25000, 0, 0, 0, &tmp, 500, 1500);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160A58.s. */
-s32 func_15160A58(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15) {
-    return 0;
-}
-// struct225 *func_15160A58(void *arg0, u8 arg1, void *arg2, u8 arg3, s16 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s8 argB, s32 argC, u8 argD, u8 argE, s32 argF) {
-//     s32 sp64;
-//
-//     s8 sp60;
-//     s16 sp5E;
-//     s8 sp5D;
-//     u8 sp5C;
-//     u8 sp59;
-//     s8 sp58;
-//     ? sp4C;
-//     u8 sp49;
-//     u8 sp48;
-//     void *sp44;
-//
-//     ?32 sp40;
-//     ?32 sp3C;
-//     ?32 sp38;
-//     struct225 *temp_v0;
-//     s32 phi_v1;
-//
-//     if (arg0 == 0) {
-//         return NULL;
-//     }
-//     sp5C = arg3;
-//     sp5D = 5;
-//     sp60 = 0x10;
-//     sp5E = arg4;
-//     sp44 = arg0;
-//     sp49 = arg1;
-//     sp48 = arg0->unk3B;
-//     sp4C.unk0 = (s32) arg2->unk0;
-//     sp4C.unk4 = (s32) arg2->unk4;
-//     sp4C.unk8 = (s32) arg2->unk8;
-//     sp38 = 0;
-//     sp3C = 0;
-//     sp40 = 0;
-//     sp58 = argB;
-//     sp59 = argD;
-//     temp_v0 = func_151602C0(&sp5C, &sp38, arg5, arg6, arg7, arg8, 0xFF, 0, argC + 0x18, argE, argF);
-//     if (temp_v0 != NULL) {
-//         memcpy(&temp_v0->unk18, &sp44, 0x18);
-//     }
-//     return temp_v0;
-// }
+/* Construct an owner/vector payload and append it after the record header. */
+struct225 *func_15160A58(u8 *owner, u8 kind, void *vector, u8 headerId,
+                       s16 lifetime, s32 first, s32 second, s32 third, s32 fourth,
+                       s32 unused9, s32 unused10, s8 payloadTag, s32 extraBytes,
+                       u8 flags, u8 priority, s32 userData) {
+    struct225 *result;
+    Header header;
+    OwnerVectorPayload15160A58 payload;
+    Header2 zero;
 
+    if (owner == 0) {
+        return 0;
+    }
+    header.unk0 = headerId;
+    header.unk1 = 5;
+    header.unk2 = lifetime;
+    header.unk4 = 0x10;
+    payload.owner = owner;
+    payload.identity = owner[0x3B];
+    payload.kind = kind;
+    payload.vector = *(struct17 *)vector;
+    zero.unk0 = 0;
+    zero.unk4 = 0;
+    zero.unk8 = 0;
+    payload.tag = payloadTag;
+    payload.flags = flags;
+    result = func_151602C0(&header, &zero, first, second, third, fourth,
+                          255, 0, (s32)((u32)extraBytes + sizeof(payload)), priority, userData);
+    if (result != 0) {
+        memcpy((u8 *)result + 0x18, &payload, sizeof(payload));
+    }
+    return result;
+}
 // ??
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160B74.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_15160B74.s")
@@ -1181,7 +1175,7 @@ struct225 *func_15163BE8(s32 arg0, u8 arg1, s32 arg2) {
     src[2] = func_150ADA68() * D_800A6B0C;
     src[3] = D_800A69D4[6];
 
-    temp_v0 = func_15160A58(arg0, 1, &D_800A6A0C, 2, 300, 100, 0, 0xFF, 0, 0xFF, 0, 0, sizeof(src), 1, arg1, arg2);
+    temp_v0 = func_15160A58((u8 *)arg0, 1, &D_800A6A0C, 2, 300, 100, 0, 0xFF, 0, 0xFF, 0, 0, sizeof(src), 1, arg1, arg2);
     if (temp_v0 != NULL) {
         memcpy(&temp_v0->unk30, &src, sizeof(src));
     }
