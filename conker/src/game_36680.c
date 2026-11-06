@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+struct225 *func_151623F4(struct226 *, u8, u8, u8, s8, s16, u8, s32);
+
 u32 func_1502B8E0(void *buffer, u32 cap, u32 depth, ...);
 
 typedef struct { u8 values[2][3]; } EffectSelectorTable36680;
@@ -165,7 +167,7 @@ void func_150098D0(s32 arg0, s32 arg1) {
 }
 
 void func_150098F8(s32 arg0, s32 arg1) {
-    func_151623F4(arg0, 1, 22, 0, -1, 300, 0xFF, 1);
+    func_151623F4((struct226 *)arg0, 1, 22, 0, -1, 300, 0xFF, 1);
 }
 
 void func_15009944(s32 arg0, s32 arg1) {
@@ -364,7 +366,7 @@ void func_1500A518(s32 arg0, s32 arg1) {
 }
 
 void func_1500A55C(s32 arg0, s32 arg1) {
-    func_151623F4(arg0, 1, 22, 0, -1, 300, 255, 1);
+    func_151623F4((struct226 *)arg0, 1, 22, 0, -1, 300, 255, 1);
 }
 
 void func_1500A5A8(s32 arg0, s32 arg1) {

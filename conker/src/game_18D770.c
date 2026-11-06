@@ -2,6 +2,13 @@
 #include "functions.h"
 #include "variables.h"
 typedef struct {
+    struct17 base;
+    struct17 amplitude;
+    f32 phase;
+    f32 rate;
+} SelectorPayload151623F4;
+
+typedef struct {
     u8 *owner;
     u8 identity, kind;
     u8 pad06[2];
@@ -60,7 +67,7 @@ s32 func_15160CDC();
 s32 func_15160E30();
 void func_151618BC(u16, s16, u8, s32, struct17 *, s16, s16);
 s32 func_151621B8();
-s32 func_151623F4();
+struct225 *func_151623F4(struct226 *, u8, u8, u8, s8, s16, u8, s32);
 s32 func_15162510();
 s32 func_1516295C();
 s32 func_15162B28();
@@ -765,10 +772,29 @@ s32 func_151621B8() {
 //     return temp_v0;
 // }
 
-// help.
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_151623F4.s. */
-s32 func_151623F4() {
-    return 0;
+/* Build a 32-byte payload from one of the three preset table rows. */
+struct225 *func_151623F4(struct226 *actor, u8 selector, u8 flags, u8 headerId,
+                       s8 kind, s16 lifetime, u8 priority, s32 userData) {
+    SelectorPayload151623F4 payload;
+    Header header;
+    struct225 *result;
+
+    if (selector >= 3) {
+        return 0;
+    }
+    payload.base = *(struct17 *)D_800A670C[selector];
+    payload.amplitude = *(struct17 *)D_800A6730[selector];
+    payload.phase = 0.0f;
+    payload.rate = D_800A6754[selector];
+    header.unk0 = headerId;
+    header.unk1 = kind;
+    header.unk2 = lifetime;
+    header.unk4 = flags;
+    result = func_1516037C(&header, actor, sizeof(payload), priority, userData);
+    if (result != 0) {
+        memcpy((u8 *)result + 0x18, &payload, sizeof(payload));
+    }
+    return result;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15162510.s. */
 s32 func_15162510() {
