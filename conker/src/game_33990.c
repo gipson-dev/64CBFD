@@ -16,6 +16,9 @@ s32 func_151DCEF0(OSMesgQueue *, s32, void *, s32);
 
 s32 func_151DD3A0(OSMesgQueue *, u8, u8 *, s32);
 s32 func_151DD4E0(OSMesgQueue *, u8, u8 *);
+extern u8 D_8008FE30;
+s32 func_151DD9E4();
+void func_151E7EF8(void);
 
 /* Generated placeholder declarations. */
 s32 func_15006590();
@@ -24,7 +27,7 @@ void func_1500707C(s32 slot);
 void func_15007168(void);
 void func_1500727C(void);
 void func_15007360(void);
-s32 func_15007440();
+void func_15007440(void);
 void func_15007558(void);
 /* End generated placeholder declarations. */
 
@@ -150,9 +153,53 @@ void func_15007360(void) {
         result = func_151DCEF0(&D_800BE900, 0x44, &D_800BE2F0, 0x70);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007440.s. */
-s32 func_15007440() {
-    return 0;
+/* Load the settings payload, retaining its live signed byte at offset 16. */
+void func_15007440(void) {
+    u16 checksum;
+    s32 index;
+    s8 saved;
+    s8 *settings;
+    s8 *cursor;
+    u8 *record;
+
+    func_151DD3A0(&D_800BE900, 0, D_800BE358, 32);
+    checksum = 0xCC;
+    record = D_800BE35A;
+    index = 2;
+    do {
+        checksum += *record++ << (index++ & 3);
+    } while (index < 30);
+    settings = D_800E0BE0;
+    saved = settings[16];
+    if (checksum != *(u16 *)D_800BE358) {
+        cursor = D_800E0BE0;
+        do {
+            cursor += 4;
+            cursor[-4] = -1;
+            cursor[-3] = -1;
+            cursor[-2] = -1;
+            cursor[-1] = -1;
+        } while ((u32)cursor != (u32)D_800E0BFC);
+    } else {
+        cursor = D_800E0BE0;
+        record = D_800BE358;
+        do {
+            u8 first = record[2];
+            u8 second = record[3];
+            u8 third = record[4];
+            u8 fourth = record[5];
+            cursor += 4;
+            record += 4;
+            cursor[-4] = first;
+            cursor[-3] = second;
+            cursor[-2] = third;
+            cursor[-1] = fourth;
+        } while ((u32)cursor != (u32)D_800E0BFC);
+    }
+    settings[16] = saved;
+    func_151DD9E4();
+    func_151E7EF8();
+    D_8008FE30 = 1;
 }
 /* Copy the settings payload, checksum it, and queue the 32-byte EEPROM record. */
 void func_15007558(void) {

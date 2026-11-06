@@ -136,7 +136,7 @@ RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.
 RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES)))
 RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
 	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
-	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o $(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o, \
+	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o $(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o $(BUILD_DIR)/$(SRC_DIR)/game_33990.c.o, \
 	$(RETAIL_PAD_O_FILES))
 UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
 else
@@ -562,6 +562,17 @@ $(RETAIL_PAD_PLAIN_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../tools/p
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s --word-patches retail_word_patches.us.csv $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# Keep normal-profile neighbors; select the settings loader's scalar checksum
+# and explicit four-byte groups from its no-unroll object.
+$(BUILD_DIR)/$(SRC_DIR)/game_33990.c.o: \
+        $(SRC_DIR)/game_33990.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-loopunroll,0 $(MIPSBIT) -o $@.nounroll.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_33990 $@.padded.s \
+		--function-object func_15007440=$@.nounroll.compact --word-patches retail_word_patches.us.csv --rodata-symbol $(RETAIL_RODATA_SYMBOL)
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.nounroll.compact $@.padded.s
 
 # Only the two-row graphics initializer uses the retail no-unroll profile.
 # Keep every neighboring function in the established normal-profile object.

@@ -26413,3 +26413,49 @@ generated_197120,func_1516A538,0xac,0x8fae0040,0x8fae0044,-,-,Normalize randomiz
 generated_197120,func_1516A538,0x104,0x27bd0048,0x27bd0050,-,-,Normalize randomized effect frame and two spill slots,,,false
 game_33990,func_15007168,0x0,0x3c020000,0x3c030000,R_MIPS_HI16:D_800BE358,R_MIPS_HI16:D_800BE2F0,Normalize independent save-default address load scheduling,,,false
 game_33990,func_15007168,0x4,0x3c030000,0x3c020000,R_MIPS_HI16:D_800BE2F0,R_MIPS_HI16:D_800BE358,Normalize independent save-default address load scheduling,,,false
+game_33990,func_15007440,0x24,0x3c060000,0x3c030000,R_MIPS_HI16:D_800BE358,R_MIPS_HI16:D_800BE35A,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x28,0x3c030000,0x240200cc,R_MIPS_HI16:D_800BE35A,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x2c,0x24c60000,0x24630000,R_MIPS_LO16:D_800BE358,R_MIPS_LO16:D_800BE35A,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x30,0x240400cc,0x24040002,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x34,0x24630000,0x906e0000,R_MIPS_LO16:D_800BE35A,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x38,0x24020002,0x308f0003,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x3c,0x2405001e,0x24840001,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x40,0x906e0000,0x1eec004,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x44,0x304f0003,0x581021,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x48,0x24420001,0x3059ffff,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x4c,0x1eec004,0x2881001e,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x50,0x982021,0x3201025,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x54,0x3099ffff,0x1420fff7,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x58,0x3202025,0x24630001,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x5c,0x1445fff8,0x3c080000,-,R_MIPS_HI16:D_800BE358,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x60,0x24630001,0x95080000,-,R_MIPS_LO16:D_800BE358,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x64,0x94ca0000,0x3c060000,-,R_MIPS_HI16:D_800E0BE0,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x68,0x3c050000,0x24c60000,R_MIPS_HI16:D_800E0BE0,R_MIPS_LO16:D_800E0BE0,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x6c,0x24a50000,0x1328000e,R_MIPS_LO16:D_800E0BE0,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x70,0x132a000d,0x80c50010,-,-,Normalize settings loader checksum and address lifetime,,,false
+game_33990,func_15007440,0x74,0x80a90010,0x3c020000,-,R_MIPS_HI16:D_800E0BE0,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0x78,0x3c080000,0x3c040000,R_MIPS_HI16:D_800E0BFC,R_MIPS_HI16:D_800E0BFC,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0x7c,0xa01025,0x24840000,-,R_MIPS_LO16:D_800E0BFC,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0x80,0x25080000,0x24420000,R_MIPS_LO16:D_800E0BFC,R_MIPS_LO16:D_800E0BE0,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0x98,0x1448fffb,0x1444fffb,-,-,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0xa0,0x10000011,0x10000012,-,-,Normalize settings loader fill pointer allocation,,,false
+game_33990,func_15007440,0xa8,0x3c080000,0x3c030000,R_MIPS_HI16:D_800E0BFC,R_MIPS_HI16:D_800BE358,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xac,0xa01025,0x3c020000,-,R_MIPS_HI16:D_800E0BE0,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xb0,0xc01825,0x3c040000,-,R_MIPS_HI16:D_800E0BFC,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xb4,0x25080000,0x24840000,R_MIPS_LO16:D_800E0BFC,R_MIPS_LO16:D_800E0BFC,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xb8,0x90640002,0x24420000,-,R_MIPS_LO16:D_800E0BE0,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xbc,0x90650003,0x24630000,-,R_MIPS_LO16:D_800BE358,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xc0,0x90660004,0x90690002,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xc4,0x90670005,0x906a0003,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xc8,0x24420004,0x906b0004,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xcc,0x24630004,0x906c0005,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xd0,0xa044fffc,0x24420004,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xd4,0xa045fffd,0x24630004,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xd8,0xa046fffe,0xa049fffc,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xdc,0xa047ffff,0xa04afffd,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xe0,0x5448fff6,0xa04bfffe,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xe4,0x90640002,0x1444fff6,-,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xe8,0x3c010000,0xa04cffff,R_MIPS_HI16:D_800E0BE0,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xf0,0xa0290010,0xa0c50010,R_MIPS_LO16:D_800E0BE0,-,Normalize settings loader copy snapshot and delay schedule,,,false
+game_33990,func_15007440,0xfc,0x240b0001,0x240d0001,-,-,Normalize settings loader completion register allocation,,,false
+game_33990,func_15007440,0x104,0xa02b0000,0xa02d0000,R_MIPS_LO16:D_8008FE30,R_MIPS_LO16:D_8008FE30,Normalize settings loader completion register allocation,,,false
