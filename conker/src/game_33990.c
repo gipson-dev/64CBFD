@@ -21,7 +21,7 @@ s32 func_151DD4E0(OSMesgQueue *, u8, u8 *);
 s32 func_15006590();
 s32 func_15006BEC();
 void func_1500707C(s32 slot);
-s32 func_15007168();
+void func_15007168(void);
 void func_1500727C(void);
 void func_15007360(void);
 s32 func_15007440();
@@ -72,10 +72,50 @@ void func_1500707C(s32 slot) {
         }
     }
 }
-// requires jump table
-/* Non-matching C placeholders for asm/nonmatchings/game_33990/func_15007168.s. */
-s32 func_15007168() {
-    return 0;
+typedef struct {
+    u8 retained0, value1, value2, value3, value4;
+    s8 value5;
+    u8 retained6[3], value9;
+} SaveDefaultRecord33990;
+extern s8 *D_80082BBC;
+
+/* Clear the save prefix and initialize ten records through the live pointer. */
+void func_15007168(void) {
+    u8 *end = D_800BE358;
+    u8 *cursor = D_800BE2F0.bytes;
+    u32 index;
+
+    do {
+        *cursor++ = 0;
+    } while ((u32)cursor < (u32)end);
+
+    for (index = 0; index < 10; index++) {
+        ((SaveDefaultRecord33990 *)D_80082BBC)[index].value1 = 3;
+        ((SaveDefaultRecord33990 *)D_80082BBC)[index].value3 = 2;
+        ((SaveDefaultRecord33990 *)D_80082BBC)[index].value4 = 1;
+        ((SaveDefaultRecord33990 *)D_80082BBC)[index].value2 = 10;
+        switch (index) {
+        case 0:
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value5 = 3;
+            break;
+        case 1:
+        case 2:
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value5 = 5;
+            break;
+        case 7:
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value5 = 20;
+            break;
+        case 5:
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value5 = 20;
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value2 = 0;
+            break;
+        case 8:
+        case 9:
+            ((SaveDefaultRecord33990 *)D_80082BBC)[index].value5 = 3;
+            break;
+        }
+        ((SaveDefaultRecord33990 *)D_80082BBC)[index].value9 = 0;
+    }
 }
 /* Read the save block and dispatch its checksum-mismatch handler. */
 void func_1500727C(void) {

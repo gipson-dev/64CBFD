@@ -26411,3 +26411,5 @@ generated_197120,func_1516A538,0x48,0x8fa40048,0x8fa40050,-,-,Normalize randomiz
 generated_197120,func_1516A538,0x4c,0x8fab0044,0x8fab0048,-,-,Normalize randomized effect frame and two spill slots,,,false
 generated_197120,func_1516A538,0xac,0x8fae0040,0x8fae0044,-,-,Normalize randomized effect frame and two spill slots,,,false
 generated_197120,func_1516A538,0x104,0x27bd0048,0x27bd0050,-,-,Normalize randomized effect frame and two spill slots,,,false
+game_33990,func_15007168,0x0,0x3c020000,0x3c030000,R_MIPS_HI16:D_800BE358,R_MIPS_HI16:D_800BE2F0,Normalize independent save-default address load scheduling,,,false
+game_33990,func_15007168,0x4,0x3c030000,0x3c020000,R_MIPS_HI16:D_800BE2F0,R_MIPS_HI16:D_800BE358,Normalize independent save-default address load scheduling,,,false
