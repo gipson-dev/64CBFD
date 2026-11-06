@@ -26554,3 +26554,9 @@ game_A28B0,func_15077F64,0xdc,0x44082a,0x1c4082a,-,-,Normalize proven heading-tu
 game_A28B0,func_15077F64,0xe8,0x91ce0000,0x93180000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Normalize proven heading-turn register schedules and one redundant row copy,,,false
 game_A28B0,func_15077F64,0xec,0x30e500ff,0x30e600ff,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
 game_A28B0,func_15077F64,0xf0,0xa06e0250,0xa0780250,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+generated_FC5F0,func_150D01A0,0xb4,0x8fa20030,0x240400ce,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D01A0,0xb8,0x24420028,0x8fa20030,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D01A0,0xbc,0xafa20020,0x240500c4,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D01A0,0xc0,0x240400ce,0x24060061,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D01A0,0xc4,0x240500c4,0x24420028,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D01A0,0xc8,0x24060061,0xafa20020,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false

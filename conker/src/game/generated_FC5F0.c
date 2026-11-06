@@ -466,8 +466,39 @@ void func_150D0134(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
     }
 }
 
-s32 func_150D01A0() {
-    return 0;
+/* Blend the two text buffers while the signed byte countdown decays. */
+s32 func_150D01A0(u8 *owner) {
+    s8 *count;
+    u8 opacity;
+    u8 inverse;
+    /* The second descriptor is captured before its color-provider call. */
+    TextDescriptorFC5F0 *firstText;
+    TextDescriptorFC5F0 *secondText;
+
+    count = (s8 *)((TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28))->payload;
+    if (((((u8 **)&owner)[0])[0x30] & 1) != 0) {
+        *count = 8;
+    }
+    if (*count > 0) {
+        opacity = *count * 31;
+        inverse = 255 - opacity;
+        *count = (u8)((u32)*count - (u32)D_800BE9E4);
+    }
+    else {
+        inverse = 255;
+        opacity = 0;
+    }
+    if (inverse != 0) {
+        func_1504332C(206, 196, 97, inverse);
+        firstText = (TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28);
+        func_15042D94(146, 190, 129, (s32)firstText->buffers[firstText->index]);
+    }
+    if (opacity) {
+        secondText = (TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28);
+        func_1504332C(206, 196, 97, opacity);
+        func_15042D94(146, 190, 129, (s32)secondText->buffers[secondText->index ^ 1]);
+    }
+    return 1;
 }
 
 void func_150D02B4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
