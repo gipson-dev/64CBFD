@@ -50,8 +50,59 @@ s32 func_151A3390() {
     return 0;
 }
 
-s32 func_151A3504() {
-    return 0;
+typedef struct OwnerPosition151A3504 { f32 x, y, z; } OwnerPosition151A3504;
+typedef struct OwnerSnapshot151A3504 {
+    u8 *owner;
+    u8 identity, slot, reserved06[2], remainder08[0x28];
+} OwnerSnapshot151A3504;
+typedef struct OwnerPayload151A3504 {
+    OwnerSnapshot151A3504 snapshot;
+    u8 kind, reserved31[3];
+    OwnerPosition151A3504 position;
+    f32 value40;
+    u8 flag44, reserved45[3];
+    f32 value48;
+    u8 flag4C, reserved4D[3];
+} OwnerPayload151A3504;
+typedef struct OwnerRequest151A3504 {
+    OwnerPosition151A3504 position;
+    s16 lifetime;
+    u16 flags;
+    s32 step;
+    u8 reserved14, count, reserved16[6];
+} OwnerRequest151A3504;
+void *memcpy(void *, const void *, u32);
+s32 func_151A4E34(u8 *, void *);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
+/* Snapshot an owner link, query its position, and attach the payload to a new record. */
+u8 *func_151A3504(void *input, u8 channel) {
+    OwnerRequest151A3504 request;
+    OwnerPayload151A3504 payload;
+    u8 *created;
+
+    if (*(u8 **)input == NULL) {
+        return NULL;
+    }
+    /* The query and factory consume partial records; leave reserved bytes alone. */
+    memcpy(&payload, input, 0x30);
+    payload.flag44 = 0;
+    request.count = 50;
+    request.flags = 2;
+    request.lifetime = 1000;
+    payload.kind = 6;
+    payload.flag4C = 0;
+    payload.value40 = 0.0f;
+    payload.value48 = 0.0f;
+    if (func_151A4E34((u8 *)&payload, &request.position)) {
+        payload.position = request.position;
+        request.flags |= 4;
+    }
+    request.step = 8;
+    created = func_15147A80(&request, 0x50, 0x18, 6, 6, 6, 0, 0, NULL, channel, 0);
+    if (created != NULL) {
+        memcpy(*(void **)(created + 0x98), &payload, 0x50);
+    }
+    return created;
 }
 
 s32 func_151A361C() {
