@@ -1,4 +1,14 @@
 #include <ultra64.h>
+typedef struct {
+    u8 retained0, stride, count, step;
+    u32 retained4;
+    Mtx *records;
+    u32 retainedC;
+    u8 *descriptor;
+} DescriptorDraw151897A4;
+extern u8 D_800BE9C0;
+Gfx *func_151137D4(Gfx *, u8 *, Mtx *, s32, s32, s32);
+
 typedef struct KeyedNode15188AD0 {
     u8 opaque[8];
     s32 *payload;
@@ -161,8 +171,44 @@ s32 func_151895F4() {
     return 0;
 }
 
-s32 func_151897A4() {
-    return 0;
+/* Draw matrix records with a temporary opacity ramp, then restore opacity. */
+Gfx *func_151897A4(Gfx *cursor, DescriptorDraw151897A4 *draw, s16 viewIndex) {
+    s32 index;
+    s32 opacity;
+    u32 current;
+    u8 count;
+    s32 increment;
+    Gfx *next;
+    u8 step;
+    s32 start;
+    s32 savedOpacity;
+    s32 initialCount;
+
+    initialCount = draw->count;
+    if (initialCount == 0) {
+        return cursor;
+    }
+    start = D_800BE9C0 * draw->stride;
+    current = start;
+    step = draw->step;
+    opacity = step * 96;
+    index = 0;
+    savedOpacity = draw->descriptor[0x8A];
+    increment = step << 5;
+    count = initialCount;
+    if (initialCount > 0) {
+        do {
+            draw->descriptor[0x8A] = opacity >> 8;
+            next = func_151137D4(cursor, draw->descriptor,
+                                (Mtx *)((u8 *)draw->records + (current << 6)), viewIndex, 0, 0);
+            index++;
+            opacity += increment;
+            current++;
+            cursor = next;
+        } while (index != count);
+    }
+    draw->descriptor[0x8A] = savedOpacity;
+    return cursor;
 }
 
 void func_151898C0(s32 arg0, s32 arg1) {
