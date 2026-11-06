@@ -16,16 +16,57 @@ s32 func_15188810() {
     return 0;
 }
 
-s32 func_1518894C() {
-    return 0;
-}
-
 typedef struct ListNode15188A58 ListNode15188A58;
 
 struct ListNode15188A58 {
-    u8 pad0[0xC];
+    u8 active, kind, cleared, recordSize;
+    u8 mode, retained05;
+    s16 timer;
+    u8 *buffer;
     ListNode15188A58 *next;
+    s32 key;
 };
+extern ListNode15188A58 *D_800DF7CC;
+s32 allocate_memory(s32, s32, s32, s32);
+/* The matched helper receives its head through the existing node-pointer view. */
+void func_15188A58(ListNode15188A58 *, ListNode15188A58 *);
+/* Extend the first matching timer, or allocate and append its cleared buffer. */
+void func_1518894C(s32 key, s32 timer, s32 mode) {
+    ListNode15188A58 *node = D_800DF7CC;
+    u8 *buffer;
+
+    if (node != NULL) {
+        do {
+            if (key == node->key) {
+                if (node->timer < timer) {
+                    node->timer = timer;
+                }
+                node->mode = mode;
+                return;
+            }
+            node = node->next;
+        } while (node != NULL);
+    }
+    node = (ListNode15188A58 *)allocate_memory(sizeof(*node), 1, 0, 0);
+    if (node == NULL) {
+        return;
+    }
+    buffer = (u8 *)allocate_memory(0x180, 1, 1, 0);
+    if (buffer == NULL) {
+        func_10004074(node);
+        return;
+    }
+    node->active = 1;
+    node->kind = 3;
+    node->cleared = 0;
+    node->recordSize = 20;
+    node->mode = mode;
+    node->timer = timer;
+    node->buffer = buffer;
+    node->key = key;
+    bzero(buffer, 0x180);
+    func_15188A58(node, (ListNode15188A58 *)&D_800DF7CC);
+}
 
 void func_15188A58(ListNode15188A58 *arg0, ListNode15188A58 *arg1) {
     ListNode15188A58 *temp_v0;
