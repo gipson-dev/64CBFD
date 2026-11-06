@@ -164,6 +164,8 @@ LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -Map $(TARGET).map -T undefined_syms.$(VE
 
 # Generated game slices whose retail objects were built without -g3
 # (delay slots filled; -O2 scheduling order).
+# Preserve immediate countdown addresses in the controller sampler.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_6CEA0.c.o: CFLAGS += -Wo,-no_const_in_reg
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21D420.c.o: OPT_FLAGS := -O2
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_21C4F0.c.o: OPT_FLAGS := -O2
 # Retail object for this slice was built without loop unrolling.

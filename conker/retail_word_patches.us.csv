@@ -26568,3 +26568,12 @@ generated_176A00,func_1514A594,0xe8,0x46105181,0x46025181,-,-,Normalize checked 
 generated_176A00,func_1514A594,0xec,0x460e2200,0x46040200,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
 generated_176A00,func_1514A594,0xfc,0x46104280,0x46081280,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
 generated_42DC0,func_15015920,0xC0,0x01D07821,0x020E7821,-,-,Preserve unsigned address-add operand order,,,false
+generated_6CEA0,func_1503F9F0,0x8,0x000E2403,0x3C030000,-,R_MIPS_HI16:D_80084484,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0xC,0x3C030000,0x84630000,R_MIPS_HI16:D_80084484,R_MIPS_LO16:D_80084484,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0x10,0x84630000,0x000E2403,R_MIPS_LO16:D_80084484,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0x50,0x240B0005,0x24030005,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0x58,0xA42B0000,0xA4230000,R_MIPS_LO16:D_80084484,R_MIPS_LO16:D_80084484,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0x64,0x240CFFFF,0x240BFFFF,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0xB0,0x240DFFFF,0x240CFFFF,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0xC4,0xA4AC0000,0xA4AB0000,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_6CEA0,func_1503F9F0,0xF4,0xA4CD0000,0xA4CC0000,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
