@@ -26616,3 +26616,14 @@ generated_49D30,func_15022528,0x0B0,0x56B80009,0x56F80009,-,-,Retain the same se
 generated_49D30,func_15022528,0x0B4,0x92E20000,0x92820000,-,-,Retain the same semantic role through the closed six-register allocation cycle,,,false
 generated_49D30,func_15022528,0x0C8,0x02C02825,0x02602825,-,-,Retain the same semantic role through the closed six-register allocation cycle,,,false
 generated_49D30,func_15022528,0x0D4,0x92E20000,0x92820000,-,-,Retain the same semantic role through the closed six-register allocation cycle,,,false
+generated_AE1D0,func_15081574,0x044,0x3C160000,0x3C160000,R_MIPS_HI16:D_800D121C,R_MIPS_HI16:D_8009BD30,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x04C,0x3C150000,0x3C140000,R_MIPS_HI16:D_8009BD30,R_MIPS_HI16:D_800D121C,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x050,0x26100000,0x26940000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800D121C,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x054,0x26B50000,0x8FB10064,R_MIPS_LO16:D_8009BD30,-,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x058,0x8FB10064,0x8FB30060,-,-,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x05C,0x8FB30060,0x26D60000,-,R_MIPS_LO16:D_8009BD30,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x060,0x26D60000,0x26100000,R_MIPS_LO16:D_800D121C,R_MIPS_LO16:D_800CC2D0,Schedule the same independent address or argument load in the retail order,,,false
+generated_AE1D0,func_15081574,0x064,0x2414FFFF,0x2415FFFF,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
+generated_AE1D0,func_15081574,0x094,0x1054000E,0x1055000E,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
+generated_AE1D0,func_15081574,0x0A0,0x02A84821,0x02C84821,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
+generated_AE1D0,func_15081574,0x0D4,0x5616FFE5,0x5614FFE5,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
