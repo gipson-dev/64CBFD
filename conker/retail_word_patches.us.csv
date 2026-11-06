@@ -26560,3 +26560,10 @@ generated_FC5F0,func_150D01A0,0xbc,0xafa20020,0x240500c4,-,-,Normalize closed te
 generated_FC5F0,func_150D01A0,0xc0,0x240400ce,0x24060061,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
 generated_FC5F0,func_150D01A0,0xc4,0x240500c4,0x24420028,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
 generated_FC5F0,func_150D01A0,0xc8,0x24060061,0xafa20020,-,-,Normalize closed text-buffer fade descriptor and color-argument schedule,,,false
+generated_176A00,func_1514A594,0xbc,0xc48e0038,0xc4800038,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xc4,0xc490003c,0xc482003c,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xd0,0x460e4281,0x46004281,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xd4,0x46123100,0x46069100,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xe8,0x46105181,0x46025181,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xec,0x460e2200,0x46040200,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false
+generated_176A00,func_1514A594,0xfc,0x46104280,0x46081280,-,-,Normalize checked dual-point blend FPR roles and commutative operand order,,,false

@@ -126,8 +126,34 @@ s32 func_1514A4EC(u8 *actor) {
     return 1;
 }
 
-s32 func_1514A594() {
-    return 0;
+/* Integrate two points, then blend the second toward the first. */
+s32 func_1514A594(u8 *owner) {
+    f32 *record = (f32 *)owner;
+    f32 dx, yComponent, zComponent;
+    f32 weight;
+    f32 firstX;
+
+    *(f32 *)(owner + 0x130) *= *(f32 *)(owner + 0x140);
+    *(f32 *)(owner + 0x134) += *(f32 *)(owner + 0x13C) * D_800BE9A4;
+    *(f32 *)(owner + 0x138) *= *(f32 *)(owner + 0x140);
+    dx = record[0x130 / 4] * D_800BE9A4;
+    yComponent = record[0x134 / 4] * D_800BE9A4;
+    zComponent = record[0x138 / 4] * D_800BE9A4;
+    record[0x34 / 4] += dx;
+    record[0x38 / 4] += yComponent;
+    record[0x3C / 4] += zComponent;
+    record[0x40 / 4] += dx;
+    record[0x44 / 4] += yComponent;
+    record[0x48 / 4] += zComponent;
+    firstX = record[0x34 / 4];
+    weight = record[0x54 / 4];
+    /* The finished Y/Z steps can now hold the first-point coordinates. */
+    yComponent = record[0x38 / 4];
+    zComponent = record[0x3C / 4];
+    record[0x40 / 4] = firstX + (record[0x40 / 4] - firstX) * weight;
+    record[0x44 / 4] = yComponent + (record[0x44 / 4] - yComponent) * weight;
+    record[0x48 / 4] = zComponent + (record[0x48 / 4] - zComponent) * weight;
+    return 1;
 }
 
 s32 func_1514A6A0() {
