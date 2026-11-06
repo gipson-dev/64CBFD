@@ -26464,3 +26464,12 @@ generated_68C70,func_1503B840,0x10,0x24420000,0x24a50000,R_MIPS_LO16:D_80098836,
 generated_68C70,func_1503B840,0x14,0x3c050000,0x3c020000,R_MIPS_HI16:D_80098830,R_MIPS_HI16:D_80098836,Normalize independent classifier opening address and ID-load scheduling,,,false
 generated_68C70,func_1503B840,0x18,0x94830084,0x24420000,-,R_MIPS_LO16:D_80098836,Normalize independent classifier opening address and ID-load scheduling,,,false
 generated_68C70,func_1503B840,0x1c,0x24a50000,0x94830084,R_MIPS_LO16:D_80098830,-,Normalize independent classifier opening address and ID-load scheduling,,,false
+game_83300,func_1505F188,0x2c,0x44816000,0x44810000,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x34,0xc4200000,0xc4220000,R_MIPS_LO16:D_8009962C,R_MIPS_LO16:D_8009962C,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x4c,0xe48c014c,0xe480014c,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x50,0xe48c0150,0xe4800150,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x54,0xe4800118,0xe4820118,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x58,0xe4800180,0xe4820180,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x5c,0xc4220000,0xc4240000,R_MIPS_LO16:D_80099630,R_MIPS_LO16:D_80099630,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x98,0xe48c0048,0xe4800048,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_1505F188,0x9c,0xe4820024,0xe4840024,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
