@@ -26633,3 +26633,5 @@ generated_FC5F0,func_150D0534,0xc0,0xafa20020,0x240500ff,-,-,Normalize closed wh
 generated_FC5F0,func_150D0534,0xc4,0x240400ff,0x240600ff,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
 generated_FC5F0,func_150D0534,0xc8,0x240500ff,0x24420028,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
 generated_FC5F0,func_150D0534,0xcc,0x240600ff,0xafa20020,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_185560,func_1515A11C,0xb4,0xc4300000,0xc6080020,R_MIPS_LO16:D_800BE9A4,-,Normalize independent phase-motion rate and global-scale loads,,,false
+generated_185560,func_1515A11C,0xb8,0xc6080020,0xc4300000,-,R_MIPS_LO16:D_800BE9A4,Normalize independent phase-motion rate and global-scale loads,,,false

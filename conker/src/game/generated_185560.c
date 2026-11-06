@@ -1,6 +1,19 @@
 #include <ultra64.h>
 #include <string.h>
 typedef struct {
+    f32 center;
+    u8 firstPhase, secondPhase;
+    s8 firstVelocity, secondVelocity;
+    f32 firstRadius, secondRadius;
+    f32 scale[3];
+    f32 phase, rate;
+} MotionPayload1515A11C;
+f32 func_151423D8(u8);
+f32 func_15144B68(f32);
+f32 sinf(f32);
+extern f32 D_800BE9A4;
+
+typedef struct {
     f32 x;
     f32 y;
     f32 z;
@@ -500,8 +513,27 @@ s32 func_15159C08() {
     return 0;
 }
 
-s32 func_1515A11C() {
-    return 0;
+/* Advance two byte oscillators and the shared floating scale phase. */
+s32 func_1515A11C(u8 *owner, u8 *workspace) {
+    MotionPayload1515A11C *motion;
+    f32 first;
+    f32 second;
+    f32 scale;
+
+    owner[0xAC] += (u32)(s32)*(s8 *)(owner + 0xAE) * (u32)D_800BE9E4;
+    owner[0xAD] += (u32)(s32)*(s8 *)(owner + 0xAF) * (u32)D_800BE9E4;
+    motion = (MotionPayload1515A11C *)(owner + 0xA8);
+    first = func_151423D8((u8)(motion->firstPhase - 64));
+    second = func_151423D8((u8)(motion->secondPhase - 64));
+    *(f32 *)(owner + 0x38) = motion->center + motion->firstRadius * first;
+    *(f32 *)(owner + 0x3C) = motion->center + motion->secondRadius * second;
+    motion->phase += motion->rate * D_800BE9A4;
+    motion->phase = func_15144B68(motion->phase);
+    scale = sinf(motion->phase);
+    *(f32 *)(owner + 0x4C) = motion->scale[0] * scale;
+    *(f32 *)(owner + 0x50) = motion->scale[1] * scale;
+    *(f32 *)(owner + 0x54) = motion->scale[2] * scale;
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A238.s")
