@@ -26577,3 +26577,21 @@ generated_6CEA0,func_1503F9F0,0x64,0x240CFFFF,0x240BFFFF,-,-,Normalize controlle
 generated_6CEA0,func_1503F9F0,0xB0,0x240DFFFF,0x240CFFFF,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
 generated_6CEA0,func_1503F9F0,0xC4,0xA4AC0000,0xA4AB0000,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
 generated_6CEA0,func_1503F9F0,0xF4,0xA4CD0000,0xA4CC0000,-,-,Normalize controller sampler independent opening schedule and closed constant register roles,,,false
+generated_1FA770,func_151CE51C,0x014,0x1040003E,0x1040003C,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x03C,0x51E0001F,0x51E0001E,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x050,0x5B000030,0x5B00002E,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x090,0x8FA40050,0x4600403E,-,-,Schedule the original float compare before the two independent argument reloads,,,false
+generated_1FA770,func_151CE51C,0x094,0x00003025,0x8FA40050,-,-,Schedule the original float compare before the two independent argument reloads,,,false
+generated_1FA770,func_151CE51C,0x098,0x4600403E,0x00003025,-,-,Schedule the original float compare before the two independent argument reloads,,,false
+generated_1FA770,func_151CE51C,0x09C,0x00000000,0x00000000,-,-,Omit the compiler-only comparison hazard nop after filling its useful delay work,,,true
+generated_1FA770,func_151CE51C,0x0A0,0x4502001C,0x4502001B,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x0B0,0x10000018,0x10000017,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x0C4,0x59200013,0x59200012,-,-,Retarget the original branch after two closed scheduling omissions,,,false
+generated_1FA770,func_151CE51C,0x0D0,0x8C640094,0x8C620094,-,-,Keep the upper-table base in the retail dead caller-saved v0 lifetime,,,false
+generated_1FA770,func_151CE51C,0x0E4,0x008B6021,0x004B6021,-,-,Consume the upper-table base through the same retail v0 lifetime,,,false
+generated_1FA770,func_151CE51C,0x0EC,0x3C050006,0x4612003E,-,-,Schedule the original upper float compare before command materialization,,,false
+generated_1FA770,func_151CE51C,0x0F0,0x34A50019,0x3C050006,-,-,Schedule the original upper float compare before command materialization,,,false
+generated_1FA770,func_151CE51C,0x0F4,0x4612003E,0x34A50019,-,-,Schedule the original upper float compare before command materialization,,,false
+generated_1FA770,func_151CE51C,0x0FC,0x00003025,0x45000003,-,-,Use the ordinary false branch into the shared saved-RA epilogue,,,false
+generated_1FA770,func_151CE51C,0x100,0x45020004,0x00003025,-,-,Fill the ordinary false-branch delay with the original argument-zero move,,,false
+generated_1FA770,func_151CE51C,0x104,0x8FBF0014,0x8FBF0014,-,-,Fold the duplicate false-path saved-RA delay load into the existing shared epilogue,,,true

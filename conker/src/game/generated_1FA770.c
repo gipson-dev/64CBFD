@@ -137,9 +137,60 @@ void func_151CE4DC(u8 *arg0) {
     func_15147928(arg0);
 }
 
-s32 func_151CE51C() {
-    return 0;
+typedef struct HeightEntry151CE51C { u8 prefix[4]; f32 height; u8 rest[20]; } HeightEntry151CE51C;
+typedef struct HeightOwner151CE51C {
+    u8 prefix[0x1E]; u16 flags; u8 pad20[5]; u8 count25; u8 pad26[6];
+    s8 count, current, previous; u8 pad2F[0x65]; HeightEntry151CE51C *entries;
+} HeightOwner151CE51C;
+void *func_151CE634(void *);
+void func_1515C1A0(struct127 *, struct17 *, f32 *, f32 *);
+s32 func_1505D024(struct127 *, s32, u16, s32);
+/* Dispatch the event when the actor reaches the selected height boundary. */
+void func_151CE51C(struct127 *actor, u8 *event) {
+    struct17 position;
+    f32 radius;
+    f32 height;
+    HeightOwner151CE51C *owner;
+    s32 index;
+    HeightEntry151CE51C *entries;
+    f32 boundary;
+    f32 limit;
+    f32 centerY;
+    f32 extent;
+    s32 command;
+    owner = func_151CE634(*(void **)(event + 0x18));
+    if (owner != NULL) {
+        func_1515C1A0(actor, &position, &radius, &height);
+        if (owner->flags & 8) {
+            if (owner->count > 0) {
+                index = owner->previous - 1;
+                if (index < 0) index = owner->count25 - 1;
+                centerY = position.unk4;
+                extent = height;
+                boundary = centerY - extent;
+                entries = owner->entries;
+                limit = entries[index].height;
+                command = 0x60019;
+                if (boundary <= limit) {
+                    func_1505D024(actor, command, 0, -1);
+                }
+            }
+        } else {
+            if (owner->count > 0) {
+                centerY = position.unk4;
+                extent = height;
+                boundary = centerY + extent;
+                entries = owner->entries;
+                limit = entries[owner->current].height;
+                command = 0x60019;
+                if (limit <= boundary) {
+                    func_1505D024(actor, command, 0, -1);
+                }
+            }
+        }
+    }
 }
+
 
 extern u8 D_800DCE50[0x340];
 extern s8 D_800DD190;
