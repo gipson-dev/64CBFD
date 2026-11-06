@@ -26512,3 +26512,45 @@ game_83300,func_15062D10,0xfc,0x14e3825,0x16c6825,-,-,Normalize proven packed-co
 game_83300,func_15062D10,0x100,0x187b00,0xec300,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
 game_83300,func_15062D10,0x104,0x1e7c825,0x1b83025,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
 game_83300,func_15062D10,0x108,0xac790000,0xace60000,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_A28B0,func_15077F64,0x14,0x3c0e0000,0x3c0f0000,R_MIPS_HI16:D_800D2104,R_MIPS_HI16:D_800D2104,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x18,0x8dce0000,0x8def0000,R_MIPS_LO16:D_800D2104,R_MIPS_LO16:D_800D2104,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x1c,0x906f013f,0x9078013f,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x20,0x906a021e,0x906b021e,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x24,0xc4680014,0x3c070000,-,R_MIPS_HI16:D_800D1890,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x28,0xfc080,0x18c880,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x2c,0x1d8c821,0x1f94821,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x30,0x8f290000,0x90e70000,-,R_MIPS_LO16:D_800D1890,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x34,0xa58c0,0x8d2a0000,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x38,0x3c0f0000,0xb60c0,R_MIPS_HI16:D_800D1890,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x3c,0x12b1021,0x24eeffff,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x40,0x844c0008,0x14c1021,-,-,Normalize proven heading-turn register schedules and one redundant row copy,0x1c03825,-,false
+game_A28B0,func_15077F64,0x44,0x844d000c,0x844d0008,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x48,0x91ef0000,0x844e000c,R_MIPS_LO16:D_800D1890,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x4c,0x448c2000,0xc4680014,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x50,0x448d8000,0x448d2000,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x54,0xc46a001c,0x448e8000,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x58,0x468021a0,0xc46a001c,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x5c,0x25eeffff,0x468021a0,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x60,0xa3ae001e,0xa3a7001e,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x84,0x93a6001e,0x93a7001e,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x88,0x3c0e0000,0x3c0e0000,R_MIPS_HI16:D_800D1891,R_MIPS_HI16:D_80099A3C,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x94,0x67880,0x76880,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x98,0x1e67821,0x1a76821,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0x9c,0x94790078,0x946f0078,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xa0,0x946a0076,0x94790076,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xa4,0xf7840,0xd6840,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xa8,0x3c020000,0x1cd7021,R_MIPS_HI16:D_80099A3C,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xac,0x32a3823,0x1f92823,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xb0,0x74a03,0x54a03,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xb8,0x316c0080,0x316a0080,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xbc,0x1603825,0x1602825,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xc0,0x11800004,0x11400004,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xc8,0xb2023,0xb2823,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xcc,0x308700ff,0x30a400ff,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xd0,0xe02025,0x802825,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xd4,0x4f1021,0x91ce0000,-,R_MIPS_LO16:D_80099A3C,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xd8,0x90420000,0x3c180000,R_MIPS_LO16:D_80099A3C,R_MIPS_HI16:D_800D1891,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xdc,0x44082a,0x1c4082a,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xe8,0x91ce0000,0x93180000,R_MIPS_LO16:D_800D1891,R_MIPS_LO16:D_800D1891,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xec,0x30e500ff,0x30e600ff,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false
+game_A28B0,func_15077F64,0xf0,0xa06e0250,0xa0780250,-,-,Normalize proven heading-turn register schedules and one redundant row copy,,,false

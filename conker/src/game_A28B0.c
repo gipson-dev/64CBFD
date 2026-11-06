@@ -8,7 +8,7 @@ void func_15075938(void);
 s32 func_1507602C();
 void func_15076768(void);
 s32 func_15077508();
-s32 func_15077F64();
+void func_15077F64(void);
 s32 func_150793D8();
 s32 func_15079B30();
 s32 func_15079FBC();
@@ -926,30 +926,34 @@ void func_15077F34(void) {
     D_800D154C->unk250 = D_800D1891;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15077F64.s. */
-s32 func_15077F64() {
-    return 0;
+/* Face the next path record, then submit turning state past its byte threshold. */
+void func_15077F64(void) {
+    extern void func_15056A00(void *, u8, u8);
+    f32 x;
+    f32 z;
+    u8 threshold;
+    u8 row;
+    PathNode8 *node;
+    s32 distance;
+    s32 magnitude;
+    u16 heading;
+
+    node = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D154C->unk21E];
+    x = node[1].x - D_800D154C->x_position;
+    z = D_800D154C->z_position - node[1].z;
+    row = D_800D1890 - 1;
+    heading = func_1505A630(x, z, 0);
+    D_800D154C->unk78 = heading;
+    distance = magnitude = ((s32)(D_800D154C->unk78 - D_800D154C->unk76) >> 8) & 0xFF;
+    if ((distance & 0x80) != 0) {
+        magnitude = distance = -distance & 0xFF;
+    }
+    threshold = ((u8 *)D_80099A3C)[row * 10];
+    if (threshold < distance) {
+        D_800D154C->unk250 = D_800D1891;
+        func_15056A00(D_800D154C, magnitude, row);
+    }
 }
-// NON-MATCHING: what is D_800D2104 ???
-// void func_15056A00(s32, s32, u8);
-// void func_15077F64(void) {
-//     u8 temp_t6;
-//     struct169 *temp_v0;
-//     s32 phi_a0;
-//     s32 phi_a1;
-//
-//     temp_t6 = D_800D1890 - 1;
-//     temp_v0 = D_800D2104[D_800D154C->unk13F] + (D_800D154C->unk21E);
-//     D_800D154C->unk78 = func_1505A630(temp_v0->unk8 - D_800D154C->x_position, D_800D154C->z_position - temp_v0->unkC, 0);
-//     phi_a0 = phi_a1 = ((s32) (D_800D154C->unk78 - D_800D154C->unk76) >> 8) & 0xff;
-//     if ((phi_a0 & 0x80) != 0) {
-//         phi_a1 = phi_a0 = -phi_a0 & 0xFF;
-//     }
-//     if ((u8)D_80099A3C[temp_t6 * 0xA] < phi_a0) {
-//         D_800D154C->unk250 = (u8) D_800D1891;
-//         func_15056A00(D_800D154C, phi_a1, temp_t6);
-//     }
-// }
 
 void func_15078074(void) {
     f32 temp_f20;
