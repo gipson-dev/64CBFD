@@ -1,4 +1,7 @@
 #include <ultra64.h>
+#include "structs.h"
+extern f32 D_800A57A0, D_800A57A4, D_800A57A8, D_800A57AC;
+void func_1513F680(struct171 *, u8, u8, u8, u8);
 
 /* Partially recovered text-only slice asm/176A00.s. */
 
@@ -92,8 +95,33 @@ s32 func_1514A19C() {
     return 0;
 }
 
-s32 func_1514A380() {
-    return 0;
+/* Approach both target extents, then select the settled update callback. */
+s32 func_1514A380(u8 *owner) {
+    s32 complete = 1;
+    u8 *payload = owner + 0x110;
+
+    if ((owner[0x74] & 2) == 0) {
+        *(f32 *)(owner + 0x2C) +=
+            (*(f32 *)(payload + 8) - *(f32 *)(owner + 0x2C)) * D_800A57A0;
+        if (*(f32 *)(payload + 8) * D_800A57A4 < *(f32 *)(owner + 0x2C)) {
+            owner[0x74] |= 2;
+        } else {
+            complete = 0;
+        }
+    }
+    if ((owner[0x74] & 8) == 0) {
+        *(f32 *)(owner + 0x30) +=
+            (*(f32 *)(payload + 0x18) - *(f32 *)(owner + 0x30)) * D_800A57A8;
+        if (*(f32 *)(payload + 0x18) * D_800A57AC < *(f32 *)(owner + 0x30)) {
+            owner[0x74] |= 8;
+        } else {
+            complete = 0;
+        }
+    }
+    if (complete) {
+        func_1513F680((struct171 *)owner, owner[0x70], 4, owner[0x72], owner[0x73]);
+    }
+    return 1;
 }
 
 s32 func_1514A498(u8 *arg0) {
