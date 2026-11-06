@@ -560,6 +560,37 @@ void func_150D04C4(u8 arg0, u8 *arg1, s16 arg2, u8 arg3, s32 arg4) {
     }
 }
 
-s32 func_150D0534() {
-    return 0;
+/* Crossfade the current and previous white text buffers. */
+s32 func_150D0534(u8 *owner) {
+    s8 *count;
+    u8 opacity;
+    u8 inverse;
+    /* The second descriptor is captured before its color-provider call. */
+    TextDescriptorFC5F0 *firstText;
+    TextDescriptorFC5F0 *secondText;
+
+    count = (s8 *)((TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28))->payload;
+    if (((((u8 **)&owner)[0])[0x30] & 1) != 0) {
+        *count = 20;
+    }
+    if (*count > 0) {
+        opacity = *count * 12;
+        inverse = 255 - opacity;
+        *count = (u8)((u32)*count - (u32)D_800BE9E4);
+    }
+    else {
+        inverse = 255;
+        opacity = 0;
+    }
+    if (inverse != 0) {
+        func_1504332C(255, 255, 255, inverse);
+        firstText = (TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28);
+        func_15042D94(20, 20, 128, (s32)firstText->buffers[firstText->index]);
+    }
+    if (opacity) {
+        secondText = (TextDescriptorFC5F0 *)((((u8 **)&owner)[0]) + 0x28);
+        func_1504332C(255, 255, 255, opacity);
+        func_15042D94(20, 20, 128, (s32)secondText->buffers[secondText->index ^ 1]);
+    }
+    return 1;
 }

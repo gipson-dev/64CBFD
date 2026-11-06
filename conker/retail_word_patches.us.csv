@@ -26627,3 +26627,9 @@ generated_AE1D0,func_15081574,0x064,0x2414FFFF,0x2415FFFF,-,-,Retain the semanti
 generated_AE1D0,func_15081574,0x094,0x1054000E,0x1055000E,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
 generated_AE1D0,func_15081574,0x0A0,0x02A84821,0x02C84821,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
 generated_AE1D0,func_15081574,0x0D4,0x5616FFE5,0x5614FFE5,-,-,Retain the semantic role through the closed s4/s5/s6 allocation cycle,,,false
+generated_FC5F0,func_150D0534,0xb8,0x8fa20030,0x240400ff,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D0534,0xbc,0x24420028,0x8fa20030,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D0534,0xc0,0xafa20020,0x240500ff,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D0534,0xc4,0x240400ff,0x240600ff,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D0534,0xc8,0x240500ff,0x24420028,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
+generated_FC5F0,func_150D0534,0xcc,0x240600ff,0xafa20020,-,-,Normalize closed white text crossfade descriptor and color-argument schedule,,,false
