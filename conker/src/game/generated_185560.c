@@ -514,8 +514,57 @@ s32 func_1515A78C() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A920.s")
 
-s32 func_1515A974() {
-    return 0;
+typedef struct {u8 bytes[4];} TableSpawnHeader1515A974;
+typedef struct {f32 values[10];} TableSpawnValues1515A974;
+typedef struct {
+    TableSpawnHeader1515A974 header;
+    TableSpawnValues1515A974 values;
+} TableSpawnPayload1515A974;
+typedef struct {
+    f32 primary, secondary;
+    TableSpawnPayload1515A974 payload;
+} TableSpawnEntry1515A974;
+typedef struct {
+    u8 kind;
+    u8 reserved01[3];
+    u8 *owner;
+    f32 primary, secondary;
+    f32 zero[5];
+    u8 enabled;
+    s8 mode;
+    u8 flags;
+} TableSpawnRequest1515A974;
+extern TableSpawnEntry1515A974 D_800A636C[];
+u8 *func_151A8B20(TableSpawnRequest1515A974 *, s16, s32, u8, s32);
+/* Create the selected table effect and attach its retained payload. */
+void func_1515A974(u8 * volatile owner, s32 unused) {
+    TableSpawnRequest1515A974 request;
+    u8 *created;
+    TableSpawnEntry1515A974 *entry;
+    TableSpawnPayload1515A974 payload;
+    u8 index = owner[0x1F];
+
+    if ((s32)index <= 0) {
+        request.kind = 0x0F;
+        request.owner = owner;
+        entry = &D_800A636C[index];
+        request.primary = entry->primary;
+        request.secondary = entry->secondary;
+        request.enabled = 0;
+        request.mode = -1;
+        request.flags = 2;
+        request.zero[0] = 0.0f;
+        request.zero[1] = 0.0f;
+        request.zero[2] = 0.0f;
+        request.zero[3] = 0.0f;
+        request.zero[4] = 0.0f;
+        payload.header = entry->payload.header;
+        payload.values = entry->payload.values;
+        created = func_151A8B20(&request, -1, 0x2C, 0xFF, 0);
+        if (created != NULL) {
+            memcpy(created + 0x80, &payload, sizeof(payload));
+        }
+    }
 }
 
 /* Submit the position and retained owner state with a randomized lifetime. */
