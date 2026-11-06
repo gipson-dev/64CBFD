@@ -101,7 +101,7 @@ s32 func_150242F8();
 s32 func_1501EC38();
 void func_15022848(s32 index);
 void func_15022754(s32);
-s32 func_15022528();
+void func_15022528(s32);
 s32 func_15020EC4();
 void func_1501DAAC(s32 slot);
 typedef struct {
@@ -826,9 +826,32 @@ s32 func_15022398() {
     return 0;
 }
 
-s32 func_15022528() {
-    return 0;
+typedef struct GroupActorRecord15022528 {
+    u16 kind;
+    u8 actorId;
+    u8 reserved03[5];
+} GroupActorRecord15022528;
+/* Dispatch enabled type-two records; refresh the count after processing a descriptor. */
+void func_15022528(s32 group) {
+    s32 index;
+    s32 count;
+    u8 *actor;
+    GroupActorRecord15022528 *record;
+    count = D_800C363A[group];
+    for (index = 0; index < count; index++) {
+        if (D_800C35D0[group][index] && D_800C35C8[group][index]) {
+            record = (GroupActorRecord15022528 *)(D_800C35F0[group] + index * 8);
+            if (record->kind == 2) {
+                actor = func_15083E90(record->actorId);
+                if (actor != NULL) {
+                    func_1502178C(actor, group, index);
+                }
+            }
+            count = D_800C363A[group];
+        }
+    }
 }
+
 
 void func_15022640(s32 value, s32 group) {
     s32 i = 0;
