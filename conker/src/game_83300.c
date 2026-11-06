@@ -38,7 +38,7 @@ s32 func_15061B4C();
 s32 func_150623F4();
 void func_150626EC(struct127 *, s32);
 s32 func_15062800();
-s32 func_15062D10();
+void func_15062D10(s32, s32, s32, s32, s32, s32);
 s32 func_15062E24();
 s32 func_15062FC0();
 s32 func_15063254();
@@ -1357,9 +1357,45 @@ void func_15062BDC(struct127 *arg0, f32 arg1, f32 arg2) {
         func_15062B84(arg0);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15062D10.s. */
-s32 func_15062D10() {
-    return 0;
+extern s32 **D_800C4488[];
+/* Update packed coordinates with the original strict single-wrap tests. */
+void func_15062D10(s32 slot, s32 entry, s32 dx, s32 dy, s32 bank, s32 absolute) {
+    s32 *command;
+    s32 first;
+    s32 *entryHome = &entry;
+    s32 width;
+    s32 height;
+    s32 x;
+    s32 y;
+    if ((&D_800D19A0)[slot] == 0) {
+        return;
+    }
+    command = D_800C4488[slot][bank] + *entryHome * 2;
+    width = ((command[1] >> 12) & 0xFFF) + 2;
+    height = (command[1] & 0xFFF) + 2;
+    first = command[0];
+    if (absolute != 0) {
+        x = dx & 0xFFF;
+    } else {
+        x = (s32)((u32)((first >> 12) & 0xFFF) + (u32)dx);
+        if (width < x) {
+            x -= width;
+        } else if (x < 0) {
+            x += width;
+        }
+    }
+    if (absolute != 0) {
+        y = dy & 0xFFF;
+    } else {
+        y = (s32)((u32)(first & 0xFFF) + (u32)dy);
+        if (height < y) {
+            y -= height;
+        } else if (y < 0) {
+            y += height;
+        }
+    }
+    first = (first & 0xFF000000) | (y & 0xFFF);
+    command[0] = first | ((x & 0xFFF) << 12);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15062E24.s. */
 s32 func_15062E24() {

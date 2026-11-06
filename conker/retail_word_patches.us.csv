@@ -26473,3 +26473,42 @@ game_83300,func_1505F188,0x58,0xe4800180,0xe4820180,-,-,Normalize initializer un
 game_83300,func_1505F188,0x5c,0xc4220000,0xc4240000,R_MIPS_LO16:D_80099630,R_MIPS_LO16:D_80099630,Normalize initializer unit/base/gravity floating register allocation,,,false
 game_83300,func_1505F188,0x98,0xe48c0048,0xe4800048,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
 game_83300,func_1505F188,0x9c,0xe4820024,0xe4840024,-,-,Normalize initializer unit/base/gravity floating register allocation,,,false
+game_83300,func_15062D10,0x34,0x8fac0004,0x8faa0004,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x3c,0x8d2a0000,0x8d250000,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x40,0xc68c0,0xa58c0,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x48,0x1aa1821,0xab3821,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x4c,0x8c650004,0x8ce60004,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x50,0x8c670000,0x8fa20008,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x54,0x8fa90008,0x8faf0008,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x58,0x52303,0x61b03,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x5c,0x308e0fff,0x306c0fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x60,0x30a60fff,0x30c40fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x64,0x25c40002,0x25830002,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x68,0x11000005,0x24840002,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x6c,0x24c60002,0x11000004,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x70,0x8fa20008,0x8ce60000,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x74,0x30580fff,0x304d0fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x7c,0x3001025,0x1a01025,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x80,0x77b03,0x67303,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x84,0x31f90fff,0x31d80fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x88,0x3292821,0x30f2821,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x8c,0x85082a,0x65082a,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x9c,0xa41023,0xa31023,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xa8,0xa41021,0xa31021,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xb0,0x30580fff,0x304e0fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xb4,0x8fa4000c,0x8fa3000c,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xb8,0x308b0fff,0x30790fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xc0,0x1602025,0x3201825,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xc4,0x8fad000c,0x8faa000c,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xc8,0x30ec0fff,0x30c90fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xcc,0x18d2821,0x12a2821,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xd0,0xc5082a,0x85082a,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xd8,0xa02025,0xa01825,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xe0,0xa62023,0xa41823,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xec,0xa62021,0xa41821,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xf4,0xe15024,0xc15824,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xf8,0x308e0fff,0x306c0fff,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0xfc,0x14e3825,0x16c6825,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x100,0x187b00,0xec300,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x104,0x1e7c825,0x1b83025,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
+game_83300,func_15062D10,0x108,0xac790000,0xace60000,-,-,Normalize proven packed-coordinate register roles and two read/delay schedules,,,false
