@@ -4,6 +4,7 @@
 #include "variables.h"
 
 s32 func_15194FF4(struct127 *, struct127 *, s32);
+void func_1503B840(struct127 *);
 
 /* Generated placeholder declarations. */
 s32 func_15055E50(s32 arg0, s32 arg1);

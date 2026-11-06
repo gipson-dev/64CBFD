@@ -26459,3 +26459,8 @@ game_33990,func_15007440,0xe8,0x3c010000,0xa04cffff,R_MIPS_HI16:D_800E0BE0,-,Nor
 game_33990,func_15007440,0xf0,0xa0290010,0xa0c50010,R_MIPS_LO16:D_800E0BE0,-,Normalize settings loader copy snapshot and delay schedule,,,false
 game_33990,func_15007440,0xfc,0x240b0001,0x240d0001,-,-,Normalize settings loader completion register allocation,,,false
 game_33990,func_15007440,0x104,0xa02b0000,0xa02d0000,R_MIPS_LO16:D_8008FE30,R_MIPS_LO16:D_8008FE30,Normalize settings loader completion register allocation,,,false
+generated_68C70,func_1503B840,0x8,0x3c020000,0x3c050000,R_MIPS_HI16:D_80098836,R_MIPS_HI16:D_80098830,Normalize independent classifier opening address and ID-load scheduling,,,false
+generated_68C70,func_1503B840,0x10,0x24420000,0x24a50000,R_MIPS_LO16:D_80098836,R_MIPS_LO16:D_80098830,Normalize independent classifier opening address and ID-load scheduling,,,false
+generated_68C70,func_1503B840,0x14,0x3c050000,0x3c020000,R_MIPS_HI16:D_80098830,R_MIPS_HI16:D_80098836,Normalize independent classifier opening address and ID-load scheduling,,,false
+generated_68C70,func_1503B840,0x18,0x94830084,0x24420000,-,R_MIPS_LO16:D_80098836,Normalize independent classifier opening address and ID-load scheduling,,,false
+generated_68C70,func_1503B840,0x1c,0x24a50000,0x94830084,R_MIPS_LO16:D_80098830,-,Normalize independent classifier opening address and ID-load scheduling,,,false

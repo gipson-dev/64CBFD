@@ -1,7 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
 
-/* Non-matching placeholders for the text-only asm slice asm/68C70.s. */
+/* Recovered routines and remaining placeholders for asm/68C70.s. */
 
 extern u8 D_800CC5CB[];
 extern void *allocate_memory(s32 size, s32 arg1, s32 arg2, s32 arg3);
@@ -23,8 +23,41 @@ void func_1503B7C0(struct127 *object) {
         func_150ADA20() % 30U;
 }
 
-s32 func_1503B840() {
-    return 0;
+extern u16 D_8009877C, D_8009877E;
+extern u16 D_80098780[88], D_80098830[3], D_80098836[];
+/* Set the ID-classification flag for objects in interaction state one. */
+void func_1503B840(struct127 *object) {
+    u16 *cursor;
+    u16 *end;
+    u32 identity;
+    s32 index;
+
+    if (object->interaction_state != 1) {
+        return;
+    }
+    end = D_80098836;
+    identity = object->unk84.uh;
+    cursor = D_80098830;
+    do {
+        if (identity == *cursor++) {
+            object->unk2FB |= 2;
+            return;
+        }
+    } while ((u32)cursor < (u32)end);
+    if (identity == D_8009877C) {
+        object->unk2FB |= 1;
+        return;
+    }
+    if (identity == D_8009877E) {
+        object->unk2FB |= 1;
+        return;
+    }
+    for (index = 0; index < 88; index++) {
+        if (identity == D_80098780[index]) {
+            object->unk2FB |= 1;
+            return;
+        }
+    }
 }
 
 s32 func_1503B95C(s32 arg0, u8 *arg1) {
