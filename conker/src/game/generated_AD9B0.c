@@ -1,14 +1,41 @@
 #include <ultra64.h>
+/* This owner reads the retail record-base pointer, not the legacy array type. */
+#define D_800D3098 D_800D3098_legacy_array
 #include "variables.h"
+#undef D_800D3098
+extern struct178 *D_800D3098;
 
+s32 func_15080738(s32);
 extern u8 D_800BE580[];
 extern u8 D_800D1941;
 extern u8 *D_800D199C;
 
 /* Non-matching placeholders for the text-only asm slice asm/AD9B0.s. */
 
-s32 func_15080500() {
-    return 0;
+/* Select an actor-state command while honoring protected status bytes. */
+void func_15080500(struct127 *actor, struct178 *record, s32 secondary, s32 command) {
+    if ((actor != NULL) && (actor->interaction_state != 0) && (actor->unk127 != 0xFF)) {
+        if ((command == 0x2B) || (command == 0x2C)) {
+            D_800D1940 = command;
+            D_800D199C = (u8 *)record;
+            command = 0x2A;
+        } else if (func_15080738(command)) {
+            D_800D1940 = command;
+            if (!(D_800D2E60[command >> 3] & (1 << (command & 7)))) {
+                command = 0x1A;
+            }
+        }
+        if (secondary == 0) {
+            if (!(((u8 *)actor->unk31C)[0x74] & 0x80)) {
+                ((u8 *)actor->unk31C)[0x74] = command;
+            }
+        } else {
+            if (!(((u8 *)actor->unk31C)[0x75] & 0x80)) {
+                ((u8 *)actor->unk31C)[0x75] = command;
+                ((u8 *)actor->unk31C)[0x7A] = record - D_800D3098;
+            }
+        }
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_AD9B0/func_15080620.s")
