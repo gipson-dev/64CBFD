@@ -222,8 +222,30 @@ s32 func_150A3058() {
     return 0;
 }
 
-s32 func_150A3194() {
-    return 0;
+/* Find the first matching record accepted by the position query. */
+GeneratedCDE80Record *func_150A3194(s32 kind, s32 subtype, s32 x, s32 y, s32 z) {
+    u32 index;
+    struct127 query;
+    s32 offset;
+
+    query.x_position = x;
+    query.y_position = y;
+    query.z_position = z;
+    query.old_x_position = x;
+    query.unk180 = y;
+    query.old_y_position = y;
+    query.old_z_position = z;
+
+    for (index = 0, offset = 0; index < (u32)D_800D3094; index++, offset += 0x34) {
+        if ((((u8 *)D_800D3098)[offset + 0x14] == 0) &&
+            ((((u8 *)D_800D3098)[offset + 0x15] >> 2) == kind) &&
+            (((u8 *)D_800D3098)[offset + 0x17] == subtype)) {
+            if (func_150A1DA0(&query, offset + (s32)D_800D3098, 0) == 0) {
+                return (GeneratedCDE80Record *)(offset + (s32)D_800D3098);
+            }
+        }
+    }
+    return NULL;
 }
 
 s32 func_150A32B4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
