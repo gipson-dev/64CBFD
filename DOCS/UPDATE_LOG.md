@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2163](WORKING_NOTES/2163-game-record-motion-update-match-20261107.md): `func_1513E6E8` emits all 85 retail words directly from C with no new guards; its four ordered motion groups, byte reset and real updater ABI are qualified. Total **4,233 / 5,512 (76.80%)**, Game **3,560 / 4,839 (73.57%)**, zero drift; **177** more to 80%. Full-image gate: 266 bytes, zero exclusions; guard history unchanged. Next: `func_1513E83C`.
+
 [Note 2162](WORKING_NOTES/2162-game-dual-record-animation-update-match-20261107.md): `func_1513CFE4` now matches all195 retail words; both ordered update callbacks, exit veto, fades/cursor and original registry ABI are qualified. Twelve guards cover a closed flags lifetime and ordinary-RAM self-store forwarding; raw-private/fault limits remain explicit. Total **4,232 / 5,512 (76.78%)**, Game **3,559 / 4,839 (73.55%)**, zero drift; **178** more to80%. Full-image gate:540 bytes, zero exclusions, no metadata reorder. Next:`func_1513E6E8`.
 
 [Note 2161](WORKING_NOTES/2161-game-record-animation-update-match-20261107.md): `func_1513C060` now matches all188 retail words; its lifetime/fade/cursor logic and original registry interface are qualified. Sixteen guards cover a closed flags lifetime and ordinary-RAM self-store forwarding, with raw-private/fault limits documented. Total **4,231 / 5,512 (76.76%)**, Game **3,558 / 4,839 (73.53%)**, zero drift; **179** more to80%. Full-image gate:533 bytes, zero exclusions, one closed metadata pair swap. Next:`func_1513CFE4`.

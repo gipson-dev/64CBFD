@@ -17,7 +17,7 @@ s32 func_1513CBF0();
 void func_1513CFE4(u8 *record);
 s32 func_1513DB00();
 void func_1513DF9C(void *, s32, u8);
-s32 func_1513E6E8();
+s32 func_1513E6E8(u8 *record);
 s32 func_1513E83C();
 s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1513EE14();
@@ -719,47 +719,34 @@ void func_1513E2A4(void) {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E2AC.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_169510/func_1513E2AC.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E6E8.s. */
-s32 func_1513E6E8() {
-    return 0;
+/* Advance the enabled motion fields and reset byte 0x5D to 255. */
+s32 func_1513E6E8(u8 *record) {
+    u8 *motion;
+    motion = record + 0x110;
+    if ((*(u32 *)(record + 0x58) & 0x20) != 0) {
+        *(f32 *)(motion + 0x0C) += *(f32 *)(motion + 0x2C) * D_800BE9A4;
+    }
+    motion = record + 0x110;
+    if ((*(u32 *)(record + 0x58) & 0x40) != 0) {
+        *(f32 *)(record + 0x34) += *(f32 *)(motion + 0x08) * D_800BE9A4;
+        *(f32 *)(record + 0x38) += *(f32 *)(motion + 0x0C) * D_800BE9A4;
+        *(f32 *)(record + 0x3C) += *(f32 *)(motion + 0x10) * D_800BE9A4;
+    }
+    motion = record + 0x110;
+    if ((*(u32 *)(record + 0x58) & 0x80) != 0) {
+        *(f32 *)(record + 0x40) += *(f32 *)(motion + 0x14) * D_800BE9A4;
+        *(f32 *)(record + 0x44) += *(f32 *)(motion + 0x18) * D_800BE9A4;
+        *(f32 *)(record + 0x48) += *(f32 *)(motion + 0x1C) * D_800BE9A4;
+    }
+    motion = record + 0x110;
+    if ((*(u32 *)(record + 0x58) & 0x100) != 0) {
+        *(f32 *)(record + 0x4C) += *(f32 *)(motion + 0x20) * D_800BE9A4;
+        *(f32 *)(record + 0x50) += *(f32 *)(motion + 0x24) * D_800BE9A4;
+        *(f32 *)(record + 0x54) += *(f32 *)(motion + 0x28) * D_800BE9A4;
+    }
+    record[0x5D] = 255;
+    return 1;
 }
-// s32 func_1513E6E8(void *arg0) {
-//     void *temp_v0;
-//     void *temp_v0_2;
-//     void *temp_v0_3;
-//     void *temp_v0_4;
-//     s32 phi_v1;
-//     s32 phi_v1_2;
-//
-//     if ((arg0->unk58 & 0x20) != 0) {
-//         temp_v0 = arg0->unk110;
-//         temp_v0->unkC = (f32) (temp_v0->unkC + (temp_v0->unk2C * D_800BE9A4));
-//     }
-//     phi_v1 = arg0->unk58;
-//     if ((arg0->unk58 & 0x40) != 0) {
-//         temp_v0_2 = arg0->unk110;
-//         arg0->unk34 = (f32) (arg0->unk34 + (temp_v0_2->unk8 * D_800BE9A4));
-//         arg0->unk38 = (f32) (arg0->unk38 + (temp_v0_2->unkC * D_800BE9A4));
-//         arg0->unk3C = (f32) (arg0->unk3C + (temp_v0_2->unk10 * D_800BE9A4));
-//         phi_v1 = arg0->unk58;
-//     }
-//     temp_v0_3 = arg0->unk110;
-//     phi_v1_2 = phi_v1;
-//     if ((phi_v1 & 0x80) != 0) {
-//         arg0->unk40 = (f32) (arg0->unk40 + (temp_v0_3->unk14 * D_800BE9A4));
-//         arg0->unk44 = (f32) (arg0->unk44 + (temp_v0_3->unk18 * D_800BE9A4));
-//         arg0->unk48 = (f32) (arg0->unk48 + (temp_v0_3->unk1C * D_800BE9A4));
-//         phi_v1_2 = arg0->unk58;
-//     }
-//     temp_v0_4 = arg0->unk110;
-//     if ((phi_v1_2 & 0x100) != 0) {
-//         arg0->unk4C = (f32) (arg0->unk4C + (temp_v0_4->unk20 * D_800BE9A4));
-//         arg0->unk50 = (f32) (arg0->unk50 + (temp_v0_4->unk24 * D_800BE9A4));
-//         arg0->unk54 = (f32) (arg0->unk54 + (temp_v0_4->unk28 * D_800BE9A4));
-//     }
-//     arg0->unk5D = (u8)0xFF;
-//     return 1;
-// }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E83C.s. */
 s32 func_1513E83C() {
     return 0;
