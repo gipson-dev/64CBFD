@@ -8,7 +8,7 @@ extern f32 D_800BE9A4;
 
 /* Non-matching placeholders for the text-only asm slice asm/1FA770.s. */
 
-s32 func_151D10E4(u8 *, s32, u8);
+s32 func_151D10E4(u8 *, void *, u8);
 void func_151D13E0(u8 *);
 
 typedef struct {
@@ -378,33 +378,63 @@ s32 func_151D0F34(s32 arg0) {
     func_1513175C(arg0);
 }
 
-s32 func_151D0F60() {
-    return 0;
+typedef struct { f32 x, y, z; } PositionVector151D0F60;
+typedef struct {
+    u8 *owner;
+    u8 ownerId;
+    s32 zero08;
+    PositionVector151D0F60 first, second, third;
+    f32 zero30;
+    u8 selector;
+} PositionPayload151D0F60;
+extern s32 (*D_8008FC30[])(u8 *, PositionVector151D0F60 *);
+extern PositionVector151D0F60 D_800A5480;
+
+/* Capture the position callback result and attach its duplicated payload. */
+void func_151D0F60(u8 *owner, u8 selector, u8 priority, s32 context) {
+    u8 *created;
+    PositionPayload151D0F60 payload;
+    payload.owner = owner;
+    payload.ownerId = owner[0x3B];
+    payload.zero08 = 0;
+    if (!D_8008FC30[selector](owner, &payload.second)) {
+        payload.second = D_800A5480;
+    }
+    payload.first = payload.second;
+    payload.third = D_800A5480;
+    payload.zero30 = 0.0f;
+    payload.selector = selector;
+    created = func_15149130(300, -1, 95, -1, 0, 72, 56, priority, context);
+    if (created != NULL) {
+        memcpy(created + 0x28, &payload, 56);
+    }
 }
 
-s32 func_151D1074(u8 *arg0, f32 *arg1) {
-    arg1[0] = *(f32 *) (arg0 + 0x14);
-    arg1[1] = *(f32 *) (arg0 + 0x180) + 8.0f;
-    arg1[2] = *(f32 *) (arg0 + 0x1C);
+s32 func_151D1074(u8 *owner, PositionVector151D0F60 *output) {
+    output->x = *(f32 *)(owner + 0x14);
+    output->y = *(f32 *)(owner + 0x180) + 8.0f;
+    output->z = *(f32 *)(owner + 0x1C);
     return 1;
 }
 
-void func_151D10A4(s32 arg0, s32 arg1) {
-    func_151D10E4(arg0, arg1, 0);
+/* Preserve the transform status returned through the position callback. */
+s32 func_151D10A4(u8 *owner, PositionVector151D0F60 *output) {
+    return func_151D10E4(owner, output, 0);
 }
 
-void func_151D10C4(s32 arg0, s32 arg1) {
-    func_151D10E4(arg0, arg1, 1);
+/* Query the second transform row through the same callback ABI. */
+s32 func_151D10C4(u8 *owner, PositionVector151D0F60 *output) {
+    return func_151D10E4(owner, output, 1);
 }
 
-s32 func_151D10E4(u8 *arg0, s32 arg1, u8 arg2) {
-    s32 target;
+s32 func_151D10E4(u8 *owner, void *output, u8 mode) {
+    void *target;
 
-    target = *(s32 *) (arg0 + 0x1D4);
+    target = *(void **)(owner + 0x1D4);
     if (target == NULL) {
         return 0;
     }
-    func_15143134(&D_800AAF9C[arg2], arg1, target);
+    func_15143134(&D_800AAF9C[mode], output, target);
     return 1;
 }
 
