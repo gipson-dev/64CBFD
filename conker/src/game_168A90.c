@@ -18,12 +18,18 @@ void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_1510CE60(void *, s32, s32, s32, s32 *);
 
+typedef struct { s32 first, count; } TextureVertexRange168A90;
+extern f32 D_800A49C0[9][3];
+extern TextureVertexRange168A90 D_800A4A2C[9];
+extern f32 D_800A4A74, D_800A4A78, D_800A4A7C, D_800A4A80;
+f32 *func_15144B34(s32);
+
 /* Generated placeholder declarations. */
 s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context);
 void func_1513B798(u8 *arg0);
 Gfx *func_1513B83C(Gfx *displayList, u8 *resource, s16 view);
 s32 func_1513BAE8(void);
-s32 func_1513BBFC();
+s32 func_1513BBFC(u8 *resource, s16 view);
 s32 func_1513BEB0();
 s32 func_15109064(struct132 *, s32, u8);
 void func_151BA468(struct132 *, s32, u8);
@@ -118,7 +124,7 @@ Gfx *func_1513B83C(Gfx *displayList, u8 *resource, s16 view) {
     return displayList;
 }
 
-s32 func_1513B968(s32 arg0, s32 arg1) {
+s32 func_1513B968(s32 arg0, s16 arg1) {
     // FIXME: &arg0->unk_120[D_800BE9C0]
     func_150A7B80(arg0 + 120 + (D_800BE9C0 << 6));
     return 1;
@@ -193,9 +199,55 @@ s32 func_1513BAE8(void) {
     }
     return handle;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BBFC.s. */
-s32 func_1513BBFC() {
-    return 0;
+/* Update texture coordinates for the resource's nine vertex groups. */
+s32 func_1513BBFC(u8 *resource, s16 view) {
+    f32 *payload;
+    f32 *viewer;
+    f32 *center;
+    TextureVertexRange168A90 *range;
+    f32 scaleS, scaleT, wrappedS, wrappedT;
+    f32 directionX, directionZ, inverse, horizontal, vertical;
+    f32 x, y, z, dx, dy, dz;
+    Vtx *vertex;
+    s32 index;
+
+    func_1513B968((s32)resource, view);
+    payload = (f32 *)(resource + *(u32 *)(resource + 0x50) + 0xF8);
+    scaleS = sinf(payload[3]) * D_800A4A74 + D_800A4A78;
+    scaleT = sinf(payload[4]) * D_800A4A7C + D_800A4A80;
+    viewer = func_15144B34(view);
+    wrappedS = payload[0] - (f32)(s32)(payload[0] * (1.0f / 1024.0f)) * 1024.0f;
+    wrappedT = payload[1] - (f32)(s32)(payload[1] * (1.0f / 1024.0f)) * 1024.0f;
+    center = D_800A49C0[0];
+    range = D_800A4A2C;
+    do {
+        horizontal = center[0] - viewer[0];
+        vertical = center[2] - viewer[2];
+        if (horizontal != 0.0f || vertical != 0.0f) {
+            inverse = 1.0f / sqrtf(horizontal * horizontal + vertical * vertical);
+            directionX = vertical * inverse;
+            directionZ = -horizontal * inverse;
+        } else {
+            directionX = 1.0f;
+            directionZ = 0.0f;
+        }
+        for (index = range->first;
+             index < range->first + range->count;
+             index = (u32)index + 1) {
+            vertex = *(Vtx **)(resource + 0x58 + ((u32)D_800BE9C0 << 4) + (s32)view * 4) + index;
+            x = vertex->v.ob[0];
+            y = vertex->v.ob[1];
+            z = vertex->v.ob[2];
+            dx = x - center[0];
+            dy = y - center[1];
+            dz = z - center[2];
+            vertex->v.tc[0] = (s32)((dx * directionX + dz * directionZ) * scaleS - wrappedS);
+            vertex->v.tc[1] = (s32)(dy * scaleT - wrappedT);
+        }
+        range++;
+        center += 3;
+    } while (range != (TextureVertexRange168A90 *)&D_800A4A74);
+    return 1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BEB0.s. */
 s32 func_1513BEB0() {

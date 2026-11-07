@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2159](WORKING_NOTES/2159-game-resource-texture-callback-match-20261107.md): `func_1513BBFC` now matches all 173 retail words; its nine-group texture callback, float32 vertex model, real helpers and renderer path are qualified with 60 guarded scheduling/address words. Total **4,229 / 5,512 (76.72%)**, Game **3,556 / 4,839 (73.49%)**, zero drift; **181** more to 80%. Full-image gate: 590 bytes, zero exclusions, two closed metadata swaps. Next: `func_1513BEB0`.
+
 [Note 2158](WORKING_NOTES/2158-game-view-resource-draw-match-20261107.md): `func_1513B83C` now emits all 75 retail words directly from SDK C, with no new guards; its view filter, callback ABI, three graphics commands and indirect registry windows are qualified. Total **4,228 / 5,512 (76.71%)**, Game **3,555 / 4,839 (73.47%)**, zero drift; **182** more to 80%. Full-image gate: 259 bytes, zero exclusions, two closed metadata pair swaps. Next: `func_1513BBFC`.
 
 [Note 2157](WORKING_NOTES/2157-game-resource-view-creator-match-20261107.md): `func_1513B5E0` now matches all 110 words with 42 qualified lifetime/schedule guards; resource resolution, allocation, live view buffers and the fixed-factory caller are verified. Total **4,227 / 5,512 (76.69%)**, Game **3,554 / 4,839 (73.44%)**, zero drift; **183** more to 80%. Full-image gate: 338 bytes, zero exclusions. Next: `func_1513B83C`.
