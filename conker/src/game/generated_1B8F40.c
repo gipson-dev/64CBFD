@@ -19,6 +19,10 @@ typedef struct {
 } SelectedVertexSprite;
 void func_1516865C(void *, u8, u8, u8, u8);
 void *func_15168800(void *, u8, s32);
+u8 func_151D8E20(void);
+f32 func_150ADA68(void);
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/1B8F40.s. */
 
@@ -119,8 +123,39 @@ s32 func_1518C57C(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
     return 1;
 }
 
-s32 func_1518C69C() {
-    return 0;
+/* Emit the impact sprite and submit a randomized effect at the updated position. */
+s32 func_1518C69C(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
+                  f32 height, void *context) {
+    s32 heightInt;
+    SelectedVertexSprite descriptor;
+    u8 *owner = *(u8 **)(actor + 0x98);
+    u8 *positions = *(u8 **)(actor + 0x94);
+    u8 selector;
+    f32 position[3];
+    f32 magnitude;
+    descriptor.value80 = 0;
+    descriptor.value8A = 0x100;
+    descriptor.x = (s32)*(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20);
+    descriptor.y = heightInt = (s32)height;
+    descriptor.z = (s32)*(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20 + 8);
+    descriptor.lifetime = (u32)func_150ADA20() % 21 + 35;
+    descriptor.tag = -1;
+    descriptor.textureIndex = 18;
+    descriptor.flags = 12;
+    descriptor.mode = 0;
+    descriptor.remaining = descriptor.lifetime;
+    descriptor.initialHeight = heightInt;
+    func_1516865C(&descriptor, 255, 255, 255, 255);
+    func_15168800(&descriptor, actor[0xC], actor[1]);
+    owner[0x20] = 4;
+    position[0] = *(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20);
+    position[1] = height;
+    position[2] = *(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20 + 8);
+    selector = func_151D8E20();
+    magnitude = func_150ADA68() * 40.0f + 100.0f;
+    func_151DBCBC(selector, magnitude, 255,
+                  (s32)context, position, actor[0xC], actor[1]);
+    return 1;
 }
 
 void func_1516972C(struct102 *owner);

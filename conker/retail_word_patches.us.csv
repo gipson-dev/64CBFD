@@ -26747,3 +26747,24 @@ game_1944C0,func_1516865C,0x17C,0xA480009E,0xA4850038,-,-,Normalize closed sprit
 game_1944C0,func_1516865C,0x180,0xA48E003A,0xA4850048,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
 game_1944C0,func_1516865C,0x184,0xA48E006A,0xA4850008,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
 game_1944C0,func_1516865C,0x188,0xA48E002A,0x8485005A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C69C,0x0,0x27BDFF00,0x27BDFF08,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x10,0xAFA50104,0xAFA500FC,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x14,0xAFA60108,0xAFA60100,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x18,0xAFA7010C,0xAFA70104,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x28,0xC7A80110,0xC7A80108,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x50,0x03235021,0x00795021,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x78,0x01E3C021,0x006FC021,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xBC,0xA3AD00F2,0xA7AC00E2,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xC0,0xA3AE00F0,0xA3AD00F2,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xC4,0xA7AF00E8,0xA3AE00F0,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xC8,0xA3A000F1,0xA7AF00E8,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xCC,0xA7AC00E4,0xA3A000F1,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0xD4,0xA7AC00E2,0xA7AC00E4,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x10C,0xA1590020,0x24040014,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x110,0x820B002D,0xA1590020,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x114,0x24040014,0x820B002D,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x118,0xC7A60110,0xC7A60108,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x124,0x01836821,0x006C6821,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x140,0x01E3C021,0x006FC021,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x18C,0x8FA70114,0x8FA7010C,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518C69C,0x1A8,0x27BD0100,0x27BD00F8,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
