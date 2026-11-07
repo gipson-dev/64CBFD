@@ -21,7 +21,7 @@ s32 func_1510CE60(void *, s32, s32, s32, s32 *);
 /* Generated placeholder declarations. */
 s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context);
 void func_1513B798(u8 *arg0);
-s32 func_1513B83C();
+Gfx *func_1513B83C(Gfx *displayList, u8 *resource, s16 view);
 s32 func_1513BAE8(void);
 s32 func_1513BBFC();
 s32 func_1513BEB0();
@@ -30,6 +30,7 @@ void func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
 
 extern s32 (*D_80089C18[])(u8 *);
+extern s32 (*D_80089C28[])(u8 *, s16);
 
 /* Create two resource buffers per live view, retaining the initial total size. */
 s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context) {
@@ -97,9 +98,24 @@ void func_1513B798(u8 *arg0) {
         func_1516972C((struct102 *)arg0);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B83C.s. */
-s32 func_1513B83C() {
-    return 0;
+/* Submit the resource's three graphics commands after per-view filtering. */
+Gfx *func_1513B83C(Gfx *displayList, u8 *resource, s16 view) {
+    s8 callbackIndex;
+
+    if ((resource[0x10] & 2) != 0 &&
+        (resource[0x49] & (1U << view)) == 0) {
+        return displayList;
+    }
+    callbackIndex = *(s8 *)(resource + 0x12);
+    if (callbackIndex != -1 && D_80089C28[callbackIndex](resource, view) == 0) {
+        return displayList;
+    }
+    gSPMatrix(displayList++, (Mtx *)(resource + 0x78 + ((u32)D_800BE9C0 << 6)),
+              G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPSegment(displayList++, 1,
+               *(u32 *)(resource + 0x58 + ((u32)D_800BE9C0 << 4) + (s32)view * 4));
+    gSPDisplayList(displayList++, *(Gfx **)(resource + 0x54));
+    return displayList;
 }
 
 s32 func_1513B968(s32 arg0, s32 arg1) {
