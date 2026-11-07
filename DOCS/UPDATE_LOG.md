@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2156](WORKING_NOTES/2156-game-fixed-descriptor-factory-match-20261107.md): `func_1513BAE8` now matches all 69 words with one commutative-add guard; descriptor, live payload, release/return behavior and original creator/caller paths are qualified. Total **4,226 / 5,512 (76.67%)**, Game **3,553 / 4,839 (73.42%)**, zero drift; **184** more to 80%. Complete-image gate: 212 bytes, zero exclusions. `func_150A25D4` remains private and uncredited. Next: `func_1513B5E0`.
+
 [Note 2155](WORKING_NOTES/2155-game-record-state-service-dispatch-match-20261107.md): `func_150A24C0` now matches all 69 words using 25 temporary-register guards, with its eleven-argument call and live state update recovered. Total **4,225 / 5,512 (76.65%)**, Game **3,552 / 4,839 (73.40%)**, zero drift; **185** more to 80%. Full-image gate: 210 changed bytes, zero exclusions. Next: `func_150A25D4`.
 
 **Callback-position payload factory matched directly**: [Note 2154](WORKING_NOTES/2154-game-callback-position-payload-factory-match-20261107.md). `func_151D0F60` restores its live callback/default handling, 56-byte payload and conditional factory copy. All 69 words emit directly with no guards; four callback ABI repairs preserve all 51 neighboring bodies and remove two pointer warnings. Seven checks pass pre/post in both tools configurations; actual Make equals the complete 213-byte ELF prediction with zero exclusions. Production **4,224/5,512 (76.63%)**, Game **3,551/4,839 (73.38%)**, zero drift; **186 more** to 80%. Next: `func_150A24C0`.

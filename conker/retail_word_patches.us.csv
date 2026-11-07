@@ -26880,3 +26880,4 @@ generated_CDE80,func_150A24C0,0x0EC,0x24050002,0x24020002,-,-,Normalize record-s
 generated_CDE80,func_150A24C0,0x0F4,0x0061C824,0x00617824,-,-,Normalize record-state service temporary register allocation,,,false
 generated_CDE80,func_150A24C0,0x0F8,0x03257025,0x01E2C025,-,-,Normalize record-state service temporary register allocation,,,false
 generated_CDE80,func_150A24C0,0x0FC,0xAE0E001C,0xAE18001C,-,-,Normalize record-state service temporary register allocation,,,false
+game_168A90,func_1513BAE8,0x0F0,0x01272021,0x00E92021,-,-,Normalize fixed-effect commutative destination addition,,,false

@@ -7,7 +7,7 @@
 s32 func_1513B5E0();
 void func_1513B798(u8 *arg0);
 s32 func_1513B83C();
-s32 func_1513BAE8();
+s32 func_1513BAE8(void);
 s32 func_1513BBFC();
 s32 func_1513BEB0();
 s32 func_15109064(struct132 *, s32, u8);
@@ -86,9 +86,52 @@ s32 func_1513BAD4(s32 arg0, s32 arg1) {
     return 0;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BAE8.s. */
-s32 func_1513BAE8() {
-    return 0;
+typedef struct {
+    u8 field0, field1, field2, pad3;
+    s16 field4;
+    u8 pad6[2];
+    s32 field8, fieldC, field10, field14, field18, field1C, field20;
+    u8 field24, field25, pad26[10];
+    s32 field30, field34;
+    u8 field38;
+} EffectDescriptor1513BAE8;
+typedef struct { f32 value0, value4, value8, valueC, value10; } EffectPayload1513BAE8;
+
+/* Build the fixed effect and preserve its handle even on validation release. */
+s32 func_1513BAE8(void) {
+    u32 handle;
+    EffectDescriptor1513BAE8 descriptor;
+    EffectPayload1513BAE8 payload;
+    payload.value0 = 0.0f;
+    payload.value4 = 0.0f;
+    payload.valueC = 0.0f;
+    payload.value10 = 0.0f;
+    payload.value8 = 0.0f;
+    descriptor.field0 = 0;
+    descriptor.field1 = 2;
+    descriptor.field2 = 5;
+    descriptor.field4 = 300;
+    descriptor.field30 = 9;
+    descriptor.field34 = 430;
+    descriptor.field8 = 1;
+    descriptor.fieldC = 0x220205;
+    descriptor.field10 = 0x40600;
+    descriptor.field24 = 0;
+    descriptor.field25 = 0;
+    descriptor.field14 = 1;
+    descriptor.field18 = 54;
+    descriptor.field1C = 128;
+    descriptor.field20 = 32;
+    descriptor.field38 = 3;
+    handle = func_1513B5E0(&descriptor, 1, 20, 255, 1);
+    if (handle != 0) {
+        if (*(s32 *)(handle + 0x50) != 0x1180) {
+            func_1516972C((struct102 *)handle);
+        } else {
+            memcpy((void *)(handle + *(s32 *)(handle + 0x50) + 0xF8), &payload, 20);
+        }
+    }
+    return handle;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BBFC.s. */
 s32 func_1513BBFC() {
