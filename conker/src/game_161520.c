@@ -30,7 +30,7 @@ void func_15152190(Configuration161520 *, s32 *, f32 *, s32, f32, u8, u8, s32);
 s32 func_15134070(u8 *actor);
 s32 func_1513418C();
 s32 func_151342BC();
-s32 func_151347CC();
+void func_151347CC(struct102 *record, s32 *request, u8 command);
 s32 func_151349D0();
 s32 func_15134CEC();
 s32 func_15134E48();
@@ -227,9 +227,39 @@ void func_1513477C(struct102 *arg0) {
   }
     D_80089AD4[idx]();
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151347CC.s. */
-s32 func_151347CC() {
-    return 0;
+/* Handle owner cleanup requests and exchange the live owner reference. */
+void func_151347CC(struct102 *record, s32 *request, u8 command) {
+    s32 first;
+    s32 current;
+    if (command == 0 || command == 3) {
+        if (*(s32 *)((u8 *)record + 0x1C) == request[0] ||
+            *((u8 *)record + 0x18) == *((u8 *)request + 4)) {
+            func_1516972C(record);
+        }
+    } else if (command == 0x11) {
+        if (*((u8 *)record + 0x3D) == 5) {
+            if (*(s32 *)((u8 *)record + 0x1C) == request[0] ||
+                *((u8 *)record + 0x18) == *((u8 *)request + 4)) {
+                func_1516972C(record);
+            }
+        }
+    } else if (command == 0x16) {
+        if ((s32)request == *(s32 *)((u8 *)record + 0x1C)) {
+            func_1516972C(record);
+        }
+    } else if (command == 0x2D) {
+        first = request[0];
+        current = *(s32 *)((u8 *)record + 0x1C);
+        if (first == current) {
+            *(s32 *)((u8 *)record + 0x1C) = request[1];
+            *((u8 *)record + 0x18) = *((u8 *)request + 9);
+        } else {
+            if (current == request[1]) {
+                *(s32 *)((u8 *)record + 0x1C) = first;
+                *((u8 *)record + 0x18) = *((u8 *)request + 8);
+            }
+        }
+    }
 }
 void func_151348F0(f32 arg0, f32 arg1, s32 arg2, s32 arg3) {
 

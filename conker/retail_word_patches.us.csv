@@ -26828,3 +26828,4 @@ generated_1B8F40,func_1518BD60,0x2F0,0x448D9000,0x448E9000,-,-,Normalize proved 
 generated_1B8F40,func_1518BD60,0x304,0x326E00FF,0x326F00FF,-,-,Normalize proved owner-pair register roles and private setup schedule,,,false
 generated_1B8F40,func_1518BD60,0x308,0x29C10002,0x29E10002,-,-,Normalize proved owner-pair register roles and private setup schedule,,,false
 generated_1B8F40,func_1518BD60,0x310,0x01C09825,0x01E09825,-,-,Normalize proved owner-pair register roles and private setup schedule,,,false
+game_161520,func_151347CC,0x100,0x54790005,0x57230005,-,-,Normalize commutative reference-handler BNEL operand order,,,false
