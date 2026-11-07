@@ -22,7 +22,7 @@ Vtx *func_1513E83C(u8 *actor, s16 view);
 s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1513EE14();
 s32 func_1513F114();
-s32 func_1513F4E4();
+Gfx *func_1513F4E4(Gfx *cursor, u8 index, u8 *dirty);
 s32 func_1513F728(u8 *actor);
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_1513FFF4(u8 *out, u8 index, u8 variant);
@@ -825,9 +825,28 @@ void func_1513F4B0(struct210 *arg0, s16 arg1) {
     func_15140410((u8 *)arg0, (f32 *)((u8 *)arg0 + 0x110),
                  (f32 *)((u8 *)arg0 + 0x11C), arg1);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513F4E4.s. */
-s32 func_1513F4E4() {
-    return 0;
+/* Select a changed combiner state and append its two-cycle RDP command. */
+Gfx *func_1513F4E4(Gfx *cursor, u8 index, u8 *dirty) {
+    extern s16 func_15143044(u8 index, s32 mode);
+    extern s16 D_800DD1BE;
+    extern u8 D_800A4BA8[][16];
+    s16 selection;
+    u8 *record;
+    selection = func_15143044(index, 0);
+    if (selection != D_800DD1BE) {
+        if (*dirty == 1) {
+            gDPPipeSync(cursor++);
+            *dirty = 0;
+        }
+        record = D_800A4BA8[index];
+        gDPSetCombine(cursor++,
+            GCCc0w0(record[0], record[2], record[4], record[6]) |
+            GCCc1w0(record[8], record[10]),
+            GCCc0w1(record[1], record[3], record[5], record[7]) |
+            GCCc1w1(record[9], record[12], record[14], record[11], record[13], record[15]));
+        D_800DD1BE = selection;
+    }
+    return cursor;
 }
 void func_1513F680(struct171 *arg0, u8 arg1, u8 arg2, u8 arg3, u8 arg4) {
     arg0->unk70 = arg1;
