@@ -1,4 +1,8 @@
 #include <ultra64.h>
+typedef void (*LinkedEventCallback15F680)(u8 *, u8 *, u8);
+extern LinkedEventCallback15F680 D_800899F8[];
+void func_151B9660(u8 *);
+
 extern void (*D_800899D4[])();
 extern void (*D_800899B0[])();
 extern s32 D_80082FA0;
@@ -304,8 +308,39 @@ s32 func_15133510(Mtx *output, u8 *source) {
     return 1;
 }
 
-s32 func_15133588() {
-    return 0;
+/* Update linked event keys and dispatch the owner's optional callback. */
+void func_15133588(u8 *owner, u8 *pair, u8 event) {
+    u32 first;
+    u32 current;
+    s32 selector = event;
+    s32 index;
+    LinkedEventCallback15F680 callback;
+
+    if ((event == 0x1B) && (*(u16 *)(owner + 0x66) == 0x22)) {
+        func_151B9660(owner);
+    }
+    if (selector == 0x2D) {
+        first = *(u32 *)pair;
+        current = *(u32 *)(owner + 0x7C);
+        if (first == current) {
+            *(u32 *)(owner + 0x7C) = *(u32 *)(pair + 4);
+            owner[0x80] = pair[9];
+        } else if (*(u32 *)(pair + 4) == current) {
+            *(u32 *)(owner + 0x7C) = first;
+            owner[0x80] = pair[8];
+        }
+    } else if (selector == 0) {
+        first = *(u32 *)pair;
+        if ((first == *(u32 *)(owner + 0x7C)) || (owner[0x80] == pair[4])) {
+            *(u32 *)(owner + 0x7C) = 0;
+            owner[0x80] = 0;
+        }
+    }
+    index = (*(u32 *)(owner + 0x60) & 0x100) ? owner[0x68] : 0;
+    callback = D_800899F8[index];
+    if (callback != NULL) {
+        callback(owner, pair, event);
+    }
 }
 
 s32 func_151336A8(s32 index, ExtendedResourceNode15F680 *node, void *record) {

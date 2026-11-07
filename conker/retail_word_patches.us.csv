@@ -26698,3 +26698,8 @@ generated_1F2730,func_151C5588,0x84,0xAFA2004C,0xAFA20048,-,-,Normalize closed e
 generated_1F2730,func_151C5588,0x9c,0x8FAF0048,0x8FAF0044,-,-,Normalize closed effect RNG capture word homes,,,false
 generated_CDE80,func_150A3194,0xb4,0x00702821,0x02032821,-,-,Preserve commutative record-query address addition operand order,,,false
 generated_CDE80,func_150A3194,0xd8,0x01501021,0x020A1021,-,-,Preserve commutative record-query address addition operand order,,,false
+generated_15F680,func_15133588,0x58,0x14410011,0x14410012,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
+generated_15F680,func_15133588,0x7c,0x10000014,0x10000015,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
+generated_15F680,func_15133588,0x88,0x54680012,0x55030013,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
+generated_15F680,func_15133588,0x98,0x1000000D,0xA0890080,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
+generated_15F680,func_15133588,0x9c,0xA0890080,0x1000000E,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,0x8C8D0060,,false
