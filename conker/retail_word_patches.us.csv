@@ -26693,3 +26693,6 @@ generated_1C2C60,func_15195868,0xf4,0x000260C0,0x0002C8C0,-,-,Normalize closed t
 generated_1C2C60,func_15195868,0xf8,0x01847021,0x03245821,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
 generated_1C2C60,func_15195868,0x100,0x81C60000,0x81660000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
 generated_1C2C60,func_15195868,0x108,0x8CF80000,0x8CEE0000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1F2730,func_151C5588,0x7c,0xAFA20048,0xAFA20044,-,-,Normalize closed effect RNG capture word homes,,,false
+generated_1F2730,func_151C5588,0x84,0xAFA2004C,0xAFA20048,-,-,Normalize closed effect RNG capture word homes,,,false
+generated_1F2730,func_151C5588,0x9c,0x8FAF0048,0x8FAF0044,-,-,Normalize closed effect RNG capture word homes,,,false

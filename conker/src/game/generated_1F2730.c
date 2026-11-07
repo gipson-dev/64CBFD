@@ -1,5 +1,10 @@
 #include <ultra64.h>
 #include "structs.h"
+extern f32 D_800AAABC, D_800AAAC0, D_800AAAC4, D_800AAAC8;
+extern f32 D_800AAA90[3], D_800AAA9C[3];
+f32 func_150ADA68(void);
+s32 func_150ADA20(void);
+u8 *func_15102B38(u8 *, u8, f32 *, f32 *, f32 *, s16, u8, f32, f32 *, u8, s32, s16, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1F2730.s. */
 
@@ -7,8 +12,19 @@ s32 func_151C5280() {
     return 0;
 }
 
-s32 func_151C5588() {
-    return 0;
+/* Submit an effect with randomized scale, type and angular parameters. */
+u8 *func_151C5588(u8 *owner, f32 *position, s16 duration, u8 priority, s32 parameter) {
+    f32 scale[2];
+    s32 random[2];
+
+    scale[1] = (func_150ADA68() * D_800AAABC + 604.0f) * D_800AAAC0;
+    scale[0] = (func_150ADA68() * 59.0f + 141.0f) * D_800AAAC4;
+    random[0] = func_150ADA20();
+    random[1] = func_150ADA20();
+    return func_15102B38(owner, 0, D_800AAA90, D_800AAA9C, scale,
+                         (random[0] & 3) + 6, 255,
+                         func_150ADA68() * 270.0f + D_800AAAC8,
+                         position, 255, 0, duration, priority, parameter);
 }
 
 s32 func_150ADA20(void);
