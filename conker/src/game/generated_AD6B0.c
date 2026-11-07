@@ -1,4 +1,8 @@
 #include <ultra64.h>
+extern u8 D_800D18D0;
+extern u8 D_800CC2D0[];
+s32 func_100126E8(u8 *, s32);
+void func_15080430(u8 *, s32, s32);
 extern s32 D_800427F0, D_800BE9E4;
 extern s32 D_8009BD10[];
 s32 func_151EF610(void);
@@ -13,8 +17,25 @@ void func_15080200(void) {
     D_800D1930 = D_800D1928 = D_800D192C = 0;
 }
 
-s32 func_15080228() {
-    return 0;
+/* Poll queued actor-channel commands and decode their seven-bit duration. */
+void func_15080228(void) {
+    u8 command[256];
+    s32 duration;
+
+    while (func_100126E8(command, sizeof(command)) != 0) {
+        if (command[0] == 0x4C) {
+            duration = command[4] & 0x7F;
+            duration = (command[5] & 0x7F) | (duration << 7);
+            duration = (command[6] & 0x7F) | (duration << 7);
+            duration = (command[7] & 0x7F) | (duration << 7);
+            duration /= 367;
+            if (duration == 0) {
+                duration = 20;
+            }
+            func_15080430(D_800CC2D0 + D_800D18D0 * 0x32C,
+                         command[3] - 1, duration);
+        }
+    }
 }
 
 /* Update the actor channel gate or advance its timed five-entry cycle. */

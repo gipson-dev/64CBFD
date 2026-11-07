@@ -105,7 +105,7 @@ void func_10012560(s32 arg0, void *arg1, s32 arg2);
 void func_10012588(s32 arg0);
 void func_100125CC(s32 arg0);
 void func_1001263C(s32 arg0, s32 arg1, s32 arg2);
-void func_100126E8(s32 arg0, s32 arg1);
+s32 func_100126E8(u8 *output, s32 capacity);
 s32  func_10012718(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4);
 s32  func_100127D0(void);
 void func_10012A28(struct121 *arg0, s32 arg1, s32 arg2, s32 arg3);

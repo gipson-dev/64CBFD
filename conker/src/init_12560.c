@@ -2,6 +2,7 @@
 
 #include "functions.h"
 #include "variables.h"
+s32 func_15043CA4(struct105 *, u8 *, s32);
 
 extern s32 func_151F2CDC_retail(void);
 extern void func_151F2BA8_retail(void);
@@ -51,8 +52,9 @@ void func_1001263C(s32 arg0, s32 arg1, s32 arg2) {
     }
 }
 
-void func_100126E8(s32 arg0, s32 arg1) {
-    func_15043CA4(&D_800427A0, arg0, arg1);
+/* Receive one queued command and return its byte count. */
+s32 func_100126E8(u8 *output, s32 capacity) {
+    return func_15043CA4(&D_800427A0, output, capacity);
 }
 
 s32 func_10012718(u16 arg0, struct127 *arg1, s32 arg2, s16 arg3, u16 arg4) {
