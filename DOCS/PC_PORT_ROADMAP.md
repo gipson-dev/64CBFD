@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2161](WORKING_NOTES/2161-game-record-animation-update-match-20261107.md): `func_1513C060` now matches all188 retail words; its lifetime/fade/cursor logic and original registry interface are qualified. Sixteen guards cover a closed flags lifetime and ordinary-RAM self-store forwarding, with raw-private/fault limits documented. Total **4,231 / 5,512 (76.76%)**, Game **3,558 / 4,839 (73.53%)**, zero drift; **179** more to80%. Full-image gate:533 bytes, zero exclusions, one closed metadata pair swap. Next:`func_1513CFE4`.
+
 [Note 2160](WORKING_NOTES/2160-game-resource-scroll-update-match-20261107.md): `func_1513BEB0` now matches all 107 retail words with one commutative integer-operand guard; its phase/scroll loops, original wrap helper and real update dispatcher are qualified. Total **4,230 / 5,512 (76.74%)**, Game **3,557 / 4,839 (73.51%)**, zero drift; **180** more to 80%. Full-image gate: 361 bytes, zero exclusions, one closed metadata pair swap. Next: inspect `func_1513C060` in `game_169510.c`.
 
 [Note 2159](WORKING_NOTES/2159-game-resource-texture-callback-match-20261107.md): `func_1513BBFC` now matches all 173 retail words; its nine-group texture callback, float32 vertex model, real helpers and renderer path are qualified with 60 guarded scheduling/address words. Total **4,229 / 5,512 (76.72%)**, Game **3,556 / 4,839 (73.49%)**, zero drift; **181** more to 80%. Full-image gate: 590 bytes, zero exclusions, two closed metadata swaps. Next: `func_1513BEB0`.

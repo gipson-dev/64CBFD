@@ -3,8 +3,12 @@
 #include "functions.h"
 #include "variables.h"
 
+extern s32 (*D_80089C70[])(u8 *);
+extern s32 (*D_80089CA8[])(u8 *);
+extern u8 D_80090B64[];
+
 /* Generated placeholder declarations. */
-s32 func_1513C060();
+void func_1513C060(u8 *record);
 s32 func_1513CBF0();
 s32 func_1513CFE4();
 s32 func_1513DB00();
@@ -28,9 +32,83 @@ extern void (*D_80089F64[])(void *, s32, u8);
 void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
 void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
 
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513C060.s. */
-s32 func_1513C060() {
-    return 0;
+/* Advance the record lifetime and animation cursor through its two callbacks. */
+void func_1513C060(u8 *record) {
+    s32 callback;
+    s8 remove;
+    s32 frames;
+    s32 flags;
+    s32 adjusted;
+    s32 rate;
+    s32 limit;
+    s32 cursor;
+
+    if ((*(u32 *)(record + 0x10) & 1) == 0) return;
+    remove = 0;
+    if ((*(u32 *)(record + 0x18) & 1) != 0) {
+        *(s16 *)(record + 0x1C) -= D_800BE9E4;
+        if (*(s16 *)(record + 0x1C) < 0) remove = 1;
+    }
+    callback = record[0x80];
+    if (callback != 0 && D_80089C70[callback](record) == 0) remove = 1;
+    flags = *(u32 *)(record + 0x18);
+    if ((flags & 0x8000) != 0 && remove == 0 &&
+        *(s16 *)(record + 0x1C) < *(s16 *)(record + 0x3A)) {
+        adjusted = *(s16 *)(record + 0x3C) * *(s16 *)(record + 0x1C);
+        if (adjusted < record[0x28]) record[0x28] = adjusted;
+    }
+    if ((s32)(*(u32 *)(record + 0x18) << 15) < 0 && remove == 0 &&
+        *(s16 *)(record + 0x1C) < *(s16 *)(record + 0x3A)) {
+        adjusted = *(s16 *)(record + 0x3C) * *(s16 *)(record + 0x1C);
+        if (adjusted < record[0x28]) record[0x2D] = adjusted;
+    }
+    if (remove == 0 && (rate = *(s32 *)(record + 0x24)) != 0) {
+        frames = D_80090B64[record[0x1E] * 12];
+        limit = (frames << 16) - 1;
+        *(s32 *)(record + 0x20) += (u32)rate * (u32)D_800BE9E4;
+        cursor = *(s32 *)(record + 0x20);
+        if (cursor > limit) {
+            flags = *(u32 *)(record + 0x18);
+            if ((flags & 2) != 0) {
+                remove = 1;
+            } else if ((flags & 0x40) != 0) {
+                *(s32 *)(record + 0x24) = 0;
+                *(s32 *)(record + 0x20) = limit;
+            } else if ((flags & 4) != 0) {
+                *(s32 *)(record + 0x20) = limit - cursor % limit;
+                *(s32 *)(record + 0x24) = (u32)0 - (u32)rate;
+            } else {
+                do {
+                    cursor = (u32)*(s32 *)(record + 0x20) - (u32)limit;
+                    *(s32 *)(record + 0x20) = cursor;
+                } while (cursor > limit);
+            }
+        } else if (cursor < 0) {
+            flags = *(u32 *)(record + 0x18);
+            if ((flags & 8) != 0) {
+                remove = 1;
+            } else if ((flags & 0x80) != 0) {
+                *(s32 *)(record + 0x24) = 0;
+                *(s32 *)(record + 0x20) = 0;
+            } else if ((flags & 4) != 0) {
+                *(s32 *)(record + 0x20) = (s32)((u32)0 - (u32)cursor) % limit;
+                *(s32 *)(record + 0x24) = (u32)0 - (u32)rate;
+            } else {
+                do {
+                    cursor = (u32)*(s32 *)(record + 0x20) + (u32)limit;
+                    *(s32 *)(record + 0x20) = cursor;
+                } while (cursor < 0);
+            }
+        }
+    }
+    if (remove != 0) {
+        callback = record[0x81];
+        if (callback != 0) {
+            if (D_80089CA8[callback](record) != 0) func_1516972C((struct102 *)record);
+        } else {
+            func_1516972C((struct102 *)record);
+        }
+    }
 }
 
 /* Allocate a record, initialize its resources, and copy an optional three-word payload. */
