@@ -26723,3 +26723,27 @@ generated_1A89B0,func_1517D690,0xcc,0x0000C012,0xAFA80024,-,-,Reschedule the clo
 generated_1A89B0,func_1517D690,0xd0,0x0018C840,0xE7A40010,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
 generated_1A89B0,func_1517D690,0xd4,0x03314021,0xAFAB0014,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
 generated_1A89B0,func_1517D690,0xdc,0xAFA80024,0xAFAC0018,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1B8F40,func_1518C57C,0x50,0x03224821,0x00594821,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0x78,0x01C27821,0x004E7821,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0x80,0xAFA30028,0xAFA3002C,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0x9C,0x8FA30028,0x8FA3002C,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xB8,0xA3AB00DA,0xA7AA00CA,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xBC,0xA3AC00D8,0xA3AB00DA,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xC0,0xA7AD00D0,0xA3AC00D8,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xC4,0xA3A000D9,0xA7AD00D0,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xC8,0xA7AA00CC,0xA3A000D9,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+generated_1B8F40,func_1518C57C,0xD0,0xA7AA00CA,0xA7AA00CC,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x144,0xA48A0078,0xA482007A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x148,0xA482007A,0xA48A0078,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x158,0x84850078,0x8485007A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x160,0x848E007A,0xA4800088,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x164,0xA4850038,0xA485003A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x168,0xA4850048,0xA485006A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x16C,0xA4850008,0xA485002A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x170,0x8485005A,0x84850078,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x174,0xA4800088,0xA480009C,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x178,0xA480009C,0xA480009E,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x17C,0xA480009E,0xA4850038,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x180,0xA48E003A,0xA4850048,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x184,0xA48E006A,0xA4850008,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false
+game_1944C0,func_1516865C,0x188,0xA48E002A,0x8485005A,-,-,Normalize closed sprite descriptor/vertex schedule and private compiler homes,,,false

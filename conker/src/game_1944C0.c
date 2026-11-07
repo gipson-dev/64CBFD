@@ -12,7 +12,25 @@ void func_15167B44(u8 *state);
 s32 func_15167C58();
 s32 func_15167E0C();
 s32 func_15168118();
-s32 func_1516865C();
+typedef struct {
+    Vtx vertices[8];
+    u32 value80;
+    u32 retained84;
+    s16 cleared88;
+    u16 value8A;
+    s16 x, y, z;
+    s16 lifetime, remaining;
+    s16 initialHeight;
+    u16 flags;
+    u16 retained9A;
+    s16 cleared9C, cleared9E;
+    u8 textureIndex, mode;
+    s8 tag;
+    u8 retainedA3;
+    u32 retainedA4;
+} SelectedVertexSprite;
+extern u8 *D_8008CA4C[];
+void func_1516865C(void *, u8, u8, u8, u8);
 s32 func_15168870();
 s32 func_15168C4C();
 void func_15168E54(void *, void *);
@@ -171,9 +189,58 @@ s32 func_15167E0C() {
 s32 func_15168118() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_1516865C.s. */
-s32 func_1516865C() {
-    return 0;
+/* Initialize eight vertex colors and the two texture quads, preserving positions. */
+void func_1516865C(void *input, u8 red, u8 green, u8 blue, u8 alpha) {
+    SelectedVertexSprite *sprite = input;
+    s16 lowV = 8192;
+    s16 highV = (*(u16 *)(D_8008CA4C[sprite->textureIndex] + 8) + 256) << 5;
+    s16 lowU = 8192;
+    s16 highU = (*(u16 *)(D_8008CA4C[sprite->textureIndex] + 6) + 256) << 5;
+    s32 i = 0;
+    Vtx *vertices = sprite->vertices;
+    do {
+        i++;
+        vertices += 4;
+        vertices[-3].v.flag = 0;
+        vertices[-3].v.cn[0] = red;
+        vertices[-3].v.cn[1] = green;
+        vertices[-3].v.cn[2] = blue;
+        vertices[-3].v.cn[3] = alpha;
+        vertices[-2].v.flag = 0;
+        vertices[-2].v.cn[0] = red;
+        vertices[-2].v.cn[1] = green;
+        vertices[-2].v.cn[2] = blue;
+        vertices[-2].v.cn[3] = alpha;
+        vertices[-1].v.flag = 0;
+        vertices[-1].v.cn[0] = red;
+        vertices[-1].v.cn[1] = green;
+        vertices[-1].v.cn[2] = blue;
+        vertices[-1].v.cn[3] = alpha;
+        vertices[-4].v.flag = 0;
+        vertices[-4].v.cn[0] = red;
+        vertices[-4].v.cn[1] = green;
+        vertices[-4].v.cn[2] = blue;
+        vertices[-4].v.cn[3] = alpha;
+    } while (i != 2);
+    if (sprite->flags & 0x80) {
+        highV = 8192;
+        lowV = (*(u16 *)(D_8008CA4C[sprite->textureIndex] + 8) + 256) << 5;
+    }
+    if (sprite->flags & 0x100) {
+        highU = 8192;
+        lowU = (*(u16 *)(D_8008CA4C[sprite->textureIndex] + 6) + 256) << 5;
+    }
+    sprite->vertices[6].v.tc[0] = lowU;
+    sprite->vertices[7].v.tc[1] = lowV;
+    sprite->vertices[7].v.tc[0] = highU;
+    sprite->vertices[1].v.tc[0] = sprite->vertices[5].v.tc[0] = sprite->vertices[2].v.tc[0] = sprite->vertices[6].v.tc[0];
+    sprite->vertices[5].v.tc[1] = highV;
+    sprite->cleared88 = 0;
+    sprite->vertices[2].v.tc[1] = sprite->vertices[6].v.tc[1] = sprite->vertices[3].v.tc[1] = sprite->vertices[7].v.tc[1];
+    sprite->cleared9C = 0;
+    sprite->cleared9E = 0;
+    sprite->vertices[0].v.tc[0] = sprite->vertices[4].v.tc[0] = sprite->vertices[3].v.tc[0] = sprite->vertices[7].v.tc[0];
+    sprite->vertices[0].v.tc[1] = sprite->vertices[4].v.tc[1] = sprite->vertices[1].v.tc[1] = sprite->vertices[5].v.tc[1];
 }
 void *func_15168800(void *arg0, u8 arg1, s32 arg2) {
     u8 *tmp;

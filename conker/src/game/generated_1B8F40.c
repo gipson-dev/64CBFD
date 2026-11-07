@@ -1,5 +1,24 @@
 #include <ultra64.h>
 #include "structs.h"
+typedef struct {
+    Vtx vertices[8];
+    u32 value80;
+    u32 retained84;
+    s16 cleared88;
+    u16 value8A;
+    s16 x, y, z;
+    s16 lifetime, remaining;
+    s16 initialHeight;
+    u16 flags;
+    u16 retained9A;
+    s16 cleared9C, cleared9E;
+    u8 textureIndex, mode;
+    s8 tag;
+    u8 retainedA3;
+    u32 retainedA4;
+} SelectedVertexSprite;
+void func_1516865C(void *, u8, u8, u8, u8);
+void *func_15168800(void *, u8, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/1B8F40.s. */
 
@@ -75,8 +94,29 @@ s32 func_1518C540(u8 *arg0) {
     return 1;
 }
 
-s32 func_1518C57C() {
-    return 0;
+/* Emit the selected position as a white, randomized-lifetime sprite. */
+s32 func_1518C57C(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
+                  f32 height, void *context) {
+    SelectedVertexSprite descriptor;
+    u8 *owner = *(u8 **)(actor + 0x98);
+    u8 *positions = *(u8 **)(actor + 0x94);
+    s32 heightInt;
+    descriptor.value80 = 0;
+    descriptor.value8A = 0x100;
+    descriptor.x = (s32)*(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20);
+    descriptor.y = heightInt = (s32)height;
+    descriptor.z = (s32)*(f32 *)(positions + *(s8 *)(actor + 0x2D) * 20 + 8);
+    descriptor.lifetime = (u32)func_150ADA20() % 21 + 35;
+    descriptor.tag = -1;
+    descriptor.textureIndex = 18;
+    descriptor.flags = 12;
+    descriptor.mode = 0;
+    descriptor.remaining = descriptor.lifetime;
+    descriptor.initialHeight = heightInt;
+    func_1516865C(&descriptor, 255, 255, 255, 255);
+    func_15168800(&descriptor, actor[0xC], actor[1]);
+    owner[0x20] = 4;
+    return 1;
 }
 
 s32 func_1518C69C() {
