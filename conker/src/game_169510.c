@@ -18,7 +18,7 @@ void func_1513CFE4(u8 *record);
 s32 func_1513DB00();
 void func_1513DF9C(void *, s32, u8);
 s32 func_1513E6E8(u8 *record);
-s32 func_1513E83C();
+Vtx *func_1513E83C(u8 *actor, s16 view);
 s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1513EE14();
 s32 func_1513F114();
@@ -747,11 +747,62 @@ s32 func_1513E6E8(u8 *record) {
     record[0x5D] = 255;
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513E83C.s. */
-s32 func_1513E83C() {
-    return 0;
+/* Build four scaled record vertices for the requested view. */
+Vtx *func_1513E83C(u8 *actor, s16 view) {
+    /* Preserve the original private homes and their untouched alignment gaps. */
+    struct {
+        u8 pad00[3];
+        u8 fresh;
+        f32 points[4][3];
+        Vtx *first;
+        Vtx *cursor;
+        u32 pad3C;
+        f32 matrix[4][4];
+    } scratch;
+    s16 i;
+    func_151D5D60(actor + 0x100, view, 0x40, &scratch.cursor, &scratch.fresh);
+    scratch.first = scratch.cursor;
+    if (scratch.cursor != NULL) {
+        if (scratch.fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    scratch.points[0][0] = *(f32 *)(actor + 0x2C);
+    scratch.points[0][1] = *(f32 *)(actor + 0x30);
+    scratch.points[1][0] = -*(f32 *)(actor + 0x2C);
+    scratch.points[1][1] = *(f32 *)(actor + 0x30);
+    scratch.points[2][0] = -*(f32 *)(actor + 0x2C);
+    scratch.points[2][1] = -*(f32 *)(actor + 0x30);
+    scratch.points[3][0] = *(f32 *)(actor + 0x2C);
+    scratch.points[3][1] = -*(f32 *)(actor + 0x30);
+    func_150A8050(scratch.matrix, *(f32 *)(actor + 0x40), *(f32 *)(actor + 0x44), *(f32 *)(actor + 0x48));
+    scratch.matrix[3][0] = *(f32 *)(actor + 0x34);
+    scratch.matrix[3][1] = *(f32 *)(actor + 0x38);
+    scratch.matrix[3][2] = *(f32 *)(actor + 0x3C);
+    scratch.matrix[0][0] *= *(f32 *)(actor + 0x4C);
+    scratch.matrix[0][1] *= *(f32 *)(actor + 0x4C);
+    scratch.matrix[0][2] *= *(f32 *)(actor + 0x4C);
+    scratch.matrix[1][0] *= *(f32 *)(actor + 0x50);
+    scratch.matrix[1][1] *= *(f32 *)(actor + 0x50);
+    scratch.matrix[1][2] *= *(f32 *)(actor + 0x50);
+    scratch.matrix[2][0] *= *(f32 *)(actor + 0x54);
+    scratch.matrix[2][1] *= *(f32 *)(actor + 0x54);
+    scratch.matrix[2][2] *= *(f32 *)(actor + 0x54);
+    for (i = 0; i < 4; i++) {
+        f32 *point = (f32 *)((u32)scratch.points + i * 12);
+        func_150A7960((f32 *)scratch.matrix, point[0], point[1], 0.0f,
+                     &point[0], &point[1], &point[2]);
+        scratch.cursor->v.ob[0] = (s32)point[0];
+        scratch.cursor->v.ob[1] = (s32)point[1];
+        scratch.cursor->v.ob[2] = (s32)point[2];
+        scratch.cursor->v.flag = 0;
+        scratch.cursor++;
+    }
+    return scratch.first;
 }
-// ???
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513EAD8.s. */
 s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
