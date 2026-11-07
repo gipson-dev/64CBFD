@@ -34,8 +34,73 @@ extern s8 D_800DD190;
 extern u8 *D_800DD198[];
 void func_1516972C(struct102 *);
 
-s32 func_1518BA90() {
-    return 0;
+/* The update routine samples base + random * range and indices 0..limit. */
+typedef struct {
+    f32 firstBase, firstRange, secondBase, secondRange;
+    s16 firstChoiceLimit, secondChoiceLimit;
+    u8 *owner;
+    u8 tag, mode, subtype, retained;
+} OwnerRecordRequest;
+extern f32 D_800A7434, D_800A7438, D_800A743C;
+void *func_1518BCD0(void *, u8, s32);
+
+/* Reuse the first owner/tag record, or construct the owner's default effect. */
+void *func_1518BA90(u8 *owner, u8 priority, s32 context) {
+    void *result;
+    OwnerRecordRequest request;
+    u8 *row;
+    u8 *end;
+    u8 *record;
+    if (owner == NULL) {
+        return NULL;
+    }
+    row = D_800DCE50;
+    end = (u8 *)&D_800DD190;
+    do {
+        record = *(u8 **)(row + 0x7C);
+        while (record != NULL) {
+            if (*(u8 **)(record + 0x24) == owner || owner[0x3B] == record[0x28]) {
+                return record;
+            }
+            record = *(u8 **)(record + 8);
+        }
+        row += 0x1A0;
+    } while (row != end);
+    switch (owner[4]) {
+        /* Unreachable for u8; preserves the original nine-entry table. */
+        case -1:
+            return NULL;
+        case 7:
+            request.firstBase = D_800A7434;
+            request.firstRange = D_800A7438;
+            request.secondBase = D_800A743C;
+            request.secondRange = 5.0f;
+            request.secondChoiceLimit = 55;
+            request.firstChoiceLimit = 4;
+            request.mode = 5;
+            request.subtype = 19;
+            break;
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            request.secondChoiceLimit = 0;
+            request.firstChoiceLimit = 5;
+            request.mode = 5;
+            request.subtype = 19;
+            request.firstBase = 10.0f;
+            request.firstRange = 10.0f;
+            request.secondBase = 10.0f;
+            request.secondRange = 10.0f;
+            break;
+        default:
+            return NULL;
+    }
+    request.owner = owner;
+    request.tag = owner[0x3B];
+    result = func_1518BCD0(&request, priority, context);
+    return result;
 }
 
 /* Walk both rows, retaining each next link across record cleanup. */

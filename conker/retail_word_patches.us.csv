@@ -26768,3 +26768,5 @@ generated_1B8F40,func_1518C69C,0x124,0x01836821,0x006C6821,-,-,"Normalize proved
 generated_1B8F40,func_1518C69C,0x140,0x01E3C021,0x006FC021,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
 generated_1B8F40,func_1518C69C,0x18C,0x8FA70114,0x8FA7010C,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
 generated_1B8F40,func_1518C69C,0x1A8,0x27BD0100,0x27BD00F8,-,-,"Normalize proved unused impact frame tail, argument homes and closed schedules",,,false
+generated_1B8F40,func_1518BA90,0x2C,0x24420000,0x24840000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD190,Exchange independent row/end ADDIU completions and their LO16 bindings,,,false
+generated_1B8F40,func_1518BA90,0x30,0x24840000,0x24420000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DCE50,Exchange independent row/end ADDIU completions and their LO16 bindings,,,false
