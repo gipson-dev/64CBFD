@@ -141,8 +141,97 @@ void *func_1518BCD0(void *arg0, u8 arg1, s32 arg2) {
     return record;
 }
 
-s32 func_1518BD60() {
-    return 0;
+typedef struct {
+    u8 header[16];
+    f32 firstBase, firstRange, secondBase, secondRange;
+    s16 firstChoiceLimit, secondChoiceLimit;
+    u8 *owner;
+    u8 tag, mode, subtype, retained;
+    s32 timers[2];
+    f32 previousX[2], previousZ[2];
+} OwnerPairRecord;
+typedef struct {
+    f32 x, y, z;
+    s16 duration, mode;
+    s32 active;
+    u8 reserved14, count, reserved16[2];
+    s32 value;
+} OwnerPairRequest;
+typedef struct {
+    f32 gravity, velocityX, velocityY, velocityZ, threshold;
+    u8 reserved14[4], flags, kind, channel, alpha, reserved1C[4];
+} OwnerPairPayload;
+typedef struct { s32 words[8]; } OwnerPairRender;
+extern f32 D_800A7440;
+extern s32 D_800BE9E4;
+f32 func_151423D8(u8);
+u8 *func_15147DA0(void *, void *, s32, s32, s32, s32, s32, s32, s32,
+                s32, s32, void *, s32, u8, s32);
+
+/* Update both cached emission channels, retaining their original random order. */
+void func_1518BD60(OwnerPairRecord *record) {
+    f32 angleValue;
+    f32 quarterValue;
+    OwnerPairRequest request;
+    OwnerPairPayload payload;
+    f32 fraction;
+    OwnerPairRender render;
+    f32 speed;
+    f32 threshold = D_800A7440;
+    u32 angle;
+    u8 index = 0;
+    u8 *owner;
+    do {
+        record->timers[index] = (u32)record->timers[index] - (u32)D_800BE9E4;
+        owner = record->owner;
+        if (owner != NULL && *(s32 *)owner != 0 && *(s32 *)(owner + 0x1D4) != 0 &&
+            record->tag == owner[0x3B]) {
+            if (record->timers[index] < 0) {
+                angle = (u32)func_150ADA20();
+                angle = angle % (u32)(record->secondChoiceLimit + 1);
+                angleValue = func_151423D8((u8)angle);
+                quarterValue = func_151423D8((u8)(angle - 0x40));
+                speed = func_150ADA68();
+                speed = speed * record->firstRange + record->firstBase;
+                record->timers[index] = (u32)func_150ADA20() % 23 + 5;
+                render.words[0] = 0;
+                render.words[1] = 1;
+                render.words[2] = 0x160600;
+                render.words[3] = 3;
+                render.words[4] = 0x10;
+                render.words[5] = 0x80;
+                render.words[6] = 0x20;
+                ((u8 *)&render)[0x1C] = 0;
+                ((u8 *)&render)[0x1D] = 9;
+                angle = (u32)func_150ADA20();
+                request.count = angle % (u32)(record->firstChoiceLimit + 1) + 3;
+                request.active = 1;
+                request.mode = 1;
+                request.duration = (u32)func_150ADA20() % 21 + 80;
+                payload.kind = record->mode;
+                fraction = func_150ADA68();
+                payload.gravity = fraction * record->secondRange + record->secondBase;
+                payload.velocityX = speed * quarterValue;
+                payload.velocityY = 0.0f;
+                payload.velocityZ = speed * angleValue;
+                payload.threshold = threshold;
+                payload.flags = record->subtype | 8;
+                payload.channel = 255 - ((*(u32 *)(record->owner + 0x184) >> 5) << 6);
+                payload.alpha = 255;
+                owner = func_15147DA0(&request, &payload, request.count * 12 + 8,
+                    5, 1, 0, 2, 1, 0, 0, 0, &render, 0, record->header[0xC], record->header[1]);
+                if (owner != NULL) {
+                    owner = *(u8 **)(owner + 0x98) + 0x48;
+                    *(OwnerPairRecord **)owner = record;
+                    owner[4] = index;
+                }
+                owner = record->owner;
+            }
+            record->previousX[index] = *(s16 *)(owner + index * 6 + 0x1AC);
+            record->previousZ[index] = *(s16 *)(record->owner + index * 6 + 0x1B0);
+        }
+        index++;
+    } while (index < 2);
 }
 
 s32 func_1518C0B8() {
