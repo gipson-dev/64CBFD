@@ -1,4 +1,30 @@
 #include <ultra64.h>
+typedef struct { f32 x, y, z; } EffectPoint173D40;
+typedef struct {
+    s32 countBase;
+    s32 countRange;
+    EffectPoint173D40 position;
+    f32 field14;
+    f32 field18;
+    s16 minimum1C;
+    s16 range1E;
+    s16 minimum20;
+    s16 range22;
+    f32 field24;
+    f32 field28;
+    f32 field2C;
+    f32 field30;
+    f32 field34;
+    f32 field38;
+    u8 mode;
+    u8 reserved3D;
+    s16 value3E;
+    s16 value40;
+    u8 reserved42[2];
+} PointEffectDescriptor173D40;
+extern f32 D_800A5708, D_800A570C, D_800A5710, D_800A5714, D_800A5718, D_800A571C;
+void func_15150F90(PointEffectDescriptor173D40 *, u8, u8, s32);
+
 
 extern f32 D_800A5728, D_800A572C;
 void func_15141F78(u8, u8 *, f32, u8, f32 *, u8);
@@ -55,8 +81,32 @@ s32 func_15146970() {
     return 0;
 }
 
-s32 func_15146A98() {
-    return 0;
+/* Submit the point effect using the attached actor's selected position. */
+void func_15146A98(u8 *actor, s32 context, s32 unused) {
+    EffectPoint173D40 position;
+    PointEffectDescriptor173D40 descriptor;
+
+    if (*(u32 *)(actor + 0x1D4) == 0) return;
+    func_15146890(&position.x, actor, (HeightResult71820 *)0, (u8)context);
+    descriptor.countBase = 5;
+    descriptor.countRange = 22;
+    descriptor.position = position;
+    descriptor.field14 = D_800A5708;
+    descriptor.field18 = D_800A570C;
+    descriptor.minimum1C = 0;
+    descriptor.range1E = 255;
+    descriptor.minimum20 = -20;
+    descriptor.range22 = 14;
+    descriptor.field24 = 6.0f;
+    descriptor.field28 = 3.0f;
+    descriptor.field2C = D_800A5710;
+    descriptor.field30 = D_800A5714;
+    descriptor.field34 = D_800A5718;
+    descriptor.field38 = D_800A571C;
+    descriptor.mode = 3;
+    descriptor.value3E = 25;
+    descriptor.value40 = 25;
+    func_15150F90(&descriptor, 0, 255, 1);
 }
 
 void func_15146BB8(register s32 arg0, register s32 arg1, register s32 arg2) {
