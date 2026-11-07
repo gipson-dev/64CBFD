@@ -26881,3 +26881,45 @@ generated_CDE80,func_150A24C0,0x0F4,0x0061C824,0x00617824,-,-,Normalize record-s
 generated_CDE80,func_150A24C0,0x0F8,0x03257025,0x01E2C025,-,-,Normalize record-state service temporary register allocation,,,false
 generated_CDE80,func_150A24C0,0x0FC,0xAE0E001C,0xAE18001C,-,-,Normalize record-state service temporary register allocation,,,false
 game_168A90,func_1513BAE8,0x0F0,0x01272021,0x00E92021,-,-,Normalize fixed-effect commutative destination addition,,,false
+game_168A90,func_1513B5E0,0x064,0xAFA20070,0x3C160000,-,R_MIPS_HI16:D_80082FA0,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x068,0x8C580000,0x26D60000,-,R_MIPS_LO16:D_80082FA0,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x06C,0x3C160000,0xAFA20070,R_MIPS_HI16:D_80082FA0,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x070,0x26D60000,0x8C580000,R_MIPS_LO16:D_80082FA0,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x078,0x0302A023,0x24040038,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x07C,0x2694FFD8,0x0302A023,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x080,0x0014A840,0x2694FFD8,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x084,0x27280001,0x00141840,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x088,0x02A80019,0x27290001,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x08C,0x8FA50088,0x00690019,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x090,0x24070002,0x8FA50088,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x094,0x24090001,0x24070002,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x098,0x24040038,0x240A0001,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x09C,0x00001812,0x00004012,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0A0,0x02433021,0x02483021,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0B8,0xAFA90014,0xAFAA0014,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,0xAFA30050,-,false
+game_168A90,func_1513B5E0,0x0C0,0xAFA3006C,0xAFA8006C,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,0x8FA30050,-,false
+game_168A90,func_1513B5E0,0x0CC,0x1000002A,0x1000002D,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0DC,0x0C000000,0x2406003C,R_MIPS_26:memcpy,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0E0,0x2406003C,0x0C000000,-,R_MIPS_26:memcpy,Normalize resource-view creator closed register lifetimes and independent schedule,0xAFA30050,-,false
+game_168A90,func_1513B5E0,0x0E4,0x8FA30070,0x8FA80070,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,0x8FA30050,-,false
+game_168A90,func_1513B5E0,0x0E8,0x02E08025,0x02E08825,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0EC,0x26F100F8,0xAEE8004C,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0F0,0xAEE3004C,0x8ECB0000,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0F4,0x8ECA0000,0x00009025,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0F8,0x00009025,0x26F000F8,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x0FC,0x24730028,0x256C0001,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x100,0x254B0001,0x19800014,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x104,0x19600012,0x25130028,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,0x0060A825,-,false
+game_168A90,func_1513B5E0,0x108,0x02346021,0x02146821,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x10C,0xAE110058,0xAE300058,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x110,0xAE0C0068,0xAE2D0068,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x114,0x02202025,0x02002025,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x124,0x8E040068,0x8E240068,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x134,0x8ECD0000,0x8ECE0000,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x13C,0x26100004,0x26310004,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x140,0x01B2082A,0x01D2082A,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x148,0x02358821,0x02158021,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x14C,0x8FA30070,0x8FA80070,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x150,0x8C640000,0x8D040000,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x160,0x8FAE006C,0x8FB8006C,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false
+game_168A90,func_1513B5E0,0x168,0xAEEE0050,0xAEF80050,-,-,Normalize resource-view creator closed register lifetimes and independent schedule,,,false

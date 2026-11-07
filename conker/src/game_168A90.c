@@ -3,8 +3,23 @@
 #include "functions.h"
 #include "variables.h"
 
+typedef struct {
+    u8 field0, field1, field2, pad3;
+    s16 field4;
+    u8 pad6[2];
+    s32 field8, fieldC, field10, field14, field18, field1C, field20;
+    u8 field24, field25, pad26[10];
+    s32 field30, field34;
+    u8 field38;
+} EffectDescriptor1513BAE8;
+typedef struct { f32 value0, value4, value8, valueC, value10; } EffectPayload1513BAE8;
+
+void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+s32 func_1510CE60(void *, s32, s32, s32, s32 *);
+
 /* Generated placeholder declarations. */
-s32 func_1513B5E0();
+s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context);
 void func_1513B798(u8 *arg0);
 s32 func_1513B83C();
 s32 func_1513BAE8(void);
@@ -16,9 +31,49 @@ void func_151BA468(struct132 *, s32, u8);
 
 extern s32 (*D_80089C18[])(u8 *);
 
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513B5E0.s. */
-s32 func_1513B5E0() {
-    return 0;
+/* Create two resource buffers per live view, retaining the initial total size. */
+s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context) {
+    u8 *created;
+    u8 *asset;
+    u32 bufferBytes;
+    u8 *source;
+    u8 *cursor;
+    s32 lookupSize;
+    s32 lookupStatus;
+    s32 index;
+    u8 *row;
+    s32 bytes;
+    void *end;
+
+    asset = func_1502B6BC(&lookupSize, 0, &lookupStatus, 2,
+                         descriptor->field30, descriptor->field34);
+    bytes = (u32)*(u8 **)asset - (u32)asset - 40;
+    bufferBytes = ((u32)bytes * 2) * ((u32)D_80082FA0 + 1);
+    created = func_15167A68(mode != 0 ? 0x54 : 0x38, context,
+                           (u32)extraSize + bufferBytes + 248, 2, priority, 1);
+    if (created == NULL) return 0;
+    memcpy(created + 16, descriptor, 60);
+    *(u8 **)(created + 0x4C) = asset;
+    row = created;
+    cursor = created + 248;
+    source = asset + 40;
+    index = 0;
+    if ((s32)((u32)D_80082FA0 + 1) > 0) {
+        do {
+            *(u8 **)(row + 0x58) = cursor;
+            *(u8 **)(row + 0x68) = cursor + bytes;
+            memcpy(cursor, source, bytes);
+            memcpy(*(u8 **)(row + 0x68), source, bytes);
+            row += 4;
+            cursor += (u32)bytes * 2;
+            index = (u32)index + 1;
+        } while (index <= D_80082FA0);
+    }
+    end = *(void **)asset;
+    *(void **)(created + 0x54) = end;
+    *(u32 *)(created + 0x50) = bufferBytes;
+    func_1510CE60(end, 0, 1, 62, 0);
+    return (s32)(u32)created;
 }
 void func_1513B798(u8 *arg0) {
     s32 remove = 0;
@@ -85,17 +140,6 @@ void func_1513BA78(struct132 *arg0, s32 arg1, u8 arg2) {
 s32 func_1513BAD4(s32 arg0, s32 arg1) {
     return 0;
 }
-
-typedef struct {
-    u8 field0, field1, field2, pad3;
-    s16 field4;
-    u8 pad6[2];
-    s32 field8, fieldC, field10, field14, field18, field1C, field20;
-    u8 field24, field25, pad26[10];
-    s32 field30, field34;
-    u8 field38;
-} EffectDescriptor1513BAE8;
-typedef struct { f32 value0, value4, value8, valueC, value10; } EffectPayload1513BAE8;
 
 /* Build the fixed effect and preserve its handle even on validation release. */
 s32 func_1513BAE8(void) {
