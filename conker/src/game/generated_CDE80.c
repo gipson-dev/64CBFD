@@ -98,8 +98,43 @@ void func_150A23E4(GeneratedCDE80Record *record) {
     }
 }
 
-s32 func_150A24C0() {
-    return 0;
+s32 func_15183290(s32,s32,s32,u8,s32,s32,s32,s32,s32,s32,s32);
+
+/* Submit eligible records, then publish the live service result or phase floor. */
+void func_150A24C0(GeneratedCDE80Record *record, s32 selector) {
+    u32 state;
+    s32 result;
+    s32 property;
+    s16 parameter18;
+    u8 parameter1A, parameter1C, parameter1D;
+    s32 parameter20;
+    s16 secondOrigin;
+    u8 *bytes = (u8 *)record;
+    if (selector != 255) {
+        state = (u32)record->field1C;
+        if ((state & 255) == 0 || record->field17 == 9) {
+            property = record->field18;
+            parameter18 = *(s16 *)(bytes + 0x18);
+            parameter1A = bytes[0x1A];
+            parameter1C = bytes[0x1C];
+            parameter1D = bytes[0x1D];
+            parameter20 = record->field20;
+            secondOrigin = record->origin1;
+            result = func_15183290(record->origin0,
+                secondOrigin + (parameter1D << 4), record->origin2,
+                property & 255, record->field17,
+                *(s16 *)(bytes + 6), selector, parameter18,
+                parameter1A, parameter1C, parameter20);
+            if (result != -1 && record->field17 != 9) {
+                record->field1C = (((u32)result << 8) | 0xF0) |
+                    ((u32)record->field1C & 0xFFFF0000);
+            }
+        } else {
+            result = (s32)(state & 255);
+            if (result < 2) result = 2;
+            record->field1C = (state & 0xFFFFFF00) | (u32)result;
+        }
+    }
 }
 
 s32 func_150A25D4() {

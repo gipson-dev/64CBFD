@@ -26855,3 +26855,28 @@ generated_1C0840,func_15193390,0x90,0xA7A300BE,0xA0400008,-,-,Normalize proved s
 generated_1C0840,func_15193390,0xE8,0x8FA200D0,0x8FA200D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
 generated_1C0840,func_15193390,0x104,0x8FA900D0,0x8FA900D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
 generated_1C0840,func_15193390,0x118,0x27BD00D0,0x27BD00D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_CDE80,func_150A24C0,0x030,0x920D0017,0x92020017,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x044,0x920D0017,0x92020017,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x060,0x860C0002,0x86190002,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x06C,0xAFAD0010,0xAFA20010,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x070,0x860E0006,0x860D0006,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x074,0x8FAF0044,0x8FAE0044,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x078,0x30F900FF,0x30F800FF,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x07C,0x000AC100,0x000A6100,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x080,0x03203825,0x03003825,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x094,0x01982821,0x032C2821,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x098,0xAFAE0014,0xAFAD0014,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0A0,0xAFAF0018,0xAFAE0018,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0B0,0x92180017,0x920F0017,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0B8,0x0002CA00,0x0002C200,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0BC,0x53010011,0x51E10011,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0C4,0x8E0E001C,0x8E0C001C,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0CC,0x372D00F0,0x371900F0,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0D0,0x01C17824,0x01816824,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0D4,0x01AFC025,0x032D7025,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0DC,0xAE18001C,0xAE0E001C,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0E8,0x00802825,0x00801025,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0EC,0x24050002,0x24020002,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0F4,0x0061C824,0x00617824,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0F8,0x03257025,0x01E2C025,-,-,Normalize record-state service temporary register allocation,,,false
+generated_CDE80,func_150A24C0,0x0FC,0xAE0E001C,0xAE18001C,-,-,Normalize record-state service temporary register allocation,,,false
