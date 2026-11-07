@@ -7,10 +7,14 @@ extern s32 (*D_80089C70[])(u8 *);
 extern s32 (*D_80089CA8[])(u8 *);
 extern u8 D_80090B64[];
 
+extern s32 (*D_80089CB8[])(u8 *);
+extern s32 (*D_80089D60[])(u8 *);
+extern s32 (*D_80089E10[])(u8 *);
+
 /* Generated placeholder declarations. */
 void func_1513C060(u8 *record);
 s32 func_1513CBF0();
-s32 func_1513CFE4();
+void func_1513CFE4(u8 *record);
 s32 func_1513DB00();
 void func_1513DF9C(void *, s32, u8);
 s32 func_1513E6E8();
@@ -331,9 +335,76 @@ void func_1513CF9C(s32 arg0, s32 arg1, u8 arg2) {
 
 void func_1513CFD0(s32 arg0, s32 arg1, s32 arg2) {
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513CFE4.s. */
-s32 func_1513CFE4() {
-    return 0;
+/* Update both record callbacks, fade and animation; the exit callback may veto removal. */
+void func_1513CFE4(u8 *record) {
+    s32 callback;
+    s8 remove;
+    s32 frames;
+    s32 flags;
+    s32 adjusted;
+    s32 rate;
+    s32 limit;
+    s32 cursor;
+
+    if ((*(u32 *)(record + 0x10) & 1) == 0) return;
+    remove = 0;
+    if ((*(u32 *)(record + 0x58) & 1) != 0) {
+        *(s16 *)(record + 0x1C) -= D_800BE9E4;
+        if (*(s16 *)(record + 0x1C) < 0) remove = 1;
+    }
+    callback = record[0x70];
+    if (callback != 0 && D_80089CB8[callback](record) == 0) remove = 1;
+    callback = record[0x71];
+    if (callback != 0 && D_80089D60[callback](record) == 0) remove = 1;
+    flags = *(u32 *)(record + 0x58);
+    if ((s32)((u32)flags << 4) < 0 && remove == 0 &&
+        *(s16 *)(record + 0x1C) < *(s16 *)(record + 0x6C)) {
+        adjusted = *(s16 *)(record + 0x6E) * *(s16 *)(record + 0x1C);
+        if (adjusted < record[0x5C]) record[0x5C] = adjusted;
+    }
+    if ((*(u32 *)(record + 0x58) & 0x10000000) != 0 && remove == 0 &&
+        *(s16 *)(record + 0x1C) < *(s16 *)(record + 0x6C)) {
+        adjusted = *(s16 *)(record + 0x6E) * *(s16 *)(record + 0x1C);
+        if (adjusted < record[0x5C]) record[0x2B] = adjusted;
+    }
+    if (remove == 0 && (rate = *(s32 *)(record + 0x24)) != 0) {
+        frames = D_80090B64[record[0x18] * 12];
+        limit = (frames << 16) - 1;
+        *(s32 *)(record + 0x20) += (u32)rate * (u32)D_800BE9E4;
+        cursor = *(s32 *)(record + 0x20);
+        if (cursor > limit) {
+            flags = *(u32 *)(record + 0x58);
+            if ((flags & 0x800) != 0) {
+                remove = 1;
+            } else if ((flags & 0x400) != 0) {
+                *(s32 *)(record + 0x20) = limit - cursor % limit;
+                *(s32 *)(record + 0x24) = (u32)0 - (u32)rate;
+            } else {
+                do {
+                    cursor = (u32)*(s32 *)(record + 0x20) - (u32)limit;
+                    *(s32 *)(record + 0x20) = cursor;
+                } while (cursor > limit);
+            }
+        } else if (cursor < 0) {
+            flags = *(u32 *)(record + 0x58);
+            if ((flags & 0x1000) != 0) {
+                remove = 1;
+            } else if ((flags & 0x400) != 0) {
+                *(s32 *)(record + 0x20) = (s32)((u32)0 - (u32)cursor) % limit;
+                *(s32 *)(record + 0x24) = (u32)0 - (u32)rate;
+            } else {
+                do {
+                    cursor = (u32)*(s32 *)(record + 0x20) + (u32)limit;
+                    *(s32 *)(record + 0x20) = cursor;
+                } while (cursor < 0);
+            }
+        }
+    }
+    if (remove != 0) {
+        callback = record[0x72];
+        if (callback != 0 && D_80089E10[callback](record) != 0) remove = 0;
+    }
+    if (remove != 0) func_1516972C((struct102 *)record);
 }/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513D2F0.s. */
 void *func_1513D2F0(void *descriptor, s32 table, u8 kind, u8 mode, u8 first,
                       u8 setup, u8 variant, s32 resource, s32 extra, s32 payload,

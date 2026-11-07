@@ -27000,3 +27000,15 @@ game_169510,func_1513C060,0x284,0x8C8B0020,0x00435821,-,-,Forward record cursor 
 game_169510,func_1513C060,0x288,0x01631021,0xAC8B0020,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
 game_169510,func_1513C060,0x28C,0x0440FFFD,0x0560FFFD,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
 game_169510,func_1513C060,0x290,0xAC820020,0x01601025,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x0C4,0x8C860058,0x8C850058,-,-,Normalize closed flags register lifetime,,,false
+game_169510,func_1513CFE4,0x0C8,0x00067100,0x00057100,-,-,Normalize closed flags register lifetime,,,false
+game_169510,func_1513CFE4,0x110,0x8C860058,0x8C850058,-,-,Normalize closed flags register lifetime,,,false
+game_169510,func_1513CFE4,0x118,0x00C14824,0x00A14824,-,-,Normalize closed flags register lifetime,,,false
+game_169510,func_1513CFE4,0x21C,0x8C990020,0x0043C823,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x220,0x03231023,0x0079082A,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x224,0x0062082A,0xAC990020,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x22C,0xAC820020,0x03201025,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x29C,0x8C8A0020,0x00435021,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x2A0,0x01431021,0xAC8A0020,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x2A4,0x0440FFFD,0x0540FFFD,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
+game_169510,func_1513CFE4,0x2A8,0xAC820020,0x01401025,-,-,Forward record cursor self-store in its closed ordinary-RAM loop,,,false
