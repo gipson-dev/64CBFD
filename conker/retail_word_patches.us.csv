@@ -26833,3 +26833,25 @@ generated_1B6DB0,func_15189EBC,0x0,0x27BDFFB8,0x27BDFFB0,-,-,Normalize proved be
 generated_1B6DB0,func_15189EBC,0x4C,0xAFA20044,0xAFA20040,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
 generated_1B6DB0,func_15189EBC,0x5C,0x8FA20044,0x8FA20040,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
 generated_1B6DB0,func_15189EBC,0x110,0x27BD0048,0x27BD0050,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
+generated_1C0840,func_15193390,0x0,0x27BDFF30,0x27BDFF28,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x8,0xAFA400D0,0xAFA400D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x18,0x8FA200D0,0x8FA200D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x54,0x4502000F,0x45030004,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x58,0xA7A300BE,0x844E0002,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x5C,0x844E0002,0x1000000D,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x60,0x3C014348,0xA7A300BE,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x64,0x44819000,0x844E0002,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x68,0x448E5000,0x3C014348,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x6C,0x00000000,0x44819000,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x70,0x46805420,0x448E5000,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x74,0x46128181,0x00000000,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x78,0x4600310D,0x46805420,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x7C,0x44182000,0x46128181,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x80,0x00000000,0x4600310D,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x84,0xA7B800BE,0x44182000,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x88,0x10000002,0x00000000,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x8C,0xA0400008,0xA7B800BE,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x90,0xA7A300BE,0xA0400008,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0xE8,0x8FA200D0,0x8FA200D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x104,0x8FA900D0,0x8FA900D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
+generated_1C0840,func_15193390,0x118,0x27BD00D0,0x27BD00D8,-,-,Normalize proved sprite sentinel diamond and unused frame tail with physical O32 home retained,,,false
