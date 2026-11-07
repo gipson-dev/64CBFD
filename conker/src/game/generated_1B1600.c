@@ -1,4 +1,23 @@
 #include <ultra64.h>
+#include "structs.h"
+typedef struct {
+    u8 retained[0x8C];
+    f32 baseIncrement;
+    f32 accumulated;
+    s16 elapsed;
+    s16 duration;
+    u8 tail[8];
+} DampedEffectRecord1B1600;
+typedef struct {
+    u8 retained[0xA4];
+    DampedEffectRecord1B1600 *records;
+    s16 age;
+    s16 lifetime;
+} TimedDampedEffect1B1600;
+extern s32 D_800BE9E4;
+void func_10004074(void *);
+void func_1516972C(struct102 *);
+
 
 typedef struct {
     f32 x, y, z;
@@ -227,8 +246,35 @@ s32 func_151875E0() {
     return 0;
 }
 
-s32 func_15187978() {
-    return 0;
+/* Advance twelve damped records; release the buffer and actor after expiry. */
+void func_15187978(struct102 *input) {
+    TimedDampedEffect1B1600 *effect = (TimedDampedEffect1B1600 *)input;
+    DampedEffectRecord1B1600 *record;
+    s32 offset;
+
+    if (effect->age < 0) {
+        func_10004074(effect->records);
+        func_1516972C(input);
+    } else {
+        effect->age += (u32)D_800BE9E4;
+        if (effect->age > effect->lifetime) {
+            effect->age = -10;
+        } else if (effect->age >= 0) {
+            for (offset = 0; offset < 0x780; offset += 0xA0) {
+                record = (DampedEffectRecord1B1600 *)((u8 *)effect->records + offset);
+                if (record->elapsed < record->duration) {
+                    record->elapsed += (u32)D_800BE9E4;
+                    record = (DampedEffectRecord1B1600 *)((u8 *)effect->records + offset);
+                    if (record->elapsed > record->duration) {
+                        record->elapsed = record->duration;
+                        record = (DampedEffectRecord1B1600 *)((u8 *)effect->records + offset);
+                    }
+                    record->accumulated += record->baseIncrement -
+                        (record->baseIncrement / 3.0f) * record->elapsed / record->duration;
+                }
+            }
+        }
+    }
 }
 
 s32 func_15187A98() {
