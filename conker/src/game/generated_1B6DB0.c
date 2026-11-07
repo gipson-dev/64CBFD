@@ -64,8 +64,35 @@ s32 func_15189A00() {
     return 0;
 }
 
-s32 func_15189EBC() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+    u8 retained0C[8];
+} BelowHeightPosition;
+extern f64 D_800A73A8;
+extern f32 D_800A73B0;
+f32 func_150ADA68(void);
+u8 func_151D8E20(void);
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+
+/* Emit an occasional below-height effect, then reset the captured payload. */
+s32 func_15189EBC(u8 *actor) {
+    BelowHeightPosition *positions = *(BelowHeightPosition **)(actor + 0x94);
+    u8 *payload = *(u8 **)(actor + 0x98);
+    f32 point[3];
+    s32 choice;
+    if (positions[(s8)actor[0x2D]].y < *(f32 *)(payload + 0x48)) {
+        if ((f64)func_150ADA68() < D_800A73A8) {
+            point[0] = positions[(s8)actor[0x2D]].x;
+            point[1] = *(f32 *)(payload + 0x48);
+            point[2] = positions[(s8)actor[0x2D]].z;
+            choice = func_151D8E20();
+            func_151DBCBC((u8)choice, *(f32 *)payload * 6.0f,
+                         payload[0x1B], 0, point, actor[0xC], actor[1]);
+        }
+        payload[0x20] = 4;
+        *(f32 *)(payload + 0x48) = D_800A73B0;
+    }
+    return 1;
 }
 
 s32 func_15189FD0(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {

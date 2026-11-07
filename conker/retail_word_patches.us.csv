@@ -26829,3 +26829,7 @@ generated_1B8F40,func_1518BD60,0x304,0x326E00FF,0x326F00FF,-,-,Normalize proved 
 generated_1B8F40,func_1518BD60,0x308,0x29C10002,0x29E10002,-,-,Normalize proved owner-pair register roles and private setup schedule,,,false
 generated_1B8F40,func_1518BD60,0x310,0x01C09825,0x01E09825,-,-,Normalize proved owner-pair register roles and private setup schedule,,,false
 game_161520,func_151347CC,0x100,0x54790005,0x57230005,-,-,Normalize commutative reference-handler BNEL operand order,,,false
+generated_1B6DB0,func_15189EBC,0x0,0x27BDFFB8,0x27BDFFB0,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
+generated_1B6DB0,func_15189EBC,0x4C,0xAFA20044,0xAFA20040,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
+generated_1B6DB0,func_15189EBC,0x5C,0x8FA20044,0x8FA20040,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
+generated_1B6DB0,func_15189EBC,0x110,0x27BD0048,0x27BD0050,-,-,Normalize proved below-height private frame and closed position-pointer spill,,,false
