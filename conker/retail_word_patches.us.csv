@@ -26703,3 +26703,23 @@ generated_15F680,func_15133588,0x7c,0x10000014,0x10000015,-,-,Split the shared f
 generated_15F680,func_15133588,0x88,0x54680012,0x55030013,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
 generated_15F680,func_15133588,0x98,0x1000000D,0xA0890080,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,,,false
 generated_15F680,func_15133588,0x9c,0xA0890080,0x1000000E,-,-,Split the shared flags-load edge into its retail branch delay slot; preserve access order and local branch targets,0x8C8D0060,,false
+generated_1A89B0,func_1517D690,0x8c,0xC444000C,0x904F0006,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0x90,0x84450000,0xC444000C,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0x94,0x84460002,0x944B0008,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0x98,0x84470004,0x01F40019,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0x9c,0xE7A40010,0x944C000A,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xa0,0x944B0008,0x240D0010,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xa4,0x240D0010,0x240E0020,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xa8,0x240E0020,0xAFAE0020,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xac,0xAFAB0014,0xAFAD001C,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xb0,0x944C000A,0x84450000,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xb4,0xAFAE0020,0x84460002,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xb8,0xAFAD001C,0x84470004,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xbc,0xAFAC0018,0x02402025,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xc0,0x904F0006,0x0000C012,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xc4,0x02402025,0x0018C840,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xc8,0x01F40019,0x03314021,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xcc,0x0000C012,0xAFA80024,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xd0,0x0018C840,0xE7A40010,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xd4,0x03314021,0xAFAB0014,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false
+generated_1A89B0,func_1517D690,0xdc,0xAFA80024,0xAFAC0018,-,-,Reschedule the closed queue draw argument block; preserve register and HI/LO dependencies and all complete call arguments,,,false

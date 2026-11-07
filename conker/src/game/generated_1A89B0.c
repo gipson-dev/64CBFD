@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern u32 D_800DDD58;
+
 
 /* Non-matching placeholders for the text-only asm slice asm/1A89B0.s. */
 
@@ -129,7 +131,9 @@ void func_1517CFC4(void) {
     }
 }
 
-s32 func_1517D074() {
+Gfx *func_1517D074(Gfx *displayList, s32 x, s32 y, s32 z, f32 angle,
+                       s32 halfWidth, s32 halfHeight, s32 textureWidth, s32 textureHeight,
+                       u16 *pixels) {
     return 0;
 }
 
@@ -162,8 +166,26 @@ void func_1517D5FC(s16 arg0, s16 arg1, s16 arg2, s32 arg3, s32 arg4, s32 arg5) {
                  arg4, arg5, D_800DDD1C >> 3);
 }
 
-s32 func_1517D690() {
-    return 0;
+/* Drain queued position draws in reverse order and preserve the allocation index. */
+Gfx *func_1517D690(Gfx *displayList, u16 *pixels) {
+    u32 savedIndex;
+    PositionQueueEntry *entry;
+
+    savedIndex = D_800DDD58;
+    D_800DDD1C += 5;
+    if (D_800DDD1C >= 200) D_800DDD1C -= 200;
+    while (D_8008CEB0[0] != 0) {
+        D_8008CEB0[0]--;
+        if (pixels != NULL) {
+            entry = &D_800DDD28[D_8008CEB0[0]];
+            displayList = func_1517D074(displayList, entry->unk0, entry->unk2,
+                                      entry->unk4, entry->unkC,
+                                      (u16)entry->unk8, (u16)entry->unkA,
+                                      16, 32, pixels + entry->unk6 * 640);
+        }
+    }
+    D_800DDD58 = savedIndex;
+    return displayList;
 }
 
 s32 func_1517D7B0() {
