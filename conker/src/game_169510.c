@@ -23,7 +23,7 @@ s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
 s32 func_1513EE14();
 s32 func_1513F114();
 s32 func_1513F4E4();
-s32 func_1513F728();
+s32 func_1513F728(u8 *actor);
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 void func_1513FFF4(u8 *out, u8 index, u8 variant);
 void func_151400D0(u8 *out, u8 *input);
@@ -847,9 +847,31 @@ s32 func_1513F6E8(struct210 *arg0) {
     arg0->unk30 += arg0->unk128 * D_800BE9A4;
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513F728.s. */
-s32 func_1513F728() {
-    return 0;
+/* Apply each damping tick, integrate the velocity midpoint, and advance angles. */
+s32 func_1513F728(u8 *actor) {
+    typedef struct { f32 x, y, z; } Vector;
+    struct Motion { Vector velocity; f32 verticalAcceleration; f32 damping; Vector angular; } *motion;
+    Vector previous;
+    u32 ticks;
+    f32 ax, ay, az;
+    motion = (struct Motion *)(actor + 0x110);
+    previous = motion->velocity;
+    for (ticks = (u32)D_800BE9E4; ticks != 0; ticks--) {
+        motion->velocity.x *= motion->damping;
+        motion->velocity.y *= motion->damping;
+        motion->velocity.z *= motion->damping;
+    }
+    motion->velocity.y += motion->verticalAcceleration * D_800BE9A4;
+    ax = (motion->velocity.x - previous.x) * D_800BE9A8;
+    ay = (motion->velocity.y - previous.y) * D_800BE9A8;
+    az = (motion->velocity.z - previous.z) * D_800BE9A8;
+    *(f32 *)(actor + 0x34) += (previous.x + 0.5f * ax * D_800BE9A4) * D_800BE9A4;
+    *(f32 *)(actor + 0x38) += (previous.y + 0.5f * ay * D_800BE9A4) * D_800BE9A4;
+    *(f32 *)(actor + 0x3C) += (previous.z + 0.5f * az * D_800BE9A4) * D_800BE9A4;
+    *(f32 *)(actor + 0x40) += motion->angular.x * D_800BE9A4;
+    *(f32 *)(actor + 0x44) += motion->angular.y * D_800BE9A4;
+    *(f32 *)(actor + 0x48) += motion->angular.z * D_800BE9A4;
+    return 1;
 }
 void func_1513FA2C(struct210 *arg0, s16 arg1) {
     f32 tmp[2];
