@@ -26983,3 +26983,4 @@ game_168A90,func_1513BBFC,0x264,0x008E082A,0x018D7021,-,-,Normalize resource tex
 game_168A90,func_1513BBFC,0x268,0x1420FFD6,0x008E082A,-,-,Normalize resource texture callback independent schedule and closed branch paths,,,false
 game_168A90,func_1513BBFC,0x26C,0x00000000,0x5420FFD7,-,-,Normalize resource texture callback independent schedule and closed branch paths,0x910F0000,-,false
 game_168A90,func_1513BBFC,0x274,0x14C9FFAE,0x14C9FFAC,-,-,Normalize resource texture callback independent schedule and closed branch paths,,,false
+game_168A90,func_1513BEB0,0x024,0x01C48021,0x008E8021,-,-,Preserve retail commutative resource address-add operand order,,,false

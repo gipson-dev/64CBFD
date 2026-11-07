@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2160](WORKING_NOTES/2160-game-resource-scroll-update-match-20261107.md): `func_1513BEB0` now matches all 107 retail words with one commutative integer-operand guard; its phase/scroll loops, original wrap helper and real update dispatcher are qualified. Total **4,230 / 5,512 (76.74%)**, Game **3,557 / 4,839 (73.51%)**, zero drift; **180** more to 80%. Full-image gate: 361 bytes, zero exclusions, one closed metadata pair swap. Next: inspect `func_1513C060` in `game_169510.c`.
+
 [Note 2159](WORKING_NOTES/2159-game-resource-texture-callback-match-20261107.md): `func_1513BBFC` now matches all 173 retail words; its nine-group texture callback, float32 vertex model, real helpers and renderer path are qualified with 60 guarded scheduling/address words. Total **4,229 / 5,512 (76.72%)**, Game **3,556 / 4,839 (73.49%)**, zero drift; **181** more to 80%. Full-image gate: 590 bytes, zero exclusions, two closed metadata swaps. Next: `func_1513BEB0`.
 
 [Note 2158](WORKING_NOTES/2158-game-view-resource-draw-match-20261107.md): `func_1513B83C` now emits all 75 retail words directly from SDK C, with no new guards; its view filter, callback ABI, three graphics commands and indirect registry windows are qualified. Total **4,228 / 5,512 (76.71%)**, Game **3,555 / 4,839 (73.47%)**, zero drift; **182** more to 80%. Full-image gate: 259 bytes, zero exclusions, two closed metadata pair swaps. Next: `func_1513BBFC`.

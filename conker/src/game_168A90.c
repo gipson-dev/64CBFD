@@ -24,13 +24,15 @@ extern TextureVertexRange168A90 D_800A4A2C[9];
 extern f32 D_800A4A74, D_800A4A78, D_800A4A7C, D_800A4A80;
 f32 *func_15144B34(s32);
 
+extern f32 D_800A4A84, D_800A4A88, D_800A4A8C, D_800A4A90, D_800A4A94;
+
 /* Generated placeholder declarations. */
 s32 func_1513B5E0(EffectDescriptor1513BAE8 *descriptor, u8 mode, s32 extraSize, u8 priority, s32 context);
 void func_1513B798(u8 *arg0);
 Gfx *func_1513B83C(Gfx *displayList, u8 *resource, s16 view);
 s32 func_1513BAE8(void);
 s32 func_1513BBFC(u8 *resource, s16 view);
-s32 func_1513BEB0();
+s32 func_1513BEB0(u8 *resource);
 s32 func_15109064(struct132 *, s32, u8);
 void func_151BA468(struct132 *, s32, u8);
 /* End generated placeholder declarations. */
@@ -249,7 +251,21 @@ s32 func_1513BBFC(u8 *resource, s16 view) {
     } while (range != (TextureVertexRange168A90 *)&D_800A4A74);
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_168A90/func_1513BEB0.s. */
-s32 func_1513BEB0() {
-    return 0;
+/* Advance texture phases and retain both inclusive 0..4096 scrolls. */
+s32 func_1513BEB0(u8 *resource) {
+    f32 *payload;
+    payload = (f32 *)(resource + *(u32 *)(resource + 0x50) + 0xF8);
+    payload[2] += D_800A4A84 * D_800BE9A4;
+    payload[2] = func_15144B68(payload[2]);
+    payload[0] += D_800A4A88 * D_800BE9A4;
+    payload[1] = sinf(payload[2]) * D_800A4A8C;
+    payload[3] += D_800A4A90 * D_800BE9A4;
+    payload[4] += D_800A4A94 * D_800BE9A4;
+    payload[3] = func_15144B68(payload[3]);
+    payload[4] = func_15144B68(payload[4]);
+    while (payload[0] > 4096.0f) payload[0] -= 4096.0f;
+    while (payload[0] < 0.0f) payload[0] += 4096.0f;
+    while (payload[1] > 4096.0f) payload[1] -= 4096.0f;
+    while (payload[1] < 0.0f) payload[1] += 4096.0f;
+    return 1;
 }
