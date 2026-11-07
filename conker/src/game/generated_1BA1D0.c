@@ -120,11 +120,28 @@ typedef struct {
 extern u8 D_800A7460[];
 extern u8 D_800A749C[];
 
+typedef struct {
+    u8 *actor;
+    u8 retained04[8];
+} ActiveResetEntry15191400;
+typedef struct {
+    s16 base, range;
+    u8 retained04[16];
+} ActiveResetPreset15191400;
+typedef struct {
+    u8 retained00[0x1C];
+    f32 value1C;
+    s32 state20;
+    ActiveResetEntry15191400 *entries;
+} ActiveResetOwner15191400;
+extern ActiveResetPreset15191400 D_800A9D40[];
+void func_1513F680(struct171 *, u8, u8, u8, u8);
+
 /* Non-matching placeholders for the text-only asm slice asm/1BA1D0.s. */
 
 s32 func_1518F8E0();
 
-s32 func_15191400();
+void func_15191400(ActiveResetOwner15191400 *);
 void func_151D33FC(u8 *arg0, void *arg1);
 
 s32 func_1518CD20() {
@@ -708,13 +725,13 @@ void *func_15190770(struct185 *payload, s32 extraBytes, u8 priority, s32 context
     return created;
 }
 
-s32 func_15190840(s32 arg0) {
-    func_15191400(arg0);
+s32 func_15190840(u8 *arg0) {
+    func_15191400((ActiveResetOwner15191400 *)arg0);
     func_15169804(arg0);
 }
 
-s32 func_1519086C(s32 arg0) {
-    func_15191400(arg0);
+s32 func_1519086C(u8 *arg0) {
+    func_15191400((ActiveResetOwner15191400 *)arg0);
     func_15169824(arg0);
 }
 
@@ -751,8 +768,31 @@ s32 func_1519108C() {
     return 0;
 }
 
-s32 func_15191400() {
-    return 0;
+/* Reset active entries, reseed their live actor timers, then clear the owner list. */
+void func_15191400(ActiveResetOwner15191400 *owner) {
+    ActiveResetEntry15191400 *entry;
+    ActiveResetPreset15191400 *preset;
+    s32 index;
+    u32 random;
+    u8 *state;
+
+    owner->value1C = 0.0f;
+    owner->state20 = 0;
+    entry = owner->entries;
+    for (index = 0; index < 60; index++, entry++) {
+        if (entry->actor != NULL) {
+            state = entry->actor + 0x110;
+            preset = &D_800A9D40[state[0x20]];
+            *(f32 *)(state + 0) = 0.0f;
+            *(f32 *)(state + 4) = 0.0f;
+            *(f32 *)(state + 8) = 0.0f;
+            func_1513F680((struct171 *)entry->actor, 13, 18, 0, 13);
+            random = (u32)func_150ADA20();
+            *(s16 *)(entry->actor + 0x1C) = random % (preset->range + 1U) + preset->base;
+            *(u32 *)(entry->actor + 0x58) |= 1;
+        }
+    }
+    bzero(owner->entries, 0x2D0);
 }
 
 s32 func_15191520() {
