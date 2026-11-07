@@ -1,4 +1,16 @@
 #include <ultra64.h>
+#include "structs.h"
+typedef struct {
+    u8 flags;
+    u8 reserved[3];
+    struct17 direction;
+    struct17 tangent;
+    struct17 bitangent;
+    f32 radius;
+} CachedVectorBasis17CAF0;
+s32 func_15145128(struct17 *, struct17 *, f32 *, f32 *);
+s32 func_15146078(struct17 *, struct17 *, struct17 *);
+
 extern s32 D_800BE9E4;
 extern s32 (*D_8008ACC8[])(u8 *);
 void func_1516972C(u8 *);
@@ -31,8 +43,27 @@ void func_1514F640(u8 *source, u8 *output) {
     }
 }
 
-s32 func_1514F6E8() {
-    return 0;
+/* Prepare and cache the scaled direction and its two basis vectors. */
+s32 func_1514F6E8(void *input) {
+    CachedVectorBasis17CAF0 *state = input;
+
+    if (!(state->flags & 1)) {
+        if (!func_15145128(&state->direction, &state->direction, NULL, NULL)) return 0;
+        state->direction.unk0 *= 1000.0f;
+        state->direction.unk4 *= 1000.0f;
+        state->direction.unk8 *= 1000.0f;
+        state->flags |= 1;
+    }
+    if (!(state->flags & 2)) {
+        if (!func_15146078(&state->direction, &state->tangent, &state->bitangent)) return 0;
+        state->flags |= 6;
+    }
+    if (!(state->flags & 4)) {
+        if (!func_15145128(&state->tangent, &state->tangent, NULL, NULL)) return 0;
+        if (!func_15145128(&state->bitangent, &state->bitangent, NULL, NULL)) return 0;
+        state->flags |= 4;
+    }
+    return 1;
 }
 
 s32 func_150ADA20(void);
