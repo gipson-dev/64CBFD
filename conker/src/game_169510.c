@@ -19,7 +19,7 @@ s32 func_1513DB00();
 void func_1513DF9C(void *, s32, u8);
 s32 func_1513E6E8(u8 *record);
 Vtx *func_1513E83C(u8 *actor, s16 view);
-s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2);
+Vtx *func_1513EAD8(u8 *actor, u8 rotated, s16 view);
 s32 func_1513EE14();
 s32 func_1513F114();
 Gfx *func_1513F4E4(Gfx *cursor, u8 index, u8 *dirty);
@@ -803,16 +803,74 @@ Vtx *func_1513E83C(u8 *actor, s16 view) {
     }
     return scratch.first;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513EAD8.s. */
-s32 func_1513EAD8(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+/* Build a view-aligned quad and optionally cycle its four vertices. */
+Vtx *func_1513EAD8(u8 *actor, u8 rotated, s16 view) {
+    extern f32 D_800DD1D8[];
+    extern f32 D_800DD1E8[];
+    Vtx *cursor, *first;
+    s16 points[4][3];
+    f32 forward, side, lower, upper;
+    u8 fresh;
+
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    forward = D_800DD1D8[view] * *(f32 *)(actor + 0x2C);
+    side = D_800DD1E8[view] * *(f32 *)(actor + 0x2C);
+    lower = *(f32 *)(actor + 0x50) * *(f32 *)(actor + 0x30);
+    upper = *(f32 *)(actor + 0x30) - lower;
+    cursor[0].v.flag = 0;
+    cursor[1].v.flag = 0;
+    cursor[2].v.flag = 0;
+    cursor[3].v.flag = 0;
+    points[3][0] = points[0][0] = (s32)(*(f32 *)(actor + 0x34) + side);
+    points[1][1] = points[0][1] = (s32)(*(f32 *)(actor + 0x38) - lower);
+    points[3][2] = points[0][2] = (s32)(*(f32 *)(actor + 0x3C) - forward);
+    points[2][0] = points[1][0] = (s32)(*(f32 *)(actor + 0x34) - side);
+    points[3][1] = points[2][1] = (s32)(*(f32 *)(actor + 0x38) + upper);
+    points[2][2] = points[1][2] = (s32)(*(f32 *)(actor + 0x3C) + forward);
+    if (rotated) {
+        cursor[0].v.ob[0] = points[1][0];
+        cursor[0].v.ob[1] = points[1][1];
+        cursor[0].v.ob[2] = points[1][2];
+        cursor[1].v.ob[0] = points[2][0];
+        cursor[1].v.ob[1] = points[2][1];
+        cursor[1].v.ob[2] = points[2][2];
+        cursor[2].v.ob[0] = points[3][0];
+        cursor[2].v.ob[1] = points[3][1];
+        cursor[2].v.ob[2] = points[3][2];
+        cursor[3].v.ob[0] = points[0][0];
+        cursor[3].v.ob[1] = points[0][1];
+        cursor[3].v.ob[2] = points[0][2];
+    } else {
+        cursor[0].v.ob[0] = points[0][0];
+        cursor[0].v.ob[1] = points[0][1];
+        cursor[0].v.ob[2] = points[0][2];
+        cursor[1].v.ob[0] = points[1][0];
+        cursor[1].v.ob[1] = points[1][1];
+        cursor[1].v.ob[2] = points[1][2];
+        cursor[2].v.ob[0] = points[2][0];
+        cursor[2].v.ob[1] = points[2][1];
+        cursor[2].v.ob[2] = points[2][2];
+        cursor[3].v.ob[0] = points[3][0];
+        cursor[3].v.ob[1] = points[3][1];
+        cursor[3].v.ob[2] = points[3][2];
+    }
+    return first;
 }
-void func_1513EDB4(s32 arg0, s16 arg1) {
-    func_1513EAD8(arg0, 0, arg1);
+Vtx *func_1513EDB4(u8 *actor, s16 view) {
+    return func_1513EAD8(actor, 0, view);
 }
 
-void func_1513EDE4(s32 arg0, s16 arg1) {
-    func_1513EAD8(arg0, 1, arg1);
+Vtx *func_1513EDE4(u8 *actor, s16 view) {
+    return func_1513EAD8(actor, 1, view);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513EE14.s. */
 s32 func_1513EE14() {

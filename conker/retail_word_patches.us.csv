@@ -27077,3 +27077,6 @@ game_169510,func_1513F728,0x2AC,0x46045180,0xE486003C,-,-,Normalize proved dampi
 game_169510,func_1513F728,0x2B0,0xE486003C,0xC4680014,-,-,Normalize proved damping loop-exit constant and independent post-loop schedule,,,false
 game_169510,func_1513F728,0x2B8,0xC4680014,0xC4860040,-,-,Normalize proved damping loop-exit constant and independent post-loop schedule,,,false
 game_169510,func_1513F728,0x2BC,0xC4860040,0x24020001,-,-,Normalize proved damping loop-exit constant and independent post-loop schedule,,,false
+game_169510,func_1513EAD8,0x0CC,0x46040382,0x46002382,-,-,Preserve retail floating multiply operand order,,,false
+game_169510,func_1513EAD8,0x0D8,0x46060402,0x46003402,-,-,Preserve retail floating multiply operand order,,,false
+game_169510,func_1513EAD8,0x0E4,0x46086082,0x460C4082,-,-,Preserve retail floating multiply operand order,,,false
