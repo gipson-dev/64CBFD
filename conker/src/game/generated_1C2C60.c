@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern s32 D_800B0E58[7762];
 typedef struct {
     u8 retained00[0x08];
     s16 key;
@@ -113,8 +114,44 @@ void func_1519582C() {
     D_800E08F0 = -2;
 }
 
-s32 func_15195868() {
-    return 0;
+/* Find a texture occurrence and count its paired tile-size commands. */
+s32 func_15195868(u8 *displayList, s32 assetId, s32 occurrence, s32 *tileCount) {
+    s32 index;
+    s32 opcode;
+    s32 next;
+    s32 second;
+
+    *tileCount = 0;
+    index = -1;
+    for (;;) {
+        index++;
+        while ((s8)G_SETTIMG != (opcode = *(s8 *)(displayList + (index << 3))) &&
+               (s8)G_ENDDL != opcode) {
+            index++;
+        }
+        if ((s8)G_ENDDL == opcode) {
+            return -1;
+        }
+        if (D_800B0E58[assetId] == ((s32 *)displayList)[index * 2 + 1] || assetId == 0) {
+            if (occurrence-- <= 0) {
+                break;
+            }
+        }
+    }
+    assetId = (s8)opcode;
+    while (assetId != (s8)G_SETTILESIZE) {
+        index++;
+        assetId = *(s8 *)(displayList + (index << 3));
+    }
+    next = index;
+    do {
+        *tileCount += 1;
+        next++;
+        assetId = *(s8 *)(displayList + (next << 3));
+        next++;
+        second = *(s8 *)(displayList + (next << 3));
+    } while (assetId == (s8)G_SETTILE && second == (s8)G_SETTILESIZE);
+    return index;
 }
 
 /* Allocate and initialize a record from two packed 12-bit pairs. */

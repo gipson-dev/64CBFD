@@ -26665,3 +26665,31 @@ generated_1B5CC0,func_151897A4,0xd8,0x1656FFF0,0x1615FFF0,-,-,Normalize closed m
 generated_1B5CC0,func_151897A4,0xe0,0x8E650010,0x8E630010,-,-,Normalize closed matrix-batch register and conditional-load reorganization,,,false
 generated_1B5CC0,func_151897A4,0xe4,0x8FAC0044,0x8FAB0044,-,-,Normalize closed matrix-batch register and conditional-load reorganization,,,false
 generated_1B5CC0,func_151897A4,0xec,0xA0AC008A,0xA06B008A,-,-,Normalize closed matrix-batch register and conditional-load reorganization,,,false
+generated_1C2C60,func_15195868,0x34,0x00055880,0x00057080,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x38,0x014B6021,0x014E7821,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x3c,0x1048000B,0x1102000B,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x44,0x10490009,0x11220009,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x5c,0x10480003,0x11020003,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x64,0x5449FFFA,0x5522FFFA,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x6c,0x14490003,0x15220003,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x70,0x000378C0,0x000358C0,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x7c,0x008FC021,0x008B6021,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x80,0x8F190004,0x8D8D0004,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x84,0x8D8D0000,0x8DF80000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x88,0x51B90004,0x51B80004,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xa4,0x00025E00,0x00022E00,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xac,0x000B6603,0x0005CE03,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xb0,0x110C0007,0x13280007,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xbc,0x000370C0,0x000358C0,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xc0,0x01C47821,0x01646021,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xc4,0x81E50000,0x81850000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xd4,0x8CF80000,0x8CEE0000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xdc,0x0002C8C0,0x000268C0,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xe0,0x270D0001,0x25CF0001,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xe4,0xACED0000,0xACEF0000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xe8,0x03245821,0x01A4C021,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xec,0x81650000,0x83050000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xf4,0x000260C0,0x0002C8C0,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0xf8,0x01847021,0x03245821,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x100,0x81C60000,0x81660000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
+generated_1C2C60,func_15195868,0x108,0x8CF80000,0x8CEE0000,-,-,Normalize closed texture scanner scratch registers and equality operand order,,,false
