@@ -27428,3 +27428,34 @@ game_77AD0,func_1504ADD0,0xe4,0x26310001,0x02202025,-,-,Normalize closed actor-c
 game_77AD0,func_1504ADD0,0xe8,0x24010019,0x26100001,-,-,Normalize closed actor-context register lifetimes and invariant setup,,,false
 game_77AD0,func_1504ADD0,0xec,0x1621FFE0,0x1614FFE1,-,-,Normalize closed actor-context register lifetimes and invariant setup,,,false
 game_77AD0,func_1504ADD0,0xf0,0x2610032C,0x2631032C,-,-,Normalize closed actor-context register lifetimes and invariant setup,,,false
+generated_CBDB0,func_1509F354,0x4c,0x10000033,0x10000031,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x5c,0x1440002E,0x1440002C,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x60,0x8FAF0034,0x8FAE0034,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x64,0x16200008,0x16200009,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x68,0x8FB80034,0x8FAF0030,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x6c,0x8FB90030,0x8FB80034,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x70,0x240EFFFF,0x8FB90030,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x74,0x03194823,0x240DFFFF,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x78,0x252B0001,0x03194823,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x7c,0x000B6023,0x252A0001,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x80,0x318D001F,0x314B00FF,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x84,0x01AE8806,0x000B6023,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x88,0x8FB80030,0x018D8806,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x8c,0x01F88023,0x01CF8023,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x94,0x321900FF,0x321800FF,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x98,0x03208025,0x03008025,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xac,0x306900FF,0x307900FF,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xb0,0x312A001F,0x312A001F,-,-,Omit modulo-32 mask consumed by hardware SLLV,,,true
+generated_CBDB0,func_1509F354,0xb4,0x240B0001,0x24090001,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xb8,0x014B6004,0x03295004,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xbc,0x01917024,0x01515824,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xd0,0x11C0FFF2,0x1160FFF3,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xdc,0x8FB80048,0x8FAE0048,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xe8,0x308FFFFF,0x308CFFFF,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0xec,0x01E02025,0x01802025,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x100,0xAFB80010,0xAFAE0010,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x104,0x10400004,0x10400003,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x108,0x3219001F,0x3219001F,-,-,Omit modulo-32 mask consumed by hardware SLLV,,,true
+generated_CBDB0,func_1509F354,0x10c,0x24090001,0x240F0001,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x110,0x03295804,0x020FC004,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_CBDB0,func_1509F354,0x114,0x022B8826,0x02388826,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false

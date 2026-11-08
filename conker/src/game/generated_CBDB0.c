@@ -48,8 +48,37 @@ s32 func_1509F33C(s32 arg0, s32 arg1, s32 arg2) {
     return 0;
 }
 
-s32 func_1509F354() {
-    return 0;
+struct struct127;
+struct struct127 *func_1505EEF4(s32);
+s32 func_10010894(struct struct127 *);
+s32 func_150ADA20(void);
+s32 func_10010344(u16, void *, s32, s16, u16);
+/* Choose an enabled sound and consume its mask bit only if playback succeeds.
+ * Sound offsets wrap to u16; shift indices follow the N64 modulo-32 rule.
+ * A zero byte span retains the original divide trap; an unreachable mask retries.
+ * Distance words remain live until the successful selection is submitted. */
+u32 func_1509F354(u32 first, u32 last, u32 mask, u32 volume,
+                  s32 actorKey, s16 distance, u32 farDistance) {
+    struct struct127 *actor;
+    u8 span;
+    u8 selected;
+
+    actor = func_1505EEF4(actorKey);
+    if (volume >= 0x8000U) volume = 0x7FFF;
+    if (actor == NULL) return mask;
+    if (func_10010894(actor) == 0) {
+        if (mask == 0) {
+            mask = 0xFFFFFFFFU >> ((0U - (u8)(last - first + 1)) & 31);
+        }
+        span = last - first + 1;
+        do {
+            selected = (u32)func_150ADA20() % span;
+        } while ((mask & (1U << (selected & 31))) == 0);
+        if (func_10010344((u16)(first + selected), actor, volume, distance, farDistance) != 0) {
+            mask ^= 1U << (selected & 31);
+        }
+    }
+    return mask;
 }
 
 s32 func_1509F47C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s16 arg4, s32 arg5) {
