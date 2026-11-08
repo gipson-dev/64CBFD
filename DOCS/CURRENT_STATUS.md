@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2169](WORKING_NOTES/2169-game-bending-quad-match-20261107.md): `func_1513F114` now matches all 231 retail words with its original 144-byte frame and 61 closed allocation/spill guards. Signed bend, sqrt/clamp ordering, float-helper ABI and renderer slot 3 are qualified. Total **4,239 / 5,512 (76.90%)**, Game **3,566 / 4,839 (73.69%)**, zero drift; **171** more to 80%. Full-image gate: 764 bytes, zero exclusions. Next: `func_1513FAB4`.
+
 [Note 2168](WORKING_NOTES/2168-game-oriented-quad-match-20261107.md): `func_1513EE14` now emits all 192 retail words directly with its original 216-byte frame and zero guards. Ordered orientation/corner reads, four transforms before output, original helpers and renderer slot 23 are qualified. Total **4,238 / 5,512 (76.89%)**, Game **3,565 / 4,839 (73.67%)**, zero drift; **172** more to 80%. Full-image gate: 537 bytes, zero exclusions. Next: `func_1513F114`.
 
 [Note 2167](WORKING_NOTES/2167-game-billboard-quad-match-20261107.md): `func_1513EAD8` now matches all 183 retail words with its original 104-byte frame and three multiply-operand guards. Billboard coordinates, live buffers, both original wrappers and their explicit pointer-return ABI are qualified; all 200 shared-header consumer objects are audited. Total **4,237 / 5,512 (76.87%)**, Game **3,564 / 4,839 (73.65%)**, zero drift; **173** more to 80%. Full-image gate: 537 bytes, zero exclusions. Next: `func_1513EE14`.

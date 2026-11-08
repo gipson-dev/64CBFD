@@ -21,7 +21,7 @@ s32 func_1513E6E8(u8 *record);
 Vtx *func_1513E83C(u8 *actor, s16 view);
 Vtx *func_1513EAD8(u8 *actor, u8 rotated, s16 view);
 Vtx *func_1513EE14(u8 *actor, s16 view);
-s32 func_1513F114();
+Vtx *func_1513F114(u8 *actor, s16 view);
 Gfx *func_1513F4E4(Gfx *cursor, u8 index, u8 *dirty);
 s32 func_1513F728(u8 *actor);
 s32 func_1513FAB4(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
@@ -929,9 +929,82 @@ Vtx *func_1513EE14(u8 *actor, s16 view) {
     scratch.cursor->v.ob[2] = (s32)scratch.points[3][2];
     scratch.cursor->v.flag = 0;
     return scratch.first;
-}/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513F114.s. */
-s32 func_1513F114() {
-    return 0;
+}/* Build a view-aligned quad with a signed bend from actor displacement. */
+Vtx *func_1513F114(u8 *actor, s16 view) {
+    extern f32 sinf(f32), cosf(f32), sqrtf(f32);
+    extern f32 D_800A51BC, D_800A51C0;
+    /* Keep the escaped buffer fields together across the math calls. */
+    struct {
+        f32 savedForward;
+        Vtx *first;
+        Vtx *cursor;
+    } scratch;
+    f32 side, lower, upper, sine, cosine, widthCos, widthSin, verticalSin, lowerCos, upperCos, work;
+    {
+        f32 bend, directionSign, angle;
+        u8 fresh;
+        func_151D5D60(actor + 0x100, view, 0x40, &scratch.cursor, &fresh);
+        scratch.first = scratch.cursor;
+        if (scratch.cursor != NULL) {
+            if (fresh) {
+                memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+                memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+            }
+        } else {
+            return NULL;
+        }
+        lower = -(*(f32 *)(actor + 0x30) * *(f32 *)(actor + 0x50));
+        upper = *(f32 *)(actor + 0x30) + lower;
+        /* Work first holds the forward coefficient, then the corner offsets. */
+        work = D_800DD1D8[view];
+        side = D_800DD1E8[view];
+        bend = ((*(f32 *)(actor + 0x40) - *(f32 *)(actor + 0x34)) * side -
+        work * (*(f32 *)(actor + 0x48) - *(f32 *)(actor + 0x3C))) * D_800BE9A8;
+        directionSign = -1.0f;
+        if (bend < 0.0f) {
+            directionSign = 1.0f;
+            bend = -bend;
+        }
+        angle = sqrtf(bend) * *(f32 *)(actor + 0x4C);
+        if (D_800A51BC < angle) {
+            angle = D_800A51C0;
+        }
+        angle *= directionSign;
+        scratch.savedForward = work;
+        sine = sinf(angle);
+        cosine = cosf(angle);
+    }
+    {
+        f32 forward;
+        widthCos = *(f32 *)(actor + 0x2C) * cosine;
+        widthSin = *(f32 *)(actor + 0x2C) * sine;
+        verticalSin = lower * sine;
+        lowerCos = lower * cosine;
+        forward = scratch.savedForward;
+        work = widthCos - verticalSin;
+        scratch.cursor[0].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + work * side);
+        scratch.cursor[0].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + lowerCos) + widthSin);
+        scratch.cursor[0].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - work * forward);
+        scratch.cursor[0].v.flag = 0;
+        work = -(widthCos + verticalSin);
+        scratch.cursor[1].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + work * side);
+        scratch.cursor[1].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + lowerCos) - widthSin);
+        scratch.cursor[1].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - work * forward);
+        scratch.cursor[1].v.flag = 0;
+        verticalSin = upper * sine;
+        work = -(widthCos + verticalSin);
+        upperCos = upper * cosine;
+        scratch.cursor[2].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + work * side);
+        scratch.cursor[2].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + upperCos) - widthSin);
+        scratch.cursor[2].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - work * forward);
+        scratch.cursor[2].v.flag = 0;
+        work = widthCos - verticalSin;
+        scratch.cursor[3].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + work * side);
+        scratch.cursor[3].v.ob[1] = (s32)((*(f32 *)(actor + 0x38) + upperCos) + widthSin);
+        scratch.cursor[3].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - work * forward);
+        scratch.cursor[3].v.flag = 0;
+        return scratch.first;
+    }
 }
 void func_1513F4B0(struct210 *arg0, s16 arg1) {
     func_15140410((u8 *)arg0, (f32 *)((u8 *)arg0 + 0x110),

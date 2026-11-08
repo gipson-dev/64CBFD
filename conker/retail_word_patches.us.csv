@@ -27080,3 +27080,64 @@ game_169510,func_1513F728,0x2BC,0xC4860040,0x24020001,-,-,Normalize proved dampi
 game_169510,func_1513EAD8,0x0CC,0x46040382,0x46002382,-,-,Preserve retail floating multiply operand order,,,false
 game_169510,func_1513EAD8,0x0D8,0x46060402,0x46003402,-,-,Preserve retail floating multiply operand order,,,false
 game_169510,func_1513EAD8,0x0E4,0x46086082,0x460C4082,-,-,Preserve retail floating multiply operand order,,,false
+game_169510,func_1513F114,0x05C,0xAFA50038,0xAFA50040,-,-,Normalize captured copy spill pair within existing frame,,,false
+game_169510,func_1513F114,0x060,0xAFA2003C,0xAFA20044,-,-,Normalize captured copy spill pair within existing frame,,,false
+game_169510,func_1513F114,0x06C,0x8FA2003C,0x8FA20044,-,-,Normalize captured copy spill pair within existing frame,,,false
+game_169510,func_1513F114,0x070,0x8FA50038,0x8FA50040,-,-,Normalize captured copy spill pair within existing frame,,,false
+game_169510,func_1513F114,0x0AC,0x46002482,0x46002402,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x0B0,0xC42E0000,0xC4320000,R_MIPS_LO16:D_800DD1D8,R_MIPS_LO16:D_800DD1D8,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x0C4,0x46009487,0x46008407,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x0C8,0x46120180,0x46100180,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x0EC,0x460E2202,0x46049202,-,-,Normalize closed bend FP roles and commutative multiply order,,,false
+game_169510,func_1513F114,0x0F8,0x44818000,0x44817000,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x11C,0x44818000,0x44817000,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x138,0x46004302,0x46080302,-,-,Normalize closed bend FP roles and commutative multiply order,,,false
+game_169510,func_1513F114,0x150,0x46106302,0x460E6302,-,-,Normalize closed pre-trig F14 F16 F18 role cycle,,,false
+game_169510,func_1513F114,0x154,0xE7AE0084,0xE7B0007C,-,-,Normalize independent lower and forward spill schedule,,,false
+game_169510,func_1513F114,0x158,0xE7B2007C,0xE7B20084,-,-,Normalize independent lower and forward spill schedule,,,false
+game_169510,func_1513F114,0x290,0x46045182,0x46045302,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x294,0x46067200,0x460C7180,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x298,0xE7A60034,0x46003207,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x29C,0x46004287,0x46144102,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2A0,0x46145102,0xE7A80034,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2A4,0xE7AA0030,0xC60A0034,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2A8,0xC6060034,0x46045180,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2AC,0x46043200,0x4600320D,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2B0,0x4600428D,0x440A4000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2B4,0x440A5000,0x00000000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2B8,0x00000000,0xA56A0020,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2BC,0xA56A0020,0xC7AA0078,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2C0,0xC7A60078,0x8FAE008C,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2C4,0xC6040038,0x46005102,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2C8,0x8FAE008C,0x460C7001,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2CC,0x46003082,0xE7A40040,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2D0,0x46022200,0xC6060038,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2D4,0x46104281,0x46043200,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2D8,0x4600518D,0x46104281,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2DC,0x440D3000,0x4600518D,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2E0,0x00000000,0x440D3000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2E4,0xA5CD0022,0x00000000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2E8,0xC7A80030,0xA5CD0022,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2EC,0xC604003C,0xC7A80034,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2F0,0x8FB9008C,0xC604003C,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2F4,0x46124282,0x8FB9008C,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2F8,0x460A2181,0x46124282,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x2FC,0x4600320D,0x460A2181,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x300,0x44184000,0x46140282,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x304,0x00000000,0x4600320D,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x308,0xA7380024,0x44184000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x30C,0x8FA8008C,0x00000000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x310,0xA5000026,0xA7380024,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x314,0xC7A40034,0x8FA8008C,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x318,0xC60A0034,0xA5000026,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x31C,0x8FAB008C,0xC6040034,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x320,0x46047301,0x8FAB008C,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x324,0x46146182,0x460A2180,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x328,0x46065200,0x4600320D,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x32C,0x4600410D,0x440A4000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x330,0x440A2000,0x00000000,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x334,0x00000000,0xA56A0030,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x338,0xA56A0030,0xC7AA0040,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x33C,0xC60A0038,0xC6040038,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x344,0x46025180,0x460A2180,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+game_169510,func_1513F114,0x34C,0x46126182,0x46120182,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
