@@ -16,7 +16,7 @@ void func_151B5BA0(struct127 *owner, struct127 *carried);
 
 /* Generated placeholder declarations. */
 s32 func_1506AD30();
-s32 func_1506B3B8();
+void func_1506B3B8(void);
 void func_1506B634(u8 choiceCount);
 void func_1506BCC8(void);
 s32 func_1506BF5C();
@@ -152,55 +152,44 @@ void func_1506B370(void) {
 
 void func_1506B3B0(void) {
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506B3B8.s. */
-s32 func_1506B3B8() {
-    return 0;
+/* Select a relative-facing table entry, restart it, and set the actor timeout. */
+void func_1506B3B8(void) {
+    s16 difference;
+    u8 magnitude;
+    u16 angle;
+    u8 choice = 0;
+    s32 signedHigh;
+    s32 highByte;
+    struct127 *actor;
+
+    angle = func_1505A630(D_800CC2D0[0].x_position - D_800D154C->x_position,
+                         D_800D154C->z_position - D_800CC2D0[0].z_position, 0);
+    actor = D_800D154C;
+    difference = actor->unk7A + (actor->unk1FD << 8) - angle;
+    signedHigh = difference >> 8;
+    highByte = signedHigh & 0xFF;
+    magnitude = signedHigh;
+    if ((highByte & 0x80) != 0) {
+        magnitude = (u8)-highByte;
+    }
+    if (magnitude < ((u8 *)D_80099A3C)[0]) {
+        choice = 1;
+    } else {
+        if (D_80099A43 < magnitude) {
+            choice = 5;
+        } else if (((u8 *)&D_80099A3E)[0] < magnitude) {
+            choice = 2;
+        }
+        if (difference < 0) {
+            choice += 4;
+        } else {
+            choice += 3;
+        }
+    }
+    actor->unk138 = 0;
+    D_800D154C->unk244 = ((u8 *)D_80099A3C)[choice];
+    D_800D154C->unk21C = 20000;
 }
-// NON-MATCHING: 5% there...
-// void func_1506B3B8(void) {
-//     u8 sp19;
-//     s16 temp_t0;
-//     s32 temp_a3;
-//     s32 temp_v0;
-//     s32 temp_v1;
-//     struct127 *temp_a1;
-//     struct127 *temp_a1_2;
-//     s32 phi_a2;
-//     s32 phi_a0;
-//     u8 phi_a0_2;
-//
-//     temp_a1 = D_800D154C;
-//     sp19 = 0;
-//     temp_a1_2 = D_800D154C;
-//     temp_t0 = (temp_a1_2->unk7A + (temp_a1_2->unk1FD << 8)) - func_1505A630(D_800CC2D0[0].x_position - temp_a1->x_position, temp_a1->z_position - D_800CC2D0[0].z_position, temp_a1, 0);
-//     temp_v1 = (s32) temp_t0 >> 8;
-//     temp_a3 = temp_v1 & 0xFF;
-//     phi_a2 = temp_v1 & 0xFF;
-//     if ((temp_a3 & 0x80) != 0) {
-//         phi_a2 = -temp_a3 & 0xFF;
-//     }
-//     temp_v0 = phi_a2;
-//     if (phi_a2 < (s32) D_80099A3C) {
-//         phi_a0 = 1;
-//     } else {
-//         if ((s32) D_80099A43 < temp_v0) {
-//             phi_a0_2 = (u8)5U;
-//         } else {
-//             phi_a0_2 = sp19;
-//             if ((s32) D_80099A3E < temp_v0) {
-//                 phi_a0_2 = (u8)2U;
-//             }
-//         }
-//         if ((s32) temp_t0 < 0) {
-//             phi_a0 = (phi_a0_2 + 4) & 0xFF;
-//         } else {
-//             phi_a0 = (phi_a0_2 + 3) & 0xFF;
-//         }
-//     }
-//     temp_a1_2->unk138 = (u8)0;
-//     D_800D154C->unk244 = (s16) D_80099A3C[phi_a0]; // + 0x800A0000)->unk-65C4;
-//     D_800D154C->unk21C = (u16)0x4E20;
-// }
 
 void func_1506B4EC(void) {
     func_1506B3B8();
