@@ -180,7 +180,7 @@ reload three signed16 position components after that helper for float conversion
 
 Submit func_15149130(300,-1,0x31,-1,0,0x2A,0x54,0xFF,0). A nonnull result gets
 memcpy(result+28hex,packet,0x54). Return1 independently of allocation success.
-Preserve the two tail bytes at packet50/51hex, untouched padding,48-byte
+Preserve the two tail bytes at packet50/51hex, untouched padding,64-byte
 transform region, post-helper source rereads and saved S0/RA lifetime.
 Complete all standard qualification, actual-Make, literal-image and production
 gates before credit. Graphify currently gives placeholder/owner relationships.
