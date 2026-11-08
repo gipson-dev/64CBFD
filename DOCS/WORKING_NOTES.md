@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2180](WORKING_NOTES/2180-game-record-subtype-match-20261108.md): `func_150A25D4` matches all 110 words/frame 40. Its four-formal O32 interface preserves the aligned 64-bit mask and A3 padding; 41 derived guards qualify the 108-word raw body, two scheduling insertions and original switch table. Total **4,249 / 5,513 (77.07%)**, Game **3,576 / 4,840 (73.88%)**, zero drift; **162** more to 80%. Literal full-image gate: 424 bytes including three closed metadata permutations, zero exclusions. Next ordinary C candidate: `func_15115F68` (uncredited).
+
 [Note 2179](WORKING_NOTES/2179-game-record-state-match-20261108.md): `func_150A09D0` matches all 209 words/frame 64 with 60 derived guards; both original callers, the unchanged SDK low-half argument consumer, class transitions/countdown/view updates, 27 neighbors and the complete 16-function caller owner are qualified. Total **4,248 / 5,513 (77.05%)**, Game **3,575 / 4,840 (73.86%)**, zero drift; **163** more to 80%. Full-image gate: 612 bytes, zero exclusions. Next: `func_150A25D4`.
 
 [Note 2178](WORKING_NOTES/2178-game-class6-actor-scan-match-20261108.md): `func_150A0D8C` is byte-exact across all 173 words with its original 128-byte frame; 31 guards normalize closed allocation/schedule differences. All 25 actors, live record reloads, scale capture and the original caller/helper paths are qualified. Total **4,247 / 5,513 (77.04%)**, Game **3,574 / 4,840 (73.84%)**, zero drift; **164** more to 80%. Full-image gate: 533 bytes, zero exclusions. Next: `func_150A09D0`.

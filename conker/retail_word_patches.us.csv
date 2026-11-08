@@ -27261,3 +27261,44 @@ generated_CDE80,func_150A09D0,0x300,0x8E2C0000,0x5020FFD9,-,-,Normalize closed r
 generated_CDE80,func_150A09D0,0x304,0x3C050000,0x8E2C0000,R_MIPS_HI16:D_800D3094,-,Normalize closed record-state roles and independent register schedule,,,false
 generated_CDE80,func_150A09D0,0x30c,0x26B50001,0x26D60001,-,-,Normalize closed record-state roles and independent register schedule,,,false
 generated_CDE80,func_150A09D0,0x310,0x02A5082B,0x02C5082B,-,-,Normalize closed record-state roles and independent register schedule,,,false
+generated_CDE80,func_150A25D4,0x24,0x1020005D,0x1020005F,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x2c,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_8009F648,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x34,0x8C2E0000,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_8009F648,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x48,0x93A40033,0x240500FF,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x4c,0x11E10053,0x11E10055,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x50,0x240500FF,0x01E02025,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x5c,0x10000050,0x10000052,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x70,0x1301004A,0x1301004C,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x98,0x10000040,0x10000042,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xac,0x1181003B,0x1181003D,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xc0,0x10000037,0x10000039,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xd0,0x1720000B,0x1720000A,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xd4,0x3C100000,0x2402001E,R_MIPS_HI16:D_800D3090,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xd8,0x26100000,0x240D01F4,R_MIPS_LO16:D_800D3090,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xdc,0x240D001E,0x3C010000,-,R_MIPS_HI16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xe0,0x240801F4,0xA0220000,-,R_MIPS_LO16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xe4,0xA20D0000,0xAFAD0010,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xe8,0xAFA80010,0x2404066F,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xec,0x2404066F,0x02202825,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xf0,0x02202825,0x24065DC0,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xf4,0x24065DC0,0x0C000000,-,R_MIPS_26:func_10010344,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xf8,0x0C000000,0x24070190,R_MIPS_26:func_10010344,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0xfc,0x24070190,0x3C020000,-,R_MIPS_HI16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x100,0x3C100000,0x3C080000,R_MIPS_HI16:D_800D3090,R_MIPS_HI16:D_800BE9E4,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x104,0x26100000,0x90420000,R_MIPS_LO16:D_800D3090,R_MIPS_LO16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x108,0x3C0A0000,0x8D080000,R_MIPS_HI16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x10c,0x8D4A0000,0x3C010000,R_MIPS_LO16:D_800BE9E4,R_MIPS_HI16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x110,0x92090000,0x00481021,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x114,0x012A1021,0x304900FF,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x118,0x304B00FF,0xA0290000,-,R_MIPS_LO16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x11c,0x2961001F,0x2921001F,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x120,0x1420001E,0x54200021,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x124,0xA20B0000,0x8FBF0024,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x12c,0x240C04B0,0x240A04B0,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x140,0xA62C00B2,0xA62A00B2,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x14c,0x244FFF10,0x244CFF10,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x150,0x240E005A,0x240B005A,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x158,0xA62E00B2,0xA62B00B2,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x15c,0xA62F00B2,0xA62C00B2,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
+generated_CDE80,func_150A25D4,0x160,0x1000000E,0x3C010000,-,R_MIPS_HI16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,0xA0200000,R_MIPS_LO16:D_800D3090,false
+generated_CDE80,func_150A25D4,0x164,0xA2000000,0x1000000F,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,0x8FBF0024,-,false

@@ -318,8 +318,66 @@ void func_150A24C0(GeneratedCDE80Record *record, s32 selector) {
     }
 }
 
-s32 func_150A25D4() {
-    return 0;
+extern u8 D_800D3090;
+extern s32 D_800BE9E4;
+extern u8 D_800D9EB8[][3];
+void func_150E7290(u8, u8, s32);
+s32 func_150E68B0(struct127 *, s32, GeneratedCDE80Record *, u8);
+s32 func_10010344(u16, void *, s32, s16, u16);
+void func_151C8674(s32, s32);
+void func_1515F270(u8 *, u8 *);
+void func_151CE51C(struct127 *, u8 *);
+
+/* Dispatch record subtypes and advance the actor timed parameter. */
+void func_150A25D4(GeneratedCDE80Record *record, struct127 *actor,
+                  s32 selector, u64 flags) {
+    u8 *output;
+    s32 value;
+    s32 tick;
+    switch (record->field17) {
+    case 0:
+        break;
+    case 1:
+        if (selector != 255) func_150E7290(selector, 255, 0);
+        break;
+    case 2:
+        if (selector != 255) {
+            output = D_800D9EB8[selector];
+            output[0] = record->field18;
+            output[1] = record->field1C;
+            output[2] = record->field20;
+        }
+        break;
+    case 3:
+        if (selector != 255) {
+            func_150E68B0(actor, selector, record, (u8)record->field18);
+        }
+        break;
+    case 6:
+        if ((flags & 1) == 0) {
+            D_800D3090 = 30;
+            func_10010344(0x66F, actor, 24000, 400, 500);
+        }
+        tick = (u8)(D_800D3090 + (u32)D_800BE9E4);
+        D_800D3090 = tick;
+        if (tick >= 31) {
+            value = actor->unkB2;
+            if (value >= 1441) actor->unkB2 = 1200;
+            else if (value <= 240) actor->unkB2 = 90;
+            else actor->unkB2 = value - 240;
+            D_800D3090 = 0;
+        }
+        break;
+    case 8:
+        func_151C8674((s32)actor, (s32)record);
+        break;
+    case 9:
+        func_1515F270((u8 *)actor, (u8 *)record);
+        break;
+    case 10:
+        func_151CE51C(actor, (u8 *)record);
+        break;
+    }
 }
 
 void func_15172E7C(struct127 *, s32, s32);
