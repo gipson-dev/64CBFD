@@ -9,6 +9,7 @@ void func_15085ABC(s16);
 extern Gfx *D_800BE9D0;
 
 /* Frame-coordinator interfaces recovered from their integer call sites. */
+void func_150A09D0(s32);
 extern u8 D_800DCD27;
 void func_1510D864(void);
 s32 func_1509BA04(s32);

@@ -17,7 +17,7 @@ typedef struct {
     u8 field17;
     s32 field18;
     s32 field1C;
-    s32 field20;
+    u32 field20;
     f32 coefficient0;
     f32 scale;
     f32 coefficient1;
@@ -51,8 +51,103 @@ typedef GeneratedCDE80Record GeneratedCDE80Plane;
 f32 func_150AD780(f32);
 f32 func_150AD78C(f32);
 
-s32 func_150A09D0() {
-    return 0;
+extern s32 D_80082FA0;
+extern u8 D_800C35EA;
+extern u8 D_800DDF5C[];
+void func_1000FC18(u16, s16, s16, s16, u16);
+s32 func_1000E46C(s32, s32, s32, s32);
+void func_150A23E4(GeneratedCDE80Record *);
+typedef struct {
+    u8 pad0[0x938];
+    f32 radius;
+    f32 x;
+    f32 y;
+    f32 z;
+    u8 enabled;
+    u8 parameter18;
+    u8 pad94A[0x56];
+} GeneratedCDE80ViewUpdate;
+
+/* Advance record states and publish eligible viewer parameters. */
+void func_150A09D0(s32 unused) {
+    extern struct127 D_800CC2D0[26];
+    u32 index;
+    s32 offset;
+    GeneratedCDE80Record *record;
+    u32 state;
+    u32 low;
+    s32 parameter18;
+    s32 viewer;
+    s32 viewOffset;
+    GeneratedCDE80ViewUpdate *view;
+    for (index = 0, offset = 0; index < (u32)D_800D3094; index++, offset += 0x34) {
+        record = (GeneratedCDE80Record *)((u32)D_800D3098 + offset);
+        switch (record->flags >> 2) {
+        case 2:
+            state = record->field20;
+            if (state == 1) {
+                record->field20 = state ^ 3;
+            } else if (state == 2) {
+                func_1000FC18((u16)((u32)record->field1C >> 16),
+                    record->origin0, record->origin1, record->origin2,
+                    (u16)record->field18);
+                ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->field20 = 0;
+            }
+            if (D_800C35EA == 1 &&
+                func_150A1DA0(D_800CC2D0, offset + (u32)D_800D3098, 0) == 0) {
+                func_150A23E4((GeneratedCDE80Record *)(offset + (u32)D_800D3098));
+            }
+            break;
+        case 7:
+            if ((record->flags & 3) == 3) {
+                record->field20 = 0;
+            } else {
+                state = record->field20;
+                if (state == 1) {
+                    record->field20 = 2;
+                } else if (state == 2) {
+                    if (func_1000E46C(record->field17, 0, record->field18, 0) != 0) {
+                        record = (GeneratedCDE80Record *)((u32)D_800D3098 + offset);
+                        if (func_1000E46C(record->field17, 100, record->field1C, 0) != 0) {
+                            ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->field20 = 0;
+                        }
+                    }
+                }
+            }
+            break;
+        case 4:
+            if (record->field17 != 9) {
+                low = (u32)record->field1C & 255;
+                if (low != 0) {
+                    if (record->disabled == 0) { low--; }
+                    else { low = 0; }
+                    record->field1C = ((u32)record->field1C & ~255U) | low;
+                    if (low == 0) {
+                        record = (GeneratedCDE80Record *)((u32)D_800D3098 + offset);
+                        low = (u32)record->field1C;
+                        D_800DDF5C[(low >> 8) & 255] = 0;
+                        record->field1C &= 0xFFFF0000;
+                    }
+                }
+            }
+            record = (GeneratedCDE80Record *)((u32)D_800D3098 + offset);
+            /* fall through */
+        case 0:
+            if (record->field17 == 12 && record->disabled == 0) {
+                for (viewer = 0, viewOffset = 0; viewer <= D_80082FA0; viewer++, viewOffset += 0x9A0) {
+                    view = (GeneratedCDE80ViewUpdate *)((u32)D_800DBFF0 + viewOffset);
+                    view->x = ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->origin0;
+                    view->y = ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->origin1;
+                    view->z = ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->origin2;
+                    view->radius = ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->radius;
+                    parameter18 = ((GeneratedCDE80Record *)((u32)D_800D3098 + offset))->field18;
+                    view->enabled = 1;
+                    view->parameter18 = parameter18;
+                }
+            }
+            break;
+        }
+    }
 }
 
 void func_150A0D14(GeneratedCDE80TrigRecord *record) {
