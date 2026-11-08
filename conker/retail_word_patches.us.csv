@@ -27642,3 +27642,36 @@ generated_15D730,func_151319C4,0xe8,0xE7B2002C,0xE7B00024,-,-,Normalize closed p
 generated_15D730,func_151319C4,0xec,0xC6040080,0xC6120080,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
 generated_15D730,func_151319C4,0xf0,0x3C190000,0xE7A4002C,R_MIPS_HI16:D_80089874,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
 generated_15D730,func_151319C4,0xf8,0xE7A40028,0xE7B20028,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_1CC440,func_151A24A8,0x7c,0x03030019,0x00780019,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x98,0x844F000C,0x8459000C,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xa4,0x848B0034,0x848D0034,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xa8,0x848D0036,0x848F0036,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xb0,0x84830038,0x00006012,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xb4,0x00002812,0x01AC7021,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xb8,0x01656021,0x01ECC021,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xbc,0x01A57021,0xA48E0034,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xc0,0xA48C0034,0xA4980036,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xc4,0xA48E0036,0x84830038,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xc8,0x844F000C,0x8459000C,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xcc,0x006F082A,0x0079082A,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xd4,0x844B0018,0x844E0018,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xd8,0x94990044,0x94890044,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xdc,0x24180013,0x24080013,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xe0,0xA098002F,0xA088002F,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xe4,0x37280101,0x352A0101,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xe8,0xA4880044,0xA48A0044,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xec,0x8449000E,0x844B000E,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xf0,0x3C0A0052,0x3C0D0052,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xf4,0x354A0003,0x35AD0003,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xf8,0x01230019,0x006B0019,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0xfc,0xAC8A0014,0xAC8D0014,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x100,0x00002812,0x00006012,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x104,0xA0850042,0xA08C0042,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x108,0xA0850041,0xA08C0041,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x10c,0xA0850040,0xA08C0040,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x110,0x844B0018,0x844E0018,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x114,0x006B082A,0x006E082A,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x120,0x844C001A,0x844F001A,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x124,0x240DD8F1,0x2418D8F1,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x128,0xA48C0032,0xA48F0032,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1CC440,func_151A24A8,0x12c,0xA44D0018,0xA4580018,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false

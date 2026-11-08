@@ -398,8 +398,40 @@ s32 func_151A1FB4() {
     return 0;
 }
 
-s32 func_151A24A8() {
-    return 0;
+/* Apply ordered lifetime ramps, a colour-mode transition and a one-shot switch. */
+void func_151A24A8(u8 *effect) {
+    s16 *parameters = (s16 *)(effect + 0x50);
+    s32 time = *(s16 *)(effect + 0x38);
+
+    if (parameters[2] < time) {
+        effect[0x3F] = parameters[0] * (parameters[1] - time);
+    }
+    if (parameters[5] < time) {
+        *(s16 *)(effect + 0x34) = *(s16 *)(effect + 0x36) = parameters[3] * (parameters[4] - time);
+    }
+    if (time < parameters[8]) {
+        effect[0x3F] = parameters[9] * time;
+    }
+    if (time < parameters[10]) {
+        u32 increment = parameters[11] * (u32)D_800BE9E4;
+
+        *(s16 *)(effect + 0x34) += increment;
+        *(s16 *)(effect + 0x36) += increment;
+        time = *(s16 *)(effect + 0x38);
+    }
+    if (time < parameters[6]) {
+        s32 colour;
+
+        effect[0x2F] = 0x13;
+        *(u16 *)(effect + 0x44) |= 0x101;
+        colour = parameters[7] * time;
+        *(u32 *)(effect + 0x14) = 0x00520003;
+        effect[0x40] = effect[0x41] = effect[0x42] = colour;
+    }
+    if (time < parameters[12]) {
+        *(s16 *)(effect + 0x32) = parameters[13];
+        parameters[12] = -9999;
+    }
 }
 
 /* Apply lifetime ramps in order, with live size growth and a one-shot switch. */
