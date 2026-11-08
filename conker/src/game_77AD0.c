@@ -326,34 +326,33 @@ s32 func_1504A730() {
 //     D_800D35DC = (u8)0;
 // }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
+void func_150ED578(struct127 *actor);
+/* Refresh the active actor context and dispatch the selected actor kinds. */
 void func_1504ADD0(void) {
-    s32 i;
-    struct127 *obj;
-    u8 sp48[6];
+    s32 slot;
+    struct127 *actor;
+    u8 fallback[6];
 
-    i = 0;
+    slot = 0;
     if (D_800C35EA != 1) {
-        obj = D_800CC2D0;
+
         do {
-            if (obj->interaction_state != 0) {
-                D_800C3E78 = i;
-                D_800D154C = obj;
-                if ((s32) i < D_8008FD8C) {
-                    if (i < 4) {
-                        D_800CC284 = (*(s32 **) D_800BE728)[i];
-                    } else {
-                        bzero(sp48, 6);
-                        D_800CC284 = (s32) sp48;
+            actor = &D_800CC2D0[slot];
+            if (actor->interaction_state != 0) {
+                D_800C3E78 = slot;
+                D_800D154C = actor;
+                if (slot < D_8008FD8C) {
+                    if (slot < 4) D_800CC284 = (*(s32 **)D_800BE728)[slot];
+                    else {
+                        bzero(fallback, 6);
+                        D_800CC284 = (s32)fallback;
                     }
                 }
-                if ((obj->id == 0x28) || (obj->id == 0x77)) {
-                    func_150ED578(obj);
-                }
+                if (actor->id == 0x28 || actor->id == 0x77) func_150ED578(actor);
             }
-            i++;
-            obj++;
-        } while (i != 0x19);
+            slot++;
+
+        } while (slot != 25);
     }
 }
 // NON-MATCHING: whats up with sp48
