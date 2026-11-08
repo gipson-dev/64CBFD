@@ -27675,3 +27675,10 @@ generated_1CC440,func_151A24A8,0x120,0x844C001A,0x844F001A,-,-,Normalize thresho
 generated_1CC440,func_151A24A8,0x124,0x240DD8F1,0x2418D8F1,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
 generated_1CC440,func_151A24A8,0x128,0xA48C0032,0xA48F0032,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
 generated_1CC440,func_151A24A8,0x12c,0xA44D0018,0xA4580018,-,-,Normalize threshold updater temporary lifetimes and independent timer load,,,false
+generated_1E30A0,func_151B5E94,0xd0,0x4502000F,0x45020010,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
+generated_1E30A0,func_151B5E94,0xd4,0xC4400004,0xC4420004,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
+generated_1E30A0,func_151B5E94,0x104,0x10000004,0xE6020018,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
+generated_1E30A0,func_151B5E94,0x108,0xE6020018,0x10000004,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,0x00000000,-,false
+generated_1E30A0,func_151B5E94,0x10c,0xC4400004,0xC4420004,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
+generated_1E30A0,func_151B5E94,0x110,0xE600001C,0xE602001C,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
+generated_1E30A0,func_151B5E94,0x114,0xE6000018,0xE6020018,-,-,Normalize false-edge float role and pre-branch output store with inert delay nop,,,false
