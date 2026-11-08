@@ -1,6 +1,10 @@
 #include <ultra64.h>
 #include <string.h>
 #include "structs.h"
+extern s32 (*D_80088760[])(u8 *);
+void func_1516972C(struct102 *);
+
+
 s32 func_1514D3B0(u8 *, s16, s32, s32);
 void func_15143134(f32 *, f32 *, u8 *);
 
@@ -88,8 +92,38 @@ s32 func_150C553C(u8 *arg0) {
     func_150C5450(arg0);
 }
 
-s32 func_150C5568() {
-    return 0;
+/* Refresh a changed point-pair distance, or release a rejected record. */
+void func_150C5568(u8 *owner) {
+    Type46DistanceRecord *record = (Type46DistanceRecord *)owner;
+    u8 remove = 0;
+    f32 oldZ;
+    f32 oldY;
+    f32 oldX;
+    f32 delta[3];
+    s32 selector;
+
+    if (record->active & 1) {
+        selector = (s8)record->payload.attributes[0];
+        oldX = record->payload.first[0] - record->payload.second[0];
+        oldY = record->payload.first[1] - record->payload.second[1];
+        oldZ = record->payload.first[2] - record->payload.second[2];
+        if (selector != -1) {
+            if (D_80088760[selector]((u8 *)record) == 0) {
+                remove = 1;
+            }
+        }
+        if (!remove) {
+            delta[0] = record->payload.first[0] - record->payload.second[0];
+            delta[1] = record->payload.first[1] - record->payload.second[1];
+            delta[2] = record->payload.first[2] - record->payload.second[2];
+            if (delta[0] != oldX || delta[1] != oldY || delta[2] != oldZ) {
+                record->distance = func_15143E64(delta);
+            }
+        }
+        if (remove) {
+            func_1516972C((struct102 *)record);
+        }
+    }
 }
 
 s32 func_150C56A4() {
