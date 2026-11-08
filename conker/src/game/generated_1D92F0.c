@@ -179,8 +179,47 @@ s32 func_151AE0E4(u8 *arg0, u8 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AE264.s")
 
-s32 func_151AE2BC() {
-    return 0;
+typedef struct {
+    u8 reserved00[4];
+    f32 value;
+    u8 reserved08[0x10];
+} CurveKnot1D92F0;
+typedef struct {
+    u8 reserved00[0x38];
+    CurveKnot1D92F0 *knots;
+    u8 reserved3C[6];
+    u8 count;
+} CurveProgress1D92F0;
+
+/* Locate the height segment and publish its normalized curve progress. */
+void func_151AE2BC(f32 *output, CurveProgress1D92F0 *curve,
+                  f32 x, f32 height, f32 z) {
+    s32 count = curve->count;
+    s32 index = 0;
+    CurveKnot1D92F0 *knot;
+    f32 fraction;
+
+    if ((count - 1) > 0) {
+        knot = curve->knots;
+        do {
+            if (height <= knot->value) break;
+            index++;
+            knot++;
+        } while (index < (count - 1));
+    }
+    if (index >= count - 2) {
+        *output = 1.0f;
+        return;
+    }
+    if (index == 0) {
+        *output = 0.0f;
+        return;
+    }
+    knot = &curve->knots[index];
+    fraction = knot->value - knot[-1].value;
+    if (fraction != 0.0f) fraction = (height - knot[-1].value) / fraction;
+    else fraction = 0.0f;
+    *output = (f32)(index - 1) / (f32)(count - 3) + fraction / (f32)(count - 1);
 }
 
 s32 func_151AE3A8() {

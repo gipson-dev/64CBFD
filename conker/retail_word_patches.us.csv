@@ -27306,3 +27306,26 @@ generated_142560,func_15115F68,0x1c,0x00027603,0x00057E00,-,-,Normalize two inde
 generated_142560,func_15115F68,0x20,0x00057E00,0x00027603,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
 generated_142560,func_15115F68,0x24,0x0006CE00,0x00074E00,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
 generated_142560,func_15115F68,0x28,0x00074E00,0x0006CE00,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
+generated_1D92F0,func_151AE2BC,0x74,0x8CAF0038,0x44807000,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x78,0x0303C023,0x2479FFFF,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x7c,0x0018C0C0,0x8CAF0038,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x80,0x01F82021,0x0303C023,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x84,0xC482FFEC,0x0018C0C0,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x88,0xC4880004,0x01F82021,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x8c,0x2479FFFF,0xC482FFEC,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x90,0x2448FFFD,0xC4880004,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x94,0x46024001,0x2448FFFD,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0x9c,0x44998000,0x46024001,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xa0,0x44807000,0x44998000,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xa8,0x468084A0,0x460E0032,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xac,0x460E0032,0x00000000,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xb0,0x46069203,0x45030005,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xb4,0x45030005,0x46007006,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xb8,0x46007006,0x46026281,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xbc,0x46026281,0x10000002,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xc0,0x10000002,0x46005003,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xc4,0x46005003,0x46007006,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xc8,0x46007006,0x44865000,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xcc,0x44865000,0x468084A0,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xd0,0x00000000,0x46805420,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
+generated_1D92F0,func_151AE2BC,0xd4,0x46805420,0x46069203,-,-,Normalize closed curve scalar live ranges and independent interpolation scheduling,,,false
