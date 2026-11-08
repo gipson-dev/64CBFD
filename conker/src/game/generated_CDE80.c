@@ -188,8 +188,32 @@ s32 func_150A29C8() {
     return 0;
 }
 
-s32 func_150A2AEC() {
-    return 0;
+/* Return the first listed record active for this actor, or -1. */
+s32 func_150A2AEC(s32 actorIndex, s32 count, s32 *identities) {
+    extern u16 D_800D2340;
+    extern struct127 D_800CC2D0[];
+    s32 i;
+    u32 identity;
+    if ((u32)actorIndex < 16 && (D_800D2340 & (1 << actorIndex))) {
+        for (i = 0; i < count; i++) {
+            identity = identities[i] & 0xFFF;
+            if (identity < (u32)D_800D3094 &&
+                ((((u64 (*)[3])D_800D30F0)[actorIndex][identity >> 6] >>
+                  (identity & 0x3F)) & 1)) {
+                return identity;
+            }
+        }
+    } else {
+        for (i = 0; i < count; i++) {
+            identity = identities[i] & 0xFFF;
+            if (identity < (u32)D_800D3094 &&
+                func_150A1DA0(&D_800CC2D0[actorIndex],
+                              (s32)&D_800D3098[identity], 1) == 0) {
+                return identity;
+            }
+        }
+    }
+    return -1;
 }
 
 /* Original active-actor volume occupancy; OGL Note 640. */
