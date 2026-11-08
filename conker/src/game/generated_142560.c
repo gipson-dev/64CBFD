@@ -156,8 +156,21 @@ void func_15115EDC(u8 *arg0, u8 *arg1) {
     }
 }
 
-s32 func_15115F68() {
-    return 0;
+/* Advance the packed scalar, clamp it, and consume its pending offsets. */
+void func_15115F68(u8 *state) {
+    s8 divisor = (s8)(*(s32 *)(state + 0x3C));
+    s8 increment = (s8)((*(s32 *)(state + 0x3C)) >> 16);
+    s8 upper = (s8)((*(s32 *)(state + 0x3C)) >> 8);
+    s8 lower = (s8)((*(s32 *)(state + 0x3C)) >> 24);
+    if (divisor != 0) {
+        *(f32 *)state += *(f32 *)(state + 0x7C) / (f32)divisor + (f32)increment;
+    } else {
+        *(f32 *)state += (f32)(s32)((u32)increment * (u32)D_800BE9E4);
+    }
+    if ((f32)upper < *(f32 *)state) *(f32 *)state = (f32)upper;
+    else if (*(f32 *)state < (f32)lower) *(f32 *)state = (f32)lower;
+    *(f32 *)(state + 0x80) = 0.0f;
+    *(f32 *)(state + 0x7C) = 0.0f;
 }
 
 typedef struct {

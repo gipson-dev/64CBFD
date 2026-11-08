@@ -27302,3 +27302,7 @@ generated_CDE80,func_150A25D4,0x158,0xA62E00B2,0xA62B00B2,-,-,Normalize dispatch
 generated_CDE80,func_150A25D4,0x15c,0xA62F00B2,0xA62C00B2,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,,,false
 generated_CDE80,func_150A25D4,0x160,0x1000000E,0x3C010000,-,R_MIPS_HI16:D_800D3090,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,0xA0200000,R_MIPS_LO16:D_800D3090,false
 generated_CDE80,func_150A25D4,0x164,0xA2000000,0x1000000F,-,-,Normalize dispatcher address allocation and return scheduling; preserve narrow provider argument padding,0x8FBF0024,-,false
+generated_142560,func_15115F68,0x1c,0x00027603,0x00057E00,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
+generated_142560,func_15115F68,0x20,0x00057E00,0x00027603,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
+generated_142560,func_15115F68,0x24,0x0006CE00,0x00074E00,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
+generated_142560,func_15115F68,0x28,0x00074E00,0x0006CE00,-,-,Normalize two independent packed-byte shift scheduling pairs,,,false
