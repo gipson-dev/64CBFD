@@ -29,7 +29,7 @@ s32 func_150142EC();
 s32 func_150144B8();
 s32 func_1501474C();
 s32 func_15014B60();
-s32 func_15014F6C();
+s32 func_15014F6C(DispatchRecord40490 *record);
 s32 func_150151D4();
 s32 func_15015354();
 s32 func_150156F4();
@@ -275,9 +275,42 @@ s32 func_1501474C() {
 s32 func_15014B60() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_40490/func_15014F6C.s. */
-s32 func_15014F6C() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u32 minimum;
+    u32 extraRange;
+    u32 selected;
+    f32 matrix[4][4];
+    u8 mode;
+    u8 variant;
+    u8 padding52[2];
+} RandomizedEffectPacket40490;
+
+/* Snapshot the range, build the transform, then attach the complete effect packet. */
+s32 func_15014F6C(DispatchRecord40490 *record) {
+    RandomizedEffectPacket40490 packet;
+    u8 *source = (u8 *)record;
+    u8 *result;
+    s32 mode;
+
+    source[0x16] |= 4;
+    packet.variant = *(u32 *)(source + 0x20);
+    mode = (*(u32 *)(source + 0x1C) & 1) ? 1 : 0;
+    packet.mode = mode;
+    packet.owner = source;
+    packet.minimum = *(u32 *)(source + 0x18) & 0xFFFF;
+    packet.extraRange = (*(u32 *)(source + 0x18) >> 16) & 0xFFFF;
+    packet.selected = (u32)func_150ADA20() % (packet.extraRange + 1) + packet.minimum;
+    func_150A8050(packet.matrix, *(f32 *)(source + 0x0C), *(f32 *)(source + 0x10), 0.0f);
+    packet.matrix[3][0] = *(s16 *)(source + 0);
+    packet.matrix[3][1] = *(s16 *)(source + 2);
+    packet.matrix[3][2] = *(s16 *)(source + 4);
+    /* The existing factory declaration carries the payload size in a pointer-typed word. */
+    result = (u8 *)func_15149130(300, -1, 0x31, -1, 0, 0x2A, (struct37 *)sizeof(packet), 0xFF, 0);
+    if (result != NULL) {
+        memcpy(result + 0x28, &packet, sizeof(packet));
+    }
+    return 1;
 }
 
 s32 func_150150A4(u8 *arg0) {
