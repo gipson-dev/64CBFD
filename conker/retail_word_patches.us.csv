@@ -27150,3 +27150,23 @@ generated_CDE80,func_150A2940,0x02C,0x032EC823,0x24E70000,-,R_MIPS_LO16:D_800D30
 generated_CDE80,func_150A2940,0x030,0x24E70000,0x032EC823,R_MIPS_LO16:D_800D3098,-,Normalize independent record address setup schedule,,,false
 generated_CDE80,func_150A29C8,0x078,0x3C050000,0x3C050000,R_MIPS_HI16:D_800D30F0,R_MIPS_HI16:D_800D30F4,Bind original low mask word alias with independent signed LO16 carry,,,false
 generated_CDE80,func_150A29C8,0x088,0x8CA50004,0x8CA50000,R_MIPS_LO16:D_800D30F0,R_MIPS_LO16:D_800D30F4,Bind original low mask word alias with independent signed LO16 carry,,,false
+generated_CDE80,func_150A104C,0x4,0xAFBE0038,0xAFB30024,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x8,0x3C1EFFFB,0x3C13FFFB,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x24,0x37DEFFFF,0x3673FFFF,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x2c,0xAFB70034,0xAFBE0038,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x30,0xAFB60030,0xAFB70034,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x34,0xAFB5002C,0xAFB60030,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x38,0xAFB40028,0xAFB5002C,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x3c,0xAFB30024,0xAFB40028,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x48,0x3C170004,0x3C1E0004,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x54,0x24160006,0x24170006,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x58,0x24150002,0x24160002,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x78,0x24140001,0x24150001,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x7c,0x27B3004C,0x27B4004C,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x9c,0x01DE7824,0x01D37824,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0xac,0x02602025,0x02802025,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0xd4,0x5699001A,0x56B9001A,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0xe8,0x50550006,0x50560006,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0xf0,0x50560010,0x50570010,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x124,0x01776025,0x017E6025,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A104C,0x134,0x01BE7024,0x01B37024,-,-,Normalize closed view-record updater saved roles and save schedule,,,false

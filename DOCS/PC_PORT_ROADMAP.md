@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2177](WORKING_NOTES/2177-game-view-record-list-updater-match-20261108.md): `func_150A104C` is byte-exact across all 94 words with its original 888-byte frame; 20 guards normalize a closed saved-role/save-schedule cycle. The typed height field, ordered list/query effects and original caller are qualified. Total **4,246 / 5,513 (77.02%)**, Game **3,573 / 4,840 (73.82%)**, zero drift; **165** more to 80%. Full-image gate: 302 bytes, zero exclusions. Next: `func_150A0D8C`.
+
 [Note 2176](WORKING_NOTES/2176-game-position-subtype-query-match-20261108.md): `func_150A3058` now emits all 79 retail words directly with its original 888-byte frame and no guards. Signed-short position setup, the live class/subtype scan and all three original caller windows are qualified. Total **4,245 / 5,513 (77.00%)**, Game **3,572 / 4,840 (73.80%)**, zero drift; **166** more to 80%. Full-image gate: 241 bytes, zero exclusions; guard history, headers and protected data unchanged. Next: `func_150A104C`.
 
 [Note 2175](WORKING_NOTES/2175-game-record-occupancy-query-match-20261108.md): `func_150A29C8` now matches all 73 retail words with its original 32-byte frame and two alias-relocation guards. The shared full-word ABI and all 199 header consumers are qualified; 18 caller windows and the original SDK shift are covered. Total **4,244 / 5,513 (76.98%)**, Game **3,571 / 4,840 (73.78%)**, zero drift; **167** more to 80%. Full-image gate: 258 bytes, zero exclusions. Next: `func_150A3058`.

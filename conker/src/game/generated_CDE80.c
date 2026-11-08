@@ -7,7 +7,9 @@ typedef struct {
     s16 origin0;
     s16 origin1;
     s16 origin2;
-    u8 pad6[0xF];
+    u8 pad6[2];
+    s16 heightOffset;
+    u8 padA[0xB];
     u8 flags;
     u8 pad16;
     u8 field17;
@@ -25,6 +27,8 @@ extern s32 D_800D3094;
 extern struct108 *D_800DBFF0;
 extern f32 D_8009F5A0;
 extern f32 D_8009F5A4;
+extern f32 D_8009F5AC;
+s32 func_150A1DA0(struct127 *, s32, s32);
 
 typedef struct {
     u8 pad0[0xC];
@@ -66,8 +70,40 @@ s32 func_150A1040(register s32 arg0) {
     return arg0 + 0x400;
 }
 
-s32 func_150A104C() {
-    return 0;
+/* Apply accepted class-1 records to the view flag and height. */
+void func_150A104C(struct108 *view, GeneratedCDE80Record **records, s32 count) {
+    struct127 query;
+    GeneratedCDE80Record *record;
+    query.x_position = view->unk2F8;
+    query.y_position = view->unk2FC;
+    query.z_position = view->unk300;
+    query.unk180 = query.y_position;
+    query.old_x_position = view->unk304;
+    query.old_y_position = view->unk308;
+    query.old_z_position = view->unk30C;
+    view->unk364 = D_8009F5AC;
+    view->unk84 &= ~0x40000;
+    for (; count != 0; count--, records++) {
+        record = *records;
+        if (record != 0) {
+            if (func_150A1DA0(&query, (s32)record, 0) == 0) {
+                record = *records;
+                if ((record->flags >> 2) == 1) {
+                    switch (record->field17) {
+                    case 2:
+                        view->unk364 = record->heightOffset + record->origin1;
+                        break;
+                    case 0:
+                        view->unk84 |= 0x40000;
+                        break;
+                    case 6:
+                        view->unk84 &= ~0x40000;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 s32 func_150A11C4() {
