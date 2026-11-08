@@ -1,11 +1,8 @@
 #include <ultra64.h>
 
-/* The retail checker receives complete words, not the legacy narrow ABI. */
-#define func_150A29C8 func_150A29C8_legacy_narrow_signature
 /* The retail actor lookup narrows its selector to an unsigned byte. */
 #define func_15083E90 func_15083E90_legacy_word_signature
 #include "functions.h"
-#undef func_150A29C8
 #undef func_15083E90
 extern u8 *func_15083E90(u8);
 /* This owner uses the retail pointer, not the legacy inline-array declaration. */
@@ -86,7 +83,6 @@ typedef struct {
     s8 index;
     u8 pad7;
 } GameGatedPacket;
-s32 func_150A29C8(s32, s32);
 void *func_151D8868(void *, s32, s32, s32);
 
 typedef struct { u8 count; u8 pad1[11]; } GameCursorLimit;

@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2175](WORKING_NOTES/2175-game-record-occupancy-query-match-20261108.md): `func_150A29C8` now matches all 73 retail words with its original 32-byte frame and two alias-relocation guards. The shared full-word ABI and all 199 header consumers are qualified; 18 caller windows and the original SDK shift are covered. Total **4,244 / 5,513 (76.98%)**, Game **3,571 / 4,840 (73.78%)**, zero drift; **167** more to 80%. Full-image gate: 258 bytes, zero exclusions. Next: `func_150A3058`.
+
 [Note 2174](WORKING_NOTES/2174-game-record-parameter-updater-match-20261107.md): `func_150A2940` now matches all 34 retail words with two independent scheduling guards and no frame. Full-word sentinels, pointer reloads, optional word/byte writes and the caller window are qualified. Total **4,243 / 5,513 (76.96%)**, Game **3,570 / 4,840 (73.76%)**, zero drift; **168** more to 80%. Full-image gate: 114 bytes, zero exclusions; one omitted placeholder boundary restored; protected data and Makefile unchanged. Next: `func_150A29C8`.
 
 [Note 2173](WORKING_NOTES/2173-game-actor-record-list-lookup-match-20261107.md): `func_150A2AEC` now emits all 110 retail words directly with its original 64-byte frame and no guards. Ordered list/mask/descriptor reads, original SDK shift, and all three caller paths are qualified. Total **4,242 / 5,512 (76.96%)**, Game **3,569 / 4,839 (73.75%)**, zero drift; **168** more to 80%. Full-image gate: 340 bytes, zero exclusions; Makefile, guard history and protected data unchanged. Next: `func_150A2940`.

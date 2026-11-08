@@ -27148,3 +27148,5 @@ generated_173D40,func_15146970,0x0A8,0x3C180000,0x3C180000,R_MIPS_HI16:.data,R_M
 generated_173D40,func_15146970,0x0AC,0x27180000,0x27180000,R_MIPS_LO16:.data,R_MIPS_LO16:D_800A56D0,Bind recovered five-ID initializer to preserved retail data,,,false
 generated_CDE80,func_150A2940,0x02C,0x032EC823,0x24E70000,-,R_MIPS_LO16:D_800D3098,Normalize independent record address setup schedule,,,false
 generated_CDE80,func_150A2940,0x030,0x24E70000,0x032EC823,R_MIPS_LO16:D_800D3098,-,Normalize independent record address setup schedule,,,false
+generated_CDE80,func_150A29C8,0x078,0x3C050000,0x3C050000,R_MIPS_HI16:D_800D30F0,R_MIPS_HI16:D_800D30F4,Bind original low mask word alias with independent signed LO16 carry,,,false
+generated_CDE80,func_150A29C8,0x088,0x8CA50004,0x8CA50000,R_MIPS_LO16:D_800D30F0,R_MIPS_LO16:D_800D30F4,Bind original low mask word alias with independent signed LO16 carry,,,false

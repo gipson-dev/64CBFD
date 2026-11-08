@@ -190,8 +190,22 @@ void func_150A2940(u32 identity, s32 value, s32 kind) {
     }
 }
 
-s32 func_150A29C8() {
-    return 0;
+/* Query a record through the actor mask or collision provider. */
+s32 func_150A29C8(u32 actorIndex, u32 identity) {
+    extern u16 D_800D2340;
+    extern struct127 D_800CC2D0[];
+    identity &= 0xFFF;
+    if ((u32)D_800D3094 < identity) return 1;
+    if ((u32)actorIndex < 16 && (D_800D2340 & (1 << actorIndex))) {
+        if ((((u64 (*)[3])D_800D30F0)[actorIndex][identity >> 6] >>
+              (identity & 0x3F)) & 1) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    return func_150A1DA0(&D_800CC2D0[actorIndex],
+                          (s32)&D_800D3098[identity], 1);
 }
 
 /* Return the first listed record active for this actor, or -1. */
