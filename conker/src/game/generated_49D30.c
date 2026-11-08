@@ -593,7 +593,7 @@ extern u8 D_800C3E78;
 s32 func_150242F8();
 s32 func_1501EC38();
 s32 func_15020EC4();
-s32 func_150229E4();
+s32 func_150229E4(struct127 *actor);
 s32 func_1502178C();
 s32 func_1501E81C();
 /* Advance the slot timestamp and refresh the 25 active actor records. */
@@ -966,7 +966,38 @@ void func_15022998(s32 *arg0) {
     }
 }
 
-s32 func_150229E4() {
+extern u8 D_800CBFDF[];
+/* Find an enabled type-two descriptor for the actor or its linked identity. */
+s32 func_150229E4(struct127 *actor) {
+    s32 group = 0;
+    s32 index;
+    s32 ownerSlot;
+    u8 identity;
+    u16 *enabled;
+    GroupActorRecord15022528 *record;
+
+    if (actor == NULL) return 0;
+    if (actor->interaction_state == 0) return 0;
+    if (D_800C35C8[0] == NULL) return 0;
+    if (actor->unk5 == 4) group = 1;
+    ownerSlot = actor->unk65;
+    if (ownerSlot != 0) identity = D_800CBFDF[ownerSlot * sizeof(struct127)];
+    else identity = actor->unique_id;
+    index = 0;
+    if (D_800C363A[group] > 0) {
+        enabled = D_800C35C8[group];
+        do {
+            if (*enabled != 0) {
+                record = (GroupActorRecord15022528 *)(D_800C35F0[group] + index * 8);
+                if (record->kind == 2 && record->actorId == identity) {
+                    if (ownerSlot == 0) return 1;
+                    return 2;
+                }
+            }
+            index++;
+            enabled++;
+        } while (index < D_800C363A[group]);
+    }
     return 0;
 }
 

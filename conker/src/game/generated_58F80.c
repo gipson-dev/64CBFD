@@ -415,7 +415,8 @@ extern u8 D_800C3638,D_800C3656,D_800DF7C4,D_800BE9C0;
 extern u8 *D_800B0DF0,*D_800DF7C0;
 extern Gfx *D_800BE9C8[];
 extern s32 D_800BEBA4;
-s32 func_150229E4(u8 *);
+struct struct127;
+s32 func_150229E4(struct struct127 *);
 
 
 s32 func_150849CC(u8 *,s32 *);
@@ -434,7 +435,7 @@ Gfx *func_1502C974(Gfx *commands, s32 slot, s32 view, s32 mode, s32 extra) {
 
     original = commands;
     if (D_800C3638 != 0 && D_800C3656 == 0) {
-        if (func_150229E4((u8 *)D_800CC2D0 + (u32)slot * 0x32C) == 0) {
+        if (func_150229E4((struct struct127 *)((u8 *)D_800CC2D0 + (u32)slot * 0x32C)) == 0) {
             return commands;
         }
     }
