@@ -27481,3 +27481,62 @@ generated_C9EC0,func_1509CF28,0xf8,0x24E70008,0x254A0008,-,-,Normalize closed re
 generated_C9EC0,func_1509CF28,0xfc,0x03255824,0x03275824,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
 generated_C9EC0,func_1509CF28,0x10c,0x014C082B,0x012C082B,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
 generated_C9EC0,func_1509CF28,0x114,0x8D0E0000,0x8CCE0000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+game_83300,func_15063254,0x0,0x27BDFFB0,0x27BDFFA8,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xc,0x00A03825,0x00A03825,-,-,Omit unused argument copy/home artifact,,,true
+game_83300,func_15063254,0x1c,0xAFA50054,0xAFA50054,-,-,Omit unused argument copy/home artifact,,,true
+game_83300,func_15063254,0x28,0x00002825,0xAFAE0050,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x2c,0xAFAE004C,0x8E110144,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x30,0x8E110144,0xA2250004,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x34,0xA2270004,0xA2260003,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x38,0xA2260003,0xE62C0020,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x3c,0xE62C0020,0xE62C0024,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x40,0xE62C0024,0xA2200002,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x44,0xA2200002,0x8E0F0318,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x48,0x8E0F0318,0x00002825,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x4c,0xAFAF0044,0xAFAF0048,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x50,0xC6040014,0xC604001C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x54,0xE7A40040,0xC6000014,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x58,0xC6060018,0xC6020018,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x5c,0xE7A6003C,0xE7A4003C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x60,0xC608001C,0xC60600B8,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x64,0xE7A80038,0xE7A60038,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x68,0xC60A00B8,0xC6080040,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x6c,0xE7AA0034,0xE7A80034,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x70,0xC6100040,0xC60A00C4,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x74,0xE7B00030,0xE7AA0030,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x78,0xC61200C4,0x96020076,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x7c,0xE7B2002C,0xE7A00044,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x80,0x96180076,0xE7A20040,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x88,0xAFB80028,0xAFA2002C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x8c,0x3C190000,0x3C180000,R_MIPS_HI16:D_800CC2D0,R_MIPS_HI16:D_800CC2D0,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x90,0x27390000,0x27180000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800CC2D0,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x94,0x02194023,0x0218C823,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x9c,0x0101001A,0x0321001A,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xa0,0x00004812,0x00004012,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xa4,0x252A0001,0x25090001,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xa8,0xAFAA0010,0xAFA90010,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xb0,0x8FA5004C,0x8FA50050,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xc0,0x8FA20044,0x8FA2002C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xc4,0x8FA30028,0xC7A00044,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xc8,0xC7A00040,0xC7A20040,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xcc,0xC7A2003C,0x8FAA0048,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xd0,0xAE020318,0xE6000014,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xd4,0xE6000014,0xE6020018,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xd8,0xE6020018,0xAE0A0318,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xdc,0xC7A40038,0xC7B0003C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xe8,0xE604001C,0xE610001C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xec,0xC7A60034,0xC7B20038,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xf0,0xC610001C,0xC608001C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xf4,0xE60600B8,0xE61200B8,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xf8,0xC7A80030,0xC7A40034,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0xfc,0xA6030076,0xE6040040,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x100,0xA603007A,0xC7A60030,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x104,0xE600002C,0xA6020076,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x108,0xE6020030,0xA602007A,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x10c,0xE60A01CC,0xE600002C,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x110,0xE6100034,0xE6020030,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x114,0xE6080040,0xE60A01CC,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x118,0xC7B2002C,0xE6080034,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x11c,0xE61200C4,0xE60600C4,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x120,0xAC4B03D4,0xAD4B03D4,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false
+game_83300,func_15063254,0x134,0x27BD0050,0x27BD0058,-,-,"Normalize closed actor snapshot FP/GPR cells, frame and memory schedule",,,false

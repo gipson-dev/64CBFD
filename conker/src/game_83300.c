@@ -41,7 +41,7 @@ s32 func_15062800();
 void func_15062D10(s32, s32, s32, s32, s32, s32);
 s32 func_15062E24();
 s32 func_15062FC0();
-s32 func_15063254();
+void func_15063254(struct127 *, u32, u32, f32);
 /* End generated placeholder declarations. */
 
 void func_15058F24(struct127 *arg0, f32, f32);
@@ -1435,7 +1435,50 @@ void func_15063168(struct127 *object) {
         } while (index < D_8008FD8C);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15063254.s. */
-s32 func_15063254() {
-    return 0;
+s32 func_15082A44(u8 *, s32, s32, s32, s32);
+/* Refresh the actor resource while preserving its placement and motion snapshots. */
+void func_15063254(struct127 *actor, u32 field4, u32 field3, f32 value) {
+    u32 identifier;
+    struct129 *auxiliary;
+    struct108 *camera;
+    f32 x;
+    f32 y;
+    f32 z;
+    f32 fieldB8;
+    f32 field40;
+    f32 fieldC4;
+    u32 facing;
+
+    identifier = actor->unk13F;
+    auxiliary = actor->unk144;
+    auxiliary->unk4 = field4;
+    auxiliary->unk3 = field3;
+    auxiliary->unk20 = value;
+    auxiliary->unk24 = value;
+    auxiliary->unk2 = 0;
+    camera = actor->camera;
+    x = actor->x_position;
+    y = actor->y_position;
+    z = actor->z_position;
+    fieldB8 = actor->unkB8;
+    field40 = actor->unk40;
+    fieldC4 = actor->unkC4;
+    facing = actor->unk76;
+    func_15060F28(actor, 0);
+    func_15082A44((u8 *)auxiliary, identifier, 0, 0,
+                  (s32)((u32)actor - (u32)D_800CC2D0) / (s32)sizeof(struct127) + 1);
+    actor->x_position = x;
+    actor->y_position = y;
+    actor->camera = camera;
+    actor->z_position = z;
+    actor->unkB8 = fieldB8;
+    actor->unk40 = field40;
+    actor->unk76 = facing;
+    actor->unk7A = facing;
+    actor->old_x_position = x;
+    actor->old_y_position = y;
+    actor->unk1CC = actor->y_position;
+    actor->old_z_position = actor->z_position;
+    actor->unkC4 = fieldC4;
+    camera->unk3D4 = (struct127 *)actor->unk31C;
 }
