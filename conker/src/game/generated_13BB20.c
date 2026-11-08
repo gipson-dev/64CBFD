@@ -17,6 +17,7 @@ typedef struct { u8 bytes[0x9A0]; } ViewRecord;
 extern f32 D_800A2D9C;
 f32 sqrtf(f32);
 s32 func_1510E388(void *, void *, f32 *, f32 *);
+void func_150AD8B0(f32 *, f32 *, f32 *);
 
 /* Non-matching placeholders for the text-only asm slice asm/13BB20.s. */
 
@@ -29,7 +30,40 @@ void func_150A49F4(s32 context);
 extern void func_1510E950(s32, s32, s32, s32, s32, s32, s32, f32, f32, f32,
                           f32, u16, s32, f32, f32, s32);
 
-s32 func_1510E670() {
+/* Test the Y orientation of a triangle addressed by packed vertex offsets. */
+s32 func_1510E670(s32 index) {
+    extern s32 D_800D3300[];
+    s16 *first, *second, *third;
+    u32 *offsets;
+    u8 *vertices;
+    f32 edgeA[3], edgeB[3], normal[3];
+    struct TriangleEntry1510E670 {
+        s32 unused;
+        u32 *offsets;
+        u8 *vertices;
+        s32 unusedC;
+    };
+    struct TriangleEntry1510E670 *entry = (struct TriangleEntry1510E670 *)&D_800D3300 + index;
+
+    offsets = entry->offsets;
+    vertices = entry->vertices;
+    if (offsets != NULL) {
+        first = (s16 *)(vertices + offsets[0]);
+        second = (s16 *)(vertices + offsets[1]);
+        third = (s16 *)(vertices + offsets[2]);
+        edgeA[0] = second[0] - first[0];
+        edgeA[1] = second[1] - first[1];
+        edgeA[2] = second[2] - first[2];
+        edgeB[0] = third[0] - first[0];
+        edgeB[1] = third[1] - first[1];
+        edgeB[2] = third[2] - first[2];
+        func_150AD8B0(edgeA, edgeB, normal);
+        if (normal[1] < 0.0f) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
     return 0;
 }
 
@@ -56,7 +90,7 @@ void func_1510E8BC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5,
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_13BB20/func_1510E950.s")
 
 extern u8 D_800D3830[];
-extern s32 D_800D3300;
+extern s32 D_800D3300[];
 extern f32 D_800A2D98;
 void func_1510F800(s32);
 s32 func_150A64C8(s16, s16, s32 *, s32);
@@ -74,7 +108,7 @@ f32 func_1510F648(f32 x, f32 y, f32 z) {
     func_150A64C8(intX, intZ, &value, (s32)y);
     func_150A44F0(value, D_800D3830, 0);
     if (func_150A43E0(intX, intZ, value, D_800D3830)) {
-        result = D_800D3300 * (1.0f / 256.0f);
+        result = D_800D3300[0] * (1.0f / 256.0f);
     } else {
         result = D_800A2D98;
     }

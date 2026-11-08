@@ -27141,3 +27141,6 @@ game_169510,func_1513F114,0x338,0xA56A0030,0xC7AA0040,-,-,Normalize proved upper
 game_169510,func_1513F114,0x33C,0xC60A0038,0xC6040038,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
 game_169510,func_1513F114,0x344,0x46025180,0x460A2180,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
 game_169510,func_1513F114,0x34C,0x46126182,0x46120182,-,-,Normalize proved upper-corner FP spill and allocation schedule,,,false
+generated_13BB20,func_1510E670,0x0F8,0xC7A40024,0xC7A00024,-,-,Normalize closed final normal-Y floating register roles,,,false
+generated_13BB20,func_1510E670,0x0FC,0x44803000,0x44802000,-,-,Normalize closed final normal-Y floating register roles,,,false
+generated_13BB20,func_1510E670,0x104,0x4606203C,0x4604003C,-,-,Normalize closed final normal-Y floating register roles,,,false

@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2171](WORKING_NOTES/2171-game-triangle-facing-match-20261107.md): `func_1510E670` now matches all 77 retail words with its original 88-byte frame and three closed floating-register guards. Signed packed vertices, the original cross product, and all three caller windows are qualified. Total **4,240 / 5,512 (76.92%)**, Game **3,567 / 4,839 (73.71%)**, zero drift; **170** more to 80%. Full-image gate: 210 bytes, zero exclusions. `func_1513FAB4` remains uninstalled/uncredited; its corrected full-owner compiler trace is retained. Next: `func_15146970`.
+
 [Note 2170](WORKING_NOTES/2170-game-oriented-strip-semantic-study-20261107.md): `func_1513FAB4` has a reproducible semantic study: 587 retail/582 raw guest cases, 503 native cases at each of O0/O2/O3, and original helper/caller inventory. Source: 337 words/frame 128, versus retail 336/frame 152; **uninstalled, zero matching credit**. Total remains **4,239 / 5,512 (76.90%)**; 171 more to 80%. Next: compiler allocation/private layout, then complete caller and adoption gates.
 
 [Note 2169](WORKING_NOTES/2169-game-bending-quad-match-20261107.md): `func_1513F114` now matches all 231 retail words with its original 144-byte frame and 61 closed allocation/spill guards. Signed bend, sqrt/clamp ordering, float-helper ABI and renderer slot 3 are qualified. Total **4,239 / 5,512 (76.90%)**, Game **3,566 / 4,839 (73.69%)**, zero drift; **171** more to 80%. Full-image gate: 764 bytes, zero exclusions. Next: `func_1513FAB4`.
