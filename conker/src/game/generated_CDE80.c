@@ -7,9 +7,11 @@ typedef struct {
     s16 origin0;
     s16 origin1;
     s16 origin2;
-    u8 pad6[2];
+    s16 radius;
     s16 heightOffset;
-    u8 padA[0xB];
+    u8 padA[6];
+    f32 parameter10;
+    u8 disabled;
     u8 flags;
     u8 pad16;
     u8 field17;
@@ -27,6 +29,9 @@ extern s32 D_800D3094;
 extern struct108 *D_800DBFF0;
 extern f32 D_8009F5A0;
 extern f32 D_8009F5A4;
+extern f32 D_8009F5A8;
+s32 func_150AD9A0(s32, s32, s32);
+s32 func_15035808(s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
 extern f32 D_8009F5AC;
 s32 func_150A1DA0(struct127 *, s32, s32);
 
@@ -62,8 +67,53 @@ void func_150A0D14(GeneratedCDE80TrigRecord *record) {
     record->sine1 = func_150AD780(angle);
 }
 
-s32 func_150A0D8C() {
-    return 0;
+/* Submit effects for actors accepted by active class-6 records. */
+void func_150A0D8C(void) {
+    extern struct127 D_800CC2D0[26];
+    u32 index;
+    s32 offset;
+    struct127 *actor;
+    s32 actorIndex;
+    GeneratedCDE80Record *record;
+    s16 yDelta;
+    s32 distance;
+    f32 inner;
+    f32 scale;
+    index = 0;
+    offset = 0;
+    if (D_800D3094 != 0) {
+        scale = D_8009F5A8;
+        do {
+            record = (GeneratedCDE80Record *)(offset + (u32)D_800D3098);
+            if (record->disabled == 0 && (record->flags >> 2) == 6) {
+                for (actor = D_800CC2D0, actorIndex = 0; actorIndex != 25; actorIndex++, actor++) {
+                    if (actor->interaction_state != 0 && (actor->unk5 == 0 || actor->unk5 == 1)) {
+                        if (func_150A1DA0(actor, offset + (u32)D_800D3098, 1) == 0) {
+                            record = (GeneratedCDE80Record *)(offset + (u32)D_800D3098);
+                            yDelta = (s16)(actor->y_position - record->origin1);
+                            if (record->field17 == 0) {
+                                distance = func_150AD9A0((s16)(actor->x_position - record->origin0),
+                                    yDelta, (s16)(actor->z_position - record->origin2));
+                                record = (GeneratedCDE80Record *)(offset + (u32)D_800D3098);
+                                if (distance < record->radius) {
+                                    inner = (f32)record->radius * scale;
+                                    if (inner > 100.0f) inner = 100.0f;
+                                    func_15035808(2, actorIndex, record->origin0, record->origin1,
+                                        record->origin2, 0.0f, record->parameter10,
+                                        (f32)record->radius - inner, (f32)record->radius, 255.0f);
+                                }
+                            } else {
+                                func_15035808(1, actorIndex, actor->x_position, actor->unk180,
+                                    actor->z_position, 0.0f, 0.0f, 100.0f, 150.0f, 255.0f);
+                            }
+                        }
+                    }
+                }
+            }
+            index++;
+            offset += 0x34;
+        } while (index < (u32)D_800D3094);
+    }
 }
 
 s32 func_150A1040(register s32 arg0) {

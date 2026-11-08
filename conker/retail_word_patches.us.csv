@@ -27170,3 +27170,34 @@ generated_CDE80,func_150A104C,0xe8,0x50550006,0x50560006,-,-,Normalize closed vi
 generated_CDE80,func_150A104C,0xf0,0x50560010,0x50570010,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
 generated_CDE80,func_150A104C,0x124,0x01776025,0x017E6025,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
 generated_CDE80,func_150A104C,0x134,0x01BE7024,0x01B37024,-,-,Normalize closed view-record updater saved roles and save schedule,,,false
+generated_CDE80,func_150A0D8C,0x4c,0x00009825,0x0000A025,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x54,0x3C010000,0x3C014316,R_MIPS_HI16:D_8009F5A8,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x58,0xC43A0000,0x4481E000,R_MIPS_LO16:D_8009F5A8,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x5c,0x3C014316,0x3C010000,-,R_MIPS_HI16:D_8009F5A8,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x60,0x4481E000,0xC43A0000,-,R_MIPS_LO16:D_8009F5A8,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x70,0x3C140000,0x3C130000,R_MIPS_HI16:D_800D3098,R_MIPS_HI16:D_800D3098,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x7c,0x26940000,0x26730000,R_MIPS_LO16:D_800D3098,R_MIPS_LO16:D_800D3098,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x84,0x24160019,0x24160001,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x88,0x24150001,0x24150019,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x8c,0x8E8E0000,0x8E6E0000,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x90,0x026E8021,0x01D48021,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xd0,0x8E890000,0x8E690000,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xd4,0x56A2005E,0x56C2005E,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xdc,0x8E890000,0x8E690000,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xe0,0x02A03025,0x02C03025,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xe8,0x02692821,0x02892821,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xf4,0x8E8A0000,0x8E6A0000,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0xfc,0x02A02025,0x02C02025,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x100,0x026A8021,0x01548021,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x184,0x8E8E0000,0x8E6E0000,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x188,0x026E8021,0x01D48021,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x224,0x8E260014,0x02402825,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x228,0x8E270180,0x8E260014,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x22c,0xE7B80024,0x8E270180,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x230,0xE7BC0020,0xE7B60014,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x234,0xE7B4001C,0xE7B60018,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x238,0xE7B60018,0xE7B4001C,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x23c,0xE7B60014,0xE7BC0020,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x240,0x02402825,0xE7B80024,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x250,0x1656FF99,0x1655FF99,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
+generated_CDE80,func_150A0D8C,0x26c,0x26730034,0x26940034,-,-,Normalize closed actor scan roles and independent address or argument schedule,,,false
