@@ -178,8 +178,49 @@ void func_1509CE64(u16 *dependency, void (*visit)(s32)) {
     }
 }
 
-s32 func_1509CF28() {
-    return 0;
+void *func_1502B6BC(s32 *, s32, s32 *, s32, ...);
+/* Relocate every list, including its final flagged pair, and publish the last index.
+ * Inner bases remain live through the global; the outer cursor keeps the load result. */
+s32 func_1509CF28(s32 resource, u32 *lastIndex) {
+    u32 index;
+    u32 offset;
+    u8 *cursor;
+    u32 count;
+    u8 *loaded;
+    u32 *pair;
+    u32 *record;
+    s32 finished;
+
+    count = 0;
+    D_800D2FB0 = func_1502B6BC(NULL, 0, (s32 *)&count, 3, 8, 0, resource);
+    loaded = D_800D2FB0;
+    if (loaded == NULL) {
+        *lastIndex = 0;
+        return 0;
+    }
+    *(u32 *)(loaded + 4) = count - 1;
+    *lastIndex = count - 1;
+    cursor = loaded;
+    index = 1;
+    offset = 8;
+    if (count >= 2) {
+        do {
+            finished = 0;
+            pair = (u32 *)*(u32 *)(D_800D2FB0 + offset);
+            do {
+                pair[0] += *(u32 *)(D_800D2FB0 + offset);
+                if (pair[1] & 0x80000000U) finished = 1;
+                pair[1] &= 0x0FFFFFFF;
+                pair += 2;
+            } while (finished == 0);
+            record = (u32 *)*(u32 *)(cursor + 8);
+            record[3] = (record[3] & 0x0FFFFFFF) >> 1;
+            cursor += 8;
+            offset += 8;
+            index++;
+        } while (index < count);
+    }
+    return 1;
 }
 
 // Matched with guarded call-argument lifetime normalization.

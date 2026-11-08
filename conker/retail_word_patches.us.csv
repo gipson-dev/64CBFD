@@ -27459,3 +27459,25 @@ generated_CBDB0,func_1509F354,0x108,0x3219001F,0x3219001F,-,-,Omit modulo-32 mas
 generated_CBDB0,func_1509F354,0x10c,0x24090001,0x240F0001,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
 generated_CBDB0,func_1509F354,0x110,0x03295804,0x020FC004,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
 generated_CBDB0,func_1509F354,0x114,0x022B8826,0x02388826,-,-,Normalize closed sound-mask register allocation and independent scheduling,,,false
+generated_C9EC0,func_1509CF28,0x3c,0x3C080000,0x3C060000,R_MIPS_HI16:D_800D2FB0,R_MIPS_HI16:D_800D2FB0,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x40,0x25080000,0x24C60000,R_MIPS_LO16:D_800D2FB0,R_MIPS_LO16:D_800D2FB0,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x44,0xAD020000,0xACC20000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x64,0x3C050FFF,0x3C070FFF,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x68,0x00604825,0x34E7FFFF,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x78,0x240A0001,0x24090001,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x7c,0x24070008,0x24050008,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x8c,0x34A5FFFF,0x00605025,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x90,0x3C068000,0x3C088000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xa0,0x8D0E0000,0x8CCE0000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xa8,0x01C77821,0x01C57821,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xb0,0x8D190000,0x8CD90000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xbc,0x03275821,0x03255821,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xc4,0x00667024,0x00687024,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xc8,0x00657824,0x00677824,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xe8,0x8D220008,0x8D420008,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xec,0x254A0001,0x25290001,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xf0,0x25290008,0x24A50008,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xf8,0x24E70008,0x254A0008,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0xfc,0x03255824,0x03275824,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x10c,0x014C082B,0x012C082B,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
+generated_C9EC0,func_1509CF28,0x114,0x8D0E0000,0x8CCE0000,-,-,Normalize closed relocation-loop register lifetimes and independent setup/cursor scheduling,,,false
