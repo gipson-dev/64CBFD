@@ -280,3 +280,4 @@ func_1507E7E4 = 0x1507E7E4; // type:func defined:true
 func_15083E0C = 0x15083E0C; // type:func defined:true
 func_1510F8CC = 0x1510F8CC; // type:func defined:true
 func_150C851C = 0x150C851C; // type:func defined:true
+func_150A29C8 = 0x150A29C8; // type:func defined:true

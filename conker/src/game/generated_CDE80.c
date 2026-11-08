@@ -180,8 +180,14 @@ void func_150A2864(u32 identity, s32 status) {
     }
 }
 
-s32 func_150A2940() {
-    return 0;
+/* Update optional word/byte parameters and clear field 0x1C. */
+void func_150A2940(u32 identity, s32 value, s32 kind) {
+    identity &= 0xFFF;
+    if (identity < (u32)D_800D3094) {
+        if (value != -1) D_800D3098[identity].field18 = value;
+        if (kind != -1) D_800D3098[identity].field17 = kind;
+        D_800D3098[identity].field1C = 0;
+    }
 }
 
 s32 func_150A29C8() {

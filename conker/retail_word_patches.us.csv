@@ -27146,3 +27146,5 @@ generated_13BB20,func_1510E670,0x0FC,0x44803000,0x44802000,-,-,Normalize closed 
 generated_13BB20,func_1510E670,0x104,0x4606203C,0x4604003C,-,-,Normalize closed final normal-Y floating register roles,,,false
 generated_173D40,func_15146970,0x0A8,0x3C180000,0x3C180000,R_MIPS_HI16:.data,R_MIPS_HI16:D_800A56D0,Bind recovered five-ID initializer to preserved retail data,,,false
 generated_173D40,func_15146970,0x0AC,0x27180000,0x27180000,R_MIPS_LO16:.data,R_MIPS_LO16:D_800A56D0,Bind recovered five-ID initializer to preserved retail data,,,false
+generated_CDE80,func_150A2940,0x02C,0x032EC823,0x24E70000,-,R_MIPS_LO16:D_800D3098,Normalize independent record address setup schedule,,,false
+generated_CDE80,func_150A2940,0x030,0x24E70000,0x032EC823,R_MIPS_LO16:D_800D3098,-,Normalize independent record address setup schedule,,,false
