@@ -20,7 +20,7 @@ void func_1513DF9C(void *, s32, u8);
 s32 func_1513E6E8(u8 *record);
 Vtx *func_1513E83C(u8 *actor, s16 view);
 Vtx *func_1513EAD8(u8 *actor, u8 rotated, s16 view);
-s32 func_1513EE14();
+Vtx *func_1513EE14(u8 *actor, s16 view);
 s32 func_1513F114();
 Gfx *func_1513F4E4(Gfx *cursor, u8 index, u8 *dirty);
 s32 func_1513F728(u8 *actor);
@@ -872,9 +872,63 @@ Vtx *func_1513EDB4(u8 *actor, s16 view) {
 Vtx *func_1513EDE4(u8 *actor, s16 view) {
     return func_1513EAD8(actor, 1, view);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513EE14.s. */
-s32 func_1513EE14() {
-    return 0;
+/* Transform four record corners through an orientation/translation matrix. */
+Vtx *func_1513EE14(u8 *actor, s16 view) {
+    struct {
+        u8 pad00[3];
+        u8 fresh;
+        f32 points[4][3];
+        f32 corners[4][2];
+        f32 matrix[4][4];
+        Vtx *first;
+        Vtx *cursor;
+    } scratch;
+    func_151D5D60(actor + 0x100, view, 0x40, &scratch.cursor, &scratch.fresh);
+    scratch.first = scratch.cursor;
+    if (scratch.cursor != NULL) {
+        if (scratch.fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    func_150A8050(scratch.matrix, *(f32 *)(actor + 0x40), *(f32 *)(actor + 0x44), *(f32 *)(actor + 0x48));
+    scratch.matrix[3][0] = *(f32 *)(actor + 0x34);
+    scratch.matrix[3][1] = *(f32 *)(actor + 0x38);
+    scratch.matrix[3][2] = *(f32 *)(actor + 0x3C);
+    scratch.corners[0][0] = *(f32 *)(actor + 0x2C);
+    scratch.corners[0][1] = *(f32 *)(actor + 0x30);
+    scratch.corners[1][0] = -*(f32 *)(actor + 0x2C);
+    scratch.corners[1][1] = *(f32 *)(actor + 0x30);
+    scratch.corners[2][0] = -*(f32 *)(actor + 0x2C);
+    scratch.corners[2][1] = -*(f32 *)(actor + 0x30);
+    scratch.corners[3][0] = *(f32 *)(actor + 0x2C);
+    scratch.corners[3][1] = -*(f32 *)(actor + 0x30);
+    func_150A7960((f32 *)scratch.matrix, scratch.corners[0][0], scratch.corners[0][1], 0.0f, &scratch.points[0][0], &scratch.points[0][1], &scratch.points[0][2]);
+    func_150A7960((f32 *)scratch.matrix, scratch.corners[1][0], scratch.corners[1][1], 0.0f, &scratch.points[1][0], &scratch.points[1][1], &scratch.points[1][2]);
+    func_150A7960((f32 *)scratch.matrix, scratch.corners[2][0], scratch.corners[2][1], 0.0f, &scratch.points[2][0], &scratch.points[2][1], &scratch.points[2][2]);
+    func_150A7960((f32 *)scratch.matrix, scratch.corners[3][0], scratch.corners[3][1], 0.0f, &scratch.points[3][0], &scratch.points[3][1], &scratch.points[3][2]);
+    scratch.cursor->v.ob[0] = (s32)scratch.points[0][0];
+    scratch.cursor->v.ob[1] = (s32)scratch.points[0][1];
+    scratch.cursor->v.ob[2] = (s32)scratch.points[0][2];
+    scratch.cursor->v.flag = 0;
+    scratch.cursor++;
+    scratch.cursor->v.ob[0] = (s32)scratch.points[1][0];
+    scratch.cursor->v.ob[1] = (s32)scratch.points[1][1];
+    scratch.cursor->v.ob[2] = (s32)scratch.points[1][2];
+    scratch.cursor->v.flag = 0;
+    scratch.cursor++;
+    scratch.cursor->v.ob[0] = (s32)scratch.points[2][0];
+    scratch.cursor->v.ob[1] = (s32)scratch.points[2][1];
+    scratch.cursor->v.ob[2] = (s32)scratch.points[2][2];
+    scratch.cursor->v.flag = 0;
+    scratch.cursor++;
+    scratch.cursor->v.ob[0] = (s32)scratch.points[3][0];
+    scratch.cursor->v.ob[1] = (s32)scratch.points[3][1];
+    scratch.cursor->v.ob[2] = (s32)scratch.points[3][2];
+    scratch.cursor->v.flag = 0;
+    return scratch.first;
 }/* Non-matching C placeholders for asm/nonmatchings/game_169510/func_1513F114.s. */
 s32 func_1513F114() {
     return 0;
