@@ -42,12 +42,56 @@ s32 func_1513137C() {
     return 0;
 }
 
-s32 func_15131514() {
-    return 0;
+/* Select the record's color mode and write four halfword output channels. */
+void func_15131514(s16 *red, s16 *green, s16 *blue, s16 *alpha, register u8 *record) {
+    switch (record[0x71]) {
+        case 1:
+        case 5:
+            *blue = 0;
+            *red = *green = *blue;
+            *alpha = 0;
+            break;
+        case 2:
+            *red = *green = *blue = record[0x2C];
+            *alpha = 0;
+            break;
+        case 8:
+            *blue = 0;
+            *red = *green = *blue;
+            *alpha = record[0x2B];
+            break;
+        case 3:
+            *red = record[0x24];
+            *green = record[0x25];
+            *blue = record[0x26];
+            *alpha = 0;
+            break;
+        case 4:
+        case 6:
+            *red = record[0x28];
+            *green = record[0x29];
+            *blue = record[0x2A];
+            *alpha = record[0x2B];
+            break;
+        case 7:
+            *red = *green = *blue = record[0x2C];
+            *alpha = record[0x2B];
+            break;
+        case 9:
+            *red = record[0x24];
+            *green = record[0x25];
+            *blue = record[0x26];
+            *alpha = record[0x2B];
+            break;
+        default:
+            *red = *green = *blue = record[0x2C];
+            *alpha = (record[0x2B] * record[0x27]) >> 8;
+            break;
+    }
 }
 
 s32 func_1513164C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
-    func_15131514(arg4, arg5, arg6, arg7, arg8);
+    func_15131514((s16 *)arg4, (s16 *)arg5, (s16 *)arg6, (s16 *)arg7, (u8 *)arg8);
     return func_1513137C(arg0, arg1, arg2, arg3, arg8);
 }
 

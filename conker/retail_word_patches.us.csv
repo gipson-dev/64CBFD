@@ -27632,3 +27632,5 @@ generated_49D30,func_150234A4,0xe8,0x25440000,0x27240000,R_MIPS_LO16:D_800C3CA0,
 generated_124920,func_150F7E20,0xc0,0x46008482,0x46100482,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
 generated_124920,func_150F7E20,0xdc,0xAFA20018,0xAFA2001C,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
 generated_124920,func_150F7E20,0xec,0x8FA20018,0x8FA2001C,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
+generated_15D730,func_15131514,0x20,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A3820,Bind mode color compiler table to verified protected retail table,,,false
+generated_15D730,func_15131514,0x28,0x8C2F0000,0x8C2F0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A3820,Bind mode color compiler table to verified protected retail table,,,false
