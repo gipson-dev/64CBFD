@@ -77,8 +77,41 @@ u8 mode;
     return func_15046C80(start, 0, position[1] - 50.0f, result);
 }
 
-s32 func_15146970() {
-    return 0;
+/* Select the actor effect, consulting state or the five-ID list when needed. */
+s32 func_15146970(s32 kind, u8 *actor) {
+    extern s32 D_800BE9F0;
+    extern u8 D_800CC2D0[];
+    extern s32 func_151420F8(u8 *);
+    extern s32 func_150A2AEC(s32, s32, s32 *);
+    switch (kind) {
+        case 8: return 16;
+        case 7: return 15;
+        case 5: return 5;
+        case 2: return 2;
+        case 0: return 0;
+        case 1:
+            if (D_800BE9F0 == 4) {
+                if (func_151420F8(actor)) {
+                    return 6;
+                } else {
+                    return 3;
+                }
+            } else {
+                return 1;
+            }
+        case 4: return 4;
+        case 3: return 3;
+        case 6: {
+            s32 choices[5] = {0x401D, 0x401E, 0x401F, 0x4020, 0x4021};
+            if (func_150A2AEC((s32)((u32)actor - (u32)D_800CC2D0) / 0x32C,
+                              5, choices) == -1) {
+                return -1;
+            } else {
+                return 6;
+            }
+        }
+    }
+    return -1;
 }
 
 /* Submit the point effect using the attached actor's selected position. */

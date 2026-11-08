@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2172](WORKING_NOTES/2172-game-actor-effect-choice-match-20261107.md): `func_15146970` now emits all 74 retail instruction words directly with its original 48-byte frame. Two relocation-only guards bind its five-ID initializer; the nine-way switch, classifier slot 0, original predicate and lookup paths are qualified. Total **4,241 / 5,512 (76.94%)**, Game **3,568 / 4,839 (73.73%)**, zero drift; **169** more to 80%. Full-image gate: 257 bytes, zero exclusions. Next: reconstruct `func_150A2AEC`.
+
 [Note 2171](WORKING_NOTES/2171-game-triangle-facing-match-20261107.md): `func_1510E670` now matches all 77 retail words with its original 88-byte frame and three closed floating-register guards. Signed packed vertices, the original cross product, and all three caller windows are qualified. Total **4,240 / 5,512 (76.92%)**, Game **3,567 / 4,839 (73.71%)**, zero drift; **170** more to 80%. Full-image gate: 210 bytes, zero exclusions. `func_1513FAB4` remains uninstalled/uncredited; its corrected full-owner compiler trace is retained. Next: `func_15146970`.
 
 [Note 2170](WORKING_NOTES/2170-game-oriented-strip-semantic-study-20261107.md): `func_1513FAB4` has a reproducible semantic study: 587 retail/582 raw guest cases, 503 native cases at each of O0/O2/O3, and original helper/caller inventory. Source: 337 words/frame 128, versus retail 336/frame 152; **uninstalled, zero matching credit**. Total remains **4,239 / 5,512 (76.90%)**; 171 more to 80%. Next: compiler allocation/private layout, then complete caller and adoption gates.

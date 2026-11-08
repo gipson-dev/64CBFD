@@ -27144,3 +27144,5 @@ game_169510,func_1513F114,0x34C,0x46126182,0x46120182,-,-,Normalize proved upper
 generated_13BB20,func_1510E670,0x0F8,0xC7A40024,0xC7A00024,-,-,Normalize closed final normal-Y floating register roles,,,false
 generated_13BB20,func_1510E670,0x0FC,0x44803000,0x44802000,-,-,Normalize closed final normal-Y floating register roles,,,false
 generated_13BB20,func_1510E670,0x104,0x4606203C,0x4604003C,-,-,Normalize closed final normal-Y floating register roles,,,false
+generated_173D40,func_15146970,0x0A8,0x3C180000,0x3C180000,R_MIPS_HI16:.data,R_MIPS_HI16:D_800A56D0,Bind recovered five-ID initializer to preserved retail data,,,false
+generated_173D40,func_15146970,0x0AC,0x27180000,0x27180000,R_MIPS_LO16:.data,R_MIPS_LO16:D_800A56D0,Bind recovered five-ID initializer to preserved retail data,,,false
