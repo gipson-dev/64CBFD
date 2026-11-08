@@ -140,8 +140,47 @@ s32 func_150EF910() {
     return 0;
 }
 
-s32 func_150EFA4C() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} AttachmentVector11C2B0;
+
+extern AttachmentVector11C2B0 D_800A1620[];
+extern u8 D_800A1638[];
+void func_15143134(f32 *, f32 *, u8 *);
+
+/* Refresh the attachment vector and keep the callback active on every path. */
+s32 func_150EFA4C(u8 *effect) {
+    u8 *link = *(u8 **)(effect + 0x60);
+    u8 *source = *(u8 **)(link + 8);
+    u8 *attachment = source + 0x110;
+    u8 *owner;
+    s32 index;
+
+    if (source[0x128] & 1) {
+        owner = *(u8 **)attachment;
+        if (*(u8 **)(owner + 0x1D4) != NULL) {
+            index = attachment[0xD];
+            *(AttachmentVector11C2B0 *)(effect + 0x30) =
+                *(AttachmentVector11C2B0 *)(source + 0x34);
+            *(AttachmentVector11C2B0 *)(effect + 0x3C) =
+                *(AttachmentVector11C2B0 *)(source + 0x40);
+            *(f32 *)(effect + 0x54) = *(f32 *)(attachment + 0x3C);
+            *(f32 *)(effect + 0x58) = *(f32 *)(attachment + 0x40);
+            func_15143134((f32 *)&D_800A1620[index], (f32 *)(effect + 0x48),
+                *(u8 **)(owner + 0x1D4) + (D_800A1638[index] << 6));
+            *(f32 *)(effect + 0x48) -= *(f32 *)(effect + 0x30);
+            *(f32 *)(effect + 0x4C) -= *(f32 *)(effect + 0x34);
+            *(f32 *)(effect + 0x50) -= *(f32 *)(effect + 0x38);
+            effect[0x1C] |= 2;
+            return 1;
+        } else {
+            effect[0x1C] &= ~2;
+            return 1;
+        }
+    } else {
+        effect[0x1C] &= ~2;
+        return 1;
+    }
 }
 
 s32 func_150EFB80() {

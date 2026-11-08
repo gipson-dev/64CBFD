@@ -27574,3 +27574,45 @@ game_981E0,func_1506B3B8,0x118,0x240F4E20,0x240D4E20,-,-,Normalize equivalent ta
 game_981E0,func_1506B3B8,0x11c,0xA5AC0244,0xA58B0244,-,-,Normalize equivalent table HI/LO factorization and closed GPR lifetimes,,,false
 game_981E0,func_1506B3B8,0x120,0x8D2E0000,0x8D2F0000,-,-,Normalize equivalent table HI/LO factorization and closed GPR lifetimes,,,false
 game_981E0,func_1506B3B8,0x124,0xA5CF021C,0xA5ED021C,-,-,Normalize equivalent table HI/LO factorization and closed GPR lifetimes,,,false
+generated_11C2B0,func_150EFA4C,0x24,0x90EE001C,0x90F8001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x34,0x90EC001C,0x90EE001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x40,0x3C0F0000,0x3C0A0000,R_MIPS_HI16:D_800A1638,R_MIPS_HI16:D_800A1638,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x48,0x8C6A0038,0x8C6B0038,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x4c,0x01E27821,0x01425021,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x50,0x00026880,0x00027880,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x54,0xACEA0034,0xACEB0034,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x5c,0x3C0E0000,0x3C180000,R_MIPS_HI16:D_800A1620,R_MIPS_HI16:D_800A1620,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x60,0x01A26823,0x01E27823,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x6c,0x000D6880,0x000F7880,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x70,0x25CE0000,0x27180000,R_MIPS_LO16:D_800A1620,R_MIPS_LO16:D_800A1620,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x78,0x8C6C0044,0x8C6E0044,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x7c,0x01AE2021,0x01F82021,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x84,0xACEC0040,0xACEE0040,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xa0,0x91EF0000,0x914A0000,R_MIPS_LO16:D_800A1638,R_MIPS_LO16:D_800A1638,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xa4,0x8D3901D4,0x8D2B01D4,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xac,0x000FC180,0x000AC980,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xb4,0x03193021,0x032B3021,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xbc,0x24020001,0xC4E80048,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xc0,0xC4E80048,0xC4EA0030,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xc4,0xC4EA0030,0xC4F2004C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xc8,0xC4F2004C,0xC4E40034,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xcc,0xC4E40034,0x460A4401,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xd0,0x460A4401,0xC4EA0038,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xd4,0xC4EA0038,0xC4E80050,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xd8,0xC4E80050,0x46049181,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xdc,0x90EA001C,0xE4F00048,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xe0,0xE4F00048,0x90ED001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xe4,0x46049181,0x460A4401,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xe8,0x354B0002,0xE4E6004C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xec,0xA0EB001C,0x35AC0002,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xf0,0x460A4401,0xA0EC001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xf4,0xE4E6004C,0xE4F00050,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0xfc,0xE4F00050,0x24020001,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x100,0x90EC001C,0x90EE001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x104,0x24020001,0x31CFFFFD,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x108,0x318DFFFD,0xA0EF001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x110,0xA0ED001C,0x24020001,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x114,0x90EE001C,0x90F8001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x118,0x24020001,0x330AFFFD,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x11c,0x31CFFFFD,0xA0EA001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_11C2B0,func_150EFA4C,0x120,0xA0EF001C,0x24020001,-,-,Normalize attachment callback register roles and independent schedule,,,false
