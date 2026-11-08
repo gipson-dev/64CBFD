@@ -27634,3 +27634,11 @@ generated_124920,func_150F7E20,0xdc,0xAFA20018,0xAFA2001C,-,-,Normalize sine-eff
 generated_124920,func_150F7E20,0xec,0x8FA20018,0x8FA2001C,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
 generated_15D730,func_15131514,0x20,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A3820,Bind mode color compiler table to verified protected retail table,,,false
 generated_15D730,func_15131514,0x28,0x8C2F0000,0x8C2F0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A3820,Bind mode color compiler table to verified protected retail table,,,false
+generated_15D730,func_151319C4,0xd8,0xC7B00030,0x8FA70048,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xdc,0xC7B20038,0xC7B00030,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xe0,0x8FA70048,0xC7A40038,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xe4,0xE7B00024,0x3C190000,-,R_MIPS_HI16:D_80089874,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xe8,0xE7B2002C,0xE7B00024,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xec,0xC6040080,0xC6120080,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xf0,0x3C190000,0xE7A4002C,R_MIPS_HI16:D_80089874,-,Normalize closed plane callback setup schedule and float scratch roles,,,false
+generated_15D730,func_151319C4,0xf8,0xE7A40028,0xE7B20028,-,-,Normalize closed plane callback setup schedule and float scratch roles,,,false

@@ -16,7 +16,41 @@ void func_151318E8(f32 *, f32);
 void func_15131918(f32 *, f32);
 void func_15131958(f32 *, f32);
 
-s32 func_151319C4();
+#include "structs.h"
+
+typedef struct {
+    u8 reserved[0x3C];
+    f32 extent;
+    f32 position[3];
+    u8 reserved4C[0xC];
+    f32 velocity[3];
+    f32 verticalAcceleration;
+    u32 flags;
+} BounceRecord15D730;
+
+typedef struct {
+    u8 flags;
+    s8 kind;
+    u8 reserved[2];
+    f32 damping;
+} BounceResponse15D730;
+
+typedef struct HeightResult71820 {
+    f32 height;
+    s16 vertices[9];
+    s16 pad16;
+    u32 metadata;
+    u8 flags;
+    u8 state;
+    u16 pad1E;
+    s32 value;
+} HeightResult71820;
+extern f32 D_800A3844;
+s32 func_1514672C(struct17 *);
+s32 func_15046C80(f32 *, u16, f32, HeightResult71820 *);
+extern s32 (*D_80089874[])(BounceRecord15D730 *, void *, f32 *, BounceResponse15D730 *);
+
+s32 func_151319C4(BounceRecord15D730 *, void *, BounceResponse15D730 *);
 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_15D730/func_15130280.s")
@@ -186,38 +220,47 @@ void func_15131958(f32 *arg0, f32 arg1) {
 }
 
 void func_151319A4(register u8 *arg0, register s32 arg1) {
-    func_151319C4(arg0, arg1, arg0 + 0xA8);
+    func_151319C4((BounceRecord15D730 *)arg0, (void *)arg1, (BounceResponse15D730 *)(arg0 + 0xA8));
 }
 
-s32 func_151319C4() {
-    return 0;
+/* Probe the response plane and dispatch its live collision callback. */
+s32 func_151319C4(BounceRecord15D730 *record, void *surface, BounceResponse15D730 *response) {
+    u8 result = 1;
+    f32 point[3];
+    f32 contact[3];
+
+    if (response->flags & 1) {
+        if (response->kind != -1 && D_80089874[response->kind] != NULL &&
+            record->position[1] < ((f32 *)surface)[1]) {
+            point[0] = record->position[0];
+            point[1] = ((f32 *)surface)[1];
+            point[2] = record->position[2];
+            if (!func_1514672C((struct17 *)point)) {
+                return 0;
+            }
+            if (func_15046C80(point, 0,
+                             record->position[1] - record->extent * D_800A3844,
+                             (HeightResult71820 *)((u8 *)record + 0x80))) {
+                contact[0] = point[0];
+                contact[2] = point[2];
+                contact[1] = ((HeightResult71820 *)((u8 *)record + 0x80))->height;
+                result = D_80089874[response->kind](record, surface, contact, response);
+            }
+        }
+    }
+    return result;
 }
 
 void func_15131AFC(u8 *arg0, s32 arg1) {
     func_15131958((f32 *) (arg0 + 0x58), *(f32 *) (arg0 + 0xA8));
-    func_151319C4(arg0, arg1, arg0 + 0xB0);
+    func_151319C4((BounceRecord15D730 *)arg0, (void *)arg1, (BounceResponse15D730 *)(arg0 + 0xB0));
 }
 
 void func_15131B3C(u8 *arg0, s32 arg1) {
     func_15131918((f32 *) (arg0 + 0x58), *(f32 *) (arg0 + 0xA8));
-    func_151319C4(arg0, arg1, arg0 + 0xB0);
+    func_151319C4((BounceRecord15D730 *)arg0, (void *)arg1, (BounceResponse15D730 *)(arg0 + 0xB0));
 }
 
-typedef struct {
-    u8 reserved[0x3C];
-    f32 extent;
-    f32 position[3];
-    u8 reserved4C[0xC];
-    f32 velocity[3];
-    f32 verticalAcceleration;
-    u32 flags;
-} BounceRecord15D730;
-typedef struct {
-    u8 flags;
-    s8 kind;
-    u8 reserved[2];
-    f32 damping;
-} BounceResponse15D730;
 extern f32 D_800A3848, D_800A384C;
 f32 fabsf(f32);
 #pragma intrinsic (fabsf)
