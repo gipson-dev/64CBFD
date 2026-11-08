@@ -234,8 +234,46 @@ s32 func_15186794() {
     return 0;
 }
 
-s32 func_151872B0() {
-    return 0;
+extern s32 D_800DE01C,D_800DE020,D_800DE024,D_800DE030,D_800DE034,D_800DE038;
+extern f32 D_800DE03C;
+extern u8 D_800DE040,D_800DE041;
+/* Set parameter defaults before applying the selected variant's overrides. */
+void func_151872B0(s32 variant) {
+    D_800DE01C = 600;
+    D_800DE020 = 180;
+    D_800DE024 = 90;
+    D_800DE030 = 1016;
+    D_800DE034 = 0;
+    D_800DE038 = 1;
+    D_800DE03C = 1.0f;
+    D_800DE040 = 1;
+    D_800DE041 = 1;
+    switch (variant) {
+        case 0x21:
+            D_800DE01C = 4800;
+            D_800DE020 = D_800DE01C - 1;
+            D_800DE024 = D_800DE01C - 2;
+            D_800DE030 = 1010;
+            D_800DE034 = 1;
+            D_800DE038 = 4;
+            D_800DE040 = 0;
+            break;
+        case 0x22:
+            D_800DE01C = 2400;
+            D_800DE020 = D_800DE01C - 1;
+            D_800DE024 = D_800DE01C - 2;
+            D_800DE038 = 4;
+            D_800DE040 = 0;
+            break;
+        case 0x14:
+            D_800DE041 = 0;
+            break;
+        case 0x29:
+            D_800DE01C = 1200;
+            D_800DE020 = 600;
+            D_800DE024 = 300;
+            break;
+    }
 }
 
 s32 func_151873E4() {
