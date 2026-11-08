@@ -741,3 +741,4 @@ progress.debugger.csv: $(TARGET).elf
 .PHONY: all clean default
 SHELL = /bin/bash -e -o pipefail
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CD860.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F550
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_C98F0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009E458
