@@ -176,8 +176,69 @@ s32 func_151BD2BC(u8 *arg0) {
     return 1;
 }
 
-s32 func_151BD2F8() {
-    return 0;
+typedef struct {
+    u8 ownerTag;
+    u8 padding1[3];
+    u8 *owner;
+    u8 enabled;
+    u8 padding9[3];
+    f32 parameters[6];
+    u8 kind;
+    u8 padding25;
+    s16 field26;
+    s16 field28;
+    s16 field2A;
+    u8 padding2C[2];
+    u8 field2E;
+    u8 field2F;
+    s8 field30;
+    u8 padding31[3];
+    f32 coefficient;
+    u8 field38;
+    s8 field39;
+    u8 padding3A[2];
+} MirroredEffectPacket;
+extern f32 D_800AA850;
+void *func_15134DAC(MirroredEffectPacket *, s32);
+
+/* Submit both sides using the packet fields left live by the first submission. */
+void func_151BD2F8(u8 *owner, s32 unused1, s32 unused2) {
+    MirroredEffectPacket packet;
+    u16 zero[1];
+    u8 *result;
+
+    if (owner != 0) {
+        packet.ownerTag = owner[0x3B];
+        packet.owner = owner;
+        packet.enabled = 1;
+        packet.parameters[0] = 31.0f;
+        packet.parameters[1] = -34.0f;
+        packet.parameters[2] = -117.0f;
+        packet.parameters[3] = 35.0f;
+        packet.parameters[4] = -24.0f;
+        packet.parameters[5] = -182.0f;
+        packet.kind = 0;
+        packet.field26 = 50;
+        packet.field28 = 100;
+        packet.field2A = 300;
+        packet.field2E = 4;
+        packet.field2F = 4;
+        packet.field30 = 3;
+        packet.field38 = 5;
+        packet.field39 = -1;
+        packet.coefficient = D_800AA850;
+        zero[0] = 0;
+        result = func_15134DAC(&packet, 2);
+        if (result != 0) {
+            memcpy(result + 0x80, zero, 2);
+        }
+        packet.parameters[0] = -packet.parameters[0];
+        packet.parameters[3] = -packet.parameters[3];
+        result = func_15134DAC(&packet, 2);
+        if (result != 0) {
+            memcpy(result + 0x80, zero, 2);
+        }
+    }
 }
 
 s32 func_151BD42C(u8 *arg0) {
