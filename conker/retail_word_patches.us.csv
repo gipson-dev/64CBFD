@@ -27616,3 +27616,16 @@ generated_11C2B0,func_150EFA4C,0x114,0x90EE001C,0x90F8001C,-,-,Normalize attachm
 generated_11C2B0,func_150EFA4C,0x118,0x24020001,0x330AFFFD,-,-,Normalize attachment callback register roles and independent schedule,,,false
 generated_11C2B0,func_150EFA4C,0x11c,0x31CFFFFD,0xA0EA001C,-,-,Normalize attachment callback register roles and independent schedule,,,false
 generated_11C2B0,func_150EFA4C,0x120,0xA0EF001C,0x24020001,-,-,Normalize attachment callback register roles and independent schedule,,,false
+generated_49D30,func_150234A4,0xc,0x3C030000,0x3C060000,R_MIPS_HI16:D_800C3D48,R_MIPS_HI16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x10,0x3C060000,0x3C030000,R_MIPS_HI16:D_800C3CA0,R_MIPS_HI16:D_800C3D48,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x14,0x24630000,0x24E70001,R_MIPS_LO16:D_800C3D48,-,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x20,0x24E70001,0x24630000,-,R_MIPS_LO16:D_800C3D48,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x40,0x3C0F0000,0x3C040000,R_MIPS_HI16:D_800C3CA0,R_MIPS_HI16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x44,0x25E40000,0x24840000,R_MIPS_LO16:D_800C3CA0,R_MIPS_LO16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x90,0x90D8000C,0x90CF000C,-,-,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0x9c,0x1300000E,0x11E0000E,-,-,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0xd8,0x3C190000,0x3C180000,R_MIPS_HI16:D_800C3D48,R_MIPS_HI16:D_800C3D48,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0xdc,0x27390000,0x27180000,R_MIPS_LO16:D_800C3D48,R_MIPS_LO16:D_800C3D48,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0xe0,0x14D9000A,0x14D8000A,-,-,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0xe4,0x3C0A0000,0x3C190000,R_MIPS_HI16:D_800C3CA0,R_MIPS_HI16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_49D30,func_150234A4,0xe8,0x25440000,0x27240000,R_MIPS_LO16:D_800C3CA0,R_MIPS_LO16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false

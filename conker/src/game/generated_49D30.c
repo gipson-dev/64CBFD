@@ -1060,8 +1060,46 @@ void func_15023440(struct163 *arg0, s32 arg1) {
     arg0->unk0 = 0;
 }
 
-s32 func_150234A4() {
-    return 0;
+/* Find an existing key or reset and claim a reusable table entry. */
+struct163 *func_150234A4(u32 key, s32 reset) {
+    struct163 *end = &D_800C3D48;
+    struct163 *existing = NULL;
+    struct163 *selected = NULL;
+    struct163 *entry;
+
+    key++;
+    entry = D_800C3CA0;
+    do {
+        if ((u32)(s32)entry->unk0 == key) {
+            if (reset && entry->unkC != 0) {
+                selected = D_800C3CA0;
+                func_15023440(selected, 1);
+            } else {
+                existing = entry;
+            }
+            break;
+        }
+        if (entry->unk0 == 0) {
+            selected = entry;
+            if (reset && entry->unkC != 0) {
+                func_15023440(entry, 1);
+            }
+            break;
+        }
+        entry++;
+    } while (entry != end);
+
+    if (entry == &D_800C3D48) {
+        selected = D_800C3CA0;
+        func_15023440(selected, 1);
+    }
+    if (existing != NULL) {
+        return existing;
+    }
+    if (selected != NULL) {
+        selected->unk0 = key;
+    }
+    return selected;
 }
 
 s32 func_150235DC() {
