@@ -15,8 +15,38 @@ s32 func_150F78B4() {
     return 0;
 }
 
-s32 func_150F7E20() {
-    return 0;
+#include <math.h>
+
+extern f32 D_800A1BD8, D_800BE9A4;
+f32 func_15144B68(f32 angle);
+
+typedef struct {
+    u8 reserved[0x18];
+    f32 remaining;
+    f32 phase;
+    f32 rate;
+    f32 center;
+    f32 amplitude;
+} SineEffectState124920;
+
+/* Update the intensity, sine-driven value, wrapped phase and remaining time. */
+s32 func_150F7E20(u8 *effect) {
+    f32 sine;
+    f32 value;
+    SineEffectState124920 *state;
+
+    state = (SineEffectState124920 *)(effect + 0x110);
+    effect[0x5C] = (u32)(*(f32 *)(effect + 0x128) * D_800A1BD8);
+    sine = sinf(*(f32 *)(effect + 0x12C));
+    value = sine * state->amplitude + state->center;
+    *(f32 *)(effect + 0x30) = value;
+    *(f32 *)(effect + 0x2C) = value;
+    state->phase = func_15144B68(state->phase + state->rate * D_800BE9A4);
+    state->remaining -= D_800BE9A4;
+    if (state->remaining < 0.0f) {
+        return 0;
+    }
+    return 1;
 }
 
 void func_150F7F58(u8 *arg0, s16 arg1) {

@@ -27629,3 +27629,6 @@ generated_49D30,func_150234A4,0xdc,0x27390000,0x27180000,R_MIPS_LO16:D_800C3D48,
 generated_49D30,func_150234A4,0xe0,0x14D9000A,0x14D8000A,-,-,Normalize keyed record temporary roles and independent opening schedule,,,false
 generated_49D30,func_150234A4,0xe4,0x3C0A0000,0x3C190000,R_MIPS_HI16:D_800C3CA0,R_MIPS_HI16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
 generated_49D30,func_150234A4,0xe8,0x25440000,0x27240000,R_MIPS_LO16:D_800C3CA0,R_MIPS_LO16:D_800C3CA0,Normalize keyed record temporary roles and independent opening schedule,,,false
+generated_124920,func_150F7E20,0xc0,0x46008482,0x46100482,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
+generated_124920,func_150F7E20,0xdc,0xAFA20018,0xAFA2001C,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
+generated_124920,func_150F7E20,0xec,0x8FA20018,0x8FA2001C,-,-,Normalize sine-effect private block-pointer home and floating multiply operand order,,,false
