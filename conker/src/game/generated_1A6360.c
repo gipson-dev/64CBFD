@@ -18,8 +18,43 @@ s32 func_15179008() {
     return 0;
 }
 
-s32 func_151794C8() {
-    return 0;
+#include "structs.h"
+#include <math.h>
+
+extern u8 *D_800DBFF0;
+f32 func_150AD78C(f32);
+f32 func_150AD780(f32);
+extern s16 D_800DD438[3];
+
+/* Build the offset point from truncated camera coordinates and two live angles. */
+void func_151794C8(void) {
+    s32 x;
+    s32 y;
+    s32 z;
+    f32 zero;
+    f32 vertical;
+    f32 horizontal;
+    f32 sine;
+    f32 angle;
+
+    zero = 0.0f;
+    x = (s32)((struct108 *)D_800DBFF0)->unk2F8;
+    y = (s32)((struct108 *)D_800DBFF0)->unk2FC;
+    z = (s32)((struct108 *)D_800DBFF0)->unk300;
+    angle = ((struct108 *)D_800DBFF0)->unk398;
+    sine = func_150AD78C(angle);
+    horizontal = func_150AD780(angle);
+    vertical = 500.0f * sine;
+    horizontal = -500.0f * horizontal;
+    angle = ((struct108 *)D_800DBFF0)->unk3A0;
+    sine = func_150AD78C(angle);
+    angle = func_150AD780(angle);
+    x = (s32)((f32)x + (zero + horizontal * sine));
+    z = (s32)((f32)z + (horizontal * angle - zero));
+    y = (s32)((f32)y + vertical);
+    D_800DD438[0] = x;
+    D_800DD438[2] = z;
+    D_800DD438[1] = y;
 }
 
 s32 func_15179600() {
