@@ -1136,9 +1136,10 @@ void func_1504715C(HeightResult71820 *result, HeightActor71820 *actor) {
     result->metadata = metadata;
     index = actor->entityIndex;
     if (index) {
+        index--;
         result->state = 2;
-        result->value = (s32)&D_800DBEF4[index - 1];
-        accepted = func_15145C90(index - 1) != 0;
+        result->value = (s32)&D_800DBEF4[index];
+        accepted = func_15145C90(index) ? 1 : 0;
         result->flags |= accepted;
     } else {
         result->state = 1;
