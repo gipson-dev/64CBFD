@@ -841,10 +841,47 @@ void func_151284C4(struct108 *arg0) {
         func_15128774(arg0, arg0->unk3D0);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15128540.s. */
-s32 func_15128540(s32 arg0) {
+/* Copy stored position bits without converting the unresolved third field.
+ * GCC's alias view keeps this representation access valid with strict aliasing. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{ u32 words[3]; } CameraPositionBits14FF90;
+extern void func_1512A360(u8 *);
+/* Dispatch camera transitions in the original flag-priority order. */
+s32 func_15128540(s32 address) {
+    if (func_151253CC((struct108 *)address)) return 1;
+    if (func_15128030(address)) return 0;
+    if (*(u32 *)((u8 *)address + 0x2C) & 0x80000) {
+        func_1512A360((u8 *)address);
+        *(CameraPositionBits14FF90 *)((u8 *)address + 0x2BC) = *(CameraPositionBits14FF90 *)((u8 *)address + 0x2A4);
+        func_151256BC(address);
+        func_151236D0(address);
+        func_151284C4((struct108 *)address);
+        return 1;
+    } else if (*(u32 *)((u8 *)address + 0x2C) & 0x100000) {
+        func_1512E4B0(address);
+        func_151236D0(address);
+        func_151284C4((struct108 *)address);
+        return 1;
+    } else if (*(u32 *)((u8 *)address + 0x2C) & 0x200000) {
+        func_151219D0(address);
+        func_151236D0(address);
+        func_151284C4((struct108 *)address);
+        return 1;
+    } else if (*(u32 *)((u8 *)address + 0x2C) & 0x400000) {
+        func_1512D380(address);
+        func_151236D0(address);
+        func_151284C4((struct108 *)address);
+        return 1;
+    } else if (func_15126378(address)) {
+        func_151284C4((struct108 *)address);
+        return 1;
+    }
     return 0;
 }
+
 void func_15128680(struct108 *arg0) {
 }
 
