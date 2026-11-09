@@ -139,7 +139,7 @@ typedef struct {
     f32 unk10;
 } struct_150FB188_params;
 
-s32 func_15157DEC();
+void func_15157DEC(u8 *, void *);
 
 s32 func_150FB188(u8 *arg0) {
     struct_150FB188_params params;

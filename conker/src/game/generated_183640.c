@@ -17,7 +17,7 @@ typedef struct {
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
 s32 func_151D5E30();
-s32 func_15157DEC();
+void func_15157DEC(u8 *, void *);
 void func_15169260(s32, s32, s32, u8);
 s32 func_15156190(s32 arg0, u8 arg1, s32 arg2, s32 arg3, s32 arg4);
 extern u8 D_800A6060[];
@@ -188,9 +188,48 @@ s32 func_15157DC8(u8 *arg0) {
     return 1;
 }
 
-s32 func_15157DEC() {
-    return 0;
+void func_150A8050(f32 [4][4], f32, f32, f32);
+/* Five scalar parameters: both a caller-local structure and embedded storage. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    f32 angleX, angleY, angleZ;
+    f32 scaleXZ, scaleY;
+} ResourceTransform183640;
+
+/* Partial resource view with its two 64-byte matrix pages. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 prefix[0x54];
+    f32 x, y, z;
+    u8 pad60[0x1C];
+    f32 matrices[2][4][4];
+} ResourceMatrix183640;
+
+/* Rebuild the selected page; keep page and scale reloads after each store. */
+void func_15157DEC(u8 *object, void *parameters) {
+    ResourceMatrix183640 *state = (ResourceMatrix183640 *)object;
+    ResourceTransform183640 *transform = (ResourceTransform183640 *)parameters;
+    func_150A8050(state->matrices[D_800BE9C0], transform->angleX, transform->angleY, transform->angleZ);
+    state->matrices[D_800BE9C0][3][0] = state->x;
+    state->matrices[D_800BE9C0][3][1] = state->y;
+    state->matrices[D_800BE9C0][3][2] = state->z;
+    state->matrices[D_800BE9C0][0][0] *= transform->scaleXZ;
+    state->matrices[D_800BE9C0][0][1] *= transform->scaleXZ;
+    state->matrices[D_800BE9C0][0][2] *= transform->scaleXZ;
+    state->matrices[D_800BE9C0][1][0] *= transform->scaleY;
+    state->matrices[D_800BE9C0][1][1] *= transform->scaleY;
+    state->matrices[D_800BE9C0][1][2] *= transform->scaleY;
+    state->matrices[D_800BE9C0][2][0] *= transform->scaleXZ;
+    state->matrices[D_800BE9C0][2][1] *= transform->scaleXZ;
+    state->matrices[D_800BE9C0][2][2] *= transform->scaleXZ;
 }
+
 
 Gfx *func_15157F80(Gfx *arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {
     gSPMatrix(arg0++, D_80089470, 2);
