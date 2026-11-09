@@ -28016,3 +28016,33 @@ game_169510,func_1513E13C,0x134,0x00000000,0xA4A90070,-,-,"Normalize quad floati
 game_169510,func_1513E13C,0x138,0xA4A90064,0xA4B90064,-,-,"Normalize quad floating allocation, private spills and store scheduling; restore measured mfc1 delay slots",,,false
 game_169510,func_1513E13C,0x13C,0xC7A40048,0xC7A40030,-,-,"Normalize quad floating allocation, private spills and store scheduling; restore measured mfc1 delay slots",,,false
 game_169510,func_1513E13C,0x140,0x46102200,0x46022200,-,-,"Normalize quad floating allocation, private spills and store scheduling; restore measured mfc1 delay slots",,,false
+game_77AD0,func_1504AF10,0x01C,0x5060006E,0x50600070,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x02C,0x15E00069,0x15E0006B,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x030,0x00031303,0x00032303,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x034,0x30440007,0x30980007,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,0x30667FFF,-,false
+game_77AD0,func_1504AF10,0x038,0x1480000B,0x1700000C,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,0x03002025,-,false
+game_77AD0,func_1504AF10,0x03C,0x27A50028,0x00C02025,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x040,0x30647FFF,0x27A50028,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x0F4,0x8FAC0028,0x8FAB0028,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x118,0x01840019,0x01640019,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x11C,0x8C6E0000,0x8C6C0000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x120,0x00005812,0x00007012,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x124,0x016E1021,0x018E1021,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x134,0x8FAF0028,0x8FB90028,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x138,0x8C780000,0x8C6F0000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x13C,0x01E40019,0x03240019,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x140,0x0000C812,0x0000C012,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x144,0x03381021,0x01F81021,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x168,0x440B3000,0x440C3000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x170,0x01CD7821,0x01CDC821,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x174,0xA5EB0010,0xA72C0010,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x178,0x84F90090,0x84EF0090,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x17C,0x8FAC0028,0x8FAB0028,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x184,0x44995000,0x448F5000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x188,0x01840019,0x01640019,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1B0,0x8FB90028,0x8FAF0028,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1B8,0x8C6F0000,0x8C790000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1BC,0x03240019,0x01E40019,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1C4,0x440B5000,0x440C5000,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1CC,0x01F86021,0x03385821,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false
+game_77AD0,func_1504AF10,0x1D0,0xA58B0014,0xA56C0014,-,-,Normalize closed attachment register roles and two retail copies; reorder existing mask and argument setup,,,false

@@ -391,41 +391,40 @@ s32 func_1504AEF4(s32 arg0, s32 arg1) {
     return 0;
 }
 
-// bleurgh
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_1504AF10(struct127 *arg0, s32 arg1, s32 arg2) {
-    u16 flags = arg0->unk92;
-    s32 idx;
-    s32 sp28;
-    struct131 *entry;
+/* Refresh the packed actor attachment, keeping each record flag update ordered. */
+void func_1504AF10(struct127 *actor, s32 force, s32 release) {
+    s32 flags = actor->unk92;
+    s32 slot;
+    u32 kind;
+    struct131 *record;
 
-    if ((flags != 0) && ((arg1 != 0) || (((s32) flags >> 0xF) == 0))) {
-        idx = (flags >> 0xC) & 7;
-        if (idx == 0) {
-            idx = func_1504AEF4(flags & 0x7FFF, (s32) &sp28);
-            if (idx != 0) {
-                arg0->unk92 = (idx << 0xC) | sp28;
+    if ((flags != 0) && ((force != 0) || (((s32) flags >> 0xF) == 0))) {
+        kind = (flags >> 0xC) & 7;
+        if (kind == 0) {
+            kind = func_1504AEF4(flags & 0x7FFF, (s32) &slot);
+            if (kind != 0) {
+                actor->unk92 = (kind << 0xC) | slot;
             }
         }
-        sp28 = arg0->unk92 & 0xFFF;
-        if (idx == 3) {
-            if (arg2 != 0) {
-                D_800DBEF4[sp28].unk4E = 0;
-                arg0->unk92 = 0;
+        slot = actor->unk92 & 0xFFF;
+        if (kind == 3) {
+            if (release != 0) {
+                D_800DBEF4[slot].unk4E = 0;
+                actor->unk92 = 0;
                 return;
             }
-            D_800DBEF4[sp28].unk4E = (arg0 - D_800CC2D0) + 0x64;
-            if (arg1 != 0) {
-                D_800DBEF4[sp28].unk4E = 0;
+            D_800DBEF4[slot].unk4E = (actor - D_800CC2D0) + 0x64;
+            if (force != 0) {
+                D_800DBEF4[slot].unk4E = 0;
                 return;
             }
-            entry = &D_800DBEF4[sp28];
-            entry->unk4F = entry->unk4F & 0xFF9F;
-            entry = &D_800DBEF4[sp28];
-            entry->unk4F = entry->unk4F | 0x20;
-            D_800DBEF4[sp28].unk10 = (s16) arg0->x_position;
-            D_800DBEF4[sp28].unk12 = (s16) (arg0->y_position + (s16) arg0->unk90);
-            D_800DBEF4[sp28].unk14 = (s16) arg0->z_position;
+            record = &D_800DBEF4[slot];
+            record->unk4F = (u8)record->unk4F & 0xFF9F;
+            record = &D_800DBEF4[slot];
+            record->unk4F = (u8)record->unk4F | 0x20;
+            D_800DBEF4[slot].unk10 = (s32) actor->x_position;
+            D_800DBEF4[slot].unk12 = (s32) (actor->y_position + (s16) actor->unk90);
+            D_800DBEF4[slot].unk14 = (s32) actor->z_position;
         }
     }
 }
