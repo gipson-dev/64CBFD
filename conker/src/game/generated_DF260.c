@@ -55,6 +55,29 @@ s32 func_150B1F90() {
     return 0;
 }
 
-s32 func_150B2340() {
-    return 0;
+/* Apply script-selected actor scalars and status flags. */
+void func_150B2340(s32 actorAddress) {
+    s32 enabled;
+    s32 blocker;
+    enabled = func_1509BE40(0, func_1509BE40(0, 0x2007, 0xB7) | 0x2000, 0xBC);
+    blocker = func_1509BE40(0, 0x2000, 0xBB);
+    if (func_1509BE40(0, 0x5043, 0x1A) != 0) {
+        if (func_1509BE40(0, 0x5045, 0x1A) != 0) {
+            ((struct108 *)actorAddress)->unk84 |= 0x4000;
+        }
+        ((struct108 *)actorAddress)->unk84 |= 0x400000;
+        ((struct108 *)actorAddress)->unk190 = 0.0f;
+    } else if (func_1509BE40(1, 0x4030, 6, 0x2000) != 0) {
+        ((struct108 *)actorAddress)->unk190 = 235.0f;
+    } else {
+        ((struct108 *)actorAddress)->unk348 = 114.0f;
+        ((struct108 *)actorAddress)->unk34C = 114.0f;
+        ((struct108 *)actorAddress)->unk374 = 384.0f;
+        ((struct108 *)actorAddress)->unk190 = 60.0f;
+    }
+    if (enabled != 0 && blocker != -1) {
+        ((struct108 *)actorAddress)->unk5F0 |= 0x100;
+    } else {
+        ((struct108 *)actorAddress)->unk5F0 &= ~0x100;
+    }
 }
