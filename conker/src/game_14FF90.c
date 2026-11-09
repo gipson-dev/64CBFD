@@ -849,6 +849,7 @@ __attribute__((__may_alias__))
 #endif
 { u32 words[3]; } CameraPositionBits14FF90;
 extern void func_1512A360(u8 *);
+extern void func_1512E4B0(struct108 *);
 /* Dispatch camera transitions in the original flag-priority order. */
 s32 func_15128540(s32 address) {
     if (func_151253CC((struct108 *)address)) return 1;
@@ -861,7 +862,7 @@ s32 func_15128540(s32 address) {
         func_151284C4((struct108 *)address);
         return 1;
     } else if (*(u32 *)((u8 *)address + 0x2C) & 0x100000) {
-        func_1512E4B0(address);
+        func_1512E4B0((struct108 *)address);
         func_151236D0(address);
         func_151284C4((struct108 *)address);
         return 1;
