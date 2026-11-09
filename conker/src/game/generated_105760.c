@@ -63,8 +63,26 @@ s32 func_150D88AC(u8 *arg0) {
     return 1;
 }
 
-s32 func_150D88E0() {
-    return 0;
+void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
+/* Transform the attachment offset selected by bytes 3..6. */
+/* Retail leaves joint/x/z uninitialized for other selector bytes. */
+s32 func_150D88E0(f32 *position, u8 *owner, u8 selector) {
+    s32 joint;
+    f32 x;
+    f32 y;
+    f32 z;
+    switch (selector) {
+        case 3: joint = 18; x = -7.0f; z = 30.0f; break;
+        case 4: joint = 21; x = -4.0f; z = 35.0f; break;
+        case 5: joint = 15; x = 5.0f; z = 20.0f; break;
+        case 6: joint = 24; x = 5.0f; z = 31.0f; break;
+    }
+    y = 0.0f;
+    func_150A7960((f32 *)(*(u8 **)(owner + 0x1D4) + joint * 64), x, y, z, &x, &y, &z);
+    position[0] = x;
+    position[1] = y;
+    position[2] = z;
+    return 1;
 }
 
 s32 func_150D8A20(s32 arg0, s32 arg1) {
