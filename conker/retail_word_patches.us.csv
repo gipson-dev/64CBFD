@@ -27864,3 +27864,46 @@ generated_139FC0,func_1510D0EC,0x250,0x020C1021,0x02181021,-,-,Normalize resolve
 generated_139FC0,func_1510D0EC,0x254,0x51600007,0x51E00007,-,-,Normalize resolver temporary roles and private spill schedule,,,false
 generated_139FC0,func_1510D0EC,0x268,0x246E0001,0x24790001,-,-,Normalize resolver temporary roles and private spill schedule,,,false
 generated_139FC0,func_1510D0EC,0x26C,0xA04E0000,0xA0590000,-,-,Normalize resolver temporary roles and private spill schedule,,,false
+generated_113D60,func_150E75A0,0x028,0x241900FF,0x24190004,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x02C,0xA3AE0084,0xA3AE0028,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x034,0x240E00FF,0x241800FF,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x038,0x24180004,0x00002825,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x044,0x240F00FF,0x240F00E6,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x048,0x00002825,0xAC880004,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x04C,0xAC880004,0x93AB0097,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x050,0x93AB0097,0x93A90028,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x058,0x93A90084,0x356C0040,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x05C,0x356C0040,0x87AE00A6,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x060,0xA7AC0040,0xA3A9003C,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x064,0x87AB00A2,0x87AD00A2,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x068,0x93AC009B,0x93A9009B,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x06C,0x87AD00A6,0xA7AC0040,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x070,0xA7AA003E,0x240B00FF,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x074,0x240A00FF,0x240C00FF,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x078,0xA3A9003C,0xA7AA003E,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x07C,0x240800E6,0x240800BE,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x080,0x240900BE,0x240A00FF,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x084,0xA3AA004B,0xA3AB004C,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x088,0xA7AB0042,0xA3AC004D,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x08C,0xA3AC004A,0xA7AE0044,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x090,0x93AA009F,0x93AE009F,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x09C,0xA3AE004C,0xA3B90046,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0A0,0xA3B9004D,0xA3B80047,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0A4,0xA3B80046,0xA3AF0048,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0A8,0xA3AF0047,0xA3A80049,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0AC,0xA3A80048,0xA3AA004B,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0B0,0xA3A90049,0xA7AD0042,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0B4,0xA7AD0044,0xA3A9004A,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0BC,0x240E0001,0x24190001,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0C0,0x2419000A,0x2418000A,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0C4,0x24180007,0x240F0007,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0C8,0x240F003C,0x2408003C,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0CC,0x24080080,0x24090080,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0D0,0x24090020,0x240A0020,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0E0,0xAFAE0050,0xAFB90050,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0F0,0xA3B9006D,0xA3B8006D,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0F4,0xAFB8005C,0xAFAF005C,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0F8,0xAFAF0060,0xAFA80060,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x0FC,0xAFA80064,0xAFA90064,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x100,0xAFA90068,0xAFAA0068,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false
+generated_113D60,func_150E75A0,0x110,0xA3AA004F,0xA3AE004F,-,-,Normalize positioned descriptor private tag slot and independent register/store scheduling,,,false

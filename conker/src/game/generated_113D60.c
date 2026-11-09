@@ -273,8 +273,8 @@ typedef struct WorldEmitterDescriptor113D60 {
 extern WorldPosition113D60 D_800A1290[8];
 void func_151D3FF4(WorldPosition113D60 *position, u8 slot, s32 context);
 void func_1514FCE8(WorldEmitterDescriptor113D60 *descriptor, u8 slot, s32 context);
-s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
-                 s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
+s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, u8 duration,
+                 u8 opacity, s16 size0, s16 size1, s32 *pair, s32 mode,
                  u8 slot, s32 context);
 s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
                  s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context);
@@ -440,14 +440,17 @@ void func_150E7290(u8 index, u8 slot, s32 context) {
     }
 }
 
-s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, s32 duration,
-                 s32 opacity, s32 size0, s32 size1, s32 *pair, s32 mode,
+s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, u8 duration,
+                 u8 opacity, s16 size0, s16 size1, s32 *pair, s32 mode,
                  u8 slot, s32 context) {
+    u8 tag[1];
     EmitterDescriptor113D60 descriptor;
-    u8 tag = D_80088A64;
+
+    /* Retain the sampled tag across the two-word position copy. */
+    tag[0] = D_80088A64;
 
     descriptor.position = *(EmitterPosition113D60 *)position;
-    descriptor.tag = tag;
+    descriptor.tag = tag[0];
     descriptor.id = id;
     descriptor.flags = flags | 0x40;
     descriptor.size1 = size1;
