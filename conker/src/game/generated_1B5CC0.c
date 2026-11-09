@@ -189,8 +189,40 @@ s32 func_15188D00() {
     return 0;
 }
 
-s32 func_15188E48() {
-    return 0;
+/* Shift cached matrix history, then capture the owner's newest matrices. */
+void func_15188E48(DescriptorDraw151897A4 *record) {
+    s32 snapshots = record->stride;
+    s32 matrices = func_1502DB20(record->descriptor[4]);
+    u32 span = matrices * snapshots;
+    u32 page = D_800BE9C0;
+    u32 currentPage = page * span;
+    u32 otherPage = (page ^ 1) * span;
+    s32 previous = 0;
+    s32 index = 1;
+    Mtx *source;
+    Mtx *destination;
+
+    if (snapshots > 0) {
+        do {
+            if (snapshots == index) {
+                source = *(Mtx **)(record->descriptor + 0x1D4);
+                if (source == NULL) {
+                    record->count = 0;
+                    return;
+                }
+                destination = record->records + (previous * matrices + currentPage);
+            } else {
+                source = record->records + (index * matrices + otherPage);
+                destination = record->records + (previous * matrices + currentPage);
+            }
+            bcopy(source, destination, (u32)matrices << 6);
+            previous = index;
+            index++;
+        } while (previous != snapshots);
+    }
+    if (record->count != record->stride) {
+        record->count++;
+    }
 }
 
 s32 func_15188F84() {

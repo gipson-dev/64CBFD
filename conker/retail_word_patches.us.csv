@@ -27699,3 +27699,31 @@ generated_F2820,func_150C5568,0xf4,0x46126032,0x460C9032,-,-,Normalize type46 sn
 generated_11C2B0,func_150EF910,0x94,0x54C40007,0x54860007,-,-,Normalize commutative endpoint pointer comparison operand order,,,false
 generated_1B5CC0,func_15188810,0xb0,0xAFA80024,0xAFA80020,-,-,Normalize closed private allocation-size spill home,,,false
 generated_1B5CC0,func_15188810,0x114,0x8FA50024,0x8FA50020,-,-,Normalize closed private allocation-size spill home,,,false
+generated_1B5CC0,func_15188E48,0x38,0x3C050000,0x3C030000,R_MIPS_HI16:D_800BE9C0,R_MIPS_HI16:D_800BE9C0,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x3c,0x90A50000,0x90630000,R_MIPS_LO16:D_800BE9C0,R_MIPS_LO16:D_800BE9C0,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x44,0x00001825,0x00003825,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x48,0x38AF0001,0x386F0001,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x5c,0x00A40019,0x00640019,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x88,0x8F0401D4,0x8F0501D4,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x8c,0x14800003,0x14A00003,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x9c,0x00700019,0x00F00019,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xa0,0x8E590008,0x00A02025,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xa8,0x00004012,0x8E420008,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xac,0x01144821,0x0000C812,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xb0,0x00095180,0x03341821,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xb8,0x032A2821,0x00036180,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xc8,0x00005812,0x00004012,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xcc,0x01756021,0x01154821,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xd0,0x000C6980,0x00095180,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xd4,0x00700019,0x00F00019,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xd8,0x004D2021,0x004A2021,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xdc,0x00007012,0x00005812,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xe0,0x01D47821,0x01741821,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xe4,0x000FC180,0x00000000,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xe8,0x00582821,0x00036180,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xf0,0x00000000,0x004C2821,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0xf4,0x02201825,0x02203825,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x104,0x92480001,0x924D0001,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x108,0x24490001,0x244E0001,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x10c,0x51020003,0x51A20003,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1B5CC0,func_15188E48,0x114,0xA2490002,0xA24E0002,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
