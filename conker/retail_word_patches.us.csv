@@ -27753,3 +27753,31 @@ game_43620,func_15016170,0x108,0x03050019,0x01E50019,-,-,Normalize closed audio-
 game_43620,func_15016170,0x110,0x0000C812,0x0000C012,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
 game_43620,func_15016170,0x114,0x001943C3,0x0018CBC3,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
 game_43620,func_15016170,0x11c,0xA6080012,0xA6190012,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+generated_10B7D0,func_150DE32C,0x020,0x27B50050,0x27B50048,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x03C,0x27A20058,0x3C0F0000,-,R_MIPS_HI16:D_80088950,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x040,0x3C0E0000,0x25EF0000,R_MIPS_HI16:D_80088950,R_MIPS_LO16:D_80088950,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x044,0x25CE0000,0x8DE10000,R_MIPS_LO16:D_80088950,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x048,0x8DC10000,0x8DE80004,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x04C,0x3C080000,0x27AE0050,R_MIPS_HI16:D_80088958,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x050,0x25080000,0x3C090000,R_MIPS_LO16:D_80088958,R_MIPS_HI16:D_80088958,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x054,0xAC410000,0x25290000,-,R_MIPS_LO16:D_80088958,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x058,0x8DD90004,0xADC10000,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x05C,0x3C170000,0xADC80004,R_MIPS_HI16:D_800D3098,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x060,0x26F70000,0x8D210000,R_MIPS_LO16:D_800D3098,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x064,0xAC590004,0x3C170000,-,R_MIPS_HI16:D_800D3098,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x068,0x8D010000,0x26F70000,-,R_MIPS_LO16:D_800D3098,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x06C,0x00008025,0xAEA10000,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x070,0x00408825,0x8D2C0004,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x074,0xAEA10000,0x00008025,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x078,0x8D0B0004,0x27B10050,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x084,0xAEAB0004,0xAEAC0004,-,-,Normalize private snapshot layout/copy setup,,,false
+generated_10B7D0,func_150DE32C,0x088,0x922C0000,0x922D0000,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x094,0x01960019,0x01B60019,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0A0,0x00006812,0x0000C812,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0A4,0x01B82021,0x03382021,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0B4,0x02B07821,0x02B07021,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0B8,0x91E40000,0x91C40000,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0D0,0x904E0073,0x904F0073,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0D4,0x01DEC824,0x01FE4024,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0D8,0x372A0003,0x350B0003,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE32C,0x0E0,0xA04A0073,0xA04B0073,-,-,Normalize closed temporary-register roles,,,false

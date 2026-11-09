@@ -33,9 +33,55 @@ s32 func_15140410();
 void func_150DE320(s32 arg0) {
 }
 
-s32 func_150DE32C() {
-    return 0;
+/* Two words preserve the complete eight-byte tables before any helper call. */
+typedef struct { u32 words[2]; } RouteBytes10B7D0;
+extern RouteBytes10B7D0 D_80088950,D_80088958;
+typedef struct {
+    s16 origin0;
+    s16 origin1;
+    s16 origin2;
+    s16 radius;
+    s16 heightOffset;
+    u8 padA[6];
+    f32 parameter10;
+    u8 disabled;
+    u8 flags;
+    u8 pad16;
+    u8 field17;
+    s32 field18;
+    s32 field1C;
+    u32 field20;
+    f32 coefficient0;
+    f32 scale;
+    f32 coefficient1;
+    f32 coefficient2;
+} GeneratedCDE80Record;
+
+extern GeneratedCDE80Record *D_800D3098;
+s32 func_150A32B4(s32, s32, s32, s32);
+u8 *func_151149AC(u8);
+void func_150A2864(u32, s32);
+/* Query eight snapshotted record IDs and update their actor/resource status. */
+void func_150DE32C(s32 x, s32 y, s32 z) {
+    RouteBytes10B7D0 indices;
+    RouteBytes10B7D0 tags;
+    s32 i;
+    u8 *entry;
+    u8 *object;
+    indices = D_80088950;
+    tags = D_80088958;
+    for (i = 0, entry = (u8 *)&indices; i < 8; i++, entry++) {
+        if (func_150A32B4((s32)&D_800D3098[*entry], x, y, z)) {
+            if (((u8 *)&tags)[i]) {
+                object = func_151149AC(((u8 *)&tags)[i]);
+                object[0x73] = (object[0x73] & ~3) | 3;
+            } else {
+                func_150A2864(*entry, 1);
+            }
+        }
+    }
 }
+
 
 s32 func_150DE458() {
     return 0;
