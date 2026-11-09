@@ -27781,3 +27781,10 @@ generated_10B7D0,func_150DE32C,0x0D0,0x904E0073,0x904F0073,-,-,Normalize closed 
 generated_10B7D0,func_150DE32C,0x0D4,0x01DEC824,0x01FE4024,-,-,Normalize closed temporary-register roles,,,false
 generated_10B7D0,func_150DE32C,0x0D8,0x372A0003,0x350B0003,-,-,Normalize closed temporary-register roles,,,false
 generated_10B7D0,func_150DE32C,0x0E0,0xA04A0073,0xA04B0073,-,-,Normalize closed temporary-register roles,,,false
+generated_10B7D0,func_150DE458,0x1F4,0x3C0E0000,0x3C0D0000,R_MIPS_HI16:D_80090204,R_MIPS_HI16:D_80090204,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x1F8,0x8E6C007C,0x8E6B007C,-,-,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x1FC,0x25CE0000,0x25AD0000,R_MIPS_LO16:D_80090204,R_MIPS_LO16:D_80090204,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x204,0x000C68C0,0x000B60C0,-,-,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x208,0x01AE8821,0x018D8821,-,-,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x22C,0x8FAF0054,0x8FAE0054,-,-,Normalize closed resource-loop temporary roles,,,false
+generated_10B7D0,func_150DE458,0x238,0x01E23021,0x01C23021,-,-,Normalize closed resource-loop temporary roles,,,false

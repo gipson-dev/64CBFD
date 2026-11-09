@@ -83,9 +83,80 @@ void func_150DE32C(s32 x, s32 y, s32 z) {
 }
 
 
-s32 func_150DE458() {
-    return 0;
+
+extern s32 D_800BE9E4;
+extern s32 D_80090204[];
+u32 func_1510D0EC(s32, s32 *, s32, s32);
+void func_1510D874(s32, s32, s32, s32, s32);
+#ifdef __GNUC__
+#define ACTOR_ANGLE_ALIAS __attribute__((__may_alias__))
+#else
+#define ACTOR_ANGLE_ALIAS
+#endif
+typedef struct ACTOR_ANGLE_ALIAS {
+    f32 angleX,angleY,angleZ;
+    u8 reserved0C[4];
+    s16 positionX,positionY,positionZ;
+    u8 reserved16[0x26];
+    s32 verticalAcceleration;
+    u8 reserved40[0x14];
+    u16 type;
+    u8 reserved56[4];
+    s16 velocityX,velocityY,velocityZ;
+    f32 angularVelocityX,angularVelocityY,angularVelocityZ;
+    u8 reserved6C[2];
+    u8 remove;
+    u8 reserved6F[4];
+    u8 flags;
+    u8 reserved74[8];
+    s32 variant;
+    u8 reserved80[10];
+    u8 lifetime;
+    u8 reserved8B[0x15];
+} ActorAngleState10B7D0;
+
+/* Integrate actor spin, position and lifetime; queue its resource pair. */
+void func_150DE458(void *object) {
+    ActorAngleState10B7D0 *actor = object;
+    const f32 upper = 360.0f;
+    const f32 lower = 0.0f;
+    f32 delta;
+    s32 extent;
+    s32 first;
+    s32 last;
+    s32 remaining;
+    s32 *resource;
+    u32 address;
+    if ((actor->flags & 3) == 3) {
+        delta = D_800BE9E4;
+        actor->angleX += actor->angularVelocityX * delta;
+        if (actor->angleX < lower) actor->angleX += upper;
+        else if (actor->angleX >= upper) actor->angleX -= upper;
+        actor->angleY += actor->angularVelocityY * delta;
+        if (actor->angleY < lower) actor->angleY += upper;
+        else if (actor->angleY >= upper) actor->angleY -= upper;
+        actor->angleZ += actor->angularVelocityZ * delta;
+        if (actor->angleZ < lower) actor->angleZ += upper;
+        else if (actor->angleZ >= upper) actor->angleZ -= upper;
+        remaining = actor->lifetime;
+        actor->velocityY -= (u32)actor->verticalAcceleration * (u32)D_800BE9E4;
+        actor->positionX += (u32)actor->velocityX * (u32)D_800BE9E4;
+        actor->positionY += (u32)actor->velocityY * (u32)D_800BE9E4;
+        actor->positionZ += (u32)actor->velocityZ * (u32)D_800BE9E4;
+        remaining = (u32)remaining - (u32)D_800BE9E4;
+        if (remaining > 0) actor->lifetime = remaining;
+        else actor->remove = 1;
+    }
+    if ((actor->type & ~0x8000) == 12) {
+        resource = &D_80090204[actor->variant * 2];
+        first = 4;
+        for (last = 5; last != 9; last += 2, resource++, first += 2) {
+            address = func_1510D0EC(*resource, &extent, 3, 0);
+            func_1510D874((s32)actor, address, address + (u32)extent - 0x200u, first, last);
+        }
+    }
 }
+
 
 typedef struct {
     f32 x,y,z;
