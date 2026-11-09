@@ -549,8 +549,39 @@ s32 func_150F1D10() {
     return 0;
 }
 
-s32 func_150F20F0() {
-    return 0;
+extern struct127 D_800CC2D0[26];
+extern u8 D_800D98F0;
+extern s32 D_800BE9E4;
+extern f32 D_800A191C;
+void func_100114D0(s32,s32,s32,s32,s32,s32,s32*,s32*,s32*);
+void func_10010F30(s32,u16,u8,s16,u8);
+/* Preserve the quartic position threshold and the shared byte cooldown. */
+void func_150F20F0(s32 index) {
+    f32 x;
+    f32 z;
+    s32 output0;
+    s32 output1;
+    s32 output2;
+    s32 soundId;
+    x = D_800CC2D0[index].x_position;
+    z = D_800CC2D0[index].z_position;
+    x *= x;
+    z *= z;
+    x = x*x + z*z;
+    if (D_800D98F0 != 0) {
+        if (D_800BE9E4 < D_800D98F0) {
+            D_800D98F0 = (u8)((u32)D_800D98F0 - (u32)D_800BE9E4);
+        } else {
+            D_800D98F0 = 0;
+        }
+    } else if (x > D_800A191C) {
+        func_100114D0(0,(s32)D_800CC2D0[index].y_position,0,32767,20000,19000,&output0,&output1,&output2);
+        output0 = (s32)((u32)output0 + 128);
+        D_800D98F0 = (func_150ADA20() & 127) + 128;
+        /* Read the retained output only after the final random draw. */
+        soundId = (u32)func_150ADA20()%3 + 108;
+        func_10010F30(soundId,24000,(u8)output0,0,0);
+    }
 }
 
 /* Transform a random horizontal offset through the actor's matrix and submit it. */
