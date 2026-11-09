@@ -1022,41 +1022,33 @@ s32 func_150511E8() {
 s32 func_15051558() {
     return 0;
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-f32 func_1505210C(struct127 *arg0, f32 arg1, f32 arg2, f32 *arg3, f32 arg4) {
-    f32 sin40;
-    f32 cos40;
-    f32 rad40 = arg0->unk40 * D_80099330;
-    f32 negArg2 = -arg2;
-    f32 negArg4 = -arg4;
-    f32 result1;
-    f32 result2;
+/* Rotate the input pair by actor heading, then wrap and clamp both angles. */
+f32 func_1505210C(struct127 *actor, f32 x, f32 z, f32 *secondary, f32 limit) {
+    f32 cosine;
+    f32 sine;
+    f32 radians = actor->unk40 * D_80099330;
+    f32 primary;
+    f32 second;
+    f32 negativeLimit = -limit;
 
-    sin40 = func_150AD780(rad40);
-    cos40 = func_150AD78C(rad40);
-    result1 = func_150484A0((arg1 * sin40) + (negArg2 * cos40), 1.0f) * D_80099334;
-    result2 = func_150484A0((-arg1 * cos40) + (negArg2 * sin40), 1.0f) * D_80099338;
+    z = -z;
+    cosine = func_150AD780(radians);
+    sine = func_150AD78C(radians);
+    primary = (x * cosine) + (z * sine);
+    z = (-x * sine) + (z * cosine);
+    x = func_150484A0(primary, 1.0f) * D_80099334;
+    second = func_150484A0(z, 1.0f) * D_80099338;
 
-    if (result1 >= 180.0f) {
-        result1 -= 360.0f;
-    }
-    if (result2 >= 180.0f) {
-        result2 -= 360.0f;
-    }
-    if (arg4 < result1) {
-        result1 = arg4;
-    }
-    if (result1 < negArg4) {
-        result1 = negArg4;
-    }
-    if (arg4 < result2) {
-        result2 = arg4;
-    }
-    if (result2 < negArg4) {
-        result2 = negArg4;
-    }
-    *arg3 = result2;
-    return result1;
+    z = second;
+    if (x >= 180.0f) x -= 360.0f;
+    if (second >= 180.0f) z = second - 360.0f;
+
+    if (limit < x) x = limit;
+    if (x < negativeLimit) x = negativeLimit;
+    if (limit < z) z = limit;
+    if (z < negativeLimit) z = negativeLimit;
+    *secondary = z;
+    return x;
 }
 /* Retail handle attachment/release physics. The former return-only placeholder
  * left Conker suspended after the Training lever opened the door. */
