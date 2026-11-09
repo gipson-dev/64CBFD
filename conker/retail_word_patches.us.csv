@@ -27734,3 +27734,22 @@ generated_1E2180,func_151B4EA4,0x10,0xAFA40070,0xC4200000,-,R_MIPS_LO16:D_800AA3
 generated_1E2180,func_151B4EA4,0x14,0xAFA7007C,0xAFBF0044,-,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
 generated_1E2180,func_151B4EA4,0x18,0x3C010000,0xAFA40070,R_MIPS_HI16:D_800AA3D4,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
 generated_1E2180,func_151B4EA4,0x1c,0xC4200000,0xAFA7007C,R_MIPS_LO16:D_800AA3D4,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+game_43620,func_15016170,0x90,0x86090096,0x86080096,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x94,0x24197FFF,0x24097FFF,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x98,0xA619000E,0x24197FFF,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x9c,0x24087FFF,0xA609000E,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xb0,0xAE080088,0xAE190088,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xc4,0xA6090094,0xA6080094,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xd0,0x3C0E0000,0x000A7023,R_MIPS_HI16:D_8002BC10,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xd4,0x25CE00FE,0x3C0F0000,R_MIPS_LO16:D_8002BC10,R_MIPS_HI16:D_8002BC10,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xd8,0x00AB0019,0x01650019,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xdc,0x01CA7823,0x01EE7821,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xe0,0x24090001,0x24080001,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xe4,0x240A7FFC,0x24097FFC,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0xfc,0x85F80000,0x85EF00FE,-,R_MIPS_LO16:D_8002BC10,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x100,0xA6090024,0xA6080024,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x104,0xA60A0014,0xA6090014,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x108,0x03050019,0x01E50019,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x110,0x0000C812,0x0000C012,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x114,0x001943C3,0x0018CBC3,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false
+game_43620,func_15016170,0x11c,0xA6080012,0xA6190012,-,-,Normalize closed audio-state temporary allocation and reverse pan-curve address lowering,,,false

@@ -2,6 +2,7 @@
 
 #include "functions.h"
 #include "variables.h"
+void func_15016170(s32);
 s32 func_15043CA4(struct105 *, u8 *, s32);
 
 extern s32 func_151F2CDC_retail(void);
