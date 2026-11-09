@@ -180,14 +180,14 @@ s32 func_1510CE60(void *data, s32 unresolvedOnly, s32 retain, s32 priority, s32 
     return failed == 0;
 }
 
+/* Resolve a cached resource or load/decode it, then publish extent and usage. */
 u32 func_1510D0EC(s32 id, s32 *extent, s32 priority, s32 retain) {
     u32 size;
     u32 source;
-    u32 skip;
-    u32 amount;
-    u32 address;
-    u8 *compressed;
     void *expanded;
+    u32 skip;
+    u8 *compressed;
+    u32 address;
 
     if (id < D_800D9F58) {
         D_800D9F58 = id;
@@ -195,7 +195,7 @@ u32 func_1510D0EC(s32 id, s32 *extent, s32 priority, s32 retain) {
     if (id > D_800D9F5C) {
         D_800D9F5C = id;
     }
-    if (id < 0 || id >= 0x1E52) {
+    if (id >= 0x1E52 || id < 0) {
         return 0x80000000;
     }
     size = D_80091D20[id];
@@ -207,18 +207,21 @@ u32 func_1510D0EC(s32 id, s32 *extent, s32 priority, s32 retain) {
             priority = 0x3E;
         }
         source = func_1510D374(id);
-        skip = source & 1;
-        source -= skip;
-        amount = size + skip;
-        if (amount & 1) {
-            amount++;
+        if (source & 1) {
+            source--;
+            skip = 1;
+        } else {
+            skip = 0;
         }
-        amount = (amount + 15) & ~0xF;
-        compressed = func_10003C6C(amount, 1, 2, 1, 2);
+        size += skip;
+        if (size & 1) {
+            size++;
+        }
+        compressed = func_10003C6C((size + 15) & ~0xF, 1, 2, 1, 2);
         if (compressed == NULL) {
             return 0x80000000;
         }
-        func_10004514(source, compressed, amount, 1);
+        func_10004514(source, compressed, (size + 15) & ~0xF, 1);
         expanded = func_10003C6C(D_800B87A0[id], 1, 1, 0, 2);
         if (expanded == NULL) {
             func_10004074(compressed);
