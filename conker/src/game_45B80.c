@@ -14,7 +14,7 @@ extern u8 D_800DCD27;
 void func_1510D864(void);
 s32 func_1509BA04(s32);
 s32 func_1509BBA0(s32);
-s32 func_1501E400(s32);
+void func_1501E400(s32);
 void func_15034F20(void);
 void func_1510B690(void);
 void func_1510F800(s32);

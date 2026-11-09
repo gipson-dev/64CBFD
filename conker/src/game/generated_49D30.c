@@ -635,7 +635,7 @@ s32 func_1501E1B4() {
     return 0;
 }
 
-s32 func_1501E400();
+void func_1501E400(s32);
 
 /* Catch up an active sequence, rechecking slot zero after each full pass. */
 void func_1501E2F8(s32 slot) {
@@ -658,8 +658,29 @@ void func_1501E2F8(s32 slot) {
     }
 }
 
-s32 func_1501E400() {
-    return 0;
+extern u8 D_800BEAC0;
+extern s32 D_800BEA08;
+s32 func_151F2CDC(void);
+void func_15080228(void);
+/* Preserve the previous sequence time, advance it and clamp at the limit. */
+void func_1501E400(s32 slot) {
+    if (D_800C3A58 != 0) D_800C3A58--;
+    D_800C35B8[slot] = D_800C35B0[slot];
+    if (D_800C35EA[slot] == 1) {
+        func_1501E1B4(slot);
+        if (slot != 0 || D_800BEAC0 == 0) {
+            D_800C35B0[slot] = (u32)D_800C35B0[slot] + (u32)D_800BEA08;
+        }
+        if (D_800C35C0[slot] == 0 &&
+            (u16)D_800C3C8E == D_800C35B8[slot] &&
+            (u16)D_800C3C8E != D_800C35B0[slot]) {
+            D_800C35B8[slot] = -1;
+        }
+        if (func_151F2CDC() == 1) func_15080228();
+        if (D_800C35B0[slot] >= D_800C3640[slot]) {
+            D_800C35B0[slot] = D_800C3640[slot];
+        }
+    }
 }
 
 s32 func_1501E540() {
