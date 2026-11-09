@@ -50,8 +50,34 @@ void func_150F03E8();
 
 void func_150F02A0(u8 *arg0);
 
-s32 func_150EEE00() {
-    return 0;
+extern u8 D_800A163C[4];
+extern u8 D_800A1638[4];
+extern f32 D_800A15F0[12];
+s32 func_150EEF80(u8 *, u8, u8, s32);
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+s32 func_150F0A24();
+/* Submit an effect at the selected attachment when its owner mask permits it. */
+/* Retail indexes the four-entry tables without a bounds check. */
+void func_150EEE00(u8 *owner, u8 selector) {
+    f32 position[3];
+    Header header;
+    Header2 coordinates;
+    if (!(*(u32 *)(owner + 0x94) & D_800A163C[selector])) {
+        func_150EEF80(owner, selector, 0xFF, 1);
+        if (*(u8 **)(owner + 0x1D4) != NULL) {
+            func_15143134((f32 *)((u8 *)D_800A15F0 + selector * 12), position,
+                *(u8 **)(owner + 0x1D4) + (D_800A1638[selector] << 6));
+            header.unk0 = 3;
+            header.unk1 = -1;
+            header.unk2 = (u32)func_150ADA20() % 3 + 4;
+            header.unk4 = 0;
+            coordinates.unk0 = position[0];
+            coordinates.unk4 = position[1];
+            coordinates.unk8 = position[2];
+            func_151602C0(&header, &coordinates, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0, 0, 0xFF, 1);
+            func_150F0A24(position);
+        }
+    }
 }
 
 void func_150EEF40(u8 *arg0, u8 arg1) {
@@ -67,7 +93,8 @@ void func_150EEF40(u8 *arg0, u8 arg1) {
     func_151403A8(&rec, 0x43);
 }
 
-s32 func_150EEF80() {
+/* Original four-argument ABI; this body is still an unfinished placeholder. */
+s32 func_150EEF80(u8 *owner, u8 selector, u8 value, s32 flags) {
     return 0;
 }
 
