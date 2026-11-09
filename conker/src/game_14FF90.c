@@ -7,6 +7,13 @@
 extern void func_15048F90();
 #include "variables.h"
 
+typedef struct {
+    u8 opaque0[0x114];
+    s16 height;
+} ActorPositionMetadata14FF90;
+void func_15143134(f32 *, f32 *, u8 *);
+
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
@@ -21,7 +28,7 @@ s32 func_15125924(s32 arg0);
 s32 func_15125A6C(s32 arg0);
 s32 func_15125C40(s32 arg0);
 s32 func_15125DB4(s32 arg0);
-s32 func_1512623C();
+void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
 s32 func_15126378();
 s32 func_15127520();
 s32 func_151277B0();
@@ -688,9 +695,44 @@ void func_15126138(struct108 *arg0) {
     }
     func_15124C38(arg0, 0);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_1512623C.s. */
-s32 func_1512623C() {
-    return 0;
+/* Query a selected matrix point, falling back to the actor's raised position. */
+void func_1512623C(struct127 *actor, ActorPositionMetadata14FF90 *metadata, s32 category,
+                  f32 *x, f32 *y, f32 *z, s32 alternate) {
+    s32 fallback = 1;
+    f32 input[3];
+    f32 output[3];
+    s32 matrixIndex;
+
+    if (actor->unk1D4 != NULL) {
+        fallback = 0;
+        if (alternate != 0) {
+            matrixIndex = 3;
+            input[0] = 0.0f;
+            input[2] = 0.0f;
+            input[1] = 20.0f;
+        } else if (category == 0x1B) {
+            matrixIndex = 4;
+            input[1] = 116.0f;
+            input[0] = 0.0f;
+            input[2] = 130.0f;
+        } else {
+            fallback = 1;
+        }
+        if (!fallback) {
+            s32 offset = matrixIndex * 0x40;
+            u8 *matrix = (u8 *)actor->unk1D4;
+            matrix += offset;
+            func_15143134(input, output, matrix);
+            *x = output[0];
+            *y = output[1];
+            *z = output[2];
+        }
+    }
+    if (fallback) {
+        *x = actor->x_position;
+        *y = actor->y_position + (f32)metadata->height * 0.75f;
+        *z = actor->z_position;
+    }
 }
 // ooh mama
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15126378.s. */
