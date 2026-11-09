@@ -27727,3 +27727,10 @@ generated_1B5CC0,func_15188E48,0x104,0x92480001,0x924D0001,-,-,Normalize closed 
 generated_1B5CC0,func_15188E48,0x108,0x24490001,0x244E0001,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
 generated_1B5CC0,func_15188E48,0x10c,0x51020003,0x51A20003,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
 generated_1B5CC0,func_15188E48,0x114,0xA2490002,0xA24E0002,-,-,Normalize closed cache-update temporary allocation and shared destination calculation,,,false
+generated_1E2180,func_151B4EA4,0x4,0x44856000,0x3C010000,-,R_MIPS_HI16:D_800AA3D4,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0x8,0x44867000,0x44856000,-,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0xc,0xAFBF0044,0x44867000,-,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0x10,0xAFA40070,0xC4200000,-,R_MIPS_LO16:D_800AA3D4,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0x14,0xAFA7007C,0xAFBF0044,-,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0x18,0x3C010000,0xAFA40070,R_MIPS_HI16:D_800AA3D4,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
+generated_1E2180,func_151B4EA4,0x1c,0xC4200000,0xAFA7007C,R_MIPS_LO16:D_800AA3D4,-,Normalize closed direction-effect scale-load and private prologue schedule,,,false
