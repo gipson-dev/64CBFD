@@ -676,43 +676,43 @@ void func_1513E084(struct210 *arg0, struct212 *arg1, u8 arg2) {
 void func_1513E134(void) {
 }
 
-// NON-MATCHING: register scheduling only
-void func_1513E13C(struct210 *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, u8 arg6) {
-    f32 sp48;
-    f32 sp30;
-    f32 sp1C;
+/* Build the four rotated X/Z corners at the truncated center height. */
+void func_1513E13C(struct210 *record, f32 x, f32 y, f32 z, f32 halfWidth, f32 halfDepth, u8 angle) {
+    volatile f32 sine;
+    f32 difference[1];
+    f32 zPlus;
 
-    f32 temp_f0;
-    f32 temp_f12;
-    f32 temp_f14;
-    f32 temp_f16;
-    f32 temp_f18;
-    f32 temp_f2;
-    s32 temp_f10;
+    f32 cosine;
+    f32 depthSin;
+    f32 widthCos;
+    f32 depthCos;
+    f32 xPlus;
+    f32 widthSin;
+    s32 yInt;
 
-    sp48 = func_151423D8((arg6 - 0x40));
-    temp_f0 = func_151423D8(arg6);
-    temp_f12 = arg5 * sp48;
-    temp_f14 = arg4 * temp_f0;
-    temp_f18 = arg1 + temp_f14;
-    arg0->unk40 = temp_f18 - temp_f12;
-    temp_f10 = arg2;
-    arg0->unk42 = temp_f10;
-    temp_f16 = arg5 * temp_f0;
-    temp_f2 = arg4 * sp48;
-    sp1C = arg3 + temp_f16;
-    sp30 = arg1 - temp_f14;
-    arg0->unk44 = sp1C + temp_f2;
-    arg0->unk52 = temp_f10;
-    arg0->unk50 = sp30 - temp_f12;
-    arg0->unk54 = sp1C - temp_f2;
-    arg0->unk62 = temp_f10;
-    arg0->unk60 = sp30 + temp_f12;
-    arg0->unk72 = temp_f10;
-    arg0->unk70 = temp_f18 + temp_f12;
-    sp30 = arg3 - temp_f16;
-    arg0->unk64 = sp30 - temp_f2;
-    arg0->unk74 = sp30 + temp_f2;
+    sine = func_151423D8((u8)(angle - 0x40));
+    cosine = func_151423D8(angle);
+    depthSin = halfDepth * sine;
+    widthCos = halfWidth * cosine;
+    xPlus = x + widthCos;
+    record->unk40 = (s32)(xPlus - depthSin);
+    yInt = (s32)y;
+    record->unk42 = yInt;
+    depthCos = halfDepth * cosine;
+    widthSin = halfWidth * sine;
+    zPlus = z + depthCos;
+    difference[0] = x - widthCos;
+    record->unk44 = (s32)(zPlus + widthSin);
+    record->unk52 = yInt;
+    record->unk50 = (s32)(difference[0] - depthSin);
+    record->unk54 = (s32)(zPlus - widthSin);
+    record->unk62 = yInt;
+    record->unk60 = (s32)(difference[0] + depthSin);
+    record->unk72 = yInt;
+    record->unk70 = (s32)(xPlus + depthSin);
+    difference[0] = z - depthCos;
+    record->unk64 = (s32)(difference[0] - widthSin);
+    record->unk74 = (s32)(difference[0] + widthSin);
 }
 
 void func_1513E2A4(void) {
