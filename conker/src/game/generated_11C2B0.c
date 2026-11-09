@@ -136,8 +136,42 @@ void func_150EF860(struct210 *owner) {
     func_1513CAA0(owner);
 }
 
-s32 func_150EF910() {
-    return 0;
+/* Retarget the two endpoint links, or release a matching endpoint event. */
+void func_150EF910(u8 *owner, s32 eventAddress, u8 command) {
+    EmbeddedOwnerLink *links = (EmbeddedOwnerLink *)(owner + 0x110);
+    OwnerLinkEvent *event = (OwnerLinkEvent *)eventAddress;
+
+    if (command == 0) {
+        u8 *current = links[0].owner;
+        u8 *first = event->before;
+        s32 currentIdentity = links[0].identity;
+        s32 firstIdentity = ((u8 *)event)[4];
+        if (current == first || firstIdentity == currentIdentity) {
+            func_1516972C((struct102 *)owner);
+        }
+    } else if (command == 0x2D) {
+        u8 *current = links[0].owner;
+        u8 *first = event->before;
+        if (first == current) {
+            links[0].owner = event->after;
+            links[0].identity = event->after_identity;
+        } else if (event->after == current) {
+            links[0].owner = event->before;
+            links[0].identity = event->before_identity;
+        }
+        if (event->before == links[1].owner) {
+            links[1].owner = event->after;
+            links[1].identity = event->after_identity;
+        } else if (event->after == links[1].owner) {
+            links[1].owner = event->before;
+            links[1].identity = event->before_identity;
+        }
+    } else if (command == 0x43) {
+        if ((event->before == links[0].owner || ((u8 *)event)[4] == links[0].identity)
+            && ((u8 *)event)[5] == ((u8 *)links)[0xD]) {
+            func_1516972C((struct102 *)owner);
+        }
+    }
 }
 
 typedef struct {
