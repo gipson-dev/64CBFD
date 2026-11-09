@@ -1,13 +1,22 @@
 #include <ultra64.h>
 #include <string.h>
 #include "structs.h"
+typedef struct { f32 x, y, z; } GameEffectVector;
+extern GameEffectVector D_800A5970, D_800A597C;
+extern f32 D_800A5E58;
+void *func_15160CDC(u8 *, u8, GameEffectVector *, GameEffectVector *, f32,
+                   u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
+extern GameEffectVector D_800A58AC, D_800A58B8, D_800A58C4;
+extern f32 D_800A5E04;
+extern u8 D_800BE9B4;
+
 extern void (*D_8008AB58[])();
 extern s16 *D_8008ABE8[];
 void func_1516972C();
 
 s32 func_151ACA60(u8 *, f32, s32);
 extern u8 *D_800D2E4C;
-void func_15083568(u8 *, s32, f32, s32);
+u8 *func_15083568(u8 *, s32, f32, s32);
 extern s32 D_800BE9F0;
 
 /* Non-matching placeholders for the text-only asm slice asm/179F30.s. */
@@ -385,8 +394,20 @@ void func_1514DE50(u8 *arg0) {
 void func_1514DE88(s32 arg0) {
 }
 
-s32 func_1514DE94() {
-    return 0;
+/* Spawn the owner's paired effects, then link the final record under key 0x19. */
+void func_1514DE94(u8 *owner) {
+    u8 *effect;
+    struct225 *created;
+
+    func_15160CDC(owner, 12, &D_800A58AC, &D_800A58B8, D_800A5E04,
+                  2, 300, 255, 255, 255, 255, 0, 1, 1, 255, 1);
+    effect = func_15083568(owner, 60, 1.0f, 0);
+    if (D_800BE9B4 == 0) {
+        *(s32 *)(effect + 0x38) = 2400;
+    }
+    created = func_15160A58(owner, 0, &D_800A58C4, 2, 300, 11,
+                          255, 255, 255, 2, 0, -1, 0, 0, 255, 1);
+    func_1514EC1C((s32)created, (s32)owner, 0x19);
 }
 
 void func_1514DFD0(u8 *arg0) {
@@ -722,12 +743,6 @@ s32 func_1514F130(GameObjectWithState *arg0, s32 arg1, s32 arg2) {
 s32 func_1514F194() {
     return 0;
 }
-
-typedef struct { f32 x, y, z; } GameEffectVector;
-extern GameEffectVector D_800A5970, D_800A597C;
-extern f32 D_800A5E58;
-void *func_15160CDC(u8 *, u8, GameEffectVector *, GameEffectVector *, f32,
-                   u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
 
 /* Submit a type-five effect using the two stored vector presets. */
 void func_1514F308(u8 *owner) {
