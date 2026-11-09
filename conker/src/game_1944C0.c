@@ -426,58 +426,57 @@ void func_15168F84(s32 group, s32 *first, s32 *last) {
         *last = 0x60;
     }
 }
-// NON-MATCHING: only differs from us by the jal target address of the still-non-matching
-// func_15169070 - this function's own code is verified byte-identical otherwise.
+/* Forward an event across the complete node-column range. */
 void func_15169040(s32 arg0, u8 arg1) {
     func_15169070(0, 0x68, arg0, arg1);
 }
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_15169070(s32 arg0, s32 arg1, s32 arg2, u8 arg3) {
-    u8 pad[16]; // Load-bearing stack padding: matches retail's 0x58-byte frame.
-    s32 col;
+/* Walk both node rows in the clamped range, preserving callback-safe next links. */
+void func_15169070(s32 first, s32 last, s32 payload, u8 opcode) {
+    u8 pad[20]; /* Retain the observed frame and column home; original use is unknown. */
+    s32 column;
     u8 *row;
-    u8 *slot;
-    struct115 *cur;
+    u8 *head;
+    struct115 *descriptor;
     void *node;
 
-    func_15143D18(&arg0, &arg1, 2, 0x68);
-    if (arg0 < arg1) {
-        col = arg0 * 4;
-        cur = &D_8008B4A8[arg0];
+    func_15143D18(&first, &last, 2, 0x68);
+    if (first < last) {
+        descriptor = &D_8008B4A8[first];
+        column = first * 4;
         do {
             row = D_800DCE50;
-            slot = D_800DCE50 + col;
+            head = D_800DCE50 + column;
             do {
-                if (cur->unk1C != NULL) {
-                    node = *(void **) slot;
+                if (descriptor->unk1C != NULL) {
+                    node = *(void **) head;
                     D_800DD190++;
                     if (node != NULL) {
                         do {
                             D_800DD198[D_800DD190] = *(void **) ((u8 *) node + 8);
-                            func_1516968C(node, arg2, arg3);
-                            cur->unk1C(node, arg2, arg3);
+                            func_1516968C(node, (u8 *)payload, opcode);
+                            descriptor->unk1C(node, payload, opcode);
                             node = D_800DD198[D_800DD190];
                         } while (node != NULL);
                     }
                     D_800DD190--;
                 } else {
-                    node = *(void **) slot;
+                    node = *(void **) head;
                     D_800DD190++;
                     if (node != NULL) {
                         do {
                             D_800DD198[D_800DD190] = *(void **) ((u8 *) node + 8);
-                            func_1516968C(node, arg2, arg3);
+                            func_1516968C(node, (u8 *)payload, opcode);
                             node = D_800DD198[D_800DD190];
                         } while (node != NULL);
                     }
                     D_800DD190--;
                 }
                 row += 0x1A0;
-                slot += 0x1A0;
-            } while (row != (u8 *) &D_800DD190);
-            col += 4;
-            cur += 1;
-        } while (col < arg1 * 4);
+                head += 0x1A0;
+            } while (row != D_800DCE50 + sizeof(D_800DCE50));
+            column += 4;
+            descriptor += 1;
+        } while (column < last * 4);
     }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15169260.s. */
