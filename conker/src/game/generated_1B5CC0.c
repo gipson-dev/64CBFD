@@ -22,10 +22,6 @@ extern u8 *D_800DF7C8;
 
 /* Non-matching placeholders for the text-only asm slice asm/1B5CC0.s. */
 
-s32 func_15188810() {
-    return 0;
-}
-
 typedef struct ListNode15188A58 ListNode15188A58;
 
 struct ListNode15188A58 {
@@ -40,6 +36,56 @@ extern ListNode15188A58 *D_800DF7CC;
 s32 allocate_memory(s32, s32, s32, s32);
 /* The matched helper receives its head through the existing node-pointer view. */
 void func_15188A58(ListNode15188A58 *, ListNode15188A58 *);
+typedef struct { ListNode15188A58 prefix; u32 cleared14; } OwnerBufferNode15188810;
+s32 func_1502DB20(s32);
+
+/* Extend an owner timer, or allocate and append its cleared record buffer. */
+void func_15188810(u8 *owner, s32 timer, s32 mode) {
+    ListNode15188A58 *node = (ListNode15188A58 *)D_800DF7C8;
+    u32 count;
+    s32 size;
+    u8 *buffer;
+
+    if (node != NULL) {
+        do {
+            if ((s32)owner == node->key) {
+                if (node->timer < timer) {
+                    node->timer = timer;
+                }
+                node->mode = mode;
+                return;
+            }
+            node = node->next;
+        } while (node != NULL);
+    }
+    node = (ListNode15188A58 *)allocate_memory(sizeof(OwnerBufferNode15188810), 1, 0, 0);
+    if (node == NULL) {
+        return;
+    }
+    count = func_1502DB20(owner[4]);
+    if (count == 0) {
+        func_10004074(node);
+        return;
+    }
+    size = (count * 3) << 7;
+    buffer = (u8 *)allocate_memory(size, 1, 1, 1);
+    if (buffer == NULL) {
+        func_10004074(node);
+        return;
+    }
+    node->active = 0;
+    node->kind = 3;
+    node->cleared = 0;
+    node->recordSize = 20;
+    node->mode = mode;
+    node->timer = timer;
+    node->buffer = buffer;
+    node->key = (s32)owner;
+    ((OwnerBufferNode15188810 *)node)->cleared14 = 0;
+    bzero(buffer, size);
+    func_15188A58(node, (ListNode15188A58 *)&D_800DF7C8);
+}
+
 /* Extend the first matching timer, or allocate and append its cleared buffer. */
 void func_1518894C(s32 key, s32 timer, s32 mode) {
     ListNode15188A58 *node = D_800DF7CC;
