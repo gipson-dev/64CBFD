@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern u8 D_800BE9C0;
 extern u8 D_80089470[];
 extern u8 D_800DCC10[];
@@ -29,9 +30,52 @@ void func_15156388(s32 arg0, u8 arg1, s32 arg2) {
     func_15156190(arg0, arg1, arg2, 0xFF, 0);
 }
 
-s32 func_151563B8() {
-    return 0;
+extern s32 D_800BE9E4;
+extern f32 D_800BE9A4;
+void func_1516972C(struct102 *);
+/* Partial view of the type 44/83 resource initialized by func_15156190. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 prefix[0x10];
+    f32 x,y,z,dx,dy,dz;
+    f32 u,v,w,du,dv,dw;
+    u8 flags,pad41;
+    s16 remaining;
+    u8 pad44[8];
+    u8 alpha,pad4D;
+    s16 fadeStart,fadeRate;
+} ResourceMotion183640;
+
+/* Update wrapped lifetime, six motion components and optional alpha fade. */
+void func_151563B8(struct102 *object) {
+    ResourceMotion183640 *state = (ResourceMotion183640 *)object;
+    s32 expired = 0;
+    if (state->flags & 1) {
+        /* Match SUBU and the original signed-halfword store/reload. */
+        state->remaining = (s16)((u32)state->remaining - (u32)D_800BE9E4);
+        if (state->remaining < 0) expired = 1;
+    }
+    if (!expired) {
+        state->x += state->dx*D_800BE9A4;
+        state->y += state->dy*D_800BE9A4;
+        state->z += state->dz*D_800BE9A4;
+        state->u += state->du*D_800BE9A4;
+        state->v += state->dv*D_800BE9A4;
+        state->w += state->dw*D_800BE9A4;
+        if (state->flags & 8) {
+            if (state->remaining < state->fadeStart) {
+                /* Narrow before comparing; negative results wrap into the byte. */
+                s16 alpha = state->remaining*state->fadeRate;
+                if (alpha < state->alpha) state->alpha = (u8)alpha;
+            }
+        }
+    }
+    if (expired) func_1516972C(object);
 }
+
 
 s32 func_151564F8() {
     return 0;
