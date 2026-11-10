@@ -1713,39 +1713,51 @@ void func_1507A984(void) {
     }
 }
 
-// NON-MATCHING: avoids local jump-table rodata
+/* Update heading fields through the original nine-selector script command. */
 void func_1507AA48(void) {
-    u16 temp_v1;
-    u8 selector;
-    PathNode8 *temp_v0;
-    PathNode8 *node_a;
-    PathNode8 *node_b;
+    u16 value;
+    f32 angle;
+    u32 heading;
+    PathNode8 *path;
+    PathNode8 *first;
+    PathNode8 *second;
 
-    temp_v1 = (D_800D1890 << 8) | D_800D1891;
-    selector = D_800D1892;
-
-    if (selector == 0) {
-        D_800D154C->unk78 = D_800D154C->unk76 + temp_v1;
-    } else if (selector == 1) {
-        D_800D154C->unk78 = D_800D154C->unk76 - temp_v1;
-    } else if (selector == 2) {
-        D_800D154C->unk78 = temp_v1;
-    } else if (selector == 3) {
-        D_800D154C->unk76 = D_800D154C->unk78;
-        D_800D154C->unk7A = D_800D154C->unk78;
-    } else if (selector == 4) {
-        temp_v0 = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F];
-        node_a = &temp_v0[D_800D1890 + 1];
-        node_b = &temp_v0[D_800D1891 + 1];
-        D_800D154C->unk78 = (s32)(func_150484A0(node_b->x - node_a->x, node_b->z - node_a->z) * D_8009A20C) + (D_800D1893 << 8) + 0x4000;
-    } else if (selector == 5) {
-        D_800D154C->unk78 = func_150ADA20();
-    } else if (selector == 6) {
-        D_800D154C->unk78 = D_800D154C->unk76;
-    } else if (selector == 7) {
-        D_800D154C->unk76 = D_800CC34A[D_800D154C->unk222 * 0x196] + temp_v1;
-    } else if (selector == 8) {
-        D_800D154C->unk76 = D_800D154C->unk7A;
+    value = (D_800D1890 << 8) | D_800D1891;
+    switch (D_800D1892) {
+        case 0:
+            D_800D154C->unk78 = D_800D154C->unk76 + value;
+            break;
+        case 1:
+            D_800D154C->unk78 = D_800D154C->unk76 - value;
+            break;
+        case 2:
+            D_800D154C->unk78 = value;
+            break;
+        case 3:
+            D_800D154C->unk76 = D_800D154C->unk78;
+            D_800D154C->unk7A = D_800D154C->unk78;
+            break;
+        case 4:
+            path = ((PathNode8 **)D_800D2104)[D_800D154C->unk13F];
+            second = &path[D_800D1891];
+            first = &path[D_800D1890];
+            angle = func_150484A0(second[1].x - first[1].x,
+                second[1].z - first[1].z);
+            heading = (u32)(angle * D_8009A20C);
+            D_800D154C->unk78 = heading + (D_800D1893 << 8) + 0x4000;
+            break;
+        case 5:
+            D_800D154C->unk78 = func_150ADA20();
+            break;
+        case 6:
+            D_800D154C->unk78 = D_800D154C->unk76;
+            break;
+        case 7:
+            D_800D154C->unk76 = D_800CC34A[D_800D154C->unk222 * 0x196] + value;
+            break;
+        case 8:
+            D_800D154C->unk76 = D_800D154C->unk7A;
+            break;
     }
 }
 
