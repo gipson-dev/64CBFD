@@ -178,6 +178,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_1B8F40.c.o: RETAIL_RODATA_SYMBOL := jtbl_
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B21B0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009D9A0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_49D30.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_C9EC0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_C9EC0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F1AC_game
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_6E770.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_6E770.c.o: RETAIL_RODATA_SYMBOL := jtbl_80098AB0_game

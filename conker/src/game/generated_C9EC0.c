@@ -1,4 +1,19 @@
 #include <ultra64.h>
+
+struct struct127;
+extern u8 D_800D9920;
+s32 func_150EB8C4(void);
+void func_150F9720(u8);
+void func_151616D0(u8, u8, s32);
+struct struct127 *func_1505EEF4(s32);
+s32 func_150F6DB0(u8 *);
+void func_151CD394(s32);
+void func_150E35DC(s32);
+void func_150B3DD0(void);
+s32 func_150C5C9C(s32);
+void func_150C522C(void);
+void func_151D2718(s32);
+
 extern s32 D_8008743C[];
 extern u8 *D_800D2FB0;
 extern u8 D_800D2E70[];
@@ -292,8 +307,64 @@ s32 func_1509D180() {
     return 0;
 }
 
-s32 func_1509D780() {
-    return 0;
+/* Dispatch script actions; only the null-actor return explicitly defines a C result. */
+s32 func_1509D780(s32 command, u8 *record) {
+    struct struct127 *actor;
+
+    switch (command) {
+        case 41:
+            func_150EB8C4();
+            break;
+        case 39:
+            func_150F9720(record[7]);
+            break;
+        case 38:
+            func_151616D0(0x29, 0x18, 0);
+            break;
+        case 36:
+            actor = func_1505EEF4(*(u32 *)(record + 4) & 0xFFF);
+            if (actor != NULL) {
+                func_150F6DB0((u8 *)actor);
+            }
+            break;
+        case 26:
+            func_151616D0(0x26, 0x18, 0);
+            break;
+        case 18:
+            func_151CD394(*(s32 *)(record + 4));
+            break;
+        case 2:
+            D_800D9920 = 0;
+            break;
+        case 4:
+        case 5:
+        case 6:
+            func_150E35DC(command >> 6);
+            break;
+        case 8:
+            func_150B3DD0();
+            break;
+        case 9:
+            actor = func_1505EEF4(*(u32 *)(record + 4) & 0xFFF);
+            if (actor == NULL) {
+                return 0;
+            }
+            func_150C5C9C((s32)actor);
+            break;
+        case 10:
+            func_150C522C();
+            break;
+        case 19:
+            func_151D2718(*(s16 *)(record + 6));
+            break;
+        case 21:
+            func_151616D0(0x20, 0x18, 0);
+            break;
+        case 22:
+            func_151616D0(0x23, 0x28, 0);
+            func_151616D0(0x24, 0x28, 0);
+            break;
+    }
 }
 
 s32 func_1509D8FC() {
