@@ -823,62 +823,64 @@ void func_1504BC38(struct127 *arg0) {
     }
 }
 
-// NON-MATCHING: ported from ects_proto (ECTS ROM build), not yet byte-verified for us
-void func_1504BE2C(struct127 *arg0, u16 *arg1, f32 *arg2, s8 *arg3) {
-    f32 sp1C;
-    f32 temp_f12;
-    struct126 *temp_v0;
-    struct126 *var_v0;
-    u16 temp_v0_2;
-    u8 temp_t7;
-    u8 temp_v1;
+/* Update actor phase, response state, damping and the signed control byte. */
+void func_1504BE2C(struct127 *actor, u16 *inputValue, f32 *magnitude, s8 *outputByte) {
+    u8 modeFlags;
+    f32 savedPhase;
+    f32 phaseAngle;
+    struct126 *phaseState;
+    struct126 *state;
+    u16 actorType;
+    u8 phase;
 
-    temp_t7 = arg0->unk31C->padA[1];
-    temp_f12 = (f32) temp_t7 * D_800991D8;
+    phase = actor->unk31C->padA[1];
+    phaseAngle = (f32) phase * D_800991D8;
     D_800CC2B4 = 16.0f;
-    var_v0 = arg0->unk31C;
-    temp_v1 = var_v0->unk16;
-    if ((temp_v1 != 0) && (temp_v1 == 0)) {
-        sp1C = temp_f12;
-        func_1507EB2C(temp_f12);
-        arg0->unk31C->unk8 = 0;
-        var_v0 = arg0->unk31C;
+    state = actor->unk31C;
+    modeFlags = state->unk16;
+    /* Retail retains these mutually exclusive tests and the dead helper block. */
+    if ((modeFlags != 0) && (modeFlags == 0)) {
+        savedPhase = phaseAngle;
+        func_1507EB2C(phaseAngle);
+        actor->unk31C->unk8 = 0;
+        state = actor->unk31C;
     }
-    if (var_v0->unkE == 0) {
-        var_v0->unkE = 0xA6;
-        var_v0 = arg0->unk31C;
+    if (state->unkE == 0) {
+        state->unkE = 0xA6;
+        state = actor->unk31C;
     }
-    var_v0->pad3C[0] = 5;
-    if ((*arg2 > 4.0f) && (arg0->unk84.uh == 0xAA)) {
-        arg0->unk31C->pad3C[0] = 1;
-        arg0->unk31C->unk10 = (s16) *arg1;
+    state->pad3C[0] = 5;
+    if ((*magnitude > 4.0f) && (actor->unk84.uh == 0xAA)) {
+        actor->unk31C->pad3C[0] = 1;
+        actor->unk31C->unk10 = (s16) *inputValue;
     }
-    func_150AD78C(temp_f12);
-    temp_v0 = arg0->unk31C;
-    temp_v0->padA[1] += 2;
-    if (arg0->unk31C->unk16 != 0) {
-        arg0->unkAA = 0x19;
-    } else if (arg0->unk84.uh == 0xA7) {
-        arg0->unkAA = 0x32;
+    /* Keep the discarded sine call at its retail boundary. */
+    func_150AD78C(phaseAngle);
+    phaseState = actor->unk31C;
+    phaseState->padA[1] += 2;
+    if (actor->unk31C->unk16 != 0) {
+        actor->unkAA = 0x19;
+    } else if (actor->unk84.uh == 0xA7) {
+        actor->unkAA = 0x32;
     } else {
-        arg0->unkAA = 0x20;
+        actor->unkAA = 0x20;
     }
-    temp_v0_2 = arg0->unk84.uh;
-    arg0->pad54 *= 0.5f;
-    if ((temp_v0_2 == 0x2C) || (temp_v0_2 == 0xE0)) {
-        *arg3 = (s8) (((s8 *) D_800CC284)[3] >> 1);
+    actorType = actor->unk84.uh;
+    actor->pad54 *= 0.5f;
+    if ((actorType == 0x2C) || (actorType == 0xE0)) {
+        *outputByte = (s8) (((s8 *) D_800CC284)[3] >> 1);
     } else {
         if (!(func_150ADA20() & 0x3F)) {
-            arg0->unk31C->unk14 = (s16) ((func_150ADA20() % 25000U) - 0x30D4);
+            actor->unk31C->unk14 = (s16) ((func_150ADA20() % 25000U) - 0x30D4);
         }
-        D_800CC2B2 = arg0->unk31C->unk14;
-        if (arg0->unk31C->unk16 != 0) {
+        D_800CC2B2 = actor->unk31C->unk14;
+        if (actor->unk31C->unk16 != 0) {
             D_800CC2B2 = (s16) (D_800CC2B2 / 3);
         }
     }
-    if ((D_800C35EA == 0) && (arg0->unk31C->unk16 == 0)) {
-        arg0->unk282 = 0x1E;
-        arg0->unk276 = 0;
+    if ((D_800C35EA == 0) && (actor->unk31C->unk16 == 0)) {
+        actor->unk282 = 0x1E;
+        actor->unk276 = 0;
     }
 }
 
