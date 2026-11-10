@@ -604,7 +604,9 @@ s32 func_15045800(f32 *position, u16 selector, f32 threshold, HeightResult71820 
     }
 }
 
+/* Select the lowest context-2 entity triangle, reloading its flag owner. */
 s32 func_15045880(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result) {
+    u8 state;
     s32 selected;
     s32 count;
     s32 i;
@@ -651,10 +653,13 @@ s32 func_15045880(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
         }
         result->flags |= 6;
         /* Retail reloads both entity operands after the result publications. */
+        state = 2;
         if ((D_800DBEF4[candidate->padC].flags & 0x80) == 0x80) {
             result->flags |= 1;
+            result->state = state;
+        } else {
+            result->state = state;
         }
-        result->state = 2;
         if (result->height <= threshold) {
             result->flags |= 2;
             return 1;
@@ -665,7 +670,9 @@ s32 func_15045880(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
     return 0;
 }
 
+/* Select the highest context-2 entity triangle, reloading its flag owner. */
 s32 func_15045AE4(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result) {
+    u8 state;
     s32 selected;
     s32 count;
     s32 i;
@@ -712,10 +719,13 @@ s32 func_15045AE4(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
         }
         result->flags |= 6;
         /* This context also reloads both entity operands after publication. */
+        state = 2;
         if ((D_800DBEF4[candidate->padC].flags & 0x80) == 0x80) {
             result->flags |= 1;
+            result->state = state;
+        } else {
+            result->state = state;
         }
-        result->state = 2;
         if (threshold <= result->height) {
             result->flags |= 2;
             return 1;
