@@ -961,17 +961,15 @@ void func_10010AA8(struct127 *arg0) {
     arg0->unk8E = 0;
 }
 
-u16 func_10010BE8(s32 arg0, s32 arg1, u16 arg2, u8 arg3, s16 arg4, u8 arg5, u8 arg6) {
+/* Reuse or allocate one of the sixteen generation-tagged sound slots. */
+u16 func_10010BE8(u16 arg0, s32 arg1, u16 arg2, u8 arg3, s16 arg4, u8 arg5, u8 arg6) {
     struct120 *slot;
     u16 handle;
     u16 next;
     s32 index;
     s32 soundId;
     u8 mix;
-    volatile s32 normalizedHandle;
 
-    normalizedHandle = arg0 & 0xFFFF;
-    arg0 = normalizedHandle;
     index = arg0 & 0xF;
     slot = &D_800425E0[index];
 

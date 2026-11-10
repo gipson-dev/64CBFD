@@ -1220,40 +1220,44 @@ s32 func_1506045C() {
 }
 /* Original actor sound adapter: cached handles, material effect and spatial updates. */
 void func_15060778(s32 arg0, struct127 *arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    u16 *slot = NULL;
-    u16 handle = 0;
-    s32 effect = (arg6 & 8) ? 0 : (((u32)arg1->unk184 >> 3) & 0x30);
-    s32 mode = arg6 & 3;
-    u16 volume = arg2 + effect * 50;
+    s32 handle = 0;
     u16 result;
+    u16 *slot = NULL;
+    s32 effect = (arg6 & 8) ? 0 : (((u32)arg1->unk184 >> 3) & 0x30);
 
-    if (mode == 1) {
-        slot = &arg1->unk8C;
-        handle = *slot;
-    } else if ((mode == 2) || (mode == 3)) {
-        slot = &arg1->unk8E;
-        handle = *slot;
-        if (mode == 3) {
-            if (func_1001147C(handle) == arg0) {
+    switch (arg6 & 3) {
+        case 1:
+            slot = &arg1->unk8C;
+            handle = *slot;
+            break;
+        case 2:
+        case 3:
+            slot = &arg1->unk8E;
+            handle = *slot;
+            if ((arg6 & 3) == 2) {
+                break;
+            }
+            if ((func_1001147C(handle) == arg0) & 0x7FFF) {
                 if (arg6 & 4) {
-                    func_1000F91C(handle, volume, arg3 + arg1->unk13F * 10,
+                    func_1000F91C(handle, arg2 + effect * 50, arg3 + arg1->unk13F * 10,
                         effect, 0, (s32)arg1->x_position, (s32)arg1->y_position,
                         (s32)arg1->z_position, arg4, arg5);
                 } else {
                     func_1000F85C(handle, 0x10, arg3);
-                    func_1000F85C(handle, 8, volume);
+                    /* Command 8 consumes the full sum, unlike the spatial helpers. */
+                    func_1000F85C(handle, 8, arg2 + effect * 50);
                 }
                 return;
             }
             arg0 |= 0x8000;
-        }
+            break;
     }
     if (arg6 & 4) {
-        result = func_10010E78(handle, arg0, volume, arg3, effect, 0,
+        result = func_10010E78(handle, arg0, arg2 + effect * 50, arg3, effect, 0,
             (s32)arg1->x_position, (s32)arg1->y_position,
             (s32)arg1->z_position, arg4, arg5);
     } else {
-        result = func_10010BE8(handle, arg0, volume, 0x40, arg3, effect, 1);
+        result = func_10010BE8(handle, arg0, arg2 + effect * 50, 0x40, arg3, effect, 1);
     }
     if (slot != NULL) {
         *slot = result;

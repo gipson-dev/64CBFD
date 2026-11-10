@@ -78,110 +78,110 @@ init_1420,func_10001420,0x008,0x24640FE0,0x24A40FE0,-,-,Normalize memory-clear l
 init_1420,func_10001420,0x00C,0x24630004,0x24A50004,-,-,Normalize memory-clear leaf register allocation,,,false
 init_1420,func_10001420,0x010,0x0064082B,0x00A4082B,-,-,Normalize memory-clear leaf register allocation,,,false
 init_1420,func_10001420,0x018,0xAC60FFFC,0xACA0FFFC,-,-,Normalize memory-clear leaf register allocation,,,false
-init_EB00,func_10010FFC,0x008,0xAFA60048,0xAFA40040,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x00C,0x30CEFFFF,0xAFA60048,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x010,0x01C03025,0x308EFFFF,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x014,0x8FB00054,0x30CFFFFF,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x018,0xAFBF003C,0x01E03025,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x01C,0xAFA40040,0x01C02025,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x020,0xAFA7004C,0x8FB00054,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x024,0x8FAF0040,0xAFBF003C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x028,0x31F8FFFF,0xAFA7004C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x030,0xAFB80040,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x034,0x8E190000,0x8E180000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x038,0x57200004,0x57000004,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x03C,0x8E080318,0x8E190318,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x048,0x8E080318,0x8E190318,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x04C,0x8FA40040,0x24070040,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x050,0x00C66021,0x00C65821,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x054,0x1100000C,0x1320000B,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x05C,0x3C0B0000,0x3C0A0000,R_MIPS_HI16:D_80041FD9,R_MIPS_HI16:D_80041FD9,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x060,0x916B0000,0x914A0000,R_MIPS_LO16:D_80041FD9,R_MIPS_LO16:D_80041FD9,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x064,0x87A9004E,0x87A8004E,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x068,0x93AA0053,0x93A90053,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x06C,0x24070040,0xAFAA0018,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x070,0xAFAB0018,0xAFA80010,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x074,0xAFA90010,0x0C000000,-,R_MIPS_26:func_10010BE8,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x078,0x0C000000,0xAFA90014,R_MIPS_26:func_10010BE8,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x07C,0xAFAA0014,0x1000004D,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x080,0x1000004E,0x3044FFFF,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x084,0x8FBF003C,0x92030004,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x088,0x92030004,0x01663021,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x08C,0x01863021,0x00066083,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x090,0x00066883,0x10610011,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x094,0x10610011,0x3186FFFF,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x098,0x31A6FFFF,0x00037080,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x09C,0x00037880,0x3C0F0000,-,R_MIPS_HI16:D_800D1C90,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0A0,0x3C180000,0x01EE7821,R_MIPS_HI16:D_800D1C90,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0A4,0x030FC021,0x8DEF0000,-,R_MIPS_LO16:D_800D1C90,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0A8,0x8F180000,0x3C014F80,R_MIPS_LO16:D_800D1C90,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0AC,0x3C014F80,0x95F8000E,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0B0,0x9719000E,0x44982000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0B4,0x44992000,0x07010004,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0B8,0x07210004,0x468021A0,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0BC,0x468021A0,0x44814000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0C0,0x44814000,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0C4,0x00000000,0x46083180,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0C8,0x46083180,0xC60A014C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0CC,0xC60A014C,0x460A3002,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0D0,0x460A3002,0x10000004,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0D4,0x10000004,0x3C014380,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0D8,0x3C014380,0x44800000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0DC,0x44800000,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0E0,0x00000000,0x3C014380,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0E4,0x3C014380,0x44818000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0E8,0x44818000,0x3C0142A0,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0EC,0x3C0142A0,0x93B90053,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0F0,0x93A80053,0x4600803C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0F4,0x4600803C,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0F8,0x00000000,0x45020006,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x0FC,0x45020006,0x44819000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x100,0x44819000,0x3C013F80,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x104,0x3C013F80,0x44810000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x108,0x44810000,0x10000010,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x10C,0x10000010,0xAFB90010,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x110,0xAFA80010,0x44819000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x114,0x44819000,0x3C013B80,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x118,0x3C013B80,0x4612003C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x11C,0x4612003C,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x120,0x00000000,0x45020006,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x124,0x45020006,0x44812000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x128,0x44812000,0x3C013EA0,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x12C,0x3C013EA0,0x44810000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x130,0x44810000,0x10000006,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x134,0x10000006,0xAFB90010,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x138,0xAFA80010,0x44812000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x13C,0x44812000,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x140,0x00000000,0x46040002,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x144,0x46040002,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x148,0x00000000,0xAFB90010,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x14C,0xAFA80010,0xAFA00014,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x150,0xAFA00014,0xC6080014,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x154,0xC6080014,0x3C0144FA,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x158,0x3C0144FA,0x240E01F4,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x15C,0x240F01F4,0x4600418D,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x160,0x4600418D,0x44814000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x164,0x44814000,0x87A7004E,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x168,0x97A40042,0x44093000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x16C,0x87A7004E,0x46004182,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x170,0x440A3000,0xAFA90018,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x174,0x46004182,0xC60A0018,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x178,0xAFAA0018,0x4600540D,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x17C,0xC60A0018,0x4600328D,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x180,0x4600540D,0x440B8000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x184,0x4600328D,0x00000000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x188,0x440C8000,0xAFAB001C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x18C,0x00000000,0xC612001C,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x190,0xAFAC001C,0x44185000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x194,0xC612001C,0xAFAE0024,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x198,0x44195000,0x4600910D,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x19C,0xAFAF0024,0x271901F5,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1A0,0x4600910D,0xAFB90028,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1A4,0x272801F5,0x440D2000,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1A8,0xAFA80028,0x0C000000,-,R_MIPS_26:func_10010E78,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1AC,0x440E2000,0xAFAD0020,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1B0,0x0C000000,0x3044FFFF,R_MIPS_26:func_10010E78,-,Normalize object-aware audio dispatch compiler allocation,,,false
-init_EB00,func_10010FFC,0x1B4,0xAFAE0020,0x00801025,-,-,Normalize object-aware audio dispatch compiler allocation,,,false
+init_EB00,func_10010FFC,0x008,0xAFA60048,0xAFA40040,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x00C,0x30CEFFFF,0xAFA60048,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x010,0x01C03025,0x308EFFFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x014,0x8FB00054,0x30CFFFFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x018,0xAFBF003C,0x01E03025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x01C,0xAFA40040,0x01C02025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x020,0xAFA7004C,0x8FB00054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x024,0x8FAF0040,0xAFBF003C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x028,0x31F8FFFF,0xAFA7004C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x030,0xAFB80040,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x034,0x8E190000,0x8E180000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x038,0x57200004,0x57000004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x03C,0x8E080318,0x8E190318,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x048,0x8E080318,0x8E190318,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x04C,0x97A40042,0x24070040,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x050,0x00C66021,0x00C65821,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x054,0x1100000C,0x1320000B,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x05C,0x3C0B0000,0x3C0A0000,R_MIPS_HI16:D_80041FD9,R_MIPS_HI16:D_80041FD9,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x060,0x916B0000,0x914A0000,R_MIPS_LO16:D_80041FD9,R_MIPS_LO16:D_80041FD9,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x064,0x87A9004E,0x87A8004E,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x068,0x93AA0053,0x93A90053,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x06C,0x24070040,0xAFAA0018,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x070,0xAFAB0018,0xAFA80010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x074,0xAFA90010,0x0C000000,-,R_MIPS_26:func_10010BE8,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x078,0x0C000000,0xAFA90014,R_MIPS_26:func_10010BE8,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x07C,0xAFAA0014,0x1000004D,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x080,0x1000004E,0x3044FFFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x084,0x8FBF003C,0x92030004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x088,0x92030004,0x01663021,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x08C,0x01863021,0x00066083,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x090,0x00066883,0x10610011,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x094,0x10610011,0x3186FFFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x098,0x31A6FFFF,0x00037080,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x09C,0x00037880,0x3C0F0000,-,R_MIPS_HI16:D_800D1C90,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0A0,0x3C180000,0x01EE7821,R_MIPS_HI16:D_800D1C90,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0A4,0x030FC021,0x8DEF0000,-,R_MIPS_LO16:D_800D1C90,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0A8,0x8F180000,0x3C014F80,R_MIPS_LO16:D_800D1C90,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0AC,0x3C014F80,0x95F8000E,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0B0,0x9719000E,0x44982000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0B4,0x44992000,0x07010004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0B8,0x07210004,0x468021A0,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0BC,0x468021A0,0x44814000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0C0,0x44814000,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0C4,0x00000000,0x46083180,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0C8,0x46083180,0xC60A014C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0CC,0xC60A014C,0x460A3002,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0D0,0x460A3002,0x10000004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0D4,0x10000004,0x3C014380,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0D8,0x3C014380,0x44800000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0DC,0x44800000,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0E0,0x00000000,0x3C014380,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0E4,0x3C014380,0x44818000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0E8,0x44818000,0x3C0142A0,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0EC,0x3C0142A0,0x93B90053,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0F0,0x93A80053,0x4600803C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0F4,0x4600803C,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0F8,0x00000000,0x45020006,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x0FC,0x45020006,0x44819000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x100,0x44819000,0x3C013F80,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x104,0x3C013F80,0x44810000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x108,0x44810000,0x10000010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x10C,0x10000010,0xAFB90010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x110,0xAFA80010,0x44819000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x114,0x44819000,0x3C013B80,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x118,0x3C013B80,0x4612003C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x11C,0x4612003C,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x120,0x00000000,0x45020006,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x124,0x45020006,0x44812000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x128,0x44812000,0x3C013EA0,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x12C,0x3C013EA0,0x44810000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x130,0x44810000,0x10000006,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x134,0x10000006,0xAFB90010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x138,0xAFA80010,0x44812000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x13C,0x44812000,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x140,0x00000000,0x46040002,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x144,0x46040002,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x148,0x00000000,0xAFB90010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x14C,0xAFA80010,0xAFA00014,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x150,0xAFA00014,0xC6080014,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x154,0xC6080014,0x3C0144FA,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x158,0x3C0144FA,0x240E01F4,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x15C,0x240F01F4,0x4600418D,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x160,0x4600418D,0x44814000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x164,0x44814000,0x87A7004E,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x168,0x97A40042,0x44093000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x16C,0x87A7004E,0x46004182,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x170,0x440A3000,0xAFA90018,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x174,0x46004182,0xC60A0018,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x178,0xAFAA0018,0x4600540D,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x17C,0xC60A0018,0x4600328D,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x180,0x4600540D,0x440B8000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x184,0x4600328D,0x00000000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x188,0x440C8000,0xAFAB001C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x18C,0x00000000,0xC612001C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x190,0xAFAC001C,0x44185000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x194,0xC612001C,0xAFAE0024,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x198,0x44195000,0x4600910D,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x19C,0xAFAF0024,0x271901F5,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1A0,0x4600910D,0xAFB90028,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1A4,0x272801F5,0x440D2000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1A8,0xAFA80028,0x0C000000,-,R_MIPS_26:func_10010E78,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1AC,0x440E2000,0xAFAD0020,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1B0,0x0C000000,0x3044FFFF,R_MIPS_26:func_10010E78,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010FFC,0x1B4,0xAFAE0020,0x00801025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
 init_8F90,func_100097CC,0x000,0x27BDFFC8,0x27BDFFD0,-,-,Normalize DMA page-cache helper compiler allocation,,,false
 init_8F90,func_100097CC,0x010,0xAFA60040,0xAFA60038,-,-,Normalize DMA page-cache helper compiler allocation,,,false
 init_8F90,func_100097CC,0x03C,0x244F0800,0x24440800,-,-,Normalize DMA page-cache helper compiler allocation,,,false
@@ -4139,91 +4139,79 @@ init_1050,func_10001194,0x1F8,0xAFAA002C,0x26040004,-,-,Normalize boot loader co
 init_1050,func_10001194,0x204,0x8FAA002C,0x8FAA0028,-,-,Normalize boot loader compiler allocation,,,false
 init_1050,func_10001194,0x210,0x25480001,0x8FA8004C,-,-,Normalize boot loader compiler allocation,,,false
 init_1050,func_10001194,0x214,0x1100000E,0x1140000E,-,-,Normalize boot loader compiler allocation,,,false
-init_EB00,func_10010BE8,0x000,0x27BDFFA0,0x27BDFFB0,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x004,0xAFBF002C,0xAFA40050,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x008,0xAFB10028,0x308EFFFF,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x00C,0xAFB00024,0x01C02025,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x010,0xAFA50064,0xAFBF002C,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x014,0xAFA60068,0xAFB10028,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x018,0xAFA7006C,0xAFB00024,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x01C,0x308EFFFF,0xAFA50054,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x020,0xAFAE0048,0xAFA60058,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x024,0x8FA40048,0xAFA7005C,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x028,0x3C180000,0x3091000F,R_MIPS_HI16:D_800425E0,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x02C,0x27180000,0x00117880,R_MIPS_LO16:D_800425E0,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x030,0x3091000F,0x01F17823,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x034,0x00117880,0x3C180000,-,R_MIPS_HI16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x038,0x01F17823,0x27180000,-,R_MIPS_LO16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x060,0x97AE006A,0x97B8005A,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x070,0x97AE006A,0x97B8005A,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0E0,0x97AE006A,0x97B8005A,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0E4,0x24110001,0x26310001,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0E8,0x2A210010,0x2E210010,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0F0,0x3C100000,0x00115880,R_MIPS_HI16:D_800425E0,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0F4,0x2610000C,0x01715823,R_MIPS_LO16:D_800425E0,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0F8,0x8E0B0008,0x3C0C0000,-,R_MIPS_HI16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x0FC,0x51600006,0x258C0000,-,R_MIPS_LO16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x100,0x960C0004,0x000B5880,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x104,0x0C000000,0x016C8021,R_MIPS_26:func_100173C4,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x108,0x26040008,0x8E0D0008,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x10C,0x54400006,0x51A00006,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x110,0x26310001,0x960E0004,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x114,0x960C0004,0x0C000000,-,R_MIPS_26:func_100173C4,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x118,0x318D8000,0x26040008,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x11C,0x51A00006,0x5440FFF2,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x120,0x97AE006A,0x26310001,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x124,0x26310001,0x960E0004,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x128,0x2A210010,0x31CF8000,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x12C,0x1420FFF2,0x55E0FFEE,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x130,0x2610000C,0x26310001,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x134,0x97AE006A,0x97B8005A,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x138,0x29C10064,0x2B010064,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x140,0x2A210010,0x2E210010,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x14C,0x2A210010,0x2E210010,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x154,0x8FAF0064,0x8FB90054,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x160,0x15E00003,0x17200003,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x164,0x8FA90064,0x8FA90054,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x170,0x31387FFF,0x312B7FFF,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x174,0x2B0106E3,0x296106E3,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x17C,0x03004825,0x01604825,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x188,0x0011C880,0x00116080,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x18C,0x0331C823,0x01916023,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x190,0x3C0B0000,0x3C0D0000,R_MIPS_HI16:D_800425E0,R_MIPS_HI16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x194,0x256B0000,0x25AD0000,R_MIPS_LO16:D_800425E0,R_MIPS_LO16:D_800425E0,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x198,0x0019C880,0x000C6080,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x19C,0x032B8021,0x018D8021,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1A8,0x240E0005,0x24180005,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1C8,0x306CFFFF,0x306EFFFF,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1CC,0x01801825,0x01C01825,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1D4,0x8FAD0064,0x8FAF0054,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1E0,0xA60D0004,0xA60F0004,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1E4,0xA04E0054,0xA0580054,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1E8,0x93A40077,0x93B00067,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1F4,0x308F007F,0x3219007F,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1F8,0x00801025,0x87A40062,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x1FC,0x01E3C021,0x03235821,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x200,0x2B010080,0x29610080,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x208,0x3450007F,0x02001025,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x20C,0x00838021,0x02038021,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x210,0x321900FF,0x320C00FF,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x214,0x10000003,0x10000004,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x218,0x03208025,0x01808025,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x21C,0x320B00FF,0x3450007F,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x220,0x01608025,0x320D00FF,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x224,0x87A40072,0x01A08025,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x228,0xA7A8005A,0xA7A8004E,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x22C,0xAFA90038,0xAFA90034,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x234,0xAFAA0034,0xAFAA0038,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x238,0x8FA90038,0x8FA90034,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x23C,0x8FAA0034,0x8FAA0038,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x240,0x93AD007B,0x93AF006B,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x248,0x00056403,0x00057403,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x254,0x01802825,0x01C02825,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x258,0x97A6006A,0x97A6005A,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x25C,0x93A7006F,0x93A7005F,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x270,0xAFAD0018,0xAFAF0018,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x274,0x97A8005A,0x97A8004E,-,-,Normalize sound slot dispatcher compiler allocation,,,false
-init_EB00,func_10010BE8,0x28C,0x27BD0060,0x27BD0050,-,-,Normalize sound slot dispatcher compiler allocation,,,false
+init_EB00,func_10010BE8,0x000,0x27BDFFA8,0x27BDFFB0,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x004,0xAFA40058,0xAFA40050,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x01C,0xAFA5005C,0xAFA50054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x020,0xAFA60060,0xAFA60058,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x024,0xAFA70064,0xAFA7005C,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x060,0x97AE0062,0x97B8005A,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x070,0x97AE0062,0x97B8005A,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0E0,0x97AE0062,0x97B8005A,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0E4,0x24110001,0x26310001,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0E8,0x2A210010,0x2E210010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0F0,0x3C100000,0x00115880,R_MIPS_HI16:D_800425E0,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0F4,0x2610000C,0x01715823,R_MIPS_LO16:D_800425E0,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0F8,0x8E0B0008,0x3C0C0000,-,R_MIPS_HI16:D_800425E0,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x0FC,0x51600006,0x258C0000,-,R_MIPS_LO16:D_800425E0,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x100,0x960C0004,0x000B5880,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x104,0x0C000000,0x016C8021,R_MIPS_26:func_100173C4,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x108,0x26040008,0x8E0D0008,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x10C,0x54400006,0x51A00006,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x110,0x26310001,0x960E0004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x114,0x960C0004,0x0C000000,-,R_MIPS_26:func_100173C4,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x118,0x318D8000,0x26040008,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x11C,0x51A00006,0x5440FFF2,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x120,0x97AE0062,0x26310001,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x124,0x26310001,0x960E0004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x128,0x2A210010,0x31CF8000,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x12C,0x1420FFF2,0x55E0FFEE,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x130,0x2610000C,0x26310001,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x134,0x97AE0062,0x97B8005A,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x138,0x29C10064,0x2B010064,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x140,0x2A210010,0x2E210010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x14C,0x2A210010,0x2E210010,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x154,0x8FAF005C,0x8FB90054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x160,0x15E00003,0x17200003,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x164,0x8FA9005C,0x8FA90054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x170,0x31387FFF,0x312B7FFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x174,0x2B0106E3,0x296106E3,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x17C,0x03004825,0x01604825,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x188,0x0011C880,0x00116080,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x18C,0x0331C823,0x01916023,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x190,0x3C0B0000,0x3C0D0000,R_MIPS_HI16:D_800425E0,R_MIPS_HI16:D_800425E0,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x194,0x256B0000,0x25AD0000,R_MIPS_LO16:D_800425E0,R_MIPS_LO16:D_800425E0,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x198,0x0019C880,0x000C6080,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x19C,0x032B8021,0x018D8021,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1A8,0x240E0005,0x24180005,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1C8,0x306CFFFF,0x306EFFFF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1CC,0x01801825,0x01C01825,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1D4,0x8FAD005C,0x8FAF0054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1E0,0xA60D0004,0xA60F0004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1E4,0xA04E0054,0xA0580054,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1E8,0x93A4006F,0x93B00067,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1F4,0x308F007F,0x3219007F,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1F8,0x00801025,0x87A40062,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x1FC,0x01E3C021,0x03235821,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x200,0x2B010080,0x29610080,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x208,0x3450007F,0x02001025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x20C,0x00838021,0x02038021,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x210,0x321900FF,0x320C00FF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x214,0x10000003,0x10000004,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x218,0x03208025,0x01808025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x21C,0x320B00FF,0x3450007F,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x220,0x01608025,0x320D00FF,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x224,0x87A4006A,0x01A08025,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x228,0xA7A80052,0xA7A8004E,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x234,0xAFAA0030,0xAFAA0038,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x23C,0x8FAA0030,0x8FAA0038,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x240,0x93AD0073,0x93AF006B,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x248,0x00056403,0x00057403,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x254,0x01802825,0x01C02825,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x258,0x97A60062,0x97A6005A,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x25C,0x93A70067,0x93A7005F,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x270,0xAFAD0018,0xAFAF0018,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x274,0x97A80052,0x97A8004E,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
+init_EB00,func_10010BE8,0x28C,0x27BD0058,0x27BD0050,-,-,Preserve accepted Init sound body after narrow-handle API recovery,,,false
 initialize,__osInitialize_common,0x000,0x27BDFFC8,0x27BDFFC0,-,-,Normalize common system initializer compiler allocation,,,false
 initialize,__osInitialize_common,0x014,0xAFA00030,0xAFA00038,-,-,Normalize common system initializer compiler allocation,,,false
 initialize,__osInitialize_common,0x048,0x27A50034,0x27A5003C,-,-,Normalize common system initializer compiler allocation,,,false
@@ -28713,3 +28701,11 @@ game_83300,func_150585F0,0x240,0x3C014080,0x34217FFF,-,-,"Normalize water-stun f
 game_83300,func_150585F0,0x244,0x44819000,0x01415824,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
 game_83300,func_1505A3A8,0x020,0x46007382,0x4600A502,-,-,Normalize two independent motion-rate multiplies,,,false
 game_83300,func_1505A3A8,0x028,0x4600A502,0x46007382,-,-,Normalize two independent motion-rate multiplies,,,false
+game_83300,func_15060778,0x098,0xAFA40040,0xAFA40044,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x09C,0xAFA80048,0xAFA80054,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x0AC,0x8FA40040,0x8FA40044,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x0B0,0x8FA80048,0x8FA80054,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x174,0xAFA40040,0xAFA40044,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x17C,0xAFA80048,0xAFA80054,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x180,0x8FA80048,0x8FA80054,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_15060778,0x188,0x8FA40040,0x8FA40044,-,-,Normalize actor audio private spill homes,,,false
