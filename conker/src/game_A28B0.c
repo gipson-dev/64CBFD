@@ -521,36 +521,36 @@ void func_150767F4(void) {
     }
 }
 
-// NON-MATCHING: almost JUSTREG
+/* Select the nearest eligible actor inside the script search cone. */
 void func_150768DC(void) {
-    u8 temp_s2;
-    f32 temp_f20;
-    s32 temp_fp;
-    struct127 *temp_v0;
-    struct127 *current;
-    f32 phi_f22;
-    s32 i;
-    u8 tmp0;
-    struct124 *foo;
-    u8 tmp1;
+    s32 cone_width;
+    f32 distance;
+    s32 own_index;
+    struct127 *selected;
+    struct127 *candidate;
+    f32 closest;
+    s32 index;
+    u8 script;
+    struct124 *definition;
+    u8 angle_byte;
 
-    phi_f22 = D_800D1890 * 8;
+    closest = D_800D1890 * 8;
     D_800D154C->unkA8 = 0;
-    temp_fp = ((s32)D_800D154C - (s32)D_800CC2D0) / (s32)sizeof(struct127);
+    own_index = ((s32)D_800D154C - (s32)D_800CC2D0) / (s32)sizeof(struct127);
 
-    for (i = 0; i < 25; i++) {
-        current = &D_800CC2D0[i];
-        if ((current->interaction_state != 0) && (current->health != 0) && ((current->unkF8 & 0x20) != 0) && (i != temp_fp)) {
-            if ((D_800D1891 != 0) || (D_800D154C->id != current->id)) {
-                if (!(fabsf(D_800D154C->y_position - current->y_position) > 50.0f)) {
-                    temp_f20 = func_1505A72C(D_800D154C, current);
-                    if (temp_f20 < phi_f22) {
-                        foo = D_800D1C90[D_800D154C->id];
-                        temp_s2 = foo->unk17;
-                        tmp1 = func_1505A630(current->x_position - D_800D154C->x_position, D_800D154C->z_position - current->z_position, 0) >> 8;
-                        if ((((((D_800D154C->unk76 >> 8) + D_800D154C->unk2CA) - tmp1) + (temp_s2 / 2)) & 0xFF) < temp_s2) {
-                            D_800D154C->unkA8 = i + 0x80;
-                            phi_f22 = temp_f20;
+    for (index = 0; index < 25; index++) {
+        candidate = &D_800CC2D0[index];
+        if ((candidate->interaction_state != 0) && (candidate->health != 0) && ((candidate->unkF8 & 0x20) != 0) && (index != own_index)) {
+            if ((D_800D1891 != 0) || (D_800D154C->id != candidate->id)) {
+                if (!(fabsf(D_800D154C->y_position - candidate->y_position) > 50.0f)) {
+                    distance = func_1505A72C(D_800D154C, candidate);
+                    if (distance < closest) {
+                        definition = D_800D1C90[D_800D154C->id];
+                        cone_width = definition->unk17;
+                        angle_byte = func_1505A630(candidate->x_position - D_800D154C->x_position, D_800D154C->z_position - candidate->z_position, 0) >> 8;
+                        if ((((((D_800D154C->unk76 >> 8) + D_800D154C->unk2CA) - angle_byte) + (cone_width / 2)) & 0xFF) < cone_width) {
+                            D_800D154C->unkA8 = index + 0x80;
+                            closest = distance;
                         }
                     }
                 }
@@ -561,12 +561,12 @@ void func_150768DC(void) {
     if (D_800D154C->unkA8 != 0) {
         D_800D154C->unk218 = func_1507BB28(0, D_800D1893);
         D_800D154C->unk218 -= 1;
-        tmp0 = D_800D1892;
-        if (tmp0 != 0) {
-            temp_v0 = &D_800CC2D0[D_800D154C->unkA8 & 0x7F];
-            temp_v0->unk218 = 0;
-            temp_v0->unk232 = tmp0;
-            temp_v0->unk222 = temp_fp;
+        script = D_800D1892;
+        if (script != 0) {
+            selected = &D_800CC2D0[D_800D154C->unkA8 & 0x7F];
+            selected->unk218 = 0;
+            selected->unk232 = script;
+            selected->unk222 = own_index;
         }
     }
 }
