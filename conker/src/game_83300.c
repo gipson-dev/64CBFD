@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+extern u8 D_800C3E90;
+
 s32 func_15194FF4(struct127 *, struct127 *, s32);
 void func_1503B840(struct127 *);
 
@@ -36,7 +38,7 @@ struct127 *func_1505EFD0(s32);
 void func_1505F188(struct127 *object);
 s32 func_1505F298();
 void func_1506045C(struct127 *, u32, u32, f32, s32);
-s32 func_15060BE0();
+void func_15060BE0(struct127 *);
 s32 func_15060D54();
 s32 func_150611E8(s32 arg0, s32 arg1);
 s32 func_150617BC();
@@ -1441,10 +1443,52 @@ s32 func_15060BA4(struct127 *arg0, s32 arg1) {
     }
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15060BE0.s. */
-s32 func_15060BE0() {
-    return 0;
+/* Update the actor anchor from its selected transform, or its own position. */
+void func_15060BE0(struct127 *actor) {
+    s32 updated = 0;
+    struct124 *model;
+    f32 *transform;
+    f32 x;
+    f32 z;
+    f32 y;
+    f32 length;
+    f32 direction_x;
+    f32 direction_y;
+    f32 direction_z;
+
+    if ((actor->id != 0xFF) && (actor->unk1D4 != NULL) && (D_800C3E90 == 0)) {
+        model = D_800D1C90[actor->id];
+        /* Metadata +0x27 selects a 0x40-byte matrix; +0x14 is signed distance. */
+        transform = ((f32 (*)[16])actor->unk1D4)[((u8 *)model)[0x27]];
+        /* The radial distance becomes the Y component after normalization. */
+        y = *(s16 *)model->pad14 * actor->y_scale;
+        if (y != 0.0f) {
+            direction_x = transform[4];
+            direction_y = transform[5];
+            direction_z = transform[6];
+            length = sqrtf(direction_x * direction_x + direction_y * direction_y + direction_z * direction_z);
+            if (length != 0.0f) {
+                length = y / length;
+            }
+            x = direction_x * length;
+            y = direction_y * length;
+            z = direction_z * length;
+        } else {
+            z = y = x = 0.0f;
+        }
+        /* Reserved actor bytes 0x1BC..0x1C1 contain three signed coordinates. */
+        ((s16 *)&actor->pad1BC)[0] = (s16)(s32)(transform[12] + x);
+        ((s16 *)&actor->pad1BC)[1] = (s16)(s32)(transform[13] + y);
+        *(s16 *)&actor->pad1C0 = (s16)(s32)(transform[14] + z);
+        updated = 1;
+    }
+    if (updated == 0) {
+        ((s16 *)&actor->pad1BC)[0] = (s16)(s32)actor->x_position;
+        ((s16 *)&actor->pad1BC)[1] = (s16)(s32)actor->y_position;
+        *(s16 *)&actor->pad1C0 = (s16)(s32)actor->z_position;
+    }
 }
+
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15060D54.s. */
 s32 func_15060D54() {
     return 0;

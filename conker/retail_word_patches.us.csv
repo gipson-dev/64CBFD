@@ -28710,3 +28710,30 @@ game_83300,func_15060778,0x17C,0xAFA80048,0xAFA80054,-,-,Normalize actor audio p
 game_83300,func_15060778,0x180,0x8FA80048,0x8FA80054,-,-,Normalize actor audio private spill homes,,,false
 game_83300,func_15060778,0x188,0x8FA40040,0x8FA40044,-,-,Normalize actor audio private spill homes,,,false
 game_83300,func_1506045C,0x20C,0x10A0001B,0x1100001B,-,-,Use the identical preserved overlay-byte register at the recursive gate,,,false
+game_83300,func_15060BE0,0x74,0x44804000,0x44800000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xD4,0x44804000,0x44800000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xD8,0x44800000,0x00000000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xDC,0x44801000,0xE7A00004,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xE0,0xE7A80004,0x46000086,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xE4,0xC4CA0030,0xC4C80030,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xEC,0x46005100,0x46004280,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xF0,0x4600218D,0x4600510D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0xF4,0x440A3000,0x440A2000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x100,0xC4C80034,0xC4C60034,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x104,0x46024280,0x46023200,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x108,0x4600510D,0x4600428D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x10C,0x440C2000,0x440C5000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x118,0xC7A80004,0xC7A60004,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x11C,0xC4C60038,0xC4C40038,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x120,0x46083280,0x46062200,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x124,0x4600510D,0x4600428D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x128,0x440E2000,0x440E5000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x13C,0xC4860014,0xC4840014,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x140,0xC48A0018,0xC4880018,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x144,0x4600320D,0x4600218D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x148,0xC486001C,0xC484001C,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x14C,0x4600510D,0x4600428D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x150,0x44184000,0x44183000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x154,0x4600320D,0x4600218D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x158,0x44082000,0x44085000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+game_83300,func_15060BE0,0x160,0x440A4000,0x440A3000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
