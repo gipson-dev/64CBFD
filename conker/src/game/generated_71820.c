@@ -726,7 +726,9 @@ s32 func_15045AE4(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
     return 0;
 }
 
+/* Select the lowest entity triangle and publish its metadata. */
 s32 func_15045D48(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result) {
+    u8 flags;
     s32 selected;
     s32 count;
     s32 i;
@@ -768,14 +770,16 @@ s32 func_15045D48(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
         if (metadataTable != NULL) {
             metadataIndex = (s32)((u32)(triangle - D_800DBE3C) - entity->firstTriangle);
             result->metadata = metadataTable[metadataIndex];
+            flags = result->flags;
         } else {
             result->metadata = entity->metadata;
+            flags = result->flags;
         }
-        result->flags |= 6;
+        result->flags = flags | 6;
+        result->state = 3;
         if ((entity->flags & 0x80) == 0x80) {
             result->flags |= 1;
         }
-        result->state = 3;
         if (result->height <= threshold) {
             result->flags |= 2;
             return 1;
@@ -786,7 +790,9 @@ s32 func_15045D48(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
     return 0;
 }
 
+/* Select the highest entity triangle and publish its metadata. */
 s32 func_15045F8C(f32 *position, f32 threshold, s32 *input, HeightResult71820 *result) {
+    u8 flags;
     s32 selected;
     s32 count;
     s32 i;
@@ -829,14 +835,16 @@ s32 func_15045F8C(f32 *position, f32 threshold, s32 *input, HeightResult71820 *r
         if (metadataTable != NULL) {
             metadataIndex = (s32)((u32)(triangle - D_800DBE3C) - entity->firstTriangle);
             result->metadata = metadataTable[metadataIndex];
+            flags = result->flags;
         } else {
             result->metadata = entity->metadata;
+            flags = result->flags;
         }
-        result->flags |= 6;
+        result->flags = flags | 6;
+        result->state = 3;
         if ((entity->flags & 0x80) == 0x80) {
             result->flags |= 1;
         }
-        result->state = 3;
         if (threshold <= result->height) {
             result->flags |= 2;
             return 1;

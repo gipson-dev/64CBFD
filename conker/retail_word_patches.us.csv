@@ -28123,3 +28123,109 @@ generated_71820,func_150450CC,0x1DC,0x346C0007,0xA0EC001D,-,-,Normalize metadata
 generated_71820,func_150450CC,0x1E0,0xA0EB001D,0x372B0007,-,-,Normalize metadata/flags register lifetimes and independent publication schedule,,,false
 generated_71820,func_150450CC,0x1E4,0xA0EC001C,0xA0EB001C,-,-,Normalize metadata/flags register lifetimes and independent publication schedule,,,false
 generated_71820,func_150450CC,0x1F4,0x358E0002,0x356E0002,-,-,Normalize metadata/flags register lifetimes and independent publication schedule,,,false
+generated_71820,func_15045D48,0x028,0x2409FFFF,0x2408FFFF,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x048,0xAFA90020,0xAFA80020,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x07C,0x8FA90020,0x8FA80020,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x080,0x00401825,0x00402025,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x088,0x00002025,0x00001825,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0C0,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0D4,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0D8,0x00804825,0x00604025,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0E0,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0E4,0x0083082A,0x0064082A,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0F4,0x1121004A,0x1101004A,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x0F8,0x00096100,0x00086100,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x104,0x018D5021,0x018D4821,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x108,0x8D470004,0x8D2A0004,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x10C,0x8D480008,0x8D270008,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x11C,0x00E02825,0x01402825,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x128,0x24630006,0x24A50004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x12C,0x01C81021,0x01C71021,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x134,0x24A50004,0xA46F0004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x138,0xA46FFFFE,0x84580002,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x13C,0x84580002,0xA4780006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x140,0xA4780000,0x84590004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x144,0x84590004,0xA4790008,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x14C,0xA4790002,0x24630006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x150,0x8D4B000C,0x8D23000C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x154,0x3C0D0000,0x3C0C0000,R_MIPS_HI16:D_800DBEF4,R_MIPS_HI16:D_800DBEF4,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x158,0x8DAD0000,0x8D8C0000,R_MIPS_LO16:D_800DBEF4,R_MIPS_LO16:D_800DBEF4,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x15C,0x000B6080,0x00035880,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x160,0x018B6021,0x01635821,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x164,0x000C6140,0x000B5940,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x168,0x018D1021,0x016C1021,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x18C,0x00EE7823,0x014E7823,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x1A8,0x9205001C,0xAE0D0018,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1B0,0xAE0D0018,0x920F001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1B8,0x9205001C,0xAE0E0018,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1BC,0xAE0E0018,0x920F001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1C0,0x34AF0006,0x24010080,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1C4,0x24180003,0x240E0003,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1C8,0xA20F001C,0x35F80006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1CC,0xA218001D,0xA218001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1D4,0x24010080,0x370D0001,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1D8,0x35ED0001,0x332B0080,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1DC,0x332B0080,0x55610003,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1E0,0x55610003,0xA20E001D,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1E4,0xC7AA002C,0xA20D001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x1E8,0xA20D001C,0xA20E001D,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045D48,0x204,0x920E001C,0x920F001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x20C,0x35CF0002,0x35F80002,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x214,0xA20F001C,0xA218001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x220,0x9218001C,0x9219001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x228,0x3319FFFD,0x332BFFFD,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045D48,0x22C,0xA219001C,0xA20B001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x028,0x2409FFFF,0x2408FFFF,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x048,0xAFA90020,0xAFA80020,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x07C,0x8FA90020,0x8FA80020,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x080,0x00401825,0x00402025,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x088,0x00002025,0x00001825,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0C0,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0D4,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0D8,0x00804825,0x00604025,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0E0,0x24840001,0x24630001,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0E4,0x0083082A,0x0064082A,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0F4,0x1121004A,0x1101004A,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x0F8,0x00096100,0x00086100,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x104,0x018D5021,0x018D4821,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x108,0x8D470004,0x8D2A0004,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x10C,0x8D480008,0x8D270008,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x11C,0x00E02825,0x01402825,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x128,0x24630006,0x24A50004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x12C,0x01C81021,0x01C71021,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x134,0x24A50004,0xA46F0004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x138,0xA46FFFFE,0x84580002,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x13C,0x84580002,0xA4780006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x140,0xA4780000,0x84590004,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x144,0x84590004,0xA4790008,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x14C,0xA4790002,0x24630006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x150,0x8D4B000C,0x8D23000C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x154,0x3C0D0000,0x3C0C0000,R_MIPS_HI16:D_800DBEF4,R_MIPS_HI16:D_800DBEF4,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x158,0x8DAD0000,0x8D8C0000,R_MIPS_LO16:D_800DBEF4,R_MIPS_LO16:D_800DBEF4,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x15C,0x000B6080,0x00035880,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x160,0x018B6021,0x01635821,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x164,0x000C6140,0x000B5940,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x168,0x018D1021,0x016C1021,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x18C,0x00EE7823,0x014E7823,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x1A8,0x9205001C,0xAE0D0018,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1B0,0xAE0D0018,0x920F001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1B8,0x9205001C,0xAE0E0018,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1BC,0xAE0E0018,0x920F001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1C0,0x34AF0006,0x24010080,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1C4,0x24180003,0x240E0003,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1C8,0xA20F001C,0x35F80006,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1CC,0xA218001D,0xA218001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1D4,0x24010080,0x370D0001,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1D8,0x35ED0001,0x332B0080,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1DC,0x332B0080,0x55610003,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1E0,0x55610003,0xA20E001D,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1E4,0xC60A0000,0xA20D001C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1E8,0xA20D001C,0xA20E001D,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1EC,0xC60A0000,0xC7B0002C,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x1F0,0xC7B0002C,0xC60A0000,-,-,Preserve entity-query effective addresses and per-path publication schedule,,,false
+generated_71820,func_15045F8C,0x204,0x920E001C,0x920F001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x20C,0x35CF0002,0x35F80002,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x214,0xA20F001C,0xA218001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x220,0x9218001C,0x9219001C,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x228,0x3319FFFD,0x332BFFFD,-,-,Close entity-query register roles,,,false
+generated_71820,func_15045F8C,0x22C,0xA219001C,0xA20B001C,-,-,Close entity-query register roles,,,false
