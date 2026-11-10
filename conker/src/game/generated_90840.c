@@ -86,7 +86,8 @@ void func_150636A4(u8 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_90840/func_150641D8.s")
 
-s32 func_150642AC() {
+/* Unrecovered body; preserve its typed actor-state dispatch arguments. */
+s32 func_150642AC(struct127 *actor, u32 flags, f32 height, s32 force, s32 result) {
     return 0;
 }
 
@@ -96,6 +97,7 @@ s32 func_150642AC() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_90840/func_15064B94.s")
 
-s32 func_15065A5C() {
+/* Unrecovered body; preserve its typed actor-state dispatch arguments. */
+s32 func_15065A5C(struct127 *actor, u32 buttons, u32 flags, f32 height, s32 secondary, s32 command, s32 stunned, s32 expired, s32 force) {
     return 0;
 }

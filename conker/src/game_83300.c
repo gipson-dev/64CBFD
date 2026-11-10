@@ -6,6 +6,13 @@
 s32 func_15194FF4(struct127 *, struct127 *, s32);
 void func_1503B840(struct127 *);
 
+
+/* Original base for the one-based actor-slot ID lookup. */
+extern u8 D_800CBFA8[];
+s32 func_15080738(s32 command);
+s32 func_15065A5C(struct127 *, u32, u32, f32, s32, s32, s32, s32, s32);
+s32 func_150642AC(struct127 *, u32, f32, s32, s32);
+
 /* Generated placeholder declarations. */
 s32 func_15055E50(s32 arg0, s32 arg1);
 s32 func_150562FC();
@@ -28,7 +35,7 @@ struct127 *func_1505EEF4(s32);
 struct127 *func_1505EFD0(s32);
 void func_1505F188(struct127 *object);
 s32 func_1505F298();
-s32 func_1506045C();
+void func_1506045C(struct127 *, u32, u32, f32, s32);
 s32 func_15060BE0();
 s32 func_15060D54();
 s32 func_150611E8(s32 arg0, s32 arg1);
@@ -1214,9 +1221,88 @@ void func_1505F188(struct127 *object) {
 s32 func_1505F298() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1506045C.s. */
-s32 func_1506045C() {
-    return 0;
+/* Dispatch the actor's selected state, preserving the recursive overlay. */
+void func_1506045C(struct127 *actor, u32 buttons, u32 flags, f32 height, s32 secondary) {
+    s32 stunned;
+    s32 command;
+    s32 expired;
+    s32 force;
+    s32 result = 0;
+    s32 saved;
+    u8 *state;
+
+    if (D_800C35EA == 1) {
+        return;
+    }
+    force = 0;
+    state = (u8 *)actor->unk31C;
+    stunned = 0;
+    expired = 0;
+    if ((*(u16 *)(state + 0x72) != 0) && (secondary == 0)) {
+        if (D_800BE9E4 < *(u16 *)(state + 0x72)) {
+            *(u16 *)(state + 0x72) -= (u32)D_800BE9E4;
+        } else {
+            expired = 1;
+            *(u16 *)(state + 0x72) = 0;
+        }
+    }
+    state = (u8 *)actor->unk31C;
+    command = state[0x75] & ~0x80;
+    if ((state[0x7C] != 0) && (command == 0)) {
+        command = state[0x7C];
+    }
+    if ((D_800BE9F0 != 0x29) && (D_800BE9F0 != 0x2E) &&
+        (state[0x78] == 0) && (*(u16 *)D_800CC284 & 0x20) &&
+        func_15080738(command)) {
+        command = 0x1A;
+    }
+    state = (u8 *)actor->unk31C;
+    if (state[0x78] == 0x1A) {
+        command = 0x1A;
+    }
+    if (state[0x78] == 0x2A) {
+        command = 0x2A;
+    }
+    if ((actor->unk13C != 0) || (actor->unk137 != 0)) {
+        if (secondary == 0) {
+            command = 0;
+        } else {
+            force = 1;
+        }
+    }
+    if ((actor->unk65 != 0) && (secondary == 0)) {
+        switch (D_800CBFA8[actor->unk65 * sizeof(struct127)]) {
+            case 0x23:
+            case 0x8A: command = 0x1B; break;
+            case 0xC: command = 8; break;
+            case 0x28: command = 0; break;
+            default: command = 0xE; break;
+        }
+    }
+    if (state[0x17] != 0) {
+        command = 0x3C;
+    }
+    if ((secondary == 0) && (state[0x78] != 0) && (command != (state[0x78] & ~0x80))) {
+        saved = state[0x75];
+        state[0x75] = state[0x78];
+        func_1506045C(actor, buttons, flags, height, 1);
+        ((u8 *)actor->unk31C)[0x75] = saved;
+        ((u8 *)actor->unk31C)[0x78] = 0;
+    }
+    if (actor->stunned != 0) {
+        stunned = 1;
+        flags = 0;
+        buttons = 0;
+    }
+    state = (u8 *)actor->unk31C;
+    if ((command != 0) && (state[0x4E] == 0)) {
+        result = func_15065A5C(actor, buttons, flags, height, secondary,
+            command, stunned, expired, force);
+    }
+    state = (u8 *)actor->unk31C;
+    if ((state[0x7B] != 0) || (flags & 0x4000)) {
+        func_150642AC(actor, flags, height, force, result);
+    }
 }
 /* Original actor sound adapter: cached handles, material effect and spatial updates. */
 void func_15060778(s32 arg0, struct127 *arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {

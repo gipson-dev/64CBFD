@@ -28709,3 +28709,4 @@ game_83300,func_15060778,0x174,0xAFA40040,0xAFA40044,-,-,Normalize actor audio p
 game_83300,func_15060778,0x17C,0xAFA80048,0xAFA80054,-,-,Normalize actor audio private spill homes,,,false
 game_83300,func_15060778,0x180,0x8FA80048,0x8FA80054,-,-,Normalize actor audio private spill homes,,,false
 game_83300,func_15060778,0x188,0x8FA40040,0x8FA40044,-,-,Normalize actor audio private spill homes,,,false
+game_83300,func_1506045C,0x20C,0x10A0001B,0x1100001B,-,-,Use the identical preserved overlay-byte register at the recursive gate,,,false
