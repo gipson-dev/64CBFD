@@ -28700,3 +28700,14 @@ game_A28B0,func_150768DC,0x230,0x00094880,0x0019C880,-,-,Normalize proximity-con
 game_A28B0,func_150768DC,0x234,0x01281021,0x03291021,-,-,Normalize proximity-cone register allocation and commutative operand roles,,,false
 game_A28B0,func_150768DC,0x23C,0xA0430232,0xA0440232,-,-,Normalize proximity-cone register allocation and commutative operand roles,,,false
 game_A28B0,func_150768DC,0x240,0xA0550222,0xA05E0222,-,-,Normalize proximity-cone register allocation and commutative operand roles,,,false
+game_83300,func_150585F0,0x014,0xAFA5002C,0xAFA5002C,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,true
+game_83300,func_150585F0,0x048,0x460A3002,0x460A3382,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x050,0x44070000,0x44077000,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x228,0x5469000A,0x3C014080,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x22C,0x92020238,0x54690009,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x230,0x8E0A00F8,0x92020238,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x234,0x3C01FFFF,0x44819000,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x238,0x34217FFF,0x8E0A00F8,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x23C,0x01415824,0x3C01FFFF,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x240,0x3C014080,0x34217FFF,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_150585F0,0x244,0x44819000,0x01415824,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false

@@ -417,12 +417,14 @@ void func_1505841C(struct127 *arg0, f32 arg1) {
     }
 }
 
-// NON-MATCHING: 80% there
-void func_150585F0(struct127 *arg0) {
-    f32 temp_f0;
-    u16 phi_a2;
+/* Advance actor water physics and stun recovery using the retail motion-call ABI. */
+void func_150585F0(struct127 *arg0, f32 unused_argument) {
+    u16 recovery_heading;
+    f32 motion_scale;
 
-    func_1505A3A8(arg0->unk109 * D_80099478, arg0, 1.0f, arg0->unk109 * D_80099478, 0);
+    (void)unused_argument;
+    motion_scale = (f32)(u32)arg0->unk109 * D_80099478;
+    func_1505A3A8(0.0f, arg0, 1.0f, motion_scale, 0);
     if (arg0->unk1CC < D_8009947C) {
         arg0->unk1CC = arg0->y_position;
     }
@@ -477,12 +479,12 @@ void func_150585F0(struct127 *arg0) {
             }
         } else {
             if ((arg0->unk10B & 2) == 0) {
-                phi_a2 = arg0->unk76;
+                recovery_heading = arg0->unk76;
                 if ((arg0->unk10B & 4) != 0) {
-                    phi_a2 ^= 0x8000;
+                    recovery_heading ^= 0x8000;
                 }
                 arg0->unk80 = (u8)0xA;
-                func_150599C8(arg0, 12, phi_a2);
+                func_150599C8(arg0, 12, recovery_heading);
             }
         }
     }
