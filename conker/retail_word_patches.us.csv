@@ -28091,3 +28091,5 @@ game_1944C0,func_15169070,0x1A8,0x26D60034,0x01601025,-,-,Normalize closed walke
 game_1944C0,func_15169070,0x1B0,0x000E7880,0x01A2082A,-,-,Normalize closed walker saved roles and schedule; fold row-array end address and preserve retail limit copy,,,false
 game_1944C0,func_15169070,0x1B4,0x01AF082A,0xAFAD0040,-,-,Normalize closed walker saved roles and schedule; fold row-array end address and preserve retail limit copy,,,false
 game_1944C0,func_15169070,0x1BC,0xAFAD0040,0x26D60034,-,-,Normalize closed walker saved roles and schedule; fold row-array end address and preserve retail limit copy,,,false
+game_A28B0,func_15075650,0x144,0x8D020000,0x8D030000,-,-,Normalize one closed FE actor-reset pointer role from v0 to retail v1,,,false
+game_A28B0,func_15075650,0x14C,0xA0400223,0xA0600223,-,-,Normalize one closed FE actor-reset pointer role from v0 to retail v1,,,false

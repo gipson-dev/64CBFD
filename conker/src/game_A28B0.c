@@ -96,52 +96,44 @@ void func_15075548(void) {
     func_15075498();
 }
 
-// NON-MATCHING: 95% there
+/* Select the actor byte value and publish its timer, rate and state flags. */
 void func_15075650(void) {
-    u8 phi_a0;
-    u8 phi_a2;
-
-    phi_a0 = D_800D2108[D_800D154C->unk13F] - 1;
-    if (D_800D154C->unk21F != 0) {
-        phi_a0 = D_800D154C->unk21F;
-    }
-    phi_a0 = phi_a0 - D_800D154C->unk220;
+    u8 span;
+    u8 selection;
+    u8 excluded;
+    struct127 *actor;
+    /* Keep the upper limit until the exclusion is computed, then reuse selection. */
+    selection = D_800D2108[D_800D154C->unk13F] - 1;
+    if (D_800D154C->unk21F != 0) selection = D_800D154C->unk21F;
+    span = selection - D_800D154C->unk220;
     if (D_800D1891 == 0xFF) {
         if (D_800D154C->unk223 != 0xD) {
-            D_800D154C->unk21E = (func_150ADA20() % (u32) phi_a0) + D_800D154C->unk220;
+            D_800D154C->unk21E = ((u32)func_150ADA20() % span) + D_800D154C->unk220;
         }
     } else if (D_800D1891 == 0xFE) {
         if (D_800D154C->unk223 != 0xD) {
-            phi_a2 = D_800D154C->unk21E - 1;
-            if (D_800D154C->unk21E <= D_800D154C->unk220) {
-                phi_a2 = phi_a0 - 1;
-            }
-            phi_a0 = (func_150ADA20() % (u32) phi_a0) + D_800D154C->unk220;
-            if (phi_a0 != phi_a2) {
-                D_800D154C->unk21E = phi_a0;
+            excluded = D_800D154C->unk21E - 1;
+            if (D_800D154C->unk21E <= D_800D154C->unk220) excluded = selection - 1;
+            selection = ((u32)func_150ADA20() % span) + D_800D154C->unk220;
+            if (selection != excluded) {
+                D_800D154C->unk21E = selection;
+                actor = D_800D154C;
+                actor->unk223 = 0;
+                goto finish_selection;
             }
         }
     } else {
-        if (D_800D1891 == 0xFF) {
-            D_800D154C->unk21E = phi_a0 - 1;
-        } else {
-            D_800D154C->unk21E = D_800D1891;
-        }
+        if (D_800D1891 == 0xFF) D_800D154C->unk21E = selection - 1;
+        else D_800D154C->unk21E = D_800D1891;
     }
-
     D_800D154C->unk223 = 0;
+finish_selection:
     D_800D154C->unk21C = D_800D1890 * 0x64;
-
     if (D_800D1892 != 0xFF) {
         D_800D154C->unk44 = D_800D1892;
-        if (D_800D154C->unk44 == 1.0f) {
-            D_800D154C->unk44 = 0.5f;
-        }
+        if (D_800D154C->unk44 == 1.0f) D_800D154C->unk44 = 0.5f;
     }
-
-    if (D_800D154C->unk21E < D_800D154C->unk220) {
-        D_800D154C->unk21E = D_800D154C->unk220;
-    }
+    if (D_800D154C->unk21E < D_800D154C->unk220) D_800D154C->unk21E = D_800D154C->unk220;
     func_15075498();
 }
 
