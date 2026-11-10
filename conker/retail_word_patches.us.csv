@@ -28737,3 +28737,9 @@ game_83300,func_15060BE0,0x150,0x44184000,0x44183000,-,-,Preserve equivalent pos
 game_83300,func_15060BE0,0x154,0x4600320D,0x4600218D,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
 game_83300,func_15060BE0,0x158,0x44082000,0x44085000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
 game_83300,func_15060BE0,0x160,0x440A4000,0x440A3000,-,-,Preserve equivalent positive-zero initialization and a closed FP temporary-register cycle,,,false
+generated_F21D0,func_150C4D20,0xE0,0x3C0143B4,0x3C010000,-,R_MIPS_HI16:D_800A03F4,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
+generated_F21D0,func_150C4D20,0xE4,0x44817000,0xC42C0000,-,R_MIPS_LO16:D_800A03F4,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
+generated_F21D0,func_150C4D20,0xE8,0x3C010000,0x920B004F,R_MIPS_HI16:D_800A03F4,-,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
+generated_F21D0,func_150C4D20,0xEC,0xC42C0000,0x3C0143B4,R_MIPS_LO16:D_800A03F4,-,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
+generated_F21D0,func_150C4D20,0xF0,0x920B004F,0x460C0182,-,-,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
+generated_F21D0,func_150C4D20,0xF8,0x460C0182,0x44817000,-,-,Preserve independent post-helper constant scheduling and unchanged memory access order,,,false
