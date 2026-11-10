@@ -744,3 +744,8 @@ SHELL = /bin/bash -e -o pipefail
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CD860.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F550
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_C98F0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009E458
 $(BUILD_DIR)/$(SRC_DIR)/game_A28B0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009A1E8_game
+
+# Palette-state initializer: preserve both loops and direct address constants.
+ifeq ($(VERSION),us)
+$(BUILD_DIR)/$(SRC_DIR)/game_2DDF0.c.o: CFLAGS += -Wo,-loopunroll,0 -Wo,-no_const_in_reg
+endif
