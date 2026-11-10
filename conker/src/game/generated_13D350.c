@@ -1,4 +1,10 @@
 #include <ultra64.h>
+
+extern s32 D_80082FA0, D_80082FA4;
+s32 func_1501A490(Gfx *, s16, s32, s32, s32, s32);
+Gfx *func_1501A6CC(Gfx *, s32, s32, s32, s32);
+Gfx *func_15110544(Gfx *, s32, s32, s32, s32, u8, u8, u8);
+
 extern s32 D_800BE9F0, D_800BE620, D_800BE624;
 extern u8 *D_800DBFF0;
 extern u8 D_800DBEA8[];
@@ -7,7 +13,9 @@ void func_150A7CB0(f32 matrix[4][4], f32 x, f32 y, f32 z);
 void func_150A8050(f32 [4][4], f32, f32, f32);
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 typedef struct {
-    u8 pad0[0xBC];
+    u8 pad0[0x24];
+    f32 top, bottom, left, right;
+    u8 pad34[0x88];
     f32 mtx[4][4];
     u8 padFC[0x84];
 } Record13D350;
@@ -38,8 +46,25 @@ void func_15110360(s32 arg0, f32 arg1[4][4], f32 arg2, f32 arg3, f32 arg4) {
     func_150A7A48(arg1, D_800BE628[arg0].mtx, arg1);
 }
 
-s32 func_151103C8() {
-    return 0;
+/* Fill the selected view and append the active split-screen dividers. */
+Gfx *func_151103C8(Gfx *commands, f32 unusedX, f32 unusedY, f32 unusedZ) {
+    Record13D350 *view = (Record13D350 *)((u32)D_800BE628 + (u32)D_80082FA4 * 0x180);
+
+    commands = func_15110544(commands, (s32)view->left, (s32)view->top,
+        (s32)(view->right - 1.0f), (s32)view->bottom,
+        D_800DBEA8[0], D_800DBEA8[1], D_800DBEA8[2]);
+    if (D_80082FA0 != 0 && D_80082FA4 == 0) {
+        gDPPipeSync(commands++);
+        commands = (Gfx *)func_1501A490(commands, 0xFF, 0, 0, 0, 0);
+        gDPSetFillColor(commands++, 0x00010001);
+        commands = func_1501A6CC(commands, 0, (D_800BE624 >> 1) - 6,
+            D_800BE620, (D_800BE624 >> 1) + 6);
+        if (D_80082FA0 != 1) {
+            commands = func_1501A6CC(commands, (D_800BE620 >> 1) - 1, 0,
+                (D_800BE620 >> 1) + 1, D_800BE624);
+        }
+    }
+    return commands;
 }
 
 Gfx *func_1501A680(Gfx *commands);
