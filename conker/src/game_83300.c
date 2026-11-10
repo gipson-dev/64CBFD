@@ -27,8 +27,8 @@ s32 func_1505D408();
 s32 func_1505D5D0();
 s32 func_1505D6F0(s32 arg0, s32 arg1);
 s32 func_1505DADC();
-s32 func_1505DDA8();
-s32 func_1505DF10();
+s8 func_1505DDA8(struct127 *, u8, u16, f32);
+f32 func_1505DF10(struct127 *, u8, u16 *, f32 *, f32 *, s32);
 s32 func_1505E0C4();
 s32 func_1505ED34();
 struct127 *func_1505EEF4(s32);
@@ -1063,9 +1063,26 @@ f32 func_1505D34C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 *arg4) {
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505D6F0.s")
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DADC.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505DADC.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DDA8.s. */
-s32 func_1505DDA8() {
-    return 0;
+/* Find the first active actor slot inside the scaled radius and heading sector. */
+s8 func_1505DDA8(struct127 *actor, u8 unused, u16 angle_range, f32 scale) {
+    u8 slot;
+    u16 heading;
+    f32 horizontal_squared;
+    f32 height;
+    f32 radius;
+
+    for (slot = 0; slot <= D_80082FA0; slot++) {
+        if (D_800CC2D0[slot].interaction_state == 0) {
+            continue;
+        }
+        radius = actor->xz_velocity * scale * 0.5f;
+        if (func_1505DF10(actor, slot, &heading, &horizontal_squared, &height, 0) < radius * radius) {
+            if ((u16)(actor->unk76 - heading + angle_range / 2) < angle_range) {
+                return (s8)slot;
+            }
+        }
+    }
+    return -1;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505DF10.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505DF10.s")
