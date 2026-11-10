@@ -774,8 +774,45 @@ void func_1505A184(u16 yaw, f32 distance, f32 pitch, f32 *x, f32 *z, f32 *y) {
     *x = cosine * distance;
     *z = -sine * distance;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505A250.s. */
-void func_1505A250(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4) {
+/* Approach a float pair along its normalized delta, with per-axis clamps. */
+void func_1505A250(f32 target_x, f32 target_z, f32 rate, f32 *x, f32 *z) {
+    f32 delta_x;
+    f32 delta_z;
+    f32 distance;
+    f32 step_x;
+    f32 step_z;
+
+    delta_x = target_x - *x;
+    delta_z = target_z - *z;
+    if ((delta_x == 0.0f) && (delta_z == 0.0f)) {
+        return;
+    }
+    distance = sqrtf(delta_x * delta_x + delta_z * delta_z);
+    rate *= D_800D1550[0];
+    step_x = fabsf(delta_x / distance * rate);
+    step_z = fabsf(delta_z / distance * rate);
+    if (delta_x >= 0.0f) {
+        *x = *x + step_x;
+        if (*x > target_x) {
+            *x = target_x;
+        }
+    } else {
+        *x = *x - step_x;
+        if (*x < target_x) {
+            *x = target_x;
+        }
+    }
+    if (delta_z >= 0.0f) {
+        *z = *z + step_z;
+        if (*z > target_z) {
+            *z = target_z;
+        }
+    } else {
+        *z = *z - step_z;
+        if (*z < target_z) {
+            *z = target_z;
+        }
+    }
 }
 
 /* Approach the actor target speed using state-dependent acceleration and braking. */
