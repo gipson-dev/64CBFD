@@ -32,7 +32,7 @@ s32 func_1505DADC();
 s8 func_1505DDA8(struct127 *, u8, u16, f32);
 f32 func_1505DF10(struct127 *, u8, u16 *, f32 *, f32 *, s32);
 s32 func_1505E0C4();
-s32 func_1505ED34();
+u8 *func_1505ED34(void);
 struct127 *func_1505EEF4(s32);
 struct127 *func_1505EFD0(s32);
 void func_1505F188(struct127 *object);
@@ -1159,9 +1159,32 @@ u32 func_1505E7CC(s32 key, struct127 *actor) {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505E874.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_83300/func_1505E874.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505ED34.s. */
-s32 func_1505ED34() {
-    return 0;
+/* Allocate an actor, recycling eligible entries before using reserved slot 25. */
+u8 *func_1505ED34(void) {
+    s32 index;
+    struct127 *actor;
+
+    for (index = 0, actor = D_800CC2D0; index < 25 && actor->interaction_state != 0; index++, actor++) {
+    }
+    if (index == 25) {
+        for (actor = D_800CC2D0, index = 0; index < 25 && (actor->interaction_state != 0x27 || actor->unk1D4 != NULL); index++, actor++) {
+        }
+        if (index != 25 && actor->interaction_state != 0) {
+            func_15060F28(actor, 0);
+        }
+    }
+    if (index == 25) {
+        for (actor = D_800CC2D0, index = 0; index < 25 && actor->interaction_state != 0x27; index++, actor++) {
+        }
+        if (index != 25 && actor->interaction_state != 0) {
+            func_15060F28(actor, 0);
+        }
+    }
+    if (index == 25 && actor->interaction_state != 0) {
+        func_15060F28(actor, 0);
+    }
+    func_1505F188(actor);
+    return (u8 *)actor;
 }
 // Likely hand-written assembly in the original game (same class as the
 // func_150ADA20/func_150ADACC PRNG pair and func_15125628): retail
