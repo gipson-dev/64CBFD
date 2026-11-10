@@ -145,11 +145,17 @@ one handle save is incomplete: retail also saves/reloads the promoted handle
 across the first `func_1000F85C` call. No further advisory call is authorized
 by the current target's one-call analysis budget.
 
-The requested scoped Graphify code refresh was attempted. Current filters
-exclude the tools submodule and reported no tracked code in the change set.
-The graph remains byte-identical at **59,645 nodes / 113,070 links**, with all
-old nodes retained and zero indexed nodes for these two new Python files.
-This is an explicit coverage gap, not a completed code extraction claim.
+The pre-commit scoped Graphify code refresh reported no tracked code in the
+change set: current filters exclude the tools submodule. That attempt left
+the graph byte-identical. The subsequent consumer commit hook indexed the
+documentation and produced **59,653 nodes / 113,077 links**, up from
+59,645/113,070. All 59,645 old nodes are retained or relocated: three duplicate
+headings in `UPDATE_LOG.md` acquired IDs two lines later, verified by label,
+file and exact line displacement. Definitions outside changed documentation
+paths are unchanged, excluding reclustered community metadata. Historical
+retention keeps 31,816 nodes from 3,754 excluded-but-existing files. There are
+still zero indexed nodes for the two new Python files. This is an explicit
+code coverage gap, not a full-corpus extraction claim.
 
 ## Continue from here
 
