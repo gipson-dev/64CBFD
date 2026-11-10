@@ -52,7 +52,7 @@ void func_1506E5FC(void);
 void func_1505959C(MovementActor34F4 *, s32);
 f32 func_1505A6F8(MovementActor34F4 *, MovementActor34F4 *);
 u8 func_150599C8(MovementActor34F4 *, u8, u16);
-f32 func_1505A3A8(f32, MovementActor34F4 *, f32, f32, u8);
+void func_1505A3A8(f32, MovementActor34F4 *, f32, f32, u8);
 s32 func_15073FA0(void);
 void func_1505E650(MovementActor34F4 *, u16, f32, f32, f32, f32, s32);
 f32 func_150F34A0(u8 *, f32);

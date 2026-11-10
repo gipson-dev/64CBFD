@@ -47,7 +47,9 @@ void func_15063254(struct127 *, u32, u32, f32);
 void func_15058F24(struct127 *arg0, f32, f32);
 u8   func_150599C8(struct127 *arg0, u8 arg1, u16 arg2);
 void func_1505A250(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4);
-f32  func_1505A3A8(f32 arg0, void *arg1, f32 arg2, f32 arg3, u8 arg4);
+void func_1505A3A8(f32 arg0, void *arg1, f32 arg2, f32 arg3, u8 arg4);
+
+extern f32 D_800994C0, D_800994C4, D_800994C8, D_800994CC, D_800994D0;
 extern u16 D_800C4ED0[];
 
 u8  func_1505B9C4(void *arg0, struct127 *arg1, struct252 *arg2, struct252 *arg3, u8 arg4, s32 arg5, u8 arg6);
@@ -767,9 +769,69 @@ void func_1505A184(u16 yaw, f32 distance, f32 pitch, f32 *x, f32 *z, f32 *y) {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505A250.s. */
 void func_1505A250(f32 arg0, f32 arg1, f32 arg2, f32 *arg3, f32 *arg4) {
-}/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1505A3A8.s. */
-f32 func_1505A3A8(f32 arg0, void *arg1, f32 arg2, f32 arg3, u8 arg4) {
-    return 0.0f;
+}
+
+/* Approach the actor target speed using state-dependent acceleration and braking. */
+void func_1505A3A8(f32 target_speed, void *actor_pointer, f32 acceleration, f32 deceleration, u8 magnitude) {
+    struct127 *actor = actor_pointer;
+
+    deceleration *= D_800D1550[0];
+    acceleration *= D_800D1550[0];
+    if (D_800CC27C != 0 && actor->unk28 < 5.0f && actor->interaction_state != 30) {
+        acceleration = 0.0f;
+    }
+    if (actor->interaction_state == 1) {
+        if (actor->in_water != 0) {
+            deceleration *= D_800994C0;
+            acceleration = 2.0f;
+        }
+        if (actor->unkA8 != 0) {
+            deceleration *= 0.25f;
+        }
+        if (actor->unk81 != 0) {
+            if (actor->unk81 & 0x40) {
+                if (actor->unk81 & 0x20) {
+                    deceleration = 0.0f;
+                } else {
+                    deceleration = D_800994C4;
+                }
+            } else {
+                deceleration *= D_800994C8;
+                if (magnitude >= 46) {
+                    acceleration *= 0.5f;
+                }
+                if (magnitude >= 91) {
+                    target_speed *= 0.5f;
+                }
+            }
+        }
+        if (actor->unkAE != 0) {
+            deceleration *= D_800994CC;
+        }
+    }
+    if (target_speed < 0.0f) {
+        if (actor->xz_velocity > 0.0f) {
+            deceleration += acceleration;
+        } else {
+            deceleration = acceleration;
+        }
+    } else if (actor->xz_velocity < 0.0f) {
+        acceleration += deceleration;
+    }
+    if (target_speed < actor->xz_velocity) {
+        actor->xz_velocity = actor->xz_velocity - deceleration;
+        if (actor->xz_velocity < target_speed) {
+            actor->xz_velocity = target_speed;
+        }
+    } else {
+        if (actor->xz_velocity > target_speed - 1.0f) {
+            acceleration *= D_800994D0;
+        }
+        actor->xz_velocity = actor->xz_velocity + acceleration;
+        if (target_speed < actor->xz_velocity) {
+            actor->xz_velocity = target_speed;
+        }
+    }
 }
 f32 func_1505A5CC(struct49 *arg0) {
     f32 x, y;

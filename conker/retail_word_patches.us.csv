@@ -28711,3 +28711,5 @@ game_83300,func_150585F0,0x238,0x34217FFF,0x8E0A00F8,-,-,"Normalize water-stun f
 game_83300,func_150585F0,0x23C,0x01415824,0x3C01FFFF,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
 game_83300,func_150585F0,0x240,0x3C014080,0x34217FFF,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
 game_83300,func_150585F0,0x244,0x44819000,0x01415824,-,-,"Normalize water-stun float argument register, gravity schedule and unused argument home",,,false
+game_83300,func_1505A3A8,0x020,0x46007382,0x4600A502,-,-,Normalize two independent motion-rate multiplies,,,false
+game_83300,func_1505A3A8,0x028,0x4600A502,0x46007382,-,-,Normalize two independent motion-rate multiplies,,,false
