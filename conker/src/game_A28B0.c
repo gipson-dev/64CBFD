@@ -1049,12 +1049,9 @@ void func_15078520(void) {
     func_15075400(D_800D1890);
 }
 
-// NON-MATCHING: float scheduling/register differences
+/* Write the next path-node coordinates from signed packed offsets and facing mode. */
 void func_15078544(void) {
     u8 original_cmd;
-    s32 mode;
-    s32 temp_x;
-    s32 temp_z;
     f32 offset_x;
     f32 offset_z;
     f32 target_x;
@@ -1065,26 +1062,22 @@ void func_15078544(void) {
     f32 angle;
     u8 angle_byte;
     struct127 *target;
-    PathNode8 *node;
 
     original_cmd = D_800D1890;
     D_800D1890 = original_cmd & 0x3F;
     target = &D_800CC2D0[D_800D154C->unk222];
 
-    temp_x = (((s8)D_800D1891 << 4) | (D_800D1893 >> 4));
-    temp_z = (((s8)D_800D1892 << 4) | (D_800D1893 & 0xF));
-    offset_x = temp_x * 8;
-    offset_z = temp_z * 8;
-    target_x = target->x_position;
+    offset_x = (((s32)(s8)D_800D1891 * 16) | (D_800D1893 >> 4)) * 8;
+    offset_z = (((s32)(s8)D_800D1892 * 16) | (D_800D1893 & 0xF)) * 8;
     target_y = target->y_position;
+    target_x = target->x_position;
     target_z = target->z_position;
-    mode = original_cmd >> 6;
 
-    if (mode == 0) {
+    if ((original_cmd >> 6) == 0) {
         angle_byte = ((target->unk7A >> 8) - 0x40) & 0xFF;
-        sin_angle = func_150489B0((angle_byte - 0x40) & 0xFF);
+        sin_angle = func_15048A40(angle_byte);
         cos_angle = func_150489B0(angle_byte);
-    } else if (mode == 1) {
+    } else if ((original_cmd >> 6) == 1) {
         sin_angle = 0.0f;
         cos_angle = 1.0f;
     } else {
@@ -1093,10 +1086,11 @@ void func_15078544(void) {
         cos_angle = cosf(angle);
     }
 
-    node = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890];
-    node->x = target_x + ((offset_x * cos_angle) + (offset_z * sin_angle));
-    node->pad2 = target_y;
-    node->z = target_z + ((offset_z * cos_angle) - (offset_x * sin_angle));
+    target_x += ((offset_x * cos_angle) + (offset_z * sin_angle));
+    ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1].x = (s16)(s32)target_x;
+    ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1].pad2 = (s16)(s32)target_y;
+    target_z += ((offset_z * cos_angle) - (offset_x * sin_angle));
+    ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1].z = (s16)(s32)target_z;
 }
 
 void func_1507879C(void) {
