@@ -405,8 +405,10 @@ void func_15044E88() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_71820/func_15044ED0.s")
 
+/* Copy the highest triangle at or below the query height, then test the threshold. */
 s32 func_150450CC(f32 *position, f32 threshold, HeightResult71820 *result) {
-    s32 selected = -1;
+    u8 flags;
+    s32 selected;
     s32 count;
     s32 i;
     f32 height;
@@ -419,6 +421,7 @@ s32 func_150450CC(f32 *position, f32 threshold, HeightResult71820 *result) {
         result->flags &= ~2;
         return 0;
     }
+    selected = -1;
     result->height = D_80098D44;
     func_1510F800(0);
     D_800DBE68 = position[0];
@@ -445,11 +448,13 @@ s32 func_150450CC(f32 *position, f32 threshold, HeightResult71820 *result) {
         }
         if (D_800DBE5C != NULL) {
             result->metadata = D_800DBE5C[candidate->triangle - D_800DBE3C];
+            flags = result->flags;
         } else {
             result->metadata = 0;
+            flags = result->flags;
         }
         result->state = 1;
-        result->flags |= 7;
+        result->flags = flags | 7;
         result->value = 0;
         if (threshold <= result->height) {
             result->flags |= 2;
