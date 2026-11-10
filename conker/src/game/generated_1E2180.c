@@ -1,4 +1,24 @@
 #include <ultra64.h>
+
+extern f32 D_800AA3D0;
+extern u8 D_800A3FE6[];
+s32 func_15134070(u8 *);
+void func_1516962C(s32, void *, u8);
+void *func_1513418C(void *, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+typedef struct {
+    u32 zero0, zero4;
+    u8 ownerIdentity, reserved09[3];
+    u8 *owner;
+    u8 attachment, reserved11[3];
+    f32 vector[3];
+    f32 value20, value24;
+    s16 duration;
+    u8 flags, kind;
+    s8 callback;
+    u8 mode;
+} OwnerEffectDescriptor1E2180;
+
 extern f32 D_800AA3D4,D_800AA3D8,D_800AA3DC;
 s32 func_150ADA20(void);
 f32 func_150ADA68(void);
@@ -6,8 +26,49 @@ void *func_151D9014(f32 *,f32 *,u8,f32,s16,u8,f32,u8,f32,f32,u8,s32,u8,u8,u8,s32
 
 /* Non-matching placeholders for the text-only asm slice asm/1E2180.s. */
 
-s32 func_151B4CD0() {
-    return 0;
+/* Submit an owner-linked effect and copy its descriptor-specific payload. */
+void *func_151B4CD0(u8 *owner, u8 selector, s32 category) {
+    u8 *created;
+    OwnerEffectDescriptor1E2180 descriptor;
+    u8 payload[1];
+    s32 type;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    type = func_15134070(owner);
+    if (type == 99) {
+        return NULL;
+    }
+    if (D_800A3FE6[type * 0x10] == 2) {
+        return NULL;
+    }
+    func_1516962C(40, owner, 22);
+    descriptor.zero0 = 0;
+    descriptor.zero4 = 0;
+    descriptor.ownerIdentity = owner[0x3B];
+    descriptor.owner = owner;
+    descriptor.attachment = 2;
+    descriptor.vector[0] = 0.0f;
+    descriptor.vector[1] = -27.0f;
+    descriptor.vector[2] = 16.0f;
+    descriptor.value20 = 15.0f;
+    descriptor.value24 = D_800AA3D0;
+    descriptor.flags = 6;
+    descriptor.duration = (u32)func_150ADA20() % 21U + 40;
+    descriptor.kind = 8;
+    descriptor.callback = -1;
+    descriptor.mode = 7;
+    if (D_800A3FE6[type * 0x10] == 1) {
+        payload[0] = 1;
+    } else {
+        payload[0] = 0;
+    }
+    created = func_1513418C(&descriptor, 1, selector, category);
+    if (created != NULL) {
+        memcpy(created + 0x58, payload, 1);
+    }
+    return created;
 }
 
 void func_151B4EA4(f32 *, f32, f32, f32, u8, u8);

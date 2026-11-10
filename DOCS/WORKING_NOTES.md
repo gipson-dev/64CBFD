@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2251](WORKING_NOTES/2251-game-owner-payload-effect-constructor-direct-match-20261110.md): `func_151B4CD0` restores the complete 95-word/frame 0x58 owner-linked effect constructor and one-byte payload copy directly from C, with zero guards. Typed SDK32 fields, real classifier/notification/RNG64/constructor/copy integration and the strict 316-byte complete-image prediction pass. Fresh total **4,320 / 5,513 (78.36%)**, Game **3,647 / 4,840 (75.35%)**, zero drift; **91** more to 80%. Next: investigate `func_15000940`.
+
 [Note 2250](WORKING_NOTES/2250-game-view-background-and-split-borders-direct-match-20261110.md): `func_151103C8` restores the complete 95-word/frame 0x28 selected-view fill and split-screen dividers directly from C, with zero guards. Actual callback float transfers/return publication, real graphics packets, typed SDK32 native checks and the strict 309-byte complete-image prediction pass. Fresh total **4,319 / 5,513 (78.34%)**, Game **3,646 / 4,840 (75.33%)**, zero drift; **92** more to 80%. Next: investigate `func_151B4CD0`.
 
 [Note 2249](WORKING_NOTES/2249-game-angular-spring-update-byte-match-20261110.md): `func_150C4D20` restores the 95-word/frame 0x48 angular spring and phase update with six relocation-aware scheduling guards. Both callback registration/invocation paths, real trig lookup, typed SDK32 native checks and the strict 325-byte complete-image prediction pass. Fresh total **4,318 / 5,513 (78.32%)**, Game **3,645 / 4,840 (75.31%)**, zero drift; **93** more to 80%. Next: investigate `func_151103C8`.
