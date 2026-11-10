@@ -19,8 +19,10 @@ Original assembly `conker/asm/nonmatchings/game_A28B0/func_15078544.s` remains
 unchanged. The ordinary asm-processor/IDO O2-g3/postprocess/generic-padder/
 assembler route stays fixed. No Makefile or shared declaration change.
 
-The old131-word C body had two semantic errors: it called150489B0 with a
-shifted angle instead of retail's15048A40 helper, and wrote the current
+The old131-word C body used a shifted150489B0 lookup in place of the retail
+15048A40 wrapper call. The wrapper performs that same shifted lookup, so
+restoring it recovers the original call structure rather than changing its
+mathematical result. The functional errors were writing the current
 record's0/2/4 fields through one cached node. Retail writes the **next**
 8-byte record's coordinates at8/10/12 and reloads actor/group/table/index
 between each component. The recovered C fixes both errors. Explicit signed
