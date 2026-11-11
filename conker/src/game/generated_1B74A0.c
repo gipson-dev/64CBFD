@@ -1,4 +1,10 @@
 #include <ultra64.h>
+
+typedef s32 (*SubtypeCallback1B74A0)(u8 *, u8 *, s32);
+extern SubtypeCallback1B74A0 D_8008D5A0[];
+u8 *func_15083E90(s32);
+void func_150A7960(f32 *, f32, f32, f32, f32 *, f32 *, f32 *);
+
 extern f32 D_800A73C0,D_800A73C4,D_800A73C8;
 u8 *func_151407D0(void *, s32, u8 *, u8, u8, u8, u8, s8, u8, s32);
 void *memcpy(void *, const void *, size_t);
@@ -24,8 +30,42 @@ return_null:
     return NULL;
 }
 
-s32 func_1518A094() {
+/* Update attached points and honor the selected subtype callback. */
+s32 func_1518A094(u8 *object) {
+    u8 *context = object + 0x170;
+    u8 *resource;
+    u8 *matrix;
+    u8 enabled[8];
+    s8 subtype;
+    if (*(u8 **)(object + 0x188) == 0) {
+        resource = func_15083E90(context[0x1D]);
+        *(u8 **)(context + 0x18) = resource;
+        if (resource == 0) return 0;
+    }
+    resource = *(u8 **)(context + 0x18);
+    if (*(u32 *)resource == 0 || context[0x1D] != resource[0x3B]) goto invalid;
+    subtype = *(s8 *)(context + 0x1E);
+    if (subtype != -1) {
+      if (!D_8008D5A0[subtype](object, &enabled[7], subtype)) return 0;
+      if (!enabled[7]) return 1;
+      resource = *(u8 **)(context + 0x18);
+    }
+    matrix = *(u8 **)(resource + 0x1D4);
+    if (matrix != 0) {
+        matrix += context[0x1C] * 64;
+        func_150A7960((f32 *)matrix, *(f32 *)(context + 0), *(f32 *)(context + 4), *(f32 *)(context + 8), (f32 *)(object + 0x34), (f32 *)(object + 0x38), (f32 *)(object + 0x3C));
+        func_150A7960((f32 *)matrix, *(f32 *)(context + 0xC), *(f32 *)(context + 0x10), *(f32 *)(context + 0x14), (f32 *)(object + 0x40), (f32 *)(object + 0x44), (f32 *)(object + 0x48));
+        *(u32 *)(object + 0x58) |= 2;
+        *(u32 *)(object + 0x58) &= ~4;
+        return 1;
+    } else {
+        *(u32 *)(object + 0x58) &= ~2;
+    }
+    goto success;
+invalid:
     return 0;
+success:
+    return 1;
 }
 
 /* Apply the descriptor subtype's scale/color and report its active gate. */

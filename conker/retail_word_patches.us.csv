@@ -28841,3 +28841,45 @@ generated_176A00,func_1514C2F0,0x120,0x000B8C03,0x00098C03,-,-,Normalize radial 
 generated_176A00,func_1514C2F0,0x124,0x02498021,0x024B8021,-,-,Normalize radial callback saved-float and loop temporary register roles,,,false
 generated_176A00,func_1514C2F0,0x128,0x320A00FF,0x320C00FF,-,-,Normalize radial callback saved-float and loop temporary register roles,,,false
 generated_176A00,func_1514C2F0,0x134,0x01408025,0x01808025,-,-,Normalize radial callback saved-float and loop temporary register roles,,,false
+generated_1B74A0,func_1518A094,0x28,0xAFA30034,0xAFA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x2C,0x8FA30034,0x8FA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x74,0x00064080,0x00064880,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x78,0x0328C821,0x0329C821,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x84,0x27A50043,0x27A5004B,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x8C,0xAFA30034,0xAFA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x90,0x14400003,0x10400006,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x94,0x8FA30034,0x8FA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x98,0x10000034,0x93AA004B,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x9C,0x00001025,0x55400006,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xA0,0x93A90043,0x8C620018,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xA4,0x55200004,0x10000031,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xA8,0x8C620018,0x24020001,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xB0,0x24020001,0x00001025,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xB8,0x8C4401D4,0x8C4801D4,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xBC,0x260C0034,0x260D0034,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xC0,0x260D0038,0x260E0038,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xC4,0x10800021,0x11000021,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xC8,0x260E003C,0x260F003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xCC,0x906A001C,0x906B001C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xDC,0x000A5980,0x000B6180,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xE0,0x008B2021,0x010C2021,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xE8,0xAFA30034,0xAFA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xEC,0xAFAE0018,0xAFAF0018,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xF0,0xAFAD0014,0xAFAE0014,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xF8,0xAFAC0010,0xAFAD0010,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0xFC,0x8FA30034,0x8FA3003C,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x100,0x260F0040,0x26180040,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x104,0x26180044,0x26090044,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x114,0x26080048,0x26190048,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x11C,0xAFA80018,0xAFB90018,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x120,0xAFB80014,0xAFA90014,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x128,0xAFAF0010,0xAFB80010,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x12C,0x8E190058,0x8E0A0058,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x134,0x24020001,0x354B0002,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x138,0x37290002,0xAE0B0058,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x13C,0xAE090058,0x01616824,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x140,0x01215824,0xAE0D0058,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x148,0xAE0B0058,0x24020001,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x14C,0x8E0C0058,0x8E0E0058,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x154,0x01816824,0x01C17824,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
+generated_1B74A0,func_1518A094,0x15C,0xAE0D0058,0xAE0F0058,-,-,"Normalize attachment updater stack slots, temporary registers and return scheduling",,,false
