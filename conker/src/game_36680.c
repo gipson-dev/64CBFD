@@ -26,12 +26,17 @@ typedef struct { u8 values[6]; } EffectPointIds36680;
 extern EffectPointIds36680 D_80082BF4;
 u8 *func_151149AC(u8);
 
+typedef struct { u8 flags, value; u8 padding[2]; s16 first, second; u8 tail[2]; } ChannelPreset36680;
+extern ChannelPreset36680 D_80095CE0[];
+extern u8 D_800DDBD0[], D_800DDBE0[], D_800DDBF0[], D_800DDBC0[], D_800DDC80[], D_80095CC4[], D_800DDC20[];
+extern s16 D_800BE438[][2], D_800BE478[];
+
 /* Generated placeholder declarations. */
 s32 func_15009334(s32 arg0);
 void func_1500A6D8(struct226 *actor, s32 command);
 void func_1500A7E8(struct226 *actor, s32 command);
 s32 func_1500AC14();
-s32 func_1500AD84();
+void func_1500AD84(s32, u32, u32);
 s32 func_1500AF08();
 s32 func_1500B1F4();
 s32 func_1500B3B0();
@@ -507,10 +512,39 @@ void func_1500ABA0(s32 arg0) {
 s32 func_1500AC14() {
     return 0;
 }
-// GOTO hell
-/* Non-matching C placeholders for asm/nonmatchings/game_36680/func_1500AD84.s. */
-s32 func_1500AD84() {
-    return 0;
+/* Initialize a channel from its preset and option bits. */
+void func_1500AD84(s32 slot, u32 preset, u32 options) {
+    u32 savedOptions = options;
+    u32 value;
+    u8 base;
+    ChannelPreset36680 *entry;
+    if (preset != 255) {
+        entry = &D_80095CE0[preset];
+        options = entry->flags;
+        value = entry->value;
+        D_800DDBD0[slot] = value;
+        if (options & 0x10) {
+            value--;
+            D_800DDBD0[slot] = value;
+            D_800DDBE0[slot] = value;
+        } else {
+            D_800DDBE0[slot] = 0;
+        }
+        D_800DDBF0[slot] = (options & 0x80) ? 2 : 1;
+        D_800BE438[slot][0] = entry->first;
+        D_800BE438[slot][1] = entry->second;
+        D_800DDBC0[slot] = preset;
+        D_800DDC80[slot] = savedOptions & 0x7F;
+        if (savedOptions & 0x80) D_800DDC00 |= 1U << slot;
+        if (options & 1) D_800DDC04 |= 1U << slot;
+        if (options & 8) D_800DDC08 |= 1U << slot;
+    } else {
+        D_800DDBD0[slot] = 0;
+    }
+    base = D_80095CC4[slot];
+    D_800BE478[slot] = 0;
+    D_800DDC20[slot * 2] = base;
+    D_800DDC20[slot * 2 + 1] = base;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_36680/func_1500AF08.s. */
 s32 func_1500AF08() {
