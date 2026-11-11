@@ -1,5 +1,15 @@
 #include <ultra64.h>
 
+extern u8 *D_800B0DF0;
+extern u8 D_80038080;
+extern s32 *D_800891BC[];
+extern void *D_800DBE80;
+void func_10004074(void *);
+void func_1510D694(s32);
+s32 func_15111858(void);
+void func_1502B7F0(void **, s32, s32, s32);
+
+
 extern s32 D_80082FA0, D_80082FA4;
 s32 func_1501A490(Gfx *, s16, s32, s32, s32, s32);
 Gfx *func_1501A6CC(Gfx *, s32, s32, s32, s32);
@@ -105,8 +115,23 @@ s32 func_15110CFC() {
     return 0;
 }
 
-s32 func_1511172C() {
-    return 0;
+/* Process a requested mode change and optional slot cleanup. */
+void func_1511172C(s32 mode) {
+    s32 index;
+    if (mode == 1) {
+        D_800B0DF0[8] = 1;
+        if (D_800DBE80) { void *allocation = D_800DBE80; func_10004074(allocation); }
+        func_15111858();
+    } else if (mode != D_800B0DF0[9] && D_800B0DF0[8] == 4) {
+        if (D_80038080 != 0) {
+            for (index = 0; index < 360; index++) {
+                func_1510D694(D_800891BC[D_800B0DF0[9]][0] + index);
+            }
+        }
+        func_10004074(D_800DBE80);
+        D_800B0DF0[9] = mode;
+        func_1502B7F0(&D_800DBE80, 2, 13, D_800B0DF0[9]);
+    }
 }
 
 s32 func_15111858() {
