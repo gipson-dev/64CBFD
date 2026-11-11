@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2266](WORKING_NOTES/2266-game-initialization-callback-match-20261111.md): `func_1500FFCC` restores a 79-word initialization callback with 15 call-preparation scheduling guards and two preserved alignment words. Guest/native, the bounded table dispatcher, connected original helpers, padders, and strict 252-byte image prediction pass within documented limits. Fresh total **4,335 / 5,513 (78.63%)**, Game **3,662 / 4,840 (75.66%)**, zero drift; **76** more to 80%.
+
 [Note 2265](WORKING_NOTES/2265-game-actor-scale-stepper-direct-match-20261111.md): `func_15053750` restores an 81-word actor scale stepper as a direct C match without new guards. Finite guest/native, the bounded caller, connected original helper, padders, and strict 232-byte image prediction pass within documented limits. Fresh total **4,334 / 5,513 (78.61%)**, Game **3,661 / 4,840 (75.64%)**, zero drift; **77** more to 80%.
 
 [Note 2264](WORKING_NOTES/2264-game-descriptor-record-constructor-match-20261111.md): `func_151A7950` restores an 80-word descriptor-record constructor with one commutative-addition guard. Guest/native, both bounded caller windows, original copy and zero helpers, padders, and strict 243-byte image prediction pass within documented limits. Fresh total **4,333 / 5,513 (78.60%)**, Game **3,660 / 4,840 (75.62%)**, zero drift; **78** more to 80%.
