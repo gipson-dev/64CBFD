@@ -2,6 +2,15 @@
 #include "structs.h"
 #include <PR/sched.h>
 
+extern f32 D_800969D8, D_800969DC;
+f32 func_150484A0(f32, f32);
+s32 func_1501FFE8(f32 (*)[3], u8 *, s32, s32);
+typedef struct {
+    u8 pad00[6];
+    u16 flag;
+} SequenceFrameKey49D30;
+
+
 extern u8 D_800BE9C0, D_800BE617, D_800BEBA0;
 extern s16 D_800BEAA8;
 extern s32 D_80082FA0;
@@ -74,7 +83,7 @@ typedef struct {
     u32 bytes;
 } SequenceDescriptor49D30;
 typedef struct {
-    u8 pad00[4];
+    f32 duration;
     u32 *items;
     u8 pad08[0x30];
     u8 *scratch;
@@ -734,7 +743,7 @@ s32 func_1501EC38() {
     return 0;
 }
 
-s32 func_1501F72C() {
+s32 func_1501F72C(s32 index, f32 time, f32 (*points)[3], s32 group, s32 *frame) {
     return 0;
 }
 
@@ -742,11 +751,37 @@ s32 func_1501FC8C() {
     return 0;
 }
 
-s32 func_1501FE68() {
-    return 0;
+/* Write the sequence direction at a clamped percentage, when two keys exist. */
+void func_1501FE68(s32 index, f32 percentage, f32 *output, s32 group) {
+    s32 frame;
+    f32 points[2][3];
+    f32 matrix[4][3];
+    f32 time;
+    f32 x;
+    f32 z;
+
+    if (D_800C35C8[group][index] >= 2) {
+        if (percentage > 100.0f) {
+            percentage = 100.0f;
+        }
+        if (percentage < 0.0f) {
+            percentage = 0.0f;
+        }
+        time = D_800C3A50[group][index].duration * percentage * D_800969D8;
+        func_1501F72C(index, time, points, group, &frame);
+        if (((SequenceFrameKey49D30 *)D_800C3868[group][index])[frame].flag == 0) {
+            x = points[0][0] - points[1][0];
+            z = points[0][2] - points[1][2];
+        } else {
+            func_1501FFE8(matrix, D_800C3868[group][index], frame, D_800C35C8[group][index]);
+            x = matrix[2][0] - matrix[1][0];
+            z = matrix[2][2] - matrix[1][2];
+        }
+        *output = func_150484A0(x, z) * D_800969DC;
+    }
 }
 
-s32 func_1501FFE8() {
+s32 func_1501FFE8(f32 (*matrix)[3], u8 *keys, s32 frame, s32 count) {
     return 0;
 }
 

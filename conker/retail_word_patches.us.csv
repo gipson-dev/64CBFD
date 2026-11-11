@@ -28816,3 +28816,11 @@ game_2DDF0,func_15000940,0x144,0x24E70003,0x24840003,-,-,"Normalize closed palet
 game_2DDF0,func_15000940,0x148,0x25080003,0x24A50003,-,-,"Normalize closed palette cursor register roles, invariant end addresses and equivalent pointer-update schedule",,,false
 game_2DDF0,func_15000940,0x14C,0x1558FFDA,0x1457FFDE,-,-,"Normalize closed palette cursor register roles, invariant end addresses and equivalent pointer-update schedule",,,false
 game_2DDF0,func_15000940,0x150,0x25290003,0x24C60003,-,-,"Normalize closed palette cursor register roles, invariant end addresses and equivalent pointer-update schedule",,,false
+generated_49D30,func_1501FE68,0x94,0x27AC0084,0x27AC0060,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0xE4,0x8FB80084,0x8FB80060,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x128,0x27A4003C,0x27A40030,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x12C,0x8FA60084,0x8FA60060,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x13C,0xC7A60054,0xC7A60048,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x140,0xC7A80048,0xC7A8003C,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x144,0xC7AA005C,0xC7AA0050,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
+generated_49D30,func_1501FE68,0x148,0xC7B00050,0xC7B00044,-,-,Preserve the sequence frame-index and matrix local stack positions,,,false
