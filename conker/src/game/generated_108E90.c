@@ -1,6 +1,23 @@
 #include <ultra64.h>
 #include "structs.h"
 
+typedef struct {
+    s32 flags;
+    s16 lifetime;
+    u8 kind;
+    u8 pad7;
+    s32 value8, valueC;
+    u8 value10, value11, value12, value13, value14, value15;
+    u8 pad16[2];
+    s32 resource;
+    u8 pad1C[12];
+} EffectDescriptor108E90;
+typedef struct { f32 x, y, z; u8 padC[8]; } EffectPosition108E90;
+f32 func_150ADA68(void);
+s32 func_150ADA20(void);
+struct210 *func_1513C73C(s32, u8, u8, s32, f32, f32, f32, f32, f32, u8, u8, s32, u8, s32);
+
+
 u8 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
 void func_1516972C(u8 *record);
 
@@ -94,8 +111,39 @@ void func_150DDF88(u8 *arg0) {
     func_150DBD70(*(u8 *)(arg0 + 0x28), arg0);
 }
 
-s32 func_150DDFAC() {
-    return 0;
+/* Build and submit an effect for the selected actor position. */
+s32 func_150DDFAC(u8 *actor, f32 previousX, f32 previousY, f32 previousZ, f32 height, void *parameter) {
+    u8 *payload = *(u8 **)(actor + 0x98);
+    EffectPosition108E90 *positions = *(EffectPosition108E90 **)(actor + 0x94);
+    EffectDescriptor108E90 descriptor;
+    f32 range = func_150ADA68() * 70.0f + 10.0f;
+    s32 third, second, first;
+
+    payload[0x20] = 4;
+    switch (func_150ADA20() & 1) {
+        case 0: descriptor.kind = 29; break;
+        case 1: descriptor.kind = 30; break;
+    }
+    descriptor.value8 = 0;
+    descriptor.valueC = 0;
+    descriptor.flags = 17;
+    descriptor.lifetime = 100;
+    descriptor.value10 = 255;
+    descriptor.value11 = 255;
+    descriptor.value12 = 0;
+    descriptor.value13 = 0;
+    descriptor.value14 = 0;
+    descriptor.value15 = 255;
+    descriptor.resource = 0x30002;
+    first = func_150ADA20();
+    second = func_150ADA20();
+    third = func_150ADA20();
+    func_1513C73C((s32)&descriptor, 5, 0, (s32)parameter,
+                 positions[*(s8 *)(actor + 0x2D)].x, height,
+                 positions[*(s8 *)(actor + 0x2D)].z, range, range,
+                 first & 255, (third & 1) + (second & 1), 0,
+                 actor[0x0C], actor[1]);
+    return 1;
 }
 
 s32 func_150DE12C() {
