@@ -14,7 +14,7 @@ s32 func_15052260();
 s32 func_15052590();
 s32 func_15052760();
 s32 func_150528C8();
-s32 func_15053750();
+void func_15053750();
 s32 func_150538CC();
 s32 func_15054A94();
 s32 func_15054F74();
@@ -1322,10 +1322,28 @@ void func_1505371C(struct127 *arg0) {
     arg0->unk40 = ((s16) (arg0->unk7A + 16384)) * 0.005493164f;
 }
 
-// ???
-/* Non-matching C placeholders for asm/nonmatchings/game_77AD0/func_15053750.s. */
-s32 func_15053750() {
-    return 0;
+/* Step actor scales toward their targets using bounded increments. */
+void func_15053750(struct127 *actor) {
+    f32 difference;
+    s32 direction;
+    difference = actor->unk154 - actor->xz_scale;
+    if (difference != 0.0f) {
+        if (fabsf(difference) < actor->unk15C) {
+            func_15062BDC(actor, actor->unk154, actor->y_scale);
+        } else {
+            direction = difference < 0.0f ? -1 : 1;
+            func_15062BDC(actor, (f32)direction * actor->unk15C + actor->xz_scale, actor->y_scale);
+        }
+    }
+    difference = actor->unk158 - actor->y_scale;
+    if (difference != 0.0f) {
+        if (fabsf(difference) < actor->unk15C) {
+            func_15062BDC(actor, actor->xz_scale, actor->unk158);
+        } else {
+            direction = difference < 0.0f ? -1 : 1;
+            func_15062BDC(actor, actor->xz_scale, (f32)direction * actor->unk15C + actor->y_scale);
+        }
+    }
 }
 
 void func_15053894(struct127 *arg0) {
