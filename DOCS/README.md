@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2274](WORKING_NOTES/2274-game-effect-curve-callback-match-20261111.md): `func_151A175C` restores the 96-word effect-curve callback with 75 guarded words. Guest/native, two dispatch windows, padders and strict 270-byte image checks pass within documented limits. Fresh total **4,342 / 5,513 (78.76%)**, Game **3,669 / 4,840 (75.81%)**, zero drift; **69** more to 80%.
+
 [Note 2273](WORKING_NOTES/2273-game-channel-preset-initializer-match-20261111.md): `func_1500AD84` restores the 97-word channel-preset initializer with 62 relocation-aware guards. Bounded guest/native, the original 15-channel loop, padders and strict 465-byte image checks pass within documented limits. Fresh total **4,341 / 5,513 (78.74%)**, Game **3,668 / 4,840 (75.79%)**, zero drift; **70** more to 80%.
 
 [Note 2272](WORKING_NOTES/2272-game-effect-state-callback-match-20261111.md): `func_150BF0F4` restores the 74-word effect-state callback with 28 guarded words and one inserted retail branch. Guest/native, the original dispatcher, padders and strict 210-byte image checks pass within documented limits. Fresh total **4,340 / 5,513 (78.72%)**, Game **3,667 / 4,840 (75.76%)**, zero drift; **71** more to 80%.

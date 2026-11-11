@@ -301,8 +301,56 @@ s32 func_151A11E4() {
     return 0;
 }
 
-s32 func_151A175C() {
-    return 0;
+typedef struct {
+    u8 pad00[0x20];
+    s16 x, y, z;
+    u8 pad26[6];
+    u8 fractionX, fractionZ, fractionY;
+    u8 pad2F[5];
+    s16 sizeX, sizeY, age;
+    u8 pad3A[5];
+    u8 intensity;
+    u8 pad40[0x10];
+    s16 curve[17];
+} EffectCurve1CC440;
+
+/* Apply the age-dependent intensity, size, and fixed-point motion curves. */
+void func_151A175C(EffectCurve1CC440 *effect) {
+    s16 *curve = effect->curve;
+    s32 age = effect->age;
+    s32 value, velocity;
+    if (curve[2] < age) {
+        effect->intensity = curve[0] * (curve[1] - age);
+    }
+    if (curve[5] < age) {
+        value = curve[3] * (curve[4] - age);
+        effect->sizeY = value;
+        effect->sizeX = value;
+    }
+    if (curve[6] < age) {
+        velocity = (s32)(((u32)(s32)curve[7] << 8) | (u32)(s32)curve[10]);
+        value = (s32)(((u32)(s32)effect->x << 8) | effect->fractionX);
+        value = (s32)((u32)value + (u32)velocity * (u32)D_800BE9E4);
+        effect->x = value >> 8;
+        effect->fractionX = value;
+        velocity = (s32)(((u32)(s32)curve[8] << 8) | (u32)(s32)curve[11]);
+        value = (s32)(((u32)(s32)effect->y << 8) | effect->fractionY);
+        value = (s32)((u32)value + (u32)velocity * (u32)D_800BE9E4);
+        effect->y = value >> 8;
+        effect->fractionY = value;
+        velocity = (s32)(((u32)(s32)curve[9] << 8) | (u32)(s32)curve[12]);
+        value = (s32)(((u32)(s32)effect->z << 8) | effect->fractionZ);
+        value = (s32)((u32)value + (u32)velocity * (u32)D_800BE9E4);
+        effect->z = value >> 8;
+        effect->fractionZ = value;
+        age = effect->age;
+    }
+    if (age < curve[13]) effect->intensity = curve[14] * age;
+    if (age < curve[15]) {
+        value = curve[16] * age;
+        effect->sizeY = value;
+        effect->sizeX = value;
+    }
 }
 
 typedef struct {
