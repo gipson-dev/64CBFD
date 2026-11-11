@@ -130,8 +130,55 @@ void func_151BC5A4(struct102 *object, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_151BC64C() {
-    return 0;
+typedef struct { f32 first, second, third; } RingValues151BC64C;
+typedef struct { RingValues151BC64C values; s16 timer; u8 fade, retained0F; u32 retained10; } RingEntry151BC64C;
+typedef struct {
+    u8 retained00[0x1E]; u16 flags;
+    u8 retained20[5]; u8 capacity; u8 retained26[6];
+    s8 count, current, end; u8 retained2F[0x25];
+    RingValues151BC64C output; u8 retained60[0x34]; RingEntry151BC64C *entries;
+} RingOwner151BC64C;
+
+/* Age ring entries, discard expired entries, and publish the current values. */
+s32 func_151BC64C(RingOwner151BC64C *owner) {
+    RingEntry151BC64C *entries = owner->entries;
+    s32 count = owner->count;
+    s32 index, current;
+    RingEntry151BC64C *entry;
+    s32 timer, shade;
+    if (count < 2 && (owner->flags & 8)) return 0;
+    index = owner->end;
+    current = owner->current;
+    while (index != current) {
+        index--;
+        if (index < 0) index = owner->capacity - 1;
+        entry = &entries[index];
+        entry->timer = (s16)((u32)(s32)entry->timer - (u32)D_800BE9E4);
+        timer = entry->timer;
+        if (timer < 0) {
+            while (index != current) {
+                owner->current = current + 1;
+                current = owner->current;
+                if (current == owner->capacity) {
+                    owner->current = 0;
+                    current = owner->current;
+                }
+                owner->count = owner->count - 1;
+            }
+        } else if (timer < 10) {
+            shade = timer * 25;
+            if (shade < entry->fade) entry->fade = shade;
+        }
+        current = owner->current;
+    }
+    if (owner->count > 0) {
+        owner->output = entries[current].values;
+    } else {
+        owner->output.first = 0.0f;
+        owner->output.second = 0.0f;
+        owner->output.third = 0.0f;
+    }
+    return 1;
 }
 
 s32 func_151BC794() {

@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2276](WORKING_NOTES/2276-game-ring-entry-updater-match-20261111.md): `func_151BC64C` restores the 82-word ring-entry updater with 29 guarded words and one insertion. Guest/native, original dispatcher paths, padders and strict 238-byte image checks pass within documented limits. Fresh total **4,344 / 5,513 (78.80%)**, Game **3,671 / 4,840 (75.85%)**, zero drift; **67** more to 80%.
+
 [Note 2275](WORKING_NOTES/2275-game-resource-table-loader-match-20261111.md): `func_150163D0` restores the 75-instruction resource table loader with 52 guarded words. Guest/native, the caller window, padders and strict 221-byte image checks pass within documented limits. Fresh total **4,343 / 5,513 (78.78%)**, Game **3,670 / 4,840 (75.83%)**, zero drift; **68** more to 80%.
 
 [Note 2274](WORKING_NOTES/2274-game-effect-curve-callback-match-20261111.md): `func_151A175C` restores the 96-word effect-curve callback with 75 guarded words. Guest/native, two dispatch windows, padders and strict 270-byte image checks pass within documented limits. Fresh total **4,342 / 5,513 (78.76%)**, Game **3,669 / 4,840 (75.81%)**, zero drift; **69** more to 80%.

@@ -29156,3 +29156,32 @@ generated_43880,func_150163D0,0xF8,0x8C790018,0x8C580018,-,-,Normalize resource 
 generated_43880,func_150163D0,0x100,0x03224021,0x0303C821,-,-,Normalize resource table loader control flow and register allocation,,,false
 generated_43880,func_150163D0,0x104,0x1487FFEB,0x1486FFEB,-,-,Normalize resource table loader control flow and register allocation,,,false
 generated_43880,func_150163D0,0x108,0xAC680018,0xAC590018,-,-,Normalize resource table loader control flow and register allocation,,,false
+generated_1E73B0,func_151BC64C,0x0,0x8085002C,0x8083002C,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x8,0x28A10002,0x28610002,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x10,0x8083002E,0x8085002E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x20,0x8083002E,0x8085002E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x2C,0x8083002E,0x8085002E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x3C,0x1066002D,0x10A6002E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x48,0x2463FFFF,0x24A5FFFF,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x4C,0x04610003,0x04A10003,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x54,0x90830025,0x90850025,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x58,0x2463FFFF,0x24A5FFFF,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x5C,0x00680019,0x00A80019,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x68,0x03022821,0x03021821,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x6C,0x84B9000C,0x8479000C,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x74,0xA4AC000C,0xA46C000C,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x78,0x84A7000C,0x8466000C,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x7C,0x04E10010,0x04C10011,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x80,0x28E1000A,0x28C1000A,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0x84,0x10660017,0x8086002D,-,-,Normalize ring-entry updater register allocation and control flow,0x10A60017,-,false
+generated_1E73B0,func_151BC64C,0x98,0x54CE0004,0x55C60004,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xB0,0x1466FFF5,0x14A6FFF5,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xC8,0x00EA0019,0x00CA0019,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xCC,0x90B9000E,0x9079000E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xD0,0x00003012,0x00003812,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xD4,0x00D9082A,0x00F9082A,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xE0,0xA0A6000E,0xA067000E,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xE8,0x5466FFD8,0x54A6FFD7,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xEC,0x2463FFFF,0x24A5FFFF,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xF0,0x8085002C,0x8083002C,-,-,Normalize ring-entry updater register allocation and control flow,,,false
+generated_1E73B0,func_151BC64C,0xF4,0x18A0000B,0x1860000B,-,-,Normalize ring-entry updater register allocation and control flow,,,false
