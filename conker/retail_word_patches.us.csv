@@ -28912,3 +28912,30 @@ game_3B920,func_1500E470,0xDC,0x10600005,0x10400005,-,-,Normalize two closed sta
 game_3B920,func_1500E470,0xE0,0x0003C880,0x0002C880,-,-,Normalize two closed startup temporary-register cycles,,,false
 game_3B920,func_1500E470,0x12C,0x91030004,0x91020004,-,-,Normalize two closed startup temporary-register cycles,,,false
 game_3B920,func_1500E470,0x130,0x30690080,0x30490080,-,-,Normalize two closed startup temporary-register cycles,,,false
+game_30E90,func_15004AAC,0x1C,0xC482002C,0xC4800034,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x20,0xC48E0030,0xC48C002C,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x24,0xC4920034,0xC4900030,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x28,0x84EE0000,0x84EE0004,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x2C,0x84EF0002,0x84EF0000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x30,0x84E30004,0x84F80002,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x44,0x44832000,0x44982000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x4C,0x46023002,0x46003082,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x54,0x460E5302,0x460C5382,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x5C,0x46123402,0x46103482,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x64,0x46000202,0x460E7202,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x6C,0x460C6282,0x46129282,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x74,0x46108182,0x46021182,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x80,0x44055000,0x44035000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x88,0x0045082A,0x0043082A,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x94,0x00A01025,0x00601025,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0xDC,0x94690000,0x946A0000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0xE0,0x252A0001,0x254B0001,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0xE8,0xA46A0000,0xA46B0000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x104,0x948C0052,0x948D0052,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x108,0x0182082A,0x01A2082A,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x118,0x944D0000,0x944E0000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x11C,0x25AE0001,0x25CF0001,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x124,0xA44E0000,0xA44F0000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x130,0x944F0000,0x94580000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x134,0x25F80001,0x27190001,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+game_30E90,func_15004AAC,0x138,0xA4580000,0xA4590000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false

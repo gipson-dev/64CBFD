@@ -2,6 +2,11 @@
 
 #include "functions.h"
 #include "variables.h"
+
+typedef struct { s16 x,y,z; u8 pad[10]; } BoundsVertex;
+typedef struct { u8 pad0[0x16]; u16 count; u8 pad18[0x10]; BoundsVertex *vertices; f32 sx,sy,sz; u8 pad38[0x18]; u16 radius, maximum; } BoundsRecord;
+extern u16 D_800BE2A0,D_800BE2A2,D_800BE2A4;
+
 typedef struct { u8 reserved[0x72]; u8 id; u8 tail[0x2D]; } ByteIdRecordView;
 
 
@@ -9,7 +14,7 @@ typedef struct { u8 reserved[0x72]; u8 id; u8 tail[0x2D]; } ByteIdRecordView;
 s32 func_150039E0();
 s32 func_150045C4();
 void func_150049A4(s8 *, u32, u32);
-s32 func_15004AAC();
+void func_15004AAC(BoundsRecord *, s32);
 s32 func_15004BF0(s32 descending);
 /* End generated placeholder declarations. */
 
@@ -68,9 +73,30 @@ void func_15004A4C(void) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_30E90/func_15004AAC.s. */
-s32 func_15004AAC() {
-    return 0;
+/* Check the scaled vertex radius and count the result. */
+void func_15004AAC(BoundsRecord *record, s32 unused) {
+    s32 i;
+    s32 maximum = 0;
+    for (i = 0; i < record->count; i++) {
+        s16 vz = record->vertices[i].z;
+        f32 x = record->vertices[i].x * record->sx;
+        f32 y = record->vertices[i].y * record->sy;
+        f32 z = vz * record->sz;
+        s32 distance = z * z + (x * x + y * y);
+        if (maximum < distance) maximum = distance;
+    }
+    if (maximum != 0) {
+        s32 radius = sqrtf((f32)maximum);
+        if (record->radius == 0) {
+            record->radius = radius;
+            record->maximum = radius;
+            D_800BE2A2++;
+        } else if (record->radius < radius || record->maximum < radius) {
+            D_800BE2A0++;
+        } else {
+            D_800BE2A4++;
+        }
+    }
 }
 /* Search record byte IDs in either direction, retaining saturation fallbacks. */
 s32 func_15004BF0(s32 descending) {

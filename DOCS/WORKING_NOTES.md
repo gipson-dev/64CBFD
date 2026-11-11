@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2271](WORKING_NOTES/2271-game-scaled-vertex-radius-initializer-match-20261111.md): `func_15004AAC` restores the 81-word scaled vertex-radius initializer with 27 guarded scheduling and register differences. Bounded guest/native, caller, padder and strict 267-byte image checks pass within documented limits. Fresh total **4,339 / 5,513 (78.70%)**, Game **3,666 / 4,840 (75.74%)**, zero drift; **72** more to 80%.
+
 [Note 2270](WORKING_NOTES/2270-game-ground-motion-callback-match-20261111.md): `func_150EAE24` restores a 74-word ground-motion callback as a direct C match and corrects its dispatcher argument. Guest/native, the original dispatcher and table entry, original ground wrapper, padders, and strict 212-byte image prediction pass within documented limits. Fresh total **4,338 / 5,513 (78.69%)**, Game **3,665 / 4,840 (75.72%)**, zero drift; **73** more to 80%.
 
 [Note 2269](WORKING_NOTES/2269-game-startup-initializer-match-20261111.md): `func_1500E470` restores an 84-word startup initializer with five closed register-allocation guards. Guest/native, the bounded caller, two original helpers, padders, and strict 280-byte image prediction pass within documented limits. Fresh total **4,337 / 5,513 (78.67%)**, Game **3,664 / 4,840 (75.70%)**, zero drift; **74** more to 80%.
