@@ -1,4 +1,8 @@
 #include <ultra64.h>
+
+s32 func_1515D480(s32);
+s32 func_1515D440(void);
+
 #include <string.h>
 typedef struct {
     f32 center;
@@ -133,8 +137,25 @@ typedef struct {
 
 /* Non-matching placeholders for the text-only asm slice asm/185560.s. */
 
-s32 func_151580B0() {
-    return 0;
+/* Allocate and initialize a copied effect record with optional entry allocations. */
+s32 func_151580B0(data, entryCount, extra, alternate, bytes, mode, parameter) s32 data, entryCount, extra, bytes, parameter; u8 alternate, mode; {
+    u8 *record;
+    s32 i;
+    record = func_15167A68((u8)alternate ? 0x55 : 0x37, parameter, (s32)((u32)bytes + 0xF8u), 1, (u8)mode, 1);
+    if (record == NULL) return 0;
+    memcpy(record + 0x10, (void *)data, 0x44);
+    *(s32 *)(record + 0xD8) = entryCount;
+    *(s32 *)(record + 0xF4) = extra;
+    record[0xDC] = 0;
+    for (i = 0; i < 4; i++) *(s32 *)(record + 0xE0 + i * 4) = 0;
+    *(s32 *)(record + 0xF0) = 0;
+    if (entryCount != 0) {
+        for (i = 0; i <= D_80082FA0; i++) {
+            *(s32 *)(record + 0xE0 + i * 4) = func_1515D480(entryCount);
+        }
+        *(s32 *)(record + 0xF0) = func_1515D440();
+    }
+    return (s32)record;
 }
 
 void func_151581D8(s32 arg0, u8 arg1, s32 arg2, u8 arg3, s32 arg4) {
