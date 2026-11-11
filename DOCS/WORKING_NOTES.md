@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2268](WORKING_NOTES/2268-initializer-declarations-and-startup-audit-20261111.md): Audits inconsistent table-pointer and random-number declarations and screens the next startup routine; both corrections remain private and uncredited.
+
 [Note 2267](WORKING_NOTES/2267-game-ten-entry-initializer-direct-match-20261111.md): `func_1500FE30` restores a 91-word ten-entry table initializer as a direct C match without new guards. Guest/native, the bounded caller, connected original helpers, padders, and strict 261-byte image prediction pass within documented limits. Fresh total **4,336 / 5,513 (78.65%)**, Game **3,663 / 4,840 (75.68%)**, zero drift; **75** more to 80%.
 
 [Note 2266](WORKING_NOTES/2266-game-initialization-callback-match-20261111.md): `func_1500FFCC` restores a 79-word initialization callback with 15 call-preparation scheduling guards and two preserved alignment words. Guest/native, the bounded table dispatcher, connected original helpers, padders, and strict 252-byte image prediction pass within documented limits. Fresh total **4,335 / 5,513 (78.63%)**, Game **3,662 / 4,840 (75.66%)**, zero drift; **76** more to 80%.
