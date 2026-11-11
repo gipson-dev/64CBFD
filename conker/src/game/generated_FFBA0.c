@@ -1,5 +1,30 @@
 #include <ultra64.h>
 
+extern f32 D_800BE9A4;
+f32 func_15144B68(f32);
+f32 sinf(f32);
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 baseX;
+    f32 baseY;
+    f32 amplitudeX;
+    f32 amplitudeY;
+    f32 phaseX;
+    f32 phaseY;
+    f32 speedX;
+    f32 speedY;
+    f32 timer;
+    f32 opacityRate;
+} OscillationFFBA0;
+typedef struct {
+    u8 pad00[0x5C];
+    u8 opacity;
+    u8 pad5D[0xB3];
+    OscillationFFBA0 motion;
+} OscillatingRecordFFBA0;
+
+
 typedef struct ReloadRecord {
     u32 command;
     u32 base;
@@ -38,7 +63,20 @@ s32 func_150D2D6C() {
     return 0;
 }
 
-s32 func_150D317C() {
+/* Update the record oscillation and report whether its timer remains positive. */
+s32 func_150D317C(OscillatingRecordFFBA0 *record) {
+    OscillationFFBA0 *motion;
+
+    record->motion.phaseX += record->motion.speedX * D_800BE9A4;
+    record->motion.phaseY += record->motion.speedY * D_800BE9A4;
+    motion = &record->motion;
+    motion->phaseX = func_15144B68(motion->phaseX);
+    motion->phaseY = func_15144B68(motion->phaseY);
+    motion->x = sinf(motion->phaseX) * motion->amplitudeX + motion->baseX;
+    motion->y = sinf(motion->phaseY) * motion->amplitudeY + motion->baseY;
+    motion->timer -= D_800BE9A4;
+    record->opacity = (u32)(motion->opacityRate * motion->timer);
+    if (motion->timer > 0.0f) return 1;
     return 0;
 }
 

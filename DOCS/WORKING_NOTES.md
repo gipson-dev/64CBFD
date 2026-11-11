@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2254](WORKING_NOTES/2254-game-oscillation-callback-direct-match-20261110.md): `func_150D317C` restores the 96-word record oscillation callback directly from C with no guards. Guest/native, indirect dispatcher, original angle helper, padders and strict 283-byte image prediction pass within the documented limits. Fresh total **4,323 / 5,513 (78.41%)**, Game **3,650 / 4,840 (75.41%)**, zero drift; **88** more to 80%.
+
 [Note 2253](WORKING_NOTES/2253-game-sequence-direction-guarded-match-20261110.md): `func_1501FE68` restores the 96-word sequence-direction calculation with eight local-stack guards. The two typed helper placeholders remain unfinished; caller, guest/native, padders and the strict 432-byte complete-image audit pass within the documented limits. Fresh total **4,322 / 5,513 (78.40%)**, Game **3,649 / 4,840 (75.39%)**, zero drift; **89** more to 80%.
 
 [Note 2252](WORKING_NOTES/2252-game-palette-state-initializer-guarded-match-20261110.md): `func_15000940` restores the 95-word palette-state initializer with 73 relocation-aware register and schedule guards. Guest/native, symbolic ordering, caller, both padders and strict 406-byte image prediction pass. Fresh total **4,321 / 5,513 (78.38%)**, Game **3,648 / 4,840 (75.37%)**, zero drift; **90** more to 80%. Next: investigate `func_1501FE68`.
