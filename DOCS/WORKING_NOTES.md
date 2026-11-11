@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2269](WORKING_NOTES/2269-game-startup-initializer-match-20261111.md): `func_1500E470` restores an 84-word startup initializer with five closed register-allocation guards. Guest/native, the bounded caller, two original helpers, padders, and strict 280-byte image prediction pass within documented limits. Fresh total **4,337 / 5,513 (78.67%)**, Game **3,664 / 4,840 (75.70%)**, zero drift; **74** more to 80%.
+
 [Note 2268](WORKING_NOTES/2268-initializer-declarations-and-startup-audit-20261111.md): Audits inconsistent table-pointer and random-number declarations and screens the next startup routine; both corrections remain private and uncredited.
 
 [Note 2267](WORKING_NOTES/2267-game-ten-entry-initializer-direct-match-20261111.md): `func_1500FE30` restores a 91-word ten-entry table initializer as a direct C match without new guards. Guest/native, the bounded caller, connected original helpers, padders, and strict 261-byte image prediction pass within documented limits. Fresh total **4,336 / 5,513 (78.65%)**, Game **3,663 / 4,840 (75.68%)**, zero drift; **75** more to 80%.

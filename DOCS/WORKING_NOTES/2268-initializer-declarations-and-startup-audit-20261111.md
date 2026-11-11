@@ -9,3 +9,5 @@ Private IDO screens found two possible directions. A localized version using the
 The next unmatched startup routine `func_1500E470` has a commented source reconstruction in `conker/src/game_3B920.c`. A private screen compiles it without diagnostics, but emits 82 words against the 84-word retail slot and has scheduling and register differences. A volatile-access experiment emitted 84 words but differs in 20 positions; it is not evidence that the retail accesses were volatile. Neither candidate has been adopted or subjected to the full caller, helper, padders, guest/native, image, and production checks. Its original direct caller includes `func_15007B3C` at `0x15007FA4`.
 
 The current production recount remains **4,336 / 5,513 (78.65%)**, with zero drift and **75** further exact functions needed for 80%. The existing complete-ROM checksum mismatch remains.
+
+The startup routine was subsequently qualified and adopted in [Note 2269](2269-game-startup-initializer-match-20261111.md); the declaration inconsistency remains open.
