@@ -110,6 +110,7 @@ MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_50D80.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
@@ -748,4 +749,17 @@ $(BUILD_DIR)/$(SRC_DIR)/game_A28B0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009A1E8_ga
 # Palette-state initializer: preserve both loops and direct address constants.
 ifeq ($(VERSION),us)
 $(BUILD_DIR)/$(SRC_DIR)/game_2DDF0.c.o: CFLAGS += -Wo,-loopunroll,0 -Wo,-no_const_in_reg
+endif
+
+ifeq ($(VERSION),us)
+# The sorted insertion loop uses a no-unroll profile; retain the established
+# compiler profile for every neighboring function in this generated slice.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_50D80.c.o: \
+        $(SRC_DIR)/game/generated_50D80.c $$(call generated_slice_asm,50D80) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-loopunroll,0 $(MIPSBIT) -o $@.nounroll.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,50D80) $@.padded.s \
+		--function-object func_150241B4=$@.nounroll.compact --word-patches retail_word_patches.us.csv --filename generated_50D80
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.nounroll.compact $@.padded.s
 endif

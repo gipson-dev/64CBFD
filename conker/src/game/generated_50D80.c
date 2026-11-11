@@ -38,8 +38,31 @@ void func_15024130(s32 count, s32 arg1) {
     }
 }
 
-s32 func_150241B4() {
-    return 0;
+extern u16 D_800C3C9A;
+
+/* Insert a record before the first equal or greater sort key. */
+void func_150241B4(Struct15024130 *entries, s32 *count, s32 value,
+                   s32 tag, s32 parameter, s32 priority, s32 context) {
+    s32 size = *count;
+    s32 index = size;
+    s32 i;
+    if (size >= D_800C3C9A) {
+        func_15024130(size, context);
+        *count = 0;
+        return;
+    }
+    for (i = 0; i < size; i++) {
+        if (entries[i].unk4 >= priority) {
+            index = i;
+            break;
+        }
+    }
+    for (i = size - 1; i >= index; i--) entries[i + 1] = entries[i];
+    entries[index].unk0 = value;
+    entries[index].unk8 = tag;
+    entries[index].unk4 = priority;
+    entries[index].unkA = parameter;
+    *count = *count + 1;
 }
 
 s32 func_150242F8() {

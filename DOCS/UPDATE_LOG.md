@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2277](WORKING_NOTES/2277-game-sorted-record-insertion-match-20261111.md): `func_150241B4` restores the 81-word sorted-record insertion with 44 guarded words and two insertions. Guest/native, original caller window, padders and strict 247-byte image checks pass within documented limits. Fresh total **4,345 / 5,513 (78.81%)**, Game **3,672 / 4,840 (75.87%)**, zero drift; **66** more to 80%.
+
 [Note 2276](WORKING_NOTES/2276-game-ring-entry-updater-match-20261111.md): `func_151BC64C` restores the 82-word ring-entry updater with 29 guarded words and one insertion. Guest/native, original dispatcher paths, padders and strict 238-byte image checks pass within documented limits. Fresh total **4,344 / 5,513 (78.80%)**, Game **3,671 / 4,840 (75.85%)**, zero drift; **67** more to 80%.
 
 [Note 2275](WORKING_NOTES/2275-game-resource-table-loader-match-20261111.md): `func_150163D0` restores the 75-instruction resource table loader with 52 guarded words. Guest/native, the caller window, padders and strict 221-byte image checks pass within documented limits. Fresh total **4,343 / 5,513 (78.78%)**, Game **3,670 / 4,840 (75.83%)**, zero drift; **68** more to 80%.
