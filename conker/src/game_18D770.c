@@ -177,7 +177,8 @@ void func_151603FC(struct225 *arg0) {
             ret = 1;
         }
     }
-    if ((ret == 0) && (arg0->unkF != -1) && (D_8008B0F0[arg0->unkF]() == 0)) {
+    /* The retail dispatcher passes the record to the selected callback. */
+    if ((ret == 0) && (arg0->unkF != -1) && (((s32 (*)(struct225 *))(void (*)(void))D_8008B0F0[arg0->unkF])(arg0) == 0)) {
         ret = 1;
     }
     if (ret) {
