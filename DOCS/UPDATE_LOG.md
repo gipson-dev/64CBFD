@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2267](WORKING_NOTES/2267-game-ten-entry-initializer-direct-match-20261111.md): `func_1500FE30` restores a 91-word ten-entry table initializer as a direct C match without new guards. Guest/native, the bounded caller, connected original helpers, padders, and strict 261-byte image prediction pass within documented limits. Fresh total **4,336 / 5,513 (78.65%)**, Game **3,663 / 4,840 (75.68%)**, zero drift; **75** more to 80%.
+
 [Note 2266](WORKING_NOTES/2266-game-initialization-callback-match-20261111.md): `func_1500FFCC` restores a 79-word initialization callback with 15 call-preparation scheduling guards and two preserved alignment words. Guest/native, the bounded table dispatcher, connected original helpers, padders, and strict 252-byte image prediction pass within documented limits. Fresh total **4,335 / 5,513 (78.63%)**, Game **3,662 / 4,840 (75.66%)**, zero drift; **76** more to 80%.
 
 [Note 2265](WORKING_NOTES/2265-game-actor-scale-stepper-direct-match-20261111.md): `func_15053750` restores an 81-word actor scale stepper as a direct C match without new guards. Finite guest/native, the bounded caller, connected original helper, padders, and strict 232-byte image prediction pass within documented limits. Fresh total **4,334 / 5,513 (78.61%)**, Game **3,661 / 4,840 (75.64%)**, zero drift; **77** more to 80%.
