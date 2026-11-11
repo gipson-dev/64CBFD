@@ -6,6 +6,7 @@
 #undef func_15048F90
 extern void func_15048F90();
 #include "variables.h"
+void func_151C9ED4(struct108 *);
 
 typedef struct {
     u8 opaque0[0x114];
@@ -749,34 +750,28 @@ s32 func_151277B0() {
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151279A0.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151279A0.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15127EB8.s. */
-void func_15127EB8(struct108 *arg0) {
+/* Reset camera state and release the selected actor slot. */
+void func_15127EB8(struct108 *camera) {
+    struct127 *actor;
+    struct127 *original;
+    func_151239CC(camera, 1);
+    camera->unk3D4->unk197 = 0;
+    func_151C9ED4(camera);
+    camera->unk19C = 0.0f;
+    camera->unk1A0 = 0.0f;
+    camera->unk1A4 = 0.0f;
+    camera->unk1A8 = 0.0f;
+    func_1510B32C(camera->unk23D, 0.0f, 0.0f, 1.0f);
+    *(f32 *)((u8 *)D_800BE628 + camera->unk23D * 0x180 + 0x84) = 1.0f;
+    func_150627D4(camera->unk3D0);
+    D_800DBFF4[camera->unk23D] = 2;
+    original = camera->unk3D0;
+    if (original->unk65 != 0) actor = &D_800CC2D0[original->unk65 - 1];
+    else actor = original;
+    ((u8 *)actor)[0x2FC] &= ~(1 << camera->unk23D);
+    actor->unk74 &= ~(1 << camera->unk23D);
+    camera->unk23C = 1;
 }
-// NON-MATCHING: not too far away
-// void func_15127EB8(struct108 *arg0) {
-//     struct127 *phi_v0;
-//
-//     func_151239CC(arg0, 1);
-//     arg0->unk3D4->unk197 = (u8)0;
-//     func_151C9ED4(arg0);
-//     arg0->unk19C = 0.0f;
-//     arg0->unk1A0 = 0.0f;
-//     arg0->unk1A4 = 0.0f;
-//     arg0->unk1A8 = 0.0f;
-//     func_1510B32C(arg0->unk23D, 0.0f, 0.0f, 1.0f);
-//     D_800BE628[arg0->unk23D].unk84 = 1.0f;
-//     func_150627D4(arg0->unk3D0);
-//     D_800DBFF4[arg0->unk23D] = (u8)2;
-//
-//     phi_v0 = &arg0->unk3D0;
-//     if (phi_v0->unk65 != 0) {
-//         phi_v0 = &D_800CC2D0[phi_v0->unk65];
-//     }
-//
-//     phi_v0->unk2FC &= ~(1 << arg0->unk23D);
-//     phi_v0->unk74 &= ~(1 << arg0->unk23D);
-//     arg0->unk23C = (u8)1;
-// }
 
 void func_15127FEC(struct108 *arg0, s32 arg1, s32 arg2) {
     arg0->unk7F4 = 1;

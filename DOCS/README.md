@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2263](WORKING_NOTES/2263-game-camera-reset-direct-match-20261111.md): `func_15127EB8` restores the 77-word camera reset as a direct C match with no new guards and corrects the one-based alternate actor index. Guest/native, six bounded caller windows, the connected original camera helper, padders, and strict 265-byte image prediction pass within documented limits. Fresh total **4,332 / 5,513 (78.58%)**, Game **3,659 / 4,840 (75.60%)**, zero drift; **79** more to 80%.
+
 [Note 2262](WORKING_NOTES/2262-game-actor-position-pair-direct-match-20261111.md): `func_15195528` restores the 74-word actor position-pair callback as a direct C match with no new guards. Finite guest/native cases, two bounded dispatch windows, the connected original direction helper, padders, and strict 242-byte image prediction pass within documented limits. Fresh total **4,331 / 5,513 (78.56%)**, Game **3,658 / 4,840 (75.58%)**, zero drift; **80** more to 80%.
 
 [Note 2261](WORKING_NOTES/2261-game-mode-transition-direct-match-20261111.md): `func_1511172C` restores the 75-word mode transition as a direct C match with no new guards. Guest/native, five bounded caller windows, connected original cleanup, padders, and strict 229-byte image prediction pass within documented limits. Fresh total **4,330 / 5,513 (78.54%)**, Game **3,657 / 4,840 (75.56%)**, zero drift; **81** more to 80%.
