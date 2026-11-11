@@ -1,4 +1,7 @@
 #include <ultra64.h>
+
+u8 *func_15167A68(s32,s32,s32,s32,s32,s32);
+
 #include "structs.h"
 typedef struct {
     u8 kind;
@@ -30,8 +33,24 @@ extern s32 (*D_8008F958[])();
 extern void (*D_8008F964[])(u8 *, s32, u8);
 extern void (*D_8008F984[])(u8 *, s32);
 
-s32 func_151A7950() {
-    return 0;
+/* Allocate a record, copy its descriptor, and initialize endpoint vectors. */
+s32 func_151A7950(u8 *source, s32 bytes, u8 mode, s32 parameter) {
+    u8 *record;
+    record = func_15167A68(0x2D, parameter, (s32)((u32)bytes + (u32)*(s16 *)(source + 2) * 24u + 0x80u), 1, mode, 1);
+    if (record == NULL) return 0;
+    memcpy(record + 0x10, source, 0x50);
+    *(u8 **)(record + 0x64) = record + 0x80;
+    *(u8 **)(record + 0x60) = *(u8 **)(record + 0x64) + (s32)*(s16 *)(source + 2) * 24;
+    *(f32 *)(record + 0x68) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + 0) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + 4) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + 8) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + (s32)*(s16 *)(source + 2) * 24 - 24) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + (s32)*(s16 *)(source + 2) * 24 - 20) = 0.0f;
+    *(f32 *)(*(u8 **)(record + 0x64) + (s32)*(s16 *)(source + 2) * 24 - 16) = 1.0f;
+    bzero(record + 0x6C, 0x10);
+    *(s32 *)(record + 0x7C) = (s32)(((u32)*(s16 *)(record + 0x12) << 6) + 0x140u);
+    return (s32)record;
 }
 
 s32 func_151A7A90() {
