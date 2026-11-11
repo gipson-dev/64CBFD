@@ -1,5 +1,11 @@
 #include <ultra64.h>
 
+extern f32 D_800A8708;
+f32 func_150ADA68(void);
+void func_1514373C(f32, f32, f32 *, f32 *);
+void func_15137610(u8 *, f32 *, f32 *, f32 *, s32, s32);
+
+
 void *func_151AF270(u8 *, u8, s32);
 #include "structs.h"
 s32 func_15136C3C(void *, s32, s32, s32, s32, s32, s32, s32);
@@ -193,8 +199,27 @@ s32 func_151951E0() {
     return 0;
 }
 
-s32 func_15195528() {
-    return 0;
+/* Submit a direction-aligned pair of positions around an actor. */
+void func_15195528(u8 *source, u8 *actor, s32 unused) {
+    f32 angle;
+    f32 start[3];
+    f32 end[3];
+    f32 direction[3];
+    f32 x, z;
+    if (source != NULL) angle = *(f32 *)(source + 0x40) - 90.0f;
+    else if (actor != NULL) angle = *(f32 *)(actor + 0x40) - 90.0f;
+    else angle = func_150ADA68() * 360.0f;
+    func_1514373C(angle * D_800A8708, 1.0f, &direction[0], &direction[2]);
+    direction[1] = 0.0f;
+    x = direction[0] * 20.0f;
+    start[0] = *(f32 *)(actor + 0x14) + x;
+    start[1] = *(f32 *)(actor + 0x18) + 50.0f;
+    z = direction[2] * 20.0f;
+    start[2] = *(f32 *)(actor + 0x1C) + z;
+    end[0] = *(f32 *)(actor + 0x14) - x;
+    end[1] = *(f32 *)(actor + 0x18) + 50.0f;
+    end[2] = *(f32 *)(actor + 0x1C) - z;
+    func_15137610(actor, start, end, direction, 255, 1);
 }
 
 void func_15195650(u8 *arg0, s32 arg1, s32 arg2) {
