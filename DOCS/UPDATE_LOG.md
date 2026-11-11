@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2259](WORKING_NOTES/2259-game-packed-motion-update-guarded-match-20261111.md): `func_1516A648` restores the 73-word packed-record fade and motion updater with six guarded temporary-register normalizations and one preserved alignment word. Guest/native, original dispatcher, connected movement and damping helpers, padders, and strict 221-byte image prediction pass within the documented limits. Fresh total **4,328 / 5,513 (78.51%)**, Game **3,655 / 4,840 (75.52%)**, zero drift; **83** more to 80%.
+
 [Note 2258](WORKING_NOTES/2258-game-attachment-updater-guarded-match-20261111.md): `func_1518A094` restores the 96-word attachment updater with 42 guarded stack, register, and control-flow normalizations. Guest/native, dispatcher, four original handlers, original lookup and matrix helpers, padders, and strict 339-byte image prediction pass within the documented limits. Fresh total **4,327 / 5,513 (78.49%)**, Game **3,654 / 4,840 (75.50%)**, zero drift; **84** more to 80%.
 
 [Note 2257](WORKING_NOTES/2257-game-radial-callback-dispatcher-match-20261110.md): `func_1514C2F0` restores the 96-word radial callback dispatcher with 17 guarded register and scheduling normalizations. Both owners, bounded callers, guest/native cases, connected angle helper, padders and strict 299-byte image prediction pass within the documented limits. Fresh total **4,326 / 5,513 (78.47%)**, Game **3,653 / 4,840 (75.48%)**, zero drift; **85** more to 80%.
