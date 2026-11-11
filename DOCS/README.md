@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2257](WORKING_NOTES/2257-game-radial-callback-dispatcher-match-20261110.md): `func_1514C2F0` restores the 96-word radial callback dispatcher with 17 guarded register and scheduling normalizations. Both owners, bounded callers, guest/native cases, connected angle helper, padders and strict 299-byte image prediction pass within the documented limits. Fresh total **4,326 / 5,513 (78.47%)**, Game **3,653 / 4,840 (75.48%)**, zero drift; **85** more to 80%.
+
 [Note 2256](WORKING_NOTES/2256-game-actor-control-callback-direct-match-20261110.md): `func_150F43F0` restores the 94-word actor-control callback directly from C with no guards and two preserved padding words. Guest/native, indirect dispatcher, sparse reads, padders and strict 300-byte image prediction pass within the documented limits. Fresh total **4,325 / 5,513 (78.45%)**, Game **3,652 / 4,840 (75.45%)**, zero drift; **86** more to 80%.
 
 [Note 2255](WORKING_NOTES/2255-game-effect-callback-direct-match-20261110.md): `func_150DDFAC` restores the 96-word effect-submission callback directly from C with no guards. Guest/native, six-argument dispatch, original RNG helpers, padders and strict 297-byte image prediction pass within the documented limits. Fresh total **4,324 / 5,513 (78.43%)**, Game **3,651 / 4,840 (75.43%)**, zero drift; **87** more to 80%.

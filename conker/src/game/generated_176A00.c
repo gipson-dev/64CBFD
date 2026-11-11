@@ -1,5 +1,10 @@
 #include <ultra64.h>
 #include "structs.h"
+
+typedef s32 (*RadialCallback176A00)(s32, s16, f32, f32, f32, f32, f32, f32, u8, u8, f32, s32, f32, s32, u8);
+extern RadialCallback176A00 D_8008AA00[];
+f32 func_151423D8(u8);
+
 extern f32 D_800A57A0, D_800A57A4, D_800A57A8, D_800A57AC;
 void func_1513F680(struct171 *, u8, u8, u8, u8);
 
@@ -302,8 +307,30 @@ s32 func_1514C2B8(u8 *arg0) {
     return 1;
 }
 
-s32 func_1514C2F0() {
-    return 0;
+/* Dispatch radial samples until the selected callback stops the loop. */
+void func_1514C2F0(f32 x, f32 y, f32 z, f32 radius, u8 start, s8 step, s16 count, u8 selector, s32 arg8, f32 arg9, s32 arg10, u8 arg11) {
+    s16 i;
+    u8 angle = start;
+    f32 quarter;
+    f32 sample;
+    f32 pointZ;
+    RadialCallback176A00 callback;
+
+    i = 0;
+    while (i < count) {
+        quarter = func_151423D8((u8)(angle - 64));
+        sample = func_151423D8(angle);
+        pointZ = radius * sample + z;
+        callback = D_8008AA00[selector];
+        if (callback != 0) {
+            if (!callback(1, i, x + radius * quarter, y, pointZ,
+                          x, y, z, angle, start, radius, arg8, arg9, arg10, arg11)) {
+                return;
+            }
+        }
+        angle += step;
+        i++;
+    }
 }
 
 s32 func_1514C470() {
