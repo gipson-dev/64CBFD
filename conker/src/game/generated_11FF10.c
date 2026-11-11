@@ -1,4 +1,11 @@
 #include <ultra64.h>
+
+void func_1509BFB0(s32, s32, s32, ...);
+s32 func_1509BE40(s32, s32, s32, s32);
+s32 func_15123934(u8 *, s32, s32, s32, s32);
+s32 func_151239CC(u8 *, s32);
+void func_15124B18(u8 *);
+
 typedef struct {
     s32 active;
     u8 kind, reserved05[0x13];
@@ -647,6 +654,33 @@ disabled_done:
     }
 }
 
-s32 func_150F43F0() {
-    return 0;
+/* Update actor controls and the corresponding input flag. */
+void func_150F43F0(u8 *actor) {
+    if (actor[0x23E] == 0x3B) {
+        func_1509BFB0(0, 0x405C, 1);
+        if (*(u32 *)(actor + 0x2C) != 0x100 && *(u32 *)(actor + 0x6C8) == 0) {
+            if (func_15123934(actor, 8, 0, 0, 0)) {
+                *(u32 *)(actor + 0x84) |= 0x300000;
+                *(u32 *)(actor + 0x84) &= ~4;
+                *(s16 *)(actor + 0x1B4) = 1;
+                *(s16 *)(actor + 0x1E0) = 3;
+                func_15124B18(actor);
+            }
+            *(u32 *)(actor + 0x134) = 0;
+            *(f32 *)(actor + 0x348) = 125.0f;
+            *(f32 *)(actor + 0x34C) = 125.0f;
+            *(f32 *)(actor + 0x374) = 220.0f;
+            *(f32 *)(actor + 0x190) = 30.0f;
+        } else {
+            *(f32 *)(actor + 0x190) = 0.0f;
+        }
+    } else if (*(u32 *)(actor + 0x2C) == 8 && *(u32 *)(actor + 0x6C8) == 0) {
+        func_151239CC(actor, 0);
+        func_1509BFB0(0, 0x405C, 0);
+    }
+    if (func_1509BE40(1, 0x4054, 6, 0x9000) && !func_1509BE40(1, 0x405E, 6, 0x9000)) {
+        *(u32 *)(actor + 0x84) |= 0x80000000;
+    } else {
+        *(u32 *)(actor + 0x84) &= 0x7FFFFFFF;
+    }
 }

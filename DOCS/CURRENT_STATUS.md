@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2256](WORKING_NOTES/2256-game-actor-control-callback-direct-match-20261110.md): `func_150F43F0` restores the 94-word actor-control callback directly from C with no guards and two preserved padding words. Guest/native, indirect dispatcher, sparse reads, padders and strict 300-byte image prediction pass within the documented limits. Fresh total **4,325 / 5,513 (78.45%)**, Game **3,652 / 4,840 (75.45%)**, zero drift; **86** more to 80%.
+
 [Note 2255](WORKING_NOTES/2255-game-effect-callback-direct-match-20261110.md): `func_150DDFAC` restores the 96-word effect-submission callback directly from C with no guards. Guest/native, six-argument dispatch, original RNG helpers, padders and strict 297-byte image prediction pass within the documented limits. Fresh total **4,324 / 5,513 (78.43%)**, Game **3,651 / 4,840 (75.43%)**, zero drift; **87** more to 80%.
 
 [Note 2254](WORKING_NOTES/2254-game-oscillation-callback-direct-match-20261110.md): `func_150D317C` restores the 96-word record oscillation callback directly from C with no guards. Guest/native, indirect dispatcher, original angle helper, padders and strict 283-byte image prediction pass within the documented limits. Fresh total **4,323 / 5,513 (78.41%)**, Game **3,650 / 4,840 (75.41%)**, zero drift; **88** more to 80%.
