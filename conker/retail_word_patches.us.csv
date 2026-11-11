@@ -28939,3 +28939,31 @@ game_30E90,func_15004AAC,0x124,0xA44E0000,0xA44F0000,-,-,Normalize scaled-vertex
 game_30E90,func_15004AAC,0x130,0x944F0000,0x94580000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
 game_30E90,func_15004AAC,0x134,0x25F80001,0x27190001,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
 game_30E90,func_15004AAC,0x138,0xA4580000,0xA4590000,-,-,Normalize scaled-vertex calculation register allocation and scheduling,,,false
+generated_EC420,func_150BF0F4,0x20,0x8CCF0000,0x8CCE0000,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x24,0x908E0027,0x908F0027,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x30,0x03021021,0x00581021,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x60,0x8CC80000,0x8CD90000,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x64,0x9099002F,0x9088002F,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x98,0x808A002D,0x8082002D,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xA4,0x808A002D,0x8082002D,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xA8,0x8CCB0000,0x8CCA0000,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xAC,0x848D0014,0x848B0014,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xB0,0x808F002E,0x848E0016,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xB4,0x014B0019,0x004A0019,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xB8,0x84880016,0x00001012,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xBC,0x00001025,0x01626021,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xC0,0x00006012,0xA48C0014,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xC4,0x018D7021,0x8082002E,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xC8,0xA48E0014,0x8CCD0000,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xCC,0x8CD80000,0x84830014,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xD0,0x848A0014,0x004D0019,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xD4,0x01F80019,0x00001012,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xD8,0x0000C812,0x01C27821,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xDC,0x03284821,0x18600003,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xE0,0x1D400006,0xA48F0016,-,-,Normalize effect callback register scheduling and restore the retail branch,0x1C600006,,false
+generated_EC420,func_150BF0F4,0xE4,0xA4890016,0x00001025,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xEC,0x848B0016,0x84980016,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xF8,0xA48B0014,0xA4980014,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0xFC,0x908C002C,0x9083002C,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x100,0x8CCD0000,0x8CD90000,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
+generated_EC420,func_150BF0F4,0x104,0x018D1821,0x00791821,-,-,Normalize effect callback register scheduling and restore the retail branch,,,false
