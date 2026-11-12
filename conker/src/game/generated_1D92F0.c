@@ -442,7 +442,7 @@ void *func_151AF270(u8 *owner, u8 selector, s32 category) {
     return created;
 }
 
-s32 func_151AF388(f32 *, f32, f32, f32, u8);
+void *func_151AF388(f32 *, f32, f32, f32, u8);
 
 void func_151AF338(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
                    f32 arg5, u8 *arg6) {
@@ -454,8 +454,34 @@ void func_151AF338(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4,
     func_151AF388(position, arg3, arg4, arg5, arg6[0xC]);
 }
 
-s32 func_151AF388(f32 *arg0, f32 arg1, f32 arg2, f32 arg3, u8 arg4) {
-    return 0;
+extern f32 D_800A9DD4, D_800A9DD8, D_800A9DDC, D_800A9DE0;
+/* Spawn an effect using a reversed velocity and five ordered random samples. */
+void *func_151AF388(f32 *position, f32 x, f32 y, f32 z, u8 selector) {
+    f32 size;
+    f32 velocity[3];
+    f32 scale = D_800A9DD4;
+    f32 second;
+    u32 alpha, duration;
+    f32 first;
+    u8 variant;
+    velocity[0] = -x * scale;
+    velocity[1] = -y * scale;
+    velocity[2] = -z * scale;
+    if (func_150ADA20() & 1) {
+        variant = 1;
+    } else {
+        variant = 0;
+    }
+    first = func_150ADA68();
+    duration = (u32)func_150ADA20();
+    alpha = (u32)func_150ADA20();
+    second = func_150ADA68();
+    size = D_800A9DD8;
+    return func_151D9014(position, velocity, 0,
+        first * D_800A9DDC + D_800A9DE0,
+        (duration & 15U) + 10, alpha % 45U + 137,
+        second * 202.0f + 142.0f, variant,
+        size, size, 0, 0, 1, 0, selector, 1);
 }
 
 /* Note 362: original ROM blood effect and dependencies. */

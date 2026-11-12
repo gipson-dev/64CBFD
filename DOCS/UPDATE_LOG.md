@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2297](WORKING_NOTES/2297-game-twin-effect-constructors-match-20261112.md): `func_151AF388` and `func_151B50F4` recover paired 82-word effect constructors with ten guards each. Guest/native, original wrappers, padders and the strict combined image audit pass within documented limits. Fresh Game **3,690 / 4,840 (76.24%)**, total **4,363 / 5,513 (79.14%)**, zero drift; **182** more Game matches to 80%.
+
 [Note 2296](WORKING_NOTES/2296-game-oscillating-effect-direct-match-20261112.md): `func_151DB97C` emits all 75 retail words directly from semantic C without guards. Guest/native, caller, connected helpers, padders and the strict 237-byte image audit pass within documented limits. Fresh Game **3,688 / 4,840 (76.20%)**, total **4,361 / 5,513 (79.10%)**, zero drift; **184** more Game matches to 80%.
 
 [Note 2295](WORKING_NOTES/2295-game-timed-effect-callback-match-20261112.md): `func_150E4CBC` restores the 82-word timed effect callback with 50 guards and no insertions. Guest/native, both dispatcher windows, padders and the strict 234-byte image audit pass within documented limits. Fresh Game **3,687 / 4,840 (76.18%)**, total **4,360 / 5,513 (79.09%)**, zero drift; **185** more Game matches to 80%.

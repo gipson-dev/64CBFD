@@ -29868,3 +29868,23 @@ generated_111670,func_150E4CBC,0x12C,0xA48D0098,0xA48F0098,-,-,Normalize timed e
 generated_111670,func_150E4CBC,0x134,0x8DCE0000,0x8F180000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize timed effect callback register allocation and control flow,,,false
 generated_111670,func_150E4CBC,0x138,0x004E7821,0x0058C821,-,-,Normalize timed effect callback register allocation and control flow,,,false
 generated_111670,func_150E4CBC,0x13C,0xAC8F0090,0xAC990090,-,-,Normalize timed effect callback register allocation and control flow,,,false
+generated_1D92F0,func_151AF388,0x4,0x44856000,0x3C010000,-,R_MIPS_HI16:D_800A9DD4,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x8,0x44867000,0x44856000,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0xC,0xAFBF0044,0x44867000,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x10,0xAFA40070,0xC4200000,-,R_MIPS_LO16:D_800A9DD4,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x14,0xAFA7007C,0xAFBF0044,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x18,0x3C010000,0xAFA40070,R_MIPS_HI16:D_800A9DD4,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x1C,0xC4200000,0xAFA7007C,R_MIPS_LO16:D_800A9DD4,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x60,0xA3AF004B,0xA3AF005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0x64,0xA3A0004B,0xA3A0005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1D92F0,func_151AF388,0xCC,0x93AC004B,0x93AC005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x4,0x44856000,0x3C010000,-,R_MIPS_HI16:D_800AA3E8,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x8,0x44867000,0x44856000,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0xC,0xAFBF0044,0x44867000,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x10,0xAFA40070,0xC4200000,-,R_MIPS_LO16:D_800AA3E8,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x14,0xAFA7007C,0xAFBF0044,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x18,0x3C010000,0xAFA40070,R_MIPS_HI16:D_800AA3E8,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x1C,0xC4200000,0xAFA7007C,R_MIPS_LO16:D_800AA3E8,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x60,0xA3AF004B,0xA3AF005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0x64,0xA3A0004B,0xA3A0005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_1E2180,func_151B50F4,0xCC,0x93AC004B,0x93AC005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
