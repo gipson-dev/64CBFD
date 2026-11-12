@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2284](WORKING_NOTES/2284-game-tile-fade-callback-match-20261111.md): `func_150DFDD0` restores the 75-word tile-fade callback with 31 guards and four insertions. Guest/native, the original dispatcher, both compiler profiles, padders and strict 232-byte image checks pass within documented limits. Fresh Game **3,679 / 4,840 (76.01%)**, total **4,352 / 5,513 (78.94%)**, zero drift; **193** more Game matches to 80%.
+
 [Note 2283](WORKING_NOTES/2283-game-actor-radial-offset-match-20261111.md): `func_1514BE20` restores the 76-word actor radial-offset update with 64 guards and four insertions. Guest/native, original caller windows, connected retail normalizer, padders and strict 235-byte image checks pass within documented limits. Fresh total **4,351 / 5,513 (78.92%)**, Game **3,678 / 4,840 (75.99%)**, zero drift; **60** more to 80%.
 
 [Note 2282](WORKING_NOTES/2282-game-release-chain-motion-match-20261111.md): `func_1518FC84` restores the 80-word release-chain motion callback with 30 guards and four insertions. Guest/native, its original caller window, padders and strict 246-byte image checks pass within documented limits. Fresh total **4,350 / 5,513 (78.90%)**, Game **3,677 / 4,840 (75.97%)**, zero drift; **61** more to 80%.

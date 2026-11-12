@@ -109,7 +109,43 @@ void func_150DFDA4(u8 *arg0) {
     *(f32 *) (temp_v0 + 0x38) = *(f32 *) (arg0 + 0x1C);
 }
 
-s32 func_150DFDD0() {
+typedef struct { u32 word0, word1; } TileCommand150DFDD0;
+typedef struct { TileCommand150DFDD0 *commands; } TileModel150DFDD0;
+typedef struct {
+    u8 reserved00[0x13]; u8 state; u8 reserved14[0x10];
+    TileModel150DFDD0 *model;
+} TileOwner150DFDD0;
+typedef struct {
+    u8 reserved00[0x2D8]; f32 remaining, scale; u8 reserved2E0[0xC]; s32 active;
+} TileFade150DFDD0;
+extern f32 D_800BE9A4;
+
+/* Advance the fade and update the first tile-size command. */
+s32 func_150DFDD0(TileOwner150DFDD0 *owner, TileFade150DFDD0 *fade) {
+    TileCommand150DFDD0 *command;
+    f32 progress;
+    s32 tileOffset;
+    s32 position;
+    if (fade->active != 0) {
+        owner->state = 2;
+        fade->remaining -= D_800BE9A4;
+        if (fade->remaining < 0.0f) {
+            fade->active = 0;
+            return 1;
+        }
+        progress = 1.0f - fade->scale * fade->remaining;
+    } else {
+        owner->state = 0;
+        progress = 0.0f;
+    }
+    command = owner->model->commands;
+    if (command != NULL) {
+        while ((command->word0 >> 24) != 0xF2) command++;
+        tileOffset = 2 - (s32)((command->word0 >> 12) & 0xFFF) / 3;
+        while (tileOffset < 0) tileOffset += 64;
+        position = (s32)(500.0f * progress + 2.0f);
+        command->word0 = 0xF2000000 | ((position & 0xFFF) << 12) | (tileOffset & 0xFFF);
+    }
     return 0;
 }
 
