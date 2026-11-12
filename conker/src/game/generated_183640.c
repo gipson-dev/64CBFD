@@ -14,6 +14,27 @@ typedef struct {
     s32 trailing;
 } ResourceOwner183640;
 
+
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad0[0x10];
+    u8 flags;
+    s8 first, second;
+    u8 pad13[3];
+    s16 remaining;
+    u8 pad18[0x2B];
+    u8 alpha;
+    u8 pad44[0x20];
+    s16 fadeStart, fadeRate;
+    u8 *linked;
+} ResourceCallback151572D0;
+extern s32 (*D_8008AD90[])(u8 *);
+extern s32 (*D_8008ADA0[])(u8 *);
+void func_1503F4B0(u8 *);
+
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
 s32 func_151D5E30();
@@ -139,8 +160,30 @@ void func_1515728C(u8 *arg0) {
     func_15169824(arg0);
 }
 
-s32 func_151572D0() {
-    return 0;
+/* Update resource lifetime and callbacks; release expired records. */
+void func_151572D0(struct102 *object) {
+    ResourceCallback151572D0 *state = (ResourceCallback151572D0 *)object;
+    u8 expired = 0;
+    if (state->flags & 1) {
+        state->remaining = (s16)((u32)state->remaining - (u32)D_800BE9E4);
+        if (state->remaining < 0) expired = 1;
+    }
+    if (!expired) {
+        if (state->first != -1) {
+            if (!D_8008AD90[state->first]((u8 *)object)) expired = 1;
+        }
+        if (state->second != -1) {
+            if (!D_8008ADA0[state->second]((u8 *)object)) expired = 1;
+        }
+    }
+    if (!expired) func_1503F4B0(state->linked);
+    if (!expired && (state->flags & 0x20)) {
+        if (state->remaining < state->fadeStart) {
+            s32 alpha = state->remaining * state->fadeRate;
+            if (alpha < state->alpha) state->alpha = (u8)alpha;
+        }
+    }
+    if (expired) func_1516972C(object);
 }
 
 s32 func_15157420() {

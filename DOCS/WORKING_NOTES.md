@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2318](WORKING_NOTES/2318-game-resource-update-callback-direct-match-20261112.md): `func_151572D0` directly matches 84 retail words; Game **3,708 / 4,840 (76.61%)**, total **4,381 / 5,513 (79.47%)**.
+
 [Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): expanded selector census and modeled zero-count dispatch; three interpolation callbacks remain private.
 
 [Note 2316](WORKING_NOTES/2316-game-secondary-callback-walker-guarded-match-20261112.md): `func_151671E8` matches 74 retail words with 35 guards; Game **3,707 / 4,840 (76.59%)**, total **4,380 / 5,513 (79.45%)**. `func_151AD174` remains a placeholder.
