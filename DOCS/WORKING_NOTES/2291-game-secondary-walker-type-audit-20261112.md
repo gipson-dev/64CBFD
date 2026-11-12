@@ -106,3 +106,49 @@ padder, rebased-link, actual Make and independent full-image checks before
 installing or crediting the walker. The refreshed production ELF still reports
 **3,705 / 4,840 (76.55%)** Game and **4,378 / 5,513 (79.41%)** overall, with
 zero address drift.
+
+## Follow-up: caller, rebases and connected retail timer callback
+
+At consumer baseline `523ea23d`, the private typed-u8 candidate was checked
+through the original `func_15019130` call window at `0x150192EC`: 32 cases
+with modeled callbacks passed for the raw candidate and retail body. This
+covers the call window only, not complete parent execution.
+
+Both private padder outputs and independently assembled retail were linked at
+four low-address patterns for each of the four global symbols: 12 GNU links
+agreed with the independently bound relocation words. The same three bodies
+agreed at 270 bounded external access-cut prefixes, including machine state
+and modeled callback effects. These are interpreter checks, not native or
+hardware fault guarantees. The candidate retains 35 guarded words and no
+insertions.
+
+A new connected test executes the actual retail `func_151041E4` callback
+inside both the raw typed candidate and retail walker for 480 cases. It covers
+state 3 and a default state, both rows, zero/one/two-node lists, timer values
+around zero, varying tick counts and a modeled release that changes the saved
+iterator. The test observed 688 child calls and 488 modeled helper calls; 50
+of the callback's 170 instruction positions were visited. The release and sound
+helpers remain modeled. A control changing the tick multiplier was rejected in
+the state-3 timer boundary case. This does not cover the callback's other
+states, floating-point paths, full lifecycle or gameplay. The production C
+for `func_151041E4` remains a zero-return placeholder.
+
+A private current-baseline shadow executed the three Make-planned owner
+compile/pad/assemble commands using a copied typed header, then linked the
+result against the frozen current ELF. All 41 owner neighbors and every
+function address were unchanged; the 74 target words bound exactly to retail.
+An independent image prediction agreed with all 227 changed ELF bytes and zero
+exclusions. The 189,088 protected data bytes were unchanged. The private ELF
+SHA-256 is `9c93a0992baa0b942eaafaa3f4b94385dc29f2352d59b5237b3329a08b2947cf`.
+This shadow does not install or credit the function, and executing commands
+from a Make dry-run plan is not itself a production Make build.
+
+There is still a source-interface issue to resolve before adoption: the
+proposed field calls `void (*)(u8 *)`, while the production placeholder
+definitions for `func_151041E4` and `func_151AD174` are both `s32` functions
+with unspecified parameters. Retail instruction evidence supports a pointer
+argument and an ignored return at this walker, but does not make those C
+function types compatible. The three retail callback functions must be reconciled
+with the eventual C definitions, and the remaining guard/alias, current tools
+and production checks completed, before marking a match. Private scripts and
+receipts are in `conker/build/game-secondary-walker-header-screen/`.
