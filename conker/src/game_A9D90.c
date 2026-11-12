@@ -12,7 +12,7 @@ s32 func_1507D1D8(s32 arg0);
 s32 func_1507D4F8();
 s32 func_1507D754();
 s32 func_1507DB6C();
-s32 func_1507DFE4();
+void func_1507DFE4();
 s32 func_1507E114(s32 *unusedSelection);
 /* End generated placeholder declarations. */
 
@@ -171,9 +171,33 @@ void func_1507DF10(struct127 *actor, s32 mode) {
             break;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_A9D90/func_1507DFE4.s. */
-s32 func_1507DFE4() {
-    return 0;
+/* Spawn-based scene transition. */
+s32 func_15084D70(s32, s32, s32, s16 *, f32 *, u8 *, u8 *, s32 *, s32 *, s32, s32 *);
+void func_15022190(s16, s16, s16, f32);
+void func_1501D348(s32, s32, s32, s32, s32);
+/* Start the requested scene transition using the selected spawn record. */
+void func_1507DFE4(s32 selection, volatile s32 unused) {
+    s32 saved;
+    s16 position[3];
+    f32 rotation[3];
+    u8 firstByte, secondByte;
+    s32 signedTag, flags;
+    f32 angle;
+    s32 sequence, result;
+    if (D_800C35EA == 1) return;
+    func_15084D70(0, selection, 1, position, rotation, &firstByte, &secondByte,
+                  &flags, &signedTag, 1, &result);
+    angle = (secondByte - 64) * 1.40625f + 180.0f;
+    if (result == 0) sequence = 1;
+    else if (result == 1) sequence = 3;
+    else return;
+    func_15022190(position[0], position[1], position[2], angle);
+    saved = D_800BE9F0;
+    D_800BE9F0 = 0x25;
+    D_800C3671 = 1;
+    func_1501D348(0x25, sequence, 0, 0, 0);
+    D_800C3670 = 1;
+    D_800BE9F0 = saved;
 }
 #include "variables.h"
 
