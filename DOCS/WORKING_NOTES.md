@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2298](WORKING_NOTES/2298-game-four-damping-callbacks-match-20261112.md): four identical 106-word damping callbacks now emit directly from C with no guards. Guest/native, original dispatch, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,694 / 4,840 (76.32%)**, total **4,367 / 5,513 (79.21%)**, zero drift; **178** more Game matches to 80%.
+
 [Note 2297](WORKING_NOTES/2297-game-twin-effect-constructors-match-20261112.md): `func_151AF388` and `func_151B50F4` recover paired 82-word effect constructors with ten guards each. Guest/native, original wrappers, padders and the strict combined image audit pass within documented limits. Fresh Game **3,690 / 4,840 (76.24%)**, total **4,363 / 5,513 (79.14%)**, zero drift; **182** more Game matches to 80%.
 
 [Note 2296](WORKING_NOTES/2296-game-oscillating-effect-direct-match-20261112.md): `func_151DB97C` emits all 75 retail words directly from semantic C without guards. Guest/native, caller, connected helpers, padders and the strict 237-byte image audit pass within documented limits. Fresh Game **3,688 / 4,840 (76.20%)**, total **4,361 / 5,513 (79.10%)**, zero drift; **184** more Game matches to 80%.

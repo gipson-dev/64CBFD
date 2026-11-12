@@ -142,8 +142,17 @@ s32 func_150CAA04() {
     return 0;
 }
 
-s32 func_150CAC28() {
-    return 0;
+extern s32 D_800BE9E4;
+typedef struct { u8 pad00[0x58]; f32 x, pad5C, z; u8 pad64[0x44]; f32 damping; } DampingState150CAC28;
+/* Apply one damping step for each elapsed tick. */
+s32 func_150CAC28(DampingState150CAC28 *state, s32 unused) {
+    u32 ticks;
+    f32 *factor = &state->damping;
+    for (ticks = (u32)D_800BE9E4; ticks != 0; ticks--) {
+        state->x *= *factor;
+        state->z *= *factor;
+    }
+    return 1;
 }
 
 s32 func_150CADD0() {
