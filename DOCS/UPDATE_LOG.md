@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2295](WORKING_NOTES/2295-game-timed-effect-callback-match-20261112.md): `func_150E4CBC` restores the 82-word timed effect callback with 50 guards and no insertions. Guest/native, both dispatcher windows, padders and the strict 234-byte image audit pass within documented limits. Fresh Game **3,687 / 4,840 (76.18%)**, total **4,360 / 5,513 (79.09%)**, zero drift; **185** more Game matches to 80%.
+
 [Note 2294](WORKING_NOTES/2294-game-quad-ground-placement-match-20261112.md): `func_15172B20` restores the 74-word quad ground placement with 11 guards and two inserted words. Guest/native, the original caller window, padders and the strict 265-byte image audit pass within documented limits. Fresh Game **3,686 / 4,840 (76.16%)**, total **4,359 / 5,513 (79.07%)**, zero drift; **186** more Game matches to 80%.
 
 [Note 2292](WORKING_NOTES/2292-game-randomized-effect-constructor-match-20261112.md): `func_151AE984` restores the 76-word randomized effect constructor with 17 guards and no insertions. Guest/native, the original caller window, padders and the strict 283-byte image audit pass within documented limits. Fresh Game **3,685 / 4,840 (76.14%)**, total **4,358 / 5,513 (79.05%)**, zero drift; **187** more Game matches to 80%.

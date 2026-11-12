@@ -56,8 +56,44 @@ s32 func_150E4928() {
     return 0;
 }
 
-s32 func_150E4CBC() {
-    return 0;
+typedef struct {
+    u8 retained00[0x90];
+    s32 age;
+    s16 base, strength, state;
+    u8 retained9A[8];
+    s16 amountA, amountB;
+    u8 retainedA6[0xE];
+    u8 intensity;
+} TimedEffect111670;
+extern s32 D_800BE9E4;
+
+/* Advance the effect timer and update its size and fade fields. */
+void func_150E4CBC(TimedEffect111670 *effect) {
+    s32 age = effect->age;
+    s32 scale, product, step;
+
+    if (age < 9) {
+        scale = (s32)((u32)age * 90U) / 9;
+        product = (s32)((u32)scale * (u32)(s32)effect->strength);
+        effect->amountB = (s32)((f32)product * (1.0f / 256.0f));
+    } else {
+        scale = 90 - (s32)((u32)age * 90U - 810U) / 600;
+        product = (s32)((u32)scale * (u32)(s32)effect->strength);
+        effect->amountB = (s32)((f32)product * (1.0f / 256.0f));
+        step = (s32)((u32)D_800BE9E4 * 17U);
+        if (step < effect->intensity) {
+            effect->intensity = (u32)effect->intensity - (u32)step;
+        } else {
+            effect->state = -1;
+        }
+        age = effect->age;
+    }
+    effect->amountA = (s32)((f32)effect->base * 14.0f) >> 8;
+    if (age >= 609) {
+        effect->state = -1;
+        age = effect->age;
+    }
+    effect->age = (s32)((u32)age + (u32)D_800BE9E4);
 }
 
 s32 func_150E4E04() {
