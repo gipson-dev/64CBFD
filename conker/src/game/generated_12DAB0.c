@@ -1,6 +1,9 @@
 #include <ultra64.h>
 
 #include "structs.h"
+extern f32 D_800A21A0[][3], D_800A21F4[][3], D_800A233C;
+extern u8 D_800A2248[];
+
 
 extern void func_1513CAA0();
 
@@ -24,9 +27,13 @@ typedef struct {
 
 /* Non-matching placeholders for the text-only asm slice asm/12DAB0.s. */
 
-s32 func_15100600() {
+#ifdef CBFD_COLORED_PRIMARY
+s32 func_15100600() { return 0; }
+#else
+s32 func_15100600(struct127 *a, f32 *b, f32 *c, u8 d, s16 e, u8 f, u8 g, u8 h, f32 i, f32 j, f32 k, f32 l, u8 m, u8 n, s32 o) {
     return 0;
 }
+#endif
 
 /* Stop the unsigned handle, retire each owned object, then retire the actor. */
 void func_15101090(ActorResourceOwner101090 *volatile actor) {
@@ -210,9 +217,35 @@ s32 func_151025F4(PairedSineOwner *volatile owner, void *context) {
     return 1;
 }
 
-s32 func_151026BC() {
-    return 0;
+#ifdef CBFD_COLORED_PRIMARY
+s32 func_151026BC() { return 0; }
+#else
+/* Select the actor color pair and forward the effect setup. */
+s32 func_151026BC(actor, arg1, arg2, arg3, arg4, arg5)
+u8 *actor;
+s16 arg1;
+u8 arg2;
+u8 arg3;
+u8 arg4;
+s32 arg5;
+{
+    s32 first, second; struct127 *owner = (struct127 *)actor;
+    if (actor == NULL) return 0;
+    switch (owner->id) {
+        case 0x58: case 0x5B: case 0x80:
+            first = 50; second = 255; break;
+        case 0x5A: case 0x5F: case 0x74: case 0x75: case 0x7A:
+            first = 255; second = 0; break;
+        default:
+            if (owner->unk31C->unk78 == 0x3B) { first = 255; second = 0; }
+            else { first = 50; second = 255; }
+            break;
+    }
+    return func_15100600(owner, D_800A21A0[arg2], D_800A21F4[arg2],
+        D_800A2248[arg2], arg1, first, second, 0, 20.0f, 20.0f,
+        4.0f, D_800A233C, arg3, arg4, arg5);
 }
+#endif
 
 s32 func_151027E8(u8 *arg0) {
     struct { u8 *ptr; u8 value; } temp;

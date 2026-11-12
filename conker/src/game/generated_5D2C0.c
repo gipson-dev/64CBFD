@@ -6,7 +6,7 @@ extern u8 D_800BE616;
 void func_1508B20C(f32, f32, f32, f32);
 extern u8 D_800BEA0C;
 u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
-void func_151026BC(u8 *, s32, s32, s32, s32, s32);
+s32 func_151026BC(u8 *, int, int, int, int, s32);
 u8 *func_15083568(u8 *, s32, f32, s32);
 void func_15048B10(f32 [4][4], f32 [4][4]);
 void func_150A9B0C(f32 [4][4], f32, f32, f32, f32, f32, f32);

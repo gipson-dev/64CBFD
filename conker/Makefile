@@ -766,3 +766,13 @@ endif
 
 # Scene transitions retain their original seven-entry jump table.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_49BE0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800969A0_game
+
+ifeq ($(VERSION),us)
+# Use the retail float-constant profile only for the colored effect dispatcher.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_12DAB0.c.o: $(SRC_DIR)/game/generated_12DAB0.c $$(call generated_slice_asm,12DAB0) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -DCBFD_COLORED_PRIMARY $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-no_const_in_reg $(MIPSBIT) -o $@.float.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,12DAB0) $@.padded.s --function-object func_151026BC=$@.float.compact --word-patches retail_word_patches.us.csv --filename generated_12DAB0 --rodata-symbol jtbl_800A2298_game
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.float.compact $@.padded.s
+endif
