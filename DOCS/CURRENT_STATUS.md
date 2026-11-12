@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2293](WORKING_NOTES/2293-game-session-reset-private-screen-20261112.md) records an uninstalled session-reset candidate and its unresolved 20-byte global declaration.
+
 [Note 2292](WORKING_NOTES/2292-game-randomized-effect-constructor-match-20261112.md): `func_151AE984` restores the 76-word randomized effect constructor with 17 guards and no insertions. Guest/native, the original caller window, padders and the strict 283-byte image audit pass within documented limits. Fresh Game **3,685 / 4,840 (76.14%)**, total **4,358 / 5,513 (79.05%)**, zero drift; **187** more Game matches to 80%.
 
 [Note 2291](WORKING_NOTES/2291-game-secondary-walker-type-audit-20261112.md) records the still-unmatched secondary walker and a shared-header dependency gap: a dry run omits 266 existing direct-consumer objects, so it cannot establish a complete rebuild after a header change.
