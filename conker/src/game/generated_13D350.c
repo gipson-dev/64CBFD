@@ -283,8 +283,31 @@ s32 func_15114A1C() {
     return 0;
 }
 
-s32 func_15114B94() {
-    return 0;
+#include "structs.h"
+extern u32 D_800DBF98;
+void func_1516972C(struct102 *);
+
+/* Mark a record as released, then trim released records from the tail. */
+void func_15114B94(u32 index) {
+    u32 count, boundary, offset;
+    u8 *record;
+    if (index < (u32)D_800DBEF0) {
+        offset = index * 0xA0;
+        record = D_800DBEF4 + offset;
+        if (*(struct102 **)(record + 0x94) != NULL) {
+            func_1516972C(*(struct102 **)(record + 0x94));
+            *(struct102 **)(D_800DBEF4 + offset + 0x94) = NULL;
+        }
+        D_800DBEF4[offset + 0x70] |= 8;
+        D_800DBEF4[offset + 0x6E] = 1;
+    }
+    count = (u32)D_800DBEF0;
+    boundary = count - D_800DBF98;
+    while (count != 0 && (D_800DBEF4[(count - 1) * 0xA0 + 0x70] & 8)) {
+        if (count - 1 >= boundary && D_800DBF98 != 0) D_800DBF98--;
+        else boundary--;
+        D_800DBEF0 = --count;
+    }
 }
 
 extern s32 func_15114CC4();
