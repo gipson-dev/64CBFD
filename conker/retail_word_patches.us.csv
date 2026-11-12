@@ -30239,3 +30239,8 @@ generated_173D40,func_151470FC,0xE0,0xE7A60064,0xE7B00064,-,-,Normalize closed f
 generated_173D40,func_151470FC,0xE4,0xE7A80068,0xE7B20068,-,-,Normalize closed floating-register allocation cycle,,,false
 generated_173D40,func_151470FC,0xE8,0x46128080,0x46083080,-,-,Normalize closed floating-register allocation cycle,,,false
 generated_173D40,func_151470FC,0x108,0x93A400C3,0x87A400C2,-,-,Preserve retail signed-halfword argument load,,,false
+game_A28B0,func_150793D8,0x60,0xA7A3002A,0xA7A30024,-,-,Normalize closed local coordinate stack slots,,,false
+game_A28B0,func_150793D8,0x6c,0xA7A3002A,0xA7A30024,-,-,Normalize closed local coordinate stack slots,,,false
+game_A28B0,func_150793D8,0x74,0xA7A80028,0xA7A80022,-,-,Normalize closed local coordinate stack slots,,,false
+game_A28B0,func_150793D8,0xa0,0x87A3002A,0x87A30024,-,-,Normalize closed local coordinate stack slots,,,false
+game_A28B0,func_150793D8,0xa4,0x87A80028,0x87A80022,-,-,Normalize closed local coordinate stack slots,,,false

@@ -9,7 +9,7 @@ void func_1507602C();
 void func_15076768(void);
 s32 func_15077508();
 void func_15077F64(void);
-s32 func_150793D8();
+void func_150793D8();
 s32 func_15079B30();
 void func_15079FBC();
 void func_1507B974(void);
@@ -1312,9 +1312,29 @@ void func_15079390(void) {
     func_1514D3B0((u8 *)D_800D154C, tmp0, tmp1, tmp2);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_150793D8.s. */
-s32 func_150793D8() {
-    return 0;
+/* Choose a bounded randomized path node near the player. */
+void func_150793D8(void) {
+    f32 dx;
+    f32 dz;
+    f32 unused;
+    s16 x;
+    s16 z;
+
+    x = D_800CC2D0->x_position;
+    z = D_800CC2D0->z_position;
+    if (x < -1180 || x > 1180 || z < -1180 || z > 1180) {
+        x = 0;
+        z = 0;
+    }
+    func_1505A184(func_150ADA20(), 550.0f, 0.0f, &dx, &dz, &unused);
+    x = x + dx;
+    z = z + dz;
+    if (x < -1200) x = -1200;
+    if (x > 1200) x = 1200;
+    if (z < -1200) z = -1200;
+    if (z > 1200) z = 1200;
+    ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1].x = x;
+    ((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1890 + 1].z = z;
 }
 
 void func_15079570(void) {
