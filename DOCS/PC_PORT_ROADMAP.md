@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2319](WORKING_NOTES/2319-game-resource-matrix-callback-direct-match-20261112.md): `func_15157918` directly matches 100 retail words. A host-port generated definition was inspected; its active-build applicability remains unknown.
+
 [Note 2318](WORKING_NOTES/2318-game-resource-update-callback-direct-match-20261112.md): `func_151572D0` directly matches 84 retail words. A host-port generated definition was inspected, but its active-build applicability remains unknown.
 
 [Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): a bounded selector and return-value investigation leaves three interpolation callbacks private; it does not establish host-port behavior.

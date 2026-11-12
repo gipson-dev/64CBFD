@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2319](WORKING_NOTES/2319-game-resource-matrix-callback-direct-match-20261112.md): `func_15157918` emits all 100 retail words directly from C with no guards. Game **3,709 / 4,840 (76.63%)**, total **4,382 / 5,513 (79.48%)**, zero drift; **163** more Game matches to 80%.
+
 [Note 2318](WORKING_NOTES/2318-game-resource-update-callback-direct-match-20261112.md): `func_151572D0` emits all 84 retail words directly from C with no guards. Game **3,708 / 4,840 (76.61%)**, total **4,381 / 5,513 (79.47%)**, zero drift; **164** more Game matches to 80%.
 
 [Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): static selector census and modeled dispatch expose 14 possible out-of-table zero-count pairs; the three callbacks remain private pending a sound return contract and full qualification. Game remains **3,707 / 4,840 (76.59%)**, 165 matches to 80%.

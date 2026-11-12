@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2319](WORKING_NOTES/2319-game-resource-matrix-callback-direct-match-20261112.md): `func_15157918` directly matches 100 retail words; Game **3,709 / 4,840 (76.63%)**, total **4,382 / 5,513 (79.48%)**.
+
 [Note 2318](WORKING_NOTES/2318-game-resource-update-callback-direct-match-20261112.md): `func_151572D0` directly matches 84 retail words; Game **3,708 / 4,840 (76.61%)**, total **4,381 / 5,513 (79.47%)**.
 
 [Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): expanded selector census and modeled zero-count dispatch; three interpolation callbacks remain private.

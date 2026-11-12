@@ -35,6 +35,17 @@ extern s32 (*D_8008AD90[])(u8 *);
 extern s32 (*D_8008ADA0[])(u8 *);
 void func_1503F4B0(u8 *);
 
+
+void func_150A8050(f32 matrix[4][4], f32, f32, f32);
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad0[0x54]; f32 position[3]; u8 pad60[0x1c];
+    f32 matrix[2][4][4]; u8 padfc[0x24]; f32 params[4];
+} ResourceMatrixView;
+
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
 s32 func_151D5E30();
@@ -214,8 +225,24 @@ s32 func_15157898(s32 arg0, void *arg1, s32 arg2, f32 arg3, s32 arg4,
     return result;
 }
 
-s32 func_15157918() {
-    return 0;
+/* Build the selected resource matrix and apply position and scale. */
+s32 func_15157918(u8 *object) {
+    ResourceMatrixView *view = (void *)object;
+    f32 *params = view->params;
+    func_150A8050(view->matrix[D_800BE9C0], view->params[0], view->params[1], view->params[2]);
+    view->matrix[D_800BE9C0][3][0] = view->position[0];
+    view->matrix[D_800BE9C0][3][1] = view->position[1];
+    view->matrix[D_800BE9C0][3][2] = view->position[2];
+    view->matrix[D_800BE9C0][0][0] *= params[3];
+    view->matrix[D_800BE9C0][0][1] *= params[3];
+    view->matrix[D_800BE9C0][0][2] *= params[3];
+    view->matrix[D_800BE9C0][1][0] *= params[3];
+    view->matrix[D_800BE9C0][1][1] *= params[3];
+    view->matrix[D_800BE9C0][1][2] *= params[3];
+    view->matrix[D_800BE9C0][2][0] *= params[3];
+    view->matrix[D_800BE9C0][2][1] *= params[3];
+    view->matrix[D_800BE9C0][2][2] *= params[3];
+    return 1;
 }
 
 s32 func_15157AA8() {
