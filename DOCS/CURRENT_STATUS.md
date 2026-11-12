@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2307](WORKING_NOTES/2307-game-position-interpolation-candidate-screen-20261112.md): `func_150BE2E8` is a private 74/84-word candidate under a target-only profile; floating-point ordering and qualification remain open. No match is credited.
+
 [Note 2306](WORKING_NOTES/2306-colored-dispatch-make-warning-fix-20261112.md): the colored-dispatch Make override warning is removed without changing the compiled objects, linked image, or **3,703 / 4,840** Game match count.
 
 [Note 2305](WORKING_NOTES/2305-game-actor-colored-dispatch-direct-match-20261112.md): the 75-word actor colored-effect dispatcher emits directly from C using its retail table and a target-only compiler profile; its helper remains a stub. Fresh Game **3,703 / 4,840 (76.51%)**, total **4,376 / 5,513 (79.38%)**, zero drift; **169** more Game matches to 80%.
