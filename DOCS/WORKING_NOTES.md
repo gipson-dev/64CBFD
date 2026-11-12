@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2306](WORKING_NOTES/2306-colored-dispatch-make-warning-fix-20261112.md): the colored-dispatch Make override warning is removed without changing the compiled objects, linked image, or **3,703 / 4,840** Game match count.
+
 [Note 2305](WORKING_NOTES/2305-game-actor-colored-dispatch-direct-match-20261112.md): the 75-word actor colored-effect dispatcher emits directly from C using its retail table and a target-only compiler profile; its helper remains a stub. Fresh Game **3,703 / 4,840 (76.51%)**, total **4,376 / 5,513 (79.38%)**, zero drift; **169** more Game matches to 80%.
 
 [Note 2304](WORKING_NOTES/2304-game-scene-transition-dispatch-direct-match-20261112.md): the 74-word scene-transition dispatcher emits directly from C, using the preserved retail switch table and typed object member. Fresh Game **3,702 / 4,840 (76.49%)**, total **4,375 / 5,513 (79.36%)**, zero drift; **170** more Game matches to 80%.

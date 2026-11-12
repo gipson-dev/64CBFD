@@ -111,7 +111,8 @@ MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_1A0790.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_50D80.c.o \
-	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_12DAB0.c.o
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
 STANDARD_GENERATED_SLICE_O_FILES := \

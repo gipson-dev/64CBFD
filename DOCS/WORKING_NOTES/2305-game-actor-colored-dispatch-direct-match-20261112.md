@@ -44,7 +44,7 @@ all 6,050 function addresses fixed, and all 189,088 protected Game-data bytes
 unchanged. Actual ELF SHA-256: `bf74c47dea47efbd05e0842c566b83e17922c5398a5bba32ba79d0f913ac185f`. The existing whole-ROM
 checksum mismatch remains. Make also reports an intentional recipe-override
 warning for this target in addition to the pre-existing `generated_12D630`
-warning; the selected seven-command recipe is verified above.
+warning; the selected seven-command recipe is verified above. The target warning was subsequently removed in [Note 2306](2306-colored-dispatch-make-warning-fix-20261112.md).
 
 Fresh ELF recount: **3,703 / 4,840 (76.51%)** Game and **4,376 / 5,513
 (79.38%)** overall, zero address drift. The Game 80% target needs 169 more
