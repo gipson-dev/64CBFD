@@ -763,3 +763,6 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_50D80.c.o: \
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.nounroll.compact $@.padded.s
 endif
+
+# Scene transitions retain their original seven-entry jump table.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_49BE0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800969A0_game

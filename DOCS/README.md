@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2304](WORKING_NOTES/2304-game-scene-transition-dispatch-direct-match-20261112.md): the 74-word scene-transition dispatcher emits directly from C, using the preserved retail switch table and typed object member. Fresh Game **3,702 / 4,840 (76.49%)**, total **4,375 / 5,513 (79.36%)**, zero drift; **170** more Game matches to 80%.
+
 [Note 2303](WORKING_NOTES/2303-game-spawn-scene-transition-direct-match-20261112.md): the 76-word spawn scene transition emits directly from C with no guards. Guest checks include the original query early exit; indeterminate-output paths are not portable C. Fresh Game **3,701 / 4,840 (76.47%)**, total **4,374 / 5,513 (79.34%)**, zero drift; **171** more Game matches to 80%.
 
 [Note 2302](WORKING_NOTES/2302-game-animated-packet-renderer-match-20261112.md): the 75-word animated packet renderer matches retail with 42 register and scheduling guards. Guest/native, dispatcher window, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,700 / 4,840 (76.45%)**, total **4,373 / 5,513 (79.32%)**, zero drift; **172** more Game matches to 80%.
