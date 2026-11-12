@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): static selector census and modeled dispatch expose 14 possible out-of-table zero-count pairs; the three callbacks remain private pending a sound return contract and full qualification. Game remains **3,707 / 4,840 (76.59%)**, 165 matches to 80%.
+
 [Note 2316](WORKING_NOTES/2316-game-secondary-callback-walker-guarded-match-20261112.md): `func_151671E8` matches 74 retail words with 35 guards. Game **3,707 / 4,840 (76.59%)**, total **4,380 / 5,513 (79.45%)**, zero drift; **165** more Game matches to 80%. `func_151AD174` remains a placeholder.
 
 [Note 2315](WORKING_NOTES/2315-game-type64-timer-callback-guarded-match-20261112.md): `func_151041E4` matches all 170 retail words with 76 guard rows and two inserted words. Fresh Game **3,706 / 4,840 (76.57%)**, total **4,379 / 5,513 (79.43%)**, zero drift; **166** more Game matches to 80%.

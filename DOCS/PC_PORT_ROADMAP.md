@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2317](WORKING_NOTES/2317-game-interpolated-selector-zero-domain-20261112.md): a bounded selector and return-value investigation leaves three interpolation callbacks private; it does not establish host-port behavior.
+
 [Note 2316](WORKING_NOTES/2316-game-secondary-callback-walker-guarded-match-20261112.md): `func_151671E8` matches 74 retail words with 35 guards; Game **3,707 / 4,840 (76.59%)**, total **4,380 / 5,513 (79.45%)**. The host-port definitions were only inspected; their active-build applicability is unknown.
 
 [Note 2315](WORKING_NOTES/2315-game-type64-timer-callback-guarded-match-20261112.md): `func_151041E4` matches all 170 retail words with 76 guard rows and two inserted words. Fresh Game **3,706 / 4,840 (76.57%)**, total **4,379 / 5,513 (79.43%)**, zero drift; **166** more Game matches to 80%.
