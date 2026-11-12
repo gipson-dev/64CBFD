@@ -66,3 +66,43 @@ direct and indirect consumers and NOBITS metadata, before modifying the shared
 header. Qualify the complete linked image and the callback interfaces, then
 repeat caller, native, padding and production gates. Until then, this function
 remains unmatched and Game progress is unaffected by this audit.
+
+## Follow-up: complete existing-object header overlay screen
+
+At consumer commit `a774e6f2`, a fresh private `struct115` overlay replaced
+`pad0[0x14]` with `void (*unk4)(u8 *)` and 16 remaining padding bytes. The
+production header and candidate function were not changed. A conservative
+textual include inventory found 292 potentially dependent C sources, 291 with
+existing objects. A separately constructed reverse include graph scanned 780
+files and found the same 292 sources with no missing source and no computed
+includes; `PR/sptaskoff.h` was an unresolved literal include. Both inventories
+are subject to conditional-include and include-resolution limitations.
+
+The Make dry-run plan for those existing objects supplied 300 compiler-profile
+commands and 58 generated inputs. Paired raw compilations with the unchanged
+and overlay headers yielded no differences in the compared non-debug section
+bytes or section metadata (including NOBITS), or in diagnostics; all frozen
+inputs remained unchanged during the screen. All 58 Make-planned postprocess
+comparisons also agreed. A separate object parser checked text, complete
+function symbols and named text relocations for all 300 raw and 58 postprocessed
+objects and found no differences. This is an isolated object overlay screen,
+not a production rebuild, full-image comparison, non-text relocation audit or
+coverage of the source without an existing object.
+
+The retail descriptor data was also rechecked across all 101 offset-4 slots:
+columns 47 and 78 contain `func_151AD174`, column 48 `func_151ACB60`, and
+column 100 `func_151041E4`; the remaining slots are zero. The existing
+`func_151ACB60` C definition takes `u8 *`. Retail instructions for each of the
+two other currently stubbed callbacks consume the incoming `a0` as a pointer,
+but this observation alone does not establish their eventual complete C
+interfaces or semantics. Preserve that limitation when qualifying the typed
+indirect call.
+
+Private audit scripts and receipts are under
+`conker/build/game-secondary-walker-header-screen/`; paired raw objects are in
+the receipt's temporary directory and are not durable. Next, qualify the
+callback interface and candidate guards, then perform the remaining caller,
+padder, rebased-link, actual Make and independent full-image checks before
+installing or crediting the walker. The refreshed production ELF still reports
+**3,705 / 4,840 (76.55%)** Game and **4,378 / 5,513 (79.41%)** overall, with
+zero address drift.
