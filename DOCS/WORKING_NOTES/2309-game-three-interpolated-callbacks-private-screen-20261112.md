@@ -1,5 +1,7 @@
 # Three interpolated Game callbacks: private screen
 
+**Correction:** [Note 2310](2310-game-interpolated-callback-dispatch-and-return-20261112.md) identifies the real caller and its consumed return value. The `void` candidate and tests below did not qualify that contract; use them only as historical screens.
+
 Date: 2026-11-12. This is an **uninstalled, uncredited** investigation of
 `func_1500B8F4`, `func_1500BAB8`, and `func_1500BC7C` in `game_36680.c`.
 The production functions and `func_1500AF08` remain zero-return placeholders.

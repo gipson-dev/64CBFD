@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2310](WORKING_NOTES/2310-game-interpolated-callback-dispatch-and-return-20261112.md): traced the original indirect caller and discovered its consumed return value; the corrected candidates remain private and unmatched.
+
 [Note 2309](WORKING_NOTES/2309-game-three-interpolated-callbacks-private-screen-20261112.md): three 113-word interpolated callback candidates are private and uncredited; the best owner screen matches 64 words directly, with caller, schedule, and production qualification still open.
 
 [Note 2308](WORKING_NOTES/2308-game-position-interpolation-guarded-match-20261112.md): the 84-word position interpolation callback matches retail with ten floating-point scheduling guards. Fresh Game **3,704 / 4,840 (76.53%)**, total **4,377 / 5,513 (79.39%)**, zero drift; **168** more Game matches to 80%.
