@@ -268,8 +268,32 @@ void func_1514BE00(register u8 *arg0) {
     func_1514BC08(arg0, arg0 + 0x110);
 }
 
-s32 func_1514BE20() {
-    return 0;
+s32 func_15145128(struct17 *, struct17 *, f32 *, f32 *);
+
+/* Reposition the secondary point on a 100-unit radius around the actor. */
+s32 func_1514BE20(u8 *actor) {
+    s32 normalized;
+    struct17 target, interpolated, direction;
+    f32 length, reciprocal;
+    f32 fraction = *(f32 *)(actor + 0x15C);
+    target.unk0 = *(f32 *)(actor + 0x34);
+    target.unk4 = *(f32 *)(actor + 0x38) + 100.0f;
+    target.unk8 = *(f32 *)(actor + 0x3C);
+    interpolated.unk0 = *(f32 *)(actor + 0x40) + (target.unk0 - *(f32 *)(actor + 0x40)) * fraction;
+    interpolated.unk4 = *(f32 *)(actor + 0x44) + (target.unk4 - *(f32 *)(actor + 0x44)) * fraction;
+    interpolated.unk8 = *(f32 *)(actor + 0x48) + (target.unk8 - *(f32 *)(actor + 0x48)) * fraction;
+    direction.unk0 = interpolated.unk0 - target.unk0;
+    direction.unk4 = interpolated.unk4 - *(f32 *)(actor + 0x38);
+    direction.unk8 = interpolated.unk8 - target.unk8;
+    normalized = func_15145128(&direction, &direction, &length, &reciprocal);
+    if (normalized) {
+        *(f32 *)(actor + 0x40) = *(f32 *)(actor + 0x34) + direction.unk0 * 100.0f;
+        *(f32 *)(actor + 0x44) = *(f32 *)(actor + 0x38) + direction.unk4 * 100.0f;
+        *(f32 *)(actor + 0x48) = *(f32 *)(actor + 0x3C) + direction.unk8 * 100.0f;
+    } else {
+        *(struct17 *)(actor + 0x40) = *(struct17 *)(actor + 0x34);
+    }
+    return normalized;
 }
 
 void func_1514BF50(u8 *arg0) {
@@ -288,7 +312,7 @@ s32 func_1514BF9C() {
 
 s32 func_1514C258(s32 arg0) {
     func_1514BF9C(arg0);
-    func_1514BE20(arg0);
+    func_1514BE20((u8 *)arg0);
     return 1;
 }
 
