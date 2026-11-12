@@ -56,6 +56,7 @@ Fresh production ELF recount: **3,706 / 4,840 (76.57%)** Game and **4,379 /
 5,513 (79.43%)** overall, zero drift. The Game 80% target needs 166 more
 matches. The secondary walker `func_151671E8` remains private; its other
 registered callback `func_151AD174` still has a zero-return placeholder.
+The walker was subsequently adopted in [Note 2316](2316-game-secondary-callback-walker-guarded-match-20261112.md); the other callback remains a placeholder.
 
 The scoped graph refresh retained unrelated nodes: 59,887 before and 59,889
 after, with no out-of-scope removals or changes and three relocated IDs matched

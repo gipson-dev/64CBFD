@@ -828,7 +828,8 @@ typedef struct {
 
 typedef struct {
     void (*unk0)(struct102 *arg0); // used
-    u8 pad0[0x14];
+    void (*unk4)(u8 *arg0);
+    u8 pad0[0x10];
     void (*unk18)(struct102 *arg0); // used
     void (*unk1C)(void *arg0, s32 arg1, u8 arg2);
     u8 pad20[0x14];

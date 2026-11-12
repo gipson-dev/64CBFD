@@ -172,8 +172,8 @@ s32 func_151ACBD4() {
     return 0;
 }
 
-s32 func_151AD174() {
-    return 0;
+/* Placeholder: the registered callback receives a byte-addressed record. */
+void func_151AD174(u8 *record) {
 }
 
 s32 func_151AD92C() {

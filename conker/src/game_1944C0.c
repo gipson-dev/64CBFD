@@ -5,7 +5,7 @@
 
 /* Generated placeholder declarations. */
 void func_151670C0(void);
-s32 func_151671E8();
+void func_151671E8(void);
 s32 func_15167310();
 s32 func_151674F8();
 void func_15167B44(u8 *state);
@@ -114,9 +114,28 @@ void func_151670C0(void) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151671E8.s. */
-s32 func_151671E8() {
-    return 0;
+/* Walk secondary callbacks, retaining the next node across each call. */
+void func_151671E8(void) {
+    s32 row, column;
+    struct115 *descriptor;
+    struct102 *node;
+
+    for (row = 0; row < 2; row++) {
+        descriptor = D_8008B4A8;
+        for (column = 0; column < 101; column++) {
+            if (descriptor->unk4 != NULL) {
+                node = *(struct102 **)(D_800DCE50 + row * 0x1A0 + column * 4);
+                D_800DD190++;
+                while (node != NULL) {
+                    D_800DD198[D_800DD190] = *(void **)((u8 *)node + 8);
+                    descriptor->unk4((u8 *)node);
+                    node = D_800DD198[D_800DD190];
+                }
+                D_800DD190--;
+            }
+            descriptor++;
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167310.s. */
 s32 func_15167310() {
