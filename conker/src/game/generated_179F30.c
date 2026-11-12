@@ -417,12 +417,69 @@ void func_1514DFD0(u8 *arg0) {
     *(arg0 + 0x101) |= 0x34;
 }
 
-s32 func_1514E00C() {
-    return 0;
+
+typedef struct { f32 v[6]; u8 *owner; u8 kind, identity; s8 mode; u8 pad; } PacketRuntime1514;
+typedef struct {
+    u8 type, pad01; s16 flags02, flags04; u8 pad06[2];
+    u32 zero08, zero0c; u8 color[4], pad14[8]; f32 vector[6];
+    u8 pad34[12]; u32 flags40; u8 pad44, strength, pad46[18];
+} PacketDescriptor1514;
+typedef struct {
+    f32 size[4], zero10, zero14, half18, half1c, scalar20;
+    u8 pad24[36]; f32 one48; u8 pad4c[8], tail[4], pad58[4];
+} PacketSource1514;
+typedef struct { PacketRuntime1514 runtime; PacketDescriptor1514 desc; PacketSource1514 source; } Packet1514;
+extern f32 D_800A5E08, D_800A5E0C, D_800A5E10, D_800A5E14;
+u8 *func_15189FF0(u8 *, u8 *, const void *, u8, u8, u8, u8);
+
+
+/* Construct the fixed packet and attach it to the owning object. */
+void func_1514E00C(u8 *owner) {
+    PacketSource1514 source; PacketDescriptor1514 desc; PacketRuntime1514 runtime;
+    desc.type = 3; desc.zero08 = 0; desc.zero0c = 0;
+    desc.flags40 = 0x12002; desc.flags04 = 0; desc.strength = 255;
+    desc.color[0] = 255; desc.color[1] = 0x8E; desc.color[2] = 0x19; desc.color[3] = 255;
+    desc.flags02 = 0x401;
+    desc.vector[0] = 0.0f; desc.vector[1] = 0.0f; desc.vector[2] = 0.0f;
+    desc.vector[3] = 0.0f; desc.vector[4] = 0.0f; desc.vector[5] = 0.0f;
+    source.size[0] = 20.0f; source.size[1] = 20.0f;
+    source.size[2] = 20.0f; source.size[3] = 20.0f;
+    source.zero10 = 0.0f; source.zero14 = 0.0f;
+    source.half18 = 0.5f; source.half1c = 0.5f; source.scalar20 = D_800A5E08;
+    runtime.identity = owner[0x3B];
+    runtime.v[0] = 35.0f; runtime.v[1] = 27.0f; runtime.v[2] = 59.0f;
+    runtime.v[3] = 35.0f; runtime.v[4] = 27.0f; runtime.v[5] = D_800A5E0C;
+    runtime.owner = owner; runtime.kind = 6;
+    source.one48 = 1.0f;
+    source.tail[3] = 0; source.tail[2] = 0; source.tail[1] = 0; source.tail[0] = 0;
+    runtime.mode = -1;
+    func_1514EC1C((s32)func_15189FF0((u8 *)&desc, (u8 *)&source, &runtime, 2, 0, 0, 0), (s32)owner, 6);
+    func_151D74B0(owner, 5, -1, 255, 1);
 }
 
-s32 func_1514E194() {
-    return 0;
+
+/* Construct the fixed packet and attach it to the owning object. */
+void func_1514E194(u8 *owner) {
+    PacketSource1514 source; PacketDescriptor1514 desc; PacketRuntime1514 runtime;
+    desc.type = 3; desc.zero08 = 0; desc.zero0c = 0;
+    desc.flags40 = 0x12002; desc.flags04 = 0; desc.strength = 255;
+    desc.color[0] = 255; desc.color[1] = 0x8E; desc.color[2] = 0x19; desc.color[3] = 255;
+    desc.flags02 = 0x401;
+    desc.vector[0] = 0.0f; desc.vector[1] = 0.0f; desc.vector[2] = 0.0f;
+    desc.vector[3] = 0.0f; desc.vector[4] = 0.0f; desc.vector[5] = 0.0f;
+    source.size[0] = 16.0f; source.size[1] = 16.0f;
+    source.size[2] = 16.0f; source.size[3] = 16.0f;
+    source.zero10 = 0.0f; source.zero14 = 0.0f;
+    source.half18 = 0.5f; source.half1c = 0.5f; source.scalar20 = D_800A5E10;
+    runtime.identity = owner[0x3B];
+    runtime.v[0] = 35.0f; runtime.v[1] = 27.0f; runtime.v[2] = 59.0f;
+    runtime.v[3] = 35.0f; runtime.v[4] = 27.0f; runtime.v[5] = D_800A5E14;
+    runtime.owner = owner; runtime.kind = 6;
+    source.one48 = 1.0f;
+    source.tail[3] = 0; source.tail[2] = 0; source.tail[1] = 0; source.tail[0] = 0;
+    runtime.mode = -1;
+    func_1514EC1C((s32)func_15189FF0((u8 *)&desc, (u8 *)&source, &runtime, 2, 0, 0, 0), (s32)owner, 6);
+    func_151D74B0(owner, 5, -1, 255, 1);
 }
 
 s32 func_1514E31C() {

@@ -29888,3 +29888,25 @@ generated_1E2180,func_151B50F4,0x1C,0xC4200000,0xAFA7007C,R_MIPS_LO16:D_800AA3E8
 generated_1E2180,func_151B50F4,0x60,0xA3AF004B,0xA3AF005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
 generated_1E2180,func_151B50F4,0x64,0xA3A0004B,0xA3A0005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
 generated_1E2180,func_151B50F4,0xCC,0x93AC004B,0x93AC005F,-,-,Normalize effect constructor stack layout and opening schedule,,,false
+generated_179F30,func_1514E00C,0x6C,0xA3B80091,0xAFAF008C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x70,0xAFAF008C,0xA7A00050,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x74,0xA7A00050,0xA3B80091,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x78,0xA3AA005F,0xA3B9005C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x7C,0xA3A9005E,0xA3A8005D,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x80,0xA3A8005D,0xA3A9005E,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0x84,0xA3B9005C,0xA3AA005F,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0xF0,0xE7B00030,0xE7AE002C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0xF4,0xE7AE002C,0xE7B00030,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0xF8,0xE7B0003C,0xE7AE0038,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E00C,0xFC,0xE7AE0038,0xE7B0003C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x6C,0xA3B80091,0xAFAF008C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x70,0xAFAF008C,0xA7A00050,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x74,0xA7A00050,0xA3B80091,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x78,0xA3AA005F,0xA3B9005C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x7C,0xA3A9005E,0xA3A8005D,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x80,0xA3A8005D,0xA3A9005E,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0x84,0xA3B9005C,0xA3AA005F,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0xF0,0xE7B00030,0xE7AE002C,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0xF4,0xE7AE002C,0xE7B00030,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0xF8,0xE7B0003C,0xE7AE0038,-,-,Normalize independent packet initialization store order,,,false
+generated_179F30,func_1514E194,0xFC,0xE7AE0038,0xE7B0003C,-,-,Normalize independent packet initialization store order,,,false
