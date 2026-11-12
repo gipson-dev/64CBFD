@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2281](WORKING_NOTES/2281-game-resource-reference-release-match-20261111.md): `func_15132444` restores the 75-word resource-reference release with 37 guarded words and one insertion. Guest/native, both original caller windows, padders and strict 224-byte image checks pass within documented limits. Fresh total **4,349 / 5,513 (78.89%)**, Game **3,676 / 4,840 (75.95%)**, zero drift; **62** more to 80%.
+
 [Note 2280](WORKING_NOTES/2280-game-linked-scaled-matrix-match-20261111.md): `func_151B76CC` restores the 74-word linked scaled-matrix transform with 38 guarded words. Guest/native, both original caller windows, padders and strict 230-byte image checks pass within documented limits. Fresh total **4,348 / 5,513 (78.87%)**, Game **3,675 / 4,840 (75.93%)**, zero drift; **63** more to 80%.
 
 [Note 2279](WORKING_NOTES/2279-game-linked-actor-transform-match-20261111.md): `func_15102D90` restores the 74-word linked-actor transform with 64 guarded words and one insertion. Guest/native, original caller window, padders and strict 226-byte image checks pass within documented limits. Fresh total **4,347 / 5,513 (78.85%)**, Game **3,674 / 4,840 (75.91%)**, zero drift; **64** more to 80%.

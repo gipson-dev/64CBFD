@@ -29381,3 +29381,40 @@ generated_1E37D0,func_151B76CC,0xFC,0xAFA80018,0xAFB80018,-,-,Normalize linked s
 generated_1E37D0,func_151B76CC,0x100,0xAFB90014,0xAFAF0014,-,-,Normalize linked scaled-matrix transform register allocation and control flow,,,false
 generated_1E37D0,func_151B76CC,0x110,0xE7B20058,0xE7B20054,-,-,Normalize linked scaled-matrix transform register allocation and control flow,,,false
 generated_1E37D0,func_151B76CC,0x11C,0x27BD0070,0x27BD0078,-,-,Normalize linked scaled-matrix transform register allocation and control flow,,,false
+generated_15F680,func_15132444,0x8,0x3C020000,0x3C050000,R_MIPS_HI16:D_800DC63C,R_MIPS_HI16:D_800DC63C,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x14,0x24420000,0x24A50000,R_MIPS_LO16:D_800DC63C,R_MIPS_LO16:D_800DC63C,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x20,0x8C4E0000,0x8CAE0000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x28,0xAC4F0000,0xACAF0000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x34,0x00D91821,0x00D91021,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x38,0x84680000,0x84480000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x40,0xA4690000,0xA4490000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x44,0x96050066,0x96030066,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x48,0x00055040,0x00035040,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x4C,0x00CA1821,0x00CA1021,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x50,0x846B0000,0x844B0000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x54,0x1560002D,0x1560002E,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x5C,0x8E02008C,0x8E0C008C,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x60,0x240D0001,0x240E0001,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x64,0x904C000E,0x918D000E,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x68,0x51800004,0x51A00004,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x6C,0x00057080,0x00037880,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x70,0x10000026,0x10000027,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x74,0xA46D0000,0xA44E0000,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x78,0x00057080,0x00037880,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x80,0x008E2021,0x008F2021,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x94,0x5460000B,0x5460000C,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x98,0x8C4F0004,0x8C590004,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0x9C,0x8C430004,0x8C580004,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xA0,0x3C010000,0x3C040000,R_MIPS_HI16:D_800DC460,R_MIPS_HI16:D_800DC460,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xA4,0x10600003,0x24840000,-,R_MIPS_LO16:D_800DC460,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xA8,0xAC230000,0x13000003,R_MIPS_LO16:D_800DC460,-,Normalize resource-reference release register allocation and control flow,0xAC980000,-,false
+generated_15F680,func_15132444,0xB0,0xAC600008,0xAF000008,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xC0,0x8C4F0004,0x8C590004,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xC4,0xAC6F0004,0xAC790004,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xD4,0x8C590008,0x8C490008,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xD8,0x8C580008,0x8C480008,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xE0,0xAC980008,0xAC880008,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xE4,0x8C590008,0x8C490008,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xEC,0xAC390000,0xAC290000,R_MIPS_LO16:D_800DC464,R_MIPS_LO16:D_800DC464,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xF0,0x8E08008C,0x8E0A008C,-,-,Normalize resource-reference release register allocation and control flow,,,false
+generated_15F680,func_15132444,0xFC,0x8D040000,0x8D440000,-,-,Normalize resource-reference release register allocation and control flow,,,false

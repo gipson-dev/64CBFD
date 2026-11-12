@@ -68,7 +68,11 @@ void func_15168E54(void *, void *);
 s32 func_151336A8(s32, ExtendedResourceNode15F680 *, void *);
 typedef struct { s32 a, b; } TwoWord15F680;
 typedef struct {
-    u8 pad0[0x154];
+    u8 pad0[0x66];
+    u16 resourceId;
+    u8 pad68[0x24];
+    ExtendedResourceNode15F680 *resourceNode;
+    u8 pad90[0xC4];
     s32 entries[4];
     s32 trailing;
 } ResourceOwner15F680;
@@ -106,17 +110,45 @@ s32 func_151323F8(u8 *arg0) {
     D_800899D4[idx]();
 }
 
-s32 func_15132444() {
-    return 0;
+void func_1510D630(s16 *);
+void func_151325C8(ResourceOwner15F680 *);
+/* Release one resource reference and unlink its unretained last node. */
+void func_15132444(ResourceOwner15F680 *owner) {
+    ExtendedResourceNode15F680 *node, *next;
+    D_800DC63C = (s32)((u32)D_800DC63C - 1);
+    D_800DC468[owner->resourceId]--;
+    if (D_800DC468[owner->resourceId] == 0) {
+        node = owner->resourceNode;
+        if (node->retained != 0) {
+            D_800DC468[owner->resourceId] = 1;
+        } else {
+            func_1510D630((s16 *)D_800DC640[owner->resourceId]);
+            node = owner->resourceNode;
+            if (node->previous == NULL) {
+                next = node->next;
+                D_800DC460 = next;
+                if (next != NULL) next->previous = NULL;
+                else D_800DC464 = NULL;
+            } else {
+                node->previous->next = node->next;
+                node = owner->resourceNode;
+                if (node->next != NULL) node->next->previous = node->previous;
+                else D_800DC464 = node->previous;
+            }
+            func_100043B4((s32 *)owner->resourceNode->resource, 4);
+            func_100043B4((s32 *)owner->resourceNode, 4);
+        }
+    }
+    func_151325C8(owner);
 }
 
 s32 func_15132570(s32 arg0) {
-    func_15132444(arg0);
+    func_15132444((ResourceOwner15F680 *)arg0);
     func_15169804(arg0);
 }
 
 s32 func_1513259C(s32 arg0) {
-    func_15132444(arg0);
+    func_15132444((ResourceOwner15F680 *)arg0);
     func_15169824(arg0);
 }
 
