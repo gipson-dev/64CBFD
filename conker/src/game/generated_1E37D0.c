@@ -138,8 +138,25 @@ s32 func_151B7678(u8 *arg0, f32 *arg1) {
     return 1;
 }
 
-s32 func_151B76CC() {
-    return 0;
+typedef struct { u8 reserved00[0x18]; f32 scaleX, scaleY; f32 rotation[3]; u8 reserved2C[0xC]; f32 translation[3]; } MatrixSource151B76CC;
+typedef struct { MatrixSource151B76CC *source; } MatrixLink151B76CC;
+typedef struct { u8 reserved00[4]; MatrixLink151B76CC *link; } MatrixData151B76CC;
+typedef struct { u8 reserved00[0x10]; ActorPosition151B6320 position; u8 reserved1C[0x7C]; MatrixData151B76CC *data; } MatrixOwner151B76CC;
+void func_150A8050(f32 [4][4], f32, f32, f32);
+void func_150A7960(f32 [4][4], f32, f32, f32, f32 *, f32 *, f32 *);
+/* Transform a local offset through the linked scaled rotation and translation. */
+s32 func_151B76CC(MatrixOwner151B76CC *owner, ActorPosition151B6320 *output) {
+    f32 matrix[4][4];
+    MatrixSource151B76CC *source = owner->data->link->source;
+    func_150A8050(matrix, source->rotation[0], source->rotation[1], source->rotation[2]);
+    matrix[3][0] = source->translation[0];
+    matrix[3][1] = source->translation[1];
+    matrix[3][2] = source->translation[2];
+    matrix[0][0] *= source->scaleX; matrix[0][1] *= source->scaleX; matrix[0][2] *= source->scaleX;
+    matrix[1][0] *= source->scaleY; matrix[1][1] *= source->scaleY; matrix[1][2] *= source->scaleY;
+    matrix[2][0] *= source->scaleX; matrix[2][1] *= source->scaleX; matrix[2][2] *= source->scaleX;
+    func_150A7960(matrix, 0.0f, 0.0f, -250.0f, &output->x, &output->y, &output->z);
+    return 1;
 }
 
 s32 func_151B77F4() {
