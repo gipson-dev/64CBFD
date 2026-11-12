@@ -1,5 +1,7 @@
 #include <ultra64.h>
 #include "structs.h"
+extern f32 D_8008D578;
+void func_151EFE00(f32 [4][4]);
 typedef struct {
     u8 retained[0x8C];
     f32 baseIncrement;
@@ -319,6 +321,23 @@ s32 func_15187A98() {
     return 0;
 }
 
-s32 func_15187D6C() {
-    return 0;
+/* Construct the alternate Euler rotation matrix. */
+void func_15187D6C(f32 m[4][4], f32 x, f32 y, f32 z) {
+    f32 sx, cx, sy, sz, cy, cz, t;
+    x *= D_8008D578; y *= D_8008D578; z *= D_8008D578;
+    sx = sinf(x); cx = cosf(x);
+    sy = sinf(y); cy = cosf(y);
+    sz = sinf(z); cz = cosf(z);
+    func_151EFE00(m);
+    t = sx * sy;
+    m[1][2] = sx;
+    m[0][0] = cy * cz - t * sz;
+    m[0][1] = cy * sz + t * cz;
+    m[0][2] = -sy * cx;
+    m[1][0] = -cx * sz;
+    m[1][1] = cx * cz;
+    t = sx * cy;
+    m[2][0] = sy * cz + t * sz;
+    m[2][1] = sy * sz - t * cz;
+    m[2][2] = cx * cy;
 }

@@ -2,7 +2,8 @@
 
 Date: 2026-11-12. `func_15187D6C` in
 `conker/src/game/generated_1B1600.c` remains an unconverted placeholder.
-This is a private screen; it does **not** change the production match count.
+This was a private screen and did **not** change the production match count.
+The candidate was subsequently adopted in [Note 2322](2322-game-rotation-matrix-guarded-match-20261112.md).
 The routine's executable span is 83 words at VA `0x15187D6C..0x15187EB8`,
 ROM `0x1B521C..0x1B5368`; the 85-word layout slot includes two padding words.
 It uses a `0x48`-byte frame. Its original caller around `0x15187BD8` passes
