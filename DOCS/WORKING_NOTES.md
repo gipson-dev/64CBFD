@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2279](WORKING_NOTES/2279-game-linked-actor-transform-match-20261111.md): `func_15102D90` restores the 74-word linked-actor transform with 64 guarded words and one insertion. Guest/native, original caller window, padders and strict 226-byte image checks pass within documented limits. Fresh total **4,347 / 5,513 (78.85%)**, Game **3,674 / 4,840 (75.91%)**, zero drift; **64** more to 80%.
+
 [Note 2278](WORKING_NOTES/2278-game-motion-ring-integrator-match-20261111.md): `func_151CD674` restores the 82-word motion-ring integrator with 50 guarded words and one insertion. Guest/native, bounded dispatcher, padders and strict 285-byte image checks pass within documented limits. Fresh total **4,346 / 5,513 (78.83%)**, Game **3,673 / 4,840 (75.89%)**, zero drift; **65** more to 80%.
 
 [Note 2277](WORKING_NOTES/2277-game-sorted-record-insertion-match-20261111.md): `func_150241B4` restores the 81-word sorted-record insertion with 44 guarded words and two insertions. Guest/native, original caller window, padders and strict 247-byte image checks pass within documented limits. Fresh total **4,345 / 5,513 (78.81%)**, Game **3,672 / 4,840 (75.87%)**, zero drift; **66** more to 80%.
