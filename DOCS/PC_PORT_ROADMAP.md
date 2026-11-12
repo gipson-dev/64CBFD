@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2336](WORKING_NOTES/2336-game-sequence-interpolation-layout-screen-20261112.md): interpolation screen improved to 93 ordered-equal words; still unqualified. Game remains **3,725 / 4,840 (76.96%)**, with **147** matches to 80%.
+
 [Note 2335](WORKING_NOTES/2335-game-open-sequence-candidate-screens-20261112.md): two private sequence candidates remain unqualified; no match credit. Game remains **3,725 / 4,840 (76.96%)**, total **4,398 / 5,513 (79.78%)**, zero drift; **147** more Game matches to 80%.
 
 [Note 2334](WORKING_NOTES/2334-game-sequence-completion-guarded-match-20261112.md): `func_1501DF04` matches all 86 retail words with two relocation-aware address-order guards. Game **3,725 / 4,840 (76.96%)**, total **4,398 / 5,513 (79.78%)**, zero drift; **147** more Game matches to 80%.
