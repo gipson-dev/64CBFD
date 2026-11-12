@@ -636,7 +636,27 @@ s32 func_1501DF04() {
     return 0;
 }
 
-s32 func_1501E05C() {
+extern u16 D_800BE710[];
+extern s32 D_8000030C;
+extern u8 D_800D2E40;
+/* Check whether the current sequence requests a transition. */
+s32 func_1501E05C(s32 slot) {
+    if (D_800BE9F0 == 0x1D) {
+        if (*(s8 *)&D_8008FD84 != 0) {
+            D_8008FD84 = 0;
+            return 1;
+        }
+        if (D_800C35E8[0] != 5) return 0;
+    }
+    if (D_800BE9F0 == 0x21) {
+        if ((D_800BE710[0] & 0x1000) && D_8000030C == 1 && D_800C35B0[0] >= 301) return 1;
+        return 0;
+    }
+    if ((D_800BE710[0] & 0x20) && D_800C3C9C == 0) {
+        if (D_800D2E40 != 0) return 1;
+        if (func_1501D2C4(D_800BE9F0, D_800C35E8[slot]) != 0 &&
+            (D_800C3C99 != 0 || (s32)((u32)D_800C35B0[slot] + 30U) < D_800C3640[slot])) return 1;
+    }
     return 0;
 }
 
