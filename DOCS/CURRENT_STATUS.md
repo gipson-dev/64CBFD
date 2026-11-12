@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2289](WORKING_NOTES/2289-game-effect-descriptor-match-20261112.md): `func_150C1E34` restores the 72-word effect descriptor with 48 guards and one insertion; its slot has three further padding words. Guest/native, four caller windows, padders and the strict 232-byte image audit pass within documented limits. Fresh Game **3,683 / 4,840 (76.10%)**, total **4,356 / 5,513 (79.01%)**, zero drift; **189** more Game matches to 80%.
+
 [Note 2288](WORKING_NOTES/2288-game-effect-descriptor-private-candidate-20261112.md): `func_150C1E34` has a private first C reconstruction (71 compiled words versus retail 75). Caller, helper, semantic and full-image qualification remain; no matching credit has been taken.
 
 [Note 2287](WORKING_NOTES/2287-game-localized-trail-preset-match-20261112.md): `func_151DBAA8` restores the 75-word localized trail preset with 68 guards and one insertion. Guest/native, both caller windows, padders and strict 235-byte image checks pass within documented limits. Fresh Game **3,682 / 4,840 (76.07%)**, total **4,355 / 5,513 (79.00%)**, zero drift; **190** more Game matches to 80%.
