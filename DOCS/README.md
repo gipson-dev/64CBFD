@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2323](WORKING_NOTES/2323-game-actor-point-effect-guarded-match-20261112.md): `func_150BEACC` matches 89 retail words with two checked guards. Game **3,712 / 4,840 (76.69%)**, total **4,385 / 5,513 (79.54%)**, zero drift; **160** more Game matches to 80%.
+
 [Note 2322](WORKING_NOTES/2322-game-rotation-matrix-guarded-match-20261112.md): `func_15187D6C` matches 83 retail words with ten checked guards. Game **3,711 / 4,840 (76.67%)**, total **4,384 / 5,513 (79.52%)**, zero drift; **161** more Game matches to 80%.
 
 [Note 2321](WORKING_NOTES/2321-game-rotation-matrix-private-screen-20261112.md): private `func_15187D6C` rotation matrix candidate passes an 83-word guarded shadow screen; durable and production qualification remain open, with no change to the Game count.

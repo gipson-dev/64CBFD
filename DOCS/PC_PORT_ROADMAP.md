@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2323](WORKING_NOTES/2323-game-actor-point-effect-guarded-match-20261112.md): `func_150BEACC` matches 89 retail words with two checked guards. Game **3,712 / 4,840 (76.69%)**, total **4,385 / 5,513 (79.54%)**, zero drift; **160** more Game matches to 80%.
+
 [Note 2322](WORKING_NOTES/2322-game-rotation-matrix-guarded-match-20261112.md): `func_15187D6C` matches 83 retail words with ten checked guards. Game **3,711 / 4,840 (76.67%)**, total **4,384 / 5,513 (79.52%)**, zero drift; **161** more Game matches to 80%.
 
 [Note 2320](WORKING_NOTES/2320-game-resource-motion-callback-guarded-match-20261112.md): `func_15157AA8` matches 184 retail words with 16 checked guards. Game **3,710 / 4,840 (76.65%)**, total **4,383 / 5,513 (79.50%)**, zero drift; **162** more Game matches to 80%.

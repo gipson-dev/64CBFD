@@ -30131,3 +30131,5 @@ generated_1B1600,func_15187D6C,0x24,0x3C010000,0xAFBF002C,R_MIPS_HI16:D_8008D578
 generated_1B1600,func_15187D6C,0x28,0xC4200000,0xF7B60020,R_MIPS_LO16:D_8008D578,-,Normalize rotation-matrix prologue schedule and temporary stack slot,,,false
 generated_1B1600,func_15187D6C,0x88,0xE7A00038,0xE7A0003C,-,-,Normalize rotation-matrix prologue schedule and temporary stack slot,,,false
 generated_1B1600,func_15187D6C,0xA8,0xC7A20038,0xC7A2003C,-,-,Normalize rotation-matrix prologue schedule and temporary stack slot,,,false
+generated_EBE60,func_150BEACC,0x34,0xAFA70020,0xAFA70024,-,-,Normalize point effect saved mode temporary stack slot,,,false
+generated_EBE60,func_150BEACC,0x108,0x8FAB0020,0x8FAB0024,-,-,Normalize point effect saved mode temporary stack slot,,,false
