@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
+void func_1516972C(struct102 *);
 
 typedef struct {
     u8 retained00[0x0D];
@@ -453,7 +454,7 @@ void func_1518F49C(u8 *arg0, u8 *arg1, s32 arg2) {
     if ((temp_v0 != temp_v1) && (temp_a0 != temp_a1)) {
         return;
     }
-    func_1516972C(arg0);
+    func_1516972C((struct102 *)arg0);
 }
 
 /* Select the object's preset, then forward the payload arguments. */
@@ -532,8 +533,45 @@ s32 func_1518FC44(u8 *arg0, ThreeWord1BA1D0 *arg1) {
     return 1;
 }
 
-s32 func_1518FC84() {
-    return 0;
+typedef struct {
+    u8 reserved00[0x60]; f32 velocityScale, randomBase, randomRange, fixedValue;
+    s16 low, high, timerBase, timerRange; u8 reserved78[4]; u8 flags;
+} ReleaseMotionParameters1518FC84;
+typedef struct ReleaseChainNode ReleaseChainNode;
+typedef struct {
+    u8 reserved00[0x1C]; s16 timer; u8 reserved1E[0x3A]; u32 flags;
+    u8 reserved5C[0x10]; s16 low, high; u8 callback, event;
+    u8 reserved72[0xD6]; f32 velocity[3], randomValue, fixedValue;
+} ReleaseMotionChild1518FC84;
+typedef struct {
+    u8 reserved00[0x2C]; ReleaseMotionChild1518FC84 *child;
+    ReleaseMotionParameters1518FC84 *parameters; struct17 origin;
+} ReleaseMotionOwner1518FC84;
+/* Initialize the released child from its linked motion parameters. */
+void func_1518FC84(ReleaseChainNode *record, void *payload) {
+    ReleaseMotionOwner1518FC84 *owner = (ReleaseMotionOwner1518FC84 *)record;
+    struct17 *target = (struct17 *)payload;
+    ReleaseMotionChild1518FC84 *child = owner->child;
+    ReleaseMotionParameters1518FC84 *parameters = owner->parameters;
+    u32 randomValue;
+    f32 randomScale;
+    if (parameters == NULL) {
+        func_1516972C((struct102 *)child);
+        return;
+    }
+    child->velocity[0] = (target->unk0 - owner->origin.unk0) * parameters->velocityScale;
+    child->velocity[1] = (target->unk4 - owner->origin.unk4) * parameters->velocityScale;
+    child->velocity[2] = (target->unk8 - owner->origin.unk8) * parameters->velocityScale;
+    randomScale = func_150ADA68();
+    child->randomValue = randomScale * parameters->randomRange + parameters->randomBase;
+    child->fixedValue = parameters->fixedValue;
+    child->low = parameters->low;
+    child->high = parameters->high;
+    randomValue = (u32)func_150ADA20();
+    child->timer = (s16)(randomValue % (u32)((s32)parameters->timerRange + 1) + parameters->timerBase);
+    child->callback = (parameters->flags & 1) ? 0x21 : 0x20;
+    child->event = 0x24;
+    child->flags |= 0x08000001;
 }
 
 s32 func_1518FDC4() {
@@ -569,7 +607,7 @@ void func_15190400(u8 *arg0, u8 *arg1, u8 arg2) {
                 return;
             }
         }
-        func_1516972C(arg0);
+        func_1516972C((struct102 *)arg0);
     }
 }
 
@@ -596,7 +634,7 @@ void func_151904BC(u8 *arg0) {
     u8 *volatile resource;
 
     if (*(u8 *volatile *)(arg0 + 0x84) != NULL) {
-        func_1516972C(*(u8 *volatile *)(arg0 + 0x84));
+        func_1516972C((struct102 *)*(u8 *volatile *)(arg0 + 0x84));
     }
     owner = *(s32 *)(arg0 + 0x10);
     resource = arg0 + 0x30;
@@ -839,7 +877,7 @@ void func_151918BC(u8 *record) {
         func_15190770((struct185 *)payload, 0, record[0xC], record[1]);
     }
     if (release) {
-        func_1516972C(record);
+        func_1516972C((struct102 *)record);
     }
 }
 
@@ -862,11 +900,11 @@ void func_15191980(OwnerEventRecord15191980 *record,
         if (event->owner != record->owner && event->ownerId != record->ownerId) {
             return;
         }
-        func_1516972C(record);
+        func_1516972C((struct102 *)record);
         return;
     }
     if (((u8 *)&rawCommand)[3] == 0x4E) {
-        func_1516972C(record);
+        func_1516972C((struct102 *)record);
         return;
     }
     func_15169850((s32)event, ((volatile u8 *)&rawCommand)[3],
@@ -883,11 +921,11 @@ void func_15191A84(OwnerEventRecord15191A84 *record,
         if (record->owner != event->owner && record->ownerId != event->ownerId) {
             return;
         }
-        func_1516972C(record);
+        func_1516972C((struct102 *)record);
         return;
     }
     if (((u8 *)&rawCommand)[3] == 0x4E) {
-        func_1516972C(record);
+        func_1516972C((struct102 *)record);
         return;
     }
     if (((u8 *)&rawCommand)[3] == 0x0D) {
