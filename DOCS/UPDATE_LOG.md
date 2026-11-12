@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2285](WORKING_NOTES/2285-game-segment-binding-match-20261111.md): `func_150C8600` restores the 76-word segment-binding routine with 45 guards and one insertion. Guest/native, the original caller, padders and strict 233-byte image checks pass within documented limits. Fresh Game **3,680 / 4,840 (76.03%)**, total **4,353 / 5,513 (78.96%)**, zero drift; **192** more Game matches to 80%.
+
 [Note 2284](WORKING_NOTES/2284-game-tile-fade-callback-match-20261111.md): `func_150DFDD0` restores the 75-word tile-fade callback with 31 guards and four insertions. Guest/native, the original dispatcher, both compiler profiles, padders and strict 232-byte image checks pass within documented limits. Fresh Game **3,679 / 4,840 (76.01%)**, total **4,352 / 5,513 (78.94%)**, zero drift; **193** more Game matches to 80%.
 
 [Note 2283](WORKING_NOTES/2283-game-actor-radial-offset-match-20261111.md): `func_1514BE20` restores the 76-word actor radial-offset update with 64 guards and four insertions. Guest/native, original caller windows, connected retail normalizer, padders and strict 235-byte image checks pass within documented limits. Fresh total **4,351 / 5,513 (78.92%)**, Game **3,678 / 4,840 (75.99%)**, zero drift; **60** more to 80%.

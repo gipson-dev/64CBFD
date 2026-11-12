@@ -37,8 +37,31 @@ void func_150C851C(s32 intensity) {
     }
 }
 
-s32 func_150C8600() {
-    return 0;
+typedef struct { u8 group, reserved01; s8 marker; u8 reserved03; s16 choice, previous, next; } SegmentEntry150C8600;
+extern s32 *D_80088810[2];
+u32 func_1510D0EC(s32 resource, s32 *extent, s32 mode, s32 flags);
+
+/* Emit ten segment bindings for the current group and clamped resource choice. */
+Gfx *func_150C8600(Gfx *cursor) {
+    s32 *groups[2];
+    s32 index, choice, extent;
+    u32 address;
+    SegmentEntry150C8600 *entry;
+    groups[0] = D_80088810[0];
+    groups[1] = D_80088810[1];
+    for (index = 0; index < 10; index++) {
+        entry = (SegmentEntry150C8600 *)D_800BE4E0 + index;
+        choice = entry->choice >> 8;
+        if (choice < 0) choice = 0;
+        if (choice >= 5) choice = 4;
+        if (entry->group >= 2) {
+            entry->group = 0;
+            entry = (SegmentEntry150C8600 *)D_800BE4E0 + index;
+        }
+        address = func_1510D0EC(groups[entry->group][choice], &extent, 3, 0);
+        gSPSegment(cursor++, index + 1, address);
+    }
+    return cursor;
 }
 
 s32 func_150C8730() {
