@@ -54,13 +54,13 @@ check found an empty generated definition in
 `64CBFDOGL/recomp_scene/frontend_room_out/.c`; active-build applicability is
 unknown. No host build or gameplay test was performed.
 
-The related `func_150BED4C` remains a placeholder. A private semantic C screen
+At this checkpoint the related `func_150BED4C` remained a placeholder; it was
+subsequently matched in [Note 2324](2324-game-alternate-actor-point-effect-guarded-match-20261112.md). A private semantic C screen
 emitted 85 words against its 89-word retail body because the compiler used a
 different frame and optimized multiplication by `2.0f`; it is not counted.
 See ignored `conker/build/game-actor-point-effect-pair-screen/` for the
-candidate and variant receipts, which may be cleaned. Next: investigate the
-second routine's valid source shape and qualify its call/alias/FPU behavior
-and complete linked image before adoption.
+candidate and variant receipts, which may be cleaned. The later note records
+the successful source-shape investigation and production qualification.
 
 Fresh production recount: Game **3,712 / 4,840 (76.69%)**, overall
 **4,385 / 5,513 (79.54%)**, zero drift. Game needs 160 more exact functions
