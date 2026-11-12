@@ -4,7 +4,7 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_151670C0();
+void func_151670C0(void);
 s32 func_151671E8();
 s32 func_15167310();
 s32 func_151674F8();
@@ -91,9 +91,28 @@ void func_1516706C(void) {
     } while (func != end);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151670C0.s. */
-s32 func_151670C0() {
-    return 0;
+/* Walk registered update lists, retaining the next node across callbacks. */
+void func_151670C0(void) {
+    s32 row, column;
+    struct115 *descriptor;
+    struct102 *node;
+
+    for (row = 0; row < 2; row++) {
+        descriptor = D_8008B4A8;
+        for (column = 0; column < 101; column++) {
+            if (descriptor->unk0 != NULL) {
+                node = *(struct102 **)(D_800DCE50 + row * 0x1A0 + column * 4);
+                D_800DD190++;
+                while (node != NULL) {
+                    D_800DD198[D_800DD190] = *(void **)((u8 *)node + 8);
+                    descriptor->unk0(node);
+                    node = D_800DD198[D_800DD190];
+                }
+                D_800DD190--;
+            }
+            descriptor++;
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151671E8.s. */
 s32 func_151671E8() {

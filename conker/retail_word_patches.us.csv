@@ -29755,3 +29755,38 @@ generated_EEE70,func_150C1E34,0xEC,0x25F8000C,0x252A000C,-,-,Normalize effect de
 generated_EEE70,func_150C1E34,0xF0,0x24190001,0x240B0001,-,-,Normalize effect descriptor register allocation and control flow,,,false
 generated_EEE70,func_150C1E34,0xF4,0xA3B8004C,0xA3AA004C,-,-,Normalize effect descriptor register allocation and control flow,,,false
 generated_EEE70,func_150C1E34,0xF8,0xA3B9004D,0xA3AB004D,-,-,Normalize effect descriptor register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x48,0x241E01A0,0x241E0065,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x5C,0x51C0001F,0x00167880,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x60,0x26B50001,0x01F67823,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x64,0x02DE0019,0x11C0001D,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x68,0x0015C880,0x000F7880,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x6C,0x82690000,0x01F67821,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x70,0x252A0001,0x000F7940,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x74,0x00007812,0x02EFC021,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x78,0x02EFC021,0x0015C880,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x7C,0x03194021,0x82690000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x80,0x8D100000,0x03194021,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x84,0xA26A0000,0x8D100000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x88,0x52000011,0x252A0001,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x8C,0x82780000,0xA26A0000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x90,0x826B0000,0x52000010,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x94,0x000B6080,0x82780000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x98,0x028C8821,0x826B0000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0x9C,0x8E0D0008,0x000B6080,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xA0,0x02002025,0x028C8821,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xA4,0xAE2D0000,0x8E590000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xA8,0x8E590000,0x8E0D0008,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xAC,0x0320F809,0x02002025,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xB0,0x00000000,0x0320F809,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xB4,0x826E0000,0xAE2D0000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xB8,0x000E7880,0x826E0000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xBC,0x028F8821,0x000E7880,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xC0,0x8E300000,0x028F8821,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xC4,0x5600FFF6,0x8E300000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xC8,0x8E0D0008,0x5600FFF7,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xCC,0x82780000,0x8E590000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xD0,0x2708FFFF,0x82780000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xD4,0xA2680000,0x2708FFFF,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xD8,0x26B50001,0xA2680000,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xDC,0x24010065,0x26B50001,-,-,Normalize registered update walker register allocation and control flow,,,false
+game_1944C0,func_151670C0,0xE0,0x16A1FFDD,0x16BEFFDD,-,-,Normalize registered update walker register allocation and control flow,,,false
