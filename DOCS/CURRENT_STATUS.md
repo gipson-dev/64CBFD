@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2312](WORKING_NOTES/2312-game-session-reset-array-and-matching-screen-20261112.md): the session reset has an 83-word private candidate and 20-byte counter evidence; header, guard, and production qualification remain open.
+
 [Note 2311](WORKING_NOTES/2311-game-callback-return-normalization-screen-20261112.md): explicit-return callback shapes and private dual-padder/shadow-Make screens remain uncredited; zero-count source semantics and guard qualification are open.
 
 [Note 2310](WORKING_NOTES/2310-game-interpolated-callback-dispatch-and-return-20261112.md): traced the original indirect caller and discovered its consumed return value; the corrected candidates remain private and unmatched.
