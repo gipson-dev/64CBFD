@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2288](WORKING_NOTES/2288-game-effect-descriptor-private-candidate-20261112.md): `func_150C1E34` has a private first C reconstruction (71 compiled words versus retail 75). Caller, helper, semantic and full-image qualification remain; no matching credit has been taken.
+
 [Note 2287](WORKING_NOTES/2287-game-localized-trail-preset-match-20261112.md): `func_151DBAA8` restores the 75-word localized trail preset with 68 guards and one insertion. Guest/native, both caller windows, padders and strict 235-byte image checks pass within documented limits. Fresh Game **3,682 / 4,840 (76.07%)**, total **4,355 / 5,513 (79.00%)**, zero drift; **190** more Game matches to 80%.
 
 [Note 2286](WORKING_NOTES/2286-game-record-tail-release-match-20261111.md): `func_15114B94` restores the 76-word record tail-release routine with 51 guards and no insertions. Guest/native, the original caller, padders and strict 241-byte image checks pass within documented limits. Fresh Game **3,681 / 4,840 (76.05%)**, total **4,354 / 5,513 (78.98%)**, zero drift; **191** more Game matches to 80%.
