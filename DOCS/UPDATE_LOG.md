@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2313](WORKING_NOTES/2313-game-session-reset-guarded-match-20261112.md): the 83-word session reset matches retail with 31 checked word/relocation guards. Fresh Game **3,705 / 4,840 (76.55%)**, total **4,378 / 5,513 (79.41%)**, zero drift; **167** more Game matches to 80%.
+
 [Note 2308](WORKING_NOTES/2308-game-position-interpolation-guarded-match-20261112.md): the 84-word position interpolation callback matches retail with ten floating-point scheduling guards. Fresh Game **3,704 / 4,840 (76.53%)**, total **4,377 / 5,513 (79.39%)**, zero drift; **168** more Game matches to 80%.
 
 [Note 2306](WORKING_NOTES/2306-colored-dispatch-make-warning-fix-20261112.md): the colored-dispatch Make override warning is removed without changing the compiled objects, linked image, or **3,703 / 4,840** Game match count.

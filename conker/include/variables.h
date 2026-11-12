@@ -1442,7 +1442,7 @@ extern struct134 *D_800E0900[]; // probably not struct134
 extern void *D_800E0930;
 extern s32  D_800E0934;
 extern void *D_800E0940;
-extern u8   D_800E0950;
+extern u8   D_800E0950[20];
 extern s32  D_800E0964;
 extern s16  D_800E0968[];
 extern s32  D_800E0990[];

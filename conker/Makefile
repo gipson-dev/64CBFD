@@ -138,7 +138,7 @@ RETAIL_PAD_C_FILES := $(filter-out $(GENERATED_SLICE_C_FILES) $(RETAIL_PAD_SKIP_
 RETAIL_PAD_O_FILES := $(foreach file,$(RETAIL_PAD_C_FILES),$(BUILD_DIR)/$(file:.c=.c.o))
 RETAIL_PAD_GLOBAL_ASM_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game_161520.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(RETAIL_PAD_O_FILES)))
 RETAIL_PAD_PLAIN_O_FILES := $(filter-out \
-	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
+	$(GLOBAL_ASM_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/game_3BA70.c.o $(BUILD_DIR)/$(SRC_DIR)/init_8F90.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/init_EB00.c.o $(BUILD_DIR)/$(SRC_DIR)/game_221290.c.o $(BUILD_DIR)/$(SRC_DIR)/game_476D0.c.o $(BUILD_DIR)/$(SRC_DIR)/game_33990.c.o, \
 	$(RETAIL_PAD_O_FILES))
 UNPADDED_GLOBAL_ASM_O_FILES := $(filter-out $(RETAIL_PAD_O_FILES) $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GLOBAL_ASM_O_FILES))
@@ -787,4 +787,14 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_EB340.c.o: $(SRC_DIR)/game/generated_EB34
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,EB340) $@.padded.s --function-object func_150BE2E8=$@.float.compact --word-patches retail_word_patches.us.csv --filename generated_EB340 $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.float.compact $@.padded.s
+endif
+
+ifeq ($(VERSION),us)
+# Keep the session reset's retail loop profile local to that function.
+$(BUILD_DIR)/$(SRC_DIR)/game_3BA70.c.o: $(SRC_DIR)/game_3BA70.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py retail_word_patches.us.csv include/variables.h include/structs.h include/functions.h Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-loopunroll,0 $(MIPSBIT) -o $@.reset.compact $<
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) game_3BA70 $@.padded.s --function-object func_1500E5C0=$@.reset.compact --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.reset.compact $@.padded.s
 endif

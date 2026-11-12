@@ -55,18 +55,18 @@ struct224 *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg
 void func_151D2AB0(s32 arg0) {
     u32 tmp;
 
-    (&D_800E0950)[arg0] = (&D_800E0950)[arg0] + 1;
+    D_800E0950[arg0] = D_800E0950[arg0] + 1;
 
-    if ((&D_800E0950)[arg0] < 2) {
+    if (D_800E0950[arg0] < 2) {
         D_800E0990[arg0] = (s32)func_1502B5C8((s32 *)&tmp, 2, 9, D_800AB140[arg0]);
         D_800E0968[arg0] = tmp >> 4;
     }
 }
 
 void func_151D2B4C(s32 arg0) {
-    if ((&D_800E0950)[arg0] != 0) {
-        (&D_800E0950)[arg0] = (&D_800E0950)[arg0] - 1;
-        if ((&D_800E0950)[arg0] == 0) {
+    if (D_800E0950[arg0] != 0) {
+        D_800E0950[arg0] = D_800E0950[arg0] - 1;
+        if (D_800E0950[arg0] == 0) {
             func_100043B4(D_800E0990[arg0], 4);
         }
     }

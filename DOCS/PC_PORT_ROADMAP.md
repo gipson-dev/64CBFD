@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2313](WORKING_NOTES/2313-game-session-reset-guarded-match-20261112.md): the 83-word session reset matches retail with 31 checked word/relocation guards. Fresh Game **3,705 / 4,840 (76.55%)**, total **4,378 / 5,513 (79.41%)**, zero drift; **167** more Game matches to 80%.
+
 [Note 2308](WORKING_NOTES/2308-game-position-interpolation-guarded-match-20261112.md): the 84-word position interpolation callback matches retail with ten floating-point scheduling guards. Fresh Game **3,704 / 4,840 (76.53%)**, total **4,377 / 5,513 (79.39%)**, zero drift; **168** more Game matches to 80%.
 
 [Note 2305](WORKING_NOTES/2305-game-actor-colored-dispatch-direct-match-20261112.md): the 75-word actor colored-effect dispatcher emits directly from C using its retail table and a target-only compiler profile; its helper remains a stub. Fresh Game **3,703 / 4,840 (76.51%)**, total **4,376 / 5,513 (79.38%)**, zero drift; **169** more Game matches to 80%.

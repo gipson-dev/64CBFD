@@ -1,6 +1,8 @@
 # Current Decomp Status
 
-[Note 2312](WORKING_NOTES/2312-game-session-reset-array-and-matching-screen-20261112.md): the session reset has an 83-word private candidate and 20-byte counter evidence; header, guard, and production qualification remain open.
+[Note 2313](WORKING_NOTES/2313-game-session-reset-guarded-match-20261112.md): the 83-word session reset matches retail with 31 checked word/relocation guards. Fresh Game **3,705 / 4,840 (76.55%)**, total **4,378 / 5,513 (79.41%)**, zero drift; **167** more Game matches to 80%.
+
+[Note 2312](WORKING_NOTES/2312-game-session-reset-array-and-matching-screen-20261112.md): the earlier session-reset private screen; the candidate was subsequently adopted in Note 2313.
 
 [Note 2311](WORKING_NOTES/2311-game-callback-return-normalization-screen-20261112.md): explicit-return callback shapes and private dual-padder/shadow-Make screens remain uncredited; zero-count source semantics and guard qualification are open.
 

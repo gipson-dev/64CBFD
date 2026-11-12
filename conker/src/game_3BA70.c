@@ -4,14 +4,46 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_1500E5C0();
+void func_1500E5C0(void);
 s32 func_1500E738();
 s32 func_1500E8C0();
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/game_3BA70/func_1500E5C0.s. */
-s32 func_1500E5C0() {
-    return 0;
+void func_15012470(void);
+extern void *D_800D9894;
+extern void *D_800D98D0[4];
+extern u8 *D_80088870;
+
+/* Reset the game session counters, records, and related state.
+ * Keep the compact store layout: IDO scheduling depends on this source shape.
+ */
+void func_1500E5C0(void) {
+    s32 i;
+    func_15012470();
+    func_15008A10();
+    func_15012770();
+    for (i = 0; i < 20; i += 4) { D_800E0950[i+1] = 0; D_800E0950[i+2] = 0; D_800E0950[i+3] = 0; D_800E0950[i] = 0; }
+    D_800D9921 = 0;
+    D_800D9920 = 0;
+    D_800D9928 = 0;
+    D_800D9938 = 0;
+    D_800D9929 = 0;
+    D_800D9939 = 0;
+    { u8 *p = D_800D992A; u8 *q = D_800D993A; do { p[1]=0; q[1]=0; p[2]=0; q[2]=0; p[3]=0; q[3]=0; p[0]=0; q[0]=0; p+=4; q+=4; } while (p != D_800D992A + 12); }
+    D_800D9890 = 0;
+    D_800D9894 = NULL;
+    D_800D98D0[3] = NULL; D_800D98D0[2] = NULL; D_800D98D0[1] = NULL; D_800D98D0[0] = NULL;
+    D_80088870 = NULL;
+    bzero(D_800BE500, 5);
+    D_800D9950[2] = 0;
+    D_800D9950[1] = 0;
+    D_800D9950[0] = 0;
+    D_80088980 = 0;
+    D_800D9AA0[0] = NULL;
+    D_800D9AA0[1] = NULL;
+    D_800D9AA0[2] = NULL;
+    D_800BE4F0 = NULL;
+    D_80088B40 = 0;
 }
 
 void func_1500E70C(s32 arg0) {

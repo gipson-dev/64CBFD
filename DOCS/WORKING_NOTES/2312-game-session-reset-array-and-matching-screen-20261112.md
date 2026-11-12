@@ -1,5 +1,7 @@
 # Session reset array and matching screen
 
+The candidate was subsequently installed and recounted; see [Note 2313](2313-game-session-reset-guarded-match-20261112.md). The measurements below describe the earlier private screen.
+
 Date: 2026-11-12. Follow-up to [Note 2293](2293-game-session-reset-private-screen-20261112.md). `func_1500E5C0` remains uninstalled and uncredited.
 
 The retail reset clears exactly 20 bytes beginning at `D_800E0950` and stops at
