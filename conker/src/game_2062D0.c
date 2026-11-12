@@ -47,7 +47,7 @@ s32 func_151DAB58();
 s32 func_151DAE28();
 s32 func_151DB5D0();
 s32 func_151DB97C();
-s32 func_151DBAA8();
+void func_151DBAA8(struct17 *, s32, u8, u8, s32);
 s32 func_151DBE80();
 s32 func_151DC034();
 s32 func_151DC260();
@@ -462,8 +462,49 @@ void func_151DB4CC(struct218 *arg0) {
 s32 func_151DB97C() {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DBAA8.s. */
-s32 func_151DBAA8() {
-    return 0;
+typedef struct {
+    s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange;
+} AngularTrailInput151DBAA8;
+typedef struct {
+    f32 position[3], timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
+    s16 countBase, countRange, requestSelectorBase, requestSelectorRange;
+    s16 durationBase, durationRange, modeBase, modeRange;
+    u8 selector, private35[3]; f32 opaqueChance; s16 firstValue, secondValue; s32 requestValue;
+} LocalizedTrailInput151DBAA8;
+typedef struct { AngularTrailInput151DBAA8 angular; LocalizedTrailInput151DBAA8 localized; } TrailPreset151DBAA8;
+extern f32 D_800AB4C0, D_800AB4C4, D_800AB4C8, D_800AB4CC;
+void func_15153F18(AngularTrailInput151DBAA8 *, LocalizedTrailInput151DBAA8 *, s32, s32, s32);
+
+/* Emit a localized trail with the preset angle, timing, and radius ranges. */
+void func_151DBAA8(struct17 *point, s32 count, u8 selector, u8 mode, s32 request) {
+    TrailPreset151DBAA8 preset;
+    preset.localized.position[0] = point->unk0;
+    preset.localized.position[1] = point->unk4;
+    preset.localized.position[2] = point->unk8;
+    preset.angular.firstAngleBase = 0;
+    preset.angular.firstAngleRange = 255;
+    preset.angular.secondAngleBase = -64;
+    preset.angular.secondAngleRange = 46;
+    preset.localized.timeBase = 5.5f;
+    preset.localized.timeRange = D_800AB4C0;
+    preset.localized.scaleBase = D_800AB4C4;
+    preset.localized.scaleRange = D_800AB4C8;
+    preset.localized.radiusBase = 10.0f;
+    preset.localized.radiusRange = D_800AB4CC;
+    preset.localized.countBase = count;
+    preset.localized.countRange = 0;
+    preset.localized.requestSelectorBase = 3;
+    preset.localized.requestSelectorRange = 2;
+    preset.localized.durationBase = 30;
+    preset.localized.durationRange = 30;
+    preset.localized.modeBase = 155;
+    preset.localized.modeRange = 100;
+    preset.localized.selector = selector;
+    preset.localized.opaqueChance = 0.5f;
+    preset.localized.firstValue = 16;
+    preset.localized.secondValue = 15;
+    preset.localized.requestValue = 0;
+    func_15153F18(&preset.angular, &preset.localized, 0, mode, request);
 }
 // typedef struct {
 //     s16 unk0; // sp24

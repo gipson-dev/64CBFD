@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2287](WORKING_NOTES/2287-game-localized-trail-preset-match-20261112.md): `func_151DBAA8` restores the 75-word localized trail preset with 68 guards and one insertion. Guest/native, both caller windows, padders and strict 235-byte image checks pass within documented limits. Fresh Game **3,682 / 4,840 (76.07%)**, total **4,355 / 5,513 (79.00%)**, zero drift; **190** more Game matches to 80%.
+
 [Note 2286](WORKING_NOTES/2286-game-record-tail-release-match-20261111.md): `func_15114B94` restores the 76-word record tail-release routine with 51 guards and no insertions. Guest/native, the original caller, padders and strict 241-byte image checks pass within documented limits. Fresh Game **3,681 / 4,840 (76.05%)**, total **4,354 / 5,513 (78.98%)**, zero drift; **191** more Game matches to 80%.
 
 [Note 2285](WORKING_NOTES/2285-game-segment-binding-match-20261111.md): `func_150C8600` restores the 76-word segment-binding routine with 45 guards and one insertion. Guest/native, the original caller, padders and strict 233-byte image checks pass within documented limits. Fresh Game **3,680 / 4,840 (76.03%)**, total **4,353 / 5,513 (78.96%)**, zero drift; **192** more Game matches to 80%.
