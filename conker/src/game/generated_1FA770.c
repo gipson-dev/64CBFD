@@ -97,8 +97,50 @@ void *func_151CD4C0() {
     return 0;
 }
 
-s32 func_151CD674() {
-    return 0;
+extern f32 D_800AAFC0, D_800AAFC4;
+typedef struct { f32 retained00, position, retained08, velocity; u8 retained10[12]; } MotionRingEntry151CD674;
+typedef struct { u8 retained00[0x44]; f32 threshold; } MotionRingLimit151CD674;
+typedef struct {
+    u8 retained00[0x10]; ThreeWord1FA770 source; u8 retained1C[2]; u16 flags;
+    u8 retained20[5]; u8 capacity; u8 retained26[6]; s8 count, current, end;
+    u8 retained2F[0x25]; ThreeWord1FA770 output; u8 retained60[0x34];
+    MotionRingEntry151CD674 *entries; MotionRingLimit151CD674 *limit;
+} MotionRingOwner151CD674;
+
+/* Integrate ring entries, retire those below the limit, and publish position. */
+s32 func_151CD674(MotionRingOwner151CD674 *owner) {
+    MotionRingEntry151CD674 *entries = owner->entries, *entry;
+    MotionRingLimit151CD674 *limit = owner->limit;
+    s32 index, current;
+    f32 step, velocity, threshold;
+    if (owner->count < 2 && (owner->flags & 8)) return 0;
+    index = owner->end;
+    current = owner->current;
+    while (index != current) {
+        index--;
+        if (index < 0) index = owner->capacity - 1;
+        entry = &entries[index];
+        step = D_800BE9A4;
+        velocity = entry->velocity;
+        entry->position += velocity * step + D_800AAFC4 * (step * step);
+        entry->velocity = velocity + D_800AAFC0 * D_800BE9A4;
+        threshold = limit->threshold;
+        if (entry->position < threshold) {
+            while (index != current) {
+                owner->current = current + 1;
+                current = owner->current;
+                if (current == owner->capacity) {
+                    owner->current = 0;
+                    current = owner->current;
+                }
+                owner->count = owner->count - 1;
+            }
+            entries[current].position = limit->threshold;
+        }
+        current = owner->current;
+    }
+    owner->output = owner->source;
+    return 1;
 }
 
 s32 func_151CD7BC() {
