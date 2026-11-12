@@ -1,4 +1,4 @@
-# Game position interpolation candidate screen ? 2026-11-12
+# Game position interpolation candidate screen - 2026-11-12
 
 `func_150BE2E8` remains an **uninstalled, uncredited candidate**. Consumer baseline `6a40a4b0`; tools submodule `7b9cdb9`. The last production recount is Game 3,703 / 4,840 (76.51%), with 169 more exact functions needed for 80%.
 
@@ -48,10 +48,22 @@ void func_150BE2E8(s16 *p) {
 
 The compiled object and screen scripts are retained under the ignored `conker/build/game-motion-interpolation-screen/` directory, which is disposable and not part of the commit. Freeze the current source, inputs and tool hashes again before reusing them.
 
+## Follow-up qualification (private, 2026-11-12)
+
+The target is entry 56 of 12-byte table `D_80088C90`: `func_1509E900` copies its pointer from `0x80088F30` to actor offset `0x38`. The original `func_15113E54` indirect-call windows at `0x15113EE0` and `0x15113FB8` pass the actor pointer in `a0`; 100 modeled cases per window agree with the retail target. These are four-instruction call windows with a return trampoline, not full parent execution.
+
+The original O2/no-constant-register body and retail assembly agree on full external memory and access ordering in a first finite, in-range guest corpus of 400 cases, including 300 actor/global overlaps. A separate cross-product screen accepted 1,863 cases across 11 factor bit patterns and ten signed tick values, including 1,396 overlaps; 337 out-of-range float-to-integer cases were deliberately excluded. A bounded guest access-cut model compared 240 prefixes across 12 cases, including completed paths. This is not a claim about FPU exceptions or native fault semantics.
+
+On the finite nonoverlap corpus, the C candidate passed 200 native 32-bit cases at O0/O2/O3 and an additional trapping undefined-behavior build at O2. Incorrect scale, early clamping, and swapped coordinates each failed at all three optimization levels. NaNs, infinities, out-of-range conversions, and the native semantics of the overlapping guest cases remain outside this evidence.
+
+A private Make shadow compiled the selected callback with the special profile and preserved the seven other owner functions. Ten expected-word guards produce all 84 retail words with four original global relocations. Both independent padding paths agree with the actual Make object; 12 GNU links across four address rebases agree with independently assembled retail code. The independently predicted linked ELF differs in 285 bytes with zero exclusions, unchanged function addresses, and all 189,088 protected data bytes unchanged. A symbol-name metadata pair is reordered by the linker and accounted for explicitly. The prospective ELF SHA-256 is `29fa52d17d549bda4c89f100a025d2cd7c369bd3d3da6a630bfa92c16001836b`; it is not the installed production ELF.
+
+The screens and frozen inputs are in ignored `conker/build/game-motion-interpolation-screen/`: `guest_screen.py`, `broad_screen.py`, `caller_screen.py`, `fault_screen.py`, `native_screen.py`, `shadow_qualification.py`, `dual_qualification.py`, `frozen.json`, `shadow-qualification.json`, and `dual-qualification.json`. They are private disposable artifacts, not committed tools or complete automated regression coverage.
+
 ## Qualification still required
 
-1. Verify global types, the registration table and actual callers; preserve source access and write order, including alias and fault behavior. Determine the behavior of signed truncation and narrowing for out-of-range, NaN and infinity rather than assuming portable C equivalence.
-2. Check each mismatch by instruction-level def/use and guest execution, including NaN payloads, signed zero, infinities, denormals, overflow, negative values and clamp boundaries. Use effective negative controls. Any guards must have expected words and correctly preserve relocation and all dependent uses.
-3. Prove owner neighbors, both padding paths, ABI/caller windows, native defined-domain behavior, full linked image and protected data. Run actual production Make, recount the actual ELF, update aggregate status only after all gates pass, then commit the tools and consumer in order if both change.
+1. Complete global type and original parent-path qualification; preserve source access and write order, including alias and fault behavior. Determine the behavior of signed truncation and narrowing for out-of-range, NaN and infinity rather than assuming portable C equivalence.
+2. Complete each mismatch analysis by instruction-level def/use and exceptional guest execution, including NaN payloads, signed zero, infinities, denormals, overflow, negative values and clamp boundaries. Use effective negative controls. Any guards must have expected words and correctly preserve relocation and all dependent uses.
+3. Turn the private screens into durable, fingerprinted tools and tests; repeat required checks in both tools environments. Revalidate affected owner, padding, ABI, callers, native defined-domain behavior, full linked image and protected data. Run actual production Make, recount the actual ELF, update aggregate status only after all gates pass, then commit the tools and consumer in order if both change.
 
-A second screened candidate, `func_1504A140`, appears to construct a 4x4 quaternion-derived matrix while leaving output slots 12?14 untouched. The initial source emitted 86 words with a `0x68` frame against the retail 92-word slot and `0x48` frame; 24 local-declaration permutations did not change that result. Its operation ordering, exceptional floats, buffer overlap and caller remain unqualified. The private screen is in ignored `conker/build/game-quaternion-matrix-screen/`.
+A second screened candidate, `func_1504A140`, appears to construct a 4x4 quaternion-derived matrix while leaving output slots 12-14 untouched. The initial source emitted 86 words with a `0x68` frame against the retail 92-word slot and `0x48` frame; 24 local-declaration permutations did not change that result. Its operation ordering, exceptional floats, buffer overlap and caller remain unqualified. The private screen is in ignored `conker/build/game-quaternion-matrix-screen/`.

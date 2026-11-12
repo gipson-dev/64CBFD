@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-[Note 2307](WORKING_NOTES/2307-game-position-interpolation-candidate-screen-20261112.md): `func_150BE2E8` is a private 74/84-word candidate under a target-only profile; floating-point ordering and qualification remain open. No match is credited.
+[Note 2307](WORKING_NOTES/2307-game-position-interpolation-candidate-screen-20261112.md): `func_150BE2E8` is a private 84-word shadow match with ten guards; native, guest, call-window, padder, rebase, and linked-image screens passed within documented limits. Durable tests and production qualification remain open; no match is credited.
 
 [Note 2306](WORKING_NOTES/2306-colored-dispatch-make-warning-fix-20261112.md): the colored-dispatch Make override warning is removed without changing the compiled objects, linked image, or **3,703 / 4,840** Game match count.
 
