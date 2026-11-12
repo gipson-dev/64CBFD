@@ -28,6 +28,11 @@ void func_15150F90(PointEffectDescriptor173D40 *, u8, u8, s32);
 
 extern f32 D_800A5728, D_800A572C;
 void func_15141F78(u8, u8 *, f32, u8, f32 *, u8);
+extern f32 D_800A573C,D_800A5740,D_800A5744,D_800A5748,D_800A574C,D_800A5750;
+extern s32 (*D_8008FD04)(void);
+extern s32 (*D_8008FD1C)(void);
+extern s32 (*D_8008FD30)(void);
+void func_15142180(u8, f32 *, s32, f32, f32);
 
 /* Partially recovered text-only slice asm/173D40.s. */
 
@@ -194,14 +199,50 @@ s32 func_151470FC() {
     return 0;
 }
 
-s32 func_15147318() {
-    return 0;
+/* Submit the optional point effect before choosing the main effect. */
+void func_15147318(u8 *actor, s32 mode, s32 amount) {
+    f32 position[3];
+    HeightResult71820 result;
+    s32 selected = (u8)mode;
+    s32 slot;
+    if (*(s32 *)(actor + 0x1D4) == 0) return;
+    if (func_15146890(position, actor, &result, selected) != 0) {
+        if (amount >= 115) func_15142180(0, position, result.metadata, 1.0f, 1.0f);
+        slot = D_8008FD04();
+        func_15141F78((u8)slot, (u8 *)&result, (f32)amount * D_800A573C,
+                      (u8)(u32)(*(f32 *)(actor + 0x40) * D_800A5740), position, selected);
+
+    }
 }
 
-s32 func_15147478() {
-    return 0;
+/* Submit the optional slot-6 point effect after the main effect. */
+void func_15147478(u8 *actor, s32 mode, s32 amount) {
+    f32 position[3];
+    HeightResult71820 result;
+    s32 selected = (u8)mode;
+    s32 slot;
+    if (*(s32 *)(actor + 0x1D4) == 0) return;
+    if (func_15146890(position, actor, &result, selected) != 0) {
+
+        slot = D_8008FD1C();
+        func_15141F78((u8)slot, (u8 *)&result, (f32)amount * D_800A5744,
+                      (u8)(u32)(*(f32 *)(actor + 0x40) * D_800A5748), position, selected);
+        if (amount >= 115) func_15142180(6, position, result.metadata, 1.0f, 1.0f);
+    }
 }
 
-s32 func_151475D8() {
-    return 0;
+/* Submit the optional slot-11 point effect after the main effect. */
+void func_151475D8(u8 *actor, s32 mode, s32 amount) {
+    f32 position[3];
+    HeightResult71820 result;
+    s32 selected = (u8)mode;
+    s32 slot;
+    if (*(s32 *)(actor + 0x1D4) == 0) return;
+    if (func_15146890(position, actor, &result, selected) != 0) {
+
+        slot = D_8008FD30();
+        func_15141F78((u8)slot, (u8 *)&result, (f32)amount * D_800A574C,
+                      (u8)(u32)(*(f32 *)(actor + 0x40) * D_800A5750), position, selected);
+        if (amount >= 115) func_15142180(11, position, result.metadata, 1.0f, 1.0f);
+    }
 }

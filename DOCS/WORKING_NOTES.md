@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2325](WORKING_NOTES/2325-game-alternate-point-effect-triple-guarded-match-20261112.md): three alternate actor point effects each match 88 retail words with 19 checked guards. Game **3,716 / 4,840 (76.78%)**, total **4,389 / 5,513 (79.61%)**, zero drift; **156** more Game matches to 80%.
+
 [Note 2324](WORKING_NOTES/2324-game-alternate-actor-point-effect-guarded-match-20261112.md): `func_150BED4C` matches 89 retail words with 17 checked guards. Game **3,713 / 4,840 (76.71%)**, total **4,386 / 5,513 (79.56%)**, zero drift; **159** more Game matches to 80%.
 
 [Note 2323](WORKING_NOTES/2323-game-actor-point-effect-guarded-match-20261112.md): `func_150BEACC` matches 89 retail words with two checked guards. Game **3,712 / 4,840 (76.69%)**, total **4,385 / 5,513 (79.54%)**, zero drift; **160** more Game matches to 80%.
