@@ -11,7 +11,7 @@ s32 func_15077508();
 void func_15077F64(void);
 s32 func_150793D8();
 s32 func_15079B30();
-s32 func_15079FBC();
+void func_15079FBC();
 void func_1507B974(void);
 s32 func_1507BB28();
 /* End generated placeholder declarations. */
@@ -1455,37 +1455,29 @@ void func_15079F6C(void) {
     D_800D154C->unk226 = D_800D1893;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_15079FBC.s. */
-s32 func_15079FBC() {
-    return 0;
+/* Select the actor script or update the movement command from its speed. */
+void func_15079FBC(void) {
+    s16 speed;
+    if ((D_800CC2D0->unk65 == 0) || (D_800CC2D0->unk44 < 5.0f)) {
+        D_800D154C->unk232 = D_800D1891;
+        D_800D154C->unk218 = (struct216 *)func_1507BB28(0, D_800D154C->unk232);
+        D_800D154C->unk218 -= 1;
+        return;
+    }
+    D_800D154C->unk78 = D_800CC2D0->unk31C->unk4C;
+    if (D_800CC2D0->unk31C->chased) {
+        speed = D_800CC2D0->unk44;
+    } else {
+        speed = D_800CC2D0->unk44 * D_8009A1E4;
+    }
+    if (speed < 17) {
+        D_800D1893 += 1;
+        D_800D1890 = 8;
+    }
+    D_800D1892 = speed;
+    func_15075F40();
+    D_800D154C->unkF4 |= 0x40;
 }
-// NON-MATCHING: JUSTREG
-// void func_15079FBC(void) {
-//     s16 phi_v1;
-//
-//     if ((D_800CC2D0->unk65 == 0) || (D_800CC2D0->unk44 < 5.0f)) {
-//         D_800D154C->unk232 = D_800D1891;
-//         D_800D154C->unk218 = func_1507BB28(0, D_800D154C->unk232, D_800D154C);
-//         D_800D154C->unk218 -= 1;
-//         return;
-//     }
-//
-//     D_800D154C->unk78 = D_800CC2D0->unk31C->unk4C;
-//
-//     if (D_800CC2D0->unk31C->unk4A) {
-//         phi_v1 = D_800CC2D0->unk44;
-//     } else {
-//         phi_v1 = D_800CC2D0->unk44 * D_8009A1E4;
-//     }
-//     if (phi_v1 < 17) {
-//         D_800D1893 += 1;
-//         D_800D1890 = 8;
-//     }
-//     D_800D1892 = phi_v1;
-//     func_15075F40();
-//     D_800D154C->unkF4 |= 0x40;
-// }
-
 void func_1507A100(void) {
     s32 value = ((s8) D_800D1892 << 8) | D_800D1893;
     PathNode8 *entry = &((PathNode8 **) D_800D2104)
