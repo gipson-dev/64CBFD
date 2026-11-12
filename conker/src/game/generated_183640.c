@@ -46,6 +46,23 @@ __attribute__((__may_alias__))
     f32 matrix[2][4][4]; u8 padfc[0x24]; f32 params[4];
 } ResourceMatrixView;
 
+
+extern f32 D_800BE9A8;
+typedef struct { f32 x, y, z; } ResourceMotionVector;
+typedef struct {
+    ResourceMotionVector angle; f32 scale;
+    ResourceMotionVector velocity; ResourceMotionVector angularVelocity;
+    f32 accelerationY, damping; u8 flags;
+} ResourceMotionParameters;
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad0[0x54]; ResourceMotionVector position; u8 pad60[0xC0];
+    ResourceMotionParameters parameters;
+} ResourceMotionView;
+
 /* Non-matching placeholders for the text-only asm slice asm/183640.s. */
 
 s32 func_151D5E30();
@@ -245,8 +262,41 @@ s32 func_15157918(u8 *object) {
     return 1;
 }
 
-s32 func_15157AA8() {
-    return 0;
+/* Integrate resource motion, damping, and angular velocity. */
+s32 func_15157AA8(u8 *object) {
+    ResourceMotionView *view = (void *)object;
+    ResourceMotionParameters *state = (void *)(object + 0x120);
+    u32 ticks;
+    ResourceMotionVector previous;
+    f32 accelerationX, accelerationY, accelerationZ;
+    if (state->flags & 1) {
+        previous = state->velocity;
+        if (state->flags & 8) {
+            ticks = (u32)D_800BE9E4;
+            while (ticks != 0) {
+                state->velocity.x *= state->damping;
+                state->velocity.z *= state->damping;
+                ticks--;
+            }
+        }
+        if (state->flags & 4) {
+            accelerationY = state->accelerationY;
+            state->velocity.y += accelerationY * D_800BE9A4;
+        } else {
+            accelerationY = 0.0f;
+        }
+        accelerationX = (state->velocity.x - previous.x) * D_800BE9A8;
+        accelerationZ = (state->velocity.z - previous.z) * D_800BE9A8;
+        view->position.x += (previous.x + (0.5f * accelerationX) * D_800BE9A4) * D_800BE9A4;
+        view->position.y += (previous.y + (0.5f * accelerationY) * D_800BE9A4) * D_800BE9A4;
+        view->position.z += (previous.z + (0.5f * accelerationZ) * D_800BE9A4) * D_800BE9A4;
+    }
+    if (state->flags & 2) {
+        state->angle.x += state->angularVelocity.x * D_800BE9A4;
+        state->angle.y += state->angularVelocity.y * D_800BE9A4;
+        state->angle.z += state->angularVelocity.z * D_800BE9A4;
+    }
+    return 1;
 }
 
 void func_15157D88(u8 *arg0, s32 arg1, u8 arg2) {

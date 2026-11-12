@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2320](WORKING_NOTES/2320-game-resource-motion-callback-guarded-match-20261112.md): `func_15157AA8` matches 184 retail words with 16 checked guards. Game **3,710 / 4,840 (76.65%)**, total **4,383 / 5,513 (79.50%)**, zero drift; **162** more Game matches to 80%.
+
 [Note 2319](WORKING_NOTES/2319-game-resource-matrix-callback-direct-match-20261112.md): `func_15157918` directly matches 100 retail words; Game **3,709 / 4,840 (76.63%)**, total **4,382 / 5,513 (79.48%)**.
 
 [Note 2318](WORKING_NOTES/2318-game-resource-update-callback-direct-match-20261112.md): `func_151572D0` directly matches 84 retail words; Game **3,708 / 4,840 (76.61%)**, total **4,381 / 5,513 (79.47%)**.

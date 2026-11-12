@@ -30105,3 +30105,19 @@ game_1944C0,func_151671E8,0xD8,0x26B50001,0xA2680000,-,-,Normalize secondary cal
 game_1944C0,func_151671E8,0xDC,0x24010065,0x26B50001,-,-,Normalize secondary callback walker register and instruction schedule,,,false
 game_1944C0,func_151671E8,0xE0,0x16A1FFDD,0x16BEFFDD,-,-,Normalize secondary callback walker register and instruction schedule,,,false
 generated_1D92F0,func_151AD174,0x0,0xAFA40000,0x00001025,-,-,Preserve existing unconverted callback placeholder while correcting its argument and return type,,,false
+generated_183640,func_15157AA8,0x0,0x27BDFFC8,0x27BDFFD0,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x1A8,0xC4400028,0xC4660000,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x1AC,0xC4660000,0xC4420028,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x1B4,0x46060202,0x46061202,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x1C8,0x44800000,0x44801000,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x1F8,0xC4620000,0xC4600000,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x210,0x46025182,0x46005182,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x21C,0x46024282,0x46004282,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x224,0x46009102,0x46029102,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x22C,0xC4620000,0xC4600000,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x234,0x46022282,0x46002282,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x240,0x46023102,0x46003102,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x250,0xC4620000,0xC4600000,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x258,0x46024102,0x46004102,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x264,0x46025202,0x46005202,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
+generated_183640,func_15157AA8,0x2DC,0x27BD0038,0x27BD0030,-,-,Normalize resource-motion frame and independent floating-point register schedule,,,false
