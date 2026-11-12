@@ -201,3 +201,5 @@ The new scripts and receipts are in the same ignored scratch directory above;
 `alias-screen.json`, `external-cuts.json`, `guard-controls.json`,
 `rebase-screen.json`, and `shadow-make.json` identify the private results.
 No new Game match is credited.
+
+The wrap-safe candidate was subsequently adopted and recounted in [Note 2315](2315-game-type64-timer-callback-guarded-match-20261112.md).

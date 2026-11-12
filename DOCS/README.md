@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2315](WORKING_NOTES/2315-game-type64-timer-callback-guarded-match-20261112.md): `func_151041E4` matches all 170 retail words with 76 guard rows and two inserted words. Fresh Game **3,706 / 4,840 (76.57%)**, total **4,379 / 5,513 (79.43%)**, zero drift; **166** more Game matches to 80%.
+
 [Note 2313](WORKING_NOTES/2313-game-session-reset-guarded-match-20261112.md): the 83-word session reset matches retail with 31 checked word/relocation guards. Fresh Game **3,705 / 4,840 (76.55%)**, total **4,378 / 5,513 (79.41%)**, zero drift; **167** more Game matches to 80%.
 
 [Note 2308](WORKING_NOTES/2308-game-position-interpolation-guarded-match-20261112.md): the 84-word position interpolation callback matches retail with ten floating-point scheduling guards. Fresh Game **3,704 / 4,840 (76.53%)**, total **4,377 / 5,513 (79.39%)**, zero drift; **168** more Game matches to 80%.
