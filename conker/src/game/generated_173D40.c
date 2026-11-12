@@ -184,8 +184,40 @@ void func_15146D60(u8 *actor, s32 mode, s32 amount) {
     }
 }
 
-s32 func_15146E84() {
-    return 0;
+u8 func_151D8E20(void);
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_151D9B8C(u8, f32, u8, s16 *, f32 *, s16, u8, u8, u8, u8, s32);
+void func_151DAB58(u8, f32, u8, f32 *, u8, u8, u8);
+
+/* Emit one of two randomized effects at the actor point. */
+void func_15146E84(u8 *actor, s32 mode, s32 amount) {
+    f32 position[3];
+    HeightResult71820 result;
+    u8 slot;
+    f32 effectPosition[3];
+    u32 randomB;
+    u32 randomA;
+    f32 randomFloat;
+    if (*(s32 *)(actor + 0x1D4) == 0) return;
+    if (!func_15146890(position, actor, &result, (u8)mode)) return;
+    slot = func_151D8E20();
+    if (amount >= 71) func_15142180(slot, position, result.metadata, 1.0f, 1.0f);
+    effectPosition[0] = position[0];
+    effectPosition[1] = result.height;
+    effectPosition[2] = position[2];
+    if (func_150ADA20() & 1) {
+        randomFloat = func_150ADA68();
+        randomA = func_150ADA20();
+        randomB = func_150ADA20();
+        func_151D9B8C(slot, randomFloat * 10.0f + 10.0f, randomA % 101U + 100,
+                      result.vertices, effectPosition, randomB % 41U + 80, 1, 1, 0, 255, 1);
+    } else {
+        randomFloat = func_150ADA68();
+        randomA = func_150ADA20();
+        func_151DAB58(slot, randomFloat * 8.0f + 5.0f, randomA % 101U + 100,
+                      effectPosition, 1, 255, 1);
+    }
 }
 
 s32 func_15146890();

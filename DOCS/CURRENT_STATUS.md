@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2327](WORKING_NOTES/2327-game-randomized-actor-point-effect-direct-match-20261112.md): `func_15146E84` directly matches all 111 retail words with no guards. Game **3,718 / 4,840 (76.82%)**, total **4,391 / 5,513 (79.65%)**, zero drift; **154** more Game matches to 80%.
+
 [Note 2326](WORKING_NOTES/2326-game-flagged-actor-point-effect-guarded-match-20261112.md): `func_15146BF8` matches 90 retail words with 21 checked guards. Game **3,717 / 4,840 (76.80%)**, total **4,390 / 5,513 (79.63%)**, zero drift; **155** more Game matches to 80%.
 
 [Note 2325](WORKING_NOTES/2325-game-alternate-point-effect-triple-guarded-match-20261112.md): three alternate actor point effects each match 88 retail words with 19 checked guards. Game **3,716 / 4,840 (76.78%)**, total **4,389 / 5,513 (79.61%)**, zero drift; **156** more Game matches to 80%.
