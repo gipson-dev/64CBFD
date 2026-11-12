@@ -152,3 +152,7 @@ function types compatible. The three retail callback functions must be reconcile
 with the eventual C definitions, and the remaining guard/alias, current tools
 and production checks completed, before marking a match. Private scripts and
 receipts are in `conker/build/game-secondary-walker-header-screen/`.
+
+The smaller callback now has a private semantic reconstruction and bounded
+behavior screens; see [Note 2314](2314-game-type64-timer-callback-private-screen-20261112.md).
+It is not installed or byte-matched.

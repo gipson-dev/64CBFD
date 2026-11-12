@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2314](WORKING_NOTES/2314-game-type64-timer-callback-private-screen-20261112.md): the registered `func_151041E4` timer/fade callback has a private, behavior-screened semantic candidate; it remains unmatched and uninstalled while compiler alignment and callback interfaces are qualified.
+
 [Note 2313](WORKING_NOTES/2313-game-session-reset-guarded-match-20261112.md): the 83-word session reset matches retail with 31 checked word/relocation guards. Fresh Game **3,705 / 4,840 (76.55%)**, total **4,378 / 5,513 (79.41%)**, zero drift; **167** more Game matches to 80%.
 
 [Note 2312](WORKING_NOTES/2312-game-session-reset-array-and-matching-screen-20261112.md): the earlier session-reset private screen; the candidate was subsequently adopted in Note 2313.
