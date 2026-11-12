@@ -5,7 +5,7 @@
 
 /* Generated placeholder declarations. */
 void func_15075938(void);
-s32 func_1507602C();
+void func_1507602C();
 void func_15076768(void);
 s32 func_15077508();
 void func_15077F64(void);
@@ -341,32 +341,27 @@ void func_15075F6C(void) {
     D_800D154C->unk3A = D_800D1893;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_A28B0/func_1507602C.s. */
-s32 func_1507602C() {
-    return 0;
-}
-// NON-MATCHING: indexing is wrong
-// void func_1507602C(void) {
-//     f32 temp_f12;
-//     f32 temp_f14;
-//     f32 temp_f2;
-//     struct169 *temp_v1;
-//
-//     func_15075548();
-//     D_800D154C->unk21E = D_800D1891;
-//     temp_v1 = D_800D2104[D_800D154C->unk13F + D_800D1891]; // wrong
-//     temp_f2 = temp_v1->unk8 - D_800D154C->x_position;
-//     temp_f12 = temp_v1->unkC - D_800D154C->z_position;
-//     temp_f14 = 2.0f * (sqrtf((temp_f2 * temp_f2) + (temp_f12 * temp_f12)) / D_800D154C->unk44);
-//     if (temp_f14 < 12.0f) {
-//         D_800D154C->unk44 *= temp_f14 * D_8009A140;
-//         temp_f14 = 12.0f;
-//     }
-//     D_800D154C->unk21C = temp_f14 * 100.0f;
-//     D_800D154C->y_velocity = D_800D154C->gravity * temp_f14 * 0.5f;
-//     D_800D154C->unk223 = 4;
-// }
+/* Set the actor movement duration and velocity toward a path node. */
+void func_1507602C(void) {
+    f32 x;
+    f32 z;
+    f32 duration;
+    PathNode8 *node;
 
+    func_15075548();
+    D_800D154C->unk21E = D_800D1891;
+    node = &((PathNode8 **)D_800D2104)[D_800D154C->unk13F][D_800D1891];
+    x = node[1].x - D_800D154C->x_position;
+    z = node[1].z - D_800D154C->z_position;
+    duration = 2.0f * (sqrtf((x * x) + (z * z)) / D_800D154C->unk44);
+    if (duration < 12.0f) {
+        D_800D154C->unk44 *= duration * D_8009A140;
+        duration = 12.0f;
+    }
+    D_800D154C->unk21C = duration * 100.0f;
+    D_800D154C->y_velocity = D_800D154C->gravity * duration * 0.5f;
+    D_800D154C->unk223 = 4;
+}
 void func_150761C8(void) {
     func_15075650();
     D_800D154C->unk223 = 5;
