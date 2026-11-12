@@ -106,6 +106,24 @@ s32 func_151725FC(Vtx *vertices, void *indirectVertices, f32 x, f32 y, f32 z,
     return 0;
 }
 
-s32 func_15172B20() {
-    return 0;
+extern f32 D_800A7154, D_800A7158;
+f32 cosf(f32);
+f32 sinf(f32);
+void func_1510E82C(s32, s32, s32, s32, s32, s32,
+                   f32, f32, f32, f32, u16, s32);
+
+/* Place a quad at a projected ground contact, if one exists. */
+s32 func_15172B20(Vtx *vertices, f32 x, f32 y, f32 z, f32 angle,
+                  s32 radius, s32 scale, u8 imageControl) {
+    s32 hit, surface;
+    f32 height;
+    f32 radians = (angle - 90.0f) * D_800A7154;
+    f32 c = cosf(radians);
+    f32 s = sinf(radians);
+    x += (f32)radius * s;
+    z += (f32)radius * c;
+    func_1510E82C((s32)&hit, 0, (s32)&height, 0, (s32)&surface, 0,
+                  x, y, z, y, 0, 0);
+    if (hit == 0 || height == D_800A7158) return 0;
+    return func_151725FC(vertices, (void *)hit, x, height, z, angle, scale, imageControl);
 }

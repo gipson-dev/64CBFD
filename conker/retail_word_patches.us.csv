@@ -29807,3 +29807,14 @@ generated_1D92F0,func_151AE984,0x78,0x8FAE0050,0x8FAE004C,-,-,Normalize randomiz
 generated_1D92F0,func_151AE984,0x94,0x8FB9004C,0x8FB90050,-,-,Normalize randomized effect constructor register allocation and control flow,,,false
 generated_1D92F0,func_151AE984,0x98,0xC7A60058,0xC7A60048,-,-,Normalize randomized effect constructor register allocation and control flow,,,false
 generated_1D92F0,func_151AE984,0xF8,0x27A5005C,0x27A50058,-,-,Normalize randomized effect constructor register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x38,0xE7AC0048,0xE7AC003C,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x3C,0xC7AC0048,0xC7AC003C,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x44,0xE7A00044,0xE7A00050,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x4C,0xC7A60044,0xC7A60050,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x64,0x27AF0050,0x27AF0048,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x6C,0x27A40054,0x27A40040,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0x74,0x27A6004C,0x27A60044,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0xB4,0x8FA50054,0x8FA50040,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0xB8,0xC7A0004C,0xC7A00044,-,-,Normalize quad placement register allocation and control flow,,,false
+generated_19F150,func_15172B20,0xC0,0x10A00008,0x14A00003,-,-,Normalize quad placement register allocation and control flow,0x00000000,-,false
+generated_19F150,func_15172B20,0xC4,0x00000000,0x10000013,-,-,Normalize quad placement register allocation and control flow,0x00001025,-,false
