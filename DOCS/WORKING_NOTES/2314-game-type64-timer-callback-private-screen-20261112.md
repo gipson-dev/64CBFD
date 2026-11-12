@@ -145,3 +145,59 @@ padder, caller, actual Make, independent whole-image, production and recount
 gates before crediting a match. No production source, count or ROM changed in
 this screen; the last verified Game checkpoint remains **3,705 / 4,840
 (76.55%)**, 167 matches short of 80%.
+
+## Follow-up: scoped candidate and private linked image
+
+At consumer baseline `10992c7e`, a private declaration/scope variant retains
+168 raw words and the 72-byte retail frame. It places `trigger` inside the
+state-0 case, declares the pointer and scalar locals in a different order,
+and retains a 16-byte unused frame local. The restricted alignment score is
+76 experimental guard rows and two inserted words, an improvement over the
+earlier 80-row permutation screen. The frame local is a compiler-layout probe;
+its original purpose is unknown. The typed-argument alternatives in the same
+screen do not establish compatibility with the registered `u8 *` interface.
+
+The raw scoped variant passed the same 1,476 modeled guest cases and all 192
+native SDK32 cases at O0/O2/O3 with undefined-behavior sanitization. The native
+probe suppresses the unused-variable warning for the layout local. Its
+height-threshold mutation was rejected at each optimization level. In 240
+additional cases, the retail-table walker and callback were exercised together
+in four combinations of retail/raw/padded walker and retail/scoped callback;
+all agreed with an independent bounded state/helper model. These cases use one
+node and modeled helpers; they do not cover the complete frame loop or gameplay.
+
+A further 216 successful-execution cases showed identical external memory
+access traces between retail and the raw scoped candidate, excluding stack
+traffic and call-event ordering. Another 384 bounded writable aligned
+record/owner/actor overlap cases showed no public-state, modeled-call, or
+external-access trace differences. Six selected fixtures also agreed on public
+state and modeled calls at 44 simulated external-access cuts. These are guest
+interpreter observations, not guarantees about native C aliasing, stack/register
+fault state, FPU exceptions, or hardware faults.
+
+Two independent padders emitted the assembled retail 170-word function using
+the 76 private expected-word rows and insertions at raw offsets `0x1AC` and
+`0x21C`. Each padder rejected all 76 individually corrupted expected words
+and all six applicable corrupted expected relocations. The two padded objects
+and assembled original also agreed after 12 GNU links over four selected
+low-half patterns for nine bound symbols. These checks validate byte and
+relocation handling; they do not independently justify the replacement
+instructions or prove a direct compiler match.
+
+A fresh private shadow executed three Make-planned owner compile, pad and
+assemble commands against the frozen production baseline, then linked a
+private ELF. The complete target bound to retail; its three owner neighbors,
+all function addresses and 189,088 protected data bytes remained unchanged.
+The strict independent image prediction accounted for all 524 changed ELF
+bytes with zero exclusions. Private ELF SHA-256:
+`d9e10f0fbaf35b429bbaf525df9456962ef01549fb4a132fd282cb3fc73b5f44`.
+This was not an actual production Make build, nor was any code installed.
+
+The 76-row map, signed-overflow and effective-type assumptions, complete
+callback interface, durable tools tests, production build and independent
+recount remain open. `func_151AD174` remains a distinct unconverted callback.
+The new scripts and receipts are in the same ignored scratch directory above;
+`candidate_scoped.c`, `experimental-guards.csv`, `connected-walker.json`,
+`alias-screen.json`, `external-cuts.json`, `guard-controls.json`,
+`rebase-screen.json`, and `shadow-make.json` identify the private results.
+No new Game match is credited.
