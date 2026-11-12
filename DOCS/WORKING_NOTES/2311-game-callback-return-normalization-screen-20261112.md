@@ -62,6 +62,35 @@ Ignored scratch receipts are under
 be cleaned; the summary above retains the outcome. The existing real helper
 `func_1500AF08` remains a C stub.
 
+## Connected retail-helper follow-up
+
+Both raw explicit-return shapes were run against the actual retail machine
+instructions of `func_1500AF08` in the bounded guest interpreter, rather than
+the earlier modeled helper. For each shape and callback, 432 cases varied
+positive counts 1..3, capacities 1/2/4/8, initial cursor 0/1/3, slots 0/1/3,
+mode bytes 0/2, and mask values 0/15. The original and candidate callback
+agree on return values, helper-call arguments, external memory, and external
+access traces; an independently calculated cursor bound also agrees. The
+helper is 187 words; 101 distinct helper instruction positions were visited.
+The callback always passes zero as the helper's seventh argument, so the
+randomized helper branch was not entered. A deliberately changed helper cursor
+increment caused the first eligible candidate comparison to fail.
+
+An additional 80 cases execute the original indirect-dispatch instruction
+window with the 113-word local candidate and the connected retail helper:
+28 cases for each of the first two callbacks and 24 for the third. The screen
+covers the 20 selecting pairs from the five known table rows with four seeds
+and compares the consumed cursor, slot counter, helper calls, and bounded
+external state. This is still a modeled instruction window, not complete
+parent or hardware execution, and does not exercise zero counts, hardware
+faults, FPU exceptions, or the helper's randomized path. The real helper's C
+implementation in the production checkout remains a stub.
+
+The ignored reproducibility scripts are `connected_helper_local.py`,
+`connected_helper_return10.py`, `connected_helper_bad_return.py`, and
+`dispatch_connected_helper.py` in the scratch directory named above. No
+source or match count changed as a result of these checks.
+
 Next, establish a legitimate source-level contract for the zero-count path and
 fully audit the proposed changes, including saved-register and stack aliases,
 branch delay slots, floating-point exceptions, and the reachable caller domain.
