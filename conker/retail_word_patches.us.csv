@@ -30244,3 +30244,5 @@ game_A28B0,func_150793D8,0x6c,0xA7A3002A,0xA7A30024,-,-,Normalize closed local c
 game_A28B0,func_150793D8,0x74,0xA7A80028,0xA7A80022,-,-,Normalize closed local coordinate stack slots,,,false
 game_A28B0,func_150793D8,0xa0,0x87A3002A,0x87A30024,-,-,Normalize closed local coordinate stack slots,,,false
 game_A28B0,func_150793D8,0xa4,0x87A80028,0x87A80022,-,-,Normalize closed local coordinate stack slots,,,false
+generated_49D30,func_1501DF04,0xf4,0x24420000,0x24630000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800D121C,Normalize independent actor range address setup order,,,false
+generated_49D30,func_1501DF04,0xf8,0x24630000,0x24420000,R_MIPS_LO16:D_800D121C,R_MIPS_LO16:D_800CC2D0,Normalize independent actor range address setup order,,,false

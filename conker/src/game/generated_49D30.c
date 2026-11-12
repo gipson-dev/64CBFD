@@ -632,8 +632,40 @@ void func_1501DE18(s32 slot) {
     func_1501E81C(1, slot);
 }
 
-s32 func_1501DF04() {
-    return 0;
+extern s32 D_800D121C;
+s32 func_100127D0(void);
+void func_151F2BA8(void);
+void func_1000E17C(void);
+struct127 *func_15072208(struct127 *, s32);
+/* Complete the sequence transition and clear active actor flags. */
+void func_1501DF04(s32 slot) {
+    struct127 *actor;
+    struct127 *found;
+    u8 pending;
+
+    if (func_100127D0() != 0) func_151F2BA8();
+    found = func_15072208(D_800CC2D0, 0);
+    if (found != NULL) func_15060F28(found, 0);
+    pending = D_800C3C99;
+    func_1501DE18(slot);
+    if (pending != 0 && D_800C35C4 == 0) {
+        do {
+            pending = D_800C3C99;
+            func_1501DE18(slot);
+        } while (pending != 0 && D_800C35C4 == 0);
+    }
+    if (D_800C35A9 == 0 && D_800C3C8A != 1 && D_800C3C8D == 0) {
+        func_1517EE40(0, 0, 0, 30, 0, 0);
+    }
+    actor = D_800CC2D0;
+    do {
+        if (actor->interaction_state != 0) *(u8 *)&actor->padA4 = 0;
+        actor++;
+    } while (actor != (struct127 *)&D_800D121C);
+    D_800C3663 = 0;
+    func_1000E17C();
+    D_800DBFF4 = 4;
+    D_800C3672 = 1;
 }
 
 extern u16 D_800BE710[];
