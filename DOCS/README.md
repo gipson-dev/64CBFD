@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2332](WORKING_NOTES/2332-game-sequence-transition-direct-match-20261112.md): `func_1501E1B4` directly matches all 81 retail words with no guards. Game **3,723 / 4,840 (76.92%)**, total **4,396 / 5,513 (79.74%)**, zero drift; **149** more Game matches to 80%.
+
 [Note 2331](WORKING_NOTES/2331-game-random-path-node-guarded-match-20261112.md): `func_150793D8` matches 102 retail words with five checked stack-layout guards. Game **3,722 / 4,840 (76.90%)**, total **4,395 / 5,513 (79.72%)**, zero drift; **150** more Game matches to 80%.
 
 [Note 2330](WORKING_NOTES/2330-game-path-movement-duration-direct-match-20261112.md): `func_1507602C` directly matches all 103 retail words with no guards. Game **3,721 / 4,840 (76.88%)**, total **4,394 / 5,513 (79.70%)**, zero drift; **151** more Game matches to 80%.

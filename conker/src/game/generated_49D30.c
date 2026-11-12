@@ -640,8 +640,36 @@ s32 func_1501E05C() {
     return 0;
 }
 
-s32 func_1501E1B4() {
-    return 0;
+extern u8 D_800C3C88, D_800C3C89;
+extern s32 D_800BEA08;
+s32 func_151F2CDC(void);
+void func_1000E17C(void);
+void func_151F2D6C(s32, s32);
+/* Advance the sequence transition and initiate its timed fade. */
+void func_1501E1B4(s32 slot) {
+    if (D_800C3C88 == 0) {
+        if (D_800C35EA[slot] == 1 && func_1501E05C(slot) != 0) {
+            D_8008FD84 = 0;
+            if ((s32)((u32)D_800C3640[slot] - (u32)D_800C35B0[slot]) >= 91) {
+                D_800C3C88 = 1;
+                D_800C3C89 = 30;
+                func_1517EE40(0, 0, 0, 30, 1, 0);
+                func_1000E17C();
+                if (func_151F2CDC() == 1 || func_151F2CDC() == 2) {
+                    func_151F2D6C(0, 0x2B02);
+                }
+            }
+        }
+    } else if (D_800C3C88 == 1) {
+        if (D_800BEA08 < D_800C3C89) {
+            D_800C3C89 = (u32)D_800C3C89 - (u32)D_800BEA08;
+        } else {
+            D_800C3C89 = 0;
+            D_800C3C88 = 2;
+            func_1501DF04(slot);
+            D_800C3C88 = 0;
+        }
+    }
 }
 
 void func_1501E400(s32);
