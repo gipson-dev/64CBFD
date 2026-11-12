@@ -44,7 +44,7 @@ u8 *func_151DA6F8(void *, void *, f32, s16, u8, f32, s32, u8,
 s32 func_151DA938();
 s32 func_151DAA88();
 s32 func_151DAB58();
-s32 func_151DAE28();
+Vtx *func_151DAE28(u8 *, s16);
 s32 func_151DB5D0();
 void func_151DBAA8(struct17 *, s32, u8, u8, s32);
 s32 func_151DBE80();
@@ -347,9 +347,35 @@ s32 func_151DADA0(u8 *arg0) {
     *(f32 *)(arg0 + 0x50) = D_800AB4B0 - (state->secondScale * scale);
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DAE28.s. */
-s32 func_151DAE28() {
-    return 0;
+extern f32 D_800DD1D8[], D_800DD1E8[];
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+/* Generate four view-facing vertices, initializing both buffers when fresh. */
+Vtx *func_151DAE28(u8 *actor, s16 view) {
+    Vtx *cursor, *first;
+    f32 width, height, forward, side;
+    u8 fresh;
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    width = *(f32 *)(actor + 0x4C) * *(f32 *)(actor + 0x2C);
+    height = *(f32 *)(actor + 0x50) * *(f32 *)(actor + 0x30);
+    forward = D_800DD1D8[view] * width;
+    side = D_800DD1E8[view] * width;
+    cursor[0].v.flag = 0; cursor[1].v.flag = 0; cursor[2].v.flag = 0; cursor[3].v.flag = 0;
+    cursor[0].v.ob[0] = cursor[3].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + side);
+    cursor[0].v.ob[1] = cursor[1].v.ob[1] = (s32)*(f32 *)(actor + 0x38);
+    cursor[0].v.ob[2] = cursor[3].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - forward);
+    cursor[1].v.ob[0] = cursor[2].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) - side);
+    cursor[2].v.ob[1] = cursor[3].v.ob[1] = (s32)(*(f32 *)(actor + 0x38) + height);
+    cursor[1].v.ob[2] = cursor[2].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) + forward);
+    return first;
 }
 void func_151DB004(struct218 *arg0) {
     arg0->unk14 = (func_150ADA20() % 0x38U) + 80;

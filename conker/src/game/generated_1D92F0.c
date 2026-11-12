@@ -64,8 +64,35 @@ s32 func_151AC550(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
 /* Note 313: original ROM implementation, retained as assembly until C conversion. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AC61C.s")
 
-s32 func_151AC810() {
-    return 0;
+extern f32 D_800DD1D8[], D_800DD1E8[];
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+/* Generate four view-facing vertices, initializing both buffers when fresh. */
+Vtx *func_151AC810(u8 *actor, s16 view) {
+    Vtx *cursor, *first;
+    f32 width, height, forward, side;
+    u8 fresh;
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    width = *(f32 *)(actor + 0x4C) * *(f32 *)(actor + 0x2C);
+    height = *(f32 *)(actor + 0x50) * *(f32 *)(actor + 0x30);
+    forward = D_800DD1D8[view] * width;
+    side = D_800DD1E8[view] * width;
+    cursor[0].v.flag = 0; cursor[1].v.flag = 0; cursor[2].v.flag = 0; cursor[3].v.flag = 0;
+    cursor[0].v.ob[0] = cursor[3].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + side);
+    cursor[0].v.ob[1] = cursor[1].v.ob[1] = (s32)*(f32 *)(actor + 0x38);
+    cursor[0].v.ob[2] = cursor[3].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - forward);
+    cursor[1].v.ob[0] = cursor[2].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) - side);
+    cursor[2].v.ob[1] = cursor[3].v.ob[1] = (s32)(*(f32 *)(actor + 0x38) + height);
+    cursor[1].v.ob[2] = cursor[2].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) + forward);
+    return first;
 }
 
 s32 func_151AC9EC(f32 *arg0) {

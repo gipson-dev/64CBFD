@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2299](WORKING_NOTES/2299-game-twin-view-vertices-match-20261112.md): two identical 119-word view-vertex callbacks emit directly from C with no guards. Guest/native, connected helpers, original dispatcher windows, padders and the strict linked-image audit pass within documented limits. Fresh Game **3,696 / 4,840 (76.36%)**, total **4,369 / 5,513 (79.25%)**, zero drift; **176** more Game matches to 80%.
+
 [Note 2298](WORKING_NOTES/2298-game-four-damping-callbacks-match-20261112.md): four identical 106-word damping callbacks now emit directly from C with no guards. Guest/native, original dispatch, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,694 / 4,840 (76.32%)**, total **4,367 / 5,513 (79.21%)**, zero drift; **178** more Game matches to 80%.
 
 [Note 2297](WORKING_NOTES/2297-game-twin-effect-constructors-match-20261112.md): `func_151AF388` and `func_151B50F4` recover paired 82-word effect constructors with ten guards each. Guest/native, original wrappers, padders and the strict combined image audit pass within documented limits. Fresh Game **3,690 / 4,840 (76.24%)**, total **4,363 / 5,513 (79.14%)**, zero drift; **182** more Game matches to 80%.
