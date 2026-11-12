@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2328](WORKING_NOTES/2328-game-radial-packet-callback-guarded-match-20261112.md): `func_151470FC` matches 135 retail words with 11 checked guards. Game **3,719 / 4,840 (76.84%)**, total **4,392 / 5,513 (79.67%)**, zero drift; **153** more Game matches to 80%.
+
 [Note 2327](WORKING_NOTES/2327-game-randomized-actor-point-effect-direct-match-20261112.md): `func_15146E84` directly matches all 111 retail words with no guards. Game **3,718 / 4,840 (76.82%)**, total **4,391 / 5,513 (79.65%)**, zero drift; **154** more Game matches to 80%.
 
 [Note 2326](WORKING_NOTES/2326-game-flagged-actor-point-effect-guarded-match-20261112.md): `func_15146BF8` matches 90 retail words with 21 checked guards. Game **3,717 / 4,840 (76.80%)**, total **4,390 / 5,513 (79.63%)**, zero drift; **155** more Game matches to 80%.

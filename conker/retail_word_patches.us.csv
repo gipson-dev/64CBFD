@@ -30228,3 +30228,14 @@ generated_173D40,func_15146BF8,0x12C,0x8FAD0068,0x8FAD0060,-,-,Normalize flagged
 generated_173D40,func_15146BF8,0x144,0x27A50054,0x27A5004C,-,-,Normalize flagged point effect frame and stack offsets,,,false
 generated_173D40,func_15146BF8,0x148,0x8FA60048,0x8FA60040,-,-,Normalize flagged point effect frame and stack offsets,,,false
 generated_173D40,func_15146BF8,0x15C,0x27BD0060,0x27BD0058,-,-,Normalize flagged point effect frame and stack offsets,,,false
+generated_173D40,func_151470FC,0xC0,0x44815000,0x44812000,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xC8,0x44819000,0x44814000,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xCC,0x460A0402,0x46040182,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xD0,0xC7A400A8,0xC7AA00A8,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xD4,0xC7A600AC,0xC7B000AC,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xD8,0xC7A800B0,0xC7B200B0,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xDC,0xE7A40060,0xE7AA0060,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xE0,0xE7A60064,0xE7B00064,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xE4,0xE7A80068,0xE7B20068,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0xE8,0x46128080,0x46083080,-,-,Normalize closed floating-register allocation cycle,,,false
+generated_173D40,func_151470FC,0x108,0x93A400C3,0x87A400C2,-,-,Preserve retail signed-halfword argument load,,,false

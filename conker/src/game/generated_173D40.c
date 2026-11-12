@@ -239,8 +239,79 @@ void func_15147040(u8 *actor, u8 context, s32 unused) {
         0, 255, count, 0x16, 0, 0.0f, NULL, 255);
 }
 
-s32 func_151470FC() {
-    return 0;
+typedef struct RadialPacket173D40 {
+    u32 field00, field04;
+    s16 field08, field0A;
+    u32 field0C, field10;
+    u8 field14, field15, field16, field17;
+    u8 field18, field19, field1A, field1B;
+    u8 field1C, field1D;
+    s16 field1E, field20, field22;
+    f32 field24, field28, field2C;
+    f32 position[3];
+    f32 field3C, field40, field44;
+    EffectPoint173D40 direction;
+    f32 field54;
+    u32 flags;
+    u8 reserved5C[4];
+    u8 field60, field61, field62;
+    s8 field63;
+    u8 reserved64[12];
+} RadialPacket173D40;
+extern f32 D_800A5730, D_800A5734, D_800A5738;
+void func_15143794(s16, s16, f32, EffectPoint173D40 *);
+void *func_15130374(void *, u8, s32, u8, s32);
+void *memcpy(void *, const void *, size_t);
+
+/* Submit a randomized radial effect descriptor. */
+s32 func_151470FC(s32 kind, s16 index, f32 x, f32 y, f32 z,
+                    f32 unused5, f32 unused6, f32 unused7, u8 angle, u8 unused9,
+                    f32 unused10, s32 unused11, f32 unused12, s32 unused13, u8 slot) {
+    RadialPacket173D40 packet;
+    f32 sample;
+    f32 bonus;
+    void *allocated;
+    u32 random;
+    packet.field1D = 41;
+    packet.field08 = 0xE03;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.field0A = ((u32)func_150ADA20() & 15) + 20;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field18 = 176;
+    packet.field19 = 160;
+    packet.field1A = 42;
+    packet.field14 = 64;
+    packet.field15 = 11;
+    packet.field16 = 106;
+    packet.field17 = 255;
+    packet.field1B = (u32)func_150ADA20() % 101U + 100;
+    packet.field1C = 255;
+    packet.field60 = 3;
+    packet.field61 = 3;
+    sample = func_150ADA68();
+    packet.position[0] = x;
+    packet.position[1] = y;
+    packet.position[2] = z;
+    packet.field28 = packet.field2C = sample * 95.0f + 101.0f;
+    random = func_150ADA20();
+    sample = func_150ADA68();
+    func_15143794(angle, (s16)(random % 11U - 11), (sample * 396.0f + 202.0f) * D_800A5730, &packet.direction);
+    packet.flags = 0xE05;
+    packet.field54 = 0.0f;
+    if (func_150ADA20() & 1) packet.flags |= 0x40;
+    if (func_150ADA20() & 1) packet.flags |= 0x80;
+    packet.field62 = 10;
+    packet.field63 = -1;
+    packet.field1E = 20;
+    packet.field20 = 12;
+    packet.field22 = 27;
+    packet.field24 = D_800A5734;
+    bonus = D_800A5738;
+    allocated = func_15130374(&packet, 1, 4, slot, 1);
+    if (allocated != NULL) memcpy((u8 *)allocated + 0xA8, &bonus, 4);
+    return 1;
 }
 
 /* Submit the optional point effect before choosing the main effect. */
