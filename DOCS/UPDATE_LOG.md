@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2308](WORKING_NOTES/2308-game-position-interpolation-guarded-match-20261112.md): the 84-word position interpolation callback matches retail with ten floating-point scheduling guards. Fresh Game **3,704 / 4,840 (76.53%)**, total **4,377 / 5,513 (79.39%)**, zero drift; **168** more Game matches to 80%.
+
 [Note 2306](WORKING_NOTES/2306-colored-dispatch-make-warning-fix-20261112.md): the colored-dispatch Make override warning is removed without changing the compiled objects, linked image, or **3,703 / 4,840** Game match count.
 
 [Note 2305](WORKING_NOTES/2305-game-actor-colored-dispatch-direct-match-20261112.md): the 75-word actor colored-effect dispatcher emits directly from C using its retail table and a target-only compiler profile; its helper remains a stub. Fresh Game **3,703 / 4,840 (76.51%)**, total **4,376 / 5,513 (79.38%)**, zero drift; **169** more Game matches to 80%.

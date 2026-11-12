@@ -112,7 +112,8 @@ MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_6A3D0.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_50D80.c.o \
 	$(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o \
-	$(BUILD_DIR)/$(SRC_DIR)/game/generated_12DAB0.c.o
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_12DAB0.c.o \
+	$(BUILD_DIR)/$(SRC_DIR)/game/generated_EB340.c.o
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
 STANDARD_GENERATED_SLICE_O_FILES := \
@@ -774,6 +775,16 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_12DAB0.c.o: $(SRC_DIR)/game/generated_12D
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -DCBFD_COLORED_PRIMARY $(MIPSBIT) -o $@.compact $<
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-no_const_in_reg $(MIPSBIT) -o $@.float.compact $<
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,12DAB0) $@.padded.s --function-object func_151026BC=$@.float.compact --word-patches retail_word_patches.us.csv --filename generated_12DAB0 --rodata-symbol jtbl_800A2298_game
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.float.compact $@.padded.s
+endif
+
+ifeq ($(VERSION),us)
+# Select the interpolation callback's retail floating-constant profile only.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_EB340.c.o: $(SRC_DIR)/game/generated_EB340.c $$(call generated_slice_asm,EB340) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) -Wo,-no_const_in_reg $(MIPSBIT) -o $@.float.compact $<
+	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,EB340) $@.padded.s --function-object func_150BE2E8=$@.float.compact --word-patches retail_word_patches.us.csv --filename generated_EB340 $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.float.compact $@.padded.s
 endif

@@ -1,5 +1,7 @@
 # Game position interpolation candidate screen - 2026-11-12
 
+The candidate was subsequently qualified and installed; see [Note 2308](2308-game-position-interpolation-guarded-match-20261112.md). The measurements below describe the earlier private screen.
+
 `func_150BE2E8` remains an **uninstalled, uncredited candidate**. Consumer baseline `6a40a4b0`; tools submodule `7b9cdb9`. The last production recount is Game 3,703 / 4,840 (76.51%), with 169 more exact functions needed for 80%.
 
 ## Retail evidence

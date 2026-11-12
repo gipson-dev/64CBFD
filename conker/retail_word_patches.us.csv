@@ -29952,3 +29952,13 @@ game_1944C0,func_15167C58,0xE8,0x03081021,0x03191021,-,-,Normalize animation ren
 game_1944C0,func_15167C58,0xEC,0x8C590000,0x8C490004,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
 game_1944C0,func_15167C58,0xF0,0x8C490004,0x8C480000,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
 game_1944C0,func_15167C58,0xFC,0x03293025,0x01283025,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+generated_EB340,func_150BE2E8,0xAC,0x46145102,0x460AA102,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0xB0,0x46162580,0x4604B580,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x114,0x44814000,0x44810000,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x118,0x44813000,0x00000000,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x11C,0x4608A282,0x4600A202,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x124,0x4606B202,0x4600B102,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x128,0x4600510D,0x4600428D,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x12C,0x4600428D,0x4600218D,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x130,0x440A2000,0x440A5000,-,-,Normalize interpolation float register schedule and operand order,,,false
+generated_EB340,func_150BE2E8,0x134,0x440C5000,0x440C3000,-,-,Normalize interpolation float register schedule and operand order,,,false

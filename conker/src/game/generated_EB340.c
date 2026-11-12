@@ -1,4 +1,6 @@
 #include <ultra64.h>
+extern f32 D_800A0068;
+extern s32 D_800BE9E4;
 extern f32 D_800BE9A4;
 extern u8 D_800CC2D0[];
 extern void *func_15149130(s16 arg0, s8 arg1, s8 arg2, s8 arg3, u8 arg4,
@@ -72,9 +74,22 @@ void func_150BE210(u8 *actor) {
     }
 }
 
-s32 func_150BE2E8() {
-    return 0;
+/* Advance actor position interpolation and fixed-point progress. */
+void func_150BE2E8(s16 *p) {
+    f32 x0 = p[0x7c/2], y0 = p[0x7e/2], z0 = p[0x80/2];
+    f32 x1 = p[0x82/2], y1 = p[0x84/2], z1 = p[0x86/2];
+    f32 step = p[0x3c/2] * (1.0f / 16384.0f);
+    f32 t = p[0x3e/2] * (1.0f / 16384.0f);
+    step = step - step * D_800A0068;
+    t = t + step * D_800BE9E4;
+    p[0x10/2] = (s32)((x1-x0)*t+x0);
+    p[0x12/2] = (s32)((y1-y0)*t+y0);
+    p[0x14/2] = (s32)((z1-z0)*t+z0);
+    if (1.0f < t) t = 1.0f;
+    p[0x3c/2] = (s32)(step * 16384.0f);
+    p[0x3e/2] = (s32)(t * 16384.0f);
 }
+
 
 u8 *func_150BE438(u8 *arg0, s32 arg1) {
     u8 *entry = D_800CC2D0 + arg1 * 0x32C;
