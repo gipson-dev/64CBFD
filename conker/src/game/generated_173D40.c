@@ -27,6 +27,7 @@ void func_15150F90(PointEffectDescriptor173D40 *, u8, u8, s32);
 
 
 extern f32 D_800A5728, D_800A572C;
+extern f32 D_800A5720, D_800A5724;
 void func_15141F78(u8, u8 *, f32, u8, f32 *, u8);
 extern f32 D_800A573C,D_800A5740,D_800A5744,D_800A5748,D_800A574C,D_800A5750;
 extern s32 (*D_8008FD04)(void);
@@ -36,7 +37,7 @@ void func_15142180(u8, f32 *, s32, f32, f32);
 
 /* Partially recovered text-only slice asm/173D40.s. */
 
-s32 func_15146BF8();
+void func_15146BF8();
 
 typedef struct HeightResult71820 {
     f32 height;
@@ -155,8 +156,19 @@ void func_15146BD8(register s32 arg0, register s32 arg1, register s32 arg2) {
     func_15146BF8(arg0, arg1, arg2, 1);
 }
 
-s32 func_15146BF8() {
-    return 0;
+/* Emit the flagged point effect and its additional high-intensity effect. */
+void func_15146BF8(u8 *actor, s32 mode, s32 amount, s32 flag) {
+    f32 position[3];
+    HeightResult71820 result;
+    s32 selected = (u8)mode;
+    s32 slot;
+    if (*(s32 *)(actor + 0x1D4) == 0) return;
+    if (func_15146890(position, actor, &result, selected) != 0) {
+        if ((u8)flag) slot = 12; else slot = 11;
+        func_15141F78((u8)slot, (u8 *)&result, (f32)amount * D_800A5720,
+                      (u8)(u32)(*(f32 *)(actor + 0x40) * D_800A5724), position, selected);
+        if (amount >= 115) func_15142180(2, position, result.metadata, 1.0f, 1.0f);
+    }
 }
 
 /* Emit a point/height-interval effect using the live actor tag and requested scale. */
