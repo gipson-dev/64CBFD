@@ -461,7 +461,7 @@ void func_151DB4CC(struct218 *arg0) {
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DB97C.s. */
 s32 func_151DB97C() {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DBAA8.s. */
+}/* Localized trail preset; retail instructions use guarded normalization. */
 typedef struct {
     s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange;
 } AngularTrailInput151DBAA8;

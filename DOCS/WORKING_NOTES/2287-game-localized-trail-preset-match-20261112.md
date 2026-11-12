@@ -37,3 +37,9 @@ complete-ROM checksum mismatch remains.
 Fresh actual ELF recount: **3,682 / 4,840 (76.07%)** Game and **4,355 /
 5,513 (79.00%)** overall, zero drift. The Game-specific 80% target needs
 190 more exact functions. Tools commit `3f7dc75cad9eb8e21c1aecf0cca2a012e0317914` precedes the consumer change.
+
+The inherited placeholder comment was subsequently corrected. Tools commit
+`35025bc` updates the selected-source fingerprint for this comment-only edit.
+All eight qualification checks were rerun against the edited source in each
+tools configuration; the actual-Make object and strict linked-image hashes
+remain identical to the results above. This cleanup adds no matching credit.
