@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2335](WORKING_NOTES/2335-game-open-sequence-candidate-screens-20261112.md): two private sequence candidates remain unqualified; no match credit. Game remains **3,725 / 4,840 (76.96%)**, total **4,398 / 5,513 (79.78%)**, zero drift; **147** more Game matches to 80%.
+
 [Note 2334](WORKING_NOTES/2334-game-sequence-completion-guarded-match-20261112.md): `func_1501DF04` matches all 86 retail words with two relocation-aware address-order guards. Game **3,725 / 4,840 (76.96%)**, total **4,398 / 5,513 (79.78%)**, zero drift; **147** more Game matches to 80%.
 
 [Note 2333](WORKING_NOTES/2333-game-sequence-predicate-direct-match-20261112.md): `func_1501E05C` directly matches all 86 retail words with no guards. Game **3,724 / 4,840 (76.94%)**, total **4,397 / 5,513 (79.76%)**, zero drift; **148** more Game matches to 80%.
