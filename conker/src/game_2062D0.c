@@ -46,7 +46,6 @@ s32 func_151DAA88();
 s32 func_151DAB58();
 s32 func_151DAE28();
 s32 func_151DB5D0();
-s32 func_151DB97C();
 void func_151DBAA8(struct17 *, s32, u8, u8, s32);
 s32 func_151DBE80();
 s32 func_151DC034();
@@ -458,10 +457,42 @@ void func_151DB4CC(struct218 *arg0) {
 /* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DB5D0.s. */
 /* Note 362: original ROM blood effect and dependencies. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2062D0/func_151DB5D0.s")
-/* Non-matching C placeholders for asm/nonmatchings/game_2062D0/func_151DB97C.s. */
-s32 func_151DB97C() {
-    return 0;
-}/* Localized trail preset; retail instructions use guarded normalization. */
+typedef struct {
+    u8 flags, retained01[3];
+    f32 damping;
+    u8 phaseX, phaseY, phaseZ, speedX, speedY, speedZ;
+    u8 retained0E[2];
+    f32 amplitudeX, amplitudeY, amplitudeZ;
+} OscillationParams2062D0;
+typedef struct {
+    u8 retained00[0x4C];
+    f32 offsetX, offsetY, offsetZ;
+    f32 transform[3];
+    u8 retained64[0x44];
+    OscillationParams2062D0 oscillation;
+} OscillatingEffect2062D0;
+void func_15131918(f32 *, f32);
+
+/* Apply optional damping and advance the three oscillating offsets. */
+s32 func_151DB97C(OscillatingEffect2062D0 *effect, s32 context) {
+    OscillationParams2062D0 *params = &effect->oscillation;
+    f32 z, y, x;
+    if (params->flags & 2) func_15131918(effect->transform, params->damping);
+    if (params->flags & 1) {
+        params->phaseX += (u32)params->speedX * (u32)D_800BE9E4;
+        params->phaseY += (u32)params->speedY * (u32)D_800BE9E4;
+        params->phaseZ += (u32)params->speedZ * (u32)D_800BE9E4;
+        x = func_151423D8((u8)(params->phaseX - 64));
+        y = func_151423D8((u8)(params->phaseY - 64));
+        z = func_151423D8((u8)(params->phaseZ - 64));
+        effect->offsetX = params->amplitudeX * x;
+        effect->offsetY = params->amplitudeY * y;
+        effect->offsetZ = params->amplitudeZ * z;
+    }
+    return 1;
+}
+
+/* Localized trail preset; retail instructions use guarded normalization. */
 typedef struct {
     s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange;
 } AngularTrailInput151DBAA8;
