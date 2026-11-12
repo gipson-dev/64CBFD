@@ -29910,3 +29910,45 @@ generated_179F30,func_1514E194,0xF0,0xE7B00030,0xE7AE002C,-,-,Normalize independ
 generated_179F30,func_1514E194,0xF4,0xE7AE002C,0xE7B00030,-,-,Normalize independent packet initialization store order,,,false
 generated_179F30,func_1514E194,0xF8,0xE7B0003C,0xE7AE0038,-,-,Normalize independent packet initialization store order,,,false
 generated_179F30,func_1514E194,0xFC,0xE7AE0038,0xE7B0003C,-,-,Normalize independent packet initialization store order,,,false
+game_1944C0,func_15167C58,0x14,0x240E0001,0x240F0001,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x18,0xAFAE0050,0xAFAF0050,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x24,0x240F0100,0x24180100,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x28,0x24180100,0x24190100,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x2C,0xAFB80014,0xAFB90014,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x30,0xAFAF0010,0xAFB80010,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x34,0x8CB90000,0x8CA80000,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x38,0x00024203,0x00024A03,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x3C,0x00084880,0x00095080,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x40,0x03295021,0x010A5821,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x44,0x8D4B0000,0x8D6C0000,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x48,0x240F0003,0x24180003,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x4C,0x27AE0050,0x27AF0050,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x50,0x240C0005,0x240D0005,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x54,0x27AD005C,0x27AE005C,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x58,0xAFAD0020,0xAFAE0020,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x5C,0xAFAC001C,0xAFAD001C,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x60,0xAFAE0024,0xAFAF0024,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x64,0xAFAF0028,0xAFB80028,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x74,0xAFAB0018,0xAFAC0018,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x78,0x86180018,0x86190018,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x84,0xA7B8005C,0xA7B9005C,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x88,0x8608001A,0x8609001A,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x8C,0x240C0003,0x240D0003,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x90,0xA7A8005E,0xA7A9005E,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x94,0x8619001C,0x8608001C,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x98,0xA7B90060,0xA7A80060,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0x9C,0x8609001E,0x860A001E,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xA0,0xA7A90062,0xA7AA0062,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xA4,0x860A0020,0x860B0020,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xA8,0xA7AA0064,0xA7AB0064,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xAC,0x920B0023,0x920C0023,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xB4,0xA3AB0066,0xA3AC0066,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xC8,0xAFAC0048,0xAFAD0048,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xD0,0x240D0009,0x240E0009,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xD4,0xAFAD0048,0xAFAE0048,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xDC,0x3C080000,0x3C190000,R_MIPS_HI16:D_800A4AC8,R_MIPS_HI16:D_800A4AC8,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xE0,0x25080000,0x27390000,R_MIPS_LO16:D_800A4AC8,R_MIPS_LO16:D_800A4AC8,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xE8,0x03081021,0x03191021,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xEC,0x8C590000,0x8C490004,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xF0,0x8C490004,0x8C480000,-,-,Normalize animation renderer register allocation and table-read schedule,,,false
+game_1944C0,func_15167C58,0xFC,0x03293025,0x01283025,-,-,Normalize animation renderer register allocation and table-read schedule,,,false

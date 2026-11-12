@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2302](WORKING_NOTES/2302-game-animated-packet-renderer-match-20261112.md): the 75-word animated packet renderer matches retail with 42 register and scheduling guards. Guest/native, dispatcher window, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,700 / 4,840 (76.45%)**, total **4,373 / 5,513 (79.32%)**, zero drift; **172** more Game matches to 80%.
+
 [Note 2301](WORKING_NOTES/2301-game-six-record-setup-direct-match-20261112.md): the 74-word six-record scene setup callback emits directly from C without guards. Guest/native, dispatcher window, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,699 / 4,840 (76.43%)**, total **4,372 / 5,513 (79.30%)**, zero drift; **173** more Game matches to 80%.
 
 [Note 2300](WORKING_NOTES/2300-game-paired-packet-callback-match-20261112.md): two 98-word packet callbacks match retail with 11 store-order guards each. Guest/native, dispatcher window, both padders and the strict linked-image audit pass within documented limits. Fresh Game **3,698 / 4,840 (76.40%)**, total **4,371 / 5,513 (79.29%)**, zero drift; **174** more Game matches to 80%.

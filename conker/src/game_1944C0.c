@@ -9,7 +9,7 @@ s32 func_151671E8();
 s32 func_15167310();
 s32 func_151674F8();
 void func_15167B44(u8 *state);
-s32 func_15167C58();
+Gfx *func_15167C58();
 s32 func_15167E0C();
 s32 func_15168118();
 typedef struct {
@@ -180,9 +180,34 @@ void func_15167B44(u8 *state) {
         func_1516972C((struct102 *)state);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167C58.s. */
-s32 func_15167C58() {
-    return 0;
+/* Animation texture and screen-packet callback. */
+typedef struct { u32 *frames; } AnimatedTexture15167;
+typedef struct {
+    u8 pad0[0x10]; AnimatedTexture15167 *texture;
+    s16 phase, rate, x, y, z, width, height;
+    s8 mode; u8 alpha;
+} AnimatedState15167;
+typedef struct { s16 x,y,z,width,height; u8 alpha, padB[2], zero, padE[6]; } AnimatedPacket15167;
+typedef struct { u8 before[4]; s32 value; u8 pad[8]; } AnimatedSync15167;
+extern u32 D_800A4AC8[];
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+Gfx *func_15095760(Gfx *, s16 *);
+/* Emit the current animated texture and its projected screen packet. */
+Gfx *func_15167C58(Gfx *output, AnimatedState15167 *state, volatile s32 unused) {
+    AnimatedPacket15167 packet;
+    AnimatedSync15167 sync;
+    s32 mode;
+    sync.value = 1;
+    output = func_15142E24(output, state->texture, (s32)((u32)(s32)state->phase << 8), 2,
+        256, 256, state->texture->frames[state->phase >> 8], 5, (u8 *)&packet, (u8 *)&sync.value, 3);
+    packet.x = state->x; packet.y = state->y; packet.z = state->z;
+    packet.width = state->width; packet.height = state->height;
+    packet.alpha = state->alpha; packet.zero = 0;
+    if (state->mode != 255) mode = 3;
+    else if (state->mode == 255) mode = 9;
+    output = func_15142FBC(output, 0x2C00, D_800A4AC8[mode * 2 + 1] | D_800A4AC8[mode * 2] | 4, (u8 *)&sync.value);
+    return func_15095760(output, (s16 *)&packet);
 }
 void func_15167D84(void *arg0, s32 arg1, s32 arg2, s8 arg3, u8 arg4, s32 arg5) {
     u8 *tmp;
