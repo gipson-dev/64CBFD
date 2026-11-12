@@ -17,7 +17,9 @@ an unguarded, C match.
 
 Retail and raw C guest executions agreed across 1,856 finite cases and visited
 78 of 82 retail words. SDK32 native O0/O2/O3 each passed those cases and nine
-negative controls with undefined-behavior sanitization. The original
+negative controls with undefined-behavior sanitization. A follow-up changed the native harness to
+access each struct member individually and repeated those checks in both tools
+environments. The original
 `func_15147740` dispatch window and bounded full-parent paths each passed
 1,856 cases via `D_8008A200[9]`; the release helper was modeled and unrelated
 dispatcher branches were not qualified. Inputs use valid, aligned, disjoint
