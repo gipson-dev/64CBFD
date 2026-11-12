@@ -1,5 +1,9 @@
 # Working Notes
 
+[Note 2292](WORKING_NOTES/2292-game-randomized-effect-constructor-match-20261112.md): `func_151AE984` restores the 76-word randomized effect constructor with 17 guards and no insertions. Guest/native, the original caller window, padders and the strict 283-byte image audit pass within documented limits. Fresh Game **3,685 / 4,840 (76.14%)**, total **4,358 / 5,513 (79.05%)**, zero drift; **187** more Game matches to 80%.
+
+[Note 2291](WORKING_NOTES/2291-game-secondary-walker-type-audit-20261112.md) records the still-unmatched secondary walker type and dependency audit.
+
 [Note 2290](WORKING_NOTES/2290-game-registered-update-walker-match-20261112.md): `func_151670C0` restores the 74-word registered update walker with 35 guards and no insertions. Guest/native, the frame-loop caller window, padders and strict 224-byte image checks pass within documented limits. Fresh Game **3,684 / 4,840 (76.12%)**, total **4,357 / 5,513 (79.03%)**, zero drift; **188** more Game matches to 80%.
 
 [Note 2289](WORKING_NOTES/2289-game-effect-descriptor-match-20261112.md): `func_150C1E34` restores the 72-word effect descriptor with 48 guards and one insertion; its slot has three further padding words. Guest/native, four caller windows, padders and the strict 232-byte image audit pass within documented limits. Fresh Game **3,683 / 4,840 (76.10%)**, total **4,356 / 5,513 (79.01%)**, zero drift; **189** more Game matches to 80%.

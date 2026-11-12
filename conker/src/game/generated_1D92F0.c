@@ -4,7 +4,7 @@ s32 func_15045800(f32 *, u16, f32, void *);
 u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
 extern f32 D_800A9D84, D_800A9D88;
 f32 func_150ADA68(void);
-s32 func_151AE984();
+void *func_151AE984(void *, f32, f32, f32, u8, u8);
 s32 func_151AEAB4();
 
 /* Recovered routines and remaining placeholders for asm/1D92F0.s. */
@@ -359,8 +359,8 @@ void *func_151AE7B0(u8 *owner, f32 scale, s16 duration, u8 selector, s32 categor
 }
 
 /* Route a position and raw effect payload through a random constructor. */
-void func_151AE890(f32 x, f32 y, f32 z, s32 effect_arg0_bits,
-                   s32 effect_arg1_bits, s32 effect_arg2_bits, u8 *actor) {
+void func_151AE890(f32 x, f32 y, f32 z, f32 effectX,
+                   f32 effectY, f32 effectZ, u8 *actor) {
     f32 position[3];
     f32 sample;
 
@@ -376,13 +376,35 @@ void func_151AE890(f32 x, f32 y, f32 z, s32 effect_arg0_bits,
                       0.0f < func_150ADA68() ? 1 : 0, actor[0xC]);
     } else {
         s32 flag = D_800A9D88 < func_150ADA68() ? 1 : 0;
-        func_151AE984(position, effect_arg0_bits, effect_arg1_bits,
-                      effect_arg2_bits, flag, actor[0xC]);
+        func_151AE984(position, effectX, effectY,
+                      effectZ, flag, actor[0xC]);
     }
 }
 
-s32 func_151AE984() {
-    return 0;
+extern f32 D_800A9D8C, D_800A9D90, D_800A9D94;
+s32 func_150ADA20(void);
+void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
+                    f32, f32, u8, s32, u8, u8, u8, s32);
+
+/* Construct a randomized effect from three incoming floating-point values. */
+void *func_151AE984(void *position, f32 x, f32 y, f32 z,
+                    u8 mode, u8 selector) {
+    f32 velocity[3];
+    f32 first, second;
+    u32 firstValue, secondValue;
+
+    velocity[0] = -x * D_800A9D8C;
+    velocity[1] = -y * D_800A9D8C;
+    velocity[2] = -z * D_800A9D8C;
+    first = func_150ADA68();
+    firstValue = func_150ADA20();
+    secondValue = func_150ADA20();
+    second = func_150ADA68();
+    return func_151D9014(position, velocity, 0,
+        first * D_800A9D90 + D_800A9D94,
+        firstValue % 31U + 60, secondValue % 101U + 155,
+        second * 219.0f + 77.0f, mode, 1.0f, 1.0f,
+        0, 0, 1, 0, selector, 1);
 }
 
 s32 func_151AEAB4() {
