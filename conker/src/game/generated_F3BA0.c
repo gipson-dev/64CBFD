@@ -225,6 +225,95 @@ s32 func_150C6D68(u8 *arg0) {
     func_1513470C(arg0);
 }
 
-s32 func_150C6D90() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 enabled, pad05[3];
+    f32 base, range, zero;
+    s16 zero14, count0, count1;
+    u8 pad1a[2];
+    f32 rate;
+} GroundEffectPayload;
+typedef struct {
+    u32 flags;
+    s16 duration;
+    u8 kind, pad07;
+    u32 zero08;
+    s32 angle;
+    u8 opacity, alpha, red, green, blue, alpha2, zero16, mode;
+    u32 flags18;
+    u8 untouched1c[12];
+} GroundEffectDescriptor;
+typedef struct { f32 coords[3]; } GroundVectorWords;
+extern GroundVectorWords D_800887E0;
+extern f32 D_800A047C,D_800A0480;
+extern u8 D_800AB414[];
+void func_15143134(f32 *, f32 *, u8 *);
+s32 func_15045800(f32 *, u16, f32, void *);
+s32 func_151D8E20(void); /* Create a ground-linked effect and its owner payload. */
+u8 *func_1513C73C(s32,u8,u8,s32,f32,f32,f32,f32,f32,u8,u8,s32,u8,s32);
+s32 func_150C6D90(u8 *context) {
+    struct {
+        f32 scale;
+        GroundEffectPayload payload;
+        GroundEffectDescriptor descriptor;
+        f32 query[3];
+        GroundVectorWords preset;
+        u32 gap74;
+        f32 position[3];
+        u8 *result;
+    } local;
+    u8 index;
+    u8 *actor;
+    u32 second;
+    u32 first;
+    local.result = 0;
+    actor = *(u8 **)(context + 0x18);
+    if (*(u8 **)(actor + 0x1D4) != 0) {
+        local.preset = D_800887E0;
+        func_15143134(local.preset.coords, local.position, *(u8 **)(actor + 0x1D4));
+    } else {
+        local.position[0] = *(f32 *)(actor + 0x14);
+        local.position[1] = *(f32 *)(actor + 0x18);
+        local.position[2] = *(f32 *)(actor + 0x1C);
+    }
+    local.query[0] = local.position[0];
+    local.query[1] = local.position[1] + 200.0f;
+    local.query[2] = local.position[2];
+    if (func_15045800(local.query, 0, local.position[1] - 200.0f, context + 0x34)) {
+        index = func_151D8E20();
+        local.query[1] = *(f32 *)(context + 0x34);
+        local.scale = func_150ADA68() * 100.0f + 200.0f;
+        local.payload.owner = context;
+        local.payload.enabled = 1;
+        local.payload.base = D_800A047C;
+        local.payload.range = 32768.0f;
+        local.payload.zero = 0.0f;
+        local.payload.zero14 = 0;
+        local.payload.count0 = 10;
+        local.payload.count1 = 10;
+        local.payload.rate = D_800A0480;
+        local.descriptor.flags = 0x20300;
+        local.descriptor.duration = 300;
+        local.descriptor.kind = 0x38;
+        local.descriptor.zero08 = 0;
+        local.descriptor.angle = (s32)(32768.0f * 0.5f + D_800A047C);
+        local.descriptor.opacity = 150;
+        local.descriptor.alpha = 255;
+        actor = D_800AB414 + index * 3;
+        local.descriptor.red = actor[0];
+        local.descriptor.green = actor[1];
+        local.descriptor.blue = actor[2];
+        local.descriptor.alpha2 = 255;
+        local.descriptor.zero16 = 0;
+        local.descriptor.mode = 6;
+        local.descriptor.flags18 = 0x440001;
+        first = (u32)func_150ADA20();
+        second = (u32)func_150ADA20();
+        local.result = func_1513C73C((s32)&local.descriptor, 9, 3, (s32)(context + 0x38),
+            local.query[0], local.query[1], local.query[2], local.scale, local.scale,
+            first & 255, (((u32)func_150ADA20() & 1) << 1) + (second & 1),
+            32, context[0x0C], context[1]);
+        if (local.result != 0) memcpy(local.result + 0xB0, &local.payload, 32);
+    }
+    return (s32)local.result;
 }

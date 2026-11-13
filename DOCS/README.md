@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2348](WORKING_NOTES/2348-game-paired-ground-effect-constructor-match-20261112.md): `func_150C6460` and `func_150C6D90` now match retail. Game **3,738 / 4,842 (77.20%)**, total **4,411 / 5,515 (79.98%)**, zero drift; **136** more Game matches to 80%.
+
 [Note 2347](WORKING_NOTES/2347-game-paired-randomized-constructor-match-20261112.md): `func_150C60D8` and `func_150C6A08` now match retail. Game **3,736 / 4,842 (77.16%)**, total **4,409 / 5,515 (79.95%)**, zero drift; **138** more Game matches to 80%.
 
 [Note 2346](WORKING_NOTES/2346-game-random-constructor-screen-and-factory-abi-20261112.md): corrected `func_151303BC` return ABI; two randomized constructors remain uncredited. Game **3,734 / 4,842 (77.12%)**, total **4,407 / 5,515 (79.91%)**, zero drift; **140** more Game matches to 80%.
