@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2372](WORKING_NOTES/2372-game-camera-condition-private-abi-screen-20261113.md): `func_150BE850` has an uninstalled six-guard camera screen pending the script-helper C ABI. Game remains **3,757 / 4,843 (77.58%)**; **118** more Game matches to 80%.
+
 [Note 2371](WORKING_NOTES/2371-game-actor-extent-callback-direct-match-20261113.md): `func_15149A94` now matches retail directly. Game **3,757 / 4,843 (77.58%)**, total **4,430 / 5,516 (80.31%)**, zero drift; **118** more Game matches to 80%.
 
 [Note 2370](WORKING_NOTES/2370-game-slot-notification-private-screen-20261113.md): `func_15156028` has an uninstalled 88-word callback screen and an indirect-table reference. Game remains **3,756 / 4,843 (77.56%)**; **119** more Game matches to 80%.
