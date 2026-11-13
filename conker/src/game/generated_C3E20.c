@@ -49,7 +49,7 @@ s32 func_15096D78() {
     return 0;
 }
 
-s32 func_1509759C() {
+s32 func_1509759C(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }
 

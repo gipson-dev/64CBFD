@@ -53,10 +53,10 @@ s32 func_1509DDFC(volatile s32 recordId, s32 mode, struct215 *command) {
     }
 }
 
-s32 func_1509DEC4(s32 arg0, s32 arg1, struct215 *arg2) {
+s32 func_1509DEC4(s32 arg0, s32 arg1, s32 *packet) {
     if (arg1 == 0) {
         s32 mask = ~0x2000;
-        return func_15178C9C(arg0 & 0xff, func_15084000(arg2->unk8 & mask));
+        return func_15178C9C(arg0 & 0xff, func_15084000(((struct215 *)packet)->unk8 & mask));
     }
     return 0;
 }

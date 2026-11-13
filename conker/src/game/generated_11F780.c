@@ -11,7 +11,7 @@ s32 func_15123934(u8 *, s32, s32, s32, s32);
 void func_15124B18(u8 *);
 void func_15128774(u8 *, u8 *);
 void func_151239CC(u8 *, s32);
-s32 func_1509BE40(s32, s32, s32, s32);
+s32 func_1509BE40(s32, ...);
 void func_1509BFB0(s32, s32, s32);
 extern u8 *D_800D2E4C;
 

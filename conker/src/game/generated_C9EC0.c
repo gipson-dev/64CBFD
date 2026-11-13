@@ -371,6 +371,6 @@ s32 func_1509D8FC() {
     return 0;
 }
 
-s32 func_1509DBBC() {
+s32 func_1509DBBC(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }

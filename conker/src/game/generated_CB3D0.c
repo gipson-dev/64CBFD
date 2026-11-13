@@ -22,6 +22,6 @@ s32 func_1509DFC4() {
     return 0;
 }
 
-s32 func_1509E3DC() {
+s32 func_1509E3DC(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }

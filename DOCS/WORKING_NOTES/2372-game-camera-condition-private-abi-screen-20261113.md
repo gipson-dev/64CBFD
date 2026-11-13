@@ -1,5 +1,7 @@
 # Game camera condition callback: private helper-ABI screen
 
+Follow-up: the query helper and camera callback are now installed; see [Note 2376](2376-game-query-camera-callback-matches-20261113.md).
+
 Date: 2026-11-13. `func_150BE850` in `generated_EBD00.c` remains a
 zero-return placeholder. This candidate and its guards are **not installed
 or counted**. The retail body occupies VA `0x150BE850..0x150BE9AC`, ROM

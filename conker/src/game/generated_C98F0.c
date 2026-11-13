@@ -15,7 +15,8 @@ s32 func_1509C440() {
 
 extern u8 D_800C35C4,D_800C35EA,D_800C3C98,D_800C35E8,D_800C3672;
 /* Query the selected global status, preserving full-width identity comparisons. */
-s32 func_1509C7C8(u32 identity, u32 selector, u32 *record) {
+s32 func_1509C7C8(s32 rawIdentity, s32 rawSelector, s32 *record) {
+    u32 identity = (u32)rawIdentity, selector = (u32)rawSelector;
     /* Other selectors have no defined C return value, as in retail. */
     switch (selector) {
         case 1:

@@ -2,7 +2,7 @@
 
 /* Non-matching placeholders for the text-only asm slice asm/F4800.s. */
 
-s32 func_1509BE40();
+s32 func_1509BE40(s32, ...);
 
 void func_150C7350(u8 *arg0) {
     *(u32 *)(arg0 + 0x84) |= 0x80004000;

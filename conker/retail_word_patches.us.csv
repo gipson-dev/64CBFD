@@ -30883,3 +30883,46 @@ generated_157840,func_1512ABF8,0xcc,0x50C90004,0x51260004,,,Normalize independen
 generated_157840,func_1512ABF8,0xd4,0x54CA0011,0x55460011,,,Normalize independent setup scheduling and branch operand order,,,false
 generated_20A3A0,func_151DCFD8,0xd4,0x3C070000,0x3C070000,R_MIPS_HI16:D_8002BD10,R_MIPS_HI16:D_8002BD14,Use retail alias for low clock word,,,false
 generated_20A3A0,func_151DCFD8,0xd8,0x8CE70004,0x8CE70000,R_MIPS_LO16:D_8002BD10,R_MIPS_LO16:D_8002BD14,Use retail alias for low clock word,,,false
+game_C8950,func_1509BE40,0x30,0x244f0007,0x24590007,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x34,0x1e43024,0x3243024,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x38,0x8cd80000,0x8ccc0000,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x40,0x8d690000,0x30eaf000,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x44,0x3c010000,0x8d690000,R_MIPS_HI16:D_800D2F60,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x48,0x30ec0fff,0xa7b03,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x4c,0xac2c0000,0x3c010000,R_MIPS_LO16:D_800D2F60,R_MIPS_HI16:D_800D2F60,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x50,0x30eaf000,0x30f80fff,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x54,0xacb03,0x25eaffff,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x58,0x3c010000,0x00000000,R_MIPS_HI16:D_800D2F60,-,Omit duplicate packet-base high relocation,,,true
+game_C8950,func_1509BE40,0x5c,0x24c30004,0x3003825,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x60,0x272affff,0x24c30004,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x64,0x1803825,0xac380000,-,R_MIPS_LO16:D_800D2F60,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x6c,0xafb80028,0xafac0038,-,-,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x74,0xac380004,0xac2c0000,R_MIPS_LO16:D_800D2F60,R_MIPS_LO16:D_800D2F64,Restore retail argument homes and packet scheduling,,,false
+game_C8950,func_1509BE40,0x150,0x8fa50028,0x8fa50038,-,-,Restore retail argument homes and packet scheduling,,,false
+generated_EBD00,func_150BE850,0xf0,0xC4220000,0xC4260000,R_MIPS_LO16:D_800A00B4,R_MIPS_LO16:D_800A00B4,Normalize closed floating-register allocation cycle,,,false
+generated_EBD00,func_150BE850,0xf4,0x44803000,0x44804000,,,Normalize closed floating-register allocation cycle,,,false
+generated_EBD00,func_150BE850,0x104,0xE6020374,0xE6060374,,,Normalize closed floating-register allocation cycle,,,false
+generated_EBD00,func_150BE850,0x10c,0xE6060190,0xE6080190,,,Normalize closed floating-register allocation cycle,,,false
+generated_EBD00,func_150BE850,0x130,0x44804000,0x44805000,,,Normalize closed floating-register allocation cycle,,,false
+generated_EBD00,func_150BE850,0x144,0xE6080674,0xE60A0674,,,Normalize closed floating-register allocation cycle,,,false
+generated_C4DC0,func_15099C14,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C4DC0,func_15099C14,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C4DC0,func_15099C14,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CBDB0,func_1509ED74,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CBDB0,func_1509ED74,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CBDB0,func_1509ED74,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CD860,func_150A04D8,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CD860,func_150A04D8,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CD860,func_150A04D8,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CCD00,func_1509FE0C,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CCD00,func_1509FE0C,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CCD00,func_1509FE0C,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C3E20,func_1509759C,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C3E20,func_1509759C,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C3E20,func_1509759C,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C9EC0,func_1509DBBC,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C9EC0,func_1509DBBC,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C9EC0,func_1509DBBC,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CB3D0,func_1509E3DC,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CB3D0,func_1509E3DC,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_CB3D0,func_1509E3DC,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true

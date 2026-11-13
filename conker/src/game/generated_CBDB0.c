@@ -8,7 +8,7 @@ s32 func_1509E900() {
     return 0;
 }
 
-s32 func_1509ED74() {
+s32 func_1509ED74(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }
 
@@ -44,7 +44,7 @@ s32 func_1509F284(s32 unused, s32 command, u32 *record) {
     return 0;
 }
 
-s32 func_1509F33C(s32 arg0, s32 arg1, s32 arg2) {
+s32 func_1509F33C(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }
 
@@ -170,7 +170,7 @@ s32 func_1509F77C(u32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         arg4);
 }
 
-s32 func_1509F800(s32 arg0, s32 arg1, s32 arg2) {
+s32 func_1509F800(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }
 

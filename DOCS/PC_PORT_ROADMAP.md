@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2376](WORKING_NOTES/2376-game-query-camera-callback-matches-20261113.md): `func_1509BE40` and `func_150BE850` now match with a consistent query callback ABI. Game **3,762 / 4,843 (77.68%)**, total **4,435 / 5,516 (80.40%)**, zero drift; **113** more Game matches to 80%.
+
 [Note 2375](WORKING_NOTES/2375-game-eeprom-write-poller-match-20261113.md): `func_151DCFD8` restores the pending EEPROM write poller with two clock-alias guards. Game **3,760 / 4,843 (77.64%)**, total **4,433 / 5,516 (80.37%)**, zero drift; **115** more Game matches to 80%.
 
 [Note 2374](WORKING_NOTES/2374-game-coordinate-table-initializer-match-20261113.md): `func_1512ABF8` now matches retail with six scheduling and branch-order guards. Game **3,759 / 4,843 (77.62%)**, total **4,432 / 5,516 (80.35%)**, zero drift; **116** more Game matches to 80%.

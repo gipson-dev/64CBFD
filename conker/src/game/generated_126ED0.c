@@ -1,4 +1,5 @@
 #include <ultra64.h>
+s32 func_1509BE40(s32, ...);
 #include "functions.h"
 #include "variables.h"
 

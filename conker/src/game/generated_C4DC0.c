@@ -70,6 +70,6 @@ s32 func_15097A8C() {
     return 0;
 }
 
-s32 func_15099C14() {
+s32 func_15099C14(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }

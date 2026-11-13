@@ -1,7 +1,7 @@
 #include <ultra64.h>
 
 void func_1509BFB0(s32, s32, s32, ...);
-s32 func_1509BE40(s32, s32, s32, s32);
+s32 func_1509BE40(s32, ...);
 s32 func_15123934(u8 *, s32, s32, s32, s32);
 s32 func_151239CC(u8 *, s32);
 void func_15124B18(u8 *);

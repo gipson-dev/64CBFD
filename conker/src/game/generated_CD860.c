@@ -35,6 +35,6 @@ s32 func_150A03B0(u32 identity, u32 command, u32 *record) {
     return 0;
 }
 
-s32 func_150A04D8() {
+s32 func_150A04D8(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }

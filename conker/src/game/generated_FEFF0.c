@@ -5,7 +5,7 @@
 extern f32 D_800A08E0;
 extern u8 D_800DCD20[];
 
-s32 func_1509BE40();
+s32 func_1509BE40(s32, ...);
 void func_151467A4(f32 *, f32, f32 *, f32, f32, f32, f32, f32 *);
 void func_1515D4D4(s32, s32, s32, s32);
 

@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include <stdarg.h>
 #include "functions.h"
 #include "variables.h"
 
@@ -26,7 +27,7 @@ void func_1509B810(ScriptNodeC8950 *node);
 struct248 *func_1509B950(struct248 *block);
 s32 func_1509BA04();
 s32 func_1509BBA0();
-s32 func_1509BE40();
+s32 func_1509BE40(s32, ...);
 /* End generated placeholder declarations. */
 
 struct249 *func_1509B704(s16 arg0);
@@ -213,9 +214,29 @@ s32 func_1509BBA0() {
 }
 
 //
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509BE40.s. */
-s32 func_1509BE40() {
-    return 0;
+/* Build the variable-argument script query and dispatch its selected provider. */
+extern s32 D_800D3840;
+extern s32 D_800D2F60[];
+extern s32 (*D_80088498[])(s32, s32, s32 *);
+s32 func_1509BE40(s32 count, ...) {
+    va_list args;
+    s32 key, selector, type, previous, result, i;
+    register s32 flags;
+    va_start(args, count);
+    flags = va_arg(args, s32);
+    key = va_arg(args, s32);
+    previous = D_800D3840;
+    type = ((flags & 0xf000) >> 12) - 1;
+    flags &= 0xfff;
+    selector = flags;
+    D_800D2F60[0] = selector;
+    D_800D2F60[1] = key;
+    for (i = 0; i < count; i++) D_800D2F60[i + 2] = va_arg(args, s32);
+    D_800D3840 = count + 2;
+    result = D_80088498[type](selector, key, D_800D2F60);
+    D_800D3840 = previous;
+    va_end(args);
+    return result;
 }
 
 /* Retail variable-argument script dispatcher, also used by Race respawn. */
