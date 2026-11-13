@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2366](WORKING_NOTES/2366-game-camera-state-private-screen-20261113.md): `func_15125924` has a two-word private screen; a camera/stack overlap discrepancy prevents promotion. Game remains **3,754 / 4,843 (77.51%)**, with **121** more Game matches to 80%.
+
 [Note 2365](WORKING_NOTES/2365-game-effect-descriptor-direct-match-20261113.md): `func_150B9D8C` now matches retail directly. Game **3,754 / 4,843 (77.51%)**, total **4,427 / 5,516 (80.26%)**, zero drift; **121** more Game matches to 80%.
 
 [Note 2364](WORKING_NOTES/2364-game-randomized-impact-callback-direct-match-20261113.md): `func_151AC408` now matches retail directly. Game **3,753 / 4,843 (77.49%)**, total **4,426 / 5,516 (80.24%)**, zero drift; **122** more Game matches to 80%.
