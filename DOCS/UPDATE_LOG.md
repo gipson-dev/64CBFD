@@ -1,5 +1,9 @@
 # Update Log
 
+[Note 2361](WORKING_NOTES/2361-game-contact-effect-update-match-20261113.md): `func_1516A3F4` now matches retail. Game **3,750 / 4,843 (77.43%)**, total **4,423 / 5,516 (80.18%)**, zero drift; **125** more Game matches to 80%.
+
+[Note 2360](WORKING_NOTES/2360-game-contact-effect-private-screen-20261113.md): `func_1516A3F4` has an 81-word guarded private screen; two original callback windows were identified; see Note 2361 for the production match. Game remains **3,749 / 4,843 (77.41%)**, with **126** more matches to 80%.
+
 [Note 2359](WORKING_NOTES/2359-game-display-state-reset-transition-match-20261113.md): `func_15178EB0` and `func_15178EFC` now match retail; an existing hidden function boundary was corrected. Game **3,749 / 4,843 (77.41%)**, total **4,422 / 5,516 (80.17%)**, zero drift; **126** more Game matches to 80%.
 
 [Note 2358](WORKING_NOTES/2358-game-camera-heading-update-match-20261113.md): `func_15122980` now matches retail. Game **3,747 / 4,842 (77.39%)**, total **4,420 / 5,515 (80.15%)**, zero drift; **127** more Game matches to 80%.
