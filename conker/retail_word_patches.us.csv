@@ -30769,3 +30769,22 @@ generated_76A60,func_15049688,0x118,0xC4880000,0x10000004,-,-,Normalize angular 
 generated_76A60,func_15049688,0x11c,0x46123282,0xE4860000,-,-,Normalize angular smoother compiler scheduling,,,false
 generated_76A60,func_15049688,0x120,0x460A4100,0x44804000,-,-,Normalize angular smoother compiler scheduling,,,false
 generated_76A60,func_15049688,0x124,0xE4840000,0xE48A0000,-,-,Normalize angular smoother compiler scheduling,0xE4C80000,-,false
+game_981E0,func_15072F10,0x28,0x27AD0048,0x3C0544FA,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x4c,0x27AE0044,0x27AF0044,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x60,0x3C0544FA,0x27AE0048,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x6c,0x8E02031C,0x8E0B031C,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x74,0x844B0012,0x856C0012,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x78,0xAFAE0014,0xAFAF0014,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x7c,0xAFAD0010,0xAFAE0010,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x80,0x014B2023,0x014C2023,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x84,0x308CFFFF,0x308DFFFF,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x90,0x01802025,0x01A02025,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0xb4,0x3C180000,0x3C190000,R_MIPS_HI16:D_800C3E78,R_MIPS_HI16:D_800C3E78,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0xbc,0x93180000,0x93390000,R_MIPS_LO16:D_800C3E78,R_MIPS_LO16:D_800C3E78,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0xc0,0x24190012,0x24090012,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0xec,0x848F00D6,0x849800D6,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0xf8,0x448F4000,0x44984000,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x100,0xAFB90020,0xAFA90020,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x114,0xAFB8001C,0xAFB9001C,-,-,Normalize projected actor callback compiler scheduling,,,false
+game_981E0,func_15072F10,0x134,0x03E00008,0x03E00008,-,-,Restore independently addressed no-op callback,0x00000000,-,false
+game_981E0,func_15072F10,0x138,0x00000000,0x03E00008,-,-,Restore independently addressed no-op callback,0x00000000,-,false

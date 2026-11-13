@@ -1789,10 +1789,31 @@ void func_15072EC0(void) {
 void func_15072EF4(void) {
     D_800D154C->stunned = (s8) D_800D1580;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_15072F10.s. */
-s32 func_15072F10() {
-    return 0;
+extern f32 D_8009A094;
+s32 func_150E1570(struct127 *, f32, f32, f32, f32, f32, f32, s32, s32);
+/* Advance the timer and submit a projected position. The independently
+ * addressed no-op callback at 0x1507304C follows the return in retail. */
+s32 func_15072F10(void) {
+    f32 x, z, y;
+    s32 pitch;
+    struct127 *actor;
+    u8 *state;
+    actor = D_800D154C;
+    pitch = (s16)(actor->unk1D1 * 200);
+    state = (u8 *)actor->unk31C;
+    *(s16 *)(state + 0x24) = *(s16 *)(state + 0x24) - 1;
+    actor = D_800D154C;
+    state = (u8 *)actor->unk31C;
+    func_1505A184((u16)(actor->unk7A - *(s16 *)(state + 0x12)), 2000.0f,
+                  (f32)pitch * 0.0054931640625f, &x, &z, &y);
+    actor = D_800D154C;
+    x = x * D_8009A094 + actor->x_position;
+    z = z * D_8009A094 + actor->z_position;
+    y = y * D_8009A094 + actor->y_position;
+    return func_150E1570(actor, actor->x_position, actor->y_position + (f32)actor->unkD6,
+                         actor->z_position, x, y, z, D_800C3E78, 18);
 }
+
 void func_15073054(void) {
     D_800D154C->unk22E = (s16) D_800D1580;
 }
