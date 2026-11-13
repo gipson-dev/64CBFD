@@ -34,14 +34,38 @@ s32 func_151AC3CC(u8 *arg0) {
     return 1;
 }
 
-s32 func_151AC408() {
-    return 0;
+typedef struct { f32 x, y, z, velocityY, other; } ImpactMotionRecord;
+u8 func_151D8E20(void);
+s32 func_150ADA20(void);
+void func_151D9B8C(u8, f32, u8, s16 *, f32 *, s16, u8, u8, u8, u8, s32);
+void func_151DAB58(u8, f32, u8, f32 *, u8, u8, u8);
+
+/* Submit one of two impact effects and mark the captured payload handled. */
+s32 func_151AC408(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,
+                  f32 height, void *result) {
+    u8 *payload = *(u8 **)(actor + 0x98);
+    ImpactMotionRecord *records = *(ImpactMotionRecord **)(actor + 0x94);
+    f32 position[3];
+    u8 selector;
+    position[0] = records[*(s8 *)(actor + 0x2D)].x;
+    position[1] = height;
+    position[2] = records[*(s8 *)(actor + 0x2D)].z;
+    selector = func_151D8E20();
+    if (func_150ADA20() & 1) {
+        func_151D9B8C(selector, *(f32 *)payload * 6.0f, payload[0x1B],
+                      (s16 *)result, position, (u32)func_150ADA20() % 41u + 80,
+                      1, 1, 0, actor[0xC], actor[1]);
+    } else {
+        func_151DAB58(selector, *(f32 *)payload * 1.5f, payload[0x1B],
+                      position, 1, actor[0xC], actor[1]);
+    }
+    payload[0x20] = 4;
+    return 1;
 }
 
 u8 func_151D8E20(void);
 void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
 
-typedef struct { f32 x, y, z, velocityY, other; } ImpactMotionRecord;
 
 /* Submit the impact effect, then mark the captured payload as handled. */
 s32 func_151AC550(u8 *actor, f32 previousX, f32 previousY, f32 previousZ,

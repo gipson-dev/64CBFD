@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2364](WORKING_NOTES/2364-game-randomized-impact-callback-direct-match-20261113.md): `func_151AC408` now matches retail directly. Game **3,753 / 4,843 (77.49%)**, total **4,426 / 5,516 (80.24%)**, zero drift; **122** more Game matches to 80%.
+
 [Note 2363](WORKING_NOTES/2363-game-fixed-effect-packet-direct-match-20261113.md): `func_150AFC68` now matches retail directly. Game **3,752 / 4,843 (77.47%)**, total **4,425 / 5,516 (80.22%)**, zero drift; **123** more Game matches to 80%.
 
 [Note 2362](WORKING_NOTES/2362-game-two-layer-fade-graphics-match-20261113.md): `func_151ED09C` now matches retail; its drawing helper remains a placeholder. Game **3,751 / 4,843 (77.45%)**, total **4,424 / 5,516 (80.20%)**, zero drift; **124** more Game matches to 80%.
