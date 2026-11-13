@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2389](WORKING_NOTES/2389-game-line-camera-consumer-stack-screen-20261113.md): `func_1512DEA4` remains private; retail out-of-range kinds depend on incoming stack words, and the screened C shapes do not preserve that behavior. Game remains **3,774 / 4,843 (77.93%)**, with **101** more matches to 80%.
+
 [Note 2388](WORKING_NOTES/2388-game-inline-line-record-initializer-match-20261113.md): `func_1512DD50` now matches the inline line-record initializer. Game **3,774 / 4,843 (77.93%)**, total **4,447 / 5,516 (80.62%)**, zero drift; **101** more Game matches to 80%.
 
 [Note 2387](WORKING_NOTES/2387-game-scene-callback-initializer-match-20261113.md): `func_15010880` now matches the scene callback initializer. Game **3,773 / 4,843 (77.91%)**, total **4,446 / 5,516 (80.60%)**, zero drift; **102** more Game matches to 80%.
