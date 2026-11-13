@@ -60,8 +60,8 @@ void *func_15130374(void *arg0, u8 arg1, s32 arg2, u8 arg3, s32 arg4) {
     return func_15130280(arg0, arg1, 0, arg2, arg3, arg4);
 }
 
-void func_151303BC(void *arg0, u8 arg1, s32 arg2) {
-    func_15130374(arg0, arg1, arg2, 0xFF, 0);
+void *func_151303BC(void *arg0, u8 arg1, s32 arg2) {
+    return func_15130374(arg0, arg1, arg2, 0xFF, 0);
 }
 
 s32 func_151303EC() {
