@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2387](WORKING_NOTES/2387-game-scene-callback-initializer-match-20261113.md): `func_15010880` now matches the scene callback initializer. Game **3,773 / 4,843 (77.91%)**, total **4,446 / 5,516 (80.60%)**, zero drift; **102** more Game matches to 80%.
+
 [Note 2385](WORKING_NOTES/2385-game-controller-pak-read-write-matches-20261113.md): four Game controller-pak read/write and packet routines now match. Game **3,772 / 4,843 (77.89%)**, total **4,445 / 5,516 (80.58%)**, zero drift; **103** more Game matches to 80%.
 
 [Note 2384](WORKING_NOTES/2384-game-view-scaling-configuration-match-20261113.md): `func_1500E738` now matches view-scaling configuration. Game **3,768 / 4,843 (77.80%)**, total **4,441 / 5,516 (80.51%)**, zero drift; **107** more Game matches to 80%.

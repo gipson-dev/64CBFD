@@ -31030,3 +31030,14 @@ generated_1A8060,func_1517ABB0,0x110,0x26F70001,0x26D60001,,,Normalize closed ca
 generated_1A8060,func_1517ABB0,0x118,0x16E1FFCB,0x16C1FFCB,,,Normalize closed cache expiry register allocation and initialization schedule,,,false
 game_3BA70,func_1500E738,0xA4,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800961D0_game,Bind generated view-scale jump table to verified retail table,,,false
 game_3BA70,func_1500E738,0xAC,0x8C390000,0x8C390000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800961D0_game,Bind generated view-scale jump table to verified retail table,,,false
+game_3DC30,func_15010880,0x84,0x3C020000,0x3C0E0000,R_MIPS_HI16:D_800D3098,R_MIPS_HI16:func_150DE32C,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x88,0x8C420000,0x25CE0000,R_MIPS_LO16:D_800D3098,R_MIPS_LO16:func_150DE32C,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x8C,0x3C0E0000,0x3C010000,R_MIPS_HI16:func_150DE32C,R_MIPS_HI16:D_800E0934,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x90,0x25CE0000,0xAC2E0000,R_MIPS_LO16:func_150DE32C,R_MIPS_LO16:D_800E0934,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x94,0x3C010000,0x3C020000,R_MIPS_HI16:D_800E0934,R_MIPS_HI16:D_800D3098,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x98,0x2419000C,0x8C420000,-,R_MIPS_LO16:D_800D3098,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0x9C,0x240800FF,0x2419000C,-,-,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0xA0,0x24090001,0x240800FF,-,-,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0xA4,0x244F0EA0,0x24090001,-,-,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0xA8,0x24580ED4,0x244F0EA0,-,-,Restore independent callback store and resource-base load schedule,,,false
+game_3DC30,func_15010880,0xAC,0xAC2E0000,0x24580ED4,R_MIPS_LO16:D_800E0934,-,Restore independent callback store and resource-base load schedule,,,false
