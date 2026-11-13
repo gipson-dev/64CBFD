@@ -14,8 +14,30 @@ s32 func_1512A390() {
     return 0;
 }
 
-s32 func_1512ABF8() {
-    return 0;
+typedef struct { s16 x, y, width, height; } CoordinatePreset1512ABF8;
+extern CoordinatePreset1512ABF8 D_80089590[4], D_800DC200[4][4];
+extern u8 D_800DC0C0[];
+extern s32 D_80082FA0, D_800BE9F0;
+
+/* Copy and scale the four coordinate presets for each output group. */
+void func_1512ABF8(void) {
+    s32 players = D_80082FA0;
+    s32 mode = D_800BE9F0;
+    u8 group, index;
+    for (group = 0; group < 4; group++) {
+        for (index = 0; index < 4; index++) {
+            D_800DC200[group][index] = D_80089590[index];
+            if (players > 0 && players < 4) {
+                D_800DC200[group][index].x = D_800DC200[group][index].x * 0.5f;
+                D_800DC200[group][index].y = D_800DC200[group][index].y * 0.5f;
+            }
+            if (mode == 27 || mode == 30) {
+                D_800DC200[group][index].x = D_800DC200[group][index].x * 0.75f;
+                D_800DC200[group][index].y = D_800DC200[group][index].y * 0.75f;
+            }
+        }
+    }
+    bzero(D_800DC0C0, 0x130);
 }
 
 s32 func_1512AD54() {

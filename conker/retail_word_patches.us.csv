@@ -30875,3 +30875,9 @@ generated_215960,func_151ED430,0x000,0xAFA40000,0xAFA40000,-,-,Preserve existing
 generated_215960,func_151ED430,0x004,0xAFA50004,0xAFA50004,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
 generated_215960,func_151ED430,0x008,0xAFA60008,0xAFA60008,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
 generated_215960,func_151ED430,0x00C,0xAFA7000C,0xAFA7000C,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
+generated_157840,func_1512ABF8,0x24,0x8CA50000,0x25080000,R_MIPS_LO16:D_80082FA0,R_MIPS_LO16:D_80089590,Normalize independent setup scheduling and branch operand order,,,false
+generated_157840,func_1512ABF8,0x2c,0x25080000,0x8CA50000,R_MIPS_LO16:D_80089590,R_MIPS_LO16:D_80082FA0,Normalize independent setup scheduling and branch operand order,,,false
+generated_157840,func_1512ABF8,0x48,0x01CF3821,0x00002025,,,Normalize independent setup scheduling and branch operand order,,,false
+generated_157840,func_1512ABF8,0x4c,0x00002025,0x01CF3821,,,Normalize independent setup scheduling and branch operand order,,,false
+generated_157840,func_1512ABF8,0xcc,0x50C90004,0x51260004,,,Normalize independent setup scheduling and branch operand order,,,false
+generated_157840,func_1512ABF8,0xd4,0x54CA0011,0x55460011,,,Normalize independent setup scheduling and branch operand order,,,false

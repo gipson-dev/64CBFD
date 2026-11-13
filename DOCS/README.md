@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2374](WORKING_NOTES/2374-game-coordinate-table-initializer-match-20261113.md): `func_1512ABF8` now matches retail with six scheduling and branch-order guards. Game **3,759 / 4,843 (77.62%)**, total **4,432 / 5,516 (80.35%)**, zero drift; **116** more Game matches to 80%.
+
 [Note 2373](WORKING_NOTES/2373-game-two-vector-effect-provider-direct-match-20261113.md): `func_15160CDC` now matches retail directly, with its caller interface corrected. Game **3,758 / 4,843 (77.60%)**, total **4,431 / 5,516 (80.33%)**, zero drift; **117** more Game matches to 80%.
 
 [Note 2372](WORKING_NOTES/2372-game-camera-condition-private-abi-screen-20261113.md): `func_150BE850` has an uninstalled six-guard camera screen pending the script-helper C ABI. Game remains **3,757 / 4,843 (77.58%)**; **118** more Game matches to 80%.
