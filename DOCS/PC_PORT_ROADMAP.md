@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2373](WORKING_NOTES/2373-game-two-vector-effect-provider-direct-match-20261113.md): `func_15160CDC` now matches retail directly, with its caller interface corrected. Game **3,758 / 4,843 (77.60%)**, total **4,431 / 5,516 (80.33%)**, zero drift; **117** more Game matches to 80%.
+
 [Note 2372](WORKING_NOTES/2372-game-camera-condition-private-abi-screen-20261113.md): `func_150BE850` has an uninstalled six-guard camera screen pending the script-helper C ABI. Game remains **3,757 / 4,843 (77.58%)**; **118** more Game matches to 80%.
 
 [Note 2371](WORKING_NOTES/2371-game-actor-extent-callback-direct-match-20261113.md): `func_15149A94` now matches retail directly. Game **3,757 / 4,843 (77.58%)**, total **4,430 / 5,516 (80.31%)**, zero drift; **118** more Game matches to 80%.

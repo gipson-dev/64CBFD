@@ -1,5 +1,7 @@
 # Two-vector effect callback - direct C match
 
+**Follow-up:** [Note 2373](2373-game-two-vector-effect-provider-direct-match-20261113.md) restores the provider; references to its placeholder below describe this earlier checkpoint.
+
 Verified 2026-10-28. Restore func_1514F308 in generated_179F30:
 VA 0x1514F308..0x1514F3CC, ROM 0x17C7B8..0x17C87C, 49 words / 196 bytes.
 The normal O2/g3 profile emits every original instruction directly, with a

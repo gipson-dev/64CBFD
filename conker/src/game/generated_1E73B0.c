@@ -7,10 +7,11 @@ extern s32 D_800BE9E4;
 extern f32 D_800AA860;
 extern f32 D_800AA864;
 extern f32 D_800AA82C;
-extern s32 D_800AA760;
-extern s32 D_800AA76C;
+typedef struct { f32 x, y, z; } GameEffectVector15160CDC;
+extern GameEffectVector15160CDC D_800AA760, D_800AA76C;
 
-s32 func_15160CDC(s32 arg0, s32 arg1, s32 *arg2, s32 *arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, s32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15);
+void *func_15160CDC(u8 *, u8, GameEffectVector15160CDC *, GameEffectVector15160CDC *, f32,
+                    u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
 void func_1516972C(struct102 *arg0);
 
 s32 func_151B9F00() {
@@ -84,7 +85,7 @@ s32 func_151BB61C() {
 
 s32 func_151BC074(s32 arg0) {
     if (arg0 != 0) {
-        return func_15160CDC(arg0, 1, &D_800AA760, &D_800AA76C, D_800AA82C, 2, 0x12C, 0xFF, 0xFF, 0xFF, 0xFF, 1, 0, 0, 0xFF, 1);
+        return (s32)func_15160CDC((u8 *)arg0, 1, &D_800AA760, &D_800AA76C, D_800AA82C, 2, 0x12C, 0xFF, 0xFF, 0xFF, 0xFF, 1, 0, 0, 0xFF, 1);
     }
 }
 

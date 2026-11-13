@@ -1,5 +1,7 @@
 # Owner Effect Spawner Direct C Match - 2026-11-08
 
+**Follow-up:** [Note 2373](2373-game-two-vector-effect-provider-direct-match-20261113.md) restores the provider; references to its placeholder below describe this earlier checkpoint.
+
 `func_1514DE94` replaces a false zero-return placeholder with the complete
 owner effect-spawn sequence. All **79 words / 316 bytes** and the original
 **0x48-byte frame** emit directly from semantic C under the existing O2/g3

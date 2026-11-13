@@ -63,7 +63,7 @@ s32 func_151604A0();
 s32 func_151606A8(struct225 *arg0);
 struct225 *func_15160A58(u8 *, u8, void *, u8, s16, s32, s32, s32, s32, s32, s32, s8, s32, u8, u8, s32);
 s32 func_15160B74();
-s32 func_15160CDC();
+
 s32 func_15160E30();
 void func_151618BC(u16, s16, u8, s32, struct17 *, s16, s16);
 s32 func_151621B8();
@@ -299,10 +299,47 @@ struct225 *func_15160A58(u8 *owner, u8 kind, void *vector, u8 headerId,
 // ??
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160B74.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_18D770/func_15160B74.s")
-// another struct definition
-/* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160CDC.s. */
-s32 func_15160CDC() {
-    return 0;
+/* Payload layout for the two-vector effect provider. */
+/* Retail reference: asm/nonmatchings/game_18D770/func_15160CDC.s. */
+typedef struct { f32 x, y, z; } GameEffectVector15160CDC;
+typedef struct {
+    u8 *owner;
+    u8 identity, kind;
+    u8 pad06[2];
+    GameEffectVector15160CDC first, second;
+    f32 scale;
+    u8 flags, tag;
+    u8 pad26[2];
+} TwoVectorPayload15160CDC;
+
+/* Construct a two-vector payload and append it to the allocated effect. */
+void *func_15160CDC(u8 *owner, u8 kind, GameEffectVector15160CDC *firstVector,
+                   GameEffectVector15160CDC *secondVector, f32 scale, u8 headerId,
+                   s16 lifetime, s32 first, s32 second, s32 third, s32 fourth,
+                   u8 flag0, u8 tag, u8 flag1, u8 priority, s32 userData) {
+    struct225 *result;
+    Header header;
+    TwoVectorPayload15160CDC payload;
+    Header2 zero;
+    if (owner == 0) return 0;
+    header.unk0 = headerId;
+    header.unk1 = 6;
+    header.unk2 = lifetime;
+    header.unk4 = 0x11;
+    payload.owner = owner;
+    payload.identity = owner[0x3B];
+    payload.kind = kind;
+    payload.first = *firstVector;
+    payload.second = *secondVector;
+    payload.scale = scale;
+    payload.flags = (flag0 ? 1 : 0) | (flag1 ? 2 : 0);
+    payload.tag = tag;
+    zero.unk0 = 0;
+    zero.unk4 = 0;
+    zero.unk8 = 0;
+    result = func_151602C0(&header, &zero, first, second, third, fourth, 255, 0, sizeof(payload), priority, userData);
+    if (result != 0) memcpy((u8 *)result + 0x18, &payload, sizeof(payload));
+    return result;
 }
 // similar to func_15160B74
 /* Non-matching C placeholders for asm/nonmatchings/game_18D770/func_15160E30.s. */
