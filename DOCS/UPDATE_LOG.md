@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2337](WORKING_NOTES/2337-game-effect-intensity-callback-byte-match-20261112.md): `func_151C7038` matches all 87 retail words with 21 checked guards. Game **3,726 / 4,840 (76.98%)**, total **4,399 / 5,513 (79.79%)**, zero drift; **146** more Game matches to 80%.
+
 [Note 2336](WORKING_NOTES/2336-game-sequence-interpolation-layout-screen-20261112.md): interpolation screen improved to 93 ordered-equal words; still unqualified. Game remains **3,725 / 4,840 (76.96%)**, with **147** matches to 80%.
 
 [Note 2335](WORKING_NOTES/2335-game-open-sequence-candidate-screens-20261112.md): two private sequence candidates remain unqualified; no match credit. Game remains **3,725 / 4,840 (76.96%)**, total **4,398 / 5,513 (79.78%)**, zero drift; **147** more Game matches to 80%.

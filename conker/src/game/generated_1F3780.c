@@ -28,6 +28,41 @@ s32 func_151C6EA0() {
     return 0;
 }
 
-s32 func_151C7038() {
-    return 0;
+typedef struct {
+    u8 pad00[0x4C];
+    f32 scale;
+    u8 pad50[0x34];
+    u16 kind;
+} Effect151C7038;
+typedef struct {
+    u8 pad00[0x60];
+    u32 flags;
+    u8 pad64[0x0C];
+    u8 intensity;
+    u8 pad71[0x0B];
+    Effect151C7038 *effect;
+} Owner151C7038;
+s32 func_15142A5C(s32 *effect);
+
+/* Update effect status and scaled intensity for effect type 0xE9. */
+s32 func_151C7038(Owner151C7038 *owner) {
+    Effect151C7038 *effect = owner->effect;
+    f32 intensity;
+
+    if (effect->kind != 0xE9) {
+        return 0;
+    }
+    if (func_15142A5C((s32 *)effect) != 0) {
+        owner->flags |= 0x20000;
+    } else {
+        owner->flags &= ~0x20000;
+    }
+    intensity = effect->scale * 35.0f;
+    if (intensity > 255.0f) {
+        intensity = 255.0f;
+    } else if (intensity < 0.0f) {
+        intensity = 0.0f;
+    }
+    owner->intensity = (u32)intensity;
+    return 1;
 }

@@ -30246,3 +30246,24 @@ game_A28B0,func_150793D8,0xa0,0x87A3002A,0x87A30024,-,-,Normalize closed local c
 game_A28B0,func_150793D8,0xa4,0x87A80028,0x87A80022,-,-,Normalize closed local coordinate stack slots,,,false
 generated_49D30,func_1501DF04,0xf4,0x24420000,0x24630000,R_MIPS_LO16:D_800CC2D0,R_MIPS_LO16:D_800D121C,Normalize independent actor range address setup order,,,false
 generated_49D30,func_1501DF04,0xf8,0x24630000,0x24420000,R_MIPS_LO16:D_800D121C,R_MIPS_LO16:D_800CC2D0,Normalize independent actor range address setup order,,,false
+generated_1F3780,func_151C7038,0x24,0x10000047,0x10000049,-,-,Normalize effect intensity branch displacement,,,false
+generated_1F3780,func_151C7038,0x6C,0x3C01437F,0x3C01420C,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x70,0x44811000,0x44813000,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x74,0x3C01420C,0xC4C4004C,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x78,0x44813000,0x3C01437F,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x7C,0xC4C4004C,0x44814000,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,0x46062002,-,false
+generated_1F3780,func_151C7038,0x80,0x3C014F00,0x3C01437F,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x88,0x46062002,0x24020001,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x8C,0x4600103C,0x4600403C,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x94,0x45020004,0x45020005,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0x9C,0x10000008,0x44810000,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,0x10000009,-,false
+generated_1F3780,func_151C7038,0xA0,0x46001006,0x4449F800,-,-,Normalize effect intensity clamp evaluation and two inserted independent words,,,false
+generated_1F3780,func_151C7038,0xC8,0x00000000,0x3C014F00,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0xCC,0x46000224,0x460002A4,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0xE0,0x440A4000,0x440A5000,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0xE4,0x44814000,0x44815000,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0xEC,0x46080201,0x460A0281,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0xF8,0x46004224,0x460052A4,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0x110,0x440A4000,0x440A5000,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0x128,0x440A4000,0x440A5000,-,-,Normalize effect intensity floating conversion register roles and constant schedule,,,false
+generated_1F3780,func_151C7038,0x140,0x24020001,0x00000000,-,-,Normalize effect intensity return schedule,,,false
