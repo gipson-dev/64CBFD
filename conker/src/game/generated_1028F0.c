@@ -176,8 +176,40 @@ void func_150D6E60(u8 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-s32 func_150D6F0C() {
-    return 0;
+extern f32 D_800BE9A4;
+f32 sqrtf(f32);
+typedef struct {
+    u8 *target;
+    u8 identity;
+    u8 pad05[3];
+    f32 elapsed;
+    f32 limit;
+    f32 scale;
+    f32 alpha;
+    f32 decay;
+} Motion150D6F0C;
+
+/* Update the linked owner's position, scale, alpha and elapsed time. */
+s32 func_150D6F0C(u8 *owner, void *context) {
+    Motion150D6F0C *link = (Motion150D6F0C *)(owner + 0xA8);
+    u8 *target = link->target;
+    f32 size;
+    f32 time;
+
+    if (*(s32 *)target == 0 || link->identity != target[0x3B]) {
+        return 0;
+    }
+    func_150D6C98((f32 *)target, (f32 *)(owner + 0x40));
+    size = sqrtf(link->elapsed) * link->scale;
+    *(f32 *)(owner + 0x3C) = size;
+    *(f32 *)(owner + 0x38) = size;
+    time = link->elapsed;
+    owner[0x2B] = (u32)(link->alpha - (link->decay * time * time));
+    link->elapsed += D_800BE9A4;
+    if (link->limit < link->elapsed) {
+        return 0;
+    }
+    return 1;
 }
 
 /* Retarget the embedded owner reference, or release the owner for a matching event. */
