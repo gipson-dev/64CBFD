@@ -6,12 +6,54 @@ extern u8 *D_800DBFF0;
 extern s16 D_800DD436;
 extern u8 **D_800DD440;
 
-s32 func_15178EB0() {
-    return 0;
+extern u8 D_800DD432, D_800DD433, D_800DD434;
+extern s8 D_800DD446;
+extern s16 D_800DD444;
+extern u16 D_800DD430;
+void func_1516972C(void *);
+void func_10004074(void *);
+void func_100111C8(u16);
+
+/* Reset the display state and its default timers. */
+void func_15178EB0(void) {
+    D_800DD434 = 0;
+    D_800DD446 = 0;
+    D_800DD444 = 600;
+    D_800DD432 = 240;
+    D_800DD433 = 20;
+    D_800DD436 = 0;
+    D_800DD440 = 0;
 }
 
-s32 func_15178EFC() {
-    return 0;
+/* Transition the display state, disposing all slots on state 2. */
+void func_15178EFC(s32 state) {
+    s32 i;
+    if (state == 2) {
+        D_800DD434 = 0;
+        D_800DD446 = 0;
+        if (D_800DD440 != NULL) {
+            for (i = 0; i < 300; i++) {
+                if (D_800DD440[i] != NULL) {
+                    func_1516972C(D_800DD440[i]);
+                    D_800DD440[i] = NULL;
+                }
+            }
+            func_10004074(D_800DD440);
+            D_800DD440 = NULL;
+        }
+        func_100111C8(D_800DD430);
+        D_800DD444 = 0;
+        D_800DD436 = 0;
+    } else if (state == 3) {
+        if (D_800DD446 == 0) {
+            D_800DD444 = 600;
+        } else if (D_800DD446 == 3) {
+            D_800DD446 = 1;
+        }
+        D_800DD434 = state;
+    } else {
+        D_800DD434 = state;
+    }
 }
 
 s32 func_15179008() {

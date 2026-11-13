@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2359](WORKING_NOTES/2359-game-display-state-reset-transition-match-20261113.md): `func_15178EB0` and `func_15178EFC` now match retail; an existing hidden function boundary was corrected. Game **3,749 / 4,843 (77.41%)**, total **4,422 / 5,516 (80.17%)**, zero drift; **126** more Game matches to 80%.
+
 [Note 2358](WORKING_NOTES/2358-game-camera-heading-update-match-20261113.md): `func_15122980` now matches retail. Game **3,747 / 4,842 (77.39%)**, total **4,420 / 5,515 (80.15%)**, zero drift; **127** more Game matches to 80%.
 
 [Note 2357](WORKING_NOTES/2357-game-draw-list-traversal-direct-match-20261113.md): `func_15188D00` now matches retail directly. Game **3,746 / 4,842 (77.36%)**, total **4,419 / 5,515 (80.13%)**, zero drift; **128** more Game matches to 80%.
