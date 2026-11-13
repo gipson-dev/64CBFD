@@ -30826,3 +30826,15 @@ generated_1B7EC0,func_1518ABD0,0xfc,0x8CA90018,0x8CAE0018,-,-,Normalize queue ap
 generated_1B7EC0,func_1518ABD0,0x100,0xACE90014,0xACEE0014,-,-,Normalize queue append compiler register allocation,,,false
 generated_1B7EC0,func_1518ABD0,0x10c,0x00025080,0x00027880,-,-,Normalize queue append compiler register allocation,,,false
 generated_1B7EC0,func_1518ABD0,0x110,0x032AC821,0x032FC821,-,-,Normalize queue append compiler register allocation,,,false
+generated_14F8F0,func_15122980,0x000,0x27BDFFA8,0x27BDFFB0,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x024,0x27A6004C,0x27A60044,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x02C,0xAFA4002C,0xAFA40028,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x030,0x8FA4002C,0x8FA40028,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x03C,0x27A60040,0x27A60038,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x044,0x27A4004C,0x27A40044,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x048,0xE7A0003C,0xE7A00034,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x050,0x27A40040,0x27A40038,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x0F0,0xE7AE0038,0xE7AE0030,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x0FC,0xC7AE0038,0xC7AE0030,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x104,0xC7AC003C,0xC7AC0034,-,-,Normalize camera heading stack frame and local offsets,,,false
+generated_14F8F0,func_15122980,0x150,0x27BD0058,0x27BD0050,-,-,Normalize camera heading stack frame and local offsets,,,false

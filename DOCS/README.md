@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2358](WORKING_NOTES/2358-game-camera-heading-update-match-20261113.md): `func_15122980` now matches retail. Game **3,747 / 4,842 (77.39%)**, total **4,420 / 5,515 (80.15%)**, zero drift; **127** more Game matches to 80%.
+
 [Note 2357](WORKING_NOTES/2357-game-draw-list-traversal-direct-match-20261113.md): `func_15188D00` now matches retail directly. Game **3,746 / 4,842 (77.36%)**, total **4,419 / 5,515 (80.13%)**, zero drift; **128** more Game matches to 80%.
 
 [Note 2356](WORKING_NOTES/2356-game-scene-fade-update-direct-match-20261113.md): `func_151E4EE8` now matches retail directly. Game **3,745 / 4,842 (77.34%)**, total **4,418 / 5,515 (80.11%)**, zero drift; **129** more Game matches to 80%.
