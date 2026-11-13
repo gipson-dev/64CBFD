@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2386](WORKING_NOTES/2386-game-unique-asset-load-lifetime-screen-20261113.md): `func_15016850` remains private; new owner and bounded guest screens narrow its register and stack-lifetime differences. Game remains **3,772 / 4,843 (77.89%)**; **103** more matches to 80%.
+
 [Note 2385](WORKING_NOTES/2385-game-controller-pak-read-write-matches-20261113.md): four Game controller-pak read/write and packet routines now match. Game **3,772 / 4,843 (77.89%)**, total **4,445 / 5,516 (80.58%)**, zero drift; **103** more Game matches to 80%.
 
 [Note 2384](WORKING_NOTES/2384-game-view-scaling-configuration-match-20261113.md): `func_1500E738` now matches view-scaling configuration. Game **3,768 / 4,843 (77.80%)**, total **4,441 / 5,516 (80.51%)**, zero drift; **107** more Game matches to 80%.
