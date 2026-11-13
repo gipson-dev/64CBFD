@@ -104,7 +104,10 @@ helper callers still require their own typed-view audit. The existing
 helper view; changing only its position to the corresponding three-field
 structure and adjusting its three assignments preserves the compatibility
 with the revised helper. A full raw compile confirms all 62 functions,
-constant pools, and diagnostics in that owner remain unchanged. The other
+constant pools, and diagnostics in that owner remain unchanged. Its revised
+source also passes 1,134 native cases per optimization at `-O0`, `-O2`, and
+`-O3` with trapping UBSan and 16 effective negative controls. The helper is
+modeled in that test. The other
 existing `func_15142180` caller uses a flat descriptor that already had a
 different aggregate view before this experiment; it is not evidence that
 arbitrary differently typed descriptors are valid.
@@ -124,6 +127,8 @@ The nested point candidate SHA-256 is
 `16f9e141e7c8c958d6a4a2a0daa6fcbb2511bb524bbffe86b5501dd79f1c8bd1`;
 the nested helper candidate is
 `53780bab36a07c1a33fb7b05e343e9b627257eae9567ae46eb516ebad338858f`.
+The nested preset candidate is
+`e4ad1cbf492cdbe66427dd58959277fbfe1be7d58f1f98c3dd4ce83dfc208742`.
 The actual-Make rerun also included the compatible nested trail-preset
 candidate, with its 62-function padded object unchanged section by section.
 All candidates remain private and uncounted. Preserve the existing historical guard
