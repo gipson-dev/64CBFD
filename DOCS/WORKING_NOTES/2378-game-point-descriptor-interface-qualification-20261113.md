@@ -76,11 +76,10 @@ must not be copied over the production guard manifest wholesale.
 
 ## Before promotion
 
-1. Resolve or explicitly bound the effective-type/aliasing question: the
-   point descriptor is a different named C structure from the helper's
-   internal angular and localized views. A common `void *` declaration fixes
-   the function interface but alone does not prove that all typed accesses
-   are valid under C aliasing rules. Do not infer that UBSan proves this.
+1. Review the nested typed-subobject follow-up below and the pre-existing
+   descriptor views of the helper's other callers. A common `void *`
+   declaration alone does not prove typed-access compatibility. Do not infer
+   that UBSan proves effective-type rules.
 2. Make durable, fingerprinted qualification fixtures, including connected
    caller and helper checks, and verify affected historical tests and both
    tools checkouts. Update only the five intended guard preimages and append
@@ -88,3 +87,44 @@ must not be copied over the production guard manifest wholesale.
 3. Revalidate full production Make, guards, image, protected sections, and
    actual ELF recount after installation; update status and Graphify, commit
    tools before the consumer, and retain the 80% Game goal.
+
+## Follow-up: nested typed subobjects
+
+The prior flat descriptor passes differently named aggregate views into the
+helper, so its passing machine and native screens alone do not settle C
+aliasing. A later private variant instead gives the point descriptor separate
+`AngularTrailInput` and `LocalizedTrailInput` subobjects and passes their
+addresses. The localized position is a three-float structure with matching
+`x`, `y`, and `z` members in both translation units; the helper's position
+member was changed from an array to that compatible structure. The other
+localized fields and their layouts remain the same. This removes the newly
+introduced flat-descriptor view mismatch for this point caller; existing
+helper callers still require their own typed-view audit. The existing
+`func_151DBAA8` preset previously had an array member compatible with the old
+helper view; changing only its position to the corresponding three-field
+structure and adjusting its three assignments preserves the compatibility
+with the revised helper. A full raw compile confirms all 62 functions,
+constant pools, and diagnostics in that owner remain unchanged. The other
+existing `func_15142180` caller uses a flat descriptor that already had a
+different aggregate view before this experiment; it is not evidence that
+arbitrary differently typed descriptors are valid.
+
+The nested point's complete raw function and relocations equal the previous
+flat candidate byte for byte, and all 64 raw owner functions agree between
+those candidates. All 41 helper raw functions and their relocations also
+remain unchanged. The nested point and helper each pass their independent
+native checks at `-O0`, `-O2`, and `-O3`; the point again rejects all six
+negative controls. A fresh actual-Make shadow build and strict whole-image
+audit of the nested sources reproduce the results above: 6,051 fixed function
+addresses, no other function body changes, and 189,088 protected bytes exact.
+Guest and relocation results above apply to the nested candidate's identical
+compiled payloads; they were not repeated against different instructions.
+
+The nested point candidate SHA-256 is
+`16f9e141e7c8c958d6a4a2a0daa6fcbb2511bb524bbffe86b5501dd79f1c8bd1`;
+the nested helper candidate is
+`53780bab36a07c1a33fb7b05e343e9b627257eae9567ae46eb516ebad338858f`.
+The actual-Make rerun also included the compatible nested trail-preset
+candidate, with its 62-function padded object unchanged section by section.
+All candidates remain private and uncounted. Preserve the existing historical guard
+rows and finish durable tests and production qualification before adoption.
