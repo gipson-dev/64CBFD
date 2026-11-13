@@ -1,6 +1,8 @@
 # Working Notes
 
-[Note 2378](WORKING_NOTES/2378-game-point-descriptor-interface-qualification-20261113.md): `func_151382E0` has a guarded nested-descriptor screen with connected caller, native, relocation, and full-image evidence; durable tests and production qualification remain open. Game remains **3,763 / 4,843 (77.70%)**.
+[Note 2379](WORKING_NOTES/2379-game-point-trail-descriptor-match-20261113.md): `func_151382E0` now matches the point trail descriptor. Game **3,764 / 4,843 (77.72%)**, total **4,437 / 5,516 (80.44%)**, zero drift; **111** more Game matches to 80%.
+
+[Note 2378](WORKING_NOTES/2378-game-point-descriptor-interface-qualification-20261113.md): the private descriptor screen was subsequently promoted in Note 2379.
 
 [Note 2377](WORKING_NOTES/2377-game-script-list-query-callback-match-20261113.md): `func_1509DBBC` now matches the script list-query callback. Game **3,763 / 4,843 (77.70%)**, total **4,436 / 5,516 (80.42%)**, zero drift; **112** more Game matches to 80%.
 

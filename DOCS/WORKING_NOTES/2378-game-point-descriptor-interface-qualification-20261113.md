@@ -1,5 +1,8 @@
 # Point descriptor and trail interface: private qualification
 
+**Historical screen:** the nested candidate was subsequently installed and
+qualified in [Note 2379](2379-game-point-trail-descriptor-match-20261113.md).
+
 Date: 2026-11-13. This continues [Note 2369](2369-game-point-descriptor-frame-abi-screen-20261113.md).
 `func_151382E0` is still an uninstalled placeholder and receives **no matching
 credit**. The installed Game checkpoint is **3,763 / 4,843 (77.70%)**;

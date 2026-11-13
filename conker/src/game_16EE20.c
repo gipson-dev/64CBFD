@@ -32,7 +32,7 @@ typedef struct {
     s32 word48;
 } GameScaledDescriptor;
 extern f32 D_800A5470, D_800A5474;
-void func_15153F18(GameScaledDescriptor *, struct17 *, s32, u8, s32);
+void func_15153F18(void *, void *, s32, s32, s32);
 
 typedef struct { s32 index; u8 *actor; u8 identity; } GameEffectRefreshRequest;
 typedef s32 (*GameEffectClassifier)(s32, u8 *);

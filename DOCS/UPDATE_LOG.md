@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2379](WORKING_NOTES/2379-game-point-trail-descriptor-match-20261113.md): `func_151382E0` now matches the point trail descriptor. Game **3,764 / 4,843 (77.72%)**, total **4,437 / 5,516 (80.44%)**, zero drift; **111** more Game matches to 80%.
+
 [Note 2377](WORKING_NOTES/2377-game-script-list-query-callback-match-20261113.md): `func_1509DBBC` now matches the script list-query callback. Game **3,763 / 4,843 (77.70%)**, total **4,436 / 5,516 (80.42%)**, zero drift; **112** more Game matches to 80%.
 
 [Note 2376](WORKING_NOTES/2376-game-query-camera-callback-matches-20261113.md): `func_1509BE40` and `func_150BE850` now match with a consistent query callback ABI. Game **3,762 / 4,843 (77.68%)**, total **4,435 / 5,516 (80.40%)**, zero drift; **113** more Game matches to 80%.

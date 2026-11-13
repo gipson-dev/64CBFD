@@ -523,21 +523,22 @@ typedef struct {
     s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange;
 } AngularTrailInput151DBAA8;
 typedef struct {
-    f32 position[3], timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
+    struct { f32 x, y, z; } position;
+    f32 timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
     s16 countBase, countRange, requestSelectorBase, requestSelectorRange;
     s16 durationBase, durationRange, modeBase, modeRange;
     u8 selector, private35[3]; f32 opaqueChance; s16 firstValue, secondValue; s32 requestValue;
 } LocalizedTrailInput151DBAA8;
 typedef struct { AngularTrailInput151DBAA8 angular; LocalizedTrailInput151DBAA8 localized; } TrailPreset151DBAA8;
 extern f32 D_800AB4C0, D_800AB4C4, D_800AB4C8, D_800AB4CC;
-void func_15153F18(AngularTrailInput151DBAA8 *, LocalizedTrailInput151DBAA8 *, s32, s32, s32);
+void func_15153F18(void *, void *, s32, s32, s32);
 
 /* Emit a localized trail with the preset angle, timing, and radius ranges. */
 void func_151DBAA8(struct17 *point, s32 count, u8 selector, u8 mode, s32 request) {
     TrailPreset151DBAA8 preset;
-    preset.localized.position[0] = point->unk0;
-    preset.localized.position[1] = point->unk4;
-    preset.localized.position[2] = point->unk8;
+    preset.localized.position.x = point->unk0;
+    preset.localized.position.y = point->unk4;
+    preset.localized.position.z = point->unk8;
     preset.angular.firstAngleBase = 0;
     preset.angular.firstAngleRange = 255;
     preset.angular.secondAngleBase = -64;

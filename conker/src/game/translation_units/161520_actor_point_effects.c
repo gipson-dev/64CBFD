@@ -16,7 +16,7 @@ s32 func_15134070(struct102 *);
 s32 func_151380B4(struct102 *, s32, vertex *);
 s32 func_15138120(struct102 *, s32, u8);
 void func_1504715C(ActorEffectSurface *, struct102 *);
-s32 func_151382E0(vertex *position, s32 type, ActorEffectSurface *surface, u8 group, s32 context);
+void func_151382E0(vertex *position, s32 type, ActorEffectSurface *surface, u8 group, s32 context);
 s32 func_15138424(struct102 *actor, vertex *position, s32 type, ActorEffectSurface *surface, u8 group, s32 context);
 
 /* Dispatch the selected actor effect, adding point-based effects when a point is available. */

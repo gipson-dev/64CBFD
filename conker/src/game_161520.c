@@ -49,7 +49,8 @@ s32 func_15137C64();
 s32 func_15137E60();
 s32 func_15137F30();
 s32 func_15138120();
-s32 func_151382E0();
+struct ActorEffectSurface;
+void func_151382E0(Position161520 *, s32, struct ActorEffectSurface *, u8, s32);
 s32 func_15138424();
 s32 func_151389A8();
 void func_15138BC0(struct102 *actor, u8 group, s32 context);
@@ -562,10 +563,60 @@ s32 func_151380B4(struct102 *arg0, s32 arg1, s32 arg2) {
 /* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138120.s. */
 s32 func_15138120() {
     return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151382E0.s. */
-s32 func_151382E0() {
-    return 0;
-}/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138424.s. */
+}
+
+/* Point effect descriptor passed to the trail factory. */
+typedef struct {
+    Position161520 position;
+    f32 timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
+    s16 countBase, countRange, requestSelectorBase, requestSelectorRange;
+    s16 durationBase, durationRange, modeBase, modeRange;
+    u8 selector, private35[3];
+    f32 opaqueChance;
+    s16 firstValue, secondValue;
+    s32 requestValue;
+} LocalizedTrailInput;
+typedef struct { s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange; } AngularTrailInput;
+typedef struct { AngularTrailInput angular; LocalizedTrailInput localized; } PointEffectDescriptor161520;
+extern u8 D_800A3FE6[];
+extern f32 D_800A4830, D_800A4834, D_800A4838, D_800A483C, D_800A4840;
+void func_15153F18(void *, void *, s32, s32, s32);
+
+/* Submit the point descriptor unless the selected effect type is disabled. */
+void func_151382E0(Position161520 *position, s32 type, struct ActorEffectSurface *surface, u8 group, s32 context) {
+    u32 channel = group;
+    u8 category = D_800A3FE6[type * 16];
+    PointEffectDescriptor161520 descriptor;
+    if (category != 2) {
+        descriptor.localized.position = *position;
+        descriptor.localized.timeBase = D_800A4830;
+        descriptor.localized.timeRange = D_800A4834;
+        descriptor.localized.scaleBase = D_800A4838;
+        descriptor.localized.scaleRange = D_800A483C;
+        descriptor.localized.radiusBase = 4.0f;
+        descriptor.localized.radiusRange = 9.0f;
+        descriptor.localized.countBase = 18;
+        descriptor.localized.countRange = 7;
+        descriptor.angular.firstAngleBase = 0;
+        descriptor.angular.firstAngleRange = 255;
+        descriptor.angular.secondAngleBase = -63;
+        descriptor.angular.secondAngleRange = 78;
+        descriptor.localized.requestSelectorBase = 3;
+        descriptor.localized.requestSelectorRange = 3;
+        descriptor.localized.durationBase = 20;
+        descriptor.localized.durationRange = 30;
+        descriptor.localized.modeBase = 155;
+        descriptor.localized.modeRange = 100;
+        descriptor.localized.firstValue = 16;
+        descriptor.localized.secondValue = 15;
+        descriptor.localized.requestValue = 0;
+        descriptor.localized.opaqueChance = D_800A4840;
+        descriptor.localized.selector = category == 1 ? 1 : 0;
+        func_15153F18(&descriptor.angular, &descriptor.localized, (s32)surface, channel, context);
+    }
+}
+
+/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_15138424.s. */
 s32 func_15138424() {
     return 0;
 }/* Non-matching C placeholders for asm/nonmatchings/game_161520/func_151389A8.s. */

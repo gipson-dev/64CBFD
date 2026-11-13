@@ -872,7 +872,7 @@ void func_151539B4(WidePacketInput *input, u8 mode) {
 }
 
 typedef struct {
-    f32 position[3];
+    struct { f32 x, y, z; } position;
     f32 timeBase;
     f32 timeRange;
     f32 scaleBase;
@@ -966,8 +966,9 @@ void func_15153CCC(void *arg0, LocalizedTrailInput *arg1, s32 arg2,
 }
 
 /* Emit angular localized trails from a complete live configuration. */
-void func_15153F18(AngularTrailInput *arg0, LocalizedTrailInput *arg1,
-                    s32 arg2, s32 arg3, s32 arg4) {
+void func_15153F18(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4) {
+    AngularTrailInput *angularInput = (AngularTrailInput *)arg0;
+    LocalizedTrailInput *localizedInput = (LocalizedTrailInput *)arg1;
     f32 velocity[3];
     f32 temp_f20;
     f32 temp_f22;
@@ -979,19 +980,19 @@ void func_15153F18(AngularTrailInput *arg0, LocalizedTrailInput *arg1,
     u32 modeRandom;
     u32 durationRandom;
 
-    remaining = (u32)func_150ADA20() % ((u32)arg1->countRange + 1U)
-                + arg1->countBase;
+    remaining = (u32)func_150ADA20() % ((u32)localizedInput->countRange + 1U)
+                + localizedInput->countBase;
     if (remaining != 0) {
         temp_f24 = D_800A6000;
         do {
             firstRandom = (u32)func_150ADA20();
             secondRandom = (u32)func_150ADA20();
             func_15143794(
-                (s16)(firstRandom % ((u32)arg0->firstAngleRange + 1U)
-                      + arg0->firstAngleBase),
-                (s16)(secondRandom % ((u32)arg0->secondAngleRange + 1U)
-                      + arg0->secondAngleBase),
-                func_150ADA68() * arg1->radiusRange + arg1->radiusBase,
+                (s16)(firstRandom % ((u32)angularInput->firstAngleRange + 1U)
+                      + angularInput->firstAngleBase),
+                (s16)(secondRandom % ((u32)angularInput->secondAngleRange + 1U)
+                      + angularInput->secondAngleBase),
+                func_150ADA68() * localizedInput->radiusRange + localizedInput->radiusBase,
                 velocity);
             temp_f22 = func_150ADA68();
             durationRandom = (u32)func_150ADA20();
@@ -999,24 +1000,24 @@ void func_15153F18(AngularTrailInput *arg0, LocalizedTrailInput *arg1,
             temp_f20 = func_150ADA68();
             requestRandom = (u32)func_150ADA20();
             func_151DA6F8(
-                arg1,
+                localizedInput,
                 velocity,
-                temp_f22 * arg1->scaleRange + arg1->scaleBase,
-                (s16)(durationRandom % ((u32)arg1->durationRange + 1U)
-                      + arg1->durationBase),
-                modeRandom % ((u32)arg1->modeRange + 1U) + arg1->modeBase,
-                temp_f20 * arg1->timeRange + arg1->timeBase,
-                requestRandom % ((u32)arg1->requestSelectorRange + 1U)
-                    + arg1->requestSelectorBase,
-                func_150ADA68() < arg1->opaqueChance,
+                temp_f22 * localizedInput->scaleRange + localizedInput->scaleBase,
+                (s16)(durationRandom % ((u32)localizedInput->durationRange + 1U)
+                      + localizedInput->durationBase),
+                modeRandom % ((u32)localizedInput->modeRange + 1U) + localizedInput->modeBase,
+                temp_f20 * localizedInput->timeRange + localizedInput->timeBase,
+                requestRandom % ((u32)localizedInput->requestSelectorRange + 1U)
+                    + localizedInput->requestSelectorBase,
+                func_150ADA68() < localizedInput->opaqueChance,
                 temp_f24,
                 temp_f24,
                 1,
-                arg1->selector,
+                localizedInput->selector,
                 arg2,
-                arg1->firstValue,
-                arg1->secondValue,
-                arg1->requestValue,
+                localizedInput->firstValue,
+                localizedInput->secondValue,
+                localizedInput->requestValue,
                 ((u8 *)&arg3)[3],
                 arg4);
             remaining--;
