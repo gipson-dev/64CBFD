@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2382](WORKING_NOTES/2382-game-cache-expiry-private-screen-20261113.md): `func_1517ABB0` has an uncredited 83-word private screen; its retail extent is 84 words and its scheduling still differs.
+
 [Note 2381](WORKING_NOTES/2381-game-script-node-acquisition-match-20261113.md): `func_1509B5AC` now matches script-node acquisition. Game **3,766 / 4,843 (77.76%)**, total **4,439 / 5,516 (80.47%)**, zero drift; **109** more Game matches to 80%.
 
 [Note 2380](WORKING_NOTES/2380-game-slot-notification-callback-match-20261113.md): `func_15156028` now matches the slot-notification callback. Game **3,765 / 4,843 (77.74%)**, total **4,438 / 5,516 (80.46%)**, zero drift; **110** more Game matches to 80%.
