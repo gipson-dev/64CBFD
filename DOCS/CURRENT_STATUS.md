@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2340](WORKING_NOTES/2340-game-paired-random-effect-callbacks-direct-match-20261112.md): `func_150D6388` and `func_150D6434` convert directly from assembly to byte-exact C without guards. Game **3,730 / 4,842 (77.03%)**, total **4,403 / 5,515 (79.84%)**, zero drift; **144** more Game matches to 80%.
+
 [Note 2339](WORKING_NOTES/2339-game-linked-owner-velocity-callback-match-20261112.md): `func_150D6CC4` matches all 103 retail words with seven checked guards. Game **3,728 / 4,840 (77.02%)**, total **4,401 / 5,513 (79.83%)**, zero drift; **144** more Game matches to 80%.
 
 [Note 2338](WORKING_NOTES/2338-game-linked-owner-motion-callback-match-20261112.md): `func_150D6F0C` matches all 87 retail words with ten checked guards. Game **3,727 / 4,840 (77.00%)**, total **4,400 / 5,513 (79.81%)**, zero drift; **145** more Game matches to 80%.

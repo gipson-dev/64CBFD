@@ -104,9 +104,31 @@ void func_150D5A4C(u8 *arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1028F0/func_150D5A6C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1028F0/func_150D6388.s")
+f32 func_150ADA68(void);
+s32 func_150ADA20(void);
+void *func_151541B8(f32 *, f32, f32, f32, f32, u8, s32);
+void *func_15154884(f32 *, f32, f32, f32, u8, s32);
+extern f32 D_800A0AB0, D_800A0AB4;
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1028F0/func_150D6434.s")
+/* Submit a randomized point effect with a bounded lifetime. */
+void func_150D6388(f32 *position, u8 selector, s32 context) {
+    u32 value;
+    f32 first;
+    first = func_150ADA68();
+    value = (u32)func_150ADA20();
+    func_151541B8(position, first * 4.0f + 15.0f, 1.3745700120925903f, (value % 56U) + 200U, 0.0f, selector, context);
+}
+
+/* Submit a randomized point effect with a scaled spread. */
+void func_150D6434(f32 *position, u8 selector, s32 context) {
+    f32 third;
+    f32 second;
+    f32 first;
+    first = func_150ADA68();
+    second = func_150ADA68();
+    third = func_150ADA68();
+    func_15154884(position, first * 3.0f + 8.0f, second * D_800A0AB0 + D_800A0AB4, third * 50.0f + 100.0f, selector, context);
+}
 
 /* Initialize the fixed effect descriptor and its auxiliary scalar. */
 void func_150D64E8(EffectPreset150D64E8 *preset, f32 *auxiliary) {
