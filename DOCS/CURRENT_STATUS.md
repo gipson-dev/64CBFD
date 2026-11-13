@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2350](WORKING_NOTES/2350-game-wrapped-angle-velocity-smoother-match-20261112.md): `func_15049688` now matches retail. Game **3,740 / 4,842 (77.24%)**, total **4,413 / 5,515 (80.02%)**, zero drift; **134** more Game matches to 80%.
+
 [Note 2349](WORKING_NOTES/2349-game-checksum-record-spawner-match-20261112.md): `func_150AEB9C` now matches retail. Game **3,739 / 4,842 (77.22%)**, total **4,412 / 5,515 (80.00%)**, zero drift; **135** more Game matches to 80%.
 
 [Note 2348](WORKING_NOTES/2348-game-paired-ground-effect-constructor-match-20261112.md): `func_150C6460` and `func_150C6D90` now match retail. Game **3,738 / 4,842 (77.20%)**, total **4,411 / 5,515 (79.98%)**, zero drift; **136** more Game matches to 80%.

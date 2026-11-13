@@ -30730,3 +30730,42 @@ game_DBA60,func_150AEB9C,0xf8,0x8E790000,0x8C680000,-,-,Normalize checksum recor
 game_DBA60,func_150AEB9C,0xfc,0x0219082A,0x26310001,-,-,Normalize checksum record constructor compiler scheduling,,,false
 game_DBA60,func_150AEB9C,0x100,0x5420FFE4,0x26100004,-,-,Normalize checksum record constructor compiler scheduling,0x0228082A,-,false
 game_DBA60,func_150AEB9C,0x104,0x8E280000,0x1420FFDF,-,-,Normalize checksum record constructor compiler scheduling,0x00000000,-,false
+generated_76A60,func_15049688,0x28,0x46000306,0x46000386,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x2c,0xC7A60034,0x8FA40028,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x30,0x4604603C,0x4604703C,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x34,0x8FA40028,0x8FA60030,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x38,0x46066202,0x46000005,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x3c,0x8FA60030,0xC7B2003C,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x44,0x46000005,0xC7A60034,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x50,0x10000005,0x10000004,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x54,0xC4C20000,0x00000000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x64,0xC4C20000,0x46067382,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x68,0xC7A40038,0xC4CC0000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x6c,0xC7B2003C,0xC7A80038,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x70,0x46024281,0x3C014120,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x74,0x3C014120,0x44813000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x78,0x46045182,0x00007025,-,-,Normalize angular smoother compiler scheduling,0x460C7081,-,false
+generated_76A60,func_15049688,0x7c,0x44812000,0x4606003C,-,-,Normalize angular smoother compiler scheduling,0x46081082,-,false
+generated_76A60,func_15049688,0x84,0x4604003C,0x46121282,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x88,0x46123202,0x460A6100,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x8c,0x46024280,0x45000002,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x90,0x45000020,0xE4C40000,-,-,Normalize angular smoother compiler scheduling,0x240E0001,-,false
+generated_76A60,func_15049688,0x94,0xE4CA0000,0x51C0001E,-,-,Normalize angular smoother compiler scheduling,0xC4CA0000,-,false
+generated_76A60,func_15049688,0x9c,0xC4860000,0xC4840000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xb8,0x460A3300,0x46045300,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xbc,0x44801000,0x44803000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xc8,0x4602003C,0x4606003C,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xd4,0xC7A4002C,0xC7B2003C,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xdc,0xC7B2003C,0xC7AA002C,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xec,0x46008032,0x46100032,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0xf8,0x46008032,0x46100032,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x100,0x45010004,0x45020008,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x104,0x00000000,0x44804000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x108,0xE4840000,0xC4CA0000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x10c,0x10000006,0xC4880000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x110,0xE4C20000,0x46125102,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x114,0xC4C60000,0x46044180,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x118,0xC4880000,0x10000004,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x11c,0x46123282,0xE4860000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x120,0x460A4100,0x44804000,-,-,Normalize angular smoother compiler scheduling,,,false
+generated_76A60,func_15049688,0x124,0xE4840000,0xE48A0000,-,-,Normalize angular smoother compiler scheduling,0xE4C80000,-,false
