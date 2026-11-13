@@ -1,5 +1,7 @@
 # 1761 - EEPROM block reader direct C match
 
+Follow-up: the poller is now restored; see [Note 2375](2375-game-eeprom-write-poller-match-20261113.md).
+
 Verified: 2026-10-28. Target func_151DD3A0, sole compact function in generated_20A850.
 VA151DD3A0..151DD454 is 45 words /180 bytes. The slot ends at 151DD460:
 retail ROM20A850..20A910 is 48 words /192 bytes, including three alignment nops.

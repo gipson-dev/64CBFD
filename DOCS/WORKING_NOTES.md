@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2375](WORKING_NOTES/2375-game-eeprom-write-poller-match-20261113.md): `func_151DCFD8` restores the pending EEPROM write poller with two clock-alias guards. Game **3,760 / 4,843 (77.64%)**, total **4,433 / 5,516 (80.37%)**, zero drift; **115** more Game matches to 80%.
+
 [Note 2374](WORKING_NOTES/2374-game-coordinate-table-initializer-match-20261113.md): `func_1512ABF8` now matches retail with six scheduling and branch-order guards. Game **3,759 / 4,843 (77.62%)**, total **4,432 / 5,516 (80.35%)**, zero drift; **116** more Game matches to 80%.
 
 [Note 2373](WORKING_NOTES/2373-game-two-vector-effect-provider-direct-match-20261113.md): `func_15160CDC` now matches retail directly, with its caller interface corrected. Game **3,758 / 4,843 (77.60%)**, total **4,431 / 5,516 (80.33%)**, zero drift; **117** more Game matches to 80%.

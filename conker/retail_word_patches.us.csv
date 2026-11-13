@@ -30881,3 +30881,5 @@ generated_157840,func_1512ABF8,0x48,0x01CF3821,0x00002025,,,Normalize independen
 generated_157840,func_1512ABF8,0x4c,0x00002025,0x01CF3821,,,Normalize independent setup scheduling and branch operand order,,,false
 generated_157840,func_1512ABF8,0xcc,0x50C90004,0x51260004,,,Normalize independent setup scheduling and branch operand order,,,false
 generated_157840,func_1512ABF8,0xd4,0x54CA0011,0x55460011,,,Normalize independent setup scheduling and branch operand order,,,false
+generated_20A3A0,func_151DCFD8,0xd4,0x3C070000,0x3C070000,R_MIPS_HI16:D_8002BD10,R_MIPS_HI16:D_8002BD14,Use retail alias for low clock word,,,false
+generated_20A3A0,func_151DCFD8,0xd8,0x8CE70004,0x8CE70000,R_MIPS_LO16:D_8002BD10,R_MIPS_LO16:D_8002BD14,Use retail alias for low clock word,,,false

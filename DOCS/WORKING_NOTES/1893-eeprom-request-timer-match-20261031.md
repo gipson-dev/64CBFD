@@ -1,5 +1,7 @@
 # 1893 - EEPROM request setup, timer calculation and signed result
 
+Follow-up: the poller is now restored; see [Note 2375](2375-game-eeprom-write-poller-match-20261113.md).
+
 `func_151DCEF0` replaces its zero-return placeholder in
 `conker/src/game/generated_20A3A0.c`. Its recovered interface is
 `s32 (OSMesgQueue *queue, s32 address, void *buffer, s32 length)`.
