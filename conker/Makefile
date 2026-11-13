@@ -176,6 +176,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loop
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_E4070.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009FD00_game
 # Preserve the twelve-record effect loop without unrolling; all other owner bodies remain fixed.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1B1600.c.o: OPT_FLAGS := -O2 -g3 -Wo,-loopunroll,0
+# Owner-mode dispatch uses its preserved ten-entry retail switch table.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_179F30.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A5E20
 # Owner-record dispatch uses its preserved nine-entry retail switch table.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1B8F40.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A7410
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_B21B0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009D9A0

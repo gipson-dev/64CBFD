@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2368](WORKING_NOTES/2368-game-owner-mode-dispatch-direct-match-20261113.md): `func_1514EA1C` now matches retail directly using the preserved switch table. Game **3,756 / 4,843 (77.56%)**, total **4,429 / 5,516 (80.29%)**, zero drift; **119** more Game matches to 80%.
+
 [Note 2367](WORKING_NOTES/2367-game-camera-state-callback-direct-match-20261113.md): `func_15125924` now matches retail directly. Game **3,755 / 4,843 (77.53%)**, total **4,428 / 5,516 (80.28%)**, zero drift; **120** more Game matches to 80%.
 
 [Note 2366](WORKING_NOTES/2366-game-camera-state-private-screen-20261113.md): `func_15125924` has a two-word private screen; a camera/stack overlap discrepancy prevents promotion. Game remains **3,754 / 4,843 (77.51%)**, with **121** more Game matches to 80%.

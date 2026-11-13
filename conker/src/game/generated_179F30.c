@@ -635,8 +635,33 @@ void func_1514E9FC(u8 *arg0, s32 arg1, s32 arg2) {
     func_1514E89C(arg0, arg1, arg2);
 }
 
-s32 func_1514EA1C() {
-    return 0;
+void func_1518E37C(u8 *owner, u8 value);
+
+/* Dispatch owner mode changes and delegate other modes to the enable gate. */
+s32 func_1514EA1C(u8 *owner, s32 mode, s32 context) {
+    switch (mode) {
+        case 3:
+            if (owner[0x22] == 2) func_1518E37C(owner, 3);
+            else func_1518E37C(owner, 2);
+            break;
+        case 4: func_1518E37C(owner, 3); break;
+        case 5: func_1518E37C(owner, 2); break;
+        case 6:
+            if (owner[0x22] == 2) func_1518E37C(owner, 5);
+            else func_1518E37C(owner, 2);
+            break;
+        case 7: func_1518E37C(owner, 5); break;
+        case 8: func_1518E37C(owner, 2); break;
+        case 9:
+            if (owner[0x22] == 2) func_1518E37C(owner, 6);
+            else func_1518E37C(owner, 2);
+            break;
+        case 10: func_1518E37C(owner, 6); break;
+        case 11: func_1518E37C(owner, 2); break;
+        case 12: func_1518E37C(owner, 2); break;
+        default: return func_1514E89C(owner, mode, context);
+    }
+    return 1;
 }
 
 void func_1514EB6C(u8 *arg0, s32 arg1, s32 arg2) {
