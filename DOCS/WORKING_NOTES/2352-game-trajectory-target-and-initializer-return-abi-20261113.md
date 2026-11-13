@@ -1,5 +1,7 @@
 # Game trajectory target screen and initializer return ABI
 
+Subsequent update: [Note 2353](2353-game-trajectory-actor-scan-match-20261113.md) records the scan match.
+
 Date: 2026-11-13. The matched slot initializer `func_1505D1C4` now explicitly
 returns the result of `func_1505C7D8`. Its three existing C declarations use
 the same `s32` return type. This corrects an ABI inconsistency found while

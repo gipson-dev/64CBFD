@@ -30788,3 +30788,24 @@ game_981E0,func_15072F10,0x100,0xAFB90020,0xAFA90020,-,-,Normalize projected act
 game_981E0,func_15072F10,0x114,0xAFB8001C,0xAFB9001C,-,-,Normalize projected actor callback compiler scheduling,,,false
 game_981E0,func_15072F10,0x134,0x03E00008,0x03E00008,-,-,Restore independently addressed no-op callback,0x00000000,-,false
 game_981E0,func_15072F10,0x138,0x00000000,0x03E00008,-,-,Restore independently addressed no-op callback,0x00000000,-,false
+generated_10EA20,func_150E1570,0x68,0xAFA00088,0x00009825,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x6c,0x00009025,0xAFA00088,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0xc8,0x4481A000,0x3C100000,-,R_MIPS_HI16:D_800CC2D0,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0xd0,0x3C100000,0x4481A000,R_MIPS_HI16:D_800CC2D0,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0xd8,0x2413FFFF,0x2412FFFF,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0xf8,0x11C00003,0x11C00004,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x100,0x91D60124,0x91D60124,-,-,Normalize trajectory scan register allocation and scheduling,0x10000001,-,false
+generated_10EA20,func_150E1570,0x19c,0x12770003,0x12570003,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1a0,0x0052082A,0x0053082A,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1ac,0x02209825,0x02209025,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1b0,0x00409025,0x00409825,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1c0,0x1277001F,0x1257001F,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1c4,0x00135880,0x00125880,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1c8,0x01735823,0x01725823,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1d0,0x01735821,0x01725821,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1d8,0x01735823,0x01725823,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x1e0,0x01735823,0x01725823,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x200,0x448D8000,0x448D5000,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x204,0xC60A0018,0xC6120018,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x20c,0x468084A0,0x46805420,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_10EA20,func_150E1570,0x22c,0x46125380,0x46128380,-,-,Normalize trajectory scan register allocation and scheduling,,,false

@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2353](WORKING_NOTES/2353-game-trajectory-actor-scan-match-20261113.md): `func_150E1570` now matches retail. Game **3,742 / 4,842 (77.28%)**, total **4,415 / 5,515 (80.05%)**, zero drift; **132** more Game matches to 80%.
+
 [Note 2352](WORKING_NOTES/2352-game-trajectory-target-and-initializer-return-abi-20261113.md): Corrected the byte-exact slot initializer return ABI; trajectory scan remains an uncredited private screen. Game remains **3,741 / 4,842 (77.26%)**, with **133** matches to 80%.
 
 [Note 2351](WORKING_NOTES/2351-game-trajectory-callback-and-noop-restoration-20261113.md): `func_15072F10` and its separately addressed no-op slot now match retail. Game **3,741 / 4,842 (77.26%)**, total **4,414 / 5,515 (80.04%)**, zero drift; **133** more Game matches to 80%.
