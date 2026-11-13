@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2345](WORKING_NOTES/2345-game-paired-height-descriptor-match-20261112.md): `func_150C5F94` and `func_150C68C4` now match retail. Game **3,734 / 4,842 (77.12%)**, total **4,407 / 5,515 (79.91%)**, zero drift; **140** more Game matches to 80%.
+
 [Note 2344](WORKING_NOTES/2344-game-paired-height-descriptor-screen-20261112.md): `func_150C5F94` and `func_150C68C4` have private matching screens; both remain uncredited. Game **3,732 / 4,842 (77.08%)**, total **4,405 / 5,515 (79.87%)**, zero drift; **142** more Game matches to 80%.
 
 [Note 2343](WORKING_NOTES/2343-game-effect-descriptor-alias-screen-20261112.md): `func_150B9D8C` remains uncredited after stack-alias and caller screening. Game **3,732 / 4,842 (77.08%)**, total **4,405 / 5,515 (79.87%)**, zero drift; **142** more Game matches to 80%.

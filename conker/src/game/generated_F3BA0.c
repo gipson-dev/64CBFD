@@ -66,8 +66,53 @@ void func_150C6870(u8 *arg0) {
     }
 }
 
-s32 func_150C68C4() {
-    return 0;
+typedef struct { u8 *context; u8 active; u8 pad[3]; f32 height; } HeightPayload;
+typedef struct {
+    u32 zero0, zero4;
+    u8 color; u8 pad09[3];
+    u8 *owner;
+    u8 flag; u8 pad11[3];
+    f32 x, y, z, size, rate;
+    s16 duration;
+    u8 kind, variant, mode, extra;
+    u8 pad2e[2];
+} HeightDescriptor;
+extern f32 D_800A0450, D_800A0454, D_800A0458;
+s32 func_15045800(f32 *, u16, f32, void *);
+void *func_1513418C(void *, s32, u8, s32);
+void *memcpy(void *, const void *, u32); /* Attach the ground-height payload to a new owner effect. */
+s32 func_150C68C4(u8 *owner, u8 *context) {
+    HeightDescriptor desc;
+    struct { f32 point[3]; u32 gap; HeightPayload payload; } local;
+    u8 *effect;
+    local.payload.context = context;
+    local.payload.active = 1;
+    local.point[0] = *(f32 *)(owner + 0x14);
+    local.point[1] = *(f32 *)(owner + 0x18) + D_800A0450;
+    local.point[2] = *(f32 *)(owner + 0x1C);
+    if (func_15045800(local.point, 0, *(f32 *)(owner + 0x18) - 100.0f, context + 0x34)) {
+        local.payload.height = *(f32 *)(context + 0x34);
+    } else {
+        local.payload.height = *(f32 *)(owner + 0x18) + D_800A0454;
+    }
+    desc.zero0 = 0;
+    desc.zero4 = 0;
+    desc.color = owner[0x3B];
+    desc.owner = owner;
+    desc.flag = 0;
+    desc.x = 0.0f;
+    desc.y = 0.0f;
+    desc.z = 0.0f;
+    desc.size = 80.0f;
+    desc.rate = D_800A0458;
+    desc.duration = 300;
+    desc.kind = 10;
+    desc.variant = 5;
+    desc.mode = 2;
+    desc.extra = 3;
+    effect = func_1513418C(&desc, 12, 255, 0);
+    if (effect != 0) memcpy(effect + 0x58, &local.payload, 12);
+    return (s32)effect;
 }
 
 s32 func_150C6A08() {

@@ -1,5 +1,7 @@
 # Paired Game height-descriptor screens
 
+**Historical screen:** superseded by [Note 2345](2345-game-paired-height-descriptor-match-20261112.md). Its original ordinary-case fixture accidentally placed the context at the emulated stack pointer; the corrected non-overlapping cases and extended checks passed in the follow-up.
+
 Date: 2026-11-12. `func_150C5F94` in `generated_F3270` and
 `func_150C68C4` in `generated_F3BA0` each occupy 81 retail words. Their known
 callers, `func_150C5F40` and `func_150C6870`, pass an owner and context and
@@ -29,7 +31,7 @@ wsl -d PSBBN --exec python3 -m unittest tools.tests.test_game_paired_height_desc
 ```
 
 The two tests pass with mounted tools and with four staged files against the
-sibling tools dependencies. For each function, 96 modeled ordinary cases
+sibling tools dependencies. For each function, 96 modeled cases (with the fixture overlap described above)
 compare raw, retail and both padded programs, including helper mutations, query
 outcomes, allocation outcomes, all 48 descriptor bytes and 12 copied payload
 bytes. In a separate sweep, 638 overlapping owner/context cases per function
