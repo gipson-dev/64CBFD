@@ -1,5 +1,10 @@
 #include <ultra64.h>
 
+struct struct108;
+extern struct struct108 *D_800DBFF0;
+extern s16 D_800C3FF4[];
+extern f32 D_8009862C;
+
 extern f32 D_800986EC;
 extern f32 D_800C3FD0[];
 
@@ -41,9 +46,35 @@ s32 func_15037698() {
     return 0;
 }
 
-s32 func_15037880() {
+/* Query the actor's override mode before falling back to ordinary targeting. */
+s32 func_15037880(s32 index, f32 *output) {
+    u8 *actor;
+    s32 mode;
+    f32 dx, dz;
+
+    actor = D_800CC2D0 + ((u32)index * 0x32CU);
+    mode = *(u16 *)(actor + 0x2F8) & 7;
+    if (mode == 1) {
+        output[0] = *(f32 *)((u8 *)D_800DBFF0 + 0x2F8);
+        output[1] = *(f32 *)((u8 *)D_800DBFF0 + 0x2FC);
+        output[2] = *(f32 *)((u8 *)D_800DBFF0 + 0x300);
+        return 1;
+    }
+    if (mode == 2) {
+        if (actor[5] == 4) {
+            dx = *(f32 *)(actor + 0x14) - (f32)D_800C3FF4[0];
+            dz = *(f32 *)(actor + 0x1C) - (f32)D_800C3FF4[2];
+            if (dx * dx + dz * dz > D_8009862C) return 1;
+        }
+        output[0] = (f32)D_800C3FF4[0];
+        output[1] = (f32)D_800C3FF4[1];
+        output[2] = (f32)D_800C3FF4[2];
+        return 1;
+    }
+    if (mode == 3) return 1;
     return 0;
 }
+
 
 s32 func_150379DC() {
     return 0;
