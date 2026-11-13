@@ -262,9 +262,38 @@ void func_151E2284(void) {
     D_8008FD80 = 0;
 }
 
-s32 func_151E22BC() {
-    return 0;
+
+/* Load the selected menu record, then validate the active settings. */
+s32 func_151E22BC(void) {
+    s32 index;
+    s8 *record;
+    s8 value;
+    u8 clamped;
+    index=D_800AB690[D_8008FDD4[0x42]*10];
+    record=D_80082BBC+index*10;
+    clamped=(u8)record[3];
+    if (clamped>=5) { record[3]=4; clamped=4; }
+    if (clamped<0) record[3]=0; /* Retain retail's redundant signed check. */
+    value=record[1];
+    if (value<=0) { record[1]=1; value=record[1]; }
+    D_800E0BE0[2]=value;
+    value=record[2];
+    D_800E0BE0[0xb]=0;
+    D_800E0BE0[3]=value;
+    D_800E0BE0[0x10]=record[3];
+    D_800E0BE0[0x11]=record[4];
+    switch(index) {
+    case 0: D_800E0BE0[4]=record[5]; break;
+    case 1: case 2: D_800E0BE0[0xd]=record[5];D_800E0BE0[0xe]=record[6];break;
+    case 5: D_800E0BE0[0x11]=0;D_800E0BE0[0x12]=record[5];break;
+    case 7: D_800E0BE0[0x12]=record[5];break;
+    case 8: case 9: D_800E0BE0[7]=record[5];value=record[6];D_800E0BE0[0x11]=1;D_800E0BE0[3]=2;D_800E0BE0[0x13]=value;break;
+    }
+    D_800E0BE0[0x16]=record[8];
+    D_800E0BE0[6]=record[9];
+    return func_151DD9E4();
 }
+
 
 /* Copy the selected menu settings into its ten-byte record, then submit it. */
 void func_151E2404(void) {

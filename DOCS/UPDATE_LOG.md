@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2390](WORKING_NOTES/2390-game-menu-settings-loader-match-20261113.md): `func_151E22BC` now matches the menu-settings loader. Game **3,775 / 4,843 (77.95%)**, total **4,448 / 5,516 (80.64%)**, zero drift; **100** more Game matches to 80%.
+
 [Note 2388](WORKING_NOTES/2388-game-inline-line-record-initializer-match-20261113.md): `func_1512DD50` now matches the inline line-record initializer. Game **3,774 / 4,843 (77.93%)**, total **4,447 / 5,516 (80.62%)**, zero drift; **101** more Game matches to 80%.
 
 [Note 2387](WORKING_NOTES/2387-game-scene-callback-initializer-match-20261113.md): `func_15010880` now matches the scene callback initializer. Game **3,773 / 4,843 (77.91%)**, total **4,446 / 5,516 (80.60%)**, zero drift; **102** more Game matches to 80%.
