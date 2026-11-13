@@ -22,8 +22,36 @@ s32 func_15149838() {
     return 0;
 }
 
-s32 func_15149A94() {
-    return 0;
+extern f32 D_800A578C, D_800A5790;
+/* Advance both actor extents and dispatch the associated effect states. */
+s32 func_15149A94(u8 *actor) {
+    u8 *params = actor + 0x110;
+    s32 complete = 1;
+    if (!(actor[0x74] & 2)) {
+        *(f32 *)(actor + 0x2C) += (*(f32 *)(params + 8) - *(f32 *)(actor + 0x2C)) * *(f32 *)(params + 0x44);
+        if (*(f32 *)(params + 8) * D_800A578C < *(f32 *)(actor + 0x2C)) {
+            actor[0x74] |= 2;
+        } else {
+            complete = 0;
+        }
+    }
+    if (!(actor[0x74] & 8)) {
+        *(f32 *)(actor + 0x30) += (*(f32 *)(params + 0x20) - *(f32 *)(actor + 0x30)) * *(f32 *)(params + 0x44);
+        if (*(f32 *)(params + 0x20) * D_800A5790 < *(f32 *)(actor + 0x30)) {
+            actor[0x74] |= 8;
+        } else {
+            complete = 0;
+        }
+    }
+    if (complete) {
+        func_1513F680((struct171 *)actor, actor[0x70], 13, actor[0x72], actor[0x73]);
+    }
+    if (*(s16 *)(actor + 0x1C) < 5) {
+        func_1513F680((struct171 *)actor, actor[0x70], actor[0x158], actor[0x72], actor[0x73]);
+        *(s16 *)(actor + 0x1C) = 100;
+        *(u32 *)(actor + 0x58) &= ~1;
+    }
+    return 1;
 }
 
 s32 func_15149BF4(u8 *arg0) {
