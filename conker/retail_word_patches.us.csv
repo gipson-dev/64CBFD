@@ -30313,3 +30313,7 @@ generated_77760,func_1504A2B0,0x110,0x1460FFFB,0x1440FFFB,-,-,Normalize exponent
 generated_77760,func_1504A2B0,0x124,0x46029003,0x44815000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
 generated_77760,func_1504A2B0,0x130,0x46029003,0x44815000,-,-,Normalize exponential series register allocation and constant scheduling,0x00000000,,false
 generated_77760,func_1504A2B0,0x134,0x03E00008,0x46025003,-,-,Normalize exponential series register allocation and constant scheduling,0x03E00008,,false
+generated_FB060,func_150CDBB0,0x18,0x12000044,0x12000045,-,-,Preserve height-result store and random-call schedule,,,false
+generated_FB060,func_150CDBB0,0x74,0x1040002D,0x1040002E,-,-,Preserve height-result store and random-call schedule,,,false
+generated_FB060,func_150CDBB0,0x7c,0x0C000000,0xE7A80070,R_MIPS_26:func_150ADA20,-,Preserve height-result store and random-call schedule,,,false
+generated_FB060,func_150CDBB0,0x80,0xE7A80070,0x0C000000,-,R_MIPS_26:func_150ADA20,Preserve height-result store and random-call schedule,0x00000000,,false
