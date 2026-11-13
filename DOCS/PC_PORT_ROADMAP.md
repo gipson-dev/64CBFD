@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2369](WORKING_NOTES/2369-game-point-descriptor-frame-abi-screen-20261113.md): `func_151382E0` has an uninstalled frame and helper ABI screen. Game remains **3,756 / 4,843 (77.56%)**; **119** more Game matches to 80%.
+
 [Note 2368](WORKING_NOTES/2368-game-owner-mode-dispatch-direct-match-20261113.md): `func_1514EA1C` now matches retail directly using the preserved switch table. Game **3,756 / 4,843 (77.56%)**, total **4,429 / 5,516 (80.29%)**, zero drift; **119** more Game matches to 80%.
 
 [Note 2367](WORKING_NOTES/2367-game-camera-state-callback-direct-match-20261113.md): `func_15125924` now matches retail directly. Game **3,755 / 4,843 (77.53%)**, total **4,428 / 5,516 (80.28%)**, zero drift; **120** more Game matches to 80%.
