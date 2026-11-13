@@ -30861,3 +30861,17 @@ generated_197120,func_1516A3F4,0x120,0x44035000,0x44095000,-,-,Normalize contact
 generated_197120,func_1516A3F4,0x124,0x44083000,0x440C3000,-,-,Normalize contact-effect register allocation and independent schedule,,,false
 generated_197120,func_1516A3F4,0x128,0xA6030026,0xA6090026,-,-,Normalize contact-effect register allocation and independent schedule,,,false
 generated_197120,func_1516A3F4,0x12C,0xA6080028,0xA60C0028,-,-,Normalize contact-effect register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x0B0,0x35ADD3FF,0x35CEFF7F,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x0B4,0x35CEFF7F,0x35ADD3FF,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x0F4,0x240D0008,0x240C0008,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x0F8,0x240E0003,0x240D0003,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x100,0x00085203,0x00084A03,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x104,0x314B00FF,0x312A00FF,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x108,0x01616025,0x01415825,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x10C,0xAC4C0014,0xAC4B0014,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x118,0xAFAD0010,0xAFAC0010,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED09C,0x11C,0xAFAE0014,0xAFAD0014,-,-,Normalize fade image register allocation and independent schedule,,,false
+generated_215960,func_151ED430,0x000,0xAFA40000,0xAFA40000,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
+generated_215960,func_151ED430,0x004,0xAFA50004,0xAFA50004,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
+generated_215960,func_151ED430,0x008,0xAFA60008,0xAFA60008,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true
+generated_215960,func_151ED430,0x00C,0xAFA7000C,0xAFA7000C,-,-,Preserve existing stub while correcting image-draw argument ABI,,,true

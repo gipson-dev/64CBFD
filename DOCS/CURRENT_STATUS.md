@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2362](WORKING_NOTES/2362-game-two-layer-fade-graphics-match-20261113.md): `func_151ED09C` now matches retail; its drawing helper remains a placeholder. Game **3,751 / 4,843 (77.45%)**, total **4,424 / 5,516 (80.20%)**, zero drift; **124** more Game matches to 80%.
+
 [Note 2361](WORKING_NOTES/2361-game-contact-effect-update-match-20261113.md): `func_1516A3F4` now matches retail. Game **3,750 / 4,843 (77.43%)**, total **4,423 / 5,516 (80.18%)**, zero drift; **125** more Game matches to 80%.
 
 [Note 2360](WORKING_NOTES/2360-game-contact-effect-private-screen-20261113.md): `func_1516A3F4` has an 81-word guarded private screen; two original callback windows were identified; see Note 2361 for the production match. Game remains **3,749 / 4,843 (77.41%)**, with **126** more matches to 80%.

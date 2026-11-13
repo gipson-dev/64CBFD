@@ -817,8 +817,26 @@ s32 func_151EC3E8() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_215960/func_151EC648.s")
 
-s32 func_151ED09C() {
-    return 0;
+extern u8 D_800E0B97;
+extern u8 D_8009181C[], D_80091828[];
+Gfx *func_151ED430(Gfx *, u8 *, s32, s32, s32, s32, f32, s32);
+u8 *func_15096934(u8 *);
+
+/* Draw the two timed fade graphics and finish the display list. */
+Gfx *func_151ED09C(Gfx *commands) {
+    s32 alpha;
+    gSPDisplayList(commands++, &D_80090028);
+    alpha = (s32)((u32)D_800E0A90 << 2);
+    if (alpha >= 256) alpha = 255;
+    gDPSetEnvColor(commands++, 255, 255, 255, alpha);
+    commands = func_151ED430(commands, D_8009181C, 146, 108, 8, 3, 1.0f, 0);
+    gDPPipeSync(commands++);
+    commands->words.w0 = 0xFCFFD3FF;
+    commands->words.w1 = 0xFFA6FF7F;
+    commands++;
+    gDPSetEnvColor(commands++, 255, 128, 32, ((s32)((u32)D_800E0B97 * ((u32)alpha + 1u)) >> 8) & 255);
+    commands = func_151ED430(commands, D_80091828, 146, 108, 8, 3, 1.0f, 0);
+    return (Gfx *)func_15096934((u8 *)commands);
 }
 
 extern u8 D_800E0B96;
@@ -846,7 +864,7 @@ s32 func_151ED29C() {
     return 0;
 }
 
-s32 func_151ED430() {
+Gfx *func_151ED430(Gfx *commands, u8 *image, s32 x, s32 y, s32 width, s32 height, f32 scale, s32 flags) {
     return 0;
 }
 
