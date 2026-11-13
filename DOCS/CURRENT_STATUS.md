@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2370](WORKING_NOTES/2370-game-slot-notification-private-screen-20261113.md): `func_15156028` has an uninstalled 88-word callback screen and an indirect-table reference. Game remains **3,756 / 4,843 (77.56%)**; **119** more Game matches to 80%.
+
 [Note 2369](WORKING_NOTES/2369-game-point-descriptor-frame-abi-screen-20261113.md): `func_151382E0` has an uninstalled frame and helper ABI screen. Game remains **3,756 / 4,843 (77.56%)**; **119** more Game matches to 80%.
 
 [Note 2368](WORKING_NOTES/2368-game-owner-mode-dispatch-direct-match-20261113.md): `func_1514EA1C` now matches retail directly using the preserved switch table. Game **3,756 / 4,843 (77.56%)**, total **4,429 / 5,516 (80.29%)**, zero drift; **119** more Game matches to 80%.
