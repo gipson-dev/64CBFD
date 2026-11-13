@@ -434,8 +434,37 @@ void func_151E4E64(void) {
     }
 }
 
-s32 func_151E4EE8() {
-    return 0;
+extern f32 D_8008FDD0, D_800DDDC8, D_800DDDD8;
+extern f32 D_800ABA2C, D_800ABA30, D_800ABA34;
+/* Update the scene fade and dispatch its completion callback. */
+void func_151E4EE8(void) {
+    u8 alpha = D_800E0B96;
+    D_8008FDD0 = 1.0f - ((f32)alpha / 255.0f);
+    if (D_8008FD74 == 255) {
+        if (D_800DDDC8 > D_800ABA2C) {
+            D_800E0B96 = alpha + (u32)D_800BE9E4;
+            alpha = D_800E0B96;
+            if (alpha < 0x55) {
+                D_800DDDD8 = D_800ABA30;
+            } else {
+                D_800DDDD8 = D_800ABA34;
+            }
+        }
+        if (D_800DDDC8 < 1.0f || alpha < 0x6E) {
+            return;
+        }
+    } else if (alpha != 255) {
+        s32 next = (s32)(alpha + (u32)D_800BE9E4 * D_8008FD74);
+        if (next >= 256) {
+            next = 255;
+        }
+        D_800E0B96 = next;
+        return;
+    }
+    D_800E0B96 = 255;
+    D_8008FD74 = 8;
+    D_8008FDD0 = 1.0f;
+    ((void (*)(void))D_800E0A88)();
 }
 
 void func_151E5034(void) {

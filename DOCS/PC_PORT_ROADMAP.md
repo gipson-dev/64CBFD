@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2356](WORKING_NOTES/2356-game-scene-fade-update-direct-match-20261113.md): `func_151E4EE8` now matches retail directly. Game **3,745 / 4,842 (77.34%)**, total **4,418 / 5,515 (80.11%)**, zero drift; **129** more Game matches to 80%.
+
 [Note 2355](WORKING_NOTES/2355-game-actor-sentinel-query-direct-match-20261113.md): `func_15037880` now matches retail directly. Game **3,744 / 4,842 (77.32%)**, total **4,417 / 5,515 (80.09%)**, zero drift; **130** more Game matches to 80%.
 
 [Note 2354](WORKING_NOTES/2354-game-bounded-queue-append-match-20261113.md): `func_1518ABD0` now matches retail. Game **3,743 / 4,842 (77.30%)**, total **4,416 / 5,515 (80.07%)**, zero drift; **131** more Game matches to 80%.
