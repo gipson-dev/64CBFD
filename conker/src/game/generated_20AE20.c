@@ -134,8 +134,18 @@ void func_151DD970(void) {
     }
 }
 
-s32 func_151DD9E4() {
-    return 0;
+/* Signed per-setting bounds and reset defaults occupy separate retail tables. */
+extern s8 D_8008FE6C[23];
+extern s8 D_8008FE84[23];
+s32 func_151DD9E4(void) {
+    s32 i;
+
+    for (i = 0; i < 23; i++) {
+        if (D_800E0BE0[i] < D_8008FE6C[i] || D_800E0BE0[i] > D_8008FE84[i]) {
+            D_800E0BE0[i] = D_8008FE54[i];
+        }
+    }
+    return 23; /* Retail leaves the completed loop index in the return register. */
 }
 
 s32 func_151DDB94(s32 arg0) {

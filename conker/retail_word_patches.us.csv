@@ -31167,3 +31167,6 @@ generated_20AE20,func_151E22BC,0x12C,0x808D0009,0x904F0009,-,-,Normalize selecte
 generated_20AE20,func_151E22BC,0x134,0xA04D0006,0xA06F0006,-,-,Normalize selected record load scheduling and register roles,,,false
 game_1FFF60,func_151D2C40,0x30,0x9058003B,0x92180014,-,-,Normalize independent actor/effect identity-byte load order,,,false
 game_1FFF60,func_151D2C40,0x34,0x92190014,0x9059003B,-,-,Normalize independent actor/effect identity-byte load order,,,false
+generated_20AE20,func_151DD9E4,0x20,0x3C030000,0x3C030000,R_MIPS_HI16:D_800E0BE0,R_MIPS_HI16:D_800E0BE3,Bind settings cursor high half to its original plus-three symbol,,,false
+generated_20AE20,func_151DD9E4,0x60,0x24630003,0x24630000,R_MIPS_LO16:D_800E0BE0,R_MIPS_LO16:D_800E0BE3,Bind settings cursor low half to its original plus-three symbol,,,false
+generated_20AE20,func_151DD9E4,0x1A8,0x24020017,0x24020017,-,-,Omit redundant return constant after the loop reaches 23,,,true
