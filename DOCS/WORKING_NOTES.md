@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2391](WORKING_NOTES/2391-game-linked-actor-effect-updater-match-20261113.md): `func_151D2C40` now matches the linked actor-effect updater. Game **3,776 / 4,843 (77.97%)**, total **4,449 / 5,516 (80.66%)**, zero drift; **99** more Game matches to 80%.
+
 [Note 2390](WORKING_NOTES/2390-game-menu-settings-loader-match-20261113.md): `func_151E22BC` now matches the menu-settings loader. Game **3,775 / 4,843 (77.95%)**, total **4,448 / 5,516 (80.64%)**, zero drift; **100** more Game matches to 80%.
 
 [Note 2389](WORKING_NOTES/2389-game-line-camera-consumer-stack-screen-20261113.md): `func_1512DEA4` remains private; retail out-of-range kinds depend on incoming stack words, and the screened C shapes do not preserve that behavior. Game remains **3,774 / 4,843 (77.93%)**, with **101** more matches to 80%.

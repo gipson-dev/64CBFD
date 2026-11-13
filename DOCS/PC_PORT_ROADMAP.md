@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2391](WORKING_NOTES/2391-game-linked-actor-effect-updater-match-20261113.md): `func_151D2C40` now matches the linked actor-effect updater. Game **3,776 / 4,843 (77.97%)**, total **4,449 / 5,516 (80.66%)**, zero drift; **99** more Game matches to 80%.
+
 [Note 2390](WORKING_NOTES/2390-game-menu-settings-loader-match-20261113.md): `func_151E22BC` now matches the menu-settings loader. Game **3,775 / 4,843 (77.95%)**, total **4,448 / 5,516 (80.64%)**, zero drift; **100** more Game matches to 80%.
 
 [Note 2388](WORKING_NOTES/2388-game-inline-line-record-initializer-match-20261113.md): `func_1512DD50` now matches the inline line-record initializer. Game **3,774 / 4,843 (77.93%)**, total **4,447 / 5,516 (80.62%)**, zero drift; **101** more Game matches to 80%.

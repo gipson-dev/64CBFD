@@ -41,7 +41,7 @@ void func_1516972C(struct102 *);
 void func_1514EDF0(s32, u8 *);
 
 /* Generated placeholder declarations. */
-s32 func_151D2C40();
+
 struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3);
 s32 func_151D2F90();
 void func_151D3130(void *ownerData);
@@ -87,10 +87,72 @@ struct224 *func_151D2BA4(s32 arg0, struct00 *arg1, s32 arg2, u8 arg3, s32 arg4) 
     return tmp;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D2C40.s. */
-s32 func_151D2C40() {
-    return 0;
+
+
+#ifdef __GNUC__
+#define EFFECT_UPDATE_ALIAS __attribute__((__may_alias__))
+#else
+#define EFFECT_UPDATE_ALIAS
+#endif
+typedef struct EFFECT_UPDATE_ALIAS {
+    u8 pad00[0x10];
+    struct127 *actor;
+    u8 actorId;
+    u8 pad15[3];
+    f32 point[3];
+    u8 matrixIndex;
+    u8 pad25;
+    s16 timer;
+    u8 flags;
+    s8 updateKind;
+    s8 releaseKind;
+    u8 pad2b;
+    void *child;
+    u8 pad30[4];
+    u32 output[3];
+} LinkedEffect151D2C40;
+typedef struct EFFECT_UPDATE_ALIAS {
+    u32 a, b, c;
+} LinkedEffectWords151D2C40;
+typedef s32 (*LinkedEffectUpdate151D2C40)(LinkedEffect151D2C40 *, f32 *);
+extern LinkedEffectUpdate151D2C40 D_8008FC40[];
+void func_15143134(f32 *, f32 *, u8 *);
+
+
+/* Update a linked actor effect, expiring or dispatching its callbacks. */
+void func_151D2C40(LinkedEffect151D2C40 *effect) {
+    struct127 *actor;
+    f32 point[3];
+    s8 kind;
+
+    actor = effect->actor;
+    if (!actor->interaction_state || actor->id == 255 || effect->actorId != actor->unique_id ||
+        !actor->unk1D4 || (actor->unk74 & 15) == 15) {
+        func_1516972C((struct102 *)effect);
+        return;
+    }
+    func_15143134(effect->point, point, (u8 *)actor->unk1D4 + (effect->matrixIndex << 6));
+    if (effect->flags & 1) {
+        effect->timer = (s16)((u32)(s32)effect->timer - (u32)D_800BE9E4); /* Match retail's wrapping subtraction. */
+        if (effect->timer < 0) {
+            kind = effect->releaseKind;
+            if (kind != -1) {
+                D_8008FC48[kind]((ReleaseChainNode *)effect, point);
+            }
+            effect->child = 0;
+            func_1516972C((struct102 *)effect);
+            return;
+        }
+    }
+    kind = effect->updateKind;
+    if (kind != -1 && !D_8008FC40[kind](effect, point)) {
+        func_1516972C((struct102 *)effect);
+        return;
+    }
+    /* Copy the transformed point without changing its float bit patterns. */
+    *(LinkedEffectWords151D2C40 *)&effect->output[0] = *(LinkedEffectWords151D2C40 *)point;
 }
+
 
 void func_151D2DAC(struct102 *arg0) {
     func_151D3354(arg0);
