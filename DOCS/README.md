@@ -1,6 +1,8 @@
 # Documentation
 
-[Note 2382](WORKING_NOTES/2382-game-cache-expiry-private-screen-20261113.md): `func_1517ABB0` has an uncredited 83-word private screen; its retail extent is 84 words and its scheduling still differs.
+[Note 2383](WORKING_NOTES/2383-game-cache-expiry-cleanup-match-20261113.md): `func_1517ABB0` now matches cache-expiry cleanup. Game **3,767 / 4,843 (77.78%)**, total **4,440 / 5,516 (80.49%)**, zero drift; **108** more Game matches to 80%.
+
+[Note 2382](WORKING_NOTES/2382-game-cache-expiry-private-screen-20261113.md): the private cache-expiry screen was subsequently promoted in Note 2383.
 
 [Note 2381](WORKING_NOTES/2381-game-script-node-acquisition-match-20261113.md): `func_1509B5AC` now matches script-node acquisition. Game **3,766 / 4,843 (77.76%)**, total **4,439 / 5,516 (80.47%)**, zero drift; **109** more Game matches to 80%.
 

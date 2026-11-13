@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2383](WORKING_NOTES/2383-game-cache-expiry-cleanup-match-20261113.md): `func_1517ABB0` now matches cache-expiry cleanup. Game **3,767 / 4,843 (77.78%)**, total **4,440 / 5,516 (80.49%)**, zero drift; **108** more Game matches to 80%.
+
 [Note 2381](WORKING_NOTES/2381-game-script-node-acquisition-match-20261113.md): `func_1509B5AC` now matches script-node acquisition. Game **3,766 / 4,843 (77.76%)**, total **4,439 / 5,516 (80.47%)**, zero drift; **109** more Game matches to 80%.
 
 [Note 2380](WORKING_NOTES/2380-game-slot-notification-callback-match-20261113.md): `func_15156028` now matches the slot-notification callback. Game **3,765 / 4,843 (77.74%)**, total **4,438 / 5,516 (80.46%)**, zero drift; **110** more Game matches to 80%.
