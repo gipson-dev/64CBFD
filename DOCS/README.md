@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2341](WORKING_NOTES/2341-game-exponential-approximation-guarded-match-20261112.md): `func_1504A2B0` matches all 81 retail words with 29 checked guards. Game **3,731 / 4,842 (77.05%)**, total **4,404 / 5,515 (79.85%)**, zero drift; **143** more Game matches to 80%.
+
 [Note 2340](WORKING_NOTES/2340-game-paired-random-effect-callbacks-direct-match-20261112.md): `func_150D6388` and `func_150D6434` convert directly from assembly to byte-exact C without guards. Game **3,730 / 4,842 (77.03%)**, total **4,403 / 5,515 (79.84%)**, zero drift; **144** more Game matches to 80%.
 
 [Note 2339](WORKING_NOTES/2339-game-linked-owner-velocity-callback-match-20261112.md): `func_150D6CC4` matches all 103 retail words with seven checked guards. Game **3,728 / 4,840 (77.02%)**, total **4,401 / 5,513 (79.83%)**, zero drift; **144** more Game matches to 80%.

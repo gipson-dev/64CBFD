@@ -30284,3 +30284,32 @@ generated_1028F0,func_150D6CC4,0x5C,0x24C40058,0x8FA60040,-,-,Normalize owner ve
 generated_1028F0,func_150D6CC4,0x60,0x8C810000,0x24C40058,-,-,Normalize owner velocity address and vector-copy schedule,,,false
 generated_1028F0,func_150D6CC4,0x64,0x3C030000,0x8C810000,R_MIPS_HI16:D_800BE9A4,-,Normalize owner velocity address and vector-copy schedule,,,false
 generated_1028F0,func_150D6CC4,0x68,0x24630000,0x27B9002C,R_MIPS_LO16:D_800BE9A4,-,Normalize owner velocity address and vector-copy schedule,,,false
+generated_77760,func_1504A2B0,0x3c,0x44025000,0x44045000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x44,0x28410401,0x28810401,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x4c,0x00401825,0x00801025,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x78,0x44822000,0x44842000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x80,0x44819000,0x44811000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x88,0x3C010000,0x44817000,R_MIPS_HI16:D_800990A8,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x8c,0xC4280000,0x3C010000,R_MIPS_LO16:D_800990A8,R_MIPS_HI16:D_800990A8,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x90,0x30450003,0xC4280000,-,R_MIPS_LO16:D_800990A8,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x94,0x24040001,0x30850003,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x98,0x00052823,0x24030001,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xa0,0x46009086,0x00052823,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xa4,0x46009386,0x3C013F80,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xa8,0x460A0401,0x460A0481,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xac,0x44842000,0x44832000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xb0,0x46001006,0x46001406,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xb4,0x24840001,0x24630001,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xbc,0x46068203,0x46069203,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xc8,0x46001032,0x46101032,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xd4,0x44842000,0x44832000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xdc,0x5040000F,0x5080000F,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xe8,0x00A22021,0x00A41821,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xec,0x2463FFFF,0x2442FFFF,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xf0,0x1483FFFE,0x1462FFFE,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0xf8,0x50600008,0x50400008,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x104,0x2463FFFC,0x2442FFFC,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x110,0x1460FFFB,0x1440FFFB,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x124,0x46029003,0x44815000,-,-,Normalize exponential series register allocation and constant scheduling,,,false
+generated_77760,func_1504A2B0,0x130,0x46029003,0x44815000,-,-,Normalize exponential series register allocation and constant scheduling,0x00000000,,false
+generated_77760,func_1504A2B0,0x134,0x03E00008,0x46025003,-,-,Normalize exponential series register allocation and constant scheduling,0x03E00008,,false
