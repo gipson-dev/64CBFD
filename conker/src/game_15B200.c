@@ -3,55 +3,55 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_1512DD50();
+void func_1512DD50(struct108 *);
 s32 func_1512DEA4();
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/game_15B200/func_1512DD50.s. */
-s32 func_1512DD50() {
-    return 0;
+#ifdef __GNUC__
+#define LINE_RECORD_ALIAS __attribute__((__may_alias__))
+#else
+#define LINE_RECORD_ALIAS
+#endif
+typedef struct LINE_RECORD_ALIAS { u8 kind; u8 pad01[15]; f32 x,y,z,inverse,first,second,zero28,zero2c; } LineRecord1512DD50;
+typedef struct LINE_RECORD_ALIAS { u8 pad00[8]; s32 second; u8 pad0c[0x10]; u32 kind; s32 first; } LineSource1512DD50;
+/* Build the inline line record from the owner's position and direction. */
+void func_1512DD50(struct108 *owner) {
+    f32 dx;
+    /* The saved coordinate remains live across the endpoint stores. */
+    volatile f32 originZ;
+    f32 dy, size, originX, originY;
+    LineRecord1512DD50 *record;
+    struct17 vector;
+    originX = owner->unk70C;
+    originY = owner->unk70E;
+    originZ = owner->unk710;
+    size = owner->unk712;
+    dx = owner->unk720 * size;
+    dy = owner->unk724 * size;
+    size = -dx * owner->unk72C;
+    dx = owner->unk728 * dx;
+    owner->unk874 = originX - dx;
+    owner->unk878 = originY - dy;
+    owner->unk87C = originZ - size;
+    vector.unk0 = dx + dx;
+    vector.unk4 = dy + dy;
+    vector.unk8 = size + size;
+    size = 1.0f / func_150AD930(&vector.unk0);
+    record = (LineRecord1512DD50 *)&owner->unk870;
+    record->inverse = size;
+    record->x = size * vector.unk0;
+    record->y = size * vector.unk4;
+    record->z = size * vector.unk8;
+    dy = (f32)((LineSource1512DD50 *)&owner->unk6FC)->first; /* Match MIPS signed conversion followed by unsigned adjustment. */
+    if (((LineSource1512DD50 *)&owner->unk6FC)->first < 0) dy += 4294967296.0f;
+    record->first = dy;
+    dy = (f32)((LineSource1512DD50 *)&owner->unk6FC)->second;
+    if (((LineSource1512DD50 *)&owner->unk6FC)->second < 0) dy += 4294967296.0f;
+    record->second = dy;
+    record->zero28 = 0.0f;
+    record->zero2c = 0.0f;
+    record->kind = ((LineSource1512DD50 *)&owner->unk6FC)->kind;
 }
-// void func_1512DD50(struct108 *arg0) {
-//     s32 pad;
-//     struct17 tmp;
-//
-//     f32 temp_f0;
-//     f32 temp_f0_2;
-//     f32 temp_f12;
-//     f32 temp_f14;
-//     f32 temp_f2;
-//
-//     struct127 *temp_v0;
-//     struct164 *temp_v1;
-//
-//     temp_f2 = arg0->unk712;
-//     temp_f0 = arg0->unk720 * temp_f2;
-//     temp_f12 = arg0->unk724 * temp_f2;
-//     temp_f0_2 = arg0->unk728 * temp_f0;
-//     temp_f14 = -temp_f0 * arg0->unk72C;
-//
-//     arg0->unk874 = arg0->unk70C - temp_f0_2;
-//     arg0->unk878 = arg0->unk70E - temp_f12;
-//     arg0->unk87C = arg0->unk710 - temp_f14;
-//
-//     tmp.unk0 = 2.0f * temp_f0_2;
-//     tmp.unk4 = 2.0f * temp_f12;
-//     tmp.unk8 = 2.0f * temp_f14;
-//
-//     temp_f2 = 1.0f / func_150AD930(&tmp);
-//     temp_v0 = arg0->unk870;
-//     temp_v0->unk1C = temp_f2;
-//     temp_v0->unk10 = temp_f2 * tmp.unk0;
-//     temp_v0->unk14 = temp_f2 * tmp.unk4;
-//     temp_v0->unk18 = temp_f2 * tmp.unk8;
-//     temp_v1 = arg0->unk6FC;
-//     temp_v0->unk20 = temp_v1->unk20;
-//     temp_v0->unk24 = temp_v1->unk8;
-//     temp_v0->unk28 = 0.0f;
-//     temp_v0->unk2C = 0.0f;
-//     temp_v0->unk0 = (s8) temp_v1->unk1C;
-// }
-
 /* Non-matching C placeholders for asm/nonmatchings/game_15B200/func_1512DEA4.s. */
 s32 func_1512DEA4() {
     return 0;

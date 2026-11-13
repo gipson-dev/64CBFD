@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2388](WORKING_NOTES/2388-game-inline-line-record-initializer-match-20261113.md): `func_1512DD50` now matches the inline line-record initializer. Game **3,774 / 4,843 (77.93%)**, total **4,447 / 5,516 (80.62%)**, zero drift; **101** more Game matches to 80%.
+
 [Note 2387](WORKING_NOTES/2387-game-scene-callback-initializer-match-20261113.md): `func_15010880` now matches the scene callback initializer. Game **3,773 / 4,843 (77.91%)**, total **4,446 / 5,516 (80.60%)**, zero drift; **102** more Game matches to 80%.
 
 [Note 2386](WORKING_NOTES/2386-game-unique-asset-load-lifetime-screen-20261113.md): `func_15016850` remains private; new owner and bounded guest screens narrow its register and stack-lifetime differences. Game remains **3,772 / 4,843 (77.89%)**; **103** more matches to 80%.
