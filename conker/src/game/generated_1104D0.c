@@ -22,7 +22,7 @@ extern Generated1104D0Actor *D_800D99D0[8];
 
 void func_151C3B0C(void *, f32, f32, f32, f32, s32, s32, s32);
 f32 func_150484A0(f32, f32);
-void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
+s32 func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
 /* Restored functions and remaining placeholders for asm/1104D0.s. */
 

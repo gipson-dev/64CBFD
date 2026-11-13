@@ -152,7 +152,7 @@ void func_15047390(f32 mf[4][4], f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
 void func_15047700(f32 mf[4][4], LookAt *l, f32 xEye, f32 yEye, f32 zEye,
                    f32 xAt, f32 yAt, f32 zAt, f32 xUp, f32 yUp, f32 zUp);
-void func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
+s32 func_1505D1C4(f32 arg0, f32 arg1, f32 arg2, s32 arg3, s32 arg4,
                    u16 arg5, s32 arg6, s32 arg7);
 s32 func_1504697C(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);
 s32 func_15046D00(f32 *position, u16 selector, f32 threshold, HeightResult71820 *result);

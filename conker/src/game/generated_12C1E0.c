@@ -4,7 +4,7 @@ extern u8 D_80088BB0;
 void func_15145EA4(void *, void *, s32, s32);
 void func_15145740(s32, s32, s32, s32, f32);
 s32 func_15081E0C(u8 *, u16, u8);
-void func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
+s32 func_1505D1C4(f32, f32, f32, s32, s32, u16, s32, s32);
 
 /* Non-matching placeholders for the text-only asm slice asm/12C1E0.s. */
 
