@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2343](WORKING_NOTES/2343-game-effect-descriptor-alias-screen-20261112.md): `func_150B9D8C` remains uncredited after stack-alias and caller screening. Game **3,732 / 4,842 (77.08%)**, total **4,405 / 5,515 (79.87%)**, zero drift; **142** more Game matches to 80%.
+
 [Note 2342](WORKING_NOTES/2342-game-ground-height-effect-dispatch-match-20261112.md): `func_150CDBB0` matches all 81 retail words with four checked guards. Game **3,732 / 4,842 (77.08%)**, total **4,405 / 5,515 (79.87%)**, zero drift; **142** more Game matches to 80%.
 
 [Note 2341](WORKING_NOTES/2341-game-exponential-approximation-guarded-match-20261112.md): `func_1504A2B0` matches all 81 retail words with 29 checked guards. Game **3,731 / 4,842 (77.05%)**, total **4,404 / 5,515 (79.85%)**, zero drift; **143** more Game matches to 80%.
