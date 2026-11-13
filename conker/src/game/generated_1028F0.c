@@ -150,8 +150,39 @@ void func_150D6C98(f32 *arg0, f32 *arg1) {
     arg1[2] = arg0[7];
 }
 
-s32 func_150D6CC4() {
-    return 0;
+extern f32 D_800BE9A4, D_800BE9A8;
+void func_15131958(f32 *, f32);
+typedef struct {
+    u8 *target;
+    u8 identity;
+    u8 pad05[3];
+    f32 factor;
+} Link150D6CC4;
+typedef struct {
+    f32 x, y, z;
+} Vec150D6CC4;
+
+/* Advance linked owner position using the pre- and post-update velocities. */
+s32 func_150D6CC4(u8 *owner, void *context) {
+    Link150D6CC4 *link = (Link150D6CC4 *)(owner + 0xA8);
+    u8 *target = link->target;
+    Vec150D6CC4 previous;
+    f32 dx, dy, dz;
+
+    if (*(s32 *)target == 0 || link->identity != target[0x3B]) {
+        return 0;
+    }
+    func_150D6C98((f32 *)target, (f32 *)(owner + 0x40));
+    previous = *(Vec150D6CC4 *)(owner + 0x58);
+    *(f32 *)(owner + 0x5C) += *(f32 *)(owner + 0x64) * D_800BE9A4;
+    func_15131958((f32 *)(owner + 0x58), link->factor);
+    dx = (*(f32 *)(owner + 0x58) - previous.x) * D_800BE9A8;
+    dy = (*(f32 *)(owner + 0x5C) - previous.y) * D_800BE9A8;
+    dz = (*(f32 *)(owner + 0x60) - previous.z) * D_800BE9A8;
+    *(f32 *)(owner + 0x4C) += (previous.x * D_800BE9A4) + (dx * D_800BE9A4 * D_800BE9A4 * 0.5f);
+    *(f32 *)(owner + 0x50) += (previous.y * D_800BE9A4) + (dy * D_800BE9A4 * D_800BE9A4 * 0.5f);
+    *(f32 *)(owner + 0x54) += (previous.z * D_800BE9A4) + (dz * D_800BE9A4 * D_800BE9A4 * 0.5f);
+    return 1;
 }
 
 /* Retarget an embedded owner reference or release a matching reference. */

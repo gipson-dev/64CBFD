@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2339](WORKING_NOTES/2339-game-linked-owner-velocity-callback-match-20261112.md): `func_150D6CC4` matches all 103 retail words with seven checked guards. Game **3,728 / 4,840 (77.02%)**, total **4,401 / 5,513 (79.83%)**, zero drift; **144** more Game matches to 80%.
+
 [Note 2338](WORKING_NOTES/2338-game-linked-owner-motion-callback-match-20261112.md): `func_150D6F0C` matches all 87 retail words with ten checked guards. Game **3,727 / 4,840 (77.00%)**, total **4,400 / 5,513 (79.81%)**, zero drift; **145** more Game matches to 80%.
 
 [Note 2337](WORKING_NOTES/2337-game-effect-intensity-callback-byte-match-20261112.md): `func_151C7038` matches all 87 retail words with 21 checked guards. Game **3,726 / 4,840 (76.98%)**, total **4,399 / 5,513 (79.79%)**, zero drift; **146** more Game matches to 80%.
