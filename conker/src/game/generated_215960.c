@@ -860,9 +860,58 @@ Gfx *func_151ED1E0(Gfx *commands) {
     return func_1501A6CC(commands, 0, 0, D_800BE620, D_800BE624);
 }
 
-s32 func_151ED29C() {
-    return 0;
+
+#ifdef __GNUC__
+#define TILE_151ED29C_ALIAS __attribute__((__may_alias__))
+#else
+#define TILE_151ED29C_ALIAS
+#endif
+typedef struct TILE_151ED29C_ALIAS {
+    u8 pad00[6];
+    u16 width;
+    u16 height;
+    u8 format;
+    u8 size;
+} TextureTile151ED29C;
+extern u8 D_8009DEB0[];
+extern u8 D_8009DEB4[];
+extern u8 D_8009DEB8[];
+extern u8 D_8009DEBC[];
+
+/* Emit load and render tiles and report the texture byte footprint. */
+Gfx *func_151ED29C(Gfx *commands, TextureTile151ED29C *image, s32 *bytes) {
+    s32 widthMask = 1;
+    s32 heightMask;
+    s32 power = 2;
+    s32 width;
+    s32 height;
+    s32 format;
+    s32 size;
+    Gfx *syncCommand;
+    *bytes = (s32)((u32)image->width * image->height + D_8009DEB0[image->size]) >> (D_8009DEB4[image->size] & 31);
+    width = image->width;
+    if (width >= 3) {
+        do { power *= 2; widthMask++; } while (power < width);
+        power = 2;
+    }
+    heightMask = 1;
+    syncCommand = commands++;
+    height = image->height;
+    if (height >= 3) {
+        do { power *= 2; heightMask++; } while (power < height);
+    }
+    /* The sync write can overlap the image descriptor. */
+    format = image->format;
+    gDPPipeSync(syncCommand);
+    gDPSetTile(commands++, format, D_8009DEBC[image->size], 0, 0, G_TX_LOADTILE, 0,
+               0, 0, 0, 0, 0, 0);
+    size = image->size;
+    gDPSetTile(commands++, format, size, (D_8009DEB8[size] * image->width + 7) >> 3, 0,
+               G_TX_RENDERTILE, 0, G_TX_CLAMP, heightMask, 0, G_TX_CLAMP, widthMask, 0);
+    gDPSetTileSize(commands++, G_TX_RENDERTILE, 0, 0, (u32)(image->width - 1) << 2, (u32)(image->height - 1) << 2);
+    return commands;
 }
+
 
 Gfx *func_151ED430(Gfx *commands, u8 *image, s32 x, s32 y, s32 width, s32 height, f32 scale, s32 flags) {
     return 0;

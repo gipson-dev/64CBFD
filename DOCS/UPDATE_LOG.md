@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2393](WORKING_NOTES/2393-game-texture-tile-display-list-builder-match-20261113.md): `func_151ED29C` now matches the texture-tile display-list builder. Game **3,778 / 4,843 (78.01%)**, total **4,451 / 5,516 (80.69%)**, zero drift; **97** more Game matches to 80%.
+
 [Note 2392](WORKING_NOTES/2392-game-settings-validator-match-20261113.md): `func_151DD9E4` now matches the settings validator. Game **3,777 / 4,843 (77.99%)**, total **4,450 / 5,516 (80.67%)**, zero drift; **98** more Game matches to 80%.
 
 [Note 2391](WORKING_NOTES/2391-game-linked-actor-effect-updater-match-20261113.md): `func_151D2C40` now matches the linked actor-effect updater. Game **3,776 / 4,843 (77.97%)**, total **4,449 / 5,516 (80.66%)**, zero drift; **99** more Game matches to 80%.
