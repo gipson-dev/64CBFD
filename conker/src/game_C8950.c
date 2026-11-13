@@ -22,7 +22,9 @@ typedef struct {
 s32 allocate_memory(s32 size, s32 color, s32 side, s32 flags);
 
 /* Generated placeholder declarations. */
-s32 func_1509B5AC(s32 arg0, s32 arg1);
+struct248 *func_1509B5AC(s32 scriptId, s32 force);
+struct248 *func_1509B8FC(s16 scriptId);
+s32 func_150ADAF0(void *node, s32 command);
 void func_1509B810(ScriptNodeC8950 *node);
 struct248 *func_1509B950(struct248 *block);
 s32 func_1509BA04();
@@ -66,9 +68,25 @@ u16 *func_1509B570(s32 arg0) {
     return NULL;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_C8950/func_1509B5AC.s. */
-s32 func_1509B5AC(s32 arg0, s32 arg1) {
-    return 0;
+/* Acquire a script node and initialize or reset its state. */
+struct248 *func_1509B5AC(s32 scriptId, s32 force) {
+    struct248 *node;
+    node = (struct248 *)func_1509B704((s16)scriptId);
+    if (force == 0 && (((u8 *)D_800D2E4C)[scriptId >> 3] & (1 << (scriptId & 7)))) return NULL;
+    if (node == NULL) {
+        node = func_1509B8FC((s16)scriptId);
+        func_1509B810((ScriptNodeC8950 *)node);
+        if ((((u8 *)D_800D2E4C)[(s32)(node->unk0 & 0xFFFF03FF) >> 3] &
+             (1 << ((node->unk0 & 0xFFFF03FF) & 7))) == 0) {
+            D_8003C8E0 = 0x06000000;
+            func_150ADAF0(node, 0);
+            D_8003C8E0 = 0;
+        }
+        if (force == 0 || (node->unk0 & 0x0400)) node->unk0 |= 0x4000;
+    } else if (force != 0 && (node->unk0 & 0x1000) && !(node->unk0 & 0x0800)) {
+        bzero((u8 *)node + node->unkA, node->unk6);
+    }
+    return node;
 }
 
 struct249 *func_1509B704(s16 arg0) {
@@ -166,14 +184,15 @@ next_node:
     SCRIPT_LIST_C8950.length++;
 }
 
-void func_1509B8FC(s16 arg0) {
+/* Return the allocated and initialized script node. */
+struct248 *func_1509B8FC(s16 arg0) {
     struct248 *temp_v0;
     s16 sp18[2];
 
     temp_v0 = func_1502B5C8((s32 *)&sp18, 2, 20, arg0);
     temp_v0->unk0 |= arg0;
     temp_v0->unk2 = D_800BE9F0;
-    func_1509B950(temp_v0);
+    return func_1509B950(temp_v0);
 }
 
 /* Append a zeroed tail at the next eight-byte boundary and release the source.
