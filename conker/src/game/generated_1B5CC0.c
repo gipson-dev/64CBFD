@@ -185,8 +185,31 @@ s32 func_15188B74() {
     return 0;
 }
 
-s32 func_15188D00() {
-    return 0;
+extern Mtx D_80089470;
+typedef Gfx *(*ListDraw15188D00)(Gfx *, ListNode15188A58 *, s16);
+extern ListDraw15188D00 D_8008D590[];
+
+/* Set display-list state and draw each node in the selected list. */
+Gfx *func_15188D00(Gfx *commands, s32 list, s16 view) {
+    ListNode15188A58 *node = *(ListNode15188A58 **)((u8 *)&D_800DF7C8 + (u32)list * 4);
+    if (node == NULL) {
+        return commands;
+    }
+    {
+        gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+        gSPSetGeometryMode(commands++, 0x00200004);
+        gSPClearGeometryMode(commands++, 0x00110000);
+        gDPPipeSync(commands++);
+        gDPSetAlphaCompare(commands++, G_AC_NONE);
+        gDPSetConvert(commands++, 0, 0, 0, 0, 0, 255);
+        if (node != NULL) {
+            do {
+                commands = D_8008D590[node->active](commands, node, view);
+                node = node->next;
+            } while (node != NULL);
+        }
+    }
+    return commands;
 }
 
 /* Shift cached matrix history, then capture the owner's newest matrices. */

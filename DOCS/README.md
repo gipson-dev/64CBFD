@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2357](WORKING_NOTES/2357-game-draw-list-traversal-direct-match-20261113.md): `func_15188D00` now matches retail directly. Game **3,746 / 4,842 (77.36%)**, total **4,419 / 5,515 (80.13%)**, zero drift; **128** more Game matches to 80%.
+
 [Note 2356](WORKING_NOTES/2356-game-scene-fade-update-direct-match-20261113.md): `func_151E4EE8` now matches retail directly. Game **3,745 / 4,842 (77.34%)**, total **4,418 / 5,515 (80.11%)**, zero drift; **129** more Game matches to 80%.
 
 [Note 2355](WORKING_NOTES/2355-game-actor-sentinel-query-direct-match-20261113.md): `func_15037880` now matches retail directly. Game **3,744 / 4,842 (77.32%)**, total **4,417 / 5,515 (80.09%)**, zero drift; **130** more Game matches to 80%.
