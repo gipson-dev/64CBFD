@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 extern u8 D_800C3E78;
 
 typedef struct LookupNode15155FD4 {
@@ -119,6 +120,31 @@ s32 func_15155FD4(s32 key) {
     return 0;
 }
 
-s32 func_15156028() {
-    return 0;
+extern struct127 D_800CC2D0[26];
+void func_1516972C(struct102 *record);
+
+/* Keep the record's actor slot in sync with removal and slot-swap events. */
+void func_15156028(void *owner, s32 payload, u8 kind) {
+    u8 *record = (u8 *)owner;
+    u32 *event = (u32 *)payload;
+    s32 first;
+    s32 second;
+    if (kind == 0) {
+        first = (s32)(event[0] - (u32)D_800CC2D0) / 0x32C;
+        if (first >= 0 && first < 25 && first == record[0x10]) {
+            func_1516972C((struct102 *)record);
+        }
+    } else if (kind == 0x2D) {
+        u32 left = event[0];
+        u32 right = event[1];
+        first = (s32)(left - (u32)D_800CC2D0) / 0x32C;
+        second = (s32)(right - (u32)D_800CC2D0) / 0x32C;
+        if (first >= 0 && first < 25 && second >= 0 && second < 25) {
+            if (first == record[0x10]) {
+                record[0x10] = second;
+            } else if (second == record[0x10]) {
+                record[0x10] = first;
+            }
+        }
+    }
 }

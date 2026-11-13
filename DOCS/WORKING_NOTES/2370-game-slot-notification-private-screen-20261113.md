@@ -1,5 +1,8 @@
 # Game slot-notification callback: private screen
 
+**Historical screen:** the callback was subsequently installed and qualified
+in [Note 2380](2380-game-slot-notification-callback-match-20261113.md).
+
 Date: 2026-11-13. `func_15156028` in `generated_182C30.c` remains a
 zero-return placeholder. This screen is **not installed or counted**.
 Its retail body spans VA `0x15156028..0x15156188`, ROM
