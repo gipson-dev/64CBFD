@@ -5,7 +5,7 @@
 
 /* Generated placeholder declarations. */
 s32 func_150AE790();
-s32 func_150AEB9C();
+void func_150AEB9C(u8 *);
 /* End generated placeholder declarations. */
 
 void func_150AE5B0(struct108 *arg0) {
@@ -45,11 +45,39 @@ void func_150AE5B0(struct108 *arg0) {
 s32 func_150AE790() {
     return 0;
 }
-// some funky xor going on
-/* Non-matching C placeholders for asm/nonmatchings/game_DBA60/func_150AEB9C.s. */
-s32 func_150AEB9C() {
-    return 0;
+typedef struct { u8 kind; u8 pad; s16 lifetime; } ChecksumRecordEntry;
+extern s32 D_800886E0;
+extern ChecksumRecordEntry *D_800886E4;
+extern u32 D_15001B08[];
+extern void func_15001A08(void);
+/* Check the code window, then create a record for each configured entry. */
+void func_150AEB9C(u8 *owner) {
+    u32 checksum;
+    u32 *cursor;
+    s32 i;
+    ChecksumRecordEntry *entry;
+    u8 *record;
+    if (owner != 0) {
+        checksum = 0;
+        cursor = (u32 *)func_15001A08;
+        while ((u32)cursor < (u32)D_15001B08) {
+            checksum = (checksum ^ *cursor++) << 1;
+        }
+        if (checksum != 0xB4E42D60U) {
+            *(u32 *)(D_800DCE50 + 0x8C) = 0;
+            *(u32 *)(D_800DCE50 + 0x22C) = 0;
+        }
+        for (i = 0; i < D_800886E0; i++) {
+            entry = &D_800886E4[i];
+            record = (u8 *)func_151491F4(entry->lifetime, 0, -1, 1, 0x27, 8, 0xff, 0);
+            if (record == 0) break;
+            *(u8 **)(record + 0x28) = owner;
+            record[0x2C] = owner[0x3B];
+            record[0x2D] = D_800886E4[i].kind;
+        }
+    }
 }
+
 
 void func_150AECCC(struct42 *arg0) {
     arg0->unk96 = arg0->unk96 + (arg0->unk94 * D_800BE9E4);
