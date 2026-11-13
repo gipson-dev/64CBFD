@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2347](WORKING_NOTES/2347-game-paired-randomized-constructor-match-20261112.md): `func_150C60D8` and `func_150C6A08` now match retail. Game **3,736 / 4,842 (77.16%)**, total **4,409 / 5,515 (79.95%)**, zero drift; **138** more Game matches to 80%.
+
 [Note 2346](WORKING_NOTES/2346-game-random-constructor-screen-and-factory-abi-20261112.md): corrected `func_151303BC` return ABI; two randomized constructors remain uncredited. Game **3,734 / 4,842 (77.12%)**, total **4,407 / 5,515 (79.91%)**, zero drift; **140** more Game matches to 80%.
 
 [Note 2345](WORKING_NOTES/2345-game-paired-height-descriptor-match-20261112.md): `func_150C5F94` and `func_150C68C4` now match retail. Game **3,734 / 4,842 (77.12%)**, total **4,407 / 5,515 (79.91%)**, zero drift; **140** more Game matches to 80%.

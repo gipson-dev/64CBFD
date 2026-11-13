@@ -1,5 +1,7 @@
 # Random constructor screens and effect-factory return ABI
 
+**Follow-up:** [Note 2347](2347-game-paired-randomized-constructor-match-20261112.md) resolves the candidate frame differences and records their installation.
+
 Date: 2026-11-12. `func_151303BC` in `generated_15D730` forwards the pointer
 returned by `func_15130374` in retail. Its old C definition declared `void`
 and discarded that result. The definition now returns `void *` and explicitly

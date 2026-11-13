@@ -115,8 +115,90 @@ s32 func_150C68C4(u8 *owner, u8 *context) {
     return (s32)effect;
 }
 
-s32 func_150C6A08() {
-    return 0;
+typedef struct {
+    f32 scale;
+    u8 first0, first1, first2, first3;
+    f32 firstX, firstY, firstRange, firstRate;
+    u8 second0, second1, second2, second3;
+    f32 secondX, secondY, ownerHeight;
+} PairedRandomPayload;
+typedef struct {
+    u32 flags, unused04;
+    u16 kind, randomSize;
+    u32 unused0c, unused10;
+    u8 channel[8];
+    u8 alpha, color;
+    s16 duration, count, zero22;
+    f32 zero24, scale0, scale1;
+    f32 x, y, z, zero3c, zero40, zero44;
+    f32 dx, zero4c, dz, angle;
+    u32 options, untouched5c;
+    u8 variant0, variant1, variant2;
+    s8 variant3;
+    u8 untouched64[12];
+} PairedRandomDescriptor;
+extern f32 D_800A045C, D_800A0460, D_800A0464, D_800A0468;
+extern f32 D_800A046C, D_800A0470, D_800A0474, D_800A0478;
+void *func_151303BC(void *, u8, s32); /* Build a randomized owner effect and its copied payload. */
+void func_150C6A08(f32 x, f32 y, f32 z, f32 dx, s32 ignored, f32 dz, u8 *owner) {
+    struct { PairedRandomPayload payload; u32 gap; PairedRandomDescriptor descriptor; } local;
+    local.descriptor.kind = 0xC01;
+    local.descriptor.color = 0x2F;
+    local.descriptor.flags = 0x200005;
+    local.descriptor.unused04 = 0;
+    local.descriptor.channel[6] = 0;
+    local.descriptor.channel[5] = 0;
+    local.descriptor.channel[4] = 0;
+    local.descriptor.channel[3] = 0;
+    local.descriptor.channel[2] = 0;
+    local.descriptor.channel[1] = 0;
+    local.descriptor.channel[0] = 0;
+    local.descriptor.unused10 = 0;
+    local.descriptor.unused0c = 0;
+    local.descriptor.alpha = 255;
+    local.descriptor.zero22 = 0;
+    local.descriptor.zero24 = 0.0f;
+    local.descriptor.options = 0x3207;
+    local.descriptor.variant0 = 5;
+    local.descriptor.variant1 = 5;
+    local.descriptor.variant2 = 4;
+    local.descriptor.variant3 = -1;
+    local.descriptor.x = x;
+    local.descriptor.y = y;
+    local.descriptor.zero3c = 0.0f;
+    local.descriptor.zero40 = 0.0f;
+    local.descriptor.zero44 = 0.0f;
+    local.descriptor.duration = 30;
+    local.descriptor.count = 8;
+    local.descriptor.z = z;
+    local.payload.ownerHeight = *(f32 *)(owner + 0x60);
+    local.payload.firstRange = 4.0f;
+    local.payload.firstRate = 0.25f;
+    local.descriptor.dx = -dx * D_800A045C;
+    local.descriptor.dz = -dz * D_800A045C;
+    local.payload.first0 = 0;
+    local.payload.first1 = 0;
+    local.payload.second0 = 0;
+    local.payload.second1 = 0;
+    local.descriptor.zero4c = 0.0f;
+    if (func_150ADA20() & 1) local.descriptor.options |= 0x40;
+    if (func_150ADA20() & 1) local.descriptor.options |= 0x80;
+    local.descriptor.randomSize = ((u32)func_150ADA20() % 51U) + 106;
+    local.descriptor.channel[7] = ((u32)func_150ADA20() % 101U) + 100;
+    local.payload.scale = func_150ADA68() * 62.0f + 41.0f;
+    local.descriptor.scale0 = local.payload.scale;
+    local.descriptor.scale1 = local.payload.scale;
+    local.payload.first2 = (u32)func_150ADA20() % 5U + 4;
+    local.payload.first3 = (u32)func_150ADA20() % 5U + 4;
+    local.payload.firstX = (func_150ADA68() * 0.25f + D_800A0460) * local.payload.scale;
+    local.payload.firstY = (func_150ADA68() * 0.25f + D_800A0464) * local.payload.scale;
+    local.payload.second2 = (u32)func_150ADA20() % 5U + 4;
+    local.payload.second3 = (u32)func_150ADA20() % 5U + 4;
+    local.payload.secondX = (func_150ADA68() * D_800A0468 + D_800A046C) * local.payload.scale;
+    local.payload.secondY = (func_150ADA68() * D_800A0470 + D_800A0474) * local.payload.scale;
+    local.descriptor.angle = (func_150ADA68() * 60.0f + 21.0f) * D_800A0478;
+    owner = func_151303BC(&local.descriptor, 2, 40);
+    if (owner != 0) memcpy(owner + 0xA8, &local.payload, 40);
 }
 
 s32 func_150C6D1C(u8 *arg0) {
