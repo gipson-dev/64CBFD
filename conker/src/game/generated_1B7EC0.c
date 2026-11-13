@@ -97,6 +97,50 @@ Generated1B7EC0Command1E *func_1518AB60(s32 arg0, volatile u8 arg1) {
     return (Generated1B7EC0Command1E *)record;
 }
 
-s32 func_1518ABD0() {
-    return 0;
+/* Append one command record and retire the oldest if the queue exceeds its limit. */
+s32 func_1518ABD0(u8 *queue, s32 owner, u8 selector) {
+    u8 *entry, *tail, *next;
+    Generated1B7EC0Command1E *record;
+    u32 count;
+    s32 limit;
+    s16 duration;
+
+    if (queue == NULL) {
+        if (selector != 0) D_8008D5C0[selector]((u8 *)owner);
+        return 0;
+    }
+    record = func_1518AB60(owner, selector);
+    if (record == NULL) {
+        if (selector != 0) D_8008D5C0[selector]((u8 *)owner);
+        return 0;
+    }
+    tail = *(u8 **)(queue + 0x10);
+    record->unk14 = (s32)tail;
+    if (tail != NULL) {
+        *(u8 **)(tail + 0x18) = (u8 *)record;
+    } else {
+        *(u8 **)(queue + 0x14) = (u8 *)record;
+    }
+    *(u8 **)(queue + 0x10) = (u8 *)record;
+    record->unk18 = 0;
+    count = *(u32 *)(queue + 0x1C) + 1;
+    limit = *(s32 *)(queue + 0x18);
+    duration = *(s16 *)(queue + 0x20);
+    *(u32 *)(queue + 0x1C) = count;
+    *(s16 *)(queue + 0x22) = duration;
+    if (limit < (s32)count) {
+        entry = *(u8 **)(queue + 0x14);
+        *(u32 *)(queue + 0x1C) = count - 1;
+        next = *(u8 **)(entry + 0x18);
+        if (next == NULL) {
+            *(u8 **)(queue + 0x10) = NULL;
+            *(u8 **)(queue + 0x14) = NULL;
+        } else {
+            *(u8 **)(next + 0x14) = NULL;
+            *(u8 **)(queue + 0x14) = *(u8 **)(entry + 0x18);
+        }
+        if (entry[0x1C] != 0) D_8008D5C0[entry[0x1C]](*(u8 **)(entry + 0x10));
+        func_1516972C((struct102 *)entry);
+    }
+    return 1;
 }

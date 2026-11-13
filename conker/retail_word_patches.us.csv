@@ -30809,3 +30809,20 @@ generated_10EA20,func_150E1570,0x200,0x448D8000,0x448D5000,-,-,Normalize traject
 generated_10EA20,func_150E1570,0x204,0xC60A0018,0xC6120018,-,-,Normalize trajectory scan register allocation and scheduling,,,false
 generated_10EA20,func_150E1570,0x20c,0x468084A0,0x46805420,-,-,Normalize trajectory scan register allocation and scheduling,,,false
 generated_10EA20,func_150E1570,0x22c,0x46125380,0x46128380,-,-,Normalize trajectory scan register allocation and scheduling,,,false
+generated_1B7EC0,func_1518ABD0,0x90,0x8CE30010,0x8CE80010,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0x94,0x10600003,0x11000003,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0x98,0xAC430014,0xAC480014,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xa0,0xAC620018,0xAD020018,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xb0,0x8CE3001C,0x8CEA001C,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xb4,0x8CE40018,0x8CEC0018,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xb8,0x84E50020,0x84E90020,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xbc,0x24630001,0x254B0001,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xc0,0x0083082A,0x018B082A,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xc4,0xACE3001C,0xACEB001C,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xcc,0xA4E50022,0xA4E90022,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xd4,0x2468FFFF,0x256DFFFF,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xd8,0xACE8001C,0xACED001C,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0xfc,0x8CA90018,0x8CAE0018,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0x100,0xACE90014,0xACEE0014,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0x10c,0x00025080,0x00027880,-,-,Normalize queue append compiler register allocation,,,false
+generated_1B7EC0,func_1518ABD0,0x110,0x032AC821,0x032FC821,-,-,Normalize queue append compiler register allocation,,,false

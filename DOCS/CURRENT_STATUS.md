@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2354](WORKING_NOTES/2354-game-bounded-queue-append-match-20261113.md): `func_1518ABD0` now matches retail. Game **3,743 / 4,842 (77.30%)**, total **4,416 / 5,515 (80.07%)**, zero drift; **131** more Game matches to 80%.
+
 [Note 2353](WORKING_NOTES/2353-game-trajectory-actor-scan-match-20261113.md): `func_150E1570` now matches retail. Game **3,742 / 4,842 (77.28%)**, total **4,415 / 5,515 (80.05%)**, zero drift; **132** more Game matches to 80%.
 
 [Note 2352](WORKING_NOTES/2352-game-trajectory-target-and-initializer-return-abi-20261113.md): Corrected the byte-exact slot initializer return ABI; trajectory scan remains an uncredited private screen. Game remains **3,741 / 4,842 (77.26%)**, with **133** matches to 80%.
