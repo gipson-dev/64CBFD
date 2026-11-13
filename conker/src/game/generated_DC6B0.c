@@ -99,8 +99,22 @@ s32 func_150AFBF4(UnkAFBF4 *arg0, register UnkAFBF4Values *values) {
     return 1;
 }
 
-s32 func_150AFC68() {
-    return 0;
+void func_1516D99C(
+    s16 arg0, s16 arg1, s16 arg2, u8 arg3, u8 arg4, u8 arg5,
+    u8 arg6, u8 arg7, u8 arg8, u8 arg9, u8 arg10, u8 arg11,
+    u8 arg12, u8 arg13, u8 arg14, u8 arg15, u8 arg16, u8 arg17,
+    u8 arg18, u8 arg19, u8 arg20, u8 arg21, u8 arg22, u8 arg23,
+    u8 arg24, u8 arg25, u8 arg26, s16 arg27, s16 arg28, s16 arg29,
+    s16 arg30, u16 arg31, u8 arg32, u8 arg33, u8 arg34, u8 arg35,
+    s16 arg36, u16 arg37, u16 arg38, u8 arg39, u8 arg40, u8 arg41,
+    u8 arg42, u8 arg43, s32 arg44, u8 arg45, u8 arg46, s32 arg47,
+    s32 arg48);
+
+/* Submit the fixed visual-effect descriptor with caller-supplied parameters. */
+void func_150AFC68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, s32 arg5) {
+    func_1516D99C(1, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0,
+        255, 255, 255, 0, 255, 0, 1, 0, 0, 0, 0, 170, 170, 170, 170,
+        arg2, arg3, 0, arg0, 240, 80, 80, 1, 4, 0, 1, 0, 0, 0, arg1, 0, arg4, arg5);
 }
 
 /* Release list nodes owned by the current object, preserving nested iterators. */
