@@ -1,5 +1,7 @@
 # Game script-query and camera-condition matches
 
+Follow-up: one of the seven query callbacks is now restored; see [Note 2377](2377-game-script-list-query-callback-match-20261113.md).
+
 Date: 2026-11-13. The former zero-return placeholders `func_1509BE40` and
 `func_150BE850` now reproduce their respective 92-word and 87-word retail
 bodies. Their executable spans are VA `0x1509BE40..0x1509BFB0` / ROM

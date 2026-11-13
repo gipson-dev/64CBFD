@@ -30920,9 +30920,34 @@ generated_CCD00,func_1509FE0C,0x8,0xafa60008,0x00000000,-,-,Omit unused placehol
 generated_C3E20,func_1509759C,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
 generated_C3E20,func_1509759C,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
 generated_C3E20,func_1509759C,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
-generated_C9EC0,func_1509DBBC,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
-generated_C9EC0,func_1509DBBC,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
-generated_C9EC0,func_1509DBBC,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
 generated_CB3D0,func_1509E3DC,0x0,0xafa40000,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
 generated_CB3D0,func_1509E3DC,0x4,0xafa50004,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
 generated_CB3D0,func_1509E3DC,0x8,0xafa60008,0x00000000,-,-,Omit unused placeholder argument-home store,,,true
+generated_C9EC0,func_1509DBBC,0x40,0x14c10042,0x14c1003f,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x48,0x15c20040,0x15c2003d,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xbc,0x0,0x601025,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xc0,0x10000023,0x1000001f,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xc8,0x1460fff9,0x5460fffa,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xcc,0x601025,0x904d0048,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xec,0x10000018,0x10000014,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xf8,0x24010001,0x13200002,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0xfc,0x62183,0x24010001,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x100,0x13200003,0x1721000f,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x104,0x0,0x00000000,-,-,Omit superseded compiler control-flow word,,,true
+generated_C9EC0,func_1509DBBC,0x108,0x57210011,0x00000000,-,-,Omit superseded compiler control-flow word,,,true
+generated_C9EC0,func_1509DBBC,0x10c,0x24020004,0x00000000,-,-,Omit superseded compiler control-flow word,,,true
+generated_C9EC0,func_1509DBBC,0x110,0x1080000e,0x62183,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x114,0x27a5003c,0x1080000d,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x118,0x27a60038,0x27a5003c,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x11c,0xc000000,0x27a60038,R_MIPS_26:func_150E36BC,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x120,0x27a70034,0xc000000,-,R_MIPS_26:func_150E36BC,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x124,0x8fa90044,0x27a70034,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x128,0x8fac0034,0x8fa90044,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x12c,0x8faa003c,0x8fac0034,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x130,0x15200004,0x8faa003c,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x134,0x318dffff,0x15200004,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x138,0xa5c00,0x318dffff,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x13c,0x16d7025,0xa5c00,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x140,0xafae0038,0x16d7025,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x144,0x10000002,0xafae0038,-,-,Restore retail list traversal and branch scheduling,,,false
+generated_C9EC0,func_1509DBBC,0x14c,0x24020004,0x00000000,-,-,Omit superseded compiler control-flow word,,,true

@@ -371,6 +371,56 @@ s32 func_1509D8FC() {
     return 0;
 }
 
+typedef struct QueryNodeC9EC0 {
+    u8 pad0[8];
+    struct QueryNodeC9EC0 *next;
+    u8 padC[0x3C];
+    u8 kind;
+} QueryNodeC9EC0;
+
+typedef struct {
+    QueryNodeC9EC0 *cells[104];
+} QueryRowC9EC0;
+
+extern u8 D_800DCE50[0x340];
+extern u8 D_800A6060[];
+void func_150E36BC(s32, s32 *, s32 *, s32 *);
+
+/* Query the selected script value or scan the selected actor lists. */
 s32 func_1509DBBC(s32 arg0, s32 arg1, s32 *arg2) {
-    return 0;
+    s32 x = 0, y = 0, z = 0;
+    u8 row;
+    s8 column;
+    QueryNodeC9EC0 *node, *next;
+    volatile s32 spare; /* Preserve the retail stack layout. */
+
+    switch (arg0) {
+        case 25:
+            if (arg1 == 4) {
+                for (row = 0; row < 2; row++) {
+                    for (column = 0; column < 3; column++) {
+                        node = ((QueryRowC9EC0 *)D_800DCE50)[row].cells[((s32 *)D_800A6060)[column]];
+                        while (node != 0) {
+                            next = node->next;
+                            if (node->kind == 2) return 0;
+                            node = next;
+                        }
+                    }
+                }
+                return 1;
+            }
+            break;
+        case 4:
+        case 5:
+        case 6:
+            if (arg1 == 0 || arg1 == 1) {
+                if (arg0 >> 6) {
+                    func_150E36BC(arg0 >> 6, &x, &y, &z);
+                    if (arg1 == 0) y = ((u32)x << 16) | (z & 0xFFFF);
+                    return y;
+                }
+            }
+            break;
+    }
+    return 4;
 }
