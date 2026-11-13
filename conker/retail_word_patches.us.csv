@@ -31028,3 +31028,5 @@ generated_1A8060,func_1517ABB0,0xFC,0x95230000,0x95220000,,,Normalize closed cac
 generated_1A8060,func_1517ABB0,0x104,0x02A3082A,0x02A2082A,,,Normalize closed cache expiry register allocation and initialization schedule,,,false
 generated_1A8060,func_1517ABB0,0x110,0x26F70001,0x26D60001,,,Normalize closed cache expiry register allocation and initialization schedule,,,false
 generated_1A8060,func_1517ABB0,0x118,0x16E1FFCB,0x16C1FFCB,,,Normalize closed cache expiry register allocation and initialization schedule,,,false
+game_3BA70,func_1500E738,0xA4,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800961D0_game,Bind generated view-scale jump table to verified retail table,,,false
+game_3BA70,func_1500E738,0xAC,0x8C390000,0x8C390000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800961D0_game,Bind generated view-scale jump table to verified retail table,,,false

@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2384](WORKING_NOTES/2384-game-view-scaling-configuration-match-20261113.md): `func_1500E738` now matches view-scaling configuration. Game **3,768 / 4,843 (77.80%)**, total **4,441 / 5,516 (80.51%)**, zero drift; **107** more Game matches to 80%.
+
 [Note 2383](WORKING_NOTES/2383-game-cache-expiry-cleanup-match-20261113.md): `func_1517ABB0` now matches cache-expiry cleanup. Game **3,767 / 4,843 (77.78%)**, total **4,440 / 5,516 (80.49%)**, zero drift; **108** more Game matches to 80%.
 
 [Note 2382](WORKING_NOTES/2382-game-cache-expiry-private-screen-20261113.md): the private cache-expiry screen was subsequently promoted in Note 2383.
