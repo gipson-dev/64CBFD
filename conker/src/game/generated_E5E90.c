@@ -71,6 +71,56 @@ s32 func_150B9D14(Mtx *output, u8 *source) {
     return 1;
 }
 
-s32 func_150B9D8C() {
-    return 0;
+typedef struct EffectDescriptor150B9D8C {
+    u32 flags;
+    s16 count;
+    u8 category;
+    u8 pad07;
+    s32 zero;
+    s32 phase;
+    u8 color[6];
+    u8 pad16[2];
+    u32 mode;
+    u8 pad1C[12];
+} EffectDescriptor150B9D8C;
+
+typedef struct EffectWork150B9D8C {
+    u32 first;
+    u32 second;
+    u8 pad08[4];
+    EffectDescriptor150B9D8C descriptor;
+} EffectWork150B9D8C;
+
+u32 func_150ADA20(void);
+void *func_1513C4EC(s32, s32, u8, u8, f32, f32, f32, f32, f32,
+                    u8, u8, s32, s32, s32, u8, s32);
+
+/* Submit a randomized descriptor when the actor's selector is unset. */
+void func_150B9D8C(u8 *actor) {
+    u32 third;
+    EffectWork150B9D8C work;
+
+    if (*(s16 *)(actor + 0x98) == -1) {
+        work.descriptor.category = 4;
+        work.descriptor.zero = 0;
+        work.descriptor.phase = 0;
+        work.descriptor.flags = 0x11;
+        work.descriptor.count = 100;
+        work.descriptor.color[0] = 255;
+        work.descriptor.color[1] = *(u32 *)(actor + 0x90);
+        work.descriptor.color[2] = 0;
+        work.descriptor.color[3] = 0;
+        work.descriptor.color[4] = 0;
+        work.descriptor.color[5] = 255;
+        work.descriptor.mode = 0x30001;
+        work.first = func_150ADA20();
+        work.second = func_150ADA20();
+        third = func_150ADA20();
+        func_1513C4EC((s32)&work.descriptor, 0, 2, 0,
+                      (f32)*(s16 *)(actor + 0x9C),
+                      (f32)(*(s16 *)(actor + 0xA6) + 2),
+                      (f32)*(s16 *)(actor + 0xA0), (f32)*(s16 *)(actor + 0xA2), (f32)*(s16 *)(actor + 0xA2),
+                      work.first & 255U, ((third & 1U) << 1) + (work.second & 1U),
+                      3, 255, 0, actor[0x0C], actor[1]);
+    }
 }

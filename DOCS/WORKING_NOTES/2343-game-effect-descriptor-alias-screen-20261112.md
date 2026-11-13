@@ -1,5 +1,7 @@
 # Game effect descriptor: uncredited alias screen
 
+**Follow-up:** [Note 2365](2365-game-effect-descriptor-direct-match-20261113.md) restores the exact frame and installs the direct C match. The observations below describe the earlier candidates.
+
 Date: 2026-11-12. `func_150B9D8C`, owner `generated_E5E90`, has a retail
 body at VA `0x150B9D8C..0x150B9EC4` / ROM `0xE723C..0xE7374` (78 words),
 followed by three alignment words. The existing C remains a zero-return

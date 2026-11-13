@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2365](WORKING_NOTES/2365-game-effect-descriptor-direct-match-20261113.md): `func_150B9D8C` now matches retail directly. Game **3,754 / 4,843 (77.51%)**, total **4,427 / 5,516 (80.26%)**, zero drift; **121** more Game matches to 80%.
+
 [Note 2364](WORKING_NOTES/2364-game-randomized-impact-callback-direct-match-20261113.md): `func_151AC408` now matches retail directly. Game **3,753 / 4,843 (77.49%)**, total **4,426 / 5,516 (80.24%)**, zero drift; **122** more Game matches to 80%.
 
 [Note 2363](WORKING_NOTES/2363-game-fixed-effect-packet-direct-match-20261113.md): `func_150AFC68` now matches retail directly. Game **3,752 / 4,843 (77.47%)**, total **4,425 / 5,516 (80.22%)**, zero drift; **123** more Game matches to 80%.
