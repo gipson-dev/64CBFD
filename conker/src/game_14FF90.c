@@ -25,7 +25,7 @@ s32 func_15123A54();
 s32 func_151247C0(s32 arg0);
 s32 func_15124C38(s32 arg0, s32 arg1);
 s32 func_151256BC(s32 arg0);
-s32 func_15125924(s32 arg0);
+void func_15125924(struct108 *camera);
 s32 func_15125A6C(s32 arg0);
 s32 func_15125C40(s32 arg0);
 s32 func_15125DB4(s32 arg0);
@@ -603,9 +603,36 @@ void func_15125690(struct108 *arg0, s32 arg1) {
 s32 func_151256BC(s32 arg0) {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125924.s. */
-s32 func_15125924(s32 arg0) {
-    return 0;
+
+/* Update camera state from the selected actor and camera flags. */
+void func_15125924(struct108 *camera) {
+    struct { s32 coordinate; s32 status; } work;
+    if (camera->unk3D4 != 0) {
+        work.status = ((u8 *)camera->unk3D4)[0x4E];
+        work.coordinate = (s32)*(f32 *)((u8 *)camera->unk3D4 + 0x1C);
+    } else {
+        work.coordinate = 0;
+        work.status = 0;
+    }
+    if (*(u32 *)((u8 *)camera + 0x2C) & 0x40) return;
+    if (!(*(u32 *)((u8 *)camera + 0x84) & 0x4000) && !(*(u8 **)((u8 *)camera + 0x3D0))[0x102]) return;
+    if (func_15125490(camera) != 0 && work.status == 0 && work.coordinate == 0) {
+        if (func_15123934(camera, 0x80, 1, 1, 13) && !*(u32 *)((u8 *)camera + 0x6C8)) {
+            func_15124B18(camera);
+            *(u32 *)((u8 *)camera + 0x5F0) |= 0x1000;
+        }
+        return;
+    }
+    if (*(u32 *)((u8 *)camera + 0x2C) & 0x80) {
+        func_151239CC(camera, 13);
+        *(f32 *)((u8 *)camera + 0x190) = 0.0f;
+    }
+    if (*(u32 *)((u8 *)camera + 0x5F0) & 0x1000) {
+        f32 offset = *(f32 *)((u8 *)camera + 0x2FC) - *(f32 *)((u8 *)camera + 0x354);
+        *(u32 *)((u8 *)camera + 0x5F0) &= ~0x1000;
+        *(f32 *)((u8 *)camera + 0x344) = offset;
+        *(f32 *)((u8 *)camera + 0x348) = offset;
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125A6C.s. */
 s32 func_15125A6C(s32 arg0) {

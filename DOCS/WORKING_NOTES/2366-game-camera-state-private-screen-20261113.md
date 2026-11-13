@@ -1,5 +1,7 @@
 # Camera-state callback: private two-word screen
 
+**Follow-up:** [Note 2367](2367-game-camera-state-callback-direct-match-20261113.md) records the subsequent direct C match. The measurements below describe the earlier uninstalled candidate.
+
 Date: 2026-11-13. `func_15125924` remains a zero-return placeholder in
 `game_14FF90.c`; **this screen is not installed or counted as a match**.
 Its 82-word retail body occupies VA `0x15125924..0x15125A6C`, ROM
