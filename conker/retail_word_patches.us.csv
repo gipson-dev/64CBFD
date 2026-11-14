@@ -31414,3 +31414,5 @@ generated_138520,func_1510B7B4,0x184,0x37182230,0x35CE2230,-,-,Restore viewport 
 generated_138520,func_1510B7B4,0x188,0x35AD2C3F,0x37392C3F,-,-,Restore viewport command register roles and independent read schedule,,,false
 generated_138520,func_1510B7B4,0x18C,0xAD0D0000,0xAD190000,-,-,Restore viewport command register roles and independent read schedule,,,false
 generated_138520,func_1510B7B4,0x190,0xAD180004,0xAD0E0004,-,-,Restore viewport command register roles and independent read schedule,,,false
+generated_F5800,func_150C8350,0xA8,0x00A70019,0x00E50019,-,-,Restore commutative motion update operand order,,,false
+generated_F5800,func_150C8350,0xB0,0x03247021,0x00997021,-,-,Restore commutative motion update operand order,,,false

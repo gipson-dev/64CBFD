@@ -7,8 +7,51 @@ void func_150CDB6C(s32 value);
 
 /* Restored functions and remaining placeholders for asm/F5800.s. */
 
-s32 func_150C8350() {
-    return 0;
+typedef struct { u8 group, pad1; s8 direction; u8 pad3; s16 position, current, target; } MotionEntry150C8350;
+extern u8 D_800BE9A0;
+extern s32 D_800BE9E4;
+/* Advance ten motion records and reflect positions at both limits. */
+void func_150C8350(void) {
+    s32 offset, current, target, desired, difference, magnitude, step;
+    MotionEntry150C8350 *entry;
+    for (offset = 0; offset < 10; offset++) {
+        entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+        current = entry->current;
+        target = entry->target;
+        if (current != target) {
+            desired = target;
+            if (current < 0) desired = -target;
+            difference = desired - current;
+            step = (s32)((u32)D_800BE9E4 << 4);
+            magnitude = difference < 0 ? -difference : difference;
+            if (magnitude < step) {
+                entry->current = desired;
+                entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+                current = entry->current;
+            } else {
+                entry->current = (s32)((u32)current + (u32)step * (u32)(difference < 0 ? -1 : 1));
+                entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+                current = entry->current;
+            }
+        }
+        entry->position += current * entry->direction * D_800BE9A0;
+        entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+        if (entry->position >= 0x500) {
+            entry->position -= 0x500;
+            entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+            entry->position = 0x500 - entry->position;
+            entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+            entry->direction = -entry->direction;
+            entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+            if (entry->position >= 0x500) entry->position = 0x4FF;
+        } else if (entry->position < 0) {
+            entry->position = -entry->position;
+            entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+            entry->direction = -entry->direction;
+            entry = ((MotionEntry150C8350 *)D_800BE4E0 + offset);
+            if (entry->position < 0) entry->position = 0;
+        }
+    }
 }
 
 /* Advance the motion table once for the primary frame layer. */
