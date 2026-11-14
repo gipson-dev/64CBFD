@@ -206,8 +206,10 @@ void func_1506AC0C(u8 *arg0, s32 arg1) {
     func_151B7328(&record, 0, 8, 0xFF, 1);
 }
 
+u8 *func_151CEAAC(u8 *, u8 *, u8, u8, s32);
+
 void func_1506AC58(s32 arg0, u8 arg1) {
-    func_151CEAAC(arg0, 0, 1, 0xFF, 1);
+    func_151CEAAC((u8 *)arg0, 0, 1, 0xFF, 1);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_97AA0/func_1506AC8C.s")

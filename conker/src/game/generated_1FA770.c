@@ -281,9 +281,52 @@ s32 func_151CEA20(f32 *arg0) {
     return 1;
 }
 
-s32 func_151CEAAC() {
-    return 0;
+typedef struct {
+    u8 *owner; u8 identity; u8 pad05[3]; u8 *attachment;
+    f32 first, second, third, fourth; u8 flags; u8 pad1D[3]; f32 extent, velocity;
+} LinkedEffectPayload151CEAAC;
+/* The helper copies 28 bytes, including the untouched request tail. */
+typedef struct {
+    f32 position[3]; s16 lifetime, mode; s32 active; u8 kind, count; u8 untouched16[2]; u8 untouched18[4];
+} LinkedEffectRequest151CEAAC;
+extern f32 D_800AB008;
+f32 func_150ADA68(void);
+s32 func_151CEC10(f32 *, u8 *, u8 *);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
+/* Construct a linked effect and copy its captured payload on success. */
+u8 *func_151CEAAC(u8 *owner, u8 *attachment, u8 mode, u8 channel, s32 context) {
+    LinkedEffectRequest151CEAAC request;
+    LinkedEffectPayload151CEAAC payload;
+    u8 *effect;
+    s32 effectFlags;
+    request.count = 25;
+    request.lifetime = 300;
+    request.mode = 16;
+    request.active = 17;
+    request.kind = 3;
+    payload.owner = owner;
+    if (owner != NULL) payload.identity = owner[0x3b];
+    else payload.identity = 0;
+    payload.second = 1.0f;
+    payload.fourth = 1.0f;
+    payload.attachment = attachment;
+    payload.first = 0.0f;
+    payload.third = 0.0f;
+    if (mode) effectFlags = 2; else effectFlags = 0;
+    payload.flags = effectFlags;
+    payload.extent = func_150ADA68() * 400.0f + 400.0f;
+    payload.velocity = (func_150ADA68() * 2.0f) * D_800AB008;
+    if (func_151CEC10(request.position, owner, attachment) == 0) {
+        request.position[0] = 0.0f;
+        request.position[1] = 0.0f;
+        request.position[2] = 0.0f;
+    }
+    effect = func_15147A80(&request, 0x28, 0x28, 0, 15, 15, 0, 0, NULL, channel, context);
+    if (effect != NULL) memcpy(*(void **)(effect + 0x98), &payload, 0x28);
+    return effect;
 }
+
+
 
 s32 func_151CEC10(f32 *arg0, u8 *arg1, u8 *arg2) {
     if (arg2 != 0) {
