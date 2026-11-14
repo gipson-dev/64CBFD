@@ -15,9 +15,10 @@ typedef struct {
     s16 speedX, speedY, speedZ;
     u16 timer;
     f32 scale;
-    u8 retainedAC[4];
+    u16 motionMode;
+    u16 dampingRange;
     s16 floorY;
-    u8 retainedB2;
+    u8 retireNibbles;
     u8 opacity;
     u8 retainedB4[4];
 } SettleFade1517A84C;
@@ -40,8 +41,48 @@ s32 func_15179FE0() {
     return 0;
 }
 
-s32 func_1517A1EC() {
-    return 0;
+/* Advance the piece, damp its horizontal motion, then fade and retire it. */
+void func_1517A1EC(SettleFade1517A84C *record) {
+    u32 step;
+    u32 randomWord;
+    s32 remaining;
+    s32 opacity;
+    s32 packed;
+    s32 ticks;
+
+    record->x += record->speedX;
+    record->y -= record->speedY;
+    record->z += record->speedZ;
+    record->angleX += record->spinX;
+    record->angleY += record->spinY;
+    record->angleZ += record->spinZ;
+    if (record->motionMode == 5) {
+        record->speedY++;
+    }
+    if (record->timer < record->motionMode) {
+        randomWord = (u32)func_150ADA20();
+        step = randomWord % record->dampingRange;
+        record->speedX += -(record->speedX < 0 ? -1 : 1) * step;
+        randomWord = (u32)func_150ADA20();
+        step = randomWord % record->dampingRange;
+        record->speedZ += -(record->speedZ < 0 ? -1 : 1) * step;
+    }
+    ticks = D_800BE9E4;
+    remaining = (s32)((u32)record->timer - (u32)ticks);
+    if (remaining < 0) {
+        remaining = 0;
+        opacity = (s32)((u32)record->opacity - ((u32)ticks << 2));
+        if (opacity < 0) {
+            opacity = 0;
+        }
+        record->opacity = opacity;
+    }
+    record->timer = remaining;
+    if (record->opacity == 0 ||
+        ((packed = record->retireNibbles) != 0 &&
+         (packed >> 4) == (packed & 15))) {
+        func_1516972C(record);
+    }
 }
 
 s32 func_1517A394(register s32 arg0) {

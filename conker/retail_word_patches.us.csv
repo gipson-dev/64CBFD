@@ -31710,3 +31710,18 @@ generated_1D4E00,func_151A7D6C,0x5A0,0x00127400,0x0012CC00,-,-,"Preserve strip r
 generated_1D4E00,func_151A7D6C,0x5A4,0x022F082A,0x022C082A,-,-,"Preserve strip renderer private homes, closed register roles and independent retail schedule",,,false
 generated_1D4E00,func_151A7D6C,0x5AC,0x000E9403,0x00199403,-,-,"Preserve strip renderer private homes, closed register roles and independent retail schedule",,,false
 generated_1A7260,func_1517A644,0xE8,0x8FAD0070,0x87AD0072,-,-,Preserve the original signed low-half load from the fifth argument home,,,false
+generated_1A7260,func_1517A1EC,0x124,0x948300A6,0x00004012,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x128,0x00004012,0x00A84821,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x12C,0x00A84821,0xA48900A4,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x130,0xA48900A4,0x948300A6,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x144,0x908C00B3,0x908B00B3,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x148,0x908A00B3,0x908300B3,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x14C,0x00055880,0x00055080,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x154,0x014B1823,0x006A1823,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x168,0x908C00B3,0x908B00B3,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x170,0x11800007,0x11600007,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x178,0x908200B2,0x908300B2,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x17C,0x10400006,0x10600006,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x180,0x304D000F,0x306C000F,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x184,0x00027103,0x00036903,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false
+generated_1A7260,func_1517A1EC,0x188,0x55AE0004,0x558D0004,-,-,Restore piece callback lifetime-load schedule and private register roles,,,false

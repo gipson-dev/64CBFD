@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2436](WORKING_NOTES/2436-game-piece-update-fade-guarded-match-20261114.md): `func_1517A1EC` now matches the 106-word motion/damping/fade callback with fifteen scheduling/register guards. Three registry descriptors and the real dispatcher window qualify. Game **3,808 / 4,842 (78.65%)**, total **4,481 / 5,515 (81.25%)**, zero drift; **207** more total matches to 85%. Next: 131-word `func_15179FE0`.
+
 [Note 2435](WORKING_NOTES/2435-game-burst-piece-factory-guarded-match-20261114.md): `func_1517A644` now matches the complete 130-word piece factory: 129 words direct from C and one pinned low-half stack-load guard. The burst caller remains exact. Game **3,807 / 4,842 (78.62%)**, total **4,480 / 5,515 (81.23%)**, zero drift; **208** more total matches to 85%. Next: 106-word `func_1517A1EC`.
 
 [Note 2434](WORKING_NOTES/2434-game-randomized-burst-direct-match-20261114.md): `func_1517AA20` now matches the randomized burst directly from C across all 87 words, with no guards. Its emitter has a recovered signature but remains an uncredited stub. Game **3,806 / 4,842 (78.60%)**, total **4,479 / 5,515 (81.21%)**, zero drift; **209** more total matches to 85%. Next: 130-word `func_1517A644`.
