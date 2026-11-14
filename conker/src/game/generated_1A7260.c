@@ -1,19 +1,25 @@
 #include <ultra64.h>
 
 s32 func_150ADA20(void);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void func_1510E82C(s32, s32, f32 *, s32, s32, s32, f32, f32, f32, f32, u16, s32);
+extern f32 D_800A7224, D_800A7228;
+
 
 typedef struct {
     u8 retained00[0x90];
     s16 x, y, z;
     s16 angleX, angleY, angleZ;
     s8 spinX, spinY, spinZ;
-    u8 retained9F;
+    u8 variant;
     s16 speedX, speedY, speedZ;
     u16 timer;
-    u8 retainedA8[8];
+    f32 scale;
+    u8 retainedAC[4];
     s16 floorY;
     u8 retainedB2;
     u8 opacity;
+    u8 retainedB4[4];
 } SettleFade1517A84C;
 extern s32 D_800BE9E4;
 void func_1516972C(void *);
@@ -46,8 +52,37 @@ s32 func_1517A3A0() {
     return 0;
 }
 
-s32 func_1517A644(f32 size, u8 kind, s16 x, s16 y, s32 z) {
-    return 0;
+/* Allocate and initialize one settling burst piece, including its random spin. */
+void func_1517A644(f32 size, u8 kind, s16 x, s16 y, s32 z) {
+    SettleFade1517A84C *record;
+    s32 range;
+    f32 height;
+    s32 halfSize;
+
+    range = size;
+    if (range != 0) {
+        record = func_15167A68(9, 0, 0xB8, 1, 255, 1);
+        if (record != NULL) {
+            func_1510E82C(0, 0, &height, 0, 0, 0, (f32)x, (f32)y,
+                          (f32)(s16)z, (f32)y, 0, 0);
+            record->y = record->floorY = (s16)(s32)(height + 3.0f);
+            record->x = x;
+            record->z = (s16)z;
+            record->angleX = 90;
+            record->angleY = (u32)func_150ADA20() % 360;
+            record->angleZ = 0;
+            record->speedX = 0;
+            record->speedZ = 0;
+            record->variant = kind;
+            record->scale = (s32)((u32)func_150ADA20() % 80 + 100) * D_800A7224;
+            record->speedY = (s16)(s32)(size * D_800A7228);
+            record->spinX = (u32)func_150ADA20() % range - (halfSize = size * 0.5f);
+            record->spinY = (u32)func_150ADA20() % range - halfSize;
+            record->spinZ = (u32)func_150ADA20() % range - halfSize;
+            record->timer = 0;
+            record->opacity = 255;
+        }
+    }
 }
 
 /* Move and rotate the record until it lands, then fade and retire it. */

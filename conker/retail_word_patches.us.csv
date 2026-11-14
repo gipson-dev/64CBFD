@@ -31709,3 +31709,4 @@ generated_1D4E00,func_151A7D6C,0x598,0x868F0012,0x868C0012,-,-,"Preserve strip r
 generated_1D4E00,func_151A7D6C,0x5A0,0x00127400,0x0012CC00,-,-,"Preserve strip renderer private homes, closed register roles and independent retail schedule",,,false
 generated_1D4E00,func_151A7D6C,0x5A4,0x022F082A,0x022C082A,-,-,"Preserve strip renderer private homes, closed register roles and independent retail schedule",,,false
 generated_1D4E00,func_151A7D6C,0x5AC,0x000E9403,0x00199403,-,-,"Preserve strip renderer private homes, closed register roles and independent retail schedule",,,false
+generated_1A7260,func_1517A644,0xE8,0x8FAD0070,0x87AD0072,-,-,Preserve the original signed low-half load from the fifth argument home,,,false
