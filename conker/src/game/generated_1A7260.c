@@ -3,7 +3,7 @@
 s32 func_150ADA20(void);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void func_1510E82C(s32, s32, f32 *, s32, s32, s32, f32, f32, f32, f32, u16, s32);
-extern f32 D_800A7224, D_800A7228;
+extern f32 D_800A7220, D_800A7224, D_800A7228;
 
 
 typedef struct {
@@ -37,8 +37,39 @@ s32 func_15179DB0() {
     return 0;
 }
 
-s32 func_15179FE0() {
-    return 0;
+/* Construct a moving piece with centered random velocity and signed spin. */
+void func_15179FE0(u8 variant, s16 x, s16 y, s16 z, s8 verticalSpeed,
+                  u16 lifetime, u16 mode, u8 movementRange, u8 spinRange,
+                  u8 dampingRange, s32 category) {
+    SettleFade1517A84C *record;
+
+    record = func_15167A68(category, 0, 0xB8, 1, 255, 1);
+    if (record != NULL) {
+        record->x = x;
+        record->y = y;
+        record->z = z;
+        record->speedY = verticalSpeed;
+        record->speedX = (u32)func_150ADA20() % movementRange - (movementRange >> 1);
+        record->speedZ = (u32)func_150ADA20() % movementRange - (movementRange >> 1);
+        if (mode == 5) {
+            record->x += record->speedX * 4;
+            record->y -= record->speedY * 4;
+            record->z += record->speedZ * 4;
+        }
+        record->angleX = 0;
+        record->angleY = 0;
+        record->angleZ = 0;
+        record->spinX = (u32)func_150ADA20() % spinRange - (spinRange >> 1);
+        record->spinY = (u32)func_150ADA20() % spinRange - (spinRange >> 1);
+        record->spinZ = (u32)func_150ADA20() % spinRange - (spinRange >> 1);
+        record->scale = ((func_150ADA20() & 127) + 140) * D_800A7220;
+        record->timer = lifetime;
+        record->variant = variant;
+        record->motionMode = mode;
+        record->retireNibbles = 0;
+        record->opacity = 255;
+        record->dampingRange = dampingRange;
+    }
 }
 
 /* Advance the piece, damp its horizontal motion, then fade and retire it. */

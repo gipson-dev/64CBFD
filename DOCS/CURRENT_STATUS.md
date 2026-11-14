@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2437](WORKING_NOTES/2437-game-motion-piece-constructor-guarded-match-20261114.md): `func_15179FE0` now matches the 131-word moving-piece constructor with its eleven-argument interface and sixteen spill/scheduling guards. The real caller window and constructor-to-callback sequences qualify. Game **3,809 / 4,842 (78.67%)**, total **4,482 / 5,515 (81.27%)**, zero drift; **206** more total matches to 85%. Next: 169-word `func_1517A3A0`.
+
 [Note 2436](WORKING_NOTES/2436-game-piece-update-fade-guarded-match-20261114.md): `func_1517A1EC` now matches the 106-word motion/damping/fade callback with fifteen scheduling/register guards. Three registry descriptors and the real dispatcher window qualify. Game **3,808 / 4,842 (78.65%)**, total **4,481 / 5,515 (81.25%)**, zero drift; **207** more total matches to 85%. Next: 131-word `func_15179FE0`.
 
 [Note 2435](WORKING_NOTES/2435-game-burst-piece-factory-guarded-match-20261114.md): `func_1517A644` now matches the complete 130-word piece factory: 129 words direct from C and one pinned low-half stack-load guard. The burst caller remains exact. Game **3,807 / 4,842 (78.62%)**, total **4,480 / 5,515 (81.23%)**, zero drift; **208** more total matches to 85%. Next: 106-word `func_1517A1EC`.
