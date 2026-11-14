@@ -719,6 +719,43 @@ void func_151A9634(u8 *owner, f32 *position, s32 unused2, s32 unused3) {
 }
 
 
-s32 func_151A9834() {
-    return 0;
+extern f32 D_800A8F68, D_800A8F6C;
+extern void (*D_8008FA60[])(struct17 *, s32, u8 *, u8, s32);
+void func_1514373C(f32, f32, f32 *, f32 *);
+/* Scatter ground-tested emissions around an origin and dispatch their resolved positions. */
+void func_151A9834(f32 *origin, f32 minimum, f32 radius, HeightResult71820 *ground,
+    s32 count, u8 selector, u8 *tag, u8 channel, s32 context) {
+    HeightResult71820 fallback;
+    f32 point[3];
+    struct17 submitted;
+    f32 first, factor;
+    f32 second;
+    if (ground == NULL) {
+        ground = &fallback;
+        fallback.height = D_800A8F68;
+        fallback.metadata = 0;
+        fallback.flags = 7;
+        fallback.state = 0;
+        fallback.value = 0;
+    }
+    /* Keep the original height while helpers may update the working point. */
+    point[1] = origin[1];
+    if (count > 0) {
+        /* The angular scale is one snapshot for the complete burst. */
+        factor = D_800A8F6C;
+        do {
+            first = func_150ADA68();
+            second = func_150ADA68();
+            func_1514373C((first + first) * factor, second * radius, point, point + 2);
+            point[0] += origin[0];
+            point[2] += origin[2];
+            if (func_15046C80(point, 0, minimum, ground)) {
+                submitted.unk0 = point[0];
+                submitted.unk4 = ground->height;
+                submitted.unk8 = point[2];
+                D_8008FA60[selector](&submitted, (s32)ground, tag, channel, context);
+            }
+            count--;
+        } while (count > 0);
+    }
 }
