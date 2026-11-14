@@ -31449,3 +31449,10 @@ generated_13D350,func_1511473C,0x144,0x97390000,0x95080000,R_MIPS_LO16:D_800CBDA
 generated_13D350,func_1511473C,0x148,0x246C0001,0x244D0001,-,-,Restore actor associated update register allocation,,,false
 generated_13D350,func_1511473C,0x14C,0x55990003,0x55A80003,-,-,Restore actor associated update register allocation,,,false
 generated_13D350,func_1511473C,0x154,0xA602007A,0xA60B007A,-,-,Restore actor associated update register allocation,,,false
+generated_13D350,func_15114F44,0x70,0x26940000,0x26B50000,R_MIPS_LO16:D_800DBE18,R_MIPS_LO16:D_8003C8E0,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x74,0x26B50000,0x36D6005A,R_MIPS_LO16:D_8003C8E0,-,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x78,0x36D6005A,0x27DE0000,-,R_MIPS_LO16:D_800DBE20,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x7C,0x27DE0000,0x26940000,R_MIPS_LO16:D_800DBE20,R_MIPS_LO16:D_800DBE18,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x8C,0x8EF00000,0x8EE20000,-,-,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x94,0x58A0001C,0x18A0001B,-,-,Restore pointer list validation setup and empty-list schedule,,,false
+generated_13D350,func_15114F44,0x98,0x26940004,0x00408025,-,-,Restore pointer list validation setup and empty-list schedule,,,false

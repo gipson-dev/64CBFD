@@ -332,6 +332,39 @@ void func_15114F04(s32 arg0, s32 arg1, s32 arg2) {
     func_1001001C(func_15114CC4, arg0, 0, arg1, arg2);
 }
 
-s32 func_15114F44() {
-    return 0;
+extern u32 *D_800DBDD8[];
+extern s32 D_800DBE18[];
+extern s32 D_800DBE20[];
+extern s32 D_8003C8E0, D_800DBF9C, D_800DBFA0, D_800DBFA4;
+void func_150AD770(void);
+/* Check two pointer lists in selected modes and publish the supplied values. */
+void func_15114F44(s32 a, s32 b, s32 c) {
+    s32 *counts;
+    u32 **lists;
+    s32 count, index;
+    u32 *entry, x, y, z;
+    if (D_800BE9F0 == 0x12 || D_800BE9F0 == 0x36 || D_800BE9F0 == 0x13) {
+        lists = D_800DBDD8;
+        counts = D_800DBE18;
+        do {
+            count = *counts;
+            entry = *lists;
+            for (index = 0; index < count; index++, entry += 3) {
+                x = entry[0];
+                if ((x & 0xF0000000) != 0x80000000 ||
+                    ((y = entry[1]) & 0xF0000000) != 0x80000000 ||
+                    ((z = entry[2]) & 0xF0000000) != 0x80000000 ||
+                    (x & 3) || (y & 3) || (z & 3)) {
+                    D_8003C8E0 = 0x0C00005A;
+                    func_150AD770();
+                    count = *counts;
+                }
+            }
+            counts++;
+            lists++;
+        } while ((u32)counts != (u32)D_800DBE20);
+        D_800DBF9C = a;
+        D_800DBFA0 = b;
+        D_800DBFA4 = c;
+    }
 }

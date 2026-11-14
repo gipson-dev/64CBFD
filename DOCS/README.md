@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2413](WORKING_NOTES/2413-game-pointer-list-validator-match-20261114.md): `func_15114F44` now matches the pointer-list validator; its error handler is a handwritten syscall. Game **3,790 / 4,843 (78.26%)**, total **4,463 / 5,516 (80.91%)**, zero drift; **85** more Game matches to 80%.
+
 [Note 2412](WORKING_NOTES/2412-game-actor-associated-updater-match-20261114.md): `func_1511473C` now matches the actor-associated updater; its called helper remains a placeholder. Game **3,789 / 4,843 (78.24%)**, total **4,462 / 5,516 (80.89%)**, zero drift; **86** more Game matches to 80%.
 
 [Note 2411](WORKING_NOTES/2411-game-motion-table-updater-match-20261114.md): `func_150C8350` now matches the motion-table updater. Game **3,788 / 4,843 (78.22%)**, total **4,461 / 5,516 (80.87%)**, zero drift; **87** more Game matches to 80%.
