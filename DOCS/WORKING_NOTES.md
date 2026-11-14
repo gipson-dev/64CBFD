@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2442](WORKING_NOTES/2442-game-minimum-height-particle-constructor-direct-match-20261114.md): `func_15174FA4` now emits all 251 minimum-height particle-constructor words directly from C, with no new guards. Owner **2 / 9 exact**. Game **3,814 / 4,842 (78.77%)**, total **4,487 / 5,515 (81.36%)**, zero drift; **201** more matches to 85%. Next: 370-word `func_15175390`.
+
 [Note 2441](WORKING_NOTES/2441-game-jittered-particle-constructor-guarded-match-20261114.md): `func_15174BF0` now matches all 237 particle-constructor words with 79 private-home/register/scheduling guards, preserving the unwritten ground-output failure path. Game **3,813 / 4,842 (78.75%)**, total **4,486 / 5,515 (81.34%)**, zero drift; **202** more matches to 85%. Next: 251-word `func_15174FA4`.
 
 [Note 2440](WORKING_NOTES/2440-game-four-slot-effect-dispatch-guarded-match-20261114.md): `func_15183290` now matches all 392 effect-dispatch words with 44 temporary-register guards and the original switch table. Owner **9 / 9 exact**. Game **3,812 / 4,842 (78.73%)**, total **4,485 / 5,515 (81.32%)**, zero drift; **203** more total matches to 85%. Next: 237-word `func_15174BF0`.
