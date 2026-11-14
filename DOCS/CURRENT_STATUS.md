@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2409](WORKING_NOTES/2409-game-quaternion-matrix-private-screen-20261114.md): `func_1504A140` remains private after finite, overlap and modeled NaN-payload screens. Game remains **3,786 / 4,843 (78.17%)**, with **89** more Game matches to 80%.
+
 [Note 2408](WORKING_NOTES/2408-game-group-output-lookup-private-screen-20261114.md): `func_15022024` remains private after its group lookup, output-alias and access-order screens. Game remains **3,786 / 4,843 (78.17%)**, with **89** more Game matches to 80%.
 
 [Note 2407](WORKING_NOTES/2407-game-motion-crossing-match-20261114.md): `func_150E6230` now matches the motion-crossing callback. Game **3,786 / 4,843 (78.17%)**, total **4,459 / 5,516 (80.84%)**, zero drift; **89** more Game matches to 80%.
