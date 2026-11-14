@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2400](WORKING_NOTES/2400-game-attachment-effect-private-screen-20261113.md): `func_150F97EC` remains private after an attachment-effect screen. Game remains **3,783 / 4,843 (78.11%)**; **92** more matches to 80%.
+
 [Note 2399](WORKING_NOTES/2399-game-actor-effect-dispatch-match-20261113.md): `func_150B3AB0` now matches the actor-linked effect dispatch. Game **3,783 / 4,843 (78.11%)**, total **4,456 / 5,516 (80.78%)**, zero drift; **92** more Game matches to 80%.
 
 [Note 2398](WORKING_NOTES/2398-game-linked-effect-constructor-match-20261113.md): `func_151CEAAC` now matches the linked-effect constructor. Game **3,782 / 4,843 (78.09%)**, total **4,455 / 5,516 (80.77%)**, zero drift; **93** more Game matches to 80%.
