@@ -31315,3 +31315,25 @@ generated_1C2C60,func_1519C09C,0x78,0xA3AF006D,0xA3B8006D,-,-,Normalize effect c
 generated_1C2C60,func_1519C09C,0x7C,0xA7B8006E,0xA7B9006E,-,-,Normalize effect config initialization scheduling and registers,,,false
 generated_1C2C60,func_1519C09C,0x80,0xA3B90070,0xA3A80070,-,-,Normalize effect config initialization scheduling and registers,,,false
 generated_1C2C60,func_1519C09C,0x94,0xAFA8005C,0xAFAE005C,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_121A20,func_150F48D0,0x4,0x3C050000,0x3C030000,R_MIPS_HI16:D_800BE9A4,R_MIPS_HI16:D_800BE9A4,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x8,0x24A50000,0x24630000,R_MIPS_LO16:D_800BE9A4,R_MIPS_LO16:D_800BE9A4,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x14,0xC4A60000,0xC4660000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x1C,0x24830170,0x24820170,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x40,0xC46C0010,0xC44C0010,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x4C,0xC46C0010,0xC44C0010,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x50,0xC46E0020,0xC44E0020,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x5C,0xAFA30018,0xAFA20018,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x64,0x3C050000,0x3C030000,R_MIPS_HI16:D_800BE9A4,R_MIPS_HI16:D_800BE9A4,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x68,0x24A50000,0x24630000,R_MIPS_LO16:D_800BE9A4,R_MIPS_LO16:D_800BE9A4,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x6C,0xC4A40000,0xC4640000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x8C,0xC4B20000,0xC4720000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0xA4,0xC4B00000,0xC4700000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0xBC,0xC4AA0000,0xC46A0000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x104,0xC4860050,0x460A4402,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x108,0x460A4402,0x46109101,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x10C,0x46109101,0xE4840040,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x110,0xC4920020,0xC4860050,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x114,0xE4840040,0xC4680000,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x118,0xC4A80000,0xC4920020,-,-,Restore timed motion independent load and float schedule,,,false
+generated_121A20,func_150F48D0,0x130,0xC4A60000,0xC4660000,-,-,Normalize timed motion closed register roles,,,false
+generated_121A20,func_150F48D0,0x148,0xC4A40000,0xC4640000,-,-,Normalize timed motion closed register roles,,,false

@@ -20,8 +20,29 @@ s32 func_150F4570() {
     return 0;
 }
 
-s32 func_150F48D0() {
-    return 0;
+typedef struct { f32 timer, x, y, z, phase, rate, width, depth, scale; } TimedMotion150F48D0;
+extern f32 D_800BE9A4;
+void func_1514373C(f32, f32, f32 *, f32 *);
+/* Advance the timed motion and return its embedded state address while active. */
+s32 func_150F48D0(f32 *actor) {
+    TimedMotion150F48D0 *state = (TimedMotion150F48D0 *)((u8 *)actor + 0x170);
+    f32 b, a;
+    state->timer -= D_800BE9A4;
+    if (state->timer <= 0.0f) {
+        return 0;
+    }
+    func_1514373C(state->phase, state->scale, &a, &b);
+    state->phase += state->rate * D_800BE9A4;
+    state->x += actor[0x44 / 4] * D_800BE9A4;
+    state->y += actor[0x48 / 4] * D_800BE9A4;
+    state->z += actor[0x4C / 4] * D_800BE9A4;
+    actor[0x38 / 4] = state->x + a * state->width;
+    actor[0x3C / 4] = state->y + b;
+    actor[0x40 / 4] = state->z - a * state->depth;
+    actor[0x20 / 4] += actor[0x50 / 4] * D_800BE9A4;
+    actor[0x24 / 4] += actor[0x54 / 4] * D_800BE9A4;
+    actor[0x28 / 4] += actor[0x58 / 4] * D_800BE9A4;
+    return (s32)state;
 }
 
 s32 func_150F4A38() {

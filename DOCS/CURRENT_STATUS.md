@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2401](WORKING_NOTES/2401-game-timed-motion-callback-match-20261113.md): `func_150F48D0` now matches the timed-motion callback. Game **3,784 / 4,843 (78.13%)**, total **4,457 / 5,516 (80.80%)**, zero drift; **91** more Game matches to 80%.
+
 [Note 2400](WORKING_NOTES/2400-game-attachment-effect-private-screen-20261113.md): `func_150F97EC` remains private after an attachment-effect screen. Game remains **3,783 / 4,843 (78.11%)**; **92** more matches to 80%.
 
 [Note 2399](WORKING_NOTES/2399-game-actor-effect-dispatch-match-20261113.md): `func_150B3AB0` now matches the actor-linked effect dispatch. Game **3,783 / 4,843 (78.11%)**, total **4,456 / 5,516 (80.78%)**, zero drift; **92** more Game matches to 80%.
