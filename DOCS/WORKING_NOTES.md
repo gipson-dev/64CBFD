@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2417](WORKING_NOTES/2417-game-random-scatter-scheduling-screen-20261114.md): `func_1517AA20` remains private; its 85-word candidate has 51 retail-position words but needs an 87-word schedule and a resolved helper interface. Game remains **3,792 / 4,843 (78.30%)**, with **83** more matches to 80%.
+
 [Note 2416](WORKING_NOTES/2416-game-mode-descriptor-direct-match-20261114.md): `func_150F5420` now matches the mode-specific descriptor constructor directly from C, with no guards. Game **3,792 / 4,843 (78.30%)**, total **4,465 / 5,516 (80.95%)**, zero drift; **83** more Game matches to 80%.
 
 [Note 2415](WORKING_NOTES/2415-game-selector-mask-private-screen-20261114.md): `func_1515942C` remains private; its 95-word candidate preserves sampled read order but does not yet fit the 90-word retail slot. Game remains **3,791 / 4,843 (78.28%)**, with **84** more matches to 80%.
