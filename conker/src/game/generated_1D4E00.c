@@ -273,9 +273,83 @@ void func_151A931C(u8 *arg0, s32 arg1, u8 arg2) {
     }
 }
 
-s32 func_151A9390() {
-    return 0;
+typedef struct { f32 x, y, z; } TemplatePosition151A9390;
+typedef struct {
+    f32 primary, secondary;
+    u8 arg2, arg3, arg4, headerKind, effectKind;
+    u8 pad0D[3];
+    void *payload;
+} EffectTemplate151A9390;
+typedef struct {
+    u8 flags, pad01[3];
+    s16 *owner;
+    f32 primary, secondary;
+    TemplatePosition151A9390 position;
+    f32 parameter0, parameter1;
+    u8 type;
+    s8 mode;
+    u8 enabled;
+} TemplateRequest151A9390;
+extern EffectTemplate151A9390 D_8008F9AC[];
+struct225 *func_1516284C(Header *, s32, s32, s32, s32, u8, u8, s32, u8, u8, s32);
+/* Select a template, create its actor payload, and optionally submit an effect. */
+void func_151A9390(u8 flags, u8 selector, s16 *owner,
+                  TemplatePosition151A9390 *position, f32 parameter0,
+                  f32 parameter1, s16 lifetime, u8 channel, s32 context) {
+    TemplateRequest151A9390 request;
+    EffectTemplate151A9390 *table;
+    s32 low;
+    Header header;
+    s32 coordinates[3];
+    s32 ownerBits;
+    s32 high;
+    u8 *record;
+    u8 *created;
+    low = flags & 1;
+    if (selector < 9) {
+        low = low ? 4 : 0;
+        ownerBits = owner ? 2 : 0;
+        high = (flags & 2) ? 8 : 0;
+        table = &D_8008F9AC[selector];
+        request.flags = high | 1 | ownerBits | low;
+        request.owner = owner;
+        request.primary = table->primary;
+        request.secondary = table->secondary;
+        if (position != 0) request.position = *position;
+        else { request.position.x = 0.0f; request.position.y = 0.0f; request.position.z = 0.0f; }
+        request.parameter0 = parameter0;
+        request.parameter1 = parameter1;
+        request.type = 2;
+        request.mode = -1;
+        request.enabled = 1;
+        created = func_151A8B20(&request, lifetime, 0x2C, channel, context);
+        if (created != 0) {
+            record = created + 0x80;
+            memcpy(record, table->payload, 0x2C);
+            if (flags & 8) record[0x28] |= 1;
+            if (flags & 16) record[0x28] |= 2;
+        }
+        if (flags & 4) {
+            high = lifetime == -1 ? 0 : 1;
+            header.unk0 = high | 2;
+            header.unk1 = 2;
+            header.unk2 = lifetime == -1 ? 300 : lifetime;
+            header.unk4 = table->headerKind;
+            if (position != 0) {
+                coordinates[0] = (s32)position->x;
+                coordinates[1] = (s32)position->y;
+                coordinates[2] = (s32)position->z;
+            } else {
+                coordinates[0] = owner[0];
+                coordinates[1] = owner[1];
+                coordinates[2] = owner[2];
+            }
+            func_1516284C(&header, (s32)coordinates, table->arg2, table->arg3,
+                table->arg4, 255, 0, 0, table->effectKind, 255, 1);
+        }
+    }
 }
+
 
 typedef struct {
     f32 base0, base1, range0, range1;

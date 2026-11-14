@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2423](WORKING_NOTES/2423-game-template-effect-guarded-match-20261114.md): `func_151A9390` now matches the template-effect constructor with ten temporary-stack guards. Game **3,797 / 4,843 (78.40%)**, total **4,470 / 5,516 (81.04%)**, zero drift; **219** more total matches to 85%.
+
 [Note 2422](WORKING_NOTES/2422-game-ranged-effect-direct-match-20261114.md): `func_151A9634` now matches the ranged-effect callback directly from C, with no guards. Game **3,796 / 4,843 (78.38%)**, total **4,469 / 5,516 (81.02%)**, zero drift; **220** more total matches to 85%.
 
 [Note 2421](WORKING_NOTES/2421-game-randomized-emitter-guarded-match-20261114.md): `func_151A91AC` now matches the randomized emitter with four stack-slot guards. Game **3,795 / 4,843 (78.36%)**, total **4,468 / 5,516 (81.00%)**, zero drift; **221** more total matches to 85%.
