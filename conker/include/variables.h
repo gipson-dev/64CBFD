@@ -1059,7 +1059,7 @@ extern u8  D_800CC27C;
 extern s32 D_800CC280;
 extern s32 D_800CC284; //pointer to 6 u8s
 extern s32 D_800CC288;
-extern s32 D_800CC298; // 0x18 length
+extern s16 D_800CC298[]; // 0x18 bytes
 extern u8  D_800CC2A2;
 
 extern f32 D_800CC2C0;

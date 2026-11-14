@@ -525,8 +525,39 @@ s32 func_150F1A00() {
     return 0;
 }
 
-s32 func_150F1B48() {
-    return 0;
+extern u16 D_800CC354[];
+extern s16 D_800CC298[];
+extern s32 D_800BE9E4;
+extern f32 D_800A18F4, D_800A18F8;
+/* Update the shared coordinate and emit six (x, y) halfword pairs. */
+u8 *func_150F1B48(u8 *output, s32 slot) {
+    s16 *packet = (s16 *)output;
+    s32 delta, next, i;
+    s32 active;
+    if (*(u16 *)((u8 *)D_800CC354 + (u32)slot * 0x32c) == 0x21) active = 1;
+    else active = 0;
+    delta = (s32)((u32)D_800BE9E4 * 0x222u);
+    if (active != 0) {
+        next = (s32)((u32)(s32)D_800CC298[9] - (u32)delta);
+        if (D_800A18F4 < (f32)next) D_800CC298[9] = (s16)next;
+        else D_800CC298[9] = -0x1999;
+    } else {
+        next = (s32)((u32)(s32)D_800CC298[9] + (u32)delta);
+        if ((f32)next < D_800A18F8) D_800CC298[9] = (s16)next;
+        else D_800CC298[9] = 0x1555;
+    }
+    /* The output may overlap the shared coordinate: snapshot before each next x. */
+    packet[0] = 0xb2;
+    next = D_800CC298[9];
+    packet[2] = 0xb8;
+    packet[1] = (s16)next;
+    for (i = 2; i < 6; i++) {
+        next = D_800CC298[9];
+        packet[i * 2] = (s16)(0xb2 + i * 6);
+        packet[i * 2 - 1] = (s16)next;
+    }
+    packet[11] = D_800CC298[9];
+    return output + 24;
 }
 
 void func_150F1CB0(u8 *arg0) {

@@ -31258,3 +31258,26 @@ generated_215960,func_151ED29C,0x180,0x00187B00,0x0019C300,-,-,Normalize tile bu
 generated_215960,func_151ED29C,0x184,0x31B80FFF,0x030DC825,-,-,Normalize tile builder register allocation and instruction scheduling,,,false
 generated_215960,func_151ED29C,0x188,0x01F87025,0xAC790004,-,-,Normalize tile builder register allocation and instruction scheduling,,,false
 generated_215960,func_151ED29C,0x18C,0xAD8E0004,0x00801025,-,-,Normalize tile builder register allocation and instruction scheduling,,,false
+generated_11C2B0,func_150F1B48,0x54,0x240C00B8,0x240D00B8,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0xF8,0x84A20012,0x84AC0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,0x24020002,-,false
+generated_11C2B0,func_150F1B48,0xFC,0xA48C0004,0xA48D0004,-,-,Normalize coordinate packet register allocation and peeled loop schedule,0x00021880,-,false
+generated_11C2B0,func_150F1B48,0x100,0x24830008,0xA48C0002,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x104,0xA4820002,0x84AE0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x108,0x84A20012,0x00621823,-,-,Normalize coordinate packet register allocation and peeled loop schedule,0x00031840,-,false
+generated_11C2B0,func_150F1B48,0x10C,0x240D00BE,0x246F00B2,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x110,0xA46D0000,0xA48F0008,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x114,0xA462FFFE,0xA48E0006,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x118,0x84A20012,0x84B80012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x11C,0x240E00C4,0x247900B8,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x120,0xA46E0004,0xA499000C,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x124,0xA4620002,0xA498000A,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x128,0x84A20012,0x84A80012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x12C,0x240F00CA,0x246900BE,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x130,0xA46F0008,0xA4890010,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x134,0xA4620006,0xA488000E,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x138,0x84A20012,0x84AA0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x13C,0x241800D0,0x246B00C4,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x140,0xA478000C,0xA48B0014,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x144,0xA462000A,0xA48A0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x148,0x84B90012,0x84AC0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1B48,0x150,0xA4990016,0xA48C0016,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false

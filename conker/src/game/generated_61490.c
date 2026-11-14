@@ -18,7 +18,7 @@ u8 *func_150341BC(u8 *, s32);
 u8 *func_150D8590(u16 *, s32);
 u8 *func_150344A0(u8 *, s32);
 u8 *func_150B58F0(u8 *, s32);
-s32 func_150F1B48(u8 *, s32);
+u8 *func_150F1B48(u8 *, s32);
 u8 *func_15034420(u8 *, s32);
 u8 *func_150BE438(u8 *, s32);
 u8 *func_15034340(u8 *, s32);
@@ -57,7 +57,7 @@ void func_15033FE0(u8 *output, s32 slot) {
                 cursor = func_150B58F0(output, slot);
                 break;
             case 0x7B:
-                cursor = (u8 *)func_150F1B48(output, slot);
+                cursor = func_150F1B48(output, slot);
                 break;
             case 0x8A:
                 cursor = func_15034420(output, slot);

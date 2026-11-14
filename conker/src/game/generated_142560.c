@@ -220,7 +220,7 @@ void func_15116110(u8 *arg0) {
     }
 }
 
-extern u16 D_800CC354;
+extern u16 D_800CC354[];
 extern f32 D_800A2FA8, D_800A2FAC;
 f32 func_1510F648(f32, f32, f32);
 f32 fabsf(f32);
@@ -243,7 +243,7 @@ void func_1511617C(u8 *state) {
             (f32)(s32)(0u - (u32)velocity) * D_800A2FA8);
     } else {
         target = -20;
-        if (D_800CC354 == 0x4B) {
+        if (D_800CC354[0] == 0x4B) {
             target = -40;
         }
         velocity = *(s32 *)(state + 0x3C);
