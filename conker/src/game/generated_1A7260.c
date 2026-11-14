@@ -41,10 +41,52 @@ Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
 s32 func_1517A9A8(s32, volatile s32);
 
 
-/* Non-matching placeholders for the text-only asm slice asm/1A7260.s. */
+typedef struct { u32 owner; Vtx *first, *second; u32 retained0C[2]; } WaveBuffers15179DB0;
+typedef struct { u8 retained00[0x18]; f32 step[2], phase[2], amplitude; u8 retained2C[0xC]; } WaveState15179DB0;
+extern WaveBuffers15179DB0 D_800DDE80[];
+extern WaveState15179DB0 D_8008D0B0[];
+extern u8 D_800A7210[];
+extern f32 D_800A7218;
+f32 sinf(f32);
 
-s32 func_15179DB0() {
-    return 0;
+
+/* Recovered routines for the text-only asm slice asm/1A7260.s. */
+
+/* Deform both vertex banks from their phases, then advance each wave once. */
+void func_15179DB0(u8 index) {
+    Vtx *vertices[2];
+    f32 *phases[2];
+    f32 *steps[2];
+    WaveState15179DB0 *state;
+    s16 displacement;
+    s32 edge;
+    s32 i;
+    s32 j;
+    f32 factor;
+
+    state = &D_8008D0B0[index];
+    vertices[1] = D_800DDE80[index].first;
+    vertices[0] = D_800DDE80[index].second;
+    phases[0] = &state->phase[0];
+    phases[1] = &state->phase[1];
+    steps[0] = &state->step[0];
+    steps[1] = &state->step[1];
+    factor = D_800A7218;
+    for (i = 0; i < 2; i++) {
+        displacement = (s32)(sinf(*phases[i] * factor) * state->amplitude);
+        vertices[i][2].v.ob[0] = displacement;
+        vertices[i][3].v.ob[0] = displacement;
+        edge = -(displacement >> 1);
+        for (j = 0; j < 7; j++) {
+            vertices[i][D_800A7210[j]].v.ob[0] = edge;
+        }
+        vertices[i][6].v.ob[0] = edge + 18;
+        vertices[i][8].v.ob[0] = edge - 18;
+        *phases[i] += *steps[i];
+        if (*phases[i] >= 360.0f) {
+            *phases[i] -= 360.0f;
+        }
+    }
 }
 
 /* Construct a moving piece with centered random velocity and signed spin. */
