@@ -40,7 +40,10 @@ bounded checks; helper implementations and physical gameplay are not proven by
 the modeled calls. The actual-Make caller diagnostics remain 36 before and
 after; the known duplicate Makefile recipe warning is also still present.
 
-Both mounted and independent sibling suites passed before and after installation; `make tools-check` passed and the sibling's pre-existing dirty state was preserved.
+The mounted and independent sibling suites passed after installation with the
+corrected helper declarations. An earlier candidate also passed both suites
+before installation. `make tools-check` passed and the sibling's pre-existing
+dirty state was preserved.
 
 The production Make build and independent full-image prediction account for 345 changed bytes with zero exclusions and 1 checked symbol-ordering groups. Only this function changes among 6,051; every function address and all 189,088 protected Game-data bytes remain fixed. The one owner neighbor, 328 caller functions, conversion CSV and entire guard table are unchanged. Of 698 fingerprinted linked objects, changed objects were `generated_E0F60.c.o`. The scoped Graphify refresh retained all 60,084 prior node IDs and was not a full-corpus extraction.
 
