@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2416](WORKING_NOTES/2416-game-mode-descriptor-direct-match-20261114.md): `func_150F5420` now matches the mode-specific descriptor constructor directly from C, with no guards. Game **3,792 / 4,843 (78.30%)**, total **4,465 / 5,516 (80.95%)**, zero drift; **83** more Game matches to 80%.
+
 [Note 2414](WORKING_NOTES/2414-game-owner-chain-constructor-direct-match-20261114.md): `func_150C0AC0` now matches the owner-chain constructor directly from C, with no guards. Game **3,791 / 4,843 (78.28%)**, total **4,464 / 5,516 (80.93%)**, zero drift; **84** more Game matches to 80%.
 
 [Note 2413](WORKING_NOTES/2413-game-pointer-list-validator-match-20261114.md): `func_15114F44` now matches the pointer-list validator; its error handler is a handwritten syscall. Game **3,790 / 4,843 (78.26%)**, total **4,463 / 5,516 (80.91%)**, zero drift; **85** more Game matches to 80%.

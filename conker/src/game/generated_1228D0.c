@@ -44,8 +44,63 @@ typedef struct {
     f32 value;
 } Func150F5C08Payload;
 
-s32 func_150F5420() {
-    return 0;
+extern u8 D_800917F8[], D_80091930[], D_8009193C[], D_80091948[];
+void *func_15169968(void *);
+typedef struct {
+    u8 *asset; u32 retained04; u32 packedFirstSecond, packedThirdSum; s32 field10;
+    s16 sum, field16, field18; u8 retained1A[2]; f32 field1C, field20;
+    s16 field24, field26, field28, field2A, field2C, field2E;
+    u8 field30, field31, field32, field33, field34, field35, field36, field37;
+    u8 retained38, field39, retained3A[2];
+} ModeDescriptor150F5420;
+/* Construct a mode-specific descriptor and submit it for allocation. */
+void *func_150F5420(u32 first, u32 second, u32 third, s32 mode) {
+    ModeDescriptor150F5420 descriptor;
+    u32 sum;
+    if (mode != 0) {
+        if (mode == 2) {
+            descriptor.field2C = 240;
+            descriptor.field2E = 186;
+            descriptor.asset = D_80091948;
+        } else {
+            descriptor.field2C = 270;
+            descriptor.field2E = 124;
+            if (mode == 1) descriptor.asset = D_80091930;
+            else descriptor.asset = D_8009193C;
+        }
+        descriptor.field30 = 9;
+        descriptor.field39 = 16;
+        descriptor.field28 = 0;
+        descriptor.field2A = 0;
+        descriptor.field36 = 8;
+    } else {
+        descriptor.asset = D_800917F8;
+        descriptor.field30 = 10;
+        descriptor.field2C = 160;
+        descriptor.field2E = 192;
+        descriptor.field39 = 32;
+        descriptor.field28 = 0x1000;
+        descriptor.field2A = 0x1000;
+        descriptor.field36 = 24;
+    }
+    descriptor.packedFirstSecond = (first << 16) | second;
+    sum = first + second + third;
+    descriptor.packedThirdSum = (third << 16) | sum;
+    descriptor.field10 = 10000;
+    descriptor.sum = sum;
+    descriptor.field18 = 0;
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field31 = 1;
+    descriptor.field32 = 255;
+    descriptor.field33 = 255;
+    descriptor.field34 = 255;
+    descriptor.field37 = 17;
+    descriptor.field35 = 0;
+    descriptor.field16 = 0;
+    descriptor.field1C = 146.0f;
+    descriptor.field20 = 100.0f;
+    return func_15169968(&descriptor);
 }
 
 void func_150F5590(u8 *arg0) {
