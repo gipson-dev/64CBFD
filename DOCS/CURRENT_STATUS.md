@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2433](WORKING_NOTES/2433-game-handwritten-phase-lookup-restoration-20261114.md): `func_150A76F0` is restored as genuine handwritten assembly (29 instructions plus three alignment words), with zero new C-match credit. Classification correction gives Game **3,805 / 4,842 (78.58%)**, total **4,478 / 5,515 (81.20%)**, zero drift; **210** more total matches to 85%. Next C candidate: `func_1517AA20`.
+
 [Note 2432](WORKING_NOTES/2432-game-polyline-strip-renderer-guarded-match-20261114.md): `func_151A7D6C` now matches all 373 words with 157 pinned layout/register/scheduling guards. Game **3,805 / 4,843 (78.57%)**, total **4,478 / 5,516 (81.18%)**, zero drift; **211** more total matches to 85%. Next: `func_150A76F0`.
 
 [Note 2431](WORKING_NOTES/2431-game-polyline-strip-renderer-semantic-screen-20261114.md): `func_151A7D6C` has a private 373-word / 0xC8-frame semantic screen, with 375 guest cases and 195 native cases per profile. **157 words remain different; uninstalled and uncredited.** Total remains **4,477 / 5,516 (81.16%)**; **212** more matches to 85%. Next: finish its stack/register/scheduling match.

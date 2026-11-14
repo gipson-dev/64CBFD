@@ -74,6 +74,7 @@ s32 func_150A769C() {
     return 0;
 }
 
-s32 func_150A76F0() {
-    return 0;
-}
+/* Handwritten phase lookup: T4 is the byte phase, S6 the 65-word table,
+ * S7/T9 the folding constants 128/256, and F8 the result. Returns through V0;
+ * this register convention is deliberately not exposed as a C function. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D4450/func_150A76F0.s")
