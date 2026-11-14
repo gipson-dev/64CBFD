@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2403](WORKING_NOTES/2403-game-height-emitter-qualified-screen-20261114.md): `func_150E971C` remains private after native, caller and strict-image screens. Game remains **3,784 / 4,843 (78.13%)**, with **91** more Game matches to 80%.
+
 [Note 2402](WORKING_NOTES/2402-game-height-emitter-private-screen-20261113.md): `func_150E971C` remains private after a descriptor-padding screen. Game remains **3,784 / 4,843 (78.13%)**, with **91** more Game matches to 80%.
 
 [Note 2401](WORKING_NOTES/2401-game-timed-motion-callback-match-20261113.md): `func_150F48D0` now matches the timed-motion callback. Game **3,784 / 4,843 (78.13%)**, total **4,457 / 5,516 (80.80%)**, zero drift; **91** more Game matches to 80%.
