@@ -1,9 +1,117 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/1A20A0.s. */
+#include "structs.h"
+typedef struct {
+    u8 retained00[0x90];
+    u8 slot, retained91;
+    s16 flags;
+    void *model;
+    f32 position[3];
+    s16 lifetime, mode;
+    f32 tilt, heading, fieldB0, fieldB4, angularRate, fieldBC, scale;
+    u32 retainedC4;
+    f32 groundHeight;
+    u8 retainedCC[0x1C];
+    u32 surfaceFlags;
+    u8 surfaceKind, variant;
+    u16 sound;
+    u8 stateF0, stateF1, retainedF2[6];
+} Particle15174BF0;
+typedef struct { void *model; u32 retained04[4]; } Model15174BF0;
+extern u8 *D_800DBFF0;
+extern u8 *D_800DBE3C;
+extern u32 *D_800DBE5C;
+extern Model15174BF0 D_800DDE88[];
+extern u8 D_800A7170[];
+extern f32 D_800A7174;
+f32 func_15048FC8(struct17 *relative);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+u32 func_150ADA20(void);
+u16 func_10010E78(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32); /* Full call-site words; narrowing occurs in the callee. */
+s32 func_1510F8D8(s32, s32, s32, u8 **);
 
-s32 func_15174BF0() {
-    return 0;
+/* Recovered routine and remaining placeholders for asm/1A20A0.s. */
+
+/* Create jittered particles with one initial sound and optional ground classification. */
+void func_15174BF0(s32 count, s32 slot, s32 x, s32 y, s32 z, s32 view,
+                   f32 baseScale, f32 scaleRange, s32 flags) {
+    struct17 relative;
+    u8 *surface; /* An early query failure leaves the retail stack word untouched. */
+    f32 rateScale;
+    s32 heading;
+    s32 spawnX;
+    s32 spawnZ;
+    s32 turn;
+    s32 angle;
+    s32 i;
+    s32 grounded;
+    u32 material;
+    s32 variant;
+    Particle15174BF0 *particle;
+
+    relative.unk0 = (f32)x - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x2F8);
+    relative.unk4 = (f32)y - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x2FC);
+    relative.unk8 = (f32)z - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x300);
+    heading = (s32)func_15048FC8(&relative);
+    i = 0;
+    if (count > 0) {
+        rateScale = D_800A7174;
+again:
+        particle = func_15167A68(10, 0, 0xF8, 1, 0xFF, 1);
+        if (particle != NULL) {
+            grounded = flags & 1;
+            spawnX = (u32)x + (func_150ADA20() & 0x7F) - 0x3F;
+            spawnZ = (u32)z + (func_150ADA20() & 0x7F) - 0x3F;
+            particle->flags = 3;
+            particle->position[1] = (f32)y;
+            particle->position[0] = (f32)spawnX;
+            particle->slot = slot;
+            particle->position[2] = (f32)spawnZ;
+            particle->lifetime = (func_150ADA20() % 15U) + 10;
+            particle->mode = 1;
+            turn = (u32)heading + (func_150ADA20() & 0x1F) - 15;
+            angle = turn;
+            if (turn < 0) {
+                angle = turn + 360;
+            } else if (turn >= 360) {
+                angle = turn - 360;
+            }
+            particle->tilt = (f32)((s32)(func_150ADA20() & 0x1F) - 15);
+            particle->fieldB0 = 0.0f;
+            particle->fieldB4 = -1.0f;
+            particle->heading = (f32)angle;
+            particle->angularRate = (f32)((s32)(func_150ADA20() & 0xFF) - 128) * rateScale;
+            particle->fieldBC = 0.0f;
+            particle->scale = ((f32)(s32)(func_150ADA20() & 0xFFFF) * 0.000030517578125f * scaleRange) + baseScale;
+            variant = func_150ADA20() & 1;
+            particle->variant = variant;
+            particle->model = D_800DDE88[variant].model;
+            if (i == 0) {
+                particle->sound = func_10010E78(0, 0xA2, 0x7D00, 0, 0, 0, spawnX, y, spawnZ, 1000, 4000);
+            } else {
+                particle->sound = 0;
+            }
+            particle->surfaceFlags = 0;
+            if (grounded) {
+                particle->flags |= 0x80;
+                particle->groundHeight = (f32)func_1510F8D8(spawnX, y, spawnZ, &surface);
+                material = 0;
+                if (surface != NULL) {
+                    material = D_800DBE5C[(s32)((u32)surface - (u32)D_800DBE3C) / 12];
+                }
+                particle->surfaceFlags = material;
+                particle->surfaceKind = D_800A7170[(material >> 5) & 3];
+            } else {
+                particle->surfaceKind = 0;
+            }
+            particle->stateF0 = 0;
+            particle->stateF1 = 0;
+            i++;
+            if (i != count) {
+                goto again;
+            }
+        }
+    }
 }
 
 s32 func_15174FA4() {

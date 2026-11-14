@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2441](WORKING_NOTES/2441-game-jittered-particle-constructor-guarded-match-20261114.md): `func_15174BF0` now matches all 237 particle-constructor words with 79 private-home/register/scheduling guards, preserving the unwritten ground-output failure path. Game **3,813 / 4,842 (78.75%)**, total **4,486 / 5,515 (81.34%)**, zero drift; **202** more matches to 85%. Next: 251-word `func_15174FA4`.
+
 [Note 2440](WORKING_NOTES/2440-game-four-slot-effect-dispatch-guarded-match-20261114.md): `func_15183290` now matches all 392 effect-dispatch words with 44 temporary-register guards and the original switch table. Owner **9 / 9 exact**. Game **3,812 / 4,842 (78.73%)**, total **4,485 / 5,515 (81.32%)**, zero drift; **203** more total matches to 85%. Next: 237-word `func_15174BF0`.
 
 [Note 2439](WORKING_NOTES/2439-game-wave-vertex-deformation-guarded-match-20261114.md): `func_15179DB0` now matches all 140 wave-deformation words with 72 private-frame/register guards. The owner is **11 / 11 exact**. Game **3,811 / 4,842 (78.71%)**, total **4,484 / 5,515 (81.31%)**, zero drift; **204** more total matches to 85%. Next: 392-word `func_15183290`.
