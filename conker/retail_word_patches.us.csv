@@ -31476,3 +31476,21 @@ generated_1D4E00,func_151A8B20,0x12C,0xE7A00048,0xE7A00040,-,-,Restore spawn all
 generated_1D4E00,func_151A8B20,0x138,0xC7A00048,0xC7A00040,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
 generated_1D4E00,func_151A8B20,0x15C,0x10000002,0xACE20050,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
 generated_1D4E00,func_151A8B20,0x160,0xACE20050,0x10000003,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,0x90F80000,,false
+generated_1D4E00,func_151A87F8,0x74,0x01273021,0x00E93021,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x98,0x27AF005C,0x27AF0078,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x120,0x8FA4005C,0x8FA40078,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x174,0x27A40078,0x27A4007C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x17C,0xE7A40078,0xE7A4007C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x18C,0xE7AA007C,0xE7AA0080,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1A0,0xE7A80080,0xE7A80084,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1C4,0x27A40078,0x27A4007C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1C8,0x27A5006C,0x27A50060,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1E0,0x24020001,0x358D0002,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1E4,0x358D0002,0xA20D001C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1EC,0xA20D001C,0x24020001,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1F4,0x24020001,0x31CFFFFD,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x1F8,0x31CFFFFD,0xA20F001C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x200,0xA20F001C,0x24020001,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x208,0x24020001,0x3319FFFD,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x20C,0x3319FFFD,0xA219001C,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false
+generated_1D4E00,func_151A87F8,0x210,0xA219001C,0x24020001,-,-,"Normalize attached-direction local homes, return-constant schedule and commutative matrix address",,,false

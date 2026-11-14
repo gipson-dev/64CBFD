@@ -90,9 +90,64 @@ s32 func_151A8624() {
     return 0;
 }
 
-s32 func_151A87F8() {
-    return 0;
+typedef struct {
+    u8 *target;
+    u8 identity, pad05[3];
+    f32 local[3];
+    u8 matrixIndex, pad15[3];
+    f32 offset[3];
+    u8 pad24, flags;
+} AttachedDirection151A87F8;
+void func_15143134(f32 *, f32 *, u8 *);
+s32 func_150AC9C0(f32, f32, f32, f32, f32, f32, s32, s32,
+    f32 *, f32 *, f32 *, f32 *, s32 *, s32, f32);
+u8 func_15145C90(s32);
+f32 func_15143E64(f32 *);
+s32 func_15146078(struct17 *, struct17 *, struct17 *);
+/* Refresh an attached point and cache its collision-limited direction. */
+s32 func_151A87F8(u8 *record) {
+    AttachedDirection151A87F8 *cache;
+    u8 *target, *matrices;
+    struct17 delta, temporary;
+    f32 dx, dy, dz;
+    /* Keep both pointers across helper-visible changes to the owner and cache. */
+    cache = *(AttachedDirection151A87F8 **)(record + 0x60);
+    target = cache->target;
+    if (*(s32 *)target == 0 || cache->identity != target[0x3B] || target[4] == 0xFF) return 0;
+    matrices = *(u8 **)(target + 0x1D4);
+    if (matrices != NULL) {
+        func_15143134(cache->local, (f32 *)(record + 0x30), matrices + ((u32)cache->matrixIndex << 6));
+        if (!(cache->flags & 1)) {
+            s32 hit;
+            dx = *(f32 *)(record + 0x30) - (cache->offset[0] + *(f32 *)(target + 0x14));
+            dy = *(f32 *)(record + 0x34) - (cache->offset[1] + *(f32 *)(target + 0x18));
+            dz = *(f32 *)(record + 0x38) - (cache->offset[2] + *(f32 *)(target + 0x1c));
+            if (func_150AC9C0(*(f32 *)(record + 0x30), *(f32 *)(record + 0x34), *(f32 *)(record + 0x38),
+                    dx,
+                    dy,
+                    dz,
+                    0, 0, (f32 *)(record + 0x3C), (f32 *)(record + 0x40), (f32 *)(record + 0x44),
+                    NULL, &hit, 0, 0.0f)) {
+                if (func_15145C90(hit)) cache->flags |= 1;
+                else {record[0x1C] &= ~2;return 1;}
+            } else {record[0x1C] &= ~2;return 1;}
+        }
+        delta.unk0 = *(f32 *)(record + 0x3C) - *(f32 *)(record + 0x30);
+        delta.unk4 = *(f32 *)(record + 0x40) - *(f32 *)(record + 0x34);
+        delta.unk8 = *(f32 *)(record + 0x44) - *(f32 *)(record + 0x38);
+        *(f32 *)(record + 0x54) = func_15143E64(&delta.unk0);
+        if (*(f32 *)(record + 0x54) != 0.0f) {
+            *(f32 *)(record + 0x58) = 1.0f / *(f32 *)(record + 0x54);
+            func_15146078(&delta, &temporary, (struct17 *)(record + 0x48));
+            record[0x1C] |= 2;
+            return 1;
+        }
+        record[0x1C] &= ~2;
+        return 1;
+    } else record[0x1C] &= ~2;
+    return 1;
 }
+
 
 void func_151A8A20(u8 *arg0, s32 arg1, u8 arg2) {
     s32 index = arg0[0x5C];
