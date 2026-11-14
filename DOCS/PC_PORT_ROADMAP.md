@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2434](WORKING_NOTES/2434-game-randomized-burst-direct-match-20261114.md): `func_1517AA20` now matches the randomized burst directly from C across all 87 words, with no guards. Its emitter has a recovered signature but remains an uncredited stub. Game **3,806 / 4,842 (78.60%)**, total **4,479 / 5,515 (81.21%)**, zero drift; **209** more total matches to 85%. Next: 130-word `func_1517A644`.
+
 [Note 2433](WORKING_NOTES/2433-game-handwritten-phase-lookup-restoration-20261114.md): `func_150A76F0` is restored as genuine handwritten assembly (29 instructions plus three alignment words), with zero new C-match credit. Classification correction gives Game **3,805 / 4,842 (78.58%)**, total **4,478 / 5,515 (81.20%)**, zero drift; **210** more total matches to 85%. Next C candidate: `func_1517AA20`.
 
 [Note 2432](WORKING_NOTES/2432-game-polyline-strip-renderer-guarded-match-20261114.md): `func_151A7D6C` now matches all 373 words with 157 pinned layout/register/scheduling guards. Game **3,805 / 4,843 (78.57%)**, total **4,478 / 5,516 (81.18%)**, zero drift; **211** more total matches to 85%. Next: `func_150A76F0`.

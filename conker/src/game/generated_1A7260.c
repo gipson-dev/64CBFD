@@ -1,5 +1,7 @@
 #include <ultra64.h>
 
+s32 func_150ADA20(void);
+
 typedef struct {
     u8 retained00[0x90];
     s16 x, y, z;
@@ -44,7 +46,7 @@ s32 func_1517A3A0() {
     return 0;
 }
 
-s32 func_1517A644() {
+s32 func_1517A644(f32 size, u8 kind, s16 x, s16 y, s32 z) {
     return 0;
 }
 
@@ -103,8 +105,32 @@ s32 func_1517A9A8(s32 arg0, volatile s32 arg1) {
     return arg0;
 }
 
-s32 func_1517AA20() {
-    return 0;
+/* Emit a randomized burst around the supplied position when its size permits. */
+void func_1517AA20(f32 size, s32 x, s32 yArgument, s32 z, s32 count) {
+    s32 dx;
+    s32 dz;
+    s32 i;
+    s32 range;
+    f32 pieceSize;
+    s32 kind;
+    s16 y;
+
+    if (size < 12.0f) {
+        return;
+    }
+    range = size * 8.0f;
+    size *= 0.5f;
+    y = yArgument;
+    for (i = 0; i < count; i++) {
+        dx = func_150ADA20() & 63;
+        dz = func_150ADA20() & 63;
+        dx -= 32;
+        dz -= 32;
+        pieceSize = (f32)(((u32)func_150ADA20() % range) >> 4) + size;
+        kind = func_150ADA20();
+        func_1517A644(pieceSize, kind & 1, (s16)((u32)x + (u32)dx), y,
+                     (s32)((u32)z + (u32)dz));
+    }
 }
 
 void func_1517AB7C(arg0, arg1, arg2)
