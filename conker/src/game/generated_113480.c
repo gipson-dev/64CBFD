@@ -7,8 +7,36 @@ s32 func_150E5FD0() {
     return 0;
 }
 
-s32 func_150E6230() {
-    return 0;
+extern f32 D_800BE9A4;
+extern s32 (*D_80088A10[])(u8 *);
+f32 func_15144A74(f32 *, f32 *);
+/* Advance motion and dispatch the configured crossing effect when its sign changes. */
+s32 func_150E6230(u8 *actor) {
+    u8 *state = actor + 0x110;
+    f32 delta[3];
+    f32 speed, vx, vy, vz, sign;
+    s8 result = 1;
+    if (state[0] & 1) {
+        delta[0] = *(f32 *)(state + 4) - *(f32 *)(actor + 0x34);
+        delta[1] = *(f32 *)(state + 8) - *(f32 *)(actor + 0x38);
+        delta[2] = *(f32 *)(state + 12) - *(f32 *)(actor + 0x3C);
+        sign = func_15144A74(delta, (f32 *)(state + 4)) < 0.0f ? -1.0f : 1.0f;
+        if (sign != *(f32 *)(state + 0x28)) {
+            s8 selector = *(s8 *)(state + 0x2C);
+            result = 0;
+            if (selector != -1) {
+                result = (s8)D_80088A10[selector](actor);
+            }
+        }
+    }
+    speed = *(f32 *)(actor + 0x50);
+    vx = *(f32 *)(actor + 0x40) * speed;
+    vy = *(f32 *)(actor + 0x44) * speed;
+    vz = *(f32 *)(actor + 0x48) * speed;
+    *(f32 *)(actor + 0x34) += vx * D_800BE9A4;
+    *(f32 *)(actor + 0x38) += vy * D_800BE9A4;
+    *(f32 *)(actor + 0x3C) += vz * D_800BE9A4;
+    return result;
 }
 
 s32 func_150E63A0() {
