@@ -31337,3 +31337,27 @@ generated_121A20,func_150F48D0,0x114,0xE4840040,0xC4680000,-,-,Restore timed mot
 generated_121A20,func_150F48D0,0x118,0xC4A80000,0xC4920020,-,-,Restore timed motion independent load and float schedule,,,false
 generated_121A20,func_150F48D0,0x130,0xC4A60000,0xC4660000,-,-,Normalize timed motion closed register roles,,,false
 generated_121A20,func_150F48D0,0x148,0xC4A40000,0xC4640000,-,-,Normalize timed motion closed register roles,,,false
+generated_113D60,func_150E971C,0x0,0x27BDFF78,0x27BDFF80,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x50,0xAFA3004C,0xAFA30048,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x6C,0xA3B80062,0xA3B8005A,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x70,0xAFB9005C,0xAFB90054,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x74,0xA7A80060,0xA7A80058,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xA8,0xA3A00063,0xA3A0005B,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xAC,0xAFA00064,0xAFA0005C,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xB0,0xAFA00068,0xAFA00060,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xB4,0xA3A9006C,0xA3A90064,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xB8,0xA3AA006D,0xA3AA0065,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xBC,0xA3AB006E,0xA3AB0066,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xC0,0xA3AC006F,0xA3AC0067,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xC4,0xA3AD0070,0xA3AD0068,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xC8,0xA3AE0071,0xA3AE0069,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xCC,0xAFAF0074,0xAFAF006C,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xD0,0xA3A00072,0xA3A0006A,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xD4,0xA3B80073,0xA3B8006B,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xD8,0xA7B9007E,0xA7B90076,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xDC,0xA7A80080,0xA7A80078,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xE4,0xE7A20058,0xE7A20050,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0xEC,0x8FA3004C,0x8FA30048,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x100,0xC7A20058,0xC7A20050,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x10C,0x27A4005C,0x27A40054,-,-,Normalize height emitter frame and descriptor store schedule,,,false
+generated_113D60,func_150E971C,0x160,0x27BD0088,0x27BD0080,-,-,Normalize height emitter frame and descriptor store schedule,,,false

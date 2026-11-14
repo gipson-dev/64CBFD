@@ -1035,6 +1035,52 @@ void func_150E93DC(u8 *record) {
     }
 }
 
-s32 func_150E971C() {
-    return 0;
+/* Constructor copies 0x28 bytes, including unassigned fields. Extra local
+ * space retains retail stack placement. */
+typedef struct HeightEmissionDescriptor113D60 {
+    u32 flags; s16 lifetime; u8 kind, field07;
+    u32 field08, field0c; u8 field10, field11, field12, field13, field14, field15;
+    u8 field16, field17; u32 resource; u8 untouched1c[6];
+    s16 field22, field24; u8 untouched26[2]; u8 scratch28[4];
+} HeightEmissionDescriptor113D60;
+s32 func_151337C0(u8 *);
+struct210 *func_1513C73C(s32, u8, u8, s32, f32, f32, f32, f32, f32,
+                         u8, u8, s32, u8, s32);
+/* Advance motion and emit an effect below the height limit. */
+s32 func_150E971C(u8 *actor) {
+    HeightEmissionDescriptor113D60 descriptor;
+    f32 range;
+    u8 *state;
+    s32 random;
+    func_151337C0(actor);
+    state = actor + 0x170;
+    if (*(f32 *)(actor + 0x3C) < *(f32 *)state) {
+        if ((*(u32 *)(state + 4) & 31) == 10) {
+            range = func_150ADA68() * 20.0f + 20.0f;
+            descriptor.kind = 11;
+            descriptor.flags = 0x9701;
+            descriptor.lifetime = 100;
+            descriptor.field07 = 0;
+            descriptor.field08 = 0;
+            descriptor.field0c = 0;
+            descriptor.field10 = 255;
+            descriptor.field11 = 255;
+            descriptor.field12 = 255;
+            descriptor.field13 = 255;
+            descriptor.field14 = 255;
+            descriptor.field15 = 255;
+            descriptor.resource = 0x3B0003;
+            descriptor.field16 = 0;
+            descriptor.field17 = 7;
+            descriptor.field22 = 20;
+            descriptor.field24 = 12;
+            random = func_150ADA20();
+            func_1513C73C((s32)&descriptor, 0, 0, (s32)(state + 8),
+                *(f32 *)(actor + 0x38), *(f32 *)state + 5.0f,
+                *(f32 *)(actor + 0x40), range, range, (random & 255), 0, 0,
+                actor[0x0c], actor[1]);
+        }
+        return 0;
+    }
+    return 1;
 }
