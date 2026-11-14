@@ -32,8 +32,42 @@ void func_150C0A48(u8 *arg0) {
     }
 }
 
-s32 func_150C0AC0() {
-    return 0;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void *memcpy(void *, const void *, u32);
+/* Allocate an owner record and initialize its free-entry chain. */
+u8 *func_150C0AC0(u8 *descriptor, u8 slot, s32 context) {
+    /* Retain the allocation size and result in the retail stack order. */
+    struct { s32 size; u8 *result; } allocation;
+    u8 *position;
+    s16 index;
+    allocation.size = *(s16 *)(descriptor + 0x14) * 8 + 0x48;
+    if (!(descriptor[0x18] & 2)) {
+        if (!*(u32 **)(descriptor + 8)) return 0;
+        if (!**(u32 **)(descriptor + 8)) return 0;
+    }
+    allocation.result = func_15167A68(0x25, context, allocation.size, 1, slot, 1);
+    if (!allocation.result) return 0;
+    memcpy(allocation.result + 0x18, descriptor, 0x1c);
+    *(u8 **)(allocation.result + 0x40) = allocation.result + 0x48;
+    if (descriptor[0x18] & 2) {
+        position = *(u8 **)(allocation.result + 0x18);
+        *(f32 *)(allocation.result + 0x34) = *(f32 *)position;
+        *(f32 *)(allocation.result + 0x38) = *(f32 *)(position + 8);
+    } else {
+        position = *(u8 **)(allocation.result + 0x20);
+        *(f32 *)(allocation.result + 0x34) = *(f32 *)(position + 0x14);
+        *(f32 *)(allocation.result + 0x38) = *(f32 *)(position + 0x1c);
+    }
+    *(f32 *)(allocation.result + 0x3c) = 0.0f;
+    *(s16 *)(allocation.result + 0x44) = -1;
+    *(s16 *)(allocation.result + 0x46) = 0;
+    for (index = 0; index < *(s16 *)(descriptor + 0x14) - 1; index++) {
+        *(s16 *)(*(u8 **)(allocation.result + 0x40) + index * 8 + 4) = index + 1;
+    }
+    *(s16 *)(*(u8 **)(allocation.result + 0x40) + *(s16 *)(descriptor + 0x14) * 8 - 4) = -1;
+    *(s32 *)(allocation.result + 0x10) = 1;
+    *(s32 *)(allocation.result + 0x14) = 0;
+    return allocation.result;
 }
 
 s32 func_150C0C38() {
