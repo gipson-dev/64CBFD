@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2406](WORKING_NOTES/2406-game-projection-bounds-private-screen-20261114.md): `func_1510AEE0` remains private after projection and floating-point screens. Game remains **3,785 / 4,843 (78.15%)**, with **90** more Game matches to 80%.
+
 [Note 2405](WORKING_NOTES/2405-game-height-emitter-match-20261114.md): `func_150E971C` now matches the height emitter. Game **3,785 / 4,843 (78.15%)**, total **4,458 / 5,516 (80.82%)**, zero drift; **90** more Game matches to 80%.
 
 [Note 2404](WORKING_NOTES/2404-game-height-emitter-frame-screen-20261114.md): `func_150E971C` remains private after padder, fault and stack-overlap screens. Game remains **3,784 / 4,843 (78.13%)**, with **91** more Game matches to 80%.
