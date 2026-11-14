@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2397](WORKING_NOTES/2397-game-configured-effect-factory-match-20261113.md): `func_1519C09C` now matches the configured effect factory. Game **3,781 / 4,843 (78.07%)**, total **4,454 / 5,516 (80.75%)**, zero drift; **94** more Game matches to 80%.
+
 [Note 2396](WORKING_NOTES/2396-game-matrix-phase-update-match-20261113.md): `func_150F1A00` now matches the actor matrix-phase update. Game **3,780 / 4,843 (78.05%)**, total **4,453 / 5,516 (80.73%)**, zero drift; **95** more Game matches to 80%.
 
 **Earlier screen:** [Note 2395](WORKING_NOTES/2395-game-matrix-phase-screen-20261113.md): `func_150F1A00` remains private after a bounded matrix-phase screen. Game remains **3,779 / 4,843 (78.03%)**, with **96** more matches to 80%.

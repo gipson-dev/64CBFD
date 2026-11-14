@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include "structs.h"
+#include <string.h>
 extern s32 D_800B0E58[7762];
 typedef struct {
     u8 retained00[0x08];
@@ -690,9 +692,40 @@ s32 arg1;
     }
 }
 
-s32 func_1519C09C() {
-    return 0;
+extern f32 D_800A8AF8;
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+typedef struct { f32 first, second, third, fourth, fifth, sixth, seventh, eighth; } EffectConfig1519C09C;
+/* Build a configured effect and retain its owner pointer. */
+struct225 *func_1519C09C(void *owner, f32 *position, u8 a, u8 b, u8 c, u8 d, u8 priority, s32 userData) {
+    struct225 *result;
+    Header header;
+    Header2 coords;
+    void *savedOwner;
+    EffectConfig1519C09C config;
+    config.first = 35.0f;
+    config.second = 5.0f;
+    header.unk0 = 2;
+    header.unk1 = 2;
+    header.unk2 = 300;
+    header.unk4 = 0x22;
+    config.third = 110.0f;
+    config.fourth = 1.0f;
+    savedOwner = owner;
+    config.fifth = 0.0f;
+    config.sixth = 7.0f;
+    config.seventh = D_800A8AF8;
+    config.eighth = 127.0f;
+    coords.unk0 = (s32)position[0];
+    coords.unk4 = (s32)position[1];
+    coords.unk8 = (s32)position[2];
+    result = func_151602C0(&header, &coords, a, b, c, d, 255, 0, 0x24, priority, userData);
+    if (result != 0) {
+        memcpy((u8 *)result + 0x18, &config, 0x20);
+        memcpy((u8 *)result + 0x38, &savedOwner, 4);
+    }
+    return result;
 }
+
 
 s32 func_1519C200(s32 arg0) {
     func_1519C258(arg0);

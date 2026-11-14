@@ -31305,3 +31305,13 @@ generated_11C2B0,func_150F1A00,0x12C,0x24C60001,0x24840001,-,-,"Normalize matrix
 generated_11C2B0,func_150F1A00,0x130,0x14C5FFEF,0x1485FFEF,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
 generated_11C2B0,func_150F1A00,0x134,0x24840010,0x24C60010,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
 generated_11C2B0,func_150F1A00,0x13C,0x27BD0040,0x27BD0048,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_1C2C60,func_1519C09C,0x54,0x8FA80078,0x8FAE0078,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x64,0x240E0002,0x240F0002,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x68,0x240F0002,0x24180002,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x6C,0x2418012C,0x2419012C,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x70,0x24190022,0x24080022,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x74,0xA3AE006C,0xA3AF006C,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x78,0xA3AF006D,0xA3B8006D,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x7C,0xA7B8006E,0xA7B9006E,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x80,0xA3B90070,0xA3A80070,-,-,Normalize effect config initialization scheduling and registers,,,false
+generated_1C2C60,func_1519C09C,0x94,0xAFA8005C,0xAFAE005C,-,-,Normalize effect config initialization scheduling and registers,,,false
