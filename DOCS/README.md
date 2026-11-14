@@ -1,6 +1,8 @@
 # Documentation
 
-[Note 2395](WORKING_NOTES/2395-game-matrix-phase-screen-20261113.md): `func_150F1A00` remains private after a bounded matrix-phase screen. Game remains **3,779 / 4,843 (78.03%)**, with **96** more matches to 80%.
+[Note 2396](WORKING_NOTES/2396-game-matrix-phase-update-match-20261113.md): `func_150F1A00` now matches the actor matrix-phase update. Game **3,780 / 4,843 (78.05%)**, total **4,453 / 5,516 (80.73%)**, zero drift; **95** more Game matches to 80%.
+
+**Earlier screen:** [Note 2395](WORKING_NOTES/2395-game-matrix-phase-screen-20261113.md): `func_150F1A00` remains private after a bounded matrix-phase screen. Game remains **3,779 / 4,843 (78.03%)**, with **96** more matches to 80%.
 
 [Note 2394](WORKING_NOTES/2394-game-actor-coordinate-packet-match-20261113.md): `func_150F1B48` now matches the actor coordinate packet. Game **3,779 / 4,843 (78.03%)**, total **4,452 / 5,516 (80.71%)**, zero drift; **96** more Game matches to 80%.
 

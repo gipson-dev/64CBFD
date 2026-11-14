@@ -31281,3 +31281,27 @@ generated_11C2B0,func_150F1B48,0x140,0xA478000C,0xA48B0014,-,-,Normalize coordin
 generated_11C2B0,func_150F1B48,0x144,0xA462000A,0xA48A0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
 generated_11C2B0,func_150F1B48,0x148,0x84B90012,0x84AC0012,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
 generated_11C2B0,func_150F1B48,0x150,0xA4990016,0xA48C0016,-,-,Normalize coordinate packet register allocation and peeled loop schedule,,,false
+generated_11C2B0,func_150F1A00,0x0,0x27BDFFC0,0x27BDFFB8,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x8,0x27A60038,0x27A6003C,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x60,0x956C0000,0x95630000,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x68,0x3C030000,0x3C040000,R_MIPS_HI16:D_800CC298,R_MIPS_HI16:D_800CC298,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x6C,0x24630000,0x24840000,R_MIPS_LO16:D_800CC298,R_MIPS_LO16:D_800CC298,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x70,0x018D0019,0x006D0019,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x74,0x846F0014,0x848C0014,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x7C,0xAFA70040,0xAFA70048,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x84,0x030F7021,0x01987821,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x88,0xA46E0014,0xA48F0014,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x8C,0x84790014,0x848E0014,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x94,0x44992000,0x448E2000,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0xC8,0x8FA70040,0x8FA70048,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0xD8,0x8CE401D4,0x8CE201D4,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0xE0,0x00003025,0x00002025,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0xE4,0x24840F80,0x24460F80,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0xF4,0x00801025,0x00C01025,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x108,0xE4520000,0x24420004,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x124,0xE4520000,0x24420004,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x128,0x24420004,0xE452FFFC,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x12C,0x24C60001,0x24840001,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x130,0x14C5FFEF,0x1485FFEF,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x134,0x24840010,0x24C60010,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false
+generated_11C2B0,func_150F1A00,0x13C,0x27BD0040,0x27BD0048,-,-,"Normalize matrix phase frame, registers and loop schedule",,,false

@@ -1,5 +1,7 @@
 # Private Game matrix-phase candidate
 
+**Update:** The candidate was subsequently qualified and installed; see [Note 2396](2396-game-matrix-phase-update-match-20261113.md).
+
 Date: 2026-11-13. `func_150F1A00` in `generated_11C2B0` remains a
 zero-return placeholder in production. The 82-word retail body occupies
 `0x150F1A00..0x150F1B48`, ROM `0x11EEB0..0x11EFF8`. The candidate is not

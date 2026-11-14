@@ -521,8 +521,26 @@ s32 func_150F16DC() {
     return 0;
 }
 
-s32 func_150F1A00() {
-    return 0;
+typedef struct { u16 values[3]; } PhaseRates;
+extern PhaseRates D_80088B00;
+extern s16 D_800CC298[];
+extern s32 D_800BE9E4;
+extern f32 D_800A18E8, D_800A18EC, D_800A18F0;
+f32 cosf(f32);
+/* Advance the shared phase and scale the actor's three matrix axes. */
+void func_150F1A00(u8 *actor) {
+    PhaseRates rates = D_80088B00;
+    s32 kind = 0;
+    u32 flags = *(u32 *)(actor + 0x2e4);
+    f32 *matrix;
+    f32 scale;
+    u32 row, col;
+    if ((flags & 3) == 3) kind = 1;
+    if ((flags & 12) == 12) kind = 2;
+    D_800CC298[10] = (s16)((u32)(s32)D_800CC298[10] + (u32)rates.values[kind] * (u32)D_800BE9E4);
+    scale = ((cosf((f32)D_800CC298[10] * D_800A18E8) + 1.0f) * 0.5f * D_800A18EC) + D_800A18F0;
+    matrix = (f32 *)(*(u32 *)(actor + 0x1d4) + 0xf80);
+    for (row = 0; row < 3; row++) { for (col = 0; col < 3; col++) matrix[col] *= scale; matrix += 4; }
 }
 
 extern u16 D_800CC354[];
