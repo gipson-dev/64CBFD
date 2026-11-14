@@ -28,6 +28,14 @@ proof of C semantics, unrestricted aliasing, exceptional floating point, the
 real helper's behavior, or whole-image identity. The extra storage is an
 experiment, not a claim about the original declaration.
 
+Tools commit `25945dd` adds a second bounded comparison using all 53 retail
+instructions of `func_151337C0` instead of a movement-helper stub. Retail
+and the padded candidate agree in 72 finite cases, including eight emissions
+and eight cases where movement changes which side of the height gate applies.
+The screen also checks the expected final height, return and emission gate;
+the other helpers remain stubbed, and this is not a complete independent
+model of the movement routine.
+
 Both versions emit 91 words. The straightforward version has 71
 same-position retail words; the padded version has 67. All 28 other compiled
 owner functions, normalized pools and compiler diagnostics remain unchanged
@@ -47,7 +55,7 @@ The screen fails closed if those inputs change and writes its temporary
 objects and reports under `conker/build/game-height-emitter-150e971c-durable`.
 `make tools-check` also passed, and the sibling tools checkout's existing
 dirty paths were preserved.
-Before installation, qualify the original caller and real update helper,
+Before installation, qualify the original caller and the remaining update-helper behavior,
 complete independent guest and native C coverage, audit padding and guarded
 instructions, and pass actual Make and strict whole-image checks. Production
 source and progress remain unchanged: Game **3,784 / 4,843 (78.13%)**, with
