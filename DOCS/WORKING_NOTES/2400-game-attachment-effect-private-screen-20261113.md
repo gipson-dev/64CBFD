@@ -62,4 +62,11 @@ with **92** further matches needed for 80%. Continue by recovering the
 literal floating multiply and the complete retail local layout, then repeat
 the remaining ABI, guest, native, padder and linked-image qualification gates.
 The 87-word `func_1517AA20` is another possible target if that fitting work is
-deferred; its floating conversions and random loop remain unqualified.
+deferred. An initial private screen produced 91- or 97-word bodies while
+preserving its ten neighboring compiled functions. Its helper
+`func_1517A644` is currently a no-argument placeholder in the same source
+file, so the experiment used an incompatible function-pointer cast to explore
+the retail call shape. Those candidates are **not installable**, and their
+floating conversions, random loop, helper ABI and callers remain unqualified.
+The exploratory files are in ignored
+`conker/build/game-random-scatter-1517aa20-screen/`.
