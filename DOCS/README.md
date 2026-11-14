@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2395](WORKING_NOTES/2395-game-matrix-phase-screen-20261113.md): `func_150F1A00` remains private after a bounded matrix-phase screen. Game remains **3,779 / 4,843 (78.03%)**, with **96** more matches to 80%.
+
 [Note 2394](WORKING_NOTES/2394-game-actor-coordinate-packet-match-20261113.md): `func_150F1B48` now matches the actor coordinate packet. Game **3,779 / 4,843 (78.03%)**, total **4,452 / 5,516 (80.71%)**, zero drift; **96** more Game matches to 80%.
 
 [Note 2393](WORKING_NOTES/2393-game-texture-tile-display-list-builder-match-20261113.md): `func_151ED29C` now matches the texture-tile display-list builder. Game **3,778 / 4,843 (78.01%)**, total **4,451 / 5,516 (80.69%)**, zero drift; **97** more Game matches to 80%.
