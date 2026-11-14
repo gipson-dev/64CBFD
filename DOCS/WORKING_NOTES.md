@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2410](WORKING_NOTES/2410-game-viewport-command-helper-match-20261114.md): `func_1510B7B4` now matches the viewport command helper. Game **3,787 / 4,843 (78.20%)**, total **4,460 / 5,516 (80.86%)**, zero drift; **88** more Game matches to 80%.
+
 [Note 2409](WORKING_NOTES/2409-game-quaternion-matrix-private-screen-20261114.md): `func_1504A140` remains private after finite, overlap and modeled NaN-payload screens. Game remains **3,786 / 4,843 (78.17%)**, with **89** more Game matches to 80%.
 
 [Note 2408](WORKING_NOTES/2408-game-group-output-lookup-private-screen-20261114.md): `func_15022024` remains private after its group lookup, output-alias and access-order screens. Game remains **3,786 / 4,843 (78.17%)**, with **89** more Game matches to 80%.
