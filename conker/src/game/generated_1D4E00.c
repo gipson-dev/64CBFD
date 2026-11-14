@@ -180,9 +180,79 @@ s32 func_151A85D4(u8 *arg0) {
     func_15169824(arg0);
 }
 
-s32 func_151A8624() {
-    return 0;
+typedef struct {
+    u8 *target;
+    u8 identity, pad05[3];
+    struct17 local;
+    u8 matrixIndex, pad15[3];
+    struct17 offset;
+    u8 attachmentMode, flags;
+} AttachedDirectionCache151A8624;
+typedef struct {u8 bytes[4];} DirectionPackedWord151A8624;
+typedef struct {
+    s16 lifetime, count;
+    f32 minimum, range;
+    u8 flags, pad0D[3];
+    f32 amplitude;
+    DirectionPackedWord151A8624 packed;
+    f32 scale;
+    s8 firstCallback, secondCallback;
+    u8 pad1E[2];
+    struct17 start, end, direction;
+    f32 length, reciprocal;
+    u8 kind;
+} DirectionDescriptor151A8624;
+extern f32 D_800A8DE0;
+/* Construct an attached direction record and copy its snapshotted attachment cache. */
+s32 func_151A8624(u8 *owner, struct17 *position, u8 matrixIndex, s16 lifetime,
+    f32 minimum, f32 range, DirectionPackedWord151A8624 *packed, f32 scale,
+    struct17 *offset, u8 kind, u8 attachmentMode, s8 secondCallback,
+    s32 extraBytes, u8 channel, s32 context) {
+    u8 *record;
+    DirectionDescriptor151A8624 descriptor;
+    AttachedDirectionCache151A8624 cache;
+    u8 flags;
+    if (owner == NULL) return 0;
+    if (kind >= 2) kind = 0;
+    cache.local = *position;
+    cache.matrixIndex = matrixIndex;
+    cache.flags = 0;
+    cache.target = owner;
+    cache.identity = owner[0x3B];
+    cache.attachmentMode = attachmentMode;
+    if (offset != NULL) {
+        cache.offset = *offset;
+    } else {
+        cache.offset.unk0 = 0.0f;
+        cache.offset.unk4 = 0.0f;
+        cache.offset.unk8 = 0.0f;
+    }
+    descriptor.lifetime = lifetime == -1 ? 300 : lifetime;
+    descriptor.count = 9;
+    descriptor.minimum = minimum;
+    descriptor.range = range;
+    flags = lifetime == -1 ? 0 : 1;
+    descriptor.flags = flags;
+    descriptor.amplitude = D_800A8DE0;
+    descriptor.packed = *packed;
+    descriptor.scale = scale;
+    switch (kind) {
+        case 1: descriptor.firstCallback = 1; break;
+        case 0:
+        default: descriptor.firstCallback = 1; break;
+    }
+    descriptor.secondCallback = secondCallback;
+    descriptor.start.unk0 = 0.0f; descriptor.start.unk4 = 0.0f; descriptor.start.unk8 = 0.0f;
+    descriptor.end.unk0 = 0.0f; descriptor.end.unk4 = 0.0f; descriptor.end.unk8 = 0.0f;
+    descriptor.direction.unk0 = 0.0f; descriptor.direction.unk4 = 0.0f; descriptor.direction.unk8 = 0.0f;
+    descriptor.length = 0.0f;
+    descriptor.reciprocal = 1.0f;
+    descriptor.kind = 2;
+    record = (u8 *)func_151A7950((u8 *)&descriptor, (s32)((u32)extraBytes + 40u), channel, context);
+    if (record != NULL) memcpy(*(void **)(record + 0x60), &cache, sizeof(cache));
+    return (s32)record;
 }
+
 
 typedef struct {
     u8 *target;
@@ -192,6 +262,7 @@ typedef struct {
     f32 offset[3];
     u8 pad24, flags;
 } AttachedDirection151A87F8;
+
 void func_15143134(f32 *, f32 *, u8 *);
 s32 func_150AC9C0(f32, f32, f32, f32, f32, f32, s32, s32,
     f32 *, f32 *, f32 *, f32 *, s32 *, s32, f32);

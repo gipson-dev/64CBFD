@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2429](WORKING_NOTES/2429-game-attached-direction-constructor-direct-match-20261114.md): `func_151A8624` now matches the attached-direction constructor directly from C, with no guards. Game **3,803 / 4,843 (78.53%)**, total **4,476 / 5,516 (81.15%)**, zero drift; **213** more total matches to 85%. Next: `func_151A9834`.
+
 [Note 2428](WORKING_NOTES/2428-game-midpoint-subdivision-guarded-match-20261114.md): `func_151A8340` now matches recursive midpoint subdivision with 22 scheduling guards and one original no-op. Its precise float-amplitude interface preserves the matched caller. Game **3,802 / 4,843 (78.51%)**, total **4,475 / 5,516 (81.13%)**, zero drift; **214** more total matches to 85%. Next: `func_151A8624`.
 
 [Note 2427](WORKING_NOTES/2427-game-direction-update-guarded-match-20261114.md): `func_151A7A90` now matches the direction-record updater with 36 local-home and scheduling guards. Game **3,801 / 4,843 (78.48%)**, total **4,474 / 5,516 (81.11%)**, zero drift; **215** more total matches to 85%. Next: `func_151A8340`.
