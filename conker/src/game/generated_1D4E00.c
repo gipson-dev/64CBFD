@@ -3,6 +3,7 @@
 u8 *func_15167A68(s32,s32,s32,s32,s32,s32);
 
 #include "structs.h"
+void *memcpy(void *, const void *, u32);
 typedef struct {
     u8 kind;
     u8 reserved01[3];
@@ -276,9 +277,50 @@ s32 func_151A9390() {
     return 0;
 }
 
-s32 func_151A9634() {
-    return 0;
+typedef struct {
+    f32 base0, base1, range0, range1;
+    s16 countBase, countRange, lifetimeBase, lifetimeRange;
+    s16 variantBase, variantRange, parameter0, parameter1;
+    f32 extraBase, extraRange;
+    u8 flags;
+} RangedEffect151A9634;
+typedef struct { f32 scale; s16 lifetime; u16 retained; } EffectExtra151A9634;
+u8 *func_1514B8E4(f32 *, f32 *, s16, u8, void *, f32, f32, f32, u8, u8, u8, u8, u8, s16, s16, s32, u8, s32);
+/* Create an effect from the owner's randomized ranges and copy its extra values. */
+void func_151A9634(u8 *owner, f32 *position, s32 unused2, s32 unused3) {
+    f32 ranges[2];
+    s32 mode;
+    EffectExtra151A9634 extra;
+    RangedEffect151A9634 *parameters;
+    s32 tag;
+    s32 choice;
+    s32 flags;
+    u32 second, first;
+    u8 *result;
+    parameters = (RangedEffect151A9634 *)(owner + 0x80);
+    ranges[0] = func_150ADA68() * parameters->range0 + parameters->base0;
+    ranges[1] = func_150ADA68() * parameters->range1 + parameters->base1;
+    extra.scale = func_150ADA68() * parameters->extraRange + parameters->extraBase;
+    extra.lifetime = (u32)func_150ADA20() % (parameters->lifetimeRange + 1) + parameters->lifetimeBase;
+    first = func_150ADA20();
+    second = func_150ADA20();
+    flags = parameters->flags;
+    if (flags & 1) {
+        tag = 0x71;
+    } else {
+        choice = (func_150ADA20() & 1) ? 0x13 : 0x14;
+        tag = choice;
+        flags = parameters->flags;
+    }
+    mode = (flags & 2) ? 0 : 2;
+    result = func_1514B8E4(position, ranges,
+        (s16)(first % (parameters->countRange + 1) + parameters->countBase),
+        (u8)(second % (parameters->variantRange + 1) + parameters->variantBase),
+        0, 0.0f, 1.0f, 1.0f, 0x21, 0x23, 2, tag, mode,
+        parameters->parameter0, parameters->parameter1, 8, owner[0xC], owner[1]);
+    if (result != 0) memcpy(result + 0x160, &extra, 8);
 }
+
 
 s32 func_151A9834() {
     return 0;
