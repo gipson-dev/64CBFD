@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2412](WORKING_NOTES/2412-game-actor-associated-updater-match-20261114.md): `func_1511473C` now matches the actor-associated updater; its called helper remains a placeholder. Game **3,789 / 4,843 (78.24%)**, total **4,462 / 5,516 (80.89%)**, zero drift; **86** more Game matches to 80%.
+
 [Note 2411](WORKING_NOTES/2411-game-motion-table-updater-match-20261114.md): `func_150C8350` now matches the motion-table updater. Game **3,788 / 4,843 (78.22%)**, total **4,461 / 5,516 (80.87%)**, zero drift; **87** more Game matches to 80%.
 
 [Note 2410](WORKING_NOTES/2410-game-viewport-command-helper-match-20261114.md): `func_1510B7B4` now matches the viewport command helper. Game **3,787 / 4,843 (78.20%)**, total **4,460 / 5,516 (80.86%)**, zero drift; **88** more Game matches to 80%.

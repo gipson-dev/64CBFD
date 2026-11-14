@@ -228,8 +228,20 @@ s32 func_15114348() {
     return 0;
 }
 
-s32 func_1511473C() {
-    return 0;
+extern f32 D_800A2F60;
+extern u8 D_800CC2D0[];
+extern u16 D_800CBDA0[];
+/* Update actor fields and a running halfword from an indexed record. */
+void func_1511473C(u8 *actor, s32 index) {
+    u32 value;
+    if (actor != 0 && index < D_800DBEF0) {
+        func_15114348(index, actor + 0x14, actor + 0x18, actor + 0x1c);
+        value = (u32)(*(f32 *)((u32)D_800DBEF4 + (u32)index * 0xa0 + 0x64) * D_800A2F60 + *(u16 *)(actor + 0x76));
+        *(u16 *)(actor + 0x76) = value;
+        if (actor[0x137] != 0 && (u32)index + 1 == D_800CBDA0[(s32)((u32)actor - (u32)D_800CC2D0) / 0x32c]) {
+            *(u16 *)(actor + 0x7a) = value;
+        }
+    }
 }
 
 void func_151148A8(f32 arg0[4][4], f32 arg1[3]) {
