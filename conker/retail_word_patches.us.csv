@@ -31456,3 +31456,7 @@ generated_13D350,func_15114F44,0x7C,0x27DE0000,0x26940000,R_MIPS_LO16:D_800DBE20
 generated_13D350,func_15114F44,0x8C,0x8EF00000,0x8EE20000,-,-,Restore pointer list validation setup and empty-list schedule,,,false
 generated_13D350,func_15114F44,0x94,0x58A0001C,0x18A0001B,-,-,Restore pointer list validation setup and empty-list schedule,,,false
 generated_13D350,func_15114F44,0x98,0x26940004,0x00408025,-,-,Restore pointer list validation setup and empty-list schedule,,,false
+generated_1D4E00,func_151A91AC,0xD0,0xAFA20050,0xAFA2004C,-,-,Normalize randomized emitter temporary stack allocation,,,false
+generated_1D4E00,func_151A91AC,0xD8,0xAFA20054,0xAFA20050,-,-,Normalize randomized emitter temporary stack allocation,,,false
+generated_1D4E00,func_151A91AC,0xE0,0x8FB90054,0x8FB90050,-,-,Normalize randomized emitter temporary stack allocation,,,false
+generated_1D4E00,func_151A91AC,0xEC,0x8FAB0050,0x8FAB004C,-,-,Normalize randomized emitter temporary stack allocation,,,false

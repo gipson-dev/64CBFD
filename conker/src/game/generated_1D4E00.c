@@ -206,8 +206,54 @@ void func_151A90C0(u8 *owner, s32 selector) {
     }
 }
 
-s32 func_151A91AC() {
-    return 0;
+typedef struct { s16 value[3]; } RandomChoice151A91AC;
+typedef struct {
+    u32 flags;
+    s16 lifetime;
+    u8 slot, kind;
+    s32 zero8, zeroC;
+    u8 random, value11, value12, value13, value14, value15, zero16, seven;
+    s32 effect, sourceWord;
+    u8 value20, pad21;
+    s16 size, count;
+} RandomEmitter151A91AC;
+extern RandomChoice151A91AC D_8008F9A4;
+f32 func_150ADA68(void);
+
+struct210 *func_1513C650(s32, u8, u8, s32, f32, f32, f32, f32, f32, u8, u8, s32, s32, s32, u8, s32);
+/* Submit a randomized emitter using the owner's position and attachment. */
+void func_151A91AC(u8 *owner, f32 *position, s32 unused2, s32 unused3) {
+    u32 third;
+    RandomEmitter151A91AC descriptor;
+    f32 range;
+    RandomChoice151A91AC choices;
+    u32 second, first;
+    /* Preserve the unused retail stack slot after the local choice table. */
+    u32 retained;
+    choices = D_8008F9A4;
+    range = func_150ADA68() * 50.0f + 50.0f;
+    descriptor.slot = choices.value[(u32)func_150ADA20() % 3U];
+    descriptor.kind = 0;
+    descriptor.zero16 = 0;
+    descriptor.seven = 7;
+    descriptor.zero8 = 0;
+    descriptor.zeroC = 0;
+    descriptor.flags = 0x1701;
+    descriptor.lifetime = 60;
+    descriptor.random = 160;
+    descriptor.value11 = 255;
+    descriptor.value12 = 0;
+    descriptor.value13 = 0;
+    descriptor.value14 = 0;
+    descriptor.value15 = 255;
+    descriptor.effect = 0x3B0002;
+    first = func_150ADA20();
+    second = func_150ADA20();
+    /* Finish the random calls before reading the position and owner bytes. */
+    third = func_150ADA20();
+    func_1513C650((s32)&descriptor, 1, 0, (s32)(owner + 0x58),
+        position[0], position[1], position[2], range, range, first & 255,
+        (third & 1) + (second & 1), 3, 255, 0, owner[0xC], owner[1]);
 }
 
 void func_151A931C(u8 *arg0, s32 arg1, u8 arg2) {

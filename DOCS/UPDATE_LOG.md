@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2421](WORKING_NOTES/2421-game-randomized-emitter-guarded-match-20261114.md): `func_151A91AC` now matches the randomized emitter with four stack-slot guards. Game **3,795 / 4,843 (78.36%)**, total **4,468 / 5,516 (81.00%)**, zero drift; **221** more total matches to 85%.
+
 [Note 2420](WORKING_NOTES/2420-game-world-emitter-descriptor-direct-match-20261114.md): `func_150D7120` now matches the world-emitter descriptor constructor directly from C, with no guards. Game **3,794 / 4,843 (78.34%)**, total **4,467 / 5,516 (80.98%)**, zero drift; **81** more Game matches to 80%.
 
 [Note 2419](WORKING_NOTES/2419-game-render-queue-private-screen-20261114.md): `func_15035FE8` remains private; its 88-word candidate matches sampled public access order but still needs the retail frame and register schedule. Game remains **3,793 / 4,843 (78.32%)**, with **82** more matches to 80%.
