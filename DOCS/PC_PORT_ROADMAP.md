@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2425](WORKING_NOTES/2425-game-effect-update-direct-match-20261114.md): `func_151A8CEC` now matches the effect-update callback directly from C, with no guards. Game **3,799 / 4,843 (78.44%)**, total **4,472 / 5,516 (81.07%)**, zero drift; **217** more total matches to 85%.
+
 [Note 2424](WORKING_NOTES/2424-game-spawn-allocator-guarded-match-20261114.md): `func_151A8B20` now matches the shared spawn allocator with six scheduling guards and one inserted read. Game **3,798 / 4,843 (78.42%)**, total **4,471 / 5,516 (81.06%)**, zero drift; **218** more total matches to 85%.
 
 [Note 2423](WORKING_NOTES/2423-game-template-effect-guarded-match-20261114.md): `func_151A9390` now matches the template-effect constructor with ten temporary-stack guards. Game **3,797 / 4,843 (78.40%)**, total **4,470 / 5,516 (81.04%)**, zero drift; **219** more total matches to 85%.

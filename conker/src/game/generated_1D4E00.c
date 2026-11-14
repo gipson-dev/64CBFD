@@ -186,9 +186,61 @@ u8 *func_151A8B20(void *request, s16 lifetime, s32 extraBytes, u8 channel, s32 c
 }
 
 
-s32 func_151A8CEC() {
-    return 0;
+typedef struct HeightResult71820 { f32 height; s16 vertices[9]; s16 pad16; u32 metadata; u8 flags; u8 state; u16 pad1E; s32 value; } HeightResult71820;
+typedef struct {
+    ParitySpawnRequest request;
+    f32 accumulator;
+    HeightResult71820 ground;
+    s16 *spatial;
+    f32 scale;
+} UpdatePayload151A8CEC;
+extern s32 (*D_8008F980[])(u8 *);
+extern void (*D_8008F970[])(u8 *, f32 *, f32, u8);
+extern f32 D_800BE9A4;
+u8 func_151464B8(s16 *);
+s32 func_15046C80(f32 *, u16, f32, HeightResult71820 *);
+f32 func_150ADA68(void);
+void func_151A8F1C(u8 *, f32 *, f32 *, f32 *);
+void func_151A8F6C(u8 *, f32 *, f32 *, f32 *);
+/* Advance the effect accumulator, resolve emission positions and dispatch each tick. */
+void func_151A8CEC(struct260 *owner) {
+    UpdatePayload151A8CEC *state;
+    /* Snapshot the helper result before reading mutable effect parameters. */
+    f32 draw;
+    f32 vector[3], out1, out0;
+    /* Retail retains this byte until a forced-height or fallback path sets it. */
+    u8 accepted;
+    void (*position)(u8 *, f32 *, f32 *, f32 *);
+    state = (UpdatePayload151A8CEC *)((u8 *)owner + 0x28);
+    /* Keep the original separate signed selector reads. */
+    if (*(volatile s8 *)((u8 *)owner + 0x4D) != -1 && !D_8008F980[*(volatile s8 *)((u8 *)owner + 0x4D)]((u8 *)owner)) {
+        *(s16 *)((u8 *)owner + 0xE) = -1;
+        return;
+    }
+    if ((state->request.kind & 4) && state->spatial != 0 && func_151464B8(state->spatial)) return;
+    if (!(state->request.kind & 1)) return;
+    draw = func_150ADA68();
+    state->accumulator += (state->request.primary + draw * state->request.secondary) * D_800BE9A4 * state->scale;
+    if (state->accumulator > 1.0f) {
+        if ((state->request.kind & 2) && state->request.owner != 0) position = func_151A8F1C;
+        else position = func_151A8F6C;
+        do {
+            position((u8 *)owner, vector, &out0, &out1);
+            if (state->request.kind & 8) {
+                vector[1] = out1;
+                accepted = 1;
+            } else if (func_15046C80(vector, 0, out1, &state->ground)) {
+                vector[1] = state->ground.height;
+            } else {
+                vector[1] = out1;
+                accepted = 1;
+            }
+            if ((s8)state->request.flags != -1) D_8008F970[(s8)state->request.flags]((u8 *)owner, vector, out0, accepted);
+            state->accumulator -= 1.0f;
+        } while (state->accumulator > 1.0f);
+    }
 }
+
 
 void func_151A8F1C(u8 *arg0, f32 *arg1, f32 *arg2, f32 *arg3) {
     func_151432BC(*(void **) (arg0 + 0x2C), arg1, arg1 + 2, arg2, arg3);
