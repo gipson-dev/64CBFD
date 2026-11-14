@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2418](WORKING_NOTES/2418-game-group-event-choice-direct-match-20261114.md): `func_15023264` now matches group-event selection directly from C, with no guards. Game **3,793 / 4,843 (78.32%)**, total **4,466 / 5,516 (80.96%)**, zero drift; **82** more Game matches to 80%.
+
 [Note 2416](WORKING_NOTES/2416-game-mode-descriptor-direct-match-20261114.md): `func_150F5420` now matches the mode-specific descriptor constructor directly from C, with no guards. Game **3,792 / 4,843 (78.30%)**, total **4,465 / 5,516 (80.95%)**, zero drift; **83** more Game matches to 80%.
 
 [Note 2414](WORKING_NOTES/2414-game-owner-chain-constructor-direct-match-20261114.md): `func_150C0AC0` now matches the owner-chain constructor directly from C, with no guards. Game **3,791 / 4,843 (78.28%)**, total **4,464 / 5,516 (80.93%)**, zero drift; **84** more Game matches to 80%.

@@ -1163,8 +1163,53 @@ s32 func_15022BA4() {
     return 0;
 }
 
-s32 func_15023264() {
-    return 0;
+/* Select the closest command event, or the first default group entry. */
+s32 func_15023264(s32 group, s32 unused) {
+    RecordMaximum49D30 **record;
+    u8 *commands;
+    s32 best;
+    s32 selected;
+    SequenceEvent49D30 *event;
+    s32 index;
+    s32 score;
+    s32 liveCount;
+    liveCount = D_800C363A[group];
+    selected = -1;
+    best = 99999;
+    index = 0;
+    if (liveCount > 0) {
+        record = D_800C3688[group];
+        do {
+            commands = (u8 *)*record;
+            if (commands != NULL) {
+                event = NULL;
+                score = func_15023BB0(commands + 0x18, 3, index, &event, 0, 0, 0, 0, 0, 0, group);
+                if (event != NULL && score < best) {
+                    best = score;
+                    selected = *(s16 *)((u8 *)event + 2);
+                }
+            }
+            index++;
+            record++;
+            liveCount = D_800C363A[group];
+        } while (index < liveCount);
+    }
+    if (selected == -1) {
+        selected = 0;
+        index = 0;
+        if (liveCount > 0) {
+            commands = D_800C35F0[group];
+            do {
+                if (*(u16 *)commands == 1) {
+                    selected = index;
+                    break;
+                }
+                index++;
+                commands += 8;
+            } while (index <= liveCount - 1);
+        }
+    }
+    return selected;
 }
 
 void func_150233BC(void) {
