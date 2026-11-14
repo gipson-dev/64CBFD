@@ -31851,3 +31851,47 @@ generated_1A7260,func_15179DB0,0x1C0,0xA58B0080,0xA5EE0080,-,-,Restore wave vert
 generated_1A7260,func_15179DB0,0x1C8,0x8E6EFFFC,0x8E79FFFC,-,-,Restore wave vertex private frame arrays and closed integer temporary roles,,,false
 generated_1A7260,func_15179DB0,0x1D0,0xC5D20000,0xC7320000,-,-,Restore wave vertex private frame arrays and closed integer temporary roles,,,false
 generated_1A7260,func_15179DB0,0x22C,0x27BD0090,0x27BD0080,-,-,Restore wave vertex private frame arrays and closed integer temporary roles,,,false
+generated_1B0740,func_15183290,0x58,0x8FAB0080,0x8FAC0080,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x64,0x000B6080,0x000C6880,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x68,0x018B6021,0x01AC6821,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x6C,0x000C6080,0x000D6880,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x70,0x3C0D0000,0x3C0B0000,R_MIPS_HI16:D_800DBFF0,R_MIPS_HI16:D_800DBFF0,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x74,0x018B6023,0x01AC6823,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x78,0x8DAD0000,0x8D6B0000,R_MIPS_LO16:D_800DBFF0,R_MIPS_LO16:D_800DBFF0,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x80,0x000C6080,0x000D6880,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x88,0x018B6021,0x01AC6821,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x8C,0x000C6140,0x000D6940,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0xA4,0x018D7021,0x016D7021,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0xE0,0x240B0001,0x240C0001,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0xE4,0xAFAB0024,0xAFAC0024,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x11C,0x8FAC006C,0x8FAB006C,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x158,0xAFAC0010,0xAFAB0010,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x190,0x3C0B0003,0x3C0C0003,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x194,0x356B0003,0x358C0003,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x1A0,0x240C000A,0x240B000A,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x1B4,0xAFAC0028,0xAFAB0028,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x1C0,0xAFAB0024,0xAFAC0024,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x28C,0x8FAC0080,0x8FAB0080,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x290,0x000A5880,0x000A6080,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x294,0xAFAB0014,0xAFAC0014,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x2BC,0xAFAC0018,0xAFAB0018,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x36C,0x8FAB0088,0x8FAC0088,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x370,0x8FAC008C,0x8FAB008C,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x3C4,0xAFAB001C,0xAFAC001C,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x3CC,0xAFAC0020,0xAFAB0020,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x418,0x8FAB0080,0x8FAC0080,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x41C,0x8FAC0088,0x8FAB0088,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x470,0xAFAB0018,0xAFAC0018,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x478,0xAFAC001C,0xAFAB001C,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x494,0x8FAC0084,0x8FAB0084,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x498,0x8FAB0070,0x8FAC0070,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x4A8,0xAFAC0014,0xAFAB0014,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x4AC,0x8FAC0090,0x8FAB0090,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x4C0,0xAFAB0010,0xAFAC0010,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x4C4,0x240B0002,0x240C0002,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x4F0,0xAFAB0038,0xAFAC0038,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x508,0xAFAC0044,0xAFAB0044,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x554,0x8FAC0090,0x8FAB0090,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x564,0x240B0002,0x240C0002,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x568,0xAFAB0038,0xAFAC0038,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false
+generated_1B0740,func_15183290,0x5B0,0xAFAC0044,0xAFAB0044,-,-,Normalize closed effect dispatcher temporary roles and commutative address operands,,,false

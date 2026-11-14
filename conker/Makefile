@@ -802,3 +802,5 @@ $(BUILD_DIR)/$(SRC_DIR)/game_3BA70.c.o: $(SRC_DIR)/game_3BA70.c $(RETAIL_LAYOUT)
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.reset.compact $@.padded.s
 endif
+
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_1B0740.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A72F0

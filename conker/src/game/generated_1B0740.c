@@ -9,10 +9,111 @@ extern u8 D_800A72D0[];
 extern u32 D_800DDF78[];
 void func_15183ACC(s32 index);
 
-/* Non-matching placeholders for the text-only asm slice asm/1B0740.s. */
+extern u8 D_800DDF5C[4];
+extern u8 *D_800DBFF0;
+extern u8 D_800CC2E4[];
+extern f32 D_800A7320, D_800A7324, D_800A7328, D_800A732C;
+extern f32 D_800A7330, D_800A7334, D_800A7338, D_800A733C, D_800A7340;
+void func_15177F90(s32, void *, s32, s32, s32, s32, s32, s32, s32, s32, s32);
+void func_15175390(s32, s32, s32, s32, s32, s32, s32, s32, s32,
+                   s32, s32, s32, s32, s32, s32, f32, f32, s32);
+void func_15174BF0(s32, s32, s32, s32, s32, s32, f32, f32, s32);
+void func_15174FA4(s32, s32, s32, s32, s32, s32, s32, s32, f32, f32);
+void func_151838B0(s32);
+void func_15183974(s32);
+void func_151839F0(s32, s32);
+s32 func_15184118(u8 *);
+void func_1517AA20(f32, s32, s32, s32, s32);
 
-s32 func_15183290() {
-    return 0;
+/* Recovered routines for the text-only asm slice asm/1B0740.s. */
+
+/* Dispatch an effect through the first free slot; burst requests do not reserve it. */
+s32 func_15183290(s32 x, s32 y, s32 z, s32 value, s32 kind, s32 unused,
+                   s32 view, s32 param0, s32 param1, s32 param2, s32 flags) {
+    s32 slot;
+    u8 *selected;
+    u8 *actor;
+
+    for (slot = 0, selected = D_800DDF5C; slot != 4; slot++, selected++) {
+        if (*selected == 0) {
+            break;
+        }
+    }
+    if (slot == 4) {
+        return -1;
+    }
+    /* These are wrapping word shifts, including for negative event parameters. */
+    param0 = (u32)param0 << 4;
+    param1 = (u32)param1 << 4;
+    param2 = (u32)param2 << 4;
+    actor = *(u8 **)(D_800DBFF0 + (u32)view * 0x9A0 + 0x3D0);
+    switch (kind) {
+    case 0:
+        func_15177F90((u8)value, 0, 0xFE, x, y, z, 0, 0x7FFF, 0xFF, 1, 0);
+        break;
+    case 1:
+        func_15177F90((u8)value, D_800CC2E4, 0xFE, x, y, z, 0, 0x7FFF, 0xFF, 1, 0);
+        break;
+    case 2:
+        func_151838B0(0);
+        func_15175390(value, slot, x, y, z, 63, view, 30, 0, 0x30003,
+                       10, 0, 0, 1, 2, D_800A7320, 0.5f, flags);
+        break;
+    case 3:
+        if (func_15184118(actor)) {
+            func_15174BF0(value, slot, x, y, z, view, D_800A7324, 0.5f, flags);
+        } else {
+            return -1;
+        }
+        break;
+    case 8:
+        return -1;
+    case 4:
+        func_151839F0(7, 10);
+        func_15174FA4(value, slot, x, y, z, (u32)param0 << 2, view, 0,
+                       D_800A7328, 0.5f);
+        break;
+    case 10:
+        func_15183ACC(7);
+        func_15174FA4(value, slot, x, y, z, (u32)param0 << 2, view, 1,
+                       D_800A732C, 0.5f);
+        break;
+    case 11:
+        func_15183ACC(2);
+        func_15183ACC(3);
+        func_15183ACC(4);
+        func_15183ACC(5);
+        func_15175390(value, slot, x, y, z, param0, view, param1, param2,
+                       0x4D, 0x15, 3, 2, -1, 0, D_800A7330, 0.5f, flags);
+        break;
+    case 5:
+        func_15183ACC(2);
+        func_15183ACC(3);
+        func_15183ACC(4);
+        func_15183ACC(5);
+        func_15175390(value, slot, x, y, z, param0, view, param1, param2,
+                       0x4D, 0x15, 3, 2, -1, 2, D_800A7334, 0.5f, flags);
+        break;
+    case 6:
+        func_15183974(8);
+        func_15175390(value, slot, x, y, z, param0, view, param1, param2,
+                       0x7D, 0x44, 2, 8, -1, 2, D_800A7338, 0.5f, flags);
+        break;
+    case 7:
+        func_15183ACC(6);
+        func_15175390(value, slot, x, y, z, param0, view, param1, param2,
+                       0x4D, 0x14, 0, 6, 0, 2, D_800A733C, D_800A7340, flags);
+        break;
+    case 9:
+        func_1517AA20(*(f32 *)(actor + 0x3C), (s32)*(f32 *)(actor + 0x14),
+                       (s32)*(f32 *)(actor + 0x18), (s32)*(f32 *)(actor + 0x1C), value);
+        break;
+    }
+    /* Unsupported kinds also claim the captured slot in the retail routine. */
+    if (kind != 9) {
+        *selected = 1;
+    }
+    return slot;
 }
 
 extern u8 D_800DDF69[];

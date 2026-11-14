@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2440](WORKING_NOTES/2440-game-four-slot-effect-dispatch-guarded-match-20261114.md): `func_15183290` now matches all 392 effect-dispatch words with 44 temporary-register guards and the original switch table. Owner **9 / 9 exact**. Game **3,812 / 4,842 (78.73%)**, total **4,485 / 5,515 (81.32%)**, zero drift; **203** more total matches to 85%. Next: 237-word `func_15174BF0`.
+
 [Note 2439](WORKING_NOTES/2439-game-wave-vertex-deformation-guarded-match-20261114.md): `func_15179DB0` now matches all 140 wave-deformation words with 72 private-frame/register guards. The owner is **11 / 11 exact**. Game **3,811 / 4,842 (78.71%)**, total **4,484 / 5,515 (81.31%)**, zero drift; **204** more total matches to 85%. Next: 392-word `func_15183290`.
 
 [Note 2438](WORKING_NOTES/2438-game-piece-renderer-guarded-match-20261114.md): `func_1517A3A0` now matches the complete 169-word piece renderer with 38 alpha-address/scheduling guards. Its four registry slots, real dispatcher window and emitted packets qualify. Game **3,810 / 4,842 (78.69%)**, total **4,483 / 5,515 (81.29%)**, zero drift; **205** more total matches to 85%. Next: 140-word `func_15179DB0`, the owner's last stub.
