@@ -16,8 +16,8 @@ typedef struct {
     u8 flags;
 } ParitySpawnRequest;
 extern f32 D_800A8F58, D_800A8F5C, D_800A8F60, D_800A8F64;
-/* The unfinished allocator returns a pointer; this call supplies five arguments. */
-u8 *func_151A8B20();
+/* Shared allocator: descriptor, lifetime, extra payload bytes, channel and context. */
+u8 *func_151A8B20(void *, s16, s32, u8, s32);
 void func_1516972C(struct102 *);
 
 /* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
@@ -131,9 +131,60 @@ void func_151A8A78(u8 *owner, s32 eventAddress, u8 command) {
     }
 }
 
-u8 *func_151A8B20() {
-    return 0;
+typedef struct {
+    ParitySpawnRequest request;
+    f32 zero28, initial2C;
+    u8 retained30[20];
+    s32 zero44;
+    u8 zero48, zero49, retained4A[2];
+    s32 zero4C;
+    s32 spatial;
+    f32 scale;
+} SpawnPayload151A8B20;
+extern f32 D_800A8F50, D_800A8F54;
+struct260 *func_15149130(s16,s8,s8,s8,u8,u8,struct37 *,u8,s32);
+void func_1510F800(s32);
+u8 *func_1510FD20(s32,s32);
+f32 func_15144598(struct134 *);
+/* Allocate an actor from a snapshotted request and initialize its spatial data. */
+u8 *func_151A8B20(void *request, s16 lifetime, s32 extraBytes, u8 channel, s32 context) {
+    u8 *created;
+    SpawnPayload151A8B20 payload;
+    f32 x, z;
+    SpawnPayload151A8B20 *state;
+
+    memcpy(&payload, request, 0x28);
+    payload.zero44 = 0;
+    payload.zero48 = 0;
+    payload.zero49 = 0;
+    payload.zero4C = 0;
+    payload.zero28 = 0.0f;
+    payload.initial2C = D_800A8F50;
+    created = (u8 *)func_15149130(lifetime == -1 ? 300 : lifetime, -1, 0x25, -1,
+        lifetime == -1 ? 0 : 1, 0x22, (struct37 *)(extraBytes + 0x58), channel, context);
+    if (created != 0) {
+        state = (SpawnPayload151A8B20 *)(created + 0x28);
+        memcpy(state, &payload, 0x58);
+        if (state->request.kind & 4) {
+            if ((state->request.kind & 2) && state->request.owner != 0) {
+                x = ((s16 *)state->request.owner)[0];
+                z = ((s16 *)state->request.owner)[2];
+            } else {
+                x = state->request.zero[0];
+                z = state->request.zero[2];
+            }
+            func_1510F800(0);
+            state->spatial = (s32)func_1510FD20((s32)x, (s32)z);
+        } else state->spatial = 0;
+        if ((state->request.kind & 2) && state->request.owner != 0) {
+            state->scale = func_15144598((struct134 *)state->request.owner);
+        } else {
+            state->scale = state->request.zero[4] * state->request.zero[4] * D_800A8F54;
+        }
+    }
+    return created;
 }
+
 
 s32 func_151A8CEC() {
     return 0;

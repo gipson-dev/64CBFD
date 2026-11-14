@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2424](WORKING_NOTES/2424-game-spawn-allocator-guarded-match-20261114.md): `func_151A8B20` now matches the shared spawn allocator with six scheduling guards and one inserted read. Game **3,798 / 4,843 (78.42%)**, total **4,471 / 5,516 (81.06%)**, zero drift; **218** more total matches to 85%.
+
 [Note 2423](WORKING_NOTES/2423-game-template-effect-guarded-match-20261114.md): `func_151A9390` now matches the template-effect constructor with ten temporary-stack guards. Game **3,797 / 4,843 (78.40%)**, total **4,470 / 5,516 (81.04%)**, zero drift; **219** more total matches to 85%.
 
 [Note 2422](WORKING_NOTES/2422-game-ranged-effect-direct-match-20261114.md): `func_151A9634` now matches the ranged-effect callback directly from C, with no guards. Game **3,796 / 4,843 (78.38%)**, total **4,469 / 5,516 (81.02%)**, zero drift; **220** more total matches to 85%.

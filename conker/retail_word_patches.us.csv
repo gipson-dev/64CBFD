@@ -31470,3 +31470,9 @@ generated_1D4E00,func_151A9390,0x168,0xAFA80040,0xAFA80044,-,-,Normalize templat
 generated_1D4E00,func_151A9390,0x16C,0x8FA80040,0x8FA80044,-,-,Normalize template effect temporary stack allocation,,,false
 generated_1D4E00,func_151A9390,0x170,0x8FA3003C,0x8FA30040,-,-,Normalize template effect temporary stack allocation,,,false
 generated_1D4E00,func_151A9390,0x174,0x8FA40038,0x8FA4003C,-,-,Normalize template effect temporary stack allocation,,,false
+generated_1D4E00,func_151A8B20,0xB8,0x1040003E,0x1040003F,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
+generated_1D4E00,func_151A8B20,0xE4,0x1140001F,0x11400020,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
+generated_1D4E00,func_151A8B20,0x12C,0xE7A00048,0xE7A00040,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
+generated_1D4E00,func_151A8B20,0x138,0xC7A00048,0xC7A00040,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
+generated_1D4E00,func_151A8B20,0x15C,0x10000002,0xACE20050,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,,,false
+generated_1D4E00,func_151A8B20,0x160,0xACE20050,0x10000003,-,-,Restore spawn allocator spatial-store schedule and independent float temporary,0x90F80000,,false
