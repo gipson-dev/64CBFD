@@ -54,9 +54,81 @@ s32 func_151A7950(u8 *source, s32 bytes, u8 mode, s32 parameter) {
     return (s32)record;
 }
 
-s32 func_151A7A90() {
-    return 0;
+typedef struct {f32 x,y,z,outX,outY,outZ;} DirectionVertex151A7A90;
+typedef struct {
+    u8 pad00[16];
+    s16 lifetime, count;
+    f32 minimum, range;
+    u8 flags, pad1D[3];
+    s32 context;
+    u8 pad24[8];
+    s8 firstCallback, secondCallback;
+    u8 pad2E[2];
+    struct17 start, end, direction;
+    f32 length, reciprocal;
+    u8 kind, pad5D[3];
+    void *cache;
+    DirectionVertex151A7A90 *vertices;
+    f32 timer;
+} DirectionState151A7A90;
+extern s32 (*D_8008F940[])(u8 *);
+extern s32 (*D_8008F948[])(u8 *);
+extern s32 D_800BE9E4;
+extern f32 D_800BE9A4;
+s32 func_151A8340();
+f32 func_150ADA68(void);
+void func_151450B4(struct17 *,struct17 *,struct17 *);
+/* Run lifecycle checks, refresh expired geometry and transform the vertex outputs. */
+void func_151A7A90(struct102 *record) {
+    DirectionState151A7A90 *state;
+    u8 *loopOwner;
+    u8 dead;
+    struct17 cross, side, delta;
+    state = (DirectionState151A7A90 *)record;
+    /* Keep the original count owner live across the callbacks and vertex writes. */
+    loopOwner = (u8 *)record;
+    dead = 0;
+    if (state->flags & 1) {
+        state->lifetime = (s16)((u32)(s32)state->lifetime - (u32)D_800BE9E4);
+        if (state->lifetime < 0) dead = 1;
+    }
+    if (state->firstCallback != -1 && !dead) dead = !D_8008F940[state->firstCallback]((u8 *)record);
+    if (state->secondCallback != -1 && !dead) dead = !D_8008F948[state->secondCallback]((u8 *)record);
+    if (!dead) {
+        state->timer -= D_800BE9A4;
+        if (state->timer < 0.0f) {
+            func_151A8340((u8 *)record, 0, (s16)(state->count - 1), state->context, 100);
+            /* Sequence the sample before re-reading helper-mutable interval fields. */
+            state->timer = func_150ADA68();
+            state->timer = state->timer * state->range + state->minimum;
+        }
+        if (state->flags & 2) {
+            DirectionVertex151A7A90 *vertex;
+            s32 index;
+            delta.unk0 = state->end.unk0 - state->start.unk0;
+            delta.unk4 = state->end.unk4 - state->start.unk4;
+            delta.unk8 = state->end.unk8 - state->start.unk8;
+            side = state->direction;
+            func_151450B4(&delta, &side, &cross);
+            cross.unk0 *= state->reciprocal;
+            cross.unk4 *= state->reciprocal;
+            cross.unk8 *= state->reciprocal;
+            index = 0;
+            vertex = state->vertices;
+            if (state->count > 0) {
+                do {
+                    vertex->outX = state->start.unk0 + vertex->x * cross.unk0 + vertex->y * side.unk0 + vertex->z * delta.unk0;
+                    vertex->outY = state->start.unk4 + vertex->x * cross.unk4 + vertex->y * side.unk4 + vertex->z * delta.unk4;
+                    vertex->outZ = state->start.unk8 + vertex->x * cross.unk8 + vertex->y * side.unk8 + vertex->z * delta.unk8;
+                    index++;
+                    vertex++;
+                } while (index < *(s16 *)(loopOwner + 0x12));
+            }
+        }
+    }
+    if (dead) func_1516972C((struct102 *)record);
 }
+
 
 s32 func_151A7D6C() {
     return 0;

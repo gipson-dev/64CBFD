@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2427](WORKING_NOTES/2427-game-direction-update-guarded-match-20261114.md): `func_151A7A90` now matches the direction-record updater with 36 local-home and scheduling guards. Game **3,801 / 4,843 (78.48%)**, total **4,474 / 5,516 (81.11%)**, zero drift; **215** more total matches to 85%. Next: `func_151A8340`.
+
 [Note 2426](WORKING_NOTES/2426-game-attached-direction-guarded-match-20261114.md): `func_151A87F8` now matches the attached-direction callback with 18 local-home and scheduling guards. Game **3,800 / 4,843 (78.46%)**, total **4,473 / 5,516 (81.09%)**, zero drift; **216** more total matches to 85%.
 
 [Note 2425](WORKING_NOTES/2425-game-effect-update-direct-match-20261114.md): `func_151A8CEC` now matches the effect-update callback directly from C, with no guards. Game **3,799 / 4,843 (78.44%)**, total **4,472 / 5,516 (81.07%)**, zero drift; **217** more total matches to 85%.
