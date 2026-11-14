@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2419](WORKING_NOTES/2419-game-render-queue-private-screen-20261114.md): `func_15035FE8` remains private; its 88-word candidate matches sampled public access order but still needs the retail frame and register schedule. Game remains **3,793 / 4,843 (78.32%)**, with **82** more matches to 80%.
+
 [Note 2418](WORKING_NOTES/2418-game-group-event-choice-direct-match-20261114.md): `func_15023264` now matches group-event selection directly from C, with no guards. Game **3,793 / 4,843 (78.32%)**, total **4,466 / 5,516 (80.96%)**, zero drift; **82** more Game matches to 80%.
 
 [Note 2417](WORKING_NOTES/2417-game-random-scatter-scheduling-screen-20261114.md): `func_1517AA20` remains private; its 85-word candidate has 51 retail-position words but needs an 87-word schedule and a resolved helper interface. Game remains **3,792 / 4,843 (78.30%)**, with **83** more matches to 80%.
