@@ -3,6 +3,8 @@
 #include "functions.h"
 #include "variables.h"
 
+void func_150B3AB0(u8 *, u8);
+
 s32 func_151EF610(void);
 
 s32 func_1507CD64(struct127 *, s32);
@@ -1117,7 +1119,7 @@ void func_1506FC74(s32 arg0) {
 }
 
 void func_1506FC9C(s32 arg0) {
-    func_150B3AB0(D_800D154C, 0xFF);
+    func_150B3AB0((u8 *)D_800D154C, 0xFF);
 }
 
 void func_1506FCC8(s32 arg0) {
