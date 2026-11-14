@@ -31530,3 +31530,25 @@ generated_1D4E00,func_151A7A90,0x268,0xC7A4003C,0xC7A40040,-,-,Normalize directi
 generated_1D4E00,func_151A7A90,0x27C,0xC7A60058,0xC7A6005C,-,-,Normalize direction updater closed local-home permutation and independent post-cross schedule,,,false
 generated_1D4E00,func_151A7A90,0x280,0xC7AA004C,0xC7AA0050,-,-,Normalize direction updater closed local-home permutation and independent post-cross schedule,,,false
 generated_1D4E00,func_151A7A90,0x294,0xC7B00040,0xC7B00044,-,-,Normalize direction updater closed local-home permutation and independent post-cross schedule,,,false
+generated_1D4E00,func_151A8340,0x78,0x54200057,0x54200058,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x84,0x5B000054,0x5B000055,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0xE0,0x0C000000,0x46128781,R_MIPS_26:func_150ADA68,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0xE4,0x46128781,0x0C000000,-,R_MIPS_26:func_150ADA68,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",0x00000000,,false
+generated_1D4E00,func_151A8340,0x104,0x4600B402,0x46160402,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x150,0x4600B482,0x46160482,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x154,0x00153400,0x0005CC03,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x158,0x00064403,0x00153400,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x15C,0x0005CC03,0x00064403,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x160,0x4407A000,0x03202825,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x16C,0x03202825,0x02002025,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x174,0x01003025,0x46105180,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x178,0x02002025,0xE5C60004,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x17C,0x46105180,0xC6240008,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x180,0xE5C60004,0x8E0F0064,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x184,0xC6240008,0x46082480,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x188,0x8E0F0064,0x01F2C021,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x18C,0x46082480,0xE7120008,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x190,0x01F2C021,0x87B4008A,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x194,0xE7120008,0x4407A000,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x198,0x87B4008A,0x01003025,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false
+generated_1D4E00,func_151A8340,0x1CC,0x1020FFAC,0x1020FFAB,-,-,"Restore midpoint subdivision independent schedule, commutative multiply operands and original call-delay no-op",,,false

@@ -60,7 +60,7 @@ typedef struct {
     s16 lifetime, count;
     f32 minimum, range;
     u8 flags, pad1D[3];
-    s32 context;
+    f32 amplitude;
     u8 pad24[8];
     s8 firstCallback, secondCallback;
     u8 pad2E[2];
@@ -75,7 +75,7 @@ extern s32 (*D_8008F940[])(u8 *);
 extern s32 (*D_8008F948[])(u8 *);
 extern s32 D_800BE9E4;
 extern f32 D_800BE9A4;
-s32 func_151A8340();
+void func_151A8340(u8 *, s16, s16, f32, s16);
 f32 func_150ADA68(void);
 void func_151450B4(struct17 *,struct17 *,struct17 *);
 /* Run lifecycle checks, refresh expired geometry and transform the vertex outputs. */
@@ -97,7 +97,7 @@ void func_151A7A90(struct102 *record) {
     if (!dead) {
         state->timer -= D_800BE9A4;
         if (state->timer < 0.0f) {
-            func_151A8340((u8 *)record, 0, (s16)(state->count - 1), state->context, 100);
+            func_151A8340((u8 *)record, 0, (s16)(state->count - 1), state->amplitude, 100);
             /* Sequence the sample before re-reading helper-mutable interval fields. */
             state->timer = func_150ADA68();
             state->timer = state->timer * state->range + state->minimum;
@@ -134,9 +134,31 @@ s32 func_151A7D6C() {
     return 0;
 }
 
-s32 func_151A8340() {
-    return 0;
+/* Recursively displace midpoint vertices, then iterate over the right half. */
+void func_151A8340(u8 *record, s16 first, s16 last, f32 amplitude, s16 depth) {
+    if (last - first < 2) return;
+    if (depth <= 0) return;
+    {
+        s16 middle;
+        DirectionVertex151A7A90 *left, *right;
+        f32 dx, dy, dz, draw;
+        middle = (s16)(first + ((last - first) >> 1));
+        /* Retain this anchor while random providers may replace the vertex array. */
+        left = ((DirectionState151A7A90 *)record)->vertices + first;
+        right = ((DirectionState151A7A90 *)record)->vertices + last;
+        dx = right->x - ((DirectionState151A7A90 *)record)->vertices[first].x;
+        dy = right->y - ((DirectionState151A7A90 *)record)->vertices[first].y;
+        dz = right->z - ((DirectionState151A7A90 *)record)->vertices[first].z;
+        draw = func_150ADA68();
+        ((DirectionState151A7A90 *)record)->vertices[middle].x = (draw * (amplitude + amplitude) + -amplitude) + (left->x + dx * 0.5f);
+        draw = func_150ADA68();
+        ((DirectionState151A7A90 *)record)->vertices[middle].y = (draw * (amplitude + amplitude) + -amplitude) + (left->y + dy * 0.5f);
+        ((DirectionState151A7A90 *)record)->vertices[middle].z = left->z + dz * 0.5f;
+        func_151A8340(record, first, middle, amplitude, (s16)(depth - 1));
+        func_151A8340(record, middle, last, amplitude, (s16)(depth - 1));
+    }
 }
+
 
 void func_151A8560(u8 *arg0) {
     func_151D5E30(arg0 + 0x6C, arg0);
