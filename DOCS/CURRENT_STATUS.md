@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2438](WORKING_NOTES/2438-game-piece-renderer-guarded-match-20261114.md): `func_1517A3A0` now matches the complete 169-word piece renderer with 38 alpha-address/scheduling guards. Its four registry slots, real dispatcher window and emitted packets qualify. Game **3,810 / 4,842 (78.69%)**, total **4,483 / 5,515 (81.29%)**, zero drift; **205** more total matches to 85%. Next: 140-word `func_15179DB0`, the owner's last stub.
+
 [Note 2437](WORKING_NOTES/2437-game-motion-piece-constructor-guarded-match-20261114.md): `func_15179FE0` now matches the 131-word moving-piece constructor with its eleven-argument interface and sixteen spill/scheduling guards. The real caller window and constructor-to-callback sequences qualify. Game **3,809 / 4,842 (78.67%)**, total **4,482 / 5,515 (81.27%)**, zero drift; **206** more total matches to 85%. Next: 169-word `func_1517A3A0`.
 
 [Note 2436](WORKING_NOTES/2436-game-piece-update-fade-guarded-match-20261114.md): `func_1517A1EC` now matches the 106-word motion/damping/fade callback with fifteen scheduling/register guards. Three registry descriptors and the real dispatcher window qualify. Game **3,808 / 4,842 (78.65%)**, total **4,481 / 5,515 (81.25%)**, zero drift; **207** more total matches to 85%. Next: 131-word `func_15179FE0`.

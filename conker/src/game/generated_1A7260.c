@@ -31,6 +31,16 @@ extern u8 D_80090614[];
 
 s32 func_15094F70(s32, u8 *, s32, u8 *, s32, s32, s32, s32, s32);
 
+extern f32 D_800D9B20, D_800D9B1C, D_800D35E0, D_800D35E4;
+extern u8 D_800D9C10[], D_800BE9C0;
+extern u32 D_800D2C9C;
+extern Gfx D_8008CDF0[];
+s32 func_1510AEE0(void *, f32, f32, f32, f32, f32, f32, f32, f32 *, f32 *);
+void func_15043D90(Mtx *, f32, f32, f32, f32, f32, f32, f32, f32, f32);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+s32 func_1517A9A8(s32, volatile s32);
+
+
 /* Non-matching placeholders for the text-only asm slice asm/1A7260.s. */
 
 s32 func_15179DB0() {
@@ -120,8 +130,38 @@ s32 func_1517A394(register s32 arg0) {
     return arg0;
 }
 
-s32 func_1517A3A0() {
-    return 0;
+/* Cull each view, mark retirement visibility, and draw the transformed piece. */
+Gfx *func_1517A3A0(Gfx *commands, SettleFade1517A84C *record, s16 view) {
+    u8 sync;
+
+    if (record->retained00[0] != 12 && record->retained00[0] != 89 &&
+        func_1510AEE0(D_800D9C10 + view * 64, record->x, record->y, record->z,
+                      D_800D9B20, D_800D9B1C, D_800D35E0, D_800D35E4, 0, 0)) {
+        if (record->retained00[0] == 8 && (record->retireNibbles & (1 << view))) {
+            record->retireNibbles |= 16 << view;
+        }
+        return commands;
+    }
+    if (record->retained00[0] != 9) {
+        record->retireNibbles |= 1 << view;
+    }
+    commands = (Gfx *)func_1517A9A8((s32)commands, record->variant);
+    func_15043D90((Mtx *)((u8 *)record + D_800BE9C0 * 64 + 16),
+                  record->angleX, record->angleY, record->angleZ,
+                  record->scale, record->scale, record->scale,
+                  record->x, record->y, record->z);
+    gSPMatrix(commands++, (u8 *)record + D_800BE9C0 * 64 + 16,
+              G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    if (record->opacity != D_800DD450) {
+        gDPPipeSync(commands++);
+        gDPSetPrimColor(commands++, 0, 0, 0, 0, 0, record->opacity);
+        D_800DD450 = record->opacity;
+    }
+    sync = 0;
+    commands = func_15142FBC(commands, D_800D2C9C | 0x80000 | 0x2CA0,
+                            record->retained00[0] == 8 || record->retained00[0] == 9 ? 0x5049D8 : 0x504240, &sync);
+    gSPDisplayList(commands++, D_8008CDF0);
+    return commands;
 }
 
 /* Allocate and initialize one settling burst piece, including its random spin. */

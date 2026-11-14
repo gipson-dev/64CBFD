@@ -31741,3 +31741,41 @@ generated_1A7260,func_15179FE0,0x1E8,0xA20C00B3,0x93AC005F,-,-,Preserve motion-p
 generated_1A7260,func_15179FE0,0x1EC,0xA60B00AC,0xA20000B2,-,-,Preserve motion-piece cached-range spill homes and final initialization schedule,,,false
 generated_1A7260,func_15179FE0,0x1F0,0x93AE005F,0xA20E00B3,-,-,Preserve motion-piece cached-range spill homes and final initialization schedule,,,false
 generated_1A7260,func_15179FE0,0x1F4,0xA60E00AE,0xA60C00AE,-,-,Preserve motion-piece cached-range spill homes and final initialization schedule,,,false
+generated_1A7260,func_1517A3A0,0x1B4,0x3C040000,0x3C0BDA38,R_MIPS_HI16:D_800DD450,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1B8,0x24840000,0x356B0003,R_MIPS_LO16:D_800DD450,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1BC,0x3C0BDA38,0x02201025,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1C0,0x356B0003,0xAC4B0000,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1C4,0x02201025,0x3C0C0000,-,R_MIPS_HI16:D_800BE9C0,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1C8,0xAC4B0000,0x918C0000,-,R_MIPS_LO16:D_800BE9C0,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1CC,0x3C0C0000,0x26310008,R_MIPS_HI16:D_800BE9C0,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1D0,0x918C0000,0x3C190000,R_MIPS_LO16:D_800BE9C0,R_MIPS_HI16:D_800DD450,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1D4,0x26310008,0x000C6980,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1D8,0x3C050000,0x020D7021,R_MIPS_HI16:D_800D2C9C,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1DC,0x000C6980,0x25CF0010,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1E0,0x020D7021,0xAC4F0004,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1E4,0x25CF0010,0x921800B3,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1E8,0xAC4F0004,0x87390000,-,R_MIPS_LO16:D_800DD450,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1EC,0x84980000,0x02201025,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1F0,0x921900B3,0x3C050000,-,R_MIPS_HI16:D_800D2C9C,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1F4,0x02201025,0x1319000E,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1F8,0x3C0AE700,0x27A70043,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x1FC,0x1319000C,0x3C0AE700,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x200,0x27A70057,0xAC4A0000,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x208,0xAC4A0000,0xAC400004,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x20C,0xAC400004,0x02201825,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x210,0x02201825,0x3C09FA00,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x214,0x3C09FA00,0xAC690000,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x218,0xAC690000,0x920B00B3,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x21C,0x920B00B3,0x26310008,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x220,0x26310008,0xAC6B0004,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x224,0xAC6B0004,0x920C00B3,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x228,0x920C00B3,0x3C010000,-,R_MIPS_HI16:D_800DD450,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x22C,0xA48C0000,0xA42C0000,-,R_MIPS_LO16:D_800DD450,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x230,0xA3A00057,0xA3A00043,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x26C,0x00A16825,0x00A1C025,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x274,0x35A52CA0,0x37052CA0,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x278,0x3C180000,0x3C090000,R_MIPS_HI16:D_8008CDF0,R_MIPS_HI16:D_8008CDF0,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x27C,0x27180000,0x25290000,R_MIPS_LO16:D_8008CDF0,R_MIPS_LO16:D_8008CDF0,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x280,0x3C0FDE00,0x3C0ADE00,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x284,0xAC4F0000,0xAC4A0000,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
+generated_1A7260,func_1517A3A0,0x288,0xAC580004,0xAC490004,-,-,Restore piece-renderer alpha address pairs private sync home and tail scheduling,,,false
