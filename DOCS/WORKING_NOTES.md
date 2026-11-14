@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2432](WORKING_NOTES/2432-game-polyline-strip-renderer-guarded-match-20261114.md): `func_151A7D6C` now matches all 373 words with 157 pinned layout/register/scheduling guards. Game **3,805 / 4,843 (78.57%)**, total **4,478 / 5,516 (81.18%)**, zero drift; **211** more total matches to 85%. Next: `func_150A76F0`.
+
 [Note 2431](WORKING_NOTES/2431-game-polyline-strip-renderer-semantic-screen-20261114.md): `func_151A7D6C` has a private 373-word / 0xC8-frame semantic screen, with 375 guest cases and 195 native cases per profile. **157 words remain different; uninstalled and uncredited.** Total remains **4,477 / 5,516 (81.16%)**; **212** more matches to 85%. Next: finish its stack/register/scheduling match.
 
 [Note 2430](WORKING_NOTES/2430-game-radial-ground-emitter-direct-match-20261114.md): `func_151A9834` now matches the radial ground emitter directly from C, with no guards. Game **3,804 / 4,843 (78.55%)**, total **4,477 / 5,516 (81.16%)**, zero drift; **212** more total matches to 85%. Next: `func_151A7D6C`.

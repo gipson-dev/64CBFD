@@ -1,5 +1,10 @@
 # Game polyline strip renderer semantic screen
 
+Superseded by the installed guarded match in
+[Note 2432](2432-game-polyline-strip-renderer-guarded-match-20261114.md).
+The measurements below describe the earlier private screen. Its test module
+has been renamed to `tools.tests.test_game_direction_strip_151a7d6c_match`.
+
 Date: 2026-11-14. Target: `func_151A7D6C`, the remaining zero-return
 placeholder in `conker/src/game/generated_1D4E00.c`.
 
@@ -108,7 +113,7 @@ qualification, hardware rendering or gameplay acceptance.
 From the prepared consumer root under WSL:
 
 ```sh
-PYTHONPATH=. CBFD_CONSUMER_ROOT=. python3 -m unittest tools.tests.test_game_direction_strip_151a7d6c_screen -v
+PYTHONPATH=. CBFD_CONSUMER_ROOT=. python3 -m unittest tools.tests.test_game_direction_strip_151a7d6c_match -v
 make tools-check
 ```
 

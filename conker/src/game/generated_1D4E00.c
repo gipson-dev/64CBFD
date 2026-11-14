@@ -20,7 +20,7 @@ extern f32 D_800A8F58, D_800A8F5C, D_800A8F60, D_800A8F64;
 u8 *func_151A8B20(void *, s16, s32, u8, s32);
 void func_1516972C(struct102 *);
 
-/* Non-matching placeholders for the text-only asm slice asm/1D4E00.s. */
+/* Recovered routines for the original text-only slice asm/1D4E00.s. */
 
 void func_151A931C(u8 *, s32, u8);
 void func_15169804(u8 *);
@@ -130,8 +130,135 @@ void func_151A7A90(struct102 *record) {
 }
 
 
-s32 func_151A7D6C() {
-    return 0;
+typedef struct {
+    u8 pad00[18];
+    s16 count;
+    u8 pad14[8];
+    u8 flags, pad1D[7];
+    u8 color[4];
+    f32 width;
+    u8 pad2C[56];
+    DirectionVertex151A7A90 *vertices;
+    f32 timer;
+    u8 cache[16];
+    s32 bytes;
+} DirectionStripState151A7D6C;
+extern u8 D_80090D70[];
+extern u32 D_800D2C9C, D_800A4AC8[];
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+struct17 *func_15144B34(s32);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+void func_15145548(struct17 *, struct17 *, struct17 *, struct17 *, f32 *);
+f32 sqrtf(f32);
+/* Render the active polyline as camera-facing textured quads. */
+Gfx *func_151A7D6C(Gfx *output, DirectionStripState151A7D6C *state, s16 view) {
+    Vtx *cursor;
+    struct17 delta, closest, ray;
+
+    struct17 *camera;
+    f32 magnitude;
+    u8 sync;
+    s16 last;
+    f32 parameter;
+    f32 offsetX, offsetY, offsetZ, scale;
+    s16 first, next;
+    DirectionStripState151A7D6C *loopOwner;
+    struct17 *left, *right;
+    loopOwner = state;
+    if (state->flags & 2) {
+        func_151D5D60(state->cache, view, state->bytes, &cursor, NULL);
+        if (cursor != NULL) {
+            camera = func_15144B34(view);
+            sync = 1;
+            last = state->count - 1;
+            first = 0;
+            next = 1;
+            output = func_15142E24(output, D_80090D70, 0, 0, 0, 0, 0x2C, 0, NULL, &sync, 3);
+            output = func_15142B7C(output, 0x200005, 0x1F0600);
+            output = func_15142C10(output, state->color[0], state->color[1], state->color[2], state->color[3], &sync);
+            output = func_1513F4E4(output, 0x19, &sync);
+            output = func_15142FBC(output, D_800D2C9C | 0x80000 | 0x2CA0, D_800A4AC8[7] | D_800A4AC8[6], &sync);
+            delta.unk0 = state->vertices[0].outX - state->vertices[last].outX;
+            delta.unk4 = state->vertices[0].outY - state->vertices[last].outY;
+            delta.unk8 = state->vertices[0].outZ - state->vertices[last].outZ;
+            func_15145548((struct17 *)&state->vertices[last].outX, &delta, camera, &closest, &parameter);
+            ray.unk0 = camera->unk0 - closest.unk0;
+            ray.unk4 = camera->unk4 - closest.unk4;
+            ray.unk8 = camera->unk8 - closest.unk8;
+            offsetX = delta.unk4 * ray.unk8 - ray.unk4 * delta.unk8;
+            offsetY = delta.unk8 * ray.unk0 - ray.unk8 * delta.unk0;
+            offsetZ = delta.unk0 * ray.unk4 - ray.unk0 * delta.unk4;
+            magnitude = offsetX * offsetX + offsetY * offsetY + offsetZ * offsetZ;
+            if (magnitude == 0.0f) {
+                offsetX = 0.0f; offsetY = 0.0f; offsetZ = 0.0f;
+            } else {
+                scale = state->width / sqrtf(magnitude);
+                offsetX = offsetX * scale;
+                offsetY = offsetY * scale;
+                offsetZ = offsetZ * scale;
+            }
+            if (state->count >= 2) {
+                do {
+                    right = (struct17 *)&state->vertices[next].outX;
+                    left = (struct17 *)&state->vertices[first].outX;
+                    cursor->v.ob[0] = (s32)(left->unk0 + offsetX);
+                    cursor->v.ob[1] = (s32)(left->unk4 + offsetY);
+                    cursor->v.ob[2] = (s32)(left->unk8 + offsetZ);
+                    cursor->v.tc[0] = 0;
+                    cursor->v.tc[1] = 0;
+                    cursor->v.cn[0] = 255;
+                    cursor->v.cn[1] = 255;
+                    cursor->v.cn[2] = 255;
+                    cursor->v.cn[3] = 255;
+                    cursor->v.flag = 0;
+                    cursor++;
+                    cursor->v.ob[0] = (s32)(left->unk0 - offsetX);
+                    cursor->v.ob[1] = (s32)(left->unk4 - offsetY);
+                    cursor->v.ob[2] = (s32)(left->unk8 - offsetZ);
+                    cursor->v.tc[0] = 960;
+                    cursor->v.tc[1] = 0;
+                    cursor->v.cn[0] = 255;
+                    cursor->v.cn[1] = 255;
+                    cursor->v.cn[2] = 255;
+                    cursor->v.cn[3] = 255;
+                    cursor->v.flag = 0;
+                    cursor++;
+                    cursor->v.ob[0] = (s32)(right->unk0 - offsetX);
+                    cursor->v.ob[1] = (s32)(right->unk4 - offsetY);
+                    cursor->v.ob[2] = (s32)(right->unk8 - offsetZ);
+                    cursor->v.tc[0] = 960;
+                    cursor->v.tc[1] = 960;
+                    cursor->v.cn[0] = 255;
+                    cursor->v.cn[1] = 255;
+                    cursor->v.cn[2] = 255;
+                    cursor->v.cn[3] = 255;
+                    cursor->v.flag = 0;
+                    cursor++;
+                    cursor->v.ob[0] = (s32)(right->unk0 + offsetX);
+                    cursor->v.ob[1] = (s32)(right->unk4 + offsetY);
+                    cursor->v.ob[2] = (s32)(right->unk8 + offsetZ);
+                    cursor->v.tc[0] = 0;
+                    cursor->v.tc[1] = 960;
+                    cursor->v.cn[0] = 255;
+                    cursor->v.cn[1] = 255;
+                    cursor->v.cn[2] = 255;
+                    cursor->v.cn[3] = 255;
+                    cursor->v.flag = 0;
+                    cursor++;
+                    next++;
+                    gSPVertex(output++, cursor - 4, 4, 0);
+                    { Gfx *command = output++; gSP1Triangle(command, 0, 1, 2, 0); }
+                    gSP1Triangle(output++, 0, 2, 3, 0);
+                    first++;
+                } while (next < loopOwner->count);
+            }
+        }
+    }
+    return output;
 }
 
 /* Recursively displace midpoint vertices, then iterate over the right half. */
