@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2453](WORKING_NOTES/2453-game-projection-bounds-guarded-match-20261114.md): `func_1510AEE0` now matches its **97-word projection/depth predicate** and three alignment words with **82 checked guards / four inserted NOPs**. Ordered symbolic, guest/native, all four caller windows, both padders and strict-image gates pass. Owner **3 / 4 exact**. Total **4,494 / 5,515 (81.49%)**, Game **3,821 / 4,842 (78.91%)**, zero drift; **194** more to 85%. Next: remaining 229-word owner routine `func_1510AA44`; common particle updater stays private.
+
 [Note 2452](WORKING_NOTES/2452-game-common-particle-frame-native-and-callers-20261114.md): private `func_15175958` recovers frame **0xC8** and fixes native audio RNG/coordinate sequencing. **1,483 guest cases**, 24 zero-divisor prefixes, **1,315 native32 cases per O0/O2/O3**, and three direct/four registry caller interfaces pass. Still **956 / 961 words**, uninstalled and uncredited. Total stays **4,493 / 5,515 (81.47%)**, **195** more to 85%. Next: private homes and complete instruction layout.
 
 [Note 2451](WORKING_NOTES/2451-game-common-particle-update-private-recovery-20261114.md): private `func_15175958` recovery emits **956 / 961 words**, frame **0xC0 / 0xC8**. **1,314 differential guest cases**, 867 visited retail words and five effective controls pass; all eight neighbors and 807 production inputs stay fixed. No installation or match credit. Total remains **4,493 / 5,515 (81.47%)**, **195** more to 85%. Next: original frame/lifetimes and complete qualification.
