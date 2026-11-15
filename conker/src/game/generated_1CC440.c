@@ -43,6 +43,33 @@ u8 func_151D8E20(void);
 u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
 void *memcpy(void *, const void *, u32);
 
+typedef struct {
+    f32 x, z, height, phase;
+    s16 alpha, delay, light, reserved16, lifetime, reserved1A;
+    f32 velocityX, velocityZ;
+} SideEntry1519F4F0;
+typedef struct {
+    f32 height;
+    s16 vertices[9], reserved16;
+    u32 metadata;
+    u8 flags, state;
+    u16 reserved1E;
+    s32 value;
+} SideFloor1519F4F0;
+typedef struct {
+    u8 reserved00[0x25], capacity, reserved26[6];
+    s8 count, head, tail;
+    u8 reserved2F[0x25];
+    f32 position[3];
+    SideFloor1519F4F0 floor;
+    u8 reserved84[0x10];
+    SideEntry1519F4F0 *entries;
+    SidePayload1519F1C8 *payload;
+    s32 reserved9C;
+} SideEffect1519F4F0;
+extern f32 D_800A8CF0, D_800BE9A4;
+s32 func_15045800(f32 *, u16, f32, void *);
+
 extern s32 D_800BE9E4;
 
 
@@ -249,8 +276,61 @@ void func_1519F48C(u8 *arg0) {
     ((u8 *)link)[4] |= 1;
 }
 
-s32 func_1519F4F0() {
-    return 0;
+/* Advance side-effect ring entries, retire expired spans and publish the head position. */
+s32 func_1519F4F0(SideEffect1519F4F0 *effect) {
+    SidePayload1519F1C8 *packet = effect->payload;
+    SideEntry1519F4F0 *entries = effect->entries;
+    SideEntry1519F4F0 *entry;
+    s32 cursor;
+    s32 expired;
+    f32 position[3];
+    f32 limit;
+
+    if (effect->count < 2 && (packet->kind & 1)) return 0;
+    cursor = effect->tail;
+    if (cursor != effect->head) {
+        limit = D_800A8CF0;
+        do {
+            cursor--;
+            if (cursor < 0) cursor = effect->capacity - 1;
+            expired = 0;
+            entry = &entries[cursor];
+            entry->lifetime = (u32)entry->lifetime - (u32)D_800BE9E4;
+            if (entry->lifetime < 0) expired = 1;
+            entry->light = 255;
+            if (entry->delay > 0) entry->delay = (u32)entry->delay - (u32)D_800BE9E4;
+            else entry->alpha = (u32)entry->alpha - (u32)packet->height * (u32)D_800BE9E4;
+            entry->phase += packet->limit * D_800BE9A4;
+            entry->x += entry->velocityX * D_800BE9A4;
+            entry->z += entry->velocityZ * D_800BE9A4;
+            position[0] = entry->x;
+            position[1] = entry->height + 30.0f;
+            position[2] = entry->z;
+            if (limit < fabsf(position[0]) || limit < fabsf(position[2])) expired = 1;
+            else if (func_15045800(position, 0, entry->height - 30.0f, &effect->floor)) entry->height = effect->floor.height;
+            else expired = 1;
+            if (entry->alpha < 0) expired = 1;
+            if (expired) {
+                while (cursor != effect->head) {
+                    effect->head++;
+                    if (effect->head == effect->capacity) effect->head = 0;
+                    effect->count--;
+                }
+                entries[effect->head].alpha = 0;
+            }
+        } while (cursor != effect->head);
+    }
+    packet->zero46 = (u32)packet->zero46 + (u32)packet->count * (u32)D_800BE9E4;
+    if (effect->count > 0) {
+        effect->position[0] = entries[effect->head].x;
+        effect->position[1] = entries[effect->head].height;
+        effect->position[2] = entries[effect->head].z;
+    } else {
+        effect->position[0] = 0.0f;
+        effect->position[1] = 0.0f;
+        effect->position[2] = 0.0f;
+    }
+    return 1;
 }
 
 s32 func_1519F7F0() {
