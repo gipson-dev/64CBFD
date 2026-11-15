@@ -32542,3 +32542,13 @@ generated_137ED0,func_1510AEE0,0x154,0x3C013F80,0x46022283,-,-,Restore ordered p
 generated_137ED0,func_1510AEE0,0x158,0x44814000,0x3C013F80,-,-,Restore ordered projection roles scheduling branch-delay copies and pipeline NOPs,,,false
 generated_137ED0,func_1510AEE0,0x15C,0x46025103,0x44814000,-,-,Restore ordered projection roles scheduling branch-delay copies and pipeline NOPs,0x00000000,,false
 generated_137ED0,func_1510AEE0,0x160,0x46044181,0x460A4181,-,-,Restore ordered projection roles scheduling branch-delay copies and pipeline NOPs,,,false
+generated_137ED0,func_1510AA44,0x2B8,0x51A20011,0x504D0011,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x304,0x44884000,0x44883000,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x354,0x44884000,0x44883000,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x360,0x468042A0,0x46803220,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x368,0x44818000,0x44815000,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x374,0x46001187,0x46001107,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x378,0x46105482,0x460A4402,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x37C,0xE48600A8,0xE48400A8,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x380,0x46009107,0x46008487,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
+generated_137ED0,func_1510AA44,0x384,0xE4840008,0xE4920008,-,-,Normalize clock commutative equality and closed caller floating-register allocation,,,false
