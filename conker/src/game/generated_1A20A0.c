@@ -69,7 +69,7 @@ typedef struct {
     f32 groundHeight, retainedCC;
     s16 sourceX, sourceY, sourceZ, outerRadius, innerRadius, verticalRange;
     s16 fieldDC, fieldDE;
-    f32 fieldE0, retainedE4;
+    f32 fieldE0, targetHeight;
     u32 surfaceFlags;
     u8 surfaceKind, variant;
     u16 sound;
@@ -96,6 +96,14 @@ extern VertexWave1517725C D_8008D0B0[];
 extern f32 D_800A71AC, D_800A71B0, D_800A71B4, D_800A71B8;
 f32 func_150AD78C(f32);
 f32 func_150AD780(f32);
+
+typedef struct { u8 retained00[0x14]; f32 x, y, z; } ActorPosition15176B84;
+extern ActorPosition15176B84 D_800CC2D0;
+extern u8 D_800DDF5C[], D_800DDF68[];
+typedef Gfx *ModelRow15176B84[5];
+extern Model15174BF0 D_800DDE84[];
+void func_1516972C(void *);
+s32 func_150AD960(s32, s32, s32, s32);
 
 /* Recovered routine and remaining placeholders for asm/1A20A0.s. */
 
@@ -409,8 +417,61 @@ s32 func_1517685C() {
     return 0;
 }
 
-s32 func_15176B84() {
-    return 0;
+/* Fade and dispatch an active particle, selecting its state-dependent model. */
+void func_15176B84(Particle15175390 *record) {
+    s32 opacity;
+    u32 remainder;
+    f32 height;
+    if (((ModelRow15176B84 *)D_800DDE80)[record->variant][0] == NULL || D_800DDF78[record->variant] == 0) {
+        func_1516972C(record);
+        return;
+    }
+    opacity = record->stateF0;
+    if (record->stateF1 == 0) {
+        if (D_800DDF5C[record->slot] == 0) {
+            record->stateF1 = 1;
+        } else if (opacity != 255) {
+            opacity = (u32)opacity + ((u32)D_800BE9E4 << 2);
+            if (opacity >= 256) { opacity = 255; }
+            record->stateF0 = opacity;
+        }
+    } else {
+        if (opacity == 0) {
+            func_1516972C(record);
+            return;
+        }
+        opacity = (u32)opacity - ((u32)D_800BE9E4 << 2);
+        if (opacity < 0) { opacity = 0; }
+        record->stateF0 = opacity;
+    }
+    D_800DDF68[record->variant] = 1;
+    switch (record->state91) {
+        case 0:
+            if (func_150AD960((s32)D_800CC2D0.x, (s32)D_800CC2D0.z,
+                             (s32)record->position[0], (s32)record->position[2]) < 200) {
+                record->state91 = 2;
+                /* Keep retail rounding before restoring the unsigned magnitude. */
+                remainder = (u32)func_150ADA20() % (u32)record->verticalRange;
+                height = (s32)remainder;
+                if ((s32)remainder < 0) { height += 4294967296.0f; }
+                record->targetHeight = height + record->sourceY;
+                record->model = D_800DDE88[record->variant].model;
+            } else {
+                record->model = D_800DDE84[record->variant].model;
+            }
+            break;
+        case 4:
+            if (record->position[1] < record->groundHeight) {
+                func_1516972C(record);
+                return;
+            }
+            /* fall through */
+        case 2:
+        case 3:
+        default:
+            func_15175958(record);
+            break;
+    }
 }
 
 /* Compose and scale the particle matrix, approach its surface shade, and draw. */
