@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2451](WORKING_NOTES/2451-game-common-particle-update-private-recovery-20261114.md): private `func_15175958` recovery emits **956 / 961 words**, frame **0xC0 / 0xC8**. **1,314 differential guest cases**, 867 visited retail words and five effective controls pass; all eight neighbors and 807 production inputs stay fixed. No installation or match credit. Total remains **4,493 / 5,515 (81.47%)**, **195** more to 85%. Next: original frame/lifetimes and complete qualification.
+
 [Note 2450](WORKING_NOTES/2450-game-particle-rise-idle-callback-guarded-match-20261114.md): `func_1517685C` now matches all **202 words** with **123 checked guards** and no inserted/omitted instructions. Guest/native, the authentic registry caller, both padders and strict-image gates pass. Owner **8 / 9 exact**. Game **3,820 / 4,842 (78.89%)**, total **4,493 / 5,515 (81.47%)**, zero drift; **195** more matches to 85%. Next: the final owner stub, 961-word `func_15175958`.
 
 [Note 2449](WORKING_NOTES/2449-game-particle-state-dispatcher-guarded-match-20261114.md): `func_15176B84` now matches all **155 words** with **32 checked guards**. Its explicit unsigned-height conversion preserves retail rounding in native32, superseding the private implicit-cast draft. Guest/native, four registry entries, both padders and strict-image gates pass. Owner **7 / 9 exact**. Game **3,819 / 4,842 (78.87%)**, total **4,492 / 5,515 (81.45%)**, zero drift; **196** more matches to 85%. Next: 202-word `func_1517685C`.
