@@ -1,5 +1,18 @@
 #include <ultra64.h>
 #include "structs.h"
+#include <math.h>
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+typedef struct { u8 retained00[0x10]; f32 offset; } SideParameters1519EF90;
+typedef struct {
+    u8 retained00[0x18];
+    struct127 *actor;
+    u8 retained1C[0x3C];
+    SideParameters1519EF90 parameters;
+} SideState1519EF90;
+extern f32 D_800A8CE0, D_800A8CE4;
+s32 func_15143E08(struct127 *);
+f32 func_151423D8(u8);
 
 extern s32 D_800BE9E4;
 
@@ -33,8 +46,36 @@ void func_1519F48C(u8 *arg0);
 void func_151A0928(u8 *arg0);
 void func_1516972C(u8 *arg0);
 
-s32 func_1519EF90() {
-    return 0;
+/* Query a side-offset point with a sampled-heading fallback. */
+s32 func_1519EF90(u8 *record, u8 mode, f32 *output) {
+    SideState1519EF90 *state = *(SideState1519EF90 **)record;
+    SideParameters1519EF90 *parameters = &state->parameters;
+    u8 *actor = (u8 *)state->actor;
+    f32 deltaX, deltaZ;
+    f32 tangentX, tangentZ;
+    f32 reciprocalLength;
+    f32 offset;
+    u8 heading;
+
+    if (*(void **)(actor + 0x1D4) == 0) return 0;
+    deltaX = *(f32 *)(actor + 0x14) - *(f32 *)(record + 0x20);
+    deltaZ = *(f32 *)(actor + 0x1C) - *(f32 *)(record + 0x24);
+    if (D_800A8CE0 < fabsf(deltaX) || D_800A8CE0 < fabsf(deltaZ)) {
+        reciprocalLength = 1.0f / sqrtf(deltaX * deltaX + deltaZ * deltaZ);
+        tangentX = deltaZ * reciprocalLength;
+        tangentZ = deltaX * reciprocalLength;
+    } else {
+        heading = func_15143E08((struct127 *)actor);
+        tangentX = func_151423D8(heading);
+        tangentZ = func_151423D8((u8)(heading - 0x40));
+    }
+    if (mode == 6) offset = parameters->offset;
+    else offset = -parameters->offset;
+    output[0] = *(f32 *)(actor + 0x14) + offset * tangentX;
+    output[2] = *(f32 *)(actor + 0x1C) - offset * tangentZ;
+    if (*(f32 *)(actor + 0x118) < D_800A8CE4) output[1] = *(f32 *)(actor + 0x18);
+    else output[1] = *(f32 *)(actor + 0x118);
+    return 1;
 }
 
 void func_1519F108(u8 *arg0) {
