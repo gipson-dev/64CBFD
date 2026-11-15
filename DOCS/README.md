@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2445](WORKING_NOTES/2445-game-configurable-particle-constructor-guarded-match-20261114.md): `func_15175390` now matches all **370 words** with **219 checked register/scheduling/CFG guards**. Native32, five caller windows, both padders and the strict linked-image audit pass. Owner **3 / 9 exact**. Game **3,815 / 4,842 (78.79%)**, total **4,488 / 5,515 (81.38%)**, zero drift; **200** more matches to 85%. Next: 101-word `func_151770C8`.
+
 [Note 2444](WORKING_NOTES/2444-game-configurable-particle-original-roles-and-normalization-20261114.md): private `func_15175390` now retains original saved roles/homes; its checked normalization matches **370 / 370 words** (raw **219 differences**). Three-stream behavior and local CFG proofs pass; no installation, guards or match credit. Total remains **4,487 / 5,515 (81.36%)**. Next: native32, callers, padders and linked-image qualification.
 
 [Note 2443](WORKING_NOTES/2443-game-configurable-particle-recovery-and-frame-fit-20261114.md): private `func_15175390` recovery has all 370 words and the retail 0xB8 frame, with **201 word differences**. Its 1,152 base cases, 63 directed cases and negative controls pass; no installation, guards or match credit. Total remains **4,487 / 5,515 (81.36%)**. Next: recover the shared divisor/Z saved-register lifetime.

@@ -26,7 +26,7 @@ extern u8 D_800A7170[];
 extern f32 D_800A7174;
 f32 func_15048FC8(struct17 *relative);
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
-u32 func_150ADA20(void);
+s32 func_150ADA20(void);
 u16 func_10010E78(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32); /* Full call-site words; narrowing occurs in the callee. */
 s32 func_1510F8D8(s32, s32, s32, u8 **);
 
@@ -56,6 +56,26 @@ extern void *D_800DDF14;
 void func_1510F800(s32 context);
 s32 func_150A3A70(s32 x, s32 z);
 void func_1516979C(struct102 *record);
+
+typedef struct {
+    u8 retained00[0x90];
+    u8 slot, state91;
+    s16 flags;
+    void *model;
+    f32 position[3];
+    s16 lifetime, mode;
+    f32 tilt, heading, fieldB0, fieldB4, angularRate, fieldBC, scale;
+    u32 retainedC4;
+    f32 groundHeight, retainedCC;
+    s16 sourceX, sourceY, sourceZ, outerRadius, innerRadius, verticalRange;
+    s16 fieldDC, fieldDE;
+    f32 fieldE0, retainedE4;
+    u32 surfaceFlags;
+    u8 surfaceKind, variant;
+    u16 sound;
+    u8 stateF0, stateF1, retainedF2[6];
+} Particle15175390;
+extern f32 D_800A7178;
 
 /* Recovered routine and remaining placeholders for asm/1A20A0.s. */
 
@@ -221,8 +241,144 @@ void func_15174FA4(s32 count, s32 slot, s32 x, s32 y, s32 z, s32 width,
     }
 }
 
-s32 func_15175390() {
-    return 0;
+void func_15175390(s32 count, s32 slot, s32 x, s32 y, s32 z,
+                   s32 outerRadius, s32 view, s32 verticalRange, s32 innerRadius,
+                   s32 flags, s32 baseType, s32 typeRange, s32 baseModel,
+                   s32 modelMask, s32 state, f32 baseScale, f32 scaleRange,
+                   s32 groundFlags) {
+    s32 i;
+    s32 variant;
+    s32 tilted;
+    s32 grounded;
+    s32 sampleZ; /* Divisor until the second remainder, then the world Z sample. */
+    s32 value; /* Signed samples, heading, then raw surface bits. */
+    s32 heading;
+    s32 spawnX;
+    s32 spawnY;
+    struct17 relative;
+    Particle15175390 *particle;
+    u8 *surface; /* A failed query can leave the retail word untouched. */
+    s32 towardView;
+
+    if ((flags & 0x40) && verticalRange <= 0) {
+        return;
+    }
+    towardView = flags & 0x10000;
+    if (towardView) {
+        relative.unk0 = (f32)x - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x2F8);
+        relative.unk4 = (f32)y - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x2FC);
+        relative.unk8 = (f32)z - *(f32 *)(D_800DBFF0 + (u32)view * 0x9A0 + 0x300);
+        heading = (s32)func_15048FC8(&relative);
+    }
+    i = 0;
+    if (count > 0) {
+        do {
+            if (typeRange != 0) {
+                variant = (u32)func_150ADA20() % (u32)typeRange;
+            } else {
+                variant = 0;
+            }
+            particle = func_15167A68((u32)baseType + variant, 0, 0xF8, 1, 0xFF, 1);
+            if (particle == NULL) {
+                break;
+            }
+            tilted = flags & 0x20000;
+            grounded = groundFlags & 1;
+            spawnY = y;
+            sampleZ = (u32)outerRadius - innerRadius;
+            value = func_150ADA20() % sampleZ;
+            spawnX = (u32)value + innerRadius;
+            if (value < 0) {
+                spawnX = (u32)value - innerRadius;
+            }
+            spawnX = (u32)spawnX + x;
+            value = func_150ADA20() % sampleZ;
+            if (value < 0) {
+                sampleZ = (u32)value - innerRadius;
+            } else {
+                sampleZ = (u32)value + innerRadius;
+            }
+            sampleZ = (u32)sampleZ + z;
+            if (state == 0 || grounded != 0) {
+                particle->groundHeight = (f32)func_1510F8D8(spawnX, y, sampleZ, &surface);
+            }
+            if (state == 0) {
+                spawnY = (s32)particle->groundHeight;
+            } else if (verticalRange != 0) {
+                spawnY = (u32)y + (u32)func_150ADA20() % (u32)verticalRange;
+            }
+            particle->slot = slot;
+            particle->flags = flags;
+            particle->state91 = state;
+            particle->position[0] = (f32)spawnX;
+            particle->position[1] = (f32)spawnY;
+            particle->position[2] = (f32)sampleZ;
+            particle->lifetime = (u32)func_150ADA20() % 15U + 10;
+            particle->mode = 0;
+            if (towardView) {
+                value = (func_150ADA20() & 31) + (u32)heading - 15;
+                if (value < 0) {
+                    value = value + 360;
+                } else if (value >= 360) {
+                    value = value - 360;
+                }
+            } else {
+                value = (u32)func_150ADA20() % 360U;
+            }
+            if (tilted) {
+                particle->tilt = (f32)((func_150ADA20() & 31) - 15);
+                particle->fieldB4 = -1.0f;
+            } else {
+                particle->tilt = 0.0f;
+                particle->fieldB4 = 0.0f;
+            }
+            particle->fieldB0 = 0.0f;
+            particle->heading = (f32)value;
+            particle->angularRate = (f32)((func_150ADA20() & 255) - 128) * D_800A7178;
+            particle->fieldBC = 0.0f;
+            particle->scale = ((f32)(s32)(func_150ADA20() & 65535) * 0.000030517578125f * scaleRange) + baseScale;
+            if (modelMask != -1) {
+                variant = 0;
+                if (modelMask != 0) {
+                    variant = func_150ADA20() & modelMask;
+                }
+            }
+            variant = (u32)variant + baseModel;
+            particle->model = D_800DDE88[variant].model;
+            particle->variant = variant;
+            particle->sourceX = x;
+            particle->sourceY = y;
+            particle->sourceZ = z;
+            particle->outerRadius = outerRadius;
+            particle->innerRadius = innerRadius;
+            particle->verticalRange = verticalRange;
+            particle->fieldDC = 0;
+            particle->fieldDE = 0;
+            particle->surfaceFlags = 0;
+            particle->fieldE0 = 0;
+            if (i == 0) {
+                if (baseType == 10) {
+                    particle->sound = func_10010E78(0, 0xA2, 0x7D00, 0, 0, 0, spawnX, spawnY, sampleZ, 1000, 4000);
+                }
+            } else {
+                particle->sound = 0;
+            }
+            if (grounded) {
+                particle->flags |= 0x80;
+                value = 0;
+                if (surface != NULL) {
+                    value = D_800DBE5C[(s32)((u32)surface - (u32)D_800DBE3C) / 12];
+                }
+                particle->surfaceFlags = value;
+                particle->surfaceKind = D_800A7170[((u32)value >> 5) & 3];
+            } else {
+                particle->surfaceKind = 0;
+            }
+            particle->stateF0 = 0;
+            particle->stateF1 = 0;
+            i++;
+        } while (i != count);
+    }
 }
 
 s32 func_15175958() {
