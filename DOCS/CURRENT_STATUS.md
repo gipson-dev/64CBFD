@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2458](WORKING_NOTES/2458-game-category-record-initializer-save-native-and-projection-20261115.md): private `func_150169A0` recovers the original **single S0 save / frame 0x58 / stack homes**. **686 guest cases**, **639 native32 cases per O0/O2/O3**, **48 caller cases** and a **68-instruction result-use proof** pass. Raw **481 / 477 words**; a 477-word projection agrees but independent normalization proof remains open. Uninstalled/uncredited; total stays **4,496 / 5,515 (81.52%)**, **192** more to 85%.
+
 [Note 2457](WORKING_NOTES/2457-game-category-record-initializer-private-recovery-20261115.md): private `func_150169A0` recovers the complete category/player record initializer at **476 / 477 words / frame 0x58**. **686 guest cases / two streams** and **48 authentic caller cases** pass; extra saved S1 and **457 word differences** remain. Uninstalled/uncredited; all 812 production inputs stay fixed. Total remains **4,496 / 5,515 (81.52%)**, **192** more to 85%. Next: original save lifetime and full layout.
 
 [Note 2456](WORKING_NOTES/2456-game-resource-cache-guarded-match-20261115.md): `func_15016850` now matches all **84 resource-cache words** with **27 checked guards / three derived instructions**. Original seven-register saves, private homes, retained loader output and live globals are qualified; native/caller/padder/strict-image gates pass. Owner **1 / 3 exact**. Total **4,496 / 5,515 (81.52%)**, Game **3,823 / 4,842 (78.95%)**, zero drift; **192** more to 85%. Next: 477-word parent `func_150169A0`.

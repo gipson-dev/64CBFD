@@ -132,7 +132,7 @@ remain fixed. Production ELF SHA-256 remains
 The accepted production match and its protected-data audit are Note 2456;
 this private recovery adds zero match credit.
 
-Sibling HEAD/status preservation: **HEAD `ddbdd16b53ce60b054fb6e11bf0649a41f48375a`, all **2,439 dirty paths** and status SHA-256 `a3b1d31058efd5c8483ee15ece0d00b39f54bdfce5b08a8c64838636db14e0fb` remain fixed**.
+Sibling HEAD remains `ddbdd16b53ce60b054fb6e11bf0649a41f48375a`, preserving all **2,439 dirty paths** and status SHA-256 `a3b1d31058efd5c8483ee15ece0d00b39f54bdfce5b08a8c64838636db14e0fb`.
 Scoped Graphify AST merge covers four new tools files, retaining all
 **61,188 old IDs**, zero loss: **61,188 nodes / 114,934 links**. This is
 not a full-corpus re-extraction. Routine Claude calls: zero. Tools commit
