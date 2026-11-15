@@ -33008,3 +33008,12 @@ game_EF410,func_150C3574,0x288,0xE7B0002C,0xE7B00030,-,-,Normalize state-24 acto
 game_EF410,func_150C3574,0x298,0xC7B0002C,0xC7B00030,-,-,Normalize state-24 actor private floating local homes,,,false
 game_EF410,func_150C3574,0x2F0,0xC7B20030,0xC7B20028,-,-,Normalize state-24 actor private floating local homes,,,false
 game_EF410,func_150C3994,0x134,0x46100482,0x46008482,-,-,Normalize state-19/20 constant multiply operand order,,,false
+game_EF410,func_150C3D5C,0x2FC,0xA3A900F4,0xA3A900EC,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x304,0xA3AA00F5,0xA3AA00ED,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x318,0xA7AB00F6,0xA7AB00EE,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x31C,0xA3A000F8,0xA3A000F0,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x330,0xAFAD00E8,0xAFAD00E0,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x344,0xAFAF00EC,0xAFAF00E4,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x358,0xAFA800F0,0xAFA800E8,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x394,0x27A400F4,0x27A400EC,-,-,Normalize exit descriptor/vector private homes,,,false
+game_EF410,func_150C3D5C,0x398,0x27A500E8,0x27A500E0,-,-,Normalize exit descriptor/vector private homes,,,false

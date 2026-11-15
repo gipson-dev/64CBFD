@@ -108,6 +108,20 @@ void func_15188810(u8 *, s32, s32);
 void func_150C1660(f32, f32, f32, u8);
 void func_1506AC8C(void *, s32, s32);
 
+extern f32 D_800A0338;
+s32 func_151EF040(s32, s32);
+void func_15171200(s32, s32, f32, f32, f32, f32, f32, f32,
+                   f32, s32, s32, f32, u8, s32);
+/* The current spray implementation accepts full-width coordinate words. */
+void func_151709B4(s32, s32, s32, s32, f32, u8, s32);
+void func_1516D99C(
+    s16, s16, s16, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8,
+    u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8,
+    s16, s16, s16, s16, u16, u8, u8, u8, u8, s16, u16, u16,
+    u8, u8, u8, u8, u8, s32, u8, u8, s32, s32);
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32,
+                         u8, u8, s32, u8, s32);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
@@ -120,7 +134,7 @@ void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C308C(u8 *);
 Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
-s32 func_150C3D5C();
+void func_150C3D5C(u8 *);
 /* End generated placeholder declarations. */
 
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C1F60.s. */
@@ -679,7 +693,46 @@ s32 func_150C3D48(s32 arg0) {
     return arg0 + 0xEDCBA988;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3D5C.s. */
-s32 func_150C3D5C() {
-    return 0;
+/* Submit the actor's exit effects and preserve the retail cartridge check. */
+void func_150C3D5C(u8 *actor) {
+    s32 cartridgeWord;
+    Header descriptor;
+    Header2 position;
+    s32 (*readWord)(s32, s32) = func_151EF040;
+
+    func_151B9BF0(47, 1,
+        (s16)(s32)*(f32 *)(actor + 0x14),
+        (s16)(s32)*(f32 *)(actor + 0x18),
+        (s16)(s32)*(f32 *)(actor + 0x1C),
+        1400, 1280, 800, 1200, 512, 512, 30, 1, 0, 255, 0);
+
+    cartridgeWord = 0xC23459B8;
+    readWord(func_150C3D48(cartridgeWord), (s32)&cartridgeWord);
+    if (cartridgeWord != 0x0330C820) {
+        /* Retail disables this entrypoint when the cartridge word differs. */
+        ((u32 *)&func_10004074)[0] = 0x03E00008;
+        ((u32 *)&func_10004074)[1] = 0;
+    }
+    func_15171200(3, 203, *(f32 *)(actor + 0x14),
+        *(f32 *)(actor + 0x18), *(f32 *)(actor + 0x1C),
+        10.0f, 1.0f, 2.0f, 60.0f, 3, 60, D_800A0338, 255, 0);
+    func_151709B4((s32)*(f32 *)(actor + 0x14),
+        (s32)(*(f32 *)(actor + 0x18) + 20.0f),
+        (s32)*(f32 *)(actor + 0x1C), 10, 2000.0f, 255, 0);
+    func_1516D99C(
+        (s16)(s32)*(f32 *)(actor + 0x14),
+        (s16)(s32)*(f32 *)(actor + 0x18),
+        (s16)(s32)*(f32 *)(actor + 0x1C),
+        13, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 255, 0, 0, 0,
+        20, 20, 2, 0, 0, 0, 0, 81, 81, 81, 81, 10, 1, 0, 255,
+        10, 1400, 400, 1, 1, 0, 1, 0, 0, 0, 0, 0, 255, 0);
+    descriptor.unk0 = 3;
+    descriptor.unk1 = -1;
+    descriptor.unk2 = (u32)func_150ADA20() % 11U + 10;
+    descriptor.unk4 = 0;
+    position.unk0 = (s32)*(f32 *)(actor + 0x14);
+    position.unk4 = (s32)*(f32 *)(actor + 0x18);
+    position.unk8 = (s32)*(f32 *)(actor + 0x1C);
+    func_151602C0(&descriptor, &position, (u32)func_150ADA20() % 52U + 40,
+                  255, 255, 90, 255, 0, 0, 255, 1);
 }
