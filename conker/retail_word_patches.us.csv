@@ -32950,3 +32950,16 @@ generated_43D00,func_15017114,0x4C,0x3C120000,0x26520000,R_MIPS_HI16:D_800D2104,
 generated_43D00,func_15017114,0x50,0x26520000,0xAE420000,R_MIPS_LO16:D_800D2104,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
 generated_43D00,func_15017114,0x54,0xAE420000,0x02009825,-,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
 generated_43D00,func_15017114,0x8C,0x02002825,0x02602825,-,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+game_44A90,func_15017640,0x4,0x3C030000,0x3C040000,R_MIPS_HI16:D_800D2438,R_MIPS_HI16:D_800D2428,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x8,0x3C040000,0x3C050000,R_MIPS_HI16:D_800D2428,R_MIPS_HI16:D_8009DCB4,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0xC,0x3C050000,0x3C060000,R_MIPS_HI16:D_8009DCB4,R_MIPS_HI16:D_800D2438,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x14,0x24A50000,0x24C60000,R_MIPS_LO16:D_8009DCB4,R_MIPS_LO16:D_800D2438,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x18,0x24840000,0x24A50000,R_MIPS_LO16:D_800D2428,R_MIPS_LO16:D_8009DCB4,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x1C,0x24630000,0x24840000,R_MIPS_LO16:D_800D2438,R_MIPS_LO16:D_800D2428,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x50,0xE4600000,0xE4C00000,-,-,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x54,0xE4600004,0xE4C00004,-,-,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x58,0xE4600008,0xE4C00008,-,-,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x68,0x3C030000,0x3C020000,R_MIPS_HI16:D_800D2410,R_MIPS_HI16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x6C,0x3C020000,0x3C030000,R_MIPS_HI16:D_800D2410,R_MIPS_HI16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x7C,0x24420000,0x24630018,R_MIPS_LO16:D_800D2410,R_MIPS_LO16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
+game_44A90,func_15017640,0x80,0x24630018,0x24420000,R_MIPS_LO16:D_800D2410,R_MIPS_LO16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
