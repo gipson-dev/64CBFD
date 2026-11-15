@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2457](WORKING_NOTES/2457-game-category-record-initializer-private-recovery-20261115.md): private `func_150169A0` recovers the complete category/player record initializer at **476 / 477 words / frame 0x58**. **686 guest cases / two streams** and **48 authentic caller cases** pass; extra saved S1 and **457 word differences** remain. Uninstalled/uncredited; all 812 production inputs stay fixed. Total remains **4,496 / 5,515 (81.52%)**, **192** more to 85%. Next: original save lifetime and full layout.
+
 [Note 2456](WORKING_NOTES/2456-game-resource-cache-guarded-match-20261115.md): `func_15016850` now matches all **84 resource-cache words** with **27 checked guards / three derived instructions**. Original seven-register saves, private homes, retained loader output and live globals are qualified; native/caller/padder/strict-image gates pass. Owner **1 / 3 exact**. Total **4,496 / 5,515 (81.52%)**, Game **3,823 / 4,842 (78.95%)**, zero drift; **192** more to 85%. Next: 477-word parent `func_150169A0`.
 
 [Note 2455](WORKING_NOTES/2455-game-resource-cache-private-recovery-20261114.md): private `func_15016850` recovers **84 words / frame 0x60 / handle home SP+0x50**. **1,440 guest cases**, **576 native32 cases per O0/O2/O3** and the original caller window pass. Still **76 word differences / extra saved S7**, uninstalled and uncredited. All 812 production inputs stay fixed. Total remains **4,495 / 5,515 (81.50%)**, **193** more to 85%. Next: seven-register lifetime and original loop-bound lowering.
