@@ -83,6 +83,11 @@ extern Gfx *D_800DDE80[];
 s32 func_1510AEE0(void *, f32, f32, f32, f32, f32, f32, f32, f32 *, f32 *);
 void func_150A8050(f32 [4][4], f32, f32, f32);
 
+extern s32 D_800DDF78[], D_800BE9E4;
+extern Gfx *D_800DDE8C[];
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+
 /* Recovered routine and remaining placeholders for asm/1A20A0.s. */
 
 /* Create jittered particles with one initial sound and optional ground classification. */
@@ -399,8 +404,55 @@ s32 func_15176B84() {
     return 0;
 }
 
-s32 func_15176DF0() {
-    return 0;
+/* Compose and scale the particle matrix, approach its surface shade, and draw. */
+Gfx *func_15176DF0(Gfx *commands, Particle15175390 *record, s16 view) {
+    u8 sync;
+    f32 tilt[4][4];
+    f32 matrix[4][4];
+    s32 value;
+    s32 target;
+    s32 color[3];
+    if (D_800DDE80[record->variant * 5] == NULL || D_800DDF78[record->variant] == 0) {
+        return commands;
+    }
+    func_150A8050(matrix, 0.0f, record->heading, 0.0f);
+    func_150A8050(tilt, record->tilt, 0.0f, record->fieldB0);
+    func_150A7A48(tilt, matrix, matrix);
+    matrix[3][0] = record->position[0];
+    matrix[3][1] = record->position[1];
+    matrix[3][2] = record->position[2];
+    matrix[0][0] *= record->scale;
+    matrix[0][1] *= record->scale;
+    matrix[0][2] *= record->scale;
+    matrix[1][0] *= record->scale;
+    matrix[1][1] *= record->scale;
+    matrix[1][2] *= record->scale;
+    matrix[2][0] *= record->scale;
+    matrix[2][1] *= record->scale;
+    matrix[2][2] *= record->scale;
+    guMtxF2L(matrix, (Mtx *)((u8 *)record + D_800BE9C0 * 64 + 16));
+    gSPMatrix(commands++, (u8 *)record + D_800BE9C0 * 64 + 16,
+              G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPSegment(commands++, 1, record->model);
+    gDPPipeSync(commands++);
+    value = record->surfaceKind;
+    target = D_800A7170[(record->surfaceFlags >> 5) & 3];
+    if (value != target) {
+        if (value < target) {
+            value = (u32)value + ((u32)D_800BE9E4 << 2);
+            if (value > target) { value = target; }
+        } else {
+            value = (u32)value - ((u32)D_800BE9E4 << 2);
+            if (value < 0) { value = 0; }
+        }
+        record->surfaceKind = value;
+    }
+    color[0] = color[1] = color[2] = value;
+    sync = 0;
+    commands = func_15142FBC(commands, 0x82CA0, 0x504A50, &sync);
+    gDPSetEnvColor(commands++, color[0], color[1], color[2], record->stateF0);
+    gSPDisplayList(commands++, D_800DDE8C[record->variant * 5]);
+    return commands;
 }
 
 /* Cull the particle, build its state-zero matrix, and submit its model. */
