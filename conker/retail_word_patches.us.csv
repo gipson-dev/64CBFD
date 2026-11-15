@@ -32940,3 +32940,13 @@ generated_43D00,func_150169A0,0x708,0x5720000C,0x55E0000C,-,-,Restore proved ini
 generated_43D00,func_150169A0,0x720,0x8E0E0000,0x8E180000,-,-,Restore proved initializer register lifetimes and ordered loop schedule,,,false
 generated_43D00,func_150169A0,0x72C,0x01C3C021,0x0303C821,-,-,Restore proved initializer register lifetimes and ordered loop schedule,,,false
 generated_43D00,func_150169A0,0x730,0xA3020028,0xA3220028,-,-,Restore proved initializer register lifetimes and ordered loop schedule,,,false
+generated_43D00,func_15017114,0x24,0x3C020000,0x3C100000,R_MIPS_HI16:D_800D2100,R_MIPS_HI16:D_800D2100,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x28,0x90420000,0x92100000,R_MIPS_LO16:D_800D2100,R_MIPS_LO16:D_800D2100,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x34,0x00028880,0x00108880,-,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x40,0x00003825,0x0C000000,-,R_MIPS_26:allocate_memory,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x44,0x0C000000,0x00003825,R_MIPS_26:allocate_memory,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x48,0x00408025,0x3C120000,-,R_MIPS_HI16:D_800D2104,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x4C,0x3C120000,0x26520000,R_MIPS_HI16:D_800D2104,R_MIPS_LO16:D_800D2104,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x50,0x26520000,0xAE420000,R_MIPS_LO16:D_800D2104,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x54,0xAE420000,0x02009825,-,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false
+generated_43D00,func_15017114,0x8C,0x02002825,0x02602825,-,-,Preserve proved captured-byte-count lifetime and first-allocation delay schedule,,,false

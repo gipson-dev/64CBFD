@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/43D00.s. */
+/* Category records, resource caching, and per-record payload tables. */
 
 #include "structs.h"
 extern u8 D_800BE590, D_800D2100;
@@ -72,7 +72,7 @@ s32 func_150859AC(s16 slot, s16 field);
 s32 func_15083DA0(void);
 s32 func_1508295C(s32 category, u8 *mode, s32 enabled);
 void func_15172CA8(s32 mode);
-s32 func_15017114();
+void func_15017114(s32 category);
 #define RECORD150169A0(o) (*(Record150169A0 *)((u8 *)D_800D20FC + (o)))
 
 /* Load category records, apply player settings, then fill cache and identities. */
@@ -211,6 +211,37 @@ void func_150169A0(s32 category) {
 }
 
 
-s32 func_15017114() {
-    return 0;
+typedef struct RecordPayloadMetadata15017114 {
+    u32 offset, status;
+} RecordPayloadMetadata15017114;
+extern u8 **D_800D2104;
+extern u8 *D_800D2108;
+
+/* Initialize player payloads and resolve appended records' relative metadata. */
+void func_15017114(s32 category) {
+    u8 count;
+    u8 *metadata;
+    s32 index;
+    u8 *playerPayload;
+
+    metadata = 0;
+    count = D_800D2100;
+    D_800D2104 = allocate_memory(count * 4, 1, 0, 0);
+    D_800D2108 = allocate_memory(count, 1, 0, 0);
+    bzero(D_800D2104, count * 4);
+    bzero(D_800D2108, count);
+    for (index = 0; index < D_8008FD8C; index++) {
+        playerPayload = allocate_memory(16, 1, 2, 0);
+        D_800D2104[index] = playerPayload;
+        bzero(D_800D2104[index], 16);
+        D_800D2108[index] = 2;
+    }
+    if (func_1502B7F0((void **)&metadata, 2, 16, category)) {
+        for (index = D_800D2101; index < D_800D2100; index++) {
+            if (((RecordPayloadMetadata15017114 *)metadata)[index - D_800D2101].offset != 0) {
+                D_800D2108[index] = ((RecordPayloadMetadata15017114 *)metadata)[index - D_800D2101].status;
+                D_800D2104[index] = metadata + ((RecordPayloadMetadata15017114 *)metadata)[index - D_800D2101].offset;
+            }
+        }
+    }
 }
