@@ -71,6 +71,23 @@ void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
                     f32, f32, u8, s32, u8, u8, u8, s32);
 
+typedef struct {
+    f32 x, y, z;
+    f32 size0, delta0, size1, delta1, delta2;
+    s16 code0, code1, duration;
+    u8 firstColor[3], alpha;
+    u16 flags2A;
+    u8 secondColor[3], enabled;
+    s32 zero30;
+    u8 kind34;
+    u8 reserved35[3];
+    f32 zero38, value3C, value40, value44;
+} RadialEffectPacket150C29F0;
+
+extern f32 D_800A02A0, D_800A02A4, D_800A02A8, D_800A02AC;
+extern f32 D_800A02B0, D_800A02B4, D_800A02B8, D_800A02BC;
+void *func_15149550(RadialEffectPacket150C29F0 *, u8, u8, s32, u8, s32);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
@@ -80,7 +97,6 @@ s32 func_150C2700(
         s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
         s32 unused10, s32 unused11, s32 unused12, s32 unused13, u8 channel);
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
-s32 func_150C29F0();
 s32 func_150C2C00();
 s32 func_150C308C(u8 *);
 Gfx *func_150C3160(Gfx *, u8 *);
@@ -297,9 +313,54 @@ void func_150C2898(f32 x, f32 y, f32 z, f32 dx, f32 dy, f32 dz, u8 *owner) {
         second * 119.0f + 129.0f, 0, 1.0f, 1.0f,
         1, 0, 1, 0, owner[0xC], owner[1]);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C29F0.s. */
-s32 func_150C29F0() {
-    return 0;
+/* Submit a randomized radial effect and refresh the owner's timer. */
+void func_150C29F0(u8 *volatile owner) {
+    u8 *position;
+    RadialEffectPacket150C29F0 packet;
+    f32 firstScale, secondScale;
+    u8 angle;
+    f32 directionX, directionZ, radius;
+
+    angle = func_150ADA20();
+    directionX = func_151423D8((u8)(angle - 64));
+    directionZ = func_151423D8(angle);
+    radius = func_150ADA68();
+    position = owner;
+    radius = radius * *(f32 *)(position + 0x30);
+    packet.code0 = 0x6231;
+    packet.code1 = 0x1A4D;
+    packet.firstColor[0] = 0;
+    packet.firstColor[1] = 0;
+    packet.firstColor[2] = 0;
+    packet.alpha = 255;
+    packet.secondColor[0] = 255;
+    packet.secondColor[1] = 255;
+    packet.zero30 = 0;
+    packet.flags2A = 1;
+    packet.secondColor[2] = 0;
+    packet.enabled = 1;
+    position += 0x28;
+    packet.duration = (u32)func_150ADA20() % 201U + 100;
+    packet.kind34 = 15;
+    packet.zero38 = 0.0f;
+    packet.value40 = D_800A02A0;
+    packet.value44 = D_800A02A4;
+    packet.x = *(f32 *)position + radius * directionX;
+    packet.y = *(f32 *)(position + 12);
+    packet.z = *(f32 *)(position + 4) + radius * directionZ;
+    packet.value3C = D_800A02A8;
+    firstScale = func_150ADA68();
+    firstScale = firstScale * 0.5f + 1.0f;
+    secondScale = func_150ADA68();
+    secondScale = secondScale * 0.5f + 1.0f;
+    packet.size0 = D_800A02AC * firstScale;
+    packet.size1 = D_800A02B0 * firstScale;
+    packet.delta0 = D_800A02B4 * secondScale;
+    packet.delta1 = D_800A02B8 * secondScale;
+    packet.delta2 = D_800A02BC * secondScale;
+    position = owner;
+    func_15149550(&packet, 10, 1, 0, position[0xC], position[1]);
+    *(s16 *)(owner + 0xE) = (u32)func_150ADA20() % 51U + 25;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2C00.s. */
 s32 func_150C2C00() {

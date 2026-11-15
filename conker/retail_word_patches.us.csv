@@ -32963,3 +32963,14 @@ game_44A90,func_15017640,0x68,0x3C030000,0x3C020000,R_MIPS_HI16:D_800D2410,R_MIP
 game_44A90,func_15017640,0x6C,0x3C020000,0x3C030000,R_MIPS_HI16:D_800D2410,R_MIPS_HI16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
 game_44A90,func_15017640,0x7C,0x24420000,0x24630018,R_MIPS_LO16:D_800D2410,R_MIPS_LO16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
 game_44A90,func_15017640,0x80,0x24630018,0x24420000,R_MIPS_LO16:D_800D2410,R_MIPS_LO16:D_800D2410,Preserve proved motion-vector register and independent address schedule,,,false
+game_EF410,func_150C29F0,0x018,0x2484FFC0,0xA3A40033,-,-,Normalize radial effect byte-home schedule,,,false
+game_EF410,func_150C29F0,0x01C,0x308E00FF,0x2484FFC0,-,-,Normalize radial effect byte-home schedule,,,false
+game_EF410,func_150C29F0,0x020,0xA3A20033,0x308E00FF,-,-,Normalize radial effect byte-home schedule,,,false
+game_EF410,func_150C29F0,0x058,0x46002082,0x46040082,-,-,Normalize radial effect source-ordered radius multiply,,,false
+game_EF410,func_150C29F0,0x06C,0xA7AF005C,0xA7B8005E,-,-,Normalize radial effect disjoint halfword-store schedule,,,false
+game_EF410,func_150C29F0,0x070,0xA7B8005E,0xA7AF005C,-,-,Normalize radial effect disjoint halfword-store schedule,,,false
+game_EF410,func_150C29F0,0x09C,0xAFA30084,0xAFA30020,-,-,Normalize radial effect isolated private pointer home,,,false
+game_EF410,func_150C29F0,0x0D0,0x8FA30084,0x8FA30020,-,-,Normalize radial effect isolated private pointer home,,,false
+game_EF410,func_150C29F0,0x1A0,0x8FA30088,0x8FA20088,-,-,Normalize radial effect closed owner temporary,,,false
+game_EF410,func_150C29F0,0x1CC,0x906F000C,0x904F000C,-,-,Normalize radial effect closed owner temporary,,,false
+game_EF410,func_150C29F0,0x1D4,0x90780001,0x90580001,-,-,Normalize radial effect closed owner temporary,,,false
