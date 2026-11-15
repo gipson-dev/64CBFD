@@ -187,3 +187,42 @@ Its complete primary routine is inspected: qualify model/control gates,
 visibility and alpha transitions, state dispatch, distance/random paths and
 the existing delegated update boundary. Preserve the remaining unrecovered
 961-word `func_15175958` and 202-word `func_1517685C` until separately qualified.
+
+## Private next-target screen
+
+After the wave commit, the complete semantic draft of `func_15176B84` emits
+**155 / 155 retail words directly from C**, with its original **0x20-byte
+frame**, **24 named binding sites** and all eight raw neighbors unchanged.
+There are **no proposed guards**. The first flat-table draft already had the
+correct length/frame but 57 register-allocation differences. Expressing the
+first model table as five-pointer rows and the second as 20-byte model records
+recovers the original indexing and removes all 57 differences. The private
+record field at E4 is named `targetHeight`; production still has its old view.
+
+Private raw text SHA-256:
+`8c937935375e6cd5bafdb998dd3416c84366dc51477066c9295bf71a0fc0661d`.
+Complete candidate-owner SHA-256:
+`ae670083447f9bfce809fef96848c9e584148532f7d8269f5c87cfd0d32ab686`.
+The ignored `conker/build/game-particle-state-15176b84-screen/` contains
+`screen.py`, `rows.py`, `select.py`, `candidate.json`, `selected.c`, both
+compiled owners and a frozen **807-input** production baseline. These are
+local analysis artifacts, not installed source or a published qualification
+tool. Replaying `select.py` under the prepared WSL/PYTHONPATH environment
+rechecks the direct words and eight raw neighbors.
+
+The ROM contains **no direct JAL** to this update callback and four authentic
+registry references, at ROM 0x2303AC/0x2303E0/0x230414/0x230448, VA
+0x8008B8EC/0x8008B920/0x8008B954/0x8008B988. The update dispatcher's five-word
+window at 0x15167164..0x15167178 is the next caller boundary to qualify.
+The delegated 961-word updater remains an opaque, uncredited boundary.
+
+Do not install or count this candidate yet. Remaining gates are independent
+guest/native semantics and effective controls, including alpha wrap/clamps,
+all state paths, late provider mutations, typed-row indexing, signed-halfword
+moduli and unsigned-remainder conversion, plus the guest zero-divisor boundary;
+the four registry entries and real dispatcher; both complete-owner padders
+and independent rebases; actual Make and strict whole-image prediction;
+production rebuild/audit/recount; sibling replay, documentation and Graphify.
+Production remains **4,491 / 5,515 (81.43%)**, with **197** matches still
+needed for 85%, and the production ELF hash above is unchanged. No source,
+guard, conversion row, tools pin or matching credit changes in this screen.
