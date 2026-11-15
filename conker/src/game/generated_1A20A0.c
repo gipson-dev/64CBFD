@@ -88,6 +88,15 @@ extern Gfx *D_800DDE8C[];
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
 
+typedef struct {
+    u8 retained00[0x18];
+    f32 wave, speed, retained20, phase, amplitude, retained2C, outerRadius, innerRadius;
+} VertexWave1517725C;
+extern VertexWave1517725C D_8008D0B0[];
+extern f32 D_800A71AC, D_800A71B0, D_800A71B4, D_800A71B8;
+f32 func_150AD78C(f32);
+f32 func_150AD780(f32);
+
 /* Recovered routine and remaining placeholders for asm/1A20A0.s. */
 
 /* Create jittered particles with one initial sound and optional ground classification. */
@@ -486,6 +495,41 @@ Gfx *func_151770C8(Gfx *commands, Particle15175390 *record, s16 view) {
     return commands;
 }
 
-s32 func_1517725C() {
-    return 0;
+/* Animate the selected model's paired vertex arcs and advance its phase. */
+void func_1517725C(u8 slot) {
+    VertexWave1517725C *state;
+    Vtx *vertices;
+    f32 angle;
+    f32 sine;
+    f32 cosine;
+    s32 x;
+    s32 y;
+    state = &D_8008D0B0[slot];
+    vertices = D_800DDE88[slot].model;
+    state->wave = func_150AD78C(state->phase * D_800A71AC) * state->amplitude;
+    angle = state->wave * D_800A71B0;
+    sine = func_150AD78C(angle);
+    cosine = func_150AD780(angle);
+    x = (s32)(state->outerRadius * cosine);
+    y = (s32)(state->outerRadius * sine);
+    vertices[10].v.ob[0] = -x;
+    vertices[11].v.ob[0] = -x;
+    vertices[17].v.ob[0] = x;
+    vertices[18].v.ob[0] = x;
+    vertices[17].v.ob[1] = y;
+    vertices[18].v.ob[1] = y;
+    vertices[10].v.ob[1] = y;
+    vertices[11].v.ob[1] = y;
+    state->wave = func_150AD78C((state->phase - 30.0f) * D_800A71B4) * state->amplitude;
+    angle = state->wave * D_800A71B8;
+    sine = func_150AD78C(angle);
+    cosine = func_150AD780(angle);
+    x = (s32)(state->innerRadius * cosine);
+    y = (s32)(state->innerRadius * sine);
+    vertices[14].v.ob[0] = -x;
+    vertices[19].v.ob[0] = x;
+    vertices[14].v.ob[1] = y;
+    vertices[19].v.ob[1] = y;
+    state->phase += state->speed;
+    if (state->phase >= 360.0f) { state->phase -= 360.0f; }
 }

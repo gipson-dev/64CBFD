@@ -32272,3 +32272,36 @@ generated_1A20A0,func_15176DF0,0x2B0,0x0009C080,0x0019C880,-,-,Restore particle 
 generated_1A20A0,func_15176DF0,0x2B4,0x01585021,0x01F97821,-,-,Restore particle material private colors sync home temporary allocation and folded blue copy,,,false
 generated_1A20A0,func_15176DF0,0x2B8,0x8D4A0000,0x8DEF0000,R_MIPS_LO16:D_800DDE8C,R_MIPS_LO16:D_800DDE8C,Restore particle material private colors sync home temporary allocation and folded blue copy,,,false
 generated_1A20A0,func_15176DF0,0x2BC,0xAC4AFFFC,0xAC4FFFFC,-,-,Restore particle material private colors sync home temporary allocation and folded blue copy,,,false
+generated_1A20A0,func_1517725C,0x10,0xAFBF001C,0xAFBF0024,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x14,0xAFB10018,0xAFB10020,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x18,0xAFB00014,0xAFB0001C,-,-,Restore model wave saved float lifetime sine home and temporary allocation,0xF7B40010,-,false
+generated_1A20A0,func_1517725C,0x74,0x460A1302,0x460A1502,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x7C,0xE7AC0024,0x4600A306,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x80,0xC7AC0024,0xE7A00028,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x88,0xE7A00020,0x4600A306,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x90,0xC7A40020,0xC7A40028,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xB4,0x44039000,0x440A9000,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xB8,0x44024000,0x440D4000,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xBC,0x00032023,0x000A2023,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xC8,0xA6230110,0xA62A0110,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xCC,0xA6230120,0xA62A0120,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xD0,0xA6220112,0xA62D0112,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xD4,0xA6220122,0xA62D0122,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xD8,0xA62200A2,0xA62D00A2,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0xDC,0xA62200B2,0xA62D00B2,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x10C,0x46081302,0x46081502,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x114,0xE7AC0024,0x4600A306,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x118,0xC7AC0024,0xE7A00028,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x120,0xE7A00020,0x4600A306,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x128,0xC7B20020,0xC7B20028,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x144,0x44038000,0x44188000,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x148,0x44023000,0x44093000,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x14C,0x00036023,0x00185023,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x150,0xA62C00E0,0xA62A00E0,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x154,0xA6230130,0xA6380130,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x158,0xA62200E2,0xA62900E2,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x15C,0xA6220132,0xA6290132,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x180,0x8FBF001C,0x8FBF0024,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x18C,0x8FBF001C,0x8FBF0024,-,-,Restore model wave saved float lifetime sine home and temporary allocation,0xD7B40010,-,false
+generated_1A20A0,func_1517725C,0x190,0x8FB00014,0x8FB0001C,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false
+generated_1A20A0,func_1517725C,0x194,0x8FB10018,0x8FB10020,-,-,Restore model wave saved float lifetime sine home and temporary allocation,,,false

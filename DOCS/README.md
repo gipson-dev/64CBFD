@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2448](WORKING_NOTES/2448-game-model-vertex-wave-guarded-match-20261114.md): `func_1517725C` now matches all **106 words** with **33 checked guard rows**, including the restored floating save/restore pair; raw C emits 104 words. Native32, the authentic slot-7 caller, both padders and strict-image gates pass. Owner **6 / 9 exact**. Game **3,818 / 4,842 (78.85%)**, total **4,491 / 5,515 (81.43%)**, zero drift; **197** more matches to 85%. Next: 155-word `func_15176B84`.
+
 [Note 2447](WORKING_NOTES/2447-game-particle-material-renderer-guarded-match-20261114.md): `func_15176DF0` now matches all **182 words** with **75 checked guard rows**, including one restored register copy; raw C emits 181 words. Native32, eight registry slots, the connected display callback, both padders and strict-image gates pass. Owner **5 / 9 exact**. Game **3,817 / 4,842 (78.83%)**, total **4,490 / 5,515 (81.41%)**, zero drift; **198** more matches to 85%. Next: 106-word `func_1517725C`.
 
 [Note 2446](WORKING_NOTES/2446-game-particle-display-callback-guarded-match-20261114.md): `func_151770C8` now matches all **101 words** with **four independent cursor-scheduling guards** and its original frame/homes. Native32, registry callback, alias/prefix, both-padder and strict-image gates pass. Owner **4 / 9 exact**. Game **3,816 / 4,842 (78.81%)**, total **4,489 / 5,515 (81.40%)**, zero drift; **199** more matches to 85%. Next: delegated renderer `func_15176DF0`.
