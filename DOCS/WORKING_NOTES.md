@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2450](WORKING_NOTES/2450-game-particle-rise-idle-callback-guarded-match-20261114.md): `func_1517685C` now matches all **202 words** with **123 checked guards** and no inserted/omitted instructions. Guest/native, the authentic registry caller, both padders and strict-image gates pass. Owner **8 / 9 exact**. Game **3,820 / 4,842 (78.89%)**, total **4,493 / 5,515 (81.47%)**, zero drift; **195** more matches to 85%. Next: the final owner stub, 961-word `func_15175958`.
+
 [Note 2449](WORKING_NOTES/2449-game-particle-state-dispatcher-guarded-match-20261114.md): `func_15176B84` now matches all **155 words** with **32 checked guards**. Its explicit unsigned-height conversion preserves retail rounding in native32, superseding the private implicit-cast draft. Guest/native, four registry entries, both padders and strict-image gates pass. Owner **7 / 9 exact**. Game **3,819 / 4,842 (78.87%)**, total **4,492 / 5,515 (81.45%)**, zero drift; **196** more matches to 85%. Next: 202-word `func_1517685C`.
 
 [Note 2448](WORKING_NOTES/2448-game-model-vertex-wave-guarded-match-20261114.md): `func_1517725C` now matches all **106 words** with **33 checked guard rows**, including the restored floating save/restore pair; raw C emits 104 words. Native32, the authentic slot-7 caller, both padders and strict-image gates pass. Owner **6 / 9 exact**. Game **3,818 / 4,842 (78.85%)**, total **4,491 / 5,515 (81.43%)**, zero drift; **197** more matches to 85%. Next: qualify the private **155-word direct-C candidate** for `func_15176B84`; it is not installed or credited.
@@ -466,9 +468,9 @@
 
 [Note 2216](WORKING_NOTES/2216-game-position-sound-direct-match-20261109.md): `func_150F20F0` restores the quartic-position sound and wrapping byte cooldown: 80 direct C words, frame 0x58, no guards. Explicitly staging the last RNG fixes an argument-order difference exposed by native retained-output tests while preserving all retail words. The complete callback, spatial/audio wrappers and 26-record native domain are qualified. Strict image: 339 changed bytes, zero exclusions, three named metadata cycles. Total **4,285 / 5,513 (77.73%)**, Game **3,612 / 4,840 (74.63%)**, zero drift; **126** more to 80%. Next queue: `func_15128540` (uncredited).
 
-[Note 2215](WORKING_NOTES/2215-game-attachment-effect-direct-match-20261109.md): `func_150EEE00` restores the attachment effect: 80 direct C words, frame 0x60, no guards. The helper’s four-argument placeholder ABI changes explicitly and remains uncredited; all 42 other owner functions stay fixed. The original dispatcher/caller, four-entry native domain, and legacy extra-argument boundary are documented. Strict image: 313 changed bytes, zero exclusions, two named metadata cycles. Total **4,284 / 5,513 (77.71%)**, Game **3,611 / 4,840 (74.61%)**, zero drift; **127** more to 80%. Next queue: `func_150F20F0` (uncredited).
+[Note 2215](WORKING_NOTES/2215-game-attachment-effect-direct-match-20261109.md): `func_150EEE00` restores the attachment effect: 80 direct C words, frame 0x60, no guards. The helperâ€™s four-argument placeholder ABI changes explicitly and remains uncredited; all 42 other owner functions stay fixed. The original dispatcher/caller, four-entry native domain, and legacy extra-argument boundary are documented. Strict image: 313 changed bytes, zero exclusions, two named metadata cycles. Total **4,284 / 5,513 (77.71%)**, Game **3,611 / 4,840 (74.61%)**, zero drift; **127** more to 80%. Next queue: `func_150F20F0` (uncredited).
 
-[Note 2214](WORKING_NOTES/2214-game-attachment-position-direct-match-20261109.md): `func_150D88E0` restores attachment offset selection and matrix transform: 80 direct C words, frame 0x40, no guards. All selector bytes match the literal N64 build; native C checks cover defined selectors 3–6, while the unrestricted caller and original uninitialized default path are documented. Strict image: 247 changed bytes, zero exclusions. Total **4,283 / 5,513 (77.69%)**, Game **3,610 / 4,840 (74.59%)**, zero drift; **128** more to 80%. Next queue: `func_150EEE00` (uncredited).
+[Note 2214](WORKING_NOTES/2214-game-attachment-position-direct-match-20261109.md): `func_150D88E0` restores attachment offset selection and matrix transform: 80 direct C words, frame 0x40, no guards. All selector bytes match the literal N64 build; native C checks cover defined selectors 3â€“6, while the unrestricted caller and original uninitialized default path are documented. Strict image: 247 changed bytes, zero exclusions. Total **4,283 / 5,513 (77.69%)**, Game **3,610 / 4,840 (74.59%)**, zero drift; **128** more to 80%. Next queue: `func_150EEE00` (uncredited).
 
 [Note 2213](WORKING_NOTES/2213-game-script-actor-scalars-direct-match-20261109.md): `func_150B2340` restores query-selected actor scalars and status flags: 79 direct C words plus one existing padding NOP, frame 0x28, no guards. Its integer callback ABI, full 48-entry table, original variadic packet dispatch, native struct108 state and actual five-command owner recipe are qualified. Strict image: 255 changed bytes, zero exclusions. Total **4,282 / 5,513 (77.67%)**, Game **3,609 / 4,840 (74.57%)**, zero drift; **129** more to 80%. Next: `func_150D88E0` (uncredited).
 
@@ -1382,7 +1384,7 @@
 
 2026-10-27:
 
-**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
+**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcherâ€™s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
@@ -15497,8 +15499,8 @@ Its map-file parser tried to skip jump-table-target local labels
 it never matched anything (missing the leading `.`, and written for
 unmodified real-address labels this project's remapped `0x10`/`0x15`/
 `0x16xxxxxx` addressing never produces anyway). Fixed to
-`.startswith(".L")` and regenerated: **`game` 6915→5313 total functions,
-`init` 547→538, `debugger` unaffected (172/182, was already clean)** -
+`.startswith(".L")` and regenerated: **`game` 6915â†’5313 total functions,
+`init` 547â†’538, `debugger` unaffected (172/182, was already clean)** -
 converted counts unchanged (1152/232/172), only the denominators got more
 honest. This supersedes the manual grep-based correction from earlier the
 same day (still useful as a spot-check method, no longer needed as a
@@ -15547,7 +15549,7 @@ a per-file `-mips3` override plus `--no-warn-mismatch` on the linker (ISA
 info in ELF `e_flags` alone, not a real 32-vs-64-bit ABI conflict despns
 what the error text implies) - see Session log, both are reusable for any
 other 64-bit function found later. Also tried and **reverted** converting
-a whole raw `.s` file (`asm/50D80.s` → `c` type) to reach one trivial
+a whole raw `.s` file (`asm/50D80.s` â†’ `c` type) to reach one trivial
 function inside it - broke the link with the exact jump-table
 `.L`-label issue already documented from the "Link-time blocker" fix
 (different jlabel set, same root cause) - don't retry this without
@@ -15572,7 +15574,7 @@ skip it. **Unexpected big win:** converting those 2 functions fixed a
 pre-existing symbol-address-placement bug affecting several `D_1600xxxx`
 globals in `debugger/debugger.c`, which was silently blocking byte-matches
 for *other, unrelated, already-converted* functions in the same file -
-debugger's byte-exact rate jumped 8.82%→74.42% (15→128 of 172) from that
+debugger's byte-exact rate jumped 8.82%â†’74.42% (15â†’128 of 172) from that
 one fix, not from the 2 conversions themselves being byte-perfect (they
 aren't, see Session log). 10 raw functions remain in debugger (1 of which,
 `func_16003650`, will never convert); `init` has **306** real raw
@@ -15597,7 +15599,7 @@ with `asm_eu/*.s.o` object paths, breaking the `us` link
 length, misclassifying 56 already-byte-exact functions project-wide as
 "diff" just because retail's declared symbol length includes a few
 trailing inter-function alignment nops. Fixed (see PROJECT.md's
-"2026-07-15 correction" note) - init jumped 86.64%→96.12% with zero
+"2026-07-15 correction" note) - init jumped 86.64%â†’96.12% with zero
 source changes. Of init's remaining 9 non-exact: 4 are blocked on
 not-yet-matched `game`-segment callees (self-resolving), 4 are NOT bugs
 in those functions - a rodata float-constant-pool address drift
@@ -15613,7 +15615,7 @@ present; `us`/`eu` extraction artifacts were intact) alongside a set of
 untracked zero-byte `conker/core.*` files - looks like an unclean
 crash/restart wiped those two root baseroms without touching anything
 else. `rom backup/` currently holds only 5 files (no `initial ROMs/`
-subfolder, no ECTS Demo/Español/Uncensored-Patches items the second
+subfolder, no ECTS Demo/EspaÃ±ol/Uncensored-Patches items the second
 session's inventory described - that inventory is stale, don't trust its
 file list, only its hashes). Re-hashed `rom backup/Conkers Bad Fur Day
 [ntsc][debug][DC].rom` and `rom backup/Conker's Bad Fur Day [ects][DC].rom`
@@ -15636,7 +15638,7 @@ repo root (`baserom.us.z64` recovered by the user into `rom backup/`;
 Generated artifacts need a fresh `make extract` before resuming matching
 work. Details in the Session log.
 
-**Status (first session):** build works end-to-end (extract → compile → link → replace →
+**Status (first session):** build works end-to-end (extract â†’ compile â†’ link â†’ replace â†’
 reassemble ROM). Ran a real matching pass on the 44 ECTS-ported functions
 using both the linked ELF and a custom ground-truth-vs-compiled-bytes
 comparison script (asm-differ's whole-binary `-m` mode is unreliable right
@@ -15940,8 +15942,8 @@ git checkout -- .
   logged in the prior entry, now updated where they mentioned the
   `func_16001B34` gap as blocking (it no longer is - only their own
   independent loop-shape/codegen issues remain). `make match-progress`:
-  debugger 126/173 (total functions 172→173 for `func_16001044`, exact
-  count 128→126 since it's not yet byte-exact itself - a real, safe net
+  debugger 126/173 (total functions 172â†’173 for `func_16001044`, exact
+  count 128â†’126 since it's not yet byte-exact itself - a real, safe net
   gain, not a regression). Project total 547/1557.
 
 ### 2026-07-15 (tenth session - debugger conversions attempted and reverted)
@@ -15951,7 +15953,7 @@ git checkout -- .
   cheap, not committed, same as before).
 - **`func_160014F0` (glyph blitter, 71 words)** - straightforward 8x8
   bitmap font blit using `D_16003CE0` (newly declared: 768-byte font
-  table, 96 printable-ASCII glyphs × 8 bytes, size matches
+  table, 96 printable-ASCII glyphs Ã— 8 bytes, size matches
   `match-progress`'s previously-unexplained `D_16003CE0 (debugger, 192
   words)` entry exactly) and the current color `D_1600388C`. Converted
   cleanly, logic verified correct, but landed at 70/71 words. Tried
@@ -16031,9 +16033,9 @@ git checkout -- .
   diagnostic: if `D_16003888` (or any embedded-in-.text symbol) drifts by
   N words, sum your recent functions' `ours` vs. `truth` word counts from
   `dump_func.py` and it will account for all N.
-  - Fixed `func_16001044`'s memcpy issue (closed 16→3), which shrank the
+  - Fixed `func_16001044`'s memcpy issue (closed 16â†’3), which shrank the
     total drift from -12 (after reverting `func_16001390`) down to -4.
-    Fixed `func_160006CC`'s dead-code drop (closed -4→-1), shrinking
+    Fixed `func_160006CC`'s dead-code drop (closed -4â†’-1), shrinking
     further. At that point decided the remaining ~4-5 words (all tied to
     the `func_16001B34` gap, not independently fixable without that
     larger task) weren't worth continuing to chase live, and reverted
@@ -16095,9 +16097,9 @@ git checkout -- .
   - Filenames are `sparseNN[a-g].miniusf`, `NN` **hex**. Extracted 148
     unique base indices, exactly contiguous `0x01`-`0x94` with no gaps and
     no `0x00` - independently corroborates the `assets17/0003` "149
-    entries" figure from the wiki (§6 in ASSET_FORMATS.md, added earlier
+    entries" figure from the wiki (Â§6 in ASSET_FORMATS.md, added earlier
     this session) if index 0 is a silence/no-music slot. Folded into
-    ASSET_FORMATS.md §6 as a cross-reference.
+    ASSET_FORMATS.md Â§6 as a cross-reference.
   - These are real playable audio (any PSF-family player, e.g. foobar2000
     + `in_usf`) - noted as a listening reference for identifying which
     sequence index plays where in-game.
@@ -16123,7 +16125,7 @@ git checkout -- .
     file-index inconsistency by just checking this repo's own extraction
     directly instead of trusting the wiki's contradictory text - confirmed
     `assets17/0000.bin` has the `B1` header (matching what
-    ASSET_FORMATS.md's own §6 prose already said) and `0003.bin` has `S1`.
+    ASSET_FORMATS.md's own Â§6 prose already said) and `0003.bin` has `S1`.
     Also glanced at `0004`/`0005`/`0006.bin` (144 / 17408 / 42000 bytes) -
     `0004` looks like a small table of 4-byte big-endian values, `0005` is
     mostly/all zero bytes, `0006` starts with small paired byte values
@@ -16138,27 +16140,27 @@ git checkout -- .
   handy human-readable cross-check for the ROM header layout.
 - The wiki had real, mostly non-redundant content. Folded two pieces into
   [ASSET_FORMATS.md](ASSET_FORMATS.md) at the user's request:
-  - **New §2a**: a reported compressed-code-loading mechanism (4096-byte
+  - **New Â§2a**: a reported compressed-code-loading mechanism (4096-byte
     on-demand chunks via a bad-virtual-address/TLB-miss trick, chunk table
     at ROM `0x42454` XOR-encrypted with key `0x8039CCCA`, based at
-    `0x42450`) - distinct from the asset `rzip` containers in §2. Marked
+    `0x42450`) - distinct from the asset `rzip` containers in Â§2. Marked
     Tentative - sourced from the wiki's `Useful-Info` page (originally a
     Discord chat with `gamemasterplc`), not reproduced against this repo's
     own extraction. `0x42450` falls in the `init`/boot ROM range - worth
     checking against `conker.us.yaml`'s actual `init`/`init_data` split
     before trusting the exact offsets.
-  - **§6 (`assets17`) extended**: confirmed `0x4231`/"B1" is the real
+  - **Â§6 (`assets17`) extended**: confirmed `0x4231`/"B1" is the real
     `AL_BANK_VERSION` libaudio.h constant (corroborates, doesn't change,
     the header already decoded there); added that `assets17` sub-file
     `0003` uses a *different* magic (`"S1"` = `AL_SEQBANK_VERSION`) and
     format (a 149-entry offset+length table, likely `ALSeqFile` sequence
     data) - a separate container schema from the B1 sample bank, and
     `0002` (~21MB) is the raw sample bank with a known third-party
-    extraction path (N64 Midi Tool → DLS → SF2). Also marked Tentative -
+    extraction path (N64 Midi Tool â†’ DLS â†’ SF2). Also marked Tentative -
     same wiki source, unverified here, and the wiki's own file-index
     labeling for the B1 header is internally inconsistent (worth
     resolving before relying on it).
-  - Updated §9's open-questions bullets to point at both additions.
+  - Updated Â§9's open-questions bullets to point at both additions.
   - Not folded in (lower confidence / already covered): `Patterns.md`'s
     IDO/cfe idiom list (already has a project-native equivalent building up
     in this file's own Session log entries).
@@ -16173,7 +16175,7 @@ git checkout -- .
   project's `init` segment uses an artificial vram (`0x10001000`+, splat
   bookkeeping only) offset by exactly `-0x70000000` from the real N64
   address the wiki's table uses (confirmed via `__osSetSR`'s own `.s`
-  file: real `0x80022a30` ↔ project `0x10022a30`) - subtract `0x70000000`
+  file: real `0x80022a30` â†” project `0x10022a30`) - subtract `0x70000000`
   from any wiki address to look it up here. Result: **101/115 already
   correctly named, zero mismatches** (good sign the existing naming is
   trustworthy), **8 unique addresses genuinely missing** (14 raw entries
@@ -16192,7 +16194,7 @@ git checkout -- .
   referenced that name (a leftover object file from before the rename,
   not a real problem - `rm`ing it and rebuilding fixed it immediately).
   Confirmed no regressions and a small bonus: `init` byte-exact went
-  223→224 and blocked-on-callees 4→3, both counts otherwise stable. The
+  223â†’224 and blocked-on-callees 4â†’3, both counts otherwise stable. The
   other 5 addresses (`osViModePalLan1`/`osViModeMpalLan1`/
   `osViModeNtscLan1`/`__osRcpImTable`/`__libm_qnan_f`, ROM range
   `~0x2be30`-`~0x2c920`) don't correspond to anything in the current
@@ -16227,7 +16229,7 @@ git checkout -- .
   `asm/20AE20.s`, `asm/50D80.s`, `asm/6B320.s`, `asm/71820.s`,
   `asm/B3020.s` - none converted this session, see below for why). Since
   the containing file was never split at function granularity, reaching
-  it meant changing `[0x50d80, asm]` → `[0x50d80, c, game_50D80]` and
+  it meant changing `[0x50d80, asm]` â†’ `[0x50d80, c, game_50D80]` and
   re-running `make extract VERSION=us` - splat auto-inlined the trivial
   function as real C directly (`void func_150238D0(void) {}`, no
   `GLOBAL_ASM` stub needed) and stubbed the other ~10 functions in the
@@ -16433,7 +16435,7 @@ git checkout -- .
   wasn't cosmetic: `func_16000424`, `func_16000058`, `func_16000000` (all
   pre-existing, already-converted functions using these same globals,
   previously showing as "diff") flipped to byte-exact with zero edits to
-  them. **Debugger's byte-exact count jumped 15→128 of 172 (8.82%→74.42%)
+  them. **Debugger's byte-exact count jumped 15â†’128 of 172 (8.82%â†’74.42%)
   from this one side effect** - dwarfing the 2 functions actually
   converted. Root mechanism not identified (didn't dig into *why*
   replacing the `GLOBAL_ASM` stub fixed the neighboring data layout) -
@@ -16517,8 +16519,8 @@ git checkout -- .
   `len(ours)` before the length check, but only when `ours` is shorter (an
   `ours`-longer-than-`truth` case, or non-zero trailing words, still falls
   through to a real diff - confirmed both matter, see below). Re-ran
-  project-wide: **total 379→435 exact (+56), init 201→223 (+22), game
-  167→197 (+30), debugger 11→15 (+4) - zero source lines changed.**
+  project-wide: **total 379â†’435 exact (+56), init 201â†’223 (+22), game
+  167â†’197 (+30), debugger 11â†’15 (+4) - zero source lines changed.**
   Progress tables updated in PROJECT.md/README.md/DOCS/README.md (dated
   2026-07-15).
 - **Init's remaining 9 non-exact, fully characterized:**
@@ -16611,17 +16613,17 @@ git checkout -- .
   container-table entry for the replaced dialogue line; `assets16` changes
   span nearly the whole file, confirming wholesale audio swaps not worth
   reversing further) are written up in
-  [ASSET_FORMATS.md](ASSET_FORMATS.md) §4. Scratch pickles (`diff_ranges.pkl`,
+  [ASSET_FORMATS.md](ASSET_FORMATS.md) Â§4. Scratch pickles (`diff_ranges.pkl`,
   `offset_tables.pkl`, `per_file_ranges.pkl`) are in the scratchpad, not
   committed - cheap to regenerate from the description above if needed.
 - **Follow-up, same session: walked the nested container to decode the
   dialogue-text schema.** Per the "first changed byte" pointers above,
-  parsed each of the 15 `assets06` files' own §3-format container table,
-  found the compressed entry 1 (decompresses to another §3-format
+  parsed each of the 15 `assets06` files' own Â§3-format container table,
+  found the compressed entry 1 (decompresses to another Â§3-format
   container one level deeper - not yet documented before this), and
   checked its entries against the byte-range diffs. In 7/15 files the
   censored line falls exactly in that nested table's *last* entry (usually
-  `flags=0x80`, the §3 terminator bit, but non-zero length) - decoding it
+  `flags=0x80`, the Â§3 terminator bit, but non-zero length) - decoding it
   as ASCII gives the literal subtitle text with `0x0A` line breaks, e.g.
   file 0033 entry 58 retail `"what the [censor-glyphs] !..."` vs
   Uncensored `"what the fuck !..."`. **Censorship mechanism confirmed:**
@@ -16630,8 +16632,8 @@ git checkout -- .
   length but not a fixed per-letter cipher; `0xBD` is an unrelated
   formatting/pause glyph present identically in both versions (don't
   confuse it with the censor set). Full writeup with decoded examples in
-  [ASSET_FORMATS.md](ASSET_FORMATS.md) §4 ("Dialogue text schema decoded")
-  and the updated §9 open-questions bullet. Not done: the other 8/15
+  [ASSET_FORMATS.md](ASSET_FORMATS.md) Â§4 ("Dialogue text schema decoded")
+  and the updated Â§9 open-questions bullet. Not done: the other 8/15
   files (censored line isn't the final nested entry - same container
   format, just need to identify which entry), and the exact
   placeholder-glyph selection rule.
@@ -16746,10 +16748,10 @@ git checkout -- .
     whole-object disassembly before/after):
     `func_1516968C`'s arg2 is really `u8` (its prologue
     `sw a2/andi/move` now matches exactly) and `struct102.unkC` is really
-    `u8` at 0xC (was s16; retail uses `lbu`) - together 15→2 diffs on that
+    `u8` at 0xC (was s16; retail uses `lbu`) - together 15â†’2 diffs on that
     function; `D_800DD198` is really `void*[6]` (was `u8[]`; retail
     indexes it `i*4`) - a genuine logic bug in the ECTS port, and fixing
-    it plus the u8 arg dropped `func_15169070` from 110→71 diffs and got
+    it plus the u8 arg dropped `func_15169070` from 110â†’71 diffs and got
     `func_151696DC` to within 1 word.
   - Documented-non-matching (comments on the functions carry details):
     `func_150721A4` (cfe stages call-arg shift+mask through the arg regs
@@ -16794,21 +16796,21 @@ git checkout -- .
     match is gone.
   - `Conkers Bad Fur Day [Debug][EC].z64`: garbage internal header
     (non-ASCII name/ID) - scrambled or bad dump, matches nothing, don't use.
-  - `Conker's Bad Fur Day [Español].z64` (sha1 `52e4355f...`): Spanish
+  - `Conker's Bad Fur Day [EspaÃ±ol].z64` (sha1 `52e4355f...`): Spanish
     translation hack, US-based (keeps retail header CRCs like the
     Uncensored hack does).
   - Plus `Uncensored Patches/` (.bps + .xdelta, ~2 MB each; the .bps footer
-    says source crc32 `CE8CC172` → target crc32 `E1B9019B`, and the target
+    says source crc32 `CE8CC172` â†’ target crc32 `E1B9019B`, and the target
     crc32 matches the Uncensored .z64 here exactly - so the patch source,
     crc32 `CE8CC172`, is the missing retail US ROM) and the Bradygames
     strategy guide PDF.
 - **Tried and failed: reconstructing retail US from the two hacks.**
   Idea: Uncensored = retail everywhere except assets06/assets16 (proven
-  last session), so splice those two segments in from Español and check
-  sha1. Result: no match. Diagnostics show why: Español vs Uncensored
+  last session), so splice those two segments in from EspaÃ±ol and check
+  sha1. Result: no match. Diagnostics show why: EspaÃ±ol vs Uncensored
   differ by 427 bytes outside the two segments (Spanish text elsewhere,
   fine), 2,020,358 bytes in assets16 - **exactly** the Uncensored-vs-retail
-  count from last session, so Español's assets16 is almost certainly retail
+  count from last session, so EspaÃ±ol's assets16 is almost certainly retail
   audio - but 396,111 bytes in assets06, ~10x the 39,919 the censorship
   accounts for: the translation rewrites the dialogue/subtitle data living
   in assets06, so retail assets06 is not recoverable from these two ROMs.
@@ -16827,7 +16829,7 @@ git checkout -- .
   prototype).zip` (debug `[DC].rom` + `[Debug][EC].v64`). This explains
   the odd `[EC]` files in the main folder: they're v64-order alternate
   dumps of the same two prototypes, and the loose
-  `[Debug][EC].z64`'s garbage header is just a botched v64→z64
+  `[Debug][EC].z64`'s garbage header is just a botched v64â†’z64
   conversion of one - ignore them; the `[DC]` dumps are canonical.
 - **Build environment on this machine (was undocumented - expensive to
   re-derive):** builds run inside the local WSL2 distro **`PSBBN`**
@@ -16949,7 +16951,7 @@ git checkout -- .
   `rodata` segments to `bin`, split one that also held real data symbols -
   full root-cause writeup and fix are above in "Link-time blocker:
   RESOLVED"). The build now goes all the way through `make -C conker
-  --jobs` → `make -C conker replace NON_MATCHING=1` → `make` (repo root),
+  --jobs` â†’ `make -C conker replace NON_MATCHING=1` â†’ `make` (repo root),
   producing a real (correctly non-matching) `build/conker.us.z64` for the
   first time. Regenerated `DOCS/PROJECT.md`'s progress table from this
   working build via `make -C conker progress NON_MATCHING=1` - the new
@@ -17456,7 +17458,7 @@ hand-ported in the sibling `64CBFDOGL` repo:**
   by a new `conker_pio_rom_read()` host helper), `func_1501CC3C` (segment
   loader, from `49D30.s:262-364`), `func_1501C880` (M_GFXTASK submission,
   from `49D30.s:11-261`), and a minimal guarded `func_15007B3C` (spine
-  only, not the retail body — sanity-checks the DL-buffer globals before
+  only, not the retail body â€” sanity-checks the DL-buffer globals before
   submitting).
 - Key discovery for the port: the compiled `func_10004F00` does
   `osSpTaskLoad(slot + 0x18)`, so the `OSTask` lives at offset 0x18 in the

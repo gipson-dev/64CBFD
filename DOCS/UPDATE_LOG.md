@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2450](WORKING_NOTES/2450-game-particle-rise-idle-callback-guarded-match-20261114.md): `func_1517685C` now matches all **202 words** with **123 checked guards** and no inserted/omitted instructions. Guest/native, the authentic registry caller, both padders and strict-image gates pass. Owner **8 / 9 exact**. Game **3,820 / 4,842 (78.89%)**, total **4,493 / 5,515 (81.47%)**, zero drift; **195** more matches to 85%. Next: the final owner stub, 961-word `func_15175958`.
+
 [Note 2449](WORKING_NOTES/2449-game-particle-state-dispatcher-guarded-match-20261114.md): `func_15176B84` now matches all **155 words** with **32 checked guards**. Its explicit unsigned-height conversion preserves retail rounding in native32, superseding the private implicit-cast draft. Guest/native, four registry entries, both padders and strict-image gates pass. Owner **7 / 9 exact**. Game **3,819 / 4,842 (78.87%)**, total **4,492 / 5,515 (81.45%)**, zero drift; **196** more matches to 85%. Next: 202-word `func_1517685C`.
 
 [Note 2448](WORKING_NOTES/2448-game-model-vertex-wave-guarded-match-20261114.md): `func_1517725C` now matches all **106 words** with **33 checked guard rows**, including the restored floating save/restore pair; raw C emits 104 words. Native32, the authentic slot-7 caller, both padders and strict-image gates pass. Owner **6 / 9 exact**. Game **3,818 / 4,842 (78.85%)**, total **4,491 / 5,515 (81.43%)**, zero drift; **197** more matches to 85%. Next: qualify the private **155-word direct-C candidate** for `func_15176B84`; it is not installed or credited.
@@ -440,9 +442,9 @@
 
 [Note 2216](WORKING_NOTES/2216-game-position-sound-direct-match-20261109.md): `func_150F20F0` restores the quartic-position sound and wrapping byte cooldown: 80 direct C words, frame 0x58, no guards. Explicitly staging the last RNG fixes an argument-order difference exposed by native retained-output tests while preserving all retail words. The complete callback, spatial/audio wrappers and 26-record native domain are qualified. Strict image: 339 changed bytes, zero exclusions, three named metadata cycles. Total **4,285 / 5,513 (77.73%)**, Game **3,612 / 4,840 (74.63%)**, zero drift; **126** more to 80%. Next queue: `func_15128540` (uncredited).
 
-[Note 2215](WORKING_NOTES/2215-game-attachment-effect-direct-match-20261109.md): `func_150EEE00` restores the attachment effect: 80 direct C words, frame 0x60, no guards. The helper’s four-argument placeholder ABI changes explicitly and remains uncredited; all 42 other owner functions stay fixed. The original dispatcher/caller, four-entry native domain, and legacy extra-argument boundary are documented. Strict image: 313 changed bytes, zero exclusions, two named metadata cycles. Total **4,284 / 5,513 (77.71%)**, Game **3,611 / 4,840 (74.61%)**, zero drift; **127** more to 80%. Next queue: `func_150F20F0` (uncredited).
+[Note 2215](WORKING_NOTES/2215-game-attachment-effect-direct-match-20261109.md): `func_150EEE00` restores the attachment effect: 80 direct C words, frame 0x60, no guards. The helperâ€™s four-argument placeholder ABI changes explicitly and remains uncredited; all 42 other owner functions stay fixed. The original dispatcher/caller, four-entry native domain, and legacy extra-argument boundary are documented. Strict image: 313 changed bytes, zero exclusions, two named metadata cycles. Total **4,284 / 5,513 (77.71%)**, Game **3,611 / 4,840 (74.61%)**, zero drift; **127** more to 80%. Next queue: `func_150F20F0` (uncredited).
 
-[Note 2214](WORKING_NOTES/2214-game-attachment-position-direct-match-20261109.md): `func_150D88E0` restores attachment offset selection and matrix transform: 80 direct C words, frame 0x40, no guards. All selector bytes match the literal N64 build; native C checks cover defined selectors 3–6, while the unrestricted caller and original uninitialized default path are documented. Strict image: 247 changed bytes, zero exclusions. Total **4,283 / 5,513 (77.69%)**, Game **3,610 / 4,840 (74.59%)**, zero drift; **128** more to 80%. Next queue: `func_150EEE00` (uncredited).
+[Note 2214](WORKING_NOTES/2214-game-attachment-position-direct-match-20261109.md): `func_150D88E0` restores attachment offset selection and matrix transform: 80 direct C words, frame 0x40, no guards. All selector bytes match the literal N64 build; native C checks cover defined selectors 3â€“6, while the unrestricted caller and original uninitialized default path are documented. Strict image: 247 changed bytes, zero exclusions. Total **4,283 / 5,513 (77.69%)**, Game **3,610 / 4,840 (74.59%)**, zero drift; **128** more to 80%. Next queue: `func_150EEE00` (uncredited).
 
 [Note 2213](WORKING_NOTES/2213-game-script-actor-scalars-direct-match-20261109.md): `func_150B2340` restores query-selected actor scalars and status flags: 79 direct C words plus one existing padding NOP, frame 0x28, no guards. Its integer callback ABI, full 48-entry table, original variadic packet dispatch, native struct108 state and actual five-command owner recipe are qualified. Strict image: 255 changed bytes, zero exclusions. Total **4,282 / 5,513 (77.67%)**, Game **3,609 / 4,840 (74.57%)**, zero drift; **129** more to 80%. Next: `func_150D88E0` (uncredited).
 
@@ -1352,7 +1354,7 @@
 
 2026-10-27:
 
-**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcher’s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
+**Damped billboard motion restored as direct C**: [Note 1759](WORKING_NOTES/1759-damped-billboard-motion-gate-match-20261027.md). `func_15149C58` matches all 48 words with no frame, two clock bindings and zero guards. Both tools copies pass eight fresh methods covering rounded float updates, all 88 clock aliases, native32 and the original dispatcherâ€™s return-driven cleanup. Preserve 35 neighbors and the existing dispatcher placeholder; production reproduces the strict 132-byte image with zero exclusions. Native total 3,837/5,506 (69.69%), Game 3,164/4,833 (65.47%), zero drift; 293 more to 75%. That then-private `func_1514AF74` is adopted in Note 1760 above; `func_1514E920` remains parked and uncredited.
 
 2026-10-27:
 
@@ -23360,7 +23362,7 @@ continues with `func_1509CDDC`.
   matched. Changed them to `bin` (opaque byte blobs - jump table contents
   don't need symbolic disassembly). Full root-cause writeup in
   [`DOCS/WORKING_NOTES.md`](WORKING_NOTES.md).
-- `make -C conker --jobs` → `make -C conker replace NON_MATCHING=1` →
+- `make -C conker --jobs` â†’ `make -C conker replace NON_MATCHING=1` â†’
   `make` (repo root) now runs end to end for the first time, producing a
   real (correctly non-matching, ~20% complete) `build/conker.us.z64`.
   Regenerated the progress table in [`DOCS/PROJECT.md`](PROJECT.md) from
@@ -23389,7 +23391,7 @@ continues with `func_1509CDDC`.
   compression (`rzip`), the offset-table container format (confirmed against
   `func_1502B9B4` in `game_57FA0.c`), and per-type payloads.
 - Confirmed findings against the retail US ROM and the debug prototype:
-  RGBA5551 textures (assets00–05), MP3 streams (assets16), the `"B1"` audio bank
+  RGBA5551 textures (assets00â€“05), MP3 streams (assets16), the `"B1"` audio bank
   header (assets17, 22050 Hz + 170-entry sample table), and container payloads.
 - Corrected the earlier "assets06 = models" assumption: assets06 is composite
   object/script data (positions, float params, dialogue strings). assets08 is

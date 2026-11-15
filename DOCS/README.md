@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2450](WORKING_NOTES/2450-game-particle-rise-idle-callback-guarded-match-20261114.md): `func_1517685C` now matches all **202 words** with **123 checked guards** and no inserted/omitted instructions. Guest/native, the authentic registry caller, both padders and strict-image gates pass. Owner **8 / 9 exact**. Game **3,820 / 4,842 (78.89%)**, total **4,493 / 5,515 (81.47%)**, zero drift; **195** more matches to 85%. Next: the final owner stub, 961-word `func_15175958`.
+
 [Note 2449](WORKING_NOTES/2449-game-particle-state-dispatcher-guarded-match-20261114.md): `func_15176B84` now matches all **155 words** with **32 checked guards**. Its explicit unsigned-height conversion preserves retail rounding in native32, superseding the private implicit-cast draft. Guest/native, four registry entries, both padders and strict-image gates pass. Owner **7 / 9 exact**. Game **3,819 / 4,842 (78.87%)**, total **4,492 / 5,515 (81.45%)**, zero drift; **196** more matches to 85%. Next: 202-word `func_1517685C`.
 
 [Note 2448](WORKING_NOTES/2448-game-model-vertex-wave-guarded-match-20261114.md): `func_1517725C` now matches all **106 words** with **33 checked guard rows**, including the restored floating save/restore pair; raw C emits 104 words. Native32, the authentic slot-7 caller, both padders and strict-image gates pass. Owner **6 / 9 exact**. Game **3,818 / 4,842 (78.85%)**, total **4,491 / 5,515 (81.43%)**, zero drift; **197** more matches to 85%. Next: qualify the private **155-word direct-C candidate** for `func_15176B84`; it is not installed or credited.
@@ -930,27 +932,27 @@ and progress explanations.
 
 ## Build and development
 
-- [Project overview](PROJECT.md) — prerequisites, repository layout, supported
+- [Project overview](PROJECT.md) â€” prerequisites, repository layout, supported
   environments, ROM setup, normal builds, CI behavior, and progress metrics.
-- [Code sub-project](CODE_SUBPROJECT.md) — the `init`, `game`, and `debugger`
+- [Code sub-project](CODE_SUBPROJECT.md) â€” the `init`, `game`, and `debugger`
   sections and how they are compiled and replaced in the ROM.
-- [Contributor and byte-matching guide](CONTRIBUTING.md) — selecting work,
+- [Contributor and byte-matching guide](CONTRIBUTING.md) â€” selecting work,
   comparing retail instructions, compiler-sensitive C patterns, validation,
   and clean commit scope.
-- [Project tools](TOOLS.md) — local wrappers, smoke tests, toolchain
+- [Project tools](TOOLS.md) â€” local wrappers, smoke tests, toolchain
   overrides, active Conker asset utilities, and reference-only generators.
 - [Tools repository setup](TOOLS_REPOSITORY.md) - separate tools ownership,
   recursive checkout, migration, and pinned dependency updates.
 - [Reverse engineering setup](REVERSE_ENGINEERING_SETUP.md) - verified REA
   connection, scoped CLI environment and current Windows/MIPS adapter limits.
-- [IDO 5.3 recomp toolchain](IDO_RECOMP.md) — reproducing the compiler used by
+- [IDO 5.3 recomp toolchain](IDO_RECOMP.md) â€” reproducing the compiler used by
   byte-matching builds.
 
 ## ROM formats and research
 
-- [Asset formats](ASSET_FORMATS.md) — `rzip`, archive tables, models, textures,
+- [Asset formats](ASSET_FORMATS.md) â€” `rzip`, archive tables, models, textures,
   audio, data tables, confidence levels, and open research questions.
-- [Compressed config sections](CONFIG.md) — extracting and rebuilding chunks
+- [Compressed config sections](CONFIG.md) â€” extracting and rebuilding chunks
   described by `config/*.yaml`.
 
 Format conclusions belong in these durable pages once verified. Temporary
@@ -4582,31 +4584,31 @@ confirmed.
 - [Latest graph edge-crossing recovery](WORKING_NOTES/1025-game-graph-edge-crossing-recovery-20261006.md):
   complete semantic body, retail last-fraction quirk, measured 151-word
   mismatch and remaining frame/lifetime work. Not a completed byte match.
-- [Current decomp status](CURRENT_STATUS.md) — measured build, conversion,
+- [Current decomp status](CURRENT_STATUS.md) â€” measured build, conversion,
   byte-matching, dirty-tree, and immediate resume boundary.
-- [Numbered working notes](WORKING_NOTES/) — concise session handoffs beginning
+- [Numbered working notes](WORKING_NOTES/) â€” concise session handoffs beginning
   with the 2026-09-24 status audit and candidate queues.
-- [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) — five
+- [Temporary Banjo cross-port TODO](TEMP_BANJO_CROSSPORT_TODO.md) â€” five
   completed port batches, including the US v1.0/v1.1 normalized-block and
   shared-fragment recheck, plus retained source-shape references.
-- [Temporary DK64 cross-port TODO](TEMP_DK64_CROSSPORT_TODO.md) — verified
+- [Temporary DK64 cross-port TODO](TEMP_DK64_CROSSPORT_TODO.md) â€” verified
   DK64 retail-body audit, three port batches, broadened structural pass,
   matcher correction, four additional divergent audio matches, residual
   references, and the current cross-game continuation checkpoint.
-- [Temporary debugger byte-matching TODO](TEMP_DEBUGGER_TODO.md) — live
+- [Temporary debugger byte-matching TODO](TEMP_DEBUGGER_TODO.md) â€” live
   173/181 checkpoint, remaining function queue, SDK source mappings, and
   compiler-shape experiments needed to finish the debugger overlay.
-- [64CBFDOGL function pull](64CBFDOGL_FUNCTION_PULL.md) — extracted
+- [64CBFDOGL function pull](64CBFDOGL_FUNCTION_PULL.md) â€” extracted
   host-recomp hand-port bodies from the sibling PC port, mapped back to
   64CBFD owner files for reference-only matching work. Snapshot caveat:
   the 2026-07-26 pull predates the 2026-08-16 OGL logo/menu animation repair;
   `func_1505E650` is already exact retail assembly in this repo, while the
   RT64 float-matrix repair is host-side and not portable to IDO C.
-- [PC port roadmap](PC_PORT_ROADMAP.md) — phased plan for a native port and
+- [PC port roadmap](PC_PORT_ROADMAP.md) â€” phased plan for a native port and
   later modernization work.
-- [Update log](UPDATE_LOG.md) — repository-facing milestones, workflow changes,
+- [Update log](UPDATE_LOG.md) â€” repository-facing milestones, workflow changes,
   and published progress snapshots.
-- [Working notes](WORKING_NOTES.md) — recovery notes, failed experiments, and
+- [Working notes](WORKING_NOTES.md) â€” recovery notes, failed experiments, and
   detailed session history. This is an archive and scratchpad, not onboarding
   documentation.
 

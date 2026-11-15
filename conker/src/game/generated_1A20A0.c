@@ -66,7 +66,7 @@ typedef struct {
     s16 lifetime, mode;
     f32 tilt, heading, fieldB0, fieldB4, angularRate, fieldBC, scale;
     u32 retainedC4;
-    f32 groundHeight, retainedCC;
+    f32 groundHeight, tiltStep;
     s16 sourceX, sourceY, sourceZ, outerRadius, innerRadius, verticalRange;
     s16 fieldDC, fieldDE;
     f32 fieldE0, targetHeight;
@@ -413,8 +413,66 @@ s32 func_15175958() {
     return 0;
 }
 
-s32 func_1517685C() {
-    return 0;
+/* Start a nearby particle rising, idle its tilt, and steer it toward its target height. */
+void func_1517685C(Particle15175390 *record) {
+    s32 choice;
+    if (D_800DDF5C[record->slot] != 0) {
+        D_800DDF68[record->variant] = 1;
+        switch (record->state91) {
+            case 0:
+                if (func_150AD960((s32)D_800CC2D0.x, (s32)D_800CC2D0.z,
+                                 (s32)record->position[0], (s32)record->position[2]) < 400) {
+                    record->state91 = 1;
+                    record->fieldB4 = -1 - (func_150ADA20() & 3);
+                    record->tilt = -8.0f;
+                } else {
+                    if (record->tiltStep != 0.0f) {
+                        record->tilt += record->tiltStep;
+                        if (record->tiltStep < 0) {
+                            record->heading += record->angularRate;
+                        }
+                        if (record->tilt > 45.0f) {
+                            record->tiltStep = -5.0f;
+                        } else if (record->tiltStep < 0 && record->tilt > 25.0f) {
+                            if ((func_150ADA20() & 255) < 51) { record->tiltStep = 5.0f; }
+                        }
+                        if (record->tilt <= 10.0f) { record->tiltStep = 0; }
+                    } else {
+                        choice = func_150ADA20() & 255;
+                        if (choice < 25) {
+                            record->tiltStep = 5.0f;
+                            if (choice < 13) {
+                                record->angularRate = (s32)((u32)func_150ADA20() % 6U) - 3;
+                            } else {
+                                record->angularRate = 0;
+                            }
+                        }
+                    }
+                }
+                break;
+            case 1:
+                if (record->position[1] >= 300.0f + record->groundHeight) {
+                    record->state91 = 2;
+                    record->flags &= ~1;
+                    record->flags |= 4;
+                    record->targetHeight = (func_150ADA20() & 127) + (300.0f + record->groundHeight);
+                }
+                func_15175958(record);
+                break;
+            case 2:
+            case 3:
+            default:
+                if (record->position[1] < record->targetHeight) {
+                    record->fieldB4 = -1.5f;
+                } else if (record->tilt < 0.0f) {
+                    record->fieldB4 = 1.5f;
+                }
+                func_15175958(record);
+                break;
+        }
+    } else {
+        func_1516972C(record);
+    }
 }
 
 /* Fade and dispatch an active particle, selecting its state-dependent model. */
