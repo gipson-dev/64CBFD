@@ -14,14 +14,43 @@ extern f32 D_800A8CE0, D_800A8CE4;
 s32 func_15143E08(struct127 *);
 f32 func_151423D8(u8);
 
+typedef struct { f32 x, y, z; } SidePosition1519F1C8;
+typedef struct {
+    SidePosition1519F1C8 position;
+    s16 lifetime;
+    u16 flags;
+    s32 mode;
+    u8 reserved14, count, reserved16[6];
+} SideRequest1519F1C8;
+typedef struct {
+    u8 *state;
+    u8 kind, reserved05[3];
+    f32 scale, phase;
+    SidePosition1519F1C8 position;
+    f32 elapsed, referenceX, referenceZ;
+    s16 zero28;
+    u8 red, green, blue, reserved2D;
+    s16 duration, alpha, width, height;
+    u8 reserved36[2];
+    f32 speed, limit;
+    u8 style, first, second, third, fourth, fifth;
+    s16 zero46, count, command;
+    f32 rate;
+} SidePayload1519F1C8;
+extern f32 D_800A8CE8, D_800A8CEC;
+extern u8 D_800AB414[];
+u8 func_151D8E20(void);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
+void *memcpy(void *, const void *, u32);
+
 extern s32 D_800BE9E4;
 
 
 typedef struct {
-    s32 first;
-    s32 second;
-    s32 third;
-    s32 fourth;
+    u8 *first;
+    u8 *second;
+    u8 *third;
+    u8 *fourth;
 } FourWord1CC440;
 
 typedef struct {
@@ -114,13 +143,61 @@ void func_1519F168(u8 *arg0) {
     func_15147928(arg0);
 }
 
-s32 func_1519F1C8() {
-    return 0;
+/* Create a side-offset effect and attach its owner-linked payload. */
+u8 *func_1519F1C8(u8 *state, u8 mode) {
+    u8 *actor = *(u8 **)(state + 0x18);
+    SideRequest1519F1C8 request;
+    SidePayload1519F1C8 packet;
+    u8 *created;
+    u8 color;
+
+    color = func_151D8E20();
+    /* Reserved fields and a failed position query retain their stack bytes. */
+    request.flags = 0x42;
+    request.lifetime = 300;
+    request.count = 10;
+    packet.duration = 200;
+    packet.style = 3;
+    packet.state = state;
+    packet.kind = 6;
+    packet.first = 0x55;
+    packet.second = 3;
+    packet.third = 0x55;
+    packet.fourth = 0x88;
+    packet.fifth = 0xC4;
+    packet.zero28 = 0;
+    packet.zero46 = 0;
+    packet.alpha = 255;
+    packet.width = 40;
+    packet.height = 25;
+    packet.count = 6;
+    packet.command = 0x325;
+    packet.scale = D_800A8CE8;
+    packet.speed = D_800A8CEC;
+    packet.limit = 1.0f;
+    packet.phase = 0.0f;
+    packet.elapsed = 0.0f;
+    request.mode = mode;
+    packet.rate = 1.5f;
+    packet.referenceX = *(f32 *)(actor + 0x14);
+    packet.referenceZ = *(f32 *)(actor + 0x1C);
+    if (func_1519EF90((u8 *)&packet, mode, (f32 *)&request.position)) {
+        packet.position = request.position;
+        request.flags |= 4;
+    }
+    packet.red = D_800AB414[color * 3];
+    packet.green = D_800AB414[color * 3 + 1];
+    packet.blue = D_800AB414[color * 3 + 2];
+    created = func_15147A80(&request, 0x50, 0x24, 5, 5, 5, 0, 0, state + 0x34, 255, 1);
+    if (created != NULL) {
+        memcpy(*(void **)(created + 0x98), &packet, 0x50);
+    }
+    return created;
 }
 
 void func_1519F3B8(u8 *arg0) {
     FourWord1CC440 *temp_v1;
-    s32 r = func_1519F1C8(arg0, 6);
+    u8 *r = func_1519F1C8(arg0, 6);
 
     temp_v1 = (FourWord1CC440 *) (arg0 + 0x58);
     temp_v1->first = r;
@@ -197,7 +274,7 @@ void func_151A084C(struct260 *entry) {
     if (*(s32 *)actor == 0) invalid = 1;
     if ((*link)[0x1C] != actor[0x3B]) invalid = 1;
     if (invalid == 0 && *(s32 *)(actor + 0x1D4) != 0) {
-        s32 result;
+        u8 *result;
         invalid = 1;
         result = func_1519F1C8(*link, ((u8 *)link)[4]);
         if (((u8 *)link)[4] == 6) outputs->first = result;
