@@ -240,3 +240,10 @@ conker/asm/nonmatchings/generated_71820/*
 !conker/asm/nonmatchings/generated_71820/func_150472C0.s
 tools
 tools
+
+# Original custom-register Huffman pair decoder, restored in Note 2461.
+!conker/asm/nonmatchings/generated_225D20/
+conker/asm/nonmatchings/generated_225D20/*
+!conker/asm/nonmatchings/generated_225D20/func_151F8870.s
+!conker/asm/nonmatchings/generated_225D20/func_151F892C.s
+!conker/asm/nonmatchings/generated_225D20/func_151F8960.s
