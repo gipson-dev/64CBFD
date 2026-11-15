@@ -500,8 +500,25 @@ s32 func_15159370(u8 *record, u8 *classification) {
     return matched;
 }
 
-s32 func_1515942C() {
-    return 0;
+s32 func_1514ECE0(void *, s16, void **);
+/* Test whether the linked selector record fits five allowed field masks.
+ * -1 allows an entire field; variable shifts retain the N64 low-five-bit rule. */
+s32 func_1515942C(u8 *actor, s16 first, s16 second, s16 third, s16 fourth, s16 fifth) {
+    u8 *data;
+    u8 *node;
+    u8 matched = 0;
+    u32 m0, m1, m2, m3, m4, wanted, actual;
+    if (!func_1514ECE0(*(void **)(actor + 0x2F4), 0x13, (void **)&node)) return 0;
+    data = *(u8 **)(node + 0x10);
+    m3 = fourth == -1 ? 0x1E00 : 1U << ((fourth + 9) & 31);
+    m2 = third == -1 ? 0x1C0 : 1U << ((third + 6) & 31);
+    m1 = second == -1 ? 0x38 : 1U << ((second + 3) & 31);
+    m0 = first == -1 ? 0x07 : 1U << (first & 31);
+    m4 = fifth == -1 ? 0x3E000 : 1U << ((fifth + 13) & 31);
+    actual = (1U << (data[0x2C] & 31)) | (1U << ((data[0x2E] + 6) & 31)) | (1U << ((data[0x2F] + 9) & 31)) | (1U << ((data[0x30] + 13) & 31)) | (1U << ((data[0x2D] + 3) & 31));
+    wanted = m4 | m0 | m1 | m2 | m3;
+    if ((wanted | actual) == wanted) matched = 1;
+    return matched;
 }
 
 
