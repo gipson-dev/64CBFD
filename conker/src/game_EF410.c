@@ -101,6 +101,13 @@ void func_150599C8(void *, s32, u16);
 void func_1001091C(struct127 *, s32);
 f32 sqrtf(f32);
 
+extern f32 D_800A0334;
+void func_151B9BF0(s32, s32, s16, s16, s16, s16, s16, s16,
+                   s16, s16, s16, s16, s16, u32, u8, s32);
+void func_15188810(u8 *, s32, s32);
+void func_150C1660(f32, f32, f32, u8);
+void func_1506AC8C(void *, s32, s32);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
@@ -113,7 +120,6 @@ void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
 s32 func_150C308C(u8 *);
 Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
-s32 func_150C3994();
 s32 func_150C3D5C();
 /* End generated placeholder declarations. */
 
@@ -612,9 +618,61 @@ void func_150C3574(u8 *actor) {
         func_100109D0((struct127 *)actor);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C3994.s. */
-s32 func_150C3994() {
-    return 0;
+/* Advance the state-19/20 effect phase, motion and exit transition. */
+void func_150C3994(u8 *actor) {
+    if (*(s32 *)actor == 20) {
+        if (*(s32 *)(actor + 0x2E4) == 0) {
+            func_151B9BF0(47, 1,
+                (s16)(s32)*(f32 *)(actor + 0x14),
+                (s16)(s32)(*(f32 *)(actor + 0x18) + 30.0f),
+                (s16)(s32)*(f32 *)(actor + 0x1C),
+                2000, 1000, 400, 200, 3072, 3072, 1, 1, 0, 255, 0);
+        } else {
+            func_15188810(actor, 100, 0);
+        }
+    }
+    if (*(f32 *)(actor + 0x20) < 0.0f &&
+        20.0f < *(f32 *)(actor + 0x28) && actor[0x136] == 0 &&
+        *(f32 *)(actor + 0x28) < -20.0f * *(f32 *)(actor + 0x20)) {
+        func_10010630(0x92, (struct127 *)actor, 32000, 200, 2500);
+        actor[0x136] = 1;
+    }
+    if (actor[0x83] == 0) {
+        *(f32 *)(actor + 0x148) = 70.0f;
+        if (*(s32 *)(actor + 0x2E4) == 0) {
+            func_151B9BF0(47, 1,
+                (s16)(s32)*(f32 *)(actor + 0x14),
+                (s16)(s32)(*(f32 *)(actor + 0x18) + 30.0f),
+                (s16)(s32)*(f32 *)(actor + 0x1C),
+                2200, 1280, 800, 700, 3072, 3072, 20, 1, 0, 255, 0);
+            func_150C1660(*(f32 *)(actor + 0x14),
+                          *(f32 *)(actor + 0x18) + 30.0f,
+                          *(f32 *)(actor + 0x1C), 255);
+            func_1506AC8C(actor, 6, 0);
+        } else {
+            func_15188810(actor, 100, 0);
+        }
+        func_10010344(0x1A9, actor, 32767, 1000, 2000);
+        *(f32 *)(actor + 0x114) = 500.0f;
+        actor[0xD0] = 1;
+        *(u32 *)(actor + 0xF8) |= 0x01008000;
+    }
+    actor[0x125] = 255;
+    actor[0x83]++;
+    if (actor[0x83] >= 11) {
+        *(u32 *)(actor + 0xF8) &= 0xFFFF7FFF;
+    }
+    *(f32 *)(actor + 0x40) =
+        (*(u16 *)(actor + 0x7A) + 16384) * 0.0054931640625f;
+    func_15059140((struct127 *)actor);
+    *(f32 *)(actor + 0xB8) += *(f32 *)(actor + 0x148);
+    *(f32 *)(actor + 0x148) *= D_800A0334;
+    if ((*(f32 *)(actor + 0x28) == 0.0f && actor[0x83] >= 21 &&
+         *(s16 *)(actor + 0xCC) == 0) || actor[0x107] != 0 || actor[0x1CA] == 0) {
+        func_150C3D5C(actor);
+        func_10010630(0x93, (struct127 *)actor, 32000, 200, 2500);
+        func_15060F28((struct127 *)actor, 1);
+    }
 }
 
 s32 func_150C3D48(s32 arg0) {
