@@ -99,6 +99,16 @@ typedef struct {
 struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
 s32 func_150ADA20(void);
 
+extern u8 D_80090E0C[];
+extern u32 D_800D2C9C;
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+Gfx *func_15142CF0(Gfx *, s32, s32, s32, s32, s32, s32, u8 *);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+
 extern s32 D_800BE9E4;
 
 
@@ -491,9 +501,210 @@ s32 func_1519F7F0(SideEmitter1519F7F0 *effect) {
     return 1;
 }
 
-s32 func_1519FE6C() {
-    return 0;
+/* Render the backward side-effect ring as a three-vertex ribbon strip. */
+Gfx *func_1519FE6C(SideEmitter1519F7F0 *effect, Gfx *output, s16 view) {
+    Vtx *cursor;
+    SidePayload1519F1C8 *packet;
+    SideEmitEntry1519F7F0 *entries;
+    SidePosition1519F1C8 position, previousPosition;
+    f32 previousWidth, currentWidth, dx, dz, inverseLength, offsetX, offsetZ;
+    s32 index, previous, high, low;
+    u8 previousAlpha, alpha;
+    s16 previousTag, tag;
+    s16 texture[3];
+    s16 remaining;
+    u8 sync;
+    u8 factor;
+    SideEmitEntry1519F7F0 *entry;
+
+    if (effect->count >= 2) {
+    func_151D5D60(effect->reserved84, view,
+        effect->capacity * 48 + 0x120, &cursor, NULL);
+    if (cursor != NULL) {
+    packet = effect->payload;
+    entries = effect->entries;
+    sync = 1;
+    factor = 0;
+    if (packet->kind & 2) {
+        s32 forwardIndex;
+        remaining = packet->style;
+        forwardIndex = effect->head;
+        /* Retail enters even when the initial fade count is zero. */
+        do {
+            entries[forwardIndex].light = factor;
+            factor += packet->first;
+            forwardIndex++;
+            if (forwardIndex == effect->capacity) forwardIndex = 0;
+            remaining = (s16)(remaining - 1);
+        } while (remaining != 0 && forwardIndex != effect->tail);
+    }
+    if (packet->kind & 4) {
+        s16 backwardRemaining;
+        u8 backwardFactor;
+        s32 backwardIndex;
+        backwardIndex = effect->tail - 1;
+        backwardFactor = 0;
+        backwardRemaining = packet->second;
+        if (backwardIndex < 0) backwardIndex = effect->capacity - 1;
+        do {
+            entries[backwardIndex].light = (entries[backwardIndex].light * backwardFactor) >> 8;
+            backwardFactor += packet->third;
+            backwardIndex--;
+            if (backwardIndex < 0) backwardIndex = effect->capacity - 1;
+            backwardRemaining = (s16)(backwardRemaining - 1);
+        } while (backwardRemaining != 0 && backwardIndex != effect->tail);
+    }
+    output = func_15142E24(output, D_80090E0C, 0, 0, 0, 0, 57, 0, NULL, &sync, 62);
+    output = func_15142B7C(output, 1, 0x160600);
+    output = func_15142C10(output, packet->red, packet->green, packet->blue, 255, &sync);
+    output = func_15142CF0(output, 0, 0, 255, 255, 255, 0, &sync);
+    output = func_1513F4E4(output, 7, &sync);
+    output = func_15142FBC(output, D_800D2C9C | 0x80000 | 0x2CA0, 0x5049D8, &sync);
+    if (effect->flags & 2) {
+        index = effect->tail - 1;
+        if (index < 0) index = effect->capacity - 1;
+        previousPosition = effect->point;
+        previousWidth = packet->speed;
+        entry = &entries[index];
+        previousAlpha = (entry->light * entry->alpha) >> 8;
+        previousTag = entry->tag;
+    } else {
+        previous = effect->tail - 1;
+        if (previous < 0) previous = effect->capacity - 1;
+        index = previous - 1;
+        if (index < 0) index = effect->capacity - 1;
+        entry = &entries[previous];
+        previousPosition.x = entry->x;
+        previousPosition.y = entry->height;
+        previousPosition.z = entry->z;
+        previousWidth = entry->phase;
+        previousAlpha = (entry->light * entry->alpha) >> 8;
+        previousTag = entry->tag;
+    }
+    entry = &entries[index];
+    position.x = entry->x;
+    position.y = entry->height;
+    position.z = entry->z;
+    dx = position.x - previousPosition.x;
+    dz = position.z - previousPosition.z;
+    alpha = (entry->light * entry->alpha) >> 8;
+    tag = entry->tag;
+    currentWidth = entry->phase;
+    if (0.0001f < fabsf(dx) || 0.0001f < fabsf(dz))
+        inverseLength = 1.0f / sqrtf(dx * dx + dz * dz);
+    else inverseLength = 1.0f;
+    /* zero46 and command hold the signed texture interval for this strip. */
+    texture[0] = packet->zero46;
+    texture[2] = packet->zero46 + packet->command;
+    if (texture[2] < texture[0]) {
+        texture[0] = packet->zero46 % 1024;
+        packet->zero46 = texture[0];
+        texture[2] = packet->zero46 + packet->command;
+    }
+    texture[1] = (texture[2] + texture[0]) >> 1;
+    if (effect->mode == 6) { high = 0; low = 2; }
+    else if (effect->mode == 7) { high = 2; low = 0; }
+    else { high = 2; low = 0; }
+    offsetX = (-dz * inverseLength) * previousWidth;
+    offsetZ = (dx * inverseLength) * previousWidth;
+    cursor->v.ob[0] = (s32)(previousPosition.x + offsetX);
+    cursor->v.ob[1] = (s32)previousPosition.y;
+    cursor->v.ob[2] = (s32)(previousPosition.z + offsetZ);
+    cursor->v.tc[0] = previousTag;
+    cursor->v.tc[1] = texture[high];
+    cursor->v.cn[0] = 255;
+    cursor->v.cn[1] = 255;
+    cursor->v.cn[2] = 255;
+    cursor->v.cn[3] = 0;
+    cursor->v.flag = 0;
+    cursor++;
+    cursor->v.ob[0] = (s32)(previousPosition.x);
+    cursor->v.ob[1] = (s32)previousPosition.y;
+    cursor->v.ob[2] = (s32)(previousPosition.z);
+    cursor->v.tc[0] = previousTag;
+    cursor->v.tc[1] = texture[1];
+    cursor->v.cn[0] = 255;
+    cursor->v.cn[1] = 255;
+    cursor->v.cn[2] = 255;
+    cursor->v.cn[3] = previousAlpha;
+    cursor->v.flag = 0;
+    cursor++;
+    cursor->v.ob[0] = (s32)(previousPosition.x - offsetX);
+    cursor->v.ob[1] = (s32)previousPosition.y;
+    cursor->v.ob[2] = (s32)(previousPosition.z - offsetZ);
+    cursor->v.tc[0] = previousTag;
+    cursor->v.tc[1] = texture[low];
+    cursor->v.cn[0] = 255;
+    cursor->v.cn[1] = 255;
+    cursor->v.cn[2] = 255;
+    cursor->v.cn[3] = 0;
+    cursor->v.flag = 0;
+    cursor++;
+    do {
+        offsetX = (-dz * inverseLength) * currentWidth;
+        offsetZ = (dx * inverseLength) * currentWidth;
+        cursor->v.ob[0] = (s32)(position.x + offsetX);
+        cursor->v.ob[1] = (s32)position.y;
+        cursor->v.ob[2] = (s32)(position.z + offsetZ);
+        cursor->v.tc[0] = tag;
+        cursor->v.tc[1] = texture[high];
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 255;
+        cursor->v.cn[2] = 255;
+        cursor->v.cn[3] = 0;
+        cursor->v.flag = 0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(position.x);
+        cursor->v.ob[1] = (s32)position.y;
+        cursor->v.ob[2] = (s32)(position.z);
+        cursor->v.tc[0] = tag;
+        cursor->v.tc[1] = texture[1];
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 255;
+        cursor->v.cn[2] = 255;
+        cursor->v.cn[3] = alpha;
+        cursor->v.flag = 0;
+        cursor++;
+        cursor->v.ob[0] = (s32)(position.x - offsetX);
+        cursor->v.ob[1] = (s32)position.y;
+        cursor->v.ob[2] = (s32)(position.z - offsetZ);
+        cursor->v.tc[0] = tag;
+        cursor->v.tc[1] = texture[low];
+        cursor->v.cn[0] = 255;
+        cursor->v.cn[1] = 255;
+        cursor->v.cn[2] = 255;
+        cursor->v.cn[3] = 0;
+        cursor->v.flag = 0;
+        cursor++;
+        gSPVertex(output++, cursor - 6, 6, 0);
+        gSP1Triangle(output++, 0, 3, 4, 0);
+        gSP1Triangle(output++, 0, 4, 1, 0);
+        gSP1Triangle(output++, 1, 4, 5, 0);
+        gSP1Triangle(output++, 1, 5, 2, 0);
+        previous = index;
+        index--;
+        if (index < 0) index = effect->capacity - 1;
+        if (previous != effect->head) {
+            previousPosition = position;
+            entry = &entries[index];
+            position.x = entry->x;
+            position.y = entry->height;
+            position.z = entry->z;
+            alpha = (entry->light * entry->alpha) >> 8;
+            tag = entry->tag;
+            dx = position.x - previousPosition.x;
+            dz = position.z - previousPosition.z;
+            /* Later joins use exact zero, unlike the initial epsilon gate. */
+            if (position.x == previousPosition.x && dz == 0.0f) inverseLength = 1.0f;
+            else inverseLength = 1.0f / sqrtf(dx * dx + dz * dz);
+            currentWidth = entry->phase;
+        }
+    } while (previous != effect->head);
+    }
+    }
+    return output;
 }
+
 
 /* Refresh the selected linked-state value and invalidate a completed entry. */
 void func_151A084C(struct260 *entry) {
