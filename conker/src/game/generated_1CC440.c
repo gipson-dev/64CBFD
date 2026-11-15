@@ -70,6 +70,35 @@ typedef struct {
 extern f32 D_800A8CF0, D_800BE9A4;
 s32 func_15045800(f32 *, u16, f32, void *);
 
+typedef struct { f32 x, z; } SideVelocity1519F7F0;
+typedef struct {
+    f32 x, z, height, phase;
+    s16 alpha, delay, light, tag, lifetime, reserved1A;
+    SideVelocity1519F7F0 velocity;
+} SideEmitEntry1519F7F0;
+typedef struct {
+    u8 reserved00[0x10];
+    SidePosition1519F1C8 point;
+    s16 lifetime;
+    u16 flags;
+    s32 mode;
+    u8 reserved24, capacity, reserved26[6];
+    s8 count, head, tail;
+    u8 reserved2F[0x25];
+    SidePosition1519F1C8 published;
+    SideFloor1519F4F0 floor;
+    u8 reserved84[0x10];
+    SideEmitEntry1519F7F0 *entries;
+    SidePayload1519F1C8 *payload;
+    s32 reserved9C;
+} SideEmitter1519F7F0;
+typedef struct {
+    u8 *state;
+    u8 mode, reserved05[3];
+} SideTransition1519F7F0;
+struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+s32 func_150ADA20(void);
+
 extern s32 D_800BE9E4;
 
 
@@ -333,8 +362,133 @@ s32 func_1519F4F0(SideEffect1519F4F0 *effect) {
     return 1;
 }
 
-s32 func_1519F7F0() {
-    return 0;
+/* Sample movement into the side-effect ring and smooth its transverse velocity. */
+s32 func_1519F7F0(SideEmitter1519F7F0 *effect) {
+    SidePayload1519F1C8 *packet = effect->payload;
+    SideEmitEntry1519F7F0 *entries = effect->entries;
+    u8 *state = packet->state;
+    struct127 *actor = *(struct127 **)(state + 0x18);
+    s32 initialized;
+    f32 dx, dy, dz, inverseLength;
+    SideTransition1519F7F0 transition;
+    f32 length, fraction, remaining, weight, timeStep, weightStep;
+    SidePosition1519F1C8 position;
+    FourWord1CC440 *outputs;
+    SideEmitEntry1519F7F0 *entry;
+    u8 *created;
+    s32 previous, earlier, accepted;
+    SideVelocity1519F7F0 velocity;
+    f32 stepX, stepY, stepZ, bound;
+    f32 point[3];
+    u32 random;
+    f32 weightDifference;
+
+    if (actor->interaction_state == 0) return 0;
+    if (actor->unk1D4 == NULL) return 0;
+    if (state[0x1C] != actor->unique_id) return 0;
+    initialized = 0;
+    if (!(effect->flags & 4)) {
+        if (func_1519EF90((u8 *)packet, (u8)effect->mode, (f32 *)&effect->point)) {
+            packet->position = effect->point;
+            effect->flags |= 4;
+            initialized = 1;
+        } else return 1;
+    }
+    if (!initialized && !func_1519EF90((u8 *)packet, (u8)effect->mode, (f32 *)&effect->point)) {
+        func_1519F48C((u8 *)effect);
+        transition.state = packet->state;
+        transition.mode = effect->mode;
+        outputs = (FourWord1CC440 *)(transition.state + 0x58);
+        /* Preserve the three untouched bytes copied with this transition. */
+        created = (u8 *)func_151491F4(300, -1, 11, 0, 6, 8, 255, 0);
+        if (created != NULL) memcpy(created + 0x28, &transition, 8);
+        if (effect->mode == 6) outputs->second = created;
+        else outputs->fourth = created;
+        return 1;
+    }
+    packet->referenceX = actor->x_position;
+    packet->referenceZ = actor->z_position;
+    dx = effect->point.x - packet->position.x;
+    dy = effect->point.y - packet->position.y;
+    dz = effect->point.z - packet->position.z;
+    /* Retail leaves inverseLength untouched when motion is below the bound.
+     * Normal retained progress is <= 1 on that path, so no sample uses it. */
+    if (0.0001f < fabsf(dx) || 0.0001f < fabsf(dy) || 0.0001f < fabsf(dz)) {
+        length = sqrtf(dx * dx + dy * dy + dz * dz);
+        inverseLength = 1.0f / length;
+        packet->phase += length * packet->scale;
+    }
+    if (1.0f < packet->phase) {
+        fraction = 1.0f / packet->phase;
+        remaining = packet->elapsed + D_800BE9A4;
+        timeStep = remaining * fraction;
+        position = packet->position;
+        weight = packet->speed + packet->limit * remaining;
+        weightDifference = packet->speed - weight;
+        if (effect->mode == 7) {
+            velocity.x = (-dz * inverseLength) * packet->rate;
+            velocity.z = (dx * inverseLength) * packet->rate;
+        } else {
+            velocity.x = (dz * inverseLength) * packet->rate;
+            velocity.z = (-dx * inverseLength) * packet->rate;
+        }
+        previous = effect->tail - 1;
+        if (previous < 0) previous = effect->capacity - 1;
+        if (previous != effect->head && effect->count != 0) {
+            earlier = previous - 1;
+            if (earlier < 0) earlier = effect->capacity - 1;
+            entries[earlier].velocity.x = (entries[earlier].velocity.x + velocity.x) * 0.5f;
+            entries[earlier].velocity.z = (entries[earlier].velocity.z + velocity.z) * 0.5f;
+        }
+        stepX = dx * fraction;
+        stepY = dy * fraction;
+        stepZ = dz * fraction;
+        weightStep = weightDifference * fraction;
+        bound = 20000.0f;
+        do {
+            entry = &entries[effect->tail];
+            entry->velocity = velocity;
+            entry->x = position.x;
+            entry->z = position.z;
+            entry->lifetime = packet->duration;
+            entry->phase = weight;
+            entry->alpha = packet->alpha;
+            entry->delay = packet->width;
+            entry->light = 255;
+            entry->tag = packet->zero28;
+            random = (u32)func_150ADA20();
+            packet->zero28 = (u32)packet->zero28 + packet->fourth + random % ((u32)packet->fifth + 1);
+            entry->x += entry->velocity.x * remaining;
+            entry->z += entry->velocity.z * remaining;
+            point[0] = entry->x;
+            if (actor->unk118 < -9500.0f) point[1] = actor->y_position + 100.0f;
+            else point[1] = actor->unk118 + 100.0f;
+            point[2] = entry->z;
+            accepted = 1;
+            if (bound < fabsf(point[0]) || bound < fabsf(point[2])) accepted = 0;
+            else if (func_15045800(point, 0, point[1] - 200.0f, &effect->floor)) entry->height = effect->floor.height;
+            else accepted = 0;
+            if (accepted) {
+                effect->tail++;
+                if (effect->tail == effect->capacity) effect->tail = 0;
+                effect->count++;
+                if (effect->head == effect->tail) {
+                    effect->head++;
+                    if (effect->head == effect->capacity) effect->head = 0;
+                    effect->count--;
+                }
+            }
+            position.x += stepX;
+            position.y += stepY;
+            position.z += stepZ;
+            weight += weightStep;
+            remaining -= timeStep;
+            packet->phase -= 1.0f;
+        } while (1.0f < packet->phase);
+        packet->position = position;
+        packet->elapsed = remaining;
+    }
+    return 1;
 }
 
 s32 func_1519FE6C() {
