@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2444](WORKING_NOTES/2444-game-configurable-particle-original-roles-and-normalization-20261114.md): private `func_15175390` now retains original saved roles/homes; its checked normalization matches **370 / 370 words** (raw **219 differences**). Three-stream behavior and local CFG proofs pass; no installation, guards or match credit. Total remains **4,487 / 5,515 (81.36%)**. Next: native32, callers, padders and linked-image qualification.
+
 [Note 2443](WORKING_NOTES/2443-game-configurable-particle-recovery-and-frame-fit-20261114.md): private `func_15175390` recovery has all 370 words and the retail 0xB8 frame, with **201 word differences**. Its 1,152 base cases, 63 directed cases and negative controls pass; no installation, guards or match credit. Total remains **4,487 / 5,515 (81.36%)**. Next: recover the shared divisor/Z saved-register lifetime.
 
 [Note 2442](WORKING_NOTES/2442-game-minimum-height-particle-constructor-direct-match-20261114.md): `func_15174FA4` now emits all 251 minimum-height particle-constructor words directly from C, with no new guards. Owner **2 / 9 exact**. Game **3,814 / 4,842 (78.77%)**, total **4,487 / 5,515 (81.36%)**, zero drift; **201** more matches to 85%. Next: 370-word `func_15175390`.
