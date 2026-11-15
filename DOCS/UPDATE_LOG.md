@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2446](WORKING_NOTES/2446-game-particle-display-callback-guarded-match-20261114.md): `func_151770C8` now matches all **101 words** with **four independent cursor-scheduling guards** and its original frame/homes. Native32, registry callback, alias/prefix, both-padder and strict-image gates pass. Owner **4 / 9 exact**. Game **3,816 / 4,842 (78.81%)**, total **4,489 / 5,515 (81.40%)**, zero drift; **199** more matches to 85%. Next: delegated renderer `func_15176DF0`.
+
 [Note 2445](WORKING_NOTES/2445-game-configurable-particle-constructor-guarded-match-20261114.md): `func_15175390` now matches all **370 words** with **219 checked register/scheduling/CFG guards**. Native32, five caller windows, both padders and the strict linked-image audit pass. Owner **3 / 9 exact**. Game **3,815 / 4,842 (78.79%)**, total **4,488 / 5,515 (81.38%)**, zero drift; **200** more matches to 85%. Next: 101-word `func_151770C8`.
 
 [Note 2444](WORKING_NOTES/2444-game-configurable-particle-original-roles-and-normalization-20261114.md): private `func_15175390` now retains original saved roles/homes; its checked normalization matches **370 / 370 words** (raw **219 differences**). Three-stream behavior and local CFG proofs pass; no installation, guards or match credit. Total remains **4,487 / 5,515 (81.36%)**. Next: native32, callers, padders and linked-image qualification.

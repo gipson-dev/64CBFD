@@ -77,6 +77,12 @@ typedef struct {
 } Particle15175390;
 extern f32 D_800A7178;
 
+extern f32 D_800D9B20, D_800D35E0, D_800D35E4;
+extern u8 D_800D9C10[], D_800BE9C0;
+extern Gfx *D_800DDE80[];
+s32 func_1510AEE0(void *, f32, f32, f32, f32, f32, f32, f32, f32 *, f32 *);
+void func_150A8050(f32 [4][4], f32, f32, f32);
+
 /* Recovered routine and remaining placeholders for asm/1A20A0.s. */
 
 /* Create jittered particles with one initial sound and optional ground classification. */
@@ -397,8 +403,35 @@ s32 func_15176DF0() {
     return 0;
 }
 
-s32 func_151770C8() {
-    return 0;
+/* Cull the particle, build its state-zero matrix, and submit its model. */
+Gfx *func_151770C8(Gfx *commands, Particle15175390 *record, s16 view) {
+    f32 matrix[4][4];
+    Gfx *packet;
+    if (!func_1510AEE0(D_800D9C10 + view * 64,
+                     record->position[0], record->position[1], record->position[2],
+                     D_800D9B20, 4000.0f, D_800D35E0, D_800D35E4, 0, 0)) {
+        switch (record->state91) {
+        case 0:
+            func_150A8050(matrix, record->tilt, record->heading, record->fieldB0);
+            matrix[3][0] = record->position[0];
+            matrix[3][1] = record->position[1];
+            matrix[3][2] = record->position[2];
+            guMtxF2L(matrix, (Mtx *)((u8 *)record + D_800BE9C0 * 64 + 16));
+            gSPMatrix(commands++, (u8 *)record + D_800BE9C0 * 64 + 16,
+                      G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+            gSPSegment(commands++, 1, D_800DDE80[51]);
+            packet = commands++;
+            gSPDisplayList(packet, D_800DDE80[53]);
+            break;
+        case 1:
+        case 2:
+        case 3:
+        default:
+            commands = (Gfx *)func_15176DF0(commands, record, view);
+            break;
+        }
+    }
+    return commands;
 }
 
 s32 func_1517725C() {
