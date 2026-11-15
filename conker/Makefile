@@ -453,6 +453,7 @@ $(RETAIL_PAD_GLOBAL_ASM_O_FILES): $(BUILD_DIR)/%.c.o: %.c $(RETAIL_LAYOUT) ../to
 	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(LOOP_UNROLL) $(MIPSBIT) -o $@.compact $(BUILD_DIR)/$<
 	$(PYTHON) $(ASM_PROCESSOR_DIR)/asm_processor.py $(OPT_FLAGS) $< --post-process $@.compact \
 		--assembler "$(AS) $(ASFLAGS)" --asm-prelude include/asm_processor_prelude.inc
+	$(if $(RETAIL_POOL_CHECK),$(PYTHON) ../tools/$(RETAIL_POOL_CHECK) $@.compact)
 	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) $(basename $(notdir $<)) $@.padded.s --word-patches retail_word_patches.us.csv $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
@@ -804,3 +805,10 @@ $(BUILD_DIR)/$(SRC_DIR)/game_3BA70.c.o: $(SRC_DIR)/game_3BA70.c $(RETAIL_LAYOUT)
 endif
 
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1B0740.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A72F0
+
+ifeq ($(VERSION),us)
+# Verify the compiler pool before binding it to the retained retail block.
+$(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: RETAIL_RODATA_SYMBOL := D_800A02C0
+$(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: RETAIL_POOL_CHECK := check_motion_effect_150c2c00_pool.py
+$(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: ../tools/check_motion_effect_150c2c00_pool.py ../tools/experiments/game_motion_effect_150c2c00_manifest.json
+endif

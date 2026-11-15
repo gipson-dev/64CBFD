@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include <string.h>
 
 #include "functions.h"
 #include "variables.h"
@@ -88,6 +89,8 @@ extern f32 D_800A02A0, D_800A02A4, D_800A02A8, D_800A02AC;
 extern f32 D_800A02B0, D_800A02B4, D_800A02B8, D_800A02BC;
 void *func_15149550(RadialEffectPacket150C29F0 *, u8, u8, s32, u8, s32);
 
+void func_1514373C(f32, f32, f32 *, f32 *);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
@@ -97,7 +100,6 @@ s32 func_150C2700(
         s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
         s32 unused10, s32 unused11, s32 unused12, s32 unused13, u8 channel);
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
-s32 func_150C2C00();
 s32 func_150C308C(u8 *);
 Gfx *func_150C3160(Gfx *, u8 *);
 void func_150C3230();
@@ -362,9 +364,84 @@ void func_150C29F0(u8 *volatile owner) {
     func_15149550(&packet, 10, 1, 0, position[0xC], position[1]);
     *(s16 *)(owner + 0xE) = (u32)func_150ADA20() % 51U + 25;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2C00.s. */
-s32 func_150C2C00() {
-    return 0;
+/* Consume motion-gated emission attempts and copy each successful heading. */
+void func_150C2C00(u8 *owner) {
+    f32 firstScale, secondScale;
+    f32 *accumulator;
+    RadialEffectPacket150C29F0 packet;
+    f32 *motion;
+    f32 heading;
+    f32 angleLimit, headingBase, headingScale, effectScale;
+    void *created;
+
+    accumulator = (f32 *)(owner + 0x28);
+    firstScale = func_150ADA68();
+    *accumulator +=
+        (((firstScale * 20.0f) * 9.99999972e-10f) * D_800BE9A4) * 36447764.0f;
+    if (1.0f < *accumulator) {
+        motion = func_15144B34(D_80082FA4);
+        /* Reuse the draw scalars for the motion gate before their size values. */
+        secondScale = motion[0];
+        firstScale = motion[2];
+        secondScale = secondScale * secondScale + firstScale * firstScale;
+        if (2500000.0f < secondScale) {
+            packet.y = -390.0f;
+            packet.value40 = 0.0450000018f;
+            packet.value44 = 0.699999988f;
+            angleLimit = 0.400000006f;
+            headingBase = 0.957203984f;
+            headingScale = 5.86594248f;
+            packet.value3C = 0.0f;
+            packet.code0 = 0x6231;
+            packet.code1 = 0x1A4D;
+            packet.firstColor[0] = 0;
+            packet.firstColor[1] = 0;
+            packet.firstColor[2] = 0;
+            packet.alpha = 255;
+            packet.secondColor[1] = 255;
+            packet.secondColor[2] = 20;
+            packet.enabled = 1;
+            /* This packet variant uses word 0x30 as mode four. */
+            packet.zero30 = 4;
+            packet.flags2A = 1;
+            packet.kind34 = 25;
+            effectScale = 0.00100000005f;
+            do {
+                heading = func_150ADA68();
+                heading = heading * headingScale + headingBase;
+                secondScale = func_150484A0(motion[0], motion[2]);
+                secondScale = func_15144C8C(secondScale, heading);
+                if (secondScale < angleLimit) {
+                    secondScale = func_150ADA68();
+                    func_1514373C(heading,
+                        secondScale * 1278.0f + 3900.0f,
+                        &packet.x, &packet.z);
+                    firstScale = func_150ADA68();
+                    firstScale = (firstScale * 1991.0f + 1985.0f) * effectScale;
+                    secondScale = func_150ADA68();
+                    packet.size0 = 22.6000004f * firstScale;
+                    packet.size1 = 13.7860003f * firstScale;
+                    secondScale = (secondScale * 1493.0f + 3000.0f) * effectScale;
+                    packet.delta0 = 57.9690018f * secondScale;
+                    packet.delta1 = 42.7140007f * secondScale;
+                    packet.delta2 = 118.763f * secondScale;
+                    packet.duration = (u32)func_150ADA20() % 151U + 50;
+                    secondScale = func_150ADA68();
+                    packet.zero38 = (secondScale * 500.0f) * effectScale;
+                    packet.secondColor[0] = (u32)func_150ADA20() % 156U + 100;
+                    created = func_15149550(&packet, 10, 1, 0, owner[0xC], owner[1]);
+                    if (created != 0) {
+                        memcpy((u8 *)created + 0x160, &heading, sizeof(heading));
+                    }
+                }
+                *accumulator -= 1.0f;
+            } while (1.0f < *accumulator);
+        } else {
+            do {
+                *accumulator -= 1.0f;
+            } while (1.0f < *accumulator);
+        }
+    }
 }
 /* Apply damping and vertical acceleration; report whether both extents remain valid. */
 s32 func_150C2FCC(void *effect) {
