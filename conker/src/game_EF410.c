@@ -68,6 +68,9 @@ void func_1514C470(f32, f32, f32, f32, f32, f32, f32, s32, s32, f32, void *, u8)
 f32 *func_15144B34(s32);
 void *func_15134908(void *arg0, s32 arg1, u8 arg2, s32 arg3);
 
+void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
+                    f32, f32, u8, s32, u8, u8, u8, s32);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 s32 func_150C2290();
@@ -77,7 +80,6 @@ s32 func_150C2700(
         s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
         s32 unused10, s32 unused11, s32 unused12, s32 unused13, u8 channel);
 void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context);
-s32 func_150C2898();
 s32 func_150C29F0();
 s32 func_150C2C00();
 s32 func_150C308C(u8 *);
@@ -270,9 +272,30 @@ void func_150C2804(f32 *x, f32 *y, f32 *z, s16 delta, u8 channel, s32 context) {
     packet.sentinel = -1;
     func_15134908(&packet, 0, channel, context);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2898.s. */
-s32 func_150C2898() {
-    return 0;
+/* Emit a randomized effect opposite the incoming direction. */
+void func_150C2898(f32 x, f32 y, f32 z, f32 dx, f32 dy, f32 dz, u8 *owner) {
+    f32 position[3];
+    f32 velocity[3];
+    f32 speed, second;
+    u32 secondValue, firstValue;
+    f32 first;
+
+    position[0] = x;
+    position[1] = y;
+    position[2] = z;
+    speed = (func_150ADA68() * 112.0f + 247.0f) * D_800A0288;
+    velocity[0] = -dx * speed;
+    velocity[1] = -dy * speed;
+    velocity[2] = -dz * speed;
+    first = func_150ADA68();
+    firstValue = func_150ADA20();
+    secondValue = func_150ADA20();
+    second = func_150ADA68();
+    func_151D9014(position, velocity, 6,
+        first * D_800A028C + D_800A0290,
+        (firstValue & 15U) + 25, secondValue % 101U + 155,
+        second * 119.0f + 129.0f, 0, 1.0f, 1.0f,
+        1, 0, 1, 0, owner[0xC], owner[1]);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C29F0.s. */
 s32 func_150C29F0() {
