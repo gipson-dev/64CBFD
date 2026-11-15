@@ -22,9 +22,10 @@ s32 func_150A60C4() {
     return 0;
 }
 
-s32 func_150A613C() {
-    return 0;
-}
+/* Handwritten vertex transform/clip helper: T4 is the signed XYZ vertex;
+ * F20..F31 hold the matrix, F16/F17 the projection scales, F18/F19 the
+ * depth limits. Returns F13/F14/F15 and T3; updates the caller's S2 mask. */
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_D3040/func_150A613C.s")
 
 s32 func_150A6210() {
     return 0;
