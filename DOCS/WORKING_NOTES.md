@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2452](WORKING_NOTES/2452-game-common-particle-frame-native-and-callers-20261114.md): private `func_15175958` recovers frame **0xC8** and fixes native audio RNG/coordinate sequencing. **1,483 guest cases**, 24 zero-divisor prefixes, **1,315 native32 cases per O0/O2/O3**, and three direct/four registry caller interfaces pass. Still **956 / 961 words**, uninstalled and uncredited. Total stays **4,493 / 5,515 (81.47%)**, **195** more to 85%. Next: private homes and complete instruction layout.
+
 [Note 2451](WORKING_NOTES/2451-game-common-particle-update-private-recovery-20261114.md): private `func_15175958` recovery emits **956 / 961 words**, frame **0xC0 / 0xC8**. **1,314 differential guest cases**, 867 visited retail words and five effective controls pass; all eight neighbors and 807 production inputs stay fixed. No installation or match credit. Total remains **4,493 / 5,515 (81.47%)**, **195** more to 85%. Next: original frame/lifetimes and complete qualification.
 
 [Note 2450](WORKING_NOTES/2450-game-particle-rise-idle-callback-guarded-match-20261114.md): `func_1517685C` now matches all **202 words** with **123 checked guards** and no inserted/omitted instructions. Guest/native, the authentic registry caller, both padders and strict-image gates pass. Owner **8 / 9 exact**. Game **3,820 / 4,842 (78.89%)**, total **4,493 / 5,515 (81.47%)**, zero drift; **195** more matches to 85%. Next: the final owner stub, 961-word `func_15175958`.
