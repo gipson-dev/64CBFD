@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2456](WORKING_NOTES/2456-game-resource-cache-guarded-match-20261115.md): `func_15016850` now matches all **84 resource-cache words** with **27 checked guards / three derived instructions**. Original seven-register saves, private homes, retained loader output and live globals are qualified; native/caller/padder/strict-image gates pass. Owner **1 / 3 exact**. Total **4,496 / 5,515 (81.52%)**, Game **3,823 / 4,842 (78.95%)**, zero drift; **192** more to 85%. Next: 477-word parent `func_150169A0`.
+
 [Note 2455](WORKING_NOTES/2455-game-resource-cache-private-recovery-20261114.md): private `func_15016850` recovers **84 words / frame 0x60 / handle home SP+0x50**. **1,440 guest cases**, **576 native32 cases per O0/O2/O3** and the original caller window pass. Still **76 word differences / extra saved S7**, uninstalled and uncredited. All 812 production inputs stay fixed. Total remains **4,495 / 5,515 (81.50%)**, **193** more to 85%. Next: seven-register lifetime and original loop-bound lowering.
 
 [Note 2454](WORKING_NOTES/2454-game-clock-hands-and-chime-guarded-match-20261114.md): `func_1510AA44` now matches all **229 clock-hand/chime words** with **ten checked guards**, original frame/homes and no inserted/omitted instructions. Guest/native, registry installer, both callers and strict-image gates pass. Owner **4 / 4 exact**. Total **4,495 / 5,515 (81.50%)**, Game **3,822 / 4,842 (78.93%)**, zero drift; **193** more to 85%. Next: 84-word resource-cache builder `func_15016850`; common particle updater remains private.
