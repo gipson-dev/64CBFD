@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2500](WORKING_NOTES/2500-game-linked-ring-emitter-recovery-and-ordered-setup-screen-20261116.md): `func_151A37C0` has a complete **266-word / frame 0x120** private C draft and **eight verified ordered setup paths**, with live loop roles and effective rejection controls. Its retail slot is 265 words; whole-function acceptance remains open and **C-match credit is zero**. Accepted progress stays **4,522 / 5,514 (82.01%)**, Game **3,849 / 4,841 (79.51%)**, zero drift; **165** more to 85%. Continue this emitter.
+
 [Note 2499](WORKING_NOTES/2499-game-ring-record-updater-direct-recovery-and-byte-match-20261116.md): `func_151A361C` directly matches **105 words / frame 0**, recovering ring-record aging, expiry and position output; **zero guards, insertions or omissions**. Full guest/native, original callback-parent and both-tools gates pass production acceptance. Total **4,522 / 5,514 (82.01%)**, Game **3,849 / 4,841 (79.51%)**, zero drift; **165** more to 85%. Next: `func_151A37C0`.
 
 [Note 2498](WORKING_NOTES/2498-game-owner-setup-dispatcher-direct-recovery-and-byte-match-20261116.md): `func_151A3390` directly matches **93 words / frame 0x98**, with its partial owner descriptor and five typed provider calls; **zero guards, insertions or omissions**. Full guest/native, original caller-window and both-tools gates pass production acceptance. Total **4,521 / 5,514 (81.99%)**, Game **3,848 / 4,841 (79.49%)**, zero drift; **166** more to 85%. Next: `func_151A361C`.
