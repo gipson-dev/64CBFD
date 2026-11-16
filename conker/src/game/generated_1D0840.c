@@ -553,9 +553,86 @@ void func_151A4590(u8 * volatile owner, u8 variant) {
     }
 }
 
-s32 func_151A4638() {
-    return 0;
+typedef struct {
+    u32 field00, field04;
+    s16 field08, counter;
+    u32 field0C, field10;
+    u8 field14, field15, field16, field17;
+    u8 field18, field19, field1A, field1B, field1C, field1D;
+    s16 field1E, field20, field22;
+    f32 field24, firstValue, secondValue;
+    RingPosition151A361C position;
+    u8 reserved3C[12];
+    RingPosition151A361C velocity;
+    f32 field54;
+    u32 flags;
+    u8 reserved5C[4];
+    u8 field60, field61, field62;
+    s8 field63;
+    /* The factory copies all 0x70 descriptor bytes, including this tail. */
+    u8 reserved64[12];
+} InverseMotionEffect151A4638;
+extern f32 D_800A8D60, D_800BE9A8;
+f32 func_150ADA68(void);
+void *func_15130374(void *, u8, s32, u8, s32);
+
+/* Submit an inverse-motion effect with a random initial counter and flag bits. */
+void func_151A4638(f32 x, f32 y, f32 z, f32 vx, f32 vy, f32 vz, u8 *owner) {
+    InverseMotionEffect151A4638 packet;
+    f32 scale;
+    s16 parameters[6];
+    u8 *created;
+
+    packet.field1D = 0x27;
+    packet.field08 = 0x1401;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.counter = (u32)func_150ADA20() % 5U + 15;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field14 = 0x8A;
+    packet.field15 = 0;
+    packet.field16 = 0;
+    packet.field17 = 255;
+    packet.field18 = 0;
+    packet.field19 = 0;
+    packet.field1A = 0;
+    packet.field1E = 1;
+    packet.field20 = 255;
+    packet.field22 = 1;
+    packet.field24 = 1.0f;
+    scale = func_150ADA68();
+    packet.position.x = x;
+    packet.position.y = y;
+    packet.position.z = z;
+    /* The two volatile accesses preserve the retail floating-point order. */
+    scale = scale * 50.0f + 500.0f;
+    ((volatile InverseMotionEffect151A4638 *)&packet)->firstValue = scale;
+    packet.secondValue = scale;
+    scale = D_800A8D60 * D_800BE9A8;
+    ((volatile InverseMotionEffect151A4638 *)&packet)->velocity.x = -vx * scale;
+    packet.velocity.y = -vy * scale;
+    packet.velocity.z = -vz * scale;
+    packet.field54 = 0.0f;
+    packet.flags = 13;
+    packet.field60 = 1;
+    packet.field61 = 1;
+    if (func_150ADA20() & 1) packet.flags |= 0x40;
+    if (func_150ADA20() & 1) packet.flags |= 0x80;
+    packet.field1B = 255;
+    packet.field1C = 255;
+    packet.field62 = 0;
+    packet.field63 = -1;
+    parameters[0] = 16;
+    parameters[1] = 15;
+    parameters[2] = 13;
+    parameters[3] = 19;
+    parameters[4] = 17;
+    parameters[5] = -24;
+    created = func_15130374(&packet, 0, sizeof(parameters), owner[0xC], 1);
+    if (created != NULL) memcpy(created + 0xA8, parameters, sizeof(parameters));
 }
+
 
 /* Update lifetime-scaled outputs and switch to the next update callback. */
 typedef struct {

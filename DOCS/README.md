@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2503](WORKING_NOTES/2503-game-inverse-motion-effect-constructor-full-recovery-and-guarded-byte-match-20261116.md): `func_151A4638` recovers the complete inverse-motion effect constructor and seven-argument callback ABI; **129 retail words / frame 0xA8**, 37 guards with one private-address fold. Full semantic, native, original-call-window and production gates pass. Total **4,525 / 5,514 (82.06%)**, Game **3,852 / 4,841 (79.57%)**, zero drift; **162** more to 85%. Next inspect `func_151A4A38`.
+
 [Note 2502](WORKING_NOTES/2502-game-camera-facing-ribbon-renderer-full-recovery-and-guarded-byte-match-20261116.md): `func_151A3BE4` recovers the camera-facing ribbon, fade scans and seam copy; **619 words / frame 0x128**, 357 guards, no insertions or omissions. Full composed proof, guest/native, connected caller and production gates pass. Total **4,524 / 5,514 (82.05%)**, Game **3,851 / 4,841 (79.55%)**, zero drift; **163** more to 85%. Next inspect `func_151A4638`; the intervening preset already matches.
 
 [Note 2501](WORKING_NOTES/2501-game-linked-ring-emitter-full-recovery-and-guarded-byte-match-20261116.md): `func_151A37C0` recovers movement sampling, snapshot retirement and ring emission; **265 words / frame 0x120**, 48 guards with one duplicate-return omission. Full semantic and production gates pass. Total **4,523 / 5,514 (82.03%)**, Game **3,850 / 4,841 (79.53%)**, zero drift; **164** more to 85%. Next inspect `func_151A3BE4`.
