@@ -35194,3 +35194,20 @@ generated_1CC440,func_151A1FB4,0x4d8,0x8FB7006C,0x8FB7006C,-,-,Preserve proved g
 generated_1CC440,func_151A1FB4,0x4dc,0x8FBE0070,0x8FBE0070,-,-,Preserve proved growth-emitter allocator schedule and exact signed-width operations,,,false
 generated_1CC440,func_151A1FB4,0x4e0,0x03E00008,0x03E00008,-,-,Preserve proved growth-emitter allocator schedule and exact signed-width operations,,,false
 generated_1CC440,func_151A1FB4,0x4e4,0x27BD0100,0x27BD0100,-,-,Preserve proved growth-emitter allocator schedule and exact signed-width operations,,,false
+generated_1CC440,func_151A2F0C,0xa4,0x24080056,0x24080001,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0xa8,0x24190003,0x24190011,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0xac,0x240E0001,0x240E0056,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0xb0,0x240F0011,0x240F0003,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0xf4,0xA7A8004E,0xAFA80054,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x104,0xAFB90050,0xA7B90058,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x10c,0xAFAE0054,0xA7AE004E,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x110,0xA7AF0058,0xAFAF0050,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x134,0x240800C8,0x240800FF,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x138,0x241900C8,0x24190037,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x148,0x240E0037,0x240E00C8,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x14c,0x240F00FF,0x240F00C8,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x150,0xA3A80062,0xA3A80064,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x154,0xA3B90063,0xA3B90066,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x16c,0xA3AD0064,0xA3AD0061,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x170,0xA3AE0066,0xA3AE0062,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false
+generated_1CC440,func_151A2F0C,0x174,0xA3AF0061,0xA3AF0063,-,-,Preserve proved composite-burst integer allocator and packet-store schedule,,,false

@@ -1465,8 +1465,130 @@ void func_151A2B84(f32 *arg0, s32 arg1, s32 arg2, s32 arg3, f32 arg4, f32 *arg5)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1CC440/func_151A2C24.s")
 
-s32 func_151A2F0C() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} CompositeEffectPosition;
+
+typedef struct {
+    s32 baseCount;
+    s32 countRange;
+    CompositeEffectPosition position;
+    f32 field14Base;
+    f32 field18Range;
+    f32 field1CBase;
+    f32 field20Range;
+    f32 radiusBase;
+    f32 radiusRange;
+    s16 firstBase;
+    s16 firstRange;
+    s16 secondBase;
+    s16 secondRange;
+    s32 headerByteBase;
+    s32 headerByteRange;
+    s16 headerShortBase;
+    s16 headerShortRange;
+    u16 field40;
+    u8 fixed42;
+    u8 fixed43;
+    u8 fixed44;
+    u8 byteBase45;
+    u8 byteBase46;
+    u8 byteBase47;
+    u8 byteBase48;
+    u8 byteRange49;
+    u8 byteRange4A;
+    u8 byteRange4B;
+    u8 byteRange4C;
+    u8 byteBase4D;
+    u8 byteBase4E;
+    u8 byteBase4F;
+    u8 byteBase50;
+    u8 byteRange51;
+    u8 byteRange52;
+    u8 byteRange53;
+    u8 byteRange54;
+    u8 byteBase55;
+    u8 byteRange56;
+    u8 fixed57;
+    u8 fixed58;
+    u8 padding59[3];
+    s32 field5C;
+    s32 field60;
+    s16 field64;
+    s16 field66;
+    s16 field68;
+    u8 field6A;
+    u8 padding6B;
+    f32 field6C;
+    s8 field70;
+    s8 field71;
+    u8 privateTail72[2];
+} CompositeEffectInput;
+extern f32 D_800A8D30, D_800A8D34, D_800A8D38;
+void func_15152B38(CompositeEffectInput *, u8, s32);
+
+/* Submit the timed composite burst, optionally offset by the record vector. */
+void func_151A2F0C(u8 *record) {
+    CompositeEffectInput packet;
+
+    packet.baseCount = 8;
+    packet.countRange = 6;
+    packet.position = *(CompositeEffectPosition *)(record + 0x40);
+    if (*(u32 *)(record + 0x68) & 0x1000) {
+        packet.position.x += *(f32 *)(record + 0x4C);
+        packet.position.y += *(f32 *)(record + 0x50);
+        packet.position.z += *(f32 *)(record + 0x54);
+    }
+    packet.field14Base = ((*(f32 *)(record + 0x3C) + *(f32 *)(record + 0x38)) * 0.5f) * D_800A8D30;
+    packet.field18Range = ((*(f32 *)(record + 0x3C) + *(f32 *)(record + 0x38)) * 0.5f) * D_800A8D34;
+    packet.firstRange = 255;
+    packet.secondBase = -64;
+    packet.headerByteRange = 1;
+    packet.headerShortBase = 17;
+    packet.secondRange = 86;
+    packet.headerByteBase = 3;
+    packet.headerShortRange = 18;
+    packet.field40 = 1;
+    packet.fixed42 = 4;
+    packet.fixed43 = 2;
+    packet.fixed44 = 3;
+    packet.byteBase48 = 255;
+    packet.byteRange4A = 55;
+    packet.byteBase45 = 255;
+    packet.byteBase46 = 200;
+    packet.byteBase47 = 200;
+    packet.byteRange4B = 55;
+    packet.byteBase4D = 255;
+    packet.byteBase4E = 255;
+    packet.byteBase4F = 255;
+    packet.byteBase50 = 255;
+    packet.byteBase55 = 255;
+    packet.firstBase = 0;
+    packet.byteRange49 = 0;
+    packet.byteRange4C = 0;
+    packet.byteRange51 = 0;
+    packet.byteRange52 = 0;
+    packet.byteRange53 = 0;
+    packet.byteRange54 = 0;
+    packet.byteRange56 = 0;
+    packet.fixed57 = 1;
+    packet.fixed58 = 36;
+    packet.field5C = 0x200005;
+    packet.field60 = 0x60600;
+    packet.field64 = 7;
+    packet.field66 = 36;
+    packet.field68 = 1;
+    packet.field6A = 0;
+    packet.field70 = -1;
+    packet.field71 = 0;
+    ((s8 *)packet.privateTail72)[0] = -1;
+    ((s8 *)packet.privateTail72)[1] = -1;
+    packet.field1CBase = D_800A8D38;
+    packet.field20Range = 0.0f;
+    packet.radiusBase = 8.0f;
+    packet.radiusRange = 10.0f;
+    packet.field6C = 1.0f;
+    func_15152B38(&packet, record[0xC], record[1]);
 }
 
 s32 func_151A3150() {
