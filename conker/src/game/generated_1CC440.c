@@ -1294,8 +1294,90 @@ void func_151A1EE8(struct260 *record) {
     }
 }
 
-s32 func_151A1FB4() {
-    return 0;
+/* Emit randomized particles with intensity, size-growth and one-shot curves. */
+void func_151A1FB4(struct260 *record) {
+    RecordEffectPacketSix1CC440 *state = (RecordEffectPacketSix1CC440 *)((u8 *)record + 0x28);
+    EmissionPacket151A11E4 packet;
+    s16 curve[14];
+    union { s32 integer; u8 *pointer; } scratch;
+    s32 secondAngle;
+    f32 componentX, componentY, componentZ, polarSine;
+    f32 targetX, targetZ, targetY;
+    s16 peak, half;
+    s32 quarter;
+
+    state->phase = state->phase + state->sourceValueB * D_800BE9A4;
+    if (state->phase > 1.0f) {
+        packet.red = 5;
+        packet.green = 0;
+        packet.blue = 0;
+        packet.zero30 = 0;
+        packet.zero31 = 0;
+        packet.zero32 = 0;
+        packet.fractionScale = 18;
+        packet.curveFlags = 0x120;
+        packet.flags = 0xC0001;
+        packet.zero0C = 0;
+        packet.descriptor = D_80090D34;
+        packet.zero16 = 0;
+        packet.zero20 = 0;
+        packet.zero18 = 0;
+        packet.zero22 = 0;
+        packet.zero2A = 0;
+        packet.alpha = 0;
+        packet.sizeX = 2000;
+        packet.sizeY = 2000;
+        do {
+            scratch.integer = func_150ADA20() & 255;
+            secondAngle = func_150ADA20() & 255;
+            componentX = func_151423D8((u8)(scratch.integer - 64));
+            componentY = func_151423D8((u8)scratch.integer);
+            componentZ = func_151423D8((u8)(secondAngle - 64));
+            polarSine = func_151423D8((u8)secondAngle);
+            targetY = func_150ADA68() * state->sourceValueA;
+            polarSine = targetY * polarSine;
+            targetX = state->position.x + polarSine * componentX;
+            targetY = state->position.y - targetY * componentZ;
+            targetZ = state->position.z + polarSine * componentY;
+
+            if (func_150ADA20() & 1) packet.curveFlags |= 4;
+            if (func_150ADA20() & 1) packet.curveFlags |= 8;
+            scratch.integer = func_150ADA20();
+            packet.lifetime = (u32)scratch.integer % (u32)(state->parameters[1] + 1) + state->parameters[0];
+            scratch.integer = func_150ADA20();
+            secondAngle = (s16)((u32)scratch.integer % (u32)(state->parameters[3] + 1) + state->parameters[2]);
+            packet.age = D_80090B60[0x1D8] * (256 / packet.lifetime);
+            peak = packet.age;
+            half = peak >> 1;
+            quarter = peak >> 2;
+            curve[0] = 255 / (peak - (s16)(peak - quarter));
+            curve[1] = peak;
+            curve[2] = peak - quarter;
+            curve[3] = secondAngle / (peak - half);
+            curve[4] = peak;
+            curve[5] = half;
+            curve[6] = half;
+            curve[7] = 255 / half;
+            curve[8] = quarter;
+            curve[9] = 255 / quarter;
+            curve[10] = half;
+            scratch.integer = func_150ADA20();
+            curve[11] = (u32)scratch.integer % (u32)(state->parameters[5] + 1) + state->parameters[4];
+            curve[12] = packet.age >> 1;
+            curve[13] = (u32)func_150ADA20() % 81U + 80;
+
+            packet.x = (s32)targetX;
+            packet.y = (s32)targetY;
+            packet.z = (s32)targetZ;
+            packet.fractionX = (s32)(targetX * 256.0f);
+            packet.fractionY = (s32)(targetY * 256.0f);
+            packet.fractionZ = (s32)(targetZ * 256.0f);
+            scratch.pointer = func_15167D84(&packet, 0, 28, -1,
+                                  *((u8 *)record + 12), *((u8 *)record + 1));
+            if (scratch.pointer != NULL) memcpy(scratch.pointer + 0x50, curve, 28);
+            state->phase = state->phase - 1.0f;
+        } while (state->phase > 1.0f);
+    }
 }
 
 /* Apply ordered lifetime ramps, a colour-mode transition and a one-shot switch. */

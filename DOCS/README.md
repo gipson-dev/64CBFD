@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2495](WORKING_NOTES/2495-game-growth-and-one-shot-curve-emitter-recovery-and-byte-match-20261116.md): `func_151A1FB4` matches all **317 words / frame 0x100** with its fourteen-short growth/one-shot emitter. All314 source operations are retained with **three checked GPR copies**, ordered FP/frame proof, strengthened guest/native controls and actual slot4 parent. Total **4,518 / 5,514 (81.94%)**, Game **3,845 / 4,841 (79.43%)**, zero drift; **169** more to 85%. Next: `func_151A2F0C`.
+
 [Note 2494](WORKING_NOTES/2494-game-randomized-spawn-curve-emitter-recovery-and-byte-match-20261116.md): `func_151A1998` matches all **295 words / frame 0xF0** with its full typed randomized-spawn emitter and qualified CFG/FP/frame normalization. Total **4,517 / 5,514 (81.92%)**, Game **3,844 / 4,841 (79.41%)**, zero drift; **170** more to 85%. Next: `func_151A1FB4`.
 
 [Note 2493](WORKING_NOTES/2493-game-phase-driven-curve-emitter-recovery-and-byte-match-20261116.md): `func_151A11E4` now matches all **350 words / frame 0x110**. Complete typed emitter C, **2 entry / 512 loop-path** FP/FCSR/full-frame proof, actual slot-2 parent, native32 and **344 checked guards / six copies** pass production gates. All 38 neighbors/protected data stay fixed. Total **4,516 / 5,514 (81.90%)**, Game **3,843 / 4,841 (79.38%)**, zero drift; **171** more to 85%. Next: `func_151A1998`.
