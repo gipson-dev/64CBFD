@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2490](WORKING_NOTES/2490-game-scaled-argument-packet-recovery-and-ordered-fp-proof-20261115.md): private `func_151A1010` now has a complete 28-argument recovery and two-path ordered-FP/FCSR proof. Three-stream guest checks and 792,384 native cases per tools configuration pass. The ordered source is **109 words / frame 0x80**, versus retail **111 / 0x78**; frame and matching remain open, with **no installation or credit**. Total remains **4,514 / 5,514 (81.86%)**, zero drift; **173** more to 85%.
+
 [Note 2489](WORKING_NOTES/2489-game-randomized-short-packet-callback-and-byte-match-20261115.md): `func_151A0C0C` now matches all **141 words / frame 0x80**. Typed 56-byte packet C, all four original dispatcher routes, three-path ordered-FP/storage proof and **140 checked guards / one split-result copy** pass both-padder, rebase and production gates. All 38 neighbors/protected data stay fixed. Total **4,514 / 5,514 (81.86%)**, Game **3,841 / 4,841 (79.34%)**, zero drift; **173** more to 85%. Next: `func_151A1010`.
 
 [Note 2488](WORKING_NOTES/2488-game-side-ring-renderer-whole-function-proof-and-byte-match-20261115.md): `func_1519FE6C` now matches all **632 words / frame 0xF0**. Complete typed C, composed **72-path** relation, full reachable CFG, **637 checked guards / five omitted slots**, both padders, rebases and production gates pass. All 38 neighbors/protected data stay fixed. Total **4,513 / 5,514 (81.85%)**, Game **3,840 / 4,841 (79.32%)**, zero drift; **174** more to 85%. Next: `func_151A0C0C`.
