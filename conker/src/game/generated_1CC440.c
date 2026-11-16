@@ -937,9 +937,24 @@ void func_151A0F28(f32 x, f32 y, f32 value, u8 variant, s32 flags) {
         70, 66, 1055, 1270, 7, 65, 4, 1, variant, flags);
 }
 
-s32 func_151A1010() {
-    return 0;
+extern const f32 D_800A8D28;
+/* Submit the scaled 28-argument packet to its original retail stub. */
+void func_151A1010(f32 x, f32 y, f32 value, s16 span, f32 scale, f32 rate,
+    u8 variant, s32 flags) {
+    s16 clampedSpan;
+    s32 finalSpan;
+    span -= 32;
+    clampedSpan = span;
+    /* Keep the original span offset separate from the clamped width. */
+    finalSpan = (s32)span + 16;
+    if (clampedSpan <= 0) clampedSpan = 1;
+    func_151A11CC(x, y, value, (250.0f * scale), 1.0f,
+        ((s16)(s32)(70.0f * rate)), ((s16)(s32)(30.0f * rate)), ((s16)(s32)(D_800A8D28 * scale)), ((s16)(s32)(100.0f * scale)), 18, 1.0f,
+        ((s32)(90.0f * rate)), ((s32)(20.0f * rate)), ((s16)(s32)(D_800A8D28 * scale)), ((s16)(s32)(100.0f * scale)), clampedSpan, 16, 1.0f,
+        ((s16)(s32)(70.0f * rate)), ((s16)(s32)(30.0f * rate)), ((s16)(s32)(D_800A8D28 * scale)), ((s16)(s32)(100.0f * scale)), ((s32)(15.0f * scale)), ((s32)(10.0f * scale)),
+        18, finalSpan, variant, flags);
 }
+
 
 void func_151A11CC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, f32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15, s32 arg16, f32 arg17, s32 arg18, s32 arg19, s32 arg20, s32 arg21, s32 arg22, s32 arg23, s32 arg24, s32 arg25, u32 arg26, s32 arg27) {
 }

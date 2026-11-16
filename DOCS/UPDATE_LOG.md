@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2491](WORKING_NOTES/2491-game-scaled-argument-packet-frame-and-byte-match-20261115.md): `func_151A1010` now matches all **111 words / frame 0x78**. Recovered C, ordered-FP/whole-frame/result-register proof and **106 checked guards / five short-result copies** pass both-padder, rebase and production gates. All 38 neighbors/protected data stay fixed. Total **4,515 / 5,514 (81.88%)**, Game **3,842 / 4,841 (79.36%)**, zero drift; **172** more to 85%. Next: `func_151A11E4`.
+
 [Note 2490](WORKING_NOTES/2490-game-scaled-argument-packet-recovery-and-ordered-fp-proof-20261115.md): private `func_151A1010` now has a complete 28-argument recovery and two-path ordered-FP/FCSR proof. Three-stream guest checks and 792,384 native cases per tools configuration pass. The ordered source is **109 words / frame 0x80**, versus retail **111 / 0x78**; frame and matching remain open, with **no installation or credit**. Total remains **4,514 / 5,514 (81.86%)**, zero drift; **173** more to 85%.
 
 [Note 2489](WORKING_NOTES/2489-game-randomized-short-packet-callback-and-byte-match-20261115.md): `func_151A0C0C` now matches all **141 words / frame 0x80**. Typed 56-byte packet C, all four original dispatcher routes, three-path ordered-FP/storage proof and **140 checked guards / one split-result copy** pass both-padder, rebase and production gates. All 38 neighbors/protected data stay fixed. Total **4,514 / 5,514 (81.86%)**, Game **3,841 / 4,841 (79.34%)**, zero drift; **173** more to 85%. Next: `func_151A1010`.
