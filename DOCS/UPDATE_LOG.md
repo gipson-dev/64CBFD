@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2498](WORKING_NOTES/2498-game-owner-setup-dispatcher-direct-recovery-and-byte-match-20261116.md): `func_151A3390` directly matches **93 words / frame 0x98**, with its partial owner descriptor and five typed provider calls; **zero guards, insertions or omissions**. Full guest/native, original caller-window and both-tools gates pass production acceptance. Total **4,521 / 5,514 (81.99%)**, Game **3,848 / 4,841 (79.49%)**, zero drift; **166** more to 85%. Next: `func_151A361C`.
+
 [Note 2497](WORKING_NOTES/2497-game-alternate-composite-burst-constructor-recovery-and-byte-match-20261116.md): `func_151A3150` matches **142 body words + two alignment words / frame 0x90** with its complete alternate composite-burst packet and **17 scheduling guards / no insertions or omissions**. Full FP/frame, guest/native and actual slot-1 parent gates pass in both tools copies and production. Total **4,520 / 5,514 (81.97%)**, Game **3,847 / 4,841 (79.47%)**, zero drift; **167** more to 85%. Next: `func_151A3390`.
 
 [Note 2496](WORKING_NOTES/2496-game-timed-composite-burst-constructor-recovery-and-byte-match-20261116.md): `func_151A2F0C` matches all **145 words / frame 0x90** with a complete typed composite-burst constructor and **17 checked scheduling words / no insertions or omissions**. Full FP/frame/packet proof, actual timed parent and both tools copies pass production gates. Total **4,519 / 5,514 (81.96%)**, Game **3,846 / 4,841 (79.45%)**, zero drift; **168** more to 85%. Next: `func_151A3150`.

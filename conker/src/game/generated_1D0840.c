@@ -46,8 +46,56 @@ extern void (*D_8008F900[])();
 
 extern void (*D_8008F904[])(u8 *, s32, u8);
 
-s32 func_151A3390() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 identity, attachment, reserved06[2];
+    f32 vector[3];
+    f32 value14;
+    s16 value18, value1A, value1C;
+    u8 reserved1E[2];
+    f32 value20, value24;
+    u8 value28, value29, value2A, value2B, value2C, value2D, value2E;
+    u8 reserved2F;
+} OwnerSetupDescriptor151A3390;
+extern f32 D_800A8D50, D_800A8D54;
+u8 *func_151A3504(void *, u8);
+void func_151A4590(u8 * volatile, u8);
+void func_151A499C(void *, u8);
+s32 func_10010154(u16, void *, u16, s16, u16);
+struct225 *func_15160A58(u8 *, u8, void *, u8, s16, s32, s32, s32, s32, s32, s32, s8, s32, u8, u8, s32);
+
+/* Submit the owner descriptor, companion presets, sound and vector effect. */
+void func_151A3390(u8 *owner, u8 channel) {
+    OwnerSetupDescriptor151A3390 descriptor;
+    f32 position[3];
+
+    descriptor.owner = owner;
+    descriptor.identity = owner[0x3B];
+    descriptor.attachment = 1;
+    descriptor.vector[0] = 0.0f;
+    descriptor.vector[1] = 0.0f;
+    descriptor.vector[2] = 0.0f;
+    descriptor.value2B = 1;
+    descriptor.value2C = 255;
+    descriptor.value2D = 8;
+    descriptor.value2E = 31;
+    descriptor.value18 = 170;
+    descriptor.value1A = 40;
+    descriptor.value1C = 7;
+    descriptor.value28 = 2;
+    descriptor.value29 = 4;
+    descriptor.value2A = 1;
+    descriptor.value14 = D_800A8D50;
+    descriptor.value20 = 30.0f;
+    descriptor.value24 = D_800A8D54;
+    func_151A3504(&descriptor, channel);
+    func_151A4590(owner, channel);
+    func_151A499C(owner, channel);
+    func_10010154(0x1AA, owner, 0x55F0, 1000, 4000);
+    position[0] = 0.0f;
+    position[1] = 0.0f;
+    position[2] = 0.0f;
+    func_15160A58(owner, 1, position, 2, 300, 80, 255, 255, 117, 255, 0, -1, 0, 0, channel, 1);
 }
 
 typedef struct OwnerPosition151A3504 { f32 x, y, z; } OwnerPosition151A3504;
