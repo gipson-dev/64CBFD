@@ -228,21 +228,22 @@ Gfx *func_15167C58(Gfx *output, AnimatedState15167 *state, volatile s32 unused) 
     output = func_15142FBC(output, 0x2C00, D_800A4AC8[mode * 2 + 1] | D_800A4AC8[mode * 2] | 4, (u8 *)&sync.value);
     return func_15095760(output, (s16 *)&packet);
 }
-void func_15167D84(void *arg0, s32 arg1, s32 arg2, s8 arg3, u8 arg4, s32 arg5) {
-    u8 *tmp;
+/* Return the allocated particle so callers can append their extra payload. */
+u8 *func_15167D84(void *packet, s32 alternate, s32 extraBytes, s8 marker, u8 mode, s32 owner) {
+    u8 *particle;
     s32 kind;
 
-    if (arg1 == 0) {
+    if (alternate == 0) {
         kind = 5;
     } else {
         kind = 0x42;
     }
 
-    tmp = func_15167A68(kind, arg5, arg2 + 0x50, 0, arg4, 1);
-    if (tmp != NULL) {
-        bcopy(arg0, tmp + 0x10, 0x38);
-        tmp[0x48] = arg3;
-    }
+    particle = func_15167A68(kind, owner, extraBytes + 0x50, 0, mode, 1);
+    if (particle == NULL) return particle;
+    bcopy(packet, particle + 0x10, 0x38);
+    particle[0x48] = marker;
+    return particle;
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167E0C.s. */
 s32 func_15167E0C() {

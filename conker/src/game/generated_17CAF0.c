@@ -708,7 +708,7 @@ typedef struct {
 s32 func_150ADA20(void);
 f32 func_150ADA68(void);
 f32 func_151423D8(s32 angle);
-void func_15167D84(void *packet, s32 kind, s32 offset, s8 marker, u8 mode, s32 owner);
+u8 *func_15167D84(void *packet, s32 kind, s32 offset, s8 marker, u8 mode, s32 owner);
 /* Emit randomized short-form effect packets from a complete live input record. */
 void func_15153298(ShortPacketInput *input, u8 mode, s32 owner) {
     ShortPacket packet;

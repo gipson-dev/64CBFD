@@ -862,7 +862,7 @@ typedef struct {
     u8 privateTail36[2];
 } RandomShortPacket151A0C0C;
 extern u8 D_800918A0[], D_8009187C[], D_8008F8D0[];
-void func_15167D84(void *, s32, s32, s8, u8, s32);
+u8 *func_15167D84(void *, s32, s32, s8, u8, s32);
 extern const f32 D_800A8D14, D_800A8D18;
 
 /* Submit one randomized short-form particle through the shared callback ABI. */
