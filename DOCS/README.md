@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2497](WORKING_NOTES/2497-game-alternate-composite-burst-constructor-recovery-and-byte-match-20261116.md): `func_151A3150` matches **142 body words + two alignment words / frame 0x90** with its complete alternate composite-burst packet and **17 scheduling guards / no insertions or omissions**. Full FP/frame, guest/native and actual slot-1 parent gates pass in both tools copies and production. Total **4,520 / 5,514 (81.97%)**, Game **3,847 / 4,841 (79.47%)**, zero drift; **167** more to 85%. Next: `func_151A3390`.
+
 [Note 2496](WORKING_NOTES/2496-game-timed-composite-burst-constructor-recovery-and-byte-match-20261116.md): `func_151A2F0C` matches all **145 words / frame 0x90** with a complete typed composite-burst constructor and **17 checked scheduling words / no insertions or omissions**. Full FP/frame/packet proof, actual timed parent and both tools copies pass production gates. Total **4,519 / 5,514 (81.96%)**, Game **3,846 / 4,841 (79.45%)**, zero drift; **168** more to 85%. Next: `func_151A3150`.
 
 [Note 2495](WORKING_NOTES/2495-game-growth-and-one-shot-curve-emitter-recovery-and-byte-match-20261116.md): `func_151A1FB4` matches all **317 words / frame 0x100** with its fourteen-short growth/one-shot emitter. All314 source operations are retained with **three checked GPR copies**, ordered FP/frame proof, strengthened guest/native controls and actual slot4 parent. Total **4,518 / 5,514 (81.94%)**, Game **3,845 / 4,841 (79.43%)**, zero drift; **169** more to 85%. Next: `func_151A2F0C`.

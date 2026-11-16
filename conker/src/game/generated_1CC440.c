@@ -1591,6 +1591,68 @@ void func_151A2F0C(u8 *record) {
     func_15152B38(&packet, record[0xC], record[1]);
 }
 
-s32 func_151A3150() {
-    return 0;
+extern f32 D_800A8D3C, D_800A8D40, D_800A8D44;
+
+/* Submit the alternate timed composite burst, optionally offset by the record vector. */
+void func_151A3150(u8 *record) {
+    CompositeEffectInput packet;
+
+    packet.baseCount = 10;
+    packet.countRange = 15;
+    packet.position = *(CompositeEffectPosition *)(record + 0x40);
+    if (*(u32 *)(record + 0x68) & 0x1000) {
+        packet.position.x += *(f32 *)(record + 0x4C);
+        packet.position.y += *(f32 *)(record + 0x50);
+        packet.position.z += *(f32 *)(record + 0x54);
+    }
+    packet.field14Base = ((*(f32 *)(record + 0x3C) + *(f32 *)(record + 0x38)) * 0.5f) * D_800A8D3C;
+    packet.field18Range = ((*(f32 *)(record + 0x3C) + *(f32 *)(record + 0x38)) * 0.5f) * D_800A8D40;
+    packet.firstRange = 255;
+    packet.secondBase = -64;
+    packet.headerByteRange = 2;
+    packet.headerShortBase = 15;
+    packet.secondRange = 86;
+    packet.headerByteBase = 3;
+    packet.headerShortRange = 30;
+    packet.field40 = 1;
+    packet.fixed42 = 4;
+    packet.fixed43 = 2;
+    packet.fixed44 = 3;
+    packet.byteBase48 = 255;
+    packet.byteRange4A = 55;
+    packet.byteBase45 = 255;
+    packet.byteBase46 = 200;
+    packet.byteBase47 = 200;
+    packet.byteRange4B = 55;
+    packet.byteBase4D = 255;
+    packet.byteBase4E = 255;
+    packet.byteBase4F = 255;
+    packet.byteBase50 = 255;
+    packet.byteBase55 = 255;
+    packet.firstBase = 0;
+    packet.byteRange49 = 0;
+    packet.byteRange4C = 0;
+    packet.byteRange51 = 0;
+    packet.byteRange52 = 0;
+    packet.byteRange53 = 0;
+    packet.byteRange54 = 0;
+    packet.byteRange56 = 0;
+    packet.fixed57 = 1;
+    packet.fixed58 = 36;
+    packet.field5C = 0x200005;
+    packet.field60 = 0x60600;
+    packet.field64 = 15;
+    packet.field66 = 17;
+    packet.field68 = 1;
+    packet.field6A = 0;
+    packet.field70 = -1;
+    packet.field71 = 0;
+    ((s8 *)packet.privateTail72)[0] = -1;
+    ((s8 *)packet.privateTail72)[1] = -1;
+    packet.field1CBase = D_800A8D44;
+    packet.field20Range = 0.0f;
+    packet.radiusBase = 8.0f;
+    packet.radiusRange = 8.0f;
+    packet.field6C = 1.0f;
+    func_15152B38(&packet, record[0xC], record[1]);
 }
