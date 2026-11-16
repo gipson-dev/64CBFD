@@ -153,8 +153,62 @@ u8 *func_151A3504(void *input, u8 channel) {
     return created;
 }
 
-s32 func_151A361C() {
-    return 0;
+typedef struct { f32 x, y, z; } RingPosition151A361C;
+typedef struct {
+    RingPosition151A361C position;
+    f32 value;
+    s16 lifetime, delay;
+    u8 mark, reserved15[3];
+} RingEntry151A361C;
+extern f32 D_800BE9A4;
+
+/* Age the live ring records and select the oldest remaining output position. */
+s32 func_151A361C(u8 *owner) {
+    u8 *state;
+    RingEntry151A361C *entries;
+    s32 cursor;
+    RingEntry151A361C *entry;
+
+    state = *(u8 **)(owner + 0x98);
+    entries = *(RingEntry151A361C **)(owner + 0x94);
+    if (*(s8 *)(owner + 0x2C) < 2 && (state[0x30] & 1)) {
+        return 0;
+    }
+    state[0x4C] += (u32)*(s8 *)(state + 0x2A) * (u32)D_800BE9E4;
+    cursor = *(s8 *)(owner + 0x2E);
+    while (cursor != *(s8 *)(owner + 0x2D)) {
+        cursor--;
+        if (cursor < 0) {
+            cursor = owner[0x25] - 1;
+        }
+        entry = &entries[cursor];
+        if (entry->delay > 0) {
+            entry->delay = (s16)((u32)(s32)entry->delay - (u32)D_800BE9E4);
+        } else {
+            entry->lifetime -= (u32)D_800BE9E4 * (u32)(s32)*(s16 *)(state + 0x1C);
+        }
+        entry->mark = 255;
+        entry->value += D_800BE9A4 * *(f32 *)(state + 0x24);
+        if (entry->lifetime < 0) {
+            state[0x30] &= ~2;
+            while (cursor != *(s8 *)(owner + 0x2D)) {
+                owner[0x2D] = *(s8 *)(owner + 0x2D) + 1;
+                if (owner[0x25] == *(s8 *)(owner + 0x2D)) {
+                    owner[0x2D] = 0;
+                }
+                owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+            }
+            entries[*(s8 *)(owner + 0x2D)].lifetime = 0;
+        }
+    }
+    if (*(s8 *)(owner + 0x2C) > 0) {
+        *(RingPosition151A361C *)(owner + 0x54) = entries[*(s8 *)(owner + 0x2D)].position;
+    } else {
+        *(f32 *)(owner + 0x54) = 0.0f;
+        *(f32 *)(owner + 0x58) = 0.0f;
+        *(f32 *)(owner + 0x5C) = 0.0f;
+    }
+    return 1;
 }
 
 s32 func_151A37C0() {
