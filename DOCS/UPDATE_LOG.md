@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2502](WORKING_NOTES/2502-game-camera-facing-ribbon-renderer-full-recovery-and-guarded-byte-match-20261116.md): `func_151A3BE4` recovers the camera-facing ribbon, fade scans and seam copy; **619 words / frame 0x128**, 357 guards, no insertions or omissions. Full composed proof, guest/native, connected caller and production gates pass. Total **4,524 / 5,514 (82.05%)**, Game **3,851 / 4,841 (79.55%)**, zero drift; **163** more to 85%. Next inspect `func_151A4638`; the intervening preset already matches.
+
 [Note 2501](WORKING_NOTES/2501-game-linked-ring-emitter-full-recovery-and-guarded-byte-match-20261116.md): `func_151A37C0` recovers movement sampling, snapshot retirement and ring emission; **265 words / frame 0x120**, 48 guards with one duplicate-return omission. Full semantic and production gates pass. Total **4,523 / 5,514 (82.03%)**, Game **3,850 / 4,841 (79.53%)**, zero drift; **164** more to 85%. Next inspect `func_151A3BE4`.
 
 [Note 2500](WORKING_NOTES/2500-game-linked-ring-emitter-recovery-and-ordered-setup-screen-20261116.md): `func_151A37C0` has a complete **266-word / frame 0x120** private C draft and **eight verified ordered setup paths**, with live loop roles and effective rejection controls. Its retail slot is 265 words; whole-function acceptance remains open and **C-match credit is zero**. Accepted progress stays **4,522 / 5,514 (82.01%)**, Game **3,849 / 4,841 (79.51%)**, zero drift; **165** more to 85%. Continue this emitter.

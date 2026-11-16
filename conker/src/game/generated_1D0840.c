@@ -323,9 +323,211 @@ s32 func_151A37C0(u8 *owner) {
 }
 
 
-s32 func_151A3BE4() {
-    return 0;
+typedef struct {
+    u8 reserved00[0x2B];
+    u8 fadeInCount, fadeInStep, fadeOutCount, fadeOutStep, reserved2F;
+    u8 flags, reserved31[0x1B];
+    u8 phaseOffset, reserved4D[3];
+} RibbonProfile151A3BE4;
+
+extern u8 *D_800DBFF0;
+extern u8 D_80090CD4[];
+extern u32 D_800D2C9C;
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+Gfx *func_15142CF0(Gfx *, s32, s32, s32, s32, s32, s32, u8 *);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
+
+/* Build a camera-facing ribbon from the live ring, preserving texture seams. */
+Gfx *func_151A3BE4(u8 *owner, Gfx *output, s16 view) {
+    Vtx *cursor;
+    RibbonProfile151A3BE4 *profile;
+    RingSample151A37C0 *entries;
+    RingSample151A37C0 *entry;
+    RingPosition151A361C *eye;
+    f32 eyeX, eyeY, eyeZ, dx, dy, dz;
+    f32 normalX, normalY, normalZ;
+    RingPosition151A361C position, previousPosition;
+    s32 index, previous;
+    u8 phase, previousPhase, alpha, previousAlpha;
+    u8 sync, factor;
+    s16 remaining;
+    f32 lengthSquared, scale;
+
+    if (*(s8 *)(owner + 0x2C) >= 2) {
+        func_151D5D60(owner + 0x84, view, owner[0x25] * 32 + 0xA0, &cursor, NULL);
+        if (cursor != NULL) {
+            profile = *(RibbonProfile151A3BE4 **)(owner + 0x98);
+            entries = *(RingSample151A37C0 **)(owner + 0x94);
+            eye = (RingPosition151A361C *)(D_800DBFF0 + view * 0x9A0 + 0x2F8);
+            sync = 1;
+            factor = 0;
+            if (profile->flags & 2) {
+                s32 forwardIndex;
+                remaining = profile->fadeInCount;
+                forwardIndex = *(s8 *)(owner + 0x2D);
+                /* Retail enters once even when the fade count initially equals zero. */
+                do {
+                    entries[forwardIndex].mark = factor;
+                    factor += profile->fadeInStep;
+                    forwardIndex++;
+                    if (forwardIndex == owner[0x25]) forwardIndex = 0;
+                    remaining = (s16)(remaining - 1);
+                } while (remaining != 0 && forwardIndex != *(s8 *)(owner + 0x2E));
+            }
+            if (profile->flags & 4) {
+                s32 backwardIndex;
+                s16 backwardRemaining;
+                u8 backwardFactor;
+                backwardIndex = *(s8 *)(owner + 0x2E) - 1;
+                backwardFactor = 0;
+                backwardRemaining = profile->fadeOutCount;
+                if (backwardIndex < 0) backwardIndex = owner[0x25] - 1;
+                do {
+                    entries[backwardIndex].mark = (entries[backwardIndex].mark * backwardFactor) >> 8;
+                    backwardFactor += profile->fadeOutStep;
+                    backwardIndex--;
+                    if (backwardIndex < 0) backwardIndex = owner[0x25] - 1;
+                    backwardRemaining = (s16)(backwardRemaining - 1);
+                } while (backwardRemaining != 0 && backwardIndex != *(s8 *)(owner + 0x2E));
+            }
+            output = func_15142E24(output, D_80090CD4, 0, 0, 0, 0, 31, 0, NULL, &sync, 3);
+            output = func_15142B7C(output, 1, 0x160600);
+            output = func_15142C10(output, 255, 255, 255, 255, &sync);
+            output = func_15142CF0(output, 0, 0, 0, 0, 0, 0, &sync);
+            output = func_1513F4E4(output, 6, &sync);
+            output = func_15142FBC(output, D_800D2C9C | 0x80000 | 0x2CA0, 0x5049D8, &sync);
+            if (*(u16 *)(owner + 0x1E) & 2) {
+                index = *(s8 *)(owner + 0x2E) - 1;
+                if (index < 0) index = owner[0x25] - 1;
+                previousPosition = *(RingPosition151A361C *)(owner + 0x10);
+                entry = &entries[index];
+                previousAlpha = (entry->mark * entry->lifetime) >> 8;
+                previousPhase = entry->phase + profile->phaseOffset;
+            } else {
+                previous = *(s8 *)(owner + 0x2E) - 1;
+                if (previous < 0) previous = owner[0x25] - 1;
+                index = previous - 1;
+                if (index < 0) index = owner[0x25] - 1;
+                entry = &entries[previous];
+                previousPosition = entry->position;
+                previousAlpha = (entry->mark * entry->lifetime) >> 8;
+                previousPhase = entry->phase + profile->phaseOffset;
+            }
+            entry = &entries[index];
+            position = entry->position;
+            alpha = (entry->mark * entry->lifetime) >> 8;
+            phase = entry->phase + profile->phaseOffset;
+            eyeX = previousPosition.x - eye->x;
+            eyeY = previousPosition.y - eye->y;
+            eyeZ = previousPosition.z - eye->z;
+            dy = previousPosition.y - position.y;
+            dz = previousPosition.z - position.z;
+            dx = previousPosition.x - position.x;
+            normalX = dy * eyeZ - eyeY * dz;
+            normalY = dz * eyeX - eyeZ * dx;
+            normalZ = dx * eyeY - eyeX * dy;
+            lengthSquared = normalX * normalX + normalY * normalY + normalZ * normalZ;
+            if (lengthSquared == 0.0f) normalX = normalY = normalZ = 0.0f;
+            else {
+                scale = entry->value / sqrtf(lengthSquared);
+                normalX = normalX * scale;
+                normalY = normalY * scale;
+                normalZ = normalZ * scale;
+            }
+            cursor->v.ob[0] = (s32)(previousPosition.x + normalX);
+            cursor->v.ob[1] = (s32)(previousPosition.y + normalY);
+            cursor->v.ob[2] = (s32)(previousPosition.z + normalZ);
+            cursor->v.tc[0] = previousPhase << 6;
+            cursor->v.tc[1] = 0x7C0;
+            cursor->v.cn[0] = 255;
+            cursor->v.cn[1] = 255;
+            cursor->v.cn[2] = 255;
+            cursor->v.cn[3] = previousAlpha;
+            cursor->v.flag = 0;
+            cursor++;
+            cursor->v.ob[0] = (s32)(previousPosition.x - normalX);
+            cursor->v.ob[1] = (s32)(previousPosition.y - normalY);
+            cursor->v.ob[2] = (s32)(previousPosition.z - normalZ);
+            cursor->v.tc[0] = previousPhase << 6;
+            cursor->v.tc[1] = 0;
+            cursor->v.cn[0] = 255;
+            cursor->v.cn[1] = 255;
+            cursor->v.cn[2] = 255;
+            cursor->v.cn[3] = previousAlpha;
+            cursor->v.flag = 0;
+            cursor++;
+            do {
+                eyeX = position.x - eye->x;
+                eyeY = position.y - eye->y;
+                eyeZ = position.z - eye->z;
+                dy = previousPosition.y - position.y;
+                dz = previousPosition.z - position.z;
+                dx = previousPosition.x - position.x;
+                normalX = dy * eyeZ - eyeY * dz;
+                normalY = dz * eyeX - eyeZ * dx;
+                normalZ = dx * eyeY - eyeX * dy;
+                lengthSquared = normalX * normalX + normalY * normalY + normalZ * normalZ;
+                if (lengthSquared == 0.0f) normalX = normalY = normalZ = 0.0f;
+                else {
+                    scale = entries[index].value / sqrtf(lengthSquared);
+                    normalX = normalX * scale;
+                    normalY = normalY * scale;
+                    normalZ = normalZ * scale;
+                }
+                cursor->v.ob[0] = (s32)(position.x + normalX);
+                cursor->v.ob[1] = (s32)(position.y + normalY);
+                cursor->v.ob[2] = (s32)(position.z + normalZ);
+                cursor->v.tc[0] = phase << 6;
+                cursor->v.tc[1] = 0x7C0;
+                cursor->v.cn[0] = 255;
+                cursor->v.cn[1] = 255;
+                cursor->v.cn[2] = 255;
+                cursor->v.cn[3] = alpha;
+                cursor->v.flag = 0;
+                cursor++;
+                cursor->v.ob[0] = (s32)(position.x - normalX);
+                cursor->v.ob[1] = (s32)(position.y - normalY);
+                cursor->v.ob[2] = (s32)(position.z - normalZ);
+                cursor->v.tc[0] = phase << 6;
+                cursor->v.tc[1] = 0;
+                cursor->v.cn[0] = 255;
+                cursor->v.cn[1] = 255;
+                cursor->v.cn[2] = 255;
+                cursor->v.cn[3] = alpha;
+                cursor->v.flag = 0;
+                cursor++;
+                gSPVertex(output++, cursor - 4, 4, 0);
+                gSP1Triangle(output++, 0, 1, 2, 0);
+                gSP1Triangle(output++, 1, 3, 2, 0);
+                if (previousPhase < phase) {
+                    /* Preserve the next segment before shifting both emitted seam vertices. */
+                    memcpy(cursor, cursor - 2, sizeof(Vtx) * 2);
+                    cursor[-2].v.tc[0] -= 0x4000;
+                    cursor++;
+                    cursor[-2].v.tc[0] -= 0x4000;
+                    cursor++;
+                }
+                previous = index;
+                index--;
+                if (index < 0) index = owner[0x25] - 1;
+                if (previous != *(s8 *)(owner + 0x2D)) {
+                    previousPosition = position;
+                    entry = &entries[index];
+                    position = entry->position;
+                    alpha = (entry->mark * entry->lifetime) >> 8;
+                    previousPhase = phase;
+                    phase = entry->phase + profile->phaseOffset;
+                }
+            } while (previous != *(s8 *)(owner + 0x2D));
+        }
+    }
+    return output;
 }
+
 
 /* Submit the source-backed descriptor preset for the selected variant. */
 void func_151A4590(u8 * volatile owner, u8 variant) {
