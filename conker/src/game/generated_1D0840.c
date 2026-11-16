@@ -211,9 +211,117 @@ s32 func_151A361C(u8 *owner) {
     return 1;
 }
 
-s32 func_151A37C0() {
-    return 0;
+#include <math.h>
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+extern f32 D_800A8D58;
+s32 func_150ADA20(void);
+void *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+typedef struct {
+    u8 *owner;
+    u8 identity, attachment, reserved06[2];
+    f32 vector08[3], scale;
+    s16 lifetime, delay, lifetimeScale;
+    u8 reserved1E[2];
+    f32 value, rate;
+    u8 phaseBase, phaseRange, phaseStep, reserved2B[5];
+    u8 kind, reserved31[3];
+    RingPosition151A361C position;
+    f32 pending;
+    u8 phase, reserved45[3];
+    f32 elapsed;
+    u8 flags, reserved4D[3];
+} RingPayload151A37C0;
+typedef struct {
+    RingPosition151A361C position;
+    f32 value;
+    s16 lifetime, delay;
+    u8 mark, phase, reserved16[2];
+} RingSample151A37C0;
+
+/* Sample linked-owner movement into the ring, retaining fractional progress. */
+s32 func_151A37C0(u8 *owner) {
+    RingPayload151A37C0 *state = *(RingPayload151A37C0 **)(owner + 0x98);
+    RingSample151A37C0 *entries = *(RingSample151A37C0 **)(owner + 0x94);
+    s32 initialized;
+    f32 dx, dy, dz;
+    OwnerSetupDescriptor151A3390 snapshot;
+    f32 points, fraction, remaining, value, timeStep, valueStep;
+    RingPosition151A361C position;
+    RingSample151A37C0 *entry;
+    u8 *created;
+    f32 stepX, stepY, stepZ;
+    f32 valueDifference;
+    u32 random;
+
+    if (*(s32 *)state->owner == 0) return 0;
+    if (state->identity != state->owner[0x3B]) return 0;
+    initialized = 0;
+    if (!(*(u16 *)(owner + 0x1E) & 4)) {
+        if (func_151A4E34((u8 *)state, owner + 0x10)) {
+            state->position = *(RingPosition151A361C *)(owner + 0x10);
+            *(u16 *)(owner + 0x1E) |= 4;
+            initialized = 1;
+        } else return 1;
+    }
+    if (!initialized && !func_151A4E34((u8 *)state, owner + 0x10)) {
+        func_151A4E9C(owner);
+        memcpy(&snapshot, state, 0x30);
+        created = func_151491F4(300, -1, 10, 0, 5, 48, owner[0xC], 0);
+        if (created != NULL) memcpy(created + 0x28, &snapshot, 0x30);
+        return 1;
+    }
+    dx = *(f32 *)(owner + 0x10) - state->position.x;
+    dy = *(f32 *)(owner + 0x14) - state->position.y;
+    dz = *(f32 *)(owner + 0x18) - state->position.z;
+    if (D_800A8D58 < fabsf(dx) || D_800A8D58 < fabsf(dy) || D_800A8D58 < fabsf(dz)) {
+        state->pending += sqrtf(dx * dx + dy * dy + dz * dz) * state->scale;
+    }
+    points = state->pending;
+    if (1.0f < points) {
+        fraction = 1.0f / points;
+        position = state->position;
+        remaining = state->elapsed + D_800BE9A4;
+        timeStep = remaining * fraction;
+        value = state->value + state->rate * remaining;
+        valueDifference = state->value - value;
+        stepX = dx * fraction;
+        stepY = dy * fraction;
+        stepZ = dz * fraction;
+        valueStep = valueDifference * fraction;
+        do {
+            entry = &entries[*(s8 *)(owner + 0x2E)];
+            entry->position = position;
+            entry->value = value;
+            entry->lifetime = state->lifetime;
+            entry->delay = state->delay;
+            entry->phase = state->phase;
+            /* The RNG may change the phase fields; read them after it returns. */
+            random = (u32)func_150ADA20();
+            state->phase = (u32)state->phase + state->phaseBase +
+                random % ((u32)state->phaseRange + 1);
+            entry->mark = 255;
+            owner[0x2E] = *(s8 *)(owner + 0x2E) + 1;
+            if (owner[0x25] == *(s8 *)(owner + 0x2E)) owner[0x2E] = 0;
+            owner[0x2C] = *(s8 *)(owner + 0x2C) + 1;
+            if (*(s8 *)(owner + 0x2D) == *(s8 *)(owner + 0x2E)) {
+                owner[0x2D] = *(s8 *)(owner + 0x2D) + 1;
+                if (owner[0x25] == *(s8 *)(owner + 0x2D)) owner[0x2D] = 0;
+                owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+            }
+            position.x += stepX;
+            position.y += stepY;
+            position.z += stepZ;
+            value += valueStep;
+            remaining -= timeStep;
+            state->pending -= 1.0f;
+        } while (1.0f < state->pending);
+        state->position = position;
+        state->elapsed = remaining;
+    }
+    return 1;
 }
+
 
 s32 func_151A3BE4() {
     return 0;
