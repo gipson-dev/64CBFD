@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2493](WORKING_NOTES/2493-game-phase-driven-curve-emitter-recovery-and-byte-match-20261116.md): `func_151A11E4` now matches all **350 words / frame 0x110**. Complete typed emitter C, **2 entry / 512 loop-path** FP/FCSR/full-frame proof, actual slot-2 parent, native32 and **344 checked guards / six copies** pass production gates. All 38 neighbors/protected data stay fixed. Total **4,516 / 5,514 (81.90%)**, Game **3,843 / 4,841 (79.38%)**, zero drift; **171** more to 85%. Next: `func_151A1998`.
+
 [Note 2492](WORKING_NOTES/2492-game-packet-allocator-nullable-return-and-direct-match-20261115.md): `func_15167D84` now returns its nullable packet pointer and emits all **34 retail words directly / frame 0x28**. Corrected both caller declarations and retired **13 guards / two insertions**. All 121 owner neighbors and all 6,051 linked bodies/addresses stay fixed; the ELF changes only one symbol-size metadata byte. **No new matching credit**: total **4,515 / 5,514 (81.88%)**, zero drift, **172** more to 85%. Continue `func_151A11E4`.
 
 [Note 2491](WORKING_NOTES/2491-game-scaled-argument-packet-frame-and-byte-match-20261115.md): `func_151A1010` now matches all **111 words / frame 0x78**. Recovered C, ordered-FP/whole-frame/result-register proof and **106 checked guards / five short-result copies** pass both-padder, rebase and production gates. All 38 neighbors/protected data stay fixed. Total **4,515 / 5,514 (81.88%)**, Game **3,842 / 4,841 (79.36%)**, zero drift; **172** more to 85%. Next: `func_151A11E4`.

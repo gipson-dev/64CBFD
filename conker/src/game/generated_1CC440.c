@@ -959,9 +959,133 @@ void func_151A1010(f32 x, f32 y, f32 value, s16 span, f32 scale, f32 rate,
 void func_151A11CC(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8, s32 arg9, f32 arg10, s32 arg11, s32 arg12, s32 arg13, s32 arg14, s32 arg15, s32 arg16, f32 arg17, s32 arg18, s32 arg19, s32 arg20, s32 arg21, s32 arg22, s32 arg23, s32 arg24, s32 arg25, u32 arg26, s32 arg27) {
 }
 
-s32 func_151A11E4() {
-    return 0;
+typedef struct {
+    f32 x, y, z;
+} EffectPacketPosition1CC440;
+
+typedef struct {
+    EffectPacketPosition1CC440 position;
+    f32 sourceValueA;
+    f32 phase;
+    f32 sourceValueB;
+    s16 parameters[4];
+} RecordEffectPacket1CC440;
+
+typedef struct {
+    u8 *descriptor;
+    u32 flags;
+    u8 private08[4];
+    s16 zero0C, lifetime;
+    s16 x, y, z, zero16, zero18;
+    u8 private1A[2];
+    u8 fractionX, fractionZ, fractionY, fractionScale;
+    s16 zero20, zero22, sizeY, sizeX, age;
+    u8 zero2A, private2B;
+    u8 red, green, blue, alpha;
+    u8 zero30, zero31, zero32, private33;
+    u16 curveFlags;
+    u8 private36[2];
+} EmissionPacket151A11E4;
+
+extern u8 D_80090D34[];
+extern u8 D_80090B60[];
+
+/* Emit randomized particles with a 17-short motion and intensity curve. */
+void func_151A11E4(struct260 *record) {
+    RecordEffectPacket1CC440 *state = (RecordEffectPacket1CC440 *)((u8 *)record + 0x28);
+    EmissionPacket151A11E4 packet;
+    s16 curve[17];
+    s32 firstAngle, secondAngle;
+    f32 componentX, componentY, componentZ, polarSine;
+    f32 targetX, targetZ, targetY;
+    f32 radius, planar;
+    f32 inverseHalf;
+    u32 random;
+    s16 size, peak;
+
+    u8 *created;
+
+    state->phase = state->phase + state->sourceValueB * D_800BE9A4;
+    if (state->phase > 1.0f) {
+        packet.red = 255;
+        packet.green = 255;
+        packet.blue = 255;
+        packet.zero30 = 0;
+        packet.zero31 = 0;
+        packet.zero32 = 0;
+        packet.fractionScale = 16;
+        packet.curveFlags = 0x120;
+        packet.flags = 0xC0001;
+        packet.zero0C = 0;
+        packet.descriptor = D_80090D34;
+        packet.zero16 = 0;
+        packet.zero20 = 0;
+        packet.zero18 = 0;
+        packet.zero22 = 0;
+        packet.zero2A = 0;
+        packet.alpha = 0;
+        packet.sizeX = 2000;
+        packet.sizeY = 2000;
+        do {
+            firstAngle = func_150ADA20() & 255;
+            secondAngle = func_150ADA20() & 255;
+            /* Capture the target before later providers can change the record. */
+            componentX = func_151423D8((u8)(firstAngle - 64));
+            componentY = func_151423D8((u8)firstAngle);
+            componentZ = func_151423D8((u8)(secondAngle - 64));
+            polarSine = func_151423D8((u8)secondAngle);
+            radius = func_150ADA68() * state->sourceValueA;
+            planar = radius * polarSine;
+            targetX = state->position.x + planar * componentX;
+            targetY = state->position.y - radius * componentZ;
+            targetZ = state->position.z + planar * componentY;
+
+            if (func_150ADA20() & 1) packet.curveFlags |= 4;
+            if (func_150ADA20() & 1) packet.curveFlags |= 8;
+            random = (u32)func_150ADA20();
+            packet.lifetime = random % (u32)(state->parameters[1] + 1) + state->parameters[0];
+            random = (u32)func_150ADA20();
+            size = random % (u32)(state->parameters[3] + 1) + state->parameters[2];
+            packet.age = D_80090B60[0x1D8] * (256 / packet.lifetime);
+            peak = packet.age;
+            curve[5] = peak >> 1;
+            curve[0] = 255 / (peak - (s16)(peak - (peak >> 2)));
+            curve[1] = peak;
+            curve[2] = peak - (peak >> 2);
+            curve[3] = size / (peak - curve[5]);
+            curve[4] = peak;
+            curve[6] = (peak >> 1);
+            curve[13] = (peak >> 2);
+            curve[14] = 255 / (s16)(peak >> 2);
+            curve[15] = (peak >> 1);
+            curve[16] = size / (s16)(peak >> 1);
+
+            packet.x = (s32)state->position.x;
+            packet.y = (s32)state->position.y;
+            packet.z = (s32)state->position.z;
+            packet.fractionX = (s32)(state->position.x * 256.0f);
+            packet.fractionY = (s32)(state->position.y * 256.0f);
+            packet.fractionZ = (s32)(state->position.z * 256.0f);
+            inverseHalf = 1.0f / (f32)(s16)(peak >> 1);
+            /* The basis components are dead; reuse them for velocity. */
+            componentX = (targetX - state->position.x) * inverseHalf;
+            componentY = (targetY - state->position.y) * inverseHalf;
+            componentZ = (targetZ - state->position.z) * inverseHalf;
+            curve[7] = (s32)componentX;
+            curve[8] = (s32)componentY;
+            curve[9] = (s32)componentZ;
+            curve[10] = (u8)(s32)(componentX * 256.0f);
+            curve[11] = (u8)(s32)(componentY * 256.0f);
+            curve[12] = (u8)(s32)(componentZ * 256.0f);
+            created = func_15167D84(&packet, 0, 34, -1,
+                                  *((u8 *)record + 12), *((u8 *)record + 1));
+            if (created != NULL) memcpy(created + 0x50, curve, 34);
+            state->phase = state->phase - 1.0f;
+        } while (state->phase > 1.0f);
+    }
 }
+
+
 
 typedef struct {
     u8 pad00[0x20];
@@ -1015,17 +1139,7 @@ void func_151A175C(EffectCurve1CC440 *effect) {
     }
 }
 
-typedef struct {
-    f32 x, y, z;
-} EffectPacketPosition1CC440;
 
-typedef struct {
-    EffectPacketPosition1CC440 position;
-    f32 sourceValueA;
-    f32 phase;
-    f32 sourceValueB;
-    s16 parameters[4];
-} RecordEffectPacket1CC440;
 
 struct260 *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
 void *memcpy(void *, const void *, u32);
