@@ -828,9 +828,93 @@ void func_151A0AF8(FractionalBurstEmitter151A0AF8 *record) {
     }
 }
 
-s32 func_151A0C0C() {
-    return 0;
+typedef struct {
+    const void *template;
+    u8 private04[8];
+    s16 zero0C;
+    s16 fixed0E;
+    s16 positionX;
+    s16 positionY;
+    s16 positionZ;
+    s16 directionX;
+    s16 directionZ;
+    u8 private1A[2];
+    s8 scaledX;
+    s8 scaledY;
+    s8 scaledZ;
+    s8 fixed1F;
+    s16 directionY;
+    s16 field22;
+    s16 field24;
+    s16 field26;
+    s16 magnitude;
+    s8 field2A;
+    u8 private2B;
+    u8 color0;
+    u8 color1;
+    u8 color2;
+    u8 alpha;
+    s8 zero30;
+    s8 zero31;
+    s8 zero32;
+    u8 private33;
+    u16 fixed34;
+    u8 privateTail36[2];
+} RandomShortPacket151A0C0C;
+extern u8 D_800918A0[], D_8009187C[], D_8008F8D0[];
+void func_15167D84(void *, s32, s32, s8, u8, s32);
+extern const f32 D_800A8D14, D_800A8D18;
+
+/* Submit one randomized short-form particle through the shared callback ABI. */
+s32 func_151A0C0C(s32 first, s32 ordinal, f32 x, f32 y, f32 z,
+    f32 originX, f32 originY, f32 originZ, s32 heading, u8 startAngle,
+    f32 radius, s32 style, f32 intensity, void *user, u8 mode) {
+    RandomShortPacket151A0C0C packet;
+    s16 angle;
+    f32 firstPrimary, firstQuarter, headingPrimary, headingQuarter;
+    f32 speed;
+    s32 size;
+    angle = (u32)func_150ADA20() % 15U - 63;
+    firstPrimary = func_151423D8((u8)angle);
+    firstQuarter = func_151423D8((u8)(angle - 64));
+    headingPrimary = func_151423D8((u8)heading);
+    headingQuarter = func_151423D8((u8)(heading - 64));
+    speed = func_150ADA68() * D_800A8D14 + D_800A8D18;
+    packet.directionX = (s16)((speed * firstPrimary) * headingQuarter);
+    packet.directionY = (s16)((-speed) * firstQuarter);
+    packet.directionZ = (s16)((speed * firstPrimary) * headingPrimary);
+    packet.field22 = (u32)func_150ADA20() % 41U - 130;
+    packet.field2A = (u32)func_150ADA20() % 3U + 6;
+    size = (u32)func_150ADA20() % 451U + 250;
+    packet.field24 = size;
+    packet.zero30 = 0;
+    packet.zero31 = 0;
+    packet.zero32 = 0;
+    packet.alpha = 255;
+    packet.fixed1F = -1;
+    packet.fixed34 = 0;
+    packet.zero0C = 0;
+    packet.fixed0E = 0;
+    packet.field26 = size;
+    packet.positionX = (s16)x;
+    packet.positionY = (s16)y;
+    packet.positionZ = (s16)z;
+    packet.color0 = D_8008F8D0[style];
+    packet.color1 = packet.color0;
+    packet.color2 = packet.color0;
+    /* All three fractional bytes intentionally come from x in retail. */
+    packet.scaledX = (s8)(s32)(x * 256.0f);
+    packet.scaledY = packet.scaledX;
+    packet.scaledZ = packet.scaledX;
+    switch (style) {
+    case 0: packet.template = D_800918A0; break;
+    case 1: packet.template = D_8009187C; break;
+    }
+    packet.magnitude = 200;
+    func_15167D84(&packet, 0, 0, -1, mode, 1);
+    return 1;
 }
+
 
 extern f32 D_800A8D20;
 void func_151A11CC(f32, f32, f32, f32, f32, s32, s32, s32, s32, s32, f32, s32, s32, s32, s32, s32, s32, f32, s32, s32, s32, s32, s32, s32, s32, s32, u32, s32);
