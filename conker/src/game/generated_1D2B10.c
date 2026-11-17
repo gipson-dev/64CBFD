@@ -213,6 +213,79 @@ s32 func_151A6B3C(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D2B10/func_151A6BD8.s")
 
-s32 func_151A6C90() {
-    return 0;
+typedef struct { f32 x, y, z; } BurstPosition1A6C90;
+typedef struct {
+    s16 count;
+    u8 pad2[2];
+    BurstPosition1A6C90 position;
+    s16 duration;
+    u8 pad12[2];
+    f32 radius;
+    s16 angle0, range0, angle1, range1;
+    f32 speed, speedRange;
+    f32 unk28, unk2C;
+    f32 direction[3];
+    f32 scale, scaleRange;
+    f32 unk44, unk48, unk4C, unk50;
+    u8 unk54, unk55;
+    s16 unk56, unk58;
+    u8 pad5A[2];
+} ActorBurstPacket1A6C90;
+
+extern f32 D_800A8DB0;
+void func_151A6F00(ActorBurstPacket1A6C90 *, u8, u8, s32);
+void func_151D5334(BurstPosition1A6C90 *, f32, f32, f32, s32, s32, s32);
+void func_151D3FF4(BurstPosition1A6C90 *, u8, s32);
+void func_151D5514(BurstPosition1A6C90 *, u8, s32);
+void *func_151541B8(BurstPosition1A6C90 *, f32, f32, f32, f32, u8, s32);
+void func_151D5404(BurstPosition1A6C90 *, f32, f32, f32, s32, s32, s32, s32);
+
+/* Snapshot the actor position and submit the complete burst effect sequence. */
+void func_151A6C90(u8 *actor, u8 slot, s32 context) {
+    BurstPosition1A6C90 position;
+    ActorBurstPacket1A6C90 packet;
+    u32 random;
+    f32 sample;
+
+    /* Retail snapshots these coordinates before its later null branch. */
+    position.x = *(f32 *)(actor + 0x14);
+    position.y = *(f32 *)(actor + 0x18);
+    position.z = *(f32 *)(actor + 0x1C);
+    if (actor != NULL) {
+        packet.count = ((u32)func_150ADA20() & 3) + 6;
+        packet.position = position;
+        packet.duration = 80;
+        packet.radius = 60.0f;
+        packet.angle0 = 0;
+        packet.range0 = 255;
+        packet.angle1 = -63;
+        packet.range1 = 80;
+        packet.speed = 0;
+        packet.speedRange = 35.0f;
+        packet.unk28 = 10.0f;
+        packet.unk2C = 40.0f;
+        packet.direction[0] = 0.0f;
+        packet.direction[1] = 0.0f;
+        packet.direction[2] = 0.0f;
+        packet.scale = D_800A8DB0;
+        packet.scaleRange = 0.5f;
+        packet.unk44 = -1.0f;
+        packet.unk48 = -1.0f;
+        packet.unk4C = -2.0f;
+        packet.unk50 = 4.0f;
+        packet.unk54 = 0;
+        packet.unk55 = 0;
+        packet.unk56 = 50;
+        packet.unk58 = 25;
+        func_151A6F00(&packet, 0, slot, context);
+        func_151D5334(&position, 506.0f, 1013.0f, 0.000987166888f, 5, slot, context);
+        func_151D3FF4(&position, slot, context);
+        func_151D5514(&position, slot, context);
+        sample = func_150ADA68();
+        random = func_150ADA20();
+        func_151541B8(&position, sample * 4.0f + 12.0f, 1.64099991f,
+            (f32)(random % 56 + 200), 0.0f, slot, context);
+        func_151D5404(&position, 1502.0f, 3000.0f, 0.00033333333f, 12, 15, 255, 0);
+    }
 }
+
