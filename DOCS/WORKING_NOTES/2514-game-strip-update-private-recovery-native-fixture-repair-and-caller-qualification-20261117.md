@@ -152,3 +152,85 @@ without a source checkout; no host, Release or save work was done. Zero
 Claude calls were needed for this callback milestone. Graphify's native
 update refused corpus shrink; the scoped refresh retains prior IDs. Bank
 the tools before the consumer's documentation and pin. The 85% goal stays active.
+
+## Qualified normal compiler streams and shape-only progression
+
+The next investigation captures the actual **CFE input consumed by UOPT**
+and **UOPT output consumed by UGEN** under the normal cc driver, original
+O2/g3 flags and fingerprint-locked prepared compiler binaries. The existing
+continuous GDB observer is reused unchanged. Producer/consumer paths, stream
+bytes and hashes, descriptor/type tables, positive UGEN node observations,
+producer and driver exit zero, cleanup and marker order are checked. After
+normal asm processing, all **33 function bodies/bindings and constant pools**
+match the unobserved compilation. The candidate also preserves all **32
+original owner neighbors**. This is normal-compile evidence, not a new
+compiler profile or a claim about hardware execution.
+
+Source line markers identify the target's procedure 870; the procedure is
+not selected by a guessed ordinal. Its measured local-memory definitions are:
+
+| Private draft | CFE M bytes | UOPT M bytes | Words | Frame |
+| --- | ---: | ---: | ---: | ---: |
+| selected v20 | 620 | 656 | 487 | 0x308 |
+| gravity v22 | 616 | 660 | 490 | 0x310 |
+| named gravity values v27 | 616 | 656 | 494 | 0x308 |
+
+The gravity form creates two additional optimized float temporaries; CFE
+double alignment also absorbs some one-word declaration reductions. These
+captured homes explain why removing one source local did not reliably shrink
+the generated frame. Disjoint pointer/float lifetime experiments v23..v29
+and v30..v36 are retained privately. Reusing the square temporary, changing
+the displacement to an array, explicitly naming squared components, and
+loading loop constants directly do not yet recover the required state and
+shape. They are compiler screens, not accepted semantic replacements.
+
+The complete **v27** body now has retail's **494 words / frame 0x308** and
+passes **544 fresh guest cases** in each tools configuration, with **489/494
+words visited**. That shape is insufficient: the sampled full path still
+differs at **SP+0x7C, +0x84, +0x9C, +0xAC, +0xB0 and +0xF8**. Its first six
+provider boundaries already differ at the amplitude spill +0xF8, while the
+selected v20 keeps those early boundaries equal. Retail executes **1,671**
+FP operations versus v27's **1,670**: `9*9` is retained but unary negation
+of nine is folded; ordered operand/scheduling differences also remain.
+Do not replace selected v20 with v27 or treat equal length/frame as matching.
+
+Three new maintained files use prefix `game_strip_update_151ad174_frontend`.
+All **three focused tests pass freshly in primary and sibling overlay**
+(181.020s and 182.662s including import/fingerprint work), with identical
+task hashes and actual imported origins retained. All **1,509 frozen inputs**
+are verified: 1,506 links to immutable prior snapshots and three new copies,
+with no links to live worktree files. The prior six recovery/guest/native/
+caller checks are **reused with unchanged 1,506-input fingerprints**, not
+reported as freshly rerun in this stage.
+
+An initial sibling diagnostic run rejected a wrapper assumption that every
+imported helper lived inside the consumer. The wrapper now records actual
+resolved helper paths and verifies their hashes. The failed run and original
+snapshot remain under `frontend-qualification/`; both configurations were
+then rerun from fresh outputs under `frontend-final/`. An earlier private
+one-shot breakpoint-deletion experiment caused an internal GDB fault; it is
+retained as rejected evidence, its owned children were observed gone, and
+the qualified captures use the unchanged continuous observer instead.
+
+Fresh production audit and ELF recount still show **4,532 / 5,514 (82.19%)**,
+zero drift, all **698 objects unchanged**, and **189,088 protected bytes /
+720 owners exact**. Shared tools checks pass. The root README, production C,
+profiles, guards and ELF remain unchanged. The sibling's **2,434 dirty paths
+and 339 scoped dependencies** remain untouched. Host source is unavailable
+at its sibling path; no host/Release/save claim is made. No C is installed,
+no guards are added and no matching credit is awarded. Continue this same
+callback's original gravity operations, private homes and ordered FP relation;
+the full **85% goal remains active**, with **155 further matches** required.
+
+Fresh run, with a new owned `CBFD_STRIP_UPDATE_FRONT_WORK` directory:
+`python3 -m unittest tools.tests.test_game_strip_update_151ad174_frontend -v`.
+Receipts: `conker/build/game-next-151ad174-private/frontend-final/`.
+
+Two later private scope/alignment screens v38/v39 emit **496 words / frame
+0x308**, preserving all 32 neighbors and pools. Sampled v38 retains both
+gravity operations (**1,671 FP operations**), but still differs in their
+order, operands and six private words. It is a concrete lead for continued
+work, not a qualified replacement or matching credit. The declaration
+screens use existing semantic locals, with no padding variables or compiler
+profile changes. Their full semantic/native/caller and adoption gates remain
+open. No further maintained recovery files are changed in this milestone.

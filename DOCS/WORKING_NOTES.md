@@ -1,6 +1,6 @@
 # Working Notes
 
-[Note 2514](WORKING_NOTES/2514-game-strip-update-private-recovery-native-fixture-repair-and-caller-qualification-20261117.md): private `func_151AD174` draft is **487 words / frame 0x308**. The velocity-Z threshold correction, native pointer-fixture repair, **544 guest/native cases** and complete registered-list caller pass six fresh checks in both tools configurations. Four sampled private words and ordered FP differences remain; **no install, guards or credit**. Total stays **4,532 / 5,514 (82.19%)**, **155** more to 85%.
+[Note 2514](WORKING_NOTES/2514-game-strip-update-private-recovery-native-fixture-repair-and-caller-qualification-20261117.md): `func_151AD174` compiler captures now qualify CFE/UOPT streams and all 33 owner functions in both tools configurations. Private v27 reaches **494 words / frame 0x308** and passes **544 guest cases**, but still fails six sampled private words and ordered FP; selected v20 is retained. **No install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
 
 [Note 2513](WORKING_NOTES/2513-game-motion-sample-strip-constructor-guarded-byte-match-20261117.md): `func_151ACBD4` restores the complete motion-sample strip constructor; **360 retail words / frame 0x40**, 307 checked guards and one insertion. Ordered/private-state, guest/native, all six caller sites and strict production gates pass. Total **4,532 / 5,514 (82.19%)**, Game **3,859 / 4,841 (79.71%)**, zero drift; **155** more to 85%. Next inspect `func_151AD174`.
 
