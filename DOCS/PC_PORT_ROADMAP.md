@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2512](WORKING_NOTES/2512-game-strip-constructor-private-recovery-and-ordered-prefix-frontier-20261117.md): private `func_151ACBD4` strip-constructor recovery has **386 words / retail frame 0x40**, all 32 neighbors preserved, and four private checks passing in both tools copies. Guest/native complete outputs and exact opening pass; initial TRUNC and CVT19 ordering remain open. **No installation or new matching credit**. Total stays **4,531 / 5,514 (82.17%)**, **156** more to 85%. Continue this constructor.
+
 [Note 2511](WORKING_NOTES/2511-game-actor-snapshot-accumulator-emitter-guarded-byte-match-20261117.md): `func_151AB9C8` restores the actor-snapshot accumulator emitter; **227 words / frame 0x118**, 150 checked guards, no insertions/omissions. Entry/inductive, disjoint guest/native, complete original caller and strict production gates pass. Total **4,531 / 5,514 (82.17%)**, Game **3,858 / 4,841 (79.69%)**, zero drift; **156** more to 85%. Next inspect `func_151ACBD4`.
 
 [Note 2510](WORKING_NOTES/2510-game-ground-linked-oscillator-guarded-byte-match-20261117.md): `func_151AADF8` restores its ground-linked oscillator constructor and notifier; **166 words / frame 0xC0**, 50 checked guard rows and one ra-reload insertion. Full seven-path normalized private-state proof, guest/native, complete indirect dispatcher and strict production gates pass. Total **4,530 / 5,514 (82.15%)**, Game **3,857 / 4,841 (79.67%)**, zero drift; **157** more to 85%. Next inspect `func_151AB9C8`.
