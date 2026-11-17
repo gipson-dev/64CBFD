@@ -302,8 +302,95 @@ s32 func_151AADBC(u8 *arg0) {
     return 1;
 }
 
-s32 func_151AADF8() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 enabled, pad05[3];
+    f32 base, range, zero;
+    s16 zero14, count0, count1;
+    u8 pad1a[2];
+    f32 rate;
+} GroundLinkPayload151AADF8;
+typedef struct {
+    u32 flags;
+    s16 duration;
+    u8 kind, pad07;
+    u32 zero08;
+    s32 angle;
+    u8 opacity, alpha, red, green, blue, alpha2, zero16, mode;
+    u32 flags18;
+    u8 untouched1c[12];
+} GroundLinkDescriptor151AADF8;
+extern f32 D_800A8FE0, D_800A8FE4, D_800A8FE8;
+extern u8 D_800AB414[];
+f32 func_150ADA68(void);
+s32 func_150ADA20(void);
+u8 *func_1513C73C(s32, u8, u8, s32, f32, f32, f32, f32, f32, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+typedef struct { u8 opaque0[0x18]; u8 *effect; } GroundLinkSlot151AADF8;
+
+/* Notify the existing ground effect, or create it and attach its oscillator. */
+void func_151AADF8(u8 *owner) {
+    u8 *actor;
+    GroundLinkSlot151AADF8 *links;
+    u8 *oscillator;
+    f32 position[3];
+    GroundLinkDescriptor151AADF8 descriptor;
+    GroundLinkPayload151AADF8 payload;
+    f32 scale;
+    u8 selector;
+    u32 second;
+    u32 first;
+
+    actor = *(u8 **)(owner + 0x18);
+    if (*(u32 *)(owner + 0x70) != 0) {
+        oscillator = *(u8 **)(owner + 0x70) + 0xB0;
+        oscillator[4] = 1;
+    } else {
+        position[0] = *(f32 *)(actor + 0x14);
+        if (D_800A8FE0 < *(f32 *)(actor + 0x118)) {
+            position[1] = *(f32 *)(actor + 0x118) + 100.0f;
+        } else {
+            position[1] = *(f32 *)(actor + 0x18) + 150.0f;
+        }
+        position[2] = *(f32 *)(actor + 0x1C);
+        if (func_15045800(position, 0, position[1] - 300.0f, owner + 0x34)) {
+            selector = func_151D8E20();
+            position[1] = *(f32 *)(owner + 0x34);
+            scale = func_150ADA68() * 30.0f + 50.0f;
+            payload.owner = owner;
+            payload.enabled = 1;
+            payload.base = D_800A8FE4;
+            payload.range = 32768.0f;
+            payload.zero = 0.0f;
+            payload.zero14 = 0;
+            payload.count0 = 10;
+            payload.count1 = 10;
+            payload.rate = D_800A8FE8;
+            descriptor.flags = 0x60300;
+            descriptor.duration = 300;
+            descriptor.kind = 0x38;
+            descriptor.zero08 = 0;
+            descriptor.angle = (s32)(payload.range * 0.5f + payload.base);
+            descriptor.opacity = 150;
+            descriptor.alpha = 255;
+            actor = D_800AB414 + selector * 3;
+            descriptor.red = actor[0];
+            descriptor.green = actor[1];
+            descriptor.blue = actor[2];
+            descriptor.alpha2 = 255;
+            descriptor.zero16 = 0;
+            descriptor.mode = 6;
+            descriptor.flags18 = 0x440001;
+            first = (u32)func_150ADA20();
+            second = (u32)func_150ADA20();
+            links = (GroundLinkSlot151AADF8 *)(owner + 0x58);
+            links->effect = func_1513C73C((s32)&descriptor, 7, 1, (s32)(owner + 0x38),
+                position[0], position[1], position[2], scale, scale,
+                first & 255, (((u32)func_150ADA20() & 1) << 1) + (second & 1),
+                32, 255, 1);
+            if (links->effect != NULL) memcpy(links->effect + 0xB0, &payload, 32);
+        }
+    }
 }
 
 typedef struct {
