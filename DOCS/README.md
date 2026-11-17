@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2516](WORKING_NOTES/2516-game-strip-update-ordered-floating-point-recovery-and-stack-frontier-20261117.md): private `func_151AD174` v82 is **491 words / frame 0x308**. All **648,522 ordered FP operations across 544 finite cases** now agree; five focused tests pass fresh in both tools configurations. Four private stack words and split-division normalization remain; **no install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
+
 [Note 2515](WORKING_NOTES/2515-game-strip-update-amplitude-lifetime-and-symbolic-prefix-snapshot-relation-20261117.md): private `func_151AD174` v43 is **490 words / frame 0x308**, with retail F20 amplitude restored. An **18-path symbolic opening** and **inductive snapshot row** relate entry through word175; all five guest/native/caller/allocation checks pass in both tools configurations. Reverse-loop private/FP differences remain; **no install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
 
 [Note 2514](WORKING_NOTES/2514-game-strip-update-private-recovery-native-fixture-repair-and-caller-qualification-20261117.md): `func_151AD174` compiler captures now qualify CFE/UOPT streams and all 33 owner functions in both tools configurations. Private v27 reaches **494 words / frame 0x308** and passes **544 guest cases**, but still fails six sampled private words and ordered FP; selected v20 is retained. **No install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
