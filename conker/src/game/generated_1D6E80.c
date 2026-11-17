@@ -523,8 +523,87 @@ void func_151AB930(u8 *actor) {
     }
 }
 
-s32 func_151AB9C8() {
-    return 0;
+typedef struct {
+    u8 *actor;
+    u8 identity;
+    u8 padding5[3];
+    u32 value;
+    f32 time, rateBase, rateRange;
+    u8 selector;
+    u8 padding19[3];
+} ActorAccumulator151AB9C8;
+extern f32 D_800BE9A4, D_800A9018, D_800A901C;
+f32 func_151423D8(u8);
+void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
+                  f32, f32, u8, s32, u8, u8, u8, s32);
+
+/* Emit accumulated actor particles while the captured actor snapshot is valid. */
+void func_151AB9C8(u8 *record) {
+    s8 invalid;
+    HeightResult71820 surface;
+    f32 position[3];
+    f32 velocity[3];
+    ActorAccumulator151AB9C8 *state;
+    s16 yaw;
+    s16 pitch;
+    f32 pitchValue;
+    f32 pitchQuarter;
+    f32 yawValue;
+    f32 yawQuarter;
+    f32 speed;
+    f32 sample;
+    f32 bias;
+    u32 lifetime;
+    u32 opacity;
+
+    invalid = 0;
+    state = (ActorAccumulator151AB9C8 *)(record + 0x28);
+    if (*(u32 *)state->actor == 0) {
+        invalid = 1;
+    } else if (state->identity != state->actor[0x3B]) {
+        invalid = 1;
+    } else if (state->value != *(u16 *)(state->actor + 0x84)) {
+        invalid = 1;
+    }
+    if (invalid == 0) {
+        state = (ActorAccumulator151AB9C8 *)(record + 0x28);
+        sample = func_150ADA68();
+        state->time = state->time + (state->rateBase + sample * state->rateRange) * D_800BE9A4;
+        if (state->time > 1.0f) {
+            func_1504715C(&surface, (HeightActor71820 *)state->actor);
+            do {
+                yaw = (u32)func_150ADA20() & 255;
+                pitch = (u32)func_150ADA20() % 46u - 63;
+                pitchValue = func_151423D8((u8)pitch);
+                pitchQuarter = func_151423D8((u8)(pitch - 64));
+                yawValue = func_151423D8((u8)yaw);
+                yawQuarter = func_151423D8((u8)(yaw - 64));
+                sample = func_150ADA68();
+                position[0] = *(f32 *)(state->actor + 0x14) + (30.0f * pitchValue) * yawQuarter;
+                position[1] = *(f32 *)(state->actor + 0x18) - 75.0f * pitchQuarter;
+                position[2] = *(f32 *)(state->actor + 0x1C) + (30.0f * pitchValue) * yawValue;
+                speed = (sample * D_800A9018 + 500.0f) * D_800A901C;
+                velocity[0] = (speed * pitchValue) * yawQuarter;
+                velocity[1] = -speed * pitchQuarter;
+                velocity[2] = (speed * pitchValue) * yawValue;
+                bias = func_150ADA68();
+                lifetime = (u32)func_150ADA20();
+                opacity = (u32)func_150ADA20();
+                sample = func_150ADA68();
+                lifetime = lifetime % 26u + 32;
+                opacity = opacity % 101u + 100;
+                func_151D9014(position, velocity, state->selector,
+                              bias * 0.5f + -1.0f, lifetime,
+                              opacity, sample * 34.0f + 52.0f,
+                              1, 1.0f, 1.0f, 1, (s32)&surface, 1, 0,
+                              record[0x0C], record[1]);
+                state->time -= 1.0f;
+            } while (state->time > 1.0f);
+        }
+    }
+    if (invalid != 0) {
+        *(s16 *)(record + 0x0E) = -1;
+    }
 }
 
 /* Retarget the payload owner link or release its matching actor. */
