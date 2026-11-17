@@ -190,8 +190,103 @@ s32 func_151AABA0(u8 *arg0) {
     return result;
 }
 
-s32 func_151AABC4() {
-    return 0;
+typedef struct { f32 xyz[3]; } BoneHitPosition151AABC4;
+typedef struct HeightResult71820 {
+    f32 height;
+    s16 vertices[9];
+    s16 pad16;
+    u32 metadata;
+    u8 flags;
+    u8 state;
+    u16 pad1E;
+    s32 value;
+} HeightResult71820;
+typedef struct HeightActor71820 HeightActor71820;
+typedef struct {
+    BoneHitPosition151AABC4 position;
+    f32 timeBase;
+    f32 timeRange;
+    f32 scaleBase;
+    f32 scaleRange;
+    f32 radiusBase;
+    f32 radiusRange;
+    s16 countBase;
+    s16 countRange;
+    s16 requestSelectorBase;
+    s16 requestSelectorRange;
+    s16 durationBase;
+    s16 durationRange;
+    s16 modeBase;
+    s16 modeRange;
+    u8 selector;
+    u8 private35[3];
+    f32 opaqueChance;
+    s16 firstValue;
+    s16 secondValue;
+    s32 requestValue;
+} BoneHitTrail151AABC4;
+typedef struct { s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange; } BoneHitAngles151AABC4;
+extern u8 D_800A8F70[];
+extern f32 D_800A8FCC, D_800A8FD0, D_800A8FD4, D_800A8FD8, D_800A8FDC;
+u8 func_151D8E20(void);
+void func_15142314(u8 *, s32, f32 *);
+void func_1504715C(HeightResult71820 *, HeightActor71820 *);
+s32 func_1504697C(f32 *, u16, f32, HeightResult71820 *);
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+void func_15153F18(void *, void *, s32, s32, s32);
+
+/* Query the selected actor bone, then emit the hit and its angular trails. */
+void func_151AABC4(u8 *actor, u8 bone) {
+    BoneHitPosition151AABC4 bonePosition;
+    HeightResult71820 surface;
+    f32 upper;
+    BoneHitPosition151AABC4 query;
+    u8 selector;
+    BoneHitPosition151AABC4 position;
+    BoneHitTrail151AABC4 trail;
+    BoneHitAngles151AABC4 angles;
+
+    if (actor != NULL && *(u8 **)(actor + 0x1D4) != NULL) {
+        selector = func_151D8E20();
+        func_15142314(*(u8 **)(actor + 0x1D4), D_800A8F70[bone], bonePosition.xyz);
+        func_1504715C(&surface, (HeightActor71820 *)actor);
+        query.xyz[0] = bonePosition.xyz[0];
+        upper = bonePosition.xyz[1] + 50.0f;
+        query.xyz[1] = upper;
+        query.xyz[2] = bonePosition.xyz[2];
+        if (func_1504697C(query.xyz, 0, upper - 100.0f, &surface)) {
+            position.xyz[0] = bonePosition.xyz[0];
+            position.xyz[1] = surface.height;
+            position.xyz[2] = bonePosition.xyz[2];
+            func_151DBCBC(selector, 40.0f, 150, (s32)surface.vertices, &position, 255, 1);
+            /* The first emitter may update the exposed hit position. */
+            trail.position = position;
+            trail.countBase = 3;
+            trail.countRange = 3;
+            angles.firstAngleBase = 0;
+            angles.firstAngleRange = 255;
+            angles.secondAngleBase = -64;
+            angles.secondAngleRange = 26;
+            trail.requestSelectorBase = 3;
+            trail.timeBase = 2.5f;
+            trail.timeRange = D_800A8FCC;
+            trail.scaleBase = D_800A8FD0;
+            trail.scaleRange = D_800A8FD4;
+            trail.radiusBase = D_800A8FD8;
+            trail.radiusRange = D_800A8FDC;
+            trail.requestSelectorRange = 1;
+            trail.durationBase = 30;
+            trail.durationRange = 20;
+            trail.modeBase = 155;
+            trail.modeRange = 100;
+            trail.selector = selector;
+            trail.opaqueChance = 0.0f;
+            trail.firstValue = 16;
+            trail.secondValue = 15;
+            trail.requestValue = 0;
+            func_15153F18(&angles, &trail, (s32)&surface, 255, 1);
+        }
+    }
 }
 
 s32 func_151AADBC(u8 *arg0) {

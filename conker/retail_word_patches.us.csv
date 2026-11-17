@@ -35719,3 +35719,33 @@ generated_1D2B10,func_151A5660,0x4A4,0xC6120048,0x10000005,-,-,Normalize proved 
 generated_1D2B10,func_151A5660,0x4A8,0x10000004,0xE7B200C0,-,-,Normalize proved binary height-result test and branch-delay fallback,,,false
 generated_1D2B10,func_151A5660,0x4AC,0xE7B200C0,0xE7B400C0,-,-,Normalize proved binary height-result test and branch-delay fallback,,,false
 generated_1D2B10,func_151A5660,0x4B4,0xE7B400C0,0x00000000,-,-,Normalize proved binary height-result test and branch-delay fallback,,,false
+generated_1D6E80,func_151AABC4,0x0E8,0x27A90078,0x27A50034,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x0EC,0x8D210000,0x27A90078,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x0F0,0x27A50034,0x8D210000,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x0F8,0xACA10000,0x240D0003,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x0FC,0x8D2C0004,0xACA10000,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x100,0x240D0003,0x8D2C0004,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x108,0xACAC0004,0x2418FFC0,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x10C,0x8D210008,0xACAC0004,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x110,0x2418FFC0,0x8D210008,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x118,0xACA10008,0x24080003,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x11C,0x3C014020,0xACA10008,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x120,0x44815000,0x3C014020,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x124,0x3C010000,0x44815000,R_MIPS_HI16:D_800A8FCC,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x128,0xC4300000,0x3C010000,R_MIPS_LO16:D_800A8FCC,R_MIPS_HI16:D_800A8FCC,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x12C,0x3C010000,0xC4300000,R_MIPS_HI16:D_800A8FD0,R_MIPS_LO16:D_800A8FCC,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x130,0xC4320000,0x3C010000,R_MIPS_LO16:D_800A8FD0,R_MIPS_HI16:D_800A8FD0,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x134,0x3C010000,0xC4320000,R_MIPS_HI16:D_800A8FD4,R_MIPS_LO16:D_800A8FD0,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x138,0xC4240000,0x3C010000,R_MIPS_LO16:D_800A8FD4,R_MIPS_HI16:D_800A8FD4,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x13C,0x3C010000,0xC4240000,R_MIPS_HI16:D_800A8FD8,R_MIPS_LO16:D_800A8FD4,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x140,0xC4260000,0x3C010000,R_MIPS_LO16:D_800A8FD8,R_MIPS_HI16:D_800A8FD8,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x144,0xA7AE005A,0xC4260000,-,R_MIPS_LO16:D_800A8FD8,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x14C,0xE7AA0040,0xA7AE005A,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x150,0xC4280000,0xE7AA0040,R_MIPS_LO16:D_800A8FDC,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x154,0x93AE0087,0xC4280000,-,R_MIPS_LO16:D_800A8FDC,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x158,0x44805000,0x93AE0087,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x15C,0xA7AD0058,0x44805000,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x160,0xA7AF002E,0xA7AD0058,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x164,0xA7B80030,0xA7AF002E,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x168,0xA7B90032,0xA7B80030,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
+generated_1D6E80,func_151AABC4,0x16C,0x24080003,0xA7B90032,-,-,Normalize proved private bone-hit descriptor initialization schedule,,,false
