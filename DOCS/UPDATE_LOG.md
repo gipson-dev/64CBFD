@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2515](WORKING_NOTES/2515-game-strip-update-amplitude-lifetime-and-symbolic-prefix-snapshot-relation-20261117.md): private `func_151AD174` v43 is **490 words / frame 0x308**, with retail F20 amplitude restored. An **18-path symbolic opening** and **inductive snapshot row** relate entry through word175; all five guest/native/caller/allocation checks pass in both tools configurations. Reverse-loop private/FP differences remain; **no install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
+
 [Note 2514](WORKING_NOTES/2514-game-strip-update-private-recovery-native-fixture-repair-and-caller-qualification-20261117.md): `func_151AD174` compiler captures now qualify CFE/UOPT streams and all 33 owner functions in both tools configurations. Private v27 reaches **494 words / frame 0x308** and passes **544 guest cases**, but still fails six sampled private words and ordered FP; selected v20 is retained. **No install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
 
 [Note 2513](WORKING_NOTES/2513-game-motion-sample-strip-constructor-guarded-byte-match-20261117.md): `func_151ACBD4` restores the complete motion-sample strip constructor; **360 retail words / frame 0x40**, 307 checked guards and one insertion. Ordered/private-state, guest/native, all six caller sites and strict production gates pass. Total **4,532 / 5,514 (82.19%)**, Game **3,859 / 4,841 (79.71%)**, zero drift; **155** more to 85%. Next inspect `func_151AD174`.
