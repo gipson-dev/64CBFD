@@ -5,7 +5,9 @@ and two banks of twenty four-vertex strips. The useful v2/v7 drafts emit **386 w
 retail's frame 0x40**, preserving all **32 owner neighbors and normalized pools**.
 Retail is **360 words / 1,440 bytes**, VA 151ACBD4..151AD174,
 ROM 1DA084..1DA624. The opening and complete output behavior are qualified;
-the full ordered FP relation and byte fit remain open. **No source installation,
+the v2/v7 ordered FP relation and byte fit remain open. The v35 follow-up below
+closes the complete provider/return relation after four private scheduling words.
+**No source installation,
 new guard, build-profile change or matching credit.**
 
 Accepted progress stays **4,531 / 5,514 (82.17%)**, Game **3,858 / 4,841
@@ -117,6 +119,56 @@ Receipts, exact imported origins, frozen inputs, probes and compiler products
 are retained in `conker/build/game-next-151acbd4-private/qualification/` and
 the adjacent private study directory. No push.
 
+## Complete ordered relation follow-up
+
+The retained **v35** source captures `count = record->count = 20` and uses
+`(f32)(count - 1)` for spacing. It emits the retail conversion of integer 19
+before converting the height difference. This preserves the ordered FP/FCSR
+operation that the earlier literal `19.0f` draft omitted. Its complete body is
+**388 words / frame 0x40**, with all 32 owner neighbors and pools unchanged.
+
+With exactly the same four private TRUNC/MFC1 scheduling words, the complete
+instruction-driven provider/return comparison now passes **all ten paths**:
+two null-result paths and eight successful category/texture/color paths.
+It compares all public object bytes, all 80 private/incoming-home bytes,
+typed provider arguments, ordered FP/FCSR operations, preserved registers and
+the final return handle. Undoing the schedule rejects all eight success paths
+at FP trace event 12. Independent wrong-return and wrong-time-field controls
+also reject. These are private diagnostics; zero production guards are added.
+
+All four new maintained checks pass freshly in primary tools and the isolated
+sibling overlay. Guest checks compare retail, raw v35 and the scheduled v35
+diagnostic over **1,016 cases each**. Native v35 passes the same 1,016 fixtures
+at O0/O2/O3 with strict aliasing and UB traps; its five negative variants have
+their expected failing exits. Native checks do not assert FP-status parity.
+The symbolic result retains the fresh, disjoint, mapped-object assumptions
+above. It does not establish fault-register identity, arbitrary allocation
+overlap, complete connected callers, portable C evaluation order or hardware.
+
+Five additional source forms v40..v44 test a count shared by both loop groups,
+spacing and bank dimensions. They emit 285 or 454 words with unchanged owner
+neighbors. The 285-word form changes the opening saved-register/private-frame
+relation and is rejected there despite its equal frame size. Four more forms
+v45..v48 test inline wrapped height differences and a count-based inequality;
+they emit 391, 278, 445 and 389 words, with all 32 neighbors and pools unchanged.
+These results leave 49 measured source forms and three profile probes; no new
+profile is installed. Continue fitting the paired loop and 360-word slot.
+
+The new immutable snapshot contains **1,486 inputs**: 1,482 links to the prior
+sealed snapshot and four copied tools, with zero live-worktree hardlinks.
+All input bytes and the production ELF remain unchanged. Shared tools checks
+and the fresh actual-ELF recount pass. The dirty sibling and host surface stay
+untouched. Receipts are in `conker/build/game-next-151acbd4-private/ordered-qualification/`.
+Use a fresh `CBFD_STRIP_ORDERED_WORK` path and run
+`python3 -m unittest tools.tests.test_game_strip_constructor_151acbd4_ordered -v`.
+
+This stage adds no source or matching credit. Total remains **4,531 / 5,514
+(82.17%)**, with **156** more needed for 85%. Finish the source/slot fit, all
+six connected caller checks, both padders and rebases, strict whole-image
+prediction, actual production Make and final recount before adoption.
+No additional Claude call was used for this follow-up. Graphify retains old
+nodes and the explicit ordered-tools reference; it is a scoped refresh.
+
 ## Bounded review and next work
 
 One packet-only Claude analysis completed through the existing claude.ai /
@@ -131,9 +183,9 @@ or claimed file exists. No review patch or conclusion is adopted by agreement.
 The packet's 34-word dead-block count is corrected to the measured 33 words.
 No second review is requested.
 
-Resume this function. First preserve or independently normalize the four initial
-conversion/MFC1 words and explicit CVT19, then prove the complete ordered
-motion/vertex transfers and return relation. Continue the pair-loop source fit
+Resume this function from the complete v35 relation above. Keep the four private
+conversion/MFC1 diagnostic words and explicit CVT19 qualified while fitting the
+original paired loop and full slot. Continue the pair-loop source fit
 from measured control flow, and qualify all six callers before attempting
 guards, independent links and whole-image adoption. Keep this private recovery
 uncredited until every production gate passes. Graphify refresh retains old
