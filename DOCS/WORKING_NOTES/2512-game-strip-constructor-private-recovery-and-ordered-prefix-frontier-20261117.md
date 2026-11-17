@@ -1,14 +1,14 @@
 # Strip constructor private recovery and ordered prefix frontier - 2026-11-17
 
-`func_151ACBD4` has a complete private C recovery for the twenty motion samples
-and two banks of twenty four-vertex strips. The useful v2/v7 drafts emit **386 words with
-retail's frame 0x40**, preserving all **32 owner neighbors and normalized pools**.
-Retail is **360 words / 1,440 bytes**, VA 151ACBD4..151AD174,
-ROM 1DA084..1DA624. The opening and complete output behavior are qualified;
-the v2/v7 ordered FP relation and byte fit remain open. The v35 follow-up below
-closes the complete provider/return relation after four private scheduling words.
-**No source installation,
-new guard, build-profile change or matching credit.**
+`func_151ACBD4` has a complete private C recovery for twenty motion samples
+and two banks of twenty four-vertex strips. The latest v57 draft emits
+**359 words / retail frame 0x40**, preserving all **32 owner neighbors and pools**.
+It passes the complete ten-path provider/return relation directly, plus native
+and complete-caller checks. Retail is **360 words / 1,440 bytes**,
+VA 151ACBD4..151AD174, ROM 1DA084..1DA624. The remaining slot normalization
+and production gates are open. **No source installation, new guard,
+build-profile change or matching credit.** Earlier recovery stages are retained
+below with their original measured limits.
 
 Accepted progress stays **4,531 / 5,514 (82.17%)**, Game **3,858 / 4,841
 (79.69%)**, Init 492/492, Debugger 181/181, zero address drift, 983 different.
@@ -169,6 +169,75 @@ prediction, actual production Make and final recount before adoption.
 No additional Claude call was used for this follow-up. Graphify retains old
 nodes and the explicit ordered-tools reference; it is a scoped refresh.
 
+## Complete callers and near-slot pair draft
+
+All six direct call sites are now exercised through the **three complete
+original callers**, connected to retail, raw v35 and scheduled v35. Each
+stream passes **384 cases**. The callers contain 243, 76 and 36 words;
+the measured visited counts are 217, 74 and 34. Their original code comes
+from the retained retail image. This is a complete caller execution check,
+with bounded contracts for the other scene providers, not hardware acceptance.
+
+The scene routine at `1500FA64` submits descriptor tags **1, 2, 3 and 5**.
+It copies a fourth template and then overwrites it before submitting tag 5;
+the test preserves that original behavior. `15010110` submits six table rows
+tagged 1..6, and `150109D0` submits one record. Each descriptor's copied fields,
+absolute height difference, cleared flag and retained padding are checked
+independently before entering the constructor. Calls are at `1500FACC`,
+`1500FB30`, `1500FB94`, `1500FC30`, `15010200` and `15010A38`.
+
+The corpus varies real and seeded finite templates, zero/nonzero scales,
+both stack phases, category branches, provider mutations, successful and
+failed record allocations. Buffers for every submitted record are distinct
+from each other, the caller frame and static tables. All initialized public
+bytes agree with the independent constructor/scene reference. The complete
+mapped RAM, including private stack bytes, also agrees between all three
+instruction streams. All preserved registers and return-address restoration are
+checked. Six wrong-extra-size controls, one per call site, and wrong-time-field
+and wrong-reciprocal controls reject. The guest does not model FCSR; the prior
+ordered proof and native checks are explicitly reused by immutable fingerprints.
+
+All **three fresh maintained caller checks** pass in primary tools and the
+isolated sibling overlay. After final whitespace normalization, their 1,489-input
+snapshot contains 1,487 immutable snapshot links and two copied files, with
+no live-worktree hardlinks. Every
+input and the production ELF remain unchanged. Shared tools checks and the
+fresh actual-ELF recount pass. Sibling dirty paths/dependencies and the host
+surface remain untouched. Use a fresh `CBFD_STRIP_CALLER_WORK` path and run
+`python3 -m unittest tools.tests.test_game_strip_constructor_151acbd4_callers -v`.
+Receipts are in `conker/build/game-next-151acbd4-private/caller-final-qualification/`.
+
+Source screens v49..v58 test reversed assignment, declaration initialization
+and a conventional remainder peel followed by explicit pairs. The useful
+new private **v57** draft emits **359 words / frame 0x40**, preserving all
+32 neighbors and pools. It passes the complete **ten-path provider/return
+relation directly, with zero scheduling adjustments**, including the original
+TRUNC order and explicit CVT19. It also passes 1,016 native cases at O0/O2/O3
+and their negative controls, plus 384 complete-caller cases against retail
+with identical mapped RAM/stack. These are separate private v57 checks;
+the maintained caller suite above qualifies v35. Native status is not FCSR
+evidence. v58 emits 537 words/frame 0x38 and is rejected as a fit.
+
+Bank-local U setup in v59 emits byte-identically to v57. A count shared across
+both loop groups in v60/v61 emits 364 words, also with unchanged neighbors and
+pools; those forms have not replaced the fully related v57 draft. There are
+now 62 measured source forms plus three profile probes. The v57
+count-byte capture and generic pair peel are a recovery experiment, not proof
+of the original C spelling. Its raw words still differ from retail, whose
+slot is **360 words**. Keep the one-word length gap separate from the real
+instruction/register/control-flow differences. A private normalization plan now
+uses **307 expected-word guards, one insertion and no omissions**. Both real
+padders emit all **360 original words** with the original bindings, preserving
+the 32 neighbors and pools. This plan is retained in `v57-slot-plan/`; it is
+not installed. Independent rebases and the complete corruption-control matrix
+remain pending, followed by strict whole-image prediction and actual production
+Make before installation or credit.
+
+This stage installs no C, guard or compiler-profile change. Accepted totals
+remain **4,531 / 5,514 (82.17%)**, with **156** more needed for 85%. No additional
+Claude call was used. The detailed pair proof and private validation remain
+in `proof-pair-fit.json` and `v57-validation/` beside the retained source forms.
+
 ## Bounded review and next work
 
 One packet-only Claude analysis completed through the existing claude.ai /
@@ -183,10 +252,9 @@ or claimed file exists. No review patch or conclusion is adopted by agreement.
 The packet's 34-word dead-block count is corrected to the measured 33 words.
 No second review is requested.
 
-Resume this function from the complete v35 relation above. Keep the four private
-conversion/MFC1 diagnostic words and explicit CVT19 qualified while fitting the
-original paired loop and full slot. Continue the pair-loop source fit
-from measured control flow, and qualify all six callers before attempting
-guards, independent links and whole-image adoption. Keep this private recovery
+Resume this function from the raw v57 pair draft and complete caller evidence
+above. Keep its direct ordered relation and mapped-frame agreement intact while
+qualifying the full retail slot, guards, both padders and independent links.
+Complete strict whole-image prediction and actual production adoption next. Keep this private recovery
 uncredited until every production gate passes. Graphify refresh retains old
 IDs and records the private tools-to-function reference; no full-corpus claim.
