@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2506](WORKING_NOTES/2506-game-region-emitter-full-recovery-and-guarded-byte-match-20261116.md): `func_151A5660` recovers the region-emission callback; **403 words / frame 0x108**, 47 checked guards, no insertions/omissions. Opening/inductive, guest/native, original-dispatcher, producer-interface and strict production gates pass. Total **4,527 / 5,514 (82.10%)**, Game **3,854 / 4,841 (79.61%)**, zero drift; **160** more to 85%. Next inspect `func_151A6C90`.
+
 [Note 2505](WORKING_NOTES/2505-game-region-emitter-private-recovery-frame-and-inductive-proof-20261116.md): private `func_151A5660` now has **403 words / frame 0x108 / 47 differences**, seven opening and 42 inductive proof paths, a verified height-return range and all 14 neighbors preserved. **No installation or credit**; accepted total stays **4,526 / 5,514 (82.08%)**, **161** more to 85%. Continue this callback through guest/native and production gates.
 
 [Note 2504](WORKING_NOTES/2504-game-attached-point-emission-callback-full-recovery-and-guarded-byte-match-20261116.md): `func_151A4A38` recovers the attached-point emission callback; **170 words / frame 0xA8**, two independent scheduling guards, no insertions/omissions. Full symbolic, guest/native, original-dispatcher, emitter-chain and production gates pass. Total **4,526 / 5,514 (82.08%)**, Game **3,853 / 4,841 (79.59%)**, zero drift; **161** more to 85%. Next inspect `func_151A5660`.
