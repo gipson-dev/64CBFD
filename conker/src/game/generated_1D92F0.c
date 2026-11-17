@@ -141,7 +141,7 @@ s32 func_151ACA20(u8 *arg0) {
 }
 
 extern u8 D_800CC2D0[];
-void *func_15167A68(s32, s32, s32, s32, u8, s32);
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
 s32 func_151ACB38(u8 *, u8 *);
 void func_1516979C(void *);
 
@@ -192,8 +192,135 @@ void func_151ACB94(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x1C), (s32) (arg0 + 0x20), (s32) arg0);
 }
 
-s32 func_151ACBD4() {
-    return 0;
+typedef struct { f32 position[3], velocity[3]; } StripPoint151ACBD4;
+typedef struct {
+    u8 header[0x10];
+    u8 kind, padding11[3];
+    f32 startX, startY, startZ, endX, endY, endZ, scale;
+    s8 flags;
+    u8 padding31[3];
+    f32 reciprocal;
+    StripPoint151ACBD4 *points;
+    f32 spacing;
+    u16 texture;
+    u8 count, padding43;
+    u32 state;
+    Vtx *vertices;
+    f32 time;
+    u8 padding50[2];
+    s16 status;
+    u8 padding54[4];
+} StripRecord151ACBD4;
+typedef struct { u8 prefix[6]; u16 width, height; u8 tail[2]; } StripTexture151ACBD4;
+extern s32 D_800BE9F0;
+extern StripTexture151ACBD4 D_80090B60[];
+void *allocate_memory(s32, s32, s32, s32);
+
+/* Construct twenty motion samples and two banks of twenty four-vertex strips. */
+s32 func_151ACBD4(void *descriptor, s32 extraBytes) {
+    StripRecord151ACBD4 *record;
+
+    record = func_15167A68(D_800BE9F0 == 0x2C ? 0x4E : 0x2F,
+                          0, (s32)((u32)extraBytes + 0x58U), 1, 255, 1);
+    if (record == NULL) {
+        return 0;
+    }
+    memcpy((u8 *)record + 0x10, descriptor, 0x24);
+    record->reciprocal = 1.0f / record->scale;
+    record->state = 0;
+    record->status = 0;
+    record->points = allocate_memory(0x1E0, 1, 0, 0);
+    {
+    s32 x, y, z, endY, delta, i, count;
+    x = (s32)record->startX;
+    y = (s32)record->startY;
+    z = (s32)record->startZ;
+    endY = (s32)record->endY;
+    count = record->count = 20;
+    delta = (s32)((u32)y - (u32)endY);
+    i = 0;
+    if (count & 1) {
+        record->points[i].position[0] = (f32)x;
+        record->points[i].position[1] = (f32)(s32)((u32)((s32)((u32)delta * (u32)i) / 19) + (u32)endY);
+        record->points[i].position[2] = (f32)z;
+        record->points[i].velocity[0] = 0.0f;
+        record->points[i].velocity[1] = 0.0f;
+        record->points[i].velocity[2] = 0.0f;
+        i++;
+    }
+    for (; i < count; i += 2) {
+        record->points[i].position[0] = (f32)x;
+        record->points[i].position[1] = (f32)(s32)((u32)((s32)((u32)delta * (u32)i) / 19) + (u32)endY);
+        record->points[i].position[2] = (f32)z;
+        record->points[i].velocity[0] = 0.0f;
+        record->points[i].velocity[1] = 0.0f;
+        record->points[i].velocity[2] = 0.0f;
+        record->points[i + 1].position[0] = (f32)x;
+        record->points[i + 1].position[1] = (f32)(s32)((u32)((s32)((u32)delta * (u32)(i + 1)) / 19) + (u32)endY);
+        record->points[i + 1].position[2] = (f32)z;
+        record->points[i + 1].velocity[0] = 0.0f;
+        record->points[i + 1].velocity[1] = 0.0f;
+        record->points[i + 1].velocity[2] = 0.0f;
+    }
+    record->spacing = (f32)(s32)((u32)y - (u32)endY) / (f32)(count - 1);
+    }
+    record->vertices = allocate_memory(0xA00, 1, 2, 0);
+    {
+    s32 i, bank, textureStep, textureHeight, shift, u1, u2, u3;
+    u8 red, green, blue;
+    if (D_800BE9F0 == 0xB) {
+        record->texture = 55;
+        shift = 4;
+    } else {
+        record->texture = 54;
+        shift = 5;
+    }
+    red = green = blue = 255;
+    if (D_800BE9F0 == 0x39) {
+        red = 0x58;
+        green = 0x4B;
+        blue = 0x2C;
+    }
+    textureStep = D_80090B60[record->texture].width >> 2;
+    textureHeight = D_80090B60[record->texture].height - 1;
+    u1 = (0x100 + textureStep) << 5;
+    u2 = (0x100 + textureStep * 2) << 5;
+    u3 = (0x100 + textureStep * 3) << 5;
+    for (bank = 0; bank < 2; bank++) {
+        for (i = 0; i < 20; i++) {
+            record->vertices[bank * 80 + i * 4].v.flag = 0;
+            record->vertices[bank * 80 + i * 4].v.tc[0] = 0x2000;
+            record->vertices[bank * 80 + i * 4].v.tc[1] = (0x100 + i * textureHeight) << shift;
+            record->vertices[bank * 80 + i * 4].v.cn[0] = red;
+            record->vertices[bank * 80 + i * 4].v.cn[1] = green;
+            record->vertices[bank * 80 + i * 4].v.cn[2] = blue;
+            record->vertices[bank * 80 + i * 4].v.cn[3] = 255;
+            record->vertices[bank * 80 + i * 4 + 1].v.flag = 0;
+            record->vertices[bank * 80 + i * 4 + 1].v.tc[0] = u1;
+            record->vertices[bank * 80 + i * 4 + 1].v.tc[1] = (0x100 + i * textureHeight) << shift;
+            record->vertices[bank * 80 + i * 4 + 1].v.cn[0] = red;
+            record->vertices[bank * 80 + i * 4 + 1].v.cn[1] = green;
+            record->vertices[bank * 80 + i * 4 + 1].v.cn[2] = blue;
+            record->vertices[bank * 80 + i * 4 + 1].v.cn[3] = 255;
+            record->vertices[bank * 80 + i * 4 + 2].v.flag = 0;
+            record->vertices[bank * 80 + i * 4 + 2].v.tc[0] = u2;
+            record->vertices[bank * 80 + i * 4 + 2].v.tc[1] = (0x100 + i * textureHeight) << shift;
+            record->vertices[bank * 80 + i * 4 + 2].v.cn[0] = red;
+            record->vertices[bank * 80 + i * 4 + 2].v.cn[1] = green;
+            record->vertices[bank * 80 + i * 4 + 2].v.cn[2] = blue;
+            record->vertices[bank * 80 + i * 4 + 2].v.cn[3] = 255;
+            record->vertices[bank * 80 + i * 4 + 3].v.flag = 0;
+            record->vertices[bank * 80 + i * 4 + 3].v.tc[0] = u3;
+            record->vertices[bank * 80 + i * 4 + 3].v.tc[1] = (0x100 + i * textureHeight) << shift;
+            record->vertices[bank * 80 + i * 4 + 3].v.cn[0] = red;
+            record->vertices[bank * 80 + i * 4 + 3].v.cn[1] = green;
+            record->vertices[bank * 80 + i * 4 + 3].v.cn[2] = blue;
+            record->vertices[bank * 80 + i * 4 + 3].v.cn[3] = 255;
+        }
+    }
+    }
+    record->time = 0.0f;
+    return (s32)record;
 }
 
 /* Placeholder: the registered callback receives a byte-addressed record. */
