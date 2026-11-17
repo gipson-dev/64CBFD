@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2514](WORKING_NOTES/2514-game-strip-update-private-recovery-native-fixture-repair-and-caller-qualification-20261117.md): private `func_151AD174` draft is **487 words / frame 0x308**. The velocity-Z threshold correction, native pointer-fixture repair, **544 guest/native cases** and complete registered-list caller pass six fresh checks in both tools configurations. Four sampled private words and ordered FP differences remain; **no install, guards or credit**. Total stays **4,532 / 5,514 (82.19%)**, **155** more to 85%.
+
 [Note 2513](WORKING_NOTES/2513-game-motion-sample-strip-constructor-guarded-byte-match-20261117.md): `func_151ACBD4` restores the complete motion-sample strip constructor; **360 retail words / frame 0x40**, 307 checked guards and one insertion. Ordered/private-state, guest/native, all six caller sites and strict production gates pass. Total **4,532 / 5,514 (82.19%)**, Game **3,859 / 4,841 (79.71%)**, zero drift; **155** more to 85%. Next inspect `func_151AD174`.
 
 [Note 2512](WORKING_NOTES/2512-game-strip-constructor-private-recovery-and-ordered-prefix-frontier-20261117.md): all six `func_151ACBD4` call sites pass through three complete original callers, **384 cases per stream**, exact mapped RAM/stack and eight rejection controls, in both tools configurations. Private v57 is **359 words / frame 0x40** and passes the ten-path ordered relation directly; retail slot normalization and adoption remain open. **No installation or credit**; total **4,531 / 5,514 (82.17%)**, **156** more to 85%.
