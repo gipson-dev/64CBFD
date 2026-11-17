@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2517](WORKING_NOTES/2517-game-motion-sample-strip-update-guarded-byte-match-20261117.md): `func_151AD174` restores the complete motion-sample strip update; **494 retail words / frame 0x308**, 273 checked guards and three insertions, with the obsolete placeholder guard retired. Private/FP-status relation, both padders, guest/native, complete caller and strict production gates pass. Total **4,533 / 5,514 (82.21%)**, Game **3,860 / 4,841 (79.74%)**, zero drift; **154** more to 85%. Next inspect `func_151AD92C`.
+
 [Note 2516](WORKING_NOTES/2516-game-strip-update-ordered-floating-point-recovery-and-stack-frontier-20261117.md): private `func_151AD174` v82 is **491 words / frame 0x308**. All **648,522 ordered FP operations across 544 finite cases** now agree; five focused tests pass fresh in both tools configurations. Four private stack words and split-division normalization remain; **no install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.
 
 [Note 2515](WORKING_NOTES/2515-game-strip-update-amplitude-lifetime-and-symbolic-prefix-snapshot-relation-20261117.md): private `func_151AD174` v43 is **490 words / frame 0x308**, with retail F20 amplitude restored. An **18-path symbolic opening** and **inductive snapshot row** relate entry through word175; all five guest/native/caller/allocation checks pass in both tools configurations. Reverse-loop private/FP differences remain; **no install, guards or credit**. Total **4,532 / 5,514 (82.19%)**, **155** more to 85%.

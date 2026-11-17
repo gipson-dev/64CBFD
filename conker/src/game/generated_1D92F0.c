@@ -323,9 +323,153 @@ s32 func_151ACBD4(void *descriptor, s32 extraBytes) {
     return (s32)record;
 }
 
-/* Placeholder: the registered callback receives a byte-addressed record. */
+extern s32 D_800BE9E4;
+extern f32 D_800A9278, D_800A927C, D_800A9280, D_800A9284;
+extern f64 D_800A9288;
+f32 fabsf(f32);
+#pragma intrinsic(fabsf)
+f32 func_150489B0(u8);
+f32 func_15048A40(u8);
+s32 func_1000F3D0(u16);
+/* Full call-site words; coordinate narrowing occurs in the sound provider. */
+u16 func_10010E78(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32, s32);
+
+/* Advance strip samples, constrain adjacent positions and submit movement audio. */
 void func_151AD174(u8 *record) {
+    f32 gravitySquared;
+    u8 *owner, *effect;
+    s32 last, selected;
+    f32 position[3], velocity[3];
+    f32 positions[20][3], velocities[20][3];
+    f32 amplitude, trig;
+    f32 smoothing[3], force[3];
+    f32 movement = 0.0f;
+    f32 dx, dy, dz, length;
+    f32 damping, ceiling;
+    f64 smoothingScale;
+    s32 sample, angle;
+
+    if (*(s16 *)(record + 0x52) != 0) {
+        *(s16 *)(record + 0x52) = (s16)((u32)*(s16 *)(record + 0x52) - (u32)D_800BE9E4);
+        if (*(s16 *)(record + 0x52) < 0) {
+            *(s16 *)(record + 0x52) = 0;
+        }
+    }
+    last = ((StripRecord151ACBD4 *)record)->count - 1;
+    owner = (u8 *)((StripRecord151ACBD4 *)record)->state;
+    if (owner != NULL) {
+        effect = *(u8 **)(owner + 0x31C);
+        selected = effect[0xAE];
+        angle = (effect[0xAC] + (*(u16 *)(owner + 0x76) >> 8)) & 255;
+        amplitude = *(f32 *)(effect + 0xA8) * D_800A9278;
+        trig = func_150489B0(angle);
+        ((StripRecord151ACBD4 *)record)->points[selected].velocity[0] += amplitude * trig;
+        trig = func_15048A40(angle);
+        ((StripRecord151ACBD4 *)record)->points[selected].velocity[2] -= amplitude * trig;
+        owner = (u8 *)((StripRecord151ACBD4 *)record)->state;
+        angle = (*(u16 *)(owner + 0x76) >> 8) & 255;
+        amplitude = *(f32 *)(owner + 0x3C) * 19.0f;
+        trig = func_150489B0(angle);
+        ((StripRecord151ACBD4 *)record)->points[selected].velocity[0] += amplitude * trig;
+        trig = func_15048A40(angle);
+        ((StripRecord151ACBD4 *)record)->points[selected].velocity[2] -= amplitude * trig;
+        ((StripRecord151ACBD4 *)record)->points[selected].velocity[1] -= 1000.0f;
+        effect = *(u8 **)((u8 *)((StripRecord151ACBD4 *)record)->state + 0x31C);
+        angle = effect[0xAD] - 1;
+        if (angle <= 0) {
+            *(f32 *)(effect + 0xA8) = 0.0f;
+            angle = 0;
+            effect = *(u8 **)((u8 *)((StripRecord151ACBD4 *)record)->state + 0x31C);
+        }
+        effect[0xAD] = angle;
+    }
+    if (((StripRecord151ACBD4 *)record)->time != 0.0f) {
+        trig = func_150489B0(record[0x50]);
+        ((StripRecord151ACBD4 *)record)->points[record[0x51]].velocity[0] -= ((StripRecord151ACBD4 *)record)->time * trig;
+        trig = func_15048A40(record[0x50]);
+        ((StripRecord151ACBD4 *)record)->points[record[0x51]].velocity[2] += ((StripRecord151ACBD4 *)record)->time * trig;
+        ((StripRecord151ACBD4 *)record)->time *= D_800A927C;
+    }
+    for (sample = 0; sample < last + 1; sample++) {
+        for (angle = 0; angle < 3; angle++) {
+            positions[sample][angle] = ((StripRecord151ACBD4 *)record)->points[sample].position[angle];
+            velocities[sample][angle] = ((StripRecord151ACBD4 *)record)->points[sample].velocity[angle];
+        }
+    }
+    sample = last - 1;
+    if (sample >= 0) {
+    f32 square;
+    amplitude = 9.0f;
+    gravitySquared = amplitude * amplitude;
+    damping = D_800A9280;
+    ceiling = D_800A9284;
+    smoothingScale = D_800A9288;
+    do {
+        for (angle = 0; angle < 3; angle++) {
+            position[angle] = positions[sample][angle];
+            force[angle] = position[angle] - positions[sample + 1][angle];
+            velocity[angle] = ((StripRecord151ACBD4 *)record)->points[sample].velocity[angle];
+        }
+        dx = position[0] - positions[sample + 1][0];
+        dy = position[1] - positions[sample + 1][1];
+        dz = position[2] - positions[sample + 1][2];
+        length = sqrtf((dx * dx + dy * dy) + dz * dz);
+        trig = sqrtf(dx * dx + dz * dz);
+        if (length == 0.0f) length = 1.0f;
+        trig /= length;
+        trig = amplitude * trig;
+        square = trig * trig;
+        trig = gravitySquared - square;
+        if (square <= gravitySquared) trig = sqrtf(trig);
+        else trig = 0.0f;
+        length = trig / length;
+        dx = dx * length;
+        dy = dy * length;
+        dz = dz * length;
+        dx = 0.0f - dx;
+        dy = -amplitude - dy;
+        dz = 0.0f - dz;
+        force[0] = dx;
+        force[1] = dy;
+        force[2] = dz;
+        for (angle = 0; angle < 3; angle++) {
+            velocity[angle] += force[angle];
+            velocity[angle] *= damping;
+            if (sample != 0) {
+                smoothing[angle] = (positions[sample - 1][angle] + positions[sample + 1][angle]) * 0.5f - position[angle];
+                velocity[angle] += (f64)smoothing[angle] * smoothingScale;
+            }
+            position[angle] += velocity[angle];
+            if (D_800BE9F0 == 0x39 && ceiling < position[0]) position[0] = ceiling;
+        }
+        dz = position[2] - ((StripRecord151ACBD4 *)record)->points[sample + 1].position[2];
+        dx = position[0] - ((StripRecord151ACBD4 *)record)->points[sample + 1].position[0];
+        dy = position[1] - ((StripRecord151ACBD4 *)record)->points[sample + 1].position[1];
+        dx = dx * dx;
+        movement += fabsf(velocity[0]);
+        dy = dy * dy;
+        dz = dz * dz;
+        movement += fabsf(velocity[2]);
+        length = dx + dy;
+        length = dz + length;
+        length = sqrtf(length);
+        if (length != 0.0f) length = ((StripRecord151ACBD4 *)record)->spacing / length;
+        else length = 1.0f;
+        for (angle = 0; angle < 3; angle++) {
+            trig = position[angle] - ((StripRecord151ACBD4 *)record)->points[sample + 1].position[angle];
+            trig *= length;
+            trig += ((StripRecord151ACBD4 *)record)->points[sample + 1].position[angle];
+            ((StripRecord151ACBD4 *)record)->points[sample].position[angle] = trig;
+            ((StripRecord151ACBD4 *)record)->points[sample].velocity[angle] = ((StripRecord151ACBD4 *)record)->points[sample].position[angle] - positions[sample][angle];
+        }
+    } while (--sample >= 0);
+    }
+    if (movement > 250.0f && (*(u16 *)(record + 0x54) == 0 || func_1000F3D0(*(u16 *)(record + 0x54)) == 0)) {
+        *(u16 *)(record + 0x54) = func_10010E78(0, (u32)func_150ADA20() % 9U + 0x507,
+            30000, 0, 0, 0, (s32)position[0], (s32)position[1], (s32)position[2], 250, -0x7E0C);
+    }
 }
+
 
 s32 func_151AD92C() {
     return 0;
