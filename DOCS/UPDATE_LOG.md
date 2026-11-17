@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2519](WORKING_NOTES/2519-game-strip-renderer-float-lifetimes-and-symbolic-opening-20261117.md): private `func_151AD92C` v49 recovers the six saved FP roles and Y/Z homes, with a **six-path symbolic opening / all 320 private/incoming bytes** after two scalar-home moves. All six focused tests pass in both tools configurations. **469 words versus 464 retail / frame 0x130**; full ordering, private state and length remain open. No install or credit; total **4,533 / 5,514 (82.21%)**, **154** more to 85%.
+
 [Note 2518](WORKING_NOTES/2518-game-motion-sample-strip-renderer-private-recovery-20261117.md): private `func_151AD92C` recovers the complete strip renderer and three-word callback ABI. Selected C is **458 words / frame 0x130** against **464 retail words**; all five owner/guest/caller/native/control checks pass in both tools configurations. Ordered FP and private homes remain open; **no installation or credit**. Total stays **4,533 / 5,514 (82.21%)**, **154** more to 85%. Continue this renderer.
 
 [Note 2517](WORKING_NOTES/2517-game-motion-sample-strip-update-guarded-byte-match-20261117.md): `func_151AD174` restores the complete motion-sample strip update; **494 retail words / frame 0x308**, 273 checked guards and three insertions, with the obsolete placeholder guard retired. Private/FP-status relation, both padders, guest/native, complete caller and strict production gates pass. Total **4,533 / 5,514 (82.21%)**, Game **3,860 / 4,841 (79.74%)**, zero drift; **154** more to 85%. Next inspect `func_151AD92C`.
