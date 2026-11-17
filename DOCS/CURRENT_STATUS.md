@@ -1,6 +1,6 @@
 # Current Decomp Status
 
-Follow-on private `func_151AD92C` candidate: **464 derived words**, with **544/544 complete RAM and provider frames equal** and **306,846 ordered FP observations equal**. This is a finite private result, pending symbolic provider/UV, caller, relocation/padder and full-image adoption gates. Continue from the final section of [Note 2521](WORKING_NOTES/2521-game-strip-renderer-complete-geometry-order-and-loop-relation-20261117.md); accepted total remains **4,533 / 5,514 (82.21%)**.
+[Note 2522](WORKING_NOTES/2522-game-motion-sample-strip-renderer-guarded-byte-match-20261117.md): `func_151AD92C` is installed and byte-exact: **464 retail words / frame 0x130**, with 379 checked guards, three insertions and eight omissions. Complete geometry/provider/UV/return relations, paired qualification, actual Make and strict full-image/production gates pass. Total **4,534 / 5,514 (82.23%)**, Game **3,861 / 4,841 (79.76%)**, zero drift; **153** more to 85%. Next inspect `func_151AE0E4`.
 
 [Note 2521](WORKING_NOTES/2521-game-strip-renderer-complete-geometry-order-and-loop-relation-20261117.md): private `func_151AD92C` now agrees on **all 306,846 ordered FP observations across 544 cases**. Four entry and eight complete generic sample paths establish/advance the geometry invariant. Five checks pass in both tools configurations. Provider/suffix private state and five extra words remain open; no install or credit. Total **4,533 / 5,514 (82.21%)**; **154** more to 85%.
 

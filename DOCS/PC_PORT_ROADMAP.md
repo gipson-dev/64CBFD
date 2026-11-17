@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2522](WORKING_NOTES/2522-game-motion-sample-strip-renderer-guarded-byte-match-20261117.md): `func_151AD92C` is installed and byte-exact: **464 retail words / frame 0x130**, with 379 checked guards, three insertions and eight omissions. Complete geometry/provider/UV/return relations, paired qualification, actual Make and strict full-image/production gates pass. Total **4,534 / 5,514 (82.23%)**, Game **3,861 / 4,841 (79.76%)**, zero drift; **153** more to 85%. Next inspect `func_151AE0E4`.
+
 [Note 2521](WORKING_NOTES/2521-game-strip-renderer-complete-geometry-order-and-loop-relation-20261117.md): private `func_151AD92C` now agrees on **all 306,846 ordered FP observations across 544 cases**. Four entry and eight complete generic sample paths establish/advance the geometry invariant. Five checks pass in both tools configurations. Provider/suffix private state and five extra words remain open; no install or credit. Total **4,533 / 5,514 (82.21%)**; **154** more to 85%.
 
 [Note 2520](WORKING_NOTES/2520-game-strip-renderer-first-basis-schedule-and-generic-relation-20261117.md): private `func_151AD92C` first-basis schedule passes **18 entry / eight generic sample paths** and **194,991 FP observations across 544 cases**. Five checks pass in both tools configurations. Second basis, private boundary and five-word excess remain open; no install or match credit. Total **4,533 / 5,514 (82.21%)**; **154** more to 85%.

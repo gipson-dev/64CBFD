@@ -471,9 +471,132 @@ void func_151AD174(u8 *record) {
 }
 
 
-s32 func_151AD92C() {
-    return 0;
+extern u8 D_800BE9C0;
+extern u32 D_800D2C9C;
+/* The texture helper's complete 12-byte source and eleven-word o32 interface. */
+typedef struct {
+    u32 unk0;
+    u8 unk4, pad5;
+    u16 unk6, unk8;
+    u8 unkA, unkB;
+} structC1D70Source;
+s32 func_15094FE8(s32, structC1D70Source *, s32, u8 *,
+                  s32, s32, s32, s32, s32, s32, s32);
+
+/* Build each sample's crossed quad, then emit the textured strip display list. */
+Gfx *func_151AD92C(Gfx *output, u8 *record, s32 viewport) {
+    u32 width;
+    u8 count;
+    s32 heightMinusOne, textureShift;
+    s32 sample, startT;
+    f32 x, dx, dy, dz;
+    f32 currentYZ[2];
+    f32 negativeY, squareY, length;
+    f32 normalX, normalY, normalZ;
+
+    count = ((StripRecord151ACBD4 *)record)->count;
+    heightMinusOne = D_80090B60[((StripRecord151ACBD4 *)record)->texture].height - 1;
+    width = D_80090B60[((StripRecord151ACBD4 *)record)->texture].width;
+    if (((StripRecord151ACBD4 *)record)->texture == 0x36) textureShift = 5;
+    else textureShift = 4;
+    if (count > 0) {
+        sample = 0;
+        do {
+            StripPoint151ACBD4 *point;
+            point = &((StripRecord151ACBD4 *)record)->points[sample];
+            dy = point->position[1];
+            currentYZ[1] = dy;
+            normalX = point->position[0];
+            x = normalX;
+            dz = point->position[2];
+            currentYZ[0] = dz;
+            if (count != sample + 1) {
+                dx = point[1].position[0] - normalX;
+                dy = point[1].position[1] - dy;
+                dz = point[1].position[2] - dz;
+            } else {
+                dx = 0.0f;
+                dy = 1.0f;
+                dz = 0.0f;
+            }
+            negativeY = -dy;
+            squareY = negativeY * negativeY;
+            length = sqrtf(dz * dz + squareY);
+            if (length != 0.0f) {
+                normalX = 0.0f;
+                length = 1.0f / length;
+                normalY = dz * length;
+                normalZ = negativeY * length;
+            } else {
+                normalX = 100.0f;
+                normalY = 0.0f;
+                normalZ = 0.0f;
+            }
+            normalX *= 4.0f;
+            normalY *= 4.0f;
+            normalZ *= 4.0f;
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4].v.ob[0] = (s16)(s32)(x + normalX);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4].v.ob[1] = (s16)(s32)(currentYZ[1] + normalY);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4].v.ob[2] = (s16)(s32)(currentYZ[0] + normalZ);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 2].v.ob[0] = (s16)(s32)(x - normalX);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 2].v.ob[1] = (s16)(s32)(currentYZ[1] - normalY);
+            length = sqrtf(squareY + dx * dx);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 2].v.ob[2] = (s16)(s32)(currentYZ[0] - normalZ);
+            if (length != 0.0f) {
+                normalZ = 0.0f;
+                length = 1.0f / length;
+                normalX = negativeY * length;
+                normalY = dx * length;
+            } else {
+                normalX = 1.0f;
+                normalZ = 1.0f;
+                normalY = 0.0f;
+            }
+            normalX *= 4.0f;
+            normalY *= 4.0f;
+            normalZ *= 4.0f;
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 1].v.ob[0] = (s16)(s32)(x + normalX);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 1].v.ob[1] = (s16)(s32)(currentYZ[1] + normalY);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 1].v.ob[2] = (s16)(s32)(currentYZ[0] + normalZ);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 3].v.ob[0] = (s16)(s32)(x - normalX);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 3].v.ob[1] = (s16)(s32)(currentYZ[1] - normalY);
+            ((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4 + 3].v.ob[2] = (s16)(s32)(currentYZ[0] - normalZ);
+        } while (++sample != count);
+    }
+    gSPSetGeometryMode(output++, G_CULL_BACK);
+    gSPClearGeometryMode(output++, G_CULL_FRONT);
+    gSPTexture(output++, 0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_ON);
+    gDPPipeSync(output++);
+    output = (Gfx *)func_15094FE8((s32)output,
+        (structC1D70Source *)&D_80090B60[((StripRecord151ACBD4 *)record)->texture],
+        0, NULL, 0, 0, 0, 0, 0x100, 0x100, 0x3E);
+    gDPSetCombineMode(output++, G_CC_MODULATEIA, G_CC_MODULATEIA);
+    gDPSetOtherMode(output++, D_800D2C9C | 0x80000 | 0x2C0F, 0x552078);
+    if (count - 1 > 0) {
+        width = (u32)(width + 0x100) << 21;
+        startT = 0x100;
+        for (sample = 0; sample < count - 1; sample++) {
+            gSPVertex(output++, &((StripRecord151ACBD4 *)record)->vertices[((s32)D_800BE9C0 * count + sample) * 4], 8, 0);
+            gSP1Triangle(output++, 0, 1, 4, 0);
+            gSP1Triangle(output++, 1, 5, 4, 0);
+            gSP1Triangle(output++, 1, 2, 5, 0);
+            gSP1Triangle(output++, 2, 6, 5, 0);
+            gSP1Triangle(output++, 2, 3, 7, 0);
+            gSP1Triangle(output++, 2, 7, 6, 0);
+            gSPModifyVertex(output++, 0, G_MWO_POINT_ST, width | ((u32)startT << textureShift));
+            gSPModifyVertex(output++, 4, G_MWO_POINT_ST, width | ((u32)(startT + heightMinusOne) << textureShift));
+            gSP1Triangle(output++, 3, 0, 7, 0);
+            gSP1Triangle(output++, 0, 4, 7, 0);
+            if (sample == 0) {
+                gSP1Triangle(output++, 2, 1, 0, 0);
+                gSP1Triangle(output++, 3, 2, 0, 0);
+            }
+            startT += heightMinusOne;
+        }
+    }
+    return output;
 }
+
 
 void func_151AE06C(u8 *arg0, u8 *arg1) {
     u8 admission;
