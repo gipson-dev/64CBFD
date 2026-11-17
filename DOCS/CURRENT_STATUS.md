@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+Follow-on private `func_151AD92C` candidate: **464 derived words**, with **544/544 complete RAM and provider frames equal** and **306,846 ordered FP observations equal**. This is a finite private result, pending symbolic provider/UV, caller, relocation/padder and full-image adoption gates. Continue from the final section of [Note 2521](WORKING_NOTES/2521-game-strip-renderer-complete-geometry-order-and-loop-relation-20261117.md); accepted total remains **4,533 / 5,514 (82.21%)**.
+
 [Note 2521](WORKING_NOTES/2521-game-strip-renderer-complete-geometry-order-and-loop-relation-20261117.md): private `func_151AD92C` now agrees on **all 306,846 ordered FP observations across 544 cases**. Four entry and eight complete generic sample paths establish/advance the geometry invariant. Five checks pass in both tools configurations. Provider/suffix private state and five extra words remain open; no install or credit. Total **4,533 / 5,514 (82.21%)**; **154** more to 85%.
 
 [Note 2520](WORKING_NOTES/2520-game-strip-renderer-first-basis-schedule-and-generic-relation-20261117.md): private `func_151AD92C` first-basis schedule passes **18 entry / eight generic sample paths** and **194,991 FP observations across 544 cases**. Five checks pass in both tools configurations. Second basis, private boundary and five-word excess remain open; no install or match credit. Total **4,533 / 5,514 (82.21%)**; **154** more to 85%.

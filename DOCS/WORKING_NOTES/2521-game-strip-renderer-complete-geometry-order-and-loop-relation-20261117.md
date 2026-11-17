@@ -112,3 +112,41 @@ and provider diagnostics are in `second-basis-v49/`. The normal Graphify update
 refused a smaller graph; a scoped four-file AST merge retains old IDs and records
 the target reference. This is not full-corpus re-extraction. Commit tools before
 consumer notes/pin, locally only. No host-port or frozen Release changes occur.
+
+## Follow-on private candidate: finite frame and length closure
+
+After banking the geometry qualification, `provider_allocation.py` derives a
+separate **464-word** stream from the same 469-word v49 owner. It moves captured
+count to `SP+0x124`, stores/restores the zero segment cursor at `SP+0x128`, and
+moves the UV terminal-index home from `SP+0x90` to `SP+0x94`.
+Packed U stays in the freed S6 register;
+the second modify-vertex header is rematerialized in a dead T9 instead of
+retaining its constant in S6. Two private width reloads become register moves.
+This preserves the original arbitrary contents at `SP+0x12C`.
+
+The transform removes five vacant NOP slots and the redundant second UV-entry
+branch, retains that branch's former delay instruction as a normal cursor
+restore, and inserts the zero-cursor store. Moving the two header-constant
+instructions from setup to their use has no net length change. Every internal
+branch is explicitly rebased using recorded source/output instruction origins.
+The result has 464 words without adding padding or copying a retail code range.
+
+All **544 finite cases** pass public memory, eleven provider arguments, return
+and preserved registers. Full ordered FP agrees across **306,846 observations**;
+**complete RAM and provider frames agree in 544/544 cases**, and all 464 words are
+visited in both retail and candidate. This closes the three sampled provider
+homes and later spill differences for the finite matrix. The candidate SHA256
+is `a3ac603ad3d120df8e763b7d8e92ce347e349e6f7256667b6cba7adc454dfdcc`.
+
+This newer stream is **private and uncredited**. The five maintained geometry
+tests above qualify the earlier 469-word derived stream; their passing receipts
+must not be represented as full qualification of this follow-on transform.
+New symbolic provider/UV/backedge/return relations, effective controls, actual
+caller qualification, relocation rebases, both padders, actual Make, strict
+full-image comparison and production recount/adoption still remain. Native
+reuse also needs its unchanged fingerprints carried into that new qualification.
+
+Resume evidence: `conker/build/game-next-151ad92c-private/provider_allocation.py`
+and `provider-allocation-v49/{derived.bin,derivation.json,guest-report.json}`.
+The selected source, production ELF, guards, aggregate counts and root README
+remain unchanged. The accepted 85% goal still requires 154 additional matches.
