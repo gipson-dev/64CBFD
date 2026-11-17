@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2504](WORKING_NOTES/2504-game-attached-point-emission-callback-full-recovery-and-guarded-byte-match-20261116.md): `func_151A4A38` recovers the attached-point emission callback; **170 words / frame 0xA8**, two independent scheduling guards, no insertions/omissions. Full symbolic, guest/native, original-dispatcher, emitter-chain and production gates pass. Total **4,526 / 5,514 (82.08%)**, Game **3,853 / 4,841 (79.59%)**, zero drift; **161** more to 85%. Next inspect `func_151A5660`.
+
 [Note 2503](WORKING_NOTES/2503-game-inverse-motion-effect-constructor-full-recovery-and-guarded-byte-match-20261116.md): `func_151A4638` recovers the complete inverse-motion effect constructor and seven-argument callback ABI; **129 retail words / frame 0xA8**, 37 guards with one private-address fold. Full semantic, native, original-call-window and production gates pass. Total **4,525 / 5,514 (82.06%)**, Game **3,852 / 4,841 (79.57%)**, zero drift; **162** more to 85%. Next inspect `func_151A4A38`.
 
 [Note 2502](WORKING_NOTES/2502-game-camera-facing-ribbon-renderer-full-recovery-and-guarded-byte-match-20261116.md): `func_151A3BE4` recovers the camera-facing ribbon, fade scans and seam copy; **619 words / frame 0x128**, 357 guards, no insertions or omissions. Full composed proof, guest/native, connected caller and production gates pass. Total **4,524 / 5,514 (82.05%)**, Game **3,851 / 4,841 (79.55%)**, zero drift; **163** more to 85%. Next inspect `func_151A4638`; the intervening preset already matches.

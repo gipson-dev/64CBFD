@@ -741,9 +741,102 @@ void func_151A499C(void *source, u8 variant) {
     }
 }
 
-s32 func_151A4A38() {
-    return 0;
+typedef struct {
+    u8 *source;
+    u8 identity, reserved05[3];
+    f32 rate, accumulator;
+    u8 matrixIndex, reserved11[3];
+    f32 point[3];
+} AttachedEmissionPayload151A4A38;
+typedef struct {
+    s16 count, countRange;
+    u8 kind, reserved05;
+    u16 field06;
+    u32 header, field0C;
+    s16 field10, field12;
+    u32 field14, field18;
+    u8 field1C, field1D, field1E, field1F;
+    u8 field20, field21, field22, field23, field24, field25;
+    s16 field26, field28, field2A;
+    f32 field2C, field30, field34;
+    RingPosition151A361C position;
+    s16 field44, field46, field48, field4A;
+    f32 field4C, field50, field54, field58;
+    u32 flags;
+    s8 field60, field61;
+    u8 field62, field63, field64;
+    u8 reserved65[7];
+} AttachedEmissionDescriptor151A4A38;
+extern f32 D_800BE9A4;
+void func_15153634(void *, u8, u8, u8);
+
+/* Emit at the attached actor's transformed point when its accumulator exceeds one. */
+void func_151A4A38(u8 *owner) {
+    AttachedEmissionPayload151A4A38 *state = (AttachedEmissionPayload151A4A38 *)(owner + 0x28);
+    RingPosition151A361C position;
+    AttachedEmissionDescriptor151A4A38 packet;
+    s16 angle;
+
+    if (*(s32 *)state->source == 0 || *(s32 *)state->source == 8 ||
+        state->identity != ((u8 *)state->source)[0x3B]) {
+        *(s16 *)(owner + 0xE) = -1;
+        owner[0xD] |= 1;
+        return;
+    }
+    if (*(s32 *)((u8 *)state->source + 0x1D4) == 0 || (((u8 *)state->source)[0x74] & 15) == 15) return;
+    state->accumulator += state->rate * D_800BE9A4;
+    if (1.0f < state->accumulator) {
+        angle = (*(u16 *)((u8 *)state->source + 0x76) >> 8) - 64;
+        func_15143134(state->point, &position,
+            *(s32 *)((u8 *)state->source + 0x1D4) + (state->matrixIndex << 6));
+        packet.count = state->accumulator;
+        packet.countRange = 0;
+        state->accumulator -= packet.count;
+        packet.kind = 40;
+        packet.field06 = 0xC01;
+        packet.header = 0x200005;
+        packet.field0C = 0;
+        packet.field10 = 23;
+        packet.field12 = 13;
+        packet.field14 = 0;
+        packet.field18 = 0;
+        packet.field1C = 0;
+        packet.field1D = 0;
+        packet.field1E = 0;
+        packet.field1F = 255;
+        packet.field20 = 0;
+        packet.field21 = 0;
+        packet.field22 = 0;
+        packet.field30 = 300.0f;
+        packet.field34 = 400.0f;
+        packet.position = position;
+        packet.field26 = 1;
+        packet.field28 = 0;
+        packet.field2A = 1;
+        packet.field64 = 0;
+        packet.field44 = angle - 25;
+        packet.field46 = -44;
+        packet.field48 = 50;
+        packet.field4A = 50;
+        packet.flags = 7;
+        packet.field62 = 1;
+        packet.field63 = 0;
+        packet.field54 = -0.5f;
+        packet.field58 = -0.5f;
+        packet.field2C = 1.0f;
+        packet.field4C = 0.0f;
+        packet.field50 = 15.0f;
+        if (func_150ADA20() & 1) packet.flags |= 0x40;
+        if (func_150ADA20() & 1) packet.flags |= 0x80;
+        packet.field23 = 255;
+        packet.field24 = 0;
+        packet.field25 = 255;
+        packet.field60 = -1;
+        packet.field61 = -1;
+        func_15153634(&packet, 255, owner[0xC], owner[1]);
+    }
 }
+
 
 /* Handle linked-record notifications and swap its selected descriptor pair. */
 void func_151A4CE0(u8 *owner, s32 eventAddress, u8 command) {

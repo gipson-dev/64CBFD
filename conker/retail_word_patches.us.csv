@@ -35670,3 +35670,5 @@ generated_1D0840,func_151A4638,0x130,0x46028482,0xA3AF0098,-,-,Fold the private 
 generated_1D0840,func_151A4638,0x138,0xE7A4008C,0xE7AC0064,-,-,Fold the private descriptor address into stack accesses; normalize proved inverse-motion constructor allocation and scheduling,,,false
 generated_1D0840,func_151A4638,0x13c,0xE7A80084,0xE7B20088,-,-,Fold the private descriptor address into stack accesses; normalize proved inverse-motion constructor allocation and scheduling,,,false
 generated_1D0840,func_151A4638,0x144,0xE7B20088,0xE7A4008C,-,-,Fold the private descriptor address into stack accesses; normalize proved inverse-motion constructor allocation and scheduling,,,false
+generated_1D0840,func_151A4A38,0x1d0,0x87B9002A,0x44818000,-,-,Preserve the proved independent angle-load and floating constant schedule,,,false
+generated_1D0840,func_151A4A38,0x1d4,0x44818000,0x87B9002A,-,-,Preserve the proved independent angle-load and floating constant schedule,,,false
