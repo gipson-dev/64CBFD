@@ -10,7 +10,7 @@ s32 func_151AEAB4();
 /* Recovered routines and remaining placeholders for asm/1D92F0.s. */
 
 s32 func_151AE3A8();
-s32 func_151AE0E4(u8 *arg0, u8 arg1);
+void func_151AE0E4(u8 *actor, u8 key);
 s32 func_151AE264(u8 *arg0, u8 arg1);
 
 extern f32 D_800BE9A4;
@@ -618,12 +618,6 @@ void func_151AE06C(u8 *arg0, u8 *arg1) {
     }
 }
 
-s32 func_151AE0E4(u8 *arg0, u8 arg1) {
-    return 0;
-}
-
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AE264.s")
-
 typedef struct {
     u8 reserved00[4];
     f32 value;
@@ -635,6 +629,48 @@ typedef struct {
     u8 reserved3C[6];
     u8 count;
 } CurveProgress1D92F0;
+
+struct LookupNode1D92F0;
+struct LookupNode1D92F0 *func_151AE590(u8 key);
+void func_151AE2BC(f32 *, CurveProgress1D92F0 *, f32, f32, f32);
+extern f32 D_800A9290;
+
+/* Attach an eligible actor to the nearby selected motion-sample strip. */
+void func_151AE0E4(u8 *actor, u8 key) {
+    StripRecord151ACBD4 *record;
+    f32 position[3];
+    f32 dx, dy, dz;
+    s32 index;
+
+    record = (StripRecord151ACBD4 *)func_151AE590(key);
+    if (record == NULL) {
+        for (;;) {
+        }
+    }
+    if (record->status == 0 && actor[0x1CA] != 0 && actor[0x104] == 0) {
+        func_151AE2BC((f32 *)(*(u8 **)(actor + 0x31C) + 0xA0),
+                     (CurveProgress1D92F0 *)record,
+                     *(f32 *)(actor + 0x14), *(f32 *)(actor + 0x18),
+                     *(f32 *)(actor + 0x1C));
+        index = (s32)(*(f32 *)(*(u8 **)(actor + 0x31C) + 0xA0)
+                     * (f32)(record->count - (s32)(140.0f / record->spacing) - 1));
+        position[0] = record->points[index].position[0];
+        position[1] = record->points[index].position[1];
+        position[2] = record->points[index].position[2];
+        dx = position[0] - *(f32 *)(actor + 0x14);
+        dy = position[1] - *(f32 *)(actor + 0x18);
+        dz = position[2] - *(f32 *)(actor + 0x1C);
+        if (!(D_800A9290 < dz * dz + (dx * dx + dy * dy))) {
+            (*(u8 **)(actor + 0x31C))[0x98] = key;
+            actor[0x8A] = 0x12;
+            *(StripRecord151ACBD4 **)(*(u8 **)(actor + 0x31C) + 0x9C) = record;
+            record->state = (u32)actor;
+        }
+    }
+}
+
+
+#pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AE264.s")
 
 /* Locate the height segment and publish its normalized curve progress. */
 void func_151AE2BC(f32 *output, CurveProgress1D92F0 *curve,
