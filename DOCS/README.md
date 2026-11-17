@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2509](WORKING_NOTES/2509-game-ground-linked-oscillator-private-recovery-and-sequencing-qualification-20261117.md): private `func_151AADF8` ground-link recovery has a **166-word retail slot / frame 0xC0**. Three focused gates pass in both tools copies; 1,094 guest cases per stream and 608 native cases per sequenced form/profile. A GCC draw-order counterexample rejects v48. Continue v42 fitting and full private/caller/image gates; **no production install or new matching credit**. Total stays **4,529 / 5,514 (82.14%)**, 158 more to 85%.
+
 [Note 2508](WORKING_NOTES/2508-game-bone-selected-ground-hit-and-trail-recovery-20261117.md): `func_151AABC4` recovers bone-selected ground hits and angular trails; **126 words / frame 0xC8**, 30 checked schedule guards, no insertions/omissions. Complete ordered proof, guest/native, all six retail callers and strict production gates pass. Total **4,529 / 5,514 (82.14%)**, Game **3,856 / 4,841 (79.65%)**, zero drift; **158** more to 85%. Next inspect `func_151AADF8`.
 
 [Note 2507](WORKING_NOTES/2507-game-actor-burst-effect-chain-direct-recovery-and-byte-match-20261116.md): `func_151A6C90` recovers the complete actor burst effect chain; **154 direct instruction words / 156-word slot / frame 0xA8**, no guards. Guest/native, both padders, independent GNU rebases, original caller-window and strict production gates pass. Total **4,528 / 5,514 (82.12%)**, Game **3,855 / 4,841 (79.63%)**, zero drift; **159** more to 85%. Next inspect `func_151AABC4`.
