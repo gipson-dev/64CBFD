@@ -113,6 +113,24 @@ s32 func_151AFC88() {
     return 0;
 }
 
-s32 func_151AFEA4() {
-    return 0;
+extern s32 D_800BE9E4;
+typedef struct {
+    u8 reserved00[0x58];
+    f32 x;
+    u8 reserved5C[4];
+    f32 z;
+    u8 reserved64[0x44];
+    f32 damping;
+} DampingState151AFEA4;
+
+/* Damp both horizontal velocity components once per simulation tick. */
+s32 func_151AFEA4(DampingState151AFEA4 *state, void *context) {
+    f32 *factor = &state->damping;
+    u32 ticks;
+
+    for (ticks = (u32)D_800BE9E4; ticks != 0; ticks--) {
+        state->x *= *factor;
+        state->z *= *factor;
+    }
+    return 1;
 }

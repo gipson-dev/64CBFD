@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2526](WORKING_NOTES/2526-game-horizontal-damping-callback-direct-byte-match-20261117.md): `func_151AFEA4` now emits all **106 body words directly from C**, with its existing alignment word completing the 107-word slot. No guards or insertions. Paired focused checks and strict production gates pass. Total **4,538 / 5,514 (82.30%)**, Game **3,865 / 4,841 (79.84%)**, zero drift; **149** more to 85%. Next inspect `func_151AFC88`.
+
 [Note 2525](WORKING_NOTES/2525-game-randomized-trail-emitter-guarded-byte-match-20261117.md): `func_151AEAB4` is installed and byte-exact: **123 retail words / frame 0x98**, with 56 checked guards and three insertions. Full 168-byte private/ordered-FP relation, 928 corrected guest cases, 320 complete caller cases, new native32 checks, paired tools suites and strict production gates pass. Total **4,537 / 5,514 (82.28%)**, Game **3,864 / 4,841 (79.82%)**, zero drift; **150** more to 85%. Next inspect `func_151AFEA4`.
 
 [Note 2524](WORKING_NOTES/2524-game-attached-strip-position-update-guarded-byte-match-20261117.md): `func_151AE3A8` is installed and byte-exact: **122 retail words / frame 0x78**, with 107 checked guards and two insertions. Complete private/ordered-FP relation, 2,560 guest cases, 256 full caller cases, native32 checks, paired tools suites and strict production gates pass. Total **4,536 / 5,514 (82.26%)**, Game **3,863 / 4,841 (79.80%)**, zero drift; **151** more to 85%. Next inspect `func_151AEAB4`.
