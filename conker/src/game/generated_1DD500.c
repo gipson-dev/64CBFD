@@ -5,8 +5,38 @@ f32 func_151423D8(u8);
 
 /* Non-matching placeholders for the text-only asm slice asm/1DD500.s. */
 
-s32 func_151B0050() {
-    return 0;
+typedef struct { f32 x, y, z; } TrailPoint151B0050;
+extern f32 D_800AA28C, D_800AA290, D_800AA294, D_800AA298, D_800AA29C;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16, s16, f32, TrailPoint151B0050 *);
+u8 *func_151DA6F8(void *, void *, f32, s16, u8, f32, s32, u8,
+    f32, f32, u8, u8, s32, s16, s16, s32, u8, s32);
+
+/* Snapshot position before the providers and submit all captured trail fields. */
+s32 func_151B0050(s32 kind, s16 index, f32 x, f32 y, f32 z,
+    f32 unused5, f32 unused6, f32 unused7, s16 pitch, s16 heading,
+    f32 unused10, s32 unused11, f32 unused12, s32 unused13, u8 slot) {
+    TrailPoint151B0050 position;
+    TrailPoint151B0050 direction;
+    struct { f32 extentSample; u32 durationSample, colorSample; f32 timeSample; } captures;
+
+    position.x = x;
+    position.y = y;
+    position.z = z;
+    func_15143794(heading, pitch,
+        func_150ADA68() * D_800AA28C + D_800AA290, &direction);
+    captures.extentSample = func_150ADA68();
+    captures.durationSample = (u32)func_150ADA20();
+    captures.colorSample = (u32)func_150ADA20();
+    captures.timeSample = func_150ADA68();
+    func_151DA6F8(&position, &direction,
+        captures.extentSample * (f32)(s32)0 + D_800AA294, /* Retain the explicit zero multiply. */
+        (s16)(captures.durationSample % 20U + 31), (u8)(captures.colorSample % 101U + 155),
+        captures.timeSample * D_800AA298 + D_800AA29C,
+        ((u32)func_150ADA20() & 1) + 3, 1, 1.0f, 1.0f,
+        0, 0, 0, 16, 15, 0, slot, 1);
+    return 1;
 }
 
 s32 func_151B01B8() {

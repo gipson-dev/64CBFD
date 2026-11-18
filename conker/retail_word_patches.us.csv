@@ -37129,3 +37129,11 @@ generated_1DCA70,func_151AFC88,0x0DC,0xE7A40064,0xE7AA0064,-,-,Normalize proved 
 generated_1DCA70,func_151AFC88,0x0E0,0xE7A60068,0xE7B00068,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
 generated_1DCA70,func_151AFC88,0x0E4,0xE7A8006C,0xE7B2006C,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
 generated_1DCA70,func_151AFC88,0x0E8,0x46128080,0x46083080,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DD500,func_151B0050,0x068,0xE7A00058,0xE7A00050,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x070,0xAFA2005C,0xAFA20054,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x078,0xAFA20060,0xAFA20058,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x080,0xE7A00064,0xE7A0005C,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x08C,0x8FA7005C,0x8FA70054,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x0A8,0x8FB90060,0x8FB90058,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x0AC,0xC7B20058,0xC7B20050,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
+generated_1DD500,func_151B0050,0x0C4,0xC7B00064,0xC7B0005C,-,-,Normalize proved private trail capture homes without changing exposed vectors,,,false
