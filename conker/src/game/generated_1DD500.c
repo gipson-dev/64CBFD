@@ -108,8 +108,67 @@ void func_151B01B8(u8 *actor, u8 *source) {
 /* Note 362: original ROM blood effect and dependencies. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1DD500/func_151B03B8.s")
 
-s32 func_151B09BC() {
-    return 0;
+typedef struct {
+    u8 *owner;
+    u8 identity, private05[3];
+} OwnerBinding151B09BC;
+typedef struct {
+    u8 *owner;
+    u8 identity, private05[3];
+    u32 zeroed[10];
+    u32 groups[8][3];
+    f32 zero90;
+    u8 selector, private95[3];
+} OwnerRecord151B09BC;
+extern u8 D_800A3FE6[];
+void func_151494E0(void *, u8);
+void *func_151491F4(s16, s8, s8, u8, u8, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Register the owner and create its effect record with the captured selector. */
+u8 *func_151B09BC(u8 *owner, u8 *source, s16 duration, u8 channel, s32 context) {
+    u8 *created;
+    OwnerRecord151B09BC record;
+    OwnerBinding151B09BC binding;
+    s32 type;
+    s16 chosenDuration;
+    u8 countdown;
+    s32 i;
+
+    if (owner == NULL) return NULL;
+    type = source != NULL ? ((source[4] == 0x53 || source[4] == 0xA5) ? 4 : func_15134070(source)) : 4;
+    if (type == 99) return NULL;
+    type = D_800A3FE6[type * 16]; /* Category replaces the consumed table index. */
+    if (type == 2) return NULL;
+    if (type == 1) record.selector = 1;
+    else record.selector = 0;
+    binding.owner = owner;
+    binding.identity = owner[0x3B];
+    func_151494E0(&binding, 19);
+    countdown = 0;
+    if (duration == -1) chosenDuration = 300;
+    else { chosenDuration = duration; countdown = 1; }
+    record.owner = owner;
+    record.identity = owner[0x3B];
+    record.zero90 = 0.0f;
+    record.zeroed[0] = 0;
+    record.zeroed[1] = 0;
+    record.zeroed[2] = 0;
+    record.zeroed[3] = 0;
+    record.zeroed[4] = 0;
+    record.zeroed[5] = 0;
+    record.zeroed[6] = 0;
+    record.zeroed[7] = 0;
+    record.zeroed[8] = 0;
+    record.zeroed[9] = 0;
+    for (i = 0; i < 8; i++) {
+        record.groups[i][0] = 0;
+        record.groups[i][1] = 0;
+        record.groups[i][2] = 0;
+    }
+    created = func_151491F4(chosenDuration, -1, 19, countdown, 15, sizeof(record), channel, context);
+    if (created != NULL) memcpy(created + 0x28, &record, sizeof(record));
+    return created;
 }
 
 s32 func_151B0B88() {

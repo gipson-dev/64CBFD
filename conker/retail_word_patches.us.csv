@@ -37187,3 +37187,36 @@ generated_1DD500,func_151B01B8,0x1B8,0x24190001,0xA3B90090,-,-,Normalize proved 
 generated_1DD500,func_151B01B8,0x1BC,0x10000002,0xA3A00090,-,-,Normalize proved actor trail temporary roles and private pointer home and instruction schedule,,,false
 generated_1DD500,func_151B01B8,0x1C0,0xA3B90090,0x24080010,-,-,Normalize proved actor trail temporary roles and private pointer home and instruction schedule,,,false
 generated_1DD500,func_151B01B8,0x1C4,0xA3A00090,0x2409000F,-,-,Normalize proved actor trail temporary roles and private pointer home and instruction schedule,,,false
+generated_1DD500,func_151B09BC,0x078,0x3C020000,0x3C030000,R_MIPS_HI16:D_800A3FE6,R_MIPS_HI16:D_800A3FE6,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x07C,0x004F1021,0x006F1821,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x080,0x90420000,0x90630000,R_MIPS_LO16:D_800A3FE6,R_MIPS_LO16:D_800A3FE6,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x088,0x54410004,0x54610004,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x09C,0x14410003,0x14610003,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x0B4,0x27A4003C,0x27A40034,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x0BC,0xAFB9003C,0xAFB90034,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x0C8,0xA3A80040,0xA3A80038,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x100,0xAFA00050,0xA3AB0048,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x104,0xAFA00054,0xE7A400D4,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x108,0xAFA00058,0xAFA00050,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x10C,0xAFA0005C,0xAFA00054,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x110,0xAFA00060,0xAFA00058,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x114,0xAFA00064,0xAFA0005C,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x118,0xAFA00068,0xAFA00060,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x11C,0xAFA0006C,0xAFA00064,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x120,0xAFA00070,0xAFA00068,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x124,0x27A20044,0xAFA0006C,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x128,0x27A300A4,0xAFA00070,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x12C,0xA3AB0048,0x27A20068,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x130,0xE7A400D4,0x27A300C8,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x138,0xAC40000C,0xAC40FFE8,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x13C,0xAC400010,0xAC40FFEC,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x140,0xAC400014,0xAC40FFF0,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x144,0xAC400018,0xAC40FFF4,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x148,0xAC40001C,0xAC40FFF8,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x14C,0xAC400020,0xAC40FFFC,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x150,0xAC400024,0xAC400000,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x154,0xAC400028,0xAC400004,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x158,0xAC40002C,0xAC400008,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x15C,0xAC400000,0xAC40FFDC,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x160,0xAC400004,0xAC40FFE0,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_1DD500,func_151B09BC,0x168,0xAC400008,0xAC40FFE4,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
