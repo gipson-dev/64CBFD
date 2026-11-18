@@ -32,7 +32,7 @@ void func_150B7560(void);
 s32 func_150B765C(void);
 s32 func_150B768C(void);
 void func_150B77A8(void);
-s32 func_150B791C(void);
+void func_150B791C(void);
 
 /* Run one pending menu command; state 3 and out-of-range states are idle. */
 void func_150B6BC0(s32 unusedView) {
@@ -196,7 +196,9 @@ void *func_15169968(void *);
 typedef struct {
     u8 *asset;
     u8 *secondaryAsset;
-    u8 reserved08[0x0C];
+    s32 field08;
+    s32 field0C;
+    s32 field10;
     s16 field14;
     s16 field16;
     s16 field18;
@@ -390,9 +392,80 @@ void func_150B77A8(void) {
 }
 
 
-s32 func_150B791C() {
-    return 0;
+extern u8 D_8009190C[];
+
+/* Replace the four menu records, preserving retail's conditional release targets. */
+void func_150B791C(void) {
+    MenuRecordDescriptorE4070 descriptor;
+
+    if (((void **)D_800D9898)[2] != NULL) {
+        func_1516972C(((void **)D_800D9898)[2]);
+        ((void **)D_800D9898)[2] = NULL;
+    }
+    descriptor.field31 = 3;
+    descriptor.field2C = 64;
+    descriptor.field2E = 16;
+    descriptor.field30 = 5;
+    descriptor.field20 = 150.0f;
+    descriptor.field1C = 230.0f;
+    descriptor.field0C = (s32)descriptor.field20;
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field18 = 0;
+    descriptor.asset = D_8009190C;
+    descriptor.secondaryAsset = NULL;
+    descriptor.field08 = 0;
+    descriptor.field10 = 0;
+    descriptor.field32 = 255;
+    descriptor.field33 = 0;
+    descriptor.field34 = 0;
+    descriptor.field35 = 128;
+    descriptor.field36 = 7;
+    descriptor.field37 = 17;
+    descriptor.field38 = 1;
+    descriptor.field39 = 0;
+    descriptor.field28 = 4096;
+    descriptor.field2A = 4096;
+    if (((void **)D_800D9898)[5] != NULL) {
+        func_1516972C(((void **)D_800D9898)[5]);
+    }
+    ((void **)D_800D9898)[5] = func_15169968(&descriptor);
+    descriptor.field16 = 256;
+    descriptor.field08 = 256;
+    descriptor.field35 = 255;
+    descriptor.field20 = 170.0f;
+    descriptor.field0C = (s32)descriptor.field20;
+    /* The gate is slot6, but the original release argument is the first result. */
+    if (((void **)D_800D9898)[6] != NULL) func_1516972C(((void **)D_800D9898)[5]);
+    ((void **)D_800D9898)[6] = func_15169968(&descriptor);
+    descriptor.field16 = 512;
+    descriptor.field08 = 512;
+    descriptor.field35 = 128;
+    descriptor.field20 = 190.0f;
+    descriptor.field0C = (s32)descriptor.field20;
+    /* Likewise, slot7 gates a release of the then-current slot5 pointer. */
+    if (((void **)D_800D9898)[7] != NULL) {
+        func_1516972C(((void **)D_800D9898)[5]);
+    }
+    ((void **)D_800D9898)[7] = func_15169968(&descriptor);
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field18 = 0;
+    descriptor.field31 = 0;
+    descriptor.field2C = 88;
+    descriptor.field2E = 64;
+    descriptor.field35 = 255;
+    descriptor.field30 = 0;
+    descriptor.asset = D_800918E8;
+    descriptor.field1C = 230.0f;
+    descriptor.field20 = 170.0f;
+    if (((void **)D_800D9898)[9] != NULL) func_1516972C(((void **)D_800D9898)[9]);
+    ((void **)D_800D9898)[9] = func_15169968(&descriptor);
+    D_800D9890 = 3;
 }
+
 
 s32 func_150B7B40() {
     return 0;

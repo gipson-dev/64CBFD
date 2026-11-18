@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2534](WORKING_NOTES/2534-game-four-menu-record-replacement-guarded-byte-match-20261118.md): `func_150B791C` is byte-exact: **137 words / frame 0x60**, with18 proved schedule/register guards and no insertions/omissions. All three conversions and unusual retail release arguments are preserved; paired six-test suites, the genuine dispatcher and strict production audit pass. Total **4,544 / 5,514 (82.41%)**, Game **3,871 / 4,841 (79.96%)**, zero drift; **143** more to85%. Next inspect `func_150B7B40`.
+
 [Note 2533](WORKING_NOTES/2533-game-menu-layer-pair-replacement-guarded-byte-match-20261118.md): `func_150B77A8` is byte-exact: **93 words / frame 0x60**, with six proved scheduling guards and no insertions/omissions. Complete descriptor/provider proof, paired six-test suites, actual menu dispatcher and strict production gates pass. Total **4,543 / 5,514 (82.39%)**, Game **3,870 / 4,841 (79.94%)**, zero drift; **144** more to 85%. Next inspect `func_150B791C`.
 
 [Note 2532](WORKING_NOTES/2532-game-motion-impact-callback-semantic-screen-20261118.md): `func_151B118C` has two tested **uninstalled motion/impact drafts**, 187 and 184 words with retail frame 0x98. Paired guest/native/caller screens pass; the shorter draft preserves retail's single blend-coefficient load. **No matching credit**; total stays **4,542 / 5,514 (82.37%)**, with **145** more to 85%. Next recover spill lifetimes and the complete retail stream.

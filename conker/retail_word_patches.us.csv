@@ -37226,3 +37226,21 @@ generated_E4070,func_150B77A8,0x048,0x24180004,0x240F0040,-,-,Move independent 1
 generated_E4070,func_150B77A8,0x04C,0x27390000,0x24180004,R_MIPS_LO16:D_800918F4,-,Move independent 170.0f setup before disjoint descriptor constants,,,false
 generated_E4070,func_150B77A8,0x050,0x25080000,0x27390000,R_MIPS_LO16:D_80091900,R_MIPS_LO16:D_800918F4,Move independent 170.0f setup before disjoint descriptor constants,,,false
 generated_E4070,func_150B77A8,0x054,0x3C01432A,0x25080000,-,R_MIPS_LO16:D_80091900,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B791C,0x038,0x240E0003,0x3C014366,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x040,0x240F0040,0x240E0003,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x044,0x24180010,0x240F0040,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x048,0x24190005,0x24180010,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x04C,0x3C014366,0x24190005,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x054,0x44093000,0x440A3000,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x068,0x3C0A0000,0x3C080000,R_MIPS_HI16:D_8009190C,R_MIPS_HI16:D_8009190C,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x06C,0x254A0000,0x25080000,R_MIPS_LO16:D_8009190C,R_MIPS_LO16:D_8009190C,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x0A0,0xAFAA0024,0xAFA80024,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x0E4,0xAFA90030,0xAFAA0030,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x114,0x240A00FF,0x240C00FF,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x118,0x440C8000,0x440B8000,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x128,0xA3AA0059,0xA3AC0059,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x134,0xAFAC0030,0xAFAB0030,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x160,0x24180080,0x24080080,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x168,0x44089000,0x44199000,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x174,0xA3B80059,0xA3A80059,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B791C,0x180,0xAFA80030,0xAFB90030,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
