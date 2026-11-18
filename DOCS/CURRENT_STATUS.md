@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2540](WORKING_NOTES/2540-game-actor-bound-burst-guarded-byte-match-20261118.md): `func_150B7B40` is restored and byte-exact across **484 words /frame0x268**. Complete C emits483 words;330 proved allocation/schedule guards and one inserted setup word reproduce retail. Fresh paired eight-test suites, both actual children and strict production audit pass. Total **4,547 /5,514 (82.46%)**, Game **3,874 /4,841 (80.02%)**, zero drift; **140** more to85%. Next inspect `func_150B879C`.
+
 [Note 2539](WORKING_NOTES/2539-game-actor-bound-burst-complete-instruction-relation-20261118.md): `func_150B7B40`'s preferred uninstalled C draft passes a complete257-path instruction relation per stream,544 mapped private/incoming bytes and ten effective negatives. The seventh check passes freshly in both configurations; six unchanged tests are explicitly reused. **No new exact-match credit**; total **4,546 / 5,514 (82.44%)**, **141** more to85%. Next derive normalization and connect the qualified children.
 
 [Note 2538](WORKING_NOTES/2538-game-actor-bound-burst-native-caller-qualification-and-frame-map-20261118.md): `func_150B7B40`'s uninstalled drafts pass native32 O0/O2/O3 with exact call transcripts and eight effective native negatives. The genuine state13 caller passes128 cases per parent stream; the measured13-block frame map guides the remaining symbolic relation. Paired six-test suites pass. **No new exact-match credit**; total **4,546 / 5,514 (82.44%)**, **141** more to85%. Next prove the484-word draft's private/register/FP relation.

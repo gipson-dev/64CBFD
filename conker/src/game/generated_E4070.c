@@ -469,9 +469,250 @@ void func_150B791C(void) {
 
 typedef struct { f32 x, y, z; } MenuBurstPointE4070;
 
-s32 func_150B7B40() {
-    return 0;
+typedef struct {
+    u8 reserved00[0x14];
+    MenuBurstPointE4070 position;
+    u8 reserved20[0x1C];
+    f32 radialOffset, field40;
+    u8 reserved44[0x32];
+    u16 heading;
+    u8 reserved78[0x40];
+    f32 fieldB8;
+    u8 reservedBC[8];
+    f32 fieldC4;
+    u8 reservedC8[0x84];
+    f32 factorX, factorY;
+    u8 reserved154[0x30];
+    u32 field184;
+    u8 reserved188[0x4C];
+    void *model;
+} ActorBurstE4070;
+typedef struct {
+    f32 field00, field04, field08, field0C;
+    f32 field10, field14, field18, field1C, field20, field24;
+    MenuBurstPointE4070 position;
+    MenuBurstPointE4070 velocity;
+    f32 field40, field44, field48, field4C;
+    u32 flags;
+    s16 field54;
+    u16 resource;
+    u8 field58, reserved59[3];
+    u32 field5C;
+    u8 field60, field61, field62, field63, field64, field65;
+    u8 field66, field67, field68, reserved69, field6A, reserved6B;
+    u32 field6C;
+    u8 field70, reserved71;
+    s16 field72, field74;
+    u8 reserved76[6];
+} ActorChildDescriptorE4070;
+typedef struct {
+    MenuBurstPointE4070 position;
+    f32 field0C, field10, field14, field18, field1C, field20;
+    s16 field24, field26, field28, field2A, field2C, field2E;
+    s16 field30, field32, field34, field36;
+    u8 field38, field39, field3A, reserved3B;
+    u32 field3C, field40, field44, field48, field4C, field50;
+    u8 field54, field55, field56, reserved57;
+    u32 field58, field5C, field60, field64, field68;
+    u32 field6C, field70, field74, field78;
+    u8 field7C, field7D, reserved7E[2];
+    s16 field80, field82;
+    u32 field84;
+} ActorSprayDescriptorE4070;
+typedef struct { f32 height; u8 retained04[0x20]; } ActorHeightResultE4070;
+extern MenuBurstPointE4070 D_8009FD30, D_8009FD3C, D_8009FD48;
+extern f32 D_8009FD54, D_8009FD58, D_8009FD5C, D_8009FD60, D_8009FD64;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+f32 func_151423D8(u8);
+f32 sqrtf(f32);
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+void func_15142314(void *, s32, MenuBurstPointE4070 *);
+void func_15143134(MenuBurstPointE4070 *, MenuBurstPointE4070 *, void *);
+void func_1515C244(ActorBurstE4070 *, MenuBurstPointE4070 *, f32 *, f32 *);
+void func_150B82D0(MenuBurstPointE4070 *, f32 *, f32 *, f32 *, u8, s32);
+void *func_150B85C0(MenuBurstPointE4070 *, f32 *, f32 *, u8, s32);
+void func_1504715C(ActorHeightResultE4070 *, ActorBurstE4070 *);
+s32 func_15046C80(MenuBurstPointE4070 *, u16, f32, ActorHeightResultE4070 *);
+void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
+void *func_15132A4C(void *, s32, s32, s32, u8, s32);
+void func_15151A38(void *, u8, s32);
+
+
+/* Emit the actor's bound burst, ground effect, and two endpoint sprays. */
+void func_150B7B40(ActorBurstE4070 *actor, u8 slot, s32 context) {
+    MenuBurstPointE4070 endpoints[2];
+    MenuBurstPointE4070 origin;
+    f32 sine, cosine, factorX, factorY, magnitude;
+    ActorChildDescriptorE4070 child;
+    f32 headingSine, headingCosine, pitchSine, pitchCosine;
+    f32 offsetX, offsetZ;
+    MenuBurstPointE4070 center;
+    f32 height, radius, ratio;
+    MenuBurstPointE4070 boundA, boundB;
+    f32 dx, dz;
+    void *matrix;
+    ActorHeightResultE4070 floor;
+    MenuBurstPointE4070 probe;
+    s16 heading, pitch;
+    s16 duration;
+    s8 index;
+    f32 averageScale;
+    f32 componentScale;
+    f32 magnitudeSample;
+    f32 rotationSampleX;
+    f32 rotationSampleY;
+    ActorSprayDescriptorE4070 spray;
+
+    if (actor == NULL) return;
+    if (actor->model != NULL) {
+        func_15142314(actor->model, 4, &endpoints[0]);
+        func_15142314(actor->model, 5, &endpoints[1]);
+        func_15142314(actor->model, 0, &origin);
+    } else {
+        origin.x = actor->position.x;
+        origin.y = actor->position.y;
+        origin.z = actor->position.z;
+        endpoints[0].x = origin.x + 20.0f;
+        endpoints[1].x = origin.x - 20.0f;
+        endpoints[0].y = endpoints[1].y = origin.y + 130.0f;
+        endpoints[0].z = endpoints[1].z = origin.z;
+    }
+    sine = func_151423D8((actor->heading >> 8) & 255);
+    cosine = func_151423D8(((actor->heading >> 8) + 64) & 255);
+    offsetX = actor->radialOffset * sine;
+    offsetZ = actor->radialOffset * cosine;
+    matrix = actor->model;
+    if (matrix != NULL) {
+        matrix = (u8 *)matrix + 0x80;
+        func_15143134(&D_8009FD30, &center, matrix);
+        func_15143134(&D_8009FD3C, &boundA, matrix);
+        func_15143134(&D_8009FD48, &boundB, matrix);
+        height = fabsf(center.y - boundA.y);
+        dx = boundB.x - boundA.x;
+        dz = boundB.z - boundA.z;
+        radius = sqrtf(dx * dx + dz * dz);
+    } else {
+        func_1515C244(actor, &center, &radius, &height);
+    }
+    ratio = radius != 0.0f ? height / radius : 1.0f;
+    func_150B82D0(&center, &height, &radius, &ratio, slot, context);
+    func_150B85C0(&center, &height, &radius, slot, context);
+    probe.x = center.x;
+    probe.y = center.y + 100.0f;
+    probe.z = center.z;
+    func_1504715C(&floor, actor);
+    if (func_15046C80(&probe, 0, center.y - 2000.0f, &floor)) {
+        probe.y = floor.height;
+        duration = (u32)func_150ADA20() % 11U + 30;
+        func_1514C678(probe.x, probe.y + 31.0f, probe.z, radius,
+            0, 255, duration, 25, 0, 0.0f, NULL, slot);
+    }
+    child.field04 = D_8009FD54;
+    child.field54 = 300;
+    child.resource = 0;
+    child.field10 = actor->fieldB8;
+    child.field14 = actor->field40;
+    child.field18 = actor->fieldC4;
+    child.field1C = child.field20 = child.field24 = 1.0f;
+    child.flags = 0x197D;
+    child.field58 = 0;
+    child.field5C = 0;
+    child.field60 = 255;
+    child.field61 = 1;
+    child.field62 = 0;
+    child.field63 = 1;
+    child.field64 = 0;
+    child.field65 = 1;
+    child.field66 = 0;
+    child.field67 = 0;
+    child.field68 = 0;
+    child.field6A = 0;
+    child.field6C = 0;
+    child.field70 = 0;
+    child.field72 = 1;
+    child.field74 = 255;
+    child.field48 = 0.0f;
+    child.field4C = D_8009FD58;
+    factorX = actor->factorX;
+    if (factorX > 1.0f) factorX = 1.0f;
+    if (factorX < 0.5f) factorX = 0.5f;
+    factorY = actor->factorY;
+    if (factorY > 1.0f) factorY = 1.0f;
+    if (factorY < 0.5f) factorY = 0.5f;
+    child.field00 = (28.0f * factorY + 28.0f * factorX) * 0.5f;
+    child.field08 = 3.0f * factorX;
+    child.field0C = 3.0f * factorY;
+    index = 0;
+    do {
+        magnitudeSample = func_150ADA68();
+        magnitude = (magnitudeSample * 30.0f) * actor->factorY + 10.0f;
+        heading = (u32)func_150ADA20() & 127;
+        pitch = -32 - ((u32)func_150ADA20() & 31);
+        headingSine = func_151423D8(heading);
+        headingCosine = func_151423D8(heading - 64);
+        pitchSine = func_151423D8(pitch);
+        pitchCosine = func_151423D8(pitch - 64);
+        child.position = endpoints[index];
+        child.velocity.x = (magnitude * pitchSine) * headingCosine + offsetX;
+        child.velocity.y = -magnitude * pitchCosine;
+        child.velocity.z = (magnitude * pitchSine) * headingSine + offsetZ;
+        rotationSampleX = func_150ADA68();
+        child.field40 = 30.0f - rotationSampleX * 60.0f;
+        rotationSampleY = func_150ADA68();
+        child.field44 = 30.0f - rotationSampleY * 60.0f;
+        func_15132A4C(&child, 3, 2, 0, slot, 0);
+        averageScale = ((actor->factorX + actor->factorY) * 0.5f) / D_8009FD5C;
+        spray.position = endpoints[index];
+        spray.field24 = 4;
+        spray.field26 = 4;
+        spray.field2A = 255;
+        spray.field2C = -63;
+        spray.field2E = 75;
+        spray.field34 = 50;
+        spray.field36 = 20;
+        spray.field30 = 3;
+        spray.field32 = 3;
+        spray.field39 = 33;
+        spray.field3A = 72;
+        spray.field3C = 1;
+        spray.field55 = 155;
+        spray.field56 = 100;
+        spray.field58 = 3;
+        componentScale = 3.0f * averageScale;
+        spray.field0C = componentScale;
+        spray.field10 = componentScale;
+        spray.field1C = 15.0f * averageScale;
+        spray.field20 = 10.0f * averageScale;
+        spray.field28 = 0;
+        spray.field38 = 1;
+        spray.field40 = 0;
+        spray.field44 = 0;
+        spray.field48 = 0;
+        spray.field4C = 0;
+        spray.field50 = 0;
+        spray.field54 = 0;
+        spray.field5C = 255;
+        spray.field60 = 0;
+        spray.field64 = 0x220005;
+        spray.field68 = 0x1D0600;
+        spray.field6C = 1;
+        spray.field70 = 0x3B;
+        spray.field74 = 0x80;
+        spray.field78 = 0x20;
+        spray.field7C = 0;
+        spray.field7D = 7;
+        spray.field80 = 10;
+        spray.field82 = 25;
+        spray.field14 = D_8009FD60;
+        spray.field18 = D_8009FD64;
+        spray.field84 = actor->field184;
+        func_15151A38(&spray, slot, context);
+        index++;
+    } while (index < 2);
 }
+
 
 s32 func_150ADA20(void);
 f32 func_150ADA68(void);
