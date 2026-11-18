@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2524](WORKING_NOTES/2524-game-attached-strip-position-update-guarded-byte-match-20261117.md): `func_151AE3A8` is installed and byte-exact: **122 retail words / frame 0x78**, with 107 checked guards and two insertions. Complete private/ordered-FP relation, 2,560 guest cases, 256 full caller cases, native32 checks, paired tools suites and strict production gates pass. Total **4,536 / 5,514 (82.26%)**, Game **3,863 / 4,841 (79.80%)**, zero drift; **151** more to 85%. Next inspect `func_151AEAB4`.
+
 [Note 2523](WORKING_NOTES/2523-game-motion-sample-strip-attachment-guarded-byte-match-20261117.md): `func_151AE0E4` is installed and byte-exact: **96 retail words / frame 0x38**, with 49 checked guards and one NOP insertion. Complete six-path relation, 624 guest cases, 128 complete caller cases, new native32 checks, paired tools suites and strict production gates pass. Total **4,535 / 5,514 (82.25%)**, Game **3,862 / 4,841 (79.78%)**, zero drift; **152** more to 85%. Next inspect `func_151AE3A8`.
 
 [Note 2522](WORKING_NOTES/2522-game-motion-sample-strip-renderer-guarded-byte-match-20261117.md): `func_151AD92C` is installed and byte-exact: **464 retail words / frame 0x130**, with 379 checked guards, three insertions and eight omissions. Complete geometry/provider/UV/return relations, paired qualification, actual Make and strict full-image/production gates pass. Total **4,534 / 5,514 (82.23%)**, Game **3,861 / 4,841 (79.76%)**, zero drift; **153** more to 85%. Next inspect `func_151AE0E4`.

@@ -9,7 +9,7 @@ s32 func_151AEAB4();
 
 /* Recovered routines and remaining placeholders for asm/1D92F0.s. */
 
-s32 func_151AE3A8();
+void func_151AE3A8(u8 *input);
 void func_151AE0E4(u8 *actor, u8 key);
 s32 func_151AE264(u8 *arg0, u8 arg1);
 
@@ -703,9 +703,68 @@ void func_151AE2BC(f32 *output, CurveProgress1D92F0 *curve,
     *output = (f32)(index - 1) / (f32)(count - 3) + fraction / (f32)(count - 1);
 }
 
-s32 func_151AE3A8() {
-    return 0;
+s32 func_15143E08(u8 *actor);
+f32 func_151423D8(u8 angle);
+
+/* Follow the attached strip segment and apply the heading-relative offset. */
+void func_151AE3A8(u8 *input) {
+    /* Preserve the sample snapshots and values captured across providers. */
+    struct {
+        f32 next[3];
+        f32 first[3];
+        u8 reserved18[0x14];
+        f32 side;
+        u8 reserved30[3];
+        u8 angle;
+        StripRecord151ACBD4 *record;
+        u8 *actor;
+        u8 reserved3C[0x10];
+        f32 newY;
+        u8 reserved50[8];
+        f32 oldY, oldZ;
+    } local;
+    f32 forward, along, scale, oldX, progress;
+    f32 baseX, baseZ, offsetX, offsetZ;
+    u8 *child, *actor;
+    StripRecord151ACBD4 *record;
+    s32 steps, index, byteOffset;
+
+    local.actor = *(u8 **)(input + 0x1C);
+    local.record = *(StripRecord151ACBD4 **)(*(u8 **)(local.actor + 0x31C) + 0x9C);
+    local.angle = func_15143E08(local.actor) - 0x80;
+    local.side = func_151423D8((local.angle - 0x40) & 0xFF);
+    forward = func_151423D8(local.angle);
+    actor = local.actor;
+    record = local.record;
+    child = *(u8 **)(actor + 0x31C);
+    local.oldY = *(f32 *)(actor + 0x18);
+    oldX = *(f32 *)(actor + 0x14);
+    scale = *(f32 *)(input + 0x28);
+    progress = *(f32 *)(child + 0xA0);
+    local.oldZ = *(f32 *)(actor + 0x1C);
+    steps = (s32)(140.0f / record->spacing);
+    index = (s32)((f32)(record->count - steps - 1) * progress);
+    child[0xAE] = index;
+    byteOffset = index * 24;
+    local.first[0] = *(f32 *)((u8 *)record->points + byteOffset);
+    along = (f32)(record->count - steps - 1) * progress - (f32)index;
+    local.first[1] = *(f32 *)((u8 *)record->points + byteOffset + 4);
+    local.first[2] = *(f32 *)((u8 *)record->points + byteOffset + 8);
+    local.next[0] = *(f32 *)((u8 *)record->points + byteOffset + 24);
+    local.next[1] = *(f32 *)((u8 *)record->points + byteOffset + 28);
+    local.next[2] = *(f32 *)((u8 *)record->points + byteOffset + 32);
+    baseX = (local.next[0] - local.first[0]) * along + local.first[0];
+    local.newY = (local.next[1] - local.first[1]) * along + local.first[1];
+    baseZ = (local.next[2] - local.first[2]) * along + local.first[2];
+    offsetX = scale * local.side;
+    offsetZ = scale * forward;
+    baseX += offsetX;
+    baseZ += offsetZ;
+    *(f32 *)(actor + 0x14) = (baseX - oldX) + oldX;
+    *(f32 *)(actor + 0x18) = (local.newY - local.oldY) + local.oldY;
+    *(f32 *)(actor + 0x1C) = (baseZ - local.oldZ) + local.oldZ;
 }
+
 
 /* Only selected head cells and the node's link/key prefix are known here. */
 typedef struct LookupNode1D92F0 LookupNode1D92F0;
