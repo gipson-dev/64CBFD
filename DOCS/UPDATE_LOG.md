@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2531](WORKING_NOTES/2531-game-owner-effect-pool-semantic-screen-20261118.md): `func_151B0B88` has a tested **uninstalled semantic draft**, 389 words against retail 385 with the original frame 0x138. Paired four-test screens, native negative controls and the real dispatcher connection pass. **No new exact-match credit**; total stays **4,542 / 5,514 (82.37%)**. Next recover the retail countdown and temporary lifetimes.
+
 [Note 2530](WORKING_NOTES/2530-game-owner-effect-record-constructor-guarded-byte-match-20261117.md): `func_151B09BC` is byte-exact: **115 words / frame 0xE0**, with 33 proved register, stack-home and clear-loop guards and no inserted/omitted words. Paired focused checks, actual memcpy and strict production gates pass. Total **4,542 / 5,514 (82.37%)**, Game **3,869 / 4,841 (79.92%)**, zero drift; **145** more to 85%. Next inspect `func_151B0B88`.
 
 [Note 2529](WORKING_NOTES/2529-game-actor-angular-trail-emitter-guarded-byte-match-20261117.md): `func_151B01B8` is byte-exact: **128 words / frame0xA0**, with 50 proved role/home/schedule guards and no inserted/omitted words. Paired focused and strict production gates pass. Total **4,541 / 5,514 (82.35%)**, Game **3,868 / 4,841 (79.90%)**, zero drift; **146** more to 85%. Next inspect `func_151B09BC`.
