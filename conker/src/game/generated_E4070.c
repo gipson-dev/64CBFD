@@ -467,15 +467,62 @@ void func_150B791C(void) {
 }
 
 
+typedef struct { f32 x, y, z; } MenuBurstPointE4070;
+
 s32 func_150B7B40() {
     return 0;
 }
 
-s32 func_150B82D0() {
-    return 0;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16, s16, f32, MenuBurstPointE4070 *);
+void *func_1518A3C0(MenuBurstPointE4070 *, MenuBurstPointE4070 *, f32,
+    MenuBurstPointE4070 *, MenuBurstPointE4070 *, f32, f32, u8, s16, u8,
+    s32, u8, s32);
+
+/* Emit a randomized burst around the caller's position and scaled dimensions. */
+void func_150B82D0(MenuBurstPointE4070 *center, f32 *unusedHeight, f32 *radius,
+                    f32 *ratio, u8 unusedSlot, s32 unusedContext) {
+    MenuBurstPointE4070 position;
+    MenuBurstPointE4070 rotation;
+    MenuBurstPointE4070 velocity;
+    MenuBurstPointE4070 acceleration;
+    s32 remaining;
+    s16 heading;
+    s16 pitch;
+    f32 firstSample, secondSample;
+
+    remaining = (u32)func_150ADA20() % 26U + 35;
+    if (remaining > 0) {
+        do {
+            heading = (u32)func_150ADA20() & 255;
+            pitch = (u32)func_150ADA20() % 61U - 63;
+            func_15143794(heading, pitch, *radius, &position);
+            position.y *= *ratio;
+            position.x += center->x;
+            position.y += center->y;
+            position.z += center->z;
+            rotation.x = func_150ADA68() * 360.0f;
+            rotation.y = func_150ADA68() * 360.0f;
+            rotation.z = func_150ADA68() * 360.0f;
+            func_15143794(heading, pitch,
+                (func_150ADA68() * 1221.0f + 1806.0f) * 0.01f,
+                &velocity);
+            acceleration.x = (func_150ADA68() * 3140.0f + -1570.0f) * 0.01f;
+            acceleration.y = 0.0f;
+            acceleration.z = (func_150ADA68() * 3140.0f + -1570.0f) * 0.01f;
+            firstSample = func_150ADA68();
+            secondSample = func_150ADA68();
+            func_1518A3C0(&position, &rotation,
+                (firstSample * 104.0f + 78.0f) * 0.001f, &velocity,
+                &acceleration, (secondSample * 633.0f + -1064.0f) * 0.001f,
+                0.9425339698791504f, 1, (u32)func_150ADA20() % 51U + 75, 0, 0, 255, 1);
+            remaining--;
+        } while (remaining != 0);
+    }
 }
 
-typedef struct { f32 x, y, z; } MenuBurstPointE4070;
+
 typedef struct {
     u32 field00, field04;
     s16 field08, field0A;

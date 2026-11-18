@@ -37263,3 +37263,47 @@ generated_E4070,func_150B85C0,0x1A0,0xA7AE0048,0xA7B90048,-,-,Normalize independ
 generated_E4070,func_150B85C0,0x1A4,0xA7B9004A,0xA7A8004A,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
 generated_E4070,func_150B85C0,0x1A8,0xA3A8008C,0xA3A9008C,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
 generated_E4070,func_150B85C0,0x1C8,0xAFA90010,0xAFAA0010,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B82D0,0x000,0x27BDFF18,0x27BDFF20,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x048,0xAFA500EC,0xAFA500E4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x04C,0xAFA600F0,0xAFA600E8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x050,0xAFA700F4,0xAFA700EC,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x070,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD68,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x074,0xC43E0028,0xC43E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD68,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x078,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD6C,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x07C,0xC43C002C,0xC43C0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD6C,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x080,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD70,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x084,0xC43A0030,0xC43A0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD70,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x090,0x27BE00B8,0x27BE00AC,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x094,0x27B700D0,0x27B700C4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x09C,0x27B500C4,0x27B500B8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x0A0,0x27B400DC,0x27B400D0,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x0C8,0x8FA900F0,0x8FA900E8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x108,0x8FAA00F4,0x8FAA00EC,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x10C,0xC7A400E0,0xC7A400D4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x110,0xC7AA00DC,0xC7AA00D0,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x11C,0xE7A800E0,0xE7A800D4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x128,0xC7AA00E4,0xC7AA00D8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x12C,0xE7B200DC,0xE7B200D0,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x138,0xE7A600E0,0xE7A600D4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x148,0xE7B200E4,0xE7B200D8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x154,0xE7A800D0,0xE7A800C4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x160,0xE7A400D4,0xE7A400C8,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x16C,0xE7A600D8,0xE7A600CC,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x170,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD74,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x174,0xC42A0034,0xC42A0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD74,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x178,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD78,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x17C,0xC4320038,0xC4320000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD78,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x1C8,0xE7B200BC,0xE7B200B0,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x1D8,0xE7B000B8,0xE7B000AC,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x1EC,0xE7A600C0,0xE7A600B4,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x1F4,0x46000506,0x46000586,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x1FC,0x46000586,0x46000506,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x200,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD7C,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x204,0xC432003C,0xC4320000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD7C,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x218,0x4610A402,0x4610B402,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x21C,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD80,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x220,0xC42C0040,0xC42C0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD80,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x22C,0x460CB302,0x460CA302,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x230,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_8009FD84,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x238,0xC4300044,0xC4300000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_8009FD84,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
+generated_E4070,func_150B82D0,0x2EC,0x27BD00E8,0x27BD00E0,-,-,Rebind verified immutable literal identities and rotate the closed vector homes,,,false
