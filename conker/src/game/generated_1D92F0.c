@@ -5,7 +5,7 @@ u16 func_10010FFC(s32, s32, u16, s16, u8, void *);
 extern f32 D_800A9D84, D_800A9D88;
 f32 func_150ADA68(void);
 void *func_151AE984(void *, f32, f32, f32, u8, u8);
-s32 func_151AEAB4();
+void func_151AEAB4(f32 *position, s32 mode, s32 channel);
 
 /* Recovered routines and remaining placeholders for asm/1D92F0.s. */
 
@@ -947,9 +947,49 @@ void *func_151AE984(void *position, f32 x, f32 y, f32 z,
         0, 0, 1, 0, selector, 1);
 }
 
-s32 func_151AEAB4() {
-    return 0;
+extern f32 D_800A9D98, D_800A9D9C, D_800A9DA0, D_800A9DA4;
+u8 *func_151DA6F8(void *, void *, f32, s16, u8, f32, s32, u8,
+                    f32, f32, u8, u8, s32, s16, s16, s32, u8, s32);
+
+/* Emit a trail effect with randomized direction, speed and lifetime. */
+void func_151AEAB4(f32 *position, s32 mode, s32 channel) {
+    /* Retain captured random values and the submitted velocity snapshot. */
+    struct {
+        f32 firstSample;
+        u32 firstValue, secondValue;
+        f32 secondSample;
+        u8 reserved10[4];
+        f32 pitchQuarter, pitchValue, azimuthQuarter, azimuthValue;
+        u8 reserved24[6];
+        u8 pitch, azimuth;
+        f32 velocity[3];
+    } local;
+    u32 lastValue;
+    f32 speed, horizontal;
+
+    local.azimuth = func_150ADA20();
+    local.pitch = ((u32)func_150ADA20() & 0x7F) - 0x3F;
+    local.azimuthValue = func_151423D8(local.azimuth);
+    local.azimuthQuarter = func_151423D8((local.azimuth - 0x40) & 0xFF);
+    local.pitchValue = func_151423D8(local.pitch);
+    local.pitchQuarter = func_151423D8((local.pitch - 0x40) & 0xFF);
+    speed = (func_150ADA68() * 80.0f + 20.0f) * D_800A9D98;
+    horizontal = speed * local.pitchValue;
+    local.velocity[0] = horizontal * local.azimuthQuarter;
+    local.velocity[1] = -speed * local.pitchQuarter;
+    local.velocity[2] = horizontal * local.azimuthValue;
+    local.firstSample = func_150ADA68();
+    local.firstValue = func_150ADA20();
+    local.secondValue = func_150ADA20();
+    local.secondSample = func_150ADA68();
+    lastValue = func_150ADA20();
+    func_151DA6F8(position, local.velocity,
+        local.firstSample * D_800A9D9C + D_800A9DA0,
+        local.firstValue % 41U + 60, local.secondValue % 101U + 155,
+        local.secondSample * 4.0f + D_800A9DA4, lastValue % 5U + 3,
+        (u8)mode, 1.0f, 1.0f, 0, 0, 0, 0x10, 0xF, 0, (u8)channel, 1);
 }
+
 
 /* Note 362: original ROM blood effect and dependencies. */
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_1D92F0/func_151AECA0.s")
