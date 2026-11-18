@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2551](WORKING_NOTES/2551-game-surface-impact-callback-guarded-byte-match-20261118.md): `func_150B9ED0` is installed and byte-exact across **291 words/frame344**, using103 source-derived guards with no insertions/omissions. Complete11-path private/ordered-FP relation, paired seven-test suites, actual factory/caller and strict production gates pass. Total **4,552 /5,514 (82.55%)**, Game **3,879 /4,841 (80.13%)**, zero drift; **135** more to85%.
+
 [Note 2550](WORKING_NOTES/2550-game-surface-impact-query-and-descriptor-recovery-20261118.md): `func_150B9ED0` has a tested private recovery at **291 words/frame328**, versus retail291/frame344. Paired four-test suites cover1792 guest cases per stream,576 actual caller cases,1024 native cases each at O0/O2/O3 and ten effective negatives. Three neighbors/pools stay exact. **Uninstalled, zero new matching credit**; next finish its private/frame and instruction-layout proof. Total remains **4,551 /5,514 (82.54%)**,136 more to85%.
 
 [Note 2549](WORKING_NOTES/2549-game-cached-target-terminal-callback-guarded-byte-match-20261118.md): `func_150B963C` is installed and byte-exact across **438 words/frame384**, with211 source-derived guards, four insertions and no omissions. Paired seven-test suites, the77-path finite/private relation, actual factory/copy and strict production gates pass. Total **4,551 /5,514 (82.54%)**, Game **3,878 /4,841 (80.11%)**, zero drift; **136** more to85%. Next inspect `func_150B9ED0`.
