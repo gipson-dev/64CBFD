@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2532](WORKING_NOTES/2532-game-motion-impact-callback-semantic-screen-20261118.md): `func_151B118C` has two tested **uninstalled motion/impact drafts**, 187 and 184 words with retail frame 0x98. Paired guest/native/caller screens pass; the shorter draft preserves retail's single blend-coefficient load. **No matching credit**; total stays **4,542 / 5,514 (82.37%)**, with **145** more to 85%. Next recover spill lifetimes and the complete retail stream.
+
 [Note 2531](WORKING_NOTES/2531-game-owner-effect-pool-semantic-screen-20261118.md): `func_151B0B88` has a tested **uninstalled semantic draft**, 389 words against retail 385 with the original frame 0x138. Paired four-test screens, native negative controls and the real dispatcher connection pass. **No new exact-match credit**; total stays **4,542 / 5,514 (82.37%)**. Next recover the retail countdown and temporary lifetimes.
 
 [Note 2530](WORKING_NOTES/2530-game-owner-effect-record-constructor-guarded-byte-match-20261117.md): `func_151B09BC` is byte-exact: **115 words / frame 0xE0**, with 33 proved register, stack-home and clear-loop guards and no inserted/omitted words. Paired focused checks, actual memcpy and strict production gates pass. Total **4,542 / 5,514 (82.37%)**, Game **3,869 / 4,841 (79.92%)**, zero drift; **145** more to 85%. Next inspect `func_151B0B88`.
