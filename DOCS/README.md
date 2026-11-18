@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2533](WORKING_NOTES/2533-game-menu-layer-pair-replacement-guarded-byte-match-20261118.md): `func_150B77A8` is byte-exact: **93 words / frame 0x60**, with six proved scheduling guards and no insertions/omissions. Complete descriptor/provider proof, paired six-test suites, actual menu dispatcher and strict production gates pass. Total **4,543 / 5,514 (82.39%)**, Game **3,870 / 4,841 (79.94%)**, zero drift; **144** more to 85%. Next inspect `func_150B791C`.
+
 [Note 2532](WORKING_NOTES/2532-game-motion-impact-callback-semantic-screen-20261118.md): `func_151B118C` has two tested **uninstalled motion/impact drafts**, 187 and 184 words with retail frame 0x98. Paired guest/native/caller screens pass; the shorter draft preserves retail's single blend-coefficient load. **No matching credit**; total stays **4,542 / 5,514 (82.37%)**, with **145** more to 85%. Next recover spill lifetimes and the complete retail stream.
 
 [Note 2531](WORKING_NOTES/2531-game-owner-effect-pool-semantic-screen-20261118.md): `func_151B0B88` has a tested **uninstalled semantic draft**, 389 words against retail 385 with the original frame 0x138. Paired four-test screens, native negative controls and the real dispatcher connection pass. **No new exact-match credit**; total stays **4,542 / 5,514 (82.37%)**. Next recover the retail countdown and temporary lifetimes.

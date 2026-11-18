@@ -37220,3 +37220,9 @@ generated_1DD500,func_151B09BC,0x158,0xAC40002C,0xAC400008,-,-,Normalize proved 
 generated_1DD500,func_151B09BC,0x15C,0xAC400000,0xAC40FFDC,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
 generated_1DD500,func_151B09BC,0x160,0xAC400004,0xAC40FFE0,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
 generated_1DD500,func_151B09BC,0x168,0xAC400008,0xAC40FFE4,-,-,Normalize proved owner record category role and binding home and clear schedule and closed cursor bias,,,false
+generated_E4070,func_150B77A8,0x040,0x240E0040,0x3C01432A,-,-,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B77A8,0x044,0x240F0040,0x240E0040,-,-,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B77A8,0x048,0x24180004,0x240F0040,-,-,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B77A8,0x04C,0x27390000,0x24180004,R_MIPS_LO16:D_800918F4,-,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B77A8,0x050,0x25080000,0x27390000,R_MIPS_LO16:D_80091900,R_MIPS_LO16:D_800918F4,Move independent 170.0f setup before disjoint descriptor constants,,,false
+generated_E4070,func_150B77A8,0x054,0x3C01432A,0x25080000,-,R_MIPS_LO16:D_80091900,Move independent 170.0f setup before disjoint descriptor constants,,,false

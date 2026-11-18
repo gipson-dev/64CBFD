@@ -31,7 +31,7 @@ void func_150B7484(void);
 void func_150B7560(void);
 s32 func_150B765C(void);
 s32 func_150B768C(void);
-s32 func_150B77A8(void);
+void func_150B77A8(void);
 s32 func_150B791C(void);
 
 /* Run one pending menu command; state 3 and out-of-range states are idle. */
@@ -195,7 +195,8 @@ void *func_15169968(void *);
 
 typedef struct {
     u8 *asset;
-    u8 reserved04[0x10];
+    u8 *secondaryAsset;
+    u8 reserved08[0x0C];
     s16 field14;
     s16 field16;
     s16 field18;
@@ -335,9 +336,59 @@ void func_150B76BC(s32 x, s32 slot) {
     ((void **)D_800D9898)[slot] = func_15169968(&descriptor);
 }
 
-s32 func_150B77A8() {
-    return 0;
+extern u8 D_800918F4[], D_80091900[];
+
+/* Replace both menu layers using the shared, partially initialized descriptor. */
+void func_150B77A8(void) {
+    MenuRecordDescriptorE4070 descriptor;
+
+    if (((void **)D_800D9898)[1] != NULL) {
+        func_1516972C(((void **)D_800D9898)[1]);
+        ((void **)D_800D9898)[1] = NULL;
+    }
+    descriptor.field2C = 64;
+    descriptor.field2E = 64;
+    descriptor.field30 = 4;
+    descriptor.asset = D_800918F4;
+    descriptor.secondaryAsset = D_80091900;
+    descriptor.field14 = 0;
+    descriptor.field16 = 0;
+    descriptor.field18 = 0;
+    descriptor.field31 = 0;
+    descriptor.field24 = -2048;
+    descriptor.field26 = 9;
+    descriptor.field32 = 255;
+    descriptor.field33 = 0;
+    descriptor.field34 = 0;
+    descriptor.field35 = 255;
+    descriptor.field36 = 13;
+    descriptor.field37 = 18;
+    descriptor.field38 = 2;
+    descriptor.field39 = 3;
+    descriptor.field28 = 4096;
+    descriptor.field2A = 4096;
+    descriptor.field1C = 60.0f;
+    descriptor.field20 = 170.0f;
+    if (((void **)D_800D9898)[4] != NULL) {
+        func_1516972C(((void **)D_800D9898)[4]);
+    }
+    ((void **)D_800D9898)[4] = func_15169968(&descriptor);
+    descriptor.field24 = 0;
+    descriptor.field26 = 0;
+    descriptor.field2C = 88;
+    descriptor.field2E = 64;
+    descriptor.field30 = 0;
+    descriptor.field36 = 7;
+    descriptor.field37 = 17;
+    descriptor.asset = D_800918E8;
+    descriptor.field38 = 1;
+    if (((void **)D_800D9898)[8] != NULL) {
+        func_1516972C(((void **)D_800D9898)[8]);
+    }
+    ((void **)D_800D9898)[8] = func_15169968(&descriptor);
+    D_800D9890 = 3;
 }
+
 
 s32 func_150B791C() {
     return 0;
