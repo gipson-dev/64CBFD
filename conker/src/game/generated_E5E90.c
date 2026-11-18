@@ -367,9 +367,174 @@ s32 func_150B961C(u8 *arg0) {
     return 1;
 }
 
-s32 func_150B963C() {
-    return 0;
+extern u8 *D_80088720, *D_80088730;
+extern TerminalPointE5E90 D_80088724;
+extern s32 D_80088740;
+extern f32 D_8009FDE0, D_8009FDE4, D_8009FDE8, D_8009FDEC, D_8009FDF0;
+extern f32 D_8009FDF4, D_8009FDF8, D_8009FDFC, D_8009FE00;
+u8 *func_15083E90(s32);
+f32 func_151423D8(u8);
+s32 func_15046C80(void *, s32, f32, void *);
+
+
+/* Steer toward cached targets, bounce on a close fast target, or submit terminal effects. */
+s32 func_150B963C(u8 *actor) {
+    f32 distance;
+    f32 targetZ;
+    f32 sine, cosine;
+    TerminalPointE5E90 position;
+    TerminalBurstE5E90 burst;
+    TerminalExtraE5E90 extra;
+    TerminalSprayE5E90 spray;
+    u32 firstRandom, secondRandom, thirdRandom;
+    u8 *target = D_80088730;
+    void *allocated;
+    f32 dx, dy, dz;
+
+    if (target == NULL || *(u32 *)target == 0 || target[0x3B] != 1) {
+        D_80088730 = func_15083E90(1);
+    }
+    target = D_80088730;
+    if (target != NULL) {
+        targetZ = *(f32 *)(target + 0x1C);
+        dx = *(f32 *)(actor + 0x38) - *(f32 *)(target + 0x14);
+        dy = *(f32 *)(actor + 0x3C) - *(f32 *)(target + 0x18);
+        dz = *(f32 *)(actor + 0x40) - targetZ;
+        distance = (dx * dx + dy * dy) + dz * dz;
+        if (distance < *(f32 *)(actor + 0x10) * *(f32 *)(actor + 0x10) + D_8009FDE0) {
+            if (*(f32 *)(target + 0x3C) > 15.0f) {
+                if (func_150ADA20() & 1) {
+                    sine = func_151423D8((u16)*(u16 *)(D_80088730 + 0x76) >> 8);
+                    cosine = func_151423D8(((u16)*(u16 *)(D_80088730 + 0x76) >> 8) + 0x40);
+                    actor[0x71] = 1;
+                    *(u32 *)(actor + 0x60) |= 0x7D;
+                    actor[0x73] = 1;
+                    actor[0x75] = 1;
+                    actor[0x78] = 0;
+                    *(f32 *)(actor + 0x44) = (*(f32 *)(D_80088730 + 0x3C) * sine) * D_8009FDE4;
+                    *(f32 *)(actor + 0x48) = func_150ADA68() * 15.0f + 10.0f;
+                    *(f32 *)(actor + 0x4C) = (*(f32 *)(D_80088730 + 0x3C) * cosine) * D_8009FDE8;
+                    *(s16 *)(actor + 0x64) = 300;
+                    *(u32 *)(actor + 0x60) |= 0x80;
+                    *(f32 *)(actor + 0x20) = 0;
+                    *(f32 *)(actor + 0x24) = 0;
+                    *(f32 *)(actor + 0x28) = 0;
+                    return 1;
+                }
+            }
+            position.x = *(f32 *)(actor + 0x38);
+            position.y = *(f32 *)(actor + 0x3C) + 100.0f;
+            position.z = *(f32 *)(actor + 0x40);
+            if (func_15046C80(&position, 0, *(f32 *)(actor + 0x3C) - 2000.0f, actor + 0x110)) {
+                position.y = *(f32 *)(actor + 0x110);
+                burst.field54 = 25;
+                burst.field56 = 10;
+                burst.category = 4;
+                burst.field01 = 0;
+                burst.field02 = 0x3B02;
+                burst.duration = func_150ADA20() % 31U + 40;
+                burst.field08 = 0;
+                burst.field0C = 0;
+                burst.color[0] = 255;
+                burst.color[1] = 255;
+                burst.color[2] = 255;
+                burst.color[3] = 255;
+                burst.field14 = burst.field18 = (func_150ADA68() * 25.0f + 25.0f) * D_8009FDEC;
+                burst.position = position;
+                burst.flags = 0xC5C0001;
+                burst.field44 = 255;
+                burst.field45 = 255;
+                burst.field46 = 0;
+                burst.field47 = 7;
+                burst.field28 = 0;
+                burst.field2C = 0;
+                burst.field30 = 0;
+                burst.field34 = 0;
+                burst.field38 = 0;
+                burst.field3C = 0;
+                extra.value = (func_150ADA68() * 80.0f + 50.0f) * D_8009FDF0;
+                burst.field50 = *(u32 *)(actor + 0x128);
+                firstRandom = func_150ADA20();
+                secondRandom = func_150ADA20();
+                thirdRandom = func_150ADA20();
+                allocated = func_1513D594(&burst, D_800A4AA0, 24, 0, 0,
+                    (secondRandom & 1) + ((firstRandom & 1) << 1), thirdRandom & 255,
+                    500.0f, 500.0f, 0, actor + 0x114, *(u32 *)(actor + 0x14C),
+                    *(u32 *)(actor + 0x168), 0, 8, actor[0xC], actor[1]);
+                if (allocated != NULL) memcpy((u8 *)allocated + 0x128, &extra, 8);
+            }
+            spray.position = *(TerminalPointE5E90 *)(actor + 0x38);
+            spray.field24 = 6;
+            spray.field26 = 6;
+            spray.field28 = 0;
+            spray.field2A = 255;
+            spray.field2C = -64;
+            spray.field2E = 30;
+            spray.field30 = 3;
+            spray.field32 = 3;
+            spray.field34 = 30;
+            spray.field36 = 20;
+            spray.field38 = 1;
+            spray.field39 = 33;
+            spray.field3A = 72;
+            spray.field3C = 1;
+            spray.field40 = 0;
+            spray.field44 = 0;
+            spray.field48 = 0;
+            spray.field4C = 0;
+            spray.field50 = 0;
+            spray.field54 = 0;
+            spray.field55 = 154;
+            spray.field56 = 101;
+            spray.field0C = 3.0f;
+            spray.field10 = D_8009FDF4;
+            spray.field14 = D_8009FDF8;
+            spray.field18 = D_8009FDFC;
+            spray.field1C = 5.0f;
+            spray.field20 = 7.0f;
+            spray.field58 = *(u32 *)(actor + 0x14C);
+            spray.field5C = *(u32 *)(actor + 0x168);
+            spray.field60 = 0;
+            spray.field64 = 0x220005;
+            spray.field68 = 0x1D0600;
+            spray.field6C = 1;
+            spray.field70 = 0x3B;
+            spray.field74 = 0x80;
+            spray.field78 = 0x20;
+            spray.field7C = 0;
+            spray.field7D = 7;
+            spray.field80 = 10;
+            spray.field82 = 25;
+            spray.field84 = *(u32 *)(actor + 0x128);
+            func_15151A38(&spray, actor[0xC], actor[1]);
+            func_10010F88(D_80088740, 25000, 0, 0, 0,
+                (s32)*(f32 *)(actor + 0x38), (s32)*(f32 *)(actor + 0x3C),
+                (s32)*(f32 *)(actor + 0x40), 1000, 4000);
+            return 0;
+        }
+    }
+    target = D_80088720;
+    if (target == NULL || *(u32 *)target == 0 || target[0x3B] != 1) {
+        D_80088720 = func_15083E90(1);
+    }
+    target = D_80088720;
+    if (target != NULL) {
+        D_80088724.x = *(f32 *)(target + 0x14);
+        D_80088724.y = *(f32 *)(target + 0x18) + 50.0f;
+        D_80088724.z = *(f32 *)(target + 0x1C);
+    }
+    {
+    f32 steeringFactor = D_8009FE00;
+    dx = *(f32 *)(actor + 0x20);
+    dy = *(f32 *)(actor + 0x24);
+    dz = *(f32 *)(actor + 0x28);
+    *(f32 *)(actor + 0x20) = dx + steeringFactor * (D_80088724.x - dx);
+    *(f32 *)(actor + 0x24) = dy + steeringFactor * (D_80088724.y - dy);
+    *(f32 *)(actor + 0x28) = dz + steeringFactor * (D_80088724.z - dz);
+    return 1;
+    }
 }
+
 
 s32 func_150B9D14(Mtx *output, u8 *source) {
     func_15142600(output,
