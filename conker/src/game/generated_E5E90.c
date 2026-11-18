@@ -176,9 +176,159 @@ s32 func_150B89E0(u8 *actor, f32 x, f32 unusedY, f32 z, f32 y, void *context) {
     return 1;
 }
 
-s32 func_150B8F44() {
-    return 0;
+/* Collision metadata is copied as nine halfwords; its field meanings are unknown. */
+typedef struct { s16 field[9]; } ImpactContextE5E90;
+typedef struct {
+    TerminalPointE5E90 position, velocity;
+    ImpactContextE5E90 context;
+    u8 reserved2A[2];
+    f32 field2C, field30, field34, field38, field3C, field40, field44;
+    s16 field48, field4A, field4C, field4E, field50, field52;
+    u8 field54, field55, field56, reserved57;
+    u32 field58, field5C, field60, field64, field68, field6C;
+    u8 field70, field71, field72, reserved73;
+    u32 field74, field78, field7C, field80, field84;
+    u32 field88, field8C, field90, field94;
+    u8 field98, field99, reserved9A[2];
+    s16 field9C, field9E;
+    u32 fieldA0;
+} ImpactSprayE5E90;
+extern f32 D_8009FDBC, D_8009FDC0, D_8009FDC4, D_8009FDC8, D_8009FDCC, D_8009FDD0;
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+s32 func_150A3058(s32, s16, s16, s16);
+s32 func_150AC9C0(f32, f32, f32, f32, f32, f32, s32, void *,
+    f32 *, f32 *, f32 *, f32 *, s32 *, s32, f32);
+u8 func_15145C90(s32);
+void func_15151670(void *, u8, s32);
+
+
+/* Resolve an impact: damp light motion, or query and submit terminal effects. */
+s32 func_150B8F44(u8 *actor, u8 *surface, f32 oldX, f32 oldY, f32 oldZ) {
+    f32 dz, dy, dx;
+    TerminalPointE5E90 position;
+    ImpactContextE5E90 context;
+    s32 hit;
+    TerminalBurstE5E90 burst;
+    TerminalExtraE5E90 extra;
+    ImpactSprayE5E90 spray;
+    u32 firstRandom, secondRandom, thirdRandom;
+    void *allocated;
+    f32 vertical = *(f32 *)(actor + 0x48);
+
+    if (*(f32 *)(actor + 0x140) - fabsf(vertical) > 6.0f) {
+        if (!func_150A3058(1, (s16)(s32)*(f32 *)(surface + 0x14),
+                (s16)(s32)*(f32 *)(surface + 0x18), (s16)(s32)*(f32 *)(surface + 0x1C))) {
+            dx = *(f32 *)(actor + 0x38) - oldX;
+            dy = *(f32 *)(actor + 0x3C) - oldY;
+            dz = *(f32 *)(actor + 0x40) - oldZ;
+            if (func_150AC9C0(oldX, oldY, oldZ, dx, dy, dz, 0, &context,
+                    &position.x, &position.y, &position.z, NULL, &hit, 0, 0.0f)) {
+                if (func_15145C90(hit)) {
+                    burst.field54 = 25;
+                    burst.field56 = 10;
+                    burst.category = 4;
+                    burst.field01 = 0;
+                    burst.field02 = 0x3B02;
+                    burst.duration = func_150ADA20() % 31U + 40;
+                    burst.field08 = 0;
+                    burst.field0C = 0;
+                    burst.color[0] = 255;
+                    burst.color[1] = 255;
+                    burst.color[2] = 255;
+                    burst.color[3] = 255;
+                    burst.field14 = burst.field18 = (func_150ADA68() * 25.0f + 25.0f) * D_8009FDBC;
+                    burst.position = position;
+                    burst.flags = 0xC5C0001;
+                    burst.field44 = 255;
+                    burst.field45 = 255;
+                    burst.field46 = 0;
+                    burst.field47 = 7;
+                    burst.field28 = 0;
+                    burst.field2C = 0;
+                    burst.field30 = 0;
+                    burst.field34 = 0;
+                    burst.field38 = 0;
+                    burst.field3C = 0;
+                    extra.value = (func_150ADA68() * 80.0f + 50.0f) * D_8009FDC0;
+                    burst.field50 = *(u32 *)(actor + 0x128);
+                    firstRandom = func_150ADA20();
+                    secondRandom = func_150ADA20();
+                    thirdRandom = func_150ADA20();
+                    allocated = func_1513D594(&burst, D_800A4AA0, 24, 0, 0,
+                        (secondRandom & 1) + ((firstRandom & 1) << 1), thirdRandom & 255,
+                        500.0f, 500.0f, 0, &context, *(u32 *)(actor + 0x14C),
+                        *(u32 *)(actor + 0x168), 0, 8, actor[0xC], actor[1]);
+                    if (allocated != NULL) memcpy((u8 *)allocated + 0x128, &extra, 8);
+                }
+                spray.velocity.x = -dx;
+                spray.velocity.y = -dy;
+                spray.velocity.z = -dz;
+                spray.context = context;
+                spray.field2C = 502.0f;
+                spray.position = position;
+                spray.field48 = 6;
+                spray.field4A = 6;
+                spray.field30 = 3.0f;
+                spray.field34 = 3.0f;
+                spray.field4C = 3;
+                spray.field4E = 3;
+                spray.field50 = 50;
+                spray.field52 = 20;
+                spray.field54 = 1;
+                spray.field55 = 33;
+                spray.field56 = 72;
+                spray.field58 = 1;
+                spray.field5C = 0;
+                spray.field60 = 0;
+                spray.field64 = 0;
+                spray.field68 = 0;
+                spray.field6C = 0;
+                spray.field70 = 0;
+                spray.field71 = 155;
+                spray.field72 = 100;
+                spray.field38 = D_8009FDC4;
+                spray.field3C = D_8009FDC8;
+                spray.field40 = D_8009FDCC;
+                spray.field44 = D_8009FDD0;
+                spray.field74 = *(u32 *)(actor + 0x14C);
+                spray.field78 = *(u32 *)(actor + 0x168);
+                spray.field7C = 0;
+                spray.field80 = 0x220005;
+                spray.field84 = 0x1D0600;
+                spray.field88 = 1;
+                spray.field8C = 0x3B;
+                spray.field90 = 0x80;
+                spray.field94 = 0x20;
+                spray.field98 = 0;
+                spray.field99 = 7;
+                spray.field9C = 10;
+                spray.field9E = 25;
+                spray.fieldA0 = *(u32 *)(actor + 0x128);
+                func_15151670(&spray, actor[0xC], actor[1]);
+            }
+        }
+        thirdRandom = func_150ADA20();
+        func_10010F88(D_80088734[thirdRandom & 1], 32000, 0, 0, 0,
+            (s32)*(f32 *)(actor + 0x38), (s32)*(f32 *)(actor + 0x3C),
+            (s32)*(f32 *)(actor + 0x40), 1000, 4000);
+        return 0;
+    }
+    *(f32 *)(actor + 0x44) = 0;
+    *(f32 *)(actor + 0x4C) = 0;
+    if (vertical > 0.0f) *(f32 *)(actor + 0x48) = vertical * *(f32 *)(actor + 0x14);
+    *(f32 *)(actor + 0x38) = *(f32 *)(surface + 0x14);
+    *(f32 *)(actor + 0x3C) = *(f32 *)(surface + 0x18);
+    *(f32 *)(actor + 0x40) = *(f32 *)(surface + 0x1C);
+    *(f32 *)(actor + 0x50) *= *(f32 *)(actor + 0x14);
+    *(f32 *)(actor + 0x54) *= *(f32 *)(actor + 0x14);
+    *(f32 *)(actor + 0x58) *= *(f32 *)(actor + 0x14);
+    func_10010F88(D_8008873C, 64000, 0, 0, 0,
+        (s32)*(f32 *)(surface + 0x14), (s32)*(f32 *)(surface + 0x18),
+        (s32)*(f32 *)(surface + 0x1C), 1000, 4000);
+    return 1;
 }
+
 
 /* Apply the actor's counter-gated motion updates. */
 s32 func_150B9560(u8 *actor) {
