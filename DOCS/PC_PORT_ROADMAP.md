@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2529](WORKING_NOTES/2529-game-actor-angular-trail-emitter-guarded-byte-match-20261117.md): `func_151B01B8` is byte-exact: **128 words / frame0xA0**, with 50 proved role/home/schedule guards and no inserted/omitted words. Paired focused and strict production gates pass. Total **4,541 / 5,514 (82.35%)**, Game **3,868 / 4,841 (79.90%)**, zero drift; **146** more to 85%. Next inspect `func_151B09BC`.
+
 [Note 2528](WORKING_NOTES/2528-game-snapshot-trail-emitter-guarded-byte-match-20261117.md): `func_151B0050` is byte-exact: **90 words / frame0x80**, with eight proved private-capture guards and no inserted/omitted words. Paired focused and strict production gates pass. Total **4,540 / 5,514 (82.34%)**, Game **3,867 / 4,841 (79.88%)**, zero drift; **147** more to 85%. Next inspect `func_151B01B8`.
 
 [Note 2527](WORKING_NOTES/2527-game-randomized-radial-damping-descriptor-guarded-byte-match-20261117.md): `func_151AFC88` is byte-exact: **135 words / frame0xA8**, with10 proved temporary-FPR guards and no inserted/omitted words. Paired checks, connected factory/copy and strict production gates pass. Total **4,539 / 5,514 (82.32%)**, Game **3,866 / 4,841 (79.86%)**, zero drift; **148** more to85%. Next inspect `func_151B0050`.

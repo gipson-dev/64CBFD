@@ -39,8 +39,70 @@ s32 func_151B0050(s32 kind, s16 index, f32 x, f32 y, f32 z,
     return 1;
 }
 
-s32 func_151B01B8() {
-    return 0;
+typedef struct HeightResult71820 {
+    f32 height; s16 vertices[9]; s16 pad16; u32 metadata;
+    u8 flags, state; u16 pad1E; s32 value;
+} HeightResult71820;
+typedef struct HeightActor71820 HeightActor71820;
+typedef struct { s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange; } ActorTrailAngles151B01B8;
+typedef struct {
+    f32 position[3], timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
+    s16 countBase, countRange, requestSelectorBase, requestSelectorRange;
+    s16 durationBase, durationRange, modeBase, modeRange;
+    u8 selector, private35[3]; f32 opaqueChance; s16 firstValue, secondValue; s32 requestValue;
+} ActorTrail151B01B8;
+extern u8 D_800A3FD8[];
+extern f32 D_800AA120[], D_800AA2A0, D_800AA2A4, D_800AA2A8, D_800AA2AC, D_800AA2B0;
+void func_1504715C(HeightResult71820 *, HeightActor71820 *);
+s32 func_15134070(u8 *);
+void func_15143134(f32 *, f32 *, u8 *);
+void func_15153F18(void *, void *, s32, s32, s32);
+
+/* Build an angular trail for the actor unless its selected type is disabled. */
+void func_151B01B8(u8 *actor, u8 *source) {
+    ActorTrail151B01B8 trail;
+    ActorTrailAngles151B01B8 angles;
+    u8 heading;
+    HeightResult71820 surface;
+    union { s32 type; u8 *record; } selected;
+
+    if (actor != NULL && *(u8 **)(actor + 0x1D4) != NULL && (actor[0x74] & 15) != 15) {
+        func_1504715C(&surface, (HeightActor71820 *)actor);
+        selected.type = source != NULL ?
+            ((source[4] == 0x53 || source[4] == 0xA5) ? 4 : func_15134070(source)) : 4;
+        if (selected.type != 99) {
+            selected.record = &D_800A3FD8[selected.type * 16];
+            if (selected.record[14] != 2) {
+                heading = (*(u16 *)(actor + 0x7A) >> 8) + 64;
+                func_15143134(D_800AA120, trail.position, *(u8 **)(actor + 0x1D4) + 0x180);
+                angles.firstAngleBase = heading - 104;
+                trail.timeBase = D_800AA2A0;
+                trail.countBase = 10;
+                trail.countRange = 20;
+                angles.firstAngleRange = 208;
+                angles.secondAngleBase = -27;
+                angles.secondAngleRange = 54;
+                trail.requestSelectorBase = 3;
+                trail.requestSelectorRange = 2;
+                trail.durationBase = 30;
+                trail.durationRange = 40;
+                trail.modeBase = 155;
+                trail.modeRange = 100;
+                trail.timeRange = D_800AA2A4;
+                trail.scaleBase = D_800AA2A8;
+                trail.scaleRange = D_800AA2AC;
+                trail.radiusBase = 6.0f;
+                trail.radiusRange = D_800AA2B0;
+                trail.opaqueChance = 0.5f;
+                if (selected.record[14] == 1) trail.selector = 1;
+                else trail.selector = 0;
+                trail.firstValue = 16;
+                trail.secondValue = 15;
+                trail.requestValue = 0;
+                func_15153F18(&angles, &trail, (s32)&surface, 255, 1);
+            }
+        }
+    }
 }
 
 /* Note 362: original ROM blood effect and dependencies. */
