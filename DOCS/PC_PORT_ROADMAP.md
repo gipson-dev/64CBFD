@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2542](WORKING_NOTES/2542-game-amplitude-terminal-callback-semantic-qualification-and-frame-boundary-20261118.md): `func_150B89E0` has a complete **uninstalled 345-word C recovery**, frame408 versus retail400. Paired five-test suites pass complete guest/native semantics and both caller interfaces. A measured frame projection leaves25 scheduling/product differences; full private/FP and adoption gates remain open. **No new exact-match credit**: total **4,548 / 5,514 (82.48%)**, **139** more to85%. Continue this function.
+
 [Note 2541](WORKING_NOTES/2541-game-menu-radial-callback-guarded-byte-match-20261118.md): `func_150B879C` is restored and byte-exact across **142 words / frame 0xA8**, using 54 proved private-home/schedule/register guards and no insertions or omissions. Paired seven-test suites, complete radial dispatcher, actual factory/copy and strict production gates pass. Total **4,548 / 5,514 (82.48%)**, Game **3,875 / 4,841 (80.05%)**, zero drift; **139** more to 85%. Next inspect `func_150B89E0`.
 
 [Note 2540](WORKING_NOTES/2540-game-actor-bound-burst-guarded-byte-match-20261118.md): `func_150B7B40` is restored and byte-exact across **484 words /frame0x268**. Complete C emits483 words;330 proved allocation/schedule guards and one inserted setup word reproduce retail. Fresh paired eight-test suites, both actual children and strict production audit pass. Total **4,547 /5,514 (82.46%)**, Game **3,874 /4,841 (80.02%)**, zero drift; **140** more to85%. Next inspect `func_150B879C`.
