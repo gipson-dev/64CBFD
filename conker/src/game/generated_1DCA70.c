@@ -109,8 +109,82 @@ s32 func_151AFC08(Generated1DCA70MotionObject *arg0) {
     return 1;
 }
 
-s32 func_151AFC88() {
-    return 0;
+typedef struct { f32 x, y, z; } EffectPoint151AFC88;
+typedef struct RadialPacket151AFC88 {
+    u32 field00, field04;
+    s16 field08, field0A;
+    u32 field0C, field10;
+    u8 field14, field15, field16, field17;
+    u8 field18, field19, field1A, field1B;
+    u8 field1C, field1D;
+    s16 field1E, field20, field22;
+    f32 field24, field28, field2C;
+    f32 position[3];
+    f32 field3C, field40, field44;
+    EffectPoint151AFC88 direction;
+    f32 field54;
+    u32 flags;
+    u8 reserved5C[4];
+    u8 field60, field61, field62;
+    s8 field63;
+    u8 reserved64[16];
+} RadialPacket151AFC88;
+extern f32 D_800AA110, D_800AA114, D_800AA118, D_800AA11C;
+void func_15143794(s16, s16, f32, EffectPoint151AFC88 *);
+void *func_15130374(void *, u8, s32, u8, s32);
+void *memcpy(void *, const void *, size_t);
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+
+/* Submit the randomized radial descriptor and retain its damping value. */
+s32 func_151AFC88(s32 kind, s16 index, f32 x, f32 y, f32 z,
+                    f32 unused5, f32 unused6, f32 unused7, s16 heading, u8 unused9,
+                    f32 unused10, s32 unused11, f32 unused12, s32 unused13, u8 slot) {
+    RadialPacket151AFC88 packet;
+    f32 sample;
+    f32 bonus;
+    void *allocated;
+    u32 random;
+    packet.field1D = 41;
+    packet.field08 = 0xE03;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.field0A = ((u32)func_150ADA20() & 15) + 25;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field18 = 176;
+    packet.field19 = 160;
+    packet.field1A = 42;
+    packet.field14 = 64;
+    packet.field15 = 11;
+    packet.field16 = 106;
+    packet.field17 = 255;
+    packet.field1B = (u32)func_150ADA20() % 156U + 100;
+    packet.field1C = 255;
+    packet.field60 = 3;
+    packet.field61 = 3;
+    sample = func_150ADA68();
+    packet.position[0] = x;
+    packet.position[1] = y;
+    packet.position[2] = z;
+    packet.field28 = packet.field2C = sample * 202.0f + 101.0f;
+    random = func_150ADA20();
+    sample = func_150ADA68();
+    func_15143794(heading, (s16)(random % 21U - 20), (sample * D_800AA110 + 500.0f) * D_800AA114, &packet.direction);
+    packet.flags = 0xE05;
+    packet.field54 = 0.0f;
+    if (func_150ADA20() & 1) packet.flags |= 0x40;
+    if (func_150ADA20() & 1) packet.flags |= 0x80;
+    packet.field62 = 6;
+    packet.field63 = -1;
+    packet.field1E = 15;
+    packet.field20 = 17;
+    packet.field22 = 25;
+    packet.field24 = D_800AA118;
+    bonus = D_800AA11C;
+    allocated = func_15130374(&packet, 1, 4, slot, 1);
+    if (allocated != NULL) memcpy((u8 *)allocated + 0xA8, &bonus, 4);
+    return 1;
 }
 
 extern s32 D_800BE9E4;

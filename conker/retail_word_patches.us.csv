@@ -37119,3 +37119,13 @@ generated_1D92F0,func_151AEAB4,0x1A0,0xAFB90018,0xAFB80018,-,-,"Normalize proved
 generated_1D92F0,func_151AEAB4,0x1A8,0x27A5008C,0x27A50088,-,-,"Normalize proved random trail captures, byte arguments and scheduling",,,false
 generated_1D92F0,func_151AEAB4,0x1C4,0xAFAB0040,0xAFAA0040,-,-,"Normalize proved random trail captures, byte arguments and scheduling",,,false
 generated_1D92F0,func_151AEAB4,0x1CC,0xAFA8001C,0xAFB9001C,-,-,"Normalize proved random trail captures, byte arguments and scheduling",,,false
+generated_1DCA70,func_151AFC88,0x0C0,0x44815000,0x44812000,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0C8,0x44819000,0x44814000,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0CC,0x460A0402,0x46040182,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0D0,0xC7A400B0,0xC7AA00B0,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0D4,0xC7A600B4,0xC7B000B4,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0D8,0xC7A800B8,0xC7B200B8,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0DC,0xE7A40064,0xE7AA0064,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0E0,0xE7A60068,0xE7B00068,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0E4,0xE7A8006C,0xE7B2006C,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
+generated_1DCA70,func_151AFC88,0x0E8,0x46128080,0x46083080,-,-,Normalize proved temporary FPR allocation in captured scale and position loads,,,false
