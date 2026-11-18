@@ -839,6 +839,66 @@ void *func_150B85C0(MenuBurstPointE4070 *position, f32 *height, f32 *radius,
 }
 
 
-s32 func_150B879C() {
-    return 0;
+extern f32 D_8009FD8C, D_8009FD90, D_8009FD94, D_8009FD98, D_8009FD9C, D_8009FDA0;
+void func_15143874(s16, f32, f32 *, f32 *);
+void *memcpy(void *, const void *, size_t);
+
+
+/* Submit the menu radial descriptor and retain its pre-sampled object value. */
+s32 func_150B879C(s32 kind, s16 index, f32 x, f32 y, f32 z,
+                    f32 unused5, f32 unused6, f32 unused7, s16 heading, u8 unused9,
+                    f32 unused10, s32 unused11, f32 unused12, s32 unused13, u8 slot) {
+    f32 bonus;
+    MenuRadialPacketE4070 packet;
+    f32 sample;
+    s32 secondFlag;
+    s32 firstFlag;
+    void *allocated;
+
+    bonus = D_8009FD8C;
+    packet.field1D = 41;
+    packet.field08 = 0xE03;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.field0A = ((u32)func_150ADA20() & 15) + 25;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field18 = 176;
+    packet.field19 = 160;
+    packet.field1A = 42;
+    packet.field14 = 64;
+    packet.field15 = 11;
+    packet.field16 = 106;
+    packet.field17 = 255;
+    packet.field1B = (u32)func_150ADA20() % 71U + 60;
+    packet.field1C = 255;
+    packet.field60 = 3;
+    packet.field61 = 3;
+    sample = func_150ADA68();
+    packet.field28 = packet.field2C = (sample * D_8009FD90 + D_8009FD94) * D_8009FD98;
+    packet.position.x = x;
+    packet.position.y = y;
+    packet.position.z = z;
+    packet.field3C = 0.0f;
+    packet.field40 = 0.0f;
+    packet.field44 = 0.0f;
+    sample = func_150ADA68();
+    func_15143874(heading, (sample * 154.0f + 205.0f) * D_8009FD9C,
+        &packet.direction.x, &packet.direction.z);
+    packet.direction.y = 0.0f;
+    packet.field54 = 0.0f;
+    firstFlag = (func_150ADA20() & 1) ? 0x40 : 0;
+    secondFlag = (func_150ADA20() & 1) ? 0x80 : 0;
+    packet.flags = secondFlag | 0xE05 | firstFlag | 0xC000;
+    packet.field62 = 10;
+    packet.field63 = -1;
+    packet.field1E = 28;
+    packet.field20 = 9;
+    packet.field22 = 25;
+    packet.field64 = -1;
+    packet.field65 = 0;
+    packet.field24 = D_8009FDA0;
+    allocated = func_15130374(&packet, 1, 4, slot, 1);
+    if (allocated != NULL) memcpy((u8 *)allocated + 0xA8, &bonus, 4);
+    return 1;
 }
