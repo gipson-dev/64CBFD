@@ -6,8 +6,174 @@ void func_15142600(Mtx *output, f32 row0, f32 row1, f32 cx, f32 cy, f32 cz,
 
 /* Non-matching placeholders for the text-only asm slice asm/E5E90.s. */
 
-s32 func_150B89E0() {
-    return 0;
+typedef struct { f32 x, y, z; } TerminalPointE5E90;
+typedef struct {
+    u8 category, field01;
+    s16 field02, duration;
+    u8 reserved06[2];
+    u32 field08, field0C;
+    u8 color[4];
+    f32 field14, field18;
+    TerminalPointE5E90 position;
+    f32 field28, field2C, field30, field34, field38, field3C;
+    u32 flags;
+    u8 field44, field45, field46, field47, reserved48[8];
+    u32 field50;
+    s16 field54, field56;
+} TerminalBurstE5E90;
+typedef struct { f32 value; u8 retained04[4]; } TerminalExtraE5E90;
+typedef struct {
+    TerminalPointE5E90 position;
+    f32 field0C, field10, field14, field18, field1C, field20;
+    s16 field24, field26, field28, field2A, field2C, field2E;
+    s16 field30, field32, field34, field36;
+    u8 field38, field39, field3A, reserved3B;
+    u32 field3C, field40, field44, field48, field4C, field50;
+    u8 field54, field55, field56, reserved57;
+    u32 field58, field5C, field60, field64, field68;
+    u32 field6C, field70, field74, field78;
+    u8 field7C, field7D, reserved7E[2];
+    s16 field80, field82;
+    u32 field84;
+} TerminalSprayE5E90;
+extern f32 D_8009FDB0, D_8009FDB4, D_8009FDB8;
+extern u8 D_800A4AA0[];
+extern s32 D_80088734[], D_8008873C;
+u32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void *func_1513D594(void *, void *, u8, u8, u8, u8, s16, f32, f32,
+    s32, void *, s32, s32, u8, s32, u8, s32);
+void func_15151A38(void *, u8, s32);
+/* These call sites supply full argument words; the audio callee narrows them. */
+u16 func_10010F88(s32, s32, s32, s32, s32, s32, s32, s32, s32, s32);
+void *memcpy(void *, const void *, size_t);
+void func_150A8050(f32 (*)[4], f32, f32, f32);
+void func_150A7960(f32 (*)[4], f32, f32, f32, f32 *, f32 *, f32 *);
+
+
+/* Advance the actor's amplitude-gated motion or submit its terminal effects. */
+s32 func_150B89E0(u8 *actor, f32 x, f32 unusedY, f32 z, f32 y, void *context) {
+    TerminalBurstE5E90 burst;
+    TerminalExtraE5E90 extra;
+    TerminalSprayE5E90 spray;
+    f32 matrix[4][4];
+    u32 firstRandom, secondRandom, thirdRandom;
+    void *allocated;
+
+    *(f32 *)(actor + 0x3C) = *(f32 *)(actor + 0x10) + y;
+    if (*(f32 *)(actor + 0x140) > 15.0f) {
+        if (*(f32 *)(actor + 0x140) > 30.0f) {
+            burst.field54 = 25;
+            burst.field56 = 10;
+            burst.category = 4;
+            burst.field01 = 0;
+            burst.field02 = 0x3B02;
+            burst.duration = (u32)func_150ADA20() % 31U + 40;
+            burst.field08 = 0;
+            burst.field0C = 0;
+            burst.color[0] = 255;
+            burst.color[1] = 255;
+            burst.color[2] = 255;
+            burst.color[3] = 255;
+            burst.field14 = burst.field18 = (func_150ADA68() * 25.0f + 25.0f) * D_8009FDB0;
+            burst.position.x = x;
+            burst.position.y = y;
+            burst.position.z = z;
+            burst.field28 = 0.0f;
+            burst.field2C = 0.0f;
+            burst.field30 = 0.0f;
+            burst.field34 = 0.0f;
+            burst.field38 = 0.0f;
+            burst.field3C = 0.0f;
+            burst.flags = 0xC5C0001;
+            burst.field44 = 255;
+            burst.field45 = 255;
+            burst.field46 = 0;
+            burst.field47 = 7;
+            extra.value = (func_150ADA68() * 80.0f + 50.0f) * D_8009FDB4;
+            burst.field50 = *(u32 *)(actor + 0x128);
+            firstRandom = func_150ADA20();
+            secondRandom = func_150ADA20();
+            thirdRandom = func_150ADA20();
+            allocated = func_1513D594(&burst, D_800A4AA0, 24, 0, 0,
+                (secondRandom & 1) + ((firstRandom & 1) << 1), thirdRandom & 255,
+                500.0f, 500.0f, 0, context, *(u32 *)(actor + 0x14C),
+                *(u32 *)(actor + 0x168), 0, 8, actor[0xC], actor[1]);
+            if (allocated != NULL) memcpy((u8 *)allocated + 0x128, &extra, 8);
+            spray.position.x = x;
+            spray.position.y = y;
+            spray.position.z = z;
+            spray.field0C = 3.0f;
+            spray.field10 = 3.0f;
+            spray.field14 = D_8009FDB8;
+            spray.field18 = 0;
+            spray.field1C = 10.0f;
+            spray.field20 = 10.0f;
+            spray.field24 = 6;
+            spray.field26 = 6;
+            spray.field28 = 0;
+            spray.field2A = 255;
+            spray.field2C = -63;
+            spray.field2E = 29;
+            spray.field30 = 3;
+            spray.field32 = 3;
+            spray.field34 = 50;
+            spray.field36 = 20;
+            spray.field38 = 1;
+            spray.field39 = 33;
+            spray.field3A = 72;
+            spray.field3C = 1;
+            spray.field40 = 0;
+            spray.field44 = 0;
+            spray.field48 = 0;
+            spray.field4C = 0;
+            spray.field50 = 0;
+            spray.field54 = 0;
+            spray.field55 = 155;
+            spray.field56 = 100;
+            spray.field58 = *(u32 *)(actor + 0x14C);
+            spray.field5C = *(u32 *)(actor + 0x168);
+            spray.field60 = 0;
+            spray.field64 = 0x220005;
+            spray.field68 = 0x1D0600;
+            spray.field6C = 1;
+            spray.field70 = 0x3B;
+            spray.field74 = 0x80;
+            spray.field78 = 0x20;
+            spray.field7C = 0;
+            spray.field7D = 7;
+            spray.field80 = 10;
+            spray.field82 = 25;
+            spray.field84 = *(u32 *)(actor + 0x128);
+            func_15151A38(&spray, actor[0xC], actor[1]);
+            thirdRandom = func_150ADA20();
+            func_10010F88(D_80088734[thirdRandom & 1], 32000, 0, 0, 0,
+                (s32)*(f32 *)(actor + 0x38), (s32)(y + 25.0f),
+                (s32)*(f32 *)(actor + 0x40), 1000, 4000);
+            return 0;
+        }
+        *(f32 *)(actor + 0x44) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x48) = -*(f32 *)(actor + 0x48) * *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x4C) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x50) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x54) *= *(f32 *)(actor + 0x14);
+        *(f32 *)(actor + 0x58) *= *(f32 *)(actor + 0x14);
+        func_10010F88(D_8008873C, 32000, 0, 0, 0,
+            (s32)*(f32 *)(actor + 0x38), (s32)*(f32 *)(actor + 0x3C),
+            (s32)*(f32 *)(actor + 0x40), 1000, 4000);
+    } else {
+        actor[0x72] = 1;
+        actor[0x78] = 1;
+        *(u32 *)(actor + 0x60) &= 0xFFFFFF00U;
+        func_150A8050(matrix, *(f32 *)(actor + 0x20),
+            *(f32 *)(actor + 0x24), *(f32 *)(actor + 0x28));
+        func_150A7960(matrix, 0.0f, 0.0f, 200.0f,
+            (f32 *)(actor + 0x20), (f32 *)(actor + 0x24), (f32 *)(actor + 0x28));
+        *(f32 *)(actor + 0x20) += *(f32 *)(actor + 0x38);
+        *(f32 *)(actor + 0x24) += *(f32 *)(actor + 0x3C);
+        *(f32 *)(actor + 0x28) += *(f32 *)(actor + 0x40);
+    }
+    return 1;
 }
 
 s32 func_150B8F44() {
