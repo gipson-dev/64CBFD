@@ -475,9 +475,81 @@ s32 func_150B82D0() {
     return 0;
 }
 
-s32 func_150B85C0() {
-    return 0;
+typedef struct { f32 x, y, z; } MenuBurstPointE4070;
+typedef struct {
+    u32 field00, field04;
+    s16 field08, field0A;
+    u32 field0C, field10;
+    u8 field14, field15, field16, field17;
+    u8 field18, field19, field1A, field1B;
+    u8 field1C, field1D;
+    s16 field1E, field20, field22;
+    f32 field24, field28, field2C;
+    MenuBurstPointE4070 position;
+    f32 field3C, field40, field44;
+    MenuBurstPointE4070 direction;
+    f32 field54;
+    u32 flags;
+    u8 reserved5C[4];
+    u8 field60, field61;
+    s8 field62;
+    s8 field63, field64;
+    u8 field65, reserved66[10];
+} MenuRadialPacketE4070;
+extern f32 D_8009FD88;
+s32 func_150ADA20(void);
+void *func_15130374(void *, u8, s32, u8, s32);
+
+
+/* Submit the scaled radial packet and return the factory's allocation result. */
+void *func_150B85C0(MenuBurstPointE4070 *position, f32 *height, f32 *radius,
+                    u8 slot, s32 context) {
+    MenuRadialPacketE4070 packet;
+    s32 secondFlag;
+    s32 firstFlag;
+
+    packet.field1D = 41;
+    packet.field08 = 0xE03;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.field0A = (u32)func_150ADA20() % 11U + 35;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field18 = 176;
+    packet.field19 = 160;
+    packet.field1A = 42;
+    packet.field14 = 64;
+    packet.field15 = 11;
+    packet.field16 = 106;
+    packet.field17 = 255;
+    packet.field1B = (u32)func_150ADA20() % 51U + 100;
+    packet.field1C = 255;
+    packet.field60 = 3;
+    packet.field61 = 3;
+    packet.field28 = *radius * 20.0f;
+    packet.field2C = *height * 20.0f;
+    packet.position = *position;
+    packet.field3C = 0.0f;
+    packet.field40 = 0.0f;
+    packet.field44 = 0.0f;
+    packet.direction.x = 0.0f;
+    packet.direction.y = 0.0f;
+    packet.direction.z = 0.0f;
+    packet.field54 = 0.0f;
+    firstFlag = (func_150ADA20() & 1) ? 0x40 : 0;
+    secondFlag = (func_150ADA20() & 1) ? 0x80 : 0;
+    packet.flags = secondFlag | 0xE01 | firstFlag | 0xC000;
+    packet.field62 = -1;
+    packet.field63 = -1;
+    packet.field1E = 25;
+    packet.field20 = 10;
+    packet.field22 = 40;
+    packet.field64 = -1;
+    packet.field65 = 0;
+    packet.field24 = D_8009FD88;
+    return func_15130374(&packet, 1, 0, slot, context);
 }
+
 
 s32 func_150B879C() {
     return 0;

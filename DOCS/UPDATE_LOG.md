@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2535](WORKING_NOTES/2535-game-scaled-radial-packet-helper-guarded-byte-match-20261118.md): `func_150B85C0` is byte-exact: **119 words / frame 0x98**, with19 proved scheduling/register guards and no inserted/omitted words. Paired six-test suites, full descriptor/return checks, the complete original parent fixture and strict production audit pass. The parent itself remains an uncredited stub. Total **4,545 / 5,514 (82.43%)**, Game **3,872 / 4,841 (79.98%)**, zero drift; **142** more to85%. Next recover `func_150B82D0`, then `func_150B7B40`.
+
 [Note 2534](WORKING_NOTES/2534-game-four-menu-record-replacement-guarded-byte-match-20261118.md): `func_150B791C` is byte-exact: **137 words / frame 0x60**, with18 proved schedule/register guards and no insertions/omissions. All three conversions and unusual retail release arguments are preserved; paired six-test suites, the genuine dispatcher and strict production audit pass. Total **4,544 / 5,514 (82.41%)**, Game **3,871 / 4,841 (79.96%)**, zero drift; **143** more to85%. Next inspect `func_150B7B40`.
 
 [Note 2533](WORKING_NOTES/2533-game-menu-layer-pair-replacement-guarded-byte-match-20261118.md): `func_150B77A8` is byte-exact: **93 words / frame 0x60**, with six proved scheduling guards and no insertions/omissions. Complete descriptor/provider proof, paired six-test suites, actual menu dispatcher and strict production gates pass. Total **4,543 / 5,514 (82.39%)**, Game **3,870 / 4,841 (79.94%)**, zero drift; **144** more to 85%. Next inspect `func_150B791C`.

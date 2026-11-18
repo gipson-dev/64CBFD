@@ -37244,3 +37244,22 @@ generated_E4070,func_150B791C,0x160,0x24180080,0x24080080,-,-,Normalize proved i
 generated_E4070,func_150B791C,0x168,0x44089000,0x44199000,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
 generated_E4070,func_150B791C,0x174,0xA3B80059,0xA3A80059,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
 generated_E4070,func_150B791C,0x180,0xAFA80030,0xAFB90030,-,-,Normalize proved independent GPR setup schedule and closed temporary register roles,,,false
+generated_E4070,func_150B85C0,0x164,0x3C010000,0x01436025,R_MIPS_HI16:D_8009FD88,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x168,0xC4300000,0x3C010000,R_MIPS_LO16:D_8009FD88,R_MIPS_HI16:D_8009FD88,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x16C,0x8FA900A8,0xC4300000,-,R_MIPS_LO16:D_8009FD88,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x170,0x01435825,0x8FAA00A8,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x174,0x356CC000,0x3598C000,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x178,0x2418FFFF,0x240FFFFF,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x17C,0x240FFFFF,0x240DFFFF,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x180,0x240D0019,0x240E0019,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x184,0x240E000A,0x2419000A,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x188,0x24190028,0x24080028,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x18C,0x2408FFFF,0x2409FFFF,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x190,0xAFAC0080,0xAFB80080,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x194,0xA3B8008A,0xA3AF008A,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x198,0xA3AF008B,0xA3AD008B,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x19C,0xA7AD0046,0xA7AE0046,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x1A0,0xA7AE0048,0xA7B90048,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x1A4,0xA7B9004A,0xA7A8004A,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x1A8,0xA3A8008C,0xA3A9008C,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
+generated_E4070,func_150B85C0,0x1C8,0xAFA90010,0xAFAA0010,-,-,Normalize independent flag setup and proved closed temporary GPR roles,,,false
