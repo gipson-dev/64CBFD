@@ -234,6 +234,84 @@ s32 func_150BB450(u8 *arg0) {
     return 1;
 }
 
-s32 func_150BB498() {
-    return 0;
+/* Retail copies the full descriptor, including its unspecified reserved bytes. */
+typedef struct {
+    f32 field00, field04, field08, field0C;
+    f32 rotation[3], scale[3], position[3], velocity[3];
+    f32 field40, field44, field48, field4C;
+    u32 flags;
+    s16 duration;
+    u16 resource;
+    u8 field58, retained59[3];
+    u32 field5C;
+    u8 field60, field61, field62, field63, field64, field65, field66, field67, field68;
+    u8 retained69, field6A, retained6B;
+    u32 field6C;
+    u8 field70, retained71;
+    s16 field72, field74;
+    u8 retained76[6];
+} ExtendedEmitterDescriptorE8090;
+extern f32 D_8009FE7C, D_8009FE80, D_8009FE84, D_8009FE88, D_8009FE8C;
+void *func_15132A4C(void *, s32, s32, s32, u8, s32);
+
+
+/* Emit the extended angular effect through the shared fifteen-word callback ABI. */
+s32 func_150BB498(s32 unused0, s16 unused1, f32 x, f32 y, f32 z,
+                  f32 unused5, f32 unused6, f32 unused7, u32 heading,
+                  u8 unused9, f32 unused10, s32 unused11, f32 unused12,
+                  s32 unused13, u8 context) {
+    s16 pitch;
+    f32 headingCosine;
+    f32 headingSine;
+    f32 pitchCosine;
+    f32 pitchSine;
+    f32 speed;
+    ExtendedEmitterDescriptorE8090 descriptor;
+
+    headingCosine = func_151423D8((u8)(heading - 64U));
+    headingSine = func_151423D8((u8)heading);
+    descriptor.flags = 0x9E8;
+    descriptor.rotation[0] = 0.0f;
+    descriptor.rotation[1] = 0.0f;
+    descriptor.rotation[2] = 0.0f;
+    descriptor.scale[0] = 1.0f;
+    descriptor.scale[1] = 1.0f;
+    descriptor.scale[2] = 1.0f;
+    descriptor.position[0] = x;
+    descriptor.position[1] = y;
+    descriptor.position[2] = z;
+    descriptor.field04 = D_8009FE7C;
+    pitch = (u32)func_150ADA20() % 13U - 52U;
+    pitchCosine = func_151423D8((u8)(pitch - 64));
+    pitchSine = func_151423D8((u8)pitch);
+    speed = func_150ADA68() * 9.0f + 3.0f;
+    descriptor.velocity[0] = (speed * pitchSine) * headingCosine;
+    descriptor.velocity[1] = -speed * pitchCosine;
+    descriptor.velocity[2] = (speed * pitchSine) * headingSine;
+    descriptor.field40 = func_150ADA68() * 50.0f + -25.0f;
+    descriptor.field44 = 0.0f;
+    descriptor.field48 = func_150ADA68() * 50.0f + -25.0f;
+    descriptor.duration = (u32)func_150ADA20() % 68U + 38U;
+    descriptor.field4C = func_150ADA68() * D_8009FE80 + D_8009FE84;
+    descriptor.field00 = 1.0f;
+    descriptor.field08 = descriptor.field0C = func_150ADA68() * D_8009FE88 + D_8009FE8C;
+    descriptor.resource = 31;
+    descriptor.field58 = 0;
+    descriptor.field5C = 0;
+    descriptor.field60 = 255;
+    descriptor.field61 = 1;
+    descriptor.field62 = 0;
+    descriptor.field63 = 0;
+    descriptor.field64 = 0;
+    descriptor.field65 = 0;
+    descriptor.field66 = 0;
+    descriptor.field67 = 0;
+    descriptor.field68 = 0;
+    descriptor.field6A = 0;
+    descriptor.field6C = 0;
+    descriptor.field70 = 0;
+    descriptor.field72 = 1;
+    descriptor.field74 = 255;
+    func_15132A4C(&descriptor, 3, 255, 0, context, 0);
+    return 1;
 }
