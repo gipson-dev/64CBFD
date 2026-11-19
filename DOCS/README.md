@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2562](WORKING_NOTES/2562-game-actor-burst-first-factory-relation-and-trail-order-boundary-20261119.md): `func_150BBB5C` now passes its ordered **first-factory relation** (312 raw / 309 retail instruction positions). Full traces across **16 count pairs / 80 symbolic paths** locate the next FP-order difference in the trail loop. Paired five-test suites pass; the private source stays **590 words / frame624**, uninstalled with **zero matching credit**. Total remains **4,558 / 5,514 (82.66%)**, **129** more to85%.
+
 [Note 2561](WORKING_NOTES/2561-game-actor-burst-ordered-prefix-and-original-caller-qualification-20261119.md): `func_150BBB5C` has a strict **five-path ordered FP/FCSR opening relation** and **3,072 cases through its original caller**, plus fresh guest/native checks and effective controls. The tested private candidate is **590 words / frame624**; full-function allocation and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to 85%.
 
 [Note 2560](WORKING_NOTES/2560-game-actor-burst-native-qualification-and-address-allocation-profile-20261119.md): `func_150BBB5C` now passes **384 native SDK32 cases each at O0/O2/O3**, UBSan and strict aliasing, with 12 effective negatives. Paired five-test suites pass. The constant-allocation profile explains S4 but fails retail layout and changes a matched neighbor. **Candidate unchanged and uninstalled; zero match credit**. Total remains **4,558 / 5,514 (82.66%)**, **129** more to 85%.
