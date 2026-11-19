@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2564](WORKING_NOTES/2564-game-actor-burst-allocation-provenance-and-layout-controls-20261119.md): `func_150BBB5C` now has fingerprint-locked **UOPT/UGEN allocation provenance** for its descriptor address and already-assigned S4 nodes. Paired four-test diagnostic suites pass; unchanged full-normal/guest/native/caller receipts are explicitly reused. The canonical **591-word/frame624** source and production remain unchanged; **zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
+
 [Note 2563](WORKING_NOTES/2563-game-actor-burst-complete-normal-relation-and-vector-homes-20261119.md): `func_150BBB5C` now passes its **complete ordered normal-execution relation** across16 count pairs/80 symbolic paths, including exact trail-vector homes and final burst/sound observations. The private source is **591 words / frame624**, versus587 retail words; S4/private layout and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
 
 [Note 2562](WORKING_NOTES/2562-game-actor-burst-first-factory-relation-and-trail-order-boundary-20261119.md): `func_150BBB5C` now passes its ordered **first-factory relation** (312 raw / 309 retail instruction positions). Full traces across **16 count pairs / 80 symbolic paths** locate the next FP-order difference in the trail loop. Paired five-test suites pass; the private source stays **590 words / frame624**, uninstalled with **zero matching credit**. Total remains **4,558 / 5,514 (82.66%)**, **129** more to85%.
