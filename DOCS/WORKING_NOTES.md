@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2572](WORKING_NOTES/2572-game-nearest-height-ordered-register-relation-20261119.md): `func_15104634` now has a **272-word/frame224 private recovery with121 register-field differences**, down from137. Paired six-test suites pass the complete ordered memory/FP register relation and query/overflow boundary checks. **Uninstalled, zero matching credit**; total remains **4,564 / 5,516 (82.74%)**, **125** more to85%.
+
 [Note 2571](WORKING_NOTES/2571-game-nearest-height-semantic-recovery-and-register-boundary-20261119.md): `func_15104634` has a complete tested **private 272-word recovery / original frame224**, matching saved FP lifetimes and stack-array homes. Paired four-test suites pass guest/native/caller checks; **137 word differences remain, uninstalled and zero matching credit**. Total stays **4,564 / 5,516 (82.74%)**, **125** more to85%.
 
 [Note 2570](WORKING_NOTES/2570-game-tank-camera-direct-byte-match-20261119.md): `func_15104520` is converted from ASM and **directly byte-exact across 45 body words / 48-word slot / frame 24**, with zero guards or profile changes. Paired five-test suites and the original indirect dispatcher/child pass. Production changes only one symbol-size byte. Total **4,564 / 5,516 (82.74%)**, Game **3,891 / 4,843 (80.34%)**, zero drift; **125** more to 85%.
