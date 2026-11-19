@@ -3,10 +3,6 @@
 #include "functions.h"
 #include "variables.h"
 
-/* Generated placeholder declarations. */
-s32 func_15103C14();
-/* End generated placeholder declarations. */
-
 void func_15103800(void) {
     bzero(D_800D9AB0, 8); // bzero
 }
@@ -131,7 +127,44 @@ s32 func_15103AA0(SoundTimerState130CB0 *state, s32 unused1, s32 unused2, s32 un
     state->packedTimer = (state->packedTimer & -0x8000) | remaining;
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_130CB0/func_15103C14.s. */
-s32 func_15103C14() {
-    return 0;
+struct127 *func_1505EEF4(s32 key);
+
+/* Select an actor sound variant, register its callback, and start the cooldown. */
+void func_15103C14(u32 soundId, s32 actorKey, u32 variants, s32 cooldownIndex, s32 paired) {
+    struct127 *actor;
+    s32 primary;
+    u16 *cooldown;
+
+    cooldown = &D_800D9AB0[cooldownIndex];
+    primary = 0;
+    if (*cooldown != 0 && soundId != 0x58D) {
+        return;
+    }
+    actor = func_1505EEF4(actorKey);
+    if (actor == NULL || func_10010894(actor) != 0) {
+        return;
+    }
+    if (variants != 0) {
+        if (paired != 0) {
+            soundId = soundId + ((u32)func_150ADA20() % variants) * 2;
+        } else {
+            soundId = soundId + (u32)func_150ADA20() % variants;
+        }
+    }
+    if (actor->camera != NULL) {
+        primary = 1;
+    } else if (paired != 0) {
+        soundId++;
+    }
+    if (primary != 0) {
+        func_1000FA64(soundId, (s32)actor->x_position, (s32)actor->y_position,
+                      (s32)actor->z_position, 30000, 32767, 32766,
+                      (s32)func_15103910, (void *)20, (s32)actor, 0x100, 0);
+    } else {
+        func_1000FA64(soundId, (s32)actor->x_position, (s32)actor->y_position,
+                      (s32)actor->z_position, 32700, 32767, 32766,
+                      (s32)func_15103AA0, (void *)(((u32)paired << 15) | 20),
+                      (s32)actor, 0x100, 0);
+    }
+    *cooldown = 600;
 }

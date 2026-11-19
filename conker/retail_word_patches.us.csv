@@ -38615,3 +38615,5 @@ game_14FF90,func_15123568,0xE8,0x54690005,0x54A90005,-,-,Normalize camera preset
 game_14FF90,func_15123568,0xF4,0x506A0019,0x50AA0019,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
 game_14FF90,func_15123568,0x100,0x10620015,0x24030003,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
 game_14FF90,func_15123568,0x104,0x24030003,0x10A20014,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_130CB0,func_15103C14,0x98,0x01718821,0x022B8821,-,-,Normalize commutative sound variant unsigned addition operand order,,,false
+game_130CB0,func_15103C14,0xB8,0x01B18821,0x022D8821,-,-,Normalize commutative sound variant unsigned addition operand order,,,false
