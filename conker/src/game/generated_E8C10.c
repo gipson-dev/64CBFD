@@ -1,9 +1,122 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/E8C10.s. */
+/* Recovered C and remaining placeholders for asm/E8C10.s. */
 
-s32 func_150BB760() {
-    return 0;
+/* The factory consumes all 124 bytes, including the untouched reserved bytes. */
+typedef struct {
+    f32 field00, field04, field08, field0C;
+    f32 rotation[3], scale[3], position[3], velocity[3];
+    f32 field40, field44, field48, field4C;
+    u32 flags;
+    s16 duration;
+    u16 resource;
+    u8 field58, retained59[3];
+    u32 field5C;
+    u8 field60, field61, field62, field63, field64, field65, field66, field67, field68;
+    u8 retained69, field6A, retained6B;
+    void *owner;
+    u8 field70, retained71;
+    s16 field72, field74;
+    u8 retained76[6];
+} ActorEmitterDescriptorE8C10;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+f32 func_151423D8(u8);
+void *func_15132A4C(void *, s32, s32, s32, u8, s32);
+extern f32 D_8009FE94, D_8009FE98, D_8009FE9C, D_8009FEA0, D_8009FEA4;
+
+
+/* Emit an attached particle using cached actor dimensions and heading. */
+/* The known caller ignores the result; retail falls through after the factory. */
+s32 func_150BB760(u8 *actor) {
+    ActorEmitterDescriptorE8C10 descriptor;
+    f32 width;
+    f32 height;
+    f32 headingSine;
+    f32 sample;
+    f32 driftX;
+    f32 driftZ;
+    u8 angle;
+    f32 radialSine;
+    f32 radialCosine;
+    f32 radius;
+    f32 offsetX;
+    f32 offsetZ;
+    u8 spreadAngle;
+    f32 spreadSine;
+    f32 spreadCosine;
+    f32 speed;
+    f32 velocityX;
+    f32 velocityZ;
+    f32 firstSize;
+
+    /* This type read deliberately precedes the retail null check. */
+    if (actor[4] != 32) return 1;
+    if (actor != 0 && *(s32 *)actor != 0 && *(s32 *)(actor + 0x1D4) != 0) {
+        width = *(s16 *)(actor + 0xE4);
+        height = *(s16 *)(actor + 0xE6);
+        headingSine = func_151423D8((u8)(*(u16 *)(actor + 0x76) >> 8));
+        sample = func_151423D8((u8)((*(u16 *)(actor + 0x76) >> 8) + 64));
+        driftX = (*(f32 *)(actor + 0x3C) * headingSine) * 0.5f;
+        driftZ = (*(f32 *)(actor + 0x3C) * sample) * 0.5f;
+        descriptor.resource = 1;
+        descriptor.flags = 0x29E9;
+        descriptor.field58 = 0;
+        descriptor.field5C = 0;
+        descriptor.field60 = 255;
+        descriptor.field61 = 1;
+        descriptor.field62 = 0;
+        descriptor.field63 = 2;
+        descriptor.field64 = 0;
+        descriptor.field65 = 0;
+        descriptor.field66 = 0;
+        descriptor.field67 = 0;
+        descriptor.field68 = 0;
+        descriptor.field6A = 1;
+        descriptor.owner = actor;
+        descriptor.scale[0] = 1.0f;
+        descriptor.scale[1] = 1.0f;
+        descriptor.scale[2] = 1.0f;
+        descriptor.field48 = 0.0f;
+        descriptor.field4C = -1.0f;
+        descriptor.field70 = actor[0x3B];
+        descriptor.field72 = 32;
+        descriptor.field74 = 7;
+        angle = func_150ADA20();
+        radialSine = func_151423D8(angle);
+        radialCosine = func_151423D8((u8)(angle - 64));
+        radius = func_150ADA68() * width;
+        offsetX = radialSine * radius;
+        offsetZ = -radialCosine * radius;
+        angle = func_150ADA20();
+        spreadAngle = (*(u16 *)(actor + 0x76) >> 8) - (angle & 63U) - 32U;
+        spreadSine = func_151423D8(spreadAngle);
+        spreadCosine = func_151423D8((u8)(spreadAngle - 64));
+        speed = func_150ADA68() * 5.0f + 3.0f;
+        velocityX = spreadCosine * speed;
+        velocityZ = spreadSine * speed;
+        firstSize = func_150ADA68() * D_8009FE94 + D_8009FE98;
+        /* The earlier heading sample is dead; reuse its scalar for the second size. */
+        sample = func_150ADA68() * D_8009FE9C + D_8009FEA0;
+        descriptor.field08 = firstSize;
+        descriptor.field0C = sample;
+        descriptor.field00 = (firstSize + sample) * 0.5f;
+        descriptor.rotation[0] = func_150ADA68() * 360.0f;
+        descriptor.rotation[1] = func_150ADA68() * 360.0f;
+        descriptor.rotation[2] = func_150ADA68() * 360.0f;
+        descriptor.position[0] = *(f32 *)(actor + 0x14) + offsetX;
+        radius = func_150ADA68();
+        descriptor.position[1] = (radius * height + *(f32 *)(actor + 0x18)) + 4.0f;
+        descriptor.position[2] = *(f32 *)(actor + 0x1C) + offsetZ;
+        descriptor.velocity[0] = velocityX + driftX;
+        descriptor.velocity[1] = func_150ADA68() * 5.0f + 3.0f;
+        descriptor.velocity[2] = velocityZ + driftZ;
+        descriptor.field40 = 25.0f - func_150ADA68() * 50.0f;
+        descriptor.field44 = 25.0f - func_150ADA68() * 50.0f;
+        descriptor.duration = ((u32)func_150ADA20() & 31U) + 60U;
+        descriptor.field04 = func_150ADA68() * D_8009FEA4 + 0.25f;
+        func_15132A4C(&descriptor, 3, 255, 0, 255, 0);
+    }
 }
 
 s32 func_150BBB5C() {

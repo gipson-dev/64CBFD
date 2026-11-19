@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2558](WORKING_NOTES/2558-game-actor-attached-emitter-guarded-byte-match-20261119.md): `func_150BB760` is installed and **byte-exact across 255 words / frame 248**, with 38 proved guards, one call-delay NOP and no omissions. Paired five-test suites, complete caller/wrapper and strict production gates pass. Total **4,558 / 5,514 (82.66%)**, Game **3,885 / 4,841 (80.25%)**, zero drift; **129** more to 85%.
+
 [Note 2557](WORKING_NOTES/2557-game-extended-angular-emitter-direct-byte-match-20261119.md): `func_150BB498` is installed and **directly byte-exact across 151 body words / 154-word slot / frame 192**, with zero guards. Paired five-test suites, original callback/factory-wrapper connections and strict production gates pass. Total **4,557 / 5,514 (82.64%)**, Game **3,884 / 4,841 (80.23%)**, zero drift; **130** more to 85%.
 
 [Note 2556](WORKING_NOTES/2556-game-angular-emitter-direct-byte-match-20261119.md): `func_150BAFEC` is installed and **directly byte-exact across 157 words / frame 184**, with zero guards. Paired five-test suites, original dispatcher/factory connections and strict production gates pass. Total **4,556 / 5,514 (82.63%)**, Game **3,883 / 4,841 (80.21%)**, zero drift; **131** more to 85%.

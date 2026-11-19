@@ -38570,3 +38570,41 @@ generated_E8090,func_150BABE0,0x1ac,0xAFA40040,0xAFA40044,-,-,Preserve the two p
 generated_E8090,func_150BABE0,0x1b4,0xAFA30044,0xAFA30048,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
 generated_E8090,func_150BABE0,0x3a4,0x8FA90044,0x8FA90048,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
 generated_E8090,func_150BABE0,0x3a8,0x8FAA0040,0x8FAA0044,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
+generated_E8C10,func_150BB760,0x20,0x100000F0,0x100000F1,-,-,Retarget forward branch across independent call-delay expansion,,,false
+generated_E8C10,func_150BB760,0x28,0x520000EF,0x520000F0,-,-,Retarget forward branch across independent call-delay expansion,,,false
+generated_E8C10,func_150BB760,0x34,0x51E000EC,0x51E000ED,-,-,Retarget forward branch across independent call-delay expansion,,,false
+generated_E8C10,func_150BB760,0x40,0x530000E9,0x530000EA,-,-,Retarget forward branch across independent call-delay expansion,,,false
+generated_E8C10,func_150BB760,0x154,0x0C000000,0xA3A900EC,R_MIPS_26:func_150ADA20,-,Restore independent descriptor byte store and empty call delay,,,false
+generated_E8C10,func_150BB760,0x158,0xA3A900EC,0x0C000000,-,R_MIPS_26:func_150ADA20,Restore independent descriptor byte store and empty call delay,0x00000000,-,false
+generated_E8C10,func_150BB760,0x1b8,0x3058003F,0x304F003F,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1c0,0x01D82823,0x01CF2823,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1c4,0x24B9FFE0,0x24B8FFE0,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1c8,0x332400FF,0x330400FF,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1d0,0xA3B9004B,0xA3B8004B,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1e0,0x308800FF,0x309900FF,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x1e8,0x01002025,0x03202025,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x2dc,0xC7A60074,0xC7A40074,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x2e0,0xC6040018,0xC6080018,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x2e8,0x46060202,0x46040182,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x2f0,0x46082280,0x46083280,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x2f4,0xC7A4004C,0xC7A6004C,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x308,0xC606001C,0xC604001C,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x310,0x46043200,0x46062200,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x324,0x44813000,0x44812000,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x330,0x46060102,0x46040182,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x33c,0x46128180,0x46128100,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x340,0x46082280,0x46083280,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x344,0xE7A600B8,0xE7A400B8,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x354,0x44812000,0x44813000,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x368,0x460A2401,0x460A3401,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x380,0x44813000,0x44812000,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x388,0x46060202,0x46040202,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x38c,0x46089101,0x46089181,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x394,0xE7A400C0,0xE7A600C0,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x398,0x3049001F,0x3048001F,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x39c,0x252A003C,0x2509003C,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x3a4,0xA7AA00D0,0xA7A900D0,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x3b4,0x44813000,0x44812000,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x3bc,0x240B00FF,0x240A00FF,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x3c0,0xAFAB0010,0xAFAA0010,-,-,Preserve proved temporary register values and commutative floating add,,,false
+generated_E8C10,func_150BB760,0x3d4,0x46068480,0x46048480,-,-,Preserve proved temporary register values and commutative floating add,,,false
