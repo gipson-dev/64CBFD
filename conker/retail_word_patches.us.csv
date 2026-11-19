@@ -38742,3 +38742,39 @@ generated_131A90,func_15104634,0x414,0x448E2000,0x44992000,-,-,Normalize proven 
 generated_131A90,func_15104634,0x418,0x8FB800EC,0x8FAF00EC,-,-,Normalize proven nearest-height live register allocation,,,false
 generated_131A90,func_15104634,0x424,0x460C4282,0x460E4282,-,-,Normalize proven nearest-height live register allocation,,,false
 generated_131A90,func_15104634,0x428,0xE70A0000,0xE5EA0000,-,-,Normalize proven nearest-height live register allocation,,,false
+game_131F30,func_15104A80,0x8,0x3C0E0000,0x00003025,R_MIPS_HI16:D_800DBEF4,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0xC,0x8DCE0000,0x3C0E0000,R_MIPS_LO16:D_800DBEF4,R_MIPS_HI16:D_800DBEF4,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x10,0x240100A0,0x8DCE0000,-,R_MIPS_LO16:D_800DBEF4,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x14,0x3C180000,0x240100A0,R_MIPS_HI16:D_800DBF94,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x18,0x008E1023,0x3C180000,-,R_MIPS_HI16:D_800DBF94,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x1C,0x0041001A,0x008E1023,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x20,0x8F180000,0x0041001A,R_MIPS_LO16:D_800DBF94,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x24,0x00007812,0x8F180000,-,R_MIPS_LO16:D_800DBF94,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x28,0x000FC880,0x00007812,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x2C,0x03194021,0x000FC880,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x30,0x8D050000,0x03194021,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x34,0x00003025,0x8D050000,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x38,0x00001025,0x00004880,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x3C,0x10A00018,0x01204823,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x40,0x00004880,0x10A00017,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x44,0x01204823,0x00001025,-,-,Normalize proven map-record opening address and zero schedule,,,false
+game_131F30,func_15104A80,0x78,0x01A57024,0x00AD7024,-,-,Preserve commutative mask-test AND operand order,,,false
+game_131F30,func_15104A80,0xA0,0x90820072,0x240300F9,-,-,Normalize proven map-record kind initialization schedule,,,false
+game_131F30,func_15104A80,0xA4,0x240300F9,0x90820072,-,-,Normalize proven map-record kind initialization schedule,,,false
+game_131F30,func_15104A80,0xBC,0x54410035,0x54410038,-,-,Retarget map-record branch across proved inserted setup,,,false
+game_131F30,func_15104A80,0xD4,0x5462000D,0x5462000E,-,-,Retarget map-record branch across proved inserted setup,,,false
+game_131F30,func_15104A80,0xDC,0x8DE10000,0x27A20040,-,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0xE0,0x27A20040,0x8DE10000,-,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x100,0x1000001E,0xAFA20050,-,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x104,0xAFA20050,0x10000021,-,-,Restore proved per-arm argument or likely-delay setup,0x27A4004C,-,false
+game_131F30,func_15104A80,0x10C,0x1441000D,0x54410010,-,-,Restore proved per-arm argument or likely-delay setup,0x240100F7,-,false
+game_131F30,func_15104A80,0x110,0x3C090000,0x27A20034,R_MIPS_HI16:D_800A238C,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x114,0x25290000,0x3C090000,R_MIPS_LO16:D_800A238C,R_MIPS_HI16:D_800A238C,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x118,0x8D210000,0x25290000,-,R_MIPS_LO16:D_800A238C,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x11C,0x27A20034,0x8D210000,-,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x13C,0x1000000F,0xAFA20050,-,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x140,0xAFA20050,0x10000010,-,-,Restore proved per-arm argument or likely-delay setup,0x27A4004C,-,false
+game_131F30,func_15104A80,0x14C,0x3C0D0000,0x27A20028,R_MIPS_HI16:D_800A2398,-,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x150,0x25AD0000,0x3C0D0000,R_MIPS_LO16:D_800A2398,R_MIPS_HI16:D_800A2398,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x154,0x8DA10000,0x25AD0000,-,R_MIPS_LO16:D_800A2398,Normalize proved sequence address-copy and branch schedule,,,false
+game_131F30,func_15104A80,0x158,0x27A20028,0x8DA10000,-,-,Normalize proved sequence address-copy and branch schedule,,,false

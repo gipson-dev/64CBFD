@@ -3,7 +3,6 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15104A80();
 s32 func_15104C44();
 s32 func_15104FF8();
 s32 func_151050B0();
@@ -12,8 +11,65 @@ s32 func_151058B4(s32 arg0);
 s32 func_15105C24();
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15104A80.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15104A80.s")
+typedef struct { u8 bytes[9]; } MapSequence131F30;
+typedef struct {
+    s32 length;
+    u8 *sequence;
+    struct127 *actor;
+} MapPacket131F30;
+extern u32 *D_800DBF94;
+extern MapSequence131F30 D_800A2380, D_800A238C, D_800A2398;
+
+/* Dispatch the map record's sequence or actor pointer to its first active actor. */
+void func_15104A80(struct131 *record) {
+    void *command;
+    s32 index;
+    s32 i;
+    u32 mask;
+    MapPacket131F30 packet;
+    MapSequence131F30 first, second, third;
+    struct127 *actorOnly;
+    struct127 *actor;
+
+    actor = 0;
+    index = (s32)((u32)record - (u32)D_800DBEF4) / 0xA0;
+    mask = D_800DBF94[index];
+    if (mask != 0) {
+        for (i = 0; i < 25 && actor == 0; i++) {
+            if (D_800CC2D0[i].interaction_state != 0 && (mask & (1U << i))) {
+                actor = &D_800CC2D0[i];
+            }
+        }
+    }
+    if (((u8 *)record)[0x72] == 0xF9 || ((u8 *)record)[0x72] == 0xF8 ||
+        ((u8 *)record)[0x72] == 0xF7) {
+        packet.actor = actor;
+        if (((u8 *)record)[0x72] == 0xF9) {
+            first = D_800A2380;
+            packet.length = 9;
+            packet.sequence = first.bytes;
+            command = (void *)&packet;
+        } else if (((u8 *)record)[0x72] == 0xF8) {
+            second = D_800A238C;
+            packet.length = 9;
+            packet.sequence = second.bytes;
+            command = (void *)&packet;
+        } else if (((u8 *)record)[0x72] == 0xF7) {
+            third = D_800A2398;
+            packet.length = 9;
+            packet.sequence = third.bytes;
+            command = (void *)&packet;
+        }
+        command = (void *)&packet;
+        func_151494E0((s32)command, 0x35);
+    } else if (((u8 *)record)[0x72] == 0xF6) {
+        actorOnly = actor;
+        func_151494E0((s32)&actorOnly, 0x38);
+    }
+}
+
+
+
 
 /* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15104C44.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15104C44.s")
