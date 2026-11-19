@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2552](WORKING_NOTES/2552-game-attached-actor-accumulator-recovery-and-private-relation-20261118.md): `func_150BA55C` has a tested **uninstalled229-word recovery /frame280**, versus229/frame264 retail. Paired five-test suites, the complete dispatcher and seven-path finite/private relation pass; a private derivation fits all229 words/39 bindings. Actual padders, guards and production adoption remain open. **No matching credit**; total stays **4,552 /5,514 (82.55%)**, **135** more to85%.
+
 [Note 2551](WORKING_NOTES/2551-game-surface-impact-callback-guarded-byte-match-20261118.md): `func_150B9ED0` is installed and byte-exact across **291 words/frame344**, using103 source-derived guards with no insertions/omissions. Complete11-path private/ordered-FP relation, paired seven-test suites, actual factory/caller and strict production gates pass. Total **4,552 /5,514 (82.55%)**, Game **3,879 /4,841 (80.13%)**, zero drift; **135** more to85%.
 
 [Note 2550](WORKING_NOTES/2550-game-surface-impact-query-and-descriptor-recovery-20261118.md): `func_150B9ED0` has a tested private recovery at **291 words/frame328**, versus retail291/frame344. Paired four-test suites cover1792 guest cases per stream,576 actual caller cases,1024 native cases each at O0/O2/O3 and ten effective negatives. Three neighbors/pools stay exact. **Uninstalled, zero new matching credit**; next finish its private/frame and instruction-layout proof. Total remains **4,551 /5,514 (82.54%)**,136 more to85%.
