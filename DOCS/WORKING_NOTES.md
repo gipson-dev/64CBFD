@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2577](WORKING_NOTES/2577-game-map-particle-emitter-guarded-byte-match-20261119.md): `func_15104C44` is converted from ASM and **byte-exact across 237 words/frame 224**, using 52 proven scheduling guards. Paired eight-test suites, installed checks, ordered FP/private-state relation and production audit pass; the full ELF is unchanged. Total **4,567 / 5,518 (82.77%)**, Game **3,894 / 4,845 (80.37%)**, zero drift; **124** more to 85% at the current denominator.
+
 [Note 2576](WORKING_NOTES/2576-game-map-record-dispatcher-guarded-byte-match-20261119.md): `func_15104A80` is converted from ASM and **byte-exact across113 words/frame104**, with36 proven layout guards and3 meaningful insertions. Paired eight-test integration suites, installed checks and full production audit pass; the entire ELF is unchanged. Total **4,566 / 5,517 (82.76%)**, Game **3,893 / 4,844 (80.37%)**, zero drift; **124** more to85% at the current denominator.
 
 [Note 2575](WORKING_NOTES/2575-game-map-record-dispatcher-cfg-relation-20261119.md): `func_15104A80` now passes a **complete paired CFG/effect relation** across its113 retail /110 raw words and original frame104. Paired two-test suites check the loop fixed point, ordered memory/call arguments and131 effective mutations. **Concrete layout guards and installation remain open; zero matching credit.** Total stays **4,565 / 5,516 (82.76%)**, **124** more to85%.

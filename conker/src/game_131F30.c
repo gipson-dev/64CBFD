@@ -3,7 +3,6 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15104C44();
 s32 func_15104FF8();
 s32 func_151050B0();
 s32 func_1510558C();
@@ -71,8 +70,122 @@ void func_15104A80(struct131 *record) {
 
 
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15104C44.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15104C44.s")
+typedef struct { f32 x, y, z; } MapParticlePoint131F30;
+typedef struct { f32 x, z; } MapParticlePair131F30;
+typedef struct {
+    f32 height;
+    s16 vertices[9], pad16;
+    u32 metadata;
+    u8 flags, state;
+    u16 pad1E;
+    s32 value;
+} MapParticleSurface131F30;
+typedef struct {
+    s32 eventID;
+    f32 accumulator;
+    s16 timer;
+    u16 reserved0A;
+    MapParticlePoint131F30 position;
+    f32 radius, height;
+    MapParticleSurface131F30 surface;
+    s16 *gate;
+} MapParticleEmitter131F30;
+typedef struct {
+    struct260 header;
+    u8 reserved24[4];
+    MapParticleEmitter131F30 emitter;
+} MapParticleRecord131F30;
+typedef struct {
+    s16 duration;
+    u8 enabled, reserved03;
+    MapParticlePoint131F30 origin, start, end, sample;
+    s8 flag;
+    u8 reserved35[3];
+    s32 pieces;
+    f32 width, spread;
+    s16 minimum, maximum;
+    u8 red, green, blue, alpha, state;
+    u8 reserved4D[3];
+} MapParticlePacket131F30;
+extern f32 D_800A23AC, D_800A23B0;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_1000FD38(s32, s32, s32);
+u8 func_151464B8(s16 *);
+void func_15143874(s16, f32, f32 *, f32 *);
+s32 func_15046C80(MapParticlePoint131F30 *, u16, f32, MapParticleSurface131F30 *);
+void *func_15105CE0(MapParticlePacket131F30 *, s32, u8, s32);
+
+/* Accumulate timed map particles and emit their sampled ground-bound paths. */
+void func_15104C44(struct260 *record) {
+    f32 randomValue;
+    MapParticlePacket131F30 packet;
+    MapParticlePoint131F30 sample;
+    MapParticlePair131F30 startOffset, endOffset;
+    MapParticleEmitter131F30 *emitter;
+    s32 angle;
+
+    emitter = &((MapParticleRecord131F30 *)record)->emitter;
+    if (emitter->timer < 0) {
+        return;
+    }
+    emitter->timer = (s16)((u32)(s32)emitter->timer - (u32)D_800BE9E4);
+    if (emitter->timer < 0) {
+        func_1000FD38((s32)func_1000EF40, emitter->eventID, 0);
+    }
+    if (func_151464B8(emitter->gate) != 0) {
+        return;
+    }
+    randomValue = func_150ADA68();
+    emitter->accumulator += (D_800A23AC + randomValue * D_800A23B0) * D_800BE9A4;
+    if (emitter->accumulator > 1.0f) {
+        sample.y = emitter->position.y + emitter->height;
+        packet.enabled = 1;
+        packet.flag = -1;
+        packet.minimum = 3;
+        packet.maximum = 4;
+        packet.state = 0;
+        packet.spread = 45.0f;
+        packet.width = 25.0f;
+        packet.origin.x = emitter->position.x;
+        packet.origin.y = emitter->position.y + emitter->height;
+        packet.origin.z = emitter->position.z;
+        packet.red = 0x61;
+        packet.green = 0xF2;
+        packet.blue = 0xFF;
+        packet.start.y = emitter->position.y + emitter->height - 180.0f;
+        do {
+            angle = func_150ADA20();
+            randomValue = func_150ADA68();
+            func_15143874((s16)(angle & 0xFF), (randomValue * 0.5f + 0.5f) * emitter->radius,
+                &sample.x, &sample.z);
+            sample.x += emitter->position.x;
+            sample.z += emitter->position.z;
+            if (func_15046C80(&sample, 0, emitter->position.y, &emitter->surface) != 0) {
+                angle = func_150ADA20();
+                randomValue = func_150ADA68();
+                func_15143874((s16)(angle & 0xFF), randomValue * 220.0f, &startOffset.x, &startOffset.z);
+                angle = func_150ADA20();
+                randomValue = func_150ADA68();
+                func_15143874((s16)(angle & 0xFF), randomValue * 220.0f, &endOffset.x, &endOffset.z);
+                packet.start.x = emitter->position.x + startOffset.x;
+                packet.start.z = emitter->position.z + startOffset.z;
+                packet.sample.x = sample.x;
+                packet.sample.y = emitter->surface.height;
+                packet.sample.z = sample.z;
+                packet.end.x = packet.sample.x + endOffset.x;
+                packet.end.z = packet.sample.z + endOffset.z;
+                packet.end.y = packet.sample.y + 180.0f;
+                packet.duration = (u32)func_150ADA20() % 13 + 8;
+                packet.alpha = (u32)func_150ADA20() % 156 + 100;
+                packet.pieces = (u32)func_150ADA20() % 3 + 5;
+                func_15105CE0(&packet, 0, ((u8 *)record)[0xC], ((u8 *)record)[1]);
+            }
+            emitter->accumulator -= 1.0f;
+        } while (emitter->accumulator > 1.0f);
+    }
+}
+
 
 /* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15104FF8.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15104FF8.s")
