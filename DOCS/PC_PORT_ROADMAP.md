@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2570](WORKING_NOTES/2570-game-tank-camera-direct-byte-match-20261119.md): `func_15104520` is converted from ASM and **directly byte-exact across 45 body words / 48-word slot / frame 24**, with zero guards or profile changes. Paired five-test suites and the original indirect dispatcher/child pass. Production changes only one symbol-size byte. Total **4,564 / 5,516 (82.74%)**, Game **3,891 / 4,843 (80.34%)**, zero drift; **125** more to 85%.
+
 [Note 2569](WORKING_NOTES/2569-game-ground-explosion-guarded-byte-match-20261119.md): `func_15103E40` is converted from ASM and **byte-exact across 202 body words / 204-word slot / frame 152**, using four closed sample-cell guards. Paired five-test suites, three complete callers and byte-identical production ELF pass. Total **4,563 / 5,515 (82.74%)**, Game **3,890 / 4,842 (80.34%)**, zero drift; **125** more to 85%.
 
 [Note 2568](WORKING_NOTES/2568-game-actor-sound-constructor-guarded-byte-match-20261119.md): `func_15103C14` is installed and **byte-exact across 137 body words / 139-word slot / frame 80**, with two commutative ADDU guards. Paired five-test suites, original caller/callee ABI windows and strict production gates pass. Total **4,562 / 5,514 (82.73%)**, Game **3,889 / 4,841 (80.33%)**, zero drift; **125** more to 85%.
