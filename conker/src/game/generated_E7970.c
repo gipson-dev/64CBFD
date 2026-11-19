@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/E7970.s. */
+/* Recovered C for the text-only slice asm/E7970.s. */
 
 typedef struct {
     void *source;
@@ -137,6 +137,40 @@ s32 func_150BAA00(s32 arg0, s32 arg1) {
     return 9;
 }
 
-s32 func_150BAA14() {
-    return 0;
+/* Opaque 36-byte height-query output; its fields are not interpreted here. */
+struct HeightResult71820 { u32 words[9]; };
+typedef struct { u8 reserved[0x380]; f32 field380; u8 tail[0x61C]; } EffectAngleRecordE7970;
+extern EffectAngleRecordE7970 *D_800DBFF0;
+extern s32 D_80082FA4;
+extern f32 D_8009FE64;
+void func_151D5404(f32 *, f32, f32, f32, s32, s32, s32, s32);
+u8 func_15143E94(s32, s32);
+s32 func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
+void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
+
+
+/* Query an actor position, then submit the gated coordinate and angular effects. */
+/* Preserve the selector byte and the callback interface's unused third word. */
+void func_150BAA14(u8 *actor, s32 selector, s32 unused) {
+    f32 position[3];
+    HeightResult71820 surface;
+    s32 angle;
+    u8 hit;
+    u32 random;
+    f32 sample;
+
+    if (*(u32 *)(actor + 0x1D4) == 0) return;
+    hit = func_150BA930(position, actor, &surface, (u8)selector);
+    func_151D5404(position, 1307.0f, 2000.0f, 0.0005f, 12, 15, 255, 0);
+    func_15143E94(5, 0x4022);
+    if (hit != 0) {
+        angle = (s32)(D_800DBFF0[(u32)D_80082FA4].field380 * D_8009FE64);
+        func_15165F80(-1, (s32)position[0], (s32)(position[1] + 6.0f),
+                      (s32)position[2], 25, 18, 0, 255, 1);
+        sample = func_150ADA68();
+        random = (u32)func_150ADA20();
+        func_1514C678(position[0], position[1], position[2], sample * 50.0f + 40.0f,
+                     (s16)((u32)angle + 60U), (s16)((u32)angle - 60U),
+                     random % 11U + 30U, 5, 0, 0.0f, 0, 255);
+    }
 }

@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2554](WORKING_NOTES/2554-game-actor-height-effect-direct-byte-match-20261118.md): `func_150BAA14` now emits **all 114 body words directly from C**, with its original alignment word completing the 115-word slot. No new guards. Paired five-test suites, direct/indirect callers, actual callee ABI prefix and strict production gates pass. Total **4,554 / 5,514 (82.59%)**, Game **3,881 / 4,841 (80.17%)**, zero drift; **133** more to 85%.
+
 [Note 2553](WORKING_NOTES/2553-game-attached-actor-accumulator-guarded-byte-match-20261118.md): `func_150BA55C` is installed and **byte-exact across 229 words / frame 264**, using 93 source-derived guards, including 19 relocation-bearing rows, with no insertions/omissions. Paired seven-test suites, the complete private relation, connected factory/caller and strict production gates pass. Total **4,553 / 5,514 (82.57%)**, Game **3,880 / 4,841 (80.15%)**, zero drift; **134** more to 85%.
 
 [Note 2552](WORKING_NOTES/2552-game-attached-actor-accumulator-recovery-and-private-relation-20261118.md): `func_150BA55C` has a tested **uninstalled229-word recovery /frame280**, versus229/frame264 retail. Paired five-test suites, the complete dispatcher and seven-path finite/private relation pass; a private derivation fits all229 words/39 bindings. Actual padders, guards and production adoption remain open. **No matching credit**; total stays **4,552 /5,514 (82.55%)**, **135** more to85%.
