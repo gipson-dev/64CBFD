@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2553](WORKING_NOTES/2553-game-attached-actor-accumulator-guarded-byte-match-20261118.md): `func_150BA55C` is installed and **byte-exact across 229 words / frame 264**, using 93 source-derived guards, including 19 relocation-bearing rows, with no insertions/omissions. Paired seven-test suites, the complete private relation, connected factory/caller and strict production gates pass. Total **4,553 / 5,514 (82.57%)**, Game **3,880 / 4,841 (80.15%)**, zero drift; **134** more to 85%.
+
 [Note 2552](WORKING_NOTES/2552-game-attached-actor-accumulator-recovery-and-private-relation-20261118.md): `func_150BA55C` has a tested **uninstalled229-word recovery /frame280**, versus229/frame264 retail. Paired five-test suites, the complete dispatcher and seven-path finite/private relation pass; a private derivation fits all229 words/39 bindings. Actual padders, guards and production adoption remain open. **No matching credit**; total stays **4,552 /5,514 (82.55%)**, **135** more to85%.
 
 [Note 2551](WORKING_NOTES/2551-game-surface-impact-callback-guarded-byte-match-20261118.md): `func_150B9ED0` is installed and byte-exact across **291 words/frame344**, using103 source-derived guards with no insertions/omissions. Complete11-path private/ordered-FP relation, paired seven-test suites, actual factory/caller and strict production gates pass. Total **4,552 /5,514 (82.55%)**, Game **3,879 /4,841 (80.13%)**, zero drift; **135** more to85%.
