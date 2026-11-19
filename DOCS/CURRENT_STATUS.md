@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2561](WORKING_NOTES/2561-game-actor-burst-ordered-prefix-and-original-caller-qualification-20261119.md): `func_150BBB5C` has a strict **five-path ordered FP/FCSR opening relation** and **3,072 cases through its original caller**, plus fresh guest/native checks and effective controls. The tested private candidate is **590 words / frame624**; full-function allocation and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to 85%.
+
 [Note 2560](WORKING_NOTES/2560-game-actor-burst-native-qualification-and-address-allocation-profile-20261119.md): `func_150BBB5C` now passes **384 native SDK32 cases each at O0/O2/O3**, UBSan and strict aliasing, with 12 effective negatives. Paired five-test suites pass. The constant-allocation profile explains S4 but fails retail layout and changes a matched neighbor. **Candidate unchanged and uninstalled; zero match credit**. Total remains **4,558 / 5,514 (82.66%)**, **129** more to 85%.
 
 [Note 2559](WORKING_NOTES/2559-game-actor-burst-semantic-recovery-and-allocation-boundary-20261119.md): `func_150BBB5C` has a tested **private 589-word C recovery / original frame624**, versus587 retail words, with539 unequal overlapping words and an extra saved S4. Paired four-test suites pass274 guest cases/all587 original words and12 effective negatives. **Uninstalled, zero matching credit**; total remains **4,558 / 5,514 (82.66%)**, **129** more to85%. Continue allocation and literal adoption gates.
