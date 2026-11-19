@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2563](WORKING_NOTES/2563-game-actor-burst-complete-normal-relation-and-vector-homes-20261119.md): `func_150BBB5C` now passes its **complete ordered normal-execution relation** across16 count pairs/80 symbolic paths, including exact trail-vector homes and final burst/sound observations. The private source is **591 words / frame624**, versus587 retail words; S4/private layout and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
+
 [Note 2562](WORKING_NOTES/2562-game-actor-burst-first-factory-relation-and-trail-order-boundary-20261119.md): `func_150BBB5C` now passes its ordered **first-factory relation** (312 raw / 309 retail instruction positions). Full traces across **16 count pairs / 80 symbolic paths** locate the next FP-order difference in the trail loop. Paired five-test suites pass; the private source stays **590 words / frame624**, uninstalled with **zero matching credit**. Total remains **4,558 / 5,514 (82.66%)**, **129** more to85%.
 
 [Note 2561](WORKING_NOTES/2561-game-actor-burst-ordered-prefix-and-original-caller-qualification-20261119.md): `func_150BBB5C` has a strict **five-path ordered FP/FCSR opening relation** and **3,072 cases through its original caller**, plus fresh guest/native checks and effective controls. The tested private candidate is **590 words / frame624**; full-function allocation and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to 85%.
