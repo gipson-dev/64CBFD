@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2573](WORKING_NOTES/2573-game-nearest-height-guarded-byte-match-20261119.md): `func_15104634` replaces its zero-return stub with semantic C and is **byte-exact across272 body words / 275-word slot / frame224**, using121 proven register-field guards. Paired nine-test suites pass before/after installation; the full image changes only the predicted786 bytes. Total **4,565 / 5,516 (82.76%)**, Game **3,892 / 4,843 (80.36%)**, zero drift; **124** more to85%.
+
 [Note 2572](WORKING_NOTES/2572-game-nearest-height-ordered-register-relation-20261119.md): `func_15104634` now has a **272-word/frame224 private recovery with121 register-field differences**, down from137. Paired six-test suites pass the complete ordered memory/FP register relation and query/overflow boundary checks. **Uninstalled, zero matching credit**; total remains **4,564 / 5,516 (82.74%)**, **125** more to85%.
 
 [Note 2571](WORKING_NOTES/2571-game-nearest-height-semantic-recovery-and-register-boundary-20261119.md): `func_15104634` has a complete tested **private 272-word recovery / original frame224**, matching saved FP lifetimes and stack-array homes. Paired four-test suites pass guest/native/caller checks; **137 word differences remain, uninstalled and zero matching credit**. Total stays **4,564 / 5,516 (82.74%)**, **125** more to85%.
