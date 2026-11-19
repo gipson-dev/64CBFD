@@ -38566,3 +38566,7 @@ generated_E7970,func_150BA55C,0x330,0x461E9101,0x461A9101,-,-,"Normalize attache
 generated_E7970,func_150BA55C,0x33c,0x4608F03C,0x4608D03C,-,-,"Normalize attached-actor accumulator proved frame, finite operand roles and cached-address schedule",,,false
 generated_E7970,func_150BA55C,0x344,0x4501FF80,0x4501FF7F,-,-,"Normalize attached-actor accumulator proved frame, finite operand roles and cached-address schedule",,,false
 generated_E7970,func_150BA55C,0x390,0x27BD0118,0x27BD0108,-,-,"Normalize attached-actor accumulator proved frame, finite operand roles and cached-address schedule",,,false
+generated_E8090,func_150BABE0,0x1ac,0xAFA40040,0xAFA40044,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
+generated_E8090,func_150BABE0,0x1b4,0xAFA30044,0xAFA30048,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
+generated_E8090,func_150BABE0,0x3a4,0x8FA90044,0x8FA90048,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
+generated_E8090,func_150BABE0,0x3a8,0x8FAA0040,0x8FAA0044,-,-,Preserve the two proved private angular cache homes; frame and exposed objects stay fixed,,,false
