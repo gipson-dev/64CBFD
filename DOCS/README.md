@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2556](WORKING_NOTES/2556-game-angular-emitter-direct-byte-match-20261119.md): `func_150BAFEC` is installed and **directly byte-exact across 157 words / frame 184**, with zero guards. Paired five-test suites, original dispatcher/factory connections and strict production gates pass. Total **4,556 / 5,514 (82.63%)**, Game **3,883 / 4,841 (80.21%)**, zero drift; **131** more to 85%.
+
 [Note 2555](WORKING_NOTES/2555-game-attachment-surface-effect-guarded-byte-match-20261118.md): `func_150BABE0` is installed and **byte-exact across 259 words / frame 208**, with four derived private-cache guards and no insertions/omissions. Paired five-test suites, both complete callers, the actual constructor ABI and strict production gates pass. Total **4,555 / 5,514 (82.61%)**, Game **3,882 / 4,841 (80.19%)**, zero drift; **132** more to 85%.
 
 [Note 2554](WORKING_NOTES/2554-game-actor-height-effect-direct-byte-match-20261118.md): `func_150BAA14` now emits **all 114 body words directly from C**, with its original alignment word completing the 115-word slot. No new guards. Paired five-test suites, direct/indirect callers, actual callee ABI prefix and strict production gates pass. Total **4,554 / 5,514 (82.59%)**, Game **3,881 / 4,841 (80.17%)**, zero drift; **133** more to 85%.

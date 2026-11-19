@@ -110,8 +110,93 @@ void func_150BABE0(u8 *actor, u8 selector, u8 context) {
                  (s16)((u32)angle + 60U), (s16)((u32)angle - 60U), (u32)func_150ADA20() % 7U + 6U, 6, 0, 0.0f, 0, (u8)context);
 }
 
-s32 func_150BAFEC() {
-    return 0;
+/* The descriptor's unspecified words and tail are retained for the factory. */
+typedef struct {
+    u32 field00, field04;
+    s16 field08, field0A;
+    u32 field0C, field10;
+    u8 field14, field15, field16, field17;
+    u8 field18, field19, field1A, field1B;
+    u8 field1C, field1D;
+    s16 field1E, field20, field22;
+    f32 field24, field28, field2C;
+    f32 position[3];
+    u32 retained3C[3];
+    f32 velocity[3];
+    f32 field54;
+    u32 flags;
+    u32 retained5C;
+    u8 field60, field61;
+    s8 field62, field63;
+    u8 retained64[12];
+} AngularEmitterDescriptorE8090;
+extern f32 D_8009FE74, D_8009FE78;
+f32 func_151423D8(u8);
+void *func_15130374(void *, u8, s32, u8, s32);
+void *memcpy(void *, const void *, size_t);
+
+
+/* Build an angular emitter from the callback's fifteen o32 argument words. */
+/* Unused words keep their original positions in the shared callback interface. */
+s32 func_150BAFEC(s32 unused0, s16 unused1, f32 x, f32 y, f32 z,
+                  f32 unused5, f32 unused6, f32 unused7, u32 heading,
+                  u8 unused9, f32 unused10, s32 unused11, f32 unused12,
+                  s32 unused13, u8 context) {
+    AngularEmitterDescriptorE8090 descriptor;
+    void *result;
+    f32 extra;
+    s16 pitch;
+    f32 headingCosine;
+    f32 headingSine;
+    f32 pitchCosine;
+    f32 pitchSine;
+    f32 speed;
+
+    headingCosine = func_151423D8((u8)(heading - 64U));
+    headingSine = func_151423D8((u8)heading);
+    descriptor.field1D = 41;
+    descriptor.field08 = 0xE03;
+    descriptor.field00 = 0x200005;
+    descriptor.field04 = 0;
+    descriptor.field0A = (u32)func_150ADA20() % 36U + 70U;
+    descriptor.field0C = 0;
+    descriptor.field10 = 0;
+    descriptor.field18 = 176;
+    descriptor.field19 = 160;
+    descriptor.field1A = 42;
+    descriptor.field14 = 64;
+    descriptor.field15 = 11;
+    descriptor.field16 = 106;
+    descriptor.field17 = 255;
+    descriptor.field1B = (u32)func_150ADA20() % 52U + 90U;
+    descriptor.field1C = 255;
+    descriptor.field60 = 3;
+    descriptor.field61 = 3;
+    descriptor.field28 = descriptor.field2C = func_150ADA68() * 165.0f + 800.0f;
+    descriptor.position[0] = x;
+    descriptor.position[1] = y;
+    descriptor.position[2] = z;
+    pitch = (u32)func_150ADA20() % 11U - 12U;
+    pitchCosine = func_151423D8((u8)(pitch - 64));
+    pitchSine = func_151423D8((u8)pitch);
+    speed = func_150ADA68() * 11.0f + 15.0f;
+    descriptor.flags = 0xE05;
+    descriptor.velocity[0] = (speed * pitchSine) * headingCosine;
+    descriptor.velocity[1] = -speed * pitchCosine;
+    descriptor.velocity[2] = (speed * pitchSine) * headingSine;
+    descriptor.field54 = 0.0f;
+    if ((u32)func_150ADA20() & 1U) descriptor.flags |= 0x40;
+    if ((u32)func_150ADA20() & 1U) descriptor.flags |= 0x80;
+    descriptor.field62 = 2;
+    descriptor.field63 = -1;
+    descriptor.field1E = 22;
+    descriptor.field20 = 11;
+    descriptor.field22 = 1;
+    descriptor.field24 = D_8009FE74;
+    extra = D_8009FE78;
+    result = func_15130374(&descriptor, 0, 4, context, 1);
+    if (result != 0) memcpy((u8 *)result + 0xA8, &extra, 4);
+    return 1;
 }
 
 extern s32 D_800BE9E4;
