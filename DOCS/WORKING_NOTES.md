@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2566](WORKING_NOTES/2566-game-sound-token-timer-direct-byte-match-20261119.md): `func_15103AA0` is installed and **directly byte-exact across 93 words / frame 48**, with zero guards or profile changes. Paired four-test suites and strict production gates pass. Total **4,560 / 5,514 (82.70%)**, Game **3,887 / 4,841 (80.29%)**, zero drift; **127** more to 85%.
+
 [Note 2565](WORKING_NOTES/2565-game-camera-preset-selector-guarded-byte-match-20261119.md): `func_15123568` is installed and **byte-exact across 90 words / frame 24**, with seven derived register/scheduling guards. Paired four-test suites and strict production gates pass. Total **4,559 / 5,514 (82.68%)**, Game **3,886 / 4,841 (80.27%)**, zero drift; **128** more to 85%.
 
 [Note 2564](WORKING_NOTES/2564-game-actor-burst-allocation-provenance-and-layout-controls-20261119.md): `func_150BBB5C` now has fingerprint-locked **UOPT/UGEN allocation provenance** for its descriptor address and already-assigned S4 nodes. Paired four-test diagnostic suites pass; unchanged full-normal/guest/native/caller receipts are explicitly reused. The canonical **591-word/frame624** source and production remain unchanged; **zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
