@@ -38608,3 +38608,10 @@ generated_E8C10,func_150BB760,0x3b4,0x44813000,0x44812000,-,-,Preserve proved te
 generated_E8C10,func_150BB760,0x3bc,0x240B00FF,0x240A00FF,-,-,Preserve proved temporary register values and commutative floating add,,,false
 generated_E8C10,func_150BB760,0x3c0,0xAFAB0010,0xAFAA0010,-,-,Preserve proved temporary register values and commutative floating add,,,false
 generated_E8C10,func_150BB760,0x3d4,0x46068480,0x46048480,-,-,Preserve proved temporary register values and commutative floating add,,,false
+game_14FF90,func_15123568,0x40,0x24030001,0x24050001,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0x44,0xA48301B4,0xA48501B4,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0xE0,0x24030001,0x24050001,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0xE8,0x54690005,0x54A90005,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0xF4,0x506A0019,0x50AA0019,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0x100,0x10620015,0x24030003,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false
+game_14FF90,func_15123568,0x104,0x24030003,0x10A20014,-,-,Normalize camera preset constant register lifetimes and independent loop-entry schedule,,,false

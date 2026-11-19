@@ -19,7 +19,7 @@ void func_15143134(f32 *, f32 *, u8 *);
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
 s32 func_1512317C(s32 arg0);
-s32 func_15123568(s32 arg0);
+void func_15123568(struct108 *camera);
 s32 func_151236D0();
 s32 func_15123A54();
 s32 func_151247C0(s32 arg0);
@@ -350,10 +350,48 @@ void func_15123508(struct108 *arg0) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15123568.s. */
-s32 func_15123568(s32 arg0) {
-    return 0;
+/* These unresolved camera words use integer cooldown and float distance storage. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{ s32 cooldown; u32 reserved; f32 distance; } CameraPresetStorage14FF90;
+/* Native builds explicitly reproduce MIPS variable-shift count masking. */
+#ifdef __GNUC__
+#define CAMERA_PRESET_SHIFT14FF90(value) ((u32)(value) & 31)
+#else
+#define CAMERA_PRESET_SHIFT14FF90(value) (value)
+#endif
+/* Cycle enabled camera presets after the retail cooldown and actor gates. */
+void func_15123568(struct108 *camera) {
+    if (((u8 *)camera->unk3D4)[0x120] == 4 && camera->unk2C != 0x40 && ((u8 *)camera)[0x92C] == 0) {
+        ((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->distance = D_800A34D8;
+        camera->unk1B4 = 1;
+        func_15124B18(camera);
+        camera->unk198 = 0.0f;
+        camera->unk190 = 0.0f;
+        return;
+    }
+    if (((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown > 0) {
+        ((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown = (s32)((u32)((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown - (u32)D_800BE9E4);
+        if (((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown < 0) ((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown = 0;
+        return;
+    }
+    if (!(camera->unk84 & 4) || !(camera->unk36A & 8) || camera->unkDC == 4) return;
+    if (camera->unk6C8 && (u32)camera->unk6FC != 4U) return;
+    if (((u8 *)camera->unk3D0)[0xAD] == 1 && camera->unk1B4 == 1) return;
+    if (camera->unk1B4 != 1) {
+        do {
+            camera->unk1B4--;
+            if (camera->unk1B4 <= 0) camera->unk1B4 = 3;
+        } while (!((1U << CAMERA_PRESET_SHIFT14FF90(camera->unk1B4)) & camera->unk1E0));
+        func_15124B18(camera);
+        func_15125608(camera);
+        ((CameraPresetStorage14FF90 *)((u8 *)camera + 0x7B8))->cooldown = 20;
+    }
 }
+
+#undef CAMERA_PRESET_SHIFT14FF90
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151236D0.s. */
 s32 func_151236D0() {
     return 0;

@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2565](WORKING_NOTES/2565-game-camera-preset-selector-guarded-byte-match-20261119.md): `func_15123568` is installed and **byte-exact across 90 words / frame 24**, with seven derived register/scheduling guards. Paired four-test suites and strict production gates pass. Total **4,559 / 5,514 (82.68%)**, Game **3,886 / 4,841 (80.27%)**, zero drift; **128** more to 85%.
+
 [Note 2564](WORKING_NOTES/2564-game-actor-burst-allocation-provenance-and-layout-controls-20261119.md): `func_150BBB5C` now has fingerprint-locked **UOPT/UGEN allocation provenance** for its descriptor address and already-assigned S4 nodes. Paired four-test diagnostic suites pass; unchanged full-normal/guest/native/caller receipts are explicitly reused. The canonical **591-word/frame624** source and production remain unchanged; **zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
 
 [Note 2563](WORKING_NOTES/2563-game-actor-burst-complete-normal-relation-and-vector-homes-20261119.md): `func_150BBB5C` now passes its **complete ordered normal-execution relation** across16 count pairs/80 symbolic paths, including exact trail-vector homes and final burst/sound observations. The private source is **591 words / frame624**, versus587 retail words; S4/private layout and adoption remain open. **Uninstalled, zero matching credit**. Total stays **4,558 / 5,514 (82.66%)**, **129** more to85%.
