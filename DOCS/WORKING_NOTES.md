@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2559](WORKING_NOTES/2559-game-actor-burst-semantic-recovery-and-allocation-boundary-20261119.md): `func_150BBB5C` has a tested **private 589-word C recovery / original frame624**, versus587 retail words, with539 unequal overlapping words and an extra saved S4. Paired four-test suites pass274 guest cases/all587 original words and12 effective negatives. **Uninstalled, zero matching credit**; total remains **4,558 / 5,514 (82.66%)**, **129** more to85%. Continue allocation and literal adoption gates.
+
 [Note 2558](WORKING_NOTES/2558-game-actor-attached-emitter-guarded-byte-match-20261119.md): `func_150BB760` is installed and **byte-exact across 255 words / frame 248**, with 38 proved guards, one call-delay NOP and no omissions. Paired five-test suites, complete caller/wrapper and strict production gates pass. Total **4,558 / 5,514 (82.66%)**, Game **3,885 / 4,841 (80.25%)**, zero drift; **129** more to 85%.
 
 [Note 2557](WORKING_NOTES/2557-game-extended-angular-emitter-direct-byte-match-20261119.md): `func_150BB498` is installed and **directly byte-exact across 151 body words / 154-word slot / frame 192**, with zero guards. Paired five-test suites, original callback/factory-wrapper connections and strict production gates pass. Total **4,557 / 5,514 (82.64%)**, Game **3,884 / 4,841 (80.23%)**, zero drift; **130** more to 85%.
