@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2567](WORKING_NOTES/2567-game-signed-sound-countdown-direct-byte-match-20261119.md): `func_15103910` is installed and **directly byte-exact across 100 words / frame 48**, with zero guards or profile changes. Paired five-test suites, the original callback window and strict production gates pass. Total **4,561 / 5,514 (82.72%)**, Game **3,888 / 4,841 (80.31%)**, zero drift; **126** more to 85%.
+
 [Note 2566](WORKING_NOTES/2566-game-sound-token-timer-direct-byte-match-20261119.md): `func_15103AA0` is installed and **directly byte-exact across 93 words / frame 48**, with zero guards or profile changes. Paired four-test suites and strict production gates pass. Total **4,560 / 5,514 (82.70%)**, Game **3,887 / 4,841 (80.29%)**, zero drift; **127** more to 85%.
 
 [Note 2565](WORKING_NOTES/2565-game-camera-preset-selector-guarded-byte-match-20261119.md): `func_15123568` is installed and **byte-exact across 90 words / frame 24**, with seven derived register/scheduling guards. Paired four-test suites and strict production gates pass. Total **4,559 / 5,514 (82.68%)**, Game **3,886 / 4,841 (80.27%)**, zero drift; **128** more to 85%.
