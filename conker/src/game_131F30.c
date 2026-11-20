@@ -3,7 +3,6 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_1510558C();
 s32 func_151058B4(s32 arg0);
 s32 func_15105C24();
 /* End generated placeholder declarations. */
@@ -330,8 +329,97 @@ void func_15105548(struct207 *arg0, s32 *arg1, u8 arg2) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_1510558C.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_1510558C.s")
+typedef struct { s32 values[1]; } MapBurstIDs131F30;
+typedef struct { f32 values[1]; } MapBurstScales131F30;
+
+typedef struct { u16 values[9]; } MapBurstSurface131F30;
+
+typedef struct {
+    u8 reserved00[0x30];
+    MapParticlePoint131F30 position;
+    u8 reserved3C[0x24];
+    MapParticlePoint131F30 direction;
+    MapBurstSurface131F30 surface;
+    u8 reserved7E[0xA];
+    u32 tag;
+    f32 countdown;
+    u8 reserved90[0xC];
+    s8 callback;
+    u8 reserved9D[3];
+} MapBurstEmitter131F30;
+
+typedef struct {
+    u8 header[0x110];
+    MapBurstEmitter131F30 emitter;
+} MapBurstRecord131F30;
+
+typedef struct {
+    s32 kind, mode;
+    MapParticlePoint131F30 position, direction;
+    MapBurstSurface131F30 surface;
+    u16 reserved32;
+    f32 parameters[5];
+    s16 minimum, maximum;
+    f32 tailParameters[3];
+} MapBurstPacket131F30;
+
+extern MapBurstIDs131F30 D_800A23A4;
+extern MapBurstScales131F30 D_800A23A8;
+extern f32 D_800A23C0, D_800A23C4, D_800A23C8, D_800A23CC, D_800A23D0;
+extern f32 D_800A23D4, D_800A23D8, D_800A23DC, D_800A23E0, D_800A23E4, D_800A23E8;
+void *func_15102920(f32, u8, MapBurstSurface131F30 *, MapParticlePoint131F30 *,
+    s32, s32, s32, u32, u8, s32);
+void func_151C329C(MapParticlePoint131F30 *, s32, s32);
+void *func_15151D6C(MapBurstPacket131F30 *, MapBurstIDs131F30 *, MapBurstScales131F30 *, s32, u8, s32);
+
+/* Emit an expired object's randomized effect and optional point/surface burst. */
+void func_1510558C(MapBurstRecord131F30 *record) {
+    f32 randomValue;
+    u32 firstRandom;
+    MapBurstPacket131F30 packet;
+    MapBurstIDs131F30 effectIDs;
+    MapBurstScales131F30 scales;
+    MapBurstEmitter131F30 *emitter;
+
+    randomValue = func_150ADA68();
+    firstRandom = (u32)func_150ADA20();
+    emitter = &record->emitter;
+    func_15102920(randomValue * 25.0f + 15.0f, (u8)(firstRandom % 56 + 200),
+        &emitter->surface, &emitter->position, (u32)func_150ADA20() % 81 + 50,
+        1, 1, emitter->tag, ((u8 *)record)[0xC], ((u8 *)record)[1]);
+    if ((emitter->tag & 31) == 9) {
+        if (func_150ADA68() < D_800A23C0) {
+            func_151C329C(&emitter->position, ((u8 *)record)[0xC], ((u8 *)record)[1]);
+        }
+    } else {
+        if (func_150ADA68() < D_800A23C4) {
+            func_151C329C(&emitter->position, ((u8 *)record)[0xC], ((u8 *)record)[1]);
+        }
+        if (func_150ADA68() < D_800A23C8) {
+            effectIDs = D_800A23A4;
+            scales = D_800A23A8;
+            packet.kind = 1;
+            packet.mode = 3;
+            packet.position = emitter->position;
+            packet.direction.x = -emitter->direction.x;
+            packet.direction.y = -emitter->direction.y;
+            packet.direction.z = -emitter->direction.z;
+            packet.surface = emitter->surface;
+            packet.parameters[0] = D_800A23CC;
+            packet.parameters[1] = D_800A23D0;
+            packet.parameters[2] = D_800A23D4;
+            packet.parameters[3] = D_800A23D8;
+            packet.parameters[4] = D_800A23DC;
+            packet.minimum = 15;
+            packet.maximum = 15;
+            packet.tailParameters[0] = D_800A23E0;
+            packet.tailParameters[1] = D_800A23E4;
+            packet.tailParameters[2] = D_800A23E8;
+            func_15151D6C(&packet, &effectIDs, &scales, 1,
+                ((u8 *)record)[0xC], ((u8 *)record)[1]);
+        }
+    }
+}
 
 void func_15105848(struct207 *arg0, s32 arg1, u8 arg2) {
     struct206 *temp_v0;
