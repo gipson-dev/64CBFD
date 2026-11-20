@@ -5,14 +5,15 @@
 
 /* Complete private view; the shared struct162 stops before byte 0x30. */
 typedef struct ListRecord1AB530 {
-    u8 opaque0[0xC];
+    f32 position[3];
     f32 valueC;
     f32 value10;
-    u8 opaque14[0x10];
+    f32 direction[3];
+    f32 facingThreshold;
     struct ListRecord1AB530 *next;
     s16 state28;
     u16 sample2A;
-    u8 opaque2C[2];
+    u16 depth2C;
     u8 flags2E;
     u8 first2F;
     u8 second30;
@@ -85,7 +86,9 @@ Gfx *func_1517EA4C(Gfx *arg0) {
 }
 
 typedef struct {
-    u8 opaque0[0x380];
+    u8 opaque0[0x2F8];
+    f32 position[3];
+    u8 opaque304[0x7C];
     f32 rotationY;
     u8 opaque384[4];
     f32 rotationX;
@@ -96,7 +99,9 @@ typedef struct {
 typedef struct {
     u8 opaque0[0xC];
     f32 scaleX, scaleY;
-    u8 opaque14[0x16C];
+    u8 opaque14[0x2C];
+    Vp viewports[2];
+    u8 opaque60[0x120];
 } ProjectionView1AB530;
 extern ProjectionCamera1AB530 *D_800DBFF0;
 extern ProjectionView1AB530 *D_800BE628;
@@ -133,6 +138,42 @@ s32 func_1517EAAC(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY) {
     return 0;
 }
 
-s32 func_1517EC1C() {
+typedef struct {
+    u32 shift, base;
+} PackedDepthRange1AB530;
+extern const PackedDepthRange1AB530 D_80089630[8];
+extern u8 D_800BE9C0;
+f32 sqrtf(f32);
+s32 func_1509563C(f32, f32, f32, f32 *, f32 *, f32 *, f32 *, f32);
+
+/* Project the record, apply its optional facing gate, and update depth values. */
+s32 func_1517EC1C(ListRecord1AB530 *record, u32 *sampleDepth) {
+    f32 dx, dy, dz;
+    f32 distance;
+    u16 sample;
+    PackedDepthRange1AB530 const *range;
+    f32 depth, divisor;
+
+    if (func_1509563C(record->position[0], record->position[1], record->position[2],
+                      &record->valueC, &record->value10, &depth, &divisor, 4000.0f) == 1) {
+        if (record->flags2E & 4) {
+            dx = record->position[0] - D_800DBFF0->position[0];
+            dy = record->position[1] - D_800DBFF0->position[1];
+            dz = record->position[2] - D_800DBFF0->position[2];
+            distance = sqrtf((dx * dx + dy * dy) + dz * dz);
+            dx = ((dx * record->direction[0] + dy * record->direction[1]) +
+                      dz * record->direction[2]) / distance;
+            if (dx < record->facingThreshold) {
+                return 1;
+            }
+        }
+        sample = record->sample2A;
+        /* The immutable range table contains only shift counts zero through six. */
+        range = &D_80089630[sample >> 13];
+        *sampleDepth = (range->base + (((sample >> 2) & 0x7FFU) << range->shift)) >> 3;
+        record->depth2C = (u32)(((depth / divisor) * D_800BE628->viewports[D_800BE9C0].vp.vscale[2] +
+                               D_800BE628->viewports[D_800BE9C0].vp.vtrans[2]) * 32.0f);
+        return 1;
+    }
     return 0;
 }
