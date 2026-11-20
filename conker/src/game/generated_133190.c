@@ -286,7 +286,39 @@ f32 func_151065EC(f32 arg0) {
     return 3.0f * arg0 * arg0;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_15106610.s")
+f32 func_150ADA68(void);
+void func_15143874(s16, f32, f32 *, f32 *);
+
+/* Offset each interior sample in its curve frame, retaining both endpoints. */
+void func_15106610(MapTrailRecord133190 *record) {
+    MapTrailSegment133190 *segments, *segment;
+    MapTrailPoint133190 *points, *point;
+    s32 random;
+    s32 i;
+    f32 second;
+    f32 first;
+    f32 sample;
+
+    segments = func_151061E0(record);
+    points = (MapTrailPoint133190 *)func_151061EC((u8 *)record);
+    points[0] = record->packet.points[0];
+    points[record->packet.pieces + 1] = record->packet.points[3];
+    i = 1;
+    if ((s32)((u32)record->packet.pieces + 1U) >= 2) {
+        do {
+            point = &points[i];
+            segment = &segments[i - 1];
+            random = func_150ADA20();
+            sample = func_150ADA68();
+            func_15143874((s16)(random & 255), sample * record->packet.width,
+                          &first, &second);
+            point->x = (segment->normal.x * first + segment->binormal.x * second) + segment->position.x;
+            point->y = (segment->normal.y * first + segment->binormal.y * second) + segment->position.y;
+            point->z = (segment->normal.z * first + segment->binormal.z * second) + segment->position.z;
+            i++;
+        } while (i <= record->packet.pieces);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_151067B8.s")
 
