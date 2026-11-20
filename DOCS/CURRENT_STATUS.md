@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2596](WORKING_NOTES/2596-game-list-draw-private-recovery-20261120.md): private `func_1517E4A8` recovery reaches **361 words / frame 184**, with **162 positional differences** and zero matching credit. Paired five-test suites, 1,104 guest/native cases and both owners' Make/padder checks pass. Production remains **4,580 / 5,528 (82.85%)**; **119** more to 85% at this denominator.
+
 [Note 2595](WORKING_NOTES/2595-game-list-unlink-byte-match-20261120.md): `func_1517E134` is semantic C and matches **30 words / frame 24** with one checked unused argument-home omission. Typed callers, paired 14-test suites and the complete unchanged-image audit pass. Total **4,580 / 5,528 (82.85%)**, Game **3,907 / 4,855 (80.47%)**, zero drift; **119** more to 85% at this denominator.
 
 [Note 2594](WORKING_NOTES/2594-game-list-render-guarded-byte-match-20261120.md): `func_1517E28C` replaces its zero-return placeholder and matches **135 words / frame 120** through 43 checked layout rows. Independent induction, paired eight-test suites and the complete 452-byte image audit pass. Total **4,579 / 5,527 (82.85%)**, Game **3,906 / 4,854 (80.47%)**, zero drift; **119** more to 85% at this denominator.
