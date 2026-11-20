@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2593](WORKING_NOTES/2593-game-list-render-private-recovery-20261120.md): `func_1517E28C` has a tested **private 132-word C recovery / retail 135 words / frame 120**, with exact carry homes and seven owner neighbors preserved. Paired five-test suites pass 1,024 guest cases and 745 native cases per profile; **uninstalled and uncredited**. Total stays **4,578 / 5,527 (82.83%)**; continue its middle-region branch layout.
+
 [Note 2592](WORKING_NOTES/2592-game-list-depth-guarded-byte-match-20261120.md): `func_1517EC1C` replaces its zero-return placeholder and matches the **135-instruction body plus two alignment words / frame 72**, with nine checked FP rows. Paired six-test suites verify 1,024 guest cases, 844 native cases per profile, 112 original-caller cases and the complete 460-byte image prediction. Total **4,578 / 5,527 (82.83%)**, Game **3,905 / 4,854 (80.45%)**, zero drift; **120** more to 85% at this denominator.
 
 [Note 2591](WORKING_NOTES/2591-game-view-point-projection-direct-byte-match-20261120.md): `func_1517EAAC` replaces its zero-return placeholder and **directly matches all 92 words / frame 152**, with no new guards. Paired six-test suites verify 896 guest cases, SDK32 O0/O2/O3, 160 original-caller cases and the exact 287-byte whole-image prediction. Total **4,577 / 5,527 (82.81%)**, Game **3,904 / 4,854 (80.43%)**, zero drift; **121** more to 85% at this denominator.
