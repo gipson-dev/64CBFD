@@ -262,8 +262,8 @@ Gfx *func_150958B0(Gfx *output, s16 *packet, s32 *visible) {
     return output;
 }
 
-void func_15095A48(s32 arg0, s32 arg1, f32 arg2, f32 arg3) {
-    func_15095A90(arg0, arg1, arg2, arg3, 4096.0f, 0, 0, 0, 0);
+Gfx *func_15095A48(Gfx *output, ProjectedPacket95B08 *packet, f32 x, f32 y) {
+    return (Gfx *)(u32)func_15095A90((s32)output, (s32)packet, x, y, 4096.0f, 0, 0, 0, 0);
 }
 
 s32 func_15095A90(s32 arg0, s32 arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {

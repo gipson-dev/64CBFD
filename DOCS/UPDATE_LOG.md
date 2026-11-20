@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2597](WORKING_NOTES/2597-game-list-draw-guarded-byte-match-20261120.md): `func_1517E4A8` replaces its placeholder and matches **361 words / frame 184** through 162 proved guards. Paired 23-test suites before/after installation and the complete 1,068-byte image prediction pass. Total **4,581 / 5,528 (82.87%)**, Game **3,908 / 4,855 (80.49%)**, zero drift; **118** more to 85% at this denominator.
+
 [Note 2596](WORKING_NOTES/2596-game-list-draw-private-recovery-20261120.md): private `func_1517E4A8` recovery reaches **361 words / frame 184**, with **162 positional differences** and zero matching credit. Paired five-test suites, 1,104 guest/native cases and both owners' Make/padder checks pass. Production remains **4,580 / 5,528 (82.85%)**; **119** more to 85% at this denominator.
 
 [Note 2595](WORKING_NOTES/2595-game-list-unlink-byte-match-20261120.md): `func_1517E134` is semantic C and matches **30 words / frame 24** with one checked unused argument-home omission. Typed callers, paired 14-test suites and the complete unchanged-image audit pass. Total **4,580 / 5,528 (82.85%)**, Game **3,907 / 4,855 (80.47%)**, zero drift; **119** more to 85% at this denominator.

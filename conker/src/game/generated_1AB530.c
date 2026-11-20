@@ -96,7 +96,7 @@ extern u8 *D_800B0DF0;
 extern f32 *D_8008CFFC[2];
 s32 func_1517EAAC(f32, f32, f32, f32 *, f32 *);
 s32 func_1517EC1C(ListRecord1AB530 *, u32 *);
-Gfx *func_1517E4A8();
+Gfx *func_1517E4A8(Gfx *, ListRecord1AB530 *, s32, s32, s32, s32, u8 *);
 
 /* Project enabled list records, choose their flare parameters, and submit them. */
 Gfx *func_1517E28C(Gfx *commands, s32 unusedCategory) {
@@ -156,9 +156,116 @@ Gfx *func_1517E28C(Gfx *commands, s32 unusedCategory) {
     return commands;
 }
 
-Gfx *func_1517E4A8() {
-    return 0;
+typedef struct {
+    u32 unk0;
+    u16 unk4, unk6;
+    u8 unk8, unk9, unkA, padB;
+} FlareDescriptor1AB530;
+typedef struct {
+    s16 coordinates[3];
+    s16 extentX, extentY;
+    u8 alpha, animationStep, animationFrame, flipFlags;
+    u8 paddingE[2];
+    FlareDescriptor1AB530 *descriptor;
+} FlareDrawPacket1AB530;
+extern FlareDescriptor1AB530 D_800903AC;
+extern const u8 D_800A7250[16];
+extern s32 D_800BE9E4;
+extern f32 D_800380A0, D_800380A4;
+extern u8 D_800D2DA8, D_800D2DA9, D_800D2DAA, D_800D2DAB;
+f32 fabsf(f32);
+#pragma intrinsic (fabsf)
+Gfx *func_1517EA4C(Gfx *);
+s32 func_150950D4(s32, FlareDescriptor1AB530 *, s32, s32, s32, s32, s32, s32, s32, s32);
+Gfx *func_15095A48(Gfx *, FlareDrawPacket1AB530 *, f32, f32);
+
+/* Smooth flare intensity, prepare the sprite state, then submit its palette row. */
+Gfx *func_1517E4A8(Gfx *commands, ListRecord1AB530 *record, s32 group,
+                    s32 count, s32 falloff, s32 strength, u8 *intensity) {
+    f32 centerX = record->valueC - D_800BE620 * 0.5f;
+    f32 centerY = record->value10 - D_800BE624 * 0.5f;
+    s32 distance;
+    s32 desired;
+    s32 value;
+    s32 index;
+    s32 factor;
+    const u8 *palette;
+    f32 x, y;
+    FlareDrawPacket1AB530 packet;
+
+    if (intensity != NULL) {
+        if (strength == -1) {
+            desired = 0;
+        } else {
+            distance = ((s32)centerX * (s32)centerX + (s32)centerY * (s32)centerY) * falloff / 10;
+            if (distance < 120) {
+                desired = (120 - distance) * 176 / 120;
+            } else {
+                desired = 0;
+            }
+        }
+        value = *intensity;
+        if ((desired - value < 0 ? value - desired : desired - value) < (D_800BE9E4 * 5)) {
+            value = desired;
+        } else if (value < desired) {
+            value += (D_800BE9E4 * 5);
+        } else {
+            value -= (D_800BE9E4 * 5);
+        }
+        *intensity = value;
+    }
+    distance = ((s32)centerX * (s32)centerX + (s32)centerY * (s32)centerY) * falloff / 10;
+    if (record->valueC < 2.0f || record->valueC >= D_800BE620 - 2 ||
+        record->value10 < 0.0f || record->value10 >= D_800BE624) {
+        desired = 0;
+    } else if (strength == -1) {
+        desired = 0;
+    } else {
+        desired = (1760000 / (distance + 10000) * strength) / 256;
+    }
+    value = record->state28;
+    if ((desired - value < 0 ? value - desired : desired - value) < (D_800BE9E4 * 10)) {
+        record->state28 = desired;
+    } else if (desired < value) {
+        record->state28 = value - (D_800BE9E4 * 10);
+    } else {
+        record->state28 = value + (D_800BE9E4 * 10);
+    }
+
+    if (distance < 200000 && record->state28 > 0 &&
+        fabsf(record->valueC) < 2000.0f && fabsf(record->value10) < 2000.0f) {
+        D_800D2DA8 = 255;
+        D_800D2DA9 = 255;
+        D_800D2DAA = 255;
+        packet.descriptor = &D_800903AC;
+        packet.animationStep = 0;
+        packet.animationFrame = 0;
+        packet.flipFlags = 0;
+        if (D_800DDD60 == 0) {
+            commands = func_1517EA4C(commands);
+            commands = (Gfx *)(u32)func_150950D4((s32)commands, &D_800903AC, 0, 0, 0, 0, 2, 256, 256, 3);
+            D_800DDD60 = 1;
+        }
+        value = (record->state28 * record->second30) >> 8;
+        palette = D_800A7250 + group * 7;
+        factor = 2;
+        for (index = 0; index < count; index++) {
+            x = record->valueC - centerX * (f32)factor / 5.0f;
+            y = record->value10 - centerY * (f32)factor / 5.0f;
+            desired = palette[index];
+            y += desired * 0.015625f;
+            packet.alpha = value;
+            D_800D2DAB = 0;
+            packet.extentX = (s32)((desired << 12) * D_800380A0 / 255.0f);
+            packet.extentY = (s32)((desired << 12) * D_800380A4 / 255.0f);
+            commands = func_15095A48(commands, &packet, x, y);
+            gDPPipeSync(commands++);
+            factor += 2;
+        }
+    }
+    return commands;
 }
+
 
 Gfx *func_1517EA4C(Gfx *arg0) {
     gDPPipeSync(arg0++);
