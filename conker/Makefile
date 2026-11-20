@@ -209,6 +209,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o: RETAIL_RODATA_SYMBOL := D_800
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_10CD70.c.o: Makefile
 # Fractional points use their two original adjacent coefficient literals.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_133190.c.o: RETAIL_RODATA_SYMBOL := D_800A2420
+# The map emitter and constructor share the same packet ABI.
+$(BUILD_DIR)/$(SRC_DIR)/game_131F30.c.o $(BUILD_DIR)/$(SRC_DIR)/game/generated_133190.c.o: include/game/map_trail.h
 # Actor-choice switch retains its original nine-entry pool.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_173D40.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A56E4_game
 # Transition burst uses its six existing retail motion constants.

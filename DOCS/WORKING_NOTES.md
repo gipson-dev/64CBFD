@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2587](WORKING_NOTES/2587-game-map-trail-constructor-guarded-byte-match-20261120.md): `func_15105CE0` is restored from ASM and **byte-exact across 235 words / frame 216**, with 126 proved rows and two added count-transfer/FP-delay words. Shared packet types preserve all 11 emitter functions; paired nine-test suites and the production audit pass with the entire ELF unchanged. Total **4,573 / 5,524 (82.78%)**, Game **3,900 / 4,851 (80.40%)**, zero drift; **123** more to 85% at this denominator.
+
 [Note 2586](WORKING_NOTES/2586-game-map-trail-constructor-private-recovery-20261120.md): `func_15105CE0` has a tested **private 233-word C recovery / original frame 216 / descriptor SP+0x58**. Guest and native SDK32 checks cover 512 cases each, with 36 neighbors and pools unchanged; **retail has 235 words, so it remains uninstalled and uncredited**. Total stays **4,572 / 5,523 (82.78%)**; continue its opening arithmetic and scheduling.
 
 [Note 2585](WORKING_NOTES/2585-game-map-chain-search-guarded-byte-match-20261120.md): `func_15105C24` is converted from ASM and **byte-exact across 46 body words / 47-word slot / frame 0**, with 40 proved layout rows and one folded address word. Proper array/pointer declarations preserve 62 dependency functions. Seven preinstall and eight installed tests per tools configuration pass; only the predicted symbol-size byte changes. Total **4,572 / 5,523 (82.78%)**, Game **3,899 / 4,850 (80.39%)**, zero drift; **123** more to 85% at this denominator.

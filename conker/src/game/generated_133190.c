@@ -7,7 +7,120 @@ extern void (*D_80088C18[])(u8 *);
 extern void (*D_80088C28[])(u8 *, s32, u8);
 extern void (* volatile D_80088C38[])(u8 *, s32, u8);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_15105CE0.s")
+#include "game/map_trail.h"
+typedef MapTrailPoint MapTrailPoint133190;
+typedef MapTrailPacket MapTrailPacket133190;
+typedef struct {
+    u32 flags00, zero04;
+    s16 code08, lifetime;
+    u32 zero0C, zero10;
+    u8 rgba14[4], rgba18[4];
+    u8 value1C, paletteIndex;
+    s16 value1E, value20, value22;
+    f32 scale, extentX, extentY;
+    MapTrailPoint133190 position, velocity, acceleration;
+    f32 zero54;
+    u32 flags58, zero5C;
+    u8 value60, value61;
+    s8 value62, value63, value64, value65;
+    u8 value66, pad67;
+    s16 zero68;
+    u8 pad6A[2];
+    f32 coefficient;
+} MapTrailEffect133190;
+typedef struct {
+    u8 header[0x10];
+    MapTrailPacket133190 packet;
+    void *extra;
+    f32 reciprocal;
+    s16 timer;
+    u16 reserved6A;
+    void *children[2];
+    u8 scratch[0x10];
+    s32 segmentBytes;
+} MapTrailRecord133190;
+extern MapTrailPoint133190 D_800A5480;
+extern f32 D_800A2410, D_800A2414;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+s32 func_150ADA20(void);
+void func_15106214(MapTrailRecord133190 *);
+void func_15106610(MapTrailRecord133190 *);
+void *func_15130280(MapTrailEffect133190 *, u8, void *, s32, u8, s32);
+void *memcpy(void *, const void *, u32);
+
+/* Allocate a sampled map trail and attach an effect at each endpoint. */
+void *func_15105CE0(MapTrailPacket133190 *packet, s32 extraBytes, u8 priority, s32 context) {
+    s32 pieces;
+    s32 pointBytes;
+    MapTrailRecord133190 *record;
+    u32 firstFlag;
+    MapTrailEffect133190 effect;
+    u8 i;
+
+    pieces = packet->pieces;
+    pointBytes = (pieces + 2) * sizeof(MapTrailPoint133190);
+    record = func_15167A68(0x40, context,
+                          pieces * 0x34 + pointBytes + extraBytes + 0x88,
+                          1, priority, 1);
+    if (record == 0) {
+        return 0;
+    }
+    memcpy(&record->packet, packet, sizeof(*packet));
+    /* Each sampled segment occupies thirteen 32-bit words. */
+    record->extra = (u8 *)record + (((u32)pieces * 13U) << 2) + pointBytes + 0x88;
+    record->reciprocal = 1.0f / (f32)(packet->pieces + 1);
+    record->timer = (u32)func_150ADA20() % (packet->maximum + 1) + packet->minimum;
+    func_15106214(record);
+    func_15106610(record);
+    record->children[0] = 0;
+    record->children[1] = 0;
+    bzero(record->scratch, sizeof(record->scratch));
+    record->segmentBytes = record->packet.pieces * 0x30 + 0x60;
+
+    effect.paletteIndex = 0x2B;
+    effect.code08 = 0x4404;
+    effect.flags00 = 0x200005;
+    effect.zero04 = 0;
+    effect.lifetime = 300;
+    effect.zero0C = 0;
+    effect.zero10 = 0;
+    effect.rgba14[0] = 0xFF;
+    effect.rgba14[1] = 0xFF;
+    effect.rgba14[2] = 0xFF;
+    effect.rgba14[3] = 0xFF;
+    effect.rgba18[0] = packet->red;
+    effect.rgba18[1] = packet->green;
+    effect.rgba18[2] = packet->blue;
+    effect.rgba18[3] = packet->alpha;
+    effect.value1C = 0xFF;
+    effect.velocity = D_800A5480;
+    effect.acceleration = D_800A5480;
+    effect.value1E = 1;
+    effect.value20 = 0xFF;
+    effect.value22 = 1;
+    effect.flags58 = 0xC000;
+    effect.value60 = 6;
+    effect.value61 = 6;
+    effect.value62 = -1;
+    effect.value63 = -1;
+    effect.value64 = -1;
+    effect.value65 = 0;
+    effect.zero5C = 0;
+    effect.value66 = 0xFF;
+    effect.zero68 = 0;
+    effect.zero54 = 0.0f;
+    effect.scale = 1.0f;
+    effect.coefficient = D_800A2410;
+    effect.extentY = (packet->spread * D_800A2414) * 200.0f;
+    effect.extentX = effect.extentY;
+    for (i = 0; i < 2; i++) {
+        effect.position = packet->points[i == 0 ? 0 : 3];
+        firstFlag = func_150ADA20() != 0 ? 0x40 : 0;
+        effect.flags58 = (func_150ADA20() != 0 ? 0x80 : 0) | firstFlag;
+        record->children[i] = func_15130280(&effect, 0, 0, 0, priority, context);
+    }
+    return record;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_1510608C.s")
 

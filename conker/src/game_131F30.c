@@ -68,7 +68,9 @@ void func_15104A80(struct131 *record) {
 
 
 
-typedef struct { f32 x, y, z; } MapParticlePoint131F30;
+#include "game/map_trail.h"
+
+typedef MapTrailPoint MapParticlePoint131F30;
 typedef struct { f32 x, z; } MapParticlePair131F30;
 typedef struct {
     f32 height;
@@ -93,18 +95,7 @@ typedef struct {
     u8 reserved24[4];
     MapParticleEmitter131F30 emitter;
 } MapParticleRecord131F30;
-typedef struct {
-    s16 duration;
-    u8 enabled, reserved03;
-    MapParticlePoint131F30 origin, start, end, sample;
-    s8 flag;
-    u8 reserved35[3];
-    s32 pieces;
-    f32 width, spread;
-    s16 minimum, maximum;
-    u8 red, green, blue, alpha, state;
-    u8 reserved4D[3];
-} MapParticlePacket131F30;
+typedef MapTrailPacket MapParticlePacket131F30;
 extern f32 D_800A23AC, D_800A23B0;
 s32 func_150ADA20(void);
 f32 func_150ADA68(void);
@@ -112,7 +103,6 @@ void func_1000FD38(s32, s32, s32);
 u8 func_151464B8(s16 *);
 void func_15143874(s16, f32, f32 *, f32 *);
 s32 func_15046C80(MapParticlePoint131F30 *, u16, f32, MapParticleSurface131F30 *);
-void *func_15105CE0(MapParticlePacket131F30 *, s32, u8, s32);
 
 /* Accumulate timed map particles and emit their sampled ground-bound paths. */
 void func_15104C44(struct260 *record) {
@@ -145,13 +135,13 @@ void func_15104C44(struct260 *record) {
         packet.state = 0;
         packet.spread = 45.0f;
         packet.width = 25.0f;
-        packet.origin.x = emitter->position.x;
-        packet.origin.y = emitter->position.y + emitter->height;
-        packet.origin.z = emitter->position.z;
+        packet.points[0].x = emitter->position.x;
+        packet.points[0].y = emitter->position.y + emitter->height;
+        packet.points[0].z = emitter->position.z;
         packet.red = 0x61;
         packet.green = 0xF2;
         packet.blue = 0xFF;
-        packet.start.y = emitter->position.y + emitter->height - 180.0f;
+        packet.points[1].y = emitter->position.y + emitter->height - 180.0f;
         do {
             angle = func_150ADA20();
             randomValue = func_150ADA68();
@@ -166,14 +156,14 @@ void func_15104C44(struct260 *record) {
                 angle = func_150ADA20();
                 randomValue = func_150ADA68();
                 func_15143874((s16)(angle & 0xFF), randomValue * 220.0f, &endOffset.x, &endOffset.z);
-                packet.start.x = emitter->position.x + startOffset.x;
-                packet.start.z = emitter->position.z + startOffset.z;
-                packet.sample.x = sample.x;
-                packet.sample.y = emitter->surface.height;
-                packet.sample.z = sample.z;
-                packet.end.x = packet.sample.x + endOffset.x;
-                packet.end.z = packet.sample.z + endOffset.z;
-                packet.end.y = packet.sample.y + 180.0f;
+                packet.points[1].x = emitter->position.x + startOffset.x;
+                packet.points[1].z = emitter->position.z + startOffset.z;
+                packet.points[3].x = sample.x;
+                packet.points[3].y = emitter->surface.height;
+                packet.points[3].z = sample.z;
+                packet.points[2].x = packet.points[3].x + endOffset.x;
+                packet.points[2].z = packet.points[3].z + endOffset.z;
+                packet.points[2].y = packet.points[3].y + 180.0f;
                 packet.duration = (u32)func_150ADA20() % 13 + 8;
                 packet.alpha = (u32)func_150ADA20() % 156 + 100;
                 packet.pieces = (u32)func_150ADA20() % 3 + 5;
