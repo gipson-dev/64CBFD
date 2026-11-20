@@ -3,7 +3,8 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_151058B4(s32 arg0);
+typedef struct MapTrailRecord131F30 MapTrailRecord131F30;
+void func_151058B4(MapTrailRecord131F30 *);
 s32 func_15105C24();
 /* End generated placeholder declarations. */
 
@@ -421,121 +422,120 @@ void func_1510558C(MapBurstRecord131F30 *record) {
     }
 }
 
+typedef struct { s16 x, y, z; u8 reserved06[16]; } MapTrailSource131F30;
+typedef struct {
+    MapTrailSource131F30 *source;
+    f32 scale;
+    s16 *gate;
+    u8 flags, reserved0D[3];
+} MapTrailEmitter131F30;
+struct MapTrailRecord131F30 {
+    u8 header[0x28];
+    MapTrailEmitter131F30 emitter;
+};
+
+typedef struct {
+    f32 value;
+    vertex direction;
+    f32 parameter;
+    u8 fixed14, fixed15, fixed16;
+    u8 byte17, byte18, byte19, byte1A, byte1B, byte1C, byte1D, byte1E, byte1F;
+    u8 fixed20, fixed21, reserved22[2];
+    s32 field24, field28;
+    s16 field2C, field2E, field30;
+    u8 field32, reserved33;
+    f32 field34;
+    s8 field38, field39;
+    u8 reserved3A[2];
+} MapTrailPacket131F30;
+typedef struct {
+    MapParticlePoint131F30 position;
+    s16 duration;
+    u16 field0E;
+    s32 constant10;
+    s8 flag, count;
+    u8 reserved16[2];
+} MapTrailHeader131F30;
+
+extern f32 D_800A23EC, D_800A23F0, D_800A23F4, D_800A23F8, D_800A23FC, D_800A2400;
+void func_151432BC(MapTrailSource131F30 *, f32 *, f32 *, f32 *, f32 *);
+void func_15143794(s16, s16, f32, vertex *);
+void *func_1515C2F0(MapTrailHeader131F30 *, s32, MapTrailPacket131F30 *, s32, u8, s32);
+
 void func_15105848(struct207 *arg0, s32 arg1, u8 arg2) {
-    struct206 *temp_v0;
+    MapTrailEmitter131F30 *temp_v0;
 
     if (arg2 == 0x38) {
-        temp_v0 = &arg0->unk28;
-        func_151058B4(arg0);
-        temp_v0->unkC |= 1;
+        temp_v0 = &((MapTrailRecord131F30 *)arg0)->emitter;
+        func_151058B4((MapTrailRecord131F30 *)arg0);
+        temp_v0->flags |= 1;
     } else {
-        temp_v0 = &arg0->unk28;
+        temp_v0 = &((MapTrailRecord131F30 *)arg0)->emitter;
         if (arg2 == 0x39) {
-            temp_v0->unkC &= 0xFFFE;
+            temp_v0->flags &= 0xFFFE;
         }
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_151058B4.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_151058B4.s")
-// void func_151058B4(void *arg0) {
-//     s8 spE1;
-//     s8 spE0;
-//     ?32 spDC;
-//     s16 spDA;
-//     s16 spD8;
-//     ? spD4;
-//     f32 spD0;
-//     ? spCC;
-//     s8 spC9;
-//     s8 spC8;
-//     f32 spC4;
-//     s8 spC2;
-//     s16 spC0;
-//     s16 spBE;
-//     s16 spBC;
-//     ?32 spB8;
-//     ?32 spB4;
-//     s8 spB1;
-//     s8 spB0;
-//     s8 spAF;
-//     s8 spAE;
-//     s8 spAD;
-//     s8 spAC;
-//     s8 spAB;
-//     s8 spAA;
-//     s8 spA9;
-//     s8 spA8;
-//     s8 spA7;
-//     s8 spA6;
-//     s8 spA5;
-//     s8 spA4;
-//     f32 spA0;
-//     ? sp94;
-//     f32 sp90;
-//     ? sp8C;
-//     ? sp88;
-//     f32 temp_f20;
-//     f32 temp_f20_2;
-//     f32 temp_f24;
-//     f32 temp_f26;
-//     s32 temp_s0;
-//     u32 temp_s1;
-//     void *temp_s4;
-//     f32 phi_f20;
-//
-//     if (func_151464B8(arg0->unk30) == 0) {
-//         temp_s4 = arg0 + 0x28;
-//         temp_f20 = ((func_150ADA68() * *(void *)0x800A23EC) + *(void *)0x800A23F0) * temp_s4->unk4;
-//         if (temp_f20 > 1.0f) {
-//             spDA = 0x15;
-//             spDC = 0xA;
-//             spA7 = 0x61;
-//             spA8 = 0xF2;
-//             spE0 = -1;
-//             spA4 = 4;
-//             spA5 = 2;
-//             spA6 = 3;
-//             spA9 = 0xFF;
-//             spAB = 0xFF;
-//             spAC = 0xFF;
-//             spAD = 0xFF;
-//             spAE = 0xFF;
-//             spAF = 0xFF;
-//             spB0 = 3;
-//             spB1 = 0x24;
-//             spB4 = 0x200005;
-//             spB8 = 0x60600;
-//             spBC = 0x14;
-//             spBE = 0xC;
-//             spC0 = 1;
-//             spC2 = 0;
-//             spC4 = 1.0f;
-//             spC8 = -1;
-//             spC9 = 0;
-//             temp_f26 = *(void *)0x800A23F4;
-//             temp_f24 = *(void *)0x800A23F8;
-//             spD0 = (f32) temp_s4->unk0->unk2;
-//             phi_f20 = temp_f20;
-// loop_3:
-//             spAA = (func_150ADA20() % 0x65U) + 0x9B;
-//             spE1 = (func_150ADA20() & 3) + 3;
-//             func_151432BC(temp_s4->unk0, &spCC, &spD4, &sp8C, &sp88);
-//             spD8 = (func_150ADA20() % 0x1FU) + 0x1E;
-//             sp90 = (func_150ADA68() * temp_f24) + temp_f26;
-//             temp_s0 = func_150ADA20();
-//             temp_s1 = func_150ADA20();
-//             func_15143794((s16) (temp_s0 & 0xFF), (s16) ((temp_s1 % 0x16U) - 0x36), (func_150ADA68() * 20.0f) + 30.0f, &sp94);
-//             spA0 = (func_150ADA68() * *(void *)0x800A23FC) + *(void *)0x800A2400;
-//             func_1515C2F0(&spCC, 0, &sp90, 0, (?32) arg0->unkC, (?32) arg0->unk1);
-//             temp_f20_2 = phi_f20 - 1.0f;
-//             phi_f20 = temp_f20_2;
-//             if (temp_f20_2 > 1.0f) {
-//                 goto loop_3;
-//             }
-//         }
-//     }
-// }
+typedef struct { f32 bottom, top; MapTrailPacket131F30 packet; MapTrailHeader131F30 header; } MapTrailScratch131F30;
+
+/* Emit randomized trail particles while the local floating count exceeds one. */
+void func_151058B4(MapTrailRecord131F30 *record) {
+    f32 rangeScale, rangeBase;
+    MapTrailEmitter131F30 *emitter;
+    MapTrailScratch131F30 scratch;
+    u32 first, second;
+    f32 remaining;
+
+    if (func_151464B8(record->emitter.gate) == 0) {
+        emitter = &record->emitter;
+        remaining = (func_150ADA68() * D_800A23EC + D_800A23F0) * emitter->scale;
+        if (remaining > 1.0f) {
+            scratch.header.field0E = 21;
+            scratch.header.constant10 = 10;
+            scratch.header.flag = -1;
+            scratch.packet.fixed14 = 4;
+            scratch.packet.fixed15 = 2;
+            scratch.packet.fixed16 = 3;
+            scratch.packet.byte17 = 0x61;
+            scratch.packet.byte18 = 0xF2;
+            scratch.packet.byte19 = 0xFF;
+            scratch.packet.byte1B = 0xFF;
+            scratch.packet.byte1C = 0xFF;
+            scratch.packet.byte1D = 0xFF;
+            scratch.packet.byte1E = 0xFF;
+            scratch.packet.byte1F = 0xFF;
+            scratch.packet.fixed20 = 3;
+            scratch.packet.fixed21 = 0x24;
+            scratch.packet.field24 = 0x200005;
+            scratch.packet.field28 = 0x60600;
+            scratch.packet.field2C = 20;
+            scratch.packet.field2E = 12;
+            scratch.packet.field30 = 1;
+            scratch.packet.field32 = 0;
+            scratch.packet.field34 = 1.0f;
+            scratch.packet.field38 = -1;
+            scratch.packet.field39 = 0;
+            scratch.header.position.y = (f32)emitter->source->y;
+            rangeScale = D_800A23F8;
+            rangeBase = D_800A23F4;
+            do {
+                scratch.packet.byte1A = (u8)((u32)func_150ADA20() % 101U + 155);
+                scratch.header.count = (s8)(((u32)func_150ADA20() & 3) + 3);
+                func_151432BC(emitter->source, &scratch.header.position.x, &scratch.header.position.z, &scratch.top, &scratch.bottom);
+                scratch.header.duration = (s16)((u32)func_150ADA20() % 31U + 30);
+                scratch.packet.value = func_150ADA68() * rangeScale + rangeBase;
+                first = (u32)func_150ADA20();
+                second = (u32)func_150ADA20();
+                func_15143794((s16)(first & 255), (s16)(second % 22U - 54),
+                    func_150ADA68() * 20.0f + 30.0f, &scratch.packet.direction);
+                scratch.packet.parameter = func_150ADA68() * D_800A23FC + D_800A2400;
+                func_1515C2F0(&scratch.header, 0, &scratch.packet, 0, ((u8 *)record)[0xC], ((u8 *)record)[1]);
+                remaining -= 1.0f;
+            } while (remaining > 1.0f);
+        }
+    }
+}
 
 void func_15105BC8(struct204 *arg0) {
     if ((arg0->unk34 & 1) != 0) {
