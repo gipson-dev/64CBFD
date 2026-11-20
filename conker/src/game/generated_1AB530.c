@@ -84,7 +84,52 @@ Gfx *func_1517EA4C(Gfx *arg0) {
     return arg0;
 }
 
-s32 func_1517EAAC() {
+typedef struct {
+    u8 opaque0[0x380];
+    f32 rotationY;
+    u8 opaque384[4];
+    f32 rotationX;
+    u8 opaque38C[0x260];
+    f32 rotationZ;
+    u8 opaque5F0[0x3B0];
+} ProjectionCamera1AB530;
+typedef struct {
+    u8 opaque0[0xC];
+    f32 scaleX, scaleY;
+    u8 opaque14[0x16C];
+} ProjectionView1AB530;
+extern ProjectionCamera1AB530 *D_800DBFF0;
+extern ProjectionView1AB530 *D_800BE628;
+extern s32 D_80082FA4;
+void func_15110360(s32, f32 [4][4], f32, f32, f32);
+void func_150A7A00(f32 [4][4], f32, f32, f32, f32 *, f32 *, f32 *, f32 *);
+
+/* Project a world point through the active view; reject depths at or below ten. */
+s32 func_1517EAAC(f32 x, f32 y, f32 z, f32 *screenX, f32 *screenY) {
+    f32 rotationX, rotationY, rotationZ;
+    f32 inverse;
+    f32 projectedX, projectedY, projectedZ, projectedW;
+    f32 matrix[4][4];
+    f32 scaleX, scaleY;
+
+    rotationX = -D_800DBFF0[D_80082FA4].rotationX;
+    rotationY = -D_800DBFF0[D_80082FA4].rotationY;
+    rotationZ = D_800DBFF0[D_80082FA4].rotationZ;
+    func_15110360(D_80082FA4, matrix, rotationX, rotationY, rotationZ);
+    scaleX = D_800BE628[D_80082FA4].scaleX;
+    scaleY = D_800BE628[D_80082FA4].scaleY;
+    func_150A7A00(matrix, x, y, z, &projectedX, &projectedY,
+                  &projectedZ, &projectedW);
+    if (projectedW > 10.0f) {
+        inverse = 1.0f / projectedW;
+        projectedX = projectedX * scaleX * inverse;
+        projectedY = projectedY * scaleY * inverse;
+        *screenX = scaleX + projectedX;
+        *screenY = scaleY - projectedY;
+        return 1;
+    }
+    *screenX = 0.0f;
+    *screenY = 0.0f;
     return 0;
 }
 

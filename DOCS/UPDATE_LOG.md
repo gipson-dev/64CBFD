@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2591](WORKING_NOTES/2591-game-view-point-projection-direct-byte-match-20261120.md): `func_1517EAAC` replaces its zero-return placeholder and **directly matches all 92 words / frame 152**, with no new guards. Paired six-test suites verify 896 guest cases, SDK32 O0/O2/O3, 160 original-caller cases and the exact 287-byte whole-image prediction. Total **4,577 / 5,527 (82.81%)**, Game **3,904 / 4,854 (80.43%)**, zero drift; **121** more to 85% at this denominator.
+
 [Note 2590](WORKING_NOTES/2590-game-map-trail-samples-guarded-byte-match-20261120.md): `func_15106610` is restored from ASM and **byte-exact across 106 words / frame 112**, with 50 checked rows and one merged cursor copy. Paired seven-test suites verify 768 guest cases, native SDK32 O0/O2/O3, 548 original-provider cases and the complete unchanged ELF. Total **4,576 / 5,527 (82.79%)**, Game **3,903 / 4,854 (80.41%)**, zero drift; **122** more to 85% at this denominator.
 
 [Note 2589](WORKING_NOTES/2589-game-map-trail-curve-guarded-byte-match-20261120.md): `func_15106214` is restored from ASM and **byte-exact across 168 words / frame 128**, with six checked frame/opening rows. Paired six-test suites verify 320 guest cases, native SDK32 O0/O2/O3, 36 unchanged neighbors and the complete unchanged ELF. Total **4,575 / 5,526 (82.79%)**, Game **3,902 / 4,853 (80.40%)**, zero drift; **123** more to 85% at this denominator.
