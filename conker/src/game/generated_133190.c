@@ -166,8 +166,13 @@ void func_1510608C(struct102 *node) {
     }
 }
 
-s32 func_151061E0(s32 arg0) {
-    return arg0 + 0x88;
+typedef struct {
+    f32 parameter;
+    MapTrailPoint133190 position, tangent, normal, binormal;
+} MapTrailSegment133190;
+
+MapTrailSegment133190 *func_151061E0(void *record) {
+    return (MapTrailSegment133190 *)((u8 *)record + 0x88);
 }
 
 // Matched with guarded commutative-add normalization.
@@ -177,7 +182,71 @@ u8 *func_151061EC(u8 *arg0) {
     return arg0 + temp_v1 * 0x34 + 0x88;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_15106214.s")
+f32 func_151064B4(f32);
+f32 func_151064DC(f32);
+f32 func_15106510(f32);
+f32 func_15106540(f32);
+f32 func_15106558(f32);
+f32 func_15106584(f32);
+f32 func_151065BC(f32);
+f32 func_151065EC(f32);
+s32 func_15146078(MapTrailPoint133190 *, MapTrailPoint133190 *, MapTrailPoint133190 *);
+
+/* Sample the cubic curve and construct a frame for each interior segment. */
+void func_15106214(MapTrailRecord133190 *record) {
+    MapTrailPoint133190 *tangent, *normal, *binormal;
+    f32 step, parameter;
+    s32 i;
+    MapTrailSegment133190 *segment;
+    f32 b0, b1, b2, b3, d0, d1, d2, d3;
+
+    segment = func_151061E0(record);
+    step = record->reciprocal;
+    parameter = step;
+    i = 0;
+    if (record->packet.pieces > 0) {
+        tangent = &segment->tangent;
+        normal = &segment->normal;
+        binormal = &segment->binormal;
+        do {
+            segment->parameter = parameter;
+            b0 = func_151064B4(parameter);
+            b1 = func_151064DC(parameter);
+            b2 = func_15106510(parameter);
+            b3 = func_15106540(parameter);
+            d0 = func_15106558(parameter);
+            d1 = func_15106584(parameter);
+            d2 = func_151065BC(parameter);
+            d3 = func_151065EC(parameter);
+            segment->position.x = record->packet.points[0].x * b0 + record->packet.points[1].x * b1 +
+                record->packet.points[2].x * b2 + record->packet.points[3].x * b3;
+            segment->position.y = record->packet.points[0].y * b0 + record->packet.points[1].y * b1 +
+                record->packet.points[2].y * b2 + record->packet.points[3].y * b3;
+            segment->position.z = record->packet.points[0].z * b0 + record->packet.points[1].z * b1 +
+                record->packet.points[2].z * b2 + record->packet.points[3].z * b3;
+            segment->tangent.x = record->packet.points[0].x * d0 + record->packet.points[1].x * d1 +
+                record->packet.points[2].x * d2 + record->packet.points[3].x * d3;
+            segment->tangent.y = record->packet.points[0].y * d0 + record->packet.points[1].y * d1 +
+                record->packet.points[2].y * d2 + record->packet.points[3].y * d3;
+            segment->tangent.z = record->packet.points[0].z * d0 + record->packet.points[1].z * d1 +
+                record->packet.points[2].z * d2 + record->packet.points[3].z * d3;
+            if (func_15146078(tangent, normal, binormal) == 0) {
+                segment->normal.x = 0.0f;
+                segment->normal.y = 0.0f;
+                segment->normal.z = 0.0f;
+                segment->binormal.x = 0.0f;
+                segment->binormal.y = 0.0f;
+                segment->binormal.z = 0.0f;
+            }
+            i++;
+            segment++;
+            tangent = (MapTrailPoint133190 *)((u8 *)tangent + sizeof(*segment));
+            normal = (MapTrailPoint133190 *)((u8 *)normal + sizeof(*segment));
+            binormal = (MapTrailPoint133190 *)((u8 *)binormal + sizeof(*segment));
+            parameter += step;
+        } while (i < record->packet.pieces);
+    }
+}
 
 f32 func_151064B4(f32 arg0) {
     f32 temp = 1.0f - arg0;

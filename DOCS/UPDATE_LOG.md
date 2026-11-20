@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2589](WORKING_NOTES/2589-game-map-trail-curve-guarded-byte-match-20261120.md): `func_15106214` is restored from ASM and **byte-exact across 168 words / frame 128**, with six checked frame/opening rows. Paired six-test suites verify 320 guest cases, native SDK32 O0/O2/O3, 36 unchanged neighbors and the complete unchanged ELF. Total **4,575 / 5,526 (82.79%)**, Game **3,902 / 4,853 (80.40%)**, zero drift; **123** more to 85% at this denominator.
+
 [Note 2588](WORKING_NOTES/2588-game-map-trail-update-direct-byte-match-20261120.md): `func_1510608C` is restored from ASM and **directly byte-exact across 85 words / frame 48**, with no new guards. Paired five-test suites verify 1,536 guest cases, native SDK32 O0/O2/O3, 36 unchanged neighbors and the complete unchanged ELF. Total **4,574 / 5,525 (82.79%)**, Game **3,901 / 4,852 (80.40%)**, zero drift; **123** more to 85% at this denominator.
 
 [Note 2587](WORKING_NOTES/2587-game-map-trail-constructor-guarded-byte-match-20261120.md): `func_15105CE0` is restored from ASM and **byte-exact across 235 words / frame 216**, with 126 proved rows and two added count-transfer/FP-delay words. Shared packet types preserve all 11 emitter functions; paired nine-test suites and the production audit pass with the entire ELF unchanged. Total **4,573 / 5,524 (82.78%)**, Game **3,900 / 4,851 (80.40%)**, zero drift; **123** more to 85% at this denominator.
