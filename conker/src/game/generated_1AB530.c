@@ -55,7 +55,26 @@ struct162 *func_1517E080(s32 first, s32 second) {
     return (struct162 *)node;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_1AB530/func_1517E134.s")
+void func_10004074(void *);
+
+/* Unlink before freeing. Known callers also pass an actor context that retail ignores. */
+void func_1517E134(void *target, void *unusedActor) {
+    ListRecord1AB530 *node;
+
+    if (target == D_800DDD64) {
+        D_800DDD64 = ((ListRecord1AB530 *)target)->next;
+    } else {
+        node = D_800DDD64;
+        while (node != NULL && node->next != target) {
+            node = node->next;
+        }
+        if (node == NULL) {
+            return;
+        }
+        node->next = ((ListRecord1AB530 *)target)->next;
+    }
+    func_10004074(target);
+}
 
 /* Sample the current RGBA16 image at each in-bounds record position. */
 void func_1517E1AC(void) {

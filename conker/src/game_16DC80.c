@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* The retail list unlinker ignores the caller-provided actor context. */
+void func_1517E134(void *record, void *unusedActor);
+
 /* Generated placeholder declarations. */
 u8 *func_151407D0(void *source, s32 size, u8 *descriptor, u8 kind, u8 mode,
                  u8 first, u8 variant, s8 selector, u8 channel, s32 context);
