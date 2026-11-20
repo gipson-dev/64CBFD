@@ -140,5 +140,15 @@ The native graph update first failed with no disk space while preserving all
 build-evidence folders and the graph recovered room (about 271 MB free at that
 measurement), without deleting files. All 366 copied baseline hashes, the graph
 bytes and copied compiler-input hashes were verified unchanged afterward. The
-subsequent three-file scoped refresh succeeded and retained all old IDs. Disk
-headroom remains small; this is not a claim that the wider drive is cleaned up.
+subsequent three-file scoped refresh succeeded and retained all old IDs.
+
+After the commit hook, another atomic graph replacement exceeded the remaining
+space. The exporter creates a new temporary file in its output directory, so
+compressing only the previous graph file did not carry over to later output.
+NTFS compression was then enabled on the derived `graphify-out` directory,
+including its generated historical snapshots. This preserved 25,214 files in
+59 directories, storing 10,800,870,600 logical bytes in 2,759,627,918 physical
+bytes. About **8.0 GB was free** at that completion measurement. No snapshots
+were deleted, and the final scoped graph export succeeded with old IDs intact.
+This follow-up changes storage attributes, not source, production or matching
+credit. It is recorded in a separate documentation commit.
