@@ -122,7 +122,49 @@ void *func_15105CE0(MapTrailPacket133190 *packet, s32 extraBytes, u8 priority, s
     return record;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/generated_133190/func_1510608C.s")
+typedef struct {
+    u8 header[0x40];
+    MapTrailPoint133190 position;
+} MapTrailChild133190;
+extern s32 (*D_80088C10[2])(u8 *, u8 *);
+extern s32 D_800BE9E4;
+void func_1516972C(struct102 *);
+
+/* Update the trail curve, sample timer and both endpoint effects.
+ * The registered callback takes struct102 *; casts expose trail-specific fields.
+ */
+void func_1510608C(struct102 *node) {
+    s32 (*update)(u8 *, u8 *);
+    u8 changed = 0;
+    u32 random;
+
+    if (((MapTrailRecord133190 *)node)->packet.flag != -1 &&
+            (update = D_80088C10[((MapTrailRecord133190 *)node)->packet.flag]) != 0 &&
+            update((u8 *)node, &changed) == 0) {
+        func_1516972C(node);
+    }
+    if (((MapTrailRecord133190 *)node)->packet.enabled & 1) {
+        ((MapTrailRecord133190 *)node)->packet.duration = (u32)(s32)((MapTrailRecord133190 *)node)->packet.duration - (u32)D_800BE9E4;
+        if (((MapTrailRecord133190 *)node)->packet.duration < 0) {
+            func_1516972C(node);
+        }
+    }
+    if (changed != 0) {
+        func_15106214((MapTrailRecord133190 *)node);
+    }
+    ((MapTrailRecord133190 *)node)->timer = (u32)(s32)((MapTrailRecord133190 *)node)->timer - (u32)D_800BE9E4;
+    if (((MapTrailRecord133190 *)node)->timer < 0) {
+        func_15106610((MapTrailRecord133190 *)node);
+        random = (u32)func_150ADA20();
+        ((MapTrailRecord133190 *)node)->timer = random % (((MapTrailRecord133190 *)node)->packet.maximum + 1) + ((MapTrailRecord133190 *)node)->packet.minimum;
+    }
+    if (((MapTrailRecord133190 *)node)->children[0] != 0) {
+        ((MapTrailChild133190 *)((MapTrailRecord133190 *)node)->children[0])->position = ((MapTrailRecord133190 *)node)->packet.points[0];
+    }
+    if (((MapTrailRecord133190 *)node)->children[1] != 0) {
+        ((MapTrailChild133190 *)((MapTrailRecord133190 *)node)->children[1])->position = ((MapTrailRecord133190 *)node)->packet.points[3];
+    }
+}
 
 s32 func_151061E0(s32 arg0) {
     return arg0 + 0x88;
@@ -186,10 +228,10 @@ void func_15106E78(u8 *arg0) {
         callback(arg0);
     }
     if (*(u8 **)(arg0 + 0x6C) != NULL) {
-        func_1516972C(*(u8 **)(arg0 + 0x6C));
+        func_1516972C((struct102 *)*(u8 **)(arg0 + 0x6C));
     }
     if (*(u8 **)(arg0 + 0x70) != NULL) {
-        func_1516972C(*(u8 **)(arg0 + 0x70));
+        func_1516972C((struct102 *)*(u8 **)(arg0 + 0x70));
     }
     func_151D5E30(arg0 + 0x74);
 }
@@ -231,7 +273,7 @@ s32 func_1510761C(u8 *arg0) {
     u8 *temp_a1 = arg0;
 
     if (*(s32 volatile *)(temp_a1 + 0x30) != 0) {
-        func_1516972C(*(s32 volatile *)(temp_a1 + 0x30));
+        func_1516972C((struct102 *)*(s32 volatile *)(temp_a1 + 0x30));
     }
 }
 
