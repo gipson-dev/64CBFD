@@ -39418,3 +39418,31 @@ generated_1AB530,func_1517E4A8,0x55C,0x8FAD00C4,0x8FAB00C4,-,-,"Normalize proved
 generated_1AB530,func_1517E4A8,0x564,0x26310001,0x26100002,-,-,"Normalize proved flare draw register roles, conditional scheduling and private counter home",,,false
 generated_1AB530,func_1517E4A8,0x568,0x146DFFCB,0x146BFFCB,-,-,"Normalize proved flare draw register roles, conditional scheduling and private counter home",,,false
 generated_1AB530,func_1517E4A8,0x56C,0x26100002,0x26310001,-,-,"Normalize proved flare draw register roles, conditional scheduling and private counter home",,,false
+generated_124920,func_150F97EC,0x028,0x27A40054,0x3C0A0000,-,R_MIPS_HI16:D_80088B50,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x02C,0x11E00048,0x11E00049,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x030,0x27A50050,0x27A40054,-,-,Normalize proved randomized effect actor reload and register scheduling,0x8FA80070,-,false
+generated_124920,func_150F97EC,0x034,0x3C090000,0x914A0000,R_MIPS_HI16:D_80088B50,R_MIPS_LO16:D_80088B50,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x038,0x91290000,0xAFB80054,R_MIPS_LO16:D_80088B50,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x03C,0xAFB80054,0xAFB90050,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x040,0xAFB90050,0x8D0901D4,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x044,0x8DC801D4,0x000A5980,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x048,0x00095180,0x27A50050,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x054,0x010A3021,0x012B3021,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0B0,0x8FAC0044,0x8FAD0044,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0BC,0x0181001B,0x01A1001B,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0C4,0x00006810,0x00007010,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0C8,0x27AB0058,0x27AC0058,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0CC,0xAFAB0010,0xAFAC0010,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0E8,0x93AB0077,0x93AC0077,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0EC,0x8FAC0078,0x8FAD0078,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0F4,0x272E0064,0x27280064,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x0F8,0x25AF0004,0x25CF0004,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x10C,0x27A90064,0x27AA0064,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x110,0x240800FF,0x240900FF,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x114,0x240AFFFF,0x240BFFFF,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x118,0xAFAA002C,0xAFAB002C,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x11C,0xAFA80024,0xAFA90024,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x120,0xAFA90020,0xAFAA0020,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x138,0xAFAE0018,0xAFA80018,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x144,0xAFAB0030,0xAFAC0030,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false
+generated_124920,func_150F97EC,0x14C,0xAFAC0034,0xAFAD0034,-,-,Normalize proved randomized effect actor reload and register scheduling,,,false

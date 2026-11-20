@@ -143,9 +143,40 @@ s32 func_150F97C0(s32 arg0) {
     func_15149368(arg0);
 }
 
-s32 func_150F97EC() {
-    return 0;
+extern u8 D_80088B50;
+extern f32 D_800A1C48[3], D_800A1C54[3];
+s32 func_150ADA20(void);
+void func_15145EA4(struct17 **, struct17 **, u8 *, s32);
+u8 *func_15102B38(u8 *, u8, f32 *, f32 *, f32 *, s16, u8, f32, f32 *, u8, s32, s16, u8, s32);
+
+/* Transform the actor's emitter point and submit an effect with randomized parameters. */
+void func_150F97EC(struct127 *actor, u8 priority, s32 parameter) {
+    struct17 position;
+    f32 sample;
+    f32 scale[2];
+    struct17 *input;
+    struct17 *output;
+    f32 span;
+    u32 random[2];
+
+    if (actor->unk1D4 != NULL) {
+        input = (struct17 *)D_800A1C48;
+        output = &position;
+        func_15145EA4(&input, &output, (u8 *)actor->unk1D4 + D_80088B50 * 64, 1);
+        span = 1.0f;
+        sample = func_150ADA68();
+        scale[1] = sample * span + 2.0f;
+        scale[0] = func_150ADA68() * 14.0f + 28.0f;
+        random[0] = func_150ADA20();
+        random[1] = func_150ADA20();
+        func_15102B38((u8 *)actor, D_80088B50, D_800A1C48, D_800A1C54, scale,
+            random[0] % 3U + 4, random[1] % 156U + 100,
+            func_150ADA68() * 300.0f + 400.0f, (f32 *)&position,
+            255, 0, -1, priority, parameter);
+    }
 }
+
+
 
 u8 *func_150FF288(u8 *);
 s32 func_150FF6E0(struct17 *, struct17 *, struct17 *, struct17 *, struct17 *, u8 *, u8 *);
