@@ -3,7 +3,6 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_151050B0();
 s32 func_1510558C();
 s32 func_151058B4(s32 arg0);
 s32 func_15105C24();
@@ -221,8 +220,101 @@ void func_15104FF8(struct260 *record, s32 argument, u8 command) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_151050B0.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_151050B0.s")
+typedef struct {
+    MapParticleSoundSource131F30 *source;
+    s16 timer;
+    u16 reserved06;
+    f32 accumulator;
+    MapParticlePoint131F30 positions[4];
+    MapParticlePoint131F30 directions[4];
+    s16 *gate;
+} MapEdgeEmitter131F30;
+
+typedef struct {
+    struct260 header;
+    u8 reserved24[4];
+    MapEdgeEmitter131F30 emitter;
+} MapEdgeRecord131F30;
+
+typedef struct {
+    f32 parameters[5];
+    s16 duration, zero16, step, enabled, count;
+    u16 reserved1E;
+    s32 kind, mode;
+    u8 red, green, blue, alpha, state;
+    u8 reserved2D[3];
+} MapEdgePacket131F30;
+
+extern f32 D_800A23B4, D_800A23B8, D_800A23BC;
+void *func_15106F98(MapParticlePoint131F30 *, MapParticlePoint131F30 *, s32,
+    MapEdgePacket131F30 *, f32, u8, u8, s32);
+
+/* Emit interpolated segments between two selected edges of a timed map effect. */
+void func_151050B0(struct260 *record) {
+    f32 randomValue;
+    MapEdgePacket131F30 packet;
+    MapParticlePoint131F30 firstPoint, secondPoint;
+    MapEdgeEmitter131F30 *emitter;
+    f32 width;
+    f32 secondScale;
+    u32 firstIndex;
+    u8 secondIndex;
+
+    emitter = &((MapEdgeRecord131F30 *)record)->emitter;
+    if (emitter->timer < 0) {
+        emitter->source->state = 1;
+    } else {
+        emitter->source->state = 0;
+        emitter->timer = (s16)((u32)(s32)emitter->timer - (u32)D_800BE9E4);
+        if (emitter->timer < 0) {
+            func_151494E0(0, 0x39);
+            func_151494E0(0, 0x4B);
+        }
+        if (func_151464B8(emitter->gate) == 0) {
+            randomValue = func_150ADA68();
+            emitter->accumulator += (D_800A23B4 + randomValue * D_800A23B8) * D_800BE9A4;
+            if (emitter->accumulator > 1.0f) {
+                width = D_800A23BC;
+                secondScale = 2.0f;
+                packet.duration = 100;
+                packet.zero16 = 0;
+                packet.step = 10;
+                packet.enabled = 1;
+                packet.count = 10;
+                packet.kind = 4;
+                packet.mode = 2;
+                packet.red = 0x7E;
+                packet.green = 0xF9;
+                packet.blue = 0xFF;
+                packet.alpha = 0x37;
+                packet.state = 200;
+                packet.parameters[0] = 10.0f;
+                packet.parameters[1] = 15.0f;
+                packet.parameters[2] = 20.0f;
+                packet.parameters[3] = 44.0f;
+                packet.parameters[4] = 37.0f;
+                do {
+                    firstIndex = (u8)(func_150ADA68() * 3.0f);
+                    secondIndex = (u8)(func_150ADA68() * secondScale + 1.0f + firstIndex);
+                    if (secondIndex >= 4) {
+                        secondIndex -= 4;
+                    }
+                    randomValue = func_150ADA68();
+                    firstPoint.x = emitter->positions[firstIndex].x + emitter->directions[firstIndex].x * randomValue;
+                    firstPoint.y = emitter->positions[firstIndex].y + emitter->directions[firstIndex].y * randomValue;
+                    firstPoint.z = emitter->positions[firstIndex].z + emitter->directions[firstIndex].z * randomValue;
+                    randomValue = func_150ADA68();
+                    secondPoint.x = emitter->positions[secondIndex].x + emitter->directions[secondIndex].x * randomValue;
+                    secondPoint.y = emitter->positions[secondIndex].y + emitter->directions[secondIndex].y * randomValue;
+                    secondPoint.z = emitter->positions[secondIndex].z + emitter->directions[secondIndex].z * randomValue;
+                    func_15106F98(&firstPoint, &secondPoint, 3, &packet, width, 2,
+                        ((u8 *)record)[0xC], ((u8 *)record)[1]);
+                    emitter->accumulator -= 1.0f;
+                } while (emitter->accumulator > 1.0f);
+            }
+        }
+    }
+}
 
 void func_1510550C(struct102 *arg0, s32 arg1, u8 arg2) {
     if (arg2 == 0x4B) {

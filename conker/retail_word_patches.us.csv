@@ -38834,3 +38834,46 @@ game_131F30,func_15104FF8,0x048,0xAFA40038,0xAFA4003C,-,-,Relocate the paired pr
 game_131F30,func_15104FF8,0x04C,0xAFA3003C,0xAFA30040,-,-,Relocate the paired private sound-callback and emitter spill cells by four bytes,,,false
 game_131F30,func_15104FF8,0x058,0x8FA3003C,0x8FA30040,-,-,Relocate the paired private sound-callback and emitter spill cells by four bytes,,,false
 game_131F30,func_15104FF8,0x05C,0x8FAA0038,0x8FAA003C,-,-,Relocate the paired private sound-callback and emitter spill cells by four bytes,,,false
+game_131F30,func_151050B0,0x004,0xAFB40054,0xAFB4005C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x00C,0xAFBF0064,0xAFBF006C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x010,0xAFB70060,0xAFB70068,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x014,0xAFB6005C,0xAFB60064,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x018,0xAFB50058,0xAFB50060,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x01C,0xAFB30050,0xAFB30058,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x020,0xAFB2004C,0xAFB20054,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x024,0xAFB10048,0xAFB10050,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x028,0xAFB00044,0xAFB0004C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,0xF7BC0040,-,false
+game_131F30,func_151050B0,0x054,0x100000EE,0x100000F0,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x0A4,0x544000DB,0x544000DD,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x0A8,0x8FBF0064,0x8FBF006C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x0DC,0x3C010000,0x3C014120,R_MIPS_HI16:D_800A23BC,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x134,0x450200B7,0x450200B9,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x138,0x8FBF0064,0x8FBF006C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x13C,0xC4360000,0x44815000,R_MIPS_LO16:D_800A23BC,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x140,0x3C014120,0x3C014170,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x144,0x44815000,0x44818000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x148,0x3C014170,0x3C0141A0,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x14C,0x44818000,0x44813000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x150,0x3C0141A0,0x3C014230,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x154,0x44813000,0x44819000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x158,0x3C014230,0x3C014214,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x15C,0x44819000,0x44812000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x160,0x3C014214,0x3C010000,-,R_MIPS_HI16:D_800A23BC,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x164,0x44812000,0xC43C0000,-,R_MIPS_LO16:D_800A23BC,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,0x3C013F80,-,false
+game_131F30,func_151050B0,0x168,0x3C014000,0x4481D000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x16C,0x4481D000,0x3C014000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,0x4481C000,-,false
+game_131F30,func_151050B0,0x17C,0x4481C000,0x4481B000,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x1C8,0x46180202,0x46160202,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x25C,0x461A0402,0x46180402,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x270,0x46148180,0x461A8180,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x3D0,0xE7B60010,0xE7BC0010,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x410,0x8FBF0064,0x8FBF006C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x420,0xD7BA0038,0xD7BA0038,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,0xD7BC0040,-,false
+game_131F30,func_151050B0,0x424,0x8FB00044,0x8FB0004C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x428,0x8FB10048,0x8FB10050,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x42C,0x8FB2004C,0x8FB20054,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x430,0x8FB30050,0x8FB30058,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x434,0x8FB40054,0x8FB4005C,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x438,0x8FB50058,0x8FB50060,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x43C,0x8FB6005C,0x8FB60064,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
+game_131F30,func_151050B0,0x440,0x8FB70060,0x8FB70068,-,-,Normalize CFG-proven map-edge saved FP roles and independent private/register schedule,,,false
