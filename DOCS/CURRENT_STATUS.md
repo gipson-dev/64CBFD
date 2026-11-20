@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2582](WORKING_NOTES/2582-game-map-trail-emitter-recovery-and-layout-boundaries-20261119.md): `func_151058B4` has a tested **private 197-word C recovery, frame 248 versus retail 240, 24 differences**. Paired six-test suites validate defined fields and the original wrapper; frame-shift padding and public-read-order witnesses keep it **uninstalled and uncredited**. Total remains **4,570 / 5,521 (82.77%)**; continue the same function's frame and scheduling work.
+
 [Note 2581](WORKING_NOTES/2581-game-map-burst-emitter-guarded-byte-match-20261119.md): `func_1510558C` is converted from ASM and **byte-exact across 175 words/frame 184**, using 57 checked guard rows. The actual expiry dispatcher, paired six-path relation, guest/native suites and production audit pass; the complete ELF is unchanged. Total **4,570 / 5,521 (82.77%)**, Game **3,897 / 4,848 (80.38%)**, zero drift; **123** more to 85% at the current denominator.
 
 [Note 2580](WORKING_NOTES/2580-game-map-edge-emitter-guarded-byte-match-20261119.md): `func_151050B0` is converted from ASM and **byte-exact across 279 words/frame 208**, using 43 proven layout rows and four meaningful inserted words. Paired eight-test suites, full CFG/FCSR relation, installed checks and production audit pass; the complete ELF is unchanged. Total **4,569 / 5,520 (82.77%)**, Game **3,896 / 4,847 (80.38%)**, zero drift; **123** more to 85% at the current denominator.
