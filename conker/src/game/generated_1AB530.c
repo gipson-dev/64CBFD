@@ -70,11 +70,74 @@ void func_1517E1AC(void) {
     }
 }
 
-s32 func_1517E28C() {
-    return 0;
+typedef struct { u8 values[2]; } ListFlarePair1AB530;
+extern const ListFlarePair1AB530 D_8008D004, D_8008D008, D_8008D00C;
+extern u8 D_800DDD60, D_800DCDD0, D_800DD2D0;
+extern u8 *D_800B0DF0;
+extern f32 *D_8008CFFC[2];
+s32 func_1517EAAC(f32, f32, f32, f32 *, f32 *);
+s32 func_1517EC1C(ListRecord1AB530 *, u32 *);
+Gfx *func_1517E4A8();
+
+/* Project enabled list records, choose their flare parameters, and submit them. */
+Gfx *func_1517E28C(Gfx *commands, s32 unusedCategory) {
+    /* Keep the retail carry slots; the depth helper can leave its output untouched. */
+    s32 strength;
+    s32 skip;
+    u32 sampleDepth;
+    s32 flags;
+    ListRecord1AB530 *node;
+    ListFlarePair1AB530 groups = D_8008D004;
+    ListFlarePair1AB530 counts = D_8008D008;
+    ListFlarePair1AB530 falloffs = D_8008D00C;
+
+    node = D_800DDD64;
+    D_800DDD60 = 0;
+    while (node != NULL) {
+        if (node->second30 != 0) {
+            skip = 0;
+            flags = node->flags2E;
+            if (flags & 1) {
+                if (D_800DCDD0 == 0) {
+                    skip = 1;
+                } else {
+                    f32 *position = D_8008CFFC[D_800B0DF0[0x10]];
+                    if (func_1517EAAC(position[0], position[1], position[2],
+                                      &node->valueC, &node->value10) != 1) {
+                        skip = 1;
+                    }
+                    strength = 255;
+                    if (node->sample2A != 0xFFFC) {
+                        strength = -1;
+                    }
+                    flags = node->flags2E;
+                }
+            } else {
+                if (func_1517EC1C(node, &sampleDepth) != 1) {
+                    skip = 1;
+                }
+                strength = -1;
+                if ((s32)((u32)node->depth2C - sampleDepth) < 30) {
+                    strength = 256;
+                }
+                flags = node->flags2E;
+            }
+            {
+                u8 *intensity = (flags & 2) ? &D_800DD2D0 : NULL;
+                if (skip == 0) {
+                    commands = func_1517E4A8(commands, node, groups.values[node->first2F],
+                        counts.values[node->first2F], falloffs.values[node->first2F], strength, intensity);
+                } else if (intensity != NULL) {
+                    *intensity = 0;
+                }
+            }
+        }
+        node = node->next;
+    }
+    return commands;
 }
 
-s32 func_1517E4A8() {
+Gfx *func_1517E4A8() {
     return 0;
 }
 

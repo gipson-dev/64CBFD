@@ -130,7 +130,7 @@ s32  func_15188D00(s32 arg0, s32 arg1, s16 arg2);
 s32  func_151D5E90(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32  func_151D61B0(s32 arg0);
 s32  func_1501A680(s32 arg0);
-s32  func_1517E28C(s32 arg0, s32 arg1);
+Gfx *func_1517E28C(Gfx *commands, s32 category);
 s32  func_15172F70(s32 arg0);
 s32  func_15181EE0(s32 arg0);
 s32  func_1517F564(s32 arg0);
@@ -545,7 +545,7 @@ s32 func_150198FC(Gfx *commands) {
         D_80082F90 = 0;
     }
     if (func_1517EFAC(0) == 0) {
-        commands = (Gfx *)func_1517E28C((s32)commands, D_800BE9F0);
+        commands = func_1517E28C(commands, D_800BE9F0);
         commands = (Gfx *)func_15172F70((s32)commands);
         commands = (Gfx *)func_15181EE0((s32)commands);
     }
