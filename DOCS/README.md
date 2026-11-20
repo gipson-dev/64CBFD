@@ -4899,3 +4899,5 @@ The `tools/` path is the pinned
 [64CBFD-Tools](https://github.com/gipson-dev/64CBFD-Tools) repository. Its seven
 upstream dependencies retain their own documentation. Do not move or rewrite
 those READMEs as project documentation.
+
+- 2026-11-20: [Note 2583](WORKING_NOTES/2583-game-map-trail-emitter-frame-provenance-and-private-refinement-20261120.md) banks the private trail emitter refinement (197 words/frame248/12 differences), observed address-expression spill and rejection of the widened-pitch screen. Uninstalled, zero credit; totals unchanged at 4,570/5,521 (82.77%).

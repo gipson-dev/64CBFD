@@ -23682,3 +23682,5 @@ continues with `func_1509CDDC`.
 - Rewrote the project overview, code sub-project notes, compressed config notes, and IDO toolchain notes for clearer reading.
 - Added this update log.
 - Added `DOCS/ASSET_FORMATS.md` documenting the rzip codec, the offset-table archive container (including the previously undocumented nested-compression layer inside model files), and the model/texture/audio/table payload formats.
+
+- 2026-11-20: [Note 2583](WORKING_NOTES/2583-game-map-trail-emitter-frame-provenance-and-private-refinement-20261120.md) banks the private trail emitter refinement (197 words/frame248/12 differences), observed address-expression spill and rejection of the widened-pitch screen. Uninstalled, zero credit; totals unchanged at 4,570/5,521 (82.77%).

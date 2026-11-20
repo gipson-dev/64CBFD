@@ -17764,3 +17764,5 @@ was changed here. OGL's RelWithDebInfo build and focused formatter execution
 pass. Game 3 New Game and saved introductory-chapter PLAY reach Training with
 visible W/S, and the Game 2 card remains stable. The final combined save and
 backup are preserved at SHA256 35190CA4...1137C3CD (full hash in OGL Note 265).
+
+- 2026-11-20: [Note 2583](WORKING_NOTES/2583-game-map-trail-emitter-frame-provenance-and-private-refinement-20261120.md) banks the private trail emitter refinement (197 words/frame248/12 differences), observed address-expression spill and rejection of the widened-pitch screen. Uninstalled, zero credit; totals unchanged at 4,570/5,521 (82.77%).

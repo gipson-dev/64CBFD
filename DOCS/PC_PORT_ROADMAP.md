@@ -14333,3 +14333,5 @@ Check off items only once they're actually true, and update the phase text
 if the plan changes - this file will go stale fast otherwise. Day-to-day
 "what am I doing right now" belongs in [WORKING_NOTES.md](WORKING_NOTES.md),
 not here; this file is the map, that file is the current position on it.
+
+- 2026-11-20: [Note 2583](WORKING_NOTES/2583-game-map-trail-emitter-frame-provenance-and-private-refinement-20261120.md) banks the private trail emitter refinement (197 words/frame248/12 differences), observed address-expression spill and rejection of the widened-pitch screen. Uninstalled, zero credit; totals unchanged at 4,570/5,521 (82.77%).

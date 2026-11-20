@@ -17290,3 +17290,5 @@ The completed dual event-byte dispatcher and its guarded frame-layout match are
 in [Working Note 380](WORKING_NOTES/380-game-dual-event-byte-dispatch-match-20260928.md).
 The completed memory viewer and its restored address/data lifetimes are in
 [Working Note 009](WORKING_NOTES/009-debugger-memory-view-byte-match-20260925.md).
+
+- 2026-11-20: [Note 2583](WORKING_NOTES/2583-game-map-trail-emitter-frame-provenance-and-private-refinement-20261120.md) banks the private trail emitter refinement (197 words/frame248/12 differences), observed address-expression spill and rejection of the widened-pitch screen. Uninstalled, zero credit; totals unchanged at 4,570/5,521 (82.77%).
