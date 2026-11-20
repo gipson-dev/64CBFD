@@ -766,7 +766,7 @@ extern f32 D_800A56BC; // 57.2957763671875
 extern f32 D_800A56C0;
 extern f32 D_800A56C4;
 extern f32 D_800A56C8;
-extern s32 D_800A5770;
+extern s32 D_800A5770[2]; // selected columns 35 and 95
 
 extern u8 D_8008A160[];
 

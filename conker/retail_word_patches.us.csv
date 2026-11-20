@@ -38981,3 +38981,43 @@ game_131F30,func_151058B4,0x26c,0x27A7009C,0x27A70094,-,-,Normalize proved unuse
 game_131F30,func_151058B4,0x294,0x27A60098,0x27A60090,-,-,Normalize proved unused trail-emitter frame gap and independent initializer schedule,,,false
 game_131F30,func_151058B4,0x2a0,0xE7A800A8,0xE7A800A0,-,-,Normalize proved unused trail-emitter frame gap and independent initializer schedule,,,false
 game_131F30,func_151058B4,0x310,0x27BD00F8,0x27BD00F0,-,-,Normalize proved unused trail-emitter frame gap and independent initializer schedule,,,false
+game_131F30,func_15105C24,0x4,0x3C090000,0x3C070000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_800DCE50,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x8,0x3C080000,0x24E70000,R_MIPS_HI16:D_800A5770,R_MIPS_LO16:D_800DCE50,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x10,0x25080000,0x00000000,R_MIPS_LO16:D_800A5770,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,true
+game_131F30,func_15105C24,0x14,0x25290000,0x2408002E,R_MIPS_LO16:D_800DCE50,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x18,0x240A002E,0x00027080,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x1c,0x00027080,0x3C050000,-,R_MIPS_HI16:D_800A5770,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x20,0x010E7821,0x00AE2821,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x24,0x8DE30000,0x8CA50000,-,R_MIPS_LO16:D_800A5770,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x28,0x00002025,0x00001825,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x2c,0x0003C080,0x00057880,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x30,0x03001825,0x01E02825,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x34,0x0004C880,0x0003C080,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x38,0x03245823,0x0303C023,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x3c,0x000B6080,0x0018C080,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x40,0x01846821,0x0303C021,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x44,0x000D7140,0x0018C140,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x48,0x012E7821,0x00F8C821,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x4c,0x01E3C021,0x03254821,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x50,0x8F050000,0x8D240000,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x54,0x50A0000D,0x5080000D,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x58,0x24870001,0x24630001,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x5c,0x90B90013,0x908A0013,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x60,0x55590007,0x550A0007,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x64,0x8CA50008,0x8C840008,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x68,0x8CAB0028,0x8C8B0028,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x70,0x8CA50008,0x8C840008,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x78,0x00A01025,0x00801025,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x7c,0x8CA50008,0x8C840008,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x80,0x54A0FFF7,0x5480FFF7,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x84,0x90B90013,0x908A0013,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x88,0x24870001,0x24630001,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x8c,0x30E400FF,0x306C00FF,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x90,0x28810002,0x29810002,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x94,0x5420FFE8,0x1420FFE7,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x98,0x0004C880,0x01801825,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0x9c,0x24440001,0x24420001,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0xa0,0x308200FF,0x304D00FF,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0xa4,0x28410002,0x29A10002,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0xa8,0x5420FFDD,0x1420FFDB,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false
+game_131F30,func_15105C24,0xac,0x00027080,0x01A01025,-,-,"Normalize proved chain-search address fold, register roles and loop delay transfers",,,false

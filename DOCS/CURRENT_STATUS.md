@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2585](WORKING_NOTES/2585-game-map-chain-search-guarded-byte-match-20261120.md): `func_15105C24` is converted from ASM and **byte-exact across 46 body words / 47-word slot / frame 0**, with 40 proved layout rows and one folded address word. Proper array/pointer declarations preserve 62 dependency functions. Seven preinstall and eight installed tests per tools configuration pass; only the predicted symbol-size byte changes. Total **4,572 / 5,523 (82.78%)**, Game **3,899 / 4,850 (80.39%)**, zero drift; **123** more to 85% at this denominator.
+
 [Note 2584](WORKING_NOTES/2584-game-map-trail-emitter-guarded-byte-match-20261120.md): `func_151058B4` is converted from ASM and **byte-exact across 197 words/frame 240**, with 47 proved frame/scheduling guards and no inserted or omitted words. Paired nine-test suites, original wrapper, complete packet homes, loop relation and production audit pass; the entire ELF is unchanged. Total **4,571 / 5,522 (82.78%)**, Game **3,898 / 4,849 (80.39%)**, zero drift; **123** more to 85% at this denominator.
 
 [Note 2582](WORKING_NOTES/2582-game-map-trail-emitter-recovery-and-layout-boundaries-20261119.md): `func_151058B4` has a tested **private 197-word C recovery, frame 248 versus retail 240, 24 differences**. Paired six-test suites validate defined fields and the original wrapper; frame-shift padding and public-read-order witnesses keep it **uninstalled and uncredited**. Total remains **4,570 / 5,521 (82.77%)**; continue the same function's frame and scheduling work.

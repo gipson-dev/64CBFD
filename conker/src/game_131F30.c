@@ -5,7 +5,7 @@
 /* Generated placeholder declarations. */
 typedef struct MapTrailRecord131F30 MapTrailRecord131F30;
 void func_151058B4(MapTrailRecord131F30 *);
-s32 func_15105C24();
+void *func_15105C24(s32 key);
 /* End generated placeholder declarations. */
 
 typedef struct { u8 bytes[9]; } MapSequence131F30;
@@ -543,43 +543,38 @@ void func_15105BC8(struct204 *arg0) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15105C24.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15105C24.s")
-// void *func_15105C24(s32 arg0) {
-//     s32 temp_t4;
-//     s32 temp_t5;
-//     void *temp_a0;
-//     void *temp_a0_2;
-//     s32 phi_v1;
-//     s32 phi_v0;
-//     void *phi_a0;
-//
-//     phi_v0 = 0;
-// loop_1:
-//     phi_v1 = 0;
-// loop_2:
-//     temp_a0 = *((((((phi_v1 * 4) - phi_v1) * 4) + phi_v1) << 5) + 0x800DCE50 + (((phi_v0 * 4) + 0x800A0000)->unk5770 * 4));
-//     phi_a0 = temp_a0;
-//     if (temp_a0 != 0) {
-// loop_3:
-//         if ((phi_a0->unk13 == 0x2E) && (arg0 == phi_a0->unk28)) {
-//             return phi_a0;
-//         }
-//         temp_a0_2 = phi_a0->unk8;
-//         phi_a0 = temp_a0_2;
-//         if (temp_a0_2 != 0) {
-//             goto loop_3;
-//         }
-//     }
-//     temp_t4 = (phi_v1 + 1) & 0xFF;
-//     phi_v1 = temp_t4;
-//     if (temp_t4 < 2) {
-//         goto loop_2;
-//     }
-//     temp_t5 = (phi_v0 + 1) & 0xFF;
-//     phi_v0 = temp_t5;
-//     if (temp_t5 < 2) {
-//         goto loop_1;
-//     }
-//     return NULL;
-// }
+typedef struct MapChainNode131F30 {
+    u8 reserved00[8];
+    struct MapChainNode131F30 *next;
+    u8 reserved0C[7];
+    u8 type;
+    u8 reserved14[0x14];
+    s32 key;
+} MapChainNode131F30;
+
+/* Find the first matching type-0x2E node in both selected list columns. */
+void *func_15105C24(s32 key) {
+    s32 group, row;
+    s32 nextGroup, nextRow;
+    s32 column;
+    MapChainNode131F30 *node;
+    group = 0;
+next_group:
+    column = D_800A5770[group] * 4;
+    row = 0;
+next_row:
+    node = *(MapChainNode131F30 **)(D_800DCE50 + (((row * 4 - row) * 4 + row) << 5) + column);
+    if (node != NULL) {
+next_node:
+        if (node->type == 0x2E && node->key == key) { return node; }
+        node = node->next;
+        if (node != NULL) { goto next_node; }
+    }
+    nextRow = (u8)(row + 1);
+    row = nextRow;
+    if (nextRow < 2) { goto next_row; }
+    nextGroup = (u8)(group + 1);
+    group = nextGroup;
+    if (nextGroup < 2) { goto next_group; }
+    return NULL;
+}

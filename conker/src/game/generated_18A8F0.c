@@ -324,10 +324,10 @@ void func_1515FB94(u8 *arg0, s32 arg1) {
 void func_1515FBC4(u8 *arg0, s32 arg1) {
     s32 index;
     s32 temp_v1 = 0;
-    s32 temp_v0 = func_15105C24(arg1);
+    void *node = func_15105C24(arg1);
 
-    if (temp_v0 != 0) {
-        temp_v1 = *(s32 *) (temp_v0 + 0x98);
+    if (node != NULL) {
+        temp_v1 = *(s32 *) ((u8 *)node + 0x98);
     }
     if (temp_v1 != 0) {
         index = (temp_v1 - (s32) D_800CC2D0) / 0x32C;
