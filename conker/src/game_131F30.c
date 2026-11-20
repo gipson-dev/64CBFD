@@ -3,7 +3,6 @@
 #include "variables.h"
 
 /* Generated placeholder declarations. */
-s32 func_15104FF8();
 s32 func_151050B0();
 s32 func_1510558C();
 s32 func_151058B4(s32 arg0);
@@ -187,8 +186,40 @@ void func_15104C44(struct260 *record) {
 }
 
 
-/* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_15104FF8.s. */
-#pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_15104FF8.s")
+typedef struct {
+    s16 x, y, z;
+    u8 reserved06[0xE];
+    u8 state;
+    u8 reserved15[3];
+} MapParticleSoundSource131F30;
+
+typedef struct {
+    MapParticleSoundSource131F30 *source;
+    f32 accumulator;
+    s16 timer;
+    u16 reserved0A;
+} MapParticleSoundState131F30;
+
+typedef struct {
+    struct260 header;
+    u8 reserved24[4];
+    MapParticleSoundState131F30 state;
+} MapParticleSoundRecord131F30;
+
+/* Restart the map particle source's positional sound on an activation command. */
+void func_15104FF8(struct260 *record, s32 argument, u8 command) {
+    MapParticleSoundState131F30 *emitter;
+    MapParticleSoundSource131F30 *source;
+
+    emitter = &((MapParticleSoundRecord131F30 *)record)->state;
+    if (command == 0x38 && emitter->source->state == 1) {
+        emitter->timer = 300;
+        func_1000FD38((s32)func_1000EF40, (s32)emitter->source, 0);
+        source = emitter->source;
+        func_1000FA64(0x236, source->x, source->y, source->z,
+            0x4000, 1500, 1000, (s32)func_1000EF40, source, 0, 8, 0);
+    }
+}
 
 /* Non-matching C placeholders for asm/nonmatchings/game_131F30/func_151050B0.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_131F30/func_151050B0.s")

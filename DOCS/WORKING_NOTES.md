@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2578](WORKING_NOTES/2578-game-map-particle-sound-activation-byte-match-20261119.md): `func_15104FF8` is converted from ASM and **byte-exact across 46 words/frame 72**, using four paired private-spill guards. Paired seven-test suites, installed checks and the full production audit pass; the entire ELF is unchanged. Total **4,568 / 5,519 (82.77%)**, Game **3,895 / 4,846 (80.38%)**, zero drift; **124** more to 85% at the current denominator.
+
 [Note 2577](WORKING_NOTES/2577-game-map-particle-emitter-guarded-byte-match-20261119.md): `func_15104C44` is converted from ASM and **byte-exact across 237 words/frame 224**, using 52 proven scheduling guards. Paired eight-test suites, installed checks, ordered FP/private-state relation and production audit pass; the full ELF is unchanged. Total **4,567 / 5,518 (82.77%)**, Game **3,894 / 4,845 (80.37%)**, zero drift; **124** more to 85% at the current denominator.
 
 [Note 2576](WORKING_NOTES/2576-game-map-record-dispatcher-guarded-byte-match-20261119.md): `func_15104A80` is converted from ASM and **byte-exact across113 words/frame104**, with36 proven layout guards and3 meaningful insertions. Paired eight-test integration suites, installed checks and full production audit pass; the entire ELF is unchanged. Total **4,566 / 5,517 (82.76%)**, Game **3,893 / 4,844 (80.37%)**, zero drift; **124** more to85% at the current denominator.
