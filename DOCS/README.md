@@ -1,5 +1,7 @@
 # Documentation
 
+[Note 2579](WORKING_NOTES/2579-game-map-edge-emitter-recovery-and-frame-20261119.md): `func_151050B0` has a tested **private 275-word recovery / original frame 208 / original packet and vector homes**. Paired six-test suites check 684 guest cases, native SDK32, original dispatcher and all 48 copied bytes. Retail has 279 words; **full CFG/layout qualification remains open, uninstalled and zero matching credit**. Total stays **4,568 / 5,519 (82.77%)**, **124** more to 85% at the current denominator.
+
 [Note 2578](WORKING_NOTES/2578-game-map-particle-sound-activation-byte-match-20261119.md): `func_15104FF8` is converted from ASM and **byte-exact across 46 words/frame 72**, using four paired private-spill guards. Paired seven-test suites, installed checks and the full production audit pass; the entire ELF is unchanged. Total **4,568 / 5,519 (82.77%)**, Game **3,895 / 4,846 (80.38%)**, zero drift; **124** more to 85% at the current denominator.
 
 [Note 2577](WORKING_NOTES/2577-game-map-particle-emitter-guarded-byte-match-20261119.md): `func_15104C44` is converted from ASM and **byte-exact across 237 words/frame 224**, using 52 proven scheduling guards. Paired eight-test suites, installed checks, ordered FP/private-state relation and production audit pass; the full ELF is unchanged. Total **4,567 / 5,518 (82.77%)**, Game **3,894 / 4,845 (80.37%)**, zero drift; **124** more to 85% at the current denominator.
