@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2611](WORKING_NOTES/2611-game-camera-target-position-direct-byte-match-20261121.md): `func_151247C0` restores actor target-position smoothing and heading offsets, matching **189 words / frame 56 directly**, with zero guards. Paired five-check suites and the complete 683-byte image prediction pass. Total **4,595 / 5,528 (83.12%)**, Game **3,922 / 4,855 (80.78%)**, zero drift; **104** more to 85% at this denominator.
+
 [Note 2610](WORKING_NOTES/2610-game-camera-state-flags-direct-byte-match-20261121.md): `func_151236D0` restores camera actor/height flags and player transitions, matching **153 words / frame 24 directly**, with zero guards. Paired five-check suites and the complete 494-byte image prediction pass. Total **4,594 / 5,528 (83.10%)**, Game **3,921 / 4,855 (80.76%)**, zero drift; **105** more to 85% at this denominator.
 
 [Note 2609](WORKING_NOTES/2609-game-camera-wobble-direct-byte-match-20261121.md): `func_151256BC` restores camera wobble and matches **154 words / frame 56 directly**, with zero guards. Paired five-check suites and the complete 572-byte image prediction pass. Total **4,593 / 5,528 (83.09%)**, Game **3,920 / 4,855 (80.74%)**, zero drift; **106** more to 85% at this denominator.

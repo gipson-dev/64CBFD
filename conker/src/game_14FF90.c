@@ -77,6 +77,51 @@ typedef f32 CameraFlagFloat14FF90;
 typedef s16 CameraFlagShort14FF90;
 #endif
 
+void func_150495B0(f32 *, f32, f32 *, f32, f32, f32);
+void func_15125594(struct108 *);
+/* Camera-local layout for the actor blend and its offset springs. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad00[0x95];
+    u8 state;
+    u8 pad96[6];
+    u32 flags;
+} CameraPositionActivity14FF90;
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad00[0x23C];
+    u8 counter;
+    u8 pad23D[7];
+    s16 paired;
+    u16 pad246;
+    struct127 *partner;
+    u8 pad24C[0x58];
+    f32 x, y, z;
+    u8 pad2B0[0xC];
+    f32 outputX, outputY, outputZ;
+    u8 pad2C8[0xD4];
+    f32 heading;
+    u8 pad3A0[0x14];
+    f32 strength, damping;
+    u8 pad3BC[0x14];
+    struct127 *primary;
+    CameraPositionActivity14FF90 *secondary;
+    u8 pad3D8[0x298];
+    f32 factor, targetFactor, factorVelocity;
+    u8 pad67C[0x138];
+    f32 deltaTime;
+    u8 pad7B8[0x3C];
+    u16 disabled;
+    u8 pad7F6[0x19E];
+    f32 offset, offsetVelocity, targetOffset;
+} CameraPosition14FF90;
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
@@ -84,7 +129,7 @@ s32 func_1512317C(s32 arg0);
 void func_15123568(struct108 *camera);
 void func_151236D0(struct108 *camera);
 s32 func_15123A54();
-s32 func_151247C0(s32 arg0);
+void func_151247C0(CameraPosition14FF90 *camera);
 s32 func_15124C38(s32 arg0, s32 arg1);
 void func_151256BC(CameraWobble14FF90 *camera);
 void func_15125924(struct108 *camera);
@@ -476,7 +521,7 @@ void func_151236D0(struct108 *camera) {
             camera->unk5F0 &= ~0x80;
         }
     }
-    /* +0x360 is a float height limit; +0x7B0 is cleared after release. */
+    /* +0x360 is a float height limit; +0x7B0 is cleared after func_1515BA48. */
     if (camera->unk2FC <= *(CameraFlagFloat14FF90 *)((u8 *)camera + 0x360) && camera->unk2C != 0x100) {
         camera->unk5F0 |= 1;
     } else {
@@ -559,9 +604,69 @@ void func_15124770(struct108 *arg0, s32 arg1) {
         arg0->unk248 = NULL;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151247C0.s. */
-s32 func_151247C0(s32 arg0) {
-    return 0;
+/* Smooth the selected actor target and apply the camera heading offset. */
+void func_151247C0(CameraPosition14FF90 *camera) {
+    u8 active;
+    struct127 *primary;
+    struct127 *partner;
+    f32 x;
+    f32 z;
+    if (camera->disabled != 0) return;
+    active = camera->secondary != 0 ? (camera->secondary->flags | camera->secondary->state) : 0;
+    camera->targetFactor = active ? 0.25f : 1.0f;
+    if (camera->counter != 0) {
+        camera->factor = camera->targetFactor;
+        camera->factorVelocity = 0.0f;
+    } else {
+        func_150495B0(&camera->factor, camera->targetFactor,
+            &camera->factorVelocity,
+            camera->strength * 0.25f,
+            camera->damping * 0.25f,
+            camera->deltaTime);
+    }
+    if (camera->paired != 0) {
+        if (camera->counter != 0) {
+            primary = camera->primary;
+            partner = camera->partner;
+            camera->x = (primary->x_position + partner->x_position) * 0.5f;
+            camera->y = (primary->y_position + partner->y_position) * 0.5f;
+            camera->z = (primary->z_position + partner->z_position) * 0.5f;
+        } else {
+            primary = camera->primary;
+            partner = camera->partner;
+            camera->x = camera->x + (((primary->x_position + partner->x_position) * 0.5f) - camera->x) * camera->factor;
+            camera->y = (primary->y_position + partner->y_position) * 0.5f;
+            camera->z = camera->z + (((primary->z_position + partner->z_position) * 0.5f) - camera->z) * camera->factor;
+        }
+    } else {
+        if (camera->counter != 0) {
+            primary = camera->primary;
+            camera->x = primary->x_position;
+            camera->z = primary->z_position;
+        } else {
+            primary = camera->primary;
+            camera->x = camera->x + (primary->x_position - camera->x) * camera->factor;
+            camera->z = camera->z + (primary->z_position - camera->z) * camera->factor;
+        }
+        camera->y = primary->y_position;
+    }
+    if (camera->offset != 0 || camera->targetOffset != 0) {
+        if (camera->counter != 0) {
+            camera->offset = camera->targetOffset;
+            camera->offsetVelocity = 0.0f;
+        } else {
+            func_150495B0(&camera->offset,
+                camera->targetOffset,
+                &camera->offsetVelocity, 4.0f, 6.0f, camera->deltaTime);
+        }
+        x = sinf(camera->heading - D_800A34FC) * camera->offset;
+        z = cosf(camera->heading - D_800A3500) * camera->offset;
+        camera->x += x;
+        camera->z += z;
+    }
+    camera->outputX = camera->x;
+    camera->outputZ = camera->z;
+    func_15125594((struct108 *)camera);
 }
 void func_15124AB4(struct108 *arg0) {
     arg0->unk668 = -sinf(arg0->unk398);
@@ -975,7 +1080,7 @@ void func_15126138(struct108 *arg0) {
     struct127 *temp_v0_2;
     struct108 *phi_a0;
 
-    func_151247C0(arg0);
+    func_151247C0((CameraPosition14FF90 *)arg0);
 
     temp_v0_2 = arg0->unk3D0;
 
