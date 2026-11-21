@@ -1,5 +1,18 @@
 # Working Notes
 
+## Owner two-effect initializer matched - 2026-11-21
+
+[Note 2615](WORKING_NOTES/2615-game-owner-two-effect-initializer-direct-byte-match-20261121.md):
+`func_1514F194` now emits all 93 retail words / frame 0x50 directly from C,
+with zero guards and 77 unchanged neighbors. Ordered setup, the fresh gate,
+both sixteen-argument effect calls and second-result attachment are restored.
+Paired five-check suites, both complete wrappers, native32, rebases, natural
+Make and the strict 346-byte image prediction pass, including closed symbol
+metadata reorderings. Total **4,598 / 5,528 (83.18%)**, Game **3,925 / 4,855
+(80.84%)**, zero drift; **101 more** to 85%. Next inspect `func_15097798`;
+the keyed history callback, sequence query and camera transition stay private.
+
+
 ## Timed effect updater matched - 2026-11-21
 
 [Note 2614](WORKING_NOTES/2614-game-timed-effect-updater-direct-byte-match-20261121.md):

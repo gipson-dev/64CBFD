@@ -3,6 +3,8 @@
 #include "structs.h"
 typedef struct { f32 x, y, z; } GameEffectVector;
 extern GameEffectVector D_800A5970, D_800A597C;
+extern GameEffectVector D_800A5958, D_800A5964;
+extern u8 D_800BE616;
 extern f32 D_800A5E58;
 void *func_15160CDC(u8 *, u8, GameEffectVector *, GameEffectVector *, f32,
                    u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
@@ -23,7 +25,7 @@ extern s32 D_800BE9F0;
 
 void func_1500EE18();
 
-s32 func_1514F194();
+void func_1514F194(u8 *);
 void func_1514DCAC();
 s32 func_1515F10C();
 s32 func_1514E920();
@@ -822,9 +824,26 @@ s32 func_1514F130(GameObjectWithState *arg0, s32 arg1, s32 arg2) {
     return 1;
 }
 
-s32 func_1514F194() {
-    return 0;
+/* Initialize owner render state and submit its two configured effects. */
+void func_1514F194(u8 *owner) {
+    struct225 *created;
+    func_151D0F60(owner, 1, 255, 1);
+    func_151D0F60(owner, 2, 255, 1);
+    func_151BB044(owner);
+    if (D_800BE616 == 0) {
+        func_151BC074(owner);
+    }
+    func_151BD2F8(owner, 255, 1);
+    func_151B9F00(owner, 255, 1);
+    func_15160A58(owner, 1, &D_800A5958, 2, 300, 12,
+                 255, 255, 255, 2, 0, -1, 0, 0, 255, 1);
+    created = func_15160A58(owner, 1, &D_800A5964, 2, 300, 15,
+                          255, 0, 0, 255, 1, -1, 0, 0, 255, 1);
+    if (created != NULL) {
+        func_1514EC1C((s32)created, (s32)owner, 0x19);
+    }
 }
+
 
 /* Submit a type-five effect using the two stored vector presets. */
 void func_1514F308(u8 *owner) {
