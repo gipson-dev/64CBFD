@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2613](WORKING_NOTES/2613-game-camera-transition-return-abi-audit-20261121.md): `func_15128030` return audit confirms noncanonical V0 paths with 180 connected angle-helper and 120 original tail-window cases. C drafts remain **private/uncredited**; production stays **4,596 / 5,528 (83.14%)**, with **103** more to 85%. Next C target: `func_15022024`.
+
 [Note 2612](WORKING_NOTES/2612-game-camera-mode-transition-direct-byte-match-20261121.md): `func_1512317C` restores camera mode gates, actor transition state and scalar springs, matching **227 words / frame 40 directly**, with zero guards. Paired five-check suites and the complete 727-byte image prediction pass. Total **4,596 / 5,528 (83.14%)**, Game **3,923 / 4,855 (80.80%)**, zero drift; **103** more to 85% at this denominator.
 
 [Note 2611](WORKING_NOTES/2611-game-camera-target-position-direct-byte-match-20261121.md): `func_151247C0` restores actor target-position smoothing and heading offsets, matching **189 words / frame 56 directly**, with zero guards. Paired five-check suites and the complete 683-byte image prediction pass. Total **4,595 / 5,528 (83.12%)**, Game **3,922 / 4,855 (80.78%)**, zero drift; **104** more to 85% at this denominator.
