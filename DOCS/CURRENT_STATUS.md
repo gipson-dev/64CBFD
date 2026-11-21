@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2599](WORKING_NOTES/2599-game-projection-record-draw-guarded-byte-match-20261120.md): `func_15035FE8` replaces its placeholder and matches **88 words / frame 104** through 46 proved rows. Paired 12-test suites, six dependency tests, three historical image gates and the complete 286-byte image prediction pass. Total **4,583 / 5,528 (82.91%)**, Game **3,910 / 4,855 (80.54%)**, zero drift; **116** more to 85% at this denominator.
+
 [Note 2598](WORKING_NOTES/2598-game-actor-randomized-effect-guarded-byte-match-20261120.md): `func_150F97EC` replaces its placeholder and matches **89 words / frame 112** through 28 proved guards and one actor reload. Paired five-test suites, three historical image gates and the complete 310-byte image prediction pass. Total **4,582 / 5,528 (82.89%)**, Game **3,909 / 4,855 (80.51%)**, zero drift; **117** more to 85% at this denominator.
 
 [Note 2597](WORKING_NOTES/2597-game-list-draw-guarded-byte-match-20261120.md): `func_1517E4A8` replaces its placeholder and matches **361 words / frame 184** through 162 proved guards. Paired 23-test suites before/after installation and the complete 1,068-byte image prediction pass. Total **4,581 / 5,528 (82.87%)**, Game **3,908 / 4,855 (80.49%)**, zero drift; **118** more to 85% at this denominator.

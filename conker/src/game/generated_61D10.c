@@ -1,5 +1,18 @@
 #include <ultra64.h>
 
+typedef struct {
+    u8 *matrix;
+    u8 alpha;
+    u8 color[3];
+    u8 slot;
+    u8 reserved09[2];
+    u8 skip;
+} ProjectionDrawRecord61D10;
+
+extern ProjectionDrawRecord61D10 D_800C3F08[];
+Gfx *func_1502CCFC(Gfx *, s32, s32, u8 *, s32, s32 *, s32, s32);
+
+
 void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
 void func_150A8050(f32 [4][4], f32, f32, f32);
 s32 func_150AD960(s32, s32, s32, s32);
@@ -372,7 +385,7 @@ finish:
 }
 
 u8 *func_150356C8(void) {
-    extern u8 D_800C3F08[];
+    extern ProjectionDrawRecord61D10 D_800C3F08[];
     u8 val = D_800C3F00;
 
     if (val == 15) {
@@ -380,7 +393,7 @@ u8 *func_150356C8(void) {
     }
     val++;
     D_800C3F00 = val;
-    return D_800C3F08 + (val - 1) * 12;
+    return (u8 *)(D_800C3F08 + val - 1);
 }
 
 /* Test an actor's reflected projection against the current view. */
@@ -425,9 +438,34 @@ s32 func_15035D6C() {
     return 0;
 }
 
-s32 func_15035FE8() {
-    return 0;
+/* Draw queued records with their matrix, opacity and color parameters. */
+Gfx *func_15035FE8(Gfx *commands, s32 view) {
+    s32 red;
+    s32 parameters[4];
+    ProjectionDrawRecord61D10 *record;
+
+    if (D_800C3F00 == 0) {
+        return commands;
+    }
+    gSPSetGeometryMode(commands++, G_SHADE | G_SHADING_SMOOTH);
+    gSPClearGeometryMode(commands++, G_FOG | G_LOD);
+    gDPSetAlphaCompare(commands++, G_AC_NONE);
+    if (D_800C3F00 > 0) {
+        for (record = D_800C3F08; record < D_800C3F08 + D_800C3F00; record++) {
+            if (record->skip == 0) {
+                red = record->color[0];
+                parameters[0] = red;
+                parameters[1] = record->color[1];
+                parameters[2] = record->color[2];
+                parameters[3] = 255;
+                commands = func_1502CCFC(commands, record->slot, view, record->matrix,
+                record->alpha, parameters, 0, 1);
+            }
+        }
+    }
+    return commands;
 }
+
 
 s32 func_15036148() {
     return 0;

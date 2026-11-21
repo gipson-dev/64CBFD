@@ -125,7 +125,7 @@ s32  func_151135C4(s32 arg0, s32 arg1, s16 arg2);
 s32  func_151D6778(s32 arg0);
 s32  func_15186794(s32 arg0, s32 arg1);
 Gfx *func_1502BAD0(Gfx *commands, s32 mode, s16 view);
-s32  func_15035FE8(s32 arg0, s32 arg1);
+Gfx *func_15035FE8(Gfx *commands, s32 view);
 s32  func_15188D00(s32 arg0, s32 arg1, s16 arg2);
 s32  func_151D5E90(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32  func_151D61B0(s32 arg0);
@@ -499,7 +499,7 @@ s32 func_150195A0(Gfx *commands, s16 view) {
     commands = (Gfx *)func_15186794((s32)commands, view);
     commands = (Gfx *)func_1501A490((s32)commands, view, 0, 0, 0, 0);
     commands = func_1502BAD0(commands, 1, view);
-    commands = (Gfx *)func_15035FE8((s32)commands, view);
+    commands = func_15035FE8(commands, view);
     gSPMatrix(commands++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
     if (state->unk5F0 & 1) {
         commands = (Gfx *)func_15018E88(commands, view);
