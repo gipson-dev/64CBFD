@@ -818,3 +818,4 @@ endif
 # Audio command dispatch retains its original seven-entry table.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F3D0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: Makefile
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_C3E20.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009DF38_game

@@ -1,5 +1,17 @@
 # Current Decomp Status
 
+## Camera script query matched - 2026-11-21
+
+[Note 2617](WORKING_NOTES/2617-game-camera-query-direct-byte-match-20261121.md):
+`func_1509759C` emits all 127 words / frame0x50 directly from C, with zero
+guards and six unchanged neighbors. All five commands and retail table entries
+are restored; three obsolete placeholder omission rows are removed. Paired
+five-check suites, SDK32, the complete 92-word indirect caller, eight rebases,
+actual Make and the strict 509-byte image prediction pass. Total **4,600 /
+5,528 (83.21%)**, Game **3,927 / 4,855 (80.89%)**, zero drift; **99 more** to
+85%. Continue ordinary Game qualification; earlier private candidates stay uncredited.
+
+
 ## Camera origin shift matched - 2026-11-21
 
 [Note 2616](WORKING_NOTES/2616-game-camera-origin-shift-direct-byte-match-20261121.md):
