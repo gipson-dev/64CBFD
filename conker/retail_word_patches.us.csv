@@ -39492,3 +39492,11 @@ generated_61D10,func_15035FE8,0x124,0x00194080,0x00044080,-,-,"Normalize proved 
 generated_61D10,func_15035FE8,0x128,0x01194023,0x01044023,-,-,"Normalize proved record draw count-bound gate, duplicated limit and register scheduling",,,false
 generated_61D10,func_15035FE8,0x140,0x5420FFDF,0x5420FFD9,-,-,"Normalize proved record draw count-bound gate, duplicated limit and register scheduling",,,false
 generated_61D10,func_15035FE8,0x144,0x920B000B,0x9209000B,-,-,"Normalize proved record draw count-bound gate, duplicated limit and register scheduling",,,false
+generated_61D10,func_15036148,0x080,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_80097D74,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x088,0xC4360000,0xC4360000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_80097D74,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x150,0x8E060014,0x44070000,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x154,0x44070000,0x8E060014,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x158,0xE7BE0024,0xE7B40014,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x15C,0xE7BC0020,0xE7B40018,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x164,0xE7B40018,0xE7BC0020,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false
+generated_61D10,func_15036148,0x168,0xE7B40014,0xE7BE0024,-,-,Bind verified projection sentinel pool and normalize proved independent submit argument scheduling,,,false

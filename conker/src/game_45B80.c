@@ -48,7 +48,7 @@ s32 func_15177A94(void);
 s32 func_151814FC(void);
 void func_1517F75C(void);
 void func_1517F7B4(void);
-s32 func_15036148(void);
+void func_15036148(void);
 void func_1515D6C8(void);
 
 /* Scheduler-message and display-list interfaces used by the frame driver. */

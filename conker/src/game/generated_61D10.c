@@ -1,4 +1,10 @@
 #include <ultra64.h>
+#include "structs.h"
+
+extern struct127 D_800CC2D0[26];
+extern struct108 *D_800DBFF0;
+void func_1507C3E0(struct127 *, u16 *, u16 *, u16 *);
+
 
 typedef struct {
     u8 *matrix;
@@ -430,7 +436,9 @@ s32 func_15035714(s32 mode, u8 *actor, u8 *projection, f32 reflectionY) {
     return 0;
 }
 
-s32 func_15035808() {
+/* Unrecovered submission body; preserve its measured ten-argument ABI. */
+s32 func_15035808(s32 mode, s32 actorIndex, f32 x, f32 y, f32 z,
+    f32 angle0, f32 angle1, f32 innerRadius, f32 outerRadius, f32 alpha) {
     return 0;
 }
 
@@ -467,6 +475,33 @@ Gfx *func_15035FE8(Gfx *commands, s32 view) {
 }
 
 
-s32 func_15036148() {
-    return 0;
+/* Submit projected effects for active actors crossing their recorded height. */
+void func_15036148(void) {
+    f32 absentHeight;
+    u16 heightExtent;
+    u16 baseRadius;
+    u16 radius;
+    struct127 *actor;
+    s32 index;
+
+    actor = D_800CC2D0;
+    index = 0;
+    if ((D_800DBFF0->unk5F0 & 1) == 0) {
+        absentHeight = -10000.0f;
+        do {
+            if (actor->interaction_state != 0 &&
+                (actor->unk5 == 0 || actor->unk5 == 1) &&
+                actor->unk118 != absentHeight &&
+                actor->unk118 < actor->y_position &&
+                actor->unk180 < actor->unk118 && actor->unk28 > 5.0f) {
+                func_1507C3E0(actor, &heightExtent, &baseRadius, &radius);
+                if ((f32)(s16)heightExtent < actor->unk118 - actor->unk180) {
+                    func_15035808(1, index, actor->x_position, actor->unk118,
+                        actor->z_position, 0.0f, 0.0f, 100.0f, 150.0f, 127.0f);
+                }
+            }
+            index++;
+            actor++;
+        } while (index != 25);
+    }
 }
