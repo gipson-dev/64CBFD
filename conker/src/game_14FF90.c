@@ -61,12 +61,28 @@ __attribute__((__may_alias__))
     s32 secondaryFlags;
 } CameraWobble14FF90;
 
+void func_1515BA10(s32);
+s32 func_1515BA1C(s16);
+void func_1515BA48(s32);
+s32 func_1515BA54(s16);
+s32 func_1515BA80(s16);
+s32 func_1515BAAC(s16);
+void func_15124B18(struct108 *);
+/* Access recovered scalar fields inside unresolved SDK storage. */
+#ifdef __GNUC__
+typedef f32 CameraFlagFloat14FF90 __attribute__((__may_alias__));
+typedef s16 CameraFlagShort14FF90 __attribute__((__may_alias__));
+#else
+typedef f32 CameraFlagFloat14FF90;
+typedef s16 CameraFlagShort14FF90;
+#endif
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
 s32 func_1512317C(s32 arg0);
 void func_15123568(struct108 *camera);
-s32 func_151236D0();
+void func_151236D0(struct108 *camera);
 s32 func_15123A54();
 s32 func_151247C0(s32 arg0);
 s32 func_15124C38(s32 arg0, s32 arg1);
@@ -438,10 +454,59 @@ void func_15123568(struct108 *camera) {
 }
 
 #undef CAMERA_PRESET_SHIFT14FF90
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151236D0.s. */
-s32 func_151236D0() {
-    return 0;
+/* Update actor/height flags and dispatch the player's camera transitions. */
+void func_151236D0(struct108 *camera) {
+    s32 oldHeightFlag;
+    oldHeightFlag = camera->unk5F0 & 1;
+    if (camera->unk3D4 != 0) {
+        if (camera->unk3D4->unk9C != 0 || (((u8 *)camera->unk3D4)[0x95] != 0 && camera->unk3D0->unk137 == 0)) {
+            camera->unk5F0 |= 0x40;
+        } else {
+            camera->unk5F0 &= ~0x40;
+        }
+        if (camera->unk3D0->unk28 == 0.0f) camera->unk5F0 &= ~0x400;
+        if (*(CameraFlagShort14FF90 *)((u8 *)camera->unk3D4 + 8) != 0 && ((u8 *)camera->unk3D4)[0x16] == 0) {
+            camera->unk5F0 |= 8;
+        } else {
+            camera->unk5F0 &= ~8;
+        }
+        if (((u8 *)camera->unk3D4)[0x4E] == 2) {
+            camera->unk5F0 |= 0x80;
+        } else {
+            camera->unk5F0 &= ~0x80;
+        }
+    }
+    /* +0x360 is a float height limit; +0x7B0 is cleared after release. */
+    if (camera->unk2FC <= *(CameraFlagFloat14FF90 *)((u8 *)camera + 0x360) && camera->unk2C != 0x100) {
+        camera->unk5F0 |= 1;
+    } else {
+        camera->unk5F0 &= ~1;
+    }
+    if (camera->unk23C != 0) {
+        if (camera->unk5F0 & 1) {
+            func_1515BA80(camera->unk23D);
+        } else {
+            func_1515BA48(camera->unk23D);
+            *(CameraFlagFloat14FF90 *)((u8 *)camera + 0x7B0) = 0.0f;
+        }
+    } else if (!oldHeightFlag && (camera->unk5F0 & 1)) {
+        if ((camera->unk5F0 & 4) || (camera->unk2C & 0x40000)) func_1515BA80(camera->unk23D);
+        else func_1515BAAC(camera->unk23D);
+    } else if (oldHeightFlag && !(camera->unk5F0 & 1)) {
+        if ((camera->unk5F0 & 4) || (camera->unk2C & 0x40000)) {
+            func_1515BA48(camera->unk23D);
+            *(CameraFlagFloat14FF90 *)((u8 *)camera + 0x7B0) = 0.0f;
+        } else {
+            func_1515BA54(camera->unk23D);
+            func_15124B18(camera);
+        }
+    } else if (camera->unk5F0 & 1) {
+        func_1515BA1C(camera->unk23D);
+    } else {
+        func_1515BA10(camera->unk23D);
+    }
 }
+
 s32 func_15123934(struct108 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     s16 *slot16;
 
@@ -1187,22 +1252,22 @@ s32 func_15128540(s32 address) {
         func_1512A360((u8 *)address);
         *(CameraPositionBits14FF90 *)((u8 *)address + 0x2BC) = *(CameraPositionBits14FF90 *)((u8 *)address + 0x2A4);
         func_151256BC((CameraWobble14FF90 *)address);
-        func_151236D0(address);
+        func_151236D0((struct108 *)address);
         func_151284C4((struct108 *)address);
         return 1;
     } else if (*(u32 *)((u8 *)address + 0x2C) & 0x100000) {
         func_1512E4B0((struct108 *)address);
-        func_151236D0(address);
+        func_151236D0((struct108 *)address);
         func_151284C4((struct108 *)address);
         return 1;
     } else if (*(u32 *)((u8 *)address + 0x2C) & 0x200000) {
         func_151219D0(address);
-        func_151236D0(address);
+        func_151236D0((struct108 *)address);
         func_151284C4((struct108 *)address);
         return 1;
     } else if (*(u32 *)((u8 *)address + 0x2C) & 0x400000) {
         func_1512D380(address);
-        func_151236D0(address);
+        func_151236D0((struct108 *)address);
         func_151284C4((struct108 *)address);
         return 1;
     } else if (func_15126378(address)) {
