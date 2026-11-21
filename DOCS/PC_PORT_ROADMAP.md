@@ -1,5 +1,7 @@
 # PC Port Roadmap located in another project folder
 
+[Note 2606](WORKING_NOTES/2606-game-camera-orbit-setup-direct-byte-match-20261121.md): `func_15125A6C` restores the camera orbit setup and matches **117 words / frame 72 directly from C**, with zero guards. Paired five-check suites and the complete 494-byte image prediction pass. Total **4,590 / 5,528 (83.03%)**, Game **3,917 / 4,855 (80.68%)**, zero drift; **109** more to 85% at this denominator.
+
 [Note 2605](WORKING_NOTES/2605-game-camera-control-flags-direct-byte-match-20261121.md): `func_15125DB4` restores the camera control-bit filter and matches **225 words / frame 48 directly from C**, with zero guards. Paired five-check suites and the complete 736-byte image prediction pass. Total **4,589 / 5,528 (83.01%)**, Game **3,916 / 4,855 (80.66%)**, zero drift; **110** more to 85% at this denominator.
 
 [Note 2604](WORKING_NOTES/2604-game-camera-script-state-direct-byte-match-20261121.md): `func_15125C40` restores the camera-script countdown and matches **93 words / frame 40 directly from C**, with zero guards. Paired five-check suites and the complete 292-byte image prediction pass. Total **4,588 / 5,528 (83.00%)**, Game **3,915 / 4,855 (80.64%)**, zero drift; **111** more to 85% at this denominator.

@@ -5,7 +5,9 @@
 #include "functions.h"
 #undef func_15048F90
 extern void func_15048F90();
+#define D_800C3600 D_800C3600_legacy_pointer_declaration
 #include "variables.h"
+#undef D_800C3600
 void func_151C9ED4(struct108 *);
 
 typedef struct {
@@ -26,7 +28,7 @@ s32 func_151247C0(s32 arg0);
 s32 func_15124C38(s32 arg0, s32 arg1);
 s32 func_151256BC(s32 arg0);
 void func_15125924(struct108 *camera);
-s32 func_15125A6C(s32 arg0);
+void func_15125A6C(struct108 *camera);
 void func_15125C40(struct108 *camera);
 void func_15125DB4(struct108 *camera);
 void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
@@ -672,55 +674,67 @@ void func_15125924(struct108 *camera) {
         *(f32 *)((u8 *)camera + 0x348) = offset;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125A6C.s. */
-s32 func_15125A6C(s32 arg0) {
-    return 0;
+/* Retail stores an inline camera setup here, including a byte at +0x5C. */
+typedef struct {
+    s32 active;
+    s32 word04;
+    f32 zero08;
+    u8 pad0C[8];
+    f32 x, y, z;
+    f32 zero20;
+    f32 angle24;
+    f32 heading28;
+    u8 pad2C[0x30];
+    u8 byte5C;
+    u8 pad5D[3];
+} CameraOrbitSetup14FF90;
+extern CameraOrbitSetup14FF90 D_800C3600;
+extern f32 D_800C3614, D_800C3618, D_800C361C, D_800C3624;
+extern u8 D_800C365C;
+void func_1512D560(u8 *, s32, void *);
+
+/* Build the state-0x2A orbit setup and release it when that state ends. */
+void func_15125A6C(struct108 *camera) {
+    s32 state;
+    /* These unused locals preserve retail's frame and float homes under IDO. */
+    f32 padding0;
+    f32 padding1;
+    f32 heading;
+    f32 padding2;
+    f32 padding3;
+    f32 trig;
+    f32 angle;
+    f32 phase;
+    state = camera->unk23E;
+    if (state == 0x2A) {
+        heading = camera->unk3D0->unk40;
+        if (camera->unk2C != 0x40000) {
+            func_1512D560((u8 *)camera, 5, 0);
+            camera->unk7E4 = 1;
+        }
+        D_800DBFF4[0] = 3;
+        D_800C3600.active = 1;
+        D_800C3600.word04 = 0;
+        angle = heading * D_800A3550;
+        trig = sinf(angle);
+        phase = (heading - 90.0f) * D_800A3554;
+        D_800C3614 = (sinf(phase) * 46.0f) + (camera->unk3D0->x_position + (138.0f * trig));
+        D_800C3618 = camera->unk3D0->y_position + 96.0f;
+        trig = cosf(angle);
+        D_800C361C = (cosf(phase) * 46.0f) + (camera->unk3D0->z_position + (138.0f * trig));
+        D_800C3600.zero20 = 0.0f;
+        D_800C3624 = -180.0f;
+        D_800C3600.zero08 = 0.0f;
+        D_800C3600.heading28 = heading - 180.0f;
+        D_800C365C = 0;
+        func_1512D560((u8 *)camera, 7, &D_800C3600);
+        return;
+    }
+    if (camera->unk7E4 != 0) {
+        func_1512D560((u8 *)camera, 6, 0);
+        camera->unk7E4 = 0;
+    }
 }
-// NON-MATCHING: miles away
-// void func_15125A6C(struct108 *arg0) {
-//     f32 pad3C;
-//     f32 sp38;
-//     f32 pad34;
-//     f32 pad30;
-//     f32 sp2C;
-//     f32 sp28;
-//     f32 sp24;
-//
-//     f32 temp_f12;
-//     f32 temp_f12_2;
-//
-//     if (arg0->unk23E == 0x2A) {
-//         sp38 = arg0->unk3D0->unk40;
-//         if (arg0->unk2C != 0x40000) {
-//             func_1512D560(arg0, 5, 0);
-//             arg0->unk7E4 = 1U;
-//         }
-//         D_800DBFF4[0] = 3;
-//         D_800C3600->unk0 = 1;
-//         D_800C3600->unk4 = 0;
-//         temp_f12 = sp38 * D_800A3550;
-//         sp28 = temp_f12;
-//         sp2C = sinf(temp_f12);
-//         temp_f12_2 = (sp38 - 90.0f) * D_800A3554;
-//         sp24 = temp_f12_2;
-//         D_800C3600->unk14 = (sinf(temp_f12_2) * 46.0f) + (arg0->unk3D0->unk14 + (138.0f * sp2C));
-//         D_800C3600->unk18 = arg0->unk3D0->unk18 + 96.0f;
-//         sp2C = cosf(temp_f12);
-//         D_800C3600->unk1C = (cosf(temp_f12_2) * 46.0f) + (arg0->unk3D0->unk1C + (138.0f * sp2C));
-//         D_800C3600->unk20 = 0.0f;
-//         D_800C3600->unk24 = -180.0f;
-//         D_800C3600->unk8 = 0.0f;
-//         D_800C3600->unk28 = sp38 - 180.0f;
-//         D_800C3600->unk5C = 0;
-//         func_1512D560(arg0, 7, D_800C3600);
-//         return;
-//     }
-//
-//     if (arg0->unk7E4 != 0) {
-//         func_1512D560(arg0, 6, 0);
-//         arg0->unk7E4 = 0U;
-//     }
-// }
 /* Maintain the camera-state countdown and its associated script events. */
 void func_15125C40(struct108 *camera) {
     s32 state;
