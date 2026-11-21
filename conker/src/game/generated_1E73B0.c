@@ -1,6 +1,19 @@
 #include <ultra64.h>
 #include "structs.h"
 
+typedef struct {
+    u8 retained00[0x54];
+    f32 x, y, z;
+    u8 retained60[0x1C];
+    f32 matrices[2][4][4];
+    u8 retainedFC[0x24];
+    f32 angle;
+} BufferedMatrixOwner1E73B0;
+extern u8 D_800BE9C0;
+extern f32 D_800AA8E0;
+void func_150A8050(f32 [4][4], f32, f32, f32);
+
+
 /* Non-matching placeholders for the text-only asm slice asm/1E73B0.s. */
 
 extern s32 D_800BE9E4;
@@ -401,8 +414,25 @@ s32 func_151BE850() {
     return 0;
 }
 
-s32 func_151BEB20() {
-    return 0;
+/* Rebuild the selected matrix, copy translation, and scale its rotation. */
+s32 func_151BEB20(BufferedMatrixOwner1E73B0 *owner) {
+    f32 scale;
+
+    func_150A8050(owner->matrices[D_800BE9C0], 0.0f, owner->angle, 0.0f);
+    scale = D_800AA8E0;
+    owner->matrices[D_800BE9C0][3][0] = owner->x;
+    owner->matrices[D_800BE9C0][3][1] = owner->y;
+    owner->matrices[D_800BE9C0][3][2] = owner->z;
+    owner->matrices[D_800BE9C0][0][0] *= scale;
+    owner->matrices[D_800BE9C0][0][1] *= scale;
+    owner->matrices[D_800BE9C0][0][2] *= scale;
+    owner->matrices[D_800BE9C0][1][0] *= scale;
+    owner->matrices[D_800BE9C0][1][1] *= scale;
+    owner->matrices[D_800BE9C0][1][2] *= scale;
+    owner->matrices[D_800BE9C0][2][0] *= scale;
+    owner->matrices[D_800BE9C0][2][1] *= scale;
+    owner->matrices[D_800BE9C0][2][2] *= scale;
+    return 1;
 }
 
 s32 func_151BEC94(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4) {

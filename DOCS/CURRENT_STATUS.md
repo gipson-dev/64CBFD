@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Owner matrix buffer matched - 2026-11-21
+
+[Note 2619](WORKING_NOTES/2619-game-owner-buffer-matrix-direct-byte-match-20261121.md):
+`func_151BEB20` emits all 93 words / frame 0x20 directly from C, with zero
+guards and 56 preserved neighbors. The selected matrix, fresh selector reads,
+translation and nine scaled products are restored. Paired five-check suites,
+SDK32, the complete indirect caller and predicate, six rebases and the strict
+297-byte image prediction pass. Total **4,602 / 5,528 (83.25%)**, Game
+**3,929 / 4,855 (80.93%)**, zero drift; **97 more** to 85%.
+
 ## Owner ground-effect constructor matched - 2026-11-21
 
 [Note 2618](WORKING_NOTES/2618-game-owner-ground-effect-direct-byte-match-20261121.md):
