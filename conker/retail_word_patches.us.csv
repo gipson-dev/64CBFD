@@ -39925,3 +39925,45 @@ generated_CBAF0,func_1509E730,0x14C,0x0C000000,0x32240FFF,R_MIPS_26:func_1000E05
 generated_CBAF0,func_1509E730,0x150,0x32240FFF,0x10000002,-,-,Move dominated audio-dispatch zero return to its default block and rebase the closed instruction schedule,,,false
 generated_CBAF0,func_1509E730,0x154,0x10000001,0x24020001,-,-,Move dominated audio-dispatch zero return to its default block and rebase the closed instruction schedule,,,false
 generated_CBAF0,func_1509E730,0x158,0x24020001,0x00001025,-,-,Move dominated audio-dispatch zero return to its default block and rebase the closed instruction schedule,,,false
+game_14FF90,func_151277B0,0x8,0x3C0A00FF,0x3C0900FF,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xC,0x354AFFFF,0x3529FFFF,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x44,0x006A4024,0x00694024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x60,0x01CA4824,0x01C95024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xC4,0x1109000B,0x110A000B,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xD0,0x01097823,0x010A1023,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xD4,0x2DE10065,0x2C410065,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xDC,0x3C190000,0x3C0F0000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9E4,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xE0,0x8F390000,0x8DEF0000,R_MIPS_LO16:D_800BE9E4,R_MIPS_LO16:D_800BE9E4,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xE8,0x00F93821,0x00EF3821,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xF8,0x00076600,0x0007CE00,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0xFC,0x01896825,0x032A6025,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x104,0xACCD001C,0xACCC001C,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x108,0x8FAE0048,0x8FAD0048,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x110,0x95D80000,0x95AE0000,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x114,0x53010027,0x51C10027,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x118,0x94CE0024,0x94CD0024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x124,0x8CCF0010,0x8CD80010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x134,0x8CCF0010,0x8CD80010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x140,0x01E1C824,0x03017824,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x144,0xACD90010,0xACCF0010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x148,0x8FAD0048,0x8FAC0048,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x14C,0x240C061C,0x2419061C,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x154,0xA5AC0000,0xA5990000,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x158,0x8FAE0048,0x8FAD0048,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x160,0x95D80000,0x95AE0000,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x164,0x57010013,0x55C10013,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x168,0x94CE0024,0x94CD0024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x188,0x8FB90048,0x8FAF0048,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x18C,0x240F061D,0x2418061D,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x194,0xA72F0000,0xA5F80000,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x198,0x8CCC0010,0x8CD90010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x19C,0x01816824,0x03216024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1A4,0xACCD0010,0xACCC0010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1B0,0x94CE0024,0x94CD0024,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1B4,0x8FB80048,0x8FAE0048,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1BC,0x15C00008,0x15A00008,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1C4,0x970F0000,0x95D80000,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1C8,0x15E00005,0x17000005,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1D0,0x8CD90010,0x8CCF0010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1D8,0x03216024,0x01E1C824,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_151277B0,0x1DC,0xACCC0010,0xACD90010,-,-,Normalize proven camera sound callback GPR allocation,,,false

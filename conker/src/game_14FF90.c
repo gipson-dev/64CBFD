@@ -17,6 +17,25 @@ typedef struct {
 void func_15143134(f32 *, f32 *, u8 *);
 
 
+typedef struct {
+    u16 soundId;
+    s16 x, y, z;
+    u8 pad08[8];
+    u32 flags;
+    u32 pad14;
+    struct108 *camera;
+    u32 packedScale;
+    u32 pad20;
+    u16 handle;
+    u8 pad26[10];
+} CameraSoundRecord14FF90;
+typedef struct {
+    u8 pad00[0x174];
+    f32 factor174, factor178;
+    u8 pad17C[0x1B];
+    u8 state;
+} CameraActorScale14FF90;
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
@@ -34,7 +53,7 @@ void func_15125DB4(struct108 *camera);
 void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
 s32 func_15126378();
 s32 func_15127520();
-s32 func_151277B0();
+s32 func_151277B0(CameraSoundRecord14FF90 *, s32 *, s32 *, s32 *, s32 *, s32 *, u16 *);
 s32 func_151279A0();
 s32 func_15128030();
 void func_151283B8(struct108 *camera);
@@ -913,10 +932,57 @@ s32 func_15126378() {
 s32 func_15127520() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151277B0.s. */
-s32 func_151277B0() {
+/* Track actor scale changes and select the associated sound transition. */
+s32 func_151277B0(CameraSoundRecord14FF90 *slot, s32 *unusedCallbackValue, s32 *unusedVolume, s32 *unusedPan, s32 *unusedCents, s32 *unusedFx, u16 *state) {
+    struct108 *camera;
+    u32 previous;
+    u32 count;
+    u32 current;
+    s32 stopped;
+    union { f32 real; u32 word; } scale;
+    camera = slot->camera;
+    previous = slot->packedScale & 0xFFFFFF;
+    count = slot->packedScale >> 24;
+    stopped = 0;
+    scale.real = ((CameraActorScale14FF90 *)camera->unk3D4)->factor174 * ((CameraActorScale14FF90 *)camera->unk3D4)->factor178;
+    current = scale.word & 0xFFFFFF;
+    if (*state == 0x622) *state = 0;
+    slot->x = (s16)camera->unk3D0->x_position;
+    slot->y = (s16)camera->unk3D0->y_position;
+    slot->z = (s16)camera->unk3D0->z_position;
+    if (((CameraActorScale14FF90 *)camera->unk3D4)->state == 2) {
+        if (previous != current) {
+            if (count < 10) {
+                if (previous - current > 100) count += D_800BE9E4;
+            } else {
+                stopped = 1;
+            }
+        } else {
+            count = 0;
+        }
+        slot->packedScale = (count << 24) | current;
+        if (stopped) {
+            if (*state != 0x61C) {
+                if (slot->handle != 0) func_100111C8(slot->handle);
+                slot->handle = 0;
+                slot->flags &= ~0x80;
+                *state = 0x61C;
+            }
+        } else {
+            if (*state == 0x61C) {
+                if (slot->handle != 0) func_100111C8(slot->handle);
+                slot->handle = 0;
+                *state = 0x61D;
+                slot->flags &= ~0x80;
+            }
+        }
+    } else {
+        return 1;
+    }
+    if (slot->handle == 0 && *state == 0) slot->flags &= ~0x80;
     return 0;
 }
+
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151279A0.s. */
 #pragma GLOBAL_ASM("asm/nonmatchings/game_14FF90/func_151279A0.s")
 /* Reset camera state and release the selected actor slot. */
