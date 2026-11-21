@@ -122,10 +122,13 @@ __attribute__((__may_alias__))
     f32 offset, offsetVelocity, targetOffset;
 } CameraPosition14FF90;
 
+struct127 *func_15125490(struct108 *);
+void func_1511FC60(struct108 *);
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
-s32 func_1512317C(s32 arg0);
+void func_1512317C(struct108 *camera);
 void func_15123568(struct108 *camera);
 void func_151236D0(struct108 *camera);
 s32 func_15123A54();
@@ -443,10 +446,59 @@ void func_15123070(struct108 *camera) {
         camera->unk390 += 360.0f;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_1512317C.s. */
-s32 func_1512317C(s32 arg0) {
-    return 0;
+/* Gate camera mode 0x100 and maintain its actor transition state. */
+void func_1512317C(struct108 *camera) {
+    struct127 *actor;
+    s32 old100;
+    s32 old200;
+    s32 stunned;
+    s32 blocked;
+    actor = camera->unk3D0;
+    old100 = camera->unk5F0 & 0x100;
+    old200 = camera->unk5F0 & 0x200;
+    stunned = actor->stunned != 0 && camera->unk23E != 9 &&
+        camera->unk23E != 0x38 && camera->unk23E != 0x39 &&
+        camera->unk23E != 0x3B && camera->unk23E != 0x37 &&
+        camera->unk23E != 0x15 && camera->unk23E != 0x26 && camera->unk23E != 0x3A;
+    /* Reload the primary actor after the query, preserving the retail access order. */
+    blocked = (camera->unk2C & 0x80) != 0 || (camera->unk84 & 0x1000000) != 0 ||
+        (actor->unk28 != 0 && actor->in_water == 0 && camera->unk3D4->unk9C == 0 &&
+         old100 == 0 && old200 == 0 && camera->unk23E != 3) ||
+        (actor->unk65 != 0 && old100 == 0 && old200 == 0) || stunned ||
+        func_15125490(camera) != 0 || (actor = camera->unk3D0)->health == 0 ||
+        ((((u8 *)camera->unk3D4)[0x4E] & 0xF) == 1 && actor->xz_velocity > 15.0f) ||
+        ((u8 *)camera->unk3D4)[0x1AC] != 0;
+    if ((*camera->unk36C & 0x10) != 0 && !blocked) {
+        if ((camera->unk36A & 0x10) != 0) {
+            if (func_15123934(camera, 0x100, 4, camera->unk134, 1) != 0) {
+                func_1511FC60(camera);
+            }
+        }
+    } else {
+        if (camera->unk2C == 0x100 && camera->unk73C == 0) {
+            func_151239CC(camera, 1);
+            camera->unk3D4->unk198 = 0;
+            camera->unk3D4->unk197 = 0;
+            *(CameraFlagShort14FF90 *)((u8 *)camera + 0x5F8) = 1;
+            camera->unk5FC = 2;
+            camera->unk36A &= ~0x10;
+            *camera->unk36C &= ~0x10;
+        }
+        if (camera->unk2C == 0x100 || camera->unk73C != 0) {
+            camera->unk36A &= ~0x10;
+            *camera->unk36C &= ~0x10;
+        }
+        camera->unk3D4->unk198 = camera->unk73C;
+        if (camera->unk73C != 0 || camera->unk73C == 3) {
+            func_150495B0((f32 *)((u8 *)camera + 0x74C), 0.0f,
+                (f32 *)((u8 *)camera + 0x79C), 4.0f, 9.0f, camera->unk7B4);
+            func_150495B0((f32 *)((u8 *)camera + 0x754), 0.0f,
+                (f32 *)((u8 *)camera + 0x7A0), 4.0f, 9.0f, camera->unk7B4);
+        }
+        if (camera->unk2C != 0x100 && camera->unk73C != 0) camera->unk73C = 0;
+    }
 }
+
 void func_15123508(struct108 *arg0) {
     if ((arg0->unk84 & 2) != 0) {
         if (((arg0->unk36A & 2) != 0) && (arg0->unk698 == 0)) {
