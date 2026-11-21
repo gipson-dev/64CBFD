@@ -1,5 +1,18 @@
 # Update Log
 
+## Camera origin shift matched - 2026-11-21
+
+[Note 2616](WORKING_NOTES/2616-game-camera-origin-shift-direct-byte-match-20261121.md):
+`func_15097798` now emits all 93 body words / frame0x30 directly from C,
+with zero guards, six unchanged neighbors and its separate alignment nop.
+Normalized translation, cached camera lifetime and six fresh signed scale
+reads are restored. Paired five-check suites, native32, the original caller
+window, 53 connected helper words, rebases, natural Make and the strict
+340-byte image prediction pass. Total **4,599 / 5,528 (83.19%)**, Game
+**3,926 / 4,855 (80.87%)**, zero drift; **100 more** to 85%. Next inspect
+`func_1509759C`; earlier private candidates remain uncredited.
+
+
 ## Owner two-effect initializer matched - 2026-11-21
 
 [Note 2615](WORKING_NOTES/2615-game-owner-two-effect-initializer-direct-byte-match-20261121.md):

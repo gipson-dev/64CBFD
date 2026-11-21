@@ -1,4 +1,19 @@
 #include <ultra64.h>
+#include "structs.h"
+
+/* Both vectors are floats; the shared SDK still calls the first Z word s32. */
+typedef struct {
+    u8 retained000[0x2A4];
+    struct17 origin;
+    u8 retained2B0[0x48];
+    struct17 target;
+    u8 retained304[0x69C];
+} CameraShiftC3E20;
+extern CameraShiftC3E20 *D_800DBFF0;
+extern s32 D_800D2E30[];
+void func_15048F90(struct17 *, struct17 *, struct17 *);
+void func_1504917C(struct17 *, struct17 *);
+
 
 /* Non-matching placeholders for the text-only asm slice asm/C3E20.s. */
 
@@ -53,6 +68,19 @@ s32 func_1509759C(s32 arg0, s32 arg1, s32 *arg2) {
     return 0;
 }
 
-s32 func_15097798() {
-    return 0;
+/* Move both camera points opposite their normalized separation. */
+void func_15097798(s32 view) {
+    CameraShiftC3E20 *camera = &D_800DBFF0[view];
+    struct17 direction;
+
+    if (D_800D2DB4 != 0) {
+        func_15048F90(&camera->origin, &camera->target, &direction);
+        func_1504917C(&direction, &direction);
+        camera->origin.unk0 += direction.unk0 * -2.5f * D_800D2E30[view];
+        camera->origin.unk4 += direction.unk4 * -2.0f * D_800D2E30[view];
+        camera->origin.unk8 += direction.unk8 * -2.5f * D_800D2E30[view];
+        camera->target.unk0 += direction.unk0 * -2.5f * D_800D2E30[view];
+        camera->target.unk4 += direction.unk4 * -2.0f * D_800D2E30[view];
+        camera->target.unk8 += direction.unk8 * -2.5f * D_800D2E30[view];
+    }
 }
