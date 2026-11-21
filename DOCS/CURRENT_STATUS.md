@@ -1,5 +1,7 @@
 # Current Decomp Status
 
+[Note 2604](WORKING_NOTES/2604-game-camera-script-state-direct-byte-match-20261121.md): `func_15125C40` restores the camera-script countdown and matches **93 words / frame 40 directly from C**, with zero guards. Paired five-check suites and the complete 292-byte image prediction pass. Total **4,588 / 5,528 (83.00%)**, Game **3,915 / 4,855 (80.64%)**, zero drift; **111** more to 85% at this denominator.
+
 [Note 2603](WORKING_NOTES/2603-game-audio-command-dispatch-guarded-byte-match-20261121.md): `func_1509E730` restores the seven-command audio dispatcher and matches **92 words / frame 32** through 80 checked rows. Paired 60-test suites, three historical image gates, and the complete 321-byte prediction pass. Total **4,587 / 5,528 (82.98%)**, Game **3,914 / 4,855 (80.62%)**, zero drift; **112** more to 85% at this denominator.
 
 [Note 2602](WORKING_NOTES/2602-game-projection-submit-guarded-byte-match-20261121.md): `func_15035808` replaces its placeholder and matches **345 words / frame 216** through 316 checked rows. Paired 36-test suites, six dependency tests, three historical image gates and the complete 1,050-byte image prediction pass. Total **4,586 / 5,528 (82.96%)**, Game **3,913 / 4,855 (80.60%)**, zero drift; **113** more to 85% at this denominator.

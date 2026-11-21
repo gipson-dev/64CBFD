@@ -27,7 +27,7 @@ s32 func_15124C38(s32 arg0, s32 arg1);
 s32 func_151256BC(s32 arg0);
 void func_15125924(struct108 *camera);
 s32 func_15125A6C(s32 arg0);
-s32 func_15125C40(s32 arg0);
+void func_15125C40(struct108 *camera);
 s32 func_15125DB4(s32 arg0);
 void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
 s32 func_15126378();
@@ -721,9 +721,35 @@ s32 func_15125A6C(s32 arg0) {
 //         arg0->unk7E4 = 0U;
 //     }
 // }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125C40.s. */
-s32 func_15125C40(s32 arg0) {
-    return 0;
+/* Maintain the camera-state countdown and its associated script events. */
+void func_15125C40(struct108 *camera) {
+    s32 state;
+    s32 special;
+    s32 active;
+    state = camera->unk23E;
+    special = D_800D1940 == 0x42 && state == 0x1A;
+    active = state == 3 || state == 0x1A || special;
+    camera->unk7CC--;
+    if (active) {
+        if (camera->unk7CC == 0) {
+            if (special) {
+                func_1509BFB0(3, 0x9000, 0x18, (s32)camera->unk3D0->unk40, 0, 250);
+            } else if (state == 0x1A) {
+                func_1509BFB0(3, 0x9000, 0x18, 0, 0, 250);
+            }
+            camera->unk5F0 |= 2;
+            *camera->unk36C |= 0x10;
+            camera->unk36A |= 0x10;
+            camera->unk7CC = 1;
+        }
+    } else {
+        if ((camera->unk5F0 & 2) && !active) {
+            func_1509BFB0(1, 0x9000, 0x10, 0);
+            func_1509BFB0(1, 0x9000, 0x0F, 0);
+            camera->unk5F0 &= ~2;
+        }
+        camera->unk7CC = 2;
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125DB4.s. */
 s32 func_15125DB4(s32 arg0) {
