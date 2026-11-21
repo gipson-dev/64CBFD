@@ -28,7 +28,7 @@ s32 func_151256BC(s32 arg0);
 void func_15125924(struct108 *camera);
 s32 func_15125A6C(s32 arg0);
 void func_15125C40(struct108 *camera);
-s32 func_15125DB4(s32 arg0);
+void func_15125DB4(struct108 *camera);
 void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
 s32 func_15126378();
 s32 func_15127520();
@@ -751,9 +751,73 @@ void func_15125C40(struct108 *camera) {
         camera->unk7CC = 2;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15125DB4.s. */
-s32 func_15125DB4(s32 arg0) {
-    return 0;
+/* View of the signed suppression timer in the camera's unresolved padding. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{ u8 prefix[0x84A]; s16 timer; } CameraControlTimer14FF90;
+
+/* Filter camera control bits against its state, actor flags and suppression timer. */
+void func_15125DB4(struct108 *camera) {
+    s32 state;
+    state = camera->unk23E;
+    if (((u8 *)camera->unk3D4)[0x120] != 0 || D_80084480 != 0) {
+        camera->unk36A = 0;
+        *camera->unk36C &= ~0x1F;
+        return;
+    }
+    if (state != 0) {
+        if (state == 2 || state == 0x12 || state == 0x13 || state == 0x0A ||
+            state == 0x34 || state == 0x10 || state == 0x0F) {
+            if (state == 0x0F) func_1509BFB0(3, 0x9000, 0x18, 0x25, 0x13, 480);
+            *camera->unk36C |= 0x10;
+            camera->unk36A |= 0x10;
+            *camera->unk36C &= ~0x0F;
+        } else {
+            camera->unk36A = D_800BE710[camera->unk368];
+        }
+        if (state == 3 || state == 0x0D || state == 0x1A || state == 0x2A) {
+            camera->unk36A &= ~0x0F;
+            *camera->unk36C &= ~0x0F;
+        }
+        if (state == 0x29) {
+            *camera->unk36C |= 0x10;
+            camera->unk36A |= 0x10;
+        }
+    } else if (camera->unk2C & 0x100) {
+        camera->unk36A &= ~0x0F;
+        *camera->unk36C &= ~0x0F;
+    }
+    if (((u8 *)camera->unk3D0)[0xAD] == 1 && (camera->unk2C & 0x80)) {
+        camera->unk36A &= ~0x1C;
+        *camera->unk36C &= ~0x0C;
+    }
+    if (camera->unk84 & 0x200000) camera->unk36A &= ~0x0F;
+    if (D_800C3671 != 0 || (camera->unk5F0 & 0x80)) {
+        camera->unk36A &= ~0x1F;
+        *camera->unk36C &= ~0x1F;
+    }
+    if (((u8 *)camera->unk3D4)[0x7D] != 0 || ((u8 *)camera->unk3D4)[0x1AC] != 0 ||
+        ((u8 *)camera->unk3D4)[0x27] != 0) {
+        camera->unk36A &= ~0x10;
+        *camera->unk36C &= ~0x10;
+    }
+    if (((u8 *)camera->unk3D4)[0x95] != 0 || ((s16)camera->unk5FC != 0 &&
+        ((u8 *)camera->unk3D4)[0x1B3] != 0)) {
+        camera->unk36A &= ~0x1F;
+        *camera->unk36C &= ~0x1F;
+    }
+    if (((camera->unk2C & 0x100) && camera->unk73C == 0) || camera->unk73C == 3) {
+        camera->unk36A &= ~0x10;
+        *camera->unk36C &= ~0x10;
+    }
+    if ((camera->unk2C & 0x40) && ((CameraControlTimer14FF90 *)camera)->timer != 0) {
+        ((CameraControlTimer14FF90 *)camera)->timer -= D_800BE9E4;
+        camera->unk36A &= ~0x10;
+        *camera->unk36C &= ~0x10;
+        if (((CameraControlTimer14FF90 *)camera)->timer <= 0) ((CameraControlTimer14FF90 *)camera)->timer = 0;
+    }
 }
 void func_15126138(struct108 *arg0) {
     struct127 *temp_v0_2;
