@@ -40,6 +40,27 @@ extern u16 D_800894E0[2][3];
 extern f32 D_800A3580;
 void func_151CC290(void *);
 
+void func_1508EF80(f32 *, f32 *, f32, f32 *);
+
+/* Float fields hidden by the shared camera padding, plus its two vectors. */
+typedef struct
+#ifdef __GNUC__
+__attribute__((__may_alias__))
+#endif
+{
+    u8 pad00[0x2C];
+    s32 flags;
+    u8 pad30[0x26C];
+    f32 phase;
+    u8 pad2A0[0x1C];
+    f32 pivot[3];
+    u8 pad2C8[0x30];
+    f32 position[3];
+    u8 pad304[0x2E8];
+    f32 amplitude;
+    s32 secondaryFlags;
+} CameraWobble14FF90;
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
@@ -49,7 +70,7 @@ s32 func_151236D0();
 s32 func_15123A54();
 s32 func_151247C0(s32 arg0);
 s32 func_15124C38(s32 arg0, s32 arg1);
-s32 func_151256BC(s32 arg0);
+void func_151256BC(CameraWobble14FF90 *camera);
 void func_15125924(struct108 *camera);
 void func_15125A6C(struct108 *camera);
 void func_15125C40(struct108 *camera);
@@ -662,9 +683,38 @@ void func_15125690(struct108 *arg0, s32 arg1) {
         *temp_v0 = arg1;
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_151256BC.s. */
-s32 func_151256BC(s32 arg0) {
-    return 0;
+/* Advance or decay camera wobble, then rotate both X/Z position vectors. */
+void func_151256BC(CameraWobble14FF90 *camera) {
+    u32 randomWord;
+    f32 amount;
+    f32 firstScale;
+    f32 secondScale;
+    if ((camera->flags & 0x80000) || ((camera->secondaryFlags & 8) && !(camera->flags & 0x40000))) {
+        randomWord = (u32)func_150ADA20() % 3;
+        /* The phase-limit local becomes the first rotation scale below. */
+        firstScale = D_800A3534;
+        camera->phase += (((f32)randomWord + (f32)randomWord) * D_800A3538) * D_800BE9A4;
+        while (camera->phase > firstScale) {
+            camera->phase -= firstScale;
+        }
+        camera->amplitude += ((sinf(camera->phase) * 4.0f) - camera->amplitude) * D_800A353C;
+        amount = camera->amplitude * D_800A3540;
+        if (camera->flags & 0x80000) {
+            firstScale = 4.0f;
+            secondScale = 4.0f;
+        } else {
+            firstScale = 1.0f;
+            secondScale = 20.0f;
+        }
+        func_1508EF80(camera->position, camera->pivot, amount * firstScale, camera->position);
+        func_1508EF80(camera->pivot, camera->position, amount * secondScale, camera->pivot);
+    } else if (camera->phase != 0.0f) {
+        camera->phase -= camera->phase * D_800A3544;
+        camera->amplitude += ((sinf(camera->phase) * 4.0f) - camera->amplitude) * D_800A3548;
+        amount = camera->amplitude * D_800A354C;
+        func_1508EF80(camera->position, camera->pivot, amount, camera->position);
+        func_1508EF80(camera->pivot, camera->position, amount * 20.0f, camera->pivot);
+    }
 }
 
 /* Update camera state from the selected actor and camera flags. */
@@ -1136,7 +1186,7 @@ s32 func_15128540(s32 address) {
     if (*(u32 *)((u8 *)address + 0x2C) & 0x80000) {
         func_1512A360((u8 *)address);
         *(CameraPositionBits14FF90 *)((u8 *)address + 0x2BC) = *(CameraPositionBits14FF90 *)((u8 *)address + 0x2A4);
-        func_151256BC(address);
+        func_151256BC((CameraWobble14FF90 *)address);
         func_151236D0(address);
         func_151284C4((struct108 *)address);
         return 1;

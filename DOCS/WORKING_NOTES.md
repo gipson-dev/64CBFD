@@ -1,5 +1,7 @@
 # Working Notes
 
+[Note 2609](WORKING_NOTES/2609-game-camera-wobble-direct-byte-match-20261121.md): `func_151256BC` restores camera wobble and matches **154 words / frame 56 directly**, with zero guards. Paired five-check suites and the complete 572-byte image prediction pass. Total **4,593 / 5,528 (83.09%)**, Game **3,920 / 4,855 (80.74%)**, zero drift; **106** more to 85% at this denominator.
+
 [Note 2608](WORKING_NOTES/2608-game-camera-table-sound-callback-guarded-byte-match-20261121.md): `func_15127520` restores the table-driven camera sound callback and matches **164 words / frame 72** with four scheduling guards. Paired five-check suites and the complete 533-byte image prediction pass. Total **4,592 / 5,528 (83.07%)**, Game **3,919 / 4,855 (80.72%)**, zero drift; **107** more to 85% at this denominator.
 
 [Note 2607](WORKING_NOTES/2607-game-camera-sound-callback-guarded-byte-match-20261121.md): `func_151277B0` restores the camera sound callback and matches **124 words / frame 48** with 42 proven GPR-allocation guards. Paired five-check suites and the complete 363-byte image prediction pass. Total **4,591 / 5,528 (83.05%)**, Game **3,918 / 4,855 (80.70%)**, zero drift; **108** more to 85% at this denominator.
