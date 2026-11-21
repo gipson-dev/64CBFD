@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2602](WORKING_NOTES/2602-game-projection-submit-guarded-byte-match-20261121.md): `func_15035808` replaces its placeholder and matches **345 words / frame 216** through 316 checked rows. Paired 36-test suites, six dependency tests, three historical image gates and the complete 1,050-byte image prediction pass. Total **4,586 / 5,528 (82.96%)**, Game **3,913 / 4,855 (80.60%)**, zero drift; **113** more to 85% at this denominator.
+
 [Note 2601](WORKING_NOTES/2601-game-projection-filtered-draw-guarded-byte-match-20261120.md): `func_15035D6C` replaces its placeholder and matches **159 words / frame 32** through 29 checked rows and one redundant shift-mask omission. Paired 27-test suites, six dependency tests, three historical image gates and the complete 491-byte image prediction pass. Total **4,585 / 5,528 (82.94%)**, Game **3,912 / 4,855 (80.58%)**, zero drift; **114** more to 85% at this denominator.
 
 [Note 2600](WORKING_NOTES/2600-game-actor-projection-scan-guarded-byte-match-20261120.md): `func_15036148` now matches **112 body words / frame 152** through six scheduling and two verified literal-binding guards. The submit helper remains unfinished with a measured ABI-only change. Paired 19-test suites, six dependency tests, three historical image gates and the complete 396-byte image prediction pass. Total **4,584 / 5,528 (82.92%)**, Game **3,911 / 4,855 (80.56%)**, zero drift; **115** more to 85% at this denominator.

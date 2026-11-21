@@ -16,7 +16,7 @@ typedef struct {
     u8 renderMode;
 } ProjectionDrawRecord61D10;
 
-typedef struct {
+typedef struct ProjectionDisplayDescriptor61D10 {
     u8 id;
     u8 reserved01[2];
     u8 alpha;
@@ -27,6 +27,13 @@ typedef struct {
     u8 displayListCount;
     u8 reserved15[15];
     Gfx **displayLists;
+    u8 reserved28[12];
+    Mtx *fixedMatrices;
+    u8 reserved38[16];
+    u8 *attachment;
+    Mtx *cachedMatrices[2];
+    struct ProjectionDisplayDescriptor61D10 *next;
+    struct ProjectionDisplayDescriptor61D10 *previous;
 } ProjectionDisplayDescriptor61D10;
 
 extern Gfx D_80083140[], D_80082FC0[];
@@ -452,10 +459,125 @@ s32 func_15035714(s32 mode, u8 *actor, u8 *projection, f32 reflectionY) {
     return 0;
 }
 
-/* Unrecovered submission body; preserve its measured ten-argument ABI. */
-s32 func_15035808(s32 mode, s32 actorIndex, f32 x, f32 y, f32 z,
+extern u8 *D_800C3E88, *D_800C3E8C;
+extern u16 D_800C3E7A, D_800C3E7C;
+extern u8 D_800C35EA, D_800BE9C0;
+extern ProjectionDisplayDescriptor61D10 *D_800C3EE0;
+s32 func_1502DB20(s32);
+s32 func_150AD9A0(s32, s32, s32);
+void func_1502D54C(s32, s32 *);
+s32 func_15031070(u8 *, u8 *, Mtx **, Mtx **);
+s32 allocate_memory(s32, s32, s32, s32);
+
+/* Queue an actor's reflected projection and its matching linked descriptors. */
+void func_15035808(s32 mode, s32 actorIndex, f32 x, f32 y, f32 z,
     f32 angle0, f32 angle1, f32 innerRadius, f32 outerRadius, f32 alpha) {
-    return 0;
+    s32 opacity;
+    s32 distanceLimit;
+    s32 colors[3];
+    Mtx *primary;
+    s32 matrixCount;
+    ProjectionDisplayDescriptor61D10 *descriptor;
+    ProjectionDisplayDescriptor61D10 *next;
+    Mtx *secondary;
+    ProjectionDrawRecord61D10 *record;
+    struct127 *actor;
+    s32 factor;
+    s32 inputFixed;
+    f32 distance;
+    s32 deltaX;
+    s32 deltaY;
+    s32 *slotIndex;
+    Mtx *matrixOutput;
+    s32 descriptorAlpha;
+
+    if (D_800C3F00 == 15) return;
+    distanceLimit = 1400;
+    if (mode == 0 && D_800CC2D0[actorIndex].interaction_state != 1) return;
+    actor = &D_800CC2D0[actorIndex];
+    if (actor->unk1D4 == 0 || (actor->unk74 & 15) == 15) return;
+    opacity = actor->unk7;
+    if (opacity == 0) return;
+    slotIndex = &actorIndex;
+    matrixCount = func_1502DB20(actor->id);
+    if ((u32)D_800C3E88 + ((u32)matrixCount << 6) - (u32)D_800C3E8C >
+        ((u32)D_800C3E7C << 6)) return;
+    if (D_800C35EA == 1) distanceLimit = 10000;
+    deltaX = (s32)(D_800DBFF0->unk2F8 - actor->x_position);
+    deltaY = (s32)(D_800DBFF0->unk2FC - actor->y_position);
+    distance = (f32)func_150AD9A0(deltaX, deltaY, (s32)(D_800DBFF0->unk300 - actor->z_position));
+    if ((f32)distanceLimit < distance) return;
+    factor = 256;
+    if ((f32)(distanceLimit - 200) < distance) {
+        factor = (s32)((((f32)distanceLimit - distance) * 256.0f) /
+            (f32)(distanceLimit - 200));
+    }
+    if (opacity != 255) factor = (factor * opacity) >> 8;
+    record = (ProjectionDrawRecord61D10 *)func_150356C8();
+    if (record == 0) return;
+    record->matrix = D_800C3E88;
+    func_1502D54C(*slotIndex, colors);
+    record->color[0] = colors[0];
+    record->color[1] = colors[1];
+    record->color[2] = colors[2];
+    record->renderMode = 0;
+    record->slot = *slotIndex;
+    record->descriptorId = actor->unique_id;
+    primary = (Mtx *)actor->unk1D4;
+    func_15034F30((u8 *)actor, (u8 *)record, mode, primary, record->matrix,
+        matrixCount, x, y, z, angle0, angle1, actor->x_position,
+        actor->y_position, actor->z_position, innerRadius, outerRadius,
+        alpha, 0, 0);
+    record->alpha = (record->alpha * factor) >> 8;
+    if (func_15035714(mode, (u8 *)actor, (u8 *)primary, y) != 0) {
+        D_800C3F00--;
+        return;
+    }
+    D_800C3E88 = (u8 *)((u32)D_800C3E88 + ((u32)matrixCount << 6));
+    D_800C3E7A += matrixCount;
+    descriptor = D_800C3EE0;
+    if (descriptor != 0) {
+        do {
+            next = descriptor->next;
+            if (descriptor->id != actor->unique_id || descriptor->alpha == 0) {
+                descriptor = next;
+                continue;
+            }
+            {
+                record = (ProjectionDrawRecord61D10 *)func_150356C8();
+                if (record == 0) return;
+                record->color[0] = colors[0];
+                record->color[1] = colors[1];
+                record->color[2] = colors[2];
+                record->renderMode = 1;
+                record->slot = *slotIndex;
+                record->descriptorId = actor->unique_id;
+                record->descriptorVariant = descriptor->variant;
+                if (func_15031070((u8 *)descriptor, (u8 *)actor, &primary, &secondary) == 0) {
+                    descriptor = next;
+                    continue;
+                }
+                {
+                    descriptorAlpha = (s32)alpha;
+                    matrixCount = 1;
+                    if (descriptor->attachment != 0) matrixCount = descriptor->attachment[0x3F4];
+                    if (descriptor->cachedMatrices[D_800BE9C0] == 0) {
+                        descriptor->cachedMatrices[D_800BE9C0] = (Mtx *)allocate_memory(matrixCount << 6, 1, 2, 0);
+                    }
+                    matrixOutput = descriptor->cachedMatrices[D_800BE9C0];
+                    record->matrix = (u8 *)matrixOutput;
+                    descriptorAlpha = (descriptorAlpha * descriptor->alpha) >> 8;
+                    inputFixed = descriptor->fixedMatrices != 0 || descriptor->attachment != 0;
+                    func_15034F30(0, (u8 *)record, mode, primary, (u8 *)matrixOutput,
+                        matrixCount, x, y, z, angle0, angle1, actor->x_position,
+                        actor->y_position, actor->z_position, innerRadius, outerRadius,
+                        (f32)descriptorAlpha, inputFixed, 1);
+                    record->alpha = (record->alpha * factor) >> 8;
+                }
+            }
+            descriptor = next;
+        } while (descriptor != 0);
+    }
 }
 
 /* Draw matching projection records through the descriptor's enabled lists. */

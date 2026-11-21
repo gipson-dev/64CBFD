@@ -31,7 +31,7 @@ extern f32 D_8009F5A0;
 extern f32 D_8009F5A4;
 extern f32 D_8009F5A8;
 s32 func_150AD9A0(s32, s32, s32);
-s32 func_15035808(s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
+void func_15035808(s32, s32, f32, f32, f32, f32, f32, f32, f32, f32);
 extern f32 D_8009F5AC;
 s32 func_150A1DA0(struct127 *, s32, s32);
 
