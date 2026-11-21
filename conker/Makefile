@@ -814,3 +814,7 @@ $(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: RETAIL_RODATA_SYMBOL := D_800A02C0
 $(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: RETAIL_POOL_CHECK := check_motion_effect_150c2c00_pool.py
 $(BUILD_DIR)/$(SRC_DIR)/game_EF410.c.o: ../tools/check_motion_effect_150c2c00_pool.py ../tools/experiments/game_motion_effect_150c2c00_manifest.json
 endif
+
+# Audio command dispatch retains its original seven-entry table.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F3D0
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: Makefile
