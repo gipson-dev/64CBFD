@@ -39967,3 +39967,7 @@ game_14FF90,func_151277B0,0x1C8,0x15E00005,0x17000005,-,-,Normalize proven camer
 game_14FF90,func_151277B0,0x1D0,0x8CD90010,0x8CCF0010,-,-,Normalize proven camera sound callback GPR allocation,,,false
 game_14FF90,func_151277B0,0x1D8,0x03216024,0x01E1C824,-,-,Normalize proven camera sound callback GPR allocation,,,false
 game_14FF90,func_151277B0,0x1DC,0xACCC0010,0xACD90010,-,-,Normalize proven camera sound callback GPR allocation,,,false
+game_14FF90,func_15127520,0x200,0x95040002,0xAFA00010,-,-,Restore independent table-sound call scheduling,,,false
+game_14FF90,func_15127520,0x204,0xAFA00010,0x95040002,-,-,Restore independent table-sound call scheduling,,,false
+game_14FF90,func_15127520,0x24C,0x95040004,0x00003825,-,-,Restore independent table-sound call scheduling,,,false
+game_14FF90,func_15127520,0x258,0x00003825,0x95040004,-,-,Restore independent table-sound call scheduling,,,false

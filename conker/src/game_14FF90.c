@@ -36,6 +36,10 @@ typedef struct {
     u8 state;
 } CameraActorScale14FF90;
 
+extern u16 D_800894E0[2][3];
+extern f32 D_800A3580;
+void func_151CC290(void *);
+
 /* Generated placeholder declarations. */
 s32 func_15122C5C(s32 arg0);
 void func_15123070(struct108 *camera);
@@ -52,7 +56,7 @@ void func_15125C40(struct108 *camera);
 void func_15125DB4(struct108 *camera);
 void func_1512623C(struct127 *, ActorPositionMetadata14FF90 *, s32, f32 *, f32 *, f32 *, s32);
 s32 func_15126378();
-s32 func_15127520();
+s32 func_15127520(CameraSoundRecord14FF90 *, s32 *, s32 *, s32 *, s32 *, s32 *, u16 *);
 s32 func_151277B0(CameraSoundRecord14FF90 *, s32 *, s32 *, s32 *, s32 *, s32 *, u16 *);
 s32 func_151279A0();
 s32 func_15128030();
@@ -928,10 +932,55 @@ void func_1512623C(struct127 *actor, ActorPositionMetadata14FF90 *metadata, s32 
 s32 func_15126378() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_14FF90/func_15127520.s. */
-s32 func_15127520() {
+/* Select camera sound transitions from its packed history and mode table. */
+s32 func_15127520(CameraSoundRecord14FF90 *slot, s32 *unusedCallbackValue, s32 *unusedVolume, s32 *unusedPan, s32 *unusedCents, s32 *unusedFx, u16 *pendingSoundId) {
+    struct108 *camera;
+    u32 selector;
+    u32 previous;
+    u16 *sounds;
+    s32 changed;
+    f32 scaled;
+    camera = slot->camera;
+    selector = slot->packedScale >> 31;
+    previous = slot->packedScale & 0xFFFFFF;
+    sounds = D_800894E0[selector];
+    scaled = camera->unk1A4 * D_800A3580;
+    changed = 0;
+    if (*pendingSoundId == sounds[2]) *pendingSoundId = 0;
+    slot->x = (s16)camera->unk3D0->x_position;
+    slot->y = (s16)camera->unk3D0->y_position;
+    slot->z = (s16)camera->unk3D0->z_position;
+    if (camera->unk3D4->unk197 == 2) {
+        if (previous != (u32)scaled) {
+            changed = 1;
+            slot->packedScale = (selector << 31) | (u32)scaled;
+        }
+        if (changed) {
+            if (*pendingSoundId != sounds[0]) {
+                if (slot->handle != 0) func_100111C8(slot->handle);
+                slot->handle = 0;
+                slot->flags &= ~0x80;
+                *pendingSoundId = sounds[0];
+            }
+        } else {
+            if (*pendingSoundId == sounds[0]) {
+                if (slot->handle != 0) func_100111C8(slot->handle);
+                slot->handle = 0;
+                *pendingSoundId = sounds[1];
+                func_10010F30(sounds[1], 20000, 64, 0, 0);
+                slot->flags &= ~0x80;
+            } else if (slot->flags & 0x80) {
+                func_151CC290(camera);
+                func_10010F30(sounds[2], 20000, 64, 0, 0);
+            }
+        }
+    } else {
+        return 1;
+    }
+    slot->flags &= ~0x80;
     return 0;
 }
+
 /* Track actor scale changes and select the associated sound transition. */
 s32 func_151277B0(CameraSoundRecord14FF90 *slot, s32 *unusedCallbackValue, s32 *unusedVolume, s32 *unusedPan, s32 *unusedCents, s32 *unusedFx, u16 *state) {
     struct108 *camera;

@@ -1,5 +1,7 @@
 # Update Log
 
+[Note 2608](WORKING_NOTES/2608-game-camera-table-sound-callback-guarded-byte-match-20261121.md): `func_15127520` restores the table-driven camera sound callback and matches **164 words / frame 72** with four scheduling guards. Paired five-check suites and the complete 533-byte image prediction pass. Total **4,592 / 5,528 (83.07%)**, Game **3,919 / 4,855 (80.72%)**, zero drift; **107** more to 85% at this denominator.
+
 [Note 2607](WORKING_NOTES/2607-game-camera-sound-callback-guarded-byte-match-20261121.md): `func_151277B0` restores the camera sound callback and matches **124 words / frame 48** with 42 proven GPR-allocation guards. Paired five-check suites and the complete 363-byte image prediction pass. Total **4,591 / 5,528 (83.05%)**, Game **3,918 / 4,855 (80.70%)**, zero drift; **108** more to 85% at this denominator.
 
 [Note 2606](WORKING_NOTES/2606-game-camera-orbit-setup-direct-byte-match-20261121.md): `func_15125A6C` restores the camera orbit setup and matches **117 words / frame 72 directly from C**, with zero guards. Paired five-check suites and the complete 494-byte image prediction pass. Total **4,590 / 5,528 (83.03%)**, Game **3,917 / 4,855 (80.68%)**, zero drift; **109** more to 85% at this denominator.
