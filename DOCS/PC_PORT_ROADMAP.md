@@ -1,5 +1,18 @@
 # PC Port Roadmap located in another project folder
 
+## Timed effect updater matched - 2026-11-21
+
+[Note 2614](WORKING_NOTES/2614-game-timed-effect-updater-direct-byte-match-20261121.md):
+`func_15188B74` now emits all 99 retail words / frame 0x38 directly from C, with
+zero guards and 14 unchanged neighbors. Timer/fade rules, snapshotted next
+links, callback reloads and retail invisible-node behavior are preserved;
+byte3 is named opacity. Paired five-check suites, both original call windows,
+native32, rebases, natural Make and strict 274-byte image prediction pass.
+Total **4,597 / 5,528 (83.16%)**, Game **3,924 / 4,855 (80.82%)**, zero drift;
+**102 more** to 85%. Next inspect `func_15188F84`; the sequence query and
+incomplete camera transition remain private/uncredited.
+
+
 [Note 2613](WORKING_NOTES/2613-game-camera-transition-return-abi-audit-20261121.md): `func_15128030` return audit confirms noncanonical V0 paths with 180 connected angle-helper and 120 original tail-window cases. C drafts remain **private/uncredited**; production stays **4,596 / 5,528 (83.14%)**, with **103** more to 85%. Next C target: `func_15022024`.
 
 [Note 2612](WORKING_NOTES/2612-game-camera-mode-transition-direct-byte-match-20261121.md): `func_1512317C` restores camera mode gates, actor transition state and scalar springs, matching **227 words / frame 40 directly**, with zero guards. Paired five-check suites and the complete 727-byte image prediction pass. Total **4,596 / 5,528 (83.14%)**, Game **3,923 / 4,855 (80.80%)**, zero drift; **103** more to 85% at this denominator.

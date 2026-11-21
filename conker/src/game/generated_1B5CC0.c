@@ -25,7 +25,7 @@ extern u8 *D_800DF7C8;
 typedef struct ListNode15188A58 ListNode15188A58;
 
 struct ListNode15188A58 {
-    u8 active, kind, cleared, recordSize;
+    u8 active, kind, cleared, opacity;
     u8 mode, retained05;
     s16 timer;
     u8 *buffer;
@@ -76,7 +76,7 @@ void func_15188810(u8 *owner, s32 timer, s32 mode) {
     node->active = 0;
     node->kind = 3;
     node->cleared = 0;
-    node->recordSize = 20;
+    node->opacity = 20;
     node->mode = mode;
     node->timer = timer;
     node->buffer = buffer;
@@ -115,7 +115,7 @@ void func_1518894C(s32 key, s32 timer, s32 mode) {
     node->active = 1;
     node->kind = 3;
     node->cleared = 0;
-    node->recordSize = 20;
+    node->opacity = 20;
     node->mode = mode;
     node->timer = timer;
     node->buffer = buffer;
@@ -181,8 +181,59 @@ void func_15188AD0(s32 key) {
     }
 }
 
-s32 func_15188B74() {
-    return 0;
+extern s32 D_800BE9E4;
+extern void (*D_8008D580[])(ListNode15188A58 *);
+extern void (*D_8008D588[])(ListNode15188A58 *);
+
+void func_15188B74(s32 list) {
+    ListNode15188A58 **head = (ListNode15188A58 **)((u8 *)&D_800DF7C8 + (u32)list * 4);
+    ListNode15188A58 *node = *head;
+    ListNode15188A58 *previous = NULL;
+    ListNode15188A58 *next;
+    /* Cache next before callbacks; an already invisible expired node is skipped. */
+    s32 opacity;
+
+    if (node != NULL) {
+        do {
+            next = node->next;
+            if (node->timer != 0) {
+                node->timer -= D_800BE9E4;
+            }
+            if (node->timer < 0) {
+                node->timer = 0;
+            }
+            D_8008D580[node->active](node);
+            opacity = node->opacity;
+            if (node->timer != 0) {
+                if (opacity != 255) {
+                    opacity += D_800BE9E4 * 16;
+                    if (opacity >= 256) {
+                        opacity = 255;
+                    }
+                    node->opacity = opacity;
+                }
+                previous = node;
+            } else if (opacity != 0) {
+                opacity = opacity - D_800BE9E4 * 8;
+                if (opacity < 0) {
+                    opacity = 0;
+                }
+                if (opacity == 0) {
+                    if (previous == NULL) {
+                        *head = next;
+                    } else {
+                        previous->next = next;
+                    }
+                    D_8008D588[node->active](node);
+                    func_10004074(node);
+                } else {
+                    node->opacity = opacity;
+                    previous = node;
+                }
+            }
+            node = next;
+        } while (next != NULL);
+    }
 }
 
 extern Mtx D_80089470;
