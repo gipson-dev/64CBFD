@@ -11,9 +11,25 @@ typedef struct {
     u8 alpha;
     u8 color[3];
     u8 slot;
-    u8 reserved09[2];
-    u8 skip;
+    u8 descriptorId;
+    u8 descriptorVariant;
+    u8 renderMode;
 } ProjectionDrawRecord61D10;
+
+typedef struct {
+    u8 id;
+    u8 reserved01[2];
+    u8 alpha;
+    u8 reserved04[2];
+    u8 variant;
+    u8 reserved07[12];
+    u8 disabledLists;
+    u8 displayListCount;
+    u8 reserved15[15];
+    Gfx **displayLists;
+} ProjectionDisplayDescriptor61D10;
+
+extern Gfx D_80083140[], D_80082FC0[];
 
 extern ProjectionDrawRecord61D10 D_800C3F08[];
 Gfx *func_1502CCFC(Gfx *, s32, s32, u8 *, s32, s32 *, s32, s32);
@@ -442,8 +458,44 @@ s32 func_15035808(s32 mode, s32 actorIndex, f32 x, f32 y, f32 z,
     return 0;
 }
 
-s32 func_15035D6C() {
-    return 0;
+/* Draw matching projection records through the descriptor's enabled lists. */
+Gfx *func_15035D6C(Gfx *commands, ProjectionDisplayDescriptor61D10 *descriptor,
+    s32 red, s32 green, s32 blue) {
+    ProjectionDrawRecord61D10 *record;
+    s32 alpha;
+    s32 list;
+
+    if (D_800C3F00 == 0) {
+        return commands;
+    }
+    gSPSetGeometryMode(commands++, G_CULL_FRONT);
+    record = D_800C3F08;
+    if (D_800C3F00 > 0) {
+        for (;;) {
+            if (record->renderMode != 1) goto next_record;
+            if (record->descriptorId != descriptor->id) goto next_record;
+            if (record->descriptorVariant != descriptor->variant) goto next_record;
+            alpha = (record->alpha * descriptor->alpha) >> 8;
+            gDPPipeSync(commands++);
+            gSPSegment(commands++, 3, record->matrix);
+            gDPSetEnvColor(commands++, red, green, blue, alpha);
+            if (alpha < 255) {
+                gSPSegment(commands++, 8, D_80082FC0);
+            } else {
+                gSPSegment(commands++, 8, D_80083140);
+            }
+            for (list = 0; list < descriptor->displayListCount; list++) {
+                if ((descriptor->disabledLists & (1u << (list & 31))) == 0) {
+                    gSPDisplayList(commands++, descriptor->displayLists[list]);
+                }
+            }
+next_record:
+            record++;
+            if (record >= D_800C3F08 + D_800C3F00) break;
+        }
+    }
+    gSPClearGeometryMode(commands++, G_CULL_FRONT);
+    return commands;
 }
 
 /* Draw queued records with their matrix, opacity and color parameters. */
@@ -460,7 +512,7 @@ Gfx *func_15035FE8(Gfx *commands, s32 view) {
     gDPSetAlphaCompare(commands++, G_AC_NONE);
     if (D_800C3F00 > 0) {
         for (record = D_800C3F08; record < D_800C3F08 + D_800C3F00; record++) {
-            if (record->skip == 0) {
+            if (record->renderMode == 0) {
                 red = record->color[0];
                 parameters[0] = red;
                 parameters[1] = record->color[1];
