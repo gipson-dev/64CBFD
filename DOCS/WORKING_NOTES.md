@@ -1,5 +1,16 @@
 # Working Notes
 
+## Owner ground-effect constructor matched - 2026-11-21
+
+[Note 2618](WORKING_NOTES/2618-game-owner-ground-effect-direct-byte-match-20261121.md):
+`func_15191BE0` emits all 93 words / frame 0xA8 directly from C, with zero
+guards and seven unchanged neighbors. The 104-byte owner/surface packet,
+signed 16-bit lifetime sentinel and 18-argument ABI are restored. Paired five-check
+suites, SDK32, the complete retail caller, six rebases, natural Make and the
+strict 278-byte image prediction pass. Total **4,601 / 5,528 (83.23%)**, Game
+**3,928 / 4,855 (80.91%)**, zero drift; **98 more** to 85%. The current caller
+and earlier camera-event draft remain unfinished and uncredited.
+
 ## Camera script query matched - 2026-11-21
 
 [Note 2617](WORKING_NOTES/2617-game-camera-query-direct-byte-match-20261121.md):
