@@ -31,7 +31,21 @@ typedef struct {
 } SelectedVertexSprite;
 extern u8 *D_8008CA4C[];
 void func_1516865C(void *, u8, u8, u8, u8);
-s32 func_15168870();
+/* Measured 0xB8-byte sprite-record view; opaque regions are not recovered fields. */
+typedef struct {
+    u8 unidentified00[0x98];
+    s16 phase;
+    s16 speed;
+    u8 unidentified9C[0xC];
+    u16 flags;
+    u8 unidentifiedAA[6];
+    u8 textureIndex;
+    u8 unidentifiedB1;
+    s8 callbackIndex;
+    u8 unidentifiedB3[5];
+} SpriteFrameState;
+extern void (*D_8008C9C8[])(SpriteFrameState *);
+void func_15168870(SpriteFrameState *state);
 s32 func_15168C4C();
 void func_15168E54(void *, void *);
 /* End generated placeholder declarations. */
@@ -316,9 +330,51 @@ void *func_15168800(void *arg0, u8 arg1, s32 arg2) {
     bcopy(arg0, tmp + 0x10, 0xA8);
     return tmp;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168870.s. */
-s32 func_15168870() {
-    return 0;
+/* Advance the signed sprite phase, then honor callback changes before cleanup. */
+void func_15168870(SpriteFrameState *state) {
+    s32 upper;
+    s32 frames;
+    s32 speed;
+    void (*callback)(SpriteFrameState *);
+
+    speed = state->speed;
+    if (speed != 0) {
+        frames = D_8008CA4C[state->textureIndex][4];
+        state->phase = (u32)state->phase + (u32)speed * (u32)D_800BE9E4;
+        upper = (frames << 8) - 1;
+        if (state->phase > upper) {
+            if (state->flags & 0x40) {
+                state->phase = upper - state->phase % upper;
+                state->speed = -speed;
+            } else if (state->flags & 4) {
+                state->phase = -1;
+            } else {
+                do {
+                    state->phase -= upper;
+                } while (state->phase > upper);
+            }
+        } else if (state->phase < 0) {
+            if (state->flags & 0x40) {
+                state->phase = -state->phase % upper;
+                state->speed = -speed;
+            } else if (state->flags & 4) {
+                state->phase = -1;
+            } else {
+                do {
+                    state->phase += upper;
+                } while (state->phase < 0);
+            }
+        }
+    }
+    if (state->callbackIndex != -1) {
+        callback = D_8008C9C8[state->callbackIndex];
+        if (callback != NULL) {
+            callback(state);
+        }
+    }
+    if (state->phase == -1) {
+        func_1516972C((struct102 *)state);
+    }
 }
 // NON-MATCHING: only differs from us by the jal target address of func_15168B10
 // (not yet confirmed byte-matching itself) - this function's own code is verified

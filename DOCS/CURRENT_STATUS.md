@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Sprite frame updater matched directly - 2026-11-22
+
+[Note 2638](WORKING_NOTES/2638-game-sprite-frame-updater-direct-byte-match-20261122.md):
+`func_15168870` emits all 111 retail words directly in frame 24, with no guards.
+Guest/native, complete registered caller, fault, both-padder and strict 359-byte
+image checks pass; all 41 neighbors stay fixed. Total **4,620 / 5,528 (83.57%)**,
+Game **3,947 / 4,855 (81.30%)**, zero drift; **79 more matches** to 85%.
+
 ## Indexed-column event walker matched - 2026-11-22
 
 [Note 2637](WORKING_NOTES/2637-game-indexed-column-event-walker-guarded-byte-match-20261122.md):
