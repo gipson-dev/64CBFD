@@ -40025,3 +40025,18 @@ generated_1C1150,func_15194810,0x068,0x46083280,0xE7AA00A0,-,-,Normalize the ind
 generated_1C1150,func_15194810,0x06C,0xE7AA00A0,0xC4B0001C,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
 generated_1C1150,func_15194810,0x070,0xC4B0001C,0xE7B000A4,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
 generated_1C1150,func_15194810,0x078,0xE7B000A4,0x27A4002C,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
+generated_1C1150,func_151951E0,0x0C8,0x240300FF,0x24190028,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0CC,0x24190028,0xAC590000,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0D0,0xAC590000,0x92080004,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0D4,0xA0430125,0x240300FF,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0D8,0xA0430104,0xA0430125,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0DC,0x92080004,0xA0430104,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0E0,0x3C014120,0xA0480004,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0E4,0x00408825,0xC6120014,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0E8,0xA0480004,0x3C014120,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x0EC,0xC6120014,0x00408825,-,-,Normalize paired-actor disjoint-field setup scheduling,,,false
+generated_1C1150,func_151951E0,0x2E4,0x8E2F009C,0x8E38009C,-,-,Normalize closed volatile flags and link register roles,,,false
+generated_1C1150,func_151951E0,0x2F0,0x01E1C025,0x0301C825,-,-,Normalize closed volatile flags and link register roles,,,false
+generated_1C1150,func_151951E0,0x304,0x8E0300F8,0x8E0F00F8,-,-,Normalize closed volatile flags and link register roles,,,false
+generated_1C1150,func_151951E0,0x308,0xAE38009C,0xAE39009C,-,-,Normalize closed volatile flags and link register roles,,,false
+generated_1C1150,func_151951E0,0x30C,0xAE2300F8,0xAE2F00F8,-,-,Normalize closed volatile flags and link register roles,,,false

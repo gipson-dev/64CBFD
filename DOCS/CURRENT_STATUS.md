@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Paired-actor initializer matched - 2026-11-22
+
+[Note 2627](WORKING_NOTES/2627-game-paired-actor-initializer-guarded-byte-match-20261122.md):
+`func_151951E0` matches 210 words / frame 0x20 through 15 checked setup/register
+guards. Original allocator/RNG, ordered guest/FCSR, SDK32 and both padders
+qualify; 28 neighbors/data are unchanged. Strict 664-byte image prediction and
+paired suites pass. Total **4,609 / 5,528 (83.38%)**, Game **3,936 / 4,855
+(81.07%)**, zero drift; **90 more** to 85%. Original caller 150D0E90 remains a
+current stub and is the next recovery; runtime connectivity is not claimed.
+
 ## Actor trail and player effect matched - 2026-11-22
 
 [Note 2626](WORKING_NOTES/2626-game-actor-trail-player-effect-guarded-byte-match-20261122.md):

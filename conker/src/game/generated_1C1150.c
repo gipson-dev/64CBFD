@@ -369,8 +369,54 @@ void func_15194E54(s32 arg0, u8 *arg1, s32 arg2) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/game_1C1150/func_15194FF4.s")
 
-s32 func_151951E0() {
-    return 0;
+u8 *func_1505ED34(void);
+extern f32 D_800A8704;
+
+/* Initialize an actor and a paired actor with randomized motion. */
+void func_151951E0(u8 *actor) {
+    u8 *paired;
+    u32 link;
+
+    actor[0x1CA] = 0;
+    func_1507CD64((struct127 *)actor, 5);
+    func_15194AB4(actor);
+    *(s32 *)(actor + 0) = 40;
+    *(f32 *)(actor + 0x3C) = -3.0f;
+    *(f32 *)(actor + 0xBC) = -10.0f - (func_150ADA20() % 5U);
+    *(f32 *)(actor + 0x148) = (func_150ADA20() % 10U) - 5.0f;
+    *(f32 *)(actor + 0x20) = 0.0f;
+    *(f32 *)(actor + 0x24) = 0.0f;
+    paired = func_1505ED34();
+    *(s32 *)(paired + 0) = 40;
+    paired[0x125] = 255;
+    paired[0x104] = 255;
+    paired[4] = actor[4];
+    *(f32 *)(paired + 0x14) = *(f32 *)(actor + 0x14);
+    *(f32 *)(paired + 0x18) = *(f32 *)(actor + 0x18);
+    *(f32 *)(paired + 0x1C) = *(f32 *)(actor + 0x1C);
+    *(f32 *)(paired + 0x40) = *(f32 *)(actor + 0x40);
+    *(u16 *)(paired + 0x76) = *(u16 *)(actor + 0x76);
+    *(u16 *)(paired + 0x7A) = *(u16 *)(actor + 0x7A);
+    *(f32 *)(paired + 0xB8) = *(f32 *)(actor + 0xB8);
+    *(f32 *)(paired + 0x14C) = *(f32 *)(actor + 0x14C);
+    *(f32 *)(paired + 0x150) = *(f32 *)(actor + 0x150);
+    *(f32 *)(paired + 0x3C) = 10.0f;
+    *(f32 *)(paired + 0xBC) = (func_150ADA20() % 5U) + 10.0f;
+    *(f32 *)(paired + 0x148) = (func_150ADA20() % 10U) - 5.0f;
+    paired[0x68] = actor[0x68];
+    paired[0x69] = actor[0x69];
+    paired[0x6A] = actor[0x6A];
+    paired[0x6B] = actor[0x6B];
+    paired[0x6C] = actor[0x6C];
+    paired[0x6D] = actor[0x6D];
+    *(u16 *)(paired + 0x76) = (u32)(((func_150ADA20() % 0x2AAAU) - D_800A8704) + (u32)*(u16 *)(paired + 0x76));
+    *(f32 *)(paired + 0x40) = (*(u16 *)(actor + 0x76) + 0x4000) * 0.0054931640625f;
+    link = *(u32 *)(actor + 0xF8);
+    *(u32 *)(paired + 0x9C) |= 0x0FFF0000;
+    *(u32 *)(paired + 0xF8) = link;
+    func_150838EC(paired, *(u16 *)(actor + 0x84), 0, *(s32 *)(actor + 0x4C));
+    func_150D10E4(actor, 0);
+    func_150D10E4(paired, 1);
 }
 
 /* Submit a direction-aligned pair of positions around an actor. */
