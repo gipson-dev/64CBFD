@@ -1,5 +1,14 @@
 # Update Log
 
+## View color script callback matched - 2026-11-22
+
+[Note 2630](WORKING_NOTES/2630-game-view-color-script-direct-byte-match-20261122.md):
+`func_150D08C0` emits372words/frame0x28 directly, zero guards. Actual dispatcher,
+original variadic/smoothing helpers, guest/FCSR, SDK32, both padders and the
+strict1,191-byte image checks pass. All five owner functions are semantic C
+and exact. Total **4,612 / 5,528 (83.43%)**, Game **3,939 / 4,855 (81.13%)**,
+zero drift; **87 more** to85%. Script leaf internals remain contracted.
+
 ## Interpolated particle emitter matched - 2026-11-22
 
 [Note 2629](WORKING_NOTES/2629-game-interpolated-particle-emitter-direct-byte-match-20261122.md):
