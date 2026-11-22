@@ -1,5 +1,14 @@
 # Documentation
 
+## Particle emission accumulator matched - 2026-11-22
+
+[Note 2632](WORKING_NOTES/2632-game-particle-emission-accumulator-direct-byte-match-20261122.md):
+`func_150EC520` emits100words/frame0x80 directly, zero guards. Actual dispatcher,
+original helpers, guest/FCSR, SDK32, both padders and strict302-byte image
+checks pass; six neighbors remain unchanged. Total **4,614 / 5,528 (83.47%)**,
+Game **3,941 / 4,855 (81.17%)**, zero drift; **85 more** to85%. Sampler151432BC
+remains a stub; only its original path3 is connected and qualified here.
+
 ## Record sound scheduler matched - 2026-11-22
 
 [Note 2631](WORKING_NOTES/2631-game-record-sound-scheduler-direct-byte-match-20261122.md):
