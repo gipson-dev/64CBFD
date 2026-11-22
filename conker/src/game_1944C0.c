@@ -543,8 +543,51 @@ void func_15169070(s32 first, s32 last, s32 payload, u8 opcode) {
         } while (column < last * 4);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15169260.s. */
-void func_15169260(void *arg0, s32 arg1, s32 arg2, u8 arg3) {
+/* Dispatch indexed descriptor columns, retaining live entries and continuation slots. */
+void func_15169260(void *indices, s32 count, s32 payload, u8 opcode) {
+    struct102 *node;
+    /* Measured retail local-frame view; the 12-byte gap has no recovered use. */
+    struct {
+        u8 *row;
+        u8 unidentified04[12];
+        s32 index;
+    } state;
+
+    state.index = 0;
+    if (count > 0) {
+        do {
+            state.row = D_800DCE50;
+            do {
+                if (D_8008B4A8[*(s32 *)indices].unk1C != NULL) {
+                    node = *(struct102 **)(state.row + *(s32 *)indices * 4);
+                    D_800DD190++;
+                    if (node != NULL) {
+                        do {
+                            D_800DD198[D_800DD190] = (void *)node->unk8;
+                            func_1516968C(node, (u8 *)payload, opcode);
+                            D_8008B4A8[*(s32 *)indices].unk1C(node, payload, opcode);
+                            node = D_800DD198[D_800DD190];
+                        } while (node != NULL);
+                    }
+                    D_800DD190--;
+                } else {
+                    node = *(struct102 **)(state.row + *(s32 *)indices * 4);
+                    D_800DD190++;
+                    if (node != NULL) {
+                        do {
+                            D_800DD198[D_800DD190] = (void *)node->unk8;
+                            func_1516968C(node, (u8 *)payload, opcode);
+                            node = D_800DD198[D_800DD190];
+                        } while (node != NULL);
+                    }
+                    D_800DD190--;
+                }
+                state.row += 0x1A0;
+            } while (state.row != D_800DCE50 + sizeof(D_800DCE50));
+            indices = (u8 *)indices + 4;
+            state.index++;
+        } while (state.index != count);
+    }
 }
 /* Dispatch one descriptor column in both rows, preserving callback-safe next links. */
 void func_1516944C(s32 column, s32 payload, u8 opcode) {

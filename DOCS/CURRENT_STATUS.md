@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Indexed-column event walker matched - 2026-11-22
+
+[Note 2637](WORKING_NOTES/2637-game-indexed-column-event-walker-guarded-byte-match-20261122.md):
+`func_15169260` normalizes 125 C words to all 123 retail words in frame 88,
+using 90 guards, three omissions and one unreachable-load insertion.
+Live entry/count, SDK/native, caller, branch/role, both-padder and strict
+369-byte image checks pass. All 41 neighbors stay fixed. Total
+**4,619 / 5,528 (83.56%)**, Game **3,946 / 4,855 (81.28%)**, zero drift;
+**80 more matches** to 85%.
+
 ## Column event walker matched - 2026-11-22
 
 [Note 2636](WORKING_NOTES/2636-game-column-event-walker-guarded-byte-match-20261122.md):
