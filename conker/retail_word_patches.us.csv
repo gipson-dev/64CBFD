@@ -40086,3 +40086,21 @@ game_981E0,func_150721A4,0x028,0x332700FF,0x31C700FF,-,-,Preserve retail packed-
 game_981E0,func_150721A4,0x02C,0x31C500FF,0xAFA00010,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
 game_981E0,func_150721A4,0x030,0x03003025,0x00000000,-,-,Omit the redundant packed-byte copy under the recovered byte ABI,,,true
 game_981E0,func_150721A4,0x038,0xAFA00010,0x306600FF,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_1944C0,func_1516944C,0x040,0x3C0F0000,0x3C0F0000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_8008B4A8,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x048,0x0004C080,0x00047080,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x04C,0x0304C023,0x01C47023,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x050,0x0018C080,0x000E7080,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x054,0x0304C021,0x01C47021,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x058,0x3C190000,0x3C180000,R_MIPS_HI16:D_8008B4A8,R_MIPS_HI16:D_800DCE50,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x05C,0x00047080,0x271E0000,-,R_MIPS_LO16:D_800DCE50,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x060,0x25FE0000,0x000E7080,R_MIPS_LO16:D_800DCE50,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x064,0x27390000,0x25EF0000,R_MIPS_LO16:D_8008B4A8,R_MIPS_LO16:D_8008B4A8,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x068,0x0018C080,0x0004C880,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x074,0x01DEB821,0x26520000,-,R_MIPS_LO16:D_800DD190,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x078,0x26520000,0x26B50000,R_MIPS_LO16:D_800DD190,R_MIPS_LO16:D_800DD198,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x07C,0x26B50000,0x033EB821,R_MIPS_LO16:D_800DD198,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x080,0x0319B021,0x01CFB021,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x160,0x3C080000,0x3C080000,R_MIPS_HI16:D_800DCE50,R_MIPS_HI16:D_800DD190,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x164,0x25080000,0x25080000,R_MIPS_LO16:D_800DCE50,R_MIPS_LO16:D_800DD190,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false
+game_1944C0,func_1516944C,0x16C,0x25090340,0x00000000,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,true
+game_1944C0,func_1516944C,0x170,0x17C9FFC4,0x17C8FFC5,-,-,Preserve closed opening register allocation and schedule; fold the linked row-array end address,,,false

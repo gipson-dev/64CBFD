@@ -546,8 +546,47 @@ void func_15169070(s32 first, s32 last, s32 payload, u8 opcode) {
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15169260.s. */
 void func_15169260(void *arg0, s32 arg1, s32 arg2, u8 arg3) {
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_1516944C.s. */
-void func_1516944C(s32 arg0, s32 arg1, u8 arg2) {
+/* Dispatch one descriptor column in both rows, preserving callback-safe next links. */
+void func_1516944C(s32 column, s32 payload, u8 opcode) {
+    u8 *row;
+    u8 *head;
+    struct115 *descriptor;
+    void *node;
+
+    if (column >= 0x68) {
+        column = 0x67;
+    }
+    descriptor = &D_8008B4A8[column];
+    head = D_800DCE50 + column * 4;
+    row = D_800DCE50;
+    do {
+        if (descriptor->unk1C != NULL) {
+            node = *(void **)head;
+            D_800DD190++;
+            if (node != NULL) {
+                do {
+                    D_800DD198[D_800DD190] = *(void **)((u8 *)node + 8);
+                    func_1516968C(node, (u8 *)payload, opcode);
+                    descriptor->unk1C(node, payload, opcode);
+                    node = D_800DD198[D_800DD190];
+                } while (node != NULL);
+            }
+            D_800DD190--;
+        } else {
+            node = *(void **)head;
+            D_800DD190++;
+            if (node != NULL) {
+                do {
+                    D_800DD198[D_800DD190] = *(void **)((u8 *)node + 8);
+                    func_1516968C(node, (u8 *)payload, opcode);
+                    node = D_800DD198[D_800DD190];
+                } while (node != NULL);
+            }
+            D_800DD190--;
+        }
+        row += 0x1A0;
+        head += 0x1A0;
+    } while (row != D_800DCE50 + sizeof(D_800DCE50));
 }
 
 void func_151695F0(void *arg0, u8 arg1) {

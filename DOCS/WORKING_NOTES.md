@@ -1,5 +1,14 @@
 # Working Notes
 
+## Column event walker matched - 2026-11-22
+
+[Note 2636](WORKING_NOTES/2636-game-column-event-walker-guarded-byte-match-20261122.md):
+`func_1516944C` normalizes 106 C words to all 105 retail words in frame 64,
+using 18 guards and one omitted address calculation. Symbolic opening/end-fold,
+caller, guest/native, both padders and the strict 323-byte image audit pass.
+All 41 neighbors stay fixed. Total **4,618 / 5,528 (83.54%)**, Game
+**3,945 / 4,855 (81.26%)**, zero drift; **81 more matches** to 85%.
+
 ## Actor byte command matched - 2026-11-22
 
 [Note 2635](WORKING_NOTES/2635-game-actor-byte-command-direct-byte-match-20261122.md):
