@@ -8,8 +8,43 @@ s32 func_150D08C0() {
     return 0;
 }
 
-s32 func_150D0E90() {
-    return 0;
+#include "structs.h"
+extern s32 D_80088890,D_80088894,D_80088898,D_8008889C,D_800BE9E4;
+extern struct127 D_800CC2D0[];
+extern struct131 *D_800DBEF4;
+extern u32 *D_800DBF94;
+u8 *func_151149AC(u8);
+void func_151951E0(u8 *);
+s32 func_10010154(u16,void *,u16,s16,u16);
+s32 func_15136C3C(void *,s32,s32,s32,s32,s32,s32,s32);
+void func_15145A50(struct127 *);
+s32 func_1507CD64(struct127 *,s32);
+
+/* Advance stage counters and dispatch four record events for the first actor. */
+void func_150D0E90(s32 unused) {
+    struct127 *actor = D_800CC2D0;
+    s32 i;
+    s32 index;
+    D_80088890 += D_800BE9E4 * 40;
+    D_80088894 += D_800BE9E4 * -66;
+    D_80088898 += D_800BE9E4 * -8;
+    D_8008889C += D_800BE9E4 * 92;
+    if (((u8 *)actor->unk31C)[0x120] == 0) {
+        for (i = 0; i != 3; i++) {
+            index = (struct131 *)func_151149AC((u8)(250 - i)) - D_800DBEF4;
+            if (D_800DBF94[index] & 1) {
+                func_151951E0((u8 *)actor);
+                func_10010154(0x627,actor,0x7FFF,200,700);
+            }
+        }
+        index = (struct131 *)func_151149AC(251) - D_800DBEF4;
+        if (D_800DBF94[index] & 1) {
+            func_10010154(0x627,actor,0x7FFF,200,700);
+            func_15136C3C(actor,1,1,1,1,0,255,1);
+            func_15145A50(actor);
+            func_1507CD64(actor,6);
+        }
+    }
 }
 
 extern f32 D_800A0890;

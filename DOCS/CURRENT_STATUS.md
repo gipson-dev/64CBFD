@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## First-actor event dispatcher matched - 2026-11-22
+
+[Note 2628](WORKING_NOTES/2628-game-first-actor-event-dispatch-direct-byte-match-20261122.md):
+`func_150D0E90` emits all149 words/frame0x48 directly from C with zero guards.
+The current frame-layer callback and original record lookup are connected;
+ordered guest, SDK32, both padders and strict468-byte image checks pass.
+Four neighbors/data/guards are unchanged. Total **4,610 / 5,528 (83.39%)**,
+Game **3,937 / 4,855 (81.09%)**, zero drift; **89 more** to85%. The downstream
+effect15136C3C remains a stub; complete effect/gameplay acceptance is open.
+
 ## Paired-actor initializer matched - 2026-11-22
 
 [Note 2627](WORKING_NOTES/2627-game-paired-actor-initializer-guarded-byte-match-20261122.md):
