@@ -1,5 +1,14 @@
 # Documentation
 
+## Record sound scheduler matched - 2026-11-22
+
+[Note 2631](WORKING_NOTES/2631-game-record-sound-scheduler-direct-byte-match-20261122.md):
+`func_150D0730` emits97 body words/frame0x38 directly, zero guards; the100-word
+slot retains12 zero bytes. Actual caller, query/RNG/sound wrappers, guest,
+SDK32, both padders and strict282-byte image checks pass. Total **4,613 / 5,528
+(83.45%)**, Game **3,940 / 4,855 (81.15%)**, zero drift; **86 more** to85%.
+Initial setup151827D0 remains a stub and an explicit behavioral contract.
+
 ## View color script callback matched - 2026-11-22
 
 [Note 2630](WORKING_NOTES/2630-game-view-color-script-direct-byte-match-20261122.md):
