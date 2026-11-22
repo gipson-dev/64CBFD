@@ -2,6 +2,35 @@
 #include "structs.h"
 
 typedef struct {
+    u8 retained00[0x3B];
+    u8 identity;
+    u8 retained3C[0x2F0];
+} MaskEffectOwner1E73B0;
+typedef struct {
+    u8 field0;
+    s8 field1;
+    u8 field2, padding3;
+    s16 lifetime;
+    u8 padding6[2];
+    s32 field8;
+    u32 fieldC, field10;
+    s32 field14, field18, field1C, field20;
+    u8 field24, field25, retained26[0xA];
+    s32 field30, field34;
+    u8 field38, mask, retained3A[2];
+} MaskEffectDescriptor;
+typedef struct {
+    MaskEffectOwner1E73B0 *owner;
+    u8 identity, retained5[3];
+    MaskEffectDescriptor descriptor;
+} MaskEffectScratch;
+extern MaskEffectOwner1E73B0 D_800CC2D0[];
+extern s8 D_800E0BCE[];
+extern s8 D_8008FD90;
+s32 func_1513B5E0(MaskEffectDescriptor *, u8, s32, u8, s32);
+
+
+typedef struct {
     u8 retained00[0x54];
     f32 x, y, z;
     u8 retained60[0x1C];
@@ -27,8 +56,47 @@ void *func_15160CDC(u8 *, u8, GameEffectVector15160CDC *, GameEffectVector15160C
                     u8, s16, s32, s32, s32, s32, u8, u8, u8, u8, s32);
 void func_1516972C(struct102 *arg0);
 
-s32 func_151B9F00() {
-    return 0;
+/* Create an owner effect and select its player-state render mask. */
+void *func_151B9F00(MaskEffectOwner1E73B0 *owner, u8 priority, s32 context) {
+    u8 *created;
+    MaskEffectScratch scratch;
+    s32 index;
+
+    if (owner == NULL) {
+        return NULL;
+    }
+    scratch.owner = owner;
+    scratch.identity = owner->identity;
+    scratch.descriptor.field0 = 2;
+    scratch.descriptor.field1 = -1;
+    scratch.descriptor.field2 = 3;
+    scratch.descriptor.lifetime = 300;
+    scratch.descriptor.field30 = 9;
+    scratch.descriptor.field34 = 429;
+    scratch.descriptor.mask = 255;
+    index = owner - D_800CC2D0;
+    if (index < 2 && D_800E0BCE[index] != 0) {
+        if (D_8008FD90 == 2) {
+            scratch.descriptor.mask = 253;
+        } else if (D_8008FD90 == 4) {
+            scratch.descriptor.mask = index == 0 ? 251 : 247;
+        }
+    }
+    scratch.descriptor.field8 = 1;
+    scratch.descriptor.fieldC = 0x200205;
+    scratch.descriptor.field10 = 0x60600;
+    scratch.descriptor.field24 = 0;
+    scratch.descriptor.field25 = 0;
+    scratch.descriptor.field14 = 1;
+    scratch.descriptor.field18 = 54;
+    scratch.descriptor.field1C = 128;
+    scratch.descriptor.field20 = 32;
+    scratch.descriptor.field38 = 2;
+    created = (u8 *)(u32)func_1513B5E0(&scratch.descriptor, 1, 8, priority, context);
+    if (created != NULL) {
+        memcpy(created + *(s32 *)(created + 0x50) + 0xF8, &scratch, 8);
+    }
+    return created;
 }
 
 s32 func_151BA084() {

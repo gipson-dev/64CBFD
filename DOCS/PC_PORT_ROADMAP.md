@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Owner mask effect matched - 2026-11-21
+
+[Note 2620](WORKING_NOTES/2620-game-owner-mask-effect-guarded-byte-match-20261121.md):
+`func_151B9F00` restores 97 words / frame 0x78 with 25 relocation-aware guards
+for a closed scheduling permutation and one commutative addition; 56 neighbors
+remain unchanged. Paired five-check suites, SDK32, the complete 93-word caller,
+six GNU rebases and strict 299-byte image prediction pass. Total **4,603 / 5,528
+(83.27%)**, Game **3,930 / 4,855 (80.95%)**, zero drift; **96 more** to 85%.
+
 ## Owner matrix buffer matched - 2026-11-21
 
 [Note 2619](WORKING_NOTES/2619-game-owner-buffer-matrix-direct-byte-match-20261121.md):
