@@ -40018,3 +40018,10 @@ generated_1C1150,func_151945CC,0x050,0x462084A0,0xE7B200A8,-,-,Normalize the red
 generated_1C1150,func_151945CC,0x054,0xE7B200A8,0xC604001C,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
 generated_1C1150,func_151945CC,0x058,0xC604001C,0xE7A400AC,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
 generated_1C1150,func_151945CC,0x060,0xE7A400AC,0x02002825,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_15194810,0x03C,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A82D0,Retarget the compact actor-kind table to its retained retail GameData owner,,,false
+generated_1C1150,func_15194810,0x044,0x8C2E0050,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A82D0,Retarget the compact actor-kind table to its retained retail GameData owner,,,false
+generated_1C1150,func_15194810,0x064,0x27A4002C,0x46083280,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
+generated_1C1150,func_15194810,0x068,0x46083280,0xE7AA00A0,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
+generated_1C1150,func_15194810,0x06C,0xE7AA00A0,0xC4B0001C,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
+generated_1C1150,func_15194810,0x070,0xC4B0001C,0xE7B000A4,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false
+generated_1C1150,func_15194810,0x078,0xE7B000A4,0x27A4002C,-,-,Normalize the independent surface pointer setup to the retail call delay slot,,,false

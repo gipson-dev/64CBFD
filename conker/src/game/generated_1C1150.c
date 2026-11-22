@@ -213,8 +213,66 @@ void func_15194794(u8 *arg0, u8 *arg1, s32 arg2) {
     }
 }
 
-s32 func_15194810() {
-    return 0;
+typedef struct {
+    u8 flags, private1;
+    s16 duration;
+    u8 level, playerMask;
+    s8 callback;
+} PlayerEffect15194810;
+extern f32 D_800A82E4, D_800A82E8, D_800A82EC;
+
+/* Capture an actor trail, then register a timed player effect. */
+void func_15194810(u8 *unusedSource, u8 *actor, u8 *unusedContext) {
+    TrailPoint151945CC position;
+    Trail151945CC trail;
+    Angles15194408 angles;
+    Surface15194408 surface;
+    PlayerEffect15194810 effect;
+
+    switch (actor[4]) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 0x53:
+        position.x = *(f32 *)(actor + 0x14);
+        position.y = *(f32 *)(actor + 0x18) + 95.0f;
+        position.z = *(f32 *)(actor + 0x1C);
+        func_1504715C(&surface, actor);
+        trail.position = position;
+        trail.countBase = 15;
+        trail.countRange = 10;
+        trail.timeBase = 10.0f;
+        trail.timeRange = 5.0f;
+        trail.scaleBase = D_800A82E4;
+        trail.scaleRange = D_800A82E8;
+        trail.radiusBase = 5.0f;
+        trail.radiusRange = D_800A82EC;
+        angles.firstAngleBase = 0;
+        angles.firstAngleRange = 255;
+        angles.secondAngleBase = -63;
+        angles.secondAngleRange = 57;
+        trail.requestSelectorBase = 3;
+        trail.requestSelectorRange = 2;
+        trail.durationBase = 70;
+        trail.durationRange = 22;
+        trail.modeBase = 155;
+        trail.modeRange = 100;
+        trail.firstValue = 16;
+        trail.secondValue = 15;
+        trail.requestValue = 0;
+        trail.selector = 0;
+        trail.opaqueChance = 0.5f;
+        func_15153F18(&angles, &trail, (s32)&surface, 255, 1);
+        effect.flags = 1;
+        effect.duration = (func_150ADA20() % 0xBU) + 0x14;
+        effect.level = 8;
+        effect.callback = -1;
+        effect.playerMask = 1;
+        func_151D8868(&effect, 0, 255, 0);
+        break;
+    }
 }
 
 void func_151949E0(s32 arg0, s32 arg1, s32 arg2) {

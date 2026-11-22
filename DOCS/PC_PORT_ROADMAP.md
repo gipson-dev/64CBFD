@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor trail and player effect matched - 2026-11-22
+
+[Note 2626](WORKING_NOTES/2626-game-actor-trail-player-effect-guarded-byte-match-20261122.md):
+`func_15194810` matches 116 words / frame 0xA8 through two table-binding and five
+independent scheduling guards. Raw C has six differences; 28 neighbors and
+all protected data are unchanged. Paired suites, original RNG/callers, SDK32,
+padders and the strict 464-byte image prediction pass. Total **4,608 / 5,528
+(83.36%)**, Game **3,935 / 4,855 (81.05%)**, zero drift; **91 more** to 85%.
+
 ## Source-heading trail matched - 2026-11-21
 
 [Note 2625](WORKING_NOTES/2625-game-source-heading-trail-guarded-byte-match-20261121.md):
