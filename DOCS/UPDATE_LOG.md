@@ -1,5 +1,14 @@
 # Update Log
 
+## Compact sprite lifetime/motion updater matched - 2026-11-22
+
+[Note 2640](WORKING_NOTES/2640-game-compact-sprite-lifetime-motion-guarded-match-20261122.md):
+`func_15167E0C` restores lifetime, fade, fixed-point motion and callback cleanup.
+All 195 words match in frame 32 with 38 guards and no insertion/omission.
+All 41 neighbors, registered dispatcher, guest/native and strict image checks pass.
+Total **4,622 / 5,528 (83.61%)**, Game **3,949 / 4,855 (81.34%)**, zero drift;
+**77 more matches** to 85%.
+
 ## View trig/render callback walker matched - 2026-11-22
 
 [Note 2639](WORKING_NOTES/2639-game-view-trig-render-walker-guarded-byte-match-20261122.md):

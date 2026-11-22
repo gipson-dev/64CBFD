@@ -11,7 +11,31 @@ extern f32 D_800DD1D0[2];
 s32 func_151674F8();
 void func_15167B44(u8 *state);
 Gfx *func_15167C58();
-s32 func_15167E0C();
+/* Measured compact sprite view; opaque regions retain unidentified contents. */
+typedef struct {
+    u8 unidentified00[0x10];
+    u8 *texture;
+    u8 unidentified14[8];
+    s16 phase, speed;
+    s16 x, y, z;
+    s16 velocityX, velocityZ;
+    u8 unidentified2A[2];
+    u8 fractionX, fractionZ, fractionY;
+    s8 callbackIndex;
+    s16 velocityY, accelerationY;
+    u8 unidentified34[4];
+    s16 remaining;
+    s8 fadeStep;
+    u8 unidentified3B[4];
+    u8 alpha;
+    u8 unidentified40[4];
+    u16 flags;
+    u8 unidentified46[2];
+    s8 completionIndex;
+    u8 unidentified49[3];
+} CompactSpriteState;
+
+void func_15167E0C(CompactSpriteState *state);
 s32 func_15168118();
 typedef struct {
     Vtx vertices[8];
@@ -309,9 +333,90 @@ u8 *func_15167D84(void *packet, s32 alternate, s32 extraBytes, s8 marker, u8 mod
     particle[0x48] = marker;
     return particle;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167E0C.s. */
-s32 func_15167E0C() {
-    return 0;
+/* Advance lifetime, fade, fixed-point motion and animation before completion. */
+void func_15167E0C(CompactSpriteState *state) {
+    u8 finished;
+    s32 packed;
+    s32 delta;
+    s32 speed;
+    s32 upper;
+
+    finished = 0;
+    if (state->remaining != 0x7FFF) {
+        state->remaining = (u32)state->remaining - (u32)D_800BE9E4;
+        if (state->remaining < 0) {
+            state->remaining = 0;
+            finished = 1;
+        }
+    }
+    if (state->fadeStep > 0) {
+        if (state->fadeStep < state->alpha) {
+            state->alpha -= state->fadeStep;
+        } else {
+            state->remaining = 0;
+            finished = 1;
+        }
+    }
+    if (state->callbackIndex != -1 && D_8008C9C8[state->callbackIndex] != NULL) {
+        D_8008C9C8[state->callbackIndex]((SpriteFrameState *)(void *)state);
+    }
+    if (state->remaining != 0) {
+        state->velocityY += state->accelerationY;
+        packed = ((u32)(s32)state->y << 8) | state->fractionY;
+        delta = (u32)(s32)state->velocityY * (u32)D_800BE9E4;
+        state->y = (s32)((u32)packed + (u32)delta) >> 8;
+        state->fractionY = (u32)packed + (u32)delta;
+        packed = ((u32)(s32)state->x << 8) | state->fractionX;
+        delta = (u32)(s32)state->velocityX * (u32)D_800BE9E4;
+        state->x = (s32)((u32)packed + (u32)delta) >> 8;
+        state->fractionX = (u32)packed + (u32)delta;
+        packed = ((u32)(s32)state->z << 8) | state->fractionZ;
+        delta = (u32)(s32)state->velocityZ * (u32)D_800BE9E4;
+        state->z = (s32)((u32)packed + (u32)delta) >> 8;
+        state->fractionZ = (u32)packed + (u32)delta;
+
+        speed = state->speed;
+        if (speed != 0) {
+            upper = (state->texture[4] << 8) - 1;
+            state->phase = (u32)state->phase + (u32)speed * (u32)D_800BE9E4;
+            if (state->phase > upper) {
+                if (state->flags & 0x20) {
+                    state->remaining = 0;
+                    finished = 1;
+                } else {
+                    state->flags |= 0x80;
+                    if (state->flags & 2) {
+                        state->phase = upper - state->phase % upper;
+                        state->speed = -state->speed;
+                    } else {
+                        do {
+                            state->phase -= upper;
+                        } while (state->phase > upper);
+                    }
+                }
+            } else if (state->phase < 0) {
+                if (state->flags & 0x40) {
+                    state->remaining = 0;
+                    finished = 1;
+                } else if (state->flags & 2) {
+                    state->phase = -state->phase % upper;
+                    state->speed = -speed;
+                } else {
+                    do {
+                        state->phase += upper;
+                    } while (state->phase < 0);
+                }
+            }
+        }
+    } else {
+        finished = 1;
+    }
+    if (finished != 0) {
+        if (state->completionIndex != -1) {
+            D_8008CA20[state->completionIndex](state);
+        }
+        func_1516972C((struct102 *)(void *)state);
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168118.s. */
 s32 func_15168118() {

@@ -40239,3 +40239,41 @@ game_1944C0,func_15167310,0x1A4,0x8FAF004C,0x8FAE004C,-,-,"Preserve trig-cache s
 game_1944C0,func_15167310,0x1B0,0x25F80004,0x25CF0004,-,-,"Preserve trig-cache store address, descriptor/head roles and linked two-row end",,,false
 game_1944C0,func_15167310,0x1B4,0x16E1FFCF,0x16E1FFD1,-,-,"Preserve trig-cache store address, descriptor/head roles and linked two-row end",,,false
 game_1944C0,func_15167310,0x1B8,0xAFB8004C,0xAFAF004C,-,-,"Preserve trig-cache store address, descriptor/head roles and linked two-row end",,,false
+game_1944C0,func_15167E0C,0x0A0,0xA3A7001F,0xA3A7001B,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0B0,0x93A7001F,0x93A7001B,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0C8,0x848E0022,0x84820022,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0CC,0x9098002E,0x908F002E,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0D8,0x8D090000,0x8D190000,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0DC,0x84990030,0x84980030,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0E0,0x000E7A00,0x00027200,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0E4,0x01F81825,0x01CF1025,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0E8,0x03290019,0x03190019,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0EC,0x848E0026,0x848D0026,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0F0,0x848B0020,0x84830020,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0F4,0x908D002C,0x908C002C,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0F8,0x84990024,0x8486001E,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x0FC,0x000B6200,0x00035A00,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x100,0x848B0028,0x016C1825,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x104,0x00194A00,0x00002812,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x108,0x8486001E,0x00455021,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x10C,0x00002812,0x000A4A03,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x110,0x00651021,0xA4890022,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x114,0x00025203,0xA08A002E,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x118,0xA48A0022,0x8D0E0000,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x11C,0xA082002E,0x848A0028,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x120,0x8D0F0000,0x84820024,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x124,0x018D1825,0x01AE0019,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x128,0x908A002D,0x9089002D,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x12C,0x01CF0019,0x0002CA00,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x130,0x00002812,0x03291025,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x134,0x00651021,0x00002812,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x138,0x0002C203,0x0065C021,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x13C,0xA4980020,0x00187A03,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x140,0xA082002C,0xA48F0020,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x144,0x8D0C0000,0xA098002C,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x148,0x012A1825,0x8D0B0000,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x14C,0x016C0019,0x014B0019,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x154,0x00651021,0x00456821,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x158,0x00026A03,0x000D6203,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x15C,0xA48D0024,0xA48C0024,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
+game_1944C0,func_15167E0C,0x164,0xA082002D,0xA08D002D,-,-,Normalize compact sprite fixed-point schedule and closed register roles; completion byte home 1F to 1B,,,false
