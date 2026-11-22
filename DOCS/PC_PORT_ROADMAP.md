@@ -1,5 +1,15 @@
 # PC Port Roadmap located in another project folder
 
+## Player matrix scale matched - 2026-11-21
+
+[Note 2621](WORKING_NOTES/2621-game-player-matrix-scale-guarded-byte-match-20261121.md):
+`func_1503A678` restores 94 words / frame 0xD8 with 16 register-only guards,
+18 preserved neighbors and matching stack homes. The real 139-word full-save
+callback and 16-word parent establish the void return contract; original
+matrix helpers, paired suites, SDK32, six rebases and strict 296-byte image
+prediction pass. Total **4,604 / 5,528 (83.29%)**, Game **3,931 / 4,855
+(80.97%)**, zero drift; **95 more** to 85%.
+
 ## Owner mask effect matched - 2026-11-21
 
 [Note 2620](WORKING_NOTES/2620-game-owner-mask-effect-guarded-byte-match-20261121.md):

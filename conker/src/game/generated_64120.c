@@ -1,5 +1,9 @@
 #include <ultra64.h>
 
+extern u8 D_80084404[];
+void func_150A7CB0(f32 [4][4], f32, f32, f32);
+void func_150A7A48(f32 [4][4], f32 [4][4], f32 [4][4]);
+
 struct struct108;
 extern struct struct108 *D_800DBFF0;
 extern s16 D_800C3FF4[];
@@ -123,8 +127,48 @@ void func_1503A60C(void) {
         *(f32 *) (D_800CC2D0 + (D_800C3E78 * 0x32C) + 0x178);
 }
 
-s32 func_1503A678() {
-    return 0;
+void func_1503A678(void) {
+    f32 (*matrix)[4];
+    f32 savedX;
+    f32 scale[3];
+    f32 factor, reciprocal;
+    f32 scaling[4][4];
+    f32 result[4][4];
+    f32 translation[3];
+    u8 *actor;
+
+    actor = D_800CC2D0 + (u32)D_800C3E78 * 0x32CU;
+    if (actor[4] == 0x22) {
+        factor = (f32)(u32)actor[0x20A];
+        factor = factor * 0.015625f + 1.0f;
+        if (D_800C3FFA == 0) {
+            scale[0] = factor;
+            scale[1] = 1.0f;
+            scale[2] = factor;
+        } else {
+            reciprocal = 1.0f / factor;
+            scale[0] = reciprocal;
+            scale[1] = 1.0f;
+            scale[2] = reciprocal;
+        }
+        matrix = (f32 (*)[4])(*(u8 **)(actor + 0x1D4) + D_80084404[D_800C3FFA] * 64);
+        savedX = matrix[3][0];
+        matrix[3][3] = 1.0f;
+        matrix[0][3] = 0.0f;
+        matrix[1][3] = 0.0f;
+        matrix[2][3] = 0.0f;
+        translation[0] = savedX;
+        translation[1] = matrix[3][1];
+        translation[2] = matrix[3][2];
+        guMtxIdentF(scaling);
+        func_150A7CB0(scaling, scale[0], scale[1], scale[2]);
+        func_150A7A48(matrix, scaling, result);
+        bcopy(result, matrix, 64);
+        matrix[3][0] = translation[0];
+        matrix[3][1] = translation[1];
+        matrix[3][2] = translation[2];
+        D_800C3FFA++;
+    }
 }
 
 void func_1503A7F0(void) {
