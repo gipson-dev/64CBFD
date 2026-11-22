@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Interpolated particle emitter matched - 2026-11-22
+
+[Note 2629](WORKING_NOTES/2629-game-interpolated-particle-emitter-direct-byte-match-20261122.md):
+`func_150D1204` emits102 body words/frame0x78 directly from C, zero guards;
+the103-word slot keeps its four-byte padding. Original RNGs, callback window,
+ordered guest/FCSR, SDK32, both padders and strict348-byte image checks pass.
+Four neighbors/data/guards are unchanged. Total **4,611 / 5,528 (83.41%)**,
+Game **3,938 / 4,855 (81.11%)**, zero drift; **88 more** to85%. The original
+caller window is qualified; its current parent15134E48 remains a stub.
+
 ## First-actor event dispatcher matched - 2026-11-22
 
 [Note 2628](WORKING_NOTES/2628-game-first-actor-event-dispatch-direct-byte-match-20261122.md):

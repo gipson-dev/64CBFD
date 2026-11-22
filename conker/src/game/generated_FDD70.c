@@ -107,6 +107,33 @@ s32 func_150D11B4(u8 *arg0) {
     return 1;
 }
 
-s32 func_150D1204() {
-    return 0;
+u32 func_150ADA20(void);
+extern f32 D_800A0898,D_800A089C,D_800A08A0,D_800A08A4;
+void *func_151DB5D0(u8,const struct17 *,const struct17 *,f32,f32,f32,f32,s16,u8,s16,s16,u8,u8,s32);
+
+/* Interpolate a particle origin and velocity, then submit randomized emission. */
+void func_150D1204(f32 *first,f32 *second,f32 *firstStep,f32 *secondStep,f32 fraction,struct102 *emitter) {
+    struct17 position;
+    struct17 other;
+    struct17 velocity;
+    u32 secondBits,firstBits;
+    f32 secondRandom,firstRandom;
+
+    position.unk0 = firstStep[0] * fraction + first[0];
+    position.unk4 = firstStep[1] * fraction + first[1];
+    position.unk8 = firstStep[2] * fraction + first[2];
+    other.unk0 = secondStep[0] * fraction + second[0];
+    other.unk4 = secondStep[1] * fraction + second[1];
+    other.unk8 = secondStep[2] * fraction + second[2];
+    velocity.unk0 = (other.unk0 - position.unk0) * emitter->unk74;
+    velocity.unk4 = (other.unk4 - position.unk4) * emitter->unk74;
+    velocity.unk8 = (other.unk8 - position.unk8) * emitter->unk74;
+    firstRandom = func_150ADA68();
+    secondRandom = func_150ADA68();
+    firstBits = func_150ADA20();
+    secondBits = func_150ADA20();
+    func_151DB5D0(0,&position,&velocity,firstRandom * 61.0f + 60.0f,
+        D_800A0898,D_800A089C,secondRandom * D_800A08A0 + D_800A08A4,
+        (firstBits & 15) + 35,(secondBits % 156U) + 100,30,8,0,
+        ((u8 *)emitter)[0xC],((u8 *)emitter)[1]);
 }
