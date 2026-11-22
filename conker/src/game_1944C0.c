@@ -6,7 +6,8 @@
 /* Generated placeholder declarations. */
 void func_151670C0(void);
 void func_151671E8(void);
-s32 func_15167310();
+void func_15167310(void);
+extern f32 D_800DD1D0[2];
 s32 func_151674F8();
 void func_15167B44(u8 *state);
 Gfx *func_15167C58();
@@ -151,9 +152,58 @@ void func_151671E8(void) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15167310.s. */
-s32 func_15167310() {
-    return 0;
+/* Cache live view angles, then visit each column's render callbacks in both rows. */
+void func_15167310(void) {
+    s32 i;
+    s32 column;
+    /* Measured frame view; the trailing 16 bytes have no recovered use. */
+    struct {
+        s32 offset;
+        u8 unidentified04[16];
+    } frame;
+    u8 *row;
+    struct102 *head;
+    struct102 *node;
+    struct115 *descriptor;
+    f32 angle;
+
+    i = 0;
+    if ((s32)((u32)D_80082FA0 + 1) > 0) {
+        do {
+            angle = D_800DBFF0[i].unk3A0;
+            D_800DD1D8[i] = sinf(angle);
+            D_800DD1E8[i] = cosf(angle);
+            i++;
+        } while (i <= D_80082FA0);
+    }
+    angle = D_800DBFF0->unk3A0;
+    D_800DD1D0[0] = sinf(angle);
+    D_800DD1D0[1] = cosf(angle);
+
+    column = 0;
+    frame.offset = 0;
+    do {
+        row = D_800DCE50;
+        do {
+            head = *(struct102 **)(row + frame.offset);
+            if (head != NULL) {
+                descriptor = &D_8008B4A8[column];
+                if (descriptor->unkC != NULL) {
+                    node = head;
+                    D_800DD190++;
+                    while (node != NULL) {
+                        D_800DD198[D_800DD190] = (void *)node->unk8;
+                        descriptor->unkC(node);
+                        node = D_800DD198[D_800DD190];
+                    }
+                    D_800DD190--;
+                }
+            }
+            row += 0x1A0;
+        } while (row != D_800DCE50 + sizeof(D_800DCE50));
+        column++;
+        frame.offset += 4;
+    } while (column != 104);
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151674F8.s. */
 s32 func_151674F8() {

@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## View trig/render callback walker matched - 2026-11-22
+
+[Note 2639](WORKING_NOTES/2639-game-view-trig-render-walker-guarded-byte-match-20261122.md):
+`func_15167310` restores live view caches and column-major render callbacks.
+All 122 retail words match in frame 104 with 45 guarded rows. All 305 header
+consumers, 41 neighbors and the strict full image pass qualification.
+Total **4,621 / 5,528 (83.59%)**, Game **3,948 / 4,855 (81.32%)**, zero drift;
+**78 more matches** to 85%.
+
 ## Sprite frame updater matched directly - 2026-11-22
 
 [Note 2638](WORKING_NOTES/2638-game-sprite-frame-updater-direct-byte-match-20261122.md):

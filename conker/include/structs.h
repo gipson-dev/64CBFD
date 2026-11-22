@@ -829,7 +829,9 @@ typedef struct {
 typedef struct {
     void (*unk0)(struct102 *arg0); // used
     void (*unk4)(u8 *arg0);
-    u8 pad0[0x10];
+    u8 pad0[4];
+    void (*unkC)(struct102 *arg0); // per-column render callback
+    u8 pad10[8];
     void (*unk18)(struct102 *arg0); // used
     void (*unk1C)(void *arg0, s32 arg1, u8 arg2);
     u8 pad20[0x14];

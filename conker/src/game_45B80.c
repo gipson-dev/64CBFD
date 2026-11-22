@@ -70,7 +70,7 @@ void func_1510B3B0(void);
 void func_1510B51C(void);
 void func_1501905C(void);
 void func_1515D69C(void);
-s32 func_15167310(void);
+void func_15167310(void);
 void func_15018F80(s16);
 Gfx *func_15019464(Gfx *, s16);
 void func_15019414(void);
