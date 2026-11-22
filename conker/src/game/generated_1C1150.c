@@ -135,8 +135,67 @@ void func_15194588(u8 *arg0, u8 *arg1, s32 arg2) {
     func_15194408(arg0, arg1);
 }
 
-s32 func_151945CC() {
-    return 0;
+typedef struct { f32 x,y,z; } TrailPoint151945CC;
+typedef struct {
+    TrailPoint151945CC position;
+    f32 timeBase,timeRange,scaleBase,scaleRange,radiusBase,radiusRange;
+    s16 countBase,countRange,requestSelectorBase,requestSelectorRange;
+    s16 durationBase,durationRange,modeBase,modeRange;
+    u8 selector,private35[3];f32 opaqueChance;s16 firstValue,secondValue;s32 requestValue;
+} Trail151945CC;
+extern f64 D_800A82A0;
+extern f32 D_800A82A8,D_800A82AC,D_800A82B0,D_800A82B4,D_800A82B8;
+extern u8 D_800A3FE6[];
+s32 func_15134070(u8 *);
+void *func_151B4CD0(u8 *,u8,s32);
+
+/* Emit a classified trail from the captured source heading and actor position. */
+void func_151945CC(u8 *source,u8 *actor,u8 *unusedContext) {
+    TrailPoint151945CC position;
+    s16 heading;
+    Trail151945CC trail;
+    Angles15194408 angles;
+    Surface15194408 surface;
+    s32 category;
+
+    heading = (*(u16 *)(source + 0x7A) >> 8) - 64;
+    position.x = *(f32 *)(actor + 0x14);
+    position.y = *(f32 *)(actor + 0x18) + D_800A82A0;
+    position.z = *(f32 *)(actor + 0x1C);
+    func_1504715C(&surface,actor);
+    category = func_15134070(actor);
+    if (category != 99) {
+        category = D_800A3FE6[category * 16];
+        if (category != 2) {
+            trail.position = position;
+            trail.countBase = 15;
+            trail.countRange = 12;
+            trail.timeBase = D_800A82A8;
+            trail.timeRange = D_800A82AC;
+            trail.scaleBase = D_800A82B0;
+            trail.scaleRange = 0.0f;
+            trail.radiusBase = D_800A82B4;
+            trail.radiusRange = D_800A82B8;
+            angles.firstAngleBase = heading - 64;
+            angles.firstAngleRange = 128;
+            angles.secondAngleBase = -160;
+            angles.secondAngleRange = 32;
+            trail.requestSelectorBase = 3;
+            trail.requestSelectorRange = 1;
+            trail.durationBase = 31;
+            trail.durationRange = 19;
+            trail.modeBase = 155;
+            trail.modeRange = 100;
+            trail.firstValue = 16;
+            trail.secondValue = 15;
+            trail.requestValue = 0;
+            trail.opaqueChance = 0.5f;
+            if (category == 1) trail.selector = 1;
+            else trail.selector = 0;
+            func_15153F18(&angles,&trail,(s32)&surface,255,1);
+            func_151B4CD0(actor,255,1);
+        }
+    }
 }
 
 void func_15194794(u8 *arg0, u8 *arg1, s32 arg2) {

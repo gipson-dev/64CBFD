@@ -40009,3 +40009,12 @@ generated_64120,func_1503A678,0xdc,0xE602000C,0xE600000C,-,-,Normalize closed pl
 generated_64120,func_1503A678,0xe0,0xE602001C,0xE600001C,-,-,Normalize closed planar-scale register lifetimes,,,false
 generated_64120,func_1503A678,0xe4,0xE602002C,0xE600002C,-,-,Normalize closed planar-scale register lifetimes,,,false
 generated_64120,func_1503A678,0xe8,0xE7A00030,0xE7AA0030,-,-,Normalize closed planar-scale register lifetimes,,,false
+generated_1C1150,func_151945CC,0x03C,0x02002825,0xE7A400A4,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x040,0xE7A400A4,0xC6060018,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x044,0xC6060018,0x46003221,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x048,0x46003221,0x462A4400,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x04C,0x462A4400,0x462084A0,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x050,0x462084A0,0xE7B200A8,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x054,0xE7B200A8,0xC604001C,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x058,0xC604001C,0xE7A400AC,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false
+generated_1C1150,func_151945CC,0x060,0xE7A400AC,0x02002825,-,-,Normalize the redundant A1 actor move to the retail call delay slot,,,false

@@ -1,5 +1,16 @@
 # Update Log
 
+## Source-heading trail matched - 2026-11-21
+
+[Note 2625](WORKING_NOTES/2625-game-source-heading-trail-guarded-byte-match-20261121.md):
+`func_151945CC` matches 114 words / frame 0xB0 through nine guards for one
+redundant argument-move rotation. Raw C has nine differences; all 28 neighbors
+and pools are unchanged. Paired suites, original classifier/caller execution,
+SDK32, padders and the strict 565-byte image prediction pass. Total
+**4,607 / 5,528 (83.34%)**, Game **3,934 / 4,855 (81.03%)**, zero drift;
+**92 more** to 85%. [Note 2624](WORKING_NOTES/2624-completed-build-compression-and-preservation-20261121.md)
+records verified compression of older banks with every file retained.
+
 ## Surface angular effect matched - 2026-11-21
 
 [Note 2623](WORKING_NOTES/2623-game-surface-angular-effect-direct-byte-match-20261121.md):
