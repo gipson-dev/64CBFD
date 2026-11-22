@@ -1,5 +1,14 @@
 # Update Log
 
+## View light script matched - 2026-11-22
+
+[Note2634](WORKING_NOTES/2634-game-view-light-script-guarded-byte-match-20261122.md):
+`func_150ECC70` restores341 semantic C words in frame56, with28 guarded words
+preserving a signed-clamp branch layout proved over the complete signed32-bit
+domain. Both padders, caller, original providers, native SDK32 and strict1142-byte
+image audit pass. Total **4,616 / 5,528 (83.50%)**, Game **3,943 / 4,855 (81.22%)**,
+zero drift; **83 more matches** to85%. No placeholders remain in this owner.
+
 ## Randomized map particle emitter matched - 2026-11-22
 
 [Note 2633](WORKING_NOTES/2633-game-randomized-map-particle-emitter-guarded-byte-match-20261122.md):

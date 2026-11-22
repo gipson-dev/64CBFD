@@ -40059,3 +40059,31 @@ generated_1199D0,func_150EC6B0,0x350,0x46163201,0x46164101,-,-,Close the final c
 generated_1199D0,func_150EC6B0,0x354,0xE628000C,0xE624000C,-,-,Close the final caller-volatile floating temporary sequence,,,false
 generated_1199D0,func_150EC6B0,0x358,0xC624000C,0xC62A000C,-,-,Close the final caller-volatile floating temporary sequence,,,false
 generated_1199D0,func_150EC6B0,0x35C,0x4604B03C,0x460AB03C,-,-,Close the final caller-volatile floating temporary sequence,,,false
+generated_1199D0,func_150ECC70,0x1E4,0x28410384,0x00022043,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1E8,0x10200003,0x28410384,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1EC,0x00021843,0x00403825,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1F0,0x10000007,0x10200003,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1F4,0x24070384,0x00801825,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1F8,0x284104A7,0x10000005,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x1FC,0x14200003,0x24070384,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x200,0x00402025,0x284104A7,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x204,0x10000001,0x54200003,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x208,0x240404A6,0x288100B4,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x20C,0x00803825,0x240704A6,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x210,0x286100B4,0x288100B4,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x21C,0x10000007,0x10000005,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x220,0x240200B4,0x240300B4,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x224,0x286100E8,0x288100E8,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x228,0x14200003,0x54200003,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x22C,0x00602025,0x24040002,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x230,0x10000001,0x240300E7,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x234,0x240400E7,0x24040002,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x238,0x00801025,0x24060008,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x23C,0x24040002,0x0C000000,-,R_MIPS_26:func_1509BFB0,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x240,0x24060008,0xAFA30010,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x244,0x0C000000,0x3C01435C,R_MIPS_26:func_1509BFB0,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x248,0xAFA20010,0x44818000,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x24C,0x3C01435C,0x00000000,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x250,0x44818000,0xE6100190,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x254,0x1000001B,0x1000001C,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+generated_1199D0,func_150ECC70,0x258,0xE6100190,0x3C0140C0,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false

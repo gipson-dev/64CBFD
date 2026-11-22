@@ -10,7 +10,7 @@ typedef struct {
 void func_1502EA98(u8 *arg0, u8 arg1, u8 arg2, u8 arg3, u8 arg4,
                    s32 arg5, u8 arg6);
 
-/* Non-matching placeholders for the text-only asm slice asm/1199D0.s. */
+/* Recovered routines from asm/1199D0.s; the build preserves retail layout. */
 
 typedef struct { void *source; f32 rate; s16 *gate; f32 accumulator; } ParticleEmitter1199D0;
 typedef struct { struct260 header; u8 reserved24[4]; ParticleEmitter1199D0 emitter; } ParticleEmitterRecord1199D0;
@@ -197,6 +197,75 @@ void func_150ECC00(u8 *arg0, volatile u8 arg1, s32 arg2) {
     func_150ECA68(arg0, 0, 0xFF, 0, 0xFF, 4, -1, arg1, arg2);
 }
 
-s32 func_150ECC70() {
-    return 0;
+extern f32 D_80088AD0, D_80088AD4, D_80088AD8;
+extern f32 D_80088ADC, D_80088AE0, D_80088AE4;
+extern f32 D_80088AE8, D_80088AEC, D_80088AF0;
+s32 func_1509BE40(s32, ...);
+void func_1509BFB0(s32, s32, s32, ...);
+void func_150495B0(f32 *, f32, f32 *, f32, f32, f32);
+
+/* Select script-driven view color and range, then smooth and publish RGB. */
+void func_150ECC70(struct108 *view) {
+    s32 value;
+    s32 halfValue;
+    s32 range;
+    s32 selector;
+    s32 radius;
+    if (func_1509BE40(1, 0x403B, 6, 0x2000)) {
+        func_1509BFB0(0, 0x4031, 1);
+        func_1509BFB0(0, 0x4032, 1);
+        func_1509BFB0(0, 0x4033, 1);
+        view->unk84 |= 0x80021200;
+        if (func_1509BE40(1, 0x4038, 6, 0x2000)) {
+            D_80088ADC = 128.0f;
+            D_80088AE0 = 255.0f;
+            D_80088AE4 = 255.0f;
+        } else if (func_1509BE40(1, 0x4039, 6, 0x2000)) {
+            D_80088ADC = 255.0f;
+            D_80088AE0 = 128.0f;
+            D_80088AE4 = 255.0f;
+        } else if (func_1509BE40(1, 0x403A, 6, 0x2000)) {
+            D_80088ADC = 255.0f;
+            D_80088AE0 = 255.0f;
+            D_80088AE4 = 128.0f;
+        } else {
+            D_80088ADC = 255.0f;
+            D_80088AE0 = 255.0f;
+            D_80088AE4 = 255.0f;
+        }
+        selector = func_1509BE40(0, 0x2007, 0xB7) | 0x2000;
+        if (func_1509BE40(1, 0x4010, 6, 0x2000) == 0) {
+            view->unk134 = 0;
+            view->unk190 = 0.0f;
+            return;
+        }
+        if (selector != 0) {
+            view->unk134 = 1;
+            value = func_1509BE40(1, selector, 0x9C, 0x2000);
+            func_1509BFB0(1, 0x9000, 0x17, value);
+            value = func_1509BE40(1, selector, 0x9A, 0x2000);
+            halfValue = value >> 1;
+            range = value < 900 ? 900 : value >= 1191 ? 1190 : value;
+            radius = halfValue < 180 ? 180 : halfValue >= 232 ? 231 : halfValue;
+            func_1509BFB0(2, 0x9000, 8, range, radius);
+            view->unk190 = 220.0f;
+        } else {
+            return;
+        }
+    } else {
+        D_80088ADC = 255.0f;
+        D_80088AE0 = 255.0f;
+        D_80088AE4 = 255.0f;
+        func_1509BFB0(0, 0x4031, 0);
+        func_1509BFB0(0, 0x4032, 0);
+        func_1509BFB0(0, 0x4033, 0);
+        view->unk84 &= 0x7FFDEDFF;
+        view->unk84 |= 8;
+    }
+    func_150495B0(&D_80088AD0, D_80088ADC, &D_80088AE8, 4.0f, 6.0f, view->unk7B4);
+    func_150495B0(&D_80088AD4, D_80088AE0, &D_80088AEC, 4.0f, 6.0f, view->unk7B4);
+    func_150495B0(&D_80088AD8, D_80088AE4, &D_80088AF0, 4.0f, 6.0f, view->unk7B4);
+    func_1509BFB0(1, 0x30F3, 0x12, (u8)(u32)D_80088AD0);
+    func_1509BFB0(1, 0x30F4, 0x12, (u8)(u32)D_80088AD4);
+    func_1509BFB0(1, 0x30F5, 0x12, (u8)(u32)D_80088AD8);
 }
