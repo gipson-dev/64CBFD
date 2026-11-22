@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Actor byte command matched - 2026-11-22
+
+[Note 2635](WORKING_NOTES/2635-game-actor-byte-command-direct-byte-match-20261122.md):
+`func_1506160C` emits all 108 words directly, frame 0, zero target guards.
+The byte ABI and typed gate storage preserve both existing matched callers;
+214 header consumers, caller/guest/native, both padders and the strict 311-byte
+image audit pass. Total **4,617 / 5,528 (83.52%)**, Game **3,944 / 4,855 (81.24%)**,
+zero drift; **82 more matches** to 85%.
+
 ## View light script matched - 2026-11-22
 
 [Note2634](WORKING_NOTES/2634-game-view-light-script-guarded-byte-match-20261122.md):

@@ -335,7 +335,7 @@ s32 func_15122C5C(s32 arg0) {
 //
 //     temp_v0_2 = arg0->unk23D;
 //
-//     if (D_800DBFF4[temp_v0_2] != 4) {
+//     if (D_800DBFF4.bytes[temp_v0_2] != 4) {
 //         arg0->unk5F0 &= -5;
 //     }
 //
@@ -892,14 +892,14 @@ void func_15125608(struct108 *arg0) {
 void func_15125628(void) {
     s32 slot;
     for (slot = 0; slot < 4; slot++) {
-        if (D_800DBFF4[slot] != 0) {
-            D_800DBFF4[slot]--;
+        if (D_800DBFF4.bytes[slot] != 0) {
+            D_800DBFF4.bytes[slot]--;
         }
     }
 }
 
 void func_15125690(struct108 *arg0, s32 arg1) {
-    u8 *temp_v0 = &D_800DBFF4[arg0->unk23D];
+    u8 *temp_v0 = &D_800DBFF4.bytes[arg0->unk23D];
 
     if (*temp_v0 < arg1) {
         *temp_v0 = arg1;
@@ -1007,7 +1007,7 @@ void func_15125A6C(struct108 *camera) {
             func_1512D560((u8 *)camera, 5, 0);
             camera->unk7E4 = 1;
         }
-        D_800DBFF4[0] = 3;
+        D_800DBFF4.bytes[0] = 3;
         D_800C3600.active = 1;
         D_800C3600.word04 = 0;
         angle = heading * D_800A3550;
@@ -1320,7 +1320,7 @@ void func_15127EB8(struct108 *camera) {
     func_1510B32C(camera->unk23D, 0.0f, 0.0f, 1.0f);
     *(f32 *)((u8 *)D_800BE628 + camera->unk23D * 0x180 + 0x84) = 1.0f;
     func_150627D4(camera->unk3D0);
-    D_800DBFF4[camera->unk23D] = 2;
+    D_800DBFF4.bytes[camera->unk23D] = 2;
     original = camera->unk3D0;
     if (original->unk65 != 0) actor = &D_800CC2D0[original->unk65 - 1];
     else actor = original;

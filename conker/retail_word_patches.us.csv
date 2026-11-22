@@ -1261,9 +1261,9 @@ generated_18A8F0,func_1515D480,0x040,0x8FA20020,0x8FA2001C,-,-,Reload allocation
 generated_18A8F0,func_1515D480,0x048,0x27BD0028,0x27BD0020,-,-,Release retail 32-byte stack frame,
 game_A28B0,func_150771F0,0x010,0x3C0F0000,0x3C060000,R_MIPS_HI16:D_800D1892,R_MIPS_HI16:D_800D1890,Hoist third argument high half before outer branch,
 game_A28B0,func_150771F0,0x014,0x3C040000,0x3C0F0000,R_MIPS_HI16:D_800D154C,R_MIPS_HI16:D_800D1892,Prepare selector high half after third argument,
-game_A28B0,func_150771F0,0x024,0x3C060000,0x3C070000,R_MIPS_HI16:D_800D1890,R_MIPS_HI16:D_800D1891,Prepare fourth argument high half before selector branch,
-game_A28B0,func_150771F0,0x028,0x3C070000,0x90C60000,R_MIPS_HI16:D_800D1891,R_MIPS_LO16:D_800D1890,Load third argument before selector branch,
-game_A28B0,func_150771F0,0x030,0x24050002,0x90E70000,-,R_MIPS_LO16:D_800D1891,Load fourth argument in selector branch delay slot,
+game_A28B0,func_150771F0,0x024,0x24050002,0x3C070000,-,R_MIPS_HI16:D_800D1891,Prepare fourth argument high half before selector branch under the recovered byte ABI,,,
+game_A28B0,func_150771F0,0x028,0x3C060000,0x90C60000,R_MIPS_HI16:D_800D1890,R_MIPS_LO16:D_800D1890,Load third argument before selector branch under the recovered byte ABI,,,
+game_A28B0,func_150771F0,0x030,0x3C070000,0x90E70000,R_MIPS_HI16:D_800D1891,R_MIPS_LO16:D_800D1891,Load fourth argument in selector branch delay slot under the recovered byte ABI,,,
 game_A28B0,func_150771F0,0x034,0x10000001,0x10000002,-,-,Branch over alternate selector assignment,
 game_A28B0,func_150771F0,0x03C,0x8C840000,0x24050002,R_MIPS_LO16:D_800D154C,-,Assign selector value on zero path,
 game_A28B0,func_150771F0,0x040,0x90C60000,0x3C040000,R_MIPS_LO16:D_800D1890,R_MIPS_HI16:D_800D154C,Delay actor global high half until selector resolves,
@@ -2503,16 +2503,6 @@ generated_179F30,func_1514EBA4,0x054,0x8FB80020,0xAC600018,-,-,Clear the previou
 generated_179F30,func_1514EBA4,0x058,0x00601025,0xAC780010,-,-,Store the retained payload before loading the node key,,,false
 generated_179F30,func_1514EBA4,0x05C,0xAC780010,0x87B90026,-,-,Load the signed node key before selecting the return pointer,,,false
 generated_179F30,func_1514EBA4,0x060,0x87B90026,0x00601025,-,-,Select the allocated node as the return value after loading its key,,,false
-game_981E0,func_150721A4,0x00C,0x8C420000,0x8C430000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Keep the packed global in retail's v1 lifetime,,,false
-game_981E0,func_150721A4,0x018,0x00022C03,0x00037203,-,-,Extract the middle byte first through retail's t6 lifetime,,,false
-game_981E0,func_150721A4,0x01C,0x00403025,0x00000000,-,-,Omit the redundant packed-value copy to a2,,,true
-game_981E0,func_150721A4,0x020,0x30CF00FF,0x00037C03,-,-,Extract the high byte through retail's t7 lifetime,,,false
-game_981E0,func_150721A4,0x024,0x30AE00FF,0x31E500FF,-,-,Mask the high byte directly into a1,,,false
-game_981E0,func_150721A4,0x028,0x0002C203,0x31C700FF,-,-,Mask the middle byte directly into a3,,,false
-game_981E0,func_150721A4,0x02C,0x330700FF,0xAFA00010,-,-,Stage the zero fifth argument before the call,,,false
-game_981E0,func_150721A4,0x030,0x01C02825,0x00000000,-,-,Omit the redundant high-byte move to a1,,,true
-game_981E0,func_150721A4,0x034,0x01E03025,0x00000000,-,-,Omit the redundant low-byte move to a2,,,true
-game_981E0,func_150721A4,0x03C,0xAFA00010,0x306600FF,-,-,Mask the low byte into the call delay slot,,,false
 generated_188440,func_1515B994,0x010,0xC4800078,0xC4820078,-,-,Retain the old velocity in retail's f2 lifetime,,,false
 generated_188440,func_1515B994,0x018,0xC4820074,0xC48E0074,-,-,Retain acceleration in retail's f14 lifetime,,,false
 generated_188440,func_1515B994,0x020,0x460C0102,0x460C1102,-,-,Multiply timestep by the old velocity in f2,,,false
@@ -40087,3 +40077,12 @@ generated_1199D0,func_150ECC70,0x24C,0x3C01435C,0x00000000,-,-,Preserve the reta
 generated_1199D0,func_150ECC70,0x250,0x44818000,0xE6100190,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
 generated_1199D0,func_150ECC70,0x254,0x1000001B,0x1000001C,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
 generated_1199D0,func_150ECC70,0x258,0xE6100190,0x3C0140C0,-,-,Preserve the retail signed range and half-value clamp branch layout; full signed-domain CFG proof,,,false
+game_981E0,func_150721A4,0x00C,0x8C420000,0x8C430000,R_MIPS_LO16:D_800D1580,R_MIPS_LO16:D_800D1580,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x018,0x00403025,0x00000000,-,-,Omit the redundant packed-byte copy under the recovered byte ABI,,,true
+game_981E0,func_150721A4,0x01C,0x30D800FF,0x00037203,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x020,0x00027403,0x00037C03,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x024,0x0002CA03,0x31E500FF,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x028,0x332700FF,0x31C700FF,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x02C,0x31C500FF,0xAFA00010,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false
+game_981E0,func_150721A4,0x030,0x03003025,0x00000000,-,-,Omit the redundant packed-byte copy under the recovered byte ABI,,,true
+game_981E0,func_150721A4,0x038,0xAFA00010,0x306600FF,-,-,Preserve retail packed-byte extraction register lifetimes and call schedule under the byte ABI,,,false

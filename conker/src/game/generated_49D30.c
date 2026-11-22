@@ -96,7 +96,7 @@ extern u8 **D_800C35E0[];
 extern SequenceRuntime49D30 *D_800C3A50[];
 extern u8 *D_800C3958[], *D_800C3868[][30];
 extern s16 D_800C3C9A;
-extern u8 D_800DBFF4;
+#include "actor_commands.h"
 extern void (*D_800840FC[])(s32, s32, s32, s32);
 s32 allocate_memory(s32, s32, s32, s32);
 void func_1501C730(s32, s32, s32, s32, s32);
@@ -536,7 +536,7 @@ void func_1501D348(s32 scene, s32 sequence, s32 slot, s32 hook, s32 parameter) {
     func_15022754(slot);
     func_15022528(slot);
     func_15020EC4(slot);
-    D_800DBFF4 = 4;
+    D_800DBFF4.bytes[0] = 4;
     func_1501DAAC(slot);
 }
 
@@ -664,7 +664,7 @@ void func_1501DF04(s32 slot) {
     } while (actor != (struct127 *)&D_800D121C);
     D_800C3663 = 0;
     func_1000E17C();
-    D_800DBFF4 = 4;
+    D_800DBFF4.bytes[0] = 4;
     D_800C3672 = 1;
 }
 

@@ -1082,7 +1082,7 @@ void func_1505E874(u8, struct127*);
 struct127* func_1505F0AC(s32);
 void func_15060778(s32 arg0, struct127 *arg1, u16 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 void func_15060F28(struct127 *arg0, s32 arg1);
-void func_1506160C(struct127*, s32, u8, u8, s32);
+void func_1506160C(struct127 *, u8 command, u8 first, u8 second, u8 slot);
 void func_15062B1C(struct127 *arg0, f32 arg1);
 void func_15062B50(struct127 *arg0, f32 arg1);
 void func_1506C460(f32, f32, f32, f32, s32, s32, f32, f32, s32, s32, s32);

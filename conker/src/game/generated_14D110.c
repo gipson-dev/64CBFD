@@ -1,6 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
-void func_1506160C(struct127 *, s32, u8, u8, s32);
+void func_1506160C(struct127 *, u8, u8, u8, u8);
 void func_151C9ED4(void *);
 
 /* Restored functions and remaining placeholders for asm/14D110.s. */

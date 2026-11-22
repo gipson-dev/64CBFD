@@ -1535,8 +1535,67 @@ void func_150615DC(struct127 *arg0) {
     arg0->unkE.ub[1] = 0;
     arg0->unkB = arg0->unkC = arg0->unkD = arg0->unkE.ub[0] = 0xFF;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_1506160C.s. */
-void func_1506160C(struct127*arg0, s32 arg1, u8 arg2, u8 arg3, s32 arg4) {
+/* Apply command priority and per-slot byte resets to the actor's command state. */
+void func_1506160C(struct127 *actor, u8 command, u8 first, u8 second, u8 slot) {
+    s32 value;
+    u32 mask;
+
+    value = command;
+    if (value >= 8) {
+        if (value != 10) {
+            if (value == 8) {
+                value = slot;
+                mask = 1U << value;
+                actor->unkE.ub[1] |= mask;
+                first = 0;
+            } else {
+                value = slot;
+                mask = 1U << value;
+                actor->unkE.ub[1] &= ~mask;
+                first = 255;
+            }
+            if (actor->unkE.ub[1] & (mask << 4)) {
+                ((u8 *)actor)[0xB + value] = first;
+            }
+            actor->unkE.ub[1] &= ~(mask << 4);
+        } else {
+            value = slot;
+            actor->unkE.ub[1] |= (1U << value) << 4;
+            first = 0;
+        }
+        if (actor->pad2FC[1] || D_800DBFF4.bytes[value]) {
+            ((u8 *)actor)[0xB + value] = first;
+        }
+    } else {
+        if (value < actor->unkA) {
+            return;
+        }
+        if (value == 4) {
+            actor->unkA = command;
+            actor->unk7 = 0;
+            actor->unk8 = 255;
+            actor->unk9 = 32;
+        } else if (value == 5) {
+            actor->unkA = command;
+            actor->unk8 = 0;
+            actor->unk9 = 32;
+        } else if (value == 6) {
+            actor->unkA = command;
+            actor->unk8 = 0;
+            actor->unk9 = 8;
+        } else if (value == 2) {
+            actor->unkA = command;
+            actor->unk8 = first;
+            actor->unk9 = second;
+        } else if (value == 1) {
+            actor->unkA = 0;
+            actor->unk7 = first;
+            actor->unk8 = first;
+        }
+        if (D_800DBFF4.word) {
+            actor->unk7 = actor->unk8;
+        }
+    }
 }
 /* Non-matching C placeholders for asm/nonmatchings/game_83300/func_150617BC.s. */
 s32 func_150617BC() {

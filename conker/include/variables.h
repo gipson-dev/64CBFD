@@ -1305,7 +1305,7 @@ extern u8  D_800DBF88;
 extern s32 D_800DBF8C;
 extern s32 D_800DBF90;
 extern struct108 *D_800DBFF0;
-extern u8  D_800DBFF4[];
+#include "actor_commands.h"
 extern u8  D_800DBFF5;
 extern u8  D_800DBFF6;
 extern u8  D_800DBFF7;

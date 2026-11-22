@@ -1592,7 +1592,7 @@ void func_15071FB0(void) {
 s32 func_15071FDC() {
     return 0;
 }
-// IDO stages the packed-byte arguments through three redundant register
+// IDO stages the packed-byte arguments through two redundant register
 // moves. Guarded word normalization removes those moves and preserves retail's
 // equivalent direct masks and call schedule.
 void func_150721A4(void) {
