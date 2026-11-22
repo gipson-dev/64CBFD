@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Actor random particle matched - 2026-11-21
+
+[Note 2622](WORKING_NOTES/2622-game-actor-random-particle-direct-byte-match-20261121.md):
+`func_150DE12C` emits all 94 words / frame 0x90 directly from C, with zero guards
+and 11 preserved neighbors. The recovered adjacent descriptor/ABI yields the
+smaller randomized effect. Paired suites, signed-index/height boundaries,
+original RNG execution, the six-argument caller, SDK32, both padders and strict
+290-byte image prediction pass. Total **4,605 / 5,528 (83.30%)**, Game
+**3,932 / 4,855 (80.99%)**, zero drift; **94 more** to 85%.
+
 ## Player matrix scale matched - 2026-11-21
 
 [Note 2621](WORKING_NOTES/2621-game-player-matrix-scale-guarded-byte-match-20261121.md):
