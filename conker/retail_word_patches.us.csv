@@ -40040,3 +40040,22 @@ generated_1C1150,func_151951E0,0x2F0,0x01E1C025,0x0301C825,-,-,Normalize closed 
 generated_1C1150,func_151951E0,0x304,0x8E0300F8,0x8E0F00F8,-,-,Normalize closed volatile flags and link register roles,,,false
 generated_1C1150,func_151951E0,0x308,0xAE38009C,0xAE39009C,-,-,Normalize closed volatile flags and link register roles,,,false
 generated_1C1150,func_151951E0,0x30C,0xAE2300F8,0xAE2F00F8,-,-,Normalize closed volatile flags and link register roles,,,false
+generated_1199D0,func_150EC6B0,0x0C8,0x27B7009C,0x46044280,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0CC,0x46044280,0xE62A000C,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0D0,0xE62A000C,0xC630000C,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0D4,0xC630000C,0x4610B03C,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0D8,0x4610B03C,0x00000000,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0DC,0x00000000,0x450200A5,-,-,Adjust forward branch for the preserved setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0E0,0x450200A3,0x8FBF0074,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x0E4,0x8FBF0074,0x44800000,-,-,Retain the floating-zero setup and retail coprocessor hazard nop,0x00000000,-,false
+generated_1199D0,func_150EC6B0,0x18C,0x44800000,0x27B7009C,-,-,Normalize independent emitter packet-address and floating-zero setup schedule,,,false
+generated_1199D0,func_150EC6B0,0x29C,0x8FAF00F4,0x8FAC00F4,-,-,Close the T4 T7 temporary exchange across commutative OR,,,false
+generated_1199D0,func_150EC6B0,0x2AC,0x00506025,0x00507825,-,-,Close the T4 T7 temporary exchange across commutative OR,,,false
+generated_1199D0,func_150EC6B0,0x318,0x461E9080,0x461E9180,-,-,Use the retail caller-volatile extent-result register,,,false
+generated_1199D0,func_150EC6B0,0x31C,0xE7A200C8,0xE7A600C8,-,-,Use the retail caller-volatile extent-result register,,,false
+generated_1199D0,func_150EC6B0,0x320,0xE7A200C4,0xE7A600C4,-,-,Use the retail caller-volatile extent-result register,,,false
+generated_1199D0,func_150EC6B0,0x34C,0xC626000C,0xC628000C,-,-,Close the final caller-volatile floating temporary sequence,,,false
+generated_1199D0,func_150EC6B0,0x350,0x46163201,0x46164101,-,-,Close the final caller-volatile floating temporary sequence,,,false
+generated_1199D0,func_150EC6B0,0x354,0xE628000C,0xE624000C,-,-,Close the final caller-volatile floating temporary sequence,,,false
+generated_1199D0,func_150EC6B0,0x358,0xC624000C,0xC62A000C,-,-,Close the final caller-volatile floating temporary sequence,,,false
+generated_1199D0,func_150EC6B0,0x35C,0x4604B03C,0x460AB03C,-,-,Close the final caller-volatile floating temporary sequence,,,false

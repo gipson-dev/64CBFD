@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Randomized map particle emitter matched - 2026-11-22
+
+[Note 2633](WORKING_NOTES/2633-game-randomized-map-particle-emitter-guarded-byte-match-20261122.md):
+`func_150EC6B0` normalizes237 C words to all238 retail words in frame0x110
+using19 guards and one hazard nop. Caller, connected original helpers, guest,
+SDK32, both padders and the strict721-byte image audit pass. Total
+**4,615 / 5,528 (83.48%)**, Game **3,942 / 4,855 (81.19%)**, zero drift;
+**84 more matches** to85%. Six neighboring routines remain unchanged.
+
 ## Particle emission accumulator matched - 2026-11-22
 
 [Note 2632](WORKING_NOTES/2632-game-particle-emission-accumulator-direct-byte-match-20261122.md):
