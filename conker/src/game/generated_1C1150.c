@@ -69,11 +69,68 @@ void func_15194394(s32 arg0, u8 *arg1, s32 arg2) {
     }
 }
 
-s32 func_15194408() {
-    return 0;
+typedef struct {
+    f32 height; s16 vertices[9]; s16 pad16; u32 metadata;
+    u8 flags, state; u16 pad1E; s32 value;
+} Surface15194408;
+typedef struct { s16 firstAngleBase, firstAngleRange, secondAngleBase, secondAngleRange; } Angles15194408;
+typedef struct {
+    f32 position[3], timeBase, timeRange, scaleBase, scaleRange, radiusBase, radiusRange;
+    s16 countBase, countRange, requestSelectorBase, requestSelectorRange;
+    s16 durationBase, durationRange, modeBase, modeRange;
+    u8 selector, private35[3]; f32 opaqueChance; s16 firstValue, secondValue; s32 requestValue;
+} Trail15194408;
+extern f32 D_800A8294, D_800A8298, D_800A829C;
+void *func_151AE7B0(u8 *, f32, s16, u8, s32);
+void func_1504715C(void *, void *);
+void func_15153F18(void *, void *, s32, s32, s32);
+
+/* Submit the surface-aligned angular effect for actor kinds zero through four. */
+void func_15194408(u8 *unused, u8 *actor) {
+    Trail15194408 trail;
+    Angles15194408 angles;
+    Surface15194408 surface;
+
+    switch (actor[4]) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+        func_151AE7B0(actor, 0.6f, 90, 255, 1);
+        func_1504715C(&surface, actor);
+        trail.position[0] = *(f32 *)(actor + 0x14);
+        trail.position[1] = *(f32 *)(actor + 0x18) + 50.0f;
+        trail.position[2] = *(f32 *)(actor + 0x1C);
+        trail.countBase = 12;
+        trail.countRange = 5;
+        angles.firstAngleBase = 0;
+        angles.firstAngleRange = 255;
+        angles.secondAngleBase = -63;
+        angles.secondAngleRange = 35;
+        trail.timeBase = 6.0f;
+        trail.timeRange = 3.0f;
+        trail.scaleBase = D_800A8294;
+        trail.scaleRange = D_800A8298;
+        trail.radiusBase = 13.0f;
+        trail.radiusRange = 8.0f;
+        trail.requestSelectorBase = 3;
+        trail.requestSelectorRange = 2;
+        trail.durationBase = 30;
+        trail.durationRange = 30;
+        trail.modeBase = 100;
+        trail.modeRange = 100;
+        trail.opaqueChance = D_800A829C;
+        trail.firstValue = 16;
+        trail.secondValue = 15;
+        trail.requestValue = 0;
+        trail.selector = 0;
+        func_15153F18(&angles, &trail, (s32)&surface, 255, 1);
+        break;
+    }
 }
 
-void func_15194588(u8 *arg0, s32 arg1, s32 arg2) {
+void func_15194588(u8 *arg0, u8 *arg1, s32 arg2) {
     func_150C7020(arg0, 0x1F4, 0xFF, 1);
     func_15194408(arg0, arg1);
 }

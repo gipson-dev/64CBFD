@@ -1,5 +1,15 @@
 # Documentation
 
+## Surface angular effect matched - 2026-11-21
+
+[Note 2623](WORKING_NOTES/2623-game-surface-angular-effect-direct-byte-match-20261121.md):
+`func_15194408` emits all 96 words / frame 0x98 directly from C, with zero
+target guards and 28 unchanged padded neighbors. The five-entry table and one
+later compact-table guard precondition are explicitly audited. Paired suites,
+SDK32, both original call windows, both padders and the strict 344-byte image
+prediction pass. Total **4,606 / 5,528 (83.32%)**, Game **3,933 / 4,855 (81.01%)**,
+zero drift; **93 more** to 85%.
+
 ## Actor random particle matched - 2026-11-21
 
 [Note 2622](WORKING_NOTES/2622-game-actor-random-particle-direct-byte-match-20261121.md):
