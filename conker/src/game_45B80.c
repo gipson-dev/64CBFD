@@ -84,7 +84,7 @@ s32 func_15189118(s32);
 s32 func_15084A18(void);
 void func_15125628(void);
 void func_1510D404(void);
-s32 func_15114A1C(void);
+void func_15114A1C(void);
 void func_1517CFC4(void);
 void func_1501C880(s32 unused, s32 swapBuffers);
 s32 func_151F2CDC(void);

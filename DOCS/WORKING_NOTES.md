@@ -1,5 +1,13 @@
 # Working Notes
 
+## Resource cache sweep matched - 2026-11-23
+
+[Note 2658](WORKING_NOTES/2658-game-resource-cache-sweep-guarded-byte-match-20261123.md): `func_15114A1C` now matches all
+94 words / frame 64 through proved live-table and save-frame normalization.
+Its void caller repair preserves the complete production caller object.
+Total **4,638 / 5,528 (83.90%)**, Game **3,965 / 4,855 (81.67%)**, zero drift;
+**61 more to 85%**. The larger ribbon renderer remains private and uncredited.
+
 ## Interpolated actor ring emitter matched - 2026-11-23
 
 [Note 2657](WORKING_NOTES/2657-game-actor-ring-emitter-guarded-byte-match-20261123.md): `func_15196B4C` now matches all

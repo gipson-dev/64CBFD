@@ -291,9 +291,48 @@ u8 *func_151149AC(u8 arg0) {
     return NULL;
 }
 
-s32 func_15114A1C() {
-    return 0;
+extern void **D_800DBEF8;
+extern u8 *D_800DBEFC;
+
+/* Age retained render resources and release entries that are no longer owned. */
+void func_15114A1C(void) {
+    s32 index;
+    s32 offset;
+    u8 *record;
+    void *resource;
+    u8 *age;
+
+    index = 0;
+    offset = 0;
+    if (D_800DBEF0 > 0) {
+        do {
+            record = D_800DBEF4 + offset;
+            if ((record[0x70] & 1) != 1) {
+                resource = D_800DBEF8[index];
+                if (resource != NULL) {
+                    if (record[0x4E] != 3 && !(record[0x6F] & 0x80)) {
+                        func_10004074(resource);
+                        D_800DBEF8[index] = NULL;
+                    } else {
+                        age = D_800DBEFC + index;
+                        if (*age != 0) {
+                            (*age)--;
+                        } else {
+                            func_10004074(resource);
+                            D_800DBEF8[index] = NULL;
+                        }
+                    }
+                }
+            } else if (!(record[0x6F] & 0x80)) {
+                D_800DBEF8[index] = NULL;
+            }
+            index++;
+            offset += 0xA0;
+        } while (index < D_800DBEF0);
+    }
 }
+
+
 
 #include "structs.h"
 extern u32 D_800DBF98;
