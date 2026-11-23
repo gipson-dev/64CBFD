@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Paired factory requests matched directly - 2026-11-22
+
+[Note 2645](WORKING_NOTES/2645-game-paired-preset-factory-requests-direct-match-20261122.md):
+`func_150BEF7C` emits all 94 retail words directly from C in frame 224, with
+no guards. Typed 49-argument, actual factory-chain, caller-window, SDK32 and
+strict whole-image gates pass. Total **4,626 / 5,528 (83.68%)**, Game
+**3,953 / 4,855 (81.42%)**, zero drift; **73 more matches** to 85%.
+
 ## Visibility decoder recovered privately - 2026-11-22
 
 [Note 2644](WORKING_NOTES/2644-game-visibility-bitplane-decoder-private-recovery-20261122.md):
