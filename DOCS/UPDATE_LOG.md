@@ -1,5 +1,14 @@
 # Update Log
 
+## Unmatched C recovery audit banked - 2026-11-23
+
+[Note 2651](WORKING_NOTES/2651-game-unmatched-layout-and-pair-recovery-audit-20261123.md)
+banks uncredited `func_15195AA8` and `func_15022024` candidates. The pair lookup
+passes 680 public-state/access cases and 170 actual caller windows; its
+79-operation normalization outline still needs a closed proof and adoption gates.
+Production remains **4,631 / 5,528 (83.77%)**, zero drift, **68 more to 85%**.
+No production C or root README change. Next focus: finish the pair lookup match.
+
 ## Texture registration directly matched - 2026-11-23
 
 [Note 2650](WORKING_NOTES/2650-game-texture-registration-direct-match-20261123.md):
