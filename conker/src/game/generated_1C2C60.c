@@ -379,9 +379,125 @@ s32 func_15195FB0(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s3
     return func_15195DD4(*(s32 *) (arg0 + 0x1C), arg1, arg2, arg3, arg4, arg5, arg6);
 }
 
-s32 func_15195FF0() {
-    return 0;
+/* Emit the current texture offsets, then advance and wrap the next phase. */
+void func_15195FF0(s32 primaryList, s32 secondaryList) {
+    s32 slot;
+    u32 tileWords[8];
+    u8 *record;
+    u8 *association;
+    u8 *nextAssociation;
+    s32 u;
+    s32 v;
+    s32 width;
+    s32 height;
+    s32 initialV;
+    s32 tileU;
+    s32 tileV;
+    s32 level;
+    s32 commandIndex;
+    u32 *output;
+    u8 *indices;
+    u8 *counts;
+
+    record = (u8 *)D_800E08E8;
+    while (record != NULL) {
+        u = *(u16 *)(record + 0x0E);
+        v = *(u16 *)(record + 0x10);
+        width = *(s16 *)(record + 0x0A);
+        height = *(s16 *)(record + 0x0C);
+        tileU = u / 8 + 2;
+        initialV = v / 8 + 2;
+        tileV = initialV;
+        level = 0;
+        slot = 0;
+        if (tileU >= width) {
+            tileU -= width;
+        }
+        if (initialV >= height) {
+            tileV = initialV - height;
+        }
+        while (level < 8 && level < record[0x14]) {
+            tileWords[level] = ((u32)G_SETTILESIZE << 24) |
+                ((tileU & 0xFFF) << 12) | (tileV & 0xFFF);
+            level++;
+            tileU /= 2;
+            tileV /= 2;
+        }
+        width *= 8;
+        height *= 8;
+        if (D_800BEAC0 == 0) {
+            u = (s32)((u32)u + (u32)*(s8 *)(record + 0x12) * (u32)D_800BE9E4);
+            v = (s32)((u32)v + (u32)*(s8 *)(record + 0x13) * (u32)D_800BE9E4);
+        }
+        if (u < 0) {
+            u = (s32)((u32)u + (u32)width);
+        } else if (u >= width) {
+            u = (s32)((u32)u - (u32)width);
+        }
+        if (v < 0) {
+            v = (s32)((u32)v + (u32)height);
+        } else if (v >= height) {
+            v = (s32)((u32)v - (u32)height);
+        }
+        commandIndex = *(s16 *)(record + 0x1C);
+        *(u16 *)(record + 0x0E) = u;
+        *(u16 *)(record + 0x10) = v;
+        if (commandIndex != -1) {
+            indices = record;
+            counts = record;
+            do {
+                commandIndex = *(s16 *)(indices + 0x1C);
+                level = 0;
+                output = (u32 *)primaryList + commandIndex * 2;
+                while (level < counts[0x30]) {
+                    *output = tileWords[level];
+                    level++;
+                    output += 4;
+                }
+                slot += 2;
+                indices += 2;
+                counts++;
+            } while (slot < 10 && *(s16 *)(indices + 0x1C) != -1);
+        }
+        slot = 0;
+        indices = record;
+        counts = record;
+        if (*(s16 *)(record + 0x26) != -1) {
+            do {
+                commandIndex = *(s16 *)(indices + 0x26);
+                level = 0;
+                output = (u32 *)secondaryList + commandIndex * 2;
+                while (level < counts[0x35]) {
+                    *output = tileWords[level];
+                    level++;
+                    output += 4;
+                }
+                slot += 2;
+                indices += 2;
+                counts++;
+            } while (slot < 10 && *(s16 *)(indices + 0x26) != -1);
+        }
+        association = *(u8 **)(record + 0x18);
+        while (association != NULL) {
+            commandIndex = *(u16 *)(association + 0x0C);
+            level = 0;
+            slot = commandIndex * 8;
+            while (level < association[0x0E]) {
+                *(u32 *)(*(s32 *)(association + 8) + slot) = tileWords[level];
+                level++;
+                slot += 0x10;
+            }
+            nextAssociation = *(u8 **)(association + 0x10);
+            association = NULL;
+            if (nextAssociation != NULL) {
+                association = nextAssociation;
+            }
+        }
+        record = *(u8 **)(record + 4);
+    }
 }
+
+
 
 void func_15196318(u8 *arg0, s32 arg1, s32 arg2) {
     if (arg0 != NULL) {

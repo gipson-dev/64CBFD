@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Texture scroll update matched - 2026-11-23
+
+[Note 2654](WORKING_NOTES/2654-game-texture-scroll-update-guarded-byte-match-20261123.md): `func_15195FF0` replaces its
+stub and matches 202 words / frame 128 through proved phase/tile/slot/link
+roles and scheduling. Four paired five-check runs and the strict production
+image audit pass. Total **4,634 / 5,528 (83.83%)**, Game **3,961 / 4,855 (81.59%)**,
+zero drift; **65 more to 85%**. Next inspect `func_15196438`.
+
 ## Layout slot registration matched - 2026-11-23
 
 [Note 2653](WORKING_NOTES/2653-game-layout-slot-registration-guarded-byte-match-20261123.md): `func_15195AA8` replaces its
