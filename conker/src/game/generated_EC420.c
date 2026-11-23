@@ -80,9 +80,86 @@ s32 func_150BFA7C() {
     return 0;
 }
 
-s32 func_150BFFE0() {
-    return 0;
+typedef struct { f32 x, y, z; } EmissionPositionEC420;
+typedef struct {
+    s16 count, countRange;
+    u8 kind, reserved05;
+    u16 field06;
+    u32 header, field0C;
+    s16 field10, field12;
+    u32 field14, field18;
+    u8 field1C, field1D, field1E, field1F;
+    u8 field20, field21, field22, field23, field24, field25;
+    s16 field26, field28, field2A;
+    f32 field2C, field30, field34;
+    EmissionPositionEC420 position;
+    s16 field44, field46, field48, field4A;
+    f32 field4C, field50, field54, field58;
+    u32 flags;
+    s8 field60, field61;
+    u8 field62, field63, field64;
+    u8 reserved65[3];
+    f32 payloadValue;
+} EmissionPresetEC420;
+extern f32 D_800A0134,D_800A0138,D_800A013C,D_800A0140,D_800A0144,D_800A0148;
+void func_15136C3C(void *,u8,u8,u8,u8,u8,u8,s32);
+void func_15153634(void *,u8,u8,s32);
+
+/* Snapshot the actor position before the effect helper, then emit this preset. */
+void func_150BFFE0(u8 *actor) {
+    EmissionPositionEC420 position;
+    EmissionPresetEC420 packet;
+    position.x = *(f32 *)(actor + 0x14);
+    position.y = *(f32 *)(actor + 0x180) + 70.0f;
+    position.z = *(f32 *)(actor + 0x1C);
+    func_15136C3C(actor,0,0,1,0,0,255,1);
+    packet.field2C = D_800A0134;
+    packet.field34 = D_800A013C;
+    packet.position.x = position.x;
+    packet.position.y = position.y + 35.0f;
+    packet.field4C = 15.0f;
+    packet.field50 = 39.0f;
+    packet.field54 = D_800A0140;
+    packet.count = 17;
+    packet.countRange = 7;
+    packet.kind = 108;
+    packet.field06 = 0x5103;
+    packet.header = 0x200005;
+    packet.field10 = 40;
+    packet.field12 = 20;
+    packet.field1F = 255;
+    packet.field1C = 78;
+    packet.field58 = D_800A0144;
+    packet.field22 = 200;
+    packet.field1D = 84;
+    packet.field1E = 123;
+    packet.field20 = 164;
+    packet.field21 = 161;
+    packet.field23 = 155;
+    packet.field24 = 100;
+    packet.field25 = 255;
+    packet.field26 = 30;
+    packet.field28 = 8;
+    packet.field30 = D_800A0138;
+    packet.payloadValue = D_800A0148;
+    packet.field0C = 0;
+    packet.field14 = 0;
+    packet.field18 = 0;
+    packet.field2A = 30;
+    packet.field44 = 0;
+    packet.field46 = -20;
+    packet.field48 = 255;
+    packet.field4A = 30;
+    packet.flags = 0x40040E07;
+    packet.field60 = 16;
+    packet.field61 = -1;
+    packet.field62 = 8;
+    packet.field63 = 6;
+    packet.field64 = 1;
+    packet.position.z = position.z;
+    func_15153634(&packet,255,255,1);
 }
+
 
 s32 func_150C01DC() {
     return 0;

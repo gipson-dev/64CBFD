@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Actor emission preset matched with guards - 2026-11-23
+
+[Note 2647](WORKING_NOTES/2647-game-actor-emission-preset-guarded-match-20261123.md):
+`func_150BFFE0` recovers all 127 C words in frame 160; 45 strict allocation/
+schedule guards restore the exact slot. Raw C, normalized fault/caller, SDK32,
+both-padder and strict full-image gates pass. Total **4,628 / 5,528 (83.72%)**,
+Game **3,955 / 4,855 (81.46%)**, zero drift; **71 more matches** to 85%.
+
 ## Particle preset packet matched directly - 2026-11-23
 
 [Note 2646](WORKING_NOTES/2646-game-effect-preset-packet-direct-match-20261123.md):
