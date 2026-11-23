@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Ground-burst destruction callback matched - 2026-11-23
+
+[Note 2661](WORKING_NOTES/2661-game-ground-burst-callback-byte-match-20261123.md): `func_150DF334` now matches all
+97 words / frame 152 with independently qualified source-role normalization.
+The full death dispatcher, escaped-buffer effects and explicit random-call order
+are qualified. Total **4,641 / 5,528 (83.95%)**, Game **3,968 / 4,855 (81.73%)**,
+zero drift; **58 more to 85%**. The larger ribbon renderer remains private.
+
 ## Linked-effect update matched - 2026-11-23
 
 [Note 2660](WORKING_NOTES/2660-game-linked-effect-update-direct-byte-match-20261123.md): `func_151D1138` now matches all
