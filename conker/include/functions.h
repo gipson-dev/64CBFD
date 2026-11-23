@@ -90,7 +90,7 @@ s32  func_10010894(struct127 *arg0);
 void func_100109D0(struct127 *arg0);
 void func_10010A3C(struct127 *arg0);
 void func_10010AA8(struct127 *arg0);
-void func_10010F30(s32 arg0, u16 arg1, u8 arg2, s16 arg3, u8 arg4);
+u16 func_10010F30(s32 arg0, u16 arg1, u8 arg2, s16 arg3, u8 arg4);
 void func_100111C8(u16 arg0);
 void func_1001123C(u16 arg0);
 s32  func_100112BC(s32 arg0, s32 arg1);
@@ -1142,6 +1142,7 @@ void func_15178E14(u8, s32);
 s32  func_15187EC0(s32 mode, f32 rate, u8 startRed, u8 startGreen,
                    u8 startBlue, u8 targetRed, u8 targetGreen, u8 targetBlue);
 void *func_15195AA8(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
+u8 *func_15196438(struct127 *actor, s32 presetIndex, s32 channel, s32 context);
 void func_151B8DB0(s32 arg0, u8 arg1, u8 arg2, u8 arg3);
 void func_151D5404(struct17*, f32, f32, f32, s32, s32, s32, s32);
 void func_151D5714(struct127*, f32*, f32*, s32, f32, s32, s32);

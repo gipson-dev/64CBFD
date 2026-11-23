@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Actor preset constructor matched - 2026-11-23
+
+[Note 2655](WORKING_NOTES/2655-game-actor-preset-constructor-guarded-byte-match-20261123.md): `func_15196438` now matches all
+196 words / frame 248 through qualified guarded C. Its sound return-chain
+repair preserves all existing machine code. Total **4,635 / 5,528 (83.85%)**,
+Game **3,962 / 4,855 (81.61%)**, zero drift; **64 more to 85%**.
+Next audit `func_15196748`.
+
 ## Texture scroll update matched - 2026-11-23
 
 [Note 2654](WORKING_NOTES/2654-game-texture-scroll-update-guarded-byte-match-20261123.md): `func_15195FF0` replaces its

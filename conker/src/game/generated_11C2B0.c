@@ -603,7 +603,7 @@ extern u8 D_800D98F0;
 extern s32 D_800BE9E4;
 extern f32 D_800A191C;
 void func_100114D0(s32,s32,s32,s32,s32,s32,s32*,s32*,s32*);
-void func_10010F30(s32,u16,u8,s16,u8);
+u16 func_10010F30(s32,u16,u8,s16,u8);
 /* Preserve the quartic position threshold and the shared byte cooldown. */
 void func_150F20F0(s32 index) {
     f32 x;

@@ -536,9 +536,154 @@ s32 func_151963B4(u8 *arg0) {
     func_15147928(arg0);
 }
 
-s32 func_15196438() {
-    return 0;
+typedef struct { f32 axis[3]; } EffectPoint15196438;
+typedef struct {
+    s16 lifetime;
+    u16 pad02;
+    f32 firstScale, secondScale;
+    u8 mode, pad0D[3];
+    s32 count;
+    u8 matrixIndex, pad15[3];
+    EffectPoint15196438 localPoint, localEnd;
+    s8 scaleCallback;
+    u8 field31, field32, field33;
+    f32 field34, field38;
+    s8 setupCallback, tickCallback, finishCallback, soundCallback;
+    s8 field40, field41, field42;
+    u8 pad43;
+    u16 flags;
+    u8 field46, field47;
+    f32 field48;
+    u8 field4C, pad4D[3];
+    f32 field50;
+    u8 field54, pad55[3];
+    f32 field58;
+    u8 field5C, field5D, field5E, field5F;
+} EffectPreset15196438;
+typedef struct {
+    struct127 *owner;
+    u8 ownerId, matrixIndex, kind;
+    s8 scaleCallback;
+    EffectPoint15196438 localPoint, localEnd, point, end;
+    f32 scale, field3C, firstScale, gap44, secondScale, field4C;
+    u8 field50, mode, field52, field53, field54, gap55[3];
+    f32 field58, field5C;
+    s8 setupCallback, tickCallback, finishCallback, soundCallback;
+    s8 field64, field65;
+    u16 soundHandle;
+    s8 field68;
+    u8 field69, field6A, gap6B;
+    f32 field6C, field70;
+    u8 field74, gap75[3];
+    f32 field78, field7C;
+    u8 field80, gap81[3];
+    f32 field84, field88;
+    u8 field8C, field8D, field8E, field8F;
+} EffectPayload15196438;
+typedef struct {
+    EffectPoint15196438 point;
+    s16 lifetime;
+    u16 flags;
+    s32 kind;
+    u8 gap14, count, gap16[2];
+    s32 gap18;
+} EffectRequest15196438;
+extern EffectPreset15196438 D_800A87A0[];
+extern s32 (*D_8008F890[])(void);
+extern f32 (*D_8008F870[])(s32);
+extern void (*D_8008F87C[])(u8 *);
+void func_15143134(f32 *, f32 *, u8 *);
+u8 *func_15147A80(void *, s32, s32, s32, s32, s32, s32, s32, void *, u8, s32);
+u16 func_10010F30(s32, u16, u8, s16, u8);
+
+/* Build a preset character effect at two transformed actor attachment points. */
+u8 *func_15196438(struct127 *actor, s32 presetIndex, s32 channel, s32 context) {
+    EffectRequest15196438 request;
+    EffectPayload15196438 effect;
+    u8 *created;
+    u8 *matrix;
+    EffectPreset15196438 *preset;
+    EffectPayload15196438 *payload;
+
+    if (actor == NULL) {
+        return NULL;
+    }
+    if (actor->unk1D4 == NULL) {
+        return NULL;
+    }
+    effect.owner = actor;
+    effect.ownerId = actor->unique_id;
+    effect.kind = 2;
+    preset = &D_800A87A0[presetIndex];
+    effect.field50 = 0;
+    effect.field4C = 0.0f;
+    effect.field70 = 0.0f;
+    effect.field7C = 0.0f;
+    effect.field88 = 0.0f;
+    effect.setupCallback = preset->setupCallback;
+    effect.tickCallback = preset->tickCallback;
+    effect.finishCallback = preset->finishCallback;
+    request.lifetime = preset->lifetime;
+    effect.firstScale = preset->firstScale;
+    effect.secondScale = preset->secondScale;
+    effect.mode = preset->mode;
+    request.count = preset->count;
+    effect.matrixIndex = preset->matrixIndex;
+    effect.localPoint = preset->localPoint;
+    effect.localEnd = preset->localEnd;
+    effect.field80 = preset->field54;
+    effect.soundCallback = preset->soundCallback;
+    effect.scaleCallback = preset->scaleCallback;
+    effect.field52 = preset->field31;
+    effect.field53 = preset->field32;
+    effect.field54 = preset->field33;
+    request.flags = preset->flags;
+    effect.field6A = preset->field47;
+    effect.field74 = preset->field4C;
+    effect.field58 = preset->field34;
+    effect.field5C = preset->field38;
+    effect.field6C = preset->field48;
+    effect.field78 = preset->field50;
+    effect.field84 = preset->field58;
+    effect.field64 = preset->field40;
+    effect.field65 = preset->field41;
+    effect.field68 = preset->field42;
+    effect.field69 = preset->field46;
+    effect.field8C = preset->field5C;
+    effect.field8D = preset->field5D;
+    effect.field8E = preset->field5E;
+    effect.field8F = preset->field5F;
+    if (effect.soundCallback != -1) {
+        effect.soundHandle = D_8008F890[effect.soundCallback]();
+    } else {
+        effect.soundHandle = 0;
+    }
+    matrix = (u8 *)effect.owner->unk1D4 + (effect.matrixIndex << 6);
+    func_15143134(effect.localPoint.axis, effect.point.axis, matrix);
+    func_15143134(effect.localEnd.axis, effect.end.axis, matrix);
+    request.point.axis[0] = effect.point.axis[0];
+    request.point.axis[1] = effect.point.axis[1];
+    request.point.axis[2] = effect.point.axis[2];
+    effect.field3C = 0.0f;
+    request.kind = 3;
+    created = func_15147A80(&request, 0x90, 0x24, 2, 2, 2, 0, 0,
+                          NULL, (u8)channel, context);
+    if (created != NULL) {
+        payload = (EffectPayload15196438 *)*(u8 **)(created + 0x98);
+        memcpy(payload, &effect, 0x90);
+        if (payload->scaleCallback != -1) {
+            payload->scale = D_8008F870[payload->scaleCallback]((s32)created);
+        } else {
+            payload->scale = 0.0f;
+        }
+        if (effect.setupCallback != -1) {
+            D_8008F87C[effect.setupCallback](created);
+        }
+    }
+    return created;
 }
+
+
 
 s32 func_15196748() {
     return 0;
@@ -665,7 +810,7 @@ s32 func_1519897C() {
 }
 
 s32 func_15198C60(void) {
-    func_10010F30(0x1AA, 0x7FFF, 0x40, 0, 0);
+    return func_10010F30(0x1AA, 0x7FFF, 0x40, 0, 0);
 }
 
 typedef struct { f32 x, y, z; u8 opaque[24]; } SoundPoint36;

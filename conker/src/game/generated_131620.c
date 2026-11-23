@@ -3,7 +3,7 @@
 extern s32 D_800BE9E4, D_800BEA08;
 extern u8 D_800BEA0C;
 void func_100176C4(void);
-void func_10010F30(s32, u16, u8, s16, u8);
+u16 func_10010F30(s32, u16, u8, s16, u8);
 void func_1000E2F4(s32);
 void func_151254F4(struct108 *, s32);
 void func_151D66F0(s32, s32);

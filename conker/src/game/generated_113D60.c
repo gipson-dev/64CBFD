@@ -278,7 +278,7 @@ s32 func_150E75A0(f32 *position, f32 scale, s16 id, u8 flags, u8 duration,
                  u8 slot, s32 context);
 s32 func_150E76D0(f32 scale, s16 id, u8 flags, u8 duration, s32 opacity,
                  s32 size0, s32 size1, s32 *pair, s32 mode, u8 slot, s32 context);
-void func_10010F30(s32 arg0, u16 arg1, u8 arg2, s16 arg3, u8 arg4);
+u16 func_10010F30(s32 arg0, u16 arg1, u8 arg2, s16 arg3, u8 arg4);
 void func_15164F0C(u8 kind, u8 index, s32 arg2, u8 slot, s32 context);
 s32 func_151D8868(void *packet, s32 arg1, s32 arg2, s32 arg3);
 f32 func_150484A0(f32 x, f32 y);
