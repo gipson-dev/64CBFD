@@ -808,9 +808,150 @@ s32 func_15196748(u8 *owner) {
 
 
 
-s32 func_15196B4C() {
-    return 0;
+/* Unrecovered helper bodies: only their two observed pointer arguments are restored. */
+void func_15198D88(u8 *, f32 *);
+void func_151990AC(u8 *, f32 *);
+
+/* Emit interpolated ring entries between the two transformed attachment points. */
+/* Emit interpolated ring entries between the two transformed attachment points. */
+/* Emit interpolated ring entries between the two transformed attachment points. */
+s32 func_15196B4C(u8 *owner) {
+    f32 inversePhase;
+    u32 random;
+    EffectPoint15196438 transformedEnd;
+    f32 elapsed;
+    f32 elapsedStep;
+    f32 speed;
+    f32 size;
+    f32 xStep;
+    f32 yStep;
+    f32 zStep;
+    f32 endXStep;
+    f32 endYStep;
+    f32 endZStep;
+    f32 sizeStep;
+    EffectPoint15196438 point;
+    EffectPoint15196438 end;
+    f32 speedStep;
+    EffectPoint15196438 pointDifference;
+    EffectPoint15196438 endDifference;
+    f32 sizeDifference;
+    f32 speedDifference;
+    f32 zVelocity;
+    EffectPoint15196438 *previousPoint, *previousEnd;
+    EffectPayload15196438 *payload;
+    EffectRecord15196748 *records, *record;
+    u8 *matrix, *matrixBase;
+    s8 selector, head;
+
+    payload = (EffectPayload15196438 *)*(u8 **)(owner + 0x98);
+    records = (EffectRecord15196748 *)*(u8 **)(owner + 0x94);
+    matrixBase = (u8 *)payload->owner->unk1D4;
+    if (matrixBase == 0) {
+        return 0;
+    }
+    selector = payload->scaleCallback;
+    if (selector != -1) {
+        payload->gap44 = D_8008F870[selector]((s32)owner);
+        matrixBase = (u8 *)payload->owner->unk1D4;
+    }
+    matrix = matrixBase + payload->matrixIndex * 64;
+    func_15143134(payload->localPoint.axis, (f32 *)(owner + 0x10), matrix);
+    func_15143134(payload->localEnd.axis, transformedEnd.axis, matrix);
+    previousPoint = &payload->point;
+    payload->field4C += payload->secondScale * D_800BE9A4;
+    if (payload->field4C > 1.0f) {
+        inversePhase = 1.0f / payload->field4C;
+        elapsed = payload->field3C + D_800BE9A4;
+        point = payload->point;
+        previousEnd = &payload->end;
+        end = payload->end;
+        elapsedStep = elapsed * inversePhase;
+        speed = payload->scale;
+        size = payload->field5C + payload->field58 * elapsed;
+        pointDifference.axis[0] = *(f32 *)(owner + 0x10) - payload->point.axis[0];
+        pointDifference.axis[1] = *(f32 *)(owner + 0x14) - payload->point.axis[1];
+        pointDifference.axis[2] = *(f32 *)(owner + 0x18) - payload->point.axis[2];
+        endDifference.axis[0] = transformedEnd.axis[0] - payload->end.axis[0];
+        endDifference.axis[1] = transformedEnd.axis[1] - payload->end.axis[1];
+        endDifference.axis[2] = transformedEnd.axis[2] - payload->end.axis[2];
+        sizeDifference = payload->field5C - size;
+        speedDifference = payload->gap44 - speed;
+        xStep = pointDifference.axis[0] * inversePhase;
+        yStep = pointDifference.axis[1] * inversePhase;
+        zStep = pointDifference.axis[2] * inversePhase;
+        endXStep = endDifference.axis[0] * inversePhase;
+        endYStep = endDifference.axis[1] * inversePhase;
+        endZStep = endDifference.axis[2] * inversePhase;
+        sizeStep = sizeDifference * inversePhase;
+        speedStep = speedDifference * inversePhase;
+        do {
+            payload->field7C += payload->field78;
+            if (payload->field7C > 1.0f) {
+                func_15198D88(owner, transformedEnd.axis);
+            }
+            payload->field88 += payload->field84;
+            if (payload->field88 > 1.0f) {
+                func_151990AC(owner, transformedEnd.axis);
+            }
+            records[*(s8 *)(owner + 0x2E)].field21 = 0;
+            records[*(s8 *)(owner + 0x2E)].point.axis[0] = point.axis[0];
+            records[*(s8 *)(owner + 0x2E)].point.axis[1] = point.axis[1];
+            records[*(s8 *)(owner + 0x2E)].point.axis[2] = point.axis[2];
+            records[*(s8 *)(owner + 0x2E)].velocity[0] = (end.axis[0] - point.axis[0]) * speed;
+            records[*(s8 *)(owner + 0x2E)].velocity[1] = (end.axis[1] - point.axis[1]) * speed;
+            records[*(s8 *)(owner + 0x2E)].velocity[2] = (end.axis[2] - point.axis[2]) * speed;
+            records[*(s8 *)(owner + 0x2E)].size = size;
+            records[*(s8 *)(owner + 0x2E)].lifetime = payload->field53;
+            records[*(s8 *)(owner + 0x2E)].delay = payload->field54;
+            records[*(s8 *)(owner + 0x2E)].mark = 255;
+            records[*(s8 *)(owner + 0x2E)].field20 = payload->field50;
+            random = (u32)func_150ADA20();
+            payload->field50 = payload->field50 + (random % 6U) + 3;
+            record = &records[*(s8 *)(owner + 0x2E)];
+            record->velocity[1] += payload->firstScale * elapsed;
+            record = &records[*(s8 *)(owner + 0x2E)];
+            record->point.axis[0] += record->velocity[0] * elapsed;
+            record = &records[*(s8 *)(owner + 0x2E)];
+            record->point.axis[1] += record->velocity[1] * elapsed;
+            record = &records[*(s8 *)(owner + 0x2E)];
+            zVelocity = record->velocity[2] * elapsed;
+            elapsed -= elapsedStep;
+            record->point.axis[2] += zVelocity;
+            owner[0x2E] = *(s8 *)(owner + 0x2E) + 1;
+            if (owner[0x25] == *(s8 *)(owner + 0x2E)) {
+                owner[0x2E] = 0;
+            }
+            head = *(s8 *)(owner + 0x2D);
+            owner[0x2C] = *(s8 *)(owner + 0x2C) + 1;
+            if (head == *(s8 *)(owner + 0x2E)) {
+                owner[0x2D] = head + 1;
+                if (owner[0x25] == *(s8 *)(owner + 0x2D)) {
+                    owner[0x2D] = 0;
+                }
+                owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+            }
+            point.axis[0] += xStep;
+            point.axis[1] += yStep;
+            point.axis[2] += zStep;
+            end.axis[0] += endXStep;
+            end.axis[1] += endYStep;
+            end.axis[2] += endZStep;
+            speed += speedStep;
+            size += sizeStep;
+            payload->field4C -= 1.0f;
+        } while (payload->field4C > 1.0f);
+        *previousPoint = point;
+        *previousEnd = end;
+        payload->scale = speed;
+        payload->field3C = elapsed;
+    }
+    return 1;
 }
+
+
+
+
 
 s32 func_15197148() {
     return 0;
@@ -974,12 +1115,12 @@ void func_15198D40(u8 *arg0) {
 void func_15198D7C(s32 arg0) {
 }
 
-s32 func_15198D88() {
-    return 0;
+/* Unrecovered emitter helper; observed two-pointer void interface only. */
+void func_15198D88(u8 *owner, f32 *point) {
 }
 
-s32 func_151990AC() {
-    return 0;
+/* Unrecovered emitter helper; observed two-pointer void interface only. */
+void func_151990AC(u8 *owner, f32 *point) {
 }
 
 void func_151993B4(u8 *arg0) {

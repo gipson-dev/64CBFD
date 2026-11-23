@@ -1,5 +1,12 @@
 # PC Port Roadmap located in another project folder
 
+## Interpolated actor ring emitter matched - 2026-11-23
+
+[Note 2657](WORKING_NOTES/2657-game-actor-ring-emitter-guarded-byte-match-20261123.md): `func_15196B4C` now matches all
+383 words / frame 288 through qualified guarded C. Two helper interface repairs
+remain unrecovered and add no credit. Total **4,637 / 5,528 (83.88%)**, Game
+**3,964 / 4,855 (81.65%)**, zero drift; **62 more to 85%**.
+
 ## Actor effect ring update matched - 2026-11-23
 
 [Note 2656](WORKING_NOTES/2656-game-actor-effect-ring-update-guarded-byte-match-20261123.md): `func_15196748` now matches all
