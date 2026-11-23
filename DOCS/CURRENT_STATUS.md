@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Linked-effect update matched - 2026-11-23
+
+[Note 2660](WORKING_NOTES/2660-game-linked-effect-update-direct-byte-match-20261123.md): `func_151D1138` now matches all
+124 words / frame 56 directly from semantic C, without word-patch guards.
+Its full 45-word dispatcher and late public-state reloads are qualified.
+Total **4,640 / 5,528 (83.94%)**, Game **3,967 / 4,855 (81.71%)**, zero drift;
+**59 more to 85%**. The larger ribbon renderer remains private and uncredited.
+
 ## Owner-linked effect constructor matched - 2026-11-23
 
 [Note 2659](WORKING_NOTES/2659-game-owner-linked-effect-direct-byte-match-20261123.md): `func_151D1448` now matches all

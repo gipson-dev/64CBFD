@@ -523,9 +523,54 @@ s32 func_151D10E4(u8 *owner, void *output, u8 mode) {
     return 1;
 }
 
-s32 func_151D1138() {
-    return 0;
+typedef struct {
+    u8 *actor;
+    u8 identity;
+    u8 *created;
+    PositionVector151D0F60 previous, position;
+    f32 delta[3];
+    f32 distance;
+    u8 selector;
+} LinkedEffectState151D1138;
+f32 func_15143E64(f32 *);
+u32 func_1510F8CC(u32);
+void func_151D1448(u8 *);
+
+/* Track the actor callback position and attach or retire its linked effect. */
+void func_151D1138(struct260 *owner) {
+    LinkedEffectState151D1138 *link;
+    u8 *actor;
+    u8 detach = 0;
+    u32 kind;
+
+    actor = *(u8 **)((u8 *)owner + 0x28);
+    link = (LinkedEffectState151D1138 *)((u8 *)owner + 0x28);
+    if (*(s32 *)actor == 0 || link->identity != actor[0x3B]) {
+        *(s16 *)((u8 *)owner + 0x0E) = -1;
+    } else {
+        link->previous = link->position;
+        if (!D_8008FC30[link->selector](actor, &link->position)) {
+            link->position = link->previous;
+            detach = 1;
+        }
+        link->delta[0] = link->position.x - link->previous.x;
+        link->delta[1] = link->position.y - link->previous.y;
+        link->delta[2] = link->position.z - link->previous.z;
+        link->distance = func_15143E64(link->delta);
+        kind = func_1510F8CC(*(u32 *)(actor + 0x184));
+        if (link->distance > 300.0f || link->distance <= 0.0f ||
+            *(f32 *)(actor + 0x28) != 0.0f || actor[0xAD] != 0 ||
+            kind == 5 || kind == 6 || kind == 9 || kind == 13 || kind == 14) {
+            detach = 1;
+        }
+        if (detach) {
+            func_151D13E0((u8 *)owner);
+        } else if (link->created == NULL) {
+            func_151D1448((u8 *)owner);
+        }
+    }
 }
+
 
 void func_151D1328(u8 *arg0, s32 arg1, u8 arg2) {
     func_15169850(arg1, arg2, (s32) (arg0 + 0x28), (s32) (arg0 + 0x2C), (s32) arg0);
