@@ -72,9 +72,85 @@ s32 func_150BF21C() {
     return 0;
 }
 
-s32 func_150BF760() {
-    return 0;
+/* This callback only accesses byte +0x02 of each 48-byte resource record. */
+typedef struct { u8 field00, field01, field02; u8 remaining[45]; } PhaseResourceEC420;
+extern u8 D_800C35EA, D_800C35E8;
+extern s32 D_800902B8;
+extern PhaseResourceEC420 *D_800D20FC;
+extern f32 D_800A0124, D_800A0128, D_800A012C, D_800A0130;
+void func_1511B51C(u8 *);
+s32 func_15195FB0(u8 *, s32, s32, s32, s32, s32, s32);
+u8 *func_15083E90(u8);
+s32 func_15083E0C(u8);
+s32 func_150825C0(s32, s32);
+void func_15060F28(u8 *, s32);
+f32 sinf(f32);
+
+/* Update the owner phase, resource handle, and phase-dependent object motion. */
+void func_150BF760(u8 *owner) {
+    u8 *object;
+    u8 *animation;
+    s32 phase;
+    s32 index;
+    f32 progress = 0.0f;
+
+    if (D_800C35EA == 1 && D_800C35E8 != 1) {
+        return;
+    }
+    func_1511B51C(owner);
+    if (*(s32 *)(owner + 0x124) == 0) {
+        *(s32 *)(owner + 0x124) = func_15195FB0(owner, D_800902B8, 1, -1, 0, 0, -8);
+    }
+    object = func_15083E90(20);
+    phase = owner[0x73] & 3;
+    if (object != NULL) {
+        animation = *(u8 **)(object + 0x2D0);
+        progress = *(f32 *)(animation + 8) / (*(f32 *)(animation + 0x18) - 2.0f);
+    }
+    *(f32 *)(owner + 0xA8) = 0.0f;
+    if (phase == 2) {
+        if (progress <= 0.75f) {
+            *(f32 *)(owner + 0xA8) = -sinf(progress * D_800A0124 * D_800A0128) * 10.0f;
+        }
+        if (object == NULL) {
+            index = func_15083E0C(20);
+            D_800D20FC[index].field02 = 0;
+            func_150825C0(index, 0);
+            object = func_15083E90(20);
+        }
+        if (object[0x232] != 2) {
+            object[0x232] = 2;
+            *(s32 *)(object + 0x218) = 0;
+        }
+    } else if (phase == 3) {
+        if (object != NULL && progress >= 1.0f) {
+            func_15060F28(object, 0);
+        }
+    } else if (phase == 0) {
+        if (progress >= 0.25f) {
+            *(f32 *)(owner + 0xA8) = sinf(progress * D_800A012C - D_800A012C) * 10.0f;
+        }
+        if (object != NULL && progress >= 1.0f) {
+            func_15060F28(object, 0);
+        }
+    } else if (phase == 1) {
+        if (progress >= 0.25f) {
+            *(f32 *)(owner + 0xA8) = sinf(progress * D_800A0130 - D_800A0130) * 10.0f;
+        }
+        if (object == NULL) {
+            index = func_15083E0C(20);
+            D_800D20FC[index].field02 = 0;
+            func_150825C0(index, 0);
+            object = func_15083E90(20);
+        }
+        /* Preserve the original final null-object condition during recovery. */
+        if (object == NULL && object[0x232] != 3) {
+            object[0x232] = 3;
+            *(s32 *)(object + 0x218) = 0;
+        }
+    }
 }
+
 
 s32 func_150BFA7C() {
     return 0;

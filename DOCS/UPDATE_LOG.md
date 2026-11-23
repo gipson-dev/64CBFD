@@ -1,5 +1,14 @@
 # Update Log
 
+## Owner phase callback directly matched - 2026-11-23
+
+[Note 2649](WORKING_NOTES/2649-game-owner-phase-callback-direct-match-20261123.md):
+`func_150BF760` directly emits all 199 retail words/frame 64, with zero guards.
+The request relay now explicitly returns its full-word handle without changing
+its complete object. Caller, fault, SDK32 and strict image gates pass. Total
+**4,630 / 5,528 (83.76%)**, Game **3,957 / 4,855 (81.50%)**, zero drift;
+**69 more matches** to 85%.
+
 ## Dual impact preset matched with guards - 2026-11-23
 
 [Note 2648](WORKING_NOTES/2648-game-dual-impact-preset-guarded-match-20261123.md):
