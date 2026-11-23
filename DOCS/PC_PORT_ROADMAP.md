@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Visibility decoder recovered privately - 2026-11-22
+
+[Note 2644](WORKING_NOTES/2644-game-visibility-bitplane-decoder-private-recovery-20261122.md):
+`func_150A6760` has a checked semantic C recovery and audited interior label.
+The best form is 70 words/frame 0 against retail's 64-word slot; access order
+still differs. Five fresh guest/SDK32/owner/boundary gates pass in both tools
+setups. No production source or matching credit changes: total **4,625 / 5,528
+(83.66%)**, with **74 more matches** needed for 85%.
+
 ## Indexed-matrix renderer matched directly - 2026-11-22
 
 [Note 2643](WORKING_NOTES/2643-game-indexed-matrix-renderer-direct-match-20261122.md):
