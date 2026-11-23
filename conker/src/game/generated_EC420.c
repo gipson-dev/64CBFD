@@ -161,9 +161,104 @@ void func_150BFFE0(u8 *actor) {
 }
 
 
-s32 func_150C01DC() {
+typedef struct {
+    s32 count, countRange;
+    EmissionPositionEC420 position;
+    s16 angle, angleRange, pitch, pitchRange;
+    f32 speed, speedRange, vertical, verticalRange;
+    s16 lifetime, lifetimeRange;
+    f32 scale, scaleRange, spread;
+} BurstConfigurationEC420;
+typedef struct { s32 value; } ResourceOneEC420;
+typedef struct { f32 value; } ScaleOneEC420;
+extern ResourceOneEC420 D_800A0100;
+extern ScaleOneEC420 D_800A0104;
+extern f32 D_800A014C, D_800A0150, D_800A0154, D_800A0158, D_800A015C;
+extern f32 D_800A0160, D_800A0164, D_800A0168, D_800A016C;
+void func_15152190(BurstConfigurationEC420 *, s32 *, f32 *, s32, f32, u8, u8, s32);
+
+/* Impact callback: capture the owner position, then submit both effect presets.
+ * The callback position arguments and contact pointer are unused by this preset. */
+s32 func_150C01DC(u8 *owner, f32 unusedX, f32 unusedY, f32 unusedZ,
+    f32 height, void *contact) {
+    EmissionPositionEC420 position;
+    BurstConfigurationEC420 burst;
+    ResourceOneEC420 resource;
+    ScaleOneEC420 scale;
+    EmissionPresetEC420 emission;
+    f32 sharedScale;
+
+    position.x = *(f32 *)(owner + 0x38);
+    position.y = height + 20.0f;
+    position.z = *(f32 *)(owner + 0x40);
+    resource = D_800A0100;
+    scale = D_800A0104;
+    burst.count = 5;
+    burst.countRange = 4;
+    burst.position = position;
+    burst.angle = 0;
+    burst.angleRange = 255;
+    burst.pitch = -64;
+    burst.pitchRange = 34;
+    burst.speed = 12.0f;
+    burst.speedRange = 8.0f;
+    burst.vertical = D_800A014C;
+    burst.verticalRange = D_800A0150;
+    burst.lifetime = 30;
+    burst.lifetimeRange = 15;
+    burst.scale = D_800A0154;
+    burst.scaleRange = D_800A0158;
+    burst.spread = D_800A015C;
+    func_15152190(&burst, &resource.value, &scale.value, 1, 0.0f, 1,
+        owner[0xC], owner[1]);
+
+    sharedScale = D_800A0160;
+    emission.field2C = D_800A0164;
+    emission.field30 = 218.0f;
+    emission.field34 = D_800A0168;
+    emission.count = 5;
+    emission.countRange = 8;
+    emission.kind = 108;
+    emission.field06 = 0x5103;
+    emission.header = 0x200005;
+    emission.field10 = 30;
+    emission.field12 = 15;
+    emission.field1F = 255;
+    emission.field1C = 78;
+    emission.field1D = 84;
+    emission.field0C = 0;
+    emission.field14 = 0;
+    emission.field18 = 0;
+    emission.field1E = 123;
+    emission.field20 = 164;
+    emission.field21 = 161;
+    emission.field22 = 200;
+    emission.field23 = 100;
+    emission.field24 = 155;
+    emission.field25 = 255;
+    emission.field26 = 14;
+    emission.field28 = 18;
+    emission.field2A = 14;
+    emission.position = position;
+    emission.field44 = 0;
+    emission.field46 = -40;
+    emission.field48 = 255;
+    emission.field4A = 40;
+    emission.field54 = sharedScale;
+    emission.field58 = sharedScale;
+    emission.flags = 0x840E07;
+    emission.field60 = 16;
+    emission.field61 = -1;
+    emission.field62 = 8;
+    emission.field63 = 6;
+    emission.field64 = 1;
+    emission.field4C = 19.0f;
+    emission.field50 = 8.0f;
+    emission.payloadValue = D_800A016C;
+    func_15153634(&emission, 255, owner[0xC], owner[1]);
     return 0;
 }
+
 
 typedef struct { f32 x, y, z; } EffectPositionEC420;
 struct ExtendedState15F680;

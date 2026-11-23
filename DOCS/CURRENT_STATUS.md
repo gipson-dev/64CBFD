@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Dual impact preset matched with guards - 2026-11-23
+
+[Note 2648](WORKING_NOTES/2648-game-dual-impact-preset-guarded-match-20261123.md):
+`func_150C01DC` recovers the six-argument callback and both effect packets;
+185 C words/frame 240, with 63 strict scheduling guards. Raw C, both real
+indirect callers, SDK32, padding and strict image gates pass. Total
+**4,629 / 5,528 (83.74%)**, Game **3,956 / 4,855 (81.48%)**, zero drift;
+**70 more matches** to 85%.
+
 ## Actor emission preset matched with guards - 2026-11-23
 
 [Note 2647](WORKING_NOTES/2647-game-actor-emission-preset-guarded-match-20261123.md):
