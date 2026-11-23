@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Owner-linked effect constructor matched - 2026-11-23
+
+[Note 2659](WORKING_NOTES/2659-game-owner-linked-effect-direct-byte-match-20261123.md): `func_151D1448` now matches all
+98 words / frame 144 directly from semantic C, with no word-patch guards.
+Request/configuration capture and post-copy attachment retain retail behavior.
+Total **4,639 / 5,528 (83.92%)**, Game **3,966 / 4,855 (81.69%)**, zero drift;
+**60 more to 85%**. The caller and larger ribbon renderer remain uncredited.
+
 ## Resource cache sweep matched - 2026-11-23
 
 [Note 2658](WORKING_NOTES/2658-game-resource-cache-sweep-guarded-byte-match-20261123.md): `func_15114A1C` now matches all

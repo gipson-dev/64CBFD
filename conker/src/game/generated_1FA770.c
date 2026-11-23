@@ -561,9 +561,63 @@ void func_151D13E0(u8 *arg0) {
     }
 }
 
-s32 func_151D1448() {
-    return 0;
+typedef struct {
+    PositionVector151D0F60 position;
+    s16 lifetime, mode;
+    s32 active;
+    u8 kind, count;
+    s32 zero;
+} LinkedEffectRequest151D1448;
+typedef struct {
+    u8 *owner;
+    f32 value04;
+    u8 level;
+    f32 parameters[5];
+} LinkedEffectConfig151D1448;
+extern s32 D_80082FA0;
+
+/* Configure the actor/view preset and attach the effect only after construction. */
+void func_151D1448(u8 *owner) {
+    u8 *actor;
+    LinkedEffectConfig151D1448 config;
+    LinkedEffectRequest151D1448 request;
+    u8 *created;
+    u8 *link;
+
+    actor = *(u8 **)(owner + 0x28);
+    link = owner + 0x28;
+    config.owner = owner;
+    config.value04 = 0.0f;
+    config.level = 255;
+    if (actor[4] == 0x25) {
+        config.parameters[0] = 800.0f;
+        config.parameters[1] = 36.0f;
+        config.parameters[2] = 50.0f;
+        config.parameters[3] = 200.0f;
+    } else {
+        if (D_80082FA0 > 0) config.parameters[0] = 260.0f;
+        else config.parameters[0] = 500.0f;
+        config.parameters[1] = 40.0f;
+        config.parameters[2] = 40.0f;
+        config.parameters[3] = 180.0f;
+    }
+    config.parameters[4] = *(f32 *)(*(u8 **)link + 0x14C);
+    request.count = 25;
+    request.position = *(PositionVector151D0F60 *)(link + 0x18);
+    request.lifetime = 300;
+    request.mode = 0x36;
+    request.active = 19;
+    request.kind = 6;
+    request.zero = 0;
+    created = func_15147A80(&request, 32, 40, 0, 17, 18, 0, 0, NULL,
+                          owner[0x0C], owner[1]);
+    if (created != NULL) {
+        memcpy(*(u8 **)(created + 0x98), &config, 32);
+        *(u8 **)(link + 8) = created;
+    }
 }
+
+
 
 s32 func_151D15D0() {
     return 0;
