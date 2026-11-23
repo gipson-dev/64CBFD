@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Actor effect ring update matched - 2026-11-23
+
+[Note 2656](WORKING_NOTES/2656-game-actor-effect-ring-update-guarded-byte-match-20261123.md): `func_15196748` now matches all
+257 words / frame 56 through qualified guarded C. Four callback interface
+repairs remain unmatched placeholders and add no credit. Total
+**4,636 / 5,528 (83.86%)**, Game **3,963 / 4,855 (81.63%)**, zero drift;
+**63 more to 85%**. Next audit `func_15196B4C`.
+
 ## Actor preset constructor matched - 2026-11-23
 
 [Note 2655](WORKING_NOTES/2655-game-actor-preset-constructor-guarded-byte-match-20261123.md): `func_15196438` now matches all

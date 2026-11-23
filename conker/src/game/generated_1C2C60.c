@@ -685,9 +685,128 @@ u8 *func_15196438(struct127 *actor, s32 presetIndex, s32 channel, s32 context) {
 
 
 
-s32 func_15196748() {
-    return 0;
+typedef struct {
+    EffectPoint15196438 point;
+    f32 velocity[3];
+    f32 size;
+    s16 lifetime;
+    s8 delay;
+    u8 mark, field20, field21, gap22[2];
+} EffectRecord15196748;
+
+struct PointSoundOwner;
+extern void (*D_8008F894[])(struct PointSoundOwner *);
+extern void (*D_8008F89C[])(s32);
+extern s32 (*D_8008F880[])(u8 *);
+/* Unrecovered callee: observed arguments are (u8 *owner, s32 index). */
+void func_15198110(u8 *, s32);
+
+
+/* Integrate the live ring, retire expired entries and apply both mark ramps. */
+s32 func_15196748(u8 *owner) {
+    EffectPayload15196438 *payload;
+    EffectRecord15196748 *records;
+    s32 cursor;
+    EffectRecord15196748 *record;
+    s16 remaining;
+    u8 flags;
+    u8 ramp;
+
+    payload = (EffectPayload15196438 *)*(u8 **)(owner + 0x98);
+    records = (EffectRecord15196748 *)*(u8 **)(owner + 0x94);
+    if (*(s8 *)(owner + 0x2C) < 2 && (payload->kind & 1)) {
+        return 0;
+    }
+    cursor = *(s8 *)(owner + 0x2E);
+    while (cursor != *(s8 *)(owner + 0x2D)) {
+        cursor--;
+        if (cursor < 0) {
+            cursor = owner[0x25] - 1;
+        }
+        record = &records[cursor];
+        record->velocity[1] += payload->firstScale * D_800BE9A4;
+        record->point.axis[0] += record->velocity[0] * D_800BE9A4;
+        record->point.axis[1] += record->velocity[1] * D_800BE9A4;
+        record->point.axis[2] += record->velocity[2] * D_800BE9A4;
+        record->mark = 255;
+        if (record->delay > 0) {
+            record->delay = (u32)(s32)record->delay - (u32)D_800BE9E4;
+        } else {
+            record->lifetime -= (u32)payload->field52 * (u32)D_800BE9E4;
+        }
+        if (record->lifetime < payload->field6A && record->field21 == 0) {
+            func_15198110(owner, cursor);
+        }
+        record->size += payload->field58 * D_800BE9A4;
+        if (record->lifetime < 0) {
+            payload->kind &= ~2;
+            while (cursor != *(s8 *)(owner + 0x2D)) {
+                owner[0x2D] = *(s8 *)(owner + 0x2D) + 1;
+                if (*(s8 *)(owner + 0x2D) == owner[0x25]) {
+                    owner[0x2D] = 0;
+                }
+                owner[0x2C] = *(s8 *)(owner + 0x2C) - 1;
+            }
+            records[*(s8 *)(owner + 0x2D)].lifetime = 0;
+        }
+    }
+    cursor = *(s8 *)(owner + 0x2D);
+    flags = payload->kind;
+    if (flags & 2) {
+        ramp = 0;
+        remaining = payload->field8C;
+        do {
+            records[cursor].mark = ramp;
+            remaining--;
+            cursor++;
+            ramp += payload->field8D;
+            if (cursor == owner[0x25]) {
+                cursor = 0;
+            }
+        } while (remaining != 0 && cursor != *(s8 *)(owner + 0x2E));
+        flags = payload->kind;
+    }
+    if (flags & 4) {
+        cursor = *(s8 *)(owner + 0x2E);
+        ramp = 0;
+        remaining = payload->field8E;
+        cursor--;
+        if (cursor < 0) {
+            cursor = owner[0x25] - 1;
+        }
+        do {
+            record = &records[cursor];
+            remaining--;
+            cursor--;
+            record->mark = (record->mark * ramp) >> 8;
+            ramp += payload->field8F;
+            if (cursor < 0) {
+                cursor = owner[0x25] - 1;
+            }
+        } while (remaining != 0 && cursor != *(s8 *)(owner + 0x2E));
+    }
+    if (payload->field64 != -1) {
+        D_8008F894[payload->field64]((struct PointSoundOwner *)owner);
+    }
+    if (payload->field68 != -1) {
+        D_8008F89C[payload->field68]((s32)owner);
+    }
+    if (payload->tickCallback != -1) {
+        if (D_8008F880[payload->tickCallback](owner) == 0) {
+            return 0;
+        }
+    }
+    if (*(s8 *)(owner + 0x2C) > 0) {
+        *(EffectPoint15196438 *)(owner + 0x54) = records[*(s8 *)(owner + 0x2D)].point;
+    } else {
+        *(f32 *)(owner + 0x54) = 0.0f;
+        *(f32 *)(owner + 0x58) = 0.0f;
+        *(f32 *)(owner + 0x5C) = 0.0f;
+    }
+    return 1;
 }
+
+
 
 s32 func_15196B4C() {
     return 0;
@@ -793,19 +912,19 @@ void func_15198054(u8 *owner, s32 eventAddress, u8 command) {
 }
 
 
-s32 func_15198110() {
+/* Unrecovered spawn helper; only its observed two-word void ABI is known. */
+void func_15198110(u8 *owner, s32 index) {
+}
+
+s32 func_15198570(u8 *owner) {
     return 0;
 }
 
-s32 func_15198570() {
+s32 func_151987CC(u8 *owner) {
     return 0;
 }
 
-s32 func_151987CC() {
-    return 0;
-}
-
-s32 func_1519897C() {
+s32 func_1519897C(u8 *owner) {
     return 0;
 }
 
@@ -815,7 +934,7 @@ s32 func_15198C60(void) {
 
 typedef struct { f32 x, y, z; u8 opaque[24]; } SoundPoint36;
 typedef struct { f32 x, y, z; u8 opaque[28]; } SoundPoint40;
-typedef struct {
+typedef struct PointSoundOwner {
     u8 opaque0[0x2C];
     s8 active, index;
     u8 opaque2E[0x66];
