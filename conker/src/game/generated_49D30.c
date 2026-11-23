@@ -885,9 +885,63 @@ s32 func_15021DB8() {
     return 0;
 }
 
-s32 func_15022024() {
+extern f32 D_80096A14;
+#define PAIR_GATE_49D30 D_800C35EA
+#define PAIR_COUNT_49D30 D_800C363A
+#define PAIR_ACTIVE_49D30 D_800C35C8
+#define PAIR_TAGS_49D30 D_800C35F0
+#define PAIR_RECORDS_49D30 D_800C3958
+#define PAIR_RECORD_RELOAD_49D30(group) (((u8 *volatile *)D_800C3958)[group])
+#define PAIR_ACTORS_49D30 ((u8 *)D_800CC2D0)
+
+/* Find the actor's active group record and fill its two optional float pairs. */
+s32 func_15022024(f32 *first, f32 *second, s32 actorIndex, s32 group) {
+    s32 count;
+    s32 index;
+    u16 *active;
+    u8 *tag;
+    u8 *record;
+    f32 missing;
+
+    if (PAIR_GATE_49D30[group] != 1) {
+        return 0;
+    }
+    count = PAIR_COUNT_49D30[group];
+    index = 0;
+    if (count <= 0) {
+        return 0;
+    }
+    active = PAIR_ACTIVE_49D30[group];
+    do {
+        if (*active != 0) {
+            tag = PAIR_TAGS_49D30[group] + index * 8;
+            if (*(u16 *)tag == 2 &&
+                PAIR_ACTORS_49D30[actorIndex * 0x32C + 0x3B] == tag[2]) {
+                missing = D_80096A14;
+                first[1] = 0.0f;
+                second[1] = 0.0f;
+                first[0] = 0.0f;
+                second[0] = 0.0f;
+                record = PAIR_RECORDS_49D30[group] + index * 0x44;
+                if (*(f32 *)(record + 0x3C) != missing) {
+                    second[0] = *(f32 *)(record + 0x3C);
+                    second[1] = second[0];
+                    /* Retail reloads the table only after the output stores. */
+                    record = PAIR_RECORD_RELOAD_49D30(group) + index * 0x44;
+                }
+                if (*(f32 *)(record + 0x40) != missing) {
+                    first[0] = *(f32 *)(record + 0x40);
+                    first[1] = first[0];
+                }
+                return 1;
+            }
+        }
+        index++;
+        active++;
+    } while (index < count);
     return 0;
 }
+
 
 void func_15022190(s16 arg0, s16 arg1, s16 arg2, f32 arg3) {
     D_800C3594 = arg3;

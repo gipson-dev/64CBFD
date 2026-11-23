@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Group record pair lookup matched - 2026-11-23
+
+[Note 2652](WORKING_NOTES/2652-game-group-record-pair-lookup-guarded-byte-match-20261123.md): `func_15022024` replaces its
+stub and matches 91 words / frame 16 through proved role, frame and exit
+normalization. Paired source/guest/native/Make/full-image gates pass. Total
+**4,632 / 5,528 (83.79%)**, Game **3,959 / 4,855 (81.54%)**, zero drift;
+**67 more to 85%**. Next: finish the banked `func_15195AA8` recovery.
+
 ## Unmatched C recovery audit banked - 2026-11-23
 
 [Note 2651](WORKING_NOTES/2651-game-unmatched-layout-and-pair-recovery-audit-20261123.md)
