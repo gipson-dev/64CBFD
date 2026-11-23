@@ -233,9 +233,71 @@ void func_15195D00(u8 *owner, s32 key, s32 index, s32 mode) {
     return;
 }
 
-s32 func_15195DD4() {
-    return 0;
+extern u8 D_800BEAC0;
+
+/* Register matching texture occurrences and return the final layout record. */
+s32 func_15195DD4(s32 displayList, s32 assetId, s32 doubleSize,
+                  s32 occurrence, s32 separate, s32 field12, s32 field13) {
+    s32 packedSize;
+    s32 index;
+    s32 searchOccurrence;
+    s32 tileCount;
+    s32 key;
+    s32 packedScale;
+    /* Retail leaves this uninitialized when the first search has no match. */
+    u8 *record;
+
+    searchOccurrence = occurrence;
+    if (displayList == 0) {
+        return 0;
+    }
+    if (D_800BEAC0 != 0) {
+        return 0;
+    }
+    if (occurrence == -1) {
+        searchOccurrence = 0;
+    }
+    do {
+        index = func_15195868((u8 *)displayList, assetId, searchOccurrence, &tileCount);
+        if (index == -1) {
+            occurrence = 0;
+        } else {
+            if (assetId == 0) {
+                assetId = D_800E08F0;
+            }
+            key = separate ? -1 : assetId;
+            record = (u8 *)D_800E08E8;
+            while (record != NULL && *(s16 *)(record + 8) != key) {
+                record = *(u8 **)(record + 4);
+            }
+            packedSize = *(s32 *)((u8 *)displayList + (index << 3) + 4);
+            packedScale = *(s32 *)((u8 *)displayList + (index << 3));
+            if (record == NULL) {
+                record = (u8 *)func_15195984(assetId, packedSize, packedScale, doubleSize);
+                if (record != NULL) {
+                    record[0x12] = field12;
+                    record[0x13] = field13;
+                    separate = 0;
+                } else {
+                    return 0;
+                }
+            } else {
+                index = func_15195A84(index, (s32)record, packedSize, doubleSize);
+                separate = 0;
+            }
+            if (record[0x14] < tileCount) {
+                record[0x14] = tileCount;
+            }
+            func_15195D00((u8 *)record, displayList, index, tileCount);
+            searchOccurrence++;
+        }
+    } while (occurrence == -1);
+    if (assetId == D_800E08F0) {
+        D_800E08F0--;
+    }
+    return (s32)record;
 }
+
 
 /* Return the complete handle produced by the bank request helper. */
 s32 func_15195FB0(u8 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {

@@ -1,5 +1,14 @@
 # Update Log
 
+## Texture registration directly matched - 2026-11-23
+
+[Note 2650](WORKING_NOTES/2650-game-texture-registration-direct-match-20261123.md):
+`func_15195DD4` directly emits all 119 retail words/frame 96 with zero guards.
+The original first-miss stack return is retained and qualified in the guest;
+816 guest and 694 native cases/profile, the actual relay and strict full-image
+gates pass. Total **4,631 / 5,528 (83.77%)**, Game **3,958 / 4,855 (81.52%)**,
+zero drift; **68 more matches to 85%**. Next `func_15195AA8`; no host/Release change.
+
 ## Owner phase callback directly matched - 2026-11-23
 
 [Note 2649](WORKING_NOTES/2649-game-owner-phase-callback-direct-match-20261123.md):
