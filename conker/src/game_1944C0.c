@@ -15,7 +15,8 @@ Gfx *func_15167C58();
 typedef struct {
     u8 unidentified00[0x10];
     u8 *texture;
-    u8 unidentified14[8];
+    u32 renderSettings; /* The wrapper also reads this slot as a visibility-owner pointer. */
+    s32 orientation;
     s16 phase, speed;
     s16 x, y, z;
     s16 velocityX, velocityZ;
@@ -23,12 +24,14 @@ typedef struct {
     u8 fractionX, fractionZ, fractionY;
     s8 callbackIndex;
     s16 velocityY, accelerationY;
-    u8 unidentified34[4];
+    s16 width, height;
     s16 remaining;
     s8 fadeStep;
-    u8 unidentified3B[4];
+    u8 unidentified3B;
+    u8 red, green, blue;
     u8 alpha;
-    u8 unidentified40[4];
+    u8 environmentRed, environmentGreen, environmentBlue;
+    u8 unidentified43;
     u16 flags;
     u8 unidentified46[2];
     s8 completionIndex;
@@ -36,7 +39,7 @@ typedef struct {
 } CompactSpriteState;
 
 void func_15167E0C(CompactSpriteState *state);
-s32 func_15168118();
+Gfx *func_15168118(Gfx *output, void *record, s16 view);
 typedef struct {
     Vtx vertices[8];
     u32 value80;
@@ -418,9 +421,123 @@ void func_15167E0C(CompactSpriteState *state) {
         func_1516972C((struct102 *)(void *)state);
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168118.s. */
-s32 func_15168118() {
-    return 0;
+extern f32 D_800A6CA0, D_800A6CA4;
+extern u32 D_800D2C9C;
+extern u8 D_800907FC[], D_8009053C[];
+/* Same measured 20-byte packet consumed by 15095760/15095B08. */
+typedef struct {
+    s16 x, y, z, width, height;
+    u8 alpha, animationStep, animationFrame, flipFlags;
+    u8 unidentified0E[2];
+    void *descriptor;
+} CompactSpriteDrawPacket;
+Gfx *func_15142E24(Gfx *, void *, s32, s32, s32, s32, s32, u8, u8 *, u8 *, s32);
+Gfx *func_15142B7C(Gfx *, u32, u32);
+Gfx *func_1513F4E4(Gfx *, u8, u8 *);
+Gfx *func_15142CF0(Gfx *, s32, s32, s32, s32, s32, s32, u8 *);
+Gfx *func_15142C10(Gfx *, s32, s32, s32, s32, u8 *);
+/* Build compact sprite texture, dimensions, render state and colors. */
+Gfx *func_15168118(Gfx *output, void *record, s16 view) {
+    CompactSpriteState *state = record;
+    CompactSpriteDrawPacket packet;
+    u8 sync;
+    u8 combiner, renderMode;
+    u8 *texture;
+    u32 image;
+    s32 dimension, baseWidth;
+    f32 angle;
+    s32 positiveWidth;
+    u32 extraMode;
+    u32 renderWord0, renderWord1;
+    s32 type;
+    s32 red, green, blue;
+    s32 primaryRed, primaryGreen, primaryBlue, primaryAlpha;
+
+    packet.flipFlags = 0;
+    if (state->flags & 4) packet.flipFlags = 1;
+    if (state->flags & 8) packet.flipFlags |= 2;
+    sync = 1;
+    texture = state->texture;
+    if (*(u32 *)texture < 0x10000000U) {
+        image = *(u32 *)texture;
+    } else {
+        image = ((u32 *)*(u32 *)texture)[state->phase >> 8];
+    }
+    output = func_15142E24(output, texture, (u32)(s32)state->phase << 8,
+                         2, 0x100, 0x100, image, 5, (u8 *)&packet, &sync, 3);
+    packet.x = state->x;
+    packet.y = state->y;
+    packet.z = state->z;
+    dimension = state->width;
+    if (dimension < 0) {
+        angle = fabsf(D_800DBFF0[view].unk380 + (s32)(state->orientation & 0xFF) * 1.40625f);
+        while (angle >= 360.0f) angle -= 360.0f;
+        if (angle >= 180.0f) angle -= 180.0f;
+        if (angle >= 90.0f) angle = 180.0f - angle;
+        dimension = (s32)((f32)dimension * angle * D_800A6CA0);
+        if (dimension < 0x400) dimension = 0x400;
+    }
+    packet.width = dimension;
+    dimension = state->height;
+    if (dimension < 0) {
+        baseWidth = state->width;
+        if (baseWidth < 0) positiveWidth = 0;
+        else positiveWidth = baseWidth;
+        angle = fabsf(D_800DBFF0[view].unk388);
+        dimension = (s32)(angle * (positiveWidth + dimension) * D_800A6CA4 - (f32)dimension);
+    }
+    packet.height = dimension;
+    if (state->flags & 0x100) {
+        combiner = (state->renderSettings & 0xFFFF0000) >> 16;
+        renderMode = state->renderSettings;
+        output = func_15142B7C(output, 5, 0);
+        output = func_1513F4E4(output, combiner, &sync);
+        if (state->flags & 0x200) extraMode = 0x100000;
+        else extraMode = 0;
+        renderWord1 = D_800A4AC8[renderMode * 2 + 1];
+        renderWord0 = D_800A4AC8[renderMode * 2];
+        output = func_15142FBC(output, extraMode | D_800D2C9C | 0x2CA0, renderWord1 | renderWord0 | 4, &sync);
+        primaryGreen = state->green;
+    } else {
+        type = (state->texture)[0xA];
+        if (type != 5) {
+            output = func_1513F4E4(output, 13, &sync);
+            renderWord1 = D_800A4AC8[7];
+            renderWord0 = D_800A4AC8[6];
+            output = func_15142FBC(output, D_800D2C9C | 0x2CA0, renderWord1 | renderWord0 | 4, &sync);
+        } else if (type == 3) { /* Retail retains this test after the type-5 gate. */
+            output = func_1513F4E4(output, 14, &sync);
+            renderWord1 = D_800A4AC8[7];
+            renderWord0 = D_800A4AC8[6];
+            output = func_15142FBC(output, D_800D2C9C | 0x2CA0, renderWord1 | renderWord0 | 4, &sync);
+        } else if (state->flags & 0x10) {
+            output = func_1513F4E4(output, 13, &sync);
+            renderWord1 = D_800A4AC8[37];
+            renderWord0 = D_800A4AC8[36];
+            output = func_15142FBC(output, D_800D2C9C | 0x2CA0, renderWord1 | renderWord0 | 4, &sync);
+        } else {
+            output = func_1513F4E4(output, 15, &sync);
+            renderWord1 = D_800A4AC8[35];
+            renderWord0 = D_800A4AC8[34];
+            output = func_15142FBC(output, D_800D2C9C | 0x100000 | 0x2CA0, renderWord1 | renderWord0 | 4, &sync);
+        }
+        primaryGreen = state->green;
+    }
+    primaryBlue = state->blue;
+    primaryAlpha = state->alpha;
+    primaryRed = state->red;
+    output = func_15142CF0(output, 1, 0, primaryRed, primaryGreen, primaryBlue, primaryAlpha, &sync);
+    if (state->flags & 1) {
+        red = state->environmentRed; green = state->environmentGreen; blue = state->environmentBlue;
+    } else if (state->texture == D_800907FC) {
+        red = green = 128; blue = 255;
+    } else if (state->texture == D_8009053C) {
+        red = green = blue = 255;
+    } else {
+        red = green = blue = 0;
+    }
+    output = func_15142C10(output, red, green, blue, 0, &sync);
+    return func_15095760(output, (s16 *)&packet);
 }
 /* Initialize eight vertex colors and the two texture quads, preserving positions. */
 void func_1516865C(void *input, u8 red, u8 green, u8 blue, u8 alpha) {

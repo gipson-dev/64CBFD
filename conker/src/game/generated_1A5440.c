@@ -28,7 +28,7 @@ extern u8 *D_800DCF38;
 extern CleanupNode *D_800DCF3C;
 extern DistanceActor15178C9C D_800CC2D0[];
 f32 sqrtf(f32 value);
-extern s32 func_15168118(u8 *arg0);
+extern Gfx *func_15168118(Gfx *output, void *record, s16 view);
 void func_100111C8(u16 arg0);
 void func_1516972C(u8 *arg0);
 void func_15169824(u8 *arg0);
@@ -41,13 +41,13 @@ s32 func_15178268() {
     return 0;
 }
 
-s32 func_15178750(u8 *arg0, u8 *arg1, s16 arg2) {
-    u8 *record = *(u8 **)(arg1 + 0x14);
+s32 func_15178750(u8 *cursor, u8 *state, s16 view) {
+    u8 *visibilityOwner = *(u8 **)(state + 0x14);
 
-    if (record[0x36] & (1 << arg2)) {
-        return func_15168118(arg0);
+    if (visibilityOwner[0x36] & (1 << view)) {
+        return (s32)func_15168118((Gfx *)cursor, state, view);
     }
-    return (s32)arg0;
+    return (s32)cursor;
 }
 
 void func_151787A4(void) {

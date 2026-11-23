@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Compact sprite renderer matched - 2026-11-22
+
+[Note 2641](WORKING_NOTES/2641-game-compact-sprite-renderer-guarded-match-20261122.md):
+`func_15168118` restores the compact sprite renderer; its direct caller now
+explicitly passes all three ABI arguments. All 337 retail words match in
+frame 168 with 201 guards, four proved copy omissions and no insertions.
+Both complete caller paths, SDK32, source-origin and strict image checks pass.
+Total **4,623 / 5,528 (83.63%)**, Game **3,950 / 4,855 (81.36%)**, zero drift;
+**76 more matches** to 85%.
+
 ## Compact sprite lifetime/motion updater matched - 2026-11-22
 
 [Note 2640](WORKING_NOTES/2640-game-compact-sprite-lifetime-motion-guarded-match-20261122.md):
