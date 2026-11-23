@@ -1,5 +1,13 @@
 # Working Notes
 
+## Layout slot registration matched - 2026-11-23
+
+[Note 2653](WORKING_NOTES/2653-game-layout-slot-registration-guarded-byte-match-20261123.md): `func_15195AA8` replaces its
+stub and matches 150 words / frame 96 through proved roles, slot cursors and
+the original o32 state-home lifetime. Paired five-check and strict image
+gates pass. Total **4,633 / 5,528 (83.81%)**, Game **3,960 / 4,855 (81.57%)**,
+zero drift; **66 more to 85%**. Next inspect `func_15195FF0`.
+
 ## Group record pair lookup matched - 2026-11-23
 
 [Note 2652](WORKING_NOTES/2652-game-group-record-pair-lookup-guarded-byte-match-20261123.md): `func_15022024` replaces its
