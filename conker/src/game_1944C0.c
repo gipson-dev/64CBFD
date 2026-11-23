@@ -8,7 +8,7 @@ void func_151670C0(void);
 void func_151671E8(void);
 void func_15167310(void);
 extern f32 D_800DD1D0[2];
-s32 func_151674F8();
+Gfx *func_151674F8(Gfx *output, s32 selector, s16 view, s32 row);
 void func_15167B44(u8 *state);
 Gfx *func_15167C58();
 /* Measured compact sprite view; opaque regions retain unidentified contents. */
@@ -232,9 +232,144 @@ void func_15167310(void) {
         frame.offset += 4;
     } while (column != 104);
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_151674F8.s. */
-s32 func_151674F8() {
-    return 0;
+/* Measured 52-byte render view of the registered descriptor table. */
+typedef struct {
+    u8 unidentified00[8];
+    Gfx *(*draw)(Gfx *, void *, s16);
+    u8 unidentified0C[4];
+    Gfx *beforeList;
+    Gfx *(*before)(Gfx *, s32, s32, s16);
+    u8 unidentified18[8];
+    Gfx *(*after)(Gfx *, s32, s16);
+    Gfx *afterList;
+    u8 unidentified28[8];
+    s8 mode;
+    u8 unidentified31[3];
+} ListRenderDescriptor;
+extern Mtx D_80089470;
+extern Gfx *D_800BE9C8[];
+extern s32 D_800BEBA4;
+/* Image identity is a 32-bit word; all ones invalidates the cache. */
+extern u32 D_800DD1B0;
+extern s32 D_800DD1B4, D_800DD1B8;
+extern s16 D_800DD1BC, D_800DD1BE;
+extern s16 D_800DD1C0, D_800DD1C2, D_800DD1C4, D_800DD1C6;
+extern s16 D_800DD1C8, D_800DD1CA, D_800DD1CC, D_800DD1CE;
+extern s16 D_800DD1F8, D_800DD204, D_800DD206;
+extern s32 D_800DD1FC, D_800DD200, D_800DD208, D_800DD20C;
+extern s32 D_800DD210, D_800DD214, D_800DD220, D_800DD224, D_800DD228;
+void func_15168F84(s32 selector, s32 *first, s32 *last);
+/* Render selected descriptor lists with per-node or whole-column rollback. */
+/* Render selected descriptor lists with per-node or whole-column rollback. */
+Gfx *func_151674F8(Gfx *output, s32 selector, s16 view, s32 row) {
+    s32 column, first, last;
+    ListRenderDescriptor *descriptor;
+    Gfx *(*draw)(Gfx *, void *, s16);
+    ListNode *node;
+    Gfx *modeZeroStart;
+    Gfx *beforeNode;
+    Gfx *modeOneStart;
+    s32 overflowed;
+
+    gSPMatrix(output++, &D_80089470, G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    func_15168F84(selector, &first, &last);
+    if (first < last) {
+        descriptor = (ListRenderDescriptor *)(void *)D_8008B4A8 + first;
+        column = first;
+        do {
+            if (descriptor->draw != NULL) {
+                if (*(ListNode **)(void *)(D_800DCE50 + row * 0x1A0 + column * 4) != NULL) {
+                    D_8003C8E0 = (column & 0xFFFFFF) | 0x07000000;
+                    overflowed = 0;
+                    if (descriptor->mode == 0) modeZeroStart = output;
+                    if (descriptor->mode == 1) modeOneStart = output;
+
+                    /* Reset this column's cached graphics state before its hooks. */
+                    D_800D2DAB = 0;
+                    D_800DD228 = 0;
+                    D_800DD220 = 0;
+                    D_800DD224 = 2;
+                    D_800DD1B0 = 0xFFFFFFFFU;
+                    D_800DD1B4 = -1;
+                    D_800DD1B8 = -1;
+                    D_800DD1BC = 0;
+                    D_800DD1BE = 0;
+                    D_800DD1C0 = D_800DD1C2 = D_800DD1C4 = D_800DD1C6 = -1;
+                    D_800DD1C8 = D_800DD1CA = D_800DD1CC = D_800DD1CE = -1;
+                    D_800DD1F8 = 0;
+                    D_800DD1FC = 0;
+                    D_800DD200 = 0;
+                    D_800DD204 = -1;
+                    D_800DD206 = -1;
+                    D_800DD208 = -1;
+                    D_800DD20C = -1;
+                    D_800DD210 = -1;
+                    D_800DD214 = 0;
+                    D_800DD218 = 0;
+                    D_800DD21C = 0;
+
+                    if (descriptor->beforeList != NULL) {
+                        gSPDisplayList(output++, descriptor->beforeList);
+                    }
+                    if (descriptor->before != NULL) {
+                        output = descriptor->before(output, column, row, view);
+                    }
+                    gSPClearGeometryMode(output++, G_LIGHTING);
+                    /* The before hook may have replaced the list head. */
+                    node = *(ListNode **)(void *)(D_800DCE50 + row * 0x1A0 + column * 4);
+                    if (descriptor->mode == 1) {
+                        D_800DD190++;
+                        while (node != NULL) {
+                            /* Retain the callback before publishing the saved next node. */
+                            draw = descriptor->draw;
+                            D_800DD198[D_800DD190] = node->next;
+                            beforeNode = output;
+                            output = draw(output, node, view);
+                            if (((output - D_800BE9C8[D_800BE9C0]) > D_800BEBA4) ? 1 : 0) {
+                                overflowed = 1;
+                                output = beforeNode;
+                            }
+                            node = D_800DD198[D_800DD190];
+                        }
+                        D_800DD190--;
+                    } else {
+                        D_800DD190++;
+                        while (node != NULL) {
+                            /* Retain the callback before publishing the saved next node. */
+                            draw = descriptor->draw;
+                            D_800DD198[D_800DD190] = node->next;
+                            output = draw(output, node, view);
+                            node = D_800DD198[D_800DD190];
+                        }
+                        D_800DD190--;
+                    }
+                    if (descriptor->afterList != NULL) {
+                        gSPDisplayList(output++, descriptor->afterList);
+                    }
+                    if (descriptor->after != NULL) {
+                        output = descriptor->after(output, column, view);
+                    }
+                    if (overflowed) {
+                        if (((output - D_800BE9C8[D_800BE9C0]) > D_800BEBA4) ? 1 : 0) {
+                            gSPSetGeometryMode(output, G_ZBUFFER);
+                            return modeOneStart;
+                        }
+                    }
+                    if (descriptor->mode == 0) {
+                        if (((output - D_800BE9C8[D_800BE9C0]) > D_800BEBA4) ? 1 : 0) {
+                            gSPSetGeometryMode(output, G_ZBUFFER);
+                            return modeZeroStart;
+                        }
+                    }
+                    D_8003C8E0 = 0;
+                }
+            }
+            column++;
+            descriptor++;
+        } while (column < last);
+    }
+    gSPSetGeometryMode(output++, G_ZBUFFER);
+    return output;
 }
 void *func_15167A68(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 arg4, u8 arg5) {
     u8 *ret;

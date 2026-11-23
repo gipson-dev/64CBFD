@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Render-list parent matched - 2026-11-22
+
+[Note 2642](WORKING_NOTES/2642-game-render-list-parent-guarded-match-20261122.md):
+`func_151674F8` restores the complete render-list parent and its caller pointer
+types. All 348 retail words match in frame 144 with 91 guards and no omissions
+or insertions. Complete callers, recursive SDK32, both padders and strict whole
+image checks pass. Total **4,624 / 5,528 (83.65%)**, Game **3,951 / 4,855
+(81.38%)**, zero drift; **75 more matches** to 85%.
+
 ## Compact sprite renderer matched - 2026-11-22
 
 [Note 2641](WORKING_NOTES/2641-game-compact-sprite-renderer-guarded-match-20261122.md):

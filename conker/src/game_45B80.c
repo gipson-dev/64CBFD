@@ -112,7 +112,7 @@ s32 func_15019CC8(Gfx *, s32);
 void func_15019F20(void);
 /* End generated placeholder declarations. */
 
-void* func_151674F8(void *arg0, s32 arg1, s16 arg2, s32 arg3);
+Gfx *func_151674F8(Gfx *output, s32 selector, s16 view, s32 row);
 
 /* Helper declarations not present in functions.h. */
 s32  func_1510FEA0(s32 arg0, s32 arg1);
