@@ -74,7 +74,25 @@ typedef struct {
 } SpriteFrameState;
 extern void (*D_8008C9C8[])(SpriteFrameState *);
 void func_15168870(SpriteFrameState *state);
-s32 func_15168C4C();
+/* Measured 240-byte render record; the constructor copies its 0x90..0xEF tail. */
+typedef struct {
+    u8 unidentified00[0x10];
+    Mtx matrix[2];
+    f32 translation[3];
+    f32 angles[3];
+    u8 unidentifiedA8[0x18];
+    f32 scale[3];
+    u8 unidentifiedCC[4];
+    Gfx *displayList;
+    u8 unidentifiedD4[0x11];
+    u8 alpha;
+    u8 tileOffset;
+    u8 unidentifiedE7[5];
+    u8 mode;
+    u8 combine;
+    u8 unidentifiedEE[2];
+} IndexedMatrixRenderState;
+Gfx *func_15168C4C(Gfx *output, void *record, s16 view);
 void func_15168E54(void *, void *);
 /* End generated placeholder declarations. */
 
@@ -259,7 +277,6 @@ extern s16 D_800DD1F8, D_800DD204, D_800DD206;
 extern s32 D_800DD1FC, D_800DD200, D_800DD208, D_800DD20C;
 extern s32 D_800DD210, D_800DD214, D_800DD220, D_800DD224, D_800DD228;
 void func_15168F84(s32 selector, s32 *first, s32 *last);
-/* Render selected descriptor lists with per-node or whole-column rollback. */
 /* Render selected descriptor lists with per-node or whole-column rollback. */
 Gfx *func_151674F8(Gfx *output, s32 selector, s16 view, s32 row) {
     s32 column, first, last;
@@ -879,9 +896,46 @@ void func_15168BE4(void *arg0, u8 arg1, s32 arg2) {
     }
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1944C0/func_15168C4C.s. */
-s32 func_15168C4C() {
-    return 0;
+/* Draw a registered record using its active-buffer matrix and render settings. */
+Gfx *func_15168C4C(Gfx *output, void *record, s16 view) {
+    IndexedMatrixRenderState *state = record;
+    u32 renderMode;
+    u8 sync;
+
+    func_15043D90(&state->matrix[D_800BE9C0],
+        state->angles[0], state->angles[1], state->angles[2],
+        state->scale[0], state->scale[1], state->scale[2],
+        state->translation[0], state->translation[1], state->translation[2]);
+    gDPPipeSync(output++);
+    gDPSetPrimColor(output++, 0, 0, 0, 0, 0, state->alpha);
+    D_800DD1C6 = state->alpha;
+    D_800DD1C4 = 0;
+    D_800DD1C2 = D_800DD1C4;
+    D_800DD1C0 = D_800DD1C2;
+    gDPSetEnvColor(output++, 0, 0, 0, 0);
+    gDPSetTileSize(output++, G_TX_RENDERTILE, 2, state->tileOffset, 126, 254);
+
+    /* Retail leaves this local uninitialized for other modes; callers also emit 0. */
+    switch (state->mode) {
+        case 1:
+            renderMode = 0x00552230;
+            break;
+        case 2:
+            renderMode = 0x00504A50;
+            break;
+    }
+    sync = 0;
+    output = func_15142FBC(output, 0x0008ACA0, renderMode, &sync);
+    if (state->combine == 1) {
+        gDPSetCombineLERP(output++,
+            TEXEL0, 0, SHADE, 0, PRIMITIVE, 0, SHADE, 0,
+            TEXEL0, 0, SHADE, 0, PRIMITIVE, 0, SHADE, 0);
+    }
+    /* Helpers may change the active buffer, so use its current index again. */
+    gSPMatrix(output++, &state->matrix[D_800BE9C0],
+        G_MTX_MODELVIEW | G_MTX_LOAD | G_MTX_NOPUSH);
+    gSPDisplayList(output++, state->displayList);
+    return output;
 }
 void func_15168E34(s32 *arg0, s32 arg1) {
     s32 temp_v0;

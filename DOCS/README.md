@@ -1,5 +1,15 @@
 # Documentation
 
+## Indexed-matrix renderer matched directly - 2026-11-22
+
+[Note 2643](WORKING_NOTES/2643-game-indexed-matrix-renderer-direct-match-20261122.md):
+`func_15168C4C` now emits all 122 retail words directly from C in frame 104,
+with no guards or inserted/omitted instructions. Actual constructor, parent,
+mode-zero private-word carry, SDK32 and strict whole-image checks pass.
+Total **4,625 / 5,528 (83.66%)**, Game **3,952 / 4,855 (81.40%)**, zero drift;
+**74 more matches** to 85%. Native defined-mode acceptance is limited to 1/2;
+retail's real mode-zero path remains explicitly preserved and guest-qualified.
+
 ## Render-list parent matched - 2026-11-22
 
 [Note 2642](WORKING_NOTES/2642-game-render-list-parent-guarded-match-20261122.md):
