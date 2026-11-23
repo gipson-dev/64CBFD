@@ -88,9 +88,92 @@ s32 func_150C01DC() {
     return 0;
 }
 
-s32 func_150C04C0() {
-    return 0;
+typedef struct { f32 x, y, z; } EffectPositionEC420;
+struct ExtendedState15F680;
+typedef struct EffectPresetEC420 {
+    s32 countBase;
+    s32 countRange;
+    EffectPositionEC420 position;
+    f32 speedBase;
+    f32 speedRange;
+    f32 verticalBase;
+    f32 verticalRange;
+    s16 lifetimeBase;
+    s16 lifetimeRange;
+    f32 sizeBase;
+    f32 sizeRange;
+    f32 jitter;
+    struct ExtendedState15F680 *state;
+    f32 chance;
+    f32 offsetBase;
+    f32 offsetRange;
+    f32 aspect;
+    s32 *resources;
+    f32 *sizes;
+    s32 resourceCount;
+    f32 radius;
+    u8 flags;
+    u8 kind;
+    u16 padding;
+    s32 extraSize;
+    void *extraData;
+} EffectPresetEC420;
+typedef struct { s16 first, firstRange, second, secondRange; } EffectAnglesEC420;
+typedef struct { f32 value; } EffectSizeEC420;
+extern EffectSizeEC420 D_800A0108;
+extern f32 D_800A0170, D_800A0174, D_800A0178, D_800A017C;
+extern f32 D_800A0180, D_800A0184, D_800A0188, D_800A018C, D_800A0190;
+void func_15150400(EffectPresetEC420 *, EffectAnglesEC420 *, u8, s32);
+
+void func_150C04C0(EffectPositionEC420 *position, struct ExtendedState15F680 *state, s32 variant,
+    u8 enabled, u8 channel, s32 context) {
+    EffectPresetEC420 preset;
+    EffectAnglesEC420 angles;
+    s32 localResource;
+    EffectSizeEC420 sizes;
+    f32 extra;
+    s32 flag;
+
+    sizes = D_800A0108;
+    extra = D_800A0170;
+    localResource = variant;
+    preset.countBase = 9;
+    preset.countRange = 4;
+    preset.position = *position;
+    preset.speedBase = 4.0f;
+    preset.speedRange = 7.0f;
+    preset.verticalBase = D_800A0174;
+    preset.verticalRange = D_800A0178;
+    preset.lifetimeBase = 80;
+    preset.lifetimeRange = 60;
+    preset.sizeBase = D_800A017C;
+    preset.sizeRange = D_800A0180;
+    preset.jitter = D_800A0184;
+    preset.state = state;
+    preset.chance = D_800A0188;
+    preset.offsetBase = D_800A018C;
+    preset.offsetRange = D_800A0190;
+    preset.aspect = 10.0f;
+    preset.resources = &localResource;
+    preset.sizes = &sizes.value;
+    preset.resourceCount = 1;
+    preset.radius = 78.0f;
+    if (enabled) {
+        flag = 1;
+    } else {
+        flag = 0;
+    }
+    preset.flags = flag;
+    preset.kind = 14;
+    preset.extraSize = 4;
+    preset.extraData = &extra;
+    angles.first = 0;
+    angles.firstRange = 255;
+    angles.second = -50;
+    angles.secondRange = 35;
+    func_15150400(&preset, &angles, channel, context);
 }
+
 
 s32 func_150C0648() {
     return 0;

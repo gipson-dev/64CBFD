@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Particle preset packet matched directly - 2026-11-23
+
+[Note 2646](WORKING_NOTES/2646-game-effect-preset-packet-direct-match-20261123.md):
+`func_150C04C0` emits all 98 retail words directly from C in frame 152, with
+no guards. Packet/local-lifetime, complete original-caller, SDK32 and strict
+whole-image gates pass. Total **4,627 / 5,528 (83.70%)**, Game
+**3,954 / 4,855 (81.44%)**, zero drift; **72 more matches** to 85%.
+
 ## Paired factory requests matched directly - 2026-11-22
 
 [Note 2645](WORKING_NOTES/2645-game-paired-preset-factory-requests-direct-match-20261122.md):
