@@ -100,9 +100,9 @@ paths and all 353 retained dependency hashes remain unchanged.
   counts 31, 32 and 63, signed right shifts and untouched registers. No shared
   interpreter implementation is changed.
 - `make tools-check` passes. A fresh recount of the unchanged production ELF
-  confirms the totals above. All **2,935 starting inputs** are audited: 2,930 remain byte-identical
-  and five concise documentation index additions are checked exactly against
-  their frozen predecessors. Production source, complete owner object, guard CSV,
+  confirms the totals above. All **2,935 starting inputs** are audited: 2,929 remain byte-identical;
+  five concise documentation index additions and the single graph-cache update
+  are checked explicitly. Production source, complete owner object, guard CSV,
   conversion rows, layout, Makefile and linked ELF remain byte-identical.
 
 This is finite allocated-fixture evidence, not unrestricted C aliasing, private
