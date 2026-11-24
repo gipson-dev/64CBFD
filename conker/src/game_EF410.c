@@ -62,8 +62,7 @@ typedef struct {
 extern f32 D_800A0274;
 extern f32 D_800A0278;
 extern f32 D_800A027C;
-void func_15150178(EffectBandDescriptor150C2700 *,
-                   EffectBandPayload150C2700 *, s32, u8, s32);
+void func_15150178(void *, void *, s32, u8, s32);
 
 void func_1514C470(f32, f32, f32, f32, f32, f32, f32, s32, s32, f32, void *, u8);
 f32 *func_15144B34(s32);
@@ -139,8 +138,48 @@ extern f32 D_800A0258, D_800A025C, D_800A0260, D_800A0264;
 extern f32 D_800A0270;
 void func_15151A38(void *, u8, s32);
 
+typedef struct { f32 x, y, z; } OpeningPointEF410;
+typedef struct {
+    OpeningPointEF410 position;
+    f32 field0C, field10, field14, field18, field1C, field20;
+    s16 field24, field26, field28, field2A, field2C, field2E;
+    s16 field30, field32, field34, field36;
+    u8 field38, field39, field3A, reserved3B;
+    u32 field3C, field40, field44, field48, field4C, field50;
+    u8 field54, field55, field56, reserved57;
+    u32 field58, field5C, field60, field64, field68;
+    u32 field6C, field70, field74, field78;
+    u8 field7C, field7D, reserved7E[2];
+    s16 field80, field82;
+    u32 retained84;
+} OpeningSprayEF410;
+typedef struct {
+    s16 angle0Base, angle0Range, angle1Base, angle1Range;
+} OpeningBandHeaderEF410;
+typedef struct {
+    OpeningPointEF410 position;
+    s16 countBase, countRange;
+    f32 speedBase, speedRange;
+    s16 lifeBase, lifeRange;
+    f32 sizeBase, sizeRange;
+    u8 opacityBase, opacityRange, reserved26[2];
+    f32 extentBase, extentRange;
+    u8 field30, kind, reserved32[2];
+    f32 chance0;
+    u8 field38, reserved39[3];
+    f32 chance1;
+} OpeningBandEF410;
+typedef struct {
+    OpeningBandHeaderEF410 header;
+    OpeningBandEF410 band;
+    OpeningSprayEF410 spray;
+} OpeningLocalsEF410;
+extern f32 D_800A0230, D_800A0234, D_800A0238, D_800A023C;
+extern f32 D_800A0240, D_800A0244, D_800A0248, D_800A024C;
+extern f32 D_800A0250, D_800A0254;
+
 /* Generated placeholder declarations. */
-s32 func_150C1F60();
+void func_150C1F60(u8);
 void func_150C2290(u8);
 s32 func_150C2558(
         s32 unusedKind, s16 unusedIndex, f32 x, f32 y, f32 z,
@@ -158,10 +197,99 @@ void func_150C3230();
 void func_150C3D5C(u8 *);
 /* End generated placeholder declarations. */
 
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C1F60.s. */
-s32 func_150C1F60() {
-    return 0;
+/* Submit two sprays, then a band using the second provider's live position. */
+void func_150C1F60(u8 channel) {
+    OpeningLocalsEF410 locals;
+
+    locals.spray.position.x = D_800A0230;
+    locals.spray.position.y = 40.0f;
+    locals.spray.field24 = 12;
+    locals.spray.field26 = 13;
+    locals.spray.field28 = -160;
+    locals.spray.field2C = -60;
+    locals.spray.field2A = 69;
+    locals.spray.field2E = 67;
+    locals.spray.field30 = 3;
+    locals.spray.field32 = 5;
+    locals.spray.field34 = 50;
+    locals.spray.field36 = 31;
+    locals.spray.field38 = 11;
+    locals.spray.field39 = 1;
+    locals.spray.field3A = 40;
+    locals.spray.field3C = 1;
+    locals.spray.field40 = 4;
+    locals.spray.field44 = 0;
+    locals.spray.field48 = 0;
+    locals.spray.field4C = 0;
+    locals.spray.field50 = 0;
+    locals.spray.field54 = 255;
+    locals.spray.field55 = 255;
+    locals.spray.field56 = 0;
+    locals.spray.field58 = 3;
+    locals.spray.field5C = 255;
+    locals.spray.field60 = 0;
+    locals.spray.field64 = 0x220005;
+    locals.spray.field68 = 0x1D0600;
+    locals.spray.field6C = 1;
+    locals.spray.field70 = 59;
+    locals.spray.field74 = 128;
+    locals.spray.field78 = 32;
+    locals.spray.field7C = 0;
+    locals.spray.field7D = 7;
+    locals.spray.field80 = 12;
+    locals.spray.field82 = 21;
+    locals.spray.position.z = D_800A0234;
+    locals.spray.field1C = D_800A0238;
+    locals.spray.field20 = D_800A023C;
+    locals.spray.field0C = 9.0f;
+    locals.spray.field10 = D_800A0240;
+    locals.spray.field14 = D_800A0244;
+    locals.spray.field18 = 0.5f;
+    func_15151A38(&locals.spray, channel, 1);
+
+    locals.spray.field24 = 2;
+    locals.spray.field26 = 3;
+    locals.spray.field28 = -108;
+    locals.spray.field2C = -22;
+    locals.spray.field2A = 21;
+    locals.spray.field2E = 22;
+    locals.spray.field30 = 7;
+    locals.spray.field32 = 0;
+    locals.spray.field34 = 48;
+    locals.spray.field36 = 21;
+    locals.spray.field1C = 100.0f;
+    locals.spray.field20 = 57.5f;
+    locals.spray.field0C = D_800A0248;
+    locals.spray.field10 = 39.0f;
+    locals.spray.field14 = D_800A024C;
+    locals.spray.field18 = 1.0f;
+    func_15151A38(&locals.spray, channel, 1);
+
+    locals.band.position = locals.spray.position;
+    locals.band.countBase = 25;
+    locals.band.countRange = 18;
+    locals.header.angle0Base = -159;
+    locals.header.angle0Range = 68;
+    locals.header.angle1Base = -52;
+    locals.header.angle1Range = 38;
+    locals.band.speedBase = 40.0f;
+    locals.band.speedRange = 35.0f;
+    locals.band.lifeBase = 25;
+    locals.band.lifeRange = 25;
+    locals.band.sizeBase = D_800A0250;
+    locals.band.sizeRange = D_800A0254;
+    locals.band.opacityBase = 155;
+    locals.band.opacityRange = 100;
+    locals.band.extentBase = 1152.0f;
+    locals.band.extentRange = 848.0f;
+    locals.band.field30 = 1;
+    locals.band.kind = 6;
+    locals.band.chance0 = 0.0f;
+    locals.band.field38 = 1;
+    locals.band.chance1 = 0.0f;
+    func_15150178(&locals.header, &locals.band, 0, channel, 1);
 }
+
 /* Submit the fixed spray request. Retail leaves reserved bytes and retained84 unwritten. */
 void func_150C2290(u8 channel) {
     FixedSpray150C2290 descriptor;

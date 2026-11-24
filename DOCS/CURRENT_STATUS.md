@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Opening spray and band constructor matched - 2026-11-24
+
+[Note 2675](WORKING_NOTES/2675-game-opening-spray-band-constructor-byte-match-20261124.md):
+`func_150C1F60` matches all 204 words / frame 240 with 46 independently
+proved scheduling/binding guards. Three-provider packet lifetime, caller,
+guest/native and strict full image pass. The band helper's six-word ABI-only
+placeholder remains unrecovered and uncredited.
+Total **4,655 / 5,528 (84.21%)**, Game **3,982 / 4,855 (82.02%)**, zero drift;
+**44 more to 85%**.
+
 ## Randomized spray callback matched - 2026-11-24
 
 [Note 2674](WORKING_NOTES/2674-game-randomized-spray-callback-byte-match-20261124.md):

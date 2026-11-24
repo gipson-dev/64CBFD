@@ -102,9 +102,10 @@ s32 func_1514FF44(u8 *arg0, s32 arg1, s32 arg2, u8 arg3, s32 arg4) {
     return 0;
 }
 
-s32 func_15150178() {
-    return 0;
+/* ABI-only placeholder; the 162-word effect-band helper remains unrecovered. */
+void func_15150178(void *descriptor, void *payload, s32 context, u8 channel, s32 extra) {
 }
+
 
 s32 func_15150400() {
     return 0;
