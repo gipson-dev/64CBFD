@@ -1,5 +1,15 @@
 # Documentation
 
+## Point spray callback matched directly - 2026-11-24
+
+[Note 2676](WORKING_NOTES/2676-game-point-spray-callback-direct-byte-match-20261124.md):
+`func_150C71C0` emits all 99 body words / frame 96 directly, with zero guards
+and checked retail float-pool binding. Ordered RNGs, callback ABI, native
+SDK32 and strict full image pass. Its four unreachable divide-safety words
+remain byte-exact; the parent and emission helper receive no added credit.
+Total **4,656 / 5,528 (84.23%)**, Game **3,983 / 4,855 (82.04%)**, zero drift;
+**43 more to 85%**.
+
 ## Opening spray and band constructor matched - 2026-11-24
 
 [Note 2675](WORKING_NOTES/2675-game-opening-spray-band-constructor-byte-match-20261124.md):

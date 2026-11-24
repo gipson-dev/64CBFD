@@ -820,3 +820,13 @@ endif
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009F3D0
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_CBAF0.c.o: Makefile
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_C3E20.c.o: RETAIL_RODATA_SYMBOL := jtbl_8009DF38_game
+
+ifeq ($(VERSION),us)
+# Bind only the verified 0.407f literal to its retained retail data word.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_F44D0.c.o: $(SRC_DIR)/game/generated_F44D0.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py ../tools/check_point_spray_150c71c0_pool.py ../tools/experiments/game_point_spray_150c71c0_manifest.json retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/check_point_spray_150c71c0_pool.py $@.compact
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) generated_F44D0 $@.padded.s --word-patches retail_word_patches.us.csv --rodata-symbol D_800A0494
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.padded.s
+endif
