@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Menu transition initializer matched - 2026-11-24
+
+[Note 2669](WORKING_NOTES/2669-game-menu-transition-initializer-byte-match-20261124.md): `func_151E53E8` now emits all
+101 words / frame 24 directly from C, without guards. Full-width defer handling,
+live actor capture, three original caller windows, both complete owner padders
+and full image pass. Total **4,649 / 5,528 (84.10%)**, Game **3,976 / 4,855
+(81.89%)**, zero drift; **50 more to 85%**.
+
 ## Descriptor matrix history matched - 2026-11-24
 
 [Note 2668](WORKING_NOTES/2668-game-descriptor-matrix-history-byte-match-20261124.md): `func_15188F84` now matches all

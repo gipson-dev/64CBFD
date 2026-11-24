@@ -611,9 +611,47 @@ void func_151E530C(void) {
     }
 }
 
-s32 func_151E53E8() {
-    return 0;
+extern u8 D_8008FE2C;
+extern s8 D_800AB68C[];
+extern u16 D_8008FDC0;
+extern u8 D_800E0A86;
+
+/* Prepare menu transition state and capture actor values. The full defer word
+ * controls the immediate call, even when its stored low byte is zero. */
+void func_151E53E8(s32 defer) {
+    s32 index;
+
+    D_800E0A90 = 0;
+    D_8008FE2C = 0;
+    D_80087270[0] = 0;
+    if (D_800BE616 != 0) {
+        D_800E0B94 = 7;
+        D_8008FD74 = 8;
+        if (D_800AB68C[D_8008FDD4[0x42] * 10 + 7] != -1) {
+            D_8008FDD4[0x3F] = 4;
+            D_800E0A88 = (s32)func_151E4BD8;
+        } else {
+            D_8008FDD4[0x3F] = 3;
+            D_800E0A88 = (s32)func_151DDBA0;
+        }
+        for (index = 0; index < D_8008FD90; index++) {
+            *(s16 *)((u8 *)D_8008FDD4 + index * 12 + 0x6C) = D_800CC2D0[index].unk31C->unk1AA;
+        }
+        D_8008FDC0 &= 0xE35F;
+        D_800E0A86 = defer;
+        if (D_800AB68C[D_8008FDD4[0x42] * 10 + 7] == -2) {
+            if (defer == 0) {
+                func_151E4BD8();
+            } else {
+                D_800E0A88 = (s32)func_151DDBA0;
+                D_8008FDD4[0x3F] = 3;
+            }
+        }
+    } else {
+        D_800E0B94 = 4;
+    }
 }
+
 
 void func_151E557C(void) {
     D_80084060[0] = 0;
