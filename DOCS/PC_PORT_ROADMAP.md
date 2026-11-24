@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Third radial sprite emission matched - 2026-11-24
+
+[Note 2688](WORKING_NOTES/2688-game-third-radial-sprite-emission-byte-match-20261124.md):
+`func_150CCA7C` recovers 142 words / frame 168 with a checked private-packet
+stack map. Both padders, actual Make, strict image, SDK32 and all four original
+registry callers pass; five owner neighbors stay fixed.
+Total **4,667 / 5,528 (84.42%)**, Game **3,994 / 4,855 (82.27%)**, zero drift;
+**32 more to 85%**. The extended consumer remains unmatched and uncredited.
+
 ## Masked lifetime radial particle matched - 2026-11-24
 
 [Note 2687](WORKING_NOTES/2687-game-masked-lifetime-radial-particle-payload-byte-match-20261124.md):
