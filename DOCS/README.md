@@ -1,5 +1,14 @@
 # Documentation
 
+## Ring sprite callback matched - 2026-11-24
+
+[Note 2682](WORKING_NOTES/2682-game-ring-sprite-emission-byte-match-20261124.md):
+`func_150C9DC4` recovers 174 words / frame 176; seven checked scheduling words
+complete the byte match. The 0x7C descriptor, SDK32 and actual callback ABI pass;
+18 neighbors and pools stay fixed. [Note 2681](WORKING_NOTES/2681-game-ring-hit-scan-private-screen-20261124.md)
+banks the unadopted actor-scan screen. Total **4,661 / 5,528 (84.32%)**,
+Game **3,988 / 4,855 (82.14%)**, zero drift; **38 more to 85%**.
+
 ## Ring emission callback matched - 2026-11-24
 
 [Note 2680](WORKING_NOTES/2680-game-ring-emission-callback-byte-match-20261124.md):

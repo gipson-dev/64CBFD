@@ -308,8 +308,65 @@ s32 func_150C9BDC() {
     return 0;
 }
 
-s32 func_150C9DC4() {
-    return 0;
+typedef struct {
+    f32 field00,field04,sizeStart,sizeEnd;
+    vertex rotation,scale,position,direction;
+    f32 field40,field44,field48,field4C;
+    u32 field50; s16 lifetime,field56;
+    u8 field58,reserved59[3]; u32 field5C;
+    u8 field60,field61,field62,field63,field64,field65,field66,field67,field68;
+    u8 reserved69,field6A,reserved6B; u32 field6C;
+    u8 field70,reserved71; s16 field72,field74; u8 reserved76[6];
+} RingSprite150C9DC4;
+extern f32 D_800A0580,D_800A0584,D_800A0588,D_800A058C;
+extern f32 D_800A0590,D_800A0594,D_800A0598,D_800A059C;
+void func_150CCD90(f32,f32 *,f32 *,f32 *);
+void *func_15132A4C(void *,s32,s32,s32,u8,s32);
+
+/* Submit a rotating sprite for one point on the expanding ring. */
+void func_150C9DC4(RingUpdate150C8A68 *owner,vertex *point,u8 angle,f32 unusedSine,f32 unusedCosine) {
+    RingSprite150C9DC4 packet;
+    f32 red,green,blue;
+    f32 sample;
+    s32 pitchDraw;
+    func_150CCD90(point->z,&red,&green,&blue);
+    packet.position = *point;
+    packet.scale.x = packet.scale.y = packet.scale.z = 1.0f;
+    packet.field50 = 0x29E8;
+    packet.rotation.x = func_150ADA68() * 360.0f;
+    packet.rotation.y = func_150ADA68() * 360.0f;
+    packet.rotation.z = func_150ADA68() * 360.0f;
+    packet.field04 = D_800A0580;
+    packet.field56 = 32;
+    packet.field44 = 0.0f;
+    packet.field00 = 1.0f;
+    pitchDraw = func_150ADA20();
+    sample = func_150ADA68();
+    func_15143794(angle,(u32)pitchDraw % 26U - 45,
+        ((sample * 81.0f + 60.0f) * owner->growthRate) * D_800A0584,&packet.direction);
+    packet.field40 = (func_150ADA68() * 260.0f + -130.0f) * D_800A0588;
+    packet.field48 = (func_150ADA68() * 260.0f + -130.0f) * D_800A058C;
+    packet.lifetime = (u32)func_150ADA20() % 41U + 40;
+    packet.field4C = (func_150ADA68() * D_800A0590 + D_800A0594) * D_800A0598;
+    sample = (func_150ADA68() * 400.0f + 199.0f) * D_800A059C;
+    packet.sizeEnd = packet.sizeStart = sample;
+    packet.field58 = 0;
+    packet.field5C = 0;
+    packet.field60 = (u32)func_150ADA20() % 101U + 155;
+    packet.field61 = 7;
+    packet.field62 = 0;
+    packet.field63 = 0;
+    packet.field64 = 0;
+    packet.field65 = 0;
+    packet.field66 = 0;
+    packet.field67 = 0;
+    packet.field68 = 0;
+    packet.field6A = 2;
+    packet.field6C = 0;
+    packet.field70 = 0;
+    packet.field72 = 32;
+    packet.field74 = 7;
+    func_15132A4C(&packet,3,255,0,((u8 *)owner)[0xC],((u8 *)owner)[1]);
 }
 
 /* Integrate position and angles, retaining the original single-precision grouping. */

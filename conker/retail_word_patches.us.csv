@@ -42946,3 +42946,10 @@ generated_F5800,func_150C8A68,0x17C,0xC43A0004,0xC43A0000,R_MIPS_LO16:.rodata,R_
 generated_F5800,func_150C8A68,0x180,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_800A0534,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
 generated_F5800,func_150C8A68,0x18C,0xC4380008,0xC4380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_800A0534,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
 generated_F5800,func_150C99B4,0x1DC,0x46008482,0x46100482,-,-,Preserve retail commutative floating multiply operand order,,,false
+generated_F5800,func_150C9DC4,0x30,0x8FB800B4,0x3C013F80,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x34,0x3C013F80,0x44810000,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x38,0x44810000,0x8FB800B4,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x5C,0xAFAA0084,0xE7A00050,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x60,0xE7A00050,0xE7A00054,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x64,0xE7A00054,0xE7A00058,-,-,Normalize independent constant and packet-store schedule,,,false
+generated_F5800,func_150C9DC4,0x6C,0xE7A00058,0xAFAA0084,-,-,Normalize independent constant and packet-store schedule,,,false
