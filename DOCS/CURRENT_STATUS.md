@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Descriptor matrix history matched - 2026-11-24
+
+[Note 2668](WORKING_NOTES/2668-game-descriptor-matrix-history-byte-match-20261124.md): `func_15188F84` now matches all
+101 words / frame 48, with 18 words normalized by a proved saved-register lifetime
+swap and commutative operands. The compatible node callback, original bcopy,
+both complete owner padders and full image pass. Total **4,648 / 5,528 (84.08%)**,
+Game **3,975 / 4,855 (81.87%)**, zero drift; **51 more to 85%**.
+
 ## Scene-view setup matched - 2026-11-24
 
 [Note 2667](WORKING_NOTES/2667-game-scene-view-setup-byte-match-20261124.md): `func_150FCA30` now emits all

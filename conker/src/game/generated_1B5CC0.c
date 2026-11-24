@@ -299,9 +299,68 @@ void func_15188E48(DescriptorDraw151897A4 *record) {
     }
 }
 
-s32 func_15188F84() {
-    return 0;
+typedef struct { u16 identity, retained; } MatrixDescriptorIndex15188F84;
+extern MatrixDescriptorIndex15188F84 **D_80089240[];
+extern Mtx **D_80089250[];
+extern u16 D_800DBEE8[];
+extern u8 *D_800DBEF4;
+
+/* Shift matrix history and capture the current descriptor's newest matrix.
+ * For these nodes, kind is the history depth and cleared is the filled count. */
+void func_15188F84(ListNode15188A58 *record) {
+    s32 snapshots = record->kind;
+    s32 initial = D_800BE9C0 * snapshots;
+    s32 other = (D_800BE9C0 ^ 1) * snapshots;
+    s32 group = 0;
+    s32 index = 0;
+    s32 next;
+    s32 current;
+    MatrixDescriptorIndex15188F84 *entries;
+    Mtx *last;
+    Mtx *source;
+    Mtx *destination;
+    Mtx *buffer;
+    u8 *descriptors;
+
+    if (D_800DBEE8[group] > 0) {
+        descriptors = D_800DBEF4;
+        entries = *D_80089240[0];
+        do {
+            if ((u8 *)record->key == entries->identity * 0xA0 + descriptors) {
+                break;
+            }
+            index++;
+            entries++;
+        } while (index < D_800DBEE8[group]);
+    }
+    if (index == D_800DBEE8[group]) {
+        record->cleared = 0;
+        return;
+    }
+    last = *D_80089250[D_800BE9C0] + (*D_80089240[0])[index].identity;
+    index = 0;
+    current = initial;
+    if (snapshots > 0) {
+        do {
+            next = index + 1;
+            if (snapshots == next) {
+                source = last;
+                buffer = (Mtx *)record->buffer;
+            } else {
+                buffer = (Mtx *)record->buffer;
+                source = buffer + (index + other + 1);
+            }
+            destination = buffer + current;
+            bcopy(source, destination, 64);
+            index = next;
+            current++;
+        } while (index != snapshots);
+    }
+    if (record->cleared != record->kind) {
+        record->cleared++;
+    }
 }
+
 
 s32 func_15189118() {
     return 0;
