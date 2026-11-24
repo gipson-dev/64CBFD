@@ -1,5 +1,14 @@
 # Documentation
 
+## Radial particle and damping payload matched - 2026-11-24
+
+[Note 2683](WORKING_NOTES/2683-game-radial-particle-damping-payload-byte-match-20261124.md):
+`func_150CAA04` recovers 137 words / frame 168. A checked closed private-stack
+map completes the byte match; raw C, all four original dispatchers, SDK32 and
+the real factory/copy chain pass. Eighteen neighbors and pools stay fixed.
+Total **4,662 / 5,528 (84.33%)**, Game **3,989 / 4,855 (82.16%)**, zero drift;
+**37 more to 85%**. `func_150CAC28` was already matched in Note 2298.
+
 ## Ring sprite callback matched - 2026-11-24
 
 [Note 2682](WORKING_NOTES/2682-game-ring-sprite-emission-byte-match-20261124.md):
