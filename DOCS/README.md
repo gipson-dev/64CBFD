@@ -1,5 +1,13 @@
 # Documentation
 
+## Effect floor query matched - 2026-11-23
+
+[Note 2665](WORKING_NOTES/2665-game-effect-floor-query-byte-match-20261123.md): `func_1515A78C` now matches all
+101 words / frame 80 through independently proved pointer/home/register
+scheduling. Live provider effects, retained point storage, the actual dispatch
+window and the complete image are qualified. Total **4,645 / 5,528 (84.03%)**,
+Game **3,972 / 4,855 (81.81%)**, zero drift; **54 more to 85%**.
+
 ## Actor command resolver matched - 2026-11-23
 
 [Note 2664](WORKING_NOTES/2664-game-actor-command-resolver-byte-match-20261123.md): `func_1506E46C` now matches all

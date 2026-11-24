@@ -578,9 +578,59 @@ s32 func_1515A11C(u8 *owner, u8 *workspace) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A60C.s")
 
-s32 func_1515A78C() {
-    return 0;
+#include "structs.h"
+typedef struct HeightResult71820 {
+    f32 height;
+    s16 vertices[9];
+    s16 pad16;
+    u32 metadata;
+    u8 flags;
+    u8 state;
+    u16 pad1E;
+    s32 value;
+} HeightResult71820;
+void func_1515A60C(u8 *, f32 *);
+s32 func_1514672C(struct17 *);
+s32 func_15046C00(f32 *, u16, f32, HeightResult71820 *);
+f32 func_150ADA68(void);
+u8 func_151D8E20(void);
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+extern f32 D_800A6408, D_800A640C, D_800A6410;
+
+/* Query the effect's floor and optionally submit its contact effect. */
+s32 func_1515A78C(u8 *record, f32 *position) {
+    u8 result = 1;
+    f32 point[3];
+    MotionPayload1515A11C *motion;
+    u8 selector;
+    f32 rate;
+
+    func_1515A60C(record, position);
+    if (*(f32 *)(record + 0x5C) < 0.0f) return 1;
+    point[0] = *(f32 *)(record + 0x4C) + *(f32 *)(record + 0x40);
+    point[1] = position[1];
+    point[2] = *(f32 *)(record + 0x54) + *(f32 *)(record + 0x48);
+    motion = (MotionPayload1515A11C *)(record + 0xA8);
+    rate = motion->rate;
+    if (rate == D_800A6408) {
+        if (!func_1514672C((struct17 *)point)) return 0;
+        if (func_15046C00(point, 0, *(f32 *)(record + 0x44),
+                (HeightResult71820 *)(record + 0x80))) {
+            point[1] = *(f32 *)(record + 0x80);
+            result = 0;
+        }
+    } else if (rate <= *(f32 *)(record + 0x44)) {
+        point[1] = rate;
+        result = 0;
+    }
+    if (result == 0 && func_150ADA68() < D_800A640C && record[0x9D] == 3) {
+        selector = func_151D8E20();
+        func_151DBCBC(selector, motion->center * D_800A6410, record[0x2B],
+            (s32)(record + 0x84), point, record[0xC], record[1]);
+    }
+    return result;
 }
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_185560/func_1515A920.s")
 
