@@ -1012,9 +1012,45 @@ void func_150222E0(s32 index, s32 group) {
     }
 }
 
-s32 func_15022398() {
-    return 0;
+typedef struct {u8 bytes[0x30];} GroupSpawnDescriptor15022398;
+extern GroupSpawnDescriptor15022398 *D_800D20FC;
+extern u8 D_800D2100;
+s32 func_15083E0C(u8);
+struct127 *func_1505EEF4(s32);
+s32 func_15082A44(u8 *, s32, s32, s32, s32);
+void func_1505E650(struct127 *, u16, f32, f32, f32, f32, s32);
+
+/* Restore the actor referenced by an enabled type-two group record. */
+void func_15022398(s32 index, s32 group) {
+    struct127 *actor;
+    s32 key;
+    s32 identity;
+    u8 **records;
+
+    if (D_800C35C8[group][index] == 0) return;
+    records = &D_800C35F0[group];
+    if (*(u16 *)(*records + (u32)index * 8) != 2) return;
+    identity = (*records)[(u32)index * 8 + 2];
+    key = func_15083E0C((u8)identity);
+    if (key == -1) return;
+    actor = func_1505EEF4(key);
+    if (actor != NULL) {
+        if (actor->unk5 == 3) {
+            if (records != D_800C35F0) actor->unk5 = 4;
+            else actor->unk5 = 0;
+        }
+        if (identity == 1) actor->unkF4 &= ~0x2A;
+    } else if (key < D_800D2100) {
+        func_15082A44((u8 *)&D_800D20FC[key], key, 0, group, 0);
+        actor = func_1505EEF4(key);
+        if (actor != NULL) {
+            func_1505E650(actor, 0, 0.0f, 0.0f, 0.0f, 0.0f, 1);
+            func_1502225C((s32)((u32)actor - (u32)D_800CC2D0) /
+                (s32)sizeof(struct127), group);
+        }
+    }
 }
+
 
 typedef struct GroupActorRecord15022528 {
     u16 kind;

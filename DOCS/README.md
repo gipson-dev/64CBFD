@@ -1,5 +1,13 @@
 # Documentation
 
+## Group actor restoration matched - 2026-11-24
+
+[Note 2666](WORKING_NOTES/2666-game-group-actor-restore-byte-match-20261124.md): `func_15022398` now matches all
+100 words / frame 64; only four private pointer-home offsets require changes.
+Both complete owner padders, live provider effects, the complete original caller
+and the full image are qualified. Total **4,646 / 5,528 (84.04%)**, Game
+**3,973 / 4,855 (81.83%)**, zero drift; **53 more to 85%**.
+
 ## Effect floor query matched - 2026-11-23
 
 [Note 2665](WORKING_NOTES/2665-game-effect-floor-query-byte-match-20261123.md): `func_1515A78C` now matches all
