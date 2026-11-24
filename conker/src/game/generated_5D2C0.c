@@ -388,9 +388,54 @@ void func_15030D54(register u8 *node, f32 x, f32 y, f32 z, f32 angle_x, f32 angl
     }
 }
 
-s32 func_15030E08() {
-    return 0;
+s32 func_1506196C(u8 *, s32);
+s32 func_150311C4();
+
+/* Filter the scene list, preserving each next link across provider calls. */
+Gfx *func_15030E08(Gfx *cursor, s32 view, s32 mode) {
+    u8 *node;
+    u8 *actor;
+    u8 *next;
+    s32 status;
+
+    node = D_800C3EE0;
+    if (node != NULL) {
+        do {
+            next = *(u8 **)(node + 0x54);
+            if (node[3] == 0) {
+                node = next;
+                continue;
+            }
+            actor = func_15083E90(node[0]);
+            if (actor == NULL || *(u32 *)(actor + 0x1D4) == 0 ||
+                ((u32)actor[0x74] & (1U << (view & 31))) == (1U << (view & 31))) {
+                node = next;
+                continue;
+            }
+            if (mode == 2) {
+                if (actor[5] != 7) {
+                    node = next;
+                    continue;
+                }
+            } else {
+                status = func_1506196C(actor, view);
+                if (mode == 1) {
+                    if (!(node[4] & 2) && status == 255 && actor[5] != 1) {
+                        node = next;
+                        continue;
+                    }
+                } else if ((node[4] & 2) || status < 255 || actor[5] == 1) {
+                    node = next;
+                    continue;
+                }
+            }
+            cursor = (Gfx *)func_150311C4(cursor, node, actor, view, 0);
+            node = next;
+        } while (node != NULL);
+    }
+    return cursor;
 }
+
 
 s32 func_150311C4();
 

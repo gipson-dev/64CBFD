@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Scene-node render pass matched - 2026-11-23
+
+[Note 2663](WORKING_NOTES/2663-game-scene-node-render-pass-byte-match-20261123.md): `func_15030E08` now matches all
+99 words / frame 72 through independently proved shift-mask elimination and
+closed register renaming. Live providers, captured next links and all three
+actual caller sites are qualified. Total **4,643 / 5,528 (83.99%)**, Game
+**3,970 / 4,855 (81.77%)**, zero drift; **56 more to 85%**.
+
 ## Actor state-motion callback matched - 2026-11-23
 
 [Note 2662](WORKING_NOTES/2662-game-actor-state-motion-callback-byte-match-20261123.md): `func_150B12FC` now matches all
