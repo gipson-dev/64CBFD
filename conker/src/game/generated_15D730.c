@@ -72,9 +72,7 @@ s32 func_15130A9C() {
     return 0;
 }
 
-s32 func_1513137C() {
-    return 0;
-}
+void func_1513137C(s16 *, s16 *, s16 *, s16 *, u8 *);
 
 /* Select the record's color mode and write four halfword output channels. */
 void func_15131514(s16 *red, s16 *green, s16 *blue, s16 *alpha, register u8 *record) {
@@ -124,9 +122,62 @@ void func_15131514(s16 *red, s16 *green, s16 *blue, s16 *alpha, register u8 *rec
     }
 }
 
-s32 func_1513164C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
-    func_15131514((s16 *)arg4, (s16 *)arg5, (s16 *)arg6, (s16 *)arg7, (u8 *)arg8);
-    return func_1513137C(arg0, arg1, arg2, arg3, arg8);
+/* Select base color channels while preserving ordered, potentially aliased stores. */
+void func_1513137C(s16 *red, s16 *green, s16 *blue, s16 *alpha, register u8 *record) {
+    switch (record[0x70]) {
+        case 1:
+            *blue = 0;
+            *red = *green = *blue;
+            *alpha = (record[0x2B] * record[0x27]) >> 8;
+            break;
+        case 2:
+            *red = record[0x24];
+            *green = record[0x25];
+            *blue = record[0x26];
+            *alpha = (record[0x2B] * record[0x27]) >> 8;
+            break;
+        case 3:
+            *red = record[0x28];
+            *green = record[0x29];
+            *blue = record[0x2A];
+            *alpha = (record[0x2B] * record[0x27]) >> 8;
+            break;
+        case 4:
+        case 6:
+            *alpha = 0;
+            *red = *green = *blue = *alpha;
+            break;
+        case 5:
+            *blue = 0;
+            *red = *green = *blue;
+            *alpha = record[0x2B];
+            break;
+        case 7:
+            *red = record[0x24];
+            *green = record[0x25];
+            *blue = record[0x26];
+            *alpha = record[0x2B];
+            break;
+        case 8:
+            *red = record[0x24];
+            *green = record[0x25];
+            *blue = record[0x26];
+            *alpha = 0;
+            break;
+        default:
+            *red = (record[0x2C] * record[0x24]) >> 8;
+            *green = (record[0x2C] * record[0x25]) >> 8;
+            *blue = (record[0x2C] * record[0x26]) >> 8;
+            *alpha = 0;
+            break;
+    }
+}
+
+void func_1513164C(s16 *baseRed, s16 *baseGreen, s16 *baseBlue, s16 *baseAlpha,
+                   s16 *colorRed, s16 *colorGreen, s16 *colorBlue, s16 *colorAlpha,
+                   u8 *record) {
+    func_15131514(colorRed, colorGreen, colorBlue, colorAlpha, record);
+    func_1513137C(baseRed, baseGreen, baseBlue, baseAlpha, record);
 }
 
 s32 func_151316AC(u8 *arg0, s32 arg1) {

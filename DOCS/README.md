@@ -1,5 +1,14 @@
 # Documentation
 
+## Base color output selector matched - 2026-11-24
+
+[Note 2672](WORKING_NOTES/2672-game-base-color-output-byte-match-20261124.md):
+`func_1513137C` now matches all 102 words / frame 8 with two table-address
+binding guards and no scheduling patches. The typed nine-word relay preserves
+its already-exact code; all modes, aliases, complete wrapper and image pass.
+Total **4,652 / 5,528 (84.15%)**, Game **3,979 / 4,855 (81.96%)**, zero drift;
+**47 more to 85%**.
+
 ## Particle payload creation matched - 2026-11-24
 
 [Note 2671](WORKING_NOTES/2671-game-particle-payload-byte-match-20261124.md):
