@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Particle payload creation matched - 2026-11-24
+
+[Note 2671](WORKING_NOTES/2671-game-particle-payload-byte-match-20261124.md):
+`func_150B3F5C` is byte-exact across all 99 words / frame 184 after a proved
+two-word disjoint packet-store scheduling normalization. Both caller windows,
+original factory/copy, native SDK32 and independent complete image pass.
+Total **4,651 / 5,528 (84.14%)**, Game **3,978 / 4,855 (81.94%)**, zero drift;
+**48 more to 85%**.
+
 ## Menu fade renderer matched - 2026-11-24
 
 [Note 2670](WORKING_NOTES/2670-game-menu-fade-renderer-byte-match-20261124.md): `func_151E09DC` now emits all
