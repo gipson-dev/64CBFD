@@ -761,10 +761,52 @@ s32 func_1506E0EC() {
 s32 func_1506E2CC() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_981E0/func_1506E46C.s. */
-s32 func_1506E46C(s32 arg0, s32 arg1, s32 arg2) {
-    return 0;
+extern u32 *D_800BE5A8[];
+s32 func_151F2CDC(void);
+
+/* Resolve the actor command, storing it only after all gates succeed. */
+s32 func_1506E46C(s32 actorWord, s32 commandWord, s32 mode) {
+    u32 command;
+    u32 index;
+    u32 replacement;
+    u32 flags;
+    u32 options;
+
+    command = *(u32 *)(u32)commandWord;
+    index = *(u32 *)(u32)commandWord & 0x7FFF;
+    if (command & 0x200000) {
+        switch (mode) {
+        case 0:
+            if (func_100107F8((struct127 *)(u32)actorWord)) return 0;
+            break;
+        case 1:
+            if (func_10010894((struct127 *)(u32)actorWord)) return 0;
+            break;
+        case 2:
+            if (func_151F2CDC() == 1) return 0;
+            break;
+        }
+    }
+    if (index >= 2000) {
+        replacement = D_800BE5A8[((u8 *)(u32)actorWord)[0x288]][index - 2000];
+        if (replacement == 0) return 0;
+        flags = command & 0xFF200000;
+        if (flags != 0) command = flags | (replacement & 0xFFFFFF);
+        else command = flags | replacement;
+    }
+    options = command >> 16;
+    if (options != 0) {
+        if ((command >> 24) >= ((u32)func_150ADA20() & 0xFF)) {
+            command &= 0x7FFF;
+            if (options & 0x1F) command = func_1000F568(command, options & 0x1F);
+        } else {
+            return 0;
+        }
+    }
+    *(u32 *)(u32)commandWord = command;
+    return 1;
 }
+
 void func_1506E5FC(void) {
     if (func_1506E46C(D_800D154C, &D_800D1580, 0) != 0) {
         func_1506BA4C(300, 1800);

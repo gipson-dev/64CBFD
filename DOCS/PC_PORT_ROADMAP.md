@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Actor command resolver matched - 2026-11-23
+
+[Note 2664](WORKING_NOTES/2664-game-actor-command-resolver-byte-match-20261123.md): `func_1506E46C` now matches all
+100 words / frame 48 through independently proved captured-index lifetime and
+register/control scheduling. Three complete original callers, public aliases,
+native controls and the full image are qualified. Total **4,644 / 5,528 (84.01%)**,
+Game **3,971 / 4,855 (81.79%)**, zero drift; **55 more to 85%**.
+
 ## Scene-node render pass matched - 2026-11-23
 
 [Note 2663](WORKING_NOTES/2663-game-scene-node-render-pass-byte-match-20261123.md): `func_15030E08` now matches all
