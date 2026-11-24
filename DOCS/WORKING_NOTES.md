@@ -1,5 +1,13 @@
 # Working Notes
 
+## Scene-view setup matched - 2026-11-24
+
+[Note 2667](WORKING_NOTES/2667-game-scene-view-setup-byte-match-20261124.md): `func_150FCA30` now emits all
+100 words / frame 80 directly, with no new guards. Both complete owner padders,
+live count changes, the original eight-byte request copy and full image pass.
+Total **4,647 / 5,528 (84.06%)**, Game **3,974 / 4,855 (81.85%)**, zero drift;
+**52 more to 85%**.
+
 ## Group actor restoration matched - 2026-11-24
 
 [Note 2666](WORKING_NOTES/2666-game-group-actor-restore-byte-match-20261124.md): `func_15022398` now matches all
