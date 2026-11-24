@@ -830,3 +830,13 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_F44D0.c.o: $(SRC_DIR)/game/generated_F44D
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
 endif
+
+ifeq ($(VERSION),us)
+# Check the three ring literals before normalizing their retail bindings.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_F5800.c.o: $(SRC_DIR)/game/generated_F5800.c $(RETAIL_LAYOUT) ../tools/pad_c_object.py ../tools/pad_generated_object.py ../tools/check_ring_updater_150c8a68_pool.py ../tools/experiments/game_ring_updater_150c8a68_manifest.json retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/check_ring_updater_150c8a68_pool.py $@.compact
+	$(PYTHON) ../tools/pad_c_object.py $@.compact $(RETAIL_LAYOUT) generated_F5800 $@.padded.s --word-patches retail_word_patches.us.csv
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	rm -f $@.compact $@.padded.s
+endif

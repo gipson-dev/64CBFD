@@ -1,5 +1,15 @@
 # Update Log
 
+## Ring updater matched with guarded literals - 2026-11-24
+
+[Note 2679](WORKING_NOTES/2679-game-ring-updater-guarded-byte-match-20261124.md):
+`func_150C8A68` recovers 212 words / frame 152 with 32 checked guard rows.
+The full emission-loop suffix emits directly; the actual build validates all
+three float literals before padding. Guest, SDK32, dispatch and image gates
+pass; 18 owner neighbors remain unchanged.
+Total **4,659 / 5,528 (84.28%)**, Game **3,986 / 4,855 (82.10%)**, zero drift;
+**40 more to 85%**.
+
 ## Ring constructor matched with scheduling guards - 2026-11-24
 
 [Note 2678](WORKING_NOTES/2678-game-ring-effect-constructor-guarded-byte-match-20261124.md):

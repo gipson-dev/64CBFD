@@ -42913,3 +42913,35 @@ generated_F5800,func_150C88D0,0x0FC,0x024B6021,0x00008825,-,-,Normalize ring hea
 generated_F5800,func_150C88D0,0x100,0x00008825,0x00008025,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
 generated_F5800,func_150C88D0,0x128,0x18800013,0xE64A0048,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
 generated_F5800,func_150C88D0,0x12C,0xE64A0048,0x18800012,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C8A68,0x048,0x3C190000,0x3C040000,R_MIPS_HI16:D_800BE9E4,R_MIPS_HI16:D_800BE9A4,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x04C,0x31CF0001,0x3C190000,-,R_MIPS_HI16:D_800BE9E4,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x050,0x51E0000B,0x31CF0001,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x054,0x93AB0093,0x11E0000A,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x058,0x86180028,0x24840000,-,R_MIPS_LO16:D_800BE9A4,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x05C,0x8F390000,0x86180028,R_MIPS_LO16:D_800BE9E4,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x060,0x240A0001,0x8F390000,-,R_MIPS_LO16:D_800BE9E4,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x064,0x03194023,0x240A0001,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x068,0xA6080028,0x03194023,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x06C,0x86090028,0xA6080028,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x070,0x05230003,0x86090028,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x074,0x93AB0093,0x05230003,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x078,0xA3AA0093,0x93AB0093,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x07C,0x93AB0093,0xA3AA0093,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x080,0x5560009F,0x93AB0093,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x084,0x93AB0093,0x5560009E,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x088,0xC6000044,0x93AB0093,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x08C,0x3C010000,0xC6000044,R_MIPS_HI16:D_800BE9A4,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x090,0xC4260000,0xC4860000,R_MIPS_LO16:D_800BE9A4,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x10C,0x13210063,0x53210064,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x110,0x3C013F80,0x8202003D,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x114,0x4481B000,0xC6040038,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x118,0x3C010000,0xC4860000,R_MIPS_HI16:D_800BE9A4,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x11C,0xC4260000,0x3C013F80,R_MIPS_LO16:D_800BE9A4,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x120,0xC6040038,0x4481B000,-,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x124,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_800A052C,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x128,0xC42A0000,0x46062202,R_MIPS_LO16:.rodata,-,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x12C,0x46062202,0xC42A0000,-,R_MIPS_LO16:D_800A052C,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x14C,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_800A0530,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x17C,0xC43A0004,0xC43A0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_800A0530,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x180,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:D_800A0534,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false
+generated_F5800,func_150C8A68,0x18C,0xC4380008,0xC4380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:D_800A0534,Normalize ring updater opening control/address scheduling and bind three audited float literals,,,false

@@ -163,9 +163,69 @@ void *func_150C88D0(RingDescriptor150C88D0 *descriptor,s32 extraBytes,u8 priorit
     return effect;
 }
 
-s32 func_150C8A68() {
-    return 0;
+#include "structs.h"
+typedef struct {
+    u8 reserved00[0x10]; f32 x,y,z;
+    u8 flags; s8 finish; u8 reserved1E[2];
+    f32 growthRate; s32 count;
+    s16 lifetime,fadeStart; f32 fadeInScale;
+    s16 fadeEnd; u8 reserved32[2]; f32 fadeOutScale,emissionRate;
+    s8 emission,update; u8 reserved3E[2];
+    f32 amplitude,radius,angleStep; s16 initialLifetime; u8 reserved4E[2]; f32 remainder;
+} RingUpdate150C8A68;
+typedef struct { u8 reserved00[0x380]; f32 heading; u8 reserved384[0x61C]; } RingPlayer150C8A68;
+
+extern s32 D_80082FA4;
+extern RingPlayer150C8A68 *D_800DBFF0;
+extern void (*D_80088858[])(RingUpdate150C8A68 *,f32 *,u8,f32,f32);
+extern void (*D_80088864[])(RingUpdate150C8A68 *,f32);
+extern s32 (*D_80088860[])(RingUpdate150C8A68 *);
+f32 func_151423D8(u8);
+void func_1516972C(struct102 *);
+
+/* Age and grow a ring, emit perimeter callbacks, then update or retire it.
+ * Float literals retain retail bits 40C90FDB, 4B263BD7 and 3F360B61. */
+void func_150C8A68(RingUpdate150C8A68 *effect) {
+    s32 heading;
+    u8 expired = 0;
+    f32 previousRadius;
+    f32 sine,cosine;
+    s16 elapsed;
+    u8 angle;
+    f32 point[3];
+    f32 *step = &D_800BE9A4;
+    if (effect->flags & 1) {
+        effect->lifetime -= D_800BE9E4;
+        if (effect->lifetime < 0) expired = 1;
+    }
+    if (!expired) {
+        previousRadius = effect->radius;
+        effect->radius += effect->growthRate * *step;
+        if (effect->fadeStart < effect->lifetime) {
+            elapsed = effect->initialLifetime - effect->lifetime;
+            effect->amplitude = elapsed * effect->fadeInScale;
+        }
+        if (effect->lifetime < effect->fadeEnd) effect->amplitude = effect->lifetime * effect->fadeOutScale;
+        if (effect->emission != -1) {
+            effect->remainder += (effect->emissionRate * *step) * (6.2831854820251465f * effect->radius);
+            while (effect->remainder > 1.0f) {
+                heading = (s32)(D_800DBFF0[D_80082FA4].heading * 0.7111111283302307f);
+                angle = (u32)func_150ADA20() % 81U + heading - 40;
+                sine = func_151423D8((u8)(angle - 64));
+                cosine = func_151423D8(angle);
+                point[0] = effect->x + sine * effect->radius;
+                point[1] = effect->y;
+                point[2] = effect->z + cosine * effect->radius;
+                if (point[2] * point[2] + point[0] * point[0] < 10894295.0f) D_80088858[effect->emission](effect,point,angle,sine,cosine);
+                effect->remainder -= 1.0f;
+            }
+        }
+        if (effect->update != -1) D_80088864[effect->update](effect,previousRadius);
+        if (effect->finish != -1 && D_80088860[effect->finish](effect) == 0) expired = 1;
+    }
+    if (expired) func_1516972C((struct102 *)effect);
 }
+
 
 s32 func_150C8DB8() {
     return 0;
