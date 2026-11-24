@@ -1,5 +1,13 @@
 # Documentation
 
+## Actor state-motion callback matched - 2026-11-23
+
+[Note 2662](WORKING_NOTES/2662-game-actor-state-motion-callback-byte-match-20261123.md): `func_150B12FC` now matches all
+98 words / frame 56 through independently proved register-role normalization.
+Its actual dispatch window, wrapped angles, live smoothing and provider effects
+are qualified. Total **4,642 / 5,528 (83.97%)**, Game **3,969 / 4,855 (81.75%)**,
+zero drift; **57 more to 85%**. The larger ribbon renderer remains private.
+
 ## Ground-burst destruction callback matched - 2026-11-23
 
 [Note 2661](WORKING_NOTES/2661-game-ground-burst-callback-byte-match-20261123.md): `func_150DF334` now matches all
