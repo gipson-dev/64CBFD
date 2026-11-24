@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Second radial particle payload matched - 2026-11-24
+
+[Note 2685](WORKING_NOTES/2685-game-second-radial-particle-damping-payload-byte-match-20261124.md):
+`func_150CBABC` recovers 137 words / frame 168 with a checked private-stack
+map, complete registry caller checks and actual factory/payload copy coverage.
+Both padders, SDK32 and strict image pass; all nine owner neighbors stay fixed.
+Total **4,664 / 5,528 (84.37%)**, Game **3,991 / 4,855 (82.20%)**, zero drift;
+**35 more to 85%**. No helper or pre-existing match receives duplicate credit.
+
 ## Radial sprite emission matched - 2026-11-24
 
 [Note 2684](WORKING_NOTES/2684-game-radial-sprite-emission-byte-match-20261124.md):
