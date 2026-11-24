@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Fixed spray descriptor matched - 2026-11-24
+
+[Note 2673](WORKING_NOTES/2673-game-fixed-spray-descriptor-byte-match-20261124.md):
+`func_150C2290` matches all 101 words / frame 160 with a proved eight-word
+constant-load scheduling normalization. The typed 136-byte packet preserves
+retail's unwritten bytes; the helper interface repair remains uncredited.
+Total **4,653 / 5,528 (84.17%)**, Game **3,980 / 4,855 (81.98%)**, zero drift;
+**46 more to 85%**.
+
 ## Base color output selector matched - 2026-11-24
 
 [Note 2672](WORKING_NOTES/2672-game-base-color-output-byte-match-20261124.md):

@@ -122,9 +122,25 @@ void func_1516D99C(
 struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32,
                          u8, u8, s32, u8, s32);
 
+typedef struct {
+    f32 x, y, z, field0C, field10, field14, field18, field1C, field20;
+    s16 field24, field26, field28, field2A, field2C, field2E;
+    s16 field30, field32, field34, field36;
+    u8 field38, field39, field3A, reserved3B;
+    u32 field3C, field40, field44, field48, field4C, field50;
+    u8 field54, field55, field56, reserved57;
+    u32 field58, field5C, field60, field64, field68;
+    u32 field6C, field70, field74, field78;
+    u8 field7C, field7D, reserved7E[2];
+    s16 field80, field82;
+    u32 retained84;
+} FixedSpray150C2290;
+extern f32 D_800A0258, D_800A025C, D_800A0260, D_800A0264;
+void func_15151A38(void *, u8, s32);
+
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
-s32 func_150C2290();
+void func_150C2290(u8);
 s32 func_150C2558();
 s32 func_150C2700(
         void *unusedOwner, s32 unusedEvent, f32 x, f32 y, f32 z,
@@ -141,103 +157,56 @@ void func_150C3D5C(u8 *);
 s32 func_150C1F60() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2290.s. */
-s32 func_150C2290() {
-    return 0;
+/* Submit the fixed spray request. Retail leaves reserved bytes and retained84 unwritten. */
+void func_150C2290(u8 channel) {
+    FixedSpray150C2290 descriptor;
+
+    descriptor.x = D_800A0258;
+    descriptor.y = 40.0f;
+    descriptor.field24 = 2;
+    descriptor.field26 = 3;
+    descriptor.field28 = -0x29;
+    descriptor.field2C = -0x16;
+    descriptor.field2A = 0x15;
+    descriptor.field2E = 0x16;
+    descriptor.field30 = 7;
+    descriptor.field32 = 0;
+    descriptor.field34 = 0x30;
+    descriptor.field36 = 0x15;
+    descriptor.field38 = 0xB;
+    descriptor.field39 = 1;
+    descriptor.field3A = 0x28;
+    descriptor.field3C = 1;
+    descriptor.field40 = 4;
+    descriptor.field44 = 0;
+    descriptor.field48 = 0;
+    descriptor.field4C = 0;
+    descriptor.field50 = 0;
+    descriptor.field54 = 0xFF;
+    descriptor.field55 = 0xFF;
+    descriptor.field56 = 0;
+    descriptor.field58 = 3;
+    descriptor.field5C = 0xFF;
+    descriptor.field60 = 0;
+    descriptor.field64 = 0x220005;
+    descriptor.field68 = 0x1D0600;
+    descriptor.field6C = 1;
+    descriptor.field70 = 0x3B;
+    descriptor.field74 = 0x80;
+    descriptor.field78 = 0x20;
+    descriptor.field7C = 0;
+    descriptor.field7D = 7;
+    descriptor.field80 = 0xC;
+    descriptor.field82 = 0x15;
+    descriptor.z = D_800A025C;
+    descriptor.field1C = 100.0f;
+    descriptor.field20 = 57.5f;
+    descriptor.field0C = D_800A0260;
+    descriptor.field10 = 39.0f;
+    descriptor.field14 = D_800A0264;
+    descriptor.field18 = 1.0f;
+    func_15151A38(&descriptor, channel, 1);
 }
-// TODO: figure out this struct!
-// void func_150C2290(s32 arg0) {
-//     s16 sp9A;
-//     s16 sp98;
-//     s8 sp95;
-//     s8 sp94;
-//     ?32 sp90;
-//     ?32 sp8C;
-//     ?32 sp88;
-//     ?32 sp84;
-//     ?32 sp80;
-//     ?32 sp7C;
-//     ?32 sp78;
-//     ?32 sp74;
-//     ?32 sp70;
-//     s8 sp6E;
-//     s8 sp6D;
-//     s8 sp6C;
-//     ?32 sp68;
-//     ?32 sp64;
-//     ?32 sp60;
-//     ?32 sp5C;
-//     ?32 sp58;
-//     ?32 sp54;
-//     s8 sp52;
-//     s8 sp51;
-//     s8 sp50;
-//     s16 sp4E;
-//     s16 sp4C;
-//     s16 sp4A;
-//     s16 sp48;
-//     s16 sp46;
-//     s16 sp44;
-//     s16 sp42;
-//     s16 sp40;
-//     s16 sp3E;
-//     s16 sp3C;
-//     f32 sp38;
-//     f32 sp34;
-//     f32 sp30;
-//     f32 sp2C;
-//     f32 sp28;
-//     f32 sp24;
-//     f32 sp20;
-//     f32 sp1C;
-//     f32 sp18;
-//
-//     sp18 = *(void *)0x800A0258;
-//     sp1C = 40.0f;
-//     sp3E = 3;
-//     sp40 = -0x29;
-//     sp44 = -0x16;
-//     sp42 = 0x15;
-//     sp46 = 0x16;
-//     sp48 = 7;
-//     sp4E = 0x15;
-//     sp50 = 0xB;
-//     sp20 = *(void *)0x800A025C;
-//     sp3C = 2;
-//     sp4C = 0x30;
-//     sp52 = 0x28;
-//     sp54 = 1;
-//     sp58 = 4;
-//     sp6C = 0xFF;
-//     sp6D = 0xFF;
-//     sp70 = 3;
-//     sp4A = 0;
-//     sp51 = 1;
-//     sp5C = 0;
-//     sp60 = 0;
-//     sp64 = 0;
-//     sp68 = 0;
-//     sp6E = 0;
-//     sp74 = 0xFF;
-//     sp78 = 0;
-//     sp7C = 0x220005;
-//     sp80 = 0x1D0600;
-//     sp84 = (?32) (u8)1;
-//     sp88 = 0x3B;
-//     sp8C = 0x80;
-//     sp90 = 0x20;
-//     sp94 = 0;
-//     sp95 = 7;
-//     sp98 = 0xC;
-//     sp9A = 0x15;
-//     sp34 = 100.0f;
-//     sp38 = 57.5f;
-//     sp24 = *(void *)0x800A0260;
-//     sp28 = 39.0f;
-//     sp2C = *(void *)0x800A0264;
-//     sp30 = 1.0f;
-//     func_15151A38(&sp18, arg0 & 0xFF, 1);
-// }
 
 /* Emit both randomized effect bands used by event 0x2E. */
 void func_150C2424(u8 channel) {

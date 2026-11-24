@@ -130,9 +130,10 @@ s32 func_15151670() {
     return 0;
 }
 
-s32 func_15151A38() {
-    return 0;
+/* ABI-only placeholder; the 205-word spray helper remains unrecovered. */
+void func_15151A38(void *descriptor, u8 channel, s32 context) {
 }
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_17CAF0/func_15151D6C.s")
 
