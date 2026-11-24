@@ -485,9 +485,57 @@ s32 func_150CAC28(DampingState150CAC28 *state, s32 unused) {
     return 1;
 }
 
-s32 func_150CADD0() {
-    return 0;
+extern f32 D_800A05BC,D_800A05C0,D_800A05C4,D_800A05C8;
+extern f32 D_800A05CC,D_800A05D0,D_800A05D4,D_800A05D8;
+
+/* Emit a rotating radial sprite with randomized velocity and lifetime. */
+s32 func_150CADD0(s32 source,s16 index,f32 x,f32 y,f32 z,
+    f32 originX,f32 originY,f32 originZ,s16 angle,u8 start,f32 radius,
+    s32 style,f32 extra,s32 context,u8 slot) {
+    RingSprite150C9DC4 packet;
+    s16 pitch;
+    f32 sample;
+    s32 pitchDraw;
+    packet.position.x = x;
+    packet.position.y = y;
+    packet.position.z = z;
+    packet.scale.z = packet.scale.y = packet.scale.x = 1.0f;
+    packet.field50 = 0x29E8;
+    packet.rotation.z = packet.rotation.y = packet.rotation.x = 0.0f;
+    packet.field44 = 0.0f;
+    packet.field00 = 1.0f;
+    packet.field56 = 32;
+    packet.field04 = D_800A05BC;
+    pitchDraw = func_150ADA20();
+    sample = func_150ADA68();
+    pitch = (u32)pitchDraw % 21U - 40;
+    func_15143794(angle,pitch,(sample * 204.0f + 500.0f) * D_800A05C0,&packet.direction);
+    packet.field40 = (func_150ADA68() * 260.0f + -130.0f) * D_800A05C4;
+    packet.field48 = (func_150ADA68() * 260.0f + -130.0f) * D_800A05C8;
+    packet.lifetime = (u32)func_150ADA20() % 51U + 50;
+    packet.field4C = (func_150ADA68() * 1008.0f + D_800A05CC) * D_800A05D0;
+    sample = (func_150ADA68() * D_800A05D4 + 200.0f) * D_800A05D8;
+    packet.sizeEnd = packet.sizeStart = sample;
+    packet.field58 = 0;
+    packet.field5C = 0;
+    packet.field60 = (u32)func_150ADA20() % 76U + 180;
+    packet.field61 = 4;
+    packet.field62 = 0;
+    packet.field63 = 0;
+    packet.field64 = 0;
+    packet.field65 = 0;
+    packet.field66 = 0;
+    packet.field67 = 0;
+    packet.field68 = 0;
+    packet.field6A = 2;
+    packet.field6C = 0;
+    packet.field70 = 0;
+    packet.field72 = 32;
+    packet.field74 = 7;
+    func_15132A4C(&packet,3,255,0,slot,0);
+    return 1;
 }
+
 
 /* Integrate position and angles, retaining the original single-precision grouping. */
 s32 func_150CB008(u8 *record) {

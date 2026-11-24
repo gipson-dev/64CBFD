@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Radial sprite emission matched - 2026-11-24
+
+[Note 2684](WORKING_NOTES/2684-game-radial-sprite-emission-byte-match-20261124.md):
+`func_150CADD0` recovers 142 words / frame 168 with a checked private-packet
+stack map. Guest, SDK32, all four original registry dispatchers, both padders
+and strict full-image checks pass; 18 neighbors and pools stay fixed.
+Total **4,663 / 5,528 (84.35%)**, Game **3,990 / 4,855 (82.18%)**, zero drift;
+**36 more to 85%**. The extended sprite consumer remains unmatched.
+
 ## Radial particle and damping payload matched - 2026-11-24
 
 [Note 2683](WORKING_NOTES/2683-game-radial-particle-damping-payload-byte-match-20261124.md):
