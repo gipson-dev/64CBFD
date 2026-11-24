@@ -43111,3 +43111,44 @@ generated_F8590,func_150CB800,0x1F4,0xA3A0009C,0xA3A00098,-,-,Normalize closed s
 generated_F8590,func_150CB800,0x1F8,0xA7AF009E,0xA7AF009A,-,-,Normalize closed second radial sprite packet stack layout,,,false
 generated_F8590,func_150CB800,0x1FC,0xA7B800A0,0xA7B8009C,-,-,Normalize closed second radial sprite packet stack layout,,,false
 generated_F8590,func_150CB800,0x200,0x27A4002C,0x27A40028,-,-,Normalize closed second radial sprite packet stack layout,,,false
+generated_F9430,func_150CC6B8,0x28,0xA3AE0055,0xA3AE0051,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x2C,0xA7AF0040,0xA7AF003C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x30,0xAFB80038,0xAFB80034,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x38,0xAFA0003C,0xAFA00038,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x60,0xA7A80042,0xA7A8003E,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x64,0xAFA00044,0xAFA00040,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x68,0xAFA00048,0xAFA00044,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x6C,0xA3A90050,0xA3A9004C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x70,0xA3AA0051,0xA3AA004D,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x74,0xA3AB0052,0xA3AB004E,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x78,0xA3AC004C,0xA3AC0048,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x7C,0xA3AD004D,0xA3AD0049,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x80,0xA3AE004E,0xA3AE004A,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x88,0xA3AF004F,0xA3AF004B,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xA8,0xA3B90053,0xA3B9004F,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xAC,0xA3A80054,0xA3A80050,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xB0,0xA3A90098,0xA3A90094,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xB8,0xA3AA0099,0xA3AA0095,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xDC,0xE7AA0068,0xE7AA0064,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xE0,0xE7B0006C,0xE7B00068,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xE4,0xE7B20070,0xE7B2006C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xEC,0xE7A20060,0xE7A2005C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xF4,0xE7A20064,0xE7A20060,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0xFC,0xAFA20028,0xAFA20024,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x104,0x8FA50028,0x8FA50024,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x10C,0x27A70080,0x27A7007C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x15C,0xAFAE0090,0xAFAE008C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x164,0xE7A4008C,0xE7A40088,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x170,0x8FB80090,0x8FB8008C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x178,0xAFB90090,0xAFB9008C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x190,0x8FA90090,0x8FA9008C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x198,0xAFAA0090,0xAFAA008C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1C0,0xA3AB009A,0xA3AB0096,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1C4,0xA3AC009B,0xA3AC0097,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1C8,0xA7AD0056,0xA7AD0052,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1CC,0xA7AE0058,0xA7AE0054,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1D0,0xA7AF005A,0xA7AF0056,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1D8,0x27A40038,0x27A40034,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1E8,0xE7A6005C,0xE7A60058,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1F0,0xE7A80030,0xE7A8002C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_F9430,func_150CC6B8,0x1FC,0x27A50030,0x27A5002C,-,-,Normalize masked lifetime radial particle private RNG payload and descriptor stack layout,,,false

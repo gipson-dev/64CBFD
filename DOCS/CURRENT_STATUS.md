@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Masked lifetime radial particle matched - 2026-11-24
+
+[Note 2687](WORKING_NOTES/2687-game-masked-lifetime-radial-particle-payload-byte-match-20261124.md):
+`func_150CC6B8` recovers 135 words / frame 168, including its lifetime mask
+and captured damping copy. Both padders, actual Make, strict image, SDK32,
+all four registry callers and the factory chain pass; five neighbors stay fixed.
+Total **4,666 / 5,528 (84.41%)**, Game **3,993 / 4,855 (82.25%)**, zero drift;
+**33 more to 85%**. No pre-existing function or helper receives duplicate credit.
+
 ## Second radial sprite emission matched - 2026-11-24
 
 [Note 2686](WORKING_NOTES/2686-game-second-radial-sprite-emission-byte-match-20261124.md):
