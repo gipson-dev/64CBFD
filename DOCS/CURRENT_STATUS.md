@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Second radial sprite emission matched - 2026-11-24
+
+[Note 2686](WORKING_NOTES/2686-game-second-radial-sprite-emission-byte-match-20261124.md):
+`func_150CB800` recovers 140 words / frame 168 with a checked private-packet
+stack map. Both padders, actual Make, strict image, SDK32 and all four original
+registry callers pass; nine owner neighbors stay fixed.
+Total **4,665 / 5,528 (84.39%)**, Game **3,992 / 4,855 (82.22%)**, zero drift;
+**34 more to 85%**. The extended consumer remains unmatched and uncredited.
+
 ## Second radial particle payload matched - 2026-11-24
 
 [Note 2685](WORKING_NOTES/2685-game-second-radial-particle-damping-payload-byte-match-20261124.md):

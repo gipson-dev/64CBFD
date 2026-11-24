@@ -61,9 +61,72 @@ s32 func_150CB7CC(u8 *arg0) {
     return 1;
 }
 
-s32 func_150CB800() {
-    return 0;
+typedef struct {
+    f32 field00,field04,sizeStart,sizeEnd;
+    vertex rotation,scale,position,direction;
+    f32 field40,field44,field48,field4C;
+    u32 field50; s16 lifetime,field56;
+    u8 field58,reserved59[3]; u32 field5C;
+    u8 field60,field61,field62,field63,field64,field65,field66,field67,field68;
+    u8 reserved69,field6A,reserved6B; u32 field6C;
+    u8 field70,reserved71; s16 field72,field74; u8 reserved76[6];
+} RadialSprite150CB800;
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16,s16,f32,vertex *);
+void *func_15132A4C(void *,s32,s32,s32,u8,s32);
+
+extern f32 D_800A0604,D_800A0608,D_800A060C,D_800A0610;
+extern f32 D_800A0618,D_800A061C,D_800A0614,D_800A0620;
+
+/* Emit a rotating radial sprite with randomized velocity and lifetime. */
+s32 func_150CB800(s32 source,s16 index,f32 x,f32 y,f32 z,
+    f32 originX,f32 originY,f32 originZ,s16 angle,u8 start,f32 radius,
+    s32 style,f32 extra,s32 context,u8 slot) {
+    RadialSprite150CB800 packet;
+    s16 pitch;
+    f32 sample;
+    s32 pitchDraw;
+    packet.position.x = x;
+    packet.position.y = y;
+    packet.position.z = z;
+    packet.scale.z = packet.scale.y = packet.scale.x = 1.0f;
+    packet.field50 = 0x29E8;
+    packet.rotation.z = packet.rotation.y = packet.rotation.x = 0.0f;
+    packet.field44 = 0.0f;
+    packet.field00 = 1.0f;
+    packet.field56 = 32;
+    packet.field04 = D_800A0604;
+    pitchDraw = func_150ADA20();
+    sample = func_150ADA68();
+    pitch = (u32)pitchDraw % 36U - 55;
+    func_15143794(angle,pitch,(sample * 200.0f + 200.0f) * D_800A0608,&packet.direction);
+    packet.field40 = (func_150ADA68() * 300.0f + -149.0f) * D_800A060C;
+    packet.field48 = (func_150ADA68() * 300.0f + -149.0f) * D_800A0610;
+    packet.lifetime = (u32)func_150ADA20() % 33U + 32;
+    packet.field4C = (func_150ADA68() * D_800A0614 + D_800A0618) * D_800A061C;
+    sample = (func_150ADA68() * 300.0f + 101.0f) * D_800A0620;
+    packet.sizeEnd = packet.sizeStart = sample;
+    packet.field58 = 0;
+    packet.field5C = 0;
+    packet.field60 = (u32)func_150ADA20() % 101U + 155;
+    packet.field61 = 2;
+    packet.field62 = 0;
+    packet.field63 = 0;
+    packet.field64 = 0;
+    packet.field65 = 0;
+    packet.field66 = 0;
+    packet.field67 = 0;
+    packet.field68 = 0;
+    packet.field6A = 2;
+    packet.field6C = 0;
+    packet.field70 = 0;
+    packet.field72 = 32;
+    packet.field74 = 7;
+    func_15132A4C(&packet,3,255,0,slot,0);
+    return 1;
 }
+
 
 s32 func_150CBA30(u8 *arg0) {
     s32 value;
