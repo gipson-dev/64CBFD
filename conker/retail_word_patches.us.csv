@@ -42891,3 +42891,25 @@ game_EF410,func_150C1F60,0x2f4,0x27a40020,0xafa80010,-,-,Normalize independently
 game_EF410,func_150C1F60,0x2f8,0x3025,0x93a700f3,-,-,Normalize independently proved closed opening-spray scheduling blocks,,,false
 game_EF410,func_150C1F60,0x2fc,0xe7a0005c,0x27a40020,-,-,Normalize independently proved closed opening-spray scheduling blocks,,,false
 game_EF410,func_150C1F60,0x300,0xe7a00064,0x3025,-,-,Normalize independently proved closed opening-spray scheduling blocks,,,false
+generated_F5800,func_150C88D0,0x040,0x01D27821,0x024E7821,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x098,0x44800000,0x8E440024,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x09C,0x8E440024,0x44800000,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0B4,0xE6400040,0x44843000,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0B8,0xE6400044,0x3C010000,-,R_MIPS_HI16:D_800A0528,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0C8,0x44843000,0x46803220,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0CC,0x3C010000,0x0000C812,R_MIPS_HI16:D_800A0528,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0D0,0x46803220,0x00194100,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0D4,0x0000C812,0x01E84821,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0D8,0x00194100,0x252A03B8,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0DC,0x01E84821,0xAE4A0058,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0E0,0x252A03B8,0x8E030014,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0E4,0xAE4A0058,0xE6400040,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0E8,0x8E030014,0xE6400044,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0EC,0x864F0028,0x00710019,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0F0,0x00008025,0x000358C0,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0F4,0x00710019,0x024B6021,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0F8,0x000358C0,0x864F0028,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x0FC,0x024B6021,0x00008825,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x100,0x00008825,0x00008025,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x128,0x18800013,0xE64A0048,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false
+generated_F5800,func_150C88D0,0x12C,0xE64A0048,0x18800012,-,-,Normalize ring header setup scheduling and one commutative allocation add,,,false

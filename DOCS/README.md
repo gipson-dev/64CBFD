@@ -1,5 +1,14 @@
 # Documentation
 
+## Ring constructor matched with scheduling guards - 2026-11-24
+
+[Note 2678](WORKING_NOTES/2678-game-ring-effect-constructor-guarded-byte-match-20261124.md):
+`func_150C88D0` recovers 102 words / frame 56; 22 expected-word guards preserve
+retail header scheduling and one commutative add. Guest, SDK32, both caller
+windows and strict-image checks pass; 18 owner neighbors remain unchanged.
+Total **4,658 / 5,528 (84.26%)**, Game **3,985 / 4,855 (82.08%)**, zero drift;
+**41 more to 85%**. The matrix draft remains private and uncredited.
+
 ## Attached spray pair matched directly - 2026-11-24
 
 [Note 2677](WORKING_NOTES/2677-game-attached-spray-pair-direct-byte-match-20261124.md):

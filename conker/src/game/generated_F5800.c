@@ -111,8 +111,56 @@ s32 func_150C8730() {
     return 0;
 }
 
-s32 func_150C88D0() {
-    return 0;
+typedef struct {
+    u8 reserved0[0x14]; s32 count; s16 lifetime; u8 reserved1A[0x16];
+} RingDescriptor150C88D0;
+typedef struct {
+    u8 reserved0[0x10]; RingDescriptor150C88D0 descriptor;
+    f32 field40,field44,angleStep; s16 lifetime; u8 reserved4E[2]; f32 field50;
+    u8 *field54,*field58; u8 reserved5C[0x304]; f32 (*lookup)[2]; u8 *field364;
+    u8 storage[1];
+} RingEffect150C88D0;
+extern f32 D_800A0528;
+void *func_15167A68(s32,s32,s32,s32,u8,u8);
+void *memcpy(void *,const void *,unsigned int);
+f32 sinf(f32); f32 cosf(f32);
+
+/* Allocate the ring record and initialize its sine/cosine lookup table. */
+void *func_150C88D0(RingDescriptor150C88D0 *descriptor,s32 extraBytes,u8 priority,s32 group) {
+    RingEffect150C88D0 *effect;
+    s32 index;
+    s32 bands;
+    s32 offset;
+    f32 angle;
+    f32 value;
+    effect = func_15167A68(0x31,group,extraBytes + (descriptor->count << 3) + (descriptor->count * 5 << 5) + 0x408,1,priority,1);
+    bands = 5;
+    if (effect == 0) return 0;
+    memcpy(&effect->descriptor,descriptor,0x30);
+    effect->lookup = (f32 (*)[2])((u8 *)effect + 0x368);
+    effect->field54 = (u8 *)effect + (descriptor->count << 3) + 0x368;
+    effect->field58 = (u8 *)effect + (descriptor->count << 3) + (descriptor->count * bands << 4) + 0x3B8;
+    effect->field40 = 0.0f;
+    effect->field44 = 0.0f;
+    effect->field364 = (u8 *)effect + (descriptor->count << 3) + (descriptor->count * bands << 5) + 0x408;
+    effect->angleStep = D_800A0528 / effect->descriptor.count;
+    effect->field50 = 0.0f;
+    effect->lifetime = effect->descriptor.lifetime;
+    index = 0;
+    offset = 0;
+    if (effect->descriptor.count > 0) {
+        angle = 0.0f;
+        do {
+            value = sinf(angle);
+            ((f32 *)((u8 *)effect->lookup + offset))[0] = value;
+            value = cosf(angle);
+            ((f32 *)((u8 *)effect->lookup + offset))[1] = value;
+            ++index;
+            offset += 8;
+            angle += effect->angleStep;
+        } while (index < effect->descriptor.count);
+    }
+    return effect;
 }
 
 s32 func_150C8A68() {
