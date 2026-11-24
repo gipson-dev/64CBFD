@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Attached spray pair matched directly - 2026-11-24
+
+[Note 2677](WORKING_NOTES/2677-game-attached-spray-pair-direct-byte-match-20261124.md):
+`func_150C7020` emits all 104 words / frame 88 directly, with zero guards.
+Both functions in generated_F44D0 now match. Guest, SDK32, caller/RNG and
+strict-image checks pass; submission-helper internals remain contracted.
+Total **4,657 / 5,528 (84.24%)**, Game **3,984 / 4,855 (82.06%)**, zero drift;
+**42 more to 85%**.
+
 ## Point spray callback matched directly - 2026-11-24
 
 [Note 2676](WORKING_NOTES/2676-game-point-spray-callback-direct-byte-match-20261124.md):
