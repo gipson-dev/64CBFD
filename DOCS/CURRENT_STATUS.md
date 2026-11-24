@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Long lifetime radial particle matched - 2026-11-24
+
+[Note 2689](WORKING_NOTES/2689-game-long-lifetime-radial-particle-payload-byte-match-20261124.md):
+`func_150CDCF4` recovers 135 words / frame 168, including its unsigned lifetime remainder
+and captured damping copy. Both padders, actual Make, strict image, SDK32,
+all four registry callers and the factory chain pass; two neighbors stay fixed.
+Total **4,668 / 5,528 (84.44%)**, Game **3,995 / 4,855 (82.29%)**, zero drift;
+**31 more to 85%**. No pre-existing function or helper receives duplicate credit.
+
 ## Third radial sprite emission matched - 2026-11-24
 
 [Note 2688](WORKING_NOTES/2688-game-third-radial-sprite-emission-byte-match-20261124.md):
