@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Ring emission callback matched - 2026-11-24
+
+[Note 2680](WORKING_NOTES/2680-game-ring-emission-callback-byte-match-20261124.md):
+`func_150C99B4` recovers 138 words / frame 168; one checked multiply-operand
+guard completes the byte match. The sparse 0x70-byte descriptor, ordered RNGs,
+SDK32 and five-argument callback ABI pass; 18 owner neighbors and pools stay fixed.
+Total **4,660 / 5,528 (84.30%)**, Game **3,987 / 4,855 (82.12%)**, zero drift;
+**39 more to 85%**.
+
 ## Ring updater matched with guarded literals - 2026-11-24
 
 [Note 2679](WORKING_NOTES/2679-game-ring-updater-guarded-byte-match-20261124.md):

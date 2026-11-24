@@ -231,9 +231,78 @@ s32 func_150C8DB8() {
     return 0;
 }
 
-s32 func_150C99B4() {
-    return 0;
+typedef struct {
+    u32 field00,field04; u16 field08; s16 lifetime;
+    u32 field0C,field10;
+    u8 field14,field15,field16,field17;
+    u8 field18,field19,field1A,field1B;
+    u8 field1C,kind; s16 field1E,field20,field22;
+    f32 field24,sizeStart,sizeEnd;
+    vertex position;
+    f32 field3C,field40,field44;
+    vertex direction;
+    f32 field54; u32 flags;
+    u8 reserved5C[4]; u8 field60,field61; s8 field62,field63;
+    u8 reserved64[12];
+} RingParticle150C99B4;
+extern f32 D_800A0570,D_800A0574,D_800A0578,D_800A057C;
+f32 func_150ADA68(void);
+void func_15143794(s16,s16,f32,vertex *);
+void *func_15130374(void *,u8,s32,u8,s32);
+
+/* Build and submit the randomized particle for one ring perimeter point. */
+void func_150C99B4(RingUpdate150C8A68 *owner,vertex *point,u8 angle,f32 unusedSine,f32 unusedCosine) {
+    RingParticle150C99B4 packet;
+    f32 sample;
+    s16 pitch;
+    f32 speed;
+    s32 firstFlags;
+    s32 secondFlags;
+    f32 base;
+
+    packet.kind = 0x26;
+    packet.field08 = 0xC01;
+    packet.field00 = 0x200005;
+    packet.field04 = 0;
+    packet.lifetime = (u32)func_150ADA20() % 81U + 25;
+    packet.field0C = 0;
+    packet.field10 = 0;
+    packet.field60 = 5;
+    packet.field61 = 5;
+    packet.field14 = 0;
+    packet.field15 = 0;
+    packet.field16 = 0;
+    packet.field17 = 255;
+    packet.field18 = 0;
+    packet.field19 = 0;
+    packet.field1A = 0;
+    packet.field1B = (u32)func_150ADA20() % 156U + 100;
+    packet.field1C = 255;
+    sample = func_150ADA68();
+    packet.sizeStart = packet.sizeEnd = sample * 500.0f + 500.0f;
+    packet.position = *point;
+    packet.field3C = 0.0f;
+    packet.field40 = 0.0f;
+    packet.field44 = 0.0f;
+    sample = func_150ADA68();
+    packet.field54 = (sample * D_800A0570 + -1416.0f) * D_800A0574;
+    packet.field1E = 20;
+    packet.field20 = 12;
+    packet.field22 = 0;
+    packet.field24 = 1.0f;
+    firstFlags = func_150ADA20() & 1 ? 0x40 : 0;
+    secondFlags = func_150ADA20() & 1 ? 0x80 : 0;
+    packet.flags = secondFlags | 7 | firstFlags | 0x200;
+    packet.field62 = -1;
+    packet.field63 = -1;
+    pitch = (u32)func_150ADA20() % 11U - 18;
+    sample = func_150ADA68();
+    base = owner->growthRate;
+    speed = sample * (base * D_800A0578) + base * D_800A057C;
+    func_15143794(angle,pitch,speed,&packet.direction);
+    func_15130374(&packet,1,0,((u8 *)owner)[0xC],((u8 *)owner)[1]);
 }
+
 
 s32 func_150C9BDC() {
     return 0;
