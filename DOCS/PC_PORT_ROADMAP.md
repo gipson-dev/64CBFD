@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Randomized spray callback matched - 2026-11-24
+
+[Note 2674](WORKING_NOTES/2674-game-randomized-spray-callback-byte-match-20261124.md):
+`func_150C2558` matches all 106 words / frame 160 with seven proved integer
+scheduling guards, the exact 15-parameter callback type and defined angle
+subtraction wrapping. Guest/native, dispatcher-window and full image pass.
+Total **4,654 / 5,528 (84.19%)**, Game **3,981 / 4,855 (82.00%)**, zero drift;
+**45 more to 85%**.
+
 ## Fixed spray descriptor matched - 2026-11-24
 
 [Note 2673](WORKING_NOTES/2673-game-fixed-spray-descriptor-byte-match-20261124.md):

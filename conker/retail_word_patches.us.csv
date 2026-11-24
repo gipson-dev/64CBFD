@@ -42838,3 +42838,10 @@ game_EF410,func_150C2290,0xac,0x240800ff,0x24190004,-,-,Normalize proved closed 
 game_EF410,func_150C2290,0xb0,0x240900ff,0x240800ff,-,-,Normalize proved closed constant-load scheduling block for fixed spray descriptor,,,false
 game_EF410,func_150C2290,0xb4,0x240a0003,0x240900ff,-,-,Normalize proved closed constant-load scheduling block for fixed spray descriptor,,,false
 game_EF410,func_150C2290,0xb8,0x3c013f80,0x240a0003,-,-,Normalize proved closed constant-load scheduling block for fixed spray descriptor,,,false
+game_EF410,func_150C2558,0x98,0xa3ad0050,0x3c014230,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0x9c,0x240f0028,0xa3ad0050,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0xa8,0x24180001,0x240f0028,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0xac,0x24190004,0x24180001,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0xb0,0x240800ff,0x24190004,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0xb4,0x240900ff,0x240800ff,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false
+game_EF410,func_150C2558,0xb8,0x3c014230,0x240900ff,-,-,Normalize proved closed constant-load scheduling block for randomized spray descriptor,,,false

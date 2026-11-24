@@ -136,12 +136,17 @@ typedef struct {
     u32 retained84;
 } FixedSpray150C2290;
 extern f32 D_800A0258, D_800A025C, D_800A0260, D_800A0264;
+extern f32 D_800A0270;
 void func_15151A38(void *, u8, s32);
 
 /* Generated placeholder declarations. */
 s32 func_150C1F60();
 void func_150C2290(u8);
-s32 func_150C2558();
+s32 func_150C2558(
+        s32 unusedKind, s16 unusedIndex, f32 x, f32 y, f32 z,
+        f32 unusedX, f32 unusedY, f32 unusedZ, u8 unusedAngle, u8 unusedStart,
+        f32 unusedRadius, s32 unusedContext, f32 unusedParameter,
+        s32 unusedFlags, u8 channel);
 s32 func_150C2700(
         void *unusedOwner, s32 unusedEvent, f32 x, f32 y, f32 z,
         s32 unused5, s32 unused6, s32 unused7, s32 unused8, s32 unused9,
@@ -233,10 +238,62 @@ s32 func_150C251C(struct202 *arg0) {
     }
     return 1;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_EF410/func_150C2558.s. */
-s32 func_150C2558() {
-    return 0;
+/* Submit the event spray with a randomized Z coordinate and derived angle. */
+s32 func_150C2558(
+        s32 unusedKind, s16 unusedIndex, f32 x, f32 y, f32 z,
+        f32 unusedX, f32 unusedY, f32 unusedZ, u8 unusedAngle, u8 unusedStart,
+        f32 unusedRadius, s32 unusedContext, f32 unusedParameter,
+        s32 unusedFlags, u8 channel) {
+    FixedSpray150C2290 descriptor;
+
+    descriptor.x = x;
+    descriptor.y = y;
+    descriptor.z = z + 15.0f - func_150ADA68() * 30.0f;
+    descriptor.field24 = 1;
+    descriptor.field26 = 0;
+    descriptor.field28 = (u32)(s32)(descriptor.z * D_800A0270) - 64u;
+    descriptor.field2A = 9;
+    descriptor.field2C = 0;
+    descriptor.field2E = 0;
+    descriptor.field30 = 3;
+    descriptor.field32 = 3;
+    descriptor.field34 = 40;
+    descriptor.field36 = 21;
+    descriptor.field38 = 11;
+    descriptor.field39 = 1;
+    descriptor.field3A = 40;
+    descriptor.field3C = 1;
+    descriptor.field40 = 4;
+    descriptor.field44 = 0;
+    descriptor.field48 = 0;
+    descriptor.field4C = 0;
+    descriptor.field50 = 0;
+    descriptor.field54 = 255;
+    descriptor.field55 = 255;
+    descriptor.field56 = 0;
+    descriptor.field58 = 3;
+    descriptor.field5C = 255;
+    descriptor.field60 = 0;
+    descriptor.field64 = 0x220005;
+    descriptor.field68 = 0x1D0600;
+    descriptor.field6C = 1;
+    descriptor.field70 = 59;
+    descriptor.field74 = 128;
+    descriptor.field78 = 32;
+    descriptor.field7C = 0;
+    descriptor.field7D = 7;
+    descriptor.field80 = 12;
+    descriptor.field82 = 21;
+    descriptor.field1C = 200.0f;
+    descriptor.field20 = 150.0f;
+    descriptor.field0C = 22.0f;
+    descriptor.field14 = 0.0f;
+    descriptor.field18 = 0.0f;
+    descriptor.field10 = 44.0f;
+    func_15151A38(&descriptor, channel, 1);
+    return 1;
 }
+
 /* Submit the fixed effect-band descriptor and caller position packet. */
 s32 func_150C2700(
         void *unusedOwner, s32 unusedEvent, f32 x, f32 y, f32 z,
