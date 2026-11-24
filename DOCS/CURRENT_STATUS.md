@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Menu fade renderer matched - 2026-11-24
+
+[Note 2670](WORKING_NOTES/2670-game-menu-fade-renderer-byte-match-20261124.md): `func_151E09DC` now emits all
+101 words / frame 40 directly from C, without guards. Signed wrap arithmetic,
+live menu state, the original caller, both owner padders and full image pass.
+The five-word helper interface is ABI-only and remains unmatched/uncredited.
+Total **4,650 / 5,528 (84.12%)**, Game **3,977 / 4,855 (81.92%)**, zero drift;
+**49 more to 85%**.
+
 ## Menu transition initializer matched - 2026-11-24
 
 [Note 2669](WORKING_NOTES/2669-game-menu-transition-initializer-byte-match-20261124.md): `func_151E53E8` now emits all

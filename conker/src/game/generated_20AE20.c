@@ -249,8 +249,57 @@ s32 func_151E0424() {
     return 0;
 }
 
-s32 func_151E09DC() {
-    return 0;
+extern s8 D_800AB690[];
+extern u32 D_800AB754[];
+extern char D_800AB850[];
+extern u8 D_800E0A95;
+extern s8 D_800E0A96, D_8008FDE0;
+void func_1504332C(u8, u8, u8, u8);
+void func_15042D94(s32, s32, u8, s32, ...);
+void func_15042D78(u8);
+void func_151E2404(void);
+s32 func_151E3344(u32, s32, s32, u32, s32);
+
+/* Draw and advance the menu fade; retain the full wrapped opacity value. */
+void func_151E09DC(void) {
+    u32 mask;
+    s32 value;
+    s8 *menu;
+
+    func_1504332C(255, 255, 255, 255);
+    func_15042D94(148, 126, 1, (s32)D_800AB850, 26);
+    func_15042D78(0x81);
+    menu = D_8008FDD4;
+    mask = D_800AB754[D_800AB690[menu[0x42] * 10]];
+    if (D_800E0A96 == 0) {
+        *(u16 *)(menu + 0x20) &= 0xFFDF;
+        value = (s32)((u32)D_800E0A95 - ((u32)D_800BE9E4 << 5));
+        if (value <= 0) {
+            D_8008FDD4[0x3F] = 0;
+            if (D_8008FDE0 != 0) {
+                func_151E2404();
+            }
+            D_8008FDE0 = 0;
+            D_800E0A96 = -1;
+            return;
+        }
+        D_800E0A95 = value;
+    } else {
+        value = (s32)((u32)D_800E0A95 + ((u32)D_800BE9E4 << 5));
+        if (value >= 256) {
+            value = 255;
+        }
+    }
+    D_800E0A95 = value;
+    if (value != 255) {
+        *(u16 *)(D_8008FDD4 + 0x20) = 0;
+    }
+    func_151E3344(mask, 1, 0, (u8)value, 0);
+    menu = D_8008FDD4;
+    if (*(u16 *)(menu + 0x20) & 0x20) {
+        D_800E0A96 = 0;
+    }
+    *(u16 *)(menu + 0x20) &= 0xFFDF;
 }
 
 s32 func_151E0B70() {
@@ -377,7 +426,8 @@ void func_151E327C(void) {
     func_151E7EF8();
 }
 
-s32 func_151E3344() {
+/* ABI-only interface; the renderer implementation remains unrecovered. */
+s32 func_151E3344(u32 mask, s32 mode, s32 alternate, u32 opacity, s32 flags) {
     return 0;
 }
 
