@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Sibling composite preset and caller storage - 2026-11-25
+
+[Note 2700](WORKING_NOTES/2700-game-sibling-composite-preset-and-caller-storage-20261125.md): `func_150B5C38` matches all 127 words
+with a 144-byte frame, 76 words emitted directly and 51 checked guards. Its
+caller uses genuine 12-byte position storage and retains its complete padded
+object. Total: **4,679 / 5,528 (84.64%)**; Game: **4,006 / 4,855 (82.51%)**;
+zero address drift. **20 more verified matches reach 85%.**
+
 ## Random particle companion matched - 2026-11-25
 
 [Note2699](WORKING_NOTES/2699-game-random-particle-companion-match-20261125.md): `func_150B5E34` matches115words/frame152,

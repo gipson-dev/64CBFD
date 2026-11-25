@@ -1458,15 +1458,25 @@ void func_15071668(s32 arg0) {
     func_151D0024(D_800D154C);
 }
 
+typedef struct {
+    f32 x, y, z;
+} CompositeEffectPosition;
+/* Array helpers and the aggregate descriptor share the same three floats. */
+typedef union {
+    CompositeEffectPosition vector;
+    f32 array[3];
+} CompositePositionStorage150B5A3C;
+void func_150B60E0(u8 *,f32 *);
+void func_150B5C38(CompositePositionStorage150B5A3C *,u8,s32);
+/* The transform and preset consume a complete three-float position. */
 void func_15071690(s32 arg0) {
+    CompositePositionStorage150B5A3C position;
     struct127 *temp_a0;
-    s32 pad0;
-    s32 sp1C;
 
     temp_a0 = D_800D154C;
     if ((temp_a0->unk1D4 != 0) && ((temp_a0->unk74 & 0xF) != 0xF)) {
-        func_150B60E0(temp_a0, &sp1C);
-        func_150B5C38(&sp1C, 0xFF, 1);
+        func_150B60E0((u8 *)temp_a0, position.array);
+        func_150B5C38(&position, 0xFF, 1);
     }
 }
 

@@ -178,8 +178,65 @@ void func_150B5A3C(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra)
 }
 
 
-s32 func_150B5C38() {
-    return 0;
+extern f32 D_8009FCAC,D_8009FCB0,D_8009FCB4,D_8009FCB8;
+/* Submit the larger composite preset followed by its two companion effects. */
+void func_150B5C38(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra) {
+    CompositeEffectInput packet;
+    packet.baseCount=13;
+    packet.countRange=8;
+    packet.position=position->vector;
+    packet.field14Base=D_8009FCAC;
+    packet.secondBase=-20;
+    packet.headerByteRange=2;
+    packet.secondRange=50;
+    packet.headerByteBase=3;
+    packet.headerShortBase=20;
+    packet.headerShortRange=15;
+    packet.field40=1;
+    packet.fixed42=4;
+    packet.fixed43=2;
+    packet.byteBase46=255;
+    packet.byteBase47=180;
+    packet.firstRange=255;
+    packet.fixed44=3;
+    packet.byteBase45=255;
+    packet.byteBase48=255;
+    packet.byteBase4D=255;
+    packet.byteBase4E=255;
+    packet.byteBase4F=180;
+    packet.byteBase50=255;
+    packet.byteBase55=255;
+    packet.firstBase=0;
+    packet.byteRange49=0;
+    packet.byteRange4A=0;
+    packet.byteRange4B=0;
+    packet.byteRange4C=0;
+    packet.byteRange51=0;
+    packet.byteRange52=0;
+    packet.byteRange53=0;
+    packet.byteRange54=0;
+    packet.byteRange56=0;
+    packet.fixed57=3;
+    packet.fixed58=36;
+    packet.field5C=0x200005;
+    packet.field60=0x60600;
+    packet.field64=8;
+    packet.field66=31;
+    packet.field68=1;
+    packet.field6A=0;
+    packet.field70=-1;
+    packet.field71=0;
+    ((s8 *)packet.privateTail72)[0]=-1;
+    ((s8 *)packet.privateTail72)[1]=-1;
+    packet.field18Range=D_8009FCB0;
+    packet.field1CBase=D_8009FCB4;
+    packet.field20Range=D_8009FCB8;
+    packet.radiusBase=152.0f;
+    packet.radiusRange=100.0f;
+    packet.field6C=1.0f;
+    func_15152B38(&packet,mode,extra);
+    func_150B5E34(position,mode,extra);
+    func_150B6000(position->array,mode,extra);
 }
 
 typedef struct {
