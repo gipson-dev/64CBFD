@@ -115,7 +115,7 @@ typedef struct {
 } CompositeEffectInput;
 extern f32 D_8009FCA0,D_8009FCA4,D_8009FCA8;
 void func_15152B38(CompositeEffectInput *,u8,s32);
-s32 func_150B5E34();
+void *func_150B5E34(CompositePositionStorage150B5A3C *,u8,s32);
 void func_150B6000(f32 *,u8,s32);
 /* Submit the fixed composite burst, then both companion effects. */
 void func_150B5A3C(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra) {
@@ -173,7 +173,7 @@ void func_150B5A3C(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra)
     packet.radiusRange=35.0f;
     packet.field6C=1.0f;
     func_15152B38(&packet,mode,extra);
-    func_150B5E34(position->array,mode,extra);
+    func_150B5E34(position,mode,extra);
     func_150B6000(position->array,mode,extra);
 }
 
@@ -182,9 +182,69 @@ s32 func_150B5C38() {
     return 0;
 }
 
-s32 func_150B5E34() {
-    return 0;
+typedef struct {
+    u32 flags00, field04;
+    s16 code08, lifetime;
+    u32 zero0C, zero10;
+    u8 rgba14[4], rgba18[4];
+    u8 value1C, paletteIndex;
+    s16 value1E, value20, value22;
+    f32 scale, extentX, extentY;
+    CompositeEffectPosition position, velocity, acceleration;
+    f32 parameter;
+    u32 flags58, reserved5C;
+    u8 value60, value61;
+    s8 value62, value63, value64, value65;
+    u8 reserved66[2];
+    s16 reserved68;
+    u8 reserved6A[2];
+    f32 reserved6C;
+} RandomParticleDefinition150B5E34;
+void *func_15130280(RandomParticleDefinition150B5E34 *,u8,void *,s32,u8,s32);
+/* Build the randomized companion particle and return its allocation result. */
+void *func_150B5E34(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra) {
+    RandomParticleDefinition150B5E34 packet;
+    u32 firstFlag;
+    packet.paletteIndex=43;
+    packet.code08=0x4403;
+    packet.flags00=0x200005;
+    packet.field04=0x20000;
+    packet.lifetime=(u32)func_150ADA20()%7U+4;
+    packet.zero0C=0;
+    packet.zero10=0;
+    packet.rgba14[0]=255;
+    packet.rgba14[1]=255;
+    packet.rgba14[2]=255;
+    packet.rgba14[3]=255;
+    packet.rgba18[0]=255;
+    packet.rgba18[1]=255;
+    packet.rgba18[2]=255;
+    packet.rgba18[3]=255;
+    packet.value1C=255;
+    packet.extentX=packet.extentY=func_150ADA68()*500.0f+500.0f;
+    packet.position=position->vector;
+    packet.value1E=3;
+    packet.value20=85;
+    packet.value22=1;
+    packet.velocity.x=0.0f;
+    packet.velocity.y=0.0f;
+    packet.velocity.z=0.0f;
+    packet.acceleration.x=0.0f;
+    packet.acceleration.y=0.0f;
+    packet.acceleration.z=0.0f;
+    packet.parameter=0.0f;
+    packet.scale=1.0f;
+    firstFlag=(func_150ADA20()&1)?0x40:0;
+    packet.flags58=((func_150ADA20()&1)?0x80:0)|1|firstFlag|0xC200;
+    packet.value60=6;
+    packet.value61=6;
+    packet.value62=-1;
+    packet.value63=-1;
+    packet.value64=-1;
+    packet.value65=4;
+    return func_15130280(&packet,1,0,0,mode,extra);
 }
+
 
 struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
 

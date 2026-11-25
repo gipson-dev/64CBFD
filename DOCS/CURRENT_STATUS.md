@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Random particle companion matched - 2026-11-25
+
+[Note2699](WORKING_NOTES/2699-game-random-particle-companion-match-20261125.md): `func_150B5E34` matches115words/frame152,
+with94 direct words and21 checked allocation/private-spill/scheduling guards.
+Full112-byte packet, pointer return, guest/native/caller/factory and image gates
+pass. Total **4,678 / 5,528 (84.62%)**, Game **4,005 / 4,855 (82.49%)**,
+zero drift; **21 more to85%**. ROM-only second parent and helpers earn no credit.
+
 ## Composite preset builder matched - 2026-11-25
 
 [Note2698](WORKING_NOTES/2698-game-composite-preset-builder-match-20261125.md): `func_150B5A3C` matches127words/frame144,
