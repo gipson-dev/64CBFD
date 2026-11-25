@@ -630,18 +630,18 @@ void func_150A3444(s32 index, s16 arg1, s16 arg2, s16 arg3) {
     D_800D3098[index].origin2 = arg3;
 }
 
-s32 func_150A3504();
+s32 func_150A3504(u8 *, f32 *, f32 *, f32 *);
 
-s32 func_150A34B0(u8 *arg0) {
+s32 func_150A34B0(u8 *arg0, f32 *start, f32 *end, f32 *output) {
     if (arg0[0x14] == 1) {
         return 0;
     }
     if ((arg0[0x15] & 3) == 0) {
-        return func_150A3504(arg0);
+        return func_150A3504(arg0, start, end, output);
     }
     return 0;
 }
 
-s32 func_150A3504() {
+s32 func_150A3504(u8 *record, f32 *start, f32 *end, f32 *output) {
     return 0;
 }

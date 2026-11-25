@@ -1,5 +1,13 @@
 # Documentation
 
+## Resource record query match - 2026-11-25
+
+[Note2705](WORKING_NOTES/2705-game-resource-record-query-match-20261125.md): `func_150EB484` matches100words,
+with77direct words and23checked frame/scheduling/layout guards. Explicit vector
+forwarding retires four wrapper guards; unfinished children get zero credit.
+Total **4,684 / 5,528 (84.73%)**, Game **4,011 / 4,855 (82.62%)**,
+zero drift; **15 more to85%**.
+
 ## Timed phase callback match - 2026-11-25
 
 [Note2704](WORKING_NOTES/2704-game-timed-phase-update-match-20261125.md): `func_15108658` matches105words/frame40,
