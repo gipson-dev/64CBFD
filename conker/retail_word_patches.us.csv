@@ -43231,3 +43231,41 @@ generated_FB060,func_150CDCF4,0x1D8,0x27A40038,0x27A40034,-,-,Normalize long lif
 generated_FB060,func_150CDCF4,0x1E8,0xE7B2005C,0xE7B20058,-,-,Normalize long lifetime radial particle private RNG payload and descriptor stack layout,,,false
 generated_FB060,func_150CDCF4,0x1F0,0xE7A40030,0xE7A4002C,-,-,Normalize long lifetime radial particle private RNG payload and descriptor stack layout,,,false
 generated_FB060,func_150CDCF4,0x1FC,0x27A50030,0x27A5002C,-,-,Normalize long lifetime radial particle private RNG payload and descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x38,0xE7AC0054,0xE7AC0050,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x3C,0xE7AE0058,0xE7AE0054,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x40,0xE7A00048,0xE7A00044,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x44,0xE7A0004C,0xE7A00048,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x48,0xE7A00050,0xE7A0004C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x4C,0xAFAE007C,0xAFAE0078,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x50,0xE7A2003C,0xE7A20038,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x54,0xE7A20040,0xE7A2003C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x58,0xE7A20044,0xE7A20040,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x5C,0xE7A20070,0xE7A2006C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x60,0xE7A0002C,0xE7A00028,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x64,0xA7AF0082,0xA7AF007E,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x68,0xE7A4005C,0xE7A40058,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x70,0xE7A60030,0xE7A6002C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x88,0x27A70060,0x27A7005C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x100,0xE7A6006C,0xE7A60068,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x12C,0xE7A60074,0xE7A60070,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x144,0xA7AA0080,0xA7AA007C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x170,0xE7A60078,0xE7A60074,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x190,0xA3A00084,0xA3A00080,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x194,0xAFA00088,0xAFA00084,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1A0,0xE7A20034,0xE7A20030,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1A8,0xE7A20038,0xE7A20034,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1D0,0xA3AC008C,0xA3AC0088,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1D4,0xA3AD008D,0xA3AD0089,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1D8,0xA3A0008E,0xA3A0008A,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1DC,0xA3A0008F,0xA3A0008B,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1E0,0xA3A00090,0xA3A0008C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1E4,0xA3A00091,0xA3A0008D,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1E8,0xA3A00092,0xA3A0008E,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1EC,0xA3A00093,0xA3A0008F,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1F0,0xA3A00094,0xA3A00090,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1F4,0xA3AE0096,0xA3AE0092,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1F8,0xAFA00098,0xAFA00094,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x1FC,0xA3A0009C,0xA3A00098,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x200,0xA7AF009E,0xA7AF009A,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x204,0xA7B800A0,0xA7B8009C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_FB060,func_150CDF10,0x208,0x27A4002C,0x27A40028,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false

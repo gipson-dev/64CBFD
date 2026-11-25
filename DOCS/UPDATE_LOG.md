@@ -1,5 +1,14 @@
 # Update Log
 
+## Fourth radial sprite emission matched - 2026-11-24
+
+[Note 2690](WORKING_NOTES/2690-game-fourth-radial-sprite-emission-byte-match-20261124.md):
+`func_150CDF10` recovers 142 words / frame 168 with a checked private-packet
+stack map. Both padders, actual Make, strict image, SDK32 and all four original
+registry callers pass; two owner neighbors stay fixed.
+Total **4,669 / 5,528 (84.46%)**, Game **3,996 / 4,855 (82.31%)**, zero drift;
+**30 more to 85%**. The extended consumer remains unmatched and uncredited.
+
 ## Long lifetime radial particle matched - 2026-11-24
 
 [Note 2689](WORKING_NOTES/2689-game-long-lifetime-radial-particle-payload-byte-match-20261124.md):

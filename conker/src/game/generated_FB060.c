@@ -40,7 +40,7 @@ void func_150CDBB0(u8 *actor, u8 flags, s32 unused) {
     }
 }
 
-/* Non-matching placeholders for the remaining asm slice. */
+/* Recovered radial effect constructors from the original assembly slice. */
 #include "structs.h"
 
 typedef struct {
@@ -121,6 +121,71 @@ s32 func_150CDCF4(s32 source,s16 index,f32 x,f32 y,f32 z,
 
 
 
-s32 func_150CDF10() {
-    return 0;
+#include "structs.h"
+
+typedef struct {
+    f32 field00,field04,sizeStart,sizeEnd;
+    vertex rotation,scale,position,direction;
+    f32 field40,field44,field48,field4C;
+    u32 field50; s16 lifetime,field56;
+    u8 field58,reserved59[3]; u32 field5C;
+    u8 field60,field61,field62,field63,field64,field65,field66,field67,field68;
+    u8 reserved69,field6A,reserved6B; u32 field6C;
+    u8 field70,reserved71; s16 field72,field74; u8 reserved76[6];
+} RadialSprite150CDF10;
+u32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void func_15143794(s16,s16,f32,vertex *);
+void *func_15132A4C(void *,s32,s32,s32,u8,s32);
+
+extern f32 D_800A07C4,D_800A07C8,D_800A07CC,D_800A07D0;
+extern f32 D_800A07D8,D_800A07DC,D_800A07D4,D_800A07E0;
+
+/* Emit a rotating radial sprite with randomized velocity and lifetime. */
+s32 func_150CDF10(s32 source,s16 index,f32 x,f32 y,f32 z,
+    f32 originX,f32 originY,f32 originZ,s16 angle,u8 start,f32 radius,
+    s32 style,f32 extra,s32 context,u8 slot) {
+    RadialSprite150CDF10 packet;
+    s16 pitch;
+    f32 sample;
+    s32 pitchDraw;
+    packet.position.x = x;
+    packet.position.y = y;
+    packet.position.z = z;
+    packet.scale.z = packet.scale.y = packet.scale.x = 1.0f;
+    packet.field50 = 0x29E8;
+    packet.rotation.z = packet.rotation.y = packet.rotation.x = 0.0f;
+    packet.field44 = 0.0f;
+    packet.field00 = 1.0f;
+    packet.field56 = 32;
+    packet.field04 = D_800A07C4;
+    pitchDraw = func_150ADA20();
+    sample = func_150ADA68();
+    pitch = (u32)pitchDraw % 41U - 61;
+    func_15143794(angle,pitch,(sample * 101.0f + 150.0f) * D_800A07C8,&packet.direction);
+    packet.field40 = (func_150ADA68() * 260.0f + -130.0f) * D_800A07CC;
+    packet.field48 = (func_150ADA68() * 260.0f + -130.0f) * D_800A07D0;
+    packet.lifetime = (u32)func_150ADA20() % 21U + 50;
+    packet.field4C = (func_150ADA68() * D_800A07D4 + D_800A07D8) * D_800A07DC;
+    sample = (func_150ADA68() * 302.0f + 52.0f) * D_800A07E0;
+    packet.sizeEnd = packet.sizeStart = sample;
+    packet.field58 = 0;
+    packet.field5C = 0;
+    packet.field60 = (u32)func_150ADA20() % 76U + 180;
+    packet.field61 = 8;
+    packet.field62 = 0;
+    packet.field63 = 0;
+    packet.field64 = 0;
+    packet.field65 = 0;
+    packet.field66 = 0;
+    packet.field67 = 0;
+    packet.field68 = 0;
+    packet.field6A = 2;
+    packet.field6C = 0;
+    packet.field70 = 0;
+    packet.field72 = 32;
+    packet.field74 = 7;
+    func_15132A4C(&packet,3,255,0,slot,0);
+    return 1;
 }
+
