@@ -87,9 +87,89 @@ s32 func_150B2EB4(s32 source,s16 index,f32 x,f32 y,f32 z,
 }
 
 
-s32 func_150B3188() {
-    return 0;
+#include <string.h>
+s32 func_151422DC(s32,s32,s32,s32,s32,s32,s32);
+extern u8 D_8009F968[],D_8009F970[],D_8009F998[],D_8009F9A4[];
+extern u8 D_8009F9CC[],D_8009F9D8[],D_8009FA00[],D_8009FA0C[];
+extern u8 D_8009FA34[],D_8009FA44[],D_8009FA6C[],D_8009FA78[];
+extern u8 D_8009FAA0[],D_8009FAB0[],D_8009FAD8[],D_8009FAE4[],D_8009FB0C[],D_8009FB18[];
+extern f32 D_8009FB9C,D_8009FBA0,D_8009FBA4,D_8009FBA8,D_8009FBAC,D_8009FBB0;
+
+/* Capture retail tweak defaults, build the effect, and attach its extra float. */
+s32 func_150B3188(s32 source,s16 index,f32 x,f32 y,f32 z,
+    f32 originX,f32 originY,f32 originZ,u32 heading,s32 start,f32 radius,
+    s32 style,f32 extra,s32 context,u8 slot) {
+    f32 headingCosine,headingSine,horizontal,yawCosine,yawSine,pitchCosine,pitchSine,speed;
+    s16 duration;
+    f32 fieldBias,fieldRange,speedBase,speedRange,sizeBase,sizeRange,yawScale,pitchScale;
+    AngularExtended150B2EB4 descriptor;
+    u8 *created;
+    f32 payload;
+    headingCosine = func_151423D8((u8)(heading - 64U));
+    headingSine = func_151423D8((u8)heading);
+    duration = func_151422DC(6,(s32)D_8009F968,1,500,300,(s32)D_8009F970,0x742);
+    fieldBias = func_151422DC(7,(s32)D_8009F998,-5000,0,0,(s32)D_8009F9A4,0x750) * D_8009FB9C;
+    fieldRange = func_151422DC(8,(s32)D_8009F9CC,-5000,0,0,(s32)D_8009F9D8,0x752) * D_8009FBA0;
+    speedBase = func_151422DC(9,(s32)D_8009FA00,0,500,0,(s32)D_8009FA0C,0x75A);
+    speedRange = func_151422DC(10,(s32)D_8009FA34,0,500,0,(s32)D_8009FA44,0x75C);
+    sizeBase = func_151422DC(11,(s32)D_8009FA6C,0,5000,1000,(s32)D_8009FA78,0x761) * D_8009FBA4;
+    sizeRange = func_151422DC(12,(s32)D_8009FAA0,0,5000,0,(s32)D_8009FAB0,0x763) * D_8009FBA8;
+    yawScale = func_151422DC(13,(s32)D_8009FAD8,-255,255,0,(s32)D_8009FAE4,0x769);
+    pitchScale = func_151422DC(14,(s32)D_8009FB0C,-255,255,0,(s32)D_8009FB18,0x76F);
+    descriptor.flags = 0x29E9;
+    descriptor.scale[0] = 1.0f;
+    descriptor.scale[1] = 1.0f;
+    descriptor.scale[2] = 1.0f;
+    descriptor.rotation[0] = 0.0f;
+    descriptor.rotation[1] = 0.0f;
+    descriptor.rotation[2] = 0.0f;
+    payload = -18.0f;
+    descriptor.position[0] = x;
+    descriptor.position[1] = y;
+    descriptor.position[2] = z;
+    descriptor.field04 = D_8009FBAC;
+    speed = func_150ADA68() * speedRange + speedBase;
+    index = (u32)start + (s32)(((yawScale * headingSine) * radius) * extra) - 64U;
+    yawCosine = func_151423D8((u8)(index - 64));
+    yawSine = func_151423D8((u8)index);
+    index = (s32)(pitchScale * headingCosine) - 20;
+    pitchCosine = func_151423D8((u8)(index - 64));
+    pitchSine = func_151423D8((u8)index);
+    horizontal = speed * pitchSine;
+    descriptor.velocity[0] = horizontal * yawCosine;
+    descriptor.velocity[1] = -speed * pitchCosine;
+    descriptor.velocity[2] = horizontal * yawSine;
+    descriptor.field40 = func_150ADA68() * 4.0f + -2.0f;
+    descriptor.field44 = 0.0f;
+    descriptor.field48 = func_150ADA68() * 4.0f + -2.0f;
+    descriptor.duration = duration + 32;
+    descriptor.field4C = func_150ADA68() * fieldRange + fieldBias;
+    descriptor.field08 = descriptor.field0C = func_150ADA68() * sizeRange + sizeBase;
+    descriptor.field00 = descriptor.field08 * D_8009FBB0;
+    descriptor.resource = 28;
+    descriptor.field58 = 0;
+    descriptor.field5C = 0;
+    descriptor.field60 = 255;
+    descriptor.field61 = 1;
+    descriptor.field62 = 0;
+    descriptor.field63 = 5;
+    descriptor.field64 = 0;
+    descriptor.field65 = 0;
+    descriptor.field66 = 0;
+    descriptor.field67 = 0;
+    descriptor.field68 = 0;
+    descriptor.field6A = 2;
+    descriptor.field6C = 0;
+    descriptor.field70 = 0;
+    descriptor.field72 = 32;
+    descriptor.field74 = 7;
+    created = func_15132A4C(&descriptor,3,255,4,slot,0);
+    if (created != 0) {
+        memcpy((u8 *)created + 0x170,&payload,4);
+    }
+    return 1;
 }
+
 
 /* Reset motion above the threshold; otherwise scale its six components. */
 s32 func_150B36AC(u8 *record, s32 unused1, s32 unused2, s32 unused3, f32 offset, void *unused6) {

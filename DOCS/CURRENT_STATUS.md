@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Tuned extended emitter matched - 2026-11-25
+
+[Note2696](WORKING_NOTES/2696-game-tuned-extended-emitter-match-20261125.md): `func_150B3188` matches329words/frame248
+with297direct words and32proved GPR guards. Both padders, actual Make,
+strict image, guest/native and original caller/helper gates pass. Total
+**4,675 / 5,528 (84.57%)**, Game **4,002 / 4,855 (82.43%)**, zero drift;
+**24 more to85%**. Helpers/backend receive zero new credit.
+
 ## Angular extended emitter matched - 2026-11-25
 
 [Note2695](WORKING_NOTES/2695-game-angular-extended-emitter-match-20261125.md): `func_150B2EB4` has a181-word/frame192
