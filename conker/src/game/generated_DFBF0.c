@@ -217,6 +217,89 @@ s32 func_150B378C(u8 *arg0) {
     return 1;
 }
 
-s32 func_150B37C8() {
-    return 0;
+#include "structs.h"
+typedef struct { f32 x,y,z; u8 opaque0C[8]; } Position150B37C8;
+typedef struct {
+    s32 flags; s16 duration; u8 kind,opaque07;
+    s32 field08,field0C;
+    u8 field10,field11,field12,field13,field14,field15,opaque16[2];
+    u32 resource; u8 opaque1C[12];
+} Descriptor150B37C8;
+typedef struct { s16 entries[3]; } Choices150B37C8;
+typedef struct {
+    vertex position; s16 duration,field0E; s32 active;
+    u8 opaque14,count,opaque16[6];
+} Request150B37C8;
+typedef struct {
+    f32 field00; vertex velocity; f32 field10;
+    u8 opaque14[4],field18,kind,alpha,field1B,opaque1C[4];
+} Payload150B37C8;
+typedef struct {
+    s32 field00,field04,field08,field0C,field10,field14,field18;
+    u8 field1C,field1D,opaque1E[2];
+} Render150B37C8;
+extern Choices150B37C8 D_80088700;
+s32 func_150ADA20(void);
+struct210 *func_1513C73C(s32,u8,u8,s32,f32,f32,f32,f32,f32,u8,u8,s32,u8,s32);
+void *func_15147DA0(void *,void *,s32,s32,s32,s32,s32,s32,s32,s32,s32,void *,s32,u8,s32);
+
+/* Submit the actor's captured position effect and its live secondary payload. */
+s32 func_150B37C8(u8 *actor,f32 previousX,f32 previousY,f32 previousZ,
+    f32 height,void *parameter) {
+    u8 *record=*(u8 **)(actor+0x98);
+    Position150B37C8 *positions=*(Position150B37C8 **)(actor+0x94);
+    Descriptor150B37C8 descriptor;
+    f32 range;
+    Choices150B37C8 choices=D_80088700;
+    Request150B37C8 request;
+    Payload150B37C8 payload;
+    Render150B37C8 render;
+    s32 byteDraw,parity;
+    record[0x20]=4;
+    range=func_150ADA68()*50.0f+50.0f;
+    descriptor.kind=choices.entries[(u32)func_150ADA20()%3U];
+    descriptor.field08=0;
+    descriptor.field0C=0;
+    descriptor.flags=17;
+    descriptor.duration=150;
+    descriptor.field10=record[0x1B];
+    descriptor.field11=record[0x1A];
+    descriptor.field12=0;
+    descriptor.field13=0;
+    descriptor.field14=0;
+    descriptor.field15=255;
+    descriptor.resource=0x30002;
+    /* Capture one byte draw, then combine the following two low bits. */
+    byteDraw=func_150ADA20();
+    parity=func_150ADA20();
+    parity=(func_150ADA20()&1)+(parity&1);
+    func_1513C73C((s32)&descriptor,1,0,(s32)parameter,positions[*(s8 *)(actor+0x2D)].x,height,positions[*(s8 *)(actor+0x2D)].z,range,range,
+        byteDraw&255,parity,0,actor[0x0C],actor[1]);
+    render.field00=0;
+    render.field04=1;
+    render.field08=0x160600;
+    render.field0C=3;
+    render.field10=16;
+    render.field14=128;
+    render.field18=32;
+    render.field1C=0;
+    render.field1D=9;
+    request.active=1;
+    request.field0E=1;
+    payload.field18=8;
+    payload.kind=record[0x19];
+    payload.alpha=record[0x1A];
+    payload.field1B=record[0x1B];
+    request.position.x=positions[*(s8 *)(actor+0x2D)].x;
+    request.position.y=height;
+    request.position.z=positions[*(s8 *)(actor+0x2D)].z;
+    request.count=actor[0x25];
+    request.duration=60;
+    payload.field00=*(f32 *)(record+0)*0.75f;
+    payload.field10=*(f32 *)(record+0x10);
+    payload.velocity.x=*(f32 *)(record+4);
+    payload.velocity.y=func_150ADA68()*15.0f+15.0f;
+    payload.velocity.z=*(f32 *)(record+0x0C);
+    func_15147DA0(&request,&payload,0,1,7,0,0,0,0,0,0,&render,0,actor[0x0C],actor[1]);
+    return 1;
 }

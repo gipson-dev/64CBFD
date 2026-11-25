@@ -1,5 +1,13 @@
 # Documentation
 
+## Dual actor emitter matched - 2026-11-25
+
+[Note2697](WORKING_NOTES/2697-game-dual-actor-emitter-match-20261125.md): `func_150B37C8` matches184body/186slot words,
+frame248;99 direct words and85 checked guards include one private4-byte spill
+and independent scheduling. All production/guest/native/caller/helper gates
+pass. Total **4,676 / 5,528 (84.59%)**, Game **4,003 / 4,855 (82.45%)**,
+zero drift; **23 more to85%**. Helpers earn zero new credit.
+
 ## Tuned extended emitter matched - 2026-11-25
 
 [Note2696](WORKING_NOTES/2696-game-tuned-extended-emitter-match-20261125.md): `func_150B3188` matches329words/frame248
