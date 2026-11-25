@@ -1,5 +1,13 @@
 # Working Notes
 
+## Natural direction vector effect matched - 2026-11-24
+
+[Note2693](WORKING_NOTES/2693-game-natural-direction-vector-effect-byte-match-20261124.md): `func_150BD954` emits all122 body words
+directly from C, frame176, zero guards. Both padders, strict image, actual Make,
+SDK32, four registry parents and original constructor/copy execution pass;
+all eight neighbors stay fixed. Total **4,672 / 5,528 (84.52%)**, Game
+**3,999 / 4,855 (82.37%)**, zero drift; **27 more to85%**. Helper credit remains zero.
+
 ## Random pitch radial color emission matched - 2026-11-24
 
 [Note 2692](WORKING_NOTES/2692-game-random-pitch-radial-color-emission-byte-match-20261124.md): `func_150B2570` matches115 body words,
