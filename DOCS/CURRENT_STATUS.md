@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Radial angle effect matched - 2026-11-24
+
+[Note2694](WORKING_NOTES/2694-game-radial-angle-effect-invariant-normalization-match-20261124.md): `func_150C16C0` has a174-word/frame296
+guarded match, with98 direct words and76 checked normalization rows.
+Scoped symbolic traces, original callers/helpers, SDK32, both padders,
+actual Make and the strict whole image pass. Total **4,673 / 5,528 (84.53%)**,
+Game **4,000 / 4,855 (82.39%)**, zero drift; **26 more to85%**.
+Caller/helper credit remains zero.
+
 ## Natural direction vector effect matched - 2026-11-24
 
 [Note2693](WORKING_NOTES/2693-game-natural-direction-vector-effect-byte-match-20261124.md): `func_150BD954` emits all122 body words
