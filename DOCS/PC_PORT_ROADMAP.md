@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Timed phase callback match - 2026-11-25
+
+[Note2704](WORKING_NOTES/2704-game-timed-phase-update-match-20261125.md): `func_15108658` matches105words/frame40,
+with59direct words and46checked compiler guards. Ordered arithmetic and
+FP observer state are qualified; raw comparison/fault-order limits are explicit.
+Total **4,683 / 5,528 (84.71%)**, Game **4,010 / 4,855 (82.60%)**,
+zero drift; **16 more to85%**. Parent/provider matching credit stays zero.
+
 ## Local vector transform match - 2026-11-25
 
 [Note2703](WORKING_NOTES/2703-game-local-vector-transform-match-20261125.md): `func_15117DA4` matches102words/frame48,
