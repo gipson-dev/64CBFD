@@ -1,5 +1,13 @@
 # Working Notes
 
+## Signed height interpolation callback match - 2026-11-25
+
+[Note2702](WORKING_NOTES/2702-game-signed-height-interpolation-match-20261125.md): `func_151155C0` matches103words/frame0,
+with27direct words and76checked allocation/copy/scheduling guards. Total
+**4,681 / 5,528 (84.68%)**, Game **4,008 / 4,855 (82.55%)**, zero drift;
+**18 more to85%**. Complete original caller and bounded integer proof pass;
+the caller remains unmatched and earns no additional credit.
+
 ## Owner-position effect preset match - 2026-11-25
 
 [Note2701](WORKING_NOTES/2701-game-owner-position-preset-match-20261125.md): `func_150F802C` matches100words/frame200

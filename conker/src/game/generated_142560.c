@@ -107,8 +107,95 @@ s32 func_15115368() {
     return 0;
 }
 
-s32 func_151155C0() {
-    return 0;
+typedef struct HeightState151155C0 HeightState151155C0;
+struct HeightState151155C0 {
+    u8 retained00[0x12];
+    s16 height;
+    u8 retained14[0x24];
+    s32 (*update)(HeightState151155C0 *);
+    s32 packed;
+    u8 retained40[0x0F];
+    u8 flags;
+    u8 retained50[0x0C];
+    s16 delta;
+    u8 retained5E[0x10];
+    u8 disabled, updateFlags;
+    u8 retained70[0x0C];
+    s32 origin;
+    s32 hold;
+    u8 retained84[0x1C];
+};
+/* Interpolate signed height between the saved origin and packed target, with end holds. */
+s32 func_151155C0(HeightState151155C0 *record) {
+    s32 origin;
+    s32 candidate = (record->packed >> 16) & 255;
+    s32 holdLength = ((record->packed >> 24) & 255) + 1;
+    s32 target = (s16)record->packed;
+    s32 startForward = 0;
+    s32 inside = 0;
+    s32 current = record->height;
+    s32 previous = current;
+    s32 step;
+    s32 hold;
+
+    if ((record->flags & 4) == 4) {
+        startForward = 1;
+    }
+    origin = record->origin;
+    if (origin == 0) {
+        record->origin = current;
+        origin = current;
+    }
+    step = (s32)((u32)target - (u32)origin) / candidate;
+    hold = record->hold;
+    if (hold == 0) {
+        candidate = (s32)((u32)current - (u32)step);
+        if (origin == current) {
+            if (startForward) {
+                record->hold = hold = holdLength;
+            }
+        } else {
+            candidate = (s16)candidate;
+            if (origin < target) {
+                if (origin < candidate) {
+                    inside = 1;
+                }
+            } else if (candidate < origin) {
+                inside = 1;
+            }
+            if (inside) {
+                record->height = candidate;
+                hold = *(volatile s32 *)&record->hold;
+            } else {
+                record->height = origin;
+                record->hold = hold = -holdLength;
+            }
+        }
+    }
+    if (hold > 0) {
+        candidate = (s16)((u32)record->height + (u32)step);
+        if (record->origin < target) {
+            if (candidate < target) {
+                inside = 1;
+            }
+        } else if (target < candidate) {
+            inside = 1;
+        }
+        hold--;
+        if (inside) {
+            record->height = candidate;
+            record->hold = holdLength;
+            hold = holdLength;
+        } else {
+            record->height = target;
+            record->hold = hold;
+        }
+    }
+    if (hold < 0) {
+        record->hold = hold + 1;
+    }
+    record->delta = (u32)record->height - (u32)previous;
+    return candidate;
 }
 
 s32 func_1511575C() {
