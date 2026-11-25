@@ -1,5 +1,14 @@
 # Working Notes
 
+## Composite preset builder matched - 2026-11-25
+
+[Note2698](WORKING_NOTES/2698-game-composite-preset-builder-match-20261125.md): `func_150B5A3C` matches127words/frame144,
+with76 direct words and51 checked allocation/scheduling guards. The actual
+caller now has explicit12-byte array/vector storage with unchanged code.
+Full packet/frame, native/caller/helper and production image gates pass.
+Total **4,677 / 5,528 (84.61%)**, Game **4,004 / 4,855 (82.47%)**, zero
+drift; **22 more to85%**. Helpers receive no new matching credit.
+
 ## Dual actor emitter matched - 2026-11-25
 
 [Note2697](WORKING_NOTES/2697-game-dual-actor-emitter-match-20261125.md): `func_150B37C8` matches184body/186slot words,

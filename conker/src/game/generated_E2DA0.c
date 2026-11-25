@@ -20,36 +20,163 @@ u8 *func_150B58F0(u8 *arg0, s32 arg1) {
     return arg0 + 4;
 }
 
+typedef struct {
+    f32 x, y, z;
+} CompositeEffectPosition;
+/* Array helpers and the aggregate descriptor share the same three floats. */
+typedef union {
+    CompositeEffectPosition vector;
+    f32 array[3];
+} CompositePositionStorage150B5A3C;
+
 extern f32 D_8009FC98, D_8009FC9C;
 f32 func_150ADA68(void);
-s32 func_150B5A3C();
+void func_150B5A3C(CompositePositionStorage150B5A3C *,u8,s32);
 void func_150B60E0(u8 *actor, f32 *output);
 /* Expire a stale attachment or submit the two independently sampled effects. */
 void func_150B5950(u8 *record) {
     f32 sample;
-    f32 position[3];
+    CompositePositionStorage150B5A3C position;
     u8 *actor = *(u8 **)(record + 0x28);
     if (*(s32 *)actor == 0 || record[0x2C] != actor[0x3B]) {
         *(s16 *)(record + 0xE) = -1;
     } else if (*(s32 *)(actor + 0x1D4) != 0) {
         sample = func_150ADA68();
         if (sample < D_8009FC98) {
-            position[0] = *(f32 *)(actor + 0x14);
-            position[1] = *(f32 *)(actor + 0x18);
-            position[2] = *(f32 *)(actor + 0x1C);
-            func_150B5A3C(position, record[0xC], record[1]);
+            position.array[0] = *(f32 *)(actor + 0x14);
+            position.array[1] = *(f32 *)(actor + 0x18);
+            position.array[2] = *(f32 *)(actor + 0x1C);
+            func_150B5A3C(&position, record[0xC], record[1]);
         }
         sample = func_150ADA68();
         if (sample < D_8009FC9C) {
-            func_150B60E0(actor, position);
-            func_150B5A3C(position, record[0xC], record[1]);
+            func_150B60E0(actor, position.array);
+            func_150B5A3C(&position, record[0xC], record[1]);
         }
     }
 }
 
-s32 func_150B5A3C() {
-    return 0;
+
+
+typedef struct {
+    s32 baseCount;
+    s32 countRange;
+    CompositeEffectPosition position;
+    f32 field14Base;
+    f32 field18Range;
+    f32 field1CBase;
+    f32 field20Range;
+    f32 radiusBase;
+    f32 radiusRange;
+    s16 firstBase;
+    s16 firstRange;
+    s16 secondBase;
+    s16 secondRange;
+    s32 headerByteBase;
+    s32 headerByteRange;
+    s16 headerShortBase;
+    s16 headerShortRange;
+    u16 field40;
+    u8 fixed42;
+    u8 fixed43;
+    u8 fixed44;
+    u8 byteBase45;
+    u8 byteBase46;
+    u8 byteBase47;
+    u8 byteBase48;
+    u8 byteRange49;
+    u8 byteRange4A;
+    u8 byteRange4B;
+    u8 byteRange4C;
+    u8 byteBase4D;
+    u8 byteBase4E;
+    u8 byteBase4F;
+    u8 byteBase50;
+    u8 byteRange51;
+    u8 byteRange52;
+    u8 byteRange53;
+    u8 byteRange54;
+    u8 byteBase55;
+    u8 byteRange56;
+    u8 fixed57;
+    u8 fixed58;
+    u8 padding59[3];
+    s32 field5C;
+    s32 field60;
+    s16 field64;
+    s16 field66;
+    s16 field68;
+    u8 field6A;
+    u8 padding6B;
+    f32 field6C;
+    s8 field70;
+    s8 field71;
+    u8 privateTail72[2];
+} CompositeEffectInput;
+extern f32 D_8009FCA0,D_8009FCA4,D_8009FCA8;
+void func_15152B38(CompositeEffectInput *,u8,s32);
+s32 func_150B5E34();
+void func_150B6000(f32 *,u8,s32);
+/* Submit the fixed composite burst, then both companion effects. */
+void func_150B5A3C(CompositePositionStorage150B5A3C *position,u8 mode,s32 extra) {
+    CompositeEffectInput packet;
+    packet.baseCount=5;
+    packet.countRange=5;
+    packet.position=position->vector;
+    packet.field14Base=20.0f;
+    packet.secondBase=-31;
+    packet.headerByteRange=2;
+    packet.secondRange=80;
+    packet.headerByteBase=3;
+    packet.headerShortBase=20;
+    packet.headerShortRange=30;
+    packet.field40=1;
+    packet.fixed42=4;
+    packet.fixed43=2;
+    packet.byteBase46=255;
+    packet.byteBase47=255;
+    packet.firstRange=255;
+    packet.fixed44=3;
+    packet.byteBase45=255;
+    packet.byteBase48=255;
+    packet.byteBase4D=255;
+    packet.byteBase4E=255;
+    packet.byteBase4F=255;
+    packet.byteBase50=255;
+    packet.byteBase55=255;
+    packet.firstBase=0;
+    packet.byteRange49=0;
+    packet.byteRange4A=0;
+    packet.byteRange4B=0;
+    packet.byteRange4C=0;
+    packet.byteRange51=0;
+    packet.byteRange52=0;
+    packet.byteRange53=0;
+    packet.byteRange54=0;
+    packet.byteRange56=0;
+    packet.fixed57=3;
+    packet.fixed58=36;
+    packet.field5C=0x200005;
+    packet.field60=0x60600;
+    packet.field64=8;
+    packet.field66=31;
+    packet.field68=1;
+    packet.field6A=0;
+    packet.field70=-1;
+    packet.field71=0;
+    ((s8 *)packet.privateTail72)[0]=-1;
+    ((s8 *)packet.privateTail72)[1]=-1;
+    packet.field18Range=D_8009FCA0;
+    packet.field1CBase=D_8009FCA4;
+    packet.field20Range=D_8009FCA8;
+    packet.radiusBase=39.0f;
+    packet.radiusRange=35.0f;
+    packet.field6C=1.0f;
+    func_15152B38(&packet,mode,extra);
+    func_150B5E34(position->array,mode,extra);
+    func_150B6000(position->array,mode,extra);
 }
+
 
 s32 func_150B5C38() {
     return 0;
