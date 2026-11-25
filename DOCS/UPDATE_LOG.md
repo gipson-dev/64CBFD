@@ -1,5 +1,13 @@
 # Update Log
 
+## Local vector transform match - 2026-11-25
+
+[Note2703](WORKING_NOTES/2703-game-local-vector-transform-match-20261125.md): `func_15117DA4` matches102words/frame48,
+with87direct words and15checked tail-FPR/scheduling guards; FP operand order
+is preserved. Total **4,682 / 5,528 (84.70%)**, Game **4,009 / 4,855 (82.57%)**,
+zero drift; **17 more to85%**. Caller checks cover three bounded windows;
+the parent and providers earn no additional matching credit.
+
 ## Signed height interpolation callback match - 2026-11-25
 
 [Note2702](WORKING_NOTES/2702-game-signed-height-interpolation-match-20261125.md): `func_151155C0` matches103words/frame0,

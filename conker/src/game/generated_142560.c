@@ -525,9 +525,54 @@ s32 func_151179BC() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_142560/func_15117D3C.s")
 
-s32 func_15117DA4() {
-    return 0;
+typedef struct {
+    f32 angleX, angleY;
+    u8 retained08[8];
+    s16 position[3];
+    u8 retained16[0x3E];
+    u16 type;
+    u8 retained56[2];
+} TransformState15117DA4;
+extern f32 D_800A2FF4, D_800A2FF8, D_800A2FFC;
+void func_1511F31C(u8 *object);
+/* Rotate the local vector around two actor angles and add its position. */
+void func_15117DA4(TransformState15117DA4 *record, f32 x, f32 y, f32 z, f32 out[3]) {
+    f32 angle;
+    f32 sine;
+    f32 cosine;
+    f32 oldZ;
+    f32 oldX;
+    f32 translationZ;
+
+    if (record->type == 0x8006 && D_800BE9F0 == 0x35) {
+        record = (TransformState15117DA4 *)func_151149AC(0xFD);
+        func_1511F31C((u8 *)record);
+        x = 0.0f;
+        y = D_800A2FF4;
+        z = 0.0f;
+    }
+    angle = record->angleX * D_800A2FF8;
+    sine = sinf(angle);
+    cosine = cosf(angle);
+    out[0] = x;
+    out[1] = y * cosine - z * sine;
+    out[2] = y * sine + z * cosine;
+
+    angle = record->angleY * D_800A2FFC;
+    sine = sinf(angle);
+    cosine = cosf(angle);
+    oldX = out[0];
+    oldZ = out[2];
+    out[0] = oldZ * sine + oldX * cosine;
+    out[2] = oldZ * cosine + (-oldX) * sine;
+    oldX = (f32)record->position[0] + ((volatile f32 *)out)[0];
+    oldZ = ((volatile f32 *)out)[2];
+    out[0] = oldX;
+    out[1] += (f32)record->position[1];
+    translationZ = (f32)record->position[2];
+    out[2] = oldZ + translationZ;
 }
+
 
 s32 func_15117F3C() {
     return 0;
