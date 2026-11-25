@@ -35,7 +35,7 @@ and cross-project boundaries are maintained separately in the
 
 ## Status
 
-Snapshot verified on 2026-11-24. "Converted" means a function has C source;
+Snapshot verified on 2026-11-25. "Converted" means a function has C source;
 "byte-exact" means its linked instructions match the retail game. See
 [Current Decomp Status](DOCS/CURRENT_STATUS.md) for the detailed handoff.
 
@@ -48,9 +48,9 @@ Snapshot verified on 2026-11-24. "Converted" means a function has C source;
 
 | Section | Byte-exact | Address drift | Still different |
 | --- | ---: | ---: | ---: |
-| Total | `[####################----]` 4,673 / 5,528 (84.53%) | 0 | 855 |
+| Total | `[####################----]` 4,674 / 5,528 (84.55%) | 0 | 854 |
 | Init | `[########################]` 492 / 492 (100.00%) | 0 | 0 |
-| Game | `[###################-----]` 4,000 / 4,855 (82.39%) | 0 | 855 |
+| Game | `[###################-----]` 4,001 / 4,855 (82.41%) | 0 | 854 |
 | Debugger | `[########################]` 181 / 181 (100.00%) | 0 | 0 |
 
 Function-by-function recovery updates and their supporting working-note links

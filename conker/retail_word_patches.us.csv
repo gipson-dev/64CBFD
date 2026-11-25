@@ -43377,3 +43377,32 @@ generated_EEB10,func_150C16C0,0x1C8,0xC7D20000,0xC4320000,-,R_MIPS_LO16:D_800A01
 generated_EEB10,func_150C16C0,0x208,0x27A40108,0x02E02025,-,-,Normalize closed radial effect invariant promotion and heading register allocation,,,false
 generated_EEB10,func_150C16C0,0x210,0x27A500E8,0x03C02825,-,-,Normalize closed radial effect invariant promotion and heading register allocation,,,false
 generated_EEB10,func_150C16C0,0x264,0x1620FFAB,0x1620FFA9,-,-,Normalize closed radial effect invariant promotion and heading register allocation,,,false
+generated_DFBF0,func_150B2EB4,0xB0,0x8FA800E4,0x8FAA00E4,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xD8,0x44195000,0x44095000,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xE0,0x01191021,0x01491021,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xE8,0x00024C00,0x00025C00,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xEC,0x00091403,0x000B1403,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xF4,0x308B00FF,0x308D00FF,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0xF8,0x01602025,0x01A02025,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x12C,0x44023000,0x44183000,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x134,0x2442FFEC,0x2702FFEC,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x138,0x00026C00,0x0002CC00,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x13C,0x000D1403,0x00191403,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x144,0x308F00FF,0x308A00FF,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x148,0x01E02025,0x01402025,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x1E0,0x24180064,0x24090064,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x1E4,0xA7B80078,0xA7A90078,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x238,0x93AD00FB,0x93B900FB,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x23C,0x2408001C,0x240B001C,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x240,0x241900FF,0x240C00FF,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x244,0x24090001,0x240D0001,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x248,0x240A0002,0x240E0002,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x24C,0x240B0001,0x240F0001,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x254,0x240C00FF,0x241800FF,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x258,0xA7A8007A,0xA7AB007A,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x268,0xA3B90084,0xA3AC0084,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x26C,0xA3A90085,0xA3AD0085,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x28C,0xA3AA008E,0xA3AE008E,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x298,0xA7AB0096,0xA7AF0096,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x29C,0xA7AC0098,0xA7B80098,-,-,Normalize proved extended emitter GPR allocation cycles,,,false
+generated_DFBF0,func_150B2EB4,0x2BC,0xAFAD0010,0xAFB90010,-,-,Normalize proved extended emitter GPR allocation cycles,,,false

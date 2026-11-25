@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Angular extended emitter matched - 2026-11-25
+
+[Note2695](WORKING_NOTES/2695-game-angular-extended-emitter-match-20261125.md): `func_150B2EB4` has a181-word/frame192
+match with152 direct words and29 proved GPR normalization rows. Both padders,
+actual Make, strict image, guest/native, original callers and factory wrapper
+checks pass. Total **4,674 / 5,528 (84.55%)**, Game **4,001 / 4,855 (82.41%)**,
+zero drift; **25 more to85%**. Backend/helper credit remains zero.
+
 ## Radial angle effect matched - 2026-11-24
 
 [Note2694](WORKING_NOTES/2694-game-radial-angle-effect-invariant-normalization-match-20261124.md): `func_150C16C0` has a174-word/frame296
