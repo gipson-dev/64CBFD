@@ -43269,3 +43269,35 @@ generated_FB060,func_150CDF10,0x1FC,0xA3A0009C,0xA3A00098,-,-,Normalize fourth r
 generated_FB060,func_150CDF10,0x200,0xA7AF009E,0xA7AF009A,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
 generated_FB060,func_150CDF10,0x204,0xA7B800A0,0xA7B8009C,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
 generated_FB060,func_150CDF10,0x208,0x27A4002C,0x27A40028,-,-,Normalize fourth radial sprite private descriptor stack layout,,,false
+generated_DF930,func_150B2570,0x2C,0xE7A00034,0xE7A00030,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x3C,0xE7A00030,0xE7A0002C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x58,0xA7AF003A,0xA7AF0036,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x64,0xE7A0002C,0xE7A00028,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x6C,0x93A4003B,0x93A40037,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x84,0xC7B00034,0xC7B00030,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x90,0xE7A4003C,0xE7A40038,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x94,0xE7A60040,0xE7A6003C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x98,0xC7A6002C,0xC7A60028,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xA4,0xE7A80044,0xE7A80040,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xA8,0xC7AA0030,0xC7AA002C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xB8,0xE7B20048,0xE7B20044,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xBC,0xE7A8004C,0xE7A80048,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xC4,0xE7B00050,0xE7B0004C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0xE4,0xE7A80054,0xE7A80050,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x100,0x27A5005C,0x27A50058,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x104,0x27A6005D,0x27A60059,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x108,0x27A7005E,0x27A7005A,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x114,0xE7A40058,0xE7A40054,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x11C,0x27A50060,0x27A5005C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x120,0x27A60061,0x27A6005D,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x128,0x27A70062,0x27A7005E,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x138,0xA3B9005F,0xA3B9005B,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x13C,0xA3A80063,0xA3A8005F,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x144,0xA3A90064,0xA3A90060,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x15C,0xA7AB0066,0xA7AB0062,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x188,0xA7AC0068,0xA7AC0064,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x190,0xA3AD0070,0xA3AD006C,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x194,0xA7AE0072,0xA7AE006E,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x198,0xA7AF0074,0xA7AF0070,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x19C,0xE7B0006C,0xE7B00068,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false
+generated_DF930,func_150B2570,0x1A4,0x27A4003C,0x27A40038,-,-,Normalize radial random pitch emitter private float pitch and packet stack layout,,,false

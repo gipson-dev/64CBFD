@@ -1,5 +1,13 @@
 # Update Log
 
+## Random pitch radial color emission matched - 2026-11-24
+
+[Note 2692](WORKING_NOTES/2692-game-random-pitch-radial-color-emission-byte-match-20261124.md): `func_150B2570` matches115 body words,
+frame120, with32 guards for a closed private stack displacement map. Both
+padders, strict image, actual Make, SDK32 and four registry callers pass;
+both neighbors and padding stay fixed. Total **4,671 / 5,528 (84.50%)**, Game
+**3,998 / 4,855 (82.35%)**, zero drift; **28 more to85%**. Helpers stay uncredited.
+
 ## Natural radial color emission matched - 2026-11-24
 
 [Note 2691](WORKING_NOTES/2691-game-natural-radial-color-emission-byte-match-20261124.md): `func_150B3C0C` emits all 112 body words
