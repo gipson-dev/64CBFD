@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Owner-linked effect factory match - 2026-11-25
+
+[Note2706](WORKING_NOTES/2706-game-owner-linked-effect-factory-match-20261125.md): `func_151C6EA0` matches all102words/frame176
+directly from semantic C, with zero guards. The owner, descriptor/payload,
+void caller ABI and complete image are qualified. Total **4,685 / 5,528
+(84.75%)**, Game **4,012 / 4,855 (82.64%)**, zero drift; **14 more to85%**.
+Parent/provider matching credit stays zero.
+
 ## Resource record query match - 2026-11-25
 
 [Note2705](WORKING_NOTES/2705-game-resource-record-query-match-20261125.md): `func_150EB484` matches100words,
