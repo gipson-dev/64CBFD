@@ -1,5 +1,12 @@
 # Documentation
 
+## Owner-position effect preset match - 2026-11-25
+
+[Note2701](WORKING_NOTES/2701-game-owner-position-preset-match-20261125.md): `func_150F802C` matches100words/frame200
+with51direct words and49checked scheduling guards. Total **4,680 / 5,528
+(84.66%)**,Game **4,007 / 4,855 (82.53%)**,zero drift;**19more to85%**.
+Caller/helper evidence is bounded and earns no additional matching credit.
+
 ## Sibling composite preset and caller storage - 2026-11-25
 
 [Note 2700](WORKING_NOTES/2700-game-sibling-composite-preset-and-caller-storage-20261125.md): `func_150B5C38` matches all 127 words

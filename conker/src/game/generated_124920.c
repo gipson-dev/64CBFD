@@ -65,8 +65,96 @@ void func_150F7F8C(struct17 *point, u8 selector, s32 parameter) {
     func_151D3F14(point, selector, parameter);
 }
 
-s32 func_150F802C() {
-    return 0;
+#include "libc/string.h"
+typedef struct { f32 x, y, z; } OwnerEffectVector150F802C;
+typedef struct {
+    f32 position[3];
+    f32 direction[3];
+    u8 retained18[0x2C];
+} OwnerEffectRecord150F802C;
+typedef struct {
+    OwnerEffectRecord150F802C *owner;
+    f32 position[3];
+    f32 zero10;
+} OwnerEffectTail150F802C;
+typedef struct {
+    f32 scale[2];
+    f32 extent[2];
+    f32 direction[3];
+    f32 unitScale[3];
+    f32 position[3];
+    f32 zeroVelocity[3];
+    OwnerEffectVector150F802C reference;
+    f32 zero4C;
+    u32 flags;
+    s16 parameter;
+    u16 resourceId;
+    u8 zero58, padding59[3];
+    u32 zero5C;
+    u8 value60, value61, zero62, zero63, zero64, zero65, zero66, zero67, zero68;
+    u8 padding69, zero6A, padding6B;
+    u32 zero6C;
+    u8 zero70, padding71;
+    u16 value72, value74;
+    u8 padding76[2];
+    u32 zero78;
+} OwnerEffectDescriptor150F802C;
+typedef struct ExtendedState15F680 ExtendedState15F680;
+extern f32 D_800A1BDC;
+extern OwnerEffectVector150F802C D_800A5480;
+void *func_1513264C(u8 *,s32,s32,ExtendedState15F680 *,s32,u8,s32);
+/* Capture a source record, submit its descriptor, then retain its owner/position. */
+void func_150F802C(OwnerEffectRecord150F802C *source,s16 parameter,u8 slot,s32 context) {
+    OwnerEffectTail150F802C tail;
+    OwnerEffectDescriptor150F802C descriptor;
+    void *result;
+    descriptor.extent[0]=D_800A1BDC;
+    descriptor.extent[1]=D_800A1BDC;
+    tail.owner=source;
+    tail.position[0]=source->position[0];
+    tail.position[1]=source->position[1];
+    tail.position[2]=source->position[2];
+    tail.zero10=0.0f;
+    descriptor.scale[0]=1.0f;
+    descriptor.scale[1]=1.0f;
+    descriptor.direction[0]=source->direction[0];
+    descriptor.direction[1]=source->direction[1];
+    descriptor.direction[2]=source->direction[2];
+    descriptor.unitScale[0]=1.0f;
+    descriptor.unitScale[1]=1.0f;
+    descriptor.unitScale[2]=1.0f;
+    descriptor.position[0]=source->position[0];
+    descriptor.position[1]=source->position[1];
+    descriptor.position[2]=source->position[2];
+    descriptor.zeroVelocity[0]=0.0f;
+    descriptor.zeroVelocity[1]=0.0f;
+    descriptor.zeroVelocity[2]=0.0f;
+    descriptor.reference=D_800A5480;
+    descriptor.zero4C=0.0f;
+    descriptor.flags=0x980;
+    descriptor.parameter=parameter;
+    descriptor.resourceId=47;
+    descriptor.zero58=0;
+    descriptor.zero5C=0;
+    descriptor.value60=255;
+    descriptor.value61=20;
+    descriptor.zero62=0;
+    descriptor.zero63=0;
+    descriptor.zero64=0;
+    descriptor.zero65=0;
+    descriptor.zero66=0;
+    descriptor.zero67=0;
+    descriptor.zero68=0;
+    descriptor.zero6A=0;
+    descriptor.zero6C=0;
+    descriptor.zero70=0;
+    descriptor.value72=1;
+    descriptor.value74=255;
+    descriptor.zero78=0;
+    result=func_1513264C((u8 *)&descriptor,3,255,0,180,slot,context);
+    if (result != 0) {
+        memcpy((u8 *)result+0x170,&tail,20);
+    }
 }
 
 s32 func_150F81BC() {
