@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Buffered matrix updater match - 2026-11-25
+
+[Note2707](WORKING_NOTES/2707-game-buffered-matrix-updater-match-20261125.md): `func_151D6E60` matches104words/frame32
+directly from semantic C, with zero guards. Both indexed caller sites,
+coefficient lifetime and selector reloads are qualified. Total **4,686 / 5,528
+(84.77%)**, Game **4,013 / 4,855 (82.66%)**, zero drift; **13 more to85%**.
+Parent/provider matching credit stays unchanged.
+
 ## Owner-linked effect factory match - 2026-11-25
 
 [Note2706](WORKING_NOTES/2706-game-owner-linked-effect-factory-match-20261125.md): `func_151C6EA0` matches all102words/frame176

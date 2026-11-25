@@ -10,7 +10,7 @@ Gfx *func_15133EEC(Gfx *, u16, u8, s32);
 
 extern s32 D_800BE9F0;
 
-/* Non-matching placeholders for the text-only asm slice asm/203E20.s. */
+/* Recovered callbacks and remaining placeholders from asm/203E20.s. */
 
 void func_151D6970(u8 *arg0, s32 arg1) {
     s32 temp_v0 = D_800BE9F0;
@@ -28,9 +28,43 @@ s32 func_151D6BFC() {
     return 0;
 }
 
-s32 func_151D6E60() {
-    return 0;
+typedef struct {
+    u8 retained00[0x14];
+    f32 x, y, z;
+} BufferedMatrixPosition151D6E60;
+
+/* Only the observed prefix and the two matrix pages are described. */
+typedef struct {
+    u8 retained00[0x4C];
+    BufferedMatrixPosition151D6E60 *position;
+    u8 retained50[0x2C];
+    f32 matrices[2][4][4];
+} BufferedMatrixOwner151D6E60;
+extern u8 D_800BE9C0;
+extern f32 D_800AB278;
+f32 func_15144AA8(s32);
+void func_150A8050(f32 [4][4], f32, f32, f32);
+
+/* Rebuild the selected matrix, copy the source position and scale its basis. */
+s32 func_151D6E60(BufferedMatrixOwner151D6E60 *owner) {
+    f32 scale;
+    func_150A8050(owner->matrices[D_800BE9C0], 0.0f, func_15144AA8(0) + 25.0f, 0.0f);
+    scale = D_800AB278;
+    owner->matrices[D_800BE9C0][3][0] = owner->position->x;
+    owner->matrices[D_800BE9C0][3][1] = owner->position->y + 120.0f;
+    owner->matrices[D_800BE9C0][3][2] = owner->position->z;
+    owner->matrices[D_800BE9C0][0][0] *= scale;
+    owner->matrices[D_800BE9C0][0][1] *= scale;
+    owner->matrices[D_800BE9C0][0][2] *= scale;
+    owner->matrices[D_800BE9C0][1][0] *= scale;
+    owner->matrices[D_800BE9C0][1][1] *= scale;
+    owner->matrices[D_800BE9C0][1][2] *= scale;
+    owner->matrices[D_800BE9C0][2][0] *= scale;
+    owner->matrices[D_800BE9C0][2][1] *= scale;
+    owner->matrices[D_800BE9C0][2][2] *= scale;
+    return 1;
 }
+
 
 /* Draw the live attached cash amount with its signed lifetime fade. */
 s32 func_151D7000(u8 *owner) {
