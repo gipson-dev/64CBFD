@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Natural radial color emission matched - 2026-11-24
+
+[Note 2691](WORKING_NOTES/2691-game-natural-radial-color-emission-byte-match-20261124.md): `func_150B3C0C` emits all 112 body words
+directly from C, frame112, zero guards. Both padders, strict image, actual Make,
+SDK32 and four original registry callers pass; its neighbor and padding stay fixed.
+Total **4,670 / 5,528 (84.48%)**, Game **3,997 / 4,855 (82.33%)**, zero drift;
+**29 more to 85%**. Helpers remain uncredited; the constructor is still unmatched.
+
 ## Fourth radial sprite emission matched - 2026-11-24
 
 [Note 2690](WORKING_NOTES/2690-game-fourth-radial-sprite-emission-byte-match-20261124.md):
