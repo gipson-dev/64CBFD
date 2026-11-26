@@ -59,7 +59,7 @@ f32 func_151423D8(u8);
 typedef struct { u32 words[20]; } Generated1BA1D0Preset;
 extern Generated1BA1D0Preset *D_8008D630[];
 s32 func_1518FDC4();
-void *func_1518F5D0();
+void *func_1518F5D0(struct127 *, const Generated1BA1D0Preset *, s16, s8, s8, s8, u8, s32, u8, s32);
 f32 func_150ADA68();
 s32 func_150ADA20(void);
 void func_151429E0(u8, u8 *, u8 *, u8 *);
@@ -474,9 +474,74 @@ void *func_1518F51C(void *object, u8 variant, s16 mode, s8 first,
                        second, third, value, extraBytes, channel, context);
 }
 
-void *func_1518F5D0() {
-    return NULL;
+typedef struct {
+    f32 progress;
+    Generated1BA1D0Preset preset;
+    struct225 *child;
+    s8 first;
+    s8 second;
+    u8 value;
+    u8 pad5B;
+} OwnerPresetPayload1518F5D0;
+typedef struct {
+    struct127 *actor;
+    u8 identifier;
+    u8 pad5;
+    s16 lifetime;
+    u8 finite;
+    u8 zero9, zeroA, zeroB, zeroC;
+    u8 active;
+    u8 padE[2];
+} OwnerPresetHeader1518F5D0;
+struct224 *func_151D2F00(void *, s32, u8, s32);
+void func_151D2AB0(s32);
+struct225 *func_1519021C(u8 *, struct127 *, u8, s16, u8, s32);
+u16 func_1000FA64(u16, s16, s16, s16, s32, u16, s16, s32, void *, s32, s32, s32);
+
+/* Copy the preset, attach its optional child and submit the owner's position event. */
+void *func_1518F5D0(struct127 *actor, const Generated1BA1D0Preset *preset,
+                   s16 lifetime, s8 first, s8 second, s8 childPreset,
+                   u8 value, s32 extraBytes, u8 channel, s32 context) {
+    OwnerPresetHeader1518F5D0 header;
+    s32 finite;
+    OwnerPresetPayload1518F5D0 packet;
+    OwnerPresetPayload1518F5D0 *attached;
+    struct224 *created;
+
+    packet.progress = 0.0f;
+    packet.preset = *preset;
+    packet.first = first;
+    packet.second = second;
+    packet.value = value;
+    header.actor = actor;
+    header.identifier = actor->unique_id;
+    header.lifetime = lifetime == -1 ? 300 : lifetime;
+    finite = lifetime == -1 ? 0 : 1;
+    header.finite = finite;
+    header.zero9 = 0;
+    header.zeroA = 0;
+    header.zeroB = 0;
+    header.zeroC = 0;
+    header.active = 1;
+    created = func_151D2F00(&header, extraBytes + 0x60, channel, context);
+    if (created != NULL) {
+        attached = (OwnerPresetPayload1518F5D0 *)((u8 *)created + 0x30);
+        memcpy(attached, &packet, 0x5C);
+        if (childPreset != -1) {
+            attached->child = func_1519021C((u8 *)created, actor, (u8)childPreset,
+                                           lifetime, channel, context);
+        } else {
+            attached->child = NULL;
+        }
+        func_151D2AB0((s32)attached->preset.words[17]);
+        func_1000FA64(0x4D, (s16)(s32)actor->x_position,
+                      (s16)(s32)actor->y_position, (s16)(s32)actor->z_position,
+                      15000, 2000, 800, (s32)func_1518E298, created,
+                      (s32)actor, 0, 0);
+    }
+    return created;
 }
+
 
 s32 func_1518F7C4(u8 *arg0) {
     RandomStep1BA1D0 *step;

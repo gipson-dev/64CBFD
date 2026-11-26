@@ -1,5 +1,13 @@
 # Working Notes
 
+## Owner preset parent direct match - 2026-11-26
+
+[Note 2719](WORKING_NOTES/2719-game-owner-preset-parent-match-20261126.md): `func_1518F5D0` emits all 125 words and
+seven bindings directly from C, frame 200, zero guards. Captured presets,
+unwritten bytes, the connected child and complete selector wrapper are qualified.
+All 60 neighbors and protected data stay fixed. Total **4,698 / 5,528 (84.99%)**,
+Game **4,025 / 4,855 (82.90%)**, zero drift; **one more to 85%**.
+
 ## Owner preset record direct match - 2026-11-26
 
 [Note 2718](WORKING_NOTES/2718-game-owner-preset-record-match-20261126.md): `func_1519021C` emits all109words and
