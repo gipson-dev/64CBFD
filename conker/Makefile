@@ -117,7 +117,7 @@ MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
 STANDARD_GENERATED_SLICE_O_FILES := \
-	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES),$(GENERATED_SLICE_O_FILES))
+	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/game/generated_108320.c.o,$(GENERATED_SLICE_O_FILES))
 RETAIL_LAYOUT := retail_layout.$(VERSION).txt
 # These objects either own allocatable non-text sections or do not have a
 # one-to-one function map in progress.csv. Keep their original object layout.
@@ -475,6 +475,18 @@ $(GLOBAL_ASM_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.
 	$(PYTHON) ../tools/pad_generated_object.py $@.compact $(call generated_slice_asm,$*) $@.padded.s --word-patches retail_word_patches.us.csv --filename $(basename $(notdir $<)) $(if $(RETAIL_RODATA_SYMBOL),--rodata-symbol $(RETAIL_RODATA_SYMBOL))
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	rm -f $@.compact $@.padded.s
+
+# This owner's three float literals share one pinned 12-byte retail pool.
+# Verify the compact pool before rebinding it; discard compiler alignment only.
+ifeq ($(VERSION),us)
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_108320.c.o: $(SRC_DIR)/game/generated_108320.c asm/108320.s ../tools/check_bouncing_effect_150db114_pool.py ../tools/experiments/game_bouncing_effect_150db114_manifest.json ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/check_bouncing_effect_150db114_pool.py $@.compact --bind-assembly $@.bound.s
+	$(AS) $(ASFLAGS) -o $@.bound.compact $@.bound.s
+	$(PYTHON) ../tools/pad_generated_object.py $@.bound.compact asm/108320.s $@.s --word-patches retail_word_patches.us.csv --filename generated_108320
+	$(AS) $(ASFLAGS) -o $@ $@.s
+	$(RM) $@.compact $@.s $@.bound.compact $@.bound.s
+endif
 
 $(STANDARD_GENERATED_SLICE_O_FILES): $(BUILD_DIR)/$(SRC_DIR)/game/generated_%.c.o: \
 		$(SRC_DIR)/game/generated_%.c $$(call generated_slice_asm,$$*) ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile

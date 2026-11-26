@@ -1,5 +1,13 @@
 # Working Notes
 
+## Bouncing effect tick match - 2026-11-26
+
+[Note 2713](WORKING_NOTES/2713-game-bouncing-effect-tick-match-20261126.md): `func_150DB114` matches all 113 linked
+words with frame zero and no instruction guards, using checked independent
+literal symbols. Its original status consumer is qualified. Total
+**4,692 / 5,528 (84.88%)**, Game **4,019 / 4,855 (82.78%)**, zero drift;
+**seven more to 85%**. Five neighbors and protected data remain unchanged.
+
 ## Seed sprite tick direct match - 2026-11-25
 
 [Note 2712](WORKING_NOTES/2712-game-seed-sprite-tick-match-20261125.md): `func_151934B4` emits all 106 words
