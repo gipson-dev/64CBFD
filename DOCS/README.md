@@ -1,5 +1,13 @@
 # Documentation
 
+## Particle ring tick match - 2026-11-25
+
+[Note2709](WORKING_NOTES/2709-game-particle-ring-tick-match-20261125.md): `func_150B40E8` matches107 words with no
+frame,106 direct words and one commutative integer-address guard. Ordered
+integration, expiration drains and the original status consumer are qualified.
+Total **4,688 / 5,528 (84.80%)**, Game **4,015 / 4,855 (82.70%)**, zero drift;
+**11 more to85%**. No additional parent/factory/constructor matching credit.
+
 ## Trail record updater match - 2026-11-25
 
 [Note2708](WORKING_NOTES/2708-game-trail-record-updater-match-20261125.md): `func_151B77F4` matches105words/frame72

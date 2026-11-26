@@ -3,7 +3,7 @@ void func_15147D64(void *, u8);
 void func_151494E0(void *, u8);
 
 
-/* Non-matching placeholders for the text-only asm slice asm/E1280.s. */
+/* Recovered particle routines and remaining placeholders from asm/E1280.s. */
 
 void func_1000FC18(u16, s16, s16, s16, u16);
 s32 func_151478F4(s32);
@@ -104,9 +104,81 @@ u8 *func_150B3F5C(f32 *source, ParticlePosition150B3F5C *position, s16 count) {
 }
 
 
-s32 func_150B40E8() {
-    return 0;
+typedef struct {
+    ParticlePosition150B3F5C position;
+    ParticlePosition150B3F5C velocity;
+    f32 extent;
+    u16 opacity;
+    s16 lifetime;
+    u8 retained20[4];
+} ParticleRingRecord150B40E8;
+
+typedef struct {
+    u8 retained00[0xC];
+    f32 verticalAcceleration;
+    u8 retained10[0xC];
+    u8 flags;
+    u8 retained1D[0xB];
+    f32 extentRate;
+} ParticleRingAux150B40E8;
+
+typedef struct {
+    u8 retained00[0x25];
+    u8 capacity;
+    u8 retained26[6];
+    s8 count, tail, head;
+    u8 retained2F[0x25];
+    ParticlePosition150B3F5C referencePosition;
+    u8 retained60[0x34];
+    ParticleRingRecord150B40E8 *records;
+    ParticleRingAux150B40E8 *aux;
+} ParticleRingOwner150B40E8;
+extern s32 D_800BE9E4;
+extern f32 D_800BE9A4;
+
+/* Advance the particle ring, expire old entries, and update its reference point. */
+s32 func_150B40E8(ParticleRingOwner150B40E8 *owner) {
+    ParticleRingAux150B40E8 *aux = owner->aux;
+    ParticleRingRecord150B40E8 *records = owner->records;
+    ParticleRingRecord150B40E8 *record;
+    s32 index;
+    s32 expired;
+
+    if (owner->count < 2 && (aux->flags & 1)) {
+        return 0;
+    }
+    index = owner->head;
+    while (index != owner->tail) {
+        index--;
+        if (index < 0) index = owner->capacity - 1;
+        expired = 0;
+        record = &records[index];
+        record->opacity = 255;
+        record->lifetime -= D_800BE9E4;
+        if (record->lifetime < 0) expired = 1;
+        record->velocity.y += aux->verticalAcceleration * D_800BE9A4;
+        record->position.x += record->velocity.x * D_800BE9A4;
+        record->position.y += record->velocity.y * D_800BE9A4;
+        record->position.z += record->velocity.z * D_800BE9A4;
+        record->extent += aux->extentRate * D_800BE9A4;
+        if (expired && index != owner->tail) {
+            do {
+                owner->tail++;
+                if (owner->tail == owner->capacity) owner->tail = 0;
+                owner->count--;
+            } while (index != owner->tail);
+        }
+    }
+    if (owner->count > 0) {
+        owner->referencePosition = records[owner->tail].position;
+    } else {
+        owner->referencePosition.x = 0.0f;
+        owner->referencePosition.y = 0.0f;
+        owner->referencePosition.z = 0.0f;
+    }
+    return 1;
 }
+
 
 s32 func_150B4294() {
     return 0;
