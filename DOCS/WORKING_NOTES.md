@@ -1,5 +1,14 @@
 # Working Notes
 
+## Optional emitter direct match - 2026-11-26
+
+[Note 2725](WORKING_NOTES/2725-game-optional-emitter-direct-match-20261126.md): `func_150D728C` emits all 98 body words
+directly from C, plus three exact alignment words, frame 264, zero guards.
+Seven bindings, both packet layouts, defined native bytes and selected paths
+through the original event caller are qualified. The neighbor and protected
+data remain fixed. Total **4,704 / 5,528 (85.09%)**, Game
+**4,031 / 4,855 (83.03%)**, zero drift; **272 more accepted matches to 90%**.
+
 ## Display sprite update guarded match - 2026-11-26
 
 [Note 2724](WORKING_NOTES/2724-game-display-sprite-update-match-20261126.md): `func_151797B0` matches all 194 words/frame
