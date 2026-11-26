@@ -124,9 +124,67 @@ void func_15179AB8(void) {
     }
 }
 
-s32 func_15179B14() {
-    return 0;
+typedef struct {
+    Vtx vertices[8];
+    u32 value80;
+    u32 retained84;
+    s16 cleared88;
+    u16 value8A;
+    s16 x, y, z;
+    s16 lifetime, remaining;
+    s16 initialHeight;
+    u16 flags;
+    u16 retained9A;
+    s16 cleared9C, cleared9E;
+    u8 textureIndex, mode;
+    s8 tag;
+    u8 retainedA3;
+    u32 retainedA4;
+} SelectedVertexSprite;
+extern s16 D_800DD438[];
+extern f32 D_800A7208;
+s32 func_150ADA20(void);
+s32 func_1510F8D8(s32, s32, s32, s32);
+void func_1516865C(void *, u8, u8, u8, u8);
+void *func_15168800(void *, u8, s32);
+
+/* Scatter bounded random sprite requests around the captured display origin. */
+void func_15179B14(s32 count) {
+    f32 noGround;
+    s32 x, z, height;
+    s32 i;
+    s32 originX = D_800DD438[0];
+    s32 originZ = D_800DD438[2];
+    SelectedVertexSprite sprite;
+    i = 0;
+    if (count > 0) {
+        noGround = D_800A7208;
+        do {
+            x = func_150ADA20() % 500 + originX;
+            z = func_150ADA20() % 500 + originZ;
+            height = func_1510F8D8(x, 10000, z, 0);
+            if ((f32)height != noGround) {
+                sprite.value80 = 0;
+                sprite.value8A = 128;
+                sprite.x = x;
+                sprite.y = height;
+                sprite.z = z;
+                sprite.remaining = 25;
+                sprite.lifetime = 25;
+                sprite.initialHeight = 0;
+                sprite.tag = 14;
+                sprite.textureIndex = 18;
+                sprite.flags = 0x9804;
+                sprite.mode = 0;
+                func_1516865C(&sprite, 255, 255, 255, 255);
+                func_15168800(&sprite, 255, 0);
+            }
+            i++;
+        } while (i != count);
+    }
 }
+
+
 
 /* Derive the record opacity byte from planar viewer distance. */
 void func_15179CB0(u8 *record) {

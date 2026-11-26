@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Random sprite scatter direct match - 2026-11-26
+
+[Note 2722](WORKING_NOTES/2722-game-random-sprite-scatter-match-20261126.md): `func_15179B14` emits all 103 words and nine
+binding positions directly from C, frame 272, zero guards. Captured origins,
+signed random offsets, finite height conversion and sprite fields are qualified;
+the caller's idle/default paths are bounded checks. All eight neighbors and
+protected data stay fixed. Total **4,701 / 5,528 (85.04%)**, Game
+**4,028 / 4,855 (82.97%)**, zero drift; **275 more accepted matches to 90%**.
+
 ## Actor owner lifecycle direct match - 2026-11-26
 
 [Note 2721](WORKING_NOTES/2721-game-owner-lifecycle-match-20261126.md): `func_151D2F90` emits all 104 words and 13
@@ -22,7 +31,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,700 / 5,528 (85.02%)**, leaving **276**
+verified production checkpoint is **4,701 / 5,528 (85.04%)**, leaving **275**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
