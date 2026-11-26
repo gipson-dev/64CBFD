@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Owner preset record direct match - 2026-11-26
+
+[Note 2718](WORKING_NOTES/2718-game-owner-preset-record-match-20261126.md): `func_1519021C` emits all109words and
+12bindings directly from C, frame144, zero guards. Preset bounds, original
+unwritten bytes and the complete125word caller's consumed return are qualified.
+All60neighbors and protected data stay fixed. Total **4,697 / 5,528 (84.97%)**,
+Game **4,024 / 4,855 (82.88%)**, zero drift; **two more to 85%**.
+
 ## Randomized effect factory direct match - 2026-11-26
 
 [Note 2717](WORKING_NOTES/2717-game-randomized-effect-factory-match-20261126.md): `func_150D278C` emits all 102 words and

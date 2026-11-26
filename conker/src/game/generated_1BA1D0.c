@@ -582,9 +582,54 @@ s32 func_1519003C() {
     return 0;
 }
 
-s32 func_1519021C() {
-    return 0;
+typedef struct {
+    struct127 *owner;
+    u8 identifier;
+} PresetOwnerPair1519021C;
+extern f32 D_800A6760[], D_800A67C0[], D_800A6820[], D_800A8004;
+struct225 *func_151602C0(Header *, Header2 *, s32, s32, s32, s32, u8, u8, s32, u8, s32);
+
+/* Capture the owner's identity and position, then attach the selected preset record. */
+struct225 *func_1519021C(u8 *parentRecord, struct127 *actor, u8 preset,
+                        s16 lifetime, u8 channel, s32 context) {
+    struct225 *created;
+    Header header;
+    PresetOwnerPair1519021C owner;
+    f32 values[8];
+    u8 *parent;
+    Header2 position;
+
+    if (preset >= 24) {
+        return NULL;
+    }
+    parent = parentRecord;
+    values[0] = D_800A67C0[preset];
+    values[1] = D_800A6760[preset];
+    values[2] = D_800A6820[preset];
+    values[3] = 1.0f;
+    values[5] = 5.0f;
+    values[4] = 0.0f;
+    values[7] = 0.0f;
+    values[6] = D_800A8004;
+    header.unk0 = 2 | (lifetime == -1 ? 0 : 1);
+    header.unk1 = 18;
+    header.unk2 = lifetime == -1 ? 300 : lifetime;
+    header.unk4 = 37;
+    owner.owner = actor;
+    owner.identifier = actor->unique_id;
+    position.unk0 = (s32)actor->x_position;
+    position.unk4 = (s32)actor->y_position;
+    position.unk8 = (s32)actor->z_position;
+    created = func_151602C0(&header, &position, 0, 255, 209, 0, 255, 0,
+                           0x30, channel, context);
+    if (created != NULL) {
+        memcpy((u8 *)created + 0x18, &owner, 8);
+        memcpy((u8 *)created + 0x20, values, 0x20);
+        memcpy((u8 *)created + 0x40, &parent, 4);
+    }
+    return created;
 }
+
 
 void func_151903D0(u8 *arg0) {
     func_15163DEC(arg0, arg0 + 0x20);
