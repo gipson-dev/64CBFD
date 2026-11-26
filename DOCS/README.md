@@ -1,5 +1,14 @@
 # Documentation
 
+## Pointer-input quad vertex writer match - 2026-11-26
+
+[Note 2715](WORKING_NOTES/2715-game-pointer-quad-vertices-match-20261126.md): `func_150DB714` recovers live position,
+angle and extent sources; 178 words/frame 88, 158 direct words and 20 checked
+address/scheduling guards. Five neighbors and protected data remain fixed.
+The full original dispatcher is qualified; its production placeholder remains
+open. Total **4,694 / 5,528 (84.91%)**, Game **4,021 / 4,855 (82.82%)**,
+zero drift; **five more to 85%**.
+
 ## Axis quad vertex writer direct match - 2026-11-26
 
 [Note 2714](WORKING_NOTES/2714-game-axis-quad-vertices-match-20261126.md): `func_150DB2D8` emits all 144 words

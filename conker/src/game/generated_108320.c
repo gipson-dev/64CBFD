@@ -187,6 +187,59 @@ s32 func_150DB630(u8 *actor) {
     return 1;
 }
 
-s32 func_150DB714() {
-    return 0;
+typedef struct {
+    f32 *position, *angle, *halfWidth, *halfHeight, *alpha;
+} PointerQuadInputs150DB714;
+typedef struct {
+    u8 retained00[0xC0];
+    Vtx vertexTemplate[4];
+    u8 *buffers[4];
+    PointerQuadInputs150DB714 inputs;
+} PointerQuadOwner150DB714;
+extern f32 D_800A0BF0;
+f32 func_151423D8(u8);
+
+/* Build a quad from live position, angle and extent sources. */
+Vtx *func_150DB714(PointerQuadOwner150DB714 *owner, s16 view) {
+    Vtx *cursor, *first;
+    f32 axisSecond;
+    s32 phase;
+    f32 axisFirst;
+    f32 depth, horizontal;
+    PointerQuadInputs150DB714 *inputs;
+    u8 fresh;
+
+    func_151D5D60(owner->buffers, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(owner->buffers[view], owner->vertexTemplate, 0x40);
+            memcpy(owner->buffers[view] + 0x40, owner->vertexTemplate, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    phase = (s32)(*owner->inputs.angle * D_800A0BF0);
+    axisFirst = func_151423D8((u8)phase);
+    axisSecond = func_151423D8((u8)((u32)phase - 64));
+    inputs = &owner->inputs;
+    horizontal = *inputs->halfWidth * axisFirst;
+    depth = -*inputs->halfWidth * axisSecond;
+    cursor[0].v.ob[0] = (s32)(inputs->position[0] + horizontal);
+    cursor[0].v.ob[1] = (s32)(inputs->position[1] + *inputs->halfHeight);
+    cursor[0].v.ob[2] = (s32)(inputs->position[2] + depth);
+    cursor[0].v.flag = 0;
+    cursor[1].v.ob[0] = (s32)(inputs->position[0] + horizontal);
+    cursor[1].v.ob[1] = (s32)(inputs->position[1] - *inputs->halfHeight);
+    cursor[1].v.ob[2] = (s32)(inputs->position[2] + depth);
+    cursor[1].v.flag = 0;
+    cursor[2].v.ob[0] = (s32)(inputs->position[0] - horizontal);
+    cursor[2].v.ob[1] = (s32)(inputs->position[1] - *inputs->halfHeight);
+    cursor[2].v.ob[2] = (s32)(inputs->position[2] - depth);
+    cursor[2].v.flag = 0;
+    cursor[3].v.ob[0] = (s32)(inputs->position[0] - horizontal);
+    cursor[3].v.ob[1] = (s32)(inputs->position[1] + *inputs->halfHeight);
+    cursor[3].v.ob[2] = (s32)(inputs->position[2] - depth);
+    cursor[3].v.flag = 0;
+    return first;
 }

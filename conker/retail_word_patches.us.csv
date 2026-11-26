@@ -43868,3 +43868,23 @@ generated_1E37D0,func_151B6420,0x114,0x46008481,0x46008081,-,-,Normalize closed 
 generated_1E37D0,func_151B6420,0x118,0x46029102,0x460E1482,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
 generated_1E37D0,func_151B6420,0x11C,0x4600218D,0x4600910D,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
 generated_1E37D0,func_151B6420,0x120,0x44063000,0x44062000,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
+generated_108320,func_150DB714,0x0D4,0x8E0B0118,0x26030110,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0D8,0xC7B00044,0x8C6B0008,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0DC,0x8E0C0110,0xC7B00044,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0E0,0xC5620000,0x8C6C0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0E4,0x8FAF0054,0xC5620000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0E8,0xC5840000,0x8FAF0054,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0EC,0x46101302,0xC5840000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0F0,0x46001487,0x46101302,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x0F4,0x26030110,0x46001487,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x110,0x8E190110,0x8C790000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x114,0x8E18011C,0x8C78000C,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x138,0x8E0B0110,0x8C6B0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x160,0x8E180110,0x8C780000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x180,0x8E0A0110,0x8C6A0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x184,0x8E0B011C,0x8C6B000C,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x1A8,0x8E0F0110,0x8C6F0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x1D0,0x8E0A0110,0x8C6A0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x1F0,0x8E0E0110,0x8C6E0000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x1F4,0x8E0F011C,0x8C6F000C,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
+generated_108320,func_150DB714,0x218,0x8E090110,0x8C690000,-,-,Normalize live-source address promotion and independent address-init schedule,,,false
