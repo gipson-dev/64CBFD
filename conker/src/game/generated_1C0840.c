@@ -1,6 +1,6 @@
 #include <ultra64.h>
 
-/* Non-matching placeholders for the text-only asm slice asm/1C0840.s. */
+/* Recovered sprite construction and lifetime update from asm/1C0840.s. */
 
 typedef struct {
     Vtx vertices[8];
@@ -49,6 +49,46 @@ void func_15193390(u8 *volatile actor) {
     *(s16 *)(actor + 0xE) = ((u32)func_150ADA20() & 127) + 100;
 }
 
-s32 func_151934B4() {
-    return 0;
+typedef struct {
+    u8 retained00[0x94];
+    s16 fallTicks;
+    s16 targetExtent;
+    s16 phase;
+    u8 retained9A[2];
+    s16 x, y, z;
+    s16 horizontalExtent;
+    s16 verticalExtent;
+    s16 floorY;
+    u8 retainedA8[2];
+    s16 growthTicks;
+    u8 retainedAC[7];
+    s8 variant;
+} SeedSpriteRuntime151934B4;
+extern s32 D_800BE9E4;
+void func_151DBCBC(u8, f32, s16, s32, void *, u8, s32);
+
+/* Grow the seed sprite, then accelerate its fall and expire at the floor. */
+void func_151934B4(SeedSpriteRuntime151934B4 *sprite) {
+    s32 growth;
+    f32 position[3];
+    if (sprite->verticalExtent < sprite->targetExtent) {
+        growth = sprite->growthTicks;
+        sprite->verticalExtent = ((growth >> 2) * 24) / 3;
+        sprite->horizontalExtent = ((growth >> 2) * 6) / 3;
+        sprite->growthTicks = (u32)growth + (u32)D_800BE9E4;
+    } else {
+        sprite->fallTicks++;
+        if (sprite->fallTicks > 20) sprite->fallTicks = 20;
+        sprite->y = (u32)(s32)sprite->y - (u32)((s32)((u32)(s32)sprite->fallTicks * (u32)D_800BE9E4) >> 1);
+        if (sprite->y < sprite->floorY) {
+            if (sprite->variant == 1) {
+                position[0] = sprite->x;
+                position[1] = sprite->floorY;
+                position[2] = sprite->z;
+                func_151DBCBC(5, 30.0f, 255, 0, position,
+                    ((u8 *)sprite)[0xC], ((u8 *)sprite)[1]);
+            }
+            sprite->phase = -1;
+        }
+    }
 }

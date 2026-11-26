@@ -1,5 +1,13 @@
 # Working Notes
 
+## Seed sprite tick direct match - 2026-11-25
+
+[Note 2712](WORKING_NOTES/2712-game-seed-sprite-tick-match-20261125.md): `func_151934B4` emits all 106 words
+and five bindings directly from C, with frame 72 and zero guards. Both
+original sprite dispatchers and the effect provider's applicable arm are
+qualified. Total **4,691 / 5,528 (84.86%)**, Game **4,018 / 4,855 (82.76%)**,
+zero drift; **eight more to 85%**. The neighboring constructor is unchanged.
+
 ## Trail fade tick match - 2026-11-25
 
 [Note 2711](WORKING_NOTES/2711-game-trail-fade-tick-match-20261125.md): `func_151B6420` matches all 109 words
