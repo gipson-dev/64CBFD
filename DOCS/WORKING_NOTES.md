@@ -1,5 +1,14 @@
 # Working Notes
 
+## Display sprite slot guarded match - 2026-11-26
+
+[Note 2723](WORKING_NOTES/2723-game-display-sprite-slot-match-20261126.md): `func_15179600` matches all 108 words/frame
+248: 96 direct C words and 12 guards for two closed GPR cycles, all 14 bindings
+unchanged. Camera truncation, signed/unsigned draws, fresh slot reloads and the
+bounded original fill-loop caller are qualified. Eight neighbors/data stay
+fixed. Total **4,702 / 5,528 (85.06%)**, Game **4,029 / 4,855 (82.99%)**, zero
+drift; **274 more accepted matches to the active 90% goal**.
+
 ## Random sprite scatter direct match - 2026-11-26
 
 [Note 2722](WORKING_NOTES/2722-game-random-sprite-scatter-match-20261126.md): `func_15179B14` emits all 103 words and nine

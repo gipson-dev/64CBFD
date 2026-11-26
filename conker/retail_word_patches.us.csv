@@ -43909,3 +43909,15 @@ generated_1BA1D0,func_1518F1A0,0x0C8,0x46120100,0xE6240030,-,-,Normalize same-re
 generated_1BA1D0,func_1518F1A0,0x0CC,0xE6240030,0x860A001C,-,-,Normalize same-record scalar read schedule and equivalent target-block addresses; no FP arithmetic rewrite,,,false
 generated_1BA1D0,func_1518F1A0,0x0D8,0xA62C012C,0xA60C001C,-,-,Normalize same-record scalar read schedule and equivalent target-block addresses; no FP arithmetic rewrite,,,false
 generated_1BA1D0,func_1518F1A0,0x0DC,0x862D012C,0x860D001C,-,-,Normalize same-record scalar read schedule and equivalent target-block addresses; no FP arithmetic rewrite,,,false
+generated_1A6360,func_15179600,0x114,0x8FAA00F4,0x8FAF00F4,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x118,0x8FAB00EC,0x8FB800EC,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x124,0x240F0004,0x24190004,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x128,0x24780023,0x24690023,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x12C,0x34198C00,0x340A8C00,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x130,0x2469000A,0x246B000A,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x13C,0xA7AF00BA,0xA7B900BA,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x140,0xA7B800BC,0xA7A900BC,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x144,0xA7B900C0,0xA7AA00C0,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x148,0xA3A900C9,0xA3AB00C9,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x15C,0xA7AA00B4,0xA7AF00B4,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_15179600,0x160,0xA7AB00B8,0xA7B800B8,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false

@@ -99,9 +99,71 @@ void func_151794C8(void) {
     D_800DD438[1] = y;
 }
 
-s32 func_15179600() {
-    return 0;
+typedef struct {
+    Vtx vertices[8];
+    u32 value80;
+    s16 slotIndex;
+    u16 retained86;
+    s16 cleared88;
+    u16 value8A;
+    s16 x, y, z;
+    s16 lifetime, remaining, initialHeight;
+    u16 flags, retained9A;
+    s16 cleared9C, cleared9E;
+    u8 textureIndex, mode;
+    s8 tag;
+    u8 retainedA3;
+    u32 retainedA4;
+} DisplaySprite15179600;
+s32 func_150ADA20(void);
+void func_1516865C(void *, u8, u8, u8, u8);
+void *func_15168800(void *, u8, s32);
+
+/* Create a display sprite near the camera and retain its allocated slot. */
+void func_15179600(s32 randomizeHeight, u32 value) {
+    s32 x, y, z;
+    s32 originX, originY, originZ;
+    s32 randomValue;
+    u32 variation;
+    void *object;
+    DisplaySprite15179600 sprite;
+    sprite.textureIndex = 17;
+    sprite.value8A = 51;
+    sprite.tag = 1;
+    sprite.flags = 0;
+    func_1516865C(&sprite, 255, 255, 255, 80);
+    originX = (s32)((struct108 *)D_800DBFF0)->unk2F8;
+    originY = (s32)((struct108 *)D_800DBFF0)->unk2FC;
+    originZ = (s32)((struct108 *)D_800DBFF0)->unk300;
+    randomValue = func_150ADA20();
+    x = randomValue % 500 + originX;
+    randomValue = func_150ADA20();
+    z = randomValue % 500 + originZ;
+    if (randomizeHeight == 0) {
+        y = originY + 500;
+    } else {
+        randomValue = func_150ADA20();
+        y = randomValue % 500 + originY;
+    }
+    variation = (u32)func_150ADA20() % 10;
+    sprite.cleared9C = 0;
+    sprite.cleared9E = 0;
+    sprite.lifetime = 4;
+    sprite.remaining = variation + 35;
+    sprite.flags = 0x8C00;
+    sprite.mode = variation + 10;
+    sprite.y = y;
+    sprite.x = x;
+    sprite.z = z;
+    sprite.value80 = value;
+    sprite.slotIndex = D_800DD436;
+    object = func_15168800(&sprite, 255, 0);
+    if (object != NULL) {
+        D_800DD440[D_800DD436] = object;
+        D_800DD436++;
+    }
 }
+
 
 s32 func_151797B0() {
     return 0;

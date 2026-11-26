@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Display sprite slot guarded match - 2026-11-26
+
+[Note 2723](WORKING_NOTES/2723-game-display-sprite-slot-match-20261126.md): `func_15179600` matches all 108 words/frame
+248: 96 direct C words and 12 guards for two closed GPR cycles, all 14 bindings
+unchanged. Camera truncation, signed/unsigned draws, fresh slot reloads and the
+bounded original fill-loop caller are qualified. Eight neighbors/data stay
+fixed. Total **4,702 / 5,528 (85.06%)**, Game **4,029 / 4,855 (82.99%)**, zero
+drift; **274 more accepted matches to the active 90% goal**.
+
 ## Random sprite scatter direct match - 2026-11-26
 
 [Note 2722](WORKING_NOTES/2722-game-random-sprite-scatter-match-20261126.md): `func_15179B14` emits all 103 words and nine
@@ -31,7 +40,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,701 / 5,528 (85.04%)**, leaving **275**
+verified production checkpoint is **4,702 / 5,528 (85.06%)**, leaving **274**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
