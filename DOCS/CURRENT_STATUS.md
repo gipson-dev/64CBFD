@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Attached effect transition descriptors - 2026-11-26
+
+[Note 2716](WORKING_NOTES/2716-game-effect-transition-match-20261126.md): `func_150DB9E0` recovers the two-stage
+attachment/effect setup and both typed input records. All 160 words/frame 208
+match with 153 direct words and seven checked byte-mask/address guards.
+Eleven neighbors and protected data stay fixed; the signed caller/void return
+window is qualified. Total **4,695 / 5,528 (84.93%)**, Game
+**4,022 / 4,855 (82.84%)**, zero drift; **four more to 85%**.
+
 ## Pointer-input quad vertex writer match - 2026-11-26
 
 [Note 2715](WORKING_NOTES/2715-game-pointer-quad-vertices-match-20261126.md): `func_150DB714` recovers live position,

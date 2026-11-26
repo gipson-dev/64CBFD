@@ -24,10 +24,6 @@ void func_1516972C(u8 *record);
 
 /* Non-matching placeholders for the text-only asm slice asm/108E90.s. */
 
-s32 func_150DB9E0() {
-    return 0;
-}
-
 typedef struct { f32 x, y, z; } OrientedEffectPosition;
 typedef struct {
     OrientedEffectPosition position;
@@ -40,6 +36,119 @@ typedef struct {
 } OrientedEffectInput;
 extern f32 D_800A0C24, D_800A0C28, D_800A0C2C, D_800A0C30;
 void func_15152F70(OrientedEffectInput *, u8);
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 z;
+    s16 countBase;
+    s16 countRange;
+    s16 firstAngleBase;
+    s16 firstAngleRange;
+    s16 secondAngleBase;
+    s16 secondAngleRange;
+    f32 speedBase;
+    f32 speedRange;
+    s16 magnitudeBase;
+    s16 magnitudeRange;
+    s16 field22Base;
+    s16 field22Range;
+    s8 fixed1F;
+    u8 fixed34;
+    s16 field2ABase;
+    s16 field2ARange;
+    s16 fixed0E;
+    s16 field24Base;
+    s16 field24Range;
+    s16 field26Base;
+    s16 field26Range;
+    s32 owner;
+    u8 color;
+    u8 alpha;
+    u8 privateTail3E[2];
+} ShortEffectInput150DB9E0;
+extern f32 D_800A0C00, D_800A0C04, D_800A0C08, D_800A0C0C;
+extern f32 D_800A0C10, D_800A0C14, D_800A0C18, D_800A0C1C, D_800A0C20;
+extern u8 D_80090514[];
+u8 *func_15196438(struct127 *, s32, s32, s32);
+void func_15153298(ShortEffectInput150DB9E0 *, u8, s32);
+
+/* Start or advance the two-stage attached effect using the caller's byte channel. */
+void func_150DB9E0(struct127 *actor, s32 transition, u8 channel) {
+    OrientedEffectInput oriented;
+    ShortEffectInput150DB9E0 shortInput;
+
+    if (actor != NULL) {
+        switch (transition) {
+        case 0:
+            func_15196438(actor, 1, channel, 0);
+            oriented.position.x = D_800A0C00;
+            oriented.position.y = D_800A0C04;
+            oriented.position.z = D_800A0C08;
+            oriented.speedBase = 9.0f;
+            oriented.speedRange = 8.0f;
+            oriented.field14Base = D_800A0C0C;
+            oriented.field18Range = 0.0f;
+            oriented.countBase = 8;
+            oriented.countRange = 8;
+            oriented.firstAngleBase = -75;
+            oriented.secondAngleBase = -38;
+            oriented.firstAngleRange = 22;
+            oriented.secondAngleRange = 35;
+            oriented.byteBase = 3;
+            oriented.byteRange = 2;
+            oriented.shortBase = 41;
+            oriented.shortRange = 0;
+            oriented.fieldCBase = 3.0f;
+            oriented.field10Range = 3.0f;
+            oriented.fixed38 = 10;
+            oriented.fixed39 = 40;
+            oriented.argument3C = 1;
+            oriented.argument40 = 0;
+            oriented.argument44 = 0;
+            oriented.argument48 = 0;
+            oriented.argument4C = 0;
+            oriented.argument50 = 0;
+            oriented.fixed54 = 255;
+            oriented.fixed55 = 255;
+            func_15152F70(&oriented, channel);
+            func_151491F4(30, -1, 0, 1, 0, 0, channel, 0);
+            shortInput.x = D_800A0C10;
+            shortInput.y = D_800A0C14;
+            shortInput.z = D_800A0C18;
+            shortInput.countBase = 6;
+            shortInput.countRange = 3;
+            shortInput.firstAngleBase = -74;
+            shortInput.secondAngleBase = -38;
+            shortInput.firstAngleRange = 21;
+            shortInput.secondAngleRange = 35;
+            shortInput.speedBase = D_800A0C1C;
+            shortInput.speedRange = D_800A0C20;
+            shortInput.magnitudeBase = 14;
+            shortInput.magnitudeRange = 14;
+            shortInput.field22Base = -61;
+            shortInput.field22Range = 28;
+            shortInput.fixed1F = -1;
+            shortInput.fixed34 = 18;
+            shortInput.field2ABase = 6;
+            shortInput.field2ARange = 6;
+            shortInput.fixed0E = 0;
+            shortInput.field24Base = 174;
+            shortInput.field24Range = 115;
+            shortInput.field26Base = 115;
+            shortInput.field26Range = 135;
+            shortInput.owner = (s32)D_80090514;
+            shortInput.color = 255;
+            shortInput.alpha = 255;
+            func_15153298(&shortInput, channel, 1);
+            break;
+        case 1:
+            func_15196438(actor, 2, channel, 0);
+            break;
+        }
+    }
+}
+
+
 /* Submit the original oriented-effect descriptor with the owner's byte mode. */
 void func_150DBC60(struct260 *owner) {
     OrientedEffectInput input;
