@@ -1,5 +1,13 @@
 # Working Notes
 
+## Trail fade tick match - 2026-11-25
+
+[Note 2711](WORKING_NOTES/2711-game-trail-fade-tick-match-20261125.md): `func_151B6420` matches all 109 words
+with no frame, using five checked FP-register guards and 104 direct words.
+The original dispatcher, ordered ring updates and typed native layout are
+qualified. Total **4,690 / 5,528 (84.84%)**, Game **4,017 / 4,855 (82.74%)**,
+zero drift; **nine more to 85%**. All 16 neighbors remain unchanged.
+
 ## Colour-framebuffer settings match - 2026-11-25
 
 [Note2710](WORKING_NOTES/2710-game-colour-framebuffer-settings-match-20261125.md): `func_151600D8` emits103 words/frame48

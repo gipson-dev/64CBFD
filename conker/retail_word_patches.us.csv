@@ -43863,3 +43863,8 @@ generated_1E37D0,func_151B77F4,0x110,0x01CF1021,0xAC410000,-,-,Normalize indepen
 generated_1E37D0,func_151B77F4,0x114,0xAC410000,0x8CA90004,-,-,Normalize independent post-length private loads and record-address scheduling,,,false
 generated_1E37D0,func_151B77F4,0x118,0x8CA90004,0x240A00FF,-,-,Normalize independent post-length private loads and record-address scheduling,,,false
 generated_E1280,func_150B40E8,0x070,0x03033821,0x00783821,-,-,Normalize commutative integer record-address addition operand order,,,false
+generated_1E37D0,func_151B6420,0x0F0,0xC4220000,0xC42E0000,R_MIPS_LO16:D_800AA470,R_MIPS_LO16:D_800AA470,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
+generated_1E37D0,func_151B6420,0x114,0x46008481,0x46008081,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
+generated_1E37D0,func_151B6420,0x118,0x46029102,0x460E1482,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
+generated_1E37D0,func_151B6420,0x11C,0x4600218D,0x4600910D,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false
+generated_1E37D0,func_151B6420,0x120,0x44063000,0x44062000,-,-,Normalize closed volatile floating-register allocation in trail fade calculation,,,false

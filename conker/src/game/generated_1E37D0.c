@@ -70,9 +70,75 @@ void func_151B6320(u8 *actor, u8 channel, s32 context) {
     }
 }
 
-s32 func_151B6420() {
-    return 0;
+typedef struct {
+    ActorPosition151B6320 position;
+    f32 lifetime;
+    u8 opacity;
+    u8 retained11[3];
+    u32 retained14;
+    f32 distance;
+} TrailFadeRecord151B6420;
+typedef struct {
+    u8 retained00[0x1E];
+    u16 flags;
+    u8 retained20[5];
+    u8 capacity;
+    u8 retained26[6];
+    s8 count, tail, head;
+    u8 retained2F[0x25];
+    ActorPosition151B6320 position;
+    u8 retained60[0x34];
+    TrailFadeRecord151B6420 *records;
+} TrailFadeOwner151B6420;
+extern f32 D_800BE9A4;
+extern f32 D_800AA470;
+
+/* Age the trail ring, fade its retained points, and copy its oldest position. */
+s32 func_151B6420(TrailFadeOwner151B6420 *owner) {
+    TrailFadeRecord151B6420 *records = owner->records;
+    TrailFadeRecord151B6420 *record;
+    s32 index;
+    s32 opacity;
+    f32 oldestDistance;
+    f32 factor;
+
+    if (owner->count < 2 && (owner->flags & 8)) return 0;
+    index = owner->head;
+    while (index != owner->tail) {
+        index--;
+        if (index < 0) index = owner->capacity - 1;
+        record = &records[index];
+        record->lifetime -= D_800BE9A4;
+        if (record->lifetime < 0.0f) {
+            while (index != owner->tail) {
+                owner->tail++;
+                if (owner->tail == owner->capacity) owner->tail = 0;
+                owner->count--;
+            }
+        }
+    }
+    if (owner->count > 0) {
+        oldestDistance = records[owner->tail].distance;
+        index = owner->tail;
+        factor = D_800AA470;
+        do {
+            record = &records[index];
+            opacity = (record->distance - oldestDistance) * factor;
+            if (opacity > 155) record->opacity = 155;
+            else record->opacity = opacity;
+            index++;
+            if (index >= owner->capacity) index = 0;
+        } while (index != owner->head);
+    }
+    if (owner->count > 0) owner->position = records[owner->tail].position;
+    else {
+        owner->position.x = 0.0f;
+        owner->position.y = 0.0f;
+        owner->position.z = 0.0f;
+    }
+    return 1;
 }
+
 
 s32 func_151B65D4() {
     return 0;
