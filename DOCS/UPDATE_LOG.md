@@ -1,5 +1,14 @@
 # Update Log
 
+## Random target callback match - 2026-11-26
+
+[Note 2720](WORKING_NOTES/2720-game-random-targets-callback-match-20261126.md): `func_1518F1A0` matches all 121 words and 20
+bindings, frame 32, with 107 direct words and 14 checked RAM-scheduling guards.
+Ordered FP work, modular clocks, native32 C and the complete dispatcher on
+bounded paths are qualified. All 60 neighbors and protected data stay fixed.
+Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
+**85% reached; 277 more accepted matches to the active 90% goal.**
+
 ## Owner preset parent direct match - 2026-11-26
 
 [Note 2719](WORKING_NOTES/2719-game-owner-preset-parent-match-20261126.md): `func_1518F5D0` emits all 125 words and

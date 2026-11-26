@@ -388,9 +388,61 @@ s32 func_1518F15C(u8 *arg0) {
     return 1;
 }
 
-s32 func_1518F1A0() {
-    return 0;
+typedef struct {
+    f32 firstA, firstB, firstTarget;
+    f32 splitPivot, splitA, splitB, splitTarget;
+    s16 firstTimer, splitTimer;
+    f32 rateA, rateB, rateTarget;
+    s16 rateTimer;
+    u8 retained2E[2];
+} RandomTargetTracks1518F1A0;
+typedef struct {
+    u8 retained00[0x24];
+    s32 animationRate; /* The dispatcher uses offset0x24 to advance animation. */
+    u8 retained28[4];
+    f32 firstValue, splitValue;
+    u8 retained34[0xDC];
+    RandomTargetTracks1518F1A0 targets;
+} RandomTargetState1518F1A0;
+extern s32 D_800BE9E4;
+extern f32 D_800A7B68, D_800A7B6C, D_800A7B70;
+
+/* Refresh timer-driven float targets and the animation rate; keep the record alive. */
+s32 func_1518F1A0(u8 *record) {
+    RandomTargetTracks1518F1A0 *targets;
+
+    ((RandomTargetState1518F1A0 *)record)->targets.splitTimer -= (u32)D_800BE9E4;
+    if (((RandomTargetState1518F1A0 *)record)->targets.splitTimer < 0) {
+        targets = &((RandomTargetState1518F1A0 *)record)->targets;
+        targets->splitTimer = (u32)func_150ADA20() % 6;
+        if ((func_150ADA20() & 3) != 0) {
+            targets->splitTarget = func_150ADA68() * (targets->splitPivot - targets->splitA)
+                                   + targets->splitA;
+        } else {
+            targets->splitTarget = func_150ADA68() * (targets->splitB - targets->splitPivot)
+                                   + targets->splitPivot;
+        }
+    }
+    targets = &((RandomTargetState1518F1A0 *)record)->targets;
+    ((RandomTargetState1518F1A0 *)record)->splitValue = ((RandomTargetState1518F1A0 *)record)->splitValue + (targets->splitTarget - ((RandomTargetState1518F1A0 *)record)->splitValue) * D_800A7B68;
+    targets->firstTimer -= (u32)D_800BE9E4;
+    if (targets->firstTimer < 0) {
+        targets->firstTimer = (u32)func_150ADA20() % 17;
+        targets->firstTarget = func_150ADA68() * (targets->firstA - targets->firstB)
+                               + targets->firstB;
+    }
+    ((RandomTargetState1518F1A0 *)record)->firstValue = ((RandomTargetState1518F1A0 *)record)->firstValue + (targets->firstTarget - ((RandomTargetState1518F1A0 *)record)->firstValue) * D_800A7B6C;
+    targets->rateTimer -= (u32)D_800BE9E4;
+    if (targets->rateTimer < 0) {
+        targets->rateTimer = (u32)func_150ADA20() % 15;
+        targets->rateTarget = func_150ADA68() * (targets->rateA - targets->rateB)
+                                 + targets->rateB;
+    }
+    ((RandomTargetState1518F1A0 *)record)->animationRate += (u32)(s32)((targets->rateTarget - (f32)((RandomTargetState1518F1A0 *)record)->animationRate)
+                                * D_800A7B70);
+    return 1;
 }
+
 
 extern f32 D_800A7B74;
 extern f32 D_800A7B78;

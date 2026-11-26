@@ -1,11 +1,20 @@
 # PC Port Roadmap located in another project folder
 
+## Random target callback match - 2026-11-26
+
+[Note 2720](WORKING_NOTES/2720-game-random-targets-callback-match-20261126.md): `func_1518F1A0` matches all 121 words and 20
+bindings, frame 32, with 107 direct words and 14 checked RAM-scheduling guards.
+Ordered FP work, modular clocks, native32 C and the complete dispatcher on
+bounded paths are qualified. All 60 neighbors and protected data stay fixed.
+Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
+**85% reached; 277 more accepted matches to the active 90% goal.**
+
 ## Active matching target: 90% total - 2026-11-26
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,698 / 5,528 (84.99%)**, leaving **278**
-accepted matches. The 85% threshold is an intermediate milestone. Keep
+verified production checkpoint is **4,699 / 5,528 (85.00%)**, leaving **277**
+accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
 ## Owner preset parent direct match - 2026-11-26
