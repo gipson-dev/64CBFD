@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Randomized effect factory direct match - 2026-11-26
+
+[Note 2717](WORKING_NOTES/2717-game-randomized-effect-factory-match-20261126.md): `func_150D278C` emits all 102 words and
+21 binding positions directly from C, with frame 168 and zero guards. Both
+complete callers and the original unwritten payload-byte boundary are qualified.
+Five neighbors and protected data stay fixed. Total **4,696 / 5,528 (84.95%)**,
+Game **4,023 / 4,855 (82.86%)**, zero drift; **three more to 85%**.
+
 ## Attached effect transition descriptors - 2026-11-26
 
 [Note 2716](WORKING_NOTES/2716-game-effect-transition-match-20261126.md): `func_150DB9E0` recovers the two-stage

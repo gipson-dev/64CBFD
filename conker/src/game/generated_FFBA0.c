@@ -1,4 +1,5 @@
 #include <ultra64.h>
+#include "structs.h"
 
 extern f32 D_800BE9A4;
 f32 func_15144B68(f32);
@@ -34,7 +35,7 @@ typedef struct ReloadRecord {
 } ReloadRecord;
 
 extern s32 D_800BE9E4;
-s32 func_150D278C();
+void func_150D278C(u32, const void *, u8, s32);
 s32 func_150ADA20(void);
 
 /* Non-matching placeholders for the text-only asm slice asm/FFBA0.s. */
@@ -51,8 +52,54 @@ void func_150D26F0(u8 *object) {
     }
 }
 
-s32 func_150D278C() {
-    return 0;
+typedef struct { u8 rgb[3][3]; } EffectPalette150D278C;
+typedef struct {
+    u32 command;
+    f32 randomPhase, rate, inverseRate, signedSpeed;
+    f32 zero14, zero18;
+    u8 parameters[64];
+    u8 colour[3];
+    u8 retained5F;
+} RandomEffectPayload150D278C;
+extern EffectPalette150D278C D_800A0990;
+extern f32 D_800A099C, D_800A09A0, D_800A09A4, D_800A09A8, D_800A09AC;
+f32 func_150ADA68(void);
+void *memcpy(void *, const void *, u32);
+struct260 *func_15149130(s16, s8, s8, s8, u8, u8, struct37 *, u8, s32);
+
+/* Build randomized motion and palette data, retaining the original unwritten tail byte. */
+void func_150D278C(u32 command, const void *parameters, u8 priority, s32 context) {
+    RandomEffectPayload150D278C packet;
+    struct260 *created;
+    s16 lifetime;
+
+    packet.command = command;
+    packet.randomPhase = func_150ADA68();
+    packet.randomPhase = (packet.randomPhase + packet.randomPhase) * D_800A099C;
+    packet.rate = func_150ADA68() * D_800A09A0 + D_800A09A4;
+    packet.inverseRate = 1.0f / packet.rate;
+    packet.signedSpeed = func_150ADA68() * D_800A09A8 + D_800A09AC;
+    if ((u32)func_150ADA20() & 1) {
+        packet.signedSpeed = -packet.signedSpeed;
+    }
+    packet.zero14 = 0.0f;
+    packet.zero18 = 0.0f;
+    memcpy(packet.parameters, parameters, 0x40);
+    {
+        EffectPalette150D278C palette;
+        u8 colour;
+        palette = D_800A0990;
+        colour = (u8)((u32)func_150ADA20() % 3);
+        packet.colour[0] = palette.rgb[colour][0];
+        packet.colour[1] = palette.rgb[colour][1];
+        packet.colour[2] = palette.rgb[colour][2];
+    }
+    lifetime = (s16)((u32)func_150ADA20() % 101 + 100);
+    created = func_15149130(lifetime,
+                           -1, 50, -1, 1, 0, (struct37 *)0x60, (u8)priority, context);
+    if (created != NULL) {
+        memcpy((u8 *)created + 0x28, &packet, 0x60);
+    }
 }
 
 s32 func_150D2924() {
