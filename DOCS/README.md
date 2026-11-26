@@ -1,5 +1,14 @@
 # Documentation
 
+## Display sprite update guarded match - 2026-11-26
+
+[Note 2724](WORKING_NOTES/2724-game-display-sprite-update-match-20261126.md): `func_151797B0` matches all 194 words/frame
+56: 185 direct C words and nine derived argument/integer guards. All FP words,
+18 bindings, eight neighbors and protected data stay fixed. Opacity, live
+phase/motion, captured origins and the bounded actual callback wrapper pass.
+Total **4,703 / 5,528 (85.08%)**, Game **4,030 / 4,855 (83.01%)**, zero drift;
+**273 more accepted matches to the active 90% goal**.
+
 ## Display sprite slot guarded match - 2026-11-26
 
 [Note 2723](WORKING_NOTES/2723-game-display-sprite-slot-match-20261126.md): `func_15179600` matches all 108 words/frame

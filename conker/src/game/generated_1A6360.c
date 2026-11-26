@@ -165,9 +165,85 @@ void func_15179600(s32 randomizeHeight, u32 value) {
 }
 
 
-s32 func_151797B0() {
-    return 0;
+extern u32 D_800BE9E4;
+extern f32 D_800A7204;
+f32 func_15048A40(u8);
+f32 func_150489B0(u8);
+
+typedef struct {
+    u8 unidentified00[0x98];
+    s16 phase;
+    s16 speed;
+    u8 unidentified9C[0xC];
+    u16 flags;
+    u8 unidentifiedAA[6];
+    u8 textureIndex;
+    u8 unidentifiedB1;
+    s8 callbackIndex;
+    u8 unidentifiedB3[5];
+} SpriteFrameState;
+/* Update opacity, heading and planar motion, then wrap or release a display sprite. */
+void func_151797B0(SpriteFrameState *record) {
+    f32 dz, dx, wave, distance, speed;
+    s32 opacity, angle, wrapped;
+    u32 randomValue;
+    s32 heading;
+    s32 originX, originY, originZ;
+    dz = (f32)*(s16 *)((u8 *)record + 0xA0) - ((struct108 *)D_800DBFF0)->unk300;
+    dx = (f32)*(s16 *)((u8 *)record + 0x9C) - ((struct108 *)D_800DBFF0)->unk2F8;
+    distance = sqrtf(dz * dz + dx * dx);
+    opacity = (s32)(80.0f - 80.0f * distance / 1000.0f);
+    if (opacity < 0) opacity = 0;
+    angle = *(u16 *)((u8 *)record + 0xAE);
+    ((u8 *)record)[0xB4] = opacity;
+    randomValue = func_150ADA20();
+    angle += (((u32)D_800DD433 << 4) * ((randomValue & 255) + 128)) >> 9;
+    angle = (s32)((f32)angle * D_800A7204);
+    if (angle > 12800) angle = 12800;
+    *(u16 *)((u8 *)record + 0xAE) = angle;
+    speed = (f32)(s32)((u32)((u8 *)record)[0xB1] * D_800BE9E4);
+    heading = (*(u16 *)((u8 *)record + 0xAE) >> 8) & 255;
+    wave = func_15048A40(heading);
+    *(s16 *)((u8 *)record + 0x9C) = (s32)((f32)*(s16 *)((u8 *)record + 0x9C) + speed * wave);
+    heading = (*(u16 *)((u8 *)record + 0xAE) >> 8) & 255;
+    wave = func_150489B0(heading);
+    *(s16 *)((u8 *)record + 0x9E) = (s32)((f32)*(s16 *)((u8 *)record + 0x9E) - speed * wave);
+    originX = D_800DD438[0];
+    originY = D_800DD438[1];
+    originZ = D_800DD438[2];
+    wrapped = 0;
+    if (*(s16 *)((u8 *)record + 0x9C) < originX - 500) {
+        *(s16 *)((u8 *)record + 0x9C) = originX - (originX - *(s16 *)((u8 *)record + 0x9C) - 1000);
+        wrapped = 1;
+    } else if (originX + 500 < *(s16 *)((u8 *)record + 0x9C)) {
+        *(s16 *)((u8 *)record + 0x9C) = originX + *(s16 *)((u8 *)record + 0x9C) - originX - 1000;
+        wrapped = 1;
+    }
+    if (*(s16 *)((u8 *)record + 0x9E) < originY - 500) {
+        *(s16 *)((u8 *)record + 0x9E) = originY - (originY - *(s16 *)((u8 *)record + 0x9E) - 1000);
+        wrapped = 1;
+    } else if (originY + 500 < *(s16 *)((u8 *)record + 0x9E)) {
+        *(s16 *)((u8 *)record + 0x9E) = originY + *(s16 *)((u8 *)record + 0x9E) - originY - 1000;
+        wrapped = 1;
+    }
+    if (*(s16 *)((u8 *)record + 0xA0) < originZ - 500) {
+        *(s16 *)((u8 *)record + 0xA0) = originZ - (originZ - *(s16 *)((u8 *)record + 0xA0) - 1000);
+        wrapped = 1;
+    } else if (originZ + 500 < *(s16 *)((u8 *)record + 0xA0)) {
+        *(s16 *)((u8 *)record + 0xA0) = originZ + *(s16 *)((u8 *)record + 0xA0) - originZ - 1000;
+        wrapped = 1;
+    }
+
+    if ((*(u32 *)((u8 *)record + 0x90) & 2) && wrapped) {
+        D_800DD436--;
+        D_800DD440[*(s16 *)((u8 *)record + 0x94)] = NULL;
+        func_1516972C(record);
+    } else if (*(u32 *)((u8 *)record + 0x90) & 1) {
+        if (wrapped) *(u32 *)((u8 *)record + 0x90) ^= 1;
+        else ((u8 *)record)[0xB4] = 0;
+    }
 }
+
 
 void func_15179AB8(void) {
     s32 i;

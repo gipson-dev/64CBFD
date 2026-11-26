@@ -43921,3 +43921,12 @@ generated_1A6360,func_15179600,0x144,0xA7B900C0,0xA7AA00C0,-,-,Normalize two clo
 generated_1A6360,func_15179600,0x148,0xA3A900C9,0xA3AB00C9,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
 generated_1A6360,func_15179600,0x15C,0xA7AA00B4,0xA7AF00B4,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
 generated_1A6360,func_15179600,0x160,0xA7AB00B8,0xA7B800B8,-,-,Normalize two closed caller-saved GPR cycles with definition before use; no opcode address or schedule changes,,,false
+generated_1A6360,func_151797B0,0x120,0x94A200AE,0x94A400AE,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x128,0x00024A03,0x00045203,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x130,0x312400FF,0x314400FF,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x144,0x94A200AE,0x94A400AE,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x14C,0x00027A03,0x00047203,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x150,0x31E400FF,0x31C400FF,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x1E4,0x00627821,0x00437821,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x22C,0x00447021,0x00827021,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
+generated_1A6360,func_151797B0,0x274,0x00486821,0x01026821,-,-,Normalize two equivalent byte argument preparations and three commutative integer additions; no FP or memory order changes,,,false
