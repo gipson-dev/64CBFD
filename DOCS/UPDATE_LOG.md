@@ -1,5 +1,14 @@
 # Update Log
 
+## Actor owner lifecycle direct match - 2026-11-26
+
+[Note 2721](WORKING_NOTES/2721-game-owner-lifecycle-match-20261126.md): `func_151D2F90` emits all 104 words and 13
+bindings directly from C, frame 24, zero guards. The canonical actor view,
+void registry interface, complete list caller, signed clocks and callbacks
+are qualified. All 18 neighbors and protected data stay fixed. Total
+**4,700 / 5,528 (85.02%)**, Game **4,027 / 4,855 (82.95%)**, zero drift;
+**276 more accepted matches to the active 90% goal**.
+
 ## Random target callback match - 2026-11-26
 
 [Note 2720](WORKING_NOTES/2720-game-random-targets-callback-match-20261126.md): `func_1518F1A0` matches all 121 words and 20

@@ -43,7 +43,21 @@ void func_1514EDF0(s32, u8 *);
 /* Generated placeholder declarations. */
 
 struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile arg2, s32 volatile arg3);
-s32 func_151D2F90();
+typedef struct {
+    u8 retained00[0x10];
+    struct127 *actor;
+    u8 actorIdentifier;
+    u8 retained15;
+    s16 lifetime;
+    u8 flags;
+    s8 update, beginAttachment, endAttachment, expired;
+} LifecycleRecord151D2F90;
+typedef void (*LifecycleAction151D2F90)(LifecycleRecord151D2F90 *);
+typedef s32 (*LifecycleUpdate151D2F90)(LifecycleRecord151D2F90 *);
+extern LifecycleAction151D2F90 D_8008FC50[], D_8008FC54[], D_8008FC58[];
+extern LifecycleUpdate151D2F90 D_8008FC4C[];
+
+void func_151D2F90(struct102 *);
 void func_151D3130(void *ownerData);
 void func_151D324C(struct224 *, struct223 *, u8);
 /* End generated placeholder declarations. */
@@ -221,10 +235,45 @@ struct224 *func_151D2F00(void * volatile arg0, s32 volatile arg1, u8 volatile ar
     return record;
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_1FFF60/func_151D2F90.s. */
-s32 func_151D2F90() {
-    return 0;
+/* Validate the owner, update attachment/lifetime state, then dispatch callbacks. */
+void func_151D2F90(struct102 *recordData) {
+    LifecycleRecord151D2F90 *record = (void *)recordData;
+    struct127 *actor = record->actor;
+    u8 wasAttached = record->flags & 2;
+    u8 isAttached;
+    if (actor->interaction_state == 0 || actor->id == 255 ||
+        actor->unique_id != record->actorIdentifier) {
+        func_1516972C((struct102 *)record);
+        return;
+    }
+    if (actor->unk1D4 != NULL && (actor->unk74 & 15) != 15) {
+        record->flags |= 2;
+    } else {
+        record->flags &= ~2;
+    }
+    if (record->flags & 1) {
+        record->lifetime -= (u32)D_800BE9E4;
+        if (record->lifetime < 0) {
+            if (record->expired != -1) {
+                D_8008FC58[record->expired](record);
+            }
+            func_1516972C((struct102 *)record);
+            return;
+        }
+    }
+    isAttached = record->flags & 2;
+    if (wasAttached != isAttached) {
+        if (isAttached) {
+            D_8008FC50[record->beginAttachment](record);
+        } else {
+            D_8008FC54[record->endAttachment](record);
+        }
+    }
+    if (record->update != -1 && D_8008FC4C[record->update](record) == 0) {
+        func_1516972C((struct102 *)record);
+    }
 }
+
 
 /* Notify the owner and release its child chain using links captured before callbacks.
  * Finally detach the owner key from the referenced object's list. */

@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Actor owner lifecycle direct match - 2026-11-26
+
+[Note 2721](WORKING_NOTES/2721-game-owner-lifecycle-match-20261126.md): `func_151D2F90` emits all 104 words and 13
+bindings directly from C, frame 24, zero guards. The canonical actor view,
+void registry interface, complete list caller, signed clocks and callbacks
+are qualified. All 18 neighbors and protected data stay fixed. Total
+**4,700 / 5,528 (85.02%)**, Game **4,027 / 4,855 (82.95%)**, zero drift;
+**276 more accepted matches to the active 90% goal**.
+
 ## Random target callback match - 2026-11-26
 
 [Note 2720](WORKING_NOTES/2720-game-random-targets-callback-match-20261126.md): `func_1518F1A0` matches all 121 words and 20
@@ -13,7 +22,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,699 / 5,528 (85.00%)**, leaving **277**
+verified production checkpoint is **4,700 / 5,528 (85.02%)**, leaving **276**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
