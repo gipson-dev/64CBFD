@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Colour-framebuffer settings match - 2026-11-25
+
+[Note2710](WORKING_NOTES/2710-game-colour-framebuffer-settings-match-20261125.md): `func_151600D8` emits103 words/frame48
+and33 bindings directly from C, with zero guards. The original settings
+labels, helper and caller owner argument are qualified. Total **4,689 / 5,528
+(84.82%)**, Game **4,016 / 4,855 (82.72%)**, zero drift; **10 more to85%**.
+The caller repair preserves its bytes and adds no matching credit.
+
 ## Particle ring tick match - 2026-11-25
 
 [Note2709](WORKING_NOTES/2709-game-particle-ring-tick-match-20261125.md): `func_150B40E8` matches107 words with no
