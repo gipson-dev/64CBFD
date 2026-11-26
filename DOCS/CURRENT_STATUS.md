@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Trail record updater match - 2026-11-25
+
+[Note2708](WORKING_NOTES/2708-game-trail-record-updater-match-20261125.md): `func_151B77F4` matches105words/frame72
+with94 direct words and11 proved independent scheduling guards. Both actual
+callback types, ring lifetimes and original status consumer are qualified.
+Total **4,687 / 5,528 (84.79%)**, Game **4,014 / 4,855 (82.68%)**, zero drift;
+**12 more to85%**. No additional helper/parent matching credit.
+
 ## Buffered matrix updater match - 2026-11-25
 
 [Note2707](WORKING_NOTES/2707-game-buffered-matrix-updater-match-20261125.md): `func_151D6E60` matches104words/frame32
