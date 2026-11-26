@@ -1,5 +1,13 @@
 # Working Notes
 
+## Axis quad vertex writer direct match - 2026-11-26
+
+[Note 2714](WORKING_NOTES/2714-game-axis-quad-vertices-match-20261126.md): `func_150DB2D8` emits all 144 words
+and three call bindings directly from C, with frame 72 and zero guards.
+The full original dispatcher is qualified; its production placeholder remains
+open. Total **4,693 / 5,528 (84.90%)**, Game **4,020 / 4,855 (82.80%)**,
+zero drift; **six more to 85%**. Five neighbors and protected data are fixed.
+
 ## Bouncing effect tick match - 2026-11-26
 
 [Note 2713](WORKING_NOTES/2713-game-bouncing-effect-tick-match-20261126.md): `func_150DB114` matches all 113 linked

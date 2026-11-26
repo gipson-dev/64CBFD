@@ -73,9 +73,55 @@ s32 func_150DB114(BouncingEffectOwner150DB114 *owner) {
 }
 
 
-s32 func_150DB2D8() {
-    return 0;
+typedef struct {
+    u8 retained00[0x2C];
+    f32 halfWidth, halfHeight;
+    f32 x, y, z;
+    f32 axisX, retained44, axisZ;
+    u8 retained4C[0x74];
+    Vtx vertexTemplate[4];
+    u8 *buffers[4];
+} AxisQuadOwner150DB2D8;
+void func_151D5D60(void *, s16, s32, Vtx **, u8 *);
+void *memcpy(void *, const void *, u32);
+
+/* Fill the current quad's four positions, retaining template UV and colour. */
+Vtx *func_150DB2D8(AxisQuadOwner150DB2D8 *owner, s16 view) {
+    Vtx *cursor, *first;
+    f32 horizontal, depth;
+    u8 fresh;
+
+    func_151D5D60(owner->buffers, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(owner->buffers[view], owner->vertexTemplate, 0x40);
+            memcpy(owner->buffers[view] + 0x40, owner->vertexTemplate, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    horizontal = owner->halfWidth * owner->axisX;
+    depth = -owner->halfWidth * owner->axisZ;
+    cursor[0].v.ob[0] = (s32)(owner->x + horizontal);
+    cursor[0].v.ob[1] = (s32)(owner->y + owner->halfHeight);
+    cursor[0].v.ob[2] = (s32)(owner->z + depth);
+    cursor[0].v.flag = 0;
+    cursor[1].v.ob[0] = (s32)(owner->x + horizontal);
+    cursor[1].v.ob[1] = (s32)(owner->y - owner->halfHeight);
+    cursor[1].v.ob[2] = (s32)(owner->z + depth);
+    cursor[1].v.flag = 0;
+    cursor[2].v.ob[0] = (s32)(owner->x - horizontal);
+    cursor[2].v.ob[1] = (s32)(owner->y - owner->halfHeight);
+    cursor[2].v.ob[2] = (s32)(owner->z - depth);
+    cursor[2].v.flag = 0;
+    cursor[3].v.ob[0] = (s32)(owner->x - horizontal);
+    cursor[3].v.ob[1] = (s32)(owner->y + owner->halfHeight);
+    cursor[3].v.ob[2] = (s32)(owner->z - depth);
+    cursor[3].v.flag = 0;
+    return first;
 }
+
 
 typedef struct EffectRequest150DB518 {
     u8 kind, reserved01;
