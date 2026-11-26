@@ -143,4 +143,5 @@ implementation is unqualified. No host transfer/build/launch, Release change,
 push, gameplay or hardware acceptance. Scoped Graphify refresh audits all 61
 owner definitions and retains old IDs/qualification metadata after observing
 actual hook termination. This is not full-corpus extraction. The root README
-receives aggregate/date rows only. Goal 85% remains active, one match away.
+receives aggregate/date rows only. The active target is now 90% total, requiring 4,976 matches.
+Current status records 278 more accepted matches to that updated target.

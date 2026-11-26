@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Active matching target: 90% total - 2026-11-26
+
+The user raised the target from 85% to **90% byte-exact matching**. With the
+current denominator, at least **4,976 / 5,528** matches are required. The
+verified production checkpoint is **4,698 / 5,528 (84.99%)**, leaving **278**
+accepted matches. The 85% threshold is an intermediate milestone. Keep
+qualifying, recounting and committing coherent recoveries toward 90%.
+
 ## Owner preset parent direct match - 2026-11-26
 
 [Note 2719](WORKING_NOTES/2719-game-owner-preset-parent-match-20261126.md): `func_1518F5D0` emits all 125 words and
