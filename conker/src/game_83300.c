@@ -49,7 +49,7 @@ void func_150626EC(struct127 *, s32);
 s32 func_15062800();
 void func_15062D10(s32, s32, s32, s32, s32, s32);
 s32 func_15062E24();
-s32 func_15062FC0();
+void func_15062FC0(struct127 *, s32, s32, s32, s32, s32, u32, u32);
 void func_15063254(struct127 *, u32, u32, f32);
 /* End generated placeholder declarations. */
 
@@ -1738,9 +1738,46 @@ void func_15062D10(s32 slot, s32 entry, s32 dx, s32 dy, s32 bank, s32 absolute) 
 s32 func_15062E24() {
     return 0;
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_15062FC0.s. */
-s32 func_15062FC0() {
-    return 0;
+extern u32 D_800C4020[];
+/* Shift the selected vertex bank's texture coordinates from the other bank. */
+void func_15062FC0(struct127 *owner, s32 part, s32 unusedWord,
+    s32 sPeriod, s32 tPeriod, s32 count, u32 sOffset, u32 tOffset) {
+    Vtx *current;
+    Vtx *previous;
+    u8 *bankBase;
+    s32 bank;
+    s32 partIndex;
+    s32 index;
+    u32 sSpan = sPeriod;
+    bank = D_800BE9C0;
+    bankBase = (u8 *)owner + owner->pad1C8 * 8;
+    current = *(Vtx **)(bankBase + bank * 4 + 0x28C);
+    previous = *(Vtx **)(bankBase + (bank == 0) * 4 + 0x28C);
+    if (current != NULL) {
+        if (part != -1) {
+            partIndex = ((s32 *)D_800C4020[owner->id])[part];
+            current += partIndex;
+            previous += partIndex;
+        }
+        if (sOffset != 0) {
+            if (current->v.tc[0] > (s32)sSpan) {
+                sOffset = sOffset - sSpan;
+            } else if (current->v.tc[0] < 0) {
+                sOffset = sOffset + sSpan;
+            }
+        }
+        if (tOffset != 0) {
+            if (current->v.tc[1] > tPeriod) {
+                tOffset = tOffset - tPeriod;
+            } else if (current->v.tc[1] < 0) {
+                tOffset = tOffset + tPeriod;
+            }
+        }
+        for (index = 0; index < count; index++) {
+            current[index].v.tc[0] = previous[index].v.tc[0] + sOffset;
+            current[index].v.tc[1] = previous[index].v.tc[1] + tOffset;
+        }
+    }
 }
 /* Notify other live object slots whose attached reaction byte is still clear. */
 void func_15063168(struct127 *object) {

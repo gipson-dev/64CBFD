@@ -1,5 +1,14 @@
 # Update Log
 
+## Vertex texture-coordinate updater guarded match - 2026-11-27
+
+[Note 2738](WORKING_NOTES/2738-game-vertex-texture-coordinate-updater-guarded-byte-match-20261127.md): `func_15062FC0` restores all 106 words
+and its zero-byte frame with 20 temporary-role guards and one integer ADDU
+operand guard. All 88 neighbors and 18 assembly bodies stay fixed. Native,
+guest, original caller, actual Make and a strict 343-byte image prediction
+pass. Total **4,717 / 5,528 (85.33%)**, Game **4,044 / 4,855 (83.30%)**,
+zero drift; **259 more to 90%**.
+
 ## EEPROM request dispatcher guarded match - 2026-11-27
 
 [Note 2737](WORKING_NOTES/2737-game-eeprom-request-dispatcher-guarded-byte-match-20261127.md): `func_1501C57C` restores all 106 words
