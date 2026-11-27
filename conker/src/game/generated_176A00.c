@@ -147,9 +147,37 @@ s32 func_15149EC4(u8 *actor) {
     return 0;
 }
 
-s32 func_15149FD0() {
-    return 0;
+/* Build a view-aligned quad and clear every vertex flag. */
+Vtx *func_15149FD0(u8 *actor, s16 view) {
+    Vtx *cursor, *first;
+    f32 forward, side;
+    u8 fresh;
+
+    func_151D5D60(actor + 0x100, view, 0x40, &cursor, &fresh);
+    first = cursor;
+    if (cursor != NULL) {
+        if (fresh) {
+            memcpy(*(u8 **)(actor + 0x100 + view * 4), actor + 0xC0, 0x40);
+            memcpy(*(u8 **)(actor + 0x100 + view * 4) + 0x40, actor + 0xC0, 0x40);
+        }
+    } else {
+        return NULL;
+    }
+    forward = *(f32 *)(actor + 0x2C) * D_800DD1D8[view];
+    side = *(f32 *)(actor + 0x2C) * D_800DD1E8[view];
+    cursor[0].v.flag = 0;
+    cursor[1].v.flag = 0;
+    cursor[2].v.flag = 0;
+    cursor[3].v.flag = 0;
+    cursor[0].v.ob[0] = cursor[3].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) + side);
+    cursor[0].v.ob[1] = cursor[1].v.ob[1] = (s32)*(f32 *)(actor + 0x38);
+    cursor[0].v.ob[2] = cursor[3].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) - forward);
+    cursor[1].v.ob[0] = cursor[2].v.ob[0] = (s32)(*(f32 *)(actor + 0x34) - side);
+    cursor[2].v.ob[1] = cursor[3].v.ob[1] = (s32)(*(f32 *)(actor + 0x30) + *(f32 *)(actor + 0x38));
+    cursor[1].v.ob[2] = cursor[2].v.ob[2] = (s32)(*(f32 *)(actor + 0x3C) + forward);
+    return first;
 }
+
 
 s32 func_1514A19C() {
     return 0;

@@ -1,5 +1,14 @@
 # Update Log
 
+## Flag-clearing view-aligned quad direct match - 2026-11-27
+
+[Note 2731](WORKING_NOTES/2731-game-view-aligned-quad-flags-direct-match-20261127.md): `func_15149FD0` emits all115 words and
+seven relocation positions directly from C, frame72, zero guards, including four flag clears. Native,
+original caller, fault/rebase controls and strict image pass. All35 neighbors
+and data stay fixed; the production parent remains a stub. Total
+**4,710 / 5,528 (85.20%)**, Game **4,037 / 4,855 (83.15%)**, zero drift;
+**266 more accepted matches to90%**.
+
 ## View-aligned quad direct match - 2026-11-27
 
 [Note 2730](WORKING_NOTES/2730-game-view-aligned-quad-direct-match-20261127.md): `func_15149D18` emits all107 words and
