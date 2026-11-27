@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Owner single-packet callback guarded match - 2026-11-27
+
+[Note 2736](WORKING_NOTES/2736-game-owner-single-packet-callback-guarded-byte-match-20261127.md): `func_1514E31C` restores all 123 words, seven
+bindings and its original 304-byte frame. Thirty-two guards only reorder
+independent initializations. All 77 neighbors and pools stay fixed. Native,
+guest, complete dispatcher, actual Make and a strict 458-byte image prediction
+pass. Total **4,715 / 5,528 (85.29%)**, Game **4,042 / 4,855 (83.25%)**, zero
+drift; **261 more to 90%**.
+
 ## Owner packet-pair callback guarded match - 2026-11-27
 
 [Note 2735](WORKING_NOTES/2735-game-owner-packet-pair-callback-guarded-byte-match-20261127.md): `func_1514D64C` restores all 200 words,

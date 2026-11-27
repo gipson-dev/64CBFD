@@ -927,9 +927,41 @@ void func_1514E194(u8 *owner) {
     func_151D74B0(owner, 5, -1, 255, 1);
 }
 
-s32 func_1514E31C() {
-    return 0;
+extern f32 D_800A5E18, D_800A5E1C;
+
+/* Construct the owner packet, attach key 7, then submit a separate kind-12 vector. */
+void func_1514E31C(u8 *owner) {
+    PacketSource1514 source;
+    PacketDescriptor1514 desc;
+    PacketRuntime1514 runtime;
+    GameEffectVector finalVector;
+    u8 *effect;
+
+    desc.type = 3; desc.zero08 = 0; desc.zero0c = 0;
+    desc.flags40 = 0x2012; desc.flags04 = 0; desc.strength = 255;
+    desc.color[0] = 255; desc.color[1] = 230; desc.color[2] = 0; desc.color[3] = 255;
+    desc.flags02 = 0x401;
+    desc.vector[0] = 0.0f; desc.vector[1] = 0.0f; desc.vector[2] = 0.0f;
+    desc.vector[3] = 0.0f; desc.vector[4] = 0.0f; desc.vector[5] = 0.0f;
+    source.size[0] = 45.0f; source.size[3] = 45.0f;
+    source.zero10 = 0.5f; source.zero14 = 0.5f; source.half1c = 0.0f;
+    source.size[1] = 55.0f; source.size[2] = 25.0f;
+    source.half18 = D_800A5E18; source.scalar20 = D_800A5E1C;
+    runtime.identity = owner[0x3B];
+    runtime.v[0] = 0.0f; runtime.v[1] = 0.0f;
+    runtime.v[3] = 0.0f; runtime.v[4] = 0.0f;
+    runtime.owner = owner;
+    runtime.kind = 12;
+    source.tail[0] = 0; source.tail[1] = 0; source.tail[2] = 0; source.tail[3] = 0;
+    runtime.mode = 2;
+    runtime.v[2] = 100.0f; runtime.v[5] = 600.0f;
+    source.one48 = 1.0f;
+    effect = func_15189FF0((u8 *)&desc, (u8 *)&source, &runtime, 2, 3, 0, 0);
+    func_1514EC1C((s32)effect, (s32)owner, 7);
+    finalVector.x = 0.0f; finalVector.y = 0.0f; finalVector.z = 150.0f;
+    func_15160A58(owner, 12, &finalVector, 2, 300, 40, 255, 181, 0, 255, 0, 2, 0, 0, 255, 1);
 }
+
 
 extern u8 D_800A58D0[];
 extern u8 D_800A58E4[];
