@@ -32,7 +32,7 @@ s32 func_150ADA20(void);
 f32 func_150ADA68(void);
 void func_15142314(void *, s32, f32 *);
 u8 func_15143E94(s32, s32);
-s32 func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
+void func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
 void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
 void func_1504715C(EffectSurfaceE8090 *, void *);
 s32 func_15046C80(f32 *, u16, f32, EffectSurfaceE8090 *);

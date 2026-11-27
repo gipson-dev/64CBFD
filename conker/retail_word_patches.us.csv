@@ -43954,3 +43954,18 @@ generated_10CD70,func_150E06D8,0x138,0x256d0064,0x258e0064,-,-,Derived private-h
 generated_10CD70,func_150E06D8,0x148,0x254e0004,0x254b0004,-,-,Derived private-home bijection and closed GPR roles; restore duplicated incoming-owner load and retarget branch; COP1 sequence unchanged,,,false
 generated_10CD70,func_150E06D8,0x154,0xafae0014,0xafab0014,-,-,Derived private-home bijection and closed GPR roles; restore duplicated incoming-owner load and retarget branch; COP1 sequence unchanged,,,false
 generated_10CD70,func_150E06D8,0x164,0xafad0018,0xafae0018,-,-,Derived private-home bijection and closed GPR roles; restore duplicated incoming-owner load and retarget branch; COP1 sequence unchanged,,,false
+generated_193430,func_15165F80,0x54,0x2825,0x2025,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x5c,0x24040080,0x24050080,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x60,0x24a50040,0x24840040,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x84,0x14a4fff6,0x1485fff6,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x108,0xe01825,0xe01025,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x114,0x24022000,0x24032000,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x11c,0x24630040,0x24420040,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x120,0xa462ffd8,0xa443ffd8,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x124,0xa462ffda,0xa443ffda,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x128,0xa464ffe8,0xa444ffe8,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x12c,0xa462ffea,0xa443ffea,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x130,0xa464fff8,0xa444fff8,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x134,0xa464fffa,0xa444fffa,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x138,0xa4620008,0xa4430008,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false
+generated_193430,func_15165F80,0x140,0xa464000a,0xa444000a,-,-,"Normalize two closed quad-loop GPR swaps; all FP words, stack accesses and instruction order unchanged",,,false

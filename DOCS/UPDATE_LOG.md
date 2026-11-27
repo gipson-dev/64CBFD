@@ -1,5 +1,14 @@
 # Update Log
 
+## Oriented two-quad constructor guarded match - 2026-11-26
+
+[Note 2727](WORKING_NOTES/2727-game-oriented-quad-constructor-guarded-match-20261126.md): `func_15165F80` matches102 words with
+15 closed GPR guards and frame56; FP words, stack accesses and order remain
+literal. Full small caller/origin, native controls and independent image pass.
+Three corrected caller declarations preserve all21 dependent functions and
+their complete objects. Total **4,706 / 5,528 (85.13%)**, Game
+**4,033 / 4,855 (83.07%)**, zero drift; **270 more accepted matches to90%**.
+
 ## Attached random emitter guarded match - 2026-11-26
 
 [Note 2726](WORKING_NOTES/2726-game-attached-random-emitter-guarded-match-20261126.md): `func_150E06D8` matches101 body words

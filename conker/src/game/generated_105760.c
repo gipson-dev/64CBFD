@@ -92,7 +92,7 @@ s32 func_150D8A20(s32 arg0, s32 arg1) {
 extern f32 D_800A0B30;
 extern f32 D_800A0B34;
 s32 func_151875E0(f32, f32, f32, s32, s32, s32, f32, f32);
-s32 func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
+void func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
 
 /* Use the callback selector byte to emit both coordinate effects. */
 /* Keep the complete three-word callback ABI, including the unused third word. */

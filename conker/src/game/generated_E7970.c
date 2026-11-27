@@ -145,7 +145,7 @@ extern s32 D_80082FA4;
 extern f32 D_8009FE64;
 void func_151D5404(f32 *, f32, f32, f32, s32, s32, s32, s32);
 u8 func_15143E94(s32, s32);
-s32 func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
+void func_15165F80(s32, s32, s32, s32, s32, s32, s32, u8, s32);
 void func_1514C678(f32, f32, f32, f32, s16, s16, s16, u8, s32, f32, void *, u8);
 
 

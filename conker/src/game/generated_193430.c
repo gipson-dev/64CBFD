@@ -20,11 +20,70 @@ Gfx *func_15142FBC(Gfx *, u32, u32, u8 *);
 extern s32 D_800BE9E4;
 extern void func_1516972C(void *arg0);
 
-/* Non-matching placeholders for the text-only asm slice asm/193430.s. */
+/* Recovered routines and a remaining placeholder for asm/193430.s. */
 
-s32 func_15165F80() {
-    return 0;
+extern f32 D_800A6C94;
+void *func_15167A68(s32, s32, s32, s32, u8, u8);
+void func_1517E05C(s32, s32, s32);
+
+/* Initialize a flat or angle-oriented pair of quads and publish its origin. */
+void func_15165F80(s32 angle, s32 x, s32 y, s32 z, s32 step,
+                   s32 lifetime, s32 mode, u8 selector, s32 category) {
+    s32 quad;
+    u8 *created;
+    f32 radians;
+    u8 *vertices;
+
+    created = (u8 *)func_15167A68(4, category, 0xA8, 1, selector, 1);
+    if (created != NULL) {
+        if (angle == -1) {
+            vertices = created;
+            quad = 0;
+            do {
+                quad += 0x40;
+                vertices += 0x40;
+                *(s16 *)(vertices - 0x2E) = y;
+                *(s16 *)(vertices - 0x1E) = y;
+                *(s16 *)(vertices - 0x0E) = y;
+                *(s16 *)(vertices + 0x02) = y;
+                *(s16 *)(vertices - 0x2A) = 0;
+                *(s16 *)(vertices - 0x1A) = 0;
+                *(s16 *)(vertices - 0x0A) = 0;
+                *(s16 *)(vertices + 0x06) = 0;
+            } while (quad != 0x80);
+            created[0x95] = 0;
+        } else {
+            radians = angle * D_800A6C94;
+            created[0x91] = (s32)(sinf(radians) * 127.0f);
+            created[0x90] = (s32)(-cosf(radians) * 127.0f);
+            created[0x95] = 1;
+        }
+        quad = 0;
+        vertices = created;
+        do {
+            quad++;
+            vertices += 0x40;
+            *(s16 *)(vertices - 0x28) = 0x2000;
+            *(s16 *)(vertices - 0x26) = 0x2000;
+            *(s16 *)(vertices - 0x18) = 0x2800;
+            *(s16 *)(vertices - 0x16) = 0x2000;
+            *(s16 *)(vertices - 0x08) = 0x2800;
+            *(s16 *)(vertices - 0x06) = 0x2800;
+            *(s16 *)(vertices + 0x08) = 0x2000;
+            *(s16 *)(vertices + 0x0A) = 0x2800;
+        } while (quad != 2);
+        *(s16 *)(created + 0x9A) = y;
+        *(s16 *)(created + 0x9E) = 1;
+        created[0x92] = lifetime;
+        created[0x93] = lifetime;
+        *(s16 *)(created + 0x98) = x;
+        *(s16 *)(created + 0x9C) = z;
+        *(s16 *)(created + 0x96) = step;
+        created[0x94] = mode;
+        func_1517E05C(x, y, z);
+    }
 }
+
 
 void *func_15167A68(s32, s32, s32, s32, u8, u8);
 void func_1517E05C(s32, s32, s32);
