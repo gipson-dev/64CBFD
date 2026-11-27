@@ -242,6 +242,38 @@ void func_150E05F8(u8 *record) {
     record[0x8A] = result;
 }
 
-s32 func_150E06D8() {
-    return 0;
+#include "structs.h"
+extern struct17 D_800A0F70[], D_800A0F88[];
+extern u8 D_80088988;
+void func_15145EA4(struct17 **, struct17 **, u8 *, s32);
+s32 func_150ADA20(void);
+f32 func_150ADA68(void);
+void *func_15102B38(struct127 *, u8, struct17 *, struct17 *, f32 *, s16, u8,
+                   f32, struct17 *, u8, s32, s16, u8, s32);
+
+#define ATTACHED_RANDOM_RANGE(lo, hi) ((lo) + func_150ADA68() * ((hi) - (lo)))
+
+/* Transform an attachment point and submit the selected randomized effect. */
+void func_150E06D8(struct127 *owner, u8 variant, u8 selector, s32 context) {
+    struct17 point;
+    f32 parameters[2];
+    struct17 *input;
+    struct17 *output;
+    u32 first, second;
+    s32 currentVariant;
+    if (owner->unk1D4 != NULL) {
+        input = &D_800A0F70[variant];
+        output = &point;
+        func_15145EA4(&input, &output,
+                     (u8 *)owner->unk1D4 + D_80088988 * 64, 1);
+        parameters[1] = ATTACHED_RANDOM_RANGE(2.0f, 3.0f);
+        parameters[0] = ATTACHED_RANDOM_RANGE(28.0f, 42.0f);
+        first = func_150ADA20();
+        second = func_150ADA20();
+        currentVariant = variant;
+        func_15102B38(owner, D_80088988, &D_800A0F70[currentVariant],
+                     &D_800A0F88[currentVariant], parameters, first % 3 + 4,
+                     second % 156 + 100, ATTACHED_RANDOM_RANGE(400.0f, 700.0f),
+                     &point, 255, 0, -1, selector, context);
+    }
 }

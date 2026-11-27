@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Attached random emitter guarded match - 2026-11-26
+
+[Note 2726](WORKING_NOTES/2726-game-attached-random-emitter-guarded-match-20261126.md): `func_150E06D8` matches101 body words
+with24 derived guards, one saved-home-load insertion and frame112. Ordered
+FP/calls, private frame relation, explicit extra-read fault boundary,
+native controls and original caller window pass. Twelve neighbors and
+protected data stay fixed. Total **4,705 / 5,528 (85.11%)**, Game
+**4,032 / 4,855 (83.05%)**, zero drift; **271 more accepted matches to90%**.
+
 ## Optional emitter direct match - 2026-11-26
 
 [Note 2725](WORKING_NOTES/2725-game-optional-emitter-direct-match-20261126.md): `func_150D728C` emits all 98 body words
@@ -58,7 +67,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,704 / 5,528 (85.09%)**, leaving **272**
+verified production checkpoint is **4,705 / 5,528 (85.11%)**, leaving **271**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
