@@ -1,5 +1,14 @@
 # Documentation
 
+## Phase-height update guarded match - 2026-11-27
+
+[Note 2729](WORKING_NOTES/2729-game-phase-height-update-guarded-match-20261127.md): `func_1511F788` matches105 body/slot words,
+frame48, with52 derived guards and no inserted/omitted instructions. Full
+original callback/installer, explicit target-wrap native tests, fault/rebase
+controls and strict image pass. All83 neighbors/data stay fixed; the production
+dispatcher remains a stub. Total **4,708 / 5,528 (85.17%)**, Game
+**4,035 / 4,855 (83.11%)**, zero drift; **268 more accepted matches to90%**.
+
 ## Attachment-vector paired effect guarded match - 2026-11-26
 
 [Note 2728](WORKING_NOTES/2728-game-attachment-vector-effect-guarded-match-20261126.md): `func_150FB324` matches101 body words

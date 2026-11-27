@@ -931,9 +931,58 @@ void func_1511F768(u8 *arg0, s32 arg1) {
     }
 }
 
-s32 func_1511F788() {
-    return 0;
+typedef struct {
+    u8 reserved00[0x12];
+    s16 height;
+    u8 reserved14[4];
+    f32 offset;
+    u8 reserved1C[0x20];
+    s32 duration;
+    u8 reserved40[0x1C];
+    s16 delta;
+    u8 reserved5E[0x10];
+    u8 finished;
+    u8 reserved6F[0x0D];
+    u32 phase;
+    s32 mode;
+    s32 timer;
+} HeightPhaseState1511F788;
+extern u8 D_800BE9B4;
+
+/* Advance a cosine height phase, timed fall state, and integral height delta. */
+void func_1511F788(HeightPhaseState1511F788 *record) {
+    u8 resetPhase = D_800BE9B4;
+    HeightPhaseState1511F788 *active = record;
+    s32 threshold;
+    f32 radians;
+    s16 previousHeight;
+    s32 divisor = 60;
+
+    previousHeight = (s32)((f32)record->height + record->offset);
+    threshold = record->duration;
+    /* The pinned N64 compiler keeps the low word of this signed product. */
+    threshold = threshold * divisor;
+    threshold /= divisor;
+    if (resetPhase != 0) {
+        active->phase = func_150ADA20() & 0xFFFF;
+    }
+    radians = (f32)(s32)record->phase * 0.0054931640625f;
+    record->offset = cosf(radians) * 25.0f;
+    record->phase += 10u * (u32)D_800BE9E4;
+    if (record->mode == 1) {
+        record->timer = (s32)((u32)record->timer + (u32)D_800BE9E4);
+        if (threshold < record->timer) {
+            record->mode = 2;
+        }
+    } else if (record->mode == 2) {
+        record->height = (s16)((u32)(s32)record->height - (u32)D_800BE9E4);
+        if (record->height < -10000) {
+            record->finished = 1;
+        }
+    }
+    record->delta = (s32)(((f32)record->height + record->offset) - (f32)previousHeight);
 }
+
 
 void func_1511F92C(u8 *arg0) {
     register u8 *dst = arg0;

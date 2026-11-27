@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Phase-height update guarded match - 2026-11-27
+
+[Note 2729](WORKING_NOTES/2729-game-phase-height-update-guarded-match-20261127.md): `func_1511F788` matches105 body/slot words,
+frame48, with52 derived guards and no inserted/omitted instructions. Full
+original callback/installer, explicit target-wrap native tests, fault/rebase
+controls and strict image pass. All83 neighbors/data stay fixed; the production
+dispatcher remains a stub. Total **4,708 / 5,528 (85.17%)**, Game
+**4,035 / 4,855 (83.11%)**, zero drift; **268 more accepted matches to90%**.
+
 ## Attachment-vector paired effect guarded match - 2026-11-26
 
 [Note 2728](WORKING_NOTES/2728-game-attachment-vector-effect-guarded-match-20261126.md): `func_150FB324` matches101 body words
@@ -86,7 +95,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,707 / 5,528 (85.15%)**, leaving **269**
+verified production checkpoint is **4,708 / 5,528 (85.17%)**, leaving **268**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
