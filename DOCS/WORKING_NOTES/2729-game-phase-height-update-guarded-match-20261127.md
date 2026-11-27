@@ -72,8 +72,8 @@ fixture contracts, not a claim of complete game/hardware behavior.
 
 Validation:
 
-- All83 raw neighbors/pools stay fixed in the84-definition owner (83 C
-  definitions and one retained GLOBAL_ASM). Both complete padders reconstruct
+- All83 raw neighbors/pools stay fixed in the84-definition owner (74 C
+  definitions and ten retained GLOBAL_ASM). Both complete padders reconstruct
   frozen BEFORE and agree AFTER. Actual five-command Make includes real
   asm-processor pre/postprocessing, IDO compile, padding and GNU assembly;
   normal profile and object agree with no new compiler diagnostics.
@@ -137,7 +137,7 @@ Receipts:`conker/build/game-phase-height-update-1511f788-private`.
 Zero Claude calls for this routine; local evidence settled the remaining
 questions. No subagents. The host's generated callback is an empty stub;
 no host transfer/build/launch or Release change. Scoped Graphify refresh
-audits83 current C definitions and retains all old IDs/qualification metadata
+audits74 current C definitions and retains all old IDs/qualification metadata
 after observing actual hook termination; no full-corpus re-extraction claim.
 README receives aggregate rows/date only. Continue from sealed N74 toward90%
 with another unmatched Game routine and the same complete acceptance gates.
