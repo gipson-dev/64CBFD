@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Owner action dispatcher direct match - 2026-11-27
+
+[Note 2733](WORKING_NOTES/2733-game-owner-action-dispatcher-direct-match-20261127.md): `func_1514D15C` emits all 109 words,
+22 relocation positions and frame 72 directly from C, zero guards. Original
+classifier ABI/dynamic checks, guest/native, actual caller window and strict
+image pass. All 77 neighbor bodies and data stay fixed; classifier return-type
+repair adds no helper credit. Total **4,712 / 5,528 (85.24%)**,
+Game **4,039 / 4,855 (83.19%)**, zero drift; **264 more matches to 90%**.
+
 ## Timed billboard targets direct match - 2026-11-27
 
 [Note 2732](WORKING_NOTES/2732-game-timed-billboard-targets-direct-match-20261127.md): `func_1514A19C` emits all121 words,
@@ -122,7 +131,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,711 / 5,528 (85.22%)**, leaving **265**
+verified production checkpoint is **4,712 / 5,528 (85.24%)**, leaving **264**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 

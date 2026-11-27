@@ -87,13 +87,54 @@ typedef struct {
     f32 parameter;
 } GameObjectOwnerPayload;
 
-s32 func_1514CA80() {
+u8 func_1514CA80() {
     return 0;
 }
 
-s32 func_1514D15C() {
-    return 0;
+extern u8 D_800CC2D0[];
+extern void (*D_8008AACC)(u8 *);
+extern void (*D_8008AA70[])(u8 *);
+extern u8 *D_8008AB90[];
+extern u8 D_800A5EC0[], D_800A5ED8[];
+void *func_15155FD4(s32);
+void func_15155780(s32, u8);
+
+/* Remove prior effects, classify the owner and run its selected action callbacks. */
+s32 func_1514D15C(u8 *owner) {
+    s32 first = -1;
+    s32 second = -1;
+    s32 third = -1;
+    u8 flags;
+    s32 index = (s32)((u32)owner - (u32)D_800CC2D0);
+    void *effect;
+    u8 selector;
+    void (*callback)(u8 *);
+
+    if (*(void **)(owner + 0x2F4) != 0) return 0;
+    index /= 0x32C;
+    do {
+        effect = func_15155FD4(index);
+        if (effect != 0) func_1516972C(effect);
+    } while (effect != 0);
+    if (index == 0 && D_800BE616 == 0) func_15155780(index, 0xFF);
+    D_8008AACC(owner);
+    flags = func_1514CA80(owner, &first, &second, &third);
+    if (flags == 0) return 0;
+    if (flags & 4) {
+        selector = D_800A5ED8[third];
+        if (selector != 0) D_8008AA70[selector](owner);
+    }
+    if (flags & 2) {
+        selector = D_800A5EC0[second];
+        if (selector != 0) D_8008AA70[selector](owner);
+    }
+    if ((flags & 2) && (flags & 1)) {
+        callback = D_8008AA70[D_8008AB90[second][first]];
+        if (callback != 0) callback(owner);
+    }
+    return 1;
 }
+
 
 /* Run each list node's optional payload callback, then remove the node. */
 s32 func_1514D310(u8 *owner) {
