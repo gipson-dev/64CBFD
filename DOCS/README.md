@@ -1,5 +1,15 @@
 # Documentation
 
+## Attachment-vector paired effect guarded match - 2026-11-26
+
+[Note 2728](WORKING_NOTES/2728-game-attachment-vector-effect-guarded-match-20261126.md): `func_150FB324` matches101 body words
+plus two alignment words, frame160, with22 derived guards and one repeated
+owner-home load. Private-home/schedule relations, all literal fault cuts,
+native controls, the bounded original jump-table caller and strict image pass.
+All17 neighbors/data stay fixed; the large production caller remains a stub.
+Total **4,707 / 5,528 (85.15%)**, Game **4,034 / 4,855 (83.09%)**, zero drift;
+**269 more accepted matches to90%**.
+
 ## Oriented two-quad constructor guarded match - 2026-11-26
 
 [Note 2727](WORKING_NOTES/2727-game-oriented-quad-constructor-guarded-match-20261126.md): `func_15165F80` matches102 words with

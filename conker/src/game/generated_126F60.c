@@ -184,6 +184,38 @@ s32 func_150FB2E0(u8 *arg0) {
     return 1;
 }
 
-s32 func_150FB324() {
-    return 0;
+extern struct17 D_800A1D30, D_800A1D3C, D_800A1D48, D_800A1D54;
+void func_15145EA4(struct17 **, struct17 **, u8 *, s32);
+void func_150FEC28(u8 *, u8, struct17 *, struct17 *, struct17 *, u8, s32);
+void func_151D4408(struct17 *, struct17 *, void *, u8 *, f32, u8, s32);
+
+/* Transform three attachment vectors and submit the paired effects. */
+void func_150FB324(struct127 *owner, u8 selector, s32 context) {
+    struct17 point, origin, direction;
+    struct17 first = D_800A1D30;
+    struct17 second = D_800A1D3C;
+    struct17 third = D_800A1D48;
+    struct17 fourth = D_800A1D54;
+    struct127 *activeOwner;
+
+    if (owner->unk1D4 != NULL) {
+        u8 *matrix;
+        struct17 *input[3];
+        struct17 *output[3];
+        input[0] = &first;
+        input[1] = &third;
+        input[2] = &fourth;
+        output[0] = &point;
+        output[1] = &origin;
+        output[2] = &direction;
+        activeOwner = owner;
+        matrix = (u8 *)activeOwner->unk1D4 + 0x380;
+        func_15145EA4(input, output, matrix, 3);
+        direction.unk0 -= origin.unk0;
+        direction.unk4 -= origin.unk4;
+        direction.unk8 -= origin.unk8;
+        func_150FEC28((u8 *)owner, 14, &first, &second, &point, selector, context);
+        func_151D4408(&origin, &direction, matrix, (u8 *)owner,
+                     1.0f, selector, context);
+    }
 }
