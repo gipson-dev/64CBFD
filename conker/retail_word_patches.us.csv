@@ -44128,3 +44128,19 @@ generated_179F30,func_1514E31C,0x1C4,0xAFA00030,0xAFA00020,-,-,Normalize pairwis
 generated_179F30,func_1514E31C,0x1C8,0xAFA00034,0xAFA00028,-,-,Normalize pairwise independent packet vector and outgoing argument initialization,,,false
 generated_179F30,func_1514E31C,0x1CC,0xE7A00050,0xAFA00030,-,-,Normalize pairwise independent packet vector and outgoing argument initialization,,,false
 generated_179F30,func_1514E31C,0x1D0,0xE7A00054,0xAFA00034,-,-,Normalize pairwise independent packet vector and outgoing argument initialization,,,false
+generated_48FD0,func_1501C57C,0x0A0,0x10810005,0x54810006,-,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0A8,0x10810007,0x0C000000,-,R_MIPS_26:func_150064E0,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0B0,0x10000007,0x10000006,-,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0B8,0x0C000000,0x24010004,R_MIPS_26:func_150064E0,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0BC,0x00000000,0x14810003,-,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0C0,0x10000003,0x00000000,-,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0C4,0x00000000,0x0C000000,-,R_MIPS_26:func_15007168,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0C8,0x0C000000,0x00000000,R_MIPS_26:func_15007168,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0CC,0x00000000,0x3C010000,-,R_MIPS_HI16:D_80082BB4,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0D0,0x3C010000,0xA0200000,R_MIPS_HI16:D_80082BB4,R_MIPS_LO16:D_80082BB4,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0D4,0x10000030,0x10000031,-,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x0D8,0xA0200000,0x8FBF0014,R_MIPS_LO16:D_80082BB4,-,Normalize the closed equivalent EEPROM fallback branch graph,,,false
+generated_48FD0,func_1501C57C,0x074,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_80096964,Bind the two proven EEPROM dispatch tables to retained retail data,,,false
+generated_48FD0,func_1501C57C,0x07C,0x8C2E0000,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_80096964,Bind the two proven EEPROM dispatch tables to retained retail data,,,false
+generated_48FD0,func_1501C57C,0x0E8,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_80096980,Bind the two proven EEPROM dispatch tables to retained retail data,,,false
+generated_48FD0,func_1501C57C,0x0F0,0x8C2F001C,0x8C2F0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_80096980,Bind the two proven EEPROM dispatch tables to retained retail data,,,false

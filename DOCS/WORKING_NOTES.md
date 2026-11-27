@@ -1,5 +1,14 @@
 # Working Notes
 
+## EEPROM request dispatcher guarded match - 2026-11-27
+
+[Note 2737](WORKING_NOTES/2737-game-eeprom-request-dispatcher-guarded-byte-match-20261127.md): `func_1501C57C` restores all 106 words
+and its 24-byte frame. Twelve closed-CFG guards and four retained-table
+bindings recover retail bytes; all seven neighbors and both handwritten
+bodies stay fixed. Native, guest, sole caller window, actual Make and a
+strict 353-byte image prediction pass. Total **4,716 / 5,528 (85.31%)**,
+Game **4,043 / 4,855 (83.27%)**, zero drift; **260 more to 90%**.
+
 ## Owner single-packet callback guarded match - 2026-11-27
 
 [Note 2736](WORKING_NOTES/2736-game-owner-single-packet-callback-guarded-byte-match-20261127.md): `func_1514E31C` restores all 123 words, seven
