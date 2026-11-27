@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Owner and level action classifier match - 2026-11-27
+
+[Note 2734](WORKING_NOTES/2734-game-owner-level-action-classifier-direct-match-20261127.md): `func_1514CA80` restores all 439 words,
+frame zero and the four-argument interface. Eight table bindings and one audited
+neighbor pool offset preserve all 77 padded neighbors. Guest/native, complete
+109-word caller, Make and strict image checks pass. Total **4,713 / 5,528
+(85.26%)**, Game **4,040 / 4,855 (83.21%)**, zero drift; **263 more to 90%**.
+
 ## Owner action dispatcher direct match - 2026-11-27
 
 [Note 2733](WORKING_NOTES/2733-game-owner-action-dispatcher-direct-match-20261127.md): `func_1514D15C` emits all 109 words,
@@ -131,7 +139,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,712 / 5,528 (85.24%)**, leaving **264**
+verified production checkpoint is **4,713 / 5,528 (85.26%)**, leaving **263**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 

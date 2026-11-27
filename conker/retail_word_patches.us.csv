@@ -44043,3 +44043,12 @@ generated_142560,func_1511F788,0x170,0x448d8000,0x448f8000,-,-,Derived phase-hei
 generated_142560,func_1511F788,0x174,0x448e4000,0x44984000,-,-,Derived phase-height GPR roles and MFLO/check scheduling under stable divisor60; stack and FP arithmetic literal,,,false
 generated_142560,func_1511F788,0x18c,0x44189000,0x44089000,-,-,Derived phase-height GPR roles and MFLO/check scheduling under stable divisor60; stack and FP arithmetic literal,,,false
 generated_142560,func_1511F788,0x194,0xa498005c,0xa488005c,-,-,Derived phase-height GPR roles and MFLO/check scheduling under stable divisor60; stack and FP arithmetic literal,,,false
+generated_179F30,func_1514CA80,0x014,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A59AC,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x01C,0x8C2E0000,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A59AC,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x200,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A5C98,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x208,0x8C2E02EC,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5C98,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x518,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A5D70,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x520,0x8C2F03C4,0x8C2F0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5D70,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x598,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A5DBC,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514CA80,0x5A0,0x8C380410,0x8C380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5DBC,Bind the recovered classifier switch to its original retail jump table,,,false
+generated_179F30,func_1514EA1C,0x020,0x8C2E0438,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:.rodata,Preserve the existing owner switch binding after the classifier adds four local tables,,,false

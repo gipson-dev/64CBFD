@@ -87,9 +87,359 @@ typedef struct {
     f32 parameter;
 } GameObjectOwnerPayload;
 
-u8 func_1514CA80() {
-    return 0;
+/* Classify owner and level action routes; leave unselected outputs untouched. */
+u8 func_1514CA80(u8 *owner, s32 *first, s32 *second, s32 *third) {
+    u8 flags = 0;
+
+    switch (owner[4]) {
+        case 94:
+            *third = 25;
+            flags = 4;
+            break;
+        case 154:
+            *third = 24;
+            flags = 4;
+            break;
+        case 16:
+        case 46:
+            *third = 23;
+            flags = 4;
+            break;
+        case 127:
+            *third = 22;
+            flags = 4;
+            break;
+        case 153:
+            *third = 21;
+            flags = 4;
+            break;
+        case 137:
+        case 186:
+            *third = 20;
+            flags = 4;
+            break;
+        case 173:
+            *third = 17;
+            flags = 4;
+            break;
+        case 134:
+            *third = 18;
+            flags = 4;
+            break;
+        case 82:
+            *third = 19;
+            flags = 4;
+            break;
+        case 95:
+            *third = 27;
+            flags = 4;
+            break;
+        case 107:
+            *third = 16;
+            flags = 4;
+            break;
+        case 148:
+            *third = 14;
+            flags = 4;
+            break;
+        case 37:
+            *third = 26;
+            flags = 4;
+            break;
+        case 146:
+            *third = 15;
+            flags = 4;
+            break;
+        case 159:
+        case 160:
+            *third = 13;
+            flags = 4;
+            break;
+        case 147:
+            *third = 12;
+            flags = 4;
+            break;
+        case 141:
+            *third = 11;
+            flags = 4;
+            break;
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 150:
+            *third = 0;
+            flags = 4;
+            break;
+        case 8:
+            *third = 2;
+            flags = 4;
+            break;
+        case 10:
+            *third = 3;
+            flags = 4;
+            break;
+        case 41:
+        case 42:
+            *third = 4;
+            flags = 4;
+            break;
+        case 83:
+            *third = 5;
+            flags = 4;
+            break;
+        case 119:
+            *third = 6;
+            flags = 4;
+            break;
+        case 71:
+            *third = 7;
+            flags = 4;
+            break;
+        case 40:
+            *third = 8;
+            flags = 4;
+            break;
+        case 123:
+            *third = 9;
+            flags = 4;
+            break;
+        case 18:
+            *third = 10;
+            flags = 4;
+            break;
+    }
+    switch (D_800BE9F0) {
+        case 43:
+            *second = 21;
+            flags |= 2;
+            if (owner[4] == 156 || owner[4] == 157) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 29:
+            *second = 20;
+            flags |= 2;
+            if (owner[0x3B] == 9) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 0:
+            *second = 16;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 44:
+            *second = 17;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 35:
+            *second = 15;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 47:
+            *second = 18;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 53:
+            *second = 19;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 40:
+            *second = 14;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 27:
+            *second = 10;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 30:
+            *second = 11;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 38:
+            *second = 12;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 28:
+            *second = 13;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 14:
+            *second = 7;
+            flags |= 2;
+            switch (owner[0x3B]) {
+                case 8:
+                    *first = 0;
+                    flags |= 1;
+                    break;
+                case 1:
+                    *first = 1;
+                    flags |= 1;
+                    break;
+            }
+            break;
+        case 4:
+            *second = 6;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 7:
+            *second = 5;
+            flags |= 2;
+            if (owner[0x3B] == 16) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 12:
+            *second = 3;
+            flags |= 2;
+            break;
+        case 2:
+            *second = 0;
+            flags |= 2;
+            switch (owner[0x3B]) {
+                case 9:
+                    *first = 0;
+                    flags |= 1;
+                    break;
+                case 7:
+                    *first = 1;
+                    flags |= 1;
+                    break;
+                case 14:
+                case 15:
+                case 23:
+                case 25:
+                    *first = 2;
+                    flags |= 1;
+                    break;
+                case 13:
+                    *first = 3;
+                    flags |= 1;
+                    break;
+            }
+            break;
+        case 10:
+            *second = 1;
+            flags |= 2;
+            switch (owner[0x3B]) {
+                case 6:
+                    *first = 0;
+                    flags |= 1;
+                    break;
+                case 7:
+                    *first = 1;
+                    flags |= 1;
+                    break;
+                case 8:
+                    *first = 2;
+                    flags |= 1;
+                    break;
+                case 9:
+                    *first = 3;
+                    flags |= 1;
+                    break;
+                case 10:
+                    *first = 4;
+                    flags |= 1;
+                    break;
+                case 11:
+                    *first = 5;
+                    flags |= 1;
+                    break;
+                case 12:
+                    *first = 6;
+                    flags |= 1;
+                    break;
+                case 13:
+                    *first = 7;
+                    flags |= 1;
+                    break;
+                case 15:
+                    *first = 8;
+                    flags |= 1;
+                    break;
+            }
+            break;
+        case 6:
+            *second = 2;
+            flags |= 2;
+            break;
+        case 16:
+            *second = 4;
+            flags |= 2;
+            if (owner[0x3B] == 6) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 20:
+            *second = 8;
+            flags |= 2;
+            if (owner[0x3B] == 16) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+        case 23:
+            *second = 9;
+            flags |= 2;
+            if (owner[0x3B] == 1) {
+                *first = 0;
+                flags |= 1;
+            }
+            break;
+    }
+    return flags;
 }
+
 
 extern u8 D_800CC2D0[];
 extern void (*D_8008AACC)(u8 *);

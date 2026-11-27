@@ -1,5 +1,13 @@
 # Working Notes
 
+## Owner and level action classifier match - 2026-11-27
+
+[Note 2734](WORKING_NOTES/2734-game-owner-level-action-classifier-direct-match-20261127.md): `func_1514CA80` restores all 439 words,
+frame zero and the four-argument interface. Eight table bindings and one audited
+neighbor pool offset preserve all 77 padded neighbors. Guest/native, complete
+109-word caller, Make and strict image checks pass. Total **4,713 / 5,528
+(85.26%)**, Game **4,040 / 4,855 (83.21%)**, zero drift; **263 more to 90%**.
+
 ## Owner action dispatcher direct match - 2026-11-27
 
 [Note 2733](WORKING_NOTES/2733-game-owner-action-dispatcher-direct-match-20261127.md): `func_1514D15C` emits all 109 words,
