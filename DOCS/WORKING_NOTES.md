@@ -1,5 +1,14 @@
 # Working Notes
 
+## View-aligned quad direct match - 2026-11-27
+
+[Note 2730](WORKING_NOTES/2730-game-view-aligned-quad-direct-match-20261127.md): `func_15149D18` emits all107 words and
+seven relocation positions directly from C, frame72, zero guards. Native,
+original caller, fault/rebase controls and strict image pass. All35 neighbors
+and data stay fixed; the production parent remains a stub. Total
+**4,709 /5,528 (85.18%)**, Game **4,036 /4,855 (83.13%)**, zero drift;
+**267 more accepted matches to90%**.
+
 ## Phase-height update guarded match - 2026-11-27
 
 [Note 2729](WORKING_NOTES/2729-game-phase-height-update-guarded-match-20261127.md): `func_1511F788` matches105 body/slot words,

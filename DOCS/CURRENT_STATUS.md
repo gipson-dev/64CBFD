@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## View-aligned quad direct match - 2026-11-27
+
+[Note 2730](WORKING_NOTES/2730-game-view-aligned-quad-direct-match-20261127.md): `func_15149D18` emits all107 words and
+seven relocation positions directly from C, frame72, zero guards. Native,
+original caller, fault/rebase controls and strict image pass. All35 neighbors
+and data stay fixed; the production parent remains a stub. Total
+**4,709 /5,528 (85.18%)**, Game **4,036 /4,855 (83.13%)**, zero drift;
+**267 more accepted matches to90%**.
+
 ## Phase-height update guarded match - 2026-11-27
 
 [Note 2729](WORKING_NOTES/2729-game-phase-height-update-guarded-match-20261127.md): `func_1511F788` matches105 body/slot words,
@@ -95,7 +104,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,708 / 5,528 (85.17%)**, leaving **268**
+verified production checkpoint is **4,709 / 5,528 (85.18%)**, leaving **267**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 
