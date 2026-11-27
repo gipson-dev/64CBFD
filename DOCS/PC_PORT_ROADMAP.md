@@ -1,5 +1,14 @@
 # PC Port Roadmap located in another project folder
 
+## Timed billboard targets direct match - 2026-11-27
+
+[Note 2732](WORKING_NOTES/2732-game-timed-billboard-targets-direct-match-20261127.md): `func_1514A19C` emits all121 words,
+20 relocation positions and frame32 directly from C, zero guards. Typed fields
+recover the three random timers, billboard extents and animation rate. Native,
+original RNG/caller, faults/rebases and strict image pass. All35 neighbors and
+data stay fixed. Total **4,711 / 5,528 (85.22%)**, Game **4,038 / 4,855 (83.17%)**,
+zero drift; **265 more accepted matches to90%**.
+
 ## Flag-clearing view-aligned quad direct match - 2026-11-27
 
 [Note 2731](WORKING_NOTES/2731-game-view-aligned-quad-flags-direct-match-20261127.md): `func_15149FD0` emits all115 words and
@@ -113,7 +122,7 @@ Total **4,699 / 5,528 (85.00%)**, Game **4,026 / 4,855 (82.92%)**, zero drift.
 
 The user raised the target from 85% to **90% byte-exact matching**. With the
 current denominator, at least **4,976 / 5,528** matches are required. The
-verified production checkpoint is **4,710 / 5,528 (85.20%)**, leaving **266**
+verified production checkpoint is **4,711 / 5,528 (85.22%)**, leaving **265**
 accepted matches. The 85% intermediate milestone is reached. Keep
 qualifying, recounting and committing coherent recoveries toward 90%.
 

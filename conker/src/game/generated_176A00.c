@@ -179,9 +179,54 @@ Vtx *func_15149FD0(u8 *actor, s16 view) {
 }
 
 
-s32 func_1514A19C() {
-    return 0;
+extern s32 D_800BE9E4;
+extern f32 D_800A5794, D_800A5798, D_800A579C;
+f32 func_150ADA68(void);
+
+/* Refresh randomized billboard extents and animation rate on independent timers. */
+typedef struct {
+    f32 widthUpper, widthLower, widthTarget;
+    f32 heightMiddle, heightLower, heightUpper, heightTarget;
+    s16 widthTimer, heightTimer;
+    u8 retained20[0x18];
+    f32 animationRateUpper, animationRateLower, animationRateTarget;
+    s16 animationRateTimer;
+} BillboardTargets1514A19C;
+
+s32 func_1514A19C(u8 *actor) {
+    BillboardTargets1514A19C *params = (BillboardTargets1514A19C *)(actor + 0x110);
+
+    *(s16 *)(actor + 0x12E) = (s16)((u32)(s32)*(s16 *)(actor + 0x12E) - (u32)D_800BE9E4);
+    if (*(s16 *)(actor + 0x12E) < 0) {
+        u32 delay = (u32)func_150ADA20() % 6u;
+        params->heightTimer = delay;
+        if (((u32)func_150ADA20() & 3u) != 0) {
+            params->heightTarget = func_150ADA68() *
+                (params->heightMiddle - params->heightLower) + params->heightLower;
+        } else {
+            params->heightTarget = func_150ADA68() *
+                (params->heightUpper - params->heightMiddle) + params->heightMiddle;
+        }
+    }
+    *(f32 *)(actor + 0x30) += (params->heightTarget - *(f32 *)(actor + 0x30)) * D_800A5794;
+    params->widthTimer = (s16)((u32)(s32)params->widthTimer - (u32)D_800BE9E4);
+    if (params->widthTimer < 0) {
+        params->widthTimer = (u32)func_150ADA20() % 17u;
+        params->widthTarget = func_150ADA68() *
+            (params->widthUpper - params->widthLower) + params->widthLower;
+    }
+    *(f32 *)(actor + 0x2C) += (params->widthTarget - *(f32 *)(actor + 0x2C)) * D_800A5798;
+    params->animationRateTimer = (s16)((u32)(s32)params->animationRateTimer - (u32)D_800BE9E4);
+    if (params->animationRateTimer < 0) {
+        params->animationRateTimer = (u32)func_150ADA20() % 15u;
+        params->animationRateTarget = func_150ADA68() *
+            (params->animationRateUpper - params->animationRateLower) + params->animationRateLower;
+    }
+    *(s32 *)(actor + 0x24) = (s32)((u32)(s32)((params->animationRateTarget - (f32)*(s32 *)(actor + 0x24)) * D_800A579C) +
+        (u32)*(s32 *)(actor + 0x24));
+    return 1;
 }
+
 
 /* Approach both target extents, then select the settled update callback. */
 s32 func_1514A380(u8 *owner) {
