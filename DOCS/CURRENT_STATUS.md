@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Owner packet-pair callback guarded match - 2026-11-27
+
+[Note 2735](WORKING_NOTES/2735-game-owner-packet-pair-callback-guarded-byte-match-20261127.md): `func_1514D64C` restores all 200 words,
+13 bindings and the original 296-byte frame using 44 closed compiler
+normalizations. All 77 neighbors and pools remain unchanged. Native, guest,
+original helpers, the complete dispatcher, actual Make and a strict 656-byte
+image prediction pass. Total **4,714 / 5,528 (85.27%)**, Game **4,041 / 4,855
+(83.23%)**, zero drift; **262 more to 90%**.
+
 ## Owner and level action classifier match - 2026-11-27
 
 [Note 2734](WORKING_NOTES/2734-game-owner-level-action-classifier-direct-match-20261127.md): `func_1514CA80` restores all 439 words,

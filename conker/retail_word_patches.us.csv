@@ -44052,3 +44052,47 @@ generated_179F30,func_1514CA80,0x520,0x8C2F03C4,0x8C2F0000,R_MIPS_LO16:.rodata,R
 generated_179F30,func_1514CA80,0x598,0x3C010000,0x3C010000,R_MIPS_HI16:.rodata,R_MIPS_HI16:jtbl_800A5DBC,Bind the recovered classifier switch to its original retail jump table,,,false
 generated_179F30,func_1514CA80,0x5A0,0x8C380410,0x8C380000,R_MIPS_LO16:.rodata,R_MIPS_LO16:jtbl_800A5DBC,Bind the recovered classifier switch to its original retail jump table,,,false
 generated_179F30,func_1514EA1C,0x020,0x8C2E0438,0x8C2E0000,R_MIPS_LO16:.rodata,R_MIPS_LO16:.rodata,Preserve the existing owner switch binding after the classifier adds four local tables,,,false
+generated_179F30,func_1514D64C,0x00C,0x27BDFED0,0x27BDFED8,-,-,Remove unused compiler frame tail; all packet extents and saved roles remain within retail frame,,,false
+generated_179F30,func_1514D64C,0x074,0xA3B800B9,0xAFAF00B4,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x078,0xAFAF00B4,0xA7A00078,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x07C,0xA7A00078,0xA3B800B9,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x080,0xA3A80087,0xA3B90084,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x084,0xA3B90084,0xA3A00085,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x088,0xA3A00085,0xA3A00086,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x08C,0xA3A00086,0xA3A80087,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x0F8,0xE7A00058,0xE7A00054,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x0FC,0xE7A00054,0xE7A00058,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x100,0xE7A00064,0xE7A00060,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x104,0xE7A00060,0xE7A00064,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x10C,0xA3A00123,0xA3A00120,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x110,0xA3A00122,0xA3A00121,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x114,0xA3A00121,0xA3A00122,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x118,0xA3A00120,0xA3A00123,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x164,0x44817000,0x44811000,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x16C,0x44818000,0x44816000,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x174,0xC4220000,0xC42E0000,R_MIPS_LO16:D_800A5DF8,R_MIPS_LO16:D_800A5DF8,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x180,0xC42C0000,0xC4300000,R_MIPS_LO16:D_800A5DFC,R_MIPS_LO16:D_800A5DFC,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x1BC,0xA3AF00B9,0xAFAE00B4,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1C0,0xAFAE00B4,0xA7A00078,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1C4,0xA7A00078,0xA3AF00B9,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1C8,0xA3B90087,0xA3B80084,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1CC,0xA3B80084,0xA3A00085,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1D0,0xA3A00085,0xA3A00086,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1D4,0xA3A00086,0xA3B90087,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x1DC,0xE7AE00CC,0xE7A200CC,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x1E0,0xE7AE00D0,0xE7A200D0,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x1E4,0xE7B000D4,0xE7AC00D4,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x1E8,0xE7A200DC,0xE7AE00DC,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x1EC,0xE7A200E0,0xE7AE00E0,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x208,0xE7AC00E4,0xE7B000E4,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x20C,0xE7AC00E8,0xE7B000E8,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x240,0xA3AA0070,0xAFB0006C,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x244,0xAFB0006C,0xA3AA0070,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x248,0xA3A00123,0xA3A00120,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x24C,0xA3A00122,0xA3A00121,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x250,0xA3A00121,0xA3A00122,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x254,0xA3A00120,0xA3A00123,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x278,0xE7B00058,0xE7AC0058,-,-,Normalize closed phase-two COP1 bit-transfer register roles,,,false
+generated_179F30,func_1514D64C,0x27C,0xE7A00060,0xE7A00054,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x280,0xE7A00054,0xE7A00060,-,-,Normalize independent nonoverlapping packet initialization stores,,,false
+generated_179F30,func_1514D64C,0x314,0x27BD0130,0x27BD0128,-,-,Remove unused compiler frame tail; all packet extents and saved roles remain within retail frame,,,false
