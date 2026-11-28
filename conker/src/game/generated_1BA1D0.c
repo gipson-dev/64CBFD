@@ -58,7 +58,7 @@ extern s32 D_800BE9E4;
 f32 func_151423D8(u8);
 typedef struct { u32 words[20]; } Generated1BA1D0Preset;
 extern Generated1BA1D0Preset *D_8008D630[];
-s32 func_1518FDC4();
+s32 func_1518FDC4(u8 *record, u8 *presetIndex, u8 variant);
 void *func_1518F5D0(struct127 *, const Generated1BA1D0Preset *, s16, s8, s8, s8, u8, s32, u8, s32);
 f32 func_150ADA68();
 s32 func_150ADA20(void);
@@ -691,9 +691,143 @@ void func_1518FC84(ReleaseChainNode *record, void *payload) {
     child->flags |= 0x08000001;
 }
 
-s32 func_1518FDC4() {
-    return 0;
+/* Classify the record preset; only variant zero accepts a supported type. */
+s32 func_1518FDC4(u8 *record, u8 *presetIndex, u8 variant) {
+    switch (record[4]) {
+        case 0x87:
+        case 0xB0:
+            *presetIndex = 13;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0xB1:
+            *presetIndex = 14;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0xB4:
+            *presetIndex = 15;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x70:
+        case 0xB2:
+            *presetIndex = 16;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x53:
+            *presetIndex = 17;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x96:
+            *presetIndex = 18;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x0:
+        case 0x1:
+        case 0x2:
+        case 0x3:
+        case 0x4:
+            *presetIndex = 0;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x49:
+            *presetIndex = 1;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x58:
+            *presetIndex = 2;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x50:
+            *presetIndex = 3;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x5A:
+        case 0x5F:
+        case 0x74:
+        case 0x75:
+        case 0x7A:
+            *presetIndex = 4;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x80:
+            *presetIndex = 5;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x11:
+        case 0x14:
+        case 0x3B:
+        case 0x98:
+        case 0x99:
+            *presetIndex = 6;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x16:
+            *presetIndex = 7;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x88:
+        case 0x90:
+            *presetIndex = 8;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x9C:
+            *presetIndex = 9;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x9D:
+            *presetIndex = 10;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0x9F:
+            *presetIndex = 11;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        case 0xA0:
+            *presetIndex = 12;
+            if (variant > 0) {
+                return 0;
+            }
+            return 1;
+        default:
+            return 0;
+    }
 }
+
 
 extern u8 D_800A7AFC[], D_800A7B00[], D_800A7B04[], D_800A7B08[], D_800A7B0C[], D_800A7B10[], D_800A7AC8[], D_800A7ACC[], D_800A7AD0[], D_800A7AD4[], D_800A7AD8[], D_800A7ADC[], D_800A7AE0[], D_800A7AE4[], D_800A7AE8[], D_800A7AEC[], D_800A7AF0[], D_800A7AF4[], D_800A7AF8[];
 

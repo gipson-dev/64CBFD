@@ -219,8 +219,8 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_FC5F0.c.o: RETAIL_RODATA_SYMBOL := D_800A
 # Table debris emits its original three motion literals at one fixed anchor.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_19E040.c.o: RETAIL_RODATA_SYMBOL := D_800A6FA4
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_1AC2F0.c.o: RETAIL_RODATA_SYMBOL := D_800A7280
-# The preset byte selector uses its original two contiguous jump tables.
-$(BUILD_DIR)/$(SRC_DIR)/game/generated_1BA1D0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A7DC0
+# The preset classifiers use four contiguous original jump tables.
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_1BA1D0.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A7B7C
 # Selector point transform uses its preserved six-way retail jump table.
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11F780.c.o: RETAIL_RODATA_SYMBOL := jtbl_800A192C
 $(BUILD_DIR)/$(SRC_DIR)/game/generated_11FF10.c.o: RETAIL_RODATA_SYMBOL := D_800A196C

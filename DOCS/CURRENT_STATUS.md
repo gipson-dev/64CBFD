@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Preset variant classifier direct match - 2026-11-28
+
+[Note 2746](WORKING_NOTES/2746-game-preset-variant-classifier-direct-byte-match-20261128.md):
+`func_1518FDC4` restores 158 words directly from C with no new guards. The full
+original wrapper, retained selector, all four tables and strict 479-byte image
+checks pass. Total **4,725 / 5,528 (85.47%)**, Game **4,052 / 4,855 (83.46%)**,
+zero drift; **251 more matches to 90%**.
+
 ## Byte preset pointer selector direct match - 2026-11-28
 
 [Note 2745](WORKING_NOTES/2745-game-byte-preset-pointer-selector-direct-byte-match-20261128.md):
