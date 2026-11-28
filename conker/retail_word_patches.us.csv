@@ -44250,3 +44250,5 @@ generated_105760,func_150D83D8,0x19c,0x44099000,0x44089000,-,-,Certified closed 
 generated_105760,func_150D83D8,0x1a4,0x31280fff,0x310a0fff,-,-,Certified closed temporary-register allocation cycles; exact access and FP order,,,false
 generated_105760,func_150D83D8,0x1a8,0x1015025,0x1415825,-,-,Certified closed temporary-register allocation cycles; exact access and FP order,,,false
 generated_105760,func_150D83D8,0x1ac,0xad8a0000,0xadab0000,-,-,Certified closed temporary-register allocation cycles; exact access and FP order,,,false
+generated_14D110,func_151216F8,0x98,0x8C8E0084,0x44819000,-,-,Normalize independent type-default flag load and FP constant schedule,,,false
+generated_14D110,func_151216F8,0x9C,0x44819000,0x8C8E0084,-,-,Normalize independent type-default flag load and FP constant schedule,,,false

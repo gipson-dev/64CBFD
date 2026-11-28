@@ -15,8 +15,51 @@ s32 func_15120158() {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/generated_14D110/func_15121490.s")
 
-s32 func_151216F8() {
-    return 0;
+extern s32 D_800BE9F0;
+
+/* Select the actor type's default motion parameters and optional flag. */
+void func_151216F8(u8 *actor) {
+    s32 type = actor[0x23E];
+
+    if (type != 0) {
+        if (type == 0x34) {
+            *(f32 *)(actor + 0x190) = 80.0f;
+            *(f32 *)(actor + 0x784) = 350.0f;
+        } else if (type == 0x3B && (D_800BE9F0 == 0x41 || D_800BE9F0 == 0x3C)) {
+            *(f32 *)(actor + 0x190) = -12.0f;
+            *(f32 *)(actor + 0x99C) = -28.0f;
+            *(f32 *)(actor + 0x784) = 106.0f;
+        } else if (type == 2 || type == 0xA || type == 0x13) {
+            *(u32 *)(actor + 0x84) |= 0x80;
+            *(f32 *)(actor + 0x190) = 10.0f;
+            *(f32 *)(actor + 0x784) = 135.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        } else if (type == 0x12 && D_800BE9F0 == 0x3C) {
+            *(f32 *)(actor + 0x190) = 10.0f;
+            *(f32 *)(actor + 0x784) = 180.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        } else if (type == 0xF) {
+            *(f32 *)(actor + 0x190) = 10.0f;
+            *(f32 *)(actor + 0x784) = 480.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        } else if (type == 0x38) {
+            *(f32 *)(actor + 0x784) = 110.0f;
+            *(f32 *)(actor + 0x190) = 5.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        } else if (type == 0x15) {
+            *(f32 *)(actor + 0x784) = 110.0f;
+            *(f32 *)(actor + 0x190) = 25.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        } else {
+            *(f32 *)(actor + 0x190) = 5.0f;
+            *(f32 *)(actor + 0x784) = 75.0f;
+            *(f32 *)(actor + 0x99C) = 0.0f;
+        }
+    } else {
+        *(f32 *)(actor + 0x784) = 90.0f;
+        *(f32 *)(actor + 0x190) = 25.0f;
+        *(f32 *)(actor + 0x99C) = 0.0f;
+    }
 }
 
 typedef struct {

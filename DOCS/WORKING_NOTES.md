@@ -1,5 +1,13 @@
 # Working Notes
 
+## Actor type parameter defaults guarded match - 2026-11-28
+
+[Note 2744](WORKING_NOTES/2744-game-actor-type-parameter-defaults-guarded-byte-match-20261128.md):
+`func_151216F8` restores 115 words with two independent scheduling guards; four
+neighbors and one assembly body stay fixed. Native, guest, both original direct
+callers and strict 394-byte image checks pass. Total **4,723 / 5,528 (85.44%)**,
+Game **4,050 / 4,855 (83.42%)**, zero drift; **253 more matches to 90%**.
+
 ## Secondary effect angle/motion direct match - 2026-11-28
 
 [Note 2743](WORKING_NOTES/2743-game-secondary-angle-motion-direct-byte-match-20261128.md):
