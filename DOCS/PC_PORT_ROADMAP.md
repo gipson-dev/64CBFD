@@ -1,5 +1,13 @@
 # PC Port Roadmap located in another project folder
 
+## Byte preset pointer selector direct match - 2026-11-28
+
+[Note 2745](WORKING_NOTES/2745-game-byte-preset-pointer-selector-direct-byte-match-20261128.md):
+`func_1519003C` restores 120 words directly from C with no new guards, preserving
+sixty neighbors and both original jump tables. Native, guest, both original
+pointer/count consumers and strict 701-byte image checks pass. Total **4,724 /
+5,528 (85.46%)**, Game **4,051 / 4,855 (83.44%)**, zero drift; **252 more to 90%**.
+
 ## Actor type parameter defaults guarded match - 2026-11-28
 
 [Note 2744](WORKING_NOTES/2744-game-actor-type-parameter-defaults-guarded-byte-match-20261128.md):

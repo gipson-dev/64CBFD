@@ -695,9 +695,108 @@ s32 func_1518FDC4() {
     return 0;
 }
 
-s32 func_1519003C() {
-    return 0;
+extern u8 D_800A7AFC[], D_800A7B00[], D_800A7B04[], D_800A7B08[], D_800A7B0C[], D_800A7B10[], D_800A7AC8[], D_800A7ACC[], D_800A7AD0[], D_800A7AD4[], D_800A7AD8[], D_800A7ADC[], D_800A7AE0[], D_800A7AE4[], D_800A7AE8[], D_800A7AEC[], D_800A7AF0[], D_800A7AF4[], D_800A7AF8[];
+
+/* Select the byte preset and report whether the record type has an entry. */
+u8 *func_1519003C(u8 *record, s32 *count) {
+    u8 *preset;
+
+    switch (record[4]) {
+        case 0x87:
+        case 0xB0:
+            preset = D_800A7AFC;
+            *count = 1;
+            break;
+        case 0xB1:
+            preset = D_800A7B00;
+            *count = 1;
+            break;
+        case 0xB4:
+            preset = D_800A7B04;
+            *count = 1;
+            break;
+        case 0x70:
+        case 0xB2:
+            preset = D_800A7B08;
+            *count = 1;
+            break;
+        case 0x53:
+            preset = D_800A7B0C;
+            *count = 1;
+            break;
+        case 0x96:
+            preset = D_800A7B10;
+            *count = 1;
+            break;
+        case 0x0:
+        case 0x1:
+        case 0x2:
+        case 0x3:
+        case 0x4:
+            preset = D_800A7AC8;
+            *count = 1;
+            break;
+        case 0x49:
+            preset = D_800A7ACC;
+            *count = 1;
+            break;
+        case 0x58:
+            preset = D_800A7AD0;
+            *count = 1;
+            break;
+        case 0x50:
+            preset = D_800A7AD4;
+            *count = 1;
+            break;
+        case 0x75:
+            preset = D_800A7AD8;
+            *count = 1;
+            break;
+        case 0x80:
+            preset = D_800A7ADC;
+            *count = 1;
+            break;
+        case 0x11:
+        case 0x14:
+        case 0x3B:
+        case 0x98:
+        case 0x99:
+            preset = D_800A7AE0;
+            *count = 1;
+            break;
+        case 0x16:
+            preset = D_800A7AE4;
+            *count = 1;
+            break;
+        case 0x88:
+        case 0x90:
+            preset = D_800A7AE8;
+            *count = 1;
+            break;
+        case 0x9C:
+            preset = D_800A7AEC;
+            *count = 1;
+            break;
+        case 0x9D:
+            preset = D_800A7AF0;
+            *count = 1;
+            break;
+        case 0x9F:
+            preset = D_800A7AF4;
+            *count = 1;
+            break;
+        case 0xA0:
+            preset = D_800A7AF8;
+            *count = 1;
+            break;
+        default:
+            preset = NULL;
+            *count = 0;
+            break;
+    }
+    return preset;
 }
+
 
 typedef struct {
     struct127 *owner;
