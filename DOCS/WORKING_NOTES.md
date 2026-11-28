@@ -1,5 +1,14 @@
 # Working Notes
 
+## Rate-driven emitter direct match - 2026-11-27
+
+[Note 2740](WORKING_NOTES/2740-game-rate-driven-emitter-direct-byte-match-20261127.md):
+`func_150E9E34` restores all 105 words and its 144-byte frame with no text-word
+guards. Its checked literal binding, original callback, native/guest tests,
+actual Make and complete 347-byte image prediction pass. The provider's ABI
+repair remains unmatched. Total **4,719 / 5,528 (85.37%)**, Game **4,046 / 4,855
+(83.34%)**, zero drift; **257 more to 90%**.
+
 ## Channel fade and transition updater guarded match - 2026-11-27
 
 [Note 2739](WORKING_NOTES/2739-game-channel-fade-transition-updater-guarded-byte-match-20261127.md): `func_150617BC` restores all 108 words
