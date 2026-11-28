@@ -1,5 +1,13 @@
 # Working Notes
 
+## Secondary effect angle/motion direct match - 2026-11-28
+
+[Note 2743](WORKING_NOTES/2743-game-secondary-angle-motion-direct-byte-match-20261128.md):
+`func_150EA944` restores 115 direct C words without new guards; ten neighboring
+functions and five assembly bodies stay fixed. Native, guest, original callback
+windows and strict 326-byte image checks pass. Total **4,722 / 5,528 (85.42%)**,
+Game **4,049 / 4,855 (83.40%)**, zero drift; **254 more matches to 90%**.
+
 ## Material tile transition callback guarded match - 2026-11-28
 
 [Note 2742](WORKING_NOTES/2742-game-material-tile-transition-guarded-byte-match-20261128.md):

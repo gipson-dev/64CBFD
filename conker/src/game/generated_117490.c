@@ -40,9 +40,51 @@ void func_150EA904(u8 arg0, s32 arg1) {
     }
 }
 
-s32 func_150EA944() {
-    return 0;
+extern s32 D_800BE9E4;
+
+/* Integrate the enabled effect's angles, fixed-point motion and life byte. */
+void func_150EA944(u8 *effect) {
+    f32 ticks;
+    s32 remaining;
+
+    if ((effect[0x73] & 3) == 3) {
+        ticks = (f32)D_800BE9E4;
+        *(f32 *)(effect + 0) += *(f32 *)(effect + 0x60) * ticks;
+        if (*(f32 *)(effect + 0) < 0.0f) {
+            *(f32 *)(effect + 0) += 360.0f;
+        } else if (*(f32 *)(effect + 0) >= 360.0f) {
+            *(f32 *)(effect + 0) -= 360.0f;
+        }
+        *(f32 *)(effect + 4) += *(f32 *)(effect + 0x64) * ticks;
+        if (*(f32 *)(effect + 4) < 0.0f) {
+            *(f32 *)(effect + 4) += 360.0f;
+        } else if (*(f32 *)(effect + 4) >= 360.0f) {
+            *(f32 *)(effect + 4) -= 360.0f;
+        }
+        *(f32 *)(effect + 8) += *(f32 *)(effect + 0x68) * ticks;
+        if (*(f32 *)(effect + 8) < 0.0f) {
+            *(f32 *)(effect + 8) += 360.0f;
+        } else if (*(f32 *)(effect + 8) >= 360.0f) {
+            *(f32 *)(effect + 8) -= 360.0f;
+        }
+        remaining = effect[0x8A];
+        *(s16 *)(effect + 0x5C) = (u32)*(s16 *)(effect + 0x5C) -
+            (u32)*(s32 *)(effect + 0x3C) * (u32)D_800BE9E4;
+        *(s16 *)(effect + 0x10) = (u32)*(s16 *)(effect + 0x5A) * (u32)D_800BE9E4 +
+            (u32)*(s16 *)(effect + 0x10);
+        *(u32 *)(effect + 0x7C) += (u32)*(s16 *)(effect + 0x5C) * (u32)D_800BE9E4;
+        *(s16 *)(effect + 0x12) = (s32)*(u32 *)(effect + 0x7C) >> 3;
+        *(s16 *)(effect + 0x14) = (u32)*(s16 *)(effect + 0x5E) * (u32)D_800BE9E4 +
+            (u32)*(s16 *)(effect + 0x14);
+        remaining = (s32)((u32)remaining - ((u32)D_800BE9E4 << 2));
+        if (remaining > 0) {
+            effect[0x8A] = remaining;
+        } else {
+            effect[0x6E] = 1;
+        }
+    }
 }
+
 
 s32 func_150EAB10() {
     return 0;
