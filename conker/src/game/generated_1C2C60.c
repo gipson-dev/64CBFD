@@ -1061,9 +1061,57 @@ s32 func_15198570(u8 *owner) {
     return 0;
 }
 
+extern struct127 D_800CC2D0[26];
+extern s32 D_800D121C;
+extern f32 D_800A8ADC;
+/* Retire ring entries whose points overlap another live actor. */
 s32 func_151987CC(u8 *owner) {
-    return 0;
+    EffectPayload15196438 *payload;
+    EffectRecord15196748 *records;
+    struct127 *actor;
+    EffectPoint15196438 point;
+    s32 cursor;
+    f32 width;
+    f32 height;
+    f32 dx;
+    f32 dy;
+    f32 dz;
+
+    payload = (EffectPayload15196438 *)*(u8 **)(owner + 0x98);
+    records = (EffectRecord15196748 *)*(u8 **)(owner + 0x94);
+    actor = D_800CC2D0;
+    do {
+        if (actor->interaction_state != 0 && actor->unk65 == 0 &&
+            actor->unique_id != payload->owner->unique_id) {
+            cursor = *(s8 *)(owner + 0x2E);
+            while (cursor != *(s8 *)(owner + 0x2D)) {
+                    cursor--;
+                    if (cursor < 0) {
+                        cursor = owner[0x25] - 1;
+                    }
+                    width = actor->unkE4;
+                    height = actor->unkE6;
+                    point = records[cursor].point;
+                    dx = point.axis[0] - actor->x_position;
+                    dz = point.axis[2] - actor->z_position;
+                    dy = point.axis[1] - (actor->y_position + (s16)actor->unkE8);
+                    dy *= (1.0f + width / height) * 0.5f;
+                    if (dx * dx + dy * dy + dz * dz < width * width + 2500.0f) {
+                        while (cursor != *(s8 *)(owner + 0x2D)) {
+                            (*(s8 *)(owner + 0x2D))++;
+                            if (*(s8 *)(owner + 0x2D) == owner[0x25]) {
+                                *(s8 *)(owner + 0x2D) = 0;
+                            }
+                            (*(s8 *)(owner + 0x2C))--;
+                        }
+                    }
+            }
+        }
+        actor++;
+    } while (actor != (struct127 *)&D_800D121C);
+    return 1;
 }
+
 
 s32 func_1519897C(u8 *owner) {
     return 0;

@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Actor/ring proximity callback guarded match - 2026-11-28
+
+[Note 2741](WORKING_NOTES/2741-game-actor-ring-proximity-guarded-byte-match-20261128.md):
+`func_151987CC` restores all 108 words using a certified private-frame/register
+map and 58 guards. All 68 neighbors stay fixed. Native/guest, complete original
+caller, actual Make and a strict 331-byte full-image prediction pass. Total
+**4,720 / 5,528 (85.38%)**, Game **4,047 / 4,855 (83.36%)**, zero drift;
+**256 more to 90%**.
+
 ## Rate-driven emitter direct match - 2026-11-27
 
 [Note 2740](WORKING_NOTES/2740-game-rate-driven-emitter-direct-byte-match-20261127.md):

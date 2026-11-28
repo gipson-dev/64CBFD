@@ -117,7 +117,7 @@ MIXED_PROFILE_GENERATED_SLICE_O_FILES := \
 ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES := $(BUILD_DIR)/$(SRC_DIR)/game/generated_10EF60.c.o
 GLOBAL_ASM_GENERATED_SLICE_O_FILES := $(filter-out $(BUILD_DIR)/$(SRC_DIR)/game/generated_B3020.c.o,$(filter $(GLOBAL_ASM_O_FILES),$(GENERATED_SLICE_O_FILES)))
 STANDARD_GENERATED_SLICE_O_FILES := \
-	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/game/generated_108320.c.o $(BUILD_DIR)/$(SRC_DIR)/game/generated_116D40.c.o,$(GENERATED_SLICE_O_FILES))
+	$(filter-out $(MIXED_PROFILE_GENERATED_SLICE_O_FILES) $(ISOLATED_WRAPPER_GENERATED_SLICE_O_FILES) $(GLOBAL_ASM_GENERATED_SLICE_O_FILES) $(BUILD_DIR)/$(SRC_DIR)/game/generated_108320.c.o $(BUILD_DIR)/$(SRC_DIR)/game/generated_116D40.c.o $(BUILD_DIR)/$(SRC_DIR)/game/generated_1C2C60.c.o,$(GENERATED_SLICE_O_FILES))
 RETAIL_LAYOUT := retail_layout.$(VERSION).txt
 # These objects either own allocatable non-text sections or do not have a
 # one-to-one function map in progress.csv. Keep their original object layout.
@@ -496,6 +496,18 @@ $(BUILD_DIR)/$(SRC_DIR)/game/generated_116D40.c.o: $(SRC_DIR)/game/generated_116
 	$(PYTHON) ../tools/check_rate_driven_emitter_150e9e34_pool.py $@.compact --bind-assembly $@.bound.s
 	$(AS) $(ASFLAGS) -o $@.bound.compact $@.bound.s
 	$(PYTHON) ../tools/pad_generated_object.py $@.bound.compact asm/116D40.s $@.padded.s --word-patches retail_word_patches.us.csv --filename generated_116D40
+	$(AS) $(ASFLAGS) -o $@ $@.padded.s
+	$(RM) $@.compact $@.padded.s $@.bound.compact $@.bound.s
+endif
+
+# This actor/ring callback has one verified 2500.0f literal and twelve zero alignment bytes.
+# Bind only after checking the complete compact owner, all functions, pool and relocations.
+ifeq ($(VERSION),us)
+$(BUILD_DIR)/$(SRC_DIR)/game/generated_1C2C60.c.o: $(SRC_DIR)/game/generated_1C2C60.c asm/1C2C60.s include/structs.h ../tools/check_actor_ring_proximity_151987cc_pool.py ../tools/experiments/game_actor_ring_proximity_151987cc_manifest.json ../tools/pad_generated_object.py retail_word_patches.us.csv Makefile
+	$(CC) -c -32 $(CFLAGS) $(OPT_FLAGS) $(MIPSBIT) -o $@.compact $<
+	$(PYTHON) ../tools/check_actor_ring_proximity_151987cc_pool.py $@.compact --bind-assembly $@.bound.s
+	$(AS) $(ASFLAGS) -o $@.bound.compact $@.bound.s
+	$(PYTHON) ../tools/pad_generated_object.py $@.bound.compact asm/1C2C60.s $@.padded.s --word-patches retail_word_patches.us.csv --filename generated_1C2C60
 	$(AS) $(ASFLAGS) -o $@ $@.padded.s
 	$(RM) $@.compact $@.padded.s $@.bound.compact $@.bound.s
 endif
