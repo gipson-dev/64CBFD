@@ -261,6 +261,68 @@ void *func_150F6890(u8 *owner, s16 lifetime, s32 unusedSelector, s32 unusedConte
     return func_15134DAC((s32)&packet, 0);
 }
 
-s32 func_150F695C() {
-    return 0;
+typedef struct HeightActor71820 HeightActor71820;
+typedef struct HeightResult71820 {
+    f32 height;
+    s16 vertices[9];
+    s16 pad16;
+    u32 metadata;
+    u8 flags;
+    u8 state;
+    u16 pad1E;
+    s32 value;
+} HeightResult71820;
+
+typedef struct {
+    u8 retained00;
+    u8 context;
+    u8 retained02[10];
+    u8 group;
+    u8 retained0D[15];
+    HeightActor71820 *actor;
+    u8 retained20[0x54];
+    f32 derivativeScale;
+} Emitter1228D0;
+
+extern f32 D_800A1B74, D_800A1B78, D_800A1B7C;
+void func_15137F30(f32 *, f32 *, f32 *, f32 *, f32, void *,
+    f32 *, f32 *, f32 *, f32 *, s16 *, u8 *, f32 *);
+void func_1504715C(HeightResult71820 *, HeightActor71820 *);
+/* Assembly API: argument 12 carries a surface address as an O32 word. */
+void *func_151D9014(void *, f32 *, u8, f32, s16, u8, f32, u8,
+    f32, f32, u8, s32, u8, u8, u8, s32);
+
+/* Interpolate an emitter sample and submit a randomized surface-aware effect. */
+void func_150F695C(f32 *position, f32 *direction, f32 *positionStep,
+                  f32 *directionStep, f32 time, Emitter1228D0 *emitter) {
+    f32 interpolatedPosition[3];
+    f32 interpolatedDirection[3];
+    f32 velocity[3];
+    f32 angle;
+    s16 lifetime;
+    u8 alpha;
+    f32 scale;
+    HeightResult71820 surface;
+    u8 useSurface;
+    s32 alternate;
+
+    func_15137F30(position, direction, positionStep, directionStep, time,
+        emitter, interpolatedPosition, interpolatedDirection, velocity,
+        &angle, &lifetime, &alpha, &scale);
+    scale *= 1.0f + func_150ADA68() * 2.0f;
+    useSurface = func_150ADA68() < D_800A1B74;
+    if (useSurface) {
+        func_1504715C(&surface, emitter->actor);
+    } else {
+        surface.metadata = 0;
+        surface.flags = 0;
+        surface.state = 0;
+        surface.value = 0;
+        surface.height = D_800A1B78;
+    }
+    if (useSurface) alternate = func_150ADA68() < 0.5f ? 1 : 0;
+    else alternate = 0;
+    func_151D9014(interpolatedPosition, velocity, 1, angle, lifetime, alpha,
+        scale, useSurface, D_800A1B7C, D_800A1B7C, 1, (s32)&surface, 1,
+        alternate, emitter->group, emitter->context);
 }

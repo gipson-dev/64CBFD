@@ -1,5 +1,14 @@
 # Update Log
 
+## Effect surface callback guarded match - 2026-11-28
+
+[Note 2751](WORKING_NOTES/2751-game-effect-surface-callback-guarded-byte-match-20261128.md):
+`func_150F695C` restores 103 body words and retains its two alignment words;
+12 guards recover the optional-surface boolean layout. Callback/provider ABI,
+original caller window, both owners and the strict full image pass. Total
+**4,730 / 5,528 (85.56%)**, Game **4,057 / 4,855 (83.56%)**, zero drift;
+**246 more to 90%**.
+
 ## Resource slot initializer guarded match - 2026-11-28
 
 [Note 2750](WORKING_NOTES/2750-game-resource-slot-initializer-guarded-byte-match-20261128.md):

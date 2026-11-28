@@ -44311,3 +44311,15 @@ game_36680,func_1500AC14,0x130,0x26940004,0x26100010,-,-,Normalize resource-slot
 game_36680,func_1500AC14,0x134,0x26100010,0x26940004,-,-,Normalize resource-slot initializer closed register and control-flow layout,,,false
 game_36680,func_1500AC14,0x138,0x1656FFC7,0x1641FFC6,-,-,Normalize resource-slot initializer closed register and control-flow layout,,,false
 game_36680,func_1500AC14,0x13c,0x26730004,0x26B50004,-,-,Normalize resource-slot initializer closed register and control-flow layout,,,false
+generated_1228D0,func_150F695C,0x84,0x00001825,0x00001025,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x98,0x306C00FF,0x304C00FF,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x9c,0x24030001,0x24020001,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0xa0,0x306C00FF,0x304C00FF,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0xa8,0x01801825,0x304300FF,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0xb0,0xA3AC005B,0xA3A3005B,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0xf8,0x4608003C,0x00001025,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0xfc,0x00000000,0x4608003C,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x100,0x45000003,0x00000000,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x104,0x00000000,0x45000004,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x108,0x10000003,0x00000000,-,-,Normalize optional-surface boolean register and branch layout,,,false
+generated_1228D0,func_150F695C,0x114,0x00001025,0x00000000,-,-,Normalize optional-surface boolean register and branch layout,,,false

@@ -47,7 +47,8 @@ s32 func_15137610();
 s32 func_1513783C();
 s32 func_15137C64();
 s32 func_15137E60();
-s32 func_15137F30();
+void func_15137F30(f32 *, f32 *, f32 *, f32 *, f32, void *,
+    f32 *, f32 *, f32 *, f32 *, s16 *, u8 *, f32 *);
 s32 func_15138120();
 struct ActorEffectSurface;
 void func_151382E0(Position161520 *, s32, struct ActorEffectSurface *, u8, s32);
