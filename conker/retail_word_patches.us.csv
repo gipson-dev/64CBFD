@@ -44252,3 +44252,5 @@ generated_105760,func_150D83D8,0x1a8,0x1015025,0x1415825,-,-,Certified closed te
 generated_105760,func_150D83D8,0x1ac,0xad8a0000,0xadab0000,-,-,Certified closed temporary-register allocation cycles; exact access and FP order,,,false
 generated_14D110,func_151216F8,0x98,0x8C8E0084,0x44819000,-,-,Normalize independent type-default flag load and FP constant schedule,,,false
 generated_14D110,func_151216F8,0x9C,0x44819000,0x8C8E0084,-,-,Normalize independent type-default flag load and FP constant schedule,,,false
+generated_1B1600,func_15184150,0x44,0xAFB80038,0xAFB8003C,-,-,Preserve original private model-ID spill store and reload,,,false
+generated_1B1600,func_15184150,0x64,0x8FA40038,0x8FA4003C,-,-,Preserve original private model-ID spill store and reload,,,false

@@ -1,5 +1,15 @@
 # Current Decomp Status
 
+## Actor matrix extents guarded match - 2026-11-28
+
+[Note 2748](WORKING_NOTES/2748-game-actor-matrix-extents-guarded-byte-match-20261128.md):
+`func_15184150` restores all 134 words; 132 emit directly and two guards
+preserve one private model-ID spill pair in the original 64-byte frame.
+Explicitly sequenced output stores preserve aliased-output access order. Native aliases,
+literal normalized guest prefixes and the complete original caller pass. Total
+**4,727 / 5,528 (85.51%)**, Game **4,054 / 4,855 (83.50%)**, zero drift;
+**249 more to 90%**.
+
 ## Reference distance/vector gate direct match - 2026-11-28
 
 [Note 2747](WORKING_NOTES/2747-game-reference-distance-vector-gate-direct-byte-match-20261128.md):

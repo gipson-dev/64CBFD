@@ -32,9 +32,60 @@ typedef struct {
 extern f32 D_800D3688;
 extern f32 D_800D368C;
 
-s32 func_15184150() {
-    return 0;
+extern struct127 D_800CC2D0[26];
+extern struct124 *D_800D1C90[187];
+extern u8 D_800C3E90;
+s32 func_1502DB20(s32);
+typedef struct {
+    u8 retained[0x30];
+    f32 x, y, z;
+    u32 retained3C;
+} ExtentPosition15184150;
+
+/* Measure actor-relative matrix positions, falling back to model dimensions.
+ * The retail caller ignores the normal-path residual V0; early exits return zero. */
+s32 func_15184150(s32 actorIndex, f32 *x, f32 *y, f32 *z) {
+    struct127 *actor;
+    s32 modelId;
+    s32 count;
+    s32 i;
+    f32 dx, dy, dz;
+    ExtentPosition15184150 *positions;
+
+    actor = &D_800CC2D0[actorIndex];
+    modelId = actor->id;
+    *z = 0.0f;
+    *y = 0.0f;
+    *x = 0.0f;
+    if (actor->unk1D4 == NULL || D_800C3E90 != 0) {
+        return 0;
+    }
+    count = func_1502DB20(modelId);
+    for (i = 0; i < count; i++) {
+        positions = (ExtentPosition15184150 *)actor->unk1D4;
+        dx = positions[i].x;
+        dy = positions[i].y;
+        dz = positions[i].z;
+        dx -= actor->x_position;
+        dy -= actor->y_position;
+        dz -= actor->z_position;
+        if (dx < 0.0f) dx = -dx;
+        if (*x < dx) *x = dx;
+        if (dy < 0.0f) dy = -dy;
+        if (*y < dy) *y = dy;
+        if (dz < 0.0f) dz = -dz;
+        if (*z < dz) *z = dz;
+    }
+    if (*x == 0.0f || *y == 0.0f || *z == 0.0f) {
+        dx = (f32)D_800D1C90[actor->id]->unk1A;
+        dy = actor->xz_scale * dx;
+        *z = dy;
+        *x = dy;
+        dx = (f32)(D_800D1C90[actor->id]->unk1C + D_800D1C90[actor->id]->unk1E);
+        *y = actor->y_scale * dx;
+    }
 }
+
 
 s32 func_15184368() {
     return 0;
