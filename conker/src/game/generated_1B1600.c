@@ -40,9 +40,42 @@ s32 func_15184368() {
     return 0;
 }
 
-s32 func_15184DF0() {
-    return 0;
+extern struct127 D_800CC2D0[26];
+extern struct108 *D_800DBFF0;
+extern f32 D_800A7378;
+s32 func_150AD9A0(s32, s32, s32);
+
+/* Reject distant reference records, then scale and validate the output vector. */
+s32 func_15184DF0(s32 actorIndex, s32 recordIndex, f32 *x, f32 *y, f32 *z) {
+    f32 actorX, actorY, actorZ;
+    s32 distance;
+    f32 scale;
+
+    actorX = D_800CC2D0[actorIndex].x_position;
+    actorY = D_800CC2D0[actorIndex].y_position;
+    actorZ = D_800CC2D0[actorIndex].z_position;
+    distance = func_150AD9A0(
+        (s32)(actorX - D_800DBFF0[recordIndex].unk2F8),
+        (s32)(actorY - D_800DBFF0[recordIndex].unk2FC),
+        (s32)(actorZ - D_800DBFF0[recordIndex].unk300));
+    if (distance >= 2001) {
+        D_800D3688 = 0.0f;
+        D_800D368C = D_800D3688;
+        return 0;
+    }
+    func_15184150(actorIndex, x, y, z);
+    scale = D_800A7378;
+    *x *= scale;
+    *y *= scale;
+    *z *= scale;
+    if (*x == 0.0f || *y == 0.0f || *z == 0.0f) {
+        D_800D3688 = 0.0f;
+        D_800D368C = D_800D3688;
+        return 0;
+    }
+    return distance;
 }
+
 
 s32 func_15184FA4() {
     return 0;

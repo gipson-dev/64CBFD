@@ -1,5 +1,13 @@
 # Current Decomp Status
 
+## Reference distance/vector gate direct match - 2026-11-28
+
+[Note 2747](WORKING_NOTES/2747-game-reference-distance-vector-gate-direct-byte-match-20261128.md):
+`func_15184DF0` restores 109 words directly from C with the original 40-byte
+frame and no guards. Ordered FP/native aliases, the original five-word caller,
+guest prefixes and strict 326-byte image checks pass. Total **4,726 / 5,528
+(85.49%)**, Game **4,053 / 4,855 (83.48%)**, zero drift; **250 more to 90%**.
+
 ## Preset variant classifier direct match - 2026-11-28
 
 [Note 2746](WORKING_NOTES/2746-game-preset-variant-classifier-direct-byte-match-20261128.md):
