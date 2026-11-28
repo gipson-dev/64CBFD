@@ -362,8 +362,63 @@ void func_151872B0(s32 variant) {
     }
 }
 
-s32 func_151873E4() {
-    return 0;
+typedef struct {
+    u8 retained00[0x10];
+    s16 x;
+    s16 retained12;
+    s16 z;
+    u8 retained16[0x39];
+    u8 flags;
+    u16 width;
+    u16 depth;
+    u8 retained54[0x1A];
+    u8 disabled;
+    u8 retained6F[0x31];
+} OverlapEntity1B1600;
+extern s32 D_800DBEF0;
+extern OverlapEntity1B1600 *D_800DBEF4;
+extern s16 D_800D37E0[];
+extern s32 D_800DBE3C, D_800D3690, D_800DF0E4;
+extern s32 D_800DF0E8, D_800DF0EC, D_800DF0F0, D_800DF0F4;
+void func_1510F800(s32);
+void func_150A44F0(s32, s16 *, s32);
+ClipVertex *func_150A5E44(s16 *, ClipVertex *, f32 [4][4], ClipVertex *);
+
+/* Collect entity bounds overlapping the query and append their vertex output. */
+s32 func_151873E4(s32 x, s32 z, s32 halfSize, ClipVertex *out,
+                 f32 transform[4][4], ClipVertex *limit, s32 outCount) {
+    s32 selectedCount;
+    s32 index;
+    s32 extent;
+    OverlapEntity1B1600 *entity;
+    ClipVertex *end;
+
+    if (D_800DBEF0 == 0) return outCount;
+    func_1510F800(2);
+    out += outCount;
+    D_800DF0E8 = (s32)((u32)x - (u32)halfSize);
+    D_800DF0EC = (s32)((u32)x + (u32)halfSize);
+    D_800DF0F0 = (s32)((u32)z - (u32)halfSize);
+    D_800DF0F4 = (s32)((u32)z + (u32)halfSize);
+    selectedCount = 0;
+    for (index = 0; index < D_800DBEF0; index++) {
+        entity = &D_800DBEF4[index];
+        if (entity->disabled != 0 || (entity->flags & 0x60) != 0) continue;
+        extent = entity->depth < entity->width ? entity->width : entity->depth;
+        if (D_800DF0EC < (s32)((u32)(s32)entity->x - (u32)extent)) continue;
+        if ((s32)((u32)(s32)entity->x + (u32)extent) < D_800DF0E8) continue;
+        if (D_800DF0F4 < (s32)((u32)(s32)entity->z - (u32)extent)) continue;
+        if ((s32)((u32)(s32)entity->z + (u32)extent) < D_800DF0F0) continue;
+        D_800D37E0[selectedCount++] = index;
+    }
+    if (selectedCount != 0) {
+        func_150A44F0(selectedCount, D_800D37E0, 0);
+        D_800D3690 = D_800DBE3C;
+        D_800DF0E4 = selectedCount;
+        end = func_150A5E44(D_800D37E0, out, transform, limit);
+        outCount += end - out;
+    }
+    return outCount;
 }
 
 s32 func_151875E0() {

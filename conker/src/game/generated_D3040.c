@@ -10,7 +10,16 @@ s32 func_150A5C88() {
     return 0;
 }
 
-s32 func_150A5E44() {
+typedef struct {
+    f32 x, y, z;
+    s16 first, second, third;
+    u8 retained[2];
+} ClipVertex;
+
+/* ABI-only placeholder for the handwritten provider: matrix and limit are
+ * pointer arguments, and the result is the output cursor. Body unrecovered. */
+ClipVertex *func_150A5E44(s16 *indices, ClipVertex *out,
+                         f32 transform[4][4], ClipVertex *limit) {
     return 0;
 }
 

@@ -1,5 +1,14 @@
 # Current Decomp Status
 
+## Entity overlap collector direct match - 2026-11-28
+
+[Note 2749](WORKING_NOTES/2749-game-entity-overlap-collector-direct-byte-match-20261128.md):
+`func_151873E4` emits all 127 words directly with no guards. Its matrix/limit
+pointer ABI, original caller window and related provider declaration are
+qualified; the provider body remains unmatched and earns no credit. Total
+**4,728 / 5,528 (85.53%)**, Game **4,055 / 4,855 (83.52%)**, zero drift;
+**248 more to 90%**.
+
 ## Actor matrix extents guarded match - 2026-11-28
 
 [Note 2748](WORKING_NOTES/2748-game-actor-matrix-extents-guarded-byte-match-20261128.md):
