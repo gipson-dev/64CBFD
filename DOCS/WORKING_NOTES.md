@@ -1,5 +1,13 @@
 # Working Notes
 
+## Material tile transition callback guarded match - 2026-11-28
+
+[Note 2742](WORKING_NOTES/2742-game-material-tile-transition-guarded-byte-match-20261128.md):
+`func_150D83D8` restores 110 words with 16 certified GPR guards; eight neighbors
+stay fixed. Native, guest, original dispatcher and strict 358-byte image checks
+pass. Total **4,721 / 5,528 (85.40%)**, Game **4,048 / 4,855 (83.38%)**, zero
+drift; **255 more matches to 90%**.
+
 ## Actor/ring proximity callback guarded match - 2026-11-28
 
 [Note 2741](WORKING_NOTES/2741-game-actor-ring-proximity-guarded-byte-match-20261128.md):

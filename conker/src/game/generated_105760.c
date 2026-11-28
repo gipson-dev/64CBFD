@@ -40,9 +40,66 @@ s32 func_150D82BC(u8 *material, u8 *actor) {
     return 0;
 }
 
-s32 func_150D83D8() {
+extern s32 D_800BE9E4;
+extern f32 D_800A0B14;
+
+/* Advance the animation-gated material transition and its tile coordinate. */
+s32 func_150D83D8(u8 *material, u8 *actor) {
+    Gfx *commands;
+    s32 index;
+    s32 counter;
+    f32 fraction;
+    s32 coordinate;
+
+    /* Tick arithmetic wraps before the signed bounds tests. */
+    switch (*(s32 *)(material + 0x38)) {
+        case 0:
+            *(s32 *)(material + 0x3C) = 50;
+            *(s16 *)(material + 0x18) = D_80090298[27];
+            if (*(u16 *)(actor + 0x84) == 0x18D &&
+                *(f32 *)(*(u8 **)(actor + 0x2D0) + 8) >= 46.0f) {
+                *(s32 *)(material + 0x38) = 1;
+                *(s16 *)(material + 0x18) = D_80090298[28];
+            }
+            counter = *(s32 *)(material + 0x3C);
+            break;
+        case 1:
+            *(u32 *)(material + 0x3C) += (u32)D_800BE9E4;
+            counter = *(s32 *)(material + 0x3C);
+            if (counter >= 100) {
+                *(s32 *)(material + 0x3C) = 100;
+                *(s32 *)(material + 0x38) = 2;
+            }
+            counter = *(s32 *)(material + 0x3C);
+            break;
+        case 2:
+            if (*(u16 *)(actor + 0x84) == 0x18E &&
+                *(f32 *)(*(u8 **)(actor + 0x2D0) + 8) >= 34.0f) {
+                *(s32 *)(material + 0x38) = 3;
+            }
+            counter = *(s32 *)(material + 0x3C);
+            break;
+        case 3:
+            counter = (s32)((u32)*(s32 *)(material + 0x3C) - ((u32)D_800BE9E4 << 2));
+            *(s32 *)(material + 0x3C) = counter;
+            if (counter <= 0) {
+                *(s32 *)(material + 0x3C) = 0;
+                *(s32 *)(material + 0x38) = 4;
+                counter = 0;
+            }
+            break;
+        default:
+            counter = *(s32 *)(material + 0x3C);
+            break;
+    }
+    fraction = (f32)counter * D_800A0B14;
+    commands = **(Gfx ***)(material + 0x24);
+    for (index = 0; *(s8 *)&commands[index] != -14; index++) {}
+    coordinate = 120.0f * fraction + 2.0f;
+    commands[index].words.w0 = (coordinate & 0xFFF) | 0xF2002000;
     return 0;
 }
+
 
 u8 *func_150D8590(u16 *arg0, s32 arg1) {
     arg0[0] = 0x42;
