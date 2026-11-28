@@ -41,7 +41,7 @@ void func_1506045C(struct127 *, u32, u32, f32, s32);
 void func_15060BE0(struct127 *);
 s32 func_15060D54();
 s32 func_150611E8(s32 arg0, s32 arg1);
-s32 func_150617BC();
+void func_150617BC(struct127 *);
 s32 func_150619A8();
 s32 func_15061B4C();
 s32 func_150623F4();
@@ -1597,9 +1597,51 @@ void func_1506160C(struct127 *actor, u8 command, u8 first, u8 second, u8 slot) {
         }
     }
 }
-/* Non-matching C placeholders for asm/nonmatchings/game_83300/func_150617BC.s. */
-s32 func_150617BC() {
-    return 0;
+/* Update channel fades and complete the actor's transition state. */
+void func_150617BC(struct127 *actor) {
+    s32 slot;
+    s32 level;
+    s32 value;
+    u32 mask;
+    u8 *cursor;
+    if (actor->interaction_state != 0) {
+        mask = 1;
+        for (slot = 0, cursor = (u8 *)actor; slot <= D_80082FA0; slot++, cursor++) {
+            if (actor->unkE.ub[1] & mask) {
+                level = cursor[0xB];
+                if (level > 0) {
+                    value = D_800DBFF4.bytes[slot] == 0 ? level - 50 : 0;
+                    if (value < 0) value = 0;
+                    cursor[0xB] = value;
+                }
+            } else {
+                level = cursor[0xB];
+                if (level < 255) {
+                    value = D_800DBFF4.bytes[slot] == 0 ? level + 50 : 255;
+                    if (value > 255) value = 255;
+                    cursor[0xB] = value;
+                }
+            }
+            mask <<= 1;
+        }
+        if (actor->unkA != 0) {
+            if (actor->unk7 != actor->unk8) {
+                if (actor->unk7 < actor->unk8) {
+                    value = actor->unk7 + actor->unk9;
+                    if (value > actor->unk8) value = actor->unk8;
+                } else {
+                    value = actor->unk7 - actor->unk9;
+                    if (value < actor->unk8) value = actor->unk8;
+                }
+                actor->unk7 = value;
+            }
+            if (actor->unk7 == actor->unk8) {
+                if (actor->unkA == 6) func_15060F28(actor, 1);
+                else if (actor->unkA == 5) func_15060F28(actor, 2);
+                else actor->unkA = 0;
+            }
+        }
+    }
 }
 // ???
 s32 func_1506196C(u8 *arg0, s32 arg1) {

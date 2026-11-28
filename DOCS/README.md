@@ -1,5 +1,13 @@
 # Documentation
 
+## Channel fade and transition updater guarded match - 2026-11-27
+
+[Note 2739](WORKING_NOTES/2739-game-channel-fade-transition-updater-guarded-byte-match-20261127.md): `func_150617BC` restores all 108 words
+and its 32-byte frame with 11 closed clamp-CFG guards. All88 neighbors and 18
+assembly bodies stay fixed. Native, guest, original caller, actual Make and
+a strict 320-byte image prediction pass. Total **4,718 / 5,528 (85.35%)**,
+Game **4,045 / 4,855 (83.32%)**, zero drift; **258 more to 90%**.
+
 ## Vertex texture-coordinate updater guarded match - 2026-11-27
 
 [Note 2738](WORKING_NOTES/2738-game-vertex-texture-coordinate-updater-guarded-byte-match-20261127.md): `func_15062FC0` restores all 106 words

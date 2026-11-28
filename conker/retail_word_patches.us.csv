@@ -44165,3 +44165,14 @@ game_83300,func_15062FC0,0x064,0x00064100,0x00067900,-,-,Normalize the closed ve
 game_83300,func_15062FC0,0x068,0x00481021,0x004F1021,-,-,Normalize the closed vertex-bank temporary register roles,,,false
 game_83300,func_15062FC0,0x06C,0x00681821,0x006F1821,-,-,Normalize the closed vertex-bank temporary register roles,,,false
 game_83300,func_15062FC0,0x0D0,0x00C52821,0x00A62821,-,-,Preserve retail commutative integer offset ADDU operand order,,,false
+game_83300,func_150617BC,0x06C,0x15200003,0x15200006,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x074,0x10000001,0x2462FFCE,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x078,0x2462FFCE,0x04430004,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x07C,0x04430003,0xA0A2000B,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x080,0xA0A2000B,0x10000001,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0B4,0x15600003,0x15600007,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0BC,0x10000001,0x24620032,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0C0,0x24620032,0x28410100,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0C4,0x28410100,0x54200004,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0C8,0x54200003,0xA0A2000B,-,-,Normalize the closed channel-clamp branch graph,,,false
+game_83300,func_150617BC,0x0CC,0xA0A2000B,0x10000001,-,-,Normalize the closed channel-clamp branch graph,,,false
