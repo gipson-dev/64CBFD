@@ -3,6 +3,7 @@
 
 #include "structs.h"
 #include "sched.h"
+#include "resource_slots.h"
 
 /* defined */
 
@@ -885,7 +886,6 @@ extern u16 D_800B87A0[];
 
 extern u8  D_800BC448[];
 
-extern s32 D_800BE4A0; // struct/array of size 0x3c
 extern struct14 *D_800BE4F0;
 extern s32 D_800BE4E0;
 extern u8  D_800BE500[5]; // might be a struct?
@@ -1378,7 +1378,6 @@ extern u16  D_800DD444;
 extern s32  D_800DD460[2];
 extern s32  D_800DD478; // struct/array of size 0x618 (1560)
 
-extern s32  D_800DDA90; // struct/array of size 0xf0
 extern s32  D_800DDC00;
 extern s32  D_800DDC08;
 extern s32  D_800DDC04;

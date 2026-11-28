@@ -3,6 +3,9 @@
 #include "functions.h"
 #include "variables.h"
 
+/* This initializer has no parameters or consumed result. */
+void func_1500AC14(void);
+
 /* Generated placeholder declarations. */
 void func_1500E470(s32);
 /* End generated placeholder declarations. */

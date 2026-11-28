@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include "structs.h"
+#include "resource_slots.h"
 extern u32 D_800DDD58;
 
 
@@ -98,14 +99,7 @@ s32 func_1517BBAC() {
     return 0;
 }
 
-/* Private view of the pending pointer in each 16-byte record. */
-typedef struct {
-    u8 reserved00[8];
-    void *pending;
-    u8 reserved0C[4];
-} PendingRecord1A89B0;
-
-extern s32 D_800DDA90;
+/* Consume pending pointers from the shared resource-slot table. */
 extern s32 D_800DD478;
 extern u32 D_8003809C;
 s32 func_10006240(void *, void *, u32);
@@ -113,11 +107,11 @@ void func_10004074(void *);
 
 /* Process present destinations, then consume each nonempty pending slot. */
 void func_1517CFC4(void) {
-    PendingRecord1A89B0 *record;
+    ResourceSlot *record;
     s32 index;
     void *destination;
 
-    record = (PendingRecord1A89B0 *)&D_800DDA90;
+    record = D_800DDA90;
     for (index = 0; index != 15; index++) {
         if (record->pending != NULL) {
             destination = ((void **)&D_800DD478)[index * 26];

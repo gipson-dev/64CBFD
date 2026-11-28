@@ -26,16 +26,17 @@ typedef struct { u8 values[6]; } EffectPointIds36680;
 extern EffectPointIds36680 D_80082BF4;
 u8 *func_151149AC(u8);
 
-typedef struct { u8 flags, value; u8 padding[2]; s16 first, second; u8 tail[2]; } ChannelPreset36680;
+typedef struct { u8 flags, value; u16 span; s16 first, second; u8 divisor, retained09; } ChannelPreset36680;
 extern ChannelPreset36680 D_80095CE0[];
 extern u8 D_800DDBD0[], D_800DDBE0[], D_800DDBF0[], D_800DDBC0[], D_800DDC80[], D_80095CC4[], D_800DDC20[];
-extern s16 D_800BE438[][2], D_800BE478[];
+extern s16 D_800BE438[][2];
+extern u16 D_800BE478[];
 
 /* Generated placeholder declarations. */
 s32 func_15009334(s32 arg0);
 void func_1500A6D8(struct226 *actor, s32 command);
 void func_1500A7E8(struct226 *actor, s32 command);
-s32 func_1500AC14();
+void func_1500AC14(void);
 void func_1500AD84(s32, u32, u32);
 s32 func_1500AF08();
 s32 func_1500B1F4();
@@ -508,9 +509,49 @@ void func_1500ABA0(s32 arg0) {
     bzero(&D_800DD478, 1560);
 }
 
-/* Non-matching C placeholders for asm/nonmatchings/game_36680/func_1500AC14.s. */
-s32 func_1500AC14() {
-    return 0;
+
+typedef struct { u16 first, second; } ResourceDimensions36680;
+extern ResourceDimensions36680 D_800DDB80[15];
+u32 func_1502B020(u32 *, u32, ...);
+
+/* Initialize resource slots and derive their descriptor dimensions. */
+void func_1500AC14(void) {
+    s32 index;
+    s32 outputOffset;
+    u32 size;
+    u32 id;
+    u32 value;
+    u32 divisor;
+    ResourceSlot *slot;
+    ResourcePreset *preset;
+    ResourceDimensions36680 *dimensions;
+
+    slot = D_800DDA90;
+    preset = D_800BE4A0;
+    for (index = 0, outputOffset = 0; index < 15;
+         index++, outputOffset += 4, slot++, preset++) {
+        id = preset->id;
+        slot->address = 0;
+        slot->pending = NULL;
+        slot->alignedSize = 0;
+        slot->state = 0;
+        if (id == 255) continue;
+        if (D_800BE478[index] != 0 || id == 59) {
+            dimensions = (ResourceDimensions36680 *)((u8 *)&D_800DDB80 + outputOffset);
+            value = func_1502B020(&size, 2, 0, id);
+            divisor = size;
+            slot->address = value;
+            slot->alignedSize = (divisor + 15U) & ~15U;
+            value = D_80095CE0[id].span;
+            if (divisor == 0 || value == 0) {
+                value = 0;
+                slot->address = 0;
+            }
+            divisor = D_80095CE0[id].divisor;
+            dimensions->first = (divisor << 5) - 1;
+            dimensions->second = (((value / divisor) << 6) / 5) - 1;
+        }
+    }
 }
 /* Initialize a channel from its preset and option bits. */
 void func_1500AD84(s32 slot, u32 preset, u32 options) {

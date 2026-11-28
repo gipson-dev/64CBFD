@@ -1,5 +1,13 @@
 # Update Log
 
+## Resource slot initializer guarded match - 2026-11-28
+
+[Note 2750](WORKING_NOTES/2750-game-resource-slot-initializer-guarded-byte-match-20261128.md):
+`func_1500AC14` restores 92 words with 57 closed layout guards. Shared table types,
+all 206 header dependents, the complete caller and independent full image pass.
+Total **4,729 / 5,528 (85.55%)**, Game **4,056 / 4,855 (83.54%)**, zero drift;
+**247 more to 90%**.
+
 ## Entity overlap collector direct match - 2026-11-28
 
 [Note 2749](WORKING_NOTES/2749-game-entity-overlap-collector-direct-byte-match-20261128.md):
